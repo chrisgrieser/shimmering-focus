@@ -3,7 +3,7 @@ A minimalistic Obsidian theme focused on readability and condensed information d
 
 <img src="https://user-images.githubusercontent.com/73286100/131185881-19d235e1-a3ca-4dff-8a6f-0c247bbc9cf1.png" alt="Screenshot 2021-08-27 22 37 32" width=45% height=45%><img src="https://user-images.githubusercontent.com/73286100/131185949-be7ecd34-3640-4375-8f8a-23db67d34148.png" alt="Screenshot 2021-08-27 22 38 06" width=45% height=45%>
 
-## Basic features
+## Features & Design Principles
 **minimalistic**
 - removes as much clutter as possible, similar to the [hider plugin](https://github.com/kepano/obsidian-hider) (with the exception of the scrollbar in th editor)
 - intended for use for keyboard shortcuts and the command palette. (access the settings via `cmd + ,`)
@@ -34,8 +34,8 @@ A minimalistic Obsidian theme focused on readability and condensed information d
 **subtle design**  
 - apart from the points mentioned, the theme pretty much follows Obsidian's default theme, with [iA Writer Quattro](https://github.com/iaolo/iA-Fonts/tree/master/iA%20Writer%20Quattro) as main font and some shimmering green as secondary accent
 
-# Installation
+## Installation
 Download the CSS file and move it into the folder `.obsidian/themes/` located in your vault. Then, go to `Settings ➞ Appearance ➞ Themes`, reload themes, and then select `Shimmering Focus`.
 
-# Credits
+## Credits
 Thanks to @kepano and @Mara for some CSS snippets, and thanks to @NothingIsLost, @só erick mesmo, @javalent, and many others from the #css-themes Discord Channel who helped me figure out CSS in this very first CSS project of mine. **Special Thanks** to @SlRvb who solved a lot of problems I encountered.
