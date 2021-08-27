@@ -1,16 +1,14 @@
 # Shimmering Focus
 A minimalistic Obsidian theme focused on readability and condensed information display.
 
-<img src="https://user-images.githubusercontent.com/73286100/131183827-ddfd503c-d662-4e1c-8d48-4c5ddb2c74f5.png" alt="Screenshot 2021-08-27 22 14 28" width=45% height=45%> <img src="https://user-images.githubusercontent.com/73286100/131183878-6b01ad3b-9699-429b-b64b-172315c6bf05.png" alt="Screenshot 2021-08-27 22 13 14" width=45% height=45%>
-
+<img src="https://user-images.githubusercontent.com/73286100/131185881-19d235e1-a3ca-4dff-8a6f-0c247bbc9cf1.png" alt="Screenshot 2021-08-27 22 37 32" width=45% height=45%>
+<img src="https://user-images.githubusercontent.com/73286100/131185949-be7ecd34-3640-4375-8f8a-23db67d34148.png" alt="Screenshot 2021-08-27 22 38 06" width=45% height=45%>
 
 ## Basic features
 **minimalistic**
-- removes as much stuff as possible
-- similar to the [hider plugin](https://github.com/kepano/obsidian-hider), with the exception 
-- use `cmd + ,` to access the settings without ribbons
-- the [Filename-Heading-Sync Plugin](https://github.com/dvcrn/obsidian-filename-heading-sync) can be used to automatically rename files without the need for a titlebar.
-- to change view, set a hotkey for `toggle edit/preview mode` command
+- removes as much clutter as possible, similar to the [hider plugin](https://github.com/kepano/obsidian-hider) (with the exception of the scrollbar in th editor)
+- intended for use for keyboard shortcuts and the command palette. (access the settings via `cmd + ,`)
+- tip: [Filename-Heading-Sync Plugin](https://github.com/dvcrn/obsidian-filename-heading-sync) can be used to remove the need for renaming notes (and therefore removes the need for the header bar)
 
 **light & dark**
 - designed for light mode & dark mode
@@ -18,11 +16,11 @@ A minimalistic Obsidian theme focused on readability and condensed information d
 **functionalistic**
 - relationship lines in lists & file explorer
 - active line highlighting
-- icons to indicate folder and file types, wrapping in the file explorer
+- Material Icons to indicate folder and file types, wrapping in the file explorer
 
 **suited for academic writing**
 - [Pandoc citations](https://pandoc.org/MANUAL.html#citations-in-note-styles) and footnotes are visually emphasized
-- the alt-text of images is used as caption text, in line with Pandoc's conversion behavior
+- [the alt-text of images is used as caption text](https://gist.github.com/chrisgrieser/4f64b0fc656480ea707d2b45a03acdc0), in line with Pandoc's conversion behavior
 
 **condensed**
 - uses screen real estate more efficiently to display more information
