@@ -1,4 +1,5 @@
 # Shimmering Focus
+A minimalistic Obsidian theme focused on readability and condensed information display.
 
 ## Basic features
 **minimalistic**
