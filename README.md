@@ -18,7 +18,7 @@ A minimalistic Obsidian theme focused on readability and condensed information d
 
 **suited for academic writing**
 - [Pandoc citations](https://pandoc.org/MANUAL.html#citations-in-note-styles) and footnotes are visually emphasized
-- the alt-text of images is used as caption as done in Pandoc
+- the alt-text of images is used as caption text, in line with Pandoc's conversion behavior
 
 **condensed**
 - uses screen real estate more efficiently to display more information
