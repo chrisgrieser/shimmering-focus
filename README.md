@@ -1,8 +1,7 @@
 # Shimmering Focus
 A minimalistic Obsidian theme focused on readability and condensed information display.
 
-<img src="https://user-images.githubusercontent.com/73286100/131185881-19d235e1-a3ca-4dff-8a6f-0c247bbc9cf1.png" alt="Screenshot 2021-08-27 22 37 32" width=45% height=45%>
-<img src="https://user-images.githubusercontent.com/73286100/131185949-be7ecd34-3640-4375-8f8a-23db67d34148.png" alt="Screenshot 2021-08-27 22 38 06" width=45% height=45%>
+<img src="https://user-images.githubusercontent.com/73286100/131185881-19d235e1-a3ca-4dff-8a6f-0c247bbc9cf1.png" alt="Screenshot 2021-08-27 22 37 32" width=45% height=45%><img src="https://user-images.githubusercontent.com/73286100/131185949-be7ecd34-3640-4375-8f8a-23db67d34148.png" alt="Screenshot 2021-08-27 22 38 06" width=45% height=45%>
 
 ## Basic features
 **minimalistic**
