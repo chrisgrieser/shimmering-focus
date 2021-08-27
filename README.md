@@ -21,8 +21,8 @@ A minimalistic Obsidian theme focused on readability and condensed information d
 - the alt-text of images is used as caption as done in Pandoc
 
 **condensed**
-- uses screen real estate more efficiently to display more information. 
-- useful for smaller screens.
+- uses screen real estate more efficiently to display more information
+- useful for smaller screens
 
 **accessible**
 - increased contrast throughout, especially with the [annoying grey font on light-grey background](https://forum.obsidian.md/t/enhance-default-color-contrast-of-the-icons/23045/3)
@@ -33,5 +33,4 @@ A minimalistic Obsidian theme focused on readability and condensed information d
 - apart from the points mentioned, the theme pretty much follows Obsidian's default theme, with [iA Writer Quattro](https://github.com/iaolo/iA-Fonts/tree/master/iA%20Writer%20Quattro) as main font and some shimmering green as secondary accent
 
 # Credits
-Thanks to @kepano and @Mara for some CSS snippets, and thanks to @NothingIsLost, @só erick mesmo, @javalent, and many others from the #css-themes Discord Channel who helped me figure out CSS in this very first CSS project of mine.  
-**Special Thanks** to @SlRvb who solved a lot of problems I encountered.
+Thanks to @kepano and @Mara for some CSS snippets, and thanks to @NothingIsLost, @só erick mesmo, @javalent, and many others from the #css-themes Discord Channel who helped me figure out CSS in this very first CSS project of mine. **Special Thanks** to @SlRvb who solved a lot of problems I encountered.
