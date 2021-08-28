@@ -2,7 +2,7 @@
 /* A minimalistic, consensed theme with green shimmers as secondary accent. Created by @pseudometa (Discord) aka @chrisgrieser (GitHub)
 https://github.com/chrisgrieser/shimmering-focus/ */
 /* ---------------------------------------------------------
-Thanks to @kepano, @Mara, @Chetachie, and @Grimdewalt for some CSS snippets, and thanks to @NothingIsLost, @só erick mesmo, @javalent, and many others from the #css-themes Discord, Channel who helped me figure out CSS in this very first CSS project of mine. SPECIAL THANKS to @SlRvb who solved a lot of problems I encountered.
+Thanks to @kepano, @Mara, @Chetachie, @Eleanor Konik, @SlRvB, and @Grimdewalt for some CSS snippets, and thanks to @NothingIsLost, @só erick mesmo, @javalent, and many others from the #css-themes Discord, Channel who helped me figure out CSS in this very first CSS project of mine. SPECIAL THANKS to @SlRvb who solved a lot of problems I encountered.
 --------------------------------------------------------- */
 
 /* ------------------------------------------------------ */
@@ -371,15 +371,6 @@ a.tag:hover {
 .nav-file-title[data-path$="Index.md"] {
 	display: none;
 }
-
-/* ------------------------------------------------------ */
-/* Pseudo-Admonition */
-/* ------------------------------------------------------ */
-
-
-
-
-
 
 /* ------------------------------------------------------ */
 /* Command Palette & QuickSwitch */
@@ -972,15 +963,13 @@ https://github.com/Mara-Li/Obsidian-Snippet-collection */
 	color: var(--text-accent);
 	background: var(--background-primary);
 }
-.vertical-tab-nav-item:hover {
-	color: var(--text-alt-accent);
-	background: var(--background-primary);
-}
+
 .vertical-tab-nav-item:active {
 	color: var(--text-accent);
 }
 
-.vertical-tab-nav-item.is-active:hover {
+.vertical-tab-nav-item.is-active:hover,
+.vertical-tab-nav-item:hover {
 	color: var(--text-alt-accent);
 	border-left: solid var(--text-alt-accent);
 	background: var(--background-primary);
@@ -1159,10 +1148,40 @@ span.cm-hmd-frontmatter {
 	height: 0.5em;
 	width: 0.5em;
 }
-
-.right-triangle:hover{
-	color: var(--text-alt-accent);
+.right-triangle:hover,
+.CodeMirror-foldgutter-folded.CodeMirror-guttermarker-subtle:hover,
+.CodeMirror-foldgutter-open.CodeMirror-guttermarker-subtle:hover,
+.CodeMirror-foldmarker:hover{
+	color: var(--text-alt-accent) !important;
+	opacity: 0.8;
 }
+
+/* edit mode */
+.CodeMirror-foldgutter-folded.CodeMirror-guttermarker-subtle::after,
+.CodeMirror-foldgutter-open.CodeMirror-guttermarker-subtle::after{
+	font-size: 1.4em;
+	line-height: 1em;
+}
+
+.CodeMirror-foldgutter-folded.CodeMirror-guttermarker-subtle{
+	color: var(--text-accent);
+	opacity: 0.8;
+}
+
+/* the "..." when content is folded */
+.CodeMirror-foldmarker{
+	font-weight: 900;
+	font-size: 1.1em;
+	border-radius: 5px;
+	background-color: var(--background-secondary);
+	opacity: 0.9;
+}
+.CodeMirror-foldmarker:hover{
+	color: var(--text-alt-accent);
+	opacity: 0.8;
+	background-color: var(--background-secondary-alt);
+}
+
 
 /* ------------------------------------------------------ */
 /* Pandoc Citations & Footnotes */
@@ -1245,9 +1264,7 @@ save who it was & can't find the person via Discord search :(  */
 .cm-header-4,
 .markdown-preview-view h4,
 .cm-header-5,
-.markdown-preview-view h5,
-.cm-header-6,
-.markdown-preview-view h6 {
+.markdown-preview-view h5, {
 	font-size: 1.1em;
 	font-style: italic;
 }
@@ -1256,8 +1273,7 @@ save who it was & can't find the person via Discord search :(  */
 .markdown-preview-view h2,
 .markdown-preview-view h3,
 .markdown-preview-view h4,
-.markdown-preview-view h5,
-.markdown-preview-view h6 {
+.markdown-preview-view h5 {
 	line-height: 1.2em;
 	margin-top: 1em;
 }
@@ -1267,6 +1283,45 @@ save who it was & can't find the person via Discord search :(  */
 .markdown-preview-view h2{
 	font-family: "iAWriterQuattroS-Bold";
 	font-weight: 500;
+}
+
+
+/* ------------------------------------------------------ */
+/* Pseudo Admonitions (only for one-liners) */
+/* ------------------------------------------------------ */
+/* For H6 only (without following blocks or line breaks).
+Based on some CSS from @SlRvb & @Eleanor Konik */
+
+.cm-header-6.cm-formatting.cm-formatting-header{
+	display: none;
+}
+.HyperMD-header.HyperMD-header-6.CodeMirror-line::before{
+	content: "ℹ️ "
+}
+.HyperMD-header.HyperMD-header-6.CodeMirror-line{
+	background-color: var(--background-secondary);
+	border-left: 5px solid var(--text-muted) !important;
+}
+
+.markdown-preview-view h6 {
+	padding-left: 0.5em;
+	padding-bottom: 0.5em;
+	padding-top: 0.5em;
+	background-color: var(--background-secondary);
+	margin-bottom: 0;
+	border-left: 7px solid var(--text-muted);
+	border-radius: 3px;
+	font-size: 1em !important;
+	font-style: normal;
+	font-weight: 500;
+	color: var(--text-normal) !important;
+}
+.markdown-preview-view h6 .heading-collapse-indicator.collapse-indicator.collapse-icon {
+	display: none;
+}
+.markdown-preview-view h6:before {
+	content: "ℹ️";
+	padding-right: 0.5em;
 }
 
 /* ------------------------------------------------------ */
