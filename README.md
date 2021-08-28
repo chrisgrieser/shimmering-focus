@@ -46,4 +46,4 @@ A minimalistic Obsidian theme focused on readability and condensed information d
 Download the CSS file and move it into the folder `.obsidian/themes/` located in your vault. Then, go to `Settings ➞ Appearance ➞ Themes`, reload themes, and then select `Shimmering Focus`.
 
 ## Credits
-Thanks to @kepano, @Mara, @Chetachie and @Grimdewalt for some CSS snippets, and thanks to @NothingIsLost, @só erick mesmo, @javalent, and many others from the #css-themes Discord, Channel who helped me figure out CSS in this very first CSS project of mine. **Special Thanks** to @SlRvb who solved a lot of problems I encountered.
+Thanks to @kepano, @Mara, @Chetachie, @Eleanor Konik, @SlRvB, and @Grimdewalt for some CSS snippets, and thanks to @NothingIsLost, @só erick mesmo, @javalent, and many others from the #css-themes Discord, Channel who helped me figure out CSS in this very first CSS project of mine. **Special Thanks** to @SlRvb who solved so many problems I encountered.
