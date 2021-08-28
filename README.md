@@ -22,6 +22,7 @@ A minimalistic Obsidian theme focused on readability and condensed information d
 - wrapping of text in the file explorer
 - active line highlighting
 - Material Icons to indicate folder and file types
+- Pseudo-Admonition: `h6` blocks will become a pseudo-admonition box (only works with one-liners though).
 
 **suited for academic writing**
 - [Pandoc citations](https://pandoc.org/MANUAL.html#citations-in-note-styles) and footnotes are visually emphasized
