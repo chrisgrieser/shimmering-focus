@@ -1,8 +1,6 @@
 # Shimmering Focus
 A minimalistic Obsidian theme focused on readability and condensed information display.
 
-![](https://img.shields.io/github/downloads/chrisgrieser/shimmering-focus/total?label=Downloads&style=plastic)  ![](https://img.shields.io/github/v/release/chrisgrieser/shimmering-focus?label=Latest%20Release&style=plastic)
-
 <img src="https://user-images.githubusercontent.com/73286100/131186144-c83acddd-0ac4-4716-9770-9862dccf2d1b.png" alt="Screenshot 2021-08-27 22 40 33" width=45% height=45%> <img src="https://user-images.githubusercontent.com/73286100/131186172-96d06be8-6048-487d-8562-cb59fc1fad29.png" alt="Screenshot 2021-08-27 22 40 53" width=45% height=45%>
 
 
@@ -24,6 +22,7 @@ A minimalistic Obsidian theme focused on readability and condensed information d
 **suited for academic writing**
 - [Pandoc citations](https://pandoc.org/MANUAL.html#citations-in-note-styles) and footnotes are visually emphasized
 - [the alt-text of images is used as caption text](https://gist.github.com/chrisgrieser/4f64b0fc656480ea707d2b45a03acdc0), in line with Pandoc's conversion behavior
+- CSS Styling for the [Longform Plugin](https://github.com/kevboh/longform): serif font, justified and hyphenated text.
 
 **condensed**
 - uses screen real estate more efficiently to display more information (useful for smaller screens)
