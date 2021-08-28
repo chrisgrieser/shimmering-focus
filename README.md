@@ -14,15 +14,12 @@ A minimalistic Obsidian theme focused on readability and condensed information d
 - tip: The [Filename-Heading-Sync Plugin](https://github.com/dvcrn/obsidian-filename-heading-sync) can be used to remove the need for renaming notes (and therefore removes the need for the header bar)
 - add the [Hide URLs snippet](https://raw.githubusercontent.com/chrisgrieser/shimmering-focus/main/Hide%20URLs.css) to hide URLs in edit mode
 
-**light & dark**
-- designed for light mode & dark mode
-
 **functional**
 - relationship lines in lists & file explorer
 - wrapping of text in the file explorer
 - active line highlighting
 - Material Icons to indicate folder and file types
-- Pseudo-Admonition: `h6` blocks will become a pseudo-admonition box (only works with one-liners though).
+- Pseudo-Admonition: `h6` blocks will become a pseudo-admonition box (only works with one-liners though)
 
 **suited for academic writing**
 - [Pandoc citations](https://pandoc.org/MANUAL.html#citations-in-note-styles) and footnotes are visually emphasized
