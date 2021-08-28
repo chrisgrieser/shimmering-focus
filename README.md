@@ -12,6 +12,7 @@ A minimalistic Obsidian theme focused on readability and condensed information d
 - the statusbar is displayed on hover and less space-consuming
 - intended for use with keyboard shortcuts and/or the command palette. (access the settings via `cmd + ,`)
 - tip: The [Filename-Heading-Sync Plugin](https://github.com/dvcrn/obsidian-filename-heading-sync) can be used to remove the need for renaming notes (and therefore removes the need for the header bar)
+- add the [Hide URLs snippet](https://raw.githubusercontent.com/chrisgrieser/shimmering-focus/main/Hide%20URLs.css) to hide URLs in edit mode
 
 **light & dark**
 - designed for light mode & dark mode
