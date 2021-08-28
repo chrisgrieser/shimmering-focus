@@ -3,7 +3,7 @@ A minimalistic Obsidian theme focused on readability and condensed information d
 
 ![](https://img.shields.io/github/downloads/chrisgrieser/shimmering-focus/total?label=Downloads&style=plastic)  ![](https://img.shields.io/github/v/release/chrisgrieser/shimmering-focus?label=Latest%20Release&style=plastic)
 
-![Screenshot](https://raw.githubusercontent.com/chrisgrieser/shimmering-focus/main/light-dark-screenshot.png)
+![Screenshot](https://raw.githubusercontent.com/chrisgrieser/shimmering-focus/main/dual-theme-screenshot.png)
 
 
 ## Features & Design Principles
