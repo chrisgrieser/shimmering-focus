@@ -13,6 +13,15 @@ A minimalistic Obsidian theme focused on readability and condensed information d
 - intended for use with keyboard shortcuts and/or the command palette. (access the settings via `cmd + ,`)
 - tip: The [Filename-Heading-Sync Plugin](https://github.com/dvcrn/obsidian-filename-heading-sync) can be used to remove the need for renaming notes (and therefore removes the need for the header bar)
 - optional: add the [Hide URLs snippet](https://raw.githubusercontent.com/chrisgrieser/shimmering-focus/main/Hide%20URLs.css) to hide URLs in edit mode
+- if you want to keep the titlebar, add search & delete the following snippet from the CSS file:
+```css
+.view-header {
+    display: none;
+}
+.view-content {
+    height: 100%;
+}
+```
 
 **functional**
 - Pseudo-Admonition: `h6` blocks will become a pseudo-admonition box (only works with one-liners though)
