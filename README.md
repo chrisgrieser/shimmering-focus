@@ -15,11 +15,15 @@ A minimalistic Obsidian theme focused on readability and condensed information d
 - optional: add the [Hide URLs snippet](https://raw.githubusercontent.com/chrisgrieser/shimmering-focus/main/Hide%20URLs.css) to hide URLs in edit mode
 
 **functional**
+- Pseudo-Admonition: `h6` blocks will become a pseudo-admonition box (only works with one-liners though)
+- Multi-Color-Highlighting: surround highlights with `*` or `**` for alternative highlight colors (shoutout to @Atlas).
+  - `==green highlight==`
+  - `*==yellow highlight==*`
+  - `**==cyan highlight==**`
 - relationship lines in lists & file explorer
 - wrapping of text in the file explorer
 - active line highlighting
 - Material Icons to indicate folder and file types
-- Pseudo-Admonition: `h6` blocks will become a pseudo-admonition box (only works with one-liners though)
 
 **suited for academic writing**
 - [Pandoc citations](https://pandoc.org/MANUAL.html#citations-in-note-styles) and footnotes are visually emphasized
@@ -43,4 +47,4 @@ A minimalistic Obsidian theme focused on readability and condensed information d
 Download the CSS file and move it into the folder `.obsidian/themes/` located in your vault. Then, go to `Settings ➞ Appearance ➞ Themes`, reload themes, and then select `Shimmering Focus`.
 
 ## Credits
-Thanks to @kepano, @Mara, @Chetachie, @Eleanor Konik, @SlRvB, and @Grimdewalt for some CSS snippets, and thanks to @NothingIsLost, @só erick mesmo, @javalent, and many others from the #css-themes Discord, Channel who helped me figure out CSS in this very first CSS project of mine. **Special Thanks** to @SlRvb who solved so many problems I encountered.
+Thanks to @kepano, @Mara, @Chetachie, @Eleanor Konik, @SlRvB, @Atlas ,and @Grimdewaldt for some CSS snippets, and thanks to @NothingIsLost, @só erick mesmo, @javalent, and many others from the #css-themes Discord, Channel who helped me figure out CSS in this very first CSS project of mine. **Special Thanks** to @SlRvb who solved so many problems I encountered.
