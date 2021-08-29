@@ -1,43 +1,13 @@
-/* SHIMMERING FOCUS v. 1.1 */
+/* SHIMMERING FOCUS v. 1.2 */
 /* A minimalistic, consensed theme with green shimmers as secondary accent. Created by @pseudometa (Discord) aka @chrisgrieser (GitHub)
 https://github.com/chrisgrieser/shimmering-focus/ */
 /* ---------------------------------------------------------
-Thanks to @kepano, @Mara, @Chetachie, @Eleanor Konik, @SlRvB, and @Grimdewalt for some CSS snippets, and thanks to @NothingIsLost, @só erick mesmo, @javalent, and many others from the #css-themes Discord, Channel who helped me figure out CSS in this very first CSS project of mine. SPECIAL THANKS to @SlRvb who solved so many problems I encountered.
+Thanks to @kepano, @Mara, @Chetachie, @Eleanor Konik, @SlRvB, @Atlas ,and @Grimdewaldt for some CSS snippets, and thanks to @NothingIsLost, @só erick mesmo, @javalent, and many others from the #css-themes Discord, Channel who helped me figure out CSS in this very first CSS project of mine. SPECIAL THANKS to @SlRvb who solved so many problems I encountered.
 --------------------------------------------------------- */
 
-/* ------------------------------------------------------ */
-/* COLORS */
-/* ------------------------------------------------------ */
-:root {
-	--active-line: rgba(173, 174, 152, 0.2);
-	--cursor-color: #a09beb;
-	--code-color: #048966;
-	--bold-in-darkmode: #607892;
-	--scrollbar-hover: #00d29a;
-	--scrollbar-active: #a09beb;
-}
-
-.theme-light {
-	--text-alt-accent: #02ac7d;
-	--editor-alt-accent: #009a72;
-	--selection-color: #e8ddff;
-	--highlight-color: #00eba590;
-	--more-contrast-muted: #5E5E5E;
-	--nestlinecolor: #777;
-}
-
-.theme-dark {
-	--text-alt-accent: #02ac7d;
-	--editor-alt-accent: #02ac7d;
-	--selection-color: #3c243b;
-	--highlight-color: #0e452f90;
-	--more-contrast-muted: #BBB;
-	--nestlinecolor: #DDD;
-}
-
 
 /* ------------------------------------------------------ */
-/* FONTS */
+/* FONTS as Base64 */
 /* ------------------------------------------------------ */
 @font-face {
 	font-family: "iAWriterQuattroS-Regular";
@@ -65,10 +35,47 @@ Thanks to @kepano, @Mara, @Chetachie, @Eleanor Konik, @SlRvB, and @Grimdewalt fo
 		format("woff2");
 }
 
+/* ------------------------------------------------------ */
+/* Colors and Fonts */
+/* ------------------------------------------------------ */
+
+:root {
+	--active-line: rgba(173, 174, 152, 0.2);
+	--cursor-color: #a09beb;
+	--code-color: #048966;
+	--bold-in-darkmode: #607892;
+	--scrollbar-hover: #00d29a;
+	--scrollbar-active: #a09beb;
+	--highlight-color: #00ff8866;
+	--highlight-alt1: #ffff0066;
+	--highlight-alt2: #00ffff66;
+
+	--regular-font: "iAWriterQuattroS-Regular"
+	--font-monospace: "SpaceMono-Regular";
+	--mermaid-font: "SpaceMono-Regular";
+	--bold-font: "iAWriterQuattroS-Bold";
+	--italic-font: "iAWriterQuattroS-Italic";
+}
+
+.theme-light {
+	--text-alt-accent: #02ac7d;
+	--editor-alt-accent: #009a72;
+	--selection-color: #e8ddff;
+	--more-contrast-muted: #5E5E5E;
+	--nestlinecolor: #777;
+}
+
+.theme-dark {
+	--text-alt-accent: #02ac7d;
+	--editor-alt-accent: #02ac7d;
+	--selection-color: #3c243b;
+	--more-contrast-muted: #BBB;
+	--nestlinecolor: #DDD;
+}
 
 .markdown-preview-view,
 .cm-s-obsidian {
-	font-family: "iAWriterQuattroS-Regular";
+	font-family: var(--regular-font);
 	font-weight: 500;
 }
 
@@ -80,28 +87,23 @@ Thanks to @kepano, @Mara, @Chetachie, @Eleanor Konik, @SlRvB, and @Grimdewalt fo
 .nav-file-title,
 .nav-folder-title,
 .status-bar-item {
-	font-family: "iAWriterQuattroS-Regular";
+	font-family: var(--regular-font);
 	letter-spacing: -0.04em;
 }
 
 .markdown-preview-view,
 .cm-s-obsidian {
-	font-family: "iAWriterQuattroS-Regular";
+	font-family: var(--regular-font);
 	letter-spacing: -0.03em;
 }
 .markdown-preview-view em,
 .cm-em {
-	font-family: "iAWriterQuattroS-Italic";
+	font-family: var(--italic-font);
 }
 .markdown-preview-view strong,
 .cm-strong {
-	font-family: "iAWriterQuattroS-Bold";
+	font-family: var(--bold-font);
 	font-weight: 500 !important;
-}
-
-:root{
-	--font-monospace: "SpaceMono-Regular";
-	--mermaid-font: "SpaceMono-Regular";
 }
 
 
@@ -146,9 +148,9 @@ Thanks to @kepano, @Mara, @Chetachie, @Eleanor Konik, @SlRvB, and @Grimdewalt fo
 }
 
 /* Hide tooltips */
-.tooltip {
+/* .tooltip {
   display:none;
-}
+} */
 
 /* Hide instructions */
 .prompt-instructions {
@@ -1051,6 +1053,17 @@ https://github.com/Mara-Li/Obsidian-Snippet-collection */
 }
 
 /* ------------------------------------------------------ */
+/* COMMUNITY THEME BROWSER */
+/* ------------------------------------------------------ */
+
+.modal.mod-community-theme {
+	height: 93%;
+	max-width: unset;
+	width: 93%;
+}
+
+
+/* ------------------------------------------------------ */
 /* HIGHLIGHT & SELECTION */
 /* ------------------------------------------------------ */
 /* highlight active line */
@@ -1068,6 +1081,40 @@ https://github.com/Mara-Li/Obsidian-Snippet-collection */
 .theme-light,
 .theme-dark {
 	--text-selection: var(--selection-color);
+}
+
+/* ------------------------------------------------------ */
+/* Multi-Color Highlighting */
+/* ------------------------------------------------------ */
+/* thanks to @Atlas for these snippets */
+/* https://discord.com/channels/686053708261228577/702656734631821413/881443661269827656 */
+
+/* Yellow Highlight */
+strong > mark {
+  font-weight: normal;
+  font-family: var(--regular-font);
+  text-decoration: unset;
+  background-color: var(--highlight-alt1);
+}
+span.cm-strong.cm-highlight {
+  font-weight: normal;
+  font-family: var(--regular-font);
+  text-decoration: unset;
+  background-color: var(--highlight-alt1);
+}
+
+/* Cyan Highlight */
+em > mark {
+  font-style: initial;
+  font-family: var(--regular-font);
+  text-decoration: unset;
+  background-color: var(--highlight-alt2);
+}
+span.cm-em.cm-highlight {
+  font-style: initial;
+  font-family: var(--regular-font);
+  text-decoration: unset;
+  background-color: var(--highlight-alt2);
 }
 
 /* ------------------------------------------------------ */
@@ -1225,8 +1272,7 @@ span.cm-link.cm-hmd-footnote {
 /* ------------------------------------------------------ */
 /* HORIZONTAL LINE (HR)*/
 /* ------------------------------------------------------ */
-/* Thanks to an unknown person in Discord. I took their css, but forgot to
-save who it was & can't find the person via Discord search :(  */
+/* Thanks to @Grimdewaldt  */
 
 /* make --- in edit mode look more like --- in preview. */
 .cm-s-obsidian span.cm-hr {
@@ -1236,7 +1282,7 @@ save who it was & can't find the person via Discord search :(  */
 .cm-s-obsidian span.cm-hr::after {
 	position: absolute;
 	content: "----------------------------------------------------------------------------------------------------";
-	overflow: hidden;
+ 	overflow: hidden;
 	height: 1em;
 	color: var(--more-contrast-muted);
 	opacity: 0.6;
@@ -1401,7 +1447,8 @@ div.oz-image-widget > img {
 	bottom: -9999px;
 }
 
-.cm-s-obsidian .CodeMirror-line {
+/* ":not(.HyperMD-table-2)" is a fix for tables */
+.cm-s-obsidian .CodeMirror-line:not(.HyperMD-table-2) {
 	position: relative;
 	overflow: hidden;
 }
