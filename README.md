@@ -35,7 +35,7 @@ A minimalistic Obsidian theme focused on readability and condensed information d
 - Material Icons to indicate folder and file types
 
 **suited for academic writing**
-- [Pandoc citations](https://pandoc.org/MANUAL.html#citations-in-note-styles) and footnotes are visually emphasized
+- [Pandoc citations](https://pandoc.org/MANUAL.html#citations-in-note-styles) (`[@citekey]`) and footnotes are visually emphasized
 - [the alt-text of images is used as caption text](https://gist.github.com/chrisgrieser/4f64b0fc656480ea707d2b45a03acdc0), in line with Pandoc's conversion behavior
 - CSS Styling for the [Longform Plugin](https://github.com/kevboh/longform): serif font, justified & hyphenated text.
 
