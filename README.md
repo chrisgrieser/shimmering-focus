@@ -58,7 +58,7 @@ You can find *Shimmering Focus* in Obsidian's community themes browser under `Se
 Alternatively, you can also install the theme manually by downloading the CSS file and moving it into the folder `.obsidian/themes/` located in your vault. Then, go to `Settings ➞ Appearance ➞ Themes`, reload themes, and select `Shimmering Focus`.
 
 ## CSS Magician wanted!
-I would love to make the headerbar be visible on hover (like currently with the status bar). However, I do not know how to implement that. If you do, I'd appreciate contributions/help [that you can give at this issue](https://github.com/chrisgrieser/shimmering-focus/issues/3).
+I would love to make the headerbar be visible on hover (like currently with the status bar). However, I do not know how to implement that. If you do, feel free to get in touch [over here](https://github.com/chrisgrieser/shimmering-focus/issues/3).
 
 ## Credits
 Thanks to @kepano, @Mara, @Chetachie, @Eleanor Konik, @SlRvB, @Atlas ,and @Grimdewaldt for some CSS snippets, and thanks to @NothingIsLost, @só erick mesmo, @javalent, and many others from the #css-themes Discord, Channel who helped me figure out CSS in this very first CSS project of mine. **Special Thanks** to @SlRvb who solved so many problems I encountered.
