@@ -1,4 +1,4 @@
-/* SHIMMERING FOCUS v. 1.2.1 */
+/* SHIMMERING FOCUS v. 1.3 */
 /* A minimalistic, consensed theme with green shimmers as secondary accent. Created by @pseudometa (Discord) aka @chrisgrieser (GitHub)
 https://github.com/chrisgrieser/shimmering-focus/ */
 /* ---------------------------------------------------------
@@ -55,12 +55,14 @@ Thanks to @kepano, @Mara, @Chetachie, @Eleanor Konik, @SlRvB, @Atlas ,and @Grimd
 	--highlight-alt1: #ffff0066;
 	--highlight-alt2: #00ffff66;
 
-	--regular-font: "iAWriterQuattroS-Regular"
 	--font-monospace: "SpaceMono-Regular";
 	--mermaid-font: "SpaceMono-Regular";
+	--regular-font: "iAWriterQuattroS-Regular";
 	--bold-font: "iAWriterQuattroS-Bold";
 	--italic-font: "iAWriterQuattroS-Italic";
 	--bold-italic-font: "iAWriterQuattroS-BoldItalic";
+
+	--signature:"❖";
 }
 
 .theme-light {
@@ -79,8 +81,9 @@ Thanks to @kepano, @Mara, @Chetachie, @Eleanor Konik, @SlRvB, @Atlas ,and @Grimd
 	--nestlinecolor: #DDD;
 }
 
+
 .markdown-preview-view,
-.cm-s-obsidian {
+.cm-s-obsidian{
 	font-family: var(--regular-font);
 	font-weight: 500;
 }
@@ -95,6 +98,11 @@ Thanks to @kepano, @Mara, @Chetachie, @Eleanor Konik, @SlRvB, @Atlas ,and @Grimd
 .status-bar-item {
 	font-family: var(--regular-font);
 	letter-spacing: -0.04em;
+}
+.view-header-title {
+	font-family: var(--bold-font);
+	font-weight: 500 !important;
+	letter-spacing: -0.03em;
 }
 
 .markdown-preview-view,
@@ -133,14 +141,6 @@ Thanks to @kepano, @Mara, @Chetachie, @Eleanor Konik, @SlRvB, @Atlas ,and @Grimd
 	display: none;
 }
 
-/* hide header */
-.view-header {
-	display: none;
-}
-.view-content {
-	height: 100%;
-}
-
 /* hide titlebar */
 .titlebar {
 	display: none;
@@ -150,23 +150,21 @@ Thanks to @kepano, @Mara, @Chetachie, @Eleanor Konik, @SlRvB, @Atlas ,and @Grimd
 .theme-light {
 	padding: 0 !important;
 }
-
 /* for Mac OS Traffic Lights */
 /* same for right side to harmonize */
 .workspace-split.mod-left-split > .workspace-tabs,
 .workspace-split.mod-right-split > .workspace-tabs {
 	padding-top: 1.15em;
 }
+/* fix height of resize handle */
+.workspace-split.mod-horizontal .workspace-leaf-resize-handle {
+	top: 3.05em !important;
+}
 
 /* hide ribbons */
 .workspace-ribbon {
 	display: none;
 }
-
-/* Hide tooltips */
-/* .tooltip {
-  display:none;
-} */
 
 /* Hide instructions */
 .prompt-instructions {
@@ -187,9 +185,87 @@ Thanks to @kepano, @Mara, @Chetachie, @Eleanor Konik, @SlRvB, @Atlas ,and @Grimd
 /* replace empty pane info with something nicer */
 .community-plugin-details-empty-state::after,
 .empty-state-title::after{
-	content: "❖";
+	content: var(--signature);
 	font-size: 5rem;
 	color: var(--more-contrast-muted);
+}
+
+/* ------------------------------------------------------ */
+/* Header Bar */
+/* ------------------------------------------------------ */
+
+/* show only on hover */
+.view-header-title{
+	font-size: 0.95em;
+}
+.view-content {
+	height: 100%;
+}
+.view-header{
+ 	height: 0.4em;
+	transition: 200ms;
+	border-bottom: none !important;
+}
+
+.view-header:hover{
+	height: 2em;
+	border-bottom: 2px solid var(--background-secondary-alt) !important;
+	transition: 200ms;
+}
+
+.view-header-icon,
+.view-action svg {
+	opacity: 0;
+	color: var(--more-contrast-muted);
+}
+
+.view-header-icon:hover,
+.view-action:hover svg{
+	color: var(--text-alt-accent);
+}
+.view-header-icon:active,
+.view-action:active svg{
+	color: var(--text-accent) !important;
+}
+
+.view-header:hover .view-header-icon,
+.view-header:hover .view-action svg{
+	opacity: 1;
+}
+
+/* ------------------------------------------------------ */
+/* Context Menus */
+/* ------------------------------------------------------ */
+
+.menu-item.selected,
+.menu-item.selected svg{
+	color: var(--text-accent);
+}
+
+.menu-item svg{
+	color: var(--more-contrast-muted);
+}
+
+.menu-item:hover,
+.menu-item:hover svg,
+.menu-item.selected:hover,
+.menu-item.selected:hover svg{
+	color: var(--text-alt-accent);
+}
+
+.menu-item.selected:hover,
+.menu-item:hover{
+	border-left: 3px solid var(--text-alt-accent);
+	margin-left: 0px;
+}
+
+.menu-item.selected{
+	border-left: 3px solid var(--text-accent);
+	margin-left: 0px;
+}
+
+.menu-item{
+	margin-left: 3px;
 }
 
 /* ------------------------------------------------------ */
@@ -239,7 +315,7 @@ Thanks to @kepano, @Mara, @Chetachie, @Eleanor Konik, @SlRvB, @Atlas ,and @Grimd
 
 /* "signature" */
 .status-bar::after {
-  content: "❖";
+  content: var(--signature);
 }
 
 /* ------------------------------------------------------ */
@@ -254,14 +330,12 @@ Thanks to @kepano, @Mara, @Chetachie, @Eleanor Konik, @SlRvB, @Atlas ,and @Grimd
 	display: unset;
 }
 
-/* thinner scrollbar */
-::-webkit-scrollbar {
-	width: 0.5em;
-}
-
-/* color of scrollbar (part that moves) */
-::-webkit-scrollbar-thumb:hover {
+/* hover / active colors */
+::-webkit-scrollbar-thumb:hover{
 	background-color: var(--scrollbar-hover);
+}
+::-webkit-scrollbar:hover {
+	background-color: var(--background-secondary-alt);
 }
 ::-webkit-scrollbar-thumb:active {
 	background-color: var(--scrollbar-active) !important;
@@ -904,8 +978,11 @@ https://github.com/Mara-Li/Obsidian-Snippet-collection */
 /* SETTINGS MENU */
 /* ------------------------------------------------------ */
 
-/* make settings menu bigger and more compact */
+.modal-bg {
+	backdrop-filter: blur(5px);
+}
 
+/* make settings menu bigger and more compact */
 .modal.mod-settings {
 	height: 90%;
 	max-width: unset;
@@ -1137,12 +1214,10 @@ span.cm-hmd-frontmatter {
 	color: var(--more-contrast-muted) !important;
 	opacity: 0.85;
 	font-size: 1em;
-	font-family: "SpaceMono-Regular" !important;
 }
 /* YAML-Header in Preview Mode */
 .markdown-preview-view pre.frontmatter.language-yaml {
-/* 	font-family: "SpaceMono-Regular" !important;
-	background: var(--background-secondary);
+/*	background: var(--background-secondary);
 	padding-top: 0.6em;
 	padding-bottom: 0.8em;
 	text-shadow: none; */
@@ -1155,7 +1230,6 @@ span.cm-hmd-frontmatter {
 
 
 /* METADATA BLOCK */
-/* to hide the Metadata-Block */
 .markdown-preview-view .frontmatter-container {
 /* 	display: none; */
 	font-size: 1em;
@@ -1218,14 +1292,19 @@ span.cm-hmd-frontmatter {
 /* edit mode */
 .CodeMirror-foldgutter-folded.CodeMirror-guttermarker-subtle::after,
 .CodeMirror-foldgutter-open.CodeMirror-guttermarker-subtle::after{
-	font-size: 1.4em;
-	line-height: 1em;
+	font-size: 1.5em;
+	line-height: 1.1em;
 }
 
 .CodeMirror-foldgutter-folded.CodeMirror-guttermarker-subtle{
 	color: var(--text-accent);
 	opacity: 0.8;
 }
+
+.CodeMirror-gutters{
+	padding-right: 1em !important;
+}
+
 
 /* the "..." when content is folded */
 .CodeMirror-foldmarker{
@@ -1342,7 +1421,6 @@ span.cm-link.cm-hmd-footnote {
 	font-family: "iAWriterQuattroS-Bold";
 	font-weight: 500;
 }
-
 
 /* ------------------------------------------------------ */
 /* Pseudo Admonitions (only for one-liners) */
@@ -1499,11 +1577,6 @@ https://forum.obsidian.md/t/inline-code-occludes-text-selection-and-vim-cursor/1
 }
 .theme-dark .cm-inline-code {
 	background-color: rgba(0, 0, 0, 0.2) !important;
-}
-
-/* fix height of resize handle */
-.workspace-leaf-resize-handle {
-	top: 3.05em !important;
 }
 
 /* TEMPLATER READABLE WITH LIGHT THEME */
