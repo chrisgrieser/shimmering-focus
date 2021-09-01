@@ -5,23 +5,12 @@ A minimalistic Obsidian theme focused on readability and condensed information d
 
 ![Screenshot](https://raw.githubusercontent.com/chrisgrieser/shimmering-focus/main/dual-theme-screenshot.png)
 
-
 ## Features & Design Principles
 **minimalistic**
 - removes as much clutter as possible, similar to the [hider plugin](https://github.com/kepano/obsidian-hider)
-- the statusbar is displayed on hover and less space-consuming
+- statusbar and headerbar are only displayed on hover
 - intended for use with keyboard shortcuts and/or the command palette. (access the settings via `cmd + ,`)
 - optional: add the [Hide URLs snippet](https://raw.githubusercontent.com/chrisgrieser/shimmering-focus/main/Hide%20URLs.css) to hide URLs in edit mode
-- tip: The [Filename-Heading-Sync Plugin](https://github.com/dvcrn/obsidian-filename-heading-sync) can be used to remove the need for renaming notes (and therefore removes the need for the header bar)
-- if you want to keep the titlebar, add search & delete the following snippet from the CSS file:
-```css
-.view-header {
-    display: none;
-}
-.view-content {
-    height: 100%;
-}
-```
 
 **functional**
 - Pseudo-Admonition: `h6` blocks will become a pseudo-admonition box (only works with one-liners though)
@@ -56,9 +45,6 @@ A minimalistic Obsidian theme focused on readability and condensed information d
 You can find *Shimmering Focus* in Obsidian's community themes browser under `Settings ➞ Appearance ➞ Themes`.
 
 Alternatively, you can also install the theme manually by downloading the CSS file and moving it into the folder `.obsidian/themes/` located in your vault. Then, go to `Settings ➞ Appearance ➞ Themes`, reload themes, and select `Shimmering Focus`.
-
-## CSS Magician wanted!
-I would love to make the headerbar be visible on hover (like currently with the status bar). However, I do not know how to implement that. If you do, feel free to get in touch [over here](https://github.com/chrisgrieser/shimmering-focus/issues/3).
 
 ## Credits
 Thanks to @kepano, @Mara, @Chetachie, @Eleanor Konik, @SlRvB, @Atlas ,and @Grimdewaldt for some CSS snippets, and thanks to @NothingIsLost, @só erick mesmo, @javalent, and many others from the #css-themes Discord, Channel who helped me figure out CSS in this very first CSS project of mine. **Special Thanks** to @SlRvb who solved so many problems I encountered.
