@@ -8,9 +8,12 @@ A minimalistic Obsidian theme focused on readability and condensed information d
 ## Features & Design Principles
 **minimalistic**
 - removes as much clutter as possible, similar to the [hider plugin](https://github.com/kepano/obsidian-hider)
-- statusbar and headerbar are only displayed on hover
 - intended for use with keyboard shortcuts and/or the command palette. (access the settings via `cmd + ,`)
 - optional: add the [Hide URLs snippet](https://raw.githubusercontent.com/chrisgrieser/shimmering-focus/main/Hide%20URLs.css) to hide URLs in edit mode
+- statusbar and headerbar are only displayed on hover
+
+<img src="https://user-images.githubusercontent.com/73286100/131692972-e523f2d4-40c7-452c-83ac-a7f2fbd546ae.gif" alt="headerbar visible on hover" width=40% height=40%>
+
 
 **functional**
 - Pseudo-Admonition: `h6` blocks will become a pseudo-admonition box (only works with one-liners though)
