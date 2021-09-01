@@ -99,11 +99,12 @@ Thanks to @kepano, @Mara, @Chetachie, @Eleanor Konik, @SlRvB, @Atlas ,and @Grimd
 	font-family: var(--regular-font);
 	letter-spacing: -0.04em;
 }
+
 .view-header-title {
-	font-family: var(--bold-font);
-	font-weight: 500 !important;
-	letter-spacing: -0.03em;
+	font-family: var(--regular-font);
+	letter-spacing: -0.02em;
 }
+
 
 .markdown-preview-view,
 .cm-s-obsidian {
@@ -194,10 +195,11 @@ Thanks to @kepano, @Mara, @Chetachie, @Eleanor Konik, @SlRvB, @Atlas ,and @Grimd
 /* Header Bar */
 /* ------------------------------------------------------ */
 
-/* show only on hover */
 .view-header-title{
 	font-size: 0.95em;
 }
+
+/* show only on hover */
 .view-content {
 	height: 100%;
 }
@@ -206,18 +208,22 @@ Thanks to @kepano, @Mara, @Chetachie, @Eleanor Konik, @SlRvB, @Atlas ,and @Grimd
 	transition: 200ms;
 	border-bottom: none !important;
 }
-
 .view-header:hover{
 	height: 2em;
 	border-bottom: 2px solid var(--background-secondary-alt) !important;
 	transition: 200ms;
 }
-
 .view-header-icon,
 .view-action svg {
 	opacity: 0;
 	color: var(--more-contrast-muted);
 }
+.view-header:hover .view-header-icon,
+.view-header:hover .view-action svg{
+	opacity: 1;
+}
+
+/* hover & active coloring */
 
 .view-header-icon:hover,
 .view-action:hover svg{
@@ -226,11 +232,6 @@ Thanks to @kepano, @Mara, @Chetachie, @Eleanor Konik, @SlRvB, @Atlas ,and @Grimd
 .view-header-icon:active,
 .view-action:active svg{
 	color: var(--text-accent) !important;
-}
-
-.view-header:hover .view-header-icon,
-.view-header:hover .view-action svg{
-	opacity: 1;
 }
 
 /* ------------------------------------------------------ */
