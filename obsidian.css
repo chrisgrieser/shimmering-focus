@@ -204,12 +204,21 @@ Thanks to @kepano, @Mara, @Chetachie, @Eleanor Konik, @SlRvB, @Atlas ,and @Grimd
 	height: 100%;
 }
 .view-header{
- 	height: 0.4em;
+ 	height: 0.5em;
 	transition: 200ms;
 	border-bottom: none !important;
+	background-color: var(--background-primary) !important;
+}
+.view-header-title-container::after{
+	display: none;
+}
+
+.workspace-split.mod-root {
+    background-color: var(--background-primary);
 }
 .view-header:hover{
 	height: 2em;
+	background-color: var(--background-secondary) !important;
 	border-bottom: 2px solid var(--background-secondary-alt) !important;
 	transition: 200ms;
 }
@@ -224,7 +233,6 @@ Thanks to @kepano, @Mara, @Chetachie, @Eleanor Konik, @SlRvB, @Atlas ,and @Grimd
 }
 
 /* hover & active coloring */
-
 .view-header-icon:hover,
 .view-action:hover svg{
 	color: var(--text-alt-accent);
@@ -419,8 +427,9 @@ a.tag:hover {
 
 
 /* ------------------------------------------------------ */
-/* Modal Boxes (also applies to settings/plugin browser) */
+/* Modal & Prompt Boxes */
 /* ------------------------------------------------------ */
+/* (modal also applies to settings/plugin browser) */
 
 .modal-content h2 {
 	font-size: 1.7em;
@@ -439,6 +448,11 @@ a.tag:hover {
 	padding-bottom: 0.2em;
 	padding-right: 1em;
 	padding-left: 1em;
+	border-radius: 10px;
+	border: 2px solid var(--text-faint);
+}
+
+.prompt {
 	border-radius: 10px;
 	border: 2px solid var(--text-faint);
 }
