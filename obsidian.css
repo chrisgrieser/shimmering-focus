@@ -204,7 +204,7 @@ Thanks to @kepano, @Mara, @Chetachie, @Eleanor Konik, @SlRvB, @Atlas ,and @Grimd
 	height: 100%;
 }
 .view-header{
- 	height: 0.5em;
+ 	height: 1em;
 	transition: 200ms;
 	border-bottom: none !important;
 	background-color: var(--background-primary) !important;
@@ -223,12 +223,14 @@ Thanks to @kepano, @Mara, @Chetachie, @Eleanor Konik, @SlRvB, @Atlas ,and @Grimd
 	transition: 200ms;
 }
 .view-header-icon,
-.view-action svg {
+.view-action svg,
+.view-header-title {
 	opacity: 0;
 	color: var(--more-contrast-muted);
 }
 .view-header:hover .view-header-icon,
-.view-header:hover .view-action svg{
+.view-header:hover .view-action svg,
+.view-header:hover .view-header-title{
 	opacity: 1;
 }
 
@@ -452,9 +454,17 @@ a.tag:hover {
 	border: 2px solid var(--text-faint);
 }
 
+.modal-bg {
+	backdrop-filter: blur(4px);
+}
+
 .prompt {
 	border-radius: 10px;
 	border: 2px solid var(--text-faint);
+}
+
+.prompt-bg {
+	backdrop-filter: blur(4px);
 }
 
 /* ------------------------------------------------------ */
@@ -993,10 +1003,6 @@ https://github.com/Mara-Li/Obsidian-Snippet-collection */
 /* SETTINGS MENU */
 /* ------------------------------------------------------ */
 
-.modal-bg {
-	backdrop-filter: blur(5px);
-}
-
 /* make settings menu bigger and more compact */
 .modal.mod-settings {
 	height: 90%;
@@ -1046,7 +1052,6 @@ https://github.com/Mara-Li/Obsidian-Snippet-collection */
 }
 .vertical-tab-content {
 	background: var(--background-primary);
-	/* 	padding-bottom:4.5em; */
 	padding-top: 0.7em;
 	padding-left: 1.3em;
 	padding-right: 1.3em;
@@ -1081,9 +1086,8 @@ https://github.com/Mara-Li/Obsidian-Snippet-collection */
 .vertical-tab-nav-item.is-active:hover,
 .vertical-tab-nav-item:hover {
 	color: var(--text-alt-accent);
-	border-left: solid var(--text-alt-accent);
+	border-left: 3px solid var(--text-alt-accent);
 	background: var(--background-primary);
-	padding-left: 0.95em;
 }
 
 /* increase contrast*/
