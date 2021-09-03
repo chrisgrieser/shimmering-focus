@@ -17,7 +17,7 @@ A minimalistic Obsidian theme focused on readability and condensed information d
 
 **functional**
 - Pseudo-Admonition: `h6` blocks will become a pseudo-admonition box (only works with one-liners though)
-- Multi-Color-Highlighting: surround highlights with `*` or `**` for alternative highlight colors (shoutout to @Atlas).
+- Multi-Color-Highlighting: surround highlights with `*` or `**` for alternative highlight colors (thanks to @Atlas for this idea!).
   - `==green highlight==`
   - `*==yellow highlight==*`
   - `**==cyan highlight==**`
@@ -25,6 +25,9 @@ A minimalistic Obsidian theme focused on readability and condensed information d
 - wrapping of text in the file explorer
 - active line highlighting
 - Material Icons to indicate folder and file types
+
+<img width="380" alt="Screenshot 2021-09-03 21 46 20" src="https://user-images.githubusercontent.com/73286100/132058563-94672224-ed07-473d-9403-8a770984b3d2.png">
+
 
 **suited for academic writing**
 - [Pandoc citations](https://pandoc.org/MANUAL.html#citations-in-note-styles) (`[@citekey]`) and footnotes are visually emphasized
