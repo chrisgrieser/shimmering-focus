@@ -18,9 +18,6 @@ A minimalistic Obsidian theme focused on readability, condensed information disp
 **functional**
 - Pseudo-Admonition: `h6` blocks will become a pseudo-admonition box (only works with one-liners though)
 - Multi-Color-Highlighting: surround highlights with `*` or `**` for alternative highlight colors (thanks to @Atlas for this idea!).
-  - `==green highlight==`
-  - `*==yellow highlight==*`
-  - `**==cyan highlight==**`
 - relationship lines in lists & file explorer
 - wrapping of text in the file explorer
 - active line highlighting
