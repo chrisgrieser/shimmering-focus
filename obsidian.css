@@ -260,7 +260,8 @@ Thanks to @kepano, @Mara, @Chetachie, @Eleanor Konik, @SlRvB, @Atlas ,and @Grimd
 .menu-item:hover,
 .menu-item:hover svg,
 .menu-item.selected:hover,
-.menu-item.selected:hover svg{
+.menu-item.selected:hover svg,
+.menu-item.selected:hover .menu-item-title{
 	color: var(--text-alt-accent);
 }
 
@@ -277,6 +278,20 @@ Thanks to @kepano, @Mara, @Chetachie, @Eleanor Konik, @SlRvB, @Atlas ,and @Grimd
 
 .menu-item{
 	margin-left: 3px;
+}
+
+/* Quick Explorer */
+
+.menu-item:hover .menu-item-title {
+	color: var(--text-alt-accent)
+}
+.menu-item.selected .menu-item-title {
+	color: var(--text-accent)
+}
+
+/* prevent appearing on top of the traffic lights of macOS */
+.menu.qe-popup-menu {
+	padding-top: 1em;
 }
 
 /* ------------------------------------------------------ */
@@ -871,22 +886,6 @@ https://github.com/Mara-Li/Obsidian-Snippet-collection */
 	> .nav-folder-children
 	> .nav-folder {
 	border-left: var(--nestlinestyle3) 2px var(--nestlinecolor);
-}
-
-/* ------------------------------------------------------ */
-/* Quick Explorer */
-/* ------------------------------------------------------ */
-
-/* prevent appearing on top of the traffic lights of macOS */
-.menu.qe-popup-menu {
-	padding-top: 1em;
-}
-
-.menu-item:hover .menu-item-title {
-	color: var(--text-alt-accent)
-}
-.menu-item.selected .menu-item-title {
-	color: var(--text-accent)
 }
 
 /* ------------------------------------------------------ */
