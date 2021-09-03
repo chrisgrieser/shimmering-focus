@@ -450,8 +450,8 @@ a.tag:hover {
 	padding-bottom: 0.2em;
 	padding-right: 1em;
 	padding-left: 1em;
-	border-radius: 10px;
-	border: 2px solid var(--text-faint);
+	border-radius: 15px;
+	border: 5px solid var(--background-secondary);
 }
 
 .modal-bg {
@@ -459,8 +459,8 @@ a.tag:hover {
 }
 
 .prompt {
-	border-radius: 10px;
-	border: 2px solid var(--text-faint);
+	border-radius: 15px;
+	border: 5px solid var(--background-secondary);
 }
 
 .prompt-bg {
@@ -756,7 +756,7 @@ padding-left: 0;
 	white-space: normal;
 
 	color: var(--more-contrast-muted);
-	line-height: 1.4em;
+	line-height: 1.3em;
 	padding-top: 0.1em;
 }
 
@@ -871,6 +871,22 @@ https://github.com/Mara-Li/Obsidian-Snippet-collection */
 	> .nav-folder-children
 	> .nav-folder {
 	border-left: var(--nestlinestyle3) 2px var(--nestlinecolor);
+}
+
+/* ------------------------------------------------------ */
+/* Quick Explorer */
+/* ------------------------------------------------------ */
+
+/* prevent appearing on top of the traffic lights of macOS */
+.menu.qe-popup-menu {
+	padding-top: 1em;
+}
+
+.menu-item:hover .menu-item-title {
+	color: var(--text-alt-accent)
+}
+.menu-item.selected .menu-item-title {
+	color: var(--text-accent)
 }
 
 /* ------------------------------------------------------ */
@@ -1561,6 +1577,7 @@ div.oz-image-widget > img {
 	position: relative;
 	overflow: hidden;
 }
+
 
 /* ------------------------------------------------------ */
 /* SMALL FIXES */
