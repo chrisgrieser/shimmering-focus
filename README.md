@@ -3,7 +3,7 @@ A minimalistic Obsidian theme focused on readability, condensed information disp
 
 ![](https://img.shields.io/github/downloads/chrisgrieser/shimmering-focus/total?label=Downloads&style=plastic)  ![](https://img.shields.io/github/v/release/chrisgrieser/shimmering-focus?label=Latest%20Release&style=plastic)
 
-<img src="https://raw.githubusercontent.com/chrisgrieser/shimmering-focus/main/dual-theme-screenshot.png" alt="Screenshot" width=70% height=70%>
+<img src="https://raw.githubusercontent.com/chrisgrieser/shimmering-focus/main/dual-theme-screenshot.png" alt="Screenshot" width=90% height=90%>
 
 ## Features & Design Principles
 **minimalistic**
@@ -12,7 +12,7 @@ A minimalistic Obsidian theme focused on readability, condensed information disp
 - optional: add the [Hide URLs snippet](https://raw.githubusercontent.com/chrisgrieser/shimmering-focus/main/Hide%20URLs.css) to hide URLs in edit mode
 - statusbar and headerbar are only displayed on hover
 
-<img src="https://user-images.githubusercontent.com/73286100/131692972-e523f2d4-40c7-452c-83ac-a7f2fbd546ae.gif" alt="headerbar visible on hover" width=40% height=40%>
+<img src="https://user-images.githubusercontent.com/73286100/131692972-e523f2d4-40c7-452c-83ac-a7f2fbd546ae.gif" alt="headerbar visible on hover" width=50% height=50%>
 
 
 **functional**
@@ -23,7 +23,7 @@ A minimalistic Obsidian theme focused on readability, condensed information disp
 - active line highlighting
 - Material Icons to indicate folder and file types
 
-<img width=20% height=20% alt="Screenshot 2021-09-03 21 46 20" src="https://user-images.githubusercontent.com/73286100/132058563-94672224-ed07-473d-9403-8a770984b3d2.png">
+<img width=40% height=40% alt="Screenshot 2021-09-03 21 46 20" src="https://user-images.githubusercontent.com/73286100/132058563-94672224-ed07-473d-9403-8a770984b3d2.png">
 
 
 **suited for academic writing**
@@ -34,7 +34,7 @@ A minimalistic Obsidian theme focused on readability, condensed information disp
 **condensed**
 - uses screen real estate more efficiently to display more information (useful for smaller screens)
 - smaller images in Preview Mode (in Editor Mode, too, when using [Ozan's Image Plugin](https://github.com/ozntel/oz-image-in-editor-obsidian))
-<img src="https://user-images.githubusercontent.com/73286100/131182567-104f85dd-0f99-488d-b511-e45fe8b0486f.png" alt="Screenshot 2021-08-27 22 02 02" width=35% height=35%>  
+<img src="https://user-images.githubusercontent.com/73286100/131182567-104f85dd-0f99-488d-b511-e45fe8b0486f.png" alt="Screenshot 2021-08-27 22 02 02" width=55% height=55%>  
 
 **accessible**
 - increased contrast throughout, especially with the [annoying grey font on light-grey background](https://forum.obsidian.md/t/enhance-default-color-contrast-of-the-icons/23045/3)
