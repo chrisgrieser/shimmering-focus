@@ -3,7 +3,7 @@ A minimalistic Obsidian theme focused on readability, condensed information disp
 
 ![](https://img.shields.io/github/downloads/chrisgrieser/shimmering-focus/total?label=Downloads&style=plastic)  ![](https://img.shields.io/github/v/release/chrisgrieser/shimmering-focus?label=Latest%20Release&style=plastic)
 
-<img src="https://raw.githubusercontent.com/chrisgrieser/shimmering-focus/main/dual-theme-screenshot.png" alt="Screenshot" width=90% height=90%>
+<img src="https://raw.githubusercontent.com/chrisgrieser/shimmering-focus/main/dual-theme-screenshot.png" alt="Screenshot" width=80% height=80%>
 
 ## Features & Design Principles
 **minimalistic**
@@ -23,7 +23,7 @@ A minimalistic Obsidian theme focused on readability, condensed information disp
 - active line highlighting
 - Material Icons to indicate folder and file types
 
-<img width=40% height=40% alt="Screenshot 2021-09-03 21 46 20" src="https://user-images.githubusercontent.com/73286100/132058563-94672224-ed07-473d-9403-8a770984b3d2.png">
+<img width=25% height=25% alt="Screenshot 2021-09-03 21 46 20" src="https://user-images.githubusercontent.com/73286100/132058563-94672224-ed07-473d-9403-8a770984b3d2.png">
 
 
 **suited for academic writing**
