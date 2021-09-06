@@ -1,14 +1,14 @@
 # Shimmering Focus ❖
 A minimalistic Obsidian theme focused on readability, condensed information display, and providing a few useful functions.
 
-![](https://img.shields.io/github/downloads/chrisgrieser/shimmering-focus/total?label=Downloads&style=plastic)  ![](https://img.shields.io/github/v/release/chrisgrieser/shimmering-focus?label=Latest%20Release&style=plastic)
+![](https://img.shields.io/github/v/release/chrisgrieser/shimmering-focus?label=Latest%20Release&style=plastic)
 
 <img src="https://raw.githubusercontent.com/chrisgrieser/shimmering-focus/main/dual-theme-screenshot.png" alt="Screenshot" width=75% height=75%>
 
 ## Features & Design Principles
 **minimalistic**
 - removes as much clutter as possible, similar to the [hider plugin](https://github.com/kepano/obsidian-hider)
-- intended for use with keyboard shortcuts and/or the command palette. (access the settings via `cmd + ,`)
+- intended for use with keyboard shortcuts and/or the command palette (access the settings via `cmd + ,`).
 - optional: add the [Hide URLs snippet](https://raw.githubusercontent.com/chrisgrieser/shimmering-focus/main/Hide%20URLs.css) to hide URLs in edit mode
 - statusbar and headerbar are only displayed on hover
 
