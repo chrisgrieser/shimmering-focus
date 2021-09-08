@@ -46,7 +46,7 @@ A minimalistic Obsidian theme focused on readability, condensed information disp
 - Stylistically, the theme pretty much follows Obsidian's default theme, with [iA Writer Quattro](https://github.com/iaolo/iA-Fonts/tree/master/iA%20Writer%20Quattro) as main font and some shimmering green as secondary accent.
 
 **Style Settings**
-- **version 1.4: **Support for the [Style Settings Plugin](https://github.com/mgmeyers/obsidian-style-settings/) to customize the theme. 
+- **version 1.4:** Support for the [Style Settings Plugin](https://github.com/mgmeyers/obsidian-style-settings/) to customize the theme. 
 - Other then re-enabling the titlebar and the ribbons, you can change (some) font-families and header sizes. More settings will be implemented in with upcoming updates. React or comment in this [ongoing-improvement-issue regarding which settings you would like to have](https://github.com/chrisgrieser/shimmering-focus/issues/2).
 
 ## Installation
