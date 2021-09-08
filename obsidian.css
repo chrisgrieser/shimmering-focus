@@ -90,7 +90,7 @@ settings:
     title: Heading Fonts
     description: Font used for Headings (H1-H5)
     type: variable-text
-    default: 'Optima, Candara, iA Writer Quattro S Regular"'
+    default: 'Optima, Candara, iA Writer Quattro S Bold"'
   -
     id: longform-font
     title: Longform Notes Font
@@ -114,7 +114,6 @@ settings:
     description: With Shimmering Focus, the Heading Levels alternate between italic/normal to make it easier to distinguish them. You can turn that feature of if you prefer non-italic headings at all heading levels.
     type: class-toggle
     default: false
-  -
 
 */
 
@@ -123,7 +122,7 @@ https://github.com/mgmeyers/obsidian-style-settings*/
 
 
 /* ------------------------------------------------------ */
-/* SHIMMERING FOCUS v. 1.4.2 */
+/* SHIMMERING FOCUS v. 1.4.3 */
 /* A minimalistic, consensed theme with green shimmers as secondary accent.
 Created by @pseudometa (Discord) aka @chrisgrieser (GitHub)
 https://github.com/chrisgrieser/shimmering-focus/ */
