@@ -109,6 +109,12 @@ settings:
     type: class-toggle
     default: false
   -
+    id: no-alternating-header-italics
+    title: No Alternating Header Italics
+    description: With Shimmering Focus, the Heading Levels alternate between italic/normal to make it easier to distinguish them. You can turn that feature of if you prefer non-italic headings at all heading levels.
+    type: class-toggle
+    default: false
+  -
 
 */
 
@@ -117,7 +123,7 @@ https://github.com/mgmeyers/obsidian-style-settings*/
 
 
 /* ------------------------------------------------------ */
-/* SHIMMERING FOCUS v. 1.4 */
+/* SHIMMERING FOCUS v. 1.4.1 */
 /* A minimalistic, consensed theme with green shimmers as secondary accent.
 Created by @pseudometa (Discord) aka @chrisgrieser (GitHub)
 https://github.com/chrisgrieser/shimmering-focus/ */
@@ -183,8 +189,8 @@ so many problems I encountered.
 	--font-monospace: "Input Mono Regular", Menlo;
 	--mermaid-font: var(--font-monospace);
 	--regular-font: "iA Writer Quattro S Regular";
-	--bold-font: "iA Writer QuattroS Bold";
-	--italic-font: "iA Writer QuattroS Italic";
+	--bold-font: "iA Writer Quattro S Bold";
+	--italic-font: "iA Writer Quattro S Italic";
 	--bold-italic-font: "iA Writer Quattro S Bold-Italic";
 	--heading-font: Optima, Candara, "iA Writer Quattro S Regular";
 	--h1-size: 1.7em;
@@ -475,7 +481,7 @@ https://github.com/kepano/obsidian-hider/blob/master/styles.css */
 .status-bar::after {
   padding: 0 0 0 1em;
   color: var(--more-contrast-muted);
-  font-size: 1.1em;
+  font-size: 1em;
 }
 
 .status-bar,
@@ -1568,7 +1574,6 @@ span.cm-hmd-frontmatter {
 	padding-right: 6px !important;
 }
 
-
 /* ------------------------------------------------------ */
 /* Collapse Indicator */
 /* ------------------------------------------------------ */
@@ -1713,7 +1718,6 @@ for all headings to improve distinguishability
 .cm-header-2,
 .markdown-preview-view h2 {
 	font-size: var(--h2-size);
-	font-style: italic;
 }
 .cm-header-3,
 .markdown-preview-view h3{
@@ -1722,7 +1726,6 @@ for all headings to improve distinguishability
 .cm-header-4,
 .markdown-preview-view h4{
 	font-size: var(--h4-size);
-	font-style: italic;
 }
 .cm-header-5,
 .markdown-preview-view h5 {
@@ -1738,6 +1741,14 @@ for all headings to improve distinguishability
 	line-height: 1.1em;
 	margin-top: 1.5em;
 	font-weight: 600;
+}
+
+
+body:not(.no-alternating-header-italics) .cm-header-2,
+body:not(.no-alternating-header-italics) .markdown-preview-view h2,
+body:not(.no-alternating-header-italics) .cm-header-4,
+body:not(.no-alternating-header-italics) .markdown-preview-view h4{
+  font-style: italic;
 }
 
 /* ------------------------------------------------------ */
