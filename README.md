@@ -7,42 +7,47 @@ A minimalistic Obsidian theme focused on readability, condensed information disp
 
 ## Features & Design Principles
 **minimalistic**
-- removes as much clutter as possible, similar to the [hider plugin](https://github.com/kepano/obsidian-hider)
-- intended for use with keyboard shortcuts and/or the command palette (access the settings via `cmd + ,`).
-- optional: add the [Hide URLs snippet](https://raw.githubusercontent.com/chrisgrieser/shimmering-focus/main/Hide%20URLs.css) to hide URLs in edit mode
-- statusbar and headerbar are only displayed on hover
+- removes as much clutter as possible — intended for use with keyboard shortcuts and/or the command palette (access the settings via `cmd + ,`).
+- statusbar and headerbar are visible when hovering
+- You can re-enable the header bar and the ribbons (the thin vertical bars to the far left/right) by using the [Style Settings Plugin](https://github.com/mgmeyers/obsidian-style-settings/).
 
 <img src="https://user-images.githubusercontent.com/73286100/131692972-e523f2d4-40c7-452c-83ac-a7f2fbd546ae.gif" alt="headerbar visible on hover" width=50% height=50%>
 
 
-**functional**
+**Functional**
 - Pseudo-Admonition: `h6` blocks will become a pseudo-admonition box (only works with one-liners though)
 - Multi-Color-Highlighting: surround highlights with `*` or `**` for alternative highlight colors (thanks to @Atlas for this idea!).
-- relationship lines in lists & file explorer
-- wrapping of text in the file explorer
-- active line highlighting
+- Relationship lines in lists & file explorer
+- Wrapping of text in the file explorer
+- Active line highlighting
 - Material Icons to indicate folder and file types
+- See the language of a code block in Preview Mode
 
 <img width=25% height=25% alt="Screenshot 2021-09-03 21 46 20" src="https://user-images.githubusercontent.com/73286100/132058563-94672224-ed07-473d-9403-8a770984b3d2.png">
 
 
-**suited for academic writing**
+**Suited for Academic Writing**
 - [Pandoc citations](https://pandoc.org/MANUAL.html#citations-in-note-styles) (`[@citekey]`) and footnotes are visually emphasized
 - [the alt-text of images is used as caption text](https://gist.github.com/chrisgrieser/4f64b0fc656480ea707d2b45a03acdc0), in line with Pandoc's conversion behavior
 - CSS Styling for the [Longform Plugin](https://github.com/kevboh/longform): serif font, justified & hyphenated text
 
-**condensed**
+**Condensed**
 - uses screen real estate more efficiently to display more information (useful for smaller screens)
 - smaller images in Preview Mode (in Editor Mode, too, when using [Ozan's Image Plugin](https://github.com/ozntel/oz-image-in-editor-obsidian))
 <img src="https://user-images.githubusercontent.com/73286100/131182567-104f85dd-0f99-488d-b511-e45fe8b0486f.png" alt="Screenshot 2021-08-27 22 02 02" width=40% height=40%>  
 
-**accessible**
+**Accessible**
 - increased contrast throughout, especially with the [annoying grey font on light-grey background](https://forum.obsidian.md/t/enhance-default-color-contrast-of-the-icons/23045/3)
 - make [Templater](https://github.com/SilentVoid13/Templater) code more readable
 - minor coloring of bold in dark mode to make it more readable, since bold in dark mode is harder to distinguish form normal text than  in light mode
+- uses [Input Mono](https://input.djr.com/) as default monospace font, because of its increased readability
 
-**subtle design**  
+**Subtle Design**  
 - apart from the points mentioned, the theme pretty much follows Obsidian's default theme, with [iA Writer Quattro](https://github.com/iaolo/iA-Fonts/tree/master/iA%20Writer%20Quattro) as main font and some shimmering green as secondary accent
+
+**Style Settings**
+- support for the [Style Settings Plugin](https://github.com/mgmeyers/obsidian-style-settings/) to customize the theme. 
+- Other then re-enabling the titlebar and the ribbons, you can change (some) font-families and header sizes. More settings will be implemented in with upcoming updates. React or comment in this [ongoing-improvement-issue regarding which settings you would like to have](https://github.com/chrisgrieser/shimmering-focus/issues/2).
 
 ## Installation
 You can find *Shimmering Focus* in Obsidian's community themes browser under `Settings ➞ Appearance ➞ Themes`.
