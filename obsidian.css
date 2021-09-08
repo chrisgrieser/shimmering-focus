@@ -96,7 +96,7 @@ settings:
     title: Longform Notes Font
     description: Font used in folders marked as Longform Project (Longform Plugin)
     type: variable-text
-    default: Garamond, Times
+    default: Palatino, Garamond, Times
   -
     id: miscellaneous
     title: Miscellaneous
@@ -123,7 +123,7 @@ https://github.com/mgmeyers/obsidian-style-settings*/
 
 
 /* ------------------------------------------------------ */
-/* SHIMMERING FOCUS v. 1.4.1 */
+/* SHIMMERING FOCUS v. 1.4.2 */
 /* A minimalistic, consensed theme with green shimmers as secondary accent.
 Created by @pseudometa (Discord) aka @chrisgrieser (GitHub)
 https://github.com/chrisgrieser/shimmering-focus/ */
@@ -191,7 +191,8 @@ so many problems I encountered.
 	--regular-font: "iA Writer Quattro S Regular";
 	--bold-font: "iA Writer Quattro S Bold";
 	--italic-font: "iA Writer Quattro S Italic";
-	--bold-italic-font: "iA Writer Quattro S Bold-Italic";
+	--longform-font: Palatino, Garamond, Times;
+  --bold-italic-font: "iA Writer Quattro S Bold-Italic";
 	--heading-font: Optima, Candara, "iA Writer Quattro S Regular";
 	--h1-size: 1.7em;
 	--h2-size: 1.5em;
@@ -1680,7 +1681,7 @@ span.cm-link.cm-hmd-footnote {
 	height: 1.5px;
 	/* makes room for "---" for ease of typing */
 	width: calc(100% - 2.1rem);
-	left: 2.6rem;
+	left: 2.65rem;
 	top: 47%;
 	}
 
