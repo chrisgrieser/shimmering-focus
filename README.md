@@ -47,7 +47,7 @@ A minimalistic Obsidian theme focused on readability, condensed information disp
 
 **Style Settings**
 - Support for the [Style Settings Plugin](https://github.com/mgmeyers/obsidian-style-settings/) to customize the theme. 
-- Other then re-enabling the titlebar and the ribbons, you can change font-families and header sizes. More settings will be implemented in with upcoming updates. React or comment in this [ongoing-improvement-issue regarding which settings you would like to have](https://github.com/chrisgrieser/shimmering-focus/issues/2).
+- Other then re-enabling the titlebar and the ribbons, you can change font-families and header sizes. More settings will be implemented in with upcoming updates. React or comment in this [issue regarding which settings you would like to have](https://github.com/chrisgrieser/shimmering-focus/issues/2).
 
 ## Installation
 You can find *Shimmering Focus* in Obsidian's community themes browser under `Settings ➞ Appearance ➞ Themes`.
