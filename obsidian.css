@@ -86,9 +86,9 @@ settings:
     type: variable-text
     default: '"iA Writer Quattro S", Helvetica'
   -
-    id: no-decreased-letter-spacing
+    id: not-ia-writer-font
     title: No decreased letter spacing
-    description: Turn off the decreased letter-spacing applied by this theme for iA Writer fonts
+    description: Turn off the decreased letter-spacing used by this theme for iA Writer Quattro as regular font.
     type: class-toggle
     default: false
   -
@@ -100,6 +100,12 @@ settings:
   -
     id: heading-font
     title: Heading Font
+    description: Font used for Headings (H1-H5)
+    type: variable-text
+    default: 'Optima, Candara, "iA Writer Quattro S", Helvetica'
+  -
+    id: not-optima-font
+    title: Turn off the increased letter spacing for Headings with Optima Font.
     description: Font used for Headings (H1-H5)
     type: variable-text
     default: 'Optima, Candara, "iA Writer Quattro S", Helvetica'
@@ -140,7 +146,7 @@ https://github.com/mgmeyers/obsidian-style-settings*/
 
 
 /* ------------------------------------------------------ */
-/* SHIMMERING FOCUS v. 1.5 */
+/* SHIMMERING FOCUS v. 1.5.1 */
 /* A minimalistic, consensed theme with green shimmers as secondary accent.
 Created by @pseudometa (Discord) aka @chrisgrieser (GitHub)
 https://github.com/chrisgrieser/shimmering-focus/ */
@@ -234,19 +240,20 @@ so many problems I encountered.
 
 /* decreased letter spacing, mainly applied to counteract the
 (unnecessarily huge) spacing from iA Writer Quattro */
-body:not(.no-decreased-letter-spacing) .markdown-preview-view,
-body:not(.no-decreased-letter-spacing) .cm-s-obsidian,
-body:not(.no-decreased-letter-spacing) .view-header-title {
+body:not(.not-ia-writer-font) .markdown-preview-view,
+body:not(.not-ia-writer-font) .cm-s-obsidian,
+body:not(.not-ia-writer-font) .view-header-title {
   letter-spacing: -0.02em;
 }
-body:not(.no-decreased-letter-spacing) .nav-file-title,
-body:not(.no-decreased-letter-spacing) .nav-folder-title,
-body:not(.no-decreased-letter-spacing) .status-bar-item {
+body:not(.not-ia-writer-font) .nav-file-title,
+body:not(.not-ia-writer-font) .nav-folder-title,
+body:not(.not-ia-writer-font) .status-bar-item {
 	letter-spacing: -0.04em;
 }
-.markdown-preview-view strong,
-.cm-strong {
-  /* fixes weight for iA Writer Quattro */
+
+/* fixes weight for iA Writer Quattro */
+body:not(.not-ia-writer-font) .markdown-preview-view strong,
+body:not(.not-ia-writer-font) .cm-strong {
   text-rendering: geometricPrecision;
 }
 
@@ -1692,8 +1699,8 @@ for all headings to improve distinguishability
 .markdown-preview-view h4,
 .markdown-preview-view h5{
 	font-family: var(--heading-font);
-	letter-spacing: 0.9px;
 }
+
 .cm-header-1,
 .markdown-preview-view h1 {
 	font-size: var(--h1-size);
@@ -1720,12 +1727,24 @@ for all headings to improve distinguishability
 .markdown-preview-view h3,
 .markdown-preview-view h4,
 .markdown-preview-view h5 {
-	margin-bottom: 0em;
 	line-height: 1.1em;
 	margin-top: 1.5em;
-	font-weight: 600;
 }
 
+body:not(.not-optima-font)
+.cm-header-1,
+.cm-header-2,
+.cm-header-3,
+.cm-header-4,
+.cm-header-5,
+.markdown-preview-view h1,
+.markdown-preview-view h2,
+.markdown-preview-view h3,
+.markdown-preview-view h4,
+.markdown-preview-view h5{
+  font-weight: 600;
+  letter-spacing: 0.5px;
+}
 
 body:not(.no-alternating-header-italics) .cm-header-2,
 body:not(.no-alternating-header-italics) .markdown-preview-view h2,
@@ -1820,6 +1839,12 @@ blockquote {
 }
 .tree-item-self:hover .graph-control-section-header{
 	color: var(--text-alt-accent);
+}
+
+/*local graph*/
+.graph-controls.is-close{
+  background-color: var(--background-secondary);
+  padding: 0;
 }
 
 
