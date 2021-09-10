@@ -146,12 +146,12 @@ https://github.com/mgmeyers/obsidian-style-settings*/
 
 
 /* ------------------------------------------------------ */
-/* SHIMMERING FOCUS v. 1.5.1 */
+/* SHIMMERING FOCUS v. 1.6 */
 /* A minimalistic, consensed theme with green shimmers as secondary accent.
 Created by @pseudometa (Discord) aka @chrisgrieser (GitHub)
 https://github.com/chrisgrieser/shimmering-focus/ */
 /* ---------------------------------------------------------
-Thanks to @kepano, @Mara, @Chetachie, @Eleanor Konik, @SlRvB, @Atlas, @Grimdewaldt,
+Thanks to @kepano, @Mara, @Chetachie, @Eleanor Konik, @Atlas, @Grimdewaldt,
 and @jdaniel for some CSS snippets, and thanks to @NothingIsLost, @só erick mesmo,
 @javalent, and many others from the #css-themes Discord Channel who helped me figure
 out CSS in this very first CSS project of mine. Special thanks to @SlRvb who solved
@@ -182,7 +182,7 @@ so many problems I encountered.
 /* ------------------------------------------------------ */
 
 :root {
-	--active-line: rgba(173, 174, 152, 0.2);
+	--active-line: #adae9833;
 	--cursor-color: #a09beb;
 	--code-color: #048966;
 	--bold-in-darkmode: #607892;
@@ -192,9 +192,9 @@ so many problems I encountered.
 	--highlight-alt1: #ffff0066;
 	--highlight-alt2: #00ffff66;
 
-	--regular-font: "iA Writer Quattro S", Helvetica;
+	--regular-font: "iA Writer Quattro S", "Helvetica Neue";
 	--font-monospace: "Input Mono", Menlo;
-	--heading-font: Optima, Candara, "iA Writer Quattro S", Helvetica;
+	--heading-font: Optima, Candara, "iA Writer Quattro S", "Helvetica Neue";
 	--mermaid-font: var(--font-monospace);
 	--longform-font: Palatino, Garamond, Times;
 	--h1-size: 1.7em;
@@ -1500,12 +1500,12 @@ span.cm-em.cm-highlight {
 /* YAML-Header in Edit Mode */
 span.cm-hmd-frontmatter {
 	color: var(--text-muted) !important;
-	font-size: 1em;
+	font-size: 0.9em;
 }
 
 /* harmonize with styling of Horizontal Lines (HR) */
 .cm-def.cm-hmd-frontmatter{
-	letter-spacing: 0.12em;
+	letter-spacing: 0.2em;
 	color: var(--text-muted) !important;
 }
 
@@ -1668,7 +1668,6 @@ span.cm-link.cm-hmd-footnote {
 	position: absolute;
 	background:var(--text-muted);
 	height: 1.5px;
-	/* makes room for "---" for ease of typing */
 	width: calc(100% - 2.1rem);
 	left: 2.65rem;
 	top: 47%;
@@ -1795,11 +1794,26 @@ Based on some CSS from @SlRvb & @Eleanor Konik */
 /* BLOCKQUOTE */
 /* ------------------------------------------------------ */
 
+/* blockquote in edit mode */
+/* more redable and easier to distinguish from rest of text */
+.cm-quote{
+  color: var(--more-contrast-muted) !important;
+  opacity: 0.9;
+  font-style: italic;
+  background-color: var(--background-secondary);
+}
+.cm-formatting.cm-formatting-quote{
+  font-weight: 600;
+  font-style: unset;
+  background-color: unset;
+}
+
+/* blockquote in preview */
 /* Add quotation character before quote */
 blockquote:before {
 	font: 20px Times;
 	content: "”";
-	font-size: 4em;
+	font-size: 3.5em;
 	line-height: 0;
 	vertical-align: -0.4em;
 	color: var(--more-contrast-muted);
@@ -1847,6 +1861,22 @@ blockquote {
   padding: 0;
 }
 
+/* hovered */
+.graph-view.color-fill-highlight,
+.graph-view.color-line-highlight{
+  color: var(--text-alt-accent);
+}
+
+/* edges */
+.graph-view.color-line,
+.graph-view.color-arrow{
+  color: var(--more-contrast-muted);
+}
+
+
+.graph-view.color-circle{
+  color: blue !important;
+}
 
 /* ------------------------------------------------------ */
 /* IMAGES */
