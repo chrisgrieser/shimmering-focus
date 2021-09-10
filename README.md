@@ -48,8 +48,11 @@ A minimalistic Obsidian theme focused on readability, condensed information disp
 - Stylistically, the theme pretty much follows Obsidian's default theme, with [iA Writer Quattro](https://github.com/iaolo/iA-Fonts/tree/master/iA%20Writer%20Quattro) as main font and some shimmering green as secondary accent.
 
 **Style Settings**
-- Support for the [Style Settings Plugin](https://github.com/mgmeyers/obsidian-style-settings/) to customize the theme. 
-- Other then re-enabling the titlebar and the ribbons, you can change font-families and header sizes. More settings will be implemented in with upcoming updates. React or comment in this [issue regarding which settings you would like to have](https://github.com/chrisgrieser/shimmering-focus/issues/2).
+- This themes supports the [Style Settings Plugin](https://github.com/mgmeyers/obsidian-style-settings/) for customization.
+- Other then re-enabling the titlebar and the ribbons, you can also change basic features like font-families and header sizes. More settings will be implemented in with upcoming updates. React/Comment in this [issue regarding which settings you would like to have](https://github.com/chrisgrieser/shimmering-focus/issues/2).
+
+<img width=40% height=40% alt="Screenshot 2021-09-10 22 38 50" src="https://user-images.githubusercontent.com/73286100/132916198-9a1f164b-1f8d-4d65-ba80-bee1d0c41bf3.png">
+
 
 ## Installation
 You can find *Shimmering Focus* in Obsidian's community themes browser under `Settings ➞ Appearance ➞ Themes`.
