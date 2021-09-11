@@ -209,7 +209,7 @@ so many problems I encountered.
 .theme-light {
 	--text-alt-accent: #02ac7d;
 	--editor-alt-accent: #009a72;
-	--selection-color: #e8ddff;
+	--selection-color: #e8ddffDD;
 	--more-contrast-muted: #5E5E5E;
 	--nestlinecolor: #777;
 }
@@ -217,7 +217,7 @@ so many problems I encountered.
 .theme-dark {
 	--text-alt-accent: #02ac7d;
 	--editor-alt-accent: #02ac7d;
-	--selection-color: #3c243b;
+	--selection-color: #3c243bDD;
 	--more-contrast-muted: #BBB;
 	--nestlinecolor: #DDD;
 }
@@ -1473,24 +1473,20 @@ https://github.com/Mara-Li/Obsidian-Snippet-collection */
 /* Yellow Highlight */
 span.cm-strong.cm-highlight{
   font-weight: normal;
-  font-family: var(--regular-font);
   background-color: var(--highlight-alt1);
 }
 .markdown-preview-view strong > mark{
   font-weight: normal !important;
-  font-family: var(--regular-font) !important;
   background-color: var(--highlight-alt1) !important;
 }
 
 /* Cyan Highlight */
 span.cm-em.cm-highlight {
   font-style: initial;
-  font-family: var(--regular-font);
   background-color: var(--highlight-alt2);
 }
 .markdown-preview-view em > mark {
   font-style: initial !important;
-  font-family: var(--regular-font) !important;
   background-color: var(--highlight-alt2) !important;
 }
 
