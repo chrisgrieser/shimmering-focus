@@ -47,9 +47,9 @@ A minimalistic Obsidian theme focused on readability, condensed information disp
 **Subtle Design**  
 - Stylistically, the theme pretty much follows Obsidian's default theme, with [iA Writer Quattro](https://github.com/iaolo/iA-Fonts/tree/master/iA%20Writer%20Quattro) as main font and some shimmering green as secondary accent.
 
-**Style Settings**
+**Style Settings Plugin**
 - This themes supports the [Style Settings Plugin](https://github.com/mgmeyers/obsidian-style-settings/) for customization.
-- Other then re-enabling the titlebar and the ribbons, you can also change basic features like font-families and header sizes. More settings will be implemented in with upcoming updates. React/Comment in this [issue regarding which settings you would like to have](https://github.com/chrisgrieser/shimmering-focus/issues/2).
+- Other then re-enabling the titlebar and the ribbons, you can also change basic features like font-families and header sizes. More settings will be implemented with upcoming updates. React/Comment in this [issue regarding which settings you would like to have](https://github.com/chrisgrieser/shimmering-focus/issues/2).
 
 <img width=40% height=40% alt="Screenshot 2021-09-10 22 38 50" src="https://user-images.githubusercontent.com/73286100/132916198-9a1f164b-1f8d-4d65-ba80-bee1d0c41bf3.png">
 
@@ -62,4 +62,4 @@ Alternatively, you can also install the theme manually by downloading the CSS fi
 ## Credits
 Thanks to @kepano, @Mara, @Chetachie, @Eleanor Konik, @SlRvB, @Atlas, @Grimdewaldt, and @jdaniel for some CSS snippets, and thanks to @NothingIsLost, @só erick mesmo, @javalent, and many others from the #css-themes Discord, Channel who helped me figure out CSS in this very first CSS project of mine. Special thanks to @SlRvb who solved so many problems I encountered.
 
-This workflow has been created by @pseudometa ([Discord](https://discord.gg/veuWUTm)) aka [@pseudo_meta (Twitter)](https://twitter.com/pseudo_meta), aka Chris Grieser (rl). If you find this theme to be useful, feel free to donate [via PayPal](https://www.paypal.com/paypalme/ChrisGrieser). In my day job, I am a PhD student in sociology, studying the governance of the app economy. If you are interested in this subject, check out [my academic homepage](https://chris-grieser.de/) and get in touch.
+This workflow has been created by @pseudometa ([Discord](https://discord.gg/veuWUTm)) aka [@pseudo_meta (Twitter)](https://twitter.com/pseudo_meta) aka Chris Grieser (rl). If you find this theme to be useful, feel free to donate [via PayPal](https://www.paypal.com/paypalme/ChrisGrieser). In my day job, I am a PhD student in sociology, studying the governance of the app economy. If you are interested in this subject, check out [my academic homepage](https://chris-grieser.de/) and get in touch.
