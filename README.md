@@ -16,12 +16,12 @@ A minimalistic Obsidian theme focused on readability, condensed information disp
 
 **Functional**
 - Pseudo-Admonition: `h6` blocks will become a pseudo-admonition box (only works with one-liners though)
-- Multi-Color-Highlighting: surround highlights with `*` or `**` for alternative highlight colors (thanks to @Atlas for this idea!).
-- Relationship lines in lists & file explorer
+- Multi-Color-Highlighting: surround highlights with `*` or `**` for alternative highlight colors (thanks to @Atlas for this!)
+- Relationship lines in unordered lists & file explorer
 - Wrapping of text in the file explorer
 - Active line highlighting
 - Material Icons to indicate folder and file types
-- See the language of a code block in Preview Mode
+- Display of the language of a code block in Preview Mode
 
 <img width=25% height=25% alt="Screenshot 2021-09-03 21 46 20" src="https://user-images.githubusercontent.com/73286100/132058563-94672224-ed07-473d-9403-8a770984b3d2.png">
 
