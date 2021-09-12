@@ -146,7 +146,7 @@ https://github.com/mgmeyers/obsidian-style-settings*/
 
 
 /* ------------------------------------------------------ */
-/* SHIMMERING FOCUS v. 1.6.1 */
+/* SHIMMERING FOCUS v. 1.7 */
 /* A minimalistic, consensed theme with green shimmers as secondary accent.
 Created by @pseudometa (Discord) aka @chrisgrieser (GitHub)
 https://github.com/chrisgrieser/shimmering-focus/ */
@@ -1754,50 +1754,68 @@ body:not(.no-alternating-header-italics) .markdown-preview-view h4{
 /* For H6 only (without following blocks or line breaks).
 Based on some CSS from @SlRvb & @Eleanor Konik */
 
+.markdown-preview-view h6 .heading-collapse-indicator.collapse-indicator.collapse-icon,
 .cm-header-6.cm-formatting.cm-formatting-header{
 	display: none;
 }
+
+.markdown-preview-view h6:before,
 .HyperMD-header.HyperMD-header-6.CodeMirror-line::before{
-	content: "ℹ️ "
-}
-.HyperMD-header.HyperMD-header-6.CodeMirror-line{
-	background-color: var(--background-secondary);
-	border-left: 5px solid var(--text-muted) !important;
+  padding-left: 0.5em;
+  content: "ℹ️";
+  padding-right: 0.5em;
 }
 
+.cm-header.cm-header-6{
+  font-family: var(--regular-font);
+  font-size: 1em;
+}
+
+
+.HyperMD-header.HyperMD-header-6.CodeMirror-line,
 .markdown-preview-view h6 {
 	padding-left: 0.5em;
 	padding-bottom: 0.5em;
 	padding-top: 0.5em;
-	background-color: var(--background-secondary);
+	background-color: var(--background-secondary-alt);
 	margin-bottom: 0;
-	border-left: 7px solid var(--text-muted);
+	border-left: 6px solid var(--text-muted) !important;
 	border-radius: 3px;
 	font-size: 1em !important;
 	font-style: normal;
 	font-weight: 500;
+  font-family: var(--regular-font);
 	color: var(--text-normal) !important;
 }
-.markdown-preview-view h6 .heading-collapse-indicator.collapse-indicator.collapse-icon {
-	display: none;
-}
-.markdown-preview-view h6:before {
-	content: "ℹ️";
-	padding-right: 0.5em;
-}
+
 
 /* ------------------------------------------------------ */
 /* BLOCKQUOTE */
 /* ------------------------------------------------------ */
 
 /* blockquote in edit mode */
-/* more redable and easier to distinguish from rest of text */
 .cm-quote{
   color: var(--more-contrast-muted) !important;
-  opacity: 0.9;
   font-style: italic;
-  background-color: var(--background-secondary);
 }
+
+.HyperMD-quote.HyperMD-quote-1.CodeMirror-line{
+  text-align: justify;
+  hyphens: auto;
+  background-color: var(--background-secondary);
+  border-radius: 8px;
+  padding-top: 0.4em;
+  padding-bottom: 0.5em;
+  padding-right: 0.8em;
+}
+
+/* fix interaction with active line */
+.CodeMirror-activeline .HyperMD-quote.HyperMD-quote-1.CodeMirror-line {
+  opacity: 0.9;
+  border-radius: 0px !important;
+}
+
+/* the ">"*/
 .cm-formatting.cm-formatting-quote{
   font-weight: 600;
   font-style: unset;
@@ -1832,6 +1850,7 @@ blockquote {
 	text-align: justify;
 	hyphens: auto;
 	color: var(--more-contrast-muted);
+  background-color: var(--background-primary-alt);
 }
 
 /* ------------------------------------------------------ */
@@ -1878,25 +1897,27 @@ blockquote {
 /* IMAGES */
 /* ------------------------------------------------------ */
 /* Image Alt as Caption */
+/* useful as this is also how Pandoc converts */
 .image-embed[alt]:after {
 	content: attr(alt);
 	display: block;
 	margin: 0rem 1rem 2rem 0rem;
 	font-size: 90%;
+  font-style: italic;
 	line-height: 1.1;
 	color: var(--text-faint);
 }
 
+/* restrict image width in Preview Mode*/
 .view-content .markdown-preview-view img {
-	/* restrict image width in  Preview Mode*/
-	max-width: 60%;
-	border: 0.25em solid var(--background-secondary-alt);
-	border-radius: 5px;
+	max-width: 50%;
+  /* images in lists get proper bullet points */
+  display: block;
 }
 
-/* Ozan's image plugin: ➞ restrict image width in editor mode */
+/* restrict image width in editor mode (Ozan's image editor plugin)*/
 div.oz-image-widget > img {
-	max-width: 60% !important;
+	max-width: 40% !important;
 }
 
 /* ------------------------------------------------------ */
