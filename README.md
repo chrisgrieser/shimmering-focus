@@ -1,12 +1,12 @@
 # Shimmering Focus ❖
-A minimalistic Obsidian theme focused on readability, condensed information display, and providing a few useful functions.
+A minimalistic Obsidian theme focused on readability, condensed information display, and providing some useful functionalities.
 
 ![](https://img.shields.io/github/v/release/chrisgrieser/shimmering-focus?label=Latest%20Release&style=plastic)
 
 <img src="https://raw.githubusercontent.com/chrisgrieser/shimmering-focus/main/dual-theme-screenshot.png" alt="Screenshot" width=75% height=75%>
 
 ## Features & Design Principles
-**minimalistic**
+**Minimalistic**
 - removes as much clutter as possible — intended for use with keyboard shortcuts and/or the command palette (access the settings via `cmd + ,`).
 - statusbar and headerbar are visible when hovering
 - You can re-enable the header bar and the ribbons (the thin vertical bars to the far left/right) by using the [Style Settings Plugin](https://github.com/mgmeyers/obsidian-style-settings/).
