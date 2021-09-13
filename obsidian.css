@@ -9,6 +9,7 @@ settings:
     description: There are no settings for the status bar and header bar as they are visible upon hovering.
     type: heading
     level: 2
+    collapsed: false
   -
     id: show-titlebar
     title: Show Title Bar of Obsidian Window
@@ -139,6 +140,12 @@ settings:
     description: Turn off the coloring of Pandoc Citations [@citekey] done by this theme.
     type: class-toggle
     default: false
+  -
+    id: hide-index-files
+    title: Hide files named "Index.md" from File Explorer.
+    description: Files named that way are created by some plugins and in many cases should not be touched (e.g. Longform Plugin). If you use such a plugin, you can hide those files.
+    type: class-toggle
+    default: false
 
 */
 /* above: settings for the Style settings plugin
@@ -146,7 +153,7 @@ https://github.com/mgmeyers/obsidian-style-settings*/
 
 
 /* ------------------------------------------------------ */
-/* SHIMMERING FOCUS v. 1.7 */
+/* SHIMMERING FOCUS v. 1.7.1 */
 /* A minimalistic, consensed theme with green shimmers as secondary accent.
 Created by @pseudometa (Discord) aka @chrisgrieser (GitHub)
 https://github.com/chrisgrieser/shimmering-focus/ */
@@ -667,6 +674,7 @@ pre[class~="language-txt"]:after {
 /* hovered links in alt accent */
 .cm-string.cm-url:hover:not(.cm-formatting),
 .cm-hmd-internal-link:hover,
+.modal-content a:hover,
 .markdown-preview-view a.footnote-link:hover,
 .markdown-preview-view a.internal-link:hover,
 .markdown-preview-view a.external-link:hover {
@@ -680,10 +688,6 @@ pre[class~="language-txt"]:after {
 	text-decoration: none !important;
 }
 
-/* links in modal windows */
-.modal-content a:hover {
-	color: var(--editor-alt-accent);
-}
 
 /* tags */
 .cm-hashtag,
@@ -695,6 +699,7 @@ a.tag {
 .cm-hashtag:hover,
 a.tag:hover {
 	font-weight: 900 !important;
+  text-shadow: 0.5px 0.5px;
 }
 
 
@@ -754,9 +759,10 @@ a.tag:hover {
 }
 
 /* hide index file, which shouldn't be messed with anyway */
-.nav-file-title[data-path$="Index.md"] {
+body:not(:not(.hide-index-files)) .nav-file-title[data-path$="Index.md"] {
 	display: none;
 }
+
 
 /* ------------------------------------------------------ */
 /* Command Palette & QuickSwitch */
@@ -1201,6 +1207,7 @@ https://github.com/Mara-Li/Obsidian-Snippet-collection */
 	content: "present_to_all ";
 }
 
+.nav-file-title[data-path*="Templater Templates"] .nav-file-title-content:before,
 .nav-file-title[data-path$="js"] .nav-file-title-content:before {
 	content: "code ";
 }
