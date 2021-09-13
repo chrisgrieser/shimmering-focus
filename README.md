@@ -9,7 +9,7 @@ A minimalistic Obsidian theme focused on readability, condensed information disp
 **Minimalistic**
 - removes as much clutter as possible — intended for use with keyboard shortcuts and/or the command palette (access the settings via `cmd + ,`).
 - statusbar and headerbar are visible when hovering
-- You can re-enable the header bar and the ribbons (the thin vertical bars to the far left/right) by using the [Style Settings Plugin](https://github.com/mgmeyers/obsidian-style-settings/).
+- You can permanently re-enable the title bar, header bar, and ribbons (the thin vertical bars to the far left/right) by using the [Style Settings Plugin](https://github.com/mgmeyers/obsidian-style-settings/).
 
 <img src="https://user-images.githubusercontent.com/73286100/131692972-e523f2d4-40c7-452c-83ac-a7f2fbd546ae.gif" alt="headerbar visible on hover" width=50% height=50%>
 
@@ -49,7 +49,7 @@ A minimalistic Obsidian theme focused on readability, condensed information disp
 
 **Style Settings Plugin**
 - This themes supports the [Style Settings Plugin](https://github.com/mgmeyers/obsidian-style-settings/) for customization.
-- Other then re-enabling the titlebar and the ribbons, you can also change basic features like font-families and header sizes. More settings will be implemented with upcoming updates. React/Comment in this [issue regarding which settings you would like to have](https://github.com/chrisgrieser/shimmering-focus/issues/2).
+- Other then re-enabling the title bar, header bar, and ribbons, you can also change basic features like font-families and header sizes. More settings will be implemented with upcoming updates. React/Comment in this [issue regarding which settings you would like to have](https://github.com/chrisgrieser/shimmering-focus/issues/2).
 
 <img width=40% height=40% alt="Screenshot 2021-09-10 22 38 50" src="https://user-images.githubusercontent.com/73286100/132916198-9a1f164b-1f8d-4d65-ba80-bee1d0c41bf3.png">
 
