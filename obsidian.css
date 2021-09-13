@@ -17,6 +17,12 @@ settings:
     description: Re-enable this to have a titlebar, e.g. for moving the Obsidian window
     default: false
   -
+    id: show-header-bar
+    title: Show the Header Bar
+    type: class-toggle
+    description: The Header bar horizontal bar on top of the editor
+    default: false
+  -
     id: show-ribbons
     title: Show Ribbons
     type: class-toggle
@@ -153,7 +159,7 @@ https://github.com/mgmeyers/obsidian-style-settings*/
 
 
 /* ------------------------------------------------------ */
-/* SHIMMERING FOCUS v. 1.7.1 */
+/* SHIMMERING FOCUS v. 1.8 */
 /* A minimalistic, consensed theme with green shimmers as secondary accent.
 Created by @pseudometa (Discord) aka @chrisgrieser (GitHub)
 https://github.com/chrisgrieser/shimmering-focus/ */
@@ -378,11 +384,10 @@ https://github.com/kepano/obsidian-hider/blob/master/styles.css */
 	padding-top:  0.1em;
 }
 
-/* show only on hover */
-.view-content {
-	height: 100%;
-}
-.view-header{
+/* show only on hover, when writing in the header bar,
+or when enabled by the style settings plugin */
+
+body:not(.show-header-bar) .view-header {
  	height: 0.9em;
 	transition: 300ms;
 	border-bottom: none !important;
@@ -391,22 +396,33 @@ https://github.com/kepano/obsidian-hider/blob/master/styles.css */
 .view-header-title-container::after{
 	display: none;
 }
-.view-header-icon,
-.view-action svg,
-.view-header-title {
+body:not(.show-header-bar) .view-header-icon,
+body:not(.show-header-bar) .view-action svg,
+body:not(.show-header-bar) .view-header-title {
 	opacity: 0;
 	color: var(--more-contrast-muted);
 }
-.view-header:hover{
-	height: 1.9em;
+
+/*thanks to @só erick mesmo for the ":focus-within" idea*/
+body:not(:not(.show-header-bar)) .view-header,
+body:not(.show-header-bar) .view-header:hover,
+body:not(.show-header-bar) .view-header:focus-within{
+	height: 1.9em !important;
 	background-color: var(--background-secondary) !important;
 	border-bottom: 2px solid var(--background-secondary-alt) !important;
 	transition: 300ms;
 }
 .view-header:hover .view-header-icon,
 .view-header:hover .view-action svg,
-.view-header:hover .view-header-title{
+.view-header:hover .view-header-title,
+.view-header:focus-within .view-header-icon,
+.view-header:focus-within .view-action svg,
+.view-header:focus-within .view-header-title{
 	opacity: 1;
+}
+
+.view-content {
+  height: 100%;
 }
 
 /* hover & active coloring */
