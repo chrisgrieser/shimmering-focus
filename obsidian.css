@@ -6,7 +6,7 @@ settings:
   -
     id: show-hide-elements
     title: Show/Hide Elements
-    description: There are no settings for the status bar and header bar as they are visible upon hovering.
+    description: The status becomes visible upon hovering.
     type: heading
     level: 2
     collapsed: false
@@ -20,7 +20,7 @@ settings:
     id: show-header-bar
     title: Show the Header Bar
     type: class-toggle
-    description: The Header bar horizontal bar on top of the editor
+    description: When false, the Header bar is still visible upon focus and hover
     default: false
   -
     id: show-ribbons
@@ -159,16 +159,23 @@ https://github.com/mgmeyers/obsidian-style-settings*/
 
 
 /* ------------------------------------------------------ */
-/* SHIMMERING FOCUS v. 1.8 */
-/* A minimalistic, consensed theme with green shimmers as secondary accent.
+/* SHIMMERING FOCUS v. 1.8.1
 Created by @pseudometa (Discord) aka @chrisgrieser (GitHub)
 https://github.com/chrisgrieser/shimmering-focus/ */
 /* ---------------------------------------------------------
-Thanks to @kepano, @Mara, @Chetachie, @Eleanor Konik, @Atlas, @Grimdewaldt,
-and @jdaniel for some CSS snippets, and thanks to @NothingIsLost, @só erick mesmo,
-@javalent, and many others from the #css-themes Discord Channel who helped me figure
-out CSS in this very first CSS project of mine. Special thanks to @SlRvb who solved
-so many problems I encountered.
+For guidance and/or CSS snippets, thanks to
+- @kepano
+- @Mara
+- @Chetachie
+- @Eleanor Konik
+- @Atlas
+- @Grimdewaldt,
+- @jdaniel
+- @só erick mesmo
+- @NothingIsLost
+- @javalent
+- @gee
+Special thanks to @SlRvb
 --------------------------------------------------------- */
 
 /* ------------------------------------------------------ */
@@ -403,7 +410,7 @@ body:not(.show-header-bar) .view-header-title {
 	color: var(--more-contrast-muted);
 }
 
-/*thanks to @só erick mesmo for the ":focus-within" idea*/
+/*thanks to @só erick mesmo for ":focus-within"*/
 body:not(:not(.show-header-bar)) .view-header,
 body:not(.show-header-bar) .view-header:hover,
 body:not(.show-header-bar) .view-header:focus-within{
@@ -1775,7 +1782,7 @@ body:not(.no-alternating-header-italics) .markdown-preview-view h4{
 /* Pseudo Admonitions (only for one-liners) */
 /* ------------------------------------------------------ */
 /* For H6 only (without following blocks or line breaks).
-Based on some CSS from @SlRvb & @Eleanor Konik */
+Based on some CSS from @SlRvb, @gee & @Eleanor Konik */
 
 .markdown-preview-view h6 .heading-collapse-indicator.collapse-indicator.collapse-icon,
 .cm-header-6.cm-formatting.cm-formatting-header{
@@ -1784,8 +1791,8 @@ Based on some CSS from @SlRvb & @Eleanor Konik */
 
 .markdown-preview-view h6:before,
 .HyperMD-header.HyperMD-header-6.CodeMirror-line::before{
-  padding-left: 0.5em;
   content: "ℹ️";
+  padding-left: 0.5em;
   padding-right: 0.5em;
 }
 
@@ -1816,7 +1823,7 @@ Based on some CSS from @SlRvb & @Eleanor Konik */
 /* BLOCKQUOTE */
 /* ------------------------------------------------------ */
 
-/* blockquote in edit mode */
+/* BLOCKQUOTE IN EDIT MODE */
 .cm-quote{
   color: var(--more-contrast-muted) !important;
   font-style: italic;
@@ -1832,10 +1839,10 @@ Based on some CSS from @SlRvb & @Eleanor Konik */
   padding-right: 0.8em;
 }
 
-/* fix interaction with active line */
+/* when blockquote is also active line */
 .CodeMirror-activeline .HyperMD-quote.HyperMD-quote-1.CodeMirror-line {
-  opacity: 0.9;
   border-radius: 0px !important;
+  background-color: var(--active-line);
 }
 
 /* the ">"*/
@@ -1845,7 +1852,7 @@ Based on some CSS from @SlRvb & @Eleanor Konik */
   background-color: unset;
 }
 
-/* blockquote in preview */
+/* BLOCKQUOTE IN PREVIEW */
 /* Add quotation character before quote */
 blockquote:before {
 	font: 20px Times;
