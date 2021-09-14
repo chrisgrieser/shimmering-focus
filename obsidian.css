@@ -159,23 +159,22 @@ https://github.com/mgmeyers/obsidian-style-settings*/
 
 
 /* ------------------------------------------------------ */
-/* SHIMMERING FOCUS v. 1.8.1
+/* SHIMMERING FOCUS v. 1.8.2
 Created by @pseudometa (Discord) aka @chrisgrieser (GitHub)
 https://github.com/chrisgrieser/shimmering-focus/ */
 /* ---------------------------------------------------------
-For guidance and/or CSS snippets, thanks to
+For help and/or CSS snippets, thanks to:
 - @kepano
 - @Mara
 - @Chetachie
 - @Eleanor Konik
 - @Atlas
-- @Grimdewaldt,
+- @Grimdewaldt
 - @jdaniel
 - @só erick mesmo
 - @NothingIsLost
 - @javalent
-- @gee
-Special thanks to @SlRvb
+- @SlRvb
 --------------------------------------------------------- */
 
 /* ------------------------------------------------------ */
@@ -1829,14 +1828,23 @@ Based on some CSS from @SlRvb, @gee & @Eleanor Konik */
   font-style: italic;
 }
 
-.HyperMD-quote.HyperMD-quote-1.CodeMirror-line{
+.HyperMD-quote.HyperMD-quote-1{
   text-align: justify;
   hyphens: auto;
-  background-color: var(--background-secondary);
+  color: var(--text-normal);
   border-radius: 8px;
   padding-top: 0.4em;
   padding-bottom: 0.5em;
   padding-right: 0.8em;
+}
+
+/* fixes color when text is selected */
+/*https://forum.obsidian.md/t/inline-code-occludes-text-selection-and-vim-cursor/11552/10?u=pseudometa*/
+.theme-light .HyperMD-quote.HyperMD-quote-1{
+  background-color: rgba(0, 0, 0, 0.07) !important;
+}
+.theme-dark .HyperMD-quote.HyperMD-quote-1{
+  background-color: rgba(0, 0, 0, 0.35) !important;
 }
 
 /* when blockquote is also active line */
@@ -1849,7 +1857,6 @@ Based on some CSS from @SlRvb, @gee & @Eleanor Konik */
 .cm-formatting.cm-formatting-quote{
   font-weight: 600;
   font-style: unset;
-  background-color: unset;
 }
 
 /* BLOCKQUOTE IN PREVIEW */
