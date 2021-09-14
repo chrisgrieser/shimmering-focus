@@ -60,6 +60,17 @@ You can find *Shimmering Focus* in Obsidian's community themes browser under `Se
 Alternatively, you can also install the theme manually by downloading the CSS file and moving it into the folder `.obsidian/themes/` located in your vault. Then, go to `Settings ➞ Appearance ➞ Themes`, reload themes, and select `Shimmering Focus`.
 
 ## Credits
-Thanks to @kepano, @Mara, @Chetachie, @Eleanor Konik, @SlRvB, @Atlas, @Grimdewaldt, and @jdaniel for some CSS snippets, and thanks to @NothingIsLost, @só erick mesmo, @javalent, and many others from the #css-themes Discord, Channel who helped me figure out CSS in this very first CSS project of mine. Special thanks to @SlRvb who solved so many problems I encountered.
+For help and/or CSS snippets, thanks to:
+- @kepano
+- @Mara
+- @Chetachie
+- @Eleanor Konik
+- @Atlas
+- @Grimdewaldt
+- @jdaniel
+- @só erick mesmo
+- @NothingIsLost
+- @javalent
+- @SlRvb
 
-This workflow has been created by @pseudometa ([Discord](https://discord.gg/veuWUTm)) aka [@pseudo_meta (Twitter)](https://twitter.com/pseudo_meta) aka Chris Grieser (rl). If you find this theme to be useful, feel free to donate [via PayPal](https://www.paypal.com/paypalme/ChrisGrieser). In my day job, I am a PhD student in sociology, studying the governance of the app economy. If you are interested in this subject, check out [my academic homepage](https://chris-grieser.de/) and get in touch.
+This theme has been created by @pseudometa ([Discord](https://discord.gg/veuWUTm)) aka [@pseudo_meta (Twitter)](https://twitter.com/pseudo_meta) aka Chris Grieser (rl). If you find this theme to be useful, feel free to donate [via PayPal](https://www.paypal.com/paypalme/ChrisGrieser). In my day job, I am a PhD student in sociology, studying the governance of the app economy. If you are interested in this subject, check out [my academic homepage](https://chris-grieser.de/) and get in touch.
