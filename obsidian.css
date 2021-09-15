@@ -159,7 +159,7 @@ https://github.com/mgmeyers/obsidian-style-settings*/
 
 
 /* ------------------------------------------------------ */
-/* SHIMMERING FOCUS v. 1.8.2
+/* SHIMMERING FOCUS v. 1.9
 Created by @pseudometa (Discord) aka @chrisgrieser (GitHub)
 https://github.com/chrisgrieser/shimmering-focus/ */
 /* ---------------------------------------------------------
@@ -210,6 +210,7 @@ For help and/or CSS snippets, thanks to:
 	--highlight-color: #00ff8866;
 	--highlight-alt1: #ffff0066;
 	--highlight-alt2: #00ffff66;
+  --unresolved-link-color: #0F80FF;
 
 	--regular-font: "iA Writer Quattro S", "Helvetica Neue";
 	--font-monospace: "Input Mono", Menlo;
@@ -703,6 +704,15 @@ pre[class~="language-txt"]:after {
 	color: var(--text-alt-accent) !important;
 	cursor: pointer;
 	font-weight: 900;
+}
+
+a.internal-link.is-unresolved{
+  color: var(--unresolved-link-color);
+  opacity: 0.65 !important;
+}
+a.internal-link.is-unresolved:hover{
+  color: var(--text-alt-accent);
+  opacity: 0.8 !important;
 }
 
 /* dont underline the brackets */
@@ -1682,13 +1692,16 @@ span.cm-link.cm-hmd-footnote {
 /* ------------------------------------------------------ */
 /* Thanks to @Grimdewaldt & @jdaniel  */
 
-/* make --- in edit mode look more like --- in preview. */
+/* increased redability in edit mode */
 .cm-s-obsidian span.cm-hr {
 	color: var(--text-muted);
 	letter-spacing: 0.12em;
 }
 
-.cm-s-obsidian:not(.is-mobile) span.cm-hr::after {
+/* make --- in edit mode look more like --- in preview. */
+/* greyed out b/c buggy and not working properly on mobile
+and with some other plugins */
+/*.cm-s-obsidian:not(.is-mobile) span.cm-hr::after {
 	content: "";
 	position: absolute;
 	background:var(--text-muted);
@@ -1696,7 +1709,7 @@ span.cm-link.cm-hmd-footnote {
 	width: calc(100% - 2.1rem);
 	left: 2.65rem;
 	top: 47%;
-}
+}*/
 
 /* increase readability in preview mode */
 .markdown-preview-view hr{
@@ -2003,7 +2016,7 @@ body,
 	font-feature-settings: "liga" 0;
 }
 
-/* Dark Mode with Bold that is easier to differentiate */
+/* Dark Mode with bold that is easier to differentiate */
 .theme-dark .cm-strong,
 .theme-dark .markdown-preview-view strong {
 	color: var(--bold-in-darkmode);
