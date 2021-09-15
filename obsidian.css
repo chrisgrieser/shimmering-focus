@@ -131,13 +131,13 @@ settings:
   -
     id: round-checkboxes
     title: Round Checkboxes
-    description: Use the round checkboxes from the default theme instead of the square-ish ones
+    description: Use the round checkboxes from the default theme instead of the square-ish ones.
     type: class-toggle
     default: false
   -
     id: no-alternating-header-italics
-    title: No Alternating Header Italic
-    description: With Shimmering Focus, the Heading Levels alternate between italic/normal to make it easier to distinguish them. You can turn that feature of if you prefer non-italic headings at all heading levels.
+    title: No Alternating Italic of Headings
+    description: With Shimmering Focus, the Heading Levels alternate between italic/regular to make it easier to distinguish between them. You can turn that feature off if you prefer non-italic at all heading levels.
     type: class-toggle
     default: false
   -
@@ -148,7 +148,7 @@ settings:
     default: false
   -
     id: hide-index-files
-    title: Hide files named "Index.md" from File Explorer.
+    title: Hide files named "Index.md" from File Explorer
     description: Files named that way are created by some plugins and in many cases should not be touched (e.g. Longform Plugin). If you use such a plugin, you can hide those files.
     type: class-toggle
     default: false
@@ -159,7 +159,7 @@ https://github.com/mgmeyers/obsidian-style-settings*/
 
 
 /* ------------------------------------------------------ */
-/* SHIMMERING FOCUS v. 1.9
+/* SHIMMERING FOCUS v. 1.10
 Created by @pseudometa (Discord) aka @chrisgrieser (GitHub)
 https://github.com/chrisgrieser/shimmering-focus/ */
 /* ---------------------------------------------------------
@@ -762,7 +762,7 @@ a.tag:hover {
 }
 
 .modal-bg {
-	backdrop-filter: blur(4px);
+	backdrop-filter: blur(3px);
 }
 
 .prompt {
@@ -771,30 +771,176 @@ a.tag:hover {
 }
 
 .prompt-bg {
-	backdrop-filter: blur(4px);
+	backdrop-filter: blur(3px);
 }
 
 /* ------------------------------------------------------ */
 /* Longform Plugin */
 /* ------------------------------------------------------ */
+
+/* SIDEBAR */
+
+/* "You can delete every "svelte-" thing from that code, and it will work, and not break on new updates. Somebody said the other day that that's temporary name generation that can change with plugin updates." */
+
+/* container with more space */
+.tab-list.svelte-1bo97vk{
+  margin-left: 0px !important;
+  margin-right: 0px !important;
+}
+.tab-panel-container.svelte-11pvpwl{
+  padding-left: 0px !important;
+  padding-right: 0px !important;
+}
+.workspace-leaf-content[data-type="VIEW_TYPE_LONGFORM_EXPLORER"] .view-content{
+  padding-left: 5px;
+  padding-right: 5px;
+  padding-top: 15px;
+  padding-bottom: 15px;
+}
+
+/* hide folder path*/
+.current-draft-path.svelte-23avsr{
+  display: none;
+}
+
+/* scene item / draft item */
+.draft-container.svelte-1jmafs,
+.scene-container.svelte-1wlkmbt {
+  /* wrapping of long titles */
+  width: 100% !important;
+  white-space: normal !important;
+  padding-left: 5px !important;
+  color: var(--more-contrast-muted) !important;
+}
+.scene-container.svelte-1wlkmbt.selected,
+.draft-container.svelte-1jmafs.selected {
+  color: var(--text-accent) !important;
+}
+
+.draft-container.svelte-1jmafs.selected:hover,
+.draft-container.svelte-1jmafs:hover,
+.scene-container.svelte-1wlkmbt:hover,
+.scene-container.svelte-1wlkmbt.selected:hover,
+.svelte-23avsr:hover{
+  color: var(--text-alt-accent) !important;
+}
+
+.draft-container.svelte-1jmafs.selected,
+.draft-container.svelte-1jmafs.selected:hover,
+.scene-container.svelte-1wlkmbt.selected:hover,
+.scene-container.svelte-1wlkmbt.selected {
+  font-weight: 600;
+}
+/* new scene/draft field */
+.svelte-1lq63fp,
+.svelte-1wkli4h{
+  padding-left: 3px !important;
+}
+
+/* tab-item */
+.svelte-htpziy{
+  color: var(--more-contrast-muted) !important;
+  background-color: var(--background-primary) !important;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  padding-left: 10px;
+  padding-right: 10px;
+  border-top-left-radius: 6px !important;
+  border-top-right-radius: 6px !important;
+  border: 1px solid var(--text-faint) !important;
+  border-bottom: none !important;
+}
+
+.svelte-htpziy:hover,
+.svelte-htpziy.selected:hover{
+  color: var(--text-alt-accent) !important;
+}
+
+.svelte-htpziy.selected{
+  font-weight: 600;
+  background-color: var(--background-secondary-alt) !important;
+  color: var(--text-accent) !important;
+  border-bottom: none !important;
+  border: 1px solid var(--text-faint);
+}
+
+/* horizontal borders between sections */
+.tab-list.svelte-1bo97vk{
+  border-bottom: 3px solid var(--text-faint) !important;
+}
+.new-draft-container.svelte-1wkli4h,
+.new-scene-container.svelte-1lq63fp,
+.compile-container.svelte-1vu6mjk{
+  border-top: 3px solid var(--text-faint) !important;
+}
+
+/* Compile */
+.compile-button.svelte-1vu6mjk:hover{
+  background-color: var(--text-alt-accent) !important;
+}
+
+/* PROJECT TITLE */
+.svelte-23avsr[name~="projects"] {
+  color: var(--more-contrast-muted) !important;
+  font-weight: 600;
+}
+
+.svelte-23avsr[name~="drafts"]{
+  color: var(--more-contrast-muted) !important;
+  font-style: italic;
+}
+
+.right-arrow.svelte-23avsr{
+  display: none !important;
+}
+
+.svelte-23avsr:hover {
+  text-decoration: none !important;
+  color: var(--text-alt-accent) !important;
+}
+
+/* container */
+#project-picker {
+  margin-bottom: 2em;
+  background-color: var(--background-primary);
+  border-radius: 4px;
+  padding-left: 2px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  font-size: 0.82em;
+  border: 1px solid var(--text-faint);
+}
+
+
+
+/* longform EDITOR */
 /* https://github.com/kevboh/longform#scene-only-styling */
 
-/* longform font */
 .longform-leaf .markdown-preview-view,
 .longform-leaf .cm-s-obsidian {
-	/* justify all text and use hypenation */
-	text-align: justify;
-	hyphens: auto;
-	/* change font style to a serif font */
-	font-family: var(--longform-font)
-	font-size: 1em;
+  text-align: justify;
+  hyphens: auto;
+  font-family: var(--longform-font);
+  font-size: 1.05em;
+}
+.longform-leaf .cm-header-1,
+.longform-leaf .cm-header-2,
+.longform-leaf .cm-header-3,
+.longform-leaf .cm-header-4,
+.longform-leaf .cm-header-5,
+.longform-leaf .markdown-preview-view h1,
+.longform-leaf .markdown-preview-view h2,
+.longform-leaf .markdown-preview-view h3,
+.longform-leaf .markdown-preview-view h4,
+.longform-leaf .markdown-preview-view h5{
+  font-family: var(--longform-font);
 }
 
-/* hide index file, which shouldn't be messed with anyway */
-body:not(:not(.hide-index-files)) .nav-file-title[data-path$="Index.md"] {
+/* hide index file in file explorer, which shouldn't
+be messed with anyway */
+body.hide-index-files .nav-file-title[data-path$="Index.md"] {
 	display: none;
 }
-
 
 /* ------------------------------------------------------ */
 /* Command Palette & QuickSwitch */
@@ -1087,13 +1233,11 @@ padding-left: 0;
 /* relationship lines based on css from @Mara
 https://github.com/Mara-Li/Obsidian-Snippet-collection */
 /* Top Level Folder Titles */
-.nav-folder.mod-root > .nav-folder-children > .nav-folder > .nav-folder-title {
-	padding-left: 0px;
-}
 
+.nav-folder.mod-root > .nav-folder-children > .nav-folder > .nav-folder-title,
 .nav-folder.mod-root > .nav-folder-children .nav-file-title,
 .nav-folder.mod-root > .nav-folder-children .nav-folder-title {
-	padding-left: 0em;
+	padding-left: 4px;
 }
 
 /* top folder line */
@@ -1256,19 +1400,13 @@ https://github.com/Mara-Li/Obsidian-Snippet-collection */
 
 .nav-file-title[data-path$="pdf"] .nav-file-title-content:before {
 	content: "picture_as_pdf ";
+  color: #8B3244;
 }
 
 .nav-file-title[data-path$="xlsx"] .nav-file-title-content:before,
 .nav-file-title[data-path$="csv"] .nav-file-title-content:before {
 	color: green;
 	content: "table_chart ";
-}
-
-.nav-file-title[data-path*="Übersicht"] .nav-file-title-content:before,
-.nav-file-title[data-path*="Überblick"] .nav-file-title-content:before,
-.nav-file-title[data-path*="outline"] .nav-file-title-content:before,
-.nav-file-title[data-path*="Outline"] .nav-file-title-content:before {
-	content: "reorder ";
 }
 
 .nav-file-title[data-path*="statistics"] .nav-file-title-content:before,
@@ -1294,12 +1432,9 @@ https://github.com/Mara-Li/Obsidian-Snippet-collection */
 	content: "photo_camera ";
 }
 
-.nav-file-title[data-path$="Changelog.md"] .nav-file-title-content::before {
-	content: "analytics ";
-}
-
 .nav-file-title[data-path*="Wordcount"] .nav-file-title-content::before {
 	content: "stacked_bar_chart ";
+  color: #929000;
 }
 
 /* As Icons are now used, the labeled boxes (e.g. "pdf") can be removed. */
