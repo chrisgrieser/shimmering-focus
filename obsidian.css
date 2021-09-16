@@ -159,7 +159,7 @@ https://github.com/mgmeyers/obsidian-style-settings*/
 
 
 /* ------------------------------------------------------ */
-/* SHIMMERING FOCUS v. 1.10
+/* SHIMMERING FOCUS v. 1.11
 Created by @pseudometa (Discord) aka @chrisgrieser (GitHub)
 https://github.com/chrisgrieser/shimmering-focus/ */
 /* ---------------------------------------------------------
@@ -340,6 +340,7 @@ body:not(.show-ribbons) .workspace-ribbon {
 	color: var(--text-accent);
 }
 
+
 /* ------------------------------------------------------ */
 /* HIDE FURTHER STUFF */
 /* ------------------------------------------------------ */
@@ -411,7 +412,7 @@ body:not(.show-header-bar) .view-header-title {
 }
 
 /*thanks to @só erick mesmo for ":focus-within"*/
-body:not(:not(.show-header-bar)) .view-header,
+body.show-header-bar .view-header,
 body:not(.show-header-bar) .view-header:hover,
 body:not(.show-header-bar) .view-header:focus-within{
 	height: 1.9em !important;
@@ -435,7 +436,7 @@ body:not(.show-header-bar) .view-header:focus-within{
 /* hover & active coloring */
 .view-header-icon:hover,
 .view-action:hover svg{
-	color: var(--text-alt-accent);
+	color: var(--text-alt-accent) !important;
 }
 .view-header-icon:active,
 .view-action:active svg{
@@ -779,7 +780,6 @@ a.tag:hover {
 /* ------------------------------------------------------ */
 
 /* SIDEBAR */
-
 /* "You can delete every "svelte-" thing from that code, and it will work, and not break on new updates. Somebody said the other day that that's temporary name generation that can change with plugin updates." */
 
 /* container with more space */
@@ -831,24 +831,33 @@ a.tag:hover {
 .scene-container.svelte-1wlkmbt.selected {
   font-weight: 600;
 }
+
 /* new scene/draft field */
 .svelte-1lq63fp,
 .svelte-1wkli4h{
   padding-left: 3px !important;
 }
 
-/* tab-item */
-.svelte-htpziy{
-  color: var(--more-contrast-muted) !important;
-  background-color: var(--background-primary) !important;
-  padding-top: 5px;
-  padding-bottom: 5px;
-  padding-left: 10px;
-  padding-right: 10px;
-  border-top-left-radius: 6px !important;
-  border-top-right-radius: 6px !important;
-  border: 1px solid var(--text-faint) !important;
-  border-bottom: none !important;
+/* TAB-ITEMS */
+
+.svelte-htpziy::before{
+  font-family: "Material Icons";
+  font-size: 1.5rem;
+  vertical-align: top;
+}
+.svelte-htpziy:nth-child(1)::before{
+  content: "format_list_numbered";
+}
+.svelte-htpziy:nth-child(2)::before{
+  content: "article";
+}
+.svelte-htpziy:nth-child(3)::before{
+  content: "merge_type";
+}
+
+.svelte-htpziy.selected{
+  color: var(--text-accent) !important;
+  background-color: var(--background-secondary-alt) !important;
 }
 
 .svelte-htpziy:hover,
@@ -856,13 +865,21 @@ a.tag:hover {
   color: var(--text-alt-accent) !important;
 }
 
-.svelte-htpziy.selected{
-  font-weight: 600;
-  background-color: var(--background-secondary-alt) !important;
-  color: var(--text-accent) !important;
+.svelte-htpziy{
+  font-size: 0;
+  color: var(--more-contrast-muted) !important;
+  background-color: var(--background-primary) !important;
+  padding-top: 6px;
+  padding-bottom: 5px;
+  padding-left: 12px;
+  padding-right: 12px;
+  margin-right: 4px !important;
+  border-top-left-radius: 6px !important;
+  border-top-right-radius: 6px !important;
+  border: 2px solid var(--text-faint) !important;
   border-bottom: none !important;
-  border: 1px solid var(--text-faint);
 }
+
 
 /* horizontal borders between sections */
 .tab-list.svelte-1bo97vk{
@@ -880,16 +897,12 @@ a.tag:hover {
 }
 
 /* PROJECT TITLE */
-.svelte-23avsr[name~="projects"] {
+.svelte-23avsr{
   color: var(--more-contrast-muted) !important;
+}
+.svelte-23avsr[name~="projects"] {
   font-weight: 600;
 }
-
-.svelte-23avsr[name~="drafts"]{
-  color: var(--more-contrast-muted) !important;
-  font-style: italic;
-}
-
 .right-arrow.svelte-23avsr{
   display: none !important;
 }
@@ -901,17 +914,16 @@ a.tag:hover {
 
 /* container */
 #project-picker {
-  margin-bottom: 2em;
-  background-color: var(--background-primary);
+  margin-bottom: 1em;
+  background-color: var(--background-secondary-alt);
   border-radius: 4px;
-  padding-left: 2px;
+  padding-left: 1px;
+  padding-right: 0px;
   padding-top: 5px;
   padding-bottom: 5px;
-  font-size: 0.82em;
-  border: 1px solid var(--text-faint);
+  font-size: 0.8em;
+  border: 2.5px solid var(--text-faint);
 }
-
-
 
 /* longform EDITOR */
 /* https://github.com/kevboh/longform#scene-only-styling */
@@ -921,6 +933,7 @@ a.tag:hover {
   text-align: justify;
   hyphens: auto;
   font-family: var(--longform-font);
+  /* counteract the slightly smaller size of serif fonts */
   font-size: 1.05em;
 }
 .longform-leaf .cm-header-1,
@@ -981,10 +994,12 @@ body.hide-index-files .nav-file-title[data-path$="Index.md"] {
 /* ------------------------------------------------------ */
 
 /* hover colors */
+.workspace-tab-header-inner-icon:hover,
 .workspace-tab-header-inner:hover svg,
 .nav-action-button:hover svg,
 .nav-action-button.is-active:hover svg {
 	color: var(--text-alt-accent);
+  cursor: pointer;
 }
 
 .workspace-tab-header-inner:active svg,
@@ -1357,9 +1372,7 @@ https://github.com/Mara-Li/Obsidian-Snippet-collection */
 .nav-folder-title[data-path*="attachment"] .nav-folder-title-content::before {
 	content: "attachment ";
 }
-.nav-folder.is-collapsed
-	.nav-folder-title[data-path*="attachment"]
-	.nav-folder-title-content::before {
+.nav-folder.is-collapsed .nav-folder-title[data-path*="attachment"] .nav-folder-title-content::before {
 	content: "attach_file ";
 }
 
@@ -1679,6 +1692,10 @@ span.cm-hmd-frontmatter {
 	color: var(--text-muted) !important;
 }
 
+.cm-atom.cm-hmd-frontmatter{
+  font-weight: 600;
+}
+
 /* YAML-Header in Preview Mode */
 .markdown-preview-view pre.frontmatter.language-yaml {
 /*	background: var(--background-secondary);
@@ -1871,6 +1888,7 @@ for all headings to improve distinguishability
 .markdown-preview-view h4,
 .markdown-preview-view h5{
 	font-family: var(--heading-font);
+  line-height: 1.3em;
 }
 
 .cm-header-1,
@@ -1899,7 +1917,6 @@ for all headings to improve distinguishability
 .markdown-preview-view h3,
 .markdown-preview-view h4,
 .markdown-preview-view h5 {
-	line-height: 1.1em;
 	margin-top: 1.5em;
 }
 
