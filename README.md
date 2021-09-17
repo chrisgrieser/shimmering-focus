@@ -49,7 +49,7 @@ A minimalistic Obsidian theme focused on readability, condensed information disp
 
 **Style Settings Plugin**
 - This themes supports the [Style Settings Plugin](https://github.com/mgmeyers/obsidian-style-settings/) for customization.
-- Other then re-enabling the title bar, header bar, and ribbons, you can also change basic features like font-families and header sizes. More settings will be implemented with upcoming updates. React/Comment in this [issue regarding which settings you would like to have](https://github.com/chrisgrieser/shimmering-focus/issues/2).
+- Other then re-enabling the title bar, header bar, and ribbons, you can also change basic features like font-families and header sizes. 
 
 <img width=40% height=40% alt="Screenshot 2021-09-10 22 38 50" src="https://user-images.githubusercontent.com/73286100/132916198-9a1f164b-1f8d-4d65-ba80-bee1d0c41bf3.png">
 
