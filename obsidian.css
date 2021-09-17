@@ -159,7 +159,7 @@ https://github.com/mgmeyers/obsidian-style-settings*/
 
 
 /* ------------------------------------------------------ */
-/* SHIMMERING FOCUS v. 1.11
+/* SHIMMERING FOCUS v. 1.12
 Created by @pseudometa (Discord) aka @chrisgrieser (GitHub)
 https://github.com/chrisgrieser/shimmering-focus/ */
 /* ---------------------------------------------------------
@@ -210,7 +210,7 @@ For help and/or CSS snippets, thanks to:
 	--highlight-color: #00ff8866;
 	--highlight-alt1: #ffff0066;
 	--highlight-alt2: #00ffff66;
-  --unresolved-link-color: #0F80FF;
+   --unresolved-link-color: #0F80FF;
 
 	--regular-font: "iA Writer Quattro S", "Helvetica Neue";
 	--font-monospace: "Input Mono", Menlo;
@@ -247,7 +247,9 @@ For help and/or CSS snippets, thanks to:
 .status-bar-item,
 .markdown-preview-view,
 .cm-s-obsidian,
-.view-header-title {
+.view-header-title,
+input.document-search-input,
+input.document-replace-input {
   font-family: var(--regular-font);
 }
 
@@ -1485,6 +1487,11 @@ https://github.com/Mara-Li/Obsidian-Snippet-collection */
 	top: 0px;
 	right: 3px;
 }
+
+.modal-close-button:hover{
+	color: var(--text-alt-accent);
+}
+
 .vertical-tab-header-group {
 	padding-top: 0.5em;
 	padding-bottom: 0em;
@@ -1546,7 +1553,7 @@ https://github.com/Mara-Li/Obsidian-Snippet-collection */
 	background: var(--background-primary);
 }
 
-/* increase contrast*/
+/* increased contrast*/
 .setting-editor-extra-setting-button{
 	color: var(--text-normal);
 	opacity: 0.9;
@@ -2024,6 +2031,12 @@ Based on some CSS from @SlRvb, @gee & @Eleanor Konik */
   font-style: unset;
 }
 
+/* underline emphasis in blockquote, since they are italic already */
+.markdown-preview-view blockquote > p > em,
+span.cm-em.cm-quote.cm-quote-1{
+	text-decoration: underline;
+}
+
 /* BLOCKQUOTE IN PREVIEW */
 /* Add quotation character before quote */
 blockquote:before {
@@ -2053,6 +2066,61 @@ blockquote {
 	hyphens: auto;
 	color: var(--more-contrast-muted);
   background-color: var(--background-primary-alt);
+}
+
+/* ------------------------------------------------------ */
+/* DOCUMENT SEARCH (cmd + f) */
+/* ------------------------------------------------------ */
+
+.document-search-container {
+
+  /* move up to avoid collision with statusbar */
+  bottom: 2.5em;
+
+  background-color:var(--background-secondary-alt);
+  border: 2px solid var(--text-faint);
+  border-radius: 6px;
+  width: 95%;
+  left: 2.5%;
+  height: 3.5em;
+}
+
+.document-search-container.mod-replace-mode {
+  height: 6em;
+}
+
+/* for whatever reason, 0px shows the bar without
+search and leaving it at 50px shows it when searching
+without replace */
+.CodeMirror-scroll{
+	padding-bottom: 10em;
+}
+
+input.document-search-input,
+input.document-replace-input{
+	font-size: 1.2em;
+	padding-left: 0.4em;
+	background-color: var(--background-primary);
+	margin-top: 0.2em;
+	height: 1.6em;
+}
+
+.document-search-button{
+	color: var(--text-on-accent);
+	margin-top: 0.27em;
+	height: 2.2em;
+	background-color: var(--text-accent);
+	opacity: 0.65;
+}
+
+.document-search-button:hover{
+	background-color: var(--text-alt-accent);
+	opacity: 0.9;
+	color: var(--text-on-accent);
+}
+
+.document-search-close-button:hover{
+	color: var(--text-alt-accent);
 }
 
 /* ------------------------------------------------------ */
