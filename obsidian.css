@@ -159,7 +159,7 @@ https://github.com/mgmeyers/obsidian-style-settings*/
 
 
 /* ------------------------------------------------------ */
-/* SHIMMERING FOCUS v. 1.12
+/* > SHIMMERING FOCUS, version 1.13
 Created by @pseudometa (Discord) aka @chrisgrieser (GitHub)
 https://github.com/chrisgrieser/shimmering-focus/ */
 /* ---------------------------------------------------------
@@ -178,7 +178,7 @@ For help and/or CSS snippets, thanks to:
 --------------------------------------------------------- */
 
 /* ------------------------------------------------------ */
-/* FONTS as Base64 */
+/* > FONTS as Base64 */
 /* ------------------------------------------------------ */
 @font-face {
   font-family: "iA Writer Quattro S";
@@ -197,8 +197,9 @@ For help and/or CSS snippets, thanks to:
 }
 
 /* ------------------------------------------------------ */
-/* Colors and Fonts */
+/* > Colors and Fonts */
 /* ------------------------------------------------------ */
+
 
 :root {
 	--active-line: #adae9833;
@@ -210,7 +211,7 @@ For help and/or CSS snippets, thanks to:
 	--highlight-color: #00ff8866;
 	--highlight-alt1: #ffff0066;
 	--highlight-alt2: #00ffff66;
-   --unresolved-link-color: #0F80FF;
+  --unresolved-link-color: #0F80FF;
 
 	--regular-font: "iA Writer Quattro S", "Helvetica Neue";
 	--font-monospace: "Input Mono", Menlo;
@@ -280,7 +281,7 @@ body:not(.not-ia-writer-font) .cm-strong {
 }
 
 /* ------------------------------------------------------ */
-/* TITLEBAR */
+/* > TITLEBAR */
 /* ------------------------------------------------------ */
 /* display only when set in style settings */
 body:not(.show-titlebar) .titlebar{
@@ -315,7 +316,7 @@ body:not(.show-titlebar) .workspace-split.mod-horizontal .workspace-leaf-resize-
 
 
 /* ------------------------------------------------------ */
-/* Ribbons */
+/* > Ribbons */
 /* ------------------------------------------------------ */
 /* hide ribbons, when the setting is chosen */
 body:not(.show-ribbons) .workspace-ribbon {
@@ -344,7 +345,7 @@ body:not(.show-ribbons) .workspace-ribbon {
 
 
 /* ------------------------------------------------------ */
-/* HIDE FURTHER STUFF */
+/* > HIDE FURTHER STUFF */
 /* ------------------------------------------------------ */
 /* based on css from the hider plugin by @kepano:
 https://github.com/kepano/obsidian-hider/blob/master/styles.css */
@@ -379,7 +380,7 @@ https://github.com/kepano/obsidian-hider/blob/master/styles.css */
 }
 
 /* ------------------------------------------------------ */
-/* Header Bar */
+/* > Header Bar */
 /* ------------------------------------------------------ */
 
 /* harmonize sizes for when titlebar is shown */
@@ -446,7 +447,7 @@ body:not(.show-header-bar) .view-header:focus-within{
 }
 
 /* ------------------------------------------------------ */
-/* Context Menus */
+/* > Context Menus */
 /* ------------------------------------------------------ */
 
 .menu-item.selected,
@@ -496,7 +497,7 @@ body:not(.show-header-bar) .view-header:focus-within{
 }
 
 /* ------------------------------------------------------ */
-/* Status Bar */
+/* > Status Bar */
 /* ------------------------------------------------------ */
 /* based on some CSS snippets from @Chetachi's Yin-and-Yang Theme https://github.com/chetachiezikeuzor/Yin-and-Yang-Theme */
 
@@ -542,7 +543,7 @@ body:not(.show-header-bar) .view-header:focus-within{
    color: var(--text-alt-accent);
 }
 /* ------------------------------------------------------ */
-/* Scrollbar */
+/* > Scrollbar */
 /* ------------------------------------------------------ */
 
 /* hide all scrollbars except the one for the editor */
@@ -565,7 +566,7 @@ body:not(.show-header-bar) .view-header:focus-within{
 }
 
 /* ------------------------------------------------------ */
-/* Buttons & Checkboxes */
+/* > Buttons & Checkboxes */
 /* ------------------------------------------------------ */
 
 .checkbox-container:hover,
@@ -584,7 +585,7 @@ body:not(.round-checkboxes) .checkbox-container::after{
 }
 
 /* ------------------------------------------------------ */
-/* CODE BLOCKS & INLINE CODE */
+/* > CODE BLOCKS & INLINE CODE */
 /* ------------------------------------------------------ */
 .cm-s-obsidian .cm-templater-command,
 .cm-s-obsidian .HyperMD-codeblock,
@@ -695,7 +696,7 @@ pre[class~="language-txt"]:after {
 }
 
 /* ------------------------------------------------------ */
-/* Links & Tags */
+/* > Links & Tags */
 /* ------------------------------------------------------ */
 /* hovered links in alt accent */
 .cm-string.cm-url:hover:not(.cm-formatting),
@@ -739,7 +740,7 @@ a.tag:hover {
 
 
 /* ------------------------------------------------------ */
-/* Modal & Prompt Boxes */
+/* > Modal & Prompt Boxes */
 /* ------------------------------------------------------ */
 /* (modal also applies to settings/plugin browser) */
 
@@ -778,10 +779,10 @@ a.tag:hover {
 }
 
 /* ------------------------------------------------------ */
-/* Longform Plugin */
+/* > Longform Plugin */
 /* ------------------------------------------------------ */
 
-/* SIDEBAR */
+/* >> SIDEBAR */
 /* "You can delete every "svelte-" thing from that code, and it will work, and not break on new updates. Somebody said the other day that that's temporary name generation that can change with plugin updates." */
 
 /* container with more space */
@@ -840,7 +841,7 @@ a.tag:hover {
   padding-left: 3px !important;
 }
 
-/* TAB-ITEMS */
+/* >> TAB-ITEMS */
 
 .svelte-htpziy::before{
   font-family: "Material Icons";
@@ -898,7 +899,7 @@ a.tag:hover {
   background-color: var(--text-alt-accent) !important;
 }
 
-/* PROJECT TITLE */
+/* >> PROJECT TITLE */
 .svelte-23avsr{
   color: var(--more-contrast-muted) !important;
 }
@@ -927,29 +928,29 @@ a.tag:hover {
   border: 2.5px solid var(--text-faint);
 }
 
-/* longform EDITOR */
+/* >> longform EDITOR */
 /* https://github.com/kevboh/longform#scene-only-styling */
 
 .longform-leaf .markdown-preview-view,
 .longform-leaf .cm-s-obsidian {
-  text-align: justify;
+  /*text-align: justify;*/
   hyphens: auto;
   font-family: var(--longform-font);
   /* counteract the slightly smaller size of serif fonts */
   font-size: 1.05em;
 }
-.longform-leaf .cm-header-1,
-.longform-leaf .cm-header-2,
-.longform-leaf .cm-header-3,
-.longform-leaf .cm-header-4,
-.longform-leaf .cm-header-5,
+
+/* do not justify heading text*/
 .longform-leaf .markdown-preview-view h1,
 .longform-leaf .markdown-preview-view h2,
 .longform-leaf .markdown-preview-view h3,
 .longform-leaf .markdown-preview-view h4,
-.longform-leaf .markdown-preview-view h5{
-  font-family: var(--longform-font);
+.longform-leaf .markdown-preview-view h5,
+.longform-leaf .HyperMD-header {
+  text-align: start;
 }
+
+/* >> INDEX FILE */
 
 /* hide index file in file explorer, which shouldn't
 be messed with anyway */
@@ -957,8 +958,13 @@ body.hide-index-files .nav-file-title[data-path$="Index.md"] {
 	display: none;
 }
 
+.nav-file-title[data-path$="Index.md"] .nav-file-title-content:before {
+	content: "settings ";
+}
+
+
 /* ------------------------------------------------------ */
-/* Command Palette & QuickSwitch */
+/* > Command Palette & QuickSwitch */
 /* ------------------------------------------------------ */
 
 /* change font color of hotkeys */
@@ -984,7 +990,7 @@ body.hide-index-files .nav-file-title[data-path$="Index.md"] {
 }
 
 /* ------------------------------------------------------ */
-/* CURSOR */
+/* > CURSOR */
 /* ------------------------------------------------------ */
 .CodeMirror-cursor {
 	border: none;
@@ -992,7 +998,7 @@ body.hide-index-files .nav-file-title[data-path$="Index.md"] {
 }
 
 /* ------------------------------------------------------ */
-/* SIDEBAR */
+/* > SIDEBAR */
 /* ------------------------------------------------------ */
 
 /* hover colors */
@@ -1040,7 +1046,7 @@ body.hide-index-files .nav-file-title[data-path$="Index.md"] {
 }
 
 /* ------------------------------------------------------ */
-/* PANES: Search, Backlink, Tags, Starred, and Outline   */
+/* > PANES: Search, Backlink, Tags, Starred, and Outline   */
 /* ------------------------------------------------------ */
 /* all panes */
 
@@ -1095,7 +1101,7 @@ body.hide-index-files .nav-file-title[data-path$="Index.md"] {
 	width: 10px;
 }
 
-/* search & backlink */
+/* >> search & backlink */
 .workspace-leaf-content[data-type="search"] .tree-item-self {
 	padding-left: 1.2em;
 }
@@ -1146,13 +1152,11 @@ body.hide-index-files .nav-file-title[data-path$="Index.md"] {
 readability */
 .search-result-file-matched-text {
 	color: var(--text-alt-accent);
+	font-weight: 600;
 	background: none;
 }
-.cm-s-obsidian span.obsidian-search-match-highlight {
-	background-color: var(--highlight-color);
-}
 
-/* Tag Pane */
+/* >> Tag Pane */
 .tag-container {
 	padding-right: 0;
 	padding-left: 0.3em;
@@ -1161,7 +1165,7 @@ readability */
 	padding-left: 0.4em;
 }
 
-/* Outline Pane */
+/* > Outline Pane */
 .workspace-leaf-content[data-type="outline"] .tree-item-self {
 	padding-right: 0;
 	line-height: 1.35em;
@@ -1175,7 +1179,7 @@ readability */
 	padding-top: 1em;
 }
 
-/* Starred Pane */
+/* > Starred Pane */
 .workspace-leaf-content[data-type="starred"] .nav-file-title {
 padding-left: 0;
 }
@@ -1208,15 +1212,15 @@ padding-left: 0;
 }
 
 /* ------------------------------------------------------ */
-/* FILE EXPLORER */
+/* > FILE EXPLORER */
 /* ------------------------------------------------------ */
 
 :root {
 	/* folder colours */
 	/* line styles for nesting indicators */
 	--nestlinestyle1: solid;
-	--nestlinestyle2: dashed;
-	--nestlinestyle3: dotted;
+	--nestlinestyle2: dotted;
+	--nestlinestyle3: dashed;
 }
 
 .nav-file-title,
@@ -1247,8 +1251,9 @@ padding-left: 0;
 }
 
 
-/* relationship lines based on css from @Mara
-https://github.com/Mara-Li/Obsidian-Snippet-collection */
+/* >> relationship lines
+based on css from @Mara https://github.com/Mara-Li/Obsidian-Snippet-collection */
+
 /* Top Level Folder Titles */
 
 .nav-folder.mod-root > .nav-folder-children > .nav-folder > .nav-folder-title,
@@ -1276,7 +1281,6 @@ https://github.com/Mara-Li/Obsidian-Snippet-collection */
 	> .nav-folder-children
 	> .nav-file {
 	border-left: var(--nestlinestyle1) 2px var(--nestlinecolor);
-	padding-left: 0.1em;
 }
 
 .nav-folder.mod-root
@@ -1342,16 +1346,16 @@ https://github.com/Mara-Li/Obsidian-Snippet-collection */
 }
 
 /* ------------------------------------------------------ */
-/* FOLDER & NOTE ICONS */
+/* > FOLDER & NOTE ICONS */
 /* ------------------------------------------------------ */
 .nav-folder-title-content::before,
 .nav-file-title-content::before {
 	vertical-align: text-top;
 	font-family: "Material Icons";
-	font-size: 1.15em;
+	font-size: 1.2em;
 }
 
-/* FOLDERS ICONS */
+/* >> FOLDERS ICONS */
 .nav-folder-title-content::before {
 	content: "folder_open ";
 }
@@ -1384,7 +1388,7 @@ https://github.com/Mara-Li/Obsidian-Snippet-collection */
 	content: "inventory_2 ";
 }
 
-/* FILE ICONS*/
+/* >> FILE ICONS*/
 .nav-file-title-content::before {
 	content: "description ";
 }
@@ -1429,8 +1433,9 @@ https://github.com/Mara-Li/Obsidian-Snippet-collection */
 	content: "pie_chart_outline ";
 }
 
+.nav-file-title[data-path*="To Do"] .nav-file-title-content:before,
 .nav-file-title[data-path*="to do"] .nav-file-title-content:before {
-	content: "task_alt ";
+	content: "check_box ";
 }
 
 .nav-file-title[data-path*="Metadata"] .nav-file-title-content:before,
@@ -1447,9 +1452,11 @@ https://github.com/Mara-Li/Obsidian-Snippet-collection */
 	content: "photo_camera ";
 }
 
-.nav-file-title[data-path*="Wordcount"] .nav-file-title-content::before {
-	content: "stacked_bar_chart ";
-  color: #929000;
+.nav-file-title[data-path*="Word Limit"] .nav-file-title-content::before,
+.nav-file-title[data-path*="Character Limit"] .nav-file-title-content::before,
+.nav-file-title[data-path*="Character Count"] .nav-file-title-content::before,
+.nav-file-title[data-path*="Word Count"] .nav-file-title-content::before {
+	content: "flag ";
 }
 
 /* As Icons are now used, the labeled boxes (e.g. "pdf") can be removed. */
@@ -1458,7 +1465,7 @@ https://github.com/Mara-Li/Obsidian-Snippet-collection */
 }
 
 /* ------------------------------------------------------ */
-/* SETTINGS MENU */
+/* > SETTINGS MENU */
 /* ------------------------------------------------------ */
 
 /* make settings menu bigger and more compact */
@@ -1564,7 +1571,7 @@ https://github.com/Mara-Li/Obsidian-Snippet-collection */
 }
 
 /* ------------------------------------------------------ */
-/* COMMUNITY PLUGIN BROWSER */
+/* >> COMMUNITY PLUGIN BROWSER */
 /* ------------------------------------------------------ */
 /* bigger and more condensed */
 
@@ -1628,7 +1635,7 @@ https://github.com/Mara-Li/Obsidian-Snippet-collection */
 }
 
 /* ------------------------------------------------------ */
-/* COMMUNITY THEME BROWSER */
+/* > COMMUNITY THEME BROWSER */
 /* ------------------------------------------------------ */
 
 .modal.mod-community-theme {
@@ -1639,7 +1646,7 @@ https://github.com/Mara-Li/Obsidian-Snippet-collection */
 
 
 /* ------------------------------------------------------ */
-/* HIGHLIGHT & SELECTION */
+/* > HIGHLIGHT & SELECTION */
 /* ------------------------------------------------------ */
 /* highlight active line */
 .CodeMirror-activeline .CodeMirror-linebackground {
@@ -1659,7 +1666,7 @@ https://github.com/Mara-Li/Obsidian-Snippet-collection */
 }
 
 /* ------------------------------------------------------ */
-/* Multi-Color Highlighting */
+/* > Multi-Color Highlighting */
 /* ------------------------------------------------------ */
 /* thanks to @Atlas for these snippets */
 /* https://discord.com/channels/686053708261228577/702656734631821413/881443661269827656 */
@@ -1685,7 +1692,7 @@ span.cm-em.cm-highlight {
 }
 
 /* ------------------------------------------------------ */
-/* YAML HEADER & METADATA BLOCK */
+/* > YAML HEADER & METADATA BLOCK */
 /* ------------------------------------------------------ */
 /* YAML-Header in Edit Mode */
 span.cm-hmd-frontmatter {
@@ -1759,7 +1766,7 @@ span.cm-hmd-frontmatter {
 }
 
 /* ------------------------------------------------------ */
-/* Collapse Indicator */
+/* > Collapse Indicator */
 /* ------------------------------------------------------ */
 
 /* preview mode */
@@ -1808,7 +1815,7 @@ span.cm-hmd-frontmatter {
 
 
 /* ------------------------------------------------------ */
-/* Pandoc Citations & Footnotes */
+/* > Pandoc Citations & Footnotes */
 /* ------------------------------------------------------ */
 /* Pandoc Citations (applies to all []-links) */
 body:not(.no-pandoc-citation-emphasis) .cm-hmd-barelink {
@@ -1847,7 +1854,7 @@ span.cm-link.cm-hmd-footnote {
 }
 
 /* ------------------------------------------------------ */
-/* HORIZONTAL LINE (HR)*/
+/* > HORIZONTAL LINE (HR)*/
 /* ------------------------------------------------------ */
 /* Thanks to @Grimdewaldt & @jdaniel  */
 
@@ -1878,11 +1885,20 @@ and with some other plugins */
 }
 
 /* ------------------------------------------------------ */
-/* HEADINGS / HEADERS */
+/* > TABLES */
+/* ------------------------------------------------------ */
+
+/* Preview Mode */
+.markdown-preview-view table{
+    width: auto;
+    max-width: 150%;
+}
+
+/* ------------------------------------------------------ */
+/* > HEADINGS / HEADERS */
 /* ------------------------------------------------------ */
 /* Alternation between italic & different font style
-for all headings to improve distinguishability
-= more readability */
+for all headings to improve distinguishability = more readability */
 
 .cm-header-1,
 .cm-header-2,
@@ -1895,7 +1911,7 @@ for all headings to improve distinguishability
 .markdown-preview-view h4,
 .markdown-preview-view h5{
 	font-family: var(--heading-font);
-  line-height: 1.3em;
+ 	line-height: 1.3em;
 }
 
 .cm-header-1,
@@ -1950,7 +1966,7 @@ body:not(.no-alternating-header-italics) .markdown-preview-view h4{
 }
 
 /* ------------------------------------------------------ */
-/* Pseudo Admonitions (only for one-liners) */
+/* > Pseudo Admonitions (only for one-liners) */
 /* ------------------------------------------------------ */
 /* For H6 only (without following blocks or line breaks).
 Based on some CSS from @SlRvb, @gee & @Eleanor Konik */
@@ -1970,28 +1986,37 @@ Based on some CSS from @SlRvb, @gee & @Eleanor Konik */
 .cm-header.cm-header-6{
   font-family: var(--regular-font);
   font-size: 1em;
+  font-weight: 500 !important;
 }
 
+.theme-dark .HyperMD-header.HyperMD-header-6.CodeMirror-line{
+  background-color: rgba(0, 0, 0, 0.35) !important;
+}
+.theme-light .HyperMD-header.HyperMD-header-6.CodeMirror-line{
+  background-color: rgba(0, 0, 0, 0.1) !important;
+}
+.markdown-preview-view h6 {
+  background-color: var(--background-secondary-alt);
+}
 
 .HyperMD-header.HyperMD-header-6.CodeMirror-line,
 .markdown-preview-view h6 {
-	padding-left: 0.5em;
+	padding-left: 0.2em;
 	padding-bottom: 0.5em;
 	padding-top: 0.5em;
-	background-color: var(--background-secondary-alt);
 	margin-bottom: 0;
-	border-left: 6px solid var(--text-muted) !important;
+	border-left: 8px solid var(--text-muted) !important;
 	border-radius: 3px;
 	font-size: 1em !important;
 	font-style: normal;
-	font-weight: 500;
+	font-weight: 500 !important;
   font-family: var(--regular-font);
 	color: var(--text-normal) !important;
 }
 
 
 /* ------------------------------------------------------ */
-/* BLOCKQUOTE */
+/* > BLOCKQUOTE */
 /* ------------------------------------------------------ */
 
 /* BLOCKQUOTE IN EDIT MODE */
@@ -2044,7 +2069,7 @@ blockquote:before {
 	content: "”";
 	font-size: 3.5em;
 	line-height: 0;
-	vertical-align: -0.4em;
+	vertical-align: -0.45em;
 	color: var(--more-contrast-muted);
 }
 blockquote p {
@@ -2069,7 +2094,7 @@ blockquote {
 }
 
 /* ------------------------------------------------------ */
-/* DOCUMENT SEARCH (cmd + f) */
+/* > DOCUMENT SEARCH (cmd + f) */
 /* ------------------------------------------------------ */
 
 .document-search-container {
@@ -2124,7 +2149,7 @@ input.document-replace-input{
 }
 
 /* ------------------------------------------------------ */
-/* GRAPH VIEW */
+/* > GRAPH VIEW */
 /* ------------------------------------------------------ */
 
 .graph-controls-button:hover{
@@ -2164,16 +2189,16 @@ input.document-replace-input{
 }
 
 /* ------------------------------------------------------ */
-/* IMAGES */
+/* > IMAGES */
 /* ------------------------------------------------------ */
-/* Image Alt as Caption */
+/* Image Alt as Caption in Preview Mode */
 /* useful as this is also how Pandoc converts */
 .image-embed[alt]:after {
 	content: attr(alt);
 	display: block;
 	margin: 0rem 1rem 2rem 0rem;
 	font-size: 90%;
-  font-style: italic;
+	font-style: italic;
 	line-height: 1.1;
 	color: var(--text-faint);
 }
@@ -2188,10 +2213,11 @@ input.document-replace-input{
 /* restrict image width in editor mode (Ozan's image editor plugin)*/
 div.oz-image-widget > img {
 	max-width: 40% !important;
+	cursor: unset !important;
 }
 
 /* ------------------------------------------------------ */
-/* BULLET POINT RELATIONSHIP LINES */
+/* > BULLET POINT RELATIONSHIP LINES */
 /* ------------------------------------------------------ */
 /* based on css from the outliner plugin */
 /* https://github.com/vslinko/obsidian-outliner/blob/main/styles.css */
@@ -2217,7 +2243,7 @@ div.oz-image-widget > img {
 
 
 /* ------------------------------------------------------ */
-/* SMALL FIXES */
+/* > SMALL FIXES */
 /* ------------------------------------------------------ */
 
 /* numbers with same width */
@@ -2246,7 +2272,7 @@ body,
 https://forum.obsidian.md/t/inline-code-occludes-text-selection-and-vim-cursor/11552/10 */
 .theme-light .cm-inline-code,
 .theme-light .cm-s-obsidian .cm-templater-command {
-	background-color: rgba(0, 0, 0, 0.05) !important;
+	background-color: rgba(0, 0, 0, 0.005) !important;
 }
 .theme-dark .cm-inline-code {
 	background-color: rgba(0, 0, 0, 0.2) !important;
