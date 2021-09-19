@@ -159,7 +159,7 @@ https://github.com/mgmeyers/obsidian-style-settings*/
 
 
 /* ------------------------------------------------------ */
-/* > SHIMMERING FOCUS, version 1.13
+/* > SHIMMERING FOCUS, version 1.13.1
 Created by @pseudometa (Discord) aka @chrisgrieser (GitHub)
 https://github.com/chrisgrieser/shimmering-focus/ */
 /* ---------------------------------------------------------
@@ -202,7 +202,7 @@ For help and/or CSS snippets, thanks to:
 
 
 :root {
-	--active-line: #adae9833;
+	--active-line: #adae9820;
 	--cursor-color: #a09beb;
 	--code-color: #048966;
 	--bold-in-darkmode: #607892;
@@ -590,13 +590,15 @@ body:not(.round-checkboxes) .checkbox-container::after{
 .cm-s-obsidian .cm-templater-command,
 .cm-s-obsidian .HyperMD-codeblock,
 .markdown-preview-view code,
-.cm-s-obsidian span.cm-inline-code {
+.cm-s-obsidian span.cm-inline-code,
+.theme-dark .cm-s-obsidian .HyperMD-codeblock {
 	font-size: 1em;
-	color: var(--code-color);
+	color: var(--code-color) !important;
 }
 
-.theme-dark .cm-s-obsidian .HyperMD-codeblock {
-	color: var(--code-color) !important;
+/*wrapping, preserving line breaks*/
+.markdown-preview-view code{
+  white-space: pre-wrap !important;
 }
 
 /* Templater Plugin */
@@ -707,7 +709,6 @@ pre[class~="language-txt"]:after {
 .markdown-preview-view a.external-link:hover {
 	color: var(--text-alt-accent) !important;
 	cursor: pointer;
-	font-weight: 900;
 }
 
 a.internal-link.is-unresolved{
@@ -933,11 +934,11 @@ a.tag:hover {
 
 .longform-leaf .markdown-preview-view,
 .longform-leaf .cm-s-obsidian {
-  /*text-align: justify;*/
+  text-align: justify;
   hyphens: auto;
   font-family: var(--longform-font);
   /* counteract the slightly smaller size of serif fonts */
-  font-size: 1.05em;
+  font-size: 1.1em;
 }
 
 /* do not justify heading text*/
@@ -950,7 +951,7 @@ a.tag:hover {
   text-align: start;
 }
 
-/* >> INDEX FILE */
+/* >> Longform Icons */
 
 /* hide index file in file explorer, which shouldn't
 be messed with anyway */
@@ -960,6 +961,10 @@ body.hide-index-files .nav-file-title[data-path$="Index.md"] {
 
 .nav-file-title[data-path$="Index.md"] .nav-file-title-content:before {
 	content: "settings ";
+}
+
+.nav-folder-title[data-path$="Drafts"] .nav-folder-title-content::before {
+  content: "apps ";
 }
 
 
@@ -1211,6 +1216,12 @@ padding-left: 0;
 	background: none;
 }
 
+/* daily stats plugin */
+.react-calendar-heatmap {
+  font-size: 0.6em;
+  font-family: var(--regular-font);
+}
+
 /* ------------------------------------------------------ */
 /* > FILE EXPLORER */
 /* ------------------------------------------------------ */
@@ -1369,12 +1380,6 @@ based on css from @Mara https://github.com/Mara-Li/Obsidian-Snippet-collection *
 	display: none;
 }
 
-.nav-folder-title[data-path*="Chapters"] .nav-folder-title-content::before,
-.nav-folder-title[data-path*="draft"] .nav-folder-title-content::before,
-.nav-folder-title[data-path*="Draft"] .nav-folder-title-content::before {
-	content: "apps ";
-}
-
 .nav-folder-title[data-path*="attachment"] .nav-folder-title-content::before {
 	content: "attachment ";
 }
@@ -1382,7 +1387,7 @@ based on css from @Mara https://github.com/Mara-Li/Obsidian-Snippet-collection *
 	content: "attach_file ";
 }
 
-.nav-folder-title[data-path*="old "] .nav-folder-title-content:before,
+.nav-folder-title[data-path*="old"] .nav-folder-title-content:before,
 .nav-folder-title[data-path*="Archiv"] .nav-folder-title-content:before,
 .nav-folder-title[data-path*="archive"] .nav-folder-title-content:before {
 	content: "inventory_2 ";
@@ -1398,15 +1403,17 @@ based on css from @Mara https://github.com/Mara-Li/Obsidian-Snippet-collection *
 	color: orange;
 }
 
+.nav-file-title[data-path*="presentation"] .nav-file-title-content:before,
 .nav-file-title[data-path*="Presentation"] .nav-file-title-content:before {
 	content: "present_to_all ";
 }
 
-.nav-file-title[data-path*="Templater Templates"] .nav-file-title-content:before,
 .nav-file-title[data-path$="js"] .nav-file-title-content:before {
 	content: "code ";
 }
 
+.nav-file-title[data-path$="tiff"] .nav-file-title-content:before,
+.nav-file-title[data-path$="jpg"] .nav-file-title-content:before,
 .nav-file-title[data-path$="png"] .nav-file-title-content:before,
 .nav-file-title[data-path$="jpeg"] .nav-file-title-content:before {
 	content: "image ";
@@ -1428,7 +1435,7 @@ based on css from @Mara https://github.com/Mara-Li/Obsidian-Snippet-collection *
 	content: "table_chart ";
 }
 
-.nav-file-title[data-path*="statistics"] .nav-file-title-content:before,
+.nav-file-title[data-path*="statistic"] .nav-file-title-content:before,
 .nav-file-title[data-path*="Statistik"] .nav-file-title-content:before {
 	content: "pie_chart_outline ";
 }
@@ -1438,6 +1445,8 @@ based on css from @Mara https://github.com/Mara-Li/Obsidian-Snippet-collection *
 	content: "check_box ";
 }
 
+.nav-file-title[data-path*="README"] .nav-file-title-content:before,
+.nav-file-title[data-path*="readme"] .nav-file-title-content:before,
 .nav-file-title[data-path*="Metadata"] .nav-file-title-content:before,
 .nav-file-title[data-path*="metadata"] .nav-file-title-content:before {
 	content: "info ";
@@ -1457,6 +1466,10 @@ based on css from @Mara https://github.com/Mara-Li/Obsidian-Snippet-collection *
 .nav-file-title[data-path*="Character Count"] .nav-file-title-content::before,
 .nav-file-title[data-path*="Word Count"] .nav-file-title-content::before {
 	content: "flag ";
+}
+
+.nav-file-title[data-path$="Activity Tracker.md"] .nav-file-title-content::before {
+  content: "date_range ";
 }
 
 /* As Icons are now used, the labeled boxes (e.g. "pdf") can be removed. */
