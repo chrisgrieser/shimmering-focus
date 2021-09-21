@@ -168,7 +168,7 @@ https://github.com/mgmeyers/obsidian-style-settings*/
 
 
 /* ------------------------------------------------------ */
-/* > SHIMMERING FOCUS, version 1.14
+/* > SHIMMERING FOCUS, version 1.15
 Created by @pseudometa (Discord) aka @chrisgrieser (GitHub)
 https://github.com/chrisgrieser/shimmering-focus/ */
 /* ---------------------------------------------------------
@@ -290,9 +290,14 @@ body:not(.not-ia-writer-font) .workspace-leaf-content[data-type="VIEW_TYPE_LONGF
 	letter-spacing: -0.03em;
 }
 
-/* fixes weight for iA Writer Quattro */
+body:not(.not-ia-writer-font) .svelte-23avsr[name~="projects"] {
+  text-rendering: geometricPrecision;
+}
+
+/* fixes font-weight for iA Writer Quattro */
 body:not(.not-ia-writer-font) .markdown-preview-view strong,
-body:not(.not-ia-writer-font) .cm-strong {
+body:not(.not-ia-writer-font) .cm-strong,
+body:not(.not-ia-writer-font) .nav-file-title.is-active {
   text-rendering: geometricPrecision;
 }
 
@@ -721,6 +726,16 @@ pre[class~="language-txt"]:after {
   content: "TXT";
 }
 
+/* fix for the buggy selection fo inline text
+https://forum.obsidian.md/t/inline-code-occludes-text-selection-and-vim-cursor/11552/10 */
+.theme-light .cm-inline-code,
+.theme-light .cm-s-obsidian .cm-templater-command {
+  background-color: rgba(0, 0, 0, 0.005) !important;
+}
+.theme-dark .cm-inline-code {
+  background-color: rgba(0, 0, 0, 0.2) !important;
+}
+
 /* ------------------------------------------------------ */
 /* > Links & Tags */
 /* ------------------------------------------------------ */
@@ -937,6 +952,11 @@ a.tag:hover {
 .svelte-23avsr[name~="projects"] {
   font-weight: 600;
 }
+
+body:not(.not-ia-writer-font) .svelte-23avsr[name~="projects"] {
+  text-rendering: geometricPrecision;
+}
+
 .right-arrow.svelte-23avsr{
   display: none !important;
 }
@@ -967,14 +987,22 @@ a.tag:hover {
   text-align: justify;
   hyphens: auto;
   font-family: var(--longform-font);
+  letter-spacing: 0 !important;
+
   /* counteract the slightly smaller size of serif fonts */
   font-size: var(--longform-font-size);
   line-height: 1.35;
 }
 
-:root{
-  --longform-heading-scale: 1.1;
+/* keep any code smaller though */
+.longform-leaf .markdown-preview-view .frontmatter-container,
+.longform-leaf span.cm-hmd-frontmatter,
+.longform-leaf .cm-s-obsidian .HyperMD-codeblock,
+.longform-leaf .markdown-preview-view code,
+.longform-leaf .cm-s-obsidian span.cm-inline-code {
+  font-size: calc(var(--longform-font-size) * 0.66);
 }
+
 
 /* do not justify heading text*/
 .longform-leaf .markdown-preview-view h1,
@@ -987,6 +1015,9 @@ a.tag:hover {
   font-family: var(--longform-font);
 }
 
+:root{
+  --longform-heading-scale: 1.1;
+}
 .longform-leaf .cm-header-1,
 .longform-leaf .cm-header-2,
 .longform-leaf .cm-header-3,
@@ -1000,6 +1031,7 @@ a.tag:hover {
   text-align: start;
   font-family: var(--longform-font);
   line-height: 1.2em;
+  letter-spacing: 0.5px;
 }
 
 .longform-leaf .cm-header-1,
@@ -1036,7 +1068,7 @@ body.hide-index-files .nav-file-title[data-path$="Index.md"] {
 }
 
 .nav-folder-title[data-path$="Drafts"] .nav-folder-title-content::before {
-  content: "apps ";
+	content: "apps ";
 }
 
 
@@ -1804,17 +1836,8 @@ span.cm-hmd-frontmatter {
 
 /* YAML-Header in Preview Mode */
 .markdown-preview-view pre.frontmatter.language-yaml {
-/*	background: var(--background-secondary);
-	padding-top: 0.6em;
-	padding-bottom: 0.8em;
-	text-shadow: none; */
 	display: none;
 }
-
-/* .markdown-preview-view span.token.key.atrule {
-	color: var(--text-alt-accent);
-} */
-
 
 /* METADATA BLOCK */
 .markdown-preview-view .frontmatter-container {
@@ -1922,22 +1945,26 @@ body:not(.no-pandoc-citation-emphasis) .cm-hmd-barelink {
 }
 /* footnotes preview */
 .markdown-preview-section .footnotes {
-	font-size: 90%;
+	font-size: 85%;
 	text-align: justify;
 	hyphens: auto;
 }
+.markdown-preview-section .footnotes ol {
+  padding-inline-start: 13px;
+}
+
 /* applies to number-references in the footnote text */
 span.cm-link.cm-hmd-footnote {
 	color: var(--text-alt-accent) !important;
 	vertical-align: top;
 }
 
-/* footnotes (at the bottom) size */
+/* footnotes (at the bottom) */
 .HyperMD-footnote.CodeMirror-line {
 	font-size: 85%;
 	text-align: justify;
 	hyphens: auto;
-	padding-left: 1px;
+	padding-left: 5px; /* same of paragraphs */
 }
 
 /* remove underline which only decreases redability */
@@ -1997,9 +2024,7 @@ and with some other plugins */
     overflow: hidden;
     text-overflow: ellipsis;
 }
-/*table.dataview.table-view-table td:nth-child(2) {
-  text-align: end;
-}*/
+
 
 /* ------------------------------------------------------ */
 /* > HEADINGS / HEADERS */
@@ -2154,7 +2179,8 @@ Based on some CSS from @SlRvb, @gee & @Eleanor Konik */
 /* when blockquote is also active line */
 .CodeMirror-activeline .HyperMD-quote.HyperMD-quote-1.CodeMirror-line {
   border-radius: 0px !important;
-  background-color: var(--active-line);
+  background-color: var(--active-line) !important;
+  color: var(--text-normal) !important;
 }
 
 /* the ">"*/
@@ -2290,7 +2316,6 @@ input.document-replace-input{
   color: var(--more-contrast-muted);
 }
 
-
 .graph-view.color-circle{
   color: blue !important;
 }
@@ -2306,20 +2331,21 @@ input.document-replace-input{
 	margin: 0rem 1rem 2rem 0rem;
 	font-size: 90%;
 	font-style: italic;
+  font-weight: 300;
 	line-height: 1.1;
-	color: var(--text-faint);
+  padding-top: 3px;
+	color: var(--text-muted);
 }
 
 /* restrict image width in Preview Mode*/
 .view-content .markdown-preview-view img {
 	max-width: 50%;
-  /* images in lists get proper bullet points */
-  display: block;
+  display: block; /* images in lists get proper bullet points */
 }
 
 /* restrict image width in editor mode (Ozan's image editor plugin)*/
 div.oz-image-widget > img {
-	max-width: 40% !important;
+	max-width: 45% !important;
 	cursor: unset !important;
 }
 
@@ -2329,13 +2355,14 @@ div.oz-image-widget > img {
 /* based on css from the outliner plugin */
 /* https://github.com/vslinko/obsidian-outliner/blob/main/styles.css */
 
+/* edit mode */
 .cm-hmd-list-indent .cm-tab {
 	position: relative;
 }
 
 .cm-hmd-list-indent .cm-tab::before {
 	content: "";
-	border-left: 1px solid var(--text-faint);
+	border-left: 2px solid var(--text-faint);
 	position: absolute;
 	left: 3px;
 	top: -9px;
@@ -2346,6 +2373,26 @@ div.oz-image-widget > img {
 .cm-s-obsidian .CodeMirror-line:not(.HyperMD-table-2) {
 	position: relative;
 	overflow: hidden;
+}
+
+/* Preview Mode */
+ul ul,
+ol ol,
+ul ol,
+ol ul {
+  position: relative;
+}
+
+ul ul::before,
+ol ol::before,
+ul ol::before,
+ol ul::before {
+  content: "";
+  border-left: 2px solid var(--text-faint);
+  position: absolute;
+  left: -1rem;
+  top: 0;
+  bottom: 0;
 }
 
 
@@ -2367,16 +2414,6 @@ body,
 /* fix html comments by disabling ligatures in edit mode */
 .CodeMirror.cm-s-obsidian {
 	font-feature-settings: "liga" 0;
-}
-
-/* fix for the buggy selection fo inline text
-https://forum.obsidian.md/t/inline-code-occludes-text-selection-and-vim-cursor/11552/10 */
-.theme-light .cm-inline-code,
-.theme-light .cm-s-obsidian .cm-templater-command {
-	background-color: rgba(0, 0, 0, 0.005) !important;
-}
-.theme-dark .cm-inline-code {
-	background-color: rgba(0, 0, 0, 0.2) !important;
 }
 
 /* TEMPLATER READABLE WITH LIGHT THEME */
