@@ -29,7 +29,7 @@ A minimalistic Obsidian theme focused on readability, condensed information disp
 **Suited for Academic Writing**
 - [Pandoc citations](https://pandoc.org/MANUAL.html#citations-in-note-styles) (`[@citekey]`) and footnotes are visually emphasized
 - [the alt-text of images is used as caption text](https://gist.github.com/chrisgrieser/4f64b0fc656480ea707d2b45a03acdc0), in line with Pandoc's conversion behavior
-- CSS Styling for the [Longform Plugin](https://github.com/kevboh/longform): serif font, justified & hyphenated text
+- CSS Styling for the [Longform Plugin](https://github.com/kevboh/longform): justified & hyphenated text, and [Crimson Pro](https://fonts.google.com/specimen/Crimson+Pro) as an easy-to-read serif font
 
 **Condensed**
 - uses screen real estate more efficiently to display more information (useful for smaller screens)
@@ -52,7 +52,6 @@ A minimalistic Obsidian theme focused on readability, condensed information disp
 - Other then re-enabling the title bar, header bar, and ribbons, you can also change basic features like font-families and header sizes. 
 
 <img width=40% height=40% alt="Screenshot 2021-09-10 22 38 50" src="https://user-images.githubusercontent.com/73286100/132916198-9a1f164b-1f8d-4d65-ba80-bee1d0c41bf3.png">
-
 
 ## Installation
 You can find *Shimmering Focus* in Obsidian's community themes browser under `Settings ➞ Appearance ➞ Themes`.
