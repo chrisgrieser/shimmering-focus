@@ -53,6 +53,21 @@ A minimalistic Obsidian theme focused on readability, condensed information disp
 
 <img width=40% height=40% alt="Screenshot 2021-09-10 22 38 50" src="https://user-images.githubusercontent.com/73286100/132916198-9a1f164b-1f8d-4d65-ba80-bee1d0c41bf3.png">
 
+## Includes Styling for the following Plugins
+- Longform
+- Kanban
+- BetterWordCount
+- Graph View
+- QuickExplorer
+- Show Current Path
+- Advanced Table
+- Templater
+- Dataview
+- Starred
+- Tag
+- Backlinks
+- Outline
+
 ## Installation
 You can find *Shimmering Focus* in Obsidian's community themes browser under `Settings ➞ Appearance ➞ Themes`.
 
