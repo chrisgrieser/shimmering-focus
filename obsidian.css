@@ -168,7 +168,7 @@ https://github.com/mgmeyers/obsidian-style-settings*/
 
 
 /* ------------------------------------------------------ */
-/* > SHIMMERING FOCUS, version 1.16
+/* > SHIMMERING FOCUS, version 1.17
 Created by @pseudometa (Discord) aka @chrisgrieser (GitHub)
 https://github.com/chrisgrieser/shimmering-focus/ */
 /* ---------------------------------------------------------
@@ -184,6 +184,7 @@ For help and/or CSS snippets, thanks to:
 - @NothingIsLost
 - @javalent
 - @SlRvb
+- @phibr0
 --------------------------------------------------------- */
 
 /* ------------------------------------------------------ */
@@ -246,7 +247,7 @@ For help and/or CSS snippets, thanks to:
 	--editor-alt-accent: #009a72;
 	--selection-color: #e8ddffDD;
 	--more-contrast-muted: #5E5E5E;
-	--nestlinecolor: #777;
+	--grey-line-color: #777;
 }
 
 .theme-dark {
@@ -254,7 +255,7 @@ For help and/or CSS snippets, thanks to:
 	--editor-alt-accent: #02ac7d;
 	--selection-color: #3c243bDD;
 	--more-contrast-muted: #BBB;
-	--nestlinecolor: #DDD;
+	--grey-line-color: #DDD;
 }
 
 .nav-file-title,
@@ -936,17 +937,17 @@ a.tag:hover {
 }
 
 /* >> TAB-ITEMS */
-
+/* >> Longform Sidebar Icons */
 .svelte-htpziy::before{
   font-family: "Material Icons";
   font-size: 1.5rem;
   vertical-align: top;
 }
 .svelte-htpziy:nth-child(1)::before{
-  content: "format_list_numbered";
+  content: "format_list_numbered_rtl";
 }
 .svelte-htpziy:nth-child(2)::before{
-  content: "menu_book";
+  content: "import_contacts";
 }
 .svelte-htpziy:nth-child(3)::before{
   content: "merge_type";
@@ -1024,14 +1025,14 @@ body:not(.not-ia-writer-font) .svelte-23avsr[name~="projects"] {
   padding-top: 5px;
   padding-bottom: 5px;
   font-size: 0.8em;
-  border: 2.5px solid var(--text-faint);
+  border: 2.5px solid var(--grey-line-color);
 }
 
 /* >> Longform EDITOR */
 /* https://github.com/kevboh/longform#scene-only-styling */
 
 .longform-leaf .markdown-preview-view,
-.longform-leaf .cm-s-obsidian {
+.longform-leaf .cm-s-obsidian{
   text-align: justify;
   hyphens: auto;
   font-family: var(--longform-font);
@@ -1044,11 +1045,14 @@ body:not(.not-ia-writer-font) .svelte-23avsr[name~="projects"] {
 
 /* keep any code smaller though */
 .longform-leaf .markdown-preview-view .frontmatter-container,
-.longform-leaf span.cm-hmd-frontmatter,
+.longform-leaf .cm-s-obsidian .cm-hmd-frontmatter,
 .longform-leaf .cm-s-obsidian .HyperMD-codeblock,
 .longform-leaf .markdown-preview-view code,
-.longform-leaf .cm-s-obsidian span.cm-inline-code {
-  font-size: calc(var(--longform-font-size) * 0.66);
+.longform-leaf .cm-s-obsidian span.cm-inline-code,
+.longform-leaf .HyperMD-table-row {
+	font-size: calc(var(--longform-font-size) * 0.66);
+	text-align: start;
+	hyphens: none;
 }
 
 
@@ -1448,7 +1452,7 @@ based on css from @Mara https://github.com/Mara-Li/Obsidian-Snippet-collection *
 	> .nav-folder
 	> .nav-folder-children {
 	padding-left: 1.1em;
-	border-top: var(--nestlinecolor) 2px solid;
+	border-top: var(--grey-line-color) 2px solid;
 	border-radius: 0px 0px;
 }
 
@@ -1460,7 +1464,7 @@ based on css from @Mara https://github.com/Mara-Li/Obsidian-Snippet-collection *
 	> .nav-folder
 	> .nav-folder-children
 	> .nav-file {
-	border-left: var(--nestlinestyle1) 2px var(--nestlinecolor);
+	border-left: var(--nestlinestyle1) 2px var(--grey-line-color);
 }
 
 .nav-folder.mod-root
@@ -1470,7 +1474,7 @@ based on css from @Mara https://github.com/Mara-Li/Obsidian-Snippet-collection *
 	> .nav-folder
 	> .nav-folder-children
 	> .nav-folder {
-	border-left: var(--nestlinestyle1) 2px var(--nestlinecolor);
+	border-left: var(--nestlinestyle1) 2px var(--grey-line-color);
 }
 
 .nav-folder.mod-root
@@ -1482,7 +1486,7 @@ based on css from @Mara https://github.com/Mara-Li/Obsidian-Snippet-collection *
 	> .nav-folder
 	> .nav-folder-children
 	> .nav-file {
-	border-left: var(--nestlinestyle2) 2px var(--nestlinecolor);
+	border-left: var(--nestlinestyle2) 2px var(--grey-line-color);
 }
 
 .nav-folder.mod-root
@@ -1494,7 +1498,7 @@ based on css from @Mara https://github.com/Mara-Li/Obsidian-Snippet-collection *
 	> .nav-folder
 	> .nav-folder-children
 	> .nav-folder {
-	border-left: var(--nestlinestyle2) 2px var(--nestlinecolor);
+	border-left: var(--nestlinestyle2) 2px var(--grey-line-color);
 }
 
 .nav-folder.mod-root
@@ -1508,7 +1512,7 @@ based on css from @Mara https://github.com/Mara-Li/Obsidian-Snippet-collection *
 	> .nav-folder
 	> .nav-folder-children
 	> .nav-file {
-	border-left: var(--nestlinestyle3) 2px var(--nestlinecolor);
+	border-left: var(--nestlinestyle3) 2px var(--grey-line-color);
 }
 
 .nav-folder.mod-root
@@ -1522,7 +1526,7 @@ based on css from @Mara https://github.com/Mara-Li/Obsidian-Snippet-collection *
 	> .nav-folder
 	> .nav-folder-children
 	> .nav-folder {
-	border-left: var(--nestlinestyle3) 2px var(--nestlinecolor);
+	border-left: var(--nestlinestyle3) 2px var(--grey-line-color);
 }
 
 /* ------------------------------------------------------ */
@@ -2064,7 +2068,7 @@ and with some other plugins */
 }
 
 /* ------------------------------------------------------ */
-/* > TABLES & DATAVIEW */
+/* > TABLES & DATAVIEW-TABLES */
 /* ------------------------------------------------------ */
 
 /* inner column border */
@@ -2075,6 +2079,21 @@ and with some other plugins */
 .dataview.table-view-table td:first-child,
 .dataview.table-view-table th:first-child {
   border-left: none;
+}
+
+table:not(.dataview.table-view-table) td,
+table:not(.dataview.table-view-table) th {
+	border: 2px solid var(--text-muted);
+}
+
+.theme-dark table:not(.dataview.table-view-table) th {
+	font-weight: 900;
+	color: var(--bold-in-darkmode);
+	border-bottom: 3px solid var(--text-muted);
+}
+.theme-light table:not(.dataview.table-view-table) th {
+	font-weight: 900;
+	border-bottom: 3px solid var(--text-muted);
 }
 
 
@@ -2383,22 +2402,23 @@ input.document-replace-input{
 	margin: 0rem 1rem 2rem 0rem;
 	font-size: 90%;
 	font-style: italic;
-  font-weight: 300;
+	font-weight: 300;
 	line-height: 1.1;
-  padding-top: 3px;
+	padding-top: 3px;
 	color: var(--text-muted);
 }
 
 /* restrict image width in Preview Mode*/
 .view-content .markdown-preview-view img {
 	max-width: 50%;
-  display: block; /* images in lists get proper bullet points */
+	display: block; /* images in lists get proper bullet points */
 }
 
 /* restrict image width in editor mode (Ozan's image editor plugin)*/
 div.oz-image-widget > img {
-	max-width: 45% !important;
+	max-width: 50% !important;
 	cursor: unset !important;
+	text-align: center !important;
 }
 
 /* ------------------------------------------------------ */
@@ -2440,13 +2460,21 @@ ol ol::before,
 ul ol::before,
 ol ul::before {
   content: "";
-  border-left: 2px solid var(--text-faint);
+  border-left: 1px solid var(--text-faint);
   position: absolute;
   left: -1rem;
   top: 0;
   bottom: 0;
 }
 
+/* ------------------------------------------------------ */
+/* > DARK MODE PDFs */
+/* ------------------------------------------------------ */
+/*snippet from @phibr0*/
+.theme-dark .pdf-embed iframe,
+.theme-dark .workspace-leaf-content[data-type="pdf"] iframe {
+    filter: invert(0.85);
+}
 
 /* ------------------------------------------------------ */
 /* > SMALL FIXES */
