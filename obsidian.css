@@ -168,7 +168,7 @@ https://github.com/mgmeyers/obsidian-style-settings*/
 
 
 /* ------------------------------------------------------ */
-/* > SHIMMERING FOCUS, version 1.15
+/* > SHIMMERING FOCUS, version 1.16
 Created by @pseudometa (Discord) aka @chrisgrieser (GitHub)
 https://github.com/chrisgrieser/shimmering-focus/ */
 /* ---------------------------------------------------------
@@ -224,7 +224,7 @@ For help and/or CSS snippets, thanks to:
 	--highlight-color: #00ff8866;
 	--highlight-alt1: #ffff0066;
 	--highlight-alt2: #00ffff66;
-  --unresolved-link-color: #0F80FF;
+	--unresolved-link-color: #0F80FF;
 
 	--regular-font: "iA Writer Quattro S", "Helvetica Neue";
 	--font-monospace: "Input Mono", Menlo;
@@ -236,7 +236,7 @@ For help and/or CSS snippets, thanks to:
 	--h3-size: 1.3em;
 	--h4-size: 1.2em;
 	--h5-size: 1.1em;
-  --longform-font-size: 1.2em;
+	--longform-font-size: 1.2em;
 
 	--signature:"❖";
 }
@@ -433,6 +433,7 @@ body:not(.show-header-bar) .view-header {
 	border-bottom: none !important;
 	background-color: var(--background-primary) !important;
 }
+
 .view-header-title-container::after{
 	display: none;
 }
@@ -473,6 +474,53 @@ body:not(.show-header-bar) .view-header:focus-within{
 .view-header-icon:active,
 .view-action:active svg{
 	color: var(--text-accent) !important;
+}
+
+/* ------------------------------------------------------ */
+/* > Kanban Plugin */
+/* ------------------------------------------------------ */
+
+.theme-light{
+	--kanban-background: #DADADA;
+}
+.theme-dark{
+	--kanban-background: #2C2C2C;
+}
+
+.workspace-leaf-content[data-type=kanban] .view-header {
+	background-color: var(--kanban-background) !important;
+}
+
+.workspace-leaf-content[data-type=kanban] p,
+.workspace-leaf-content[data-type=kanban] a{
+	font-family: var(--regular-font);
+}
+
+a.tag.kanban-plugin__item-tag {
+	background: none;
+}
+
+.kanban-plugin__new-item-button:hover{
+	background-color: var(--text-alt-accent) !important;
+}
+
+.kanban-plugin__item:hover{
+	border-color: var(--text-alt-accent);
+}
+
+.theme-dark .kanban-plugin__item:hover .kanban-plugin__item-title-wrapper{
+	background-color: var(--kanban-background) !important;
+}
+.theme-light .kanban-plugin__item:hover .kanban-plugin__item-title-wrapper{
+	background-color: var(--background-primary-alt) !important;
+}
+
+.kanban-plugin{
+	background-color: var(--kanban-background) !important;
+}
+
+.view-content > .kanban-plugin > * > div{
+	padding-top: 0.5em;
 }
 
 /* ------------------------------------------------------ */
@@ -898,7 +946,7 @@ a.tag:hover {
   content: "format_list_numbered";
 }
 .svelte-htpziy:nth-child(2)::before{
-  content: "article";
+  content: "menu_book";
 }
 .svelte-htpziy:nth-child(3)::before{
   content: "merge_type";
@@ -1068,7 +1116,8 @@ body.hide-index-files .nav-file-title[data-path$="Index.md"] {
 }
 
 .nav-folder-title[data-path$="Drafts"] .nav-folder-title-content::before {
-	content: "apps ";
+	content: "folder_special ";
+	/* alternative:  "auto_stories" or "menu_book" */
 }
 
 
@@ -1299,14 +1348,24 @@ readability */
   padding-top: 5px;
 }
 
-.workspace-leaf-content[data-type="starred"] .nav-file-title:hover{
-	color: var(--text-alt-accent);
-}
+/* > Starred Pane */
 
+/*this places a star iccon before all starred items */
+.workspace-leaf-content[data-type="starred"] .nav-file-title .nav-file-title-content::before{
+	content: "star ";
+	font-family: "Material Icons";
+	vertical-align: bottom;
+}
 .workspace-leaf-content[data-type="starred"] .nav-file-icon svg.document{
 	display: none;
 }
 
+.workspace-leaf-content[data-type="starred"] .nav-file-title:hover{
+	color: var(--text-alt-accent);
+}
+
+
+/*for starred searches*/
 .workspace-leaf-content[data-type="starred"] .nav-file-icon svg.search{
 	margin-left: 0.7em;
 	vertical-align: text-bottom;
@@ -1471,7 +1530,8 @@ based on css from @Mara https://github.com/Mara-Li/Obsidian-Snippet-collection *
 /* ------------------------------------------------------ */
 .nav-folder-title-content::before,
 .nav-file-title-content::before {
-	vertical-align: text-top;
+	/*vertical-align: text-top;*/
+	vertical-align: bottom;
 	font-family: "Material Icons";
 	font-size: 1.2em;
 }
@@ -2015,14 +2075,6 @@ and with some other plugins */
 .dataview.table-view-table td:first-child,
 .dataview.table-view-table th:first-child {
   border-left: none;
-}
-
-/* wrap links */
-.dataview.table-view-table > tbody > tr > td a {
-    display: block;
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
 }
 
 
