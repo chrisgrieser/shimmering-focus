@@ -33,36 +33,46 @@ A minimalistic Obsidian theme focused on readability, condensed information disp
 
 **Condensed**
 - uses screen real estate more efficiently to display more information (useful for smaller screens)
-- smaller images in Preview Mode (in Editor Mode, too, when using [Ozan's Image Plugin](https://github.com/ozntel/oz-image-in-editor-obsidian))
+- smaller images in Preview Mode (and in Editor Mode, too, when using [Ozan's Image Plugin](https://github.com/ozntel/oz-image-in-editor-obsidian))
 <img src="https://user-images.githubusercontent.com/73286100/131182567-104f85dd-0f99-488d-b511-e45fe8b0486f.png" alt="Screenshot 2021-08-27 22 02 02" width=40% height=40%>  
 
-**Accessible & Readable**
+**Tailored for Maximum Readability**
 - increased contrast throughout, especially with the [annoying grey font on light-grey background](https://forum.obsidian.md/t/enhance-default-color-contrast-of-the-icons/23045/3)
-- decreased font size variation to achieve readability and condonsed information at the same time
-- at the same time increased distinguishability of different classes through (subtle) variation in typeface, font style, or backgrounds
-- uses [Input Mono](https://input.djr.com/) as default monospace font, because of its increased readability
-- make [Templater](https://github.com/SilentVoid13/Templater) code more readable
+- decreased font size variation to increase readability & information density
+- at the same time increased distinguishability of different classes through subtle variation in typeface, font style, or backgrounds
+- uses easy-to-read font for every usecase: 
+  - [iA Writer Quattro](https://github.com/iaolo/iA-Fonts/tree/master/iA%20Writer%20Quattro) for regular text.
+  - [Input Mono](https://input.djr.com/) as monospace font for code
+  - Optima or Canberra as heading font
+  - [Crimson Pro](https://fonts.google.com/specimen/Crimson+Pro) as serif font for longform projects
+- make [Templater](https://github.com/SilentVoid13/Templater) code more readable in light mode
 - minor coloring of bold in dark mode to make it more readable, since bold in dark mode is harder to distinguish form normal text than  in light mode
+- thicker lines (hr, tables, etc.)
+- Dark Mode for PDFs (when using the theme in dark mode)
 
 **Subtle Design**  
-- Stylistically, the theme pretty much follows Obsidian's default theme, with [iA Writer Quattro](https://github.com/iaolo/iA-Fonts/tree/master/iA%20Writer%20Quattro) as main font and some shimmering green as secondary accent.
+- Stylistically, the theme pretty much follows Obsidian's default theme, with some shimmering green as secondary accent
 
 **Style Settings Plugin**
 - This themes supports the [Style Settings Plugin](https://github.com/mgmeyers/obsidian-style-settings/) for customization.
-- Other then re-enabling the title bar, header bar, and ribbons, you can also change basic features like font-families and header sizes. 
+- Other then re-enabling the title bar, header bar, and ribbons, you can also change some basic features like font-families and header sizes. 
 
 <img width=40% height=40% alt="Screenshot 2021-09-10 22 38 50" src="https://user-images.githubusercontent.com/73286100/132916198-9a1f164b-1f8d-4d65-ba80-bee1d0c41bf3.png">
 
 ## Includes Styling for the following Plugins
+
+**Communtiy Plugins**
 - Longform
 - Kanban
 - BetterWordCount
-- Graph View
 - QuickExplorer
-- Show Current Path
-- Advanced Table
+- Show Current File Path
+- Advanced Tables
 - Templater
 - Dataview
+
+**Core Plugins**
+- Graph View
 - Starred
 - Tag
 - Backlinks
@@ -75,6 +85,8 @@ Alternatively, you can also install the theme manually by downloading the CSS fi
 
 ## Credits
 For help and/or CSS snippets, thanks to:
+- **@SlRvb**
+- **@javalent**
 - @kepano
 - @Mara
 - @Chetachie
@@ -84,7 +96,6 @@ For help and/or CSS snippets, thanks to:
 - @jdaniel
 - @só erick mesmo
 - @NothingIsLost
-- @javalent
-- @SlRvb
+- @phibr0
 
 This theme has been created by @pseudometa ([Discord](https://discord.gg/veuWUTm)) aka [@pseudo_meta (Twitter)](https://twitter.com/pseudo_meta) aka Chris Grieser (rl). If you find this theme to be useful, feel free to donate [via PayPal](https://www.paypal.com/paypalme/ChrisGrieser). In my day job, I am a PhD student in sociology, studying the governance of the app economy. If you are interested in this subject, check out [my academic homepage](https://chris-grieser.de/) and get in touch.
