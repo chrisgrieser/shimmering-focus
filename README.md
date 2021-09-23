@@ -22,6 +22,7 @@ A minimalistic Obsidian theme focused on readability, condensed information disp
 - Active line highlighting
 - Material Icons to indicate folder and file types
 - Display of the language of a code block in Preview Mode
+- spellcheck deactivated in blockquotes, code blocks, and YAML frontmatter (only produces false positives there anyway)
 
 <img width=25% height=25% alt="Screenshot 2021-09-03 21 46 20" src="https://user-images.githubusercontent.com/73286100/132058563-94672224-ed07-473d-9403-8a770984b3d2.png">
 
