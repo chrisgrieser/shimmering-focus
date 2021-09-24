@@ -82,7 +82,7 @@ settings:
     format: em
   -
     id: font-selection
-    title: Font-Families
+    title: Font
     type: heading
     level: 2
     collapsed: true
@@ -94,7 +94,7 @@ settings:
     default: '"iA Writer Quattro S", Helvetica'
   -
     id: not-ia-writer-font
-    title: No decreased letter spacing
+    title: No decreased letter spacing for regualr fonts
     description: Turn off the decreased letter-spacing used by this theme for iA Writer Quattro as regular font.
     type: class-toggle
     default: false
@@ -103,25 +103,25 @@ settings:
     title: Monospace Font
     description: Font used for code blocks, YAML-Header in edit mode, tables, etc. (Changing this font may lead to slight misalignments of some elements of this theme.)
     type: variable-text
-    default: '"Input Mono", Menlo'
+    default: '"Input Mono"'
   -
     id: heading-font
     title: Heading Font
     description: Font used for Headings (H1-H5)
     type: variable-text
-    default: 'Optima, Candara, "iA Writer Quattro S", Helvetica'
+    default: 'Optima, Candara, "Helvetica Neue"'
   -
     id: not-optima-font
-    title: Turn off the increased letter spacing for Headings with Optima Font.
-    description: Font used for Headings (H1-H5)
-    type: variable-text
-    default: 'Optima, Candara, "iA Writer Quattro S", Helvetica'
+    title: No increased letter spacing for headings
+    description: Turn off the increased letter spacing for Headings with Optima Font.
+    type: class-toggle
+    default: false
   -
     id: longform-font
     title: Longform Notes Font
     description: Font used in folders marked as Longform Project (Longform Plugin)
     type: variable-text
-    default: '"Crimson Pro", Palatino'
+    default: '"Crimson Pro"'
   -
     id: longform-font-size
     title: Longform Font Size
@@ -168,7 +168,7 @@ https://github.com/mgmeyers/obsidian-style-settings*/
 
 
 /* ------------------------------------------------------ */
-/* > SHIMMERING FOCUS, version 1.17
+/* > SHIMMERING FOCUS, version 1.19
 Created by @pseudometa (Discord) aka @chrisgrieser (GitHub)
 https://github.com/chrisgrieser/shimmering-focus/ */
 /* ---------------------------------------------------------
@@ -227,11 +227,11 @@ For help and/or CSS snippets, thanks to:
 	--highlight-alt2: #00ffff66;
 	--unresolved-link-color: #0F80FF;
 
-	--regular-font: "iA Writer Quattro S", "Helvetica Neue";
-	--font-monospace: "Input Mono", Menlo;
-	--heading-font: Optima, Candara, "iA Writer Quattro S", "Helvetica Neue";
+	--regular-font: "iA Writer Quattro S";
+	--font-monospace: "Input Mono";
+	--heading-font: Optima, Candara, "Helvetica Neue";
 	--mermaid-font: var(--font-monospace);
-	--longform-font: "Crimson Pro", Palatino;
+	--longform-font: "Crimson Pro";
 	--h1-size: 1.7em;
 	--h2-size: 1.5em;
 	--h3-size: 1.3em;
@@ -295,7 +295,7 @@ body:not(.not-ia-writer-font) .svelte-23avsr[name~="projects"] {
   text-rendering: geometricPrecision;
 }
 
-/* fixes font-weight for iA Writer Quattro */
+/* fixes font-weight for iA Writer Quattro Bold */
 body:not(.not-ia-writer-font) .markdown-preview-view strong,
 body:not(.not-ia-writer-font) .cm-strong,
 body:not(.not-ia-writer-font) .nav-file-title.is-active {
@@ -372,6 +372,21 @@ body:not(.show-ribbons) .workspace-ribbon {
 .workspace-ribbon-collapse-btn:active svg{
 	color: var(--text-accent);
 }
+
+/* ------------------------------------------------------ */
+/* > Editor Width */
+/* ------------------------------------------------------ */
+
+/*editor mode*/
+/*.CodeMirror-wrap{
+   width: 300px !important;
+}*/
+
+/*Preview Mode*/
+/*.markdown-preview-section {
+	width: 00px !important;
+}
+*/
 
 
 /* ------------------------------------------------------ */
@@ -665,7 +680,6 @@ body:not(.round-checkboxes) .checkbox-container::after{
 /* ------------------------------------------------------ */
 /* > CODE BLOCKS & INLINE CODE */
 /* ------------------------------------------------------ */
-.cm-s-obsidian .cm-templater-command,
 .cm-s-obsidian .HyperMD-codeblock,
 .markdown-preview-view code,
 .cm-s-obsidian span.cm-inline-code,
@@ -784,6 +798,35 @@ https://forum.obsidian.md/t/inline-code-occludes-text-selection-and-vim-cursor/1
 .theme-dark .cm-inline-code {
   background-color: rgba(0, 0, 0, 0.2) !important;
 }
+
+/* ------------------------------------------------------ */
+/* > Spellcheck Error Overlay */
+/* ------------------------------------------------------ */
+
+.theme-light{
+	--spell-error-color: #7490FF;
+}
+.theme-dark{
+	--spell-error-color: #637BE1;
+}
+
+/*change spellcheck styling*/
+.CodeMirror .cm-spell-error{
+	background-image: none;
+	text-decoration: underline solid var(--spell-error-color);
+	text-decoration-thickness: 2px;
+}
+
+/* do not spellcheck inside a blockquote, yaml, or code */
+.cm-hmd-frontmatter.cm-overlay.cm-spell-error,
+span.cm-quote.cm-quote-1.cm-overlay.cm-spell-error,
+.cm-templater-command.cm-spell-error,
+.HyperMD-codeblock.cm-spell-error,
+span.cm-inline-code.cm-spell-error {
+	text-decoration: none;
+	background-image: none;
+}
+
 
 /* ------------------------------------------------------ */
 /* > Links & Tags */
@@ -1025,7 +1068,7 @@ body:not(.not-ia-writer-font) .svelte-23avsr[name~="projects"] {
   padding-top: 5px;
   padding-bottom: 5px;
   font-size: 0.8em;
-  border: 2.5px solid var(--grey-line-color);
+  border: 2.5px solid var(--text-faint);
 }
 
 /* >> Longform EDITOR */
@@ -1156,7 +1199,7 @@ body.hide-index-files .nav-file-title[data-path$="Index.md"] {
 /* ------------------------------------------------------ */
 .CodeMirror-cursor {
 	border: none;
-	border-left: 0.2em solid var(--cursor-color);
+	border-left: 3px solid var(--cursor-color);
 }
 
 /* ------------------------------------------------------ */
@@ -1838,8 +1881,9 @@ based on css from @Mara https://github.com/Mara-Li/Obsidian-Snippet-collection *
 /* ------------------------------------------------------ */
 /* highlight active line */
 .CodeMirror-activeline .CodeMirror-linebackground {
-	background-color: var(--active-line) !important;
+	background-color: var(--active-line);
 }
+
 
 /* change highlight color */
 .markdown-preview-view mark,
@@ -1948,12 +1992,22 @@ span.cm-hmd-frontmatter {
 /* > Collapse Indicator */
 /* ------------------------------------------------------ */
 
-/* preview mode */
+/*preview mode*/
 .right-triangle{
 	height: 0.5em;
 	width: 0.5em;
 }
-.right-triangle:hover,
+
+.is-collapsed .heading-collapse-indicator.collapse-indicator.collapse-icon:hover,
+.heading-collapse-indicator.collapse-indicator.collapse-icon:hover{
+	color: var(--text-alt-accent);
+	opacity: 0.8;
+}
+.is-collapsed .heading-collapse-indicator.collapse-indicator.collapse-icon{
+	color: var(--text-accent);
+}
+
+/*edit mode*/
 .CodeMirror-foldgutter-folded.CodeMirror-guttermarker-subtle:hover,
 .CodeMirror-foldgutter-open.CodeMirror-guttermarker-subtle:hover,
 .CodeMirror-foldmarker:hover{
@@ -1961,11 +2015,9 @@ span.cm-hmd-frontmatter {
 	opacity: 0.8;
 }
 
-/* edit mode */
 .CodeMirror-foldgutter-folded.CodeMirror-guttermarker-subtle::after,
 .CodeMirror-foldgutter-open.CodeMirror-guttermarker-subtle::after{
 	font-size: 1.5em;
-	line-height: 1.1em;
 }
 
 .CodeMirror-foldgutter-folded.CodeMirror-guttermarker-subtle{
@@ -1973,23 +2025,24 @@ span.cm-hmd-frontmatter {
 	opacity: 0.8;
 }
 
-.CodeMirror-gutters{
-	padding-right: 1em !important;
-}
-
-
 /* the "..." when content is folded */
 .CodeMirror-foldmarker{
-	font-weight: 900;
-	font-size: 1.1em;
-	border-radius: 5px;
-	background-color: var(--background-secondary);
-	opacity: 0.9;
+	display: none;
 }
-.CodeMirror-foldmarker:hover{
-	color: var(--text-alt-accent);
-	opacity: 0.8;
-	background-color: var(--background-secondary-alt);
+
+/* ------------------------------------------------------ */
+/* > Editor Size */
+/* ------------------------------------------------------ */
+
+/* Preview Mode */
+.markdown-preview-view{
+	padding-top: 0;
+	padding-left: 47px;
+}
+
+/*Editor Mode*/
+.CodeMirror-lines{
+	/*padding-left: 2em !important;*/
 }
 
 
@@ -1997,7 +2050,8 @@ span.cm-hmd-frontmatter {
 /* > Pandoc Citations & Footnotes */
 /* ------------------------------------------------------ */
 /* Pandoc Citations (applies to all []-links) */
-body:not(.no-pandoc-citation-emphasis) .cm-hmd-barelink {
+body:not(.no-pandoc-citation-emphasis) .cm-hmd-barelink,
+body:not(.no-pandoc-citation-emphasis) .cm-link.cm-quote.cm-hmd-barelink {
 	color: var(--editor-alt-accent) !important;
 }
 
@@ -2143,20 +2197,20 @@ for all headings to improve distinguishability = more readability */
 .markdown-preview-view h3,
 .markdown-preview-view h4,
 .markdown-preview-view h5 {
-	margin-top: 1.5em;
+	margin-top: 1.2em;
+	margin-bottom: 0.5em;
 }
 
-body:not(.not-optima-font)
-.cm-header-1,
-.cm-header-2,
-.cm-header-3,
-.cm-header-4,
-.cm-header-5,
-.markdown-preview-view h1,
-.markdown-preview-view h2,
-.markdown-preview-view h3,
-.markdown-preview-view h4,
-.markdown-preview-view h5{
+body:not(.not-optima-font) .cm-header-1,
+body:not(.not-optima-font) .cm-header-2,
+body:not(.not-optima-font) .cm-header-3,
+body:not(.not-optima-font) .cm-header-4,
+body:not(.not-optima-font) .cm-header-5,
+body:not(.not-optima-font) .markdown-preview-view h1,
+body:not(.not-optima-font) .markdown-preview-view h2,
+body:not(.not-optima-font) .markdown-preview-view h3,
+body:not(.not-optima-font) .markdown-preview-view h4,
+body:not(.not-optima-font) .markdown-preview-view h5{
   font-weight: 600;
   letter-spacing: 0.5px;
 }
@@ -2174,29 +2228,35 @@ body:not(.no-alternating-header-italics) .markdown-preview-view h4{
 /* For H6 only (without following blocks or line breaks).
 Based on some CSS from @SlRvb, @gee & @Eleanor Konik */
 
+body:not(.not-optima-font) .cm-header-6,
+body:not(.not-optima-font) .markdown-preview-view h6{
+  font-weight: 600;
+  letter-spacing: -0.02em;
+}
+
+.cm-header-6,
+.markdown-preview-view h6{
+	font-family: var(--regular-font);
+ 	font-size: 1em;
+}
+
 .markdown-preview-view h6 .heading-collapse-indicator.collapse-indicator.collapse-icon,
 .cm-header-6.cm-formatting.cm-formatting-header{
 	display: none;
 }
 
-.markdown-preview-view h6:before,
-.HyperMD-header.HyperMD-header-6.CodeMirror-line::before{
-  content: "ℹ️";
-  padding-left: 0.5em;
-  padding-right: 0.5em;
-}
-
-.cm-header.cm-header-6{
-  font-family: var(--regular-font);
-  font-size: 1em;
-  font-weight: 500 !important;
+/* when pseudo-admonition is also active line */
+.CodeMirror-activeline .HyperMD-header.HyperMD-header-6.CodeMirror-line {
+  border-radius: 0px !important;
+  background-color: var(--active-line) !important;
+  color: var(--text-normal) !important;
 }
 
 .theme-dark .HyperMD-header.HyperMD-header-6.CodeMirror-line{
-  background-color: rgba(0, 0, 0, 0.35) !important;
+  background-color: rgba(0, 0, 0, 0.4);
 }
 .theme-light .HyperMD-header.HyperMD-header-6.CodeMirror-line{
-  background-color: rgba(0, 0, 0, 0.1) !important;
+  background-color: rgba(0, 0, 0, 0.1);
 }
 .markdown-preview-view h6 {
   background-color: var(--background-secondary-alt);
@@ -2204,16 +2264,13 @@ Based on some CSS from @SlRvb, @gee & @Eleanor Konik */
 
 .HyperMD-header.HyperMD-header-6.CodeMirror-line,
 .markdown-preview-view h6 {
-	padding-left: 0.2em;
+	padding-left: 1em !important;
 	padding-bottom: 0.5em;
 	padding-top: 0.5em;
+	padding-bottom: 0.6em;
 	margin-bottom: 0;
-	border-left: 8px solid var(--text-muted) !important;
-	border-radius: 3px;
-	font-size: 1em !important;
-	font-style: normal;
-	font-weight: 500 !important;
-  font-family: var(--regular-font);
+	border-left: 12px solid var(--text-accent) !important;
+	border-radius: 5px;
 	color: var(--text-normal) !important;
 }
 
@@ -2222,7 +2279,7 @@ Based on some CSS from @SlRvb, @gee & @Eleanor Konik */
 /* > BLOCKQUOTE */
 /* ------------------------------------------------------ */
 
-/* BLOCKQUOTE IN EDIT MODE */
+/* >> BLOCKQUOTE IN EDIT MODE */
 .cm-quote{
   color: var(--more-contrast-muted) !important;
   font-style: italic;
@@ -2232,7 +2289,6 @@ Based on some CSS from @SlRvb, @gee & @Eleanor Konik */
   text-align: justify;
   hyphens: auto;
   color: var(--text-normal);
-  border-radius: 8px;
   padding-top: 0.4em;
   padding-bottom: 0.5em;
   padding-right: 0.8em;
@@ -2264,6 +2320,16 @@ Based on some CSS from @SlRvb, @gee & @Eleanor Konik */
 .markdown-preview-view blockquote > p > em,
 span.cm-em.cm-quote.cm-quote-1{
 	text-decoration: underline;
+}
+
+/* style links in blockquotes, e.g. es quote sources */
+.cm-link.cm-quote.cm-quote-1:not(.cm-formatting){
+	color: var(--text-accent) !important;
+}
+
+.cm-string.cm-url.cm-quote.cm-quote-1,
+.cm-link.cm-quote.cm-quote-1{
+	font-style: unset;
 }
 
 /* BLOCKQUOTE IN PREVIEW */
@@ -2496,7 +2562,7 @@ body,
 	font-feature-settings: "liga" 0;
 }
 
-/* TEMPLATER READABLE WITH LIGHT THEME */
+/* >> Templater Syntax readable in Light Theme */
 .cm-s-obsidian .cm-templater-command.cm-templater-execution-tag {
 	color: #bdba26 !important;
 	font-weight: 10 !important;
@@ -2504,17 +2570,25 @@ body,
 .theme-light .cm-s-obsidian .cm-templater-command.cm-comment {
 	color: #939393 !important;
 }
+.theme-light .cm-s-obsidian .cm-templater-command.cm-operator {
+	color: #E24526 !important;
+}
 .theme-light .cm-s-obsidian .cm-templater-command.cm-keyword {
 	color: #5c71fc !important;
 }
 .theme-light .cm-s-obsidian .cm-templater-command.cm-def {
-	color: #008100 !important;
+	color: #222 !important;
+	background-color: #BAEDE099 !important;
 }
 .theme-light .cm-s-obsidian .cm-templater-command.cm-string {
-	color: #a0a200 !important;
+	color: #008100 !important;
+}
+.theme-light .cm-s-obsidian .cm-templater-command.cm-property {
+	color: #942193 !important;
 }
 .theme-light .cm-s-obsidian .cm-templater-command.cm-undefined,
-.theme-light .cm-s-obsidian .cm-templater-command.cm-variable,
-.theme-light .cm-s-obsidian .cm-templater-command.cm-property {
+.theme-light .cm-s-obsidian .cm-templater-command.cm-variable{
 	color: #111 !important;
 }
+
+
