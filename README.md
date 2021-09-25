@@ -72,6 +72,7 @@ A minimalistic Obsidian theme focused on readability, condensed information disp
 - Templater
 - Dataview
 - Tabs
+- Sliding Panes (check `Swap Rotated Header Direction`)
 
 **Core Plugins**
 - Graph View
