@@ -375,22 +375,6 @@ body:not(.show-ribbons) .workspace-ribbon {
 }
 
 /* ------------------------------------------------------ */
-/* > Editor Width */
-/* ------------------------------------------------------ */
-
-/*editor mode*/
-/*.CodeMirror-wrap{
-   width: 300px !important;
-}*/
-
-/*Preview Mode*/
-/*.markdown-preview-section {
-	width: 00px !important;
-}
-*/
-
-
-/* ------------------------------------------------------ */
 /* > HIDE FURTHER STUFF */
 /* ------------------------------------------------------ */
 /* based on css from the hider plugin by @kepano:
@@ -431,8 +415,8 @@ https://github.com/kepano/obsidian-hider/blob/master/styles.css */
 
 /* harmonize sizes for when titlebar is shown */
 .view-header-title{
-	line-height: 1.8;
-	font-size: 1em;
+	line-height: 2;
+	font-size: 0.9em;
 }
 .view-header-icon {
 	padding-top:  0.2em;
@@ -440,6 +424,11 @@ https://github.com/kepano/obsidian-hider/blob/master/styles.css */
 .view-actions {
 	padding-top:  0.1em;
 }
+.view-header-icon,
+.view-action {
+	color: var(--more-contrast-muted) !important;
+}
+	
 
 /* show only on hover, when writing in the header bar,
 or when enabled by the style settings plugin */
@@ -449,6 +438,9 @@ body:not(.show-header-bar) .view-header {
 	transition: 300ms;
 	border-bottom: none !important;
 	background-color: var(--background-primary) !important;
+}
+body:not(.show-header-bar) .view-header {
+	border-color: var(--text-faint);
 }
 
 .view-header-title-container::after{
@@ -499,18 +491,36 @@ body:not(.show-header-bar) .view-header:focus-within{
 
 .theme-light{
 	--kanban-background: #DADADA;
+	--active-hover-kanban-item: var(--background-primary-alt);
 }
 .theme-dark{
 	--kanban-background: #2C2C2C;
+	--active-hover-kanban-item: var(--kanban-background);
 }
 
 .workspace-leaf-content[data-type=kanban] .view-header {
 	background-color: var(--kanban-background) !important;
 }
 
-.workspace-leaf-content[data-type=kanban] p,
-.workspace-leaf-content[data-type=kanban] a{
+.kanban-plugin__drag-container p,
+.workspace-leaf-content[data-type=kanban] p{
 	font-family: var(--regular-font);
+	font-size: 0.95em;
+}
+
+.kanban-plugin__item-postfix-button-wrapper{
+	display: none !important;
+}
+
+.kanban-plugin__item-button-wrapper{
+	padding-bottom: 3px !important;
+	padding-top: 3px !important;
+	padding-left: 0 !important;
+}
+
+.kanban-plugin__new-item-button{
+	font-family: var(--regular-font);
+	font-size: 0.8em;
 }
 
 a.tag.kanban-plugin__item-tag {
@@ -525,11 +535,8 @@ a.tag.kanban-plugin__item-tag {
 	border-color: var(--text-alt-accent);
 }
 
-.theme-dark .kanban-plugin__item:hover .kanban-plugin__item-title-wrapper{
-	background-color: var(--kanban-background) !important;
-}
-.theme-light .kanban-plugin__item:hover .kanban-plugin__item-title-wrapper{
-	background-color: var(--background-primary-alt) !important;
+.kanban-plugin__item:hover .kanban-plugin__item-title-wrapper{
+	background-color: var(--active-hover-kanban-item) !important;
 }
 
 .kanban-plugin{
@@ -539,6 +546,7 @@ a.tag.kanban-plugin__item-tag {
 .view-content > .kanban-plugin > * > div{
 	padding-top: 0.5em;
 }
+
 
 /* ------------------------------------------------------ */
 /* > Context Menus */
