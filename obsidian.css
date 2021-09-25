@@ -168,7 +168,7 @@ https://github.com/mgmeyers/obsidian-style-settings*/
 
 
 /* ------------------------------------------------------ */
-/* > SHIMMERING FOCUS, version 1.19
+/* > SHIMMERING FOCUS, version 1.20
 Created by @pseudometa (Discord) aka @chrisgrieser (GitHub)
 https://github.com/chrisgrieser/shimmering-focus/ */
 /* ---------------------------------------------------------
@@ -226,6 +226,7 @@ For help and/or CSS snippets, thanks to:
 	--highlight-alt1: #ffff0066;
 	--highlight-alt2: #00ffff66;
 	--unresolved-link-color: #0F80FF;
+	--pseudo-admonition-border: #a09beb;
 
 	--regular-font: "iA Writer Quattro S";
 	--font-monospace: "Input Mono";
@@ -920,7 +921,7 @@ a.tag:hover {
 /* > Longform Plugin */
 /* ------------------------------------------------------ */
 
-/* >> SIDEBAR */
+/* >> Longform SIDEBAR */
 /* "You can delete every "svelte-" thing from that code, and it will work, and not break on new updates. Somebody said the other day that that's temporary name generation that can change with plugin updates." */
 
 /* container with more space */
@@ -1010,10 +1011,10 @@ a.tag:hover {
   font-size: 0;
   color: var(--more-contrast-muted) !important;
   background-color: var(--background-primary) !important;
-  padding-top: 6px;
-  padding-bottom: 5px;
-  padding-left: 12px;
-  padding-right: 12px;
+  padding-top: 5px;
+  padding-bottom: 6px;
+  padding-left: 15px;
+  padding-right: 15px;
   margin-right: 4px !important;
   border-top-left-radius: 6px !important;
   border-top-right-radius: 6px !important;
@@ -1026,6 +1027,7 @@ a.tag:hover {
 .tab-list.svelte-1bo97vk{
   border-bottom: 3px solid var(--text-faint) !important;
 }
+
 .new-draft-container.svelte-1wkli4h,
 .new-scene-container.svelte-1lq63fp,
 .compile-container.svelte-1vu6mjk{
@@ -1059,8 +1061,9 @@ body:not(.not-ia-writer-font) .svelte-23avsr[name~="projects"] {
 }
 
 /* container */
-#project-picker {
-  margin-bottom: 1em;
+#project-picker.svelte-23avsr {
+  margin-bottom: 0em;
+  margin-top: 0;
   background-color: var(--background-secondary-alt);
   border-radius: 4px;
   padding-left: 1px;
@@ -1994,8 +1997,8 @@ span.cm-hmd-frontmatter {
 
 /*preview mode*/
 .right-triangle{
-	height: 0.5em;
-	width: 0.5em;
+	height: 0.6em;
+	width: 0.6em;
 }
 
 .is-collapsed .heading-collapse-indicator.collapse-indicator.collapse-icon:hover,
@@ -2018,8 +2021,12 @@ span.cm-hmd-frontmatter {
 .CodeMirror-foldgutter-folded.CodeMirror-guttermarker-subtle::after,
 .CodeMirror-foldgutter-open.CodeMirror-guttermarker-subtle::after{
 	font-size: 1.5em;
+	line-height: 1;
 }
 
+.CodeMirror-gutters{
+	padding-right: 1em !important;
+}
 .CodeMirror-foldgutter-folded.CodeMirror-guttermarker-subtle{
 	color: var(--text-accent);
 	opacity: 0.8;
@@ -2036,13 +2043,17 @@ span.cm-hmd-frontmatter {
 
 /* Preview Mode */
 .markdown-preview-view{
-	padding-top: 0;
-	padding-left: 47px;
+	padding-top: 10px;
+	padding-left: 52px;
 }
 
 /*Editor Mode*/
+.markdown-source-view.mod-cm5{
+	padding-left: 0;
+}
+
 .CodeMirror-lines{
-	/*padding-left: 2em !important;*/
+	left: 0 !important;
 }
 
 
@@ -2125,6 +2136,9 @@ and with some other plugins */
 /* > TABLES & DATAVIEW-TABLES */
 /* ------------------------------------------------------ */
 
+/*add some more table styling, e.g. from https://forum.obsidian.md/t/custom-css-for-tables-5-new-styles-ready-to-use-in-your-notes/17084*/
+
+/* Dataview Tables */
 /* inner column border */
 .dataview.table-view-table td,
 .dataview.table-view-table th {
@@ -2135,6 +2149,8 @@ and with some other plugins */
   border-left: none;
 }
 
+
+/* normal tables */
 table:not(.dataview.table-view-table) td,
 table:not(.dataview.table-view-table) th {
 	border: 2px solid var(--text-muted);
@@ -2269,7 +2285,7 @@ body:not(.not-optima-font) .markdown-preview-view h6{
 	padding-top: 0.5em;
 	padding-bottom: 0.6em;
 	margin-bottom: 0;
-	border-left: 12px solid var(--text-accent) !important;
+	border-left: 12px solid var(--pseudo-admonition-border) !important;
 	border-radius: 5px;
 	color: var(--text-normal) !important;
 }
@@ -2364,7 +2380,7 @@ blockquote {
 }
 
 /* ------------------------------------------------------ */
-/* > DOCUMENT SEARCH (cmd + f) */
+/* > DOCUMENT SEARCH / REPLACE (cmd + f) */
 /* ------------------------------------------------------ */
 
 .document-search-container {
@@ -2398,6 +2414,11 @@ input.document-replace-input{
 	background-color: var(--background-primary);
 	margin-top: 0.2em;
 	height: 1.6em;
+}
+
+input.document-search-input:hover,
+input.document-replace-input:hover{
+	background-color: var(--background-primary);
 }
 
 .document-search-button{
