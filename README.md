@@ -60,19 +60,16 @@ A minimalistic Obsidian theme focused on readability, condensed information disp
 
 <img width=40% height=40% alt="Screenshot 2021-09-10 22 38 50" src="https://user-images.githubusercontent.com/73286100/132916198-9a1f164b-1f8d-4d65-ba80-bee1d0c41bf3.png">
 
-## Compatible with & including extra styling for the following Plugins:
+## Tested with & with styling for the following Plugins
 
 **Community Plugins**
 - Longform
 - Kanban
-- BetterWordCount
+- Sliding Panes (when `Swap Rotated Header Direction` is checked)
 - QuickExplorer
-- Show Current File Path
 - Advanced Tables
 - Templater
 - Dataview
-- Tabs
-- Sliding Panes (check `Swap Rotated Header Direction`)
 
 **Core Plugins**
 - Graph View
