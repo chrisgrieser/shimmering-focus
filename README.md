@@ -60,9 +60,9 @@ A minimalistic Obsidian theme focused on readability, condensed information disp
 
 <img width=40% height=40% alt="Screenshot 2021-09-10 22 38 50" src="https://user-images.githubusercontent.com/73286100/132916198-9a1f164b-1f8d-4d65-ba80-bee1d0c41bf3.png">
 
-## Includes Styling for the following Plugins
+## Compatible with & including extra styling for the following Plugins:
 
-**Communtiy Plugins**
+**Community Plugins**
 - Longform
 - Kanban
 - BetterWordCount
@@ -71,6 +71,7 @@ A minimalistic Obsidian theme focused on readability, condensed information disp
 - Advanced Tables
 - Templater
 - Dataview
+- Tabs
 
 **Core Plugins**
 - Graph View
