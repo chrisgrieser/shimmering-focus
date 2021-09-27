@@ -7,7 +7,7 @@ A minimalistic Obsidian theme focused on readability, condensed information disp
 
 ## Features & Design Principles
 **Minimalistic**
-- removes as much clutter as possible — intended for use with keyboard shortcuts and/or the command palette (access the settings via `cmd + ,`).
+- removes as much clutter as possible — **intended for mainly using keyboard shortcuts and the command palette**
 - statusbar and headerbar are visible when hovering
 - You can permanently re-enable the title bar, header bar, and ribbons (the thin vertical bars to the far left/right) by using the [Style Settings Plugin](https://github.com/mgmeyers/obsidian-style-settings/).
 
@@ -74,7 +74,7 @@ A minimalistic Obsidian theme focused on readability, condensed information disp
 **Core Plugins**
 - Graph View
 - Starred
-- Tag
+- Tag Pane
 - Backlinks
 - Outline
 
