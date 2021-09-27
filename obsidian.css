@@ -280,7 +280,9 @@ For help and/or CSS snippets, thanks to:
 .view-header-title,
 input.document-search-input,
 input.document-replace-input,
-.tag-container {
+.tag-container,
+.backlink-pane,
+.workspace-leaf-content[data-type="search"] {
   font-family: var(--regular-font);
 }
 
@@ -302,15 +304,14 @@ body:not(.not-ia-writer-font) .nav-file-title,
 body:not(.not-ia-writer-font) .nav-folder-title,
 body:not(.not-ia-writer-font) .status-bar-item,
 body:not(.not-ia-writer-font) .tag-container,
-body:not(.not-ia-writer-font) .workspace-leaf-content[data-type="VIEW_TYPE_LONGFORM_EXPLORER"] .view-content {
+body:not(.not-ia-writer-font) .workspace-leaf-content[data-type="VIEW_TYPE_LONGFORM_EXPLORER"] .view-content,
+body:not(.not-ia-writer-font) .backlink-pane,
+body:not(.not-ia-writer-font) .workspace-leaf-content[data-type="search"] {
 	letter-spacing: -0.03em;
 }
 
-body:not(.not-ia-writer-font) .svelte-23avsr[name~="projects"] {
-  text-rendering: geometricPrecision;
-}
-
 /* fixes font-weight for iA Writer Quattro Bold */
+body:not(.not-ia-writer-font) .svelte-23avsr[name~="projects"],
 body:not(.not-ia-writer-font) .markdown-preview-view strong,
 body:not(.not-ia-writer-font) .cm-strong,
 body:not(.not-ia-writer-font) .nav-file-title.is-active {
@@ -1336,7 +1337,6 @@ body.hide-index-files .nav-file-title[data-path$="Index.md"] {
 	color: var(--text-accent);
 }
 
-.backlink-pane .tree-item-inner.is-collapsed,
 .tree-item.is-collapsed,
 .tree-item.is-collapsed .tree-item-inner,
 .tree-item.is-collapsed .tree-item-icon svg {
@@ -1358,6 +1358,11 @@ body.hide-index-files .nav-file-title[data-path$="Index.md"] {
 /* >> search & backlink */
 .workspace-leaf-content[data-type="search"] .tree-item-self {
 	padding-left: 1.2em;
+}
+
+.backlink-pane .tree-item-inner.is-collapsed{
+	color: var(--text-accent) !important;
+	font-weight: 600;
 }
 
 .search-info-container {
@@ -2098,8 +2103,9 @@ span.cm-hmd-frontmatter {
 /* Preview Mode */
 .markdown-preview-view{
 	padding-top: 10px;
-	padding-left: 50px !important;
+	padding-left: 50px;
 }
+
 
 /*Editor Mode*/
 .markdown-source-view.mod-cm5{
