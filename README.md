@@ -56,7 +56,7 @@ A minimalistic Obsidian theme focused on readability, condensed information disp
 
 ## Style Settings Plugin
 - This themes supports the [Style Settings Plugin](https://github.com/mgmeyers/obsidian-style-settings/) for customization.
-- **If the theme is *too* minimalistic for you, you can use this plugin to *re-enable* the title bar, header bar, and ribbons.**
+- **If this theme is *too* minimalistic for you, you can use this plugin to re-enable the title bar, header bar, and/or the ribbons.**
 - You can also change some basic features like font-families, header sizes, spacing, or some of the features for Academic Writing.
 
 <img width=40% height=40% alt="Screenshot 2021-09-10 22 38 50" src="https://user-images.githubusercontent.com/73286100/132916198-9a1f164b-1f8d-4d65-ba80-bee1d0c41bf3.png">
