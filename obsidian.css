@@ -180,7 +180,7 @@ https://github.com/mgmeyers/obsidian-style-settings*/
 
 
 /* ------------------------------------------------------ */
-/* > SHIMMERING FOCUS, version 1.21
+/* > SHIMMERING FOCUS, version 1.22
 Created by @pseudometa (Discord) aka @chrisgrieser (GitHub)
 https://github.com/chrisgrieser/shimmering-focus/ */
 /* ---------------------------------------------------------
@@ -2484,6 +2484,7 @@ input.document-replace-input:hover{
 /* ------------------------------------------------------ */
 /* > GRAPH VIEW */
 /* ------------------------------------------------------ */
+/*https://help.obsidian.md/Plugins/Graph+view#Custom+CSS*/
 
 .graph-controls-button:hover{
 	color: var(--text-alt-accent);
@@ -2498,11 +2499,19 @@ input.document-replace-input:hover{
 	color: var(--text-alt-accent);
 }
 
-/*local graph*/
+/* local graph controls */
 .graph-controls.is-close{
   background-color: var(--background-secondary);
   padding: 0;
 }
+
+/* node of current node (local graph) */
+.graph-view.color-fill-focused{
+	color: var(--text-accent);
+}
+
+/* regular node */
+.graph-view.color-fill{}
 
 /* hovered */
 .graph-view.color-fill-highlight,
@@ -2514,10 +2523,6 @@ input.document-replace-input:hover{
 .graph-view.color-line,
 .graph-view.color-arrow{
   color: var(--more-contrast-muted);
-}
-
-.graph-view.color-circle{
-  color: blue !important;
 }
 
 /* ------------------------------------------------------ */
