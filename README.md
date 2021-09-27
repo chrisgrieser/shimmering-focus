@@ -65,7 +65,7 @@ A minimalistic Obsidian theme focused on readability, condensed information disp
 
 **Community Plugins**
 - Longform
-- Kanban
+- Kanban (right click to edit cards)
 - Sliding Panes (when `Swap Rotated Header Direction` is checked)
 - QuickExplorer
 - Advanced Tables
@@ -73,6 +73,7 @@ A minimalistic Obsidian theme focused on readability, condensed information disp
 - Dataview
 - Style Settings
 - Show Current File Path
+- Ozian's Image in Editor Plugin
 
 **Core Plugins**
 - Graph View
