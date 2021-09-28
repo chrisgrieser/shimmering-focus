@@ -180,7 +180,7 @@ https://github.com/mgmeyers/obsidian-style-settings*/
 
 
 /* ------------------------------------------------------ */
-/* > SHIMMERING FOCUS, version 1.22
+/* > SHIMMERING FOCUS, version 1.23
 Created by @pseudometa (Discord) aka @chrisgrieser (GitHub)
 https://github.com/chrisgrieser/shimmering-focus/ */
 /* ---------------------------------------------------------
@@ -224,7 +224,7 @@ For help and/or CSS snippets, thanks to:
 }
 
 /* ------------------------------------------------------ */
-/* > Variables:  Colors and Fonts */
+/* > Colors and Fonts */
 /* ------------------------------------------------------ */
 
 :root {
@@ -261,6 +261,7 @@ For help and/or CSS snippets, thanks to:
 	--selection-color: #e8ddffDD;
 	--more-contrast-muted: #5E5E5E;
 	--grey-line-color: #777;
+	--image-zoom-bg: #444;
 }
 
 .theme-dark {
@@ -269,6 +270,7 @@ For help and/or CSS snippets, thanks to:
 	--selection-color: #3c243bDD;
 	--more-contrast-muted: #BBB;
 	--grey-line-color: #DDD;
+	--image-zoom-bg: #000;
 }
 
 .nav-file-title,
@@ -448,30 +450,30 @@ https://github.com/kepano/obsidian-hider/blob/master/styles.css */
 /* show only on hover, when writing in the header bar,
 or when enabled by the style settings plugin */
 
-body:not(.show-header-bar) .view-header {
+body:not(.show-header-bar):not(.is-mobile) .view-header {
  	height: 0.9em;
 	transition: 300ms;
 	border-bottom: none !important;
 	background-color: var(--background-primary) !important;
 }
-body:not(.show-header-bar) .view-header {
+body:not(.show-header-bar):not(.is-mobile) .view-header {
 	border-color: var(--text-faint);
 }
 
 .view-header-title-container::after{
 	display: none;
 }
-body:not(.show-header-bar) .view-header-icon,
-body:not(.show-header-bar) .view-action svg,
-body:not(.show-header-bar) .view-header-title {
+body:not(.show-header-bar):not(.is-mobile) .view-header-icon,
+body:not(.show-header-bar):not(.is-mobile) .view-action svg,
+body:not(.show-header-bar):not(.is-mobile) .view-header-title {
 	opacity: 0;
 	color: var(--more-contrast-muted);
 }
 
 /*thanks to @só erick mesmo for ":focus-within"*/
 body.show-header-bar .view-header,
-body:not(.show-header-bar) .view-header:hover,
-body:not(.show-header-bar) .view-header:focus-within{
+body:not(.show-header-bar):not(.is-mobile) .view-header:hover,
+body:not(.show-header-bar):not(.is-mobile) .view-header:focus-within{
 	height: 1.9em !important;
 	background-color: var(--background-secondary) !important;
 	border-bottom: 2px solid var(--background-secondary-alt) !important;
@@ -2508,6 +2510,12 @@ input.document-replace-input:hover{
 /* node of current node (local graph) */
 .graph-view.color-fill-focused{
 	color: var(--text-accent);
+	opacity: 0.8;
+}
+
+/* border around circle */
+.graph-view.color-circle {
+	opacity: 0;
 }
 
 /* regular node */
@@ -2516,7 +2524,8 @@ input.document-replace-input:hover{
 /* hovered */
 .graph-view.color-fill-highlight,
 .graph-view.color-line-highlight{
-  color: var(--text-alt-accent);
+	color: var(--text-alt-accent);
+	opacity: 0.8;
 }
 
 /* edges */
@@ -2546,13 +2555,36 @@ input.document-replace-input:hover{
 .view-content .markdown-preview-view img {
 	max-width: 50%;
 	display: block; /* images in lists get proper bullet points */
+	cursor:zoom-in;
 }
 
 /* restrict image width in editor mode (Ozan's image editor plugin)*/
 div.oz-image-widget > img {
 	max-width: 50% !important;
 	cursor: unset !important;
-	text-align: center !important;
+}
+
+/* image zoom */
+/* by kepano  https://forum.obsidian.md/t/image-zoom-click-hold-to-expand-images/5164 */
+.markdown-preview-view img:active {
+	cursor:zoom-out;
+	display:block;
+	z-index:100;
+	position:fixed;
+	max-height:100%;
+	max-width:100%;
+	height:100%;
+	width:100%;
+	object-fit: contain;
+	margin:0 auto;
+	text-align:center;
+	top: 50%;
+  	transform: translateY(-50%);
+	padding:0;
+	left:0;
+	right:0;
+	bottom:0;
+	background-color: var(--image-zoom-bg);
 }
 
 /* ------------------------------------------------------ */
