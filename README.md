@@ -1,5 +1,5 @@
 # Shimmering Focus ❖
-A minimalistic Obsidian theme focused on readability, condensed information display, and providing some useful functionalities.
+An opiniated, minimalistic Obsidian theme focused on readability and condensed information display, while also providing some useful functionalities.
 
 ![](https://img.shields.io/github/v/release/chrisgrieser/shimmering-focus?label=Latest%20Release&style=plastic)
 
