@@ -441,8 +441,8 @@ body:not(.is-mobile) .view-header-icon {
 body:not(.is-mobile) .view-actions {
 	padding-top:  0.1em;
 }
-body .view-header-icon,
-body .view-action {
+.view-header-icon,
+.view-action {
 	color: var(--more-contrast-muted) !important;
 }
 	
@@ -450,30 +450,39 @@ body .view-action {
 /* show only on hover, when writing in the header bar,
 or when enabled by the style settings plugin */
 
-body:not(.show-header-bar):not(.is-mobile) .view-header {
+body:not(.is-mobile) .view-header,
+body:not(.show-header-bar) .view-header {
  	height: 0.9em;
 	transition: 300ms;
 	border-bottom: none !important;
 	background-color: var(--background-primary) !important;
 }
-body:not(.show-header-bar):not(.is-mobile) .view-header {
+body:not(.is-mobile) .view-header,
+body:not(.show-header-bar) .view-header {
 	border-color: var(--text-faint);
 }
 
 .view-header-title-container::after{
 	display: none;
 }
-body:not(.show-header-bar):not(.is-mobile) .view-header-icon,
-body:not(.show-header-bar):not(.is-mobile) .view-action svg,
-body:not(.show-header-bar):not(.is-mobile) .view-header-title {
+
+body:not(.is-mobile) .view-header-icon,
+body:not(.is-mobile) .view-action svg,
+body:not(.is-mobile) .view-header-title,
+body:not(.show-header-bar) .view-header-icon,
+body:not(.show-header-bar) .view-action svg,
+body:not(.show-header-bar) .view-header-title {
 	opacity: 0;
 	color: var(--more-contrast-muted);
 }
 
 /*thanks to @só erick mesmo for ":focus-within"*/
 body.show-header-bar .view-header,
-body:not(.show-header-bar):not(.is-mobile) .view-header:hover,
-body:not(.show-header-bar):not(.is-mobile) .view-header:focus-within{
+body:not(.show-header-bar) .view-header:hover,
+body:not(.is-mobile) .view-header:hover,
+body:not(.show-header-bar) .view-header:focus-within,
+body:not(.is-mobile) .view-header:focus-within
+{
 	height: 1.9em !important;
 	background-color: var(--background-secondary) !important;
 	border-bottom: 2px solid var(--background-secondary-alt) !important;
@@ -481,13 +490,13 @@ body:not(.show-header-bar):not(.is-mobile) .view-header:focus-within{
 }
 
 body.is-mobile,
-.view-header:hover .view-header-icon,
-.view-header:hover .view-action svg,
-.view-header:hover .view-header-title,
-.view-header:focus-within .view-header-icon,
-.view-header:focus-within .view-action svg,
-.view-header:focus-within .view-header-title{
-	opacity: 1;
+body .view-header:hover .view-header-icon,
+body .view-header:hover .view-action svg,
+body .view-header:hover .view-header-title,
+body .view-header:focus-within .view-header-icon,
+body .view-header:focus-within .view-action svg,
+body .view-header:focus-within .view-header-title{
+	opacity: 1 !important;
 }
 
 .view-content {
@@ -517,8 +526,13 @@ body.is-mobile,
 	--active-hover-kanban-item: var(--kanban-background);
 }
 
-.workspace-leaf-content[data-type=kanban] .view-header {
+/* reference to mobile needed to increase specificity, somehow... */
+body:not(.is-mobile) .workspace-leaf-content[data-type=kanban] .view-header{
 	background-color: var(--kanban-background) !important;
+}
+
+body:not(.is-mobile) .workspace-leaf-content[data-type=kanban] .view-header:hover{
+	background-color: var(--background-secondary) !important;
 }
 
 .kanban-plugin__drag-container p,
