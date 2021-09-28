@@ -332,21 +332,21 @@ body:not(.not-ia-writer-font) .nav-file-title.is-active {
 /* > TITLEBAR */
 /* ------------------------------------------------------ */
 /* display only when set in style settings */
-body:not(.show-titlebar) .titlebar{
+body:not(.show-titlebar):not(.is-mobile) .titlebar{
 	display: none;
 }
-.theme-dark:not(.show-titlebar),
-.theme-light:not(.show-titlebar) {
+.theme-dark:not(.show-titlebar):not(.is-mobile),
+.theme-light:not(.show-titlebar):not(.is-mobile) {
 	padding: 0 !important;
 }
 /* for Mac OS Traffic Lights */
 /* same for right side to harmonize */
-body:not(.show-titlebar) .workspace-split.mod-left-split > .workspace-tabs,
-body:not(.show-titlebar) .workspace-split.mod-right-split:not(.show-titlebar) > .workspace-tabs {
+body:not(.show-titlebar):not(.is-mobile) .workspace-split.mod-left-split > .workspace-tabs,
+body:not(.show-titlebar):not(.is-mobile) .workspace-split.mod-right-split:not(.show-titlebar) > .workspace-tabs {
 	padding-top: 1.15em;
 }
 /* fix height of resize handle */
-body:not(.show-titlebar) .workspace-split.mod-horizontal > .workspace-leaf-resize-handle {
+body:not(.show-titlebar):not(.is-mobile) .workspace-split.mod-horizontal > .workspace-leaf-resize-handle {
 	top: 3.05em !important;
 }
 
@@ -431,18 +431,18 @@ https://github.com/kepano/obsidian-hider/blob/master/styles.css */
 /* ------------------------------------------------------ */
 
 /* harmonize sizes for when titlebar is shown */
-.view-header-title{
+body:not(.is-mobile) .view-header-title{
 	line-height: 2;
 	font-size: 0.9em;
 }
-.view-header-icon {
+body:not(.is-mobile) .view-header-icon {
 	padding-top:  0.2em;
 }
-.view-actions {
+body:not(.is-mobile) .view-actions {
 	padding-top:  0.1em;
 }
-.view-header-icon,
-.view-action {
+body .view-header-icon,
+body .view-action {
 	color: var(--more-contrast-muted) !important;
 }
 	
@@ -479,6 +479,8 @@ body:not(.show-header-bar):not(.is-mobile) .view-header:focus-within{
 	border-bottom: 2px solid var(--background-secondary-alt) !important;
 	transition: 300ms;
 }
+
+body.is-mobile,
 .view-header:hover .view-header-icon,
 .view-header:hover .view-action svg,
 .view-header:hover .view-header-title,
