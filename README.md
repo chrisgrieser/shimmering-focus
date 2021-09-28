@@ -23,6 +23,7 @@ A minimalistic Obsidian theme focused on readability, condensed information disp
 - Material Icons to indicate folder and file types
 - Display of the language of a code block in Preview Mode
 - spellcheck deactivated in blockquotes, code blocks, and YAML frontmatter (only produces false positives there anyway)
+- click & hold on image to zoom
 
 <img width=25% height=25% alt="Screenshot 2021-09-03 21 46 20" src="https://user-images.githubusercontent.com/73286100/132058563-94672224-ed07-473d-9403-8a770984b3d2.png">
 
@@ -34,7 +35,8 @@ A minimalistic Obsidian theme focused on readability, condensed information disp
 
 **Condensed**
 - uses screen real estate more efficiently to display more information (useful for smaller screens)
-- smaller images in Preview Mode (and in Editor Mode, too, when using [Ozan's Image Plugin](https://github.com/ozntel/oz-image-in-editor-obsidian))
+- smaller images in Preview Mode (click & hold on an image to zoom).
+  - also in Editor Mode, when using [Ozan's Image Plugin](https://github.com/ozntel/oz-image-in-editor-obsidian))
 <img src="https://user-images.githubusercontent.com/73286100/131182567-104f85dd-0f99-488d-b511-e45fe8b0486f.png" alt="Screenshot 2021-08-27 22 02 02" width=40% height=40%>  
 
 **Tailored for Maximum Readability**
