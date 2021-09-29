@@ -180,7 +180,7 @@ https://github.com/mgmeyers/obsidian-style-settings*/
 
 
 /* ------------------------------------------------------ */
-/* > SHIMMERING FOCUS, version 1.23
+/* > SHIMMERING FOCUS, version 1.24
 Created by @pseudometa (Discord) aka @chrisgrieser (GitHub)
 https://github.com/chrisgrieser/shimmering-focus/ */
 /* ---------------------------------------------------------
@@ -316,7 +316,8 @@ body:not(.not-ia-writer-font) .workspace-leaf-content[data-type="search"] {
 body:not(.not-ia-writer-font) .svelte-23avsr[name~="projects"],
 body:not(.not-ia-writer-font) .markdown-preview-view strong,
 body:not(.not-ia-writer-font) .cm-strong,
-body:not(.not-ia-writer-font) .nav-file-title.is-active {
+body:not(.not-ia-writer-font) .nav-file-title.is-active,
+body:not(.not-ia-writer-font) table:not(.dataview.table-view-table) th {
   text-rendering: geometricPrecision;
 }
 
@@ -332,25 +333,29 @@ body:not(.not-ia-writer-font) .nav-file-title.is-active {
 /* > TITLEBAR */
 /* ------------------------------------------------------ */
 /* display only when set in style settings */
-body:not(.show-titlebar):not(.is-mobile) .titlebar{
+body:not(.show-titlebar) .titlebar{
 	display: none;
 }
-.theme-dark:not(.show-titlebar):not(.is-mobile),
-.theme-light:not(.show-titlebar):not(.is-mobile) {
+.theme-dark:not(.show-titlebar),
+.theme-light:not(.show-titlebar) {
 	padding: 0 !important;
 }
 /* for Mac OS Traffic Lights */
 /* same for right side to harmonize */
-body:not(.show-titlebar):not(.is-mobile) .workspace-split.mod-left-split > .workspace-tabs,
-body:not(.show-titlebar):not(.is-mobile) .workspace-split.mod-right-split:not(.show-titlebar) > .workspace-tabs {
+body:not(.show-titlebar) .workspace-split.mod-left-split > .workspace-tabs,
+body:not(.show-titlebar) .workspace-split.mod-right-split > .workspace-tabs {
 	padding-top: 1.15em;
 }
 /* fix height of resize handle */
-body:not(.show-titlebar):not(.is-mobile) .workspace-split.mod-horizontal > .workspace-leaf-resize-handle {
+body:not(.show-titlebar) .workspace-split.mod-horizontal > .workspace-leaf-resize-handle {
 	top: 3.05em !important;
 }
 
 /* styling when shown */
+/*.theme-light .titlebar-button{
+	opacity: 1;
+	color: var(--text-on-accent);
+}*/
 .titlebar-button{
 	opacity: 1;
 	color: var(--more-contrast-muted);
@@ -362,26 +367,33 @@ body:not(.show-titlebar):not(.is-mobile) .workspace-split.mod-horizontal > .work
 	color: var(--text-accent);
 }
 
+/* proper light theme for titlebar */
+.theme-light .titlebar {
+	background-color: var(--background-secondary-alt);
+}
+.theme-light .titlebar-text{
+	opacity: 1;
+	color: var(--more-contrast-muted);
+}
+
 
 /* ------------------------------------------------------ */
 /* > Ribbons */
 /* ------------------------------------------------------ */
 /* hide ribbons, when the setting is chosen */
-body:not(.show-ribbons) .workspace-ribbon {
+body:not(.show-ribbons) .workspace-ribbon{
 	display: none;
 }
 
-/* styling when shown */
+/* readability improvements when shown */
 .side-dock-ribbon-action svg,
 .workspace-ribbon-collapse-btn svg{
 	color: var(--more-contrast-muted);
-	opacity: 0.8;
 }
-/*thicker collapse icons for readability*/
+
 .workspace-ribbon-collapse-btn svg{
 	stroke-width: 4px;
 }
-
 .side-dock-ribbon-action:hover svg,
 .workspace-ribbon-collapse-btn:hover svg{
 	color: var(--text-alt-accent);
@@ -460,6 +472,7 @@ body:not(.show-header-bar) .view-header {
 body:not(.is-mobile) .view-header,
 body:not(.show-header-bar) .view-header {
 	border-color: var(--text-faint);
+	border-top: none;
 }
 
 .view-header-title-container::after{
@@ -479,17 +492,26 @@ body:not(.show-header-bar) .view-header-title {
 /*thanks to @só erick mesmo for ":focus-within"*/
 body.show-header-bar .view-header,
 body:not(.show-header-bar) .view-header:hover,
-body:not(.is-mobile) .view-header:hover,
-body:not(.show-header-bar) .view-header:focus-within,
-body:not(.is-mobile) .view-header:focus-within
-{
+body:not(.show-header-bar) .view-header:focus-within{
 	height: 1.9em !important;
 	background-color: var(--background-secondary) !important;
-	border-bottom: 2px solid var(--background-secondary-alt) !important;
 	transition: 300ms;
 }
 
-body.is-mobile,
+body .view-header:hover{
+	border-bottom: 2px solid var(--text-faint) !important;
+}
+
+body .view-header:focus-within{
+	border-bottom: 2px solid var(--text-accent) !important;
+}
+
+body.is-mobile .view-header-icon,
+body.is-mobile .view-action svg,
+body.is-mobile .view-header-title,
+body.show-header-bar .view-header-icon,
+body.show-header-bar .view-action svg,
+body.show-header-bar .view-header-title,
 body .view-header:hover .view-header-icon,
 body .view-header:hover .view-action svg,
 body .view-header:hover .view-header-title,
@@ -527,10 +549,11 @@ body .view-header:focus-within .view-header-title{
 }
 
 /* reference to mobile needed to increase specificity, somehow... */
-body:not(.is-mobile) .workspace-leaf-content[data-type=kanban] .view-header{
+body .workspace-leaf-content[data-type=kanban] .view-header{
 	background-color: var(--kanban-background) !important;
 }
 
+body:not(.is-mobile) .workspace-leaf-content[data-type=kanban] .view-header:focus-within,
 body:not(.is-mobile) .workspace-leaf-content[data-type=kanban] .view-header:hover{
 	background-color: var(--background-secondary) !important;
 }
@@ -2216,12 +2239,15 @@ table:not(.dataview.table-view-table) th {
 	border: 2px solid var(--text-muted);
 }
 
-.theme-dark table:not(.dataview.table-view-table) th {
-	font-weight: 900;
-	color: var(--bold-in-darkmode);
-	border-bottom: 3px solid var(--text-muted);
+table:not(.dataview.table-view-table) th {
+	background-color: var(--background-secondary-alt);
 }
-.theme-light table:not(.dataview.table-view-table) th {
+
+.theme-dark table:not(.dataview.table-view-table) th {
+	color: var(--bold-in-darkmode);
+}
+
+table:not(.dataview.table-view-table) th {
 	font-weight: 900;
 	border-bottom: 3px solid var(--text-muted);
 }
