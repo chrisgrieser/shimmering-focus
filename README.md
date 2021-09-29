@@ -17,6 +17,7 @@ An opiniated, minimalistic Obsidian theme focused on readability and condensed i
 **Functional**
 - Pseudo-Admonition: `h6` blocks will become a pseudo-admonition box (only works with one-liners though)
 - Multi-Color-Highlighting: surround highlights with `*` or `**` for alternative highlight colors (thanks to @Atlas for this!)
+- Pseudo-Spoiler-Tags: Emphasized Strikthroughs (`*~~spoiler~~*`) will selectively hide text, except when hovered or the active line.
 - Relationship lines in unordered lists & file explorer
 - Wrapping of text in the file explorer
 - Active line highlighting
@@ -25,8 +26,7 @@ An opiniated, minimalistic Obsidian theme focused on readability and condensed i
 - spellcheck deactivated in blockquotes, code blocks, and YAML frontmatter (only produces false positives there anyway)
 - click & hold on image to zoom
 
-<img width=25% height=25% alt="Screenshot 2021-09-03 21 46 20" src="https://user-images.githubusercontent.com/73286100/132058563-94672224-ed07-473d-9403-8a770984b3d2.png">
-
+<img width=25% height=25% alt="Screenshot 2021-09-03 21 46 20" src="https://user-images.githubusercontent.com/73286100/132058563-94672224-ed07-473d-9403-8a770984b3d2.png"> <img src="https://user-images.githubusercontent.com/73286100/135283073-6171aecd-55e3-4a0c-80cd-c4becc2223dd.gif" alt="Pseudo-Spoiler-Tags" width=24%>
 
 **Suited for Academic Writing**
 - [Pandoc citations](https://pandoc.org/MANUAL.html#citations-in-note-styles) (`[@citekey]`) and footnotes are visually emphasized
