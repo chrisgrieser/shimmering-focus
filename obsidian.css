@@ -2218,20 +2218,7 @@ span.cm-link.cm-hmd-footnote {
 /* ------------------------------------------------------ */
 /* > TABLES & DATAVIEW-TABLES */
 /* ------------------------------------------------------ */
-
 /*add some more table styling, e.g. from https://forum.obsidian.md/t/custom-css-for-tables-5-new-styles-ready-to-use-in-your-notes/17084*/
-
-/* Dataview Tables */
-/* inner column border */
-.dataview.table-view-table td,
-.dataview.table-view-table th {
-  border-left: 2px solid;
-}
-.dataview.table-view-table td:first-child,
-.dataview.table-view-table th:first-child {
-  border-left: none;
-}
-
 
 /* normal tables */
 table:not(.dataview.table-view-table) td,
