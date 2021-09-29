@@ -180,7 +180,7 @@ https://github.com/mgmeyers/obsidian-style-settings*/
 
 
 /* ------------------------------------------------------ */
-/* > SHIMMERING FOCUS, version 1.24
+/* > SHIMMERING FOCUS, version 1.25
 Created by @pseudometa (Discord) aka @chrisgrieser (GitHub)
 https://github.com/chrisgrieser/shimmering-focus/ */
 /* ---------------------------------------------------------
@@ -2570,8 +2570,6 @@ input.document-replace-input:hover{
 /* useful as this is also how Pandoc converts */
 .image-embed[alt]:after {
 	content: attr(alt);
-	display: block;
-	margin: 0rem 1rem 2rem 0rem;
 	font-size: 90%;
 	font-style: italic;
 	font-weight: 300;
