@@ -746,8 +746,8 @@ button.MySnippetsButton:hover{
 /* only show on hover */
 .status-bar,
 .is-translucent .status-bar {
-  opacity: 1;
-  transition: 400ms;
+  opacity: 0;
+  transition: 800ms;
 }
 .status-bar:hover {
   opacity: 1;
