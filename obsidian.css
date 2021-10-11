@@ -175,12 +175,12 @@ settings:
     default: false
 
 */
-/* above: settings for the Style settings plugin
+
+/* above: settings for the Style Settings Plugin
 https://github.com/mgmeyers/obsidian-style-settings*/
 
-
 /* ------------------------------------------------------ */
-/* > SHIMMERING FOCUS, version 1.27
+/* > SHIMMERING FOCUS, version 1.28
 Created by @pseudometa (Discord) aka @chrisgrieser (GitHub)
 https://github.com/chrisgrieser/shimmering-focus/ */
 /* ---------------------------------------------------------
@@ -240,6 +240,7 @@ For help and/or CSS snippets, thanks to:
 	--highlight-alt2: #00ffff66;
 	--unresolved-link-color: #0F80FF;
 	--pseudo-admonition-border: #a09beb;
+	--html-tag-color: var(--code-color);
 
 	--regular-font: "iA Writer Quattro S";
 	--font-monospace: "Input Mono";
@@ -253,7 +254,7 @@ For help and/or CSS snippets, thanks to:
 	--h5-size: 1.1em;
 	--longform-font-size: 1.2em;
 
-	--signature:"❖";
+	--signature:"⟡";
 }
 
 .theme-light {
@@ -287,6 +288,11 @@ input.document-replace-input,
 .backlink-pane,
 .workspace-leaf-content[data-type="search"] {
   font-family: var(--regular-font);
+}
+
+/*line numbers*/
+.CodeMirror-linenumber{
+	font-family: var(--font-monospace) !important;
 }
 
 /* do not apply font to menus */
@@ -405,6 +411,16 @@ body:not(.show-ribbons) .workspace-ribbon{
 }
 
 /* ------------------------------------------------------ */
+/* > Notifications */
+/* ------------------------------------------------------ */
+
+.theme-light .notice,
+.theme-dark .notice{
+	background-color: var(--more-contrast-muted);
+	color: var(--interactive-normal);
+}
+
+/* ------------------------------------------------------ */
 /* > HIDE FURTHER STUFF */
 /* ------------------------------------------------------ */
 /* based on css from the hider plugin by @kepano:
@@ -435,7 +451,7 @@ https://github.com/kepano/obsidian-hider/blob/master/styles.css */
 .community-plugin-details-empty-state::after,
 .empty-state-title::after{
 	content: var(--signature);
-	font-size: 5rem;
+	font-size: 10rem;
 	color: var(--more-contrast-muted);
 }
 
@@ -457,11 +473,6 @@ body:not(.is-mobile) .view-actions {
 .view-header-icon,
 .view-action {
 	color: var(--more-contrast-muted) !important;
-}
-
-/* slightly thinner on mobile */
-.is-mobile .view-header {
-	height: 2.5em;
 }
 
 /* show only on hover, when writing in the header bar,
@@ -567,10 +578,13 @@ body:not(.is-mobile) .workspace-leaf-content[data-type=kanban] .view-header:hove
 }
 
 .kanban-plugin__drag-container p,
-.workspace-leaf-content[data-type=kanban] p{
+.kanban-plugin__drag-container li,
+.workspace-leaf-content[data-type=kanban] p,
+.workspace-leaf-content[data-type=kanban] li{
 	font-family: var(--regular-font);
 	font-size: 0.95em;
 }
+
 textarea.kanban-plugin__item-input{
 	font-family: var(--regular-font) !important;
 	font-size: 0.95em !important;
@@ -628,6 +642,12 @@ a.tag.kanban-plugin__item-tag {
 
 .view-content > .kanban-plugin > * > div{
 	padding-top: 0.5em;
+}
+
+/*hr notes become seperators*/
+.workspace-leaf-content[data-type=kanban] hr{
+	border-width: 0.5em;
+	border-radius: 10px;
 }
 
 
@@ -700,32 +720,46 @@ a.tag.kanban-plugin__item-tag {
   right: 0;
   bottom: 0;
   border-top-left-radius: 7px;
-  line-height: 1;
-  padding: 0.7em 0.7em 0.7em 0 !important;
+  padding: 0.5em 0.7em 0.5em 0 !important;
   max-height: unset;
+  line-height: 1.2;
 }
 
-/* only show on hover */
-.status-bar,
-.is-translucent .status-bar {
-  opacity: 0;
-  transition: 950ms;
-}
-.status-bar:hover {
-  opacity: 1;
-  transition: 250ms;
-}
+
 
 /* "signature" */
 .status-bar::after {
   content: var(--signature);
 }
 
-/* language tool and backlink plugins */
-.status-bar-item.plugin-backlink:hover,
-.lt-status-bar-check-icon:hover,
-.status-bar-item.plugin-obsidian-show-file-path:hover{
-   color: var(--text-alt-accent);
+/*my snippets plugin*/
+.status-bar-item.plugin-mysnippets-plugin.cMenu-statusbar-button{
+	height: 1em;
+}
+button.MS-OpenSnippet:hover,
+button.MySnippetsButton:hover{
+   background-color: var(--text-alt-accent) !important;
+}
+/* bug fix, can be remvoed later */
+button.MySnippetsButton.MS-Folder{
+	background-color: var(--interactive-accent);
+}
+
+/* only show on hover */
+.status-bar,
+.is-translucent .status-bar {
+  opacity: 1;
+  transition: 400ms;
+}
+.status-bar:hover {
+  opacity: 1;
+  transition: 200ms;
+}
+
+/* hovering color for various plugins */
+.status-bar-item.mod-clickable:hover,
+.lt-status-bar-btn:hover{
+   color: var(--text-alt-accent) !important;
 }
 /* ------------------------------------------------------ */
 /* > Scrollbar */
@@ -891,6 +925,34 @@ https://forum.obsidian.md/t/inline-code-occludes-text-selection-and-vim-cursor/1
   background-color: rgba(0, 0, 0, 0.2) !important;
 }
 
+/* >> Improve Templater Syntax Readability */
+.cm-s-obsidian .cm-templater-command.cm-templater-execution-tag {
+	color: #bdba26 !important;
+	font-weight: 10 !important;
+}
+.theme-light .cm-s-obsidian .cm-templater-command.cm-comment {
+	color: #939393 !important;
+}
+.theme-light .cm-s-obsidian .cm-templater-command.cm-operator {
+	color: #E24526 !important;
+}
+.theme-light .cm-s-obsidian .cm-templater-command.cm-keyword {
+	color: #5c71fc !important;
+}
+.theme-light .cm-s-obsidian .cm-templater-command.cm-def {
+	color: #222 !important;
+	background-color: #ffff0a33 !important;
+}
+.theme-dark .cm-s-obsidian .cm-templater-command.cm-def {
+	color: #8B6BF0 !important;
+}
+.theme-light .cm-s-obsidian .cm-templater-command.cm-string {
+	color: #008100 !important;
+}
+.theme-light .cm-s-obsidian .cm-templater-command.cm-property {
+	color: #942193 !important;
+}
+
 /* ------------------------------------------------------ */
 /* > Spellcheck Error Overlay */
 /* ------------------------------------------------------ */
@@ -921,7 +983,7 @@ span.cm-inline-code.cm-spell-error {
 
 
 /* ------------------------------------------------------ */
-/* > Links, Tags, & Comments */
+/* > Links, Tags, HTML, & Comments */
 /* ------------------------------------------------------ */
 /* hovered links in alt accent */
 .cm-string.cm-url:hover:not(.cm-formatting),
@@ -939,6 +1001,11 @@ span.cm-inline-code.cm-spell-error {
 	background-image: none;
 	padding-right: 0px;
 }*/
+
+a.zoom-plugin-title:hover{
+  color: var(--text-alt-accent);
+  opacity: 0.8 !important;
+}
 
 a.internal-link.is-unresolved{
   color: var(--unresolved-link-color);
@@ -967,9 +1034,17 @@ a.tag:hover {
 	text-decoration: underline !important;
 }
 
-/*more readable comments*/
+/*comments: more contrast */
 .cm-comment{
 	color: var(--text-muted) !important;
+}
+
+/* HTML Tags */
+.cm-tag.cm-bracket.cm-hmd-html-begin,
+.cm-tag.cm-bracket.cm-hmd-html-end,
+.cm-tag{
+	color: var(--html-tag-color) !important;
+	font-family: var(--font-monospace) !important;
 }
 
 
@@ -1193,6 +1268,11 @@ body:not(.longform-left-aligned) .longform-leaf .cm-s-obsidian{
 .longform-leaf .cm-s-obsidian span.cm-inline-code,
 .longform-leaf .HyperMD-table-row {
 	font-size: calc(var(--longform-font-size) * 0.66);
+	text-align: start;
+	hyphens: none;
+}
+
+.longform-leaf .HyperMD-list-line{
 	text-align: start;
 	hyphens: none;
 }
@@ -2052,12 +2132,14 @@ em > del {
   text-decoration: unset;
   background-color: var(--spoiler-bg);
   color: var(--spoiler-bg);
+  transition-duration: 250ms;
 }
 
 .CodeMirror-activeline > .CodeMirror-line .cm-em.cm-strikethrough,
 em > del:hover,
 .cm-em.cm-strikethrough:hover {
   background-color: var(--background-secondary-alt) !important;
+  transition-duration: 250ms;
 }
 
 /* ------------------------------------------------------ */
@@ -2126,7 +2208,7 @@ span.cm-hmd-frontmatter {
 }
 
 /* ------------------------------------------------------ */
-/* > Collapse Indicator */
+/* > Collapse Indicator (Fold Gutter) */
 /* ------------------------------------------------------ */
 
 /*preview mode*/
@@ -2171,16 +2253,30 @@ span.cm-hmd-frontmatter {
 	display: none;
 }
 
+/*fix for note being in the sidebar*/
+/* thanks @SlRvb */
+.CodeMirror-foldgutter {
+	background-color: transparent !important;
+}
+
+
 /* ------------------------------------------------------ */
-/* > Editor Size */
+/* > Editor Size & Line Numbers */
 /* ------------------------------------------------------ */
+
+.CodeMirror-linenumbers{
+	padding-right: 2px;
+}
+
+.CodeMirror-linenumber{
+	padding-top: 2px;
+}
 
 /* Preview Mode */
 .markdown-preview-view{
 	padding-top: 10px;
 	padding-left: 50px;
 }
-
 
 /*Editor Mode*/
 .markdown-source-view.mod-cm5{
@@ -2271,6 +2367,11 @@ table:not(.dataview.table-view-table) th {
 table:not(.dataview.table-view-table) th {
 	font-weight: 900;
 	border-bottom: 3px solid var(--text-muted);
+}
+
+table:not(.dataview.table-view-table) {
+	table-layout: fixed;
+	width: 120%;
 }
 
 
@@ -2653,6 +2754,32 @@ div.oz-image-widget > img {
 }
 
 /* ------------------------------------------------------ */
+/* > Mermaid */
+/* ------------------------------------------------------ */
+/* https://forum.obsidian.md/t/ability-to-resize-and-align-mermaid-diagrams/7019/11?u=pseudometa*/
+
+div.mermaid {
+    text-align: center;
+}
+
+svg[id^="m"][width][height][viewBox] {
+    min-width: 350px;
+    max-width: 100%;
+    width: 100%;
+    height: auto;
+}
+
+/* ------------------------------------------------------ */
+/* > iFrames */
+/* ------------------------------------------------------ */
+
+/*iframe {
+	width: 100%;
+	height: 300px;
+}
+*/
+
+/* ------------------------------------------------------ */
 /* > BULLET POINT RELATIONSHIP LINES */
 /* ------------------------------------------------------ */
 /* based on css from the outliner plugin */
@@ -2727,33 +2854,12 @@ body,
 	font-feature-settings: "liga" 0;
 }
 
-/* >> Improve Templater Syntax Readability */
-.cm-s-obsidian .cm-templater-command.cm-templater-execution-tag {
-	color: #bdba26 !important;
-	font-weight: 10 !important;
-}
-.theme-light .cm-s-obsidian .cm-templater-command.cm-comment {
-	color: #939393 !important;
-}
-.theme-light .cm-s-obsidian .cm-templater-command.cm-operator {
-	color: #E24526 !important;
-}
-.theme-light .cm-s-obsidian .cm-templater-command.cm-keyword {
-	color: #5c71fc !important;
-}
-.theme-light .cm-s-obsidian .cm-templater-command.cm-def {
-	color: #222 !important;
-	background-color: #ffff0a33 !important;
-}
-.theme-dark .cm-s-obsidian .cm-templater-command.cm-def {
-	color: #8B6BF0 !important;
-}
-.theme-light .cm-s-obsidian .cm-templater-command.cm-string {
-	color: #008100 !important;
-}
-.theme-light .cm-s-obsidian .cm-templater-command.cm-property {
-	color: #942193 !important;
-}
+/* ------------------------------------------------------ */
+/* > MOBILE */
+/* ------------------------------------------------------ */
 
 
-
+/* slightly thinner on mobile */
+.is-mobile .view-header {
+	height: 2.5em;
+}
