@@ -150,9 +150,9 @@ settings:
     level: 2
     collapsed: true
   -
-    id: round-checkboxes
-    title: Round Checkboxes
-    description: Use the round checkboxes from the default theme instead of the square-ish ones.
+    id: normal-checkboxes
+    title: Normal Checkboxes
+    description: Use the normal checkboxes from the default theme.
     type: class-toggle
     default: false
   -
@@ -180,11 +180,13 @@ settings:
 https://github.com/mgmeyers/obsidian-style-settings*/
 
 /* ------------------------------------------------------ */
-/* > SHIMMERING FOCUS, version 1.28
+/* > SHIMMERING FOCUS, version 1.29
 Created by @pseudometa (Discord) aka @chrisgrieser (GitHub)
 https://github.com/chrisgrieser/shimmering-focus/ */
 /* ---------------------------------------------------------
 For help and/or CSS snippets, thanks to:
+- @SlRvb
+- @javalent
 - @kepano
 - @Mara
 - @Chetachie
@@ -194,8 +196,6 @@ For help and/or CSS snippets, thanks to:
 - @jdaniel
 - @só erick mesmo
 - @NothingIsLost
-- @javalent
-- @SlRvb
 - @phibr0
 --------------------------------------------------------- */
 
@@ -725,8 +725,6 @@ a.tag.kanban-plugin__item-tag {
   line-height: 1.2;
 }
 
-
-
 /* "signature" */
 .status-bar::after {
   content: var(--signature);
@@ -740,10 +738,6 @@ button.MS-OpenSnippet:hover,
 button.MySnippetsButton:hover{
    background-color: var(--text-alt-accent) !important;
 }
-/* bug fix, can be remvoed later */
-button.MySnippetsButton.MS-Folder{
-	background-color: var(--interactive-accent);
-}
 
 /* only show on hover */
 .status-bar,
@@ -756,7 +750,7 @@ button.MySnippetsButton.MS-Folder{
   transition: 200ms;
 }
 
-/* hovering color for various plugins */
+/* hovering color for clickable plugins */
 .status-bar-item.mod-clickable:hover,
 .lt-status-bar-btn:hover{
    color: var(--text-alt-accent) !important;
@@ -788,19 +782,40 @@ button.MySnippetsButton.MS-Folder{
 /* > Buttons & Checkboxes */
 /* ------------------------------------------------------ */
 
-.checkbox-container:hover,
-.checkbox-container.is-enabled:hover,
 button.mod-cta:hover{
 	background-color: var(--text-alt-accent);
 	opacity: 0.9;
 }
-
-/* square-ish checkboxes */
-body:not(.round-checkboxes) .checkbox-container{
-	border-radius: 5px;
+body:not(.normal-checkboxes) .checkbox-container.is-enabled:hover,
+.checkbox-container.is-enabled:hover{
+	background-color: var(--text-alt-accent);
+	opacity: 1;
 }
-body:not(.round-checkboxes) .checkbox-container::after{
-	border-radius: 3px;
+
+body:not(.normal-checkboxes) .checkbox-container:hover,
+.checkbox-container:hover{
+	background-color: var(--text-alt-accent);
+	opacity: 0.5;
+}
+
+/* minimalistic checkboxes, thanks @SlRvb */
+body:not(.normal-checkboxes) .checkbox-container {
+    cursor: pointer;
+    border-radius: 5px;
+    border: 1px solid var(--text-faint);
+    width: 22px;
+}
+
+body:not(.normal-checkboxes) .checkbox-container {
+    background-color: var(--background-secondary);
+}
+
+body:not(.normal-checkboxes) .checkbox-container:after {
+    display: none;
+}
+
+body:not(.normal-checkboxes) .checkbox-container.is-enabled {
+    background-color: var(--interactive-accent);
 }
 
 /* ------------------------------------------------------ */
