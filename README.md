@@ -1,4 +1,4 @@
-# Shimmering Focus ❖
+# Shimmering Focus ⟡
 An opiniated, minimalistic Obsidian theme focused on readability and condensed information display, while also providing some useful functionalities.
 
 ![](https://img.shields.io/github/v/release/chrisgrieser/shimmering-focus?label=Latest%20Release&style=plastic)
@@ -75,7 +75,8 @@ An opiniated, minimalistic Obsidian theme focused on readability and condensed i
 - Dataview
 - Style Settings
 - Show Current File Path
-- Ozian's Image in Editor Plugin
+- Ozan's Image in Editor Plugin
+- MySnippets-Plugin
 
 **Core Plugins**
 - Graph View
