@@ -77,6 +77,7 @@ An opiniated, minimalistic Obsidian theme focused on readability and condensed i
 - Show Current File Path
 - Ozan's Image in Editor Plugin
 - MySnippets-Plugin
+- [Another Quick Switcher Plugin](https://github.com/tadashi-aikawa/obsidian-another-quick-switcher)
 
 **Core Plugins**
 - Graph View
