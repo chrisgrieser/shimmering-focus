@@ -180,7 +180,7 @@ settings:
 https://github.com/mgmeyers/obsidian-style-settings*/
 
 /* ------------------------------------------------------ */
-/* > SHIMMERING FOCUS, version 1.29
+/* > SHIMMERING FOCUS, version 1.30
 Created by @pseudometa (Discord) aka @chrisgrieser (GitHub)
 https://github.com/chrisgrieser/shimmering-focus/ */
 /* ---------------------------------------------------------
@@ -241,6 +241,8 @@ For help and/or CSS snippets, thanks to:
 	--unresolved-link-color: #0F80FF;
 	--pseudo-admonition-border: #a09beb;
 	--html-tag-color: var(--code-color);
+	--alt-accent-darker: #009a72;
+	--backdrop-color: #070C20;
 
 	--regular-font: "iA Writer Quattro S";
 	--font-monospace: "Input Mono";
@@ -258,21 +260,23 @@ For help and/or CSS snippets, thanks to:
 }
 
 .theme-light {
-	--text-alt-accent: #02ac7d;
-	--editor-alt-accent: #009a72;
+	--alt-accent: #02ac7d;
+	--editor-alt-accent: var(--alt-accent-darker);
 	--selection-color: #e8ddffDD;
 	--more-contrast-muted: #5E5E5E;
 	--grey-line-color: #777;
 	--image-zoom-bg: #444;
+	--button-hover: var(--alt-accent);
 }
 
 .theme-dark {
-	--text-alt-accent: #02ac7d;
-	--editor-alt-accent: #02ac7d;
+	--alt-accent: #02ac7d;
+	--editor-alt-accent: var(--alt-accent);
 	--selection-color: #3c243bDD;
 	--more-contrast-muted: #BBB;
 	--grey-line-color: #DDD;
 	--image-zoom-bg: #000;
+	--button-hover: var(--alt-accent-darker);
 }
 
 .nav-file-title,
@@ -368,7 +372,7 @@ body:not(.show-titlebar) .workspace-split.mod-horizontal > .workspace-leaf-resiz
 	color: var(--more-contrast-muted);
 }
 .titlebar-button:hover{
-	color: var(--text-alt-accent);
+	color: var(--alt-accent);
 }
 .titlebar-button:active{
 	color: var(--text-accent);
@@ -403,7 +407,7 @@ body:not(.show-ribbons) .workspace-ribbon{
 }
 .side-dock-ribbon-action:hover svg,
 .workspace-ribbon-collapse-btn:hover svg{
-	color: var(--text-alt-accent);
+	color: var(--alt-accent);
 }
 .side-dock-ribbon-action:active svg,
 .workspace-ribbon-collapse-btn:active svg{
@@ -538,7 +542,7 @@ body .view-header:focus-within .view-header-title{
 
 body.show-header-bar.is-mobile.view-header:hover,
 body:not(.is-mobile) .view-header:hover{
-	border-bottom: 2px solid var(--text-alt-accent) !important;
+	border-bottom: 2px solid var(--alt-accent) !important;
 }
 
 body.show-header-bar.is-mobile.view-header:focus-within,
@@ -547,7 +551,7 @@ body:not(.is-mobile) .view-header:focus-within{
 }
 .view-header-icon:hover,
 .view-action:hover svg{
-	color: var(--text-alt-accent) !important;
+	color: var(--alt-accent) !important;
 }
 .view-header-icon:active,
 .view-action:active svg{
@@ -622,12 +626,12 @@ a.tag.kanban-plugin__item-tag {
 
 .kanban-plugin__new-item-button:hover{
 	background-color: var(--active-hover-kanban-item) !important;
-	color: var(--text-alt-accent) !important;
+	color: var(--alt-accent) !important;
 }
 
 .kanban-plugin__item-content-wrapper:hover,
 .kanban-plugin__item:hover{
-	border-color: var(--text-alt-accent) !important;
+	border-color: var(--alt-accent) !important;
 }
 
 .kanban-plugin__drag-container .kanban-plugin__item-title-wrapper,
@@ -669,12 +673,12 @@ a.tag.kanban-plugin__item-tag {
 .menu-item.selected:hover,
 .menu-item.selected:hover svg,
 .menu-item.selected:hover .menu-item-title{
-	color: var(--text-alt-accent);
+	color: var(--alt-accent);
 }
 
 .menu-item.selected:hover,
 .menu-item:hover{
-	border-left: 3px solid var(--text-alt-accent);
+	border-left: 3px solid var(--alt-accent);
 	margin-left: 0px;
 }
 
@@ -689,7 +693,7 @@ a.tag.kanban-plugin__item-tag {
 
 
 .menu-item:hover .menu-item-title {
-	color: var(--text-alt-accent)
+	color: var(--alt-accent)
 }
 .menu-item.selected .menu-item-title {
 	color: var(--text-accent)
@@ -736,7 +740,7 @@ a.tag.kanban-plugin__item-tag {
 }
 button.MS-OpenSnippet:hover,
 button.MySnippetsButton:hover{
-   background-color: var(--text-alt-accent) !important;
+   background-color: var(--alt-accent) !important;
 }
 
 /* only show on hover */
@@ -753,7 +757,7 @@ button.MySnippetsButton:hover{
 /* hovering color for clickable plugins */
 .status-bar-item.mod-clickable:hover,
 .lt-status-bar-btn:hover{
-   color: var(--text-alt-accent) !important;
+   color: var(--alt-accent) !important;
 }
 /* ------------------------------------------------------ */
 /* > Scrollbar */
@@ -782,19 +786,18 @@ button.MySnippetsButton:hover{
 /* > Buttons & Checkboxes */
 /* ------------------------------------------------------ */
 
-button.mod-cta:hover{
-	background-color: var(--text-alt-accent);
-	opacity: 0.9;
+button:hover{
+	background-color: var(--button-hover) !important;
 }
 body:not(.normal-checkboxes) .checkbox-container.is-enabled:hover,
 .checkbox-container.is-enabled:hover{
-	background-color: var(--text-alt-accent);
+	background-color: var(--alt-accent);
 	opacity: 1;
 }
 
 body:not(.normal-checkboxes) .checkbox-container:hover,
 .checkbox-container:hover{
-	background-color: var(--text-alt-accent);
+	background-color: var(--alt-accent);
 	opacity: 0.5;
 }
 
@@ -1007,7 +1010,7 @@ span.cm-inline-code.cm-spell-error {
 .markdown-preview-view a.footnote-link:hover,
 .markdown-preview-view a.internal-link:hover,
 .markdown-preview-view a.external-link:hover {
-	color: var(--text-alt-accent) !important;
+	color: var(--alt-accent) !important;
 	cursor: pointer;
 }
 
@@ -1018,7 +1021,7 @@ span.cm-inline-code.cm-spell-error {
 }*/
 
 a.zoom-plugin-title:hover{
-  color: var(--text-alt-accent);
+  color: var(--alt-accent);
   opacity: 0.8 !important;
 }
 
@@ -1027,7 +1030,7 @@ a.internal-link.is-unresolved{
   opacity: 0.65 !important;
 }
 a.internal-link.is-unresolved:hover{
-  color: var(--text-alt-accent);
+  color: var(--alt-accent);
   opacity: 0.8 !important;
 }
 
@@ -1090,7 +1093,9 @@ a.tag:hover {
 }
 
 .modal-bg {
-	backdrop-filter: blur(3px);
+	backdrop-filter: blur(4px);
+	background-color: var(--backdrop-color);
+	opacity: 0.8;
 }
 
 .prompt {
@@ -1149,7 +1154,7 @@ a.tag:hover {
 .scene-container.svelte-1wlkmbt:hover,
 .scene-container.svelte-1wlkmbt.selected:hover,
 .svelte-23avsr:hover{
-  color: var(--text-alt-accent) !important;
+  color: var(--alt-accent) !important;
 }
 
 .draft-container.svelte-1jmafs.selected,
@@ -1189,7 +1194,7 @@ a.tag:hover {
 
 .svelte-htpziy:hover,
 .svelte-htpziy.selected:hover{
-  color: var(--text-alt-accent) !important;
+  color: var(--alt-accent) !important;
 }
 
 .svelte-htpziy{
@@ -1221,7 +1226,7 @@ a.tag:hover {
 
 /* Compile */
 .compile-button.svelte-1vu6mjk:hover{
-  background-color: var(--text-alt-accent) !important;
+  background-color: var(--alt-accent) !important;
 }
 
 /* >> PROJECT TITLE */
@@ -1242,7 +1247,7 @@ body:not(.not-ia-writer-font) .svelte-23avsr[name~="projects"] {
 
 .svelte-23avsr:hover {
   text-decoration: none !important;
-  color: var(--text-alt-accent) !important;
+  color: var(--alt-accent) !important;
 }
 
 /* container */
@@ -1363,7 +1368,7 @@ body.hide-index-files .nav-file-title[data-path$="Index.md"] {
 
 
 /* ------------------------------------------------------ */
-/* > Command Palette & QuickSwitch */
+/* > Command Palette & QuickSwitcher(s) */
 /* ------------------------------------------------------ */
 
 /* change font color of hotkeys */
@@ -1375,7 +1380,7 @@ body.hide-index-files .nav-file-title[data-path$="Index.md"] {
 
 .suggestion-item:hover,
 .suggestion-item:hover .suggestion-flair{
-	color: var(--text-alt-accent);
+	color: var(--alt-accent);
 }
 .suggestion-item.is-selected .suggestion-hotkey,
 .suggestion-item:hover .suggestion-hotkey{
@@ -1387,6 +1392,28 @@ body.hide-index-files .nav-file-title[data-path$="Index.md"] {
 .suggestion-item:hover .suggestion-highlight{
 	color: var(--editor-alt-accent);
 }
+
+
+/* Another Quick Switcher */
+.another-quick-switcher__item__directory svg{
+	display: none;
+}
+.another-quick-switcher__item__directory::before{
+	content: "folder_open";
+	font-family: "Material Icons";
+	font-size: 1.4em;
+}
+
+.suggestion-item.is-selected .another-quick-switcher__item__directory{
+	color: var(--text-accent);
+	opacity: 0.7;
+}
+
+.suggestion-item:hover .another-quick-switcher__item__directory{
+	color: var(--editor-alt-accent);
+	opacity: 0.7;
+}
+
 
 /* ------------------------------------------------------ */
 /* > CURSOR */
@@ -1405,7 +1432,7 @@ body.hide-index-files .nav-file-title[data-path$="Index.md"] {
 .workspace-tab-header-inner:hover svg,
 .nav-action-button:hover svg,
 .nav-action-button.is-active:hover svg {
-	color: var(--text-alt-accent);
+	color: var(--alt-accent);
   cursor: pointer;
 }
 
@@ -1464,10 +1491,10 @@ body.hide-index-files .nav-file-title[data-path$="Index.md"] {
 .tree-item.is-collapsed:hover,
 .tree-item.is-collapsed:hover .tree-item-inner,
 .tree-item.is-collapsed:hover .tree-item-icon svg {
-	color: var(--text-alt-accent) !important;
+	color: var(--alt-accent) !important;
 }
 .theme-light .tree-item-self:hover .tree-item-flair {
-	background: var(--text-alt-accent) !important;
+	background: var(--alt-accent) !important;
 	font-weight: 600;
 	opacity: 0.8;
 }
@@ -1554,7 +1581,7 @@ body.hide-index-files .nav-file-title[data-path$="Index.md"] {
 /* search result highlights are colored text instead for
 readability */
 .search-result-file-matched-text {
-	color: var(--text-alt-accent);
+	color: var(--alt-accent);
 	font-weight: 600;
 	background: none;
 }
@@ -1610,7 +1637,7 @@ readability */
 }
 
 .workspace-leaf-content[data-type="starred"] .nav-file-title:hover{
-	color: var(--text-alt-accent);
+	color: var(--alt-accent);
 }
 .workspace-leaf-content[data-type="starred"] .nav-buttons-container{
   display: none;
@@ -1625,7 +1652,7 @@ readability */
 
 /* advanced tables plugin */
 .widget-icon:hover {
-	fill: var(--text-alt-accent) !important;
+	fill: var(--alt-accent) !important;
 }
 
 .nav-buttons-container {
@@ -1668,7 +1695,7 @@ readability */
 /* hover file */
 .nav-folder-title:hover .nav-folder-title-content,
 .nav-file-title:hover .nav-file-title-content {
-	color: var(--text-alt-accent);
+	color: var(--alt-accent);
 }
 /* active file */
 .nav-file-title.is-active {
@@ -1933,7 +1960,7 @@ based on css from @Mara https://github.com/Mara-Li/Obsidian-Snippet-collection *
 }
 
 .modal-close-button:hover{
-	color: var(--text-alt-accent);
+	color: var(--alt-accent);
 }
 
 .vertical-tab-header-group {
@@ -1992,8 +2019,8 @@ based on css from @Mara https://github.com/Mara-Li/Obsidian-Snippet-collection *
 
 .vertical-tab-nav-item.is-active:hover,
 .vertical-tab-nav-item:hover {
-	color: var(--text-alt-accent);
-	border-left: 3px solid var(--text-alt-accent);
+	color: var(--alt-accent);
+	border-left: 3px solid var(--alt-accent);
 	background: var(--background-primary);
 }
 
@@ -2068,7 +2095,7 @@ based on css from @Mara https://github.com/Mara-Li/Obsidian-Snippet-collection *
 
 /* color hovered item in theme style */
 .community-plugin-item:hover {
-	color: var(--text-alt-accent);
+	color: var(--alt-accent);
 }
 
 /* ------------------------------------------------------ */
@@ -2191,7 +2218,7 @@ span.cm-hmd-frontmatter {
 	font-size: 0.9em;
 }
 .markdown-preview-view .frontmatter-container-header:hover{
-	color: var(--text-alt-accent);
+	color: var(--alt-accent);
 }
 
 .frontmatter-section-label {
@@ -2209,7 +2236,7 @@ span.cm-hmd-frontmatter {
 	padding-right: 6px;
 }
 .frontmatter-section-tags  > a.tag:hover {
-	color: var(--text-alt-accent) !important;
+	color: var(--alt-accent) !important;
 	background: var(--background-secondary-alt);
 }
 .frontmatter-alias {
@@ -2234,7 +2261,7 @@ span.cm-hmd-frontmatter {
 
 .is-collapsed .heading-collapse-indicator.collapse-indicator.collapse-icon:hover,
 .heading-collapse-indicator.collapse-indicator.collapse-icon:hover{
-	color: var(--text-alt-accent);
+	color: var(--alt-accent);
 	opacity: 0.8;
 }
 .is-collapsed .heading-collapse-indicator.collapse-indicator.collapse-icon{
@@ -2245,7 +2272,7 @@ span.cm-hmd-frontmatter {
 .CodeMirror-foldgutter-folded.CodeMirror-guttermarker-subtle:hover,
 .CodeMirror-foldgutter-open.CodeMirror-guttermarker-subtle:hover,
 .CodeMirror-foldmarker:hover{
-	color: var(--text-alt-accent) !important;
+	color: var(--alt-accent) !important;
 	opacity: 0.8;
 }
 
@@ -2326,7 +2353,7 @@ body:not(.no-pandoc-citation-emphasis) .cm-link.cm-quote.cm-hmd-barelink {
 
 /* applies to number-references in the footnote text */
 span.cm-link.cm-hmd-footnote {
-	color: var(--text-alt-accent) !important;
+	color: var(--alt-accent) !important;
 	vertical-align: top;
 }
 
@@ -2576,7 +2603,7 @@ span.cm-em.cm-quote.cm-quote-1{
 blockquote:before {
 	font: 20px Times;
 	content: "”";
-	font-size: 3.5em;
+	font-size: 3em;
 	line-height: 0;
 	vertical-align: -0.45em;
 	color: var(--more-contrast-muted);
@@ -2588,7 +2615,7 @@ blockquote p {
 blockquote {
 	margin-left: 0 !important;
 	border-radius: 15px !important;
-	border: 3px solid var(--text-faint) !important;
+	border: 2px solid var(--text-faint) !important;
 	padding-left: 1.2em !important;
 	padding-right: 1.2em !important;
 	padding-top: 0.8em !important;
@@ -2653,13 +2680,13 @@ input.document-replace-input:hover{
 }
 
 .document-search-button:hover{
-	background-color: var(--text-alt-accent);
+	background-color: var(--alt-accent);
 	opacity: 0.9;
 	color: var(--text-on-accent);
 }
 
 .document-search-close-button:hover{
-	color: var(--text-alt-accent);
+	color: var(--alt-accent);
 }
 
 /* ------------------------------------------------------ */
@@ -2668,7 +2695,7 @@ input.document-replace-input:hover{
 /*https://help.obsidian.md/Plugins/Graph+view#Custom+CSS*/
 
 .graph-controls-button:hover{
-	color: var(--text-alt-accent);
+	color: var(--alt-accent);
 }
 .graph-controls-button:active{
 	color: var(--text-accent);
@@ -2677,7 +2704,7 @@ input.document-replace-input:hover{
 	color: var(--more-contrast-muted);
 }
 .tree-item-self:hover .graph-control-section-header{
-	color: var(--text-alt-accent);
+	color: var(--alt-accent);
 }
 
 /* local graph controls */
@@ -2707,7 +2734,7 @@ input.document-replace-input:hover{
 /* hovered */
 .graph-view.color-fill-highlight,
 .graph-view.color-line-highlight{
-	color: var(--text-alt-accent);
+	color: var(--alt-accent);
 	opacity: 0.8;
 }
 
