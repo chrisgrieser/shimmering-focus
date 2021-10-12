@@ -180,7 +180,7 @@ settings:
 https://github.com/mgmeyers/obsidian-style-settings*/
 
 /* ------------------------------------------------------ */
-/* > SHIMMERING FOCUS, version 1.30
+/* > SHIMMERING FOCUS, version 1.31
 Created by @pseudometa (Discord) aka @chrisgrieser (GitHub)
 https://github.com/chrisgrieser/shimmering-focus/ */
 /* ---------------------------------------------------------
@@ -232,7 +232,7 @@ For help and/or CSS snippets, thanks to:
 	--active-line: #adae9820;
 	--cursor-color: #a09beb;
 	--code-color: #048966;
-	--bold-in-darkmode: #90B5DE;
+	--bold-in-darkmode: hsl(64deg 100% 91%);
 	--scrollbar-hover: #00d29a;
 	--scrollbar-active: #a09beb;
 	--highlight-color: #00ff8866;
@@ -242,7 +242,7 @@ For help and/or CSS snippets, thanks to:
 	--pseudo-admonition-border: #a09beb;
 	--html-tag-color: var(--code-color);
 	--alt-accent-darker: #009a72;
-	--backdrop-color: #070C20;
+	--backdrop-color: hsl(228deg 50% 7%);
 
 	--regular-font: "iA Writer Quattro S";
 	--font-monospace: "Input Mono";
@@ -267,6 +267,7 @@ For help and/or CSS snippets, thanks to:
 	--grey-line-color: #777;
 	--image-zoom-bg: #444;
 	--button-hover: var(--alt-accent);
+	--longform-background: hsl(228deg 50% 97%);
 }
 
 .theme-dark {
@@ -277,6 +278,7 @@ For help and/or CSS snippets, thanks to:
 	--grey-line-color: #DDD;
 	--image-zoom-bg: #000;
 	--button-hover: var(--alt-accent-darker);
+	--longform-background: hsl(228deg 50% 7%);
 }
 
 .nav-file-title,
@@ -290,7 +292,9 @@ input.document-search-input,
 input.document-replace-input,
 .tag-container,
 .backlink-pane,
-.workspace-leaf-content[data-type="search"] {
+.workspace-leaf-content[data-type="search"],
+.community-plugin-readme p,
+.community-plugin-readme li {
   font-family: var(--regular-font);
 }
 
@@ -319,7 +323,9 @@ body:not(.not-ia-writer-font) .status-bar-item,
 body:not(.not-ia-writer-font) .tag-container,
 body:not(.not-ia-writer-font) .workspace-leaf-content[data-type="VIEW_TYPE_LONGFORM_EXPLORER"] .view-content,
 body:not(.not-ia-writer-font) .backlink-pane,
-body:not(.not-ia-writer-font) .workspace-leaf-content[data-type="search"] {
+body:not(.not-ia-writer-font) .workspace-leaf-content[data-type="search"],
+body:not(.not-ia-writer-font) .community-plugin-readme p,
+body:not(.not-ia-writer-font) .community-plugin-readme li {
 	letter-spacing: -0.03em;
 }
 
@@ -582,11 +588,14 @@ body:not(.is-mobile) .workspace-leaf-content[data-type=kanban] .view-header:hove
 }
 
 .kanban-plugin__drag-container p,
-.kanban-plugin__drag-container li,
-.workspace-leaf-content[data-type=kanban] p,
-.workspace-leaf-content[data-type=kanban] li{
+.workspace-leaf-content[data-type=kanban] p{
 	font-family: var(--regular-font);
 	font-size: 0.95em;
+}
+.kanban-plugin__drag-container li,
+.workspace-leaf-content[data-type=kanban] li{
+	font-family: var(--regular-font);
+	font-size: 0.8em;
 }
 
 textarea.kanban-plugin__item-input{
@@ -786,9 +795,11 @@ button.MySnippetsButton:hover{
 /* > Buttons & Checkboxes */
 /* ------------------------------------------------------ */
 
-button:hover{
-	background-color: var(--button-hover) !important;
+.modal-container button:hover{
+	background-color: var(--button-hover);
+	color: var(--text-on-accent);
 }
+
 body:not(.normal-checkboxes) .checkbox-container.is-enabled:hover,
 .checkbox-container.is-enabled:hover{
 	background-color: var(--alt-accent);
@@ -1020,6 +1031,7 @@ span.cm-inline-code.cm-spell-error {
 	padding-right: 0px;
 }*/
 
+/* Zoom Plugin */
 a.zoom-plugin-title:hover{
   color: var(--alt-accent);
   opacity: 0.8 !important;
@@ -1088,8 +1100,8 @@ a.tag:hover {
 	padding-bottom: 0.2em;
 	padding-right: 1em;
 	padding-left: 1em;
-	border-radius: 15px;
-	border: 5px solid var(--background-secondary);
+	border-radius: 12px;
+	border: 4px solid var(--background-secondary-alt);
 }
 
 .modal-bg {
@@ -1138,7 +1150,7 @@ a.tag:hover {
 /* scene item / draft item */
 .draft-container.svelte-1jmafs,
 .scene-container.svelte-1wlkmbt {
-  /* wrapping of long titles */
+  /* wrap long titles */
   width: 100% !important;
   white-space: normal !important;
   padding-left: 5px !important;
@@ -1149,6 +1161,25 @@ a.tag:hover {
   color: var(--text-accent) !important;
 }
 
+.draft-container.svelte-1jmafs,
+.scene-container.svelte-1wlkmbt{
+	padding: 1px !important;
+}
+
+/* dragging */
+.scene-container.svelte-1wlkmbt.dragging,
+.scene-container.svelte-1wlkmbt:active{
+	color: var(--text-accent) !important;
+	background-color: transparent !important;
+}
+/* shadow of dragging */
+.sortable-chosen{
+	padding: 0 !important;
+	border: none !important;
+	border-radius: 3px !important;
+}
+
+/* hover */
 .draft-container.svelte-1jmafs.selected:hover,
 .draft-container.svelte-1jmafs:hover,
 .scene-container.svelte-1wlkmbt:hover,
@@ -1157,11 +1188,13 @@ a.tag:hover {
   color: var(--alt-accent) !important;
 }
 
+/* selected */
 .draft-container.svelte-1jmafs.selected,
 .draft-container.svelte-1jmafs.selected:hover,
 .scene-container.svelte-1wlkmbt.selected:hover,
 .scene-container.svelte-1wlkmbt.selected {
   font-weight: 600;
+  text-rendering: geometricPrecision;
 }
 
 /* new scene/draft field */
@@ -1273,6 +1306,12 @@ body:not(.not-ia-writer-font) .svelte-23avsr[name~="projects"] {
   letter-spacing: 0 !important;
   font-size: var(--longform-font-size);
   line-height: 1.35;
+}
+
+.longform-leaf .markdown-preview-view,
+.longform-leaf .markdown-source-view,
+body:not(.show-header-bar):not(.is-mobile) .longform-leaf .view-header{
+	background-color: var(--longform-background) !important;
 }
 
 body:not(.longform-left-aligned) .longform-leaf .cm-s-obsidian{
@@ -1846,6 +1885,17 @@ based on css from @Mara https://github.com/Mara-Li/Obsidian-Snippet-collection *
 	content: "description ";
 }
 
+.nav-file-title[data-path*="Hub"] .nav-file-title-content:before,
+.nav-file-title[data-path*="HUB"] .nav-file-title-content:before {
+	content: "device_hub ";
+}
+
+.nav-file-title[data-path*="MoC"] .nav-file-title-content:before,
+.nav-file-title[data-path*="MOC"] .nav-file-title-content:before {
+	content: "map ";
+}
+
+
 .nav-file-title[data-path$="pptx"] .nav-file-title-content:before {
 	content: "present_to_all ";
 	color: orange;
@@ -2025,17 +2075,22 @@ based on css from @Mara https://github.com/Mara-Li/Obsidian-Snippet-collection *
 }
 
 /* increased contrast*/
-.setting-editor-extra-setting-button{
-	color: var(--text-normal);
-	opacity: 0.9;
+.setting-editor-extra-setting-button,
+.setting-add-hotkey-button,
+.setting-restore-hotkey-button{
+	color: var(--more-contrast-muted);
+	opacity: 0.8;
 }
+.setting-add-hotkey-button:hover,
+.setting-restore-hotkey-button:hover,
 .setting-editor-extra-setting-button:hover{
 	color: var(--editor-alt-accent);
 	opacity: 1;
+	background-color: transparent;
 }
 
 /* ------------------------------------------------------ */
-/* >> COMMUNITY PLUGIN BROWSER */
+/* > COMMUNITY PLUGIN BROWSER */
 /* ------------------------------------------------------ */
 /* bigger and more condensed */
 
@@ -2045,6 +2100,7 @@ based on css from @Mara https://github.com/Mara-Li/Obsidian-Snippet-collection *
 	width: 93%;
 }
 
+/* search results */
 .community-plugin-item {
 	padding-top: 0.1em;
 	padding-left: 0.9em;
@@ -2066,26 +2122,59 @@ based on css from @Mara https://github.com/Mara-Li/Obsidian-Snippet-collection *
 	line-height: 1.3em;
 	color: var(--more-contrast-muted);
 }
-.community-plugin-author,
-.community-plugin-version {
+
+.community-plugin-search-results .community-plugin-author {
 	font-style: italic;
 }
 .community-plugin-name {
-	line-height: 1.2em;
+	line-height: 1.3em !important;
 	font-size: 0.9em;
-	font-weight: 500;
+	font-weight: 600;
 }
+.community-plugin-search{
+	padding-top: 15px;
+	/*border-radius: 10px 0 0 10px;*/
+}
+
+.community-plugin-search svg{
+	color: var(--more-contrast-muted);
+}
+
+.community-plugin-search button.clickable-icon{
+	background-color: var(--background-primary-alt) !important;
+}
+
+.community-plugin-search .search-input-container{
+	margin-left: 0;
+}
+/*installation icon*/
 .flair.mod-pop {
-	top: 4px;
+	top: 5px;
+	line-height: 1;
+	font-size: 0;
+	background: none;
 }
-.flair.mod-pop::before {
-	content: "✓ ";
-	top: 4px;
+.community-plugin-info .community-plugin-name .flair.mod-pop::before,
+.community-plugin-search .flair.mod-pop::before {
+	content: "✓";
+	font-size: 0.75rem;
+	background-color: var(--text-accent);
+	opacity: 0.7;
+	border-radius: 3px;
+	padding-left: 0.2em;
+	padding-right: 0.2em;
+	font-family: Inter;
+	line-height: 0.8;
 }
+
+.community-plugin-info .community-plugin-name .flair.mod-pop::before{
+	font-size: 1.2rem;
+}
+
+/*download statistics*/
 .install {
 	display: none;
 }
-
 .community-plugin-downloads::before,
 .community-plugin-downloads-text {
 	content: "↓";
@@ -2098,6 +2187,37 @@ based on css from @Mara https://github.com/Mara-Li/Obsidian-Snippet-collection *
 	color: var(--alt-accent);
 }
 
+/*plugin info */
+.community-plugin-info .community-plugin-name{
+	font-family: var(--heading-font);
+  	letter-spacing: 0.7px;
+  	font-size: 1.5em;
+}
+.community-plugin-readme li{
+	font-size: 1em;
+}
+
+/*hide redundant info*/
+.community-plugin-info .community-plugin-desc{
+	display: none;
+}
+.community-plugin-info h1{
+	display: none;
+}
+.community-plugin-info hr{
+	margin: 5px;
+}
+.community-plugin-info{
+	padding: 10px 5px 10px 15px;
+}
+.community-plugin-readme {
+	padding-top: 0 !important;
+}
+.community-plugin-info .flair.mod-pop{
+	font-family: var(--regular-font);
+}
+
+
 /* ------------------------------------------------------ */
 /* > COMMUNITY THEME BROWSER */
 /* ------------------------------------------------------ */
@@ -2107,7 +2227,6 @@ based on css from @Mara https://github.com/Mara-Li/Obsidian-Snippet-collection *
 	max-width: unset;
 	width: 93%;
 }
-
 
 /* ------------------------------------------------------ */
 /* > HIGHLIGHT & SELECTION */
