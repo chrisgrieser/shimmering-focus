@@ -186,7 +186,7 @@ settings:
 https://github.com/mgmeyers/obsidian-style-settings*/
 
 /* ------------------------------------------------------ */
-/* > SHIMMERING FOCUS, version 1.32
+/* > SHIMMERING FOCUS, version 1.33
 Created by @pseudometa (Discord) aka @chrisgrieser (GitHub)
 https://github.com/chrisgrieser/shimmering-focus/ */
 /* ---------------------------------------------------------
@@ -244,6 +244,7 @@ For help and/or CSS snippets, thanks to:
 	--highlight-color: #00ff8866;
 	--highlight-alt1: #ffff0066;
 	--highlight-alt2: #00ffff66;
+	--search-match-hl: var(--highlight-alt2);
 	--unresolved-link-color: #0F80FF;
 	--pseudo-admonition-border: #a09beb;
 	--html-tag-color: var(--code-color);
@@ -1630,6 +1631,12 @@ readability */
 	color: var(--alt-accent);
 	font-weight: 600;
 	background: none;
+}
+
+/*prevents text being colors on a highlight */
+.obsidian-search-match-highlight{
+	color: var(--text-normal) !important;
+	background-color: var(--search-match-hl) !important;
 }
 
 /* >> Tag Pane */
