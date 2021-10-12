@@ -140,7 +140,13 @@ settings:
   -
     id: longform-left-aligned
     title: Left-aligned text in Longform notes
-    description: Use left-aligned instead of justified text
+    description: Use left-aligned instead of justified text.
+    type: class-toggle
+    default: false
+  -
+    id: longform-no-bg
+    title: No Background Color for Longform Notes
+    description: Turns of the slight coloring of longform notes.
     type: class-toggle
     default: false
   -
@@ -180,7 +186,7 @@ settings:
 https://github.com/mgmeyers/obsidian-style-settings*/
 
 /* ------------------------------------------------------ */
-/* > SHIMMERING FOCUS, version 1.31
+/* > SHIMMERING FOCUS, version 1.32
 Created by @pseudometa (Discord) aka @chrisgrieser (GitHub)
 https://github.com/chrisgrieser/shimmering-focus/ */
 /* ---------------------------------------------------------
@@ -242,7 +248,7 @@ For help and/or CSS snippets, thanks to:
 	--pseudo-admonition-border: #a09beb;
 	--html-tag-color: var(--code-color);
 	--alt-accent-darker: #009a72;
-	--backdrop-color: hsl(228deg 50% 7%);
+	--backdrop-color: hsl(228deg 40% 7%);
 
 	--regular-font: "iA Writer Quattro S";
 	--font-monospace: "Input Mono";
@@ -267,7 +273,7 @@ For help and/or CSS snippets, thanks to:
 	--grey-line-color: #777;
 	--image-zoom-bg: #444;
 	--button-hover: var(--alt-accent);
-	--longform-background: hsl(228deg 50% 97%);
+	--longform-background: hsl(228deg 40% 96%);
 }
 
 .theme-dark {
@@ -278,7 +284,7 @@ For help and/or CSS snippets, thanks to:
 	--grey-line-color: #DDD;
 	--image-zoom-bg: #000;
 	--button-hover: var(--alt-accent-darker);
-	--longform-background: hsl(228deg 50% 7%);
+	--longform-background: hsl(228deg 40% 7%);
 }
 
 .nav-file-title,
@@ -733,7 +739,7 @@ a.tag.kanban-plugin__item-tag {
   right: 0;
   bottom: 0;
   border-top-left-radius: 7px;
-  padding: 0.5em 0.7em 0.5em 0 !important;
+  padding: 0.5em 1em 0.5em 0 !important;
   max-height: unset;
   line-height: 1.2;
 }
@@ -1308,9 +1314,10 @@ body:not(.not-ia-writer-font) .svelte-23avsr[name~="projects"] {
   line-height: 1.35;
 }
 
-.longform-leaf .markdown-preview-view,
-.longform-leaf .markdown-source-view,
-body:not(.show-header-bar):not(.is-mobile) .longform-leaf .view-header{
+/* background color */
+body:not(.longform-no-bg) .longform-leaf .markdown-preview-view,
+body:not(.longform-no-bg) .longform-leaf .markdown-source-view,
+body:not(.show-header-bar):not(.is-mobile):not(.longform-no-bg) .longform-leaf .view-header{
 	background-color: var(--longform-background) !important;
 }
 
