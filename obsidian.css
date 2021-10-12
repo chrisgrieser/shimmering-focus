@@ -146,7 +146,7 @@ settings:
   -
     id: longform-no-bg
     title: No Background Color for Longform Notes
-    description: Turns of the slight coloring of longform notes.
+    description: Turn off the slight coloring of longform notes.
     type: class-toggle
     default: false
   -
@@ -186,7 +186,7 @@ settings:
 https://github.com/mgmeyers/obsidian-style-settings*/
 
 /* ------------------------------------------------------ */
-/* > SHIMMERING FOCUS, version 1.33
+/* > SHIMMERING FOCUS, version 1.34
 Created by @pseudometa (Discord) aka @chrisgrieser (GitHub)
 https://github.com/chrisgrieser/shimmering-focus/ */
 /* ---------------------------------------------------------
@@ -666,7 +666,7 @@ a.tag.kanban-plugin__item-tag {
 
 /*hr notes become seperators*/
 .workspace-leaf-content[data-type=kanban] hr{
-	border-width: 0.5em;
+	border-width: 0.4em;
 	border-radius: 10px;
 }
 
@@ -802,21 +802,21 @@ button.MySnippetsButton:hover{
 /* > Buttons & Checkboxes */
 /* ------------------------------------------------------ */
 
-.modal-container button:hover{
-	background-color: var(--button-hover);
+button:hover{
+	background-color: var(--button-hover) !important;
 	color: var(--text-on-accent);
 }
 
 body:not(.normal-checkboxes) .checkbox-container.is-enabled:hover,
 .checkbox-container.is-enabled:hover{
-	background-color: var(--alt-accent);
+	background-color: var(--scrollbar-hover);
 	opacity: 1;
 }
 
 body:not(.normal-checkboxes) .checkbox-container:hover,
 .checkbox-container:hover{
 	background-color: var(--alt-accent);
-	opacity: 0.5;
+	opacity: 0.65;
 }
 
 /* minimalistic checkboxes, thanks @SlRvb */
@@ -1032,6 +1032,13 @@ span.cm-inline-code.cm-spell-error {
 	cursor: pointer;
 }
 
+/* Code Mirror Options*/
+.cm-s-obsidian .hmd-link-icon::after{
+	background-color: var(--more-contrast-muted) !important;
+}
+.cm-s-obsidian .hmd-link-icon:hover::after{
+	background-color: var(--alt-accent) !important;
+}
 /* remove arrow to the right image */
 /*a.external-link{
 	background-image: none;
