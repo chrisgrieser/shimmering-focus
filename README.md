@@ -69,7 +69,6 @@ An opiniated, minimalistic Obsidian theme focused on readability and condensed i
 - Longform
 - Kanban (right click to edit cards)
 - Sliding Panes (when `Swap Rotated Header Direction` is checked)
-- QuickExplorer
 - Advanced Tables
 - Templater
 - Dataview
