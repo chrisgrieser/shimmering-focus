@@ -77,6 +77,7 @@ An opiniated, minimalistic Obsidian theme focused on readability and condensed i
 - [Another Quick Switcher Plugin](https://github.com/tadashi-aikawa/obsidian-another-quick-switcher)
 - CodeMirror Options (`Collapse External Links`)
 - Drag and Drop Blocks
+- Recent Files
 
 **Core Plugins**
 - Graph View
@@ -84,6 +85,9 @@ An opiniated, minimalistic Obsidian theme focused on readability and condensed i
 - Tag Pane
 - Backlinks
 - Outline
+- Search Pane
+- Command Pallette
+- Quick Switcher
 
 ## Installation
 You can find *Shimmering Focus* in Obsidian's community themes browser under `Settings ➞ Appearance ➞ Themes`.
