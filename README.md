@@ -71,13 +71,12 @@ An opiniated, minimalistic Obsidian theme focused on readability and condensed i
 - Sliding Panes (when `Swap Rotated Header Direction` is checked)
 - Advanced Tables
 - Templater
-- Dataview
 - Style Settings
-- Show Current File Path
 - Ozan's Image in Editor Plugin
 - MySnippets-Plugin
 - [Another Quick Switcher Plugin](https://github.com/tadashi-aikawa/obsidian-another-quick-switcher)
 - CodeMirror Options (`Collapse External Links`)
+- Drag and Drop Blocks
 
 **Core Plugins**
 - Graph View
