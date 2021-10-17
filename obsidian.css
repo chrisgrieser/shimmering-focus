@@ -186,7 +186,7 @@ settings:
 https://github.com/mgmeyers/obsidian-style-settings*/
 
 /* ------------------------------------------------------ */
-/* > SHIMMERING FOCUS, version 1.52
+/* > SHIMMERING FOCUS, version 1.53
 Created by @pseudometa (Discord) aka @chrisgrieser (GitHub)
 https://github.com/chrisgrieser/shimmering-focus/ */
 /* ---------------------------------------------------------
@@ -922,10 +922,6 @@ input:hover{
   white-space: pre-wrap !important;
 }
 
-/* Templater Plugin */
-.cm-s-obsidian .cm-templater-command {
-	font-size: 1em !important;
-}
 
 /* show language of Code Block in Preview Mode */
 /* snippet by Chetachi */
@@ -1020,30 +1016,8 @@ pre[class~="language-txt"]:after {
 
 /* fix for the buggy selection fo inline text
 https://forum.obsidian.md/t/inline-code-occludes-text-selection-and-vim-cursor/11552/10 */
-.theme-light .cm-inline-code,
-.theme-light .cm-s-obsidian .cm-templater-command {
-  background-color: rgba(0, 0, 0, 0.005) !important;
-}
 .theme-dark .cm-inline-code {
   background-color: rgba(0, 0, 0, 0.2) !important;
-}
-
-/* >> Improve Templater Syntax Readability */
-.theme-light .cm-s-obsidian .cm-templater-command.cm-operator {
-}
-.cm-s-obsidian .cm-templater-command.cm-def {
-	font-weight: 600 !important;
-}
-.theme-light .cm-s-obsidian .cm-templater-command.cm-string {
-	color: hsl(59deg 66% 37%) !important;
-}
-.cm-s-obsidian .cm-templater-command.cm-keyword {
-}
-.cm-s-obsidian .cm-templater-command.cm-property {
-	font-style: italic;
-}
-.theme-light .cm-s-obsidian .cm-templater-command.cm-number{
-	color: hsl(352deg 83% 40%) !important;
 }
 
 /* ------------------------------------------------------ */
@@ -1060,7 +1034,6 @@ https://forum.obsidian.md/t/inline-code-occludes-text-selection-and-vim-cursor/1
 /* do not spellcheck inside a blockquote, yaml, or code */
 .cm-hmd-frontmatter.cm-overlay.cm-spell-error,
 span.cm-quote.cm-quote-1.cm-overlay.cm-spell-error,
-.cm-templater-command.cm-spell-error,
 .HyperMD-codeblock.cm-spell-error,
 span.cm-inline-code.cm-spell-error {
 	text-decoration: none;
@@ -2100,15 +2073,16 @@ based on css from @Mara https://github.com/Mara-Li/Obsidian-Snippet-collection *
 /* thanks to @SlRvB for this */
 .modal.mod-settings .vertical-tab-content-container {
 	padding-top: 0;
-	margin-top: 8px;
+	margin-top: 0px;
 	padding-left: 0;
 	padding-right: 1em;
 	padding-bottom: 1em;
+	border-top: 1px solid var(--background-secondary-alt);
 	border-left: 2px solid var(--background-secondary-alt);
-	height: 90vh;
+	height: 95vh;
 }
 .modal.mod-settings .vertical-tab-header {
-	height: 90vh;
+	height: 95vh;
 }
 .modal.mod-settings .vertical-tab-content-container .vertical-tab-content,
 .modal.mod-settings .vertical-tab-content-container .vertical-tab-header {
@@ -2126,16 +2100,9 @@ based on css from @Mara https://github.com/Mara-Li/Obsidian-Snippet-collection *
 .vertical-tab-header-group {
 	padding-top: 0;
 	padding-bottom: 0;
-	margin-top: 16px;
-	background-color: var(--background-secondary-alt) !important;
-}
-.vertical-tab-header-group {
-	padding-top: 0;
-	padding-bottom: 0;
-	margin-top: 8px;
-	background-color: var(--background-secondary-alt) !important;
-	margin-bottom: 20px !important;
-
+	margin-top: 0 ;
+	background-color: var(--background-secondary-alt);
+	margin-bottom: 20px;
 }
 
 .setting-item {
@@ -2184,8 +2151,9 @@ based on css from @Mara https://github.com/Mara-Li/Obsidian-Snippet-collection *
 /*thicker "community plugins and "appearance"*/
 .vertical-tab-header-group:first-child .vertical-tab-header-group-items .vertical-tab-nav-item:nth-child(3),
 .vertical-tab-header-group:first-child .vertical-tab-header-group-items .vertical-tab-nav-item:last-child{
-	font-weight: 600;
+	font-weight: 900;
 	text-rendering: geometricPrecision;
+	color: var(--bold-in-darkmode);
 }
 
 /* color active/hovered submenu in theme style */
@@ -2235,6 +2203,23 @@ based on css from @Mara https://github.com/Mara-Li/Obsidian-Snippet-collection *
 	text-transform: capitalize;
 }
 
+
+/* emphasize appearance & community plugins */
+.theme-dark .vertical-tab-header-group:first-child .vertical-tab-header-group-items .vertical-tab-nav-item:nth-child(3),
+.theme-dark .vertical-tab-header-group:first-child .vertical-tab-header-group-items .vertical-tab-nav-item:last-child{
+	color: var(--bold-in-darkmode);
+}
+.theme-dark .vertical-tab-header-group:first-child .vertical-tab-header-group-items .vertical-tab-nav-item:nth-child(3).is-active:hover,
+.theme-dark .vertical-tab-header-group:first-child .vertical-tab-header-group-items .vertical-tab-nav-item.is-active:hover,
+.theme-dark .vertical-tab-header-group:first-child .vertical-tab-header-group-items .vertical-tab-nav-item:nth-child(3):hover,
+.theme-dark .vertical-tab-header-group:first-child .vertical-tab-header-group-items .vertical-tab-nav-item:last-child:hover{
+	color: var(--alt-accent);
+}
+
+.theme-dark .vertical-tab-header-group:first-child .vertical-tab-header-group-items .vertical-tab-nav-item:nth-child(3).is-active,
+.theme-dark .vertical-tab-header-group:first-child .vertical-tab-header-group-items .vertical-tab-nav-item.is-active{
+	color: var(--text-accent);
+}
 
 
 /* ------------------------------------------------------ */
@@ -2686,20 +2671,15 @@ table:not(.dataview.table-view-table) th {
 
 table:not(.dataview.table-view-table) th {
 	background-color: var(--background-secondary-alt);
-}
-
-.theme-dark table:not(.dataview.table-view-table) th {
-	color: var(--bold-in-darkmode);
-}
-
-table:not(.dataview.table-view-table) th {
 	font-weight: 900;
 	border-bottom: 3px solid var(--text-muted);
 }
-
-table:not(.dataview.table-view-table) {
+.theme-dark table:not(.dataview.table-view-table) th {
+	color: var(--bold-in-darkmode);
+}
+.markdown-preview-view table:not(.dataview.table-view-table) {
 	table-layout: fixed;
-	width: 120%;
+	width: 100%;
 }
 
 
@@ -3211,7 +3191,7 @@ body,
 }
 
 /* ------------------------------------------------------ */
-/* > Smaller Plugin Customizations */
+/* > Other Plugin Customizations */
 /* ------------------------------------------------------ */
 /* drag blocks refs */
 body #search-res-hover.show,
@@ -3284,4 +3264,83 @@ button.MySnippetsButton:hover{
 
 button.MS-OpenSnippet{
 	background-color: var(--text-muted) !important;
+}
+
+/* File Tree Alternative */
+/*svg.oz-folder-toggle path{
+	fill: dodgerblue !important;
+}*/
+
+/*calendar plugin*/
+.workspace-leaf-content[data-type="calendar"] .view-content{
+	font-family: var(--font-monospace);
+}
+.workspace-leaf-content[data-type="calendar"] table td {
+	padding: 0;
+}
+.workspace-leaf-content[data-type="calendar"] .month,
+.workspace-leaf-content[data-type="calendar"] .year{
+	color: var(--more-contrast-muted) !important;
+	font-family: var(--heading-font);
+	font-weight: 500;
+	font-size: 130%;
+}
+
+.workspace-leaf-content[data-type="calendar"] .reset-button{
+	color: var(--more-contrast-muted) !important;
+	font-size: 90% !important;
+}
+.workspace-leaf-content[data-type="calendar"] .nav{
+	padding: 0 !important;
+}
+.workspace-leaf-content[data-type="calendar"] .week-num:hover,
+.workspace-leaf-content[data-type="calendar"] .reset-button:hover,
+.workspace-leaf-content[data-type="calendar"] .arrow:hover svg,
+.workspace-leaf-content[data-type="calendar"] .day:hover{
+	color: var(--alt-accent) !important;
+	border-radius: 0;
+}
+
+.workspace-leaf-content[data-type="calendar"] .day.today{
+	color: var(--text-accent);
+}
+
+.workspace-leaf-content[data-type="calendar"] table th{
+	font-size: 0.68em;
+}
+
+
+/* Templater */
+.cm-s-obsidian .cm-templater-command {
+	font-size: 1em !important;
+}
+
+/* fix for the buggy selection fo inline text
+https://forum.obsidian.md/t/inline-code-occludes-text-selection-and-vim-cursor/11552/10 */
+.theme-light .cm-inline-code,
+.theme-light .cm-s-obsidian .cm-templater-command {
+  background-color: rgba(0, 0, 0, 0.005) !important;
+}
+
+/* >> Improve Templater Syntax Readability */
+.theme-light .cm-s-obsidian .cm-templater-command.cm-operator {
+}
+.cm-s-obsidian .cm-templater-command.cm-def {
+	font-weight: 600 !important;
+}
+.theme-light .cm-s-obsidian .cm-templater-command.cm-string {
+	color: hsl(59deg 66% 37%) !important;
+}
+.cm-s-obsidian .cm-templater-command.cm-keyword {
+}
+.cm-s-obsidian .cm-templater-command.cm-property {
+	font-style: italic;
+}
+.theme-light .cm-s-obsidian .cm-templater-command.cm-number{
+	color: hsl(352deg 83% 40%) !important;
+}
+
+.cm-templater-command.cm-spell-error{
+	text-decoration: none;
+	background-image: none;
 }
