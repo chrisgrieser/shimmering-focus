@@ -626,6 +626,7 @@ body .workspace-leaf-content[data-type=kanban] .view-header{
 body .workspace-leaf-content[data-type=kanban] .view-header:focus-within,
 body .workspace-leaf-content[data-type=kanban] .view-header:hover{
 	background-color: var(--background-secondary) !important;
+	background-image: unset;
 }
 
 /* more condensed */
