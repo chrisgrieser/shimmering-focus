@@ -186,7 +186,7 @@ settings:
 https://github.com/mgmeyers/obsidian-style-settings*/
 
 /* ------------------------------------------------------ */
-/* > SHIMMERING FOCUS, version 1.51
+/* > SHIMMERING FOCUS, version 1.52
 Created by @pseudometa (Discord) aka @chrisgrieser (GitHub)
 https://github.com/chrisgrieser/shimmering-focus/ */
 /* ---------------------------------------------------------
@@ -215,11 +215,10 @@ For help and/or CSS snippets, thanks to:
 	--alt-accent: #02ac7d;
 	--alt-accent-darker: #009a72;
 	--alt-accent-lighter: #00d29a;
-	/*--code-color: var(--alt-accent-darker);*/
+	--code-color: var(--alt-accent-darker);
 	--html-tag-color: var(--alt-accent-darker);
 	--scrollbar-hover:  var(--alt-accent-lighter);
 	--pseudo-admonition-border: var(--accent-lighter);
-	--block-border-radius: 8px;
 	--cursor-color: var(--accent-lighter);
 	--scrollbar-active: var(--accent-lighter);
 	--highlight-color: #00ff8866;
@@ -231,10 +230,11 @@ For help and/or CSS snippets, thanks to:
 	--backdrop-color: hsl(228deg 40% 7%);
 	--active-line: #adae9820;
 
+	--block-border-radius: 6px;
 	--resize-handle-thickness: 0.35em;
 	--scrollbar-thickness: 0.75em;
 	--image-size: 50%;
-	--inactive-pane-opacity: 66%;
+	--inactive-pane-opacity: 75%;
 	--signature:"⟡";
 }
 
@@ -816,20 +816,6 @@ a.tag.kanban-plugin__item-tag {
 .lt-status-bar-btn:hover{
    color: var(--alt-accent) !important;
  }
-
-/*my snippets plugin*/
-.status-bar-item.plugin-mysnippets-plugin.cMenu-statusbar-button{
-	height: 1em;
-}
-button.MS-OpenSnippet:hover,
-button.MySnippetsButton:hover{
-   background-color: var(--alt-accent) !important;
-}
-
-/* remove status bar item for Autocomplete plugin */
-.plugin-obsidian-autocomplete-plugin{
-	display: none;
-}
 
 /* ------------------------------------------------------ */
 /* > Scrollbar */
@@ -3077,13 +3063,20 @@ input.document-replace-input:hover{
 
 .view-content .markdown-preview-view img,
 div.oz-image-widget > img{
-	max-width: var(--image-size) !important;
-	/*center image*/
 	display: block;
 	margin-left: auto;
   	margin-right: auto;
 	border-radius: 5px;
 }
+
+/* restrict image size */
+div.oz-image-widget > img{
+	max-width: var(--image-size) !important;
+}
+.view-content .markdown-preview-view img{
+	max-width: var(--image-size);
+}
+
 
 .view-content .markdown-preview-view img {
 	cursor: zoom-in;
@@ -3097,23 +3090,25 @@ div.oz-image-widget > img {
 /* by @kepano  https://forum.obsidian.md/t/image-zoom-click-hold-to-expand-images/5164 */
 .markdown-preview-view img:active {
 	cursor:zoom-out;
+	display:block;
 	z-index:100;
 	position:fixed;
-	max-height:100%;
-	max-width:100%;
-	height:100%;
-	width:100%;
-	object-fit: contain;
-	margin:0 auto;
-	text-align:center;
-	top: 50%;
+    max-height:100%;
+    max-width:100%;
+    height:100%;
+    width:100%;
+    object-fit: contain;
+    margin:0 auto;
+    text-align:center;
+    top: 50%;
   	transform: translateY(-50%);
-	padding:0;
-	left:0;
-	right:0;
-	bottom:0;
+    padding:0;
+    left:0;
+    right:0;
+    bottom:0;
 	background-color: var(--image-zoom-bg);
 }
+
 
 /* ------------------------------------------------------ */
 /* > Mermaid */
@@ -3248,6 +3243,11 @@ a.zoom-plugin-title:hover{
 	fill: var(--alt-accent) !important;
 }
 
+/* remove status bar item for Autocomplete plugin */
+.plugin-obsidian-autocomplete-plugin{
+	display: none;
+}
+
 /* CodeMirror Options*/
 .cm-s-obsidian .hmd-link-icon::after{
 	background-color: var(--more-contrast-muted) !important;
@@ -3256,4 +3256,32 @@ a.zoom-plugin-title:hover{
 .cm-s-obsidian .hmd-link-icon:hover::after{
 	background-color: var(--alt-accent) !important;
 	cursor: pointer;
+}
+
+/*my snippets plugin*/
+.status-bar-item.plugin-mysnippets-plugin.cMenu-statusbar-button{
+	height: 1em;
+}
+button.MS-OpenSnippet:hover,
+button.MySnippetsButton:hover{
+   background-color: var(--alt-accent) !important;
+}
+
+.MySnippets-statusbar-menu{
+	width: 300px !important;
+	border-radius: 8px !important;
+	border: 3px ridge var(--background-secondary-alt);
+}
+
+.MySnippets-statusbar-menu .menu-item.buttonitem:hover{
+	background-color: unset;
+	border-color: transparent;
+}
+
+.MySnippets-statusbar-menu .checkbox-container{
+	left: 0.5em;
+}
+
+button.MS-OpenSnippet{
+	background-color: var(--text-muted) !important;
 }
