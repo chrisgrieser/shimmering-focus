@@ -6,21 +6,14 @@ settings:
   -
     id: show-hide-elements
     title: Show/Hide Elements
-    description: The status becomes visible upon hovering.
     type: heading
     level: 2
     collapsed: false
   -
     id: show-titlebar
-    title: Show Title Bar of Obsidian Window
+    title: Show Title Bar
     type: class-toggle
-    description: Re-enable this to have a titlebar, e.g. for moving the Obsidian window
-    default: false
-  -
-    id: show-header-bar
-    title: Show the Header Bar
-    type: class-toggle
-    description: When false, the Header bar is still visible upon focus and hover
+    description: Re-enable this to have a title bar, e.g. for moving the Obsidian window
     default: false
   -
     id: show-ribbons
@@ -29,9 +22,20 @@ settings:
     description: Ribbons are the thin vertical bars to the very left & right
     default: false
   -
+    id: show-header-bar
+    title: Permanently show the Header Bar
+    type: class-toggle
+    description: When false, the Header bar is still visible upon focus and hover
+    default: false
+  -
+    id: show-statusbar
+    title: Permanently show the Status Bar
+    type: class-toggle
+    description: When false, the Status bar is still visible upon focus and hover
+    default: false
+  -
     id: headings-sizes
-    title: Heading Sizes, in em
-    description: 1em = base font size ("Settings -> Appearance -> Font Size")
+    title: Heading Sizes
     type: heading
     level: 2
     collapsed: true
@@ -89,25 +93,24 @@ settings:
   -
     id: regular-font
     title: Main Font
-    description: Main font of this theme, used in the Editor, Side bar, Status bar, and Header bar
     type: variable-text
     default: "iA Writer Quattro V"
   -
     id: font-monospace
     title: Monospace Font
-    description: Font used for code blocks, YAML-Header in edit mode, tables, etc. (Changing this font may lead to slight misalignments of some elements of this theme.)
+    description: Code blocks, YAML in edit mode, tables, etc.
     type: variable-text
     default: '"Input Mono"'
   -
     id: heading-font
     title: Heading Font
-    description: Font used for Headings (H1-H5)
+    description: H1 to H5 Headings
     type: variable-text
     default: 'Optima, Candara, "Helvetica Neue"'
   -
     id: not-optima-font
-    title: No increased letter spacing for headings
-    description: Turn off the increased letter spacing for Headings with Optima Font.
+    title: Decrease letter spacing for headings
+    description: This theme increases letter spacing to make Optima/Canberra align more with the other fonts. Turn off, if you are using a different Heading Font.
     type: class-toggle
     default: false
   -
@@ -118,7 +121,7 @@ settings:
     collapsed: true
   -
     id: longform-font
-    title: Longform Notes Font
+    title: Main Font for Longform Notes
     description: Font used in folders marked as Longform Project
     type: variable-text
     default: '"Crimson Pro"'
@@ -158,7 +161,7 @@ settings:
   -
     id: no-alternating-header-italics
     title: No Alternating Italic of Headings
-    description: With Shimmering Focus, the Heading Levels alternate between italic/regular to make it easier to distinguish between them. You can turn that feature off if you prefer non-italic at all heading levels.
+    description: In this theme, the Heading Levels alternate between italic/regular to make them more distinguishable. You can turn that feature off if you prefer non-italic at all heading levels.
     type: class-toggle
     default: false
   -
@@ -170,7 +173,7 @@ settings:
   -
     id: no-h2-numbering
     title: No H2 Numbering
-    description: Turn off the Numbering Level 2 Headings in Preview Mode.
+    description: Turn off the numbering H2 in Preview Mode.
     type: class-toggle
     default: false
   -
@@ -186,7 +189,7 @@ settings:
 https://github.com/mgmeyers/obsidian-style-settings*/
 
 /* ------------------------------------------------------ */
-/* > SHIMMERING FOCUS, version 1.54
+/* > SHIMMERING FOCUS, version 1.55
 Created by @pseudometa (Discord) aka @chrisgrieser (GitHub)
 https://github.com/chrisgrieser/shimmering-focus/ */
 /* ---------------------------------------------------------
@@ -810,12 +813,12 @@ a.tag.kanban-plugin__item-tag {
 }
 
 /* only show on hover */
-.status-bar,
+body:not(.show-statusbar) .status-bar,
 .is-translucent .status-bar {
   opacity: 0;
   transition: 800ms;
 }
-.status-bar:hover {
+body:not(.show-statusbar) .status-bar:hover {
   opacity: 1;
   transition: 200ms;
 }
@@ -2162,8 +2165,12 @@ based on css from @Mara https://github.com/Mara-Li/Obsidian-Snippet-collection *
 .vertical-tab-header-group:first-child .vertical-tab-header-group-items .vertical-tab-nav-item:last-child{
 	font-weight: 900;
 	text-rendering: geometricPrecision;
+}
+.theme-dark .vertical-tab-header-group:first-child .vertical-tab-header-group-items .vertical-tab-nav-item:nth-child(3),
+.theme-dark .vertical-tab-header-group:first-child .vertical-tab-header-group-items .vertical-tab-nav-item:last-child{
 	color: var(--bold-in-darkmode);
 }
+
 
 /* color active/hovered submenu in theme style */
 .vertical-tab-nav-item.is-active {
