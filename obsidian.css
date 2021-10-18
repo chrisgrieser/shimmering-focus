@@ -186,7 +186,7 @@ settings:
 https://github.com/mgmeyers/obsidian-style-settings*/
 
 /* ------------------------------------------------------ */
-/* > SHIMMERING FOCUS, version 1.53
+/* > SHIMMERING FOCUS, version 1.54
 Created by @pseudometa (Discord) aka @chrisgrieser (GitHub)
 https://github.com/chrisgrieser/shimmering-focus/ */
 /* ---------------------------------------------------------
@@ -718,6 +718,15 @@ a.tag.kanban-plugin__item-tag {
 .workspace-leaf-content[data-type=kanban] hr{
 	border-width: 0.5em;
 	border-radius: 10px;
+}
+
+/* fix metadata in kanban card display */
+.workspace-leaf-content[data-type=kanban] table td{
+	border: none !important;
+}
+.kanban-plugin__item-metadata-wrapper{
+	padding-top: 0 !important;
+	padding-bottom: 0 !important;
 }
 
 
@@ -2666,13 +2675,12 @@ span.cm-link.cm-hmd-footnote {
 /* normal tables */
 table:not(.dataview.table-view-table) td,
 table:not(.dataview.table-view-table) th {
-	border: 2px solid var(--text-muted);
+	border: 2px ridge var(--text-muted);
 }
 
 table:not(.dataview.table-view-table) th {
 	background-color: var(--background-secondary-alt);
 	font-weight: 900;
-	border-bottom: 3px solid var(--text-muted);
 }
 .theme-dark table:not(.dataview.table-view-table) th {
 	color: var(--bold-in-darkmode);
@@ -3278,6 +3286,7 @@ button.MS-OpenSnippet{
 .workspace-leaf-content[data-type="calendar"] table td {
 	padding: 0;
 }
+
 .workspace-leaf-content[data-type="calendar"] .month,
 .workspace-leaf-content[data-type="calendar"] .year{
 	color: var(--more-contrast-muted) !important;
