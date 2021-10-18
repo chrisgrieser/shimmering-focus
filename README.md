@@ -62,23 +62,24 @@
 **Community Plugins**
 - Longform
 - Kanban (right click to edit cards)
+- Calendar
 - Sliding Panes (enable `Swap Rotated Header Direction`)
 - Advanced Tables
 - Templater
-- Style Settings
-- Ozan's Image in Editor Plugin
-- MySnippets-Plugin
+- Ozan's Image in Edito
+- MySnippets
 - [Another Quick Switcher Plugin](https://github.com/tadashi-aikawa/obsidian-another-quick-switcher)
-- CodeMirror Options (with `Collapse External Links`)
+- CodeMirror Options (`Collapse External Links`)
 - Drag and Drop Blocks
 - Recent Files
-- Calendar
+- Quick Explorer
 
 **Core Plugins**
 - Graph View
 - Starred
 - Tag Pane
 - Backlinks
+- Outgoing Links
 - Outline
 - Search Pane
 - Command Palette
