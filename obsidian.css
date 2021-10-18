@@ -189,7 +189,7 @@ settings:
 https://github.com/mgmeyers/obsidian-style-settings*/
 
 /* ------------------------------------------------------ */
-/* > SHIMMERING FOCUS, version 1.55
+/* > SHIMMERING FOCUS, version 1.56
 Created by @pseudometa (Discord) aka @chrisgrieser (GitHub)
 https://github.com/chrisgrieser/shimmering-focus/ */
 /* ---------------------------------------------------------
@@ -596,142 +596,6 @@ body:not(.is-mobile) .view-header:focus-within{
 	color: var(--text-accent) !important;
 }
 
-/* ------------------------------------------------------ */
-/* > Kanban Plugin */
-/* ------------------------------------------------------ */
-
-.theme-light{
-	--kanban-background: #DADADA;
-	--active-hover-kanban-item: #EEE;
-	--dot-color: #CCCCCC80;
-}
-.theme-dark{
-	--kanban-background: #2C2C2C;
-	--active-hover-kanban-item: var(--kanban-background);
-	--dot-color: #22222280;
-}
-:root{
-	--dot-spacing: 8px;
-	--dot-size: 1px;
-}
-
-/* thanks @Damian Korcz for this*/
-body .workspace-leaf-content[data-type=kanban] .view-header,
-.kanban-plugin__board {
-   background-size: var(--dot-spacing) var(--dot-spacing);
-   background-attachment: local;
-   background-image: radial-gradient(circle, var(--dot-color) var(--dot-size), transparent var(--dot-size));
-}
-
-body .workspace-leaf-content[data-type=kanban] .view-header{
-	background-color: var(--kanban-background) !important;
-}
-body .workspace-leaf-content[data-type=kanban] .view-header:focus-within,
-body .workspace-leaf-content[data-type=kanban] .view-header:hover{
-	background-color: var(--background-secondary) !important;
-	background-image: unset;
-}
-
-/* more condensed */
-.kanban-plugin__drag-container p,
-.workspace-leaf-content[data-type=kanban] p{
-	font-size: 0.95em;
-	margin-top: 0.3em;
-	margin-bottom: 0.3em;
-}
-.kanban-plugin__drag-container li,
-.workspace-leaf-content[data-type=kanban] li{
-	font-size: 0.85em;
-}
-
-.workspace-leaf-content[data-type=kanban] ul{
-	margin-top: 0.2em;
-	margin-bottom: 0.2em;
-}
-
-textarea.kanban-plugin__item-input{
-	font-family: var(--default-font) !important;
-	font-size: 0.95em !important;
-	background-color: var(--background-secondary-alt);
-}
-
-body:not(.not-ia-writer-font) textarea.kanban-plugin__item-input,
-body:not(.not-ia-writer-font) .kanban-plugin__drag-container p,
-body:not(.not-ia-writer-font) .workspace-leaf-content[data-type=kanban] p{
-  letter-spacing: -0.01em;
-}
-
-/*vertical three dots*/
-.kanban-plugin__lane-settings-button-wrapper svg{
-	color: var(--more-contrast-muted);
-	stroke-width: 3px !important;
-}
-.kanban-plugin__lane-settings-button-wrapper:hover svg{
-	color: #EEE;
-}
-
-/* remove button on card to save space */
-.kanban-plugin__item-postfix-button-wrapper{
-	display: none !important;
-}
-
-.kanban-plugin__item-button-wrapper{
-	padding-bottom: 6px !important;
-	padding-top: 4px !important;
-}
-
-.kanban-plugin__new-item-button{
-	font-family: var(--default-font);
-	font-size: 0.8em;
-	padding-top: 5px !important;
-	padding-bottom: 5px !important;
-	padding-left: 8px !important;
-	padding-left: 8px !important;
-}
-
-a.tag.kanban-plugin__item-tag {
-	background: none;
-}
-
-.kanban-plugin__new-item-button:hover{
-	background-color: var(--active-hover-kanban-item) !important;
-	color: var(--alt-accent) !important;
-}
-
-.kanban-plugin__item-content-wrapper:hover,
-.kanban-plugin__item:hover{
-	border-color: var(--alt-accent) !important;
-}
-
-.kanban-plugin__drag-container .kanban-plugin__item-title-wrapper,
-.kanban-plugin__item:hover .kanban-plugin__item-title-wrapper,
-.kanban-plugin__item:hover{
-	background-color: var(--active-hover-kanban-item) !important;
-}
-
-.kanban-plugin{
-	background-color: var(--kanban-background) !important;
-}
-
-.view-content > .kanban-plugin > * > div{
-	padding-top: 0.5em;
-}
-
-/*hr notes become seperators*/
-.workspace-leaf-content[data-type=kanban] hr{
-	border-width: 0.5em;
-	border-radius: 10px;
-}
-
-/* fix metadata in kanban card display */
-.workspace-leaf-content[data-type=kanban] table td{
-	border: none !important;
-}
-.kanban-plugin__item-metadata-wrapper{
-	padding-top: 0 !important;
-	padding-bottom: 0 !important;
-}
-
 
 /* ------------------------------------------------------ */
 /* > Context Menus */
@@ -769,18 +633,11 @@ a.tag.kanban-plugin__item-tag {
 	margin-left: 3px;
 }
 
-
 .menu-item:hover .menu-item-title {
 	color: var(--alt-accent)
 }
 .menu-item.selected .menu-item-title {
 	color: var(--text-accent)
-}
-
-/* Quick Explorer */
-/* prevent appearing on top of the traffic lights of macOS */
-.menu.qe-popup-menu {
-	padding-top: 1em;
 }
 
 /* ------------------------------------------------------ */
@@ -1172,292 +1029,7 @@ a.tag:hover {
 }
 
 
-/* ------------------------------------------------------ */
-/* > Longform Plugin */
-/* ------------------------------------------------------ */
 
-/* >> Longform SIDEBAR */
-/* container with more space */
-.tab-list.svelte-1bo97vk{
-  margin-left: 0px !important;
-  margin-right: 0px !important;
-}
-.tab-panel-container.svelte-11pvpwl{
-  padding-left: 0px !important;
-  padding-right: 0px !important;
-}
-.workspace-leaf-content[data-type="VIEW_TYPE_LONGFORM_EXPLORER"] .view-content{
-  padding-left: 5px;
-  padding-right: 5px;
-  padding-top: 15px;
-  padding-bottom: 15px;
-}
-
-/* hide folder path*/
-.current-draft-path.svelte-23avsr{
-  display: none;
-}
-
-/* scene item / draft item */
-.draft-container.svelte-1jmafs,
-.scene-container.svelte-1wlkmbt {
-	/* wrap long titles */
-	width: 100% !important;
-	white-space: normal !important;
-
-	color: var(--more-contrast-muted) !important;
-	
-	padding-left: 2px !important;
-	padding-bottom: 2px !important;
-	padding-top: 2px !important;
-	line-height: 1.25em !important;
-}
-
-.scene-container.svelte-1wlkmbt.selected,
-.draft-container.svelte-1jmafs.selected {
-  color: var(--text-accent) !important;
-}
-
-/* dragging */
-.scene-container.svelte-1wlkmbt.dragging,
-.scene-container.svelte-1wlkmbt:active{
-	color: var(--text-accent) !important;
-	background-color: transparent !important;
-}
-/* shadow of dragging */
-.sortable-chosen{
-	padding: 0 !important;
-	border: none !important;
-	border-radius: 3px !important;
-	background-color: none;
-}
-
-/* hover */
-.draft-container.svelte-1jmafs.selected:hover,
-.draft-container.svelte-1jmafs:hover,
-.scene-container.svelte-1wlkmbt:hover,
-.scene-container.svelte-1wlkmbt.selected:hover,
-.svelte-23avsr:hover{
-  color: var(--alt-accent) !important;
-}
-
-/* selected */
-.draft-container.svelte-1jmafs.selected,
-.draft-container.svelte-1jmafs.selected:hover,
-.scene-container.svelte-1wlkmbt.selected:hover,
-.scene-container.svelte-1wlkmbt.selected {
-  font-weight: 600;
-}
-
-/* new scene/draft field */
-.svelte-1lq63fp,
-.svelte-1wkli4h{
-  padding-left: 3px !important;
-}
-
-/* >> TAB-ITEMS */
-/* >> Longform Sidebar Icons */
-.svelte-htpziy::before{
-  font-family: "Material Icons";
-  font-size: 1.5rem;
-  vertical-align: top;
-}
-.svelte-htpziy:nth-child(1)::before{
-  content: "format_list_numbered_rtl";
-}
-.svelte-htpziy:nth-child(2)::before{
-  content: "import_contacts";
-}
-.svelte-htpziy:nth-child(3)::before{
-  content: "merge_type";
-}
-
-.svelte-htpziy.selected{
-  color: var(--text-accent) !important;
-  background-color: var(--background-secondary-alt) !important;
-}
-
-.svelte-htpziy:hover{
-  color: var(--alt-accent) !important;
-  background-color: var(--background-primary) !important;
-}
-.svelte-htpziy.selected:hover{
-  color: var(--alt-accent) !important;
-  background-color: var(--background-secondary-alt) !important;
-}
-
-
-.svelte-htpziy{
-  font-size: 0;
-  color: var(--more-contrast-muted) !important;
-  background-color: var(--background-primary) !important;
-  padding-top: 5px;
-  padding-bottom: 6px;
-  padding-left: 15px;
-  padding-right: 15px;
-  margin-right: 4px !important;
-  border-top-left-radius: 6px !important;
-  border-top-right-radius: 6px !important;
-  border: 2px solid var(--text-faint) !important;
-  border-bottom: none !important;
-}
-
-
-/* horizontal borders between sections */
-.tab-list.svelte-1bo97vk{
-  border-bottom: 3px solid var(--text-faint) !important;
-}
-
-.new-draft-container.svelte-1wkli4h,
-.new-scene-container.svelte-1lq63fp,
-.compile-container.svelte-1vu6mjk{
-  border-top: 3px solid var(--text-faint) !important;
-}
-
-/* Compile */
-.compile-button.svelte-1vu6mjk:hover{
-  background-color: var(--alt-accent) !important;
-}
-
-/* >> PROJECT TITLE */
-.svelte-23avsr{
-  color: var(--more-contrast-muted) !important;
-}
-.svelte-23avsr[name~="projects"] {
-  font-weight: 600;
-}
-
-.right-arrow.svelte-23avsr{
-  display: none !important;
-}
-
-.svelte-23avsr:hover {
-  text-decoration: none !important;
-  color: var(--alt-accent) !important;
-}
-
-/* container */
-#project-picker.svelte-23avsr {
-  margin-bottom: 0em;
-  margin-top: 0;
-  background-color: var(--background-secondary-alt);
-  border-radius: 4px;
-  padding-left: 1px;
-  padding-right: 0px;
-  padding-top: 5px;
-  padding-bottom: 5px;
-  font-size: 0.8em;
-  border: 2.5px solid var(--text-faint);
-}
-
-/* >> Longform EDITOR */
-/* https://github.com/kevboh/longform#scene-only-styling */
-
-.longform-leaf .markdown-preview-view,
-.longform-leaf .cm-s-obsidian{
-  font-family: var(--longform-font);
-  letter-spacing: 0 !important;
-  font-size: var(--longform-font-size);
-  line-height: 1.35;
-}
-
-/* background color */
-body:not(.longform-no-bg) .longform-leaf .markdown-preview-view,
-body:not(.longform-no-bg) .longform-leaf .markdown-source-view,
-body:not(.show-header-bar):not(.is-mobile):not(.longform-no-bg) .longform-leaf .view-header{
-	background-color: var(--longform-background) !important;
-}
-
-body:not(.longform-left-aligned) .longform-leaf .cm-s-obsidian{
-	text-align: justify;
-	hyphens: auto;
-}
-
-/* keep any code smaller though */
-.longform-leaf .markdown-preview-view .frontmatter-container,
-.longform-leaf .cm-s-obsidian .cm-hmd-frontmatter,
-.longform-leaf .cm-s-obsidian .HyperMD-codeblock,
-.longform-leaf .markdown-preview-view code,
-.longform-leaf .cm-s-obsidian span.cm-inline-code,
-.longform-leaf .HyperMD-table-row {
-	font-size: calc(var(--longform-font-size) * 0.66);
-	text-align: start;
-	hyphens: none;
-}
-
-.longform-leaf .HyperMD-list-line{
-	text-align: start;
-	hyphens: none;
-}
-
-
-/* do not justify heading text*/
-.longform-leaf .markdown-preview-view h1,
-.longform-leaf .markdown-preview-view h2,
-.longform-leaf .markdown-preview-view h3,
-.longform-leaf .markdown-preview-view h4,
-.longform-leaf .markdown-preview-view h5,
-.longform-leaf .HyperMD-header {
-  text-align: start;
-  font-family: var(--longform-font);
-}
-
-:root{
-  --longform-heading-scale: 1.1;
-}
-.longform-leaf .cm-header-1,
-.longform-leaf .cm-header-2,
-.longform-leaf .cm-header-3,
-.longform-leaf .cm-header-4,
-.longform-leaf .cm-header-5,
-.longform-leaf .markdown-preview-view h1,
-.longform-leaf .markdown-preview-view h2,
-.longform-leaf .markdown-preview-view h3,
-.longform-leaf .markdown-preview-view h4,
-.longform-leaf .markdown-preview-view h5{
-  text-align: start;
-  font-family: var(--longform-font);
-  line-height: 1.2em;
-  letter-spacing: 0.5px;
-}
-
-.longform-leaf .cm-header-1,
-.longform-leaf .markdown-preview-view h1 {
-  font-size: calc(var(--h1-size) * var(--longform-heading-scale));
-}
-.longform-leaf .cm-header-2,
-.longform-leaf .markdown-preview-view h2 {
-  font-size: calc(var(--h2-size) * var(--longform-heading-scale));
-}
-.longform-leaf .cm-header-3,
-.longform-leaf .markdown-preview-view h3{
-  font-size: calc(var(--h3-size) * var(--longform-heading-scale));
-}
-.longform-leaf .cm-header-4,
-.longform-leaf .markdown-preview-view h4{
-  font-size: calc(var(--h4-size) * var(--longform-heading-scale));
-}
-.longform-leaf .cm-header-5,
-.longform-leaf .markdown-preview-view h5 {
-  font-size: calc(var(--h5-size) * var(--longform-heading-scale));
-}
-
-/* >> Longform Icons */
-
-/* hide index file in file explorer, which shouldn't
-be messed with anyway */
-body.hide-index-files .nav-file-title[data-path$="Index.md"] {
-	display: none;
-}
-
-.nav-file-title[data-path$="Index.md"] .nav-file-title-content:before {
-	content: "settings ";
-}
-
-.nav-folder-title[data-path$="Drafts"] .nav-folder-title-content::before {
-	content: "folder_special ";
-	/* alternative:  "auto_stories" or "menu_book" */
-}
 
 
 /* ------------------------------------------------------ */
@@ -3056,8 +2628,7 @@ input.document-replace-input:hover{
 	display: block;
 }
 
-.view-content .markdown-preview-view img,
-div.oz-image-widget > img{
+.view-content .markdown-preview-view img{
 	display: block;
 	margin-left: auto;
   	margin-right: auto;
@@ -3065,20 +2636,12 @@ div.oz-image-widget > img{
 }
 
 /* restrict image size */
-div.oz-image-widget > img{
-	max-width: var(--image-size) !important;
-}
 .view-content .markdown-preview-view img{
 	max-width: var(--image-size);
 }
 
-
 .view-content .markdown-preview-view img {
 	cursor: zoom-in;
-}
-
-div.oz-image-widget > img {
-	cursor: unset !important;
 }
 
 /* image zoom */
@@ -3206,6 +2769,546 @@ body,
 }
 
 /* ------------------------------------------------------ */
+/* > Calendar Plugin */
+/* ------------------------------------------------------ */
+
+.workspace-leaf-content[data-type="calendar"] .view-content{
+	font-family: var(--font-monospace);
+}
+.workspace-leaf-content[data-type="calendar"] table td {
+	padding: 0;
+}
+
+.workspace-leaf-content[data-type="calendar"] .month,
+.workspace-leaf-content[data-type="calendar"] .year{
+	color: var(--more-contrast-muted) !important;
+	font-family: var(--heading-font);
+	font-weight: 500;
+	font-size: 130%;
+}
+
+.workspace-leaf-content[data-type="calendar"] .reset-button{
+	color: var(--more-contrast-muted) !important;
+	font-size: 0.8em !important;
+}
+.workspace-leaf-content[data-type="calendar"] .nav{
+	padding: 0 !important;
+}
+.workspace-leaf-content[data-type="calendar"] .week-num:hover,
+.workspace-leaf-content[data-type="calendar"] .reset-button:hover,
+.workspace-leaf-content[data-type="calendar"] .arrow:hover svg,
+.workspace-leaf-content[data-type="calendar"] .day:hover,
+.workspace-leaf-content[data-type="calendar"] .day.active:hover{
+	color: var(--alt-accent) !important;
+	border-radius: 0;
+}
+
+.workspace-leaf-content[data-type="calendar"] .day.today{
+	color: var(--text-accent);
+}
+
+.workspace-leaf-content[data-type="calendar"] table th{
+	font-size: 0.7em;
+	color: var(--more-contrast-muted);
+}
+
+.workspace-leaf-content[data-type="calendar"] .day.active{
+	border-radius: 0;
+	background-color: var(--text-accent);
+	opacity: 0.7;
+	font-weight: 900;
+	color: var(--interactive-normal);
+}
+.workspace-leaf-content[data-type="calendar"] .day.active{
+	text-decoration: underline 2px;
+}
+
+.workspace-leaf-content[data-type="calendar"] .day.active svg dot{
+	color: var(--interactive-normal) !important;
+}
+
+/* ------------------------------------------------------ */
+/* Templater */
+/* ------------------------------------------------------ */
+
+.cm-s-obsidian .cm-templater-command {
+	font-size: 1em !important;
+}
+
+/* fix for the buggy selection fo inline text
+https://forum.obsidian.md/t/inline-code-occludes-text-selection-and-vim-cursor/11552/10 */
+.theme-light .cm-inline-code,
+.theme-light .cm-s-obsidian .cm-templater-command {
+  background-color: rgba(0, 0, 0, 0.005) !important;
+}
+
+/* >> Improve Templater Syntax Readability */
+.theme-light .cm-s-obsidian .cm-templater-command.cm-operator {
+}
+.cm-s-obsidian .cm-templater-command.cm-def {
+	font-weight: 600 !important;
+}
+.theme-light .cm-s-obsidian .cm-templater-command.cm-string {
+	color: hsl(59deg 66% 37%) !important;
+}
+.cm-s-obsidian .cm-templater-command.cm-keyword {
+}
+.cm-s-obsidian .cm-templater-command.cm-property {
+	font-style: italic;
+}
+.theme-light .cm-s-obsidian .cm-templater-command.cm-number{
+	color: hsl(352deg 83% 40%) !important;
+}
+
+.cm-templater-command.cm-spell-error{
+	text-decoration: none;
+	background-image: none;
+}
+
+/* ------------------------------------------------------ */
+/* > Kanban Plugin */
+/* ------------------------------------------------------ */
+
+.theme-light{
+	--kanban-background: #DADADA;
+	--active-hover-kanban-item: #EEE;
+	--dot-color: #CCCCCC80;
+}
+.theme-dark{
+	--kanban-background: #2C2C2C;
+	--active-hover-kanban-item: var(--kanban-background);
+	--dot-color: #22222280;
+}
+:root{
+	--dot-spacing: 8px;
+	--dot-size: 1px;
+}
+
+/* thanks @Damian Korcz for this*/
+body .workspace-leaf-content[data-type=kanban] .view-header,
+.kanban-plugin__board {
+   background-size: var(--dot-spacing) var(--dot-spacing);
+   background-attachment: local;
+   background-image: radial-gradient(circle, var(--dot-color) var(--dot-size), transparent var(--dot-size));
+}
+
+body .workspace-leaf-content[data-type=kanban] .view-header{
+	background-color: var(--kanban-background) !important;
+}
+body .workspace-leaf-content[data-type=kanban] .view-header:focus-within,
+body .workspace-leaf-content[data-type=kanban] .view-header:hover{
+	background-color: var(--background-secondary) !important;
+	background-image: unset;
+}
+
+/* more condensed */
+.kanban-plugin__drag-container p,
+.workspace-leaf-content[data-type=kanban] p{
+	font-size: 0.95em;
+	margin-top: 0.3em;
+	margin-bottom: 0.3em;
+}
+.kanban-plugin__drag-container li,
+.workspace-leaf-content[data-type=kanban] li{
+	font-size: 0.85em;
+}
+
+.workspace-leaf-content[data-type=kanban] ul{
+	margin-top: 0.2em;
+	margin-bottom: 0.2em;
+}
+
+textarea.kanban-plugin__item-input{
+	font-family: var(--default-font) !important;
+	font-size: 0.95em !important;
+	background-color: var(--background-secondary-alt);
+}
+
+body:not(.not-ia-writer-font) textarea.kanban-plugin__item-input,
+body:not(.not-ia-writer-font) .kanban-plugin__drag-container p,
+body:not(.not-ia-writer-font) .workspace-leaf-content[data-type=kanban] p{
+  letter-spacing: -0.01em;
+}
+
+/*vertical three dots*/
+.kanban-plugin__lane-settings-button-wrapper svg{
+	color: var(--more-contrast-muted);
+	stroke-width: 3px !important;
+}
+.kanban-plugin__lane-settings-button-wrapper:hover svg{
+	color: #EEE;
+}
+
+/* remove button on card to save space */
+.kanban-plugin__item-postfix-button-wrapper{
+	display: none !important;
+}
+
+.kanban-plugin__item-button-wrapper{
+	padding-bottom: 6px !important;
+	padding-top: 4px !important;
+}
+
+.kanban-plugin__new-item-button{
+	font-family: var(--default-font);
+	font-size: 0.8em;
+	padding-top: 5px !important;
+	padding-bottom: 5px !important;
+	padding-left: 8px !important;
+	padding-left: 8px !important;
+}
+
+a.tag.kanban-plugin__item-tag {
+	background: none;
+}
+
+.kanban-plugin__new-item-button:hover{
+	background-color: var(--active-hover-kanban-item) !important;
+	color: var(--alt-accent) !important;
+}
+
+.kanban-plugin__item-content-wrapper:hover,
+.kanban-plugin__item:hover{
+	border-color: var(--alt-accent) !important;
+}
+
+.kanban-plugin__drag-container .kanban-plugin__item-title-wrapper,
+.kanban-plugin__item:hover .kanban-plugin__item-title-wrapper,
+.kanban-plugin__item:hover{
+	background-color: var(--active-hover-kanban-item) !important;
+}
+
+.kanban-plugin{
+	background-color: var(--kanban-background) !important;
+}
+
+.view-content > .kanban-plugin > * > div{
+	padding-top: 0.5em;
+}
+
+/*hr notes become seperators*/
+.workspace-leaf-content[data-type=kanban] hr{
+	border-width: 0.5em;
+	border-radius: 10px;
+}
+
+/* fix metadata in kanban card display */
+.workspace-leaf-content[data-type=kanban] table td{
+	border: none !important;
+}
+.kanban-plugin__item-metadata-wrapper{
+	padding-top: 0 !important;
+	padding-bottom: 0 !important;
+}
+
+/* ------------------------------------------------------ */
+/* > Longform Plugin */
+/* ------------------------------------------------------ */
+
+/* >> Longform SIDEBAR */
+/* container with more space */
+.tab-list.svelte-1bo97vk{
+  margin-left: 0px !important;
+  margin-right: 0px !important;
+}
+.tab-panel-container.svelte-11pvpwl{
+  padding-left: 0px !important;
+  padding-right: 0px !important;
+}
+.workspace-leaf-content[data-type="VIEW_TYPE_LONGFORM_EXPLORER"] .view-content{
+  padding-left: 5px;
+  padding-right: 5px;
+  padding-top: 15px;
+  padding-bottom: 15px;
+}
+
+/* hide folder path*/
+.current-draft-path.svelte-23avsr{
+  display: none;
+}
+
+/* scene item / draft item */
+.draft-container.svelte-1jmafs,
+.scene-container.svelte-1wlkmbt {
+	/* wrap long titles */
+	width: 100% !important;
+	white-space: normal !important;
+
+	color: var(--more-contrast-muted) !important;
+
+	padding-left: 2px !important;
+	padding-bottom: 2px !important;
+	padding-top: 2px !important;
+	line-height: 1.25em !important;
+}
+
+.scene-container.svelte-1wlkmbt.selected,
+.draft-container.svelte-1jmafs.selected {
+  color: var(--text-accent) !important;
+}
+
+/* dragging */
+.scene-container.svelte-1wlkmbt.dragging,
+.scene-container.svelte-1wlkmbt:active{
+	color: var(--text-accent) !important;
+	background-color: transparent !important;
+}
+/* shadow of dragging */
+.sortable-chosen{
+	padding: 0 !important;
+	border: none !important;
+	border-radius: 3px !important;
+	background-color: none;
+}
+
+/* hover */
+.draft-container.svelte-1jmafs.selected:hover,
+.draft-container.svelte-1jmafs:hover,
+.scene-container.svelte-1wlkmbt:hover,
+.scene-container.svelte-1wlkmbt.selected:hover,
+.svelte-23avsr:hover{
+  color: var(--alt-accent) !important;
+}
+
+/* selected */
+.draft-container.svelte-1jmafs.selected,
+.draft-container.svelte-1jmafs.selected:hover,
+.scene-container.svelte-1wlkmbt.selected:hover,
+.scene-container.svelte-1wlkmbt.selected {
+  font-weight: 600;
+}
+
+/* new scene/draft field */
+.svelte-1lq63fp,
+.svelte-1wkli4h{
+  padding-left: 3px !important;
+}
+
+/* >> TAB-ITEMS */
+/* >> Longform Sidebar Icons */
+.svelte-htpziy::before{
+  font-family: "Material Icons";
+  font-size: 1.5rem;
+  vertical-align: top;
+}
+.svelte-htpziy:nth-child(1)::before{
+  content: "format_list_numbered_rtl";
+}
+.svelte-htpziy:nth-child(2)::before{
+  content: "import_contacts";
+}
+.svelte-htpziy:nth-child(3)::before{
+  content: "merge_type";
+}
+
+.svelte-htpziy.selected{
+  color: var(--text-accent) !important;
+  background-color: var(--background-secondary-alt) !important;
+}
+
+.svelte-htpziy:hover{
+  color: var(--alt-accent) !important;
+  background-color: var(--background-primary) !important;
+}
+.svelte-htpziy.selected:hover{
+  color: var(--alt-accent) !important;
+  background-color: var(--background-secondary-alt) !important;
+}
+
+
+.svelte-htpziy{
+  font-size: 0;
+  color: var(--more-contrast-muted) !important;
+  background-color: var(--background-primary) !important;
+  padding-top: 5px;
+  padding-bottom: 6px;
+  padding-left: 15px;
+  padding-right: 15px;
+  margin-right: 4px !important;
+  border-top-left-radius: 6px !important;
+  border-top-right-radius: 6px !important;
+  border: 2px solid var(--text-faint) !important;
+  border-bottom: none !important;
+}
+
+
+/* horizontal borders between sections */
+.tab-list.svelte-1bo97vk{
+  border-bottom: 3px solid var(--text-faint) !important;
+}
+
+.new-draft-container.svelte-1wkli4h,
+.new-scene-container.svelte-1lq63fp,
+.compile-container.svelte-1vu6mjk{
+  border-top: 3px solid var(--text-faint) !important;
+}
+
+/* Compile */
+.compile-button.svelte-1vu6mjk:hover{
+  background-color: var(--alt-accent) !important;
+}
+
+/* >> PROJECT TITLE */
+.svelte-23avsr{
+  color: var(--more-contrast-muted) !important;
+}
+.svelte-23avsr[name~="projects"] {
+  font-weight: 600;
+}
+
+.right-arrow.svelte-23avsr{
+  display: none !important;
+}
+
+.svelte-23avsr:hover {
+  text-decoration: none !important;
+  color: var(--alt-accent) !important;
+}
+
+/* container */
+#project-picker.svelte-23avsr {
+  margin-bottom: 0em;
+  margin-top: 0;
+  background-color: var(--background-secondary-alt);
+  border-radius: 4px;
+  padding-left: 1px;
+  padding-right: 0px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  font-size: 0.8em;
+  border: 2.5px solid var(--text-faint);
+}
+
+/* >> Longform EDITOR */
+/* https://github.com/kevboh/longform#scene-only-styling */
+
+.longform-leaf .markdown-preview-view,
+.longform-leaf .cm-s-obsidian{
+  font-family: var(--longform-font);
+  letter-spacing: 0 !important;
+  font-size: var(--longform-font-size);
+  line-height: 1.35;
+}
+
+/* background color */
+body:not(.longform-no-bg) .longform-leaf .markdown-preview-view,
+body:not(.longform-no-bg) .longform-leaf .markdown-source-view,
+body:not(.show-header-bar):not(.is-mobile):not(.longform-no-bg) .longform-leaf .view-header{
+	background-color: var(--longform-background) !important;
+}
+
+body:not(.longform-left-aligned) .longform-leaf .cm-s-obsidian{
+	text-align: justify;
+	hyphens: auto;
+}
+
+/* keep any code smaller though */
+.longform-leaf .markdown-preview-view .frontmatter-container,
+.longform-leaf .cm-s-obsidian .cm-hmd-frontmatter,
+.longform-leaf .cm-s-obsidian .HyperMD-codeblock,
+.longform-leaf .markdown-preview-view code,
+.longform-leaf .cm-s-obsidian span.cm-inline-code,
+.longform-leaf .HyperMD-table-row {
+	font-size: calc(var(--longform-font-size) * 0.66);
+	text-align: start;
+	hyphens: none;
+}
+
+.longform-leaf .HyperMD-list-line{
+	text-align: start;
+	hyphens: none;
+}
+
+
+/* do not justify heading text*/
+.longform-leaf .markdown-preview-view h1,
+.longform-leaf .markdown-preview-view h2,
+.longform-leaf .markdown-preview-view h3,
+.longform-leaf .markdown-preview-view h4,
+.longform-leaf .markdown-preview-view h5,
+.longform-leaf .HyperMD-header {
+  text-align: start;
+  font-family: var(--longform-font);
+}
+
+:root{
+  --longform-heading-scale: 1.1;
+}
+.longform-leaf .cm-header-1,
+.longform-leaf .cm-header-2,
+.longform-leaf .cm-header-3,
+.longform-leaf .cm-header-4,
+.longform-leaf .cm-header-5,
+.longform-leaf .markdown-preview-view h1,
+.longform-leaf .markdown-preview-view h2,
+.longform-leaf .markdown-preview-view h3,
+.longform-leaf .markdown-preview-view h4,
+.longform-leaf .markdown-preview-view h5{
+  text-align: start;
+  font-family: var(--longform-font);
+  line-height: 1.2em;
+  letter-spacing: 0.5px;
+}
+
+.longform-leaf .cm-header-1,
+.longform-leaf .markdown-preview-view h1 {
+  font-size: calc(var(--h1-size) * var(--longform-heading-scale));
+}
+.longform-leaf .cm-header-2,
+.longform-leaf .markdown-preview-view h2 {
+  font-size: calc(var(--h2-size) * var(--longform-heading-scale));
+}
+.longform-leaf .cm-header-3,
+.longform-leaf .markdown-preview-view h3{
+  font-size: calc(var(--h3-size) * var(--longform-heading-scale));
+}
+.longform-leaf .cm-header-4,
+.longform-leaf .markdown-preview-view h4{
+  font-size: calc(var(--h4-size) * var(--longform-heading-scale));
+}
+.longform-leaf .cm-header-5,
+.longform-leaf .markdown-preview-view h5 {
+  font-size: calc(var(--h5-size) * var(--longform-heading-scale));
+}
+
+/* >> Longform Icons */
+
+/* hide index file in file explorer, which shouldn't
+be messed with anyway */
+body.hide-index-files .nav-file-title[data-path$="Index.md"] {
+	display: none;
+}
+
+.nav-file-title[data-path$="Index.md"] .nav-file-title-content:before {
+	content: "settings ";
+}
+
+.nav-folder-title[data-path$="Drafts"] .nav-folder-title-content::before {
+	content: "folder_special ";
+	/* alternative:  "auto_stories" or "menu_book" */
+}
+
+/* ------------------------------------------------------ */
+/* > Ozan's Image Plugin */
+/* ------------------------------------------------------ */
+
+div.oz-image-widget > img{
+	display: block;
+	margin-left: auto;
+  	margin-right: auto;
+	border-radius: 5px;
+}
+
+/* restrict image size */
+div.oz-image-widget > img{
+	max-width: var(--image-size) !important;
+}
+
+div.oz-image-widget > img {
+	cursor: unset !important;
+}
+
+/* ------------------------------------------------------ */
 /* > Other Plugin Customizations */
 /* ------------------------------------------------------ */
 /* drag blocks refs */
@@ -3281,82 +3384,8 @@ button.MS-OpenSnippet{
 	background-color: var(--text-muted) !important;
 }
 
-/* File Tree Alternative */
-/*svg.oz-folder-toggle path{
-	fill: dodgerblue !important;
-}*/
-
-/*calendar plugin*/
-.workspace-leaf-content[data-type="calendar"] .view-content{
-	font-family: var(--font-monospace);
-}
-.workspace-leaf-content[data-type="calendar"] table td {
-	padding: 0;
-}
-
-.workspace-leaf-content[data-type="calendar"] .month,
-.workspace-leaf-content[data-type="calendar"] .year{
-	color: var(--more-contrast-muted) !important;
-	font-family: var(--heading-font);
-	font-weight: 500;
-	font-size: 130%;
-}
-
-.workspace-leaf-content[data-type="calendar"] .reset-button{
-	color: var(--more-contrast-muted) !important;
-	font-size: 90% !important;
-}
-.workspace-leaf-content[data-type="calendar"] .nav{
-	padding: 0 !important;
-}
-.workspace-leaf-content[data-type="calendar"] .week-num:hover,
-.workspace-leaf-content[data-type="calendar"] .reset-button:hover,
-.workspace-leaf-content[data-type="calendar"] .arrow:hover svg,
-.workspace-leaf-content[data-type="calendar"] .day:hover{
-	color: var(--alt-accent) !important;
-	border-radius: 0;
-}
-
-.workspace-leaf-content[data-type="calendar"] .day.today{
-	color: var(--text-accent);
-}
-
-.workspace-leaf-content[data-type="calendar"] table th{
-	font-size: 0.68em;
-}
-
-
-/* Templater */
-.cm-s-obsidian .cm-templater-command {
-	font-size: 1em !important;
-}
-
-/* fix for the buggy selection fo inline text
-https://forum.obsidian.md/t/inline-code-occludes-text-selection-and-vim-cursor/11552/10 */
-.theme-light .cm-inline-code,
-.theme-light .cm-s-obsidian .cm-templater-command {
-  background-color: rgba(0, 0, 0, 0.005) !important;
-}
-
-/* >> Improve Templater Syntax Readability */
-.theme-light .cm-s-obsidian .cm-templater-command.cm-operator {
-}
-.cm-s-obsidian .cm-templater-command.cm-def {
-	font-weight: 600 !important;
-}
-.theme-light .cm-s-obsidian .cm-templater-command.cm-string {
-	color: hsl(59deg 66% 37%) !important;
-}
-.cm-s-obsidian .cm-templater-command.cm-keyword {
-}
-.cm-s-obsidian .cm-templater-command.cm-property {
-	font-style: italic;
-}
-.theme-light .cm-s-obsidian .cm-templater-command.cm-number{
-	color: hsl(352deg 83% 40%) !important;
-}
-
-.cm-templater-command.cm-spell-error{
-	text-decoration: none;
-	background-image: none;
+/* Quick Explorer */
+/* prevent appearing on top of the traffic lights of macOS */
+.menu.qe-popup-menu {
+	padding-top: 1em;
 }
