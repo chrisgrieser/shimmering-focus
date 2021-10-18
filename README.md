@@ -12,15 +12,11 @@
 
 <img src="https://user-images.githubusercontent.com/73286100/131692972-e523f2d4-40c7-452c-83ac-a7f2fbd546ae.gif" alt="headerbar visible on hover" width=50% height=50%>
 
-**Functional like a Mini-Plugin**
+**Numerous Useful Extra Features**
 - Pseudo-Admonition: `h6` blocks will become a pseudo-admonition box (only works with one-liners though)
 - Multi-Color-Highlighting: surround highlights with `*` or `**` for alternative highlight colors (thanks to @Atlas for this!)
 - Pseudo-Spoiler-Tags: Emphasized Strikthroughs (`*~~spoiler~~*`) will selectively hide text, except when hovered or the active line.
 - click & hold on an image to zoom
-
-<img width=25% height=25% alt="Screenshot 2021-09-03 21 46 20" src="https://user-images.githubusercontent.com/73286100/132058563-94672224-ed07-473d-9403-8a770984b3d2.png"> <img src="https://user-images.githubusercontent.com/73286100/135283073-6171aecd-55e3-4a0c-80cd-c4becc2223dd.gif" alt="Pseudo-Spoiler-Tags" width=24%>
-
-**Even more Functions**
 - Relationship lines in unordered lists & file explorer
 - Wrapping of text in the file explorer
 - Active line highlighting
@@ -28,19 +24,18 @@
 - Display of the language of a code block in Preview Mode
 - spellcheck deactivated in blockquotes, code blocks, and YAML frontmatter (only produces false positives there)
 
-
 **Suited for Academic Writing**
 - [Pandoc citations](https://pandoc.org/MANUAL.html#citations-in-note-styles) (`[@citekey]`) and footnotes are visually emphasized
 - the alt-text of images is used as caption text, in line withPandoc's conversion behavior
 - Lots of Styling specifically for the [Longform Plugin](https://github.com/kevboh/longform), among other things justified & hyphenated text, and [Crimson Pro](https://fonts.google.com/specimen/Crimson+Pro) as an easy-to-read serif font
 
-**Condensed**
-- uses screen real estate more efficiently to display more information (useful for smaller screens)
+**Condensed Display of Information**
+- uses screen real estate more efficiently to display more information (e.g. for smaller screens)
 - smaller images in Preview Mode (click & hold on an image to zoom).
 <img src="https://user-images.githubusercontent.com/73286100/131182567-104f85dd-0f99-488d-b511-e45fe8b0486f.png" alt="Screenshot 2021-08-27 22 02 02" width=40% height=40%>  
 
 **Tailored for Maximum Readability**
-- increased contrast throughout, especially with the [annoying grey font on light-grey background](https://forum.obsidian.md/t/enhance-default-color-contrast-of-the-icons/23045/3)
+- increased contrast throughout, especially with the [annoying grey font on light grey background](https://forum.obsidian.md/t/enhance-default-color-contrast-of-the-icons/23045/3)
 - decreased font size variation to increase readability & information density
 - at the same time increased distinguishability of different classes through subtle variation in typeface, font style, or backgrounds
 - easy-to-read fonts for every usecase: 
@@ -48,13 +43,12 @@
   - [Input Mono](https://input.djr.com/) as monospace font for code
   - Optima or Canberra as heading font
   - [Crimson Pro](https://fonts.google.com/specimen/Crimson+Pro) as serif font for longform projects
-- make [Templater](https://github.com/SilentVoid13/Templater) code more readable in light mode
 - minor coloring of bold in dark mode to make it more readable, since bold in dark mode is harder to distinguish form normal text than  in light mode
-- thicker lines (hr, tables, etc.)
+- slightly thicker lines (icons, hr, tables, etc.)
 - Dark Mode for PDFs (when using the theme in dark mode)
 
 **Subtle Design**  
-- Stylistically, the theme pretty much follows Obsidian's default theme, with some shimmering green as secondary accent
+- Stylistically, the theme pretty much follows Obsidian's default theme, with mostly suble changes – like the eponymous shimmering green as secondary accent.
 
 ## Style Settings Plugin
 - This themes supports the [Style Settings Plugin](https://github.com/mgmeyers/obsidian-style-settings/) for customization.
