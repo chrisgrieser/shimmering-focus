@@ -195,7 +195,7 @@ settings:
 https://github.com/mgmeyers/obsidian-style-settings*/
 
 /* ------------------------------------------------------ */
-/* > SHIMMERING FOCUS, version 1.58
+/* > SHIMMERING FOCUS, version 1.59
 Created by @pseudometa (Discord) aka @chrisgrieser (GitHub)
 https://github.com/chrisgrieser/shimmering-focus/ */
 /* ---------------------------------------------------------
@@ -1572,6 +1572,7 @@ based on css from @Mara https://github.com/Mara-Li/Obsidian-Snippet-collection *
 	content: "attach_file ";
 }
 
+
 .nav-folder-title[data-path*="old"] .nav-folder-title-content:before,
 .nav-folder-title[data-path*="Archiv"] .nav-folder-title-content:before,
 .nav-folder-title[data-path*="archive"] .nav-folder-title-content:before {
@@ -1690,6 +1691,11 @@ based on css from @Mara https://github.com/Mara-Li/Obsidian-Snippet-collection *
 .modal.mod-settings .modal-content{
 	padding-right: 0;
 }
+.modal.mod-settings button{
+	margin-right: 0;
+	margin-left: 10px;
+}
+
 
 /* thanks to @SlRvB for this */
 .modal.mod-settings .vertical-tab-content-container {
@@ -1887,7 +1893,7 @@ based on css from @Mara https://github.com/Mara-Li/Obsidian-Snippet-collection *
 	border-bottom-left-radius: 12px;
 }
 
-/*button to order search results*/
+/*sort button*/
 .community-plugin-search button.clickable-icon{
 	background-color: var(--background-primary-alt) !important;
 	color: var(--more-contrast-muted);
@@ -1982,8 +1988,32 @@ based on css from @Mara https://github.com/Mara-Li/Obsidian-Snippet-collection *
 	width: 93%;
 }
 
+.modal.mod-community-theme .community-theme.is-selected button:first-child:hover{
+	background-color: var(--background-secondary-alt) !important;
+	cursor: default;
+}
+
+.modal.mod-community-theme .community-plugin-downloads-text::before{
+	content: "↓ ";
+	color: var(--more-contrast-muted);
+}
+
+.modal.mod-community-theme .community-theme .clickable-icon:hover{
+	color: var(--alt-accent);
+}
+
+.modal.mod-community-theme .clickable-icon svg{
+	stroke-width: 4px !important;
+}
+.modal.mod-community-theme .clickable-icon:hover{
+	color: var(--interactive-normal);
+}
+
 .modal.mod-community-theme .modal-title{
 	text-transform: capitalize;
+	font-family: var(--heading-font);
+	font-size: 2.2em;
+	font-weight: 500;
 }
 
 /* ------------------------------------------------------ */
@@ -2357,7 +2387,8 @@ body:not(.not-optima-font) .markdown-preview-view h1,
 body:not(.not-optima-font) .markdown-preview-view h2,
 body:not(.not-optima-font) .markdown-preview-view h3,
 body:not(.not-optima-font) .markdown-preview-view h4,
-body:not(.not-optima-font) .markdown-preview-view h5{
+body:not(.not-optima-font) .markdown-preview-view h5
+body:not(.not-optima-font) .modal.mod-community-theme .modal-title{
   font-weight: 600;
   letter-spacing: 0.5px;
 }
@@ -3372,6 +3403,55 @@ div.oz-image-widget > img {
 }
 
 /* ------------------------------------------------------ */
+/* > Quick Explorer */
+/* ------------------------------------------------------ */
+
+/* prevent appearing on top of the traffic lights of macOS */
+.menu.qe-popup-menu{
+	padding-top: 1.2em;
+	margin-left: 1px;
+}
+
+.menu.qe-popup-menu .menu-item{
+	padding-left: 5px;
+}
+
+.menu.qe-popup-menu .menu-separator{
+	border-bottom-width: 4px;
+}
+
+/*hover & select colors*/
+.menu.qe-popup-menu .menu-item.selected:hover::before,
+.menu.qe-popup-menu .menu-item:hover::before{
+	color: var(--alt-accent);
+}
+
+.menu.qe-popup-menu .menu-item.selected::before{
+	color: var(--text-accent);
+}
+.menu.qe-popup-menu .menu-item:hover,
+.menu.qe-popup-menu .menu-item.selected{
+	background-color: var(--background-secondary-alt) !important;
+}
+
+/*icons*/
+.menu.qe-popup-menu .menu-item::before{
+	font-family: "Material Icons";
+	padding-right: 4px;
+}
+.menu.qe-popup-menu .menu-item-icon{
+	display: none;
+}
+.menu.qe-popup-menu .menu-item.is-qe-folder::before{
+	content: "folder";
+}
+.menu.qe-popup-menu .menu-item.is-qe-file::before{
+	content: "description";
+}
+
+
+
+/* ------------------------------------------------------ */
 /* > Other Plugin Customizations */
 /* ------------------------------------------------------ */
 /* drag blocks refs */
@@ -3447,8 +3527,11 @@ button.MS-OpenSnippet{
 	background-color: var(--text-muted) !important;
 }
 
-/* Quick Explorer */
-/* prevent appearing on top of the traffic lights of macOS */
-.menu.qe-popup-menu {
-	padding-top: 1em;
+/* Cursor Location */
+/* so it aligns directly with word count */
+.status-bar-item.plugin-obsidian-cursor-location-plugin{
+	padding-left: 0.5em;
 }
+
+
+
