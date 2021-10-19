@@ -5,10 +5,13 @@
 <img src="https://raw.githubusercontent.com/chrisgrieser/shimmering-focus/main/dual-theme-screenshot.png" alt="Screenshot">
 
 ## Features & Design Principles
+
 **Minimalistic**
-- removes as much clutter as possible — **intended for mainly using keyboard shortcuts and the command palette**
-- statusbar and headerbar are visible when hovering
-- You can permanently re-enable the title bar, header bar, and ribbons (the thin vertical bars to the far left/right) by using the [Style Settings Plugin](https://github.com/mgmeyers/obsidian-style-settings/).
+- Removes as much clutter as possible – the theme is intended for users mainly using keyboard shortcuts and/or the command palette.
+- Statusbar and headerbar become visible when hovering
+- Hides close button in the settings menu. Use `Esc` or click outside the menu area to leave the menu. 
+- The settings can still be accessed via `cmd + ,` or `ctrl + ,`.
+- You can permanently re-enable all hidden elements by using the [Style Settings Plugin](https://github.com/mgmeyers/obsidian-style-settings/).
 
 <img src="https://user-images.githubusercontent.com/73286100/131692972-e523f2d4-40c7-452c-83ac-a7f2fbd546ae.gif" alt="headerbar visible on hover" width=50%>
 
@@ -16,25 +19,26 @@
 - Pseudo-Admonition: `h6` blocks will become a pseudo-admonition box (only works with one-liners though)
 - Multi-Color-Highlighting: surround highlights with `*` or `**` for alternative highlight colors (thanks to @Atlas for this!)
 - Pseudo-Spoiler-Tags: Emphasized Strikthroughs (`*~~spoiler~~*`) will selectively hide text, except when hovered or the active line.
-- click & hold on an image to zoom
+- Click & hold on an image to zoom
 - Relationship lines in unordered lists & file explorer
 - Wrapping of text in the file explorer
 - Active line highlighting
 - Material Icons to indicate folder and file types
 - Display of the language of a code block in Preview Mode
-- spellcheck disabled in blockquotes, code blocks, and YAML frontmatter (only produces false positives there)
-- readable line length when left sidebar is shown, full length when sidebar is hidden. Useful when dealing with big tables. (Requires `Readable line length` *enabled* in the settings.)
+- Spellcheck disabled in blockquotes, code blocks, and YAML frontmatter (only produces false positives there)
+- Readable line length when left sidebar is shown, full length when sidebar is hidden. Useful when dealing with big tables. (Requires `Readable line length` *enabled* in the settings.)
 
 <img src="https://user-images.githubusercontent.com/73286100/137917557-9b837960-d447-40a3-ac3c-09788567c97c.gif" alt="Screen Recording 2021-10-19 at 15 12 43" width=45%>
 
-**Suited for Academic Writing**
+**Particularly Suited for Academic Writing**
 - [Pandoc citations](https://pandoc.org/MANUAL.html#citations-in-note-styles) (`[@citekey]`) and footnotes are visually emphasized
 - the alt-text of images is used as caption text, in line withPandoc's conversion behavior
 - Lots of Styling specifically for the [Longform Plugin](https://github.com/kevboh/longform), among other things justified & hyphenated text, and [Crimson Pro](https://fonts.google.com/specimen/Crimson+Pro) as an easy-to-read serif font
 
 **Condensed Display of Information**
-- uses screen real estate more efficiently to display more information (e.g. for smaller screens)
-- smaller images in Preview Mode (click & hold on an image to zoom).
+- Uses screen real estate more efficiently to display more information. Useful for Smaller Screens, Split Screens, Bigger Font sizes or simply if want to see more information without having to scroll.
+- Smaller images in Preview Mode (click & hold on an image to zoom).
+
 <img src="https://user-images.githubusercontent.com/73286100/131182567-104f85dd-0f99-488d-b511-e45fe8b0486f.png" alt="Screenshot 2021-08-27 22 02 02" width=40% height=40%>  
 
 **Tailored for Maximum Readability**
