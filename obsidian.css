@@ -34,6 +34,12 @@ settings:
     description: When false, the Status bar is still visible upon focus and hover
     default: false
   -
+    id: show-close-button
+    title: Permanently show the Close Button in the Settings Menu
+    type: class-toggle
+    description: When false, you can close the menu with `Esc` or by clicking outside the menu area.
+    default: false
+  -
     id: headings-sizes
     title: Heading Sizes
     type: heading
@@ -189,7 +195,7 @@ settings:
 https://github.com/mgmeyers/obsidian-style-settings*/
 
 /* ------------------------------------------------------ */
-/* > SHIMMERING FOCUS, version 1.56
+/* > SHIMMERING FOCUS, version 1.58
 Created by @pseudometa (Discord) aka @chrisgrieser (GitHub)
 https://github.com/chrisgrieser/shimmering-focus/ */
 /* ---------------------------------------------------------
@@ -355,17 +361,42 @@ body:not(.not-ia-writer-font) .draft-container.svelte-1jmafs.selected:hover,
 body:not(.not-ia-writer-font) .scene-container.svelte-1wlkmbt.selected:hover,
 body:not(.not-ia-writer-font) .scene-container.svelte-1wlkmbt.selected,
 body:not(.not-ia-writer-font) .svelte-23avsr[name~="projects"]{
-  font-weight: 900;
   text-rendering: geometricPrecision;
 }
 
+.suggestion-highlight,
+.cm-strong,
+.markdown-preview-view strong,
+.nav-file-title.is-active,
+table:not(.dataview.table-view-table) th,
+.svelte-23avsr[name~="projects"],
+.draft-container.svelte-1jmafs.selected,
+.draft-container.svelte-1jmafs.selected:hover,
+.scene-container.svelte-1wlkmbt.selected:hover,
+.scene-container.svelte-1wlkmbt.selected,
+.svelte-23avsr[name~="projects"]{
+  font-weight: 900;
+}
+
+
 
 /* ------------------------------------------------------ */
-/* > TITLEBAR */
+/* > TITLE BAR */
 /* ------------------------------------------------------ */
 /* display only when set in style settings */
 body:not(.show-titlebar) .titlebar{
 	display: none;
+}
+
+/* fix for Mac OS Traffic Lights */
+/* same for right side to harmonize */
+body:not(.show-titlebar) .workspace-split.mod-left-split > .workspace-tabs,
+body:not(.show-titlebar) .workspace-split.mod-right-split > .workspace-tabs {
+	padding-top: 1.15em;
+}
+/*thanks @javalent*/
+body:not(.show-titlebar) .workspace-split.mod-left-split.is-collapsed ~ .mod-root .view-header{
+	padding-left: 45px;
 }
 
 /* header bar is considered as titlebar on mobile */
@@ -373,13 +404,8 @@ body:not(.show-titlebar) .titlebar{
 .theme-light:not(.show-titlebar):not(.is-mobile) {
 	padding: 0 !important;
 }
-/* for Mac OS Traffic Lights */
-/* same for right side to harmonize */
-body:not(.show-titlebar) .workspace-split.mod-left-split > .workspace-tabs,
-body:not(.show-titlebar) .workspace-split.mod-right-split > .workspace-tabs {
-	padding-top: 1.15em;
-}
-/* fix height of resize handle */
+
+/* adapt height of resize handle */
 body:not(.show-titlebar) .workspace-split.mod-horizontal > .workspace-leaf-resize-handle {
 	top: 3.05em !important;
 }
@@ -408,7 +434,6 @@ body:not(.show-titlebar) .workspace-split.mod-horizontal > .workspace-leaf-resiz
 	opacity: 1;
 	color: var(--more-contrast-muted);
 }
-
 
 /* ------------------------------------------------------ */
 /* > Ribbons */
@@ -472,6 +497,17 @@ https://github.com/kepano/obsidian-hider/blob/master/styles.css */
 .nav-folder.mod-root > .nav-folder-title {
 	display: none;
 }
+
+/* only show on hover */
+body:not(.show-close-button) .modal.mod-settings .modal-close-button {
+	opacity: 0;
+	transition: 1000ms;
+}
+body:not(.show-close-button) .modal.mod-settings .modal-close-button:hover {
+	opacity: 1;
+	transition: 200ms;
+}
+
 
 /* Hide instructions */
 .prompt-instructions {
@@ -1013,7 +1049,7 @@ a.tag:hover {
 	padding-right: 1em;
 	padding-left: 1em;
 	border-radius: 12px;
-	border: 4px solid var(--background-primary);
+	border: 5px solid var(--background-primary);
 }
 
 .prompt-bg,
@@ -1028,7 +1064,20 @@ a.tag:hover {
 	border: 5px solid var(--background-secondary);
 }
 
-
+/* close buttom */
+.modal-close-button:hover {
+	color: var(--alt-accent);
+	background: var(--background-secondary-alt);
+}
+.modal-close-button {
+	top: 0;
+	right: 0;
+	padding-left: 4px;
+	padding-bottom: 4px;
+	padding-right: 3px;
+	border-bottom-left-radius: 6px;
+	border-top-right-radius: 6px;
+}
 
 
 
@@ -1622,25 +1671,9 @@ based on css from @Mara https://github.com/Mara-Li/Obsidian-Snippet-collection *
   content: "date_range ";
 }
 
-/* As Icons are now used, the labeled boxes (e.g. "pdf") can be removed. */
+/* As icons are now used, the labeled boxes (e.g. "pdf") can be removed. */
 .nav-file-tag {
 	display: none;
-}
-
-/* ------------------------------------------------------ */
-/* > RECENT FILES */
-/* ------------------------------------------------------ */
-
-/* Show no icons for recent files plugin */
-.workspace-leaf-content[data-type="recent-files"] .nav-file-title .nav-file-title-content::before{
-	display: none;
-}
-
-.workspace-leaf-content[data-type="recent-files"] .view-content{
-	padding-left: 4px;
-	padding-right: 5px;
-	padding-top: 10px;
-	padding-bottom: 5px;
 }
 
 /* ------------------------------------------------------ */
@@ -1652,6 +1685,10 @@ based on css from @Mara https://github.com/Mara-Li/Obsidian-Snippet-collection *
 	height: 93%;
 	max-width: unset;
 	width: 93%;
+	border-color: var(--background-primary-alt);
+}
+.modal.mod-settings .modal-content{
+	padding-right: 0;
 }
 
 /* thanks to @SlRvB for this */
@@ -1659,10 +1696,9 @@ based on css from @Mara https://github.com/Mara-Li/Obsidian-Snippet-collection *
 	padding-top: 0;
 	margin-top: 0px;
 	padding-left: 0;
-	padding-right: 1em;
+	padding-right: 0;
 	padding-bottom: 1em;
-	border-top: 1px solid var(--background-secondary-alt);
-	border-left: 2px solid var(--background-secondary-alt);
+	border-left: 3px solid var(--background-primary-alt);
 	height: 95vh;
 }
 .modal.mod-settings .vertical-tab-header {
@@ -1671,14 +1707,6 @@ based on css from @Mara https://github.com/Mara-Li/Obsidian-Snippet-collection *
 .modal.mod-settings .vertical-tab-content-container .vertical-tab-content,
 .modal.mod-settings .vertical-tab-content-container .vertical-tab-header {
 	overflow-y: auto;
-}
-.modal-close-button {
-	top: 0px;
-	right: 3px;
-}
-
-.modal-close-button:hover{
-	color: var(--alt-accent);
 }
 
 .vertical-tab-header-group {
@@ -1786,11 +1814,6 @@ based on css from @Mara https://github.com/Mara-Li/Obsidian-Snippet-collection *
 .mobile-option-setting-item svg{
 	stroke-width: 5px;
 }
-
-.setting-item-name{
-	text-transform: capitalize;
-}
-
 
 /* emphasize appearance & community plugins */
 .theme-dark .vertical-tab-header-group:first-child .vertical-tab-header-group-items .vertical-tab-nav-item:nth-child(3),
@@ -2182,6 +2205,11 @@ span.cm-hmd-frontmatter {
 /*Editor Mode*/
 .markdown-source-view.mod-cm5{
 	padding-left: 10px;
+}
+
+/*full length when left widebar collapsed */
+.workspace-split.mod-left-split.is-collapsed ~ .mod-root .CodeMirror-wrap{
+   max-width: 100% !important;
 }
 
 
@@ -2774,26 +2802,50 @@ body,
 
 .workspace-leaf-content[data-type="calendar"] .view-content{
 	font-family: var(--font-monospace);
+	padding: 4px;
 }
-.workspace-leaf-content[data-type="calendar"] table td {
+
+.workspace-leaf-content[data-type="calendar"] table td{
 	padding: 0;
+
+}
+.workspace-leaf-content[data-type="calendar"] .day{
+	padding-bottom: 2px;
+	padding-top: 2px;
+	padding-left: 0;
+	padding-right: 0;
 }
 
 .workspace-leaf-content[data-type="calendar"] .month,
 .workspace-leaf-content[data-type="calendar"] .year{
-	color: var(--more-contrast-muted) !important;
+	color: var(--text-normal) !important;
 	font-family: var(--heading-font);
 	font-weight: 500;
-	font-size: 130%;
+	font-size: 115%;
 }
 
+/* "today" button */
 .workspace-leaf-content[data-type="calendar"] .reset-button{
 	color: var(--more-contrast-muted) !important;
 	font-size: 0.8em !important;
 }
+
+.workspace-leaf-content[data-type="calendar"] .arrows{
+	background-color: var(--background-secondary-alt) !important;
+}
 .workspace-leaf-content[data-type="calendar"] .nav{
 	padding: 0 !important;
+	margin-top: 8px !important;
+	margin-bottom: 10px !important;
 }
+
+/*week days*/
+.workspace-leaf-content[data-type="calendar"] table th{
+	font-size: 0.7em;
+	color: var(--more-contrast-muted);
+	text-transform: capitalize;
+}
+
 .workspace-leaf-content[data-type="calendar"] .week-num:hover,
 .workspace-leaf-content[data-type="calendar"] .reset-button:hover,
 .workspace-leaf-content[data-type="calendar"] .arrow:hover svg,
@@ -2805,11 +2857,6 @@ body,
 
 .workspace-leaf-content[data-type="calendar"] .day.today{
 	color: var(--text-accent);
-}
-
-.workspace-leaf-content[data-type="calendar"] table th{
-	font-size: 0.7em;
-	color: var(--more-contrast-muted);
 }
 
 .workspace-leaf-content[data-type="calendar"] .day.active{
@@ -3306,6 +3353,22 @@ div.oz-image-widget > img{
 
 div.oz-image-widget > img {
 	cursor: unset !important;
+}
+
+/* ------------------------------------------------------ */
+/* > RECENT FILES */
+/* ------------------------------------------------------ */
+
+/* Show no icons for recent files plugin */
+.workspace-leaf-content[data-type="recent-files"] .nav-file-title .nav-file-title-content::before{
+	display: none;
+}
+
+.workspace-leaf-content[data-type="recent-files"] .view-content{
+	padding-left: 4px;
+	padding-right: 5px;
+	padding-top: 10px;
+	padding-bottom: 5px;
 }
 
 /* ------------------------------------------------------ */
