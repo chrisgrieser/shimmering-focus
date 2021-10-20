@@ -91,6 +91,7 @@
 - Search Pane
 - Command Palette
 - Quick Switcher
+- Popover
 
 ## Installation
 You can find *Shimmering Focus* in Obsidian's community themes browser under `Settings ➞ Appearance ➞ Themes`.
