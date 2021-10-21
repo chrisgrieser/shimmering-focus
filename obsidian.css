@@ -188,6 +188,12 @@ settings:
     description: Files named that way are created by some plugins and in many cases should not be touched (e.g. Longform Plugin). If you use such a plugin, you can hide those files.
     type: class-toggle
     default: false
+  -
+    id: table-view-off
+    title: 'Turn off "Table View"'
+    description: '"Table View" makes panes full length lines when the left Sidebar is hidden and readable line length when the left sidebar is shown. (Note:  You need to turn on "readable line length" in the editor settings as well for this to work.)'
+    type: class-toggle
+    default: false
 
 */
 
@@ -195,7 +201,7 @@ settings:
 https://github.com/mgmeyers/obsidian-style-settings*/
 
 /* ------------------------------------------------------ */
-/* > SHIMMERING FOCUS, version 1.59
+/* > SHIMMERING FOCUS, version 1.61
 Created by @pseudometa (Discord) aka @chrisgrieser (GitHub)
 https://github.com/chrisgrieser/shimmering-focus/ */
 /* ---------------------------------------------------------
@@ -240,10 +246,12 @@ For help and/or CSS snippets, thanks to:
 	--active-line: #adae9820;
 
 	--block-border-radius: 6px;
-	--resize-handle-thickness: 0.35em;
-	--scrollbar-thickness: 0.75em;
+	--resize-handle-thickness: 0.25em;
+	--scrollbar-thickness: 0.7em;
 	--image-size: 50%;
+	--popover-size: 450px;
 	--inactive-pane-opacity: 75%;
+
 	--signature:"⟡";
 }
 
@@ -363,6 +371,10 @@ body:not(.not-ia-writer-font) .scene-container.svelte-1wlkmbt.selected,
 body:not(.not-ia-writer-font) .svelte-23avsr[name~="projects"]{
   text-rendering: geometricPrecision;
 }
+body:not(.not-ia-writer-font) .nav-folder-title,
+body:not(.not-ia-writer-font) .nav-file-title{
+	letter-spacing: -0.2px;
+}
 
 .suggestion-highlight,
 .cm-strong,
@@ -388,12 +400,17 @@ body:not(.show-titlebar) .titlebar{
 	display: none;
 }
 
-/* fix for Mac OS Traffic Lights */
-/* same for right side to harmonize */
-body:not(.show-titlebar) .workspace-split.mod-left-split > .workspace-tabs,
-body:not(.show-titlebar) .workspace-split.mod-right-split > .workspace-tabs {
-	padding-top: 1.15em;
+.workspace-split.mod-left-split .workspace-tabs,
+.workspace-split.mod-right-split .workspace-tabs {
+	padding-top: 0.15em;
 }
+/* fix for Mac OS Traffic Lights */
+/*body:not(.show-titlebar) .workspace-split.mod-right-split .workspace-tabs:nth-child(3),*/
+body:not(.show-titlebar) .workspace-split.mod-left-split .workspace-tabs:nth-child(3){
+    padding-top: 1.15em;
+}
+
+
 /*thanks @javalent*/
 body:not(.show-titlebar) .workspace-split.mod-left-split.is-collapsed ~ .mod-root .view-header{
 	padding-left: 45px;
@@ -488,6 +505,32 @@ body:not(.show-ribbons) .workspace-ribbon{
 }
 
 /* ------------------------------------------------------ */
+/* > Popover (Page Preview) */
+/* ------------------------------------------------------ */
+.popover{
+	width: var(--popover-size) !important;
+	height: var(--popover-size) !important;
+	max-height: unset !important;
+	border: 5px solid var(--background-secondary) !important;
+	border-radius: 15px;
+}
+
+.popover .markdown-embed-link svg{
+	stroke-width: 2px;
+}
+
+.popover .markdown-embed-link{
+	color: var(--more-contrast-muted);
+	padding: 2px;
+	border-radius: 3px;
+}
+
+.popover .markdown-embed-link:hover{
+	color: var(--alt-accent);
+	background: var(--background-secondary);
+}
+
+/* ------------------------------------------------------ */
 /* > HIDE FURTHER STUFF */
 /* ------------------------------------------------------ */
 /* based on css from the hider plugin by @kepano:
@@ -499,11 +542,11 @@ https://github.com/kepano/obsidian-hider/blob/master/styles.css */
 }
 
 /* only show on hover */
-body:not(.show-close-button) .modal.mod-settings .modal-close-button {
+body:not(.show-close-button) .modal-close-button {
 	opacity: 0;
-	transition: 1000ms;
+	transition: 700ms;
 }
-body:not(.show-close-button) .modal.mod-settings .modal-close-button:hover {
+body:not(.show-close-button) .modal-close-button:hover {
 	opacity: 1;
 	transition: 200ms;
 }
@@ -632,7 +675,6 @@ body:not(.is-mobile) .view-header:focus-within{
 	color: var(--text-accent) !important;
 }
 
-
 /* ------------------------------------------------------ */
 /* > Context Menus */
 /* ------------------------------------------------------ */
@@ -716,11 +758,14 @@ body:not(.show-statusbar) .status-bar:hover {
   transition: 200ms;
 }
 
+/* shorten backlink-text */
+
+
 /* hovering color for clickable plugins */
 .status-bar-item.mod-clickable:hover,
 .lt-status-bar-btn:hover{
    color: var(--alt-accent) !important;
- }
+}
 
 /* ------------------------------------------------------ */
 /* > Scrollbar */
@@ -1242,8 +1287,6 @@ a.tag:hover {
 	color: var(--text-accent);
 }
 
-.tree-item.is-collapsed,
-.tree-item.is-collapsed .tree-item-inner,
 .tree-item.is-collapsed .tree-item-icon svg {
 	color: var(--text-accent) !important;
 	font-weight: 600;
@@ -1254,13 +1297,42 @@ a.tag:hover {
 	font-weight: 600;
 }
 
-
 .tree-item-icon svg {
-	height: 10px;
-	width: 10px;
+	height: 11px;
+	width: 11px;
 }
 
+.tree-item-icon{
+	padding-right: 3px !important;
+}
+
+.tree-item-icon::after{
+	display: none;
+}
+
+/* ------------------------------------------------------ */
+/* >> Outline Pane */
+/* ------------------------------------------------------ */
+
+.outline .tree-item-self {
+	line-height: 1.1em;
+	padding-bottom: 0.35em;
+	padding-top: 0.35em;
+}
+
+.workspace-leaf-content[data-type="outline"] .view-content {
+	padding: 4px;
+	padding-left: 0;
+}
+.outline .tree-item-icon.collapse-icon{
+	padding-left: 3px;
+	padding-right: 6px !important;
+}
+
+/* ------------------------------------------------------ */
 /* >> search & backlink */
+/* ------------------------------------------------------ */
+
 .workspace-leaf-content[data-type="search"] .tree-item-self {
 	padding-left: 1.2em;
 }
@@ -1341,8 +1413,10 @@ readability */
 	background-color: var(--alt-accent);
 }
 
-
+/* ------------------------------------------------------ */
 /* >> Tag Pane */
+/* ------------------------------------------------------ */
+
 .tag-container {
 	padding-right: 0;
 	padding-left: 2px;
@@ -1360,21 +1434,11 @@ readability */
 	display: none;
 }
 
-/* > Outline Pane */
-.workspace-leaf-content[data-type="outline"] .tree-item-self {
-	padding-right: 0;
-	line-height: 1.35em;
-	padding-bottom: 0.3em;
-	padding-top: 0.3em;
-	margin-bottom: 0.1em;
-}
 
-.workspace-leaf-content[data-type="outline"] .view-content {
-	padding-left: 0.25em;
-	padding-top: 1em;
-}
+/* ------------------------------------------------------ */
+/* >> Starred Pane */
+/* ------------------------------------------------------ */
 
-/* > Starred Pane */
 .workspace-leaf-content[data-type="starred"] .nav-file-title {
   padding-left: 0;
 }
@@ -1696,7 +1760,6 @@ based on css from @Mara https://github.com/Mara-Li/Obsidian-Snippet-collection *
 	margin-left: 10px;
 }
 
-
 /* thanks to @SlRvB for this */
 .modal.mod-settings .vertical-tab-content-container {
 	padding-top: 0;
@@ -2016,13 +2079,23 @@ based on css from @Mara https://github.com/Mara-Li/Obsidian-Snippet-collection *
 	font-weight: 500;
 }
 
+/*corrects appearance in light mode */
+.theme-light .modal.mod-community-theme .community-theme.is-selected .clickable-icon:hover svg{
+	color: var(--alt-accent);
+}
+.theme-light .modal.mod-community-theme .community-theme.is-selected .clickable-icon svg,
+.theme-light .modal.mod-community-theme .community-theme.is-selected .community-plugin-downloads-text::before,
+.theme-light .modal.mod-community-theme .community-theme.is-selected .community-plugin-downloads-text{
+	color: var(--interactive-normal);
+}
+
 /* ------------------------------------------------------ */
 /* > HIGHLIGHT & SELECTION */
 /* ------------------------------------------------------ */
 /* highlight active line */
 .CodeMirror-activeline .CodeMirror-linebackground {
 	background-color: var(--active-line);
-	border-radius: 8px;
+	border-radius: var(--block-border-radius);
 }
 
 
@@ -2041,18 +2114,8 @@ based on css from @Mara https://github.com/Mara-Li/Obsidian-Snippet-collection *
 /* ------------------------------------------------------ */
 /* > Multi-Color Highlighting */
 /* ------------------------------------------------------ */
-/* thanks to @Atlas for these snippets */
+/* thanks to @Atlas for this snippet */
 /* https://discord.com/channels/686053708261228577/702656734631821413/881443661269827656 */
-
-/* Yellow Highlight */
-span.cm-strong.cm-highlight{
-  font-weight: normal;
-  background-color: var(--highlight-alt1);
-}
-.markdown-preview-view strong > mark{
-  font-weight: normal !important;
-  background-color: var(--highlight-alt1) !important;
-}
 
 /* Cyan Highlight */
 span.cm-em.cm-highlight {
@@ -2063,6 +2126,18 @@ span.cm-em.cm-highlight {
   font-style: initial !important;
   background-color: var(--highlight-alt2) !important;
 }
+/* Yellow Highlight */
+span.cm-strong.cm-highlight{
+  font-weight: normal;
+  background-color: var(--highlight-alt1);
+  color: var(--text-normal) !important;
+}
+.markdown-preview-view strong > mark{
+  text-rendering: initial !important;
+  font-weight: 500;
+  background-color: var(--highlight-alt1) !important;
+}
+
 
 /* ------------------------------------------------------ */
 /* > Pseudo-Spoiler-Tag */
@@ -2237,9 +2312,19 @@ span.cm-hmd-frontmatter {
 	padding-left: 10px;
 }
 
-/*full length when left widebar collapsed */
-.workspace-split.mod-left-split.is-collapsed ~ .mod-root .CodeMirror-wrap{
+/* ------------------------------------------------------ */
+/* Table view: full length when left widebar collapsed */
+/* ------------------------------------------------------ */
+
+/* thanks to javalent for support */
+/* Edit Mode */
+body:not(.table-view-off) .workspace-split.mod-left-split.is-collapsed ~ .mod-root .CodeMirror-wrap{
    max-width: 100% !important;
+}
+
+/* Preview Mode */
+body:not(.table-view-off) .workspace-split.mod-left-split.is-collapsed ~ .mod-root .markdown-preview-section {
+	max-width: 100% !important;
 }
 
 
@@ -3407,7 +3492,7 @@ div.oz-image-widget > img {
 /* ------------------------------------------------------ */
 
 /* prevent appearing on top of the traffic lights of macOS */
-.menu.qe-popup-menu{
+body:not(.show-title-bar) .menu.qe-popup-menu{
 	padding-top: 1.2em;
 	margin-left: 1px;
 }
@@ -3434,7 +3519,7 @@ div.oz-image-widget > img {
 	background-color: var(--background-secondary-alt) !important;
 }
 
-/*icons*/
+/* icons */
 .menu.qe-popup-menu .menu-item::before{
 	font-family: "Material Icons";
 	padding-right: 4px;
@@ -3448,8 +3533,36 @@ div.oz-image-widget > img {
 .menu.qe-popup-menu .menu-item.is-qe-file::before{
 	content: "description";
 }
+/* ------------------------------------------------------ */
+/* My Snippets Plugin */
+/* ------------------------------------------------------ */
 
+.status-bar-item.plugin-mysnippets-plugin.cMenu-statusbar-button{
+	height: 1em;
+}
+button.MS-OpenSnippet:hover,
+button.MySnippetsButton:hover{
+   background-color: var(--alt-accent) !important;
+}
 
+.MySnippets-statusbar-menu{
+	width: 300px !important;
+	border-radius: 8px !important;
+	border: 3px ridge var(--background-secondary-alt);
+}
+
+.MySnippets-statusbar-menu .menu-item.buttonitem:hover{
+	background-color: unset;
+	border-color: transparent;
+}
+
+.MySnippets-statusbar-menu .checkbox-container{
+	left: 0.5em;
+}
+
+button.MS-OpenSnippet{
+	background-color: var(--text-muted) !important;
+}
 
 /* ------------------------------------------------------ */
 /* > Other Plugin Customizations */
@@ -3459,13 +3572,12 @@ body #search-res-hover.show,
 body #block-ref-hover.show{
    color: var(--text-muted);
    background-color: var(--background-primary-alt);
-   border-radius: calc(var(--block-border-radius) - 4px);
+   border-radius: calc(var(--block-border-radius));
 }
 
 body #search-res-hover.show:hover,
 body #block-ref-hover.show:hover {
    color: var(--alt-accent);
-   background-color: var(--background-secondary-alt);
 }
 
 /* Zoom Plugin */
@@ -3497,34 +3609,6 @@ a.zoom-plugin-title:hover{
 .cm-s-obsidian .hmd-link-icon:hover::after{
 	background-color: var(--alt-accent) !important;
 	cursor: pointer;
-}
-
-/*my snippets plugin*/
-.status-bar-item.plugin-mysnippets-plugin.cMenu-statusbar-button{
-	height: 1em;
-}
-button.MS-OpenSnippet:hover,
-button.MySnippetsButton:hover{
-   background-color: var(--alt-accent) !important;
-}
-
-.MySnippets-statusbar-menu{
-	width: 300px !important;
-	border-radius: 8px !important;
-	border: 3px ridge var(--background-secondary-alt);
-}
-
-.MySnippets-statusbar-menu .menu-item.buttonitem:hover{
-	background-color: unset;
-	border-color: transparent;
-}
-
-.MySnippets-statusbar-menu .checkbox-container{
-	left: 0.5em;
-}
-
-button.MS-OpenSnippet{
-	background-color: var(--text-muted) !important;
 }
 
 /* Cursor Location */
