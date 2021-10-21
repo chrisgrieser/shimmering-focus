@@ -189,9 +189,9 @@ settings:
     type: class-toggle
     default: false
   -
-    id: table-view-off
-    title: 'Turn off "Table View"'
-    description: '"Table View" makes panes full length lines when the left Sidebar is hidden and readable line length when the left sidebar is shown. (Note:  You need to turn on "readable line length" in the editor settings as well for this to work.)'
+    id: max-view-off
+    title: 'Turn off "Max View"'
+    description: '"Max View" makes panes full length and images full width when the left sidebar is hidden and readable line length when the left sidebar is shown. (Note:  You need to turn on "readable line length" in the editor settings as well for this to work.)'
     type: class-toggle
     default: false
 
@@ -201,7 +201,7 @@ settings:
 https://github.com/mgmeyers/obsidian-style-settings*/
 
 /* ------------------------------------------------------ */
-/* > SHIMMERING FOCUS, version 1.61
+/* > SHIMMERING FOCUS, version 1.62
 Created by @pseudometa (Discord) aka @chrisgrieser (GitHub)
 https://github.com/chrisgrieser/shimmering-focus/ */
 /* ---------------------------------------------------------
@@ -389,8 +389,6 @@ table:not(.dataview.table-view-table) th,
 .svelte-23avsr[name~="projects"]{
   font-weight: 900;
 }
-
-
 
 /* ------------------------------------------------------ */
 /* > TITLE BAR */
@@ -2313,20 +2311,30 @@ span.cm-hmd-frontmatter {
 }
 
 /* ------------------------------------------------------ */
-/* Table view: full length when left widebar collapsed */
+/* > Max View */
+/* full length editor and full size images when left sidebar is collapsed */
+/* (Note:  You need to turn on "readable line length" in the editor settings as well for this to work.)*/
 /* ------------------------------------------------------ */
 
-/* thanks to javalent for support */
-/* Edit Mode */
-body:not(.table-view-off) .workspace-split.mod-left-split.is-collapsed ~ .mod-root .CodeMirror-wrap{
+/* Editor Edit Mode */
+body:not(.max-view-off) .workspace-split.mod-left-split.is-collapsed ~ .mod-root .CodeMirror-wrap{
    max-width: 100% !important;
 }
 
-/* Preview Mode */
-body:not(.table-view-off) .workspace-split.mod-left-split.is-collapsed ~ .mod-root .markdown-preview-section {
+/* Editor Preview Mode */
+body:not(.max-view-off) .workspace-split.mod-left-split.is-collapsed ~ .mod-root .markdown-preview-section {
 	max-width: 100% !important;
 }
 
+/* Ozan's Image Plugin */
+body:not(.max-view-off) .workspace-split.mod-left-split.is-collapsed ~ .mod-root div.oz-image-widget > img{
+	max-width: var(--image-size) !important;
+}
+
+/* Images Plugin Preview Mode */
+body:not(.max-view-off) .workspace-split.mod-left-split.is-collapsed ~ .mod-root .view-content .markdown-preview-view img{
+	max-width: var(--image-size);
+}
 
 /* ------------------------------------------------------ */
 /* > Pandoc Citations & Footnotes */
@@ -3492,8 +3500,8 @@ div.oz-image-widget > img {
 /* ------------------------------------------------------ */
 
 /* prevent appearing on top of the traffic lights of macOS */
-body:not(.show-title-bar) .menu.qe-popup-menu{
-	padding-top: 1.2em;
+body:not(.show-title-bar) >  .qe-popup-menu:nth-child(24){
+	padding-top: 1.2em !important;
 	margin-left: 1px;
 }
 
@@ -3565,9 +3573,82 @@ button.MS-OpenSnippet{
 }
 
 /* ------------------------------------------------------ */
+/* > MoC Plugin */
+/* ------------------------------------------------------ */
+.workspace-leaf-content[data-type="map-of-content"] .view-content {
+	padding-top: 10px;
+	padding-left: 8px;
+	padding-right: 4px;
+	padding-bottom: 0;
+	line-height: 1.15em;
+}
+.workspace-leaf-content[data-type="map-of-content"] .svelte-1jp8rsy > li {
+	padding-left: 0;
+}
+.svelte-1jp8rsy {
+	margin-bottom: 0;
+}
+.workspace-leaf-content[data-type="map-of-content"] br{
+	display: none;
+}
+
+.workspace-leaf-content[data-type="map-of-content"] ul > li,
+.workspace-leaf-content[data-type="map-of-content"] ul > li > ul{
+	border: none !important;
+}
+.workspace-leaf-content[data-type="map-of-content"] .view-content > .svelte-1jp8rsy > ul > li > ul > li,
+.workspace-leaf-content[data-type="map-of-content"] .view-content > .svelte-1jp8rsy > ul > li > ul > li > ul > li,
+.workspace-leaf-content[data-type="map-of-content"] .view-content > .svelte-1jp8rsy > ul > li > ul > li > ul > li > ul > li{
+	padding-left: 20px !important;
+	padding: 4px;
+}
+
+.workspace-leaf-content[data-type="map-of-content"] .view-content > .svelte-1jp8rsy > ul > li > ul{
+	padding-left: 1px !important;
+}
+
+.workspace-leaf-content[data-type="map-of-content"] .view-content > .svelte-1jp8rsy > ul > li > ul{
+	padding-bottom: 20px;
+	padding-top: 5px;
+}
+
+
+/*seperation line */
+.workspace-leaf-content[data-type="map-of-content"] .path{
+	border-bottom: 3px solid var(--grey-line-color);
+	padding-bottom: 15px;
+}
+
+/* central & current note*/
+.workspace-leaf-content[data-type="map-of-content"] .path > a:last-child,
+.workspace-leaf-content[data-type="map-of-content"] .path > span:first-child,
+.svelte-1jp8rsy > li > p{
+	font-weight: 600;
+	text-rendering: geometricPrecision;
+}
+/* central note */
+.workspace-leaf-content[data-type="map-of-content"] .path > a:last-child{
+	font-weight: 600;
+	text-rendering: geometricPrecision;
+}
+
+/*hovers*/
+.workspace-leaf-content[data-type="map-of-content"] .path a.link:hover,
+.workspace-leaf-content[data-type="map-of-content"] p:hover a.link{
+	color: var(--alt-accent);
+	text-decoration: underline;
+}
+
+#scroll_up > svg > path:hover,
+.workspace-leaf-content[data-type="map-of-content"] .expand-arrow:hover svg{
+	fill: var(--alt-accent) !important;
+}
+
+
+/* ------------------------------------------------------ */
 /* > Other Plugin Customizations */
 /* ------------------------------------------------------ */
-/* drag blocks refs */
+/* drag n drop blocks plugin */
 body #search-res-hover.show,
 body #block-ref-hover.show{
    color: var(--text-muted);
