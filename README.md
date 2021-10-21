@@ -74,11 +74,11 @@
 - Templater
 - Ozan's Image in Edito
 - MySnippets
-- [Another Quick Switcher Plugin](https://github.com/tadashi-aikawa/obsidian-another-quick-switcher)
+- Another Quick Switcher Plugin
 - CodeMirror Options (`Collapse External Links`)
 - Drag and Drop Blocks
 - Recent Files
-- Quick Explorer
+- Quick Explorer (re-enable the titlebar for Breadcrumbs)
 - Map of Content
 
 **Core Plugins**
