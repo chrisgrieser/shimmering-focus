@@ -26,7 +26,7 @@
 - Material Icons to indicate folder and file types
 - Display of the language of a code block in Preview Mode
 - Spellcheck disabled in blockquotes, code blocks, and YAML frontmatter (only produces false positives there)
-- Readable line length when left sidebar is shown, full length when sidebar is hidden. Useful when dealing with big tables. (Requires `Readable line length` *enabled* in the settings.)
+- Table View: Readable line length when left sidebar is shown, full length when sidebar is hidden. Useful when dealing with big tables. (Requires `Readable line length` *enabled* in the settings.)
 
 <img src="https://user-images.githubusercontent.com/73286100/137917557-9b837960-d447-40a3-ac3c-09788567c97c.gif" alt="Screen Recording 2021-10-19 at 15 12 43" width=45%>
 
