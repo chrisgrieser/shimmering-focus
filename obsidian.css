@@ -1,6 +1,6 @@
 /*─────────────────────────────────────────────────────────────────────────────────────
 SHIMMERING FOCUS
-Version 1.66.1
+Version 1.67
 https://github.com/chrisgrieser/shimmering-focus/
 Created by @pseudometa (Discord) aka @chrisgrieser (GitHub)
 MIT License
@@ -2151,11 +2151,18 @@ body:not(.max-view-off) .workspace-split.mod-left-split.is-collapsed ~ .mod-root
 
 /* Ozan's Image Plugin */
 body:not(.max-view-off) .workspace-split.mod-left-split.is-collapsed ~ .mod-root div.oz-image-widget > img{
-	max-width: var(--image-size) !important;
+	max-width: 100% !important;
 }
 
 /* Images Plugin Preview Mode */
 body:not(.max-view-off) .workspace-split.mod-left-split.is-collapsed ~ .mod-root .view-content .markdown-preview-view img{
+	max-width: 100%;
+}
+
+div.oz-image-widget > img{
+	max-width: var(--image-size) !important;
+}
+.view-content .markdown-preview-view img{
 	max-width: var(--image-size);
 }
 
@@ -2752,8 +2759,6 @@ input.document-replace-input:hover{
 	margin-right: auto;
 	margin-top: 13px;
 	border-radius: var(--block-border-radius);
-
-	max-width: var(--image-size);
 	cursor: zoom-in;
 }
 
@@ -3439,11 +3444,6 @@ div.oz-image-widget > img{
 	margin-left: auto;
 	margin-right: auto;
 	border-radius: var(--block-border-radius) !important;
-}
-
-/* restrict image size */
-div.oz-image-widget > img{
-	max-width: var(--image-size) !important;
 	cursor: unset !important;
 }
 
