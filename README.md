@@ -44,7 +44,7 @@
 
 <img src="https://user-images.githubusercontent.com/73286100/131182567-104f85dd-0f99-488d-b511-e45fe8b0486f.png" alt="Screenshot 2021-08-27 22 02 02" width=40% height=40%>  
 
-### Tailored for Maximum Readability**
+### Tailored for Maximum Readability
 - increased contrast throughout, especially with the [annoying grey font on light grey background](https://forum.obsidian.md/t/enhance-default-color-contrast-of-the-icons/23045/3)
 - decreased font size variation to increase readability & information density
 - at the same time increased distinguishability of different classes through subtle variation in typeface, font style, or backgrounds
