@@ -42,7 +42,7 @@
 - Uses screen real estate more efficiently to display more information. Useful for Smaller Screens, Split Screens, Bigger Font sizes or simply if want to see more information without having to scroll.
 - Smaller images in Preview Mode (click & hold an image to zoom, or use the aforementioned "Max View").
 
-<img src="https://user-images.githubusercontent.com/73286100/131182567-104f85dd-0f99-488d-b511-e45fe8b0486f.png" alt="Screenshot 2021-08-27 22 02 02" width=40% height=40%>  
+<img width=40% alt="Screenshot 2021-10-23 17 06 22" src="https://user-images.githubusercontent.com/73286100/138561771-1067d041-eeb2-4dfe-8d79-f7fa754ca419.png">
 
 ### Tailored for Maximum Readability
 - increased contrast throughout, especially with the [annoying grey font on light grey background](https://forum.obsidian.md/t/enhance-default-color-contrast-of-the-icons/23045/3)
