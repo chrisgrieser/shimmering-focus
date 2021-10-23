@@ -1,6 +1,6 @@
 /*─────────────────────────────────────────────────────────────────────────────────────
 SHIMMERING FOCUS
-Version 1.67
+Version 1.68
 https://github.com/chrisgrieser/shimmering-focus/
 Created by @pseudometa (Discord) aka @chrisgrieser (GitHub)
 MIT License
@@ -141,6 +141,7 @@ For help and/or CSS snippets, thanks to:
 	--h3-size: 1.3em;
 	--h4-size: 1.2em;
 	--h5-size: 1.1em;
+	--monospace-font-size: 0.9em;
 	--longform-font-size: 1.2em;
 }
 
@@ -673,7 +674,7 @@ input:hover{
 .markdown-preview-view code,
 .cm-s-obsidian span.cm-inline-code,
 .theme-dark .cm-s-obsidian .HyperMD-codeblock {
-	font-size: 1em;
+	font-size: var(--monospace-font-size);
 	color: var(--code-color) !important;
 }
 
@@ -682,10 +683,22 @@ input:hover{
 	white-space: pre-wrap !important;
 }
 
+/* move and shrink copy button */
+pre button.copy{
+	padding: 10px;
+	padding-top: 8px;
+	line-height: 0.9em;
+	font-size: 0.7em;
+	right: 7px;
+	top: 7px;
+	margin: 0;
+	position: absolute;
+	background-color: var(--background-secondary);
+	border: 2px solid var(--background-primary);
+}
 
 /* show language of Code Block in Preview Mode */
-/* snippet by Chetachi */
-
+/* snippet by @Chetachi */
 pre {
 	position: relative;
 }
@@ -731,11 +744,14 @@ pre[class~="language-shell"]:after {
 pre[class~="language-bash"]:after {
 	content: "Bash";
 }
+pre[class~="language-zsh"]:after {
+	content: "zsh";
+}
+pre[class~="language-c"]:after {
+	content: "C";
+}
 pre[class~="language-typescript"]:after {
 	content: "TypeScript";
-}
-pre[class~="language-shell"]:after {
-	content: "Shell";
 }
 pre[class~="language-flow"]:after {
 	content: "Flow";
@@ -3867,6 +3883,15 @@ settings:
 	 description: Code blocks, YAML in edit mode, tables, etc.
 	 type: variable-text
 	 default: '"Input Mono"'
+  -
+	 id: monospace-font-size
+	 title: Monospace Font Size
+	 type: variable-number-slider
+	 default: 0.9
+	 min: 0.5
+	 max: 2.5
+	 step: 0.1
+	 format: em
   -
 	 id: heading-font
 	 title: Heading Font
