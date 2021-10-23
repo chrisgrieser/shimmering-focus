@@ -8,7 +8,7 @@
 
 **Minimalistic**
 - Removes as much clutter as possible – the theme is intended for users mainly using keyboard shortcuts and/or the command palette.
-- Statusbar and headerbar become visible when hovering
+- Status bar, header bar, and collapse icons become visible when hovering
 - Hides close button in the settings menu. Use `Esc` or click outside the menu area to leave the menu. 
 - The settings can still be accessed via `cmd + ,` or `ctrl + ,`.
 - You can permanently re-enable all hidden elements by using the [Style Settings Plugin](https://github.com/mgmeyers/obsidian-style-settings/).
@@ -31,13 +31,13 @@
 <img src="https://user-images.githubusercontent.com/73286100/137917557-9b837960-d447-40a3-ac3c-09788567c97c.gif" alt="Screen Recording 2021-10-19 at 15 12 43" width=45%>
 
 **Particularly Suited for Academic Writing**
-- [Pandoc citations](https://pandoc.org/MANUAL.html#citations-in-note-styles) (`[@citekey]`) and footnotes are visually emphasized
+- [Pandoc Citations](https://pandoc.org/MANUAL.html#citations-in-note-styles) (`[@citekey]`) and footnotes are visually emphasized
 - the alt-text of images is used as caption text, in line withPandoc's conversion behavior
 - Lots of Styling specifically for the [Longform Plugin](https://github.com/kevboh/longform), among other things justified & hyphenated text, and [Crimson Pro](https://fonts.google.com/specimen/Crimson+Pro) as an easy-to-read serif font
 
 **Condensed Display of Information**
 - Uses screen real estate more efficiently to display more information. Useful for Smaller Screens, Split Screens, Bigger Font sizes or simply if want to see more information without having to scroll.
-- Smaller images in Preview Mode (click & hold on an image to zoom).
+- Smaller images in Preview Mode (click & hold an image to zoom, or use the aforementioned "Max View").
 
 <img src="https://user-images.githubusercontent.com/73286100/131182567-104f85dd-0f99-488d-b511-e45fe8b0486f.png" alt="Screenshot 2021-08-27 22 02 02" width=40% height=40%>  
 
@@ -80,6 +80,7 @@
 - Recent Files
 - Quick Explorer (re-enable the titlebar for Breadcrumbs)
 - Map of Content
+- Dangling Links
 
 **Core Plugins**
 - File Explorer
