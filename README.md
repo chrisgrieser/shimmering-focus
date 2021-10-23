@@ -26,10 +26,11 @@
 - Material Icons to indicate folder and file types
 - Display of the language of a code block in Preview Mode
 - Spellcheck disabled in blockquotes, code blocks, and YAML frontmatter (only produces false positives there)
-- **Max View**: Readable line length and smaller images when left sidebar is shown, full length and full-size images when sidebar is hidden. Useful when dealing with big tables. (Requires `Readable line length` editor setting to be *enabled*.)
 - **Annotation tags** (see below)
+- **Max View**: Readable line length and smaller images when left sidebar is shown, full length and full-size images when sidebar is hidden. Useful when dealing with big tables. (Requires `Readable line length` editor setting to be *enabled*.)
 
-<img src="https://user-images.githubusercontent.com/73286100/137917557-9b837960-d447-40a3-ac3c-09788567c97c.gif" alt="Screen Recording 2021-10-19 at 15 12 43" width=45%>
+<img src="https://user-images.githubusercontent.com/73286100/138562271-2f7d3589-d580-49e4-bea6-ca3e3004ab78.gif" alt="Promo Max View" width=60%>
+
 
 ### Particularly Suited Academics
 - [Pandoc Citations](https://pandoc.org/MANUAL.html#citations-in-note-styles) (`[@citekey]`) and footnotes are visually emphasized
