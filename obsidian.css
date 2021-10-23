@@ -1,6 +1,6 @@
 /*─────────────────────────────────────────────────────────────────────────────────────
 SHIMMERING FOCUS
-Version 1.66
+Version 1.66.1
 https://github.com/chrisgrieser/shimmering-focus/
 Created by @pseudometa (Discord) aka @chrisgrieser (GitHub)
 MIT License
@@ -3965,7 +3965,7 @@ settings:
   -
 	 id: annotation-tags-off
 	 title: 'Turn off "Annotation Tags"'
-	 description: '"Annotation Tags" will visually emphasize some tags that are commonly used for academic reading.
+	 description: '"Annotation Tags" will visually emphasize some tags that are commonly used for academic reading.'
 	 type: class-toggle
 	 default: false
 */
