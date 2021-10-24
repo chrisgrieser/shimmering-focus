@@ -1,6 +1,6 @@
 /*─────────────────────────────────────────────────────────────────────────────────────
 SHIMMERING FOCUS
-Version 1.68
+Version 1.70
 https://github.com/chrisgrieser/shimmering-focus/
 Created by @pseudometa (Discord) aka @chrisgrieser (GitHub)
 MIT License
@@ -220,7 +220,7 @@ body:not(.show-titlebar) .workspace-split.mod-left-split.is-collapsed ~ .mod-roo
 	padding-left: 45px;
 }
 
-/* header bar is considered as titlebar on mobile */
+/* to display header bar properly on mobile */
 .theme-dark:not(.show-titlebar):not(.is-mobile),
 .theme-light:not(.show-titlebar):not(.is-mobile) {
 	padding: 0 !important;
@@ -2175,11 +2175,16 @@ body:not(.max-view-off) .workspace-split.mod-left-split.is-collapsed ~ .mod-root
 	max-width: 100%;
 }
 
+
+
 div.oz-image-widget > img{
 	max-width: var(--image-size) !important;
 }
 .view-content .markdown-preview-view img{
 	max-width: var(--image-size);
+}
+.markdown-preview-view table {
+	width: 100%;
 }
 
 /* ────────────────────────────────────────────────────────── */
@@ -2246,7 +2251,8 @@ span.cm-link.cm-hmd-footnote {
 /* ────────────────────────────────────────────────────────── */
 /* > TABLES */
 /* ────────────────────────────────────────────────────────── */
-/*add some more table styling, e.g. from https://forum.obsidian.md/t/custom-css-for-tables-5-new-styles-ready-to-use-in-your-notes/17084*/
+/* add some more table styling, e.g. from https://forum.obsidian.md/t/custom-css-for-tables-5-new-styles-ready-to-use-in-your-notes/17084*/
+/* see also section "Max View"*/
 
 /* normal tables */
 table:not(.dataview.table-view-table) td,
@@ -2263,7 +2269,6 @@ table:not(.dataview.table-view-table) th {
 }
 .markdown-preview-view table:not(.dataview.table-view-table) {
 	table-layout: fixed;
-	width: 100%;
 }
 
 
@@ -2752,30 +2757,36 @@ input.document-replace-input:hover{
 /* ────────────────────────────────────────────────────────── */
 /* > IMAGES */
 /* ────────────────────────────────────────────────────────── */
+/*see also section "Max View"*/
+
+
 /* Image Alt as Caption in Preview Mode */
 /* useful as this is also how Pandoc converts */
 .image-embed[alt]:after {
 	content: attr(alt);
 	font-size: 90%;
+	display: block;
 	font-style: italic;
 	font-weight: 300;
 	color: var(--text-muted);
 	padding-top: 2px;
-
-	/* center text */
-	white-space: pre;
-	text-align: center;
-	display: block;
 	margin-bottom: 13px;
 }
-
 .view-content .markdown-preview-view img{
-	display: block;
-	margin-left: auto;
-	margin-right: auto;
 	margin-top: 13px;
 	border-radius: var(--block-border-radius);
 	cursor: zoom-in;
+	display: block;
+}
+
+/* centers image and caption */
+body:not(.left-aligned-image) .image-embed[alt]:after {
+	white-space: pre;
+	text-align: center;
+}
+body:not(.left-aligned-image) .view-content .markdown-preview-view img{
+	margin-left: auto;
+	margin-right: auto;
 }
 
 /* image zoom */
@@ -3454,28 +3465,17 @@ body.hide-index-files .nav-file-title[data-path$="Index.md"] {
 /* ────────────────────────────────────────────────────────── */
 /* > Ozan's Image Plugin */
 /* ────────────────────────────────────────────────────────── */
+/*see also "Max View"*/
 
 div.oz-image-widget > img{
 	display: block;
-	margin-left: auto;
-	margin-right: auto;
 	border-radius: var(--block-border-radius) !important;
 	cursor: unset !important;
 }
 
-.image-embed[alt]:after {
-	content: attr(alt);
-	font-size: 90%;
-	font-style: italic;
-	font-weight: 300;
-	color: var(--text-muted);
-	padding-top: 2px;
-
-	/* center text */
-	white-space: pre;
-	text-align: center;
-	display: block;
-	margin-bottom: 13px;
+body:not(.left-aligned-image) div.oz-image-widget > img{
+	margin-left: auto;
+	margin-right: auto;
 }
 
 /* ────────────────────────────────────────────────────────── */
@@ -3944,6 +3944,33 @@ settings:
 	 type: class-toggle
 	 default: false
   -
+	 id: image-settings
+	 title: Image Settings
+	 type: heading
+	 level: 2
+	 collapsed: true
+  -
+	 id: max-view-off
+	 title: 'Turn off "Max View"'
+	 description: '"Max View" makes panes full length and images full width when the left sidebar is hidden and readable line length when the left sidebar is shown. (Note:  You need to turn on "readable line length" in the editor settings as well for this to work.)'
+	 type: class-toggle
+	 default: false
+  -
+	 id: image-size
+	 title: Size of Images
+	 description: Size of Images in % (when Max View is disabled or note active)
+	 type: variable-number-slider
+	 default: 50
+	 min: 10
+	 max: 100
+	 step: 5
+	 format: "%"
+  -
+	 id: left-aligned-image
+	 title: Align images to the left
+	 type: class-toggle
+	 default: false
+  -
 	 id: miscellaneous
 	 title: Miscellaneous
 	 type: heading
@@ -3961,22 +3988,6 @@ settings:
 	 description: Turn off the coloring of Pandoc Citations [@citekey] done by this theme.
 	 type: class-toggle
 	 default: false
-  -
-	 id: max-view-off
-	 title: 'Turn off "Max View"'
-	 description: '"Max View" makes panes full length and images full width when the left sidebar is hidden and readable line length when the left sidebar is shown. (Note:  You need to turn on "readable line length" in the editor settings as well for this to work.)'
-	 type: class-toggle
-	 default: false
-  -
-	 id: image-size
-	 title: Size of Images
-	 description: Size of Images in % (when Max View is disabled or note active)
-	 type: variable-number-slider
-	 default: 50
-	 min: 10
-	 max: 100
-	 step: 5
-	 format: "%"
   -
 	 id: popover-size
 	 title: Size of Popovers (Page Previews)
