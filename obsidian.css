@@ -665,8 +665,6 @@ input:hover{
 	border-color: var(--alt-accent);
 }
 
-
-
 /* ────────────────────────────────────────────────────────── */
 /* > CODE BLOCKS & INLINE CODE */
 /* ────────────────────────────────────────────────────────── */
@@ -685,16 +683,25 @@ input:hover{
 
 /* move and shrink copy button */
 pre button.copy{
-	padding: 10px;
-	padding-top: 8px;
-	line-height: 0.9em;
-	font-size: 0.7em;
+	padding: 6px 6px 4px 8px;
 	right: 7px;
 	top: 7px;
 	margin: 0;
 	position: absolute;
-	background-color: var(--background-secondary);
-	border: 2px solid var(--background-primary);
+	background-color: var(--background-secondary-alt);
+	border: 3px solid var(--background-primary);
+	font-size: 0;
+	color: var(--extra-contrast);
+}
+
+pre {
+	background-color: var(--background-secondary) !important;
+}
+
+pre button.copy::before{
+	font-family: "Material Icons";
+	content: "content_copy ";
+	font-size: 0.7rem;
 }
 
 /* show language of Code Block in Preview Mode */
