@@ -1,6 +1,6 @@
 /*─────────────────────────────────────────────────────────────────────────────────────
 SHIMMERING FOCUS
-Version 1.70
+Version 1.70.2
 https://github.com/chrisgrieser/shimmering-focus/
 Created by @pseudometa (Discord) aka @chrisgrieser (GitHub)
 MIT License
@@ -694,7 +694,7 @@ pre button.copy{
 	color: var(--extra-contrast);
 }
 
-pre {
+markdown-preview-view pre {
 	background-color: var(--background-secondary) !important;
 }
 
