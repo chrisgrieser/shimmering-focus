@@ -49,10 +49,10 @@
 - increased contrast throughout, especially with the [annoying grey font on light grey background](https://forum.obsidian.md/t/enhance-default-color-contrast-of-the-icons/23045/3)
 - decreased font size variation to increase readability & information density
 - at the same time increased distinguishability of different classes through subtle variation in typeface, font style, or backgrounds
-- easy-to-read fonts for every usecase: 
+- easy-to-read fonts for every usecase
   - [iA Writer Quattro](https://github.com/iaolo/iA-Fonts/tree/master/iA%20Writer%20Quattro) for regular text.
   - [Input Mono](https://input.djr.com/) as monospace font for code
-  - Optima or Canberra as heading font
+  - [Belleza](https://fonts.google.com/specimen/Belleza) as humanist heading font
   - [Crimson Pro](https://fonts.google.com/specimen/Crimson+Pro) as serif font for longform projects
 - minor coloring of bold in dark mode to make it more readable, since bold in dark mode is harder to distinguish form normal text than  in light mode
 - slightly thicker lines (icons, hr, tables, etc.)
