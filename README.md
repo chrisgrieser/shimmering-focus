@@ -52,7 +52,7 @@
 - easy-to-read fonts for every usecase
   - [iA Writer Quattro](https://github.com/iaolo/iA-Fonts/tree/master/iA%20Writer%20Quattro) for regular text.
   - [Input Mono](https://input.djr.com/) as monospace font for code
-  - [Belleza](https://fonts.google.com/specimen/Belleza) as humanist heading font
+  - [Optima](https://en.wikipedia.org/wiki/Optima) as humanist heading font
   - [Crimson Pro](https://fonts.google.com/specimen/Crimson+Pro) as serif font for longform projects
 - minor coloring of bold in dark mode to make it more readable, since bold in dark mode is harder to distinguish form normal text than  in light mode
 - slightly thicker lines (icons, hr, tables, etc.)
@@ -85,6 +85,7 @@
 - Quick Explorer (re-enable the titlebar for Breadcrumbs)
 - Map of Content
 - Dangling Links
+- Advanced Cursors
 
 **Core Plugins**
 - File Explorer
