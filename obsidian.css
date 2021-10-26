@@ -1,6 +1,6 @@
 /*───────────────────────────────────────────────────────
 SHIMMERING FOCUS
-Version 1.73
+Version 1.74
 https://github.com/chrisgrieser/shimmering-focus/
 Created by @pseudometa (Discord) aka @chrisgrieser (GitHub)
 MIT License
@@ -141,7 +141,6 @@ For help and/or CSS snippets, thanks to:
 :root{
 	--default-font: "iA Writer Quattro V";
 	--font-monospace: "Input Mono";
-	--mermaid-font: var(--font-monospace);
 	--heading-font: Optima, Optima-local;
 	--longform-font: "Crimson Pro";
 
@@ -162,11 +161,6 @@ For help and/or CSS snippets, thanks to:
 input,
 button{
 	font-family: var(--default-font) !important;
-}
-
-/* ensures similar height of "#" and text of tags */
-.cm-formatting.cm-formatting-hashtag.cm-hashtag-begin.cm-hashtag.cm-meta{
-	font-family: var(--default-font);
 }
 
 /* >> Bold */
@@ -205,7 +199,7 @@ table:not(.dataview.table-view-table) th,
 .scene-container.svelte-1wlkmbt.selected:hover,
 .scene-container.svelte-1wlkmbt.selected,
 .svelte-23avsr[name~="projects"]{
-	font-weight: 900;
+	font-weight: 700;
 }
 
 /* ─────────────────────────────────────────────────── */
@@ -237,8 +231,11 @@ body:not(.show-titlebar) .workspace-split.mod-left-split.is-collapsed ~ .mod-roo
 }
 
 /* adapt height of resize handle */
-body:not(.show-titlebar) .workspace-split.mod-horizontal > .workspace-leaf-resize-handle {
-	top: 3.0em !important;
+body:not(.show-titlebar) .workspace-split.mod-left-split > .workspace-leaf-resize-handle {
+	top: 48.5px !important;
+}
+body:not(.show-titlebar) .workspace-split.mod-right-split > .workspace-leaf-resize-handle {
+	top: 33px !important;
 }
 
 /* styling when shown */
@@ -865,6 +862,11 @@ a.internal-link.is-unresolved:hover{
 a.tag {
 	color: var(--editor-alt-accent) !important;
 	text-decoration: none !important;
+}
+
+/* ensures similar height of "#" and text of tags */
+.cm-formatting.cm-formatting-hashtag.cm-hashtag-begin.cm-hashtag.cm-meta{
+	font-family: var(--default-font);
 }
 
 .cm-hashtag:hover,
@@ -2202,8 +2204,13 @@ body:not(.max-view-off) .workspace-split.mod-left-split.is-collapsed ~ .mod-root
 	max-width: 100%;
 }
 
+/* Mermaid */
+body:not(.max-view-off) .workspace-split.mod-left-split.is-collapsed ~ .mod-root svg[id^="m"][width][height][viewBox] {
+	 max-width: 100%;
+	 width: 100%;
+}
 
-
+/* default sizes */
 div.oz-image-widget > img{
 	max-width: var(--image-size) !important;
 }
@@ -2212,6 +2219,10 @@ div.oz-image-widget > img{
 }
 .markdown-preview-view table {
 	width: 100%;
+}
+svg[id^="m"][width][height][viewBox] {
+	 min-width: 20%;
+	 height: auto;
 }
 
 /* ─────────────────────────────────────────────────── */
@@ -2358,7 +2369,7 @@ body:not(.less-heading-letter-spacing) .markdown-preview-view h2,
 body:not(.less-heading-letter-spacing) .markdown-preview-view h3,
 body:not(.less-heading-letter-spacing) .markdown-preview-view h4,
 body:not(.less-heading-letter-spacing) .markdown-preview-view h5{
-	letter-spacing: 1.2px;
+	letter-spacing: 1px;
 }
 
 /* Alternation between italic & different font style
@@ -2370,9 +2381,10 @@ body:not(.no-alternating-header-italics) .markdown-preview-view h4{
 	font-style: italic;
 }
 
-/* counter for h2*/
-/*https://2ality.com/2012/01/numbering-headingshtml.html*/
-body:not(.no-h2-numbering) {
+
+/*deactivated for now, since it's sometimes buggy for some reason :/*/
+/* numbering for h2 https://2ality.com/2012/01/numbering-headingshtml.html*/
+/*body:not(.no-h2-numbering) {
 	counter-reset: h2counter;
 }
 body:not(.no-h2-numbering) .markdown-preview-view h1 {
@@ -2381,10 +2393,10 @@ body:not(.no-h2-numbering) .markdown-preview-view h1 {
 body:not(.no-h2-numbering) .markdown-preview-view h2:before {
 	content: counter(h2counter) ".\0000a0";
 	counter-increment: h2counter;
-}
+}*/
 
 /* ─────────────────────────────────────────────────── */
-/* > Pseudo Admonitions (only for one-liners) */
+/* > Pseudo-Admonitions (only for one-liners) */
 /* ─────────────────────────────────────────────────── */
 /* For H6 only (without following blocks or line breaks).
 Based on some CSS from @SlRvb, @gee & @Eleanor Konik */
@@ -2678,14 +2690,15 @@ blockquote {
 }
 
 /* ─────────────────────────────────────────────────── */
-/* > DOCUMENT SEARCH / REPLACE (cmd + f) */
+/* > DOCUMENT SEARCH / REPLACE (cmd + F) */
 /* ─────────────────────────────────────────────────── */
 
 .document-search-container {
-	bottom: 2.5em; /* move up to avoid collision with statusbar */
+	/* move up to avoid collision with statusbar */
+	bottom: 2.5em;
 	background-color:var(--background-secondary-alt);
-	border: 2px solid var(--text-faint);
-	border-radius: 6px;
+	border: 2px solid var(--hr-line);
+	border-radius: var(--block-roundedness);
 	width: 95%;
 	left: 2.5%;
 	height: 3.5em;
@@ -2699,7 +2712,7 @@ blockquote {
 search and leaving it at 50px shows it when searching
 without replace ლ(ಠ_ಠლ)╯ */
 .CodeMirror-scroll{
-	padding-bottom: 10em;
+	padding-bottom: 200px;
 }
 
 input.document-search-input,
@@ -2793,8 +2806,7 @@ input.document-replace-input:hover{
 /* ─────────────────────────────────────────────────── */
 /* > IMAGES */
 /* ─────────────────────────────────────────────────── */
-/*see also section "Max View"*/
-
+/* see also section "Max View"*/
 
 /* Image Alt as Caption in Preview Mode */
 /* useful as this is also how Pandoc converts */
@@ -2853,16 +2865,18 @@ body:not(.left-aligned-image) .view-content .markdown-preview-view img{
 /* > Mermaid */
 /* ─────────────────────────────────────────────────── */
 /* https://forum.obsidian.md/t/ability-to-resize-and-align-mermaid-diagrams/7019/11?u=pseudometa*/
+/* see also "Max View" */
 
-div.mermaid {
+body:not(.left-aligned-image) div.mermaid {
 	 text-align: center;
 }
 
-svg[id^="m"][width][height][viewBox] {
-	 min-width: 350px;
-	 max-width: 100%;
-	 width: 100%;
-	 height: auto;
+body:not(.standard-mermaid-font) .mermaid{
+	font-size: 0.9em;
+	--mermaid-font: var(--default-font);
+}
+.standard-mermaid-font .mermaid{
+	--mermaid-font: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Microsoft YaHei Light", sans-serif;
 }
 
 /* ─────────────────────────────────────────────────── */
@@ -3762,12 +3776,12 @@ body #block-ref-hover.show:hover {
 /* Advanced Cursor Plugin */
 /* ─────────────────────────────────────────────────── */
 /* the sidebar only */
-.workspace-leaf-content[data-type="Saved Queries View"] .savedQ-name{
+.workspace-leaf-content[data-type="Saved Queries View"] .savedQ-view-q{
 	background-color: transparent;
 	font-size: var(--sidebar-font-size);
 }
 
-.workspace-leaf-content[data-type="Saved Queries View"] .savedQ-name:hover{
+.workspace-leaf-content[data-type="Saved Queries View"] .savedQ-view-q:hover{
 	background-color: var(--background-secondary-alt) !important;
 	color: var(--alt-accent);
 	border-radius: var(--block-roundedness);
@@ -3867,12 +3881,6 @@ settings:
 	 type: class-toggle
 	 default: false
   -
-	 id: no-h2-numbering
-	 title: No H2 Numbering
-	 description: Turn off the numbering of H2 in Preview Mode.
-	 type: class-toggle
-	 default: false
-  -
 	 id: h1-size
 	 title: Level 1 Headings
 	 type: variable-number-slider
@@ -3959,6 +3967,12 @@ settings:
 	 id: less-heading-letter-spacing
 	 title: Decrease letter spacing for headings
 	 description: This theme increases letter spacing to make the Heading Font align more with the other fonts. Turn this on, if you are using a different Heading Font.
+	 type: class-toggle
+	 default: false
+  -
+	 id: standard-mermaid-font
+	 title: Use Standard Mermaid Font
+	 description: Enable this if you set a custom font and it breaks the look of Mermaid graphs.
 	 type: class-toggle
 	 default: false
   -
