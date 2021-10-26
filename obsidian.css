@@ -1,6 +1,6 @@
 /*───────────────────────────────────────────────────────
 SHIMMERING FOCUS
-Version 1.74
+Version 1.75
 https://github.com/chrisgrieser/shimmering-focus/
 Created by @pseudometa (Discord) aka @chrisgrieser (GitHub)
 MIT License
@@ -11,9 +11,7 @@ For help and/or CSS snippets, thanks to:
 - @kepano
 - @Mara
 - @Chetachie
-- @Eleanor Konik
 - @Atlas
-- @Grimdewaldt
 - @jdaniel
 - @só erick mesmo
 - @NothingIsLost
@@ -49,7 +47,7 @@ For help and/or CSS snippets, thanks to:
 	--resize-handle-thickness: 0.25em;
 	--scrollbar-thickness: 0.6em;
 	--image-size: 50%;
-	--popover-size: 450px;
+	--popover-size: 350px;
 	--inactive-pane-opacity: 75%;
 
 	--signature:"⟡";
@@ -336,6 +334,10 @@ body:not(.show-ribbons) .workspace-ribbon{
 	border-radius: 15px;
 }
 
+.popover .markdown-embed{
+	height: 100% !important;
+}
+
 .popover .markdown-embed-link svg{
 	stroke-width: 2px;
 }
@@ -344,11 +346,12 @@ body:not(.show-ribbons) .workspace-ribbon{
 	color: var(--extra-contrast);
 	padding: 2px;
 	border-radius: 3px;
+	right: 4px;
+	top: 4px;
 }
 
 .popover .markdown-embed-link:hover{
 	color: var(--alt-accent);
-	background: var(--background-secondary);
 }
 
 /* ─────────────────────────────────────────────────── */
@@ -2092,7 +2095,7 @@ span.cm-hmd-frontmatter {
 /* > Collapse Indicator (Fold Gutter) */
 /* ─────────────────────────────────────────────────── */
 
-/*preview mode*/
+/* Preview mode */
 .right-triangle{
 	height: 0.6em;
 	width: 0.6em;
@@ -2100,19 +2103,17 @@ span.cm-hmd-frontmatter {
 
 .is-collapsed .heading-collapse-indicator.collapse-indicator.collapse-icon:hover,
 .heading-collapse-indicator.collapse-indicator.collapse-icon:hover{
-	color: var(--alt-accent);
-	opacity: 0.8;
+	color: var(--alt-accent-lighter);
 }
 .is-collapsed .heading-collapse-indicator.collapse-indicator.collapse-icon{
 	color: var(--text-accent);
 }
 
-/*edit mode*/
+/* Edit mode */
 .CodeMirror-foldgutter-folded.CodeMirror-guttermarker-subtle:hover,
 .CodeMirror-foldgutter-open.CodeMirror-guttermarker-subtle:hover,
 .CodeMirror-foldmarker:hover{
-	color: var(--alt-accent) !important;
-	opacity: 0.8;
+	color: var(--alt-accent-lighter);
 }
 
 .CodeMirror-foldgutter-folded.CodeMirror-guttermarker-subtle::after,
@@ -2125,8 +2126,7 @@ span.cm-hmd-frontmatter {
 	padding-right: 1em !important;
 }
 .CodeMirror-foldgutter-folded.CodeMirror-guttermarker-subtle{
-	color: var(--text-accent);
-	opacity: 0.8;
+	color: var(--accent-lighter);
 }
 
 /* the "..." when content is folded */
@@ -2140,13 +2140,12 @@ span.cm-hmd-frontmatter {
 	background-color: transparent !important;
 }
 
-
 /* hide fold icon */
-body:not(.show-collapse-buttons) .CodeMirror-gutter-elt {
+body:not(.show-collapse-buttons) .CodeMirror-foldgutter-open.CodeMirror-guttermarker-subtle::after {
 	opacity: 0;
 }
 /* hover over line shows fold icon */
-body:not(.show-collapse-buttons) .CodeMirror-code>div:hover .CodeMirror-gutter-elt {
+body:not(.show-collapse-buttons) .CodeMirror-code>div:hover .CodeMirror-foldgutter-open.CodeMirror-guttermarker-subtle::after {
 	opacity: 1;
 }
 
@@ -4064,7 +4063,7 @@ settings:
 	 title: Size of Popovers (Page Previews)
 	 description: Width & Height of Popovers in px
 	 type: variable-number-slider
-	 default: 450
+	 default: 350
 	 min: 200
 	 max: 500
 	 step: 50
