@@ -76,13 +76,13 @@
 - Sliding Panes (enable `Swap Rotated Header Direction`)
 - Advanced Tables
 - Templater
-- Ozan's Image in Edito
+- Ozan's Image in Editor
 - MySnippets
 - Another Quick Switcher Plugin
-- CodeMirror Options (`Collapse External Links`)
+- CodeMirror Options
 - Drag and Drop Blocks
 - Recent Files
-- Quick Explorer (re-enable the titlebar for Breadcrumbs)
+- Quick Explorer (re-enable the title bar for breadcrumbs)
 - Map of Content
 - Dangling Links
 - Advanced Cursors
@@ -99,6 +99,7 @@
 - Command Palette
 - Quick Switcher
 - Page Preview (Popover)
+- File Recovery
 
 ## Installation
 You can find *Shimmering Focus* in Obsidian's community themes browser under `Settings ➞ Appearance ➞ Themes`.
