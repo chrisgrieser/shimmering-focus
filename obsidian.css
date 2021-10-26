@@ -1,6 +1,6 @@
 /*───────────────────────────────────────────────────────
 SHIMMERING FOCUS
-Version 1.75
+Version 1.76
 https://github.com/chrisgrieser/shimmering-focus/
 Created by @pseudometa (Discord) aka @chrisgrieser (GitHub)
 MIT License
@@ -48,7 +48,7 @@ For help and/or CSS snippets, thanks to:
 	--scrollbar-thickness: 0.6em;
 	--image-size: 50%;
 	--popover-size: 350px;
-	--inactive-pane-opacity: 75%;
+	--inactive-pane-opacity: 80%;
 
 	--signature:"⟡";
 }
@@ -141,6 +141,7 @@ For help and/or CSS snippets, thanks to:
 	--font-monospace: "Input Mono";
 	--heading-font: Optima, Optima-local;
 	--longform-font: "Crimson Pro";
+	--sidebar-font-family: "iA Writer Quattro V";
 
 	--h1-size: 1.8em;
 	--h2-size: 1.6em;
@@ -149,7 +150,7 @@ For help and/or CSS snippets, thanks to:
 	--h5-size: 1.15em;
 	--monospace-font-size: 0.9em;
 	--longform-font-size: 1.2em;
-	--sidebar-font-size: 0.875em; /*not implemented everywhere yet */
+	--sidebar-font-size: 0.875em;
 }
 
 .CodeMirror-linenumber{
@@ -160,8 +161,24 @@ input,
 button{
 	font-family: var(--default-font) !important;
 }
+/*everything in the sidebars*/
+.workspace-tabs{
+	font-size: var(--sidebar-font-size);
+	font-family: var(--sidebar-font-family);
+}
 
+body:not(.not-ia-writer-font) .nav-folder-title,
+body:not(.not-ia-writer-font) .nav-file-title{
+	letter-spacing: -0.2px;
+}
+body:not(.not-ia-writer-font) .workspace-tabs{
+	letter-spacing: -0.1px;
+}
+
+/* ─────────────────────────────────────────────────── */
 /* >> Bold */
+/* ─────────────────────────────────────────────────── */
+
 /* Colored Bold to increase distinguishability */
 .theme-dark .cm-strong,
 .theme-dark .markdown-preview-view strong {
@@ -180,10 +197,6 @@ body:not(.not-ia-writer-font) .scene-container.svelte-1wlkmbt.selected:hover,
 body:not(.not-ia-writer-font) .scene-container.svelte-1wlkmbt.selected,
 body:not(.not-ia-writer-font) .svelte-23avsr[name~="projects"]{
 	text-rendering: geometricPrecision;
-}
-body:not(.not-ia-writer-font) .nav-folder-title,
-body:not(.not-ia-writer-font) .nav-file-title{
-	letter-spacing: -0.2px;
 }
 
 .suggestion-highlight,
@@ -366,15 +379,16 @@ https://github.com/kepano/obsidian-hider/blob/master/styles.css */
 }
 
 /* only show on hover */
+body:not(.show-close-button) .empty-state-close-button,
 body:not(.show-close-button) .modal-close-button {
 	opacity: 0;
 	transition: 700ms;
 }
+body:not(.show-close-button) .empty-state-close-button:hover,
 body:not(.show-close-button) .modal-close-button:hover {
 	opacity: 1;
 	transition: 200ms;
 }
-
 
 /* Hide instructions */
 .prompt-instructions {
@@ -385,6 +399,20 @@ body:not(.show-close-button) .modal-close-button:hover {
 .empty-state-action{
 	display: none;
 }
+.empty-state-close-button{
+	top: 10px;
+	height: 25px;
+	border-radius: 3px;
+	padding: 2px;
+}
+.empty-state-close-button svg{
+	stroke-width: 2px;
+}
+.empty-state-close-button:hover{
+	color: var(--alt-accent);
+	background: var(--background-secondary-alt);
+}
+
 .community-plugin-details-empty-state,
 .empty-state-title{
 	font-size: 0;
@@ -954,7 +982,7 @@ a.tag:hover {
 	border: 5px solid var(--background-secondary);
 }
 
-/* close buttom */
+/* close button */
 .modal-close-button:hover {
 	color: var(--alt-accent);
 	background: var(--background-secondary-alt);
@@ -968,8 +996,6 @@ a.tag:hover {
 	border-bottom-left-radius: 6px;
 	border-top-right-radius: 6px;
 }
-
-
 
 /* ─────────────────────────────────────────────────── */
 /* > Command Palette & QuickSwitcher(s) */
@@ -1133,8 +1159,7 @@ a.tag:hover {
 }
 
 .tree-item.is-collapsed .tree-item-icon svg {
-	color: var(--text-accent) !important;
-	font-weight: 600;
+	color: var(--accent-lighter);
 }
 
 .tree-item.is-collapsed .tree-item-flair{
@@ -1237,24 +1262,6 @@ readability */
 	background: none;
 }
 
-/*prevents text being colors on a highlight */
-.is-flashing,
-body > div.app-container .obsidian-search-match-highlight{
-	background-color: var(--search-match-hl);
-	border-radius: var(--block-roundedness);
-	color: var(--text-normal) !important;
-}
-
-/*  fix border roundedness for tags */
-body > div.app-container .cm-hashtag-begin.obsidian-search-match-highlight{
-	border-top-right-radius: 0;
-	border-bottom-right-radius: 0;
-}
-body > div.app-container .cm-hashtag-end.obsidian-search-match-highlight{
-	border-top-left-radius: 0;
-	border-bottom-left-radius: 0;
-}
-
 /* >> outgoing and backlink unlinked mentions */
 .search-result-file-match-destination-file{
 	color: var(--extra-contrast);
@@ -1328,11 +1335,45 @@ body > div.app-container .cm-hashtag-end.obsidian-search-match-highlight{
 }
 
 /* ─────────────────────────────────────────────────── */
+/* > Search matches */
+/* ─────────────────────────────────────────────────── */
+
+/*prevents text being colors on a highlight */
+.is-flashing,
+body > div.app-container .obsidian-search-match-highlight{
+	background-color: var(--search-match-hl);
+	border-radius: var(--block-roundedness);
+	color: var(--text-normal) !important;
+}
+
+/*  fix border roundedness for tags */
+body > div.app-container .cm-hashtag-begin.obsidian-search-match-highlight{
+	border-top-right-radius: 0;
+	border-bottom-right-radius: 0;
+}
+body > div.app-container .cm-hashtag-end.obsidian-search-match-highlight{
+	border-top-left-radius: 0;
+	border-bottom-left-radius: 0;
+}
+
+/*  fix border roundedness for headings */
+body > div.app-container .cm-formatting-header.obsidian-search-match-highlight{
+	border-top-left-radius: var(--block-roundedness) !important;
+	border-bottom-left-radius: var(--block-roundedness) !important;
+	border-top-right-radius: 0;
+	border-bottom-right-radius: 0;
+}
+body > div.app-container .cm-header.obsidian-search-match-highlight{
+	border-top-left-radius: 0;
+	border-bottom-left-radius: 0;
+}
+
+/* ─────────────────────────────────────────────────── */
 /* > FILE EXPLORER */
 /* ─────────────────────────────────────────────────── */
 
+/* line styles for nesting indicators */
 :root {
-	/* line styles for nesting indicators */
 	--nestlinestyle1: solid;
 	--nestlinestyle2: dotted;
 	--nestlinestyle3: dashed;
@@ -2400,16 +2441,17 @@ body:not(.no-h2-numbering) .markdown-preview-view h2:before {
 /* For H6 only (without following blocks or line breaks).
 Based on some CSS from @SlRvb, @gee & @Eleanor Konik */
 
-body:not(.less-heading-letter-spacing) .cm-header-6,
-body:not(.less-heading-letter-spacing) .markdown-preview-view h6{
-	font-weight: 600;
-	letter-spacing: -0.02em;
-}
-
 .cm-header-6,
 .markdown-preview-view h6{
 	font-family: var(--default-font);
 	font-size: 1em;
+	font-weight: 500 !important;
+}
+
+.cm-strong.cm-header-6,
+.markdown-preview-view h6 > em{
+	font-weight: 800 !important;
+	text-rendering: geometricPrecision;
 }
 
 .markdown-preview-view h6 .heading-collapse-indicator.collapse-indicator.collapse-icon,
@@ -3630,7 +3672,6 @@ button.MS-OpenSnippet{
 	padding-left: 8px;
 	padding-right: 4px;
 	padding-bottom: 0;
-	font-size: var(--sidebar-font-size);
 }
 .workspace-leaf-content[data-type="map-of-content"] .view-content > .svelte-1jp8rsy > ul > li {
 	padding-left: 0;
@@ -3741,7 +3782,6 @@ body #block-ref-hover.show:hover {
 /* > Dangling Links */
 /* ─────────────────────────────────────────────────── */
 .workspace-leaf-content[data-type="dangling-links"] {
-	font-size: var(--sidebar-font-size);
 	line-height: 1.2em;
 }
 .workspace-leaf-content[data-type="dangling-links"] .view-content{
@@ -3777,7 +3817,6 @@ body #block-ref-hover.show:hover {
 /* the sidebar only */
 .workspace-leaf-content[data-type="Saved Queries View"] .savedQ-view-q{
 	background-color: transparent;
-	font-size: var(--sidebar-font-size);
 }
 
 .workspace-leaf-content[data-type="Saved Queries View"] .savedQ-view-q:hover{
@@ -3969,6 +4008,21 @@ settings:
 	 type: class-toggle
 	 default: false
   -
+	 id: sidebar-font-family
+	 title: Side Bar Font
+	 description: Applies to all text in the left and right side bar
+	 type: variable-text
+	 default: '"iA Writer Quattro V"'
+  -
+	 id: sidebar-font-size
+	 title: Side Font Size
+	 type: variable-number-slider
+	 default: 0.875
+	 min: 0.5
+	 max: 3
+	 step: 0.1
+	 format: em
+  -
 	 id: standard-mermaid-font
 	 title: Use Standard Mermaid Font
 	 description: Enable this if you set a custom font and it breaks the look of Mermaid graphs.
@@ -4074,4 +4128,36 @@ settings:
 	 description: '"Annotation Tags" will visually emphasize some tags that are commonly used for academic reading.'
 	 type: class-toggle
 	 default: false
+*/
+
+/* compatibility info for the Obsidian Hub*/
+/* @plugins
+core:
+- backlink
+- command-palette
+- file-explorer
+- global-search
+- graph
+- outgoing-link
+- outline
+- page-preview
+- starred
+- switcher
+- tag-pane
+
+community:
+- recent-files-obsidian
+- advanced-cursors
+- obsidian-another-quick-switcher
+- obsidian-codemirror-options
+- obsidian-kanban
+- oz-image-plugin
+- calendar
+- obsidian-dangling-links
+- mysnippets-plugin
+- obsidian-drag-and-drop-blocks
+- map-of-content
+- quick-explorer
+- templater-obsidian
+- obsidian-system-dark-mode
 */
