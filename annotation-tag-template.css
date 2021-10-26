@@ -1,0 +1,42 @@
+/* Template for a new annotation tag in the Obsidian Theme Shimmering Focus */
+
+:root {
+	--yourcolor: skyblue;
+}
+.theme-light{
+	--annotation-tag-font-color: #222;
+}
+.theme-dark{
+	--annotation-tag-font-color: #FFF;
+}
+
+body:not(.annotation-tags-off) .tag[href="#important"],
+body:not(.annotation-tags-off) .cm-s-obsidian .CodeMirror-line span.cm-tag-important{
+	font-weight: 900;
+	text-decoration: none;
+	padding-right: 8px;
+	padding-left: 8px;
+	color: var(--annotation-tag-font-color) !important;
+	border-radius: 6px;
+	text-decoration: none;
+	font-style: normal;
+}
+
+body:not(.annotation-tags-off) .cm-s-obsidian .CodeMirror-line .cm-hashtag-begin.cm-tag-important{
+	padding-right: 0;
+	border-top-right-radius: 0;
+	border-bottom-right-radius: 0;
+}
+body:not(.annotation-tags-off) .cm-s-obsidian .CodeMirror-line .cm-hashtag-end.cm-tag-important{
+	padding-left: 0;
+	border-top-left-radius: 0;
+	border-bottom-left-radius: 0;
+}
+body:not(.annotation-tags-off) .cm-tag-important,
+body:not(.annotation-tags-off) .tag[href="#important"] {
+	background-color: var(--yourcolor) !important;
+}
+body:not(.annotation-tags-off) .cm-hashtag-begin.cm-tag-important::before,
+body:not(.annotation-tags-off) .tag[href="#important"]::before {
+	content: "❗️ ";
+}
