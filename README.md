@@ -36,7 +36,7 @@
 - [Pandoc Citations](https://pandoc.org/MANUAL.html#citations-in-note-styles) (`[@citekey]`) and footnotes are visually emphasized
 - the alt-text of images is used as caption text, in line with Pandoc's conversion behavior
 - Lots of Styling specifically for the [Longform Plugin](https://github.com/kevboh/longform), among other things justified & hyphenated text, and [Crimson Pro](https://fonts.google.com/specimen/Crimson+Pro) as an easy-to-read serif font
-- **Annotation tags**: type of of the following eight tags (e.g. `#definition`) to get a colored annotation tag. Also works in Edit Mode. Intended for Annotations when reading academic papers.
+- **Annotation tags**: type of of the following eight tags (e.g. `#definition`) to get a colored annotation tag. Also works in Edit Mode. Intended for Annotations when reading academic papers. You can add your own via adding a snippet [using this template](https://github.com/chrisgrieser/shimmering-focus/blob/main/annotation-tag-template.css).
 <img width=12% alt="Screenshot 2021-10-23 16 18 49" src="https://user-images.githubusercontent.com/73286100/138560326-c1bd22c4-dda9-4f92-8edc-ba736524ea75.png">
 
 ### Condensed Display of Information
