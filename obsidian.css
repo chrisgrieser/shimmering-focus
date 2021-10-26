@@ -1,6 +1,6 @@
 /*───────────────────────────────────────────────────────
 SHIMMERING FOCUS
-Version 1.76
+Version 1.77
 https://github.com/chrisgrieser/shimmering-focus/
 Created by @pseudometa (Discord) aka @chrisgrieser (GitHub)
 MIT License
@@ -157,20 +157,25 @@ For help and/or CSS snippets, thanks to:
 	font-family: var(--font-monospace) !important;
 }
 
+textarea,
 input,
 button{
 	font-family: var(--default-font) !important;
 }
+
 /*everything in the sidebars*/
 .workspace-tabs{
 	font-size: var(--sidebar-font-size);
 	font-family: var(--sidebar-font-family);
 }
 
+body:not(.not-ia-writer-font) input,
 body:not(.not-ia-writer-font) .nav-folder-title,
 body:not(.not-ia-writer-font) .nav-file-title{
 	letter-spacing: -0.2px;
 }
+
+body:not(.not-ia-writer-font) textarea,
 body:not(.not-ia-writer-font) .workspace-tabs{
 	letter-spacing: -0.1px;
 }
@@ -378,18 +383,6 @@ https://github.com/kepano/obsidian-hider/blob/master/styles.css */
 	display: none;
 }
 
-/* only show on hover */
-body:not(.show-close-button) .empty-state-close-button,
-body:not(.show-close-button) .modal-close-button {
-	opacity: 0;
-	transition: 700ms;
-}
-body:not(.show-close-button) .empty-state-close-button:hover,
-body:not(.show-close-button) .modal-close-button:hover {
-	opacity: 1;
-	transition: 200ms;
-}
-
 /* Hide instructions */
 .prompt-instructions {
 	display:none;
@@ -426,6 +419,55 @@ body:not(.show-close-button) .modal-close-button:hover {
 	content: var(--signature);
 	font-size: 10rem;
 	color: var(--extra-contrast);
+}
+
+/* ─────────────────────────────────────────────────── */
+/* > Close Buttons */
+/* ─────────────────────────────────────────────────── */
+
+div.search-input-clear-button::before,
+.empty-state-close-button,
+.modal-close-button {
+	color: var(--text-muted);
+	background-color: var(--background-secondary-alt);
+}
+
+div.search-input-clear-button::before{
+	background-color: transparent;
+}
+
+.document-search-close-button:hover,
+div.search-input-clear-button:hover::before,
+.empty-state-close-button:hover,
+.modal-close-button:hover {
+	color: var(--alt-accent);
+}
+
+.modal-close-button {
+	top: 0;
+	right: 0;
+	padding-left: 4px;
+	padding-bottom: 4px;
+	padding-right: 3px;
+	border-bottom-left-radius: 6px;
+	border-top-right-radius: 6px;
+}
+
+/* only show on hover */
+body:not(.show-close-button) .document-search-close-button,
+body:not(.show-close-button) div.search-input-clear-button,
+body:not(.show-close-button) .empty-state-close-button,
+body:not(.show-close-button) .modal-close-button {
+	opacity: 0;
+	transition: 700ms;
+}
+
+body:not(.show-close-button) .document-search-close-button:hover,
+body:not(.show-close-button) div.search-input-clear-button:hover,
+body:not(.show-close-button) .empty-state-close-button:hover,
+body:not(.show-close-button) .modal-close-button:hover {
+	opacity: 1;
+	transition: 200ms;
 }
 
 /* ─────────────────────────────────────────────────── */
@@ -606,9 +648,6 @@ body:not(.show-statusbar) .status-bar:hover {
 	transition: 200ms;
 }
 
-/* shorten backlink-text */
-
-
 /* hovering color for clickable plugins */
 .status-bar-item.mod-clickable:hover,
 .lt-status-bar-btn:hover{
@@ -640,7 +679,7 @@ body:not(.show-statusbar) .status-bar:hover {
 }
 
 /* ─────────────────────────────────────────────────── */
-/* > Buttons & Checkboxes & Input */
+/* > Buttons & Checkboxes & Input & Textarea */
 /* ─────────────────────────────────────────────────── */
 
 button{
@@ -689,14 +728,21 @@ body:not(.normal-checkboxes) .checkbox-container.is-enabled {
 	border-width: 3px;
 }
 
+
 input{
 	padding: 5px !important;
 	padding-right: 0 !important;
 	left: 0 !important;
 }
 
+textarea:hover,
 input:hover{
 	border-color: var(--alt-accent);
+}
+
+textarea:focus,
+input:focus{
+	border-color: var(--text-accent);
 }
 
 /* ─────────────────────────────────────────────────── */
@@ -715,28 +761,15 @@ input:hover{
 	white-space: pre-wrap !important;
 }
 
-/* move and shrink copy button */
-pre button.copy{
-	padding: 6px 6px 4px 8px;
-	right: 7px;
-	top: 7px;
-	margin: 0;
-	position: absolute;
-	background-color: var(--background-secondary-alt);
-	border: 3px solid var(--background-primary);
-	font-size: 0;
-	color: var(--extra-contrast);
-}
-
-markdown-preview-view pre {
+/* background color fo code blocks */
+.theme-light .markdown-preview-view pre {
 	background-color: var(--background-secondary) !important;
 }
 
-pre button.copy::before{
-	font-family: "Material Icons";
-	content: "content_copy ";
-	font-size: 0.7rem;
+.markdown-preview-view pre {
+	border-radius: var(--block-roundedness) !important;
 }
+
 
 /* show language of Code Block in Preview Mode */
 /* snippet by @Chetachi */
@@ -859,7 +892,7 @@ span.cm-inline-code.cm-spell-error {
 
 
 /* ─────────────────────────────────────────────────── */
-/* > Links, Tags, HTML, & Comments */
+/* > Links */
 /* ─────────────────────────────────────────────────── */
 /* hovered links in alt accent */
 .cm-string.cm-url:hover:not(.cm-formatting),
@@ -888,6 +921,10 @@ a.internal-link.is-unresolved:hover{
 	text-decoration: none !important;
 }
 
+/* ─────────────────────────────────────────────────── */
+/* > Tags */
+/* ─────────────────────────────────────────────────── */
+
 /* tags */
 .cm-hashtag,
 a.tag {
@@ -900,18 +937,19 @@ a.tag {
 	font-family: var(--default-font);
 }
 
-.cm-hashtag:hover,
+.cm-hashtag-end:hover,
 a.tag:hover {
-	cursor: pointer;
 	text-decoration: underline !important;
 }
 
-/*comments: more contrast */
+/* ─────────────────────────────────────────────────── */
+/* > Comments & HTML Tags */
+/* ─────────────────────────────────────────────────── */
+
 .cm-comment{
 	color: var(--text-muted) !important;
 }
 
-/* HTML Tags */
 .cm-tag.cm-bracket.cm-hmd-html-begin,
 .cm-tag.cm-bracket.cm-hmd-html-end,
 .cm-tag{
@@ -942,13 +980,28 @@ a.tag:hover {
 /* ─────────────────────────────────────────────────── */
 /* (modal also applies to settings/plugin browser) */
 
+.modal-content h1 {
+	font-size: var(--h1-size);
+	margin-top: 0.5em;
+}
+
 .modal-content h2 {
 	font-size: var(--h2-size);
 	margin-top: 0.5em;
 }
 
+.modal-content h3 {
+	font-size: var(--h3-size);
+	margin-top: 0.5em;
+}
+
 .modal-content h4 {
 	font-size: var(--h4-size);
+	margin-top: 0.5em;
+}
+
+.modal-content h5 {
+	font-size: var(--h5-size);
 	margin-top: 0.5em;
 }
 
@@ -982,23 +1035,79 @@ a.tag:hover {
 	border: 5px solid var(--background-secondary);
 }
 
-/* close button */
-.modal-close-button:hover {
-	color: var(--alt-accent);
-	background: var(--background-secondary-alt);
+
+/* ─────────────────────────────────────────────────── */
+/* > File Recovery (Core Plugin) */
+/* ─────────────────────────────────────────────────── */
+.modal.mod-sync-history {
+	height: 93%;
+	max-width: unset;
+	width: 93%;
+	border-color: var(--background-primary-alt);
 }
-.modal-close-button {
-	top: 0;
-	right: 0;
-	padding-left: 4px;
-	padding-bottom: 4px;
-	padding-right: 3px;
-	border-bottom-left-radius: 6px;
-	border-top-right-radius: 6px;
+
+.sync-history-list-item.is-active .u-muted,
+.sync-history-list-item:hover .u-muted{
+	color: var(--text-normal);
+}
+
+.sync-history-list-item{
+	padding-left: 10px;
+	padding-right: 5px;
+	line-height: 1.4em;
+	border-bottom: 1px solid var(--background-primary);
+	border-right: 1px solid var(--background-primary);
+}
+.sync-history-list-item.is-active{
+	color: var(--text-accent);
+	font-weight: 600;
+	text-rendering: geometricPrecision;
+}
+.sync-history-list-item:hover,
+.sync-history-list-item.is-active:hover{
+	color: var(--alt-accent);
+}
+
+.sync-history-list{
+	padding-top: 10px;
+	padding-bottom: 10px;
+}
+
+.sync-history-content-container{
+	padding: 10px;
+	height: 100%;
+	border-top-right-radius: var(--block-roundedness);
+	border-bottom-right-radius: var(--block-roundedness);
+}
+
+.modal.mod-sync-history textarea:focus{
+	border-color: var(--text-accent);
+}
+
+
+.sync-history-content-buttons{
+	margin-bottom: 5px;
+	margin-top: 13px;
+
+}
+
+.modal.mod-sync-history{
+}
+
+.sync-history-content-empty{
+	font-size: 0;
+	top: 45%;
+	left: 40%;
+	position: relative;
+	color: var(--extra-contrast);
+}
+.sync-history-content-empty:before{
+	font-size: 10rem;
+	content: var(--signature);
 }
 
 /* ─────────────────────────────────────────────────── */
-/* > Command Palette & QuickSwitcher(s) */
+/* > Command Palette & QuickSwitcher */
 /* ─────────────────────────────────────────────────── */
 
 /* change font color of hotkeys */
@@ -1024,35 +1133,26 @@ a.tag:hover {
 }
 
 
-/* Another Quick Switcher */
-.another-quick-switcher__item__directory svg{
-	display: none;
-}
-.another-quick-switcher__item__directory::before{
-	content: "folder_open";
-	font-family: "Material Icons";
-	font-size: 1.4em;
-}
-
-.suggestion-item.is-selected .another-quick-switcher__item__directory{
-	color: var(--text-accent);
-	opacity: 0.7;
-}
-
-.suggestion-item:hover .another-quick-switcher__item__directory{
-	color: var(--editor-alt-accent);
-	opacity: 0.7;
-}
-
-
-
 /* ─────────────────────────────────────────────────── */
 /* > CURSOR */
 /* ─────────────────────────────────────────────────── */
+
+/*needs the "1" at the end:  https://www.digitalocean.com/community/tutorials/css-gradient-borders-pure-css */
 .CodeMirror-cursor {
-	border: none;
-	border-left: 3px solid var(--cursor-color);
+	border-left-width: 3px;
+	border-image: linear-gradient(45deg, var(--accent-lighter), var(--alt-accent-lighter)) 1;
 }
+
+body.mono-color-cursor .CodeMirror-cursor{
+	border-image: none;
+	border-color: var(--accent-lighter);
+}
+
+body.block-cursor .CodeMirror-cursor{
+	border-left-width: 0.6em;
+	opacity: 0.5;
+}
+
 
 /* ─────────────────────────────────────────────────── */
 /* > SIDEBAR */
@@ -1338,7 +1438,6 @@ readability */
 /* > Search matches */
 /* ─────────────────────────────────────────────────── */
 
-/*prevents text being colors on a highlight */
 .is-flashing,
 body > div.app-container .obsidian-search-match-highlight{
 	background-color: var(--search-match-hl);
@@ -1346,24 +1445,11 @@ body > div.app-container .obsidian-search-match-highlight{
 	color: var(--text-normal) !important;
 }
 
-/*  fix border roundedness for tags */
-body > div.app-container .cm-hashtag-begin.obsidian-search-match-highlight{
+body > .app-container .obsidian-search-match-highlight:first-child{
 	border-top-right-radius: 0;
 	border-bottom-right-radius: 0;
 }
-body > div.app-container .cm-hashtag-end.obsidian-search-match-highlight{
-	border-top-left-radius: 0;
-	border-bottom-left-radius: 0;
-}
-
-/*  fix border roundedness for headings */
-body > div.app-container .cm-formatting-header.obsidian-search-match-highlight{
-	border-top-left-radius: var(--block-roundedness) !important;
-	border-bottom-left-radius: var(--block-roundedness) !important;
-	border-top-right-radius: 0;
-	border-bottom-right-radius: 0;
-}
-body > div.app-container .cm-header.obsidian-search-match-highlight{
+body > .app-container .obsidian-search-match-highlight:last-child{
 	border-top-left-radius: 0;
 	border-bottom-left-radius: 0;
 }
@@ -2784,10 +2870,6 @@ input.document-replace-input:hover{
 	color: var(--text-on-accent);
 }
 
-.document-search-close-button:hover{
-	color: var(--alt-accent);
-}
-
 /* ─────────────────────────────────────────────────── */
 /* > GRAPH VIEW */
 /* ─────────────────────────────────────────────────── */
@@ -3825,8 +3907,71 @@ body #block-ref-hover.show:hover {
 	border-radius: var(--block-roundedness);
 }
 
+
 /* ─────────────────────────────────────────────────── */
-/* > Other Plugin Customizations */
+/* CodeMirror Options*/
+/* ─────────────────────────────────────────────────── */
+
+/* collapsed URL */
+.cm-s-obsidian .hmd-link-icon::after{
+	background-color: var(--extra-contrast) !important;
+	opacity: 1 !important;
+}
+.cm-s-obsidian .hmd-link-icon:hover::after{
+	background-color: var(--alt-accent) !important;
+	cursor: pointer;
+}
+
+/* move and shrink copy button */
+pre button.copy{
+	padding: 6px 6px 4px 8px;
+	right: 7px;
+	top: 7px;
+	margin: 0;
+	position: absolute;
+	background-color: var(--background-secondary-alt);
+	border: 3px solid var(--background-primary);
+	font-size: 0;
+	color: var(--extra-contrast);
+	border-radius: var(--block-roundedness);
+}
+
+pre button.copy::before{
+	font-family: "Material Icons";
+	content: "content_copy ";
+	font-size: 0.7rem;
+}
+
+pre button.copy:hover::before{
+	color: var(--interactive-normal);
+}
+
+/* ─────────────────────────────────────────────────── */
+/* Another Quick Switcher */
+/* ─────────────────────────────────────────────────── */
+
+.another-quick-switcher__item__directory svg{
+	display: none;
+}
+.another-quick-switcher__item__directory::before{
+	content: "folder_open";
+	font-family: "Material Icons";
+	font-size: 1.4em;
+}
+
+.suggestion-item.is-selected .another-quick-switcher__item__directory{
+	color: var(--text-accent);
+	opacity: 0.7;
+}
+
+.suggestion-item:hover .another-quick-switcher__item__directory{
+	color: var(--editor-alt-accent);
+	opacity: 0.7;
+}
+
+
+/* ─────────────────────────────────────────────────── */
+/* > Other Minor Plugin Customizations */
 /* ─────────────────────────────────────────────────── */
 
 /* Zoom Plugin */
@@ -3845,15 +3990,41 @@ a.zoom-plugin-title:hover{
 	fill: var(--alt-accent) !important;
 }
 
-/* CodeMirror Options*/
-.cm-s-obsidian .hmd-link-icon::after{
-	background-color: var(--extra-contrast) !important;
-	opacity: 1 !important;
-}
-.cm-s-obsidian .hmd-link-icon:hover::after{
-	background-color: var(--alt-accent) !important;
-	cursor: pointer;
-}
+/* ─────────────────────────────────────────────────── */
+/* Plugin Compatibility info for the Obsidian Hub */
+/* ─────────────────────────────────────────────────── */
+
+/* @plugins
+core:
+- backlink
+- command-palette
+- file-explorer
+- global-search
+- graph
+- outgoing-link
+- outline
+- page-preview
+- starred
+- switcher
+- tag-pane
+- file-recovery
+
+community:
+- recent-files-obsidian
+- advanced-cursors
+- obsidian-another-quick-switcher
+- obsidian-codemirror-options
+- obsidian-kanban
+- oz-image-plugin
+- calendar
+- obsidian-dangling-links
+- mysnippets-plugin
+- obsidian-drag-and-drop-blocks
+- map-of-content
+- quick-explorer
+- templater-obsidian
+- obsidian-system-dark-mode
+*/
 
 
 /* ─────────────────────────────────────────────────── */
@@ -3869,7 +4040,7 @@ settings:
 	 title: Show/Hide Elements
 	 type: heading
 	 level: 2
-	 collapsed: false
+	 collapsed: true
   -
 	 id: show-titlebar
 	 title: Show Title Bar
@@ -3896,13 +4067,13 @@ settings:
 	 default: false
   -
 	 id: show-close-button
-	 title: Permanently show the Close Button in the Settings Menu
+	 title: Re-enable Close Buttons
 	 type: class-toggle
 	 description: When false, you can close the menu with `Esc` or by clicking outside the menu area.
 	 default: false
   -
 	 id: show-collapse-buttons
-	 title: Permanently show the Collapse Buttons (in Edit Mode)
+	 title: Permanently show the Edit Mode Collapse Buttons
 	 type: class-toggle
 	 description: When false, you collapse buttons still become visible upon hovering.
 	 default: false
@@ -4029,8 +4200,53 @@ settings:
 	 type: class-toggle
 	 default: false
   -
+	 id: image-settings
+	 title: Images
+	 type: heading
+	 level: 2
+	 collapsed: true
+  -
+	 id: max-view-off
+	 title: 'Turn off "Max View"'
+	 description: '"Max View" makes panes full length and images full width when the left sidebar is hidden and readable line length when the left sidebar is shown. (Note:  You need to turn on "readable line length" in the editor settings as well for this to work.)'
+	 type: class-toggle
+	 default: false
+  -
+	 id: image-size
+	 title: Size of Images
+	 description: Size of Images in % (when Max View is disabled or note active)
+	 type: variable-number-slider
+	 default: 50
+	 min: 10
+	 max: 100
+	 step: 5
+	 format: "%"
+  -
+	 id: left-aligned-image
+	 title: Align images to the left
+	 type: class-toggle
+	 default: false
+  -
+	 id: cursor-settings
+	 title: Cursor
+	 type: heading
+	 level: 2
+	 collapsed: true
+  -
+	 id: block-cursor
+	 title: Block Cursor
+	 description: Use a block instead of a line as cursor. For best results, also switch the main font to a monospaced one.
+	 type: class-toggle
+	 default: false
+  -
+	 id: mono-color-cursor
+	 title: Use a mono-colored Cursor
+	 description: 'Uses a (light purple) cursor, as in previous versions of "Shimmering Focus".'
+	 type: class-toggle
+	 default: false
+  -
 	 id: longform-settings
-	 title: Longform Plugin Styling
+	 title: Longform Plugin
 	 type: heading
 	 level: 2
 	 collapsed: true
@@ -4065,33 +4281,6 @@ settings:
 	 id: hide-index-files
 	 title: Hide files named "Index.md" from File Explorer
 	 description: Files named that way are created by some plugins like the Longform Plugin and in many cases should not be touched.
-	 type: class-toggle
-	 default: false
-  -
-	 id: image-settings
-	 title: Image Settings
-	 type: heading
-	 level: 2
-	 collapsed: true
-  -
-	 id: max-view-off
-	 title: 'Turn off "Max View"'
-	 description: '"Max View" makes panes full length and images full width when the left sidebar is hidden and readable line length when the left sidebar is shown. (Note:  You need to turn on "readable line length" in the editor settings as well for this to work.)'
-	 type: class-toggle
-	 default: false
-  -
-	 id: image-size
-	 title: Size of Images
-	 description: Size of Images in % (when Max View is disabled or note active)
-	 type: variable-number-slider
-	 default: 50
-	 min: 10
-	 max: 100
-	 step: 5
-	 format: "%"
-  -
-	 id: left-aligned-image
-	 title: Align images to the left
 	 type: class-toggle
 	 default: false
   -
@@ -4130,34 +4319,3 @@ settings:
 	 default: false
 */
 
-/* compatibility info for the Obsidian Hub*/
-/* @plugins
-core:
-- backlink
-- command-palette
-- file-explorer
-- global-search
-- graph
-- outgoing-link
-- outline
-- page-preview
-- starred
-- switcher
-- tag-pane
-
-community:
-- recent-files-obsidian
-- advanced-cursors
-- obsidian-another-quick-switcher
-- obsidian-codemirror-options
-- obsidian-kanban
-- oz-image-plugin
-- calendar
-- obsidian-dangling-links
-- mysnippets-plugin
-- obsidian-drag-and-drop-blocks
-- map-of-content
-- quick-explorer
-- templater-obsidian
-- obsidian-system-dark-mode
-*/
