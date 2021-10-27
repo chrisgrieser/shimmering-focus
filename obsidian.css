@@ -1,6 +1,6 @@
 /*───────────────────────────────────────────────────────
 SHIMMERING FOCUS
-Version 1.78
+Version 1.79
 https://github.com/chrisgrieser/shimmering-focus/
 Created by @pseudometa (Discord) aka @chrisgrieser (GitHub)
 MIT License
@@ -43,7 +43,7 @@ For help and/or CSS snippets, thanks to:
 	--backdrop-color: hsl(228deg 40% 7%);
 	--active-line: #adae9820;
 
-	--block-roundedness: 6px;
+	--block-roundness: 6px;
 	--resize-handle-thickness: 0.25em;
 	--scrollbar-thickness: 0.6em;
 	--image-size: 50%;
@@ -167,12 +167,12 @@ button{
 .workspace-leaf-content[data-type="dangling-links"],
 .workspace-leaf-content[data-type="search"] .tree-item-inner,
 .workspace-leaf-content[data-type="search"] .search-result-file-match,
-.workspace-leaf-content[data-type="outline"] .tree-item-self,
 .workspace-leaf-content[data-type="tag"] .tree-item-inner,
 .workspace-leaf-content[data-type="outgoing-link"] .tree-item-self,
 .workspace-leaf-content[data-type="backlink"] .tree-item-inner,
 .workspace-leaf-content[data-type="backlink"] .search-result-file-match,
 .workspace-leaf-content[data-type="Saved Queries View"],
+.outline,
 .nav-folder-title,
 .nav-file-title{
 	font-size: var(--sidebar-font-size);
@@ -265,19 +265,25 @@ body:not(.show-titlebar) .workspace-split.mod-right-split > .workspace-leaf-resi
 }
 
 /* styling when shown */
-.theme-light .titlebar-button{
-	opacity: 1;
-	color: var(--text-on-accent);
-}
 .titlebar-button{
 	opacity: 1;
-	color: var(--extra-contrast);
+	color: var(--text-normal);
+	border-radius: var(--block-roundness);
 }
+.titlebar-button svg{
+	stroke-width: 2px;
+}
+
 .titlebar-button:hover{
 	color: var(--alt-accent);
+	background-color: var(--background-secondary);
 }
 .titlebar-button:active{
 	color: var(--text-accent);
+}
+
+.titlebar-text{
+	display: none;
 }
 
 /* proper light theme for titlebar */
@@ -777,7 +783,7 @@ input:focus{
 }
 
 .markdown-preview-view pre {
-	border-radius: var(--block-roundedness) !important;
+	border-radius: var(--block-roundness) !important;
 }
 
 
@@ -1086,8 +1092,8 @@ a.tag:hover {
 .sync-history-content-container{
 	padding: 10px;
 	height: 100%;
-	border-top-right-radius: var(--block-roundedness);
-	border-bottom-right-radius: var(--block-roundedness);
+	border-top-right-radius: var(--block-roundness);
+	border-bottom-right-radius: var(--block-roundness);
 }
 
 .modal.mod-sync-history textarea:focus{
@@ -1152,7 +1158,7 @@ a.tag:hover {
 }
 
 .suggestion-item{
-	border-radius: var(--block-roundedness);
+	border-radius: var(--block-roundness);
    padding-left: 32px;
 }
 
@@ -1468,7 +1474,7 @@ readability */
 .is-flashing,
 body > div.app-container .obsidian-search-match-highlight{
 	background-color: var(--search-match-hl);
-	border-radius: var(--block-roundedness);
+	border-radius: var(--block-roundness);
 	color: var(--text-normal) !important;
 }
 
@@ -2108,7 +2114,7 @@ body:not(.less-heading-letter-spacing) .modal.mod-community-theme .modal-title{
 /* highlight active line */
 .CodeMirror-activeline .CodeMirror-linebackground {
 	background-color: var(--active-line);
-	border-radius: var(--block-roundedness);
+	border-radius: var(--block-roundness);
 }
 
 
@@ -2574,7 +2580,7 @@ Based on some CSS from @SlRvb, @gee & @Eleanor Konik */
 
 /* when pseudo-admonition is also active line */
 .CodeMirror-activeline .HyperMD-header.HyperMD-header-6.CodeMirror-line {
-	border-radius: var(--block-roundedness) !important;
+	border-radius: var(--block-roundness) !important;
 	background-color: var(--active-line) !important;
 	color: var(--text-normal) !important;
 }
@@ -2597,7 +2603,7 @@ Based on some CSS from @SlRvb, @gee & @Eleanor Konik */
 	padding-bottom: 0.6em;
 	margin-bottom: 0;
 	border-left: 12px solid var(--pseudo-admonition-border) !important;
-	border-radius: var(--block-roundedness);
+	border-radius: var(--block-roundness);
 	color: var(--text-normal) !important;
 }
 
@@ -2771,7 +2777,7 @@ body:not(.annotation-tags-off) .tag[href="#example"]::before{
 	padding-top: 0.4em;
 	padding-bottom: 0.5em;
 	padding-right: 0.8em;
-	border-radius: var(--block-roundedness);
+	border-radius: var(--block-roundness);
 }
 
 /* fixes color when text is selected */
@@ -2828,7 +2834,7 @@ blockquote p {
 
 blockquote {
 	margin-left: 0 !important;
-	border-radius: var(--block-roundedness) !important;
+	border-radius: var(--block-roundness) !important;
 	border: 2px solid var(--text-faint) !important;
 	padding-left: 0.8em !important;
 	padding-right: 0.8em !important;
@@ -2852,7 +2858,7 @@ blockquote {
 	bottom: 2.5em;
 	background-color:var(--background-secondary-alt);
 	border: 2px solid var(--hr-line);
-	border-radius: var(--block-roundedness);
+	border-radius: var(--block-roundness);
 	width: 95%;
 	left: 2.5%;
 	height: 3.5em;
@@ -2972,7 +2978,7 @@ input.document-replace-input:hover{
 }
 .view-content .markdown-preview-view img{
 	margin-top: 13px;
-	border-radius: var(--block-roundedness);
+	border-radius: var(--block-roundness);
 	cursor: zoom-in;
 	display: block;
 }
@@ -3669,7 +3675,7 @@ body.hide-index-files .nav-file-title[data-path$="Index.md"] {
 
 div.oz-image-widget > img{
 	display: block;
-	border-radius: var(--block-roundedness) !important;
+	border-radius: var(--block-roundness) !important;
 	cursor: unset !important;
 }
 
@@ -3697,6 +3703,17 @@ body:not(.left-aligned-image) div.oz-image-widget > img{
 /* ─────────────────────────────────────────────────── */
 /* > Quick Explorer */
 /* ─────────────────────────────────────────────────── */
+
+/* titlebar, when it is shown */
+.titlebar span.explorable{
+	color: var(--extra-contrast);
+	opacity: 1 !important;
+	border-radius: 0;
+}
+.titlebar span.explorable:hover{
+	background-color: transparent !important;
+	color: var(--alt-accent) !important;
+}
 
 /* prevent appearing on top of the traffic lights of macOS */
 body:not(.show-title-bar) > .qe-popup-menu{
@@ -3890,7 +3907,7 @@ body #search-res-hover.show,
 body #block-ref-hover.show{
 	color: var(--text-muted);
 	background-color: var(--background-primary-alt);
-	border-radius: calc(var(--block-roundedness));
+	border-radius: calc(var(--block-roundness));
 }
 
 body #search-res-hover.show:hover,
@@ -3942,7 +3959,7 @@ body #block-ref-hover.show:hover {
 .workspace-leaf-content[data-type="Saved Queries View"] .savedQ-view-q:hover{
 	background-color: var(--background-secondary-alt) !important;
 	color: var(--alt-accent);
-	border-radius: var(--block-roundedness);
+	border-radius: var(--block-roundness);
 }
 
 
@@ -3971,7 +3988,7 @@ pre button.copy{
 	border: 3px solid var(--background-primary);
 	font-size: 0;
 	color: var(--extra-contrast);
-	border-radius: var(--block-roundedness);
+	border-radius: var(--block-roundness);
 }
 
 pre button.copy::before{
