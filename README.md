@@ -104,8 +104,6 @@
 ## Installation
 You can find *Shimmering Focus* in Obsidian's community themes browser under `Settings ➞ Appearance ➞ Themes`.
 
-Alternatively, you can also install the theme manually by downloading the CSS file and moving it into the folder `.obsidian/themes/` located in your vault. Then, go to `Settings ➞ Appearance ➞ Themes`, reload themes, and select `Shimmering Focus`.
-
 ## Credits
 For help and/or CSS snippets, thanks to:
 - **@SlRvb**
@@ -113,9 +111,7 @@ For help and/or CSS snippets, thanks to:
 - @kepano
 - @Mara
 - @Chetachie
-- @Eleanor Konik
 - @Atlas
-- @Grimdewaldt
 - @jdaniel
 - @só erick mesmo
 - @NothingIsLost
