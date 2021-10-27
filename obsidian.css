@@ -1,6 +1,6 @@
 /*───────────────────────────────────────────────────────
 SHIMMERING FOCUS
-Version 1.77
+Version 1.78
 https://github.com/chrisgrieser/shimmering-focus/
 Created by @pseudometa (Discord) aka @chrisgrieser (GitHub)
 MIT License
@@ -164,7 +164,17 @@ button{
 }
 
 /*everything in the sidebars*/
-.workspace-tabs{
+.workspace-leaf-content[data-type="dangling-links"],
+.workspace-leaf-content[data-type="search"] .tree-item-inner,
+.workspace-leaf-content[data-type="search"] .search-result-file-match,
+.workspace-leaf-content[data-type="outline"] .tree-item-self,
+.workspace-leaf-content[data-type="tag"] .tree-item-inner,
+.workspace-leaf-content[data-type="outgoing-link"] .tree-item-self,
+.workspace-leaf-content[data-type="backlink"] .tree-item-inner,
+.workspace-leaf-content[data-type="backlink"] .search-result-file-match,
+.workspace-leaf-content[data-type="Saved Queries View"],
+.nav-folder-title,
+.nav-file-title{
 	font-size: var(--sidebar-font-size);
 	font-family: var(--sidebar-font-family);
 }
@@ -761,7 +771,7 @@ input:focus{
 	white-space: pre-wrap !important;
 }
 
-/* background color fo code blocks */
+/* background color of code blocks */
 .theme-light .markdown-preview-view pre {
 	background-color: var(--background-secondary) !important;
 }
@@ -1111,27 +1121,40 @@ a.tag:hover {
 /* ─────────────────────────────────────────────────── */
 
 /* change font color of hotkeys */
+.suggestion-item.is-selected .suggestion-prefix,
 .suggestion-item.is-selected,
 .suggestion-item.is-selected .suggestion-flair,
 .suggestion-item.is-selected .suggestion-highlight{
 	color: var(--text-accent);
 }
 
-.suggestion-item:hover,
-.suggestion-item:hover .suggestion-flair{
-	color: var(--alt-accent);
-}
 .suggestion-item.is-selected .suggestion-hotkey,
 .suggestion-item:hover .suggestion-hotkey{
 	background-color: var(--background-secondary-alt);
 }
 
+.suggestion-item:hover .suggestion-flair,
+.suggestion-item.is-selected:hover .suggestion-prefix,
+.suggestion-item:hover .suggestion-prefix,
 .suggestion-item:hover,
 .suggestion-highlight,
 .suggestion-item:hover .suggestion-highlight{
-	color: var(--editor-alt-accent);
+	color: var(--alt-accent);
 }
 
+.suggestion-item:hover .suggestion-prefix{
+	opacity: 0.6;
+}
+
+.suggestion-prefix {
+   color: var(--text-muted);
+   font-style: italic;
+}
+
+.suggestion-item{
+	border-radius: var(--block-roundedness);
+   padding-left: 32px;
+}
 
 /* ─────────────────────────────────────────────────── */
 /* > CURSOR */
@@ -1166,15 +1189,19 @@ body.block-cursor .CodeMirror-cursor{
 	color: var(--alt-accent);
 	cursor: pointer;
 }
-
+/* active colors */
 .workspace-tab-header-inner:active svg,
 .nav-action-button:active svg,
 .nav-action-button.is-active:active svg,
 .nav-action-button.is-active svg {
-	color: var(--text-accent) !important;
+	color: var(--text-accent);
+}
+.nav-action-button.is-active{
+	background-color: transparent;
 }
 
-/* condense left sidebar */
+
+/* condense sidebar */
 .nav-action-button svg,
 .workspace-tab-header-inner-icon svg {
 	width: 18px;
@@ -1208,8 +1235,8 @@ body.block-cursor .CodeMirror-cursor{
 }
 
 /* coloring */
-.workspace-leaf-resize-handle:active {
-	background-color: var(--scrollbar-active) !important;
+body .workspace-leaf-resize-handle:active {
+	background-color: var(--scrollbar-active);
 }
 .workspace-leaf-resize-handle:hover {
 	background-color: var(--scrollbar-hover);
@@ -3672,9 +3699,8 @@ body:not(.left-aligned-image) div.oz-image-widget > img{
 /* ─────────────────────────────────────────────────── */
 
 /* prevent appearing on top of the traffic lights of macOS */
-body:not(.show-title-bar) >  .qe-popup-menu:nth-child(24){
+body:not(.show-title-bar) > .qe-popup-menu{
 	padding-top: 1.2em !important;
-	margin-left: 1px;
 }
 
 .menu.qe-popup-menu .menu-item{
@@ -3724,6 +3750,10 @@ button.MS-OpenSnippet:hover,
 button.MySnippetsButton:hover{
 	background-color: var(--alt-accent) !important;
 }
+button.MS-OpenSnippet:hover path,
+button.MySnippetsButton:hover path{
+	fill: var(--interactive-normal);
+}
 
 .MySnippets-statusbar-menu{
 	width: 320px !important;
@@ -3741,7 +3771,14 @@ button.MySnippetsButton:hover{
 }
 
 button.MS-OpenSnippet{
-	background-color: var(--text-muted) !important;
+	background-color: var(--background-secondary-alt) !important;
+}
+
+button.MS-OpenSnippet svg.ms-snippet path{
+	fill: var(--extra-contrast);
+}
+button.MS-OpenSnippet:hover svg.ms-snippet path{
+	fill: var(--interactive-normal);
 }
 
 /* ─────────────────────────────────────────────────── */
@@ -3899,6 +3936,7 @@ body #block-ref-hover.show:hover {
 /* the sidebar only */
 .workspace-leaf-content[data-type="Saved Queries View"] .savedQ-view-q{
 	background-color: transparent;
+	color: var(--extra-contrast);
 }
 
 .workspace-leaf-content[data-type="Saved Queries View"] .savedQ-view-q:hover{
@@ -4043,13 +4081,13 @@ settings:
 	 collapsed: true
   -
 	 id: show-titlebar
-	 title: Show Title Bar
+	 title: Re-enable Title Bar
 	 type: class-toggle
 	 description: Re-enable this to have a title bar, e.g. for moving the Obsidian window
 	 default: false
   -
 	 id: show-ribbons
-	 title: Show Ribbons
+	 title: Re-enable Ribbons
 	 type: class-toggle
 	 description: Ribbons are the thin vertical bars to the very left & right
 	 default: false
@@ -4150,6 +4188,7 @@ settings:
 	 title: Not using iA Writer as Main Font
 	 description: Enable this if you are not using iA Writer as main font.
 	 type: class-toggle
+	 hub: ignore
 	 default: false
   -
 	 id: font-monospace
@@ -4177,6 +4216,7 @@ settings:
 	 title: Decrease letter spacing for headings
 	 description: This theme increases letter spacing to make the Heading Font align more with the other fonts. Turn this on, if you are using a different Heading Font.
 	 type: class-toggle
+	 hub: ignore
 	 default: false
   -
 	 id: sidebar-font-family
@@ -4190,7 +4230,7 @@ settings:
 	 type: variable-number-slider
 	 default: 0.875
 	 min: 0.5
-	 max: 3
+	 max: 2
 	 step: 0.1
 	 format: em
   -
@@ -4198,6 +4238,7 @@ settings:
 	 title: Use Standard Mermaid Font
 	 description: Enable this if you set a custom font and it breaks the look of Mermaid graphs.
 	 type: class-toggle
+	 hub: ignore
 	 default: false
   -
 	 id: image-settings
@@ -4207,7 +4248,7 @@ settings:
 	 collapsed: true
   -
 	 id: max-view-off
-	 title: 'Turn off "Max View"'
+	 title: 'Turn off the "Max View" feature'
 	 description: '"Max View" makes panes full length and images full width when the left sidebar is hidden and readable line length when the left sidebar is shown. (Note:  You need to turn on "readable line length" in the editor settings as well for this to work.)'
 	 type: class-toggle
 	 default: false
