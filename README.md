@@ -1,7 +1,5 @@
 # Shimmering Focus ⟡
 
-![](https://img.shields.io/github/v/release/chrisgrieser/shimmering-focus?label=Latest%20Release&style=plastic)
-
 <img src="https://raw.githubusercontent.com/chrisgrieser/shimmering-focus/main/dual-theme-screenshot.png" alt="Screenshot">
 
 ## Features & Design Principles
