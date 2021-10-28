@@ -1,6 +1,6 @@
 /*───────────────────────────────────────────────────────
 SHIMMERING FOCUS
-Version 1.79
+Version 1.80
 https://github.com/chrisgrieser/shimmering-focus/
 Created by @pseudometa (Discord) aka @chrisgrieser (GitHub)
 MIT License
@@ -40,7 +40,7 @@ For help and/or CSS snippets, thanks to:
 	--search-match-hl: var(--highlight-alt2);
 	--bold-in-darkmode: hsl(30deg 100% 80%);
 	--unresolved-link-color: #0F80FF;
-	--backdrop-color: hsl(228deg 40% 7%);
+	--backdrop-color: hsl(228deg 70% 7%);
 	--active-line: #adae9820;
 
 	--block-roundness: 6px;
@@ -151,6 +151,7 @@ For help and/or CSS snippets, thanks to:
 	--monospace-font-size: 0.9em;
 	--longform-font-size: 1.2em;
 	--sidebar-font-size: 0.875em;
+	--sidebar-font-size1: 0.9em;
 }
 
 .CodeMirror-linenumber{
@@ -163,19 +164,25 @@ button{
 	font-family: var(--default-font) !important;
 }
 
-/*everything in the sidebars*/
-.workspace-leaf-content[data-type="dangling-links"],
+/* Core Plugin Sidebar */
 .workspace-leaf-content[data-type="search"] .tree-item-inner,
 .workspace-leaf-content[data-type="search"] .search-result-file-match,
-.workspace-leaf-content[data-type="tag"] .tree-item-inner,
 .workspace-leaf-content[data-type="outgoing-link"] .tree-item-self,
 .workspace-leaf-content[data-type="backlink"] .tree-item-inner,
 .workspace-leaf-content[data-type="backlink"] .search-result-file-match,
-.workspace-leaf-content[data-type="Saved Queries View"],
+.tag-container,
 .outline,
 .nav-folder-title,
 .nav-file-title{
-	font-size: var(--sidebar-font-size);
+	font-size: var(--sidebar-font-size1);
+	font-family: var(--sidebar-font-family);
+}
+
+/* Community Plugin Sidebar */
+.workspace-leaf-content[data-type="dangling-links"],
+.workspace-leaf-content[data-type="Saved Queries View"],
+.workspace-leaf-content[data-type="map-of-content"]{
+	font-size: var(--sidebar-font-size1);
 	font-family: var(--sidebar-font-family);
 }
 
@@ -247,7 +254,7 @@ body:not(.show-titlebar) .workspace-split.mod-left-split .workspace-tabs:nth-chi
 
 /*thanks @javalent*/
 body:not(.show-titlebar) .workspace-split.mod-left-split.is-collapsed ~ .mod-root .view-header{
-	padding-left: 45px;
+	padding-left: 3em;
 }
 
 /* to display header bar properly on mobile */
@@ -365,7 +372,7 @@ body:not(.show-ribbons) .workspace-ribbon{
 	height: var(--popover-size) !important;
 	max-height: unset !important;
 	border: 5px solid var(--background-secondary) !important;
-	border-radius: 15px;
+	border-radius: calc (var(--block-roundness) *2);
 }
 
 .popover .markdown-embed{
@@ -389,10 +396,8 @@ body:not(.show-ribbons) .workspace-ribbon{
 }
 
 /* ─────────────────────────────────────────────────── */
-/* > HIDE FURTHER STUFF */
+/* > Hide small stuff */
 /* ─────────────────────────────────────────────────── */
-/* based on css from the hider plugin by @kepano:
-https://github.com/kepano/obsidian-hider/blob/master/styles.css */
 
 /* hide vault title */
 .nav-folder.mod-root > .nav-folder-title {
@@ -679,6 +684,7 @@ body:not(.show-statusbar) .status-bar:hover {
 	display: none;
 	width: var(--scrollbar-thickness);
 }
+
 .workspace-split.mod-vertical ::-webkit-scrollbar {
 	display: unset;
 }
@@ -1041,9 +1047,9 @@ a.tag:hover {
 
 .prompt-bg,
 .modal-bg {
-	backdrop-filter: blur(4px);
+	backdrop-filter: blur(3px);
 	background-color: var(--backdrop-color);
-	opacity: 0.8;
+	opacity: 0.9;
 }
 
 .prompt {
@@ -1126,12 +1132,32 @@ a.tag:hover {
 /* > Command Palette & QuickSwitcher */
 /* ─────────────────────────────────────────────────── */
 
+
+.suggestion-prefix {
+   color: var(--text-muted);
+   font-style: italic;
+}
+
+.suggestion-item{
+   padding-left: 25px;
+	white-space: pre-wrap;
+	border-bottom: 1px solid var(--background-secondary);
+}
+
+
+/* the pin */
+.suggestion-item .suggestion-flair{
+	left: 5px;
+   transform: scale(0.85);
+}
+
 /* change font color of hotkeys */
 .suggestion-item.is-selected .suggestion-prefix,
 .suggestion-item.is-selected,
 .suggestion-item.is-selected .suggestion-flair,
 .suggestion-item.is-selected .suggestion-highlight{
 	color: var(--text-accent);
+	border-radius: var(--block-roundness);
 }
 
 .suggestion-item.is-selected .suggestion-hotkey,
@@ -1146,21 +1172,37 @@ a.tag:hover {
 .suggestion-highlight,
 .suggestion-item:hover .suggestion-highlight{
 	color: var(--alt-accent);
+	border-radius: var(--block-roundness);
 }
 
+.suggestion-item:hover .suggestion-flair,
+.suggestion-item.is-selected .suggestion-flair,
+.suggestion-item.is-selected .suggestion-prefix,
 .suggestion-item:hover .suggestion-prefix{
 	opacity: 0.6;
 }
 
-.suggestion-prefix {
-   color: var(--text-muted);
-   font-style: italic;
+
+/*switch*/
+/*.suggestion-item {
+  display: flex;
+  flex-direction: row-reverse;
+  padding-right: 5px;
 }
 
-.suggestion-item{
-	border-radius: var(--block-roundness);
-   padding-left: 32px;
+.suggestion-prefix::after{
+	display: none;
 }
+
+.suggestion-prefix{
+	padding-left: 6px;
+	font-size: 80%;
+}
+
+.suggestion-item .suggestion-content{
+	position: absolute;
+	left: 32px;
+}*/
 
 /* ─────────────────────────────────────────────────── */
 /* > CURSOR */
@@ -1474,17 +1516,16 @@ readability */
 .is-flashing,
 body > div.app-container .obsidian-search-match-highlight{
 	background-color: var(--search-match-hl);
-	border-radius: var(--block-roundness);
 	color: var(--text-normal) !important;
 }
 
 body > .app-container .obsidian-search-match-highlight:first-child{
-	border-top-right-radius: 0;
-	border-bottom-right-radius: 0;
+	border-top-left-radius: var(--block-roundness);
+	border-bottom-left-radius: var(--block-roundness);
 }
 body > .app-container .obsidian-search-match-highlight:last-child{
-	border-top-left-radius: 0;
-	border-bottom-left-radius: 0;
+	border-top-right-radius: var(--block-roundness);
+	border-bottom-right-radius: var(--block-roundness);
 }
 
 /* ─────────────────────────────────────────────────── */
@@ -1507,6 +1548,7 @@ body > .app-container .obsidian-search-match-highlight:last-child{
 	color: var(--extra-contrast);
 	line-height: 1.3em;
 	padding-top: 0.1em;
+	border-radius: var(--block-roundness);
 }
 
 /* hover file */
@@ -1844,13 +1886,15 @@ based on css from @Mara https://github.com/Mara-Li/Obsidian-Snippet-collection *
 	background: var(--background-secondary);
 }
 
-/*thicker "community plugins" and "appearance"*/
+/*thicker "community plugins", "hotkey" & "appearance"*/
 .vertical-tab-header-group:first-child .vertical-tab-header-group-items .vertical-tab-nav-item:nth-child(3),
+.vertical-tab-header-group:first-child .vertical-tab-header-group-items .vertical-tab-nav-item:nth-child(4),
 .vertical-tab-header-group:first-child .vertical-tab-header-group-items .vertical-tab-nav-item:last-child{
 	font-weight: 900;
 	text-rendering: geometricPrecision;
 }
 .theme-dark .vertical-tab-header-group:first-child .vertical-tab-header-group-items .vertical-tab-nav-item:nth-child(3),
+.theme-dark .vertical-tab-header-group:first-child .vertical-tab-header-group-items .vertical-tab-nav-item:nth-child(4),
 .theme-dark .vertical-tab-header-group:first-child .vertical-tab-header-group-items .vertical-tab-nav-item:last-child{
 	color: var(--bold-in-darkmode);
 }
@@ -3100,7 +3144,7 @@ ol ul::before {
 }
 
 /* ─────────────────────────────────────────────────── */
-/* > SMALL FIXES */
+/* > Small */
 /* ─────────────────────────────────────────────────── */
 
 /* numbers with same width */
@@ -3906,13 +3950,15 @@ button.MS-OpenSnippet:hover svg.ms-snippet path{
 body #search-res-hover.show,
 body #block-ref-hover.show{
 	color: var(--text-muted);
-	background-color: var(--background-primary-alt);
+	/*background-color: var(--background-primary-alt);*/
 	border-radius: calc(var(--block-roundness));
 }
 
 body #search-res-hover.show:hover,
 body #block-ref-hover.show:hover {
 	color: var(--alt-accent);
+	background-color: var(--background-primary-alt);
+	border-radius: calc(var(--block-roundness));
 }
 /* ─────────────────────────────────────────────────── */
 /* > Dangling Links */
@@ -4014,14 +4060,21 @@ pre button.copy:hover::before{
 	font-size: 1.4em;
 }
 
+.suggestion-item.is-selected .another-quick-switcher__item__icon,
 .suggestion-item.is-selected .another-quick-switcher__item__directory{
 	color: var(--text-accent);
-	opacity: 0.7;
+	opacity: 0.6;
 }
 
+.suggestion-item:hover .another-quick-switcher__item__icon,
 .suggestion-item:hover .another-quick-switcher__item__directory{
 	color: var(--editor-alt-accent);
-	opacity: 0.7;
+	opacity: 0.6;
+}
+
+.suggestion-item .another-quick-switcher__item__icon{
+   transform: scale(0.85);
+	left: 5px;
 }
 
 
@@ -4243,7 +4296,7 @@ settings:
 	 default: '"iA Writer Quattro V"'
   -
 	 id: sidebar-font-size
-	 title: Side Font Size
+	 title: Side Bar Font Size
 	 type: variable-number-slider
 	 default: 0.875
 	 min: 0.5
@@ -4366,7 +4419,7 @@ settings:
 	 type: variable-number-slider
 	 default: 350
 	 min: 200
-	 max: 500
+	 max: 600
 	 step: 50
 	 format: px
   -
