@@ -1,6 +1,6 @@
 /*───────────────────────────────────────────────────────
 SHIMMERING FOCUS
-Version 1.80
+Version 1.81
 https://github.com/chrisgrieser/shimmering-focus/
 Created by @pseudometa (Discord) aka @chrisgrieser (GitHub)
 MIT License
@@ -17,6 +17,7 @@ For help and/or CSS snippets, thanks to:
 - @NothingIsLost
 - @phibr0
 - @Damian Korcz
+- @vslinko
 ────────────────────────────────────────────────────── */
 
 /* ─────────────────────────────────────────────────── */
@@ -24,15 +25,17 @@ For help and/or CSS snippets, thanks to:
 /* ─────────────────────────────────────────────────── */
 
 :root {
-	--accent-lighter: #a09beb;
-	--alt-accent: #02ac7d;
+	--accent-lighter: hsl(243, 66%, 76%);
+	--accent-lightest: hsl(243, 66%, 90%);
+	--alt-accent: hsl(163, 97%, 34%);
+	--alt-accent-lighter: hsl(164, 100%, 41%);
+	--alt-accent-lightest: hsl(164, 100%, 60%);;
 	--alt-accent-darker: #009a72;
-	--alt-accent-lighter: #00d29a;
+
 	--code-color: var(--alt-accent-darker);
 	--html-tag-color: var(--alt-accent-darker);
 	--scrollbar-hover:  var(--alt-accent-lighter);
 	--pseudo-admonition-border: var(--accent-lighter);
-	--cursor-color: var(--accent-lighter);
 	--scrollbar-active: var(--accent-lighter);
 	--highlight-color: #00ff8866;
 	--highlight-alt1: #ffff0066;
@@ -42,6 +45,7 @@ For help and/or CSS snippets, thanks to:
 	--unresolved-link-color: #0F80FF;
 	--backdrop-color: hsl(228deg 70% 7%);
 	--active-line: #adae9820;
+	--cursor-monocolor: var(--accent-lighter);
 
 	--block-roundness: 6px;
 	--resize-handle-thickness: 0.25em;
@@ -66,6 +70,8 @@ For help and/or CSS snippets, thanks to:
 	--tooltip-notification-bg: var(--text-faint);
 	--tooltip-notification-text: var(--interactive-normal);
 	--tooltip-notification-border: var(--text-muted);
+	--cursor-duo-color-1: var(--alt-accent-lightest);
+	--cursor-duo-color-2: var(--accent-lighter);
 }
 
 .theme-dark {
@@ -81,6 +87,8 @@ For help and/or CSS snippets, thanks to:
 	--tooltip-notification-bg: var(--extra-contrast);
 	--tooltip-notification-text: var(--interactive-normal);
 	--tooltip-notification-border: var(--text-muted);
+	--cursor-duo-color-1: var(--alt-accent-lighter);
+	--cursor-duo-color-2: var(--accent-lighter);
 }
 
 
@@ -883,7 +891,10 @@ pre[class~="language-html"]:after {
 	content: "HTML";
 }
 pre[class~="language-txt"]:after {
-	content: "TXT";
+	content: "text";
+}
+pre[class~="language-text"]:after {
+	content: "text";
 }
 
 /* fix for the buggy selection fo inline text
@@ -1068,6 +1079,10 @@ a.tag:hover {
 	border-color: var(--background-primary-alt);
 }
 
+.modal.mod-sync-history .setting-item-control{
+	justify-content: unset;
+}
+
 .sync-history-list-item.is-active .u-muted,
 .sync-history-list-item:hover .u-muted{
 	color: var(--text-normal);
@@ -1210,13 +1225,13 @@ a.tag:hover {
 
 /*needs the "1" at the end:  https://www.digitalocean.com/community/tutorials/css-gradient-borders-pure-css */
 .CodeMirror-cursor {
-	border-left-width: 3px;
-	border-image: linear-gradient(45deg, var(--accent-lighter), var(--alt-accent-lighter)) 1;
+	border-left-width: 3.5px;
+	border-image: linear-gradient(45deg, var(--cursor-duo-color-1), var(--cursor-duo-color-2)) 1;
 }
 
 body.mono-color-cursor .CodeMirror-cursor{
 	border-image: none;
-	border-color: var(--accent-lighter);
+	border-color: var(--cursor-monocolor);
 }
 
 body.block-cursor .CodeMirror-cursor{
@@ -2897,27 +2912,49 @@ blockquote {
 /* > DOCUMENT SEARCH / REPLACE (cmd + F) */
 /* ─────────────────────────────────────────────────── */
 
+/* move up to avoid collision with statusbar */
 .document-search-container {
-	/* move up to avoid collision with statusbar */
 	bottom: 2.5em;
 	background-color:var(--background-secondary-alt);
-	border: 2px solid var(--hr-line);
+	border: 4px solid var(--background-primary-alt);
 	border-radius: var(--block-roundness);
 	width: 95%;
 	left: 2.5%;
 	height: 3.5em;
 }
-
 .document-search-container.mod-replace-mode {
 	height: 6em;
 }
 
-/* for whatever reason, 0px shows the bar without
-search and leaving it at 50px shows it when searching
-without replace ლ(ಠ_ಠლ)╯ */
-.CodeMirror-scroll{
-	padding-bottom: 200px;
+/* for whatever reason the scrollbar
+shows up on the bottom when replacing/searching
+ლ(ಠ_ಠლ)╯ */
+.is-replacing .CodeMirror-scroll{
+	padding-bottom: 120px;
 }
+.is-searching .CodeMirror-scroll{
+	padding-bottom: 70px;
+}
+
+/* more recognizable red */
+.theme-dark .document-search-input.mod-no-match:hover,
+.theme-dark .document-search-input.mod-no-match{
+	background-color: hsl(357deg 100% 15%);
+}
+.theme-light .document-search-input.mod-no-match:hover,
+.theme-light .document-search-input.mod-no-match{
+	background-color: hsl(359, 80%, 85%);
+}
+
+.document-search-input:focus,
+.document-replace-input:focus{
+	border: 2px solid var(--accent-lighter);
+}
+.document-search-input:hover,
+.document-replace-input:hover{
+	border: 2px solid var(--alt-accent-lighter);
+}
+
 
 input.document-search-input,
 input.document-replace-input{
@@ -2926,11 +2963,6 @@ input.document-replace-input{
 	background-color: var(--background-primary);
 	margin-top: 0.2em;
 	height: 1.6em;
-}
-
-input.document-search-input:hover,
-input.document-replace-input:hover{
-	background-color: var(--background-primary);
 }
 
 .document-search-button{
@@ -2944,7 +2976,7 @@ input.document-replace-input:hover{
 .document-search-button:hover{
 	background-color: var(--alt-accent);
 	opacity: 0.9;
-	color: var(--text-on-accent);
+	color: var(--interaction-normal);
 }
 
 /* ─────────────────────────────────────────────────── */
@@ -2952,25 +2984,32 @@ input.document-replace-input:hover{
 /* ─────────────────────────────────────────────────── */
 /*https://help.obsidian.md/Plugins/Graph+view#Custom+CSS*/
 
+/* graph controls */
+.graph-controls-button{
+	color: var(--extra-contrast);
+	padding: 4px;
+	margin-top: 0 !important;
+	border-radius: var(--block-roundness);
+}
 .graph-controls-button:hover{
 	color: var(--alt-accent);
+	background-color: var(--background-secondary);
 }
 .graph-controls-button:active{
 	color: var(--text-accent);
-}
-.graph-controls-button{
-	color: var(--extra-contrast);
 }
 .tree-item-self:hover .graph-control-section-header{
 	color: var(--alt-accent);
 }
 
-/* local graph controls */
 .graph-controls.is-close{
-	background-color: var(--background-secondary);
+	background-color: transparent;
 	padding: 0;
+	top: 5px;
 }
 
+
+/* graph itself */
 /* node of current node (local graph) */
 .graph-view.color-fill-focused{
 	color: var(--text-accent);
@@ -3085,8 +3124,34 @@ body:not(.standard-mermaid-font) .mermaid{
 /* based on css from the outliner plugin */
 /* https://github.com/vslinko/obsidian-outliner/blob/main/styles.css */
 
-/* edit mode */
-.cm-hmd-list-indent .cm-tab {
+/* Edit Mode */
+.cm-s-obsidian .HyperMD-list-line {
+  overflow: hidden;
+}
+
+.cm-hmd-list-indent {
+  position: relative;
+}
+
+.CodeMirror-line .cm-hmd-list-indent::before {
+  content: '';
+  display: block;
+  position: absolute;
+  background-image: linear-gradient(to right, var(--text-faint) 1px, transparent 1px);
+  background-size: 1.8em 1px;
+  background-position-x: 3px;
+  width: 100%;
+  left: 0;
+  top: -1.6em;
+  padding-bottom: 999em;
+}
+
+.cm-s-obsidian .HyperMD-list-line {
+  padding-top: 0.4em;
+}
+
+/* old solution */
+/*.cm-hmd-list-indent .cm-tab {
 	position: relative;
 }
 
@@ -3097,13 +3162,13 @@ body:not(.standard-mermaid-font) .mermaid{
 	left: 3px;
 	top: -9px;
 	bottom: -9999px;
-}
+}*/
 
 /* ":not(.HyperMD-table-2)" prevents targeting tables */
-.cm-s-obsidian .CodeMirror-line:not(.HyperMD-table-2) {
+/*.cm-s-obsidian .CodeMirror-line:not(.HyperMD-table-2) {
 	position: relative;
 	overflow: hidden;
-}
+}*/
 
 /* Preview Mode */
 ul ul,
@@ -3326,6 +3391,14 @@ body .workspace-leaf-content[data-type=kanban] .view-header:hover{
 }
 
 /* more condensed */
+.kanban-plugin__board.kanban-plugin__board .kanban-plugin__item-tag,
+.kanban-plugin__board.kanban-plugin__board .kanban-plugin__item-tags,
+.kanban-plugin__board.kanban-plugin__board .kanban-plugin__item-metadata{
+	padding-top: 0;
+	margin-top: 0;
+	padding-left: 0;
+}
+
 .kanban-plugin__drag-container p,
 .workspace-leaf-content[data-type=kanban] p{
 	font-size: 0.95em;
@@ -3655,9 +3728,6 @@ body:not(.longform-left-aligned) .longform-leaf .cm-s-obsidian{
 	font-family: var(--longform-font);
 }
 
-:root{
-  --longform-heading-scale: 1.1;
-}
 .longform-leaf .cm-header-1,
 .longform-leaf .cm-header-2,
 .longform-leaf .cm-header-3,
@@ -3671,9 +3741,11 @@ body:not(.longform-left-aligned) .longform-leaf .cm-s-obsidian{
 	text-align: start;
 	font-family: var(--longform-font);
 	line-height: 1.2em;
-	letter-spacing: 0.5px;
 }
 
+:root{
+  --longform-heading-scale: 1;
+}
 .longform-leaf .cm-header-1,
 .longform-leaf .markdown-preview-view h1 {
 	font-size: calc(var(--h1-size) * var(--longform-heading-scale));
@@ -4031,7 +4103,7 @@ pre button.copy{
 	margin: 0;
 	position: absolute;
 	background-color: var(--background-secondary-alt);
-	border: 3px solid var(--background-primary);
+	border: 2px solid var(--background-primary);
 	font-size: 0;
 	color: var(--extra-contrast);
 	border-radius: var(--block-roundness);
