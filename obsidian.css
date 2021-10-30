@@ -1,6 +1,6 @@
 /*───────────────────────────────────────────────────────
 SHIMMERING FOCUS
-Version 1.81
+Version 1.82
 https://github.com/chrisgrieser/shimmering-focus/
 Created by @pseudometa (Discord) aka @chrisgrieser (GitHub)
 MIT License
@@ -156,7 +156,7 @@ For help and/or CSS snippets, thanks to:
 	--h3-size: 1.45em;
 	--h4-size: 1.3em;
 	--h5-size: 1.15em;
-	--monospace-font-size: 0.9em;
+	--monospace-font-size: 0.95em;
 	--longform-font-size: 1.2em;
 	--sidebar-font-size: 0.875em;
 	--sidebar-font-size1: 0.9em;
@@ -709,7 +709,7 @@ body:not(.show-statusbar) .status-bar:hover {
 }
 
 /* ─────────────────────────────────────────────────── */
-/* > Buttons & Checkboxes & Input & Textarea */
+/* > Buttons & Checkboxes */
 /* ─────────────────────────────────────────────────── */
 
 button{
@@ -759,10 +759,24 @@ body:not(.normal-checkboxes) .checkbox-container.is-enabled {
 }
 
 
+/* ─────────────────────────────────────────────────── */
+/* > Input & Textarea */
+/* ─────────────────────────────────────────────────── */
+
+.modal-container.mod-confirmation input{
+	width: 30em;
+}
+
 input{
 	padding: 5px !important;
 	padding-right: 0 !important;
 	left: 0 !important;
+}
+
+/*stretch them*/
+.search-input-container{
+	margin-right: 5px;
+	margin-left: 5px;
 }
 
 textarea:hover,
@@ -1225,7 +1239,7 @@ a.tag:hover {
 
 /*needs the "1" at the end:  https://www.digitalocean.com/community/tutorials/css-gradient-borders-pure-css */
 .CodeMirror-cursor {
-	border-left-width: 3.5px;
+	border-left-width: 3px;
 	border-image: linear-gradient(45deg, var(--cursor-duo-color-1), var(--cursor-duo-color-2)) 1;
 }
 
@@ -1678,7 +1692,7 @@ based on css from @Mara https://github.com/Mara-Li/Obsidian-Snippet-collection *
 }
 
 /* ─────────────────────────────────────────────────── */
-/* > FOLDER & NOTE ICONS */
+/* > FOLDER ICONS & NOTE ICONS */
 /* ─────────────────────────────────────────────────── */
 .nav-folder-title-content::before,
 .nav-file-title-content::before {
@@ -1969,7 +1983,6 @@ based on css from @Mara https://github.com/Mara-Li/Obsidian-Snippet-collection *
 .theme-dark .vertical-tab-header-group:first-child .vertical-tab-header-group-items .vertical-tab-nav-item:last-child:hover{
 	color: var(--alt-accent);
 }
-
 .theme-dark .vertical-tab-header-group:first-child .vertical-tab-header-group-items .vertical-tab-nav-item:nth-child(3).is-active,
 .theme-dark .vertical-tab-header-group:first-child .vertical-tab-header-group-items .vertical-tab-nav-item.is-active{
 	color: var(--text-accent);
@@ -2077,14 +2090,25 @@ based on css from @Mara https://github.com/Mara-Li/Obsidian-Snippet-collection *
 }
 .community-plugin-downloads::before,
 .community-plugin-downloads-text {
-	content: "↓";
 	font-size: 0.9em;
 	color: var(--extra-contrast);
+}
+.community-plugin-downloads::before{
+	vertical-align: top;
+	content: "↓";
 }
 
 /* color hovered item in theme style */
 .community-plugin-item:hover {
 	color: var(--alt-accent);
+}
+
+.community-plugin-item:hover .community-plugin-author,
+.community-plugin-item:hover .community-plugin-downloads::before,
+.community-plugin-item:hover .community-plugin-downloads-text,
+.community-plugin-item:hover .community-plugin-desc{
+	color: var(--alt-accent);
+	opacity: 0.5;
 }
 
 /*plugin info */
@@ -2112,6 +2136,14 @@ based on css from @Mara https://github.com/Mara-Li/Obsidian-Snippet-collection *
 }
 .community-plugin-readme {
 	padding-top: 0 !important;
+}
+/*input search box*/
+.community-plugin-search .setting-item .setting-item-info{
+	display: none;
+}
+
+.community-plugin-search .setting-item input{
+	margin-right: 0.9em;
 }
 
 
@@ -3147,7 +3179,7 @@ body:not(.standard-mermaid-font) .mermaid{
 }
 
 .cm-s-obsidian .HyperMD-list-line {
-  padding-top: 0.4em;
+  padding-top: 0.2em;
 }
 
 /* old solution */
@@ -4149,6 +4181,30 @@ pre button.copy:hover::before{
 	left: 5px;
 }
 
+/*unresolved items*/
+.another-quick-switcher__phantom_item .another-quick-switcher__item__icon,
+.another-quick-switcher__phantom_item .another-quick-switcher__item__directory,
+.suggestion-item .another-quick-switcher__phantom_item{
+	color: var(--unresolved-link-color);
+}
+.another-quick-switcher__phantom_item .another-quick-switcher__item__icon,
+.another-quick-switcher__phantom_item .another-quick-switcher__item__directory,
+.suggestion-item:hover .another-quick-switcher__phantom_item{
+	opacity: 0.6;
+}
+.suggestion-item.is-selected .another-quick-switcher__phantom_item .another-quick-switcher__item__icon,
+.suggestion-item.is-selected .another-quick-switcher__phantom_item .another-quick-switcher__item__directory,
+.suggestion-item.is-selected .another-quick-switcher__phantom_item{
+	color: var(--text-accent);
+	opacity: 0.6;
+}
+.suggestion-item:hover .another-quick-switcher__phantom_item .another-quick-switcher__item__icon,
+.suggestion-item:hover .another-quick-switcher__phantom_item .another-quick-switcher__item__directory,
+.suggestion-item:hover .another-quick-switcher__phantom_item{
+	color: var(--editor-alt-accent);
+	opacity: 0.6;
+}
+
 
 /* ─────────────────────────────────────────────────── */
 /* > Other Minor Plugin Customizations */
@@ -4342,7 +4398,7 @@ settings:
 	 id: monospace-font-size
 	 title: Monospace Font Size
 	 type: variable-number-slider
-	 default: 0.9
+	 default: 0.95
 	 min: 0.5
 	 max: 2.5
 	 step: 0.1
