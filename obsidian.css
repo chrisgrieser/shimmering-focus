@@ -1,6 +1,6 @@
 /*───────────────────────────────────────────────────────
 SHIMMERING FOCUS
-Version 1.83
+Version 1.84
 https://github.com/chrisgrieser/shimmering-focus/
 Created by @pseudometa (Discord) aka @chrisgrieser (GitHub)
 MIT License
@@ -435,34 +435,7 @@ body:not(.show-ribbons) .workspace-ribbon{
 .empty-state-action{
 	display: none;
 }
-.empty-state-close-button{
-	top: 10px;
-	height: 25px;
-	border-radius: 3px;
-	padding: 2px;
-}
-.empty-state-close-button svg{
-	stroke-width: 2px;
-}
-.empty-state-close-button:hover{
-	color: var(--alt-accent);
-	background: var(--background-secondary-alt);
-}
 
-.community-plugin-details-empty-state,
-.empty-state-title{
-	font-size: 0;
-}
-.community-plugin-details-empty-state{
-	padding-top: 10rem;
-}
-/* replace empty pane info with something nicer */
-.community-plugin-details-empty-state::after,
-.empty-state-title::after{
-	content: var(--signature);
-	font-size: 10rem;
-	color: var(--extra-contrast);
-}
 
 /* ─────────────────────────────────────────────────── */
 /* > Close Buttons */
@@ -494,6 +467,20 @@ div.search-input-clear-button:hover::before,
 	padding-right: 3px;
 	border-bottom-left-radius: 6px;
 	border-top-right-radius: 6px;
+}
+
+.empty-state-close-button{
+	top: 10px;
+	height: 25px;
+	border-radius: 3px;
+	padding: 2px;
+}
+.empty-state-close-button svg{
+	stroke-width: 2px;
+}
+.empty-state-close-button:hover{
+	color: var(--alt-accent);
+	background: var(--background-secondary-alt);
 }
 
 /* only show on hover */
@@ -1919,8 +1906,8 @@ based on css from @Mara https://github.com/Mara-Li/Obsidian-Snippet-collection *
 }
 .vertical-tab-header-group-title {
 	color: var(--text-normal);
-	font-size: 1.1em;
-	letter-spacing: 2px;
+	font-size: 1.05em;
+	letter-spacing: 1px;
 	padding-top: 4px;
 	padding-bottom: 1px;
 	padding-left: 9px;
@@ -2008,8 +1995,8 @@ based on css from @Mara https://github.com/Mara-Li/Obsidian-Snippet-collection *
 /* ─────────────────────────────────────────────────── */
 /* > COMMUNITY PLUGIN BROWSER */
 /* ─────────────────────────────────────────────────── */
-/* bigger and more condensed */
 
+/* bigger and more condensed */
 .modal.mod-community-plugin {
 	height: 93%;
 	max-width: unset;
@@ -2018,48 +2005,68 @@ based on css from @Mara https://github.com/Mara-Li/Obsidian-Snippet-collection *
 
 /* search results */
 .community-plugin-item {
-	padding-top: 0.1em;
-	padding-left: 0.9em;
-	padding-right: 0.3em;
-	padding-bottom: 0.1em;
+	padding-top: 0.4em;
+	padding-left: 0.6em;
+	padding-right: 0.1em;
+	padding-bottom: 0.4em;
 	line-height: 1.2em;
-	margin-top: 0.1em;
+	margin-top: 0;
+	margin-bottom: 0;
+	border-bottom: 1px solid var(--background-primary-alt);
 }
 
 .community-plugin-search-summary.u-muted {
 	font-weight: 600;
-	padding-left: 0.9em;
+	padding-left: 0.6em;
 	font-style: italic;
 	text-transform: capitalize;
+	border-bottom: 1px solid var(--background-primary-alt);
 }
 
-.community-plugin-author,
+.community-plugin-downloads::before,
+.community-plugin-downloads,
 .community-plugin-desc,
 .community-plugin-version {
-	font-size: 0.85em !important;
-	line-height: 1.3em;
+	line-height: 80%;
+}
+
+.community-plugin-version {
+	margin-top: 10px;
+}
+
+.community-plugin-downloads{
+	margin-right: 12px;
+	margin-bottom: 4px;
+	vertical-align: bottom !important;
+}
+
+.community-plugin-search-results .community-plugin-author{
+	font-size: 0.85em;
 	color: var(--extra-contrast);
+	opacity: 0.8;
+	font-family: var(--smallcap-font);
+	line-height: 1em;
+	margin-top: 2px;
+	display: inline-block;
+	vertical-align: top;
 }
 /* lowercase "by"*/
 .community-plugin-author::first-letter{
 	text-transform: lowercase;
 }
 
-.community-plugin-search-results .community-plugin-author {
-	font-style: italic;
-}
 .community-plugin-name {
-	line-height: 1.3em !important;
+	line-height: 90% !important;
 	font-size: 0.9em;
 	font-weight: 600;
 }
+
+/*Search input*/
 .community-plugin-search{
 	padding-top: 10px;
 	border-top-left-radius: 12px;
 	border-bottom-left-radius: 12px;
 }
-
-/*sort button*/
 .community-plugin-search button.clickable-icon{
 	background-color: var(--background-primary-alt) !important;
 	color: var(--extra-contrast);
@@ -2071,11 +2078,22 @@ based on css from @Mara https://github.com/Mara-Li/Obsidian-Snippet-collection *
 	color: var(--interactive-normal);
 }
 
-
-.community-plugin-search,
-.community-plugin-search .search-input-container{
+.community-plugin-search{
 	margin-left: 0;
 }
+
+.community-plugin-search .search-input-container{
+	margin-left: 0.4em;
+}
+
+.community-plugin-search .setting-item .setting-item-info{
+	display: none;
+}
+
+.community-plugin-search .setting-item input{
+	margin-right: 0.9em;
+}
+
 /*installation icon*/
 .flair.mod-pop {
 	top: 5px;
@@ -2095,7 +2113,6 @@ based on css from @Mara https://github.com/Mara-Li/Obsidian-Snippet-collection *
 	font-family: Inter;
 	line-height: 0.8;
 }
-
 .community-plugin-info .community-plugin-name .flair.mod-pop::before{
 	font-size: 1.2rem;
 }
@@ -2118,12 +2135,14 @@ based on css from @Mara https://github.com/Mara-Li/Obsidian-Snippet-collection *
 .community-plugin-item:hover {
 	color: var(--alt-accent);
 }
-
+.community-plugin-item:hover .community-plugin-name .flair.mod-pop::before{
+	opacity: 0.4;
+}
 .community-plugin-item:hover .community-plugin-author,
 .community-plugin-item:hover .community-plugin-downloads::before,
 .community-plugin-item:hover .community-plugin-downloads-text,
 .community-plugin-item:hover .community-plugin-desc{
-	color: var(--alt-accent);
+	color: var(--text-faint);
 	opacity: 0.8;
 }
 
@@ -2136,12 +2155,21 @@ based on css from @Mara https://github.com/Mara-Li/Obsidian-Snippet-collection *
 .community-plugin-readme li{
 	font-size: 1em;
 }
-
-/*hide redundant info*/
-.community-plugin-info .community-plugin-desc{
-	display: none;
+.community-plugin-info .community-plugin-name{
+	font-size: var(--h1-size);
 }
-.community-plugin-info h1{
+.community-plugin-info h2,
+.community-plugin-info h3,
+.community-plugin-info h4,
+.community-plugin-info h5,
+.community-plugin-info h6{
+	margin-top: 10px !important;
+}
+
+
+
+.community-plugin-info h1,
+.community-plugin-info .community-plugin-desc{
 	display: none;
 }
 .community-plugin-info hr{
@@ -2153,15 +2181,21 @@ based on css from @Mara https://github.com/Mara-Li/Obsidian-Snippet-collection *
 .community-plugin-readme {
 	padding-top: 0 !important;
 }
-/*input search box*/
-.community-plugin-search .setting-item .setting-item-info{
-	display: none;
-}
 
-.community-plugin-search .setting-item input{
-	margin-right: 0.9em;
+/*empty state*/
+.community-plugin-details-empty-state,
+.empty-state-title{
+	font-size: 0;
 }
-
+.community-plugin-details-empty-state{
+	padding-top: 16rem;
+}
+.community-plugin-details-empty-state::after,
+.empty-state-title::after{
+	content: var(--signature);
+	font-size: 10rem;
+	color: var(--extra-contrast);
+}
 
 /* ─────────────────────────────────────────────────── */
 /* > COMMUNITY THEME BROWSER */
@@ -3962,7 +3996,7 @@ button.MS-OpenSnippet:hover svg.ms-snippet path{
 
 /* upper half spacing */
 .workspace-leaf-content[data-type="map-of-content"] .view-content {
-	padding-top: 10px;
+	padding-top: 0;
 	padding-left: 8px;
 	padding-right: 4px;
 	padding-bottom: 0;
@@ -4014,8 +4048,12 @@ button.MS-OpenSnippet:hover svg.ms-snippet path{
 
 /*seperation line */
 #main_moc_div .path{
-	border-bottom: 3px solid var(--hr-line);
+	border-bottom: 2px solid var(--hr-line);
 	padding-bottom: 15px;
+	padding-top: 15px;
+}
+#main_moc_div .path:first-of-type{
+	padding-top: 0 !important;
 }
 
 /* central & current note*/
