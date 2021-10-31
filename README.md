@@ -103,6 +103,8 @@
 You can find *Shimmering Focus* in Obsidian's community themes browser under `Settings ➞ Appearance ➞ Themes`.
 
 ## Credits
+
+### Thanks
 For help and/or CSS snippets, thanks to:
 - **@SlRvb**
 - **@javalent**
@@ -116,4 +118,10 @@ For help and/or CSS snippets, thanks to:
 - @phibr0
 - @Damian Korcz
 
-This theme has been created by @pseudometa#9546 ([Discord](https://discord.gg/veuWUTm)) aka [@pseudo_meta (Twitter)](https://twitter.com/pseudo_meta) aka Chris Grieser (rl). If you find this theme to be useful, feel free to donate [via PayPal](https://www.paypal.com/paypalme/ChrisGrieser). In my day job, I am a PhD student in sociology, studying the governance of the app economy. If you are interested in this subject, check out [my academic homepage](https://chris-grieser.de/) and get in touch.
+### Donations
+- [PayPal](https://www.paypal.com/paypalme/ChrisGrieser).
+- [Ko-Fi](https://ko-fi.com/pseudometa)
+- Thanks 🙏
+
+### About the Author
+This theme has been created by @pseudometa#9546 ([Discord](https://discord.gg/veuWUTm)) aka [@pseudo_meta (Twitter)](https://twitter.com/pseudo_meta) aka Chris Grieser (rl). In my day job, I am a PhD student in sociology, studying the governance of the app economy. If you are interested in this subject, check out [my academic homepage](https://chris-grieser.de/) and get in touch.
