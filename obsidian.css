@@ -1,6 +1,6 @@
 /*───────────────────────────────────────────────────────
 SHIMMERING FOCUS
-Version 1.84
+Version 1.85
 https://github.com/chrisgrieser/shimmering-focus/
 Created by @pseudometa (Discord) aka @chrisgrieser (GitHub)
 MIT License
@@ -26,10 +26,10 @@ For help and/or CSS snippets, thanks to:
 
 :root {
 	--accent-lighter: hsl(243, 66%, 76%);
-	--accent-lightest: hsl(243, 66%, 90%);
+	--accent-lightest: hsl(259, 100%, 80%);
 	--alt-accent: hsl(163, 97%, 34%);
 	--alt-accent-lighter: hsl(164, 100%, 41%);
-	--alt-accent-lightest: hsl(164, 100%, 60%);;
+	--alt-accent-lightest: hsl(164, 100%, 70%);;
 	--alt-accent-darker: #009a72;
 
 	--code-color: var(--alt-accent-darker);
@@ -71,7 +71,7 @@ For help and/or CSS snippets, thanks to:
 	--tooltip-notification-text: var(--interactive-normal);
 	--tooltip-notification-border: var(--text-muted);
 	--cursor-duo-color-1: var(--alt-accent-lightest);
-	--cursor-duo-color-2: var(--accent-lighter);
+	--cursor-duo-color-2: var(--accent-lightest);
 }
 
 .theme-dark {
@@ -173,7 +173,7 @@ For help and/or CSS snippets, thanks to:
 	--monospace-font-size: 0.95em;
 	--longform-font-size: 1.2em;
 	--sidebar-font-size: 0.875em;
-	--sidebar-font-size1: 0.9em;
+	--sidebar-font-size: 0.9em;
 }
 
 .CodeMirror-linenumber{
@@ -196,7 +196,7 @@ button{
 .outline,
 .nav-folder-title,
 .nav-file-title{
-	font-size: var(--sidebar-font-size1);
+	font-size: var(--sidebar-font-size);
 	font-family: var(--sidebar-font-family);
 }
 
@@ -204,7 +204,7 @@ button{
 .workspace-leaf-content[data-type="dangling-links"],
 .workspace-leaf-content[data-type="Saved Queries View"],
 .workspace-leaf-content[data-type="map-of-content"]{
-	font-size: var(--sidebar-font-size1);
+	font-size: var(--sidebar-font-size);
 	font-family: var(--sidebar-font-family);
 }
 
@@ -719,7 +719,7 @@ button{
 
 button:hover{
 	background-color: var(--button-hover) !important;
-	color: var(--interactive-normal);
+	color: var(--interactive-normal) !important;
 }
 
 body:not(.normal-checkboxes) .checkbox-container.is-enabled:hover,
@@ -918,6 +918,21 @@ https://forum.obsidian.md/t/inline-code-occludes-text-selection-and-vim-cursor/1
 	background-color: rgba(0, 0, 0, 0.2) !important;
 }
 
+/* copy code button */
+button.copy-code-button{
+	padding: 6px 5px 4px 9px;
+	background-color: var(--background-secondary-alt);
+	border: 2px solid var(--background-primary);
+	font-size: 0;
+	color: var(--extra-contrast);
+	border-radius: var(--block-roundness);
+}
+button.copy-code-button::before{
+	font-family: "Material Icons";
+	content: "content_copy ";
+	font-size: 0.75rem;
+}
+
 /* ─────────────────────────────────────────────────── */
 /* > Spellcheck Error Overlay */
 /* ─────────────────────────────────────────────────── */
@@ -929,9 +944,11 @@ https://forum.obsidian.md/t/inline-code-occludes-text-selection-and-vim-cursor/1
 	text-decoration-thickness: 2px;
 }
 
-/* do not spellcheck inside a blockquote, yaml, or code */
+/* do not spellcheck inside a html, yaml, or code */
+.cm-attribute.cm-overlay.cm-spell-error,
+.cm-tag.cm-overlay.cm-spell-error,
+.cm-string.cm-overlay.cm-spell-error,
 .cm-hmd-frontmatter.cm-overlay.cm-spell-error,
-span.cm-quote.cm-quote-1.cm-overlay.cm-spell-error,
 .HyperMD-codeblock.cm-spell-error,
 span.cm-inline-code.cm-spell-error {
 	text-decoration: none;
@@ -980,7 +997,7 @@ a.tag {
 	text-decoration: none !important;
 }
 
-/* ensures similar height of "#" and text of tags */
+/* ensures equal height of "#" and text of tags */
 .cm-formatting.cm-formatting-hashtag.cm-hashtag-begin.cm-hashtag.cm-meta{
 	font-family: var(--default-font);
 }
@@ -998,11 +1015,20 @@ a.tag:hover {
 	color: var(--text-muted) !important;
 }
 
+/* ensures equal height of "#" and text of tags */
+.cm-tag.cm-bracket.cm-hmd-html-begin,
+.cm-tag.cm-bracket.cm-hmd-html-end,
+.cm-tag,
+.cm-attribute,
+.cm-string{
+	font-family: var(--default-font);
+}
+
+
 .cm-tag.cm-bracket.cm-hmd-html-begin,
 .cm-tag.cm-bracket.cm-hmd-html-end,
 .cm-tag{
 	color: var(--html-tag-color) !important;
-	font-family: var(--font-monospace) !important;
 }
 
 /* ─────────────────────────────────────────────────── */
@@ -1241,7 +1267,7 @@ a.tag:hover {
 /*needs the "1" at the end:  https://www.digitalocean.com/community/tutorials/css-gradient-borders-pure-css */
 .CodeMirror-cursor {
 	border-left-width: 3px;
-	border-image: linear-gradient(45deg, var(--cursor-duo-color-1), var(--cursor-duo-color-2)) 1;
+	border-image: linear-gradient(var(--cursor-duo-color-1), var(--cursor-duo-color-2)) 1;
 }
 
 body.mono-color-cursor .CodeMirror-cursor{
@@ -2663,6 +2689,10 @@ table:not(.dataview.table-view-table) th {
 .markdown-preview-view h5 {
 	margin-top: 1.2em;
 	margin-bottom: 0.5em;
+}
+
+.cm-formatting.cm-formatting-header{
+	color: var(--text-faint);
 }
 
 body:not(.less-heading-letter-spacing) .cm-header-1,
