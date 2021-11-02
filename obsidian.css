@@ -1,6 +1,6 @@
 /*───────────────────────────────────────────────────────
 SHIMMERING FOCUS
-Version 1.86
+Version 1.87
 https://github.com/chrisgrieser/shimmering-focus/
 Created by @pseudometa (Discord) aka @chrisgrieser (GitHub)
 MIT License
@@ -2054,10 +2054,10 @@ based on css from @Mara https://github.com/Mara-Li/Obsidian-Snippet-collection *
 .community-plugin-downloads::before,
 .community-plugin-downloads,
 .community-plugin-desc,
-.community-plugin-version {
+.community-plugin-search .community-plugin-version {
 	line-height: 80%;
 }
-.community-plugin-version {
+.community-plugin-search .community-plugin-version {
 	margin-top: 10px;
 }
 
@@ -2079,11 +2079,11 @@ based on css from @Mara https://github.com/Mara-Li/Obsidian-Snippet-collection *
 	vertical-align: top;
 }
 /* lowercase "by"*/
-.community-plugin-author::first-letter{
+.community-plugin-search .community-plugin-author::first-letter{
 	text-transform: lowercase;
 }
 
-.community-plugin-name {
+.community-plugin-search .community-plugin-name {
 	line-height: 90% !important;
 	font-size: 0.9em;
 	font-weight: 600;
@@ -2175,30 +2175,51 @@ based on css from @Mara https://github.com/Mara-Li/Obsidian-Snippet-collection *
 .community-plugin-info .community-plugin-name{
 	font-family: var(--heading-font);
 	letter-spacing: 0.7px;
-	font-size: 1.5em;
+	font-size: calc(var(--h1-size) * 1.2);
+	border-bottom: 3px solid var(--hr-line);
+	padding-bottom: 5px;
+	margin-bottom: 12px;
+	font-weight: 600;
+	text-rendering: geometricPrecision;
 }
 .community-plugin-readme li{
 	font-size: 1em;
 }
-.community-plugin-info .community-plugin-name{
-	font-size: var(--h1-size);
+.community-plugin-info .community-plugin-version,
+.community-plugin-info .community-plugin-author{
+	line-height: 1.4em;
+	font-family: var(--smallcap-font);
+	font-size: 1.0em;
+	letter-spacing: 0.5px;
+	color: var(--extra-contrast);
 }
+
+.community-plugin-info .community-plugin-author:nth-child(3)::first-letter{
+	text-transform: lowercase;
+}
+.community-plugin-info p:nth-child(6){
+	margin-top: 5px;
+	margin-bottom: 10px;
+}
+
 .community-plugin-info h2,
 .community-plugin-info h3,
 .community-plugin-info h4,
 .community-plugin-info h5,
 .community-plugin-info h6{
 	margin-top: 10px !important;
+	text-rendering: geometricPrecision;
 }
 
-
-
+.community-plugin-info hr,
 .community-plugin-info h1,
 .community-plugin-info .community-plugin-desc{
 	display: none;
 }
-.community-plugin-info hr{
-	margin: 5px;
+.community-plugin-info div.community-plugin-readme{
+	border-top: 3px solid var(--background-modifier-border);
+	margin-top: 15px !important;
+	padding-top: 5px !important;
 }
 .community-plugin-info{
 	padding: 10px 5px 10px 15px;
