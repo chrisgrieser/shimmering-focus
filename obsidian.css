@@ -1,6 +1,6 @@
 /*───────────────────────────────────────────────────────
 SHIMMERING FOCUS
-Version 1.88
+Version 1.88.1
 https://github.com/chrisgrieser/shimmering-focus/
 Created by @pseudometa (Discord) aka @chrisgrieser (GitHub)
 MIT License
@@ -3536,6 +3536,10 @@ https://forum.obsidian.md/t/inline-code-occludes-text-selection-and-vim-cursor/1
 }
 
 /* thanks @Damian Korcz for this*/
+.kanban-plugin__board button{
+	border: unset !important;
+}
+
 body .workspace-leaf-content[data-type=kanban] .view-header,
 .kanban-plugin__board {
 	background-size: var(--dot-spacing) var(--dot-spacing);
@@ -3591,7 +3595,7 @@ body:not(.not-ia-writer-font) .workspace-leaf-content[data-type=kanban] p{
 
 /*vertical three dots*/
 .kanban-plugin__lane-settings-button-wrapper svg{
-	color: var(--extra-contrast);
+	color: var(--text-faint);
 	stroke-width: 3px !important;
 }
 .kanban-plugin__lane-settings-button-wrapper:hover svg{
