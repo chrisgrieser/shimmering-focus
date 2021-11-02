@@ -1,6 +1,6 @@
 /*───────────────────────────────────────────────────────
 SHIMMERING FOCUS
-Version 1.89
+Version 1.90
 https://github.com/chrisgrieser/shimmering-focus/
 Created by @pseudometa (Discord) aka @chrisgrieser (GitHub)
 MIT License
@@ -70,7 +70,7 @@ For help and/or CSS snippets, thanks to:
 	--tooltip-notification-border: var(--text-muted);
 	--cursor-duo-color-1: var(--alt-accent-lightest);
 	--cursor-duo-color-2: var(--accent-lightest);
-	--button-border: var(--accent-lightest);
+	--button-border: var(--accent-lighter);
 }
 .theme-dark {
 	--editor-alt-accent: var(--alt-accent);
@@ -2171,8 +2171,8 @@ based on css from @Mara https://github.com/Mara-Li/Obsidian-Snippet-collection *
 .install {
 	display: none;
 }
-.community-plugin-downloads::before,
-.community-plugin-downloads-text {
+.community-plugin-search .community-plugin-downloads::before,
+.community-plugin-search .community-plugin-downloads-text {
 	font-size: 0.9em;
 	color: var(--extra-contrast);
 }
@@ -2210,19 +2210,30 @@ based on css from @Mara https://github.com/Mara-Li/Obsidian-Snippet-collection *
 .community-plugin-readme li{
 	font-size: 1em;
 }
+
+.community-plugin-info .community-plugin-downloads::before,
+.community-plugin-info .community-plugin-downloads-text,
 .community-plugin-info .community-plugin-version,
 .community-plugin-info .community-plugin-author{
 	line-height: 1.4em;
 	font-family: var(--smallcap-font);
 	font-size: 1.0em;
 	letter-spacing: 0.5px;
+	vertical-align: unset;
 	color: var(--extra-contrast);
+}
+.community-plugin-info .community-plugin-downloads::before{
+	font-family: unset;
+	font-size: 1.1em;
 }
 
 .community-plugin-info .community-plugin-author:nth-child(3)::first-letter{
 	text-transform: lowercase;
 }
-.community-plugin-info p:nth-child(6){
+
+/* n6 for no download numbers, n7 for when there are dl numbers */
+.community-plugin-info p:nth-child(6),
+.community-plugin-info p:nth-child(7){
 	margin-top: 5px;
 	margin-bottom: 10px;
 }
