@@ -23,7 +23,9 @@
 - Active line highlighting
 - Material Icons to indicate folder and file types
 - Display of the language of a code block in Preview Mode
-- Spellcheck disabled in blockquotes, code blocks, and YAML frontmatter (only produces false positives there)
+- Spellcheck disabled in code blocks and YAML frontmatter
+- Alt Text as Image Caption
+- Styled [`<progress>` bars](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/progress)
 - **Annotation tags** (see below)
 - **Max View**: Readable line length and smaller images when left sidebar is shown, full length and full-size images when sidebar is hidden. Useful when dealing with big tables. (Requires `Readable line length` editor setting to be *enabled*.)
 
