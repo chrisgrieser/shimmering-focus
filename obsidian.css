@@ -1,6 +1,6 @@
 /*───────────────────────────────────────────────────────
 SHIMMERING FOCUS
-Version 1.90
+Version 1.92
 https://github.com/chrisgrieser/shimmering-focus/
 Created by @pseudometa (Discord) aka @chrisgrieser (GitHub)
 MIT License
@@ -37,7 +37,7 @@ For help and/or CSS snippets, thanks to:
 	--highlight-alt1: #ffff0066;
 	--highlight-alt2: #00ffff66;
 	--search-match-hl: var(--highlight-alt2);
-	--bold-in-darkmode: hsl(30deg 100% 80%);
+	--bold-in-darkmode: hsl(197, 35%, 77%);
 	--unresolved-link-color: #0F80FF;
 	--backdrop-color: hsl(228deg 70% 7%);
 	--active-line: #adae9820;
@@ -50,7 +50,7 @@ For help and/or CSS snippets, thanks to:
 	--image-size: 50%;
 	--pdf-size: 50vh;
 	--popover-size: 350px;
-	--inactive-pane-opacity: 80%;
+	--inactive-pane-opacity: 85%;
 	--signature:"⟡";
 }
 
@@ -63,7 +63,7 @@ For help and/or CSS snippets, thanks to:
 	--button-hover: var(--alt-accent);
 	--button-hover-border: var(--alt-accent-lighter);
 	--longform-background: hsl(30deg 30% 98%);
-	--finished-task: hsl(74deg 36% 60%);
+	--finished-task: var(--accent-lighter);
 	--spell-error-color: #7490FF;
 	--tooltip-notification-bg: var(--text-faint);
 	--tooltip-notification-text: var(--interactive-normal);
@@ -81,7 +81,7 @@ For help and/or CSS snippets, thanks to:
 	--button-hover: var(--alt-accent-darker);
 	--button-hover-border: var(--alt-accent-lighter);
 	--longform-background: hsl(226deg 18% 13%);
-	--finished-task: hsl(74deg 36% 40%);
+	--finished-task: var(--text-accent);
 	--spell-error-color: #637BE1;
 	--tooltip-notification-bg: var(--extra-contrast);
 	--tooltip-notification-text: var(--interactive-normal);
@@ -396,11 +396,11 @@ body:not(.show-ribbons) .workspace-ribbon{
 
 .theme-light .notice,
 .theme-dark .notice{
-	font-size: 1em;
+	font-size: 0.85em;
 	background-color: var(--tooltip-notification-bg);
-	border: 2px solid var(--tooltip-notification-border);
+	border: 1px solid var(--tooltip-notification-border);
 	color: var(--tooltip-notification-text);
-	padding: 7px 12px 7px 12px;
+	padding: 5px 10px 5px 10px;
 	border-radius: 10px;
 }
 
@@ -729,7 +729,7 @@ body:not(.show-statusbar) .status-bar:hover {
 }
 
 /* ─────────────────────────────────────────────────── */
-/* < Buttons & Checkboxes */
+/* < Buttons & Toggles (Checkboxes) */
 /* ─────────────────────────────────────────────────── */
 
 button{
@@ -748,17 +748,18 @@ button:hover{
 	border-color: var(--button-hover-border) !important;
 }
 
-body:not(.normal-checkboxes) .checkbox-container.is-enabled:hover,
-.checkbox-container.is-enabled:hover{
-	background-color: var(--alt-accent);
-	border: 3px solid var(--alt-accent-lighter);
-	opacity: 1;
-}
 body:not(.normal-checkboxes) .checkbox-container:hover,
 .checkbox-container:hover{
 	background-color: var(--alt-accent);
-	border: 3px solid var(--alt-accent-lighter);
+	border: 8px solid var(--alt-accent-lighter);
 	opacity: 0.7;
+	transition-duration: 500ms;
+}
+body:not(.normal-checkboxes) .checkbox-container.is-enabled:hover,
+.checkbox-container.is-enabled:hover{
+	background-color: var(--alt-accent);
+	border: 8px solid var(--alt-accent-lighter);
+	opacity: 1;
 }
 
 .checkbox-container {
@@ -769,10 +770,11 @@ body:not(.normal-checkboxes) .checkbox-container:hover,
 body:not(.normal-checkboxes) .checkbox-container {
 	 cursor: pointer;
 	 border-radius: 15px;
-	 border: 1px solid var(--button-border);
+	 border: 2px solid var(--button-border);
 	 width: 22px;
 	 height: 22px;
 	 background-color: var(--background-secondary);
+	 transition-duration: 500ms;
 }
 body:not(.normal-checkboxes) .checkbox-container:after {
 	 display: none;
@@ -939,10 +941,15 @@ https://forum.obsidian.md/t/inline-code-occludes-text-selection-and-vim-cursor/1
 .theme-dark .cm-inline-code {
 	background-color: rgba(0, 0, 0, 0.2) !important;
 }
+.theme-light .cm-inline-code {
+	background-color: rgba(0, 0, 0, 0.05) !important;
+}
 
-/* copy code button */
+/* < copy code button */
 button.copy-code-button{
-	padding: 6px 5px 4px 9px;
+	padding-right: 3px !important;
+	padding-left: 9px !important;
+	padding-bottom: 2px;
 	background-color: var(--background-secondary-alt);
 	border: 2px solid var(--background-primary);
 	font-size: 0;
@@ -977,6 +984,10 @@ span.cm-inline-code.cm-spell-error {
 	background-image: none;
 }
 
+
+/*.cm-hmd-frontmatter.cm-overlay.cm-spell-error {
+	background-image: none;
+}*/
 
 /* ─────────────────────────────────────────────────── */
 /* < Links */
@@ -1057,22 +1068,51 @@ a.tag:hover {
 }
 
 /* ─────────────────────────────────────────────────── */
-/* < to dos */
+/* < to dos (tasks) */
 /* ─────────────────────────────────────────────────── */
 
 /* edit mode */
 
 /* unfinished */
 .cm-s-obsidian span.cm-formatting-task {
-	font-weight: 600;
 }
 
 /* finished */
 .cm-s-obsidian span.cm-formatting-task.cm-property {
-	font-weight: 600;
 	color: var(--finished-task);
 }
 
+.task-list-item-checkbox{
+	border-radius: 50px !important;
+}
+
+/*https://forum.obsidian.md/t/meta-post-common-css-hacks/1978/34*/
+input[type=checkbox]{
+    -webkit-appearance: none;
+    appearance: none;
+    border: 2px solid var(--text-muted);
+    padding: 1px;
+    vertical-align: top;
+    margin-top: 2px;
+    filter: unset !important; /*removes hue filter*/
+}
+
+input[type=checkbox]:checked{
+    background-color: var(--finished-task);
+    border-width: 0px;
+    background-position: center;
+    background-size: 70%;
+    background-repeat: no-repeat;
+    background-image: url('data:image/svg+xml; utf8, <svg width="12px" height="10px" viewBox="0 0 12 8" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd"><g transform="translate(-4.000000, -6.000000)" fill="%23ffffff"><path d="M8.1043257,14.0367999 L4.52468714,10.5420499 C4.32525014,10.3497722 4.32525014,10.0368095 4.52468714,9.8424863 L5.24777413,9.1439454 C5.44721114,8.95166768 5.77142411,8.95166768 5.97086112,9.1439454 L8.46638057,11.5903727 L14.0291389,6.1442083 C14.2285759,5.95193057 14.5527889,5.95193057 14.7522259,6.1442083 L15.4753129,6.84377194 C15.6747499,7.03604967 15.6747499,7.35003511 15.4753129,7.54129009 L8.82741268,14.0367999 C8.62797568,14.2290777 8.3037627,14.2290777 8.1043257,14.0367999"></path></g></g></svg>');
+}
+
+input[type=checkbox]:hover{
+    border-color: var(--alt-accent);
+}
+
+input[type=checkbox]:checked:hover{
+    background-color: var(--alt-accent-lighter);
+}
 
 /* ─────────────────────────────────────────────────── */
 /* < Modal & Prompt Boxes */
@@ -1214,10 +1254,12 @@ a.tag:hover {
 /* ─────────────────────────────────────────────────── */
 
 .suggestion-prefix {
-   color: var(--text-muted);
+   color: var(--extra-contrast);
+   opacity:  0.9;
    font-family: var(--smallcap-font);
-   font-size: 1.05em;
+   font-size: 1.1em;
    padding-right: 3px;
+   letter-spacing: -0.1px;
 }
 
 .suggestion-item{
@@ -2332,7 +2374,8 @@ body:not(.less-heading-letter-spacing) .modal.mod-community-theme .modal-title{
 }
 
 /* ─────────────────────────────────────────────────── */
-/* < HIGHLIGHT & SELECTION */
+/* < HIGHLIGHT */
+/* < SELECTION */
 /* ─────────────────────────────────────────────────── */
 /* highlight active line */
 .CodeMirror-activeline .CodeMirror-linebackground {
@@ -2340,18 +2383,29 @@ body:not(.less-heading-letter-spacing) .modal.mod-community-theme .modal-title{
 	border-radius: var(--block-roundness);
 }
 
-
 /* change highlight color */
 .markdown-preview-view mark,
 .cm-s-obsidian span.cm-highlight {
 	background-color: var(--highlight-color);
 }
+.cm-formatting-highlight:first-of-type{
+	border-top-left-radius: calc(var(--block-roundness) * 0.66);
+	border-bottom-left-radius: calc(var(--block-roundness) * 0.66);
+}
+.cm-formatting-highlight:last-of-type{
+	border-top-right-radius: calc(var(--block-roundness) * 0.66);
+	border-bottom-right-radius: calc(var(--block-roundness) * 0.66);
+}
+
 
 /* color for selected text */
 .theme-light,
 .theme-dark {
 	--text-selection: var(--selection-color);
 }
+
+/*alternative method*/
+/*.CodeMirror-focused .CodeMirror-selected{}*/
 
 /* ─────────────────────────────────────────────────── */
 /* < Multi-Color Highlighting */
@@ -2584,20 +2638,20 @@ body:not(.max-view-off) .workspace-split.mod-left-split.is-collapsed ~ .mod-root
 body:not(.max-view-off) .workspace-split.mod-left-split.is-collapsed ~ .mod-root div.oz-image-widget > img{
 	max-width: 100% !important;
 }
-.view-content .markdown-preview-view img,
-body > .app-container div.oz-image-widget > img:not(:active){
+body:not(.is-mobile) .view-content .markdown-preview-view img,
+body:not(.is-mobile) > .app-container div.oz-image-widget > img:not(:active){
 	max-width: var(--image-size);
 }
 
 
 /* < PDFs */
-body:not(.max-view-off) .workspace-split.mod-left-split.is-collapsed ~ .mod-root .view-content .markdown-preview-view .pdf-embed,
-body:not(.max-view-off) .workspace-split.mod-left-split.is-collapsed ~ .mod-root div.oz-image-widget embed{
+body:not(.max-view-off):not(.is-mobile) .workspace-split.mod-left-split.is-collapsed ~ .mod-root .view-content .markdown-preview-view .pdf-embed,
+body:not(.max-view-off):not(.is-mobile) .workspace-split.mod-left-split.is-collapsed ~ .mod-root div.oz-image-widget embed{
 	max-width: 100%;
 	max-height: 100%;
 }
-.pdf-embed,
-body > .app-container div.oz-image-widget embed {
+body:not(.is-mobile) .pdf-embed,
+body:not(.is-mobile) > .app-container div.oz-image-widget embed {
 	 max-width: var(--pdf-size);
 	 max-height: var(--pdf-size);
 }
@@ -2889,6 +2943,11 @@ body:not(.annotation-tags-off) .cm-s-obsidian .CodeMirror-line span.cm-tag-examp
 	border-radius: 6px;
 	text-decoration: none;
 	font-style: normal;
+}
+
+/* prevent linebreak between emoji and tag*/
+.cm-hashtag-begin{
+	white-space: nowrap;
 }
 
  /*the "#"*/
@@ -3366,11 +3425,9 @@ body:not(.standard-mermaid-font) .mermaid{
 .cm-s-obsidian .HyperMD-list-line {
   overflow: hidden;
 }
-
 .cm-hmd-list-indent {
   position: relative;
 }
-
 .CodeMirror-line .cm-hmd-list-indent::before {
   content: '';
   display: block;
@@ -3389,9 +3446,6 @@ body:not(.standard-mermaid-font) .mermaid{
 }
 
 /* Preview Mode */
-
-
-
 ul ul,
 ol ol,
 ul ol,
@@ -3541,7 +3595,7 @@ body:not(.left-aligned-embeds) .pdf-embed{
 https://forum.obsidian.md/t/inline-code-occludes-text-selection-and-vim-cursor/11552/10 */
 .theme-light .cm-inline-code,
 .theme-light .cm-s-obsidian .cm-templater-command {
-	background-color: rgba(0, 0, 0, 0.02) !important;
+	background-color: rgba(0, 0, 0, 0.005) !important;
 }
 
 /* < Improve Templater Syntax Readability */
@@ -4351,6 +4405,7 @@ pre button.copy:hover::before{
 /* Another Quick Switcher */
 /* ─────────────────────────────────────────────────── */
 
+.another-quick-switcher__item__icon,
 .another-quick-switcher__item__directory svg{
 	display: none;
 }
