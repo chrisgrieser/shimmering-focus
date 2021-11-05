@@ -15,7 +15,7 @@
 
 ### Numerous Useful Extra Features
 - **Pseudo-Admonition**: `h6` blocks will become a pseudo-admonition box (only works with one-liners though)
-- **Multi-Color-Highlighting**: surround highlights with `*` or `**` for alternative highlight colors (e.g. `*==cyan==*`). You can use the [Extra Markdown Syntax Plugin](https://github.com/chrisgrieser/obsidian-extra-md-html-syntax) for commands/hotkeys for them.
+- **Multi-Color-Highlighting**: surround highlights with `*` or `**` for alternative highlight colors (e.g. `*==cyan==*`). You can use the [Extra Markdown Syntax Plugin](https://github.com/chrisgrieser/obsidian-extra-md-html-syntax) to get hotkeys for them.
 - **Pseudo-Spoiler-Tags**: Emphasized Strikthroughs (`*~~spoiler~~*`) will selectively hide text, except when hovered or the active line.
 - Click & hold on an image to zoom
 - Relationship lines in unordered lists & file explorer
