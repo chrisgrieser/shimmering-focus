@@ -37,14 +37,14 @@ For help and/or CSS snippets, thanks to:
 	--highlight-alt1: #ffff0066;
 	--highlight-alt2: #00ffff66;
 	--search-match-hl: var(--highlight-alt2);
-	--bold-in-darkmode: hsl(197, 35%, 77%);
+	--bold-in-darkmode: hsl(202, 43%, 57%);
 	--unresolved-link-color: #0F80FF;
 	--backdrop-color: hsl(228deg 70% 7%);
 	--active-line: #adae9820;
 	--cursor-monocolor: var(--accent-lighter);
 
 	/* Other Variables */
-	--block-roundness: 6px;
+	--block-roundness: 7px;
 	--resize-handle-thickness: 0.25em;
 	--scrollbar-thickness: 0.6em;
 	--image-size: 50%;
@@ -188,7 +188,8 @@ For help and/or CSS snippets, thanks to:
 }
 
 textarea,
-input{
+input,
+select.dropdown{
 	font-family: var(--default-font) !important;
 }
 
@@ -214,13 +215,17 @@ input{
 	font-family: var(--sidebar-font-family);
 }
 
+body:not(.not-ia-writer-font) textarea,
+body:not(.not-ia-writer-font) select.dropdown,
 body:not(.not-ia-writer-font) input,
 body:not(.not-ia-writer-font) .nav-folder-title,
 body:not(.not-ia-writer-font) .nav-file-title{
 	letter-spacing: -0.2px;
 }
 
+
 body:not(.not-ia-writer-font) textarea,
+body:not(.not-ia-writer-font) select.dropdown,
 body:not(.not-ia-writer-font) .workspace-tabs{
 	letter-spacing: -0.1px;
 }
@@ -750,16 +755,15 @@ button:hover{
 
 body:not(.normal-checkboxes) .checkbox-container:hover,
 .checkbox-container:hover{
-	background-color: var(--alt-accent);
-	border: 8px solid var(--alt-accent-lighter);
-	opacity: 0.7;
-	transition-duration: 500ms;
+	background-color: var(--background-secondary);
+	border: 8px solid var(--alt-accent);
+	transition-duration: 200ms;
 }
 body:not(.normal-checkboxes) .checkbox-container.is-enabled:hover,
 .checkbox-container.is-enabled:hover{
-	background-color: var(--alt-accent);
+	background-color: var(--background-secondary);
 	border: 8px solid var(--alt-accent-lighter);
-	opacity: 1;
+	transition-duration: 200ms;
 }
 
 .checkbox-container {
@@ -769,12 +773,12 @@ body:not(.normal-checkboxes) .checkbox-container.is-enabled:hover,
 /* minimalistic checkboxes, thanks @SlRvb */
 body:not(.normal-checkboxes) .checkbox-container {
 	 cursor: pointer;
-	 border-radius: 15px;
+	 border-radius: 20px;
 	 border: 2px solid var(--button-border);
 	 width: 22px;
 	 height: 22px;
 	 background-color: var(--background-secondary);
-	 transition-duration: 500ms;
+	 transition-duration: 200ms;
 }
 body:not(.normal-checkboxes) .checkbox-container:after {
 	 display: none;
@@ -786,22 +790,30 @@ body:not(.normal-checkboxes) .checkbox-container.is-enabled {
 
 /* ─────────────────────────────────────────────────── */
 /* < Input & Textarea */
+/* < Dropdown */
 /* ─────────────────────────────────────────────────── */
 
 .modal-container.mod-confirmation input{
 	width: 30em;
 }
 
-input{
-	padding: 5px !important;
-	padding-right: 0 !important;
-	left: 0 !important;
+.modal-container input{
+	left: 0;
+	border-radius: 50px;
 }
 
 /*stretch them*/
 .search-input-container{
 	margin-right: 5px;
 	margin-left: 5px;
+}
+
+select.dropdown{
+	padding: 7px 28px 6px 10px;
+	border-radius: 50px;
+}
+select.dropdown:hover{
+	border-color: var(--alt-accent);
 }
 
 textarea:hover,
@@ -835,10 +847,19 @@ input:focus{
 	background-color: var(--background-secondary) !important;
 }
 
+/*rounder codeblock*/
 .markdown-preview-view pre {
-	border-radius: var(--block-roundness) !important;
+	border-radius: calc(var(--block-roundness) * 2) !important;
 }
-
+body > .app-container .HyperMD-codeblock-begin-bg{
+	border-top-left-radius: calc(var(--block-roundness) * 2);
+	border-top-right-radius: calc(var(--block-roundness) * 2);
+	background-color: var(--background-secondary);
+}
+body > .app-container .HyperMD-codeblock-end-bg{
+	border-bottom-left-radius: calc(var(--block-roundness) * 2);
+	border-bottom-right-radius: calc(var(--block-roundness) * 2);
+}
 
 /* show language of Code Block in Preview Mode */
 /* snippet by @Chetachi */
@@ -1254,7 +1275,7 @@ input[type=checkbox]:checked:hover{
 /* ─────────────────────────────────────────────────── */
 
 .suggestion-prefix {
-   color: var(--extra-contrast);
+   color: var(--text-muted);
    opacity:  0.9;
    font-family: var(--smallcap-font);
    font-size: 1.1em;
@@ -1498,16 +1519,78 @@ body .workspace-leaf-resize-handle:active {
 }
 
 /* ─────────────────────────────────────────────────── */
-/* < search & backlink */
+/* < Backlinks */
 /* ─────────────────────────────────────────────────── */
 
-.workspace-leaf-content[data-type="search"] .tree-item-self {
-	padding-left: 1.2em;
+/* Inline Backlink Pane */
+.markdown-source-view .view-content,
+.markdown-preview-view .nav-header{
+	border-top: 2px solid var(--hr-line);
+	margin-top: 1em;
 }
+
+.markdown-source-view .view-content .backlink-pane{
+	margin-bottom: 5em;
+}
+.markdown-source-view .backlink-pane > .tree-item-self,
+.markdown-preview-view .backlink-pane > .tree-item-self{
+	background-color: var(--background-primary-alt);
+	border-radius: var(--block-roundness);
+}
+
+/* Sidebar */
+/*"Linked / Unlinked Mentions"*/
+.backlink-pane > .tree-item-self > .tree-item-inner{
+	font-family: var(--smallcap-font);
+	font-size: 1.1em;
+	font-weight: normal !important;
+	color: var(--text-normal);
+}
+.workspace-tabs .backlink-pane > .tree-item-self{
+	background-color: var(--background-primary);
+}
+
+.backlink-pane > .tree-item-self > .tree-item-flair-outer > .tree-item-flair{
+	font-weight: 600;
+}
+
+.workspace-tabs .backlink-pane > .tree-item-self > .tree-item-flair-outer{
+	line-height: 1em;
+	margin-top: 3px;
+}
+
 
 .backlink-pane .tree-item-inner.is-collapsed{
 	color: var(--text-accent) !important;
 	font-weight: 600;
+}
+.backlink-pane {
+	padding-left: 0;
+	padding-right: 0;
+}
+.workspace-leaf-content[data-type="backlink"] .tree-item-self {
+	font-weight: 600;
+}
+
+.workspace-leaf-content[data-type="backlink"] .search-result-container {
+	margin-left: 0;
+	padding-left: 0;
+}
+.workspace-leaf-content[data-type="backlink"] .search-result-container .tree-item-flair {
+	margin-right: 0.07em;
+}
+.workspace-leaf-content[data-type="backlink"] .search-result-file-match {
+	margin-left: 1.3em;
+	font-weight: 500;
+}
+
+
+/* ─────────────────────────────────────────────────── */
+/* < Search Pane */
+/* ─────────────────────────────────────────────────── */
+
+.workspace-leaf-content[data-type="search"] .tree-item-self {
+	padding-left: 1.2em;
 }
 
 .search-info-container {
@@ -1515,28 +1598,6 @@ body .workspace-leaf-resize-handle:active {
 	font-style: italic;
 }
 
-.backlink-pane {
-	padding-left: 0;
-	padding-right: 0;
-}
-
-.workspace-leaf-content[data-type="backlink"] .search-result-container {
-	margin-left: 0;
-	padding-left: 0;
-}
-
-.workspace-leaf-content[data-type="backlink"] .search-result-container .tree-item-flair {
-	margin-right: 0.07em;
-}
-
-.workspace-leaf-content[data-type="backlink"] .tree-item-self {
-	font-weight: 600;
-}
-
-.workspace-leaf-content[data-type="backlink"] .search-result-file-match {
-	margin-left: 1.3em;
-	font-weight: 500;
-}
 
 .search-result-file-match {
 	padding-left: 0;
@@ -1924,6 +1985,17 @@ based on css from @Mara https://github.com/Mara-Li/Obsidian-Snippet-collection *
 	content: "date_range ";
 }
 
+
+/* adapted for the round checkboxes */
+.kanban-plugin__board input[type=checkbox]{
+	margin-top: 1px;
+	height: 0.85em;
+	width: 0.85em;
+	margin-left: 0;
+	margin-right: 5px;
+}
+
+
 /* ─────────────────────────────────────────────────── */
 /* < SETTINGS MENU */
 /* ─────────────────────────────────────────────────── */
@@ -1985,8 +2057,7 @@ based on css from @Mara https://github.com/Mara-Li/Obsidian-Snippet-collection *
 	font-size: 0.95em;
 	line-height: 1.5em;
 }
-.mod-cta,
-.dropdown {
+.mod-cta {
 	font-size: 0.85em !important;
 	line-height: 1.3em;
 }
@@ -2519,6 +2590,7 @@ span.cm-hmd-frontmatter {
 .frontmatter-section-tags  > a.tag:hover {
 	color: var(--alt-accent) !important;
 	background: var(--background-secondary-alt);
+	text-decoration: none !important;
 }
 .frontmatter-alias {
 	background: none !important;
@@ -3156,13 +3228,13 @@ blockquote {
 
 
 /* ─────────────────────────────────────────────────── */
-/* < <progress> */
+/* < progress bars (<progress>) */
 /* ─────────────────────────────────────────────────── */
 /*thanks @SkepticMystic*/
-
+/* https://coolors.co/03045e-023e8a-0077b6-0096c7-00b4d8-48cae4-90e0ef-ade8f4-caf0f8 */
 progress {
   background: none;
-  height: 0.7em;
+  height: 0.55em;
   border-radius: 20px;
 }
 progress::-webkit-progress-bar {
@@ -3174,34 +3246,34 @@ progress::-webkit-progress-value {
   border-radius: 20px;
 }
 progress[value^="1"]::-webkit-progress-value {
-  background: rgb(255, 0, 0);
+  background: hsl(239, 94%, 19%);
 }
 progress[value^="2"]::-webkit-progress-value {
-  background: rgb(243, 41, 41);
+  background: hsl(214, 97%, 27%);
 }
 progress[value^="3"]::-webkit-progress-value {
-  background: rgb(245, 100, 100);
+  background: hsl(201, 100%, 36%);
 }
 progress[value^="4"]::-webkit-progress-value {
-  background: rgb(248, 184, 8);
+  background: hsl(195, 100%, 39%);
 }
 progress[value^="5"]::-webkit-progress-value {
-  background: rgb(247, 233, 45);
+  background: hsl(190, 100%, 42%);
 }
 progress[value^="6"]::-webkit-progress-value {
-  background: rgb(163, 221, 100);
+  background: hsl(190, 80%, 50%);
 }
 progress[value^="7"]::-webkit-progress-value {
-  background: rgb(99, 238, 18);
+  background: hsl(185, 90%, 62%);
 }
 progress[value^="8"]::-webkit-progress-value {
-  background: rgb(0, 255, 0);
+  background: hsl(185, 90%, 75%);
 }
 progress[value^="9"]::-webkit-progress-value {
-  background: rgb(1, 172, 29);
+  background: hsl(175, 80%, 70%);
 }
 progress[value^="10"]::-webkit-progress-value {
-  background: rgb(0, 238, 255);
+  background: hsl(160, 92%, 70%);
 }
 
 
@@ -3214,7 +3286,7 @@ progress[value^="10"]::-webkit-progress-value {
 	bottom: 2.5em;
 	background-color:var(--background-secondary-alt);
 	border: 4px solid var(--background-primary-alt);
-	border-radius: var(--block-roundness);
+	border-radius: calc(var(--block-roundness) * 3);
 	width: 95%;
 	left: 2.5%;
 	height: 3.5em;
@@ -3243,13 +3315,19 @@ shows up on the bottom when replacing/searching
 	background-color: hsl(359, 80%, 85%);
 }
 
-.document-search-input:focus,
-.document-replace-input:focus{
-	border: 2px solid var(--accent-lighter);
+body > .app-container .document-search-input,
+body > .app-container .document-replace-input{
+	border: 2px solid transparent;
+	border-radius: 50px;
 }
-.document-search-input:hover,
-.document-replace-input:hover{
-	border: 2px solid var(--alt-accent-lighter);
+
+body > .app-container .document-search-input:focus,
+body > .app-container .document-replace-input:focus{
+	border: 2px solid var(--text-accent);
+}
+body > .app-container .document-search-input:hover,
+body > .app-container .document-replace-input:hover{
+	border: 2px solid var(--alt-accent);
 }
 
 
