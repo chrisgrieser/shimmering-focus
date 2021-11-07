@@ -623,6 +623,26 @@ body:not(.is-mobile) .view-header:focus-within{
 /* < Context Menus */
 /* ─────────────────────────────────────────────────── */
 
+div.menu{
+	border-radius: calc(var(--block-roundness) * 2);
+}
+
+div.menu-item-title{
+	font-size: 0.9em;
+}
+
+div.menu-item{
+	padding-top: 0;
+	padding-bottom: 0;
+	padding-right: 9px;
+	padding-left: 9px;
+}
+
+.menu-item-icon{
+	bottom: 0;
+	top: 4px;
+}
+
 .menu-item.selected,
 .menu-item.selected svg{
 	color: var(--text-accent);
@@ -630,6 +650,7 @@ body:not(.is-mobile) .view-header:focus-within{
 
 .menu-item svg{
 	color: var(--extra-contrast);
+	transform: scale(0.9);
 }
 
 .menu-item:hover,
