@@ -846,6 +846,10 @@ select.dropdown{
 	border-radius: 50px;
 }
 
+input{
+	padding-right: 5px !important;
+	padding-left: 5px !important;
+}
 
 
 select.dropdown:hover,
