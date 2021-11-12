@@ -4692,7 +4692,7 @@ settings:
 	 default: false
   -
 	 id: show-collapse-buttons
-	 title: Permanently show the Edit Mode Collapse Buttons
+	 title: Permanently show the Edit Mode Collapse Buttons (Fold Buttons)
 	 type: class-toggle
 	 description: When false, you collapse buttons still become visible upon hovering.
 	 default: false
@@ -4830,7 +4830,7 @@ settings:
   -
 	 id: max-view-off
 	 title: 'Turn off the "Max View" feature'
-	 description: '"Max View" makes panes full length and images/PDFs full width when the left sidebar is hidden and readable line length when the left sidebar is shown. (Note:  You need to turn on "readable line length" in the editor settings as well for this to work.)'
+	 description: '"Max View" makes panes full length and images/PDFs full width when the left sidebar is hidden and readable line length when the left sidebar is shown.'
 	 type: class-toggle
 	 default: false
   -
