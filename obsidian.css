@@ -190,6 +190,7 @@ select.dropdown{
 	font-size: 0.9em;
 	font-weight: 600;
 	text-rendering: geometricPrecision;
+	letter-spacing: 1px;
 }
 
 /* Core Plugin Sidebar */
@@ -214,16 +215,11 @@ select.dropdown{
 	font-family: var(--sidebar-font-family);
 }
 
-body:not(.not-ia-writer-font) textarea,
-body:not(.not-ia-writer-font) select.dropdown,
-body:not(.not-ia-writer-font) input,
 body:not(.not-ia-writer-font) .nav-folder-title,
 body:not(.not-ia-writer-font) .nav-file-title{
 	letter-spacing: -0.2px;
 }
 
-body:not(.not-ia-writer-font) textarea,
-body:not(.not-ia-writer-font) select.dropdown,
 body:not(.not-ia-writer-font) .workspace-tabs{
 	letter-spacing: -0.1px;
 }
@@ -825,32 +821,22 @@ body:not(.normal-checkboxes) .checkbox-container.is-enabled {
 /* < Dropdown */
 /* ─────────────────────────────────────────────────── */
 
-.modal-container.mod-confirmation input{
-	width: 30em;
-}
-
-.modal-container input{
-	left: 0;
+.modal-container.mod-confirmation input,
+.modal-container input,
+.search-input-container input,
+input{
+	padding-right: 10px;
+	padding-left: 10px;
+	width: 250px;
 	border-radius: 50px;
+	left: 0;
 }
 
-
-/*stretch them*/
-.search-input-container{
-	margin-right: 5px;
-	margin-left: 5px;
-}
 
 select.dropdown{
 	padding: 7px 28px 6px 10px;
 	border-radius: 50px;
 }
-
-input{
-	padding-right: 5px !important;
-	padding-left: 5px !important;
-}
-
 
 select.dropdown:hover,
 textarea:hover,
@@ -2235,6 +2221,10 @@ based on css from @Mara https://github.com/Mara-Li/Obsidian-Snippet-collection *
 	width: 93%;
 }
 
+.community-plugin-info{
+	border-left: 2px solid var(--background-primary);
+}
+
 /* search results */
 .community-plugin-item {
 	padding-top: 0.4em;
@@ -2244,7 +2234,7 @@ based on css from @Mara https://github.com/Mara-Li/Obsidian-Snippet-collection *
 	line-height: 1.2em;
 	margin-top: 0;
 	margin-bottom: 0;
-	border-bottom: 1px solid var(--background-primary-alt);
+	border-bottom: 2px solid var(--background-primary);
 }
 
 .community-plugin-search-summary.u-muted {
@@ -2252,7 +2242,7 @@ based on css from @Mara https://github.com/Mara-Li/Obsidian-Snippet-collection *
 	padding-left: 0.6em;
 	font-style: italic;
 	text-transform: capitalize;
-	border-bottom: 1px solid var(--background-primary-alt);
+	border-bottom: 2px solid var(--background-primary);
 }
 .community-plugin-downloads::before,
 .community-plugin-downloads,
@@ -2370,8 +2360,7 @@ based on css from @Mara https://github.com/Mara-Li/Obsidian-Snippet-collection *
 .community-plugin-item:hover .community-plugin-downloads::before,
 .community-plugin-item:hover .community-plugin-downloads-text,
 .community-plugin-item:hover .community-plugin-desc{
-	color: var(--text-faint);
-	opacity: 0.8;
+	opacity: 0.7;
 }
 
 /*plugin info */
