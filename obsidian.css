@@ -1061,6 +1061,7 @@ a.internal-link.is-unresolved:hover{
 /* external links */
 .external-link{
     background-image: none;
+    padding-right: 0;
 }
 .external-link[href*="http"]::before {
     content: var(--externalURL);
