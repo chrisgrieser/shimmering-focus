@@ -2255,11 +2255,11 @@ based on css from @Mara https://github.com/Mara-Li/Obsidian-Snippet-collection *
 	margin-top: 10px;
 }
 
-.community-plugin-downloads{
-	margin-right: 12px;
+.community-plugin-search .community-plugin-downloads{
+	margin-right: 15px;
 	margin-top: 6px;
 	margin-bottom: 0;
-	vertical-align: top !important;
+	vertical-align: top;
 }
 
 .community-plugin-search-results .community-plugin-author{
@@ -2379,7 +2379,14 @@ based on css from @Mara https://github.com/Mara-Li/Obsidian-Snippet-collection *
 	font-size: 1em;
 }
 
+
 .community-plugin-info .community-plugin-downloads::before,
+.community-plugin-info .community-plugin-downloads{
+	font-size: 1.2em;
+	margin-top: 0;
+	line-height: 1.2em;
+}
+
 .community-plugin-info .community-plugin-downloads-text,
 .community-plugin-info .community-plugin-version,
 .community-plugin-info .community-plugin-author{
