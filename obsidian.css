@@ -1,6 +1,6 @@
 /*───────────────────────────────────────────────────────
 SHIMMERING FOCUS
-Version 1.96
+Version 1.97
 https://github.com/chrisgrieser/shimmering-focus/
 Created by @pseudometa (Discord) aka @chrisgrieser (GitHub)
 MIT License
@@ -2066,7 +2066,7 @@ based on css from @Mara https://github.com/Mara-Li/Obsidian-Snippet-collection *
 
 .setting-item.setting-item-heading{
 	margin-top: 20px;
-	margin-bottom: 10px;
+	margin-bottom: 5px;
 	padding-bottom: 0;
 	border-bottom: 2px solid var(--hr-line);
 	font-family: var(--smallcap-font);
@@ -2075,9 +2075,13 @@ based on css from @Mara https://github.com/Mara-Li/Obsidian-Snippet-collection *
 	font-weight: normal;
 }
 
+.setting-item.setting-item-heading + .setting-item{
+	border-top: none;
+}
+
 .modal.mod-settings .vertical-tab-content-container {
 	padding-top: 0;
-	margin-top: 0px;
+	margin-top: 0;
 	padding-left: 0;
 	padding-right: 0;
 	padding-bottom: 1em;
