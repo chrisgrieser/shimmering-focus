@@ -2075,10 +2075,7 @@ based on css from @Mara https://github.com/Mara-Li/Obsidian-Snippet-collection *
 	font-weight: normal;
 }
 
-.setting-item.setting-item-heading + .setting-item{
-	border-top: none;
-}
-
+/*line under heading*/
 .modal.mod-settings .vertical-tab-content-container {
 	padding-top: 0;
 	margin-top: 0;
@@ -2088,6 +2085,11 @@ based on css from @Mara https://github.com/Mara-Li/Obsidian-Snippet-collection *
 	border-left: 3px solid var(--background-primary-alt);
 	height: 95vh;
 }
+.setting-item.setting-item-heading + .installed-plugins-container,
+.setting-item.setting-item-heading + .setting-item{
+	border-top: none;
+}
+
 .modal.mod-settings .vertical-tab-header {
 	height: 95vh;
 }
