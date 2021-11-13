@@ -4505,7 +4505,7 @@ body #block-ref-hover.show:hover {
 
 
 /* ─────────────────────────────────────────────────── */
-/* CodeMirror Options*/
+/* < CodeMirror Options*/
 /* ─────────────────────────────────────────────────── */
 
 /* folded URL */
@@ -4514,17 +4514,19 @@ body > .app-container .cm-s-obsidian .hmd-link-icon:hover::after{
 	opacity: 0.8;
 }
 
-body > .app-container .cm-s-obsidian .hmd-link-icon::after {
-  margin-left: 2px;
-  padding-left: 0px;
-  width: 1em;
-  height: 1em;
-  bottom: 2px;
-  position: absolute;
-  background-color: var(--extra-contrast);
-  -webkit-mask-image: var(--externalURL);
+.cm-s-obsidian .hmd-link-icon:hover{
+	cursor: pointer;
 }
 
+body > .app-container .cm-s-obsidian .hmd-link-icon:after{
+	display: none;
+}
+body > .app-container .cm-s-obsidian .hmd-link-icon{
+  background-image: var(--externalURL);
+  background-repeat: no-repeat;
+  margin-bottom: 3px;
+  width: 0.9em;
+}
 
 /* move and shrink copy button */
 pre button.copy{
