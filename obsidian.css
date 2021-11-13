@@ -820,15 +820,21 @@ body:not(.normal-checkboxes) .checkbox-container.is-enabled {
 /* < Dropdown */
 /* ─────────────────────────────────────────────────── */
 
-.modal-container.mod-confirmation input,
-.modal-container input,
+
 .search-input-container input,
 input{
 	padding-right: 10px;
 	padding-left: 10px;
-	width: 250px;
 	border-radius: 50px;
+	width: 250px;
 	left: 0;
+}
+
+.modal-container.mod-confirmation input,
+.modal-container input{
+	padding-right: 10px;
+	padding-left: 10px;
+	border-radius: 50px;
 }
 
 
