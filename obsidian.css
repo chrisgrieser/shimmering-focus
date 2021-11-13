@@ -1036,6 +1036,14 @@ body.no-strikethrough-spellcheck .cm-strikethrough.cm-overlay.cm-spell-error{
 	text-decoration: none;
 	background-image: none;
 }
+body.no-comment-spellcheck .cm-comment.cm-overlay.cm-spell-error{
+	text-decoration: none;
+	background-image: none;
+}
+body.no-barelink-spellcheck .cm-hmd-barelink.cm-overlay.cm-spell-error{
+	text-decoration: none;
+	background-image: none;
+}
 
 
 
@@ -4974,6 +4982,18 @@ settings:
 	 id: no-strikethrough-spellcheck
 	 title: No Spellcheck in strikethroughs
 	 description: Turn off Spellcheck in any text enclosed by the strikethrough syntax (~~foobar~~).
+	 type: class-toggle
+	 default: false
+  -
+	 id: no-comment-spellcheck
+	 title: No Spellcheck in comments
+	 description: Turn off Spellcheck in comments (%%comments%% as well as <!--comments-->).
+	 type: class-toggle
+	 default: false
+  -
+	 id: no-barelink-spellcheck
+	 title: No Spellcheck in Pandoc Citations
+	 description: Turn off Spellcheck in Pandoc Citations (Bare Links).
 	 type: class-toggle
 	 default: false
   -
