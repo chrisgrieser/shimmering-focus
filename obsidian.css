@@ -1,6 +1,6 @@
 /*───────────────────────────────────────────────────────
 SHIMMERING FOCUS
-Version 1.98
+Version 1.99
 https://github.com/chrisgrieser/shimmering-focus/
 Created by @pseudometa (Discord) aka @chrisgrieser (GitHub)
 MIT License
@@ -71,6 +71,7 @@ For help and/or CSS snippets, thanks to:
 	--cursor-duo-color-1: var(--alt-accent-lightest);
 	--cursor-duo-color-2: var(--accent-lightest);
 	--button-border: var(--accent-lighter);
+	--alternating-row-color: rgba(0, 0, 0, 0.03);
 }
 .theme-dark {
 	--editor-alt-accent: var(--alt-accent);
@@ -89,6 +90,7 @@ For help and/or CSS snippets, thanks to:
 	--cursor-duo-color-1: var(--alt-accent-lighter);
 	--cursor-duo-color-2: var(--accent-lighter);
 	--button-border: var(--text-accent);
+	--alternating-row-color: rgba(0, 0, 0, 0.2);
 }
 
 /* ─────────────────────────────────────────────────── */
@@ -305,7 +307,6 @@ body:not(.show-titlebar) .titlebar{
 body:not(.show-titlebar) .workspace-split.mod-left-split .workspace-tabs:nth-child(3){
 	 padding-top: 1.15em;
 }
-
 /*thanks @javalent*/
 body:not(.show-titlebar) .workspace-split.mod-left-split.is-collapsed ~ .mod-root .view-header{
 	padding-left: 3em;
@@ -1317,9 +1318,6 @@ input[type=checkbox]:checked:hover{
 
 }
 
-.modal.mod-sync-history{
-}
-
 .sync-history-content-empty{
 	font-size: 0;
 	top: 45%;
@@ -1336,6 +1334,7 @@ input[type=checkbox]:checked:hover{
 /* < Command Palette & QuickSwitcher */
 /* ─────────────────────────────────────────────────── */
 
+/* the plugin name */
 .suggestion-prefix {
    color: var(--text-muted);
    opacity:  0.9;
@@ -1345,10 +1344,22 @@ input[type=checkbox]:checked:hover{
    letter-spacing: -0.1px;
 }
 
+.modal-container div.prompt{
+	padding-bottom: 2px;
+}
+
 .suggestion-item{
    padding-left: 25px;
-	white-space: pre-wrap;
-	border-bottom: 1px solid var(--background-secondary);
+	/* white-space: pre-wrap; */
+	border-radius: var(--block-roundness);
+}
+
+/* Alternating row colors */
+.suggestion-item:nth-child(even){
+	background-color: var(--alternating-row-color);
+}
+.suggestion-item:nth-child(even) .suggestion-hotkey{
+	background-color: var(--background-primary);
 }
 
 /* the pin */
@@ -1357,7 +1368,16 @@ input[type=checkbox]:checked:hover{
    transform: scale(0.85);
 }
 
-/* change font color of hotkeys */
+/* color selected / hovered */
+.suggestion-item.is-selected,
+.suggestion-item:hover{
+	background-color: var(--background-secondary-alt);
+}
+.suggestion-item.is-selected .suggestion-hotkey,
+.suggestion-item:hover .suggestion-hotkey{
+	background-color: var(--background-primary-alt);
+}
+
 .suggestion-item.is-selected .suggestion-prefix,
 .suggestion-item.is-selected,
 .suggestion-item.is-selected .suggestion-flair,
@@ -1365,12 +1385,6 @@ input[type=checkbox]:checked:hover{
 	color: var(--text-accent);
 	border-radius: var(--block-roundness);
 }
-
-.suggestion-item.is-selected .suggestion-hotkey,
-.suggestion-item:hover .suggestion-hotkey{
-	background-color: var(--background-secondary-alt);
-}
-
 .suggestion-item:hover .suggestion-flair,
 .suggestion-item.is-selected:hover .suggestion-prefix,
 .suggestion-item:hover .suggestion-prefix,
@@ -1378,7 +1392,6 @@ input[type=checkbox]:checked:hover{
 .suggestion-highlight,
 .suggestion-item:hover .suggestion-highlight{
 	color: var(--alt-accent);
-	border-radius: var(--block-roundness);
 }
 
 .suggestion-item:hover .suggestion-flair,
@@ -1388,27 +1401,6 @@ input[type=checkbox]:checked:hover{
 	opacity: 0.6;
 }
 
-
-/*switch*/
-/*.suggestion-item {
-  display: flex;
-  flex-direction: row-reverse;
-  padding-right: 5px;
-}
-
-.suggestion-prefix::after{
-	display: none;
-}
-
-.suggestion-prefix{
-	padding-left: 6px;
-	font-size: 80%;
-}
-
-.suggestion-item .suggestion-content{
-	position: absolute;
-	left: 32px;
-}*/
 
 /* ─────────────────────────────────────────────────── */
 /* < CURSOR */
@@ -2903,7 +2895,6 @@ span.cm-link.cm-hmd-footnote {
 /* add some more table styling, e.g. from https://forum.obsidian.md/t/custom-css-for-tables-5-new-styles-ready-to-use-in-your-notes/17084*/
 /* see also section "Max View"*/
 
-/* normal tables */
 table:not(.dataview.table-view-table) td,
 table:not(.dataview.table-view-table) th {
 	border: 2px ridge var(--text-muted);
@@ -2913,11 +2904,12 @@ table:not(.dataview.table-view-table) th {
 	background-color: var(--background-secondary-alt);
 	font-weight: 900;
 }
-.theme-dark table:not(.dataview.table-view-table) th {
-	color: var(--bold-in-darkmode);
-}
 .markdown-preview-view table:not(.dataview.table-view-table) {
 	table-layout: fixed;
+}
+
+body:not(.alternating-table-rows) .markdown-preview-view tr:nth-child(even) {
+	background-color: var(--alternating-row-color);
 }
 
 
@@ -2937,7 +2929,7 @@ table:not(.dataview.table-view-table) th {
 .markdown-preview-view h5{
 	font-family: var(--heading-font);
 	line-height: 1.3em;
-	font-weight: 600;
+	font-weight: 800;
 	text-rendering: geometricPrecision;
 }
 
@@ -4896,6 +4888,11 @@ settings:
 	 id: max-view-off
 	 title: 'Turn off the "Max View" feature'
 	 description: '"Max View" makes panes full length and images/PDFs full width when the left sidebar is hidden and readable line length when the left sidebar is shown.'
+	 type: class-toggle
+	 default: false
+  -
+	 id: alternating-table-rows
+	 title: Turn off Alternating Table Row colors
 	 type: class-toggle
 	 default: false
   -
