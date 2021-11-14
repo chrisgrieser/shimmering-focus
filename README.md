@@ -6,11 +6,13 @@
 ## Table of Content
 <!-- MarkdownTOC autolink="true" -->
 
-- [Main Features](#main-features)
+- [Features](#features)
   - [Minimalism](#minimalism)
   - [Annotation Tags](#annotation-tags)
   - [Max View](#max-view)
   - [Image related Features](#image-related-features)
+  - [Fine-tuned Spellcheck](#fine-tuned-spellcheck)
+  - [Multi-Color-Highlighting](#multi-color-highlighting)
   - [Features for Academic Work](#features-for-academic-work)
   - [Other Features](#other-features)
 - [Design Principles](#design-principles)
@@ -26,7 +28,7 @@
 
 <!-- /MarkdownTOC -->
 
-## Main Features
+## Features
 
 ### Minimalism
 - Status bar, header bar, and collapse arrows become visible upon hovering.
@@ -52,20 +54,27 @@ Readable line length and smaller images when left sidebar is shown, full length 
 - Alt Text is used as image caption.
 - Set default Image Size via Style Settings Plugin.
 
+### Fine-tuned Spellcheck
+Using the [Style Settings Plugin](#Customization), you can deactivate the spellcheck in specific areas like YAML or blockquotes.
+
+<img src="https://i.imgur.com/9XPEUQq.png" alt="Spellcheck settings" width=60%>
+
+### Multi-Color-Highlighting
+- Surround highlights with `*` or `**` for alternative highlight colors (e.g. `*==cyan==*`).
+- You can use my [Extra Markdown Syntax Plugin](https://github.com/chrisgrieser/obsidian-extra-md-html-syntax) to get even get hotkeys for them.
+
 ### Features for Academic Work
 - [Pandoc Citations](https://pandoc.org/MANUAL.html#citations-in-note-styles) (`[@citekey]`) and footnotes are visually emphasized
-- the alt-text of images is used as caption text, in line with Pandoc's conversion behavior
+- The alt-text of images is used as caption text, in line with Pandoc's conversion behavior
 - Extensive Styling specifically for the [Longform Plugin](https://github.com/kevboh/longform), among other things justified & hyphenated text, and [Crimson Pro](https://fonts.google.com/specimen/Crimson+Pro) as an easy-to-read serif font
 
 ### Other Features
-- **Multi-Color-Highlighting**: surround highlights with `*` or `**` for alternative highlight colors (e.g. `*==cyan==*`). You can use the [Extra Markdown Syntax Plugin](https://github.com/chrisgrieser/obsidian-extra-md-html-syntax) to get hotkeys for them.
 - **Pseudo-Admonition**: `h6` blocks will become a pseudo-admonition box (only works with one-liners though)
 - **Pseudo-Spoiler-Tags**: Emphasized Strikethroughs (`*~~spoiler~~*`) will selectively hide text, except when hovered or the active line.
 - Relationship lines in unordered lists & file explorer
 - Active line highlighting
 - Dark Mode for PDFs (when using the theme in dark mode)
 - Styled [`<progress>` bars](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/progress)
-
 
 ## Design Principles
 
@@ -102,10 +111,9 @@ Stylistically, the theme pretty much follows Obsidian's default theme, with most
 ## Customization
 This themes supports the [Style Settings Plugin](https://github.com/mgmeyers/obsidian-style-settings/) for customization.
 
-➡️ [Full list of available style settings.](https://publish.obsidian.md/hub/02+-+Community+Expansions/02.05+All+Community+Expansions/Themes/Shimmering+Focus#Customization+Options+Style+Settings+Plugin)
+➡️ [Full list of available style settings.](https://publish.obsidian.md/hub/02+-+Community+Expansions/02.05+All+Community+Expansions/Themes/Shimmering+Focus#Customization+Options+Style+Settings+Plugin).
 
 ## Compatible Plugins
-
 Shimmering Focus is compatible with and has includes styling for all core plugins, the most common community plugins, as well as a dozen additional community plugins.
 
 ➡️ [Full list of compatible plugins.](https://publish.obsidian.md/hub/02+-+Community+Expansions/02.05+All+Community+Expansions/Themes/Shimmering+Focus#Plugin+Compatibility+1)

@@ -4660,6 +4660,12 @@ a.zoom-plugin-title:hover{
 	fill: var(--alt-accent) !important;
 }
 
+/* Style settings */
+/* remove buggy export button for certain blocks */
+.setting-editor-extra-setting-button.clickable-icon:last-child{
+	display: none;
+}
+
 /* ─────────────────────────────────────────────────── */
 /* Plugin Compatibility info for the Obsidian Hub */
 /* ─────────────────────────────────────────────────── */
@@ -4695,6 +4701,7 @@ community:
 - templater-obsidian
 - obsidian-system-dark-mode
 - obsidian-extra-md-html-syntax
+- obsidian-style-settings
 */
 
 
