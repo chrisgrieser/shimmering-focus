@@ -12,11 +12,11 @@ A minimalistic Obsidian theme focused on readability and condensed information d
   - [Minimalism](#minimalism)
   - [Annotation Tags](#annotation-tags)
   - [Max View](#max-view)
-  - [Image related Features](#image-related-features)
+  - [Image-related Features](#image-related-features)
   - [Fine-tuned Spellcheck](#fine-tuned-spellcheck)
   - [Multi-Color-Highlighting](#multi-color-highlighting)
   - [Features for Academic Work](#features-for-academic-work)
-  - [Other Features](#other-features)
+  - [Further Features](#further-features)
 - [Design Principles](#design-principles)
   - [Extreme Minimalism](#extreme-minimalism)
   - [Condensed Information Display](#condensed-information-display)
@@ -51,7 +51,7 @@ Readable line length and smaller images when left sidebar is shown, full length 
 
 <img src="https://user-images.githubusercontent.com/73286100/138562271-2f7d3589-d580-49e4-bea6-ca3e3004ab78.gif" alt="Promo Max View" width=60%>
 
-### Image related Features
+### Image-related Features
 - Click & hold on an image to zoom.
 - Alt Text is used as image caption.
 - Set default Image Size via Style Settings Plugin.
@@ -70,7 +70,7 @@ Using the [Style Settings Plugin](#Customization), you can deactivate the spellc
 - The alt-text of images is used as caption text, in line with Pandoc's conversion behavior
 - Extensive Styling specifically for the [Longform Plugin](https://github.com/kevboh/longform), among other things justified & hyphenated text, and [Crimson Pro](https://fonts.google.com/specimen/Crimson+Pro) as an easy-to-read serif font
 
-### Other Features
+### Further Features
 - **Pseudo-Admonition**: `h6` blocks will become a pseudo-admonition box (only works with one-liners though)
 - **Pseudo-Spoiler-Tags**: Emphasized Strikethroughs (`*~~spoiler~~*`) will selectively hide text, except when hovered or the active line.
 - Relationship lines in unordered lists & file explorer
