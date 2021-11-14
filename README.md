@@ -1,5 +1,7 @@
 # Shimmering Focus ⟡
 
+A minimalistic Obsidian theme focused on readability and condensed information display.
+
 <img src="https://raw.githubusercontent.com/chrisgrieser/shimmering-focus/main/dual-theme-screenshot.png" alt="Promo Screenshot">
 
 
@@ -111,7 +113,7 @@ Stylistically, the theme pretty much follows Obsidian's default theme, with most
 ## Customization
 This themes supports the [Style Settings Plugin](https://github.com/mgmeyers/obsidian-style-settings/) for customization.
 
-➡️ [Full list of available style settings.](https://publish.obsidian.md/hub/02+-+Community+Expansions/02.05+All+Community+Expansions/Themes/Shimmering+Focus#Customization+Options+Style+Settings+Plugin).
+➡️ [Full list of available style settings.](https://publish.obsidian.md/hub/02+-+Community+Expansions/02.05+All+Community+Expansions/Themes/Shimmering+Focus#Customization+Options+Style+Settings+Plugin)
 
 ## Compatible Plugins
 Shimmering Focus is compatible with and has includes styling for all core plugins, the most common community plugins, as well as a dozen additional community plugins.
