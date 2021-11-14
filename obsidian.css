@@ -4979,7 +4979,7 @@ settings:
 	 default: false
   -
 	 id: no-html-spellcheck
-	 title: No Spellcheck for HTML Tags.
+	 title: No Spellcheck for HTML Tags
 	 description: Turn off Spellcheck in HTML Tags (e.g. <smal>)
 	 type: class-toggle
 	 default: false
