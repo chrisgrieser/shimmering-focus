@@ -55,7 +55,7 @@ Readable line length and smaller images when left sidebar is shown, full length 
 
 ### Image-related Features
 - Click & hold on an image to zoom.
-- Alt Text is used as image caption.
+- Alt Text is automatically used as image caption.
 - Set default Image Size via Style Settings Plugin.
 
 ### Fine-tuned Spellcheck
@@ -78,12 +78,12 @@ Using the [Style Settings Plugin](#Customization), you can deactivate the spellc
 - Relationship lines in unordered lists & file explorer
 - Active line highlighting
 - Dark Mode for PDFs (when using the theme in dark mode)
-- Styled [`<progress>` bars](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/progress)
+- Styled [progress bars (`<progress>`)](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/progress)
 
 ## Design Principles
 
 ### Extreme Minimalism
-- This theme is mainly intended for keyboard users – it is not very beginner friendly when you are just starting out with Obsidian!
+- This theme is mainly intended for experienced users using mainly the keyboard for navigation.
 - As much clutter as possible is removed, letting you focus on content & information that matters.
 - You can re-enable all hidden elements by using the [Style Settings Plugin](#Customization).
 - 💡 The settings can still be accessed via `cmd + ,` or `ctrl + ,`.
@@ -113,9 +113,9 @@ Using the [Style Settings Plugin](#Customization), you can deactivate the spellc
 Stylistically, the theme pretty much follows Obsidian's default theme, with mostly subtle changes – like the eponymous shimmering green as secondary accent.
 
 ## Customization
-This themes supports the [Style Settings Plugin](https://github.com/mgmeyers/obsidian-style-settings/) for customization.
-
-➡️ [Full list of available style settings.](https://publish.obsidian.md/hub/02+-+Community+Expansions/02.05+All+Community+Expansions/Themes/Shimmering+Focus#Customization+Options+Style+Settings+Plugin)
+- This themes supports dozens of customization options via the [Style Settings Plugin](https://github.com/mgmeyers/obsidian-style-settings/).
+- [Preview of available style settings.](https://publish.obsidian.md/hub/02+-+Community+Expansions/02.05+All+Community+Expansions/Themes/Shimmering+Focus#Customization+Options+Style+Settings+Plugin)
+- You can add your own Annotation Tags via adding a snippet [using this template](https://github.com/chrisgrieser/shimmering-focus/blob/main/annotation-tag-template.css).
 
 ## Compatible Plugins
 Shimmering Focus is compatible with and has includes styling for all core plugins, the most common community plugins, as well as a dozen additional community plugins.
@@ -129,7 +129,7 @@ Shimmering Focus is compatible with and has includes styling for all core plugin
 - Quick Explorer: Re-enable the title bar with the Style Settings Plugin for the breadcrumbs
 
 ## Installation
-You can find *Shimmering Focus* in Obsidian's community themes browser under `Settings ➞ Appearance ➞ Themes`.
+You can find *Shimmering Focus* in Obsidian's community themes browser under ` Obsidian Settings ➞ Appearance ➞ Themes - Manage`.
 
 ## Credits & Donations
 **Donations** are welcome via [PayPal](https://www.paypal.com/paypalme/ChrisGrieser) or [Ko-Fi](https://ko-fi.com/pseudometa). 🙏
