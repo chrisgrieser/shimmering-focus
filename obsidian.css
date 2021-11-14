@@ -1,6 +1,6 @@
 /*───────────────────────────────────────────────────────
 SHIMMERING FOCUS
-Version 1.99
+Version 1.100
 https://github.com/chrisgrieser/shimmering-focus/
 Created by @pseudometa (Discord) aka @chrisgrieser (GitHub)
 MIT License
@@ -1087,8 +1087,9 @@ a.internal-link.is-unresolved:hover{
 
 /* external links */
 .external-link{
-    background-image: none;
-    padding-right: 0;
+   background-image: none;
+   padding-right: 0;
+	white-space: nowrap;
 }
 .external-link[href*="http"]::before {
     content: var(--externalURL);
@@ -1573,7 +1574,7 @@ body .workspace-leaf-resize-handle:active {
 }
 
 /* ─────────────────────────────────────────────────── */
-/* < Backlinks */
+/* < Backlinks & Outgoing Links */
 /* ─────────────────────────────────────────────────── */
 
 /* Inline Backlink Pane */
@@ -1638,6 +1639,20 @@ body .workspace-leaf-resize-handle:active {
 	font-weight: 500;
 }
 
+/* < outgoing and backlink unlinked mentions */
+.search-result-file-match-destination-file{
+	color: var(--extra-contrast);
+}
+.search-result-file-match-destination-file:hover{
+	background-color: var(--alt-accent) !important;
+}
+.search-result-hover-button{
+	color: var(--extra-contrast);
+}
+.search-result-hover-button:hover{
+	background-color: var(--alt-accent);
+}
+
 
 /* ─────────────────────────────────────────────────── */
 /* < Search Pane */
@@ -1675,19 +1690,7 @@ readability */
 	background: none;
 }
 
-/* < outgoing and backlink unlinked mentions */
-.search-result-file-match-destination-file{
-	color: var(--extra-contrast);
-}
-.search-result-file-match-destination-file:hover{
-	background-color: var(--alt-accent) !important;
-}
-.search-result-hover-button{
-	color: var(--extra-contrast);
-}
-.search-result-hover-button:hover{
-	background-color: var(--alt-accent);
-}
+
 
 /* ─────────────────────────────────────────────────── */
 /* < Tag Pane */
@@ -2929,7 +2932,7 @@ body:not(.alternating-table-rows) .markdown-preview-view tr:nth-child(even) {
 .markdown-preview-view h5{
 	font-family: var(--heading-font);
 	line-height: 1.3em;
-	font-weight: 800;
+	font-weight: 700;
 	text-rendering: geometricPrecision;
 }
 
