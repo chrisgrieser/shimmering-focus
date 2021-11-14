@@ -160,10 +160,20 @@ For help and/or CSS snippets, thanks to:
 
 :root{
 	--default-font: "iA Writer Quattro V";
+
 	--font-monospace: "Input Mono";
+	--monospace-font-size: 0.95em;
+
 	--heading-font: Optima, Optima-local;
+
 	--longform-font: "Crimson Pro";
+	--longform-font-size: 1.2em;
+
 	--sidebar-font-family: "iA Writer Quattro V";
+	--sidebar-font-size: 0.875em;
+
+	--menu-font-family: "iA Writer Quattro V";
+	--menu-font-size: 1em;
 
 	--smallcap-font: "AlegreyaSansSC";
 	--button-font: "Quicksand";
@@ -173,10 +183,6 @@ For help and/or CSS snippets, thanks to:
 	--h3-size: 1.45em;
 	--h4-size: 1.3em;
 	--h5-size: 1.15em;
-	--monospace-font-size: 0.95em;
-	--longform-font-size: 1.2em;
-	--sidebar-font-size: 0.875em;
-	--sidebar-font-size: 0.9em;
 }
 
 .CodeMirror-linenumber{
@@ -216,6 +222,16 @@ select.dropdown{
 	font-family: var(--sidebar-font-family);
 }
 
+.vertical-tab-nav-item,
+.modal-container .modal.mod-settings,
+.modal.mod-community-plugin,
+.modal.mod-community-theme{
+	font-family: var(--menu-font-family);
+	font-size: var(--menu-font-size);
+}
+
+
+/* letter space adjustion for the sidebar */
 body:not(.not-ia-writer-font) .nav-folder-title,
 body:not(.not-ia-writer-font) .nav-file-title{
 	letter-spacing: -0.2px;
@@ -1943,87 +1959,87 @@ based on css from @Mara https://github.com/Mara-Li/Obsidian-Snippet-collection *
 }
 
 
-.nav-folder-title[data-path*="old"] .nav-folder-title-content:before,
-.nav-folder-title[data-path*="Archiv"] .nav-folder-title-content:before,
-.nav-folder-title[data-path*="archive"] .nav-folder-title-content:before {
+.nav-folder-title[data-path*="old"] .nav-folder-title-content::before,
+.nav-folder-title[data-path*="Archiv"] .nav-folder-title-content::before,
+.nav-folder-title[data-path*="archive"] .nav-folder-title-content::before {
 	content: "inventory_2 ";
 }
 
 /* < FILE ICONS */
-.nav-file-title-content::before {
+.nav-file-title-content:::before {
 	content: "description ";
 }
 
-.nav-file-title[data-path*="Hub"] .nav-file-title-content:before,
-.nav-file-title[data-path*="HUB"] .nav-file-title-content:before {
+.nav-file-title[data-path*="Hub"] .nav-file-title-content::before,
+.nav-file-title[data-path*="HUB"] .nav-file-title-content::before {
 	content: "device_hub ";
 }
 
-.nav-file-title[data-path*="MoC"] .nav-file-title-content:before,
-.nav-file-title[data-path*="MOC"] .nav-file-title-content:before {
+.nav-file-title[data-path*="MoC"] .nav-file-title-content::before,
+.nav-file-title[data-path*="MOC"] .nav-file-title-content::before {
 	content: "map ";
 }
 
 
-.nav-file-title[data-path$="pptx"] .nav-file-title-content:before {
+.nav-file-title[data-path$="pptx"] .nav-file-title-content::before {
 	content: "present_to_all ";
 	color: orange;
 }
 
-.nav-file-title[data-path*="presentation"] .nav-file-title-content:before,
-.nav-file-title[data-path*="Presentation"] .nav-file-title-content:before {
+.nav-file-title[data-path*="presentation"] .nav-file-title-content::before,
+.nav-file-title[data-path*="Presentation"] .nav-file-title-content::before {
 	content: "present_to_all ";
 }
 
-.nav-file-title[data-path$="ts"] .nav-file-title-content:before,
-.nav-file-title[data-path$="js"] .nav-file-title-content:before {
+.nav-file-title[data-path$="ts"] .nav-file-title-content::before,
+.nav-file-title[data-path$="js"] .nav-file-title-content::before {
 	content: "code ";
 }
 
-.nav-file-title[data-path$="tiff"] .nav-file-title-content:before,
-.nav-file-title[data-path$="jpg"] .nav-file-title-content:before,
-.nav-file-title[data-path$="png"] .nav-file-title-content:before,
-.nav-file-title[data-path$="jpeg"] .nav-file-title-content:before {
+.nav-file-title[data-path$="tiff"] .nav-file-title-content::before,
+.nav-file-title[data-path$="jpg"] .nav-file-title-content::before,
+.nav-file-title[data-path$="png"] .nav-file-title-content::before,
+.nav-file-title[data-path$="jpeg"] .nav-file-title-content::before {
 	content: "image ";
 }
 
-.nav-file-title[data-path$="doc"] .nav-file-title-content:before,
-.nav-file-title[data-path$="docx"] .nav-file-title-content:before {
+.nav-file-title[data-path$="doc"] .nav-file-title-content::before,
+.nav-file-title[data-path$="docx"] .nav-file-title-content::before {
 	color: teal;
 }
 
-.nav-file-title[data-path$="pdf"] .nav-file-title-content:before {
+.nav-file-title[data-path$="pdf"] .nav-file-title-content::before {
 	content: "picture_as_pdf ";
 	color: #8B3244;
 }
 
-.nav-file-title[data-path$="xlsx"] .nav-file-title-content:before,
-.nav-file-title[data-path$="csv"] .nav-file-title-content:before {
+.nav-file-title[data-path$="xlsx"] .nav-file-title-content::before,
+.nav-file-title[data-path$="csv"] .nav-file-title-content::before {
 	color: green;
 	content: "table_chart ";
 }
 
-.nav-file-title[data-path*="statistic"] .nav-file-title-content:before,
-.nav-file-title[data-path*="Statistik"] .nav-file-title-content:before {
+.nav-file-title[data-path*="statistic"] .nav-file-title-content::before,
+.nav-file-title[data-path*="Statistik"] .nav-file-title-content::before {
 	content: "pie_chart_outline ";
 }
 
-.nav-file-title[data-path*="To do"] .nav-file-title-content:before,
-.nav-file-title[data-path*="to Do"] .nav-file-title-content:before,
-.nav-file-title[data-path*="To Do"] .nav-file-title-content:before,
-.nav-file-title[data-path*="to do"] .nav-file-title-content:before {
+.nav-file-title[data-path*="To do"] .nav-file-title-content::before,
+.nav-file-title[data-path*="to Do"] .nav-file-title-content::before,
+.nav-file-title[data-path*="To Do"] .nav-file-title-content::before,
+.nav-file-title[data-path*="to do"] .nav-file-title-content::before {
 	content: "check_box ";
 }
 
-.nav-file-title[data-path*="README"] .nav-file-title-content:before,
-.nav-file-title[data-path*="readme"] .nav-file-title-content:before,
-.nav-file-title[data-path*="Metadata"] .nav-file-title-content:before,
-.nav-file-title[data-path*="metadata"] .nav-file-title-content:before {
+.nav-file-title[data-path*="README"] .nav-file-title-content::before,
+.nav-file-title[data-path*="readme"] .nav-file-title-content::before,
+.nav-file-title[data-path*="Metadata"] .nav-file-title-content::before,
+.nav-file-title[data-path*="metadata"] .nav-file-title-content::before {
 	content: "info ";
 }
 
-.nav-file-title[data-path*="Kanban"] .nav-file-title-content:before,
-.nav-file-title[data-path*="kanban"] .nav-file-title-content:before {
+.nav-file-title[data-path*="Kanban"] .nav-file-title-content::before,
+.nav-file-title[data-path*="kanban"] .nav-file-title-content::before {
 	content: "dashboard ";
 }
 
@@ -4665,7 +4681,7 @@ a.zoom-plugin-title:hover{
 
 /* Style settings */
 /* remove buggy export button for certain blocks */
-.setting-editor-extra-setting-button.clickable-icon:last-child{
+.style-settings-heading .setting-editor-extra-setting-button:last-child{
 	display: none;
 }
 
@@ -4880,6 +4896,21 @@ settings:
 	 default: 0.875
 	 min: 0.5
 	 max: 2
+	 step: 0.1
+	 format: em
+  -
+	 id: menu-font-family
+	 title: Menu Font
+	 description: Font used in menus (i.e., Settings, Plugin Browser, Theme Browser).
+	 type: variable-text
+	 default: '"iA Writer Quattro V"'
+  -
+	 id: menu-font-size
+	 title: Menu Font Size
+	 type: variable-number-slider
+	 default: 1
+	 min: 0.7
+	 max: 1.3
 	 step: 0.1
 	 format: em
   -
