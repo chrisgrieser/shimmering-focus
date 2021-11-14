@@ -2,6 +2,8 @@
 
 A minimalistic Obsidian theme focused on readability and condensed information display.
 
+![](https://img.shields.io/badge/downloads-3438-7453A3?style=plastic)
+
 <img src="https://raw.githubusercontent.com/chrisgrieser/shimmering-focus/main/dual-theme-screenshot.png" alt="Promo Screenshot">
 
 
