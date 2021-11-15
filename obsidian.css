@@ -1,6 +1,6 @@
 /*───────────────────────────────────────────────────────
 SHIMMERING FOCUS
-Version 1.101
+Version 1.102
 https://github.com/chrisgrieser/shimmering-focus/
 Created by @pseudometa (Discord) aka @chrisgrieser (GitHub)
 MIT License
@@ -2053,11 +2053,6 @@ based on css from @Mara https://github.com/Mara-Li/Obsidian-Snippet-collection *
 .nav-file-title[data-path*="Word Count"] .nav-file-title-content::before {
 	content: "flag ";
 }
-
-.nav-file-title[data-path$="Activity Tracker.md"] .nav-file-title-content::before {
-	content: "date_range ";
-}
-
 
 /* adapted for the round checkboxes */
 .kanban-plugin__board input[type=checkbox]{
@@ -4657,6 +4652,29 @@ pre button.copy:hover::before{
 	color: var(--editor-alt-accent);
 	opacity: 0.6;
 }
+/* ─────────────────────────────────────────────────── */
+/* < Activity History */
+/* ─────────────────────────────────────────────────── */
+
+.ObsidianHistoryBlock .HistoryBoard text{
+	fill: var(--extra-contrast);
+	font-size: 0.55em;
+}
+.ObsidianHistoryBlock div.HistoryBoard{
+	padding: 0;
+}
+.ObsidianHistoryBlock div select.selectYear{
+	margin-left: 0 !important;
+	margin-top: 0 !important;
+	padding: 4px;
+	border-radius: var(--block-roundness) !important;
+	border: none;
+	font-size: 0.8em;
+}
+.ObsidianHistoryBlock div select.selectYear:hover{
+	color: var(--alt-accent);
+	cursor: pointer;
+}
 
 
 /* ─────────────────────────────────────────────────── */
@@ -4667,11 +4685,6 @@ pre button.copy:hover::before{
 a.zoom-plugin-title:hover{
 	color: var(--alt-accent);
 	opacity: 0.8 !important;
-}
-
-/* daily stats plugin */
-.react-calendar-heatmap {
-	font-size: 0.6em;
 }
 
 /* advanced tables */
@@ -4686,7 +4699,8 @@ a.zoom-plugin-title:hover{
 }
 
 /* ─────────────────────────────────────────────────── */
-/* Plugin Compatibility info for the Obsidian Hub */
+/* < Plugin Compatibility info for the Obsidian Hub */
+/* < Compatibility */
 /* ─────────────────────────────────────────────────── */
 
 /* @plugins
@@ -4721,6 +4735,7 @@ community:
 - obsidian-system-dark-mode
 - obsidian-extra-md-html-syntax
 - obsidian-style-settings
+- obsidian-activity-history
 */
 
 
