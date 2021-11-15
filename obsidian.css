@@ -1,6 +1,6 @@
 /*───────────────────────────────────────────────────────
 SHIMMERING FOCUS
-Version 1.105
+Version 1.106
 https://github.com/chrisgrieser/shimmering-focus/
 Created by @pseudometa (Discord) aka @chrisgrieser (GitHub)
 MIT License
@@ -3495,6 +3495,12 @@ input.document-replace-input{
 	color: var(--extra-contrast);
 }
 
+/* controls resizable, thanks @Manedblackwolf */
+.graph-controls {
+  resize: horizontal;
+  max-width: none;
+}
+
 /* ─────────────────────────────────────────────────── */
 /* < IMAGES */
 /* ─────────────────────────────────────────────────── */
@@ -3796,11 +3802,11 @@ https://forum.obsidian.md/t/inline-code-occludes-text-selection-and-vim-cursor/1
 	--dot-size: 1px;
 }
 
-/* thanks @Damian Korcz for this*/
 .kanban-plugin__board button{
 	border: unset !important;
 }
 
+/* thanks @Damian Korcz for this*/
 body .workspace-leaf-content[data-type=kanban] .view-header,
 .kanban-plugin__board {
 	background-size: var(--dot-spacing) var(--dot-spacing);
@@ -3818,6 +3824,9 @@ body .workspace-leaf-content[data-type=kanban] .view-header:hover{
 }
 
 /* more condensed */
+div.kanban-plugin__board > div{
+	padding: 0 0.5em;
+}
 .kanban-plugin__board.kanban-plugin__board .kanban-plugin__item-tag,
 .kanban-plugin__board.kanban-plugin__board .kanban-plugin__item-tags,
 .kanban-plugin__board.kanban-plugin__board .kanban-plugin__item-metadata{
@@ -3906,10 +3915,6 @@ a.tag.kanban-plugin__item-tag {
 	background-color: var(--kanban-background) !important;
 }
 
-.view-content > .kanban-plugin > * > div{
-	padding-top: 0.5em;
-}
-
 /*hr notes become seperators*/
 .workspace-leaf-content[data-type=kanban] hr{
 	border-width: 0.5em;
@@ -3942,9 +3947,11 @@ a.tag.kanban-plugin__item-tag {
 .nav-file-title[data-path*="kanban"] .nav-file-title-content::before {
 	content: "dashboard ";
 }
+
 .kanban-plugin__item-markdown li .external-link::before {
-    margin-top: 0;
+    margin-top: 1px;
     margin-right: 6px;
+
 }
 
 

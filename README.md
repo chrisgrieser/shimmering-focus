@@ -3,7 +3,7 @@
 A minimalistic [Obsidian](https://obsidian.md/) theme focused on readability and condensed information display.
 
 <!-- manually updated-->
-![](https://img.shields.io/badge/downloads-3569-6E4E9B?style=plastic)
+![](https://img.shields.io/badge/downloads-3574-6E4E9B?style=plastic)
 
 <img src="https://raw.githubusercontent.com/chrisgrieser/shimmering-focus/main/dual-theme-screenshot.png" alt="Promo Screenshot">
 
@@ -64,8 +64,8 @@ Using the [Style Settings Plugin](#Customization), you can deactivate the spellc
 <img src="https://i.imgur.com/9XPEUQq.png" alt="Spellcheck settings" width=60%>
 
 ### Multi-Color-Highlighting
-- Surround highlights with `*` or `**` for alternative highlight colors (e.g. `*==cyan==*`).
-- You can use my [Extra Markdown Syntax Plugin](https://github.com/chrisgrieser/obsidian-extra-md-html-syntax) to get even get hotkeys for them.
+- Surround highlights with `*` or `**` for alternative highlight colors (e.g. `*==cyan==*`).[^2]
+- You can use the [Extra Markdown Commands Plugin](https://github.com/chrisgrieser/obsidian-extra-md-commands) to get hotkeys for them.
 
 ### Features for Academic Work
 - [Pandoc Citations](https://pandoc.org/MANUAL.html#citations-in-note-styles) (`[@citekey]`) and footnotes are visually emphasized
@@ -77,8 +77,9 @@ Using the [Style Settings Plugin](#Customization), you can deactivate the spellc
 - **Pseudo-Spoiler-Tags**: Emphasized Strikethroughs (`*~~spoiler~~*`) will selectively hide text, except when hovered or the active line.
 - Relationship lines in unordered lists & file explorer
 - Active line highlighting
-- Dark Mode for PDFs (when using the theme in dark mode)
+- Dark Mode for PDFs[^3] (when using the theme in dark mode)
 - Styled [progress bars (`<progress>`)](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/progress)
+- Resizable Graph View Controls[^1] ([See this explanation image.](https://media.discordapp.net/attachments/855181471643861002/909861241055481857/lmao.gif))
 
 ## Design Principles
 
@@ -90,7 +91,7 @@ Using the [Style Settings Plugin](#Customization), you can deactivate the spellc
 
 ### Condensed Information Display
 - Uses screen real estate more efficiently to display more information.
-- Useful for Smaller Screens, Split Screens, Bigger Font sizes or simply if want to see more information without having to scroll.
+- Useful for smaller screens, Split Screens, bigger font sizes or simply if want to see more information without having to scroll.
 - Smaller images/PDFs. Click-and-Hold or use the [Max View Feature](#Max-View) to enlarge them again.
 - Wider input boxes
 
@@ -145,3 +146,7 @@ Thanks for help and/or CSS snippets:
 - @Atlas
 - @jdaniel
 - @NothingIsLost
+
+[^1]: Thanks to @Manedblackwolf for this.
+[^2]: Thanks to @Atlas for this.
+[^3]: Thanks to @phibr0 for this.
