@@ -1,6 +1,6 @@
 /*───────────────────────────────────────────────────────
 SHIMMERING FOCUS
-Version 1.103
+Version 1.104
 https://github.com/chrisgrieser/shimmering-focus/
 Created by @pseudometa (Discord) aka @chrisgrieser (GitHub)
 MIT License
@@ -704,6 +704,9 @@ div.menu-item{
 	color: var(--extra-contrast);
 	font-size: 1em;
 }
+.status-bar-item:first-child{
+	padding-left: 0;
+}
 
 .status-bar,
 .is-translucent .status-bar {
@@ -711,8 +714,8 @@ div.menu-item{
 	position: absolute;
 	right: 0;
 	bottom: 0;
-	border-top-left-radius: 7px;
-	padding: 0.5em 1em 0.5em 0 !important;
+	border-top-left-radius: var(--block-roundness);
+	padding: 0.5em 1em 0.5em 0.8em !important;
 	max-height: unset;
 	line-height: 1.2;
 }
@@ -1052,8 +1055,6 @@ body.no-barelink-spellcheck .cm-hmd-barelink.cm-overlay.cm-spell-error{
 	text-decoration: none;
 	background-image: none;
 }
-
-
 
 
 /* ─────────────────────────────────────────────────── */
@@ -2831,8 +2832,11 @@ svg[id^="m"][width][height][viewBox] {
 /* < Pandoc Citations & Footnotes */
 /* ─────────────────────────────────────────────────── */
 /* Pandoc Citations (applies to all []-links) */
-body:not(.no-pandoc-citation-emphasis) .cm-hmd-barelink,
-body:not(.no-pandoc-citation-emphasis) .cm-link.cm-quote.cm-hmd-barelink {
+
+body:not(.no-pandoc-citation-emphasis) .cm-hmd-barelink{
+	color: var(--editor-alt-accent);
+}
+body:not(.no-pandoc-citation-emphasis) .cm-link.cm-quote.cm-hmd-barelink{
 	color: var(--editor-alt-accent) !important;
 }
 
