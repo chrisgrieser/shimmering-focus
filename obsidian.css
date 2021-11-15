@@ -1,6 +1,6 @@
 /*───────────────────────────────────────────────────────
 SHIMMERING FOCUS
-Version 1.102
+Version 1.103
 https://github.com/chrisgrieser/shimmering-focus/
 Created by @pseudometa (Discord) aka @chrisgrieser (GitHub)
 MIT License
@@ -232,12 +232,12 @@ select.dropdown{
 
 
 /* letter space adjustion for the sidebar */
-body:not(.not-ia-writer-font) .nav-folder-title,
-body:not(.not-ia-writer-font) .nav-file-title{
+body:not(.normal-letter-spacing-sidebar) .nav-folder-title,
+body:not(.normal-letter-spacing-sidebar) .nav-file-title{
 	letter-spacing: -0.2px;
 }
 
-body:not(.not-ia-writer-font) .workspace-tabs{
+body:not(.normal-letter-spacing-sidebar) .workspace-tabs{
 	letter-spacing: -0.1px;
 }
 
@@ -277,35 +277,20 @@ body,
 	color: var(--bold-in-darkmode);
 }
 
-
-/* fix bold for iA Writer Quattro */
-body:not(.not-ia-writer-font) .suggestion-highlight,
-body:not(.not-ia-writer-font) .cm-strong,
-body:not(.not-ia-writer-font) .markdown-preview-view strong,
-body:not(.not-ia-writer-font) .nav-file-title.is-active,
-body:not(.not-ia-writer-font) table:not(.dataview.table-view-table) th,
-body:not(.not-ia-writer-font) .svelte-23avsr[name~="projects"],
-body:not(.not-ia-writer-font) .draft-container.svelte-1jmafs.selected,
-body:not(.not-ia-writer-font) .draft-container.svelte-1jmafs.selected:hover,
-body:not(.not-ia-writer-font) .scene-container.svelte-1wlkmbt.selected:hover,
-body:not(.not-ia-writer-font) .scene-container.svelte-1wlkmbt.selected,
-body:not(.not-ia-writer-font) .svelte-23avsr[name~="projects"]{
-	text-rendering: geometricPrecision;
-}
-
 .suggestion-highlight,
 .cm-strong,
 .markdown-preview-view strong,
 .nav-file-title.is-active,
 table:not(.dataview.table-view-table) th,
-.svelte-23avsr[name~="projects"],
 .draft-container.svelte-1jmafs.selected,
 .draft-container.svelte-1jmafs.selected:hover,
 .scene-container.svelte-1wlkmbt.selected:hover,
 .scene-container.svelte-1wlkmbt.selected,
 .svelte-23avsr[name~="projects"]{
+	text-rendering: geometricPrecision;
 	font-weight: 700;
 }
+
 
 /* ─────────────────────────────────────────────────── */
 /* < TITLE BAR */
@@ -1468,7 +1453,7 @@ body.block-cursor .CodeMirror-cursor{
 .nav-action-button svg,
 .workspace-tab-header-inner-icon svg {
 	width: 18px;
-	stroke-width: 2px;
+	stroke-width: 1.5px;
 	color: var(--extra-contrast);
 }
 .nav-header {
@@ -3875,10 +3860,10 @@ textarea.kanban-plugin__item-input{
 	background-color: var(--background-secondary-alt);
 }
 
-body:not(.not-ia-writer-font) textarea.kanban-plugin__item-input,
-body:not(.not-ia-writer-font) .kanban-plugin__drag-container p,
-body:not(.not-ia-writer-font) .workspace-leaf-content[data-type=kanban] p{
-	letter-spacing: -0.01em;
+textarea.kanban-plugin__item-input,
+.kanban-plugin__drag-container p,
+.workspace-leaf-content[data-type=kanban] p{
+	letter-spacing: -0.4px;
 }
 
 /*vertical three dots*/
@@ -3950,6 +3935,11 @@ a.tag.kanban-plugin__item-tag {
 .kanban-plugin__item-metadata-wrapper{
 	padding-top: 0 !important;
 	padding-bottom: 0 !important;
+}
+
+/* wrapping of external link icon */
+.workspace-leaf-content[data-type=kanban] .external-link{
+	white-space: normal;
 }
 
 /* ─────────────────────────────────────────────────── */
@@ -4864,13 +4854,6 @@ settings:
 	 type: variable-text
 	 default: '"iA Writer Quattro V"'
   -
-	 id: not-ia-writer-font
-	 title: Not using iA Writer as Main Font
-	 description: Enable this if you are not using iA Writer as main font.
-	 type: class-toggle
-	 hub: ignore
-	 default: false
-  -
 	 id: font-monospace
 	 title: Monospace Font
 	 description: Code blocks, YAML in edit mode, tables, etc.
@@ -4913,6 +4896,12 @@ settings:
 	 max: 2
 	 step: 0.1
 	 format: em
+  -
+	 id: normal-letter-spacing-sidebar
+	 title: No decreased letter spacing in the Sidebars
+	 type: class-toggle
+	 hub: ignore
+	 default: false
   -
 	 id: menu-font-family
 	 title: Menu Font
