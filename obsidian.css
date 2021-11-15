@@ -1,6 +1,6 @@
 /*───────────────────────────────────────────────────────
 SHIMMERING FOCUS
-Version 1.106
+Version 1.107
 https://github.com/chrisgrieser/shimmering-focus/
 Created by @pseudometa (Discord) aka @chrisgrieser (GitHub)
 MIT License
@@ -71,7 +71,8 @@ For help and/or CSS snippets, thanks to:
 	--cursor-duo-color-1: var(--alt-accent-lightest);
 	--cursor-duo-color-2: var(--accent-lightest);
 	--button-border: var(--accent-lighter);
-	--alternating-row-color: rgba(0, 0, 0, 0.03);
+	--a-row: rgba(0, 0, 0, 0.03);
+	--b-row: rgba(0, 0, 0, 0.06);
 }
 .theme-dark {
 	--editor-alt-accent: var(--alt-accent);
@@ -90,8 +91,11 @@ For help and/or CSS snippets, thanks to:
 	--cursor-duo-color-1: var(--alt-accent-lighter);
 	--cursor-duo-color-2: var(--accent-lighter);
 	--button-border: var(--text-accent);
-	--alternating-row-color: rgba(0, 0, 0, 0.2);
+	--a-row: rgba(0, 0, 0, 0.2);
+	--b-row: rgba(0, 0, 0, 0.35);
 }
+
+
 
 /* ─────────────────────────────────────────────────── */
 /* < Fonts */
@@ -1093,6 +1097,11 @@ a.internal-link.is-unresolved:hover{
    padding-right: 0;
 	white-space: nowrap;
 }
+/* exceptions */
+body > .app-container table > tbody > tr > td .external-link,
+.workspace-leaf-content[data-type=kanban] .external-link{
+	white-space: normal;
+}
 
 
 .external-link[href*="http"]::before {
@@ -1359,10 +1368,10 @@ input[type=checkbox]:checked:hover{
 }
 
 /* Alternating row colors */
-.suggestion-item:nth-child(even){
-	background-color: var(--alternating-row-color);
+body:not(.no-alternating-rows) .suggestion-item:nth-child(even){
+	background-color: var(--a-row);
 }
-.suggestion-item:nth-child(even) .suggestion-hotkey{
+body:not(.no-alternating-rows) .suggestion-item:nth-child(even) .suggestion-hotkey{
 	background-color: var(--background-primary);
 }
 
@@ -2776,9 +2785,6 @@ body:not(.max-view-off) .workspace-split.mod-left-split.is-collapsed ~ .mod-root
 body:not(.max-view-off) .workspace-split.mod-left-split.is-collapsed ~ .mod-root .CodeMirror-wrap{
 	max-width: 100% !important;
 }
-body:not(.max-view-off) .workspace-split.mod-left-split.is-collapsed ~ .mod-root .markdown-preview-view table {
-	width: 100%;
-}
 
 /* < Images */
 body:not(.max-view-off) .workspace-split.mod-left-split.is-collapsed ~ .mod-root .view-content .markdown-preview-view img{
@@ -2885,18 +2891,65 @@ span.cm-link.cm-hmd-footnote {
 /* add some more table styling, e.g. from https://forum.obsidian.md/t/custom-css-for-tables-5-new-styles-ready-to-use-in-your-notes/17084*/
 /* see also section "Max View"*/
 
-table:not(.dataview.table-view-table) td,
-table:not(.dataview.table-view-table) th {
-	border: 2px ridge var(--text-muted);
+.markdown-preview-view table:not(.dataview.table-view-table) {
+	table-layout: fixed;
+	width: 100%;
 }
 
-table:not(.dataview.table-view-table) th {
+
+:root body{
+	--table-border: 2px ridge var(--hr-line);
+	--table-roundness: calc(var(--block-roundness) * 2);
+}
+
+/* rounded corners */
+th:first-child {
+	border-top-left-radius: var(--table-roundness);
+}
+th:last-child {
+	border-top-right-radius: var(--table-roundness);
+}
+tr:last-child td:first-child{
+	border-bottom-left-radius: var(--table-roundness);
+}
+tr:last-child td:last-child{
+	border-bottom-right-radius: var(--table-roundness);
+}
+
+/* only inner borders */
+body > .app-container table > thead > tr > th {
+    border-top: none;
+    border-right: none;
+    border-bottom: var(--table-border);
+	 border-left: var(--table-border);
+}
+body > .app-container table > thead > tr > th:first-child{
+	 border-left: none;
+}
+body > .app-container table > tbody > tr > td {
+    border: none;
+	 border-left: var(--table-border);
+}
+body > .app-container table > tbody > tr > td:first-child{
+	 border-left: none;
+}
+
+/* background */
+thead {
 	background-color: var(--background-secondary-alt);
 	font-weight: 900;
 }
+tr{
+	background-color: var(--a-row);
+}
 
-body:not(.alternating-table-rows) .markdown-preview-view tr:nth-child(even) {
-	background-color: var(--alternating-row-color);
+/* alternating rows */
+body:not(.no-alternating-rows) .markdown-preview-view tr:nth-child(even) {
+	background-color: var(--b-row);
+}
+
+body.no-alternating-rows > .app-container table > tbody > tr > td {
+	border-top: var(--table-border);
 }
 
 
@@ -3309,7 +3362,6 @@ blockquote {
 /* < progress bars (<progress>) */
 /* ─────────────────────────────────────────────────── */
 /*thanks @SkepticMystic*/
-/* https://coolors.co/03045e-023e8a-0077b6-0096c7-00b4d8-48cae4-90e0ef-ade8f4-caf0f8 */
 progress {
   background: none;
   height: 0.55em;
@@ -3323,36 +3375,18 @@ progress::-webkit-progress-bar {
 progress::-webkit-progress-value {
   border-radius: 20px;
 }
-progress[value^="1"]::-webkit-progress-value {
-  background: hsl(239, 94%, 19%);
-}
-progress[value^="2"]::-webkit-progress-value {
-  background: hsl(214, 97%, 27%);
-}
-progress[value^="3"]::-webkit-progress-value {
-  background: hsl(201, 100%, 36%);
-}
-progress[value^="4"]::-webkit-progress-value {
-  background: hsl(195, 100%, 39%);
-}
-progress[value^="5"]::-webkit-progress-value {
-  background: hsl(190, 100%, 42%);
-}
-progress[value^="6"]::-webkit-progress-value {
-  background: hsl(190, 80%, 50%);
-}
-progress[value^="7"]::-webkit-progress-value {
-  background: hsl(185, 90%, 62%);
-}
-progress[value^="8"]::-webkit-progress-value {
-  background: hsl(185, 90%, 75%);
-}
-progress[value^="9"]::-webkit-progress-value {
-  background: hsl(175, 80%, 70%);
-}
-progress[value^="10"]::-webkit-progress-value {
-  background: hsl(160, 92%, 70%);
-}
+
+/* https://coolors.co/gradient-palette/03045e-6cf9ca?number=10 */
+progress[value^="1"]::-webkit-progress-value { background: #03045E; }
+progress[value^="2"]::-webkit-progress-value { background: #0F1F6A; }
+progress[value^="3"]::-webkit-progress-value { background: #1A3A76; }
+progress[value^="4"]::-webkit-progress-value { background: #265682; }
+progress[value^="5"]::-webkit-progress-value { background: #32718E; }
+progress[value^="6"]::-webkit-progress-value { background: #3D8C9A; }
+progress[value^="7"]::-webkit-progress-value { background: #49A7A6; }
+progress[value^="8"]::-webkit-progress-value { background: #55C3B2; }
+progress[value^="9"]::-webkit-progress-value { background: #60DEBE; }
+progress[value^="10"]::-webkit-progress-value { background: #6CF9CA; }
 
 
 /* ─────────────────────────────────────────────────── */
@@ -3635,7 +3669,7 @@ ol ul::before {
 /* ─────────────────────────────────────────────────── */
 /* < PDFs */
 /* ─────────────────────────────────────────────────── */
-/*snippet from @phibr0*/
+/* credits @phibr0*/
 .theme-dark:not(.no-pdf-dark-mode) .pdf-embed iframe,
 .theme-dark:not(.no-pdf-dark-mode) .workspace-leaf-content[data-type="pdf"] iframe {
 	 filter: invert(0.85);
@@ -3928,11 +3962,6 @@ a.tag.kanban-plugin__item-tag {
 .kanban-plugin__item-metadata-wrapper{
 	padding-top: 0 !important;
 	padding-bottom: 0 !important;
-}
-
-/* wrapping of external link icon */
-.workspace-leaf-content[data-type=kanban] .external-link{
-	white-space: normal;
 }
 
 /* adapted for the round checkboxes */
@@ -4752,6 +4781,7 @@ settings:
   -
 	 id: show-hide-elements
 	 title: Show/Hide Elements
+	 description: Re-enable Elements hidden by this theme.
 	 type: heading
 	 level: 2
 	 collapsed: true
@@ -4800,6 +4830,7 @@ settings:
   -
 	 id: headings
 	 title: Headings
+	 description: Level-specific Sizes & Italics
 	 type: heading
 	 level: 2
 	 collapsed: true
@@ -4857,6 +4888,7 @@ settings:
   -
 	 id: font-selection
 	 title: Fonts
+	 description: Sizes, Font-Face, Letter-Spacing
 	 type: heading
 	 level: 2
 	 collapsed: true
@@ -4937,8 +4969,9 @@ settings:
 	 hub: ignore
 	 default: false
   -
-	 id: image-settings
-	 title: Images, PDFs, & Line Length
+	 id: content-settings
+	 title: Editor Content
+	 description: Images, PDFs, Tables, Line Length, & Max View
 	 type: heading
 	 level: 2
 	 collapsed: true
@@ -4949,8 +4982,9 @@ settings:
 	 type: class-toggle
 	 default: false
   -
-	 id: alternating-table-rows
-	 title: Turn off Alternating Table Row colors
+	 id: no-alternating-rows
+	 title: Turn off Alternating Row Coloring
+	 description: Affects tables, Command Palette & Suggesters
 	 type: class-toggle
 	 default: false
   -
@@ -4988,6 +5022,7 @@ settings:
   -
 	 id: cursor-settings
 	 title: Cursor
+	 description: Type & Color
 	 type: heading
 	 level: 2
 	 collapsed: true
@@ -5006,6 +5041,7 @@ settings:
   -
 	 id: spellcheck-settings
 	 title: Spellcheck
+	 description: Style & Fine-tuning
 	 type: heading
 	 level: 2
 	 collapsed: true
@@ -5060,6 +5096,7 @@ settings:
   -
 	 id: longform-settings
 	 title: Longform Plugin
+	 description: Font, Alignment, Background
 	 type: heading
 	 level: 2
 	 collapsed: true
@@ -5099,6 +5136,7 @@ settings:
   -
 	 id: miscellaneous
 	 title: Miscellaneous
+	 description: Checkboxes, Pandoc Citations, Popovers, Annotation Tags
 	 type: heading
 	 level: 2
 	 collapsed: true
