@@ -1,6 +1,6 @@
 /*───────────────────────────────────────────────────────
 SHIMMERING FOCUS
-Version 1.104
+Version 1.105
 https://github.com/chrisgrieser/shimmering-focus/
 Created by @pseudometa (Discord) aka @chrisgrieser (GitHub)
 MIT License
@@ -1093,6 +1093,8 @@ a.internal-link.is-unresolved:hover{
    padding-right: 0;
 	white-space: nowrap;
 }
+
+
 .external-link[href*="http"]::before {
     content: var(--externalURL);
 }
@@ -1104,7 +1106,6 @@ a.internal-link.is-unresolved:hover{
     width: 1em;
     margin-top: 2px;
 }
-
 
 /* ─────────────────────────────────────────────────── */
 /* < Tags */
@@ -2024,11 +2025,6 @@ based on css from @Mara https://github.com/Mara-Li/Obsidian-Snippet-collection *
 	content: "info ";
 }
 
-.nav-file-title[data-path*="Kanban"] .nav-file-title-content::before,
-.nav-file-title[data-path*="kanban"] .nav-file-title-content::before {
-	content: "dashboard ";
-}
-
 .nav-file-title[data-path*="OCR-Screenshot"] .nav-file-title-content::before {
 	content: "photo_camera ";
 }
@@ -2038,15 +2034,6 @@ based on css from @Mara https://github.com/Mara-Li/Obsidian-Snippet-collection *
 .nav-file-title[data-path*="Character Count"] .nav-file-title-content::before,
 .nav-file-title[data-path*="Word Count"] .nav-file-title-content::before {
 	content: "flag ";
-}
-
-/* adapted for the round checkboxes */
-.kanban-plugin__board input[type=checkbox]{
-	margin-top: 1px;
-	height: 0.85em;
-	width: 0.85em;
-	margin-left: 0;
-	margin-right: 5px;
 }
 
 
@@ -2789,7 +2776,7 @@ body:not(.max-view-off) .workspace-split.mod-left-split.is-collapsed ~ .mod-root
 body:not(.max-view-off) .workspace-split.mod-left-split.is-collapsed ~ .mod-root .CodeMirror-wrap{
 	max-width: 100% !important;
 }
-.markdown-preview-view table {
+body:not(.max-view-off) .workspace-split.mod-left-split.is-collapsed ~ .mod-root .markdown-preview-view table {
 	width: 100%;
 }
 
@@ -2906,9 +2893,6 @@ table:not(.dataview.table-view-table) th {
 table:not(.dataview.table-view-table) th {
 	background-color: var(--background-secondary-alt);
 	font-weight: 900;
-}
-.markdown-preview-view table:not(.dataview.table-view-table) {
-	table-layout: fixed;
 }
 
 body:not(.alternating-table-rows) .markdown-preview-view tr:nth-child(even) {
@@ -3518,7 +3502,7 @@ input.document-replace-input{
 
 /* Image Alt as Caption in Preview Mode */
 /* useful as this is also how Pandoc converts */
-.image-embed[alt]:after {
+.image-embed[alt]::after {
 	content: attr(alt);
 	font-size: 90%;
 	display: block;
@@ -3536,7 +3520,7 @@ input.document-replace-input{
 }
 
 /* centers image and caption */
-body:not(.left-aligned-embeds) .image-embed[alt]:after {
+body:not(.left-aligned-embeds) .image-embed[alt]::after {
 	white-space: pre;
 	text-align: center;
 }
@@ -3945,6 +3929,24 @@ a.tag.kanban-plugin__item-tag {
 .workspace-leaf-content[data-type=kanban] .external-link{
 	white-space: normal;
 }
+
+/* adapted for the round checkboxes */
+.kanban-plugin__board input[type=checkbox]{
+	margin-top: 1px;
+	height: 0.85em;
+	width: 0.85em;
+	margin-left: 0;
+	margin-right: 5px;
+}
+.nav-file-title[data-path*="Kanban"] .nav-file-title-content::before,
+.nav-file-title[data-path*="kanban"] .nav-file-title-content::before {
+	content: "dashboard ";
+}
+.kanban-plugin__item-markdown li .external-link::before {
+    margin-top: 0;
+    margin-right: 6px;
+}
+
 
 /* ─────────────────────────────────────────────────── */
 /* < Longform Plugin */
@@ -4481,7 +4483,6 @@ button.MS-OpenSnippet:hover svg.ms-snippet path{
 body #search-res-hover.show,
 body #block-ref-hover.show{
 	color: var(--text-muted);
-	/*background-color: var(--background-primary-alt);*/
 	border-radius: calc(var(--block-roundness));
 }
 
@@ -5022,7 +5023,7 @@ settings:
   -
 	 id: no-html-spellcheck
 	 title: No Spellcheck for HTML Tags
-	 description: Turn off Spellcheck in HTML Tags (e.g. <smal>)
+	 description: Turn off Spellcheck in HTML Tags (e.g. <br/> not marked)
 	 type: class-toggle
 	 default: false
   -
