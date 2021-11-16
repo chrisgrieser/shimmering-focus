@@ -1,6 +1,6 @@
 /*───────────────────────────────────────────────────────
 SHIMMERING FOCUS
-Version 1.108
+Version 1.109
 https://github.com/chrisgrieser/shimmering-focus/
 Created by @pseudometa (Discord) aka @chrisgrieser (GitHub)
 MIT License
@@ -4817,7 +4817,7 @@ settings:
 	 default: false
   -
 	 id: show-collapse-buttons
-	 title: Permanently show the Edit Mode Collapse Buttons (Fold Buttons)
+	 title: Permanently show the Edit Mode Collapse Arrows (Fold Arrows)
 	 type: class-toggle
 	 description: When false, you collapse buttons still become visible upon hovering.
 	 default: false
