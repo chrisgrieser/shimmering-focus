@@ -3,7 +3,7 @@
 A minimalistic [Obsidian](https://obsidian.md/) theme focused on readability and condensed information display.
 
 <!-- manually updated-->
-![](https://img.shields.io/badge/downloads-3672-6E4E9B?style=plastic)
+![](https://img.shields.io/badge/downloads-3676-6E4E9B?style=plastic)
 
 <img src="https://raw.githubusercontent.com/chrisgrieser/shimmering-focus/main/dual-theme-screenshot.png" alt="Promo Screenshot">
 
@@ -16,7 +16,7 @@ A minimalistic [Obsidian](https://obsidian.md/) theme focused on readability and
   - [Max View](#max-view)
   - [Image-related Features](#image-related-features)
   - [Fine-tuned Spellcheck](#fine-tuned-spellcheck)
-  - [Multi-Color-Highlighting](#multi-color-highlighting)
+  - [Multi-Color-Highlighting & Spoiler Syntax](#multi-color-highlighting--spoiler-syntax)
   - [Features for Academic Work](#features-for-academic-work)
   - [Further Features](#further-features)
 - [Design Principles](#design-principles)
@@ -63,9 +63,10 @@ Using the [Style Settings Plugin](#Customization), you can deactivate the spellc
 
 <img src="https://i.imgur.com/9XPEUQq.png" alt="Spellcheck settings" width=60%>
 
-### Multi-Color-Highlighting
+### Multi-Color-Highlighting & Spoiler Syntax
 - Surround highlights with `*` or `**` for alternative highlight colors (e.g. `*==cyan==*`).[^2]
 - You can use the [Extra Markdown Commands Plugin](https://github.com/chrisgrieser/obsidian-extra-md-commands) to get hotkeys for them.
+- Spoiler Syntax: Emphasized Strikethroughs (`*~~spoiler~~*`) will selectively hide text, except when hovered or the active line.
 
 ### Features for Academic Work
 - [Pandoc Citations](https://pandoc.org/MANUAL.html#citations-in-note-styles) (`[@citekey]`) and footnotes are visually emphasized
@@ -74,8 +75,7 @@ Using the [Style Settings Plugin](#Customization), you can deactivate the spellc
 
 ### Further Features
 - **Pseudo-Admonition**: `h6` blocks will become a pseudo-admonition box (only works with one-liners though)
-- **Pseudo-Spoiler-Tags**: Emphasized Strikethroughs (`*~~spoiler~~*`) will selectively hide text, except when hovered or the active line.
-- Relationship lines in unordered lists & file explorer
+- Relationship lines in lists & File Explorer
 - Active line highlighting
 - Dark Mode for PDFs[^3] (when using the theme in dark mode)
 - Styled [progress bars (`<progress>`)](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/progress)
@@ -147,6 +147,6 @@ Thanks for help and/or CSS snippets:
 - @jdaniel
 - @NothingIsLost
 
-[^1]: Thanks to @Manedblackwolf for this.
-[^2]: Thanks to @Atlas for this.
-[^3]: Thanks to @phibr0 for this.
+[^1]: Thanks to @Manedblackwolf.
+[^2]: Thanks to @Atlas.
+[^3]: Thanks to @phibr0.
