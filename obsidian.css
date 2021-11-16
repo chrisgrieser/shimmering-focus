@@ -1,6 +1,6 @@
 /*───────────────────────────────────────────────────────
 SHIMMERING FOCUS
-Version 1.107
+Version 1.108
 https://github.com/chrisgrieser/shimmering-focus/
 Created by @pseudometa (Discord) aka @chrisgrieser (GitHub)
 MIT License
@@ -816,7 +816,7 @@ body:not(.normal-checkboxes) .checkbox-container{
 	 background-color: var(--background-secondary);
 	 transition-duration: 200ms;
 }
-body:not(.normal-checkboxes) .checkbox-container:after {
+body:not(.normal-checkboxes) .checkbox-container::after {
 	 display: none;
 }
 body:not(.normal-checkboxes) .checkbox-container.is-enabled {
@@ -912,85 +912,85 @@ pre[class*="language-"]::after {
 	right: 5px;
 	bottom: 2px;
 }
-pre[class~="language-c"]:after {
+pre[class~="language-c"]::after {
 	content: "C";
 }
-pre[class~="language-python"]:after {
+pre[class~="language-python"]::after {
 	content: "Python";
 }
-pre[class~="language-nginx"]:after {
+pre[class~="language-nginx"]::after {
 	content: "Nginx";
 }
-pre[class~="language-css"]:after {
+pre[class~="language-css"]::after {
 	content: "CSS";
 }
-pre[class~="language-node"]:after {
+pre[class~="language-node"]::after {
 	content: "Node";
 }
-pre[class~="language-react"]:after {
+pre[class~="language-react"]::after {
 	content: "React";
 }
-pre[class~="language-javascript"]:after {
+pre[class~="language-javascript"]::after {
 	content: "JavaScript";
 }
-pre[class~="language-js"]:after {
+pre[class~="language-js"]::after {
 	content: "JavaScript";
 }
-pre[class~="language-php"]:after {
+pre[class~="language-php"]::after {
 	content: "PHP";
 }
-pre[class~="language-shell"]:after {
+pre[class~="language-shell"]::after {
 	content: "Shell";
 }
-pre[class~="language-bash"]:after {
+pre[class~="language-bash"]::after {
 	content: "Bash";
 }
-pre[class~="language-zsh"]:after {
+pre[class~="language-zsh"]::after {
 	content: "zsh";
 }
-pre[class~="language-c"]:after {
+pre[class~="language-c"]::after {
 	content: "C";
 }
-pre[class~="language-typescript"]:after {
+pre[class~="language-typescript"]::after {
 	content: "TypeScript";
 }
-pre[class~="language-flow"]:after {
+pre[class~="language-flow"]::after {
 	content: "Flow";
 }
-pre[class~="language-sequence"]:after {
+pre[class~="language-sequence"]::after {
 	content: "Sequence";
 }
-pre[class~="language-sql"]:after {
+pre[class~="language-sql"]::after {
 	content: "SQL";
 }
-pre[class~="language-yaml"]:after {
+pre[class~="language-yaml"]::after {
 	content: "YAML";
 }
-pre[class~="language-ini"]:after {
+pre[class~="language-ini"]::after {
 	content: "INI";
 }
-pre[class~="language-xml"]:after {
+pre[class~="language-xml"]::after {
 	content: "XML";
 }
-pre[class~="language-git"]:after {
+pre[class~="language-git"]::after {
 	content: "GIT";
 }
-pre[class~="language-cs"]:after {
+pre[class~="language-cs"]::after {
 	content: "C#";
 }
-pre[class~="language-cpp"]:after {
+pre[class~="language-cpp"]::after {
 	content: "C++";
 }
-pre[class~="language-java"]:after {
+pre[class~="language-java"]::after {
 	content: "JAVA";
 }
-pre[class~="language-html"]:after {
+pre[class~="language-html"]::after {
 	content: "HTML";
 }
-pre[class~="language-txt"]:after {
+pre[class~="language-txt"]::after {
 	content: "text";
 }
-pre[class~="language-text"]:after {
+pre[class~="language-text"]::after {
 	content: "text";
 }
 
@@ -1003,7 +1003,7 @@ https://forum.obsidian.md/t/inline-code-occludes-text-selection-and-vim-cursor/1
 	background-color: rgba(0, 0, 0, 0.05) !important;
 }
 
-/* < copy code button */
+/* copy code button */
 button.copy-code-button{
 	padding-right: 3px !important;
 	padding-left: 9px !important;
@@ -2899,7 +2899,7 @@ span.cm-link.cm-hmd-footnote {
 
 :root body{
 	--table-border: 2px ridge var(--hr-line);
-	--table-roundness: calc(var(--block-roundness) * 2);
+	--table-roundness: var(--block-roundness);
 }
 
 /* rounded corners */
@@ -3859,7 +3859,7 @@ body .workspace-leaf-content[data-type=kanban] .view-header:hover{
 
 /* more condensed */
 div.kanban-plugin__board > div{
-	padding: 0 0.5em;
+	padding: 0 0.6em 0.5em 0.6em;
 }
 .kanban-plugin__board.kanban-plugin__board .kanban-plugin__item-tag,
 .kanban-plugin__board.kanban-plugin__board .kanban-plugin__item-tags,
@@ -4828,12 +4828,95 @@ settings:
 	 description: Folder markers are the "..."" next to a folded/collapsed item.
 	 default: false
   -
-	 id: headings
-	 title: Headings
-	 description: Level-specific Sizes & Italics
+	 id: font-settings
+	 title: Fonts
+	 description: Sizes, Font-Face, Letter-Spacing
 	 type: heading
 	 level: 2
 	 collapsed: true
+  -
+	 id: default-font
+	 title: Main Font
+	 type: variable-text
+	 default: '"iA Writer Quattro V"'
+  -
+	 id: font-monospace
+	 title: Monospace Font
+	 description: Code blocks, YAML in edit mode, tables, etc.
+	 type: variable-text
+	 default: '"Input Mono"'
+  -
+	 id: monospace-font-size
+	 title: Monospace Font Size
+	 type: variable-number-slider
+	 default: 0.95
+	 min: 0.5
+	 max: 2.5
+	 step: 0.1
+	 format: em
+  -
+	 id: sidebar-font-family
+	 title: Side Bar Font
+	 description: Applies to all text in the left and right side bar
+	 type: variable-text
+	 default: '"iA Writer Quattro V"'
+  -
+	 id: sidebar-font-size
+	 title: Side Bar Font Size
+	 type: variable-number-slider
+	 default: 0.875
+	 min: 0.5
+	 max: 2
+	 step: 0.1
+	 format: em
+  -
+	 id: normal-letter-spacing-sidebar
+	 title: No decreased letter spacing in the Sidebars
+	 type: class-toggle
+	 hub: ignore
+	 default: false
+  -
+	 id: menu-font-family
+	 title: Menu Font
+	 description: Font used in menus (i.e., Settings, Plugin Browser, Theme Browser).
+	 type: variable-text
+	 default: '"iA Writer Quattro V"'
+  -
+	 id: menu-font-size
+	 title: Menu Font Size
+	 type: variable-number-slider
+	 default: 1
+	 min: 0.7
+	 max: 1.3
+	 step: 0.1
+	 format: em
+  -
+	 id: standard-mermaid-font
+	 title: Use Standard Mermaid Font
+	 description: Enable this if you set a custom font and it breaks the look of Mermaid graphs.
+	 type: class-toggle
+	 hub: ignore
+	 default: false
+  -
+	 id: headings
+	 title: Headings
+	 description: Level-Specific Sizes, Font, Italics
+	 type: heading
+	 level: 2
+	 collapsed: true
+  -
+	 id: heading-font
+	 title: Heading Font
+	 description: Applies to H1 to H5 Headings
+	 type: variable-text
+	 default: Optima, Optima-local
+  -
+	 id: less-heading-letter-spacing
+	 title: Decrease letter spacing for headings
+	 description: This theme increases letter spacing to make the Heading Font align more with the other fonts. Turn this on, if you are using a different Heading Font.
+	 type: class-toggle
+	 hub: ignore
+	 default: false
   -
 	 id: no-alternating-header-italics
 	 title: No Alternating Italic of Headings
@@ -4885,89 +4968,6 @@ settings:
 	 max: 3.5
 	 step: 0.1
 	 format: em
-  -
-	 id: font-selection
-	 title: Fonts
-	 description: Sizes, Font-Face, Letter-Spacing
-	 type: heading
-	 level: 2
-	 collapsed: true
-  -
-	 id: default-font
-	 title: Main Font
-	 type: variable-text
-	 default: '"iA Writer Quattro V"'
-  -
-	 id: font-monospace
-	 title: Monospace Font
-	 description: Code blocks, YAML in edit mode, tables, etc.
-	 type: variable-text
-	 default: '"Input Mono"'
-  -
-	 id: monospace-font-size
-	 title: Monospace Font Size
-	 type: variable-number-slider
-	 default: 0.95
-	 min: 0.5
-	 max: 2.5
-	 step: 0.1
-	 format: em
-  -
-	 id: heading-font
-	 title: Heading Font
-	 description: H1 to H5 Headings
-	 type: variable-text
-	 default: Optima, Optima-local
-  -
-	 id: less-heading-letter-spacing
-	 title: Decrease letter spacing for headings
-	 description: This theme increases letter spacing to make the Heading Font align more with the other fonts. Turn this on, if you are using a different Heading Font.
-	 type: class-toggle
-	 hub: ignore
-	 default: false
-  -
-	 id: sidebar-font-family
-	 title: Side Bar Font
-	 description: Applies to all text in the left and right side bar
-	 type: variable-text
-	 default: '"iA Writer Quattro V"'
-  -
-	 id: sidebar-font-size
-	 title: Side Bar Font Size
-	 type: variable-number-slider
-	 default: 0.875
-	 min: 0.5
-	 max: 2
-	 step: 0.1
-	 format: em
-  -
-	 id: normal-letter-spacing-sidebar
-	 title: No decreased letter spacing in the Sidebars
-	 type: class-toggle
-	 hub: ignore
-	 default: false
-  -
-	 id: menu-font-family
-	 title: Menu Font
-	 description: Font used in menus (i.e., Settings, Plugin Browser, Theme Browser).
-	 type: variable-text
-	 default: '"iA Writer Quattro V"'
-  -
-	 id: menu-font-size
-	 title: Menu Font Size
-	 type: variable-number-slider
-	 default: 1
-	 min: 0.7
-	 max: 1.3
-	 step: 0.1
-	 format: em
-  -
-	 id: standard-mermaid-font
-	 title: Use Standard Mermaid Font
-	 description: Enable this if you set a custom font and it breaks the look of Mermaid graphs.
-	 type: class-toggle
-	 hub: ignore
-	 default: false
   -
 	 id: content-settings
 	 title: Editor Content
