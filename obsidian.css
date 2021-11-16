@@ -1,6 +1,6 @@
 /*───────────────────────────────────────────────────────
 SHIMMERING FOCUS
-Version 1.110
+Version 1.111
 https://github.com/chrisgrieser/shimmering-focus/
 Created by @pseudometa (Discord) aka @chrisgrieser (GitHub)
 MIT License
@@ -3821,6 +3821,7 @@ https://forum.obsidian.md/t/inline-code-occludes-text-selection-and-vim-cursor/1
 /* < Kanban Plugin */
 /* ─────────────────────────────────────────────────── */
 
+# variables
 .theme-light{
 	--kanban-background: #DADADA;
 	--active-hover-kanban-item: #EEE;
@@ -3894,10 +3895,10 @@ textarea.kanban-plugin__item-input{
 textarea.kanban-plugin__item-input,
 .kanban-plugin__drag-container p,
 .workspace-leaf-content[data-type=kanban] p{
-	letter-spacing: -0.4px;
+	letter-spacing: -0.3px;
 }
 
-/*vertical three dots*/
+/*vertical three dots on lane*/
 .kanban-plugin__lane-settings-button-wrapper svg{
 	color: var(--text-faint);
 	stroke-width: 3px !important;
@@ -3906,8 +3907,10 @@ textarea.kanban-plugin__item-input,
 	color: #EEE;
 }
 
-/* remove button on card to save space */
-.kanban-plugin__item-postfix-button-wrapper{
+/* vertical three dots on card */
+/* card options still available via right click.
+not on mobile, since you cannot right click there. */
+body:not(.is-mobile) .kanban-plugin__item-postfix-button-wrapper{
 	display: none !important;
 }
 
@@ -4764,7 +4767,7 @@ community:
 - quick-explorer
 - templater-obsidian
 - obsidian-system-dark-mode
-- obsidian-extra-md-html-syntax
+- obsidian-extra-md-commands
 - obsidian-style-settings
 - obsidian-activity-history
 */
