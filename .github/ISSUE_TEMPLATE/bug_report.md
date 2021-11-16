@@ -21,5 +21,5 @@ Steps to reproduce the behavior:
 If applicable, add screenshots to help explain your problem.
 
 **Checklist**
-- [ ] I have updated to the latest version of the theme (`Obsidian Settings → Appearance → Themes - Manage → Update`)
-- [ ] I have checked that the change is *not* already available via the [Style Settings plugin](https://github.com/mgmeyers/obsidian-style-settings).
+- [ ] I have updated to the latest version of the theme (`Obsidian Settings → Appearance → Themes - Manage → Update`).
+- [ ] I checked that the issue does not occur when using the default theme.
