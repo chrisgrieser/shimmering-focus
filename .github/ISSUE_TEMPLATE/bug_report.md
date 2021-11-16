@@ -7,7 +7,7 @@ assignees: ''
 
 ---
 
-**Describe the bug**
+**Describe the Bug**
 A clear and concise description of what the bug is.
 
 **To Reproduce**
@@ -20,6 +20,6 @@ Steps to reproduce the behavior:
 **Relevant Screenshots**
 If applicable, add screenshots to help explain your problem.
 
-**Common Troubleshooting**
+**Checklist**
 - [ ] I have updated to the latest version of the theme (`Obsidian Settings → Appearance → Themes - Manage → Update`)
 - [ ] I have checked that the change is *not* already available via the [Style Settings plugin](https://github.com/mgmeyers/obsidian-style-settings).
