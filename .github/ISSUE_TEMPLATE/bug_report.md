@@ -22,4 +22,4 @@ If applicable, add screenshots to help explain your problem.
 
 **Common Troubleshooting**
 - [ ] I have updated to the latest version of the theme (`Obsidian Settings → Appearance → Themes - Manage → Update`)
-- [ ] I have checked that the feature is *not* already available via [Style Settings plugin](https://github.com/mgmeyers/obsidian-style-settings).
+- [ ] I have checked that the change is *not* already available via the [Style Settings plugin](https://github.com/mgmeyers/obsidian-style-settings).
