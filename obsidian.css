@@ -1,6 +1,6 @@
 /*───────────────────────────────────────────────────────
 SHIMMERING FOCUS
-Version 1.111
+Version 1.112
 https://github.com/chrisgrieser/shimmering-focus/
 Created by @pseudometa (Discord) aka @chrisgrieser (GitHub)
 MIT License
@@ -74,6 +74,7 @@ For help and/or CSS snippets, thanks to:
 	--a-row: rgba(0, 0, 0, 0.03);
 	--b-row: rgba(0, 0, 0, 0.06);
 }
+
 .theme-dark {
 	--editor-alt-accent: var(--alt-accent);
 	--selection-color: #3c243bDD;
@@ -3821,15 +3822,16 @@ https://forum.obsidian.md/t/inline-code-occludes-text-selection-and-vim-cursor/1
 /* < Kanban Plugin */
 /* ─────────────────────────────────────────────────── */
 
-# variables
+/* variables */
 .theme-light{
 	--kanban-background: #DADADA;
 	--active-hover-kanban-item: #EEE;
 	--dot-color: #CCCCCC80;
 }
+
 .theme-dark{
 	--kanban-background: #2C2C2C;
-	--active-hover-kanban-item: var(--kanban-background);
+	--active-hover-kanban-item: #2C2C2C;
 	--dot-color: #22222280;
 }
 :root{
@@ -3950,12 +3952,6 @@ a.tag.kanban-plugin__item-tag {
 
 .kanban-plugin{
 	background-color: var(--kanban-background) !important;
-}
-
-/*hr notes become seperators*/
-.workspace-leaf-content[data-type=kanban] hr{
-	border-width: 0.5em;
-	border-radius: 10px;
 }
 
 /* fix metadata in kanban card display */
