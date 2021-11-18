@@ -1,6 +1,6 @@
 /*───────────────────────────────────────────────────────
 SHIMMERING FOCUS
-Version 1.112
+Version 1.113
 https://github.com/chrisgrieser/shimmering-focus/
 Created by @pseudometa (Discord) aka @chrisgrieser (GitHub)
 MIT License
@@ -4410,6 +4410,10 @@ button.MS-OpenSnippet:hover svg.ms-snippet path{
 	color: var(--extra-contrast);
 }
 
+.workspace-leaf-content[data-type="map-of-content"] #top-bar{
+	display: none !important;
+}
+
 /* upper half spacing */
 .workspace-leaf-content[data-type="map-of-content"] .view-content {
 	padding-top: 0;
@@ -4417,16 +4421,16 @@ button.MS-OpenSnippet:hover svg.ms-snippet path{
 	padding-right: 4px;
 	padding-bottom: 0;
 }
-.workspace-leaf-content[data-type="map-of-content"] .view-content > .svelte-1jp8rsy > ul > li {
+.workspace-leaf-content[data-type="map-of-content"] .view-content > #all-container > ul > li {
 	padding-left: 0;
 }
-.svelte-1jp8rsy {
+#all-container {
 	margin-bottom: 0;
 }
 .workspace-leaf-content[data-type="map-of-content"] .path{
 	line-height: 1.3em;
 }
-.workspace-leaf-content[data-type="map-of-content"] .view-content > .svelte-1jp8rsy > ul{
+.workspace-leaf-content[data-type="map-of-content"] .view-content > #all-container > ul{
 	line-height: 1em;
 }
 .workspace-leaf-content[data-type="map-of-content"] br{
@@ -4434,30 +4438,33 @@ button.MS-OpenSnippet:hover svg.ms-snippet path{
 }
 
 /* bottom half spacing */
-.svelte-1jp8rsy li,
-.svelte-1jp8rsy ul{
+#all-container li,
+#all-container ul,
+#all-container ul::before{
 	border: none !important;
 }
-.view-content > .svelte-1jp8rsy > ul > li > ul{
+
+.view-content > #all-container > #main_moc_div > ul > li{
+	padding-left: 0;
+}
+
+.view-content > #all-container > #main_moc_div > ul > li > ul{
 	padding-bottom: 20px;
 	padding-top: 5px;
 	padding-left: 1px;
 }
 
 /*spacing of the list*/
-.view-content > .svelte-1jp8rsy > ul > li > ul > li{
-	padding-left: 16px !important;
+.view-content > #all-container > #main_moc_div > ul > li > ul > li,
+.view-content > #all-container > #main_moc_div > ul > li > ul > li > ul > li,
+.view-content > #all-container > #main_moc_div > ul > li > ul > li > ul > li > ul > li{
+	padding-left: 18px !important;
 	padding-bottom: 3px;
 	padding-top: 3px;
-}
-.view-content > .svelte-1jp8rsy > ul > li > ul > li > ul > li,
-.view-content > .svelte-1jp8rsy > ul > li > ul > li > ul > li > ul > li{
-	padding-left: 20px !important;
-	padding-bottom: 3px;
-	padding-top: 3px;
+	line-height: 0.9em;
 }
 
-.view-content > .svelte-1jp8rsy > ul > li > ul > li > ul > li:last-child{
+.view-content > #all-container > #main_moc_div > ul > li > ul > li > ul > li:last-child{
 	padding-bottom: 0 !important;
 }
 
@@ -4471,11 +4478,14 @@ button.MS-OpenSnippet:hover svg.ms-snippet path{
 #main_moc_div .path:first-of-type{
 	padding-top: 0 !important;
 }
+#main_moc_div{
+	margin-top: 10px;
+}
 
 /* central & current note*/
 #main_moc_div .path > a:last-child,
 #main_moc_div .path > span:first-child,
-.svelte-1jp8rsy > li > p{
+#all-container > li > p{
 	font-weight: 600;
 	text-rendering: geometricPrecision;
 }
