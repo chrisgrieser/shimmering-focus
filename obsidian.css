@@ -1,6 +1,6 @@
 /*───────────────────────────────────────────────────────
 SHIMMERING FOCUS
-Version 1.115
+Version 1.119
 https://github.com/chrisgrieser/shimmering-focus/
 Created by @pseudometa
 MIT License
@@ -699,6 +699,15 @@ div.menu-item{
 }
 
 /* ─────────────────────────────────────────────────── */
+/* < Editor Suggestions */
+/* ─────────────────────────────────────────────────── */
+
+body:not(.app-container) .suggestion-container{
+	border-radius: var(--block-roundness);
+}
+
+
+/* ─────────────────────────────────────────────────── */
 /* < Status Bar */
 /* ─────────────────────────────────────────────────── */
 /* based on some CSS snippets from @Chetachi's Yin-and-Yang Theme https://github.com/chetachiezikeuzor/Yin-and-Yang-Theme */
@@ -916,8 +925,8 @@ pre[class*="language-"]::after {
 	font-family: var(--font-monospace);
 	color: var(--text-muted);
 	position: absolute;
-	right: 5px;
-	bottom: 2px;
+	right: 8px;
+	bottom: 3px;
 }
 pre[class~="language-c"]::after {
 	content: "C";
@@ -2241,15 +2250,17 @@ based on css from @Mara https://github.com/Mara-Li/Obsidian-Snippet-collection *
 /* < COMMUNITY PLUGIN BROWSER */
 /* ─────────────────────────────────────────────────── */
 
+
 /* bigger and more condensed */
 .modal.mod-community-plugin {
 	height: 93%;
 	max-width: unset;
 	width: 93%;
+	--plugin-browser-borders: 2px solid var(--background-modifier-border);
 }
 
 .community-plugin-info{
-	border-left: 2px solid var(--background-primary);
+	border-left: var(--plugin-browser-borders);
 }
 
 /* search results */
@@ -2261,7 +2272,7 @@ based on css from @Mara https://github.com/Mara-Li/Obsidian-Snippet-collection *
 	line-height: 1.2em;
 	margin-top: 0;
 	margin-bottom: 0;
-	border-bottom: 2px solid var(--background-primary);
+	border-bottom: var(--plugin-browser-borders);
 }
 
 .community-plugin-search-summary.u-muted {
@@ -2269,7 +2280,7 @@ based on css from @Mara https://github.com/Mara-Li/Obsidian-Snippet-collection *
 	padding-left: 0.6em;
 	font-style: italic;
 	text-transform: capitalize;
-	border-bottom: 2px solid var(--background-primary);
+	border-bottom: var(--plugin-browser-borders);
 }
 .community-plugin-downloads::before,
 .community-plugin-downloads,
@@ -2795,7 +2806,7 @@ body:not(.show-collapse-buttons) .CodeMirror-code>div:hover .CodeMirror-foldgutt
 /* < Line Length & Tables */
 body:not(.max-view-off) .workspace-split.mod-left-split.is-collapsed ~ .mod-root .markdown-preview-section ,
 body:not(.max-view-off) .workspace-split.mod-left-split.is-collapsed ~ .mod-root .CodeMirror-wrap{
-	max-width: 100% !important;
+	max-width: 100%;
 }
 
 /* < Images */
@@ -3297,7 +3308,7 @@ body:not(.annotation-tags-off) .tag[href="#example"]::before{
 	padding-bottom: 0.5em;
 	padding-right: 0.8em;
 	border-radius: var(--block-roundness);
-	border: 2px solid var(--background-modifier-border);
+	border: var(--plugin-browser-borders);
 }
 
 /* fixes color when text is selected */
