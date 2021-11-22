@@ -1,6 +1,6 @@
 /* ──────────────────────────────────────────────────────
 SHIMMERING FOCUS
-Version 1.123
+Version 1.124
 https://github.com/chrisgrieser/shimmering-focus/
 Created by @pseudometa
 MIT License
@@ -975,7 +975,8 @@ pre[class~="language-cpp"]::after { content: "C++"; }
 pre[class~="language-java"]::after { content: "JAVA"; }
 pre[class~="language-html"]::after { content: "HTML"; }
 pre[class~="language-txt"]::after { content: "text"; }
-pre[class~="language-text"]::after { content: "text"; }
+pre[class~="language-url"]::after { content: "url"; }
+pre[class~="language-uri"]::after { content: "uri"; }
 
 /* fix for the buggy selection fo inline text
 https://forum.obsidian.md/t/inline-code-occludes-text-selection-and-vim-cursor/11552/10 */
@@ -1101,7 +1102,7 @@ body > .app-container table > tbody > tr > td .external-link,
 
 .external-link::before {
 	display: inline-block;
-	margin-right: 4px;
+	margin-right: 2px;
 	vertical-align: text-top;
 	height: 1em;
 	width: 1em;
@@ -3950,7 +3951,7 @@ body .workspace-leaf-content[data-type="kanban"] .view-header:hover {
 
 /* more condensed */
 div.kanban-plugin__board > div {
-	padding: 0 0.6em 0.5em 0.6em;
+	padding: 0 0.6em 0.5em;
 }
 
 .kanban-plugin__board.kanban-plugin__board .kanban-plugin__item-tag,
@@ -4686,7 +4687,7 @@ body > .app-container .cm-s-obsidian .hmd-link-icon::after {
 }
 
 body > .app-container .cm-s-obsidian .hmd-link-icon {
-	background-image: var(--externalURL);
+	background-image: var(--external-url);
 	background-repeat: no-repeat;
 	margin-bottom: 3px;
 	width: 0.9em;
