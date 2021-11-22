@@ -21,7 +21,7 @@ A minimalistic [Obsidian](https://obsidian.md/) theme focused on readability and
   - [Further Features](#further-features)
 - [Design Principles](#design-principles)
   - [Extreme Minimalism](#extreme-minimalism)
-  - [Condensed Information Display](#condensed-information-display)
+  - [Condensed Display of Information](#condensed-display-of-information)
   - [Maximum Readability](#maximum-readability)
   - [Subtle Design](#subtle-design)
 - [Customization](#customization)
@@ -62,7 +62,7 @@ By default, the theme uses readable line length as well as smaller images & PDFs
 ### Fine-tuned Spellcheck
 Using the [Style Settings Plugin](#Customization), you can deactivate the spellcheck in specific areas like YAML or blockquotes.
 
-<img src="https://i.imgur.com/9XPEUQq.png" alt="Spellcheck settings" width=60%>
+<img src="https://i.imgur.com/9XPEUQq.png" alt="Spellcheck settings" width=50%>
 
 ### Multi-Color-Highlighting & Spoiler Syntax
 - Surround highlights with `*` or `**` for alternative highlight colors (e.g. `*==cyan==*`).[^2]
@@ -90,13 +90,13 @@ Using the [Style Settings Plugin](#Customization), you can deactivate the spellc
 - You can re-enable all hidden elements by using the [Style Settings Plugin](#Customization).
 - 💡 The settings can still be accessed via `cmd + ,` or `ctrl + ,`.
 
-### Condensed Information Display
+### Condensed Display of Information
 - Screen real estate is used much more efficiently to display more information at the same time.
 - Useful for smaller screens, Split Screens, bigger font sizes or simply if want to see more information without having to scroll.
 - Smaller images/PDFs. Click-and-Hold or use the [Max View Feature](#Max-View) to enlarge them again.
 - Wider input boxes
 
-<img width=40% alt="Screenshot 2021-10-23 17 06 22" src="https://user-images.githubusercontent.com/73286100/138561771-1067d041-eeb2-4dfe-8d79-f7fa754ca419.png">
+<img width=60% alt="Screenshot 2021-10-23 17 06 22" src="https://user-images.githubusercontent.com/73286100/138561771-1067d041-eeb2-4dfe-8d79-f7fa754ca419.png">
 
 ### Maximum Readability
 - increased contrast throughout, especially with the [annoying grey font on light grey background](https://forum.obsidian.md/t/enhance-default-color-contrast-of-the-icons/23045/3)
