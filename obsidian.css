@@ -1,6 +1,6 @@
 /* ──────────────────────────────────────────────────────
 SHIMMERING FOCUS
-Version 1.127
+Version 1.128
 https://github.com/chrisgrieser/shimmering-focus/
 Created by @pseudometa
 MIT License
@@ -2579,16 +2579,6 @@ body:not(.less-heading-letter-spacing) .modal.mod-community-theme .modal-title {
 .markdown-preview-view mark,
 .cm-s-obsidian span.cm-highlight {
 	background-color: var(--highlight-color);
-}
-
-.cm-formatting-highlight:first-of-type {
-	border-top-left-radius: calc(var(--block-roundness) * 0.66);
-	border-bottom-left-radius: calc(var(--block-roundness) * 0.66);
-}
-
-.cm-formatting-highlight:last-of-type {
-	border-top-right-radius: calc(var(--block-roundness) * 0.66);
-	border-bottom-right-radius: calc(var(--block-roundness) * 0.66);
 }
 
 /* color for selected text */

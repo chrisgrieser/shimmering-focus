@@ -1,3 +1,4 @@
+- 2021-11-23	removed rounded corners from highlights since too often buggy
 - 2021-11-23	fixed changelog
 - 2021-11-23	add changelog properly
 - 2021-11-23	add changelog
