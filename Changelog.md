@@ -1,2 +1,296 @@
-2021-11-23	bla
-
+2021-11-23	add changelog properly
+2021-11-23	add changelog
+2021-11-23	update readme
+2021-11-23	fix signature font weight
+2021-11-23	Delete .DS_Store
+2021-11-22	fix external link icon for CodeMirror Options Plugin
+2021-11-22	more stylelinting
+2021-11-22	added last commit shield
+2021-11-22	selection color more visible
+2021-11-22	ran some stylelint
+2021-11-21	minor readme improvements
+2021-11-21	moved language label of code blocks
+2021-11-19	wider sliders
+2021-11-18	condensed blockquotes
+2021-11-18	condensed blockquotes
+2021-11-18	condensed blockquotes
+2021-11-18	updated for new moc plugin version
+2021-11-17	kanban light theme bg fix
+2021-11-17	extra-md-plugin id fix + mobile kanban dots on cards
+2021-11-16	reorganized style settings
+2021-11-16	updated issue templates
+2021-11-16	update issue templates
+2021-11-15	Table Overhaul & Setting Descriptions
+2021-11-15	resizable graph controls, thx @Manedblackwolf
+2021-11-15	table max view fix
+2021-11-15	statusbar tweak
+2021-11-15	update download numbers
+2021-11-15	minor fixes
+2021-11-15	Activity History Plugin
+2021-11-14	better promo screenshot
+2021-11-14	Merge branch 'main' of github.com:chrisgrieser/shimmering-focus
+2021-11-14	menu font customization #47
+2021-11-14	Update README.md
+2021-11-14	Update issue templates
+2021-11-14	hotfix
+2021-11-14	Update README.md
+2021-11-14	Delete README.html
+2021-11-14	added spellcheck to readme
+2021-11-14	Refactored Documentation
+2021-11-14	alternating table & suggester item rows
+2021-11-13	fixed input width
+2021-11-13	more spellcheck options
+2021-11-13	spellcheck settings
+2021-11-13	hotfix codemirror options fold url icon
+2021-11-12	community browser
+2021-11-12	minor fix inputs
+2021-11-12	setting headings
+2021-11-12	replaced Optima-local with version from macOS
+2021-11-12	fonts & folder marker style setting
+2021-11-12	style setting descriptions
+2021-11-10	external link icon
+2021-11-07	Context Menus
+2021-11-05	Fix issue #40, thanks @b1uegh0st
+2021-11-05	Create .gitignore
+2021-11-05	Delete .DS_Store
+2021-11-05	added info for Extra MD Syntax Plugin
+2021-11-05	git setup
+2021-11-05	minor changes
+2021-11-03	Add files via upload
+2021-11-02	Add files via upload
+2021-11-02	Update README.md
+2021-11-02	Add files via upload
+2021-11-02	Add files via upload
+2021-11-02	Add files via upload
+2021-11-02	Add files via upload
+2021-11-02	Max View now supporting PDFs
+2021-10-31	Update README.md
+2021-10-31	Update README.md
+2021-10-31	Update FUNDING.yml
+2021-10-31	Add files via upload
+2021-10-30	improved community plugin browser
+2021-10-30	added smallcaps font
+2021-10-30	Add files via upload
+2021-10-28	Update README.md
+2021-10-28	Add files via upload
+2021-10-28	Add files via upload
+2021-10-27	Add files via upload
+2021-10-27	Delete Shimmering Focus.css
+2021-10-27	Add files via upload
+2021-10-27	Update README.md
+2021-10-27	Update README.md
+2021-10-27	Update README.md
+2021-10-27	Add files via upload
+2021-10-26	Add files via upload
+2021-10-26	Update README.md
+2021-10-26	Add files via upload
+2021-10-26	Add files via upload
+2021-10-26	Add files via upload
+2021-10-25	Add files via upload
+2021-10-25	Update README.md
+2021-10-25	Add files via upload
+2021-10-24	Add files via upload
+2021-10-24	Update README.md
+2021-10-24	Add files via upload
+2021-10-24	Add files via upload
+2021-10-24	Add files via upload
+2021-10-23	Update README.md
+2021-10-23	Update README.md
+2021-10-23	Add files via upload
+2021-10-23	Update README.md
+2021-10-23	Add files via upload
+2021-10-23	Update README.md
+2021-10-23	Add files via upload
+2021-10-23	Update README.md
+2021-10-23	Add files via upload
+2021-10-23	Delete Hide URLs.css
+2021-10-23	Add files via upload
+2021-10-21	Update README.md
+2021-10-21	Update README.md
+2021-10-21	Update README.md
+2021-10-21	Add files via upload
+2021-10-21	Update README.md
+2021-10-21	Add files via upload
+2021-10-21	Update README.md
+2021-10-21	Update README.md
+2021-10-20	Update README.md
+2021-10-19	Add files via upload
+2021-10-19	Update README.md
+2021-10-19	Add files via upload
+2021-10-19	Update README.md
+2021-10-18	Update README.md
+2021-10-18	Add files via upload
+2021-10-18	Add files via upload
+2021-10-18	Update README.md
+2021-10-18	Add files via upload
+2021-10-17	Update README.md
+2021-10-17	Add files via upload
+2021-10-17	Add files via upload
+2021-10-17	Add files via upload
+2021-10-17	Update README.md
+2021-10-17	Update README.md
+2021-10-17	Add files via upload
+2021-10-17	Add files via upload
+2021-10-17	Add files via upload
+2021-10-16	Update README.md
+2021-10-16	Add files via upload
+2021-10-16	Update README.md
+2021-10-16	Update README.md
+2021-10-12	Update README.md
+2021-10-12	Add files via upload
+2021-10-12	Add files via upload
+2021-10-12	Add files via upload
+2021-10-12	Add files via upload
+2021-10-12	Update README.md
+2021-10-11	Add files via upload
+2021-10-11	Update README.md
+2021-10-11	Add files via upload
+2021-10-11	Add files via upload
+2021-10-11	Update README.md
+2021-10-11	Add files via upload
+2021-09-30	Add files via upload
+2021-09-29	Update README.md
+2021-09-29	Add files via upload
+2021-09-29	Add files via upload
+2021-09-29	Add files via upload
+2021-09-29	Add files via upload
+2021-09-28	Update README.md
+2021-09-28	Add files via upload
+2021-09-28	Add files via upload
+2021-09-28	Update README.md
+2021-09-28	Add files via upload
+2021-09-28	Add files via upload
+2021-09-27	Update README.md
+2021-09-27	Add files via upload
+2021-09-27	Add files via upload
+2021-09-27	Delete dual-theme-screenshot.png
+2021-09-27	Add files via upload
+2021-09-27	Add files via upload
+2021-09-27	Update README.md
+2021-09-27	Add files via upload
+2021-09-27	Update README.md
+2021-09-27	Update README.md
+2021-09-25	Update README.md
+2021-09-25	Add files via upload
+2021-09-25	Update README.md
+2021-09-25	Update README.md
+2021-09-25	Add files via upload
+2021-09-24	Add files via upload
+2021-09-23	Update README.md
+2021-09-23	Update README.md
+2021-09-23	Add files via upload
+2021-09-22	Update README.md
+2021-09-22	Add files via upload
+2021-09-22	Add files via upload
+2021-09-21	Update README.md
+2021-09-21	Add files via upload
+2021-09-20	Add files via upload
+2021-09-19	Add files via upload
+2021-09-17	Update README.md
+2021-09-17	Add files via upload
+2021-09-16	Add files via upload
+2021-09-16	Add files via upload
+2021-09-15	Add files via upload
+2021-09-14	Add files via upload
+2021-09-14	Update README.md
+2021-09-14	Add files via upload
+2021-09-13	Update README.md
+2021-09-13	Add files via upload
+2021-09-13	Add files via upload
+2021-09-13	Add files via upload
+2021-09-12	Add files via upload
+2021-09-12	Delete Shimmering Focus.css
+2021-09-12	Add files via upload
+2021-09-12	Update README.md
+2021-09-12	Update README.md
+2021-09-12	Update README.md
+2021-09-12	Update README.md
+2021-09-11	Add files via upload
+2021-09-11	Add files via upload
+2021-09-10	Update README.md
+2021-09-10	Update README.md
+2021-09-10	Add files via upload
+2021-09-10	Add files via upload
+2021-09-09	Update README.md
+2021-09-09	Update README.md
+2021-09-09	Add files via upload
+2021-09-08	Add files via upload
+2021-09-08	Add files via upload
+2021-09-08	Update README.md
+2021-09-08	Update README.md
+2021-09-08	Add files via upload
+2021-09-08	Update README.md
+2021-09-08	Update README.md
+2021-09-08	Add files via upload
+2021-09-06	Update README.md
+2021-09-05	Create FUNDING.yml
+2021-09-04	Update README.md
+2021-09-04	Update README.md
+2021-09-04	Update README.md
+2021-09-03	Update README.md
+2021-09-03	Update README.md
+2021-09-03	Update README.md
+2021-09-03	Add files via upload
+2021-09-03	Add files via upload
+2021-09-03	Add files via upload
+2021-09-01	Add files via upload
+2021-09-01	Add files via upload
+2021-09-01	Update README.md
+2021-09-01	Add files via upload
+2021-09-01	Update README.md
+2021-09-01	Add files via upload
+2021-09-01	Update README.md
+2021-09-01	Update README.md
+2021-09-01	Update README.md
+2021-08-31	Update README.md
+2021-08-30	Update README.md
+2021-08-30	Update README.md
+2021-08-30	Update README.md
+2021-08-30	Update README.md
+2021-08-30	Update README.md
+2021-08-30	Update README.md
+2021-08-29	Add files via upload
+2021-08-29	Add files via upload
+2021-08-29	Update README.md
+2021-08-29	Update README.md
+2021-08-28	Update README.md
+2021-08-28	Delete Shimmering Focus.css
+2021-08-28	Add files via upload
+2021-08-28	Add files via upload
+2021-08-28	Delete light-dark-screenshot.png
+2021-08-28	Update README.md
+2021-08-28	Add files via upload
+2021-08-28	Add files via upload
+2021-08-28	Delete light-dark-screenshot.png
+2021-08-28	Add files via upload
+2021-08-28	Update README.md
+2021-08-28	Add files via upload
+2021-08-28	Add files via upload
+2021-08-28	Update README.md
+2021-08-28	Add files via upload
+2021-08-28	Add files via upload
+2021-08-28	Update README.md
+2021-08-28	Update README.md
+2021-08-28	Update README.md
+2021-08-28	Add files via upload
+2021-08-28	Update README.md
+2021-08-28	Add files via upload
+2021-08-28	Update README.md
+2021-08-28	Update README.md
+2021-08-28	Update README.md
+2021-08-27	Update README.md
+2021-08-27	Update README.md
+2021-08-27	Add files via upload
+2021-08-27	Update README.md
+2021-08-27	Update README.md
+2021-08-27	Update README.md
+2021-08-27	Update README.md
+2021-08-27	Update README.md
+2021-08-27	Update README.md
+2021-08-27	Update README.md
+2021-08-27	Update README.md
+2021-08-27	Update README.md
+2021-08-27	Update README.md
+2021-08-27	Update README.md
+2021-08-27	Add files via upload
+2021-08-27	Initial commit
