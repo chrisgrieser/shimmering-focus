@@ -1,6 +1,6 @@
 /* ──────────────────────────────────────────────────────
 SHIMMERING FOCUS
-Version 1.128
+Version 1.129
 https://github.com/chrisgrieser/shimmering-focus/
 Created by @pseudometa
 MIT License
@@ -1170,8 +1170,14 @@ a.tag:hover {
 	color: var(--finished-task);
 }
 
-.task-list-item-checkbox {
-	border-radius: 50px !important;
+.cm-s-obsidian span.cm-formatting-task.cm-property + span {
+	text-decoration: line-through;
+	color: var(--text-muted);
+}
+
+body > .app-container .contains-task-list li.task-list-item.is-checked {
+	font-weight: 500;
+	text-decoration: line-through;
 }
 
 /* https://forum.obsidian.md/t/meta-post-common-css-hacks/1978/34 */
