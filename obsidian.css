@@ -1,6 +1,6 @@
 /* ──────────────────────────────────────────────────────
 SHIMMERING FOCUS
-Version 1.124
+Version 1.125
 https://github.com/chrisgrieser/shimmering-focus/
 Created by @pseudometa
 MIT License
@@ -2506,8 +2506,9 @@ based on css from @Mara https://github.com/Mara-Li/Obsidian-Snippet-collection *
 .community-plugin-details-empty-state::after,
 .empty-state-title::after {
 	content: var(--signature);
-	font-size: 10rem;
+	font-size: 11rem;
 	color: var(--extra-contrast);
+	font-weight: 500;
 }
 
 /* ─────────────────────────────────────────────────── */
@@ -3679,7 +3680,7 @@ body:not(.left-aligned-embeds) .view-content .markdown-preview-view img {
 /* ─────────────────────────────────────────────────── */
 /* < Mermaid */
 /* ─────────────────────────────────────────────────── */
-/* https://forum.obsidian.md/t/ability-to-resize-and-align-mermaid-diagrams/7019/11?u=pseudometa*/
+/* https://forum.obsidian.md/t/ability-to-resize-and-align-mermaid-diagrams/7019/11?u=pseudometa */
 /* see also "Max View" */
 
 body:not(.left-aligned-embeds) div.mermaid {
