@@ -50,7 +50,10 @@ Type one of the following eight tags (e.g. `#definition`) to get a colored annot
 💡 You can add your own Annotation Tags via adding a snippet [using this template](https://github.com/chrisgrieser/shimmering-focus/blob/main/annotation-tag-template.css).
 
 ### Max View
-By default, the theme uses readable line length as well as smaller images & PDFs when the left sidebar is visible. When it is hidden, line length is extended to full length, and images & PDFs to full size. Useful when dealing with big tables. (Requires `Readable line length` editor setting to be *enabled*.)
+- By default, the theme uses readable line length as well as smaller images & PDFs when the left sidebar is visible. __When it is hidden, line length is extended to full length__, and images & PDFs to full size. (Requires `Readable line length` editor setting to be *enabled*.)
+- Useful when dealing with big tables or many images.
+
+💡 You can turn this feature off or adjust the size of images & PDFs with the [Style Settings Plugin](#Customization).
 
 <img src="https://user-images.githubusercontent.com/73286100/138562271-2f7d3589-d580-49e4-bea6-ca3e3004ab78.gif" alt="Promo Max View" width=60%>
 
