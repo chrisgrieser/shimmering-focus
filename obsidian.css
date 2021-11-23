@@ -1,6 +1,6 @@
 /* ──────────────────────────────────────────────────────
 SHIMMERING FOCUS
-Version 1.129
+Version 1.130
 https://github.com/chrisgrieser/shimmering-focus/
 Created by @pseudometa
 MIT License
@@ -554,6 +554,7 @@ body:not(.show-close-button) .modal-close-button:hover {
 .view-header-title {
 	line-height: 2;
 	font-size: 0.9em;
+	font-weight: 500;
 }
 
 body:not(.is-mobile) .view-header-icon {
