@@ -1,3 +1,4 @@
+- 2021-11-24	minor
 - 2021-11-24	release automation test
 - 2021-11-24	thinner header title
 - 2021-11-24	properly strikethrough finished tasks
