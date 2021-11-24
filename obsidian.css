@@ -1,6 +1,6 @@
 /* ──────────────────────────────────────────────────────
 SHIMMERING FOCUS
-Version 1.130
+Version 1.131
 https://github.com/chrisgrieser/shimmering-focus/
 Created by @pseudometa
 MIT License
@@ -4923,7 +4923,7 @@ settings:
 	 id: show-foldermarker
 	 title: Re-enable the Fold Markers
 	 type: class-toggle
-	 description: Folder markers are the "..."" next to a folded/collapsed item.
+	 description: Folder markers are the "..." next to a folded/collapsed item.
 	 default: false
   -
 	 id: font-settings

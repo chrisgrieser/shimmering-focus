@@ -1,3 +1,4 @@
+- 2021-11-24	typo
 - 2021-11-24	thinner header title
 - 2021-11-24	properly strikethrough finished tasks
 - 2021-11-23	removed rounded corners from highlights since too often buggy
