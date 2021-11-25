@@ -1,3 +1,4 @@
+- 2021-11-25	fix iA Writer font format to truetype
 - 2021-11-24	push automation test
 - 2021-11-24	release automation test
 - 2021-11-24	thinner header title
