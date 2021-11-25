@@ -1,6 +1,6 @@
 /* ──────────────────────────────────────────────────────
 SHIMMERING FOCUS
-Version 1.136
+Version 1.137
 https://github.com/chrisgrieser/shimmering-focus/
 Created by @pseudometa
 MIT License
@@ -22,25 +22,25 @@ For help and/or CSS snippets, thanks to:
 
 :root {
 	/* Colors */
-	--accent-lighter: hsl(243deg 66% 76%);
-	--accent-lightest: hsl(259deg 100% 80%);
-	--alt-accent: hsl(163deg 97% 34%);
-	--alt-accent-lighter: hsl(164deg 100% 41%);
-	--alt-accent-lightest: hsl(164deg 100% 70%);
-	--alt-accent-darker: #009A72;
+	--accent-lighter: hsl(243 66% 76%);
+	--accent-lightest: hsl(259 100% 80%);
+	--alt-accent: hsl(163 97% 34%);
+	--alt-accent-lighter: hsl(164 100% 41%);
+	--alt-accent-lightest: hsl(164 100% 70%);
+	--alt-accent-darker: hsl(164 100% 30%);
 	--code-color: var(--alt-accent-darker);
 	--html-tag-color: var(--alt-accent-darker);
 	--scrollbar-hover: var(--alt-accent-lighter);
 	--pseudo-admonition-border: var(--accent-lighter);
 	--scrollbar-active: var(--accent-lighter);
-	--highlight-color: #0F86;
-	--highlight-alt1: #FF06;
-	--highlight-alt2: #0FF6;
+	--highlight-color: hsl(152 100% 50% / 40%);
+	--highlight-alt1: hsl(60 100% 50% / 40%);
+	--highlight-alt2: hsl(180 100% 50% / 40%);
 	--search-match-hl: var(--highlight-alt2);
-	--bold-in-darkmode: hsl(202deg 43% 57%);
-	--unresolved-link-color: #0F80FF;
-	--backdrop-color: hsl(228deg 70% 7%);
-	--active-line: #ADAE9820;
+	--bold-in-darkmode: hsl(202 43% 57%);
+	--unresolved-link-color: hsl(211 100% 52%);
+	--backdrop-color: hsl(228 70% 7%);
+	--active-line: hsl(62 11% 63% / 12.5%);
 	--cursor-monocolor: var(--accent-lighter);
 
 	/* Other Variables */
@@ -56,15 +56,15 @@ For help and/or CSS snippets, thanks to:
 
 .theme-light {
 	--editor-alt-accent: var(--alt-accent-darker);
-	--selection-color: #E8DDFFDD;
-	--extra-contrast: #5E5E5E;
-	--hr-line: #AAA;
-	--image-zoom-bg: #444;
+	--selection-color: hsl(259 100% 93% / 86.7%);
+	--extra-contrast: hsl(0 0% 36%);
+	--hr-line: hsl(0 0% 66%);
+	--image-zoom-bg: hsl(0 0% 26%);
 	--button-hover: var(--alt-accent);
 	--button-hover-border: var(--alt-accent-lighter);
-	--longform-background: hsl(30deg 30% 98%);
+	--longform-background: hsl(30 30% 98%);
 	--finished-task: var(--accent-lighter);
-	--spell-error-color: #7490FF;
+	--spell-error-color: hsl(227 100% 72%);
 	--tooltip-notification-bg: var(--text-faint);
 	--tooltip-notification-text: var(--interactive-normal);
 	--tooltip-notification-border: var(--text-muted);
@@ -77,15 +77,15 @@ For help and/or CSS snippets, thanks to:
 
 .theme-dark {
 	--editor-alt-accent: var(--alt-accent);
-	--selection-color: #442943BB;
-	--extra-contrast: #BBB;
-	--hr-line: #999;
-	--image-zoom-bg: #000;
+	--selection-color: hsl(302 24% 21% / 73%);
+	--extra-contrast: hsl(0 0% 73%);
+	--hr-line: hsl(0 0% 60%);
+	--image-zoom-bg: hsl(0 0% 0%);
 	--button-hover: var(--alt-accent-darker);
 	--button-hover-border: var(--alt-accent-lighter);
-	--longform-background: hsl(226deg 18% 13%);
+	--longform-background: hsl(226 18% 13%);
 	--finished-task: var(--text-accent);
-	--spell-error-color: #637BE1;
+	--spell-error-color: hsl(228 67% 63%);
 	--tooltip-notification-bg: var(--extra-contrast);
 	--tooltip-notification-text: var(--interactive-normal);
 	--tooltip-notification-border: var(--text-muted);
@@ -181,7 +181,7 @@ For help and/or CSS snippets, thanks to:
 	--h3-size: 1.45em;
 	--h4-size: 1.3em;
 	--h5-size: 1.15em;
-	--mobile-font-size: 1.25rem;
+	--mobile-font-size: 1.2rem;
 }
 
 .CodeMirror-linenumber {
@@ -214,6 +214,7 @@ select.dropdown {
 }
 
 /* Community Plugins in the Sidebar */
+.BC-Matrix-square,
 .workspace-leaf-content[data-type="dangling-links"],
 .workspace-leaf-content[data-type="Saved Queries View"],
 .workspace-leaf-content[data-type="map-of-content"] {
@@ -995,7 +996,7 @@ button.copy-code-button {
 button.copy-code-button::before {
 	content: "content_copy ";
 	font-family: "Material Icons";
-	font-size: 0.75rem;
+	font-size: 0.8rem;
 }
 
 /* ─────────────────────────────────────────────────── */
@@ -1050,6 +1051,7 @@ body.no-barelink-spellcheck .cm-hmd-barelink.cm-overlay.cm-spell-error {
 /* hovered links in alt accent */
 .cm-string.cm-url:hover:not(.cm-formatting),
 .cm-hmd-internal-link:hover,
+.internal-link:hover,
 .modal-content a:hover,
 .markdown-preview-view a.footnote-link:hover,
 .markdown-preview-view a.internal-link:hover,
@@ -1457,10 +1459,7 @@ body.block-cursor .CodeMirror-cursor {
 }
 
 .nav-header {
-	padding-top: 0.8em;
-	padding-bottom: 0.1em;
-	padding-right: 0.2em;
-	padding-left: 0.2em;
+	padding: 0.8em 0.2em 0.1em;
 }
 
 .nav-action-button {
@@ -1994,7 +1993,7 @@ based on css from @Mara https://github.com/Mara-Li/Obsidian-Snippet-collection *
 
 .nav-file-title[data-path$="pptx"] .nav-file-title-content::before {
 	content: "present_to_all ";
-	color: orange;
+	color: hsl(38 100% 50%);
 }
 
 .nav-file-title[data-path*="presentation"] .nav-file-title-content::before,
@@ -2016,17 +2015,17 @@ based on css from @Mara https://github.com/Mara-Li/Obsidian-Snippet-collection *
 
 .nav-file-title[data-path$="doc"] .nav-file-title-content::before,
 .nav-file-title[data-path$="docx"] .nav-file-title-content::before {
-	color: teal;
+	color: hsl(201 93% 25%);
 }
 
 .nav-file-title[data-path$="pdf"] .nav-file-title-content::before {
 	content: "picture_as_pdf ";
-	color: #8B3244;
+	color: hsl(347 47% 37%);
 }
 
 .nav-file-title[data-path$="xlsx"] .nav-file-title-content::before,
 .nav-file-title[data-path$="csv"] .nav-file-title-content::before {
-	color: green;
+	color: hsl(120 100% 25%);
 	content: "table_chart ";
 }
 
@@ -2098,7 +2097,7 @@ based on css from @Mara https://github.com/Mara-Li/Obsidian-Snippet-collection *
 /* line under heading */
 .modal.mod-settings .vertical-tab-content-container {
 	margin-top: 0;
-	padding-top: 0;
+	padding: 0;
 	padding-left: 0;
 	padding-right: 0;
 	padding-bottom: 1em;
@@ -2265,10 +2264,7 @@ based on css from @Mara https://github.com/Mara-Li/Obsidian-Snippet-collection *
 
 /* search results */
 .community-plugin-item {
-	padding-top: 0.4em;
-	padding-left: 0.6em;
-	padding-right: 0.1em;
-	padding-bottom: 0.4em;
+	padding: 0.4em 0.1em 0.4em 0.6em;
 	line-height: 1.2em;
 	margin-top: 0;
 	margin-bottom: 0;
@@ -2617,11 +2613,11 @@ span.cm-strong.cm-highlight,
 /* ─────────────────────────────────────────────────── */
 
 .theme-light { /* stylelint-disable-line no-duplicate-selectors */
-	--spoiler-bg: #111;
+	--spoiler-bg: hsl(0 0% 7%);
 }
 
 .theme-dark { /* stylelint-disable-line no-duplicate-selectors */
-	--spoiler-bg: #EEE;
+	--spoiler-bg: hsl(0 0% 93%);
 }
 
 div:not(.CodeMirror-activeline) > .CodeMirror-line .cm-em.cm-strikethrough,
@@ -2800,11 +2796,11 @@ body:not(.show-collapse-buttons) .CodeMirror-code
 	padding-top: 2px;
 }
 
-
 /* Preview Mode */
 .markdown-preview-view {
 	padding-top: 10px;
 	padding-left: 50px;
+
 	/* Overscroll at bottom */
 	padding-bottom: 20em;
 }
@@ -3165,11 +3161,11 @@ https://discord.com/channels/686053708261228577/722584061087842365/8981137457740
 }
 
 .theme-light { /* stylelint-disable-line no-duplicate-selectors */
-	--annotation-tag-font-color: #222;
+	--annotation-tag-font-color: hsl(0 0% 13%);
 }
 
 .theme-dark { /* stylelint-disable-line no-duplicate-selectors */
-	--annotation-tag-font-color: #FFF;
+	--annotation-tag-font-color: hsl(0 0% 100%);
 }
 
 /* all tags */
@@ -3389,14 +3385,8 @@ body:not(.annotation-tags-off) .tag[href="#example"]::before {
 body > .app-container .markdown-preview-view blockquote {
 	border-radius: var(--block-roundness);
 	border: 2px solid var(--background-modifier-border);
-	margin-right: 0;
-	margin-top: 1.5em;
-	margin-bottom: 1.5em;
-	margin-left: 2em;
-	padding-left: 0.7em;
-	padding-right: 0.7em;
-	padding-top: 0.3em;
-	padding-bottom: 0.4em;
+	margin: 1.5em 0 1.5em 2em;
+	padding: 0.3em 0.7em 0.4em;
 	font-style: italic;
 	text-align: justify;
 	hyphens: auto;
@@ -3453,16 +3443,16 @@ progress::-webkit-progress-value {
 }
 
 /* https://coolors.co/gradient-palette/03045e-6cf9ca?number=10 */
-progress[value^="1"]::-webkit-progress-value { background: #03045E; }
-progress[value^="2"]::-webkit-progress-value { background: #0F1F6A; }
-progress[value^="3"]::-webkit-progress-value { background: #1A3A76; }
-progress[value^="4"]::-webkit-progress-value { background: #265682; }
-progress[value^="5"]::-webkit-progress-value { background: #32718E; }
-progress[value^="6"]::-webkit-progress-value { background: #3D8C9A; }
-progress[value^="7"]::-webkit-progress-value { background: #49A7A6; }
-progress[value^="8"]::-webkit-progress-value { background: #55C3B2; }
-progress[value^="9"]::-webkit-progress-value { background: #60DEBE; }
-progress[value^="10"]::-webkit-progress-value { background: #6CF9CA; }
+progress[value^="1"]::-webkit-progress-value { background: hsl(239 94% 19%) }
+progress[value^="2"]::-webkit-progress-value { background: hsl(229 75% 24%) }
+progress[value^="3"]::-webkit-progress-value { background: hsl(219 64% 28%) }
+progress[value^="4"]::-webkit-progress-value { background: hsl(209 55% 33%) }
+progress[value^="5"]::-webkit-progress-value { background: hsl(199 48% 38%) }
+progress[value^="6"]::-webkit-progress-value { background: hsl(189 43% 42%) }
+progress[value^="7"]::-webkit-progress-value { background: hsl(179 39% 47%) }
+progress[value^="8"]::-webkit-progress-value { background: hsl(171 48% 55%) }
+progress[value^="9"]::-webkit-progress-value { background: hsl(165 66% 62%) }
+progress[value^="10"]::-webkit-progress-value { background: hsl(160 92% 70%) }
 
 /* ─────────────────────────────────────────────────── */
 /* < DOCUMENT SEARCH / REPLACE (cmd + F) */
@@ -3497,12 +3487,12 @@ shows up on the bottom when replacing/searching
 /* more recognizable red */
 .theme-dark .document-search-input.mod-no-match:hover,
 .theme-dark .document-search-input.mod-no-match {
-	background-color: hsl(357deg 100% 15%);
+	background-color: hsl(357 100% 15%);
 }
 
 .theme-light .document-search-input.mod-no-match:hover,
 .theme-light .document-search-input.mod-no-match {
-	background-color: hsl(359deg 80% 85%);
+	background-color: hsl(359 80% 85%);
 }
 
 body > .app-container .document-search-input,
@@ -3782,7 +3772,7 @@ body:not(.left-aligned-embeds) .pdf-embed {
 	font-size: var(--mobile-font-size);
 }
 
-body.is-mobile .markdown-preview-view blockquote{
+body.is-mobile .markdown-preview-view blockquote {
 	text-align: start;
 }
 
@@ -3892,7 +3882,7 @@ https://forum.obsidian.md/t/inline-code-occludes-text-selection-and-vim-cursor/1
 }
 
 .theme-light .cm-s-obsidian .cm-templater-command.cm-string {
-	color: hsl(59deg 66% 37%) !important;
+	color: hsl(59 66% 37%) !important;
 }
 
 .cm-s-obsidian .cm-templater-command.cm-property {
@@ -3900,7 +3890,7 @@ https://forum.obsidian.md/t/inline-code-occludes-text-selection-and-vim-cursor/1
 }
 
 .theme-light .cm-s-obsidian .cm-templater-command.cm-number {
-	color: hsl(352deg 83% 40%) !important;
+	color: hsl(352 83% 40%) !important;
 }
 
 .cm-templater-command.cm-spell-error {
@@ -3914,15 +3904,15 @@ https://forum.obsidian.md/t/inline-code-occludes-text-selection-and-vim-cursor/1
 
 /* variables */
 .theme-light { /* stylelint-disable-line no-duplicate-selectors */
-	--kanban-background: #DADADA;
-	--active-hover-kanban-item: #EEE;
-	--dot-color: #CCCCCC80;
+	--kanban-background: hsl(0 0% 85%);
+	--active-hover-kanban-item: hsl(0 0% 93%);
+	--dot-color: hsl(0 0% 80% / 50%);
 }
 
 .theme-dark { /* stylelint-disable-line no-duplicate-selectors */
-	--kanban-background: #2C2C2C;
-	--active-hover-kanban-item: #2C2C2C;
-	--dot-color: #22222280;
+	--kanban-background: hsl(0 0% 17%);
+	--active-hover-kanban-item: hsl(0 0% 17%);
+	--dot-color: hsl(0 0% 13% / 50%);
 }
 
 :root { /* stylelint-disable-line no-duplicate-selectors */
@@ -4001,7 +3991,7 @@ textarea.kanban-plugin__item-input,
 }
 
 .kanban-plugin__lane-settings-button-wrapper:hover svg {
-	color: #EEE;
+	color: hsl(0 0% 93%);
 }
 
 /* vertical three dots on card */
@@ -4086,6 +4076,8 @@ a.tag.kanban-plugin__item-tag {
 .tab-list.svelte-1bo97vk {
 	margin-left: 0 !important;
 	margin-right: 0 !important;
+	/* horizontal border between sections */
+	border-bottom: 3px solid var(--text-faint) !important;
 }
 
 .tab-panel-container.svelte-11pvpwl {
@@ -4205,11 +4197,6 @@ a.tag.kanban-plugin__item-tag {
 	border-bottom: none !important;
 }
 
-/* horizontal borders between sections */
-.tab-list.svelte-1bo97vk {
-	border-bottom: 3px solid var(--text-faint) !important;
-}
-
 .new-draft-container.svelte-1wkli4h,
 .new-scene-container.svelte-1lq63fp,
 .compile-container.svelte-1vu6mjk {
@@ -4245,10 +4232,7 @@ a.tag.kanban-plugin__item-tag {
 	margin-top: 0;
 	background-color: var(--background-secondary-alt);
 	border-radius: 4px;
-	padding-left: 1px;
-	padding-right: 0;
-	padding-top: 5px;
-	padding-bottom: 5px;
+	padding: 5px 0 5px 1px;
 	font-size: 0.8em;
 	border: 2.5px solid var(--text-faint);
 }
@@ -4283,7 +4267,7 @@ body:not(.longform-left-aligned) .longform-leaf .cm-s-obsidian {
 .longform-leaf .markdown-preview-view code,
 .longform-leaf .cm-s-obsidian span.cm-inline-code,
 .longform-leaf .HyperMD-table-row {
-	font-size: calc(var(--longform-font-size) * 0.66);
+	font-size: calc(var(--longform-font-size) * 0.7);
 	text-align: start;
 	hyphens: none;
 }
@@ -4368,10 +4352,7 @@ body:not(.left-aligned-embeds) div.oz-image-widget > img {
 }
 
 .workspace-leaf-content[data-type="recent-files"] .view-content {
-	padding-left: 4px;
-	padding-right: 5px;
-	padding-top: 10px;
-	padding-bottom: 5px;
+	padding: 10px 5px 5px 4px;
 }
 
 /* ─────────────────────────────────────────────────── */
@@ -4608,6 +4589,90 @@ button.MS-OpenSnippet:hover svg.ms-snippet path {
 }
 
 /* stylelint-enable selector-max-id */
+
+/* ─────────────────────────────────────────────────── */
+/* < Breadcrumbs */
+/* ─────────────────────────────────────────────────── */
+
+/* bugfix */
+body > .app-container .BC-Matrix-square > ol {
+	padding-left: 33px;
+}
+
+/* matrix */
+.BC-Matrix-square li::marker {
+	color: var(--text-faint);
+}
+
+body > .app-container .workspace-leaf-content[data-type="BC-matrix"] > .view-content div.BC-Matrix-square {
+	border: none;
+	border-bottom: 3px ridge var(--hr-line);
+}
+
+body > .app-container div.view-content > div.BC-Matrix > div {
+	border: none;
+	margin: 0;
+}
+
+body > .app-container div.view-content > div.BC-Matrix {
+	padding: 0;
+}
+
+div.BC-Matrix-square {
+	text-align: left;
+}
+
+h3.BC-Matrix-header {
+	font-size: 1.25em;
+	font-family: var(--default-font);
+	margin-left: 5px !important;
+	display: inline-flex;
+}
+
+h5.BC-Matrix-header {
+	font-family: var(--default-font);
+	font-size: 0.8em;
+	color: var(--text-muted) !important;
+	font-style: italic;
+	display: inline-block;
+	position: absolute;
+	right: 6px;
+	margin-top: 6px !important;
+}
+
+.workspace-leaf-content[data-type="BC-matrix"] > .view-content > button:first-child {
+	display: none;
+}
+
+.workspace-leaf-content[data-type="BC-matrix"] > .view-content > button:nth-child(2) {
+	width: 40px;
+	margin: 5px 5px 5px auto;
+	right: 0;
+	border-color: var(--text-faint) !important;
+}
+
+.workspace-leaf-content[data-type="BC-matrix"] > .view-content {
+	display: flex;
+	flex-direction: column-reverse;
+	padding: 5px 3px 0 4px;
+}
+
+/* trail */
+div.BC-trail {
+	margin-bottom: 1em !important;
+	border: 3px ridge var(--hr-line);
+	font-size: 0.8em;
+}
+
+.BC-trail-grid {
+	margin-top: 5px;
+	margin-bottom: 5px;
+}
+
+body > .app-container div.BC-trail-grid-item {
+	border: 1px solid var(--hr-line);
+}
+
 /* ─────────────────────────────────────────────────── */
 /* < Drag and Drop Blocks Plugin */
 /* ─────────────────────────────────────────────────── */
@@ -4875,6 +4940,7 @@ community:
 - obsidian-extra-md-commands
 - obsidian-style-settings
 - obsidian-activity-history
+- breadcrumbs
 */
 
 /* ─────────────────────────────────────────────────── */
