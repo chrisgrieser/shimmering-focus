@@ -1,3 +1,4 @@
+- 2021-11-25	unresolved and --nice-border
 - 2021-11-25	fix annotation tags
 - 2021-11-25	breadcrumb support + color conversion to hsl
 - 2021-11-25	stylelint

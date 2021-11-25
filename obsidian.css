@@ -1,6 +1,6 @@
 /* ──────────────────────────────────────────────────────
 SHIMMERING FOCUS
-Version 1.138
+Version 1.139
 https://github.com/chrisgrieser/shimmering-focus/
 Created by @pseudometa
 MIT License
@@ -39,6 +39,7 @@ For help and/or CSS snippets, thanks to:
 	--search-match-hl: var(--highlight-alt2);
 	--bold-in-darkmode: hsl(202 43% 57%);
 	--unresolved-link-color: hsl(211 100% 52%);
+	--unresolved-opacity: 0.6;
 	--backdrop-color: hsl(228 70% 7%);
 	--active-line: hsl(62 11% 63% / 12.5%);
 	--cursor-monocolor: var(--accent-lighter);
@@ -73,6 +74,7 @@ For help and/or CSS snippets, thanks to:
 	--button-border: var(--accent-lighter);
 	--a-row: rgb(0 0 0 / 3%);
 	--b-row: rgb(0 0 0 / 6%);
+	--nice-border: 3px ridge hsl(0 0% 60%);
 }
 
 .theme-dark {
@@ -94,6 +96,7 @@ For help and/or CSS snippets, thanks to:
 	--button-border: var(--text-accent);
 	--a-row: rgb(0 0 0 / 20%);
 	--b-row: rgb(0 0 0 / 20%);
+	--nice-border: 3px ridge hsl(0 0% 40%);
 }
 
 /* ─────────────────────────────────────────────────── */
@@ -1064,7 +1067,7 @@ a:hover {
 /* unresolved links */
 a.internal-link.is-unresolved {
 	color: var(--unresolved-link-color);
-	opacity: 0.65 !important;
+	opacity: var(--unresolved-opacity) !important;
 }
 
 a.internal-link.is-unresolved:hover {
@@ -2679,6 +2682,7 @@ span.cm-hmd-frontmatter {
 .markdown-preview-view .frontmatter-container {
 	font-size: 1em;
 	color: var(--extra-contrast);
+	border: var(--nice-border);
 }
 
 .markdown-preview-view .frontmatter-container-header {
@@ -2947,7 +2951,7 @@ https://forum.obsidian.md/t/custom-css-for-tables-5-new-styles-ready-to-use-in-y
 }
 
 :root body {
-	--table-border: 2px ridge var(--hr-line);
+	--table-border: var(--nice-border);
 	--table-roundness: var(--block-roundness);
 }
 
@@ -3572,6 +3576,7 @@ input.document-replace-input {
 /* unresolved, getting same color as unresolved links */
 .graph-view.color-fill-unresolved {
 	color: var(--unresolved-link-color);
+	opacity: var(--unresolved-opacity);
 }
 
 /* hovered */
@@ -3616,6 +3621,7 @@ input.document-replace-input {
 	border-radius: var(--block-roundness);
 	cursor: zoom-in;
 	display: block;
+	border: var(--nice-border);
 }
 
 /* centers image and caption */
@@ -4426,7 +4432,7 @@ button.MySnippetsButton:hover path {
 .MySnippets-statusbar-menu {
 	width: 320px !important;
 	border-radius: 8px !important;
-	border: 3px ridge var(--background-secondary-alt);
+	border: var(--nice-border);
 }
 
 .MySnippets-statusbar-menu .menu-item.buttonitem:hover {
@@ -4594,7 +4600,9 @@ body > .app-container .BC-Matrix-square > ol {
 
 body > .app-container .workspace-leaf-content[data-type="BC-matrix"] > .view-content div.BC-Matrix-square {
 	border: none;
-	border-bottom: 3px ridge var(--hr-line);
+	border-bottom: var(--nice-border);
+	padding-bottom: 7px;
+	padding-top: 5px;
 }
 
 body > .app-container div.view-content > div.BC-Matrix > div {
@@ -4618,10 +4626,9 @@ h3.BC-Matrix-header {
 }
 
 h5.BC-Matrix-header {
-	font-family: var(--default-font);
-	font-size: 0.8em;
+	font-family: var(--smallcap-font);
+	font-size: 0.9em;
 	color: var(--text-muted) !important;
-	font-style: italic;
 	display: inline-block;
 	position: absolute;
 	right: 6px;
@@ -4642,23 +4649,35 @@ h5.BC-Matrix-header {
 .workspace-leaf-content[data-type="BC-matrix"] > .view-content {
 	display: flex;
 	flex-direction: column-reverse;
-	padding: 5px 3px 0 4px;
+	padding: 0 4px;
 }
 
 /* trail */
 div.BC-trail {
 	margin-bottom: 1em !important;
-	border: 3px ridge var(--hr-line);
+	border: var(--nice-border);
 	font-size: 0.8em;
+	padding-left: 10px;
+	padding-right: 10px;
+	background-color: var(--background-secondary);
 }
 
-.BC-trail-grid {
-	margin-top: 5px;
+body > .app-container div.BC-trail-grid {
+	margin-top: 8px;
 	margin-bottom: 5px;
+	border: 2px ridge var(--background-modifier-border);
+	background-color: var(--background-primary-alt);
+	border-radius: var(--block-roundness);
 }
 
 body > .app-container div.BC-trail-grid-item {
-	border: 1px solid var(--hr-line);
+	border: none;
+}
+
+/* unresolved links */
+body > .app-container .BC-Link.is-unresolved{
+	color: var(--unresolved-link-color);
+	opacity: var(--unresolved-opacity);
 }
 
 /* ─────────────────────────────────────────────────── */
@@ -4820,6 +4839,7 @@ pre button.copy:hover::before {
 .another-quick-switcher__phantom_item .another-quick-switcher__item__directory,
 .suggestion-item .another-quick-switcher__phantom_item {
 	color: var(--unresolved-link-color);
+	opacity: var(--unresolved-opacity);
 }
 
 .another-quick-switcher__phantom_item .another-quick-switcher__item__icon,
