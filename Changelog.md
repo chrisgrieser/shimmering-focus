@@ -1,3 +1,5 @@
+- 2021-11-25	stylelint
+- 2021-11-25	made stylelint autofixing part of the release workflow
 - 2021-11-25	mobile font sizes
 - 2021-11-25	fix iA Writer font format to truetype
 - 2021-11-24	push automation test
