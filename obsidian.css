@@ -1,6 +1,6 @@
 /* ──────────────────────────────────────────────────────
 SHIMMERING FOCUS
-Version 1.135
+Version 1.136
 https://github.com/chrisgrieser/shimmering-focus/
 Created by @pseudometa
 MIT License
@@ -22,11 +22,11 @@ For help and/or CSS snippets, thanks to:
 
 :root {
 	/* Colors */
-	--accent-lighter: hsl(243deg, 66%, 76%);
-	--accent-lightest: hsl(259deg, 100%, 80%);
-	--alt-accent: hsl(163deg, 97%, 34%);
-	--alt-accent-lighter: hsl(164deg, 100%, 41%);
-	--alt-accent-lightest: hsl(164deg, 100%, 70%);
+	--accent-lighter: hsl(243deg 66% 76%);
+	--accent-lightest: hsl(259deg 100% 80%);
+	--alt-accent: hsl(163deg 97% 34%);
+	--alt-accent-lighter: hsl(164deg 100% 41%);
+	--alt-accent-lightest: hsl(164deg 100% 70%);
 	--alt-accent-darker: #009A72;
 	--code-color: var(--alt-accent-darker);
 	--html-tag-color: var(--alt-accent-darker);
@@ -37,9 +37,9 @@ For help and/or CSS snippets, thanks to:
 	--highlight-alt1: #FF06;
 	--highlight-alt2: #0FF6;
 	--search-match-hl: var(--highlight-alt2);
-	--bold-in-darkmode: hsl(202deg, 43%, 57%);
+	--bold-in-darkmode: hsl(202deg 43% 57%);
 	--unresolved-link-color: #0F80FF;
-	--backdrop-color: hsl(228deg, 70%, 7%);
+	--backdrop-color: hsl(228deg 70% 7%);
 	--active-line: #ADAE9820;
 	--cursor-monocolor: var(--accent-lighter);
 
@@ -71,8 +71,8 @@ For help and/or CSS snippets, thanks to:
 	--cursor-duo-color-1: var(--alt-accent-lightest);
 	--cursor-duo-color-2: var(--accent-lightest);
 	--button-border: var(--accent-lighter);
-	--a-row: rgba(0, 0, 0, 3%);
-	--b-row: rgba(0, 0, 0, 6%);
+	--a-row: rgb(0 0 0 / 3%);
+	--b-row: rgb(0 0 0 / 6%);
 }
 
 .theme-dark {
@@ -92,8 +92,8 @@ For help and/or CSS snippets, thanks to:
 	--cursor-duo-color-1: var(--alt-accent-lighter);
 	--cursor-duo-color-2: var(--accent-lighter);
 	--button-border: var(--text-accent);
-	--a-row: rgba(0, 0, 0, 20%);
-	--b-row: rgba(0, 0, 0, 20%);
+	--a-row: rgb(0 0 0 / 20%);
+	--b-row: rgb(0 0 0 / 20%);
 }
 
 /* ─────────────────────────────────────────────────── */
@@ -130,6 +130,7 @@ For help and/or CSS snippets, thanks to:
 	format("ttf");
 	font-display: swap;
 }
+
 /* for Windows/Mac Distributions that do not have Optima installed */
 @font-face {
 	font-family: "Optima-local";
@@ -180,6 +181,7 @@ For help and/or CSS snippets, thanks to:
 	--h3-size: 1.45em;
 	--h4-size: 1.3em;
 	--h5-size: 1.15em;
+	--mobile-font-size: 1.25rem;
 }
 
 .CodeMirror-linenumber {
@@ -299,10 +301,12 @@ body:not(.show-titlebar) .titlebar {
 .workspace-split.mod-right-split .workspace-tabs {
 	padding-top: 0.15em;
 }
+
 /* fix for Mac OS Traffic Lights */
 body:not(.show-titlebar) .workspace-split.mod-left-split .workspace-tabs:nth-child(3) {
 	padding-top: 1.15em;
 }
+
 /* thanks @javalent */
 body:not(.show-titlebar) .workspace-split.mod-left-split.is-collapsed ~ .mod-root .view-header {
 	padding-left: 3em;
@@ -719,7 +723,7 @@ https://github.com/chetachiezikeuzor/Yin-and-Yang-Theme */
 
 .status-bar-item,
 .status-bar::after {
-	padding: 0 0 0 1.3em;
+	padding: 0 0 0 1em;
 	color: var(--extra-contrast);
 	font-size: 1em;
 }
@@ -740,7 +744,6 @@ https://github.com/chetachiezikeuzor/Yin-and-Yang-Theme */
 	line-height: 1.2;
 }
 
-/* "signature" */
 .status-bar::after {
 	content: var(--signature);
 }
@@ -974,11 +977,11 @@ pre[class~="language-uri"]::after { content: "uri"; }
 /* fix for the buggy selection fo inline text
 https://forum.obsidian.md/t/inline-code-occludes-text-selection-and-vim-cursor/11552/10 */
 .theme-dark .cm-inline-code {
-	background-color: rgba(0, 0, 0, 20%) !important;
+	background-color: rgb(0 0 0 / 20%) !important;
 }
 
 .theme-light .cm-inline-code {
-	background-color: rgba(0, 0, 0, 5%) !important;
+	background-color: rgb(0 0 0 / 5%) !important;
 }
 
 /* copy code button */
@@ -1436,6 +1439,7 @@ body.block-cursor .CodeMirror-cursor {
 	color: var(--alt-accent);
 	cursor: pointer;
 }
+
 /* active colors */
 .workspace-tab-header-inner:active svg,
 .nav-action-button:active svg,
@@ -1578,6 +1582,18 @@ body .workspace-leaf-resize-handle:active {
 .outline .tree-item-icon.collapse-icon {
 	padding-left: 3px;
 	padding-right: 6px !important;
+}
+
+.outline .pane-empty {
+	font-size: 0;
+}
+
+.outline .pane-empty::before {
+	font-size: 5rem;
+	content: var(--signature);
+	margin-left: 35%;
+	margin-top: 50%;
+	position: absolute;
 }
 
 /* ─────────────────────────────────────────────────── */
@@ -1815,6 +1831,7 @@ body > .app-container .obsidian-search-match-highlight:last-child {
 .nav-file-title:hover .nav-file-title-content {
 	color: var(--alt-accent);
 }
+
 /* active file */
 .nav-file-title.is-active {
 	color: var(--text-accent);
@@ -1945,6 +1962,7 @@ based on css from @Mara https://github.com/Mara-Li/Obsidian-Snippet-collection *
 .nav-folder-collapse-indicator {
 	display: none;
 }
+
 /* As icons are now used, the labeled boxes (e.g. "pdf") can be removed. */
 .nav-file-tag {
 	display: none;
@@ -2305,6 +2323,7 @@ based on css from @Mara https://github.com/Mara-Li/Obsidian-Snippet-collection *
 	display: inline-block;
 	vertical-align: top;
 }
+
 /* lowercase "by" */
 .community-plugin-search .community-plugin-author::first-letter {
 	text-transform: lowercase;
@@ -2774,8 +2793,10 @@ body:not(.show-foldermarker) .CodeMirror-foldmarker {
 body:not(.show-collapse-buttons) .CodeMirror-foldgutter-open.CodeMirror-guttermarker-subtle::after {
 	opacity: 0;
 }
+
 /* hover over line shows fold icon */
-body:not(.show-collapse-buttons) .CodeMirror-code > div:hover .CodeMirror-foldgutter-open.CodeMirror-guttermarker-subtle::after {
+body:not(.show-collapse-buttons) .CodeMirror-code
+> div:hover .CodeMirror-foldgutter-open.CodeMirror-guttermarker-subtle::after { /* stylelint-disable-line selector-combinator-space-before, max-line-length */
 	opacity: 1;
 }
 
@@ -2888,6 +2909,7 @@ body:not(.no-pandoc-citation-emphasis) .cm-link.cm-quote.cm-hmd-barelink {
 	margin-top: 60px;
 	margin-bottom: 10px;
 }
+
 /* footnotes preview */
 .markdown-preview-section .footnotes {
 	font-size: 85%;
@@ -3121,11 +3143,11 @@ Based on some CSS from @SlRvb, @gee & @Eleanor Konik */
 }
 
 .theme-dark .HyperMD-header.HyperMD-header-6.CodeMirror-line {
-	background-color: rgba(0, 0, 0, 40%);
+	background-color: rgb(0 0 0 / 40%);
 }
 
 .theme-light .HyperMD-header.HyperMD-header-6.CodeMirror-line {
-	background-color: rgba(0, 0, 0, 10%);
+	background-color: rgb(0 0 0 / 10%);
 }
 
 .markdown-preview-view h6 {
@@ -3135,7 +3157,6 @@ Based on some CSS from @SlRvb, @gee & @Eleanor Konik */
 .HyperMD-header.HyperMD-header-6.CodeMirror-line,
 .markdown-preview-view h6 {
 	padding-left: 1em !important;
-	padding-bottom: 0.5em;
 	padding-top: 0.5em;
 	padding-bottom: 0.6em;
 	margin-bottom: 0;
@@ -3235,7 +3256,7 @@ body:not(.annotation-tags-off) .cm-s-obsidian .CodeMirror-line .cm-hashtag-end.c
 
 body:not(.annotation-tags-off) .cm-tag-question,
 body:not(.annotation-tags-off) .tag[href="#question"] {
-	background-color: rgba(var(--teal), 0.5) !important;
+	background-color: rgb(var(--teal) 0.5) !important;
 }
 
 .theme-dark:not(.annotation-tags-off) .cm-hashtag-begin.cm-tag-question::before,
@@ -3250,7 +3271,7 @@ body:not(.annotation-tags-off) .tag[href="#question"] {
 
 body:not(.annotation-tags-off) .cm-tag-method,
 body:not(.annotation-tags-off) .tag[href="#method"] {
-	background-color: rgba(var(--brown), 0.5) !important;
+	background-color: rgb(var(--brown) 0.5) !important;
 }
 
 body:not(.annotation-tags-off) .cm-hashtag-begin.cm-tag-method::before,
@@ -3260,7 +3281,7 @@ body:not(.annotation-tags-off) .tag[href="#method"]::before {
 
 body:not(.annotation-tags-off) .cm-tag-main,
 body:not(.annotation-tags-off) .tag[href="#main"] {
-	background-color: rgba(var(--blue), 0.5) !important;
+	background-color: rgb(var(--blue) 0.5) !important;
 }
 
 body:not(.annotation-tags-off) .cm-hashtag-begin.cm-tag-main::before,
@@ -3270,7 +3291,7 @@ body:not(.annotation-tags-off) .tag[href="#main"]::before {
 
 body:not(.annotation-tags-off) .cm-tag-gap,
 body:not(.annotation-tags-off) .tag[href="#gap"] {
-	background-color: rgba(var(--grey), 0.5) !important;
+	background-color: rgb(var(--grey) 0.5) !important;
 }
 
 body:not(.annotation-tags-off) .cm-hashtag-begin.cm-tag-gap::before,
@@ -3280,7 +3301,7 @@ body:not(.annotation-tags-off) .tag[href="#gap"]::before {
 
 body:not(.annotation-tags-off) .cm-tag-summary,
 body:not(.annotation-tags-off) .tag[href="#summary"] {
-	background-color: rgba(var(--orange), 0.5) !important;
+	background-color: rgb(var(--orange) 0.5) !important;
 }
 
 body:not(.annotation-tags-off) .cm-hashtag-begin.cm-tag-summary::before,
@@ -3290,7 +3311,7 @@ body:not(.annotation-tags-off) .tag[href="#summary"]::before {
 
 body:not(.annotation-tags-off) .cm-tag-definition,
 body:not(.annotation-tags-off) .tag[href="#definition"] {
-	background-color: rgba(var(--yellow), 0.5) !important;
+	background-color: rgb(var(--yellow) 0.5) !important;
 }
 
 body:not(.annotation-tags-off) .cm-hashtag-begin.cm-tag-definition::before,
@@ -3300,7 +3321,7 @@ body:not(.annotation-tags-off) .tag[href="#definition"]::before {
 
 body:not(.annotation-tags-off) .cm-tag-agree,
 body:not(.annotation-tags-off) .tag[href="#agree"] {
-	background-color: rgba(var(--green), 0.5) !important;
+	background-color: rgb(var(--green) 0.5) !important;
 }
 
 body:not(.annotation-tags-off) .cm-hashtag-begin.cm-tag-agree::before,
@@ -3310,7 +3331,7 @@ body:not(.annotation-tags-off) .tag[href="#agree"]::before {
 
 body:not(.annotation-tags-off) .cm-tag-disagree,
 body:not(.annotation-tags-off) .tag[href="#disagree"] {
-	background-color: rgba(var(--red), 0.5) !important;
+	background-color: rgb(var(--red) 0.5) !important;
 }
 
 body:not(.annotation-tags-off) .cm-hashtag-begin.cm-tag-disagree::before,
@@ -3320,7 +3341,7 @@ body:not(.annotation-tags-off) .tag[href="#disagree"]::before {
 
 body:not(.annotation-tags-off) .cm-tag-example,
 body:not(.annotation-tags-off) .tag[href="#example"] {
-	background-color: rgba(var(--purple), 0.5) !important;
+	background-color: rgb(var(--purple) 0.5) !important;
 }
 
 body:not(.annotation-tags-off) .cm-hashtag-begin.cm-tag-example::before,
@@ -3352,11 +3373,11 @@ body:not(.annotation-tags-off) .tag[href="#example"]::before {
 /* fixes color when text is selected */
 /* https://forum.obsidian.md/t/inline-code-occludes-text-selection-and-vim-cursor/11552/10?u=pseudometa */
 .theme-light .HyperMD-quote.HyperMD-quote-1 {
-	background-color: rgba(0, 0, 0, 7%) !important;
+	background-color: rgb(0 0 0 / 7%) !important;
 }
 
 .theme-dark .HyperMD-quote.HyperMD-quote-1 {
-	background-color: rgba(0, 0, 0, 25%) !important;
+	background-color: rgb(0 0 0 / 25%) !important;
 }
 
 /* when blockquote is also active line */
@@ -3390,8 +3411,8 @@ body > .app-container .markdown-preview-view blockquote {
 	margin-right: 0;
 	margin-top: 1.5em;
 	margin-bottom: 1.5em;
-	padding-left: 0.7em;
 	margin-left: 2em;
+	padding-left: 0.7em;
 	padding-right: 0.7em;
 	padding-top: 0.3em;
 	padding-bottom: 0.4em;
@@ -3407,6 +3428,7 @@ body > .app-container .markdown-preview-view blockquote {
 span.cm-em.cm-quote.cm-quote-1 {
 	text-decoration: underline;
 }
+
 /* Add quotation character before quote */
 body:not(.normal-blockquotes) blockquote,
 body:not(.normal-blockquotes) .HyperMD-quote.HyperMD-quote-1 {
@@ -3428,6 +3450,7 @@ body:not(.normal-blockquotes) .HyperMD-quote.HyperMD-quote-1 {
 .quotation-mark-deco blockquote p {
 	display: inline;
 }
+
 /* ─────────────────────────────────────────────────── */
 /* < progress bars (<progress>) */
 /* ─────────────────────────────────────────────────── */
@@ -3741,6 +3764,7 @@ ol ul::before {
 	top: 0;
 	bottom: 0;
 }
+
 /* less indention to save space */
 .markdown-preview-view > div > div > ol,
 .markdown-preview-view > div > div > ul {
@@ -3772,6 +3796,16 @@ body:not(.left-aligned-embeds) .pdf-embed {
 /* slightly thinner on mobile */
 .is-mobile .view-header {
 	height: 2.4em;
+}
+
+.is-mobile .markdown-preview-view,
+.is-mobile .cm-s-obsidian div.cm-line {
+	line-height: 1.5;
+	font-size: var(--mobile-font-size);
+}
+
+body.is-mobile .markdown-preview-view blockquote{
+	text-align: start;
 }
 
 /* ─────────────────────────────────────────────────── */
@@ -3857,7 +3891,7 @@ body:not(.left-aligned-embeds) .pdf-embed {
 	text-decoration: underline 2px;
 }
 
-.workspace-leaf-content[data-type="calendar"] .day.active svg dot {
+.workspace-leaf-content[data-type="calendar"] .day.active svg .dot {
 	color: var(--interactive-normal) !important;
 }
 
@@ -3873,7 +3907,7 @@ body:not(.left-aligned-embeds) .pdf-embed {
 https://forum.obsidian.md/t/inline-code-occludes-text-selection-and-vim-cursor/11552/10 */
 .theme-light .cm-inline-code,
 .theme-light .cm-s-obsidian .cm-templater-command {
-	background-color: rgba(0, 0, 0, 0.5%) !important;
+	background-color: rgb(0 0 0 / 0.5%) !important;
 }
 
 /* < Improve Templater Syntax Readability */
@@ -4117,6 +4151,7 @@ a.tag.kanban-plugin__item-tag {
 	color: var(--text-accent) !important;
 	background-color: transparent !important;
 }
+
 /* shadow of dragging */
 .sortable-chosen {
 	padding: 0 !important;
@@ -4187,7 +4222,7 @@ a.tag.kanban-plugin__item-tag {
 	font-size: 0;
 	color: var(--extra-contrast) !important;
 	background-color: var(--background-primary) !important;
-	padding: 5px 15px 6px 15px;
+	padding: 5px 15px 6px;
 	margin-right: 4px !important;
 	border-top-left-radius: 6px !important;
 	border-top-right-radius: 6px !important;
@@ -4323,6 +4358,7 @@ body.hide-index-files .nav-file-title[data-path$="Index.md"] {
 
 .nav-folder-title[data-path$="Drafts"] .nav-folder-title-content::before {
 	content: "folder_special ";
+
 	/* alternative:  "auto_stories" or "menu_book" */
 }
 
@@ -4425,6 +4461,7 @@ body:not(.show-title-bar) > .qe-popup-menu {
 .menu.qe-popup-menu .menu-item.is-qe-file::before {
 	content: "description";
 }
+
 /* ─────────────────────────────────────────────────── */
 /* My Snippets Plugin */
 /* ─────────────────────────────────────────────────── */
@@ -4613,6 +4650,7 @@ body #block-ref-hover.show:hover {
 	background-color: var(--background-primary-alt);
 	border-radius: calc(var(--block-roundness));
 }
+
 /* ─────────────────────────────────────────────────── */
 /* < Dangling Links */
 /* ─────────────────────────────────────────────────── */
@@ -4776,6 +4814,7 @@ pre button.copy:hover::before {
 	color: var(--editor-alt-accent);
 	opacity: 0.6;
 }
+
 /* ─────────────────────────────────────────────────── */
 /* < Activity History */
 /* ─────────────────────────────────────────────────── */
@@ -5249,6 +5288,22 @@ settings:
 	 description: Files named that way are created by some plugins like the Longform Plugin and in many cases should not be touched.
 	 type: class-toggle
 	 default: false
+  -
+	 id: mobile
+	 title: Mobile
+	 description: mobile-specific settings
+	 type: heading
+	 level: 2
+	 collapsed: true
+  -
+	 id: mobile-font-size
+	 title: Mobile Font Size
+	 type: variable-number-slider
+	 default: 1.25
+	 min: 0.5
+	 max: 2
+	 step: 0.05
+	 format: rem
   -
 	 id: miscellaneous
 	 title: Miscellaneous
