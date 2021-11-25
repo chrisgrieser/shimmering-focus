@@ -1,6 +1,6 @@
 /* ──────────────────────────────────────────────────────
 SHIMMERING FOCUS
-Version 1.137
+Version 1.138
 https://github.com/chrisgrieser/shimmering-focus/
 Created by @pseudometa
 MIT License
@@ -3148,18 +3148,6 @@ Based on some CSS from @SlRvb, @gee & @Eleanor Konik */
 /* thanks to @atlas for the inspiration
 https://discord.com/channels/686053708261228577/722584061087842365/898113745774084127 */
 
-:root { /* stylelint-disable-line no-duplicate-selectors */
-	--red: 255, 56, 96;
-	--orange: 255, 120, 15;
-	--yellow: 217, 188, 77;
-	--green: 35, 209, 96;
-	--purple: 230, 128, 253;
-	--brown: 170, 121, 66;
-	--blue: 32, 156, 238;
-	--teal: 0, 235, 230;
-	--grey: 128, 128, 128;
-}
-
 .theme-light { /* stylelint-disable-line no-duplicate-selectors */
 	--annotation-tag-font-color: hsl(0 0% 13%);
 }
@@ -3233,7 +3221,7 @@ body:not(.annotation-tags-off) .cm-s-obsidian .CodeMirror-line .cm-hashtag-end.c
 
 body:not(.annotation-tags-off) .cm-tag-question,
 body:not(.annotation-tags-off) .tag[href="#question"] {
-	background-color: rgb(var(--teal) 0.5) !important;
+	background-color: rgb(0 235 230 / 50%) !important;
 }
 
 .theme-dark:not(.annotation-tags-off) .cm-hashtag-begin.cm-tag-question::before,
@@ -3248,7 +3236,7 @@ body:not(.annotation-tags-off) .tag[href="#question"] {
 
 body:not(.annotation-tags-off) .cm-tag-method,
 body:not(.annotation-tags-off) .tag[href="#method"] {
-	background-color: rgb(var(--brown) 0.5) !important;
+	background-color: rgb(170 121 66 / 50%) !important;
 }
 
 body:not(.annotation-tags-off) .cm-hashtag-begin.cm-tag-method::before,
@@ -3258,7 +3246,7 @@ body:not(.annotation-tags-off) .tag[href="#method"]::before {
 
 body:not(.annotation-tags-off) .cm-tag-main,
 body:not(.annotation-tags-off) .tag[href="#main"] {
-	background-color: rgb(var(--blue) 0.5) !important;
+	background-color: rgb(32 156 238 / 50%) !important;
 }
 
 body:not(.annotation-tags-off) .cm-hashtag-begin.cm-tag-main::before,
@@ -3268,7 +3256,7 @@ body:not(.annotation-tags-off) .tag[href="#main"]::before {
 
 body:not(.annotation-tags-off) .cm-tag-gap,
 body:not(.annotation-tags-off) .tag[href="#gap"] {
-	background-color: rgb(var(--grey) 0.5) !important;
+	background-color: rgb(128 128 128 / 50%) !important;
 }
 
 body:not(.annotation-tags-off) .cm-hashtag-begin.cm-tag-gap::before,
@@ -3278,7 +3266,7 @@ body:not(.annotation-tags-off) .tag[href="#gap"]::before {
 
 body:not(.annotation-tags-off) .cm-tag-summary,
 body:not(.annotation-tags-off) .tag[href="#summary"] {
-	background-color: rgb(var(--orange) 0.5) !important;
+	background-color: rgb(255 120 15 / 50%) !important;
 }
 
 body:not(.annotation-tags-off) .cm-hashtag-begin.cm-tag-summary::before,
@@ -3288,7 +3276,7 @@ body:not(.annotation-tags-off) .tag[href="#summary"]::before {
 
 body:not(.annotation-tags-off) .cm-tag-definition,
 body:not(.annotation-tags-off) .tag[href="#definition"] {
-	background-color: rgb(var(--yellow) 0.5) !important;
+	background-color: rgb(217 188 77 / 50%) !important;
 }
 
 body:not(.annotation-tags-off) .cm-hashtag-begin.cm-tag-definition::before,
@@ -3298,7 +3286,7 @@ body:not(.annotation-tags-off) .tag[href="#definition"]::before {
 
 body:not(.annotation-tags-off) .cm-tag-agree,
 body:not(.annotation-tags-off) .tag[href="#agree"] {
-	background-color: rgb(var(--green) 0.5) !important;
+	background-color: rgb(35 209 96 / 50%) !important;
 }
 
 body:not(.annotation-tags-off) .cm-hashtag-begin.cm-tag-agree::before,
@@ -3308,7 +3296,7 @@ body:not(.annotation-tags-off) .tag[href="#agree"]::before {
 
 body:not(.annotation-tags-off) .cm-tag-disagree,
 body:not(.annotation-tags-off) .tag[href="#disagree"] {
-	background-color: rgb(var(--red) 0.5) !important;
+	background-color: rgb(255 56 96 / 50%) !important;
 }
 
 body:not(.annotation-tags-off) .cm-hashtag-begin.cm-tag-disagree::before,
@@ -3318,7 +3306,7 @@ body:not(.annotation-tags-off) .tag[href="#disagree"]::before {
 
 body:not(.annotation-tags-off) .cm-tag-example,
 body:not(.annotation-tags-off) .tag[href="#example"] {
-	background-color: rgb(var(--purple) 0.5) !important;
+	background-color: rgb(230 128 253 / 50%) !important;
 }
 
 body:not(.annotation-tags-off) .cm-hashtag-begin.cm-tag-example::before,
