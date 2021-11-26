@@ -1,6 +1,6 @@
 /* ──────────────────────────────────────────────────────
 SHIMMERING FOCUS
-Version 1.140
+Version 1.141
 https://github.com/chrisgrieser/shimmering-focus/
 Created by @pseudometa
 MIT License
@@ -165,7 +165,7 @@ For help and/or CSS snippets, thanks to:
 	--longform-font: "Crimson Pro";
 	--longform-font-size: 1.2em;
 	--sidebar-font-family: "iA Writer Quattro V";
-	--sidebar-font-size: 0.875em;
+	--sidebar-font-size: 0.9em;
 	--menu-font-family: "iA Writer Quattro V";
 	--menu-font-size: 1em;
 	--smallcap-font: "AlegreyaSansSC";
@@ -3612,10 +3612,14 @@ input.document-replace-input {
 	border-radius: var(--block-roundness);
 	cursor: zoom-in;
 	display: block;
-	border: var(--nice-border);
 }
 
-/* centers image and caption */
+body:not(.disable-image-borders) .view-content .markdown-preview-view img{
+	border: var(--nice-border);
+
+}
+
+/* centers image and image caption */
 body:not(.left-aligned-embeds) .image-embed[alt]::after {
 	white-space: pre;
 	text-align: center;
@@ -4320,6 +4324,11 @@ div.oz-image-widget > img {
 	border-radius: var(--block-roundness) !important;
 }
 
+body:not(.disable-image-borders) div.oz-image-widget > img {
+	border: var(--nice-border);
+}
+
+/* center */
 body:not(.left-aligned-embeds) div.oz-image-widget > embed,
 body:not(.left-aligned-embeds) div.oz-image-widget > img {
 	margin-left: auto;
@@ -5034,7 +5043,7 @@ settings:
 	 id: sidebar-font-size
 	 title: Side Bar Font Size
 	 type: variable-number-slider
-	 default: 0.875
+	 default: 0.9
 	 min: 0.5
 	 max: 2
 	 step: 0.1
@@ -5172,12 +5181,6 @@ settings:
 	 type: class-toggle
 	 default: false
   -
-	 id: no-alternating-rows
-	 title: Turn off Alternating Row Coloring
-	 description: Affects tables, Command Palette & Suggesters
-	 type: class-toggle
-	 default: false
-  -
 	 id: image-size
 	 title: Size of Images
 	 description: Size of Images in % (when Max View is disabled or not active)
@@ -5198,9 +5201,21 @@ settings:
 	 step: 5
 	 format: vh
   -
+	 id: disable-image-borders
+	 title: Remove image borders
+	 description: Disables the frame put around images.
+	 type: class-toggle
+	 default: false
+  -
 	 id: left-aligned-embeds
 	 title: Align Images & PDFs to the left
 	 description: When disabled, they will be aligned to the center instead.
+	 type: class-toggle
+	 default: false
+  -
+	 id: no-alternating-rows
+	 title: Turn off Alternating Row Coloring
+	 description: Affects tables, Command Palette & Suggesters.
 	 type: class-toggle
 	 default: false
   -

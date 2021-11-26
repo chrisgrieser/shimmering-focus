@@ -1,3 +1,4 @@
+- 2021-11-26	image border with ozan + style settings
 - 2021-11-25	use only one AlegreyaSansSC font
 - 2021-11-25	unresolved and --nice-border
 - 2021-11-25	fix annotation tags
