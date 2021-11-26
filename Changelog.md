@@ -1,3 +1,4 @@
+- 2021-11-26	better breadcrumb icon
 - 2021-11-26	tab header fix
 - 2021-11-26	improved contribution section
 - 2021-11-26	removed readme preview
