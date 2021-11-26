@@ -26,7 +26,6 @@ A minimalistic [Obsidian](https://obsidian.md/) theme focused on readability and
   - [Subtle Design](#subtle-design)
 - [Customization](#customization)
 - [Compatible Plugins](#compatible-plugins)
-  - [Information for specific Plugins](#information-for-specific-plugins)
 - [Installation](#installation)
 - [Contribute](#contribute)
 - [Credits](#credits)
@@ -128,7 +127,7 @@ Stylistically, the theme pretty much follows Obsidian's default color theme, wit
 
 ➡️ [Full list of compatible plugins.](https://publish.obsidian.md/hub/02+-+Community+Expansions/02.05+All+Community+Expansions/Themes/Shimmering+Focus#Plugin+Compatibility+1)
 
-### Information for specific Plugins
+__Information regarding specific Plugins__
 - Sliding Panes: Enable `Swap Rotated Header Direction` in the Sliding pane Settings.
 - Kanban: Right-click cards to edit them.
 - Ozan's Image in Editor: Image Sizes are affected by the Image Settings & the Max View Feature.
