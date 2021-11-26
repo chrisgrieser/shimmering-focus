@@ -11,7 +11,7 @@ A minimalistic [Obsidian](https://obsidian.md/) theme focused on readability and
 <!-- MarkdownTOC -->
 
 - [Features](#features)
-  - [Hiding & Showing UI Elements](#hiding--showing-ui-elements)
+  - [Hiding/Showing UI Elements](#hidingshowing-ui-elements)
   - [Annotation Tags](#annotation-tags)
   - [Max View](#max-view)
   - [Image-related Features](#image-related-features)
@@ -25,7 +25,7 @@ A minimalistic [Obsidian](https://obsidian.md/) theme focused on readability and
   - [Maximum Readability](#maximum-readability)
   - [Subtle Design](#subtle-design)
 - [Customization](#customization)
-- [Compatible Plugins](#compatible-plugins)
+- [Plugin Compatibility](#plugin-compatibility)
 - [Installation](#installation)
 - [Contribute](#contribute)
 - [Credits](#credits)
@@ -34,7 +34,7 @@ A minimalistic [Obsidian](https://obsidian.md/) theme focused on readability and
 
 ## Features
 
-### Hiding & Showing UI Elements
+### Hiding/Showing UI Elements
 - The Status bar, Header bar, and collapse arrows become visible upon hovering.
 - You can re-enable all hidden elements by using the [Style Settings Plugin](#Customization).
 
@@ -122,7 +122,7 @@ Stylistically, the theme pretty much follows Obsidian's default color theme, wit
 - [Preview of available style settings.](https://publish.obsidian.md/hub/02+-+Community+Expansions/02.05+All+Community+Expansions/Themes/Shimmering+Focus#Customization+Options+Style+Settings+Plugin)
 - You can add your own Annotation Tags via adding a snippet [using this template](https://github.com/chrisgrieser/shimmering-focus/blob/main/annotation-tag-template.css).
 
-## Compatible Plugins
+## Plugin Compatibility
 *Shimmering Focus* is compatible with and has includes styling for all core plugins, the most common community plugins, as well as about a dozen more community plugins.
 
 ➡️ [Full list of compatible plugins.](https://publish.obsidian.md/hub/02+-+Community+Expansions/02.05+All+Community+Expansions/Themes/Shimmering+Focus#Plugin+Compatibility+1)
@@ -134,19 +134,25 @@ __Information regarding specific Plugins__
 - Quick Explorer: Re-enable the title bar with the Style Settings Plugin for the breadcrumbs
 
 ## Installation
-You can find *Shimmering Focus* in Obsidian's community themes browser under `Obsidian Settings ➞ Appearance ➞ Themes - Manage`.
+You can find *Shimmering Focus* in Obsidian's community themes browser under `Obsidian Settings ➞ Appearance ➞ Themes ➞ Manage`.
 
 ## Contribute
-When they are in line with the [design philosophy](#design-principles) of the theme, I welcome pull requests. 
-- All sections have `< ` as prefix for quicker navigation, i.e. you can search for `< font` to navigate to the font section.
-- For consistency and code quality, please use [stylelint](https://stylelint.io/) with the provided configuration (the `.stylelintrc.json` file). You can install stylelint and all its needed prerequisites by running this in your terminal:
+Pull requests are welcome, especially for plugins or features I haven't implemented since I do not use them myself.
 
-```shell
-npm install -g stylelint postcss stylelint-config-recommended
-```
-
+- Try to follow the [design philosophy](#design-principles) of the theme.
+- All sections have a `< ` as prefix for quicker navigation. This means you can search for `< font` to navigate to the font section.
+- For consistency and code quality, use [stylelint](https://stylelint.io/) with the provided configuration (the `.stylelintrc.json` file). 
 - Before making the pull request, please run `stylelint --fix obsidian.css`. This will auto-fix minor problems and present a list of problems, if there are any. 
 - I recommend using an [editor integration for stylelint](https://stylelint.io/user-guide/integrations/editor/).
+
+```shell
+# clone
+git clone git@github.com:chrisgrieser/shimmering-focus.git
+cd ./shimmering-focus
+
+# install stylelint + prerequisites
+npm install -g stylelint postcss stylelint-config-recommended
+```
 
 ## Credits
 **Donations** are welcome via [PayPal](https://www.paypal.com/paypalme/ChrisGrieser) or [Ko-Fi](https://ko-fi.com/pseudometa). 🙏
