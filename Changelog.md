@@ -1,3 +1,4 @@
+- 2021-11-26	update info on plugin usage
 - 2021-11-26	hr line
 - 2021-11-26	better breadcrumb icon
 - 2021-11-26	tab header fix

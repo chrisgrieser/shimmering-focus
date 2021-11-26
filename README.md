@@ -3,7 +3,7 @@
 A minimalistic [Obsidian](https://obsidian.md/) theme focused on readability and condensed information display.
 
 <!-- manually updated-->
-![](https://img.shields.io/badge/downloads-4708-6E4E9B?style=plastic) ![](https://img.shields.io/github/last-commit/chrisgrieser/shimmering-focus?style=plastic)
+![](https://img.shields.io/badge/downloads-4718-6E4E9B?style=plastic) ![](https://img.shields.io/github/last-commit/chrisgrieser/shimmering-focus?style=plastic)
 
 <img src="https://raw.githubusercontent.com/chrisgrieser/shimmering-focus/main/dual-theme-screenshot.png" alt="Promo Screenshot">
 
@@ -26,6 +26,8 @@ A minimalistic [Obsidian](https://obsidian.md/) theme focused on readability and
   - [Subtle Design](#subtle-design)
 - [Customization](#customization)
 - [Plugin Compatibility](#plugin-compatibility)
+  - [List of Compatible Plugins](#list-of-compatible-plugins)
+  - [Instructions for specific Plugins](#instructions-for-specific-plugins)
 - [Installation](#installation)
 - [Contribute](#contribute)
 - [Credits](#credits)
@@ -123,15 +125,20 @@ Stylistically, the theme pretty much follows Obsidian's default color theme, wit
 - You can add your own Annotation Tags via adding a snippet [using this template](https://github.com/chrisgrieser/shimmering-focus/blob/main/annotation-tag-template.css).
 
 ## Plugin Compatibility
+
+### List of Compatible Plugins
 *Shimmering Focus* is compatible with and has includes styling for all core plugins, the most common community plugins, as well as about a dozen more community plugins.
 
 ➡️ [Full list of compatible plugins.](https://publish.obsidian.md/hub/02+-+Community+Expansions/02.05+All+Community+Expansions/Themes/Shimmering+Focus#Plugin+Compatibility+1)
 
-__Information regarding specific Plugins__
-- Sliding Panes: Enable `Swap Rotated Header Direction` in the Sliding pane Settings.
+### Instructions for specific Plugins
+In accordance with the minimalistic philosophy of the theme, unnecessary UI elements of some plugins have also been removed. However, you can still access the full plugin functionality.
+
 - Kanban: Right-click cards to edit them.
-- Ozan's Image in Editor: Image Sizes are affected by the Image Settings & the Max View Feature.
+- Sliding Panes: Enable `Swap Rotated Header Direction` in the Sliding pane Settings.
+- Breadcrumbs: Refresh the index via Command Palette
 - Quick Explorer: Re-enable the title bar with the Style Settings Plugin for the breadcrumbs
+- Ozan's Image in Editor: Image Sizes are affected by the Image Settings & the Max View Feature.
 
 ## Installation
 You can find *Shimmering Focus* in Obsidian's community themes browser under `Obsidian Settings ➞ Appearance ➞ Themes ➞ Manage`.

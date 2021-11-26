@@ -1,6 +1,6 @@
 /* ──────────────────────────────────────────────────────
 SHIMMERING FOCUS
-Version 1.148
+Version 1.149
 https://github.com/chrisgrieser/shimmering-focus/
 Created by @pseudometa
 MIT License
@@ -935,15 +935,19 @@ button:hover {
 	margin-left: 5px;
 }
 
+:root { /* stylelint-disable-line no-duplicate-selectors */
+	--toggle-duration: 350ms;
+}
+
 body:not(.normal-checkboxes) .checkbox-container:hover {
-	border: 9px solid var(--alt-accent-darker);
-	transition-duration: 200ms;
+	border: 9px solid var(--alt-accent);
+	transition-duration: var(--toggle-duration);
 }
 
 body:not(.normal-checkboxes) .checkbox-container.is-enabled:hover {
 	background-color: var(--background-secondary);
 	border: 9px solid var(--alt-accent-lighter);
-	transition-duration: 200ms;
+	transition-duration: var(--toggle-duration);
 }
 
 body:not(.normal-checkboxes) .checkbox-container {
@@ -953,7 +957,7 @@ body:not(.normal-checkboxes) .checkbox-container {
 	width: 22px;
 	height: 22px;
 	background-color: var(--background-secondary);
-	transition-duration: 200ms;
+	transition-duration: var(--toggle-duration);
 }
 
 body:not(.normal-checkboxes) .checkbox-container::after {
@@ -4780,6 +4784,10 @@ body > .app-container div.view-content > div.BC-Matrix {
 	padding: 0;
 }
 
+body > .app-container div.view-content {
+	padding: 0 2.5px 2.5px;
+}
+
 h3.BC-Matrix-header {
 	font-size: 1.25em;
 	font-family: var(--default-font);
@@ -4797,21 +4805,8 @@ h5.BC-Matrix-header {
 	margin-top: 5px !important;
 }
 
-.workspace-leaf-content[data-type="BC-matrix"] > .view-content > button:first-child {
+.workspace-leaf-content[data-type="BC-matrix"] > .view-content > button {
 	display: none;
-}
-
-.workspace-leaf-content[data-type="BC-matrix"] > .view-content > button:nth-child(2) {
-	width: 40px;
-	margin: 5px 5px 5px auto;
-	right: 0;
-	border-color: var(--text-faint) !important;
-}
-
-.workspace-leaf-content[data-type="BC-matrix"] > .view-content {
-	display: flex;
-	flex-direction: column-reverse;
-	padding: 0 4px;
 }
 
 /* trail */
