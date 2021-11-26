@@ -1,4 +1,5 @@
 #!/bin/zsh
+export PATH=/usr/local/bin/:/opt/homebrew/bin/:$PATH
 csspath=~"/Library/Mobile Documents/iCloud~md~obsidian/Documents/Vault/.obsidian/themes/Shimmering Focus.css"
 
 # get commit message
@@ -8,7 +9,7 @@ if [[ "$commitMsg" == "" || "$commitMsg" == " " ]] ; then
 fi
 
 # Style Lint & copy
-stylelint --fix "$csspath"
+echo -n stylelint --fix "$csspath"
 cp "$csspath" ./obsidian.css
 
 # Update Theme Download numbers in README.md
