@@ -1,6 +1,6 @@
 /* ──────────────────────────────────────────────────────
 SHIMMERING FOCUS
-Version 1.149
+Version 1.150
 https://github.com/chrisgrieser/shimmering-focus/
 Created by @pseudometa
 MIT License
@@ -303,11 +303,14 @@ This ToC is auto-generated via the .generate-ToC.sh */
 }
 
 textarea,
+.search-input-container input,
 body > .app-container input,
+button,
 select.dropdown {
 	font-family: var(--button-font);
 	font-size: 0.9em;
 	letter-spacing: 1px;
+	font-weight: 600;
 }
 
 .workspace-leaf-content[data-type="search"] .tree-item-inner,
@@ -616,16 +619,6 @@ div.search-input-clear-button:hover::before,
 .empty-state-close-button:hover,
 .modal-close-button:hover {
 	color: var(--alt-accent);
-}
-
-.modal-close-button {
-	top: 0;
-	right: 0;
-	padding-left: 4px;
-	padding-bottom: 4px;
-	padding-right: 3px;
-	border-bottom-left-radius: 6px;
-	border-top-right-radius: 6px;
 }
 
 .empty-state-close-button {
@@ -975,14 +968,14 @@ body:not(.normal-checkboxes) .checkbox-container.is-enabled {
 /* ─────────────────────────────────────────────────── */
 
 .search-input-container input,
-input {
+input[type="text"] {
 	padding-right: 10px;
 	padding-left: 10px;
 	border-radius: 50px;
 	left: 0;
 }
 
-input {
+input[type="text"] {
 	width: 250px;
 }
 
@@ -994,12 +987,12 @@ select.dropdown {
 select.dropdown:hover,
 textarea:hover,
 input:hover {
-	border-color: var(--alt-accent);
+	border-color: var(--alt-accent-lighter);
 }
 
 textarea:focus,
 input:focus {
-	border-color: var(--text-accent);
+	border-color: var(--accent-lighter);
 }
 
 /* wider sliders */
@@ -1360,8 +1353,8 @@ input[type="checkbox"]:checked:hover {
 
 .modal {
 	padding: 0.2em 1em;
-	border-radius: 12px;
-	border: 5px solid var(--background-primary);
+	border-radius: calc(var(--block-roundness) * 2);
+	border: 3px solid var(--background-modifier-border);
 }
 
 .prompt-bg,
@@ -1372,8 +1365,26 @@ input[type="checkbox"]:checked:hover {
 }
 
 .prompt {
-	border-radius: 15px;
+	border-radius: calc(var(--block-roundness) * 2);
 	border: 5px solid var(--background-secondary);
+}
+
+.modal.mod-community-theme,
+.modal.mod-community-plugin,
+.modal.mod-settings {
+	height: 93%;
+	max-width: unset;
+	width: 93%;
+	border: 3px solid var(--background-modifier-border);
+	border-radius: calc(var(--block-roundness) * 3);
+}
+
+.modal-close-button {
+	top: 0;
+	right: 0;
+	padding: 0 4px 4px;
+	border-bottom-left-radius: var(--block-roundness);
+	border-top-right-radius: var(--block-roundness);
 }
 
 /* ─────────────────────────────────────────────────── */
@@ -1564,12 +1575,8 @@ body.block-cursor .CodeMirror-cursor {
 	display: none;
 }
 
-.workspace-tab-header:first-child {
-	margin-left: 6px;
-}
-
 .workspace-tab-header-container {
-	margin-bottom: 5px;
+	margin: 2px 0 3px 4px;
 }
 
 .workspace-tab-header {
@@ -2231,14 +2238,6 @@ based on css from @Mara https://github.com/Mara-Li/Obsidian-Snippet-collection *
 /* < Settings menu */
 /* ─────────────────────────────────────────────────── */
 
-/* make settings menu bigger and more compact */
-.modal.mod-settings {
-	height: 93%;
-	max-width: unset;
-	width: 93%;
-	border-color: var(--background-primary-alt);
-}
-
 .modal.mod-settings .modal-content {
 	padding-right: 0;
 }
@@ -2269,7 +2268,7 @@ based on css from @Mara https://github.com/Mara-Li/Obsidian-Snippet-collection *
 	padding-left: 0;
 	padding-right: 0;
 	padding-bottom: 1em;
-	border-left: 3px solid var(--background-primary-alt);
+	border-left: 2px solid var(--background-modifier-border);
 	height: 95vh;
 }
 
@@ -2287,14 +2286,6 @@ based on css from @Mara https://github.com/Mara-Li/Obsidian-Snippet-collection *
 .modal.mod-settings .vertical-tab-content-container .vertical-tab-content,
 .modal.mod-settings .vertical-tab-content-container .vertical-tab-header {
 	overflow-y: auto;
-}
-
-.vertical-tab-header-group {
-	padding-top: 0;
-	padding-bottom: 0;
-	margin-top: 0;
-	background-color: var(--background-secondary-alt);
-	margin-bottom: 20px;
 }
 
 .setting-item {
@@ -2325,16 +2316,27 @@ based on css from @Mara https://github.com/Mara-Li/Obsidian-Snippet-collection *
 }
 
 .vertical-tab-header-group-title {
-	color: var(--text-normal);
+	color: var(--text-muted);
 	font-size: 1.05em;
 	letter-spacing: 1px;
-	padding-top: 4px;
-	padding-bottom: 2px;
-	padding-left: 9px;
+	padding: 4px 3px 1px;
 	margin-top: 0;
 	font-family: var(--smallcap-font);
 	font-weight: 600;
 	text-transform: capitalize;
+	text-align: end;
+}
+
+.vertical-tab-header-group:nth-child(2) .vertical-tab-header-group-title {
+	padding-top: 10px;
+}
+
+.vertical-tab-header-group {
+	padding-top: 0;
+	padding-bottom: 0;
+	margin-top: 0;
+	background-color: var(--background-secondary-alt);
+	margin-bottom: 10px;
 }
 
 .vertical-tab-nav-item {
@@ -2423,11 +2425,15 @@ based on css from @Mara https://github.com/Mara-Li/Obsidian-Snippet-collection *
 
 /* bigger and more condensed */
 .modal.mod-community-plugin {
-	height: 93%;
-	max-width: unset;
-	width: 93%;
-
 	--plugin-browser-borders: 2px solid var(--background-modifier-border);
+}
+
+/* Search input */
+.community-plugin-search {
+	padding-top: 10px;
+	border-top-left-radius: calc(var(--block-roundness) * 2.5);
+	border-bottom-left-radius: calc(var(--block-roundness) * 2.5);
+	margin-left: 0;
 }
 
 /* search results */
@@ -2440,9 +2446,12 @@ based on css from @Mara https://github.com/Mara-Li/Obsidian-Snippet-collection *
 }
 
 .community-plugin-search-summary.u-muted {
+	font-family: var(--smallcap-font);
 	font-weight: 600;
-	padding-left: 0.6em;
-	font-style: italic;
+	font-size: 1em;
+	text-align: end;
+	padding-right: 5px;
+	padding-bottom: 2px;
 	text-transform: capitalize;
 	border-bottom: var(--plugin-browser-borders);
 }
@@ -2485,14 +2494,6 @@ based on css from @Mara https://github.com/Mara-Li/Obsidian-Snippet-collection *
 	line-height: 90% !important;
 	font-size: 0.9em;
 	font-weight: 600;
-}
-
-/* Search input */
-.community-plugin-search {
-	padding-top: 10px;
-	border-top-left-radius: 12px;
-	border-bottom-left-radius: 12px;
-	margin-left: 0;
 }
 
 .community-plugin-search button.clickable-icon {
@@ -2679,31 +2680,73 @@ based on css from @Mara https://github.com/Mara-Li/Obsidian-Snippet-collection *
 /* ─────────────────────────────────────────────────── */
 
 .modal.mod-community-theme {
-	height: 93%;
-	max-width: unset;
-	width: 93%;
+	padding-bottom: 0;
+	padding-top: 0;
+}
+
+.modal.mod-community-theme hr {
+	border-width: 3px;
+}
+
+.modal.mod-community-theme .modal-content {
+	padding-top: 20px;
+}
+
+.modal.mod-community-theme .search-input-container input {
+	width: 200px;
 }
 
 body:not(.less-heading-letter-spacing) .modal.mod-community-theme .modal-title {
 	letter-spacing: 1px;
 }
 
-.modal.mod-community-theme .community-theme.is-selected button:first-child:hover {
+.modal.mod-community-theme > .modal-content > .modal-title {
+	margin-bottom: 10px;
+	font-family: var(--smallcap-font);
+	font-weight: 600;
+	color: var(--extra-contrast);
+}
+
+.community-theme-mode-toggle-label {
+	color: var(--extra-contrast);
+	font-style: italic;
+	margin-right: 2px;
+}
+
+.community-theme-remove-button svg {
+	color: var(--text-normal) !important;
+}
+
+.community-theme-remove-button:hover svg {
+	color: var(--alt-accent) !important;
+}
+
+/* greyed out "selected" button */
+.community-theme.is-selected button:first-child {
+	color: var(--text-faint);
+}
+
+.community-theme.is-selected button:first-child:hover {
 	background-color: var(--background-secondary-alt) !important;
 	cursor: default;
+	color: var(--text-faint) !important;
+	border-color: var(--button-border) !important;
 }
 
 .modal.mod-community-theme .community-plugin-downloads-text::before {
 	content: "↓ ";
-	color: var(--extra-contrast);
 }
 
 .modal.mod-community-theme .community-theme .clickable-icon:hover {
 	color: var(--alt-accent);
 }
 
-.modal.mod-community-theme .clickable-icon svg {
+.modal.mod-community-theme button.clickable-icon svg {
 	stroke-width: 4px !important;
+}
+
+.modal.mod-community-theme button.clickable-icon {
+	height: 30px;
 }
 
 .modal.mod-community-theme .clickable-icon:hover {
@@ -2848,6 +2891,8 @@ span.cm-hmd-frontmatter {
 	font-size: 1em;
 	color: var(--extra-contrast);
 	border: var(--nice-border);
+	border-radius: var(--block-roundness);
+	background: var(--background-secondary);
 }
 
 .markdown-preview-view .frontmatter-container-header {
@@ -3288,15 +3333,15 @@ Based on some CSS from @SlRvb, @gee & @Eleanor Konik */
 }
 
 .theme-dark .HyperMD-header.HyperMD-header-6.CodeMirror-line {
-	background-color: rgb(0 0 0 / 40%);
+	background-color: rgb(0 0 0 / 37%);
 }
 
 .theme-light .HyperMD-header.HyperMD-header-6.CodeMirror-line {
-	background-color: rgb(0 0 0 / 10%);
+	background-color: rgb(0 0 30 / 5%);
 }
 
 .markdown-preview-view h6 {
-	background-color: var(--background-secondary-alt);
+	background-color: var(--background-secondary);
 }
 
 .HyperMD-header.HyperMD-header-6.CodeMirror-line,
@@ -3305,6 +3350,9 @@ Based on some CSS from @SlRvb, @gee & @Eleanor Konik */
 	padding-top: 0.5em;
 	padding-bottom: 0.6em;
 	margin-bottom: 0;
+	border-top: 1px solid var(--background-modifier-border);
+	border-right: 1px solid var(--background-modifier-border);
+	border-bottom: 1px solid var(--background-modifier-border);
 	border-left: 12px solid var(--pseudo-admonition-border) !important;
 	border-radius: var(--block-roundness);
 	color: var(--text-normal) !important;
@@ -4809,7 +4857,17 @@ h5.BC-Matrix-header {
 	display: none;
 }
 
-/* trail */
+/* unresolved links */
+body > .app-container .BC-Link.is-unresolved {
+	color: var(--unresolved-link-color);
+	opacity: var(--unresolved-opacity);
+}
+
+/* Breadcrumb Trail */
+.trails-div {
+	padding-bottom: 6px;
+}
+
 div.BC-trail {
 	margin-bottom: 1em !important;
 	border: var(--nice-border);
@@ -4817,6 +4875,7 @@ div.BC-trail {
 	padding-left: 10px;
 	padding-right: 10px;
 	background-color: var(--background-secondary);
+	border-radius: var(--block-roundness);
 }
 
 body > .app-container div.BC-trail-grid {
@@ -4829,12 +4888,6 @@ body > .app-container div.BC-trail-grid {
 
 body > .app-container div.BC-trail-grid-item {
 	border: none;
-}
-
-/* unresolved links */
-body > .app-container .BC-Link.is-unresolved {
-	color: var(--unresolved-link-color);
-	opacity: var(--unresolved-opacity);
 }
 
 /* ─────────────────────────────────────────────────── */
