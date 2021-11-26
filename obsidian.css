@@ -1,6 +1,6 @@
 /* ──────────────────────────────────────────────────────
 SHIMMERING FOCUS
-Version 1.150
+Version 1.151
 https://github.com/chrisgrieser/shimmering-focus/
 Created by @pseudometa
 MIT License
@@ -167,7 +167,6 @@ This ToC is auto-generated via the .generate-ToC.sh */
 	--editor-alt-accent: var(--alt-accent-darker);
 	--selection-color: hsl(259 100% 93% / 86.7%);
 	--extra-contrast: hsl(0 0% 36%);
-	--max-contrast: hsl(0 0% 35%);
 	--hr-line: hsl(0 0% 66%);
 	--image-zoom-bg: hsl(0 0% 26%);
 	--button-hover: var(--alt-accent);
@@ -191,7 +190,6 @@ This ToC is auto-generated via the .generate-ToC.sh */
 	--editor-alt-accent: var(--alt-accent);
 	--selection-color: hsl(302 24% 21% / 73%);
 	--extra-contrast: hsl(0 0% 73%);
-	--max-contrast: hsl(0 0% 95%);
 	--hr-line: hsl(0 0% 60%);
 	--image-zoom-bg: hsl(0 0% 0%);
 	--button-hover: var(--alt-accent-darker);
@@ -1591,7 +1589,7 @@ body.block-cursor .CodeMirror-cursor {
 }
 
 .workspace-tab-header.is-active svg {
-	color: var(--max-contrast);
+	color: var(--text-normal);
 }
 
 .workspace-tab-header svg {
