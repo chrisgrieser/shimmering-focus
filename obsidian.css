@@ -1,6 +1,6 @@
 /* ──────────────────────────────────────────────────────
 SHIMMERING FOCUS
-Version 1.147
+Version 1.148
 https://github.com/chrisgrieser/shimmering-focus/
 Created by @pseudometa
 MIT License
@@ -1453,6 +1453,10 @@ input[type="checkbox"]:checked:hover {
 /* < Command Palette & QuickSwitcher */
 /* ─────────────────────────────────────────────────── */
 
+div.prompt {
+	padding: 3px;
+}
+
 /* the plugin name */
 .suggestion-prefix {
 	color: var(--text-muted);
@@ -1485,7 +1489,8 @@ body:not(.no-alternating-rows) .suggestion-item:nth-child(even) .suggestion-hotk
 
 /* color selected / hovered */
 .suggestion-item.is-selected,
-.suggestion-item:hover {
+.suggestion-item:hover,
+body:not(.no-alternating-rows) .suggestion-item:nth-child(even):hover {
 	background-color: var(--background-secondary-alt);
 }
 
@@ -3089,8 +3094,8 @@ span.cm-link.cm-hmd-footnote {
 
 /* increased readability in preview mode */
 body > .app-container .markdown-preview-view div hr {
-	border-top: none !important;
-	border-bottom: var(--nice-border);
+	border-top: none;
+	border-bottom: 3px solid var(--hr-line);
 }
 
 /* ─────────────────────────────────────────────────── */
@@ -4822,8 +4827,8 @@ div.BC-trail {
 body > .app-container div.BC-trail-grid {
 	margin-top: 8px;
 	margin-bottom: 5px;
-	border: 2px ridge var(--background-modifier-border);
-	background-color: var(--background-primary-alt);
+	border: 1px solid var(--background-modifier-border);
+	background-color: var(--background-primary);
 	border-radius: var(--block-roundness);
 }
 
