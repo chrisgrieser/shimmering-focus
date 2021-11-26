@@ -1,3 +1,4 @@
+- 2021-11-26	added contribute section
 - 2021-11-26	added .stylelintrc
 - 2021-11-26	tab icons
 - 2021-11-26	image border with ozan + style settings

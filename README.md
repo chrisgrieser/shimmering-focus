@@ -3,7 +3,7 @@
 A minimalistic [Obsidian](https://obsidian.md/) theme focused on readability and condensed information display.
 
 <!-- manually updated-->
-![](https://img.shields.io/badge/downloads-4696-6E4E9B?style=plastic) ![](https://img.shields.io/github/last-commit/chrisgrieser/shimmering-focus?style=plastic)
+![](https://img.shields.io/badge/downloads-4698-6E4E9B?style=plastic) ![](https://img.shields.io/github/last-commit/chrisgrieser/shimmering-focus?style=plastic)
 
 <img src="https://raw.githubusercontent.com/chrisgrieser/shimmering-focus/main/dual-theme-screenshot.png" alt="Promo Screenshot">
 
@@ -28,7 +28,8 @@ A minimalistic [Obsidian](https://obsidian.md/) theme focused on readability and
 - [Compatible Plugins](#compatible-plugins)
   - [Information for specific Plugins](#information-for-specific-plugins)
 - [Installation](#installation)
-- [Credits & Donations](#credits--donations)
+- [Contribute](#contribute)
+- [Credits](#credits)
 
 <!-- /MarkdownTOC -->
 
@@ -136,7 +137,13 @@ Stylistically, the theme pretty much follows Obsidian's default color theme, wit
 ## Installation
 You can find *Shimmering Focus* in Obsidian's community themes browser under `Obsidian Settings ➞ Appearance ➞ Themes - Manage`.
 
-## Credits & Donations
+## Contribute
+When they are in line with the philosophy of the theme, I welcome pull requests. 
+- All sections have `< ` as prefix for quicker navigation, i.e. you can search for `< font` to navigate to the font section.
+- For consistency and code quality, please use [stylelint](https://stylelint.io/) with the provided configuration (the `.stylelintrc.json` file). You can install stylelint and all its needed prerequisites via `npm install -g stylelint postcss stylelint-config-recommended`
+- Before making the pull request, please run `stylelint --fix obsidian.css`.
+
+## Credits
 **Donations** are welcome via [PayPal](https://www.paypal.com/paypalme/ChrisGrieser) or [Ko-Fi](https://ko-fi.com/pseudometa). 🙏
 
 This theme has been created by @pseudometa#9546 ([Discord](https://discord.gg/veuWUTm)) aka [@pseudo_meta (Twitter)](https://twitter.com/pseudo_meta) aka Chris Grieser (rl). In my day job, I am a PhD student in sociology, studying the governance of the app economy and compatibility management in software development. If you are interested in those subjects, feel free to check out [my academic homepage](https://chris-grieser.de/) get in touch!

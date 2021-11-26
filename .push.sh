@@ -9,8 +9,11 @@ if [[ "$commitMsg" == "" || "$commitMsg" == " " ]] ; then
 fi
 
 # Style Lint & copy
-echo -n stylelint --fix "$csspath"
+stylelint --fix "$csspath"
 cp "$csspath" ./obsidian.css
+
+# Copy .stylelintrc for documentation purposes
+cp ~/.stylelintrc.json ./
 
 # Update Theme Download numbers in README.md
 dl=$(curl -s "https://releases.obsidian.md/stats/theme" | grep -oe '"Shimmering Focus","download":[[:digit:]]*' | cut -d: -f2)
