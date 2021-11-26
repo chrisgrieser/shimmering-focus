@@ -1,6 +1,6 @@
 /* ──────────────────────────────────────────────────────
 SHIMMERING FOCUS
-Version 1.145
+Version 1.146
 https://github.com/chrisgrieser/shimmering-focus/
 Created by @pseudometa
 MIT License
@@ -150,7 +150,6 @@ This ToC is auto-generated via the .generate-ToC.sh */
 	--bold-in-darkmode: hsl(202 43% 57%);
 	--unresolved-link-color: hsl(211 100% 52%);
 	--unresolved-opacity: 0.6;
-	--backdrop-color: hsl(228 70% 7%);
 	--active-line: hsl(62 11% 63% / 12.5%);
 	--cursor-monocolor: var(--accent-lighter);
 
@@ -168,7 +167,7 @@ This ToC is auto-generated via the .generate-ToC.sh */
 	--editor-alt-accent: var(--alt-accent-darker);
 	--selection-color: hsl(259 100% 93% / 86.7%);
 	--extra-contrast: hsl(0 0% 36%);
-	--max-contrast: hsl(0 0% 6%);
+	--max-contrast: hsl(0 0% 30%);
 	--hr-line: hsl(0 0% 66%);
 	--image-zoom-bg: hsl(0 0% 26%);
 	--button-hover: var(--alt-accent);
@@ -184,7 +183,8 @@ This ToC is auto-generated via the .generate-ToC.sh */
 	--button-border: var(--accent-lighter);
 	--a-row: rgb(0 0 0 / 3%);
 	--b-row: rgb(0 0 0 / 6%);
-	--nice-border: 3px ridge hsl(0 0% 60%);
+	--nice-border: 2px solid hsl(0 0% 85%);
+	--backdrop-color: hsl(228 9% 70%);
 }
 
 .theme-dark {
@@ -208,6 +208,7 @@ This ToC is auto-generated via the .generate-ToC.sh */
 	--a-row: rgb(0 0 0 / 20%);
 	--b-row: rgb(0 0 0 / 20%);
 	--nice-border: 3px ridge hsl(0 0% 40%);
+	--backdrop-color: hsl(228 70% 7%);
 }
 
 /* ─────────────────────────────────────────────────── */
@@ -1542,6 +1543,13 @@ body.block-cursor .CodeMirror-cursor {
 /* < Tab Headers */
 /* ─────────────────────────────────────────────────── */
 
+.workspace-tab-header-inner.is-after-active,
+.workspace-tab-header-inner.is-before-active,
+.workspace-tab-header.is-after-active,
+.workspace-tab-header.is-before-active {
+	background: transparent;
+}
+
 .workspace-tab-container-after,
 .workspace-tab-container-before {
 	display: none;
@@ -1586,15 +1594,16 @@ body.block-cursor .CodeMirror-cursor {
 	color: var(--alt-accent);
 }
 
-.nav-action-button:hover,
-.nav-action-button.is-active,
-.workspace-tab-header.is-active:hover {
+.nav-action-button.is-active {
 	background-color: var(--background-secondary-alt);
-	cursor: pointer;
 }
 
+.nav-action-button:hover,
+.nav-action-button.is-active:hover,
+.workspace-tab-header:hover .workspace-tab-header-inner,
 .workspace-tab-header:hover {
 	cursor: pointer;
+	background-color: var(--background-primary);
 }
 
 .workspace-tab-header-inner:active svg,
@@ -3075,10 +3084,9 @@ span.cm-link.cm-hmd-footnote {
 }
 
 /* increased readability in preview mode */
-.markdown-preview-view hr {
-	border-top-width: 2.5px;
-	border-color: var(--extra-contrast);
-	opacity: 0.7;
+body > .app-container .markdown-preview-view div hr {
+	border-top: none !important;
+	border-bottom: var(--nice-border);
 }
 
 /* ─────────────────────────────────────────────────── */
@@ -4801,7 +4809,7 @@ h5.BC-Matrix-header {
 div.BC-trail {
 	margin-bottom: 1em !important;
 	border: var(--nice-border);
-	font-size: 0.8em;
+	font-size: 0.9em;
 	padding-left: 10px;
 	padding-right: 10px;
 	background-color: var(--background-secondary);

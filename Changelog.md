@@ -1,3 +1,7 @@
+- 2021-11-26	tab header fix
+- 2021-11-26	improved contribution section
+- 2021-11-26	removed readme preview
+- 2021-11-26	update readme
 - 2021-11-26	added ToC to css-file
 - 2021-11-26	added contribute section
 - 2021-11-26	added .stylelintrc
