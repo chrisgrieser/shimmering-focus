@@ -3,7 +3,7 @@
 A minimalistic [Obsidian](https://obsidian.md/) theme focused on readability and condensed information display.
 
 <!-- manually updated-->
-![](https://img.shields.io/badge/downloads-4698-6E4E9B?style=plastic) ![](https://img.shields.io/github/last-commit/chrisgrieser/shimmering-focus?style=plastic)
+![](https://img.shields.io/badge/downloads-4702-6E4E9B?style=plastic) ![](https://img.shields.io/github/last-commit/chrisgrieser/shimmering-focus?style=plastic)
 
 <img src="https://raw.githubusercontent.com/chrisgrieser/shimmering-focus/main/dual-theme-screenshot.png" alt="Promo Screenshot">
 
@@ -138,10 +138,16 @@ Stylistically, the theme pretty much follows Obsidian's default color theme, wit
 You can find *Shimmering Focus* in Obsidian's community themes browser under `Obsidian Settings ➞ Appearance ➞ Themes - Manage`.
 
 ## Contribute
-When they are in line with the philosophy of the theme, I welcome pull requests. 
+When they are in line with the [design philosophy](#design-principles) of the theme, I welcome pull requests. 
 - All sections have `< ` as prefix for quicker navigation, i.e. you can search for `< font` to navigate to the font section.
-- For consistency and code quality, please use [stylelint](https://stylelint.io/) with the provided configuration (the `.stylelintrc.json` file). You can install stylelint and all its needed prerequisites via `npm install -g stylelint postcss stylelint-config-recommended`
-- Before making the pull request, please run `stylelint --fix obsidian.css`.
+- For consistency and code quality, please use [stylelint](https://stylelint.io/) with the provided configuration (the `.stylelintrc.json` file). You can install stylelint and all its needed prerequisites by running this in your terminal:
+
+```shell
+npm install -g stylelint postcss stylelint-config-recommended
+```
+
+- Before making the pull request, please run `stylelint --fix obsidian.css`. This will auto-fix minor problems and present a list of problems, if there are any. 
+- I recommend using an [editor integration for stylelint](https://stylelint.io/user-guide/integrations/editor/).
 
 ## Credits
 **Donations** are welcome via [PayPal](https://www.paypal.com/paypalme/ChrisGrieser) or [Ko-Fi](https://ko-fi.com/pseudometa). 🙏

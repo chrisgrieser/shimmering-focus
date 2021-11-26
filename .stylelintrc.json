@@ -5,7 +5,7 @@
 		"no-descending-specificity": null,
 
 		"indentation": ["tab", {"severity": "warning"}],
-		"max-line-length":  [120, {"severity": "warning"}],
+		"max-line-length":  [130, {"severity": "warning"}],
 		"font-weight-notation":  ["numeric", {"severity": "warning"}],
 
 		"comment-whitespace-inside": ["always", {"severity": "warning"} ],
