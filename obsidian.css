@@ -1,6 +1,6 @@
 /* ──────────────────────────────────────────────────────
 SHIMMERING FOCUS
-Version 1.153
+Version 1.154
 https://github.com/chrisgrieser/shimmering-focus/
 Created by @pseudometa
 MIT License
@@ -154,6 +154,7 @@ This ToC is auto-generated via the .generate-ToC.sh */
 	--cursor-monocolor: var(--accent-lighter);
 
 	--block-roundness: 7px;
+	--round: 50px;
 	--resize-handle-thickness: 0.25em;
 	--scrollbar-thickness: 0.6em;
 	--image-size: 50%;
@@ -274,25 +275,29 @@ This ToC is auto-generated via the .generate-ToC.sh */
 
 :root { /* stylelint-disable-line no-duplicate-selectors */
 	--default-font: "iA Writer Quattro V";
+
 	--font-monospace: "Input Mono";
 	--monospace-font-size: 0.9em;
-	--heading-font: "Optima", "Optima-local";
+
 	--longform-font: "Crimson Pro";
 	--longform-font-size: 1.2em;
 
 	--sidebar-font-family: "iA Writer Quattro V";
-	--sidebar-font-size: 0.9em;
+	--sidebar-font-size: 0.85em;
+
 	--menu-font-family: "iA Writer Quattro V";
 	--menu-font-size: 1em;
 
 	--smallcap-font: "AlegreyaSansSC";
 	--button-font: "Quicksand";
 
+	--heading-font: "Optima", "Optima-local";
 	--h1-size: 1.8em;
 	--h2-size: 1.6em;
 	--h3-size: 1.45em;
 	--h4-size: 1.3em;
 	--h5-size: 1.15em;
+
 	--mobile-font-size: 1.2rem;
 }
 
@@ -303,6 +308,7 @@ This ToC is auto-generated via the .generate-ToC.sh */
 textarea,
 .search-input-container input,
 body > .app-container input,
+.style-settings-container input,
 button,
 select.dropdown {
 	font-family: var(--button-font);
@@ -311,6 +317,7 @@ select.dropdown {
 	font-weight: 600;
 }
 
+/* Core Plugins */
 .workspace-leaf-content[data-type="search"] .tree-item-inner,
 .workspace-leaf-content[data-type="search"] .search-result-file-match,
 .workspace-leaf-content[data-type="outgoing-link"] .tree-item-self,
@@ -319,12 +326,8 @@ select.dropdown {
 .tag-container,
 .outline,
 .nav-folder-title,
-.nav-file-title {
-	font-size: var(--sidebar-font-size);
-	font-family: var(--sidebar-font-family);
-}
-
-/* Community Plugins in the Sidebar */
+.nav-file-title,
+/* Community Plugins */
 .BC-Matrix-square,
 .workspace-leaf-content[data-type="dangling-links"],
 .workspace-leaf-content[data-type="Saved Queries View"],
@@ -423,13 +426,12 @@ body:not(.show-titlebar) .titlebar {
 }
 
 /* fix for macOS Traffic Lights */
-body:not(.show-titlebar) .workspace-split.mod-left-split .workspace-tabs:nth-child(3) {
+body.mod-macos:not(.show-titlebar) .workspace-split.mod-left-split .workspace-tabs:nth-child(3) {
 	padding-top: 16px;
 }
 
-/* thanks @javalent */
-body:not(.show-titlebar) .workspace-split.mod-left-split.is-collapsed ~ .mod-root .view-header {
-	padding-left: 3em;
+body.mod-macos:not(.show-titlebar) .workspace-split.mod-left-split.is-collapsed ~ .mod-root .view-header {
+	padding-left: 40px;
 }
 
 /* to display header bar properly on mobile */
@@ -447,10 +449,19 @@ body:not(.show-titlebar) .workspace-split.mod-right-split > .workspace-leaf-resi
 	top: 37.5px !important;
 }
 
+body.show-titlebar .workspace-split.mod-right-split > .workspace-leaf-resize-handle,
+body.show-titlebar .workspace-split.mod-left-split > .workspace-leaf-resize-handle {
+	top: 37.5px;
+}
+
+.titlebar {
+	border-bottom: var(--nice-border);
+}
+
 /* styling when shown */
 .titlebar-button {
 	opacity: 1;
-	color: var(--text-normal);
+	color: var(--extra-contrast);
 	border-radius: var(--block-roundness);
 }
 
@@ -479,6 +490,11 @@ body:not(.show-titlebar) .workspace-split.mod-right-split > .workspace-leaf-resi
 .theme-light .titlebar-text {
 	opacity: 1;
 	color: var(--extra-contrast);
+}
+
+/* no rounded corners on top */
+body > div.app-container > div.horizontal-main-container > div > div.workspace-split.mod-vertical.mod-root > div > .workspace-leaf-content {
+	border-radius: 0;
 }
 
 /* ─────────────────────────────────────────────────── */
@@ -699,15 +715,11 @@ body:not(.is-mobile) .view-header-title-container::after {
 	display: none;
 }
 
+body:not(.show-header-bar):not(.is-mobile) .view-header-title,
 body:not(.show-header-bar):not(.is-mobile) .view-header-icon,
 body:not(.show-header-bar):not(.is-mobile) .view-action svg {
 	opacity: 0;
 	color: var(--extra-contrast);
-}
-
-body:not(.show-header-bar):not(.is-mobile) .view-header-title {
-	opacity: 0;
-	color: var(--text-normal);
 }
 
 /* thanks to @só erick mesmo for ":focus-within" */
@@ -951,7 +963,7 @@ body:not(.normal-checkboxes) .checkbox-container.is-enabled:hover {
 
 body:not(.normal-checkboxes) .checkbox-container {
 	cursor: pointer;
-	border-radius: 20px;
+	border-radius: var(--round);
 	border: 2px solid var(--button-border);
 	width: 22px;
 	height: 22px;
@@ -977,7 +989,7 @@ body:not(.normal-checkboxes) .checkbox-container.is-enabled {
 input[type="text"] {
 	padding-right: 10px;
 	padding-left: 10px;
-	border-radius: 50px;
+	border-radius: var(--round);
 	left: 0;
 }
 
@@ -5241,9 +5253,9 @@ settings:
 	 title: Monospace Font Size
 	 type: variable-number-slider
 	 default: 0.9
-	 min: 0.5
-	 max: 2.0
-	 step: 0.1
+	 min: 0.6
+	 max: 1.6
+	 step: 0.05
 	 format: em
   -
 	 id: sidebar-font-family
@@ -5255,10 +5267,10 @@ settings:
 	 id: sidebar-font-size
 	 title: Side Bar Font Size
 	 type: variable-number-slider
-	 default: 0.9
-	 min: 0.5
-	 max: 2
-	 step: 0.1
+	 default: 0.85
+	 min: 0.6
+	 max: 1.6
+	 step: 0.05
 	 format: em
   -
 	 id: normal-letter-spacing-sidebar
@@ -5279,7 +5291,7 @@ settings:
 	 default: 1
 	 min: 0.7
 	 max: 1.3
-	 step: 0.1
+	 step: 0.05
 	 format: em
   -
 	 id: standard-mermaid-font
@@ -5329,8 +5341,8 @@ settings:
 	 type: variable-number-slider
 	 default: 1.6
 	 min: 1
-	 max: 3.5
-	 step: 0.1
+	 max: 2.7
+	 step: 0.05
 	 format: em
   -
 	 id: h3-size
@@ -5338,8 +5350,8 @@ settings:
 	 type: variable-number-slider
 	 default: 1.45
 	 min: 1
-	 max: 3.5
-	 step: 0.1
+	 max: 2.7
+	 step: 0.05
 	 format: em
   -
 	 id: h4-size
@@ -5347,8 +5359,8 @@ settings:
 	 type: variable-number-slider
 	 default: 1.3
 	 min: 1
-	 max: 3.5
-	 step: 0.1
+	 max: 2.7
+	 step: 0.05
 	 format: em
   -
 	 id: h5-size
@@ -5356,8 +5368,8 @@ settings:
 	 type: variable-number-slider
 	 default: 1.15
 	 min: 1
-	 max: 3.5
-	 step: 0.1
+	 max: 2.7
+	 step: 0.05
 	 format: em
   -
 	 id: blockquotes
