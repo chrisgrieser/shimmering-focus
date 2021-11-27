@@ -1,6 +1,6 @@
 /* ──────────────────────────────────────────────────────
 SHIMMERING FOCUS
-Version 1.155
+Version 1.156
 https://github.com/chrisgrieser/shimmering-focus/
 Created by @pseudometa
 MIT License
@@ -1598,10 +1598,11 @@ body.block-cursor .CodeMirror-cursor {
 .workspace-tab-header.is-active {
 	background-color: var(--background-secondary);
 	border-radius: var(--block-roundness);
+	border: 1px solid var(--hr-line);
 }
 
 .workspace-tab-header.is-active svg {
-	color: var(--text-normal);
+	color: var(--extra-contrast);
 }
 
 .workspace-tab-header svg {
