@@ -1,6 +1,6 @@
 /* ──────────────────────────────────────────────────────
 SHIMMERING FOCUS
-Version 1.154
+Version 1.155
 https://github.com/chrisgrieser/shimmering-focus/
 Created by @pseudometa
 MIT License
@@ -2412,7 +2412,6 @@ based on css from @Mara https://github.com/Mara-Li/Obsidian-Snippet-collection *
 	color: var(--bold-in-darkmode);
 }
 
-/* stylelint-disable max-line-length */
 .theme-dark .vertical-tab-header-group:first-child .vertical-tab-header-group-items .vertical-tab-nav-item:nth-child(3).is-active:hover,
 .theme-dark .vertical-tab-header-group:first-child .vertical-tab-header-group-items .vertical-tab-nav-item:nth-child(4).is-active:hover,
 .theme-dark .vertical-tab-header-group:first-child .vertical-tab-header-group-items .vertical-tab-nav-item.is-active:hover,
@@ -2427,7 +2426,6 @@ based on css from @Mara https://github.com/Mara-Li/Obsidian-Snippet-collection *
 .theme-dark .vertical-tab-header-group:first-child .vertical-tab-header-group-items .vertical-tab-nav-item.is-active {
 	color: var(--text-accent);
 }
-/* stylelint-enable max-line-length */
 
 /* ─────────────────────────────────────────────────── */
 /* < Community Plugin Browser */
@@ -3001,8 +2999,7 @@ body:not(.show-collapse-buttons) .CodeMirror-foldgutter-open.CodeMirror-gutterma
 }
 
 /* hover over line shows fold icon */
-body:not(.show-collapse-buttons) .CodeMirror-code
-> div:hover .CodeMirror-foldgutter-open.CodeMirror-guttermarker-subtle::after { /* stylelint-disable-line selector-combinator-space-before, max-line-length */
+body:not(.show-collapse-buttons) .CodeMirror-code > div:hover .CodeMirror-foldgutter-open.CodeMirror-guttermarker-subtle::after {
 	opacity: 1;
 }
 
@@ -3052,7 +3049,7 @@ body:not(.max-view-off) .workspace-split.mod-left-split.is-collapsed ~ .mod-root
 }
 
 /* < Images */
-body:not(.max-view-off) .workspace-split.mod-left-split.is-collapsed ~ .mod-root .view-content .markdown-preview-view img { /* stylelint-disable-line max-line-length */
+body:not(.max-view-off) .workspace-split.mod-left-split.is-collapsed ~ .mod-root .view-content .markdown-preview-view img {
 	max-width: 100%;
 }
 
@@ -3066,13 +3063,11 @@ body:not(.is-mobile) > .app-container div.oz-image-widget > img:not(:active) {
 }
 
 /* < PDFs */
-/* stylelint-disable max-line-length */
 body:not(.max-view-off):not(.is-mobile) .workspace-split.mod-left-split.is-collapsed ~ .mod-root .view-content .markdown-preview-view .pdf-embed,
 body:not(.max-view-off):not(.is-mobile) .workspace-split.mod-left-split.is-collapsed ~ .mod-root div.oz-image-widget embed {
 	max-width: 100%;
 	max-height: 100%;
 }
-/* stylelint-enable max-line-length */
 
 body:not(.is-mobile) .pdf-embed,
 body:not(.is-mobile) > .app-container div.oz-image-widget embed {
@@ -3899,7 +3894,7 @@ body:not(.standard-mermaid-font) .mermaid {
 }
 
 .standard-mermaid-font .mermaid {
-	--mermaid-font: "Inter", -apple-system, "BlinkMacSystemFont", "Segoe UI", "Roboto", "Helvetica", "Arial", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Microsoft YaHei Light", sans-serif; /* stylelint-disable-line max-line-length */
+	--mermaid-font: "Inter", -apple-system, "BlinkMacSystemFont", "Segoe UI", "Roboto", "Helvetica", "Arial", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Microsoft YaHei Light", sans-serif;
 }
 
 /* ─────────────────────────────────────────────────── */
@@ -5174,8 +5169,6 @@ community:
 /* ─────────────────────────────────────────────────── */
 /* < Style Settings Options */
 /* ─────────────────────────────────────────────────── */
-
-/* stylelint-disable max-line-length */
 
 /* @settings
 name: Shimmering Focus Theme
