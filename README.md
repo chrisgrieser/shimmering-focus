@@ -31,6 +31,9 @@ A minimalistic [Obsidian](https://obsidian.md/) theme focused on readability and
 - [Installation](#installation)
 - [Contribute](#contribute)
 - [Credits](#credits)
+  - [About the Developer](#about-the-developer)
+  - [Donations](#donations)
+  - [Thanks](#thanks)
 
 <!-- /MarkdownTOC -->
 
@@ -162,10 +165,16 @@ npm install -g stylelint postcss stylelint-config-recommended
 ```
 
 ## Credits
+
+### About the Developer
+My ([Discord](https://discord.gg/veuWUTm)) handle is `@pseudometa#9546` and you can find me on Twitter as [@pseudo_meta (Twitter)](https://twitter.com/pseudo_meta).
+
+In my day job, I am a researcher and sociology. In my phD project, I investigate the governance of the app economy and how software ecosystems manage the tension between innovation and compatibility. If you are interested in this subject, feel free to visit [my academic homepage](https://chris-grieser.de/) and get in touch!
+
+### Donations
 **Donations** are welcome via [PayPal](https://www.paypal.com/paypalme/ChrisGrieser) or [Ko-Fi](https://ko-fi.com/pseudometa). 🙏
 
-This theme has been created by @pseudometa#9546 ([Discord](https://discord.gg/veuWUTm)) aka [@pseudo_meta (Twitter)](https://twitter.com/pseudo_meta) aka Chris Grieser (rl). In my day job, I am a PhD student in sociology, studying the governance of the app economy and compatibility management in software development. If you are interested in those subjects, feel free to check out [my academic homepage](https://chris-grieser.de/) get in touch!
-
+### Thanks
 Thanks for help and/or CSS snippets:
 - **@SlRvb**
 - **@javalent**
