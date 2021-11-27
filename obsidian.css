@@ -1,6 +1,6 @@
 /* ──────────────────────────────────────────────────────
 SHIMMERING FOCUS
-Version 1.152
+Version 1.153
 https://github.com/chrisgrieser/shimmering-focus/
 Created by @pseudometa
 MIT License
@@ -631,8 +631,16 @@ div.search-input-clear-button:hover::before,
 }
 
 .empty-state-close-button:hover {
-	color: var(--alt-accent);
+	color: var(--alt-accent-lighter);
 	background: var(--background-secondary-alt);
+}
+
+.modal-close-button {
+	top: 0;
+	right: 0;
+	padding: 0 4px 4px;
+	border-bottom-left-radius: var(--block-roundness);
+	border-top-right-radius: calc(var(--block-roundness) * 2.5);
 }
 
 /* only show on hover */
@@ -1375,14 +1383,6 @@ input[type="checkbox"]:checked:hover {
 	width: 93%;
 	border: 3px solid var(--background-modifier-border);
 	border-radius: calc(var(--block-roundness) * 3);
-}
-
-.modal-close-button {
-	top: 0;
-	right: 0;
-	padding: 0 4px 4px;
-	border-bottom-left-radius: var(--block-roundness);
-	border-top-right-radius: var(--block-roundness);
 }
 
 /* ─────────────────────────────────────────────────── */
