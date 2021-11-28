@@ -1,6 +1,6 @@
 /* ──────────────────────────────────────────────────────
 SHIMMERING FOCUS
-Version 1.163
+Version 1.164
 https://github.com/chrisgrieser/shimmering-focus/
 Created by @pseudometa
 MIT License
@@ -1623,7 +1623,7 @@ body.block-cursor .CodeMirror-cursor {
 }
 
 .workspace-tab-header-container {
-	margin: 4px 0 4px 7px;
+	margin: 4px 0 4px 6px;
 }
 
 /* no rounded corners for the sidebar leafs */
@@ -1632,7 +1632,7 @@ body > .app-container .workspace-split.mod-horizontal > .workspace-tabs > .works
 }
 
 .workspace-tab-header {
-	margin-right: 4px;
+	margin-right: 8px;
 	border: 1px solid var(--background-modifier-border);
 	border-radius: var(--block-roundness);
 }
@@ -1976,7 +1976,6 @@ readability */
 	padding-top: 5px;
 }
 
-.workspace-leaf-content[data-type="starred"] .nav-buttons-container,
 .workspace-leaf-content[data-type="starred"] .nav-file-title .nav-file-title-content::before,
 .workspace-leaf-content[data-type="starred"] .nav-file-icon svg.document {
 	display: none;
@@ -1984,6 +1983,10 @@ readability */
 
 .workspace-leaf-content[data-type="starred"] .nav-file-title:hover {
 	color: var(--alt-accent);
+}
+
+body:not(.show-starred-nav-buttons) .workspace-leaf-content[data-type="starred"] .nav-buttons-container {
+	display: none;
 }
 
 /* for starred searches */
@@ -5351,6 +5354,12 @@ settings:
 	 description: Folder markers are the "..." next to a folded/collapsed item.
 	 default: false
   -
+	 id: show-starred-nav-buttons
+	 title: Re-enable the Starred Pane Buttons
+	 type: class-toggle
+	 description: The two buttons to star the current file and the current search.
+	 default: false
+  -
 	 id: aesthetics
 	 title: Aesthetics
 	 description: Shapes, Color Schemes (coming soon), Cursor & Decoration
@@ -5359,9 +5368,9 @@ settings:
 	 collapsed: true
   -
 	 id: angular-shapes
-	 title: ⭐️ Angular Shapes
+	 title: Angular Shapes
 	 type: class-toggle
-	 description: Enable to use Angular shapes. Disable to use rounded shapes.
+	 description: Enable to use angular shapes (🟩). Disable to use rounded shapes (🟣).
 	 default: false
   -
 	 id: block-cursor
