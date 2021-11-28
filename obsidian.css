@@ -1,6 +1,6 @@
 /* ──────────────────────────────────────────────────────
 SHIMMERING FOCUS
-Version 1.162
+Version 1.163
 https://github.com/chrisgrieser/shimmering-focus/
 Created by @pseudometa
 MIT License
@@ -1319,17 +1319,18 @@ body > .app-container .contains-task-list li.task-list-item.is-checked {
 }
 
 /* https://forum.obsidian.md/t/meta-post-common-css-hacks/1978/34 */
-body:not(.angular-shapes) input[type="checkbox"] {
+input[type="checkbox"] {
 	-webkit-appearance: none;
 	appearance: none;
 	border: 2px solid var(--text-muted);
 	padding: 1px;
+	border-radius: var(--round);
 	vertical-align: top;
 	margin-top: 2px;
 	filter: unset !important; /* removes hue filter */
 }
 
-body:not(.angular-shapes) input[type="checkbox"]:checked {
+input[type="checkbox"]:checked {
 	background-color: var(--finished-task);
 	border-width: 0;
 	background-position: center;
@@ -1338,11 +1339,11 @@ body:not(.angular-shapes) input[type="checkbox"]:checked {
 	background-image: url('data:image/svg+xml; utf8, <svg width="12px" height="10" viewBox="0 0 12 8" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd"><g transform="translate(-4.000000, -6.000000)" fill="%23ffffff"><path d="M8.1043257,14.0367999 L4.52468714,10.5420499 C4.32525014,10.3497722 4.32525014,10.0368095 4.52468714,9.8424863 L5.24777413,9.1439454 C5.44721114,8.95166768 5.77142411,8.95166768 5.97086112,9.1439454 L8.46638057,11.5903727 L14.0291389,6.1442083 C14.2285759,5.95193057 14.5527889,5.95193057 14.7522259,6.1442083 L15.4753129,6.84377194 C15.6747499,7.03604967 15.6747499,7.35003511 15.4753129,7.54129009 L8.82741268,14.0367999 C8.62797568,14.2290777 8.3037627,14.2290777 8.1043257,14.0367999"></path></g></g></svg>');
 }
 
-body:not(.angular-shapes) input[type="checkbox"]:hover {
+input[type="checkbox"]:hover {
 	border-color: var(--alt-accent);
 }
 
-body:not(.angular-shapes) input[type="checkbox"]:checked:hover {
+input[type="checkbox"]:checked:hover {
 	background-color: var(--alt-accent-lighter);
 }
 
@@ -3483,7 +3484,7 @@ body:not(.annotation-tags-off) .cm-s-obsidian .CodeMirror-line span.cm-tag-examp
 	padding-right: 8px;
 	padding-left: 8px;
 	color: var(--annotation-tag-font-color) !important;
-	border-radius: 6px;
+	border-radius: var(--block-roundness);
 	font-style: normal;
 }
 
@@ -4194,23 +4195,24 @@ https://forum.obsidian.md/t/inline-code-occludes-text-selection-and-vim-cursor/1
 /* < Kanban Plugin */
 /* ─────────────────────────────────────────────────── */
 
-/* variables */
-.theme-light { /* stylelint-disable-line no-duplicate-selectors */
+/* stylelint-disable no-duplicate-selectors */
+.theme-light {
 	--kanban-background: hsl(0 0% 85%);
 	--active-hover-kanban-item: hsl(0 0% 93%);
 	--dot-color: hsl(0 0% 80% / 50%);
 }
 
-.theme-dark { /* stylelint-disable-line no-duplicate-selectors */
+.theme-dark {
 	--kanban-background: hsl(0 0% 17%);
 	--active-hover-kanban-item: hsl(0 0% 17%);
 	--dot-color: hsl(0 0% 13% / 50%);
 }
 
-:root { /* stylelint-disable-line no-duplicate-selectors */
+:root {
 	--dot-spacing: 8px;
 	--dot-size: 1px;
 }
+/* stylelint-enable no-duplicate-selectors */
 
 .kanban-plugin__board button {
 	border: unset !important;
@@ -4340,15 +4342,6 @@ a.tag.kanban-plugin__item-tag {
 	padding-bottom: 0 !important;
 }
 
-/* adapted for the round checkboxes */
-.kanban-plugin__board input[type="checkbox"] {
-	margin-top: 1px;
-	height: 0.85em;
-	width: 0.85em;
-	margin-left: 0;
-	margin-right: 5px;
-}
-
 .nav-file-title[data-path*="Kanban"] .nav-file-title-content::before,
 .nav-file-title[data-path*="kanban"] .nav-file-title-content::before {
 	content: "dashboard ";
@@ -4357,6 +4350,27 @@ a.tag.kanban-plugin__item-tag {
 .kanban-plugin__item-markdown li .external-link::before {
 	margin-top: 1px;
 	margin-right: 6px;
+}
+
+/* adapted for the round checkboxes */
+body:not(.angular-shapes) .kanban-plugin__board input[type="checkbox"] {
+	margin-top: 1px;
+	height: 0.85em;
+	width: 0.85em;
+	margin-left: 0;
+	margin-right: 5px;
+}
+
+/* angular shapes setting */
+body.angular-shapes .kanban-plugin__board input[type="checkbox"] {
+	margin-top: 0;
+	height: 1em;
+	width: 1em;
+}
+
+body.angular-shapes .kanban-plugin__item,
+body.angular-shapes .kanban-plugin__lane {
+	border-radius: 0;
 }
 
 /* ─────────────────────────────────────────────────── */
@@ -5289,7 +5303,7 @@ id: shimmering-focus
 settings:
   -
 	 id: show-hide-elements
-	 title: Show or Hide UI Elements
+	 title: Show/Hide UI Elements
 	 description: Re-enable Elements hidden by this theme
 	 type: heading
 	 level: 2
@@ -5339,15 +5353,27 @@ settings:
   -
 	 id: aesthetics
 	 title: Aesthetics
-	 description: Shapes & Colors (coming soon)
+	 description: Shapes, Color Schemes (coming soon), Cursor & Decoration
 	 type: heading
 	 level: 2
 	 collapsed: true
   -
 	 id: angular-shapes
-	 title: Angelar shapes
+	 title: ⭐️ Angular Shapes
 	 type: class-toggle
 	 description: Enable to use Angular shapes. Disable to use rounded shapes.
+	 default: false
+  -
+	 id: block-cursor
+	 title: Block Cursor
+	 description: Use a block instead of a line as cursor. For best results, also switch the main font to a monospaced one.
+	 type: class-toggle
+	 default: false
+  -
+	 id: mono-color-cursor
+	 title: Use a mono-colored Cursor
+	 description: 'Use a (light purple) cursor, as in previous versions of "Shimmering Focus".'
+	 type: class-toggle
 	 default: false
   -
 	 id: quotation-mark-deco
@@ -5355,6 +5381,12 @@ settings:
 	 description: Show a decorative Quotation Mark next to Blockquotes in Preview Mode.
 	 type: class-toggle
 	 hub: ignore
+	 default: false
+  -
+	 id: normal-checkboxes
+	 title: Normal Checkboxes
+	 description: Use the normal checkboxes from the default theme.
+	 type: class-toggle
 	 default: false
   -
 	 id: colored-yaml
@@ -5560,25 +5592,6 @@ settings:
 	 type: class-toggle
 	 default: false
   -
-	 id: cursor-settings
-	 title: Cursor
-	 description: Type & Color
-	 type: heading
-	 level: 2
-	 collapsed: true
-  -
-	 id: block-cursor
-	 title: Block Cursor
-	 description: Use a block instead of a line as cursor. For best results, also switch the main font to a monospaced one.
-	 type: class-toggle
-	 default: false
-  -
-	 id: mono-color-cursor
-	 title: Use a mono-colored Cursor
-	 description: 'Use a (light purple) cursor, as in previous versions of "Shimmering Focus".'
-	 type: class-toggle
-	 default: false
-  -
 	 id: spellcheck-settings
 	 title: Spellcheck
 	 description: Style & Fine-tuning
@@ -5696,12 +5709,6 @@ settings:
 	 type: heading
 	 level: 2
 	 collapsed: true
-  -
-	 id: normal-checkboxes
-	 title: Normal Checkboxes
-	 description: Use the normal checkboxes from the default theme.
-	 type: class-toggle
-	 default: false
   -
 	 id: no-pandoc-citation-emphasis
 	 title: No Emphasis of Pandoc Citations

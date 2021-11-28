@@ -1,4 +1,4 @@
-- 2021-11-28	minor
+- 2021-11-28	angular shapes for kanbans
 - 2021-11-28	Update README.md
 - 2021-11-28	Update README.md
 - 2021-11-28	fix #45
