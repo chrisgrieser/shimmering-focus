@@ -1,3 +1,4 @@
+- 2021-11-28	status bar styling, style settings styling, issue #29
 - 2021-11-28	style setting option for issue #29
 - 2021-11-28	fixes for angular shaped
 - 2021-11-28	Option to re-enable starred pane Nav Buttons

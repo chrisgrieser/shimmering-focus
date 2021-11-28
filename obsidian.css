@@ -1,6 +1,6 @@
 /* ──────────────────────────────────────────────────────
 SHIMMERING FOCUS
-Version 1.167
+Version 1.168
 https://github.com/chrisgrieser/shimmering-focus/
 Created by @pseudometa
 MIT License
@@ -291,6 +291,8 @@ This ToC is auto-generated via the .generate-ToC.sh */
 	--menu-font-family: "iA Writer Quattro V";
 	--menu-font-size: 1em;
 
+	--status-bar-font-size: 1em;
+
 	--smallcap-font: "AlegreyaSansSC";
 	--setting-heading: var(--smallcap-font);
 	--button-font: "Quicksand";
@@ -307,6 +309,10 @@ This ToC is auto-generated via the .generate-ToC.sh */
 
 .CodeMirror-linenumber {
 	font-family: var(--font-monospace) !important;
+}
+
+div.status-bar-item {
+	font-size: var(--status-bar-font-size);
 }
 
 textarea,
@@ -875,6 +881,11 @@ https://github.com/chetachiezikeuzor/Yin-and-Yang-Theme */
 	content: var(--signature);
 }
 
+.status-bar.default-statusbar {
+	padding-right: 0.4em;
+	padding-left: 0.4em;
+}
+
 .status-bar-item.mod-clickable:hover,
 .lt-status-bar-btn:hover {
 	color: var(--alt-accent) !important;
@@ -886,14 +897,13 @@ body:not(.default-statusbar) .status-bar {
 	right: 0;
 	bottom: 0;
 	border-top-left-radius: var(--roundish);
-	padding: 0.5em 1em 0.5em 0.8em !important;
+	padding: 0.5em 0.8em;
 	max-height: unset;
 	line-height: 1.2;
 }
 
 /* only show on hover */
-body:not(.show-statusbar):not(.default-statusbar) .status-bar,
-.is-translucent .status-bar {
+body:not(.show-statusbar):not(.default-statusbar) .status-bar {
 	opacity: 0;
 	transition: 800ms;
 }
@@ -5231,6 +5241,53 @@ pre button.copy:hover::before {
 }
 
 /* ─────────────────────────────────────────────────── */
+/* < Style Settings Plugin */
+/* ─────────────────────────────────────────────────── */
+
+.style-settings-heading {
+	margin-bottom: 12px !important;
+	margin-top: 22px !important;
+	padding-top: 0;
+}
+
+.vertical-tab-content > .style-settings-heading > .setting-item-info > .setting-item-name {
+	margin-bottom: 5px;
+	font-size: 1.1em;
+}
+
+.style-settings-heading .setting-item-name {
+	font-family: var(--setting-heading);
+	line-height: 0.7em;
+}
+
+.style-settings-heading:not(.is-collapsed) .setting-item-name {
+	margin-bottom: 5px;
+}
+
+.style-settings-heading:not(.is-collapsed) > .setting-item-info > .setting-item-description {
+	display: none;
+}
+
+.style-settings-heading .setting-item-name:hover {
+	color: var(--editor-alt-accent);
+}
+
+.style-settings-heading > .setting-item-info > .setting-item-description {
+	font-family: var(--menu-font-family);
+	font-size: 0.7em;
+}
+
+.style-settings-container .setting-item:not(.style-settings-heading) > .setting-item-info > .setting-item-description {
+	font-size: 0.8em;
+	line-height: 1.2em;
+}
+
+/* remove buggy export button for certain blocks */
+.style-settings-heading .setting-editor-extra-setting-button:last-child {
+	display: none;
+}
+
+/* ─────────────────────────────────────────────────── */
 /* < Other Minor Plugin Customizations */
 /* ─────────────────────────────────────────────────── */
 
@@ -5243,31 +5300,6 @@ a.zoom-plugin-title:hover {
 /* advanced tables */
 .widget-icon:hover {
 	fill: var(--alt-accent) !important;
-}
-
-/* ─────────────────────────────────────────────────── */
-/* < Style Settings Plugin */
-/* ─────────────────────────────────────────────────── */
-
-.style-settings-heading {
-	margin-bottom: 12px !important;
-	margin-top: 22px !important;
-	padding-top: 0;
-}
-
-.style-settings-heading .setting-item-name {
-	font-family: var(--setting-heading);
-	line-height: 1em;
-}
-
-.style-settings-heading .setting-item-description {
-	font-family: var(--menu-font-family);
-	font-size: 65%;
-}
-
-/* remove buggy export button for certain blocks */
-.style-settings-heading .setting-editor-extra-setting-button:last-child {
-	display: none;
 }
 
 /* ─────────────────────────────────────────────────── */
@@ -5468,7 +5500,7 @@ settings:
 	 format: rem
   -
 	 id: normal-letter-spacing-sidebar
-	 title: No decreased letter spacing in the Side bar
+	 title: No decreased letter spacing in the Side Bar
 	 type: class-toggle
 	 hub: ignore
 	 default: false
@@ -5493,6 +5525,15 @@ settings:
 	 description: Blockquotes have the same size and line-height as the rest of the text.
 	 type: class-toggle
 	 default: false
+  -
+	 id: status-bar-font-size
+	 title: Status Bar Font Size
+	 type: variable-number-slider
+	 default: 1
+	 min: 0.7
+	 max: 2.0
+	 step: 0.05
+	 format: em
   -
 	 id: headings
 	 title: Headings
@@ -5719,7 +5760,7 @@ settings:
   -
 	 id: mobile
 	 title: Mobile
-	 description: mobile-specific settings
+	 description: Settings specifically for mobile
 	 type: heading
 	 level: 2
 	 collapsed: true
