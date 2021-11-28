@@ -1,6 +1,6 @@
 /* ──────────────────────────────────────────────────────
 SHIMMERING FOCUS
-Version 1.165
+Version 1.166
 https://github.com/chrisgrieser/shimmering-focus/
 Created by @pseudometa
 MIT License
@@ -158,6 +158,7 @@ This ToC is auto-generated via the .generate-ToC.sh */
 	--cursor-monocolor: var(--accent-lighter);
 
 	--resize-handle-thickness: 4px;
+	--toggle-duration: 250ms;
 	--scrollbar-thickness: 0.6em;
 	--image-size: 50%;
 	--pdf-size: 50vh;
@@ -426,12 +427,12 @@ svg.BC-trail-icon {
 /* ─────────────────────────────────────────────────── */
 
 body:not(.angular-shapes) {
-	--block-roundness: 7px;
+	--roundish: 7px;
 	--round: 50px;
 }
 
 body.angular-shapes {
-	--block-roundness: 0;
+	--roundish: 0;
 	--round: 0;
 }
 
@@ -477,7 +478,7 @@ body .workspace-split.mod-right-split > .workspace-leaf-resize-handle {
 .titlebar-button {
 	opacity: 1;
 	color: var(--text-muted);
-	border-radius: var(--block-roundness);
+	border-radius: var(--roundish);
 }
 
 .titlebar-button svg {
@@ -549,7 +550,7 @@ body:not(.show-ribbons) .workspace-ribbon {
 	background-color: var(--tooltip-notification-bg) !important;
 	border: 1px solid var(--tooltip-notification-border);
 	color: var(--tooltip-notification-text);
-	border-radius: 15px;
+	border-radius: calc(var(--roundish) * 2);
 	word-wrap: break-word;
 }
 
@@ -576,7 +577,7 @@ body:not(.show-ribbons) .workspace-ribbon {
 	border: 1px solid var(--tooltip-notification-border);
 	color: var(--tooltip-notification-text);
 	padding: 5px 10px;
-	border-radius: 10px;
+	border-radius: var(--roundish);
 }
 
 /* ─────────────────────────────────────────────────── */
@@ -587,7 +588,7 @@ body:not(.show-ribbons) .workspace-ribbon {
 	height: var(--popover-size) !important;
 	max-height: unset !important;
 	border: 5px solid var(--background-secondary) !important;
-	border-radius: calc(var(--block-roundness) * 2);
+	border-radius: calc(var(--roundish) * 2);
 }
 
 .popover .markdown-embed {
@@ -601,7 +602,7 @@ body:not(.show-ribbons) .workspace-ribbon {
 .popover .markdown-embed-link {
 	color: var(--extra-contrast);
 	padding: 2px;
-	border-radius: 3px;
+	border-radius: var(--roundish);
 	right: 4px;
 	top: 4px;
 }
@@ -649,7 +650,7 @@ div.search-input-clear-button:hover::before,
 .empty-state-close-button {
 	top: 10px;
 	height: 25px;
-	border-radius: 3px;
+	border-radius: var(--roundish);
 	padding: 2px;
 }
 
@@ -666,8 +667,8 @@ div.search-input-clear-button:hover::before,
 	top: 0;
 	right: 0;
 	padding: 2px 6px 6px;
-	border-bottom-left-radius: var(--block-roundness);
-	border-top-right-radius: calc(var(--block-roundness) * 2.5);
+	border-bottom-left-radius: var(--roundish);
+	border-top-right-radius: calc(var(--roundish) * 2.5);
 }
 
 /* only show on hover */
@@ -788,7 +789,7 @@ body:not(.is-mobile) .view-header:focus-within {
 /* ─────────────────────────────────────────────────── */
 
 div.menu {
-	border-radius: calc(var(--block-roundness) * 2);
+	border-radius: var(--roundish);
 }
 
 div.menu-item-title {
@@ -850,7 +851,7 @@ div.menu-item {
 /* ─────────────────────────────────────────────────── */
 
 body:not(.app-container) .suggestion-container {
-	border-radius: var(--block-roundness);
+	border-radius: var(--roundish);
 }
 
 /* ─────────────────────────────────────────────────── */
@@ -876,7 +877,7 @@ https://github.com/chetachiezikeuzor/Yin-and-Yang-Theme */
 	position: absolute;
 	right: 0;
 	bottom: 0;
-	border-top-left-radius: var(--block-roundness);
+	border-top-left-radius: var(--roundish);
 	padding: 0.5em 1em 0.5em 0.8em !important;
 	max-height: unset;
 	line-height: 1.2;
@@ -957,10 +958,6 @@ button:hover {
 /* ─────────────────────────────────────────────────── */
 /* < Toggles (Checkboxes) */
 /* ─────────────────────────────────────────────────── */
-
-:root { /* stylelint-disable-line no-duplicate-selectors */
-	--toggle-duration: 250ms;
-}
 
 .checkbox-container {
 	margin-left: 5px;
@@ -1061,21 +1058,21 @@ input.slider {
 /* Code blocks Preview Mode */
 .markdown-preview-view pre {
 	background-color: var(--background-secondary) !important;
-	border-radius: calc(var(--block-roundness) * 2) !important;
+	border-radius: calc(var(--roundish) * 2) !important;
 	padding-top: 10px !important;
 	padding-bottom: 12px !important;
 }
 
 /* code blocks Edit Mode */
 body > .app-container .HyperMD-codeblock-begin-bg {
-	border-top-left-radius: calc(var(--block-roundness) * 2);
-	border-top-right-radius: calc(var(--block-roundness) * 2);
+	border-top-left-radius: calc(var(--roundish) * 2);
+	border-top-right-radius: calc(var(--roundish) * 2);
 	background-color: var(--background-secondary);
 }
 
 body > .app-container .HyperMD-codeblock-end-bg {
-	border-bottom-left-radius: calc(var(--block-roundness) * 2);
-	border-bottom-right-radius: calc(var(--block-roundness) * 2);
+	border-bottom-left-radius: calc(var(--roundish) * 2);
+	border-bottom-right-radius: calc(var(--roundish) * 2);
 }
 
 /* show language of Code Block in Preview Mode */
@@ -1143,7 +1140,7 @@ button.copy-code-button {
 	border: 2px solid var(--background-primary);
 	font-size: 0;
 	color: var(--extra-contrast);
-	border-radius: var(--block-roundness);
+	border-radius: var(--roundish);
 }
 
 button.copy-code-button::before {
@@ -1392,7 +1389,7 @@ input[type="checkbox"]:checked:hover {
 
 .modal {
 	padding: 0.2em 1em;
-	border-radius: calc(var(--block-roundness) * 2);
+	border-radius: calc(var(--roundish) * 2);
 	border: var(--alt-border);
 }
 
@@ -1410,7 +1407,7 @@ input[type="checkbox"]:checked:hover {
 	max-width: unset;
 	width: 93%;
 	border: var(--alt-border);
-	border-radius: calc(var(--block-roundness) * 3);
+	border-radius: calc(var(--roundish) * 3);
 }
 
 /* ─────────────────────────────────────────────────── */
@@ -1464,8 +1461,8 @@ input[type="checkbox"]:checked:hover {
 .sync-history-content-container {
 	padding: 10px;
 	height: 100%;
-	border-top-right-radius: var(--block-roundness);
-	border-bottom-right-radius: var(--block-roundness);
+	border-top-right-radius: var(--roundish);
+	border-bottom-right-radius: var(--roundish);
 }
 
 .modal.mod-sync-history textarea:focus {
@@ -1497,7 +1494,7 @@ input[type="checkbox"]:checked:hover {
 /* ─────────────────────────────────────────────────── */
 
 .prompt {
-	border-radius: calc(var(--block-roundness) * 2);
+	border-radius: calc(var(--roundish) * 2);
 	border: 5px solid var(--background-secondary);
 }
 
@@ -1505,12 +1502,12 @@ input.prompt-input {
 	width: unset;
 	margin: 5px 2px 8px;
 	padding-top: 7px;
-	border-radius: calc(var(--block-roundness) * 1.5);
+	border-radius: calc(var(--roundish) * 1.5);
 }
 
 div.prompt-results {
 	padding-top: 0;
-	border-radius: var(--block-roundness);
+	border-radius: var(--roundish);
 }
 
 div.prompt {
@@ -1529,7 +1526,7 @@ div.prompt {
 
 .suggestion-item {
 	padding-left: 25px;
-	border-radius: var(--block-roundness);
+	border-radius: var(--roundish);
 }
 
 /* Alternating row colors */
@@ -1565,7 +1562,7 @@ body:not(.no-alternating-rows) .suggestion-item.is-selected:nth-child(even) {
 .suggestion-item.is-selected .suggestion-flair,
 .suggestion-item.is-selected .suggestion-highlight {
 	color: var(--text-accent);
-	border-radius: var(--block-roundness);
+	border-radius: var(--roundish);
 }
 
 .suggestion-item:hover .suggestion-flair,
@@ -1638,12 +1635,12 @@ body > .app-container .workspace-split.mod-horizontal > .workspace-tabs > .works
 .workspace-tab-header {
 	margin-right: 8px;
 	border: 1px solid var(--background-modifier-border);
-	border-radius: var(--block-roundness);
+	border-radius: var(--roundish);
 }
 
 .workspace-tab-header.is-active {
 	background-color: var(--background-secondary);
-	border-radius: var(--block-roundness);
+	border-radius: var(--roundish);
 }
 
 .workspace-tab-header.is-active svg {
@@ -1656,7 +1653,7 @@ body > .app-container .workspace-split.mod-horizontal > .workspace-tabs > .works
 
 .workspace-tab-header-inner {
 	padding: 2px 6px 1px;
-	border-radius: var(--block-roundness);
+	border-radius: var(--roundish);
 }
 
 /* hover & on-click colors */
@@ -1697,7 +1694,7 @@ body > .app-container .workspace-split.mod-horizontal > .workspace-tabs > .works
 
 .nav-action-button {
 	padding: 2px 6px 0;
-	border-radius: var(--block-roundness);
+	border-radius: var(--roundish);
 	border: 1px solid var(--background-modifier-border);
 	height: 27px;
 }
@@ -1844,7 +1841,7 @@ body .workspace-leaf-resize-handle:active {
 .markdown-source-view .backlink-pane > .tree-item-self,
 .markdown-preview-view .backlink-pane > .tree-item-self {
 	background-color: var(--background-primary-alt);
-	border-radius: var(--block-roundness);
+	border-radius: var(--roundish);
 }
 
 /* Sidebar */
@@ -2019,17 +2016,17 @@ body > div.app-container .obsidian-search-match-highlight {
 }
 
 .is-flashing {
-	border-radius: var(--block-roundness);
+	border-radius: var(--roundish);
 }
 
 body > .app-container .obsidian-search-match-highlight:first-child {
-	border-top-left-radius: var(--block-roundness);
-	border-bottom-left-radius: var(--block-roundness);
+	border-top-left-radius: var(--roundish);
+	border-bottom-left-radius: var(--roundish);
 }
 
 body > .app-container .obsidian-search-match-highlight:last-child {
-	border-top-right-radius: var(--block-roundness);
-	border-bottom-right-radius: var(--block-roundness);
+	border-top-right-radius: var(--roundish);
+	border-bottom-right-radius: var(--roundish);
 }
 
 /* ─────────────────────────────────────────────────── */
@@ -2051,7 +2048,7 @@ body > .app-container .obsidian-search-match-highlight:last-child {
 	color: var(--extra-contrast);
 	line-height: 1.3em;
 	padding-top: 0.1em;
-	border-radius: var(--block-roundness);
+	border-radius: var(--roundish);
 }
 
 /* hover file */
@@ -2436,7 +2433,7 @@ based on css from @Mara https://github.com/Mara-Li/Obsidian-Snippet-collection *
 	padding: 4px;
 	margin-right: 0;
 	margin-left: 3px;
-	border-radius: var(--block-roundness);
+	border-radius: var(--roundish);
 }
 
 .mobile-option-setting-item > span:hover > svg,
@@ -2500,8 +2497,8 @@ p.u-center-text {
 /* Search input */
 .community-plugin-search {
 	padding-top: 10px;
-	border-top-left-radius: calc(var(--block-roundness) * 2.5);
-	border-bottom-left-radius: calc(var(--block-roundness) * 2.5);
+	border-top-left-radius: calc(var(--roundish) * 2.5);
+	border-bottom-left-radius: calc(var(--roundish) * 2.5);
 	margin-left: 0;
 }
 
@@ -2602,7 +2599,7 @@ p.u-center-text {
 	font-size: 0.75rem;
 	background-color: var(--text-accent);
 	opacity: 0.7;
-	border-radius: 3px;
+	border-radius: calc(var(--roundish) / 2);
 	padding-left: 0.2em;
 	padding-right: 0.2em;
 	font-family: "Inter";
@@ -2847,7 +2844,7 @@ body:not(.less-heading-letter-spacing) .modal.mod-community-theme .modal-title {
 /* highlight active line */
 .CodeMirror-activeline .CodeMirror-linebackground {
 	background-color: var(--active-line);
-	border-radius: var(--block-roundness);
+	border-radius: var(--roundish);
 }
 
 /* change highlight color */
@@ -2983,7 +2980,7 @@ body > .app-container .cm-s-obsidian .cm-hmd-frontmatter.cm-string {
 	font-size: 1em;
 	color: var(--extra-contrast);
 	border: var(--basic-border);
-	border-radius: var(--block-roundness);
+	border-radius: var(--roundish);
 	background: var(--background-secondary);
 }
 
@@ -3008,6 +3005,7 @@ body > .app-container .cm-s-obsidian .cm-hmd-frontmatter.cm-string {
 	margin-right: 0;
 	padding-left: 6px;
 	padding-right: 6px;
+	border-radius: var(--roundish);
 }
 
 .frontmatter-section-tags > a.tag:hover {
@@ -3251,7 +3249,7 @@ https://forum.obsidian.md/t/custom-css-for-tables-5-new-styles-ready-to-use-in-y
 
 :root body {
 	--table-border: var(--basic-border);
-	--table-roundness: var(--block-roundness);
+	--table-roundness: var(--roundish);
 }
 
 table:not(.dataview.table-view-table) th {
@@ -3422,7 +3420,7 @@ Based on some CSS from @SlRvb, @gee & @Eleanor Konik */
 
 /* when pseudo-admonition is also active line */
 .CodeMirror-activeline .HyperMD-header.HyperMD-header-6.CodeMirror-line {
-	border-radius: var(--block-roundness) !important;
+	border-radius: var(--roundish) !important;
 	background-color: var(--active-line) !important;
 	color: var(--text-normal) !important;
 }
@@ -3449,7 +3447,7 @@ Based on some CSS from @SlRvb, @gee & @Eleanor Konik */
 	border-right: 1px solid var(--background-modifier-border);
 	border-bottom: 1px solid var(--background-modifier-border);
 	border-left: 12px solid var(--pseudo-admonition-border) !important;
-	border-radius: var(--block-roundness);
+	border-radius: var(--roundish);
 	color: var(--text-normal) !important;
 }
 
@@ -3491,7 +3489,7 @@ body:not(.annotation-tags-off) .cm-s-obsidian .CodeMirror-line span.cm-tag-examp
 	padding-right: 8px;
 	padding-left: 8px;
 	color: var(--annotation-tag-font-color) !important;
-	border-radius: var(--block-roundness);
+	border-radius: var(--roundish);
 	font-style: normal;
 }
 
@@ -3643,7 +3641,7 @@ body:not(.annotation-tags-off) .tag[href="#example"]::before {
 	padding-top: 0.4em;
 	padding-bottom: 0.5em;
 	padding-right: 0.8em;
-	border-radius: var(--block-roundness);
+	border-radius: var(--roundish);
 	border: var(--plugin-browser-borders);
 }
 
@@ -3659,7 +3657,6 @@ body:not(.annotation-tags-off) .tag[href="#example"]::before {
 
 /* when blockquote is also active line */
 .CodeMirror-activeline .HyperMD-quote.HyperMD-quote-1.CodeMirror-line {
-	border-radius: 5px !important;
 	background-color: var(--active-line) !important;
 	color: var(--text-normal) !important;
 }
@@ -3682,7 +3679,7 @@ body:not(.annotation-tags-off) .tag[href="#example"]::before {
 
 /* Preview Mode */
 body > .app-container .markdown-preview-view blockquote {
-	border-radius: var(--block-roundness);
+	border-radius: var(--roundish);
 	border: 2px solid var(--background-modifier-border);
 	margin: 1.5em 0 1.5em 2em;
 	padding: 0.3em 0.7em 0.4em;
@@ -3733,12 +3730,12 @@ progress {
 
 progress::-webkit-progress-bar {
 	background: var(--background-secondary-alt);
-	border-radius: 20px;
-	border: 1px solid var(--background-primary);
+	border-radius: calc(var(--roundish) * 3);
+	border: 1px solid var(--background-modifier-boder);
 }
 
 progress::-webkit-progress-value {
-	border-radius: 20px;
+	border-radius: calc(var(--roundish) * 3);
 }
 
 /* https://coolors.co/gradient-palette/03045e-6cf9ca?number=10 */
@@ -3854,7 +3851,7 @@ body:not(.show-close-button) .document-search-close-button {
 	color: var(--extra-contrast);
 	padding: 4px;
 	margin-top: 0 !important;
-	border-radius: var(--block-roundness);
+	border-radius: var(--roundish);
 }
 
 .graph-controls-button:hover {
@@ -3936,7 +3933,7 @@ body:not(.show-close-button) .document-search-close-button {
 
 .view-content .markdown-preview-view img {
 	margin-top: 13px;
-	border-radius: var(--block-roundness);
+	border-radius: var(--roundish);
 	cursor: zoom-in;
 	display: block;
 }
@@ -4061,7 +4058,7 @@ ol ul::before {
 }
 
 .pdf-embed iframe {
-	border-radius: var(--block-roundness);
+	border-radius: var(--roundish);
 }
 
 body:not(.left-aligned-embeds) .pdf-embed {
@@ -4665,7 +4662,7 @@ body.hide-index-files .nav-file-title[data-path$="Index.md"] {
 div.oz-image-widget > embed,
 div.oz-image-widget > img {
 	display: block;
-	border-radius: var(--block-roundness) !important;
+	border-radius: var(--roundish) !important;
 }
 
 body:not(.disable-image-borders) div.oz-image-widget > img {
@@ -4774,7 +4771,7 @@ button.MySnippetsButton:hover path {
 
 .MySnippets-statusbar-menu {
 	width: 320px !important;
-	border-radius: 8px !important;
+	border-radius: var(--roundish) !important;
 	border: var(--basic-border);
 }
 
@@ -5005,7 +5002,7 @@ div.BC-trail {
 	padding-left: 10px;
 	padding-right: 10px;
 	background-color: var(--background-secondary);
-	border-radius: var(--block-roundness);
+	border-radius: var(--roundish);
 	color: var(--extra-contrast);
 }
 
@@ -5014,7 +5011,7 @@ body > .app-container div.BC-trail-grid {
 	margin-bottom: 5px;
 	border: 1px solid var(--background-modifier-border);
 	background-color: var(--background-primary);
-	border-radius: var(--block-roundness);
+	border-radius: var(--roundish);
 }
 
 body > .app-container div.BC-trail-grid-item {
@@ -5028,14 +5025,14 @@ body > .app-container div.BC-trail-grid-item {
 body #search-res-hover.show,
 body #block-ref-hover.show {
 	color: var(--text-muted);
-	border-radius: calc(var(--block-roundness));
+	border-radius: var(--roundish);
 }
 
 body #search-res-hover.show:hover,
 body #block-ref-hover.show:hover {
 	color: var(--alt-accent);
 	background-color: var(--background-primary-alt);
-	border-radius: calc(var(--block-roundness));
+	border-radius: var(--roundish);
 }
 
 /* ─────────────────────────────────────────────────── */
@@ -5086,7 +5083,7 @@ body #block-ref-hover.show:hover {
 .workspace-leaf-content[data-type="Saved Queries View"] .savedQ-view-q:hover {
 	background-color: var(--background-secondary-alt) !important;
 	color: var(--alt-accent);
-	border-radius: var(--block-roundness);
+	border-radius: var(--roundish);
 }
 
 /* ─────────────────────────────────────────────────── */
@@ -5125,7 +5122,7 @@ pre button.copy {
 	border: 2px solid var(--background-primary);
 	font-size: 0;
 	color: var(--extra-contrast);
-	border-radius: var(--block-roundness);
+	border-radius: var(--roundish);
 }
 
 pre button.copy::before {
@@ -5220,7 +5217,7 @@ pre button.copy:hover::before {
 	margin-left: 0 !important;
 	margin-top: 0 !important;
 	padding: 4px;
-	border-radius: var(--block-roundness) !important;
+	border-radius: var(--roundish) !important;
 	border: none;
 	font-size: 0.8em;
 }

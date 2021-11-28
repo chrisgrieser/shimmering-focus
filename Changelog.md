@@ -1,4 +1,4 @@
-- 2021-11-28	minor
+- 2021-11-28	fixes for angular shaped
 - 2021-11-28	Option to re-enable starred pane Nav Buttons
 - 2021-11-28	angular shapes for kanbans
 - 2021-11-28	Update README.md
