@@ -1,6 +1,6 @@
 /* ──────────────────────────────────────────────────────
 SHIMMERING FOCUS
-Version 1.161
+Version 1.162
 https://github.com/chrisgrieser/shimmering-focus/
 Created by @pseudometa
 MIT License
@@ -2923,6 +2923,8 @@ em > del:hover,
 /* < Metadata Block */
 /* ─────────────────────────────────────────────────── */
 /* YAML-Header in Edit Mode */
+body > .app-container .cm-s-obsidian .cm-hmd-frontmatter.cm-string,
+body > .app-container .cm-s-obsidian .cm-hmd-frontmatter.cm-number,
 body > .app-container .cm-s-obsidian .cm-hmd-frontmatter.cm-atom,
 body > .app-container .cm-s-obsidian .cm-hmd-frontmatter.cm-meta,
 body > .app-container .cm-s-obsidian .cm-hmd-frontmatter {
@@ -2940,12 +2942,21 @@ body > .app-container .cm-s-obsidian .cm-def.cm-hmd-frontmatter {
 	font-weight: 600;
 }
 
+/* colored YAML */
 body.colored-yaml .cm-s-obsidian .cm-hmd-frontmatter.cm-atom {
 	color: var(--text-accent);
 }
 
 body.colored-yaml .cm-s-obsidian .cm-hmd-frontmatter {
 	color: var(--alt-accent);
+}
+
+body.colored-yaml .cm-s-obsidian .cm-hmd-frontmatter.cm-number {
+	color: var(--unresolved-link-color);
+}
+
+body > .app-container .cm-s-obsidian .cm-hmd-frontmatter.cm-string {
+	color: hsl(54 69% 40%);
 }
 
 /* YAML-Header in Preview Mode */
