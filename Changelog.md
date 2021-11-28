@@ -1,3 +1,4 @@
+- 2021-11-28	colored yaml option (#53)
 - 2021-11-28	tons of bugfixes
 - 2021-11-27	fix line length stylelint
 - 2021-11-27	fixes for when titlebar is shown

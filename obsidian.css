@@ -1,6 +1,6 @@
 /* ──────────────────────────────────────────────────────
 SHIMMERING FOCUS
-Version 1.158
+Version 1.159
 https://github.com/chrisgrieser/shimmering-focus/
 Created by @pseudometa
 MIT License
@@ -305,16 +305,25 @@ This ToC is auto-generated via the .generate-ToC.sh */
 	font-family: var(--font-monospace) !important;
 }
 
-.hotkey-search-container input,
-input.prompt-input,
 textarea,
-.search-input-container input,
-body > .app-container input,
-.style-settings-container input,
 button,
 select.dropdown {
 	font-family: var(--button-font);
 	font-size: 0.9em;
+	letter-spacing: 1px;
+	font-weight: 600;
+}
+
+input[type="email"],
+input[type="password"],
+input.prompt-input,
+.hotkey-search-container input,
+.setting-item input,
+.search-input-container input,
+body > .app-container input,
+.style-settings-container input {
+	font-family: var(--button-font);
+	font-size: 1em;
 	letter-spacing: 1px;
 	font-weight: 600;
 }
@@ -930,7 +939,7 @@ button {
 	padding-left: 12px !important;
 	padding-right: 12px !important;
 	border: 2px solid var(--button-border) !important;
-	border-radius: 50px;
+	border-radius: var(--round);
 }
 
 button:hover {
@@ -1007,8 +1016,8 @@ input[type="text"] {
 }
 
 select.dropdown {
-	padding: 7px 28px 6px 10px;
-	border-radius: 50px;
+	padding: 5px 28px 6px 10px;
+	border-radius: var(--round);
 }
 
 select.dropdown:hover,
@@ -1028,7 +1037,7 @@ input.slider {
 }
 
 /* ─────────────────────────────────────────────────── */
-/* < Code Blocks & inline Code */
+/* < Code Blocks & Inline Code */
 /* ─────────────────────────────────────────────────── */
 .cm-s-obsidian .HyperMD-codeblock,
 .markdown-preview-view code,
@@ -1043,10 +1052,12 @@ input.slider {
 	white-space: pre-wrap !important;
 }
 
-/* code blocks Preview Mode */
+/* Code blocks Preview Mode */
 .markdown-preview-view pre {
 	background-color: var(--background-secondary) !important;
 	border-radius: calc(var(--block-roundness) * 2) !important;
+	padding-top: 10px !important;
+	padding-bottom: 12px !important;
 }
 
 /* code blocks Edit Mode */
@@ -2268,7 +2279,7 @@ based on css from @Mara https://github.com/Mara-Li/Obsidian-Snippet-collection *
 }
 
 /* ─────────────────────────────────────────────────── */
-/* < Settings menu */
+/* < Settings Menu */
 /* ─────────────────────────────────────────────────── */
 
 .modal.mod-settings .modal-content {
@@ -2284,6 +2295,11 @@ based on css from @Mara https://github.com/Mara-Li/Obsidian-Snippet-collection *
 	margin-right: 0;
 }
 
+.modal.mod-settings h2 {
+	font-family: var(--setting-heading);
+	font-size: 2em;
+}
+
 .setting-item.setting-item-heading {
 	margin-top: 12px;
 	margin-bottom: 5px;
@@ -2294,7 +2310,6 @@ based on css from @Mara https://github.com/Mara-Li/Obsidian-Snippet-collection *
 	font-weight: 600;
 }
 
-/* line under heading */
 .modal.mod-settings .vertical-tab-content-container {
 	margin-top: 0;
 	padding: 0;
@@ -2358,18 +2373,19 @@ based on css from @Mara https://github.com/Mara-Li/Obsidian-Snippet-collection *
 	font-weight: 600;
 	text-transform: capitalize;
 	text-align: end;
+	border-bottom: 2px solid var(--background-modifier-border);
 }
 
 .vertical-tab-header-group:nth-child(2) .vertical-tab-header-group-title {
-	padding-top: 10px;
+	border-top: 2px solid var(--background-modifier-border);
 }
 
 .vertical-tab-header-group {
 	padding-top: 0;
 	padding-bottom: 0;
 	margin-top: 0;
-	background-color: var(--background-secondary-alt);
-	margin-bottom: 10px;
+	background-color: var(--background-primary-alt);
+	margin-bottom: 15px;
 }
 
 .vertical-tab-nav-item {
@@ -2381,7 +2397,7 @@ based on css from @Mara https://github.com/Mara-Li/Obsidian-Snippet-collection *
 /* color active/hovered submenu */
 .vertical-tab-nav-item.is-active {
 	color: var(--text-accent);
-	background: var(--background-primary);
+	background: var(--background-secondary-alt);
 }
 
 .vertical-tab-nav-item:active {
@@ -2405,7 +2421,7 @@ based on css from @Mara https://github.com/Mara-Li/Obsidian-Snippet-collection *
 	padding: 4px;
 	margin-right: 0;
 	margin-left: 3px;
-	border-radius: 6px;
+	border-radius: var(--block-roundness);
 }
 
 .mobile-option-setting-item > span:hover > svg,
@@ -2451,11 +2467,6 @@ based on css from @Mara https://github.com/Mara-Li/Obsidian-Snippet-collection *
 }
 
 /* login menu  */
-.modal.mod-settings h2 {
-	font-family: var(--setting-heading);
-	font-size: 2em;
-}
-
 p.u-center-text {
 	margin-top: 40px;
 	padding-top: 40px;
@@ -2905,23 +2916,29 @@ em > del:hover,
 /* < Metadata Block */
 /* ─────────────────────────────────────────────────── */
 /* YAML-Header in Edit Mode */
-span.cm-hmd-frontmatter {
-	color: var(--text-muted) !important;
+body > .app-container .cm-s-obsidian .cm-hmd-frontmatter.cm-atom,
+body > .app-container .cm-s-obsidian .cm-hmd-frontmatter.cm-meta,
+body > .app-container .cm-s-obsidian .cm-hmd-frontmatter {
+	color: var(--text-muted);
 	font-size: 0.9em;
 }
 
 /* harmonize with styling of Horizontal Lines (HR) */
-.cm-def.cm-hmd-frontmatter {
+body > .app-container .cm-s-obsidian .cm-def.cm-hmd-frontmatter {
 	letter-spacing: 0.2em;
-	color: var(--text-muted) !important;
+	color: var(--text-muted);
 }
 
 .cm-atom.cm-hmd-frontmatter {
 	font-weight: 600;
 }
 
-body.colored-yaml .cm-atom.cm-hmd-frontmatter {
+body.colored-yaml .cm-s-obsidian .cm-hmd-frontmatter.cm-atom {
 	color: var(--text-accent);
+}
+
+body.colored-yaml .cm-s-obsidian .cm-hmd-frontmatter {
+	color: var(--alt-accent);
 }
 
 /* YAML-Header in Preview Mode */
