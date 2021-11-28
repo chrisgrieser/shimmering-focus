@@ -126,7 +126,7 @@ Stylistically, the theme pretty much follows Obsidian's default color theme, wit
 - This themes supports dozens of customization options via the [Style Settings Plugin](https://github.com/mgmeyers/obsidian-style-settings/).
 - You can add your own Annotation Tags by adding a snippet [using this template](https://github.com/chrisgrieser/shimmering-focus/blob/main/annotation-tag-template.css).
 
-<img width=50% alt="Screenshot 2021-11-28 03 46 00" src="https://user-images.githubusercontent.com/73286100/143726875-79ca0fbd-7c57-48f2-876a-6888258f13d1.png">
+<img width=50% alt="Customization options" src="https://user-images.githubusercontent.com/73286100/143726875-79ca0fbd-7c57-48f2-876a-6888258f13d1.png">
 
 ## Plugin Compatibility
 
@@ -158,20 +158,18 @@ Pull requests are welcome, especially for plugins or features I haven't implemen
 - I recommend using an [editor integration for stylelint](https://stylelint.io/user-guide/integrations/editor/).
 
 ```shell
-# clone
 git clone git@github.com:chrisgrieser/shimmering-focus.git
 cd ./shimmering-focus
-
-# install stylelint + prerequisites
 npm install stylelint postcss stylelint-config-recommended
 ```
 
 ## Credits
 
 ### About the Developer
-My ([Discord](https://discord.gg/veuWUTm)) handle is `@pseudometa#9546` and you can find me on Twitter as [@pseudo_meta (Twitter)](https://twitter.com/pseudo_meta).
-
 In my day job, I am a researcher and sociology. In my phD project, I investigate the governance of the app economy and how software ecosystems manage the tension between innovation and compatibility. If you are interested in this subject, feel free to visit [my academic homepage](https://chris-grieser.de/) and get in touch!
+
+- [Discord](https://discord.gg/veuWUTm): `@pseudometa#9546`
+- Twitter: [@pseudo_meta](https://twitter.com/pseudo_meta)
 
 ### Donations
 **Donations** are welcome via [PayPal](https://www.paypal.com/paypalme/ChrisGrieser) or [Ko-Fi](https://ko-fi.com/pseudometa). 🙏
