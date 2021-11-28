@@ -124,8 +124,9 @@ Stylistically, the theme pretty much follows Obsidian's default color theme, wit
 
 ## Customization
 - This themes supports dozens of customization options via the [Style Settings Plugin](https://github.com/mgmeyers/obsidian-style-settings/).
-- [Preview of available style settings.](https://publish.obsidian.md/hub/02+-+Community+Expansions/02.05+All+Community+Expansions/Themes/Shimmering+Focus#Customization+Options+Style+Settings+Plugin)
 - You can add your own Annotation Tags via adding a snippet [using this template](https://github.com/chrisgrieser/shimmering-focus/blob/main/annotation-tag-template.css).
+
+<img width=50% alt="Screenshot 2021-11-28 03 46 00" src="https://user-images.githubusercontent.com/73286100/143726875-79ca0fbd-7c57-48f2-876a-6888258f13d1.png">
 
 ## Plugin Compatibility
 
