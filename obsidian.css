@@ -1,6 +1,6 @@
 /* ──────────────────────────────────────────────────────
 SHIMMERING FOCUS
-Version 1.166
+Version 1.167
 https://github.com/chrisgrieser/shimmering-focus/
 Created by @pseudometa
 MIT License
@@ -871,8 +871,16 @@ https://github.com/chetachiezikeuzor/Yin-and-Yang-Theme */
 	padding-left: 0;
 }
 
-.status-bar,
-.is-translucent .status-bar {
+.status-bar::after {
+	content: var(--signature);
+}
+
+.status-bar-item.mod-clickable:hover,
+.lt-status-bar-btn:hover {
+	color: var(--alt-accent) !important;
+}
+
+body:not(.default-statusbar) .status-bar {
 	border: 1px solid var(--background-modifier-border) !important;
 	position: absolute;
 	right: 0;
@@ -883,30 +891,20 @@ https://github.com/chetachiezikeuzor/Yin-and-Yang-Theme */
 	line-height: 1.2;
 }
 
-.status-bar::after {
-	content: var(--signature);
-}
-
 /* only show on hover */
-body:not(.show-statusbar) .status-bar,
+body:not(.show-statusbar):not(.default-statusbar) .status-bar,
 .is-translucent .status-bar {
 	opacity: 0;
 	transition: 800ms;
 }
 
-body:not(.show-statusbar) .status-bar:hover {
+body:not(.show-statusbar):not(.default-statusbar) .status-bar:hover {
 	opacity: 1;
 	transition: 200ms;
 }
 
-/* hovering color for clickable plugins */
-.status-bar-item.mod-clickable:hover,
-.lt-status-bar-btn:hover {
-	color: var(--alt-accent) !important;
-}
-
 /* so stuff on the bottom of the right sidebar can still be clicked */
-.mod-right-split .workspace-leaf-content {
+body:not(.default-statusbar) .mod-right-split .workspace-leaf-content {
 	padding-bottom: 2em;
 }
 
@@ -982,6 +980,11 @@ body:not(.normal-checkboxes) .checkbox-container {
 	height: 22px;
 	background-color: var(--background-secondary);
 	transition-duration: var(--toggle-duration);
+}
+
+body.angular-shapes .checkbox-container {
+	width: 19px;
+	height: 19px;
 }
 
 body:not(.normal-checkboxes) .checkbox-container::after {
@@ -5345,7 +5348,13 @@ settings:
 	 id: show-statusbar
 	 title: Permanently show the Status Bar
 	 type: class-toggle
-	 description: When false, the Status bar is still visible upon focus and hover
+	 description: When false, the Status bar is still visible when hovering. (This setting will be overriden when you use the default status bar.)
+	 default: false
+  -
+	 id: default-statusbar
+	 title: Re-enable default Status Bar
+	 type: class-toggle
+	 description: Use the Status Bar from the default theme, which will be permanently visible.
 	 default: false
   -
 	 id: show-close-button
@@ -5382,12 +5391,12 @@ settings:
 	 id: angular-shapes
 	 title: Angular Shapes
 	 type: class-toggle
-	 description: Enable to use angular shapes (🟩). Disable to use rounded shapes (🟣).
+	 description: Enable to use angular shapes (🟪). Disable to use rounded shapes (🟣).
 	 default: false
   -
 	 id: block-cursor
 	 title: Block Cursor
-	 description: Use a block instead of a line as cursor. For best results, also switch the main font to a monospaced one.
+	 description: Use a block cursor instead of a line cursor. For best results, also switch the main font to a monospaced one.
 	 type: class-toggle
 	 default: false
   -
