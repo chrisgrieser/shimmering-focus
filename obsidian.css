@@ -1,6 +1,6 @@
 /* ──────────────────────────────────────────────────────
 SHIMMERING FOCUS
-Version 1.168
+Version 1.169
 https://github.com/chrisgrieser/shimmering-focus/
 Created by @pseudometa
 MIT License
@@ -923,7 +923,7 @@ body:not(.default-statusbar) .mod-right-split .workspace-leaf-content {
 /* ─────────────────────────────────────────────────── */
 
 /* hide all scrollbars except the one for the editor */
-::-webkit-scrollbar {
+body:not(.show-scrollbar) ::-webkit-scrollbar {
 	display: none;
 	width: var(--scrollbar-thickness);
 }
@@ -5393,6 +5393,12 @@ settings:
 	 title: Re-enable Close Buttons
 	 type: class-toggle
 	 description: When false, you can close the menu with `Esc` or by clicking outside the menu area.
+	 default: false
+  -
+	 id: show-scrollbar
+	 title: Re-enable Scrollbars
+	 type: class-toggle
+	 description: When false, only the scroll bars in the Editor are shown.
 	 default: false
   -
 	 id: show-collapse-buttons
