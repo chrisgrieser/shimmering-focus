@@ -1,6 +1,6 @@
 /* ──────────────────────────────────────────────────────
 SHIMMERING FOCUS
-Version 1.170
+Version 1.171
 https://github.com/chrisgrieser/shimmering-focus/
 Created by @pseudometa
 MIT License
@@ -2611,12 +2611,12 @@ p.u-center-text {
 	content: "✓";
 	font-size: 0.75rem;
 	background-color: var(--text-accent);
-	opacity: 0.7;
 	border-radius: calc(var(--roundish) / 2);
 	padding-left: 0.2em;
 	padding-right: 0.2em;
 	font-family: "Inter";
 	line-height: 0.8;
+	color: var(--interactive-normal);
 }
 
 .community-plugin-info .community-plugin-name .flair.mod-pop::before {
@@ -5782,16 +5782,10 @@ settings:
   -
 	 id: miscellaneous
 	 title: Miscellaneous
-	 description: Pandoc Citations, Popovers, Annotation Tags
+	 description: Popovers, Pandoc Citations, Annotation Tags
 	 type: heading
 	 level: 2
 	 collapsed: true
-  -
-	 id: no-pandoc-citation-emphasis
-	 title: No Emphasis of Pandoc Citations
-	 description: Turn off the coloring of Pandoc Citations [@citekey] done by this theme.
-	 type: class-toggle
-	 default: false
   -
 	 id: popover-size
 	 title: Size of Popovers (Page Previews)
@@ -5802,6 +5796,12 @@ settings:
 	 max: 600
 	 step: 50
 	 format: px
+  -
+	 id: no-pandoc-citation-emphasis
+	 title: No Emphasis of Pandoc Citations
+	 description: Turn off the coloring of Pandoc Citations [@citekey] done by this theme.
+	 type: class-toggle
+	 default: false
   -
 	 id: annotation-tags-off
 	 title: 'Turn off "Annotation Tags"'

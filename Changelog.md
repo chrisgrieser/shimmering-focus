@@ -1,3 +1,5 @@
+- 2021-11-28	minor
+- 2021-11-28	update readme
 - 2021-11-28	clarified some style settings option descriptions (issue #56)
 - 2021-11-28	add style setting option to re-enable scroll bars
 - 2021-11-28	status bar styling, style settings styling, issue #29
