@@ -1,6 +1,6 @@
 /* ──────────────────────────────────────────────────────
 SHIMMERING FOCUS
-Version 1.160
+Version 1.161
 https://github.com/chrisgrieser/shimmering-focus/
 Created by @pseudometa
 MIT License
@@ -3509,6 +3509,7 @@ body:not(.annotation-tags-off) .cm-s-obsidian .CodeMirror-line .cm-hashtag-end.c
 	padding-left: 0;
 	border-top-left-radius: 0;
 	border-bottom-left-radius: 0;
+	font-family: var(--default-font); /* fixes their appearance in headings */
 }
 
 body:not(.annotation-tags-off) .cm-tag-question,

@@ -1,3 +1,4 @@
+- 2021-11-28	fix #45
 - 2021-11-28	fix #54
 - 2021-11-28	colored yaml option (#53)
 - 2021-11-28	tons of bugfixes
