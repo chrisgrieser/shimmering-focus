@@ -1,6 +1,6 @@
 /* ──────────────────────────────────────────────────────
 SHIMMERING FOCUS
-Version 1.159
+Version 1.160
 https://github.com/chrisgrieser/shimmering-focus/
 Created by @pseudometa
 MIT License
@@ -132,16 +132,17 @@ This ToC is auto-generated via the .generate-ToC.sh */
 /* ─────────────────────────────────────────────────── */
 
 :root {
-
 	--accent-lighter: hsl(243 66% 76%);
 	--accent-lightest: hsl(259 100% 80%);
 	--alt-accent: hsl(163 97% 34%);
 	--alt-accent-lighter: hsl(164 100% 41%);
 	--alt-accent-lightest: hsl(164 100% 70%);
 	--alt-accent-darker: hsl(164 100% 30%);
+
 	--code-color: var(--alt-accent-darker);
 	--html-tag-color: var(--alt-accent-darker);
 	--scrollbar-hover: var(--alt-accent-lighter);
+
 	--pseudo-admonition-border: var(--accent-lighter);
 	--scrollbar-active: var(--accent-lighter);
 	--highlight-color: hsl(152 100% 50% / 40%);
@@ -154,7 +155,7 @@ This ToC is auto-generated via the .generate-ToC.sh */
 	--active-line: hsl(62 11% 63% / 12.5%);
 	--cursor-monocolor: var(--accent-lighter);
 
-	--resize-handle-thickness: 0.25em;
+	--resize-handle-thickness: 4px;
 	--scrollbar-thickness: 0.6em;
 	--image-size: 50%;
 	--pdf-size: 50vh;
@@ -168,7 +169,6 @@ This ToC is auto-generated via the .generate-ToC.sh */
 	--selection-color: hsl(259 100% 93% / 86.7%);
 	--extra-contrast: hsl(0 0% 36%);
 	--hr-line: hsl(0 0% 66%);
-	--image-zoom-bg: hsl(0 0% 26%);
 	--button-hover: var(--alt-accent);
 	--button-hover-border: var(--alt-accent-lighter);
 	--longform-background: hsl(30 30% 98%);
@@ -191,7 +191,6 @@ This ToC is auto-generated via the .generate-ToC.sh */
 	--selection-color: hsl(302 24% 21% / 73%);
 	--extra-contrast: hsl(0 0% 73%);
 	--hr-line: hsl(0 0% 60%);
-	--image-zoom-bg: hsl(0 0% 0%);
 	--button-hover: var(--alt-accent-darker);
 	--button-hover-border: var(--alt-accent-lighter);
 	--longform-background: hsl(226 18% 13%);
@@ -374,6 +373,11 @@ body,
 	font-variant-numeric: tabular-nums;
 }
 
+/* bugfix for mermaid font */
+.mermaid {
+	--mermaid-font: "Inter", -apple-system, "BlinkMacSystemFont", "Segoe UI", "Roboto", "Helvetica", "Arial", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Microsoft YaHei Light", sans-serif; /* stylelint-disable-line max-line-length */
+}
+
 /* ─────────────────────────────────────────────────── */
 /* < Icons */
 /* ─────────────────────────────────────────────────── */
@@ -457,26 +461,18 @@ body.mod-macos:not(.show-titlebar) .workspace-split.mod-left-split.is-collapsed 
 
 /* adapt height of resize handle */
 body:not(.show-titlebar) .workspace-split.mod-left-split > .workspace-leaf-resize-handle {
-	top: 51px !important;
+	top: 54px;
 }
 
-body:not(.show-titlebar) .workspace-split.mod-right-split > .workspace-leaf-resize-handle {
-	top: 37.5px !important;
-}
-
-body.show-titlebar .workspace-split.mod-right-split > .workspace-leaf-resize-handle,
-body.show-titlebar .workspace-split.mod-left-split > .workspace-leaf-resize-handle {
-	top: 37.5px;
-}
-
-.titlebar {
-	border-bottom: var(--nice-border);
+body.show-titlebar .workspace-split.mod-left-split > .workspace-leaf-resize-handle,
+body .workspace-split.mod-right-split > .workspace-leaf-resize-handle {
+	top: 40.5px;
 }
 
 /* styling when shown */
 .titlebar-button {
 	opacity: 1;
-	color: var(--extra-contrast);
+	color: var(--text-muted);
 	border-radius: var(--block-roundness);
 }
 
@@ -498,8 +494,9 @@ body.show-titlebar .workspace-split.mod-left-split > .workspace-leaf-resize-hand
 }
 
 /* proper light theme for titlebar */
-.theme-light .titlebar {
-	background-color: var(--background-secondary-alt);
+.titlebar {
+	background-color: var(--background-primary-alt);
+	border-bottom: 1px solid var(--background-modifier-border);
 }
 
 .theme-light .titlebar-text {
@@ -901,6 +898,11 @@ body:not(.show-statusbar) .status-bar:hover {
 .status-bar-item.mod-clickable:hover,
 .lt-status-bar-btn:hover {
 	color: var(--alt-accent) !important;
+}
+
+/* so stuff on the bottom of the right sidebar can still be clicked */
+.mod-right-split .workspace-leaf-content {
+	padding-bottom: 2em;
 }
 
 /* ─────────────────────────────────────────────────── */
@@ -1620,12 +1622,17 @@ body.block-cursor .CodeMirror-cursor {
 }
 
 .workspace-tab-header-container {
-	margin: 2px 0 3px 4px;
+	margin: 4px 0 4px 7px;
+}
+
+/* no rounded corners for the sidebar leafs */
+body > .app-container .workspace-split.mod-horizontal > .workspace-tabs > .workspace-leaf {
+	border-radius: 0;
 }
 
 .workspace-tab-header {
 	margin-right: 4px;
-	border: 1.5px solid var(--background-modifier-border);
+	border: 1px solid var(--background-modifier-border);
 	border-radius: var(--block-roundness);
 }
 
@@ -2363,11 +2370,19 @@ based on css from @Mara https://github.com/Mara-Li/Obsidian-Snippet-collection *
 	padding-right: 1.3em;
 }
 
+.vertical-tab-header-group {
+	padding-top: 0;
+	padding-bottom: 0;
+	margin-top: 0;
+	background-color: var(--background-primary-alt);
+	margin-bottom: 20px;
+}
+
 .vertical-tab-header-group-title {
 	color: var(--text-muted);
 	font-size: 1.05em;
 	letter-spacing: 1px;
-	padding: 4px 3px 1px;
+	padding: 2px 5px 1px;
 	margin-top: 0;
 	font-family: var(--setting-heading);
 	font-weight: 600;
@@ -2378,14 +2393,6 @@ based on css from @Mara https://github.com/Mara-Li/Obsidian-Snippet-collection *
 
 .vertical-tab-header-group:nth-child(2) .vertical-tab-header-group-title {
 	border-top: 2px solid var(--background-modifier-border);
-}
-
-.vertical-tab-header-group {
-	padding-top: 0;
-	padding-bottom: 0;
-	margin-top: 0;
-	background-color: var(--background-primary-alt);
-	margin-bottom: 15px;
 }
 
 .vertical-tab-nav-item {
@@ -2408,7 +2415,7 @@ based on css from @Mara https://github.com/Mara-Li/Obsidian-Snippet-collection *
 .vertical-tab-nav-item:hover {
 	color: var(--alt-accent);
 	border-left: 3px solid var(--alt-accent);
-	background: var(--background-primary);
+	background: var(--background-secondary-alt);
 }
 
 /* increased contrast */
@@ -3807,7 +3814,7 @@ input.document-replace-input {
 }
 
 /* ─────────────────────────────────────────────────── */
-/* < Graph view */
+/* < Graph View */
 /* ─────────────────────────────────────────────────── */
 /* https://help.obsidian.md/Plugins/Graph+view#Custom+CSS */
 
@@ -3938,7 +3945,14 @@ body:not(.left-aligned-embeds) .view-content .markdown-preview-view img {
 	left: 0;
 	right: 0;
 	bottom: 0;
-	background-color: var(--image-zoom-bg);
+}
+
+.markdown-preview-view img:active .theme-dark {
+	background-color: hsl(0 0% 0%);
+}
+
+.markdown-preview-view img:active .theme-light {
+	background-color: hsl(0 0% 26%);
 }
 
 /* ─────────────────────────────────────────────────── */
@@ -3949,16 +3963,6 @@ body:not(.left-aligned-embeds) .view-content .markdown-preview-view img {
 
 body:not(.left-aligned-embeds) div.mermaid {
 	text-align: center;
-}
-
-body:not(.standard-mermaid-font) .mermaid {
-	font-size: 0.9em;
-
-	--mermaid-font: var(--default-font);
-}
-
-.standard-mermaid-font .mermaid {
-	--mermaid-font: "Inter", -apple-system, "BlinkMacSystemFont", "Segoe UI", "Roboto", "Helvetica", "Arial", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Microsoft YaHei Light", sans-serif; /* stylelint-disable-line max-line-length */
 }
 
 /* ─────────────────────────────────────────────────── */
@@ -5268,13 +5272,13 @@ community:
 /* ─────────────────────────────────────────────────── */
 
 /* @settings
-name: Shimmering Focus Theme
+name: Shimmering Focus (Theme)
 id: shimmering-focus
 settings:
   -
 	 id: show-hide-elements
 	 title: Show or Hide UI Elements
-	 description: Re-enable Elements hidden by this theme.
+	 description: Re-enable Elements hidden by this theme
 	 type: heading
 	 level: 2
 	 collapsed: true
@@ -5323,7 +5327,7 @@ settings:
   -
 	 id: aesthetics
 	 title: Aesthetics
-	 description: Shapes & Colors (soon)
+	 description: Shapes & Colors (coming soon)
 	 type: heading
 	 level: 2
 	 collapsed: true
@@ -5332,6 +5336,13 @@ settings:
 	 title: Angelar shapes
 	 type: class-toggle
 	 description: Enable to use Angular shapes. Disable to use rounded shapes.
+	 default: false
+  -
+	 id: quotation-mark-deco
+	 title: Decorative Quotation Mark
+	 description: Show a decorative Quotation Mark next to Blockquotes in Preview Mode.
+	 type: class-toggle
+	 hub: ignore
 	 default: false
   -
 	 id: colored-yaml
@@ -5403,11 +5414,10 @@ settings:
 	 step: 0.05
 	 format: em
   -
-	 id: standard-mermaid-font
-	 title: Use Standard Mermaid Font
-	 description: Enable this if you set a custom font and it breaks the look of Mermaid graphs.
+	 id: normal-blockquotes
+	 title: Normal-sized Blockquotes
+	 description: Blockquotes have the same size and line-height as the rest of the text.
 	 type: class-toggle
-	 hub: ignore
 	 default: false
   -
 	 id: headings
@@ -5481,28 +5491,8 @@ settings:
 	 step: 0.05
 	 format: em
   -
-	 id: blockquotes
-	 title: Blockquotes
-	 description: Decoration, Size
-	 type: heading
-	 level: 2
-	 collapsed: true
-  -
-	 id: normal-blockquotes
-	 title: Normal-sized Blockquotes
-	 description: Blockquotes have the same size and line-height as the rest of the text.
-	 type: class-toggle
-	 default: false
-  -
-	 id: quotation-mark-deco
-	 title: Decorative Quotation Mark
-	 description: Show a decorative Quotation Mark next to Blockquotes in Preview Mode.
-	 type: class-toggle
-	 hub: ignore
-	 default: false
-  -
 	 id: content-settings
-	 title: Editor Content
+	 title: Content Settings
 	 description: Images, PDFs, Tables, Line Length, & Max View
 	 type: heading
 	 level: 2
