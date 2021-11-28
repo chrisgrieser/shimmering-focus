@@ -1,6 +1,6 @@
 /* ──────────────────────────────────────────────────────
 SHIMMERING FOCUS
-Version 1.164
+Version 1.165
 https://github.com/chrisgrieser/shimmering-focus/
 Created by @pseudometa
 MIT License
@@ -139,19 +139,21 @@ This ToC is auto-generated via the .generate-ToC.sh */
 	--alt-accent-lightest: hsl(164 100% 70%);
 	--alt-accent-darker: hsl(164 100% 30%);
 
+	--unresolved-link-color: hsl(211 100% 52%);
+	--unresolved-opacity: 0.6;
+
 	--code-color: var(--alt-accent-darker);
 	--html-tag-color: var(--alt-accent-darker);
 	--scrollbar-hover: var(--alt-accent-lighter);
+	--scrollbar-active: var(--accent-lighter);
 
 	--pseudo-admonition-border: var(--accent-lighter);
-	--scrollbar-active: var(--accent-lighter);
 	--highlight-color: hsl(152 100% 50% / 40%);
 	--highlight-alt1: hsl(60 100% 50% / 40%);
 	--highlight-alt2: hsl(180 100% 50% / 40%);
 	--search-match-hl: var(--highlight-alt2);
 	--bold-in-darkmode: hsl(202 43% 57%);
-	--unresolved-link-color: hsl(211 100% 52%);
-	--unresolved-opacity: 0.6;
+
 	--active-line: hsl(62 11% 63% / 12.5%);
 	--cursor-monocolor: var(--accent-lighter);
 
@@ -182,7 +184,8 @@ This ToC is auto-generated via the .generate-ToC.sh */
 	--button-border: var(--accent-lighter);
 	--a-row: rgb(0 0 0 / 3%);
 	--b-row: rgb(0 0 0 / 6%);
-	--nice-border: 2px solid hsl(0 0% 85%);
+	--basic-border: 2px solid hsl(0 0% 70%);
+	--alt-border: 3px solid hsl(0 0% 87%);
 	--backdrop-color: hsl(228 9% 70%);
 }
 
@@ -204,7 +207,8 @@ This ToC is auto-generated via the .generate-ToC.sh */
 	--button-border: var(--text-accent);
 	--a-row: rgb(0 0 0 / 20%);
 	--b-row: rgb(0 0 0 / 20%);
-	--nice-border: 2px solid hsl(0 0% 40%);
+	--basic-border: 2px solid hsl(0 0% 40%);
+	--alt-border: 3px solid hsl(0 0% 20%);
 	--backdrop-color: hsl(228 30% 15%);
 }
 
@@ -281,7 +285,7 @@ This ToC is auto-generated via the .generate-ToC.sh */
 	--longform-font-size: 1.2em;
 
 	--sidebar-font-family: "iA Writer Quattro V";
-	--sidebar-font-size: 0.85em;
+	--sidebar-font-size: 0.85rem;
 
 	--menu-font-family: "iA Writer Quattro V";
 	--menu-font-size: 1em;
@@ -1389,7 +1393,7 @@ input[type="checkbox"]:checked:hover {
 .modal {
 	padding: 0.2em 1em;
 	border-radius: calc(var(--block-roundness) * 2);
-	border: 3px solid var(--background-modifier-border);
+	border: var(--alt-border);
 }
 
 .prompt-bg,
@@ -1405,7 +1409,7 @@ input[type="checkbox"]:checked:hover {
 	height: 93%;
 	max-width: unset;
 	width: 93%;
-	border: 3px solid var(--background-modifier-border);
+	border: var(--alt-border);
 	border-radius: calc(var(--block-roundness) * 3);
 }
 
@@ -2481,7 +2485,7 @@ based on css from @Mara https://github.com/Mara-Li/Obsidian-Snippet-collection *
 p.u-center-text {
 	margin-top: 40px;
 	padding-top: 40px;
-	border-top: var(--nice-border);
+	border-top: var(--basic-border);
 }
 
 /* ─────────────────────────────────────────────────── */
@@ -2713,7 +2717,7 @@ p.u-center-text {
 }
 
 .community-plugin-info div.community-plugin-readme {
-	border-top: 3px solid var(--background-modifier-border);
+	border-top: var(--alt-border);
 	margin-top: 15px !important;
 	padding-top: 5px !important;
 }
@@ -2978,7 +2982,7 @@ body > .app-container .cm-s-obsidian .cm-hmd-frontmatter.cm-string {
 .markdown-preview-view .frontmatter-container {
 	font-size: 1em;
 	color: var(--extra-contrast);
-	border: var(--nice-border);
+	border: var(--basic-border);
 	border-radius: var(--block-roundness);
 	background: var(--background-secondary);
 }
@@ -3246,7 +3250,7 @@ https://forum.obsidian.md/t/custom-css-for-tables-5-new-styles-ready-to-use-in-y
 }
 
 :root body {
-	--table-border: var(--nice-border);
+	--table-border: var(--basic-border);
 	--table-roundness: var(--block-roundness);
 }
 
@@ -3757,15 +3761,21 @@ progress[value^="10"]::-webkit-progress-value { background: hsl(160 92% 70%) }
 .document-search-container {
 	bottom: 2.5em;
 	background-color: var(--background-secondary-alt);
-	border: 4px solid var(--background-primary-alt);
-	border-radius: calc(var(--block-roundness) * 3);
+	border: var(--alt-border);
+	border-radius: var(--round);
 	width: 95%;
 	left: 2.5%;
-	height: 3.5em;
+	height: 3.6em;
+}
+
+div.document-replace {
+	margin-top: 4px;
+	margin-bottom: 4px;
 }
 
 .document-search-container.mod-replace-mode {
-	height: 6em;
+	height: 6.1em;
+	border-radius: calc(var(--round) / 2);
 }
 
 /* for whatever reason the scrollbar
@@ -3782,7 +3792,7 @@ shows up on the bottom when replacing/searching
 /* more recognizable red */
 .theme-dark .document-search-input.mod-no-match:hover,
 .theme-dark .document-search-input.mod-no-match {
-	background-color: hsl(357 100% 15%);
+	background-color: hsl(357 30% 20%);
 }
 
 .theme-light .document-search-input.mod-no-match:hover,
@@ -3793,7 +3803,8 @@ shows up on the bottom when replacing/searching
 body > .app-container .document-search-input,
 body > .app-container .document-replace-input {
 	border: 2px solid transparent;
-	border-radius: 50px;
+	border-radius: var(--round);
+	background-color: var(--background-primary-alt);
 }
 
 body > .app-container .document-search-input:focus,
@@ -3808,17 +3819,17 @@ body > .app-container .document-replace-input:hover {
 
 input.document-search-input,
 input.document-replace-input {
-	font-size: 1.2em;
 	padding-left: 0.4em;
 	background-color: var(--background-primary);
-	margin-top: 0.2em;
-	height: 1.6em;
+	margin-top: 4px;
+	margin-left: 4px;
+	height: 2rem;
 }
 
 .document-search-button {
 	color: var(--text-on-accent);
-	margin-top: 0.27em;
-	height: 2.2em;
+	margin-top: 4px;
+	height: 2rem;
 	background-color: var(--text-accent);
 	opacity: 0.65;
 }
@@ -3827,6 +3838,10 @@ input.document-replace-input {
 	background-color: var(--alt-accent);
 	opacity: 0.9;
 	color: var(--interaction-normal);
+}
+
+body:not(.show-close-button) .document-search-close-button {
+	display: none;
 }
 
 /* ─────────────────────────────────────────────────── */
@@ -3927,7 +3942,7 @@ input.document-replace-input {
 }
 
 body:not(.disable-image-borders) .view-content .markdown-preview-view img {
-	border: var(--nice-border);
+	border: var(--basic-border);
 }
 
 /* centers image and image caption */
@@ -4654,7 +4669,7 @@ div.oz-image-widget > img {
 }
 
 body:not(.disable-image-borders) div.oz-image-widget > img {
-	border: var(--nice-border);
+	border: var(--basic-border);
 }
 
 /* center */
@@ -4760,7 +4775,7 @@ button.MySnippetsButton:hover path {
 .MySnippets-statusbar-menu {
 	width: 320px !important;
 	border-radius: 8px !important;
-	border: var(--nice-border);
+	border: var(--basic-border);
 }
 
 .MySnippets-statusbar-menu .menu-item.buttonitem:hover {
@@ -4928,7 +4943,7 @@ body > .app-container .BC-Matrix-square > ol {
 
 body > .app-container .workspace-leaf-content[data-type="BC-matrix"] > .view-content div.BC-Matrix-square {
 	border: none;
-	border-bottom: var(--nice-border);
+	border-bottom: var(--basic-border);
 	padding-bottom: 7px;
 	padding-top: 4px;
 	text-align: left;
@@ -4985,7 +5000,7 @@ body > .app-container div.BC-trail {
 
 div.BC-trail {
 	margin-bottom: 1em !important;
-	border: var(--nice-border);
+	border: var(--basic-border);
 	font-size: 0.9em;
 	padding-left: 10px;
 	padding-right: 10px;
@@ -5444,7 +5459,7 @@ settings:
 	 min: 0.6
 	 max: 1.6
 	 step: 0.05
-	 format: em
+	 format: rem
   -
 	 id: normal-letter-spacing-sidebar
 	 title: No decreased letter spacing in the Side bar
@@ -5714,7 +5729,7 @@ settings:
   -
 	 id: miscellaneous
 	 title: Miscellaneous
-	 description: Checkboxes, Pandoc Citations, Popovers, Annotation Tags
+	 description: Pandoc Citations, Popovers, Annotation Tags
 	 type: heading
 	 level: 2
 	 collapsed: true

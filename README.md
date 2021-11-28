@@ -3,7 +3,7 @@
 A minimalistic [Obsidian](https://obsidian.md/) theme focused on readability and condensed information display.
 
 <!-- manually updated-->
-![](https://img.shields.io/badge/downloads-4876-6E4E9B?style=plastic) ![](https://img.shields.io/github/last-commit/chrisgrieser/shimmering-focus?style=plastic)
+![](https://img.shields.io/badge/downloads-4878-6E4E9B?style=plastic) ![](https://img.shields.io/github/last-commit/chrisgrieser/shimmering-focus?style=plastic)
 
 <img src="https://raw.githubusercontent.com/chrisgrieser/shimmering-focus/main/dual-theme-screenshot.png" alt="Promo Screenshot">
 
@@ -73,7 +73,7 @@ Using the [Style Settings Plugin](#Customization), you can deactivate the spellc
 <img src="https://i.imgur.com/9XPEUQq.png" alt="Spellcheck settings" width=50%>
 
 ### Multi-Color-Highlighting & Spoiler Syntax
-- Surround highlights with `*` or `**` for alternative highlight colors (e.g. `*==cyan==*`).[^2]
+- Surround highlights with `*` or `**` for alternative highlight colors (`*==cyan==*` and `**==yellow==**`).[^2]
 - You can use the [Extra Markdown Commands Plugin](https://github.com/chrisgrieser/obsidian-extra-md-commands) to get hotkeys for them.
 - Spoiler Syntax: Emphasized Strikethroughs (`*~~spoiler~~*`) will selectively hide text, except when hovered or the active line.
 
@@ -143,6 +143,7 @@ In accordance with the minimalistic philosophy of the theme, unnecessary UI elem
 - Breadcrumbs: Refresh the index via Command Palette
 - Quick Explorer: Re-enable the title bar with the Style Settings Plugin for the breadcrumbs
 - Ozan's Image in Editor: Image Sizes are affected by the Image Settings & the Max View Feature.
+- Starred (Core Plugin): To be able to star searches, re-enable the Starred pane buttons with the Style Settings Plugins
 
 ## Installation
 You can find *Shimmering Focus* in Obsidian's community themes browser under `Obsidian Settings ➞ Appearance ➞ Themes ➞ Manage`.
@@ -162,7 +163,7 @@ git clone git@github.com:chrisgrieser/shimmering-focus.git
 cd ./shimmering-focus
 
 # install stylelint + prerequisites
-npm install -g stylelint postcss stylelint-config-recommended
+npm install stylelint postcss stylelint-config-recommended
 ```
 
 ## Credits
