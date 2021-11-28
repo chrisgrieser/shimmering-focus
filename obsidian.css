@@ -1,6 +1,6 @@
 /* ──────────────────────────────────────────────────────
 SHIMMERING FOCUS
-Version 1.157
+Version 1.158
 https://github.com/chrisgrieser/shimmering-focus/
 Created by @pseudometa
 MIT License
@@ -154,8 +154,6 @@ This ToC is auto-generated via the .generate-ToC.sh */
 	--active-line: hsl(62 11% 63% / 12.5%);
 	--cursor-monocolor: var(--accent-lighter);
 
-	--block-roundness: 7px;
-	--round: 50px;
 	--resize-handle-thickness: 0.25em;
 	--scrollbar-thickness: 0.6em;
 	--image-size: 50%;
@@ -208,7 +206,7 @@ This ToC is auto-generated via the .generate-ToC.sh */
 	--a-row: rgb(0 0 0 / 20%);
 	--b-row: rgb(0 0 0 / 20%);
 	--nice-border: 2px solid hsl(0 0% 40%);
-	--backdrop-color: hsl(228 70% 7%);
+	--backdrop-color: hsl(228 30% 15%);
 }
 
 /* ─────────────────────────────────────────────────── */
@@ -290,6 +288,7 @@ This ToC is auto-generated via the .generate-ToC.sh */
 	--menu-font-size: 1em;
 
 	--smallcap-font: "AlegreyaSansSC";
+	--setting-heading: var(--smallcap-font);
 	--button-font: "Quicksand";
 
 	--heading-font: "Optima", "Optima-local";
@@ -306,6 +305,8 @@ This ToC is auto-generated via the .generate-ToC.sh */
 	font-family: var(--font-monospace) !important;
 }
 
+.hotkey-search-container input,
+input.prompt-input,
 textarea,
 .search-input-container input,
 body > .app-container input,
@@ -389,11 +390,7 @@ svg.BC-trail-icon {
 	background-color: currentColor;
 }
 
-/* ─────────────────────────────────────────────────── */
 /* < Bold */
-/* ─────────────────────────────────────────────────── */
-
-/* Colored Bold to increase distinguishability */
 .theme-dark .cm-strong,
 .theme-dark .markdown-preview-view strong {
 	color: var(--bold-in-darkmode);
@@ -402,15 +399,23 @@ svg.BC-trail-icon {
 .suggestion-highlight,
 .cm-strong,
 .markdown-preview-view strong,
-.nav-file-title.is-active,
-table:not(.dataview.table-view-table) th,
-.draft-container.svelte-1jmafs.selected,
-.draft-container.svelte-1jmafs.selected:hover,
-.scene-container.svelte-1wlkmbt.selected:hover,
-.scene-container.svelte-1wlkmbt.selected,
-.svelte-23avsr[name~="projects"] {
+.nav-file-title.is-active {
 	text-rendering: geometricPrecision;
 	font-weight: 700;
+}
+
+/* ─────────────────────────────────────────────────── */
+/* < Shapes */
+/* ─────────────────────────────────────────────────── */
+
+body:not(.angular-shapes) {
+	--block-roundness: 7px;
+	--round: 50px;
+}
+
+body.angular-shapes {
+	--block-roundness: 0;
+	--round: 0;
 }
 
 /* ─────────────────────────────────────────────────── */
@@ -532,7 +537,7 @@ body:not(.show-ribbons) .workspace-ribbon {
 
 .tooltip {
 	background-color: var(--tooltip-notification-bg) !important;
-	border: 2px ridge var(--tooltip-notification-border);
+	border: 1px solid var(--tooltip-notification-border);
 	color: var(--tooltip-notification-text);
 	border-radius: 15px;
 	word-wrap: break-word;
@@ -604,11 +609,6 @@ body:not(.show-ribbons) .workspace-ribbon {
 	display: none;
 }
 
-/* Hide instructions */
-.prompt-instructions {
-	display: none;
-}
-
 /* hide empty pane info */
 .empty-state-action {
 	display: none;
@@ -655,7 +655,7 @@ div.search-input-clear-button:hover::before,
 .modal-close-button {
 	top: 0;
 	right: 0;
-	padding: 0 4px 4px;
+	padding: 2px 6px 6px;
 	border-bottom-left-radius: var(--block-roundness);
 	border-top-right-radius: calc(var(--block-roundness) * 2.5);
 }
@@ -943,12 +943,12 @@ button:hover {
 /* < Toggles (Checkboxes) */
 /* ─────────────────────────────────────────────────── */
 
-.checkbox-container {
-	margin-left: 5px;
+:root { /* stylelint-disable-line no-duplicate-selectors */
+	--toggle-duration: 250ms;
 }
 
-:root { /* stylelint-disable-line no-duplicate-selectors */
-	--toggle-duration: 350ms;
+.checkbox-container {
+	margin-left: 5px;
 }
 
 body:not(.normal-checkboxes) .checkbox-container:hover {
@@ -965,7 +965,7 @@ body:not(.normal-checkboxes) .checkbox-container.is-enabled:hover {
 body:not(.normal-checkboxes) .checkbox-container {
 	cursor: pointer;
 	border-radius: var(--round);
-	border: 2px solid var(--button-border);
+	border: 2px solid var(--text-accent);
 	width: 22px;
 	height: 22px;
 	background-color: var(--background-secondary);
@@ -976,8 +976,14 @@ body:not(.normal-checkboxes) .checkbox-container::after {
 	display: none;
 }
 
-body:not(.normal-checkboxes) .checkbox-container.is-enabled {
+.theme-dark:not(.normal-checkboxes) .checkbox-container.is-enabled {
 	background-color: var(--interactive-accent);
+	border-color: var(--text-accent);
+}
+
+.theme-light:not(.normal-checkboxes) .checkbox-container.is-enabled {
+	background-color: var(--interactive-accent);
+	border-color: var(--accent-lighter);
 }
 
 /* ─────────────────────────────────────────────────── */
@@ -987,7 +993,9 @@ body:not(.normal-checkboxes) .checkbox-container.is-enabled {
 /* ─────────────────────────────────────────────────── */
 
 .search-input-container input,
-input[type="text"] {
+input[type="text"],
+input[type="email"],
+input[type="password"] {
 	padding-right: 10px;
 	padding-left: 10px;
 	border-radius: var(--round);
@@ -1035,16 +1043,13 @@ input.slider {
 	white-space: pre-wrap !important;
 }
 
-/* background color of code blocks */
-.theme-light .markdown-preview-view pre {
-	background-color: var(--background-secondary) !important;
-}
-
-/* rounder codeblock */
+/* code blocks Preview Mode */
 .markdown-preview-view pre {
+	background-color: var(--background-secondary) !important;
 	border-radius: calc(var(--block-roundness) * 2) !important;
 }
 
+/* code blocks Edit Mode */
 body > .app-container .HyperMD-codeblock-begin-bg {
 	border-top-left-radius: calc(var(--block-roundness) * 2);
 	border-top-right-radius: calc(var(--block-roundness) * 2);
@@ -1098,6 +1103,7 @@ pre[class~="language-cpp"]::after { content: "C++"; }
 pre[class~="language-java"]::after { content: "JAVA"; }
 pre[class~="language-html"]::after { content: "HTML"; }
 pre[class~="language-txt"]::after { content: "text"; }
+pre[class~="language-text"]::after { content: "text"; }
 pre[class~="language-url"]::after { content: "url"; }
 pre[class~="language-uri"]::after { content: "uri"; }
 
@@ -1284,10 +1290,6 @@ a.tag:hover {
 /* < to dos (tasks) */
 /* ─────────────────────────────────────────────────── */
 
-/* unfinished
-.cm-s-obsidian span.cm-formatting-task {}
-*/
-
 /* finished */
 .cm-s-obsidian span.cm-formatting-task.cm-property {
 	color: var(--finished-task);
@@ -1295,7 +1297,7 @@ a.tag:hover {
 
 .cm-s-obsidian span.cm-formatting-task.cm-property + span {
 	text-decoration: line-through;
-	color: var(--text-muted);
+	color: var(--extra-contrast);
 }
 
 body > .app-container .contains-task-list li.task-list-item.is-checked {
@@ -1304,8 +1306,8 @@ body > .app-container .contains-task-list li.task-list-item.is-checked {
 }
 
 /* https://forum.obsidian.md/t/meta-post-common-css-hacks/1978/34 */
-input[type="checkbox"] {
-	-webkit-appearance: none; /* stylelint-disable-line property-no-vendor-prefix */
+body:not(.angular-shapes) input[type="checkbox"] {
+	-webkit-appearance: none;
 	appearance: none;
 	border: 2px solid var(--text-muted);
 	padding: 1px;
@@ -1314,7 +1316,7 @@ input[type="checkbox"] {
 	filter: unset !important; /* removes hue filter */
 }
 
-input[type="checkbox"]:checked {
+body:not(.angular-shapes) input[type="checkbox"]:checked {
 	background-color: var(--finished-task);
 	border-width: 0;
 	background-position: center;
@@ -1323,18 +1325,18 @@ input[type="checkbox"]:checked {
 	background-image: url('data:image/svg+xml; utf8, <svg width="12px" height="10" viewBox="0 0 12 8" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd"><g transform="translate(-4.000000, -6.000000)" fill="%23ffffff"><path d="M8.1043257,14.0367999 L4.52468714,10.5420499 C4.32525014,10.3497722 4.32525014,10.0368095 4.52468714,9.8424863 L5.24777413,9.1439454 C5.44721114,8.95166768 5.77142411,8.95166768 5.97086112,9.1439454 L8.46638057,11.5903727 L14.0291389,6.1442083 C14.2285759,5.95193057 14.5527889,5.95193057 14.7522259,6.1442083 L15.4753129,6.84377194 C15.6747499,7.03604967 15.6747499,7.35003511 15.4753129,7.54129009 L8.82741268,14.0367999 C8.62797568,14.2290777 8.3037627,14.2290777 8.1043257,14.0367999"></path></g></g></svg>');
 }
 
-input[type="checkbox"]:hover {
+body:not(.angular-shapes) input[type="checkbox"]:hover {
 	border-color: var(--alt-accent);
 }
 
-input[type="checkbox"]:checked:hover {
+body:not(.angular-shapes) input[type="checkbox"]:checked:hover {
 	background-color: var(--alt-accent-lighter);
 }
 
 /* ─────────────────────────────────────────────────── */
-/* < Modal & Prompt Boxes */
+/* < Modal Boxes */
 /* ─────────────────────────────────────────────────── */
-/* (modal also applies to settings/plugin browser) */
+/* (modals partially also applies to settings/plugin browser) */
 
 .modal-content h1 {
 	font-size: var(--h1-size);
@@ -1380,12 +1382,7 @@ input[type="checkbox"]:checked:hover {
 .modal-bg {
 	backdrop-filter: blur(3px);
 	background-color: var(--backdrop-color);
-	opacity: 0.9;
-}
-
-.prompt {
-	border-radius: calc(var(--block-roundness) * 2);
-	border: 5px solid var(--background-secondary);
+	opacity: 0.85;
 }
 
 .modal.mod-community-theme,
@@ -1476,8 +1473,27 @@ input[type="checkbox"]:checked:hover {
 }
 
 /* ─────────────────────────────────────────────────── */
-/* < Command Palette & QuickSwitcher */
+/* < Command Palette */
+/* < QuickSwitcher */
+/* < Prompt */
 /* ─────────────────────────────────────────────────── */
+
+.prompt {
+	border-radius: calc(var(--block-roundness) * 2);
+	border: 5px solid var(--background-secondary);
+}
+
+input.prompt-input {
+	width: unset;
+	margin: 5px 2px 8px;
+	padding-top: 7px;
+	border-radius: calc(var(--block-roundness) * 1.5);
+}
+
+div.prompt-results {
+	padding-top: 0;
+	border-radius: var(--block-roundness);
+}
 
 div.prompt {
 	padding: 3px;
@@ -1507,6 +1523,11 @@ body:not(.no-alternating-rows) .suggestion-item:nth-child(even) .suggestion-hotk
 	background-color: var(--background-primary);
 }
 
+/* Hide instructions */
+.prompt-instructions {
+	display: none;
+}
+
 /* the pin */
 .suggestion-item .suggestion-flair {
 	left: 5px;
@@ -1516,13 +1537,9 @@ body:not(.no-alternating-rows) .suggestion-item:nth-child(even) .suggestion-hotk
 /* color selected / hovered */
 .suggestion-item.is-selected,
 .suggestion-item:hover,
-body:not(.no-alternating-rows) .suggestion-item:nth-child(even):hover {
+body:not(.no-alternating-rows) .suggestion-item:nth-child(even):hover,
+body:not(.no-alternating-rows) .suggestion-item.is-selected:nth-child(even) {
 	background-color: var(--background-secondary-alt);
-}
-
-.suggestion-item.is-selected .suggestion-hotkey,
-.suggestion-item:hover .suggestion-hotkey {
-	background-color: var(--background-primary-alt);
 }
 
 .suggestion-item.is-selected .suggestion-prefix,
@@ -1547,6 +1564,11 @@ body:not(.no-alternating-rows) .suggestion-item:nth-child(even):hover {
 .suggestion-item.is-selected .suggestion-prefix,
 .suggestion-item:hover .suggestion-prefix {
 	opacity: 0.6;
+}
+
+.suggestion-item.is-selected .suggestion-hotkey,
+.suggestion-item:hover .suggestion-hotkey {
+	background-color: var(--background-primary-alt);
 }
 
 /* ─────────────────────────────────────────────────── */
@@ -2263,11 +2285,11 @@ based on css from @Mara https://github.com/Mara-Li/Obsidian-Snippet-collection *
 }
 
 .setting-item.setting-item-heading {
-	margin-top: 20px;
+	margin-top: 12px;
 	margin-bottom: 5px;
 	padding-bottom: 0;
 	border-bottom: 2px solid var(--hr-line);
-	font-family: var(--smallcap-font);
+	font-family: var(--setting-heading);
 	font-size: 1.2em;
 	font-weight: 600;
 }
@@ -2332,7 +2354,7 @@ based on css from @Mara https://github.com/Mara-Li/Obsidian-Snippet-collection *
 	letter-spacing: 1px;
 	padding: 4px 3px 1px;
 	margin-top: 0;
-	font-family: var(--smallcap-font);
+	font-family: var(--setting-heading);
 	font-weight: 600;
 	text-transform: capitalize;
 	text-align: end;
@@ -2426,6 +2448,18 @@ based on css from @Mara https://github.com/Mara-Li/Obsidian-Snippet-collection *
 .theme-dark .vertical-tab-header-group:first-child .vertical-tab-header-group-items .vertical-tab-nav-item:nth-child(4).is-active,
 .theme-dark .vertical-tab-header-group:first-child .vertical-tab-header-group-items .vertical-tab-nav-item.is-active {
 	color: var(--text-accent);
+}
+
+/* login menu  */
+.modal.mod-settings h2 {
+	font-family: var(--setting-heading);
+	font-size: 2em;
+}
+
+p.u-center-text {
+	margin-top: 40px;
+	padding-top: 40px;
+	border-top: var(--nice-border);
 }
 
 /* ─────────────────────────────────────────────────── */
@@ -2711,7 +2745,7 @@ body:not(.less-heading-letter-spacing) .modal.mod-community-theme .modal-title {
 
 .modal.mod-community-theme > .modal-content > .modal-title {
 	margin-bottom: 10px;
-	font-family: var(--smallcap-font);
+	font-family: var(--setting-heading);
 	font-weight: 600;
 	color: var(--extra-contrast);
 }
@@ -2723,7 +2757,7 @@ body:not(.less-heading-letter-spacing) .modal.mod-community-theme .modal-title {
 }
 
 .community-theme-remove-button svg {
-	color: var(--text-normal) !important;
+	color: var(--text-muted) !important;
 }
 
 .community-theme-remove-button:hover svg {
@@ -2737,7 +2771,7 @@ body:not(.less-heading-letter-spacing) .modal.mod-community-theme .modal-title {
 
 .community-theme.is-selected button:first-child:hover {
 	background-color: var(--background-secondary-alt) !important;
-	cursor: default;
+	cursor: not-allowed;
 	color: var(--text-faint) !important;
 	border-color: var(--button-border) !important;
 }
@@ -2866,7 +2900,9 @@ em > del:hover,
 }
 
 /* ─────────────────────────────────────────────────── */
-/* < YAML header & Metadata Block */
+/* < YAML Header */
+/* < YAML Frontmatter */
+/* < Metadata Block */
 /* ─────────────────────────────────────────────────── */
 /* YAML-Header in Edit Mode */
 span.cm-hmd-frontmatter {
@@ -2882,6 +2918,10 @@ span.cm-hmd-frontmatter {
 
 .cm-atom.cm-hmd-frontmatter {
 	font-weight: 600;
+}
+
+body.colored-yaml .cm-atom.cm-hmd-frontmatter {
+	color: var(--text-accent);
 }
 
 /* YAML-Header in Preview Mode */
@@ -3158,6 +3198,7 @@ body > .app-container .markdown-preview-view div hr {
 /* ─────────────────────────────────────────────────── */
 /* add some more table styling, e.g. from
 https://forum.obsidian.md/t/custom-css-for-tables-5-new-styles-ready-to-use-in-your-notes/17084 */
+
 /* see also section "Max View" */
 
 .markdown-preview-view table:not(.dataview.table-view-table) {
@@ -3168,6 +3209,11 @@ https://forum.obsidian.md/t/custom-css-for-tables-5-new-styles-ready-to-use-in-y
 :root body {
 	--table-border: var(--nice-border);
 	--table-roundness: var(--block-roundness);
+}
+
+table:not(.dataview.table-view-table) th {
+	text-rendering: geometricPrecision;
+	font-weight: 700;
 }
 
 /* rounded corners */
@@ -4302,6 +4348,15 @@ a.tag.kanban-plugin__item-tag {
 	padding: 15px 5px;
 }
 
+.draft-container.svelte-1jmafs.selected,
+.draft-container.svelte-1jmafs.selected:hover,
+.scene-container.svelte-1wlkmbt.selected:hover,
+.scene-container.svelte-1wlkmbt.selected,
+.svelte-23avsr[name~="projects"] {
+	text-rendering: geometricPrecision;
+	font-weight: 700;
+}
+
 /* hide folder path */
 .current-draft-path.svelte-23avsr {
 	display: none;
@@ -4871,7 +4926,11 @@ body > .app-container .BC-Link.is-unresolved {
 
 /* Breadcrumb Trail */
 .trails-div {
-	padding-bottom: 6px;
+	padding-bottom: 2px;
+}
+
+body > .app-container div.BC-trail {
+	padding-bottom: 6px !important;
 }
 
 div.BC-trail {
@@ -4882,6 +4941,7 @@ div.BC-trail {
 	padding-right: 10px;
 	background-color: var(--background-secondary);
 	border-radius: var(--block-roundness);
+	color: var(--extra-contrast);
 }
 
 body > .app-container div.BC-trail-grid {
@@ -5120,7 +5180,26 @@ a.zoom-plugin-title:hover {
 	fill: var(--alt-accent) !important;
 }
 
-/* Style settings */
+/* ─────────────────────────────────────────────────── */
+/* < Style Settings Plugin */
+/* ─────────────────────────────────────────────────── */
+
+.style-settings-heading {
+	margin-bottom: 12px !important;
+	margin-top: 22px !important;
+	padding-top: 0;
+}
+
+.style-settings-heading .setting-item-name {
+	font-family: var(--setting-heading);
+	line-height: 1em;
+}
+
+.style-settings-heading .setting-item-description {
+	font-family: var(--menu-font-family);
+	font-size: 65%;
+}
+
 /* remove buggy export button for certain blocks */
 .style-settings-heading .setting-editor-extra-setting-button:last-child {
 	display: none;
@@ -5223,6 +5302,25 @@ settings:
 	 title: Re-enable the Fold Markers
 	 type: class-toggle
 	 description: Folder markers are the "..." next to a folded/collapsed item.
+	 default: false
+  -
+	 id: aesthetics
+	 title: Aesthetics
+	 description: Shapes & Colors (soon)
+	 type: heading
+	 level: 2
+	 collapsed: true
+  -
+	 id: angular-shapes
+	 title: Angelar shapes
+	 type: class-toggle
+	 description: Enable to use Angular shapes. Disable to use rounded shapes.
+	 default: false
+  -
+	 id: colored-yaml
+	 title: Colored YAML
+	 type: class-toggle
+	 description: Use colored YAML frontmatter (in Edit Mode).
 	 default: false
   -
 	 id: font-settings
