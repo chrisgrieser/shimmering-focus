@@ -1,6 +1,6 @@
 /* ──────────────────────────────────────────────────────
 SHIMMERING FOCUS
-Version 1.169
+Version 1.170
 https://github.com/chrisgrieser/shimmering-focus/
 Created by @pseudometa
 MIT License
@@ -5434,19 +5434,19 @@ settings:
   -
 	 id: block-cursor
 	 title: Block Cursor
-	 description: Use a block cursor instead of a line cursor. For best results, also switch the main font to a monospaced one.
+	 description: Use a block cursor instead of a line cursor. For best results, also switch the main font to a monospace font.
 	 type: class-toggle
 	 default: false
   -
 	 id: mono-color-cursor
 	 title: Use a mono-colored Cursor
-	 description: 'Use a (light purple) cursor, as in previous versions of "Shimmering Focus".'
+	 description: 'Use a mono-colored, purple cursor, as in previous versions of "Shimmering Focus".'
 	 type: class-toggle
 	 default: false
   -
 	 id: quotation-mark-deco
 	 title: Decorative Quotation Mark
-	 description: Show a decorative Quotation Mark next to Blockquotes in Preview Mode.
+	 description: Show a decorative Quotation Mark next to Blockquotes in Preview Mode (not Live Preview yet).
 	 type: class-toggle
 	 hub: ignore
 	 default: false
@@ -5477,7 +5477,7 @@ settings:
   -
 	 id: font-monospace
 	 title: Monospace Font
-	 description: Code blocks, YAML in edit mode, tables, etc.
+	 description: Unsed in Code blocks, YAML in Edit Mode, tables in Edit Mode, etc.
 	 type: variable-text
 	 default: '"Input Mono"'
   -
@@ -5563,7 +5563,7 @@ settings:
   -
 	 id: no-alternating-header-italics
 	 title: No Alternating Italic of Headings
-	 description: In this theme, the Heading Levels alternate between italic/regular to make them more distinguishable. You can turn that feature off if you prefer non-italic at all heading levels.
+	 description: In this theme, the Heading Levels alternate between italic/regular to make them more distinguishable. You can turn that feature off if you prefer non-italic for all heading levels.
 	 type: class-toggle
 	 default: false
   -
