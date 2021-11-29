@@ -1,6 +1,6 @@
 /* ──────────────────────────────────────────────────────
 SHIMMERING FOCUS
-Version 1.180
+Version 1.181
 https://github.com/chrisgrieser/shimmering-focus/
 Created by @pseudometa
 MIT License
@@ -910,6 +910,10 @@ input[type="password"] {
 
 input[type="text"] {
 	width: 250px;
+}
+
+.workspace-leaf-content input[type="text"] {
+	width: 100%;
 }
 
 textarea:focus,

@@ -1,4 +1,4 @@
-- 2021-11-29	minor
+- 2021-11-29	fix input in sidebars
 - 2021-11-29	consistent modal headings
 - 2021-11-29	add modal padding
 - 2021-11-29	stylelinting tweaks
