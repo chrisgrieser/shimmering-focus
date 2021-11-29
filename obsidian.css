@@ -1,6 +1,6 @@
 /* ──────────────────────────────────────────────────────
 SHIMMERING FOCUS
-Version 1.181
+Version 1.182
 https://github.com/chrisgrieser/shimmering-focus/
 Created by @pseudometa
 MIT License
@@ -596,10 +596,8 @@ body:not(.show-ribbons) .workspace-ribbon {
 .tooltip {
 	color: var(--tooltip-notification-text);
 	background-color: var(--tooltip-notification-bg) !important;
-
 	border: 1px solid var(--tooltip-notification-border);
 	border-radius: calc(var(--roundish) * 2);
-
 	word-wrap: break-word;
 }
 
@@ -830,10 +828,8 @@ body:not(.show-scrollbar) ::-webkit-scrollbar {
 button {
 	padding-right: 12px !important;
 	padding-left: 12px !important;
-
 	border: 2px solid var(--button-border) !important;
 	border-radius: var(--round);
-
 	letter-spacing: 0.5px;
 }
 
@@ -1008,9 +1004,7 @@ body > .app-container .document-replace-input:hover {
 input.document-search-input,
 input.document-replace-input {
 	height: 2rem;
-
 	background-color: var(--background-primary);
-
 	padding-left: 0.4em;
 	margin-top: 4px;
 	margin-left: 4px;
@@ -1018,11 +1012,9 @@ input.document-replace-input {
 
 .document-search-button {
 	height: 2rem;
-
 	color: var(--text-on-accent);
 	background-color: var(--text-accent);
 	opacity: 0.65;
-
 	margin-top: 4px;
 }
 
@@ -1147,9 +1139,7 @@ div.search-input-clear-button:hover::before,
 .modal-close-button {
 	top: 0;
 	right: 0;
-
 	padding: 2px 6px 6px;
-
 	border-top-right-radius: calc(var(--roundish) * 2.5);
 	border-bottom-left-radius: var(--roundish);
 }
@@ -1440,7 +1430,6 @@ body .workspace-leaf-resize-handle:active {
 	height: 93%;
 	width: 93%;
 	max-width: unset;
-
 	border: var(--alt-border);
 	border-radius: calc(var(--roundish) * 3);
 }
@@ -1539,14 +1528,11 @@ body .workspace-leaf-resize-handle:active {
 
 .vertical-tab-content {
 	background: var(--background-primary);
-	padding-top: 0.7em;
-	padding-right: 1.3em;
-	padding-left: 1.3em;
+	padding: 11px 21px 8em; /* bottom padding creates overscroll */
 }
 
 .vertical-tab-header-group {
 	background-color: var(--background-primary-alt);
-
 	padding-top: 0;
 	padding-bottom: 0;
 	margin-top: 0;
@@ -1682,9 +1668,7 @@ p.u-center-text {
 	padding: 0.4em 0.1em 0.4em 0.6em;
 	margin-top: 0;
 	margin-bottom: 0;
-
 	border-bottom: var(--plugin-browser-borders);
-
 	line-height: 1.2em;
 }
 
@@ -2136,10 +2120,8 @@ body > .app-container .cm-s-obsidian .cm-hmd-frontmatter.cm-string {
 .markdown-preview-view .frontmatter-container {
 	color: var(--extra-contrast);
 	background: var(--background-secondary);
-
 	border: var(--basic-border);
 	border-radius: var(--roundish);
-
 	font-size: 1em;
 }
 
@@ -3417,9 +3399,7 @@ div:not(.CodeMirror-activeline) > .CodeMirror-line .cm-em.cm-strikethrough,
 em > del {
 	color: var(--spoiler-bg);
 	background-color: var(--spoiler-bg);
-
 	transition-duration: 250ms;
-
 	font-style: initial;
 	text-decoration: unset;
 }
@@ -3897,12 +3877,9 @@ body.is-mobile .markdown-preview-view blockquote {
 
 .outline .pane-empty::before {
 	content: var(--signature);
-
 	position: absolute;
-
 	margin-top: 50%;
 	margin-left: 35%;
-
 	font-size: 4rem;
 }
 
@@ -4097,7 +4074,6 @@ body:not(.show-starred-nav-buttons) .workspace-leaf-content[data-type="starred"]
 	height: var(--popover-size) !important;
 	max-height: unset !important;
 	width: var(--popover-size) !important;
-
 	border: 5px solid var(--background-secondary) !important;
 	border-radius: calc(var(--roundish) * 2);
 }
@@ -4113,11 +4089,8 @@ body:not(.show-starred-nav-buttons) .workspace-leaf-content[data-type="starred"]
 .popover .markdown-embed-link {
 	top: 4px;
 	right: 4px;
-
 	color: var(--extra-contrast);
-
 	padding: 2px;
-
 	border-radius: var(--roundish);
 }
 
@@ -4152,10 +4125,8 @@ body:not(.show-starred-nav-buttons) .workspace-leaf-content[data-type="starred"]
 .sync-history-list-item {
 	padding-right: 5px;
 	padding-left: 10px;
-
 	border-right: 1px solid var(--background-primary);
 	border-bottom: 1px solid var(--background-primary);
-
 	line-height: 1.4em;
 }
 
@@ -4195,9 +4166,7 @@ body:not(.show-starred-nav-buttons) .workspace-leaf-content[data-type="starred"]
 	position: relative;
 	top: 45%;
 	left: 40%;
-
 	color: var(--extra-contrast);
-
 	font-size: 0;
 }
 
@@ -4518,7 +4487,6 @@ body:not(.is-mobile) .kanban-plugin__item-postfix-button-wrapper {
 	padding-top: 5px !important;
 	padding-bottom: 5px !important;
 	padding-left: 8px !important;
-
 	font-family: var(--default-font);
 	font-size: 0.8em;
 }
@@ -4571,7 +4539,6 @@ a.tag.kanban-plugin__item-tag {
 body:not(.angular-shapes) .kanban-plugin__board input[type="checkbox"] {
 	height: 0.85em;
 	width: 0.85em;
-
 	margin-top: 1px;
 	margin-right: 5px;
 	margin-left: 0;
@@ -5153,10 +5120,8 @@ body > .app-container .BC-Matrix-square > ol {
 body > .app-container .workspace-leaf-content[data-type="BC-matrix"] > .view-content div.BC-Matrix-square {
 	padding-top: 4px;
 	padding-bottom: 7px;
-
 	border: none;
 	border-bottom: var(--basic-border);
-
 	text-align: left;
 }
 
@@ -5229,10 +5194,8 @@ div.BC-trail {
 
 body > .app-container div.BC-trail-grid {
 	background-color: var(--background-primary);
-
 	margin-top: 8px;
 	margin-bottom: 5px;
-
 	border: 1px solid var(--background-modifier-border);
 	border-radius: var(--roundish);
 }

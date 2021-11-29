@@ -135,7 +135,7 @@
 			{
 				"emptyLineBeforeUnspecified": "threshold",
 				"unspecified": "bottom",
-				"emptyLineMinimumPropertyThreshold": 5,
+				"emptyLineMinimumPropertyThreshold": 6,
 				"severity": "warning"
 			}
 		],
