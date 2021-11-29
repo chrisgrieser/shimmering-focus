@@ -1,6 +1,6 @@
 /* ──────────────────────────────────────────────────────
 SHIMMERING FOCUS
-Version 1.173
+Version 1.174
 https://github.com/chrisgrieser/shimmering-focus/
 Created by @pseudometa
 MIT License
@@ -61,6 +61,7 @@ This ToC is auto-generated via the .create-ToC.sh
 	- Community Plugin Browser
 	- Community Theme Browser
 - Editor
+	- Active / Inactive Note
 	- Editor Size
 	- Line Numbers (Gutter)
 	- Overscroll
@@ -81,7 +82,7 @@ This ToC is auto-generated via the .create-ToC.sh
 		- Mermaid
 - Markup
 	- Headings
-		- Pseudo-Admonitions (only for one-liners)
+		- Pseudo-Admonitions
 	- Blockquotes
 	- Tables
 	- Code Blocks & Inline Code
@@ -116,7 +117,6 @@ This ToC is auto-generated via the .create-ToC.sh
 - Community Plugins
 	- Calendar
 	- Templater
-- Improve Templater Syntax Readability
 	- Kanban
 	- Longform
 		- Longform Sidebar
@@ -141,7 +141,6 @@ This ToC is auto-generated via the .create-ToC.sh
 		- Advanced Tables
 - Plugin Compatibility Info for the Obsidian Hub
 - Style Setting Options
-
 
  */
 /* ─────────────────────────────────────────────────── */
@@ -465,10 +464,9 @@ body.angular-shapes {
 /* ─────────────────────────────────────────────────── */
 
 .CodeMirror-cursor {
-	border-left-width: 3px;
-
 	/* needs the "1" at the end:  https://www.digitalocean.com/community/tutorials/css-gradient-borders-pure-css */
 	border-image: linear-gradient(var(--cursor-duo-color-1), var(--cursor-duo-color-2)) 1;
+	border-left-width: 3px;
 }
 
 body.mono-color-cursor .CodeMirror-cursor {
@@ -1011,7 +1009,6 @@ input.document-replace-input {
 	background-color: var(--background-primary);
 
 	padding-left: 0.4em;
-
 	margin-top: 4px;
 	margin-left: 4px;
 }
@@ -1035,7 +1032,6 @@ input.document-replace-input {
 body:not(.show-close-button) .document-search-close-button {
 	display: none;
 }
-
 
 /* ─────────────────────────────────────────────────── */
 /* << Context Menus */
@@ -1479,7 +1475,6 @@ body .workspace-leaf-resize-handle:active {
 
 .setting-item.setting-item-heading {
 	padding-bottom: 0;
-
 	margin-top: 12px;
 	margin-bottom: 5px;
 
@@ -1497,7 +1492,6 @@ body .workspace-leaf-resize-handle:active {
 	padding-right: 0;
 	padding-bottom: 1em;
 	padding-left: 0;
-
 	margin-top: 0;
 
 	border-left: 2px solid var(--background-modifier-border);
@@ -1551,7 +1545,6 @@ body .workspace-leaf-resize-handle:active {
 
 	padding-top: 0;
 	padding-bottom: 0;
-
 	margin-top: 0;
 	margin-bottom: 20px;
 }
@@ -1560,7 +1553,6 @@ body .workspace-leaf-resize-handle:active {
 	color: var(--text-muted);
 
 	padding: 2px 5px 1px;
-
 	margin-top: 0;
 
 	border-bottom: 2px solid var(--background-modifier-border);
@@ -1609,7 +1601,6 @@ body .workspace-leaf-resize-handle:active {
 	opacity: 0.9;
 
 	padding: 4px;
-
 	margin-right: 0;
 	margin-left: 3px;
 
@@ -1685,7 +1676,6 @@ p.u-center-text {
 /* search results */
 .community-plugin-item {
 	padding: 0.4em 0.1em 0.4em 0.6em;
-
 	margin-top: 0;
 	margin-bottom: 0;
 
@@ -1844,7 +1834,6 @@ p.u-center-text {
 
 .community-plugin-info .community-plugin-name {
 	padding-bottom: 5px;
-
 	margin-bottom: 12px;
 
 	border-bottom: 3px solid var(--hr-line);
@@ -2039,7 +2028,9 @@ body:not(.less-heading-letter-spacing) .modal.mod-community-theme .modal-title {
 /* < Editor */
 /* ─────────────────────────────────────────────────── */
 
-/* Grey out non-active note */
+/* ─────────────────────────────────────────────────── */
+/* << Active / Inactive Note */
+/* ─────────────────────────────────────────────────── */
 .workspace-leaf:not(.mod-active) .workspace-leaf-content[data-type="markdown"] {
 	opacity: var(--inactive-pane-opacity);
 	transition-duration: 0.5s;
@@ -2068,7 +2059,7 @@ body:not(.less-heading-letter-spacing) .modal.mod-community-theme .modal-title {
 /* ─────────────────────────────────────────────────── */
 /* << Overscroll */
 /* ─────────────────────────────────────────────────── */
-.markdown-preview-view{
+body .markdown-preview-view {
 	padding-bottom: 20em;
 	padding-left: 50px;
 }
@@ -2160,7 +2151,6 @@ body > .app-container .cm-s-obsidian .cm-hmd-frontmatter.cm-string {
 
 	padding-right: 6px;
 	padding-left: 6px;
-
 	margin-right: 0;
 	margin-left: 0;
 
@@ -2182,7 +2172,6 @@ body > .app-container .cm-s-obsidian .cm-hmd-frontmatter.cm-string {
 
 	padding-right: 6px !important;
 	padding-left: 6px !important;
-
 	margin-right: 0 !important;
 	margin-left: 0 !important;
 
@@ -2290,14 +2279,12 @@ progress[value^="10"]::-webkit-progress-value { background: hsl(160 92% 70%) }
 /* Image Alt as Caption in Preview Mode */
 /* useful as this is also how Pandoc converts */
 .image-embed[alt]::after {
-	content: attr(alt);
-
 	display: block;
+	content: attr(alt);
 
 	color: var(--text-muted);
 
 	padding-top: 2px;
-
 	margin-bottom: 13px;
 
 	font-size: 90%;
@@ -2331,6 +2318,7 @@ body:not(.left-aligned-embeds) .view-content .markdown-preview-view img {
 /* by @kepano  https://forum.obsidian.md/t/image-zoom-click-hold-to-expand-images/5164 */
 .markdown-preview-view img:active {
 	display: block;
+
 	height: 100%;
 	max-height: 100%;
 	width: 100%;
@@ -2346,7 +2334,6 @@ body:not(.left-aligned-embeds) .view-content .markdown-preview-view img {
 	cursor: zoom-out;
 
 	padding: 0;
-
 	margin: 0 auto;
 
 	text-align: center;
@@ -2597,10 +2584,11 @@ body:not(.no-alternating-header-italics) .markdown-preview-view h4 {
 }
 
 /* ─────────────────────────────────────────────────── */
-/* <<< Pseudo-Admonitions (only for one-liners) */
+/* <<< Pseudo-Admonitions */
 /* ─────────────────────────────────────────────────── */
 /* For H6 only (without following blocks or line breaks).
-Based on some CSS from @SlRvb, @gee & @Eleanor Konik */
+Based on some CSS from @SlRvb, @gee & @Eleanor Konik.
+Pseudo-Admonitions work on one-liners only */
 
 .cm-header-6,
 .markdown-preview-view h6 {
@@ -2646,7 +2634,6 @@ Based on some CSS from @SlRvb, @gee & @Eleanor Konik */
 	padding-top: 0.5em;
 	padding-bottom: 0.6em;
 	padding-left: 1em !important;
-
 	margin-bottom: 0;
 
 	border-top: 1px solid var(--background-modifier-border);
@@ -2719,7 +2706,6 @@ body > .app-container .markdown-preview-view blockquote {
 	background-color: var(--background-primary-alt);
 
 	padding: 0.3em 0.7em 0.4em;
-
 	margin: 1.5em 0 1.5em 2em;
 
 	border: 2px solid var(--background-modifier-border);
@@ -2842,9 +2828,6 @@ body:not(.no-alternating-rows) .markdown-preview-view tr:nth-child(even) {
 body.no-alternating-rows > .app-container table > tbody > tr > td {
 	border-top: var(--table-border);
 }
-
-
-
 
 /* ─────────────────────────────────────────────────── */
 /* << Code Blocks & Inline Code */
@@ -2979,9 +2962,9 @@ button.copy-code-button::before {
 }
 
 .CodeMirror-line .cm-hmd-list-indent::before {
+	display: block;
 	content: "";
 
-	display: block;
 	width: 100%;
 
 	position: absolute;
@@ -3075,6 +3058,7 @@ body > .app-container table > tbody > tr > td .external-link,
 
 .external-link::before {
 	display: inline-block;
+
 	height: 1em;
 	width: 1em;
 
@@ -3332,7 +3316,6 @@ input[type="checkbox"] {
 	filter: unset !important; /* removes hue filter */
 
 	padding: 1px;
-
 	margin-top: 2px;
 
 	border: 2px solid var(--text-muted);
@@ -3498,6 +3481,7 @@ span.cm-link.cm-hmd-footnote {
 .markdown-preview-view a.footnote-link {
 	text-decoration: none;
 }
+
 /* ─────────────────────────────────────────────────── */
 /* << Horizontal line (hr) */
 /* ─────────────────────────────────────────────────── */
@@ -3513,7 +3497,6 @@ body > .app-container .markdown-preview-view div hr {
 	border-top: none;
 	border-bottom: 3px solid var(--hr-line);
 }
-
 
 /* ─────────────────────────────────────────────────── */
 /* < Mobile */
@@ -3566,7 +3549,6 @@ body.is-mobile .markdown-preview-view blockquote {
 	border-radius: var(--roundish);
 
 	line-height: 1.3em;
-
 	white-space: normal;
 }
 
@@ -4016,7 +3998,6 @@ body.is-mobile .markdown-preview-view blockquote {
 
 	padding-right: 1em;
 	padding-left: 0;
-
 	margin-bottom: 0.4em;
 
 	line-height: 1.4em;
@@ -4392,7 +4373,7 @@ https://forum.obsidian.md/t/inline-code-occludes-text-selection-and-vim-cursor/1
 	background-color: rgb(0 0 0 / 0.5%) !important;
 }
 
-/* < Improve Templater Syntax Readability */
+/* Improve Templater Syntax Readability */
 .cm-s-obsidian .cm-templater-command.cm-def {
 	font-weight: 600 !important;
 }
@@ -4649,7 +4630,6 @@ body.angular-shapes .kanban-plugin__lane {
 	padding-left: 2px !important;
 
 	line-height: 1.25em !important;
-
 	white-space: normal !important;
 }
 
@@ -4735,7 +4715,6 @@ body.angular-shapes .kanban-plugin__lane {
 	background-color: var(--background-primary) !important;
 
 	padding: 5px 15px 6px;
-
 	margin-right: 4px !important;
 
 	border: 2px solid var(--text-faint) !important;
@@ -4780,7 +4759,6 @@ body.angular-shapes .kanban-plugin__lane {
 	background-color: var(--background-secondary-alt);
 
 	padding: 5px 0 5px 1px;
-
 	margin-top: 0;
 	margin-bottom: 0;
 
@@ -5231,7 +5209,6 @@ div.BC-trail {
 
 	padding-right: 10px;
 	padding-left: 10px;
-
 	margin-bottom: 1em !important;
 
 	border: var(--basic-border);
@@ -5357,7 +5334,6 @@ pre button.copy {
 	background-color: var(--background-secondary-alt);
 
 	padding: 6px 6px 4px 8px;
-
 	margin: 0;
 
 	border: 2px solid var(--background-primary);
@@ -5456,7 +5432,6 @@ pre button.copy:hover::before {
 
 .ObsidianHistoryBlock div select.selectYear {
 	padding: 4px;
-
 	margin-top: 0 !important;
 	margin-left: 0 !important;
 

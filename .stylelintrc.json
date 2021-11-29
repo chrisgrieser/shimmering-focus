@@ -3,7 +3,7 @@
 
 	"plugins": [
 		"stylelint-order",
-		"stylelint-declaration-block-no-ignored-properties",
+		"stylelint-declaration-block-no-ignored-properties"
 	],
 
 	"rules": {
