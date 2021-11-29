@@ -1,6 +1,6 @@
 /* ──────────────────────────────────────────────────────
 SHIMMERING FOCUS
-Version 1.177
+Version 1.178
 https://github.com/chrisgrieser/shimmering-focus/
 Created by @pseudometa
 MIT License
@@ -306,7 +306,7 @@ This ToC is auto-generated via the .create-ToC.sh
 	--menu-font-family: "iA Writer Quattro V";
 	--menu-font-size: 1em;
 
-	--status-bar-font-size: 1em;
+	--status-bar-font-size: 0.95em;
 	--mobile-font-size: 1.2rem;
 	--smallcap-font: "AlegreyaSansSC";
 	--setting-heading: "AlegreyaSansSC";
@@ -740,8 +740,7 @@ https://github.com/chetachiezikeuzor/Yin-and-Yang-Theme */
 .status-bar-item,
 .status-bar::after {
 	color: var(--extra-contrast);
-	padding: 0 0 0 1em;
-	font-size: 1em;
+	padding: 0 0 0 12px;
 }
 
 .status-bar-item:first-child {
@@ -753,8 +752,8 @@ https://github.com/chetachiezikeuzor/Yin-and-Yang-Theme */
 }
 
 .status-bar.default-statusbar {
-	padding-right: 0.4em;
-	padding-left: 0.4em;
+	padding-right: 7px;
+	padding-left: 7px;
 }
 
 .status-bar-item.mod-clickable:hover,
@@ -769,12 +768,12 @@ body:not(.default-statusbar) .status-bar {
 	right: 0;
 	bottom: 0;
 
-	padding: 0.5em 0.8em;
+	padding: 8px 14px;
 
 	border: 1px solid var(--background-modifier-border) !important;
 	border-top-left-radius: var(--roundish);
 
-	line-height: 1.2;
+	line-height: 1;
 }
 
 /* only show on hover */
@@ -1393,12 +1392,12 @@ body .workspace-leaf-resize-handle:active {
 /* ─────────────────────────────────────────────────── */
 /* modals partially apply to settings/plugin browser as well */
 
-.modal-content h1,
-.modal-content h2,
-.modal-content h3,
-.modal-content h4,
-.modal-content h5 {
-	margin-top: 0.5em;
+.modal h1,
+.modal h2,
+.modal h3,
+.modal h4,
+.modal h5 {
+	margin-top: 5px;
 }
 
 .modal-content h1 { font-size: var(--h1-size); }
@@ -5627,7 +5626,7 @@ settings:
   -
 	 id: aesthetics
 	 title: Aesthetics
-	 description: Shapes, Color Schemes (coming soon), Cursor & Decoration
+	 description: Shapes, Color Schemes (coming soon), Cursor, & Decoration
 	 type: heading
 	 level: 2
 	 collapsed: true
@@ -5635,7 +5634,7 @@ settings:
 	 id: angular-shapes
 	 title: Angular Shapes
 	 type: class-toggle
-	 description: Enable to use angular shapes (🟪). Disable to use rounded shapes (🟣).
+	 description: Enable to use angular shapes (🔲). Disable to use rounded shapes (🔘).
 	 default: false
   -
 	 id: block-cursor
@@ -5652,7 +5651,7 @@ settings:
   -
 	 id: quotation-mark-deco
 	 title: Decorative Quotation Mark
-	 description: Show a decorative Quotation Mark next to Blockquotes in Preview Mode (not Live Preview).
+	 description: Show a decorative Quotation Mark next to Blockquotes in Preview Mode (no Live Preview yet).
 	 type: class-toggle
 	 hub: ignore
 	 default: false
@@ -5741,7 +5740,7 @@ settings:
 	 id: status-bar-font-size
 	 title: Status Bar Font Size
 	 type: variable-number-slider
-	 default: 1
+	 default: 0.95
 	 min: 0.7
 	 max: 2.0
 	 step: 0.05
@@ -5820,7 +5819,7 @@ settings:
   -
 	 id: content-settings
 	 title: Content Settings
-	 description: Images, PDFs, Tables, Line Length, & Max View
+	 description: Max View, Images, PDFs, Tables, & Line Length
 	 type: heading
 	 level: 2
 	 collapsed: true
