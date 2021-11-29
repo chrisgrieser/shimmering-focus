@@ -1,4 +1,4 @@
-- 2021-11-29	minor
+- 2021-11-29	add modal padding
 - 2021-11-29	stylelinting tweaks
 - 2021-11-29	Section Reordnering & ToC (in the css file)
 - 2021-11-29	used stylelint-order and refined some stylelint rules
