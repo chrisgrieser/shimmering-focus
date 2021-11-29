@@ -1,6 +1,6 @@
 /* ──────────────────────────────────────────────────────
 SHIMMERING FOCUS
-Version 1.174
+Version 1.175
 https://github.com/chrisgrieser/shimmering-focus/
 Created by @pseudometa
 MIT License
@@ -45,7 +45,7 @@ This ToC is auto-generated via the .create-ToC.sh
 	- Input & Textarea
 		- Dropdown
 		- Slider
-	- Document Search & Replace (cmd + F)
+	- Search & Replace (cmd + F)
 	- Context Menus
 	- Editor Suggestions
 	- Close Buttons
@@ -936,7 +936,7 @@ input.slider {
 }
 
 /* ─────────────────────────────────────────────────── */
-/* << Document Search & Replace (cmd + F) */
+/* << Search & Replace (cmd + F) */
 /* ─────────────────────────────────────────────────── */
 
 /* move up to avoid collision with statusbar */
