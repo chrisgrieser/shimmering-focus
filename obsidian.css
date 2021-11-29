@@ -1,6 +1,6 @@
 /* ──────────────────────────────────────────────────────
 SHIMMERING FOCUS
-Version 1.176
+Version 1.177
 https://github.com/chrisgrieser/shimmering-focus/
 Created by @pseudometa
 MIT License
@@ -1393,30 +1393,19 @@ body .workspace-leaf-resize-handle:active {
 /* ─────────────────────────────────────────────────── */
 /* modals partially apply to settings/plugin browser as well */
 
-.modal-content h1 {
-	margin-top: 0.5em;
-	font-size: var(--h1-size);
-}
-
-.modal-content h2 {
-	margin-top: 0.5em;
-	font-size: var(--h2-size);
-}
-
-.modal-content h3 {
-	margin-top: 0.5em;
-	font-size: var(--h3-size);
-}
-
-.modal-content h4 {
-	margin-top: 0.5em;
-	font-size: var(--h4-size);
-}
-
+.modal-content h1,
+.modal-content h2,
+.modal-content h3,
+.modal-content h4,
 .modal-content h5 {
 	margin-top: 0.5em;
-	font-size: var(--h5-size);
 }
+
+.modal-content h1 { font-size: var(--h1-size); }
+.modal-content h2 { font-size: var(--h2-size); }
+.modal-content h3 { font-size: var(--h3-size); }
+.modal-content h4 { font-size: var(--h4-size); }
+.modal-content h5 { font-size: var(--h5-size); }
 
 .modal-content li {
 	font-size: 1.1em;
@@ -1468,10 +1457,20 @@ body .workspace-leaf-resize-handle:active {
 	margin-right: 0;
 }
 
-.modal.mod-settings h2 {
+.modal.mod-settings h1,
+.modal.mod-settings h2,
+.modal.mod-settings h3,
+.modal.mod-settings h4,
+.modal.mod-settings h5,
+.modal.mod-settings h6 {
 	font-family: var(--setting-heading);
-	font-size: 2em;
 }
+
+.modal.mod-settings h1 { font-size: var(--h1-size); }
+.modal.mod-settings h2 { font-size: var(--h2-size); }
+.modal.mod-settings h3 { font-size: var(--h3-size); }
+.modal.mod-settings h4 { font-size: var(--h4-size); }
+.modal.mod-settings h5 { font-size: var(--h5-size); }
 
 .setting-item.setting-item-heading {
 	padding-bottom: 0;
@@ -2051,6 +2050,7 @@ body:not(.less-heading-letter-spacing) .modal.mod-community-theme .modal-title {
 /* ─────────────────────────────────────────────────── */
 /* << Line Numbers (Gutter) */
 /* ─────────────────────────────────────────────────── */
+
 .CodeMirror-linenumbers {
 	padding-top: 2px;
 	padding-right: 2px;
@@ -2059,6 +2059,7 @@ body:not(.less-heading-letter-spacing) .modal.mod-community-theme .modal-title {
 /* ─────────────────────────────────────────────────── */
 /* << Overscroll */
 /* ─────────────────────────────────────────────────── */
+
 body .markdown-preview-view {
 	padding-bottom: 20em;
 	padding-left: 50px;
@@ -5589,9 +5590,9 @@ settings:
 	 default: false
   -
 	 id: default-statusbar
-	 title: Re-enable default Status Bar
+	 title: Default Theme Status Bar
 	 type: class-toggle
-	 description: Use the Status Bar from the default theme, which will be permanently visible.
+	 description: Use the Status Bar from the default theme, which will also be permanently visible.
 	 default: false
   -
 	 id: show-close-button
@@ -5651,7 +5652,7 @@ settings:
   -
 	 id: quotation-mark-deco
 	 title: Decorative Quotation Mark
-	 description: Show a decorative Quotation Mark next to Blockquotes in Preview Mode (not Live Preview yet).
+	 description: Show a decorative Quotation Mark next to Blockquotes in Preview Mode (not Live Preview).
 	 type: class-toggle
 	 hub: ignore
 	 default: false
