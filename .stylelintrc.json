@@ -1,8 +1,150 @@
 {
 	"extends": ["stylelint-config-recommended"],
+
+	"plugins": [
+		"stylelint-order",
+		"stylelint-declaration-block-no-ignored-properties",
+	],
+
 	"rules": {
 		"font-family-no-missing-generic-family-keyword": null,
 		"no-descending-specificity": null,
+
+		"plugin/declaration-block-no-ignored-properties": true,
+		"order/order": [["declarations", "custom-properties"], {"severity": "warning"}],
+
+		"order/properties-order": [
+			[
+				{
+					"groupName": "Content",
+					"emptyLineBefore": "threshold",
+					"noEmptyLineBetween": true,
+					"properties": [
+						"display",
+						"content"
+					]
+				},
+				{
+					"groupName": "Size",
+					"emptyLineBefore": "threshold",
+					"noEmptyLineBetween": true,
+					"properties": [
+						"display",
+						"height",
+						"max-height",
+						"min-height",
+						"width",
+						"max-width",
+						"min-width"
+					]
+				},
+				{
+					"groupName": "Position",
+					"emptyLineBefore": "threshold",
+					"noEmptyLineBetween": true,
+					"properties": [
+						"position",
+						"top",
+						"right",
+						"bottom",
+						"left"
+					]
+				},
+				{
+					"groupName": "Color",
+					"emptyLineBefore": "threshold",
+					"noEmptyLineBetween": true,
+					"properties": [
+						"color",
+						"fill",
+						"stroke-width",
+						"background",
+						"background-color",
+						"background-image",
+						"opacity"
+					]
+				},
+				{
+					"groupName": "Special",
+					"emptyLineBefore": "threshold",
+					"noEmptyLineBetween": true,
+					"properties": [
+						"transform",
+						"transition",
+						"transition-duration",
+						"filter",
+						"cursor"
+					]
+				},
+				{
+					"groupName": "Padding",
+					"emptyLineBefore": "threshold",
+					"noEmptyLineBetween": true,
+					"properties": [
+						"padding",
+						"padding-top",
+						"padding-right",
+						"padding-bottom",
+						"padding-left"
+					]
+				},
+				{
+					"groupName": "Margin",
+					"emptyLineBefore": "threshold",
+					"noEmptyLineBetween": true,
+					"properties": [
+						"margin",
+						"margin-top",
+						"margin-right",
+						"margin-bottom",
+						"margin-left"
+					]
+				},
+				{
+					"groupName": "Border",
+					"emptyLineBefore": "threshold",
+					"noEmptyLineBetween": true,
+					"properties": [
+						"border",
+						"border-width",
+						"border-style",
+						"border-color",
+						"border-top",
+						"border-right",
+						"border-bottom",
+						"border-left",
+						"border-radius",
+						"border-top-right-radius",
+						"border-bottom-right-radius",
+						"border-bottom-left-radius",
+						"border-top-left-radius"
+					]
+				},
+				{
+					"groupName": "Font & Text",
+					"emptyLineBefore": "threshold",
+					"noEmptyLineBetween": true,
+					"properties": [
+						"font-family",
+						"font-size",
+						"font-weight",
+						"text-rendering",
+						"font-style",
+						"line-height",
+						"letter-spacing",
+						"text-decoration",
+						"text-transform",
+						"text-align"
+					]
+				}
+			],
+			{
+				"emptyLineBeforeUnspecified": "threshold",
+				"unspecified": "bottom",
+				"emptyLineMinimumPropertyThreshold": 5,
+				"severity": "warning"
+			}
+		],
 
 		"indentation": ["tab", {"severity": "warning"}],
 		"max-line-length":  [200, {"severity": "warning"}],
@@ -16,27 +158,25 @@
 		"no-empty-first-line": [true, {"severity": "warning"}],
 		"no-missing-end-of-source-newline": [true, {"severity": "warning"}],
 		"max-empty-lines": [1, {"severity": "warning"} ],
-		"at-rule-empty-line-before": ["always",{
-			"except": ["blockless-after-same-name-blockless", "first-nested"],
-			"ignore": ["after-comment"],
-			"severity": "warning"
-		}],
 		"rule-empty-line-before": ["always-multi-line", {
 			"ignore": ["after-comment"],
 			"severity": "warning"
 		}],
-		"declaration-empty-line-before": [ "always",{
-			"except": ["after-declaration", "first-nested"],
-			"ignore": ["after-comment", "inside-single-line-block"],
+		"comment-empty-line-before": ["always",{
+			"except": ["first-nested"],
+			"ignore": ["after-comment", "stylelint-commands"],
+			"ignoreComments": ["/: .*;/"],
 			"severity": "warning"
 		}],
 
 		"length-zero-no-unit": [true, {"severity": "warning"}],
 		"number-leading-zero": ["always", {"severity": "warning"} ],
 		"number-max-precision": [2, {"ignoreProperties": ["letter-spacing"] }],
+		"time-min-milliseconds": [200, {"severity": "warning"}],
 
 		"shorthand-property-no-redundant-values": [true, {"severity": "warning"} ],
 		"declaration-block-no-redundant-longhand-properties": true,
+		"declaration-block-no-shorthand-property-overrides": true,
 
 		"color-hex-case": ["upper", {"severity": "warning"} ],
 		"property-case": ["lower", {"severity": "warning"} ],
