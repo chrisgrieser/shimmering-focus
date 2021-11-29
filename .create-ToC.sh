@@ -1,2 +1,2 @@
 #!/bin/zsh
-grep "< " obsidian.css | cut -c6- | sed -e "s/ \*\///" | tr "\n" "\0" | xargs -0 -I § echo "- §" | tail -n +2 | pbcopy
+grep -E " <+ " obsidian.css | cut -c4- | sed -e "s/ \*\///" -e "s/<<< /\t\t- /" -e "s/<< /\t- /" -e "s/< /- /" | tail -n +2 | pbcopy

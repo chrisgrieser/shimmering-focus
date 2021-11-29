@@ -16,7 +16,7 @@
 		"order/properties-order": [
 			[
 				{
-					"groupName": "Content",
+					"groupName": "Content & Display",
 					"emptyLineBefore": "threshold",
 					"noEmptyLineBetween": true,
 					"properties": [
@@ -29,7 +29,6 @@
 					"emptyLineBefore": "threshold",
 					"noEmptyLineBetween": true,
 					"properties": [
-						"display",
 						"height",
 						"max-height",
 						"min-height",
@@ -77,7 +76,7 @@
 					]
 				},
 				{
-					"groupName": "Padding",
+					"groupName": "Padding & Margin",
 					"emptyLineBefore": "threshold",
 					"noEmptyLineBetween": true,
 					"properties": [
@@ -85,14 +84,7 @@
 						"padding-top",
 						"padding-right",
 						"padding-bottom",
-						"padding-left"
-					]
-				},
-				{
-					"groupName": "Margin",
-					"emptyLineBefore": "threshold",
-					"noEmptyLineBetween": true,
-					"properties": [
+						"padding-left",
 						"margin",
 						"margin-top",
 						"margin-right",
@@ -117,7 +109,8 @@
 						"border-top-right-radius",
 						"border-bottom-right-radius",
 						"border-bottom-left-radius",
-						"border-top-left-radius"
+						"border-top-left-radius",
+						"border-image"
 					]
 				},
 				{
@@ -134,7 +127,8 @@
 						"letter-spacing",
 						"text-decoration",
 						"text-transform",
-						"text-align"
+						"text-align",
+						"white-space"
 					]
 				}
 			],

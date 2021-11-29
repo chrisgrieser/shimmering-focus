@@ -1,3 +1,4 @@
+- 2021-11-29	Section Reordnering & ToC (in the css file)
 - 2021-11-29	used stylelint-order and refined some stylelint rules
 - 2021-11-28	update readme
 - 2021-11-28	clarified some style settings option descriptions (issue #56)

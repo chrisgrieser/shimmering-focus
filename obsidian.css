@@ -1,6 +1,6 @@
 /* ──────────────────────────────────────────────────────
 SHIMMERING FOCUS
-Version 1.172
+Version 1.173
 https://github.com/chrisgrieser/shimmering-focus/
 Created by @pseudometa
 MIT License
@@ -21,114 +21,131 @@ For help and/or CSS snippets, thanks to:
 /* ─────────────────────────────────────────────────── */
 /* all sections begin with "< ", so you can search for
 "< sectionname" to navigate to the respective section.
+This ToC is auto-generated via the .create-ToC.sh
 
-This ToC is auto-generated via the .generate-ToC.sh */
-
-/*
-- Colors and Variables
+- Colors & Variables
 - Fonts
+	- Base64-encoded Fonts
+	- Font Definitions
+	- Bold
 - Icons
-- Bold
-- Title bar
-- Ribbons
-- Notifications & Tooltips
-- Popover (Page Preview)
-- Hide minor stuff
-- Close Buttons
-- Header Bar
-- Context Menus
-- Editor Suggestions
-- Status Bar
-- Scrollbar
-- Buttons
-- Toggles (Checkboxes)
-- Input & Textarea
-- Dropdown
-- Slider
-- Code Blocks & inline Code
-- Spellcheck
-- Links
-- Tags
-- Comments & HTML Tags
-- to dos (tasks)
-- Modal & Prompt Boxes
-- File Recovery (Core Plugin)
-- Command Palette & QuickSwitcher
-- Cursor
+- Shapes
+	- Angular Shapes
+	- Cursor
+- UI Elements
+	- Title Bar
+	- Ribbons
+	- Notifications & Tooltips
+	- Header Bar
+	- Status Bar
+	- Scrollbar
+- Interactive Elements
+	- Buttons
+	- Toggles (Checkboxes)
+	- Input & Textarea
+		- Dropdown
+		- Slider
+	- Document Search & Replace (cmd + F)
+	- Context Menus
+	- Editor Suggestions
+	- Close Buttons
+- Prompts
+	- Command Palette
+	- QuickSwitcher
 - Sidebar
-- Tab Headers
-- Resize Handles
-- Panes: Search, Backlink, Tags, Starred, & Outline
-- Outline Pane
-- Backlinks & Outgoing Links
-- outgoing and backlink unlinked mentions
-- Search Pane
-- Tag Pane
-- Starred Pane
-- Search matches
-- File explorer
-- Relationship lines
-- Folder icons & Note icons
-- Folders icons
-- File icons
-- Settings menu
-- Community Plugin Browser
-- Community Theme Browser
-- Highlight
-- Selection
-- Multi-Color Highlighting
-- Pseudo-Spoiler-Tag
-- Strikethroughs
-- YAML header & Metadata Block
-- Collapse Indicator (Fold Gutter)
-- Editor Size & Line Numbers
-- Max View
-- Line Length & Tables
-- Images
-- PDFs
-- Mermaid
-- Pandoc Citations & Footnotes
-- Horizontal line (hr)
-- Tables
-- Headings
-- Pseudo-Admonitions (only for one-liners)
-- Annotation Tags
-- Blockquotes
-- Edit Mode
-- Progress bars (<progress>)
-- Document search / replace (cmd + F)
-- Graph view
-- Images
-- Mermaid
-- Bullet point relationship lines
-- PDFs
+	- Tab Headers
+	- Resize Handles
+- Settings & Modals
+	- Modals in general
+	- Settings Menu
+	- Community Plugin Browser
+	- Community Theme Browser
+- Editor
+	- Editor Size
+	- Line Numbers (Gutter)
+	- Overscroll
+	- YAML Header
+		- YAML Frontmatter
+		- Metadata Block
+	- Collapse Indicators (Fold Gutter)
+	- Progress bars (<progress>)
+	- Images
+	- Mermaid
+	- PDFs
+	- Search Matches
+	- Spellcheck
+	- Max View
+		- Line Length & Tables
+		- Images
+		- PDFs
+		- Mermaid
+- Markup
+	- Headings
+		- Pseudo-Admonitions (only for one-liners)
+	- Blockquotes
+	- Tables
+	- Code Blocks & Inline Code
+	- Bullet point relationship lines
+	- Links
+	- Tags
+	- Annotation Tags
+	- Comments & HTML Tags
+	- Tasks
+	- Highlights & Selection
+	- Multi-Color Highlighting
+	- Pseudo-Spoiler-Tag
+	- Strikethroughs
+	- Pandoc Citations
+	- Footnotes
+	- Horizontal line (hr)
 - Mobile
-- Calendar Plugin
+- Core Plugins
+	- File Explorer
+	- Relationship Lines
+	- Folder Icons & Note Icons
+	- Panes
+		- Panes in general
+		- Outline
+		- Backlinks & Outgoing
+		- Search
+		- Tag Pane
+		- Starred
+	- Popover (Page Preview)
+	- File Recovery
+	- Graph View
+- Community Plugins
+	- Calendar
+	- Templater
 - Improve Templater Syntax Readability
-- Kanban Plugin
-- Longform Plugin
-- Longform sidebar
-- Longform Sidebar Icons
-- Project Title
-- Longform Editor
-- Longform Icons
-- Ozan's Image Plugin
-- Recent Files
-- Quick Explorer
-- MoC Plugin / Map of Content Plugin
-- Breadcrumbs
-- Drag and Drop Blocks Plugin
-- Dangling Links
-- CodeMirror Options
-- Activity History
-- Other Minor Plugin Customizations
-- Plugin Compatibility info for the Obsidian Hub
-- Compatibility
-- Style Settings Options
+	- Kanban
+	- Longform
+		- Longform Sidebar
+		- Longform Sidebar Icons
+		- Longform Editor
+		- Longform Icons
+	- Ozan's Image in Editor
+	- Recent Files
+	- Quick Explorer
+	- My Snippets
+	- Map of Content (MoC)
+	- Breadcrumbs
+	- Drag & Drop Blocks
+	- Dangling Links
+	- Advanced Cursor
+	- CodeMirror Options
+	- Another Quick Switcher
+	- Activity History
+	- Style Settings (the Settings Tab)
+	- Other Minor Plugin Customizations
+		- Zoom Plugin
+		- Advanced Tables
+- Plugin Compatibility Info for the Obsidian Hub
+- Style Setting Options
+
 
  */
 /* ─────────────────────────────────────────────────── */
-/* < Colors and Variables */
+/* < Colors & Variables */
 /* ─────────────────────────────────────────────────── */
 
 :root {
@@ -213,7 +230,7 @@ This ToC is auto-generated via the .generate-ToC.sh */
 /* ─────────────────────────────────────────────────── */
 /* < Fonts */
 /* ─────────────────────────────────────────────────── */
-
+/* << Base64-encoded Fonts */
 @font-face {
 	font-family: "iA Writer Quattro V";
 	font-style: normal;
@@ -272,6 +289,8 @@ This ToC is auto-generated via the .generate-ToC.sh */
 		format("TrueType");
 	font-display: swap;
 }
+
+/* << Font Definitions */
 
 :root { /* stylelint-disable-line no-duplicate-selectors */
 	--default-font: "iA Writer Quattro V";
@@ -384,6 +403,20 @@ body,
 	--mermaid-font: "Inter", -apple-system, "BlinkMacSystemFont", "Segoe UI", "Roboto", "Helvetica", "Arial", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Microsoft YaHei Light", sans-serif; /* stylelint-disable-line max-line-length */
 }
 
+/* << Bold */
+.theme-dark .cm-strong,
+.theme-dark .markdown-preview-view strong {
+	color: var(--bold-in-darkmode);
+}
+
+.suggestion-highlight,
+.cm-strong,
+.markdown-preview-view strong,
+.nav-file-title.is-active {
+	font-weight: 700;
+	text-rendering: geometricPrecision;
+}
+
 /* ─────────────────────────────────────────────────── */
 /* < Icons */
 /* ─────────────────────────────────────────────────── */
@@ -406,25 +439,15 @@ svg.BC-trail-icon > path {
 
 svg.BC-trail-icon {
 	background-color: currentColor;
-	-webkit-mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' aria-hidden='true' role='img' width='1.1em' height='1.1em' preserveAspectRatio='xMidYMid meet' viewBox='0 0 16 17'%3E%3Cpath d='M12.942 9.189a8.683 8.683 0 0 1 1.173-.666a19.145 19.145 0 0 0-1.561-1.973a9.09 9.09 0 0 0-2.564.557c-1.673.643-2.354-.227-.771-1.311a8.358 8.358 0 0 1 1.685-.879a20.943 20.943 0 0 0-2.243-1.752a9.058 9.058 0 0 0-2.395.548c-1.671.642-2.354-.228-.769-1.311c.291-.199.598-.371.911-.532C3.859.668 1.6.515.523 1.697c-1.719 1.884 1.365 5.196 5.479 8.944c4.111 3.748 7.691 6.514 9.412 4.629c.973-1.068.767-3.001-.339-5.158c-.467.1-.925.219-1.362.388c-1.674.643-2.356-.226-.771-1.311z' fill='currentColor' fill-rule='evenodd'/%3E%3C/svg%3E");
-}
-
-/* < Bold */
-.theme-dark .cm-strong,
-.theme-dark .markdown-preview-view strong {
-	color: var(--bold-in-darkmode);
-}
-
-.suggestion-highlight,
-.cm-strong,
-.markdown-preview-view strong,
-.nav-file-title.is-active {
-	font-weight: 700;
-	text-rendering: geometricPrecision;
+	-webkit-mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' aria-hidden='true' role='img' width='1.1em' height='1.05em' preserveAspectRatio='xMidYMid meet' viewBox='0 0 16 17'%3E%3Cpath d='M12.942 9.189a8.683 8.683 0 0 1 1.173-.666a19.145 19.145 0 0 0-1.561-1.973a9.09 9.09 0 0 0-2.564.557c-1.673.643-2.354-.227-.771-1.311a8.358 8.358 0 0 1 1.685-.879a20.943 20.943 0 0 0-2.243-1.752a9.058 9.058 0 0 0-2.395.548c-1.671.642-2.354-.228-.769-1.311c.291-.199.598-.371.911-.532C3.859.668 1.6.515.523 1.697c-1.719 1.884 1.365 5.196 5.479 8.944c4.111 3.748 7.691 6.514 9.412 4.629c.973-1.068.767-3.001-.339-5.158c-.467.1-.925.219-1.362.388c-1.674.643-2.356-.226-.771-1.311z' fill='currentColor' fill-rule='evenodd'/%3E%3C/svg%3E");
 }
 
 /* ─────────────────────────────────────────────────── */
 /* < Shapes */
+/* ─────────────────────────────────────────────────── */
+
+/* ─────────────────────────────────────────────────── */
+/* << Angular Shapes */
 /* ─────────────────────────────────────────────────── */
 
 body:not(.angular-shapes) {
@@ -438,7 +461,32 @@ body.angular-shapes {
 }
 
 /* ─────────────────────────────────────────────────── */
-/* < Title bar */
+/* << Cursor */
+/* ─────────────────────────────────────────────────── */
+
+.CodeMirror-cursor {
+	border-left-width: 3px;
+
+	/* needs the "1" at the end:  https://www.digitalocean.com/community/tutorials/css-gradient-borders-pure-css */
+	border-image: linear-gradient(var(--cursor-duo-color-1), var(--cursor-duo-color-2)) 1;
+}
+
+body.mono-color-cursor .CodeMirror-cursor {
+	border-color: var(--cursor-monocolor);
+	border-image: none;
+}
+
+body.block-cursor .CodeMirror-cursor {
+	opacity: 0.5;
+	border-left-width: 0.6em;
+}
+
+/* ─────────────────────────────────────────────────── */
+/* < UI Elements */
+/* ─────────────────────────────────────────────────── */
+
+/* ─────────────────────────────────────────────────── */
+/* << Title Bar */
 /* ─────────────────────────────────────────────────── */
 /* display only when set in style settings */
 body:not(.show-titlebar) .titlebar {
@@ -516,7 +564,7 @@ body > div.app-container > div.horizontal-main-container > div > div.workspace-s
 }
 
 /* ─────────────────────────────────────────────────── */
-/* < Ribbons */
+/* << Ribbons */
 /* ─────────────────────────────────────────────────── */
 /* hide ribbons, when the setting is chosen */
 body:not(.show-ribbons) .workspace-ribbon {
@@ -544,7 +592,7 @@ body:not(.show-ribbons) .workspace-ribbon {
 }
 
 /* ─────────────────────────────────────────────────── */
-/* < Notifications & Tooltips */
+/* << Notifications & Tooltips */
 /* ─────────────────────────────────────────────────── */
 
 .tooltip {
@@ -587,121 +635,7 @@ body:not(.show-ribbons) .workspace-ribbon {
 }
 
 /* ─────────────────────────────────────────────────── */
-/* < Popover (Page Preview) */
-/* ─────────────────────────────────────────────────── */
-.popover {
-	height: var(--popover-size) !important;
-	max-height: unset !important;
-	width: var(--popover-size) !important;
-
-	border: 5px solid var(--background-secondary) !important;
-	border-radius: calc(var(--roundish) * 2);
-}
-
-.popover .markdown-embed {
-	height: 100% !important;
-}
-
-.popover .markdown-embed-link svg {
-	stroke-width: 2px;
-}
-
-.popover .markdown-embed-link {
-	top: 4px;
-	right: 4px;
-
-	color: var(--extra-contrast);
-
-	padding: 2px;
-
-	border-radius: var(--roundish);
-}
-
-.popover .markdown-embed-link:hover {
-	color: var(--alt-accent);
-}
-
-/* ─────────────────────────────────────────────────── */
-/* < Hide minor stuff */
-/* ─────────────────────────────────────────────────── */
-
-/* hide vault title */
-.nav-folder.mod-root > .nav-folder-title {
-	display: none;
-}
-
-/* hide empty pane info */
-.empty-state-action {
-	display: none;
-}
-
-/* ─────────────────────────────────────────────────── */
-/* < Close Buttons */
-/* ─────────────────────────────────────────────────── */
-
-div.search-input-clear-button::before,
-.empty-state-close-button,
-.modal-close-button {
-	color: var(--text-muted);
-	background-color: var(--background-secondary-alt);
-}
-
-div.search-input-clear-button::before {
-	background-color: transparent;
-}
-
-.document-search-close-button:hover,
-div.search-input-clear-button:hover::before,
-.empty-state-close-button:hover,
-.modal-close-button:hover {
-	color: var(--alt-accent);
-}
-
-.empty-state-close-button {
-	height: 25px;
-	top: 10px;
-	padding: 2px;
-	border-radius: var(--roundish);
-}
-
-.empty-state-close-button svg {
-	stroke-width: 2px;
-}
-
-.empty-state-close-button:hover {
-	color: var(--alt-accent-lighter);
-	background: var(--background-secondary-alt);
-}
-
-.modal-close-button {
-	top: 0;
-	right: 0;
-
-	padding: 2px 6px 6px;
-
-	border-top-right-radius: calc(var(--roundish) * 2.5);
-	border-bottom-left-radius: var(--roundish);
-}
-
-/* only show on hover */
-body:not(.show-close-button) .document-search-close-button,
-body:not(.show-close-button) div.search-input-clear-button,
-body:not(.show-close-button) .empty-state-close-button,
-body:not(.show-close-button) .modal-close-button {
-	opacity: 0;
-	transition: 700ms;
-}
-
-body:not(.show-close-button) .document-search-close-button:hover,
-body:not(.show-close-button) div.search-input-clear-button:hover,
-body:not(.show-close-button) .empty-state-close-button:hover,
-body:not(.show-close-button) .modal-close-button:hover {
-	opacity: 1;
-	transition: 200ms;
-}
-
-/* ─────────────────────────────────────────────────── */
-/* < Header Bar */
+/* << Header Bar */
 /* ─────────────────────────────────────────────────── */
 
 /* harmonize sizes for when titlebar is shown */
@@ -800,77 +734,7 @@ body:not(.is-mobile) .view-header:focus-within {
 }
 
 /* ─────────────────────────────────────────────────── */
-/* < Context Menus */
-/* ─────────────────────────────────────────────────── */
-
-div.menu {
-	border-radius: var(--roundish);
-}
-
-div.menu-item-title {
-	font-size: 0.9em;
-}
-
-div.menu-item {
-	padding: 0 9px;
-}
-
-.menu-item-icon {
-	top: 4px;
-	bottom: 0;
-}
-
-.menu-item.selected,
-.menu-item.selected svg {
-	color: var(--text-accent);
-}
-
-.menu-item svg {
-	color: var(--extra-contrast);
-	transform: scale(0.9);
-}
-
-.menu-item:hover,
-.menu-item:hover svg,
-.menu-item.selected:hover,
-.menu-item.selected:hover svg,
-.menu-item.selected:hover .menu-item-title {
-	color: var(--alt-accent);
-}
-
-.menu-item.selected:hover,
-.menu-item:hover {
-	margin-left: 0;
-	border-left: 3px solid var(--alt-accent);
-}
-
-.menu-item.selected {
-	margin-left: 0;
-	border-left: 3px solid var(--text-accent);
-}
-
-.menu-item {
-	margin-left: 3px;
-}
-
-.menu-item:hover .menu-item-title {
-	color: var(--alt-accent);
-}
-
-.menu-item.selected .menu-item-title {
-	color: var(--text-accent);
-}
-
-/* ─────────────────────────────────────────────────── */
-/* < Editor Suggestions */
-/* ─────────────────────────────────────────────────── */
-
-body:not(.app-container) .suggestion-container {
-	border-radius: var(--roundish);
-}
-
-/* ─────────────────────────────────────────────────── */
-/* < Status Bar */
+/* << Status Bar */
 /* ─────────────────────────────────────────────────── */
 /* based on some CSS snippets from @Chetachi's Yin-and-Yang Theme
 https://github.com/chetachiezikeuzor/Yin-and-Yang-Theme */
@@ -932,7 +796,7 @@ body:not(.default-statusbar) .mod-right-split .workspace-leaf-content {
 }
 
 /* ─────────────────────────────────────────────────── */
-/* < Scrollbar */
+/* << Scrollbar */
 /* ─────────────────────────────────────────────────── */
 
 /* hide all scrollbars except the one for the editor */
@@ -959,7 +823,11 @@ body:not(.show-scrollbar) ::-webkit-scrollbar {
 }
 
 /* ─────────────────────────────────────────────────── */
-/* < Buttons */
+/* < Interactive Elements */
+/* ─────────────────────────────────────────────────── */
+
+/* ─────────────────────────────────────────────────── */
+/* << Buttons */
 /* ─────────────────────────────────────────────────── */
 
 button {
@@ -979,7 +847,7 @@ button:hover {
 }
 
 /* ─────────────────────────────────────────────────── */
-/* < Toggles (Checkboxes) */
+/* << Toggles (Checkboxes) */
 /* ─────────────────────────────────────────────────── */
 
 .checkbox-container {
@@ -1030,9 +898,7 @@ body:not(.normal-checkboxes) .checkbox-container::after {
 }
 
 /* ─────────────────────────────────────────────────── */
-/* < Input & Textarea */
-/* < Dropdown */
-/* < Slider */
+/* << Input & Textarea */
 /* ─────────────────────────────────────────────────── */
 
 .search-input-container input,
@@ -1049,9 +915,9 @@ input[type="text"] {
 	width: 250px;
 }
 
-select.dropdown {
-	padding: 5px 28px 6px 10px;
-	border-radius: var(--round);
+textarea:focus,
+input:focus {
+	border-color: var(--accent-lighter);
 }
 
 select.dropdown:hover,
@@ -1060,487 +926,256 @@ input:hover {
 	border-color: var(--alt-accent-lighter);
 }
 
-textarea:focus,
-input:focus {
-	border-color: var(--accent-lighter);
+/* <<< Dropdown */
+select.dropdown {
+	padding: 5px 28px 6px 10px;
+	border-radius: var(--round);
 }
 
-/* wider sliders */
+/* <<< Slider */
 input.slider {
 	width: 150px;
 }
 
 /* ─────────────────────────────────────────────────── */
-/* < Code Blocks & Inline Code */
+/* << Document Search & Replace (cmd + F) */
 /* ─────────────────────────────────────────────────── */
-.cm-s-obsidian .HyperMD-codeblock,
-.markdown-preview-view code,
-.cm-s-obsidian span.cm-inline-code,
-.theme-dark .cm-s-obsidian .HyperMD-codeblock {
-	color: var(--code-color) !important;
-	font-size: var(--monospace-font-size);
-}
 
-/* wrapping, preserving line breaks */
-.markdown-preview-view code {
-	white-space: pre-wrap !important;
-}
+/* move up to avoid collision with statusbar */
+.document-search-container {
+	height: 3.6em;
+	width: 95%;
 
-/* Code blocks Preview Mode */
-.markdown-preview-view pre {
-	background-color: var(--background-secondary) !important;
-	padding-top: 10px !important;
-	padding-bottom: 12px !important;
-	border-radius: calc(var(--roundish) * 2) !important;
-}
+	bottom: 2.5em;
+	left: 2.5%;
 
-/* code blocks Edit Mode */
-body > .app-container .HyperMD-codeblock-begin-bg {
-	background-color: var(--background-secondary);
-	border-top-right-radius: calc(var(--roundish) * 2);
-	border-top-left-radius: calc(var(--roundish) * 2);
-}
-
-body > .app-container .HyperMD-codeblock-end-bg {
-	border-bottom-right-radius: calc(var(--roundish) * 2);
-	border-bottom-left-radius: calc(var(--roundish) * 2);
-}
-
-/* show language of Code Block in Preview Mode */
-/* snippet by @Chetachi */
-pre {
-	position: relative;
-}
-
-pre[class*="language-"]::after {
-	content: attr(class);
-
-	position: absolute;
-	right: 8px;
-	bottom: 3px;
-
-	color: var(--text-muted);
-
-	font-family: var(--font-monospace);
-	font-size: 0.8em;
-}
-
-pre[class~="language-c"]::after { content: "C"; }
-pre[class~="language-python"]::after { content: "Python"; }
-pre[class~="language-nginx"]::after { content: "Nginx"; }
-pre[class~="language-css"]::after { content: "CSS"; }
-pre[class~="language-node"]::after { content: "Node"; }
-pre[class~="language-react"]::after { content: "React"; }
-pre[class~="language-javascript"]::after { content: "JavaScript"; }
-pre[class~="language-js"]::after { content: "JavaScript"; }
-pre[class~="language-typescript"]::after { content: "TypeScript"; }
-pre[class~="language-ts"]::after { content: "TypeScript"; }
-pre[class~="language-php"]::after { content: "PHP"; }
-pre[class~="language-shell"]::after { content: "Shell"; }
-pre[class~="language-bash"]::after { content: "Bash"; }
-pre[class~="language-zsh"]::after { content: "zsh"; }
-pre[class~="language-flow"]::after { content: "Flow"; }
-pre[class~="language-sequence"]::after { content: "Sequence"; }
-pre[class~="language-sql"]::after { content: "SQL"; }
-pre[class~="language-yaml"]::after { content: "YAML"; }
-pre[class~="language-ini"]::after { content: "INI"; }
-pre[class~="language-xml"]::after { content: "XML"; }
-pre[class~="language-git"]::after { content: "GIT"; }
-pre[class~="language-cs"]::after { content: "C#"; }
-pre[class~="language-cpp"]::after { content: "C++"; }
-pre[class~="language-java"]::after { content: "JAVA"; }
-pre[class~="language-html"]::after { content: "HTML"; }
-pre[class~="language-txt"]::after { content: "text"; }
-pre[class~="language-text"]::after { content: "text"; }
-pre[class~="language-url"]::after { content: "url"; }
-pre[class~="language-uri"]::after { content: "uri"; }
-
-/* fix for the buggy selection fo inline text
-https://forum.obsidian.md/t/inline-code-occludes-text-selection-and-vim-cursor/11552/10 */
-.theme-dark .cm-inline-code {
-	background-color: rgb(0 0 0 / 20%) !important;
-}
-
-.theme-light .cm-inline-code {
-	background-color: rgb(0 0 0 / 5%) !important;
-}
-
-/* copy code button */
-button.copy-code-button {
-	color: var(--extra-contrast);
 	background-color: var(--background-secondary-alt);
 
-	padding-right: 3px !important;
-	padding-bottom: 2px;
-	padding-left: 9px !important;
-
-	border: 2px solid var(--background-primary);
-	border-radius: var(--roundish);
-
-	font-size: 0;
-}
-
-button.copy-code-button::before {
-	content: "content_copy ";
-	font-family: "Material Icons";
-	font-size: 0.8rem;
-}
-
-/* ─────────────────────────────────────────────────── */
-/* < Spellcheck */
-/* ─────────────────────────────────────────────────── */
-
-body:not(.classic-spellcheck-styling) .CodeMirror .cm-spell-error {
-	background-image: none;
-	text-decoration: underline solid var(--spell-error-color);
-	text-decoration-thickness: 2px;
-}
-
-body.no-yaml-spellcheck .cm-hmd-frontmatter.cm-overlay.cm-spell-error {
-	background-image: none;
-	text-decoration: none;
-}
-
-body.no-blockquote-spellcheck .cm-quote-1.cm-overlay.cm-spell-error {
-	background-image: none;
-	text-decoration: none;
-}
-
-body.no-header-spellcheck .cm-header.cm-overlay.cm-spell-error {
-	background-image: none;
-	text-decoration: none;
-}
-
-body.no-html-spellcheck .cm-tag.cm-overlay.cm-spell-error {
-	background-image: none;
-	text-decoration: none;
-}
-
-body.no-strikethrough-spellcheck .cm-strikethrough.cm-overlay.cm-spell-error {
-	background-image: none;
-	text-decoration: none;
-}
-
-body.no-comment-spellcheck .cm-comment.cm-overlay.cm-spell-error {
-	background-image: none;
-	text-decoration: none;
-}
-
-body.no-barelink-spellcheck .cm-hmd-barelink.cm-overlay.cm-spell-error {
-	background-image: none;
-	text-decoration: none;
-}
-
-/* ─────────────────────────────────────────────────── */
-/* < Links */
-/* ─────────────────────────────────────────────────── */
-/* hovered links in alt accent */
-.cm-string.cm-url:hover:not(.cm-formatting),
-.cm-hmd-internal-link:hover,
-.internal-link:hover,
-.modal-content a:hover,
-.markdown-preview-view a.footnote-link:hover,
-.markdown-preview-view a.internal-link:hover,
-.markdown-preview-view a.external-link:hover,
-a:hover {
-	color: var(--alt-accent) !important;
-	cursor: pointer;
-}
-
-/* unresolved links */
-a.internal-link.is-unresolved {
-	color: var(--unresolved-link-color);
-	opacity: var(--unresolved-opacity) !important;
-}
-
-a.internal-link.is-unresolved:hover {
-	color: var(--alt-accent);
-	opacity: 0.8 !important;
-}
-
-/* dont underline the brackets */
-.cm-url.cm-formatting {
-	text-decoration: none !important;
-}
-
-/* external links */
-.external-link {
-	background-image: none;
-	padding-right: 0;
-	white-space: nowrap;
-}
-
-/* exceptions */
-body > .app-container table > tbody > tr > td .external-link,
-.workspace-leaf-content[data-type="kanban"] .external-link {
-	white-space: normal;
-}
-
-.external-link[href*="http"]::before {
-	content: var(--external-url);
-}
-
-.external-link::before {
-	display: inline-block;
-	height: 1em;
-	width: 1em;
-
-	margin-top: 2px;
-	margin-right: 2px;
-
-	vertical-align: text-top;
-}
-
-/* ─────────────────────────────────────────────────── */
-/* < Tags */
-/* ─────────────────────────────────────────────────── */
-
-.cm-hashtag,
-a.tag {
-	color: var(--editor-alt-accent) !important;
-	text-decoration: none !important;
-}
-
-/* ensures equal height of "#" and text of tags */
-.cm-formatting.cm-formatting-hashtag.cm-hashtag-begin.cm-hashtag.cm-meta {
-	font-family: var(--default-font);
-}
-
-.cm-hashtag-end:hover,
-a.tag:hover {
-	text-decoration: underline !important;
-}
-
-/* ─────────────────────────────────────────────────── */
-/* < Comments & HTML Tags */
-/* ─────────────────────────────────────────────────── */
-
-.cm-comment {
-	color: var(--text-muted) !important;
-}
-
-/* fix html comments by disabling ligatures in edit mode */
-.CodeMirror.cm-s-obsidian {
-	font-feature-settings: "liga" 0;
-}
-
-/* ensures equal height of "#" and html tag */
-.cm-tag.cm-bracket.cm-hmd-html-begin,
-.cm-tag.cm-bracket.cm-hmd-html-end,
-.cm-tag,
-.cm-attribute,
-.cm-string {
-	font-family: var(--default-font);
-}
-
-.cm-tag.cm-bracket.cm-hmd-html-begin,
-.cm-tag.cm-bracket.cm-hmd-html-end,
-.cm-tag {
-	color: var(--html-tag-color) !important;
-}
-
-/* ─────────────────────────────────────────────────── */
-/* < to dos (tasks) */
-/* ─────────────────────────────────────────────────── */
-
-/* finished */
-.cm-s-obsidian span.cm-formatting-task.cm-property {
-	color: var(--finished-task);
-}
-
-.cm-s-obsidian span.cm-formatting-task.cm-property + span {
-	color: var(--extra-contrast);
-	text-decoration: line-through;
-}
-
-body > .app-container .contains-task-list li.task-list-item.is-checked {
-	font-weight: 500;
-	text-decoration: line-through;
-}
-
-/* https://forum.obsidian.md/t/meta-post-common-css-hacks/1978/34 */
-input[type="checkbox"] {
-	filter: unset !important; /* removes hue filter */
-
-	padding: 1px;
-
-	margin-top: 2px;
-
-	border: 2px solid var(--text-muted);
+	border: var(--alt-border);
 	border-radius: var(--round);
-
-	-webkit-appearance: none;
-	appearance: none;
-	vertical-align: top;
 }
 
-input[type="checkbox"]:checked {
-	background-color: var(--finished-task);
-	background-image: url('data:image/svg+xml; utf8, <svg width="12px" height="10" viewBox="0 0 12 8" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd"><g transform="translate(-4.000000, -6.000000)" fill="%23ffffff"><path d="M8.1043257,14.0367999 L4.52468714,10.5420499 C4.32525014,10.3497722 4.32525014,10.0368095 4.52468714,9.8424863 L5.24777413,9.1439454 C5.44721114,8.95166768 5.77142411,8.95166768 5.97086112,9.1439454 L8.46638057,11.5903727 L14.0291389,6.1442083 C14.2285759,5.95193057 14.5527889,5.95193057 14.7522259,6.1442083 L15.4753129,6.84377194 C15.6747499,7.03604967 15.6747499,7.35003511 15.4753129,7.54129009 L8.82741268,14.0367999 C8.62797568,14.2290777 8.3037627,14.2290777 8.1043257,14.0367999"></path></g></g></svg>');
-
-	border-width: 0;
-
-	background-position: center;
-	background-size: 70%;
-	background-repeat: no-repeat;
+div.document-replace {
+	margin-top: 4px;
+	margin-bottom: 4px;
 }
 
-input[type="checkbox"]:hover {
-	border-color: var(--alt-accent);
+.document-search-container.mod-replace-mode {
+	height: 6.1em;
+	border-radius: calc(var(--round) / 2);
 }
 
-input[type="checkbox"]:checked:hover {
-	background-color: var(--alt-accent-lighter);
+/* for whatever reason the scrollbar
+shows up on the bottom when replacing/searching
+ლ(ಠ_ಠლ)╯ */
+.is-replacing .CodeMirror-scroll {
+	padding-bottom: 120px;
 }
+
+.is-searching .CodeMirror-scroll {
+	padding-bottom: 70px;
+}
+
+/* more recognizable red */
+.theme-dark .document-search-input.mod-no-match:hover,
+.theme-dark .document-search-input.mod-no-match {
+	background-color: hsl(357 30% 20%);
+}
+
+.theme-light .document-search-input.mod-no-match:hover,
+.theme-light .document-search-input.mod-no-match {
+	background-color: hsl(359 80% 85%);
+}
+
+body > .app-container .document-search-input,
+body > .app-container .document-replace-input {
+	background-color: var(--background-primary-alt);
+	border: 2px solid transparent;
+	border-radius: var(--round);
+}
+
+body > .app-container .document-search-input:focus,
+body > .app-container .document-replace-input:focus {
+	border: 2px solid var(--text-accent);
+}
+
+body > .app-container .document-search-input:hover,
+body > .app-container .document-replace-input:hover {
+	border: 2px solid var(--alt-accent);
+}
+
+input.document-search-input,
+input.document-replace-input {
+	height: 2rem;
+
+	background-color: var(--background-primary);
+
+	padding-left: 0.4em;
+
+	margin-top: 4px;
+	margin-left: 4px;
+}
+
+.document-search-button {
+	height: 2rem;
+
+	color: var(--text-on-accent);
+	background-color: var(--text-accent);
+	opacity: 0.65;
+
+	margin-top: 4px;
+}
+
+.document-search-button:hover {
+	color: var(--interaction-normal);
+	background-color: var(--alt-accent);
+	opacity: 0.9;
+}
+
+body:not(.show-close-button) .document-search-close-button {
+	display: none;
+}
+
 
 /* ─────────────────────────────────────────────────── */
-/* < Modal Boxes */
+/* << Context Menus */
 /* ─────────────────────────────────────────────────── */
-/* (modals partially also applies to settings/plugin browser) */
 
-.modal-content h1 {
-	margin-top: 0.5em;
-	font-size: var(--h1-size);
+div.menu {
+	border-radius: var(--roundish);
 }
 
-.modal-content h2 {
-	margin-top: 0.5em;
-	font-size: var(--h2-size);
+div.menu-item-title {
+	font-size: 0.9em;
 }
 
-.modal-content h3 {
-	margin-top: 0.5em;
-	font-size: var(--h3-size);
+div.menu-item {
+	padding: 0 9px;
 }
 
-.modal-content h4 {
-	margin-top: 0.5em;
-	font-size: var(--h4-size);
+.menu-item-icon {
+	top: 4px;
+	bottom: 0;
 }
 
-.modal-content h5 {
-	margin-top: 0.5em;
-	font-size: var(--h5-size);
-}
-
-.modal-content li {
-	font-size: 1.1em;
-	line-height: 1.5em;
-}
-
-.modal-content {
-	margin-top: 0;
-}
-
-.modal {
-	padding: 0.2em 1em;
-	border: var(--alt-border);
-	border-radius: calc(var(--roundish) * 2);
-}
-
-.prompt-bg,
-.modal-bg {
-	background-color: var(--backdrop-color);
-	opacity: 0.85;
-	backdrop-filter: blur(3px);
-}
-
-.modal.mod-community-theme,
-.modal.mod-community-plugin,
-.modal.mod-settings {
-	height: 93%;
-	width: 93%;
-	max-width: unset;
-
-	border: var(--alt-border);
-	border-radius: calc(var(--roundish) * 3);
-}
-
-/* ─────────────────────────────────────────────────── */
-/* < File Recovery (Core Plugin) */
-/* ─────────────────────────────────────────────────── */
-.modal.mod-sync-history {
-	height: 93%;
-	width: 93%;
-	max-width: unset;
-	border-color: var(--background-primary-alt);
-}
-
-.modal.mod-sync-history .setting-item-control {
-	justify-content: unset;
-}
-
-.sync-history-list-item.is-active .u-muted,
-.sync-history-list-item:hover .u-muted {
-	color: var(--text-normal);
-}
-
-/* do not apply widend input here */
-.modal-container .sync-history-list input {
-	width: unset;
-}
-
-.sync-history-list-item {
-	padding-right: 5px;
-	padding-left: 10px;
-
-	border-right: 1px solid var(--background-primary);
-	border-bottom: 1px solid var(--background-primary);
-
-	line-height: 1.4em;
-}
-
-.sync-history-list-item.is-active {
+.menu-item.selected,
+.menu-item.selected svg {
 	color: var(--text-accent);
-	font-weight: 600;
-	text-rendering: geometricPrecision;
 }
 
-.sync-history-list-item:hover,
-.sync-history-list-item.is-active:hover {
+.menu-item svg {
+	color: var(--extra-contrast);
+	transform: scale(0.9);
+}
+
+.menu-item:hover,
+.menu-item:hover svg,
+.menu-item.selected:hover,
+.menu-item.selected:hover svg,
+.menu-item.selected:hover .menu-item-title {
 	color: var(--alt-accent);
 }
 
-.sync-history-list {
-	padding-top: 10px;
-	padding-bottom: 10px;
+.menu-item.selected:hover,
+.menu-item:hover {
+	margin-left: 0;
+	border-left: 3px solid var(--alt-accent);
 }
 
-.sync-history-content-container {
-	height: 100%;
-	padding: 10px;
-	border-top-right-radius: var(--roundish);
-	border-bottom-right-radius: var(--roundish);
+.menu-item.selected {
+	margin-left: 0;
+	border-left: 3px solid var(--text-accent);
 }
 
-.modal.mod-sync-history textarea:focus {
-	border-color: var(--text-accent);
+.menu-item {
+	margin-left: 3px;
 }
 
-.sync-history-content-buttons {
-	margin-top: 13px;
-	margin-bottom: 5px;
+.menu-item:hover .menu-item-title {
+	color: var(--alt-accent);
 }
 
-.sync-history-content-empty {
-	position: relative;
-	top: 45%;
-	left: 40%;
-
-	color: var(--extra-contrast);
-
-	font-size: 0;
-}
-
-.sync-history-content-empty::before {
-	content: var(--signature);
-	font-size: 10rem;
+.menu-item.selected .menu-item-title {
+	color: var(--text-accent);
 }
 
 /* ─────────────────────────────────────────────────── */
-/* < Command Palette */
-/* < QuickSwitcher */
-/* < Prompt */
+/* << Editor Suggestions */
+/* ─────────────────────────────────────────────────── */
+
+body:not(.app-container) .suggestion-container {
+	border-radius: var(--roundish);
+}
+
+/* ─────────────────────────────────────────────────── */
+/* << Close Buttons */
+/* ─────────────────────────────────────────────────── */
+
+div.search-input-clear-button::before,
+.empty-state-close-button,
+.modal-close-button {
+	color: var(--text-muted);
+	background-color: var(--background-secondary-alt);
+}
+
+div.search-input-clear-button::before {
+	background-color: transparent;
+}
+
+.document-search-close-button:hover,
+div.search-input-clear-button:hover::before,
+.empty-state-close-button:hover,
+.modal-close-button:hover {
+	color: var(--alt-accent);
+}
+
+.empty-state-close-button {
+	height: 25px;
+	top: 10px;
+	padding: 2px;
+	border-radius: var(--roundish);
+}
+
+.empty-state-close-button svg {
+	stroke-width: 2px;
+}
+
+.empty-state-close-button:hover {
+	color: var(--alt-accent-lighter);
+	background: var(--background-secondary-alt);
+}
+
+.modal-close-button {
+	top: 0;
+	right: 0;
+
+	padding: 2px 6px 6px;
+
+	border-top-right-radius: calc(var(--roundish) * 2.5);
+	border-bottom-left-radius: var(--roundish);
+}
+
+/* only show on hover */
+body:not(.show-close-button) .document-search-close-button,
+body:not(.show-close-button) div.search-input-clear-button,
+body:not(.show-close-button) .empty-state-close-button,
+body:not(.show-close-button) .modal-close-button {
+	opacity: 0;
+	transition: 700ms;
+}
+
+body:not(.show-close-button) .document-search-close-button:hover,
+body:not(.show-close-button) div.search-input-clear-button:hover,
+body:not(.show-close-button) .empty-state-close-button:hover,
+body:not(.show-close-button) .modal-close-button:hover {
+	opacity: 1;
+	transition: 200ms;
+}
+
+/* ─────────────────────────────────────────────────── */
+/* < Prompts */
+/* << Command Palette */
+/* << QuickSwitcher */
 /* ─────────────────────────────────────────────────── */
 
 .prompt {
@@ -1639,29 +1274,8 @@ body:not(.no-alternating-rows) .suggestion-item.is-selected:nth-child(even) {
 }
 
 /* ─────────────────────────────────────────────────── */
-/* < Cursor */
-/* ─────────────────────────────────────────────────── */
-
-.CodeMirror-cursor {
-	border-left-width: 3px;
-
-	/* needs the "1" at the end:  https://www.digitalocean.com/community/tutorials/css-gradient-borders-pure-css */
-	border-image: linear-gradient(var(--cursor-duo-color-1), var(--cursor-duo-color-2)) 1;
-}
-
-body.mono-color-cursor .CodeMirror-cursor {
-	border-color: var(--cursor-monocolor);
-	border-image: none;
-}
-
-body.block-cursor .CodeMirror-cursor {
-	opacity: 0.5;
-	border-left-width: 0.6em;
-}
-
-/* ─────────────────────────────────────────────────── */
 /* < Sidebar */
-/* < Tab Headers */
+/* << Tab Headers */
 /* ─────────────────────────────────────────────────── */
 
 .workspace-tab-header-inner.is-after-active,
@@ -1753,7 +1367,7 @@ body > .app-container .workspace-split.mod-horizontal > .workspace-tabs > .works
 }
 
 /* ─────────────────────────────────────────────────── */
-/* < Resize Handles */
+/* << Resize Handles */
 /* ─────────────────────────────────────────────────── */
 /* thicker resize handles */
 .workspace-split.mod-horizontal > .workspace-leaf-resize-handle {
@@ -1775,587 +1389,74 @@ body .workspace-leaf-resize-handle:active {
 }
 
 /* ─────────────────────────────────────────────────── */
-/* < Panes: Search, Backlink, Tags, Starred, & Outline */
-/* ─────────────────────────────────────────────────── */
-/* all panes */
-
-.tree-item-inner-subtext,
-.tree-item-inner,
-.search-result-file-match,
-.tree-item-flair,
-.tree-item-icon svg {
-	color: var(--extra-contrast);
-}
-
-.tree-item-inner-subtext {
-	opacity: 0.8;
-}
-
-.tree-item-inner:hover,
-.tree-item-self:hover .tree-item-inner-subtext,
-.tree-item-self:hover,
-.tree-item-self:hover .tree-item-icon svg,
-.tree-item-self:hover .tree-item-inner,
-.tree-item.is-collapsed:hover,
-.tree-item.is-collapsed:hover .tree-item-inner,
-.tree-item.is-collapsed:hover .tree-item-icon svg {
-	color: var(--alt-accent) !important;
-}
-
-.theme-light .tree-item-self:hover .tree-item-flair {
-	background: var(--alt-accent) !important;
-	opacity: 0.8;
-	font-weight: 600;
-}
-
-.theme-dark .tree-item-self:hover .tree-item-flair {
-	background: var(--highlight-color) !important;
-	font-weight: 600;
-}
-
-.tree-item-self:active,
-.tree-item-self:active .tree-item-icon svg {
-	color: var(--text-accent);
-}
-
-.tree-item.is-collapsed .tree-item-icon svg {
-	color: var(--accent-lighter);
-}
-
-.tree-item.is-collapsed .tree-item-flair {
-	background-color: var(--selection-color);
-	font-weight: 600;
-}
-
-.tree-item-icon svg {
-	height: 11px;
-	width: 11px;
-}
-
-.tree-item-icon {
-	padding-right: 3px !important;
-}
-
-.tree-item-icon::after {
-	display: none;
-}
-
-/* ─────────────────────────────────────────────────── */
-/* < Outline Pane */
+/* < Settings & Modals */
 /* ─────────────────────────────────────────────────── */
 
-.outline .tree-item-self {
-	padding-top: 0.35em;
-	padding-bottom: 0.35em;
-	line-height: 1.1em;
-}
-
-.workspace-leaf-content[data-type="outline"] .view-content {
-	padding: 4px;
-	padding-left: 0;
-}
-
-.outline .tree-item-icon.collapse-icon {
-	padding-right: 6px !important;
-	padding-left: 3px;
-}
-
-.outline .tree-item-icon.collapse-icon svg {
-	color: var(--text-muted);
-}
-
-.outline .pane-empty {
-	font-size: 0;
-}
-
-.outline .pane-empty::before {
-	content: var(--signature);
-
-	position: absolute;
-
-	margin-top: 50%;
-	margin-left: 35%;
-
-	font-size: 4rem;
-}
-
 /* ─────────────────────────────────────────────────── */
-/* < Backlinks & Outgoing Links */
+/* << Modals in general */
 /* ─────────────────────────────────────────────────── */
+/* modals partially apply to settings/plugin browser as well */
 
-/* Inline Backlink Pane */
-.markdown-source-view .view-content,
-.markdown-preview-view .nav-header {
-	margin-top: 1em;
-	border-top: 2px solid var(--hr-line);
+.modal-content h1 {
+	margin-top: 0.5em;
+	font-size: var(--h1-size);
 }
 
-.markdown-source-view .view-content .backlink-pane {
-	margin-bottom: 5em;
+.modal-content h2 {
+	margin-top: 0.5em;
+	font-size: var(--h2-size);
 }
 
-.markdown-source-view .backlink-pane > .tree-item-self,
-.markdown-preview-view .backlink-pane > .tree-item-self {
-	background-color: var(--background-primary-alt);
-	border-radius: var(--roundish);
+.modal-content h3 {
+	margin-top: 0.5em;
+	font-size: var(--h3-size);
 }
 
-/* Sidebar */
-/* "Linked / Unlinked Mentions" (label) */
-.backlink-pane > .tree-item-self > .tree-item-inner {
-	color: var(--text-normal);
-	font-family: var(--smallcap-font);
+.modal-content h4 {
+	margin-top: 0.5em;
+	font-size: var(--h4-size);
+}
+
+.modal-content h5 {
+	margin-top: 0.5em;
+	font-size: var(--h5-size);
+}
+
+.modal-content li {
 	font-size: 1.1em;
-	font-weight: 400 !important;
+	line-height: 1.5em;
 }
 
-.workspace-tabs .backlink-pane > .tree-item-self {
-	background-color: var(--background-primary);
+.modal-content {
+	margin-top: 0;
 }
 
-.backlink-pane > .tree-item-self > .tree-item-flair-outer > .tree-item-flair {
-	font-weight: 600;
+.modal {
+	padding: 0.2em 1em;
+	border: var(--alt-border);
+	border-radius: calc(var(--roundish) * 2);
 }
 
-.workspace-tabs .backlink-pane > .tree-item-self > .tree-item-flair-outer {
-	margin-top: 3px;
-	line-height: 1em;
+.prompt-bg,
+.modal-bg {
+	background-color: var(--backdrop-color);
+	opacity: 0.85;
+	backdrop-filter: blur(3px);
 }
 
-.backlink-pane .tree-item-inner.is-collapsed {
-	color: var(--text-accent) !important;
-	font-weight: 600;
-}
+.modal.mod-community-theme,
+.modal.mod-community-plugin,
+.modal.mod-settings {
+	height: 93%;
+	width: 93%;
+	max-width: unset;
 
-.backlink-pane {
-	padding-right: 0;
-	padding-left: 0;
-}
-
-.workspace-leaf-content[data-type="backlink"] .tree-item-self {
-	font-weight: 600;
-}
-
-.workspace-leaf-content[data-type="backlink"] .search-result-container {
-	padding-left: 0;
-	margin-left: 0;
-}
-
-.workspace-leaf-content[data-type="backlink"] .search-result-container .tree-item-flair {
-	margin-right: 0.07em;
-}
-
-.workspace-leaf-content[data-type="backlink"] .search-result-file-match {
-	margin-left: 1.3em;
-	font-weight: 500;
-}
-
-/* < outgoing and backlink unlinked mentions */
-.search-result-file-match-destination-file {
-	color: var(--extra-contrast);
-}
-
-.search-result-file-match-destination-file:hover {
-	background-color: var(--alt-accent) !important;
-}
-
-.search-result-hover-button {
-	color: var(--extra-contrast);
-}
-
-.search-result-hover-button:hover {
-	background-color: var(--alt-accent);
+	border: var(--alt-border);
+	border-radius: calc(var(--roundish) * 3);
 }
 
 /* ─────────────────────────────────────────────────── */
-/* < Search Pane */
-/* ─────────────────────────────────────────────────── */
-
-.workspace-leaf-content[data-type="search"] .tree-item-self {
-	padding-left: 1.2em;
-}
-
-.search-result-file-match {
-	width: 98%;
-	max-width: 90%;
-
-	padding-right: 1em;
-	padding-left: 0;
-
-	margin-bottom: 0.4em;
-
-	line-height: 1.4em;
-}
-
-.search-result-file-matches {
-	margin-right: 0.6em;
-	margin-left: 0;
-	border-bottom: 2px solid var(--text-faint);
-}
-
-/* search result highlights are colored text instead for
-readability */
-.search-result-file-matched-text {
-	color: var(--alt-accent);
-	background: none;
-	font-weight: 600;
-}
-
-/* ─────────────────────────────────────────────────── */
-/* < Tag Pane */
-/* ─────────────────────────────────────────────────── */
-
-.tag-container {
-	padding-right: 0;
-	padding-left: 2px;
-}
-
-.tree-item-self.tag-pane-tag {
-	padding-right: 2px;
-	padding-left: 1.2em;
-}
-
-.tag-pane-tag-count {
-	margin-right: 3px;
-	margin-left: 3px;
-}
-
-.tag-container .tree-item-flair-outer::after {
-	display: none;
-}
-
-/* ─────────────────────────────────────────────────── */
-/* < Starred Pane */
-/* ─────────────────────────────────────────────────── */
-
-.workspace-leaf-content[data-type="starred"] .nav-file-title {
-	padding-left: 0;
-}
-
-.workspace-leaf-content[data-type="starred"] .nav-header {
-	padding-top: 5px;
-}
-
-.workspace-leaf-content[data-type="starred"] .nav-file-title .nav-file-title-content::before,
-.workspace-leaf-content[data-type="starred"] .nav-file-icon svg.document {
-	display: none;
-}
-
-.workspace-leaf-content[data-type="starred"] .nav-file-title:hover {
-	color: var(--alt-accent);
-}
-
-body:not(.show-starred-nav-buttons) .workspace-leaf-content[data-type="starred"] .nav-buttons-container {
-	display: none;
-}
-
-/* for starred searches */
-.workspace-leaf-content[data-type="starred"] .nav-file-icon svg.search {
-	color: var(--extra-contrast);
-	margin-left: 0.7em;
-	vertical-align: text-bottom;
-}
-
-.workspace-leaf-content[data-type="starred"] .nav-buttons-container {
-	height: 1.7em;
-}
-
-.workspace-leaf-content[data-type="starred"] .nav-action-button.is-active {
-	background: none;
-}
-
-/* ─────────────────────────────────────────────────── */
-/* < Search matches */
-/* ─────────────────────────────────────────────────── */
-
-.is-flashing,
-body > div.app-container .obsidian-search-match-highlight {
-	color: var(--text-normal) !important;
-	background-color: var(--search-match-hl);
-}
-
-.is-flashing {
-	border-radius: var(--roundish);
-}
-
-body > .app-container .obsidian-search-match-highlight:first-child {
-	border-bottom-left-radius: var(--roundish);
-	border-top-left-radius: var(--roundish);
-}
-
-body > .app-container .obsidian-search-match-highlight:last-child {
-	border-top-right-radius: var(--roundish);
-	border-bottom-right-radius: var(--roundish);
-}
-
-/* ─────────────────────────────────────────────────── */
-/* < File explorer */
-/* ─────────────────────────────────────────────────── */
-
-/* line styles for nesting indicators */
-:root { /* stylelint-disable-line no-duplicate-selectors */
-	--nestlinestyle1: solid;
-	--nestlinestyle2: dotted;
-	--nestlinestyle3: dashed;
-}
-
-.nav-file-title,
-.nav-folder-title {
-	/* wrap text in file explorer */
-	width: 100%;
-
-	color: var(--extra-contrast);
-
-	padding-top: 0.1em;
-
-	border-radius: var(--roundish);
-
-	line-height: 1.3em;
-
-	white-space: normal;
-}
-
-/* hover file */
-.nav-folder-title:hover .nav-folder-title-content,
-.nav-file-title:hover .nav-file-title-content {
-	color: var(--alt-accent);
-}
-
-/* active file */
-.nav-file-title.is-active {
-	color: var(--text-accent);
-	opacity: 0.9;
-	font-weight: 600;
-}
-
-.nav-file.nav-file-title.is-active {
-	border-left: 3px solid var(--text-accent) !important;
-}
-
-/* < Relationship lines
-based on css from @Mara https://github.com/Mara-Li/Obsidian-Snippet-collection */
-
-/* Top Level Folder Titles */
-
-.nav-folder.mod-root > .nav-folder-children > .nav-folder > .nav-folder-title,
-.nav-folder.mod-root > .nav-folder-children .nav-file-title,
-.nav-folder.mod-root > .nav-folder-children .nav-folder-title {
-	padding-left: 4px;
-}
-
-/* stylelint-disable selector-combinator-space-before, indentation */
-/* top folder line */
-.nav-folder.mod-root
-	> .nav-folder-children
-	> .nav-folder
-	> .nav-folder-children {
-	padding-left: 1.1em;
-	border-top: var(--hr-line) 2px solid;
-	border-radius: 0;
-}
-
-/* Relationship lines for 2nd, 3rd, and 4th level folders */
-.nav-folder.mod-root
-	> .nav-folder-children
-	> .nav-folder
-	> .nav-folder-children
-	> .nav-folder
-	> .nav-folder-children
-	> .nav-file {
-	border-left: var(--nestlinestyle1) 2px var(--hr-line);
-}
-
-.nav-folder.mod-root
-	> .nav-folder-children
-	> .nav-folder
-	> .nav-folder-children
-	> .nav-folder
-	> .nav-folder-children
-	> .nav-folder {
-	border-left: var(--nestlinestyle1) 2px var(--hr-line);
-}
-
-.nav-folder.mod-root
-	> .nav-folder-children
-	> .nav-folder
-	> .nav-folder-children
-	> .nav-folder
-	> .nav-folder-children
-	> .nav-folder
-	> .nav-folder-children
-	> .nav-file {
-	border-left: var(--nestlinestyle2) 2px var(--hr-line);
-}
-
-.nav-folder.mod-root
-	> .nav-folder-children
-	> .nav-folder
-	> .nav-folder-children
-	> .nav-folder
-	> .nav-folder-children
-	> .nav-folder
-	> .nav-folder-children
-	> .nav-folder {
-	border-left: var(--nestlinestyle2) 2px var(--hr-line);
-}
-
-.nav-folder.mod-root
-	> .nav-folder-children
-	> .nav-folder
-	> .nav-folder-children
-	> .nav-folder
-	> .nav-folder-children
-	> .nav-folder
-	> .nav-folder-children
-	> .nav-folder
-	> .nav-folder-children
-	> .nav-file {
-	border-left: var(--nestlinestyle3) 2px var(--hr-line);
-}
-
-.nav-folder.mod-root
-	> .nav-folder-children
-	> .nav-folder
-	> .nav-folder-children
-	> .nav-folder
-	> .nav-folder-children
-	> .nav-folder
-	> .nav-folder-children
-	> .nav-folder
-	> .nav-folder-children
-	> .nav-folder {
-	border-left: var(--nestlinestyle3) 2px var(--hr-line);
-}
-/* stylelint-enable selector-combinator-space-before, indentation */
-
-/* ─────────────────────────────────────────────────── */
-/* < Folder icons & Note icons */
-/* ─────────────────────────────────────────────────── */
-.nav-folder-title-content::before,
-.nav-file-title-content::before {
-	font-family: "Material Icons";
-	font-size: 1.2em;
-	vertical-align: bottom;
-}
-
-/* < Folders icons */
-.nav-folder-title-content::before {
-	content: "folder_open ";
-}
-
-.nav-folder.is-collapsed .nav-folder-title-content::before {
-	content: "folder ";
-}
-
-/* hide toggle icon, as folders already do that now */
-.nav-folder-collapse-indicator {
-	display: none;
-}
-
-/* As icons are now used, the labeled boxes (e.g. "pdf") can be removed. */
-.nav-file-tag {
-	display: none;
-}
-
-.nav-folder-title[data-path*="attachment"] .nav-folder-title-content::before {
-	content: "attachment ";
-}
-
-.nav-folder.is-collapsed .nav-folder-title[data-path*="attachment"] .nav-folder-title-content::before {
-	content: "attach_file ";
-}
-
-.nav-folder-title[data-path*="old"] .nav-folder-title-content::before,
-.nav-folder-title[data-path*="Archiv"] .nav-folder-title-content::before,
-.nav-folder-title[data-path*="archive"] .nav-folder-title-content::before {
-	content: "inventory_2 ";
-}
-
-/* < File icons */
-.nav-file-title-content::before {
-	content: "description ";
-}
-
-.nav-file-title[data-path*="Hub"] .nav-file-title-content::before,
-.nav-file-title[data-path*="HUB"] .nav-file-title-content::before {
-	content: "device_hub ";
-}
-
-.nav-file-title[data-path*="MoC"] .nav-file-title-content::before,
-.nav-file-title[data-path*="MOC"] .nav-file-title-content::before {
-	content: "map ";
-}
-
-.nav-file-title[data-path$="pptx"] .nav-file-title-content::before {
-	content: "present_to_all ";
-	color: hsl(38 100% 50%);
-}
-
-.nav-file-title[data-path*="presentation"] .nav-file-title-content::before,
-.nav-file-title[data-path*="Presentation"] .nav-file-title-content::before {
-	content: "present_to_all ";
-}
-
-.nav-file-title[data-path$="ts"] .nav-file-title-content::before,
-.nav-file-title[data-path$="js"] .nav-file-title-content::before {
-	content: "code ";
-}
-
-.nav-file-title[data-path$="tiff"] .nav-file-title-content::before,
-.nav-file-title[data-path$="jpg"] .nav-file-title-content::before,
-.nav-file-title[data-path$="png"] .nav-file-title-content::before,
-.nav-file-title[data-path$="jpeg"] .nav-file-title-content::before {
-	content: "image ";
-}
-
-.nav-file-title[data-path$="doc"] .nav-file-title-content::before,
-.nav-file-title[data-path$="docx"] .nav-file-title-content::before {
-	color: hsl(201 93% 25%);
-}
-
-.nav-file-title[data-path$="pdf"] .nav-file-title-content::before {
-	content: "picture_as_pdf ";
-	color: hsl(347 47% 37%);
-}
-
-.nav-file-title[data-path$="xlsx"] .nav-file-title-content::before,
-.nav-file-title[data-path$="csv"] .nav-file-title-content::before {
-	content: "table_chart ";
-	color: hsl(120 100% 25%);
-}
-
-.nav-file-title[data-path*="statistic"] .nav-file-title-content::before,
-.nav-file-title[data-path*="Statistik"] .nav-file-title-content::before {
-	content: "pie_chart_outline ";
-}
-
-.nav-file-title[data-path*="To do"] .nav-file-title-content::before,
-.nav-file-title[data-path*="to Do"] .nav-file-title-content::before,
-.nav-file-title[data-path*="To Do"] .nav-file-title-content::before,
-.nav-file-title[data-path*="to do"] .nav-file-title-content::before {
-	content: "check_box ";
-}
-
-.nav-file-title[data-path*="README"] .nav-file-title-content::before,
-.nav-file-title[data-path*="readme"] .nav-file-title-content::before,
-.nav-file-title[data-path*="Metadata"] .nav-file-title-content::before,
-.nav-file-title[data-path*="metadata"] .nav-file-title-content::before {
-	content: "info ";
-}
-
-.nav-file-title[data-path*="OCR-Screenshot"] .nav-file-title-content::before {
-	content: "photo_camera ";
-}
-
-.nav-file-title[data-path*="Word Limit"] .nav-file-title-content::before,
-.nav-file-title[data-path*="Character Limit"] .nav-file-title-content::before,
-.nav-file-title[data-path*="Character Count"] .nav-file-title-content::before,
-.nav-file-title[data-path*="Word Count"] .nav-file-title-content::before {
-	content: "flag ";
-}
-
-/* ─────────────────────────────────────────────────── */
-/* < Settings Menu */
+/* << Settings Menu */
 /* ─────────────────────────────────────────────────── */
 
 .modal.mod-settings .modal-content {
@@ -2565,7 +1666,7 @@ p.u-center-text {
 }
 
 /* ─────────────────────────────────────────────────── */
-/* < Community Plugin Browser */
+/* << Community Plugin Browser */
 /* ─────────────────────────────────────────────────── */
 
 /* bigger and more condensed */
@@ -2839,7 +1940,7 @@ p.u-center-text {
 }
 
 /* ─────────────────────────────────────────────────── */
-/* < Community Theme Browser */
+/* << Community Theme Browser */
 /* ─────────────────────────────────────────────────── */
 
 .modal.mod-community-theme {
@@ -2935,97 +2036,53 @@ body:not(.less-heading-letter-spacing) .modal.mod-community-theme .modal-title {
 }
 
 /* ─────────────────────────────────────────────────── */
-/* < Highlight */
-/* < Selection */
+/* < Editor */
 /* ─────────────────────────────────────────────────── */
-/* highlight active line */
-.CodeMirror-activeline .CodeMirror-linebackground {
-	background-color: var(--active-line);
-	border-radius: var(--roundish);
-}
 
-/* change highlight color */
-.markdown-preview-view mark,
-.cm-s-obsidian span.cm-highlight {
-	background-color: var(--highlight-color);
-}
-
-/* color for selected text */
-.theme-light,
-.theme-dark {
-	--text-selection: var(--selection-color);
-}
-
-/* alternative method */
-/* .CodeMirror-focused .CodeMirror-selected {} */
-
-/* ─────────────────────────────────────────────────── */
-/* < Multi-Color Highlighting */
-/* ─────────────────────────────────────────────────── */
-/* thanks to @Atlas for this snippet */
-/* https://discord.com/channels/686053708261228577/702656734631821413/881443661269827656 */
-
-/* Cyan Highlight */
-/* *== ==* */
-.markdown-preview-view em > mark,
-span.cm-em.cm-highlight {
-	background-color: var(--highlight-alt2);
-	font-style: initial;
-}
-
-/* Yellow Highlight */
-/* **== ==** */
-span.cm-strong.cm-highlight,
-.markdown-preview-view strong > mark {
-	background-color: var(--highlight-alt1);
-	font-weight: 500;
-	text-rendering: initial;
+/* Grey out non-active note */
+.workspace-leaf:not(.mod-active) .workspace-leaf-content[data-type="markdown"] {
+	opacity: var(--inactive-pane-opacity);
+	transition-duration: 0.5s;
 }
 
 /* ─────────────────────────────────────────────────── */
-/* < Pseudo-Spoiler-Tag */
+/* << Editor Size */
 /* ─────────────────────────────────────────────────── */
 
-.theme-light { /* stylelint-disable-line no-duplicate-selectors */
-	--spoiler-bg: hsl(0 0% 7%);
+.markdown-source-view.mod-cm5 {
+	padding-left: 10px;
 }
 
-.theme-dark { /* stylelint-disable-line no-duplicate-selectors */
-	--spoiler-bg: hsl(0 0% 93%);
-}
-
-div:not(.CodeMirror-activeline) > .CodeMirror-line .cm-em.cm-strikethrough,
-em > del {
-	color: var(--spoiler-bg);
-	background-color: var(--spoiler-bg);
-
-	transition-duration: 250ms;
-
-	font-style: initial;
-	text-decoration: unset;
-}
-
-.CodeMirror-activeline > .CodeMirror-line .cm-em.cm-strikethrough,
-em > del:hover,
-.cm-em.cm-strikethrough:hover {
-	background-color: var(--background-secondary-alt) !important;
-	transition-duration: 250ms;
+.markdown-preview-view {
+	padding-top: 10px;
 }
 
 /* ─────────────────────────────────────────────────── */
-/* < Strikethroughs */
+/* << Line Numbers (Gutter) */
 /* ─────────────────────────────────────────────────── */
-
-/* make the "~" readable */
-.cm-formatting-strikethrough {
-	text-decoration: none;
+.CodeMirror-linenumbers {
+	padding-top: 2px;
+	padding-right: 2px;
 }
 
 /* ─────────────────────────────────────────────────── */
-/* < YAML Header */
-/* < YAML Frontmatter */
-/* < Metadata Block */
+/* << Overscroll */
 /* ─────────────────────────────────────────────────── */
+.markdown-preview-view{
+	padding-bottom: 20em;
+	padding-left: 50px;
+}
+
+div.CodeMirror-lines {
+	padding-bottom: 20em !important;
+}
+
+/* ─────────────────────────────────────────────────── */
+/* << YAML Header */
+/* ─────────────────────────────────────────────────── */
+
+/* <<< YAML Frontmatter */
+
 /* YAML-Header in Edit Mode */
 body > .app-container .cm-s-obsidian .cm-hmd-frontmatter.cm-string,
 body > .app-container .cm-s-obsidian .cm-hmd-frontmatter.cm-number,
@@ -3074,7 +2131,7 @@ body > .app-container .cm-s-obsidian .cm-hmd-frontmatter.cm-string {
 	text-transform: capitalize !important;
 }
 
-/* Metadata Block */
+/* <<< Metadata Block */
 .markdown-preview-view .frontmatter-container {
 	color: var(--extra-contrast);
 	background: var(--background-secondary);
@@ -3133,7 +2190,7 @@ body > .app-container .cm-s-obsidian .cm-hmd-frontmatter.cm-string {
 }
 
 /* ─────────────────────────────────────────────────── */
-/* < Collapse Indicator (Fold Gutter) */
+/* << Collapse Indicators (Fold Gutter) */
 /* ─────────────────────────────────────────────────── */
 
 /* Preview mode */
@@ -3194,51 +2251,230 @@ body:not(.show-collapse-buttons) .CodeMirror-code > div:hover .CodeMirror-foldgu
 }
 
 /* ─────────────────────────────────────────────────── */
-/* < Editor Size & Line Numbers */
+/* << Progress bars (<progress>) */
 /* ─────────────────────────────────────────────────── */
-/* grey out non-active note */
-.workspace-leaf:not(.mod-active) .workspace-leaf-content[data-type="markdown"] {
-	opacity: var(--inactive-pane-opacity);
-	transition-duration: 0.5s;
+/* thanks @SkepticMystic */
+progress {
+	height: 0.65em;
+	background: none;
+	margin-bottom: 4px;
 }
 
-.CodeMirror-linenumbers {
+progress::-webkit-progress-bar {
+	background: var(--background-secondary-alt);
+	border: 1px solid var(--background-modifier-boder);
+	border-radius: calc(var(--roundish) * 3);
+}
+
+progress::-webkit-progress-value {
+	border-radius: calc(var(--roundish) * 3);
+}
+
+/* https://coolors.co/gradient-palette/03045e-6cf9ca?number=10 */
+progress[value^="1"]::-webkit-progress-value { background: hsl(239 94% 19%) }
+progress[value^="2"]::-webkit-progress-value { background: hsl(229 75% 24%) }
+progress[value^="3"]::-webkit-progress-value { background: hsl(219 64% 28%) }
+progress[value^="4"]::-webkit-progress-value { background: hsl(209 55% 33%) }
+progress[value^="5"]::-webkit-progress-value { background: hsl(199 48% 38%) }
+progress[value^="6"]::-webkit-progress-value { background: hsl(189 43% 42%) }
+progress[value^="7"]::-webkit-progress-value { background: hsl(179 39% 47%) }
+progress[value^="8"]::-webkit-progress-value { background: hsl(171 48% 55%) }
+progress[value^="9"]::-webkit-progress-value { background: hsl(165 66% 62%) }
+progress[value^="10"]::-webkit-progress-value { background: hsl(160 92% 70%) }
+
+/* ─────────────────────────────────────────────────── */
+/* << Images */
+/* ─────────────────────────────────────────────────── */
+/* see also section "Max View" */
+
+/* Image Alt as Caption in Preview Mode */
+/* useful as this is also how Pandoc converts */
+.image-embed[alt]::after {
+	content: attr(alt);
+
+	display: block;
+
+	color: var(--text-muted);
+
 	padding-top: 2px;
-	padding-right: 2px;
+
+	margin-bottom: 13px;
+
+	font-size: 90%;
+	font-weight: 300;
+	font-style: italic;
 }
 
-/* Preview Mode */
-.markdown-preview-view {
-	padding-top: 10px;
-
-	/* Overscroll at bottom */
-	padding-bottom: 20em;
-	padding-left: 50px;
+.view-content .markdown-preview-view img {
+	display: block;
+	cursor: zoom-in;
+	margin-top: 13px;
+	border-radius: var(--roundish);
 }
 
-/* Editor Mode */
-.markdown-source-view.mod-cm5 {
-	padding-left: 10px;
+body:not(.disable-image-borders) .view-content .markdown-preview-view img {
+	border: var(--basic-border);
 }
 
-div.CodeMirror-lines {
-	padding-bottom: 20em !important;
+/* centers image and image caption */
+body:not(.left-aligned-embeds) .image-embed[alt]::after {
+	text-align: center;
+	white-space: pre;
+}
+
+body:not(.left-aligned-embeds) .view-content .markdown-preview-view img {
+	margin-right: auto;
+	margin-left: auto;
+}
+
+/* image zoom */
+/* by @kepano  https://forum.obsidian.md/t/image-zoom-click-hold-to-expand-images/5164 */
+.markdown-preview-view img:active {
+	display: block;
+	height: 100%;
+	max-height: 100%;
+	width: 100%;
+	max-width: 100%;
+
+	position: fixed;
+	top: 50%;
+	right: 0;
+	bottom: 0;
+	left: 0;
+
+	transform: translateY(-50%);
+	cursor: zoom-out;
+
+	padding: 0;
+
+	margin: 0 auto;
+
+	text-align: center;
+
+	z-index: 100;
+	object-fit: contain;
+}
+
+.markdown-preview-view img:active .theme-dark {
+	background-color: hsl(0 0% 0%);
+}
+
+.markdown-preview-view img:active .theme-light {
+	background-color: hsl(0 0% 26%);
 }
 
 /* ─────────────────────────────────────────────────── */
-/* < Max View */
+/* << Mermaid */
+/* ─────────────────────────────────────────────────── */
+/* https://forum.obsidian.md/t/ability-to-resize-and-align-mermaid-diagrams/7019/11?u=pseudometa */
+/* see also "Max View" */
+
+body:not(.left-aligned-embeds) div.mermaid {
+	text-align: center;
+}
+
+/* ─────────────────────────────────────────────────── */
+/* << PDFs */
+/* ─────────────────────────────────────────────────── */
+/* credits @phibr0 */
+.theme-dark:not(.no-pdf-dark-mode) .pdf-embed iframe,
+.theme-dark:not(.no-pdf-dark-mode) .workspace-leaf-content[data-type="pdf"] iframe {
+	filter: invert(0.85);
+}
+
+.pdf-embed iframe {
+	border-radius: var(--roundish);
+}
+
+body:not(.left-aligned-embeds) .pdf-embed {
+	margin-right: auto;
+	margin-left: auto;
+}
+
+/* ─────────────────────────────────────────────────── */
+/* << Search Matches */
+/* ─────────────────────────────────────────────────── */
+/* applies to everything that is matched by any kind of search */
+
+.is-flashing,
+body > div.app-container .obsidian-search-match-highlight {
+	color: var(--text-normal) !important;
+	background-color: var(--search-match-hl);
+}
+
+.is-flashing {
+	border-radius: var(--roundish);
+}
+
+body > .app-container .obsidian-search-match-highlight:first-child {
+	border-bottom-left-radius: var(--roundish);
+	border-top-left-radius: var(--roundish);
+}
+
+body > .app-container .obsidian-search-match-highlight:last-child {
+	border-top-right-radius: var(--roundish);
+	border-bottom-right-radius: var(--roundish);
+}
+
+/* ─────────────────────────────────────────────────── */
+/* << Spellcheck */
+/* ─────────────────────────────────────────────────── */
+
+body:not(.classic-spellcheck-styling) .CodeMirror .cm-spell-error {
+	background-image: none;
+	text-decoration: underline solid var(--spell-error-color);
+	text-decoration-thickness: 2px;
+}
+
+body.no-yaml-spellcheck .cm-hmd-frontmatter.cm-overlay.cm-spell-error {
+	background-image: none;
+	text-decoration: none;
+}
+
+body.no-blockquote-spellcheck .cm-quote-1.cm-overlay.cm-spell-error {
+	background-image: none;
+	text-decoration: none;
+}
+
+body.no-header-spellcheck .cm-header.cm-overlay.cm-spell-error {
+	background-image: none;
+	text-decoration: none;
+}
+
+body.no-html-spellcheck .cm-tag.cm-overlay.cm-spell-error {
+	background-image: none;
+	text-decoration: none;
+}
+
+body.no-strikethrough-spellcheck .cm-strikethrough.cm-overlay.cm-spell-error {
+	background-image: none;
+	text-decoration: none;
+}
+
+body.no-comment-spellcheck .cm-comment.cm-overlay.cm-spell-error {
+	background-image: none;
+	text-decoration: none;
+}
+
+body.no-barelink-spellcheck .cm-hmd-barelink.cm-overlay.cm-spell-error {
+	background-image: none;
+	text-decoration: none;
+}
+
+/* ─────────────────────────────────────────────────── */
+/* << Max View */
 /* full length editor and full size images when left sidebar is collapsed */
 /* (Note: You need to turn on "readable line length" in the editor settings */
 /* as well for this to work.) */
 /* ─────────────────────────────────────────────────── */
 
-/* < Line Length & Tables */
+/* <<< Line Length & Tables */
 body:not(.max-view-off) .workspace-split.mod-left-split.is-collapsed ~ .mod-root .markdown-preview-section,
 body:not(.max-view-off) .workspace-split.mod-left-split.is-collapsed ~ .mod-root .CodeMirror-wrap {
 	max-width: 100%;
 }
 
-/* < Images */
+/* <<< Images */
 body:not(.max-view-off) .workspace-split.mod-left-split.is-collapsed ~ .mod-root .view-content .markdown-preview-view img {
 	max-width: 100%;
 }
@@ -3252,7 +2488,7 @@ body:not(.is-mobile) > .app-container div.oz-image-widget > img:not(:active) {
 	max-width: var(--image-size);
 }
 
-/* < PDFs */
+/* <<< PDFs */
 body:not(.max-view-off):not(.is-mobile) .workspace-split.mod-left-split.is-collapsed ~ .mod-root .view-content .markdown-preview-view .pdf-embed,
 body:not(.max-view-off):not(.is-mobile) .workspace-split.mod-left-split.is-collapsed ~ .mod-root div.oz-image-widget embed {
 	max-height: 100%;
@@ -3265,7 +2501,7 @@ body:not(.is-mobile) > .app-container div.oz-image-widget embed {
 	max-width: var(--pdf-size);
 }
 
-/* < Mermaid */
+/* <<< Mermaid */
 body:not(.max-view-off) .workspace-split.mod-left-split.is-collapsed ~ .mod-root svg[id^="m"][width][height][viewBox] {
 	width: 100%;
 	max-width: 100%;
@@ -3277,153 +2513,11 @@ svg[id^="m"][width][height][viewBox] {
 }
 
 /* ─────────────────────────────────────────────────── */
-/* < Pandoc Citations & Footnotes */
-/* ─────────────────────────────────────────────────── */
-/* Pandoc Citations (applies to all []-links) */
-
-body:not(.no-pandoc-citation-emphasis) .cm-hmd-barelink {
-	color: var(--editor-alt-accent);
-}
-
-body:not(.no-pandoc-citation-emphasis) .cm-link.cm-quote.cm-hmd-barelink {
-	color: var(--editor-alt-accent) !important;
-}
-
-/* Footnotes */
-/* set space above and below horizontal line that seperates footnotes */
-.markdown-preview-view .footnotes hr {
-	margin-top: 60px;
-	margin-bottom: 10px;
-}
-
-/* footnotes preview */
-.markdown-preview-section .footnotes {
-	font-size: 85%;
-	text-align: justify;
-	hyphens: auto;
-}
-
-.markdown-preview-section .footnotes ol {
-	padding-inline-start: 1.6em;
-}
-
-/* applies to number-references in the footnote text */
-span.cm-link.cm-hmd-footnote {
-	color: var(--alt-accent) !important;
-	vertical-align: top;
-}
-
-/* footnotes (at the bottom) */
-.HyperMD-footnote.CodeMirror-line {
-	padding-left: 5px; /* same of paragraphs */
-	font-size: 85%;
-	text-align: justify;
-	hyphens: auto;
-}
-
-/* remove underline which only decreases redability */
-.markdown-preview-view a.footnote-link {
-	text-decoration: none;
-}
-
-/* ─────────────────────────────────────────────────── */
-/* < Horizontal line (hr) */
+/* < Markup */
 /* ─────────────────────────────────────────────────── */
 
-/* increased redability in edit mode */
-.cm-s-obsidian span.cm-hr {
-	color: var(--text-muted);
-	letter-spacing: 0.12em;
-}
-
-/* increased readability in preview mode */
-body > .app-container .markdown-preview-view div hr {
-	border-top: none;
-	border-bottom: 3px solid var(--hr-line);
-}
-
 /* ─────────────────────────────────────────────────── */
-/* < Tables */
-/* ─────────────────────────────────────────────────── */
-/* add some more table styling, e.g. from
-https://forum.obsidian.md/t/custom-css-for-tables-5-new-styles-ready-to-use-in-your-notes/17084 */
-
-/* see also section "Max View" */
-
-.markdown-preview-view table:not(.dataview.table-view-table) {
-	width: 100%;
-	table-layout: fixed;
-}
-
-:root body {
-	--table-border: var(--basic-border);
-	--table-roundness: var(--roundish);
-}
-
-table:not(.dataview.table-view-table) th {
-	font-weight: 700;
-	text-rendering: geometricPrecision;
-}
-
-/* rounded corners */
-th:first-child {
-	border-top-left-radius: var(--table-roundness);
-}
-
-th:last-child {
-	border-top-right-radius: var(--table-roundness);
-}
-
-tr:last-child td:first-child {
-	border-bottom-left-radius: var(--table-roundness);
-}
-
-tr:last-child td:last-child {
-	border-bottom-right-radius: var(--table-roundness);
-}
-
-/* only inner borders */
-body > .app-container table > thead > tr > th {
-	border-top: none;
-	border-right: none;
-	border-bottom: var(--table-border);
-	border-left: var(--table-border);
-}
-
-body > .app-container table > thead > tr > th:first-child {
-	border-left: none;
-}
-
-body > .app-container table > tbody > tr > td {
-	border: none;
-	border-left: var(--table-border);
-}
-
-body > .app-container table > tbody > tr > td:first-child {
-	border-left: none;
-}
-
-/* background */
-thead {
-	background-color: var(--background-secondary-alt);
-	font-weight: 900;
-}
-
-tr {
-	background-color: var(--a-row);
-}
-
-/* alternating rows */
-body:not(.no-alternating-rows) .markdown-preview-view tr:nth-child(even) {
-	background-color: var(--b-row);
-}
-
-body.no-alternating-rows > .app-container table > tbody > tr > td {
-	border-top: var(--table-border);
-}
-
-/* ─────────────────────────────────────────────────── */
-/* < Headings */
+/* << Headings */
 /* ─────────────────────────────────────────────────── */
 
 .cm-header-1,
@@ -3503,7 +2597,7 @@ body:not(.no-alternating-header-italics) .markdown-preview-view h4 {
 }
 
 /* ─────────────────────────────────────────────────── */
-/* < Pseudo-Admonitions (only for one-liners) */
+/* <<< Pseudo-Admonitions (only for one-liners) */
 /* ─────────────────────────────────────────────────── */
 /* For H6 only (without following blocks or line breaks).
 Based on some CSS from @SlRvb, @gee & @Eleanor Konik */
@@ -3563,7 +2657,455 @@ Based on some CSS from @SlRvb, @gee & @Eleanor Konik */
 }
 
 /* ─────────────────────────────────────────────────── */
-/* < Annotation Tags */
+/* << Blockquotes */
+/* ─────────────────────────────────────────────────── */
+
+/* Edit Mode */
+.cm-quote {
+	color: var(--extra-contrast) !important;
+	font-style: italic;
+}
+
+.HyperMD-quote.HyperMD-quote-1 {
+	color: var(--text-normal);
+
+	padding-top: 0.4em;
+	padding-right: 0.8em;
+	padding-bottom: 0.5em;
+
+	border: var(--plugin-browser-borders);
+	border-radius: var(--roundish);
+
+	text-align: justify;
+
+	hyphens: auto;
+}
+
+/* fixes color when text is selected */
+/* https://forum.obsidian.md/t/inline-code-occludes-text-selection-and-vim-cursor/11552/10?u=pseudometa */
+.theme-light .HyperMD-quote.HyperMD-quote-1 {
+	background-color: rgb(0 0 0 / 7%) !important;
+}
+
+.theme-dark .HyperMD-quote.HyperMD-quote-1 {
+	background-color: rgb(0 0 0 / 25%) !important;
+}
+
+/* when blockquote is also active line */
+.CodeMirror-activeline .HyperMD-quote.HyperMD-quote-1.CodeMirror-line {
+	color: var(--text-normal) !important;
+	background-color: var(--active-line) !important;
+}
+
+/* the ">" */
+.cm-formatting.cm-formatting-quote {
+	font-weight: 900;
+	font-style: unset;
+}
+
+/* style links in blockquotes, e.g. es quote sources */
+.cm-link.cm-quote.cm-quote-1:not(.cm-formatting) {
+	color: var(--text-accent) !important;
+}
+
+.cm-string.cm-url.cm-quote.cm-quote-1,
+.cm-link.cm-quote.cm-quote-1 {
+	font-style: unset;
+}
+
+/* Preview Mode */
+body > .app-container .markdown-preview-view blockquote {
+	color: var(--extra-contrast);
+	background-color: var(--background-primary-alt);
+
+	padding: 0.3em 0.7em 0.4em;
+
+	margin: 1.5em 0 1.5em 2em;
+
+	border: 2px solid var(--background-modifier-border);
+	border-radius: var(--roundish);
+
+	font-style: italic;
+	text-align: justify;
+
+	hyphens: auto;
+}
+
+/* underline emphasis in blockquote, since they are italic already */
+.markdown-preview-view blockquote > p > em,
+span.cm-em.cm-quote.cm-quote-1 {
+	text-decoration: underline;
+}
+
+/* Add quotation character before quote */
+body:not(.normal-blockquotes) blockquote,
+body:not(.normal-blockquotes) .HyperMD-quote.HyperMD-quote-1 {
+	font-size: 0.87em;
+	line-height: 21px;
+}
+
+.quotation-mark-deco blockquote p::before {
+	content: "”";
+
+	color: var(--extra-contrast);
+
+	padding-right: 0.15em;
+
+	font-family: "Times";
+	font-size: 2.5em;
+	font-style: normal;
+	line-height: 0;
+
+	vertical-align: -0.4em;
+}
+
+.quotation-mark-deco blockquote p {
+	display: inline;
+}
+
+/* ─────────────────────────────────────────────────── */
+/* << Tables */
+/* ─────────────────────────────────────────────────── */
+/* add some more table styling, e.g. from
+https://forum.obsidian.md/t/custom-css-for-tables-5-new-styles-ready-to-use-in-your-notes/17084 */
+
+/* see also section "Max View" */
+
+.markdown-preview-view table:not(.dataview.table-view-table) {
+	width: 100%;
+	table-layout: fixed;
+}
+
+:root body {
+	--table-border: var(--basic-border);
+	--table-roundness: var(--roundish);
+}
+
+table:not(.dataview.table-view-table) th {
+	font-weight: 700;
+	text-rendering: geometricPrecision;
+}
+
+/* rounded corners */
+th:first-child {
+	border-top-left-radius: var(--table-roundness);
+}
+
+th:last-child {
+	border-top-right-radius: var(--table-roundness);
+}
+
+tr:last-child td:first-child {
+	border-bottom-left-radius: var(--table-roundness);
+}
+
+tr:last-child td:last-child {
+	border-bottom-right-radius: var(--table-roundness);
+}
+
+/* only inner borders */
+body > .app-container table > thead > tr > th {
+	border-top: none;
+	border-right: none;
+	border-bottom: var(--table-border);
+	border-left: var(--table-border);
+}
+
+body > .app-container table > thead > tr > th:first-child {
+	border-left: none;
+}
+
+body > .app-container table > tbody > tr > td {
+	border: none;
+	border-left: var(--table-border);
+}
+
+body > .app-container table > tbody > tr > td:first-child {
+	border-left: none;
+}
+
+/* background */
+thead {
+	background-color: var(--background-secondary-alt);
+	font-weight: 900;
+}
+
+tr {
+	background-color: var(--a-row);
+}
+
+/* alternating rows */
+body:not(.no-alternating-rows) .markdown-preview-view tr:nth-child(even) {
+	background-color: var(--b-row);
+}
+
+body.no-alternating-rows > .app-container table > tbody > tr > td {
+	border-top: var(--table-border);
+}
+
+
+
+
+/* ─────────────────────────────────────────────────── */
+/* << Code Blocks & Inline Code */
+/* ─────────────────────────────────────────────────── */
+.cm-s-obsidian .HyperMD-codeblock,
+.markdown-preview-view code,
+.cm-s-obsidian span.cm-inline-code,
+.theme-dark .cm-s-obsidian .HyperMD-codeblock {
+	color: var(--code-color) !important;
+	font-size: var(--monospace-font-size);
+}
+
+/* wrapping, preserving line breaks */
+.markdown-preview-view code {
+	white-space: pre-wrap !important;
+}
+
+/* Code blocks Preview Mode */
+.markdown-preview-view pre {
+	background-color: var(--background-secondary) !important;
+	padding-top: 10px !important;
+	padding-bottom: 12px !important;
+	border-radius: calc(var(--roundish) * 2) !important;
+}
+
+/* code blocks Edit Mode */
+body > .app-container .HyperMD-codeblock-begin-bg {
+	background-color: var(--background-secondary);
+	border-top-right-radius: calc(var(--roundish) * 2);
+	border-top-left-radius: calc(var(--roundish) * 2);
+}
+
+body > .app-container .HyperMD-codeblock-end-bg {
+	border-bottom-right-radius: calc(var(--roundish) * 2);
+	border-bottom-left-radius: calc(var(--roundish) * 2);
+}
+
+/* show language of Code Block in Preview Mode */
+/* snippet by @Chetachi */
+pre {
+	position: relative;
+}
+
+pre[class*="language-"]::after {
+	content: attr(class);
+
+	position: absolute;
+	right: 8px;
+	bottom: 3px;
+
+	color: var(--text-muted);
+
+	font-family: var(--font-monospace);
+	font-size: 0.8em;
+}
+
+pre[class~="language-c"]::after { content: "C"; }
+pre[class~="language-python"]::after { content: "Python"; }
+pre[class~="language-nginx"]::after { content: "Nginx"; }
+pre[class~="language-css"]::after { content: "CSS"; }
+pre[class~="language-node"]::after { content: "Node"; }
+pre[class~="language-react"]::after { content: "React"; }
+pre[class~="language-javascript"]::after { content: "JavaScript"; }
+pre[class~="language-js"]::after { content: "JavaScript"; }
+pre[class~="language-typescript"]::after { content: "TypeScript"; }
+pre[class~="language-ts"]::after { content: "TypeScript"; }
+pre[class~="language-php"]::after { content: "PHP"; }
+pre[class~="language-shell"]::after { content: "Shell"; }
+pre[class~="language-bash"]::after { content: "Bash"; }
+pre[class~="language-zsh"]::after { content: "zsh"; }
+pre[class~="language-flow"]::after { content: "Flow"; }
+pre[class~="language-sequence"]::after { content: "Sequence"; }
+pre[class~="language-sql"]::after { content: "SQL"; }
+pre[class~="language-yaml"]::after { content: "YAML"; }
+pre[class~="language-ini"]::after { content: "INI"; }
+pre[class~="language-xml"]::after { content: "XML"; }
+pre[class~="language-git"]::after { content: "GIT"; }
+pre[class~="language-cs"]::after { content: "C#"; }
+pre[class~="language-cpp"]::after { content: "C++"; }
+pre[class~="language-java"]::after { content: "JAVA"; }
+pre[class~="language-html"]::after { content: "HTML"; }
+pre[class~="language-txt"]::after { content: "text"; }
+pre[class~="language-text"]::after { content: "text"; }
+pre[class~="language-url"]::after { content: "url"; }
+pre[class~="language-uri"]::after { content: "uri"; }
+
+/* fix for the buggy selection fo inline text
+https://forum.obsidian.md/t/inline-code-occludes-text-selection-and-vim-cursor/11552/10 */
+.theme-dark .cm-inline-code {
+	background-color: rgb(0 0 0 / 20%) !important;
+}
+
+.theme-light .cm-inline-code {
+	background-color: rgb(0 0 0 / 5%) !important;
+}
+
+/* copy code button */
+button.copy-code-button {
+	color: var(--extra-contrast);
+	background-color: var(--background-secondary-alt);
+
+	padding-right: 3px !important;
+	padding-bottom: 2px;
+	padding-left: 9px !important;
+
+	border: 2px solid var(--background-primary);
+	border-radius: var(--roundish);
+
+	font-size: 0;
+}
+
+button.copy-code-button::before {
+	content: "content_copy ";
+	font-family: "Material Icons";
+	font-size: 0.8rem;
+}
+
+/* ─────────────────────────────────────────────────── */
+/* << Bullet point relationship lines */
+/* ─────────────────────────────────────────────────── */
+/* based on css from the outliner plugin */
+/* https://github.com/vslinko/obsidian-outliner/blob/main/styles.css */
+
+/* Edit Mode */
+.cm-s-obsidian .HyperMD-list-line {
+	padding-top: 0.2em;
+	overflow: hidden;
+}
+
+.cm-hmd-list-indent {
+	position: relative;
+}
+
+.CodeMirror-line .cm-hmd-list-indent::before {
+	content: "";
+
+	display: block;
+	width: 100%;
+
+	position: absolute;
+	top: -1.6em;
+	left: 0;
+
+	background-image: linear-gradient(to right, var(--text-faint) 1px, transparent 1px);
+
+	padding-bottom: 999em;
+
+	background-size: 1.8em 1px;
+	background-position-x: 3px;
+}
+
+/* Preview Mode */
+ul ul,
+ol ol,
+ul ol,
+ol ul {
+	position: relative;
+}
+
+ul ul::before,
+ol ol::before,
+ul ol::before,
+ol ul::before {
+	content: "";
+
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	left: -0.85rem;
+
+	border-left: 1px solid var(--text-faint);
+}
+
+/* less indention to save space */
+.markdown-preview-view > div > div > ol,
+.markdown-preview-view > div > div > ul {
+	padding-left: 27px;
+}
+
+/* ─────────────────────────────────────────────────── */
+/* << Links */
+/* ─────────────────────────────────────────────────── */
+/* hovered links in alt accent */
+.cm-string.cm-url:hover:not(.cm-formatting),
+.cm-hmd-internal-link:hover,
+.internal-link:hover,
+.modal-content a:hover,
+.markdown-preview-view a.footnote-link:hover,
+.markdown-preview-view a.internal-link:hover,
+.markdown-preview-view a.external-link:hover,
+a:hover {
+	color: var(--alt-accent) !important;
+	cursor: pointer;
+}
+
+/* unresolved links */
+a.internal-link.is-unresolved {
+	color: var(--unresolved-link-color);
+	opacity: var(--unresolved-opacity) !important;
+}
+
+a.internal-link.is-unresolved:hover {
+	color: var(--alt-accent);
+	opacity: 0.8 !important;
+}
+
+/* dont underline the brackets */
+.cm-url.cm-formatting {
+	text-decoration: none !important;
+}
+
+/* external links */
+.external-link {
+	background-image: none;
+	padding-right: 0;
+	white-space: nowrap;
+}
+
+/* exceptions */
+body > .app-container table > tbody > tr > td .external-link,
+.workspace-leaf-content[data-type="kanban"] .external-link {
+	white-space: normal;
+}
+
+.external-link[href*="http"]::before {
+	content: var(--external-url);
+}
+
+.external-link::before {
+	display: inline-block;
+	height: 1em;
+	width: 1em;
+
+	margin-top: 2px;
+	margin-right: 2px;
+
+	vertical-align: text-top;
+}
+
+/* ─────────────────────────────────────────────────── */
+/* << Tags */
+/* ─────────────────────────────────────────────────── */
+
+.cm-hashtag,
+a.tag {
+	color: var(--editor-alt-accent) !important;
+	text-decoration: none !important;
+}
+
+/* ensures equal height of "#" and text of tags */
+.cm-formatting.cm-formatting-hashtag.cm-hashtag-begin.cm-hashtag.cm-meta {
+	font-family: var(--default-font);
+}
+
+.cm-hashtag-end:hover,
+a.tag:hover {
+	text-decoration: underline !important;
+}
+
+/* ─────────────────────────────────────────────────── */
+/* << Annotation Tags */
 /* ─────────────────────────────────────────────────── */
 /* thanks to @atlas for the inspiration
 https://discord.com/channels/686053708261228577/722584061087842365/898113745774084127 */
@@ -3739,245 +3281,942 @@ body:not(.annotation-tags-off) .tag[href="#example"]::before {
 }
 
 /* ─────────────────────────────────────────────────── */
-/* < Blockquotes */
+/* << Comments & HTML Tags */
 /* ─────────────────────────────────────────────────── */
 
-/* < Edit Mode */
-.cm-quote {
-	color: var(--extra-contrast) !important;
-	font-style: italic;
+.cm-comment {
+	color: var(--text-muted) !important;
 }
 
-.HyperMD-quote.HyperMD-quote-1 {
-	color: var(--text-normal);
+/* fix html comments by disabling ligatures in edit mode */
+.CodeMirror.cm-s-obsidian {
+	font-feature-settings: "liga" 0;
+}
 
-	padding-top: 0.4em;
-	padding-right: 0.8em;
-	padding-bottom: 0.5em;
+/* ensures equal height of "#" and html tag */
+.cm-tag.cm-bracket.cm-hmd-html-begin,
+.cm-tag.cm-bracket.cm-hmd-html-end,
+.cm-tag,
+.cm-attribute,
+.cm-string {
+	font-family: var(--default-font);
+}
 
-	border: var(--plugin-browser-borders);
+.cm-tag.cm-bracket.cm-hmd-html-begin,
+.cm-tag.cm-bracket.cm-hmd-html-end,
+.cm-tag {
+	color: var(--html-tag-color) !important;
+}
+
+/* ─────────────────────────────────────────────────── */
+/* << Tasks */
+/* ─────────────────────────────────────────────────── */
+
+/* finished */
+.cm-s-obsidian span.cm-formatting-task.cm-property {
+	color: var(--finished-task);
+}
+
+.cm-s-obsidian span.cm-formatting-task.cm-property + span {
+	color: var(--extra-contrast);
+	text-decoration: line-through;
+}
+
+body > .app-container .contains-task-list li.task-list-item.is-checked {
+	font-weight: 500;
+	text-decoration: line-through;
+}
+
+/* https://forum.obsidian.md/t/meta-post-common-css-hacks/1978/34 */
+input[type="checkbox"] {
+	filter: unset !important; /* removes hue filter */
+
+	padding: 1px;
+
+	margin-top: 2px;
+
+	border: 2px solid var(--text-muted);
+	border-radius: var(--round);
+
+	-webkit-appearance: none;
+	appearance: none;
+	vertical-align: top;
+}
+
+input[type="checkbox"]:checked {
+	background-color: var(--finished-task);
+	background-image: url('data:image/svg+xml; utf8, <svg width="12px" height="10" viewBox="0 0 12 8" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd"><g transform="translate(-4.000000, -6.000000)" fill="%23ffffff"><path d="M8.1043257,14.0367999 L4.52468714,10.5420499 C4.32525014,10.3497722 4.32525014,10.0368095 4.52468714,9.8424863 L5.24777413,9.1439454 C5.44721114,8.95166768 5.77142411,8.95166768 5.97086112,9.1439454 L8.46638057,11.5903727 L14.0291389,6.1442083 C14.2285759,5.95193057 14.5527889,5.95193057 14.7522259,6.1442083 L15.4753129,6.84377194 C15.6747499,7.03604967 15.6747499,7.35003511 15.4753129,7.54129009 L8.82741268,14.0367999 C8.62797568,14.2290777 8.3037627,14.2290777 8.1043257,14.0367999"></path></g></g></svg>');
+
+	border-width: 0;
+
+	background-position: center;
+	background-size: 70%;
+	background-repeat: no-repeat;
+}
+
+input[type="checkbox"]:hover {
+	border-color: var(--alt-accent);
+}
+
+input[type="checkbox"]:checked:hover {
+	background-color: var(--alt-accent-lighter);
+}
+
+/* ─────────────────────────────────────────────────── */
+/* << Highlights & Selection */
+/* ─────────────────────────────────────────────────── */
+
+/* Active Line Highlight */
+.CodeMirror-activeline .CodeMirror-linebackground {
+	background-color: var(--active-line);
 	border-radius: var(--roundish);
+}
 
+/* Highlights */
+.markdown-preview-view mark,
+.cm-s-obsidian span.cm-highlight {
+	background-color: var(--highlight-color);
+}
+
+/* Selection (Selected Text) */
+.theme-light,
+.theme-dark {
+	--text-selection: var(--selection-color);
+}
+
+/* alternative method */
+/* .CodeMirror-focused .CodeMirror-selected {} */
+
+/* ─────────────────────────────────────────────────── */
+/* << Multi-Color Highlighting */
+/* ─────────────────────────────────────────────────── */
+/* thanks to @Atlas for this snippet */
+/* https://discord.com/channels/686053708261228577/702656734631821413/881443661269827656 */
+
+/* Cyan Highlight *== ==* */
+.markdown-preview-view em > mark,
+span.cm-em.cm-highlight {
+	background-color: var(--highlight-alt2);
+	font-style: initial;
+}
+
+/* Yellow Highlight **== ==** */
+span.cm-strong.cm-highlight,
+.markdown-preview-view strong > mark {
+	background-color: var(--highlight-alt1);
+	font-weight: 500;
+	text-rendering: initial;
+}
+
+/* ─────────────────────────────────────────────────── */
+/* << Pseudo-Spoiler-Tag */
+/* ─────────────────────────────────────────────────── */
+
+.theme-light { /* stylelint-disable-line no-duplicate-selectors */
+	--spoiler-bg: hsl(0 0% 7%);
+}
+
+.theme-dark { /* stylelint-disable-line no-duplicate-selectors */
+	--spoiler-bg: hsl(0 0% 93%);
+}
+
+div:not(.CodeMirror-activeline) > .CodeMirror-line .cm-em.cm-strikethrough,
+em > del {
+	color: var(--spoiler-bg);
+	background-color: var(--spoiler-bg);
+
+	transition-duration: 250ms;
+
+	font-style: initial;
+	text-decoration: unset;
+}
+
+.CodeMirror-activeline > .CodeMirror-line .cm-em.cm-strikethrough,
+em > del:hover,
+.cm-em.cm-strikethrough:hover {
+	background-color: var(--background-secondary-alt) !important;
+	transition-duration: 250ms;
+}
+
+/* << Strikethroughs */
+
+/* make the "~" readable */
+.cm-formatting-strikethrough {
+	text-decoration: none;
+}
+
+/* ─────────────────────────────────────────────────── */
+/* << Pandoc Citations */
+/* ─────────────────────────────────────────────────── */
+
+/* applies to all []-links (barelinks)
+partially also to footnotes */
+body:not(.no-pandoc-citation-emphasis) .cm-hmd-barelink {
+	color: var(--editor-alt-accent);
+}
+
+body:not(.no-pandoc-citation-emphasis) .cm-link.cm-quote.cm-hmd-barelink {
+	color: var(--editor-alt-accent) !important;
+}
+
+/* ─────────────────────────────────────────────────── */
+/* << Footnotes */
+/* ─────────────────────────────────────────────────── */
+
+/* set space above and below horizontal line that seperates footnotes */
+.markdown-preview-view .footnotes hr {
+	margin-top: 60px;
+	margin-bottom: 10px;
+}
+
+/* footnotes preview */
+.markdown-preview-section .footnotes {
+	font-size: 85%;
 	text-align: justify;
-
 	hyphens: auto;
 }
 
-/* fixes color when text is selected */
-/* https://forum.obsidian.md/t/inline-code-occludes-text-selection-and-vim-cursor/11552/10?u=pseudometa */
-.theme-light .HyperMD-quote.HyperMD-quote-1 {
-	background-color: rgb(0 0 0 / 7%) !important;
+.markdown-preview-section .footnotes ol {
+	padding-inline-start: 1.6em;
 }
 
-.theme-dark .HyperMD-quote.HyperMD-quote-1 {
-	background-color: rgb(0 0 0 / 25%) !important;
+/* applies to number-references in the footnote text */
+span.cm-link.cm-hmd-footnote {
+	color: var(--alt-accent) !important;
+	vertical-align: top;
 }
 
-/* when blockquote is also active line */
-.CodeMirror-activeline .HyperMD-quote.HyperMD-quote-1.CodeMirror-line {
-	color: var(--text-normal) !important;
-	background-color: var(--active-line) !important;
-}
-
-/* the ">" */
-.cm-formatting.cm-formatting-quote {
-	font-weight: 900;
-	font-style: unset;
-}
-
-/* style links in blockquotes, e.g. es quote sources */
-.cm-link.cm-quote.cm-quote-1:not(.cm-formatting) {
-	color: var(--text-accent) !important;
-}
-
-.cm-string.cm-url.cm-quote.cm-quote-1,
-.cm-link.cm-quote.cm-quote-1 {
-	font-style: unset;
-}
-
-/* Preview Mode */
-body > .app-container .markdown-preview-view blockquote {
-	color: var(--extra-contrast);
-	background-color: var(--background-primary-alt);
-
-	padding: 0.3em 0.7em 0.4em;
-
-	margin: 1.5em 0 1.5em 2em;
-
-	border: 2px solid var(--background-modifier-border);
-	border-radius: var(--roundish);
-
-	font-style: italic;
+/* footnotes (at the bottom) */
+.HyperMD-footnote.CodeMirror-line {
+	padding-left: 5px; /* same of paragraphs */
+	font-size: 85%;
 	text-align: justify;
-
 	hyphens: auto;
 }
 
-/* underline emphasis in blockquote, since they are italic already */
-.markdown-preview-view blockquote > p > em,
-span.cm-em.cm-quote.cm-quote-1 {
-	text-decoration: underline;
+/* remove underline which only decreases redability */
+.markdown-preview-view a.footnote-link {
+	text-decoration: none;
+}
+/* ─────────────────────────────────────────────────── */
+/* << Horizontal line (hr) */
+/* ─────────────────────────────────────────────────── */
+
+/* increased redability in edit mode */
+.cm-s-obsidian span.cm-hr {
+	color: var(--text-muted);
+	letter-spacing: 0.12em;
 }
 
-/* Add quotation character before quote */
-body:not(.normal-blockquotes) blockquote,
-body:not(.normal-blockquotes) .HyperMD-quote.HyperMD-quote-1 {
-	font-size: 0.87em;
-	line-height: 21px;
+/* increased readability in preview mode */
+body > .app-container .markdown-preview-view div hr {
+	border-top: none;
+	border-bottom: 3px solid var(--hr-line);
 }
 
-.quotation-mark-deco blockquote p::before {
-	content: "”";
+
+/* ─────────────────────────────────────────────────── */
+/* < Mobile */
+/* ─────────────────────────────────────────────────── */
+
+/* slightly thinner on mobile */
+.is-mobile .view-header {
+	height: 2.4em;
+}
+
+.is-mobile .markdown-preview-view,
+.is-mobile .cm-s-obsidian div.cm-line {
+	font-size: var(--mobile-font-size);
+	line-height: 1.5;
+}
+
+body.is-mobile .markdown-preview-view blockquote {
+	text-align: start;
+}
+
+/* ─────────────────────────────────────────────────── */
+/* < Core Plugins */
+/* ─────────────────────────────────────────────────── */
+
+/* ─────────────────────────────────────────────────── */
+/* << File Explorer */
+/* ─────────────────────────────────────────────────── */
+
+/* hide vault title */
+.nav-folder.mod-root > .nav-folder-title {
+	display: none;
+}
+
+/* line styles for nesting indicators */
+:root { /* stylelint-disable-line no-duplicate-selectors */
+	--nestlinestyle1: solid;
+	--nestlinestyle2: dotted;
+	--nestlinestyle3: dashed;
+}
+
+.nav-file-title,
+.nav-folder-title {
+	/* wrap text in file explorer */
+	width: 100%;
 
 	color: var(--extra-contrast);
 
-	padding-right: 0.15em;
+	padding-top: 0.1em;
 
-	font-family: "Times";
-	font-size: 2.5em;
-	font-style: normal;
-	line-height: 0;
+	border-radius: var(--roundish);
 
-	vertical-align: -0.4em;
+	line-height: 1.3em;
+
+	white-space: normal;
 }
 
-.quotation-mark-deco blockquote p {
-	display: inline;
+/* hover file */
+.nav-folder-title:hover .nav-folder-title-content,
+.nav-file-title:hover .nav-file-title-content {
+	color: var(--alt-accent);
 }
 
-/* ─────────────────────────────────────────────────── */
-/* < Progress bars (<progress>) */
-/* ─────────────────────────────────────────────────── */
-/* thanks @SkepticMystic */
-progress {
-	height: 0.65em;
-	background: none;
-	margin-bottom: 4px;
-}
-
-progress::-webkit-progress-bar {
-	background: var(--background-secondary-alt);
-	border: 1px solid var(--background-modifier-boder);
-	border-radius: calc(var(--roundish) * 3);
-}
-
-progress::-webkit-progress-value {
-	border-radius: calc(var(--roundish) * 3);
-}
-
-/* https://coolors.co/gradient-palette/03045e-6cf9ca?number=10 */
-progress[value^="1"]::-webkit-progress-value { background: hsl(239 94% 19%) }
-progress[value^="2"]::-webkit-progress-value { background: hsl(229 75% 24%) }
-progress[value^="3"]::-webkit-progress-value { background: hsl(219 64% 28%) }
-progress[value^="4"]::-webkit-progress-value { background: hsl(209 55% 33%) }
-progress[value^="5"]::-webkit-progress-value { background: hsl(199 48% 38%) }
-progress[value^="6"]::-webkit-progress-value { background: hsl(189 43% 42%) }
-progress[value^="7"]::-webkit-progress-value { background: hsl(179 39% 47%) }
-progress[value^="8"]::-webkit-progress-value { background: hsl(171 48% 55%) }
-progress[value^="9"]::-webkit-progress-value { background: hsl(165 66% 62%) }
-progress[value^="10"]::-webkit-progress-value { background: hsl(160 92% 70%) }
-
-/* ─────────────────────────────────────────────────── */
-/* < Document search / replace (cmd + F) */
-/* ─────────────────────────────────────────────────── */
-
-/* move up to avoid collision with statusbar */
-.document-search-container {
-	height: 3.6em;
-	width: 95%;
-
-	bottom: 2.5em;
-	left: 2.5%;
-
-	background-color: var(--background-secondary-alt);
-
-	border: var(--alt-border);
-	border-radius: var(--round);
-}
-
-div.document-replace {
-	margin-top: 4px;
-	margin-bottom: 4px;
-}
-
-.document-search-container.mod-replace-mode {
-	height: 6.1em;
-	border-radius: calc(var(--round) / 2);
-}
-
-/* for whatever reason the scrollbar
-shows up on the bottom when replacing/searching
-ლ(ಠ_ಠლ)╯ */
-.is-replacing .CodeMirror-scroll {
-	padding-bottom: 120px;
-}
-
-.is-searching .CodeMirror-scroll {
-	padding-bottom: 70px;
-}
-
-/* more recognizable red */
-.theme-dark .document-search-input.mod-no-match:hover,
-.theme-dark .document-search-input.mod-no-match {
-	background-color: hsl(357 30% 20%);
-}
-
-.theme-light .document-search-input.mod-no-match:hover,
-.theme-light .document-search-input.mod-no-match {
-	background-color: hsl(359 80% 85%);
-}
-
-body > .app-container .document-search-input,
-body > .app-container .document-replace-input {
-	background-color: var(--background-primary-alt);
-	border: 2px solid transparent;
-	border-radius: var(--round);
-}
-
-body > .app-container .document-search-input:focus,
-body > .app-container .document-replace-input:focus {
-	border: 2px solid var(--text-accent);
-}
-
-body > .app-container .document-search-input:hover,
-body > .app-container .document-replace-input:hover {
-	border: 2px solid var(--alt-accent);
-}
-
-input.document-search-input,
-input.document-replace-input {
-	height: 2rem;
-
-	background-color: var(--background-primary);
-
-	padding-left: 0.4em;
-
-	margin-top: 4px;
-	margin-left: 4px;
-}
-
-.document-search-button {
-	height: 2rem;
-
-	color: var(--text-on-accent);
-	background-color: var(--text-accent);
-	opacity: 0.65;
-
-	margin-top: 4px;
-}
-
-.document-search-button:hover {
-	color: var(--interaction-normal);
-	background-color: var(--alt-accent);
+/* active file */
+.nav-file-title.is-active {
+	color: var(--text-accent);
 	opacity: 0.9;
+	font-weight: 600;
 }
 
-body:not(.show-close-button) .document-search-close-button {
+.nav-file.nav-file-title.is-active {
+	border-left: 3px solid var(--text-accent) !important;
+}
+
+/* << Relationship Lines */
+/* based on css from @Mara https://github.com/Mara-Li/Obsidian-Snippet-collection */
+
+/* Top Level Folder Titles */
+
+.nav-folder.mod-root > .nav-folder-children > .nav-folder > .nav-folder-title,
+.nav-folder.mod-root > .nav-folder-children .nav-file-title,
+.nav-folder.mod-root > .nav-folder-children .nav-folder-title {
+	padding-left: 4px;
+}
+
+/* stylelint-disable selector-combinator-space-before, indentation */
+/* top folder line */
+.nav-folder.mod-root
+	> .nav-folder-children
+	> .nav-folder
+	> .nav-folder-children {
+	padding-left: 1.1em;
+	border-top: var(--hr-line) 2px solid;
+	border-radius: 0;
+}
+
+/* Relationship lines for 2nd, 3rd, and 4th level folders */
+.nav-folder.mod-root
+	> .nav-folder-children
+	> .nav-folder
+	> .nav-folder-children
+	> .nav-folder
+	> .nav-folder-children
+	> .nav-file {
+	border-left: var(--nestlinestyle1) 2px var(--hr-line);
+}
+
+.nav-folder.mod-root
+	> .nav-folder-children
+	> .nav-folder
+	> .nav-folder-children
+	> .nav-folder
+	> .nav-folder-children
+	> .nav-folder {
+	border-left: var(--nestlinestyle1) 2px var(--hr-line);
+}
+
+.nav-folder.mod-root
+	> .nav-folder-children
+	> .nav-folder
+	> .nav-folder-children
+	> .nav-folder
+	> .nav-folder-children
+	> .nav-folder
+	> .nav-folder-children
+	> .nav-file {
+	border-left: var(--nestlinestyle2) 2px var(--hr-line);
+}
+
+.nav-folder.mod-root
+	> .nav-folder-children
+	> .nav-folder
+	> .nav-folder-children
+	> .nav-folder
+	> .nav-folder-children
+	> .nav-folder
+	> .nav-folder-children
+	> .nav-folder {
+	border-left: var(--nestlinestyle2) 2px var(--hr-line);
+}
+
+.nav-folder.mod-root
+	> .nav-folder-children
+	> .nav-folder
+	> .nav-folder-children
+	> .nav-folder
+	> .nav-folder-children
+	> .nav-folder
+	> .nav-folder-children
+	> .nav-folder
+	> .nav-folder-children
+	> .nav-file {
+	border-left: var(--nestlinestyle3) 2px var(--hr-line);
+}
+
+.nav-folder.mod-root
+	> .nav-folder-children
+	> .nav-folder
+	> .nav-folder-children
+	> .nav-folder
+	> .nav-folder-children
+	> .nav-folder
+	> .nav-folder-children
+	> .nav-folder
+	> .nav-folder-children
+	> .nav-folder {
+	border-left: var(--nestlinestyle3) 2px var(--hr-line);
+}
+/* stylelint-enable selector-combinator-space-before, indentation */
+
+/* ─────────────────────────────────────────────────── */
+/* << Folder Icons & Note Icons */
+/* ─────────────────────────────────────────────────── */
+.nav-folder-title-content::before,
+.nav-file-title-content::before {
+	font-family: "Material Icons";
+	font-size: 1.2em;
+	vertical-align: bottom;
+}
+
+/* Folders icons */
+.nav-folder-title-content::before {
+	content: "folder_open ";
+}
+
+.nav-folder.is-collapsed .nav-folder-title-content::before {
+	content: "folder ";
+}
+
+/* hide toggle icon, as folders already do that now */
+.nav-folder-collapse-indicator {
+	display: none;
+}
+
+/* As icons are now used, the labeled boxes (e.g. "pdf") can be removed. */
+.nav-file-tag {
+	display: none;
+}
+
+.nav-folder-title[data-path*="attachment"] .nav-folder-title-content::before {
+	content: "attachment ";
+}
+
+.nav-folder.is-collapsed .nav-folder-title[data-path*="attachment"] .nav-folder-title-content::before {
+	content: "attach_file ";
+}
+
+.nav-folder-title[data-path*="old"] .nav-folder-title-content::before,
+.nav-folder-title[data-path*="Archiv"] .nav-folder-title-content::before,
+.nav-folder-title[data-path*="archive"] .nav-folder-title-content::before {
+	content: "inventory_2 ";
+}
+
+/* File icons */
+.nav-file-title-content::before {
+	content: "description ";
+}
+
+.nav-file-title[data-path*="Hub"] .nav-file-title-content::before,
+.nav-file-title[data-path*="HUB"] .nav-file-title-content::before {
+	content: "device_hub ";
+}
+
+.nav-file-title[data-path*="MoC"] .nav-file-title-content::before,
+.nav-file-title[data-path*="MOC"] .nav-file-title-content::before {
+	content: "map ";
+}
+
+.nav-file-title[data-path$="pptx"] .nav-file-title-content::before {
+	content: "present_to_all ";
+	color: hsl(38 100% 50%);
+}
+
+.nav-file-title[data-path*="presentation"] .nav-file-title-content::before,
+.nav-file-title[data-path*="Presentation"] .nav-file-title-content::before {
+	content: "present_to_all ";
+}
+
+.nav-file-title[data-path$="ts"] .nav-file-title-content::before,
+.nav-file-title[data-path$="js"] .nav-file-title-content::before {
+	content: "code ";
+}
+
+.nav-file-title[data-path$="tiff"] .nav-file-title-content::before,
+.nav-file-title[data-path$="jpg"] .nav-file-title-content::before,
+.nav-file-title[data-path$="png"] .nav-file-title-content::before,
+.nav-file-title[data-path$="jpeg"] .nav-file-title-content::before {
+	content: "image ";
+}
+
+.nav-file-title[data-path$="doc"] .nav-file-title-content::before,
+.nav-file-title[data-path$="docx"] .nav-file-title-content::before {
+	color: hsl(201 93% 25%);
+}
+
+.nav-file-title[data-path$="pdf"] .nav-file-title-content::before {
+	content: "picture_as_pdf ";
+	color: hsl(347 47% 37%);
+}
+
+.nav-file-title[data-path$="xlsx"] .nav-file-title-content::before,
+.nav-file-title[data-path$="csv"] .nav-file-title-content::before {
+	content: "table_chart ";
+	color: hsl(120 100% 25%);
+}
+
+.nav-file-title[data-path*="statistic"] .nav-file-title-content::before,
+.nav-file-title[data-path*="Statistik"] .nav-file-title-content::before {
+	content: "pie_chart_outline ";
+}
+
+.nav-file-title[data-path*="To do"] .nav-file-title-content::before,
+.nav-file-title[data-path*="to Do"] .nav-file-title-content::before,
+.nav-file-title[data-path*="To Do"] .nav-file-title-content::before,
+.nav-file-title[data-path*="to do"] .nav-file-title-content::before {
+	content: "check_box ";
+}
+
+.nav-file-title[data-path*="README"] .nav-file-title-content::before,
+.nav-file-title[data-path*="readme"] .nav-file-title-content::before,
+.nav-file-title[data-path*="Metadata"] .nav-file-title-content::before,
+.nav-file-title[data-path*="metadata"] .nav-file-title-content::before {
+	content: "info ";
+}
+
+.nav-file-title[data-path*="OCR-Screenshot"] .nav-file-title-content::before {
+	content: "photo_camera ";
+}
+
+.nav-file-title[data-path*="Word Limit"] .nav-file-title-content::before,
+.nav-file-title[data-path*="Character Limit"] .nav-file-title-content::before,
+.nav-file-title[data-path*="Character Count"] .nav-file-title-content::before,
+.nav-file-title[data-path*="Word Count"] .nav-file-title-content::before {
+	content: "flag ";
+}
+
+/* ─────────────────────────────────────────────────── */
+/* << Panes */
+/* ─────────────────────────────────────────────────── */
+/* <<< Panes in general */
+
+.tree-item-inner-subtext,
+.tree-item-inner,
+.search-result-file-match,
+.tree-item-flair,
+.tree-item-icon svg {
+	color: var(--extra-contrast);
+}
+
+.tree-item-inner-subtext {
+	opacity: 0.8;
+}
+
+.tree-item-inner:hover,
+.tree-item-self:hover .tree-item-inner-subtext,
+.tree-item-self:hover,
+.tree-item-self:hover .tree-item-icon svg,
+.tree-item-self:hover .tree-item-inner,
+.tree-item.is-collapsed:hover,
+.tree-item.is-collapsed:hover .tree-item-inner,
+.tree-item.is-collapsed:hover .tree-item-icon svg {
+	color: var(--alt-accent) !important;
+}
+
+.theme-light .tree-item-self:hover .tree-item-flair {
+	background: var(--alt-accent) !important;
+	opacity: 0.8;
+	font-weight: 600;
+}
+
+.theme-dark .tree-item-self:hover .tree-item-flair {
+	background: var(--highlight-color) !important;
+	font-weight: 600;
+}
+
+.tree-item-self:active,
+.tree-item-self:active .tree-item-icon svg {
+	color: var(--text-accent);
+}
+
+.tree-item.is-collapsed .tree-item-icon svg {
+	color: var(--accent-lighter);
+}
+
+.tree-item.is-collapsed .tree-item-flair {
+	background-color: var(--selection-color);
+	font-weight: 600;
+}
+
+.tree-item-icon svg {
+	height: 11px;
+	width: 11px;
+}
+
+.tree-item-icon {
+	padding-right: 3px !important;
+}
+
+.tree-item-icon::after {
 	display: none;
 }
 
 /* ─────────────────────────────────────────────────── */
-/* < Graph View */
+/* <<< Outline */
+/* ─────────────────────────────────────────────────── */
+
+.outline .tree-item-self {
+	padding-top: 0.35em;
+	padding-bottom: 0.35em;
+	line-height: 1.1em;
+}
+
+.workspace-leaf-content[data-type="outline"] .view-content {
+	padding: 4px;
+	padding-left: 0;
+}
+
+.outline .tree-item-icon.collapse-icon {
+	padding-right: 6px !important;
+	padding-left: 3px;
+}
+
+.outline .tree-item-icon.collapse-icon svg {
+	color: var(--text-muted);
+}
+
+.outline .pane-empty {
+	font-size: 0;
+}
+
+.outline .pane-empty::before {
+	content: var(--signature);
+
+	position: absolute;
+
+	margin-top: 50%;
+	margin-left: 35%;
+
+	font-size: 4rem;
+}
+
+/* ─────────────────────────────────────────────────── */
+/* <<< Backlinks & Outgoing */
+/* ─────────────────────────────────────────────────── */
+
+/* Inline Backlink Pane */
+.markdown-source-view .view-content,
+.markdown-preview-view .nav-header {
+	margin-top: 1em;
+	border-top: 2px solid var(--hr-line);
+}
+
+.markdown-source-view .view-content .backlink-pane {
+	margin-bottom: 5em;
+}
+
+.markdown-source-view .backlink-pane > .tree-item-self,
+.markdown-preview-view .backlink-pane > .tree-item-self {
+	background-color: var(--background-primary-alt);
+	border-radius: var(--roundish);
+}
+
+/* Sidebar */
+/* "Linked / Unlinked Mentions" (label) */
+.backlink-pane > .tree-item-self > .tree-item-inner {
+	color: var(--text-normal);
+	font-family: var(--smallcap-font);
+	font-size: 1.1em;
+	font-weight: 400 !important;
+}
+
+.workspace-tabs .backlink-pane > .tree-item-self {
+	background-color: var(--background-primary);
+}
+
+.backlink-pane > .tree-item-self > .tree-item-flair-outer > .tree-item-flair {
+	font-weight: 600;
+}
+
+.workspace-tabs .backlink-pane > .tree-item-self > .tree-item-flair-outer {
+	margin-top: 3px;
+	line-height: 1em;
+}
+
+.backlink-pane .tree-item-inner.is-collapsed {
+	color: var(--text-accent) !important;
+	font-weight: 600;
+}
+
+.backlink-pane {
+	padding-right: 0;
+	padding-left: 0;
+}
+
+.workspace-leaf-content[data-type="backlink"] .tree-item-self {
+	font-weight: 600;
+}
+
+.workspace-leaf-content[data-type="backlink"] .search-result-container {
+	padding-left: 0;
+	margin-left: 0;
+}
+
+.workspace-leaf-content[data-type="backlink"] .search-result-container .tree-item-flair {
+	margin-right: 0.07em;
+}
+
+.workspace-leaf-content[data-type="backlink"] .search-result-file-match {
+	margin-left: 1.3em;
+	font-weight: 500;
+}
+
+/* outgoing and backlink unlinked mentions */
+.search-result-file-match-destination-file {
+	color: var(--extra-contrast);
+}
+
+.search-result-file-match-destination-file:hover {
+	background-color: var(--alt-accent) !important;
+}
+
+.search-result-hover-button {
+	color: var(--extra-contrast);
+}
+
+.search-result-hover-button:hover {
+	background-color: var(--alt-accent);
+}
+
+/* ─────────────────────────────────────────────────── */
+/* <<< Search */
+/* ─────────────────────────────────────────────────── */
+
+.workspace-leaf-content[data-type="search"] .tree-item-self {
+	padding-left: 1.2em;
+}
+
+.search-result-file-match {
+	width: 98%;
+	max-width: 90%;
+
+	padding-right: 1em;
+	padding-left: 0;
+
+	margin-bottom: 0.4em;
+
+	line-height: 1.4em;
+}
+
+.search-result-file-matches {
+	margin-right: 0.6em;
+	margin-left: 0;
+	border-bottom: 2px solid var(--text-faint);
+}
+
+/* search result highlights are colored text instead for
+readability */
+.search-result-file-matched-text {
+	color: var(--alt-accent);
+	background: none;
+	font-weight: 600;
+}
+
+/* ─────────────────────────────────────────────────── */
+/* <<< Tag Pane */
+/* ─────────────────────────────────────────────────── */
+
+.tag-container {
+	padding-right: 0;
+	padding-left: 2px;
+}
+
+.tree-item-self.tag-pane-tag {
+	padding-right: 2px;
+	padding-left: 1.2em;
+}
+
+.tag-pane-tag-count {
+	margin-right: 3px;
+	margin-left: 3px;
+}
+
+.tag-container .tree-item-flair-outer::after {
+	display: none;
+}
+
+/* ─────────────────────────────────────────────────── */
+/* <<< Starred */
+/* ─────────────────────────────────────────────────── */
+
+.workspace-leaf-content[data-type="starred"] .nav-file-title {
+	padding-left: 0;
+}
+
+.workspace-leaf-content[data-type="starred"] .nav-header {
+	padding-top: 5px;
+}
+
+.workspace-leaf-content[data-type="starred"] .nav-file-title .nav-file-title-content::before,
+.workspace-leaf-content[data-type="starred"] .nav-file-icon svg.document {
+	display: none;
+}
+
+.workspace-leaf-content[data-type="starred"] .nav-file-title:hover {
+	color: var(--alt-accent);
+}
+
+body:not(.show-starred-nav-buttons) .workspace-leaf-content[data-type="starred"] .nav-buttons-container {
+	display: none;
+}
+
+/* for starred searches */
+.workspace-leaf-content[data-type="starred"] .nav-file-icon svg.search {
+	color: var(--extra-contrast);
+	margin-left: 0.7em;
+	vertical-align: text-bottom;
+}
+
+.workspace-leaf-content[data-type="starred"] .nav-buttons-container {
+	height: 1.7em;
+}
+
+.workspace-leaf-content[data-type="starred"] .nav-action-button.is-active {
+	background: none;
+}
+
+/* ─────────────────────────────────────────────────── */
+/* << Popover (Page Preview) */
+/* ─────────────────────────────────────────────────── */
+.popover {
+	height: var(--popover-size) !important;
+	max-height: unset !important;
+	width: var(--popover-size) !important;
+
+	border: 5px solid var(--background-secondary) !important;
+	border-radius: calc(var(--roundish) * 2);
+}
+
+.popover .markdown-embed {
+	height: 100% !important;
+}
+
+.popover .markdown-embed-link svg {
+	stroke-width: 2px;
+}
+
+.popover .markdown-embed-link {
+	top: 4px;
+	right: 4px;
+
+	color: var(--extra-contrast);
+
+	padding: 2px;
+
+	border-radius: var(--roundish);
+}
+
+.popover .markdown-embed-link:hover {
+	color: var(--alt-accent);
+}
+
+/* ─────────────────────────────────────────────────── */
+/* << File Recovery */
+/* ─────────────────────────────────────────────────── */
+.modal.mod-sync-history {
+	height: 93%;
+	width: 93%;
+	max-width: unset;
+	border-color: var(--background-primary-alt);
+}
+
+.modal.mod-sync-history .setting-item-control {
+	justify-content: unset;
+}
+
+.sync-history-list-item.is-active .u-muted,
+.sync-history-list-item:hover .u-muted {
+	color: var(--text-normal);
+}
+
+/* do not apply widend input here */
+.modal-container .sync-history-list input {
+	width: unset;
+}
+
+.sync-history-list-item {
+	padding-right: 5px;
+	padding-left: 10px;
+
+	border-right: 1px solid var(--background-primary);
+	border-bottom: 1px solid var(--background-primary);
+
+	line-height: 1.4em;
+}
+
+.sync-history-list-item.is-active {
+	color: var(--text-accent);
+	font-weight: 600;
+	text-rendering: geometricPrecision;
+}
+
+.sync-history-list-item:hover,
+.sync-history-list-item.is-active:hover {
+	color: var(--alt-accent);
+}
+
+.sync-history-list {
+	padding-top: 10px;
+	padding-bottom: 10px;
+}
+
+.sync-history-content-container {
+	height: 100%;
+	padding: 10px;
+	border-top-right-radius: var(--roundish);
+	border-bottom-right-radius: var(--roundish);
+}
+
+.modal.mod-sync-history textarea:focus {
+	border-color: var(--text-accent);
+}
+
+.sync-history-content-buttons {
+	margin-top: 13px;
+	margin-bottom: 5px;
+}
+
+.sync-history-content-empty {
+	position: relative;
+	top: 45%;
+	left: 40%;
+
+	color: var(--extra-contrast);
+
+	font-size: 0;
+}
+
+.sync-history-content-empty::before {
+	content: var(--signature);
+	font-size: 10rem;
+}
+
+/* ─────────────────────────────────────────────────── */
+/* << Graph View */
 /* ─────────────────────────────────────────────────── */
 /* https://help.obsidian.md/Plugins/Graph+view#Custom+CSS */
 
@@ -4049,197 +4288,11 @@ body:not(.show-close-button) .document-search-close-button {
 }
 
 /* ─────────────────────────────────────────────────── */
-/* < Images */
-/* ─────────────────────────────────────────────────── */
-/* see also section "Max View" */
-
-/* Image Alt as Caption in Preview Mode */
-/* useful as this is also how Pandoc converts */
-.image-embed[alt]::after {
-	content: attr(alt);
-
-	display: block;
-
-	color: var(--text-muted);
-
-	padding-top: 2px;
-
-	margin-bottom: 13px;
-
-	font-size: 90%;
-	font-weight: 300;
-	font-style: italic;
-}
-
-.view-content .markdown-preview-view img {
-	display: block;
-	cursor: zoom-in;
-	margin-top: 13px;
-	border-radius: var(--roundish);
-}
-
-body:not(.disable-image-borders) .view-content .markdown-preview-view img {
-	border: var(--basic-border);
-}
-
-/* centers image and image caption */
-body:not(.left-aligned-embeds) .image-embed[alt]::after {
-	text-align: center;
-	white-space: pre;
-}
-
-body:not(.left-aligned-embeds) .view-content .markdown-preview-view img {
-	margin-right: auto;
-	margin-left: auto;
-}
-
-/* image zoom */
-/* by @kepano  https://forum.obsidian.md/t/image-zoom-click-hold-to-expand-images/5164 */
-.markdown-preview-view img:active {
-	display: block;
-	height: 100%;
-	max-height: 100%;
-	width: 100%;
-	max-width: 100%;
-
-	position: fixed;
-	top: 50%;
-	right: 0;
-	bottom: 0;
-	left: 0;
-
-	transform: translateY(-50%);
-	cursor: zoom-out;
-
-	padding: 0;
-
-	margin: 0 auto;
-
-	text-align: center;
-
-	z-index: 100;
-	object-fit: contain;
-}
-
-.markdown-preview-view img:active .theme-dark {
-	background-color: hsl(0 0% 0%);
-}
-
-.markdown-preview-view img:active .theme-light {
-	background-color: hsl(0 0% 26%);
-}
-
-/* ─────────────────────────────────────────────────── */
-/* < Mermaid */
-/* ─────────────────────────────────────────────────── */
-/* https://forum.obsidian.md/t/ability-to-resize-and-align-mermaid-diagrams/7019/11?u=pseudometa */
-/* see also "Max View" */
-
-body:not(.left-aligned-embeds) div.mermaid {
-	text-align: center;
-}
-
-/* ─────────────────────────────────────────────────── */
-/* < Bullet point relationship lines */
-/* ─────────────────────────────────────────────────── */
-/* based on css from the outliner plugin */
-/* https://github.com/vslinko/obsidian-outliner/blob/main/styles.css */
-
-/* Edit Mode */
-.cm-s-obsidian .HyperMD-list-line {
-	padding-top: 0.2em;
-	overflow: hidden;
-}
-
-.cm-hmd-list-indent {
-	position: relative;
-}
-
-.CodeMirror-line .cm-hmd-list-indent::before {
-	content: "";
-
-	display: block;
-	width: 100%;
-
-	position: absolute;
-	top: -1.6em;
-	left: 0;
-
-	background-image: linear-gradient(to right, var(--text-faint) 1px, transparent 1px);
-
-	padding-bottom: 999em;
-
-	background-size: 1.8em 1px;
-	background-position-x: 3px;
-}
-
-/* Preview Mode */
-ul ul,
-ol ol,
-ul ol,
-ol ul {
-	position: relative;
-}
-
-ul ul::before,
-ol ol::before,
-ul ol::before,
-ol ul::before {
-	content: "";
-
-	position: absolute;
-	top: 0;
-	bottom: 0;
-	left: -0.85rem;
-
-	border-left: 1px solid var(--text-faint);
-}
-
-/* less indention to save space */
-.markdown-preview-view > div > div > ol,
-.markdown-preview-view > div > div > ul {
-	padding-left: 27px;
-}
-
-/* ─────────────────────────────────────────────────── */
-/* < PDFs */
-/* ─────────────────────────────────────────────────── */
-/* credits @phibr0 */
-.theme-dark:not(.no-pdf-dark-mode) .pdf-embed iframe,
-.theme-dark:not(.no-pdf-dark-mode) .workspace-leaf-content[data-type="pdf"] iframe {
-	filter: invert(0.85);
-}
-
-.pdf-embed iframe {
-	border-radius: var(--roundish);
-}
-
-body:not(.left-aligned-embeds) .pdf-embed {
-	margin-right: auto;
-	margin-left: auto;
-}
-
-/* ─────────────────────────────────────────────────── */
-/* < Mobile */
+/* < Community Plugins */
 /* ─────────────────────────────────────────────────── */
 
-/* slightly thinner on mobile */
-.is-mobile .view-header {
-	height: 2.4em;
-}
-
-.is-mobile .markdown-preview-view,
-.is-mobile .cm-s-obsidian div.cm-line {
-	font-size: var(--mobile-font-size);
-	line-height: 1.5;
-}
-
-body.is-mobile .markdown-preview-view blockquote {
-	text-align: start;
-}
-
 /* ─────────────────────────────────────────────────── */
-/* < Calendar Plugin */
+/* << Calendar */
 /* ─────────────────────────────────────────────────── */
 
 .workspace-leaf-content[data-type="calendar"] .view-content {
@@ -4325,7 +4378,7 @@ body.is-mobile .markdown-preview-view blockquote {
 }
 
 /* ─────────────────────────────────────────────────── */
-/* Templater */
+/* << Templater */
 /* ─────────────────────────────────────────────────── */
 
 .cm-s-obsidian .cm-templater-command {
@@ -4362,7 +4415,7 @@ https://forum.obsidian.md/t/inline-code-occludes-text-selection-and-vim-cursor/1
 }
 
 /* ─────────────────────────────────────────────────── */
-/* < Kanban Plugin */
+/* << Kanban */
 /* ─────────────────────────────────────────────────── */
 
 /* stylelint-disable no-duplicate-selectors */
@@ -4546,10 +4599,11 @@ body.angular-shapes .kanban-plugin__lane {
 }
 
 /* ─────────────────────────────────────────────────── */
-/* < Longform Plugin */
+/* << Longform */
 /* ─────────────────────────────────────────────────── */
 
-/* < Longform sidebar */
+/* <<< Longform Sidebar */
+
 /* container with more space */
 .tab-list.svelte-1bo97vk {
 	margin-right: 0 !important;
@@ -4642,7 +4696,7 @@ body.angular-shapes .kanban-plugin__lane {
 	padding-left: 3px !important;
 }
 
-/* < Longform Sidebar Icons */
+/* <<< Longform Sidebar Icons */
 .svelte-htpziy::before {
 	font-family: "Material Icons";
 	font-size: 1.5rem;
@@ -4703,7 +4757,7 @@ body.angular-shapes .kanban-plugin__lane {
 	background-color: var(--alt-accent) !important;
 }
 
-/* < Project Title */
+/* Project Title */
 .svelte-23avsr {
 	color: var(--extra-contrast) !important;
 }
@@ -4736,7 +4790,7 @@ body.angular-shapes .kanban-plugin__lane {
 	font-size: 0.8em;
 }
 
-/* < Longform Editor */
+/* <<< Longform Editor */
 /* https://github.com/kevboh/longform#scene-only-styling */
 
 .longform-leaf .markdown-preview-view,
@@ -4802,7 +4856,7 @@ body:not(.longform-left-aligned) .longform-leaf .cm-s-obsidian {
 	text-align: start;
 }
 
-/* < Longform Icons */
+/* <<< Longform Icons */
 
 /* hide index file in file explorer, which shouldn't
 be messed with anyway */
@@ -4825,7 +4879,7 @@ body.hide-index-files .nav-file-title[data-path$="Index.md"] {
 }
 
 /* ─────────────────────────────────────────────────── */
-/* < Ozan's Image Plugin */
+/* << Ozan's Image in Editor */
 /* ─────────────────────────────────────────────────── */
 /* see also "Max View" */
 
@@ -4847,7 +4901,7 @@ body:not(.left-aligned-embeds) div.oz-image-widget > img {
 }
 
 /* ─────────────────────────────────────────────────── */
-/* < Recent Files */
+/* << Recent Files */
 /* ─────────────────────────────────────────────────── */
 
 /* Show no icons for recent files plugin */
@@ -4860,7 +4914,7 @@ body:not(.left-aligned-embeds) div.oz-image-widget > img {
 }
 
 /* ─────────────────────────────────────────────────── */
-/* < Quick Explorer */
+/* << Quick Explorer */
 /* ─────────────────────────────────────────────────── */
 
 /* titlebar, when it is shown */
@@ -4922,7 +4976,7 @@ body:not(.show-title-bar) > .qe-popup-menu {
 }
 
 /* ─────────────────────────────────────────────────── */
-/* My Snippets Plugin */
+/* << My Snippets */
 /* ─────────────────────────────────────────────────── */
 
 .status-bar-item.plugin-mysnippets-plugin.cMenu-statusbar-button {
@@ -4967,7 +5021,7 @@ button.MS-OpenSnippet:hover svg.ms-snippet path {
 }
 
 /* ─────────────────────────────────────────────────── */
-/* < MoC Plugin / Map of Content Plugin */
+/* << Map of Content (MoC) */
 /* ─────────────────────────────────────────────────── */
 /* stylelint-disable selector-max-id */
 
@@ -5095,7 +5149,7 @@ button.MS-OpenSnippet:hover svg.ms-snippet path {
 /* stylelint-enable selector-max-id */
 
 /* ─────────────────────────────────────────────────── */
-/* < Breadcrumbs */
+/* << Breadcrumbs */
 /* ─────────────────────────────────────────────────── */
 
 /* bugfix */
@@ -5201,7 +5255,7 @@ body > .app-container div.BC-trail-grid-item {
 }
 
 /* ─────────────────────────────────────────────────── */
-/* < Drag and Drop Blocks Plugin */
+/* << Drag & Drop Blocks */
 /* ─────────────────────────────────────────────────── */
 
 body #search-res-hover.show,
@@ -5218,7 +5272,7 @@ body #block-ref-hover.show:hover {
 }
 
 /* ─────────────────────────────────────────────────── */
-/* < Dangling Links */
+/* << Dangling Links */
 /* ─────────────────────────────────────────────────── */
 .workspace-leaf-content[data-type="dangling-links"] {
 	line-height: 1.2em;
@@ -5254,7 +5308,7 @@ body #block-ref-hover.show:hover {
 }
 
 /* ─────────────────────────────────────────────────── */
-/* Advanced Cursor Plugin */
+/* << Advanced Cursor */
 /* ─────────────────────────────────────────────────── */
 /* the sidebar only */
 .workspace-leaf-content[data-type="Saved Queries View"] .savedQ-view-q {
@@ -5269,7 +5323,7 @@ body #block-ref-hover.show:hover {
 }
 
 /* ─────────────────────────────────────────────────── */
-/* < CodeMirror Options */
+/* << CodeMirror Options */
 /* ─────────────────────────────────────────────────── */
 
 /* folded URL */
@@ -5323,7 +5377,7 @@ pre button.copy:hover::before {
 }
 
 /* ─────────────────────────────────────────────────── */
-/* Another Quick Switcher */
+/* << Another Quick Switcher */
 /* ─────────────────────────────────────────────────── */
 
 .another-quick-switcher__item__icon,
@@ -5388,7 +5442,7 @@ pre button.copy:hover::before {
 }
 
 /* ─────────────────────────────────────────────────── */
-/* < Activity History */
+/* << Activity History */
 /* ─────────────────────────────────────────────────── */
 
 .ObsidianHistoryBlock .HistoryBoard text {
@@ -5418,7 +5472,7 @@ pre button.copy:hover::before {
 }
 
 /* ─────────────────────────────────────────────────── */
-/* < Style Settings Plugin */
+/* << Style Settings (the Settings Tab) */
 /* ─────────────────────────────────────────────────── */
 
 .style-settings-heading {
@@ -5465,23 +5519,22 @@ pre button.copy:hover::before {
 }
 
 /* ─────────────────────────────────────────────────── */
-/* < Other Minor Plugin Customizations */
+/* << Other Minor Plugin Customizations */
 /* ─────────────────────────────────────────────────── */
 
-/* Zoom Plugin */
+/* <<< Zoom Plugin */
 a.zoom-plugin-title:hover {
 	color: var(--alt-accent);
 	opacity: 0.8 !important;
 }
 
-/* advanced tables */
+/* <<< Advanced Tables */
 .widget-icon:hover {
 	fill: var(--alt-accent) !important;
 }
 
 /* ─────────────────────────────────────────────────── */
-/* < Plugin Compatibility info for the Obsidian Hub */
-/* < Compatibility */
+/* < Plugin Compatibility Info for the Obsidian Hub */
 /* ─────────────────────────────────────────────────── */
 
 /* @plugins
@@ -5521,7 +5574,7 @@ community:
 */
 
 /* ─────────────────────────────────────────────────── */
-/* < Style Settings Options */
+/* < Style Setting Options */
 /* ─────────────────────────────────────────────────── */
 
 /* @settings
