@@ -1,6 +1,6 @@
 /* ──────────────────────────────────────────────────────
 SHIMMERING FOCUS
-Version 1.193
+Version 1.194
 https://github.com/chrisgrieser/shimmering-focus/
 Created by @pseudometa
 MIT License
@@ -173,7 +173,7 @@ This ToC is auto-generated via the .create-ToC.sh
 	--resize-handle-thickness: 4px;
 	--toggle-duration: 400ms;
 	--scrollbar-thickness: 0.6em;
-	--image-size: 50%;
+	--image-size: 50;
 	--pdf-size: 50vh;
 	--popover-size: 350;
 	--inactive-pane-opacity: 80%;
@@ -1109,6 +1109,7 @@ div.search-input-clear-button::before,
 .modal-close-button {
 	color: var(--text-muted);
 	background-color: var(--background-secondary-alt);
+	z-index: 100;
 }
 
 div.search-input-clear-button::before {
@@ -2324,7 +2325,6 @@ body:not(.left-aligned-embeds) .view-content .markdown-preview-view img {
 }
 
 /* image zoom */
-/* by @kepano  https://forum.obsidian.md/t/image-zoom-click-hold-to-expand-images/5164 */
 .markdown-preview-view img:active {
 	display: block;
 
@@ -2334,21 +2334,24 @@ body:not(.left-aligned-embeds) .view-content .markdown-preview-view img {
 	max-width: 100%;
 
 	position: fixed;
-	top: 50%;
+	top: 0;
 	right: 0;
 	bottom: 0;
 	left: 0;
 
-	transform: translateY(-50%);
+	background-color: var(--background-secondary-alt);
+
+	/* Scale with inverse multiplicative to reverse size reduction */
+	transform: scale(calc(100 / var(--image-size)));
 	cursor: zoom-out;
 
 	padding: 0;
 	margin: 0 auto;
 
-	text-align: center;
+	border-color: var(--background-secondary) !important;
 
 	z-index: 100;
-	object-fit: contain;
+	object-fit: scale-down;
 }
 
 /* ─────────────────────────────────────────────────── */
@@ -2473,7 +2476,7 @@ body:not(.max-view-off) .workspace-split.mod-left-split.is-collapsed ~ .mod-root
 
 body:not(.is-mobile) .view-content .markdown-preview-view img,
 body:not(.is-mobile) > .app-container div.oz-image-widget > img:not(:active) {
-	max-width: var(--image-size);
+	max-width: calc(var(--image-size) * 1%);
 }
 
 /* <<< PDFs */
@@ -5841,7 +5844,6 @@ settings:
 	 min: 10
 	 max: 100
 	 step: 5
-	 format: "%"
   -
 	 id: pdf-size
 	 title: Size of embedded PDFs
