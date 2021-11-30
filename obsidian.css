@@ -1,6 +1,6 @@
 /* ──────────────────────────────────────────────────────
 SHIMMERING FOCUS
-Version 1.186
+Version 1.187
 https://github.com/chrisgrieser/shimmering-focus/
 Created by @pseudometa
 MIT License
@@ -308,6 +308,8 @@ This ToC is auto-generated via the .create-ToC.sh
 
 	--status-bar-font-size: 0.95em;
 	--mobile-font-size: 1.2rem;
+	--footnote-size: 85%;
+
 	--smallcap-font: "AlegreyaSansSC";
 	--setting-heading: "AlegreyaSansSC";
 	--button-font: "Quicksand";
@@ -3000,7 +3002,7 @@ ol ul::before {
 }
 
 /* ─────────────────────────────────────────────────── */
-/* << Links */
+/* << Internal Links */
 /* ─────────────────────────────────────────────────── */
 /* hovered links in alt accent */
 .cm-string.cm-url:hover:not(.cm-formatting),
@@ -3026,12 +3028,15 @@ a.internal-link.is-unresolved:hover {
 	opacity: 0.8 !important;
 }
 
-/* dont underline the brackets */
+/* don't underline the brackets */
 .cm-url.cm-formatting {
 	text-decoration: none !important;
 }
 
-/* external links */
+/* ─────────────────────────────────────────────────── */
+/* << External Links */
+/* ─────────────────────────────────────────────────── */
+
 .external-link {
 	background-image: none;
 	padding-right: 0;
@@ -3436,7 +3441,7 @@ body:not(.no-pandoc-citation-emphasis) .cm-link.cm-quote.cm-hmd-barelink {
 /* << Footnotes */
 /* ─────────────────────────────────────────────────── */
 
-/* set space above and below horizontal line that seperates footnotes */
+/* set space above and below horizontal line that separates footnotes */
 .markdown-preview-view .footnotes hr {
 	margin-top: 60px;
 	margin-bottom: 10px;
@@ -3444,7 +3449,7 @@ body:not(.no-pandoc-citation-emphasis) .cm-link.cm-quote.cm-hmd-barelink {
 
 /* footnotes preview */
 .markdown-preview-section .footnotes {
-	font-size: 85%;
+	font-size: var(--footnote-size);
 	text-align: justify;
 	hyphens: auto;
 }
@@ -3467,7 +3472,7 @@ span.cm-link.cm-hmd-footnote {
 	hyphens: auto;
 }
 
-/* remove underline which only decreases redability */
+/* remove underline which only decreases readability */
 .markdown-preview-view a.footnote-link {
 	text-decoration: none;
 }
@@ -5297,6 +5302,11 @@ body > .app-container .cm-s-obsidian .hmd-link-icon {
 	background-image: var(--external-url);
 	margin-bottom: 3px;
 	background-repeat: no-repeat;
+}
+
+/* fix for link icon in footnotes */
+body > .app-container .cm-s-obsidian .HyperMD-footnote .hmd-link-icon {
+	width: 1.1em;
 }
 
 /* move and shrink copy button */
