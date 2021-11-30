@@ -1,6 +1,6 @@
 /* ──────────────────────────────────────────────────────
 SHIMMERING FOCUS
-Version 1.188
+Version 1.189
 https://github.com/chrisgrieser/shimmering-focus/
 Created by @pseudometa
 MIT License
@@ -3859,7 +3859,7 @@ body.is-mobile .markdown-preview-view blockquote {
 .outline .tree-item-self {
 	padding-top: 0.35em;
 	padding-bottom: 0.35em;
-	line-height: 1.1em;
+	line-height: 1.15em;
 }
 
 .workspace-leaf-content[data-type="outline"] .view-content {
@@ -5051,7 +5051,7 @@ button.MS-OpenSnippet:hover svg.ms-snippet path {
 	padding-bottom: 0 !important;
 }
 
-/* seperation line */
+/* separation line */
 #main_moc_div .path {
 	padding-top: 15px;
 	padding-bottom: 15px;
@@ -5640,21 +5640,21 @@ settings:
 	 default: false
   -
 	 id: mono-color-cursor
-	 title: Use a mono-colored Cursor
-	 description: 'Use a mono-colored, purple cursor, as in previous versions of "Shimmering Focus".'
+	 title: Mono-colored Cursor
+	 description: 'Use a mono-colored, purple cursor like in previous versions of "Shimmering Focus".'
 	 type: class-toggle
 	 default: false
   -
 	 id: quotation-mark-deco
 	 title: Decorative Quotation Mark
-	 description: Show a decorative Quotation Mark next to Blockquotes in Preview Mode (no Live Preview yet).
+	 description: Show a decorative quotation mark next to blockquotes in Preview Mode (no Live Preview yet).
 	 type: class-toggle
 	 hub: ignore
 	 default: false
   -
 	 id: normal-checkboxes
 	 title: Normal Checkboxes
-	 description: Use the normal checkboxes from the default theme.
+	 description: Use the checkboxes from the default theme.
 	 type: class-toggle
 	 default: false
   -
@@ -5678,7 +5678,7 @@ settings:
   -
 	 id: font-monospace
 	 title: Monospace Font
-	 description: Unsed in Code blocks, YAML in Edit Mode, tables in Edit Mode, etc.
+	 description: Used in Code blocks, YAML in Edit Mode, tables in Edit Mode, etc.
 	 type: variable-text
 	 default: '"Input Mono"'
   -
@@ -5744,14 +5744,14 @@ settings:
   -
 	 id: headings
 	 title: Headings
-	 description: Level-Specific Sizes, Font, Italics
+	 description: Level-specific Sizes, Font, Italics
 	 type: heading
 	 level: 2
 	 collapsed: true
   -
 	 id: heading-font
 	 title: Heading Font
-	 description: Applies to H1 to H5 Headings
+	 description: Applies to h1 to h5 Headings. (h6 headings are used for Pseudo-Admonitions.)
 	 type: variable-text
 	 default: Optima, Optima-local
   -
@@ -5837,8 +5837,8 @@ settings:
 	 format: "%"
   -
 	 id: pdf-size
-	 title: Size of embeded PDFs
-	 description: Size of embeded PDFs in % (when Max View is disabled or not active)
+	 title: Size of embedded PDFs
+	 description: Size of embedded PDFs in % (when Max View is disabled or not active)
 	 type: variable-number-slider
 	 default: 50
 	 min: 10
@@ -5865,7 +5865,7 @@ settings:
 	 default: false
   -
 	 id: no-pdf-dark-mode
-	 title: No Darkmode for PDFs
+	 title: No Dark Mode for PDFs
 	 description: Disable Dark Mode for PDFs when Obsidian is set to dark mode.
 	 type: class-toggle
 	 default: false
