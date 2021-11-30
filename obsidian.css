@@ -1,6 +1,6 @@
 /* ──────────────────────────────────────────────────────
 SHIMMERING FOCUS
-Version 1.195
+Version 1.196
 https://github.com/chrisgrieser/shimmering-focus/
 Created by @pseudometa
 MIT License
@@ -339,6 +339,7 @@ select.dropdown {
 	letter-spacing: 1px;
 }
 
+input[type="text"],
 input[type="email"],
 input[type="password"],
 input.prompt-input,
