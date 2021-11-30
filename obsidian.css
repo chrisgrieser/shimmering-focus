@@ -1,6 +1,6 @@
 /* ──────────────────────────────────────────────────────
 SHIMMERING FOCUS
-Version 1.182
+Version 1.183
 https://github.com/chrisgrieser/shimmering-focus/
 Created by @pseudometa
 MIT License
@@ -20,7 +20,7 @@ For help and/or CSS snippets, thanks to:
 /* < Table of Content */
 /* ─────────────────────────────────────────────────── */
 /* all sections begin with "< ", so you can search for
-"< sectionname" to navigate to the respective section.
+"< section name" to navigate to the respective section.
 This ToC is auto-generated via the .create-ToC.sh
 
 - Colors & Variables
@@ -5107,7 +5107,7 @@ button.MS-OpenSnippet:hover svg.ms-snippet path {
 /* << Breadcrumbs */
 /* ─────────────────────────────────────────────────── */
 
-/* bugfix */
+/* bug fix */
 body > .app-container .BC-Matrix-square > ol {
 	padding-left: 33px;
 }
@@ -5145,15 +5145,19 @@ h3.BC-Matrix-header {
 	font-size: 1.25em;
 }
 
-h5.BC-Matrix-header {
+h6.BC-Matrix-header {
 	display: inline-block;
 
-	position: absolute;
+	position: relative;
 	right: 5px;
+	/* top: -10px; */
 
 	color: var(--text-muted) !important;
 
 	margin-top: 5px !important;
+
+	border: none;
+	border-left: none !important;
 
 	font-family: var(--smallcap-font);
 	font-size: 0.9em;
