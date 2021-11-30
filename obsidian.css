@@ -1,6 +1,6 @@
 /* ──────────────────────────────────────────────────────
 SHIMMERING FOCUS
-Version 1.192
+Version 1.193
 https://github.com/chrisgrieser/shimmering-focus/
 Created by @pseudometa
 MIT License
@@ -2349,14 +2349,6 @@ body:not(.left-aligned-embeds) .view-content .markdown-preview-view img {
 
 	z-index: 100;
 	object-fit: contain;
-}
-
-.markdown-preview-view img:active .theme-dark {
-	background-color: hsl(0 0% 0%);
-}
-
-.markdown-preview-view img:active .theme-light {
-	background-color: hsl(0 0% 26%);
 }
 
 /* ─────────────────────────────────────────────────── */
