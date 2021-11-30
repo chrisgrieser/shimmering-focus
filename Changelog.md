@@ -1,3 +1,4 @@
+- 2021-11-30	minor
 - 2021-11-30	fix image zoom via click+hold
 - 2021-11-30	confirmation modal
 - 2021-11-30	eas-in-out

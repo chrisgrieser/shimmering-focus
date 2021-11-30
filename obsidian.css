@@ -1,6 +1,6 @@
 /* ──────────────────────────────────────────────────────
 SHIMMERING FOCUS
-Version 1.194
+Version 1.195
 https://github.com/chrisgrieser/shimmering-focus/
 Created by @pseudometa
 MIT License
@@ -1441,10 +1441,14 @@ body .workspace-leaf-resize-handle:active {
 /* << Confirmation Modal */
 /* ─────────────────────────────────────────────────── */
 
+.mod-confirmation input[type="text"] {
+	width: 65%;
+}
+
 .mod-confirmation .modal-title {
 	margin-bottom: 35px;
 	font-family: var(--smallcap-font);
-	font-size: calc(var(--h1-size) * 1.2);
+	font-size: calc(var(--h1-size) * 1.25);
 }
 
 .modal-container.mod-confirmation > .modal {
@@ -3053,7 +3057,6 @@ a.internal-link.is-unresolved:hover {
 	white-space: nowrap;
 }
 
-/* exceptions */
 body > .app-container table > tbody > tr > td .external-link,
 .workspace-leaf-content[data-type="kanban"] .external-link {
 	white-space: normal;
@@ -3096,7 +3099,7 @@ a.tag:hover {
 }
 
 /* ─────────────────────────────────────────────────── */
-/* << Annotation Tags */
+/* <<< Annotation Tags */
 /* ─────────────────────────────────────────────────── */
 /* thanks to @atlas for the inspiration
 https://discord.com/channels/686053708261228577/722584061087842365/898113745774084127 */
