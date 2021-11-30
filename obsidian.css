@@ -1,6 +1,6 @@
 /* ──────────────────────────────────────────────────────
 SHIMMERING FOCUS
-Version 1.187
+Version 1.188
 https://github.com/chrisgrieser/shimmering-focus/
 Created by @pseudometa
 MIT License
@@ -3130,7 +3130,7 @@ body:not(.annotation-tags-off) .cm-s-obsidian .CodeMirror-line span.cm-tag-examp
 	text-decoration: none;
 }
 
-/* prevent linebreak between emoji and tag */
+/* prevent line break between emoji and tag */
 .cm-hashtag-begin {
 	white-space: nowrap;
 }
@@ -5166,11 +5166,22 @@ h6.BC-Matrix-header {
 	font-size: 0.9em;
 }
 
-.workspace-leaf-content[data-type="BC-matrix"] > .view-content > button {
+.workspace-leaf-content[data-type="BC-matrix"] .view-content button {
 	display: none;
 }
 
+/* Down view */
+.workspace-leaf-content[data-type="BC-down"] .view-content > div:first-child {
+	display: none;
+}
+
+.workspace-leaf-content[data-type="BC-down"] .view-content {
+	padding-top: 5px;
+	/* white-space: pre-line; */
+}
+
 /* unresolved links */
+body > .app-container .internal-link.is-unresolved,
 body > .app-container .BC-Link.is-unresolved {
 	color: var(--unresolved-link-color);
 	opacity: var(--unresolved-opacity);
