@@ -3,7 +3,7 @@
 A minimalistic [Obsidian](https://obsidian.md/) theme focused on readability and condensed information display.
 
 <!-- manually updated-->
-![](https://img.shields.io/badge/downloads-5177-6E4E9B?style=plastic) ![](https://img.shields.io/github/last-commit/chrisgrieser/shimmering-focus?style=plastic)
+![](https://img.shields.io/badge/downloads-5199-6E4E9B?style=plastic) ![](https://img.shields.io/github/last-commit/chrisgrieser/shimmering-focus?style=plastic)
 
 <img src="https://raw.githubusercontent.com/chrisgrieser/shimmering-focus/main/dual-theme-screenshot.png" alt="Promo Screenshot">
 
@@ -166,7 +166,7 @@ npm install stylelint postcss stylelint-config-recommended
 ## Credits
 
 ### About the Developer
-In my day job, I am a researcher and sociology. In my phD project, I investigate the governance of the app economy and how software ecosystems manage the tension between innovation and compatibility. If you are interested in this subject, feel free to visit [my academic homepage](https://chris-grieser.de/) and get in touch!
+In my day job, I am a researcher in Sociology who also codes some small utilities in his free time. In my PhD project, I investigate the governance of the app economy and how the tension between innovation and compatibility is managed in software ecosystems. If you are interested in this subject, feel free to visit [my academic homepage](https://chris-grieser.de/) and get in touch!
 
 - [Discord](https://discord.gg/veuWUTm): `@pseudometa#9546`
 - Twitter: [@pseudo_meta](https://twitter.com/pseudo_meta)

@@ -1,6 +1,6 @@
 /* ──────────────────────────────────────────────────────
 SHIMMERING FOCUS
-Version 1.189
+Version 1.190
 https://github.com/chrisgrieser/shimmering-focus/
 Created by @pseudometa
 MIT License
@@ -663,7 +663,7 @@ body:not(.show-header-bar):not(.is-mobile) .view-header {
 
 	background-color: var(--background-primary) !important;
 
-	transition: 300ms;
+	transition: 350ms ease-in-out;
 
 	border-color: var(--text-faint);
 	border-top: none;
@@ -687,7 +687,7 @@ body:not(.show-header-bar):not(.is-mobile) .view-header:hover,
 body:not(.show-header-bar):not(.is-mobile) .view-header:focus-within {
 	height: 1.9em !important;
 	background-color: var(--background-secondary) !important;
-	transition: 300ms;
+	transition: 350ms ease-in-out;
 }
 
 body.show-header-bar:not(.is-mobile) .view-header {
@@ -779,12 +779,12 @@ body:not(.default-statusbar) .status-bar {
 /* only show on hover */
 body:not(.show-statusbar):not(.default-statusbar) .status-bar {
 	opacity: 0;
-	transition: 800ms;
+	transition: 800ms ease-in-out;
 }
 
 body:not(.show-statusbar):not(.default-statusbar) .status-bar:hover {
 	opacity: 1;
-	transition: 200ms;
+	transition: 200ms ease-in-out;
 }
 
 /* so stuff on the bottom of the right sidebar can still be clicked */
@@ -850,13 +850,13 @@ button:hover {
 }
 
 body:not(.normal-checkboxes) .checkbox-container:hover {
-	transition-duration: var(--toggle-duration);
+	transition: var(--toggle-duration) ease-in-out;
 	border: 9px solid var(--alt-accent);
 }
 
 body:not(.normal-checkboxes) .checkbox-container.is-enabled:hover {
 	background-color: var(--background-secondary);
-	transition-duration: var(--toggle-duration);
+	transition: var(--toggle-duration) ease-in-out;
 	border: 9px solid var(--alt-accent-lighter);
 }
 
@@ -866,7 +866,7 @@ body:not(.normal-checkboxes) .checkbox-container {
 
 	background-color: var(--background-secondary);
 
-	transition-duration: var(--toggle-duration);
+	transition: var(--toggle-duration) ease-in-out;
 	cursor: pointer;
 
 	border: 2px solid var(--text-accent);
@@ -2027,7 +2027,7 @@ body:not(.less-heading-letter-spacing) .modal.mod-community-theme .modal-title {
 /* ─────────────────────────────────────────────────── */
 .workspace-leaf:not(.mod-active) .workspace-leaf-content[data-type="markdown"] {
 	opacity: var(--inactive-pane-opacity);
-	transition-duration: 0.5s;
+	transition: 800ms ease-in-out;
 }
 
 /* ─────────────────────────────────────────────────── */
@@ -3404,7 +3404,7 @@ div:not(.CodeMirror-activeline) > .CodeMirror-line .cm-em.cm-strikethrough,
 em > del {
 	color: var(--spoiler-bg);
 	background-color: var(--spoiler-bg);
-	transition-duration: 250ms;
+	transition: 400ms ease-in-out;
 	font-style: initial;
 	text-decoration: unset;
 }
@@ -3413,7 +3413,7 @@ em > del {
 em > del:hover,
 .cm-em.cm-strikethrough:hover {
 	background-color: var(--background-secondary-alt) !important;
-	transition-duration: 250ms;
+	transition: 400ms ease-in-out;
 }
 
 /* << Strikethroughs */
