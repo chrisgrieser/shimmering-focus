@@ -1,3 +1,4 @@
+- 2021-11-30	fix Breadcrumbs update
 - 2021-11-30	fix for latest Breadcrumbs update
 - 2021-11-29	fix input in sidebars
 - 2021-11-29	consistent modal headings

@@ -1,6 +1,6 @@
 /* ──────────────────────────────────────────────────────
 SHIMMERING FOCUS
-Version 1.183
+Version 1.184
 https://github.com/chrisgrieser/shimmering-focus/
 Created by @pseudometa
 MIT License
@@ -5138,23 +5138,21 @@ body > .app-container div.view-content {
 	padding: 0 2.5px 2.5px;
 }
 
-h3.BC-Matrix-header {
+h4.BC-Matrix-header {
 	display: inline-flex;
-	margin-left: 5px !important;
+	margin-left: 0;
 	font-family: var(--default-font);
 	font-size: 1.25em;
+	font-style: unset !important;
 }
 
 h6.BC-Matrix-header {
 	display: inline-block;
 
 	position: relative;
-	right: 5px;
-	/* top: -10px; */
+	right: 0;
 
 	color: var(--text-muted) !important;
-
-	margin-top: 5px !important;
 
 	border: none;
 	border-left: none !important;
