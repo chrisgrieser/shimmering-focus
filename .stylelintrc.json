@@ -46,7 +46,8 @@
 						"top",
 						"right",
 						"bottom",
-						"left"
+						"left",
+						"z-index"
 					]
 				},
 				{
@@ -98,6 +99,7 @@
 					"noEmptyLineBetween": true,
 					"properties": [
 						"border",
+						"border-image",
 						"border-width",
 						"border-style",
 						"border-color",
@@ -109,8 +111,7 @@
 						"border-top-right-radius",
 						"border-bottom-right-radius",
 						"border-bottom-left-radius",
-						"border-top-left-radius",
-						"border-image"
+						"border-top-left-radius"
 					]
 				},
 				{
@@ -177,7 +178,7 @@
 		"at-rule-name-case": ["lower", {"severity": "warning"} ],
 		"function-name-case": ["lower", {"severity": "warning"} ],
 		"selector-pseudo-class-case": ["lower", {"severity": "warning"} ],
-		"selector-pseudo-element-case": ["lower", {"severity": "warning"} ],
+		"selector-pseudo-element-case": ["upper", {"severity": "warning"} ],
 		"selector-type-case": ["lower", {"severity": "warning"} ],
 		"unit-case": ["lower", {"severity": "warning"} ],
 		"value-keyword-case": ["lower", {"severity": "warning"} ],
