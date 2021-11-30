@@ -1,6 +1,6 @@
 /* ──────────────────────────────────────────────────────
 SHIMMERING FOCUS
-Version 1.185
+Version 1.186
 https://github.com/chrisgrieser/shimmering-focus/
 Created by @pseudometa
 MIT License
@@ -2053,8 +2053,8 @@ body:not(.less-heading-letter-spacing) .modal.mod-community-theme .modal-title {
 /* << Overscroll */
 /* ─────────────────────────────────────────────────── */
 
-body .markdown-preview-view {
-	padding-bottom: 20em;
+body > .app-container .markdown-preview-view:not(.kanban-plugin__markdown-preview-view) {
+	padding-bottom: 20em !important;
 	padding-left: 50px;
 }
 
