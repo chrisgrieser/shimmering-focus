@@ -1,3 +1,4 @@
+- 2021-11-30	minor
 - 2021-11-30	eas-in-out
 - 2021-11-30	Breadcrumbs down view updates
 - 2021-11-30	fix overscroll being applied to kanbans

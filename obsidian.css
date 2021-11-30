@@ -1,6 +1,6 @@
 /* ──────────────────────────────────────────────────────
 SHIMMERING FOCUS
-Version 1.190
+Version 1.191
 https://github.com/chrisgrieser/shimmering-focus/
 Created by @pseudometa
 MIT License
@@ -171,12 +171,12 @@ This ToC is auto-generated via the .create-ToC.sh
 	--active-line: hsl(62 11% 63% / 12.5%);
 	--cursor-monocolor: var(--accent-lighter);
 	--resize-handle-thickness: 4px;
-	--toggle-duration: 250ms;
+	--toggle-duration: 400ms;
 	--scrollbar-thickness: 0.6em;
 	--image-size: 50%;
 	--pdf-size: 50vh;
 	--popover-size: 350;
-	--inactive-pane-opacity: 85%;
+	--inactive-pane-opacity: 80%;
 	--signature: "⟡";
 }
 
