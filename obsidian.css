@@ -1,6 +1,6 @@
 /* ──────────────────────────────────────────────────────
 SHIMMERING FOCUS
-Version 1.191
+Version 1.192
 https://github.com/chrisgrieser/shimmering-focus/
 Created by @pseudometa
 MIT License
@@ -1434,6 +1434,21 @@ body .workspace-leaf-resize-handle:active {
 	max-width: unset;
 	border: var(--alt-border);
 	border-radius: calc(var(--roundish) * 3);
+}
+
+/* ─────────────────────────────────────────────────── */
+/* << Confirmation Modal */
+/* ─────────────────────────────────────────────────── */
+
+.mod-confirmation .modal-title {
+	margin-bottom: 35px;
+	font-family: var(--smallcap-font);
+	font-size: calc(var(--h1-size) * 1.2);
+}
+
+.modal-container.mod-confirmation > .modal {
+	width: 50%;
+	padding: 20px 5px 35px;
 }
 
 /* ─────────────────────────────────────────────────── */
