@@ -1,6 +1,6 @@
 /* ──────────────────────────────────────────────────────
 SHIMMERING FOCUS
-Version 1.184
+Version 1.185
 https://github.com/chrisgrieser/shimmering-focus/
 Created by @pseudometa
 MIT License
@@ -35,13 +35,13 @@ This ToC is auto-generated via the .create-ToC.sh
 - UI Elements
 	- Title Bar
 	- Ribbons
-	- Notifications & Tooltips
+	- Notifications & Tool tips
 	- Header Bar
 	- Status Bar
 	- Scrollbar
 - Interactive Elements
 	- Buttons
-	- Toggles (Checkboxes)
+	- Toggles (Check boxes)
 	- Input & Textarea
 		- Dropdown
 		- Slider
@@ -2601,7 +2601,7 @@ Pseudo-Admonitions work on one-liners only */
 }
 
 /* when pseudo-admonition is also active line */
-.CodeMirror-activeline .HyperMD-header.HyperMD-header-6.CodeMirror-line {
+body:not(.no-active-line-highlighting) .CodeMirror-activeline .HyperMD-header.HyperMD-header-6.CodeMirror-line {
 	color: var(--text-normal) !important;
 	background-color: var(--active-line) !important;
 	border-radius: var(--roundish) !important;
@@ -2671,7 +2671,7 @@ Pseudo-Admonitions work on one-liners only */
 }
 
 /* when blockquote is also active line */
-.CodeMirror-activeline .HyperMD-quote.HyperMD-quote-1.CodeMirror-line {
+body:not(.no-active-line-highlighting) .CodeMirror-activeline .HyperMD-quote.HyperMD-quote-1.CodeMirror-line {
 	color: var(--text-normal) !important;
 	background-color: var(--active-line) !important;
 }
@@ -3341,19 +3341,19 @@ input[type="checkbox"]:checked:hover {
 /* << Highlights & Selection */
 /* ─────────────────────────────────────────────────── */
 
-/* Active Line Highlight */
-.CodeMirror-activeline .CodeMirror-linebackground {
+/* <<< Active Line Highlight */
+body:not(.no-active-line-highlighting) .CodeMirror-activeline .CodeMirror-linebackground {
 	background-color: var(--active-line);
 	border-radius: var(--roundish);
 }
 
-/* Highlights */
+/* <<< Highlights */
 .markdown-preview-view mark,
 .cm-s-obsidian span.cm-highlight {
 	background-color: var(--highlight-color);
 }
 
-/* Selection (Selected Text) */
+/* <<< Selection (Selected Text) */
 .theme-light,
 .theme-dark {
 	--text-selection: var(--selection-color);
@@ -5962,7 +5962,7 @@ settings:
   -
 	 id: miscellaneous
 	 title: Miscellaneous
-	 description: Popovers, Pandoc Citations, Annotation Tags
+	 description: Popovers, Pandoc Citations, Annotation Tags, Active Line Highlighting
 	 type: heading
 	 level: 2
 	 collapsed: true
@@ -5986,6 +5986,11 @@ settings:
 	 id: annotation-tags-off
 	 title: 'Turn off "Annotation Tags"'
 	 description: '"Annotation Tags" will visually emphasize some tags that are commonly used for academic reading.'
+	 type: class-toggle
+	 default: false
+  -
+	 id: no-active-line-highlighting
+	 title: Turn off Active Line Highlighting
 	 type: class-toggle
 	 default: false
 */

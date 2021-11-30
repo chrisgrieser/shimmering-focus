@@ -1,3 +1,4 @@
+- 2021-11-30	add style setting option to turn off active line highlighting (issue #48)
 - 2021-11-30	fix Breadcrumbs update
 - 2021-11-30	fix for latest Breadcrumbs update
 - 2021-11-29	fix input in sidebars
