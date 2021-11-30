@@ -1,6 +1,6 @@
 /* ──────────────────────────────────────────────────────
 SHIMMERING FOCUS
-Version 1.196
+Version 1.197
 https://github.com/chrisgrieser/shimmering-focus/
 Created by @pseudometa
 MIT License
@@ -2290,6 +2290,11 @@ progress[value^="10"]::-webkit-progress-value { background: hsl(160 92% 70%) }
 /* << Images */
 /* ─────────────────────────────────────────────────── */
 /* see also section "Max View" */
+
+/* Image Files opened by Obsidian */
+.view-content > .image-container > img {
+	margin-top: 25%;
+}
 
 /* Image Alt as Caption in Preview Mode */
 /* useful as this is also how Pandoc converts */
