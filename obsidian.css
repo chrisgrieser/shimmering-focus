@@ -1,6 +1,6 @@
 /* ──────────────────────────────────────────────────────
 SHIMMERING FOCUS
-Version 1.207
+Version 1.208
 https://github.com/chrisgrieser/shimmering-focus/
 Created by @pseudometa
 MIT License
@@ -2154,7 +2154,7 @@ body.colored-yaml .cm-s-obsidian .cm-hmd-frontmatter.cm-number {
 	color: var(--unresolved-link-color);
 }
 
-body > .app-container .cm-s-obsidian .cm-hmd-frontmatter.cm-string {
+body.colored-yaml .cm-s-obsidian .cm-hmd-frontmatter.cm-string {
 	color: hsl(54 69% 40%);
 }
 
