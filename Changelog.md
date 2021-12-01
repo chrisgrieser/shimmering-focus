@@ -1,3 +1,4 @@
+- 2021-12-01	option to turn off relationship lines
 - 2021-12-01	fixed yaml coloring
 - 2021-12-01	fix hotkey search
 - 2021-12-01	image zoom background

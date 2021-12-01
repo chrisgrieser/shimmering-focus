@@ -1,6 +1,6 @@
 /* ──────────────────────────────────────────────────────
 SHIMMERING FOCUS
-Version 1.208
+Version 1.209
 https://github.com/chrisgrieser/shimmering-focus/
 Created by @pseudometa
 MIT License
@@ -3006,16 +3006,16 @@ button.copy-code-button::BEFORE {
 /* https://github.com/vslinko/obsidian-outliner/blob/main/styles.css */
 
 /* Edit Mode */
-.cm-s-obsidian .HyperMD-list-line {
+body:not(.no-ul-relationship-lines) .cm-s-obsidian .HyperMD-list-line {
 	padding-top: 0.2em;
 	overflow: hidden;
 }
 
-.cm-hmd-list-indent {
+body:not(.no-ul-relationship-lines) .cm-hmd-list-indent {
 	position: relative;
 }
 
-.CodeMirror-line .cm-hmd-list-indent::BEFORE {
+body:not(.no-ul-relationship-lines) .CodeMirror-line .cm-hmd-list-indent::BEFORE {
 	display: block;
 	content: "";
 
@@ -3034,17 +3034,17 @@ button.copy-code-button::BEFORE {
 }
 
 /* Preview Mode */
-ul ul,
-ol ol,
-ul ol,
-ol ul {
+body:not(.no-ul-relationship-lines) ul ul,
+body:not(.no-ul-relationship-lines) ol ol,
+body:not(.no-ul-relationship-lines) ul ol,
+body:not(.no-ul-relationship-lines) ol ul {
 	position: relative;
 }
 
-ul ul::BEFORE,
-ol ol::BEFORE,
-ul ol::BEFORE,
-ol ul::BEFORE {
+body:not(.no-ul-relationship-lines) ul ul::BEFORE,
+body:not(.no-ul-relationship-lines) ol ol::BEFORE,
+body:not(.no-ul-relationship-lines) ul ol::BEFORE,
+body:not(.no-ul-relationship-lines) ol ul::BEFORE {
 	content: "";
 
 	position: absolute;
@@ -3055,9 +3055,9 @@ ol ul::BEFORE {
 	border-left: 1px solid var(--text-faint);
 }
 
-/* less indention to save space */
-.markdown-preview-view > div > div > ol,
-.markdown-preview-view > div > div > ul {
+body:not(.no-ul-relationship-lines) .markdown-preview-view > div > div > ol,
+body:not(.no-ul-relationship-lines) .markdown-preview-view > div > div > ul {
+	/* less indention to save space */
 	padding-left: 27px;
 }
 
@@ -6061,7 +6061,7 @@ settings:
   -
 	 id: miscellaneous
 	 title: Miscellaneous
-	 description: Popovers, Pandoc Citations, Annotation Tags, Active Line Highlighting, Command Palette, Alternating Row Colors
+	 description: Popovers, Pandoc Citations, Annotation Tags, Active Line Highlighting, Command Palette, Alternating Row Colors, Relationship Lines
 	 type: heading
 	 level: 2
 	 collapsed: true
@@ -6102,6 +6102,12 @@ settings:
 	 id: move-plugin-name-to-left
 	 title: 'Command Palette: Move the plugin name back to the left'
 	 description: Enable this in case some commands are aren't displayed properly in the Command Palette.
+	 type: class-toggle
+	 default: false
+  -
+	 id: no-ul-relationship-lines
+	 title: Disable the relationship lines for lists
+	 description: Enable this, if you want to use a custom relationship line snippet or the relationship lines from the Outliner plugin.
 	 type: class-toggle
 	 default: false
 */
