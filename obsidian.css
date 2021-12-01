@@ -1,6 +1,6 @@
 /* ──────────────────────────────────────────────────────
 SHIMMERING FOCUS
-Version 1.201
+Version 1.202
 https://github.com/chrisgrieser/shimmering-focus/
 Created by @pseudometa
 MIT License
@@ -2062,7 +2062,7 @@ body:not(.less-heading-letter-spacing) .modal.mod-community-theme .modal-title {
 /* for angular shaped mode */
 .community-theme.is-selected,
 .community-theme {
-	border-radius: calc(var(--round-ish) * 2);
+	border-radius: calc(var(--roundish) * 2);
 }
 
 /* ─────────────────────────────────────────────────── */
@@ -3153,6 +3153,7 @@ body:not(.annotation-tags-off) .tag[href="#agree"],
 body:not(.annotation-tags-off) .tag[href="#example"],
 body:not(.annotation-tags-off) .tag[href="#definition"],
 body:not(.annotation-tags-off) .tag[href="#method"],
+body:not(.annotation-tags-off) .tag[href="#important"],
 body:not(.annotation-tags-off) .cm-s-obsidian .CodeMirror-line span.cm-tag-method,
 body:not(.annotation-tags-off) .cm-s-obsidian .CodeMirror-line span.cm-tag-disagree,
 body:not(.annotation-tags-off) .cm-s-obsidian .CodeMirror-line span.cm-tag-gap,
@@ -3161,6 +3162,7 @@ body:not(.annotation-tags-off) .cm-s-obsidian .CodeMirror-line span.cm-tag-defin
 body:not(.annotation-tags-off) .cm-s-obsidian .CodeMirror-line span.cm-tag-question,
 body:not(.annotation-tags-off) .cm-s-obsidian .CodeMirror-line span.cm-tag-main,
 body:not(.annotation-tags-off) .cm-s-obsidian .CodeMirror-line span.cm-tag-agree,
+body:not(.annotation-tags-off) .cm-s-obsidian .CodeMirror-line span.cm-tag-important,
 body:not(.annotation-tags-off) .cm-s-obsidian .CodeMirror-line span.cm-tag-example {
 	color: var(--annotation-tag-font-color) !important;
 
@@ -3188,6 +3190,7 @@ body:not(.annotation-tags-off) .cm-s-obsidian .CodeMirror-line .cm-hashtag-begin
 body:not(.annotation-tags-off) .cm-s-obsidian .CodeMirror-line .cm-hashtag-begin.cm-tag-question,
 body:not(.annotation-tags-off) .cm-s-obsidian .CodeMirror-line .cm-hashtag-begin.cm-tag-main,
 body:not(.annotation-tags-off) .cm-s-obsidian .CodeMirror-line .cm-hashtag-begin.cm-tag-agree,
+body:not(.annotation-tags-off) .cm-s-obsidian .CodeMirror-line .cm-hashtag-begin.cm-tag-important,
 body:not(.annotation-tags-off) .cm-s-obsidian .CodeMirror-line .cm-hashtag-begin.cm-tag-example {
 	padding-right: 0;
 	border-top-right-radius: 0;
@@ -3203,6 +3206,7 @@ body:not(.annotation-tags-off) .cm-s-obsidian .CodeMirror-line .cm-hashtag-end.c
 body:not(.annotation-tags-off) .cm-s-obsidian .CodeMirror-line .cm-hashtag-end.cm-tag-question,
 body:not(.annotation-tags-off) .cm-s-obsidian .CodeMirror-line .cm-hashtag-end.cm-tag-main,
 body:not(.annotation-tags-off) .cm-s-obsidian .CodeMirror-line .cm-hashtag-end.cm-tag-agree,
+body:not(.annotation-tags-off) .cm-s-obsidian .CodeMirror-line .cm-hashtag-end.cm-tag-important,
 body:not(.annotation-tags-off) .cm-s-obsidian .CodeMirror-line .cm-hashtag-end.cm-tag-example {
 	padding-left: 0;
 	border-bottom-left-radius: 0;
@@ -3223,6 +3227,21 @@ body:not(.annotation-tags-off) .tag[href="#question"] {
 .theme-light:not(.annotation-tags-off) .cm-hashtag-begin.cm-tag-question::BEFORE,
 .theme-light:not(.annotation-tags-off) .tag[href="#question"]::BEFORE {
 	content: "❓ ";
+}
+
+body:not(.annotation-tags-off) .cm-tag-important,
+body:not(.annotation-tags-off) .tag[href="#important"] {
+	background-color: rgb(255 120 15 / 50%);
+}
+
+.theme-dark:not(.annotation-tags-off) .cm-hashtag-begin.cm-tag-important::BEFORE,
+.theme-dark:not(.annotation-tags-off) .tag[href="#important"]::BEFORE {
+	content: "❕ ";
+}
+
+.theme-light:not(.annotation-tags-off) .cm-hashtag-begin.cm-tag-important::BEFORE,
+.theme-light:not(.annotation-tags-off) .tag[href="#important"]::BEFORE {
+	content: "❗️ ";
 }
 
 body:not(.annotation-tags-off) .cm-tag-method,
@@ -6060,6 +6079,7 @@ settings:
   -
 	 id: move-plugin-name-to-left
 	 title: 'Command Palette: Move the plugin name back to the left'
+	 description: Enable this in case some commands are aren't displayed properly in the Command Palette.
 	 type: class-toggle
 	 default: false
 */
