@@ -1,6 +1,6 @@
 /* ──────────────────────────────────────────────────────
 SHIMMERING FOCUS
-Version 1.210
+Version 1.211
 https://github.com/chrisgrieser/shimmering-focus/
 Created by @pseudometa
 MIT License
@@ -2552,6 +2552,11 @@ body:not(.max-view-off) .workspace-split.mod-left-split.is-collapsed ~ .mod-root
 svg[id^="m"][width][height][viewBox] {
 	height: auto;
 	min-width: 20%;
+}
+
+/* Focus View */
+body.focus-view-enabled .workspace-split.mod-left-split.is-collapsed ~ .workspace-split.mod-right-split {
+	display: none;
 }
 
 /* ─────────────────────────────────────────────────── */
@@ -5907,8 +5912,14 @@ settings:
 	 collapsed: true
   -
 	 id: max-view-off
-	 title: 'Turn off the "Max View" feature'
+	 title: 'Disable the "Max View" feature'
 	 description: '"Max View" makes panes full length and images/PDFs full width when the left sidebar is hidden and readable line length when the left sidebar is shown.'
+	 type: class-toggle
+	 default: false
+  -
+	 id: focus-view-enabled
+	 title: 'Focus View: Hiding the left side bar will also hide the right one'
+	 description: 'Note that with this feature, the right sidebar stays hidden until the left one is shown again. Synergizes with "Max View", but also works with "Max View" disabled. '
 	 type: class-toggle
 	 default: false
   -

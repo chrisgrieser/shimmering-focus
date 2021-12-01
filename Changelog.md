@@ -1,3 +1,4 @@
+- 2021-12-01	New feature: Focus View (must be enabled via Style Settings Plugin)
 - 2021-12-01	fixed mermaid font size
 - 2021-12-01	added changelog button
 - 2021-12-01	option to turn off relationship lines

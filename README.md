@@ -3,7 +3,7 @@
 A minimalistic [Obsidian](https://obsidian.md/) theme focused on readability and condensed information display.
 
 <!-- manually updated-->
-![](https://img.shields.io/badge/downloads-5306-6E4E9B?style=plastic) ![](https://img.shields.io/github/last-commit/chrisgrieser/shimmering-focus?style=plastic) [![](https://img.shields.io/badge/changelog-click%20here-FFE800?style=plastic)](Changelog.md)
+![](https://img.shields.io/badge/downloads-5309-6E4E9B?style=plastic) ![](https://img.shields.io/github/last-commit/chrisgrieser/shimmering-focus?style=plastic) [![](https://img.shields.io/badge/changelog-click%20here-FFE800?style=plastic)](Changelog.md)
 
 <img src="https://raw.githubusercontent.com/chrisgrieser/shimmering-focus/main/dual-theme-screenshot.png" alt="Promo Screenshot">
 
@@ -13,7 +13,7 @@ A minimalistic [Obsidian](https://obsidian.md/) theme focused on readability and
 - [Features](#features)
   - [Hiding/Showing UI Elements](#hidingshowing-ui-elements)
   - [Annotation Tags](#annotation-tags)
-  - [Max View](#max-view)
+  - [Max View & Focus View](#max-view--focus-view)
   - [Image-related Features](#image-related-features)
   - [Fine-tuned Spellcheck](#fine-tuned-spellcheck)
   - [Multi-Color-Highlighting & Spoiler Syntax](#multi-color-highlighting--spoiler-syntax)
@@ -54,11 +54,12 @@ Type one of the following eight tags (e.g. `#definition`) to get a colored annot
 
 💡 You can add your own Annotation Tags by adding a snippet [using this template](https://github.com/chrisgrieser/shimmering-focus/blob/main/annotation-tag-template.css).
 
-### Max View
-- By default, the theme uses readable line length as well as smaller images & PDFs when the left sidebar is visible. __When it is hidden, line length is extended to full length__, and images & PDFs to full size. (Requires `Readable line length` editor setting to be *enabled*.)
-- Useful when dealing with big tables or many images.
+### Max View & Focus View
+- __Max View__: By default, the theme uses readable line length[^4] as well as smaller images & PDFs. When the *left* sidebar is hidden, line length is extended to full length, and images & PDFs are expanded to full width. This is useful when dealing with big tables or many images.
+- __Focus View__ *(disabled by default)*: Hiding the *left* side bar will also hide the *right* sidebar, with the right side bar staying hidden until the left one is shown again. This synergizes with *Max View*, but also works when Max View is disabled. To enable *Focus View*, use the [Style Settings Plugin](#Customization).
+- *Recommendation*: For both features, it is useful to set a hotkey for the built-in command `Toggle left sidebar`.
 
-💡 You can turn this feature off or adjust the size of images & PDFs with the [Style Settings Plugin](#Customization).
+💡 You can turn the *Max View* feature off and/or adjust the size of images & PDFs with the [Style Settings Plugin](#Customization).
 
 <img src="https://user-images.githubusercontent.com/73286100/138562271-2f7d3589-d580-49e4-bea6-ca3e3004ab78.gif" alt="Promo Max View" width=60%>
 
@@ -99,9 +100,9 @@ Using the [Style Settings Plugin](#Customization), you can deactivate the spellc
 - 💡 The settings can still be accessed via `cmd + ,` or `ctrl + ,`.
 
 ### Condensed Display of Information
-- Screen real estate is used much more efficiently to display more information at the same time.
-- Useful for smaller screens, Split Screens, bigger font sizes or simply if want to see more information without having to scroll.
-- Smaller images/PDFs. Click-and-Hold or use the [Max View Feature](#Max-View) to enlarge them again.
+- Screen real estate used much more efficiently to display more information.
+- Useful for smaller screens, split screens, bigger font sizes, or simply to see more information without having to scroll.
+- Smaller images/PDFs. (Click-and-Hold or use the [Max View Feature](#Max-View) to enlarge them again.)
 - Wider input boxes
 
 <img width=60% alt="Screenshot 2021-10-23 17 06 22" src="https://user-images.githubusercontent.com/73286100/138561771-1067d041-eeb2-4dfe-8d79-f7fa754ca419.png">
@@ -175,7 +176,7 @@ In my day job, I am a researcher in Sociology who also codes some small utilitie
 - Twitter: [@pseudo_meta](https://twitter.com/pseudo_meta)
 
 ### Donations
-**Donations** are welcome via [PayPal](https://www.paypal.com/paypalme/ChrisGrieser) or [Ko-Fi](https://ko-fi.com/pseudometa). 🙏
+Donations are welcome via [PayPal](https://www.paypal.com/paypalme/ChrisGrieser) or [Ko-Fi](https://ko-fi.com/pseudometa). 🙏
 
 ### Thanks
 Thanks for help and/or CSS snippets:
@@ -191,3 +192,4 @@ Thanks for help and/or CSS snippets:
 [^1]: Thanks to @Manedblackwolf.
 [^2]: Thanks to @Atlas.
 [^3]: Thanks to @phibr0.
+[^4]: Requires the `Readable line length` editor setting to be *enabled*.
