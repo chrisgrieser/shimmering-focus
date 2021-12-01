@@ -1,6 +1,6 @@
 /* ──────────────────────────────────────────────────────
 SHIMMERING FOCUS
-Version 1.209
+Version 1.210
 https://github.com/chrisgrieser/shimmering-focus/
 Created by @pseudometa
 MIT License
@@ -2410,6 +2410,7 @@ body:not(.left-aligned-embeds) div.mermaid {
 
 /* bugfix for mermaid font */
 .mermaid {
+	font-size: 0.9em;
 	--mermaid-font: "Inter", -apple-system, "BlinkMacSystemFont", "Segoe UI", "Roboto", "Helvetica", "Arial", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Microsoft YaHei Light", sans-serif; /* stylelint-disable-line max-line-length */
 }
 
@@ -6106,8 +6107,8 @@ settings:
 	 default: false
   -
 	 id: no-ul-relationship-lines
-	 title: Disable the relationship lines for lists
-	 description: Enable this, if you want to use a custom relationship line snippet or the relationship lines from the Outliner plugin.
+	 title: Disable Relationship Lines for lists
+	 description: If you want to use a custom relationship line snippet or the relationship lines from the Outliner plugin, you can disable this theme's relationship lines to prevent interference.
 	 type: class-toggle
 	 default: false
 */
