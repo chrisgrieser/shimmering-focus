@@ -1,6 +1,6 @@
 /* ──────────────────────────────────────────────────────
 SHIMMERING FOCUS
-Version 1.204
+Version 1.205
 https://github.com/chrisgrieser/shimmering-focus/
 Created by @pseudometa
 MIT License
@@ -789,7 +789,7 @@ body:not(.show-statusbar):not(.default-statusbar) .status-bar:hover {
 }
 
 /* so stuff on the bottom of the right sidebar can still be clicked */
-body:not(.default-statusbar) .mod-right-split .workspace-leaf-content {
+body:not(.default-statusbar) .mod-right-split .workspace-tabs:last-child .workspace-leaf-content {
 	padding-bottom: 2em;
 }
 
@@ -5518,7 +5518,7 @@ pre button.copy:hover::BEFORE {
 }
 
 /* ─────────────────────────────────────────────────── */
-/* << Style Settings (the Settings Tab) */
+/* << Style Settings (Settings Tab) */
 /* ─────────────────────────────────────────────────── */
 
 .style-settings-heading {
@@ -5533,30 +5533,24 @@ pre button.copy:hover::BEFORE {
 }
 
 .style-settings-heading .setting-item-name {
+	margin-bottom: 5px;
 	font-family: var(--setting-heading);
 	line-height: 0.7em;
 }
 
-.style-settings-heading:not(.is-collapsed) .setting-item-name {
-	margin-bottom: 5px;
+.style-settings-heading .setting-item-description {
+	margin-bottom: 4px;
+	font-family: var(--menu-font-family);
+	font-size: 0.7em;
+	line-height: 1.1em;
 }
 
-.style-settings-heading:not(.is-collapsed) > .setting-item-info > .setting-item-description {
+.style-settings-heading:not(.is-collapsed) .setting-item-description {
 	display: none;
 }
 
 .style-settings-heading .setting-item-name:hover {
 	color: var(--editor-alt-accent);
-}
-
-.style-settings-heading > .setting-item-info > .setting-item-description {
-	font-family: var(--menu-font-family);
-	font-size: 0.7em;
-}
-
-.style-settings-container .setting-item:not(.style-settings-heading) > .setting-item-info > .setting-item-description {
-	font-size: 0.8em;
-	line-height: 1.2em;
 }
 
 /* remove buggy export button for certain blocks */
@@ -5823,13 +5817,6 @@ settings:
 	 step: 0.05
 	 format: em
   -
-	 id: headings
-	 title: Headings
-	 description: Level-specific Sizes, Font, Italics
-	 type: heading
-	 level: 2
-	 collapsed: true
-  -
 	 id: heading-font
 	 title: Heading Font
 	 description: Applies to h1 to h5 Headings. (h6 headings are used for Pseudo-Admonitions.)
@@ -5895,8 +5882,8 @@ settings:
 	 format: em
   -
 	 id: content-settings
-	 title: Content Settings
-	 description: Max View, Images, PDFs, Tables, & Line Length
+	 title: Content
+	 description: Max View, Images, PDFs, & Line Length
 	 type: heading
 	 level: 2
 	 collapsed: true
@@ -5935,12 +5922,6 @@ settings:
 	 id: left-aligned-embeds
 	 title: Align Images & PDFs to the left
 	 description: When disabled, they will be aligned to the center instead.
-	 type: class-toggle
-	 default: false
-  -
-	 id: no-alternating-rows
-	 title: Turn off Alternating Row Coloring
-	 description: Affects tables, Command Palette & Suggesters.
 	 type: class-toggle
 	 default: false
   -
@@ -6063,7 +6044,7 @@ settings:
   -
 	 id: miscellaneous
 	 title: Miscellaneous
-	 description: Popovers, Pandoc Citations, Annotation Tags, Active Line Highlighting, Command Palette
+	 description: Popovers, Pandoc Citations, Annotation Tags, Active Line Highlighting, Command Palette, Alternating Row Colors
 	 type: heading
 	 level: 2
 	 collapsed: true
@@ -6092,6 +6073,12 @@ settings:
   -
 	 id: no-active-line-highlighting
 	 title: Turn off Active Line Highlighting
+	 type: class-toggle
+	 default: false
+  -
+	 id: no-alternating-rows
+	 title: Turn off Alternating Row Coloring
+	 description: Affects tables, Command Palette & Suggesters.
 	 type: class-toggle
 	 default: false
   -

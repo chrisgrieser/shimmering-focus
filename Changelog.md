@@ -1,3 +1,4 @@
+- 2021-12-01	style settings styling + style setting options re-organized + bugfix right sidebar
 - 2021-12-01	update graph control info in readme
 - 2021-12-01	graph controls only visible on hover
 - 2021-12-01	Update README.md
