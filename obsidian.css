@@ -1,6 +1,6 @@
 /* ──────────────────────────────────────────────────────
 SHIMMERING FOCUS
-Version 1.202
+Version 1.203
 https://github.com/chrisgrieser/shimmering-focus/
 Created by @pseudometa
 MIT License
@@ -4249,6 +4249,30 @@ body:not(.show-starred-nav-buttons) .workspace-leaf-content[data-type="starred"]
 /* https://help.obsidian.md/Plugins/Graph+view#Custom+CSS */
 
 /* graph controls */
+body:not(.show-graph-controls) .graph-controls.is-close:not(:hover) {
+	opacity: 0;
+	transition: 800ms ease-in-out;
+}
+
+.graph-controls.is-close {
+	top: 4px;
+	right: 4px;
+	background-color: transparent;
+	padding: 0;
+}
+
+.graph-controls:not(.is-close) {
+	/* controls resizable, thanks @Manedblackwolf */
+	max-width: none;
+	resize: horizontal;
+	border: var(--basic-border);
+	border-radius: calc(var(--roundish) * 3);
+}
+
+.mod-root .graph-controls {
+	top: 0;
+}
+
 .graph-controls-button {
 	color: var(--extra-contrast);
 	padding: 4px;
@@ -4267,12 +4291,6 @@ body:not(.show-starred-nav-buttons) .workspace-leaf-content[data-type="starred"]
 
 .tree-item-self:hover .graph-control-section-header {
 	color: var(--alt-accent);
-}
-
-.graph-controls.is-close {
-	top: 5px;
-	background-color: transparent;
-	padding: 0;
 }
 
 /* graph itself */
@@ -4307,12 +4325,6 @@ body:not(.show-starred-nav-buttons) .workspace-leaf-content[data-type="starred"]
 .graph-view.color-line,
 .graph-view.color-arrow {
 	color: var(--extra-contrast);
-}
-
-/* controls resizable, thanks @Manedblackwolf */
-.graph-controls {
-	max-width: none;
-	resize: horizontal;
 }
 
 /* ─────────────────────────────────────────────────── */
@@ -5675,6 +5687,12 @@ settings:
 	 title: Re-enable the Fold Markers
 	 type: class-toggle
 	 description: Folder markers are the "..." next to a folded/collapsed item.
+	 default: false
+  -
+	 id: show-graph-controls
+	 title: Permanently show the Graph Controls
+	 type: class-toggle
+	 description: When false, Graph controls are still visible when open, or upon hovering the top-left area.
 	 default: false
   -
 	 id: show-starred-nav-buttons

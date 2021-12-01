@@ -34,7 +34,8 @@
 						"min-height",
 						"width",
 						"max-width",
-						"min-width"
+						"min-width",
+						"resize"
 					]
 				},
 				{
