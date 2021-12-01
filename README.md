@@ -22,7 +22,7 @@ A minimalistic [Obsidian](https://obsidian.md/) theme focused on readability and
 - [Design Principles](#design-principles)
   - [Extreme Minimalism](#extreme-minimalism)
   - [Condensed Display of Information](#condensed-display-of-information)
-  - [Maximum Readability](#maximum-readability--scannability)
+  - [Maximum Readability & Scannability](#maximum-readability--scannability)
   - [Subtle Design](#subtle-design)
 - [Customization](#customization)
 - [Plugin Compatibility](#plugin-compatibility)
@@ -40,10 +40,10 @@ A minimalistic [Obsidian](https://obsidian.md/) theme focused on readability and
 ## Features
 
 ### Hiding/Showing UI Elements
-- The Status bar, Header bar, and collapse arrows become visible upon hovering.
-- You can re-enable all hidden elements by using the [Style Settings Plugin](#Customization).
+- The Status bar, Header bar, Graph controls, and Collapse arrows are hidden by default, but become visible upon hovering or being active.
+- You can re-enable _all_ hidden elements by using the [Style Settings Plugin](#Customization).
 
-💡 The settings can still be accessed via `cmd + ,` or `ctrl + ,`.
+💡 The settings can be accessed via `cmd + ,` or `ctrl + ,`.
 
 <img src="https://user-images.githubusercontent.com/73286100/131692972-e523f2d4-40c7-452c-83ac-a7f2fbd546ae.gif" alt="headerbar visible on hover" width=50%>
 
