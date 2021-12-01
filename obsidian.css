@@ -1,6 +1,6 @@
 /* ──────────────────────────────────────────────────────
 SHIMMERING FOCUS
-Version 1.212
+Version 1.213
 https://github.com/chrisgrieser/shimmering-focus/
 Created by @pseudometa
 MIT License
@@ -1099,9 +1099,25 @@ div.menu-item {
 /* ─────────────────────────────────────────────────── */
 /* << Editor Suggestions */
 /* ─────────────────────────────────────────────────── */
+/* "body:not(.app-container)" needs to be used to prevent
+targeting other suggestion containers */
 
 body:not(.app-container) .suggestion-container {
 	border-radius: var(--roundish);
+}
+
+body:not(.app-container) .suggestion-note {
+	font-family: var(--smallcap-font);
+	font-size: 0.9em;
+	text-align: end;
+}
+
+body:not(.app-container) .suggestion-item.is-selected .suggestion-note {
+	color: var(--text-accent);
+}
+
+body:not(.app-container) .suggestion-item:hover .suggestion-note {
+	color: var(--alt-accent);
 }
 
 /* ─────────────────────────────────────────────────── */

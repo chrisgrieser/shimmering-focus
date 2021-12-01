@@ -1,3 +1,4 @@
+- 2021-12-01	editor suggestion
 - 2021-12-01	file recovery plugin fixes
 - 2021-12-01	New feature: Focus View (must be enabled via Style Settings Plugin)
 - 2021-12-01	fixed mermaid font size
