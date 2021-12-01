@@ -1,6 +1,6 @@
 /* ──────────────────────────────────────────────────────
 SHIMMERING FOCUS
-Version 1.213
+Version 1.214
 https://github.com/chrisgrieser/shimmering-focus/
 Created by @pseudometa
 MIT License
@@ -1106,9 +1106,24 @@ body:not(.app-container) .suggestion-container {
 	border-radius: var(--roundish);
 }
 
+body:not(.app-container) .suggestion-item {
+	padding-top: 9px;
+	padding-bottom: 9px;
+}
+
+body:not(.app-container) .suggestion-content {
+	line-height: 0.7em;
+}
+
+body:not(.app-container) .suggestion-content .suggestion-flair {
+	transform: scale(1.1);
+	margin-top: 3px;
+}
+
 body:not(.app-container) .suggestion-note {
 	font-family: var(--smallcap-font);
 	font-size: 0.9em;
+	line-height: 0.7em;
 	text-align: end;
 }
 
@@ -3978,9 +3993,14 @@ body.is-mobile .markdown-preview-view blockquote {
 /* <<< Outline */
 /* ─────────────────────────────────────────────────── */
 
+.outline .tree-item-inner {
+	padding-top: 2px;
+	padding-bottom: 5px;
+	border-bottom: 1px solid var(--background-modifier-border);
+}
+
 .outline .tree-item-self {
-	padding-top: 0.35em;
-	padding-bottom: 0.35em;
+	border-radius: 0;
 	line-height: 1.15em;
 }
 
@@ -3991,6 +4011,7 @@ body.is-mobile .markdown-preview-view blockquote {
 
 .outline .tree-item-icon.collapse-icon {
 	padding-right: 6px !important;
+	padding-bottom: 3px;
 	padding-left: 3px;
 }
 
