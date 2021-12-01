@@ -1,3 +1,4 @@
+- 2021-12-01	fix hotkey search
 - 2021-12-01	image zoom background
 - 2021-12-01	style settings styling + style setting options re-organized + bugfix right sidebar
 - 2021-12-01	update graph control info in readme

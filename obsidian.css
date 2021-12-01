@@ -1,6 +1,6 @@
 /* ──────────────────────────────────────────────────────
 SHIMMERING FOCUS
-Version 1.206
+Version 1.207
 https://github.com/chrisgrieser/shimmering-focus/
 Created by @pseudometa
 MIT License
@@ -400,20 +400,15 @@ body,
 	font-variant-numeric: tabular-nums;
 }
 
-/* bugfix for mermaid font */
-.mermaid {
-	--mermaid-font: "Inter", -apple-system, "BlinkMacSystemFont", "Segoe UI", "Roboto", "Helvetica", "Arial", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Microsoft YaHei Light", sans-serif; /* stylelint-disable-line max-line-length */
-}
-
 /* << Bold */
 .theme-dark .cm-strong,
 .theme-dark .markdown-preview-view strong {
 	color: var(--bold-in-darkmode);
 }
 
-.suggestion-highlight,
 .cm-strong,
 .markdown-preview-view strong,
+.suggestion-highlight,
 .nav-file-title.is-active {
 	font-weight: 700;
 	text-rendering: geometricPrecision;
@@ -1561,7 +1556,7 @@ body .workspace-leaf-resize-handle:active {
 
 .vertical-tab-content {
 	background: var(--background-primary);
-	padding: 11px 21px 8em; /* bottom padding creates overscroll */
+	padding: 12px 21px;
 }
 
 .vertical-tab-header-group {
@@ -1687,6 +1682,15 @@ p.u-center-text {
 	/* hide "Version: " in front of version number */
 	overflow-x: hidden;
 	text-indent: -3.4em;
+}
+
+/* Hotkey search */
+.hotkey-search-container {
+	padding-bottom: 10px;
+}
+
+.hotkey-search-container input {
+	width: 350px;
 }
 
 /* ─────────────────────────────────────────────────── */
@@ -2398,11 +2402,15 @@ body:not(.left-aligned-embeds) .view-content .markdown-preview-view img {
 /* ─────────────────────────────────────────────────── */
 /* << Mermaid */
 /* ─────────────────────────────────────────────────── */
-/* https://forum.obsidian.md/t/ability-to-resize-and-align-mermaid-diagrams/7019/11?u=pseudometa */
 /* see also "Max View" */
 
 body:not(.left-aligned-embeds) div.mermaid {
 	text-align: center;
+}
+
+/* bugfix for mermaid font */
+.mermaid {
+	--mermaid-font: "Inter", -apple-system, "BlinkMacSystemFont", "Segoe UI", "Roboto", "Helvetica", "Arial", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Microsoft YaHei Light", sans-serif; /* stylelint-disable-line max-line-length */
 }
 
 /* ─────────────────────────────────────────────────── */
@@ -2539,6 +2547,7 @@ body:not(.max-view-off) .workspace-split.mod-left-split.is-collapsed ~ .mod-root
 	max-width: 100%;
 }
 
+/* https://forum.obsidian.md/t/ability-to-resize-and-align-mermaid-diagrams/7019/11?u=pseudometa */
 svg[id^="m"][width][height][viewBox] {
 	height: auto;
 	min-width: 20%;
@@ -2620,7 +2629,7 @@ body:not(.less-heading-letter-spacing) .markdown-preview-view h5 {
 }
 
 /* Alternation between italic & different font style
-for all headings to improve distinguishability = more readability */
+for all headings to improve distinctiveness = more readability */
 body:not(.no-alternating-header-italics) .cm-header-2,
 body:not(.no-alternating-header-italics) .markdown-preview-view h2,
 body:not(.no-alternating-header-italics) .cm-header-4,
@@ -2631,7 +2640,7 @@ body:not(.no-alternating-header-italics) .markdown-preview-view h4 {
 /* ─────────────────────────────────────────────────── */
 /* <<< Pseudo-Admonitions */
 /* ─────────────────────────────────────────────────── */
-/* For H6 only (without following blocks or line breaks).
+/* For h6 only (without following blocks or line breaks).
 Based on some CSS from @SlRvb, @gee & @Eleanor Konik.
 Pseudo-Admonitions work on one-liners only */
 
@@ -2911,7 +2920,7 @@ body > .app-container .HyperMD-codeblock-end-bg {
 }
 
 /* show language of Code Block in Preview Mode */
-/* snippet by @Chetachi */
+/* snippet by @Chetachie */
 pre {
 	position: relative;
 }
@@ -2959,7 +2968,7 @@ pre[class~="language-text"]::AFTER { content: "text"; }
 pre[class~="language-url"]::AFTER { content: "url"; }
 pre[class~="language-uri"]::AFTER { content: "uri"; }
 
-/* fix for the buggy selection fo inline text
+/* fix for the buggy selection of inline text
 https://forum.obsidian.md/t/inline-code-occludes-text-selection-and-vim-cursor/11552/10 */
 .theme-dark .cm-inline-code {
 	background-color: rgb(0 0 0 / 20%) !important;
@@ -3343,7 +3352,7 @@ body:not(.annotation-tags-off) .tag[href="#example"]::BEFORE {
 	font-feature-settings: "liga" 0;
 }
 
-/* ensures equal height of "#" and html tag */
+/* ensures equal height of "#" and tag text */
 .cm-tag.cm-bracket.cm-hmd-html-begin,
 .cm-tag.cm-bracket.cm-hmd-html-end,
 .cm-tag,
@@ -3485,7 +3494,9 @@ em > del:hover,
 	transition: 400ms ease-in-out;
 }
 
+/* ─────────────────────────────────────────────────── */
 /* << Strikethroughs */
+/* ─────────────────────────────────────────────────── */
 
 /* make the "~" readable */
 .cm-formatting-strikethrough {
