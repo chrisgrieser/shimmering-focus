@@ -1,6 +1,6 @@
 /* ──────────────────────────────────────────────────────
 SHIMMERING FOCUS
-Version 1.200
+Version 1.201
 https://github.com/chrisgrieser/shimmering-focus/
 Created by @pseudometa
 MIT License
@@ -2057,6 +2057,12 @@ body:not(.less-heading-letter-spacing) .modal.mod-community-theme .modal-title {
 .theme-light .modal.mod-community-theme .community-theme.is-selected .community-plugin-downloads-text::BEFORE,
 .theme-light .modal.mod-community-theme .community-theme.is-selected .community-plugin-downloads-text {
 	color: var(--interactive-normal);
+}
+
+/* for angular shaped mode */
+.community-theme.is-selected,
+.community-theme {
+	border-radius: calc(var(--round-ish) * 2);
 }
 
 /* ─────────────────────────────────────────────────── */
