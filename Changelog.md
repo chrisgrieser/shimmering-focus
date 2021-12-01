@@ -1,3 +1,4 @@
+- 2021-12-02	minor
 - 2021-12-02	outline pane lines
 - 2021-12-01	editor suggestion
 - 2021-12-01	file recovery plugin fixes
