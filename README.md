@@ -52,7 +52,7 @@ Type one of the following eight tags (e.g. `#definition`) to get a colored annot
 
 <img width=12% alt="Screenshot 2021-10-23 16 18 49" src="https://user-images.githubusercontent.com/73286100/138560326-c1bd22c4-dda9-4f92-8edc-ba736524ea75.png">
 
-💡 You can add your own Annotation Tags via adding a snippet [using this template](https://github.com/chrisgrieser/shimmering-focus/blob/main/annotation-tag-template.css).
+💡 You can add your own Annotation Tags by adding a snippet [using this template](https://github.com/chrisgrieser/shimmering-focus/blob/main/annotation-tag-template.css).
 
 ### Max View
 - By default, the theme uses readable line length as well as smaller images & PDFs when the left sidebar is visible. __When it is hidden, line length is extended to full length__, and images & PDFs to full size. (Requires `Readable line length` editor setting to be *enabled*.)
@@ -64,8 +64,8 @@ Type one of the following eight tags (e.g. `#definition`) to get a colored annot
 
 ### Image-related Features
 - Click & hold an image to zoom.
-- Alt Text is automatically used as image caption.
-- You can set default Image Size via Style Settings Plugin.
+- Alt-text is automatically used as image caption.
+- Set a default Image Size with the Style Settings Plugin.
 
 ### Fine-tuned Spellcheck
 Using the [Style Settings Plugin](#Customization), you can deactivate the spellcheck in specific areas like YAML or blockquotes.
