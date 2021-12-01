@@ -22,7 +22,7 @@ A minimalistic [Obsidian](https://obsidian.md/) theme focused on readability and
 - [Design Principles](#design-principles)
   - [Extreme Minimalism](#extreme-minimalism)
   - [Condensed Display of Information](#condensed-display-of-information)
-  - [Maximum Readability](#maximum-readability)
+  - [Maximum Readability](#maximum-readability--scannability)
   - [Subtle Design](#subtle-design)
 - [Customization](#customization)
 - [Plugin Compatibility](#plugin-compatibility)
@@ -106,7 +106,7 @@ Using the [Style Settings Plugin](#Customization), you can deactivate the spellc
 
 <img width=60% alt="Screenshot 2021-10-23 17 06 22" src="https://user-images.githubusercontent.com/73286100/138561771-1067d041-eeb2-4dfe-8d79-f7fa754ca419.png">
 
-### Maximum Readability
+### Maximum Readability & Scannability
 - increased contrast throughout, especially with the [annoying grey font on light grey background](https://forum.obsidian.md/t/enhance-default-color-contrast-of-the-icons/23045/3)
 - decreased font size variation to increase readability & information density
 - at the same time increased distinctiveness of different classes through subtle variation in typeface, font style, or backgrounds
@@ -118,6 +118,9 @@ Using the [Style Settings Plugin](#Customization), you can deactivate the spellc
   - [Crimson Pro](https://fonts.google.com/specimen/Crimson+Pro) as serif font for Longform notes
 - minor coloring of bold in dark mode to make it more readable, since bold in dark mode is harder to distinguish form normal text than  in light mode
 - slightly thicker lines (icons, hr, tables, etc.)
+- plugin names in the Command Palette are moved to the right and more visually distinct
+
+<img src="https://user-images.githubusercontent.com/73286100/144147616-59ba2513-78cc-4143-91e5-c222bc307bd9.gif" alt="Screen Recording 2021-12-01 at 00 51 21a" width=60%>
 
 ### Subtle Design
 Stylistically, the theme pretty much follows Obsidian's default color theme, with mostly subtle changes – like the eponymous shimmering green as secondary accent. 
