@@ -1,6 +1,6 @@
 /* ──────────────────────────────────────────────────────
 SHIMMERING FOCUS
-Version 1.211
+Version 1.212
 https://github.com/chrisgrieser/shimmering-focus/
 Created by @pseudometa
 MIT License
@@ -184,7 +184,6 @@ This ToC is auto-generated via the .create-ToC.sh
 	--editor-alt-accent: var(--alt-accent-darker);
 	--selection-color: hsl(259 100% 93% / 86.7%);
 	--extra-contrast: hsl(0 0% 36%);
-	--hr-line: hsl(0 0% 66%);
 	--button-hover: var(--alt-accent);
 	--button-hover-border: var(--alt-accent-lighter);
 	--longform-background: hsl(30 30% 98%);
@@ -198,16 +197,18 @@ This ToC is auto-generated via the .create-ToC.sh
 	--button-border: var(--accent-lighter);
 	--a-row: rgb(0 0 0 / 3%);
 	--b-row: rgb(0 0 0 / 6%);
-	--basic-border: 2px solid hsl(0 0% 70%);
-	--alt-border: 3px solid hsl(0 0% 87%);
 	--backdrop-color: hsl(228 9% 70%);
+
+	--hr-line: hsl(0 0% 66%);
+	--basic-border: 2px solid hsl(0 0% 70%);
+	--muted-border: 2px solid hsl(0 0% 87%);
+	--thick-border: 3.5px solid hsl(0 0% 87%);
 }
 
 .theme-dark {
 	--editor-alt-accent: var(--alt-accent);
 	--selection-color: hsl(302 24% 21% / 73%);
 	--extra-contrast: hsl(0 0% 73%);
-	--hr-line: hsl(0 0% 60%);
 	--button-hover: var(--alt-accent-darker);
 	--button-hover-border: var(--alt-accent-lighter);
 	--longform-background: hsl(226 18% 13%);
@@ -221,9 +222,12 @@ This ToC is auto-generated via the .create-ToC.sh
 	--button-border: var(--text-accent);
 	--a-row: rgb(0 0 0 / 20%);
 	--b-row: rgb(0 0 0 / 20%);
-	--basic-border: 2px solid hsl(0 0% 40%);
-	--alt-border: 3px solid hsl(0 0% 20%);
 	--backdrop-color: hsl(228 30% 15%);
+
+	--hr-line: hsl(0 0% 60%);
+	--basic-border: 2px solid hsl(0 0% 40%);
+	--muted-border: 2px solid hsl(0 0% 20%);
+	--thick-border: 3.5px solid hsl(0 0% 20%);
 }
 
 /* ─────────────────────────────────────────────────── */
@@ -902,6 +906,10 @@ input[type="password"] {
 	border-radius: var(--round);
 }
 
+textarea {
+	border-radius: calc(var(--roundish) * 2);
+}
+
 input[type="text"] {
 	width: 250px;
 }
@@ -946,7 +954,7 @@ input.slider {
 
 	background-color: var(--background-secondary-alt);
 
-	border: var(--alt-border);
+	border: var(--thick-border);
 	border-radius: var(--round);
 }
 
@@ -1422,7 +1430,7 @@ body .workspace-leaf-resize-handle:active {
 
 .modal {
 	padding: 7px 15px 20px;
-	border: var(--alt-border);
+	border: var(--thick-border);
 	border-radius: calc(var(--roundish) * 2);
 }
 
@@ -1433,13 +1441,14 @@ body .workspace-leaf-resize-handle:active {
 	backdrop-filter: blur(3px);
 }
 
+.modal.mod-sync-history,
 .modal.mod-community-theme,
 .modal.mod-community-plugin,
 .modal.mod-settings {
 	height: 93%;
 	width: 93%;
 	max-width: unset;
-	border: var(--alt-border);
+	border: var(--thick-border);
 	border-radius: calc(var(--roundish) * 3);
 }
 
@@ -1593,7 +1602,7 @@ body .workspace-leaf-resize-handle:active {
 	padding: 3px 3px 3px 6px;
 }
 
-/* color active/hovered submenu */
+/* color active/hovered sub menu */
 .vertical-tab-nav-item.is-active {
 	color: var(--text-accent);
 	background: var(--background-secondary-alt);
@@ -1625,17 +1634,12 @@ body .workspace-leaf-resize-handle:active {
 	border-radius: var(--roundish);
 }
 
-.mobile-option-setting-item > span:hover > svg,
 .setting-add-hotkey-button:hover,
 .setting-restore-hotkey-button:hover,
 .setting-editor-extra-setting-button:hover {
 	color: var(--editor-alt-accent) !important;
 	background-color: var(--background-secondary);
 	opacity: 1;
-}
-
-.mobile-option-setting-item svg {
-	stroke-width: 5px;
 }
 
 /* thicker "community plugins", "hotkey" & "appearance" */
@@ -1668,7 +1672,7 @@ body .workspace-leaf-resize-handle:active {
 }
 
 /* login menu  */
-p.u-center-text {
+.modal.mod-settings .u-center-text {
 	padding-top: 40px;
 	margin-top: 40px;
 	border-top: var(--basic-border);
@@ -1698,9 +1702,6 @@ p.u-center-text {
 /* ─────────────────────────────────────────────────── */
 
 /* bigger and more condensed */
-.modal.mod-community-plugin {
-	--plugin-browser-borders: 2px solid var(--background-modifier-border);
-}
 
 /* Search input */
 .community-plugin-search {
@@ -1715,7 +1716,7 @@ p.u-center-text {
 	padding: 0.4em 0.1em 0.4em 0.6em;
 	margin-top: 0;
 	margin-bottom: 0;
-	border-bottom: var(--plugin-browser-borders);
+	border-bottom: var(--muted-border);
 	line-height: 1.2em;
 }
 
@@ -1723,7 +1724,7 @@ p.u-center-text {
 	padding-right: 5px;
 	padding-bottom: 2px;
 
-	border-bottom: var(--plugin-browser-borders);
+	border-bottom: var(--muted-border);
 
 	font-family: var(--smallcap-font);
 	font-size: 1em;
@@ -1864,7 +1865,7 @@ p.u-center-text {
 /* plugin info */
 .community-plugin-info {
 	padding: 10px 5px 10px 15px;
-	border-left: var(--plugin-browser-borders);
+	border-left: var(--muted-border);
 }
 
 .community-plugin-info .community-plugin-name {
@@ -1938,7 +1939,7 @@ p.u-center-text {
 .community-plugin-info div.community-plugin-readme {
 	padding-top: 5px !important;
 	margin-top: 15px !important;
-	border-top: var(--alt-border);
+	border-top: var(--thick-border);
 }
 
 .community-plugin-readme {
@@ -1946,25 +1947,16 @@ p.u-center-text {
 }
 
 /* empty state */
-.empty-state-action {
-	display: none;
-}
-
-.community-plugin-details-empty-state,
-.empty-state-title {
+.community-plugin-details-empty-state {
+	padding-top: 16rem;
+	border-left: var(--muted-border);
 	font-size: 0;
 }
 
-.community-plugin-details-empty-state {
-	padding-top: 16rem;
-}
-
-.community-plugin-details-empty-state::AFTER,
-.empty-state-title::AFTER {
+.community-plugin-details-empty-state::AFTER {
 	content: var(--signature);
 	color: var(--extra-contrast);
 	font-size: 11rem;
-	font-weight: 500;
 }
 
 /* ─────────────────────────────────────────────────── */
@@ -2079,6 +2071,24 @@ body:not(.less-heading-letter-spacing) .modal.mod-community-theme .modal-title {
 .workspace-leaf:not(.mod-active) .workspace-leaf-content[data-type="markdown"] {
 	opacity: var(--inactive-pane-opacity);
 	transition: 800ms ease-in-out;
+}
+
+/* ─────────────────────────────────────────────────── */
+/* << Empty State */
+/* ─────────────────────────────────────────────────── */
+
+.empty-state-action {
+	display: none;
+}
+
+.empty-state-title {
+	font-size: 0;
+}
+
+.empty-state-title::AFTER {
+	content: var(--signature);
+	color: var(--extra-contrast);
+	font-size: 11rem;
 }
 
 /* ─────────────────────────────────────────────────── */
@@ -2264,7 +2274,7 @@ body.colored-yaml .cm-s-obsidian .cm-hmd-frontmatter.cm-string {
 }
 
 /* the "..." when content is folded */
-body:not(.show-foldermarker) .CodeMirror-foldmarker {
+body:not(.show-fold-marker) .CodeMirror-foldmarker {
 	display: none;
 }
 
@@ -2554,7 +2564,7 @@ svg[id^="m"][width][height][viewBox] {
 	min-width: 20%;
 }
 
-/* Focus View */
+/* Focus View: When the left sidebar is hidden, hide the right one as well */
 body.focus-view-enabled .workspace-split.mod-left-split.is-collapsed ~ .workspace-split.mod-right-split {
 	display: none;
 }
@@ -2720,7 +2730,7 @@ body:not(.no-active-line-highlighting) .CodeMirror-activeline .HyperMD-header.Hy
 	padding-right: 0.8em;
 	padding-bottom: 0.5em;
 
-	border: var(--plugin-browser-borders);
+	border: var(--muted-border);
 	border-radius: var(--roundish);
 
 	text-align: justify;
@@ -3598,6 +3608,16 @@ body.is-mobile .markdown-preview-view blockquote {
 	text-align: start;
 }
 
+.mobile-option-setting-item > span:hover > svg {
+	color: var(--editor-alt-accent) !important;
+	background-color: var(--background-secondary);
+	opacity: 1;
+}
+
+.mobile-option-setting-item svg {
+	stroke-width: 5px;
+}
+
 /* ─────────────────────────────────────────────────── */
 /* < Core Plugins */
 /* ─────────────────────────────────────────────────── */
@@ -4192,15 +4212,23 @@ body:not(.show-starred-nav-buttons) .workspace-leaf-content[data-type="starred"]
 /* ─────────────────────────────────────────────────── */
 /* << File Recovery */
 /* ─────────────────────────────────────────────────── */
-.modal.mod-sync-history {
-	height: 93%;
-	width: 93%;
-	max-width: unset;
-	border-color: var(--background-primary-alt);
-}
+/* see also modals in general */
 
 .modal.mod-sync-history .setting-item-control {
 	justify-content: unset;
+}
+
+/* both needed to ensure proper width :S */
+.modal-container .sync-history-list input,
+.modal.mod-sync-history .search-input-container {
+	width: 100%;
+}
+
+.sync-history-list .u-muted {
+	display: inline;
+	padding-left: 10px;
+	font-family: var(--smallcap-font);
+	font-size: 1.05em;
 }
 
 .sync-history-list-item.is-active .u-muted,
@@ -4208,16 +4236,10 @@ body:not(.show-starred-nav-buttons) .workspace-leaf-content[data-type="starred"]
 	color: var(--text-normal);
 }
 
-/* do not apply widend input here */
-.modal-container .sync-history-list input {
-	width: unset;
-}
-
 .sync-history-list-item {
 	padding-right: 5px;
 	padding-left: 10px;
-	border-right: 1px solid var(--background-primary);
-	border-bottom: 1px solid var(--background-primary);
+	border-top: var(--muted-border);
 	line-height: 1.4em;
 }
 
@@ -4240,6 +4262,7 @@ body:not(.show-starred-nav-buttons) .workspace-leaf-content[data-type="starred"]
 .sync-history-content-container {
 	height: 100%;
 	padding: 10px;
+	border-left: var(--muted-border);
 	border-top-right-radius: var(--roundish);
 	border-bottom-right-radius: var(--roundish);
 }
@@ -5640,6 +5663,8 @@ community:
 /* < Style Setting Options */
 /* ─────────────────────────────────────────────────── */
 
+/* stylelint-disable max-line-length */
+
 /* @settings
 name: Shimmering Focus (Theme)
 id: shimmering-focus
@@ -5700,7 +5725,7 @@ settings:
 	 description: When false, you collapse buttons still become visible upon hovering.
 	 default: false
   -
-	 id: show-foldermarker
+	 id: show-fold-marker
 	 title: Re-enable the Fold Markers
 	 type: class-toggle
 	 description: Folder markers are the "..." next to a folded/collapsed item.
@@ -5905,21 +5930,21 @@ settings:
 	 format: em
   -
 	 id: content-settings
-	 title: Content
-	 description: Max View, Images, PDFs, & Line Length
+	 title: Content & Views
+	 description: Max View, Focus View, Images, PDFs, & Line Length
 	 type: heading
 	 level: 2
 	 collapsed: true
   -
 	 id: max-view-off
-	 title: 'Disable the "Max View" feature'
+	 title: 'Disable "Max View"'
 	 description: '"Max View" makes panes full length and images/PDFs full width when the left sidebar is hidden and readable line length when the left sidebar is shown.'
 	 type: class-toggle
 	 default: false
   -
 	 id: focus-view-enabled
-	 title: 'Focus View: Hiding the left side bar will also hide the right one'
-	 description: 'Note that with this feature, the right sidebar stays hidden until the left one is shown again. Synergizes with "Max View", but also works with "Max View" disabled. '
+	 title: 'Enable "Focus View"'
+	 description: 'Hiding the left side bar will also hide the right one. Note that with this feature, the right side bar stays hidden until the left one is shown again. Synergizes with "Max View", but also works with "Max View" disabled. '
 	 type: class-toggle
 	 default: false
   -
