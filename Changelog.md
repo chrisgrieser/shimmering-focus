@@ -1,4 +1,4 @@
-- 2021-12-01	minor
+- 2021-12-01	move plugin name in command palette to the left
 - 2021-11-30	image positioning (when image file is opened)
 - 2021-11-30	fix image zoom via click+hold
 - 2021-11-30	confirmation modal
