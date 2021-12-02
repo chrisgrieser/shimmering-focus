@@ -1,3 +1,6 @@
+- 2021-12-02	option to remove lines in Calendar (#59)
+- 2021-12-02	Update README.md
+- 2021-12-02	Delete README.html
 - 2021-12-02	fixes for blockquotes
 - 2021-12-02	positioning of notices when titlebar hidden
 - 2021-12-02	kanban hrs

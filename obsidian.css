@@ -1,6 +1,6 @@
 /* ──────────────────────────────────────────────────────
 SHIMMERING FOCUS
-Version 1.224
+Version 1.225
 https://github.com/chrisgrieser/shimmering-focus/
 Created by @pseudometa
 MIT License
@@ -2869,7 +2869,7 @@ https://forum.obsidian.md/t/custom-css-for-tables-5-new-styles-ready-to-use-in-y
 	table-layout: fixed;
 }
 
-:root body {
+:root table {
 	--table-border: var(--basic-border);
 	--table-roundness: var(--roundish);
 }
@@ -4500,6 +4500,13 @@ body:not(.show-graph-controls) .graph-controls.is-close:not(:hover) {
 
 .workspace-leaf-content[data-type="calendar"] .day.active svg .dot {
 	color: var(--interactive-normal) !important;
+}
+
+/* remove lines */
+body.no-calendar-lines table.calendar td,
+body.no-calendar-lines table.calendar th {
+	border-bottom: none;
+	border-left: none;
 }
 
 /* ─────────────────────────────────────────────────── */
@@ -6143,7 +6150,7 @@ settings:
   -
 	 id: miscellaneous
 	 title: Miscellaneous
-	 description: Popovers, Pandoc Citations, Annotation Tags, Active Line Highlighting, Command Palette, Alternating Row Colors, Relationship Lines
+	 description: Popovers, Pandoc Citations, Annotation Tags, Active Line Highlighting, Command Palette, Alternating Row Colors, Relationship Lines, Calendar Plugin
 	 type: heading
 	 level: 2
 	 collapsed: true
@@ -6190,6 +6197,12 @@ settings:
 	 id: no-ul-relationship-lines
 	 title: Disable Relationship Lines for lists
 	 description: If you want to use a custom relationship line snippet or the relationship lines from the Outliner plugin, you can disable this theme's relationship lines to prevent interference.
+	 type: class-toggle
+	 default: false
+  -
+	 id: no-calendar-lines
+	 title: Remove lines in Calendar
+	 description: Remove the lines in the Calendar plugin's Calendar (making it more similar to its default look).
 	 type: class-toggle
 	 default: false
 */
