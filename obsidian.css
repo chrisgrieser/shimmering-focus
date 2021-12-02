@@ -1,6 +1,6 @@
 /* ──────────────────────────────────────────────────────
 SHIMMERING FOCUS
-Version 1.222
+Version 1.223
 https://github.com/chrisgrieser/shimmering-focus/
 Created by @pseudometa
 MIT License
@@ -592,14 +592,14 @@ body:not(.show-ribbons) .workspace-ribbon {
 }
 
 /* ─────────────────────────────────────────────────── */
-/* << Notifications & Tooltips */
+/* << Tooltips */
 /* ─────────────────────────────────────────────────── */
 
 .tooltip {
 	color: var(--tooltip-notification-text);
 	background-color: var(--tooltip-notification-bg) !important;
 	border: 1px solid var(--tooltip-notification-border);
-	border-radius: calc(var(--roundish) * 2);
+	border-radius: var(--roundish);
 	word-wrap: break-word;
 }
 
@@ -619,17 +619,39 @@ body:not(.show-ribbons) .workspace-ribbon {
 	border-top: 5px solid var(--tooltip-notification-bg);
 }
 
-.theme-light .notice,
-.theme-dark .notice {
+/* ─────────────────────────────────────────────────── */
+/* << Notices (Notifications) */
+/* ─────────────────────────────────────────────────── */
+
+body:not(.show-titlebar) > div.notice-container {
+	top: 0;
+}
+
+body > div.notice-container .notice {
 	color: var(--tooltip-notification-text);
 	background-color: var(--tooltip-notification-bg);
 
-	padding: 5px 10px;
+	padding: 4px 10px 6px;
 
 	border: 1px solid var(--tooltip-notification-border);
 	border-radius: var(--roundish);
 
 	font-size: 0.85em;
+}
+
+body > div.notice-container .notice:hover {
+	opacity: 0.8;
+}
+
+body > div.notice-container .notice:hover::BEFORE {
+	display: block;
+	content: "𝗫";
+
+	position: absolute;
+	right: 21px;
+
+	color: var(--text-error);
+	opacity: 0.5;
 }
 
 /* ─────────────────────────────────────────────────── */
@@ -5747,7 +5769,7 @@ settings:
 	 default: false
   -
 	 id: show-collapse-buttons
-	 title: Permanently show the Edit Mode Collapse Arrows (Fold Arrows)
+	 title: Permanently show the Edit Mode Collapse Arrows
 	 type: class-toggle
 	 description: When false, you collapse buttons still become visible upon hovering.
 	 default: false
@@ -5755,7 +5777,7 @@ settings:
 	 id: show-fold-marker
 	 title: Re-enable the Fold Markers
 	 type: class-toggle
-	 description: Folder markers are the "..." next to a folded/collapsed item.
+	 description: Fold markers are the ellipses ("...") next to a folded/collapsed item.
 	 default: false
   -
 	 id: show-graph-controls
@@ -5957,7 +5979,7 @@ settings:
 	 format: em
   -
 	 id: content-settings
-	 title: Content & Views
+	 title: Views & Content
 	 description: Max View, Focus View, Images, PDFs, & Line Length
 	 type: heading
 	 level: 2

@@ -1,4 +1,4 @@
-- 2021-12-02	minor
+- 2021-12-02	positioning of notices when titlebar hidden
 - 2021-12-02	kanban hrs
 - 2021-12-02	blockquote edit mode margin
 - 2021-12-02	editor suggestions
