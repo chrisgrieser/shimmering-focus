@@ -1,6 +1,6 @@
 /* ──────────────────────────────────────────────────────
 SHIMMERING FOCUS
-Version 1.217
+Version 1.218
 https://github.com/chrisgrieser/shimmering-focus/
 Created by @pseudometa
 MIT License
@@ -2750,6 +2750,8 @@ body:not(.no-active-line-highlighting) .CodeMirror-activeline .HyperMD-header.Hy
 	padding-top: 0.4em;
 	padding-right: 0.8em;
 	padding-bottom: 0.5em;
+	margin-top: 0.5em;
+	margin-bottom: 0.4em;
 
 	border: var(--muted-border);
 	border-radius: var(--roundish);
