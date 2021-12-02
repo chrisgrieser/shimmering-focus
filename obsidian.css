@@ -1,6 +1,6 @@
 /* ──────────────────────────────────────────────────────
 SHIMMERING FOCUS
-Version 1.215
+Version 1.216
 https://github.com/chrisgrieser/shimmering-focus/
 Created by @pseudometa
 MIT License
@@ -1106,15 +1106,6 @@ body:not(.app-container) .suggestion-container {
 	border-radius: var(--roundish);
 }
 
-body:not(.app-container) .suggestion-item {
-	padding-top: 9px;
-	padding-bottom: 9px;
-}
-
-body:not(.app-container) .suggestion-content {
-	line-height: 0.7em;
-}
-
 body:not(.app-container) .suggestion-content .suggestion-flair {
 	transform: scale(1.1);
 	margin-top: 3px;
@@ -1123,7 +1114,6 @@ body:not(.app-container) .suggestion-content .suggestion-flair {
 body:not(.app-container) .suggestion-note {
 	font-family: var(--smallcap-font);
 	font-size: 0.9em;
-	line-height: 0.7em;
 	text-align: end;
 }
 
