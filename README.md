@@ -124,7 +124,10 @@ Using the [Style Settings Plugin](#Customization), you can deactivate the spellc
 <img src="https://user-images.githubusercontent.com/73286100/144147616-59ba2513-78cc-4143-91e5-c222bc307bd9.gif" alt="Screen Recording 2021-12-01 at 00 51 21a" width=60%>
 
 ### Subtle Design
-Stylistically, the theme pretty much follows Obsidian's default color theme, with mostly subtle changes – like the eponymous shimmering green as secondary accent. 
+- Stylistically, the theme pretty much follows Obsidian's default color theme, with mostly subtle changes – like the eponymous shimmering green as secondary accent. 
+- You change between angular or roundish shapes with the Style Settings Plugin.
+
+<img src="https://user-images.githubusercontent.com/73286100/144433250-9549dfdc-f04e-48a7-8df2-0b0cd7755c1a.gif" alt="Screen Recording 2021-12-02 at 14 34 37" width=60%>
 
 ## Customization
 - This themes supports dozens of customization options via the [Style Settings Plugin](https://github.com/mgmeyers/obsidian-style-settings/).
