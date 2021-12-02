@@ -1,6 +1,6 @@
 /* ──────────────────────────────────────────────────────
 SHIMMERING FOCUS
-Version 1.220
+Version 1.221
 https://github.com/chrisgrieser/shimmering-focus/
 Created by @pseudometa
 MIT License
@@ -1194,9 +1194,10 @@ body:not(.show-close-button) .modal-close-button:hover {
 /* << Command Palette */
 /* << QuickSwitcher */
 /* ─────────────────────────────────────────────────── */
+/* also applies to the Editor Suggestions */
 
 div.prompt {
-	padding: 3px;
+	padding: 4px;
 	border: 5px solid var(--background-secondary);
 	border-radius: calc(var(--roundish) * 2);
 }
@@ -1204,7 +1205,7 @@ div.prompt {
 input.prompt-input {
 	width: unset;
 	padding-top: 7px;
-	margin: 3px 2px 8px;
+	margin-bottom: 8px;
 	border-radius: calc(var(--roundish) * 1.5);
 }
 
