@@ -1,3 +1,4 @@
+- 2021-12-02	fixes for blockquotes
 - 2021-12-02	positioning of notices when titlebar hidden
 - 2021-12-02	kanban hrs
 - 2021-12-02	blockquote edit mode margin

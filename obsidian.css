@@ -1,6 +1,6 @@
 /* ──────────────────────────────────────────────────────
 SHIMMERING FOCUS
-Version 1.223
+Version 1.224
 https://github.com/chrisgrieser/shimmering-focus/
 Created by @pseudometa
 MIT License
@@ -2759,14 +2759,12 @@ body:not(.no-active-line-highlighting) .CodeMirror-activeline .HyperMD-header.Hy
 /* ─────────────────────────────────────────────────── */
 
 /* Edit Mode */
-.cm-quote {
-	color: var(--extra-contrast) !important;
+body > .app-container .cm-quote {
+	color: var(--extra-contrast);
 	font-style: italic;
 }
 
-.HyperMD-quote.HyperMD-quote-1 {
-	color: var(--text-normal);
-
+body > .app-container .HyperMD-quote {
 	padding-top: 0.4em;
 	padding-right: 0.8em;
 	padding-bottom: 0.5em;
@@ -2781,28 +2779,27 @@ body:not(.no-active-line-highlighting) .CodeMirror-activeline .HyperMD-header.Hy
 
 /* fixes color when text is selected */
 /* https://forum.obsidian.md/t/inline-code-occludes-text-selection-and-vim-cursor/11552/10?u=pseudometa */
-.theme-light .HyperMD-quote.HyperMD-quote-1 {
-	background-color: rgb(0 0 0 / 7%) !important;
+.theme-light .HyperMD-quote {
+	background-color: rgb(0 0 0 / 3%);
 }
 
-.theme-dark .HyperMD-quote.HyperMD-quote-1 {
-	background-color: rgb(0 0 0 / 25%) !important;
+.theme-dark .HyperMD-quote {
+	background-color: rgb(0 0 0 / 25%);
 }
 
 /* when blockquote is also active line */
-body:not(.no-active-line-highlighting) .CodeMirror-activeline .HyperMD-quote.HyperMD-quote-1.CodeMirror-line {
-	color: var(--text-normal) !important;
-	background-color: var(--active-line) !important;
+body:not(.no-active-line-highlighting) .CodeMirror-activeline .HyperMD-quote.CodeMirror-line {
+	background-color: var(--active-line);
 }
 
 /* the ">" */
-.cm-formatting.cm-formatting-quote {
+body > .app-container .cm-formatting.cm-formatting-quote {
 	font-weight: 900;
 	font-style: unset;
 }
 
 /* style links in blockquotes, e.g. es quote sources */
-.cm-link.cm-quote.cm-quote-1:not(.cm-formatting) {
+.cm-link.cm-quote:not(.cm-formatting) {
 	color: var(--text-accent) !important;
 }
 
@@ -2830,11 +2827,10 @@ body > .app-container .markdown-preview-view blockquote {
 
 /* underline emphasis in blockquote, since they are italic already */
 .markdown-preview-view blockquote > p > em,
-span.cm-em.cm-quote.cm-quote-1 {
+span.cm-em.cm-quote {
 	text-decoration: underline;
 }
 
-/* Add quotation character before quote */
 body:not(.normal-blockquotes) blockquote,
 body:not(.normal-blockquotes) .HyperMD-quote.HyperMD-quote-1 {
 	font-size: 0.87em;
