@@ -1,6 +1,6 @@
 /* ──────────────────────────────────────────────────────
 SHIMMERING FOCUS
-Version 1.219
+Version 1.220
 https://github.com/chrisgrieser/shimmering-focus/
 Created by @pseudometa
 MIT License
@@ -4682,6 +4682,12 @@ a.tag.kanban-plugin__item-tag {
 .kanban-plugin__item-markdown li .external-link::BEFORE {
 	margin-top: 1px;
 	margin-right: 6px;
+}
+
+.kanban-plugin hr {
+	margin-top: 12px;
+	margin-bottom: 12px;
+	border-width: 3px !important;
 }
 
 /* adapted for the round checkboxes */
