@@ -1,6 +1,6 @@
 /* ──────────────────────────────────────────────────────
 SHIMMERING FOCUS
-Version 1.225
+Version 1.226
 https://github.com/chrisgrieser/shimmering-focus/
 Created by @pseudometa
 MIT License
@@ -968,7 +968,9 @@ input.slider {
 
 /* move up to avoid collision with statusbar */
 .document-search-container {
-	height: 3.6em;
+	display: block;
+
+	height: 3.9em;
 	width: 95%;
 
 	bottom: 2.5em;
@@ -976,17 +978,18 @@ input.slider {
 
 	background-color: var(--background-secondary-alt);
 
+	padding-top: 5px;
+
 	border: var(--thick-border);
 	border-radius: var(--round);
 }
 
 div.document-replace {
-	margin-top: 4px;
-	margin-bottom: 4px;
+	margin-top: 6px;
 }
 
 .document-search-container.mod-replace-mode {
-	height: 6.1em;
+	height: 6.8em;
 	border-radius: calc(var(--round) / 2);
 }
 
@@ -1012,38 +1015,35 @@ shows up on the bottom when replacing/searching
 	background-color: hsl(359 80% 85%);
 }
 
-body > .app-container .document-search-input,
-body > .app-container .document-replace-input {
-	background-color: var(--background-primary-alt);
-	border: 2px solid transparent;
-	border-radius: var(--round);
+.document-search input[type="text"],
+.document-replace input[type="text"] {
+	height: 2.2rem;
+	width: unset;
+	background-color: var(--background-primary);
+	margin: 5px;
+	border: var(--muted-border);
 }
 
-body > .app-container .document-search-input:focus,
-body > .app-container .document-replace-input:focus {
+body > .app-container input.document-search-input:focus,
+body > .app-container input.document-replace-input:focus {
 	border: 2px solid var(--text-accent);
 }
 
-body > .app-container .document-search-input:hover,
-body > .app-container .document-replace-input:hover {
+body > .app-container input.document-search-input:hover,
+body > .app-container input.document-replace-input:hover {
 	border: 2px solid var(--alt-accent);
 }
 
-input.document-search-input,
-input.document-replace-input {
-	height: 2rem;
-	background-color: var(--background-primary);
-	padding-left: 0.4em;
-	margin-top: 4px;
-	margin-left: 4px;
-}
+button.document-search-button {
+	height: 2.2rem;
 
-.document-search-button {
-	height: 2rem;
 	color: var(--text-on-accent);
 	background-color: var(--text-accent);
 	opacity: 0.65;
-	margin-top: 4px;
+
+	margin: 5px 6px;
+
+	border-radius: var(--round);
 }
 
 .document-search-button:hover {

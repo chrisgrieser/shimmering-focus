@@ -1,3 +1,4 @@
+- 2021-12-03	fix search and replace buttons disappearing (#58)
 - 2021-12-02	option to remove lines in Calendar (#59)
 - 2021-12-02	Update README.md
 - 2021-12-02	Delete README.html
