@@ -1,6 +1,6 @@
 /* ──────────────────────────────────────────────────────
 SHIMMERING FOCUS
-Version 1.226
+Version 1.227
 https://github.com/chrisgrieser/shimmering-focus/
 Created by @pseudometa
 MIT License
@@ -3405,19 +3405,15 @@ body:not(.annotation-tags-off) .tag[href="#example"]::BEFORE {
 	font-feature-settings: "liga" 0;
 }
 
-/* ensures equal height of "#" and tag text */
-.cm-tag.cm-bracket.cm-hmd-html-begin,
-.cm-tag.cm-bracket.cm-hmd-html-end,
-.cm-tag,
 .cm-attribute,
-.cm-string {
+.cm-tag {
 	font-family: var(--default-font);
 }
 
-.cm-tag.cm-bracket.cm-hmd-html-begin,
-.cm-tag.cm-bracket.cm-hmd-html-end,
-.cm-tag {
-	color: var(--html-tag-color) !important;
+body > .app-container span.cm-tag.cm-bracket.cm-hmd-html-begin,
+body > .app-container span.cm-tag.cm-bracket.cm-hmd-html-end,
+body > .app-container span.cm-tag {
+	color: var(--html-tag-color);
 }
 
 /* ─────────────────────────────────────────────────── */
