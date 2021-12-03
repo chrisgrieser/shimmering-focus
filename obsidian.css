@@ -1,6 +1,6 @@
 /* ──────────────────────────────────────────────────────
 SHIMMERING FOCUS
-Version 1.227
+Version 1.228
 https://github.com/chrisgrieser/shimmering-focus/
 Created by @pseudometa
 MIT License
@@ -385,7 +385,7 @@ body > .app-container input,
 	font-size: var(--menu-font-size);
 }
 
-/* letter space adjustion for the sidebar */
+/* letter space adjusted for the sidebar */
 body:not(.normal-letter-spacing-sidebar) .nav-folder-title,
 body:not(.normal-letter-spacing-sidebar) .nav-file-title {
 	letter-spacing: -0.2px;
@@ -441,6 +441,15 @@ svg.BC-trail-icon > path {
 svg.BC-trail-icon {
 	background-color: currentColor;
 	-webkit-mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' aria-hidden='true' role='img' width='1.1em' height='1.05em' preserveAspectRatio='xMidYMid meet' viewBox='0 0 16 17'%3E%3Cpath d='M12.942 9.189a8.683 8.683 0 0 1 1.173-.666a19.145 19.145 0 0 0-1.561-1.973a9.09 9.09 0 0 0-2.564.557c-1.673.643-2.354-.227-.771-1.311a8.358 8.358 0 0 1 1.685-.879a20.943 20.943 0 0 0-2.243-1.752a9.058 9.058 0 0 0-2.395.548c-1.671.642-2.354-.228-.769-1.311c.291-.199.598-.371.911-.532C3.859.668 1.6.515.523 1.697c-1.719 1.884 1.365 5.196 5.479 8.944c4.111 3.748 7.691 6.514 9.412 4.629c.973-1.068.767-3.001-.339-5.158c-.467.1-.925.219-1.362.388c-1.674.643-2.356-.226-.771-1.311z' fill='currentColor' fill-rule='evenodd'/%3E%3C/svg%3E");
+}
+
+svg.longform > path {
+	display: none;
+}
+
+svg.longform {
+	background-color: currentColor;
+	-webkit-mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' aria-hidden='true' role='img' width='1.1em' height='1.1em' preserveAspectRatio='xMidYMid meet' viewBox='0 0 20 20'%3E%3Cpath d='M16.89 1.2l1.41 1.41c.39.39.39 1.02 0 1.41L14 8.33V18H3V3h10.67l1.8-1.8c.4-.39 1.03-.4 1.42 0zm-5.66 8.48l5.37-5.36l-1.42-1.42l-5.36 5.37l-.71 2.12z' fill='currentColor'/%3E%3C/svg%3E");
 }
 
 /* ─────────────────────────────────────────────────── */
@@ -5027,6 +5036,10 @@ body:not(.left-aligned-embeds) div.oz-image-widget > embed,
 body:not(.left-aligned-embeds) div.oz-image-widget > img {
 	margin-right: auto;
 	margin-left: auto;
+}
+
+body div.oz-image-widget > img:active {
+	border: none;
 }
 
 /* ─────────────────────────────────────────────────── */
