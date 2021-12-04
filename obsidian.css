@@ -1,6 +1,6 @@
 /* ──────────────────────────────────────────────────────
 SHIMMERING FOCUS
-Version 1.229
+Version 1.230
 https://github.com/chrisgrieser/shimmering-focus/
 Created by @pseudometa
 MIT License
@@ -873,6 +873,32 @@ button:hover {
 }
 
 /* ─────────────────────────────────────────────────── */
+/* << Warnings */
+/* ─────────────────────────────────────────────────── */
+
+button.mod-warning {
+	border-color: var(--text-error) !important;
+}
+
+p.mod-warning {
+	color: var(--text-error-hover);
+}
+
+p.mod-warning::AFTER,
+p.mod-warning::BEFORE {
+	content: "⚠️";
+	border-radius: var(--roundish);
+}
+
+p.mod-warning::AFTER {
+	margin-left: 4px;
+}
+
+p.mod-warning::BEFORE {
+	margin-right: 4px;
+}
+
+/* ─────────────────────────────────────────────────── */
 /* << Toggles (Checkboxes) */
 /* ─────────────────────────────────────────────────── */
 
@@ -1196,11 +1222,18 @@ div.search-input-clear-button:hover::BEFORE,
 }
 
 .modal-close-button {
-	top: 0;
-	right: 0;
+	top: -1px;
+	right: -1px;
+	z-index: 100;
+
 	padding: 2px 6px 6px;
-	border-top-right-radius: calc(var(--roundish) * 2.5);
+
+	border-top-right-radius: var(--roundish);
 	border-bottom-left-radius: var(--roundish);
+}
+
+.mod-settings .modal-close-button {
+	border-top-right-radius: calc(var(--roundish) * 2.5);
 }
 
 /* only show on hover */
@@ -1521,7 +1554,7 @@ body .workspace-leaf-resize-handle:active {
 
 .modal-container.mod-confirmation > .modal {
 	width: 50%;
-	padding: 20px 5px 35px;
+	padding: 20px 20px 35px;
 }
 
 /* ─────────────────────────────────────────────────── */
