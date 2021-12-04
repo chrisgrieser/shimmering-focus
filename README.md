@@ -17,7 +17,7 @@ A minimalistic [Obsidian](https://obsidian.md/) theme focused on readability and
   - [Image-related Features](#image-related-features)
   - [Fine-tuned Spellcheck](#fine-tuned-spellcheck)
   - [Multi-Color-Highlighting & Spoiler Syntax](#multi-color-highlighting--spoiler-syntax)
-  - [Features for Academic Work](#features-for-academic-work)
+  - [Well-Suited for Academic Work](#well-suited-for-academic-work)
   - [Further Features](#further-features)
 - [Design Principles](#design-principles)
   - [Extreme Minimalism](#extreme-minimalism)
@@ -78,10 +78,13 @@ Using the [Style Settings Plugin](#Customization), you can deactivate the spellc
 - You can use the [Extra Markdown Commands Plugin](https://github.com/chrisgrieser/obsidian-extra-md-commands) to get hotkeys for them.
 - Spoiler Syntax: Emphasized Strikethroughs (`*~~spoiler~~*`) will selectively hide text, except when hovered or the active line.
 
-### Features for Academic Work
+### Well-Suited for Academic Work
 - [Pandoc Citations](https://pandoc.org/MANUAL.html#citations-in-note-styles) (`[@citekey]`) and footnotes are visually emphasized
 - The alt-text of images is used as caption text, in line with Pandoc's conversion behavior
 - Extensive Styling specifically for the [Longform Plugin](https://github.com/kevboh/longform), among other things justified & hyphenated text, and [Crimson Pro](https://fonts.google.com/specimen/Crimson+Pro) as an easy-to-read serif font
+- The [Max View](#max-view--focus-view) is useful for displaying wide markdown tables.
+- You can also [fine-tune the spell checking](#fine-tuned-spellcheck), e.g. to turn it off in blockquotes when you are regularly citing material where spellcheck creates false positives (e.g. historical sources with old language).
+- [Multi-Color-Highlighting](#multi-color-highlighting--spoiler-syntax) and [Annotation Tags](#annotation-tags) have specifically been developed for academic reading.
 
 ### Further Features
 - **Pseudo-Admonition**: `h6` blocks will become a pseudo-admonition box (only works with one-liners though)
