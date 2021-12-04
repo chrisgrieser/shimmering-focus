@@ -1,3 +1,5 @@
+- 2021-12-04	login menu
+- 2021-12-04	emphasize features for academics more clearly
 - 2021-12-04	longform icon change
 - 2021-12-03	fix for urls in longform
 - 2021-12-03	fix search and replace buttons disappearing (#58)

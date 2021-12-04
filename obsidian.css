@@ -1,6 +1,6 @@
 /* ──────────────────────────────────────────────────────
 SHIMMERING FOCUS
-Version 1.228
+Version 1.229
 https://github.com/chrisgrieser/shimmering-focus/
 Created by @pseudometa
 MIT License
@@ -1725,10 +1725,14 @@ body .workspace-leaf-resize-handle:active {
 }
 
 /* login menu  */
-.modal.mod-settings .u-center-text {
+.modal.mod-settings .u-center-text:not(.button-container) {
 	padding-top: 40px;
-	margin-top: 40px;
+	margin-top: 60px;
 	border-top: var(--basic-border);
+}
+
+.modal.mod-settings .button-container {
+	margin-top: 30px;
 }
 
 /* community plugin list */
@@ -2567,10 +2571,10 @@ body.no-barelink-spellcheck .cm-hmd-barelink.cm-overlay.cm-spell-error {
 
 /* ─────────────────────────────────────────────────── */
 /* << Max View */
+/* ─────────────────────────────────────────────────── */
 /* full length editor and full size images when left sidebar is collapsed */
 /* (Note: You need to turn on "readable line length" in the editor settings */
 /* as well for this to work.) */
-/* ─────────────────────────────────────────────────── */
 
 /* <<< Line Length & Tables */
 body:not(.max-view-off) .workspace-split.mod-left-split.is-collapsed ~ .mod-root .markdown-preview-section,
