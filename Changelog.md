@@ -1,3 +1,4 @@
+- 2021-12-05	improved support for favicons plugin
 - 2021-12-05	improved suppport for link favicon plugin
 - 2021-12-05	graph controls minor fixes
 - 2021-12-05	support for link favicon plugin
