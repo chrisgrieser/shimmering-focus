@@ -1,6 +1,6 @@
 /* ──────────────────────────────────────────────────────
 SHIMMERING FOCUS
-Version 1.234
+Version 1.235
 https://github.com/chrisgrieser/shimmering-focus/
 Created by @pseudometa
 MIT License
@@ -1000,6 +1000,10 @@ select.dropdown {
 	padding: 5px 28px 6px 10px;
 	border-radius: var(--round);
 }
+
+/* this style the dropdown menus a bit */
+/* .dropdown option {}
+.dropdown option:checked {} */
 
 /* <<< Slider */
 input.slider {
@@ -4370,6 +4374,14 @@ body:not(.show-graph-controls) .graph-controls.is-close:not(:hover) {
 	padding: 0;
 }
 
+.graph-controls .setting-item-name {
+	color: var(--extra-contrast);
+}
+
+.graph-controls .checkbox-container {
+	margin-top: 3px;
+}
+
 .graph-controls:not(.is-close) {
 	/* controls resizable, thanks @Manedblackwolf */
 	max-width: none;
@@ -4770,7 +4782,7 @@ body.angular-shapes .kanban-plugin__lane {
 	margin-left: 0 !important;
 
 	/* horizontal border between sections */
-	border-bottom: 3px solid var(--text-faint) !important;
+	border-bottom: var(--muted-border) !important;
 }
 
 .tab-panel-container.svelte-11pvpwl {
@@ -4976,7 +4988,8 @@ body:not(.longform-left-aligned) .longform-leaf .cm-s-obsidian {
 .longform-leaf .cm-s-obsidian .HyperMD-codeblock,
 .longform-leaf .markdown-preview-view code,
 .longform-leaf .cm-s-obsidian span.cm-inline-code,
-.longform-leaf .HyperMD-table-row {
+.longform-leaf .HyperMD-table-row,
+.longform-leaf .cm-formatting-task.cm-meta {
 	font-size: calc(var(--longform-font-size) * 0.7);
 	text-align: start;
 	hyphens: none;
