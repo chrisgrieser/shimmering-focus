@@ -3,7 +3,7 @@
 A minimalistic [Obsidian](https://obsidian.md/) theme focused on readability and condensed information display.
 
 <!-- manually updated-->
-![](https://img.shields.io/badge/downloads-5614-6E4E9B?style=plastic) ![](https://img.shields.io/github/last-commit/chrisgrieser/shimmering-focus?style=plastic) [![](https://img.shields.io/badge/changelog-click%20here-FFE800?style=plastic)](Changelog.md)
+![](https://img.shields.io/badge/downloads-5667-6E4E9B?style=plastic) ![](https://img.shields.io/github/last-commit/chrisgrieser/shimmering-focus?style=plastic) [![](https://img.shields.io/badge/changelog-click%20here-FFE800?style=plastic)](Changelog.md)
 
 <img src="https://raw.githubusercontent.com/chrisgrieser/shimmering-focus/main/dual-theme-screenshot.png" alt="Promo Screenshot">
 
@@ -163,14 +163,12 @@ Pull requests are welcome, especially for plugins or features I haven't implemen
 
 - Try to follow the [design philosophy](#design-principles) of the theme.
 - All sections have a `< ` as prefix for quicker navigation. This means you can search for `< font` to navigate to the font section.
-- For consistency and code quality, use [stylelint](https://stylelint.io/) with the provided configuration (the `.stylelintrc.json` file). 
-- Before making the pull request, please run `stylelint --fix obsidian.css`. This will auto-fix minor problems and present a list of problems, if there are any. 
-- I recommend using an [editor integration for stylelint](https://stylelint.io/user-guide/integrations/editor/).
+- For consistency and code quality, use [stylelint](https://stylelint.io/) with the provided configuration (the `.stylelintrc.json` file). If you are not familiar with stylelint, check out [my guide in the Obsidian Hub](https://publish.obsidian.md/hub/04+-+Guides,+Workflows,+&+Courses/Guides/Why+and+How+to+use+Stylelint+for+your+Obsidian+Theme.md).
 
 ```shell
 git clone git@github.com:chrisgrieser/shimmering-focus.git
 cd ./shimmering-focus
-npm install stylelint postcss stylelint-config-recommended
+npm install stylelint postcss stylelint-config-recommended stylelint-order stylelint-declaration-block-no-ignored-properties
 ```
 
 ## Credits

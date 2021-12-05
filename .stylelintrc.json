@@ -130,6 +130,7 @@
 						"text-decoration",
 						"text-transform",
 						"text-align",
+						"hyphens",
 						"white-space"
 					]
 				}

@@ -1,4 +1,4 @@
-- 2021-12-04	minor
+- 2021-12-05	fixed suggesters on mobile
 - 2021-12-04	warnings & close buttons
 - 2021-12-04	login menu
 - 2021-12-04	emphasize features for academics more clearly

@@ -1,6 +1,6 @@
 /* ──────────────────────────────────────────────────────
 SHIMMERING FOCUS
-Version 1.231
+Version 1.232
 https://github.com/chrisgrieser/shimmering-focus/
 Created by @pseudometa
 MIT License
@@ -1262,7 +1262,7 @@ body:not(.show-close-button) .modal-close-button:hover {
 /* << Command Palette */
 /* << QuickSwitcher */
 /* ─────────────────────────────────────────────────── */
-/* also applies to the Editor Suggestions */
+/* also partially applies to the Editor Suggestions */
 
 div.prompt {
 	padding: 4px;
@@ -1345,11 +1345,11 @@ div.prompt-results {
 }
 
 /* move plugin name to the right */
-body:not(.move-plugin-name-to-left) div.prompt {
+body:not(.move-plugin-name-to-left):not(.is-mobile) div.prompt {
 	min-width: 700px;
 }
 
-body:not(.move-plugin-name-to-left) .suggestion-prefix {
+body:not(.move-plugin-name-to-left):not(.is-mobile) .suggestion-prefix {
 	position: absolute;
 	right: 100px;
 	background: var(--background-primary);
@@ -2819,12 +2819,17 @@ body > .app-container .HyperMD-quote {
 	padding-right: 0.8em;
 	padding-bottom: 0.5em;
 
-	border: var(--muted-border);
+	border-right: var(--muted-border);
+	border-left: var(--muted-border);
 	border-radius: var(--roundish);
 
 	text-align: justify;
-
 	hyphens: auto;
+}
+
+body > .app-container .HyperMD-quote ~ .HyperMD-quote {
+	border-top: none;
+	border-bottom: none;
 }
 
 /* fixes color when text is selected */
@@ -2848,7 +2853,7 @@ body > .app-container .cm-formatting.cm-formatting-quote {
 	font-style: unset;
 }
 
-/* style links in blockquotes, e.g. es quote sources */
+/* style links in blockquotes, e.g. quote sources */
 .cm-link.cm-quote:not(.cm-formatting) {
 	color: var(--text-accent) !important;
 }
@@ -2866,12 +2871,11 @@ body > .app-container .markdown-preview-view blockquote {
 	padding: 0.3em 0.7em 0.4em;
 	margin: 1.5em 0 1.5em 2em;
 
-	border: 2px solid var(--background-modifier-border);
+	border: var(--muted-border);
 	border-radius: var(--roundish);
 
 	font-style: italic;
 	text-align: justify;
-
 	hyphens: auto;
 }
 
