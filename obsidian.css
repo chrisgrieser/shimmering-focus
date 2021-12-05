@@ -1,6 +1,6 @@
 /* ──────────────────────────────────────────────────────
 SHIMMERING FOCUS
-Version 1.237
+Version 1.238
 https://github.com/chrisgrieser/shimmering-focus/
 Created by @pseudometa
 MIT License
@@ -5383,7 +5383,6 @@ h6.BC-Matrix-header {
 
 .workspace-leaf-content[data-type="BC-down"] .view-content {
 	padding-top: 5px;
-	/* white-space: pre-line; */
 }
 
 /* unresolved links */
@@ -5396,6 +5395,37 @@ body > .app-container .BC-Link.is-unresolved {
 /* Breadcrumb Trail */
 .trails-div {
 	padding-bottom: 2px;
+}
+
+.BC-trail button {
+	position: relative;
+	top: 0;
+	right: -6px;
+
+	background: none;
+
+	padding: 2px 0 1px 2px !important;
+	margin-right: 0;
+
+	border: none !important;
+
+	font-size: 0;
+}
+
+.BC-trail button::BEFORE {
+	content: "unfold_more";
+	color: var(--text-muted);
+	font-family: "Material Icons";
+	font-size: 1.1rem;
+	letter-spacing: 0 !important;
+}
+
+.BC-trail button:hover {
+	background: none !important;
+}
+
+.BC-trail button:hover::BEFORE {
+	color: var(--alt-accent);
 }
 
 body > .app-container div.BC-trail {
@@ -5418,14 +5448,21 @@ div.BC-trail {
 
 body > .app-container div.BC-trail-grid {
 	background-color: var(--background-primary);
+
 	margin-top: 8px;
 	margin-bottom: 5px;
+
 	border: 1px solid var(--background-modifier-border);
 	border-radius: var(--roundish);
+
+	border-collapse: collapse;
 }
 
 body > .app-container div.BC-trail-grid-item {
-	border: none;
+	padding-right: 5px;
+	padding-left: 5px;
+	border: 1px solid var(--background-modifier-border);
+	border-collapse: collapse;
 }
 
 /* ─────────────────────────────────────────────────── */
