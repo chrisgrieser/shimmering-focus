@@ -1,3 +1,4 @@
+- 2021-12-05	support for link favicon plugin
 - 2021-12-05	changed external link display for Link Favicon Plugin
 - 2021-12-05	fixed suggesters on mobile
 - 2021-12-04	warnings & close buttons

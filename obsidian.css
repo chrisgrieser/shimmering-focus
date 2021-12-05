@@ -1,6 +1,6 @@
 /* ──────────────────────────────────────────────────────
 SHIMMERING FOCUS
-Version 1.233
+Version 1.234
 https://github.com/chrisgrieser/shimmering-focus/
 Created by @pseudometa
 MIT License
@@ -436,6 +436,12 @@ body,
 
 a.external-link {
 	background-image: var(--external-url);
+	background-position-y: 5px;
+	background-size: 14px;
+}
+
+body.hide-external-link-icon a.external-link {
+	background-image: none;
 }
 
 svg.BC-trail-icon > path { display: none; }
@@ -5489,30 +5495,24 @@ body #block-ref-hover.show:hover {
 /* << CodeMirror Options */
 /* ─────────────────────────────────────────────────── */
 
+body .cm-s-obsidian .hmd-link-icon::AFTER {
+	height: 1em;
+	width: 1em;
+
+	position: relative;
+	top: -1px;
+
+	background-color: var(--text-muted);
+
+	transform: scale(1.15);
+
+	-webkit-mask-image: var(--external-url);
+}
+
 /* folded URL */
 body > .app-container .cm-s-obsidian .hmd-link-icon:hover::AFTER {
 	background-color: var(--alt-accent);
 	opacity: 0.8;
-}
-
-.cm-s-obsidian .hmd-link-icon:hover {
-	cursor: pointer;
-}
-
-body > .app-container .cm-s-obsidian .hmd-link-icon::AFTER {
-	display: none;
-}
-
-body > .app-container .cm-s-obsidian .hmd-link-icon {
-	width: 0.9em;
-	background-image: var(--external-url);
-	margin-bottom: 3px;
-	background-repeat: no-repeat;
-}
-
-/* fix for link icon in footnotes */
-body > .app-container .cm-s-obsidian .HyperMD-footnote .hmd-link-icon {
-	width: 1.1em;
 }
 
 /* move and shrink copy button */
@@ -5684,7 +5684,7 @@ pre button.copy:hover::BEFORE {
 
 /* Removes Custom External Link Icons from Community Plugin Readme */
 .community-plugin-info .community-plugin-readme img.link-favicon {
-  display: none;
+	display: none;
 }
 
 body img.link-favicon {
@@ -5695,11 +5695,11 @@ body img.link-favicon {
 
 /* GitHub */
 .theme-light img.link-favicon[data-host=*"github.com"] {
-  content: url("data:image/svg+xml,%3Csvg id='icon' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Cdefs%3E%3Cstyle%3E.cls-1%7Bfill-rule:evenodd;%7D.cls-2%7Bfill:none;%7D%3C/style%3E%3C/defs%3E%3Ctitle%3Elogo--github%3C/title%3E%3Cpath class='cls-1' d='M16,2a14,14,0,0,0-4.43,27.28c.7.13,1-.3,1-.67s0-1.21,0-2.38c-3.89.84-4.71-1.88-4.71-1.88A3.71,3.71,0,0,0,6.24,22.3c-1.27-.86.1-.85.1-.85A2.94,2.94,0,0,1,8.48,22.9a3,3,0,0,0,4.08,1.16,2.93,2.93,0,0,1,.88-1.87c-3.1-.36-6.37-1.56-6.37-6.92a5.4,5.4,0,0,1,1.44-3.76,5,5,0,0,1,.14-3.7s1.17-.38,3.85,1.43a13.3,13.3,0,0,1,7,0c2.67-1.81,3.84-1.43,3.84-1.43a5,5,0,0,1,.14,3.7,5.4,5.4,0,0,1,1.44,3.76c0,5.38-3.27,6.56-6.39,6.91a3.33,3.33,0,0,1,.95,2.59c0,1.87,0,3.38,0,3.84s.25.81,1,.67A14,14,0,0,0,16,2Z'/%3E%3Crect id='_Transparent_Rectangle_' data-name='&lt;Transparent Rectangle&gt;' class='cls-2' width='32' height='32'/%3E%3C/svg%3E");
+	content: url("data:image/svg+xml,%3Csvg id='icon' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Cdefs%3E%3Cstyle%3E.cls-1%7Bfill-rule:evenodd;%7D.cls-2%7Bfill:none;%7D%3C/style%3E%3C/defs%3E%3Ctitle%3Elogo--github%3C/title%3E%3Cpath class='cls-1' d='M16,2a14,14,0,0,0-4.43,27.28c.7.13,1-.3,1-.67s0-1.21,0-2.38c-3.89.84-4.71-1.88-4.71-1.88A3.71,3.71,0,0,0,6.24,22.3c-1.27-.86.1-.85.1-.85A2.94,2.94,0,0,1,8.48,22.9a3,3,0,0,0,4.08,1.16,2.93,2.93,0,0,1,.88-1.87c-3.1-.36-6.37-1.56-6.37-6.92a5.4,5.4,0,0,1,1.44-3.76,5,5,0,0,1,.14-3.7s1.17-.38,3.85,1.43a13.3,13.3,0,0,1,7,0c2.67-1.81,3.84-1.43,3.84-1.43a5,5,0,0,1,.14,3.7,5.4,5.4,0,0,1,1.44,3.76c0,5.38-3.27,6.56-6.39,6.91a3.33,3.33,0,0,1,.95,2.59c0,1.87,0,3.38,0,3.84s.25.81,1,.67A14,14,0,0,0,16,2Z'/%3E%3Crect id='_Transparent_Rectangle_' data-name='&lt;Transparent Rectangle&gt;' class='cls-2' width='32' height='32'/%3E%3C/svg%3E");
 }
 
 .theme-dark img.link-favicon[data-host*="github.com"] {
-  content: url("data:image/svg+xml,%3Csvg id='icon' fill='hsl(34.3, 21.2%, 93.5%)' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Cdefs%3E%3Cstyle%3E.cls-1%7Bfill-rule:evenodd;%7D.cls-2%7Bfill:none;%7D%3C/style%3E%3C/defs%3E%3Ctitle%3Elogo--github%3C/title%3E%3Cpath class='cls-1' d='M16,2a14,14,0,0,0-4.43,27.28c.7.13,1-.3,1-.67s0-1.21,0-2.38c-3.89.84-4.71-1.88-4.71-1.88A3.71,3.71,0,0,0,6.24,22.3c-1.27-.86.1-.85.1-.85A2.94,2.94,0,0,1,8.48,22.9a3,3,0,0,0,4.08,1.16,2.93,2.93,0,0,1,.88-1.87c-3.1-.36-6.37-1.56-6.37-6.92a5.4,5.4,0,0,1,1.44-3.76,5,5,0,0,1,.14-3.7s1.17-.38,3.85,1.43a13.3,13.3,0,0,1,7,0c2.67-1.81,3.84-1.43,3.84-1.43a5,5,0,0,1,.14,3.7,5.4,5.4,0,0,1,1.44,3.76c0,5.38-3.27,6.56-6.39,6.91a3.33,3.33,0,0,1,.95,2.59c0,1.87,0,3.38,0,3.84s.25.81,1,.67A14,14,0,0,0,16,2Z'/%3E%3Crect id='_Transparent_Rectangle_' data-name='&lt;Transparent Rectangle&gt;' class='cls-2' width='32' height='32'/%3E%3C/svg%3E");
+	content: url("data:image/svg+xml,%3Csvg id='icon' fill='hsl(34.3, 21.2%, 93.5%)' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Cdefs%3E%3Cstyle%3E.cls-1%7Bfill-rule:evenodd;%7D.cls-2%7Bfill:none;%7D%3C/style%3E%3C/defs%3E%3Ctitle%3Elogo--github%3C/title%3E%3Cpath class='cls-1' d='M16,2a14,14,0,0,0-4.43,27.28c.7.13,1-.3,1-.67s0-1.21,0-2.38c-3.89.84-4.71-1.88-4.71-1.88A3.71,3.71,0,0,0,6.24,22.3c-1.27-.86.1-.85.1-.85A2.94,2.94,0,0,1,8.48,22.9a3,3,0,0,0,4.08,1.16,2.93,2.93,0,0,1,.88-1.87c-3.1-.36-6.37-1.56-6.37-6.92a5.4,5.4,0,0,1,1.44-3.76,5,5,0,0,1,.14-3.7s1.17-.38,3.85,1.43a13.3,13.3,0,0,1,7,0c2.67-1.81,3.84-1.43,3.84-1.43a5,5,0,0,1,.14,3.7,5.4,5.4,0,0,1,1.44,3.76c0,5.38-3.27,6.56-6.39,6.91a3.33,3.33,0,0,1,.95,2.59c0,1.87,0,3.38,0,3.84s.25.81,1,.67A14,14,0,0,0,16,2Z'/%3E%3Crect id='_Transparent_Rectangle_' data-name='&lt;Transparent Rectangle&gt;' class='cls-2' width='32' height='32'/%3E%3C/svg%3E");
 }
 
 /* ─────────────────────────────────────────────────── */
@@ -5840,6 +5840,12 @@ settings:
 	 title: Re-enable the Starred Pane Buttons
 	 type: class-toggle
 	 description: The two buttons to star the current file and the current search.
+	 default: false
+  -
+	 id: hide-external-link-icon
+	 title: Hide the External Link Icon
+	 description: The small icon appended to external links in Preview Mode.
+	 type: class-toggle
 	 default: false
   -
 	 id: aesthetics
