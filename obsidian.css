@@ -1,6 +1,6 @@
 /* ──────────────────────────────────────────────────────
 SHIMMERING FOCUS
-Version 1.238
+Version 1.239
 https://github.com/chrisgrieser/shimmering-focus/
 Created by @pseudometa
 MIT License
@@ -603,6 +603,14 @@ body:not(.show-ribbons) .workspace-ribbon {
 .side-dock-ribbon-action:active svg,
 .workspace-ribbon-collapse-btn:active svg {
 	color: var(--text-accent);
+}
+
+.workspace-ribbon.mod-left {
+	border-right: var(--muted-border);
+}
+
+.workspace-ribbon.mod-right {
+	border-left: var(--muted-border);
 }
 
 /* ─────────────────────────────────────────────────── */
@@ -5547,6 +5555,7 @@ body .cm-s-obsidian .hmd-link-icon::AFTER {
 	background-color: var(--text-muted);
 
 	transform: scale(1.15);
+	cursor: pointer;
 
 	-webkit-mask-image: var(--external-url);
 }
