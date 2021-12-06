@@ -1,6 +1,6 @@
 /* ──────────────────────────────────────────────────────
 SHIMMERING FOCUS
-Version 1.239
+Version 1.240
 https://github.com/chrisgrieser/shimmering-focus/
 Created by @pseudometa
 MIT License
@@ -457,6 +457,16 @@ svg.longform {
 	-webkit-mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' aria-hidden='true' role='img' width='1.1em' height='1.1em' preserveAspectRatio='xMidYMid meet' viewBox='0 0 20 20'%3E%3Cpath d='M16.89 1.2l1.41 1.41c.39.39.39 1.02 0 1.41L14 8.33V18H3V3h10.67l1.8-1.8c.4-.39 1.03-.4 1.42 0zm-5.66 8.48l5.37-5.36l-1.42-1.42l-5.36 5.37l-.71 2.12z' fill='currentColor'/%3E%3C/svg%3E");
 }
 
+/* also applies to info plugin */
+svg.help > path {
+	display: none;
+}
+
+svg.help {
+	background-color: currentColor;
+	-webkit-mask-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' aria-hidden='true' role='img' width='1em' height='1em' preserveAspectRatio='xMidYMid meet' viewBox='0 0 24 24'%3e%3cpath d='M20 3H4a1 1 0 0 0-1 1v16a1 1 0 0 0 1 1h16a1 1 0 0 0 1-1V4a1 1 0 0 0-1-1zm-1 16H5V5h14v14z' fill='currentColor'/%3e%3cpath d='M11 7h2v2h-2zm0 4h2v6h-2z' fill='currentColor'/%3e%3c/svg%3e");
+}
+
 /* ─────────────────────────────────────────────────── */
 /* < Shapes */
 /* ─────────────────────────────────────────────────── */
@@ -781,17 +791,32 @@ body:not(.is-mobile) .view-header:focus-within {
 /* based on some CSS snippets from @Chetachi's Yin-and-Yang Theme
 https://github.com/chetachiezikeuzor/Yin-and-Yang-Theme */
 
+body:not(.default-statusbar) .status-bar {
+	max-height: unset;
+
+	position: absolute;
+	right: 0;
+	bottom: 0;
+
+	padding: 8px 9px 4px 10px;
+
+	border: 1px solid var(--background-modifier-border) !important;
+	border-top-left-radius: var(--roundish);
+
+	line-height: 1;
+}
+
 .status-bar-item,
 .status-bar::AFTER {
 	color: var(--extra-contrast);
-	padding: 0 0 0 14px;
+	padding: 0 0 0 15px;
 }
 
 .status-bar-item:first-child {
 	padding-left: 0;
 }
 
-.status-bar::AFTER {
+body:not(.hide-signature) .status-bar::AFTER {
 	content: var(--signature);
 }
 
@@ -803,21 +828,6 @@ https://github.com/chetachiezikeuzor/Yin-and-Yang-Theme */
 .status-bar-item.mod-clickable:hover,
 .lt-status-bar-btn:hover {
 	color: var(--alt-accent) !important;
-}
-
-body:not(.default-statusbar) .status-bar {
-	max-height: unset;
-
-	position: absolute;
-	right: 0;
-	bottom: 0;
-
-	padding: 8px 14px;
-
-	border: 1px solid var(--background-modifier-border) !important;
-	border-top-left-radius: var(--roundish);
-
-	line-height: 1;
 }
 
 /* only show on hover */
@@ -5789,6 +5799,34 @@ img.link-favicon[data-host*="mail.google.com"] {
 }
 
 /* ─────────────────────────────────────────────────── */
+/* << Info Plugin */
+/* ─────────────────────────────────────────────────── */
+
+/* no top icon */
+.get-info-menu > div > div:first-child > span:first-child {
+	display: none;
+}
+
+body div.get-info-menu > div > div {
+	padding-top: 5px !important;
+	padding-bottom: 5px !important;
+}
+
+/* border below heading */
+.get-info-menu > div > div:nth-child(2),
+.get-info-menu > div > div:nth-child(3) {
+	border-color: var(--text-muted) !important;
+}
+
+/* subtitles */
+.get-info-menu > div > div:not(:first-child) > span:nth-child(2) {
+	font-family: var(--smallcap-font);
+	font-size: 0.7em;
+	line-height: 1.2em;
+	text-transform: lowercase !important;
+}
+
+/* ─────────────────────────────────────────────────── */
 /* << Other Minor Plugin Customizations */
 /* ─────────────────────────────────────────────────── */
 
@@ -5801,6 +5839,11 @@ a.zoom-plugin-title:hover {
 /* <<< Advanced Tables */
 .widget-icon:hover {
 	fill: var(--alt-accent) !important;
+}
+
+/* <<< Language Tool Integration */
+.lt-status-bar-check-icon {
+	margin-bottom: 4px;
 }
 
 /* ─────────────────────────────────────────────────── */
@@ -5842,6 +5885,7 @@ community:
 - obsidian-activity-history
 - breadcrumbs
 - link-favicon
+- get-info-plugin
 */
 
 /* ─────────────────────────────────────────────────── */
@@ -5876,20 +5920,26 @@ settings:
   -
 	 id: show-header-bar
 	 title: Permanently show the Header Bar
-	 type: class-toggle
 	 description: When false, the Header bar is still visible upon focus and hover
+	 type: class-toggle
 	 default: false
   -
 	 id: show-statusbar
 	 title: Permanently show the Status Bar
+	 description: When false, the Status bar is still visible when hovering. (This setting will be overridden when you use the default status bar.)
 	 type: class-toggle
-	 description: When false, the Status bar is still visible when hovering. (This setting will be overriden when you use the default status bar.)
 	 default: false
   -
 	 id: default-statusbar
 	 title: Default Theme Status Bar
-	 type: class-toggle
 	 description: Use the Status Bar from the default theme, which will also be permanently visible.
+	 type: class-toggle
+	 default: false
+  -
+	 id: hide-signature
+	 title: Hide the "✧" in the Status Bar
+	 description: Hide the "signature" icon of the theme in the status bar.
+	 type: class-toggle
 	 default: false
   -
 	 id: show-close-button

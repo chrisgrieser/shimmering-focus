@@ -1,4 +1,4 @@
-- 2021-12-06	minor
+- 2021-12-06	get info plugin support
 - 2021-12-05	improved breadcrumbs trail view
 - 2021-12-05	improved support for favicons plugin
 - 2021-12-05	improved suppport for link favicon plugin
