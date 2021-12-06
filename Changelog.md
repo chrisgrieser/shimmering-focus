@@ -1,3 +1,4 @@
+- 2021-12-06	fix close buttons in community plugin browser
 - 2021-12-06	icon file size reduction
 - 2021-12-06	new icons
 - 2021-12-06	icons for several plugins

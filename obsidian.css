@@ -1,6 +1,6 @@
 /* ──────────────────────────────────────────────────────
 SHIMMERING FOCUS
-Version 1.243
+Version 1.244
 https://github.com/chrisgrieser/shimmering-focus/
 Created by @pseudometa
 MIT License
@@ -1419,7 +1419,7 @@ body:not(.show-close-button) div.search-input-clear-button,
 body:not(.show-close-button) .empty-state-close-button,
 body:not(.show-close-button) .modal-close-button {
 	opacity: 0;
-	transition: 700ms;
+	transition: 700ms ease-in-out;
 }
 
 body:not(.show-close-button) .document-search-close-button:hover,
@@ -1427,7 +1427,7 @@ body:not(.show-close-button) div.search-input-clear-button:hover,
 body:not(.show-close-button) .empty-state-close-button:hover,
 body:not(.show-close-button) .modal-close-button:hover {
 	opacity: 1;
-	transition: 200ms;
+	transition: 200ms ease-in-out;
 }
 
 /* ─────────────────────────────────────────────────── */
@@ -1968,8 +1968,6 @@ body .workspace-leaf-resize-handle:active {
 /* << Community Plugin Browser */
 /* ─────────────────────────────────────────────────── */
 
-/* bigger and more condensed */
-
 /* Search input */
 .community-plugin-search {
 	padding-top: 10px;
@@ -2055,8 +2053,19 @@ body .workspace-leaf-resize-handle:active {
 	background-color: var(--alt-accent) !important;
 }
 
+/* plugin search input */
 .community-plugin-search .search-input-container {
 	margin-left: 0.4em;
+}
+
+/* positioning fixes for close & clear buttons */
+.search-input-clear-button {
+	margin-right: 0.9em;
+}
+
+.mod-community-plugin .modal-close-button {
+	top: 0;
+	right: 0;
 }
 
 .community-plugin-search .setting-item .setting-item-info {
