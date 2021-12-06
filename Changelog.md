@@ -1,3 +1,4 @@
+- 2021-12-06	new icons
 - 2021-12-06	icons for several plugins
 - 2021-12-06	get info plugin support
 - 2021-12-05	improved breadcrumbs trail view
