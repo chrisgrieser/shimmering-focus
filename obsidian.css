@@ -1,6 +1,6 @@
 /* ──────────────────────────────────────────────────────
 SHIMMERING FOCUS
-Version 1.240
+Version 1.241
 https://github.com/chrisgrieser/shimmering-focus/
 Created by @pseudometa
 MIT License
@@ -464,7 +464,45 @@ svg.help > path {
 
 svg.help {
 	background-color: currentColor;
-	-webkit-mask-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' aria-hidden='true' role='img' width='1em' height='1em' preserveAspectRatio='xMidYMid meet' viewBox='0 0 24 24'%3e%3cpath d='M20 3H4a1 1 0 0 0-1 1v16a1 1 0 0 0 1 1h16a1 1 0 0 0 1-1V4a1 1 0 0 0-1-1zm-1 16H5V5h14v14z' fill='currentColor'/%3e%3cpath d='M11 7h2v2h-2zm0 4h2v6h-2z' fill='currentColor'/%3e%3c/svg%3e");
+	-webkit-mask-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' aria-hidden='true' role='img' width='0.9em' height='0.9em' preserveAspectRatio='xMidYMid meet' viewBox='0 0 24 24'%3e%3cpath d='M20 3H4a1 1 0 0 0-1 1v16a1 1 0 0 0 1 1h16a1 1 0 0 0 1-1V4a1 1 0 0 0-1-1zm-1 16H5V5h14v14z' fill='currentColor'/%3e%3cpath d='M11 7h2v2h-2zm0 4h2v6h-2z' fill='currentColor'/%3e%3c/svg%3e");
+}
+
+/* outline plugin icon */
+svg.bullet-list > path {
+	display: none;
+}
+
+svg.bullet-list {
+	background-color: currentColor;
+	-webkit-mask-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' aria-hidden='true' role='img' width='1.1em' height='1.1em' preserveAspectRatio='xMidYMid meet' viewBox='0 0 24 24'%3e%3cpath d='M17 11V4h2v17h-2v-8H7v8H5V4h2v7z' fill='currentColor'/%3e%3c/svg%3e");
+}
+
+svg.star > path {
+	display: none;
+}
+
+svg.star {
+	background-color: currentColor;
+	-webkit-mask-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' aria-hidden='true' role='img' width='1.1em' height='1.1em' preserveAspectRatio='xMidYMid meet' viewBox='0 0 16 16'%3e%3cg fill='currentColor'%3e%3cpath d='M7.84 4.1a.178.178 0 0 1 .32 0l.634 1.285a.178.178 0 0 0 .134.098l1.42.206c.145.021.204.2.098.303L9.42 6.993a.178.178 0 0 0-.051.158l.242 1.414a.178.178 0 0 1-.258.187l-1.27-.668a.178.178 0 0 0-.165 0l-1.27.668a.178.178 0 0 1-.257-.187l.242-1.414a.178.178 0 0 0-.05-.158l-1.03-1.001a.178.178 0 0 1 .098-.303l1.42-.206a.178.178 0 0 0 .134-.098L7.84 4.1z'/%3e%3cpath d='M2 2a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v13.5a.5.5 0 0 1-.777.416L8 13.101l-5.223 2.815A.5.5 0 0 1 2 15.5V2zm2-1a1 1 0 0 0-1 1v12.566l4.723-2.482a.5.5 0 0 1 .554 0L13 14.566V2a1 1 0 0 0-1-1H4z'/%3e%3c/g%3e%3c/svg%3e");
+}
+
+/* recent files plugin */
+svg.clock > path {
+	display: none;
+}
+
+svg.clock {
+	background-color: currentColor;
+	-webkit-mask-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' aria-hidden='true' role='img' width='1.1em' height='1.1em' preserveAspectRatio='xMidYMid meet' viewBox='0 0 32 32'%3e%3cpath d='M20.59 22L15 16.41V7h2v8.58l5 5.01L20.59 22z' fill='currentColor'/%3e%3cpath d='M16 2A13.94 13.94 0 0 0 6 6.23V2H4v8h8V8H7.08A12 12 0 1 1 4 16H2A14 14 0 1 0 16 2z' fill='currentColor'/%3e%3c/svg%3e");
+}
+
+svg.search > path {
+	display: none;
+}
+
+svg.search {
+	background-color: currentColor;
+	-webkit-mask-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' aria-hidden='true' role='img' width='1.1em' height='1.1em' preserveAspectRatio='xMidYMid meet' viewBox='0 0 32 32'%3e%3cpath d='M30 28.586l-4.689-4.688a8.028 8.028 0 1 0-1.414 1.414L28.586 30zM19 25a6 6 0 1 1 6-6a6.007 6.007 0 0 1-6 6z' fill='currentColor'/%3e%3cpath d='M2 12h8v2H2z' fill='currentColor'/%3e%3cpath d='M2 2h16v2H2z' fill='currentColor'/%3e%3cpath d='M2 7h16v2H2z' fill='currentColor'/%3e%3c/svg%3e");
 }
 
 /* ─────────────────────────────────────────────────── */
@@ -5827,6 +5865,22 @@ body div.get-info-menu > div > div {
 }
 
 /* ─────────────────────────────────────────────────── */
+/* << Language Tool Integration */
+/* ─────────────────────────────────────────────────── */
+
+.lt-status-bar-check-icon {
+	margin-bottom: 2px;
+	font-size: 0;
+	text-decoration: none !important;
+}
+
+.lt-status-bar-check-icon::BEFORE {
+	content: "spellcheck";
+	font-family: "Material Icons";
+	font-size: 0.9rem;
+}
+
+/* ─────────────────────────────────────────────────── */
 /* << Other Minor Plugin Customizations */
 /* ─────────────────────────────────────────────────── */
 
@@ -5839,11 +5893,6 @@ a.zoom-plugin-title:hover {
 /* <<< Advanced Tables */
 .widget-icon:hover {
 	fill: var(--alt-accent) !important;
-}
-
-/* <<< Language Tool Integration */
-.lt-status-bar-check-icon {
-	margin-bottom: 4px;
 }
 
 /* ─────────────────────────────────────────────────── */
@@ -5886,6 +5935,7 @@ community:
 - breadcrumbs
 - link-favicon
 - get-info-plugin
+- obsidian-languagetool-plugin
 */
 
 /* ─────────────────────────────────────────────────── */
