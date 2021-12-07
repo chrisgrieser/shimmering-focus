@@ -1,6 +1,6 @@
 /* ──────────────────────────────────────────────────────
 SHIMMERING FOCUS
-Version 1.245
+Version 1.246
 https://github.com/chrisgrieser/shimmering-focus/
 Created by @pseudometa
 MIT License
@@ -1180,14 +1180,13 @@ input.slider {
 /* << Search & Replace (cmd + F) */
 /* ─────────────────────────────────────────────────── */
 
-/* move up to avoid collision with statusbar */
 .document-search-container {
 	display: block;
 
 	height: 3.9em;
 	width: 95%;
 
-	bottom: 2.5em;
+	bottom: 12px;
 	left: 2.5%;
 
 	background-color: var(--background-secondary-alt);
@@ -1196,6 +1195,11 @@ input.slider {
 
 	border: var(--thick-border);
 	border-radius: var(--round);
+}
+
+/* move up to avoid collision with statusbar */
+body:not(.default-statusbar) .document-search-container {
+	bottom: 2.7em
 }
 
 div.document-replace {
@@ -1207,9 +1211,8 @@ div.document-replace {
 	border-radius: calc(var(--round) / 2);
 }
 
-/* for whatever reason the scrollbar
-shows up on the bottom when replacing/searching
-ლ(ಠ_ಠლ)╯ */
+/* for whatever reason the scrollbar shows up on
+the bottom when replacing/searching ლ(ಠ_ಠლ)╯ */
 .is-replacing .CodeMirror-scroll {
 	padding-bottom: 120px;
 }
