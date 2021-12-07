@@ -1,3 +1,4 @@
+- 2021-12-07	soem value fine-tuning
 - 2021-12-07	hotkey buttons
 - 2021-12-07	statusbar alignment
 - 2021-12-07	some more icons

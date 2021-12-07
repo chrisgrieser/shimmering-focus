@@ -1,6 +1,6 @@
 /* ──────────────────────────────────────────────────────
 SHIMMERING FOCUS
-Version 1.250
+Version 1.251
 https://github.com/chrisgrieser/shimmering-focus/
 Created by @pseudometa
 MIT License
@@ -186,15 +186,16 @@ This ToC is auto-generated via the .create-ToC.sh
 	--extra-contrast: hsl(0 0% 36%);
 	--button-hover: var(--alt-accent);
 	--button-hover-border: var(--alt-accent-lighter);
+	--button-border: var(--accent-lighter);
 	--longform-background: hsl(30 30% 98%);
 	--finished-task: var(--accent-lighter);
+
 	--spell-error-color: hsl(227 100% 72%);
 	--tooltip-notification-bg: var(--text-faint);
 	--tooltip-notification-text: var(--interactive-normal);
 	--tooltip-notification-border: var(--text-muted);
 	--cursor-duo-color-1: var(--alt-accent-lightest);
 	--cursor-duo-color-2: var(--accent-lightest);
-	--button-border: var(--accent-lighter);
 	--a-row: rgb(0 0 0 / 3%);
 	--b-row: rgb(0 0 0 / 6%);
 	--backdrop-color: hsl(228 9% 70%);
@@ -203,6 +204,8 @@ This ToC is auto-generated via the .create-ToC.sh
 	--basic-border: 2px solid hsl(0 0% 70%);
 	--muted-border: 2px solid hsl(0 0% 87%);
 	--thick-border: 3.5px solid hsl(0 0% 87%);
+
+	--shadow: 8px 8px 4px hsl(0 0% 66%);
 }
 
 .theme-dark {
@@ -211,15 +214,17 @@ This ToC is auto-generated via the .create-ToC.sh
 	--extra-contrast: hsl(0 0% 73%);
 	--button-hover: var(--alt-accent-darker);
 	--button-hover-border: var(--alt-accent-lighter);
+	--button-border: var(--text-accent);
+
 	--longform-background: hsl(226 18% 13%);
 	--finished-task: var(--text-accent);
 	--spell-error-color: hsl(228 67% 63%);
+
 	--tooltip-notification-bg: var(--extra-contrast);
 	--tooltip-notification-text: var(--interactive-normal);
 	--tooltip-notification-border: var(--text-muted);
 	--cursor-duo-color-1: var(--alt-accent-lighter);
 	--cursor-duo-color-2: var(--accent-lighter);
-	--button-border: var(--text-accent);
 	--a-row: rgb(0 0 0 / 20%);
 	--b-row: rgb(0 0 0 / 20%);
 	--backdrop-color: hsl(228 30% 15%);
@@ -228,6 +233,8 @@ This ToC is auto-generated via the .create-ToC.sh
 	--basic-border: 2px solid hsl(0 0% 40%);
 	--muted-border: 2px solid hsl(0 0% 20%);
 	--thick-border: 3.5px solid hsl(0 0% 20%);
+
+	--shadow: 8px 8px 4px hsl(0 0% 6%);
 }
 
 /* ─────────────────────────────────────────────────── */
@@ -584,6 +591,10 @@ svg.reset {
 	-webkit-mask-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' width='1.1em' height='1.1em' preserveAspectRatio='xMidYMid meet' viewBox='0 0 32 32'%3e%3cpath d='M27 28a1 1 0 0 1-.5-.13l-19-11a1 1 0 0 1 0-1.74l19-11a1 1 0 0 1 1 0A1 1 0 0 1 28 5v22a1 1 0 0 1-1 1zM10 16l16 9.27V6.73z' fill='currentColor'/%3e%3cpath d='M2 4h2v24H2z' fill='currentColor'/%3e%3c/svg%3e");
 }
 
+.style-settings-container svg.reset {
+	margin-bottom: 3.5px;
+}
+
 /* advanced cursor plugin icon */
 svg.feather-mouse-pointer > path { display: none }
 
@@ -831,6 +842,8 @@ body > div.notice-container .notice {
 	border-radius: var(--roundish);
 
 	font-size: 0.85em;
+
+	box-shadow: var(--shadow);
 }
 
 body > div.notice-container .notice:hover {
@@ -1460,6 +1473,7 @@ div.prompt {
 	padding: 4px;
 	border: 5px solid var(--background-secondary);
 	border-radius: calc(var(--roundish) * 2);
+	box-shadow: var(--shadow);
 }
 
 input.prompt-input {
@@ -1719,6 +1733,7 @@ body .workspace-leaf-resize-handle:active {
 	padding: 7px 15px 20px;
 	border: var(--thick-border);
 	border-radius: calc(var(--roundish) * 2);
+	box-shadow: var(--shadow);
 }
 
 .prompt-bg,
@@ -1732,8 +1747,8 @@ body .workspace-leaf-resize-handle:active {
 .modal.mod-community-theme,
 .modal.mod-community-plugin,
 .modal.mod-settings {
-	height: 93%;
-	width: 93%;
+	height: 90%;
+	width: 90%;
 	max-width: unset;
 	border: var(--thick-border);
 	border-radius: calc(var(--roundish) * 3);
@@ -1807,7 +1822,7 @@ body .workspace-leaf-resize-handle:active {
 
 	padding: 0;
 	padding-right: 0;
-	padding-bottom: 1em;
+	padding-bottom: 1.8em;
 	padding-left: 0;
 	margin-top: 0;
 
@@ -1817,12 +1832,6 @@ body .workspace-leaf-resize-handle:active {
 .setting-item.setting-item-heading + .installed-plugins-container,
 .setting-item.setting-item-heading + .setting-item {
 	border-top: none;
-}
-
-.modal.mod-settings .vertical-tab-header {
-	height: 95vh;
-	background: var(--background-secondary);
-	padding-top: 0;
 }
 
 .modal.mod-settings .vertical-tab-content-container .vertical-tab-content,
@@ -1850,6 +1859,16 @@ body .workspace-leaf-resize-handle:active {
 	line-height: 1.3em;
 }
 
+/* tabs to the side */
+.modal.mod-settings .vertical-tab-header {
+	height: 95vh;
+	background: var(--background-secondary);
+	padding-top: 0;
+
+	/* overscroll */
+	padding-bottom: 50px;
+}
+
 .vertical-tab-content {
 	background: var(--background-primary);
 	padding: 12px 21px;
@@ -1860,7 +1879,7 @@ body .workspace-leaf-resize-handle:active {
 	padding-top: 0;
 	padding-bottom: 0;
 	margin-top: 0;
-	margin-bottom: 20px;
+	margin-bottom: 1em;
 }
 
 .vertical-tab-header-group-title {
@@ -1990,11 +2009,17 @@ body .workspace-leaf-resize-handle:active {
 
 /* Hotkey search */
 .hotkey-search-container {
+	padding-right: 0;
 	padding-bottom: 10px;
 }
 
 .hotkey-search-container input {
 	width: 350px;
+}
+
+.hotkey-list-container {
+	padding-right: 0;
+	padding-bottom: 2em;
 }
 
 .setting-hotkey {
