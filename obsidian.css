@@ -1,6 +1,6 @@
 /* ──────────────────────────────────────────────────────
 SHIMMERING FOCUS
-Version 1.253
+Version 1.254
 https://github.com/chrisgrieser/shimmering-focus/
 Created by @pseudometa
 MIT License
@@ -191,9 +191,6 @@ This ToC is auto-generated via the .create-ToC.sh
 	--finished-task: var(--accent-lighter);
 
 	--spell-error-color: hsl(227 100% 72%);
-	--tooltip-notification-bg: var(--text-faint);
-	--tooltip-notification-text: var(--interactive-normal);
-	--tooltip-notification-border: var(--text-muted);
 	--cursor-duo-color-1: var(--alt-accent-lightest);
 	--cursor-duo-color-2: var(--accent-lightest);
 	--a-row: rgb(0 0 0 / 3%);
@@ -204,6 +201,7 @@ This ToC is auto-generated via the .create-ToC.sh
 	--basic-border: 2px solid hsl(0 0% 70%);
 	--muted-border: 2px solid hsl(0 0% 87%);
 	--thick-border: 3.5px solid hsl(0 0% 87%);
+	--thin-border: 1px solid hsl(0 0% 70%);
 
 	--shadow: 8px 8px 4px hsl(0 0% 66%);
 	--small-shadow: 4px 4px 4px hsl(0 0% 66%);
@@ -221,9 +219,6 @@ This ToC is auto-generated via the .create-ToC.sh
 	--finished-task: var(--text-accent);
 	--spell-error-color: hsl(228 67% 63%);
 
-	--tooltip-notification-bg: var(--extra-contrast);
-	--tooltip-notification-text: var(--interactive-normal);
-	--tooltip-notification-border: var(--text-muted);
 	--cursor-duo-color-1: var(--alt-accent-lighter);
 	--cursor-duo-color-2: var(--accent-lighter);
 	--a-row: rgb(0 0 0 / 20%);
@@ -234,6 +229,7 @@ This ToC is auto-generated via the .create-ToC.sh
 	--basic-border: 2px solid hsl(0 0% 40%);
 	--muted-border: 2px solid hsl(0 0% 20%);
 	--thick-border: 3.5px solid hsl(0 0% 20%);
+	--thin-border: 1px solid hsl(0 0% 40%);
 
 	--shadow: 8px 8px 4px hsl(0 0% 6%);
 	--small-shadow: 4px 4px 4px hsl(0 0% 6%);
@@ -803,27 +799,32 @@ body:not(.show-ribbons) .workspace-ribbon {
 /* ─────────────────────────────────────────────────── */
 
 .tooltip {
-	color: var(--tooltip-notification-text);
-	background-color: var(--tooltip-notification-bg) !important;
-	border: 1px solid var(--tooltip-notification-border);
+	color: var(--interactive-normal);
+	background-color: var(--extra-contrast) !important;
+	box-shadow: var(--small-shadow);
+
+	border: var(--thin-border);
 	border-radius: var(--roundish);
+
 	word-wrap: break-word;
+
+	--tooltip-arrow: 5px solid var(--extra-contrast);
 }
 
 .tooltip .tooltip-arrow {
-	border-bottom: 5px solid var(--tooltip-notification-bg);
+	border-bottom: var(--tooltip-arrow);
 }
 
 .tooltip.mod-right .tooltip-arrow {
-	border-right: 5px solid var(--tooltip-notification-bg);
+	border-right: var(--tooltip-arrow);
 }
 
 .tooltip.mod-left .tooltip-arrow {
-	border-left: 5px solid var(--tooltip-notification-bg);
+	border-left: var(--tooltip-arrow);
 }
 
 .tooltip.mod-top .tooltip-arrow {
-	border-top: 5px solid var(--tooltip-notification-bg);
+	border-top: var(--tooltip-arrow);
 }
 
 /* ─────────────────────────────────────────────────── */
@@ -835,13 +836,13 @@ body:not(.show-titlebar) > div.notice-container {
 }
 
 body > div.notice-container .notice {
-	color: var(--tooltip-notification-text);
-	background-color: var(--tooltip-notification-bg);
+	color: var(--interactive-normal);
+	background-color: var(--extra-contrast);
 	box-shadow: var(--shadow);
 
 	padding: 4px 10px 6px;
 
-	border: 1px solid var(--tooltip-notification-border);
+	border: var(--thin-border);
 	border-radius: var(--roundish);
 
 	font-size: 0.85em;
@@ -976,7 +977,7 @@ body:not(.default-statusbar) .status-bar {
 
 	padding: 7px 9px 5px 10px;
 
-	border: 1px solid var(--background-modifier-border) !important;
+	border: var(--thin-border) !important;
 	border-top-left-radius: var(--roundish);
 
 	line-height: 1;
@@ -1606,7 +1607,7 @@ body > .app-container .workspace-split.mod-horizontal > .workspace-tabs > .works
 
 .workspace-tab-header {
 	margin-right: 8px;
-	border: 1px solid var(--background-modifier-border);
+	border: var(--thin-border);
 	border-radius: var(--roundish);
 }
 
@@ -1667,7 +1668,7 @@ body > .app-container .workspace-split.mod-horizontal > .workspace-tabs > .works
 .nav-action-button {
 	height: 27px;
 	padding: 2px 6px 0;
-	border: 1px solid var(--background-modifier-border);
+	border: var(--thin-border);
 	border-radius: var(--roundish);
 }
 
@@ -2025,7 +2026,7 @@ body .workspace-leaf-resize-handle:active {
 }
 
 .setting-hotkey {
-	border: 1px solid var(--background-modifier-border);
+	border: var(--thin-border);
 	border-radius: var(--roundish);
 	font-family: var(--button-font);
 }
@@ -2669,7 +2670,7 @@ progress {
 
 progress::-WEBKIT-PROGRESS-BAR {
 	background: var(--background-secondary-alt);
-	border: 1px solid var(--background-modifier-boder);
+	border: var(--thin-border);
 	border-radius: calc(var(--roundish) * 3);
 }
 
@@ -5713,7 +5714,7 @@ body > .app-container div.BC-trail-grid {
 	margin-top: 8px;
 	margin-bottom: 5px;
 
-	border: 1px solid var(--background-modifier-border);
+	border: var(--thin-border);
 	border-radius: var(--roundish);
 
 	border-collapse: collapse;
@@ -5722,7 +5723,7 @@ body > .app-container div.BC-trail-grid {
 body > .app-container div.BC-trail-grid-item {
 	padding-right: 5px;
 	padding-left: 5px;
-	border: 1px solid var(--background-modifier-border);
+	border: var(--thin-border);
 	border-collapse: collapse;
 }
 
