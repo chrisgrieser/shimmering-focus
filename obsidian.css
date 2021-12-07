@@ -1,6 +1,6 @@
 /* ──────────────────────────────────────────────────────
 SHIMMERING FOCUS
-Version 1.249
+Version 1.250
 https://github.com/chrisgrieser/shimmering-focus/
 Created by @pseudometa
 MIT License
@@ -299,10 +299,10 @@ This ToC is auto-generated via the .create-ToC.sh
 	--default-font: "iA Writer Quattro V";
 
 	--font-monospace: "Input Mono";
-	--monospace-font-size: 0.9em;
+	--monospace-font-size: 0.9rem;
 
 	--longform-font: "Crimson Pro";
-	--longform-font-size: 1.2em;
+	--longform-font-size: 120%;
 
 	--sidebar-font-family: "iA Writer Quattro V";
 	--sidebar-font-size: 0.85rem;
@@ -1531,6 +1531,11 @@ div.prompt-results {
 	opacity: 0.6;
 }
 
+.suggestion-hotkey {
+	border-radius: var(--roundish);
+	font-family: var(--button-font);
+}
+
 .suggestion-item.is-selected .suggestion-hotkey,
 .suggestion-item:hover .suggestion-hotkey {
 	background-color: var(--background-primary-alt);
@@ -1995,7 +2000,7 @@ body .workspace-leaf-resize-handle:active {
 .setting-hotkey {
 	border: 1px solid var(--background-modifier-border);
 	border-radius: var(--roundish);
-	font-family: "Quicksand";
+	font-family: var(--button-font);
 }
 
 .setting-hotkey.mod-empty {
@@ -2008,6 +2013,10 @@ body .workspace-leaf-resize-handle:active {
 	font-size: 0;
 	font-weight: 600;
 	line-height: 0;
+}
+
+.setting-hotkey.mod-active {
+	font-weight: 600;
 }
 
 .setting-hotkey.mod-empty::BEFORE {
@@ -5199,14 +5208,15 @@ body:not(.longform-left-aligned) .longform-leaf .cm-s-obsidian {
 }
 
 /* keep any code smaller though */
+body > div.app-container .longform-leaf .cm-s-obsidian .cm-hmd-frontmatter,
 .longform-leaf .markdown-preview-view .frontmatter-container,
-.longform-leaf .cm-s-obsidian .cm-hmd-frontmatter,
 .longform-leaf .cm-s-obsidian .HyperMD-codeblock,
 .longform-leaf .markdown-preview-view code,
 .longform-leaf .cm-s-obsidian span.cm-inline-code,
 .longform-leaf .HyperMD-table-row,
 .longform-leaf .cm-formatting-task.cm-meta {
-	font-size: calc(var(--longform-font-size) * 0.7);
+	font-family: var(--font-monospace);
+	font-size: var(--monospace-font-size);
 	text-align: start;
 	hyphens: none;
 }
@@ -6117,6 +6127,7 @@ community:
 - link-favicon
 - get-info-plugin
 - obsidian-languagetool-plugin
+- hotkey-helper
 */
 
 /* ─────────────────────────────────────────────────── */
@@ -6278,7 +6289,7 @@ settings:
 	 min: 0.6
 	 max: 1.6
 	 step: 0.05
-	 format: em
+	 format: rem
   -
 	 id: sidebar-font-family
 	 title: Side Bar Font
