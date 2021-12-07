@@ -1,3 +1,4 @@
+- 2021-12-07	fix editor suggestions + more box shadows
 - 2021-12-07	update for info plugin
 - 2021-12-07	soem value fine-tuning
 - 2021-12-07	hotkey buttons

@@ -1,6 +1,6 @@
 /* ──────────────────────────────────────────────────────
 SHIMMERING FOCUS
-Version 1.252
+Version 1.253
 https://github.com/chrisgrieser/shimmering-focus/
 Created by @pseudometa
 MIT License
@@ -206,6 +206,7 @@ This ToC is auto-generated via the .create-ToC.sh
 	--thick-border: 3.5px solid hsl(0 0% 87%);
 
 	--shadow: 8px 8px 4px hsl(0 0% 66%);
+	--small-shadow: 4px 4px 4px hsl(0 0% 66%);
 }
 
 .theme-dark {
@@ -235,6 +236,7 @@ This ToC is auto-generated via the .create-ToC.sh
 	--thick-border: 3.5px solid hsl(0 0% 20%);
 
 	--shadow: 8px 8px 4px hsl(0 0% 6%);
+	--small-shadow: 4px 4px 4px hsl(0 0% 6%);
 }
 
 /* ─────────────────────────────────────────────────── */
@@ -1368,12 +1370,12 @@ div.menu-item {
 targeting other suggestion containers */
 
 body:not(.app-container) .suggestion-container {
+	box-shadow: var(--small-shadow);
 	border-radius: var(--roundish);
 }
 
-body:not(.app-container) .suggestion-content .suggestion-flair {
-	transform: scale(1.1);
-	margin-top: 3px;
+body:not(.app-container) .suggestion-item {
+	padding-left: 40px;
 }
 
 body:not(.app-container) .suggestion-note {
@@ -1817,7 +1819,8 @@ body .workspace-leaf-resize-handle:active {
 }
 
 .modal.mod-settings .vertical-tab-content-container {
-	height: 95vh;
+	/* has to be adjusted when modal size is adjusted */
+	height: 93vh;
 
 	padding: 0;
 	padding-right: 0;
