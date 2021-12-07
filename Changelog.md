@@ -1,3 +1,4 @@
+- 2021-12-07	reset & hotkey button
 - 2021-12-07	cleaner search & replace container with default status bar
 - 2021-12-07	fix hotkey settings pack icons
 - 2021-12-06	fix close buttons in community plugin browser
