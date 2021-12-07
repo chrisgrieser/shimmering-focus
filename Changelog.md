@@ -1,3 +1,4 @@
+- 2021-12-07	statusbar alignment
 - 2021-12-07	some more icons
 - 2021-12-07	reset & hotkey button
 - 2021-12-07	cleaner search & replace container with default status bar

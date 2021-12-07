@@ -1,6 +1,6 @@
 /* ──────────────────────────────────────────────────────
 SHIMMERING FOCUS
-Version 1.248
+Version 1.249
 https://github.com/chrisgrieser/shimmering-focus/
 Created by @pseudometa
 MIT License
@@ -960,7 +960,7 @@ body:not(.default-statusbar) .status-bar {
 	right: 0;
 	bottom: 0;
 
-	padding: 8px 9px 4px 10px;
+	padding: 7px 9px 5px 10px;
 
 	border: 1px solid var(--background-modifier-border) !important;
 	border-top-left-radius: var(--roundish);
@@ -1809,10 +1809,6 @@ body .workspace-leaf-resize-handle:active {
 	border-left: 2px solid var(--background-modifier-border);
 }
 
-.installed-plugins-container .checkbox-container {
-	margin-left: 10px;
-}
-
 .setting-item.setting-item-heading + .installed-plugins-container,
 .setting-item.setting-item-heading + .setting-item {
 	border-top: none;
@@ -1976,6 +1972,15 @@ body .workspace-leaf-resize-handle:active {
 	/* hide "Version: " in front of version number */
 	overflow-x: hidden;
 	text-indent: -3.4em;
+}
+
+.installed-plugins-container .checkbox-container {
+	margin-left: 20px;
+}
+
+/* core plugin */
+.plugin-list-plugins .checkbox-container {
+	margin-left: 20px;
 }
 
 /* Hotkey search */
@@ -6012,6 +6017,10 @@ img.link-favicon[data-host*="mail.google.com"] {
 	display: none;
 }
 
+.status-bar-item.plugin-get-info-plugin {
+	transform: scale(0.9);
+}
+
 body div.get-info-menu > div > div {
 	padding-top: 5px !important;
 	padding-bottom: 5px !important;
@@ -6036,7 +6045,6 @@ body div.get-info-menu > div > div {
 /* ─────────────────────────────────────────────────── */
 
 .lt-status-bar-check-icon {
-	margin-bottom: 2px;
 	font-size: 0;
 	text-decoration: none !important;
 }
@@ -6051,7 +6059,13 @@ body div.get-info-menu > div > div {
 /* << Other Minor Plugin Customizations */
 /* ─────────────────────────────────────────────────── */
 
-/* <<< Zoom Plugin */
+/* <<< Hotkey Helper */
+/* alignment of new buttons in core plugin list */
+.plugin-list-plugins .setting-item:not(.mod-toggle):not(:first-child) .setting-item-control {
+	margin-right: 39px;
+}
+
+/* <<< Zoom */
 a.zoom-plugin-title:hover {
 	color: var(--alt-accent);
 	opacity: 0.8 !important;
