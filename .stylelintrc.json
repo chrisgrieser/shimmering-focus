@@ -62,6 +62,8 @@
 						"background",
 						"background-color",
 						"background-image",
+						"backdrop-filter",
+						"box-shadow",
 						"opacity"
 					]
 				},
@@ -129,6 +131,7 @@
 						"letter-spacing",
 						"text-decoration",
 						"text-transform",
+						"text-shadow",
 						"text-align",
 						"hyphens",
 						"white-space"

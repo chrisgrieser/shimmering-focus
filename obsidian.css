@@ -1,6 +1,6 @@
 /* ──────────────────────────────────────────────────────
 SHIMMERING FOCUS
-Version 1.251
+Version 1.252
 https://github.com/chrisgrieser/shimmering-focus/
 Created by @pseudometa
 MIT License
@@ -835,6 +835,7 @@ body:not(.show-titlebar) > div.notice-container {
 body > div.notice-container .notice {
 	color: var(--tooltip-notification-text);
 	background-color: var(--tooltip-notification-bg);
+	box-shadow: var(--shadow);
 
 	padding: 4px 10px 6px;
 
@@ -842,8 +843,6 @@ body > div.notice-container .notice {
 	border-radius: var(--roundish);
 
 	font-size: 0.85em;
-
-	box-shadow: var(--shadow);
 }
 
 body > div.notice-container .notice:hover {
@@ -1470,10 +1469,10 @@ body:not(.show-close-button) .modal-close-button:hover {
 /* also partially applies to the Editor Suggestions */
 
 div.prompt {
+	box-shadow: var(--shadow);
 	padding: 4px;
 	border: 5px solid var(--background-secondary);
 	border-radius: calc(var(--roundish) * 2);
-	box-shadow: var(--shadow);
 }
 
 input.prompt-input {
@@ -1730,17 +1729,17 @@ body .workspace-leaf-resize-handle:active {
 }
 
 .modal {
+	box-shadow: var(--shadow);
 	padding: 7px 15px 20px;
 	border: var(--thick-border);
 	border-radius: calc(var(--roundish) * 2);
-	box-shadow: var(--shadow);
 }
 
 .prompt-bg,
 .modal-bg {
 	background-color: var(--backdrop-color);
-	opacity: 0.85;
 	backdrop-filter: blur(3px);
+	opacity: 0.85;
 }
 
 .modal.mod-sync-history,
@@ -6050,6 +6049,25 @@ img.link-favicon[data-host*="mail.google.com"] {
 /* no top icon */
 .get-info-menu > div > div:first-child > span:first-child {
 	display: none;
+}
+
+/* heading */
+.get-info-menu > div > div:first-child > span:nth-child(2) {
+	margin-bottom: 6px !important;
+	font-size: 110% !important;
+	text-align: start;
+	hyphens: auto;
+}
+
+/* folder path */
+.get-info-menu > div > div:first-child > span:nth-child(3) {
+	margin-bottom: 4px !important;
+
+	font-family: var(--smallcap-font);
+	line-height: 1.2em;
+	text-transform: lowercase;
+	text-align: start;
+	hyphens: auto;
 }
 
 .status-bar-item.plugin-get-info-plugin {
