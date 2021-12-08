@@ -1,6 +1,6 @@
 /* ──────────────────────────────────────────────────────
 SHIMMERING FOCUS
-Version 1.257
+Version 1.258
 https://github.com/chrisgrieser/shimmering-focus/
 Created by @pseudometa
 MIT License
@@ -5022,7 +5022,7 @@ a.tag.kanban-plugin__item-tag {
 	border-width: 3px !important;
 }
 
-/* adapted for the round checkboxes */
+/* angular shapes setting */
 body:not(.angular-shapes) .kanban-plugin__board input[type="checkbox"] {
 	height: 0.85em;
 	width: 0.85em;
@@ -5031,7 +5031,6 @@ body:not(.angular-shapes) .kanban-plugin__board input[type="checkbox"] {
 	margin-left: 0;
 }
 
-/* angular shapes setting */
 body.angular-shapes .kanban-plugin__board input[type="checkbox"] {
 	height: 1em;
 	width: 1em;
@@ -5041,6 +5040,10 @@ body.angular-shapes .kanban-plugin__board input[type="checkbox"] {
 body.angular-shapes .kanban-plugin__item,
 body.angular-shapes .kanban-plugin__lane {
 	border-radius: 0;
+}
+
+.kanban-plugin__board input[type="checkbox"] {
+	margin-left: 0;
 }
 
 /* ─────────────────────────────────────────────────── */
@@ -6023,6 +6026,10 @@ object.link-favicon {
 	margin-right: 4px;
 	margin-bottom: 3px;
 	margin-left: 0;
+}
+
+.kanban-plugin__board .link-favicon {
+	height: 0.9em !important;
 }
 
 .theme-dark .link-favicon[data-host*="github.com"] {
