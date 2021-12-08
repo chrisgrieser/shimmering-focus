@@ -1,3 +1,4 @@
+- 2021-12-08	search button fix
 - 2021-12-08	fix notices in light mode
 - 2021-12-07	refactoring
 - 2021-12-07	fix editor suggestions + more box shadows
