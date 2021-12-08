@@ -1,6 +1,6 @@
 /* ──────────────────────────────────────────────────────
 SHIMMERING FOCUS
-Version 1.259
+Version 1.260
 https://github.com/chrisgrieser/shimmering-focus/
 Created by @pseudometa
 MIT License
@@ -203,8 +203,9 @@ This ToC is auto-generated via the .create-ToC.sh
 	--thick-border: 3.5px solid hsl(0 0% 87%);
 	--thin-border: 1px solid hsl(0 0% 70%);
 
-	--shadow: 8px 8px 4px hsl(0 0% 66%);
-	--small-shadow: 4px 4px 4px hsl(0 0% 66%);
+	--big-shadow: 10px 10px 4px hsl(0 0% 75%);
+	--shadow: 6px 6px 4px hsl(0 0% 75%);
+	--small-shadow: 4px 4px 4px hsl(0 0% 75%);
 }
 
 .theme-dark {
@@ -231,8 +232,9 @@ This ToC is auto-generated via the .create-ToC.sh
 	--thick-border: 3.5px solid hsl(0 0% 20%);
 	--thin-border: 1px solid hsl(0 0% 40%);
 
-	--shadow: 8px 8px 4px hsl(0 0% 6%);
-	--small-shadow: 4px 4px 4px hsl(0 0% 6%);
+	--big-shadow: 3px 5px 6px 10px rgb(0 0 0 / 40%);
+	--shadow: 3px 5px 6px 7px rgb(0 0 0 / 40%);
+	--small-shadow: 3px 5px 6px 3px rgb(0 0 0 / 40%);
 }
 
 /* ─────────────────────────────────────────────────── */
@@ -845,7 +847,7 @@ body > div.notice-container .notice {
 
 	padding: 4px 10px 6px;
 
-	border: var(--thin-border);
+	border: var(--muted-border);
 	border-radius: var(--roundish);
 
 	font-size: 0.85em;
@@ -860,7 +862,7 @@ body > div.notice-container .notice {
 }
 
 body > div.notice-container .notice:hover {
-	opacity: 0.9;
+	opacity: 0.8;
 }
 
 body > div.notice-container .notice:hover::BEFORE {
@@ -868,9 +870,10 @@ body > div.notice-container .notice:hover::BEFORE {
 	content: "𝗫";
 
 	position: absolute;
-	right: 21px;
+	top: 12px;
+	right: 16px;
 
-	color: var(--text-error);
+	color: var(--interactive-normal);
 	opacity: 0.5;
 }
 
@@ -1747,7 +1750,7 @@ body .workspace-leaf-resize-handle:active {
 }
 
 .modal {
-	box-shadow: var(--shadow);
+	box-shadow: var(--big-shadow);
 	padding: 7px 15px 20px;
 	border: var(--thick-border);
 	border-radius: calc(var(--roundish) * 2);
