@@ -1,6 +1,6 @@
 /* ──────────────────────────────────────────────────────
 SHIMMERING FOCUS
-Version 1.254
+Version 1.255
 https://github.com/chrisgrieser/shimmering-focus/
 Created by @pseudometa
 MIT License
@@ -837,8 +837,7 @@ body:not(.show-titlebar) > div.notice-container {
 
 body > div.notice-container .notice {
 	color: var(--interactive-normal);
-	background-color: var(--extra-contrast);
-	box-shadow: var(--shadow);
+	box-shadow: var(--small-shadow);
 
 	padding: 4px 10px 6px;
 
@@ -848,8 +847,16 @@ body > div.notice-container .notice {
 	font-size: 0.85em;
 }
 
+.theme-light > div.notice-container .notice {
+	background-color: var(--text-faint);
+}
+
+.theme-dark > div.notice-container .notice {
+	background-color: var(--extra-contrast);
+}
+
 body > div.notice-container .notice:hover {
-	opacity: 0.8;
+	opacity: 0.9;
 }
 
 body > div.notice-container .notice:hover::BEFORE {
