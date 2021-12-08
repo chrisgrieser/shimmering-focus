@@ -1,3 +1,4 @@
+- 2021-12-08	changes for favicon plugin update
 - 2021-12-08	search button fix
 - 2021-12-08	fix notices in light mode
 - 2021-12-07	refactoring
