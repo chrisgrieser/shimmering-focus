@@ -1,6 +1,6 @@
 /* ──────────────────────────────────────────────────────
 SHIMMERING FOCUS
-Version 1.267
+Version 1.268
 https://github.com/chrisgrieser/shimmering-focus/
 Created by @pseudometa
 MIT License
@@ -196,9 +196,11 @@ This ToC is auto-generated via the .create-ToC.sh
 	--extra-contrast: hsl(0 0% 36%);
 	--hr-line-gray: hsl(0 0% 66%);
 
+	--button-text: var(--interactive-normal);
+	--button-hover-text: var(--interactive-normal);
 	--button-bg: var(--interactive-accent);
 	--button-hover-bg: var(--alt-accent-lighter);
-	--interactive-hover-border: var(--alt-accent-lighter);
+	--interactive-hover-border: var(--alt-accent);
 	--interactive-border: var(--accent-lighter);
 
 	--longform-background: hsl(30 30% 98%);
@@ -227,6 +229,8 @@ This ToC is auto-generated via the .create-ToC.sh
 	--extra-contrast: hsl(0 0% 73%);
 	--hr-line-gray: hsl(0 0% 60%);
 
+	--button-text: var(--text-normal);
+	--button-hover-text: var(--interactive-normal);
 	--button-bg: var(--interactive-accent);
 	--button-hover-bg: var(--alt-accent-darker);
 	--interactive-hover-border: var(--alt-accent-lighter);
@@ -1105,7 +1109,7 @@ body:not(.show-scrollbar) ::-WEBKIT-SCROLLBAR {
 /* ─────────────────────────────────────────────────── */
 
 button {
-	color: var(--text-normal) !important;
+	color: var(--button-text) !important;
 	background-color: var(--button-bg) !important;
 
 	transition: var(--toggle-duration) ease-in-out;
@@ -1113,14 +1117,14 @@ button {
 	padding-right: 12px !important;
 	padding-left: 12px !important;
 
-	border: 3px solid var(--interactive-border) !important;
+	border: 2px solid var(--interactive-border) !important;
 	border-radius: var(--round);
 
 	letter-spacing: 0.5px;
 }
 
 button:hover {
-	color: var(--interactive-normal) !important;
+	color: var(--button-hover-text) !important;
 	background-color: var(--button-hover-bg) !important;
 	transition: var(--toggle-duration) ease-in-out;
 	border-color: var(--interactive-hover-border) !important;
@@ -1163,16 +1167,6 @@ p.mod-warning::BEFORE {
 	margin-left: 5px;
 }
 
-body:not(.normal-checkboxes) .checkbox-container:hover {
-	transition: var(--toggle-duration) ease-in-out;
-	border: 9px solid var(--interactive-hover-border);
-}
-
-body:not(.normal-checkboxes) .checkbox-container.is-enabled:hover {
-	background-color: var(--background-secondary);
-	border-color: var(--interactive-hover-border);
-}
-
 body:not(.normal-checkboxes) .checkbox-container {
 	height: 22px;
 	width: 22px;
@@ -1197,12 +1191,28 @@ body:not(.normal-checkboxes) .checkbox-container::AFTER {
 
 .theme-dark:not(.normal-checkboxes) .checkbox-container.is-enabled {
 	background-color: var(--interactive-accent);
+}
+
+.theme-dark:not(.normal-checkboxes) .checkbox-container {
 	border-color: var(--text-accent);
 }
 
 .theme-light:not(.normal-checkboxes) .checkbox-container.is-enabled {
-	background-color: var(--interactive-accent);
+	background-color: var(--text-accent);
+}
+
+.theme-light:not(.normal-checkboxes) .checkbox-container {
 	border-color: var(--accent-lighter);
+}
+
+body:not(.normal-checkboxes) .checkbox-container:hover {
+	transition: var(--toggle-duration) ease-in-out;
+	border: 9px solid var(--interactive-hover-border);
+}
+
+body:not(.normal-checkboxes) .checkbox-container.is-enabled:hover {
+	background-color: var(--background-secondary);
+	border-color: var(--interactive-hover-border);
 }
 
 /* ─────────────────────────────────────────────────── */
