@@ -1,6 +1,6 @@
 /* ──────────────────────────────────────────────────────
 SHIMMERING FOCUS
-Version 1.270
+Version 1.271
 https://github.com/chrisgrieser/shimmering-focus/
 Created by @pseudometa
 MIT License
@@ -1036,11 +1036,7 @@ body:not(.default-statusbar) .status-bar {
 }
 
 .status-bar-item:last-child {
-	margin-right: 0;
-}
-
-.status-bar-item:first-child {
-	padding-left: 0;
+	margin-right: 0 !important;
 }
 
 body:not(.hide-signature) .status-bar::AFTER {
@@ -6155,6 +6151,7 @@ body div.get-info-menu > div > div {
 /* ─────────────────────────────────────────────────── */
 
 .lt-status-bar-check-icon {
+	width: 0.3em;
 	font-size: 0;
 	text-decoration: none !important;
 }
