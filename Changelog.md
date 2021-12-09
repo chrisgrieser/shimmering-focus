@@ -1,3 +1,4 @@
+- 2021-12-09	better button color
 - 2021-12-09	refactoring & consistent color for buttons
 - 2021-12-09	hotkey settings
 - 2021-12-08	notices and shadows

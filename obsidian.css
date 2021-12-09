@@ -1,6 +1,6 @@
 /* ──────────────────────────────────────────────────────
 SHIMMERING FOCUS
-Version 1.266
+Version 1.267
 https://github.com/chrisgrieser/shimmering-focus/
 Created by @pseudometa
 MIT License
@@ -195,8 +195,12 @@ This ToC is auto-generated via the .create-ToC.sh
 	--selection-color: hsl(259 100% 93% / 86.7%);
 	--extra-contrast: hsl(0 0% 36%);
 	--hr-line-gray: hsl(0 0% 66%);
+
+	--button-bg: var(--interactive-accent);
+	--button-hover-bg: var(--alt-accent-lighter);
 	--interactive-hover-border: var(--alt-accent-lighter);
 	--interactive-border: var(--accent-lighter);
+
 	--longform-background: hsl(30 30% 98%);
 	--finished-task: var(--accent-lighter);
 
@@ -212,9 +216,9 @@ This ToC is auto-generated via the .create-ToC.sh
 	--thick-muted-border: 3.5px solid hsl(0 0% 87%);
 	--thin-border: 1px solid hsl(0 0% 70%);
 
-	--big-shadow: 10px 10px 4px hsl(0 0% 75%);
-	--shadow: 6px 6px 4px hsl(0 0% 75%);
-	--small-shadow: 4px 4px 4px hsl(0 0% 75%);
+	--big-shadow: 3px 5px 6px 10px hsl(0 0% 75%);
+	--medium-shadow: 3px 5px 6px 7px hsl(0 0% 75%);
+	--small-shadow: 3px 5px 6px 3px hsl(0 0% 75%);
 }
 
 .theme-dark {
@@ -222,8 +226,12 @@ This ToC is auto-generated via the .create-ToC.sh
 	--selection-color: hsl(302 24% 21% / 73%);
 	--extra-contrast: hsl(0 0% 73%);
 	--hr-line-gray: hsl(0 0% 60%);
+
+	--button-bg: var(--interactive-accent);
+	--button-hover-bg: var(--alt-accent-darker);
 	--interactive-hover-border: var(--alt-accent-lighter);
 	--interactive-border: var(--text-accent);
+
 	--longform-background: hsl(226 18% 13%);
 	--finished-task: var(--text-accent);
 
@@ -240,7 +248,7 @@ This ToC is auto-generated via the .create-ToC.sh
 	--thin-border: 1px solid hsl(0 0% 40%);
 
 	--big-shadow: 3px 5px 6px 10px rgb(0 0 0 / 40%);
-	--shadow: 3px 5px 6px 7px rgb(0 0 0 / 40%);
+	--medium-shadow: 3px 5px 6px 7px rgb(0 0 0 / 40%);
 	--small-shadow: 3px 5px 6px 3px rgb(0 0 0 / 40%);
 }
 
@@ -1097,23 +1105,25 @@ body:not(.show-scrollbar) ::-WEBKIT-SCROLLBAR {
 /* ─────────────────────────────────────────────────── */
 
 button {
-	background-color: var(--background-secondary) !important;
+	color: var(--text-normal) !important;
+	background-color: var(--button-bg) !important;
 
-	transition: 150ms;
+	transition: var(--toggle-duration) ease-in-out;
 
 	padding-right: 12px !important;
 	padding-left: 12px !important;
 
-	border: 2px solid var(--interactive-border) !important;
+	border: 3px solid var(--interactive-border) !important;
 	border-radius: var(--round);
 
 	letter-spacing: 0.5px;
 }
 
 button:hover {
-	transition: 150ms;
-	padding-right: 10px !important;
-	border: 4px solid var(--interactive-hover-border) !important;
+	color: var(--interactive-normal) !important;
+	background-color: var(--button-hover-bg) !important;
+	transition: var(--toggle-duration) ease-in-out;
+	border-color: var(--interactive-hover-border) !important;
 }
 
 /* ─────────────────────────────────────────────────── */
@@ -1518,7 +1528,7 @@ body:not(.show-close-button) .modal-close-button:hover {
 /* also partially applies to the Editor Suggestions */
 
 div.prompt {
-	box-shadow: var(--shadow);
+	box-shadow: var(--medium-shadow);
 	padding: 4px;
 	border: 5px solid var(--background-secondary);
 	border-radius: calc(var(--roundish) * 2);
