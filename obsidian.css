@@ -1,6 +1,6 @@
 /* ──────────────────────────────────────────────────────
 SHIMMERING FOCUS
-Version 1.268
+Version 1.269
 https://github.com/chrisgrieser/shimmering-focus/
 Created by @pseudometa
 MIT License
@@ -6077,10 +6077,17 @@ pre button.copy:hover::BEFORE {
 	padding-right: 0;
 }
 
-object.link-favicon {
+.link-favicon:not(img) {
 	height: 1em !important;
 	margin-right: 4px;
 	margin-bottom: 3px;
+	margin-left: 0;
+}
+
+img.link-favicon {
+	width: 1.2em !important;
+	margin-right: 0;
+	margin-bottom: 9px;
 	margin-left: 0;
 }
 

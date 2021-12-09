@@ -1,3 +1,4 @@
+- 2021-12-09	fix for favicon plugin
 - 2021-12-09	hotfix buttons
 - 2021-12-09	better button color
 - 2021-12-09	refactoring & consistent color for buttons
