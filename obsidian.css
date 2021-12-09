@@ -1,6 +1,6 @@
 /* ──────────────────────────────────────────────────────
 SHIMMERING FOCUS
-Version 1.262
+Version 1.263
 https://github.com/chrisgrieser/shimmering-focus/
 Created by @pseudometa
 MIT License
@@ -586,11 +586,12 @@ svg.any-key {
 }
 
 .hotkey-list-container svg.any-key {
-	height: 1.1rem;
+	height: 1.08rem;
 	width: 1rem;
-	margin-top: 1px;
+	margin-top: 1.5px;
 }
 
+/* reset */
 svg.reset > path { display: none }
 
 svg.reset {
@@ -601,6 +602,11 @@ svg.reset {
 
 .style-settings-container svg.reset {
 	margin-bottom: 3.5px;
+}
+
+.hotkey-list-container svg.reset {
+	width: 1rem;
+	margin-top: 2px;
 }
 
 /* advanced cursor plugin icon */
@@ -1900,7 +1906,7 @@ body .workspace-leaf-resize-handle:active {
 }
 
 .vertical-tab-header-group {
-	background-color: var(--background-primary-alt);
+	background-color: var(--background-secondary-alt);
 	padding-top: 0;
 	padding-bottom: 0;
 	margin-top: 0;
@@ -2045,6 +2051,13 @@ body .workspace-leaf-resize-handle:active {
 .hotkey-list-container {
 	padding-right: 0;
 	padding-bottom: 2em;
+}
+
+/* avoids the creation of two-line-hotkeys  */
+/* when the command name is too long */
+.hotkey-list-container .setting-item-info {
+	max-width: 70%;
+	margin-right: 0;
 }
 
 .setting-hotkey {
