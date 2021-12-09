@@ -1,6 +1,6 @@
 /* ──────────────────────────────────────────────────────
 SHIMMERING FOCUS
-Version 1.261
+Version 1.262
 https://github.com/chrisgrieser/shimmering-focus/
 Created by @pseudometa
 MIT License
@@ -571,6 +571,10 @@ body:not(.angular-shapes) *:not(.setting-delete-hotkey) > svg.cross {
 	margin-top: 0.75px;
 }
 
+body.angular-shapes .menu-item .menu-item-icon svg.cross {
+	margin-bottom: 1px;
+}
+
 /* hotkey button */
 svg.any-key > path { display: none }
 
@@ -592,7 +596,7 @@ svg.reset > path { display: none }
 svg.reset {
 	background-color: currentColor;
 	margin-top: 1px;
-	-webkit-mask-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' width='1.1em' height='1.1em' preserveAspectRatio='xMidYMid meet' viewBox='0 0 32 32'%3e%3cpath d='M27 28a1 1 0 0 1-.5-.13l-19-11a1 1 0 0 1 0-1.74l19-11a1 1 0 0 1 1 0A1 1 0 0 1 28 5v22a1 1 0 0 1-1 1zM10 16l16 9.27V6.73z' fill='currentColor'/%3e%3cpath d='M2 4h2v24H2z' fill='currentColor'/%3e%3c/svg%3e");
+	-webkit-mask-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' width='1em' height='1em' preserveAspectRatio='xMidYMid meet' viewBox='0 0 32 32'%3e%3cpath d='M27 28a1 1 0 0 1-.5-.13l-19-11a1 1 0 0 1 0-1.74l19-11a1 1 0 0 1 1 0A1 1 0 0 1 28 5v22a1 1 0 0 1-1 1zM10 16l16 9.27V6.73z' fill='currentColor'/%3e%3cpath d='M2 4h2v24H2z' fill='currentColor'/%3e%3c/svg%3e");
 }
 
 .style-settings-container svg.reset {
@@ -854,11 +858,11 @@ body > div.notice-container .notice {
 }
 
 .theme-light > div.notice-container .notice {
-	background-color: var(--text-muted);
+	background-color: var(--text-faint);
 }
 
 .theme-dark > div.notice-container .notice {
-	background-color: var(--extra-contrast);
+	background-color: var(--text-muted);
 }
 
 body > div.notice-container .notice:hover {
