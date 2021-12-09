@@ -1,3 +1,4 @@
+- 2021-12-09	minor
 - 2021-12-08	notices and shadows
 - 2021-12-08	kanban checkbox alignment
 - 2021-12-08	changes for favicon plugin update
