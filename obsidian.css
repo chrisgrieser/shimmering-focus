@@ -1,6 +1,6 @@
 /* ──────────────────────────────────────────────────────
 SHIMMERING FOCUS
-Version 1.272
+Version 1.273
 https://github.com/chrisgrieser/shimmering-focus/
 Created by @pseudometa
 MIT License
@@ -2670,7 +2670,7 @@ body.colored-yaml .cm-s-obsidian .cm-hmd-frontmatter.cm-string {
 }
 
 /* ─────────────────────────────────────────────────── */
-/* << Collapse Indicators (Fold Gutter) */
+/* << Collapse Indicators & Gutter */
 /* ─────────────────────────────────────────────────── */
 
 /* Preview mode */
@@ -4029,6 +4029,11 @@ body.is-mobile .markdown-preview-view blockquote {
 	display: none;
 }
 
+/* fix for slightly moving folders in file explorer by @SlRvb */
+.nav-folder-children > div:not(.nav-folder):not(.nav-file) {
+	display: none;
+}
+
 /* line styles for nesting indicators */
 :root { /* stylelint-disable-line no-duplicate-selectors */
 	--nestlinestyle1: solid;
@@ -4038,7 +4043,6 @@ body.is-mobile .markdown-preview-view blockquote {
 
 .nav-file-title,
 .nav-folder-title {
-	/* wrap text in file explorer */
 	width: 100%;
 
 	color: var(--extra-contrast);
@@ -4072,7 +4076,6 @@ body.is-mobile .markdown-preview-view blockquote {
 /* based on css from @Mara https://github.com/Mara-Li/Obsidian-Snippet-collection */
 
 /* Top Level Folder Titles */
-
 .nav-folder.mod-root > .nav-folder-children > .nav-folder > .nav-folder-title,
 .nav-folder.mod-root > .nav-folder-children .nav-file-title,
 .nav-folder.mod-root > .nav-folder-children .nav-folder-title {

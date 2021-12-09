@@ -1,4 +1,4 @@
-- 2021-12-09	minor
+- 2021-12-09	file explorer movement fix
 - 2021-12-09	fix for favicon plugin
 - 2021-12-09	hotfix buttons
 - 2021-12-09	better button color
