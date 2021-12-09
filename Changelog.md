@@ -1,3 +1,4 @@
+- 2021-12-09	minor
 - 2021-12-09	hotkey settings
 - 2021-12-08	notices and shadows
 - 2021-12-08	kanban checkbox alignment
