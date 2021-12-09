@@ -1,6 +1,6 @@
 /* ──────────────────────────────────────────────────────
 SHIMMERING FOCUS
-Version 1.265
+Version 1.266
 https://github.com/chrisgrieser/shimmering-focus/
 Created by @pseudometa
 MIT License
@@ -35,16 +35,17 @@ This ToC is auto-generated via the .create-ToC.sh
 - UI Elements
 	- Title Bar
 	- Ribbons
-	- Notifications & Tool tips
+	- Tooltips
+	- Notices (Notifications)
 	- Header Bar
 	- Status Bar
 	- Scrollbar
 - Interactive Elements
 	- Buttons
-	- Toggles (Check boxes)
+	- Warnings
+	- Toggles (Checkboxes)
 	- Input & Textarea
-		- Dropdown
-		- Slider
+	- Dropdown & Slider
 	- Search & Replace (cmd + F)
 	- Context Menus
 	- Editor Suggestions
@@ -55,13 +56,15 @@ This ToC is auto-generated via the .create-ToC.sh
 - Sidebar
 	- Tab Headers
 	- Resize Handles
-- Settings & Modals
+- Modals & Settings
 	- Modals in general
+	- Confirmation Modal
 	- Settings Menu
 	- Community Plugin Browser
 	- Community Theme Browser
 - Editor
 	- Active / Inactive Note
+	- Empty State
 	- Editor Size
 	- Line Numbers (Gutter)
 	- Overscroll
@@ -89,10 +92,13 @@ This ToC is auto-generated via the .create-ToC.sh
 	- Bullet point relationship lines
 	- Links
 	- Tags
-	- Annotation Tags
+		- Annotation Tags
 	- Comments & HTML Tags
 	- Tasks
 	- Highlights & Selection
+		- Active Line Highlight
+		- Highlights
+		- Selection (Selected Text)
 	- Multi-Color Highlighting
 	- Pseudo-Spoiler-Tag
 	- Strikethroughs
@@ -135,9 +141,13 @@ This ToC is auto-generated via the .create-ToC.sh
 	- CodeMirror Options
 	- Another Quick Switcher
 	- Activity History
-	- Style Settings (the Settings Tab)
+	- Style Settings (Settings Tab)
+	- Favicon Plugin
+	- Info Plugin
+	- Language Tool Integration
 	- Other Minor Plugin Customizations
-		- Zoom Plugin
+		- Hotkey Helper
+		- Zoom
 		- Advanced Tables
 - Plugin Compatibility Info for the Obsidian Hub
 - Style Setting Options
@@ -158,11 +168,10 @@ This ToC is auto-generated via the .create-ToC.sh
 	--unresolved-opacity: 0.6;
 
 	--code-color: var(--alt-accent-darker);
-	--html-tag-color: var(--alt-accent-darker);
 	--scrollbar-hover: var(--alt-accent-lighter);
 	--scrollbar-active: var(--accent-lighter);
-
 	--pseudo-admonition-border: var(--accent-lighter);
+
 	--highlight-color: hsl(152 100% 50% / 40%);
 	--highlight-alt1: hsl(60 100% 50% / 40%);
 	--highlight-alt2: hsl(180 100% 50% / 40%);
@@ -170,8 +179,9 @@ This ToC is auto-generated via the .create-ToC.sh
 	--bold-in-darkmode: hsl(202 43% 57%);
 	--active-line: hsl(62 11% 63% / 12.5%);
 	--cursor-monocolor: var(--accent-lighter);
+
 	--resize-handle-thickness: 4px;
-	--toggle-duration: 400ms;
+	--toggle-duration: 350ms;
 	--scrollbar-thickness: 0.6em;
 	--image-size: 50;
 	--pdf-size: 50vh;
@@ -184,9 +194,9 @@ This ToC is auto-generated via the .create-ToC.sh
 	--editor-alt-accent: var(--alt-accent-darker);
 	--selection-color: hsl(259 100% 93% / 86.7%);
 	--extra-contrast: hsl(0 0% 36%);
-	--button-hover: var(--alt-accent);
-	--button-hover-border: var(--alt-accent-lighter);
-	--button-border: var(--accent-lighter);
+	--hr-line-gray: hsl(0 0% 66%);
+	--interactive-hover-border: var(--alt-accent-lighter);
+	--interactive-border: var(--accent-lighter);
 	--longform-background: hsl(30 30% 98%);
 	--finished-task: var(--accent-lighter);
 
@@ -194,13 +204,12 @@ This ToC is auto-generated via the .create-ToC.sh
 	--cursor-duo-color-1: var(--alt-accent-lightest);
 	--cursor-duo-color-2: var(--accent-lightest);
 	--a-row: rgb(0 0 0 / 3%);
-	--b-row: rgb(0 0 0 / 6%);
+	--b-row: rgb(0 0 0 / 7%);
 	--backdrop-color: hsl(228 9% 70%);
 
-	--hr-line: hsl(0 0% 66%);
 	--basic-border: 2px solid hsl(0 0% 70%);
 	--muted-border: 2px solid hsl(0 0% 87%);
-	--thick-border: 3.5px solid hsl(0 0% 87%);
+	--thick-muted-border: 3.5px solid hsl(0 0% 87%);
 	--thin-border: 1px solid hsl(0 0% 70%);
 
 	--big-shadow: 10px 10px 4px hsl(0 0% 75%);
@@ -212,24 +221,22 @@ This ToC is auto-generated via the .create-ToC.sh
 	--editor-alt-accent: var(--alt-accent);
 	--selection-color: hsl(302 24% 21% / 73%);
 	--extra-contrast: hsl(0 0% 73%);
-	--button-hover: var(--alt-accent-darker);
-	--button-hover-border: var(--alt-accent-lighter);
-	--button-border: var(--text-accent);
-
+	--hr-line-gray: hsl(0 0% 60%);
+	--interactive-hover-border: var(--alt-accent-lighter);
+	--interactive-border: var(--text-accent);
 	--longform-background: hsl(226 18% 13%);
 	--finished-task: var(--text-accent);
-	--spell-error-color: hsl(228 67% 63%);
 
+	--spell-error-color: hsl(0 66% 64%);
 	--cursor-duo-color-1: var(--alt-accent-lighter);
 	--cursor-duo-color-2: var(--accent-lighter);
-	--a-row: rgb(0 0 0 / 20%);
-	--b-row: rgb(0 0 0 / 20%);
+	--a-row: rgb(0 0 0 / 15%);
+	--b-row: rgb(0 0 0 / 30%);
 	--backdrop-color: hsl(228 30% 15%);
 
-	--hr-line: hsl(0 0% 60%);
 	--basic-border: 2px solid hsl(0 0% 40%);
 	--muted-border: 2px solid hsl(0 0% 20%);
-	--thick-border: 3.5px solid hsl(0 0% 20%);
+	--thick-muted-border: 3.5px solid hsl(0 0% 20%);
 	--thin-border: 1px solid hsl(0 0% 40%);
 
 	--big-shadow: 3px 5px 6px 10px rgb(0 0 0 / 40%);
@@ -1000,7 +1007,7 @@ body:not(.default-statusbar) .status-bar {
 	right: 0;
 	bottom: 0;
 
-	padding: 7px 9px 5px 10px;
+	padding: 7px 11px 5px 13px;
 
 	border-top: var(--muted-border);
 	border-left: var(--muted-border);
@@ -1012,7 +1019,12 @@ body:not(.default-statusbar) .status-bar {
 .status-bar-item,
 .status-bar::AFTER {
 	color: var(--extra-contrast);
-	padding: 0 0 0 15px;
+	padding: 0;
+	margin-right: 15px;
+}
+
+.status-bar-item:last-child {
+	margin-right: 0;
 }
 
 .status-bar-item:first-child {
@@ -1085,17 +1097,23 @@ body:not(.show-scrollbar) ::-WEBKIT-SCROLLBAR {
 /* ─────────────────────────────────────────────────── */
 
 button {
+	background-color: var(--background-secondary) !important;
+
+	transition: 150ms;
+
 	padding-right: 12px !important;
 	padding-left: 12px !important;
-	border: 2px solid var(--button-border) !important;
+
+	border: 2px solid var(--interactive-border) !important;
 	border-radius: var(--round);
+
 	letter-spacing: 0.5px;
 }
 
 button:hover {
-	color: var(--interactive-normal) !important;
-	background-color: var(--button-hover) !important;
-	border-color: var(--button-hover-border) !important;
+	transition: 150ms;
+	padding-right: 10px !important;
+	border: 4px solid var(--interactive-hover-border) !important;
 }
 
 /* ─────────────────────────────────────────────────── */
@@ -1107,7 +1125,7 @@ button.mod-warning {
 }
 
 button.mod-warning:hover {
-	border-color: var(--button-hover-border) !important;
+	border-color: var(--interactive-hover-border) !important;
 }
 
 p.mod-warning {
@@ -1117,7 +1135,6 @@ p.mod-warning {
 p.mod-warning::AFTER,
 p.mod-warning::BEFORE {
 	content: "⚠️";
-	border-radius: var(--roundish);
 }
 
 p.mod-warning::AFTER {
@@ -1138,13 +1155,12 @@ p.mod-warning::BEFORE {
 
 body:not(.normal-checkboxes) .checkbox-container:hover {
 	transition: var(--toggle-duration) ease-in-out;
-	border: 9px solid var(--alt-accent);
+	border: 9px solid var(--interactive-hover-border);
 }
 
 body:not(.normal-checkboxes) .checkbox-container.is-enabled:hover {
 	background-color: var(--background-secondary);
-	transition: var(--toggle-duration) ease-in-out;
-	border: 9px solid var(--alt-accent-lighter);
+	border-color: var(--interactive-hover-border);
 }
 
 body:not(.normal-checkboxes) .checkbox-container {
@@ -1207,16 +1223,21 @@ input[type="text"] {
 
 textarea:focus,
 input:focus {
-	border-color: var(--accent-lighter);
+	border-color: var(--interactive-border) !important;
 }
 
-select.dropdown:hover,
 textarea:hover,
 input:hover {
-	border-color: var(--alt-accent-lighter);
+	border-color: var(--interactive-hover-border) !important;
 }
 
-/* <<< Dropdown */
+/* ─────────────────────────────────────────────────── */
+/* << Dropdown & Slider */
+/* ─────────────────────────────────────────────────── */
+select.dropdown:hover {
+	border-color: var(--interactive-hover-border) !important;
+}
+
 select.dropdown {
 	padding: 5px 28px 6px 10px;
 	border-radius: var(--round);
@@ -1226,7 +1247,6 @@ select.dropdown {
 /* .dropdown option {}
 .dropdown option:checked {} */
 
-/* <<< Slider */
 input.slider {
 	width: 150px;
 }
@@ -1248,7 +1268,7 @@ input.slider {
 
 	padding-top: 5px;
 
-	border: var(--thick-border);
+	border: var(--thick-muted-border);
 	border-radius: var(--round);
 }
 
@@ -1763,7 +1783,7 @@ body .workspace-leaf-resize-handle:active {
 .modal {
 	box-shadow: var(--big-shadow);
 	padding: 7px 15px 20px;
-	border: var(--thick-border);
+	border: var(--thick-muted-border);
 	border-radius: calc(var(--roundish) * 2);
 }
 
@@ -1781,7 +1801,7 @@ body .workspace-leaf-resize-handle:active {
 	height: 90%;
 	width: 90%;
 	max-width: unset;
-	border: var(--thick-border);
+	border: var(--thick-muted-border);
 	border-radius: calc(var(--roundish) * 3);
 }
 
@@ -1841,7 +1861,7 @@ body .workspace-leaf-resize-handle:active {
 	margin-top: 12px;
 	margin-bottom: 5px;
 
-	border-bottom: 2px solid var(--hr-line);
+	border-bottom: 2px solid var(--hr-line-gray);
 
 	font-family: var(--setting-heading);
 	font-size: 1.2em;
@@ -2272,7 +2292,7 @@ body .workspace-leaf-resize-handle:active {
 	padding-bottom: 5px;
 	margin-bottom: 12px;
 
-	border-bottom: 3px solid var(--hr-line);
+	border-bottom: 3px solid var(--hr-line-gray);
 
 	font-family: var(--heading-font);
 	font-size: calc(var(--h1-size) * 1.2);
@@ -2339,7 +2359,7 @@ body .workspace-leaf-resize-handle:active {
 .community-plugin-info div.community-plugin-readme {
 	padding-top: 5px !important;
 	margin-top: 15px !important;
-	border-top: var(--thick-border);
+	border-top: var(--thick-muted-border);
 }
 
 .community-plugin-readme {
@@ -2414,7 +2434,7 @@ body:not(.less-heading-letter-spacing) .modal.mod-community-theme .modal-title {
 	color: var(--text-faint) !important;
 	background-color: var(--background-secondary-alt) !important;
 	cursor: not-allowed;
-	border-color: var(--button-border) !important;
+	border-color: var(--interactive-border) !important;
 }
 
 .modal.mod-community-theme .community-plugin-downloads-text::BEFORE {
@@ -3742,7 +3762,7 @@ body:not(.annotation-tags-off) .tag[href="#example"]::BEFORE {
 body > .app-container span.cm-tag.cm-bracket.cm-hmd-html-begin,
 body > .app-container span.cm-tag.cm-bracket.cm-hmd-html-end,
 body > .app-container span.cm-tag {
-	color: var(--html-tag-color);
+	color: var(--code-color);
 }
 
 /* ─────────────────────────────────────────────────── */
@@ -3948,7 +3968,7 @@ span.cm-link.cm-hmd-footnote {
 /* increased readability in preview mode */
 body > .app-container .markdown-preview-view div hr {
 	border-top: none;
-	border-bottom: 3px solid var(--hr-line);
+	border-bottom: 3px solid var(--hr-line-gray);
 }
 
 /* ─────────────────────────────────────────────────── */
@@ -4050,7 +4070,7 @@ body.is-mobile .markdown-preview-view blockquote {
 	> .nav-folder
 	> .nav-folder-children {
 	padding-left: 1.1em;
-	border-top: var(--hr-line) 2px solid;
+	border-top: var(--hr-line-gray) 2px solid;
 	border-radius: 0;
 }
 
@@ -4062,7 +4082,7 @@ body.is-mobile .markdown-preview-view blockquote {
 	> .nav-folder
 	> .nav-folder-children
 	> .nav-file {
-	border-left: var(--nestlinestyle1) 2px var(--hr-line);
+	border-left: var(--nestlinestyle1) 2px var(--hr-line-gray);
 }
 
 .nav-folder.mod-root
@@ -4072,7 +4092,7 @@ body.is-mobile .markdown-preview-view blockquote {
 	> .nav-folder
 	> .nav-folder-children
 	> .nav-folder {
-	border-left: var(--nestlinestyle1) 2px var(--hr-line);
+	border-left: var(--nestlinestyle1) 2px var(--hr-line-gray);
 }
 
 .nav-folder.mod-root
@@ -4084,7 +4104,7 @@ body.is-mobile .markdown-preview-view blockquote {
 	> .nav-folder
 	> .nav-folder-children
 	> .nav-file {
-	border-left: var(--nestlinestyle2) 2px var(--hr-line);
+	border-left: var(--nestlinestyle2) 2px var(--hr-line-gray);
 }
 
 .nav-folder.mod-root
@@ -4096,7 +4116,7 @@ body.is-mobile .markdown-preview-view blockquote {
 	> .nav-folder
 	> .nav-folder-children
 	> .nav-folder {
-	border-left: var(--nestlinestyle2) 2px var(--hr-line);
+	border-left: var(--nestlinestyle2) 2px var(--hr-line-gray);
 }
 
 .nav-folder.mod-root
@@ -4110,7 +4130,7 @@ body.is-mobile .markdown-preview-view blockquote {
 	> .nav-folder
 	> .nav-folder-children
 	> .nav-file {
-	border-left: var(--nestlinestyle3) 2px var(--hr-line);
+	border-left: var(--nestlinestyle3) 2px var(--hr-line-gray);
 }
 
 .nav-folder.mod-root
@@ -4124,7 +4144,7 @@ body.is-mobile .markdown-preview-view blockquote {
 	> .nav-folder
 	> .nav-folder-children
 	> .nav-folder {
-	border-left: var(--nestlinestyle3) 2px var(--hr-line);
+	border-left: var(--nestlinestyle3) 2px var(--hr-line-gray);
 }
 /* stylelint-enable selector-combinator-space-before, indentation */
 
@@ -4358,7 +4378,7 @@ body.is-mobile .markdown-preview-view blockquote {
 .markdown-source-view .view-content,
 .markdown-preview-view .nav-header {
 	margin-top: 1em;
-	border-top: 2px solid var(--hr-line);
+	border-top: 2px solid var(--hr-line-gray);
 }
 
 .markdown-source-view .view-content .backlink-pane {
@@ -5562,7 +5582,7 @@ button.MS-OpenSnippet:hover svg.ms-snippet path {
 #main_moc_div .path {
 	padding-top: 15px;
 	padding-bottom: 15px;
-	border-bottom: 2px solid var(--hr-line);
+	border-bottom: 2px solid var(--hr-line-gray);
 }
 
 #main_moc_div .path:first-of-type {
