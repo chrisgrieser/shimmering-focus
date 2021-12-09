@@ -1,6 +1,6 @@
 /* ──────────────────────────────────────────────────────
 SHIMMERING FOCUS
-Version 1.264
+Version 1.265
 https://github.com/chrisgrieser/shimmering-focus/
 Created by @pseudometa
 MIT License
@@ -858,7 +858,7 @@ body > div.notice-container .notice {
 
 	padding: 4px 10px 6px;
 
-	border: var(--muted-border);
+	border: var(--basic-border);
 	border-radius: var(--roundish);
 
 	font-size: 0.85em;
