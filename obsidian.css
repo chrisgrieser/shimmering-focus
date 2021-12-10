@@ -1,6 +1,6 @@
 /* ──────────────────────────────────────────────────────
 SHIMMERING FOCUS
-Version 1.273
+Version 1.274
 https://github.com/chrisgrieser/shimmering-focus/
 Created by @pseudometa
 MIT License
@@ -4781,6 +4781,77 @@ body:not(.show-graph-controls) .graph-controls.is-close:not(:hover) {
 /* ─────────────────────────────────────────────────── */
 
 /* ─────────────────────────────────────────────────── */
+/* << Git Plugin */
+/* ─────────────────────────────────────────────────── */
+
+/* open source control view */
+.workspace-leaf-content[data-type="git-view"] .view-content {
+	padding: 7px;
+}
+
+.workspace-leaf-content[data-type="git-view"] .view-content .tree-item-self {
+	padding-left: 20px;
+	margin-bottom: 4px;
+}
+
+.workspace-leaf-content[data-type="git-view"] .view-content .git-view-body {
+	padding-left: 0;
+}
+
+.workspace-leaf-content[data-type="git-view"] .view-content .git-view-body .collapse-icon {
+	width: 18px;
+	margin-right: 4px;
+}
+
+.workspace-leaf-content[data-type="git-view"] .view-content .file-view {
+	margin-left: 13px;
+}
+
+.workspace-leaf-content[data-type="git-view"] .opener {
+	border-radius: var(--roundish);
+}
+
+.workspace-leaf-content[data-type="git-view"] .opener span:not(.tree-item-flair) {
+	font-family: var(--smallcap-font);
+	font-size: 1.1em;
+}
+
+.workspace-leaf-content[data-type="git-view"] .search-input-container {
+	width: 100%;
+	margin-right: 3px;
+	margin-left: 3px;
+}
+
+.workspace-leaf-content[data-type="git-view"] .search-input-container input {
+	padding: 2px 6px 4px;
+	font-size: 0.85em;
+}
+
+.workspace-leaf-content[data-type="git-view"] .view-content .file-view main {
+	padding-right: 4px;
+	padding-left: 6px;
+	margin-left: 5px;
+	border-radius: var(--roundish);
+}
+
+.workspace-leaf-content[data-type="git-view"] .view-content .file-view main > span {
+	color: var(--extra-contrast);
+}
+
+.workspace-leaf-content[data-type="git-view"] .view-content .file-view main:hover .path {
+	color: var(--alt-accent);
+}
+
+.workspace-leaf-content[data-type="git-view"] .view-content .file-view main:hover {
+	background: var(--background-secondary-alt);
+}
+
+.workspace-leaf-content[data-type="git-view"] .tools .buttons > div:hover {
+	color: var(--alt-accent) !important;
+	background: none !important;
+}
+
+/* ─────────────────────────────────────────────────── */
 /* << Calendar */
 /* ─────────────────────────────────────────────────── */
 
@@ -6190,7 +6261,7 @@ a.zoom-plugin-title:hover {
 }
 
 /* ─────────────────────────────────────────────────── */
-/* < Plugin Compatibility Info for the Obsidian Hub */
+/* < Compatibility Info for the Obsidian Hub */
 /* ─────────────────────────────────────────────────── */
 
 /* @plugins
@@ -6231,6 +6302,7 @@ community:
 - get-info-plugin
 - obsidian-languagetool-plugin
 - hotkey-helper
+- obsidian-git
 */
 
 /* ─────────────────────────────────────────────────── */

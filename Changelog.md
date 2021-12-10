@@ -1,3 +1,4 @@
+- 2021-12-10	git plugin open source view
 - 2021-12-09	file explorer movement fix
 - 2021-12-09	fix for favicon plugin
 - 2021-12-09	hotfix buttons
