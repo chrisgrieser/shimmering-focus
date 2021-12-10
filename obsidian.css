@@ -1,6 +1,6 @@
 /* ──────────────────────────────────────────────────────
 SHIMMERING FOCUS
-Version 1.276
+Version 1.277
 https://github.com/chrisgrieser/shimmering-focus/
 Created by @pseudometa
 MIT License
@@ -4786,6 +4786,20 @@ body:not(.show-graph-controls) .graph-controls.is-close:not(:hover) {
 /* ─────────────────────────────────────────────────── */
 /* << Git Plugin */
 /* ─────────────────────────────────────────────────── */
+
+/* status bar */
+.status-bar-item.plugin-obsidian-git::BEFORE {
+	content: "";
+
+	position: relative;
+	bottom: 4px;
+
+	padding-right: 2px;
+	padding-left: 4px;
+	margin-right: 1px;
+
+	font-family: "Input";
+}
 
 /* open source control view */
 .workspace-leaf-content[data-type="git-view"] .view-content {
