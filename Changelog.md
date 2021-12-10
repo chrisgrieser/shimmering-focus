@@ -1,3 +1,4 @@
+- 2021-12-10	minor community plugin browser improvement
 - 2021-12-10	git plugin open source view
 - 2021-12-10	git plugin open source view
 - 2021-12-09	file explorer movement fix

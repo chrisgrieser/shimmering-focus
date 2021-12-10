@@ -1,6 +1,6 @@
 /* ──────────────────────────────────────────────────────
 SHIMMERING FOCUS
-Version 1.275
+Version 1.276
 https://github.com/chrisgrieser/shimmering-focus/
 Created by @pseudometa
 MIT License
@@ -2203,14 +2203,9 @@ body .workspace-leaf-resize-handle:active {
 }
 
 .community-plugin-search button.clickable-icon {
+	height: 30px;
 	color: var(--extra-contrast);
 	stroke-width: 4px;
-	background-color: var(--background-primary-alt) !important;
-}
-
-.community-plugin-search button.clickable-icon:hover {
-	color: var(--interactive-normal);
-	background-color: var(--alt-accent) !important;
 }
 
 /* plugin search input */
@@ -2233,28 +2228,32 @@ body .workspace-leaf-resize-handle:active {
 }
 
 .community-plugin-search .setting-item input {
-	margin-right: 0.9em;
+	margin-right: 12px;
+	margin-left: 3px;
 }
 
 /* installation icon */
 .flair.mod-pop {
-	top: 5px;
+	top: 3px;
 	background: none;
 	font-size: 0;
 	line-height: 1;
 }
 
-.community-plugin-info .community-plugin-name .flair.mod-pop::BEFORE,
-.community-plugin-search .flair.mod-pop::BEFORE {
+.community-plugin-search .flair.mod-pop {
+	top: 5px;
+}
+
+.flair.mod-pop::BEFORE {
 	content: "✓";
 
 	color: var(--interactive-normal);
-	background-color: var(--text-accent);
+	background-color: var(--alt-accent);
 
 	padding-right: 0.2em;
 	padding-left: 0.2em;
 
-	border-radius: calc(var(--roundish) / 2);
+	border-radius: var(--round);
 
 	font-family: "Inter";
 	font-size: 0.75rem;
@@ -2283,19 +2282,19 @@ body .workspace-leaf-resize-handle:active {
 }
 
 /* color hovered item in theme style */
-.community-plugin-item:hover {
+.community-plugin-item:hover .community-plugin-name {
 	color: var(--alt-accent);
 }
 
-.community-plugin-item:hover .community-plugin-name .flair.mod-pop::BEFORE {
-	opacity: 0.4;
-}
-
-.community-plugin-item:hover .community-plugin-author,
+.community-plugin-item:hover .community-plugin-name .flair.mod-pop::BEFORE,
 .community-plugin-item:hover .community-plugin-downloads::BEFORE,
 .community-plugin-item:hover .community-plugin-downloads-text,
 .community-plugin-item:hover .community-plugin-desc {
 	opacity: 0.7;
+}
+
+.community-plugin-item:hover .community-plugin-author {
+	color: var(--text-faint);
 }
 
 /* plugin info */
@@ -2355,6 +2354,10 @@ body .workspace-leaf-resize-handle:active {
 .community-plugin-info p:nth-child(7) {
 	margin-top: 5px;
 	margin-bottom: 10px;
+}
+
+.community-plugin-info p > button {
+	margin-right: 18px;
 }
 
 .community-plugin-info h2,
