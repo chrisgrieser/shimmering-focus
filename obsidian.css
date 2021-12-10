@@ -1,6 +1,6 @@
 /* ──────────────────────────────────────────────────────
 SHIMMERING FOCUS
-Version 1.279
+Version 1.280
 https://github.com/chrisgrieser/shimmering-focus/
 Created by @pseudometa
 MIT License
@@ -650,7 +650,17 @@ svg.feather-mouse-pointer > path { display: none }
 
 svg.feather-mouse-pointer {
 	background-color: currentColor;
+	transform: scale(1.1);
 	-webkit-mask-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' width='1.1em' height='1.1em' preserveAspectRatio='xMidYMid meet' viewBox='0 0 24 24'%3e%3cg fill='none'%3e%3cpath d='M9.25 2a.75.75 0 0 1 .75.75v2.5a.75.75 0 0 1-1.5 0v-2.5A.75.75 0 0 1 9.25 2zM4.47 3.97a.75.75 0 0 1 1.06 0l1.75 1.75a.75.75 0 1 1-1.06 1.06L4.47 5.03a.75.75 0 0 1 0-1.06zm9.56 0a.75.75 0 0 1 0 1.06l-1.75 1.75a.75.75 0 1 1-1.06-1.06l1.75-1.75a.75.75 0 0 1 1.06 0zM2.5 8.75A.75.75 0 0 1 3.25 8h2.5a.75.75 0 0 1 0 1.5h-2.5a.75.75 0 0 1-.75-.75zm8.177-.264C9.822 7.752 8.5 8.36 8.5 9.487v11.274c0 1.21 1.495 1.782 2.302.88l2.614-2.923c.276-.308.664-.49 1.077-.507l3.84-.154c1.197-.048 1.715-1.539.805-2.32l-8.46-7.251zM10 20.287V9.881l7.812 6.696l-3.38.135a3.026 3.026 0 0 0-2.133 1.006L10 20.287z' fill='currentColor'/%3e%3c/g%3e%3c/svg%3e");
+}
+
+/* map of content */
+svg.stacked-levels > path { display: none }
+
+svg.stacked-levels {
+	background-color: currentColor;
+	transform: scale(1.15);
+	-webkit-mask-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' width='1.1em' height='1.1em' preserveAspectRatio='xMidYMid meet' viewBox='0 0 32 32'%3e%3cpath d='M22 3c-3.3 0-6 2.7-6 6c0 .992.383 2.004.875 3.125a35.124 35.124 0 0 0 1.75 3.406a62.171 62.171 0 0 0 2.563 4.031L22 20.75l.813-1.188s1.289-1.835 2.562-4.03a35.123 35.123 0 0 0 1.75-3.407C27.617 11.004 28 9.992 28 9c0-3.3-2.7-6-6-6zM11.969 4.938L4 8.344V27.53l8.031-3.468l8 3L28 23.655v-8.718a49.143 49.143 0 0 1-2 3.437v3.969l-5 2.125v-1.625l-1.469-2.125c-.156-.227-.34-.496-.531-.782v4.625l-6-2.25V7.438l1.094.407a7.853 7.853 0 0 1 .531-1.938zM22 5c2.219 0 4 1.781 4 4c0 .387-.242 1.3-.688 2.313c-.445 1.011-1.074 2.16-1.687 3.218c-.816 1.406-1.168 1.906-1.625 2.594c-.457-.688-.809-1.188-1.625-2.594c-.613-1.058-1.242-2.207-1.688-3.219C18.242 10.302 18 9.387 18 9c0-2.219 1.781-4 4-4zM11 7.5v14.844l-5 2.125V9.656zm11 0a1.5 1.5 0 1 0 0 3a1.5 1.5 0 0 0 0-3z' fill='currentColor'/%3e%3c/svg%3e");
 }
 
 /* git plugin */
@@ -658,7 +668,8 @@ svg.feather-git-pull-request > path { display: none }
 
 svg.feather-git-pull-request {
 	background-color: currentColor;
-	-webkit-mask-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' width='1.1em' height='1.1em' preserveAspectRatio='xMidYMid meet' viewBox='0 0 24 24'%3e%3cpath fill-rule='evenodd' d='M5.75 21a1.75 1.75 0 1 1 0-3.5a1.75 1.75 0 0 1 0 3.5zM2.5 19.25a3.25 3.25 0 1 0 6.5 0a3.25 3.25 0 0 0-6.5 0zM5.75 6.5a1.75 1.75 0 1 1 0-3.5a1.75 1.75 0 0 1 0 3.5zM2.5 4.75a3.25 3.25 0 1 0 6.5 0a3.25 3.25 0 0 0-6.5 0zM18.25 6.5a1.75 1.75 0 1 1 0-3.5a1.75 1.75 0 0 1 0 3.5zM15 4.75a3.25 3.25 0 1 0 6.5 0a3.25 3.25 0 0 0-6.5 0z' fill='currentColor'/%3e%3cpath fill-rule='evenodd' d='M5.75 16.75A.75.75 0 0 0 6.5 16V8A.75.75 0 0 0 5 8v8c0 .414.336.75.75.75z' fill='currentColor'/%3e%3cpath fill-rule='evenodd' d='M17.5 8.75v-1H19v1a3.75 3.75 0 0 1-3.75 3.75h-7a1.75 1.75 0 0 0-1.75 1.75H5A3.25 3.25 0 0 1 8.25 11h7a2.25 2.25 0 0 0 2.25-2.25z' fill='currentColor'/%3e%3c/svg%3e");
+	transform: scale(1.05);
+	-webkit-mask-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' width='1.09em' height='1.09em' preserveAspectRatio='xMidYMid meet' viewBox='0 0 24 24'%3e%3cpath fill-rule='evenodd' d='M5.75 21a1.75 1.75 0 1 1 0-3.5a1.75 1.75 0 0 1 0 3.5zM2.5 19.25a3.25 3.25 0 1 0 6.5 0a3.25 3.25 0 0 0-6.5 0zM5.75 6.5a1.75 1.75 0 1 1 0-3.5a1.75 1.75 0 0 1 0 3.5zM2.5 4.75a3.25 3.25 0 1 0 6.5 0a3.25 3.25 0 0 0-6.5 0zM18.25 6.5a1.75 1.75 0 1 1 0-3.5a1.75 1.75 0 0 1 0 3.5zM15 4.75a3.25 3.25 0 1 0 6.5 0a3.25 3.25 0 0 0-6.5 0z' fill='currentColor'/%3e%3cpath fill-rule='evenodd' d='M5.75 16.75A.75.75 0 0 0 6.5 16V8A.75.75 0 0 0 5 8v8c0 .414.336.75.75.75z' fill='currentColor'/%3e%3cpath fill-rule='evenodd' d='M17.5 8.75v-1H19v1a3.75 3.75 0 0 1-3.75 3.75h-7a1.75 1.75 0 0 0-1.75 1.75H5A3.25 3.25 0 0 1 8.25 11h7a2.25 2.25 0 0 0 2.25-2.25z' fill='currentColor'/%3e%3c/svg%3e");
 }
 
 /* recent files plugin */
@@ -949,40 +960,39 @@ body:not(.is-mobile) .view-actions {
 
 /* show only on hover, when writing in the header bar,
 or when enabled by the style settings plugin */
-body:not(.show-header-bar):not(.is-mobile) .view-header {
+body:not(.show-header-bar) .workspace-split.mod-root > .workspace-leaf:first-of-type:last-of-type .view-header {
 	height: 0.9em;
 
-	background-color: var(--background-primary) !important;
+	background-color: var(--background-primary);
 
 	transition: 350ms ease-in-out;
 
 	border-color: var(--text-faint);
 	border-top: none;
-	border-bottom: none !important;
+	border-bottom: none;
 }
 
-body:not(.is-mobile) .view-header-title-container::AFTER {
+.view-header-title-container::AFTER {
 	display: none;
 }
 
-body:not(.show-header-bar):not(.is-mobile) .view-header-title,
-body:not(.show-header-bar):not(.is-mobile) .view-header-icon,
-body:not(.show-header-bar):not(.is-mobile) .view-action svg {
+body:not(.show-header-bar) .view-header-title,
+body:not(.show-header-bar) .view-header-icon,
+body:not(.show-header-bar) .view-action svg {
 	color: var(--extra-contrast);
 	opacity: 0;
 }
 
-/* thanks to @só erick mesmo for ":focus-within" */
-body.show-header-bar:not(.is-mobile) .view-header,
-body:not(.show-header-bar):not(.is-mobile) .view-header:hover,
-body:not(.show-header-bar):not(.is-mobile) .view-header:focus-within {
-	height: 1.9em !important;
-	background-color: var(--background-secondary) !important;
+body:not(.show-header-bar) .workspace-split.mod-root > .workspace-leaf:first-of-type:last-of-type .view-header:hover,
+body:not(.show-header-bar) .workspace-split.mod-root > .workspace-leaf:first-of-type:last-of-type .view-header:focus-within,
+body.show-header-bar .workspace-split.mod-root > .workspace-leaf:first-of-type:last-of-type .view-header {
+	height: 1.9em;
+	background-color: var(--background-secondary);
 	transition: 350ms ease-in-out;
 }
 
 body.show-header-bar:not(.is-mobile) .view-header {
-	border-bottom: 2px solid var(--background-secondary-alt) !important;
+	border-bottom: var(--basic-border) !important;
 }
 
 body.show-header-bar .view-header-icon,
@@ -4986,7 +4996,7 @@ body.no-calendar-lines table.calendar th {
 	font-size: 1em !important;
 }
 
-/* fix for the buggy selection fo inline text
+/* fix for the buggy selection of inline text
 https://forum.obsidian.md/t/inline-code-occludes-text-selection-and-vim-cursor/11552/10 */
 .theme-light .cm-inline-code,
 .theme-light .cm-s-obsidian .cm-templater-command {
@@ -5408,9 +5418,19 @@ body.angular-shapes .kanban-plugin__lane {
 
 /* background color */
 body:not(.longform-no-bg) .longform-leaf .markdown-preview-view,
-body:not(.longform-no-bg) .longform-leaf .markdown-source-view,
-body:not(.show-header-bar):not(.is-mobile):not(.longform-no-bg) .longform-leaf .view-header {
-	background-color: var(--longform-background) !important;
+body:not(.longform-no-bg) .longform-leaf .markdown-source-view {
+	background-color: var(--longform-background);
+}
+
+/* header color */
+body:not(.show-header-bar):not(.longform-no-bg) .workspace-split.mod-root > .workspace-leaf:first-of-type:last-of-type .longform-leaf .view-header {
+	background-color: var(--longform-background);
+}
+
+body.show-header-bar:not(.longform-no-bg) .workspace-split.mod-root > .workspace-leaf:first-of-type:last-of-type .longform-leaf .view-header,
+body:not(.show-header-bar):not(.longform-no-bg) .workspace-split.mod-root > .workspace-leaf:first-of-type:last-of-type .longform-leaf .view-header:hover,
+body:not(.show-header-bar):not(.longform-no-bg) .workspace-split.mod-root > .workspace-leaf:first-of-type:last-of-type .longform-leaf .view-header:focus-within {
+	background-color: var(--background-primary);
 }
 
 body:not(.longform-left-aligned) .longform-leaf .cm-s-obsidian {
