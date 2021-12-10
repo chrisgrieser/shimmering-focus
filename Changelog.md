@@ -1,3 +1,4 @@
+- 2021-12-10	git status bar
 - 2021-12-10	icons
 - 2021-12-10	git status bar
 - 2021-12-10	minor community plugin browser improvement
