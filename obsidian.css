@@ -1,6 +1,6 @@
 /* ──────────────────────────────────────────────────────
 SHIMMERING FOCUS
-Version 1.281
+Version 1.282
 https://github.com/chrisgrieser/shimmering-focus/
 Created by @pseudometa
 MIT License
@@ -938,6 +938,10 @@ body > div.notice-container .notice:hover::BEFORE {
 /* << Header Bar */
 /* ─────────────────────────────────────────────────── */
 
+.view-header {
+	--header-transition: 450ms ease-in-out;
+}
+
 /* harmonize sizes for when titlebar is shown */
 .view-header-title {
 	font-size: 0.9em;
@@ -965,7 +969,7 @@ body:not(.show-header-bar) .workspace-split.mod-root > .workspace-leaf:first-of-
 
 	background-color: var(--background-primary);
 
-	transition: 350ms ease-in-out;
+	transition: var(--header-transition);
 
 	border-color: var(--text-faint);
 	border-top: none;
@@ -981,6 +985,7 @@ body:not(.show-header-bar) .view-header-icon,
 body:not(.show-header-bar) .view-action svg {
 	color: var(--extra-contrast);
 	opacity: 0;
+	transition: var(--header-transition);
 }
 
 body:not(.show-header-bar) .workspace-split.mod-root > .workspace-leaf:first-of-type:last-of-type .view-header:hover,
@@ -988,7 +993,7 @@ body:not(.show-header-bar) .workspace-split.mod-root > .workspace-leaf:first-of-
 body.show-header-bar .workspace-split.mod-root > .workspace-leaf:first-of-type:last-of-type .view-header {
 	height: 1.9em;
 	background-color: var(--background-secondary);
-	transition: 350ms ease-in-out;
+	transition: var(--header-transition);
 }
 
 body.show-header-bar:not(.is-mobile) .view-header {
@@ -1005,6 +1010,7 @@ body .view-header:focus-within .view-header-icon,
 body .view-header:focus-within .view-action svg,
 body .view-header:focus-within .view-header-title {
 	opacity: 1 !important;
+	transition: var(--header-transition);
 }
 
 .view-content:not(.is-mobile) {
