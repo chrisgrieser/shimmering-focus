@@ -94,7 +94,7 @@ Using the [Style Settings Plugin](#Customization), you can deactivate the spellc
 - Styled [progress bars (`<progress>`)](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/progress)
 - Resizable Graph View Controls[^1] ([See this explanation image.](https://media.discordapp.net/attachments/855181471643861002/909861241055481857/lmao.gif))
 
-[⬆️ Go Back to Top](#-Table-of-Content)
+[⬆️ Go Back to Top](#Table-of-Content)
 
 ## Design Principles
 
@@ -134,7 +134,7 @@ Using the [Style Settings Plugin](#Customization), you can deactivate the spellc
 
 <img src="https://user-images.githubusercontent.com/73286100/144433250-9549dfdc-f04e-48a7-8df2-0b0cd7755c1a.gif" alt="Screen Recording 2021-12-02 at 14 34 37" width=60%>
 
-[⬆️ Go Back to Top](#-Table-of-Content)
+[⬆️ Go Back to Top](#Table-of-Content)
 
 ## Customization
 - This themes supports dozens of customization options via the [Style Settings Plugin](https://github.com/mgmeyers/obsidian-style-settings/).
@@ -197,7 +197,7 @@ Thanks for help and/or CSS snippets:
 - @jdaniel
 - @NothingIsLost
 
-[⬆️ Go Back to Top](#-Table-of-Content)
+[⬆️ Go Back to Top](#Table-of-Content)
 
 [^1]: Thanks to @Manedblackwolf.
 [^2]: Thanks to @Atlas.
