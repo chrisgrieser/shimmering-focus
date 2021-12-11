@@ -1,3 +1,4 @@
+- 2021-12-11	map of content plugin tweaks
 - 2021-12-11	fix longform header color
 - 2021-12-10	git status bar
 - 2021-12-10	icons

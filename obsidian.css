@@ -1,6 +1,6 @@
 /* ──────────────────────────────────────────────────────
 SHIMMERING FOCUS
-Version 1.280
+Version 1.281
 https://github.com/chrisgrieser/shimmering-focus/
 Created by @pseudometa
 MIT License
@@ -1841,7 +1841,7 @@ body .workspace-leaf-resize-handle:active {
 .modal.mod-community-plugin,
 .modal.mod-settings {
 	height: 90%;
-	width: 90%;
+	width: 92%;
 	max-width: unset;
 	border: var(--thick-muted-border);
 	border-radius: calc(var(--roundish) * 3);
@@ -5668,7 +5668,7 @@ button.MS-OpenSnippet:hover svg.ms-snippet path {
 
 /* upper half spacing */
 .workspace-leaf-content[data-type="map-of-content"] .view-content {
-	padding: 0 4px 0 8px;
+	padding: 6px 6px 6px 12px;
 }
 
 .workspace-leaf-content[data-type="map-of-content"] .view-content > #all-container > ul > li {
@@ -5724,21 +5724,16 @@ button.MS-OpenSnippet:hover svg.ms-snippet path {
 
 /* separation line */
 #main_moc_div .path {
-	padding-top: 15px;
-	padding-bottom: 15px;
-	border-bottom: 2px solid var(--hr-line-gray);
+	padding-top: 10px;
+	padding-bottom: 10px;
+	border-bottom: var(--basic-border);
 }
 
 #main_moc_div .path:first-of-type {
 	padding-top: 0 !important;
 }
 
-#main_moc_div {
-	margin-top: 10px;
-}
-
-/* central & current note */
-#main_moc_div .path > a:last-child,
+/* current note */
 #main_moc_div .path > span:first-child,
 #all-container > li > p {
 	font-weight: 600;
