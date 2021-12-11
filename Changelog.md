@@ -1,4 +1,4 @@
-- 2021-12-11	minor
+- 2021-12-11	grpah icon
 - 2021-12-11	back to top links
 - 2021-12-11	better header transition
 - 2021-12-11	map of content plugin tweaks
