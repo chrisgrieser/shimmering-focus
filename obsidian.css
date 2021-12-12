@@ -1,6 +1,6 @@
 /* ──────────────────────────────────────────────────────
 SHIMMERING FOCUS
-Version 1.288
+Version 1.289
 https://github.com/chrisgrieser/shimmering-focus/
 Created by @pseudometa
 MIT License
@@ -1468,6 +1468,7 @@ body:not(.show-close-button) .document-search-close-button {
 /* ─────────────────────────────────────────────────── */
 
 div.menu {
+	padding: 0;
 	border-radius: var(--roundish);
 }
 
@@ -1785,10 +1786,13 @@ not only file explorer */
 }
 
 /* no rounded corners for the sidebar leafs */
-.workspace-tab-header.is-before-active .workspace-tab-header-inner,
-.workspace-tab-header.is-after-active .workspace-tab-header-inner,
 body > .app-container .workspace-split.mod-horizontal > .workspace-tabs > .workspace-leaf {
 	border-radius: 0;
+}
+
+.workspace-tab-header.is-before-active .workspace-tab-header-inner,
+.workspace-tab-header.is-after-active .workspace-tab-header-inner {
+	border-radius: var(--roundish);
 }
 
 .workspace-tab-header {
