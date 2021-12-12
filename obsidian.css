@@ -1,6 +1,6 @@
 /* ──────────────────────────────────────────────────────
 SHIMMERING FOCUS
-Version 1.287
+Version 1.288
 https://github.com/chrisgrieser/shimmering-focus/
 Created by @pseudometa
 MIT License
@@ -23,7 +23,9 @@ For help and/or CSS snippets, thanks to:
 "< section name" to navigate to the respective section.
 This ToC is auto-generated via the .create-ToC.sh
 
-- Colors & Variables
+- Colors
+	- Backgrounds
+- Variables
 - Fonts
 	- Base64-encoded Fonts
 	- Font Definitions
@@ -190,7 +192,7 @@ This ToC is auto-generated via the .create-ToC.sh
 	--hr-line-gray: hsl(0 0% 66%);
 
 	--button-text: var(--interactive-normal);
-	--button-hover-text: var(--interactive-normal);
+	--button-hover-text: var(--text-normal);
 	--button-bg: var(--interactive-accent);
 	--button-hover-bg: var(--alt-accent-lighter);
 	--interactive-hover-border: var(--alt-accent);
@@ -204,7 +206,7 @@ This ToC is auto-generated via the .create-ToC.sh
 	--cursor-duo-color-2: var(--accent-lightest);
 	--a-row: rgb(0 0 0 / 3%);
 	--b-row: rgb(0 0 0 / 7%);
-	--backdrop-color: hsl(228 9% 70%);
+	--backdrop-color: hsl(220 15% 70%);
 
 	--shadow-color: hsl(0 0% 40% / 70%);
 	--muted-border-color: hsl(0 0% 87%);
@@ -240,13 +242,14 @@ This ToC is auto-generated via the .create-ToC.sh
 }
 
 /* ─────────────────────────────────────────────────── */
-/* < Backgrounds */
+/* << Backgrounds */
 /* ─────────────────────────────────────────────────── */
+
 .theme-light {
-	--bg1: hsl(0 0% 98%);
-	--bg2: hsl(220 17% 96%);
-	--bg3: hsl(220 13% 93%);
-	--bg4: hsl(216 9% 90%);
+	--bg1: hsl(220 0% 96%);
+	--bg2: hsl(220 17% 93%);
+	--bg3: hsl(220 13% 90%);
+	--bg4: hsl(220 9% 85%);
 }
 
 .theme-dark {
@@ -261,16 +264,17 @@ This ToC is auto-generated via the .create-ToC.sh
 }
 
 .workspace-tab-header.is-after-active .workspace-tab-header-inner,
+.workspace-tab-header.is-before-active .workspace-tab-header-inner,
 .workspace-tab-header-inner,
 .workspace-tabs {
 	background-color: var(--bg4);
 }
 
-.workspace-tab-header.is-active .workspace-tab-header-inner,
 .workspace-leaf-resize-handle {
 	background-color: var(--bg2);
 }
 
+.workspace-tab-header.is-active .workspace-tab-header-inner,
 .workspace-tabs .workspace-leaf {
 	background-color: var(--bg3);
 }
@@ -280,7 +284,8 @@ This ToC is auto-generated via the .create-ToC.sh
 /* ─────────────────────────────────────────────────── */
 
 :root {
-	--resize-handle-thickness: 4px;
+	--resize-handle-thickness: 3px;
+	--resize-handle-hovered-thickness: 5px;
 	--toggle-duration: 350ms;
 	--scrollbar-thickness: 9px;
 	--image-size: 50;
@@ -292,10 +297,9 @@ This ToC is auto-generated via the .create-ToC.sh
 
 .theme-light,
 .theme-dark {
-	--shadow-style: 3px 5px 6px;
-	--big-shadow: var(--shadow-style) 10px var(--shadow-color);
-	--medium-shadow: var(--shadow-style) 7px var(--shadow-color);
-	--small-shadow: var(--shadow-style) 3px var(--shadow-color);
+	--big-shadow: 3px 5px 6px 10px var(--shadow-color);
+	--medium-shadow: 3px 5px 6px 7px var(--shadow-color);
+	--small-shadow: 1px 3px 6px 2px var(--shadow-color);
 
 	--basic-border: 2px solid var(--basic-border-color);
 	--muted-border: 2px solid var(--muted-border-color);
@@ -1634,6 +1638,7 @@ body:not(.show-close-button) .modal-close-button:hover {
 /* also partially applies to the Editor Suggestions */
 
 div.prompt {
+	background-color: var(--bg1);
 	box-shadow: var(--medium-shadow);
 	padding: 4px;
 	border: 5px solid var(--bg3);
@@ -1719,7 +1724,7 @@ div.prompt-results {
 	background-color: var(--bg2);
 }
 
-/* move plugin name to the right */
+/* Command Palette: move plugin name to the right */
 body:not(.move-plugin-name-to-left):not(.is-mobile) div.prompt {
 	min-width: 700px;
 }
@@ -1727,7 +1732,7 @@ body:not(.move-plugin-name-to-left):not(.is-mobile) div.prompt {
 body:not(.move-plugin-name-to-left):not(.is-mobile) .suggestion-prefix {
 	position: absolute;
 	right: 100px;
-	background: var(--bg1);
+	background-color: var(--bg1);
 	padding-left: 8px;
 }
 
@@ -1744,6 +1749,19 @@ body:not(.no-alternating-rows) .suggestion-item:nth-child(even) .suggestion-hotk
 /* ─────────────────────────────────────────────────── */
 /* < Sidebar */
 /* ─────────────────────────────────────────────────── */
+
+/* ─────────────────────────────────────────────────── */
+/* << Files (in general) */
+/* ─────────────────────────────────────────────────── */
+/* apply to any plugin using file lists,
+not only file explorer */
+
+.nav-file-title.is-active,
+.nav-folder-title.is-active,
+.nav-file-title:hover,
+.nav-folder-title:hover {
+	background: var(--bg4);
+}
 
 /* ─────────────────────────────────────────────────── */
 /* << Tab Headers */
@@ -1767,6 +1785,7 @@ body:not(.no-alternating-rows) .suggestion-item:nth-child(even) .suggestion-hotk
 }
 
 /* no rounded corners for the sidebar leafs */
+.workspace-tab-header.is-before-active .workspace-tab-header-inner,
 .workspace-tab-header.is-after-active .workspace-tab-header-inner,
 body > .app-container .workspace-split.mod-horizontal > .workspace-tabs > .workspace-leaf {
 	border-radius: 0;
@@ -1845,7 +1864,10 @@ body > .app-container .workspace-split.mod-horizontal > .workspace-tabs > .works
 /* see also the change of resize handle height depending
 on the titlebar visibility in the titlebar section */
 
-/* thicker resize handles */
+.workspace-leaf-resize-handle { /* stylelint-disable-line no-duplicate-selectors */
+	transition: 350ms ease-in-out;
+}
+
 .workspace-split.mod-horizontal > .workspace-leaf-resize-handle {
 	width: var(--resize-handle-thickness);
 }
@@ -1853,6 +1875,15 @@ on the titlebar visibility in the titlebar section */
 .workspace-split.mod-horizontal > .workspace-leaf > .workspace-leaf-resize-handle,
 .workspace-split.mod-horizontal > .workspace-tabs > .workspace-leaf-resize-handle {
 	height: var(--resize-handle-thickness);
+}
+
+.workspace-split.mod-horizontal > .workspace-leaf-resize-handle:hover {
+	width: var(--resize-handle-hovered-thickness);
+}
+
+.workspace-split.mod-horizontal > .workspace-leaf > .workspace-leaf-resize-handle:hover,
+.workspace-split.mod-horizontal > .workspace-tabs > .workspace-leaf-resize-handle:hover {
+	height: var(--resize-handle-hovered-thickness);
 }
 
 /* coloring */

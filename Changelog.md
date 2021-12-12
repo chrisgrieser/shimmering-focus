@@ -1,3 +1,4 @@
+- 2021-12-12	groundwork for color style settings
 - 2021-12-12	color variable refactoring
 - 2021-12-12	kanban fixes
 - 2021-12-11	kanban minor things
