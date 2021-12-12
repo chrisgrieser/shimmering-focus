@@ -1,3 +1,6 @@
+- 2021-12-12	fix gutter color in cm6
+- 2021-12-12	live preview issue thread info
+- 2021-12-12	added info on live preview to issue template
 - 2021-12-12	notice colors
 - 2021-12-12	hotfix tab icons
 - 2021-12-12	groundwork for color style settings

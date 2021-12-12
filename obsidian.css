@@ -1,6 +1,6 @@
 /* ──────────────────────────────────────────────────────
 SHIMMERING FOCUS
-Version 1.290
+Version 1.291
 https://github.com/chrisgrieser/shimmering-focus/
 Created by @pseudometa
 MIT License
@@ -1757,20 +1757,26 @@ not only file explorer */
 
 .nav-file-title.is-active,
 .nav-folder-title.is-active,
-.nav-file-title:hover,
-.nav-folder-title:hover {
-	background: var(--bg4);
+body > .app-container .nav-file-title:hover,
+body > .app-container .nav-folder-title:hover {
+	background-color: var(--bg4);
 }
 
 /* ─────────────────────────────────────────────────── */
 /* << Tab Headers */
 /* ─────────────────────────────────────────────────── */
 
+/* unset stuff from Obsidian's default theme */
 .workspace-tab-header-inner.is-after-active,
 .workspace-tab-header-inner.is-before-active,
 .workspace-tab-header.is-after-active,
 .workspace-tab-header.is-before-active {
 	background: transparent;
+}
+
+.workspace-tab-header.is-before-active .workspace-tab-header-inner,
+.workspace-tab-header.is-after-active .workspace-tab-header-inner {
+	border-radius: var(--roundish);
 }
 
 .workspace-tab-container-after,
@@ -1788,11 +1794,7 @@ body > .app-container .workspace-split.mod-horizontal > .workspace-tabs > .works
 	border-radius: 0;
 }
 
-.workspace-tab-header.is-before-active .workspace-tab-header-inner,
-.workspace-tab-header.is-after-active .workspace-tab-header-inner {
-	border-radius: var(--roundish);
-}
-
+/* own styling */
 .workspace-tab-header {
 	margin-right: 6px;
 	border: var(--thin-border);
@@ -2065,7 +2067,6 @@ body .workspace-leaf-resize-handle:active {
 /* tabs to the side */
 .modal.mod-settings .vertical-tab-header {
 	height: 95vh;
-	background: var(--bg3);
 	padding-top: 0;
 
 	/* overscroll */
@@ -2852,8 +2853,8 @@ body:not(.show-fold-marker) .CodeMirror-foldmarker {
 	display: none;
 }
 
-/* fix for note being in the sidebar */
-/* thanks @SlRvb */
+/* fix for note being in the sidebar, thanks @SlRvb */
+.markdown-source-view.mod-cm6 .cm-gutters,
 .CodeMirror-foldgutter {
 	background-color: transparent !important;
 }
