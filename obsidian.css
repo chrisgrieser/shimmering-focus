@@ -1,6 +1,6 @@
 /* ──────────────────────────────────────────────────────
 SHIMMERING FOCUS
-Version 1.292
+Version 1.293
 https://github.com/chrisgrieser/shimmering-focus/
 Created by @pseudometa
 MIT License
@@ -3557,6 +3557,7 @@ pre[class~="language-txt"]::AFTER { content: "text"; }
 pre[class~="language-text"]::AFTER { content: "text"; }
 pre[class~="language-url"]::AFTER { content: "url"; }
 pre[class~="language-uri"]::AFTER { content: "uri"; }
+pre[class~="language-applescript"]::AFTER { content: "AppleScript"; }
 
 /* fix for the buggy selection of inline text
 https://forum.obsidian.md/t/inline-code-occludes-text-selection-and-vim-cursor/11552/10 */
@@ -3569,17 +3570,22 @@ https://forum.obsidian.md/t/inline-code-occludes-text-selection-and-vim-cursor/1
 }
 
 /* copy code button */
+
 button.copy-code-button {
-	padding-right: 0 !important;
-	padding-bottom: 1.5px;
-	padding-left: 6px !important;
+	padding-right: 1px !important;
+	padding-bottom: 2px;
+	padding-left: 8px !important;
 	font-size: 0;
+}
+
+button.copy-code-button:not(:hover) {
+	background-color: var(--bg3) !important;
 }
 
 button.copy-code-button::BEFORE {
 	content: "content_copy ";
 	font-family: "Material Icons";
-	font-size: 0.7rem;
+	font-size: 0.8rem;
 }
 
 /* ─────────────────────────────────────────────────── */
