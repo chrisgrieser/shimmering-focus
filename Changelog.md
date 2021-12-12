@@ -1,3 +1,4 @@
+- 2021-12-12	color variable refactoring
 - 2021-12-12	kanban fixes
 - 2021-12-11	kanban minor things
 - 2021-12-11	grpah icon

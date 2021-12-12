@@ -1,6 +1,6 @@
 /* ──────────────────────────────────────────────────────
 SHIMMERING FOCUS
-Version 1.286
+Version 1.287
 https://github.com/chrisgrieser/shimmering-focus/
 Created by @pseudometa
 MIT License
@@ -151,11 +151,12 @@ This ToC is auto-generated via the .create-ToC.sh
 		- Advanced Tables
 - Plugin Compatibility Info for the Obsidian Hub
 - Style Setting Options
-
  */
+
 /* ─────────────────────────────────────────────────── */
-/* < Colors & Variables */
+/* < Colors */
 /* ─────────────────────────────────────────────────── */
+/* stylelint-disable no-duplicate-selectors */
 
 :root {
 	--accent-lighter: hsl(243 66% 76%);
@@ -164,6 +165,7 @@ This ToC is auto-generated via the .create-ToC.sh
 	--alt-accent-lighter: hsl(164 100% 41%);
 	--alt-accent-lightest: hsl(164 100% 70%);
 	--alt-accent-darker: hsl(164 100% 30%);
+
 	--unresolved-link-color: hsl(211 100% 52%);
 	--unresolved-opacity: 0.6;
 
@@ -179,15 +181,6 @@ This ToC is auto-generated via the .create-ToC.sh
 	--bold-in-darkmode: hsl(202 43% 57%);
 	--active-line: hsl(62 11% 63% / 12.5%);
 	--cursor-monocolor: var(--accent-lighter);
-
-	--resize-handle-thickness: 4px;
-	--toggle-duration: 350ms;
-	--scrollbar-thickness: 0.6em;
-	--image-size: 50;
-	--pdf-size: 50vh;
-	--popover-size: 350;
-	--inactive-pane-opacity: 80%;
-	--signature: "⟡";
 }
 
 .theme-light {
@@ -213,14 +206,9 @@ This ToC is auto-generated via the .create-ToC.sh
 	--b-row: rgb(0 0 0 / 7%);
 	--backdrop-color: hsl(228 9% 70%);
 
-	--basic-border: 2px solid hsl(0 0% 70%);
-	--muted-border: 2px solid hsl(0 0% 87%);
-	--thick-muted-border: 3.5px solid hsl(0 0% 87%);
-	--thin-border: 1px solid hsl(0 0% 70%);
-
-	--big-shadow: 3px 5px 6px 10px hsl(0 0% 40% / 70%);
-	--medium-shadow: 3px 5px 6px 7px hsl(0 0% 40% / 70%);
-	--small-shadow: 3px 5px 6px 3px hsl(0 0% 40% / 70%);
+	--shadow-color: hsl(0 0% 40% / 70%);
+	--muted-border-color: hsl(0 0% 87%);
+	--basic-border-color: hsl(0 0% 70%);
 }
 
 .theme-dark {
@@ -246,16 +234,76 @@ This ToC is auto-generated via the .create-ToC.sh
 	--b-row: rgb(0 0 0 / 30%);
 	--backdrop-color: hsl(228 30% 15%);
 
-	--basic-border: 2px solid hsl(0 0% 40%);
-	--muted-border: 2px solid hsl(0 0% 20%);
-	--thick-muted-border: 3.5px solid hsl(0 0% 20%);
-	--thin-border: 1px solid hsl(0 0% 40%);
-
-	--big-shadow: 3px 5px 6px 10px hsl(0 0% 0% / 40%);
-	--medium-shadow: 3px 5px 6px 7px hsl(0 0% 0% / 40%);
-	--small-shadow: 3px 5px 6px 3px hsl(0 0% 0% / 40%);
+	--shadow-color: hsl(0 0% 0% / 40%);
+	--muted-border-color: hsl(0 0% 20%);
+	--basic-border-color: hsl(0 0% 40%);
 }
 
+/* ─────────────────────────────────────────────────── */
+/* < Backgrounds */
+/* ─────────────────────────────────────────────────── */
+.theme-light {
+	--bg1: hsl(0 0% 98%);
+	--bg2: hsl(220 17% 96%);
+	--bg3: hsl(220 13% 93%);
+	--bg4: hsl(216 9% 90%);
+}
+
+.theme-dark {
+	--bg1: hsl(0 0% 13%);
+	--bg2: hsl(0 0% 10%);
+	--bg3: hsl(0 0% 7%);
+	--bg4: hsl(0 0% 3%);
+}
+
+.workspace-split.mod-root .view-content {
+	background-color: var(--bg1);
+}
+
+.workspace-tab-header.is-after-active .workspace-tab-header-inner,
+.workspace-tab-header-inner,
+.workspace-tabs {
+	background-color: var(--bg4);
+}
+
+.workspace-tab-header.is-active .workspace-tab-header-inner,
+.workspace-leaf-resize-handle {
+	background-color: var(--bg2);
+}
+
+.workspace-tabs .workspace-leaf {
+	background-color: var(--bg3);
+}
+
+/* ─────────────────────────────────────────────────── */
+/* < Variables */
+/* ─────────────────────────────────────────────────── */
+
+:root {
+	--resize-handle-thickness: 4px;
+	--toggle-duration: 350ms;
+	--scrollbar-thickness: 9px;
+	--image-size: 50;
+	--pdf-size: 50vh;
+	--popover-size: 350;
+	--inactive-pane-opacity: 80%;
+	--signature: "⟡";
+}
+
+.theme-light,
+.theme-dark {
+	--shadow-style: 3px 5px 6px;
+	--big-shadow: var(--shadow-style) 10px var(--shadow-color);
+	--medium-shadow: var(--shadow-style) 7px var(--shadow-color);
+	--small-shadow: var(--shadow-style) 3px var(--shadow-color);
+
+	--basic-border: 2px solid var(--basic-border-color);
+	--muted-border: 2px solid var(--muted-border-color);
+	--thick-muted-border: 3.5px solid var(--muted-border-color);
+	--thin-border: 1px solid var(--basic-border-color);
+}
+
+/* stylelint-enable no-duplicate-selectors */
 /* ─────────────────────────────────────────────────── */
 /* < Fonts */
 /* ─────────────────────────────────────────────────── */
@@ -809,7 +857,7 @@ body .workspace-split.mod-right-split > .workspace-leaf-resize-handle {
 
 .titlebar-button:hover {
 	color: var(--alt-accent);
-	background-color: var(--background-secondary);
+	background-color: var(--bg3);
 }
 
 .titlebar-button:active {
@@ -822,7 +870,7 @@ body .workspace-split.mod-right-split > .workspace-leaf-resize-handle {
 
 /* proper light theme for titlebar */
 .titlebar {
-	background-color: var(--background-primary-alt);
+	background-color: var(--bg2);
 	border-bottom: 1px solid var(--background-modifier-border);
 }
 
@@ -982,7 +1030,7 @@ or when enabled by the style settings plugin */
 body:not(.show-header-bar) .workspace-split.mod-root > .workspace-leaf:first-of-type:last-of-type .view-header {
 	height: 0.9em;
 
-	background-color: var(--background-primary);
+	background-color: var(--bg1);
 
 	transition: var(--header-transition);
 
@@ -1007,7 +1055,7 @@ body:not(.show-header-bar) .workspace-split.mod-root > .workspace-leaf:first-of-
 body:not(.show-header-bar) .workspace-split.mod-root > .workspace-leaf:first-of-type:last-of-type .view-header:focus-within,
 body.show-header-bar .workspace-split.mod-root > .workspace-leaf:first-of-type:last-of-type .view-header {
 	height: 1.9em;
-	background-color: var(--background-secondary);
+	background-color: var(--bg3);
 	transition: var(--header-transition);
 }
 
@@ -1136,7 +1184,7 @@ body:not(.show-scrollbar) ::-WEBKIT-SCROLLBAR {
 }
 
 ::-WEBKIT-SCROLLBAR:hover {
-	background-color: var(--background-secondary-alt);
+	background-color: var(--bg4);
 }
 
 ::-WEBKIT-SCROLLBAR-THUMB:active {
@@ -1214,7 +1262,7 @@ body:not(.normal-checkboxes) .checkbox-container {
 	height: 22px;
 	width: 22px;
 
-	background-color: var(--background-secondary);
+	background-color: var(--bg3);
 
 	transition: var(--toggle-duration) ease-in-out;
 	cursor: pointer;
@@ -1254,7 +1302,7 @@ body:not(.normal-checkboxes) .checkbox-container:hover {
 }
 
 body:not(.normal-checkboxes) .checkbox-container.is-enabled:hover {
-	background-color: var(--background-secondary);
+	background-color: var(--bg3);
 	border-color: var(--interactive-hover-border);
 }
 
@@ -1327,7 +1375,7 @@ input.slider {
 	bottom: 12px;
 	left: 2.5%;
 
-	background-color: var(--background-secondary-alt);
+	background-color: var(--bg4);
 
 	padding-top: 5px;
 
@@ -1374,7 +1422,7 @@ the bottom when replacing/searching ლ(ಠ_ಠლ)╯ */
 .document-replace input[type="text"] {
 	height: 2.2rem;
 	width: unset;
-	background-color: var(--background-primary);
+	background-color: var(--bg1);
 	margin: 5px;
 	border: var(--muted-border);
 }
@@ -1516,7 +1564,7 @@ div.search-input-clear-button::BEFORE,
 .modal-close-button {
 	z-index: 100;
 	color: var(--text-muted);
-	background-color: var(--background-secondary-alt);
+	background-color: var(--bg4);
 }
 
 div.search-input-clear-button::BEFORE {
@@ -1543,7 +1591,7 @@ div.search-input-clear-button:hover::BEFORE,
 
 .empty-state-close-button:hover {
 	color: var(--alt-accent-lighter);
-	background: var(--background-secondary-alt);
+	background: var(--bg4);
 }
 
 .modal-close-button {
@@ -1588,7 +1636,7 @@ body:not(.show-close-button) .modal-close-button:hover {
 div.prompt {
 	box-shadow: var(--medium-shadow);
 	padding: 4px;
-	border: 5px solid var(--background-secondary);
+	border: 5px solid var(--bg3);
 	border-radius: calc(var(--roundish) * 2);
 }
 
@@ -1636,7 +1684,7 @@ div.prompt-results {
 .suggestion-item:hover,
 .suggestion-item.is-selected .suggestion-prefix,
 .suggestion-item:hover .suggestion-prefix {
-	background-color: var(--background-secondary-alt) !important;
+	background-color: var(--bg4) !important;
 }
 
 .suggestion-item.is-selected .suggestion-prefix,
@@ -1668,7 +1716,7 @@ div.prompt-results {
 
 .suggestion-item.is-selected .suggestion-hotkey,
 .suggestion-item:hover .suggestion-hotkey {
-	background-color: var(--background-primary-alt);
+	background-color: var(--bg2);
 }
 
 /* move plugin name to the right */
@@ -1679,18 +1727,18 @@ body:not(.move-plugin-name-to-left):not(.is-mobile) div.prompt {
 body:not(.move-plugin-name-to-left):not(.is-mobile) .suggestion-prefix {
 	position: absolute;
 	right: 100px;
-	background: var(--background-primary);
+	background: var(--bg1);
 	padding-left: 8px;
 }
 
 /* Alternating row colors */
 body:not(.no-alternating-rows) .suggestion-item:nth-child(even) .suggestion-prefix,
 body:not(.no-alternating-rows) .suggestion-item:nth-child(even) {
-	background-color: var(--background-primary-alt);
+	background-color: var(--bg2);
 }
 
 body:not(.no-alternating-rows) .suggestion-item:nth-child(even) .suggestion-hotkey {
-	background-color: var(--background-primary);
+	background-color: var(--bg1);
 }
 
 /* ─────────────────────────────────────────────────── */
@@ -1714,10 +1762,12 @@ body:not(.no-alternating-rows) .suggestion-item:nth-child(even) .suggestion-hotk
 }
 
 .workspace-tab-header-container {
+	background-color: transparent;
 	margin: 4px 0 4px 11px;
 }
 
 /* no rounded corners for the sidebar leafs */
+.workspace-tab-header.is-after-active .workspace-tab-header-inner,
 body > .app-container .workspace-split.mod-horizontal > .workspace-tabs > .workspace-leaf {
 	border-radius: 0;
 }
@@ -1729,7 +1779,7 @@ body > .app-container .workspace-split.mod-horizontal > .workspace-tabs > .works
 }
 
 .workspace-tab-header.is-active {
-	background-color: var(--background-secondary);
+	background-color: var(--bg3);
 	border-radius: var(--roundish);
 }
 
@@ -1754,14 +1804,14 @@ body > .app-container .workspace-split.mod-horizontal > .workspace-tabs > .works
 }
 
 .nav-action-button.is-active {
-	background-color: var(--background-secondary-alt);
+	background-color: var(--bg4);
 }
 
 .nav-action-button:hover,
 .nav-action-button.is-active:hover,
 .workspace-tab-header:hover .workspace-tab-header-inner,
 .workspace-tab-header:hover {
-	background-color: var(--background-primary);
+	background-color: var(--bg1);
 	cursor: pointer;
 }
 
@@ -1982,7 +2032,7 @@ body .workspace-leaf-resize-handle:active {
 /* tabs to the side */
 .modal.mod-settings .vertical-tab-header {
 	height: 95vh;
-	background: var(--background-secondary);
+	background: var(--bg3);
 	padding-top: 0;
 
 	/* overscroll */
@@ -1990,12 +2040,12 @@ body .workspace-leaf-resize-handle:active {
 }
 
 .vertical-tab-content {
-	background: var(--background-primary);
+	background: var(--bg1);
 	padding: 12px 21px;
 }
 
 .vertical-tab-header-group {
-	background-color: var(--background-secondary-alt);
+	background-color: var(--bg4);
 	padding-top: 0;
 	padding-bottom: 0;
 	margin-top: 0;
@@ -2024,14 +2074,14 @@ body .workspace-leaf-resize-handle:active {
 
 .vertical-tab-nav-item {
 	color: var(--extra-contrast);
-	background: var(--background-secondary);
+	background: var(--bg3);
 	padding: 3px 3px 3px 6px;
 }
 
 /* color active/hovered sub menu */
 .vertical-tab-nav-item.is-active {
 	color: var(--text-accent);
-	background: var(--background-secondary-alt);
+	background: var(--bg4);
 }
 
 .vertical-tab-nav-item:active {
@@ -2041,7 +2091,7 @@ body .workspace-leaf-resize-handle:active {
 .vertical-tab-nav-item.is-active:hover,
 .vertical-tab-nav-item:hover {
 	color: var(--alt-accent);
-	background: var(--background-secondary-alt);
+	background: var(--bg4);
 	border-left: 3px solid var(--alt-accent);
 }
 
@@ -2064,7 +2114,7 @@ body .workspace-leaf-resize-handle:active {
 .setting-restore-hotkey-button:hover,
 .setting-editor-extra-setting-button:hover {
 	color: var(--editor-alt-accent) !important;
-	background-color: var(--background-secondary);
+	background-color: var(--bg3);
 	opacity: 1;
 }
 
@@ -2503,7 +2553,7 @@ body:not(.less-heading-letter-spacing) .modal.mod-community-theme .modal-title {
 
 .community-theme.is-selected button:first-child:hover {
 	color: var(--text-faint) !important;
-	background-color: var(--background-secondary-alt) !important;
+	background-color: var(--bg4) !important;
 	cursor: not-allowed;
 	border-color: var(--interactive-border) !important;
 }
@@ -2673,7 +2723,7 @@ body.colored-yaml .cm-s-obsidian .cm-hmd-frontmatter.cm-string {
 /* <<< Metadata Block */
 .markdown-preview-view .frontmatter-container {
 	color: var(--extra-contrast);
-	background: var(--background-secondary);
+	background: var(--bg3);
 	border: var(--basic-border);
 	border-radius: var(--roundish);
 	font-size: 1em;
@@ -2708,7 +2758,7 @@ body.colored-yaml .cm-s-obsidian .cm-hmd-frontmatter.cm-string {
 
 .frontmatter-section-tags > a.tag:hover {
 	color: var(--alt-accent) !important;
-	background: var(--background-secondary-alt);
+	background: var(--bg4);
 	text-decoration: none !important;
 }
 
@@ -2796,7 +2846,7 @@ progress {
 }
 
 progress::-WEBKIT-PROGRESS-BAR {
-	background: var(--background-secondary-alt);
+	background: var(--bg4);
 	border: var(--thin-border);
 	border-radius: calc(var(--roundish) * 3);
 }
@@ -3185,7 +3235,7 @@ body:not(.no-active-line-highlighting) .CodeMirror-activeline .HyperMD-header.Hy
 }
 
 .markdown-preview-view h6 {
-	background-color: var(--background-secondary);
+	background-color: var(--bg3);
 }
 
 .HyperMD-header.HyperMD-header-6.CodeMirror-line,
@@ -3263,7 +3313,7 @@ body > .app-container .cm-formatting.cm-formatting-quote {
 /* Preview Mode */
 body > .app-container .markdown-preview-view blockquote {
 	color: var(--extra-contrast);
-	background-color: var(--background-primary-alt);
+	background-color: var(--bg2);
 
 	padding: 0.3em 0.7em 0.4em;
 	margin: 1.5em 0 1.5em 2em;
@@ -3370,7 +3420,7 @@ body > .app-container table > tbody > tr > td:first-child {
 
 /* background */
 thead {
-	background-color: var(--background-secondary-alt);
+	background-color: var(--bg4);
 	font-weight: 900;
 }
 
@@ -3407,7 +3457,7 @@ body.no-alternating-rows > .app-container table > tbody > tr > td {
 
 /* Code blocks Preview Mode */
 .markdown-preview-view pre {
-	background-color: var(--background-secondary) !important;
+	background-color: var(--bg3) !important;
 	padding-top: 10px !important;
 	padding-bottom: 12px !important;
 	border-radius: calc(var(--roundish) * 2) !important;
@@ -3415,7 +3465,7 @@ body.no-alternating-rows > .app-container table > tbody > tr > td {
 
 /* code blocks Edit Mode */
 body > .app-container .HyperMD-codeblock-begin-bg {
-	background-color: var(--background-secondary);
+	background-color: var(--bg3);
 	border-top-right-radius: calc(var(--roundish) * 2);
 	border-top-left-radius: calc(var(--roundish) * 2);
 }
@@ -3901,6 +3951,7 @@ body:not(.no-active-line-highlighting) .CodeMirror-activeline .CodeMirror-lineba
 }
 
 /* <<< Selection (Selected Text) */
+/* stylelint-disable no-duplicate-selectors */
 .theme-light,
 .theme-dark {
 	--text-selection: var(--selection-color);
@@ -3909,6 +3960,7 @@ body:not(.no-active-line-highlighting) .CodeMirror-activeline .CodeMirror-lineba
 /* alternative method */
 /* .CodeMirror-focused .CodeMirror-selected {} */
 
+/* stylelint-enable no-duplicate-selectors */
 /* ─────────────────────────────────────────────────── */
 /* << Multi-Color Highlighting */
 /* ─────────────────────────────────────────────────── */
@@ -3954,7 +4006,7 @@ em > del {
 .CodeMirror-activeline > .CodeMirror-line .cm-em.cm-strikethrough,
 em > del:hover,
 .cm-em.cm-strikethrough:hover {
-	background-color: var(--background-secondary-alt) !important;
+	background-color: var(--bg4) !important;
 	transition: 400ms ease-in-out;
 }
 
@@ -4058,7 +4110,7 @@ body.is-mobile .markdown-preview-view blockquote {
 
 .mobile-option-setting-item > span:hover > svg {
 	color: var(--editor-alt-accent) !important;
-	background-color: var(--background-secondary);
+	background-color: var(--bg3);
 	opacity: 1;
 }
 
@@ -4456,7 +4508,7 @@ body.is-mobile .markdown-preview-view blockquote {
 
 .markdown-source-view .backlink-pane > .tree-item-self,
 .markdown-preview-view .backlink-pane > .tree-item-self {
-	background-color: var(--background-primary-alt);
+	background-color: var(--bg2);
 	border-radius: var(--roundish);
 }
 
@@ -4470,7 +4522,7 @@ body.is-mobile .markdown-preview-view blockquote {
 }
 
 .workspace-tabs .backlink-pane > .tree-item-self {
-	background-color: var(--background-primary);
+	background-color: var(--bg1);
 }
 
 .backlink-pane > .tree-item-self > .tree-item-flair-outer > .tree-item-flair {
@@ -4630,7 +4682,7 @@ body:not(.show-starred-nav-buttons) .workspace-leaf-content[data-type="starred"]
 	height: var(--popover-size) !important;
 	max-height: unset !important;
 	width: var(--popover-size) !important;
-	border: 5px solid var(--background-secondary) !important;
+	border: 5px solid var(--bg3) !important;
 	border-radius: calc(var(--roundish) * 2);
 }
 
@@ -4781,7 +4833,7 @@ body:not(.show-graph-controls) .graph-controls.is-close:not(:hover) {
 
 .graph-controls-button:hover {
 	color: var(--alt-accent);
-	background-color: var(--background-secondary);
+	background-color: var(--bg3);
 }
 
 .graph-controls-button:active {
@@ -4908,7 +4960,7 @@ body:not(.show-graph-controls) .graph-controls.is-close:not(:hover) {
 }
 
 .workspace-leaf-content[data-type="git-view"] .view-content .file-view main:hover {
-	background: var(--background-secondary-alt);
+	background: var(--bg4);
 }
 
 .workspace-leaf-content[data-type="git-view"] .tools .buttons > div:hover {
@@ -4957,7 +5009,7 @@ body:not(.show-graph-controls) .graph-controls.is-close:not(:hover) {
 }
 
 .workspace-leaf-content[data-type="calendar"] .arrows {
-	background-color: var(--background-secondary-alt) !important;
+	background-color: var(--bg4) !important;
 }
 
 .workspace-leaf-content[data-type="calendar"] .nav {
@@ -5089,7 +5141,7 @@ body .workspace-leaf-content[data-type="kanban"] .view-header {
 
 body .workspace-leaf-content[data-type="kanban"] .view-header:focus-within,
 body .workspace-leaf-content[data-type="kanban"] .view-header:hover {
-	background-color: var(--background-secondary) !important;
+	background-color: var(--bg3) !important;
 	background-image: unset;
 }
 
@@ -5134,7 +5186,7 @@ body .kanban-plugin ul {
 }
 
 textarea.kanban-plugin__item-input {
-	background-color: var(--background-secondary-alt);
+	background-color: var(--bg4);
 	font-family: var(--default-font) !important;
 	font-size: 0.95em !important;
 	letter-spacing: -0.3px;
@@ -5378,22 +5430,22 @@ body.angular-shapes .kanban-plugin__lane {
 
 .svelte-htpziy.selected {
 	color: var(--text-accent) !important;
-	background-color: var(--background-secondary-alt) !important;
+	background-color: var(--bg4) !important;
 }
 
 .svelte-htpziy:hover {
 	color: var(--alt-accent) !important;
-	background-color: var(--background-primary) !important;
+	background-color: var(--bg1) !important;
 }
 
 .svelte-htpziy.selected:hover {
 	color: var(--alt-accent) !important;
-	background-color: var(--background-secondary-alt) !important;
+	background-color: var(--bg4) !important;
 }
 
 .svelte-htpziy {
 	color: var(--extra-contrast) !important;
-	background-color: var(--background-primary) !important;
+	background-color: var(--bg1) !important;
 
 	padding: 5px 15px 6px;
 	margin-right: 4px !important;
@@ -5437,7 +5489,7 @@ body.angular-shapes .kanban-plugin__lane {
 
 /* container */
 #project-picker.svelte-23avsr {
-	background-color: var(--background-secondary-alt);
+	background-color: var(--bg4);
 
 	padding: 5px 0 5px 1px;
 	margin-top: 0;
@@ -5474,7 +5526,7 @@ body:not(.show-header-bar):not(.longform-no-bg) .workspace-split.mod-root > .wor
 body.show-header-bar:not(.longform-no-bg) .workspace-split.mod-root > .workspace-leaf:first-of-type:last-of-type .longform-leaf .view-header,
 body:not(.show-header-bar):not(.longform-no-bg) .workspace-split.mod-root > .workspace-leaf:first-of-type:last-of-type .longform-leaf .view-header:hover,
 body:not(.show-header-bar):not(.longform-no-bg) .workspace-split.mod-root > .workspace-leaf:first-of-type:last-of-type .longform-leaf .view-header:focus-within {
-	background-color: var(--background-primary);
+	background-color: var(--bg1);
 }
 
 body:not(.longform-left-aligned) .longform-leaf .cm-s-obsidian {
@@ -5629,7 +5681,7 @@ body:not(.show-title-bar) > .qe-popup-menu {
 
 .menu.qe-popup-menu .menu-item:hover,
 .menu.qe-popup-menu .menu-item.selected {
-	background-color: var(--background-secondary-alt) !important;
+	background-color: var(--bg4) !important;
 }
 
 /* icons */
@@ -5684,7 +5736,7 @@ button.MySnippetsButton:hover path {
 }
 
 button.MS-OpenSnippet {
-	background-color: var(--background-secondary-alt) !important;
+	background-color: var(--bg4) !important;
 }
 
 button.MS-OpenSnippet svg.ms-snippet path {
@@ -5938,7 +5990,7 @@ body > .app-container div.BC-trail {
 
 div.BC-trail {
 	color: var(--extra-contrast);
-	background-color: var(--background-secondary);
+	background-color: var(--bg3);
 
 	padding-right: 10px;
 	padding-left: 10px;
@@ -5951,7 +6003,7 @@ div.BC-trail {
 }
 
 body > .app-container div.BC-trail-grid {
-	background-color: var(--background-primary);
+	background-color: var(--bg1);
 
 	margin-top: 8px;
 	margin-bottom: 5px;
@@ -5982,7 +6034,7 @@ body #block-ref-hover.show {
 body #search-res-hover.show:hover,
 body #block-ref-hover.show:hover {
 	color: var(--alt-accent);
-	background-color: var(--background-primary-alt);
+	background-color: var(--bg2);
 	border-radius: var(--roundish);
 }
 
@@ -6025,15 +6077,15 @@ body #block-ref-hover.show:hover {
 /* ─────────────────────────────────────────────────── */
 /* << Advanced Cursor */
 /* ─────────────────────────────────────────────────── */
-/* the sidebar only */
 .workspace-leaf-content[data-type="Saved Queries View"] .savedQ-view-q {
 	color: var(--extra-contrast);
 	background-color: transparent;
+	padding-left: 6px;
 }
 
 .workspace-leaf-content[data-type="Saved Queries View"] .savedQ-view-q:hover {
 	color: var(--alt-accent);
-	background-color: var(--background-secondary-alt) !important;
+	background-color: var(--bg4) !important;
 	border-radius: var(--roundish);
 }
 
@@ -6069,12 +6121,12 @@ pre button.copy {
 	right: 7px;
 
 	color: var(--extra-contrast);
-	background-color: var(--background-secondary-alt);
+	background-color: var(--bg4);
 
 	padding: 6px 6px 4px 8px;
 	margin: 0;
 
-	border: 2px solid var(--background-primary);
+	border: 2px solid var(--bg1);
 	border-radius: var(--roundish);
 
 	font-size: 0;
