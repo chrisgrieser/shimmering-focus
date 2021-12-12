@@ -1,6 +1,6 @@
 /* ──────────────────────────────────────────────────────
 SHIMMERING FOCUS
-Version 1.291
+Version 1.292
 https://github.com/chrisgrieser/shimmering-focus/
 Created by @pseudometa
 MIT License
@@ -3482,6 +3482,7 @@ body.no-alternating-rows > .app-container table > tbody > tr > td {
 	font-size: var(--monospace-font-size);
 }
 
+.markdown-preview-view pre code,
 .markdown-preview-view code {
 	border-radius: var(--roundish);
 
@@ -3491,7 +3492,6 @@ body.no-alternating-rows > .app-container table > tbody > tr > td {
 
 /* Code blocks Preview Mode */
 .markdown-preview-view pre {
-	background-color: var(--bg3) !important;
 	padding-top: 10px !important;
 	padding-bottom: 12px !important;
 	border-radius: calc(var(--roundish) * 2) !important;
@@ -3973,6 +3973,11 @@ input[type="checkbox"]:checked:hover {
 /* ─────────────────────────────────────────────────── */
 
 /* <<< Active Line Highlight */
+body:not(.no-active-line-highlighting) .CodeMirror-activeline .CodeMirror-linebackground {
+	background-color: var(--active-line);
+	border-radius: var(--roundish);
+}
+
 body:not(.no-active-line-highlighting) .CodeMirror-activeline .CodeMirror-linebackground {
 	background-color: var(--active-line);
 	border-radius: var(--roundish);

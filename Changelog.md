@@ -1,3 +1,4 @@
+- 2021-12-12	code block background
 - 2021-12-12	fix gutter color in cm6
 - 2021-12-12	live preview issue thread info
 - 2021-12-12	added info on live preview to issue template
