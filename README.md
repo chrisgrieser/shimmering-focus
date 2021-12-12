@@ -3,7 +3,7 @@
 A minimalistic [Obsidian](https://obsidian.md/) theme focused on readability and condensed information display.
 
 <!-- manually updated-->
-![](https://img.shields.io/badge/downloads-6486-6E4E9B?style=plastic) ![](https://img.shields.io/github/last-commit/chrisgrieser/shimmering-focus?style=plastic) [![](https://img.shields.io/badge/changelog-click%20here-FFE800?style=plastic)](Changelog.md)
+![](https://img.shields.io/badge/downloads-6505-6E4E9B?style=plastic) ![](https://img.shields.io/github/last-commit/chrisgrieser/shimmering-focus?style=plastic) [![](https://img.shields.io/badge/changelog-click%20here-FFE800?style=plastic)](Changelog.md)
 
 <img src="https://raw.githubusercontent.com/chrisgrieser/shimmering-focus/main/dual-theme-screenshot.png" alt="Promo Screenshot">
 
@@ -15,9 +15,9 @@ A minimalistic [Obsidian](https://obsidian.md/) theme focused on readability and
   - [Annotation Tags](#annotation-tags)
   - [Max View & Focus View](#max-view--focus-view)
   - [Image-related Features](#image-related-features)
-  - [Fine-tuned Spellcheck](#fine-tuned-spellcheck)
   - [Multi-Color-Highlighting & Spoiler Syntax](#multi-color-highlighting--spoiler-syntax)
   - [Well-Suited for Academic Work](#well-suited-for-academic-work)
+  - [Fine-tuned Spellcheck](#fine-tuned-spellcheck)
   - [Further Features](#further-features)
 - [Design Principles](#design-principles)
   - [Extreme Minimalism](#extreme-minimalism)
@@ -41,9 +41,9 @@ A minimalistic [Obsidian](https://obsidian.md/) theme focused on readability and
 
 ### Hiding/Showing UI Elements
 - The Status bar, Header bar, Graph controls, and Collapse arrows are hidden by default, but become visible upon hovering or being active.
-- You can re-enable _all_ hidden elements by using the [Style Settings Plugin](#Customization).
+- You can re-enable all hidden elements by using the [Style Settings Plugin](https://github.com/mgmeyers/obsidian-style-settings/).
 
-💡 The settings can be accessed via `cmd + ,` or `ctrl + ,`.
+💡 The settings can be accessed without a need for a button via `cmd + ,` (Mac) or `ctrl + ,` (Windows/Linux).
 
 <img src="https://user-images.githubusercontent.com/73286100/131692972-e523f2d4-40c7-452c-83ac-a7f2fbd546ae.gif" alt="headerbar visible on hover" width=50%>
 
@@ -56,10 +56,10 @@ Type one of the following eight tags (e.g. `#definition`) to get a colored annot
 
 ### Max View & Focus View
 - __Max View__: By default, the theme uses readable line length[^4] as well as smaller images & PDFs. When the *left* sidebar is hidden, line length is extended to full length, and images & PDFs are expanded to full width. This is useful when dealing with big tables or many images.
-- __Focus View__ *(disabled by default)*: Hiding the *left* side bar will also hide the *right* sidebar, with the right side bar staying hidden until the left one is shown again. This synergizes with *Max View*, but also works when Max View is disabled. To enable *Focus View*, use the [Style Settings Plugin](#Customization).
+- __Focus View__ *(disabled by default)*: Hiding the *left* side bar will also hide the *right* sidebar, with the right side bar staying hidden until the left one is shown again. This synergizes with *Max View*, but also works when Max View is disabled. To enable *Focus View*, use the [Style Settings Plugin](https://github.com/mgmeyers/obsidian-style-settings/).
 - *Recommendation*: For both features, it is useful to set a hotkey for the built-in command `Toggle left sidebar`.
 
-💡 You can turn the *Max View* feature off and/or adjust the size of images & PDFs with the [Style Settings Plugin](#Customization).
+💡 You can turn the *Max View* feature off and/or adjust the size of images & PDFs with the [Style Settings Plugin](https://github.com/mgmeyers/obsidian-style-settings/).
 
 <img src="https://user-images.githubusercontent.com/73286100/138562271-2f7d3589-d580-49e4-bea6-ca3e3004ab78.gif" alt="Promo Max View" width=60%>
 
@@ -67,14 +67,10 @@ Type one of the following eight tags (e.g. `#definition`) to get a colored annot
 - Click & hold an image to zoom.
 - Alt-text is automatically used as image caption.
 - Set a default Image Size with the Style Settings Plugin.
-
-### Fine-tuned Spellcheck
-Using the [Style Settings Plugin](#Customization), you can deactivate the spellcheck in specific areas like YAML or blockquotes.
-
-<img src="https://i.imgur.com/9XPEUQq.png" alt="Spellcheck settings" width=50%>
+- Use [Max View](#max-view--focus-view) to toggle between small and big image sizes.
 
 ### Multi-Color-Highlighting & Spoiler Syntax
-- Surround highlights with `*` or `**` for alternative highlight colors (`*==cyan==*` and `**==yellow==**`).[^2]
+- Surround highlights with `*` or `**` for alternative highlight colors (`*==cyan==*` and `**==yellow==**`).
 - You can use the [Extra Markdown Commands Plugin](https://github.com/chrisgrieser/obsidian-extra-md-commands) to get hotkeys for them.
 - Spoiler Syntax: Emphasized Strikethroughs (`*~~spoiler~~*`) will selectively hide text, except when hovered or the active line.
 
@@ -86,13 +82,19 @@ Using the [Style Settings Plugin](#Customization), you can deactivate the spellc
 - You can also [fine-tune the spell checking](#fine-tuned-spellcheck), e.g. to turn it off in blockquotes when you are regularly citing material where spellcheck creates false positives (e.g. historical sources with old language).
 - [Multi-Color-Highlighting](#multi-color-highlighting--spoiler-syntax) and [Annotation Tags](#annotation-tags) have specifically been developed for academic reading.
 
+### Fine-tuned Spellcheck
+Using the [Style Settings Plugin](https://github.com/mgmeyers/obsidian-style-settings/), you can deactivate the spellcheck in specific areas like YAML or blockquotes.
+
+<img src="https://i.imgur.com/9XPEUQq.png" alt="Spellcheck settings" width=50%>
+
 ### Further Features
 - **Pseudo-Admonition**: `h6` blocks will become a pseudo-admonition box (only works with one-liners though)
 - Relationship lines in lists & File Explorer
 - Active line highlighting
-- Dark Mode for PDFs[^3] (when using the theme in dark mode)
+- Customizable Brightness of the Theme
+- Dark Mode for PDFs (when using the theme in dark mode)
 - Styled [progress bars (`<progress>`)](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/progress)
-- Resizable Graph View Controls[^1] ([See this explanation image.](https://media.discordapp.net/attachments/855181471643861002/909861241055481857/lmao.gif))
+- Resizable Graph View Controls (resize at the bottom-right)
 
 [⬆️ Go Back to Top](#Table-of-Contents)
 
@@ -101,7 +103,7 @@ Using the [Style Settings Plugin](#Customization), you can deactivate the spellc
 ### Extreme Minimalism
 - This theme is mainly intended for experienced users using mainly the keyboard for navigation.
 - As much clutter as possible is removed, letting you focus on content & information that matters.
-- You can re-enable all hidden elements by using the [Style Settings Plugin](#Customization).
+- You can re-enable all hidden elements by using the [Style Settings Plugin](https://github.com/mgmeyers/obsidian-style-settings/).
 - 💡 The settings can still be accessed via `cmd + ,` or `ctrl + ,`.
 
 ### Condensed Display of Information
@@ -113,18 +115,19 @@ Using the [Style Settings Plugin](#Customization), you can deactivate the spellc
 <img width=60% alt="Screenshot 2021-10-23 17 06 22" src="https://user-images.githubusercontent.com/73286100/138561771-1067d041-eeb2-4dfe-8d79-f7fa754ca419.png">
 
 ### Maximum Readability & Scannability
-- increased contrast throughout, especially with the [annoying grey font on light grey background](https://forum.obsidian.md/t/enhance-default-color-contrast-of-the-icons/23045/3)
-- decreased font size variation to increase readability & information density
-- at the same time increased distinctiveness of different classes through subtle variation in typeface, font style, or backgrounds
-- alternating row colors in tables, Command Palette, and Quick Switchers
-- easy-to-read fonts for every use case
+- 🆕 Theme Brightness customizable via [Style Settings Plugin](https://github.com/mgmeyers/obsidian-style-settings/).
+- Increased contrast throughout, especially with the [annoying grey font on light grey background](https://forum.obsidian.md/t/enhance-default-color-contrast-of-the-icons/23045/3)
+- Decreased font size variation to increase readability & information density
+- At the same time increased distinctiveness of different classes through subtle variation in typeface, font style, or backgrounds
+- Alternating row colors in tables, Command Palette, and Quick Switchers
+- Easy-to-read fonts for every use case
   - [iA Writer Quattro](https://github.com/iaolo/iA-Fonts/tree/master/iA%20Writer%20Quattro) as proportional yet clear font for regular text
   - [Input Mono](https://input.djr.com/) as monospace font for code
   - [Optima](https://en.wikipedia.org/wiki/Optima) as humanist font for heading
   - [Crimson Pro](https://fonts.google.com/specimen/Crimson+Pro) as serif font for Longform notes
-- minor coloring of bold in dark mode to make it more readable, since bold in dark mode is harder to distinguish form normal text than  in light mode
-- slightly thicker lines (icons, hr, tables, etc.)
-- plugin names in the Command Palette are moved to the right and more visually distinct
+- Minor coloring of bold in dark mode to make it more readable, since bold in dark mode is harder to distinguish form normal text than  in light mode
+- Slightly thicker lines (icons, hr, tables, etc.)
+- Plugin names in the Command Palette are moved to the right and more visually distinct
 
 <img src="https://user-images.githubusercontent.com/73286100/144147616-59ba2513-78cc-4143-91e5-c222bc307bd9.gif" alt="Screen Recording 2021-12-01 at 00 51 21a" width=60%>
 
@@ -153,11 +156,11 @@ Using the [Style Settings Plugin](#Customization), you can deactivate the spellc
 In accordance with the minimalistic philosophy of the theme, unnecessary UI elements of some plugins have also been removed. However, you can still access the full plugin functionality.
 
 - Kanban: Right-click cards to edit them.
-- Sliding Panes: Enable `Swap Rotated Header Direction` in the Sliding pane Settings.
-- Breadcrumbs: Refresh the index via Command Palette
-- Quick Explorer: Re-enable the title bar with the Style Settings Plugin for the breadcrumbs
-- Ozan's Image in Editor: Image Sizes are affected by the Image Settings & the Max View Feature.
-- Starred (Core Plugin): To be able to star searches, re-enable the Starred pane buttons with the Style Settings Plugins
+- Sliding Panes: Enable `Swap Rotated Header Direction` in the Sliding Pane Settings.
+- Breadcrumbs: Even with buttons removed, you can refresh the index via Command Palette
+- Quick Explorer: Re-enable the title bar with the [Style Settings Plugin](https://github.com/mgmeyers/obsidian-style-settings/) for the breadcrumbs
+- Ozan's Image in Editor: Image Sizes are affected by the Image Settings & by the Max View Feature.
+- Starred (Core Plugin): To be able to star searches, re-enable the Starred pane buttons with the [Style Settings Plugin](https://github.com/mgmeyers/obsidian-style-settings/)
 
 ## Installation
 You can find *Shimmering Focus* in Obsidian's community themes browser under `Obsidian Settings ➞ Appearance ➞ Themes ➞ Manage`.
@@ -199,7 +202,4 @@ Thanks for help and/or CSS snippets:
 
 [⬆️ Go Back to Top](#Table-of-Contents)
 
-[^1]: Thanks to @Manedblackwolf.
-[^2]: Thanks to @Atlas.
-[^3]: Thanks to @phibr0.
-[^4]: Requires the `Readable line length` editor setting to be *enabled*.
+[^1]: Requires the `Readable line length` editor setting to be *enabled*.

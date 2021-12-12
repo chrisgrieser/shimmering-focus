@@ -1,6 +1,6 @@
 /* ──────────────────────────────────────────────────────
 SHIMMERING FOCUS
-Version 1.293
+Version 1.294
 https://github.com/chrisgrieser/shimmering-focus/
 Created by @pseudometa
 MIT License
@@ -24,7 +24,7 @@ For help and/or CSS snippets, thanks to:
 This ToC is auto-generated via the .create-ToC.sh
 
 - Colors
-	- Backgrounds
+	- Backgrounds & Brightness
 - Variables
 - Fonts
 	- Base64-encoded Fonts
@@ -183,6 +183,9 @@ This ToC is auto-generated via the .create-ToC.sh
 	--bold-in-darkmode: hsl(202 43% 57%);
 	--active-line: hsl(62 11% 63% / 12.5%);
 	--cursor-monocolor: var(--accent-lighter);
+
+	--notice-bg: hsl(0 0% 60%);
+	--notice-text: hsl(0 0% 98%);
 }
 
 .theme-light {
@@ -206,11 +209,6 @@ This ToC is auto-generated via the .create-ToC.sh
 	--cursor-duo-color-2: var(--accent-lightest);
 	--a-row: rgb(0 0 0 / 3%);
 	--b-row: rgb(0 0 0 / 7%);
-	--backdrop-color: hsl(220 15% 70%);
-
-	--shadow-color: hsl(0 0% 40% / 70%);
-	--muted-border-color: hsl(0 0% 87%);
-	--basic-border-color: hsl(0 0% 70%);
 }
 
 .theme-dark {
@@ -234,64 +232,92 @@ This ToC is auto-generated via the .create-ToC.sh
 	--cursor-duo-color-2: var(--accent-lighter);
 	--a-row: rgb(0 0 0 / 15%);
 	--b-row: rgb(0 0 0 / 30%);
-	--backdrop-color: hsl(228 30% 15%);
-
-	--shadow-color: hsl(0 0% 0% / 40%);
-	--muted-border-color: hsl(0 0% 20%);
-	--basic-border-color: hsl(0 0% 40%);
 }
 
 /* ─────────────────────────────────────────────────── */
-/* << Backgrounds */
+/* << Background */
+/* << Brightness */
 /* ─────────────────────────────────────────────────── */
 
+/* default values */
 :root {
-	--notice-bg: hsl(0 0% 60%);
-	--notice-text: hsl(0 0% 98%);
+	--brightness-light: 5%;
+	--brightness-dark: 5%;
 }
 
 .theme-light {
-	--bg1: hsl(220 0% 96%);
-	--bg2: hsl(220 17% 93%);
-	--bg3: hsl(220 13% 90%);
-	--bg4: hsl(220 9% 85%);
+	--bg1: hsl(220 10% calc(var(--brightness-light) + 90%));
+	--bg2: hsl(220 13% calc(var(--brightness-light) + 84%));
+	--bg2a: hsl(220 13% calc(var(--brightness-light) + 83%));
+	--bg3: hsl(220 10% calc(var(--brightness-light) + 77%));
+	--muted-border-color: hsl(0 0% calc(var(--brightness-light) + 75%));
+	--basic-border-color: hsl(0 0% calc(var(--brightness-light) + 65%));
+	--backdrop-color: hsl(220 35% calc(var(--brightness-light) + 70%));
 }
 
 .theme-dark {
-	--bg1: hsl(0 0% 13%);
-	--bg2: hsl(0 0% 10%);
-	--bg3: hsl(0 0% 7%);
-	--bg4: hsl(0 0% 3%);
+	--bg1: hsl(0 0% calc(var(--brightness-dark) + 10%));
+	--bg2: hsl(0 0% calc(var(--brightness-dark) + 6%));
+	--bg2a: hsl(0 0% calc(var(--brightness-dark) + 5%));
+	--bg3: hsl(0 0% calc(var(--brightness-dark) + 0%));
+	--muted-border-color: hsl(0 0% calc(var(--brightness-dark) + 15%));
+	--basic-border-color: hsl(0 0% calc(var(--brightness-dark) + 35%));
+	--backdrop-color: hsl(220 30% calc(var(--brightness-dark) + 8%));
 }
 
 .workspace-split.mod-root .view-content {
 	background-color: var(--bg1);
 }
 
-.workspace-tab-header.is-after-active .workspace-tab-header-inner,
-.workspace-tab-header.is-before-active .workspace-tab-header-inner,
-.workspace-tab-header-inner,
-.workspace-tabs {
-	background-color: var(--bg4);
-}
-
-.workspace-leaf-resize-handle {
+.workspace-tab-header.is-active .workspace-tab-header-inner,
+.workspace-tabs .workspace-leaf {
 	background-color: var(--bg2);
 }
 
-.workspace-tab-header.is-active .workspace-tab-header-inner,
-.workspace-tabs .workspace-leaf {
+.workspace-leaf-resize-handle {
+	background-color: var(--bg2a);
+}
+
+.status-bar,
+.workspace-tab-header-inner,
+.workspace-tabs {
 	background-color: var(--bg3);
 }
 
 /* ─────────────────────────────────────────────────── */
-/* < Variables */
+/* << Shadows */
+/* ─────────────────────────────────────────────────── */
+
+.theme-light {
+	--shadow-color: hsl(0 0% 40% / 70%);
+	--shadow-base-size: 0;
+}
+
+.theme-dark {
+	--shadow-color: hsl(0 0% 0% / 40%);
+	--shadow-base-size: 3px;
+}
+
+.theme-light,
+.theme-dark {
+	--shadow-blur: 6px;
+	--big-shadow-size: calc(var(--shadow-base-size) + 8px);
+	--medium-shadow-size: calc(var(--shadow-base-size) + 5px);
+	--small-shadow-size: var(--shadow-base-size);
+
+	--big-shadow: 4px 6px var(--shadow-blur) var(--big-shadow-size) var(--shadow-color);
+	--medium-shadow: 4px 6px var(--shadow-blur) var(--medium-shadow-size) var(--shadow-color);
+	--small-shadow: 2px 4px var(--shadow-blur) var(--small-shadow-size) var(--shadow-color);
+}
+
+/* ─────────────────────────────────────────────────── */
+/* < Other Variables */
 /* ─────────────────────────────────────────────────── */
 
 :root {
-	--resize-handle-thickness: 3px;
+	--resize-handle-thickness: 2.5px;
 	--resize-handle-hovered-thickness: 5px;
-	--toggle-duration: 350ms;
+	--toggle-duration: 350ms ease-in-out;
 	--scrollbar-thickness: 9px;
 	--image-size: 50;
 	--pdf-size: 50vh;
@@ -302,10 +328,6 @@ This ToC is auto-generated via the .create-ToC.sh
 
 .theme-light,
 .theme-dark {
-	--big-shadow: 3px 5px 6px 10px var(--shadow-color);
-	--medium-shadow: 3px 5px 6px 7px var(--shadow-color);
-	--small-shadow: 1px 3px 6px 2px var(--shadow-color);
-
 	--basic-border: 2px solid var(--basic-border-color);
 	--muted-border: 2px solid var(--muted-border-color);
 	--thick-muted-border: 3.5px solid var(--muted-border-color);
@@ -505,10 +527,6 @@ body,
 /* < Icons */
 /* ─────────────────────────────────────────────────── */
 
-/* ─────────────────────────────────────────────────── */
-/* < Base Icons */
-/* ─────────────────────────────────────────────────── */
-
 @font-face {
 	font-family: "Material Icons";
 	src:
@@ -520,6 +538,14 @@ body,
 :root { /* stylelint-disable-line no-duplicate-selectors */
 	--external-url: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='1em' height='1em' preserveAspectRatio='xMidYMid meet' viewBox='0 0 24 24'%3E%3Cg fill='none'%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M3 6a3 3 0 0 1 3-3h12a3 3 0 0 1 3 3v12a3 3 0 0 1-3 3H6a3 3 0 0 1-3-3V6zm10-1a1 1 0 1 0 0 2h2.586l-4.293 4.293a1 1 0 0 0 1.414 1.414L17 8.414V11a1 1 0 1 0 2 0V6a1 1 0 0 0-1-1h-5z' fill='grey'/%3E%3C/g%3E%3C/svg%3E");
 }
+
+svg {
+	-webkit-mask-repeat: no-repeat;
+}
+
+/* ─────────────────────────────────────────────────── */
+/* < Base Icons */
+/* ─────────────────────────────────────────────────── */
 
 /* external link */
 a.external-link {
@@ -622,7 +648,7 @@ body.angular-shapes *:not(.setting-delete-hotkey) > svg.cross {
 
 body:not(.angular-shapes) *:not(.setting-delete-hotkey) > svg.cross {
 	background-color: currentColor;
-	margin-bottom: 1.5px;
+	margin-bottom: 1px;
 	-webkit-mask-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' width='1.05em' height='1.05em' preserveAspectRatio='xMidYMid meet' viewBox='0 0 24 24'%3e%3cg fill='none'%3e%3cpath d='M12 22A10 10 0 0 1 4.926 4.926a10.004 10.004 0 1 1 14.148 14.148A9.936 9.936 0 0 1 12 22zm-8-9.828A8 8 0 1 0 4 12v.172zM9.409 16l-1.41-1.41L10.59 12L8 9.41L9.41 8L12 10.59L14.59 8L16 9.41L13.41 12L16 14.59L14.592 16L12 13.41L9.41 16h-.001z' fill='currentColor'/%3e%3c/g%3e%3c/svg%3e");
 }
 
@@ -866,7 +892,7 @@ body .workspace-split.mod-right-split > .workspace-leaf-resize-handle {
 
 .titlebar-button:hover {
 	color: var(--alt-accent);
-	background-color: var(--bg3);
+	background-color: var(--bg2);
 }
 
 .titlebar-button:active {
@@ -1057,7 +1083,7 @@ body:not(.show-header-bar) .workspace-split.mod-root > .workspace-leaf:first-of-
 body:not(.show-header-bar) .workspace-split.mod-root > .workspace-leaf:first-of-type:last-of-type .view-header:focus-within,
 body.show-header-bar .workspace-split.mod-root > .workspace-leaf:first-of-type:last-of-type .view-header {
 	height: 1.9em;
-	background-color: var(--bg3);
+	background-color: var(--bg2);
 	transition: var(--header-transition);
 }
 
@@ -1158,7 +1184,7 @@ body:not(.show-statusbar):not(.default-statusbar) .status-bar {
 
 body:not(.show-statusbar):not(.default-statusbar) .status-bar:hover {
 	opacity: 1;
-	transition: 200ms ease-in-out;
+	transition: var(--toggle-duration);
 }
 
 /* so stuff on the bottom of the right sidebar can still be clicked */
@@ -1186,7 +1212,7 @@ body:not(.show-scrollbar) ::-WEBKIT-SCROLLBAR {
 }
 
 ::-WEBKIT-SCROLLBAR:hover {
-	background-color: var(--bg4);
+	background-color: var(--bg3);
 }
 
 ::-WEBKIT-SCROLLBAR-THUMB:active {
@@ -1205,10 +1231,9 @@ button {
 	color: var(--button-text) !important;
 	background-color: var(--button-bg) !important;
 
-	transition: var(--toggle-duration) ease-in-out;
+	transition: var(--toggle-duration);
 
-	padding-right: 12px !important;
-	padding-left: 12px !important;
+	padding: 6px 12px !important;
 
 	border: 2px solid var(--interactive-border) !important;
 	border-radius: var(--round);
@@ -1219,7 +1244,7 @@ button {
 button:hover {
 	color: var(--button-hover-text) !important;
 	background-color: var(--button-hover-bg) !important;
-	transition: var(--toggle-duration) ease-in-out;
+	transition: var(--toggle-duration);
 	border-color: var(--interactive-hover-border) !important;
 }
 
@@ -1264,9 +1289,9 @@ body:not(.normal-checkboxes) .checkbox-container {
 	height: 22px;
 	width: 22px;
 
-	background-color: var(--bg3);
+	background-color: var(--bg2);
 
-	transition: var(--toggle-duration) ease-in-out;
+	transition: var(--toggle-duration);
 	cursor: pointer;
 
 	border: 2px solid var(--text-accent);
@@ -1299,12 +1324,12 @@ body:not(.normal-checkboxes) .checkbox-container::AFTER {
 }
 
 body:not(.normal-checkboxes) .checkbox-container:hover {
-	transition: var(--toggle-duration) ease-in-out;
+	transition: var(--toggle-duration);
 	border: 9px solid var(--interactive-hover-border);
 }
 
 body:not(.normal-checkboxes) .checkbox-container.is-enabled:hover {
-	background-color: var(--bg3);
+	background-color: var(--bg2);
 	border-color: var(--interactive-hover-border);
 }
 
@@ -1317,8 +1342,13 @@ input[type="text"],
 input[type="email"],
 input[type="password"] {
 	left: 0;
+
+	background: var(--bg3);
+
 	padding-right: 10px;
 	padding-left: 10px;
+
+	border: var(--thin-border);
 	border-radius: var(--round);
 }
 
@@ -1352,6 +1382,7 @@ select.dropdown:hover {
 }
 
 select.dropdown {
+	background-color: var(--bg3);
 	padding: 5px 28px 6px 10px;
 	border-radius: var(--round);
 }
@@ -1362,6 +1393,7 @@ select.dropdown {
 
 input.slider {
 	width: 150px;
+	background-color: var(--bg3);
 }
 
 /* ─────────────────────────────────────────────────── */
@@ -1377,7 +1409,7 @@ input.slider {
 	bottom: 12px;
 	left: 2.5%;
 
-	background-color: var(--bg4);
+	background-color: var(--bg3);
 
 	padding-top: 5px;
 
@@ -1466,6 +1498,7 @@ body:not(.show-close-button) .document-search-close-button {
 /* ─────────────────────────────────────────────────── */
 
 div.menu {
+	box-shadow: var(--medium-shadow);
 	padding: 0;
 	border-radius: var(--roundish);
 }
@@ -1567,7 +1600,7 @@ div.search-input-clear-button::BEFORE,
 .modal-close-button {
 	z-index: 100;
 	color: var(--text-muted);
-	background-color: var(--bg4);
+	background-color: var(--bg3);
 }
 
 div.search-input-clear-button::BEFORE {
@@ -1594,7 +1627,7 @@ div.search-input-clear-button:hover::BEFORE,
 
 .empty-state-close-button:hover {
 	color: var(--alt-accent-lighter);
-	background: var(--bg4);
+	background: var(--bg3);
 }
 
 .modal-close-button {
@@ -1608,6 +1641,14 @@ div.search-input-clear-button:hover::BEFORE,
 	border-bottom-left-radius: var(--roundish);
 }
 
+.mod-community-theme .modal-close-button,
+.mod-community-plugin .modal-close-button {
+	top: 0;
+	right: 0;
+}
+
+.mod-community-theme .modal-close-button,
+.mod-community-plugin .modal-close-button,
 .mod-settings .modal-close-button {
 	border-top-right-radius: calc(var(--roundish) * 2.5);
 }
@@ -1640,7 +1681,7 @@ div.prompt {
 	background-color: var(--bg1);
 	box-shadow: var(--medium-shadow);
 	padding: 4px;
-	border: 5px solid var(--bg3);
+	border: 5px solid var(--bg2);
 	border-radius: calc(var(--roundish) * 2);
 }
 
@@ -1661,10 +1702,6 @@ div.prompt-results {
 	font-family: var(--smallcap-font);
 	font-size: 1em;
 	letter-spacing: -0.1px;
-}
-
-.suggestion-prefix::AFTER {
-	display: none;
 }
 
 .suggestion-item {
@@ -1688,7 +1725,7 @@ div.prompt-results {
 .suggestion-item:hover,
 .suggestion-item.is-selected .suggestion-prefix,
 .suggestion-item:hover .suggestion-prefix {
-	background-color: var(--bg4) !important;
+	background-color: var(--bg3) !important;
 }
 
 .suggestion-item.is-selected .suggestion-prefix,
@@ -1721,6 +1758,15 @@ div.prompt-results {
 .suggestion-item.is-selected .suggestion-hotkey,
 .suggestion-item:hover .suggestion-hotkey {
 	background-color: var(--bg2);
+}
+
+.suggestion-prefix::AFTER {
+	display: none;
+}
+
+body.move-plugin-name-to-left .suggestion-prefix,
+body.is-mobile .suggestion-prefix {
+	margin-right: 8px;
 }
 
 /* Command Palette: move plugin name to the right */
@@ -1759,7 +1805,7 @@ not only file explorer */
 .nav-folder-title.is-active,
 body > .app-container .nav-file-title:hover,
 body > .app-container .nav-folder-title:hover {
-	background-color: var(--bg4);
+	background-color: var(--bg3);
 }
 
 /* ─────────────────────────────────────────────────── */
@@ -1802,7 +1848,7 @@ body > .app-container .workspace-split.mod-horizontal > .workspace-tabs > .works
 }
 
 .workspace-tab-header.is-active {
-	background-color: var(--bg3);
+	background-color: var(--bg2);
 	border-radius: var(--roundish);
 }
 
@@ -1827,7 +1873,7 @@ body > .app-container .workspace-split.mod-horizontal > .workspace-tabs > .works
 }
 
 .nav-action-button.is-active {
-	background-color: var(--bg4);
+	background-color: var(--bg3);
 }
 
 .nav-action-button:hover,
@@ -1870,6 +1916,11 @@ on the titlebar visibility in the titlebar section */
 
 .workspace-leaf-resize-handle { /* stylelint-disable-line no-duplicate-selectors */
 	transition: 350ms ease-in-out;
+}
+
+/* fix for the resize handler not shining through */
+.mod-left-split .workspace-tabs {
+	padding-right: var(--resize-handle-thickness);
 }
 
 .workspace-split.mod-horizontal > .workspace-leaf-resize-handle {
@@ -1958,6 +2009,12 @@ body .workspace-leaf-resize-handle:active {
 	border-radius: calc(var(--roundish) * 3);
 }
 
+/* has to be adjusted when modal size is adjusted */
+.modal.mod-settings .vertical-tab-header,
+.modal.mod-settings .vertical-tab-content-container {
+	height: 95vh;
+}
+
 /* ─────────────────────────────────────────────────── */
 /* << Confirmation Modal */
 /* ─────────────────────────────────────────────────── */
@@ -2014,7 +2071,7 @@ body .workspace-leaf-resize-handle:active {
 	margin-top: 12px;
 	margin-bottom: 5px;
 
-	border-bottom: 2px solid var(--hr-line-gray);
+	border-bottom: var(--muted-border);
 
 	font-family: var(--setting-heading);
 	font-size: 1.2em;
@@ -2022,16 +2079,19 @@ body .workspace-leaf-resize-handle:active {
 }
 
 .modal.mod-settings .vertical-tab-content-container {
-	/* has to be adjusted when modal size is adjusted */
-	height: 93vh;
-
 	padding: 0;
 	padding-right: 0;
-	padding-bottom: 1.8em;
+	padding-bottom: 30px;
 	padding-left: 0;
 	margin-top: 0;
 
-	border-left: 2px solid var(--background-modifier-border);
+	border-left: var(--thick-muted-border);
+}
+
+.setting-item {
+	padding-top: 8px;
+	padding-bottom: 8px;
+	border-top: var(--muted-border);
 }
 
 .setting-item.setting-item-heading + .installed-plugins-container,
@@ -2042,11 +2102,6 @@ body .workspace-leaf-resize-handle:active {
 .modal.mod-settings .vertical-tab-content-container .vertical-tab-content,
 .modal.mod-settings .vertical-tab-content-container .vertical-tab-header {
 	overflow-y: auto;
-}
-
-.setting-item {
-	padding-top: 0.5em;
-	padding-bottom: 0.5em;
 }
 
 .setting-item-description {
@@ -2066,20 +2121,27 @@ body .workspace-leaf-resize-handle:active {
 
 /* tabs to the side */
 .modal.mod-settings .vertical-tab-header {
-	height: 95vh;
 	padding-top: 0;
 
 	/* overscroll */
 	padding-bottom: 50px;
 }
 
+.vertical-tab-content-container,
 .vertical-tab-content {
 	background: var(--bg1);
+}
+
+.vertical-tab-content {
 	padding: 12px 21px;
 }
 
+.vertical-tab-header {
+	background-color: var(--bg2);
+}
+
 .vertical-tab-header-group {
-	background-color: var(--bg4);
+	background-color: var(--bg3);
 	padding-top: 0;
 	padding-bottom: 0;
 	margin-top: 0;
@@ -2092,7 +2154,7 @@ body .workspace-leaf-resize-handle:active {
 	padding: 2px 5px 1px;
 	margin-top: 0;
 
-	border-bottom: 2px solid var(--background-modifier-border);
+	border-bottom: var(--muted-border);
 
 	font-family: var(--setting-heading);
 	font-size: 1.05em;
@@ -2103,33 +2165,31 @@ body .workspace-leaf-resize-handle:active {
 }
 
 .vertical-tab-header-group:nth-child(2) .vertical-tab-header-group-title {
-	border-top: 2px solid var(--background-modifier-border);
+	border-top: var(--muted-border);
 }
 
 .vertical-tab-nav-item {
 	color: var(--extra-contrast);
-	background: var(--bg3);
+	background: var(--bg2);
 	padding: 3px 3px 3px 6px;
 }
 
 /* color active/hovered sub menu */
+.vertical-tab-nav-item:active,
 .vertical-tab-nav-item.is-active {
 	color: var(--text-accent);
-	background: var(--bg4);
-}
-
-.vertical-tab-nav-item:active {
-	color: var(--text-accent);
+	background: var(--bg3);
+	padding-left: 3px;
+	margin-left: 6px;
+	border-left: none;
 }
 
 .vertical-tab-nav-item.is-active:hover,
 .vertical-tab-nav-item:hover {
 	color: var(--alt-accent);
-	background: var(--bg4);
-	border-left: 3px solid var(--alt-accent);
+	background: var(--bg3);
 }
 
-/* increased contrast */
 .setting-editor-extra-setting-button,
 .setting-add-hotkey-button,
 .setting-restore-hotkey-button,
@@ -2266,10 +2326,15 @@ body .workspace-leaf-resize-handle:active {
 
 /* Search input */
 .community-plugin-search {
+	background-color: var(--bg3);
 	padding-top: 10px;
 	margin-left: 0;
 	border-bottom-left-radius: calc(var(--roundish) * 2.5);
 	border-top-left-radius: calc(var(--roundish) * 2.5);
+}
+
+.community-plugin-search-results {
+	background-color: var(--bg2);
 }
 
 /* search results */
@@ -2354,11 +2419,6 @@ body .workspace-leaf-resize-handle:active {
 	margin-right: 0.9em;
 }
 
-.mod-community-plugin .modal-close-button {
-	top: 0;
-	right: 0;
-}
-
 .community-plugin-search .setting-item .setting-item-info {
 	display: none;
 }
@@ -2418,25 +2478,21 @@ body .workspace-leaf-resize-handle:active {
 }
 
 /* color hovered item in theme style */
+.community-plugin-item:hover {
+	background-color: var(--bg3);
+}
+
 .community-plugin-item:hover .community-plugin-name {
 	color: var(--alt-accent);
 }
 
-.community-plugin-item:hover .community-plugin-name .flair.mod-pop::BEFORE,
-.community-plugin-item:hover .community-plugin-downloads::BEFORE,
-.community-plugin-item:hover .community-plugin-downloads-text,
-.community-plugin-item:hover .community-plugin-desc {
-	opacity: 0.7;
-}
-
-.community-plugin-item:hover .community-plugin-author {
-	color: var(--text-faint);
-}
-
 /* plugin info */
 .community-plugin-info {
+	background-color: var(--bg1);
 	padding: 10px 5px 10px 15px;
-	border-left: var(--muted-border);
+	border-left: var(--thick-muted-border);
+	border-top-right-radius: calc(var(--roundish) * 2.5);
+	border-bottom-right-radius: calc(var(--roundish) * 2.5);
 }
 
 .community-plugin-info .community-plugin-name {
@@ -2539,6 +2595,7 @@ body .workspace-leaf-resize-handle:active {
 /* ─────────────────────────────────────────────────── */
 
 .modal.mod-community-theme {
+	background-color: var(--bg2);
 	padding-top: 0;
 	padding-bottom: 0;
 }
@@ -2572,6 +2629,10 @@ body:not(.less-heading-letter-spacing) .modal.mod-community-theme .modal-title {
 	font-style: italic;
 }
 
+.community-theme {
+	background: var(--bg3);
+}
+
 .community-theme-remove-button svg {
 	color: var(--text-muted) !important;
 }
@@ -2582,14 +2643,10 @@ body:not(.less-heading-letter-spacing) .modal.mod-community-theme .modal-title {
 
 /* greyed out "selected" button */
 .community-theme.is-selected button:first-child {
-	color: var(--text-faint);
-}
-
-.community-theme.is-selected button:first-child:hover {
 	color: var(--text-faint) !important;
-	background-color: var(--bg4) !important;
+	background-color: var(--bg3) !important;
 	cursor: not-allowed;
-	border-color: var(--interactive-border) !important;
+	border-color: var(--bg1) !important;
 }
 
 .modal.mod-community-theme .community-plugin-downloads-text::BEFORE {
@@ -2757,7 +2814,7 @@ body.colored-yaml .cm-s-obsidian .cm-hmd-frontmatter.cm-string {
 /* <<< Metadata Block */
 .markdown-preview-view .frontmatter-container {
 	color: var(--extra-contrast);
-	background: var(--bg3);
+	background: var(--bg2);
 	border: var(--basic-border);
 	border-radius: var(--roundish);
 	font-size: 1em;
@@ -2792,7 +2849,7 @@ body.colored-yaml .cm-s-obsidian .cm-hmd-frontmatter.cm-string {
 
 .frontmatter-section-tags > a.tag:hover {
 	color: var(--alt-accent) !important;
-	background: var(--bg4);
+	background: var(--bg3);
 	text-decoration: none !important;
 }
 
@@ -2880,7 +2937,7 @@ progress {
 }
 
 progress::-WEBKIT-PROGRESS-BAR {
-	background: var(--bg4);
+	background: var(--bg3);
 	border: var(--thin-border);
 	border-radius: calc(var(--roundish) * 3);
 }
@@ -3269,7 +3326,7 @@ body:not(.no-active-line-highlighting) .CodeMirror-activeline .HyperMD-header.Hy
 }
 
 .markdown-preview-view h6 {
-	background-color: var(--bg3);
+	background-color: var(--bg2);
 }
 
 .HyperMD-header.HyperMD-header-6.CodeMirror-line,
@@ -3454,7 +3511,7 @@ body > .app-container table > tbody > tr > td:first-child {
 
 /* background */
 thead {
-	background-color: var(--bg4);
+	background-color: var(--bg3);
 	font-weight: 900;
 }
 
@@ -3492,6 +3549,7 @@ body.no-alternating-rows > .app-container table > tbody > tr > td {
 
 /* Code blocks Preview Mode */
 .markdown-preview-view pre {
+	background-color: var(--bg2) !important;
 	padding-top: 10px !important;
 	padding-bottom: 12px !important;
 	border-radius: calc(var(--roundish) * 2) !important;
@@ -3499,7 +3557,7 @@ body.no-alternating-rows > .app-container table > tbody > tr > td {
 
 /* code blocks Edit Mode */
 body > .app-container .HyperMD-codeblock-begin-bg {
-	background-color: var(--bg3);
+	background-color: var(--bg2);
 	border-top-right-radius: calc(var(--roundish) * 2);
 	border-top-left-radius: calc(var(--roundish) * 2);
 }
@@ -3572,6 +3630,7 @@ https://forum.obsidian.md/t/inline-code-occludes-text-selection-and-vim-cursor/1
 /* copy code button */
 
 button.copy-code-button {
+	z-index: 100;
 	padding-right: 1px !important;
 	padding-bottom: 2px;
 	padding-left: 8px !important;
@@ -3579,6 +3638,7 @@ button.copy-code-button {
 }
 
 button.copy-code-button:not(:hover) {
+	color: var(--extra-contrast) !important;
 	background-color: var(--bg3) !important;
 }
 
@@ -4051,7 +4111,7 @@ em > del {
 .CodeMirror-activeline > .CodeMirror-line .cm-em.cm-strikethrough,
 em > del:hover,
 .cm-em.cm-strikethrough:hover {
-	background-color: var(--bg4) !important;
+	background-color: var(--bg3) !important;
 	transition: 400ms ease-in-out;
 }
 
@@ -4122,10 +4182,10 @@ span.cm-link.cm-hmd-footnote {
 /* << Horizontal line (hr) */
 /* ─────────────────────────────────────────────────── */
 
-/* increased redability in edit mode */
+/* increased readability in edit mode */
 .cm-s-obsidian span.cm-hr {
 	color: var(--text-muted);
-	letter-spacing: 0.12em;
+	letter-spacing: 0.1em;
 }
 
 /* increased readability in preview mode */
@@ -4155,7 +4215,7 @@ body.is-mobile .markdown-preview-view blockquote {
 
 .mobile-option-setting-item > span:hover > svg {
 	color: var(--editor-alt-accent) !important;
-	background-color: var(--bg3);
+	background-color: var(--bg2);
 	opacity: 1;
 }
 
@@ -4727,7 +4787,7 @@ body:not(.show-starred-nav-buttons) .workspace-leaf-content[data-type="starred"]
 	height: var(--popover-size) !important;
 	max-height: unset !important;
 	width: var(--popover-size) !important;
-	border: 5px solid var(--bg3) !important;
+	border: 5px solid var(--bg2) !important;
 	border-radius: calc(var(--roundish) * 2);
 }
 
@@ -4878,7 +4938,7 @@ body:not(.show-graph-controls) .graph-controls.is-close:not(:hover) {
 
 .graph-controls-button:hover {
 	color: var(--alt-accent);
-	background-color: var(--bg3);
+	background-color: var(--bg2);
 }
 
 .graph-controls-button:active {
@@ -5005,7 +5065,7 @@ body:not(.show-graph-controls) .graph-controls.is-close:not(:hover) {
 }
 
 .workspace-leaf-content[data-type="git-view"] .view-content .file-view main:hover {
-	background: var(--bg4);
+	background: var(--bg3);
 }
 
 .workspace-leaf-content[data-type="git-view"] .tools .buttons > div:hover {
@@ -5054,7 +5114,7 @@ body:not(.show-graph-controls) .graph-controls.is-close:not(:hover) {
 }
 
 .workspace-leaf-content[data-type="calendar"] .arrows {
-	background-color: var(--bg4) !important;
+	background-color: var(--bg3) !important;
 }
 
 .workspace-leaf-content[data-type="calendar"] .nav {
@@ -5186,7 +5246,7 @@ body .workspace-leaf-content[data-type="kanban"] .view-header {
 
 body .workspace-leaf-content[data-type="kanban"] .view-header:focus-within,
 body .workspace-leaf-content[data-type="kanban"] .view-header:hover {
-	background-color: var(--bg3) !important;
+	background-color: var(--bg2) !important;
 	background-image: unset;
 }
 
@@ -5231,7 +5291,7 @@ body .kanban-plugin ul {
 }
 
 textarea.kanban-plugin__item-input {
-	background-color: var(--bg4);
+	background-color: var(--bg3);
 	font-family: var(--default-font) !important;
 	font-size: 0.95em !important;
 	letter-spacing: -0.3px;
@@ -5474,7 +5534,7 @@ div.new-scene-container input#new-scene {
 
 .svelte-htpziy.selected {
 	color: var(--text-accent) !important;
-	background-color: var(--bg4) !important;
+	background-color: var(--bg3) !important;
 }
 
 .svelte-htpziy:hover {
@@ -5484,7 +5544,7 @@ div.new-scene-container input#new-scene {
 
 .svelte-htpziy.selected:hover {
 	color: var(--alt-accent) !important;
-	background-color: var(--bg4) !important;
+	background-color: var(--bg3) !important;
 }
 
 .svelte-htpziy {
@@ -5533,7 +5593,7 @@ div.new-scene-container input#new-scene {
 
 /* container */
 #project-picker.svelte-23avsr {
-	background-color: var(--bg4);
+	background-color: var(--bg3);
 
 	padding: 5px 0 5px 1px;
 	margin-top: 0;
@@ -5725,7 +5785,7 @@ body:not(.show-title-bar) > .qe-popup-menu {
 
 .menu.qe-popup-menu .menu-item:hover,
 .menu.qe-popup-menu .menu-item.selected {
-	background-color: var(--bg4) !important;
+	background-color: var(--bg3) !important;
 }
 
 /* icons */
@@ -5780,7 +5840,7 @@ button.MySnippetsButton:hover path {
 }
 
 button.MS-OpenSnippet {
-	background-color: var(--bg4) !important;
+	background-color: var(--bg3) !important;
 }
 
 button.MS-OpenSnippet svg.ms-snippet path {
@@ -6034,7 +6094,7 @@ body > .app-container div.BC-trail {
 
 div.BC-trail {
 	color: var(--extra-contrast);
-	background-color: var(--bg3);
+	background-color: var(--bg2);
 
 	padding-right: 10px;
 	padding-left: 10px;
@@ -6129,7 +6189,7 @@ body #block-ref-hover.show:hover {
 
 .workspace-leaf-content[data-type="Saved Queries View"] .savedQ-view-q:hover {
 	color: var(--alt-accent);
-	background-color: var(--bg4) !important;
+	background-color: var(--bg3) !important;
 	border-radius: var(--roundish);
 }
 
@@ -6165,7 +6225,7 @@ pre button.copy {
 	right: 7px;
 
 	color: var(--extra-contrast);
-	background-color: var(--bg4);
+	background-color: var(--bg3);
 
 	padding: 6px 6px 4px 8px;
 	margin: 0;
@@ -6288,6 +6348,7 @@ pre button.copy:hover::BEFORE {
 	padding-top: 0;
 	margin-top: 22px !important;
 	margin-bottom: 12px !important;
+	border-top: none;
 }
 
 .style-settings-container .checkbox-container {
@@ -6318,6 +6379,37 @@ pre button.copy:hover::BEFORE {
 
 .style-settings-heading .setting-item-name:hover {
 	color: var(--editor-alt-accent);
+}
+
+/* styled import/export like buttons */
+.style-settings-import,
+.style-settings-export {
+	color: var(--button-text);
+	background-color: var(--button-bg);
+
+	transition: var(--toggle-duration);
+
+	padding: 6px 12px;
+	margin-right: 0 !important;
+	margin-left: 12px;
+
+	border: 2px solid var(--interactive-border);
+	border-radius: var(--round);
+
+	font-family: var(--button-font);
+	font-size: 0.85em;
+	font-weight: 900;
+	line-height: 1.3em;
+	letter-spacing: 0.5px;
+	text-decoration: none;
+}
+
+body a.style-settings-import:hover,
+body a.style-settings-export:hover {
+	color: var(--button-hover-text) !important;
+	background-color: var(--button-hover-bg);
+	transition: var(--toggle-duration);
+	border-color: var(--interactive-hover-border);
 }
 
 /* remove buggy export button for certain blocks */
@@ -6584,6 +6676,31 @@ settings:
 	 description: The two buttons to star the current file and the current search.
 	 default: false
   -
+	 id: brightness-settings
+	 title: 🆕 Brightness
+	 description: Overall Brightness of the Theme
+	 type: heading
+	 level: 2
+	 collapsed: true
+  -
+	 id: brightness-dark
+	 title: 🌒 Dark Mode Brightness
+	 type: variable-number-slider
+	 default: 5
+	 min: 0
+	 max: 10
+	 step: 1
+	 format: '%'
+  -
+	 id: brightness-light
+	 title: ☀️ Light Mode Brightness
+	 type: variable-number-slider
+	 default: 5
+	 min: 0
+	 max: 10
+	 step: 1
+	 format: '%'
+  -
 	 id: aesthetics
 	 title: Aesthetics
 	 description: Shapes, Color Schemes (coming soon), Cursor, & Decoration
@@ -6592,7 +6709,7 @@ settings:
 	 collapsed: true
   -
 	 id: angular-shapes
-	 title: ❇️ Angular Shapes
+	 title: 🔲 🔘 Shapes
 	 type: class-toggle
 	 description: Enable to use angular shapes (🔲). Disable to use rounded shapes (🔘).
 	 default: false
@@ -6610,20 +6727,19 @@ settings:
 	 default: false
   -
 	 id: quotation-mark-deco
-	 title: Decorative Quotation Mark
+	 title: "Block Quote: Decorative Quotation Mark"
 	 description: Show a decorative quotation mark next to blockquotes in Preview Mode (no Live Preview yet).
 	 type: class-toggle
-	 hub: ignore
 	 default: false
   -
 	 id: normal-checkboxes
-	 title: Normal Checkboxes
+	 title: "Menus: Normal Checkboxes"
 	 description: Use the checkboxes from the default theme.
 	 type: class-toggle
 	 default: false
   -
 	 id: colored-yaml
-	 title: Colored YAML
+	 title: "YAML: Coloring"
 	 description: Use colored YAML frontmatter (in Edit Mode).
 	 type: class-toggle
 	 default: false

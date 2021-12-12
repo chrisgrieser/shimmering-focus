@@ -1,4 +1,4 @@
-- 2021-12-12	minor
+- 2021-12-12	☀️🌒 New Style Setting: Theme Brightness
 - 2021-12-12	code block background
 - 2021-12-12	fix gutter color in cm6
 - 2021-12-12	live preview issue thread info
