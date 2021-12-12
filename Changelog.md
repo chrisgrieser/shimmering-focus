@@ -1,3 +1,4 @@
+- 2021-12-12	notice colors
 - 2021-12-12	hotfix tab icons
 - 2021-12-12	groundwork for color style settings
 - 2021-12-12	color variable refactoring

@@ -1,6 +1,6 @@
 /* ──────────────────────────────────────────────────────
 SHIMMERING FOCUS
-Version 1.289
+Version 1.290
 https://github.com/chrisgrieser/shimmering-focus/
 Created by @pseudometa
 MIT License
@@ -244,6 +244,11 @@ This ToC is auto-generated via the .create-ToC.sh
 /* ─────────────────────────────────────────────────── */
 /* << Backgrounds */
 /* ─────────────────────────────────────────────────── */
+
+:root {
+	--notice-bg: hsl(0 0% 60%);
+	--notice-text: hsl(0 0% 98%);
+}
 
 .theme-light {
 	--bg1: hsl(220 0% 96%);
@@ -965,8 +970,9 @@ body:not(.show-titlebar) > div.notice-container {
 	top: 0;
 }
 
-body > div.notice-container .notice {
-	color: var(--interactive-normal);
+div.notice-container .notice {
+	color: var(--notice-text);
+	background-color: var(--notice-bg);
 	box-shadow: var(--small-shadow);
 
 	padding: 4px 10px 6px;
@@ -975,14 +981,6 @@ body > div.notice-container .notice {
 	border-radius: var(--roundish);
 
 	font-size: 0.85em;
-}
-
-.theme-light > div.notice-container .notice {
-	background-color: var(--text-faint);
-}
-
-.theme-dark > div.notice-container .notice {
-	background-color: var(--text-muted);
 }
 
 body > div.notice-container .notice:hover {
@@ -5359,7 +5357,7 @@ body.angular-shapes .kanban-plugin__lane {
 	margin-left: 0 !important;
 
 	/* horizontal border between sections */
-	border-bottom: var(--muted-border) !important;
+	border-bottom: var(--basic-border) !important;
 }
 
 .tab-panel-container.svelte-11pvpwl {
@@ -5439,15 +5437,14 @@ body.angular-shapes .kanban-plugin__lane {
 }
 
 /* new scene/draft field */
-.svelte-1lq63fp,
-.svelte-1wkli4h {
-	padding-left: 3px !important;
+div.new-scene-container input#new-scene {
+	padding-left: 3px;
 }
 
 /* <<< Longform Sidebar Icons */
 .svelte-htpziy::BEFORE {
 	font-family: "Material Icons";
-	font-size: 1.5rem;
+	font-size: 1.1rem;
 	vertical-align: top;
 }
 
@@ -5482,10 +5479,10 @@ body.angular-shapes .kanban-plugin__lane {
 	color: var(--extra-contrast) !important;
 	background-color: var(--bg1) !important;
 
-	padding: 5px 15px 6px;
-	margin-right: 4px !important;
+	padding: 4px 9px 5px 14px !important;
+	margin-right: 6px !important;
 
-	border: 2px solid var(--text-faint) !important;
+	border: var(--basic-border) !important;
 	border-bottom: none !important;
 	border-top-right-radius: 6px !important;
 	border-top-left-radius: 6px !important;
@@ -5496,7 +5493,7 @@ body.angular-shapes .kanban-plugin__lane {
 .new-draft-container.svelte-1wkli4h,
 .new-scene-container.svelte-1lq63fp,
 .compile-container.svelte-1vu6mjk {
-	border-top: 3px solid var(--text-faint) !important;
+	border-top: var(--basic-border) !important;
 }
 
 /* Compile */
@@ -5530,7 +5527,7 @@ body.angular-shapes .kanban-plugin__lane {
 	margin-top: 0;
 	margin-bottom: 0;
 
-	border: 2.5px solid var(--text-faint);
+	border: var(--basic-border);
 	border-radius: 4px;
 
 	font-size: 0.8em;
