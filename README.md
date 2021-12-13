@@ -30,6 +30,8 @@ A minimalistic [Obsidian](https://obsidian.md/) theme focused on readability and
   - [Instructions for specific Plugins](#instructions-for-specific-plugins)
 - [Installation](#installation)
 - [Contribute](#contribute)
+  - [Translation of Style Settings](#translation-of-style-settings)
+  - [Plugins & Features](#plugins--features)
 - [Credits](#credits)
   - [About the Developer](#about-the-developer)
   - [Donations](#donations)
@@ -166,7 +168,12 @@ In accordance with the minimalistic philosophy of the theme, unnecessary UI elem
 You can find *Shimmering Focus* in Obsidian's community themes browser under `Obsidian Settings ➞ Appearance ➞ Themes ➞ Manage`.
 
 ## Contribute
-Pull requests are welcome, especially for plugins or features I haven't implemented since I do not use them myself.
+
+### Translation of Style Settings
+Very welcome are [localizations of Style Settings Plugins](https://github.com/mgmeyers/obsidian-style-settings#localization-support), so the theme is more accessible to non-English speakers! This requires no knowledge of CSS. The style settings are at the very bottom of the theme.
+
+### Plugins & Features
+Pull requests for plugins or features I haven't implemented are also welcome. If they are bigger changes, feel free to check with be beforehand!
 
 - Try to follow the [design philosophy](#design-principles) of the theme.
 - All sections have a `< ` as prefix for quicker navigation. This means you can search for `< font` to navigate to the font section.
