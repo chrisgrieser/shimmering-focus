@@ -1,4 +1,4 @@
-- 2021-12-13	minor
+- 2021-12-13	color variable refactoring
 - 2021-12-13	indent option for longform
 - 2021-12-13	color adjustments
 - 2021-12-13	color tweaks
@@ -12,7 +12,6 @@
 - 2021-12-12	notice colors
 - 2021-12-12	hotfix tab icons
 - 2021-12-12	groundwork for color style settings
-- 2021-12-12	color variable refactoring
 - 2021-12-12	kanban fixes
 - 2021-12-11	kanban minor things
 - 2021-12-11	grpah icon
@@ -30,14 +29,12 @@
 - 2021-12-09	fix for favicon plugin
 - 2021-12-09	hotfix buttons
 - 2021-12-09	better button color
-- 2021-12-09	refactoring & consistent color for buttons
 - 2021-12-09	hotkey settings
 - 2021-12-08	notices and shadows
 - 2021-12-08	kanban checkbox alignment
 - 2021-12-08	changes for favicon plugin update
 - 2021-12-08	search button fix
 - 2021-12-08	fix notices in light mode
-- 2021-12-07	refactoring
 - 2021-12-07	fix editor suggestions + more box shadows
 - 2021-12-07	update for info plugin
 - 2021-12-07	soem value fine-tuning

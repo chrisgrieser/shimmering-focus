@@ -6,8 +6,8 @@
 		"stylelint-declaration-block-no-ignored-properties"
 	],
 
-	"reportNeedlessDisables": true,
-	"reportInvalidScopeDisables": true,
+	"reportNeedlessDisables": [true, {"severity": "warning"}],
+	"reportInvalidScopeDisables": [true, {"severity": "warning"}],
 
 	"ignoreFiles": ["**/Downloads/*.css"],
 

@@ -1,6 +1,6 @@
 /* ──────────────────────────────────────────────────────
 SHIMMERING FOCUS
-Version 1.299
+Version 1.300
 https://github.com/chrisgrieser/shimmering-focus/
 Created by @pseudometa
 MIT License
@@ -147,8 +147,8 @@ This ToC is auto-generated via the .create-ToC.sh
 	- Favicon Plugin
 	- Info Plugin
 	- Language Tool Integration
+	- Hotkey Helper
 	- Other Minor Plugin Customizations
-		- Hotkey Helper
 		- Zoom
 		- Advanced Tables
 - Plugin Compatibility Info for the Obsidian Hub
@@ -198,9 +198,7 @@ This ToC is auto-generated via the .create-ToC.sh
 	--interactive-hover-border: var(--alt-accent);
 	--interactive-border: var(--accent-lighter);
 
-	--longform-background: hsl(30 30% 98%);
 	--finished-task: var(--accent-lighter);
-
 	--spell-error-color: hsl(227 100% 72%);
 	--cursor-duo-color-1: var(--alt-accent-lightest);
 	--cursor-duo-color-2: var(--accent-lightest);
@@ -225,9 +223,7 @@ This ToC is auto-generated via the .create-ToC.sh
 	--interactive-hover-border: var(--alt-accent-lighter);
 	--interactive-border: var(--text-accent);
 
-	--longform-background: hsl(226 18% 13%);
 	--finished-task: var(--text-accent);
-
 	--spell-error-color: hsl(0 66% 64%);
 	--cursor-duo-color-1: var(--alt-accent-lighter);
 	--cursor-duo-color-2: var(--accent-lighter);
@@ -245,6 +241,11 @@ This ToC is auto-generated via the .create-ToC.sh
 /* ─────────────────────────────────────────────────── */
 
 :root {
+	/* temporary variables till more color stuff is implemented */
+	--dark-sat: 0%;
+	--light-sat: 10%;
+	--base-hue: 220;
+
 	--brightness-light: 5%;
 	--brightness-dark: 5%;
 	--b-light-1: 92%;
@@ -253,35 +254,31 @@ This ToC is auto-generated via the .create-ToC.sh
 	--b-dark-1: 11%;
 	--b-dark-2: 7%;
 	--b-dark-3: 0%;
-
-	/* temporary variable till more color stuff is implemented */
-	--blue-tint: 0%;
-	--base-hue: 220;
 }
 
 .theme-light {
-	--bg1: hsl(var(--base-hue) 10% calc(var(--brightness-light) + var(--b-light-1)));
-	--bg2: hsl(var(--base-hue) 10% calc(var(--brightness-light) + var(--b-light-2)));
-	--bg3: hsl(var(--base-hue) 10% calc(var(--brightness-light) + var(--b-light-3)));
-	--resize-handle: hsl(var(--base-hue) 10% calc(var(--brightness-light) + calc(var(--b-light-2) - 1%)));
-	--suggester-b-row: hsl(var(--base-hue) var(--blue-tint) calc(var(--brightness-dark) + calc(var(--b-light-1) - 2%)));
+	--bg1: hsl(var(--base-hue) var(--light-sat) calc(var(--brightness-light) + var(--b-light-1)));
+	--bg2: hsl(var(--base-hue) var(--light-sat) calc(var(--brightness-light) + var(--b-light-2)));
+	--bg3: hsl(var(--base-hue) var(--light-sat) calc(var(--brightness-light) + var(--b-light-3)));
+	--resize-handle: hsl(var(--base-hue) var(--light-sat) calc(var(--brightness-light) + var(--b-light-2) - 1%));
+	--suggester-b-row: hsl(var(--base-hue) var(--light-sat) calc(var(--brightness-light) + var(--b-light-1) - 5%));
 
-	--muted-border-color: hsl(var(--base-hue) 0% calc(var(--brightness-light) + calc(var(--b-light-3) + 3%)));
-	--basic-border-color: hsl(var(--base-hue) 0% calc(var(--brightness-light) + 65%));
-	--backdrop-color: hsl(var(--base-hue) 15% calc(var(--brightness-light) + 75%));
+	--muted-border-color: hsl(var(--base-hue) calc(var(--light-sat) / 2) calc(var(--brightness-light) + var(--b-light-3) + 3%));
+	--basic-border-color: hsl(var(--base-hue) calc(var(--light-sat) / 2) calc(var(--brightness-light) + var(--b-light-3) - 15%));
+	--backdrop-color: hsl(var(--base-hue) calc(var(--light-sat) * 2) calc(var(--brightness-light) + var(--b-light-2) - 20%));
 	--input-background: var(--bg1);
 }
 
 .theme-dark {
-	--bg1: hsl(var(--base-hue) var(--blue-tint) calc(var(--brightness-dark) + var(--b-dark-1)));
-	--bg2: hsl(var(--base-hue) var(--blue-tint) calc(var(--brightness-dark) + var(--b-dark-2)));
-	--bg3: hsl(var(--base-hue) var(--blue-tint) calc(var(--brightness-dark) + var(--b-dark-3)));
-	--resize-handle: hsl(var(--base-hue) var(--blue-tint) calc(var(--brightness-dark) + calc(var(--b-dark-2) - 1%)));
-	--suggester-b-row: hsl(var(--base-hue) var(--blue-tint) calc(var(--brightness-dark) + calc(var(--b-dark-1) - 2%)));
+	--bg1: hsl(var(--base-hue) var(--dark-sat) calc(var(--brightness-dark) + var(--b-dark-1)));
+	--bg2: hsl(var(--base-hue) var(--dark-sat) calc(var(--brightness-dark) + var(--b-dark-2)));
+	--bg3: hsl(var(--base-hue) var(--dark-sat) calc(var(--brightness-dark) + var(--b-dark-3)));
+	--resize-handle: hsl(var(--base-hue) var(--dark-sat) calc(var(--brightness-dark) + var(--b-dark-2) - 1%));
+	--suggester-b-row: hsl(var(--base-hue) var(--dark-sat) calc(var(--brightness-dark) + var(--b-dark-1) - 2%));
 
-	--muted-border-color: hsl(var(--base-hue) calc(var(--blue-tint) / 2) calc(var(--brightness-dark) + calc(var(--b-dark-1) - 2%)));
-	--basic-border-color: hsl(var(--base-hue) calc(var(--blue-tint) / 2) calc(var(--brightness-dark) + 35%));
-	--backdrop-color: hsl(var(--base-hue) calc(var(--blue-tint) * 2) calc(var(--brightness-dark) + 8%));
+	--muted-border-color: hsl(var(--base-hue) calc(var(--dark-sat) / 2) calc(var(--brightness-dark) + var(--b-dark-1) - 2%));
+	--basic-border-color: hsl(var(--base-hue) calc(var(--dark-sat) / 2) calc(var(--brightness-dark) + var(--b-dark-1) + 30%));
+	--backdrop-color: hsl(var(--base-hue) calc(var(--dark-sat) * 2) calc(var(--brightness-dark) + var(--b-dark-2) + 2%));
 	--input-background: var(--bg3);
 }
 
@@ -5662,7 +5659,7 @@ body:not(.longform-left-aligned) .longform-leaf .cm-s-obsidian {
 }
 
 body:not(.longform-no-text-indent) .longform-leaf .markdown-preview-view p {
-	text-indent: 1em;
+	text-indent: 2em;
 }
 
 /* keep any code smaller though */
@@ -6544,10 +6541,9 @@ body div.get-info-menu > div > div {
 }
 
 /* ─────────────────────────────────────────────────── */
-/* << Other Minor Plugin Customizations */
+/* << Hotkey Helper */
 /* ─────────────────────────────────────────────────── */
 
-/* <<< Hotkey Helper */
 /* alignment of new buttons in core plugin list */
 body.angular-shapes .plugin-list-plugins .setting-item:not(.mod-toggle):not(:first-child) .setting-item-control {
 	margin-right: 39px;
@@ -6556,6 +6552,10 @@ body.angular-shapes .plugin-list-plugins .setting-item:not(.mod-toggle):not(:fir
 body:not(.angular-shapes) .plugin-list-plugins .setting-item:not(.mod-toggle):not(:first-child) .setting-item-control {
 	margin-right: 42px;
 }
+
+/* ─────────────────────────────────────────────────── */
+/* << Other Minor Plugin Customizations */
+/* ─────────────────────────────────────────────────── */
 
 /* <<< Zoom */
 a.zoom-plugin-title:hover {
@@ -6741,7 +6741,7 @@ settings:
 	 description: Enable to use angular shapes (🔲). Disable to use rounded shapes (🔘).
 	 default: false
   -
-	 id: blue-tint
+	 id: dark-sat
 	 title: "🚧 Experimental: Blue Tint in Dark Mode"
 	 description: Amount of faint blue in Dark Mode. (Testing Ground for upcoming color scheme options.)
 	 type: variable-number-slider
