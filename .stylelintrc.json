@@ -43,6 +43,10 @@
 						"width",
 						"max-width",
 						"min-width",
+						"backdrop-position",
+						"background-position-y",
+						"background-position-x",
+						"backdrop-size",
 						"resize"
 					]
 				},
@@ -60,7 +64,7 @@
 					]
 				},
 				{
-					"groupName": "Color",
+					"groupName": "Color & Background",
 					"emptyLineBefore": "threshold",
 					"noEmptyLineBetween": true,
 					"properties": [
@@ -71,6 +75,7 @@
 						"background-color",
 						"background-image",
 						"backdrop-filter",
+						"backdrop-repeat",
 						"box-shadow",
 						"opacity"
 					]

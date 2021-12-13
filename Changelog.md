@@ -1,4 +1,4 @@
-- 2021-12-13	color variable refactoring
+- 2021-12-13	minor
 - 2021-12-13	indent option for longform
 - 2021-12-13	color adjustments
 - 2021-12-13	color tweaks
