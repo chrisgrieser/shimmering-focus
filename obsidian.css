@@ -1,6 +1,6 @@
 /* ──────────────────────────────────────────────────────
 SHIMMERING FOCUS
-Version 1.298
+Version 1.299
 https://github.com/chrisgrieser/shimmering-focus/
 Created by @pseudometa
 MIT License
@@ -7017,13 +7017,13 @@ settings:
 	 default: false
   -
 	 id: no-strikethrough-spellcheck
-	 title: No Spellcheck in strikethroughs
+	 title: No Spellcheck in Strikethroughs
 	 description: Turn off Spellcheck in any text enclosed by the strikethrough syntax (~~foobar~~).
 	 type: class-toggle
 	 default: false
   -
 	 id: no-comment-spellcheck
-	 title: No Spellcheck in comments
+	 title: No Spellcheck in Comments
 	 description: Turn off Spellcheck in comments (%%comments%% as well as <!--comments-->).
 	 type: class-toggle
 	 default: false
@@ -7042,7 +7042,7 @@ settings:
 	 collapsed: true
   -
 	 id: longform-font
-	 title: Main Font for Longform Notes
+	 title: Main Font
 	 description: Font used in folders marked as Longform Project
 	 type: variable-text
 	 default: '"Crimson Pro"'
@@ -7057,26 +7057,26 @@ settings:
 	 format: em
   -
 	 id: longform-left-aligned
-	 title: Left-aligned text in Longform notes
-	 description: Use left-aligned instead of justified text.
+	 title: Left-aligned text
+	 description: Use left-aligned text instead of justified text.
 	 type: class-toggle
 	 default: false
   -
 	 id: longform-no-text-indent
-	 title: First-Line Indent in Longform notes
-	 description: Indent first Line of text in Longform notes (Preview Mode)
+	 title: First-Line Indent (Preview Mode)
+	 description: Indent the first Line of a paragraph in longform notes (only in preview mode).
 	 type: class-toggle
 	 default: false
   -
 	 id: longform-no-bg
-	 title: No Background Color for Longform Notes
+	 title: No Background Coloring
 	 description: Turn off the slight coloring of longform notes.
 	 type: class-toggle
 	 default: false
   -
 	 id: hide-index-files
 	 title: Hide files named "Index.md" from File Explorer
-	 description: Files named that way are created by some plugins like the Longform Plugin and in many cases should not be touched.
+	 description: Files named that way are created by some plugins like the Longform Plugin and in many cases should not be changed.
 	 type: class-toggle
 	 default: false
   -
