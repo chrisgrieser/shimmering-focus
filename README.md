@@ -23,7 +23,7 @@ A minimalistic [Obsidian](https://obsidian.md/) theme focused on readability and
   - [Extreme Minimalism](#extreme-minimalism)
   - [Condensed Display of Information](#condensed-display-of-information)
   - [Maximum Readability & Scannability](#maximum-readability--scannability)
-  - [Subtle Design](#subtle-design)
+  - [Subtle, Customizable Design](#subtle-customizable-design)
 - [Customization](#customization)
 - [Plugin Compatibility](#plugin-compatibility)
   - [List of Compatible Plugins](#list-of-compatible-plugins)
@@ -133,9 +133,9 @@ Using the [Style Settings Plugin](https://github.com/mgmeyers/obsidian-style-set
 
 <img src="https://user-images.githubusercontent.com/73286100/144147616-59ba2513-78cc-4143-91e5-c222bc307bd9.gif" alt="Screen Recording 2021-12-01 at 00 51 21a" width=60%>
 
-### Subtle Design
-- Stylistically, the theme pretty much follows Obsidian's default color theme, with mostly subtle changes – like the eponymous shimmering green as secondary accent. 
-- You change between angular (🔲) or roundish (🔘) shapes with the Style Settings Plugin.
+### Subtle, Customizable Design
+- Color-wise, the theme pretty much follows Obsidian's default color scheme, with mostly subtle changes – like the eponymous shimmering green as secondary accent. 
+- You can customize the shapes (angular 🔲 or roundish 🔘) and the brightness of the theme with the [Style Settings Plugin](https://github.com/mgmeyers/obsidian-style-settings/).
 
 <img src="https://user-images.githubusercontent.com/73286100/144433250-9549dfdc-f04e-48a7-8df2-0b0cd7755c1a.gif" alt="Screen Recording 2021-12-02 at 14 34 37" width=60%>
 
