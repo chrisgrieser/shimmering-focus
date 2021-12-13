@@ -6,12 +6,20 @@
 		"stylelint-declaration-block-no-ignored-properties"
 	],
 
+	"reportNeedlessDisables": true,
+	"reportInvalidScopeDisables": true,
+
+	"ignoreFiles": ["**/Downloads/*.css"],
+
 	"rules": {
 		"font-family-no-missing-generic-family-keyword": null,
 		"no-descending-specificity": null,
 
 		"plugin/declaration-block-no-ignored-properties": true,
-		"order/order": [["declarations", "custom-properties"], {"severity": "warning"}],
+		"order/order": [
+			["declarations", "custom-properties"],
+			{"severity": "warning"}
+		],
 
 		"order/properties-order": [
 			[

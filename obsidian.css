@@ -1,6 +1,6 @@
 /* ──────────────────────────────────────────────────────
 SHIMMERING FOCUS
-Version 1.295
+Version 1.296
 https://github.com/chrisgrieser/shimmering-focus/
 Created by @pseudometa
 MIT License
@@ -253,23 +253,27 @@ This ToC is auto-generated via the .create-ToC.sh
 }
 
 .theme-light {
-	--bg1: hsl(220 10% calc(var(--brightness-light) + 90%));
-	--bg2: hsl(220 10% calc(var(--brightness-light) + 84%));
-	--bg2a: hsl(220 10% calc(var(--brightness-light) + 83%));
-	--bg3: hsl(220 10% calc(var(--brightness-light) + 77%));
+	--bg1: hsl(220 10% calc(var(--brightness-light) + 92%));
+	--bg2: hsl(220 10% calc(var(--brightness-light) + 87%));
+	--bg2a: hsl(220 10% calc(var(--brightness-light) + 86%));
+	--bg3: hsl(220 10% calc(var(--brightness-light) + 81%));
+
 	--muted-border-color: hsl(0 0% calc(var(--brightness-light) + 75%));
 	--basic-border-color: hsl(0 0% calc(var(--brightness-light) + 65%));
-	--backdrop-color: hsl(220 20% calc(var(--brightness-light) + 70%));
+	--backdrop-color: hsl(220 15% calc(var(--brightness-light) + 75%));
+	--input-background: var(--bg1);
 }
 
 .theme-dark {
-	--bg1: hsl(220 var(--blue-tint) calc(var(--brightness-dark) + 10%));
-	--bg2: hsl(220 var(--blue-tint) calc(var(--brightness-dark) + 6%));
-	--bg2a: hsl(220 var(--blue-tint) calc(var(--brightness-dark) + 5%));
-	--bg3: hsl(220 var(--blue-tint) calc(var(--brightness-dark) + 1%));
-	--muted-border-color: hsl(0 0% calc(var(--brightness-dark) + 15%));
-	--basic-border-color: hsl(0 0% calc(var(--brightness-dark) + 35%));
+	--bg1: hsl(220 var(--blue-tint) calc(var(--brightness-dark) + 11%));
+	--bg2: hsl(220 var(--blue-tint) calc(var(--brightness-dark) + 7%));
+	--bg2a: hsl(220 var(--blue-tint) calc(var(--brightness-dark) + 6%));
+	--bg3: hsl(220 var(--blue-tint) var(--brightness-dark));
+
+	--muted-border-color: hsl(220 calc(var(--blue-tint) / 2) calc(var(--brightness-dark) + 15%));
+	--basic-border-color: hsl(220 calc(var(--blue-tint) / 2) calc(var(--brightness-dark) + 35%));
 	--backdrop-color: hsl(220 calc(var(--blue-tint) * 2) calc(var(--brightness-dark) + 8%));
+	--input-background: var(--bg3);
 }
 
 .workspace-split.mod-root .view-content {
@@ -1359,6 +1363,15 @@ input[type="password"] {
 	border-radius: var(--round);
 }
 
+textarea:hover,
+input:hover,
+.search-input-container input,
+input[type="text"],
+input[type="email"],
+input[type="password"] {
+	background-color: var(--input-background) !important;
+}
+
 textarea {
 	border-radius: calc(var(--roundish) * 2);
 }
@@ -1641,17 +1654,8 @@ div.search-input-clear-button:hover::BEFORE,
 	top: 0;
 	right: 0;
 	z-index: 100;
-
 	padding: 3px 8px 6px 6px;
-
-	border-top-right-radius: var(--roundish);
 	border-bottom-left-radius: var(--roundish);
-}
-
-.mod-community-theme .modal-close-button,
-.mod-community-plugin .modal-close-button,
-.mod-settings .modal-close-button {
-	border-top-right-radius: calc(var(--roundish) * 2.5);
 }
 
 /* only show on hover */
@@ -1797,16 +1801,18 @@ body:not(.no-alternating-rows) .suggestion-item:nth-child(even) .suggestion-hotk
 /* ─────────────────────────────────────────────────── */
 
 /* ─────────────────────────────────────────────────── */
-/* << Files (in general) */
+/* << Files / Lists (in general) */
 /* ─────────────────────────────────────────────────── */
 /* apply to any plugin using file lists,
 not only file explorer */
 
+.tree-item-self.is-clickable:hover,
 .nav-file-title.is-active,
 .nav-folder-title.is-active,
 body > .app-container .nav-file-title:hover,
 body > .app-container .nav-folder-title:hover {
 	background-color: var(--bg3);
+	border-radius: var(--roundish);
 }
 
 /* ─────────────────────────────────────────────────── */
@@ -2143,7 +2149,6 @@ body .workspace-leaf-resize-handle:active {
 }
 
 .vertical-tab-header-group {
-	background-color: var(--bg3);
 	padding-top: 0;
 	padding-bottom: 0;
 	margin-top: 0;
@@ -2152,9 +2157,11 @@ body .workspace-leaf-resize-handle:active {
 
 .vertical-tab-header-group-title {
 	color: var(--extra-contrast);
+	background-color: var(--bg3);
 
 	padding: 2px 5px 1px;
 	margin-top: 0;
+	margin-bottom: 5px;
 
 	border-bottom: var(--muted-border);
 
@@ -2181,8 +2188,8 @@ body .workspace-leaf-resize-handle:active {
 .vertical-tab-nav-item.is-active {
 	color: var(--text-accent);
 	background: var(--bg3);
-	padding-left: 3px;
-	margin-left: 6px;
+	padding-left: 9px;
+	margin-left: 0;
 	border-left: none;
 }
 
@@ -4518,6 +4525,10 @@ body.is-mobile .markdown-preview-view blockquote {
 	color: var(--extra-contrast);
 }
 
+.tree-item-flair {
+	background-color: var(--bg3);
+}
+
 .tree-item-inner-subtext {
 	opacity: 0.8;
 }
@@ -4788,11 +4799,15 @@ body:not(.show-starred-nav-buttons) .workspace-leaf-content[data-type="starred"]
 /* ─────────────────────────────────────────────────── */
 /* << Popover (Page Preview) */
 /* ─────────────────────────────────────────────────── */
-.popover {
+body .popover {
 	height: var(--popover-size) !important;
 	max-height: unset !important;
 	width: var(--popover-size) !important;
-	border: 5px solid var(--bg2) !important;
+
+	background-color: var(--bg1);
+	box-shadow: var(--medium-shadow);
+
+	border: var(--muted-border) !important;
 	border-radius: calc(var(--roundish) * 2);
 }
 

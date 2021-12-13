@@ -1,3 +1,5 @@
+- 2021-12-13	color tweaks
+- 2021-12-13	added contribution info to readme
 - 2021-12-13	🚧 Experimental: Blue Tint in Dark Mode
 - 2021-12-12	☀️🌒 New Style Setting: Theme Brightness
 - 2021-12-12	code block background
