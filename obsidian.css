@@ -1,6 +1,6 @@
 /* ──────────────────────────────────────────────────────
 SHIMMERING FOCUS
-Version 1.301
+Version 1.302
 https://github.com/chrisgrieser/shimmering-focus/
 Created by @pseudometa
 MIT License
@@ -242,46 +242,50 @@ This ToC is auto-generated via the .create-ToC.sh
 
 :root {
 	/* temporary variables till more color stuff is implemented */
-	--dark-sat: 0%;
+	--dark-sat: 5%;
 	--light-sat: 10%;
 	--base-hue: 220;
+	--longform-light-hue: 20;
+	--longform-dark-hue: 270;
 
 	--brightness-light: 5%;
 	--brightness-dark: 5%;
-	--b-light-1: 92%;
-	--b-light-2: 87%;
-	--b-light-3: 81%;
-	--b-dark-1: 11%;
-	--b-dark-2: 7%;
-	--b-dark-3: 0%;
+	--b-light-1: calc(var(--brightness-light) + 92%);
+	--b-light-2: calc(var(--brightness-light) + 87%);
+	--b-light-3: calc(var(--brightness-light) + 81%);
+	--b-dark-1: calc(var(--brightness-dark) + 11%);
+	--b-dark-2: calc(var(--brightness-dark) + 7%);
+	--b-dark-3: calc(var(--brightness-dark) + 1%);
 }
 
 .theme-light {
-	--bg1: hsl(var(--base-hue) var(--light-sat) calc(var(--brightness-light) + var(--b-light-1)));
-	--bg2: hsl(var(--base-hue) var(--light-sat) calc(var(--brightness-light) + var(--b-light-2)));
-	--bg3: hsl(var(--base-hue) var(--light-sat) calc(var(--brightness-light) + var(--b-light-3)));
+	--bg1: hsl(var(--base-hue) var(--light-sat) var(--b-light-1));
+	--bg2: hsl(var(--base-hue) var(--light-sat) var(--b-light-2));
+	--bg3: hsl(var(--base-hue) var(--light-sat) var(--b-light-3));
 
-	--resize-handle: hsl(var(--base-hue) var(--light-sat) calc(var(--brightness-light) + var(--b-light-2) - 1%));
-	--scrollbar: hsl(var(--base-hue) var(--dark-sat) calc(var(--brightness-light) + var(--b-light-3) - 6%));
-	--suggester-b-row: hsl(var(--base-hue) var(--light-sat) calc(var(--brightness-light) + var(--b-light-1) - 5%));
-	--muted-border-color: hsl(var(--base-hue) calc(var(--light-sat) / 2) calc(var(--brightness-light) + var(--b-light-3) + 3%));
-	--basic-border-color: hsl(var(--base-hue) calc(var(--light-sat) / 2) calc(var(--brightness-light) + var(--b-light-3) - 15%));
-	--backdrop-color: hsl(var(--base-hue) calc(var(--light-sat) * 2) calc(var(--brightness-light) + var(--b-light-2) - 20%));
+	--resize-handle: hsl(var(--base-hue) var(--light-sat) calc(var(--b-light-2) - 1%));
+	--scrollbar: hsl(var(--base-hue) var(--dark-sat) calc(var(--b-light-2) - 8%));
+	--suggester-b-row: hsl(var(--base-hue) var(--light-sat) calc(var(--b-light-1) - 5%));
+	--muted-border-color: hsl(var(--base-hue) calc(var(--light-sat) / 2) calc(var(--b-light-3) + 3%));
+	--basic-border-color: hsl(var(--base-hue) calc(var(--light-sat) / 2) calc(var(--b-light-3) - 15%));
+	--backdrop-color: hsl(var(--base-hue) calc(var(--light-sat) * 2) calc(var(--b-light-2) - 20%));
 	--input-background: var(--bg1);
+	--longform-background: hsl(var(--longform-light-hue) calc(var(--light-sat) * 1.5) calc(var(--b-light-1) - 7%));
 }
 
 .theme-dark {
-	--bg1: hsl(var(--base-hue) var(--dark-sat) calc(var(--brightness-dark) + var(--b-dark-1)));
-	--bg2: hsl(var(--base-hue) var(--dark-sat) calc(var(--brightness-dark) + var(--b-dark-2)));
-	--bg3: hsl(var(--base-hue) var(--dark-sat) calc(var(--brightness-dark) + var(--b-dark-3)));
+	--bg1: hsl(var(--base-hue) var(--dark-sat) var(--b-dark-1));
+	--bg2: hsl(var(--base-hue) var(--dark-sat) var(--b-dark-2));
+	--bg3: hsl(var(--base-hue) var(--dark-sat) var(--b-dark-3));
 
-	--resize-handle: hsl(var(--base-hue) var(--dark-sat) calc(var(--brightness-dark) + var(--b-dark-2) - 1%));
-	--scrollbar: hsl(var(--base-hue) var(--dark-sat) calc(var(--brightness-dark) + var(--b-dark-1) + 5%));
-	--suggester-b-row: hsl(var(--base-hue) var(--dark-sat) calc(var(--brightness-dark) + var(--b-dark-1) - 2%));
-	--muted-border-color: hsl(var(--base-hue) calc(var(--dark-sat) / 2) calc(var(--brightness-dark) + var(--b-dark-1) - 2%));
-	--basic-border-color: hsl(var(--base-hue) calc(var(--dark-sat) / 2) calc(var(--brightness-dark) + var(--b-dark-1) + 30%));
-	--backdrop-color: hsl(var(--base-hue) calc(var(--dark-sat) * 2) calc(var(--brightness-dark) + var(--b-dark-2) + 2%));
+	--resize-handle: hsl(var(--base-hue) var(--dark-sat) calc(var(--b-dark-2) - 1%));
+	--scrollbar: hsl(var(--base-hue) var(--dark-sat) calc(var(--b-dark-2) + 9%));
+	--suggester-b-row: hsl(var(--base-hue) var(--dark-sat) calc(var(--b-dark-1) - 2%));
+	--muted-border-color: hsl(var(--base-hue) calc(var(--dark-sat) / 2) calc(var(--b-dark-1) - 2%));
+	--basic-border-color: hsl(var(--base-hue) calc(var(--dark-sat) / 2) calc(var(--b-dark-1) + 30%));
+	--backdrop-color: hsl(var(--base-hue) calc(var(--dark-sat) * 2) calc(var(--b-dark-2) + 2%));
 	--input-background: var(--bg3);
+	--longform-background: hsl(var(--longform-dark-hue) calc(var(--dark-sat) / 1.5) calc(var(--b-dark-1) + 0%));
 }
 
 ::-WEBKIT-SCROLLBAR,
@@ -1686,11 +1690,13 @@ div.prompt {
 input.prompt-input {
 	width: unset;
 	padding-top: 7px;
+	margin-bottom: 3px;
 	border-radius: calc(var(--roundish) * 1.5);
 }
 
 div.prompt-results {
 	padding-top: 0;
+	margin-top: 5px;
 	border-bottom-right-radius: var(--roundish);
 	border-bottom-left-radius: var(--roundish);
 }
@@ -1791,6 +1797,10 @@ body:not(.no-alternating-rows) .suggestion-item:nth-child(even) .suggestion-pref
 	background-color: var(--bg1);
 	box-shadow: var(--small-shadow);
 	border: var(--thin-border);
+}
+
+.suggestion-container .suggestion,
+.suggestion-container {
 	border-radius: var(--roundish);
 }
 
@@ -3649,6 +3659,7 @@ pre[class~="language-text"]::AFTER { content: "text"; }
 pre[class~="language-url"]::AFTER { content: "url"; }
 pre[class~="language-uri"]::AFTER { content: "uri"; }
 pre[class~="language-applescript"]::AFTER { content: "AppleScript"; }
+pre[class~="language-as"]::AFTER { content: "AppleScript"; }
 
 /* fix for the buggy selection of inline text
 https://forum.obsidian.md/t/inline-code-occludes-text-selection-and-vim-cursor/11552/10 */
@@ -3665,7 +3676,7 @@ https://forum.obsidian.md/t/inline-code-occludes-text-selection-and-vim-cursor/1
 button.copy-code-button {
 	z-index: 100;
 	padding-right: 1px !important;
-	padding-bottom: 2px;
+	padding-bottom: 2px !important;
 	padding-left: 8px !important;
 	font-size: 0;
 }
@@ -3679,6 +3690,14 @@ button.copy-code-button::BEFORE {
 	content: "content_copy ";
 	font-family: "Material Icons";
 	font-size: 0.8rem;
+}
+
+/* ─────────────────────────────────────────────────── */
+/* << Syntax Highlighting */
+/* ─────────────────────────────────────────────────── */
+
+.theme-light .token.operator {
+	background: transparent;
 }
 
 /* ─────────────────────────────────────────────────── */
