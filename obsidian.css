@@ -1,6 +1,6 @@
 /* ──────────────────────────────────────────────────────
 SHIMMERING FOCUS
-Version 1.294
+Version 1.295
 https://github.com/chrisgrieser/shimmering-focus/
 Created by @pseudometa
 MIT License
@@ -183,9 +183,6 @@ This ToC is auto-generated via the .create-ToC.sh
 	--bold-in-darkmode: hsl(202 43% 57%);
 	--active-line: hsl(62 11% 63% / 12.5%);
 	--cursor-monocolor: var(--accent-lighter);
-
-	--notice-bg: hsl(0 0% 60%);
-	--notice-text: hsl(0 0% 98%);
 }
 
 .theme-light {
@@ -209,6 +206,10 @@ This ToC is auto-generated via the .create-ToC.sh
 	--cursor-duo-color-2: var(--accent-lightest);
 	--a-row: rgb(0 0 0 / 3%);
 	--b-row: rgb(0 0 0 / 7%);
+
+	--notice-bg: hsl(220 8% 65%);
+	--notice-text: hsl(0 0% 95%);
+	--notice-border: 2px ridge hsl(0 0% 65%);
 }
 
 .theme-dark {
@@ -232,6 +233,10 @@ This ToC is auto-generated via the .create-ToC.sh
 	--cursor-duo-color-2: var(--accent-lighter);
 	--a-row: rgb(0 0 0 / 15%);
 	--b-row: rgb(0 0 0 / 30%);
+
+	--notice-bg: hsl(220 9% 40%);
+	--notice-text: hsl(0 0% 95%);
+	--notice-border: 2px ridge hsl(0 0% 45%);
 }
 
 /* ─────────────────────────────────────────────────── */
@@ -239,30 +244,32 @@ This ToC is auto-generated via the .create-ToC.sh
 /* << Brightness */
 /* ─────────────────────────────────────────────────── */
 
-/* default values */
 :root {
 	--brightness-light: 5%;
 	--brightness-dark: 5%;
+
+	/* temporary variable till more color stuff is sorted out */
+	--blue-tint: 10%;
 }
 
 .theme-light {
 	--bg1: hsl(220 10% calc(var(--brightness-light) + 90%));
-	--bg2: hsl(220 13% calc(var(--brightness-light) + 84%));
-	--bg2a: hsl(220 13% calc(var(--brightness-light) + 83%));
+	--bg2: hsl(220 10% calc(var(--brightness-light) + 84%));
+	--bg2a: hsl(220 10% calc(var(--brightness-light) + 83%));
 	--bg3: hsl(220 10% calc(var(--brightness-light) + 77%));
 	--muted-border-color: hsl(0 0% calc(var(--brightness-light) + 75%));
 	--basic-border-color: hsl(0 0% calc(var(--brightness-light) + 65%));
-	--backdrop-color: hsl(220 35% calc(var(--brightness-light) + 70%));
+	--backdrop-color: hsl(220 20% calc(var(--brightness-light) + 70%));
 }
 
 .theme-dark {
-	--bg1: hsl(0 0% calc(var(--brightness-dark) + 10%));
-	--bg2: hsl(0 0% calc(var(--brightness-dark) + 6%));
-	--bg2a: hsl(0 0% calc(var(--brightness-dark) + 5%));
-	--bg3: hsl(0 0% calc(var(--brightness-dark) + 0%));
+	--bg1: hsl(220 var(--blue-tint) calc(var(--brightness-dark) + 10%));
+	--bg2: hsl(220 var(--blue-tint) calc(var(--brightness-dark) + 6%));
+	--bg2a: hsl(220 var(--blue-tint) calc(var(--brightness-dark) + 5%));
+	--bg3: hsl(220 var(--blue-tint) calc(var(--brightness-dark) + 1%));
 	--muted-border-color: hsl(0 0% calc(var(--brightness-dark) + 15%));
 	--basic-border-color: hsl(0 0% calc(var(--brightness-dark) + 35%));
-	--backdrop-color: hsl(220 30% calc(var(--brightness-dark) + 8%));
+	--backdrop-color: hsl(220 calc(var(--blue-tint) * 2) calc(var(--brightness-dark) + 8%));
 }
 
 .workspace-split.mod-root .view-content {
@@ -960,11 +967,11 @@ body:not(.show-ribbons) .workspace-ribbon {
 /* ─────────────────────────────────────────────────── */
 
 .tooltip {
-	color: var(--interactive-normal);
-	background-color: var(--text-muted) !important;
+	color: var(--notice-text);
+	background-color: var(--notice-bg) !important;
 	box-shadow: var(--small-shadow);
 
-	border: var(--thin-border);
+	border: var(--notice-border);
 	border-radius: var(--roundish);
 
 	word-wrap: break-word;
@@ -1003,7 +1010,7 @@ div.notice-container .notice {
 
 	padding: 4px 10px 6px;
 
-	border: var(--basic-border);
+	border: var(--notice-border);
 	border-radius: var(--roundish);
 
 	font-size: 0.85em;
@@ -1631,20 +1638,14 @@ div.search-input-clear-button:hover::BEFORE,
 }
 
 .modal-close-button {
-	top: -1px;
-	right: -1px;
+	top: 0;
+	right: 0;
 	z-index: 100;
 
-	padding: 2px 6px 6px;
+	padding: 3px 8px 6px 6px;
 
 	border-top-right-radius: var(--roundish);
 	border-bottom-left-radius: var(--roundish);
-}
-
-.mod-community-theme .modal-close-button,
-.mod-community-plugin .modal-close-button {
-	top: 0;
-	right: 0;
 }
 
 .mod-community-theme .modal-close-button,
@@ -1667,7 +1668,7 @@ body:not(.show-close-button) div.search-input-clear-button:hover,
 body:not(.show-close-button) .empty-state-close-button:hover,
 body:not(.show-close-button) .modal-close-button:hover {
 	opacity: 1;
-	transition: 200ms ease-in-out;
+	transition: var(--toggle-duration);
 }
 
 /* ─────────────────────────────────────────────────── */
@@ -1985,6 +1986,7 @@ body .workspace-leaf-resize-handle:active {
 }
 
 .modal {
+	background-color: var(--bg1);
 	box-shadow: var(--big-shadow);
 	padding: 7px 15px 20px;
 	border: var(--thick-muted-border);
@@ -2324,6 +2326,9 @@ body .workspace-leaf-resize-handle:active {
 /* << Community Plugin Browser */
 /* ─────────────────────────────────────────────────── */
 
+/* <<< Plugin Search Results */
+/* ─────────────────────────────────────────────────── */
+
 /* Search input */
 .community-plugin-search {
 	background-color: var(--bg3);
@@ -2337,7 +2342,6 @@ body .workspace-leaf-resize-handle:active {
 	background-color: var(--bg2);
 }
 
-/* search results */
 .community-plugin-item {
 	padding: 0.4em 0.1em 0.4em 0.6em;
 	margin-top: 0;
@@ -2486,7 +2490,8 @@ body .workspace-leaf-resize-handle:active {
 	color: var(--alt-accent);
 }
 
-/* plugin info */
+/* <<< Plugin Info (Readme) */
+/* ─────────────────────────────────────────────────── */
 .community-plugin-info {
 	background-color: var(--bg1);
 	padding: 10px 5px 10px 15px;
@@ -2575,6 +2580,11 @@ body .workspace-leaf-resize-handle:active {
 
 .community-plugin-readme {
 	padding-top: 0 !important;
+}
+
+/* no external link icon */
+.community-plugin-readme a.external-link {
+	background-image: none;
 }
 
 /* empty state */
@@ -4039,11 +4049,6 @@ input[type="checkbox"]:checked:hover {
 /* ─────────────────────────────────────────────────── */
 
 /* <<< Active Line Highlight */
-body:not(.no-active-line-highlighting) .CodeMirror-activeline .CodeMirror-linebackground {
-	background-color: var(--active-line);
-	border-radius: var(--roundish);
-}
-
 body:not(.no-active-line-highlighting) .CodeMirror-activeline .CodeMirror-linebackground {
 	background-color: var(--active-line);
 	border-radius: var(--roundish);
@@ -6351,8 +6356,8 @@ pre button.copy:hover::BEFORE {
 	border-top: none;
 }
 
-.style-settings-container .checkbox-container {
-	margin-right: 10px;
+.style-settings-container .setting-editor-extra-setting-button {
+	margin-left: 10px;
 }
 
 .vertical-tab-content > .style-settings-heading > .setting-item-info > .setting-item-name {
@@ -6683,8 +6688,8 @@ settings:
 	 level: 2
 	 collapsed: true
   -
-	 id: brightness-dark
-	 title: 🌒 Dark Mode Brightness
+	 id: brightness-light
+	 title: ☀️ Light Mode Brightness
 	 type: variable-number-slider
 	 default: 5
 	 min: 0
@@ -6692,8 +6697,8 @@ settings:
 	 step: 1
 	 format: '%'
   -
-	 id: brightness-light
-	 title: ☀️ Light Mode Brightness
+	 id: brightness-dark
+	 title: 🌒 Dark Mode Brightness
 	 type: variable-number-slider
 	 default: 5
 	 min: 0
@@ -6709,10 +6714,20 @@ settings:
 	 collapsed: true
   -
 	 id: angular-shapes
-	 title: 🔲 🔘 Shapes
+	 title: Shapes
 	 type: class-toggle
 	 description: Enable to use angular shapes (🔲). Disable to use rounded shapes (🔘).
 	 default: false
+  -
+	 id: blue-tint
+	 title: "🚧 Experimental: Blue Tint in Dark Mode"
+	 description: Amount of faint blue in Dark Mode. (Testing Ground for upcoming color scheme options.)
+	 type: variable-number-slider
+	 default: 0
+	 min: 0
+	 max: 15
+	 step: 1
+	 format: '%'
   -
 	 id: block-cursor
 	 title: Block Cursor
