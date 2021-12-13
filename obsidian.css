@@ -1,6 +1,6 @@
 /* ──────────────────────────────────────────────────────
 SHIMMERING FOCUS
-Version 1.302
+Version 1.303
 https://github.com/chrisgrieser/shimmering-focus/
 Created by @pseudometa
 MIT License
@@ -1289,7 +1289,8 @@ button:hover {
 /* << Warnings */
 /* ─────────────────────────────────────────────────── */
 
-button.mod-warning {
+button.mod-warning:not(:hover) {
+	background-color: var(--text-error-hover) !important;
 	border-color: var(--text-error) !important;
 }
 
@@ -6647,6 +6648,7 @@ community:
 - obsidian-languagetool-plugin
 - hotkey-helper
 - obsidian-git
+- various-complements
 */
 
 /* ─────────────────────────────────────────────────── */
