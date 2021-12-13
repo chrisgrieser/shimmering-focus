@@ -1,6 +1,6 @@
 /* ──────────────────────────────────────────────────────
 SHIMMERING FOCUS
-Version 1.296
+Version 1.297
 https://github.com/chrisgrieser/shimmering-focus/
 Created by @pseudometa
 MIT License
@@ -247,33 +247,46 @@ This ToC is auto-generated via the .create-ToC.sh
 :root {
 	--brightness-light: 5%;
 	--brightness-dark: 5%;
+	--b-light-1: 92%;
+	--b-light-2: 87%;
+	--b-light-3: 81%;
+	--b-dark-1: 11%;
+	--b-dark-2: 7%;
+	--b-dark-3: 0%;
 
-	/* temporary variable till more color stuff is sorted out */
-	--blue-tint: 10%;
+	/* temporary variable till more color stuff is implemented */
+	--blue-tint: 0%;
+	--base-hue: 220;
 }
 
 .theme-light {
-	--bg1: hsl(220 10% calc(var(--brightness-light) + 92%));
-	--bg2: hsl(220 10% calc(var(--brightness-light) + 87%));
-	--bg2a: hsl(220 10% calc(var(--brightness-light) + 86%));
-	--bg3: hsl(220 10% calc(var(--brightness-light) + 81%));
+	--bg1: hsl(var(--base-hue) 10% calc(var(--brightness-light) + var(--b-light-1)));
+	--bg2: hsl(var(--base-hue) 10% calc(var(--brightness-light) + var(--b-light-2)));
+	--bg3: hsl(var(--base-hue) 10% calc(var(--brightness-light) + var(--b-light-3)));
+	--resize-handle: hsl(var(--base-hue) 10% calc(var(--brightness-light) + calc(var(--b-light-2) - 1%)));
+	--suggester-b-row: hsl(var(--base-hue) var(--blue-tint) calc(var(--brightness-dark) + calc(var(--b-light-1) - 2%)));
 
-	--muted-border-color: hsl(0 0% calc(var(--brightness-light) + 75%));
-	--basic-border-color: hsl(0 0% calc(var(--brightness-light) + 65%));
-	--backdrop-color: hsl(220 15% calc(var(--brightness-light) + 75%));
+	--muted-border-color: hsl(var(--base-hue) 0% calc(var(--brightness-light) + calc(var(--b-light-3) + 3%)));
+	--basic-border-color: hsl(var(--base-hue) 0% calc(var(--brightness-light) + 65%));
+	--backdrop-color: hsl(var(--base-hue) 15% calc(var(--brightness-light) + 75%));
 	--input-background: var(--bg1);
 }
 
 .theme-dark {
-	--bg1: hsl(220 var(--blue-tint) calc(var(--brightness-dark) + 11%));
-	--bg2: hsl(220 var(--blue-tint) calc(var(--brightness-dark) + 7%));
-	--bg2a: hsl(220 var(--blue-tint) calc(var(--brightness-dark) + 6%));
-	--bg3: hsl(220 var(--blue-tint) var(--brightness-dark));
+	--bg1: hsl(var(--base-hue) var(--blue-tint) calc(var(--brightness-dark) + var(--b-dark-1)));
+	--bg2: hsl(var(--base-hue) var(--blue-tint) calc(var(--brightness-dark) + var(--b-dark-2)));
+	--bg3: hsl(var(--base-hue) var(--blue-tint) calc(var(--brightness-dark) + var(--b-dark-3)));
+	--resize-handle: hsl(var(--base-hue) var(--blue-tint) calc(var(--brightness-dark) + calc(var(--b-dark-2) - 1%)));
+	--suggester-b-row: hsl(var(--base-hue) var(--blue-tint) calc(var(--brightness-dark) + calc(var(--b-dark-1) - 2%)));
 
-	--muted-border-color: hsl(220 calc(var(--blue-tint) / 2) calc(var(--brightness-dark) + 15%));
-	--basic-border-color: hsl(220 calc(var(--blue-tint) / 2) calc(var(--brightness-dark) + 35%));
-	--backdrop-color: hsl(220 calc(var(--blue-tint) * 2) calc(var(--brightness-dark) + 8%));
+	--muted-border-color: hsl(var(--base-hue) calc(var(--blue-tint) / 2) calc(var(--brightness-dark) + calc(var(--b-dark-1) - 2%)));
+	--basic-border-color: hsl(var(--base-hue) calc(var(--blue-tint) / 2) calc(var(--brightness-dark) + 35%));
+	--backdrop-color: hsl(var(--base-hue) calc(var(--blue-tint) * 2) calc(var(--brightness-dark) + 8%));
 	--input-background: var(--bg3);
+}
+
+.workspace-leaf-resize-handle {
+	background-color: var(--resize-handle);
 }
 
 .workspace-split.mod-root .view-content {
@@ -283,10 +296,6 @@ This ToC is auto-generated via the .create-ToC.sh
 .workspace-tab-header.is-active .workspace-tab-header-inner,
 .workspace-tabs .workspace-leaf {
 	background-color: var(--bg2);
-}
-
-.workspace-leaf-resize-handle {
-	background-color: var(--bg2a);
 }
 
 .status-bar,
@@ -1413,7 +1422,7 @@ select.dropdown {
 
 input.slider {
 	width: 150px;
-	background-color: var(--bg3);
+	background-color: var(--bg3) !important;
 }
 
 /* ─────────────────────────────────────────────────── */
@@ -1583,35 +1592,6 @@ div.menu-item {
 }
 
 /* ─────────────────────────────────────────────────── */
-/* << Editor Suggestions */
-/* ─────────────────────────────────────────────────── */
-/* "body:not(.app-container)" needs to be used to prevent
-targeting other suggestion containers */
-
-body:not(.app-container) .suggestion-container {
-	box-shadow: var(--small-shadow);
-	border-radius: var(--roundish);
-}
-
-body:not(.app-container) .suggestion-item {
-	padding-left: 40px;
-}
-
-body:not(.app-container) .suggestion-note {
-	font-family: var(--smallcap-font);
-	font-size: 0.9em;
-	text-align: end;
-}
-
-body:not(.app-container) .suggestion-item.is-selected .suggestion-note {
-	color: var(--text-accent);
-}
-
-body:not(.app-container) .suggestion-item:hover .suggestion-note {
-	color: var(--alt-accent);
-}
-
-/* ─────────────────────────────────────────────────── */
 /* << Close Buttons */
 /* ─────────────────────────────────────────────────── */
 
@@ -1693,13 +1673,13 @@ div.prompt {
 input.prompt-input {
 	width: unset;
 	padding-top: 7px;
-	margin-bottom: 8px;
 	border-radius: calc(var(--roundish) * 1.5);
 }
 
 div.prompt-results {
 	padding-top: 0;
-	border-radius: var(--roundish);
+	border-bottom-right-radius: var(--roundish);
+	border-bottom-left-radius: var(--roundish);
 }
 
 .suggestion-prefix {
@@ -1711,7 +1691,10 @@ div.prompt-results {
 
 .suggestion-item {
 	padding-left: 25px;
-	border-radius: var(--roundish);
+}
+
+.suggestion-item.is-selected {
+	background-color: var(--bg2);
 }
 
 /* Hide instructions */
@@ -1738,7 +1721,6 @@ div.prompt-results {
 .suggestion-item.is-selected .suggestion-flair,
 .suggestion-item.is-selected .suggestion-highlight {
 	color: var(--text-accent);
-	border-radius: var(--roundish);
 }
 
 .suggestion-item:hover .suggestion-flair,
@@ -1755,18 +1737,14 @@ div.prompt-results {
 	opacity: 0.6;
 }
 
-.suggestion-hotkey {
-	border-radius: var(--roundish);
-	font-family: var(--button-font);
-}
-
-.suggestion-item.is-selected .suggestion-hotkey,
-.suggestion-item:hover .suggestion-hotkey {
-	background-color: var(--bg2);
-}
-
 .suggestion-prefix::AFTER {
 	display: none;
+}
+
+.suggestion-hotkey {
+	background-color: var(--bg2);
+	border-radius: var(--roundish);
+	font-family: var(--button-font);
 }
 
 body.move-plugin-name-to-left .suggestion-prefix,
@@ -1787,13 +1765,38 @@ body:not(.move-plugin-name-to-left):not(.is-mobile) .suggestion-prefix {
 }
 
 /* Alternating row colors */
-body:not(.no-alternating-rows) .suggestion-item:nth-child(even) .suggestion-prefix,
-body:not(.no-alternating-rows) .suggestion-item:nth-child(even) {
-	background-color: var(--bg2);
+body:not(.no-alternating-rows) .suggestion-item:nth-child(even),
+body:not(.no-alternating-rows) .suggestion-item:nth-child(even) .suggestion-prefix {
+	background-color: var(--suggester-b-row);
 }
 
-body:not(.no-alternating-rows) .suggestion-item:nth-child(even) .suggestion-hotkey {
+/* ─────────────────────────────────────────────────── */
+/* << Editor Suggestions */
+/* ─────────────────────────────────────────────────── */
+
+.suggestion-container {
 	background-color: var(--bg1);
+	box-shadow: var(--small-shadow);
+	border: var(--thin-border);
+	border-radius: var(--roundish);
+}
+
+.suggestion-container .suggestion-item {
+	padding-left: 25px;
+}
+
+.suggestion-container .suggestion-note {
+	font-family: var(--smallcap-font);
+	font-size: 0.9em;
+	text-align: end;
+}
+
+.suggestion-container .suggestion-item.is-selected .suggestion-note {
+	color: var(--text-accent);
+}
+
+.suggestion-container .suggestion-item:hover .suggestion-note {
+	color: var(--alt-accent);
 }
 
 /* ─────────────────────────────────────────────────── */
