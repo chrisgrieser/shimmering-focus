@@ -1,3 +1,4 @@
+- 2021-12-13	indent option for longform
 - 2021-12-13	color adjustments
 - 2021-12-13	color tweaks
 - 2021-12-13	added contribution info to readme

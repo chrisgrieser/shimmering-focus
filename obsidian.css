@@ -1,6 +1,6 @@
 /* ──────────────────────────────────────────────────────
 SHIMMERING FOCUS
-Version 1.297
+Version 1.298
 https://github.com/chrisgrieser/shimmering-focus/
 Created by @pseudometa
 MIT License
@@ -5661,6 +5661,10 @@ body:not(.longform-left-aligned) .longform-leaf .cm-s-obsidian {
 	hyphens: auto;
 }
 
+body:not(.longform-no-text-indent) .longform-leaf .markdown-preview-view p {
+	text-indent: 1em;
+}
+
 /* keep any code smaller though */
 body > div.app-container .longform-leaf .cm-s-obsidian .cm-hmd-frontmatter,
 .longform-leaf .markdown-preview-view .frontmatter-container,
@@ -7055,6 +7059,12 @@ settings:
 	 id: longform-left-aligned
 	 title: Left-aligned text in Longform notes
 	 description: Use left-aligned instead of justified text.
+	 type: class-toggle
+	 default: false
+  -
+	 id: longform-no-text-indent
+	 title: First-Line Indent in Longform notes
+	 description: Indent first Line of text in Longform notes (Preview Mode)
 	 type: class-toggle
 	 default: false
   -
