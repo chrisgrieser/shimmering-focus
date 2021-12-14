@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 1.308
+Version 1.309
 https://github.com/chrisgrieser/shimmering-focus/
 MIT License
 ─────────────────────────────────────────────────── */
@@ -234,7 +234,7 @@ This ToC is auto-generated via the .create-ToC.sh
 	--dark-sat: 5%;
 	--light-sat: 10%;
 
-	/* higher base saturation needed as hsl is a cone? */
+	/* sat has to be adjusted when light changes due to being a bicone */
 	--base-hue: 220;
 	--longform-light-hue: 20;
 	--longform-dark-hue: 270;
@@ -4069,16 +4069,6 @@ body > .app-container span.cm-tag {
 /* finished */
 .cm-s-obsidian span.cm-formatting-task.cm-property {
 	color: var(--finished-task);
-}
-
-.cm-s-obsidian span.cm-formatting-task.cm-property + span {
-	color: var(--extra-contrast);
-	text-decoration: line-through;
-}
-
-body > .app-container .contains-task-list li.task-list-item.is-checked {
-	font-weight: 500;
-	text-decoration: line-through;
 }
 
 /* https://forum.obsidian.md/t/meta-post-common-css-hacks/1978/34 */
