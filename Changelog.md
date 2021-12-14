@@ -1,4 +1,4 @@
-- 2021-12-14	refactoring of section comments (syntaxfold plugin)
+- 2021-12-14	minor
 - 2021-12-13	warning button fix
 - 2021-12-13	indent option for longform
 - 2021-12-13	color adjustments
