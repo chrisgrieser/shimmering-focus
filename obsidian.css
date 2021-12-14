@@ -260,7 +260,6 @@ This ToC is auto-generated via the .create-ToC.sh
 	--muted-border-color: hsl(var(--base-hue) calc(var(--light-sat) / 2) calc(var(--b-light-3) + 3%));
 	--basic-border-color: hsl(var(--base-hue) calc(var(--light-sat) / 2) calc(var(--b-light-3) - 15%));
 	--backdrop-color: hsl(var(--base-hue) calc(var(--light-sat) * 2) calc(var(--b-light-2) - 20%));
-	--input-background: var(--bg1);
 	--longform-background: hsl(var(--longform-light-hue) calc(var(--light-sat) * 1.5) calc(var(--b-light-1) - 7%));
 }
 
@@ -275,7 +274,6 @@ This ToC is auto-generated via the .create-ToC.sh
 	--muted-border-color: hsl(var(--base-hue) calc(var(--dark-sat) / 2) calc(var(--b-dark-1) - 6%));
 	--basic-border-color: hsl(var(--base-hue) calc(var(--dark-sat) / 2) calc(var(--b-dark-1) + 20%));
 	--backdrop-color: hsl(var(--base-hue) calc(var(--dark-sat) * 2) calc(var(--b-dark-2) + 2%));
-	--input-background: var(--bg3);
 	--longform-background: hsl(var(--longform-dark-hue) calc(var(--dark-sat) / 1.5) calc(var(--b-dark-1) + 0%));
 }
 
@@ -300,6 +298,14 @@ This ToC is auto-generated via the .create-ToC.sh
 .status-bar,
 .workspace-tabs,
 .workspace-tab-header-container .workspace-tab-header .workspace-tab-header-inner {
+	background-color: var(--bg3);
+}
+
+.theme-light .workspace-tabs input[type="text"] {
+	background-color: var(--bg1);
+}
+
+.theme-dark .workspace-tabs input[type="text"] {
 	background-color: var(--bg3);
 }
 
@@ -693,7 +699,7 @@ svg.any-key {
 .hotkey-list-container svg.any-key {
 	height: 1.08rem;
 	width: 1rem;
-	margin-top: 1.5px;
+	margin-top: 2px;
 }
 
 /* reset */
@@ -711,7 +717,7 @@ svg.reset {
 
 .hotkey-list-container svg.reset {
 	width: 1rem;
-	margin-top: 2px;
+	margin-top: 2.5px;
 }
 
 /* edit mode */
@@ -1371,23 +1377,10 @@ input[type="text"],
 input[type="email"],
 input[type="password"] {
 	left: 0;
-
-	background: var(--bg3);
-
 	padding-right: 10px;
 	padding-left: 10px;
-
 	border: var(--thin-border);
 	border-radius: var(--round);
-}
-
-textarea:hover,
-input:hover,
-.search-input-container input,
-input[type="text"],
-input[type="email"],
-input[type="password"] {
-	background-color: var(--input-background) !important;
 }
 
 textarea {
@@ -1412,6 +1405,14 @@ input:hover {
 	border-color: var(--interactive-hover-border) !important;
 }
 
+.theme-dark input[type="text"] {
+	background-color: var(--bg3);
+}
+
+.theme-light input[type="text"] {
+	background-color: var(--bg2);
+}
+
 /* ───────────────────────────────────────────────────
 << Dropdown & Slider
 ─────────────────────────────────────────────────── */
@@ -1419,6 +1420,7 @@ select.dropdown:hover {
 	border-color: var(--interactive-hover-border) !important;
 }
 
+select.dropdown:hover,
 select.dropdown {
 	background-color: var(--bg3);
 	padding: 5px 28px 6px 10px;
@@ -1453,6 +1455,10 @@ input.slider {
 
 	border: var(--thick-muted-border);
 	border-radius: var(--round);
+}
+
+body .document-search-container input[type="text"] {
+	background-color: var(--bg1);
 }
 
 /* move up to avoid collision with statusbar */
@@ -2268,7 +2274,7 @@ body .workspace-leaf-resize-handle:active {
 	color: var(--text-accent);
 }
 
-/* login menu  */
+/* >>> Login menu  */
 .modal.mod-settings .u-center-text:not(.button-container) {
 	padding-top: 40px;
 	margin-top: 60px;
@@ -2279,7 +2285,7 @@ body .workspace-leaf-resize-handle:active {
 	margin-top: 30px;
 }
 
-/* community plugin list */
+/* >>> Community plugin list */
 .installed-plugins-container .setting-item-description > div:first-child {
 	font-family: var(--smallcap-font);
 	line-height: 1.1em;
@@ -2293,12 +2299,12 @@ body .workspace-leaf-resize-handle:active {
 	margin-left: 20px;
 }
 
-/* core plugin */
+/* >>> core plugin */
 .plugin-list-plugins .checkbox-container {
 	margin-left: 20px;
 }
 
-/* Hotkey search */
+/* >>> Hotkey search */
 .hotkey-search-container {
 	padding-right: 0;
 	padding-bottom: 10px;
@@ -6141,7 +6147,7 @@ body > .app-container .BC-Link.is-unresolved {
 	top: 0;
 	right: -6px;
 
-	background: none;
+	background: none !important;
 
 	padding: 2px 0 1px 2px !important;
 	margin-right: 0;
