@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 1.312
+Version 1.313
 https://github.com/chrisgrieser/shimmering-focus/
 MIT License
 ─────────────────────────────────────────────────── */
@@ -1077,6 +1077,7 @@ body:not(.is-mobile) .view-actions {
 
 /* show only on hover, when writing in the header bar,
 or when enabled by the style settings plugin */
+body:not(.show-header-bar) .workspace-split.mod-root > .workspace-leaf:first-of-type:last-of-type .view-header,
 body:not(.show-header-bar) .workspace-split.mod-root > .workspace-leaf .view-header {
 	height: 0.9em;
 
