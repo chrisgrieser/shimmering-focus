@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 1.311
+Version 1.312
 https://github.com/chrisgrieser/shimmering-focus/
 MIT License
 ─────────────────────────────────────────────────── */
@@ -340,13 +340,15 @@ This ToC is auto-generated via the .create-ToC.sh
 :root {
 	--resize-handle-thickness: 3px;
 	--resize-handle-hovered-thickness: 6px;
-	--toggle-duration: 350ms ease-in-out;
-	--scrollbar-thickness: 10px;
+	--scrollbar-thickness: 7px;
 	--image-size: 50;
 	--pdf-size: 50vh;
 	--popover-size: 350;
 	--inactive-pane-opacity: 80%;
 	--signature: "⟡";
+
+	--toggle-duration: 350ms ease-in-out;
+	--header-transition: 450ms ease-in-out;
 }
 
 .theme-light,
@@ -1053,10 +1055,6 @@ body > div.notice-container .notice:hover::BEFORE {
 << Header Bar
 ─────────────────────────────────────────────────── */
 
-.view-header {
-	--header-transition: 450ms ease-in-out;
-}
-
 /* harmonize sizes for when titlebar is shown */
 .view-header-title {
 	font-size: 0.9em;
@@ -1079,7 +1077,7 @@ body:not(.is-mobile) .view-actions {
 
 /* show only on hover, when writing in the header bar,
 or when enabled by the style settings plugin */
-body:not(.show-header-bar) .workspace-split.mod-root > .workspace-leaf:first-of-type:last-of-type .view-header {
+body:not(.show-header-bar) .workspace-split.mod-root > .workspace-leaf .view-header {
 	height: 0.9em;
 
 	background-color: var(--bg1);
