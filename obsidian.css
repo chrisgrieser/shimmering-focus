@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 1.314
+Version 1.315
 https://github.com/chrisgrieser/shimmering-focus/
 MIT License
 ─────────────────────────────────────────────────── */
@@ -256,7 +256,7 @@ This ToC is auto-generated via the .create-ToC.sh
 	--scrollbar: hsl(var(--base-hue) var(--dark-sat) calc(var(--b-light-2) - 8%));
 	--suggester-b-row: hsl(var(--base-hue) var(--light-sat) calc(var(--b-light-1) - 3%));
 	--muted-border-color: hsl(var(--base-hue) calc(var(--light-sat) / 2) calc(var(--b-light-3) + 3%));
-	--basic-border-color: hsl(var(--base-hue) calc(var(--light-sat) / 2) calc(var(--b-light-3) - 15%));
+	--basic-border-color: hsl(var(--base-hue) calc(var(--light-sat) / 2) calc(var(--b-light-3) - 5%));
 	--backdrop-color: hsl(var(--base-hue) calc(var(--light-sat) * 2) calc(var(--b-light-2) - 20%));
 	--longform-background: hsl(var(--longform-light-hue) calc(var(--light-sat) * 1.5) calc(var(--b-light-1) - 7%));
 }
@@ -270,7 +270,7 @@ This ToC is auto-generated via the .create-ToC.sh
 	--scrollbar: hsl(var(--base-hue) var(--dark-sat) calc(var(--b-dark-2) + 9%));
 	--suggester-b-row: hsl(var(--base-hue) var(--dark-sat) calc(var(--b-dark-1) - 2%));
 	--muted-border-color: hsl(var(--base-hue) calc(var(--dark-sat) / 2) calc(var(--b-dark-1) - 6%));
-	--basic-border-color: hsl(var(--base-hue) calc(var(--dark-sat) / 2) calc(var(--b-dark-1) + 20%));
+	--basic-border-color: hsl(var(--base-hue) calc(var(--dark-sat) / 2) calc(var(--b-dark-1) + 6%));
 	--backdrop-color: hsl(var(--base-hue) calc(var(--dark-sat) * 2) calc(var(--b-dark-2) + 2%));
 	--longform-background: hsl(var(--longform-dark-hue) calc(var(--dark-sat) / 1.5) calc(var(--b-dark-1) + 0%));
 }
@@ -675,7 +675,7 @@ body.angular-shapes *:not(.setting-delete-hotkey) > svg.cross {
 
 body:not(.angular-shapes) *:not(.setting-delete-hotkey) > svg.cross {
 	background-color: currentColor;
-	margin-bottom: 1px;
+	margin-top: 2px;
 	-webkit-mask-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' width='1.05em' height='1.05em' preserveAspectRatio='xMidYMid meet' viewBox='0 0 24 24'%3e%3cg fill='none'%3e%3cpath d='M12 22A10 10 0 0 1 4.926 4.926a10.004 10.004 0 1 1 14.148 14.148A9.936 9.936 0 0 1 12 22zm-8-9.828A8 8 0 1 0 4 12v.172zM9.409 16l-1.41-1.41L10.59 12L8 9.41L9.41 8L12 10.59L14.59 8L16 9.41L13.41 12L16 14.59L14.592 16L12 13.41L9.41 16h-.001z' fill='currentColor'/%3e%3c/g%3e%3c/svg%3e");
 }
 
@@ -729,7 +729,6 @@ svg.pencil {
 	position: relative;
 	right: 1px;
 	background-color: currentColor;
-	margin-bottom: 1.5px;
 	-webkit-mask-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' width='1.1em' height='1.1em' preserveAspectRatio='xMidYMid meet' viewBox='0 0 24 24'%3e%3cpath d='M18.988 2.012l3 3L19.701 7.3l-3-3zM8 16h3l7.287-7.287l-3-3L8 13z' fill='currentColor'/%3e%3cpath d='M19 19H8.158c-.026 0-.053.01-.079.01c-.033 0-.066-.009-.1-.01H5V5h6.847l2-2H5c-1.103 0-2 .896-2 2v14c0 1.104.897 2 2 2h14a2 2 0 0 0 2-2v-8.668l-2 2V19z' fill='currentColor'/%3e%3c/svg%3e");
 }
 
@@ -738,8 +737,13 @@ svg.lines-of-text > path { display: none }
 
 svg.lines-of-text {
 	position: relative;
-	bottom: 2px;
+	right: 1px;
+	bottom: 1px;
+
 	background-color: currentColor;
+
+	transform: scale(1.2);
+
 	-webkit-mask-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' width='1.3em' height='1.3em' preserveAspectRatio='xMidYMid meet' viewBox='0 0 16 16'%3e%3cg fill='none'%3e%3cpath d='M2.984 8.625v.003a.5.5 0 0 1-.612.355c-.431-.114-.355-.611-.355-.611l.017-.062s.026-.084.047-.145a6.7 6.7 0 0 1 1.117-1.982C4.097 5.089 5.606 4 8 4c2.395 0 3.904 1.089 4.801 2.183a6.7 6.7 0 0 1 1.117 1.982a3.916 3.916 0 0 1 .06.187l.003.013l.002.004v.002a.5.5 0 0 1-.966.258l-.001-.004l-.008-.025a4.9 4.9 0 0 0-.2-.52a5.703 5.703 0 0 0-.78-1.263C11.285 5.912 10.044 5 8 5c-2.044 0-3.286.912-4.028 1.817a5.701 5.701 0 0 0-.945 1.674a3.018 3.018 0 0 0-.035.109l-.008.025z' fill='currentColor'/%3e%3cpath d='M8 7a2.5 2.5 0 1 0 0 5a2.5 2.5 0 0 0 0-5zM6.5 9.5a1.5 1.5 0 1 1 3 0a1.5 1.5 0 0 1-3 0z' fill='currentColor'/%3e%3c/g%3e%3c/svg%3e");
 }
 
@@ -748,6 +752,7 @@ svg.lines-of-text {
 
 *:not(.kanban-plugin__icon) > svg.vertical-three-dots {
 	background-color: currentColor;
+	margin-top: 1px;
 	-webkit-mask-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' width='1.1em' height='1.1em' preserveAspectRatio='xMidYMid meet' viewBox='0 0 20 20'%3e%3cpath d='M3 11h14V9H3v2zm0 5h14v-2H3v2zM3 4v2h14V4H3z' fill='currentColor'/%3e%3c/svg%3e");
 }
 
@@ -3492,21 +3497,21 @@ tr:last-child td:last-child {
 body > .app-container table > thead > tr > th {
 	border-top: none;
 	border-right: none;
-	border-bottom: var(--table-border);
-	border-left: var(--table-border);
+	border-bottom: var(--table-border) !important;
+	border-left: var(--table-border) !important;
 }
 
 body > .app-container table > thead > tr > th:first-child {
-	border-left: none;
+	border-left: none !important;
 }
 
 body > .app-container table > tbody > tr > td {
 	border: none;
-	border-left: var(--table-border);
+	border-left: var(--table-border) !important;
 }
 
 body > .app-container table > tbody > tr > td:first-child {
-	border-left: none;
+	border-left: none !important;
 }
 
 /* background */
@@ -6154,7 +6159,7 @@ body > .app-container .BC-Link.is-unresolved {
 
 .BC-trail button::BEFORE {
 	content: "unfold_more";
-	color: var(--text-muted);
+	color: var(--basic-border-color);
 	font-family: "Material Icons";
 	font-size: 1.1rem;
 	letter-spacing: 0 !important;
