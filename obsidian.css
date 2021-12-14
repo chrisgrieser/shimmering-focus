@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 1.315
+Version 1.316
 https://github.com/chrisgrieser/shimmering-focus/
 MIT License
 ─────────────────────────────────────────────────── */
@@ -1254,6 +1254,31 @@ body:not(.show-scrollbar) ::-WEBKIT-SCROLLBAR {
 
 ::-WEBKIT-SCROLLBAR-THUMB:active {
 	background-color: var(--scrollbar-active) !important;
+}
+
+/* ───────────────────────────────────────────────────
+< Vault Launch Progress Bar
+─────────────────────────────────────────────────── */
+
+.progress-bar .progress-bar-message {
+	color: var(--text-normal);
+	margin-bottom: 30px;
+	font-size: 1.5em;
+}
+
+.progress-bar {
+	background-color: var(--bg2);
+	backdrop-filter: blur(3px);
+}
+
+.progress-bar-indicator .progress-bar-line {
+	height: 20px;
+	background-color: var(--bg3);
+}
+
+.progress-bar-indicator .progress-bar-subline {
+	height: 20px;
+	background-color: var(--scrollbar-hover);
 }
 
 /* ───────────────────────────────────────────────────
