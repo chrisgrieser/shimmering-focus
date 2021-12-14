@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 1.313
+Version 1.314
 https://github.com/chrisgrieser/shimmering-focus/
 MIT License
 ─────────────────────────────────────────────────── */
@@ -357,6 +357,7 @@ This ToC is auto-generated via the .create-ToC.sh
 	--muted-border: 2px solid var(--muted-border-color);
 	--thick-muted-border: 3.5px solid var(--muted-border-color);
 	--thin-border: 1px solid var(--basic-border-color);
+	--thin-muted-border: 1px solid var(--muted-border-color);
 }
 
 /* stylelint-enable no-duplicate-selectors */
@@ -932,7 +933,7 @@ body .workspace-split.mod-right-split > .workspace-leaf-resize-handle {
 /* proper light theme for titlebar */
 .titlebar {
 	background-color: var(--bg2);
-	border-bottom: 1px solid var(--background-modifier-border);
+	border-bottom: var(--thin-muted-border);
 }
 
 .theme-light .titlebar-text {
@@ -1077,8 +1078,7 @@ body:not(.is-mobile) .view-actions {
 
 /* show only on hover, when writing in the header bar,
 or when enabled by the style settings plugin */
-body:not(.show-header-bar) .workspace-split.mod-root > .workspace-leaf:first-of-type:last-of-type .view-header,
-body:not(.show-header-bar) .workspace-split.mod-root > .workspace-leaf .view-header {
+body:not(.show-header-bar) .app-container .workspace-split.mod-root > .workspace-leaf .view-header {
 	height: 0.9em;
 
 	background-color: var(--bg1);
@@ -1102,9 +1102,9 @@ body:not(.show-header-bar) .view-action svg {
 	transition: var(--header-transition);
 }
 
-body:not(.show-header-bar) .workspace-split.mod-root > .workspace-leaf:first-of-type:last-of-type .view-header:hover,
-body:not(.show-header-bar) .workspace-split.mod-root > .workspace-leaf:first-of-type:last-of-type .view-header:focus-within,
-body.show-header-bar .workspace-split.mod-root > .workspace-leaf:first-of-type:last-of-type .view-header {
+body:not(.show-header-bar) .workspace-split.mod-root > .workspace-leaf .view-header:hover,
+body:not(.show-header-bar) .workspace-split.mod-root > .workspace-leaf .view-header:focus-within,
+body.show-header-bar .workspace-split.mod-root > .workspace-leaf .view-header {
 	height: 1.9em;
 	background-color: var(--bg2);
 	transition: var(--header-transition);
@@ -6423,7 +6423,12 @@ pre button.copy:hover::BEFORE {
 /* ───────────────────────────────────────────────────
 << Style Settings (Settings Tab)
 ─────────────────────────────────────────────────── */
+/* sidebar */
+.workspace-leaf-content[data-type="style-settings"] .view-content {
+	padding: 8px;
+}
 
+/* settings tab  */
 .style-settings-heading {
 	padding-top: 0;
 	margin-top: 22px !important;
