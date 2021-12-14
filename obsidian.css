@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 1.309
+Version 1.310
 https://github.com/chrisgrieser/shimmering-focus/
 MIT License
 ─────────────────────────────────────────────────── */
@@ -76,7 +76,6 @@ This ToC is auto-generated via the .create-ToC.sh
 		- Mermaid
 - Markup
 	- Headings
-		- Pseudo-Admonitions
 	- Blockquotes
 	- Tables
 	- Code Blocks & Inline Code
@@ -163,7 +162,6 @@ This ToC is auto-generated via the .create-ToC.sh
 	--code-color: var(--alt-accent-darker);
 	--scrollbar-hover: var(--alt-accent-lighter);
 	--scrollbar-active: var(--accent-lightest);
-	--pseudo-admonition-border: var(--accent-lighter);
 
 	--highlight-color: hsl(152 100% 50% / 40%);
 	--highlight-alt1: hsl(60 100% 50% / 40%);
@@ -454,6 +452,7 @@ This ToC is auto-generated via the .create-ToC.sh
 	--h3-size: 1.45em;
 	--h4-size: 1.3em;
 	--h5-size: 1.15em;
+	--h6-size: 1.05em;
 }
 
 .CodeMirror-linenumber {
@@ -1994,7 +1993,8 @@ body .workspace-leaf-resize-handle:active {
 .modal h2,
 .modal h3,
 .modal h4,
-.modal h5 {
+.modal h5,
+.modal h6 {
 	margin-top: 15px;
 	margin-bottom: 10px;
 	font-weight: 500;
@@ -2005,6 +2005,7 @@ body .workspace-leaf-resize-handle:active {
 .modal-content h3 { font-size: var(--h3-size); }
 .modal-content h4 { font-size: var(--h4-size); }
 .modal-content h5 { font-size: var(--h5-size); }
+.modal-content h6 { font-size: var(--h6-size); }
 
 .modal-content li {
 	font-size: 1.1em;
@@ -3257,11 +3258,13 @@ body.focus-view-enabled .workspace-split.mod-left-split.is-collapsed ~ .workspac
 .cm-header-3,
 .cm-header-4,
 .cm-header-5,
+.cm-header-6,
 .markdown-preview-view h1,
 .markdown-preview-view h2,
 .markdown-preview-view h3,
 .markdown-preview-view h4,
-.markdown-preview-view h5 {
+.markdown-preview-view h5,
+.markdown-preview-view h6 {
 	font-family: var(--heading-font);
 	font-weight: 700;
 	text-rendering: geometricPrecision;
@@ -3293,11 +3296,17 @@ body.focus-view-enabled .workspace-split.mod-left-split.is-collapsed ~ .workspac
 	font-size: var(--h5-size);
 }
 
+.cm-header-6,
+.markdown-preview-view h6 {
+	font-size: var(--h6-size);
+}
+
 .markdown-preview-view h1,
 .markdown-preview-view h2,
 .markdown-preview-view h3,
 .markdown-preview-view h4,
-.markdown-preview-view h5 {
+.markdown-preview-view h5,
+.markdown-preview-view h6 {
 	margin-top: 1.2em;
 	margin-bottom: 0.5em;
 }
@@ -3311,11 +3320,13 @@ body:not(.less-heading-letter-spacing) .cm-header-2,
 body:not(.less-heading-letter-spacing) .cm-header-3,
 body:not(.less-heading-letter-spacing) .cm-header-4,
 body:not(.less-heading-letter-spacing) .cm-header-5,
+body:not(.less-heading-letter-spacing) .cm-header-6,
 body:not(.less-heading-letter-spacing) .markdown-preview-view h1,
 body:not(.less-heading-letter-spacing) .markdown-preview-view h2,
 body:not(.less-heading-letter-spacing) .markdown-preview-view h3,
 body:not(.less-heading-letter-spacing) .markdown-preview-view h4,
-body:not(.less-heading-letter-spacing) .markdown-preview-view h5 {
+body:not(.less-heading-letter-spacing) .markdown-preview-view h5,
+body:not(.less-heading-letter-spacing) .markdown-preview-view h6 {
 	letter-spacing: 1px;
 }
 
@@ -3324,65 +3335,10 @@ for all headings to improve distinctiveness = more readability */
 body:not(.no-alternating-header-italics) .cm-header-2,
 body:not(.no-alternating-header-italics) .markdown-preview-view h2,
 body:not(.no-alternating-header-italics) .cm-header-4,
-body:not(.no-alternating-header-italics) .markdown-preview-view h4 {
+body:not(.no-alternating-header-italics) .markdown-preview-view h4,
+body:not(.no-alternating-header-italics) .cm-header-6,
+body:not(.no-alternating-header-italics) .markdown-preview-view h6 {
 	font-style: italic;
-}
-
-/* ───────────────────────────────────────────────────
-<<< Pseudo-Admonitions
-─────────────────────────────────────────────────── */
-/* For h6 only (without following blocks or line breaks).
-Based on some CSS from @SlRvb, @gee & @Eleanor Konik.
-Pseudo-Admonitions work on one-liners only */
-
-.cm-header-6,
-.markdown-preview-view h6 {
-	font-family: var(--default-font);
-	font-size: 1em;
-	font-weight: 500 !important;
-}
-
-.cm-strong.cm-header-6,
-.markdown-preview-view h6 > em {
-	font-weight: 800 !important;
-	text-rendering: geometricPrecision;
-}
-
-.markdown-preview-view h6 .heading-collapse-indicator.collapse-indicator.collapse-icon,
-.cm-header-6.cm-formatting.cm-formatting-header {
-	display: none;
-}
-
-/* when pseudo-admonition is also active line */
-body:not(.no-active-line-highlighting) .CodeMirror-activeline .HyperMD-header.HyperMD-header-6.CodeMirror-line {
-	color: var(--text-normal) !important;
-	background-color: var(--active-line) !important;
-	border-radius: var(--roundish) !important;
-}
-
-.theme-dark .HyperMD-header.HyperMD-header-6.CodeMirror-line {
-	background-color: rgb(0 0 0 / 37%);
-}
-
-.theme-light .HyperMD-header.HyperMD-header-6.CodeMirror-line {
-	background-color: rgb(0 0 30 / 5%);
-}
-
-.markdown-preview-view h6 {
-	background-color: var(--bg2);
-}
-
-.HyperMD-header.HyperMD-header-6.CodeMirror-line,
-.markdown-preview-view h6 {
-	color: var(--text-normal) !important;
-
-	padding-top: 0.5em;
-	padding-bottom: 0.6em;
-	padding-left: 1em !important;
-	margin-bottom: 0;
-
-	border-left: 12px solid var(--pseudo-admonition-border) !important;
-	border-radius: var(--roundish);
 }
 
 /* ───────────────────────────────────────────────────
@@ -3736,7 +3692,7 @@ button.copy-code-button::BEFORE {
 }
 
 /* ───────────────────────────────────────────────────
-<< Bullet point relationship lines
+<< Bullet Point Relationship Lines
 ─────────────────────────────────────────────────── */
 /* based on css from the outliner plugin */
 /* https://github.com/vslinko/obsidian-outliner/blob/main/styles.css */
@@ -4070,13 +4026,15 @@ body > .app-container span.cm-tag {
 
 /* ───────────────────────────────────────────────────
 << Tasks
+<< Checkboxes
 ─────────────────────────────────────────────────── */
 
-/* finished */
+/* edit mode */
 .cm-s-obsidian span.cm-formatting-task.cm-property {
 	color: var(--finished-task);
 }
 
+/* preview mode */
 /* https://forum.obsidian.md/t/meta-post-common-css-hacks/1978/34 */
 input[type="checkbox"] {
 	filter: unset !important; /* removes hue filter */
@@ -4093,6 +4051,9 @@ input[type="checkbox"] {
 	vertical-align: top;
 }
 
+body .markdown-preview-view ul > li.task-list-item.is-checked {
+}
+
 input[type="checkbox"]:checked {
 	background-color: var(--finished-task);
 	background-image: url('data:image/svg+xml; utf8, <svg width="12px" height="10px" viewBox="0 0 12 8" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd"><g transform="translate(-4.000000, -6.000000)" fill="%23ffffff"><path d="M8.1043257,14.0367999 L4.52468714,10.5420499 C4.32525014,10.3497722 4.32525014,10.0368095 4.52468714,9.8424863 L5.24777413,9.1439454 C5.44721114,8.95166768 5.77142411,8.95166768 5.97086112,9.1439454 L8.46638057,11.5903727 L14.0291389,6.1442083 C14.2285759,5.95193057 14.5527889,5.95193057 14.7522259,6.1442083 L15.4753129,6.84377194 C15.6747499,7.03604967 15.6747499,7.35003511 15.4753129,7.54129009 L8.82741268,14.0367999 C8.62797568,14.2290777 8.3037627,14.2290777 8.1043257,14.0367999"></path></g></g></svg>');
@@ -4104,12 +4065,39 @@ input[type="checkbox"]:checked {
 	background-repeat: no-repeat;
 }
 
-input[type="checkbox"]:hover {
-	border-color: var(--alt-accent);
+li[data-task="x"] > .task-list-item-checkbox:hover {
+	background-color: var(--alt-accent-lighter) !important;
 }
 
-input[type="checkbox"]:checked:hover {
-	background-color: var(--alt-accent-lighter) !important;
+/* <<< Compatibility with SlVrb's checkboxes */
+.markdown-source-view.mod-cm6 .task-list-item-checkbox[data-task="x"],
+.markdown-preview-view li[data-task="x"] > .task-list-item-checkbox,
+.markdown-preview-view li[data-task="x"] p .task-list-item-checkbox,
+.cm-s-obsidian span.hmd-hidden-token.cm-formatting-task[data-task="x"],
+input[type="checkbox"]:not(:checked) {
+	color: var(--text-normal);
+	margin-top: 2.5px;
+	margin-right: 10px;
+}
+
+body .markdown-source-view.mod-cm6 .task-list-item-checkbox::BEFORE,
+body .markdown-preview-view :not(li[data-task="x"]) > .task-list-item-checkbox:checked::BEFORE,
+body .markdown-preview-view :not(li[data-task="x"]) p .task-list-item-checkbox:checked::BEFORE {
+	top: 2px;
+	right: 1.5px;
+}
+
+body.check-bg .markdown-source-view.mod-cm6 .task-list-item-checkbox::BEFORE,
+body.check-bg .markdown-preview-view :not(li[data-task="x"]) > .task-list-item-checkbox:checked::BEFORE,
+body.check-bg .markdown-preview-view :not(li[data-task="x"]) p .task-list-item-checkbox:checked::BEFORE {
+	top: 1px;
+	right: 5px;
+}
+
+body .markdown-source-view.mod-cm6 .task-list-item-checkbox > *,
+body .markdown-preview-view ul > li.task-list-item.is-checked,
+body .markdown-preview-view ol > li.task-list-item.is-checked {
+	font-weight: unset;
 }
 
 /* ───────────────────────────────────────────────────
@@ -6923,7 +6911,7 @@ settings:
   -
 	 id: heading-font
 	 title: Heading Font
-	 description: Applies to h1 to h5 Headings. (h6 headings are used for Pseudo-Admonitions.)
+	 description: Applies to h1 to h6 Headings
 	 type: variable-text
 	 default: Optima, Optima-local
   -
@@ -6980,6 +6968,15 @@ settings:
 	 title: Level 5 Headings
 	 type: variable-number-slider
 	 default: 1.15
+	 min: 1
+	 max: 2.7
+	 step: 0.05
+	 format: em
+  -
+	 id: h6-size
+	 title: Level 6 Headings
+	 type: variable-number-slider
+	 default: 1.05
 	 min: 1
 	 max: 2.7
 	 step: 0.05

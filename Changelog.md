@@ -1,3 +1,4 @@
+- 2021-12-14	removed pseudo-admonistions & added compatibility to @SlVrb's checkboxes
 - 2021-12-14	fixes for input
 - 2021-12-14	fix #62
 - 2021-12-14	improved code blocks when rounded shapes are used

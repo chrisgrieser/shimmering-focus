@@ -3,7 +3,7 @@
 A minimalistic [Obsidian](https://obsidian.md/) theme focused on readability and condensed information display.
 
 <!-- manually updated-->
-![](https://img.shields.io/badge/downloads-6689-6E4E9B?style=plastic) ![](https://img.shields.io/github/last-commit/chrisgrieser/shimmering-focus?style=plastic) [![](https://img.shields.io/badge/changelog-click%20here-FFE800?style=plastic)](Changelog.md)
+![](https://img.shields.io/badge/downloads-6708-6E4E9B?style=plastic) ![](https://img.shields.io/github/last-commit/chrisgrieser/shimmering-focus?style=plastic) [![](https://img.shields.io/badge/changelog-click%20here-FFE800?style=plastic)](Changelog.md)
 
 <img src="https://raw.githubusercontent.com/chrisgrieser/shimmering-focus/main/dual-theme-screenshot.png" alt="Promo Screenshot">
 
@@ -25,7 +25,8 @@ A minimalistic [Obsidian](https://obsidian.md/) theme focused on readability and
   - [Maximum Readability & Scannability](#maximum-readability--scannability)
   - [Subtle, Customizable Design](#subtle-customizable-design)
 - [Customization](#customization)
-- [Plugin Compatibility](#plugin-compatibility)
+- [Compatibility](#compatibility)
+  - [Custom Checkboxes](#custom-checkboxes)
   - [List of Compatible Plugins](#list-of-compatible-plugins)
   - [Instructions for specific Plugins](#instructions-for-specific-plugins)
 - [Installation](#installation)
@@ -90,13 +91,13 @@ Using the [Style Settings Plugin](https://github.com/mgmeyers/obsidian-style-set
 <img src="https://i.imgur.com/9XPEUQq.png" alt="Spellcheck settings" width=50%>
 
 ### Further Features
-- **Pseudo-Admonition**: `h6` blocks will become a pseudo-admonition box (only works with one-liners though)
 - Relationship lines in lists & File Explorer
 - Active line highlighting
 - Customizable Brightness of the Theme
 - Dark Mode for PDFs (when using the theme in dark mode)
 - Styled [progress bars (`<progress>`)](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/progress)
 - Resizable Graph View Controls (resize at the bottom-right)
+- This theme has been adjusted to be compatible with [SlVrb's Checkboxes](https://github.com/SlRvb/Obsidian--ITS-Theme/blob/main/S%20-%20Checkboxes.css).
 
 [⬆️ Go Back to Top](#Table-of-Contents)
 
@@ -147,7 +148,10 @@ Using the [Style Settings Plugin](https://github.com/mgmeyers/obsidian-style-set
 
 <img width=50% alt="Customization options" src="https://user-images.githubusercontent.com/73286100/143726875-79ca0fbd-7c57-48f2-876a-6888258f13d1.png">
 
-## Plugin Compatibility
+## Compatibility
+
+### Custom Checkboxes
+This theme has been adjusted to be compatible with [SlVrb's Checkboxes](https://github.com/SlRvb/Obsidian--ITS-Theme/blob/main/S%20-%20Checkboxes.css).
 
 ### List of Compatible Plugins
 *Shimmering Focus* is compatible with and has includes styling for all core plugins, the most common community plugins, as well as about a dozen more community plugins.
