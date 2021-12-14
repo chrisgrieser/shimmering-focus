@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 1.310
+Version 1.311
 https://github.com/chrisgrieser/shimmering-focus/
 MIT License
 ─────────────────────────────────────────────────── */
@@ -4096,12 +4096,17 @@ body.check-bg .markdown-preview-view :not(li[data-task="x"]) p .task-list-item-c
 body .markdown-source-view.mod-cm6 .task-list-item-checkbox > *,
 body .markdown-preview-view ul > li.task-list-item.is-checked,
 body .markdown-preview-view ol > li.task-list-item.is-checked {
-	font-weight: unset;
+	font-weight: unset; /* stylelint-disable-line font-weight-notation */
 }
 
 .markdown-preview-view ul > li.task-list-item {
 	padding-left: 5px;
 	text-indent: -1.9em;
+}
+
+/* fix for legacy-editor, discussed here https://discord.com/channels/686053708261228577/702656734631821413/920422345422819339 */
+.markdown-source-view:not(.mod-cm6) .cm-formatting.cm-formatting-task {
+	margin-left: -10px;
 }
 
 /* ───────────────────────────────────────────────────
