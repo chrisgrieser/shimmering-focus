@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 1.304
+Version 1.305
 https://github.com/chrisgrieser/shimmering-focus/
 MIT License
 ─────────────────────────────────────────────────── */
@@ -270,8 +270,8 @@ This ToC is auto-generated via the .create-ToC.sh
 	--resize-handle: hsl(var(--base-hue) var(--dark-sat) calc(var(--b-dark-2) - 1%));
 	--scrollbar: hsl(var(--base-hue) var(--dark-sat) calc(var(--b-dark-2) + 9%));
 	--suggester-b-row: hsl(var(--base-hue) var(--dark-sat) calc(var(--b-dark-1) - 2%));
-	--muted-border-color: hsl(var(--base-hue) calc(var(--dark-sat) / 2) calc(var(--b-dark-1) - 2%));
-	--basic-border-color: hsl(var(--base-hue) calc(var(--dark-sat) / 2) calc(var(--b-dark-1) + 30%));
+	--muted-border-color: hsl(var(--base-hue) calc(var(--dark-sat) / 2) calc(var(--b-dark-1) - 6%));
+	--basic-border-color: hsl(var(--base-hue) calc(var(--dark-sat) / 2) calc(var(--b-dark-1) + 20%));
 	--backdrop-color: hsl(var(--base-hue) calc(var(--dark-sat) * 2) calc(var(--b-dark-2) + 2%));
 	--input-background: var(--bg3);
 	--longform-background: hsl(var(--longform-dark-hue) calc(var(--dark-sat) / 1.5) calc(var(--b-dark-1) + 0%));
@@ -290,14 +290,14 @@ This ToC is auto-generated via the .create-ToC.sh
 	background-color: var(--bg1);
 }
 
-.workspace-tab-header.is-active .workspace-tab-header-inner,
-.workspace-tabs .workspace-leaf {
+.workspace-tabs .workspace-leaf,
+.workspace-tab-header-container .workspace-tab-header.is-active .workspace-tab-header-inner {
 	background-color: var(--bg2);
 }
 
 .status-bar,
-.workspace-tab-header-inner,
-.workspace-tabs {
+.workspace-tabs,
+.workspace-tab-header-container .workspace-tab-header .workspace-tab-header-inner {
 	background-color: var(--bg3);
 }
 
@@ -3566,40 +3566,68 @@ body.no-alternating-rows > .app-container table > tbody > tr > td {
 /* ───────────────────────────────────────────────────
 << Code Blocks & Inline Code
 ─────────────────────────────────────────────────── */
+
+.markdown-preview-view,
+.cm-s-obsidian div.HyperMD-codeblock-bg {
+	--codeblock-border: var(--muted-border);
+	--codeblock-roundness: calc(var(--roundish) * 1.5);
+}
+
 .cm-s-obsidian .HyperMD-codeblock,
 .markdown-preview-view code,
-.cm-s-obsidian span.cm-inline-code,
-.theme-dark .cm-s-obsidian .HyperMD-codeblock {
+.cm-s-obsidian span.cm-inline-code {
 	color: var(--code-color) !important;
 	font-size: var(--monospace-font-size);
 }
 
-.markdown-preview-view pre code,
+/* Code blocks in Preview Mode */
 .markdown-preview-view code {
+	background-color: var(--bg2) !important;
 	border-radius: var(--roundish);
-
-	/* wrapping, preserving line breaks */
 	white-space: pre-wrap !important;
 }
 
-/* Code blocks Preview Mode */
 .markdown-preview-view pre {
 	background-color: var(--bg2) !important;
 	padding-top: 10px !important;
 	padding-bottom: 12px !important;
-	border-radius: calc(var(--roundish) * 2) !important;
+	border: var(--codeblock-border) !important;
+	border-radius: var(--codeblock-roundness) !important;
 }
 
-/* code blocks Edit Mode */
-body > .app-container .HyperMD-codeblock-begin-bg {
+/* Code blocks in Edit Mode */
+.cm-s-obsidian div.HyperMD-codeblock-begin-bg {
+	background-color: var(--bg3);
+	border: var(--codeblock-border);
+	border-bottom: none;
+	border-top-right-radius: var(--codeblock-roundness);
+	border-top-left-radius: var(--codeblock-roundness);
+}
+
+.cm-s-obsidian div.HyperMD-codeblock-end-bg {
+	border-bottom: var(--codeblock-border);
+	border-bottom-right-radius: var(--codeblock-roundness);
+	border-bottom-left-radius: var(--codeblock-roundness);
+}
+
+.cm-s-obsidian div.HyperMD-codeblock-bg:not(.HyperMD-codeblock-begin-bg) {
 	background-color: var(--bg2);
-	border-top-right-radius: calc(var(--roundish) * 2);
-	border-top-left-radius: calc(var(--roundish) * 2);
+	border-right: var(--codeblock-border);
+	border-left: var(--codeblock-border);
 }
 
-body > .app-container .HyperMD-codeblock-end-bg {
-	border-bottom-right-radius: calc(var(--roundish) * 2);
-	border-bottom-left-radius: calc(var(--roundish) * 2);
+body:not(.no-active-line-highlighting) .CodeMirror-activeline .HyperMD-codeblock-bg.CodeMirror-linebackground {
+	border-radius: 0;
+}
+
+body:not(.no-active-line-highlighting) .CodeMirror-activeline .HyperMD-codeblock-begin-bg.CodeMirror-linebackground {
+	border-top-right-radius: var(--codeblock-roundness);
+	border-top-left-radius: var(--codeblock-roundness);
+}
+
+body:not(.no-active-line-highlighting) .CodeMirror-activeline .HyperMD-codeblock-end-bg.CodeMirror-linebackground {
+	border-bottom-right-radius: var(--codeblock-roundness);
+	border-bottom-left-radius: var(--codeblock-roundness);
 }
 
 /* show language of Code Block in Preview Mode */
