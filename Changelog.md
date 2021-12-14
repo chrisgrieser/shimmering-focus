@@ -1,3 +1,4 @@
+- 2021-12-14	minor
 - 2021-12-14	improved code blocks when rounded shapes are used
 - 2021-12-13	warning button fix
 - 2021-12-13	indent option for longform

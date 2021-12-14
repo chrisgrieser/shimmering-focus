@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 1.305
+Version 1.306
 https://github.com/chrisgrieser/shimmering-focus/
 MIT License
 ─────────────────────────────────────────────────── */
@@ -3581,18 +3581,24 @@ body.no-alternating-rows > .app-container table > tbody > tr > td {
 }
 
 /* Code blocks in Preview Mode */
-.markdown-preview-view code {
+.markdown-preview-view :not(pre) code {
 	background-color: var(--bg2) !important;
 	border-radius: var(--roundish);
 	white-space: pre-wrap !important;
 }
 
-.markdown-preview-view pre {
-	background-color: var(--bg2) !important;
-	padding-top: 10px !important;
-	padding-bottom: 12px !important;
-	border: var(--codeblock-border) !important;
-	border-radius: var(--codeblock-roundness) !important;
+body .markdown-preview-view pre[class*="language-"],
+body .markdown-preview-view pre {
+	background-color: var(--bg2);
+	padding-top: 10px;
+	padding-bottom: 12px;
+	border: var(--codeblock-border);
+	border-radius: var(--codeblock-roundness);
+}
+
+body .markdown-preview-view pre[class*="language-"] code,
+body .markdown-preview-view pre code {
+	text-shadow: none;
 }
 
 /* Code blocks in Edit Mode */
@@ -3647,6 +3653,7 @@ pre[class*="language-"]::AFTER {
 
 	font-family: var(--font-monospace);
 	font-size: 0.8em;
+	text-shadow: none;
 }
 
 pre[class~="language-c"]::AFTER { content: "C"; }
