@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 1.307
+Version 1.308
 https://github.com/chrisgrieser/shimmering-focus/
 MIT License
 ─────────────────────────────────────────────────── */
@@ -233,6 +233,8 @@ This ToC is auto-generated via the .create-ToC.sh
 	/* temporary variables till more color stuff is implemented */
 	--dark-sat: 5%;
 	--light-sat: 10%;
+
+	/* higher base saturation needed as hsl is a cone? */
 	--base-hue: 220;
 	--longform-light-hue: 20;
 	--longform-dark-hue: 270;
@@ -669,8 +671,8 @@ body:not(.angular-shapes) *:not(.setting-delete-hotkey) > svg.cross {
 	-webkit-mask-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' width='1.05em' height='1.05em' preserveAspectRatio='xMidYMid meet' viewBox='0 0 24 24'%3e%3cg fill='none'%3e%3cpath d='M12 22A10 10 0 0 1 4.926 4.926a10.004 10.004 0 1 1 14.148 14.148A9.936 9.936 0 0 1 12 22zm-8-9.828A8 8 0 1 0 4 12v.172zM9.409 16l-1.41-1.41L10.59 12L8 9.41L9.41 8L12 10.59L14.59 8L16 9.41L13.41 12L16 14.59L14.592 16L12 13.41L9.41 16h-.001z' fill='currentColor'/%3e%3c/g%3e%3c/svg%3e");
 }
 
-.installed-plugins-container svg.cross {
-	margin-top: 0.75px;
+body.angular-shapes .installed-plugins-container svg.cross {
+	margin-top: 1px;
 }
 
 body.angular-shapes .menu-item .menu-item-icon svg.cross {
