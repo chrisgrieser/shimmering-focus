@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 1.316
+Version 1.317
 https://github.com/chrisgrieser/shimmering-focus/
 MIT License
 ─────────────────────────────────────────────────── */
@@ -345,7 +345,9 @@ This ToC is auto-generated via the .create-ToC.sh
 	--pdf-size: 50vh;
 	--popover-size: 350;
 	--inactive-pane-opacity: 80%;
+
 	--signature: "⟡";
+	--empty-state-symbol-size: 8rem;
 
 	--toggle-duration: 350ms ease-in-out;
 	--header-transition: 450ms ease-in-out;
@@ -1260,10 +1262,15 @@ body:not(.show-scrollbar) ::-WEBKIT-SCROLLBAR {
 < Vault Launch Progress Bar
 ─────────────────────────────────────────────────── */
 
-.progress-bar .progress-bar-message {
+.progress-bar .progress-bar-message::BEFORE {
+	content: var(--signature);
 	color: var(--text-normal);
-	margin-bottom: 30px;
-	font-size: 1.5em;
+	font-size: var(--empty-state-symbol-size);
+}
+
+.progress-bar .progress-bar-message {
+	margin-bottom: 40px;
+	font-size: 0;
 }
 
 .progress-bar {
@@ -1271,13 +1278,18 @@ body:not(.show-scrollbar) ::-WEBKIT-SCROLLBAR {
 	backdrop-filter: blur(3px);
 }
 
+.progress-bar-indicator,
+.progress-bar-indicator .progress-bar-subline,
 .progress-bar-indicator .progress-bar-line {
 	height: 20px;
+	border-radius: var(--round);
+}
+
+.progress-bar-indicator .progress-bar-line {
 	background-color: var(--bg3);
 }
 
 .progress-bar-indicator .progress-bar-subline {
-	height: 20px;
 	background-color: var(--scrollbar-hover);
 }
 
@@ -2662,7 +2674,7 @@ body .workspace-leaf-resize-handle:active {
 .community-plugin-details-empty-state::AFTER {
 	content: var(--signature);
 	color: var(--extra-contrast);
-	font-size: 11rem;
+	font-size: var(--empty-state-symbol-size);
 }
 
 /* ───────────────────────────────────────────────────
@@ -2795,7 +2807,7 @@ body:not(.less-heading-letter-spacing) .modal.mod-community-theme .modal-title {
 .empty-state-title::AFTER {
 	content: var(--signature);
 	color: var(--extra-contrast);
-	font-size: 11rem;
+	font-size: var(--empty-state-symbol-size);
 }
 
 /* ───────────────────────────────────────────────────
@@ -4994,7 +5006,7 @@ body .popover {
 
 .sync-history-content-empty::BEFORE {
 	content: var(--signature);
-	font-size: 10rem;
+	font-size: var(--empty-state-symbol-size);
 }
 
 /* ───────────────────────────────────────────────────
