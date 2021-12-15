@@ -1,4 +1,4 @@
-- 2021-12-15	minor
+- 2021-12-15	implement #63
 - 2021-12-15	vault launch progress bar
 - 2021-12-14	fix header appearing with multiple panes
 - 2021-12-14	removed pseudo-admonistions & added compatibility to @SlVrb's checkboxes

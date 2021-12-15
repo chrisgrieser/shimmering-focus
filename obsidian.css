@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 1.319
+Version 1.320
 https://github.com/chrisgrieser/shimmering-focus/
 MIT License
 ─────────────────────────────────────────────────── */
@@ -6951,7 +6951,7 @@ settings:
 	 default: false
   -
 	 id: blockquotes-left-aligned
-	 title: Left-aligned BLockquotes
+	 title: Left-aligned BLockquote Text
 	 description: Use left-aligned text in blockquotes instead of justified text.
 	 type: class-toggle
 	 default: false
