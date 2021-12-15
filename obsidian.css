@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 1.318
+Version 1.319
 https://github.com/chrisgrieser/shimmering-focus/
 MIT License
 ─────────────────────────────────────────────────── */
@@ -1404,6 +1404,10 @@ body:not(.normal-checkboxes) .checkbox-container.is-enabled:hover {
 	border-color: var(--interactive-hover-border);
 }
 
+ul li.task-list-item.is-checked {
+	border-radius: var(--roundish);
+}
+
 /* ───────────────────────────────────────────────────
 << Input & Textarea
 ─────────────────────────────────────────────────── */
@@ -1984,10 +1988,10 @@ body > .app-container .workspace-split.mod-horizontal > .workspace-tabs > .works
 on the titlebar visibility in the titlebar section */
 
 .workspace-leaf-resize-handle {
-	transition: 350ms ease-in-out;
+	transition: var(--toggle-duration);
 }
 
-/* fix for the resize handler not shining through */
+/* fix for the background not shining through */
 .mod-left-split .workspace-tabs {
 	padding-right: var(--resize-handle-thickness);
 }
@@ -3398,7 +3402,9 @@ body > .app-container .HyperMD-quote {
 	border-right: var(--muted-border);
 	border-left: var(--muted-border);
 	border-radius: var(--roundish);
+}
 
+body:not(.blockquotes-left-aligned) > .app-container .HyperMD-quote {
 	text-align: justify;
 	hyphens: auto;
 }
@@ -5747,7 +5753,7 @@ body:not(.show-header-bar):not(.longform-no-bg) .workspace-split.mod-root > .wor
 	background-color: var(--bg1);
 }
 
-body:not(.longform-left-aligned) .longform-leaf .cm-s-obsidian {
+body:not(.longform-left-aligned) .longform-leaf span:not(.cm-header) {
 	text-align: justify;
 	hyphens: auto;
 }
@@ -5776,12 +5782,7 @@ body > div.app-container .longform-leaf .cm-s-obsidian .cm-hmd-frontmatter,
 }
 
 /* do not justify heading text */
-.longform-leaf .cm-header-1,
-.longform-leaf .cm-header-2,
-.longform-leaf .cm-header-3,
-.longform-leaf .cm-header-4,
-.longform-leaf .cm-header-5,
-.longform-leaf .cm-header-6,
+body .longform-leaf .cm-header,
 .longform-leaf .markdown-preview-view h1,
 .longform-leaf .markdown-preview-view h2,
 .longform-leaf .markdown-preview-view h3,
@@ -6099,11 +6100,15 @@ body > .app-container .BC-Matrix-square > ol {
 }
 
 body > .app-container .workspace-leaf-content[data-type="BC-matrix"] > .view-content div.BC-Matrix-square {
-	padding-top: 4px;
-	padding-bottom: 7px;
+	padding-top: 3px;
+	padding-bottom: 6px;
 	border: none;
 	border-bottom: var(--basic-border);
 	text-align: left;
+}
+
+body > .app-container div.BC-Matrix-square ol {
+	margin-top: 0;
 }
 
 body > .app-container div.view-content > div.BC-Matrix > div {
@@ -6119,19 +6124,21 @@ body > .app-container div.view-content {
 	padding: 0 2.5px 2.5px;
 }
 
+/* "up", "same", and "down" */
 h4.BC-Matrix-header {
 	display: inline-flex;
 	margin-left: 0;
 	font-family: var(--default-font);
-	font-size: 1.25em;
+	font-size: 1.2em;
 	font-style: unset !important;
 }
 
+/* "implied" and "real" */
 h6.BC-Matrix-header {
 	display: inline-block;
 
 	position: relative;
-	right: 0;
+	right: -8px;
 
 	color: var(--text-muted) !important;
 
@@ -6140,6 +6147,7 @@ h6.BC-Matrix-header {
 
 	font-family: var(--smallcap-font);
 	font-size: 0.9em;
+	font-style: normal !important;
 }
 
 .workspace-leaf-content[data-type="BC-matrix"] .view-content button {
@@ -6874,8 +6882,8 @@ settings:
 	 default: false
   -
 	 id: font-settings
-	 title: Fonts
-	 description: Sizes, Font-Face, Letter-Spacing
+	 title: Font & Text
+	 description: Font Sizes, Font Faces, Kerning, Alignment
 	 type: heading
 	 level: 2
 	 collapsed: true
@@ -6939,6 +6947,12 @@ settings:
 	 id: normal-blockquotes
 	 title: Normal-sized Blockquotes
 	 description: Blockquotes have the same size and line-height as the rest of the text.
+	 type: class-toggle
+	 default: false
+  -
+	 id: blockquotes-left-aligned
+	 title: Left-aligned BLockquotes
+	 description: Use left-aligned text in blockquotes instead of justified text.
 	 type: class-toggle
 	 default: false
   -
