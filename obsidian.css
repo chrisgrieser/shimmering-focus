@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 1.325
+Version 1.326
 https://github.com/chrisgrieser/shimmering-focus/
 MIT License
 ─────────────────────────────────────────────────── */
@@ -5558,14 +5558,6 @@ body.angular-shapes .kanban-plugin__lane {
 
 /* <<< Longform Sidebar */
 
-/* container with more space */
-.tab-list {
-	margin: 0 0 4px !important;
-
-	/* horizontal border between sections */
-	border-bottom: var(--basic-border) !important;
-}
-
 .tab-panel-container.svelte-11pvpwl {
 	padding-right: 0 !important;
 	padding-left: 0 !important;
@@ -5648,58 +5640,63 @@ div.new-scene-container input#new-scene {
 }
 
 /* <<< Longform Sidebar Icons */
-.svelte-htpziy::BEFORE {
+.tabs .tab-list {
+	padding-bottom: 7px;
+	padding-left: 7px;
+	margin-right: 0 !important;
+	margin-left: 0 !important;
+	border-bottom: var(--basic-border) !important;
+}
+
+.workspace-leaf-content[data-type="VIEW_TYPE_LONGFORM_EXPLORER"] button::BEFORE {
 	font-family: "Material Icons";
 	font-size: 1.1rem;
 	vertical-align: top;
 }
 
-.svelte-htpziy:nth-child(1)::BEFORE {
+.workspace-leaf-content[data-type="VIEW_TYPE_LONGFORM_EXPLORER"] button:nth-child(1)::BEFORE {
 	content: "format_list_numbered_rtl";
 }
 
-.svelte-htpziy:nth-child(2)::BEFORE {
+.workspace-leaf-content[data-type="VIEW_TYPE_LONGFORM_EXPLORER"] button:nth-child(2)::BEFORE {
 	content: "import_contacts";
 }
 
-.svelte-htpziy:nth-child(3)::BEFORE {
+.workspace-leaf-content[data-type="VIEW_TYPE_LONGFORM_EXPLORER"] button:nth-child(3)::BEFORE {
 	content: "merge_type";
 }
 
-.svelte-htpziy.selected {
-	color: var(--text-accent) !important;
-	background-color: var(--bg3) !important;
-}
+.workspace-leaf-content[data-type="VIEW_TYPE_LONGFORM_EXPLORER"] button {
+	color: var(--text-faint);
+	background-color: var(--bg3);
 
-.svelte-htpziy:hover {
-	color: var(--alt-accent) !important;
-	background-color: var(--bg1) !important;
-}
+	padding: 4px 3px 5px 7px;
+	margin-right: -3px;
 
-.svelte-htpziy.selected:hover {
-	color: var(--alt-accent) !important;
-	background-color: var(--bg3) !important;
-}
-
-.svelte-htpziy {
-	color: var(--extra-contrast) !important;
-	background-color: var(--bg1) !important;
-
-	padding: 4px 9px 5px 14px !important;
-	margin-right: 6px !important;
-
-	border: var(--basic-border) !important;
-	border-bottom: none !important;
-	border-top-right-radius: 6px !important;
-	border-top-left-radius: 6px !important;
+	border: var(--thin-border);
+	border-radius: var(--roundish);
 
 	font-size: 0;
+}
+
+.workspace-leaf-content[data-type="VIEW_TYPE_LONGFORM_EXPLORER"] button.selected {
+	color: var(--extra-contrast);
+	background-color: var(--bg2);
+}
+
+.workspace-leaf-content[data-type="VIEW_TYPE_LONGFORM_EXPLORER"] button.selected:hover,
+.workspace-leaf-content[data-type="VIEW_TYPE_LONGFORM_EXPLORER"] button:hover {
+	color: var(--alt-accent);
 }
 
 .new-draft-container,
 .new-scene-container,
 .compile-container {
 	border-top: var(--basic-border) !important;
+}
+
+input#new-scene {
+	height: 20px;
 }
 
 /* Compile */
