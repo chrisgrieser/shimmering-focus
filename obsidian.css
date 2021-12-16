@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 1.329
+Version 1.330
 https://github.com/chrisgrieser/shimmering-focus/
 MIT License
 ─────────────────────────────────────────────────── */
@@ -2997,13 +2997,19 @@ body.colored-yaml .cm-s-obsidian .cm-hmd-frontmatter.cm-string {
 }
 
 /* ───────────────────────────────────────────────────
-<< Collapse Indicators & Gutter
+<< Collapse Indicators & Fold Gutters
 ─────────────────────────────────────────────────── */
 
 /* Preview mode */
 .right-triangle {
-	height: 0.6em;
-	width: 0.6em;
+	height: 0.4em;
+	width: 0.4em;
+}
+
+.heading-collapse-indicator {
+	position: relative;
+	left: -10px;
+	padding-right: 0 !important;
 }
 
 .is-collapsed .heading-collapse-indicator.collapse-indicator.collapse-icon:hover,
@@ -3551,9 +3557,10 @@ https://forum.obsidian.md/t/custom-css-for-tables-5-new-styles-ready-to-use-in-y
 	table-layout: fixed;
 }
 
-:root table {
+table {
 	--table-border: var(--basic-border);
 	--table-roundness: var(--roundish);
+	--bold-in-darkmode: var(--text-normal);
 }
 
 table:not(.dataview.table-view-table) th {

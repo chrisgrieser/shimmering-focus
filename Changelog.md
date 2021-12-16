@@ -1,4 +1,4 @@
-- 2021-12-16	minor
+- 2021-12-16	better collapse indicator preview mode
 - 2021-12-16	angular/roundish button fonts
 - 2021-12-16	longform plugin improvements
 - 2021-12-16	improved longform sidebar
