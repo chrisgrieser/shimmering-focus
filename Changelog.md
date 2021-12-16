@@ -1,3 +1,4 @@
+- 2021-12-16	file recovery plugin color fixes
 - 2021-12-16	blockquote left-align style setting option also applied to preview mode
 - 2021-12-15	implement #63
 - 2021-12-15	vault launch progress bar

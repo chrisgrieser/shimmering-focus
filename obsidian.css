@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 1.321
+Version 1.322
 https://github.com/chrisgrieser/shimmering-focus/
 MIT License
 ─────────────────────────────────────────────────── */
@@ -4955,11 +4955,6 @@ body .popover {
 	font-size: 1.05em;
 }
 
-.sync-history-list-item.is-active .u-muted,
-.sync-history-list-item:hover .u-muted {
-	color: var(--text-normal);
-}
-
 .sync-history-list-item {
 	padding-right: 5px;
 	padding-left: 10px;
@@ -4969,6 +4964,7 @@ body .popover {
 
 .sync-history-list-item.is-active {
 	color: var(--text-accent);
+	background-color: var(--bg3);
 	font-weight: 600;
 	text-rendering: geometricPrecision;
 }
@@ -4976,16 +4972,22 @@ body .popover {
 .sync-history-list-item:hover,
 .sync-history-list-item.is-active:hover {
 	color: var(--alt-accent);
+	background-color: var(--bg3);
 }
 
 .sync-history-list {
+	background-color: var(--bg2);
 	padding-top: 10px;
 	padding-bottom: 10px;
 }
 
 .sync-history-content-container {
 	height: 100%;
+
+	background-color: var(--bg1);
+
 	padding: 10px;
+
 	border-left: var(--muted-border);
 	border-top-right-radius: var(--roundish);
 	border-bottom-right-radius: var(--roundish);
@@ -5546,9 +5548,8 @@ body.angular-shapes .kanban-plugin__lane {
 /* <<< Longform Sidebar */
 
 /* container with more space */
-.tab-list.svelte-1bo97vk {
-	margin-right: 0 !important;
-	margin-left: 0 !important;
+.tab-list {
+	margin: 0 0 4px !important;
 
 	/* horizontal border between sections */
 	border-bottom: var(--basic-border) !important;
@@ -5560,7 +5561,7 @@ body.angular-shapes .kanban-plugin__lane {
 }
 
 .workspace-leaf-content[data-type="VIEW_TYPE_LONGFORM_EXPLORER"] .view-content {
-	padding: 15px 5px;
+	padding: 7px 4px;
 }
 
 .draft-container.svelte-1jmafs.selected,
@@ -5684,14 +5685,14 @@ div.new-scene-container input#new-scene {
 	font-size: 0;
 }
 
-.new-draft-container.svelte-1wkli4h,
-.new-scene-container.svelte-1lq63fp,
-.compile-container.svelte-1vu6mjk {
+.new-draft-container,
+.new-scene-container,
+.compile-container {
 	border-top: var(--basic-border) !important;
 }
 
 /* Compile */
-.compile-button.svelte-1vu6mjk:hover {
+.compile-button:hover {
 	background-color: var(--alt-accent) !important;
 }
 
@@ -5700,11 +5701,11 @@ div.new-scene-container input#new-scene {
 	color: var(--extra-contrast) !important;
 }
 
-.svelte-23avsr[name~="projects"] {
+select[name~="projects"] {
 	font-weight: 600;
 }
 
-.right-arrow.svelte-23avsr {
+.right-arrow {
 	display: none !important;
 }
 
@@ -5713,8 +5714,11 @@ div.new-scene-container input#new-scene {
 	text-decoration: none !important;
 }
 
-/* container */
-#project-picker.svelte-23avsr {
+.workspace-leaf-content .view-content div#project-picker-container {
+	margin-bottom: 0;
+}
+
+#project-picker {
 	background-color: var(--bg3);
 
 	padding: 5px 0 5px 1px;
