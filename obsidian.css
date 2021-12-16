@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 1.322
+Version 1.323
 https://github.com/chrisgrieser/shimmering-focus/
 MIT License
 ─────────────────────────────────────────────────── */
@@ -581,10 +581,6 @@ a.external-link {
 	background-position-y: 5px;
 	background-image: var(--external-url);
 	background-size: 14px;
-}
-
-body.hide-external-link-icon a.external-link {
-	background-image: none;
 }
 
 /* help/info (also applies to info plugin) */
@@ -2662,6 +2658,7 @@ body .workspace-leaf-resize-handle:active {
 /* no external link icon */
 .community-plugin-readme a.external-link {
 	background-image: none;
+	padding-right: 0;
 }
 
 /* empty state */
@@ -3582,6 +3579,10 @@ body.no-alternating-rows > .app-container table > tbody > tr > td {
 .cm-s-obsidian div.HyperMD-codeblock-bg {
 	--codeblock-border: var(--muted-border);
 	--codeblock-roundness: calc(var(--roundish) * 1.5);
+}
+
+.cm-s-obsidian .HyperMD-codeblock {
+	line-height: 1.5;
 }
 
 .cm-s-obsidian .HyperMD-codeblock,
