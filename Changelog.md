@@ -1,3 +1,4 @@
+- 2021-12-16	minor
 - 2021-12-16	fix links in community plugin browser readmes
 - 2021-12-16	file recovery plugin color fixes
 - 2021-12-16	blockquote left-align style setting option also applied to preview mode
