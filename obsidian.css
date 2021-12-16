@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 1.324
+Version 1.325
 https://github.com/chrisgrieser/shimmering-focus/
 MIT License
 ─────────────────────────────────────────────────── */
@@ -1293,25 +1293,30 @@ body:not(.show-scrollbar) ::-WEBKIT-SCROLLBAR {
 << Buttons
 ─────────────────────────────────────────────────── */
 
+/* ":not([type="button"])" prevents targeting excalidraw-buttons */
 button {
-	color: var(--button-text) !important;
-	background-color: var(--button-bg) !important;
+	color: var(--button-text);
+	background-color: var(--button-bg);
 
 	transition: var(--toggle-duration);
 
-	padding: 6px 12px !important;
+	padding: 6px 12px;
 
-	border: 2px solid var(--interactive-border) !important;
+	border: 2px solid var(--interactive-border);
 	border-radius: var(--round);
 
 	letter-spacing: 0.5px;
 }
 
-button:hover {
-	color: var(--button-hover-text) !important;
-	background-color: var(--button-hover-bg) !important;
+body .modal button:hover {
+	color: var(--button-hover-text);
+	background-color: var(--button-hover-bg);
 	transition: var(--toggle-duration);
-	border-color: var(--interactive-hover-border) !important;
+	border-color: var(--interactive-hover-border);
+}
+
+button.color-picker-swatch {
+	color: unset;
 }
 
 /* ───────────────────────────────────────────────────
@@ -1821,7 +1826,7 @@ body:not(.move-plugin-name-to-left):not(.is-mobile) .suggestion-prefix {
 
 body:not(.move-plugin-name-to-left):not(.is-mobile) .suggestion-content {
 	display: inline-block;
-	margin-right: 190px;
+	margin-right: 120px;
 }
 
 /* Alternating row colors */
@@ -6662,6 +6667,14 @@ body.angular-shapes .plugin-list-plugins .setting-item:not(.mod-toggle):not(:fir
 
 body:not(.angular-shapes) .plugin-list-plugins .setting-item:not(.mod-toggle):not(:first-child) .setting-item-control {
 	margin-right: 42px;
+}
+
+/* ───────────────────────────────────────────────────
+<< Excalidraw
+─────────────────────────────────────────────────── */
+
+.excalidraw button {
+	all: unset;
 }
 
 /* ───────────────────────────────────────────────────
