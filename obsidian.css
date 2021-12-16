@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 1.320
+Version 1.321
 https://github.com/chrisgrieser/shimmering-focus/
 MIT License
 ─────────────────────────────────────────────────── */
@@ -3404,11 +3404,6 @@ body > .app-container .HyperMD-quote {
 	border-radius: var(--roundish);
 }
 
-body:not(.blockquotes-left-aligned) > .app-container .HyperMD-quote {
-	text-align: justify;
-	hyphens: auto;
-}
-
 body > .app-container .HyperMD-quote ~ .HyperMD-quote {
 	border-top: none;
 	border-bottom: none;
@@ -3456,8 +3451,6 @@ body > .app-container .markdown-preview-view blockquote {
 	border: var(--muted-border);
 	border-radius: var(--roundish);
 
-	font-style: italic;
-	text-align: justify;
 	hyphens: auto;
 }
 
@@ -3467,12 +3460,14 @@ span.cm-em.cm-quote {
 	text-decoration: underline;
 }
 
+/* option for normal size */
 body:not(.normal-blockquotes) blockquote,
 body:not(.normal-blockquotes) .HyperMD-quote.HyperMD-quote-1 {
 	font-size: 0.87em;
 	line-height: 21px;
 }
 
+/* option for decorative blockquote */
 .quotation-mark-deco blockquote p::BEFORE {
 	content: "”";
 
@@ -3490,6 +3485,13 @@ body:not(.normal-blockquotes) .HyperMD-quote.HyperMD-quote-1 {
 
 .quotation-mark-deco blockquote p {
 	display: inline;
+}
+
+/* option to left-align */
+body:not(.blockquotes-left-aligned) > .app-container .markdown-preview-view blockquote,
+body:not(.blockquotes-left-aligned) > .app-container .HyperMD-quote {
+	text-align: justify;
+	hyphens: auto;
 }
 
 /* ───────────────────────────────────────────────────
