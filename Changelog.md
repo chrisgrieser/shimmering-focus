@@ -1,3 +1,4 @@
+- 2021-12-16	longform plugin improvements
 - 2021-12-16	improved longform sidebar
 - 2021-12-16	fixes for Excalidraw plugin
 - 2021-12-16	fix links in community plugin browser readmes

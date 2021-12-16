@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 1.326
+Version 1.327
 https://github.com/chrisgrieser/shimmering-focus/
 MIT License
 ─────────────────────────────────────────────────── */
@@ -229,13 +229,11 @@ This ToC is auto-generated via the .create-ToC.sh
 
 :root {
 	/* temporary variables till more color stuff is implemented */
-	--dark-sat: 5%;
+	--dark-sat: 10%;
 	--light-sat: 10%;
 
 	/* sat has to be adjusted when light changes due to being a bicone */
 	--base-hue: 220;
-	--longform-light-hue: 20;
-	--longform-dark-hue: 270;
 
 	--brightness-light: 5%;
 	--brightness-dark: 5%;
@@ -247,6 +245,15 @@ This ToC is auto-generated via the .create-ToC.sh
 	--b-dark-3: calc(var(--brightness-dark) + 1%);
 }
 
+.theme-light:not(.longform-no-bg) .longform-leaf {
+	--base-hue: 20;
+}
+
+.theme-dark:not(.longform-no-bg) .longform-leaf {
+	--base-hue: 270;
+}
+
+.theme-light .longform-leaf,
 .theme-light {
 	--bg1: hsl(var(--base-hue) var(--light-sat) var(--b-light-1));
 	--bg2: hsl(var(--base-hue) var(--light-sat) var(--b-light-2));
@@ -258,9 +265,9 @@ This ToC is auto-generated via the .create-ToC.sh
 	--muted-border-color: hsl(var(--base-hue) calc(var(--light-sat) / 2) calc(var(--b-light-3) + 3%));
 	--basic-border-color: hsl(var(--base-hue) calc(var(--light-sat) / 2) calc(var(--b-light-3) - 5%));
 	--backdrop-color: hsl(var(--base-hue) calc(var(--light-sat) * 2) calc(var(--b-light-2) - 20%));
-	--longform-background: hsl(var(--longform-light-hue) calc(var(--light-sat) * 1.5) calc(var(--b-light-1) - 7%));
 }
 
+.theme-dark .longform-leaf,
 .theme-dark {
 	--bg1: hsl(var(--base-hue) var(--dark-sat) var(--b-dark-1));
 	--bg2: hsl(var(--base-hue) var(--dark-sat) var(--b-dark-2));
@@ -272,7 +279,6 @@ This ToC is auto-generated via the .create-ToC.sh
 	--muted-border-color: hsl(var(--base-hue) calc(var(--dark-sat) / 2) calc(var(--b-dark-1) - 6%));
 	--basic-border-color: hsl(var(--base-hue) calc(var(--dark-sat) / 2) calc(var(--b-dark-1) + 6%));
 	--backdrop-color: hsl(var(--base-hue) calc(var(--dark-sat) * 2) calc(var(--b-dark-2) + 2%));
-	--longform-background: hsl(var(--longform-dark-hue) calc(var(--dark-sat) / 1.5) calc(var(--b-dark-1) + 0%));
 }
 
 ::-WEBKIT-SCROLLBAR,
@@ -353,6 +359,7 @@ This ToC is auto-generated via the .create-ToC.sh
 	--header-transition: 450ms ease-in-out;
 }
 
+.longform-leaf,
 .theme-light,
 .theme-dark {
 	--basic-border: 2px solid var(--basic-border-color);
@@ -3509,7 +3516,7 @@ https://forum.obsidian.md/t/custom-css-for-tables-5-new-styles-ready-to-use-in-y
 
 /* see also section "Max View" */
 
-.markdown-preview-view table:not(.dataview.table-view-table) {
+.markdown-preview-view table:not(.dataview) {
 	width: 100%;
 	table-layout: fixed;
 }
@@ -3520,7 +3527,7 @@ https://forum.obsidian.md/t/custom-css-for-tables-5-new-styles-ready-to-use-in-y
 }
 
 table:not(.dataview.table-view-table) th {
-	font-weight: 700;
+	font-weight: 600;
 	text-rendering: geometricPrecision;
 }
 
@@ -3541,16 +3548,11 @@ tr:last-child td:last-child {
 	border-bottom-right-radius: var(--table-roundness);
 }
 
-/* only inner borders */
+/* draw only inner borders */
 body > .app-container table > thead > tr > th {
 	border-top: none;
 	border-right: none;
 	border-bottom: var(--table-border) !important;
-	border-left: var(--table-border) !important;
-}
-
-body > .app-container table > thead > tr > th:first-child {
-	border-left: none !important;
 }
 
 body > .app-container table > tbody > tr > td {
@@ -3558,11 +3560,19 @@ body > .app-container table > tbody > tr > td {
 	border-left: var(--table-border) !important;
 }
 
+/* draw inner vertical borders only for none-dataview tables
+cause lists in tables are misaligned */
+body > .app-container table > thead > tr > th,
+body > .app-container table:not(.dataview) > tbody > tr > td {
+	border-left: var(--table-border) !important;
+}
+
+body > .app-container table > thead > tr > th:first-child,
 body > .app-container table > tbody > tr > td:first-child {
 	border-left: none !important;
 }
 
-/* background */
+/* backgrounds */
 thead {
 	background-color: var(--bg3);
 	font-weight: 900;
@@ -5671,7 +5681,7 @@ div.new-scene-container input#new-scene {
 	background-color: var(--bg3);
 
 	padding: 4px 3px 5px 7px;
-	margin-right: -3px;
+	margin-right: -2px;
 
 	border: var(--thin-border);
 	border-radius: var(--roundish);
@@ -5748,23 +5758,6 @@ select[name~="projects"] {
 	font-size: var(--longform-font-size);
 	line-height: 1.35;
 	letter-spacing: 0 !important;
-}
-
-/* background color */
-body:not(.longform-no-bg) .longform-leaf .markdown-preview-view,
-body:not(.longform-no-bg) .longform-leaf .markdown-source-view {
-	background-color: var(--longform-background);
-}
-
-/* header color */
-body:not(.show-header-bar):not(.longform-no-bg) .workspace-split.mod-root > .workspace-leaf:first-of-type:last-of-type .longform-leaf .view-header {
-	background-color: var(--longform-background);
-}
-
-body.show-header-bar:not(.longform-no-bg) .workspace-split.mod-root > .workspace-leaf:first-of-type:last-of-type .longform-leaf .view-header,
-body:not(.show-header-bar):not(.longform-no-bg) .workspace-split.mod-root > .workspace-leaf:first-of-type:last-of-type .longform-leaf .view-header:hover,
-body:not(.show-header-bar):not(.longform-no-bg) .workspace-split.mod-root > .workspace-leaf:first-of-type:last-of-type .longform-leaf .view-header:focus-within {
-	background-color: var(--bg1);
 }
 
 body:not(.longform-left-aligned) .longform-leaf span:not(.cm-header) {
@@ -6867,7 +6860,7 @@ settings:
 	 title: "🚧 Experimental: Blue Tint in Dark Mode"
 	 description: Amount of faint blue in Dark Mode. (Testing Ground for upcoming color scheme options.)
 	 type: variable-number-slider
-	 default: 0
+	 default: 10
 	 min: 0
 	 max: 15
 	 step: 1
