@@ -147,7 +147,9 @@
 						"text-shadow",
 						"text-align",
 						"hyphens",
-						"white-space"
+						"white-space",
+						"font-display",
+						"src"
 					]
 				}
 			],
