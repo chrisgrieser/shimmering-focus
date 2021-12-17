@@ -3,7 +3,7 @@
 A minimalistic [Obsidian](https://obsidian.md/) theme focused on readability and condensed information display.
 
 <!-- manually updated-->
-![](https://img.shields.io/badge/downloads-6992-6E4E9B?style=plastic) ![](https://img.shields.io/github/last-commit/chrisgrieser/shimmering-focus?style=plastic) [![](https://img.shields.io/badge/changelog-click%20here-FFE800?style=plastic)](Changelog.md)
+![](https://img.shields.io/badge/downloads-7011-6E4E9B?style=plastic) ![](https://img.shields.io/github/last-commit/chrisgrieser/shimmering-focus?style=plastic) [![](https://img.shields.io/badge/changelog-click%20here-FFE800?style=plastic)](Changelog.md)
 
 <img src="https://raw.githubusercontent.com/chrisgrieser/shimmering-focus/main/dual-theme-screenshot.png" alt="Promo Screenshot">
 
@@ -58,11 +58,9 @@ Type one of the following eight tags (e.g. `#definition`) to get a colored annot
 💡 You can add your own Annotation Tags by adding a snippet [using this template](https://github.com/chrisgrieser/shimmering-focus/blob/main/annotation-tag-template.css).
 
 ### Max View & Focus View
-- __Max View__: By default, the theme uses readable line length[^4] as well as smaller images & PDFs. When the *left* sidebar is hidden, line length is extended to full length, and images & PDFs are expanded to full width. This is useful when dealing with big tables or many images.
+- __Max View__*(disabled by default)*: When the *left* sidebar is hidden, line length is extended to full length, and images & PDFs are expanded to full width. Readable line length and smaller images/PDFs are re-applied when the left sidebar is shown again.[^1] This is useful when dealing with big tables or many images. To enable *Max View* or adjust the size of images & PDFs, use the [Style Settings Plugin](https://github.com/mgmeyers/obsidian-style-settings/).
 - __Focus View__ *(disabled by default)*: Hiding the *left* side bar will also hide the *right* sidebar, with the right side bar staying hidden until the left one is shown again. This synergizes with *Max View*, but also works when Max View is disabled. To enable *Focus View*, use the [Style Settings Plugin](https://github.com/mgmeyers/obsidian-style-settings/).
-- *Recommendation*: For both features, it is useful to set a hotkey for the built-in command `Toggle left sidebar`.
-
-💡 You can turn the *Max View* feature off and/or adjust the size of images & PDFs with the [Style Settings Plugin](https://github.com/mgmeyers/obsidian-style-settings/).
+- *💡 Recommendation*: For both features, it is useful to set a hotkey for the built-in command `Toggle left sidebar`.
 
 <img src="https://user-images.githubusercontent.com/73286100/138562271-2f7d3589-d580-49e4-bea6-ca3e3004ab78.gif" alt="Promo Max View" width=60%>
 
@@ -70,7 +68,7 @@ Type one of the following eight tags (e.g. `#definition`) to get a colored annot
 - Click & hold an image to zoom.
 - Alt-text is automatically used as image caption.
 - Set a default Image Size with the Style Settings Plugin.
-- Use [Max View](#max-view--focus-view) to toggle between small and big image sizes.
+- You can also use [Max View](#max-view--focus-view) to toggle between small and big image sizes.
 
 ### Multi-Color-Highlighting & Spoiler Syntax
 - Surround highlights with `*` or `**` for alternative highlight colors (`*==cyan==*` and `**==yellow==**`).

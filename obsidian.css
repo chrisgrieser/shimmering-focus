@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 1.337
+Version 1.338
 https://github.com/chrisgrieser/shimmering-focus/
 MIT License
 ─────────────────────────────────────────────────── */
@@ -185,7 +185,7 @@ This ToC is auto-generated via the .create-ToC.sh
 	--interactive-bg: var(--accent-lighter);
 	--interactive-hover-bg: var(--alt-accent-lighterer);
 	--interactive-hover-border: var(--alt-accent-lighter);
-	--interactive-border: var(--accent-lightest);
+	--interactive-border: var(--accent-lighter);
 
 	--finished-task: var(--accent-lighter);
 	--cursor-duo-color-1: var(--alt-accent-lightest);
@@ -354,8 +354,9 @@ This ToC is auto-generated via the .create-ToC.sh
 	--signature: "⟡";
 	--empty-state-symbol-size: 8rem;
 
-	--toggle-duration: 350ms ease-in-out;
-	--header-transition: 450ms ease-in-out;
+	--quick-transition: 200ms ease-in-out;
+	--medium-transition: 350ms ease-in-out;
+	--slow-transition: 450ms ease-in-out;
 }
 
 .longform-leaf,
@@ -1120,7 +1121,7 @@ body:not(.show-header-bar) .app-container .workspace-split.mod-root > .workspace
 
 	background-color: var(--bg1);
 
-	transition: var(--header-transition);
+	transition: var(--slow-transition);
 
 	border-color: var(--text-faint);
 	border-top: none;
@@ -1136,7 +1137,7 @@ body:not(.show-header-bar) .view-header-icon,
 body:not(.show-header-bar) .view-action svg {
 	color: var(--extra-contrast);
 	opacity: 0;
-	transition: var(--header-transition);
+	transition: var(--slow-transition);
 }
 
 body:not(.show-header-bar) .workspace-split.mod-root > .workspace-leaf .view-header:hover,
@@ -1144,7 +1145,7 @@ body:not(.show-header-bar) .workspace-split.mod-root > .workspace-leaf .view-hea
 body.show-header-bar .workspace-split.mod-root > .workspace-leaf .view-header {
 	height: 1.9em;
 	background-color: var(--bg2);
-	transition: var(--header-transition);
+	transition: var(--slow-transition);
 }
 
 body.show-header-bar:not(.is-mobile) .view-header {
@@ -1161,7 +1162,7 @@ body .view-header:focus-within .view-header-icon,
 body .view-header:focus-within .view-action svg,
 body .view-header:focus-within .view-header-title {
 	opacity: 1 !important;
-	transition: var(--header-transition);
+	transition: var(--slow-transition);
 }
 
 .view-content:not(.is-mobile) {
@@ -1244,7 +1245,7 @@ body:not(.show-statusbar):not(.default-statusbar) .status-bar {
 
 body:not(.show-statusbar):not(.default-statusbar) .status-bar:hover {
 	opacity: 1;
-	transition: var(--toggle-duration);
+	transition: var(--medium-transition);
 }
 
 /* so stuff on the bottom of the right sidebar can still be clicked */
@@ -1331,12 +1332,13 @@ body:not(.show-scrollbar) ::-WEBKIT-SCROLLBAR {
 << Buttons
 ─────────────────────────────────────────────────── */
 
+.modal-container .modal .modal-button-container button,
 .modal-container .modal .modal-content button:not(.mod-cta),
 .modal-container .modal .modal-content button.mod-cta {
 	color: var(--button-text);
 	background-color: var(--interactive-bg);
 
-	transition: var(--toggle-duration);
+	transition: var(--quick-transition);
 
 	padding: 6px 12px 5px;
 
@@ -1352,7 +1354,7 @@ body:not(.show-scrollbar) ::-WEBKIT-SCROLLBAR {
 .modal-container .modal.mod-community-plugin button:hover {
 	color: var(--button-hover-text);
 	background-color: var(--interactive-hover-bg);
-	transition: var(--toggle-duration);
+	transition: var(--medium-transition);
 	border-color: var(--interactive-hover-border);
 }
 
@@ -1400,7 +1402,7 @@ body:not(.normal-checkboxes) .checkbox-container {
 
 	background-color: var(--bg2);
 
-	transition: var(--toggle-duration);
+	transition: var(--medium-transition);
 	cursor: pointer;
 
 	border: 2px solid var(--interactive-border);
@@ -1422,7 +1424,7 @@ body:not(.normal-checkboxes) .checkbox-container::AFTER {
 }
 
 body:not(.normal-checkboxes) .checkbox-container:hover {
-	transition: var(--toggle-duration);
+	transition: var(--medium-transition);
 	border: 9px solid var(--interactive-hover-bg);
 }
 
@@ -1736,7 +1738,7 @@ body:not(.show-close-button) div.search-input-clear-button:hover,
 body:not(.show-close-button) .empty-state-close-button:hover,
 body:not(.show-close-button) .modal-close-button:hover {
 	opacity: 1;
-	transition: var(--toggle-duration);
+	transition: var(--medium-transition);
 }
 
 /* ───────────────────────────────────────────────────
@@ -1756,9 +1758,9 @@ div.prompt {
 
 input.prompt-input {
 	width: unset;
-	padding-top: 7px;
 	margin-bottom: 3px;
 	border-radius: calc(var(--roundish) * 1.5);
+	font-size: calc(var(--button-font-size) + 0.1em);
 }
 
 div.prompt-results {
@@ -2020,7 +2022,7 @@ body > .app-container .workspace-split.mod-horizontal > .workspace-tabs > .works
 on the titlebar visibility in the titlebar section */
 
 .workspace-leaf-resize-handle {
-	transition: var(--toggle-duration);
+	transition: var(--medium-transition);
 }
 
 /* fix for the background not shining through */
@@ -3278,17 +3280,17 @@ body.no-barelink-spellcheck .cm-hmd-barelink.cm-overlay.cm-spell-error {
 /* as well for this to work.) */
 
 /* <<< Line Length & Tables */
-body:not(.max-view-off) .workspace-split.mod-left-split.is-collapsed ~ .mod-root .markdown-preview-section,
-body:not(.max-view-off) .workspace-split.mod-left-split.is-collapsed ~ .mod-root .CodeMirror-wrap {
+body.max-view-enabled .workspace-split.mod-left-split.is-collapsed ~ .mod-root .markdown-preview-section,
+body.max-view-enabled .workspace-split.mod-left-split.is-collapsed ~ .mod-root .CodeMirror-wrap {
 	max-width: 100%;
 }
 
 /* <<< Images */
-body:not(.max-view-off) .workspace-split.mod-left-split.is-collapsed ~ .mod-root .view-content .markdown-preview-view img {
+body.max-view-enabled .workspace-split.mod-left-split.is-collapsed ~ .mod-root .view-content .markdown-preview-view img {
 	max-width: 100%;
 }
 
-body:not(.max-view-off) .workspace-split.mod-left-split.is-collapsed ~ .mod-root div.oz-image-widget > img {
+body.max-view-enabled .workspace-split.mod-left-split.is-collapsed ~ .mod-root div.oz-image-widget > img {
 	max-width: 100% !important;
 }
 
@@ -3298,8 +3300,8 @@ body:not(.is-mobile) > .app-container div.oz-image-widget > img:not(:active) {
 }
 
 /* <<< PDFs */
-body:not(.max-view-off):not(.is-mobile) .workspace-split.mod-left-split.is-collapsed ~ .mod-root .view-content .markdown-preview-view .pdf-embed,
-body:not(.max-view-off):not(.is-mobile) .workspace-split.mod-left-split.is-collapsed ~ .mod-root div.oz-image-widget embed {
+body.max-view-enabled:not(.is-mobile) .workspace-split.mod-left-split.is-collapsed ~ .mod-root .view-content .markdown-preview-view .pdf-embed,
+body.max-view-enabled:not(.is-mobile) .workspace-split.mod-left-split.is-collapsed ~ .mod-root div.oz-image-widget embed {
 	max-height: 100%;
 	max-width: 100%;
 }
@@ -3311,7 +3313,7 @@ body:not(.is-mobile) > .app-container div.oz-image-widget embed {
 }
 
 /* <<< Mermaid */
-body:not(.max-view-off) .workspace-split.mod-left-split.is-collapsed ~ .mod-root svg[id^="m"][width][height][viewBox] {
+body.max-view-enabled .workspace-split.mod-left-split.is-collapsed ~ .mod-root svg[id^="m"][width][height][viewBox] {
 	width: 100%;
 	max-width: 100%;
 }
@@ -6544,7 +6546,7 @@ pre button.copy:hover::BEFORE {
 	color: var(--button-text);
 	background-color: var(--interactive-bg);
 
-	transition: var(--toggle-duration);
+	transition: var(--medium-transition);
 
 	padding: 6px 12px;
 	margin-right: 0 !important;
@@ -6565,7 +6567,7 @@ body a.style-settings-import:hover,
 body a.style-settings-export:hover {
 	color: var(--button-hover-text) !important;
 	background-color: var(--interactive-hover-bg);
-	transition: var(--toggle-duration);
+	transition: var(--medium-transition);
 	border-color: var(--interactive-hover-border);
 }
 
@@ -7091,15 +7093,15 @@ settings:
 	 level: 2
 	 collapsed: true
   -
-	 id: max-view-off
-	 title: 'Disable "Max View"'
-	 description: '"Max View" makes panes full length and images/PDFs full width when the left sidebar is hidden and readable line length when the left sidebar is shown.'
+	 id: max-view-enabled
+	 title: 'Enable "Max View"'
+	 description: 'Makes panes full length and images/PDFs full width when the left sidebar is hidden. Switches back to readable line length and smaller images/PDFs when the left sidebar is shown. Can be combined with "Focus View".'
 	 type: class-toggle
 	 default: false
   -
 	 id: focus-view-enabled
 	 title: 'Enable "Focus View"'
-	 description: 'Hiding the left side bar will also hide the right one. Note that with this feature, the right side bar stays hidden until the left one is shown again. Synergizes with "Max View", but also works with "Max View" disabled. '
+	 description: 'Hiding the left side bar will also hide the right one. Note that with this feature, the right side bar stays hidden until the left one is shown again. Can be combined with "Max View".'
 	 type: class-toggle
 	 default: false
   -

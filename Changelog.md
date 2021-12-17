@@ -1,3 +1,4 @@
+- 2021-12-17	max view disabled by default
 - 2021-12-17	hotfixes
 - 2021-12-17	button color fixes
 - 2021-12-17	switch back to oxanium
