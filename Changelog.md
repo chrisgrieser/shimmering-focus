@@ -1,3 +1,4 @@
+- 2021-12-17	reduced file size
 - 2021-12-16	fixed brightness sliders working again
 - 2021-12-16	better collapse indicator preview mode
 - 2021-12-16	angular/roundish button fonts
