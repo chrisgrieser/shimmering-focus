@@ -1,3 +1,4 @@
+- 2021-12-17	minor
 - 2021-12-17	fix for checkboxes
 - 2021-12-17	max view disabled by default
 - 2021-12-17	hotfixes

@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 1.339
+Version 1.340
 https://github.com/chrisgrieser/shimmering-focus/
 MIT License
 ─────────────────────────────────────────────────── */
@@ -1064,13 +1064,13 @@ div.notice-container .notice {
 	background-color: var(--notice-bg);
 	box-shadow: var(--small-shadow);
 
-	padding: 5px 10px;
+	padding: 6px 12px;
 
 	border: var(--notice-border);
 	border-radius: var(--roundish);
 
 	font-family: var(--button-font);
-	font-size: var(--button-font-size);
+	font-size: calc(var(--button-font-size) * 0.9);
 	letter-spacing: 0.6px;
 }
 
@@ -3113,6 +3113,7 @@ progress[value^="10"]::-WEBKIT-PROGRESS-VALUE { background: hsl(160 92% 70%) }
 
 .view-content .markdown-preview-view img:not(.link-favicon) {
 	display: block;
+	box-shadow: var(--small-shadow);
 	cursor: zoom-in;
 	margin-top: 13px;
 	border-radius: var(--roundish);
@@ -3549,6 +3550,7 @@ https://forum.obsidian.md/t/custom-css-for-tables-5-new-styles-ready-to-use-in-y
 }
 
 table {
+	box-shadow: var(--small-shadow);
 	--table-border: var(--basic-border);
 	--table-roundness: var(--roundish);
 	--bold-in-darkmode: var(--text-normal);
