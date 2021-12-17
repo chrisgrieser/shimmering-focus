@@ -1,4 +1,4 @@
-- 2021-12-17	minor
+- 2021-12-17	hotfixes
 - 2021-12-17	button color fixes
 - 2021-12-17	switch back to oxanium
 - 2021-12-17	better button coloring
