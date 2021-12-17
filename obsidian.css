@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 1.340
+Version 1.341
 https://github.com/chrisgrieser/shimmering-focus/
 MIT License
 ─────────────────────────────────────────────────── */
@@ -3113,7 +3113,6 @@ progress[value^="10"]::-WEBKIT-PROGRESS-VALUE { background: hsl(160 92% 70%) }
 
 .view-content .markdown-preview-view img:not(.link-favicon) {
 	display: block;
-	box-shadow: var(--small-shadow);
 	cursor: zoom-in;
 	margin-top: 13px;
 	border-radius: var(--roundish);
@@ -3550,7 +3549,6 @@ https://forum.obsidian.md/t/custom-css-for-tables-5-new-styles-ready-to-use-in-y
 }
 
 table {
-	box-shadow: var(--small-shadow);
 	--table-border: var(--basic-border);
 	--table-roundness: var(--roundish);
 	--bold-in-darkmode: var(--text-normal);
@@ -3642,7 +3640,7 @@ body.no-alternating-rows > .app-container table > tbody > tr > td {
 	font-size: var(--monospace-font-size);
 }
 
-/* Code blocks in Preview Mode */
+/* Preview Mode */
 .markdown-preview-view :not(pre) code {
 	background-color: var(--bg2) !important;
 	border-radius: var(--roundish);
@@ -3652,8 +3650,11 @@ body.no-alternating-rows > .app-container table > tbody > tr > td {
 body .markdown-preview-view pre[class*="language-"],
 body .markdown-preview-view pre {
 	background-color: var(--bg2);
+	box-shadow: var(--small-shadow);
+
 	padding-top: 10px;
 	padding-bottom: 12px;
+
 	border: var(--codeblock-border);
 	border-radius: var(--codeblock-roundness);
 }
