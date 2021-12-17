@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 1.338
+Version 1.339
 https://github.com/chrisgrieser/shimmering-focus/
 MIT License
 ─────────────────────────────────────────────────── */
@@ -4139,7 +4139,7 @@ input[type="checkbox"] {
 	padding: 1px;
 	margin-top: 2px;
 
-	border: var(--basic-border);
+	border: 2px solid var(--hr-line-gray);
 	border-radius: var(--round);
 
 	-webkit-appearance: none;
@@ -4162,7 +4162,12 @@ li[data-task="x"] > .task-list-item-checkbox:hover {
 	background-color: var(--alt-accent-lighter) !important;
 }
 
-/* <<< Compatibility with SlVrb's checkboxes */
+/* fix for legacy-editor, discussed here https://discord.com/channels/686053708261228577/702656734631821413/920422345422819339 */
+.markdown-source-view:not(.mod-cm6) .cm-formatting.cm-formatting-task {
+	margin-left: -10px;
+}
+
+/* <<< SlVrb's checkboxes Compatibility  */
 .markdown-source-view.mod-cm6 .task-list-item-checkbox[data-task="x"],
 .markdown-preview-view li[data-task="x"] > .task-list-item-checkbox,
 .markdown-preview-view li[data-task="x"] p .task-list-item-checkbox,
@@ -4188,19 +4193,15 @@ body.check-bg .markdown-preview-view :not(li[data-task="x"]) p .task-list-item-c
 }
 
 body .markdown-source-view.mod-cm6 .task-list-item-checkbox > *,
-body .markdown-preview-view ul > li.task-list-item.is-checked,
-body .markdown-preview-view ol > li.task-list-item.is-checked {
+body > div.app-container .markdown-preview-view ul > li.task-list-item.is-checked,
+body > div.app-container .markdown-preview-view ol > li.task-list-item.is-checked {
+	margin-bottom: 0;
 	font-weight: unset; /* stylelint-disable-line font-weight-notation */
 }
 
 .markdown-preview-view ul > li.task-list-item {
 	padding-left: 5px;
 	text-indent: -1.9em;
-}
-
-/* fix for legacy-editor, discussed here https://discord.com/channels/686053708261228577/702656734631821413/920422345422819339 */
-.markdown-source-view:not(.mod-cm6) .cm-formatting.cm-formatting-task {
-	margin-left: -10px;
 }
 
 /* ───────────────────────────────────────────────────
