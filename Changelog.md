@@ -1,3 +1,4 @@
+- 2021-12-17	button color fixes
 - 2021-12-17	switch back to oxanium
 - 2021-12-17	better button coloring
 - 2021-12-17	reduced file size
