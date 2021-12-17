@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 1.335
+Version 1.336
 https://github.com/chrisgrieser/shimmering-focus/
 MIT License
 ─────────────────────────────────────────────────── */
@@ -1330,9 +1330,9 @@ body:not(.show-scrollbar) ::-WEBKIT-SCROLLBAR {
 /* ───────────────────────────────────────────────────
 << Buttons
 ─────────────────────────────────────────────────── */
-.modal-container .modal button,
-.modal-container .modal.mod-settings .modal-content button,
-.modal-container .modal.mod-community-plugin button {
+
+.modal-container .modal .modal-content button:not(.mod-cta),
+.modal-container .modal .modal-content button.mod-cta {
 	color: var(--button-text);
 	background-color: var(--interactive-bg);
 
@@ -2556,7 +2556,7 @@ body .workspace-leaf-resize-handle:active {
 	content: "✓";
 
 	color: var(--interactive-normal);
-	background-color: var(--interactive-hover-bg);
+	background-color: var(--alt-accent-lighter);
 
 	padding-right: 0.2em;
 	padding-left: 0.2em;
