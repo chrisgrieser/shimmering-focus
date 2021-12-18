@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 1.343
+Version 1.344
 https://github.com/chrisgrieser/shimmering-focus/
 MIT License
 ─────────────────────────────────────────────────── */
@@ -185,9 +185,9 @@ This ToC is auto-generated via the .create-ToC.sh
 	--button-text: var(--interactive-normal);
 	--button-hover-text: var(--text-normal);
 	--interactive-bg: var(--accent-lighter);
+	--interactive-border: var(--accent-lightest);
 	--interactive-hover-bg: var(--alt-accent-lighterer);
 	--interactive-hover-border: var(--alt-accent-lighter);
-	--interactive-border: var(--accent-lighter);
 
 	--finished-task: var(--accent-lighter);
 	--cursor-duo-color-1: var(--alt-accent-lightest);
@@ -210,9 +210,9 @@ This ToC is auto-generated via the .create-ToC.sh
 	--button-text: var(--text-normal);
 	--button-hover-text: var(--interactive-normal);
 	--interactive-bg: var(--interactive-accent);
+	--interactive-border: var(--text-accent);
 	--interactive-hover-bg: var(--alt-accent-darker);
 	--interactive-hover-border: var(--alt-accent-lighter);
-	--interactive-border: var(--text-accent);
 
 	--finished-task: var(--text-accent);
 	--cursor-duo-color-1: var(--alt-accent-lighter);
@@ -225,18 +225,14 @@ This ToC is auto-generated via the .create-ToC.sh
 }
 
 /* ───────────────────────────────────────────────────
-<< Background
 << Brightness
+<< Saturation
 ─────────────────────────────────────────────────── */
 
 :root {
-	/* temporary variables till more color stuff is implemented */
+	--base-hue: 220;
 	--dark-sat: 10%;
 	--light-sat: 10%;
-
-	/* sat has to be adjusted when light changes due to being a bicone */
-	--base-hue: 220;
-
 	--brightness-light: 5%;
 	--brightness-dark: 5%;
 }
@@ -256,32 +252,38 @@ This ToC is auto-generated via the .create-ToC.sh
 	--b-light-1: calc(var(--brightness-light) + 92%);
 	--b-light-2: calc(var(--brightness-light) + 87%);
 	--b-light-3: calc(var(--brightness-light) + 81%);
-	--bg1: hsl(var(--base-hue) var(--light-sat) var(--b-light-1));
-	--bg2: hsl(var(--base-hue) var(--light-sat) var(--b-light-2));
-	--bg3: hsl(var(--base-hue) var(--light-sat) var(--b-light-3));
+	--sat-light-1: calc((var(--light-sat) + 10%) * 3);
+	--sat-light-2: calc((var(--light-sat) + 10%) * 1.1);
+	--sat-light-3: calc((var(--light-sat) + 10%) * 0.7);
+	--bg1: hsl(var(--base-hue) var(--sat-light-1) var(--b-light-1));
+	--bg2: hsl(var(--base-hue) var(--sat-light-2) var(--b-light-2));
+	--bg3: hsl(var(--base-hue) var(--sat-light-3) var(--b-light-3));
 
-	--resize-handle: hsl(var(--base-hue) var(--light-sat) calc(var(--b-light-2) - 1%));
-	--scrollbar: hsl(var(--base-hue) var(--dark-sat) calc(var(--b-light-2) - 8%));
-	--suggester-b-row: hsl(var(--base-hue) var(--light-sat) calc(var(--b-light-1) - 3%));
-	--muted-border-color: hsl(var(--base-hue) calc(var(--light-sat) / 2) calc(var(--b-light-3) + 3%));
-	--basic-border-color: hsl(var(--base-hue) calc(var(--light-sat) / 2) calc(var(--b-light-3) - 5%));
-	--backdrop-color: hsl(var(--base-hue) calc(var(--light-sat) * 2) calc(var(--b-light-2) - 20%));
+	--resize-handle: hsl(var(--base-hue) var(--sat-light-2) calc(var(--b-light-2) - 1%));
+	--scrollbar: hsl(var(--base-hue) var(--sat-light-3) calc(var(--b-light-2) - 8%));
+	--suggester-b-row: hsl(var(--base-hue) var(--sat-light-2) calc(var(--b-light-1) - 3%));
+	--muted-border-color: hsl(var(--base-hue) var(--sat-light-3) calc(var(--b-light-3) + 3%));
+	--basic-border-color: hsl(var(--base-hue) var(--sat-light-3) calc(var(--b-light-3) - 5%));
+	--backdrop-color: hsl(var(--base-hue) calc(var(--sat-light-3) * 0.8) calc(var(--b-light-3) - 10%));
 }
 
 .theme-dark {
 	--b-dark-1: calc(var(--brightness-dark) + 11%);
 	--b-dark-2: calc(var(--brightness-dark) + 7%);
-	--b-dark-3: calc(var(--brightness-dark) + 1%);
-	--bg1: hsl(var(--base-hue) var(--dark-sat) var(--b-dark-1));
-	--bg2: hsl(var(--base-hue) var(--dark-sat) var(--b-dark-2));
-	--bg3: hsl(var(--base-hue) var(--dark-sat) var(--b-dark-3));
+	--b-dark-3: calc(var(--brightness-dark) + 2%);
+	--sat-dark-1: calc(var(--dark-sat) * 0.7);
+	--sat-dark-2: calc(var(--dark-sat) * 1.2);
+	--sat-dark-3: calc(var(--dark-sat) * 2.5);
+	--bg1: hsl(var(--base-hue) var(--sat-dark-1) var(--b-dark-1));
+	--bg2: hsl(var(--base-hue) var(--sat-dark-2) var(--b-dark-2));
+	--bg3: hsl(var(--base-hue) var(--sat-dark-3) var(--b-dark-3));
 
-	--resize-handle: hsl(var(--base-hue) var(--dark-sat) calc(var(--b-dark-2) - 1%));
-	--scrollbar: hsl(var(--base-hue) var(--dark-sat) calc(var(--b-dark-2) + 9%));
-	--suggester-b-row: hsl(var(--base-hue) var(--dark-sat) calc(var(--b-dark-1) - 2%));
-	--muted-border-color: hsl(var(--base-hue) calc(var(--dark-sat) / 2) calc(var(--b-dark-1) - 6%));
-	--basic-border-color: hsl(var(--base-hue) calc(var(--dark-sat) / 2) calc(var(--b-dark-1) + 6%));
-	--backdrop-color: hsl(var(--base-hue) calc(var(--dark-sat) * 2) calc(var(--b-dark-2) + 2%));
+	--resize-handle: hsl(var(--base-hue)  var(--sat-dark-2) calc(var(--b-dark-2) - 1%));
+	--scrollbar: hsl(var(--base-hue) var(--sat-dark-1) calc(var(--b-dark-2) + 9%));
+	--suggester-b-row: hsl(var(--base-hue)  var(--sat-dark-1) calc(var(--b-dark-1) - 2%));
+	--muted-border-color: hsl(var(--base-hue) var(--sat-dark-1) calc(var(--b-dark-1) - 6%));
+	--basic-border-color: hsl(var(--base-hue) var(--sat-dark-1) calc(var(--b-dark-1) + 6%));
+	--backdrop-color: hsl(var(--base-hue) calc(var(--sat-dark-2) * 1.2) calc(var(--b-dark-2) + 2%));
 }
 
 ::-WEBKIT-SCROLLBAR,
@@ -326,7 +328,7 @@ This ToC is auto-generated via the .create-ToC.sh
 }
 
 .theme-dark {
-	--shadow-color: hsl(0 0% 0% / 40%);
+	--shadow-color: hsl(0 0% 0% / 30%);
 	--shadow-base-size: 3px;
 }
 
@@ -503,7 +505,7 @@ textarea,
 button,
 select.dropdown {
 	font-family: var(--button-font);
-	font-size: calc(var(--button-font-size) + 0.1em);
+	font-size: calc(var(--button-font-size));
 	font-weight: var(--button-font-weight);
 	letter-spacing: 1px;
 }
@@ -1052,7 +1054,7 @@ body:not(.show-ribbons) .workspace-ribbon {
 }
 
 .tooltip .tooltip-arrow {
-	margin-top: 2px;
+	margin-top: -2px;
 	border-bottom: var(--tooltip-arrow);
 }
 
@@ -1313,7 +1315,7 @@ body:not(.show-scrollbar) ::-WEBKIT-SCROLLBAR {
 .progress-bar .progress-bar-message::BEFORE {
 	content: var(--signature);
 	color: var(--text-normal);
-	font-size: calc(var(--empty-state-symbol-size) * 1.5);
+	font-size: calc(var(--empty-state-symbol-size) * 1.2);
 }
 
 .progress-bar .progress-bar-message {
@@ -1349,6 +1351,8 @@ body:not(.show-scrollbar) ::-WEBKIT-SCROLLBAR {
 << Buttons
 ─────────────────────────────────────────────────── */
 
+a.style-settings-import,
+a.style-settings-export,
 .modal-container .modal .modal-button-container button,
 .modal-container .modal .modal-content button:not(.mod-cta),
 .modal-container .modal .modal-content button.mod-cta {
@@ -1362,10 +1366,15 @@ body:not(.show-scrollbar) ::-WEBKIT-SCROLLBAR {
 	border: 2px solid var(--interactive-border);
 	border-radius: var(--round);
 
+	font-family: var(--button-font);
 	font-size: var(--button-font-size);
+	font-weight: var(--button-font-weight);
+	line-height: 1.3em;
 	letter-spacing: 0.5px;
 }
 
+body a.style-settings-import:hover,
+body a.style-settings-export:hover,
 .modal-container .modal .modal-button-container button:hover,
 .modal-container .modal .modal-content button:not(.mod-cta):hover,
 .modal-container .modal .modal-content button.mod-cta:hover {
@@ -1443,17 +1452,11 @@ body:not(.normal-checkboxes) .checkbox-container.is-enabled {
 
 body:not(.normal-checkboxes) .checkbox-container:hover {
 	transition: var(--medium-transition);
-	border: 9px solid var(--interactive-hover-bg);
+	border: 9px solid var(--interactive-hover-border);
 }
 
 body:not(.normal-checkboxes) .checkbox-container.is-enabled:hover {
 	background-color: var(--bg2);
-	border-color: var(--interactive-hover-bg);
-}
-
-/* slightly lighter for dark mode */
-.theme-dark:not(.normal-checkboxes) .checkbox-container.is-enabled:hover,
-.theme-dark:not(.normal-checkboxes) .checkbox-container:hover {
 	border-color: var(--interactive-hover-border);
 }
 
@@ -1508,20 +1511,19 @@ input:hover {
 /* ───────────────────────────────────────────────────
 << Dropdown & Slider
 ─────────────────────────────────────────────────── */
-select.dropdown:hover {
-	border-color: var(--interactive-hover-border) !important;
-}
 
-select.dropdown:hover,
+/* select.dropdown:hover, */
 select.dropdown {
-	background-color: var(--bg3);
+	background-color: var(--bg2);
 	padding: 6px 28px 6px 10px;
+	border: var(--thin-border);
 	border-radius: var(--round);
 }
 
-/* this style the dropdown menus a bit */
-/* .dropdown option {}
-.dropdown option:checked {} */
+select.dropdown:hover {
+	background-color: var(--bg2);
+	border-color: var(--interactive-hover-border) !important;
+}
 
 input.slider {
 	width: 150px;
@@ -1567,8 +1569,9 @@ div.document-replace {
 	border-radius: calc(var(--round) / 2);
 }
 
-/* for whatever reason the scrollbar shows up on
-the bottom when replacing/searching ლ(ಠ_ಠლ)╯ */
+/* for whatever reason the horizontal scrollbar
+shows up on the bottom when replacing/searching,
+so this has to be used ლ(ಠ_ಠლ)╯ */
 .is-replacing .CodeMirror-scroll {
 	padding-bottom: 120px;
 }
@@ -2428,6 +2431,7 @@ body .workspace-leaf-resize-handle:active {
 }
 
 .setting-hotkey {
+	background-color: var(--bg2);
 	border: var(--thin-border);
 	border-radius: var(--roundish);
 	font-family: var(--button-font);
@@ -6530,6 +6534,7 @@ pre button.copy:hover::BEFORE {
 /* ───────────────────────────────────────────────────
 << Style Settings (Settings Tab)
 ─────────────────────────────────────────────────── */
+
 /* sidebar */
 .workspace-leaf-content[data-type="style-settings"] .view-content {
 	padding: 8px;
@@ -6573,38 +6578,17 @@ pre button.copy:hover::BEFORE {
 	color: var(--editor-alt-accent);
 }
 
-/* styled import/export like buttons */
+/* most styling of the import/export buttons
+are at the button section */
 .style-settings-import,
 .style-settings-export {
-	color: var(--button-text);
-	background-color: var(--interactive-bg);
-
-	transition: var(--medium-transition);
-
-	padding: 6px 12px;
 	margin-right: 0 !important;
 	margin-left: 12px;
-
-	border: 2px solid var(--interactive-border);
-	border-radius: var(--round);
-
-	font-family: var(--button-font);
 	font-size: calc(var(--button-font-size) * 0.8);
-	font-weight: var(--button-font-weight);
-	line-height: 1.3em;
-	letter-spacing: 0.5px;
 	text-decoration: none;
 }
 
-body a.style-settings-import:hover,
-body a.style-settings-export:hover {
-	color: var(--button-hover-text) !important;
-	background-color: var(--interactive-hover-bg);
-	transition: var(--medium-transition);
-	border-color: var(--interactive-hover-border);
-}
-
-/* remove buggy export button for certain blocks */
+/* remove buggy and unnecessary export button for certain blocks */
 .style-settings-heading .setting-editor-extra-setting-button:last-child {
 	display: none;
 }
@@ -6643,7 +6627,7 @@ img.link-favicon {
 }
 
 /* ───────────────────────────────────────────────────
-<< Info Panel (Side bar)
+<< File Info Panel (Side bar)
 ─────────────────────────────────────────────────── */
 body .tlfFileInfoButton {
 	height: unset;
@@ -6675,7 +6659,12 @@ body .tlfFileInfoLabel {
 }
 
 body .tlfFileInfoTextArea {
+	height: 15em;
 	width: 130%;
+}
+
+.theme-light .tlfFileInfoTextArea {
+	background-color: var(--bg1);
 }
 
 /* ───────────────────────────────────────────────────
@@ -6884,12 +6873,6 @@ settings:
 	 type: class-toggle
 	 default: false
   -
-	 id: hide-signature
-	 title: Hide the "✧" in the Status Bar
-	 description: Hide the "signature" icon of the theme in the status bar.
-	 type: class-toggle
-	 default: false
-  -
 	 id: show-close-button
 	 title: Re-enable Close Buttons
 	 type: class-toggle
@@ -6926,34 +6909,9 @@ settings:
 	 description: The two buttons to star the current file and the current search.
 	 default: false
   -
-	 id: brightness-settings
-	 title: 🔆 Brightness
-	 description: Overall Brightness of the Theme
-	 type: heading
-	 level: 2
-	 collapsed: true
-  -
-	 id: brightness-light
-	 title: ☀️ Light Mode Brightness
-	 type: variable-number-slider
-	 default: 5
-	 min: 0
-	 max: 10
-	 step: 1
-	 format: '%'
-  -
-	 id: brightness-dark
-	 title: 🌒 Dark Mode Brightness
-	 type: variable-number-slider
-	 default: 5
-	 min: 0
-	 max: 10
-	 step: 1
-	 format: '%'
-  -
 	 id: aesthetics
-	 title: Aesthetics
-	 description: Shapes, Color Schemes (coming soon), Cursor, & Decoration
+	 title: Aesthetics 🎨
+	 description: Brightness, Color, Shapes, Cursor, & Decoration
 	 type: heading
 	 level: 2
 	 collapsed: true
@@ -6964,14 +6922,51 @@ settings:
 	 description: Enable to use angular shapes (🔲). Disable to use rounded shapes (🔘).
 	 default: false
   -
-	 id: dark-sat
-	 title: "🚧 Experimental: Blue Tint in Dark Mode"
-	 description: Amount of faint blue in Dark Mode. (Testing Ground for upcoming color scheme options.)
+	 id: base-hue
+	 title: 🚧 Hue / Color
+	 description: '(experimental) Overall color of the theme, applying to both dark and light mode. (Mind that the appearance of the color is also affected by brightness and saturation, i.e. low saturation leading to gray and how/low brightness leading to white/dark). This feature is still experimental as it does not affect the color of all elements yet.'
+	 type: variable-number-slider
+	 default: 220
+	 min: 0
+	 max: 360
+	 step: 5
+  -
+	 id: brightness-light
+	 title: Brightness (Light Mode)
+	 type: variable-number-slider
+	 default: 5
+	 min: 0
+	 max: 10
+	 step: 1
+	 format: '%'
+  -
+	 id: light-sat
+	 title: "🚧 Saturation (Light Mode)"
+	 description: "(experimental) 'Saturation' is basically the intensity of a color (the chosen hue). Setting it to zero will result in grayscale, regardless of the hue chosen. "
 	 type: variable-number-slider
 	 default: 10
 	 min: 0
-	 max: 15
+	 max: 40
+	 step: 2
+	 format: '%'
+  -
+	 id: brightness-dark
+	 title: Brightness (Dark Mode)
+	 type: variable-number-slider
+	 default: 5
+	 min: 0
+	 max: 10
 	 step: 1
+	 format: '%'
+  -
+	 id: dark-sat
+	 title: "🚧 Saturation (Dark Mode)"
+	 description: "(experimental) 'Saturation' is basically the intensity of a color (hue). Setting it to zero will result in grayscale, regardless of the hue chosen. "
+	 type: variable-number-slider
+	 default: 5
+	 min: 0
+	 max: 40
+	 step: 2
 	 format: '%'
   -
 	 id: block-cursor
@@ -6986,12 +6981,6 @@ settings:
 	 type: class-toggle
 	 default: false
   -
-	 id: quotation-mark-deco
-	 title: "Block Quote: Decorative Quotation Mark"
-	 description: Show a decorative quotation mark next to blockquotes in Preview Mode (no Live Preview yet).
-	 type: class-toggle
-	 default: false
-  -
 	 id: normal-checkboxes
 	 title: "Menus: Normal Checkboxes"
 	 description: Use the checkboxes from the default theme.
@@ -7001,6 +6990,19 @@ settings:
 	 id: colored-yaml
 	 title: "YAML: Coloring"
 	 description: Use colored YAML frontmatter (in Edit Mode).
+	 type: class-toggle
+	 default: false
+  -
+	 id: quotation-mark-deco
+	 title: "Block Quotes: Decorative Quotation Mark"
+	 description: Show a decorative quotation mark next to blockquotes in Preview Mode (no Live Preview yet).
+	 type: class-toggle
+	 default: false
+  -
+	 id: hide-signature
+	 title: 'Hide the "✧" in the Status Bar'
+	 description: Hide the decorate icon in the status bar.
+	 hub: ignore
 	 type: class-toggle
 	 default: false
   -
@@ -7272,52 +7274,6 @@ settings:
 	 type: class-toggle
 	 default: false
   -
-	 id: longform-settings
-	 title: Longform Plugin
-	 description: Font, Alignment, Background
-	 type: heading
-	 level: 2
-	 collapsed: true
-  -
-	 id: longform-font
-	 title: Main Font
-	 description: Font used in folders marked as Longform Project
-	 type: variable-text
-	 default: '"Crimson Pro"'
-  -
-	 id: longform-font-size
-	 title: Longform Font Size
-	 type: variable-number-slider
-	 default: 115
-	 min: 70
-	 max: 130
-	 step: 2
-	 format: '%'
-  -
-	 id: longform-left-aligned
-	 title: Left-aligned text
-	 description: Use left-aligned text instead of justified text.
-	 type: class-toggle
-	 default: false
-  -
-	 id: longform-no-text-indent
-	 title: First-Line Indent (Preview Mode)
-	 description: Indent the first Line of a paragraph in longform notes (only in preview mode).
-	 type: class-toggle
-	 default: false
-  -
-	 id: longform-no-bg
-	 title: No Background Coloring
-	 description: Turn off the slight coloring of longform notes.
-	 type: class-toggle
-	 default: false
-  -
-	 id: hide-index-files
-	 title: Hide files named "Index.md" from File Explorer
-	 description: Files named that way are created by some plugins like the Longform Plugin and in many cases should not be changed.
-	 type: class-toggle
-	 default: false
-  -
 	 id: mobile
 	 title: Mobile
 	 description: Settings specifically for mobile
@@ -7334,22 +7290,81 @@ settings:
 	 step: 0.05
 	 format: rem
   -
-	 id: miscellaneous
-	 title: Miscellaneous
-	 description: Popovers, Pandoc Citations, Annotation Tags, Active Line Highlighting, Command Palette, Alternating Row Colors, Relationship Lines, Calendar Plugin
+	 id: plugin-specific-settings
+	 title: Plugin-Specific Settings
+	 description: Longform, Popovers, Command Palette, Calendar Plugin
 	 type: heading
 	 level: 2
 	 collapsed: true
   -
 	 id: popover-size
-	 title: Size of Popovers (Page Previews)
-	 description: Width & Height of Popovers in px
+	 title: 'Page Preview: Size'
+	 description: Width & Height of Page Previews (Popovers) in px
 	 type: variable-number-slider
 	 default: 350
 	 min: 200
 	 max: 600
 	 step: 50
 	 format: px
+  -
+	 id: move-plugin-name-to-left
+	 title: 'Command Palette: Move the plugin name back to the left'
+	 description: Enable this in case some commands are aren't displayed properly in the Command Palette.
+	 type: class-toggle
+	 default: false
+  -
+	 id: no-calendar-lines
+	 title: 'Calendar: Remove vertical lines'
+	 description: Remove the lines in the Calendar plugin's Calendar (making it more similar to its default look).
+	 type: class-toggle
+	 default: false
+  -
+	 id: longform-font
+	 title: 'Longform: Main Font'
+	 description: Font used in folders marked as Longform Project
+	 type: variable-text
+	 default: '"Crimson Pro"'
+  -
+	 id: longform-font-size
+	 title: 'Longform: Font Size'
+	 type: variable-number-slider
+	 default: 115
+	 min: 70
+	 max: 130
+	 step: 2
+	 format: '%'
+  -
+	 id: longform-left-aligned
+	 title: 'Longform: Left-aligned text'
+	 description: Use left-aligned text instead of justified text.
+	 type: class-toggle
+	 default: false
+  -
+	 id: longform-no-text-indent
+	 title: 'Longform: First-Line Indent (Preview Mode)'
+	 description: Indent the first Line of a paragraph in longform notes (preview mode only).
+	 type: class-toggle
+	 default: false
+  -
+	 id: longform-no-bg
+	 title: 'Longform No Background Coloring'
+	 description: Turn off the alternative background coloring of longform notes.
+	 type: class-toggle
+	 default: false
+  -
+	 id: hide-index-files
+	 title: 'Longform: Hide files named "Index.md" from File Explorer'
+	 description: Files named that way are created by some plugins like the Longform Plugin and in many cases should not be changed.
+	 type: class-toggle
+	 hub: ignore
+	 default: false
+  -
+	 id: miscellaneous
+	 title: Miscellaneous
+	 description: Pandoc Citations, Annotation Tags, Active Line Highlighting, Alternating Row Colors, Relationship Lines
+	 type: heading
+	 level: 2
+	 collapsed: true
   -
 	 id: no-pandoc-citation-emphasis
 	 title: No Emphasis of Pandoc Citations
@@ -7374,22 +7389,11 @@ settings:
 	 type: class-toggle
 	 default: false
   -
-	 id: move-plugin-name-to-left
-	 title: 'Command Palette: Move the plugin name back to the left'
-	 description: Enable this in case some commands are aren't displayed properly in the Command Palette.
-	 type: class-toggle
-	 default: false
-  -
 	 id: no-ul-relationship-lines
 	 title: Disable Relationship Lines for lists
 	 description: If you want to use a custom relationship line snippet or the relationship lines from the Outliner plugin, you can disable this theme's relationship lines to prevent interference.
 	 type: class-toggle
-	 default: false
-  -
-	 id: no-calendar-lines
-	 title: Remove lines in Calendar
-	 description: Remove the lines in the Calendar plugin's Calendar (making it more similar to its default look).
-	 type: class-toggle
+	 hub: ignore
 	 default: false
 */
 /* ─────────────────────────────────────────────────── */
