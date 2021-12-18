@@ -1,4 +1,4 @@
-- 2021-12-18	minor
+- 2021-12-18	color intensity fixes
 - 2021-12-18	grayscale option for favicons
 - 2021-12-18	tooltip arrows
 - 2021-12-18	fix for dataview tables with lists

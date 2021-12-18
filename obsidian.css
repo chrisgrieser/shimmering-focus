@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 1.350
+Version 1.351
 https://github.com/chrisgrieser/shimmering-focus/
 MIT License
 ─────────────────────────────────────────────────── */
@@ -163,7 +163,7 @@ This ToC is auto-generated via the .create-ToC.sh
 
 	--code-color: var(--alt-accent-darker);
 	--scrollbar-hover: var(--alt-accent-lighter);
-	--scrollbar-active: var(--accent-lightest);
+	--scrollbar-active: var(--accent-lighterer);
 
 	--highlight-color: hsl(152 100% 50% / 40%);
 	--highlight-alt1: hsl(60 100% 50% / 40%);
@@ -229,43 +229,45 @@ This ToC is auto-generated via the .create-ToC.sh
 ─────────────────────────────────────────────────── */
 
 :root {
-	--base-hue: 220;
-	--dark-sat: 10%;
-	--light-sat: 10%;
+	--light-hue: 220;
+	--dark-hue: 220;
+	--dark-sat: 5%;
+	--light-sat: 5%;
 	--brightness-light: 5%;
 	--brightness-dark: 5%;
 }
 
 .theme-light:not(.longform-no-bg) .longform-leaf {
-	--base-hue: 20;
-	--light-sat: 15%;
+	--light-hue: 20;
+	--light-sat: 5%;
 }
 
 .theme-dark:not(.longform-no-bg) .longform-leaf {
-	--base-hue: 270;
+	--dark-hue: 270;
 	--dark-sat: 5%;
 }
 
 .theme-light .longform-leaf,
 .theme-light {
+	--sat-correction-factor: 13%;
 	--b-light-1: calc(var(--brightness-light) + 92%);
 	--b-light-2: calc(var(--brightness-light) + 87%);
 	--b-light-3: calc(var(--brightness-light) + 81%);
-	--sat-light-1: calc((var(--light-sat) + 10%) * 3);
-	--sat-light-2: calc((var(--light-sat) + 10%) * 1.2);
-	--sat-light-3: calc((var(--light-sat) + 10%) * 0.7);
+	--sat-light-1: calc((var(--light-sat) + var(--sat-correction-factor)) * 3);
+	--sat-light-2: calc((var(--light-sat) + var(--sat-correction-factor)) * 1.2);
+	--sat-light-3: calc((var(--light-sat) + var(--sat-correction-factor)) * 0.7);
 
-	--bg1: hsl(var(--base-hue) var(--sat-light-1) var(--b-light-1));
-	--bg2: hsl(var(--base-hue) var(--sat-light-2) var(--b-light-2));
-	--bg3: hsl(var(--base-hue) var(--sat-light-3) var(--b-light-3));
+	--bg1: hsl(var(--light-hue) var(--sat-light-1) var(--b-light-1));
+	--bg2: hsl(var(--light-hue) var(--sat-light-2) var(--b-light-2));
+	--bg3: hsl(var(--light-hue) var(--sat-light-3) var(--b-light-3));
 
-	--notice-bg: hsl(var(--base-hue) var(--sat-light-2) var(--b-light-3));
-	--resize-handle: hsl(var(--base-hue) var(--sat-light-2) calc(var(--b-light-2) - 1%));
-	--scrollbar: hsl(var(--base-hue) var(--sat-light-3) calc(var(--b-light-2) - 8%));
-	--suggester-b-row: hsl(var(--base-hue) var(--sat-light-2) calc(var(--b-light-1) - 3%));
-	--muted-border-color: hsl(var(--base-hue) var(--sat-light-3) calc(var(--b-light-3) + 3%));
-	--basic-border-color: hsl(var(--base-hue) var(--sat-light-3) calc(var(--b-light-3) - 5%));
-	--backdrop-color: hsl(var(--base-hue) calc(var(--sat-light-3) * 0.8) calc(var(--b-light-3) - 10%));
+	--notice-bg: hsl(var(--light-hue) var(--sat-light-2) var(--b-light-3));
+	--resize-handle: hsl(var(--light-hue) var(--sat-light-2) calc(var(--b-light-2) - 1%));
+	--scrollbar: hsl(var(--light-hue) var(--sat-light-3) calc(var(--b-light-2) - 8%));
+	--suggester-b-row: hsl(var(--light-hue) var(--sat-light-2) calc(var(--b-light-1) - 3%));
+	--muted-border-color: hsl(var(--light-hue) var(--sat-light-3) calc(var(--b-light-3) + 3%));
+	--basic-border-color: hsl(var(--light-hue) var(--sat-light-3) calc(var(--b-light-3) - 5%));
+	--backdrop-color: hsl(var(--light-hue) calc(var(--sat-light-3) * 0.8) calc(var(--b-light-3) - 10%));
 }
 
 .theme-dark {
@@ -275,17 +277,17 @@ This ToC is auto-generated via the .create-ToC.sh
 	--sat-dark-1: calc(var(--dark-sat) * 0.7);
 	--sat-dark-2: calc(var(--dark-sat) * 1.2);
 	--sat-dark-3: calc(var(--dark-sat) * 3);
-	--bg1: hsl(var(--base-hue) var(--sat-dark-1) var(--b-dark-1));
-	--bg2: hsl(var(--base-hue) var(--sat-dark-2) var(--b-dark-2));
-	--bg3: hsl(var(--base-hue) var(--sat-dark-3) var(--b-dark-3));
+	--bg1: hsl(var(--dark-hue) var(--sat-dark-1) var(--b-dark-1));
+	--bg2: hsl(var(--dark-hue) var(--sat-dark-2) var(--b-dark-2));
+	--bg3: hsl(var(--dark-hue) var(--sat-dark-3) var(--b-dark-3));
 
-	--notice-bg: hsl(var(--base-hue) var(--sat-dark-2) var(--b-dark-1));
-	--resize-handle: hsl(var(--base-hue)  var(--sat-dark-2) calc(var(--b-dark-2) - 1%));
-	--scrollbar: hsl(var(--base-hue) var(--sat-dark-1) calc(var(--b-dark-2) + 9%));
-	--suggester-b-row: hsl(var(--base-hue)  var(--sat-dark-1) calc(var(--b-dark-1) - 2%));
-	--muted-border-color: hsl(var(--base-hue) var(--sat-dark-1) calc(var(--b-dark-1) - 6%));
-	--basic-border-color: hsl(var(--base-hue) var(--sat-dark-1) calc(var(--b-dark-1) + 6%));
-	--backdrop-color: hsl(var(--base-hue) calc(var(--sat-dark-2) * 1.2) calc(var(--b-dark-2) + 2%));
+	--notice-bg: hsl(var(--dark-hue) var(--sat-dark-2) var(--b-dark-1));
+	--resize-handle: hsl(var(--dark-hue)  var(--sat-dark-2) calc(var(--b-dark-2) - 1%));
+	--scrollbar: hsl(var(--dark-hue) var(--sat-dark-1) calc(var(--b-dark-2) + 9%));
+	--suggester-b-row: hsl(var(--dark-hue)  var(--sat-dark-1) calc(var(--b-dark-1) - 2%));
+	--muted-border-color: hsl(var(--dark-hue) var(--sat-dark-1) calc(var(--b-dark-1) - 6%));
+	--basic-border-color: hsl(var(--dark-hue) var(--sat-dark-1) calc(var(--b-dark-1) + 6%));
+	--backdrop-color: hsl(var(--dark-hue) calc(var(--sat-dark-2) * 1.2) calc(var(--b-dark-2) + 2%));
 }
 
 ::-WEBKIT-SCROLLBAR,
@@ -5403,13 +5405,13 @@ https://forum.obsidian.md/t/inline-code-occludes-text-selection-and-vim-cursor/1
 
 /* stylelint-disable no-duplicate-selectors */
 .theme-light {
-	--kanban-background: hsl(0 0% 85%);
+	--kanban-background: hsl(var(--light-hue) var(--sat-light-3) 85%);
 	--active-hover-kanban-item: hsl(0 0% 93%);
 	--dot-color: hsl(0 0% 80% / 50%);
 }
 
 .theme-dark {
-	--kanban-background: hsl(0 0% 17%);
+	--kanban-background: hsl(var(--dark-hue) var(--sat-dark-1) 17%);
 	--active-hover-kanban-item: hsl(0 0% 17%);
 	--dot-color: hsl(0 0% 13% / 50%);
 }
@@ -5419,6 +5421,14 @@ https://forum.obsidian.md/t/inline-code-occludes-text-selection-and-vim-cursor/1
 	--dot-size: 1px;
 }
 /* stylelint-enable no-duplicate-selectors */
+
+body .kanban-plugin__lane {
+	background-color: var(--bg3);
+}
+
+body .kanban-plugin__item-title-wrapper {
+	background-color: var(--bg2);
+}
 
 .kanban-plugin__board button {
 	color: unset;
@@ -5434,7 +5444,7 @@ body .workspace-leaf-content[data-type="kanban"] .view-header,
 	background-attachment: local;
 }
 
-body .workspace-leaf-content[data-type="kanban"] .view-header {
+.theme-dark .workspace-leaf-content[data-type="kanban"] .view-header {
 	background-color: var(--kanban-background) !important;
 }
 
@@ -6564,8 +6574,8 @@ pre button.copy:hover::BEFORE {
 
 /* most styling of the import/export buttons
 are at the button section */
-.style-settings-import,
-.style-settings-export {
+body a.style-settings-import,
+body a.style-settings-export {
 	margin-right: 0 !important;
 	margin-left: 12px;
 	font-size: calc(var(--button-font-size) * 0.8);
@@ -6911,15 +6921,6 @@ settings:
 	 description: Enable to use angular shapes (🔲). Disable to use rounded shapes (🔘).
 	 default: false
   -
-	 id: base-hue
-	 title: 🚧 Hue / Color
-	 description: '(experimental) Overall color of the theme, applying to both dark and light mode. (Mind that the appearance of the color is also affected by brightness and saturation, i.e. low saturation leading to gray and how/low brightness leading to white/dark).'
-	 type: variable-number-slider
-	 default: 220
-	 min: 0
-	 max: 360
-	 step: 5
-  -
 	 id: brightness-light
 	 title: Brightness (Light Mode)
 	 type: variable-number-slider
@@ -6929,13 +6930,22 @@ settings:
 	 step: 1
 	 format: '%'
   -
+	 id: light-hue
+	 title: 🚧 Color Tone (Light Mode)
+	 description: '(experimental) Overall color tone (hue) of the light theme. (Mind that the appearance of the color is also affected by brightness and saturation, i.e. low saturation leading to gray and how/low brightness leading to white/dark).'
+	 type: variable-number-slider
+	 default: 0
+	 min: 0
+	 max: 360
+	 step: 5
+  -
 	 id: light-sat
-	 title: "🚧 Saturation (Light Mode)"
-	 description: "(experimental) 'Saturation' is basically the intensity of a color (the chosen hue). Setting it to zero will result in grayscale, regardless of the hue chosen. "
+	 title: "🚧 Color Intensity (Light Mode)"
+	 description: "(experimental) Intensity (saturation) of the chosen color tone. Setting it to zero will result in grayscale, regardless of the hue chosen. "
 	 type: variable-number-slider
 	 default: 10
 	 min: 0
-	 max: 40
+	 max: 15
 	 step: 2
 	 format: '%'
   -
@@ -6948,13 +6958,22 @@ settings:
 	 step: 1
 	 format: '%'
   -
+	 id: dark-hue
+	 title: 🚧 Color Tone (Dark Mode)
+	 description: '(experimental) Overall color tone (hue) of the dark theme. (Mind that the appearance of the color is also affected by brightness and saturation, i.e. low saturation leading to gray and how/low brightness leading to white/dark).'
+	 type: variable-number-slider
+	 default: 220
+	 min: 0
+	 max: 360
+	 step: 5
+  -
 	 id: dark-sat
-	 title: "🚧 Saturation (Dark Mode)"
-	 description: "(experimental) 'Saturation' is basically the intensity of a color (hue). Setting it to zero will result in grayscale, regardless of the hue chosen. "
+	 title: "🚧 Color Intensity (Dark Mode)"
+	 description: "(experimental) Intensity (saturation) of the chosen color tone. Setting it to zero will result in grayscale, regardless of the hue chosen. "
 	 type: variable-number-slider
 	 default: 5
 	 min: 0
-	 max: 40
+	 max: 15
 	 step: 2
 	 format: '%'
   -
@@ -6966,7 +6985,7 @@ settings:
   -
 	 id: mono-color-cursor
 	 title: Mono-colored Cursor
-	 description: 'Use a mono-colored, purple cursor like in previous versions of "Shimmering Focus".'
+	 description: Use a mono-colored, purple cursor.
 	 type: class-toggle
 	 default: false
   -
@@ -6989,8 +7008,8 @@ settings:
 	 default: false
   -
 	 id: hide-signature
-	 title: 'Hide the "✧" in the Status Bar'
-	 description: Hide the decorate icon in the status bar.
+	 title: 'Status Bar: Hide the "✧" icon'
+	 description: Hide the decorative icon in the status bar.
 	 hub: ignore
 	 type: class-toggle
 	 default: false
