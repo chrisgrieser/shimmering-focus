@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 1.349
+Version 1.350
 https://github.com/chrisgrieser/shimmering-focus/
 MIT License
 ─────────────────────────────────────────────────── */
@@ -353,11 +353,12 @@ This ToC is auto-generated via the .create-ToC.sh
 :root {
 	--resize-handle-thickness: 3px;
 	--resize-handle-hovered-thickness: 6px;
-	--scrollbar-thickness: 7px;
+	--scrollbar-thickness: 8px;
 	--image-size: 50;
 	--pdf-size: 50vh;
 	--popover-size: 350;
 	--inactive-pane-opacity: 80%;
+	--tooltip-arrow-length: 20px;
 
 	--signature: "⟡";
 	--empty-state-symbol-size: 8rem;
@@ -1030,26 +1031,27 @@ body:not(.show-ribbons) .workspace-ribbon {
 	letter-spacing: 0.5px;
 
 	word-wrap: break-word;
-
-	--tooltip-arrow: 20px solid var(--notice-bg);
+	--tooltip-arrow: var(--tooltip-arrow-length) solid var(--notice-bg);
 }
 
 .tooltip .tooltip-arrow {
-	margin-top: -15px;
+	margin-top: calc(-1 * var(--tooltip-arrow-length) + 5px);
 	border-bottom: var(--tooltip-arrow);
 }
 
 .tooltip.mod-right .tooltip-arrow {
+	margin-top: 0;
+	margin-left: calc(-1 * var(--tooltip-arrow-length));
 	border-right: var(--tooltip-arrow);
 }
 
 .tooltip.mod-left .tooltip-arrow {
+	margin-top: 0;
 	border-left: var(--tooltip-arrow);
 }
 
 .tooltip.mod-top .tooltip-arrow {
 	margin-top: 0;
-	margin-bottom: 10px;
 	border-top: var(--tooltip-arrow);
 }
 
@@ -2834,7 +2836,7 @@ body:not(.less-heading-letter-spacing) .modal.mod-community-theme .modal-title {
 ─────────────────────────────────────────────────── */
 .workspace-leaf:not(.mod-active) .workspace-leaf-content[data-type="markdown"] {
 	opacity: var(--inactive-pane-opacity);
-	transition: 800ms ease-in-out;
+	transition: var(--slow-transition);
 }
 
 /* ───────────────────────────────────────────────────
