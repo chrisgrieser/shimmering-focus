@@ -1,3 +1,4 @@
+- 2021-12-18	fix for dataview tables with lists
 - 2021-12-18	notices & tooltips also affected by color settings
 - 2021-12-18	🎨 new style settings: adjust colors
 - 2021-12-18	support for info panel plugin

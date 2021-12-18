@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 1.346
+Version 1.347
 https://github.com/chrisgrieser/shimmering-focus/
 MIT License
 ─────────────────────────────────────────────────── */
@@ -3564,12 +3564,12 @@ https://forum.obsidian.md/t/custom-css-for-tables-5-new-styles-ready-to-use-in-y
 table {
 	--table-border: var(--basic-border);
 	--table-roundness: var(--roundish);
-	--bold-in-darkmode: var(--text-normal);
 }
 
-table:not(.dataview.table-view-table) th {
+table th {
 	font-weight: 600;
 	text-rendering: geometricPrecision;
+	--bold-in-darkmode: var(--text-normal);
 }
 
 /* rounded corners */
@@ -3598,19 +3598,18 @@ body > .app-container table > thead > tr > th {
 
 body > .app-container table > tbody > tr > td {
 	border: none;
-	border-left: var(--table-border) !important;
 }
 
 /* draw inner vertical borders only for none-dataview tables
 cause lists in tables are misaligned */
 body > .app-container table > thead > tr > th,
 body > .app-container table:not(.dataview) > tbody > tr > td {
-	border-left: var(--table-border) !important;
+	border-left: var(--table-border);
 }
 
 body > .app-container table > thead > tr > th:first-child,
 body > .app-container table > tbody > tr > td:first-child {
-	border-left: none !important;
+	border-left: none;
 }
 
 /* backgrounds */
@@ -6804,6 +6803,7 @@ community:
 - obsidian-file-info-plugin
 - obsidian-zoom
 - table-editor-obsidian
+- dataview
 */
 
 /* ───────────────────────────────────────────────────
