@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 1.348
+Version 1.349
 https://github.com/chrisgrieser/shimmering-focus/
 MIT License
 ─────────────────────────────────────────────────── */
@@ -6608,6 +6608,10 @@ img.link-favicon {
 	filter: invert(0.85);
 }
 
+.grayscale-favicons .link-favicon {
+	filter: grayscale(100%);
+}
+
 /* ───────────────────────────────────────────────────
 << File Info Panel (Side bar)
 ─────────────────────────────────────────────────── */
@@ -6907,7 +6911,7 @@ settings:
   -
 	 id: base-hue
 	 title: 🚧 Hue / Color
-	 description: '(experimental) Overall color of the theme, applying to both dark and light mode. (Mind that the appearance of the color is also affected by brightness and saturation, i.e. low saturation leading to gray and how/low brightness leading to white/dark). This feature is still experimental as it does not affect the color of all elements yet.'
+	 description: '(experimental) Overall color of the theme, applying to both dark and light mode. (Mind that the appearance of the color is also affected by brightness and saturation, i.e. low saturation leading to gray and how/low brightness leading to white/dark).'
 	 type: variable-number-slider
 	 default: 220
 	 min: 0
@@ -7282,13 +7286,18 @@ settings:
   -
 	 id: popover-size
 	 title: 'Page Preview: Size'
-	 description: Width & Height of Page Previews (Popovers) in px
+	 description: Width & Height of Page Previews (Popovers) in px. (Mind that this is quadratic growth of the previews size.)
 	 type: variable-number-slider
 	 default: 350
 	 min: 200
 	 max: 600
 	 step: 50
 	 format: px
+  -
+	 id: grayscale-favicons
+	 title: 'Link Favicons: Grayscale Icons'
+	 type: class-toggle
+	 default: false
   -
 	 id: move-plugin-name-to-left
 	 title: 'Command Palette: Move the plugin name back to the left'
