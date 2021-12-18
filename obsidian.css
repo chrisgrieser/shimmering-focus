@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 1.345
+Version 1.346
 https://github.com/chrisgrieser/shimmering-focus/
 MIT License
 ─────────────────────────────────────────────────── */
@@ -196,7 +196,6 @@ This ToC is auto-generated via the .create-ToC.sh
 	--a-row: rgb(0 0 0 / 3%);
 	--b-row: rgb(0 0 0 / 7%);
 
-	--notice-bg: hsl(var(--base-hue) 8% 85%);
 	--notice-border: 2px ridge hsl(0 0% 65%);
 }
 
@@ -221,7 +220,6 @@ This ToC is auto-generated via the .create-ToC.sh
 	--a-row: rgb(0 0 0 / 15%);
 	--b-row: rgb(0 0 0 / 30%);
 
-	--notice-bg: hsl(var(--base-hue) 8% 40%);
 	--notice-border: 2px ridge hsl(0 0% 45%);
 }
 
@@ -254,12 +252,14 @@ This ToC is auto-generated via the .create-ToC.sh
 	--b-light-2: calc(var(--brightness-light) + 87%);
 	--b-light-3: calc(var(--brightness-light) + 81%);
 	--sat-light-1: calc((var(--light-sat) + 10%) * 3);
-	--sat-light-2: calc((var(--light-sat) + 10%) * 1.1);
+	--sat-light-2: calc((var(--light-sat) + 10%) * 1.2);
 	--sat-light-3: calc((var(--light-sat) + 10%) * 0.7);
+
 	--bg1: hsl(var(--base-hue) var(--sat-light-1) var(--b-light-1));
 	--bg2: hsl(var(--base-hue) var(--sat-light-2) var(--b-light-2));
 	--bg3: hsl(var(--base-hue) var(--sat-light-3) var(--b-light-3));
 
+	--notice-bg: hsl(var(--base-hue) var(--sat-light-2) var(--b-light-3));
 	--resize-handle: hsl(var(--base-hue) var(--sat-light-2) calc(var(--b-light-2) - 1%));
 	--scrollbar: hsl(var(--base-hue) var(--sat-light-3) calc(var(--b-light-2) - 8%));
 	--suggester-b-row: hsl(var(--base-hue) var(--sat-light-2) calc(var(--b-light-1) - 3%));
@@ -274,11 +274,12 @@ This ToC is auto-generated via the .create-ToC.sh
 	--b-dark-3: calc(var(--brightness-dark) + 2%);
 	--sat-dark-1: calc(var(--dark-sat) * 0.7);
 	--sat-dark-2: calc(var(--dark-sat) * 1.2);
-	--sat-dark-3: calc(var(--dark-sat) * 2.5);
+	--sat-dark-3: calc(var(--dark-sat) * 3);
 	--bg1: hsl(var(--base-hue) var(--sat-dark-1) var(--b-dark-1));
 	--bg2: hsl(var(--base-hue) var(--sat-dark-2) var(--b-dark-2));
 	--bg3: hsl(var(--base-hue) var(--sat-dark-3) var(--b-dark-3));
 
+	--notice-bg: hsl(var(--base-hue) var(--sat-dark-2) var(--b-dark-1));
 	--resize-handle: hsl(var(--base-hue)  var(--sat-dark-2) calc(var(--b-dark-2) - 1%));
 	--scrollbar: hsl(var(--base-hue) var(--sat-dark-1) calc(var(--b-dark-2) + 9%));
 	--suggester-b-row: hsl(var(--base-hue)  var(--sat-dark-1) calc(var(--b-dark-1) - 2%));
