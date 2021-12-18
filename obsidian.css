@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 1.342
+Version 1.343
 https://github.com/chrisgrieser/shimmering-focus/
 MIT License
 ─────────────────────────────────────────────────── */
@@ -1413,6 +1413,10 @@ p.mod-warning::BEFORE {
 	margin-left: 5px;
 }
 
+body:not(.normal-checkboxes) .checkbox-container::AFTER {
+	display: none;
+}
+
 body:not(.normal-checkboxes) .checkbox-container {
 	height: 22px;
 	width: 22px;
@@ -1431,13 +1435,10 @@ body.angular-shapes .checkbox-container {
 	width: 19px;
 }
 
+/* colors */
 body:not(.normal-checkboxes) .checkbox-container.is-enabled {
 	background-color: var(--interactive-bg);
 	border-color: var(--interactive-border);
-}
-
-body:not(.normal-checkboxes) .checkbox-container::AFTER {
-	display: none;
 }
 
 body:not(.normal-checkboxes) .checkbox-container:hover {
@@ -1450,8 +1451,10 @@ body:not(.normal-checkboxes) .checkbox-container.is-enabled:hover {
 	border-color: var(--interactive-hover-bg);
 }
 
-ul li.task-list-item.is-checked {
-	border-radius: var(--roundish);
+/* slightly lighter for dark mode */
+.theme-dark:not(.normal-checkboxes) .checkbox-container.is-enabled:hover,
+.theme-dark:not(.normal-checkboxes) .checkbox-container:hover {
+	border-color: var(--interactive-hover-border);
 }
 
 /* ───────────────────────────────────────────────────
@@ -4170,6 +4173,10 @@ input[type="checkbox"] {
 	-webkit-appearance: none;
 	appearance: none;
 	vertical-align: top;
+}
+
+ul li.task-list-item.is-checked {
+	border-radius: var(--roundish);
 }
 
 input[type="checkbox"]:checked {
