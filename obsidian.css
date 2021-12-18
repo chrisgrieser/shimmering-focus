@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 1.341
+Version 1.342
 https://github.com/chrisgrieser/shimmering-focus/
 MIT License
 ─────────────────────────────────────────────────── */
@@ -178,6 +178,8 @@ This ToC is auto-generated via the .create-ToC.sh
 	--editor-alt-accent: var(--alt-accent-darker);
 	--selection-color: hsl(259 100% 93% / 86.7%);
 	--extra-contrast: hsl(0 0% 36%);
+	--text-muted: hsl(0 0% 53%);
+	--text-faint: hsl(0 0% 60%);
 	--hr-line-gray: hsl(0 0% 66%);
 
 	--button-text: var(--interactive-normal);
@@ -200,7 +202,9 @@ This ToC is auto-generated via the .create-ToC.sh
 .theme-dark {
 	--editor-alt-accent: var(--alt-accent);
 	--selection-color: hsl(302 24% 21% / 73%);
-	--extra-contrast: hsl(0 0% 73%);
+	--extra-contrast: hsl(0 0% 68%);
+	--text-muted: hsl(0 0% 58%);
+	--text-faint: hsl(0 0% 40%);
 	--hr-line-gray: hsl(0 0% 60%);
 
 	--button-text: var(--text-normal);
@@ -450,7 +454,7 @@ This ToC is auto-generated via the .create-ToC.sh
 	--monospace-font-size: 0.9rem;
 
 	--longform-font: "Crimson Pro";
-	--longform-font-size: 120%;
+	--longform-font-size: 115%;
 
 	--sidebar-font-family: "iA Writer Quattro V";
 	--sidebar-font-size: 0.85rem;
@@ -710,6 +714,10 @@ body:not(.angular-shapes) .installed-plugins-container svg.cross {
 	margin-bottom: 2px;
 }
 
+.menu div.menu-item svg.cross {
+	margin-bottom: 1.5px;
+}
+
 /* hotkey button */
 svg.any-key > path { display: none }
 
@@ -855,6 +863,15 @@ svg.longform > path { display: none }
 svg.longform {
 	background-color: currentColor;
 	-webkit-mask-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' width='1.1em' height='1.1em' preserveAspectRatio='xMidYMid meet' viewBox='0 0 24 24'%3e%3cpath d='M3 2h2v20H3zm16 0H6v20h13c1.103 0 2-.897 2-2V4c0-1.103-.897-2-2-2zm-1 10H9v-2h9v2zm0-4H9V6h9v2z' fill='currentColor'/%3e%3c/svg%3e");
+}
+
+.workspace-tab-header[aria-label="File Info View"] svg.document > path { display: none }
+
+.workspace-tab-header[aria-label="File Info View"] svg.document {
+	background-color: currentColor;
+	transform: scale(1.15);
+	margin-bottom: 0.5px;
+	-webkit-mask-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' width='1.1em' height='1.1em' preserveAspectRatio='xMidYMid meet' viewBox='0 0 24 24'%3e%3cpath d='M3 4v16a1 1 0 0 0 1 1h16a1 1 0 0 0 1-1V4a1 1 0 0 0-1-1H4a1 1 0 0 0-1 1zm8 3h2v2h-2V7zm0 4h2v6h-2v-6z' fill='currentColor'/%3e%3c/svg%3e");
 }
 
 /* ───────────────────────────────────────────────────
@@ -1349,9 +1366,9 @@ body:not(.show-scrollbar) ::-WEBKIT-SCROLLBAR {
 	letter-spacing: 0.5px;
 }
 
-.modal-container .modal button:hover,
-.modal-container .modal.mod-settings .modal-content button:hover,
-.modal-container .modal.mod-community-plugin button:hover {
+.modal-container .modal .modal-button-container button:hover,
+.modal-container .modal .modal-content button:not(.mod-cta):hover,
+.modal-container .modal .modal-content button.mod-cta:hover {
 	color: var(--button-hover-text);
 	background-color: var(--interactive-hover-bg);
 	transition: var(--medium-transition);
@@ -1443,6 +1460,7 @@ ul li.task-list-item.is-checked {
 
 .search-input-container input,
 input[type="text"],
+input[type="number"],
 input[type="email"],
 input[type="password"] {
 	left: 0;
@@ -1613,8 +1631,10 @@ body:not(.show-close-button) .document-search-close-button {
 ─────────────────────────────────────────────────── */
 
 div.menu {
+	background-color: var(--bg2);
 	box-shadow: var(--medium-shadow);
 	padding: 0;
+	border: var(--thin-border);
 	border-radius: var(--roundish);
 }
 
@@ -2849,12 +2869,17 @@ body:not(.less-heading-letter-spacing) .modal.mod-community-theme .modal-title {
 << Editor Size
 ─────────────────────────────────────────────────── */
 
+.markdown-source-view.mod-cm6,
 .markdown-source-view.mod-cm5 {
 	padding-left: 10px;
 }
 
 .markdown-preview-view {
 	padding-top: 10px;
+}
+
+.cm-s-obsidian .CodeMirror-code {
+	padding-right: 0;
 }
 
 /* ───────────────────────────────────────────────────
@@ -3650,11 +3675,8 @@ body.no-alternating-rows > .app-container table > tbody > tr > td {
 body .markdown-preview-view pre[class*="language-"],
 body .markdown-preview-view pre {
 	background-color: var(--bg2);
-	box-shadow: var(--small-shadow);
-
 	padding-top: 10px;
 	padding-bottom: 12px;
-
 	border: var(--codeblock-border);
 	border-radius: var(--codeblock-roundness);
 }
@@ -5713,7 +5735,7 @@ div.new-scene-container input#new-scene {
 	color: var(--text-faint);
 	background-color: var(--bg3);
 
-	padding: 4px 3px 5px 7px;
+	padding: 4px 0 5px 7px;
 	margin-right: -2px;
 
 	border: var(--thin-border);
@@ -6614,7 +6636,43 @@ img.link-favicon {
 }
 
 /* ───────────────────────────────────────────────────
-<< Info Plugin
+<< Info Panel (Side bar)
+─────────────────────────────────────────────────── */
+body .tlfFileInfoButton {
+	height: unset;
+	background-color: var(--bg1);
+	padding: 3px 3px 2px;
+}
+
+.tlfFileInfoButton:hover {
+	color: var(--alt-accent);
+	background-color: var(--bg1);
+}
+
+.workspace-leaf-content[data-type="tlfItemView"] {
+	padding: 3px;
+}
+
+body .tlfFileInfoTextArea,
+body .tlfFileInfoButton,
+body .tlfFileInfoLabel,
+body .tlfFileInfoValue,
+body .tlfFileInfoValueNumber {
+	font-size: var(--sidebar-font-size);
+}
+
+body .tlfFileInfoTextArea,
+body .tlfFileInfoButton,
+body .tlfFileInfoLabel {
+	color: var(--extra-contrast);
+}
+
+body .tlfFileInfoTextArea {
+	width: 130%;
+}
+
+/* ───────────────────────────────────────────────────
+<< Get Info (Status bar)
 ─────────────────────────────────────────────────── */
 
 /* no top icon */
@@ -6705,16 +6763,18 @@ button.color-picker-swatch {
 }
 
 /* ───────────────────────────────────────────────────
-<< Other Minor Plugin Customizations
+<< Zoom
 ─────────────────────────────────────────────────── */
 
-/* <<< Zoom */
 a.zoom-plugin-title:hover {
 	color: var(--alt-accent);
 	opacity: 0.8 !important;
 }
 
-/* <<< Advanced Tables */
+/* ───────────────────────────────────────────────────
+<< Advanced Tables
+─────────────────────────────────────────────────── */
+
 .widget-icon:hover {
 	fill: var(--alt-accent) !important;
 }
@@ -6763,6 +6823,10 @@ community:
 - hotkey-helper
 - obsidian-git
 - various-complements
+- obsidian-excalidraw-plugin
+- obsidian-file-info-plugin
+- obsidian-zoom
+- table-editor-obsidian
 */
 
 /* ───────────────────────────────────────────────────
@@ -7217,11 +7281,11 @@ settings:
 	 id: longform-font-size
 	 title: Longform Font Size
 	 type: variable-number-slider
-	 default: 1.2
-	 min: 0.7
-	 max: 3
-	 step: 0.1
-	 format: em
+	 default: 115
+	 min: 70
+	 max: 130
+	 step: 2
+	 format: '%'
   -
 	 id: longform-left-aligned
 	 title: Left-aligned text
