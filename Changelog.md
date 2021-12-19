@@ -1,3 +1,4 @@
+- 2021-12-19	improved another quick switcher prompt
 - 2021-12-19	fixes for style settings plugin as pane
 - 2021-12-19	styled language tool popovers
 - 2021-12-19	kanban color fix
