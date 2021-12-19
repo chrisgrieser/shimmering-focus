@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 1.354
+Version 1.355
 https://github.com/chrisgrieser/shimmering-focus/
 MIT License
 ─────────────────────────────────────────────────── */
@@ -171,8 +171,9 @@ This ToC is auto-generated via the .create-ToC.sh
 	--search-match-hl: var(--highlight-alt2);
 	--bold-in-darkmode: hsl(202 43% 57%);
 	--active-line: hsl(62 11% 63% / 12.5%);
-	--cursor-monocolor: var(--accent-lighter);
 	--spell-error-color: hsl(0 66% 64%);
+
+	--cursor-monocolor: var(--accent-lighter);
 }
 
 .theme-light {
@@ -191,8 +192,8 @@ This ToC is auto-generated via the .create-ToC.sh
 	--interactive-hover-border: var(--alt-accent-lighter);
 
 	--finished-task: var(--accent-lighter);
-	--cursor-duo-color-1: var(--alt-accent-lightest);
-	--cursor-duo-color-2: var(--accent-lightest);
+	--cursor-duo-color-1: var(--alt-accent-lighterer);
+	--cursor-duo-color-2: var(--accent-lighterer);
 	--a-row: rgb(0 0 0 / 3%);
 	--b-row: rgb(0 0 0 / 7%);
 
@@ -1696,7 +1697,7 @@ div.menu-item {
 
 .menu-separator {
 	margin: 0;
-	border-bottom: var(--muted-border);
+	border-bottom: var(--basic-border);
 }
 
 /* ───────────────────────────────────────────────────
@@ -6952,7 +6953,7 @@ settings:
 	 type: variable-number-slider
 	 default: 10
 	 min: 0
-	 max: 15
+	 max: 20
 	 step: 2
 	 format: '%'
   -
@@ -6980,7 +6981,7 @@ settings:
 	 type: variable-number-slider
 	 default: 5
 	 min: 0
-	 max: 15
+	 max: 20
 	 step: 2
 	 format: '%'
   -

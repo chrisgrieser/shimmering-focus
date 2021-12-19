@@ -1,3 +1,4 @@
+- 2021-12-19	minor
 - 2021-12-19	kanban color fix
 - 2021-12-19	shadow improvements
 - 2021-12-19	fix kanban backgrounds
