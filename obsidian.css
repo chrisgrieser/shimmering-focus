@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 1.364
+Version 1.365
 https://github.com/chrisgrieser/shimmering-focus/
 MIT License
 ─────────────────────────────────────────────────── */
@@ -1438,6 +1438,7 @@ p.mod-warning::BEFORE {
 ─────────────────────────────────────────────────── */
 
 .checkbox-container {
+	box-shadow: var(--button-shadow);
 	margin-left: 5px;
 }
 
@@ -1535,12 +1536,18 @@ input:hover {
 << Dropdown & Slider
 ─────────────────────────────────────────────────── */
 
-/* select.dropdown:hover, */
 select.dropdown {
-	background-color: var(--bg2);
 	padding: 6px 28px 6px 10px;
 	border: var(--thin-border);
 	border-radius: var(--round);
+}
+
+.theme-dark .modal select.dropdown {
+	background-color: var(--bg3);
+}
+
+.theme-light .modal select.dropdown {
+	background-color: var(--bg2);
 }
 
 select.dropdown:hover {
@@ -2309,7 +2316,7 @@ body .workspace-leaf-resize-handle:active {
 	color: var(--extra-contrast);
 	background-color: var(--bg3);
 
-	padding: 2px 5px 1px;
+	padding: 2px 5px 4px;
 	margin-top: 0;
 	margin-bottom: 5px;
 
@@ -2505,7 +2512,7 @@ body .workspace-leaf-resize-handle:active {
 	padding: 0.4em 0.1em 0.4em 0.6em;
 	margin-top: 0;
 	margin-bottom: 0;
-	border-bottom: var(--muted-border);
+	border-bottom: var(--thin-border);
 	line-height: 1.2em;
 }
 
@@ -2513,7 +2520,7 @@ body .workspace-leaf-resize-handle:active {
 	padding-right: 5px;
 	padding-bottom: 2px;
 
-	border-bottom: var(--muted-border);
+	border-bottom: var(--thick-border);
 
 	font-family: var(--smallcap-font);
 	font-size: 1em;
