@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 1.365
+Version 1.366
 https://github.com/chrisgrieser/shimmering-focus/
 MIT License
 ─────────────────────────────────────────────────── */
@@ -6271,8 +6271,8 @@ button.MS-OpenSnippet:hover svg.ms-snippet path {
 << Breadcrumbs
 ─────────────────────────────────────────────────── */
 
-/* bug fix */
-body > .app-container .BC-Matrix-square > ol {
+/* proper alignment */
+.workspace-leaf-content .BC-Matrix .BC-Matrix-square > ol {
 	padding-left: 33px;
 }
 
