@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 1.362
+Version 1.363
 https://github.com/chrisgrieser/shimmering-focus/
 MIT License
 ─────────────────────────────────────────────────── */
@@ -2801,6 +2801,7 @@ body .workspace-leaf-resize-handle:active {
 .community-theme.is-selected .community-theme-info .clickable-icon::AFTER {
 	content: "Feature Overview & Customization Options";
 	padding-left: 4px;
+	font-family: var(--button-font);
 }
 
 .community-theme.is-selected svg.github-glyph > path {
