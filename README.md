@@ -132,19 +132,13 @@ Using the [Style Settings Plugin](https://github.com/mgmeyers/obsidian-style-set
 
 <img src="https://user-images.githubusercontent.com/73286100/144147616-59ba2513-78cc-4143-91e5-c222bc307bd9.gif" alt="Screen Recording 2021-12-01 at 00 51 21a" width=60%>
 
-### Subtle, Customizable Design
-- Color-wise, the theme pretty much follows Obsidian's default color scheme, with mostly subtle changes – like the eponymous shimmering green as secondary accent. 
-- You can customize the shapes (angular 🔲 or roundish 🔘) and the brightness of the theme with the [Style Settings Plugin](https://github.com/mgmeyers/obsidian-style-settings/).
-
-<img src="https://user-images.githubusercontent.com/73286100/144433250-9549dfdc-f04e-48a7-8df2-0b0cd7755c1a.gif" alt="Screen Recording 2021-12-02 at 14 34 37" width=60%>
-
 [⬆️ Go Back to Top](#Table-of-Contents)
 
 ## Customization
 - This themes supports dozens of customization options via the [Style Settings Plugin](https://github.com/mgmeyers/obsidian-style-settings/).
 - You can add your own Annotation Tags by adding a snippet [using this template](https://github.com/chrisgrieser/shimmering-focus/blob/main/annotation-tag-template.css).
 
-<img width=50% alt="Customization options" src="https://user-images.githubusercontent.com/73286100/143726875-79ca0fbd-7c57-48f2-876a-6888258f13d1.png">
+<img width=50% alt="Screenshot 2021-12-19 21 12 59" src="https://user-images.githubusercontent.com/73286100/146689428-e29af1e7-92f8-4dce-afda-ef3545743d96.png">
 
 ## Compatibility
 
