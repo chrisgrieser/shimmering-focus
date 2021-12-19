@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 1.363
+Version 1.364
 https://github.com/chrisgrieser/shimmering-focus/
 MIT License
 ─────────────────────────────────────────────────── */
@@ -1347,6 +1347,8 @@ a.style-settings-export,
 .modal-container .modal .modal-button-container button,
 .modal-container .modal .modal-content button:not(.mod-cta),
 .modal-container .modal .modal-content button.mod-cta {
+	min-height: 1.5em;
+
 	color: var(--button-text);
 	background-color: var(--interactive-bg);
 	box-shadow: var(--button-shadow);
@@ -1375,14 +1377,29 @@ a.style-settings-export,
 	padding-bottom: 5px;
 }
 
+/* hover */
 body .setting-item-control a.style-settings-import:hover,
 body .setting-item-control a.style-settings-export:hover,
-.modal-container .modal .modal-button-container button:hover,
-.modal-container .modal .modal-content button:not(.mod-cta):hover,
+body .modal-container .modal .modal-button-container button.mod-cta:hover,
 .modal-container .modal .modal-content button.mod-cta:hover {
 	color: var(--button-hover-text);
 	background-color: var(--interactive-hover-bg);
 	transition: var(--medium-transition);
+	border-color: var(--interactive-hover-border);
+}
+
+/* abort buttons */
+body .modal-container .modal .modal-button-container button:not(.mod-cta),
+body .modal-container .modal .modal-content button:not(.mod-cta) {
+	color: var(--extra-contrast);
+	background-color: var(--bg3);
+	border-color: var(--basic-border-color);
+}
+
+body .modal-container .modal .modal-button-container button:not(.mod-cta):hover,
+body .modal-container .modal .modal-content button:not(.mod-cta):hover {
+	color: var(--text-normal);
+	background-color: var(--bg2);
 	border-color: var(--interactive-hover-border);
 }
 
@@ -2129,7 +2146,7 @@ body .workspace-leaf-resize-handle:active {
 	background-color: var(--bg1);
 	box-shadow: var(--big-shadow);
 	padding: 7px 15px 20px;
-	border: var(--thick-muted-border);
+	border: var(--thick-border);
 	border-radius: calc(var(--roundish) * 2);
 }
 
@@ -2147,7 +2164,6 @@ body .workspace-leaf-resize-handle:active {
 	height: 90%;
 	width: 92%;
 	max-width: unset;
-	border: var(--thick-border);
 	border-radius: calc(var(--roundish) * 3);
 }
 
@@ -3346,8 +3362,8 @@ body > .app-container .obsidian-search-match-highlight:last-child {
 
 body:not(.classic-spellcheck-styling) .CodeMirror .cm-spell-error {
 	background-image: none;
-	text-decoration: underline solid var(--spell-error-color);
-	text-decoration-thickness: 2px;
+	text-decoration: underline wavy var(--spell-error-color);
+	text-decoration-thickness: 1.5px;
 }
 
 body.no-yaml-spellcheck .cm-hmd-frontmatter.cm-overlay.cm-spell-error {
