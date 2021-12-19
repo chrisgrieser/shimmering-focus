@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 1.367
+Version 1.368
 https://github.com/chrisgrieser/shimmering-focus/
 MIT License
 ─────────────────────────────────────────────────── */
@@ -3063,10 +3063,12 @@ body.colored-yaml .cm-s-obsidian .cm-hmd-frontmatter.cm-string {
 	display: none;
 }
 
-.frontmatter-container-header {
+body .frontmatter-container .frontmatter-container-header {
+	border-bottom: var(--thin-border);
 	font-family: var(--smallcap-font);
-	font-weight: 400 !important;
-	text-transform: capitalize !important;
+	font-size: 0.9em;
+	font-weight: 400;
+	text-transform: capitalize;
 }
 
 /* <<< Metadata Block */
@@ -3076,10 +3078,6 @@ body.colored-yaml .cm-s-obsidian .cm-hmd-frontmatter.cm-string {
 	border: var(--basic-border);
 	border-radius: var(--roundish);
 	font-size: 1em;
-}
-
-.markdown-preview-view .frontmatter-container-header {
-	font-size: 0.9em;
 }
 
 .markdown-preview-view .frontmatter-container-header:hover {
@@ -6766,7 +6764,7 @@ body .tlfFileInfoButton {
 }
 
 .workspace-leaf-content[data-type="tlfItemView"] {
-	padding: 3px;
+	padding: 2px 5px;
 }
 
 body .tlfFileInfoTextArea,
@@ -6784,8 +6782,7 @@ body .tlfFileInfoLabel {
 }
 
 body .tlfFileInfoTextArea {
-	height: 15em;
-	width: 130%;
+	height: 18em;
 }
 
 .theme-light .tlfFileInfoTextArea {
