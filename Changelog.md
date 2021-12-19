@@ -1,3 +1,4 @@
+- 2021-12-19	fix kanban backgrounds
 - 2021-12-18	color intensity fixes
 - 2021-12-18	grayscale option for favicons
 - 2021-12-18	tooltip arrows

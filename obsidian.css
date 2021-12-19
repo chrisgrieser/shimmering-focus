@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 1.351
+Version 1.352
 https://github.com/chrisgrieser/shimmering-focus/
 MIT License
 ─────────────────────────────────────────────────── */
@@ -1345,6 +1345,9 @@ a.style-settings-export,
 .modal-container .modal .modal-content button.mod-cta {
 	color: var(--button-text);
 	background-color: var(--interactive-bg);
+	box-shadow:
+ 0 -2px 0 0
+	            rgb(0 0 0 / 15%) inset,0 2px 4px 0 rgb(0 0 0 / 10%);
 
 	transition: var(--quick-transition);
 
@@ -5405,15 +5408,15 @@ https://forum.obsidian.md/t/inline-code-occludes-text-selection-and-vim-cursor/1
 
 /* stylelint-disable no-duplicate-selectors */
 .theme-light {
-	--kanban-background: hsl(var(--light-hue) var(--sat-light-3) 85%);
+	--kanban-background: hsl(var(--light-hue) var(--sat-light-3) 80%);
 	--active-hover-kanban-item: hsl(0 0% 93%);
-	--dot-color: hsl(0 0% 80% / 50%);
+	--dot-color: hsl(0 0% 50% / 30%);
 }
 
 .theme-dark {
 	--kanban-background: hsl(var(--dark-hue) var(--sat-dark-1) 17%);
 	--active-hover-kanban-item: hsl(0 0% 17%);
-	--dot-color: hsl(0 0% 13% / 50%);
+	--dot-color: hsl(0 0% 0% / 30%);
 }
 
 :root {
@@ -5444,7 +5447,7 @@ body .workspace-leaf-content[data-type="kanban"] .view-header,
 	background-attachment: local;
 }
 
-.theme-dark .workspace-leaf-content[data-type="kanban"] .view-header {
+.workspace-leaf-content[data-type="kanban"] .view-header {
 	background-color: var(--kanban-background) !important;
 }
 
