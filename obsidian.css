@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 1.359
+Version 1.360
 https://github.com/chrisgrieser/shimmering-focus/
 MIT License
 ─────────────────────────────────────────────────── */
@@ -250,12 +250,14 @@ This ToC is auto-generated via the .create-ToC.sh
 
 .theme-light .longform-leaf,
 .theme-light {
-	--b-light-1: calc(var(--brightness-light) + 90%);
-	--b-light-2: calc(var(--brightness-light) + 85%);
-	--b-light-3: calc(var(--brightness-light) + 79%);
-	--sat-light-1: calc(var(--light-sat) * 4);
-	--sat-light-2: calc(var(--light-sat) * 1.5);
-	--sat-light-3: calc(var(--light-sat) * 0.9);
+	--b-light-1: calc(var(--brightness-light) + 80%);
+	--b-light-2: calc(var(--brightness-light) + 76%);
+	--b-light-3: calc(var(--brightness-light) + 71%);
+
+	--sat-correction: 20%;
+	--sat-light-1: calc(calc(var(--light-sat) + var(--sat-correction)) * 2);
+	--sat-light-2: calc(calc(var(--light-sat) + var(--sat-correction)) * 1.7);
+	--sat-light-3: calc(calc(var(--light-sat) + var(--sat-correction)) * 1.4);
 
 	--bg1: hsl(var(--light-hue) var(--sat-light-1) var(--b-light-1));
 	--bg2: hsl(var(--light-hue) var(--sat-light-2) var(--b-light-2));
@@ -270,13 +272,17 @@ This ToC is auto-generated via the .create-ToC.sh
 	--backdrop-color: hsl(var(--light-hue) calc(var(--sat-light-3) * 0.8) calc(var(--b-light-3) - 10%));
 }
 
+.theme-dark .longform-leaf,
 .theme-dark {
 	--b-dark-1: calc(var(--brightness-dark) + 11%);
 	--b-dark-2: calc(var(--brightness-dark) + 7%);
 	--b-dark-3: calc(var(--brightness-dark) + 2%);
-	--sat-dark-1: calc(var(--dark-sat) * 0.7);
-	--sat-dark-2: calc(var(--dark-sat) * 1.2);
-	--sat-dark-3: calc(var(--dark-sat) * 3);
+
+	--sat-correction: 0%;
+	--sat-dark-1: calc(calc(var(--dark-sat) + var(--sat-correction)) * 1);
+	--sat-dark-2: calc(calc(var(--dark-sat) + var(--sat-correction)) * 1.5);
+	--sat-dark-3: calc(calc(var(--dark-sat) + var(--sat-correction)) * 2);
+
 	--bg1: hsl(var(--dark-hue) var(--sat-dark-1) var(--b-dark-1));
 	--bg2: hsl(var(--dark-hue) var(--sat-dark-2) var(--b-dark-2));
 	--bg3: hsl(var(--dark-hue) var(--sat-dark-3) var(--b-dark-3));
@@ -1480,6 +1486,10 @@ input[type="text"] {
 	width: 250px;
 }
 
+.angular-shapes input[type="text"] {
+	padding-top: 7px;
+}
+
 .workspace-leaf-content input[type="text"] {
 	width: 100%;
 }
@@ -2606,7 +2616,6 @@ body .workspace-leaf-resize-handle:active {
 .community-plugin-search .community-plugin-downloads::BEFORE,
 .community-plugin-search .community-plugin-downloads-text {
 	color: var(--extra-contrast);
-	font-size: 0.9em;
 }
 
 .community-plugin-downloads::BEFORE {
@@ -2739,6 +2748,75 @@ body .workspace-leaf-resize-handle:active {
 << Community Theme Browser
 ─────────────────────────────────────────────────── */
 
+/* ───────────────────────────────────────────────────
+<<< More prominent GitHub Info
+─────────────────────────────────────────────────── */
+
+.community-theme.is-selected .community-theme-info .clickable-icon {
+	display: block;
+
+	width: 90%;
+
+	position: absolute;
+	top: 70px;
+	right: 10px;
+
+	box-shadow: var(--button-shadow);
+
+	padding-top: 3px;
+	padding-bottom: 4px;
+	margin-right: 0;
+	margin-bottom: 5px;
+	margin-left: 0;
+
+	border-radius: var(--roundish);
+
+	line-height: 1.1em;
+}
+
+.theme-light .community-theme.is-selected .community-theme-info .clickable-icon {
+	color: hsl(50 60% 60%);
+	background-color: var(--bg1);
+}
+
+.theme-dark .community-theme.is-selected .community-theme-info .clickable-icon {
+	color: hsl(50 60% 60%);
+	background-color: hsl(0 0% 0%);
+}
+
+.community-theme.is-selected {
+	min-height: 300px;
+}
+
+.community-theme.is-selected .community-theme-info .clickable-icon::AFTER {
+	content: "README: Feature overview & Customization options";
+	padding-left: 4px;
+}
+
+.community-theme.is-selected svg.github-glyph > path {
+	display: none;
+}
+
+.community-theme.is-selected svg.github-glyph {
+	background-color: currentColor;
+	-webkit-mask-image: var(--external-url);
+}
+
+/* ───────────────────────────────────────────────────
+<<< Remaining Community Browser
+─────────────────────────────────────────────────── */
+
+.community-theme.is-selected,
+.community-theme {
+	color: var(--text-normal);
+	background: var(--bg3);
+}
+
+.community-theme.is-selected,
+.community-theme.is-selected .community-theme-info {
+	color: var(--text-normal);
+}
+
 .modal.mod-community-theme {
 	background-color: var(--bg2);
 	padding-top: 0;
@@ -2774,24 +2852,20 @@ body:not(.less-heading-letter-spacing) .modal.mod-community-theme .modal-title {
 	font-style: italic;
 }
 
-.community-theme {
-	background: var(--bg3);
-}
-
 .community-theme-remove-button svg {
-	color: var(--text-muted) !important;
+	color: var(--text-muted);
 }
 
 .community-theme-remove-button:hover svg {
-	color: var(--alt-accent) !important;
+	color: var(--alt-accent);
 }
 
 /* greyed out "selected" button */
-.community-theme.is-selected button:first-child {
-	color: var(--text-faint) !important;
-	background-color: var(--bg3) !important;
+.modal-container .modal .community-theme.is-selected button:first-child {
+	color: var(--text-faint);
+	background-color: var(--bg3);
 	cursor: not-allowed;
-	border-color: var(--bg1) !important;
+	border-color: var(--bg1);
 }
 
 .modal.mod-community-theme .community-plugin-downloads-text::BEFORE {
@@ -2819,6 +2893,10 @@ body:not(.less-heading-letter-spacing) .modal.mod-community-theme .modal-title {
 	font-size: 2.2em;
 	font-weight: 500;
 	text-transform: capitalize;
+}
+
+.community-theme-downloads .community-plugin-downloads-text {
+	top: 0;
 }
 
 /* corrects appearance in light mode */
@@ -6447,7 +6525,7 @@ pre button.copy:hover::BEFORE {
 	display: none;
 }
 
-/* move to left */
+/* padding to the left not needed, since aliases won't be displayed there */
 .another-quick-switcher__item__reason,
 .suggestion-item .another-quick-switcher__item {
 	margin-left: -17px;
