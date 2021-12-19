@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 1.352
+Version 1.353
 https://github.com/chrisgrieser/shimmering-focus/
 MIT License
 ─────────────────────────────────────────────────── */
@@ -328,7 +328,7 @@ This ToC is auto-generated via the .create-ToC.sh
 
 .theme-light {
 	--shadow-color: hsl(0 0% 40% / 70%);
-	--shadow-base-size: 0;
+	--shadow-base-size: 0px;
 }
 
 .theme-dark {
@@ -336,16 +336,14 @@ This ToC is auto-generated via the .create-ToC.sh
 	--shadow-base-size: 3px;
 }
 
-.theme-light,
-.theme-dark {
+body.theme-light,
+body.theme-dark {
 	--shadow-blur: 6px;
-	--big-shadow-size: calc(var(--shadow-base-size) + 8px);
-	--medium-shadow-size: calc(var(--shadow-base-size) + 5px);
-	--small-shadow-size: var(--shadow-base-size);
 
-	--big-shadow: 4px 6px var(--shadow-blur) var(--big-shadow-size) var(--shadow-color);
-	--medium-shadow: 4px 6px var(--shadow-blur) var(--medium-shadow-size) var(--shadow-color);
-	--small-shadow: 2px 4px var(--shadow-blur) var(--small-shadow-size) var(--shadow-color);
+	--big-shadow: 4px 6px var(--shadow-blur) calc(var(--shadow-base-size) + 10px) var(--shadow-color);
+	--medium-shadow: 4px 6px var(--shadow-blur) calc(var(--shadow-base-size) + 5px) var(--shadow-color);
+	--small-shadow: 2px 4px var(--shadow-blur) calc(var(--shadow-base-size) + 0) var(--shadow-color);
+	--button-shadow: 0 1px var(--shadow-blur) calc(var(--shadow-base-size) - 1px) var(--shadow-color);
 }
 
 /* ───────────────────────────────────────────────────
@@ -1345,13 +1343,11 @@ a.style-settings-export,
 .modal-container .modal .modal-content button.mod-cta {
 	color: var(--button-text);
 	background-color: var(--interactive-bg);
-	box-shadow:
- 0 -2px 0 0
-	            rgb(0 0 0 / 15%) inset,0 2px 4px 0 rgb(0 0 0 / 10%);
+	box-shadow: var(--button-shadow);
 
 	transition: var(--quick-transition);
 
-	padding: 6px 12px 5px;
+	padding: 5px 12px 6px;
 
 	border: 2px solid var(--interactive-border);
 	border-radius: var(--round);
@@ -1361,6 +1357,16 @@ a.style-settings-export,
 	font-weight: var(--button-font-weight);
 	line-height: 1.3em;
 	letter-spacing: 0.5px;
+}
+
+/* fix for slightly different positioning of square fonts */
+.angular-shapes a.style-settings-import,
+.angular-shapes a.style-settings-export,
+.angular-shapes .modal-container .modal .modal-button-container button,
+.angular-shapes .modal-container .modal .modal-content button:not(.mod-cta),
+.angular-shapes .modal-container .modal .modal-content button.mod-cta {
+	padding-top: 6px;
+	padding-bottom: 5px;
 }
 
 body a.style-settings-import:hover,
