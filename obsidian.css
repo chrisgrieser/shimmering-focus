@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 1.361
+Version 1.362
 https://github.com/chrisgrieser/shimmering-focus/
 MIT License
 ─────────────────────────────────────────────────── */
@@ -379,8 +379,7 @@ body.theme-dark {
 .theme-dark {
 	--basic-border: 2px solid var(--basic-border-color);
 	--muted-border: 2px solid var(--muted-border-color);
-	--thick-border: 5px solid var(--basic-border-color);
-	--thick-muted-border: 5px solid var(--muted-border-color);
+	--thick-border: 3px solid var(--basic-border-color);
 	--thin-border: 1px solid var(--basic-border-color);
 	--thin-muted-border: 1px solid var(--muted-border-color);
 }
@@ -2148,7 +2147,7 @@ body .workspace-leaf-resize-handle:active {
 	height: 90%;
 	width: 92%;
 	max-width: unset;
-	border: var(--thick-muted-border);
+	border: var(--thick-border);
 	border-radius: calc(var(--roundish) * 3);
 }
 
@@ -2228,7 +2227,7 @@ body .workspace-leaf-resize-handle:active {
 	padding-left: 0;
 	margin-top: 0;
 
-	border-left: var(--thick-muted-border);
+	border-left: var(--thick-border);
 }
 
 .setting-item {
@@ -2639,7 +2638,7 @@ body .workspace-leaf-resize-handle:active {
 .community-plugin-info {
 	background-color: var(--bg1);
 	padding: 10px 5px 10px 15px;
-	border-left: var(--thick-muted-border);
+	border-left: var(--thick-border);
 	border-top-right-radius: calc(var(--roundish) * 2.5);
 	border-bottom-right-radius: calc(var(--roundish) * 2.5);
 }
@@ -2719,7 +2718,7 @@ body .workspace-leaf-resize-handle:active {
 .community-plugin-info div.community-plugin-readme {
 	padding-top: 5px !important;
 	margin-top: 15px !important;
-	border-top: var(--thick-muted-border);
+	border-top: var(--thick-border);
 }
 
 .community-plugin-readme {
