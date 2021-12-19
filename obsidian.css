@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 1.356
+Version 1.357
 https://github.com/chrisgrieser/shimmering-focus/
 MIT License
 ─────────────────────────────────────────────────── */
@@ -250,13 +250,12 @@ This ToC is auto-generated via the .create-ToC.sh
 
 .theme-light .longform-leaf,
 .theme-light {
-	--sat-correction-factor: 13%;
-	--b-light-1: calc(var(--brightness-light) + 92%);
-	--b-light-2: calc(var(--brightness-light) + 87%);
-	--b-light-3: calc(var(--brightness-light) + 81%);
-	--sat-light-1: calc((var(--light-sat) + var(--sat-correction-factor)) * 3);
-	--sat-light-2: calc((var(--light-sat) + var(--sat-correction-factor)) * 1.2);
-	--sat-light-3: calc((var(--light-sat) + var(--sat-correction-factor)) * 0.7);
+	--b-light-1: calc(var(--brightness-light) + 90%);
+	--b-light-2: calc(var(--brightness-light) + 85%);
+	--b-light-3: calc(var(--brightness-light) + 79%);
+	--sat-light-1: calc(var(--light-sat) * 4);
+	--sat-light-2: calc(var(--light-sat) * 1.5);
+	--sat-light-3: calc(var(--light-sat) * 0.9);
 
 	--bg1: hsl(var(--light-hue) var(--sat-light-1) var(--b-light-1));
 	--bg2: hsl(var(--light-hue) var(--sat-light-2) var(--b-light-2));
@@ -359,14 +358,14 @@ body.theme-dark {
 	--pdf-size: 50vh;
 	--popover-size: 350;
 	--inactive-pane-opacity: 80%;
-	--tooltip-arrow-length: 20px;
+	--tooltip-arrow-length: 10px;
 
 	--signature: "⟡";
 	--empty-state-symbol-size: 8rem;
 
 	--quick-transition: 200ms ease-in-out;
 	--medium-transition: 350ms ease-in-out;
-	--slow-transition: 450ms ease-in-out;
+	--slow-transition: 600ms ease-in-out;
 }
 
 .longform-leaf,
@@ -1370,8 +1369,8 @@ a.style-settings-export,
 	padding-bottom: 5px;
 }
 
-body a.style-settings-import:hover,
-body a.style-settings-export:hover,
+body .modal .setting-item-control a.style-settings-import:hover,
+body .modal .setting-item-control a.style-settings-export:hover,
 .modal-container .modal .modal-button-container button:hover,
 .modal-container .modal .modal-content button:not(.mod-cta):hover,
 .modal-container .modal .modal-content button.mod-cta:hover {
@@ -3883,13 +3882,13 @@ body:not(.no-ul-relationship-lines) .markdown-preview-view > div > div > ul {
 /* hovered links in alt accent */
 .cm-string.cm-url:hover:not(.cm-formatting),
 .cm-hmd-internal-link:hover,
-.internal-link:hover,
+body div.app-container .workspace-tabs .workspace-leaf .view-content .internal-link:hover,
 .modal-content a:hover,
 .markdown-preview-view a.footnote-link:hover,
 .markdown-preview-view a.internal-link:hover,
 .markdown-preview-view a.external-link:hover,
 a:hover {
-	color: var(--alt-accent) !important;
+	color: var(--alt-accent);
 	cursor: pointer;
 }
 
@@ -5415,15 +5414,15 @@ https://forum.obsidian.md/t/inline-code-occludes-text-selection-and-vim-cursor/1
 
 /* stylelint-disable no-duplicate-selectors */
 .theme-light {
-	--kanban-background: hsl(var(--light-hue) var(--sat-light-3) 80%);
+	--kanban-background: hsl(var(--light-hue) calc(var(--sat-light-2) * 0.8) 82%);
 	--active-hover-kanban-item: hsl(var(--light-hue) var(--sat-light-2) 85%);
-	--dot-color: hsl(0 0% 50% / 15%);
+	--dot-color: hsl(0 0% 50% / 20%);
 }
 
 .theme-dark {
-	--kanban-background: hsl(var(--dark-hue) calc(var(--sat-dark-2) * 1.3) 18%);
+	--kanban-background: hsl(var(--dark-hue) calc(var(--sat-dark-2) * 1.2) 18%);
 	--active-hover-kanban-item: hsl(var(--dark-hue) var(--sat-dark-3) 15%);
-	--dot-color: hsl(0 0% 0% / 30%);
+	--dot-color: hsl(0 0% 0% / 20%);
 }
 
 :root {
@@ -6577,13 +6576,13 @@ pre button.copy:hover::BEFORE {
 }
 
 .style-settings-heading .setting-item-name:hover {
-	color: var(--editor-alt-accent);
+	color: var(--alt-accent);
 }
 
 /* most styling of the import/export buttons
 are at the button section */
-body a.style-settings-import,
-body a.style-settings-export {
+body .modal a.style-settings-import,
+body .modal a.style-settings-export {
 	margin-right: 0 !important;
 	margin-left: 12px;
 	font-size: calc(var(--button-font-size) * 0.8);
@@ -6969,7 +6968,7 @@ settings:
 	 title: 🚧 Color Tone (Light Mode)
 	 description: '(experimental) Overall color tone (hue) of the light theme. (Mind that the appearance of the color is also affected by brightness and saturation, i.e. low saturation leading to gray and how/low brightness leading to white/dark).'
 	 type: variable-number-slider
-	 default: 0
+	 default: 220
 	 min: 0
 	 max: 360
 	 step: 5
