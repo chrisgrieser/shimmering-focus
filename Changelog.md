@@ -1,3 +1,4 @@
+- 2021-12-19	add github info for theme when selected in theme browser
 - 2021-12-19	improved color regulation
 - 2021-12-19	improved another quick switcher prompt
 - 2021-12-19	fixes for style settings plugin as pane

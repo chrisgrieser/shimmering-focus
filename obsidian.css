@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 1.360
+Version 1.361
 https://github.com/chrisgrieser/shimmering-focus/
 MIT License
 ─────────────────────────────────────────────────── */
@@ -254,7 +254,7 @@ This ToC is auto-generated via the .create-ToC.sh
 	--b-light-2: calc(var(--brightness-light) + 76%);
 	--b-light-3: calc(var(--brightness-light) + 71%);
 
-	--sat-correction: 20%;
+	--sat-correction: 5%;
 	--sat-light-1: calc(calc(var(--light-sat) + var(--sat-correction)) * 2);
 	--sat-light-2: calc(calc(var(--light-sat) + var(--sat-correction)) * 1.7);
 	--sat-light-3: calc(calc(var(--light-sat) + var(--sat-correction)) * 1.4);
@@ -263,7 +263,7 @@ This ToC is auto-generated via the .create-ToC.sh
 	--bg2: hsl(var(--light-hue) var(--sat-light-2) var(--b-light-2));
 	--bg3: hsl(var(--light-hue) var(--sat-light-3) var(--b-light-3));
 
-	--notice-bg: hsl(var(--light-hue) var(--sat-light-2) var(--b-light-3));
+	--notice-bg: hsl(var(--light-hue) calc(var(--sat-light-3) * 0.8) var(--b-light-3));
 	--resize-handle: hsl(var(--light-hue) var(--sat-light-2) calc(var(--b-light-2) - 1%));
 	--scrollbar: hsl(var(--light-hue) var(--sat-light-3) calc(var(--b-light-2) - 8%));
 	--suggester-b-row: hsl(var(--light-hue) var(--sat-light-2) calc(var(--b-light-1) - 3%));
@@ -278,7 +278,7 @@ This ToC is auto-generated via the .create-ToC.sh
 	--b-dark-2: calc(var(--brightness-dark) + 7%);
 	--b-dark-3: calc(var(--brightness-dark) + 2%);
 
-	--sat-correction: 0%;
+	--sat-correction: 1%;
 	--sat-dark-1: calc(calc(var(--dark-sat) + var(--sat-correction)) * 1);
 	--sat-dark-2: calc(calc(var(--dark-sat) + var(--sat-correction)) * 1.5);
 	--sat-dark-3: calc(calc(var(--dark-sat) + var(--sat-correction)) * 2);
@@ -287,7 +287,7 @@ This ToC is auto-generated via the .create-ToC.sh
 	--bg2: hsl(var(--dark-hue) var(--sat-dark-2) var(--b-dark-2));
 	--bg3: hsl(var(--dark-hue) var(--sat-dark-3) var(--b-dark-3));
 
-	--notice-bg: hsl(var(--dark-hue) var(--sat-dark-2) var(--b-dark-1));
+	--notice-bg: hsl(var(--dark-hue) calc(var(--sat-dark-1) * 0.8) var(--b-dark-1));
 	--resize-handle: hsl(var(--dark-hue)  var(--sat-dark-2) calc(var(--b-dark-2) - 1%));
 	--scrollbar: hsl(var(--dark-hue) var(--sat-dark-1) calc(var(--b-dark-2) + 9%));
 	--suggester-b-row: hsl(var(--dark-hue)  var(--sat-dark-1) calc(var(--b-dark-1) - 2%));
@@ -338,7 +338,7 @@ This ToC is auto-generated via the .create-ToC.sh
 }
 
 .theme-dark {
-	--shadow-color: hsl(0 0% 0% / 30%);
+	--shadow-color: hsl(0 0% 1% / 30%);
 	--shadow-base-size: 3px;
 }
 
@@ -379,7 +379,8 @@ body.theme-dark {
 .theme-dark {
 	--basic-border: 2px solid var(--basic-border-color);
 	--muted-border: 2px solid var(--muted-border-color);
-	--thick-muted-border: 3.5px solid var(--muted-border-color);
+	--thick-border: 5px solid var(--basic-border-color);
+	--thick-muted-border: 5px solid var(--muted-border-color);
 	--thin-border: 1px solid var(--basic-border-color);
 	--thin-muted-border: 1px solid var(--muted-border-color);
 }
@@ -2465,7 +2466,7 @@ body .workspace-leaf-resize-handle:active {
 }
 
 /* ───────────────────────────────────────────────────
-<< Community Plugin Browser
+<< Plugin Browser
 ─────────────────────────────────────────────────── */
 
 /* ───────────────────────────────────────────────────
@@ -2745,22 +2746,21 @@ body .workspace-leaf-resize-handle:active {
 }
 
 /* ───────────────────────────────────────────────────
-<< Community Theme Browser
+<< Theme Browser
 ─────────────────────────────────────────────────── */
 
 /* ───────────────────────────────────────────────────
-<<< More prominent GitHub Info
+<<< GitHub Info for this Theme
 ─────────────────────────────────────────────────── */
 
 .community-theme.is-selected .community-theme-info .clickable-icon {
-	display: block;
-
-	width: 90%;
+	width: 80%;
 
 	position: absolute;
-	top: 70px;
-	right: 10px;
+	top: 85px;
+	right: 25px;
 
+	color: var(--button-hover-text);
 	box-shadow: var(--button-shadow);
 
 	padding-top: 3px;
@@ -2769,27 +2769,38 @@ body .workspace-leaf-resize-handle:active {
 	margin-bottom: 5px;
 	margin-left: 0;
 
+	border: var(--basic-border);
 	border-radius: var(--roundish);
 
-	line-height: 1.1em;
+	line-height: 1.4em;
+}
+
+.community-theme.is-selected .community-plugin-downloads-text,
+.community-theme.is-selected .community-theme-info {
+	color: var(--text-muted);
+}
+
+.modal.mod-community-theme .community-theme.is-selected .community-theme-info .clickable-icon:hover {
+	color: var(--button-hover-text);
+	background-color: var(--interactive-hover-bg);
+	border-color: var(--interactive-hover-border);
 }
 
 .theme-light .community-theme.is-selected .community-theme-info .clickable-icon {
-	color: hsl(50 60% 60%);
-	background-color: var(--bg1);
+	background-color: hsl(50 30% 80%);
 }
 
 .theme-dark .community-theme.is-selected .community-theme-info .clickable-icon {
-	color: hsl(50 60% 60%);
-	background-color: hsl(0 0% 0%);
+	background-color: hsl(50 60% 60%);
 }
 
 .community-theme.is-selected {
-	min-height: 300px;
+	min-height: 350px;
+	border-color: var(--interactive-border);
 }
 
 .community-theme.is-selected .community-theme-info .clickable-icon::AFTER {
-	content: "README: Feature overview & Customization options";
+	content: "Feature Overview & Customization Options";
 	padding-left: 4px;
 }
 
@@ -2799,7 +2810,18 @@ body .workspace-leaf-resize-handle:active {
 
 .community-theme.is-selected svg.github-glyph {
 	background-color: currentColor;
+	transform: scale(1.15);
+	margin-bottom: -1px;
 	-webkit-mask-image: var(--external-url);
+}
+
+/* greyed out "selected" button */
+.modal-container .modal .community-theme.is-selected button:first-child {
+	color: var(--text-faint);
+	background-color: var(--bg2);
+	box-shadow: none;
+	cursor: not-allowed;
+	border-color: var(--bg1);
 }
 
 /* ───────────────────────────────────────────────────
@@ -2810,21 +2832,26 @@ body .workspace-leaf-resize-handle:active {
 .community-theme {
 	color: var(--text-normal);
 	background: var(--bg3);
+	border-radius: calc(var(--roundish) * 2);
 }
 
-.community-theme.is-selected,
-.community-theme.is-selected .community-theme-info {
-	color: var(--text-normal);
+.community-theme {
+	border: 2px solid transparent;
+}
+
+.community-theme:not(.is-selected):hover {
+	border-color: var(--hr-line-gray);
 }
 
 .modal.mod-community-theme {
 	background-color: var(--bg2);
 	padding-top: 0;
 	padding-bottom: 0;
+	border: var(--thick-border);
 }
 
 .modal.mod-community-theme hr {
-	border-width: 3px;
+	border-top: var(--basic-border);
 }
 
 .modal.mod-community-theme .modal-content {
@@ -2852,20 +2879,17 @@ body:not(.less-heading-letter-spacing) .modal.mod-community-theme .modal-title {
 	font-style: italic;
 }
 
+.community-theme-remove-button {
+	background: transparent;
+	padding-right: 0;
+}
+
 .community-theme-remove-button svg {
 	color: var(--text-muted);
 }
 
 .community-theme-remove-button:hover svg {
 	color: var(--alt-accent);
-}
-
-/* greyed out "selected" button */
-.modal-container .modal .community-theme.is-selected button:first-child {
-	color: var(--text-faint);
-	background-color: var(--bg3);
-	cursor: not-allowed;
-	border-color: var(--bg1);
 }
 
 .modal.mod-community-theme .community-plugin-downloads-text::BEFORE {
@@ -2897,23 +2921,6 @@ body:not(.less-heading-letter-spacing) .modal.mod-community-theme .modal-title {
 
 .community-theme-downloads .community-plugin-downloads-text {
 	top: 0;
-}
-
-/* corrects appearance in light mode */
-.theme-light .modal.mod-community-theme .community-theme.is-selected .clickable-icon:hover svg {
-	color: var(--alt-accent);
-}
-
-.theme-light .modal.mod-community-theme .community-theme.is-selected .clickable-icon svg,
-.theme-light .modal.mod-community-theme .community-theme.is-selected .community-plugin-downloads-text::BEFORE,
-.theme-light .modal.mod-community-theme .community-theme.is-selected .community-plugin-downloads-text {
-	color: var(--interactive-normal);
-}
-
-/* for angular shaped mode */
-.community-theme.is-selected,
-.community-theme {
-	border-radius: calc(var(--roundish) * 2);
 }
 
 /* ───────────────────────────────────────────────────
