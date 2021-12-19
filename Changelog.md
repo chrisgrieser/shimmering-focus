@@ -1,4 +1,5 @@
 - 2021-12-19	minor
+- 2021-12-19	Update README.md
 - 2021-12-19	abort buttons styled differently & spellcheck now wavy
 - 2021-12-19	add github info for theme when selected in theme browser
 - 2021-12-19	improved color regulation

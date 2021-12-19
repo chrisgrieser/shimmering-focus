@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 1.366
+Version 1.367
 https://github.com/chrisgrieser/shimmering-focus/
 MIT License
 ─────────────────────────────────────────────────── */
@@ -7367,6 +7367,7 @@ settings:
 	 title: Remove image borders
 	 description: Disables the frame put around images.
 	 type: class-toggle
+	 hub: ignore
 	 default: false
   -
 	 id: left-aligned-embeds
@@ -7454,7 +7455,7 @@ settings:
   -
 	 id: plugin-specific-settings
 	 title: Plugin-Specific Settings
-	 description: Longform, Popovers, Command Palette, Calendar Plugin
+	 description: Longform, Link Favicons, Page Preview, Command Palette, Calendar Plugin
 	 type: heading
 	 level: 2
 	 collapsed: true
@@ -7478,12 +7479,14 @@ settings:
 	 title: 'Command Palette: Move the plugin name back to the left'
 	 description: Enable this in case some commands are aren't displayed properly in the Command Palette.
 	 type: class-toggle
+	 hub: ignore
 	 default: false
   -
 	 id: no-calendar-lines
 	 title: 'Calendar: Remove vertical lines'
 	 description: Remove the lines in the Calendar plugin's Calendar (making it more similar to its default look).
 	 type: class-toggle
+	 hub: ignore
 	 default: false
   -
 	 id: longform-font
@@ -7552,7 +7555,7 @@ settings:
   -
 	 id: no-alternating-rows
 	 title: Turn off Alternating Row Coloring
-	 description: Affects tables, Command Palette & Suggesters.
+	 description: Affects tables, Command Palette & suggesters.
 	 type: class-toggle
 	 default: false
   -
