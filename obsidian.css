@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 1.355
+Version 1.356
 https://github.com/chrisgrieser/shimmering-focus/
 MIT License
 ─────────────────────────────────────────────────── */
@@ -343,7 +343,7 @@ body.theme-dark {
 
 	--big-shadow: 4px 6px var(--shadow-blur) calc(var(--shadow-base-size) + 10px) var(--shadow-color);
 	--medium-shadow: 4px 6px var(--shadow-blur) calc(var(--shadow-base-size) + 5px) var(--shadow-color);
-	--small-shadow: 2px 4px var(--shadow-blur) calc(var(--shadow-base-size) + 0) var(--shadow-color);
+	--small-shadow: 2px 4px var(--shadow-blur) calc(var(--shadow-base-size) + 0px) var(--shadow-color);
 	--button-shadow: 0 1px var(--shadow-blur) calc(var(--shadow-base-size) - 1px) var(--shadow-color);
 }
 
@@ -6737,6 +6737,33 @@ body div.get-info-menu > div > div {
 	content: "spellcheck";
 	font-family: "Material Icons";
 	font-size: 0.9rem;
+}
+
+body .lt-predictions-container {
+	background-color: var(--bg1);
+	box-shadow: var(--small-shadow);
+	border-radius: calc(var(--roundish) * 1.5);
+}
+
+.lt-ignore-btn:hover,
+.lt-ignore-btn,
+.lt-buttoncontainer > button {
+	background-color: var(--bg2);
+}
+
+body .lt-ignore-btn {
+	padding: 8px;
+	border-top: var(--muted-border);
+}
+
+body .lt-ignore-btn:hover {
+	color: var(--alt-accent);
+}
+
+.lt-buttoncontainer > button:hover {
+	color: var(--button-hover-text);
+	background-color: var(--interactive-hover-bg);
+	border-color: var(--interactive-hover-border);
 }
 
 /* ───────────────────────────────────────────────────
