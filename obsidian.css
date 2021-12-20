@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 1.371
+Version 1.372
 https://github.com/chrisgrieser/shimmering-focus/
 MIT License
 ─────────────────────────────────────────────────── */
@@ -1051,6 +1051,7 @@ body:not(.show-ribbons) .workspace-ribbon {
 
 	font-family: var(--button-font);
 	font-size: calc(var(--button-font-size) * 0.8);
+	font-weight: var(--button-font-weight);
 	letter-spacing: 0.5px;
 
 	word-wrap: break-word;
@@ -1289,9 +1290,13 @@ body:not(.show-scrollbar) ::-WEBKIT-SCROLLBAR {
 	display: none;
 }
 
-.workspace-split.mod-vertical ::-WEBKIT-SCROLLBAR {
+.workspace-split.mod-root ::-WEBKIT-SCROLLBAR {
 	display: unset;
 }
+
+/* .workspace-split.mod-vertical ::-WEBKIT-SCROLLBAR {
+	display: unset;
+} */
 
 ::-WEBKIT-SCROLLBAR:active,
 ::-WEBKIT-SCROLLBAR:hover,
@@ -1455,7 +1460,6 @@ p.mod-warning::BEFORE {
 ─────────────────────────────────────────────────── */
 
 .checkbox-container {
-	box-shadow: var(--button-shadow);
 	margin-left: 5px;
 }
 
@@ -1559,10 +1563,12 @@ select.dropdown {
 	border-radius: var(--round);
 }
 
+.theme-dark select.dropdown,
 .theme-dark .modal select.dropdown {
 	background-color: var(--bg3);
 }
 
+.theme-light select.dropdown,
 .theme-light .modal select.dropdown {
 	background-color: var(--bg2);
 }
@@ -1969,21 +1975,6 @@ body:not(.no-alternating-rows) .suggestion-item:nth-child(even) .suggestion-pref
 /* ───────────────────────────────────────────────────
 < Sidebar
 ─────────────────────────────────────────────────── */
-
-/* ───────────────────────────────────────────────────
-<< Files / Lists (in general)
-─────────────────────────────────────────────────── */
-/* apply to any plugin using file lists,
-not only file explorer */
-
-.tree-item-self.is-clickable:hover,
-.nav-file-title.is-active,
-.nav-folder-title.is-active,
-body > .app-container .nav-file-title:hover,
-body > .app-container .nav-folder-title:hover {
-	background-color: var(--bg3);
-	border-radius: var(--roundish);
-}
 
 /* ───────────────────────────────────────────────────
 << Tab Headers
@@ -4597,36 +4588,25 @@ body.is-mobile .markdown-preview-view blockquote {
 ─────────────────────────────────────────────────── */
 
 /* ───────────────────────────────────────────────────
-<< File Explorer
+<< Files / Lists (in general)
 ─────────────────────────────────────────────────── */
+/* apply to any plugin using file lists,
+not only file explorer */
 
-/* hide vault title */
-.nav-folder.mod-root > .nav-folder-title {
-	display: none;
-}
-
-/* fix for slightly moving folders in file explorer by @SlRvb */
-.nav-folder-children > div:not(.nav-folder):not(.nav-file) {
-	display: none;
-}
-
-/* line styles for nesting indicators */
-:root { /* stylelint-disable-line no-duplicate-selectors */
-	--nestlinestyle1: solid;
-	--nestlinestyle2: dotted;
-	--nestlinestyle3: dashed;
+.tree-item-self.is-clickable:hover,
+.nav-file-title.is-active,
+.nav-folder-title.is-active,
+body > .app-container .nav-file-title:hover,
+body > .app-container .nav-folder-title:hover {
+	background-color: var(--bg3);
+	border-radius: var(--roundish);
 }
 
 .nav-file-title,
 .nav-folder-title {
 	width: 100%;
-
 	color: var(--extra-contrast);
-
 	padding-top: 0.1em;
-
-	border-radius: var(--roundish);
-
 	line-height: 1.3em;
 	white-space: normal;
 }
@@ -4640,16 +4620,38 @@ body.is-mobile .markdown-preview-view blockquote {
 /* active file */
 .nav-file-title.is-active {
 	color: var(--text-accent);
-	opacity: 0.9;
 	font-weight: 600;
 }
 
-.nav-file.nav-file-title.is-active {
-	border-left: 3px solid var(--text-accent) !important;
+/* ───────────────────────────────────────────────────
+<< File Explorer
+─────────────────────────────────────────────────── */
+
+/* hide vault title */
+.nav-folder.mod-root > .nav-folder-title {
+	display: none;
 }
 
-/* << Relationship Lines */
+.workspace-leaf-content[data-type="file-explorer"] {
+	padding-right: 2px;
+	padding-left: 2px;
+}
+
+/* ───────────────────────────────────────────────────
+<<< Relationship Lines
+─────────────────────────────────────────────────── */
 /* based on css from @Mara https://github.com/Mara-Li/Obsidian-Snippet-collection */
+
+:root { /* stylelint-disable-line no-duplicate-selectors */
+	--nestlinestyle1: solid;
+	--nestlinestyle2: dotted;
+	--nestlinestyle3: dashed;
+}
+
+/* fix for slightly moving folders in file explorer by @SlRvb */
+.nav-folder-children > div:not(.nav-folder):not(.nav-file) {
+	display: none;
+}
 
 /* Top Level Folder Titles */
 .nav-folder.mod-root > .nav-folder-children > .nav-folder > .nav-folder-title,
@@ -4665,11 +4667,10 @@ body.is-mobile .markdown-preview-view blockquote {
 	> .nav-folder
 	> .nav-folder-children {
 	padding-left: 1.1em;
-	border-top: var(--hr-line-gray) 2px solid;
+	border-top: var(--basic-border);
 	border-radius: 0;
 }
 
-/* Relationship lines for 2nd, 3rd, and 4th level folders */
 .nav-folder.mod-root
 	> .nav-folder-children
 	> .nav-folder
@@ -4677,7 +4678,7 @@ body.is-mobile .markdown-preview-view blockquote {
 	> .nav-folder
 	> .nav-folder-children
 	> .nav-file {
-	border-left: var(--nestlinestyle1) 2px var(--hr-line-gray);
+	border-left: 2px solid var(--basic-border-color);
 }
 
 .nav-folder.mod-root
@@ -4687,7 +4688,7 @@ body.is-mobile .markdown-preview-view blockquote {
 	> .nav-folder
 	> .nav-folder-children
 	> .nav-folder {
-	border-left: var(--nestlinestyle1) 2px var(--hr-line-gray);
+	border-left: 2px var(--nestlinestyle1) var(--basic-border-color);
 }
 
 .nav-folder.mod-root
@@ -4699,7 +4700,7 @@ body.is-mobile .markdown-preview-view blockquote {
 	> .nav-folder
 	> .nav-folder-children
 	> .nav-file {
-	border-left: var(--nestlinestyle2) 2px var(--hr-line-gray);
+	border-left: 2px var(--nestlinestyle2) var(--basic-border-color);
 }
 
 .nav-folder.mod-root
@@ -4711,7 +4712,7 @@ body.is-mobile .markdown-preview-view blockquote {
 	> .nav-folder
 	> .nav-folder-children
 	> .nav-folder {
-	border-left: var(--nestlinestyle2) 2px var(--hr-line-gray);
+	border-left: 2px var(--nestlinestyle2) var(--basic-border-color);
 }
 
 .nav-folder.mod-root
@@ -4725,7 +4726,7 @@ body.is-mobile .markdown-preview-view blockquote {
 	> .nav-folder
 	> .nav-folder-children
 	> .nav-file {
-	border-left: var(--nestlinestyle3) 2px var(--hr-line-gray);
+	border-left: 2px var(--nestlinestyle3) var(--basic-border-color);
 }
 
 .nav-folder.mod-root
@@ -4739,135 +4740,137 @@ body.is-mobile .markdown-preview-view blockquote {
 	> .nav-folder
 	> .nav-folder-children
 	> .nav-folder {
-	border-left: var(--nestlinestyle3) 2px var(--hr-line-gray);
+	border-left: 2px var(--nestlinestyle3) var(--basic-border-color);
 }
 /* stylelint-enable selector-combinator-space-before, indentation */
 
 /* ───────────────────────────────────────────────────
-<< Folder Icons & Note Icons
+<<< Folder Icons & Note Icons
 ─────────────────────────────────────────────────── */
-.nav-folder-title-content::BEFORE,
+body:not(.no-file-explorer-icons) .nav-folder-title-content::BEFORE,
 .nav-file-title-content::BEFORE {
+	position: relative;
+	bottom: -0.5px;
 	font-family: "Material Icons";
-	font-size: 1.2em;
+	font-size: calc(var(--sidebar-font-size) + 0.1rem);
 	vertical-align: bottom;
 }
 
 /* Folders icons */
-.nav-folder-title-content::BEFORE {
+body:not(.no-file-explorer-icons) .nav-folder-title-content::BEFORE {
 	content: "folder_open ";
 }
 
-.nav-folder.is-collapsed .nav-folder-title-content::BEFORE {
+body:not(.no-file-explorer-icons) .nav-folder.is-collapsed .nav-folder-title-content::BEFORE {
 	content: "folder ";
 }
 
 /* hide toggle icon, as folders already do that now */
-.nav-folder-collapse-indicator {
+body:not(.no-file-explorer-icons) .nav-folder-collapse-indicator {
 	display: none;
 }
 
 /* As icons are now used, the labeled boxes (e.g. "pdf") can be removed. */
-.nav-file-tag {
+body:not(.no-file-explorer-icons) .nav-file-tag {
 	display: none;
 }
 
-.nav-folder-title[data-path*="attachment"] .nav-folder-title-content::BEFORE {
+body:not(.no-file-explorer-icons) .nav-folder-title[data-path*="attachment"] .nav-folder-title-content::BEFORE {
 	content: "attachment ";
 }
 
-.nav-folder.is-collapsed .nav-folder-title[data-path*="attachment"] .nav-folder-title-content::BEFORE {
+body:not(.no-file-explorer-icons) .nav-folder.is-collapsed .nav-folder-title[data-path*="attachment"] .nav-folder-title-content::BEFORE {
 	content: "attach_file ";
 }
 
-.nav-folder-title[data-path*="old"] .nav-folder-title-content::BEFORE,
-.nav-folder-title[data-path*="Archiv"] .nav-folder-title-content::BEFORE,
-.nav-folder-title[data-path*="archive"] .nav-folder-title-content::BEFORE {
+body:not(.no-file-explorer-icons) .nav-folder-title[data-path*="old"] .nav-folder-title-content::BEFORE,
+body:not(.no-file-explorer-icons) .nav-folder-title[data-path*="Archiv"] .nav-folder-title-content::BEFORE,
+body:not(.no-file-explorer-icons) .nav-folder-title[data-path*="archive"] .nav-folder-title-content::BEFORE {
 	content: "inventory_2 ";
 }
 
 /* File icons */
-.nav-file-title-content::BEFORE {
+body:not(.no-file-explorer-icons) .nav-file-title-content::BEFORE {
 	content: "description ";
 }
 
-.nav-file-title[data-path*="Hub"] .nav-file-title-content::BEFORE,
-.nav-file-title[data-path*="HUB"] .nav-file-title-content::BEFORE {
+body:not(.no-file-explorer-icons) .nav-file-title[data-path*="Hub"] .nav-file-title-content::BEFORE,
+body:not(.no-file-explorer-icons) .nav-file-title[data-path*="HUB"] .nav-file-title-content::BEFORE {
 	content: "device_hub ";
 }
 
-.nav-file-title[data-path*="MoC"] .nav-file-title-content::BEFORE,
-.nav-file-title[data-path*="MOC"] .nav-file-title-content::BEFORE {
+body:not(.no-file-explorer-icons) .nav-file-title[data-path*="MoC"] .nav-file-title-content::BEFORE,
+body:not(.no-file-explorer-icons) .nav-file-title[data-path*="MOC"] .nav-file-title-content::BEFORE {
 	content: "map ";
 }
 
-.nav-file-title[data-path$="pptx"] .nav-file-title-content::BEFORE {
+body:not(.no-file-explorer-icons) .nav-file-title[data-path$="pptx"] .nav-file-title-content::BEFORE {
 	content: "present_to_all ";
 	color: hsl(38 100% 50%);
 }
 
-.nav-file-title[data-path*="presentation"] .nav-file-title-content::BEFORE,
-.nav-file-title[data-path*="Presentation"] .nav-file-title-content::BEFORE {
+body:not(.no-file-explorer-icons) .nav-file-title[data-path*="presentation"] .nav-file-title-content::BEFORE,
+body:not(.no-file-explorer-icons) .nav-file-title[data-path*="Presentation"] .nav-file-title-content::BEFORE {
 	content: "present_to_all ";
 }
 
-.nav-file-title[data-path$="sh"] .nav-file-title-content::BEFORE,
-.nav-file-title[data-path$="ts"] .nav-file-title-content::BEFORE,
-.nav-file-title[data-path$="js"] .nav-file-title-content::BEFORE {
+body:not(.no-file-explorer-icons) .nav-file-title[data-path$="sh"] .nav-file-title-content::BEFORE,
+body:not(.no-file-explorer-icons) .nav-file-title[data-path$="ts"] .nav-file-title-content::BEFORE,
+body:not(.no-file-explorer-icons) .nav-file-title[data-path$="js"] .nav-file-title-content::BEFORE {
 	content: "code ";
 }
 
-.nav-file-title[data-path$="tiff"] .nav-file-title-content::BEFORE,
-.nav-file-title[data-path$="jpg"] .nav-file-title-content::BEFORE,
-.nav-file-title[data-path$="png"] .nav-file-title-content::BEFORE,
-.nav-file-title[data-path$="jpeg"] .nav-file-title-content::BEFORE {
+body:not(.no-file-explorer-icons) .nav-file-title[data-path$="tiff"] .nav-file-title-content::BEFORE,
+body:not(.no-file-explorer-icons) .nav-file-title[data-path$="jpg"] .nav-file-title-content::BEFORE,
+body:not(.no-file-explorer-icons) .nav-file-title[data-path$="png"] .nav-file-title-content::BEFORE,
+body:not(.no-file-explorer-icons) .nav-file-title[data-path$="jpeg"] .nav-file-title-content::BEFORE {
 	content: "image ";
 }
 
-.nav-file-title[data-path$="doc"] .nav-file-title-content::BEFORE,
-.nav-file-title[data-path$="docx"] .nav-file-title-content::BEFORE {
+body:not(.no-file-explorer-icons) .nav-file-title[data-path$="doc"] .nav-file-title-content::BEFORE,
+body:not(.no-file-explorer-icons) .nav-file-title[data-path$="docx"] .nav-file-title-content::BEFORE {
 	color: hsl(201 93% 25%);
 }
 
-.nav-file-title[data-path$="pdf"] .nav-file-title-content::BEFORE {
+body:not(.no-file-explorer-icons) .nav-file-title[data-path$="pdf"] .nav-file-title-content::BEFORE {
 	content: "picture_as_pdf ";
 	color: hsl(347 47% 37%);
 }
 
-.nav-file-title[data-path$="xlsx"] .nav-file-title-content::BEFORE,
-.nav-file-title[data-path$="csv"] .nav-file-title-content::BEFORE {
+body:not(.no-file-explorer-icons) .nav-file-title[data-path$="xlsx"] .nav-file-title-content::BEFORE,
+body:not(.no-file-explorer-icons) .nav-file-title[data-path$="csv"] .nav-file-title-content::BEFORE {
 	content: "table_chart ";
 	color: hsl(120 100% 25%);
 }
 
-.nav-file-title[data-path*="statistic"] .nav-file-title-content::BEFORE,
-.nav-file-title[data-path*="Statistik"] .nav-file-title-content::BEFORE {
+body:not(.no-file-explorer-icons) .nav-file-title[data-path*="statistic"] .nav-file-title-content::BEFORE,
+body:not(.no-file-explorer-icons) .nav-file-title[data-path*="Statistik"] .nav-file-title-content::BEFORE {
 	content: "pie_chart_outline ";
 }
 
-.nav-file-title[data-path*="ToDo"] .nav-file-title-content::BEFORE,
-.nav-file-title[data-path*="Todo"] .nav-file-title-content::BEFORE,
-.nav-file-title[data-path*="To do"] .nav-file-title-content::BEFORE,
-.nav-file-title[data-path*="To Do"] .nav-file-title-content::BEFORE,
-.nav-file-title[data-path*="to do"] .nav-file-title-content::BEFORE {
+body:not(.no-file-explorer-icons) .nav-file-title[data-path*="ToDo"] .nav-file-title-content::BEFORE,
+body:not(.no-file-explorer-icons) .nav-file-title[data-path*="Todo"] .nav-file-title-content::BEFORE,
+body:not(.no-file-explorer-icons) .nav-file-title[data-path*="To do"] .nav-file-title-content::BEFORE,
+body:not(.no-file-explorer-icons) .nav-file-title[data-path*="To Do"] .nav-file-title-content::BEFORE,
+body:not(.no-file-explorer-icons) .nav-file-title[data-path*="to do"] .nav-file-title-content::BEFORE {
 	content: "check_box ";
 }
 
-.nav-file-title[data-path*="README"] .nav-file-title-content::BEFORE,
-.nav-file-title[data-path*="readme"] .nav-file-title-content::BEFORE,
-.nav-file-title[data-path*="Metadata"] .nav-file-title-content::BEFORE,
-.nav-file-title[data-path*="metadata"] .nav-file-title-content::BEFORE {
+body:not(.no-file-explorer-icons) .nav-file-title[data-path*="README"] .nav-file-title-content::BEFORE,
+body:not(.no-file-explorer-icons) .nav-file-title[data-path*="readme"] .nav-file-title-content::BEFORE,
+body:not(.no-file-explorer-icons) .nav-file-title[data-path*="Metadata"] .nav-file-title-content::BEFORE,
+body:not(.no-file-explorer-icons) .nav-file-title[data-path*="metadata"] .nav-file-title-content::BEFORE {
 	content: "info ";
 }
 
-.nav-file-title[data-path*="OCR-Screenshot"] .nav-file-title-content::BEFORE {
+body:not(.no-file-explorer-icons) .nav-file-title[data-path*="OCR-Screenshot"] .nav-file-title-content::BEFORE {
 	content: "photo_camera ";
 }
 
-.nav-file-title[data-path*="Word Limit"] .nav-file-title-content::BEFORE,
-.nav-file-title[data-path*="Character Limit"] .nav-file-title-content::BEFORE,
-.nav-file-title[data-path*="Character Count"] .nav-file-title-content::BEFORE,
-.nav-file-title[data-path*="Word Count"] .nav-file-title-content::BEFORE {
+body:not(.no-file-explorer-icons) .nav-file-title[data-path*="Word Limit"] .nav-file-title-content::BEFORE,
+body:not(.no-file-explorer-icons) .nav-file-title[data-path*="Character Limit"] .nav-file-title-content::BEFORE,
+body:not(.no-file-explorer-icons) .nav-file-title[data-path*="Character Count"] .nav-file-title-content::BEFORE,
+body:not(.no-file-explorer-icons) .nav-file-title[data-path*="Word Count"] .nav-file-title-content::BEFORE {
 	content: "flag ";
 }
 
@@ -5869,6 +5872,12 @@ body.angular-shapes .kanban-plugin__lane {
 	border-radius: 3px !important;
 }
 
+.draft-container.svelte-1jmafs,
+.scene-container.svelte-1wlkmbt,
+.svelte-23avsr {
+	border-radius: var(--roundish) !important;
+}
+
 /* hover */
 .draft-container.svelte-1jmafs.selected:hover,
 .draft-container.svelte-1jmafs:hover,
@@ -5876,6 +5885,7 @@ body.angular-shapes .kanban-plugin__lane {
 .scene-container.svelte-1wlkmbt.selected:hover,
 .svelte-23avsr:hover {
 	color: var(--alt-accent) !important;
+	background-color: var(--bg3) !important;
 }
 
 /* selected */
@@ -6717,9 +6727,13 @@ pre button.copy:hover::BEFORE {
 << Style Settings (Settings Tab)
 ─────────────────────────────────────────────────── */
 
-/* sidebar */
-.workspace-leaf-content[data-type="style-settings"] .view-content {
-	padding: 8px;
+/* as pane */
+body:not(.show-scrollbar) .workspace-split.mod-root .workspace-leaf-content[data-type="style-settings"] ::-WEBKIT-SCROLLBAR {
+	display: none;
+}
+
+.workspace-split.mod-root .workspace-leaf-content[data-type="style-settings"] {
+	font-size: var(--menu-font-size);
 }
 
 /* settings tab  */
@@ -7120,12 +7134,6 @@ settings:
 	 title: Permanently show the Graph Controls
 	 type: class-toggle
 	 description: When false, Graph controls are still visible when open, or upon hovering the top-left area.
-	 default: false
-  -
-	 id: show-starred-nav-buttons
-	 title: Re-enable the Starred Pane Buttons
-	 type: class-toggle
-	 description: The two buttons to star the current file and the current search.
 	 default: false
   -
 	 id: aesthetics
@@ -7537,14 +7545,26 @@ settings:
   -
 	 id: plugin-specific-settings
 	 title: Plugin-Specific Settings
-	 description: Longform, Link Favicons, Page Preview, Command Palette, Calendar Plugin
+	 description: Longform, File Explorer, Starred Pane, Link Favicons, Page Preview, Command Palette, Calendar
 	 type: heading
 	 level: 2
 	 collapsed: true
   -
+	 id: no-file-explorer-icons
+	 title: 'File Explorer: No Icons'
+	 description: Removes the icons next next to files and folders in the file explorer and re-enables the collapse arrows.
+	 type: class-toggle
+	 default: false
+  -
+	 id: show-starred-nav-buttons
+	 title: 'Starred Pane: Re-enable Buttons'
+	 description: The two buttons to star the current file and the current search.
+	 type: class-toggle
+	 default: false
+  -
 	 id: popover-size
 	 title: 'Page Preview: Size'
-	 description: Width & Height of Page Previews (Popovers) in px. (Mind that this is quadratic growth of the previews size.)
+	 description: Width & Height of Page Previews (Popovers) in px. (Note that this means a quadratic growth of the preview size.)
 	 type: variable-number-slider
 	 default: 350
 	 min: 200

@@ -1,4 +1,5 @@
-- 2021-12-20	minor
+- 2021-12-20	implement style setting option for #48
+- 2021-12-20	LP-specific issue templates
 - 2021-12-20	update readme
 - 2021-12-20	seperate folder for css snippets
 - 2021-12-20	Update README.md
