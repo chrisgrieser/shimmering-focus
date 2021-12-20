@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 1.375
+Version 1.376
 https://github.com/chrisgrieser/shimmering-focus/
 MIT License
 ─────────────────────────────────────────────────── */
@@ -1106,11 +1106,12 @@ div.notice-container .notice {
 
 	font-family: var(--button-font);
 	font-size: calc(var(--button-font-size) * 0.9);
+	font-weight: var(--button-font-weight);
 	letter-spacing: 0.6px;
 }
 
 body > div.notice-container .notice:hover {
-	opacity: 0.8;
+	opacity: 0.7;
 }
 
 body > div.notice-container .notice:hover::BEFORE {
