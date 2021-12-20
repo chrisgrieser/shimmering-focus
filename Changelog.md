@@ -1,3 +1,7 @@
+- 2021-12-20	style ribbon & fix #66
+- 2021-12-20	add info on resize handle hovering
+- 2021-12-20	updae issue templates
+- 2021-12-20	Update README.md
 - 2021-12-20	better style setting color labelling
 - 2021-12-20	added some icons
 - 2021-12-20	dataview error
