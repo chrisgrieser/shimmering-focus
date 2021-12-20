@@ -53,12 +53,12 @@ A minimalistic [Obsidian](https://obsidian.md/) theme focused on readability and
 ### Annotation Tags
 Type one of the following eight tags (e.g. `#definition`) to get a colored annotation tag. Also works in Edit Mode. Intended for Annotations when reading academic papers.
 
-<img width=12% alt="Annotation Tags" src="https://user-images.githubusercontent.com/73286100/146721469-c453a9ed-0e28-4923-a171-f1e196c2e6e1.png">
+<img width=30% alt="Annotation Tags" src="https://user-images.githubusercontent.com/73286100/146721469-c453a9ed-0e28-4923-a171-f1e196c2e6e1.png">
 
 💡 You can add your own Annotation Tags by adding a snippet [using this template](https://github.com/chrisgrieser/shimmering-focus/blob/main/annotation-tag-template.css).
 
 ### Max View & Focus View
-- __Max View__*(disabled by default)*: When the *left* sidebar is hidden, line length is extended to full length, and images & PDFs are expanded to full width. Readable line length and smaller images/PDFs are re-applied when the left sidebar is shown again.[^1] This is useful when dealing with big tables or many images. To enable *Max View* or adjust the size of images & PDFs, use the [Style Settings Plugin](https://github.com/mgmeyers/obsidian-style-settings/).
+- __Max View__ *(disabled by default)*: When the *left* sidebar is hidden, line length is extended to full length, and images & PDFs are expanded to full width. Readable line length and smaller images/PDFs are re-applied when the left sidebar is shown again.[^1] This is useful when dealing with big tables or many images. To enable *Max View* or adjust the size of images & PDFs, use the [Style Settings Plugin](https://github.com/mgmeyers/obsidian-style-settings/).
 - __Focus View__ *(disabled by default)*: Hiding the *left* side bar will also hide the *right* sidebar, with the right side bar staying hidden until the left one is shown again. This synergizes with *Max View*, but also works when Max View is disabled. To enable *Focus View*, use the [Style Settings Plugin](https://github.com/mgmeyers/obsidian-style-settings/).
 - *💡 Recommendation*: For both features, it is useful to set a hotkey for the built-in command `Toggle left sidebar`.
 
@@ -135,8 +135,7 @@ Using the [Style Settings Plugin](https://github.com/mgmeyers/obsidian-style-set
 [⬆️ Go Back to Top](#Table-of-Contents)
 
 ## Customization
-- This themes supports dozens of customization options via the [Style Settings Plugin](https://github.com/mgmeyers/obsidian-style-settings/).
-- You can add your own Annotation Tags by adding a snippet [using this template](https://github.com/chrisgrieser/shimmering-focus/blob/main/annotation-tag-template.css).
+This themes supports dozens of customization options via the [Style Settings Plugin](https://github.com/mgmeyers/obsidian-style-settings/). To add your own annotation tags, [use this template](annotation-tag-template.css).
 
 <img width=50% alt="Screenshot 2021-12-19 21 12 59" src="https://user-images.githubusercontent.com/73286100/146689428-e29af1e7-92f8-4dce-afda-ef3545743d96.png">
 
