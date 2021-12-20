@@ -1,3 +1,4 @@
+- 2021-12-20	minor
 - 2021-12-20	style ribbon & fix #66
 - 2021-12-20	add info on resize handle hovering
 - 2021-12-20	updae issue templates

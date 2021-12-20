@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 1.383
+Version 1.384
 https://github.com/chrisgrieser/shimmering-focus/
 MIT License
 ─────────────────────────────────────────────────── */
@@ -6745,6 +6745,7 @@ pre button.copy:hover::BEFORE {
 /* Styling from the "Tables" Section mostly applies */
 
 body div.block-language-dataview pre.dataview-error {
+	color: var(--text-muted);
 	padding-bottom: 10px;
 	font-family: var(--font-monospace);
 	font-size: var(--monospace-font-size);
