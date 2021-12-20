@@ -164,13 +164,13 @@ You can find *Shimmering Focus* in Obsidian's community themes browser under `Ob
 ## Contribute
 
 ### Translation of Style Settings
-Very welcome are [localizations of Style Settings Plugins](https://github.com/mgmeyers/obsidian-style-settings#localization-support), so the theme is more accessible to non-English speakers! This requires no knowledge of CSS. The style settings are at the very bottom of the theme.
+Very welcome are [localizations of Style Settings Plugins](https://github.com/mgmeyers/obsidian-style-settings#localization-support), so the theme is more accessible to non-English speakers. This requires no knowledge of CSS. Please get in touch if you are interested in translating!
 
 ### Plugins & Features
-Pull requests for plugins or features I haven't implemented are also welcome. If they are bigger changes, feel free to check with be beforehand!
+Pull requests for plugins or features I haven't implemented are also welcome. If they are bigger changes, be sure to check with me before.
 
 - Try to follow the [design philosophy](#design-principles) of the theme.
-- All sections have a `< ` as prefix for quicker navigation. This means you can search for `< font` to navigate to the font section.
+- All sections have a `< ` as prefix for quicker navigation. This means you can for example search for `< font` to navigate to the font section.
 - For consistency and code quality, use [stylelint](https://stylelint.io/) with the provided configuration (the `.stylelintrc.json` file). If you are not familiar with stylelint, check out [my guide in the Obsidian Hub](https://publish.obsidian.md/hub/04+-+Guides,+Workflows,+&+Courses/Guides/Why+and+How+to+use+Stylelint+for+your+Obsidian+Theme.md).
 
 ```shell
