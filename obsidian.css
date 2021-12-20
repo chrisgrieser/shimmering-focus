@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 1.373
+Version 1.374
 https://github.com/chrisgrieser/shimmering-focus/
 MIT License
 ─────────────────────────────────────────────────── */
@@ -1231,7 +1231,7 @@ body:not(.default-statusbar) .status-bar {
 	right: 0;
 	bottom: 0;
 
-	padding: 7px 11px 5px 13px;
+	padding: 7px 12px;
 
 	border-top: var(--muted-border);
 	border-left: var(--muted-border);
