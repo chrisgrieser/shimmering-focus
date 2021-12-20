@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 1.378
+Version 1.379
 https://github.com/chrisgrieser/shimmering-focus/
 MIT License
 ─────────────────────────────────────────────────── */
@@ -6663,6 +6663,17 @@ pre button.copy::BEFORE {
 
 pre button.copy:hover::BEFORE {
 	color: var(--interactive-normal);
+}
+
+/* ───────────────────────────────────────────────────
+<< Dataview
+─────────────────────────────────────────────────── */
+/* Styling from the "Tables" Section mostly applies */
+
+body div.block-language-dataview pre.dataview-error {
+	padding-bottom: 10px;
+	font-family: var(--font-monospace);
+	font-size: var(--monospace-font-size);
 }
 
 /* ───────────────────────────────────────────────────
