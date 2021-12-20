@@ -138,6 +138,9 @@ This themes supports dozens of customization options via the [Style Settings Plu
 
 <img width=50% alt="Screenshot 2021-12-19 21 12 59" src="https://user-images.githubusercontent.com/73286100/146689428-e29af1e7-92f8-4dce-afda-ef3545743d96.png">
 
+- To add your own annotation tags, [use this template](CSS%20Snippets/annotation-tag-template.css).
+- To switch to Outlined [Material Icons](https://fonts.google.com/icons?selected=Material+Icons), add [this CSS snippet](CSS%20Snippets/outlined-material-icons.css).
+
 ## Compatibility
 
 ### Custom Checkboxes
