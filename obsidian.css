@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 1.377
+Version 1.378
 https://github.com/chrisgrieser/shimmering-focus/
 MIT License
 ─────────────────────────────────────────────────── */
@@ -4017,15 +4017,21 @@ https://forum.obsidian.md/t/inline-code-occludes-text-selection-and-vim-cursor/1
 
 button.copy-code-button {
 	z-index: 100;
+
+	color: var(--extra-contrast) !important;
+	background-color: var(--bg3) !important;
+
 	padding-right: 1px !important;
-	padding-bottom: 2px !important;
+	padding-bottom: 5px !important;
 	padding-left: 8px !important;
+
+	border: var(--thin-border);
+
 	font-size: 0;
 }
 
-button.copy-code-button:not(:hover) {
-	color: var(--extra-contrast) !important;
-	background-color: var(--bg3) !important;
+button.copy-code-button:hover {
+	background-color: var(--interactive-hover-bg) !important;
 }
 
 button.copy-code-button::BEFORE {
