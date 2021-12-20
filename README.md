@@ -54,7 +54,7 @@ Type one of the following eight tags (e.g. `#definition`) to get a colored annot
 
 <img width=25% alt="Annotation Tags" src="https://user-images.githubusercontent.com/73286100/146721469-c453a9ed-0e28-4923-a171-f1e196c2e6e1.png">
 
-💡 You can add your own Annotation Tags by adding a snippet [using this template](https://github.com/chrisgrieser/shimmering-focus/blob/main/annotation-tag-template.css).
+💡 You can add your own Annotation Tags by adding a snippet [using this template](CSS%20Snippets/annotation-tag-template.css).
 
 ### Max View & Focus View
 - __Max View__ *(disabled by default)*: When the *left* sidebar is hidden, line length is extended to full length, and images & PDFs are expanded to full width. Readable line length and smaller images/PDFs are re-applied when the left sidebar is shown again.[^1] This is useful when dealing with big tables or many images. To enable *Max View* or adjust the size of images & PDFs, use the [Style Settings Plugin](https://github.com/mgmeyers/obsidian-style-settings/).
@@ -134,7 +134,7 @@ Using the [Style Settings Plugin](https://github.com/mgmeyers/obsidian-style-set
 [⬆️ Go Back to Top](#Table-of-Contents)
 
 ## Customization
-This themes supports dozens of customization options via the [Style Settings Plugin](https://github.com/mgmeyers/obsidian-style-settings/). To add your own annotation tags, [use this template](annotation-tag-template.css).
+This themes supports dozens of customization options via the [Style Settings Plugin](https://github.com/mgmeyers/obsidian-style-settings/). To add your own annotation tags, [use this template](CSS%20Snippets/annotation-tag-template.css).
 
 <img width=50% alt="Screenshot 2021-12-19 21 12 59" src="https://user-images.githubusercontent.com/73286100/146689428-e29af1e7-92f8-4dce-afda-ef3545743d96.png">
 
