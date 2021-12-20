@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 1.369
+Version 1.370
 https://github.com/chrisgrieser/shimmering-focus/
 MIT License
 ─────────────────────────────────────────────────── */
@@ -227,17 +227,30 @@ This ToC is auto-generated via the .create-ToC.sh
 /* ───────────────────────────────────────────────────
 << Brightness
 << Saturation
+<< Hue
 ─────────────────────────────────────────────────── */
 
+/* default values (no Style Settings Plugin) */
 :root {
 	--light-hue: 220;
 	--dark-hue: 220;
 	--dark-sat: 5%;
 	--light-sat: 5%;
-	--brightness-light: 5%;
+	--brightness-light: 7%;
+	--brightness-dark: 7%;
+}
+
+.classic-colors.theme-dark,
+.classic-colors.theme-light {
+	--light-hue: 220;
+	--dark-hue: 0;
+	--dark-sat: 0%;
+	--light-sat: 0%;
+	--brightness-light: 15%;
 	--brightness-dark: 5%;
 }
 
+/* colors for longform projects */
 .theme-light:not(.longform-no-bg) .longform-leaf {
 	--light-hue: 20;
 	--light-sat: 5%;
@@ -1353,7 +1366,7 @@ a.style-settings-export,
 	background-color: var(--interactive-bg);
 	box-shadow: var(--button-shadow);
 
-	transition: var(--quick-transition);
+	transition: var(--medium-transition);
 
 	padding: 5px 12px 6px;
 
@@ -2775,6 +2788,12 @@ body .workspace-leaf-resize-handle:active {
 <<< GitHub Info for this Theme
 ─────────────────────────────────────────────────── */
 
+.community-theme.is-selected .community-theme-info .clickable-icon::AFTER {
+	content: "Feature Overview";
+	padding-left: 4px;
+	font-family: var(--button-font);
+}
+
 .community-theme.is-selected .community-theme-info .clickable-icon {
 	width: 70%;
 
@@ -2785,16 +2804,54 @@ body .workspace-leaf-resize-handle:active {
 	color: var(--button-hover-text);
 	box-shadow: var(--button-shadow);
 
-	padding-top: 3px;
+	transition: var(--medium-transition);
+
+	padding-top: 4px;
 	padding-bottom: 4px;
 	margin-right: 0;
 	margin-bottom: 5px;
 	margin-left: 0;
 
+	border-width: 2px;
+	border-style: solid;
+	border-radius: var(--roundish);
+
+	font-size: 0.9rem;
+	line-height: 1.4em;
+}
+
+.community-theme.is-selected .community-theme-info::AFTER {
+	content: "⚙️ Customization Options available by installing the 'Style Settings' Plugin.";
+
+	position: absolute;
+	top: 135px;
+	right: 8%;
+	left: 8%;
+
+	background-color: var(--bg1);
+
+	padding: 2px 6px 3px;
+
 	border: var(--basic-border);
 	border-radius: var(--roundish);
 
-	line-height: 1.4em;
+	font-family: var(--default-font);
+	font-size: 0.85rem;
+	text-align: center;
+}
+
+.community-theme.is-selected {
+	min-height: 305px;
+	border-color: var(--interactive-border);
+}
+
+.community-theme.is-selected .community-theme-screenshot {
+	display: none;
+}
+
+.community-theme.is-selected .community-theme-title::BEFORE {
+	content: var(--signature);
+	padding-right: 5px;
 }
 
 .community-theme.is-selected .community-plugin-downloads-text,
@@ -2805,26 +2862,18 @@ body .workspace-leaf-resize-handle:active {
 .modal.mod-community-theme .community-theme.is-selected .community-theme-info .clickable-icon:hover {
 	color: var(--button-hover-text);
 	background-color: var(--interactive-hover-bg);
+	transition: var(--medium-transition);
 	border-color: var(--interactive-hover-border);
 }
 
 .theme-light .community-theme.is-selected .community-theme-info .clickable-icon {
 	background-color: hsl(50 30% 80%);
+	border-color: hsl(50 30% 60%);
 }
 
 .theme-dark .community-theme.is-selected .community-theme-info .clickable-icon {
 	background-color: hsl(50 60% 60%);
-}
-
-.community-theme.is-selected {
-	min-height: 405px;
-	border-color: var(--interactive-border);
-}
-
-.community-theme.is-selected .community-theme-info .clickable-icon::AFTER {
-	content: "Feature Overview";
-	padding-left: 4px;
-	font-family: var(--button-font);
+	border-color: hsl(50 70% 40%);
 }
 
 .community-theme.is-selected svg.github-glyph > path {
@@ -2833,8 +2882,8 @@ body .workspace-leaf-resize-handle:active {
 
 .community-theme.is-selected svg.github-glyph {
 	background-color: currentColor;
-	transform: scale(1.15);
-	margin-bottom: -1px;
+	transform: scale(1.1);
+	margin-bottom: -1.5px;
 	-webkit-mask-image: var(--external-url);
 }
 
@@ -2845,24 +2894,6 @@ body .workspace-leaf-resize-handle:active {
 	box-shadow: none;
 	cursor: not-allowed;
 	border-color: var(--bg1);
-}
-
-.community-theme.is-selected .community-theme-info::AFTER {
-	content: "Install the Style Settings Plugin for Customization Options.";
-
-	position: absolute;
-	top: 125px;
-	right: 11%;
-	left: 11%;
-
-	background-color: var(--bg1);
-
-	padding: 2px 6px 3px;
-
-	border: var(--thin-border);
-	border-radius: var(--roundish);
-
-	text-align: start;
 }
 
 /* ───────────────────────────────────────────────────
@@ -2889,6 +2920,17 @@ body .workspace-leaf-resize-handle:active {
 	padding-top: 0;
 	padding-bottom: 0;
 	border: var(--thick-border);
+}
+
+.community-theme-info {
+	font-family: var(--smallcap-font);
+	font-size: 1.04em;
+}
+
+.community-theme-downloads .community-plugin-downloads-text {
+	top: 0;
+	font-family: var(--default-font);
+	font-size: 0.85rem;
 }
 
 .modal.mod-community-theme hr {
@@ -2921,6 +2963,15 @@ body:not(.less-heading-letter-spacing) .modal.mod-community-theme .modal-title {
 	font-style: italic;
 }
 
+.community-theme-filters-container button {
+	height: 30px;
+	stroke-width: 4px;
+}
+
+.community-theme-filters-container button svg {
+	padding-bottom: 1.5px;
+}
+
 .community-theme-remove-button {
 	background: transparent;
 	padding-right: 0;
@@ -2942,14 +2993,6 @@ body:not(.less-heading-letter-spacing) .modal.mod-community-theme .modal-title {
 	color: var(--alt-accent);
 }
 
-.modal.mod-community-theme button.clickable-icon svg {
-	stroke-width: 4px !important;
-}
-
-.modal.mod-community-theme button.clickable-icon {
-	height: 30px;
-}
-
 .modal.mod-community-theme .clickable-icon:hover {
 	color: var(--interactive-normal);
 }
@@ -2959,10 +3002,6 @@ body:not(.less-heading-letter-spacing) .modal.mod-community-theme .modal-title {
 	font-size: 2.2em;
 	font-weight: 500;
 	text-transform: capitalize;
-}
-
-.community-theme-downloads .community-plugin-downloads-text {
-	top: 0;
 }
 
 /* ───────────────────────────────────────────────────
@@ -7088,21 +7127,36 @@ settings:
 	 id: angular-shapes
 	 title: Shapes
 	 type: class-toggle
-	 description: Enable to use angular shapes (🔲). Disable to use rounded shapes (🔘).
+	 description: Enable to use angular shapes (🔲) throughout the whole theme. Disable to use rounded shapes (🔘).
 	 default: false
   -
+	 id: preset-color-scheme
+	 title: Preset Color Schemes
+	 description: Overrides any Brightness, Color Tone, and Color Intensity setting when not set to "Custom". (🚧 More color schemes coming soon!)
+	 type: class-select
+	 allowEmpty: false
+	 default: classic-colors
+	 options:
+	     -
+	         label: Classic Shimmering Focus
+	         value: classic-colors
+	     -
+	         label: Custom
+	         value: custom-colors
+  -
 	 id: brightness-light
-	 title: Brightness (Light Mode)
+	 title: '🚧 Light Mode: Brightness'
+	 description: Note that a high brightness in light mode results in a white theme, regardless of the selected hue.
 	 type: variable-number-slider
-	 default: 5
+	 default: 7
 	 min: 0
 	 max: 15
 	 step: 1
 	 format: '%'
   -
 	 id: light-hue
-	 title: 🚧 Color Tone (Light Mode)
-	 description: '(experimental) Overall color tone (hue) of the light theme. (Mind that the appearance of the color is also affected by brightness and saturation, i.e. low saturation leading to gray and how/low brightness leading to white/dark).'
+	 title: '🚧 Light Mode: Hue'
+	 description: '(experimental) Overall color tone of the theme. Mind that the appearance of the color is also affected by brightness and saturation.'
 	 type: variable-number-slider
 	 default: 220
 	 min: 0
@@ -7110,8 +7164,8 @@ settings:
 	 step: 5
   -
 	 id: light-sat
-	 title: "🚧 Color Intensity (Light Mode)"
-	 description: "(experimental) Intensity (saturation) of the chosen color tone. Setting it to zero will result in grayscale, regardless of the hue chosen. "
+	 title: '🚧 Light Mode: Saturation'
+	 description: "(experimental) Intensity of the chosen color tone (hue). Setting this to zero will result in grayscale, regardless of the hue chosen. "
 	 type: variable-number-slider
 	 default: 10
 	 min: 0
@@ -7120,17 +7174,18 @@ settings:
 	 format: '%'
   -
 	 id: brightness-dark
-	 title: Brightness (Dark Mode)
+	 title: '🚧 Dark Mode: Brightness'
+	 description: Note that a low brightness in dark mode results in a black theme, regardless of the selected hue.
 	 type: variable-number-slider
-	 default: 5
+	 default: 7
 	 min: 0
 	 max: 15
 	 step: 1
 	 format: '%'
   -
 	 id: dark-hue
-	 title: 🚧 Color Tone (Dark Mode)
-	 description: '(experimental) Overall color tone (hue) of the dark theme. (Mind that the appearance of the color is also affected by brightness and saturation, i.e. low saturation leading to gray and how/low brightness leading to white/dark).'
+	 title: '🚧 Dark Mode: Hue'
+	 description: '(experimental) Overall color tone of the theme. Mind that the appearance of the color is also affected by brightness and saturation.'
 	 type: variable-number-slider
 	 default: 220
 	 min: 0
@@ -7138,8 +7193,8 @@ settings:
 	 step: 5
   -
 	 id: dark-sat
-	 title: "🚧 Color Intensity (Dark Mode)"
-	 description: "(experimental) Intensity (saturation) of the chosen color tone. Setting it to zero will result in grayscale, regardless of the hue chosen. "
+	 title: '🚧 Dark Mode: Saturation'
+	 description: "(experimental) Intensity of the chosen color tone (hue). Setting this to zero will result in grayscale, regardless of the hue chosen. "
 	 type: variable-number-slider
 	 default: 5
 	 min: 0

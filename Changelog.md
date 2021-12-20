@@ -1,3 +1,4 @@
+- 2021-12-20	option to use classic color scheme
 - 2021-12-20	tweaked range of color options
 - 2021-12-20	better github link
 - 2021-12-19	Update README.md
