@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 1.368
+Version 1.369
 https://github.com/chrisgrieser/shimmering-focus/
 MIT License
 ─────────────────────────────────────────────────── */
@@ -2776,11 +2776,11 @@ body .workspace-leaf-resize-handle:active {
 ─────────────────────────────────────────────────── */
 
 .community-theme.is-selected .community-theme-info .clickable-icon {
-	width: 80%;
+	width: 70%;
 
 	position: absolute;
-	top: 85px;
-	right: 25px;
+	top: 80px;
+	right: 15%;
 
 	color: var(--button-hover-text);
 	box-shadow: var(--button-shadow);
@@ -2817,12 +2817,12 @@ body .workspace-leaf-resize-handle:active {
 }
 
 .community-theme.is-selected {
-	min-height: 350px;
+	min-height: 405px;
 	border-color: var(--interactive-border);
 }
 
 .community-theme.is-selected .community-theme-info .clickable-icon::AFTER {
-	content: "Feature Overview & Customization Options";
+	content: "Feature Overview";
 	padding-left: 4px;
 	font-family: var(--button-font);
 }
@@ -2845,6 +2845,24 @@ body .workspace-leaf-resize-handle:active {
 	box-shadow: none;
 	cursor: not-allowed;
 	border-color: var(--bg1);
+}
+
+.community-theme.is-selected .community-theme-info::AFTER {
+	content: "Install the Style Settings Plugin for Customization Options.";
+
+	position: absolute;
+	top: 125px;
+	right: 11%;
+	left: 11%;
+
+	background-color: var(--bg1);
+
+	padding: 2px 6px 3px;
+
+	border: var(--thin-border);
+	border-radius: var(--roundish);
+
+	text-align: start;
 }
 
 /* ───────────────────────────────────────────────────
@@ -2882,7 +2900,7 @@ body .workspace-leaf-resize-handle:active {
 }
 
 .modal.mod-community-theme .search-input-container input {
-	width: 200px;
+	width: 250px;
 }
 
 body:not(.less-heading-letter-spacing) .modal.mod-community-theme .modal-title {
@@ -2898,7 +2916,8 @@ body:not(.less-heading-letter-spacing) .modal.mod-community-theme .modal-title {
 
 .community-theme-mode-toggle-label {
 	color: var(--extra-contrast);
-	margin-right: 2px;
+	margin-right: 4px;
+	font-size: 0.9em;
 	font-style: italic;
 }
 
@@ -2994,7 +3013,7 @@ body:not(.less-heading-letter-spacing) .modal.mod-community-theme .modal-title {
 }
 
 /* ───────────────────────────────────────────────────
-<< Line Numbers (Gutter)
+<< Gutter (Line Numbers)
 ─────────────────────────────────────────────────── */
 
 .CodeMirror-linenumbers {
@@ -4358,7 +4377,6 @@ body:not(.no-active-line-highlighting) .CodeMirror-activeline .CodeMirror-lineba
 }
 
 /* <<< Selection (Selected Text) */
-/* stylelint-disable no-duplicate-selectors */
 .theme-light,
 .theme-dark {
 	--text-selection: var(--selection-color);
@@ -4367,7 +4385,6 @@ body:not(.no-active-line-highlighting) .CodeMirror-activeline .CodeMirror-lineba
 /* alternative method */
 /* .CodeMirror-focused .CodeMirror-selected {} */
 
-/* stylelint-enable no-duplicate-selectors */
 /* ───────────────────────────────────────────────────
 << Multi-Color Highlighting
 ─────────────────────────────────────────────────── */
@@ -4744,6 +4761,7 @@ body.is-mobile .markdown-preview-view blockquote {
 	content: "present_to_all ";
 }
 
+.nav-file-title[data-path$="sh"] .nav-file-title-content::BEFORE,
 .nav-file-title[data-path$="ts"] .nav-file-title-content::BEFORE,
 .nav-file-title[data-path$="js"] .nav-file-title-content::BEFORE {
 	content: "code ";
@@ -4777,8 +4795,9 @@ body.is-mobile .markdown-preview-view blockquote {
 	content: "pie_chart_outline ";
 }
 
+.nav-file-title[data-path*="ToDo"] .nav-file-title-content::BEFORE,
+.nav-file-title[data-path*="Todo"] .nav-file-title-content::BEFORE,
 .nav-file-title[data-path*="To do"] .nav-file-title-content::BEFORE,
-.nav-file-title[data-path*="to Do"] .nav-file-title-content::BEFORE,
 .nav-file-title[data-path*="To Do"] .nav-file-title-content::BEFORE,
 .nav-file-title[data-path*="to do"] .nav-file-title-content::BEFORE {
 	content: "check_box ";
