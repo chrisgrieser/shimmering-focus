@@ -22,8 +22,7 @@ A minimalistic [Obsidian](https://obsidian.md/) theme focused on readability and
 - [Design Principles](#design-principles)
   - [Extreme Minimalism](#extreme-minimalism)
   - [Condensed Display of Information](#condensed-display-of-information)
-  - [Maximum Readability & Scannability](#maximum-readability--scannability)
-  - [Subtle, Customizable Design](#subtle-customizable-design)
+  - [High Readability](#high-readability)
 - [Customization](#customization)
 - [Compatibility](#compatibility)
   - [Custom Checkboxes](#custom-checkboxes)
@@ -53,7 +52,7 @@ A minimalistic [Obsidian](https://obsidian.md/) theme focused on readability and
 ### Annotation Tags
 Type one of the following eight tags (e.g. `#definition`) to get a colored annotation tag. Also works in Edit Mode. Intended for Annotations when reading academic papers.
 
-<img width=30% alt="Annotation Tags" src="https://user-images.githubusercontent.com/73286100/146721469-c453a9ed-0e28-4923-a171-f1e196c2e6e1.png">
+<img width=25% alt="Annotation Tags" src="https://user-images.githubusercontent.com/73286100/146721469-c453a9ed-0e28-4923-a171-f1e196c2e6e1.png">
 
 💡 You can add your own Annotation Tags by adding a snippet [using this template](https://github.com/chrisgrieser/shimmering-focus/blob/main/annotation-tag-template.css).
 
@@ -115,8 +114,8 @@ Using the [Style Settings Plugin](https://github.com/mgmeyers/obsidian-style-set
 
 <img width=60% alt="Screenshot 2021-10-23 17 06 22" src="https://user-images.githubusercontent.com/73286100/138561771-1067d041-eeb2-4dfe-8d79-f7fa754ca419.png">
 
-### Maximum Readability & Scannability
-- 🆕 Theme Brightness customizable via [Style Settings Plugin](https://github.com/mgmeyers/obsidian-style-settings/).
+### High Readability
+- 🆕 Theme Brightness is customizable via [Style Settings Plugin](https://github.com/mgmeyers/obsidian-style-settings/).
 - Increased contrast throughout, especially with the [annoying grey font on light grey background](https://forum.obsidian.md/t/enhance-default-color-contrast-of-the-icons/23045/3)
 - Decreased font size variation to increase readability & information density
 - At the same time increased distinctiveness of different classes through subtle variation in typeface, font style, or backgrounds
