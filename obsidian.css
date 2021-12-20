@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 1.379
+Version 1.380
 https://github.com/chrisgrieser/shimmering-focus/
 MIT License
 ─────────────────────────────────────────────────── */
@@ -194,7 +194,7 @@ This ToC is auto-generated via the .create-ToC.sh
 	--finished-task: var(--accent-lighter);
 	--cursor-duo-color-1: var(--alt-accent-lighterer);
 	--cursor-duo-color-2: var(--accent-lighterer);
-	--a-row: rgb(0 0 0 / 3%);
+	--a-row: rgb(0 0 0 / 2%);
 	--b-row: rgb(0 0 0 / 7%);
 
 	--notice-border: 2px ridge hsl(0 0% 65%);
@@ -4993,7 +4993,6 @@ body:not(.no-file-explorer-icons) .nav-file-title[data-path*="Word Count"] .nav-
 .outline .tree-item-self {
 	padding-top: 5px;
 	padding-bottom: 5px;
-	border-bottom: 1px solid var(--background-modifier-border);
 	border-radius: 0;
 	line-height: 1.15em;
 }
@@ -5013,6 +5012,10 @@ body:not(.no-file-explorer-icons) .nav-file-title[data-path*="Word Count"] .nav-
 
 .outline .pane-empty {
 	display: none;
+}
+
+body:not(.no-alternating-rows) .outline .tree-item:nth-child(even) {
+	background-color: var(--a-row);
 }
 
 /* ───────────────────────────────────────────────────
@@ -7719,7 +7722,7 @@ settings:
   -
 	 id: no-alternating-rows
 	 title: Turn off Alternating Row Coloring
-	 description: Affects tables, Command Palette & suggesters.
+	 description: Affects the Command Palette, suggesters, tables, and some panes.
 	 type: class-toggle
 	 default: false
   -
