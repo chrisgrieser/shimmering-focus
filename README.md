@@ -24,10 +24,12 @@ A minimalistic [Obsidian](https://obsidian.md/) theme focused on readability and
   - [Condensed Display of Information](#condensed-display-of-information)
   - [High Readability](#high-readability)
 - [Customization](#customization)
+  - [Style Settings](#style-settings)
+  - [### Further Customization Options](#Further-Customization-Options)
 - [Compatibility](#compatibility)
-  - [Custom Checkboxes](#custom-checkboxes)
   - [List of Compatible Plugins](#list-of-compatible-plugins)
   - [Instructions for specific Plugins](#instructions-for-specific-plugins)
+  - [Custom Checkboxes](#custom-checkboxes)
 - [Installation](#installation)
 - [Contribute](#contribute)
   - [Translation of Style Settings](#translation-of-style-settings)
@@ -42,8 +44,9 @@ A minimalistic [Obsidian](https://obsidian.md/) theme focused on readability and
 ## Features
 
 ### Hiding/Showing UI Elements
-- The Status bar, Header bar, Graph controls, and Collapse arrows are hidden by default, but become visible upon hovering or being active.
-- You can re-enable all hidden elements by using the [Style Settings Plugin](https://github.com/mgmeyers/obsidian-style-settings/).
+- By default, many UI elements are hidden, directing your Focus on the content.
+- You can re-enable individual hidden UI elements by using the [Style Settings Plugin](https://github.com/mgmeyers/obsidian-style-settings/).
+- The status bar, header bar, graph controls, and collapse arrows but become visible upon hovering or being active.
 
 💡 The settings can be accessed without a need for a button via `cmd + ,` (Mac) or `ctrl + ,` (Windows/Linux).
 
@@ -58,16 +61,17 @@ Type one of the following eight tags (e.g. `#definition`) to get a colored annot
 
 ### Max View & Focus View
 - __Max View__ *(disabled by default)*: When the *left* sidebar is hidden, line length is extended to full length, and images & PDFs are expanded to full width. Readable line length and smaller images/PDFs are re-applied when the left sidebar is shown again.[^1] This is useful when dealing with big tables or many images. To enable *Max View* or adjust the size of images & PDFs, use the [Style Settings Plugin](https://github.com/mgmeyers/obsidian-style-settings/).
-- __Focus View__ *(disabled by default)*: Hiding the *left* side bar will also hide the *right* sidebar, with the right side bar staying hidden until the left one is shown again. This synergizes with *Max View*, but also works when Max View is disabled. To enable *Focus View*, use the [Style Settings Plugin](https://github.com/mgmeyers/obsidian-style-settings/).
-- *💡 Recommendation*: For both features, it is useful to set a hotkey for the built-in command `Toggle left sidebar`.
+- __Focus View__ *(disabled by default)*: Hiding the *left* side bar will also hide the *right* sidebar, with the right side bar staying hidden until the left one is shown again. This synergizes with *Max View*, but also works independently. To enable *Focus View*, use the [Style Settings Plugin](https://github.com/mgmeyers/obsidian-style-settings/).
+
+💡  For both features, it is useful to set a hotkey for the built-in command `Toggle left sidebar`.
 
 <img src="https://user-images.githubusercontent.com/73286100/138562271-2f7d3589-d580-49e4-bea6-ca3e3004ab78.gif" alt="Promo Max View" width=60%>
 
 ### Image-related Features
 - Click & hold an image to zoom.
-- Alt-text is automatically used as image caption.
-- Set a default Image Size with the Style Settings Plugin.
-- You can also use [Max View](#max-view--focus-view) to toggle between small and big image sizes.
+- Alt-text is automatically used as image caption in Preview Mode.
+- Set a default image size with the Style Settings Plugin.
+- You can also use [Max View](#max-view--focus-view) to toggle between reduced and full image sizes.
 
 ### Multi-Color-Highlighting & Spoiler Syntax
 - Surround highlights with `*` or `**` for alternative highlight colors (`*==cyan==*` and `**==yellow==**`).
@@ -94,7 +98,7 @@ Using the [Style Settings Plugin](https://github.com/mgmeyers/obsidian-style-set
 - Dark Mode for PDFs (when using the theme in dark mode)
 - Styled [progress bars (`<progress>`)](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/progress)
 - Resizable Graph View Controls (resize at the bottom-right)
-- This theme has been adjusted to be compatible with [SlVrb's Checkboxes](https://github.com/SlRvb/Obsidian--ITS-Theme/blob/main/S%20-%20Checkboxes.css).
+- Compatibility with [SlVrb's Checkboxes](https://github.com/SlRvb/Obsidian--ITS-Theme/blob/main/S%20-%20Checkboxes.css).
 
 [⬆️ Go Back to Top](#Table-of-Contents)
 
@@ -115,12 +119,12 @@ Using the [Style Settings Plugin](https://github.com/mgmeyers/obsidian-style-set
 <img width=60% alt="Screenshot 2021-10-23 17 06 22" src="https://user-images.githubusercontent.com/73286100/138561771-1067d041-eeb2-4dfe-8d79-f7fa754ca419.png">
 
 ### High Readability
-- 🆕 Theme Brightness is customizable via [Style Settings Plugin](https://github.com/mgmeyers/obsidian-style-settings/).
-- Increased contrast throughout, especially with the [annoying grey font on light grey background](https://forum.obsidian.md/t/enhance-default-color-contrast-of-the-icons/23045/3)
+- 🆕 Theme Brightness is adjustable via [Style Settings Plugin](https://github.com/mgmeyers/obsidian-style-settings/).
+- Increased contrast throughout, especially with the [annoying gray font on light-gray background](https://forum.obsidian.md/t/enhance-default-color-contrast-of-the-icons/23045/3).
 - Decreased font size variation to increase readability & information density
-- At the same time increased distinctiveness of different classes through subtle variation in typeface, font style, or backgrounds
+- At the same time increased distinctiveness of different classes through subtle variation in typeface, font style, or backgrounds.
 - Alternating row colors in tables, Command Palette, and Quick Switchers
-- Easy-to-read fonts for every use case
+- Easy-to-read fonts for every use case:
   - [iA Writer Quattro](https://github.com/iaolo/iA-Fonts/tree/master/iA%20Writer%20Quattro) as proportional yet clear font for regular text
   - [Input Mono](https://input.djr.com/) as monospace font for code
   - [Optima](https://en.wikipedia.org/wiki/Optima) as humanist font for heading
@@ -134,22 +138,25 @@ Using the [Style Settings Plugin](https://github.com/mgmeyers/obsidian-style-set
 [⬆️ Go Back to Top](#Table-of-Contents)
 
 ## Customization
-This themes supports dozens of customization options via the [Style Settings Plugin](https://github.com/mgmeyers/obsidian-style-settings/). To add your own annotation tags, [use this template](CSS%20Snippets/annotation-tag-template.css).
+
+### Style Settings
+This themes supports dozens of customization options via the [Style Settings Plugin](https://github.com/mgmeyers/obsidian-style-settings/). 
 
 <img width=50% alt="Screenshot 2021-12-19 21 12 59" src="https://user-images.githubusercontent.com/73286100/146689428-e29af1e7-92f8-4dce-afda-ef3545743d96.png">
 
+### Further Customization Options
 - To add your own annotation tags, [use this template](CSS%20Snippets/annotation-tag-template.css).
 - To switch to Outlined [Material Icons](https://fonts.google.com/icons?selected=Material+Icons), add [this CSS snippet](CSS%20Snippets/outlined-material-icons.css).
 
 ## Compatibility
 
-### Custom Checkboxes
-This theme has been adjusted to be compatible with [SlVrb's Checkboxes](https://github.com/SlRvb/Obsidian--ITS-Theme/blob/main/S%20-%20Checkboxes.css).
-
 ### List of Compatible Plugins
 *Shimmering Focus* is compatible with and has includes styling for all core plugins, the most common community plugins, as well as about a dozen more community plugins.
 
 ➡️ [Full list of compatible plugins.](https://publish.obsidian.md/hub/02+-+Community+Expansions/02.05+All+Community+Expansions/Themes/Shimmering+Focus#Plugin+Compatibility+1)
+
+### Custom Checkboxes
+This theme has been adjusted to be compatible with [SlVrb's Checkboxes](https://github.com/SlRvb/Obsidian--ITS-Theme/blob/main/S%20-%20Checkboxes.css).
 
 ### Instructions for specific Plugins
 In accordance with the minimalistic philosophy of the theme, unnecessary UI elements of some plugins have also been removed. However, you can still access the full plugin functionality.
