@@ -1,3 +1,4 @@
+- 2021-12-20	better style setting color labelling
 - 2021-12-20	added some icons
 - 2021-12-20	dataview error
 - 2021-12-20	file explorer icons

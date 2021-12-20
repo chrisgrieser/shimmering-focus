@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 1.381
+Version 1.382
 https://github.com/chrisgrieser/shimmering-focus/
 MIT License
 ─────────────────────────────────────────────────── */
@@ -7233,11 +7233,11 @@ settings:
 	         label: Classic Shimmering Focus
 	         value: classic-colors
 	     -
-	         label: Custom
+	         label: Custom Colors
 	         value: custom-colors
   -
 	 id: brightness-light
-	 title: '🚧 Light Mode: Brightness'
+	 title: '🚧 Custom Colors: Brightness (Light Mode)'
 	 description: Note that a high brightness in light mode results in a white theme, regardless of the selected hue.
 	 type: variable-number-slider
 	 default: 7
@@ -7247,8 +7247,8 @@ settings:
 	 format: '%'
   -
 	 id: light-hue
-	 title: '🚧 Light Mode: Hue'
-	 description: '(experimental) Overall color tone of the theme. Mind that the appearance of the color is also affected by brightness and saturation.'
+	 title: '🚧 Custom Colors: Hue (Light Mode)'
+	 description: 'Overall color tone of the theme. Mind that the appearance of the color is also affected by brightness and saturation.'
 	 type: variable-number-slider
 	 default: 220
 	 min: 0
@@ -7256,8 +7256,8 @@ settings:
 	 step: 5
   -
 	 id: light-sat
-	 title: '🚧 Light Mode: Saturation'
-	 description: "(experimental) Intensity of the chosen color tone (hue). Setting this to zero will result in grayscale, regardless of the hue chosen. "
+	 title: '🚧 Custom Colors: Saturation (Light Mode)'
+	 description: "Intensity of the chosen color tone (hue). Setting this to zero will result in grayscale, regardless of the hue chosen. "
 	 type: variable-number-slider
 	 default: 10
 	 min: 0
@@ -7266,7 +7266,7 @@ settings:
 	 format: '%'
   -
 	 id: brightness-dark
-	 title: '🚧 Dark Mode: Brightness'
+	 title: '🚧 Custom Colors: Brightness (Dark Mode)'
 	 description: Note that a low brightness in dark mode results in a black theme, regardless of the selected hue.
 	 type: variable-number-slider
 	 default: 7
@@ -7276,8 +7276,8 @@ settings:
 	 format: '%'
   -
 	 id: dark-hue
-	 title: '🚧 Dark Mode: Hue'
-	 description: '(experimental) Overall color tone of the theme. Mind that the appearance of the color is also affected by brightness and saturation.'
+	 title: '🚧 Custom Colors: Hue (Dark Mode)'
+	 description: 'Overall color tone of the theme. Mind that the appearance of the color is also affected by brightness and saturation.'
 	 type: variable-number-slider
 	 default: 220
 	 min: 0
@@ -7285,8 +7285,8 @@ settings:
 	 step: 5
   -
 	 id: dark-sat
-	 title: '🚧 Dark Mode: Saturation'
-	 description: "(experimental) Intensity of the chosen color tone (hue). Setting this to zero will result in grayscale, regardless of the hue chosen. "
+	 title: '🚧 Custom Colors: Saturation (Dark Mode)'
+	 description: "Intensity of the chosen color tone (hue). Setting this to zero will result in grayscale, regardless of the hue chosen. "
 	 type: variable-number-slider
 	 default: 5
 	 min: 0
