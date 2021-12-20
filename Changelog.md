@@ -1,4 +1,5 @@
-- 2021-12-20	minor
+- 2021-12-20	file explorer icons
+- 2021-12-20	added snippet for outlined material icons
 - 2021-12-20	color and scrolling fix for context menus
 - 2021-12-20	status bar height
 - 2021-12-20	implement style setting for #51
