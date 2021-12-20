@@ -18,9 +18,7 @@ Steps to reproduce the behavior:
 4. See error
 
 **Is the Problem related to Obsidian 0.13+ / Live Preview Mode?**
-It is extremely helpful to know whether the issue occurred due to Obsidian's new Live Preview feature introduced in version 0.13+. To test this, go the the Obsidian settings and turn on `Use Legacy Editor`. Please report here whether the bug you are encountering still occurs or does not occur anymore when using the Legacy Editor. 
-
-If the bug seems to be related to Live Preview, please abort this issue creation and create an issue using the "Live Preview-related Bug" Template instead. This way I can prioritize bugs related to Live Preview (once publicly released).
+It is helpful to know whether the issue occurred due to Obsidian's new Live Preview feature introduced in version 0.13+. To test this, go the the Obsidian settings and turn on `Use Legacy Editor`. If the bug seems to be related to Live Preview, please abort this issue creation and create an issue using the "Live Preview-related Bug" Template instead. This way I can prioritize bugs related to Live Preview (once publicly released).
 
 **Relevant Screenshots**
 If applicable, add screenshots to help explain your problem.
@@ -28,3 +26,4 @@ If applicable, add screenshots to help explain your problem.
 **Checklist**
 - [ ] I have updated to the latest version of the theme (`Obsidian Settings → Appearance → Themes - Manage → Update`).
 - [ ] I checked that the issue does not occur when using the default theme.
+- [ ] In case I am missing an UI element, I have checked that it cannot be re-enabled with the [Style Settings plugin](https://github.com/mgmeyers/obsidian-style-settings).
