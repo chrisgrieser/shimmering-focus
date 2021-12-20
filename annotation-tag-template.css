@@ -1,42 +1,52 @@
-/* Template for a new annotation tag in the Obsidian Theme Shimmering Focus */
+/* Annotation Tag Template for the Theme Shimmering Focus
+---------------------------------------------------------
+https://github.com/chrisgrieser/shimmering-focus
 
-:root {
-	--yourcolor: skyblue;
-}
-.theme-light{
-	--annotation-tag-font-color: #222;
-}
-.theme-dark{
-	--annotation-tag-font-color: #FFF;
+Instruction
+--------------
+1. replace the background-color in line 9 with a color of your choice
+2. Replace the icon in line 15 with an emoji of your choice.
+(The trailing space is needed for proper alignment.)
+3. Replace _every_ instance of "YOURTAG" with the (case-sensitive) tag of
+your choice. (There is a total of 8 instances you have replace.)
+
+Note that this CSS snippet requires the theme "Shimmering Focus"
+to be enabled to work properly.
+*/
+
+body:not(.annotation-tags-off) .cm-tag-YOURTAG,
+body:not(.annotation-tags-off) .tag[href="#YOURTAG"] {
+	background-color: rgb(0 235 230 / 50%) !important;
 }
 
-body:not(.annotation-tags-off) .tag[href="#important"],
-body:not(.annotation-tags-off) .cm-s-obsidian .CodeMirror-line span.cm-tag-important{
-	font-weight: 900;
-	text-decoration: none;
+body:not(.annotation-tags-off) .cm-hashtag-begin.cm-tag-YOURTAG::BEFORE,
+body:not(.annotation-tags-off) .tag[href="#YOURTAG"]::BEFORE {
+	content: "❓ ";
+}
+
+body:not(.annotation-tags-off) .tag[href="#YOURTAG"],
+body:not(.annotation-tags-off) .cm-s-obsidian .CodeMirror-line span.cm-tag-YOURTAG {
+	color: var(--annotation-tag-font-color) !important;
+
 	padding-right: 8px;
 	padding-left: 8px;
-	color: var(--annotation-tag-font-color) !important;
-	border-radius: 6px;
-	text-decoration: none;
+
+	border-radius: var(--roundish);
+
+	font-weight: 900;
 	font-style: normal;
+	text-decoration: none;
 }
 
-body:not(.annotation-tags-off) .cm-s-obsidian .CodeMirror-line .cm-hashtag-begin.cm-tag-important{
+body:not(.annotation-tags-off) .cm-s-obsidian .CodeMirror-line .cm-hashtag-begin.cm-tag-YOURTAG {
 	padding-right: 0;
 	border-top-right-radius: 0;
 	border-bottom-right-radius: 0;
 }
-body:not(.annotation-tags-off) .cm-s-obsidian .CodeMirror-line .cm-hashtag-end.cm-tag-important{
+
+body:not(.annotation-tags-off) .cm-s-obsidian .CodeMirror-line .cm-hashtag-end.cm-tag-YOURTAG {
 	padding-left: 0;
-	border-top-left-radius: 0;
 	border-bottom-left-radius: 0;
-}
-body:not(.annotation-tags-off) .cm-tag-important,
-body:not(.annotation-tags-off) .tag[href="#important"] {
-	background-color: var(--yourcolor) !important;
-}
-body:not(.annotation-tags-off) .cm-hashtag-begin.cm-tag-important::before,
-body:not(.annotation-tags-off) .tag[href="#important"]::before {
-	content: "❗️ ";
+	border-top-left-radius: 0;
+	font-family: var(--default-font);
 }
