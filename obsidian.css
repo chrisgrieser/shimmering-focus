@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 1.384
+Version 1.385
 https://github.com/chrisgrieser/shimmering-focus/
 MIT License
 ─────────────────────────────────────────────────── */
@@ -196,8 +196,6 @@ This ToC is auto-generated via the .create-ToC.sh
 	--cursor-duo-color-2: var(--accent-lighterer);
 	--a-row: rgb(0 0 0 / 2%);
 	--b-row: rgb(0 0 0 / 7%);
-
-	--notice-border: 2px ridge hsl(0 0% 65%);
 }
 
 .theme-dark {
@@ -220,8 +218,6 @@ This ToC is auto-generated via the .create-ToC.sh
 	--cursor-duo-color-2: var(--accent-lighter);
 	--a-row: rgb(0 0 0 / 15%);
 	--b-row: rgb(0 0 0 / 30%);
-
-	--notice-border: 2px ridge hsl(0 0% 45%);
 }
 
 /* ───────────────────────────────────────────────────
@@ -369,6 +365,14 @@ body.theme-dark {
 	--thick-muted-border: 4px solid var(--muted-border-color);
 	--thin-border: 1px solid var(--basic-border-color);
 	--thin-muted-border: 1px solid var(--muted-border-color);
+}
+
+.theme-light {
+	--notice-border: 2px ridge hsl(var(--light-hue) var(--sat-light-3) 55%);
+}
+
+.theme-dark {
+	--notice-border: 2px ridge hsl(var(--dark-hue) var(--sat-dark-1) 45%);
 }
 
 /* ───────────────────────────────────────────────────
@@ -1182,7 +1186,7 @@ div.notice-container .notice {
 	background-color: var(--notice-bg);
 	box-shadow: var(--small-shadow);
 
-	padding: 6px 12px;
+	padding: 5px 12px 7px;
 
 	border: var(--notice-border);
 	border-radius: var(--roundish);
@@ -1193,20 +1197,14 @@ div.notice-container .notice {
 	letter-spacing: 0.6px;
 }
 
-body > div.notice-container .notice:hover {
-	opacity: 0.7;
+.angular-shapes div.notice-container .notice {
+	padding: 6px 12px;
 }
 
-body > div.notice-container .notice:hover::BEFORE {
-	display: block;
-	content: "𝗫";
-
-	position: absolute;
-	top: 12px;
-	right: 16px;
-
-	color: var(--interactive-normal);
-	opacity: 0.5;
+body > div.notice-container .notice:hover {
+	position: relative;
+	right: -80px;
+	opacity: 0.8;
 }
 
 /* ───────────────────────────────────────────────────
