@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 1.372
+Version 1.373
 https://github.com/chrisgrieser/shimmering-focus/
 MIT License
 ─────────────────────────────────────────────────── */
@@ -362,7 +362,6 @@ body.theme-dark {
 	--big-shadow: 4px 6px var(--shadow-blur) calc(var(--shadow-base-size) + 10px) var(--shadow-color);
 	--medium-shadow: 4px 6px var(--shadow-blur) calc(var(--shadow-base-size) + 5px) var(--shadow-color);
 	--small-shadow: 2px 4px var(--shadow-blur) calc(var(--shadow-base-size) + 0px) var(--shadow-color);
-	--button-shadow: 0 1px var(--shadow-blur) calc(var(--shadow-base-size) - 2px) var(--shadow-color);
 }
 
 /* ───────────────────────────────────────────────────
@@ -375,6 +374,7 @@ body.theme-dark {
 	--basic-border: 2px solid var(--basic-border-color);
 	--muted-border: 2px solid var(--muted-border-color);
 	--thick-border: 4px solid var(--basic-border-color);
+	--thick-muted-border: 4px solid var(--muted-border-color);
 	--thin-border: 1px solid var(--basic-border-color);
 	--thin-muted-border: 1px solid var(--muted-border-color);
 }
@@ -1373,7 +1373,6 @@ a.style-settings-export,
 
 	color: var(--button-text);
 	background-color: var(--interactive-bg);
-	box-shadow: var(--button-shadow);
 
 	transition: var(--medium-transition);
 
@@ -1402,26 +1401,13 @@ a.style-settings-export,
 /* hover */
 body .setting-item-control a.style-settings-import:hover,
 body .setting-item-control a.style-settings-export:hover,
+body .modal-container .modal .modal-button-container button:not(.mod-cta):hover,
+body .modal-container .modal .modal-content button:not(.mod-cta):hover,
 body .modal-container .modal .modal-button-container button.mod-cta:hover,
 .modal-container .modal .modal-content button.mod-cta:hover {
 	color: var(--button-hover-text);
 	background-color: var(--interactive-hover-bg);
 	transition: var(--medium-transition);
-	border-color: var(--interactive-hover-border);
-}
-
-/* abort buttons */
-body .modal-container .modal .modal-button-container button:not(.mod-cta),
-body .modal-container .modal .modal-content button:not(.mod-cta) {
-	color: var(--extra-contrast);
-	background-color: var(--bg3);
-	border-color: var(--basic-border-color);
-}
-
-body .modal-container .modal .modal-button-container button:not(.mod-cta):hover,
-body .modal-container .modal .modal-content button:not(.mod-cta):hover {
-	color: var(--text-normal);
-	background-color: var(--bg2);
 	border-color: var(--interactive-hover-border);
 }
 
@@ -1977,6 +1963,51 @@ body:not(.no-alternating-rows) .suggestion-item:nth-child(even) .suggestion-pref
 ─────────────────────────────────────────────────── */
 
 /* ───────────────────────────────────────────────────
+<< Files in the Sidebar
+─────────────────────────────────────────────────── */
+/* apply to any plugin using file lists,
+not only file explorer */
+
+.search-result-file-title:hover,
+.tree-item-self.is-clickable:hover,
+.nav-file-title.is-active,
+.nav-folder-title.is-active,
+body > .app-container .nav-file-title:hover,
+body > .app-container .nav-folder-title:hover {
+	background-color: var(--bg3);
+	border-radius: var(--roundish);
+}
+
+.nav-file-title,
+.nav-folder-title {
+	width: 100%;
+	color: var(--extra-contrast);
+	padding-top: 0.1em;
+	line-height: 1.3em;
+	white-space: normal;
+}
+
+/* hover file */
+.nav-folder-title:hover .nav-folder-title-content,
+.nav-file-title:hover .nav-file-title-content {
+	color: var(--alt-accent);
+}
+
+/* active file */
+.nav-file-title.is-active {
+	color: var(--text-accent);
+	font-weight: 600;
+}
+
+.trim-long-filenames .nav-file-title-content,
+.trim-long-filenames .tree-item-inner,
+.trim-long-filenames .search-result-file-title {
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
+}
+
+/* ───────────────────────────────────────────────────
 << Tab Headers
 ─────────────────────────────────────────────────── */
 
@@ -2176,6 +2207,7 @@ body .workspace-leaf-resize-handle:active {
 	height: 90%;
 	width: 92%;
 	max-width: unset;
+	background-color: var(--basic-border-color); /* ensures no thin line shining through */
 	border-radius: calc(var(--roundish) * 3);
 }
 
@@ -2310,10 +2342,6 @@ body .workspace-leaf-resize-handle:active {
 	padding-bottom: 0;
 	margin-top: 0;
 	margin-bottom: 1em;
-}
-
-.modal.mod-settings {
-	background-color: var(--basic-border-color);
 }
 
 .vertical-tab-header-group-title {
@@ -2496,7 +2524,7 @@ body .workspace-leaf-resize-handle:active {
 ─────────────────────────────────────────────────── */
 
 /* ───────────────────────────────────────────────────
-<<< Plugin Search Results
+<<< Plugin Search Results (left side)
 ─────────────────────────────────────────────────── */
 
 /* Search input */
@@ -2506,6 +2534,14 @@ body .workspace-leaf-resize-handle:active {
 	margin-left: 0;
 	border-bottom-left-radius: calc(var(--roundish) * 2.5);
 	border-top-left-radius: calc(var(--roundish) * 2.5);
+}
+
+/* sort order button */
+.modal.mod-community-plugin .community-plugin-search .setting-item-control button {
+	color: var(--extra-contrast);
+	background-color: var(--bg2);
+	margin-left: 0;
+	border-color: var(--basic-border-color);
 }
 
 .community-plugin-search-results {
@@ -2598,7 +2634,8 @@ body .workspace-leaf-resize-handle:active {
 }
 
 .community-plugin-search .setting-item input {
-	margin-right: 12px;
+	width: 270px;
+	margin-right: 5px;
 	margin-left: 3px;
 }
 
@@ -2660,8 +2697,9 @@ body .workspace-leaf-resize-handle:active {
 }
 
 /* ───────────────────────────────────────────────────
-<<< Plugin Info (Readme)
+<<< Plugin Info /Readme (right side)
 ─────────────────────────────────────────────────── */
+
 .community-plugin-info {
 	background-color: var(--bg1);
 	padding: 10px 5px 10px 15px;
@@ -2674,7 +2712,7 @@ body .workspace-leaf-resize-handle:active {
 	padding-bottom: 5px;
 	margin-bottom: 12px;
 
-	border-bottom: 3px solid var(--hr-line-gray);
+	border-bottom: var(--thick-border);
 
 	font-family: var(--heading-font);
 	font-size: calc(var(--h1-size) * 1.2);
@@ -2745,7 +2783,7 @@ body .workspace-leaf-resize-handle:active {
 .community-plugin-info div.community-plugin-readme {
 	padding-top: 5px !important;
 	margin-top: 15px !important;
-	border-top: var(--thick-border);
+	border-top: var(--thick-muted-border);
 }
 
 .community-plugin-readme {
@@ -2795,7 +2833,6 @@ body .workspace-leaf-resize-handle:active {
 	right: 15%;
 
 	color: var(--button-hover-text);
-	box-shadow: var(--button-shadow);
 
 	transition: var(--medium-transition);
 
@@ -2890,7 +2927,7 @@ body .workspace-leaf-resize-handle:active {
 }
 
 /* ───────────────────────────────────────────────────
-<<< Remaining Community Browser
+<<< Remaining Community Theme Browser
 ─────────────────────────────────────────────────── */
 
 .community-theme.is-selected,
@@ -2901,11 +2938,11 @@ body .workspace-leaf-resize-handle:active {
 }
 
 .community-theme {
-	border: 2px solid transparent;
+	border: 3px solid transparent;
 }
 
-.community-theme:not(.is-selected):hover {
-	border-color: var(--hr-line-gray);
+.community-theme:hover {
+	border-color: var(--interactive-hover-border);
 }
 
 .modal.mod-community-theme {
@@ -2936,6 +2973,7 @@ body .workspace-leaf-resize-handle:active {
 
 .modal.mod-community-theme .search-input-container input {
 	width: 250px;
+	background-color: var(--bg1);
 }
 
 body:not(.less-heading-letter-spacing) .modal.mod-community-theme .modal-title {
@@ -2956,9 +2994,13 @@ body:not(.less-heading-letter-spacing) .modal.mod-community-theme .modal-title {
 	font-style: italic;
 }
 
-.community-theme-filters-container button {
+/* sort order button */
+.modal.mod-community-theme .community-theme-filters-container .setting-item-control button {
 	height: 30px;
-	stroke-width: 4px;
+	color: var(--extra-contrast);
+	stroke-width: 3px;
+	background-color: var(--bg2);
+	border-color: var(--basic-border-color);
 }
 
 .community-theme-filters-container button svg {
@@ -4588,44 +4630,9 @@ body.is-mobile .markdown-preview-view blockquote {
 ─────────────────────────────────────────────────── */
 
 /* ───────────────────────────────────────────────────
-<< Files / Lists (in general)
-─────────────────────────────────────────────────── */
-/* apply to any plugin using file lists,
-not only file explorer */
-
-.tree-item-self.is-clickable:hover,
-.nav-file-title.is-active,
-.nav-folder-title.is-active,
-body > .app-container .nav-file-title:hover,
-body > .app-container .nav-folder-title:hover {
-	background-color: var(--bg3);
-	border-radius: var(--roundish);
-}
-
-.nav-file-title,
-.nav-folder-title {
-	width: 100%;
-	color: var(--extra-contrast);
-	padding-top: 0.1em;
-	line-height: 1.3em;
-	white-space: normal;
-}
-
-/* hover file */
-.nav-folder-title:hover .nav-folder-title-content,
-.nav-file-title:hover .nav-file-title-content {
-	color: var(--alt-accent);
-}
-
-/* active file */
-.nav-file-title.is-active {
-	color: var(--text-accent);
-	font-weight: 600;
-}
-
-/* ───────────────────────────────────────────────────
 << File Explorer
 ─────────────────────────────────────────────────── */
+/* see also section "Files in the Sidebar" */
 
 /* hide vault title */
 .nav-folder.mod-root > .nav-folder-title {
@@ -7633,10 +7640,16 @@ settings:
   -
 	 id: miscellaneous
 	 title: Miscellaneous
-	 description: Pandoc Citations, Annotation Tags, Active Line Highlighting, Alternating Row Colors, Relationship Lines
+	 description: File Name Trimming, Pandoc Citations, Annotation Tags, Active Line Highlighting, Alternating Row Colors, Relationship Lines
 	 type: heading
 	 level: 2
 	 collapsed: true
+  -
+	 id: trim-long-filenames
+	 title: 'Sidebar: Trim File Names'
+	 description: When enabled long filenames will be trimmed. When disabled, long filenames will be wrapped to the next line.
+	 type: class-toggle
+	 default: false
   -
 	 id: no-pandoc-citation-emphasis
 	 title: No Emphasis of Pandoc Citations

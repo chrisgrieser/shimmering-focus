@@ -9,7 +9,10 @@
 	"reportNeedlessDisables": [true, {"severity": "warning"}],
 	"reportInvalidScopeDisables": [true, {"severity": "warning"}],
 
-	"ignoreFiles": ["**/Downloads/*.css"],
+	"ignoreFiles": [
+		"**/Downloads/**",
+		"**/.obsidian/plugins/**"
+	],
 
 	"rules": {
 		"font-family-no-missing-generic-family-keyword": null,

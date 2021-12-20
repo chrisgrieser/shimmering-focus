@@ -1,3 +1,4 @@
+- 2021-12-20	implement style setting for #51
 - 2021-12-20	implement style setting option for #48
 - 2021-12-20	LP-specific issue templates
 - 2021-12-20	update readme
