@@ -25,11 +25,11 @@ A minimalistic [Obsidian](https://obsidian.md/) theme focused on readability and
   - [High Readability](#high-readability)
 - [Customization](#customization)
   - [Style Settings](#style-settings)
-  - [### Further Customization Options](#Further-Customization-Options)
+  - [Further Customization Options](#further-customization-options)
 - [Compatibility](#compatibility)
   - [List of Compatible Plugins](#list-of-compatible-plugins)
-  - [Instructions for specific Plugins](#instructions-for-specific-plugins)
   - [Custom Checkboxes](#custom-checkboxes)
+  - [Instructions for specific Plugins](#instructions-for-specific-plugins)
 - [Installation](#installation)
 - [Contribute](#contribute)
   - [Translation of Style Settings](#translation-of-style-settings)
@@ -46,7 +46,7 @@ A minimalistic [Obsidian](https://obsidian.md/) theme focused on readability and
 ### Hiding/Showing UI Elements
 - By default, many UI elements are hidden, directing your Focus on the content.
 - You can re-enable individual hidden UI elements by using the [Style Settings Plugin](https://github.com/mgmeyers/obsidian-style-settings/).
-- The status bar, header bar, graph controls, and collapse arrows but become visible upon hovering or being active.
+- The status bar, header bar, graph controls, resize handles, and collapse arrows but become visible upon hovering or being active.
 
 💡 The settings can be accessed without a need for a button via `cmd + ,` (Mac) or `ctrl + ,` (Windows/Linux).
 
