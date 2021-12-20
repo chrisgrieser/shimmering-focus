@@ -7096,7 +7096,7 @@ settings:
 	 type: variable-number-slider
 	 default: 5
 	 min: 0
-	 max: 10
+	 max: 15
 	 step: 1
 	 format: '%'
   -
@@ -7124,7 +7124,7 @@ settings:
 	 type: variable-number-slider
 	 default: 5
 	 min: 0
-	 max: 10
+	 max: 15
 	 step: 1
 	 format: '%'
   -
