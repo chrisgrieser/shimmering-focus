@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 1.370
+Version 1.371
 https://github.com/chrisgrieser/shimmering-focus/
 MIT License
 ─────────────────────────────────────────────────── */
@@ -362,7 +362,21 @@ body.theme-dark {
 	--big-shadow: 4px 6px var(--shadow-blur) calc(var(--shadow-base-size) + 10px) var(--shadow-color);
 	--medium-shadow: 4px 6px var(--shadow-blur) calc(var(--shadow-base-size) + 5px) var(--shadow-color);
 	--small-shadow: 2px 4px var(--shadow-blur) calc(var(--shadow-base-size) + 0px) var(--shadow-color);
-	--button-shadow: 0 1px var(--shadow-blur) calc(var(--shadow-base-size) - 1px) var(--shadow-color);
+	--button-shadow: 0 1px var(--shadow-blur) calc(var(--shadow-base-size) - 2px) var(--shadow-color);
+}
+
+/* ───────────────────────────────────────────────────
+<< Borders
+─────────────────────────────────────────────────── */
+
+.longform-leaf,
+.theme-light,
+.theme-dark {
+	--basic-border: 2px solid var(--basic-border-color);
+	--muted-border: 2px solid var(--muted-border-color);
+	--thick-border: 4px solid var(--basic-border-color);
+	--thin-border: 1px solid var(--basic-border-color);
+	--thin-muted-border: 1px solid var(--muted-border-color);
 }
 
 /* ───────────────────────────────────────────────────
@@ -385,16 +399,6 @@ body.theme-dark {
 	--quick-transition: 200ms ease-in-out;
 	--medium-transition: 350ms ease-in-out;
 	--slow-transition: 600ms ease-in-out;
-}
-
-.longform-leaf,
-.theme-light,
-.theme-dark {
-	--basic-border: 2px solid var(--basic-border-color);
-	--muted-border: 2px solid var(--muted-border-color);
-	--thick-border: 3px solid var(--basic-border-color);
-	--thin-border: 1px solid var(--basic-border-color);
-	--thin-muted-border: 1px solid var(--muted-border-color);
 }
 
 /* stylelint-enable no-duplicate-selectors */
@@ -506,13 +510,13 @@ body.theme-dark {
 .angular-shapes {
 	--button-font: "Oxanium-Regular";
 	--button-font-weight: 500;
-	--button-font-size: 0.9em;
+	--button-font-size: 0.9rem;
 }
 
 body:not(.angular-shapes) {
 	--button-font: "Quicksand V";
 	--button-font-weight: 700;
-	--button-font-size: 1em;
+	--button-font-size: 0.9rem;
 }
 
 .CodeMirror-linenumber {
@@ -1755,7 +1759,6 @@ div.search-input-clear-button::BEFORE,
 .modal-close-button {
 	z-index: 100;
 	color: var(--text-muted);
-	background-color: var(--bg3);
 }
 
 div.search-input-clear-button::BEFORE {
@@ -1782,15 +1785,13 @@ div.search-input-clear-button:hover::BEFORE,
 
 .empty-state-close-button:hover {
 	color: var(--alt-accent-lighter);
-	background: var(--bg3);
 }
 
 .modal-close-button {
 	top: 0;
 	right: 0;
 	z-index: 100;
-	padding: 3px 8px 6px 6px;
-	border-bottom-left-radius: var(--roundish);
+	padding: 2px 6px;
 }
 
 /* only show on hover */
@@ -1799,7 +1800,7 @@ body:not(.show-close-button) div.search-input-clear-button,
 body:not(.show-close-button) .empty-state-close-button,
 body:not(.show-close-button) .modal-close-button {
 	opacity: 0;
-	transition: 700ms ease-in-out;
+	transition: var(--slow-transition);
 }
 
 body:not(.show-close-button) .document-search-close-button:hover,
@@ -1807,7 +1808,7 @@ body:not(.show-close-button) div.search-input-clear-button:hover,
 body:not(.show-close-button) .empty-state-close-button:hover,
 body:not(.show-close-button) .modal-close-button:hover {
 	opacity: 1;
-	transition: var(--medium-transition);
+	transition: var(--quick-transition);
 }
 
 /* ───────────────────────────────────────────────────
@@ -2292,11 +2293,6 @@ body .workspace-leaf-resize-handle:active {
 	line-height: 1.5em;
 }
 
-.mod-cta {
-	font-size: 0.85em !important;
-	line-height: 1.3em;
-}
-
 /* tabs to the side */
 .modal.mod-settings .vertical-tab-header {
 	padding-top: 0;
@@ -2323,6 +2319,10 @@ body .workspace-leaf-resize-handle:active {
 	padding-bottom: 0;
 	margin-top: 0;
 	margin-bottom: 1em;
+}
+
+.modal.mod-settings {
+	background-color: var(--basic-border-color);
 }
 
 .vertical-tab-header-group-title {
@@ -2792,6 +2792,8 @@ body .workspace-leaf-resize-handle:active {
 	content: "Feature Overview";
 	padding-left: 4px;
 	font-family: var(--button-font);
+	font-size: var(--button-font-size);
+	font-weight: var(--button-font-weight);
 }
 
 .community-theme.is-selected .community-theme-info .clickable-icon {
@@ -4117,6 +4119,8 @@ body:not(.annotation-tags-off) .tag[href="#example"],
 body:not(.annotation-tags-off) .tag[href="#definition"],
 body:not(.annotation-tags-off) .tag[href="#method"],
 body:not(.annotation-tags-off) .tag[href="#important"],
+body:not(.annotation-tags-off) .tag[href="#quote"],
+body:not(.annotation-tags-off) .cm-s-obsidian .CodeMirror-line span.cm-tag-quote,
 body:not(.annotation-tags-off) .cm-s-obsidian .CodeMirror-line span.cm-tag-method,
 body:not(.annotation-tags-off) .cm-s-obsidian .CodeMirror-line span.cm-tag-disagree,
 body:not(.annotation-tags-off) .cm-s-obsidian .CodeMirror-line span.cm-tag-gap,
@@ -4145,6 +4149,7 @@ body:not(.annotation-tags-off) .cm-s-obsidian .CodeMirror-line span.cm-tag-examp
 }
 
 /* the "#" */
+body:not(.annotation-tags-off) .cm-s-obsidian .CodeMirror-line .cm-hashtag-begin.cm-tag-quote,
 body:not(.annotation-tags-off) .cm-s-obsidian .CodeMirror-line .cm-hashtag-begin.cm-tag-method,
 body:not(.annotation-tags-off) .cm-s-obsidian .CodeMirror-line .cm-hashtag-begin.cm-tag-disagree,
 body:not(.annotation-tags-off) .cm-s-obsidian .CodeMirror-line .cm-hashtag-begin.cm-tag-gap,
@@ -4161,6 +4166,7 @@ body:not(.annotation-tags-off) .cm-s-obsidian .CodeMirror-line .cm-hashtag-begin
 }
 
 /* the tag text */
+body:not(.annotation-tags-off) .cm-s-obsidian .CodeMirror-line .cm-hashtag-end.cm-tag-quote,
 body:not(.annotation-tags-off) .cm-s-obsidian .CodeMirror-line .cm-hashtag-end.cm-tag-method,
 body:not(.annotation-tags-off) .cm-s-obsidian .CodeMirror-line .cm-hashtag-end.cm-tag-disagree,
 body:not(.annotation-tags-off) .cm-s-obsidian .CodeMirror-line .cm-hashtag-end.cm-tag-gap,
@@ -4182,14 +4188,19 @@ body:not(.annotation-tags-off) .tag[href="#question"] {
 	background-color: rgb(0 235 230 / 50%) !important;
 }
 
-.theme-dark:not(.annotation-tags-off) .cm-hashtag-begin.cm-tag-question::BEFORE,
-.theme-dark:not(.annotation-tags-off) .tag[href="#question"]::BEFORE {
-	content: "❔ ";
+body:not(.annotation-tags-off) .cm-hashtag-begin.cm-tag-question::BEFORE,
+body:not(.annotation-tags-off) .tag[href="#question"]::BEFORE {
+	content: "❓ ";
 }
 
-.theme-light:not(.annotation-tags-off) .cm-hashtag-begin.cm-tag-question::BEFORE,
-.theme-light:not(.annotation-tags-off) .tag[href="#question"]::BEFORE {
-	content: "❓ ";
+body:not(.annotation-tags-off) .cm-tag-quote,
+body:not(.annotation-tags-off) .tag[href="#quote"] {
+	background-color: rgb(255 108 212 / 50%) !important;
+}
+
+body:not(.annotation-tags-off) .cm-hashtag-begin.cm-tag-quote::BEFORE,
+body:not(.annotation-tags-off) .tag[href="#quote"]::BEFORE {
+	content: "💬 ";
 }
 
 body:not(.annotation-tags-off) .cm-tag-important,
@@ -4214,7 +4225,7 @@ body:not(.annotation-tags-off) .tag[href="#method"] {
 
 body:not(.annotation-tags-off) .cm-hashtag-begin.cm-tag-method::BEFORE,
 body:not(.annotation-tags-off) .tag[href="#method"]::BEFORE {
-	content: "🛠 ";
+	content: "🔬 ";
 }
 
 body:not(.annotation-tags-off) .cm-tag-main,

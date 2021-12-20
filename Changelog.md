@@ -1,3 +1,10 @@
+- 2021-12-20	minor
+- 2021-12-20	update readme
+- 2021-12-20	seperate folder for css snippets
+- 2021-12-20	Update README.md
+- 2021-12-20	Update README.md
+- 2021-12-20	updated annotation tag template & added instructions for it
+- 2021-12-20	updated annotation tag list
 - 2021-12-20	option to use classic color scheme
 - 2021-12-20	tweaked range of color options
 - 2021-12-20	better github link
