@@ -17,7 +17,7 @@ A minimalistic [Obsidian](https://obsidian.md/) theme focused on readability and
   - [Image-related Features](#image-related-features)
   - [Multi-Color-Highlighting & Spoiler Syntax](#multi-color-highlighting--spoiler-syntax)
   - [Well-Suited for Academic Work](#well-suited-for-academic-work)
-  - [Fine-tuned Spellcheck](#fine-tuned-spellcheck)
+  - [Fine-tuned Spellcheck \(deprecated\)](#fine-tuned-spellcheck-deprecated)
   - [Further Features](#further-features)
 - [Design Principles](#design-principles)
   - [Extreme Minimalism](#extreme-minimalism)
@@ -87,8 +87,10 @@ Type one of the following eight tags (e.g. `#definition`) to get a colored annot
 - You can also [fine-tune the spell checking](#fine-tuned-spellcheck), e.g. to turn it off in blockquotes when you are regularly citing material where spellcheck creates false positives (e.g. historical sources with old language).
 - [Multi-Color-Highlighting](#multi-color-highlighting--spoiler-syntax) and [Annotation Tags](#annotation-tags) have specifically been developed for academic reading.
 
-### Fine-tuned Spellcheck
+### Fine-tuned Spellcheck (deprecated)
 Using the [Style Settings Plugin](https://github.com/mgmeyers/obsidian-style-settings/), you can deactivate the spellcheck in specific areas like YAML or blockquotes.
+
+*⚠️ Note that this feature only works with the Legacy Editor of Obsidian 0.13+, so it will unfortunately be discontinued.*
 
 <img src="https://i.imgur.com/9XPEUQq.png" alt="Spellcheck settings" width=50%>
 
