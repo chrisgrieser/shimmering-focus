@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 1.395
+Version 1.396
 https://github.com/chrisgrieser/shimmering-focus/
 MIT License
 ─────────────────────────────────────────────────── */
@@ -8,20 +8,26 @@ MIT License
 /* ───────────────────────────────────────────────────
 < Table of Content
 ─────────────────────────────────────────────────── */
-/* all sections begin with "< ", so you can search for
-"< section name" to navigate to the respective section.
-This ToC is auto-generated via the .create-ToC.sh
+/* all sections begin with "<", to navigate to the
+respective section. This ToC is auto-generated via
+the .create-ToC.sh.
 
 - Colors
-	- Backgrounds & Brightness
-- Variables
+	- Brightness
+	- Saturation
+	- Hue
+	- Shadows
+	- Borders
+- Other Variables
 - Fonts
-	- Base64-encoded Fonts
-	- Font Definitions
-	- Bold
+ 	- Base64-encoded Fonts
+ 	- Font Definitions
+ 	- Bold
 - Icons
+- Base Icons
+	- Plugin Icons
 - Shapes
-	- Angular Shapes
+	- Angular  or Round Shapes
 	- Cursor
 - UI Elements
 	- Title Bar
@@ -31,6 +37,7 @@ This ToC is auto-generated via the .create-ToC.sh
 	- Header Bar
 	- Status Bar
 	- Scrollbar
+- Vault Launch Progress Bar
 - Interactive Elements
 	- Buttons
 	- Warnings
@@ -39,30 +46,35 @@ This ToC is auto-generated via the .create-ToC.sh
 	- Dropdown & Slider
 	- Search & Replace (cmd + F)
 	- Context Menus
-	- Editor Suggestions
 	- Close Buttons
 - Prompts
 	- Command Palette
 	- QuickSwitcher
+	- Editor Suggestions
 - Sidebar
+	- Files in the Sidebar
 	- Tab Headers
 	- Resize Handles
 - Modals & Settings
 	- Modals in general
 	- Confirmation Modal
 	- Settings Menu
-	- Community Plugin Browser
-	- Community Theme Browser
+	- Plugin Browser
+		- Plugin Search Results (left side)
+		- Plugin Info /Readme (right side)
+	- Theme Browser
+		- GitHub Info for this Theme
+		- Remaining Community Theme Browser
 - Editor
 	- Active / Inactive Note
+	- Trailing Whitespace
 	- Empty State
-	- Editor Size
-	- Line Numbers (Gutter)
-	- Overscroll
+	- Editor Properties
+	- Embeds
 	- YAML Header
-		- YAML Frontmatter
-		- Metadata Block
-	- Collapse Indicators (Fold Gutter)
+ 		- YAML Frontmatter
+ 		- Metadata Block
+	- Gutter & Collapse Indicators
 	- Progress bars (<progress>)
 	- Images
 	- Mermaid
@@ -70,25 +82,28 @@ This ToC is auto-generated via the .create-ToC.sh
 	- Search Matches
 	- Spellcheck
 	- Max View
-		- Line Length & Tables
-		- Images
-		- PDFs
-		- Mermaid
+ 		- Line Length & Tables
+ 		- Images
+ 		- PDFs
+ 		- Mermaid
 - Markup
 	- Headings
 	- Blockquotes
 	- Tables
 	- Code Blocks & Inline Code
-	- Bullet point relationship lines
+	- Syntax Highlighting
+	- Bullet Point Relationship Lines
 	- Links
 	- Tags
 		- Annotation Tags
 	- Comments & HTML Tags
 	- Tasks
+	- Checkboxes
+ 		- SlVrb's checkboxes Compatibility
 	- Highlights & Selection
-		- Active Line Highlight
-		- Highlights
-		- Selection (Selected Text)
+ 		- Active Line Highlight
+ 		- Highlights
+ 		- Selection (Selected Text)
 	- Multi-Color Highlighting
 	- Pseudo-Spoiler-Tag
 	- Strikethroughs
@@ -97,11 +112,12 @@ This ToC is auto-generated via the .create-ToC.sh
 	- Horizontal line (hr)
 - Mobile
 - Core Plugins
+	- Editor Status (CM6)
 	- File Explorer
-	- Relationship Lines
-	- Folder Icons & Note Icons
+		- Relationship Lines
+		- Folder Icons & Note Icons
 	- Panes
-		- Panes in general
+ 		- Panes in general
 		- Outline
 		- Backlinks & Outgoing
 		- Search
@@ -111,14 +127,15 @@ This ToC is auto-generated via the .create-ToC.sh
 	- File Recovery
 	- Graph View
 - Community Plugins
+	- Git Plugin
 	- Calendar
 	- Templater
 	- Kanban
 	- Longform
-		- Longform Sidebar
-		- Longform Sidebar Icons
-		- Longform Editor
-		- Longform Icons
+ 		- Longform Sidebar
+ 		- Longform Sidebar Icons
+ 		- Longform Editor
+ 		- Longform Icons
 	- Ozan's Image in Editor
 	- Recent Files
 	- Quick Explorer
@@ -129,20 +146,23 @@ This ToC is auto-generated via the .create-ToC.sh
 	- Dangling Links
 	- Advanced Cursor
 	- CodeMirror Options
+	- Dataview
 	- Another Quick Switcher
 	- Activity History
 	- Style Settings (Settings Tab)
 	- Favicon Plugin
-	- Info Plugin
+	- File Info Panel (Side bar)
+	- Get Info (Status bar)
 	- Language Tool Integration
 	- Hotkey Helper
-	- Other Minor Plugin Customizations
-		- Zoom
-		- Advanced Tables
-- Plugin Compatibility Info for the Obsidian Hub
+	- Excalidraw
+	- Zoom
+	- Cursor Location
+	- Advanced Tables
+- Compatibility Info for the Obsidian Hub
 - Style Setting Options
- */
 
+ */
 /* ───────────────────────────────────────────────────
 < Colors
 ─────────────────────────────────────────────────── */
@@ -1055,7 +1075,7 @@ body.show-titlebar .workspace-ribbon.mod-left {
 	margin-top: 0;
 }
 
-/* styling when shown */
+/* styling when titlebar is shown */
 .titlebar-button {
 	color: var(--text-muted);
 	opacity: 1;
