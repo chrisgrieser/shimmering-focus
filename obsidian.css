@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 1.386
+Version 1.387
 https://github.com/chrisgrieser/shimmering-focus/
 MIT License
 ─────────────────────────────────────────────────── */
@@ -712,6 +712,7 @@ body.angular-shapes svg.link {
 
 body:not(.angular-shapes) svg.link {
 	background-color: currentColor;
+	margin-top: 1px;
 	-webkit-mask-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' width='1em' height='1em' preserveAspectRatio='xMidYMid meet' viewBox='0 0 24 24'%3e%3cg fill='currentColor'%3e%3cpath d='M13.29 9.29l-4 4a1 1 0 0 0 0 1.42a1 1 0 0 0 1.42 0l4-4a1 1 0 0 0-1.42-1.42z'/%3e%3cpath d='M12.28 17.4L11 18.67a4.2 4.2 0 0 1-5.58.4a4 4 0 0 1-.27-5.93l1.42-1.43a1 1 0 0 0 0-1.42a1 1 0 0 0-1.42 0l-1.27 1.28a6.15 6.15 0 0 0-.67 8.07a6.06 6.06 0 0 0 9.07.6l1.42-1.42a1 1 0 0 0-1.42-1.42zm7.38-14.18a6.18 6.18 0 0 0-8.13.68L10.45 5a1.09 1.09 0 0 0-.17 1.61a1 1 0 0 0 1.42 0L13 5.3a4.17 4.17 0 0 1 5.57-.4a4 4 0 0 1 .27 5.95l-1.42 1.43a1 1 0 0 0 0 1.42a1 1 0 0 0 1.42 0l1.42-1.42a6.06 6.06 0 0 0-.6-9.06z'/%3e%3c/g%3e%3c/svg%3e");
 }
 
@@ -805,6 +806,7 @@ svg.lines-of-text {
 
 *:not(.kanban-plugin__icon) > svg.vertical-three-dots {
 	background-color: currentColor;
+	margin-top: 1px;
 	-webkit-mask-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' width='1.2em' height='1.2em' preserveAspectRatio='xMidYMid meet' viewBox='0 0 20 20'%3e%3cpath d='M3 11h14V9H3v2zm0 5h14v-2H3v2zM3 4v2h14V4H3z' fill='currentColor'/%3e%3c/svg%3e");
 }
 
@@ -1453,6 +1455,7 @@ body:not(.show-scrollbar) ::-WEBKIT-SCROLLBAR {
 << Buttons
 ─────────────────────────────────────────────────── */
 
+body .excalidraw .HelpDialog--btn,
 a.style-settings-import,
 a.style-settings-export,
 .modal-container .modal .modal-button-container button,
@@ -1478,6 +1481,7 @@ a.style-settings-export,
 }
 
 /* fix for slightly different positioning of square fonts */
+.angular-shapes .excalidraw .HelpDialog--btn,
 .angular-shapes a.style-settings-import,
 .angular-shapes a.style-settings-export,
 .angular-shapes .modal-container .modal .modal-button-container button,
@@ -1488,6 +1492,7 @@ a.style-settings-export,
 }
 
 /* hover */
+body .excalidraw .HelpDialog--btn:hover,
 body .setting-item-control a.style-settings-import:hover,
 body .setting-item-control a.style-settings-export:hover,
 body .modal-container .modal .modal-button-container button:not(.mod-cta):hover,
@@ -1661,6 +1666,7 @@ select.dropdown:hover {
 	border-color: var(--interactive-hover-border) !important;
 }
 
+input[type="range"],
 input.slider {
 	width: 150px;
 	background-color: var(--bg3) !important;
@@ -7116,13 +7122,160 @@ body:not(.angular-shapes) .plugin-list-plugins .setting-item:not(.mod-toggle):no
 /* ───────────────────────────────────────────────────
 << Excalidraw
 ─────────────────────────────────────────────────── */
+/* styling from buttons partially applies */
 
+/* prevent styling from rest of theme being applied */
 .excalidraw button {
 	all: unset;
 }
 
-button.color-picker-swatch {
+.excalidraw button.color-picker-swatch {
 	color: unset;
+}
+
+.excalidraw textarea {
+	border-radius: 0;
+	letter-spacing: unset;
+}
+
+/* header bar */
+body:not(.show-header-bar).theme-light .app-container .workspace-split.mod-root .workspace-leaf-content[data-type="excalidraw"] .view-header {
+	background-color: hsl(0 0% 100%);
+}
+
+body:not(.show-header-bar).theme-dark .app-container .workspace-split.mod-root .workspace-leaf-content[data-type="excalidraw"] .view-header {
+	background-color: hsl(0 0% 7%);
+}
+
+body.show-header-bar .app-container .workspace-split.mod-root .workspace-leaf-content[data-type="excalidraw"] .view-header,
+body:not(.show-header-bar) .app-container .workspace-split.mod-root .workspace-leaf-content[data-type="excalidraw"] .view-header:focus-within,
+body:not(.show-header-bar) .app-container .workspace-split.mod-root .workspace-leaf-content[data-type="excalidraw"] .view-header:hover {
+	background-color: var(--bg1);
+}
+
+/* island in general  */
+body .excalidraw .Island {
+	border: var(--thin-muted-border);
+	border-radius: calc(var(--roundish) * 2);
+}
+
+/* top left island */
+.excalidraw .ToolIcon_type_button[data-testid="toggle-dark-mode"] {
+	bottom: -3px;
+}
+
+body .excalidraw .color-picker-hash {
+	height: 1.75em;
+	background-color: var(--bg2);
+}
+
+body .excalidraw .color-picker-label-swatch {
+	padding: 0;
+	margin-right: 6px;
+	border: var(--muted-border);
+	border-radius: 0;
+}
+
+body .excalidraw .color-picker-input {
+	border: var(--thin-muted-border);
+}
+
+.excalidraw .ToolIcon_type_button[data-testid="clear-canvas-button"] svg {
+	transform: scale(0.85);
+}
+
+.excalidraw .ToolIcon_type_button[data-testid="clear-canvas-button"] .ToolIcon__icon {
+	height: 2em;
+	width: 2em;
+}
+
+/* left island */
+.excalidraw .Island.App-menu__left fieldset:not(:last-child) button:hover,
+.excalidraw .Island.App-menu__left fieldset label:hover,
+.excalidraw-wrapper .excalidraw.excalidraw-container .ToolIcon__icon:hover {
+	background-color: var(--interactive-hover-bg);
+}
+
+.excalidraw .Island.App-menu__left input[type="range"] {
+	width: 170px;
+}
+
+.excalidraw .Island.App-menu__left fieldset:not(:last-child) button,
+.excalidraw .Island.App-menu__left fieldset label {
+	background-color: var(--bg1);
+	border-radius: var(--roundish);
+}
+
+.excalidraw .Island.App-menu__left fieldset label.active {
+	background-color: var(--bg3);
+}
+
+/* buttons & top island */
+.excalidraw-wrapper .excalidraw .ToolIcon__icon,
+.excalidraw-wrapper .excalidraw .ToolIcon,
+.excalidraw-wrapper .excalidraw .ToolIcon_type_button {
+	border-radius: var(--roundish);
+}
+
+/* active button color (crazy specificity makes targeting it hard) */
+.excalidraw {
+	--button-gray-2: var(--bg3) !important;
+}
+
+.excalidraw-wrapper .excalidraw .ToolIcon__library .ToolIcon__icon,
+.excalidraw-wrapper .excalidraw .ToolIcon__lock .ToolIcon__icon,
+.excalidraw-wrapper .excalidraw .ToolIcon__icon {
+	background-color: var(--bg1);
+}
+
+.excalidraw-wrapper .excalidraw .HintViewer {
+	display: none;
+}
+
+/* help dialog & help icon */
+body:not(.default-statusbar) .excalidraw button.help-icon {
+	margin-right: -6px;
+	margin-bottom: 2em;
+}
+
+.excalidraw button.help-icon {
+	color: var(--bg3);
+}
+
+.excalidraw button.help-icon:hover {
+	color: var(--alt-accent);
+}
+
+body:not(.show-close-button) .excalidraw button.Modal__close {
+	opacity: 0;
+	transition: var(--slow-transition);
+}
+
+body .excalidraw button.Modal__close:hover {
+	color: var(--alt-accent);
+	opacity: 1;
+	transition: var(--quick-transition);
+}
+
+.excalidraw .Dialog button.Modal__close {
+	position: relative;
+	top: -12px;
+	background: none;
+}
+
+.excalidraw .Dialog__titleContent {
+	margin-top: 10px;
+	margin-bottom: 10px;
+	font-size: calc(var(--h1-size) * 1.2);
+}
+
+body .excalidraw .HelpDialog--header {
+	margin-bottom: 0;
+}
+
+.excalidraw kbd.HelpDialog--key {
+	padding: 1px 6px;
+	border-radius: var(--roundish);
 }
 
 /* ───────────────────────────────────────────────────

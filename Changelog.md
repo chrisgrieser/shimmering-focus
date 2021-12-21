@@ -1,4 +1,4 @@
-- 2021-12-20	minor
+- 2021-12-21	styled Excalidraw & fixed #64
 - 2021-12-20	notices changes
 - 2021-12-20	style ribbon & fix #66
 - 2021-12-20	add info on resize handle hovering
