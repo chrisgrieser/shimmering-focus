@@ -1,3 +1,4 @@
+- 2021-12-21	brightness adjustments
 - 2021-12-21	fix #67
 - 2021-12-21	styled Excalidraw & fixed #64
 - 2021-12-20	notices changes

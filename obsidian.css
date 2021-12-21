@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 1.388
+Version 1.389
 https://github.com/chrisgrieser/shimmering-focus/
 MIT License
 ─────────────────────────────────────────────────── */
@@ -232,8 +232,8 @@ This ToC is auto-generated via the .create-ToC.sh
 	--dark-hue: 220;
 	--dark-sat: 5%;
 	--light-sat: 5%;
-	--brightness-light: 7%;
-	--brightness-dark: 7%;
+	--brightness-light: 10%;
+	--brightness-dark: 5%;
 }
 
 .classic-colors.theme-dark,
@@ -259,9 +259,9 @@ This ToC is auto-generated via the .create-ToC.sh
 
 .theme-light .longform-leaf,
 .theme-light {
-	--b-light-1: calc(var(--brightness-light) + 80%);
-	--b-light-2: calc(var(--brightness-light) + 76%);
-	--b-light-3: calc(var(--brightness-light) + 71%);
+	--b-light-1: calc(var(--brightness-light) + 83%);
+	--b-light-2: calc(var(--brightness-light) + 79%);
+	--b-light-3: calc(var(--brightness-light) + 74%);
 
 	--sat-correction: 5%;
 	--sat-light-1: calc(calc(var(--light-sat) + var(--sat-correction)) * 2);
