@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 1.387
+Version 1.388
 https://github.com/chrisgrieser/shimmering-focus/
 MIT License
 ─────────────────────────────────────────────────── */
@@ -3168,42 +3168,50 @@ body:not(.less-heading-letter-spacing) .modal.mod-community-theme .modal-title {
 }
 
 /* ───────────────────────────────────────────────────
-<< Editor Size
+<< Editor Properties
 ─────────────────────────────────────────────────── */
-
+/* sizes */
 .markdown-source-view.mod-cm6,
 .markdown-source-view.mod-cm5 {
 	padding-left: 10px;
 }
 
-.markdown-preview-view {
+body > .app-container .view-content > div > .markdown-preview-view {
 	padding-top: 10px;
+	padding-left: 50px;
 }
 
 .cm-s-obsidian .CodeMirror-code {
 	padding-right: 0;
 }
 
-/* ───────────────────────────────────────────────────
-<< Gutter (Line Numbers)
-─────────────────────────────────────────────────── */
-
+/* Gutter (Line Numbers) */
 .CodeMirror-linenumbers {
 	padding-top: 2px;
 	padding-right: 2px;
 }
 
-/* ───────────────────────────────────────────────────
-<< Overscroll
-─────────────────────────────────────────────────── */
-
-body > .app-container .markdown-preview-view:not(.kanban-plugin__markdown-preview-view) {
-	padding-bottom: 20em !important;
-	padding-left: 50px;
+/* overscroll */
+body > div.app-container .view-content > div > .markdown-preview-view {
+	padding-bottom: 2em;
 }
 
-div.CodeMirror-lines {
-	padding-bottom: 20em !important;
+/* !important necessary because styled in html */
+.CodeMirror-lines {
+	padding-bottom: 15em !important;
+}
+
+/* ───────────────────────────────────────────────────
+<< Embeds
+─────────────────────────────────────────────────── */
+
+.markdown-embed-link:hover {
+	color: var(--alt-accent);
+}
+
+.markdown-preview-view div.markdown-embed {
+	border-top: var(--muted-border);
+	border-bottom: var(--muted-border);
 }
 
 /* ───────────────────────────────────────────────────
@@ -7187,6 +7195,10 @@ body .excalidraw .color-picker-input {
 .excalidraw .ToolIcon_type_button[data-testid="clear-canvas-button"] .ToolIcon__icon {
 	height: 2em;
 	width: 2em;
+}
+
+.excalidraw .ToolIcon_type_button[data-testid="clear-canvas-button"] .ToolIcon__label {
+	margin-left: 8px;
 }
 
 /* left island */
