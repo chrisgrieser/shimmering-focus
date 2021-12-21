@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 1.392
+Version 1.393
 https://github.com/chrisgrieser/shimmering-focus/
 MIT License
 ─────────────────────────────────────────────────── */
@@ -3589,7 +3589,7 @@ body > .app-container .obsidian-search-match-highlight:last-child {
 /* ───────────────────────────────────────────────────
 << Spellcheck
 ─────────────────────────────────────────────────── */
-
+/* all the following do not work in CM6 anymore */
 body:not(.classic-spellcheck-styling) .CodeMirror .cm-spell-error {
 	background-image: none;
 	text-decoration: underline wavy var(--spell-error-color);
@@ -3838,11 +3838,6 @@ body > .app-container .HyperMD-quote ~ .HyperMD-quote {
 	background-color: rgb(0 0 0 / 25%);
 }
 
-/* when blockquote is also active line */
-body:not(.no-active-line-highlighting) .CodeMirror-activeline .HyperMD-quote.CodeMirror-line {
-	background-color: var(--active-line);
-}
-
 /* the ">" */
 body > .app-container .cm-formatting.cm-formatting-quote {
 	font-weight: 900;
@@ -4047,27 +4042,31 @@ body .markdown-preview-view pre code {
 	border-top-left-radius: var(--codeblock-roundness);
 }
 
-.cm-s-obsidian div.HyperMD-codeblock-end-bg {
+div.HyperMD-codeblock-end-bg {
 	border-bottom: var(--codeblock-border);
 	border-bottom-right-radius: var(--codeblock-roundness);
 	border-bottom-left-radius: var(--codeblock-roundness);
 }
 
-.cm-s-obsidian div.HyperMD-codeblock-bg:not(.HyperMD-codeblock-begin-bg) {
+div.HyperMD-codeblock-bg:not(.HyperMD-codeblock-begin-bg) {
 	background-color: var(--bg2);
 	border-right: var(--codeblock-border);
 	border-left: var(--codeblock-border);
 }
 
+/* interaction of active line highlight roundness with code blocks */
+body:not(.no-active-line-highlighting) .cm-active.HyperMD-codeblock,
 body:not(.no-active-line-highlighting) .CodeMirror-activeline .HyperMD-codeblock-bg.CodeMirror-linebackground {
 	border-radius: 0;
 }
 
+body:not(.no-active-line-highlighting) .cm-active.HyperMD-codeblock-begin,
 body:not(.no-active-line-highlighting) .CodeMirror-activeline .HyperMD-codeblock-begin-bg.CodeMirror-linebackground {
 	border-top-right-radius: var(--codeblock-roundness);
 	border-top-left-radius: var(--codeblock-roundness);
 }
 
+body:not(.no-active-line-highlighting) .cm-active.HyperMD-codeblock-end,
 body:not(.no-active-line-highlighting) .CodeMirror-activeline .HyperMD-codeblock-end-bg.CodeMirror-linebackground {
 	border-bottom-right-radius: var(--codeblock-roundness);
 	border-bottom-left-radius: var(--codeblock-roundness);
@@ -7865,8 +7864,8 @@ settings:
 	 default: false
   -
 	 id: spellcheck-settings
-	 title: Spellcheck
-	 description: Style & Fine-tuning
+	 title: Spellcheck (deprecated)
+	 description: Legacy Editor only. Will be deprecated.
 	 type: heading
 	 level: 2
 	 collapsed: true
