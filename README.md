@@ -44,9 +44,10 @@ A minimalistic [Obsidian](https://obsidian.md/) theme focused on readability and
 ## Features
 
 ### Hiding/Showing UI Elements
-- By default, many UI elements are hidden, directing your Focus on the content.
+- By default, many UI elements are hidden, directing your focus to what matters – your notes.
 - You can re-enable individual hidden UI elements by using the [Style Settings Plugin](https://github.com/mgmeyers/obsidian-style-settings/).
 - The status bar, header bar, graph controls, resize handles, and collapse arrows but become visible upon hovering or being active.
+- Obsidian 0.13+: in Source Mode, URLs on non-active lines are folded.
 
 💡 The settings can be accessed without a need for a button via `cmd + ,` (Mac) or `ctrl + ,` (Windows/Linux).
 

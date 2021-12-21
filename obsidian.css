@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 1.390
+Version 1.391
 https://github.com/chrisgrieser/shimmering-focus/
 MIT License
 ─────────────────────────────────────────────────── */
@@ -629,7 +629,8 @@ svg {
 < Base Icons
 ─────────────────────────────────────────────────── */
 
-/* external link */
+/* span targets LP, a normal preview */
+span.external-link,
 a.external-link {
 	background-position-y: 5px;
 	background-image: var(--external-url);
@@ -3161,13 +3162,12 @@ body:not(.less-heading-letter-spacing) .modal.mod-community-theme .modal-title {
 	color: var(--text-faint);
 }
 
-.cm-line.HyperMD-list-line .cm-trailing-space-a::BEFORE,
-.cm-line .cm-trailing-space-a:first-child::BEFORE {
+.cm-line .cm-trailing-space-a::BEFORE {
 	content: "\00B7\00B7";
 }
 
 .cm-trailing-space-b::BEFORE,
-.cm-line:not(.HyperMD-list-line) .cm-trailing-space-a:not(:first-child)::BEFORE {
+.cm-trailing-space-b + .cm-trailing-space-a::BEFORE {
 	content: "\00B7";
 	padding-left: 11px;
 }
@@ -4256,8 +4256,22 @@ body a.internal-link.is-unresolved:hover {
 }
 
 /* don't underline the brackets */
-.cm-url.cm-formatting {
-	text-decoration: none !important;
+.cm-s-obsidian .cm-url.cm-formatting {
+	text-decoration: none;
+}
+
+/* CM6 Source Mode: hide external URLs */
+body:not(.show-urls) .cm-line:not(.cm-active) .cm-string.cm-url:not(.cm-formatting) {
+	font-size: 0;
+}
+
+body:not(.show-urls) .cm-line:not(.cm-active) .cm-string.cm-url:not(.cm-formatting)::AFTER {
+	content: "🔗";
+	font-size: 1rem;
+}
+
+body:not(.show-urls) .cm-line:not(.cm-active) .cm-url {
+	text-decoration: none;
 }
 
 /* ───────────────────────────────────────────────────
@@ -7474,6 +7488,12 @@ settings:
 	 type: class-toggle
 	 default: false
   -
+	 id: show-urls
+	 title: Source Mode (Obsidian 0.13+): Permanently show full URLs.
+	 type: class-toggle
+	 description: In Source Mode, URLs on non-active lines will are folded (Obsidian 0.13+ only). Enable this to permanently show the full URL.
+	 default: false
+  -
 	 id: show-close-button
 	 title: Re-enable Close Buttons
 	 type: class-toggle
@@ -7495,7 +7515,13 @@ settings:
 	 id: show-graph-controls
 	 title: Permanently show the Graph Controls
 	 type: class-toggle
-	 description: When false, Graph controls are still visible when open, or upon hovering the top-left area.
+	 description: When false, graph controls are still visible when open, or upon hovering the top-left area.
+	 default: false
+  -
+	 id: show-starred-nav-buttons
+	 title: 'Starred Pane: Re-enable Buttons'
+	 description: The two buttons to star the current file and the current search.
+	 type: class-toggle
 	 default: false
   -
 	 id: aesthetics
@@ -7907,7 +7933,7 @@ settings:
   -
 	 id: plugin-specific-settings
 	 title: Plugin-Specific Settings
-	 description: Longform, File Explorer, Starred Pane, Link Favicons, Page Preview, Command Palette, Calendar
+	 description: Longform, File Explorer, Link Favicons, Page Preview, Command Palette, Calendar
 	 type: heading
 	 level: 2
 	 collapsed: true
@@ -7915,12 +7941,6 @@ settings:
 	 id: no-file-explorer-icons
 	 title: 'File Explorer: No Icons'
 	 description: Removes the icons next next to files and folders in the file explorer and re-enables the collapse arrows.
-	 type: class-toggle
-	 default: false
-  -
-	 id: show-starred-nav-buttons
-	 title: 'Starred Pane: Re-enable Buttons'
-	 description: The two buttons to star the current file and the current search.
 	 type: class-toggle
 	 default: false
   -
