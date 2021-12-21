@@ -1,3 +1,4 @@
+- 2021-12-21	minor
 - 2021-12-21	some fixes + URL folding in CM6 source mode
 - 2021-12-21	ready for new Editor + show trailing whitespaces
 - 2021-12-21	brightness adjustments
