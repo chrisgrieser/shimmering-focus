@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 1.393
+Version 1.394
 https://github.com/chrisgrieser/shimmering-focus/
 MIT License
 ─────────────────────────────────────────────────── */
@@ -259,9 +259,9 @@ This ToC is auto-generated via the .create-ToC.sh
 
 .theme-light .longform-leaf,
 .theme-light {
-	--b-light-1: calc(var(--brightness-light) + 83%);
-	--b-light-2: calc(var(--brightness-light) + 79%);
-	--b-light-3: calc(var(--brightness-light) + 74%);
+	--b-light-1: calc(var(--brightness-light) + 82%);
+	--b-light-2: calc(var(--brightness-light) + 78%);
+	--b-light-3: calc(var(--brightness-light) + 73%);
 
 	--sat-correction: 5%;
 	--sat-light-1: calc(calc(var(--light-sat) + var(--sat-correction)) * 2);
@@ -7555,7 +7555,7 @@ settings:
 	         value: custom-colors
   -
 	 id: brightness-light
-	 title: '🚧 Custom Colors: Brightness (Light Mode)'
+	 title: 'Custom Colors: Brightness (Light Mode)'
 	 description: Note that a high brightness in light mode results in a white theme, regardless of the selected hue.
 	 type: variable-number-slider
 	 default: 7
@@ -7565,7 +7565,7 @@ settings:
 	 format: '%'
   -
 	 id: light-hue
-	 title: '🚧 Custom Colors: Hue (Light Mode)'
+	 title: 'Custom Colors: Hue (Light Mode)'
 	 description: 'Overall color tone of the theme. Mind that the appearance of the color is also affected by brightness and saturation.'
 	 type: variable-number-slider
 	 default: 220
@@ -7574,7 +7574,7 @@ settings:
 	 step: 5
   -
 	 id: light-sat
-	 title: '🚧 Custom Colors: Saturation (Light Mode)'
+	 title: 'Custom Colors: Saturation (Light Mode)'
 	 description: "Intensity of the chosen color tone (hue). Setting this to zero will result in grayscale, regardless of the hue chosen. "
 	 type: variable-number-slider
 	 default: 10
@@ -7584,7 +7584,7 @@ settings:
 	 format: '%'
   -
 	 id: brightness-dark
-	 title: '🚧 Custom Colors: Brightness (Dark Mode)'
+	 title: 'Custom Colors: Brightness (Dark Mode)'
 	 description: Note that a low brightness in dark mode results in a black theme, regardless of the selected hue.
 	 type: variable-number-slider
 	 default: 7
@@ -7594,7 +7594,7 @@ settings:
 	 format: '%'
   -
 	 id: dark-hue
-	 title: '🚧 Custom Colors: Hue (Dark Mode)'
+	 title: 'Custom Colors: Hue (Dark Mode)'
 	 description: 'Overall color tone of the theme. Mind that the appearance of the color is also affected by brightness and saturation.'
 	 type: variable-number-slider
 	 default: 220
@@ -7603,7 +7603,7 @@ settings:
 	 step: 5
   -
 	 id: dark-sat
-	 title: '🚧 Custom Colors: Saturation (Dark Mode)'
+	 title: 'Custom Colors: Saturation (Dark Mode)'
 	 description: "Intensity of the chosen color tone (hue). Setting this to zero will result in grayscale, regardless of the hue chosen. "
 	 type: variable-number-slider
 	 default: 5
