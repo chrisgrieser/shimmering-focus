@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 1.389
+Version 1.390
 https://github.com/chrisgrieser/shimmering-focus/
 MIT License
 ─────────────────────────────────────────────────── */
@@ -964,17 +964,20 @@ body.angular-shapes {
 << Cursor
 ─────────────────────────────────────────────────── */
 
+.cm-s-obsidian .cm-cursor,
 .CodeMirror-cursor {
 	/* needs the "1" at the end:  https://www.digitalocean.com/community/tutorials/css-gradient-borders-pure-css */
 	border-image: linear-gradient(var(--cursor-duo-color-1), var(--cursor-duo-color-2)) 1;
 	border-left-width: 3px;
 }
 
+body.mono-color-cursor .cm-cursor,
 body.mono-color-cursor .CodeMirror-cursor {
 	border-image: none;
 	border-color: var(--cursor-monocolor);
 }
 
+body.block-cursor .cm-s-obsidian .cm-cursor,
 body.block-cursor .CodeMirror-cursor {
 	opacity: 0.5;
 	border-left-width: 0.6em;
@@ -1204,8 +1207,6 @@ div.notice-container .notice {
 }
 
 body > div.notice-container .notice:hover {
-	position: relative;
-	right: -80px;
 	opacity: 0.8;
 }
 
@@ -1339,7 +1340,7 @@ body:not(.default-statusbar) .status-bar {
 }
 
 .status-bar-item:first-child {
-	margin-left: 0;
+	margin-left: 0 !important;
 }
 
 body:not(.hide-signature) .status-bar::AFTER {
@@ -1690,7 +1691,7 @@ input.slider {
 	padding-top: 5px;
 
 	border: var(--thick-muted-border);
-	border-radius: var(--round);
+	border-radius: calc(var(--roundish) * 3);
 }
 
 body .document-search-container input[type="text"] {
@@ -1699,7 +1700,8 @@ body .document-search-container input[type="text"] {
 
 /* move up to avoid collision with statusbar */
 body:not(.default-statusbar) .document-search-container {
-	bottom: 2.7em
+	position: relative;
+	bottom: 2.4em;
 }
 
 div.document-replace {
@@ -1708,7 +1710,6 @@ div.document-replace {
 
 .document-search-container.mod-replace-mode {
 	height: 6.8em;
-	border-radius: calc(var(--round) / 2);
 }
 
 /* for whatever reason the horizontal scrollbar
@@ -1742,16 +1743,6 @@ so this has to be used ლ(ಠ_ಠლ)╯ */
 	border: var(--muted-border);
 }
 
-body > .app-container input.document-search-input:focus,
-body > .app-container input.document-replace-input:focus {
-	border: 2px solid var(--text-accent);
-}
-
-body > .app-container input.document-search-input:hover,
-body > .app-container input.document-replace-input:hover {
-	border: 2px solid var(--alt-accent);
-}
-
 button.document-search-button {
 	height: 2.2rem;
 
@@ -1761,7 +1752,7 @@ button.document-search-button {
 
 	margin: 5px 6px;
 
-	border-radius: var(--round);
+	border-radius: var(--roundish);
 }
 
 .document-search-button:hover {
@@ -1774,6 +1765,17 @@ body:not(.show-close-button) .document-search-close-button {
 	display: none;
 }
 
+/* only needed for CM5 */
+body > .app-container input.document-search-input:focus,
+body > .app-container input.document-replace-input:focus {
+	border: 2px solid var(--interactive-border);
+}
+
+body > .app-container input.document-search-input:hover,
+body > .app-container input.document-replace-input:hover {
+	border: 2px solid var(--interactive-hover-border);
+}
+
 /* ───────────────────────────────────────────────────
 << Context Menus
 ─────────────────────────────────────────────────── */
@@ -1781,7 +1783,7 @@ body:not(.show-close-button) .document-search-close-button {
 div.menu {
 	background-color: var(--bg1);
 	box-shadow: var(--medium-shadow);
-	padding: 2px 1px;
+	padding: 3px 0;
 	border: var(--thin-border);
 	border-radius: var(--roundish);
 }
@@ -2446,7 +2448,7 @@ body .workspace-leaf-resize-handle:active {
 	color: var(--extra-contrast);
 	background-color: var(--bg3);
 
-	padding: 2px 5px 4px;
+	padding: 3px 5px;
 	margin-top: 0;
 	margin-bottom: 5px;
 
@@ -3150,6 +3152,32 @@ body:not(.less-heading-letter-spacing) .modal.mod-community-theme .modal-title {
 }
 
 /* ───────────────────────────────────────────────────
+<< Trailing Whitespace
+─────────────────────────────────────────────────── */
+.cm-line .cm-trailing-space-a::BEFORE,
+.cm-line .cm-trailing-space-b::BEFORE,
+.cm-line .cm-trailing-space-new-line::BEFORE {
+	position: absolute;
+	color: var(--text-faint);
+}
+
+.cm-line.HyperMD-list-line .cm-trailing-space-a::BEFORE,
+.cm-line .cm-trailing-space-a:first-child::BEFORE {
+	content: "\00B7\00B7";
+}
+
+.cm-trailing-space-b::BEFORE,
+.cm-line:not(.HyperMD-list-line) .cm-trailing-space-a:not(:first-child)::BEFORE {
+	content: "\00B7";
+	padding-left: 11px;
+}
+
+.cm-line .cm-trailing-space-new-line::BEFORE {
+	content: "\21B5";
+	padding-left: 15px;
+}
+
+/* ───────────────────────────────────────────────────
 << Empty State
 ─────────────────────────────────────────────────── */
 
@@ -3185,13 +3213,7 @@ body > .app-container .view-content > div > .markdown-preview-view {
 	padding-right: 0;
 }
 
-/* Gutter (Line Numbers) */
-.CodeMirror-linenumbers {
-	padding-top: 2px;
-	padding-right: 2px;
-}
-
-/* overscroll */
+/* Overscroll */
 body > div.app-container .view-content > div > .markdown-preview-view {
 	padding-bottom: 2em;
 }
@@ -3321,27 +3343,29 @@ body .frontmatter-container .frontmatter-container-header {
 }
 
 /* ───────────────────────────────────────────────────
-<< Collapse Indicators & Fold Gutters
+<< Gutter & Collapse Indicators
 ─────────────────────────────────────────────────── */
 
-/* Preview mode */
-.right-triangle {
-	height: 0.4em;
-	width: 0.4em;
+.CodeMirror-linenumbers {
+	padding-top: 2px;
+	padding-right: 2px;
 }
 
-.heading-collapse-indicator {
-	position: relative;
-	left: -10px;
-	padding-right: 0 !important;
+.markdown-preview-view .collapse-indicator .right-triangle {
+	height: 0.5em;
+	width: 0.5em;
 }
 
-.is-collapsed .heading-collapse-indicator.collapse-indicator.collapse-icon:hover,
-.heading-collapse-indicator.collapse-indicator.collapse-icon:hover {
+.cm-s-obsidian.mod-cm6 .collapse-indicator .right-triangle {
+	height: 0.9em;
+	width: 0.9em;
+}
+
+.collapse-indicator.collapse-icon:hover {
 	color: var(--alt-accent-lighter);
 }
 
-.is-collapsed .heading-collapse-indicator.collapse-indicator.collapse-icon {
+.is-collapsed .collapse-indicator.collapse-icon {
 	color: var(--text-accent);
 }
 
@@ -3366,25 +3390,23 @@ body .frontmatter-container .frontmatter-container-header {
 	color: var(--accent-lighter);
 }
 
-/* the "..." when content is folded */
+/* CM6/CM5: the "..." when content is folded */
+body:not(.show-fold-marker) .cm-foldPlaceholder,
 body:not(.show-fold-marker) .CodeMirror-foldmarker {
 	display: none;
 }
 
-/* fix for note being in the sidebar, thanks @SlRvb */
+/* CM5: collapse indicator positioning */
+.markdown-source-view.mod-cm5 .collapse-indicator {
+	position: relative;
+	left: -10px;
+	padding-right: 0;
+}
+
+/* fix for gutter color, thanks @SlRvb */
 .markdown-source-view.mod-cm6 .cm-gutters,
 .CodeMirror-foldgutter {
 	background-color: transparent !important;
-}
-
-/* hide fold icon */
-body:not(.show-collapse-buttons) .CodeMirror-foldgutter-open.CodeMirror-guttermarker-subtle::AFTER {
-	opacity: 0;
-}
-
-/* hover over line shows fold icon */
-body:not(.show-collapse-buttons) .CodeMirror-code > div:hover .CodeMirror-foldgutter-open.CodeMirror-guttermarker-subtle::AFTER {
-	opacity: 1;
 }
 
 /* ───────────────────────────────────────────────────
@@ -3605,6 +3627,21 @@ body.no-barelink-spellcheck .cm-hmd-barelink.cm-overlay.cm-spell-error {
 	text-decoration: none;
 }
 
+/* spellcheck dictionary (when modifying words through settings) */
+.spellchecker-dictionary-remove-button:hover {
+	color: var(--alt-accent);
+}
+
+body:not(.no-alternating-rows) .spellchecker-dictionary-item {
+	padding: 2px 6px;
+	margin-bottom: 0;
+	border-radius: var(--roundish);
+}
+
+.spellchecker-dictionary-item:nth-child(even) {
+	background-color: var(--a-row);
+}
+
 /* ───────────────────────────────────────────────────
 << Max View
 ─────────────────────────────────────────────────── */
@@ -3686,6 +3723,10 @@ body.focus-view-enabled .workspace-split.mod-left-split.is-collapsed ~ .workspac
 	font-weight: 700;
 	text-rendering: geometricPrecision;
 	line-height: 1.3em;
+}
+
+body .cm-s-obsidian .cm-header {
+	font-weight: 600;
 }
 
 .cm-header-1,
@@ -4514,7 +4555,7 @@ li[data-task="x"] > .task-list-item-checkbox:hover {
 }
 
 /* fix for legacy-editor, discussed here https://discord.com/channels/686053708261228577/702656734631821413/920422345422819339 */
-.markdown-source-view:not(.mod-cm6) .cm-formatting.cm-formatting-task {
+.markdown-source-view.mod-cm5 .cm-formatting.cm-formatting-task {
 	margin-left: -10px;
 }
 
@@ -4566,6 +4607,7 @@ body > div.app-container .markdown-preview-view ol > li.task-list-item.is-checke
 ─────────────────────────────────────────────────── */
 
 /* <<< Active Line Highlight */
+body:not(.no-active-line-highlighting) .cm-active,
 body:not(.no-active-line-highlighting) .CodeMirror-activeline .CodeMirror-linebackground {
 	background-color: var(--active-line);
 	border-radius: var(--roundish);
@@ -4746,6 +4788,23 @@ body.is-mobile .markdown-preview-view blockquote {
 /* ───────────────────────────────────────────────────
 < Core Plugins
 ─────────────────────────────────────────────────── */
+
+/* ───────────────────────────────────────────────────
+<< Editor Status (CM6)
+─────────────────────────────────────────────────── */
+
+.status-bar-item.plugin-editor-status {
+	position: relative;
+	bottom: 1px;
+}
+
+.status-bar-item.plugin-editor-status::BEFORE {
+	content: "preview";
+	position: relative;
+	top: 2px;
+	margin-right: 3px;
+	font-family: var(--icon-font);
+}
 
 /* ───────────────────────────────────────────────────
 << File Explorer
@@ -7300,6 +7359,14 @@ a.zoom-plugin-title:hover {
 }
 
 /* ───────────────────────────────────────────────────
+<< Cursor Location
+─────────────────────────────────────────────────── */
+
+.status-bar-item.plugin-obsidian-cursor-location-plugin:empty + .status-bar-item {
+	margin-left: 0;
+}
+
+/* ───────────────────────────────────────────────────
 << Advanced Tables
 ─────────────────────────────────────────────────── */
 
@@ -7356,6 +7423,7 @@ community:
 - obsidian-zoom
 - table-editor-obsidian
 - dataview
+- obsidian-cursor-location-plugin
 */
 
 /* ───────────────────────────────────────────────────
@@ -7416,12 +7484,6 @@ settings:
 	 title: Re-enable Scrollbars
 	 type: class-toggle
 	 description: When false, only the scroll bars in the Editor are shown.
-	 default: false
-  -
-	 id: show-collapse-buttons
-	 title: Permanently show the Edit Mode Collapse Arrows
-	 type: class-toggle
-	 description: When false, you collapse buttons still become visible upon hovering.
 	 default: false
   -
 	 id: show-fold-marker

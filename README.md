@@ -3,7 +3,7 @@
 A minimalistic [Obsidian](https://obsidian.md/) theme focused on readability and condensed information display.
 
 <!-- manually updated-->
-![](https://img.shields.io/badge/downloads-7343-6E4E9B?style=plastic) ![](https://img.shields.io/github/last-commit/chrisgrieser/shimmering-focus?style=plastic) [![](https://img.shields.io/badge/changelog-click%20here-FFE800?style=plastic)](Changelog.md)
+![](https://img.shields.io/badge/downloads-7394-6E4E9B?style=plastic) ![](https://img.shields.io/github/last-commit/chrisgrieser/shimmering-focus?style=plastic) [![](https://img.shields.io/badge/changelog-click%20here-FFE800?style=plastic)](Changelog.md)
 
 <img src="https://raw.githubusercontent.com/chrisgrieser/shimmering-focus/main/dual-theme-screenshot.png" alt="Promo Screenshot">
 
@@ -93,6 +93,7 @@ Using the [Style Settings Plugin](https://github.com/mgmeyers/obsidian-style-set
 
 ### Further Features
 - Relationship lines in lists & File Explorer
+- Indicates Trailing Whitespace, when there is more than one space (Obsidian 0.13+ / new Editor only).
 - Active line highlighting
 - Customizable Brightness of the Theme
 - Dark Mode for PDFs (when using the theme in dark mode)
