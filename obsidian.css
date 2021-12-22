@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 1.399
+Version 1.400
 https://github.com/chrisgrieser/shimmering-focus/
 MIT License
 ─────────────────────────────────────────────────── */
@@ -1959,6 +1959,10 @@ input.prompt-input {
 	font-size: calc(var(--button-font-size) + 0.1em);
 }
 
+body:not(.angular-shapes) input.prompt-input {
+	padding-top: 7px;
+}
+
 div.prompt-results {
 	padding-top: 0;
 	margin-top: 5px;
@@ -2029,6 +2033,7 @@ div.prompt-results {
 	background-color: var(--bg2);
 	border-radius: var(--roundish);
 	font-family: var(--button-font);
+	font-weight: var(--button-font-weight);
 }
 
 body.move-plugin-name-to-left .suggestion-prefix,
