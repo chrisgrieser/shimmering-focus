@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 1.398
+Version 1.399
 https://github.com/chrisgrieser/shimmering-focus/
 MIT License
 ─────────────────────────────────────────────────── */
@@ -5106,6 +5106,11 @@ body:not(.no-file-explorer-icons) .nav-file-title[data-path*="Word Count"] .nav-
 	content: "flag";
 }
 
+body:not(.no-file-explorer-icons) .nav-file-title[data-path*="Kanban"] .nav-file-title-content::BEFORE,
+body:not(.no-file-explorer-icons) .nav-file-title[data-path*="kanban"] .nav-file-title-content::BEFORE {
+	content: "dashboard";
+}
+
 /* ───────────────────────────────────────────────────
 << Panes
 ─────────────────────────────────────────────────── */
@@ -5827,8 +5832,8 @@ https://forum.obsidian.md/t/inline-code-occludes-text-selection-and-vim-cursor/1
 
 /* stylelint-disable no-duplicate-selectors */
 .theme-light {
-	--kanban-background: hsl(var(--light-hue) calc(var(--sat-light-2) * 0.8) 82%);
-	--active-hover-kanban-item: hsl(var(--light-hue) var(--sat-light-2) 85%);
+	--kanban-background: hsl(var(--light-hue) var(--sat-light-3) calc(var(--b-light-3) - 2%));
+	--active-hover-kanban-item: hsl(var(--light-hue) var(--sat-light-3) 85%);
 	--dot-color: hsl(0 0% 50% / 20%);
 }
 
@@ -5844,14 +5849,7 @@ https://forum.obsidian.md/t/inline-code-occludes-text-selection-and-vim-cursor/1
 }
 /* stylelint-enable no-duplicate-selectors */
 
-body .kanban-plugin__lane {
-	background-color: var(--bg3);
-}
-
-body .kanban-plugin__item-title-wrapper {
-	background-color: var(--bg2);
-	padding: 5px 7px;
-}
+/* <<< Board */
 
 .kanban-plugin__board button {
 	color: unset;
@@ -5877,7 +5875,6 @@ body .workspace-leaf-content[data-type="kanban"] .view-header:hover {
 	background-image: unset;
 }
 
-/* more condensed */
 div.kanban-plugin__board > div {
 	padding: 0 0.6em 0.5em;
 }
@@ -5890,7 +5887,7 @@ div.kanban-plugin__board > div {
 	margin-top: 0;
 }
 
-/* font sizes  */
+/* <<< Font sizes  */
 body .kanban-plugin p {
 	margin: 0;
 	font-size: 0.95em;
@@ -5920,43 +5917,74 @@ textarea.kanban-plugin__item-input {
 	letter-spacing: -0.3px;
 }
 
+/* <<< Lanes */
+
+body .kanban-plugin__lane {
+	background-color: var(--bg3);
+	border: var(--basic-border);
+}
+
+body .kanban-plugin__item-title-wrapper {
+	background-color: var(--bg2);
+	padding: 5px 7px;
+	border: var(--thin-border);
+}
+
 /* vertical three dots on lane */
 .kanban-plugin__lane-settings-button-wrapper svg {
 	color: var(--text-faint);
-	stroke-width: 3px !important;
+	stroke-width: 4px;
+}
+
+body .kanban-plugin__lane-items {
+	padding-top: 0;
+	padding-bottom: 0;
+	margin: 0 2px;
+}
+
+body .kanban-plugin__item-content-wrapper,
+body .kanban-plugin__item-title-wrapper,
+body .kanban-plugin__lane {
+	border-radius: calc(var(--roundish) * 1.5);
+}
+
+/* space between lanes */
+body .kanban-plugin__lane-wrapper {
+	margin-right: 8px;
 }
 
 .kanban-plugin__lane-settings-button-wrapper:hover svg {
 	color: var(--alt-accent);
 }
 
-.kanban-plugin__lane-settings-button {
-	padding: 3px 7px !important;
+.kanban-plugin .kanban-plugin__lane-header-wrapper .kanban-plugin__lane-settings-button {
+	margin-right: 2px;
 }
 
 body .kanban-plugin__lane-header-wrapper {
-	padding: 7px;
+	padding: 7px 5px 4px;
+	border: none;
 }
 
-.kanban-plugin__lane-title-text > div > div > p {
-	margin-bottom: 2px !important;
+.kanban-plugin__lane-title-text div > p {
 	font-family: var(--button-font);
-	font-size: 1.05em !important;
+	font-size: 1.05em;
 	font-weight: var(--button-font-weight);
-	letter-spacing: 0.1px !important;
+	letter-spacing: 0.1px;
 }
 
 /* vertical three dots on card */
 /* card options still available via right click.
 not on mobile, since you cannot right click there. */
 body:not(.is-mobile) .kanban-plugin__item-postfix-button-wrapper {
-	display: none !important;
+	display: none;
 }
 
 /* "add card" field */
-.kanban-plugin__item-button-wrapper {
-	padding-top: 2px !important;
-	padding-bottom: 5px !important;
+body .kanban-plugin__item-button-wrapper {
+	padding-top: 0;
+	padding-bottom: 5px;
+	border-top: none;
 }
 
 button.kanban-plugin__new-item-button {
@@ -6002,12 +6030,7 @@ a.tag.kanban-plugin__item-tag {
 	padding-bottom: 0 !important;
 }
 
-.nav-file-title[data-path*="Kanban"] .nav-file-title-content::BEFORE,
-.nav-file-title[data-path*="kanban"] .nav-file-title-content::BEFORE {
-	content: "dashboard";
-}
-
-.kanban-plugin__item-markdown li .external-link::BEFORE {
+.kanban-plugin li .external-link::BEFORE {
 	margin-top: 1px;
 	margin-right: 6px;
 }
@@ -6018,27 +6041,26 @@ a.tag.kanban-plugin__item-tag {
 	border-width: 3px !important;
 }
 
-/* angular shapes setting */
-body:not(.angular-shapes) .kanban-plugin__board input[type="checkbox"] {
+/* checkboxes & angular shapes setting */
+body:not(.angular-shapes) .kanban-plugin input[type="checkbox"] {
 	height: 0.85em;
 	width: 0.85em;
-	margin-top: 1px;
+	margin-top: 0;
 	margin-right: 5px;
 	margin-left: 0;
 }
 
-body.angular-shapes .kanban-plugin__board input[type="checkbox"] {
+.kanban-plugin ul > li.task-list-item {
+	padding-left: 0;
+}
+
+body.angular-shapes .kanban-plugin input[type="checkbox"] {
 	height: 1em;
 	width: 1em;
 	margin-top: 0;
 }
 
-body.angular-shapes .kanban-plugin__item,
-body.angular-shapes .kanban-plugin__lane {
-	border-radius: 0;
-}
-
-.kanban-plugin__board input[type="checkbox"] {
+.kanban-plugin input[type="checkbox"] {
 	margin-left: 0;
 }
 

@@ -1,3 +1,4 @@
+- 2021-12-22	kanban improvements
 - 2021-12-22	relationship lines now work in new editor
 - 2021-12-22	nicer external link icon
 - 2021-12-21	update spellcheck info
