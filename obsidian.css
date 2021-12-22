@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 1.406
+Version 1.407
 https://github.com/chrisgrieser/shimmering-focus/
 MIT License
 ─────────────────────────────────────────────────── */
@@ -4574,6 +4574,10 @@ body > .app-container span.cm-tag {
 	text-indent: -1.9em;
 }
 
+.is-live-preview.mod-cm6 input.task-list-item-checkbox {
+	margin-top: 0;
+}
+
 /* preview mode */
 /* https://forum.obsidian.md/t/meta-post-common-css-hacks/1978/34 */
 input[type="checkbox"] {
@@ -4674,9 +4678,6 @@ body:not(.no-active-line-highlighting) .CodeMirror-activeline .CodeMirror-lineba
 .theme-dark {
 	--text-selection: var(--selection-color);
 }
-
-/* alternative method */
-/* .CodeMirror-focused .CodeMirror-selected {} */
 
 /* ───────────────────────────────────────────────────
 << Multi-Color Highlighting
