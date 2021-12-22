@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 1.414
+Version 1.415
 https://github.com/chrisgrieser/shimmering-focus/
 MIT License
 ─────────────────────────────────────────────────── */
@@ -6230,7 +6230,7 @@ body.angular-shapes .kanban-plugin input[type="checkbox"] {
 
 	color: var(--extra-contrast);
 
-	padding: 2px;
+	padding: 4px 2px;
 
 	border: none;
 	border-radius: var(--roundish);
@@ -6241,13 +6241,12 @@ body.angular-shapes .kanban-plugin input[type="checkbox"] {
 
 #draft-list li,
 #scene-list li {
-	padding: 2px 1px;
 	border: none;
 	border-radius: var(--roundish);
 }
 
-body:not(.no-alternating-rows) #draft-list li:nth-child(even),
-body:not(.no-alternating-rows) #scene-list li:nth-child(even) {
+body:not(.no-alternating-rows) #draft-list li:nth-child(even) .draft-container,
+body:not(.no-alternating-rows) #scene-list li:nth-child(even) .scene-container {
 	background-color: var(--a-row);
 }
 
