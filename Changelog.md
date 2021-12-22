@@ -1,4 +1,4 @@
-- 2021-12-22	minor
+- 2021-12-22	longform improvements
 - 2021-12-22	footnotes
 - 2021-12-22	more fixes for live preview
 - 2021-12-22	block qupotes fixed for live preview
