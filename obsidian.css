@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 1.412
+Version 1.413
 https://github.com/chrisgrieser/shimmering-focus/
 MIT License
 ─────────────────────────────────────────────────── */
@@ -6277,6 +6277,7 @@ body:not(.no-alternating-rows) #scene-list li:nth-child(even) {
 input#new-draft,
 input#new-scene {
 	height: 20px;
+	color: var(--unresolved-link-color);
 	border-radius: 0;
 }
 
