@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 1.403
+Version 1.404
 https://github.com/chrisgrieser/shimmering-focus/
 MIT License
 ─────────────────────────────────────────────────── */
@@ -3839,12 +3839,20 @@ body:not(.no-alternating-header-italics) .markdown-preview-view h6 {
 << Blockquotes
 ─────────────────────────────────────────────────── */
 
-/* Edit Mode */
-body > .app-container .cm-quote {
+/* all italic */
+.markdown-preview-view blockquote,
+.cm-line .cm-quote {
 	color: var(--extra-contrast);
 	font-style: italic;
 }
 
+/* underline emphasis in blockquote, since they are italic already */
+.markdown-preview-view blockquote > p > em,
+.cm-line .cm-em.cm-quote {
+	text-decoration: underline;
+}
+
+/* edit mode */
 .cm-line.HyperMD-quote {
 	background-color: var(--bg2);
 	padding: 0.4em 0.8em 0.5em 0;
@@ -3887,16 +3895,10 @@ body > .app-container .markdown-preview-view blockquote {
 	padding: 0.3em 0.7em 0.4em;
 	margin: 1.5em 0 1.5em 2em;
 
-	border: var(--muted-border);
+	border: var(--basic-border);
 	border-radius: var(--roundish);
 
 	hyphens: auto;
-}
-
-/* underline emphasis in blockquote, since they are italic already */
-.markdown-preview-view blockquote > p > em,
-span.cm-em.cm-quote {
-	text-decoration: underline;
 }
 
 /* option for normal size */
@@ -7509,6 +7511,7 @@ community:
 - table-editor-obsidian
 - dataview
 - obsidian-cursor-location-plugin
+- nlp
 */
 
 /* ───────────────────────────────────────────────────

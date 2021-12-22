@@ -1,4 +1,4 @@
-- 2021-12-22	minor
+- 2021-12-22	blockquotes
 - 2021-12-22	blockquote fixes
 - 2021-12-22	kanban improvements
 - 2021-12-22	relationship lines now work in new editor
