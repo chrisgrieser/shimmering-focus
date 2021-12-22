@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 1.410
+Version 1.411
 https://github.com/chrisgrieser/shimmering-focus/
 MIT License
 ─────────────────────────────────────────────────── */
@@ -3551,7 +3551,7 @@ progress[value^="10"]::-WEBKIT-PROGRESS-VALUE { background: hsl(160 92% 70%) }
 	margin-bottom: 13px;
 
 	font-family: var(--smallcap-font);
-	font-size: 0.95em;
+	font-size: 0.95rem;
 }
 
 .view-content .markdown-preview-view img:not(.link-favicon) {
@@ -6418,7 +6418,7 @@ body:not(.longform-left-aligned) .longform-leaf span:not(.cm-header) {
 	hyphens: auto;
 }
 
-body:not(.longform-no-text-indent) .longform-leaf .markdown-preview-view p {
+body.longform-text-indent .longform-leaf .markdown-preview-view p {
 	text-indent: 2em;
 }
 
@@ -8203,7 +8203,7 @@ settings:
 	 type: class-toggle
 	 default: false
   -
-	 id: longform-no-text-indent
+	 id: longform-text-indent
 	 title: 'Longform: First-Line Indent (Preview Mode)'
 	 description: Indent the first Line of a paragraph in longform notes (preview mode only).
 	 type: class-toggle
