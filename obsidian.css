@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 1.409
+Version 1.410
 https://github.com/chrisgrieser/shimmering-focus/
 MIT License
 ─────────────────────────────────────────────────── */
@@ -900,21 +900,32 @@ svg.up-and-down-arrows > path { display: none }
 
 svg.up-and-down-arrows {
 	background-color: currentColor;
-	margin-top: 1px;
 	-webkit-mask-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' width='1.1em' height='1.1em' preserveAspectRatio='xMidYMid meet' viewBox='0 0 24 24'%3e%3cpath d='M8 16H4l6 6V2H8zm6-11v17h2V8h4l-6-6z' fill='currentColor'/%3e%3c/svg%3e");
 }
 
-.setting-item-control button svg {
-	margin-top: 0;
+button svg.up-and-down-arrows {
+	position: relative;
+	bottom: 1.5px;
 }
 
-/* "add to dictionary" */
+/* "add to dictionary" & vale plugin */
 .menu svg.stacked-levels > path { display: none }
+svg.check-small > path { display: none }
 
+svg.check-small,
 .menu svg.stacked-levels {
 	background-color: currentColor;
-	margin-bottom: 1px;
 	-webkit-mask-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' width='1em' height='1em' preserveAspectRatio='xMidYMid meet' viewBox='0 0 16 16'%3e%3cg fill='currentColor'%3e%3cpath fill-rule='evenodd' clip-rule='evenodd' d='M0 11h1v2h14v-2h1v3H0v-3z'/%3e%3cpath d='M6.84 11h-.88v-.86h-.022c-.383.66-.947.989-1.692.989c-.548 0-.977-.145-1.289-.435c-.308-.29-.462-.675-.462-1.155c0-1.028.605-1.626 1.816-1.794l1.649-.23c0-.935-.378-1.403-1.134-1.403c-.662 0-1.26.226-1.794.677v-.902c.541-.344 1.164-.516 1.87-.516c1.292 0 1.938.684 1.938 2.052V11zm-.88-2.782L4.633 8.4c-.408.058-.716.16-.924.307c-.208.143-.311.399-.311.768c0 .268.095.488.284.66c.194.168.45.253.768.253a1.41 1.41 0 0 0 1.08-.457c.286-.308.43-.696.43-1.165v-.548z'/%3e%3cpath d='M9.348 10.205h-.022V11h-.88V2.857h.88v3.61h.021c.434-.73 1.068-1.096 1.902-1.096c.705 0 1.257.247 1.654.741c.401.49.602 1.15.602 1.977c0 .92-.224 1.658-.672 2.213c-.447.551-1.06.827-1.837.827c-.726 0-1.276-.308-1.649-.924zm-.022-2.218v.768c0 .455.147.841.44 1.16c.298.315.674.473 1.128.473c.534 0 .951-.204 1.252-.613c.304-.408.456-.975.456-1.702c0-.613-.141-1.092-.424-1.44c-.283-.347-.666-.52-1.15-.52c-.511 0-.923.178-1.235.536c-.311.355-.467.8-.467 1.338z'/%3e%3c/g%3e%3c/svg%3e");
+}
+
+.menu svg.stacked-levels {
+	margin-bottom: 1px;
+}
+
+.workspace-tab-header-inner-icon svg.check-small {
+	position: relative;
+	right: -2px;
+	transform: scale(1.1);
 }
 
 /* ───────────────────────────────────────────────────
@@ -2779,7 +2790,7 @@ body .workspace-leaf-resize-handle:active {
 
 /* positioning fixes for close & clear buttons */
 .community-plugin-search .search-input-clear-button {
-	margin-right: 0.9em;
+	margin-right: 8px;
 }
 
 .community-plugin-search .setting-item .setting-item-info {
@@ -2914,8 +2925,31 @@ body .workspace-leaf-resize-handle:active {
 	margin-bottom: 10px;
 }
 
-.community-plugin-info p > button {
+.community-plugin-info button {
 	margin-right: 18px;
+}
+
+.modal.modal.mod-community-plugin .community-plugin-info button:last-child {
+	height: 2.1rem;
+
+	position: relative;
+	top: 0.5px;
+
+	padding-right: 3px;
+	padding-left: 2px;
+
+	font-size: 0;
+}
+
+.modal.modal.mod-community-plugin .community-plugin-info button:last-child::BEFORE {
+	content: "link";
+
+	position: relative;
+	top: 6.5px;
+	left: 5px;
+
+	font-family: var(--icon-font);
+	font-size: 1.5rem;
 }
 
 .community-plugin-info h2,
@@ -3294,9 +3328,40 @@ body > div.app-container .view-content > div > .markdown-preview-view {
 /* <<< YAML Frontmatter */
 
 /* YAML-Header in Edit Mode */
-.cm-hmd-frontmatter {
+body > .app-container .cm-s-obsidian .cm-hmd-frontmatter.cm-string,
+body > .app-container .cm-s-obsidian .cm-hmd-frontmatter.cm-number,
+body > .app-container .cm-s-obsidian .cm-hmd-frontmatter.cm-atom,
+body > .app-container .cm-s-obsidian .cm-hmd-frontmatter.cm-meta,
+body > .app-container .cm-s-obsidian .cm-hmd-frontmatter {
 	color: var(--text-muted);
 	font-size: 0.9em;
+}
+
+/* harmonize with styling of Horizontal Lines (HR) */
+body > .app-container .cm-s-obsidian .cm-def.cm-hmd-frontmatter {
+	color: var(--text-muted);
+	letter-spacing: 0.2em;
+}
+
+.cm-atom.cm-hmd-frontmatter {
+	font-weight: 600;
+}
+
+/* colored YAML */
+body.colored-yaml .cm-s-obsidian .cm-hmd-frontmatter.cm-atom {
+	color: var(--text-accent);
+}
+
+body.colored-yaml .cm-s-obsidian .cm-hmd-frontmatter {
+	color: var(--alt-accent);
+}
+
+body.colored-yaml .cm-s-obsidian .cm-hmd-frontmatter.cm-number {
+	color: var(--unresolved-link-color);
+}
+
+body.colored-yaml .cm-s-obsidian .cm-hmd-frontmatter.cm-string {
+	color: hsl(54 69% 40%);
 }
 
 /* <<< Metadata Block */
@@ -4771,35 +4836,60 @@ body:not(.no-pandoc-citation-emphasis) .cm-link.cm-quote.cm-hmd-barelink {
 << Footnotes
 ─────────────────────────────────────────────────── */
 
-/* set space above and below horizontal line that separates footnotes */
-.markdown-preview-view .footnotes hr {
+/* preview */
+.footnotes hr {
 	margin-top: 60px;
-	margin-bottom: 10px;
+	margin-bottom: 0;
 }
 
-/* footnotes preview */
-.markdown-preview-section .footnotes {
+.footnotes {
 	font-size: var(--footnote-size);
+	line-height: 1.15em;
 	text-align: justify;
 	hyphens: auto;
 }
 
-.markdown-preview-section .footnotes ol {
-	padding-inline-start: 1.6em;
+.footnotes ol {
+	padding-inline-start: 1em;
 }
 
-/* applies to number-references in the footnote text */
+.footnotes li {
+	padding-bottom: 0.8em;
+}
+
+.footnote-backref {
+	position: relative;
+	top: 4px;
+	padding-left: 5px;
+}
+
+.footnotes li::MARKER {
+	color: var(--text-faint);
+}
+
+/* editor */
+/* number-references in the footnote text */
 span.cm-link.cm-hmd-footnote {
 	color: var(--alt-accent) !important;
 	vertical-align: top;
 }
 
 /* footnotes (at the bottom) */
+.HyperMD-footnote.cm-line,
 .HyperMD-footnote.CodeMirror-line {
-	padding-left: 5px; /* same of paragraphs */
+	padding-top: 0.8em;
+	padding-left: 5px; /* same as paragraphs */
+
+	border-top: var(--thick-muted-border);
+
 	font-size: 85%;
+	line-height: 1.15em;
 	text-align: justify;
 	hyphens: auto;
+}
+
+.HyperMD-footnote + .HyperMD-footnote.cm-line {
+	border-top: none;
 }
 
 /* remove underline which only decreases readability */
@@ -7743,6 +7833,12 @@ settings:
 	 id: normal-checkboxes
 	 title: "Menus: Normal Checkboxes"
 	 description: Use the checkboxes from the default theme.
+	 type: class-toggle
+	 default: false
+  -
+	 id: colored-yaml
+	 title: "YAML: Coloring"
+	 description: Use colored YAML frontmatter (in Edit Mode).
 	 type: class-toggle
 	 default: false
   -
