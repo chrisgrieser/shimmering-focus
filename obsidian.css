@@ -3284,42 +3284,12 @@ body > div.app-container .view-content > div > .markdown-preview-view {
 /* <<< YAML Frontmatter */
 
 /* YAML-Header in Edit Mode */
-body > .app-container .cm-s-obsidian .cm-hmd-frontmatter.cm-string,
-body > .app-container .cm-s-obsidian .cm-hmd-frontmatter.cm-number,
-body > .app-container .cm-s-obsidian .cm-hmd-frontmatter.cm-atom,
-body > .app-container .cm-s-obsidian .cm-hmd-frontmatter.cm-meta,
-body > .app-container .cm-s-obsidian .cm-hmd-frontmatter {
+.cm-hmd-frontmatter {
 	color: var(--text-muted);
 	font-size: 0.9em;
 }
 
-/* harmonize with styling of Horizontal Lines (HR) */
-body > .app-container .cm-s-obsidian .cm-def.cm-hmd-frontmatter {
-	color: var(--text-muted);
-	letter-spacing: 0.2em;
-}
-
-.cm-atom.cm-hmd-frontmatter {
-	font-weight: 600;
-}
-
-/* colored YAML */
-body.colored-yaml .cm-s-obsidian .cm-hmd-frontmatter.cm-atom {
-	color: var(--text-accent);
-}
-
-body.colored-yaml .cm-s-obsidian .cm-hmd-frontmatter {
-	color: var(--alt-accent);
-}
-
-body.colored-yaml .cm-s-obsidian .cm-hmd-frontmatter.cm-number {
-	color: var(--unresolved-link-color);
-}
-
-body.colored-yaml .cm-s-obsidian .cm-hmd-frontmatter.cm-string {
-	color: hsl(54 69% 40%);
-}
-
+/* <<< Metadata Block */
 body .frontmatter-container .frontmatter-container-header {
 	border-bottom: var(--thin-border);
 	font-family: var(--smallcap-font);
@@ -3328,7 +3298,6 @@ body .frontmatter-container .frontmatter-container-header {
 	text-transform: capitalize;
 }
 
-/* <<< Metadata Block */
 .markdown-preview-view .frontmatter-container {
 	color: var(--extra-contrast);
 	background: var(--bg2);
@@ -3852,12 +3821,13 @@ body:not(.no-alternating-header-italics) .markdown-preview-view h6 {
 	text-decoration: underline;
 }
 
-/* edit mode */
-.cm-line.HyperMD-quote {
+/* edit mode & live preview */
+.HyperMD-quote,
+.markdown-source-view.mod-cm6 .cm-line.HyperMD-quote {
 	background-color: var(--bg2);
 	padding: 0.4em 0.8em 0.5em 0;
-	border-right: var(--basic-border);
-	border-left: var(--basic-border);
+	border-right: var(--thick-border);
+	border-left: var(--thick-border);
 	border-radius: var(--roundish);
 }
 
@@ -3872,9 +3842,9 @@ body:not(.no-alternating-header-italics) .markdown-preview-view h6 {
 }
 
 /* the ">" */
-body > .app-container .cm-formatting.cm-formatting-quote {
+.cm-formatting.cm-formatting-quote {
 	font-weight: 900;
-	font-style: unset;
+	font-style: normal;
 }
 
 /* style links in blockquotes, e.g. quote sources */
@@ -3888,17 +3858,18 @@ body > .app-container .cm-formatting.cm-formatting-quote {
 }
 
 /* Preview Mode */
-body > .app-container .markdown-preview-view blockquote {
+.markdown-preview-view blockquote {
 	color: var(--extra-contrast);
 	background-color: var(--bg2);
 
 	padding: 0.3em 0.7em 0.4em;
 	margin: 1.5em 0 1.5em 2em;
 
-	border: var(--basic-border);
+	border-top: none;
+	border-right: var(--thick-border);
+	border-bottom: none;
+	border-left: var(--thick-border);
 	border-radius: var(--roundish);
-
-	hyphens: auto;
 }
 
 /* option for normal size */
@@ -4791,16 +4762,13 @@ span.cm-link.cm-hmd-footnote {
 << Horizontal line (hr)
 ─────────────────────────────────────────────────── */
 
-/* increased readability in edit mode */
 .cm-s-obsidian span.cm-hr {
 	color: var(--text-muted);
-	letter-spacing: 0.1em;
 }
 
-/* increased readability in preview mode */
-body > .app-container .markdown-preview-view div hr {
+.markdown-preview-view hr {
 	border-top: none;
-	border-bottom: 3px solid var(--hr-line-gray);
+	border-bottom: var(--thick-muted-border);
 }
 
 /* ───────────────────────────────────────────────────
@@ -7698,12 +7666,6 @@ settings:
 	 id: normal-checkboxes
 	 title: "Menus: Normal Checkboxes"
 	 description: Use the checkboxes from the default theme.
-	 type: class-toggle
-	 default: false
-  -
-	 id: colored-yaml
-	 title: "YAML: Coloring"
-	 description: Use colored YAML frontmatter (in Edit Mode).
 	 type: class-toggle
 	 default: false
   -

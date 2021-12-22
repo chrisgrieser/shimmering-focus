@@ -1,3 +1,4 @@
+- 2021-12-22	block qupotes fixed for live preview
 - 2021-12-22	blockquotes
 - 2021-12-22	blockquote fixes
 - 2021-12-22	kanban improvements
