@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 1.415
+Version 1.416
 https://github.com/chrisgrieser/shimmering-focus/
 MIT License
 ─────────────────────────────────────────────────── */
@@ -4883,8 +4883,7 @@ span.cm-link.cm-hmd-footnote {
 /* footnotes (at the bottom) */
 .HyperMD-footnote.cm-line,
 .HyperMD-footnote.CodeMirror-line {
-	padding-top: 0.8em;
-	padding-left: 5px; /* same as paragraphs */
+	padding: 0.4em 5px;
 
 	border-top: var(--thick-muted-border);
 
@@ -6245,8 +6244,8 @@ body.angular-shapes .kanban-plugin input[type="checkbox"] {
 	border-radius: var(--roundish);
 }
 
-body:not(.no-alternating-rows) #draft-list li:nth-child(even) .draft-container,
-body:not(.no-alternating-rows) #scene-list li:nth-child(even) .scene-container {
+body:not(.no-alternating-rows) li:nth-child(even) .draft-container,
+body:not(.no-alternating-rows) li:nth-child(even) .scene-container {
 	background-color: var(--a-row);
 }
 

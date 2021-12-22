@@ -1,3 +1,4 @@
+- 2021-12-23	minor
 - 2021-12-23	more longform improvements
 - 2021-12-22	longform improvements
 - 2021-12-22	footnotes
