@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 1.405
+Version 1.406
 https://github.com/chrisgrieser/shimmering-focus/
 MIT License
 ─────────────────────────────────────────────────── */
@@ -269,12 +269,12 @@ the .create-ToC.sh.
 /* colors for longform projects */
 .theme-light:not(.longform-no-bg) .longform-leaf {
 	--light-hue: 20;
-	--light-sat: 5%;
+	--light-sat: 10%;
 }
 
 .theme-dark:not(.longform-no-bg) .longform-leaf {
-	--dark-hue: 270;
-	--dark-sat: 5%;
+	--dark-hue: 220;
+	--dark-sat: 20%;
 }
 
 .theme-light .longform-leaf,
@@ -498,7 +498,7 @@ body.theme-dark {
 	--monospace-font-size: 0.9rem;
 
 	--longform-font: "Crimson Pro";
-	--longform-font-size: 115%;
+	--longform-font-size: 1.1rem;
 
 	--sidebar-font-family: "iA Writer Quattro V";
 	--sidebar-font-size: 0.85rem;
@@ -3293,7 +3293,10 @@ body > div.app-container .view-content > div > .markdown-preview-view {
 
 /* <<< Metadata Block */
 body .frontmatter-container .frontmatter-container-header {
+	margin-bottom: 5px;
+
 	border-bottom: var(--thin-border);
+
 	font-family: var(--smallcap-font);
 	font-size: 0.9em;
 	font-weight: 400;
@@ -3310,6 +3313,11 @@ body .frontmatter-container .frontmatter-container-header {
 
 .markdown-preview-view .frontmatter-container-header:hover {
 	color: var(--alt-accent);
+}
+
+.frontmatter-container .frontmatter-section {
+	margin-top: 3px;
+	margin-bottom: 3px;
 }
 
 .frontmatter-section-label {
@@ -3991,6 +3999,16 @@ body.no-alternating-rows > .app-container table > tbody > tr > td {
 	border-top: var(--table-border);
 }
 
+/* CM6: Live Preview */
+.mod-cm6 table th,
+.mod-cm6 table td {
+	padding: 4px 10px;
+}
+
+.cm-s-obsidian.mod-cm6 table th {
+	font-size: 1.05em;
+}
+
 /* ───────────────────────────────────────────────────
 << Code Blocks & Inline Code
 ─────────────────────────────────────────────────── */
@@ -4126,16 +4144,15 @@ pre[class~="language-as"]::AFTER { content: "AppleScript"; }
 
 /* fix for the buggy selection of inline text
 https://forum.obsidian.md/t/inline-code-occludes-text-selection-and-vim-cursor/11552/10 */
-.theme-dark .cm-inline-code {
+.mods-cm5 .theme-dark .cm-inline-code {
 	background-color: rgb(0 0 0 / 20%) !important;
 }
 
-.theme-light .cm-inline-code {
+.mods-cm5 .theme-light .cm-inline-code {
 	background-color: rgb(0 0 0 / 5%) !important;
 }
 
-/* copy code button */
-
+/* copy & edit code button */
 button.copy-code-button {
 	z-index: 100;
 
@@ -4151,7 +4168,15 @@ button.copy-code-button {
 	font-size: 0;
 }
 
+.mod-cm6 .cm-preview-code-block .edit-block-button {
+	color: var(--extra-contrast);
+	background-color: var(--bg3);
+	border: var(--thin-border);
+}
+
+.mod-cm6 .cm-preview-code-block .edit-block-button:hover,
 button.copy-code-button:hover {
+	color: var(--button-hover-text);
 	background-color: var(--interactive-hover-bg) !important;
 }
 
@@ -4159,6 +4184,11 @@ button.copy-code-button::BEFORE {
 	content: "content_copy";
 	font-family: var(--icon-font);
 	font-size: 0.8rem;
+}
+
+/* CM6: embedded code block */
+.markdown-source-view.mod-cm6 .cm-embed-block:hover {
+	border: var(--basic-border);
 }
 
 /* ───────────────────────────────────────────────────
@@ -4539,14 +4569,19 @@ body > .app-container span.cm-tag {
 	color: var(--finished-task);
 }
 
+.mod-cm5.markdown-preview-view ul > li.task-list-item {
+	padding-left: 5px;
+	text-indent: -1.9em;
+}
+
 /* preview mode */
 /* https://forum.obsidian.md/t/meta-post-common-css-hacks/1978/34 */
 input[type="checkbox"] {
-	filter: unset !important; /* removes hue filter */
+	filter: unset; /* removes hue filter */
 	cursor: pointer;
 
 	padding: 1px;
-	margin-top: 2px;
+	margin: 6px 3px 0 0;
 
 	border: 2px solid var(--hr-line-gray);
 	border-radius: var(--round);
@@ -4615,11 +4650,6 @@ body > div.app-container .markdown-preview-view ul > li.task-list-item.is-checke
 body > div.app-container .markdown-preview-view ol > li.task-list-item.is-checked {
 	margin-bottom: 0;
 	font-weight: unset; /* stylelint-disable-line font-weight-notation */
-}
-
-.markdown-preview-view ul > li.task-list-item {
-	padding-left: 5px;
-	text-indent: -1.9em;
 }
 
 /* ───────────────────────────────────────────────────
@@ -5447,6 +5477,8 @@ body .popover {
 	background-color: var(--bg2);
 	padding-top: 10px;
 	padding-bottom: 10px;
+	border-bottom-left-radius: calc(var(--roundish) * 2.5);
+	border-top-left-radius: calc(var(--roundish) * 2.5);
 }
 
 .sync-history-content-container {
@@ -5457,8 +5489,8 @@ body .popover {
 	padding: 10px;
 
 	border-left: var(--muted-border);
-	border-top-right-radius: var(--roundish);
-	border-bottom-right-radius: var(--roundish);
+	border-top-right-radius: calc(var(--roundish) * 2.5);
+	border-bottom-right-radius: calc(var(--roundish) * 2.5);
 }
 
 .modal.mod-sync-history textarea:focus {
@@ -6236,12 +6268,19 @@ select[name~="projects"] {
 /* <<< Longform Editor */
 /* https://github.com/kevboh/longform#scene-only-styling */
 
+/* CM5 */
 .longform-leaf .markdown-preview-view,
 .longform-leaf .cm-s-obsidian {
 	font-family: var(--longform-font);
 	font-size: var(--longform-font-size);
 	line-height: 1.35;
 	letter-spacing: 0 !important;
+}
+
+.longform-leaf .cm-s-obsidian.mod-cm6 .cm-scroller {
+	font-family: var(--longform-font);
+	font-size: var(--longform-font-size);
+	line-height: 1.35;
 }
 
 body:not(.longform-left-aligned) .longform-leaf span:not(.cm-header) {
@@ -8020,11 +8059,11 @@ settings:
 	 id: longform-font-size
 	 title: 'Longform: Font Size'
 	 type: variable-number-slider
-	 default: 115
-	 min: 70
-	 max: 130
-	 step: 2
-	 format: '%'
+	 default: 1.1
+	 min: 0.7
+	 max: 1.7
+	 step: 0.05
+	 format: 'rem'
   -
 	 id: longform-left-aligned
 	 title: 'Longform: Left-aligned text'
