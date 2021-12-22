@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 1.408
+Version 1.409
 https://github.com/chrisgrieser/shimmering-focus/
 MIT License
 ─────────────────────────────────────────────────── */
@@ -1193,6 +1193,10 @@ body .app-container .workspace-ribbon.is-collapsed {
 
 	word-wrap: break-word;
 	--tooltip-arrow: var(--tooltip-arrow-length) solid var(--notice-bg);
+}
+
+body:not(.angular-shapes) .tooltip {
+	padding-top: 3px;
 }
 
 .tooltip .tooltip-arrow {
