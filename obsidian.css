@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 1.404
+Version 1.405
 https://github.com/chrisgrieser/shimmering-focus/
 MIT License
 ─────────────────────────────────────────────────── */
@@ -1836,8 +1836,10 @@ div.menu-item {
 }
 
 .theme-light .menu div.menu-item.selected,
-.theme-light .menu div.menu-item:hover {
-	background-color: var(--bg1);
+.theme-light .menu div.menu-item:hover,
+.theme-dark .menu div.menu-item.selected,
+.theme-dark .menu div.menu-item:hover {
+	background-color: var(--bg2);
 }
 
 .menu-item-icon {
