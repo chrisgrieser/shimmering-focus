@@ -1,4 +1,4 @@
-- 2021-12-22	minor
+- 2021-12-22	nicer external link icon
 - 2021-12-21	update spellcheck info
 - 2021-12-21	more Obsidian 0.13+ fixes
 - 2021-12-21	some fixes + URL folding in CM6 source mode

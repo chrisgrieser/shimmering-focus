@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 1.396
+Version 1.397
 https://github.com/chrisgrieser/shimmering-focus/
 MIT License
 ─────────────────────────────────────────────────── */
@@ -904,6 +904,10 @@ svg.up-and-down-arrows {
 	-webkit-mask-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' width='1.1em' height='1.1em' preserveAspectRatio='xMidYMid meet' viewBox='0 0 24 24'%3e%3cpath d='M8 16H4l6 6V2H8zm6-11v17h2V8h4l-6-6z' fill='currentColor'/%3e%3c/svg%3e");
 }
 
+.setting-item-control button svg {
+	margin-top: 0;
+}
+
 /* "add to dictionary" */
 .menu svg.stacked-levels > path { display: none }
 
@@ -1370,7 +1374,7 @@ body:not(.default-statusbar) .status-bar {
 .status-bar::AFTER {
 	color: var(--extra-contrast);
 	padding: 0;
-	margin-left: 10px;
+	margin-left: 13px;
 }
 
 .status-bar-item:first-child {
@@ -2674,7 +2678,7 @@ body .workspace-leaf-resize-handle:active {
 .modal.mod-community-plugin .community-plugin-search .setting-item-control button {
 	color: var(--extra-contrast);
 	background-color: var(--bg2);
-	margin-left: 0;
+	margin-left: 2px;
 	border-color: var(--basic-border-color);
 }
 
@@ -3132,7 +3136,6 @@ body:not(.less-heading-letter-spacing) .modal.mod-community-theme .modal-title {
 .modal.mod-community-theme .community-theme-filters-container .setting-item-control button {
 	height: 30px;
 	color: var(--extra-contrast);
-	stroke-width: 3px;
 	background-color: var(--bg2);
 	border-color: var(--basic-border-color);
 }
@@ -4287,14 +4290,17 @@ body a.internal-link.is-unresolved:hover {
 	text-decoration: none;
 }
 
-/* CM6 Source Mode: hide external URLs */
+/* <<< fold external URLs (CM6 Source Mode) */
 body:not(.show-urls) .cm-line:not(.cm-active) .cm-string.cm-url:not(.cm-formatting) {
 	font-size: 0;
 }
 
 body:not(.show-urls) .cm-line:not(.cm-active) .cm-string.cm-url:not(.cm-formatting)::AFTER {
-	content: "🔗";
-	font-size: 1rem;
+	content: "link";
+	position: relative;
+	top: 2px;
+	font-family: var(--icon-font);
+	font-size: 0.9rem;
 }
 
 body:not(.show-urls) .cm-line:not(.cm-active) .cm-url {
@@ -7403,6 +7409,7 @@ a.zoom-plugin-title:hover {
 << Cursor Location
 ─────────────────────────────────────────────────── */
 
+/* do not add between-items-margin when empty */
 .status-bar-item.plugin-obsidian-cursor-location-plugin:empty + .status-bar-item {
 	margin-left: 0;
 }
@@ -7413,6 +7420,23 @@ a.zoom-plugin-title:hover {
 
 .widget-icon:hover {
 	fill: var(--alt-accent) !important;
+}
+
+/* ───────────────────────────────────────────────────
+<< Show Current File Path
+─────────────────────────────────────────────────── */
+
+.status-bar-item.plugin-obsidian-show-file-path {
+	position: relative;
+	bottom: 1px;
+}
+
+.status-bar-item.plugin-obsidian-show-file-path::BEFORE {
+	content: "folder";
+	position: relative;
+	top: 2px;
+	margin-right: 3px;
+	font-family: var(--icon-font);
 }
 
 /* ───────────────────────────────────────────────────
@@ -8061,7 +8085,7 @@ settings:
   -
 	 id: annotation-tags-off
 	 title: 'Turn off "Annotation Tags"'
-	 description: '"Annotation Tags" will visually emphasize some tags that are commonly used for academic reading.'
+	 description: '"Annotation Tags" are about a dozen of tags for academic reading, e.g. "#definition" that are visually emphasized.'
 	 type: class-toggle
 	 default: false
   -
