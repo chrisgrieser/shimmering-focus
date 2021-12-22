@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 1.413
+Version 1.414
 https://github.com/chrisgrieser/shimmering-focus/
 MIT License
 ─────────────────────────────────────────────────── */
@@ -981,13 +981,19 @@ svg.longform {
 	-webkit-mask-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' width='1.1em' height='1.1em' preserveAspectRatio='xMidYMid meet' viewBox='0 0 24 24'%3e%3cpath d='M3 2h2v20H3zm16 0H6v20h13c1.103 0 2-.897 2-2V4c0-1.103-.897-2-2-2zm-1 10H9v-2h9v2zm0-4H9V6h9v2z' fill='currentColor'/%3e%3c/svg%3e");
 }
 
+/* file info */
 .workspace-tab-header[aria-label="File Info View"] svg.document > path { display: none }
 
 .side-dock-ribbon-action svg.info,
 .workspace-tab-header[aria-label="File Info View"] svg.document {
+	position: relative;
+	right: 0.5px;
+	bottom: 1px;
+
 	background-color: currentColor;
-	transform: scale(1.25);
-	margin-bottom: 2px;
+
+	transform: scale(1.2);
+
 	-webkit-mask-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' width='1.2em' height='1.2em' preserveAspectRatio='xMidYMid meet' viewBox='0 0 512 512'%3e%3cpath fill='none' stroke='currentColor' stroke-linecap='round' stroke-linejoin='round' stroke-width='40' d='M196 220h64v172'/%3e%3cpath fill='none' stroke='currentColor' stroke-linecap='round' stroke-miterlimit='10' stroke-width='40' d='M187 396h138'/%3e%3cpath d='M256 160a32 32 0 1 1 32-32a32 32 0 0 1-32 32z' fill='currentColor'/%3e%3c/svg%3e");
 }
 
@@ -6201,7 +6207,7 @@ body.angular-shapes .kanban-plugin input[type="checkbox"] {
 }
 
 .workspace-leaf-content[data-type="VIEW_TYPE_LONGFORM_EXPLORER"] .view-content {
-	padding: 7px 4px;
+	padding: 7px 4px 30px;
 }
 
 .draft-container.selected,
@@ -6226,6 +6232,7 @@ body.angular-shapes .kanban-plugin input[type="checkbox"] {
 
 	padding: 2px;
 
+	border: none;
 	border-radius: var(--roundish);
 
 	line-height: 1.2em;
@@ -6234,8 +6241,8 @@ body.angular-shapes .kanban-plugin input[type="checkbox"] {
 
 #draft-list li,
 #scene-list li {
-	padding: 1px;
-	margin-bottom: 1px;
+	padding: 2px 1px;
+	border: none;
 	border-radius: var(--roundish);
 }
 
@@ -6250,6 +6257,8 @@ body:not(.no-alternating-rows) #scene-list li:nth-child(even) {
 }
 
 /* dragging */
+#draft-list .draft-container.dragging,
+#draft-list .draft-container:active,
 #scene-list .scene-container.dragging,
 #scene-list .scene-container:active {
 	color: var(--text-accent);
@@ -6260,7 +6269,6 @@ body:not(.no-alternating-rows) #scene-list li:nth-child(even) {
 #draft-list .sortable-chosen,
 #scene-list .sortable-chosen {
 	background-color: none;
-	padding: 0;
 	border: none;
 	border-radius: var(--roundish);
 }
@@ -6347,9 +6355,12 @@ input#new-scene {
 	font-size: 0.8em;
 }
 
-#select-projects select {
+div#select-projects select {
+	color: var(--text-faint);
+	font-family: var(--smallcap-font);
+	font-size: 1.1em;
 	font-weight: 800;
-	text-rendering: geometricPrecision;
+	letter-spacing: 0.5px;
 }
 
 #project-picker select {
@@ -7270,7 +7281,7 @@ img.link-favicon {
 }
 
 .grayscale-favicons .link-favicon {
-	filter: grayscale(100%);
+	filter: grayscale(85%);
 }
 
 /* ───────────────────────────────────────────────────
@@ -7288,14 +7299,22 @@ body .tlfFileInfoButton {
 }
 
 .workspace-leaf-content[data-type="tlfItemView"] {
-	padding: 2px 5px;
+	padding: 2px 7px;
+}
+
+.workspace-leaf-content[data-type="tlfItemView"] .view-content {
+	padding: 0;
 }
 
 body .tlfFileInfoTextArea,
 body .tlfFileInfoButton,
-body .tlfFileInfoLabel,
 body .tlfFileInfoValue,
 body .tlfFileInfoValueNumber {
+	font-size: var(--sidebar-font-size);
+}
+
+body .tlfFileInfoLabel {
+	font-family: var(--smallcap-font);
 	font-size: var(--sidebar-font-size);
 }
 
@@ -7306,7 +7325,8 @@ body .tlfFileInfoLabel {
 }
 
 body .tlfFileInfoTextArea {
-	height: 18em;
+	height: 17em;
+	border-radius: var(--roundish);
 }
 
 .theme-light .tlfFileInfoTextArea {
