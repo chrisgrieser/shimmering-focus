@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 1.397
+Version 1.398
 https://github.com/chrisgrieser/shimmering-focus/
 MIT License
 ─────────────────────────────────────────────────── */
@@ -4212,6 +4212,7 @@ body:not(.no-ul-relationship-lines) .cm-hmd-list-indent {
 	position: relative;
 }
 
+body:not(.no-ul-relationship-lines) .cm-line .cm-hmd-list-indent::BEFORE,
 body:not(.no-ul-relationship-lines) .CodeMirror-line .cm-hmd-list-indent::BEFORE {
 	display: block;
 	content: "";
@@ -4221,7 +4222,7 @@ body:not(.no-ul-relationship-lines) .CodeMirror-line .cm-hmd-list-indent::BEFORE
 
 	position: absolute;
 	top: -1.6em;
-	left: 0;
+	left: 1.5px;
 
 	background-image: linear-gradient(to right, var(--text-faint) 1px, transparent 1px);
 
