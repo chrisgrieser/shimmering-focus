@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 1.400
+Version 1.401
 https://github.com/chrisgrieser/shimmering-focus/
 MIT License
 ─────────────────────────────────────────────────── */
@@ -3846,27 +3846,27 @@ body > .app-container .cm-quote {
 }
 
 body > .app-container .HyperMD-quote {
+	background-color: var(--bg2);
+
 	padding-top: 0.4em;
 	padding-right: 0.8em;
 	padding-bottom: 0.5em;
 
-	border-right: var(--muted-border);
-	border-left: var(--muted-border);
-	border-radius: var(--roundish);
+	border-right: var(--basic-border);
+	border-left: var(--basic-border);
 }
 
-body > .app-container .HyperMD-quote ~ .HyperMD-quote {
-	border-top: none;
-	border-bottom: none;
+.cm-line.cm-active.HyperMD-quote {
+	border-radius: 0;
 }
 
 /* fixes color when text is selected */
 /* https://forum.obsidian.md/t/inline-code-occludes-text-selection-and-vim-cursor/11552/10?u=pseudometa */
-.theme-light .HyperMD-quote {
+.theme-light .mod-cm5 .HyperMD-quote {
 	background-color: rgb(0 0 0 / 3%);
 }
 
-.theme-dark .HyperMD-quote {
+.theme-dark .mod-cm5 .HyperMD-quote {
 	background-color: rgb(0 0 0 / 25%);
 }
 
