@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 1.432
+Version 1.433
 https://github.com/chrisgrieser/shimmering-focus/
 MIT License
 ─────────────────────────────────────────────────── */
@@ -4071,7 +4071,7 @@ body.no-alternating-rows > .app-container table > tbody > tr > td {
 	text-shadow: none;
 }
 
-/* inline code */
+/* <<< inline code */
 body {
 	--slight-code-roundish: calc(var(--roundish) * 0.8);
 }
@@ -4092,7 +4092,11 @@ body .app-container .markdown-source-view .cm-contentContainer .cm-line .cm-inli
 	border-radius: 0 var(--slight-code-roundish) var(--slight-code-roundish) 0;
 }
 
-/* code block */
+*:not(.cm-formatting-code.cm-inline-code) + .cm-inline-code:not(.cm-formatting-code) {
+	border-radius: var(--slight-code-roundish);
+}
+
+/* <<< code blocks */
 .markdown-preview-view,
 .HyperMD-codeblock-bg {
 	--codeblock-border: var(--muted-border);
