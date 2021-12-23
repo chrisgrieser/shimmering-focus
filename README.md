@@ -96,7 +96,7 @@ Using the [Style Settings Plugin](https://github.com/mgmeyers/obsidian-style-set
 
 ### Further Features
 - Relationship lines in lists & File Explorer
-- Indicates Trailing Whitespace, when there is more than one space (Obsidian 0.13+ / new Editor only).
+- Indicates trailing white spaces when there is more than one space. This is useful for the Markdown [Two Space Rule](https://daringfireball.net/projects/markdown/syntax#p). (Obsidian 0.13+ / new Editor only).
 - Active line highlighting
 - Customizable Brightness of the Theme
 - Dark Mode for PDFs (when using the theme in dark mode)
