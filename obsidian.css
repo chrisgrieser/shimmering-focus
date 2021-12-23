@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 1.426
+Version 1.427
 https://github.com/chrisgrieser/shimmering-focus/
 MIT License
 ─────────────────────────────────────────────────── */
@@ -4032,7 +4032,7 @@ tr {
 }
 
 /* alternating rows */
-body:not(.no-alternating-rows) .markdown-preview-view tr:nth-child(even) {
+body:not(.no-alternating-rows) tr:nth-child(even) {
 	background-color: var(--b-row);
 }
 
@@ -4417,17 +4417,17 @@ body:not(.annotation-tags-off) .tag[href="#definition"],
 body:not(.annotation-tags-off) .tag[href="#method"],
 body:not(.annotation-tags-off) .tag[href="#important"],
 body:not(.annotation-tags-off) .tag[href="#quote"],
-body:not(.annotation-tags-off) .cm-s-obsidian .CodeMirror-line span.cm-tag-quote,
-body:not(.annotation-tags-off) .cm-s-obsidian .CodeMirror-line span.cm-tag-method,
-body:not(.annotation-tags-off) .cm-s-obsidian .CodeMirror-line span.cm-tag-disagree,
-body:not(.annotation-tags-off) .cm-s-obsidian .CodeMirror-line span.cm-tag-gap,
-body:not(.annotation-tags-off) .cm-s-obsidian .CodeMirror-line span.cm-tag-summary,
-body:not(.annotation-tags-off) .cm-s-obsidian .CodeMirror-line span.cm-tag-definition,
-body:not(.annotation-tags-off) .cm-s-obsidian .CodeMirror-line span.cm-tag-question,
-body:not(.annotation-tags-off) .cm-s-obsidian .CodeMirror-line span.cm-tag-main,
-body:not(.annotation-tags-off) .cm-s-obsidian .CodeMirror-line span.cm-tag-agree,
-body:not(.annotation-tags-off) .cm-s-obsidian .CodeMirror-line span.cm-tag-important,
-body:not(.annotation-tags-off) .cm-s-obsidian .CodeMirror-line span.cm-tag-example {
+body:not(.annotation-tags-off) .cm-s-obsidian .cm-line span.cm-tag-quote,
+body:not(.annotation-tags-off) .cm-s-obsidian .cm-line span.cm-tag-method,
+body:not(.annotation-tags-off) .cm-s-obsidian .cm-line span.cm-tag-disagree,
+body:not(.annotation-tags-off) .cm-s-obsidian .cm-line span.cm-tag-gap,
+body:not(.annotation-tags-off) .cm-s-obsidian .cm-line span.cm-tag-summary,
+body:not(.annotation-tags-off) .cm-s-obsidian .cm-line span.cm-tag-definition,
+body:not(.annotation-tags-off) .cm-s-obsidian .cm-line span.cm-tag-question,
+body:not(.annotation-tags-off) .cm-s-obsidian .cm-line span.cm-tag-main,
+body:not(.annotation-tags-off) .cm-s-obsidian .cm-line span.cm-tag-agree,
+body:not(.annotation-tags-off) .cm-s-obsidian .cm-line span.cm-tag-important,
+body:not(.annotation-tags-off) .cm-s-obsidian .cm-line span.cm-tag-example {
 	color: var(--annotation-tag-font-color) !important;
 
 	padding-right: 8px;
@@ -4446,34 +4446,34 @@ body:not(.annotation-tags-off) .cm-s-obsidian .CodeMirror-line span.cm-tag-examp
 }
 
 /* the "#" */
-body:not(.annotation-tags-off) .cm-s-obsidian .CodeMirror-line .cm-hashtag-begin.cm-tag-quote,
-body:not(.annotation-tags-off) .cm-s-obsidian .CodeMirror-line .cm-hashtag-begin.cm-tag-method,
-body:not(.annotation-tags-off) .cm-s-obsidian .CodeMirror-line .cm-hashtag-begin.cm-tag-disagree,
-body:not(.annotation-tags-off) .cm-s-obsidian .CodeMirror-line .cm-hashtag-begin.cm-tag-gap,
-body:not(.annotation-tags-off) .cm-s-obsidian .CodeMirror-line .cm-hashtag-begin.cm-tag-summary,
-body:not(.annotation-tags-off) .cm-s-obsidian .CodeMirror-line .cm-hashtag-begin.cm-tag-definition,
-body:not(.annotation-tags-off) .cm-s-obsidian .CodeMirror-line .cm-hashtag-begin.cm-tag-question,
-body:not(.annotation-tags-off) .cm-s-obsidian .CodeMirror-line .cm-hashtag-begin.cm-tag-main,
-body:not(.annotation-tags-off) .cm-s-obsidian .CodeMirror-line .cm-hashtag-begin.cm-tag-agree,
-body:not(.annotation-tags-off) .cm-s-obsidian .CodeMirror-line .cm-hashtag-begin.cm-tag-important,
-body:not(.annotation-tags-off) .cm-s-obsidian .CodeMirror-line .cm-hashtag-begin.cm-tag-example {
+body:not(.annotation-tags-off) .cm-s-obsidian .cm-line .cm-hashtag-begin.cm-tag-quote,
+body:not(.annotation-tags-off) .cm-s-obsidian .cm-line .cm-hashtag-begin.cm-tag-method,
+body:not(.annotation-tags-off) .cm-s-obsidian .cm-line .cm-hashtag-begin.cm-tag-disagree,
+body:not(.annotation-tags-off) .cm-s-obsidian .cm-line .cm-hashtag-begin.cm-tag-gap,
+body:not(.annotation-tags-off) .cm-s-obsidian .cm-line .cm-hashtag-begin.cm-tag-summary,
+body:not(.annotation-tags-off) .cm-s-obsidian .cm-line .cm-hashtag-begin.cm-tag-definition,
+body:not(.annotation-tags-off) .cm-s-obsidian .cm-line .cm-hashtag-begin.cm-tag-question,
+body:not(.annotation-tags-off) .cm-s-obsidian .cm-line .cm-hashtag-begin.cm-tag-main,
+body:not(.annotation-tags-off) .cm-s-obsidian .cm-line .cm-hashtag-begin.cm-tag-agree,
+body:not(.annotation-tags-off) .cm-s-obsidian .cm-line .cm-hashtag-begin.cm-tag-important,
+body:not(.annotation-tags-off) .cm-s-obsidian .cm-line .cm-hashtag-begin.cm-tag-example {
 	padding-right: 0;
 	border-top-right-radius: 0;
 	border-bottom-right-radius: 0;
 }
 
 /* the tag text */
-body:not(.annotation-tags-off) .cm-s-obsidian .CodeMirror-line .cm-hashtag-end.cm-tag-quote,
-body:not(.annotation-tags-off) .cm-s-obsidian .CodeMirror-line .cm-hashtag-end.cm-tag-method,
-body:not(.annotation-tags-off) .cm-s-obsidian .CodeMirror-line .cm-hashtag-end.cm-tag-disagree,
-body:not(.annotation-tags-off) .cm-s-obsidian .CodeMirror-line .cm-hashtag-end.cm-tag-gap,
-body:not(.annotation-tags-off) .cm-s-obsidian .CodeMirror-line .cm-hashtag-end.cm-tag-summary,
-body:not(.annotation-tags-off) .cm-s-obsidian .CodeMirror-line .cm-hashtag-end.cm-tag-definition,
-body:not(.annotation-tags-off) .cm-s-obsidian .CodeMirror-line .cm-hashtag-end.cm-tag-question,
-body:not(.annotation-tags-off) .cm-s-obsidian .CodeMirror-line .cm-hashtag-end.cm-tag-main,
-body:not(.annotation-tags-off) .cm-s-obsidian .CodeMirror-line .cm-hashtag-end.cm-tag-agree,
-body:not(.annotation-tags-off) .cm-s-obsidian .CodeMirror-line .cm-hashtag-end.cm-tag-important,
-body:not(.annotation-tags-off) .cm-s-obsidian .CodeMirror-line .cm-hashtag-end.cm-tag-example {
+body:not(.annotation-tags-off) .cm-s-obsidian .cm-line .cm-hashtag-end.cm-tag-quote,
+body:not(.annotation-tags-off) .cm-s-obsidian .cm-line .cm-hashtag-end.cm-tag-method,
+body:not(.annotation-tags-off) .cm-s-obsidian .cm-line .cm-hashtag-end.cm-tag-disagree,
+body:not(.annotation-tags-off) .cm-s-obsidian .cm-line .cm-hashtag-end.cm-tag-gap,
+body:not(.annotation-tags-off) .cm-s-obsidian .cm-line .cm-hashtag-end.cm-tag-summary,
+body:not(.annotation-tags-off) .cm-s-obsidian .cm-line .cm-hashtag-end.cm-tag-definition,
+body:not(.annotation-tags-off) .cm-s-obsidian .cm-line .cm-hashtag-end.cm-tag-question,
+body:not(.annotation-tags-off) .cm-s-obsidian .cm-line .cm-hashtag-end.cm-tag-main,
+body:not(.annotation-tags-off) .cm-s-obsidian .cm-line .cm-hashtag-end.cm-tag-agree,
+body:not(.annotation-tags-off) .cm-s-obsidian .cm-line .cm-hashtag-end.cm-tag-important,
+body:not(.annotation-tags-off) .cm-s-obsidian .cm-line .cm-hashtag-end.cm-tag-example {
 	padding-left: 0;
 	border-bottom-left-radius: 0;
 	border-top-left-radius: 0;
@@ -4695,6 +4695,13 @@ body .markdown-preview-view :not(li[data-task="x"]) > .task-list-item-checkbox:c
 body .markdown-preview-view :not(li[data-task="x"]) p .task-list-item-checkbox:checked::BEFORE {
 	top: 2px;
 	right: 1.5px;
+}
+
+body.check-bg .markdown-source-view.mod-cm6.is-live-preview .task-list-item-checkbox::BEFORE,
+body.check-bg .is-live-preview.markdown-preview-view :not(li[data-task="x"]) > .task-list-item-checkbox:checked::BEFORE,
+body.check-bg .is-live-preview.markdown-preview-view :not(li[data-task="x"]) p .task-list-item-checkbox:checked::BEFORE {
+	top: -3px;
+	right: -2px;
 }
 
 body.check-bg .markdown-source-view.mod-cm6 .task-list-item-checkbox::BEFORE,
