@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 1.433
+Version 1.434
 https://github.com/chrisgrieser/shimmering-focus/
 MIT License
 ─────────────────────────────────────────────────── */
@@ -3508,6 +3508,7 @@ progress[value^="10"]::-WEBKIT-PROGRESS-VALUE { background: hsl(160 92% 70%) }
 
 /* Image Files opened by Obsidian */
 .view-content > .image-container > img {
+	cursor: default;
 	margin-top: 25%;
 }
 
@@ -3571,7 +3572,6 @@ body:not(.left-aligned-embeds) .view-content img:not(.link-favicon) {
 
 	/* Scale with inverse multiplicative to reverse size reduction */
 	transform: scale(calc(100 / var(--image-size)));
-	cursor: zoom-out;
 
 	padding: 0;
 	margin: 0 auto;
