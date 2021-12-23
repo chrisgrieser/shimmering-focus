@@ -1,4 +1,4 @@
-- 2021-12-24	minor
+- 2021-12-24	better bold font & theme file size reduction (by using .woff2)
 - 2021-12-23	fix #68
 - 2021-12-23	fix inline code
 - 2021-12-23	updated spoiler tags to new editor
