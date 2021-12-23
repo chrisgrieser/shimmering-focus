@@ -69,8 +69,8 @@ Type one of the following eight tags (e.g. `#definition`) to get a colored annot
 <img src="https://user-images.githubusercontent.com/73286100/138562271-2f7d3589-d580-49e4-bea6-ca3e3004ab78.gif" alt="Promo Max View" width=60%>
 
 ### Image-related Features
-- Click & hold an image to zoom.
-- Alt-text is automatically used as image caption in Preview Mode.
+- Click & hold an image to zoom (Preview Mode).
+- Alt-text is automatically used as image caption (Preview Mode).
 - Set a default image size with the Style Settings Plugin.
 - You can also use [Max View](#max-view--focus-view) to toggle between reduced and full image sizes.
 
