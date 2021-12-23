@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 1.429
+Version 1.430
 https://github.com/chrisgrieser/shimmering-focus/
 MIT License
 ─────────────────────────────────────────────────── */
@@ -3511,7 +3511,7 @@ progress[value^="10"]::-WEBKIT-PROGRESS-VALUE { background: hsl(160 92% 70%) }
 	margin-top: 25%;
 }
 
-/* Image Alt as Caption */
+/* Image Alt as caption */
 .image-embed[alt]::AFTER {
 	display: block;
 	content: attr(alt);
@@ -3522,7 +3522,9 @@ progress[value^="10"]::-WEBKIT-PROGRESS-VALUE { background: hsl(160 92% 70%) }
 	margin-bottom: 1em;
 
 	font-family: var(--smallcap-font);
-	font-size: 0.8rem;
+	font-size: 0.85rem;
+	font-weight: 500;
+	text-rendering: geometricPrecision;
 }
 
 img:not(.link-favicon) {
@@ -4265,6 +4267,14 @@ body:not(.no-ul-relationship-lines) .markdown-preview-view > div > div > ul {
 	padding-right: 5px;
 }
 
+/* .markdown-source-view.mod-cm6 .cm-content .list-bullet {
+    color: transparent;
+}
+.markdown-source-view.mod-cm6 .cm-content .list-bullet::before {
+    color: var(--text-normal);
+    content: "⦿";
+}
+ */
 /* ───────────────────────────────────────────────────
 << Bullet Point Relationship Lines
 ─────────────────────────────────────────────────── */
@@ -4785,16 +4795,16 @@ span.cm-strong.cm-highlight,
 	--spoiler-bg: hsl(0 0% 93%);
 }
 
-div:not(.CodeMirror-activeline) > .CodeMirror-line .cm-em.cm-strikethrough,
+.cm-line:not(.cm-active) .cm-em.cm-strikethrough,
 em > del {
 	color: var(--spoiler-bg);
 	background-color: var(--spoiler-bg);
-	transition: 400ms ease-in-out;
+	transition: var(--slow-transition);
 	font-style: initial;
 	text-decoration: unset;
 }
 
-.CodeMirror-activeline > .CodeMirror-line .cm-em.cm-strikethrough,
+.cm-active .cm-em.cm-strikethrough,
 em > del:hover,
 .cm-em.cm-strikethrough:hover {
 	background-color: var(--bg3) !important;
