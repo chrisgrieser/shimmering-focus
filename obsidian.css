@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 1.428
+Version 1.429
 https://github.com/chrisgrieser/shimmering-focus/
 MIT License
 ─────────────────────────────────────────────────── */
@@ -4060,46 +4060,49 @@ body.no-alternating-rows > .app-container table > tbody > tr > td {
 /* ───────────────────────────────────────────────────
 << Code Blocks & Inline Code
 ─────────────────────────────────────────────────── */
+/* styling of code in general */
+.cm-s-obsidian .HyperMD-codeblock,
+.markdown-preview-view code,
+.cm-s-obsidian span.cm-inline-code {
+	color: var(--code-color);
+	font-size: var(--monospace-font-size);
+	text-shadow: none;
+}
 
+/* inline code */
+body .app-container .markdown-source-view .cm-contentContainer .cm-line .cm-inline-code,
+.markdown-preview-view *:not(pre) > code {
+	background-color: var(--bg2);
+	padding: 1px 4px;
+	border-radius: calc(var(--roundish) * 0.8);
+}
+
+/* code block */
 .markdown-preview-view,
-.cm-s-obsidian div.HyperMD-codeblock-bg {
+.HyperMD-codeblock-bg {
 	--codeblock-border: var(--muted-border);
 	--codeblock-roundness: calc(var(--roundish) * 1.5);
 }
 
-.cm-s-obsidian .HyperMD-codeblock {
-	line-height: 1.5;
-}
-
-.cm-s-obsidian .HyperMD-codeblock,
-.markdown-preview-view code,
-.cm-s-obsidian span.cm-inline-code {
-	color: var(--code-color) !important;
-	font-size: var(--monospace-font-size);
-}
-
-/* Preview Mode */
-.markdown-preview-view :not(pre) code {
-	background-color: var(--bg2) !important;
-	border-radius: var(--roundish);
-	white-space: pre-wrap !important;
+.code-block-flair, /* live preview */
+.HyperMD-codeblock-end .cm-formatting-code-block,
+.HyperMD-codeblock-begin .cm-formatting-code-block {
+	color: var(--text-muted);
 }
 
 body .markdown-preview-view pre[class*="language-"],
 body .markdown-preview-view pre {
 	background-color: var(--bg2);
-	padding-top: 10px;
-	padding-bottom: 12px;
+	padding: 0;
 	border: var(--codeblock-border);
 	border-radius: var(--codeblock-roundness);
 }
 
-body .markdown-preview-view pre[class*="language-"] code,
-body .markdown-preview-view pre code {
-	text-shadow: none;
+/* Code blocks in Edit Mode */
+.cm-s-obsidian .HyperMD-codeblock {
+	line-height: 1.5em;
 }
 
-/* Code blocks in Edit Mode */
 .cm-s-obsidian div.HyperMD-codeblock-begin-bg {
 	background-color: var(--bg3);
 	border: var(--codeblock-border);
@@ -4108,7 +4111,7 @@ body .markdown-preview-view pre code {
 	border-top-left-radius: var(--codeblock-roundness);
 }
 
-div.HyperMD-codeblock-end-bg {
+.cm-s-obsidian div.HyperMD-codeblock-end-bg {
 	border-bottom: var(--codeblock-border);
 	border-bottom-right-radius: var(--codeblock-roundness);
 	border-bottom-left-radius: var(--codeblock-roundness);
