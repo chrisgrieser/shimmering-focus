@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 1.424
+Version 1.425
 https://github.com/chrisgrieser/shimmering-focus/
 MIT License
 ─────────────────────────────────────────────────── */
@@ -3412,8 +3412,8 @@ body .frontmatter-container .frontmatter-container-header {
 }
 
 .markdown-preview-view .collapse-indicator .right-triangle {
-	height: 0.5em;
-	width: 0.5em;
+	height: 0.35em;
+	width: 0.35em;
 }
 
 .cm-s-obsidian.mod-cm6 .collapse-indicator .right-triangle {
@@ -3511,8 +3511,7 @@ progress[value^="10"]::-WEBKIT-PROGRESS-VALUE { background: hsl(160 92% 70%) }
 	margin-top: 25%;
 }
 
-/* Image Alt as Caption in Preview Mode */
-/* right now only works in reading mode */
+/* Image Alt as Caption */
 .image-embed[alt]::AFTER {
 	display: block;
 	content: attr(alt);
@@ -3520,7 +3519,7 @@ progress[value^="10"]::-WEBKIT-PROGRESS-VALUE { background: hsl(160 92% 70%) }
 	color: var(--text-muted);
 
 	padding-top: 2px;
-	margin-bottom: 0.9em;
+	margin-bottom: 1em;
 
 	font-family: var(--smallcap-font);
 	font-size: 0.8rem;
@@ -3529,13 +3528,12 @@ progress[value^="10"]::-WEBKIT-PROGRESS-VALUE { background: hsl(160 92% 70%) }
 img:not(.link-favicon) {
 	display: block;
 	cursor: zoom-in;
-	margin-top: 0.9em;
+	margin-top: 1em;
 	border-radius: var(--roundish);
 }
 
 .is-live-preview img {
 	cursor: pointer;
-	margin-bottom: 0.9em;
 }
 
 body:not(.disable-image-borders) .view-content img:not(.link-favicon) {
@@ -4057,6 +4055,11 @@ body.no-alternating-rows > .app-container table > tbody > tr > td {
 
 .cm-s-obsidian.mod-cm6 table th {
 	font-size: 1.05em;
+}
+
+.cm-hmd-table-sep,
+.HyperMD-table-row-1 {
+	color: var(--text-faint);
 }
 
 /* ───────────────────────────────────────────────────
@@ -5720,7 +5723,18 @@ body:not(.show-graph-controls) .graph-controls.is-close:not(:hover) {
 << Dictionary
 ─────────────────────────────────────────────────── */
 .view-content.dictionary-view-content {
-	padding-top: 8px;
+	padding: 8px 4px 3px;
+}
+
+body .view-content.dictionary-view-content .container {
+	background-color: var(--bg1);
+	border-radius: var(--roundish);
+	font-size: var(--sidebar-font-size);
+}
+
+body .view-content.dictionary-view-content .main {
+	background-color: var(--bg3);
+	border-radius: var(--roundish);
 }
 
 /* ───────────────────────────────────────────────────
@@ -6419,19 +6433,18 @@ div#select-projects select {
 /* <<< Longform Editor */
 /* https://github.com/kevboh/longform#scene-only-styling */
 
-/* CM5 */
 .longform-leaf .markdown-preview-view,
 .longform-leaf .cm-s-obsidian {
 	font-family: var(--longform-font);
 	font-size: var(--longform-font-size);
-	line-height: 1.35;
+	line-height: 1.35em;
 	letter-spacing: 0 !important;
 }
 
 .longform-leaf .cm-s-obsidian.mod-cm6 .cm-scroller {
 	font-family: var(--longform-font);
 	font-size: var(--longform-font-size);
-	line-height: 1.35;
+	line-height: 1.35em;
 }
 
 body:not(.longform-left-aligned) .longform-leaf span:not(.cm-header) {
@@ -6471,7 +6484,7 @@ body .longform-leaf .cm-header,
 .longform-leaf .markdown-preview-view h5,
 .longform-leaf .markdown-preview-view h6 {
 	font-family: var(--longform-font);
-	line-height: 1.2em;
+	line-height: 1em;
 	text-align: start;
 	hyphens: none;
 }
@@ -7315,7 +7328,7 @@ body .tlfFileInfoLabel {
 }
 
 body .tlfFileInfoTextArea {
-	height: 17em;
+	height: 13em;
 	border-radius: var(--roundish);
 }
 
@@ -7685,7 +7698,8 @@ community:
 - table-editor-obsidian
 - dataview
 - obsidian-cursor-location-plugin
-- nlp
+- obsidian-dictionary-plugin
+
 */
 
 /* ───────────────────────────────────────────────────
