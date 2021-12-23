@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 1.427
+Version 1.428
 https://github.com/chrisgrieser/shimmering-focus/
 MIT License
 ─────────────────────────────────────────────────── */
@@ -3615,9 +3615,11 @@ body:not(.left-aligned-embeds) div.mermaid {
 	border-radius: var(--roundish);
 }
 
+/* needs important because original css has importants too */
+body:not(.left-aligned-embeds) .mod-cm6 .pdf-embed,
 body:not(.left-aligned-embeds) .pdf-embed {
-	margin-right: auto;
-	margin-left: auto;
+	margin-right: auto !important;
+	margin-left: auto !important;
 }
 
 /* ───────────────────────────────────────────────────
@@ -4375,10 +4377,10 @@ body:not(.show-urls) .cm-line:not(.cm-active) .cm-url {
 << Tags
 ─────────────────────────────────────────────────── */
 
-.cm-hashtag,
+body .cm-line .cm-hashtag,
 a.tag {
-	color: var(--editor-alt-accent) !important;
-	text-decoration: none !important;
+	color: var(--editor-alt-accent);
+	text-decoration: none;
 }
 
 /* ensures equal height of "#" and text of tags */
