@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 1.431
+Version 1.432
 https://github.com/chrisgrieser/shimmering-focus/
 MIT License
 ─────────────────────────────────────────────────── */
@@ -4115,7 +4115,7 @@ body .markdown-preview-view pre {
 
 /* Code blocks in Edit Mode */
 .cm-s-obsidian .HyperMD-codeblock {
-	line-height: 1.5em;
+	line-height: 1.4em;
 }
 
 .cm-s-obsidian div.HyperMD-codeblock-begin-bg {
@@ -4998,11 +4998,6 @@ body.is-mobile .markdown-preview-view blockquote {
 	--nestlinestyle1: solid;
 	--nestlinestyle2: dotted;
 	--nestlinestyle3: dashed;
-}
-
-/* fix for slightly moving folders in file explorer by @SlRvb */
-.nav-folder-children > div:not(.nav-folder):not(.nav-file) {
-	display: none;
 }
 
 /* Top Level Folder Titles */

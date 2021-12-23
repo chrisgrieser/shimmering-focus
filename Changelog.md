@@ -1,3 +1,4 @@
+- 2021-12-23	fix #68
 - 2021-12-23	fix inline code
 - 2021-12-23	updated spoiler tags to new editor
 - 2021-12-23	fixes for code styling
