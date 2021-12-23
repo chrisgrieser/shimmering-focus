@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 1.430
+Version 1.431
 https://github.com/chrisgrieser/shimmering-focus/
 MIT License
 ─────────────────────────────────────────────────── */
@@ -4072,11 +4072,24 @@ body.no-alternating-rows > .app-container table > tbody > tr > td {
 }
 
 /* inline code */
+body {
+	--slight-code-roundish: calc(var(--roundish) * 0.8);
+}
+
 body .app-container .markdown-source-view .cm-contentContainer .cm-line .cm-inline-code,
 .markdown-preview-view *:not(pre) > code {
 	background-color: var(--bg2);
 	padding: 1px 4px;
-	border-radius: calc(var(--roundish) * 0.8);
+}
+
+/* proper rounding of inline round */
+.cm-formatting-code.cm-inline-code {
+	border-bottom-left-radius: var(--slight-code-roundish);
+	border-top-left-radius: var(--slight-code-roundish);
+}
+
+.cm-inline-code:not(.cm-formatting-code) + .cm-formatting-code {
+	border-radius: 0 var(--slight-code-roundish) var(--slight-code-roundish) 0;
 }
 
 /* code block */

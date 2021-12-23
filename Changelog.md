@@ -1,3 +1,4 @@
+- 2021-12-23	fix inline code
 - 2021-12-23	updated spoiler tags to new editor
 - 2021-12-23	fixes for code styling
 - 2021-12-23	update annotation tag template to CM6
