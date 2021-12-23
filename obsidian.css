@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 1.423
+Version 1.424
 https://github.com/chrisgrieser/shimmering-focus/
 MIT License
 ─────────────────────────────────────────────────── */
@@ -498,7 +498,7 @@ body.theme-dark {
 	--monospace-font-size: 0.9rem;
 
 	--longform-font: "Crimson Pro";
-	--longform-font-size: 1.1rem;
+	--longform-font-size: 1.2rem;
 
 	--sidebar-font-family: "iA Writer Quattro V";
 	--sidebar-font-size: 0.85rem;
@@ -8230,9 +8230,9 @@ settings:
 	 id: longform-font-size
 	 title: 'Longform: Font Size'
 	 type: variable-number-slider
-	 default: 1.1
+	 default: 1.2
 	 min: 0.7
-	 max: 1.7
+	 max: 2
 	 step: 0.05
 	 format: 'rem'
   -
