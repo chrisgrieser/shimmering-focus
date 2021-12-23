@@ -1,3 +1,4 @@
+- 2021-12-23	minor
 - 2021-12-23	styled dictionary plugin sidebar
 - 2021-12-23	kanban fixes
 - 2021-12-23	add info on two space rule
