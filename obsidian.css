@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 1.420
+Version 1.421
 https://github.com/chrisgrieser/shimmering-focus/
 MIT License
 ─────────────────────────────────────────────────── */
@@ -1646,7 +1646,8 @@ input[type="password"] {
 }
 
 textarea {
-	border-radius: calc(var(--roundish) * 2);
+	padding: 4px 8px;
+	border-radius: calc(var(--roundish) * 1.5);
 }
 
 input[type="text"] {
@@ -4325,7 +4326,7 @@ body:not(.no-ul-relationship-lines) ol ul::BEFORE {
 ─────────────────────────────────────────────────── */
 /* hovered links in alt accent */
 .cm-string.cm-url:hover:not(.cm-formatting),
-.cm-hmd-internal-link:hover,
+body .cm-hmd-internal-link:hover,
 body div.app-container .workspace-tabs .workspace-leaf .view-content .internal-link:hover,
 .modal-content a:hover,
 .markdown-preview-view a.footnote-link:hover,
