@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 1.416
+Version 1.417
 https://github.com/chrisgrieser/shimmering-focus/
 MIT License
 ─────────────────────────────────────────────────── */
@@ -3546,28 +3546,33 @@ progress[value^="10"]::-WEBKIT-PROGRESS-VALUE { background: hsl(160 92% 70%) }
 }
 
 /* Image Alt as Caption in Preview Mode */
-/* useful as this is also how Pandoc converts */
-.image-embed[alt]::AFTER {
+/* right now only works in reading mode */
+.markdown-preview-view .image-embed[alt]::AFTER {
 	display: block;
 	content: attr(alt);
 
 	color: var(--text-muted);
 
 	padding-top: 2px;
-	margin-bottom: 13px;
+	margin-bottom: 0.9em;
 
 	font-family: var(--smallcap-font);
-	font-size: 0.95rem;
+	font-size: 0.8rem;
 }
 
-.view-content .markdown-preview-view img:not(.link-favicon) {
+img:not(.link-favicon) {
 	display: block;
 	cursor: zoom-in;
-	margin-top: 13px;
+	margin-top: 0.9em;
 	border-radius: var(--roundish);
 }
 
-body:not(.disable-image-borders) .view-content .markdown-preview-view img:not(.link-favicon) {
+.is-live-preview img {
+	cursor: pointer;
+	margin-bottom: 0.9em;
+}
+
+body:not(.disable-image-borders) .view-content img:not(.link-favicon) {
 	border: var(--basic-border);
 }
 
@@ -3577,7 +3582,7 @@ body:not(.left-aligned-embeds) .image-embed[alt]::AFTER {
 	white-space: pre;
 }
 
-body:not(.left-aligned-embeds) .view-content .markdown-preview-view img:not(.link-favicon) {
+body:not(.left-aligned-embeds) .view-content img:not(.link-favicon) {
 	margin-right: auto;
 	margin-left: auto;
 }
@@ -3758,6 +3763,7 @@ body.max-view-enabled .workspace-split.mod-left-split.is-collapsed ~ .mod-root d
 	max-width: 100% !important;
 }
 
+body:not(.is-mobile) .view-content .is-live-preview img,
 body:not(.is-mobile) .view-content .markdown-preview-view img,
 body:not(.is-mobile) > .app-container div.oz-image-widget > img:not(:active) {
 	max-width: calc(var(--image-size) * 1%);
