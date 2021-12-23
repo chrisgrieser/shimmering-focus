@@ -12,6 +12,9 @@ your choice. (There is a total of 8 instances you have replace.)
 
 Note that this CSS snippet requires the theme "Shimmering Focus"
 to be enabled to work properly.
+
+If you are using the Legacy Editor (CM5), replace every instance of
+".cm-line" with ".CodeMirror-line".
 */
 
 body:not(.annotation-tags-off) .cm-tag-YOURTAG,
@@ -25,7 +28,7 @@ body:not(.annotation-tags-off) .tag[href="#YOURTAG"]::BEFORE {
 }
 
 body:not(.annotation-tags-off) .tag[href="#YOURTAG"],
-body:not(.annotation-tags-off) .cm-s-obsidian .CodeMirror-line span.cm-tag-YOURTAG {
+body:not(.annotation-tags-off) .cm-s-obsidian .cm-line span.cm-tag-YOURTAG {
 	color: var(--annotation-tag-font-color) !important;
 
 	padding-right: 8px;
@@ -38,13 +41,13 @@ body:not(.annotation-tags-off) .cm-s-obsidian .CodeMirror-line span.cm-tag-YOURT
 	text-decoration: none;
 }
 
-body:not(.annotation-tags-off) .cm-s-obsidian .CodeMirror-line .cm-hashtag-begin.cm-tag-YOURTAG {
+body:not(.annotation-tags-off) .cm-s-obsidian .cm-line .cm-hashtag-begin.cm-tag-YOURTAG {
 	padding-right: 0;
 	border-top-right-radius: 0;
 	border-bottom-right-radius: 0;
 }
 
-body:not(.annotation-tags-off) .cm-s-obsidian .CodeMirror-line .cm-hashtag-end.cm-tag-YOURTAG {
+body:not(.annotation-tags-off) .cm-s-obsidian .cm-line .cm-hashtag-end.cm-tag-YOURTAG {
 	padding-left: 0;
 	border-bottom-left-radius: 0;
 	border-top-left-radius: 0;
