@@ -3,7 +3,7 @@
 A minimalistic [Obsidian](https://obsidian.md/) theme focused on readability and condensed information display.
 
 <!-- manually updated-->
-![](https://img.shields.io/badge/downloads-7583-6E4E9B?style=plastic) ![](https://img.shields.io/github/last-commit/chrisgrieser/shimmering-focus?style=plastic) [![](https://img.shields.io/badge/changelog-click%20here-FFE800?style=plastic)](Changelog.md)
+![](https://img.shields.io/badge/downloads-7598-6E4E9B?style=plastic) ![](https://img.shields.io/github/last-commit/chrisgrieser/shimmering-focus?style=plastic) [![](https://img.shields.io/badge/changelog-click%20here-FFE800?style=plastic)](Changelog.md)
 
 <img src="https://raw.githubusercontent.com/chrisgrieser/shimmering-focus/main/dual-theme-screenshot.png" alt="Promo Screenshot">
 
@@ -34,6 +34,7 @@ A minimalistic [Obsidian](https://obsidian.md/) theme focused on readability and
 - [Contribute](#contribute)
   - [Translation of Style Settings](#translation-of-style-settings)
   - [Plugins & Features](#plugins--features)
+- [Related Work](#related-work)
 - [Credits](#credits)
   - [About the Developer](#about-the-developer)
   - [Donations](#donations)
@@ -192,6 +193,9 @@ git clone git@github.com:chrisgrieser/shimmering-focus.git
 cd ./shimmering-focus
 npm install stylelint postcss stylelint-config-recommended stylelint-order stylelint-declaration-block-no-ignored-properties
 ```
+
+## Related Work
+If you use Alfred, be sure to check out [my themes for Alfred](https://github.com/chrisgrieser/alfred-themes).
 
 ## Credits
 
