@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 1.421
+Version 1.422
 https://github.com/chrisgrieser/shimmering-focus/
 MIT License
 ─────────────────────────────────────────────────── */
@@ -4299,6 +4299,11 @@ body:not(.no-ul-relationship-lines) .CodeMirror-line .cm-hmd-list-indent::BEFORE
 	background-size: 1.8ch 1px;
 }
 
+body:not(.no-ul-relationship-lines) .cm-line.HyperMD-task-line .cm-hmd-list-indent::BEFORE {
+	left: 1.5px;
+	background-size: 1.8em 1px;
+}
+
 /* Preview Mode */
 body:not(.no-ul-relationship-lines) ul ul,
 body:not(.no-ul-relationship-lines) ol ol,
@@ -4354,11 +4359,11 @@ body a.internal-link.is-unresolved:hover {
 }
 
 /* <<< fold external URLs (CM6 Source Mode) */
-body:not(.show-urls) .cm-line:not(.cm-active) .cm-string.cm-url:not(.cm-formatting) {
+body:not(.show-urls) .cm-s-obsidian:not(.is-live-preview) .cm-line:not(.cm-active) .cm-string.cm-url:not(.cm-formatting) {
 	font-size: 0;
 }
 
-body:not(.show-urls) .cm-line:not(.cm-active) .cm-string.cm-url:not(.cm-formatting)::AFTER {
+body:not(.show-urls) .cm-s-obsidian:not(.is-live-preview) .cm-line:not(.cm-active) .cm-string.cm-url:not(.cm-formatting)::AFTER {
 	content: "link";
 	position: relative;
 	top: 2px;
