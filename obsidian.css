@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 1.419
+Version 1.420
 https://github.com/chrisgrieser/shimmering-focus/
 MIT License
 ─────────────────────────────────────────────────── */
@@ -214,8 +214,8 @@ the .create-ToC.sh.
 	--finished-task: var(--accent-lighter);
 	--cursor-duo-color-1: var(--alt-accent-lighterer);
 	--cursor-duo-color-2: var(--accent-lighterer);
-	--a-row: rgb(0 0 0 / 2%);
-	--b-row: rgb(0 0 0 / 7%);
+	--a-row: rgb(0 0 0 / 3%);
+	--b-row: rgb(0 0 0 / 8%);
 }
 
 .theme-dark {
@@ -1045,7 +1045,6 @@ body.block-cursor .CodeMirror-cursor {
 /* ───────────────────────────────────────────────────
 << Title Bar
 ─────────────────────────────────────────────────── */
-/* display only when set in style settings */
 body:not(.show-titlebar) .titlebar {
 	display: none;
 }
@@ -1054,14 +1053,9 @@ body:not(.show-titlebar) .titlebar {
 	background-color: var(--bg3);
 }
 
-.workspace-split.mod-left-split .workspace-tabs,
-.workspace-split.mod-right-split .workspace-tabs {
-	padding-top: 0.15em;
-}
-
 /* fix for macOS Traffic Lights */
 body.mod-macos:not(.show-titlebar) .workspace-split.mod-left-split .workspace-tabs:nth-child(3) {
-	padding-top: 16px;
+	padding-top: 12px;
 }
 
 body.mod-macos:not(.show-titlebar) .workspace-split.mod-left-split.is-collapsed ~ .mod-root .workspace-leaf:nth-child(2) .view-header {
@@ -1076,11 +1070,11 @@ body.mod-macos:not(.show-titlebar) .workspace-split.mod-left-split.is-collapsed 
 
 /* adapt height of resize handle & left ribbon */
 body:not(.show-titlebar) .workspace-split.mod-left-split > .workspace-leaf-resize-handle {
-	top: 54px;
+	top: 50px;
 }
 
 body:not(.show-titlebar) .workspace-ribbon.mod-left {
-	margin-top: 54px;
+	margin-top: 50px;
 }
 
 body:not(.show-titlebar) .workspace-ribbon.mod-right {
@@ -1120,19 +1114,13 @@ body.show-titlebar .workspace-ribbon.mod-left {
 	display: none;
 }
 
-/* proper light theme for titlebar */
 .titlebar {
 	background-color: var(--bg2);
 	border-bottom: var(--thin-border);
 }
 
-.theme-light .titlebar-text {
-	color: var(--extra-contrast);
-	opacity: 1;
-}
-
 /* no rounded corners on top */
-body > div.app-container > div.horizontal-main-container > div > div.workspace-split.mod-vertical.mod-root > div > .workspace-leaf-content {
+.app-container .workspace-split.mod-vertical.mod-root > div > .workspace-leaf-content {
 	border-radius: 0;
 }
 
@@ -2520,7 +2508,7 @@ body .workspace-leaf-resize-handle:active {
 	margin-top: 0;
 	margin-bottom: 5px;
 
-	border-bottom: var(--muted-border);
+	border-bottom: var(--basic-border);
 
 	font-family: var(--setting-heading);
 	font-size: 1.05em;
@@ -2531,7 +2519,7 @@ body .workspace-leaf-resize-handle:active {
 }
 
 .vertical-tab-header-group:nth-child(2) .vertical-tab-header-group-title {
-	border-top: var(--muted-border);
+	border-top: var(--thin-border);
 }
 
 .vertical-tab-nav-item {
@@ -2584,27 +2572,6 @@ body .workspace-leaf-resize-handle:active {
 .vertical-tab-header-group:first-child .vertical-tab-header-group-items .vertical-tab-nav-item:last-child {
 	font-weight: 900;
 	text-rendering: geometricPrecision;
-}
-
-.theme-dark .vertical-tab-header-group:first-child .vertical-tab-header-group-items .vertical-tab-nav-item:nth-child(3),
-.theme-dark .vertical-tab-header-group:first-child .vertical-tab-header-group-items .vertical-tab-nav-item:nth-child(4),
-.theme-dark .vertical-tab-header-group:first-child .vertical-tab-header-group-items .vertical-tab-nav-item:last-child {
-	color: var(--bold-in-darkmode);
-}
-
-.theme-dark .vertical-tab-header-group:first-child .vertical-tab-header-group-items .vertical-tab-nav-item:nth-child(3).is-active:hover,
-.theme-dark .vertical-tab-header-group:first-child .vertical-tab-header-group-items .vertical-tab-nav-item:nth-child(4).is-active:hover,
-.theme-dark .vertical-tab-header-group:first-child .vertical-tab-header-group-items .vertical-tab-nav-item.is-active:hover,
-.theme-dark .vertical-tab-header-group:first-child .vertical-tab-header-group-items .vertical-tab-nav-item:nth-child(3):hover,
-.theme-dark .vertical-tab-header-group:first-child .vertical-tab-header-group-items .vertical-tab-nav-item:nth-child(4):hover,
-.theme-dark .vertical-tab-header-group:first-child .vertical-tab-header-group-items .vertical-tab-nav-item:last-child:hover {
-	color: var(--alt-accent);
-}
-
-.theme-dark .vertical-tab-header-group:first-child .vertical-tab-header-group-items .vertical-tab-nav-item:nth-child(3).is-active,
-.theme-dark .vertical-tab-header-group:first-child .vertical-tab-header-group-items .vertical-tab-nav-item:nth-child(4).is-active,
-.theme-dark .vertical-tab-header-group:first-child .vertical-tab-header-group-items .vertical-tab-nav-item.is-active {
-	color: var(--text-accent);
 }
 
 /* >>> Login menu  */
@@ -3344,11 +3311,11 @@ body > .app-container .cm-s-obsidian .cm-hmd-frontmatter {
 /* harmonize with styling of Horizontal Lines (HR) */
 body > .app-container .cm-s-obsidian .cm-def.cm-hmd-frontmatter {
 	color: var(--text-muted);
-	letter-spacing: 0.2em;
+	letter-spacing: 0.1em;
 }
 
 .cm-atom.cm-hmd-frontmatter {
-	font-weight: 600;
+	font-weight: 700;
 }
 
 /* colored YAML */
@@ -3545,7 +3512,7 @@ progress[value^="10"]::-WEBKIT-PROGRESS-VALUE { background: hsl(160 92% 70%) }
 
 /* Image Alt as Caption in Preview Mode */
 /* right now only works in reading mode */
-.markdown-preview-view .image-embed[alt]::AFTER {
+.image-embed[alt]::AFTER {
 	display: block;
 	content: attr(alt);
 
@@ -3901,9 +3868,8 @@ body:not(.no-alternating-header-italics) .markdown-preview-view h6 {
 << Blockquotes
 ─────────────────────────────────────────────────── */
 
-/* all italic */
 .markdown-preview-view blockquote,
-.cm-line .cm-quote {
+.cm-s-obsidian .cm-line .cm-quote {
 	color: var(--extra-contrast);
 	font-style: italic;
 }
@@ -4889,17 +4855,16 @@ span.cm-link.cm-hmd-footnote {
 .HyperMD-footnote.cm-line,
 .HyperMD-footnote.CodeMirror-line {
 	padding: 0.4em 5px;
-
-	border-top: var(--thick-muted-border);
-
 	font-size: 85%;
 	line-height: 1.15em;
 	text-align: justify;
 	hyphens: auto;
 }
 
-.HyperMD-footnote + .HyperMD-footnote.cm-line {
-	border-top: none;
+/* separator line only above the first footnote */
+.cm-line:not(.HyperMD-footnote) + .HyperMD-footnote {
+	padding-top: 0.8em;
+	border-top: var(--muted-border);
 }
 
 /* remove underline which only decreases readability */
@@ -4913,6 +4878,7 @@ span.cm-link.cm-hmd-footnote {
 
 .cm-s-obsidian span.cm-hr {
 	color: var(--text-muted);
+	letter-spacing: 0.1em;
 }
 
 .markdown-preview-view hr {
@@ -5509,6 +5475,11 @@ body:not(.show-starred-nav-buttons) .workspace-leaf-content[data-type="starred"]
 	display: none;
 }
 
+body:not(.no-alternating-rows) .workspace-leaf-content[data-type="starred"] .nav-file:nth-child(even) {
+	background-color: var(--a-row);
+	border-radius: var(--roundish);
+}
+
 /* for starred searches */
 .workspace-leaf-content[data-type="starred"] .nav-file-icon svg.search {
 	color: var(--extra-contrast);
@@ -5968,19 +5939,19 @@ https://forum.obsidian.md/t/inline-code-occludes-text-selection-and-vim-cursor/1
 
 /* stylelint-disable no-duplicate-selectors */
 .theme-light {
-	--kanban-background: hsl(var(--light-hue) var(--sat-light-3) calc(var(--b-light-3) - 2%));
+	--kanban-background: hsl(var(--light-hue) var(--sat-light-3) calc(var(--b-light-3) + 1%));
 	--active-hover-kanban-item: hsl(var(--light-hue) var(--sat-light-3) 85%);
 	--dot-color: hsl(0 0% 50% / 20%);
 }
 
 .theme-dark {
-	--kanban-background: hsl(var(--dark-hue) calc(var(--sat-dark-2) * 1.2) 18%);
+	--kanban-background: hsl(var(--dark-hue) var(--sat-dark-1) calc(var(--b-dark-1) + 2%));
 	--active-hover-kanban-item: hsl(var(--dark-hue) var(--sat-dark-3) 15%);
 	--dot-color: hsl(0 0% 0% / 20%);
 }
 
 :root {
-	--dot-spacing: 8px;
+	--dot-spacing: 9px;
 	--dot-size: 1px;
 }
 /* stylelint-enable no-duplicate-selectors */
@@ -6046,15 +6017,7 @@ body .kanban-plugin ul {
 	margin-top: 3px;
 }
 
-textarea.kanban-plugin__item-input {
-	background-color: var(--bg3);
-	font-family: var(--default-font) !important;
-	font-size: 0.95em !important;
-	letter-spacing: -0.3px;
-}
-
 /* <<< Lanes */
-
 body .kanban-plugin__lane {
 	background-color: var(--bg3);
 	border: var(--basic-border);
@@ -6086,7 +6049,7 @@ body .kanban-plugin__lane {
 
 /* space between lanes */
 body .kanban-plugin__lane-wrapper {
-	margin-right: 8px;
+	margin-right: 9px;
 }
 
 .kanban-plugin__lane-settings-button-wrapper:hover svg {
@@ -6123,14 +6086,28 @@ body .kanban-plugin__item-button-wrapper {
 	border-top: none;
 }
 
-button.kanban-plugin__new-item-button {
-	color: var(--extra-contrast) !important;
-	padding: 5px 8px !important;
+body .kanban-plugin__item-form {
+	padding-top: 3px;
+}
+
+.kanban-plugin button.kanban-plugin__new-item-button,
+.kanban-plugin textarea.kanban-plugin__item-input {
+	background-color: var(--bg1);
+
+	padding: 5px 8px;
+
+	border-radius: calc(var(--roundish) * 1.5);
+
 	font-family: var(--button-font);
 	font-size: 0.8em;
 	font-weight: var(--button-font-weight);
 }
 
+.kanban-plugin button.kanban-plugin__new-item-button {
+	color: var(--text-muted);
+}
+
+/* tags */
 a.tag.kanban-plugin__item-tag {
 	background: none;
 }
@@ -6359,7 +6336,6 @@ input#new-scene {
 }
 
 div#select-projects select {
-	color: var(--text-faint);
 	font-family: var(--smallcap-font);
 	font-size: 1.1em;
 	font-weight: 800;
@@ -6487,6 +6463,7 @@ body .longform-leaf .cm-header,
 	font-family: var(--longform-font);
 	line-height: 1.2em;
 	text-align: start;
+	hyphens: none;
 }
 
 /* <<< Longform Icons */
