@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 1.418
+Version 1.419
 https://github.com/chrisgrieser/shimmering-focus/
 MIT License
 ─────────────────────────────────────────────────── */
@@ -2489,9 +2489,7 @@ body .workspace-leaf-resize-handle:active {
 /* tabs to the side */
 .modal.mod-settings .vertical-tab-header {
 	padding-top: 0;
-
-	/* overscroll */
-	padding-bottom: 50px;
+	padding-bottom: 50px; /* overscroll */
 }
 
 .vertical-tab-content-container,
@@ -2500,7 +2498,7 @@ body .workspace-leaf-resize-handle:active {
 }
 
 .vertical-tab-content {
-	padding: 12px 21px;
+	padding: 12px 21px 50px; /* overscroll */
 }
 
 .vertical-tab-header {
@@ -4288,6 +4286,13 @@ button.copy-code-button::BEFORE {
 << Bullet List
 ─────────────────────────────────────────────────── */
 
+/* less indention to save space */
+body:not(.no-ul-relationship-lines) .markdown-preview-view > div > div > ol,
+body:not(.no-ul-relationship-lines) .markdown-preview-view > div > div > ul {
+	padding-left: 27px;
+}
+
+/* fix indention */
 .is-live-preview.mod-cm6 .list-bullet {
 	padding-right: 5px;
 }
@@ -4318,13 +4323,13 @@ body:not(.no-ul-relationship-lines) .CodeMirror-line .cm-hmd-list-indent::BEFORE
 
 	position: absolute;
 	top: -1.6em;
-	left: 1.5px;
+	left: -1.5px;
 
 	background-image: linear-gradient(to right, var(--text-faint) 1px, transparent 1px);
 
 	padding-bottom: 999em;
 
-	background-size: 1.8em 1px;
+	background-size: 1.8ch 1px;
 }
 
 /* Preview Mode */
@@ -4347,12 +4352,6 @@ body:not(.no-ul-relationship-lines) ol ul::BEFORE {
 	left: -0.85rem;
 
 	border-left: 1px solid var(--text-faint);
-}
-
-body:not(.no-ul-relationship-lines) .markdown-preview-view > div > div > ol,
-body:not(.no-ul-relationship-lines) .markdown-preview-view > div > div > ul {
-	/* less indention to save space */
-	padding-left: 27px;
 }
 
 /* ───────────────────────────────────────────────────
