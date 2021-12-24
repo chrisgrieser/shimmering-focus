@@ -1,3 +1,4 @@
+- 2021-12-24	minor
 - 2021-12-24	sliders follow angular/round shape
 - 2021-12-24	fixed SlRvb's username :seenoevil:
 - 2021-12-24	update link to SlVs checkboxes

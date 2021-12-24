@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 1.438
+Version 1.439
 https://github.com/chrisgrieser/shimmering-focus/
 MIT License
 ─────────────────────────────────────────────────── */
@@ -6430,7 +6430,7 @@ input#new-scene {
 	margin-bottom: 0;
 
 	border: var(--basic-border);
-	border-radius: 4px;
+	border-radius: var(--roundish);
 
 	font-size: 0.8em;
 }
