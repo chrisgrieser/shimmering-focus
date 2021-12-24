@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 1.440
+Version 1.441
 https://github.com/chrisgrieser/shimmering-focus/
 MIT License
 ─────────────────────────────────────────────────── */
@@ -1422,6 +1422,7 @@ body:not(.default-statusbar) .status-bar {
 
 body:not(.hide-signature) .status-bar::AFTER {
 	content: var(--signature);
+	font-weight: 500;
 }
 
 .status-bar.default-statusbar {
@@ -1498,6 +1499,7 @@ body:not(.show-scrollbar) ::-WEBKIT-SCROLLBAR {
 	content: var(--signature);
 	color: var(--text-normal);
 	font-size: calc(var(--empty-state-symbol-size) * 1.2);
+	font-weight: 500;
 }
 
 .progress-bar .progress-bar-message {
@@ -3013,6 +3015,7 @@ body .workspace-leaf-resize-handle:active {
 	content: var(--signature);
 	color: var(--extra-contrast);
 	font-size: var(--empty-state-symbol-size);
+	font-weight: 500;
 }
 
 /* ───────────────────────────────────────────────────
@@ -3087,6 +3090,7 @@ body .workspace-leaf-resize-handle:active {
 .community-theme.is-selected .community-theme-title::BEFORE {
 	content: var(--signature);
 	padding-right: 5px;
+	font-weight: 500;
 }
 
 .community-theme.is-selected .community-plugin-downloads-text,
@@ -3296,6 +3300,7 @@ body:not(.less-heading-letter-spacing) .modal.mod-community-theme .modal-title {
 	content: var(--signature);
 	color: var(--extra-contrast);
 	font-size: var(--empty-state-symbol-size);
+	font-weight: 500;
 }
 
 /* ───────────────────────────────────────────────────
