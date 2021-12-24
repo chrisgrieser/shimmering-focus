@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 1.441
+Version 1.442
 https://github.com/chrisgrieser/shimmering-focus/
 MIT License
 ─────────────────────────────────────────────────── */
@@ -2686,11 +2686,11 @@ body .workspace-leaf-resize-handle:active {
 }
 
 .setting-hotkey.mod-empty {
-	min-height: 25.5px;
+	min-height: 26px;
 
 	color: var(--text-faint);
 
-	padding-top: 11px;
+	padding-top: 12px;
 
 	font-size: 0;
 	font-weight: 600;
@@ -2698,7 +2698,14 @@ body .workspace-leaf-resize-handle:active {
 }
 
 .setting-hotkey.mod-active {
+	color: var(--button-hover-text);
+	background-color: var(--interactive-hover-bg);
+	font-size: 0.75rem;
 	font-weight: 600;
+}
+
+.setting-add-hotkey-button.mod-active {
+	color: var(--interactive-hover-bg);
 }
 
 .setting-hotkey.mod-empty::BEFORE {
