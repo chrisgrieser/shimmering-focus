@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 1.439
+Version 1.440
 https://github.com/chrisgrieser/shimmering-focus/
 MIT License
 ─────────────────────────────────────────────────── */
@@ -6460,7 +6460,7 @@ div#select-projects select {
 
 /* <<< Longform Sidebar Icons */
 .workspace-leaf-content[data-type="VIEW_TYPE_LONGFORM_EXPLORER"] .tabs .tab-list {
-	padding: 0 7px 7px;
+	padding: 0 8px 7px;
 	margin: 0;
 	border-bottom: var(--basic-border);
 }
@@ -6481,6 +6481,7 @@ div#select-projects select {
 
 .workspace-leaf-content[data-type="VIEW_TYPE_LONGFORM_EXPLORER"] .tab-list button:nth-child(3)::BEFORE {
 	content: "merge_type";
+	position: relative;
 }
 
 .workspace-leaf-content[data-type="VIEW_TYPE_LONGFORM_EXPLORER"] .tab-list button {
@@ -6494,6 +6495,16 @@ div#select-projects select {
 	border-radius: var(--roundish);
 
 	font-size: 0;
+}
+
+/* fix buttons for angular shapes */
+.angular-shapes .workspace-leaf-content[data-type="VIEW_TYPE_LONGFORM_EXPLORER"] .tab-list button {
+	padding: 3px 0 4px 5px;
+}
+
+.angular-shapes .workspace-leaf-content[data-type="VIEW_TYPE_LONGFORM_EXPLORER"] .tab-list button::BEFORE {
+	position: relative;
+	left: 1px;
 }
 
 .workspace-leaf-content[data-type="VIEW_TYPE_LONGFORM_EXPLORER"] button.selected {
