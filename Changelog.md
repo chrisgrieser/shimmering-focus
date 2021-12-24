@@ -1,3 +1,5 @@
+- 2021-12-24	fixed SlRvb's username :seenoevil:
+- 2021-12-24	update link to SlVs checkboxes
 - 2021-12-24	better bold font & theme file size reduction (by using .woff2)
 - 2021-12-23	fix #68
 - 2021-12-23	fix inline code

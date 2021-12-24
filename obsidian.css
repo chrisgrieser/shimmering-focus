@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 1.435
+Version 1.436
 https://github.com/chrisgrieser/shimmering-focus/
 MIT License
 ─────────────────────────────────────────────────── */
@@ -99,7 +99,7 @@ the .create-ToC.sh.
 	- Comments & HTML Tags
 	- Tasks
 	- Checkboxes
- 		- SlVrb's checkboxes Compatibility
+ 		- SlRvb's checkboxes Compatibility
 	- Highlights & Selection
  		- Active Line Highlight
  		- Highlights
@@ -3539,6 +3539,10 @@ progress[value^="10"]::-WEBKIT-PROGRESS-VALUE { background: hsl(160 92% 70%) }
 	margin-top: 25%;
 }
 
+.cm-image-marker {
+	color: var(--text-muted);
+}
+
 /* Image Alt as caption */
 .image-embed[alt]::AFTER {
 	display: block;
@@ -4736,7 +4740,7 @@ li[data-task="x"] > .task-list-item-checkbox:hover {
 	margin-left: -10px;
 }
 
-/* <<< Custom Checkboxes (SlVrb) Compatibility  */
+/* <<< Custom Checkboxes by SlRvb Compatibility  */
 .markdown-source-view.mod-cm6 .task-list-item-checkbox[data-task="x"],
 .markdown-preview-view li[data-task="x"] > .task-list-item-checkbox,
 .markdown-preview-view li[data-task="x"] p .task-list-item-checkbox,
