@@ -103,7 +103,7 @@ Using the [Style Settings Plugin](https://github.com/mgmeyers/obsidian-style-set
 - Dark Mode for PDFs (when using the theme in dark mode)
 - Styled [progress bars (`<progress>`)](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/progress)
 - Resizable Graph View Controls (resize at the bottom-right)
-- Compatibility with [SlVrb's Checkboxes](https://github.com/SlRvb/Obsidian--ITS-Theme/blob/main/S%20-%20Checkboxes.css).
+- Compatible with [SlVrb's Checkboxes](https://publish.obsidian.md/hub/02+-+Community+Expansions/02.05+All+Community+Expansions/CSS+Snippets/Alternate+Checkboxes+(SlRvb)).
 
 [⬆️ Go Back to Top](#Table-of-Contents)
 
@@ -161,7 +161,7 @@ This themes supports dozens of customization options via the [Style Settings Plu
 ➡️ [Full list of compatible plugins.](https://publish.obsidian.md/hub/02+-+Community+Expansions/02.05+All+Community+Expansions/Themes/Shimmering+Focus#Plugin+Compatibility+1)
 
 ### Custom Checkboxes
-This theme has been adjusted to be compatible with [SlVrb's Checkboxes](https://github.com/SlRvb/Obsidian--ITS-Theme/blob/main/S%20-%20Checkboxes.css).
+This theme has been adjusted to be compatible with [SlVrb's Checkboxes](https://publish.obsidian.md/hub/02+-+Community+Expansions/02.05+All+Community+Expansions/CSS+Snippets/Alternate+Checkboxes+(SlRvb)).
 
 ### Instructions for specific Plugins
 In accordance with the minimalistic philosophy of the theme, unnecessary UI elements of some plugins have also been removed. However, you can still access the full plugin functionality.
