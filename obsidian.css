@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 1.437
+Version 1.438
 https://github.com/chrisgrieser/shimmering-focus/
 MIT License
 ─────────────────────────────────────────────────── */
@@ -1724,7 +1724,7 @@ input:hover {
 }
 
 /* ───────────────────────────────────────────────────
-<< Dropdown & Slider
+<< Dropdown
 ─────────────────────────────────────────────────── */
 
 select.dropdown {
@@ -1748,10 +1748,19 @@ select.dropdown:hover {
 	border-color: var(--interactive-hover-border) !important;
 }
 
-input[type="range"],
-input.slider {
+/* ───────────────────────────────────────────────────
+<< Slider
+─────────────────────────────────────────────────── */
+
+input[type="range"] {
 	width: 150px;
 	background-color: var(--bg3) !important;
+  	border-radius: calc(var(--roundish) / 2);
+}
+
+input[type="range"]::-WEBKIT-SLIDER-THUMB {
+  background-color: var(--interactive-bg) !important;
+  border-radius: var(--round);
 }
 
 /* ───────────────────────────────────────────────────
@@ -5606,6 +5615,18 @@ body .popover {
 ─────────────────────────────────────────────────── */
 /* see also modals in general */
 
+.sync-history-list .setting-item {
+	background-color: var(--bg3);
+	padding-top: 13px;
+	padding-bottom: 3px;
+	border-bottom: var(--basic-border);
+}
+
+.mod-sync-history .sync-history-list {
+	min-width: 250px;
+	padding-top: 0;
+}
+
 .modal.mod-sync-history .setting-item-control {
 	justify-content: unset;
 }
@@ -5657,7 +5678,7 @@ body .popover {
 
 	padding: 10px;
 
-	border-left: var(--muted-border);
+	border-left: var(--basic-border);
 	border-top-right-radius: calc(var(--roundish) * 2.5);
 	border-bottom-right-radius: calc(var(--roundish) * 2.5);
 }
@@ -7275,7 +7296,8 @@ body:not(.show-scrollbar) .workspace-split.mod-root .workspace-leaf-content[data
 .style-settings-heading .setting-item-description {
 	margin-bottom: 4px;
 	font-family: var(--menu-font-family);
-	font-size: 0.7em;
+	font-size: 0.8rem;
+	font-weight: 500;
 	line-height: 1.1em;
 }
 
