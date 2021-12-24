@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 1.436
+Version 1.437
 https://github.com/chrisgrieser/shimmering-focus/
 MIT License
 ─────────────────────────────────────────────────── */
@@ -877,6 +877,7 @@ svg.search > path { display: none }
 
 svg.search {
 	background-color: currentColor;
+	margin-top: 2px;
 	-webkit-mask-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' width='1.1em' height='1.1em' preserveAspectRatio='xMidYMid meet' viewBox='0 0 32 32'%3e%3cpath d='M30 28.586l-4.689-4.688a8.028 8.028 0 1 0-1.414 1.414L28.586 30zM19 25a6 6 0 1 1 6-6a6.007 6.007 0 0 1-6 6z' fill='currentColor'/%3e%3cpath d='M2 12h8v2H2z' fill='currentColor'/%3e%3cpath d='M2 2h16v2H2z' fill='currentColor'/%3e%3cpath d='M2 7h16v2H2z' fill='currentColor'/%3e%3c/svg%3e");
 }
 
@@ -953,6 +954,15 @@ svg.check-small,
 /* ───────────────────────────────────────────────────
 << Plugin Icons
 ─────────────────────────────────────────────────── */
+
+/* dictionary plugin */
+svg.quote-glyph > path { display: none }
+
+svg.quote-glyph {
+	background-color: currentColor;
+	margin-bottom: 2px;
+	-webkit-mask-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' width='1.2em' height='1.2em' preserveAspectRatio='xMidYMid meet' viewBox='0 0 32 32'%3e%3cpath d='M20 22h2l-5-12h-2l-5 12h2l1.24-3h5.53zm-5.93-5l1.82-4.42h.25L18 17z' fill='currentColor'/%3e%3cpath d='M12 28H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h20a2 2 0 0 1 2 2v11h-2V6H6v20h6z' fill='currentColor'/%3e%3cpath d='M23 27.18l-2.59-2.59L19 26l4 4l7-7l-1.41-1.41L23 27.18z' fill='currentColor'/%3e%3c/svg%3e");
+}
 
 /* advanced cursor */
 svg.feather-mouse-pointer > path { display: none }
@@ -4347,17 +4357,12 @@ body:not(.no-ul-relationship-lines) .CodeMirror-line .cm-hmd-list-indent::BEFORE
 
 	position: absolute;
 	top: -1.6em;
-	left: -1.5px;
+	left: 1.5px;
 
 	background-image: linear-gradient(to right, var(--text-faint) 1px, transparent 1px);
 
 	padding-bottom: 999em;
 
-	background-size: 1.8ch 1px;
-}
-
-body:not(.no-ul-relationship-lines) .cm-line.HyperMD-task-line .cm-hmd-list-indent::BEFORE {
-	left: 1.5px;
 	background-size: 1.8em 1px;
 }
 
