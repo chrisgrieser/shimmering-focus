@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 1.454
+Version 1.455
 https://github.com/chrisgrieser/shimmering-focus/
 MIT License
 ─────────────────────────────────────────────────── */
@@ -3581,14 +3581,18 @@ body .frontmatter-container .frontmatter-container-header {
 << Gutter & Collapse Indicators
 ─────────────────────────────────────────────────── */
 
-.CodeMirror-linenumbers {
-	padding-top: 2px;
-	padding-right: 2px;
+.heading-collapse-indicator .right-triangle,
+.list-collapse-indicator .right-triangle {
+	height: 0.6rem;
+	width: 0.6rem;
 }
 
-.markdown-preview-view .collapse-indicator .right-triangle {
-	height: 0.35em;
-	width: 0.35em;
+.list-collapse-indicator .right-triangle {
+	color: var(--text-faint);
+}
+
+.heading-collapse-indicator .right-triangle {
+	color: var(--text-muted);
 }
 
 .cm-s-obsidian.mod-cm6 .collapse-indicator .right-triangle {
@@ -3604,7 +3608,20 @@ body .frontmatter-container .frontmatter-container-header {
 	color: var(--text-accent);
 }
 
-/* Edit mode */
+/* fix for gutter color, thanks @SlRvb */
+.markdown-source-view.mod-cm6 .cm-gutters,
+.CodeMirror-foldgutter {
+	background-color: transparent !important;
+}
+
+
+/* CM6/CM5: the "..." when content is folded */
+body:not(.show-fold-marker) .cm-foldPlaceholder,
+body:not(.show-fold-marker) .CodeMirror-foldmarker {
+	display: none;
+}
+
+/* CM5 */
 .CodeMirror-foldgutter-folded.CodeMirror-guttermarker-subtle:hover,
 .CodeMirror-foldgutter-open.CodeMirror-guttermarker-subtle:hover,
 .CodeMirror-foldmarker:hover {
@@ -3625,10 +3642,9 @@ body .frontmatter-container .frontmatter-container-header {
 	color: var(--accent-lighter);
 }
 
-/* CM6/CM5: the "..." when content is folded */
-body:not(.show-fold-marker) .cm-foldPlaceholder,
-body:not(.show-fold-marker) .CodeMirror-foldmarker {
-	display: none;
+.CodeMirror-linenumbers {
+	padding-top: 2px;
+	padding-right: 2px;
 }
 
 /* CM5: collapse indicator positioning */
@@ -3636,12 +3652,6 @@ body:not(.show-fold-marker) .CodeMirror-foldmarker {
 	position: relative;
 	left: -10px;
 	padding-right: 0;
-}
-
-/* fix for gutter color, thanks @SlRvb */
-.markdown-source-view.mod-cm6 .cm-gutters,
-.CodeMirror-foldgutter {
-	background-color: transparent !important;
 }
 
 /* ───────────────────────────────────────────────────
