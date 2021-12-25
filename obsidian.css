@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 1.455
+Version 1.456
 https://github.com/chrisgrieser/shimmering-focus/
 MIT License
 ─────────────────────────────────────────────────── */
@@ -4245,14 +4245,14 @@ body.no-alternating-rows > .app-container table > tbody > tr > td {
 .cm-s-obsidian .HyperMD-codeblock,
 .app-container .markdown-preview-view code,
 .cm-s-obsidian span.cm-inline-code {
-	color: var(--code-color);
 	font-size: var(--monospace-font-size);
-	text-shadow: none;
 }
 
-/* in code blocks with defined language, keep default color */
-.app-container .markdown-preview-view pre[class*="language-"] code {
-	color: unset;
+.cm-s-obsidian .cm-formatting-code.cm-inline-code,
+.app-container .markdown-preview-view code,
+.cm-s-obsidian span.cm-inline-code {
+	color: var(--code-color);
+	text-shadow: none;
 }
 
 /* <<< inline code */

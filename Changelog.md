@@ -1,3 +1,4 @@
+- 2021-12-25	codeblock coloring fix
 - 2021-12-25	collapse indicators
 - 2021-12-25	improved community plugin browser
 - 2021-12-25	minor font fixes
