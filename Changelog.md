@@ -1,3 +1,4 @@
+- 2021-12-25	outline relationship lines, LP improvements, sidebar font overhaul (default now: recursive), fixing crimson pro font
 - 2021-12-24	better add-hotkey coloring
 - 2021-12-24	fix font weight of signature
 - 2021-12-24	sliders follow angular/round shape
