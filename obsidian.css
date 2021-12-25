@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 1.453
+Version 1.454
 https://github.com/chrisgrieser/shimmering-focus/
 MIT License
 ─────────────────────────────────────────────────── */
@@ -6766,6 +6766,11 @@ body .longform-leaf .cm-header,
 	line-height: 1em;
 	text-align: start;
 	hyphens: none;
+}
+
+/* fix for checkboxes  */
+.longform-leaf input[type="checkbox"] {
+	margin: 0 9px 4px 0 !important;
 }
 
 /* <<< Longform Icons */
