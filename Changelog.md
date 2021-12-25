@@ -1,3 +1,4 @@
+- 2021-12-25	fix overscroll in hotkey setting tab
 - 2021-12-25	blockquote and codeblock overhauled
 - 2021-12-25	codeblock coloring fix
 - 2021-12-25	collapse indicators

@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 1.457
+Version 1.458
 https://github.com/chrisgrieser/shimmering-focus/
 MIT License
 ─────────────────────────────────────────────────── */
@@ -2618,7 +2618,6 @@ body .workspace-leaf-resize-handle:active {
 /* tabs to the side */
 .modal.mod-settings .vertical-tab-header {
 	padding-top: 0;
-	padding-bottom: 50px; /* overscroll */
 }
 
 .vertical-tab-content-container,
@@ -2627,7 +2626,7 @@ body .workspace-leaf-resize-handle:active {
 }
 
 .vertical-tab-content {
-	padding: 12px 21px 50px; /* overscroll */
+	padding: 12px 21px 3px;
 }
 
 .vertical-tab-header {
@@ -2747,7 +2746,6 @@ body .workspace-leaf-resize-handle:active {
 /* <<< Hotkey search */
 .hotkey-search-container {
 	padding-right: 0;
-	padding-bottom: 10px;
 }
 
 .hotkey-search-container input {
@@ -2756,7 +2754,6 @@ body .workspace-leaf-resize-handle:active {
 
 .hotkey-list-container {
 	padding-right: 0;
-	padding-bottom: 2em;
 }
 
 /* avoids the creation of two-line-hotkeys  */
@@ -2799,6 +2796,13 @@ body .workspace-leaf-resize-handle:active {
 .setting-hotkey.mod-empty::BEFORE {
 	content: "none";
 	font-size: 0.75rem;
+}
+
+/* overscroll */
+.modal.mod-settings .vertical-tab-header,
+.vertical-tab-content > :last-child:not(.hotkey-settings-container),
+.hotkey-list-container {
+	padding-bottom: 50px;
 }
 
 /* ───────────────────────────────────────────────────
