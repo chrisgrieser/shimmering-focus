@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 1.447
+Version 1.448
 https://github.com/chrisgrieser/shimmering-focus/
 MIT License
 ─────────────────────────────────────────────────── */
@@ -3156,17 +3156,17 @@ body .workspace-leaf-resize-handle:active {
 }
 
 .community-theme.is-selected .community-theme-info::AFTER {
-	content: 'ℹ️ Theme Customization available by installing the Style Settings Plugin\A\A Access Settings via hotkey\A• "Ctrl + ," (Win/Linux)\A• "⌘ + ," (Mac)';
+	content: 'ℹ️ Theme Customization via Style Settings Plugin\A\A 💡 Access Settings\A⌘ + ,    on Mac\A Ctrl + ,  on Windows/Linux';
 	white-space: pre-wrap;
 	position: absolute;
-	top: 135px;
-	right: 5%;
-	left: 5%;
+	top: 133xpx;
+	right: 7%;
+	left: 7%;
 
 	background-color: var(--bg2);
 	line-height: 1.3em;
 
-	padding: 3px 6px 4px;
+	padding: 3px 8px 4px;
 
 	border: var(--basic-border);
 	border-radius: var(--roundish);
@@ -3178,7 +3178,7 @@ body .workspace-leaf-resize-handle:active {
 }
 
 .community-theme.is-selected {
-	min-height: 335px;
+	min-height: 315px;
 	border-color: var(--interactive-border);
 }
 
