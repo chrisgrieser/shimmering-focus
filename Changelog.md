@@ -1,3 +1,4 @@
+- 2021-12-25	extra info on how to access settings (#69)
 - 2021-12-25	outline relationship lines, LP improvements, sidebar font overhaul (default now: recursive), fixing crimson pro font
 - 2021-12-24	better add-hotkey coloring
 - 2021-12-24	fix font weight of signature

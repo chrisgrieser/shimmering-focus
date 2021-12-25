@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 1.443
+Version 1.444
 https://github.com/chrisgrieser/shimmering-focus/
 MIT License
 ─────────────────────────────────────────────────── */
@@ -3134,7 +3134,7 @@ body .workspace-leaf-resize-handle:active {
 	right: 7%;
 	left: 7%;
 
-	background-color: var(--bg1);
+	background-color: var(--bg2);
 	line-height: 1.3em;
 
 	padding: 3px 7px 4px;
@@ -7449,7 +7449,7 @@ body:not(.show-scrollbar) .workspace-split.mod-root .workspace-leaf-content[data
 	font-family: var(--menu-font-family);
 	font-size: 0.8rem;
 	font-weight: 500;
-	line-height: 1.1em;
+	line-height: 1.3em;
 }
 
 .style-settings-heading:not(.is-collapsed) .setting-item-description {
