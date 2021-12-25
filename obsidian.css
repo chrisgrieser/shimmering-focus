@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 1.452
+Version 1.453
 https://github.com/chrisgrieser/shimmering-focus/
 MIT License
 ─────────────────────────────────────────────────── */
@@ -4859,7 +4859,7 @@ input[type="checkbox"] {
 	cursor: pointer;
 
 	padding: 1px;
-	margin: 6px 3px 0 0;
+	margin: 1.5px 9px 0 0 !important;
 
 	border: 2px solid var(--hr-line-gray);
 	border-radius: var(--round);
