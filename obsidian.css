@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 1.446
+Version 1.447
 https://github.com/chrisgrieser/shimmering-focus/
 MIT License
 ─────────────────────────────────────────────────── */
@@ -7989,7 +7989,7 @@ settings:
 	 id: show-ribbons
 	 title: Re-enable Ribbons
 	 type: class-toggle
-	 description: Ribbons are the thin vertical bars to the very left & right
+	 description: Ribbons are the thin vertical bars to the very left & right. The left ribbon is the element that contains the settings button.
 	 default: false
   -
 	 id: show-header-bar
