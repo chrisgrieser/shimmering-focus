@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 1.445
+Version 1.446
 https://github.com/chrisgrieser/shimmering-focus/
 MIT License
 ─────────────────────────────────────────────────── */
@@ -382,6 +382,35 @@ body.theme-dark {
 	--medium-shadow: 4px 6px var(--shadow-blur) calc(var(--shadow-base-size) + 5px) var(--shadow-color);
 	--small-shadow: 2px 4px var(--shadow-blur) calc(var(--shadow-base-size) + 0px) var(--shadow-color);
 }
+
+/* drop shadow when scrolled */
+/* / needs some better selectors to target
+only sidebars and everything scrolling */
+/* needs some adjustment to work right in dark mode as well */
+/* https://discord.com/channels/686053708261228577/702656734631821413/921553490558459944 */
+
+/* .workspace-leaf-content .view-content > div > div,
+.workspace-leaf-content .view-content > div,
+.workspace-leaf-content .view-content > div,
+.outgoing-link-pane,
+.backlink-pane {
+  background:
+   linear-gradient(
+        var(--bg1) 30%,
+        rgba(255, 255, 255, 0)
+      )
+      center top,
+   radial-gradient(
+        farthest-side at 50% 0,
+        rgba(0, 0, 0, 0.6),
+        rgba(0, 0, 0, 0)
+      )
+      center top;
+
+  background-repeat: no-repeat;
+  background-size: 100% 40px, 120% 3px;
+  background-attachment: local, scroll;
+} */
 
 /* ───────────────────────────────────────────────────
 << Borders
