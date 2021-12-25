@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 1.449
+Version 1.450
 https://github.com/chrisgrieser/shimmering-focus/
 MIT License
 ─────────────────────────────────────────────────── */
@@ -630,7 +630,7 @@ only sidebars and everything scrolling */
 	--smallcap-font: "Alegreya Sans SC";
 	--setting-heading: "Alegreya Sans SC";
 
-	--heading-font: "Optima", "Optima V";
+	--heading-font: "Optima", "Optima V"; /* prefer system font on Mac */
 	--h1-size: 1.8em;
 	--h2-size: 1.6em;
 	--h3-size: 1.45em;
@@ -656,6 +656,7 @@ div.status-bar-item {
 	font-size: var(--status-bar-font-size);
 }
 
+textarea,
 button,
 select.dropdown {
 	font-family: var(--button-font);
@@ -928,8 +929,9 @@ svg.reading-glasses {
 
 *:not(.kanban-plugin__icon) > svg.vertical-three-dots {
 	background-color: currentColor;
-	margin-top: 1px;
-	-webkit-mask-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' width='1.2em' height='1.2em' preserveAspectRatio='xMidYMid meet' viewBox='0 0 20 20'%3e%3cpath d='M3 11h14V9H3v2zm0 5h14v-2H3v2zM3 4v2h14V4H3z' fill='currentColor'/%3e%3c/svg%3e");
+	position: relative;
+	bottom: 1px;
+	-webkit-mask-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' width='1.25em' height='1.25em' preserveAspectRatio='xMidYMid meet' viewBox='0 0 20 20'%3e%3cpath d='M3 11h14V9H3v2zm0 5h14v-2H3v2zM3 4v2h14V4H3z' fill='currentColor'/%3e%3c/svg%3e");
 }
 
 /* graph */
@@ -952,7 +954,7 @@ svg.search > path { display: none }
 
 svg.search {
 	background-color: currentColor;
-	margin-top: 2px;
+	margin-top: 1px;
 	-webkit-mask-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' width='1.1em' height='1.1em' preserveAspectRatio='xMidYMid meet' viewBox='0 0 32 32'%3e%3cpath d='M30 28.586l-4.689-4.688a8.028 8.028 0 1 0-1.414 1.414L28.586 30zM19 25a6 6 0 1 1 6-6a6.007 6.007 0 0 1-6 6z' fill='currentColor'/%3e%3cpath d='M2 12h8v2H2z' fill='currentColor'/%3e%3cpath d='M2 2h16v2H2z' fill='currentColor'/%3e%3cpath d='M2 7h16v2H2z' fill='currentColor'/%3e%3c/svg%3e");
 }
 
@@ -6262,11 +6264,18 @@ div.kanban-plugin__board > div {
 	margin-top: 0;
 }
 
-/* <<< Font sizes  */
+/* <<< Font  */
+
 body .kanban-plugin p {
 	margin: 0;
 	font-size: 0.95em;
 	letter-spacing: -0.2px;
+}
+
+/* cards being edited */
+.app-container .kanban-plugin .kanban-plugin__board textarea {
+	font-size: 0.95em;
+	letter-spacing: -0.1px;
 }
 
 .kanban-plugin li {
@@ -8221,7 +8230,7 @@ settings:
 	 title: Menu Font
 	 description: Font used in menus (i.e., Settings, Plugin Browser, Theme Browser).
 	 type: variable-text
-	 default: Recursive S
+	 default: '"Recursive S"'
   -
 	 id: menu-font-size
 	 title: Menu Font Size
