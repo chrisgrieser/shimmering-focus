@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 1.450
+Version 1.451
 https://github.com/chrisgrieser/shimmering-focus/
 MIT License
 ─────────────────────────────────────────────────── */
@@ -20,9 +20,9 @@ the .create-ToC.sh.
 	- Borders
 - Other Variables
 - Fonts
- 	- Base64-encoded Fonts
- 	- Font Definitions
- 	- Bold
+	- Base64-encoded Fonts
+	- Font Definitions
+	- Bold
 - Icons
 - Base Icons
 	- Plugin Icons
@@ -72,8 +72,8 @@ the .create-ToC.sh.
 	- Editor Properties
 	- Embeds
 	- YAML Header
- 		- YAML Frontmatter
- 		- Metadata Block
+		- YAML Frontmatter
+		- Metadata Block
 	- Gutter & Collapse Indicators
 	- Progress bars (<progress>)
 	- Images
@@ -82,10 +82,10 @@ the .create-ToC.sh.
 	- Search Matches
 	- Spellcheck
 	- Max View
- 		- Line Length & Tables
- 		- Images
- 		- PDFs
- 		- Mermaid
+		- Line Length & Tables
+		- Images
+		- PDFs
+		- Mermaid
 - Markup
 	- Headings
 	- Blockquotes
@@ -99,11 +99,11 @@ the .create-ToC.sh.
 	- Comments & HTML Tags
 	- Tasks
 	- Checkboxes
- 		- SlRvb's checkboxes Compatibility
+		- SlRvb's checkboxes Compatibility
 	- Highlights & Selection
- 		- Active Line Highlight
- 		- Highlights
- 		- Selection (Selected Text)
+		- Active Line Highlight
+		- Highlights
+		- Selection (Selected Text)
 	- Multi-Color Highlighting
 	- Pseudo-Spoiler-Tag
 	- Strikethroughs
@@ -117,7 +117,7 @@ the .create-ToC.sh.
 		- Relationship Lines
 		- Folder Icons & Note Icons
 	- Panes
- 		- Panes in general
+		- Panes in general
 		- Outline
 		- Backlinks & Outgoing
 		- Search
@@ -132,10 +132,10 @@ the .create-ToC.sh.
 	- Templater
 	- Kanban
 	- Longform
- 		- Longform Sidebar
- 		- Longform Sidebar Icons
- 		- Longform Editor
- 		- Longform Icons
+		- Longform Sidebar
+		- Longform Sidebar Icons
+		- Longform Editor
+		- Longform Icons
 	- Ozan's Image in Editor
 	- Recent Files
 	- Quick Explorer
@@ -396,16 +396,16 @@ only sidebars and everything scrolling */
 .backlink-pane {
   background:
    linear-gradient(
-        var(--bg1) 30%,
-        rgba(255, 255, 255, 0)
-      )
-      center top,
+	   var(--bg1) 30%,
+	   rgba(255, 255, 255, 0)
+	 )
+	 center top,
    radial-gradient(
-        farthest-side at 50% 0,
-        rgba(0, 0, 0, 0.6),
-        rgba(0, 0, 0, 0)
-      )
-      center top;
+	   farthest-side at 50% 0,
+	   rgba(0, 0, 0, 0.6),
+	   rgba(0, 0, 0, 0)
+	 )
+	 center top;
 
   background-repeat: no-repeat;
   background-size: 100% 40px, 120% 3px;
@@ -631,12 +631,17 @@ only sidebars and everything scrolling */
 	--setting-heading: "Alegreya Sans SC";
 
 	--heading-font: "Optima", "Optima V"; /* prefer system font on Mac */
+	--heading-letter-spacing: 1px;
 	--h1-size: 1.8em;
 	--h2-size: 1.6em;
 	--h3-size: 1.45em;
 	--h4-size: 1.3em;
 	--h5-size: 1.15em;
 	--h6-size: 1.05em;
+}
+
+.less-heading-letter-spacing {
+	--heading-letter-spacing: 0.2px
 }
 
 /* angular / roundish font */
@@ -1849,7 +1854,7 @@ select.dropdown:hover {
 input[type="range"] {
 	width: 150px;
 	background-color: var(--bg3) !important;
-  	border-radius: calc(var(--roundish) / 2);
+	border-radius: calc(var(--roundish) / 2);
 }
 
 input[type="range"]::-WEBKIT-SLIDER-THUMB {
@@ -2873,13 +2878,14 @@ body .workspace-leaf-resize-handle:active {
 	vertical-align: top;
 }
 
+/* author */
 .community-plugin-search-results .community-plugin-author {
 	display: inline-block;
 
 	color: var(--extra-contrast);
 	opacity: 0.8;
 
-	margin-top: 5px;
+	margin-top: 3px;
 
 	font-family: var(--smallcap-font);
 	font-size: 0.85em;
@@ -2992,6 +2998,7 @@ body .workspace-leaf-resize-handle:active {
 	border-left: var(--thick-border);
 	border-top-right-radius: calc(var(--roundish) * 2.5);
 	border-bottom-right-radius: calc(var(--roundish) * 2.5);
+	font-family: var(--default-font);
 }
 
 .community-plugin-info .community-plugin-name {
@@ -3002,12 +3009,18 @@ body .workspace-leaf-resize-handle:active {
 
 	font-family: var(--heading-font);
 	font-size: calc(var(--h1-size) * 1.2);
-	font-weight: 600;
-	letter-spacing: 0.7px;
+	font-weight: 700;
+	letter-spacing: var(--heading-letter-spacing);
 }
 
-.community-plugin-readme li {
+ li {
 	font-size: 1em;
+}
+
+/* prevent image settings from propagating to images in here */
+.community-plugin-info .community-plugin-readme img {
+	display: inline;
+	margin-top: 0;
 }
 
 .community-plugin-info .community-plugin-downloads::BEFORE,
@@ -3050,6 +3063,7 @@ body .workspace-leaf-resize-handle:active {
 	margin-right: 18px;
 }
 
+/* copy URL button  */
 .modal.modal.mod-community-plugin .community-plugin-info button:last-child {
 	height: 2.1rem;
 
@@ -3072,6 +3086,15 @@ body .workspace-leaf-resize-handle:active {
 	font-family: var(--icon-font);
 	font-size: 1.5rem;
 }
+
+.angular-shapes .modal.modal.mod-community-plugin .community-plugin-info button:last-child {
+	top: 2.5px;
+}
+
+.angular-shapes .modal.modal.mod-community-plugin .community-plugin-info button:last-child::BEFORE {
+	top: 5px;
+}
+
 
 .community-plugin-info h2,
 .community-plugin-info h3,
@@ -3289,11 +3312,13 @@ body:not(.less-heading-letter-spacing) .modal.mod-community-theme .modal-title {
 	letter-spacing: 1px;
 }
 
-.modal.mod-community-theme > .modal-content > .modal-title {
+.modal.mod-community-theme .modal-content .modal-title {
 	color: var(--extra-contrast);
 	margin-bottom: 10px;
 	font-family: var(--setting-heading);
-	font-weight: 600;
+	font-weight: 700;
+	letter-spacing: var(--heading-letter-spacing);
+
 }
 
 .community-theme-mode-toggle-label {
@@ -3951,6 +3976,7 @@ body.focus-view-enabled .workspace-split.mod-left-split.is-collapsed ~ .workspac
 	font-weight: 700;
 	text-rendering: geometricPrecision;
 	line-height: 1.3em;
+	letter-spacing: var(--heading-letter-spacing);
 }
 
 body .cm-s-obsidian .cm-header {
@@ -3999,21 +4025,6 @@ body .cm-s-obsidian .cm-header {
 
 .cm-formatting.cm-formatting-header {
 	color: var(--text-faint);
-}
-
-body:not(.less-heading-letter-spacing) .cm-header-1,
-body:not(.less-heading-letter-spacing) .cm-header-2,
-body:not(.less-heading-letter-spacing) .cm-header-3,
-body:not(.less-heading-letter-spacing) .cm-header-4,
-body:not(.less-heading-letter-spacing) .cm-header-5,
-body:not(.less-heading-letter-spacing) .cm-header-6,
-body:not(.less-heading-letter-spacing) .markdown-preview-view h1,
-body:not(.less-heading-letter-spacing) .markdown-preview-view h2,
-body:not(.less-heading-letter-spacing) .markdown-preview-view h3,
-body:not(.less-heading-letter-spacing) .markdown-preview-view h4,
-body:not(.less-heading-letter-spacing) .markdown-preview-view h5,
-body:not(.less-heading-letter-spacing) .markdown-preview-view h6 {
-	letter-spacing: 1px;
 }
 
 /* Alternation between italic & different font style
@@ -8075,12 +8086,12 @@ settings:
 	 allowEmpty: false
 	 default: classic-colors
 	 options:
-	     -
-	         label: Classic Shimmering Focus
-	         value: classic-colors
-	     -
-	         label: Custom Colors
-	         value: custom-colors
+		-
+		    label: Classic Shimmering Focus
+		    value: classic-colors
+		-
+		    label: Custom Colors
+		    value: custom-colors
   -
 	 id: brightness-light
 	 title: 'Custom Colors: Brightness (Light Mode)'
