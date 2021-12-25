@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 1.456
+Version 1.457
 https://github.com/chrisgrieser/shimmering-focus/
 MIT License
 ─────────────────────────────────────────────────── */
@@ -2761,18 +2761,9 @@ body .workspace-leaf-resize-handle:active {
 
 /* avoids the creation of two-line-hotkeys  */
 /* when the command name is too long */
-.hotkey-list-container .setting-item {
-	display: flex;
-	flex-direction: row;
-	align-items: baseline;
-}
-
 .hotkey-list-container .setting-item .setting-item-info {
 	margin-right: 0;
-}
-
-.hotkey-list-container .setting-item .setting-item-info .setting-item-control {
-	min-width: max-content;
+	max-width: 80%;
 }
 
 .setting-hotkey {
@@ -4051,9 +4042,10 @@ body:not(.no-alternating-header-italics) .markdown-preview-view h6 {
 << Blockquotes
 ─────────────────────────────────────────────────── */
 
-.markdown-preview-view blockquote,
-.cm-s-obsidian .cm-line .cm-quote {
+body .markdown-preview-view blockquote,
+.app-container .cm-s-obsidian .cm-line.HyperMD-quote {
 	color: var(--extra-contrast);
+	border-left: 15px solid var(--basic-border-color);
 }
 
 /* edit mode & live preview */
@@ -4061,19 +4053,7 @@ body:not(.no-alternating-header-italics) .markdown-preview-view h6 {
 .markdown-source-view.mod-cm6 .cm-line.HyperMD-quote {
 	background-color: var(--bg2);
 	padding: 0.4em 0.8em 0.5em 0;
-	border-right: var(--thick-border);
-	border-left: var(--thick-border);
 	border-radius: var(--roundish);
-}
-
-/* fixes color when text is selected */
-/* https://forum.obsidian.md/t/inline-code-occludes-text-selection-and-vim-cursor/11552/10?u=pseudometa */
-.theme-light .mod-cm5 .HyperMD-quote {
-	background-color: rgb(0 0 0 / 3%);
-}
-
-.theme-dark .mod-cm5 .HyperMD-quote {
-	background-color: rgb(0 0 0 / 25%);
 }
 
 /* the ">" */
@@ -4098,12 +4078,9 @@ body:not(.no-alternating-header-italics) .markdown-preview-view h6 {
 	background-color: var(--bg2);
 
 	padding: 0.3em 0.7em 0.4em;
-	margin: 1.5em 0 1.5em 2em;
+	margin: 1.5em 0;
 
-	border-top: none;
-	border-right: var(--thick-border);
-	border-bottom: none;
-	border-left: var(--thick-border);
+	border: none;
 	border-radius: var(--roundish);
 }
 
@@ -4139,6 +4116,15 @@ body:not(.blockquotes-left-aligned) > .app-container .markdown-preview-view bloc
 body:not(.blockquotes-left-aligned) > .app-container .HyperMD-quote {
 	text-align: justify;
 	hyphens: auto;
+}
+
+/* CM5: fixes color when text is selected */
+.theme-light .mod-cm5 .HyperMD-quote {
+	background-color: rgb(0 0 0 / 3%);
+}
+
+.theme-dark .mod-cm5 .HyperMD-quote {
+	background-color: rgb(0 0 0 / 25%);
 }
 
 /* ───────────────────────────────────────────────────
@@ -4248,8 +4234,10 @@ body.no-alternating-rows > .app-container table > tbody > tr > td {
 	font-size: var(--monospace-font-size);
 }
 
+/* "*:not(pre) > code" targets inline code
+(i.e. code that is not in a pre (=block)) */
+.markdown-preview-view *:not(pre) > code,
 .cm-s-obsidian .cm-formatting-code.cm-inline-code,
-.app-container .markdown-preview-view code,
 .cm-s-obsidian span.cm-inline-code {
 	color: var(--code-color);
 	text-shadow: none;
@@ -4282,7 +4270,8 @@ body {
 	border-radius: var(--slight-code-roundish);
 }
 
-/* <<< code blocks */
+/* <<< Code Blocks */
+/* Code blocks in Edit Mode */
 .markdown-preview-view,
 .HyperMD-codeblock-bg {
 	--codeblock-border: var(--muted-border);
@@ -4294,22 +4283,6 @@ body {
 	color: var(--text-muted);
 }
 
-body .markdown-preview-view pre[class*="language-"],
-body .markdown-preview-view pre {
-	background-color: var(--bg2);
-	padding: 0;
-	border: var(--codeblock-border);
-	border-radius: var(--codeblock-roundness);
-}
-
-/* Code blocks in Live Preview */
-.cm-line.HyperMD-codeblock .code-block-flair {
-	color: var(--text-muted);
-	padding: 0 1px;
-}
-
-
-/* Code blocks in Edit Mode */
 .cm-s-obsidian .HyperMD-codeblock {
 	line-height: 1.4em;
 }
@@ -4334,6 +4307,17 @@ div.HyperMD-codeblock-bg:not(.HyperMD-codeblock-begin-bg) {
 	border-left: var(--codeblock-border);
 }
 
+/* Code blocks in Live Preview */
+.cm-line.HyperMD-codeblock .code-block-flair {
+	color: var(--text-muted);
+	padding: 0 1px;
+}
+
+/* embedded code block */
+.markdown-source-view.mod-cm6 .cm-embed-block:hover {
+	border: var(--basic-border);
+}
+
 /* interaction of active line highlight roundness with code blocks */
 body:not(.no-active-line-highlighting) .cm-active.HyperMD-codeblock,
 body:not(.no-active-line-highlighting) .CodeMirror-activeline .HyperMD-codeblock-bg.CodeMirror-linebackground {
@@ -4352,24 +4336,45 @@ body:not(.no-active-line-highlighting) .CodeMirror-activeline .HyperMD-codeblock
 	border-bottom-left-radius: var(--codeblock-roundness);
 }
 
-/* show language of Code Block in Preview Mode */
-/* snippet by @Chetachie */
-pre {
-	position: relative;
+/* Code Blocks in Preview Mode */
+body .markdown-preview-view pre[class*="language-"],
+body .markdown-preview-view pre {
+	background-color: var(--bg2);
+	padding: 0;
+	border: var(--codeblock-border);
+	border-top: none;
+	border-radius: var(--codeblock-roundness);
+}
+
+.markdown-preview-view pre[class*="language-"] code,
+.markdown-preview-view pre code{
+	color: var(--text-normal);
+	padding: 4px 9px 8px;
+
+	/* wrapping in code block */
+	overflow-wrap: break-word;
+	white-space: pre-wrap;
+}
+
+/* border on top created like this, since the
+::after element cannot be moved on a border */
+pre::BEFORE {
+	display: block;
+	content: " ";
+	background-color: var(--bg3);
 }
 
 pre[class*="language-"]::AFTER {
 	content: attr(class);
 
 	position: absolute;
-	right: 8px;
-	bottom: 3px;
+	right: 4px;
+	top: 2px;
 
 	color: var(--text-muted);
 
 	font-family: var(--font-monospace);
-	font-size: 0.8em;
-	text-shadow: none;
+	font-size: calc(var(--monospace-font-size) * 0.9);
 }
 
 pre[class~="language-c"]::AFTER { content: "C"; }
@@ -4403,16 +4408,6 @@ pre[class~="language-url"]::AFTER { content: "url"; }
 pre[class~="language-uri"]::AFTER { content: "uri"; }
 pre[class~="language-applescript"]::AFTER { content: "AppleScript"; }
 pre[class~="language-as"]::AFTER { content: "AppleScript"; }
-
-/* fix for the buggy selection of inline text
-https://forum.obsidian.md/t/inline-code-occludes-text-selection-and-vim-cursor/11552/10 */
-.mods-cm5 .theme-dark .cm-inline-code {
-	background-color: rgb(0 0 0 / 20%) !important;
-}
-
-.mods-cm5 .theme-light .cm-inline-code {
-	background-color: rgb(0 0 0 / 5%) !important;
-}
 
 /* copy & edit code button */
 button.copy-code-button {
@@ -4448,9 +4443,14 @@ button.copy-code-button::BEFORE {
 	font-size: 0.8rem;
 }
 
-/* CM6: embedded code block */
-.markdown-source-view.mod-cm6 .cm-embed-block:hover {
-	border: var(--basic-border);
+/* fix for the buggy selection of inline text
+https://forum.obsidian.md/t/inline-code-occludes-text-selection-and-vim-cursor/11552/10 */
+.mods-cm5 .theme-dark .cm-inline-code {
+	background-color: rgb(0 0 0 / 20%) !important;
+}
+
+.mods-cm5 .theme-light .cm-inline-code {
+	background-color: rgb(0 0 0 / 5%) !important;
 }
 
 /* ───────────────────────────────────────────────────
