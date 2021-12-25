@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 1.448
+Version 1.449
 https://github.com/chrisgrieser/shimmering-focus/
 MIT License
 ─────────────────────────────────────────────────── */
@@ -7057,7 +7057,7 @@ button.MS-OpenSnippet:hover svg.ms-snippet path {
 }
 
 body > .app-container .workspace-leaf-content[data-type="BC-matrix"] > .view-content {
-	padding: 1px 3px 3px;
+	padding: 1px 3px 3px 2px;
 }
 
 body > .app-container .workspace-leaf-content[data-type="BC-matrix"] > .view-content div.BC-Matrix-square {
@@ -7088,7 +7088,7 @@ body > .app-container div.view-content > div.BC-Matrix {
 	font-family: var(--default-font);
 	font-size: 1.2em;
 	font-style: unset !important;
-	padding: 0 4px;
+	padding: 0 6px;
 }
 
 /* "implied" and "real" */
