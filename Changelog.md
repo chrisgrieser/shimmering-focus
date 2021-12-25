@@ -1,4 +1,4 @@
-- 2021-12-25	minor
+- 2021-12-25	improved community plugin browser
 - 2021-12-25	minor font fixes
 - 2021-12-25	better GitHub msg
 - 2021-12-25	extra info on how to access settings (#69)

@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 1.451
+Version 1.452
 https://github.com/chrisgrieser/shimmering-focus/
 MIT License
 ─────────────────────────────────────────────────── */
@@ -631,7 +631,7 @@ only sidebars and everything scrolling */
 	--setting-heading: "Alegreya Sans SC";
 
 	--heading-font: "Optima", "Optima V"; /* prefer system font on Mac */
-	--heading-letter-spacing: 1px;
+	--heading-letter-spacing: 2px;
 	--h1-size: 1.8em;
 	--h2-size: 1.6em;
 	--h3-size: 1.45em;
@@ -2993,9 +2993,7 @@ body .workspace-leaf-resize-handle:active {
 ─────────────────────────────────────────────────── */
 
 .community-plugin-info {
-	background-color: var(--bg1);
 	padding: 10px 5px 10px 15px;
-	border-left: var(--thick-border);
 	border-top-right-radius: calc(var(--roundish) * 2.5);
 	border-bottom-right-radius: calc(var(--roundish) * 2.5);
 	font-family: var(--default-font);
@@ -3005,7 +3003,7 @@ body .workspace-leaf-resize-handle:active {
 	padding-bottom: 5px;
 	margin-bottom: 12px;
 
-	border-bottom: var(--thick-border);
+	border-bottom: var(--thick-muted-border);
 
 	font-family: var(--heading-font);
 	font-size: calc(var(--h1-size) * 1.2);
@@ -3013,15 +3011,12 @@ body .workspace-leaf-resize-handle:active {
 	letter-spacing: var(--heading-letter-spacing);
 }
 
- li {
-	font-size: 1em;
+
+.community-plugin-details {
+	background-color: var(--bg1);
+	border-left: var(--thick-border);
 }
 
-/* prevent image settings from propagating to images in here */
-.community-plugin-info .community-plugin-readme img {
-	display: inline;
-	margin-top: 0;
-}
 
 .community-plugin-info .community-plugin-downloads::BEFORE,
 .community-plugin-info .community-plugin-downloads {
@@ -3095,7 +3090,7 @@ body .workspace-leaf-resize-handle:active {
 	top: 5px;
 }
 
-
+/* headings  */
 .community-plugin-info h2,
 .community-plugin-info h3,
 .community-plugin-info h4,
@@ -3104,26 +3099,18 @@ body .workspace-leaf-resize-handle:active {
 	margin-top: 10px !important;
 }
 
-.community-plugin-info hr,
 .community-plugin-info h1,
 .community-plugin-info .community-plugin-desc {
 	display: none;
 }
 
-.community-plugin-info div.community-plugin-readme {
-	padding-top: 5px !important;
-	margin-top: 15px !important;
+.community-plugin-info hr {
 	border-top: var(--thick-muted-border);
+	margin: 0.5em 0 1em;
 }
 
-.community-plugin-readme {
-	padding-top: 0 !important;
-}
-
-/* no external link icon */
-.community-plugin-readme a.external-link {
-	background-image: none;
-	padding-right: 0;
+.community-plugin-info .community-plugin-readme {
+	padding-top: 0;
 }
 
 /* empty state */
@@ -3139,6 +3126,19 @@ body .workspace-leaf-resize-handle:active {
 	font-size: var(--empty-state-symbol-size);
 	font-weight: 500;
 }
+
+/* prevent image settings from propagating to images in here */
+.community-plugin-info .community-plugin-readme img {
+	display: inline;
+	margin-top: 0;
+}
+
+/* prevent external link icon from propagating */
+.community-plugin-readme a.external-link {
+	background-image: none;
+	padding-right: 0;
+}
+
 
 /* ───────────────────────────────────────────────────
 << Theme Browser
@@ -3184,7 +3184,7 @@ body .workspace-leaf-resize-handle:active {
 	content: 'ℹ️ Theme Customization via Style Settings Plugin\A\A 💡 Access Settings\A⌘ + ,    on Mac\A Ctrl + ,  on Windows/Linux';
 	white-space: pre-wrap;
 	position: absolute;
-	top: 133xpx;
+	top: 133px;
 	right: 7%;
 	left: 7%;
 
@@ -3296,7 +3296,7 @@ body .workspace-leaf-resize-handle:active {
 }
 
 .modal.mod-community-theme hr {
-	border-top: var(--basic-border);
+	border-top: var(--thick-border);
 }
 
 .modal.mod-community-theme .modal-content {
@@ -3312,10 +3312,9 @@ body:not(.less-heading-letter-spacing) .modal.mod-community-theme .modal-title {
 	letter-spacing: 1px;
 }
 
-.modal.mod-community-theme .modal-content .modal-title {
+body .modal.mod-community-theme .modal-content .modal-title {
 	color: var(--extra-contrast);
-	margin-bottom: 10px;
-	font-family: var(--setting-heading);
+	margin-bottom: 20px;
 	font-weight: 700;
 	letter-spacing: var(--heading-letter-spacing);
 
