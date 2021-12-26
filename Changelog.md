@@ -1,4 +1,5 @@
 - 2021-12-26	fix max view for new editor
+- 2021-12-26	fix max view for new editor
 - 2021-12-26	updated issue templates
 - 2021-12-26	update promo screenshot
 - 2021-12-26	dataview error fix
