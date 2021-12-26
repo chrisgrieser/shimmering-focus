@@ -17,8 +17,12 @@ Steps to reproduce the behavior:
 3. Scroll down to '....'
 4. See error
 
-**Is the Problem related to Obsidian 0.13+ / Live Preview Mode?**
-It is helpful to know whether the issue occurred due to Obsidian's new Live Preview feature introduced in version 0.13+. To test this, go the the Obsidian settings and turn on `Use Legacy Editor`. If the bug seems to be related to Live Preview, please abort this issue creation and create an issue using the "Live Preview-related Bug" Template instead. This way I can prioritize bugs related to Live Preview (once publicly released).
+**Which Mode / Editor does the bug occur?**
+- [ ] Legacy Editor (or Obsidian 0.12 or below)
+- [ ] New Editor
+- [ ] Reading/Preview Mode
+- [ ] Source Mode
+- [ ] Live Preview
 
 **Relevant Screenshots**
 If applicable, add screenshots to help explain your problem.
