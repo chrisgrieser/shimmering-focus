@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 1.467
+Version 1.468
 https://github.com/chrisgrieser/shimmering-focus/
 MIT License
 ─────────────────────────────────────────────────── */
@@ -709,19 +709,11 @@ body > .app-container {
 	font-weight: 800;
 }
 
+/* more readable in dark mode */
 .theme-dark .cm-strong,
 .theme-dark .markdown-preview-view strong {
 	font-weight: 600;
-	text-decoration: underline;
-}
-
-/* no underlines for bold in tables
-of when the turned off via style settings */
-.theme-dark .markdown-preview-view table strong,
-.theme-dark.bold-no-underline .cm-strong,
-.theme-dark.bold-no-underline .markdown-preview-view strong {
-	font-weight: 800;
-	text-decoration: none;
+	text-shadow: 1px 1px hsl(0 0% 30%);
 }
 
 /* ───────────────────────────────────────────────────
@@ -1777,6 +1769,8 @@ textarea {
 	border-radius: calc(var(--roundish) * 1.5);
 }
 
+input[type="email"],
+input[type="password"],
 input[type="text"] {
 	width: 250px;
 }
@@ -2664,7 +2658,8 @@ body .workspace-leaf-resize-handle:active {
 .vertical-tab-nav-item {
 	color: var(--extra-contrast);
 	background: var(--bg2);
-	padding: 3px 3px 3px 6px;
+	padding: 3px 6px;
+	border: none;
 }
 
 /* color active/hovered sub menu */
@@ -2672,9 +2667,9 @@ body .workspace-leaf-resize-handle:active {
 .vertical-tab-nav-item.is-active {
 	color: var(--text-accent);
 	background: var(--bg3);
-	padding-left: 9px;
+	padding-left: 6px;
 	margin-left: 0;
-	border-left: none;
+	border: none;
 }
 
 .vertical-tab-nav-item.is-active:hover,
@@ -2712,7 +2707,7 @@ body .workspace-leaf-resize-handle:active {
 	font-weight: 900;
 }
 
-/* >>> Login menu  */
+/* <<< Login Menu  */
 .modal.mod-settings .u-center-text:not(.button-container) {
 	padding-top: 40px;
 	margin-top: 60px;
@@ -2723,7 +2718,7 @@ body .workspace-leaf-resize-handle:active {
 	margin-top: 30px;
 }
 
-/* >>> Community plugin list */
+/* <<< Community plugin list */
 .installed-plugins-container .setting-item-description > div:first-child {
 	font-family: var(--smallcap-font);
 	line-height: 1.1em;
@@ -3915,17 +3910,32 @@ body:not(.no-alternating-rows) .spellchecker-dictionary-item {
 /* as well for this to work.) */
 
 /* <<< Line Length & Tables */
-body.max-view-enabled .workspace-split.mod-left-split.is-collapsed ~ .mod-root .markdown-preview-section,
-body.max-view-enabled .workspace-split.mod-left-split.is-collapsed ~ .mod-root .CodeMirror-wrap {
+/* CM6 + CM5: Preview Mode */
+.max-view-enabled .mod-left-split.is-collapsed ~ .mod-root .markdown-preview-section {
+	max-width: 100%;
+}
+
+/* CM6: Source Mode & Live Preview (both lines needed) */
+.max-view-enabled .mod-left-split.is-collapsed ~ .mod-root .markdown-source-view.mod-cm6.is-readable-line-width:not(.rtl) .cm-contentContainer,
+.max-view-enabled .mod-left-split.is-collapsed ~ .mod-root .markdown-source-view.mod-cm6.is-readable-line-width:not(.rtl) .cm-contentContainer .cm-line {
+	max-width: 100%;
+}
+
+/* CM5: Source Mode */
+.max-view-enabled .mod-left-split.is-collapsed ~ .mod-root .CodeMirror-wrap {
 	max-width: 100%;
 }
 
 /* <<< Images */
-body.max-view-enabled .workspace-split.mod-left-split.is-collapsed ~ .mod-root .view-content .markdown-preview-view img {
+
+/* Images Preview Mode */
+.max-view-enabled:not(.is-mobile) .mod-left-split.is-collapsed ~ .mod-root .view-content .markdown-preview-view img {
 	max-width: 100%;
 }
 
-body.max-view-enabled .workspace-split.mod-left-split.is-collapsed ~ .mod-root div.oz-image-widget > img {
+/* CM5 + CM6: Images Source Mode (Ozan's image in editor) */
+.max-view-enabled:not(.is-mobile) .mod-left-split.is-collapsed ~ .mod-root div.oz-image-widget-cm6 > img,
+.max-view-enabled:not(.is-mobile) .mod-left-split.is-collapsed ~ .mod-root div.oz-image-widget > img {
 	max-width: 100% !important;
 }
 
@@ -3937,20 +3947,20 @@ body:not(.is-mobile) .app-container div.oz-image-widget > img:not(:active) {
 }
 
 /* <<< PDFs */
-body.max-view-enabled:not(.is-mobile) .workspace-split.mod-left-split.is-collapsed ~ .mod-root .view-content .markdown-preview-view .pdf-embed,
-body.max-view-enabled:not(.is-mobile) .workspace-split.mod-left-split.is-collapsed ~ .mod-root div.oz-image-widget embed {
+body.max-view-enabled:not(.is-mobile) .mod-left-split.is-collapsed ~ .mod-root .view-content .markdown-preview-view .pdf-embed,
+body.max-view-enabled:not(.is-mobile) .mod-left-split.is-collapsed ~ .mod-root div.oz-image-widget embed {
 	max-height: 100%;
 	max-width: 100%;
 }
 
 body:not(.is-mobile) .pdf-embed,
-body:not(.is-mobile) > .app-container div.oz-image-widget embed {
+body:not(.is-mobile) .app-container div.oz-image-widget embed {
 	max-height: var(--pdf-size);
 	max-width: var(--pdf-size);
 }
 
 /* <<< Mermaid */
-body.max-view-enabled .workspace-split.mod-left-split.is-collapsed ~ .mod-root svg[id^="m"][width][height][viewBox] {
+body.max-view-enabled .mod-left-split.is-collapsed ~ .mod-root svg[id^="m"][width][height][viewBox] {
 	width: 100%;
 	max-width: 100%;
 }
@@ -3962,7 +3972,7 @@ svg[id^="m"][width][height][viewBox] {
 }
 
 /* Focus View: When the left sidebar is hidden, hide the right one as well */
-body.focus-view-enabled .workspace-split.mod-left-split.is-collapsed ~ .workspace-split.mod-right-split {
+body.focus-view-enabled .mod-left-split.is-collapsed ~ .mod-right-split {
 	display: none;
 }
 
@@ -5021,6 +5031,7 @@ body:not(.no-active-line-highlighting) .CodeMirror-activeline .CodeMirror-lineba
 span.cm-em.cm-highlight {
 	background-color: var(--highlight-alt2);
 	font-style: initial;
+	text-shadow: none;
 }
 
 /* Yellow Highlight **== ==** */
@@ -5029,6 +5040,7 @@ span.cm-strong.cm-highlight,
 	background-color: var(--highlight-alt1);
 	font-weight: 500;
 	text-rendering: initial;
+	text-shadow: none;
 }
 
 /* ───────────────────────────────────────────────────
@@ -8268,13 +8280,6 @@ settings:
 		label: Relationship Line Fix (Monospace Font)
 		value: relationship-line-fix-mono
 	-
-	 id: relationship-line-fix
-	 title: Relationship Line Fix for Custom Main Font
-	 description: If you are using a custom main font, and the relationship lines for lists do not look right, toggle this.
-	 type: class-toggle
-	 default: false
-	 hub: ignore
-	-
 	 id: font-monospace
 	 title: Monospace Font
 	 description: Used in Code blocks, YAML in Edit Mode, tables in Edit Mode, etc.
@@ -8307,7 +8312,7 @@ settings:
 	-
 	 id: menu-font-family
 	 title: Menu Font
-	 description: Font used in menus (i.e., Settings, Plugin Browser, Theme Browser).
+	 description: Font used in menus (Settings, Plugin Browser, Theme Browser).
 	 type: variable-text
 	 default: '"Recursive S"'
 	-
@@ -8340,12 +8345,6 @@ settings:
 	 max: 2.0
 	 step: 0.05
 	 format: em
-	-
-	 id: bold-no-underline
-	 title: Turn off underlines for bold text in Dark Mode
-	 description: To improve readability, this theme adds underlines to bold text in dark mode. Enable this, if you prefer bold text to have no underline.
-	 type: class-toggle
-	 default: false
 	-
 	 id: heading-font
 	 title: Heading Font

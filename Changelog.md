@@ -1,3 +1,6 @@
+- 2021-12-26	fix max view for new editor
+- 2021-12-26	updated issue templates
+- 2021-12-26	update promo screenshot
 - 2021-12-26	dataview error fix
 - 2021-12-26	code block fixes, CM5 stylingnot affecting CM6 styling anymore and vice versa
 - 2021-12-26	updated to work with Ozan's Image in Editor Plugin v.2.0.1 in new editor
