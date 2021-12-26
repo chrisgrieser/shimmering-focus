@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 1.464
+Version 1.465
 https://github.com/chrisgrieser/shimmering-focus/
 MIT License
 ─────────────────────────────────────────────────── */
@@ -3700,6 +3700,7 @@ progress[value^="10"]::-WEBKIT-PROGRESS-VALUE { background: hsl(160 92% 70%) }
 	margin-top: 25%;
 }
 
+/* the "!" in source mode */
 .cm-image-marker {
 	color: var(--text-muted);
 }
@@ -3720,7 +3721,7 @@ progress[value^="10"]::-WEBKIT-PROGRESS-VALUE { background: hsl(160 92% 70%) }
 	text-rendering: geometricPrecision;
 }
 
-img:not(.link-favicon) {
+*:not(.oz-image-widget-cm6) > img:not(.link-favicon) {
 	display: block;
 	cursor: zoom-in;
 	margin-top: 1em;
@@ -3930,7 +3931,8 @@ body.max-view-enabled .workspace-split.mod-left-split.is-collapsed ~ .mod-root d
 
 body:not(.is-mobile) .view-content .is-live-preview img,
 body:not(.is-mobile) .view-content .markdown-preview-view img,
-body:not(.is-mobile) > .app-container div.oz-image-widget > img:not(:active) {
+body:not(.is-mobile) .oz-image-widget-cm6 > img:not(:active),
+body:not(.is-mobile) .app-container div.oz-image-widget > img:not(:active) {
 	max-width: calc(var(--image-size) * 1%);
 }
 
@@ -6818,10 +6820,13 @@ body.hide-index-files .nav-file-title[data-path$="Index.md"] {
 ─────────────────────────────────────────────────── */
 /* see also "Max View" */
 
+.oz-image-widget-cm6 > embed,
+.oz-image-widget-cm6 > img,
 div.oz-image-widget > embed,
 div.oz-image-widget > img {
 	display: block;
-	border-radius: var(--roundish) !important;
+	cursor: zoom-in;
+	border-radius: var(--roundish);
 }
 
 body:not(.disable-image-borders) div.oz-image-widget > img {
@@ -6829,6 +6834,8 @@ body:not(.disable-image-borders) div.oz-image-widget > img {
 }
 
 /* center */
+body:not(.left-aligned-embeds) .oz-image-widget-cm6 > embed,
+body:not(.left-aligned-embeds) div.oz-image-widget-cm6 > img,
 body:not(.left-aligned-embeds) div.oz-image-widget > embed,
 body:not(.left-aligned-embeds) div.oz-image-widget > img {
 	margin-right: auto;
