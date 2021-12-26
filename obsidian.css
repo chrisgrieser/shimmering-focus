@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 1.460
+Version 1.461
 https://github.com/chrisgrieser/shimmering-focus/
 MIT License
 ─────────────────────────────────────────────────── */
@@ -2817,8 +2817,12 @@ body .workspace-leaf-resize-handle:active {
 	background-color: var(--bg3);
 	padding-top: 10px;
 	margin-left: 0;
-	border-bottom-left-radius: calc(var(--roundish) * 2.5);
 	border-top-left-radius: calc(var(--roundish) * 2.5);
+}
+
+.community-plugin-search,
+.community-plugin-search-results {
+	border-bottom-left-radius: calc(var(--roundish) * 2.5);
 }
 
 /* sort order button */
@@ -2988,9 +2992,14 @@ body .workspace-leaf-resize-handle:active {
 
 .community-plugin-info {
 	padding: 10px 5px 10px 15px;
+	font-family: var(--default-font);
+}
+
+.community-plugin-details {
+	background-color: var(--bg1);
+	border-left: var(--thick-border);
 	border-top-right-radius: calc(var(--roundish) * 2.5);
 	border-bottom-right-radius: calc(var(--roundish) * 2.5);
-	font-family: var(--default-font);
 }
 
 .community-plugin-info .community-plugin-name {
@@ -3003,11 +3012,6 @@ body .workspace-leaf-resize-handle:active {
 	font-size: calc(var(--h1-size) * 1.2);
 	font-weight: 700;
 	letter-spacing: var(--heading-letter-spacing);
-}
-
-.community-plugin-details {
-	background-color: var(--bg1);
-	border-left: var(--thick-border);
 }
 
 .community-plugin-info .community-plugin-downloads::BEFORE,
@@ -3055,7 +3059,7 @@ body .workspace-leaf-resize-handle:active {
 	height: 2.1rem;
 
 	position: relative;
-	top: 0.5px;
+	top: 1px;
 
 	padding-right: 3px;
 	padding-left: 2px;
@@ -3082,13 +3086,14 @@ body .workspace-leaf-resize-handle:active {
 	top: 5px;
 }
 
-/* headings  */
-.community-plugin-info h2,
-.community-plugin-info h3,
-.community-plugin-info h4,
-.community-plugin-info h5,
-.community-plugin-info h6 {
-	margin-top: 10px !important;
+/* headings */
+.community-plugin-info .markdown-preview-view h2,
+.community-plugin-info .markdown-preview-view h3,
+.community-plugin-info .markdown-preview-view h4,
+.community-plugin-info .markdown-preview-view h5,
+.community-plugin-info .markdown-preview-view h6 {
+	margin-top: 11px;
+	letter-spacing: calc(var(--heading-letter-spacing) * 0.5);
 }
 
 .community-plugin-info h1,
