@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 1.469
+Version 1.470
 https://github.com/chrisgrieser/shimmering-focus/
 MIT License
 ─────────────────────────────────────────────────── */
@@ -3074,7 +3074,7 @@ body .workspace-leaf-resize-handle:active {
 }
 
 .angular-shapes .modal.modal.mod-community-plugin .community-plugin-info button:last-child {
-	top: 2.5px;
+	top: 2px;
 }
 
 .angular-shapes .modal.modal.mod-community-plugin .community-plugin-info button:last-child::BEFORE {
@@ -6231,10 +6231,9 @@ body .view-content.dictionary-view-content .main {
 }
 
 /* remove lines */
-body.no-calendar-lines table.calendar td,
-body.no-calendar-lines table.calendar th {
-	border-bottom: none;
-	border-left: none;
+body.no-calendar-lines #calendar-container table.calendar td,
+body.no-calendar-lines #calendar-container table.calendar th {
+	border: none;
 }
 
 /* ───────────────────────────────────────────────────
@@ -8477,7 +8476,7 @@ settings:
 	-
 	 id: spellcheck-settings
 	 title: Spellcheck (deprecated)
-	 description: Legacy Editor only.
+	 description: Legacy Editor only
 	 type: heading
 	 level: 2
 	 collapsed: true

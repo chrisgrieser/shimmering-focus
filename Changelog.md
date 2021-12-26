@@ -1,3 +1,4 @@
+- 2021-12-26	removing calendar lines now working for new Editor (fix #59 again)
 - 2021-12-26	fix max view for new editor
 - 2021-12-26	fix max view for new editor
 - 2021-12-26	updated issue templates
