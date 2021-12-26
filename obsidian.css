@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 1.471
+Version 1.472
 https://github.com/chrisgrieser/shimmering-focus/
 MIT License
 ─────────────────────────────────────────────────── */
@@ -1596,7 +1596,7 @@ body:not(.show-scrollbar) ::-WEBKIT-SCROLLBAR {
 }
 
 .progress-bar {
-	background-color: var(--bg2);
+	/* background-color: var(--bg2); */
 	backdrop-filter: blur(3px);
 }
 
@@ -3916,8 +3916,9 @@ body:not(.no-alternating-rows) .spellchecker-dictionary-item {
 }
 
 /* CM6: Source Mode & Live Preview (both lines needed) */
+.max-view-enabled .mod-left-split.is-collapsed ~ .mod-root .markdown-source-view.mod-cm6.is-readable-line-width .cm-content,
 .max-view-enabled .mod-left-split.is-collapsed ~ .mod-root .markdown-source-view.mod-cm6.is-readable-line-width:not(.rtl) .cm-contentContainer,
-.max-view-enabled .mod-left-split.is-collapsed ~ .mod-root .markdown-source-view.mod-cm6.is-readable-line-width:not(.rtl) .cm-contentContainer .cm-line {
+.max-view-enabled .mod-left-split.is-collapsed ~ .mod-root .markdown-source-view.mod-cm6.is-readable-line-width .cm-contentContainer .cm-line {
 	max-width: 100%;
 }
 
