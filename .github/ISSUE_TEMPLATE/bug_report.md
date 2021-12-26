@@ -10,22 +10,21 @@ assignees: ''
 **Describe the Bug**
 A clear and concise description of what the bug is.
 
+**Relevant Screenshots**
+If applicable, add screenshots to help explain your problem.
+
 **To Reproduce**
-Steps to reproduce the behavior:
+Steps to reproduce the behavior, e.g.
 1. Go to '...'
 2. Click on '....'
 3. Scroll down to '....'
-4. See error
 
-**Which Mode / Editor does the bug occur?**
+**In which mode / editor does the bug occur?**
 - [ ] Legacy Editor (or Obsidian 0.12 or below)
 - [ ] New Editor
 - [ ] Reading/Preview Mode
 - [ ] Source Mode
 - [ ] Live Preview
-
-**Relevant Screenshots**
-If applicable, add screenshots to help explain your problem.
 
 **Checklist**
 - [ ] I have updated to the latest version of the theme (`Obsidian Settings → Appearance → Themes - Manage → Update`).
