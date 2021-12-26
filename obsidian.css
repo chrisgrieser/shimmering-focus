@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 1.466
+Version 1.467
 https://github.com/chrisgrieser/shimmering-focus/
 MIT License
 ─────────────────────────────────────────────────── */
@@ -446,7 +446,7 @@ only sidebars and everything scrolling */
 	--image-size: 50;
 	--pdf-size: 50vh;
 	--popover-size: 350;
-	--inactive-pane-opacity: 80%;
+	/* --inactive-pane-opacity: 80%; */
 	--tooltip-arrow-length: 10px;
 
 	--signature: "⟡";
@@ -7394,11 +7394,15 @@ pre button.copy:hover::BEFORE {
 ─────────────────────────────────────────────────── */
 /* Styling from the "Tables" Section mostly applies */
 
-body div.block-language-dataview pre.dataview-error {
+.block-language-dataview pre.dataview-error {
 	color: var(--text-muted);
-	padding-bottom: 10px;
+	padding: 8px 8px 6px;
 	font-family: var(--font-monospace);
 	font-size: var(--monospace-font-size);
+}
+
+.block-language-dataview pre.dataview-error::BEFORE {
+	display: none;
 }
 
 /* ───────────────────────────────────────────────────
