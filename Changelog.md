@@ -1,3 +1,4 @@
+- 2021-12-26	code block fixes, CM5 stylingnot affecting CM6 styling anymore and vice versa
 - 2021-12-26	updated to work with Ozan's Image in Editor Plugin v.2.0.1 in new editor
 - 2021-12-26	minor fix for checkboxes
 - 2021-12-26	better post-installation info message (#69)

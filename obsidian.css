@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 1.465
+Version 1.466
 https://github.com/chrisgrieser/shimmering-focus/
 MIT License
 ─────────────────────────────────────────────────── */
@@ -4330,6 +4330,7 @@ div.HyperMD-codeblock-bg:not(.HyperMD-codeblock-begin-bg) {
 .cm-line.HyperMD-codeblock .code-block-flair {
 	color: var(--text-muted);
 	padding: 0 1px;
+	font-size: calc(var(--monospace-font-size) * 0.9);
 }
 
 /* embedded code block */
@@ -4365,20 +4366,25 @@ body .markdown-preview-view pre {
 	border-radius: var(--codeblock-roundness);
 }
 
-.markdown-preview-view pre[class*="language-"] code,
-.markdown-preview-view pre code {
-	color: var(--text-normal);
+.markdown-preview-view pre[class*="language-"] code {
 	padding: 4px 9px 8px;
-	border-radius: var(--codeblock-roundness);
 
 	/* wrapping in code block */
 	white-space: pre-wrap;
 	overflow-wrap: break-word;
 }
 
+/* padding not fixable right now */
+/* https://forum.obsidian.md/t/three-small-css-bugs-in-the-new-editor/29288 */
+.markdown-preview-view pre code {
+	color: var(--text-normal);
+}
+
 /* border on top created like this, since the
 ::after element cannot be moved on a border */
-.mod-cm6 pre::BEFORE {
+/* needs CM& as condition,since every line in
+CM5 has the "pre" type */
+.mod-cm6 + .markdown-reading-view pre::BEFORE {
 	display: block;
 	content: " ";
 	background-color: var(--bg3);
@@ -4399,6 +4405,11 @@ body .markdown-preview-view pre {
 	border: var(--thin-border);
 
 	font-size: 0;
+}
+
+/* CM5: move positioning back */
+.mod-cm5 + .markdown-reading-view button.copy-code-button {
+	margin-top: 0.3rem;
 }
 
 button.copy-code-button::BEFORE {
@@ -4431,6 +4442,12 @@ pre[class*="language-"]::AFTER {
 
 	font-size: calc(var(--monospace-font-size) * 0.9);
 	text-shadow: none;
+}
+
+/* CM5: move positioning back */
+.mod-cm5 + .markdown-reading-view pre[class*="language-"]::AFTER {
+	top: unset;
+	bottom: 0;
 }
 
 pre[class~="language-c"]::AFTER { content: "C"; }
