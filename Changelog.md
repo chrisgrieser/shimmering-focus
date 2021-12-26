@@ -1,3 +1,4 @@
+- 2021-12-26	fix #70 for mono font
 - 2021-12-26	linting, fixes for code blocks overscroll working in new editor
 - 2021-12-25	fix overscroll in hotkey setting tab
 - 2021-12-25	blockquote and codeblock overhauled
