@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 1.461
+Version 1.462
 https://github.com/chrisgrieser/shimmering-focus/
 MIT License
 ─────────────────────────────────────────────────── */
@@ -4372,7 +4372,7 @@ body .markdown-preview-view pre {
 
 /* border on top created like this, since the
 ::after element cannot be moved on a border */
-pre::BEFORE {
+.mod-cm6 pre::BEFORE {
 	display: block;
 	content: " ";
 	background-color: var(--bg3);
@@ -4532,7 +4532,7 @@ body:not(.no-ul-relationship-lines) .CodeMirror-line .cm-hmd-list-indent::BEFORE
 
 	padding-bottom: 999em;
 
-	background-size: 3.6ch 1px;
+	background-size: 1.8em 1px;
 }
 
 body.relationship-line-fix-mono:not(.no-ul-relationship-lines) .cm-line .cm-hmd-list-indent::BEFORE,

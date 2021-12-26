@@ -1,3 +1,5 @@
+- 2021-12-26	fix blank lines appearing in legacy editor (#71)
+- 2021-12-26	bug report issue template to include mode/editor info
 - 2021-12-26	fixed corners for plugin browser
 - 2021-12-26	fix #70 for mono font
 - 2021-12-26	linting, fixes for code blocks overscroll working in new editor
