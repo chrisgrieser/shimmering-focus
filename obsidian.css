@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 1.472
+Version 1.473
 https://github.com/chrisgrieser/shimmering-focus/
 MIT License
 ─────────────────────────────────────────────────── */
@@ -8265,7 +8265,7 @@ settings:
 	-
 	 id: preset-color-scheme
 	 title: Relationship Line Fix for Custom Main Font
-	 description: 'If you are using a custom main font, and the relationship lines for lists do not look right, toggle try one of these. If you are not using a custom main font, leave this at "Default".'
+	 description: 'If you are using a custom main font, and the relationship lines for lists are off, try one of these. Otherwise, leave this at "Default".'
 	 type: class-select
 	 allowEmpty: false
 	 default: no-relationship-line-fix
