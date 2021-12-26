@@ -1,4 +1,4 @@
-- 2021-12-26	minor
+- 2021-12-26	updated readme
 - 2021-12-26	better promo screenshot
 - 2021-12-26	removing calendar lines now working for new Editor (fix #59 again)
 - 2021-12-26	removing calendar lines now working for new Editor (fix #59 again)

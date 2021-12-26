@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 1.473
+Version 1.474
 https://github.com/chrisgrieser/shimmering-focus/
 MIT License
 ─────────────────────────────────────────────────── */
@@ -8427,7 +8427,7 @@ settings:
 	-
 	 id: max-view-enabled
 	 title: 'Enable "Max View"'
-	 description: 'Makes panes full length and images/PDFs full width when the left sidebar is hidden. Switches back to readable line length and smaller images/PDFs when the left sidebar is shown. Can be combined with "Focus View".'
+	 description: 'Makes panes full length and images/PDFs full width when the left sidebar is hidden. Switches back to readable line length and smaller images/PDFs when the left sidebar is shown. Can be combined with "Focus View". (Requires "Readable Line Length" to be enabled.)'
 	 type: class-toggle
 	 default: false
 	-

@@ -3,7 +3,7 @@
 A minimalistic [Obsidian](https://obsidian.md/) theme focused on readability and condensed information display.
 
 <!-- manually updated-->
-![](https://img.shields.io/badge/downloads-7891-6E4E9B?style=plastic) ![](https://img.shields.io/github/last-commit/chrisgrieser/shimmering-focus?style=plastic) [![](https://img.shields.io/badge/changelog-click%20here-FFE800?style=plastic)](Changelog.md)
+![](https://img.shields.io/badge/downloads-7892-6E4E9B?style=plastic) ![](https://img.shields.io/github/last-commit/chrisgrieser/shimmering-focus?style=plastic) [![](https://img.shields.io/badge/changelog-click%20here-FFE800?style=plastic)](Changelog.md)
 
 <img src="https://raw.githubusercontent.com/chrisgrieser/shimmering-focus/main/dual-theme-screenshot.png" alt="Promo Screenshot">
 
@@ -62,7 +62,7 @@ Type one of the following eight tags (e.g. `#definition`) to get a colored annot
 💡 You can add your own Annotation Tags by adding a snippet [using this template](CSS%20Snippets/annotation-tag-template.css).
 
 ### Max View & Focus View
-- __Max View__ *(disabled by default)*: When the *left* sidebar is hidden, line length is extended to full length, and images & PDFs are expanded to full width. Readable line length and smaller images/PDFs are re-applied when the left sidebar is shown again.[^1] This is useful when dealing with big tables or many images. To enable *Max View* or adjust the size of images & PDFs, use the [Style Settings Plugin](https://github.com/mgmeyers/obsidian-style-settings/).
+- __Max View__ *(disabled by default)*: When the *left* sidebar is hidden, line length is extended to full length, and images & PDFs are expanded to full width. Readable line length and smaller image & PDF size are re-applied when the left sidebar is shown again.[^1] This is useful when dealing with big tables or many images. To enable *Max View* or adjust the size of images & PDFs, use the [Style Settings Plugin](https://github.com/mgmeyers/obsidian-style-settings/).
 - __Focus View__ *(disabled by default)*: Hiding the *left* side bar will also hide the *right* sidebar, with the right side bar staying hidden until the left one is shown again. This synergizes with *Max View*, but also works independently. To enable *Focus View*, use the [Style Settings Plugin](https://github.com/mgmeyers/obsidian-style-settings/).
 
 💡  For both features, it is useful to set a hotkey for the built-in command `Toggle left sidebar`.
@@ -116,27 +116,28 @@ Using the [Style Settings Plugin](https://github.com/mgmeyers/obsidian-style-set
 - 💡 The settings can still be accessed via `cmd + ,` or `ctrl + ,`.
 
 ### Condensed Display of Information
-- Screen real estate used much more efficiently to display more information.
+- Screen real estate is used much more efficiently to display more information at the same time.
 - Useful for smaller screens, split screens, bigger font sizes, or simply to see more information without having to scroll.
-- Smaller images/PDFs. (Click-and-Hold or use the [Max View Feature](#Max-View) to enlarge them again.)
-- Wider input boxes
+- Smaller images / PDFs. (Click-and-Hold or use the [Max View Feature](#Max-View) to enlarge them again.)
 
 <img width=60% alt="Screenshot 2021-10-23 17 06 22" src="https://user-images.githubusercontent.com/73286100/138561771-1067d041-eeb2-4dfe-8d79-f7fa754ca419.png">
 
 ### High Readability
 - Theme Brightness is adjustable via [Style Settings Plugin](https://github.com/mgmeyers/obsidian-style-settings/).
+- Wider Input boxes, clearer icons, increased size of small UI elements (e.g. collapse indicators), thicker lines for tables & hr.
 - Increased contrast throughout, especially with the [annoying gray font on light-gray background](https://forum.obsidian.md/t/enhance-default-color-contrast-of-the-icons/23045/3).
 - Decreased font size variation to increase readability & information density
 - At the same time increased distinctiveness of different classes through subtle variation in typeface, font style, or backgrounds.
-- Alternating row colors in tables, Command Palette, and Quick Switchers
+- Alternating row colors in tables, Command Palette, and Quick Switchers, ...
+- Increased readability of bold in dark mode by applying subtle text shadow.
+- Plugin names in the Command Palette are moved to the right and more visually distinct.
+- Overscroll at the bottom of the editor and settings tabs.
 - Easy-to-read fonts for every use case:
-  - [iA Writer Quattro](https://github.com/iaolo/iA-Fonts/tree/master/iA%20Writer%20Quattro) as proportional yet clear font for regular text
+  - [iA Writer Quattro](https://github.com/iaolo/iA-Fonts/tree/master/iA%20Writer%20Quattro) as clear sans font for the editor
+  - [Recursive](https://www.recursive.design/) for as a clear menu font
   - [Input Mono](https://input.djr.com/) as monospace font for code
-  - [Optima](https://en.wikipedia.org/wiki/Optima) as humanist font for heading
+  - [Optima](https://en.wikipedia.org/wiki/Optima) as humanist font for headings
   - [Crimson Pro](https://fonts.google.com/specimen/Crimson+Pro) as serif font for Longform notes
-- Underlining of bold in dark mode to make it more readable, since in dark mode bold is harder to distinguish form normal text than in light mode. Can be turned off via [Style Settings Plugin](https://github.com/mgmeyers/obsidian-style-settings/).
-- Slightly thicker lines (icons, hr, tables, etc.)
-- Plugin names in the Command Palette are moved to the right and more visually distinct
 
 <img src="https://user-images.githubusercontent.com/73286100/144147616-59ba2513-78cc-4143-91e5-c222bc307bd9.gif" alt="Screen Recording 2021-12-01 at 00 51 21a" width=60%>
 
