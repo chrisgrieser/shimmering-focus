@@ -151,6 +151,7 @@
 						"text-align",
 						"hyphens",
 						"white-space",
+						"overflow-wrap",
 						"font-display",
 						"src"
 					]
