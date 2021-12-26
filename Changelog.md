@@ -1,3 +1,4 @@
+- 2021-12-26	better post-installation info message (#69)
 - 2021-12-26	fix blank lines appearing in legacy editor (#71)
 - 2021-12-26	bug report issue template to include mode/editor info
 - 2021-12-26	fixed corners for plugin browser

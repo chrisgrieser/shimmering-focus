@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 1.462
+Version 1.463
 https://github.com/chrisgrieser/shimmering-focus/
 MIT License
 ─────────────────────────────────────────────────── */
@@ -3176,12 +3176,12 @@ body .workspace-leaf-resize-handle:active {
 }
 
 .community-theme.is-selected .community-theme-info::AFTER {
-	content: "ℹ️ Theme Customization via Style Settings Plugin\A\A 💡 Access Settings\A⌘ + ,    on Mac\A Ctrl + ,  on Windows/Linux";
+	content: "⚠️ No Settings Button. \A➡️ Access Settings via\A    ⌘ + ,   (Mac)\A    Ctrl + , (Win/Linux)\A\A🎨 Theme Customization via\A    Style Settings Plugin";
 
 	position: absolute;
-	top: 133px;
-	right: 7%;
-	left: 7%;
+	top: 137px;
+	right: 6%;
+	left: 6%;
 
 	color: var(--text-normal);
 	background-color: var(--bg2);
@@ -3199,7 +3199,7 @@ body .workspace-leaf-resize-handle:active {
 }
 
 .community-theme.is-selected {
-	min-height: 315px;
+	min-height: 335px;
 	border-color: var(--interactive-border);
 }
 
@@ -3258,6 +3258,11 @@ body .workspace-leaf-resize-handle:active {
 <<< Remaining Community Theme Browser
 ─────────────────────────────────────────────────── */
 
+.modal-title,
+.community-theme-title {
+	color: var(--extra-contrast);
+}
+
 .community-theme.is-selected,
 .community-theme {
 	color: var(--text-normal);
@@ -3282,7 +3287,7 @@ body .workspace-leaf-resize-handle:active {
 
 .community-theme-info {
 	font-family: var(--smallcap-font);
-	font-size: 1.04em;
+	font-size: 1em;
 }
 
 .community-theme-downloads .community-plugin-downloads-text {
@@ -3309,7 +3314,6 @@ body:not(.less-heading-letter-spacing) .modal.mod-community-theme .modal-title {
 }
 
 body .modal.mod-community-theme .modal-content .modal-title {
-	color: var(--extra-contrast);
 	margin-bottom: 20px;
 	font-weight: 700;
 	letter-spacing: var(--heading-letter-spacing);
