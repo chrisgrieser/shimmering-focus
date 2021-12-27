@@ -1,3 +1,4 @@
+- 2021-12-28	embeddes search results
 - 2021-12-28	"#todo" as new annotation tag
 - 2021-12-27	longform editor improvements
 - 2021-12-27	editor of longform projects ready for CM6
