@@ -1,3 +1,5 @@
+- 2021-12-27	vault launch color fix
+- 2021-12-27	fixes for promo screenshot
 - 2021-12-27	new preset color scheme: Nord ❄️
 - 2021-12-27	heading numbering in live preview & cssclasses
 - 2021-12-27	improved changelog creation

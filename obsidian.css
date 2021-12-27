@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 1.478
+Version 1.479
 https://github.com/chrisgrieser/shimmering-focus/
 MIT License
 ─────────────────────────────────────────────────── */
@@ -1605,7 +1605,7 @@ body:not(.show-scrollbar) ::-WEBKIT-SCROLLBAR {
 }
 
 .progress-bar {
-	/* background-color: var(--bg2); */
+	background-color: var(--bg2);
 	backdrop-filter: blur(3px);
 }
 
