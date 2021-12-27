@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 1.483
+Version 1.484
 https://github.com/chrisgrieser/shimmering-focus/
 MIT License
 ─────────────────────────────────────────────────── */
@@ -858,6 +858,10 @@ svg.gear {
 	transform: scale(1.2);
 }
 
+.plugin-list-plugins svg.gear {
+	margin-top: -1px;
+}
+
 /* link */
 svg.link > path { display: none }
 
@@ -904,10 +908,8 @@ svg.cross {
 svg.any-key > path { display: none }
 
 svg.any-key {
-	height: 1.08rem;
 	background-color: currentColor;
-	transform: scale(0.95);
-	-webkit-mask-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' width='1em' height='1.06em' preserveAspectRatio='xMidYMid meet' viewBox='0 0 1025 1023'%3e%3cpath d='M896.428 1023h-768q-53 0-90.5-37.5T.428 895V127q0-53 37.5-90t90.5-37h768q53 0 90.5 37t37.5 90v768q0 53-37.5 90.5t-90.5 37.5zm0-832q0-26-18.5-45t-45.5-19h-640q-27 0-45.5 19t-18.5 45v640q0 27 18.5 45.5t45.5 18.5h640q27 0 45.5-18.5t18.5-45.5V191zm-384.5 512q-79.5 0-135.5-56t-56-135.5t56-136t135.5-56.5t136 56.5t56.5 136t-56.5 135.5t-136 56z' fill='currentColor'/%3e%3c/svg%3e");
+	-webkit-mask-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' width='0.95em' height='0.95em' preserveAspectRatio='xMidYMid meet' viewBox='0 0 1025 1023'%3e%3cpath d='M896.428 1023h-768q-53 0-90.5-37.5T.428 895V127q0-53 37.5-90t90.5-37h768q53 0 90.5 37t37.5 90v768q0 53-37.5 90.5t-90.5 37.5zm0-832q0-26-18.5-45t-45.5-19h-640q-27 0-45.5 19t-18.5 45v640q0 27 18.5 45.5t45.5 18.5h640q27 0 45.5-18.5t18.5-45.5V191zm-384.5 512q-79.5 0-135.5-56t-56-135.5t56-136t135.5-56.5t136 56.5t56.5 136t-56.5 135.5t-136 56z' fill='currentColor'/%3e%3c/svg%3e");
 }
 
 .hotkey-list-container svg.any-key {
@@ -5145,8 +5147,8 @@ em > del {
 	text-decoration: unset;
 }
 
-.cm-active .cm-em.cm-strikethrough,
 em > del:hover,
+.cm-active .cm-em.cm-strikethrough,
 .cm-em.cm-strikethrough:hover {
 	background-color: var(--bg3) !important;
 	transition: 400ms ease-in-out;
