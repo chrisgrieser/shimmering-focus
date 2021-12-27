@@ -1,3 +1,4 @@
+- 2021-12-27	minor
 - 2021-12-27	checkbox fix
 - 2021-12-27	fixed hr in live preview
 - 2021-12-27	improved header coloring
