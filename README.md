@@ -3,7 +3,7 @@
 A minimalistic [Obsidian](https://obsidian.md/) theme focused on readability and condensed information display.
 
 <!-- manually updated-->
-![](https://img.shields.io/badge/downloads-7978-6E4E9B?style=plastic) ![](https://img.shields.io/github/last-commit/chrisgrieser/shimmering-focus?style=plastic) [![](https://img.shields.io/badge/changelog-click%20here-FFE800?style=plastic)](Changelog.md)
+![](https://img.shields.io/badge/downloads-7982-6E4E9B?style=plastic) ![](https://img.shields.io/github/last-commit/chrisgrieser/shimmering-focus?style=plastic) [![](https://img.shields.io/badge/changelog-click%20here-FFE800?style=plastic)](Changelog.md)
 
 <img src="https://raw.githubusercontent.com/chrisgrieser/shimmering-focus/main/dual-theme-screenshot.png" alt="Promo Screenshot">
 
@@ -18,6 +18,7 @@ A minimalistic [Obsidian](https://obsidian.md/) theme focused on readability and
   - [Multi-Color-Highlighting & Spoiler Syntax](#multi-color-highlighting--spoiler-syntax)
   - [Well-Suited for Academic Work](#well-suited-for-academic-work)
   - [Fine-tuned Spellcheck \(deprecated\)](#fine-tuned-spellcheck-deprecated)
+  - [CSS Classes](#css-classes)
   - [Further Features](#further-features)
 - [Design Principles](#design-principles)
   - [Extreme Minimalism](#extreme-minimalism)
@@ -50,7 +51,7 @@ A minimalistic [Obsidian](https://obsidian.md/) theme focused on readability and
 - The status bar, header bar, graph controls, resize handles, and collapse arrows but become visible upon hovering or being active.
 - Obsidian 0.13+: in Source Mode, URLs on non-active lines are folded.
 
-💡 The settings can be accessed without a need for a button via `cmd + ,` (Mac) or `ctrl + ,` (Windows/Linux).
+💡 The YAML frontmatter in Preview Mode is not removed by this theme, since you can already disable it with the native Obsidian settings under `Settings ➞ Editor ➞ Show Frontmatter`.
 
 <img src="https://user-images.githubusercontent.com/73286100/131692972-e523f2d4-40c7-452c-83ac-a7f2fbd546ae.gif" alt="headerbar visible on hover" width=50%>
 
@@ -94,6 +95,11 @@ Using the [Style Settings Plugin](https://github.com/mgmeyers/obsidian-style-set
 *⚠️ Note that this feature only works with the Legacy Editor of Obsidian 0.13+, so it will unfortunately be discontinued.*
 
 <img src="https://i.imgur.com/9XPEUQq.png" alt="Spellcheck settings" width=50%>
+
+### CSS Classes
+Add `cssclass: {name}` to your yaml front matter to activate specific styling of the note in Preview Mode. The following CSS classes are built in with this theme (more coming in the future):
+- `cssclass: clean-top`: Removes Metadata Information, YAML frontmatter, and Breadcrumbs trail from the top of the note.
+- `cssclass: dataview-list-in-table`: If you are using a dataview query where some table cells contain lists, use this CSS class to remove the vertical table lines that are off.
 
 ### Further Features
 - Relationship lines in lists & File Explorer
@@ -171,6 +177,7 @@ In accordance with the minimalistic philosophy of the theme, unnecessary UI elem
 - Sliding Panes: Enable `Swap Rotated Header Direction` in the Sliding Pane Settings.
 - Breadcrumbs: Even with buttons removed, you can refresh the index via Command Palette
 - Quick Explorer: Re-enable the title bar with the [Style Settings Plugin](https://github.com/mgmeyers/obsidian-style-settings/) for the breadcrumbs
+- Dataview: If the table lines are off, use the [`dataview-list-in-table` CSS Classes](#css-classes)
 - Ozan's Image in Editor: Image Sizes are affected by the Image Settings & by the Max View Feature.
 - Starred (Core Plugin): To be able to star searches, re-enable the Starred pane buttons with the [Style Settings Plugin](https://github.com/mgmeyers/obsidian-style-settings/)
 
