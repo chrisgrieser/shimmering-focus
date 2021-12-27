@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 1.481
+Version 1.482
 https://github.com/chrisgrieser/shimmering-focus/
 MIT License
 ─────────────────────────────────────────────────── */
@@ -186,8 +186,8 @@ the .create-ToC.sh.
 	--unresolved-opacity: 0.6;
 
 	--code-color: var(--alt-accent-darker);
-	--scrollbar-hover: var(--alt-accent-lighter);
-	--scrollbar-active: var(--accent-lighterer);
+	--scrollbar-bg-hover: var(--alt-accent-lighter);
+	--scrollbar-bg-active: var(--accent-lighterer);
 
 	--highlight-color: hsl(152 100% 50% / 40%);
 	--highlight-alt1: hsl(60 100% 50% / 40%);
@@ -293,9 +293,10 @@ the .create-ToC.sh.
 	--bg2: hsl(var(--light-hue) var(--sat-light-2) var(--b-light-2));
 	--bg3: hsl(var(--light-hue) var(--sat-light-3) var(--b-light-3));
 
+	--header-bg: hsl(var(--light-hue) calc(var(--sat-light-3) * 1.1) calc(var(--b-light-2) - 2%));
 	--notice-bg: hsl(var(--light-hue) calc(var(--sat-light-3) * 0.8) var(--b-light-3));
-	--resize-handle: hsl(var(--light-hue) var(--sat-light-2) calc(var(--b-light-2) - 1%));
-	--scrollbar: hsl(var(--light-hue) var(--sat-light-3) calc(var(--b-light-2) - 8%));
+	--resize-handle-color: hsl(var(--light-hue) var(--sat-light-2) calc(var(--b-light-2) - 1%));
+	--scrollbar-bg: hsl(var(--light-hue) var(--sat-light-3) calc(var(--b-light-2) - 8%));
 	--suggester-b-row: hsl(var(--light-hue) var(--sat-light-2) calc(var(--b-light-1) - 3%));
 	--muted-border-color: hsl(var(--light-hue) var(--sat-light-3) calc(var(--b-light-3) + 3%));
 	--basic-border-color: hsl(var(--light-hue) var(--sat-light-3) calc(var(--b-light-3) - 5%));
@@ -308,7 +309,7 @@ the .create-ToC.sh.
 	--b-dark-3: calc(var(--brightness-dark) + 2%);
 
 	--sat-correction: 1%;
-	--sat-dark-1: calc(calc(var(--dark-sat) + var(--sat-correction)) * 1);
+	--sat-dark-1: calc(calc(var(--dark-sat) + var(--sat-correction)) * 1.1);
 	--sat-dark-2: calc(calc(var(--dark-sat) + var(--sat-correction)) * 1.5);
 	--sat-dark-3: calc(calc(var(--dark-sat) + var(--sat-correction)) * 2);
 
@@ -316,9 +317,10 @@ the .create-ToC.sh.
 	--bg2: hsl(var(--dark-hue) var(--sat-dark-2) var(--b-dark-2));
 	--bg3: hsl(var(--dark-hue) var(--sat-dark-3) var(--b-dark-3));
 
+	--header-bg: hsl(var(--dark-hue) calc(var(--sat-dark-1) * 1.6) calc(var(--b-dark-2) - 2%));
 	--notice-bg: hsl(var(--dark-hue) calc(var(--sat-dark-1) * 0.8) var(--b-dark-1));
-	--resize-handle: hsl(var(--dark-hue)  var(--sat-dark-2) calc(var(--b-dark-2) - 1%));
-	--scrollbar: hsl(var(--dark-hue) var(--sat-dark-1) calc(var(--b-dark-2) + 9%));
+	--resize-handle-color: hsl(var(--dark-hue)  var(--sat-dark-2) calc(var(--b-dark-2) - 1%));
+	--scrollbar-bg: hsl(var(--dark-hue) var(--sat-dark-1) calc(var(--b-dark-2) + 9%));
 	--suggester-b-row: hsl(var(--dark-hue)  var(--sat-dark-1) calc(var(--b-dark-1) - 2%));
 	--muted-border-color: hsl(var(--dark-hue) var(--sat-dark-1) calc(var(--b-dark-1) - 6%));
 	--basic-border-color: hsl(var(--dark-hue) var(--sat-dark-1) calc(var(--b-dark-1) + 6%));
@@ -345,9 +347,9 @@ the .create-ToC.sh.
 	--bg2: hsl(var(--longform-light-hue) var(--sat-light-2) var(--b-light-2));
 	--bg3: hsl(var(--longform-light-hue) var(--sat-light-3) var(--b-light-3));
 
-	--notice-bg: hsl(var(--longform-light-hue) calc(var(--sat-light-3) * 0.8) var(--b-light-3));
-	--resize-handle: hsl(var(--longform-light-hue) var(--sat-light-2) calc(var(--b-light-2) - 1%));
-	--scrollbar: hsl(var(--longform-light-hue) var(--sat-light-3) calc(var(--b-light-2) - 8%));
+	--header-bg: hsl(var(--longform-light-hue) calc(var(--sat-light-3) * 1.1) calc(var(--b-light-2) - 2%));
+	--resize-handle-color: hsl(var(--longform-light-hue) var(--sat-light-2) calc(var(--b-light-2) - 1%));
+	--scrollbar-bg: hsl(var(--longform-light-hue) var(--sat-light-3) calc(var(--b-light-2) - 8%));
 	--suggester-b-row: hsl(var(--longform-light-hue) var(--sat-light-2) calc(var(--b-light-1) - 3%));
 	--muted-border-color: hsl(var(--longform-light-hue) var(--sat-light-3) calc(var(--b-light-3) + 3%));
 	--basic-border-color: hsl(var(--longform-light-hue) var(--sat-light-3) calc(var(--b-light-3) - 5%));
@@ -359,9 +361,9 @@ the .create-ToC.sh.
 	--bg2: hsl(var(--longform-dark-hue) var(--sat-dark-2) var(--b-dark-2));
 	--bg3: hsl(var(--longform-dark-hue) var(--sat-dark-3) var(--b-dark-3));
 
-	--notice-bg: hsl(var(--longform-dark-hue) calc(var(--sat-dark-1) * 0.8) var(--b-dark-1));
-	--resize-handle: hsl(var(--longform-dark-hue)  var(--sat-dark-2) calc(var(--b-dark-2) - 1%));
-	--scrollbar: hsl(var(--longform-dark-hue) var(--sat-dark-1) calc(var(--b-dark-2) + 9%));
+	--header-bg: hsl(var(--longform-dark-hue) calc(var(--sat-dark-1) * 1.6) calc(var(--b-dark-2) - 2%));
+	--resize-handle-color: hsl(var(--longform-dark-hue)  var(--sat-dark-2) calc(var(--b-dark-2) - 1%));
+	--scrollbar-bg: hsl(var(--longform-dark-hue) var(--sat-dark-1) calc(var(--b-dark-2) + 9%));
 	--suggester-b-row: hsl(var(--longform-dark-hue)  var(--sat-dark-1) calc(var(--b-dark-1) - 2%));
 	--muted-border-color: hsl(var(--longform-dark-hue) var(--sat-dark-1) calc(var(--b-dark-1) - 6%));
 	--basic-border-color: hsl(var(--longform-dark-hue) var(--sat-dark-1) calc(var(--b-dark-1) + 6%));
@@ -369,7 +371,7 @@ the .create-ToC.sh.
 }
 
 /* ───────────────────────────────────────────────────
-<< Apply colors to default variables & Base elements
+<< default variable colors & Base elements
 ─────────────────────────────────────────────────── */
 
 .theme-light,
@@ -382,11 +384,11 @@ the .create-ToC.sh.
 
 ::-WEBKIT-SCROLLBAR,
 .workspace-leaf-resize-handle {
-	background-color: var(--resize-handle);
+	background-color: var(--resize-handle-color);
 }
 
 ::-WEBKIT-SCROLLBAR-THUMB {
-	background-color: var(--scrollbar);
+	background-color: var(--scrollbar-bg);
 }
 
 .workspace-split.mod-root .view-content {
@@ -484,9 +486,9 @@ only sidebars and everything scrolling */
 ─────────────────────────────────────────────────── */
 
 :root {
-	--resize-handle-thickness: 3px;
-	--resize-handle-hovered-thickness: 6px;
-	--scrollbar-thickness: 8px;
+	--resize-handle-color-thickness: 3px;
+	--resize-handle-color-hovered-thickness: 6px;
+	--scrollbar-bg-thickness: 8px;
 	--image-size: 50;
 	--pdf-size: 50vh;
 	--popover-size: 350;
@@ -657,14 +659,12 @@ only sidebars and everything scrolling */
 	--longform-font: "Crimson Pro S";
 	--longform-font-size: 1.2rem;
 
-	--sidebar-font-family: "Recursive S";
+	--ui-font-family: "Recursive S";
 	--sidebar-font-size: 0.85rem;
+	--status-bar-font-size: 0.95rem;
 
 	--menu-font-family: "Recursive S";
 	--menu-font-size: 1rem;
-
-	--status-bar-font-family: var(--sidebar-font-family);
-	--status-bar-font-size: 0.95rem;
 
 	--mobile-font-size: 1.2rem;
 	--footnote-size: 85%;
@@ -725,7 +725,7 @@ body > .app-container input,
 /* Core Plugins */
 .workspace-tabs .workspace-leaf .workspace-leaf-content .view-content div,
 .workspace-tabs .workspace-leaf .workspace-leaf-content .view-content {
-	font-family: var(--sidebar-font-family);
+	font-family: var(--ui-font-family);
 	font-size: var(--sidebar-font-size);
 }
 
@@ -1290,7 +1290,7 @@ body:not(.show-ribbons) .workspace-ribbon {
 }
 
 .workspace-ribbon {
-	background-color: var(--resize-handle);
+	background-color: var(--resize-handle-color);
 	--ribbon-border: 2px solid var(--bg3);
 }
 
@@ -1418,6 +1418,7 @@ body > div.notice-container .notice:hover {
 
 /* harmonize sizes for when titlebar is shown */
 .view-header-title {
+	font-family: var(--ui-font-family);
 	font-size: 0.9em;
 	font-weight: 500;
 	line-height: 2;
@@ -1462,11 +1463,12 @@ body:not(.show-header-bar) .view-action svg {
 	transition: var(--medium-transition);
 }
 
-body:not(.show-header-bar) .workspace-split.mod-root > .workspace-leaf .view-header:hover,
-body:not(.show-header-bar) .workspace-split.mod-root > .workspace-leaf .view-header:focus-within,
-body.show-header-bar .workspace-split.mod-root > .workspace-leaf .view-header {
+/* shown header */
+body:not(.show-header-bar) .workspace-split.mod-root .workspace-leaf .view-header:hover,
+body:not(.show-header-bar) .workspace-split.mod-root .workspace-leaf .view-header:focus-within,
+body.show-header-bar .workspace-split.mod-root .workspace-leaf .workspace-leaf-content .view-header {
 	height: 1.9em;
-	background-color: var(--bg2);
+	background-color: var(--header-bg);
 	transition: var(--medium-transition);
 }
 
@@ -1531,7 +1533,7 @@ body:not(.default-statusbar) .status-bar {
 	border-left: var(--muted-border);
 	border-top-left-radius: var(--roundish);
 
-	font-family: var(--status-bar-font-family);
+	font-family: var(--ui-font-family);
 	line-height: 1;
 }
 
@@ -1600,13 +1602,13 @@ body:not(.show-scrollbar) ::-WEBKIT-SCROLLBAR {
 ::-WEBKIT-SCROLLBAR-THUMB:hover,
 ::-WEBKIT-SCROLLBAR,
 ::-WEBKIT-SCROLLBAR-THUMB {
-	width: var(--scrollbar-thickness);
+	width: var(--scrollbar-bg-thickness);
 	border-radius: var(--roundish);
 }
 
 /* hover / active colors */
 ::-WEBKIT-SCROLLBAR-THUMB:hover {
-	background-color: var(--scrollbar-hover);
+	background-color: var(--scrollbar-bg-hover);
 }
 
 ::-WEBKIT-SCROLLBAR:hover {
@@ -1614,7 +1616,7 @@ body:not(.show-scrollbar) ::-WEBKIT-SCROLLBAR {
 }
 
 ::-WEBKIT-SCROLLBAR-THUMB:active {
-	background-color: var(--scrollbar-active) !important;
+	background-color: var(--scrollbar-bg-active) !important;
 }
 
 /* ───────────────────────────────────────────────────
@@ -1650,7 +1652,7 @@ body:not(.show-scrollbar) ::-WEBKIT-SCROLLBAR {
 }
 
 .progress-bar-indicator .progress-bar-subline {
-	background-color: var(--scrollbar-hover);
+	background-color: var(--scrollbar-bg-hover);
 }
 
 /* ───────────────────────────────────────────────────
@@ -2452,34 +2454,34 @@ on the titlebar visibility in the titlebar section */
 
 /* fix for the background not shining through */
 .mod-left-split .workspace-tabs {
-	padding-right: var(--resize-handle-thickness);
+	padding-right: var(--resize-handle-color-thickness);
 }
 
 .workspace-split.mod-horizontal > .workspace-leaf-resize-handle {
-	width: var(--resize-handle-thickness);
+	width: var(--resize-handle-color-thickness);
 }
 
 .workspace-split.mod-horizontal > .workspace-leaf > .workspace-leaf-resize-handle,
 .workspace-split.mod-horizontal > .workspace-tabs > .workspace-leaf-resize-handle {
-	height: var(--resize-handle-thickness);
+	height: var(--resize-handle-color-thickness);
 }
 
 .workspace-split.mod-horizontal > .workspace-leaf-resize-handle:hover {
-	width: var(--resize-handle-hovered-thickness);
+	width: var(--resize-handle-color-hovered-thickness);
 }
 
 .workspace-split.mod-horizontal > .workspace-leaf > .workspace-leaf-resize-handle:hover,
 .workspace-split.mod-horizontal > .workspace-tabs > .workspace-leaf-resize-handle:hover {
-	height: var(--resize-handle-hovered-thickness);
+	height: var(--resize-handle-color-hovered-thickness);
 }
 
 /* coloring */
 body .workspace-leaf-resize-handle:active {
-	background-color: var(--scrollbar-active);
+	background-color: var(--scrollbar-bg-active);
 }
 
 .workspace-leaf-resize-handle:hover {
-	background-color: var(--scrollbar-hover);
+	background-color: var(--scrollbar-bg-hover);
 }
 
 /* ───────────────────────────────────────────────────
@@ -8392,14 +8394,15 @@ settings:
 	 step: 0.05
 	 format: rem
 	-
-	 id: sidebar-font-family
-	 title: Side Bar Font
-	 description: Applies to all text in the left and right side bar
+	 id: ui-font-family
+	 title: UI Font
+	 description: Affects the left side bar, right side bar, status bar, and header bar.
 	 type: variable-text
 	 default: '"Recursive S"'
 	-
 	 id: sidebar-font-size
 	 title: Side Bar Font Size
+	 description: Affects the left side bar and right side bar.
 	 type: variable-number-slider
 	 default: 0.85
 	 min: 0.6
@@ -8407,9 +8410,18 @@ settings:
 	 step: 0.05
 	 format: rem
 	-
+	 id: status-bar-font-size
+	 title: Status Bar Font Size
+	 type: variable-number-slider
+	 default: 0.95
+	 min: 0.7
+	 max: 2.0
+	 step: 0.05
+	 format: em
+	-
 	 id: menu-font-family
 	 title: Menu Font
-	 description: Font used in menus (Settings, Plugin Browser, Theme Browser).
+	 description: Affects the settings menu, plugin browser and theme browser.
 	 type: variable-text
 	 default: '"Recursive S"'
 	-
@@ -8433,15 +8445,6 @@ settings:
 	 description: Use left-aligned text in blockquotes instead of justified text.
 	 type: class-toggle
 	 default: false
-	-
-	 id: status-bar-font-size
-	 title: Status Bar Font Size
-	 type: variable-number-slider
-	 default: 0.95
-	 min: 0.7
-	 max: 2.0
-	 step: 0.05
-	 format: em
 	-
 	 id: heading-font
 	 title: Heading Font
