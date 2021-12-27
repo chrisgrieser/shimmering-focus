@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 1.474
+Version 1.475
 https://github.com/chrisgrieser/shimmering-focus/
 MIT License
 ─────────────────────────────────────────────────── */
@@ -4566,7 +4566,7 @@ body:not(.no-ul-relationship-lines) .CodeMirror-line .cm-hmd-list-indent::BEFORE
 
 	padding-bottom: 999em;
 
-	background-size: 1.8em 1px;
+	background-size: 3.05ch 1px;
 }
 
 body.relationship-line-fix-mono:not(.no-ul-relationship-lines) .cm-line .cm-hmd-list-indent::BEFORE,
