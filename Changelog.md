@@ -1,4 +1,4 @@
-- 2021-12-27	minor
+- 2021-12-27	longform plugin background color now coupled to base color, with a new style setting to set hue shift
 - 2021-12-27	vault launch color fix
 - 2021-12-27	fixes for promo screenshot
 - 2021-12-27	new preset color scheme: Nord ❄️

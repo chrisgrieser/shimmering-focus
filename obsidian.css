@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 1.480
+Version 1.481
 https://github.com/chrisgrieser/shimmering-focus/
 MIT License
 ─────────────────────────────────────────────────── */
@@ -168,6 +168,10 @@ the .create-ToC.sh.
 ─────────────────────────────────────────────────── */
 /* stylelint-disable no-duplicate-selectors */
 
+/* ───────────────────────────────────────────────────
+<< Base Colors
+─────────────────────────────────────────────────── */
+
 :root {
 	--accent-lighter: hsl(243 66% 76%);
 	--accent-lighterer: hsl(243 80% 84%);
@@ -253,6 +257,7 @@ the .create-ToC.sh.
 	--brightness-dark: 5%;
 }
 
+/* Classic Shimmering Focus */
 .classic-colors.theme-dark,
 .classic-colors.theme-light {
 	--light-hue: 220;
@@ -270,22 +275,10 @@ the .create-ToC.sh.
 	--dark-hue: 220;
 	--dark-sat: 20%;
 	--light-sat: 20%;
-	--brightness-light: 12%;
+	--brightness-light: 13.5%;
 	--brightness-dark: 9%;
 }
 
-/* colors for longform projects */
-.theme-light:not(.longform-no-bg) .longform-leaf {
-	--light-hue: 20;
-	--light-sat: 10%;
-}
-
-.theme-dark:not(.longform-no-bg) .longform-leaf {
-	--dark-hue: 220;
-	--dark-sat: 20%;
-}
-
-.theme-light .longform-leaf,
 .theme-light {
 	--b-light-1: calc(var(--brightness-light) + 82%);
 	--b-light-2: calc(var(--brightness-light) + 78%);
@@ -309,7 +302,6 @@ the .create-ToC.sh.
 	--backdrop-color: hsl(var(--light-hue) calc(var(--sat-light-3) * 0.8) calc(var(--b-light-3) - 10%));
 }
 
-.theme-dark .longform-leaf,
 .theme-dark {
 	--b-dark-1: calc(var(--brightness-dark) + 11%);
 	--b-dark-2: calc(var(--brightness-dark) + 7%);
@@ -331,6 +323,61 @@ the .create-ToC.sh.
 	--muted-border-color: hsl(var(--dark-hue) var(--sat-dark-1) calc(var(--b-dark-1) - 6%));
 	--basic-border-color: hsl(var(--dark-hue) var(--sat-dark-1) calc(var(--b-dark-1) + 6%));
 	--backdrop-color: hsl(var(--dark-hue) calc(var(--sat-dark-2) * 1.2) calc(var(--b-dark-2) + 2%));
+}
+
+/* ───────────────────────────────────────────────────
+<< Longform project colors
+─────────────────────────────────────────────────── */
+:root {
+	--longform-hue-shift: 25;
+}
+
+.theme-light .longform-leaf {
+	--longform-light-hue: calc(var(--light-hue) + var(--longform-hue-shift));
+}
+
+.theme-dark .longform-leaf {
+	--longform-dark-hue: calc(var(--dark-hue) + var(--longform-hue-shift));
+}
+
+.theme-light .longform-leaf {
+	--bg1: hsl(var(--longform-light-hue) var(--sat-light-1) var(--b-light-1));
+	--bg2: hsl(var(--longform-light-hue) var(--sat-light-2) var(--b-light-2));
+	--bg3: hsl(var(--longform-light-hue) var(--sat-light-3) var(--b-light-3));
+
+	--notice-bg: hsl(var(--longform-light-hue) calc(var(--sat-light-3) * 0.8) var(--b-light-3));
+	--resize-handle: hsl(var(--longform-light-hue) var(--sat-light-2) calc(var(--b-light-2) - 1%));
+	--scrollbar: hsl(var(--longform-light-hue) var(--sat-light-3) calc(var(--b-light-2) - 8%));
+	--suggester-b-row: hsl(var(--longform-light-hue) var(--sat-light-2) calc(var(--b-light-1) - 3%));
+	--muted-border-color: hsl(var(--longform-light-hue) var(--sat-light-3) calc(var(--b-light-3) + 3%));
+	--basic-border-color: hsl(var(--longform-light-hue) var(--sat-light-3) calc(var(--b-light-3) - 5%));
+	--backdrop-color: hsl(var(--longform-light-hue) calc(var(--sat-light-3) * 0.8) calc(var(--b-light-3) - 10%));
+}
+
+.theme-dark .longform-leaf {
+	--bg1: hsl(var(--longform-dark-hue) var(--sat-dark-1) var(--b-dark-1));
+	--bg2: hsl(var(--longform-dark-hue) var(--sat-dark-2) var(--b-dark-2));
+	--bg3: hsl(var(--longform-dark-hue) var(--sat-dark-3) var(--b-dark-3));
+
+	--notice-bg: hsl(var(--longform-dark-hue) calc(var(--sat-dark-1) * 0.8) var(--b-dark-1));
+	--resize-handle: hsl(var(--longform-dark-hue)  var(--sat-dark-2) calc(var(--b-dark-2) - 1%));
+	--scrollbar: hsl(var(--longform-dark-hue) var(--sat-dark-1) calc(var(--b-dark-2) + 9%));
+	--suggester-b-row: hsl(var(--longform-dark-hue)  var(--sat-dark-1) calc(var(--b-dark-1) - 2%));
+	--muted-border-color: hsl(var(--longform-dark-hue) var(--sat-dark-1) calc(var(--b-dark-1) - 6%));
+	--basic-border-color: hsl(var(--longform-dark-hue) var(--sat-dark-1) calc(var(--b-dark-1) + 6%));
+	--backdrop-color: hsl(var(--longform-dark-hue) calc(var(--sat-dark-2) * 1.2) calc(var(--b-dark-2) + 2%));
+}
+
+/* ───────────────────────────────────────────────────
+<< Apply colors to default variables & Base elements
+─────────────────────────────────────────────────── */
+
+.theme-light,
+.theme-dark {
+	--background-primary: var(--bg1);
+	--background-primary-alt: var(--bg2);
+	--background-secondary: var(--bg2);
+	--background-secondary-alt: var(--bg3);
 }
 
 ::-WEBKIT-SCROLLBAR,
@@ -355,18 +402,6 @@ the .create-ToC.sh.
 .workspace-tabs,
 .workspace-tab-header-container .workspace-tab-header .workspace-tab-header-inner {
 	background-color: var(--bg3);
-}
-
-/* ───────────────────────────────────────────────────
-<< Apply colors to default variables
-─────────────────────────────────────────────────── */
-
-.theme-light,
-.theme-dark {
-	--background-primary: var(--bg1);
-	--background-primary-alt: var(--bg2);
-	--background-secondary: var(--bg2);
-	--background-secondary-alt: var(--bg3);
 }
 
 /* ───────────────────────────────────────────────────
@@ -661,10 +696,6 @@ body:not(.angular-shapes) {
 	--button-font: "Quicksand S";
 }
 
-.CodeMirror-linenumber {
-	font-family: var(--font-monospace) !important;
-}
-
 div.status-bar-item {
 	font-size: var(--status-bar-font-size);
 }
@@ -750,7 +781,7 @@ svg {
 < Base Icons
 ─────────────────────────────────────────────────── */
 
-/* span targets LP, a normal preview */
+/* "span" targets LP, "a" normal preview */
 span.external-link,
 a.external-link {
 	background-position-y: 5px;
@@ -930,14 +961,12 @@ svg.reading-glasses {
 	-webkit-mask-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' width='1.2em' height='1.2em' preserveAspectRatio='xMidYMid meet' viewBox='0 0 16 16'%3e%3cg fill='none'%3e%3cpath d='M2.984 8.625v.003a.5.5 0 0 1-.612.355c-.431-.114-.355-.611-.355-.611l.017-.062s.026-.084.047-.145a6.7 6.7 0 0 1 1.117-1.982C4.097 5.089 5.606 4 8 4c2.395 0 3.904 1.089 4.801 2.183a6.7 6.7 0 0 1 1.117 1.982a3.916 3.916 0 0 1 .06.187l.003.013l.002.004v.002a.5.5 0 0 1-.966.258l-.001-.004l-.008-.025a4.9 4.9 0 0 0-.2-.52a5.703 5.703 0 0 0-.78-1.263C11.285 5.912 10.044 5 8 5c-2.044 0-3.286.912-4.028 1.817a5.701 5.701 0 0 0-.945 1.674a3.018 3.018 0 0 0-.035.109l-.008.025z' fill='currentColor'/%3e%3cpath d='M8 7a2.5 2.5 0 1 0 0 5a2.5 2.5 0 0 0 0-5zM6.5 9.5a1.5 1.5 0 1 1 3 0a1.5 1.5 0 0 1-3 0z' fill='currentColor'/%3e%3c/g%3e%3c/svg%3e");
 }
 
-/* options (menu) */
+/* options menu (vertical three lines) */
 *:not(.kanban-plugin__icon) > svg.vertical-three-dots > path { display: none }
 
 *:not(.kanban-plugin__icon) > svg.vertical-three-dots {
-	position: relative;
-	bottom: 1px;
 	background-color: currentColor;
-	-webkit-mask-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' width='1.25em' height='1.25em' preserveAspectRatio='xMidYMid meet' viewBox='0 0 20 20'%3e%3cpath d='M3 11h14V9H3v2zm0 5h14v-2H3v2zM3 4v2h14V4H3z' fill='currentColor'/%3e%3c/svg%3e");
+	-webkit-mask-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' width='1.2em' height='1.2em' preserveAspectRatio='xMidYMid meet' viewBox='0 0 20 20'%3e%3cpath d='M3 11h14V9H3v2zm0 5h14v-2H3v2zM3 4v2h14V4H3z' fill='currentColor'/%3e%3c/svg%3e");
 }
 
 /* graph */
@@ -8159,7 +8188,7 @@ settings:
 	 default: false
 	-
 	 id: show-urls
-	 title: 'Source Mode (Obsidian 0.13+): Permanently show full URLs.'
+	 title: 'Source Mode: Permanently show full URLs (new Editor only)'
 	 type: class-toggle
 	 description: In Source Mode, URLs on non-active lines will are folded (Obsidian 0.13+ only). Enable this to permanently show the full URL.
 	 default: false
@@ -8676,7 +8705,7 @@ settings:
 	 default: '"Crimson Pro S"'
 	-
 	 id: longform-font-size
-	 title: 'Longform Font Size'
+	 title: Longform Font Size
 	 type: variable-number-slider
 	 default: 1.2
 	 min: 0.7
@@ -8685,22 +8714,25 @@ settings:
 	 format: 'rem'
 	-
 	 id: longform-left-aligned
-	 title: 'Left-aligned text'
+	 title: Left-aligned text
 	 description: Use left-aligned text instead of justified text.
 	 type: class-toggle
 	 default: false
 	-
 	 id: longform-text-indent
-	 title: 'First-Line Indent (Preview Mode)'
+	 title: First-Line Indent (Preview Mode)
 	 description: Indent the first Line of a paragraph in longform notes (preview mode only).
 	 type: class-toggle
 	 default: false
 	-
-	 id: longform-no-bg
-	 title: 'No Background Coloring'
-	 description: Turn off the alternative background coloring of longform notes.
-	 type: class-toggle
-	 default: false
+	 id: longform-hue-shift
+	 title: Background Color Shift
+	 description: 'Degree longform notes have a different color than normal notes (hue added). Setting this to "0" will make longform projects have the same background color as other notes.'
+	 type: variable-number-slider
+	 default: 25
+	 min: -180
+	 max: 180
+	 step: 5
 	-
 	 id: hide-index-files
 	 title: 'Hide files named "Index.md" from File Explorer'
