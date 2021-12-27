@@ -1,4 +1,4 @@
-- 2021-12-27	minor
+- 2021-12-27	checkbox fix
 - 2021-12-27	fixed hr in live preview
 - 2021-12-27	improved header coloring
 - 2021-12-27	longform plugin background color now coupled to base color, with a new style setting to set hue shift

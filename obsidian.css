@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 1.484
+Version 1.485
 https://github.com/chrisgrieser/shimmering-focus/
 MIT License
 ─────────────────────────────────────────────────── */
@@ -5051,6 +5051,11 @@ input[type="checkbox"]:not(:checked) {
 	margin-right: 10px;
 }
 
+body > div.app-container div.markdown-preview-view ul > li.task-list-item.is-checked,
+body > div.app-container div.markdown-preview-view ol > li.task-list-item.is-checked {
+	padding-left: 0;
+}
+
 .markdown-preview-view :not(li[data-task="x"]) > .task-list-item-checkbox:checked {
 	margin-right: 2px !important;
 }
@@ -5335,7 +5340,6 @@ body.is-mobile .markdown-preview-view blockquote {
 
 .workspace-leaf-content[data-type="file-explorer"] {
 	padding-right: 2px;
-	padding-left: 2px;
 }
 
 /* ───────────────────────────────────────────────────
