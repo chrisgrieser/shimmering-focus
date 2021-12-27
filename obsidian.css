@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 1.486
+Version 1.487
 https://github.com/chrisgrieser/shimmering-focus/
 MIT License
 ─────────────────────────────────────────────────── */
@@ -996,16 +996,25 @@ svg.search {
 }
 
 /* New file */
-.nav-action-button svg.document > path { display: none }
+.menu svg.create-new > path,
+.nav-action-button svg.document > path {
+	display: none;
+}
 
+.menu svg.create-new,
 .nav-action-button svg.document {
 	background-color: currentColor;
-	transform: scale(1.1);
 	margin-top: 2px;
 	-webkit-mask-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' width='1.1em' height='1.1em' preserveAspectRatio='xMidYMid meet' viewBox='0 0 16 16'%3e%3cg fill='currentColor'%3e%3cpath fill-rule='evenodd' clip-rule='evenodd' d='M9.5 1.1l3.4 3.5l.1.4v2h-1V6H8V2H3v11h4v1H2.5l-.5-.5v-12l.5-.5h6.7l.3.1zM9 2v3h2.9L9 2zm4 14h-1v-3H9v-1h3V9h1v3h3v1h-3v3z'/%3e%3c/g%3e%3c/svg%3e");
 }
 
-/* file explorer / folder */
+.menu svg.create-new {
+	height: 1.1rem;
+	width: 1.1rem;
+	margin-left: -1px;
+}
+
+/* file explorer / folder / new folder */
 svg.folder > path { display: none }
 
 .workspace-tab-header-inner svg.folder {
@@ -1013,10 +1022,17 @@ svg.folder > path { display: none }
 	-webkit-mask-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' width='1.2em' height='1.2em' preserveAspectRatio='xMidYMid meet' viewBox='0 0 1024 1024'%3e%3cpath fill='currentColor' d='M128 384v448h768V384H128zm-32-64h832a32 32 0 0 1 32 32v512a32 32 0 0 1-32 32H96a32 32 0 0 1-32-32V352a32 32 0 0 1 32-32zm64-128h704v64H160zm96-128h512v64H256z'/%3e%3c/svg%3e");
 }
 
+.menu svg.folder,
 .nav-action-button svg.folder {
 	background-color: currentColor;
 	margin-top: 2.5px;
-	-webkit-mask-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' width='1.15em' height='1.15em' preserveAspectRatio='xMidYMid meet' viewBox='0 0 16 16'%3e%3cg fill='currentColor'%3e%3cpath fill-rule='evenodd' clip-rule='evenodd' d='M14.5 2H7.71l-.85-.85L6.51 1h-5l-.5.5v11l.5.5H7v-1H1.99V6h4.49l.35-.15l.86-.86H14v1.5l-.001.51h1.011V2.5L14.5 2zm-.51 2h-6.5l-.35.15l-.86.86H2v-3h4.29l.85.85l.36.15H14l-.01.99zM13 16h-1v-3H9v-1h3V9h1v3h3v1h-3v3z'/%3e%3c/g%3e%3c/svg%3e");
+	-webkit-mask-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' width='1.1em' height='1.1em' preserveAspectRatio='xMidYMid meet' viewBox='0 0 16 16'%3e%3cg fill='currentColor'%3e%3cpath fill-rule='evenodd' clip-rule='evenodd' d='M14.5 2H7.71l-.85-.85L6.51 1h-5l-.5.5v11l.5.5H7v-1H1.99V6h4.49l.35-.15l.86-.86H14v1.5l-.001.51h1.011V2.5L14.5 2zm-.51 2h-6.5l-.35.15l-.86.86H2v-3h4.29l.85.85l.36.15H14l-.01.99zM13 16h-1v-3H9v-1h3V9h1v3h3v1h-3v3z'/%3e%3c/g%3e%3c/svg%3e");
+}
+
+.menu svg.folder {
+	height: 1.1rem;
+	width: 1.1rem;
+	margin-left: -1px;
 }
 
 .modal svg.folder {
