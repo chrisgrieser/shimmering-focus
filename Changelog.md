@@ -1,4 +1,4 @@
-- 2021-12-27	minor
+- 2021-12-27	longform sidebar
 - 2021-12-27	fix #73
 - 2021-12-27	context menu icon fix
 - 2021-12-27	checkbox fix
