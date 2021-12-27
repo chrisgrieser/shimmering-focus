@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 1.488
+Version 1.489
 https://github.com/chrisgrieser/shimmering-focus/
 MIT License
 ─────────────────────────────────────────────────── */
@@ -198,7 +198,7 @@ the .create-ToC.sh.
 
 	--cursor-monocolor: var(--accent-lighter);
 
-	--shadow-for-dark-bold: -1px -0.5px hsl(0 0% 35%);
+	--shadow-for-dark-bold: -0.5px 0.5px hsl(0 0% 35%);
 }
 
 .theme-light {
