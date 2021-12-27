@@ -1,3 +1,4 @@
+- 2021-12-27	refactoring
 - 2021-12-27	improved changelog creation
 - 2021-12-26	better promo-screenshot
 - 2021-12-26	updated readme

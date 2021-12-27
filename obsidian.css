@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 1.475
+Version 1.476
 https://github.com/chrisgrieser/shimmering-focus/
 MIT License
 ─────────────────────────────────────────────────── */
@@ -4550,6 +4550,20 @@ body:not(.no-ul-relationship-lines) .cm-hmd-list-indent {
 	position: relative;
 }
 
+body { /* stylelint-disable-line no-duplicate-selectors */
+	/* default size for iA Writer Quattro */
+	--indention-size: 3.05ch;
+	--relationship-line-color: var(--text-faint);
+}
+
+.relationship-line-fix-mono {
+	--indention-size: 4.0ch;
+}
+
+.relationship-line-fix-proportional {
+	--indention-size: 1.8ch;
+}
+
 body:not(.no-ul-relationship-lines) .cm-line .cm-hmd-list-indent::BEFORE,
 body:not(.no-ul-relationship-lines) .CodeMirror-line .cm-hmd-list-indent::BEFORE {
 	display: block;
@@ -4562,21 +4576,11 @@ body:not(.no-ul-relationship-lines) .CodeMirror-line .cm-hmd-list-indent::BEFORE
 	top: -1.6em;
 	left: 1.5px;
 
-	background-image: linear-gradient(to right, var(--text-faint) 1px, transparent 1px);
+	background-image: linear-gradient(to right, var(--relationship-line-color) 1px, transparent 1px);
 
 	padding-bottom: 999em;
 
-	background-size: 3.05ch 1px;
-}
-
-body.relationship-line-fix-mono:not(.no-ul-relationship-lines) .cm-line .cm-hmd-list-indent::BEFORE,
-body.relationship-line-fix-mono:not(.no-ul-relationship-lines) .CodeMirror-line .cm-hmd-list-indent::BEFORE {
-	background-size: 4.0ch 1px;
-}
-
-body.relationship-line-fix-proportional:not(.no-ul-relationship-lines) .cm-line .cm-hmd-list-indent::BEFORE,
-body.relationship-line-fix-proportional:not(.no-ul-relationship-lines) .CodeMirror-line .cm-hmd-list-indent::BEFORE {
-	background-size: 1.8ch 1px;
+	background-size: var(--indention-size) 1px;
 }
 
 /* Preview Mode */
@@ -4598,7 +4602,7 @@ body:not(.no-ul-relationship-lines) ol ul::BEFORE {
 	bottom: 0;
 	left: -0.85rem;
 
-	border-left: 1px solid var(--text-faint);
+	border-left: 1px solid var(--relationship-line-color);
 }
 
 /* ───────────────────────────────────────────────────
