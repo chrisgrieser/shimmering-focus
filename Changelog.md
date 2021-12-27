@@ -1,3 +1,4 @@
+- 2021-12-27	minor
 - 2021-12-27	vault launch color fix
 - 2021-12-27	fixes for promo screenshot
 - 2021-12-27	new preset color scheme: Nord ❄️

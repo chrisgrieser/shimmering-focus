@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 1.479
+Version 1.480
 https://github.com/chrisgrieser/shimmering-focus/
 MIT License
 ─────────────────────────────────────────────────── */
@@ -3542,7 +3542,7 @@ body .frontmatter-container .frontmatter-container-header {
 	background: var(--bg2);
 	border: var(--basic-border);
 	border-radius: var(--roundish);
-	font-size: 1em;
+	font-size: 0.9em;
 }
 
 .markdown-preview-view .frontmatter-container-header:hover {
