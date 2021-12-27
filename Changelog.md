@@ -1,3 +1,4 @@
+- 2021-12-27	minor
 - 2021-12-27	editor of longform projects ready for CM6
 - 2021-12-27	longform sidebar
 - 2021-12-27	fix #73
