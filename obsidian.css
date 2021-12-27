@@ -197,6 +197,8 @@ the .create-ToC.sh.
 	--spell-error-color: hsl(0 66% 64%);
 
 	--cursor-monocolor: var(--accent-lighter);
+
+	--shadow-for-dark-bold: -1px -0.5px hsl(0 0% 35%);
 }
 
 .theme-light {
@@ -753,7 +755,12 @@ body > .app-container {
 .theme-dark .cm-strong,
 .theme-dark .markdown-preview-view strong {
 	font-weight: 600;
-	text-shadow: 1px 1px hsl(0 0% 30%);
+	text-shadow: var(--shadow-for-dark-bold);
+}
+
+.theme-dark .markdown-preview-view strong a {
+	font-weight: 800;
+	text-shadow: none;
 }
 
 /* ───────────────────────────────────────────────────
@@ -1059,6 +1066,10 @@ svg.up-and-down-arrows {
 button svg.up-and-down-arrows {
 	position: relative;
 	bottom: 1.5px;
+}
+
+.nav-action-button svg.up-and-down-arrows {
+	margin-top: 1px;
 }
 
 /* "add to dictionary" & vale plugin */
@@ -1747,13 +1758,8 @@ p.mod-warning {
 	color: var(--text-error-hover);
 }
 
-p.mod-warning::AFTER,
 p.mod-warning::BEFORE {
 	content: "⚠️";
-}
-
-p.mod-warning::AFTER {
-	margin-left: 4px;
 }
 
 p.mod-warning::BEFORE {
@@ -2765,7 +2771,8 @@ body .workspace-leaf-resize-handle:active {
 .vertical-tab-header-group:first-child .vertical-tab-header-group-items .vertical-tab-nav-item:nth-child(3),
 .vertical-tab-header-group:first-child .vertical-tab-header-group-items .vertical-tab-nav-item:nth-child(4),
 .vertical-tab-header-group:first-child .vertical-tab-header-group-items .vertical-tab-nav-item:last-child {
-	font-weight: 900;
+	font-weight: 800;
+	text-shadow: var(--shadow-for-dark-bold);
 }
 
 /* <<< Login Menu  */
@@ -3235,7 +3242,7 @@ body .workspace-leaf-resize-handle:active {
 }
 
 .community-theme.is-selected .community-theme-info::AFTER {
-	content: "⚠️ No Settings Button. \A➡️ Access Settings via\A    ⌘ + ,   (Mac)\A    Ctrl + , (Win/Linux)\A\A🎨 Theme Customization via\A    Style Settings Plugin";
+	content: "⚠️  No Settings Button \A\A➡️  Access Settings via\A      ⌘ + ,   (Mac)\A      Ctrl + , (Win/Linux)\A\A🎨  Theme Customization via\A      Style Settings Plugin";
 
 	position: absolute;
 	top: 137px;
@@ -3245,20 +3252,21 @@ body .workspace-leaf-resize-handle:active {
 	color: var(--text-normal);
 	background-color: var(--bg2);
 
-	padding: 3px 8px 4px;
+	padding: 8px;
 
 	border: var(--basic-border);
 	border-radius: var(--roundish);
 
-	font-family: var(--default-font);
+	font-family: var(--menu-font-family);
 	font-size: 0.85rem;
-	line-height: 1.3em;
+	line-height: 1.3rem;
+	letter-spacing: 0.3px;
 	text-align: start;
 	white-space: pre-wrap;
 }
 
 .community-theme.is-selected {
-	min-height: 335px;
+	min-height: 385px;
 	border-color: var(--interactive-border);
 }
 
@@ -3521,6 +3529,9 @@ body > div.app-container .view-content > div > .markdown-preview-view {
 /* ───────────────────────────────────────────────────
 << Embeds
 ─────────────────────────────────────────────────── */
+/* ───────────────────────────────────────────────────
+<<< Embedded Notes
+─────────────────────────────────────────────────── */
 
 .markdown-embed-link:hover {
 	color: var(--alt-accent);
@@ -3529,6 +3540,38 @@ body > div.app-container .view-content > div > .markdown-preview-view {
 .markdown-preview-view div.markdown-embed {
 	border-top: var(--muted-border);
 	border-bottom: var(--muted-border);
+}
+
+/* ───────────────────────────────────────────────────
+<<< Embedded Search Queries
+─────────────────────────────────────────────────── */
+
+.internal-query .internal-query-header-icon,
+.internal-query .internal-query-header-title {
+	color: var(--text-normal);
+	font-family: var(--menu-font-family);
+	font-size: 1.1em;
+	font-weight: 500;
+	letter-spacing: 0.4px;
+}
+
+.internal-query-header-title::AFTER,
+.internal-query-header-title::BEFORE {
+	display: none;
+}
+
+.internal-query .search-result-container .search-result-file-match {
+	font-size: 1.3em;
+}
+
+.internal-query .search-result-file-title {
+	font-size: 1em;
+}
+
+.internal-query {
+	color: var(--text-normal);
+	border-top: var(--thick-border);
+	border-bottom: var(--thick-border);
 }
 
 /* ───────────────────────────────────────────────────
@@ -3901,9 +3944,14 @@ body > .app-container .obsidian-search-match-highlight:last-child {
 	border-bottom-right-radius: var(--roundish);
 }
 
-.search-result .search-result-file-match {
+.search-result .search-result-file-matches {
+	border-bottom: var(--basic-border);
 	font-size: calc(var(--sidebar-font-size) * 0.9);
 	line-height: 1.2em;
+}
+
+.search-result .search-result-file-match::AFTER {
+	background-color: var(--basic-border-color);
 }
 
 /* ───────────────────────────────────────────────────
@@ -4794,6 +4842,8 @@ body:not(.annotation-tags-off) .tag[href="#definition"],
 body:not(.annotation-tags-off) .tag[href="#method"],
 body:not(.annotation-tags-off) .tag[href="#important"],
 body:not(.annotation-tags-off) .tag[href="#quote"],
+body:not(.annotation-tags-off) .tag[href="#todo"],
+body:not(.annotation-tags-off) .cm-s-obsidian .cm-line span.cm-tag-todo,
 body:not(.annotation-tags-off) .cm-s-obsidian .cm-line span.cm-tag-quote,
 body:not(.annotation-tags-off) .cm-s-obsidian .cm-line span.cm-tag-method,
 body:not(.annotation-tags-off) .cm-s-obsidian .cm-line span.cm-tag-disagree,
@@ -4817,12 +4867,42 @@ body:not(.annotation-tags-off) .cm-s-obsidian .cm-line span.cm-tag-example {
 	text-decoration: none;
 }
 
+/* annotation tags in longform notes */
+body:not(.annotation-tags-off) .longform-leaf .tag[href="#question"],
+body:not(.annotation-tags-off) .longform-leaf .tag[href="#gap"],
+body:not(.annotation-tags-off) .longform-leaf .tag[href="#main"],
+body:not(.annotation-tags-off) .longform-leaf .tag[href="#disagree"],
+body:not(.annotation-tags-off) .longform-leaf .tag[href="#summary"],
+body:not(.annotation-tags-off) .longform-leaf .tag[href="#agree"],
+body:not(.annotation-tags-off) .longform-leaf .tag[href="#example"],
+body:not(.annotation-tags-off) .longform-leaf .tag[href="#definition"],
+body:not(.annotation-tags-off) .longform-leaf .tag[href="#method"],
+body:not(.annotation-tags-off) .longform-leaf .tag[href="#important"],
+body:not(.annotation-tags-off) .longform-leaf .tag[href="#quote"],
+body:not(.annotation-tags-off) .longform-leaf .tag[href="#todo"],
+body:not(.annotation-tags-off) .longform-leaf .cm-s-obsidian .cm-line span.cm-tag-todo,
+body:not(.annotation-tags-off) .longform-leaf .cm-s-obsidian .cm-line span.cm-tag-quote,
+body:not(.annotation-tags-off) .longform-leaf .cm-s-obsidian .cm-line span.cm-tag-method,
+body:not(.annotation-tags-off) .longform-leaf .cm-s-obsidian .cm-line span.cm-tag-disagree,
+body:not(.annotation-tags-off) .longform-leaf .cm-s-obsidian .cm-line span.cm-tag-gap,
+body:not(.annotation-tags-off) .longform-leaf .cm-s-obsidian .cm-line span.cm-tag-summary,
+body:not(.annotation-tags-off) .longform-leaf .cm-s-obsidian .cm-line span.cm-tag-definition,
+body:not(.annotation-tags-off) .longform-leaf .cm-s-obsidian .cm-line span.cm-tag-question,
+body:not(.annotation-tags-off) .longform-leaf .cm-s-obsidian .cm-line span.cm-tag-main,
+body:not(.annotation-tags-off) .longform-leaf .cm-s-obsidian .cm-line span.cm-tag-agree,
+body:not(.annotation-tags-off) .longform-leaf .cm-s-obsidian .cm-line span.cm-tag-important,
+body:not(.annotation-tags-off) .longform-leaf .cm-s-obsidian .cm-line span.cm-tag-example {
+	font-family: var(--longform-font);
+	font-size: var(--longform-font-size);
+}
+
 /* prevent line break between emoji and tag */
 .cm-hashtag-begin {
 	white-space: nowrap;
 }
 
 /* the "#" */
+body:not(.annotation-tags-off) .cm-s-obsidian .cm-line .cm-hashtag-begin.cm-tag-todo,
 body:not(.annotation-tags-off) .cm-s-obsidian .cm-line .cm-hashtag-begin.cm-tag-quote,
 body:not(.annotation-tags-off) .cm-s-obsidian .cm-line .cm-hashtag-begin.cm-tag-method,
 body:not(.annotation-tags-off) .cm-s-obsidian .cm-line .cm-hashtag-begin.cm-tag-disagree,
@@ -4840,6 +4920,7 @@ body:not(.annotation-tags-off) .cm-s-obsidian .cm-line .cm-hashtag-begin.cm-tag-
 }
 
 /* the tag text */
+body:not(.annotation-tags-off) .cm-s-obsidian .cm-line .cm-hashtag-end.cm-tag-todo,
 body:not(.annotation-tags-off) .cm-s-obsidian .cm-line .cm-hashtag-end.cm-tag-quote,
 body:not(.annotation-tags-off) .cm-s-obsidian .cm-line .cm-hashtag-end.cm-tag-method,
 body:not(.annotation-tags-off) .cm-s-obsidian .cm-line .cm-hashtag-end.cm-tag-disagree,
@@ -4855,6 +4936,16 @@ body:not(.annotation-tags-off) .cm-s-obsidian .cm-line .cm-hashtag-end.cm-tag-ex
 	border-bottom-left-radius: 0;
 	border-top-left-radius: 0;
 	font-family: var(--default-font); /* fixes their appearance in headings */
+}
+
+body:not(.annotation-tags-off) .cm-tag-todo,
+body:not(.annotation-tags-off) .tag[href="#todo"] {
+	background-color: rgb(133 199 255 / 50%) !important;
+}
+
+body:not(.annotation-tags-off) .cm-hashtag-begin.cm-tag-todo::BEFORE,
+body:not(.annotation-tags-off) .tag[href="#todo"]::BEFORE {
+	content: "☑️ ";
 }
 
 body:not(.annotation-tags-off) .cm-tag-question,
@@ -5043,12 +5134,17 @@ input[type="checkbox"]:checked {
 	border-width: 0;
 
 	background-position: center;
-	background-size: 70%;
+	background-size: 65%;
 	background-repeat: no-repeat;
 }
 
+.angular-shapes [type="checkbox"]:checked {
+	background-size: 65%;
+}
+
+input[type="checkbox"]:checked:hover,
 li[data-task="x"] > .task-list-item-checkbox:hover {
-	background-color: var(--alt-accent-lighter) !important;
+	background-color: var(--alt-accent-lighter);
 }
 
 /* fix for legacy-editor, discussed here https://discord.com/channels/686053708261228577/702656734631821413/920422345422819339 */
@@ -5070,10 +5166,6 @@ input[type="checkbox"]:not(:checked) {
 body > div.app-container div.markdown-preview-view ul > li.task-list-item.is-checked,
 body > div.app-container div.markdown-preview-view ol > li.task-list-item.is-checked {
 	padding-left: 0;
-}
-
-.markdown-preview-view :not(li[data-task="x"]) > .task-list-item-checkbox:checked {
-	margin-right: 2px !important;
 }
 
 body .markdown-source-view.mod-cm6 .task-list-item-checkbox::BEFORE,
@@ -6818,25 +6910,27 @@ div#select-projects select {
 	display: none;
 }
 
-/* <<< Longform Sidebar Icons */
+/* <<< Longform Icons */
 .workspace-leaf-content[data-type="VIEW_TYPE_LONGFORM_EXPLORER"] .tabs .tab-list {
-	padding: 0 8px 7px;
+	padding: 9px 6px 1px;
 	margin: 0;
 	border-bottom: var(--basic-border);
 }
 
 .workspace-leaf-content[data-type="VIEW_TYPE_LONGFORM_EXPLORER"] button::BEFORE {
 	font-family: var(--icon-font);
-	font-size: 1.1rem;
-	vertical-align: top;
+	font-size: 1.2rem;
 }
 
 .workspace-leaf-content[data-type="VIEW_TYPE_LONGFORM_EXPLORER"] .tab-list button {
+	height: 28px;
+	width: 33px;
+
 	color: var(--text-faint);
 	background-color: var(--bg3);
 
-	padding: 4px 0 5px 7px;
-	margin-right: 2px;
+	padding: 4px;
+	margin-right: 1px;
 
 	border: var(--thin-border);
 	border-radius: var(--roundish);
@@ -6844,8 +6938,14 @@ div#select-projects select {
 	font-size: 0;
 }
 
+.workspace-leaf-content[data-type="VIEW_TYPE_LONGFORM_EXPLORER"] .tab-list button::BEFORE {
+	position: relative;
+	bottom: 1px;
+	left: 2px;
+}
+
 .workspace-leaf-content[data-type="VIEW_TYPE_LONGFORM_EXPLORER"] .tab-list button:nth-child(1)::BEFORE {
-	content: "format_list_numbered_rtl";
+	content: "format_list_numbered";
 }
 
 .workspace-leaf-content[data-type="VIEW_TYPE_LONGFORM_EXPLORER"] .tab-list button:nth-child(2)::BEFORE {
@@ -6854,16 +6954,6 @@ div#select-projects select {
 
 .workspace-leaf-content[data-type="VIEW_TYPE_LONGFORM_EXPLORER"] .tab-list button:nth-child(3)::BEFORE {
 	content: "merge_type";
-}
-
-/* fix buttons for angular shapes */
-.angular-shapes .workspace-leaf-content[data-type="VIEW_TYPE_LONGFORM_EXPLORER"] .tab-list button {
-	padding: 3px 0 4px 4px;
-}
-
-.angular-shapes .workspace-leaf-content[data-type="VIEW_TYPE_LONGFORM_EXPLORER"] .tab-list button::BEFORE {
-	position: relative;
-	left: 1px;
 }
 
 .workspace-leaf-content[data-type="VIEW_TYPE_LONGFORM_EXPLORER"] button.selected {
@@ -6880,33 +6970,17 @@ div#select-projects select {
 /* https://github.com/kevboh/longform#scene-only-styling */
 
 .longform-leaf .markdown-preview-view,
-.longform-leaf .cm-s-obsidian {
+.longform-leaf .mod-cm5.cm-s-obsidian,
+.longform-leaf .mod-cm6.cm-s-obsidian .cm-contentContainer {
 	font-family: var(--longform-font);
 	font-size: var(--longform-font-size);
-	line-height: 1.35rem;
-	letter-spacing: 0 !important;
-}
-
-.longform-leaf .cm-s-obsidian.mod-cm6 .cm-scroller {
-	font-family: var(--longform-font);
-	font-size: var(--longform-font-size);
-	line-height: 1.35rem;
 }
 
 .longform-leaf .markdown-preview-view table {
 	line-height: 1.3rem;
 }
 
-body:not(.longform-left-aligned) .longform-leaf span:not(.cm-header) {
-	text-align: justify;
-	hyphens: auto;
-}
-
-body.longform-text-indent .longform-leaf .markdown-preview-view p {
-	text-indent: 2em;
-}
-
-/* keep any code smaller though */
+/* keep any code smaller */
 body > div.app-container .longform-leaf .cm-s-obsidian .cm-hmd-frontmatter,
 .longform-leaf .markdown-preview-view .frontmatter-container,
 .longform-leaf .cm-s-obsidian .HyperMD-codeblock,
@@ -6925,26 +6999,41 @@ body > div.app-container .longform-leaf .cm-s-obsidian .cm-hmd-frontmatter,
 	hyphens: none;
 }
 
-/* do not justify heading text */
-body .longform-leaf .cm-header,
+/* justify text */
+body:not(.longform-left-aligned) .longform-leaf .cm-contentContainer *:not(.cm-header),
+body:not(.longform-left-aligned) .longform-leaf *:not(.cm-header) {
+	text-align: justify;
+	hyphens: auto;
+}
+
+/* do not justify headings and lists */
+body .app-container .longform-leaf div.HyperMD-list-line.cm-line,
+body .app-container .longform-leaf div.HyperMD-header.cm-line,
+body .app-container .longform-leaf div.markdown-preview-view h1,
+body .app-container .longform-leaf div.markdown-preview-view h2,
+body .app-container .longform-leaf div.markdown-preview-view h3,
+body .app-container .longform-leaf div.markdown-preview-view h4,
+body .app-container .longform-leaf div.markdown-preview-view h5,
+body .app-container .longform-leaf div.markdown-preview-view h6 {
+	text-align: start;
+	hyphens: none;
+}
+
+/* style headings */
 .longform-leaf .markdown-preview-view h1,
 .longform-leaf .markdown-preview-view h2,
 .longform-leaf .markdown-preview-view h3,
 .longform-leaf .markdown-preview-view h4,
 .longform-leaf .markdown-preview-view h5,
-.longform-leaf .markdown-preview-view h6 {
+.longform-leaf .markdown-preview-view h6,
+.longform-leaf .cm-header {
 	font-family: var(--longform-font);
 	line-height: 1em;
-	text-align: start;
-	hyphens: none;
 }
 
-/* fix for checkboxes  */
-.longform-leaf input[type="checkbox"] {
-	margin: 3px 9px 4px 0 !important;
+body.longform-text-indent .longform-leaf .markdown-preview-view p {
+	text-indent: 2em;
 }
-
-/* <<< Longform Icons */
 
 /* hide index file in file explorer, which shouldn't
 be messed with anyway */
@@ -6957,8 +7046,12 @@ body.hide-index-files .nav-file-title[data-path$="Index.md"] {
 }
 
 .nav-folder-title[data-path$="Drafts"] .nav-folder-title-content::BEFORE {
-	/* alternative:  "auto_stories" or "menu_book" */
 	content: "folder_special";
+}
+
+/* fix for checkboxes  */
+.longform-leaf input[type="checkbox"] {
+	margin: 3px 9px 4px 0 !important;
 }
 
 /* ───────────────────────────────────────────────────
@@ -7780,6 +7873,10 @@ body .tlfFileInfoValueNumber {
 .view-content .tlfFileInfoTable .tlfFileInfoRow .tlfFileInfoCell .tlfFileInfoLabel {
 	font-family: var(--smallcap-font);
 	font-size: var(--sidebar-font-size);
+}
+
+.tlfFileInfoTable100 .tlfFileInfoLabel {
+	display: none;
 }
 
 body .tlfFileInfoTextArea,

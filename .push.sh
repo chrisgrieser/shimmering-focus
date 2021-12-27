@@ -1,6 +1,6 @@
 #!/bin/zsh
 export PATH=/usr/local/bin/:/opt/homebrew/bin/:$PATH
-csspath=~"/Library/Mobile Documents/iCloud~md~obsidian/Documents/Vault/.obsidian/themes/Shimmering Focus.css"
+csspath=~"/Library/Mobile Documents/iCloud~md~obsidian/Documents/Main Vault/.obsidian/themes/Shimmering Focus.css"
 
 # get commit message
 commitMsg="$*"
@@ -8,7 +8,7 @@ if [[ "$commitMsg" == "" || "$commitMsg" == " " ]] ; then
 	commitMsg="minor"
 fi
 
-# Style Lint & copy
+# Stylelint & copy
 stylelint --fix "$csspath"
 cp "$csspath" ./obsidian.css
 
