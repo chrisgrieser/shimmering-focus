@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 1.477
+Version 1.478
 https://github.com/chrisgrieser/shimmering-focus/
 MIT License
 ─────────────────────────────────────────────────── */
@@ -240,9 +240,7 @@ the .create-ToC.sh.
 }
 
 /* ───────────────────────────────────────────────────
-<< Brightness
-<< Saturation
-<< Hue
+<< Brightness, Saturation, Hue
 ─────────────────────────────────────────────────── */
 
 /* default values (no Style Settings Plugin) */
@@ -263,6 +261,17 @@ the .create-ToC.sh.
 	--light-sat: 0%;
 	--brightness-light: 15%;
 	--brightness-dark: 5%;
+}
+
+/* Nord Theme */
+.nord-colors.theme-dark,
+.nord-colors.theme-light {
+	--light-hue: 220;
+	--dark-hue: 220;
+	--dark-sat: 20%;
+	--light-sat: 20%;
+	--brightness-light: 12%;
+	--brightness-dark: 9%;
 }
 
 /* colors for longform projects */
@@ -2249,6 +2258,9 @@ body:not(.no-alternating-rows) .suggestion-item:nth-child(even) .suggestion-pref
 /* ───────────────────────────────────────────────────
 < Sidebar
 ─────────────────────────────────────────────────── */
+.workspace-leaf-content .view-content {
+	padding: 4px 2px;
+}
 
 /* ───────────────────────────────────────────────────
 << Files in the Sidebar
@@ -5606,10 +5618,6 @@ body:not(.no-file-explorer-icons) .nav-file-title[data-path*="kanban"] .nav-file
 	line-height: 1.15em;
 }
 
-.workspace-leaf-content[data-type="outline"] .view-content {
-	padding: 4px 2px;
-}
-
 .outline .tree-item-icon.collapse-icon {
 	padding-right: 6px !important;
 	padding-left: 3px;
@@ -6940,10 +6948,6 @@ body div.oz-image-widget > img:active {
 	display: none;
 }
 
-.workspace-leaf-content[data-type="recent-files"] .view-content {
-	padding: 4px;
-}
-
 .workspace-leaf-content[data-type="recent-files"] .nav-file {
 	border-radius: var(--roundish);
 }
@@ -8204,8 +8208,8 @@ settings:
 	 default: false
 	-
 	 id: preset-color-scheme
-	 title: Preset Color Schemes
-	 description: Overrides any Brightness, Color Tone, and Color Intensity setting when not set to "Custom". (🚧 More color schemes coming soon!)
+	 title: "Preset Color Schemes"
+	 description: 'New Color Scheme: Nord ❄️. Selecting a preset color scheme other than "Custom Colors" overrides any Brightness, Color Tone, and Color Intensity settings. (More color schemes coming in the future!)'
 	 type: class-select
 	 allowEmpty: false
 	 default: classic-colors
@@ -8213,6 +8217,9 @@ settings:
 		-
 			label: Classic Shimmering Focus
 			value: classic-colors
+		-
+			label: Nord
+			value: nord-colors
 		-
 			label: Custom Colors
 			value: custom-colors

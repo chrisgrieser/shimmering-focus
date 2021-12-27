@@ -1,3 +1,4 @@
+- 2021-12-27	new preset color scheme: Nord ❄️
 - 2021-12-27	heading numbering in live preview & cssclasses
 - 2021-12-27	improved changelog creation
 - 2021-12-26	better promo-screenshot
