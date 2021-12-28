@@ -1,4 +1,4 @@
-- 2021-12-28	minor
+- 2021-12-28	collapse indicators improved for new editor
 - 2021-12-28	Numbered sections & subsections for the longform plugin (see Readme)
 - 2021-12-28	embeddes search results
 - 2021-12-28	"#todo" as new annotation tag

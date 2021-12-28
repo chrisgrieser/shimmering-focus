@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 1.491
+Version 1.492
 https://github.com/chrisgrieser/shimmering-focus/
 MIT License
 ─────────────────────────────────────────────────── */
@@ -934,7 +934,8 @@ svg.any-key {
 }
 
 .hotkey-list-container svg.any-key {
-	margin-top: 2px;
+	width: 0.99rem;
+	margin-top: 3px;
 }
 
 .plugin-list-plugins svg.any-key {
@@ -2823,7 +2824,7 @@ body .workspace-leaf-resize-handle:active {
 
 /* <<< Hotkey search */
 .hotkey-search-container {
-	padding-right: 0;
+	padding: 5px 0 0;
 }
 
 .hotkey-search-container input {
@@ -2831,6 +2832,7 @@ body .workspace-leaf-resize-handle:active {
 }
 
 .hotkey-list-container {
+	padding-top: 10px;
 	padding-right: 0;
 }
 
@@ -3565,10 +3567,14 @@ body > div.app-container .view-content > div > .markdown-preview-view {
 .internal-query .internal-query-header-icon,
 .internal-query .internal-query-header-title {
 	color: var(--text-normal);
-	font-family: var(--menu-font-family);
-	font-size: 1.1em;
-	font-weight: 500;
+	font-size: 1.2em;
 	letter-spacing: 0.4px;
+}
+
+.internal-query .internal-query-header-icon {
+	transform: scale(1.5);
+	margin-top: 3px;
+	margin-right: 10px;
 }
 
 .internal-query-header-title::AFTER,
@@ -3586,8 +3592,8 @@ body > div.app-container .view-content > div > .markdown-preview-view {
 
 .internal-query {
 	color: var(--text-normal);
-	border-top: var(--thick-border);
-	border-bottom: var(--thick-border);
+	background-color: var(--bg2);
+	border: var(--basic-border);
 }
 
 /* ───────────────────────────────────────────────────
@@ -3703,34 +3709,41 @@ body .frontmatter-container .frontmatter-container-header {
 << Gutter & Collapse Indicators
 ─────────────────────────────────────────────────── */
 
+/* Preview Mode */
 .heading-collapse-indicator .right-triangle,
 .list-collapse-indicator .right-triangle {
+	height: 0.8rem;
+	width: 0.8rem;
+	color: var(--text-muted);
+}
+
+.heading-collapse-indicator .collapse-indicator,
+.list-collapse-indicator .collapse-indicator {
+	padding-right: 4px;
+}
+
+.frontmatter-collapse-indicator .right-triangle {
 	height: 0.6rem;
 	width: 0.6rem;
 }
 
-.list-collapse-indicator .right-triangle {
-	color: var(--text-faint);
-}
-
-.heading-collapse-indicator .right-triangle {
-	color: var(--text-muted);
-}
-
+/* edit mode */
 .cm-s-obsidian.mod-cm6 .collapse-indicator .right-triangle {
-	height: 0.9em;
-	width: 0.9em;
+	height: 1em;
+	width: 1em;
 }
 
-.collapse-indicator.collapse-icon:hover {
+/* hover / collapse colors, applies to edit & preview */
+.collapse-indicator:hover svg {
 	color: var(--alt-accent-lighter);
+	cursor: pointer;
 }
 
-.is-collapsed .collapse-indicator.collapse-icon {
-	color: var(--text-accent);
+.is-collapsed .collapse-indicator svg {
+	color: var(--accent-lighter);
 }
 
-/* fix for gutter color, thanks @SlRvb */
+/* fix for gutter color @SlRvb */
 .markdown-source-view.mod-cm6 .cm-gutters,
 .CodeMirror-foldgutter {
 	background-color: transparent !important;
