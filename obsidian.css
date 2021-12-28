@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 1.494
+Version 1.495
 https://github.com/chrisgrieser/shimmering-focus/
 MIT License
 ─────────────────────────────────────────────────── */
@@ -4126,12 +4126,7 @@ body.focus-view-enabled .mod-left-split.is-collapsed ~ .mod-right-split {
 << Headings
 ─────────────────────────────────────────────────── */
 
-.cm-header-1,
-.cm-header-2,
-.cm-header-3,
-.cm-header-4,
-.cm-header-5,
-.cm-header-6,
+.cm-header,
 .markdown-preview-view h1,
 .markdown-preview-view h2,
 .markdown-preview-view h3,
@@ -4226,7 +4221,7 @@ body .cm-s-obsidian .cm-header {
 }
 
 /* Alternation between italic & different font style
-for all headings to improve distinctiveness = more readability */
+for all headings to improve distinctiveness */
 body:not(.no-alternating-header-italics) .cm-header-2,
 body:not(.no-alternating-header-italics) .markdown-preview-view h2,
 body:not(.no-alternating-header-italics) .cm-header-4,
