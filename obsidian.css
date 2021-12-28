@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 1.493
+Version 1.494
 https://github.com/chrisgrieser/shimmering-focus/
 MIT License
 ─────────────────────────────────────────────────── */
@@ -3859,7 +3859,7 @@ progress[value^="10"]::-WEBKIT-PROGRESS-VALUE { background: hsl(160 92% 70%) }
 	border-radius: var(--roundish);
 }
 
-.is-live-preview img {
+.mod-cm6.is-live-preview img {
 	cursor: pointer;
 }
 
@@ -6953,20 +6953,19 @@ div#select-projects select {
 /* hacky cover over the "_" */
 #scene-list .scene-container[data-scene-path*="/_"] {
 	padding-left: 15px;
-	font-size: 90%;
-	letter-spacing: 0.1px;
-	text-indent: -14px;
+	text-indent: -16px;
 }
 
 #scene-list .scene-container {
 	display: block;
 	padding-left: 5px;
+	letter-spacing: 0.1px;
 }
 
 #scene-list .scene-container[data-scene-path*="/_"]::BEFORE {
 	content: "  ";
 	position: relative;
-	right: -7px;
+	right: -8px;
 	background-color: var(--bg2);
 	white-space: pre-wrap;
 }
