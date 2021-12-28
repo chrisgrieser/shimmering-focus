@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 1.492
+Version 1.493
 https://github.com/chrisgrieser/shimmering-focus/
 MIT License
 ─────────────────────────────────────────────────── */
@@ -6813,6 +6813,7 @@ body.angular-shapes .kanban-plugin input[type="checkbox"] {
 #scene-list .scene-container.selected,
 #draft-list .draft-container.selected {
 	color: var(--text-accent);
+	background-color: var(--bg3);
 }
 
 /* dragging */
@@ -7089,7 +7090,8 @@ body:not(.longform-left-aligned) .longform-leaf *:not(.cm-header) {
 	hyphens: auto;
 }
 
-/* do not justify headings and lists */
+/* do not justify headings, tables, and lists */
+body .app-container .longform-leaf table td,
 body .app-container .longform-leaf div.HyperMD-list-line.cm-line,
 body .app-container .longform-leaf div.HyperMD-header.cm-line,
 body .app-container .longform-leaf div.markdown-preview-view h1,
@@ -7098,7 +7100,7 @@ body .app-container .longform-leaf div.markdown-preview-view h3,
 body .app-container .longform-leaf div.markdown-preview-view h4,
 body .app-container .longform-leaf div.markdown-preview-view h5,
 body .app-container .longform-leaf div.markdown-preview-view h6 {
-	text-align: start;
+	text-align: start !important;
 	hyphens: none;
 }
 
