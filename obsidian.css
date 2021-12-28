@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 1.490
+Version 1.491
 https://github.com/chrisgrieser/shimmering-focus/
 MIT License
 ─────────────────────────────────────────────────── */
@@ -2783,6 +2783,11 @@ body .workspace-leaf-resize-handle:active {
 .vertical-tab-header-group:first-child .vertical-tab-header-group-items .vertical-tab-nav-item:nth-child(4),
 .vertical-tab-header-group:first-child .vertical-tab-header-group-items .vertical-tab-nav-item:last-child {
 	font-weight: 800;
+}
+
+.theme-dark .vertical-tab-header-group:first-child .vertical-tab-header-group-items .vertical-tab-nav-item:nth-child(3),
+.theme-dark .vertical-tab-header-group:first-child .vertical-tab-header-group-items .vertical-tab-nav-item:nth-child(4),
+.theme-dark .vertical-tab-header-group:first-child .vertical-tab-header-group-items .vertical-tab-nav-item:last-child {
 	text-shadow: var(--shadow-for-dark-bold);
 }
 
@@ -5790,7 +5795,7 @@ body:not(.no-file-explorer-icons) .nav-file-title[data-path*="kanban"] .nav-file
 /* relationship lines */
 .outline .tree-item-children {
 	margin-left: 10px;
-	border-left: 2px solid var(--hr-line-gray);
+	border-left: var(--basic-border);
 }
 
 .outline .tree-item-children .tree-item-self {
