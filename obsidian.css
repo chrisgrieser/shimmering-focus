@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 1.489
+Version 1.490
 https://github.com/chrisgrieser/shimmering-focus/
 MIT License
 ─────────────────────────────────────────────────── */
@@ -13,16 +13,17 @@ respective section. This ToC is auto-generated via
 the .create-ToC.sh.
 
 - Colors
-	- Brightness
-	- Saturation
-	- Hue
+	- Base Colors
+	- Brightness, Saturation, Hue
+	- Longform project colors
+	- Default variable colors & Base elements
 	- Shadows
 	- Borders
 - Other Variables
 - Fonts
-	- Base64-encoded Fonts
-	- Font Definitions
-	- Bold
+ 	- Base64-encoded Fonts
+ 	- Font Definitions
+ 	- Bold
 - Icons
 - Base Icons
 	- Plugin Icons
@@ -43,7 +44,8 @@ the .create-ToC.sh.
 	- Warnings
 	- Toggles (Checkboxes)
 	- Input & Textarea
-	- Dropdown & Slider
+	- Dropdown
+	- Slider
 	- Search & Replace (cmd + F)
 	- Context Menus
 	- Close Buttons
@@ -59,9 +61,13 @@ the .create-ToC.sh.
 	- Modals in general
 	- Confirmation Modal
 	- Settings Menu
+ 		- Login Menu
+ 		- Community plugin list
+ 		- Core plugin
+ 		- Hotkey search
 	- Plugin Browser
 		- Plugin Search Results (left side)
-		- Plugin Info /Readme (right side)
+		- Plugin Info / Readme (right side)
 	- Theme Browser
 		- GitHub Info for this Theme
 		- Remaining Community Theme Browser
@@ -71,9 +77,11 @@ the .create-ToC.sh.
 	- Empty State
 	- Editor Properties
 	- Embeds
+		- Embedded Notes
+		- Embedded Search Queries
 	- YAML Header
-		- YAML Frontmatter
-		- Metadata Block
+ 		- YAML Frontmatter
+ 		- Metadata Block
 	- Gutter & Collapse Indicators
 	- Progress bars (<progress>)
 	- Images
@@ -82,34 +90,39 @@ the .create-ToC.sh.
 	- Search Matches
 	- Spellcheck
 	- Max View
-		- Line Length & Tables
-		- Images
-		- PDFs
-		- Mermaid
+ 		- Line Length & Tables
+ 		- Images
+ 		- PDFs
+ 		- Mermaid
 - Markup
 	- Headings
 	- Blockquotes
 	- Tables
-	- Code Blocks & Inline Code
+	- Code
+		- Inline Code
+		- Code Blocks
 	- Syntax Highlighting
+	- Bullet List
 	- Bullet Point Relationship Lines
 	- Links
+ 		- fold external URLs (CM6 Source Mode)
 	- Tags
 		- Annotation Tags
 	- Comments & HTML Tags
 	- Tasks
 	- Checkboxes
-		- SlRvb's checkboxes Compatibility
+ 		- Custom Checkboxes by SlRvb Compatibility
 	- Highlights & Selection
-		- Active Line Highlight
-		- Highlights
-		- Selection (Selected Text)
+ 		- Active Line Highlight
+ 		- Highlights
+ 		- Selection (Selected Text)
 	- Multi-Color Highlighting
 	- Pseudo-Spoiler-Tag
 	- Strikethroughs
 	- Pandoc Citations
 	- Footnotes
 	- Horizontal line (hr)
+- CSS Classes
 - Mobile
 - Core Plugins
 	- Editor Status (CM6)
@@ -117,25 +130,29 @@ the .create-ToC.sh.
 		- Relationship Lines
 		- Folder Icons & Note Icons
 	- Panes
-		- Panes in general
+ 		- Panes in general
 		- Outline
 		- Backlinks & Outgoing
-		- Search
+		- Search Pane
 		- Tag Pane
 		- Starred
 	- Popover (Page Preview)
 	- File Recovery
 	- Graph View
 - Community Plugins
+	- Dictionary
 	- Git Plugin
 	- Calendar
 	- Templater
 	- Kanban
+ 		- Board
+ 		- Font
+ 		- Lanes
 	- Longform
-		- Longform Sidebar
-		- Longform Sidebar Icons
-		- Longform Editor
-		- Longform Icons
+ 		- Longform Sidebar
+ 		- Longform Scene List Counting
+ 		- Longform Icons
+ 		- Longform Editor
 	- Ozan's Image in Editor
 	- Recent Files
 	- Quick Explorer
@@ -159,6 +176,7 @@ the .create-ToC.sh.
 	- Zoom
 	- Cursor Location
 	- Advanced Tables
+	- Show Current File Path
 - Compatibility Info for the Obsidian Hub
 - Style Setting Options
 
@@ -333,7 +351,7 @@ the .create-ToC.sh.
 << Longform project colors
 ─────────────────────────────────────────────────── */
 :root {
-	--longform-hue-shift: 25;
+	--longform-hue-shift: 10;
 }
 
 .theme-light .longform-leaf {
@@ -352,10 +370,8 @@ the .create-ToC.sh.
 	--header-bg: hsl(var(--longform-light-hue) calc(var(--sat-light-3) * 1.1) calc(var(--b-light-2) - 2%));
 	--resize-handle-color: hsl(var(--longform-light-hue) var(--sat-light-2) calc(var(--b-light-2) - 1%));
 	--scrollbar-bg: hsl(var(--longform-light-hue) var(--sat-light-3) calc(var(--b-light-2) - 8%));
-	--suggester-b-row: hsl(var(--longform-light-hue) var(--sat-light-2) calc(var(--b-light-1) - 3%));
 	--muted-border-color: hsl(var(--longform-light-hue) var(--sat-light-3) calc(var(--b-light-3) + 3%));
 	--basic-border-color: hsl(var(--longform-light-hue) var(--sat-light-3) calc(var(--b-light-3) - 5%));
-	--backdrop-color: hsl(var(--longform-light-hue) calc(var(--sat-light-3) * 0.8) calc(var(--b-light-3) - 10%));
 }
 
 .theme-dark .longform-leaf {
@@ -366,14 +382,12 @@ the .create-ToC.sh.
 	--header-bg: hsl(var(--longform-dark-hue) calc(var(--sat-dark-1) * 1.6) calc(var(--b-dark-2) - 2%));
 	--resize-handle-color: hsl(var(--longform-dark-hue)  var(--sat-dark-2) calc(var(--b-dark-2) - 1%));
 	--scrollbar-bg: hsl(var(--longform-dark-hue) var(--sat-dark-1) calc(var(--b-dark-2) + 9%));
-	--suggester-b-row: hsl(var(--longform-dark-hue)  var(--sat-dark-1) calc(var(--b-dark-1) - 2%));
 	--muted-border-color: hsl(var(--longform-dark-hue) var(--sat-dark-1) calc(var(--b-dark-1) - 6%));
 	--basic-border-color: hsl(var(--longform-dark-hue) var(--sat-dark-1) calc(var(--b-dark-1) + 6%));
-	--backdrop-color: hsl(var(--longform-dark-hue) calc(var(--sat-dark-2) * 1.2) calc(var(--b-dark-2) + 2%));
 }
 
 /* ───────────────────────────────────────────────────
-<< default variable colors & Base elements
+<< Default variable colors & Base elements
 ─────────────────────────────────────────────────── */
 
 .theme-light,
@@ -6740,7 +6754,8 @@ body.angular-shapes .kanban-plugin input[type="checkbox"] {
 }
 
 .workspace-leaf-content[data-type="VIEW_TYPE_LONGFORM_EXPLORER"] .view-content {
-	padding: 7px 4px 30px;
+	/* 30 px as overscroll */
+	padding: 7px 4px 30px 1px;
 }
 
 .draft-container.selected,
@@ -6777,11 +6792,6 @@ body.angular-shapes .kanban-plugin input[type="checkbox"] {
 	border-radius: var(--roundish);
 }
 
-body:not(.no-alternating-rows) li:nth-child(even) .draft-container,
-body:not(.no-alternating-rows) li:nth-child(even) .scene-container {
-	background-color: var(--a-row);
-}
-
 #scene-list .scene-container.selected,
 #draft-list .draft-container.selected {
 	color: var(--text-accent);
@@ -6810,7 +6820,7 @@ body:not(.no-alternating-rows) li:nth-child(even) .scene-container {
 #scene-list .scene-container:hover,
 #scene-list .scene-container.selected:hover {
 	color: var(--alt-accent);
-	background-color: var(--bg3);
+	background-color: var(--bg3) !important;
 }
 
 input#new-draft,
@@ -6875,11 +6885,8 @@ input#new-scene {
 
 #project-picker {
 	background-color: var(--bg3);
-
 	padding: 1px 1px 3px;
-	margin-top: 0;
-	margin-bottom: 0;
-
+	margin: 0 0 0 4px;
 	border: var(--basic-border);
 	border-radius: var(--roundish);
 }
@@ -6907,9 +6914,70 @@ div#select-projects select {
 	display: none;
 }
 
+/* <<< Longform Scene List */
+#scene-list {
+	counter-reset: sidebar;
+}
+
+#scene-list .scene-container:not([data-scene-path*="/_"]):not([data-scene-path*="Notes for the Reader" i]):not([data-scene-path*="Appendix" i]):not([data-scene-path*="Metadata" i])::BEFORE {
+	content: counter(sidebar) ".";
+	padding-right: 5px;
+	counter-increment: sidebar;
+}
+
+#scene-list .scene-container[data-scene-path*="Notes for the Reader" i],
+#scene-list .scene-container[data-scene-path*="Appendix" i],
+#scene-list .scene-container[data-scene-path*="Metadata" i] {
+	color: var(--text-faint);
+}
+
+/* hacky cover over the "_" */
+#scene-list .scene-container[data-scene-path*="/_"] {
+	padding-left: 15px;
+	font-size: 90%;
+	letter-spacing: 0.1px;
+	text-indent: -14px;
+}
+
+#scene-list .scene-container {
+	display: block;
+	padding-left: 5px;
+}
+
+#scene-list .scene-container[data-scene-path*="/_"]::BEFORE {
+	content: "  ";
+	position: relative;
+	right: -7px;
+	background-color: var(--bg2);
+	white-space: pre-wrap;
+}
+
+.view-content #scene-list .sortable-scene-list li .scene-container:hover::BEFORE,
+.view-content #scene-list .sortable-scene-list li .scene-container.selected::BEFORE {
+	background-color: var(--bg3);
+}
+
+/* alternating row colors, factoring in the coloring */
+.theme-light #scene-list {
+	--scene-list-b-row: hsl(var(--light-hue) var(--sat-light-2) calc(var(--b-light-2) - 2%));
+}
+
+.theme-dark #scene-list {
+	--scene-list-b-row: hsl(var(--dark-hue) var(--sat-dark-2) calc(var(--b-dark-2) - 2%));
+}
+
+#scene-list li:nth-child(even) .scene-container[data-scene-path*="/_"]::BEFORE {
+	background-color: var(--scene-list-b-row);
+}
+
+body:not(.no-alternating-rows) li:nth-child(even) .draft-container,
+body:not(.no-alternating-rows) li:nth-child(even) .scene-container {
+	background-color: var(--scene-list-b-row);
+}
+
 /* <<< Longform Icons */
 .workspace-leaf-content[data-type="VIEW_TYPE_LONGFORM_EXPLORER"] .tabs .tab-list {
-	padding: 9px 6px 1px;
+	padding: 9px 8px 1px;
 	margin: 0;
 	border-bottom: var(--basic-border);
 }
@@ -7398,6 +7466,14 @@ h6.BC-Matrix-header {
 
 .workspace-leaf-content[data-type="BC-matrix"] .view-content button {
 	display: none;
+}
+
+body:not(.no-alternating-rows) .BC-Matrix-square li {
+	padding-left: 3px;
+}
+
+body:not(.no-alternating-rows) .BC-Matrix-square li:nth-child(even) {
+	background-color: var(--a-row);
 }
 
 /* Down view */
@@ -8848,7 +8924,7 @@ settings:
 	 title: Background Color Shift
 	 description: 'Degree longform notes have a different color than normal notes (hue added). Setting this to "0" will make longform projects have the same background color as other notes.'
 	 type: variable-number-slider
-	 default: 25
+	 default: 10
 	 min: -180
 	 max: 180
 	 step: 5

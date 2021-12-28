@@ -3,7 +3,7 @@
 A minimalistic [Obsidian](https://obsidian.md/) theme focused on readability and condensed information display.
 
 <!-- manually updated-->
-![](https://img.shields.io/badge/downloads-8062-6E4E9B?style=plastic) ![](https://img.shields.io/github/last-commit/chrisgrieser/shimmering-focus?style=plastic) [![](https://img.shields.io/badge/changelog-click%20here-FFE800?style=plastic)](Changelog.md)
+![](https://img.shields.io/badge/downloads-8068-6E4E9B?style=plastic) ![](https://img.shields.io/github/last-commit/chrisgrieser/shimmering-focus?style=plastic) [![](https://img.shields.io/badge/changelog-click%20here-FFE800?style=plastic)](Changelog.md)
 
 <img src="https://raw.githubusercontent.com/chrisgrieser/shimmering-focus/main/dual-theme-screenshot.png" alt="Promo Screenshot">
 
@@ -11,35 +11,35 @@ A minimalistic [Obsidian](https://obsidian.md/) theme focused on readability and
 <!-- MarkdownTOC -->
 
 - [Features](#features)
-  - [Hiding/Showing UI Elements](#hidingshowing-ui-elements)
-  - [Annotation Tags](#annotation-tags)
-  - [Max View & Focus View](#max-view--focus-view)
-  - [Image-related Features](#image-related-features)
-  - [Multi-Color-Highlighting & Spoiler Syntax](#multi-color-highlighting--spoiler-syntax)
-  - [Well-Suited for Academic Work](#well-suited-for-academic-work)
-  - [Fine-tuned Spellcheck \(deprecated\)](#fine-tuned-spellcheck-deprecated)
-  - [CSS Classes](#css-classes)
-  - [Further Features](#further-features)
+	- [Hiding/Showing UI Elements](#hidingshowing-ui-elements)
+	- [Annotation Tags](#annotation-tags)
+	- [Max View & Focus View](#max-view--focus-view)
+	- [Image-related Features](#image-related-features)
+	- [Multi-Color-Highlighting & Spoiler Syntax](#multi-color-highlighting--spoiler-syntax)
+	- [Well-Suited for Academic Work](#well-suited-for-academic-work)
+	- [Fine-tuned Spellcheck \(deprecated\)](#fine-tuned-spellcheck-deprecated)
+	- [CSS Classes](#css-classes)
+	- [Further Features](#further-features)
 - [Design Principles](#design-principles)
-  - [Extreme Minimalism](#extreme-minimalism)
-  - [Condensed Display of Information](#condensed-display-of-information)
-  - [High Readability](#high-readability)
+	- [Extreme Minimalism](#extreme-minimalism)
+	- [Condensed Display of Information](#condensed-display-of-information)
+	- [High Readability](#high-readability)
 - [Customization](#customization)
-  - [Style Settings](#style-settings)
-  - [Further Customization Options](#further-customization-options)
+	- [Style Settings](#style-settings)
+	- [Further Customization Options](#further-customization-options)
 - [Compatibility](#compatibility)
-  - [List of Compatible Plugins](#list-of-compatible-plugins)
-  - [Custom Checkboxes](#custom-checkboxes)
-  - [Instructions for specific Plugins](#instructions-for-specific-plugins)
+	- [List of Compatible Plugins](#list-of-compatible-plugins)
+	- [Custom Checkboxes](#custom-checkboxes)
+	- [Instructions for specific Plugins](#instructions-for-specific-plugins)
 - [Installation](#installation)
 - [Contribute](#contribute)
-  - [Translation of Style Settings](#translation-of-style-settings)
-  - [Plugins & Features](#plugins--features)
+	- [Translation of Style Settings](#translation-of-style-settings)
+	- [Plugins & Features](#plugins--features)
 - [Related Work](#related-work)
 - [Credits](#credits)
-  - [About the Developer](#about-the-developer)
-  - [Donations](#donations)
-  - [Thanks](#thanks)
+	- [About the Developer](#about-the-developer)
+	- [Donations](#donations)
+	- [Thanks](#thanks)
 
 <!-- /MarkdownTOC -->
 
@@ -84,17 +84,17 @@ Type one of the following eight tags (e.g. `#definition`) to get a colored annot
 ### Well-Suited for Academic Work
 - [Pandoc Citations](https://pandoc.org/MANUAL.html#citations-in-note-styles) (`[@citekey]`) and footnotes are visually emphasized
 - The alt-text of images is used as caption text, in line with Pandoc's conversion behavior
-- Extensive Styling specifically for the [Longform Plugin](https://github.com/kevboh/longform), among other things justified & hyphenated text, and [Crimson Pro](https://fonts.google.com/specimen/Crimson+Pro) as an easy-to-read serif font
+- Extensive Styling and settings specifically for the [Longform Plugin](https://github.com/kevboh/longform) (see image below). (Prepend a `_` to file names of longform scenes to create sub-scenes.)
 - The [Max View](#max-view--focus-view) is useful for displaying wide markdown tables.
 - You can also [fine-tune the spell checking](#fine-tuned-spellcheck), e.g. to turn it off in blockquotes when you are regularly citing material where spellcheck creates false positives (e.g. historical sources with old language).
 - [Multi-Color-Highlighting](#multi-color-highlighting--spoiler-syntax) and [Annotation Tags](#annotation-tags) have specifically been developed for academic reading.
 
+<img src="https://i.imgur.com/xLBDs3y.png" alt="Longform Plugin settings" width=60%>
+
 ### Fine-tuned Spellcheck (deprecated)
-Using the [Style Settings Plugin](https://github.com/mgmeyers/obsidian-style-settings/), you can deactivate the spellcheck in specific areas like YAML or blockquotes.
+Using the [Style Settings Plugin](https://github.com/mgmeyers/obsidian-style-settings/), you can deactivate the spellcheck in specific areas like for example YAML or blockquotes.
 
 *⚠️ Note that this feature only works with the Legacy Editor of Obsidian 0.13+, so it will unfortunately be discontinued.*
-
-<img src="https://i.imgur.com/9XPEUQq.png" alt="Spellcheck settings" width=50%>
 
 ### CSS Classes
 Add `cssclass: {name}` to your yaml front matter to activate specific styling of the note in Preview Mode. The following CSS classes are built in with this theme (more coming in the future):
@@ -139,11 +139,11 @@ Add `cssclass: {name}` to your yaml front matter to activate specific styling of
 - Plugin names in the Command Palette are moved to the right and more visually distinct.
 - Overscroll at the bottom of the editor and settings tabs.
 - Easy-to-read fonts for every use case:
-  - [iA Writer Quattro](https://github.com/iaolo/iA-Fonts/tree/master/iA%20Writer%20Quattro) as clear sans font for the editor
-  - [Recursive](https://www.recursive.design/) for as a clear menu font
-  - [Input Mono](https://input.djr.com/) as monospace font for code
-  - [Optima](https://en.wikipedia.org/wiki/Optima) as humanist font for headings
-  - [Crimson Pro](https://fonts.google.com/specimen/Crimson+Pro) as serif font for Longform notes
+	- [iA Writer Quattro](https://github.com/iaolo/iA-Fonts/tree/master/iA%20Writer%20Quattro) as clear sans font for the editor
+	- [Recursive](https://www.recursive.design/) for as a clear menu font
+	- [Input Mono](https://input.djr.com/) as monospace font for code
+	- [Optima](https://en.wikipedia.org/wiki/Optima) as humanist font for headings
+	- [Crimson Pro](https://fonts.google.com/specimen/Crimson+Pro) as serif font for Longform notes
 
 <img src="https://user-images.githubusercontent.com/73286100/144147616-59ba2513-78cc-4143-91e5-c222bc307bd9.gif" alt="Screen Recording 2021-12-01 at 00 51 21a" width=60%>
 
@@ -173,6 +173,7 @@ This theme has been adjusted to be compatible with [SlRvb's Checkboxes](https://
 ### Instructions for specific Plugins
 In accordance with the minimalistic philosophy of the theme, unnecessary UI elements of some plugins have also been removed. However, you can still access the full plugin functionality.
 
+- Longform: - Prepend a `_` to file names of longform scenes to create sub-scenes. 
 - Kanban: Right-click cards to edit them.
 - Sliding Panes: Enable `Swap Rotated Header Direction` in the Sliding Pane Settings.
 - Breadcrumbs: Even with buttons removed, you can refresh the index via Command Palette
