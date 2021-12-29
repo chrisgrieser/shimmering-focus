@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 1.501
+Version 1.502
 https://github.com/chrisgrieser/shimmering-focus/
 MIT License
 ─────────────────────────────────────────────────── */
@@ -210,7 +210,6 @@ the .create-ToC.sh.
 	--highlight-color: hsl(152 100% 50% / 40%);
 	--highlight-alt1: hsl(60 100% 50% / 40%);
 	--highlight-alt2: hsl(180 100% 50% / 40%);
-	--search-match-hl: var(--highlight-alt2);
 	--active-line: hsl(62 11% 63% / 10%);
 	--spell-error-color: hsl(0 66% 64%);
 
@@ -487,6 +486,7 @@ only sidebars and everything scrolling */
 	--thick-muted-border: 4px solid var(--muted-border-color);
 	--thin-border: 1px solid var(--basic-border-color);
 	--thin-muted-border: 1px solid var(--muted-border-color);
+	--search-match-hl: 1px solid hsl(60 100% 40%);
 }
 
 .theme-light {
@@ -681,7 +681,7 @@ only sidebars and everything scrolling */
 
 	--ui-font-family: "Recursive S";
 	--sidebar-font-size: 0.85rem;
-	--status-bar-font-size: 0.95rem;
+	--status-bar-font-size: 0.85rem;
 
 	--menu-font-family: "Recursive S";
 	--menu-font-size: 1rem;
@@ -940,6 +940,7 @@ svg.any-key {
 .hotkey-list-container svg.any-key {
 	width: 0.99rem;
 	margin-top: 3px;
+	margin-left: 1px;
 }
 
 .plugin-list-plugins svg.any-key {
@@ -1121,12 +1122,14 @@ svg.quote-glyph > path { display: none }
 svg.quote-glyph {
 	background-color: currentColor;
 	margin-bottom: 2px;
-	-webkit-mask-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' width='1.2em' height='1.2em' preserveAspectRatio='xMidYMid meet' viewBox='0 0 32 32'%3e%3cpath d='M20 22h2l-5-12h-2l-5 12h2l1.24-3h5.53zm-5.93-5l1.82-4.42h.25L18 17z' fill='currentColor'/%3e%3cpath d='M12 28H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h20a2 2 0 0 1 2 2v11h-2V6H6v20h6z' fill='currentColor'/%3e%3cpath d='M23 27.18l-2.59-2.59L19 26l4 4l7-7l-1.41-1.41L23 27.18z' fill='currentColor'/%3e%3c/svg%3e");
+	-webkit-mask-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' width='1.1em' height='1.1em' preserveAspectRatio='xMidYMid meet' viewBox='0 0 32 32'%3e%3cpath d='M20 22h2l-5-12h-2l-5 12h2l1.24-3h5.53zm-5.93-5l1.82-4.42h.25L18 17z' fill='currentColor'/%3e%3cpath d='M12 28H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h20a2 2 0 0 1 2 2v11h-2V6H6v20h6z' fill='currentColor'/%3e%3cpath d='M23 27.18l-2.59-2.59L19 26l4 4l7-7l-1.41-1.41L23 27.18z' fill='currentColor'/%3e%3c/svg%3e");
 }
 
 .menu svg.quote-glyph {
-	height: 1.2rem;
-	width: 1.2rem;
+	height: 1.1rem;
+	width: 1.1rem;
+	position: relative;
+	top: 2px;
 }
 
 /* advanced cursor */
@@ -1590,6 +1593,9 @@ body:not(.default-statusbar) .status-bar {
 
 body:not(.hide-signature) .status-bar::AFTER {
 	content: var(--signature);
+	position: relative;
+	bottom: 2px;
+	font-size: calc(var(--status-bar-font-size) * 1.1);
 	font-weight: 500;
 }
 
@@ -3938,7 +3944,8 @@ body:not(.left-aligned-embeds) .pdf-embed {
 .is-flashing,
 body > div.app-container .obsidian-search-match-highlight {
 	color: var(--text-normal) !important;
-	background-color: var(--search-match-hl);
+	background: none;
+	outline: var(--search-match-hl);
 }
 
 .is-flashing {
@@ -5430,7 +5437,7 @@ body.is-mobile .markdown-preview-view blockquote {
 
 .status-bar-item.plugin-editor-status {
 	position: relative;
-	bottom: 1px;
+	bottom: 2px;
 }
 
 .status-bar-item.plugin-editor-status::BEFORE {
@@ -8041,7 +8048,7 @@ body div.get-info-menu > div > div {
 .lt-status-bar-check-icon::BEFORE {
 	content: "spellcheck";
 	font-family: var(--icon-font);
-	font-size: 0.9rem;
+	font-size: var(--status-bar-font-size);
 }
 
 body .lt-predictions-container {
@@ -8277,9 +8284,19 @@ a.zoom-plugin-title:hover {
 << Highlight Current Word
 ─────────────────────────────────────────────────── */
 
+body .cm-matched-word,
 body .cm-current-word {
-	text-decoration: 1px dotted underline var(--text-muted);
-	text-underline-offset: 2px;
+	text-decoration: 1.2px dotted underline var(--text-muted);
+	text-underline-offset: 3px;
+}
+
+body .cm-matched-string {
+	text-decoration: none;
+	outline: var(--search-match-hl);
+}
+
+body .cm-current-string {
+	text-decoration: none;
 }
 
 .cm-comment .cm-current-word {
@@ -8292,7 +8309,7 @@ body .cm-current-word {
 
 .status-bar-item.plugin-obsidian-show-file-path {
 	position: relative;
-	bottom: 1px;
+	bottom: 2px;
 }
 
 .status-bar-item.plugin-obsidian-show-file-path::BEFORE {
@@ -8630,11 +8647,11 @@ settings:
 	 id: status-bar-font-size
 	 title: Status Bar Font Size
 	 type: variable-number-slider
-	 default: 0.95
-	 min: 0.7
-	 max: 2.0
+	 default: 0.85
+	 min: 0.5
+	 max: 1.5
 	 step: 0.05
-	 format: em
+	 format: rem
 	-
 	 id: menu-font-family
 	 title: Menu Font
