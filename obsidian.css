@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 1.496
+Version 1.497
 https://github.com/chrisgrieser/shimmering-focus/
 MIT License
 ─────────────────────────────────────────────────── */
@@ -3830,7 +3830,7 @@ progress[value^="10"]::-WEBKIT-PROGRESS-VALUE { background: hsl(160 92% 70%) }
 /* see also section "Max View" */
 
 /* Image Files opened by Obsidian */
-.view-content > .image-container > img {
+.workspace-leaf-content .view-content .image-container img {
 	cursor: default;
 	margin-top: 25%;
 }
@@ -5322,7 +5322,7 @@ body:not(.no-pandoc-citation-emphasis) .cm-link.cm-quote.cm-hmd-barelink {
 << Footnotes
 ─────────────────────────────────────────────────── */
 
-/* preview */
+/* Preview Mode */
 .footnotes hr {
 	margin-top: 60px;
 	margin-bottom: 0;
@@ -5353,7 +5353,7 @@ body:not(.no-pandoc-citation-emphasis) .cm-link.cm-quote.cm-hmd-barelink {
 	color: var(--text-faint);
 }
 
-/* editor */
+/* Edit Mode */
 /* number-references in the footnote text */
 span.cm-link.cm-hmd-footnote {
 	color: var(--alt-accent) !important;
@@ -5370,7 +5370,7 @@ span.cm-link.cm-hmd-footnote {
 	hyphens: auto;
 }
 
-/* separator line only above the first footnote */
+/* separator line above the first footnote */
 .cm-line:not(.HyperMD-footnote) + .HyperMD-footnote {
 	padding-top: 0.8em;
 	border-top: var(--muted-border);
@@ -7048,6 +7048,21 @@ body:not(.no-alternating-rows) li:nth-child(even) .scene-container {
 	color: var(--alt-accent);
 }
 
+/* hide index file in file explorer, which shouldn't
+be messed with anyway */
+body.hide-index-files .nav-file-title[data-path$="Index.md"] {
+	display: none;
+}
+
+/* icons for file explorer */
+.nav-file-title[data-path$="Index.md"] .nav-file-title-content::BEFORE {
+	content: "settings";
+}
+
+.nav-folder-title[data-path$="Drafts"] .nav-folder-title-content::BEFORE {
+	content: "folder_special";
+}
+
 /* <<< Longform Editor */
 /* https://github.com/kevboh/longform#scene-only-styling */
 
@@ -7088,7 +7103,8 @@ body:not(.longform-left-aligned) .longform-leaf *:not(.cm-header) {
 	hyphens: auto;
 }
 
-/* do not justify headings, tables, and lists */
+/* do not justify code blocks, headings, tables, and lists */
+body .app-container .longform-leaf .cm-s-obsidian .HyperMD-codeblock,
 body .app-container .longform-leaf table td,
 body .app-container .longform-leaf div.HyperMD-list-line.cm-line,
 body .app-container .longform-leaf div.HyperMD-header.cm-line,
@@ -7098,7 +7114,7 @@ body .app-container .longform-leaf div.markdown-preview-view h3,
 body .app-container .longform-leaf div.markdown-preview-view h4,
 body .app-container .longform-leaf div.markdown-preview-view h5,
 body .app-container .longform-leaf div.markdown-preview-view h6 {
-	text-align: start !important;
+	text-align: start;
 	hyphens: none;
 }
 
@@ -7116,20 +7132,6 @@ body .app-container .longform-leaf div.markdown-preview-view h6 {
 
 body.longform-text-indent .longform-leaf .markdown-preview-view p {
 	text-indent: 2em;
-}
-
-/* hide index file in file explorer, which shouldn't
-be messed with anyway */
-body.hide-index-files .nav-file-title[data-path$="Index.md"] {
-	display: none;
-}
-
-.nav-file-title[data-path$="Index.md"] .nav-file-title-content::BEFORE {
-	content: "settings";
-}
-
-.nav-folder-title[data-path$="Drafts"] .nav-folder-title-content::BEFORE {
-	content: "folder_special";
 }
 
 /* fix for checkboxes  */
@@ -8281,6 +8283,15 @@ a.zoom-plugin-title:hover {
 }
 
 /* ───────────────────────────────────────────────────
+<< Highlight Current Word
+─────────────────────────────────────────────────── */
+
+body .cm-current-word {
+	border: none;
+	text-decoration: underline dashed var(--text-accent);
+}
+
+/* ───────────────────────────────────────────────────
 << Show Current File Path
 ─────────────────────────────────────────────────── */
 
@@ -8348,6 +8359,7 @@ community:
 - dataview
 - obsidian-cursor-location-plugin
 - obsidian-dictionary-plugin
+- obsidian-highlight-current-word
 
 */
 
