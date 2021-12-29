@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 1.499
+Version 1.500
 https://github.com/chrisgrieser/shimmering-focus/
 MIT License
 ─────────────────────────────────────────────────── */
@@ -1404,10 +1404,6 @@ body .app-container .workspace-ribbon.is-collapsed {
 	--tooltip-arrow: var(--tooltip-arrow-length) solid var(--notice-bg);
 }
 
-body:not(.angular-shapes) .tooltip {
-	padding-top: 3px;
-}
-
 .tooltip .tooltip-arrow {
 	margin-top: calc(-1 * var(--tooltip-arrow-length) + 5px);
 	border-bottom: var(--tooltip-arrow);
@@ -1450,10 +1446,6 @@ div.notice-container .notice {
 	font-family: var(--button-font);
 	font-size: calc(var(--button-font-size) * 0.9);
 	letter-spacing: 0.6px;
-}
-
-.angular-shapes div.notice-container .notice {
-	padding: 6px 12px;
 }
 
 body > div.notice-container .notice:hover {
@@ -1733,17 +1725,6 @@ a.style-settings-export,
 	font-size: var(--button-font-size);
 	line-height: 1.3em;
 	letter-spacing: 0.5px;
-}
-
-/* fix for slightly different positioning of square fonts */
-.angular-shapes .excalidraw .HelpDialog--btn,
-.angular-shapes a.style-settings-import,
-.angular-shapes a.style-settings-export,
-.angular-shapes .modal-container .modal .modal-button-container button,
-.angular-shapes .modal-container .modal .modal-content button:not(.mod-cta),
-.angular-shapes .modal-container .modal .modal-content button.mod-cta {
-	padding-top: 6px;
-	padding-bottom: 5px;
 }
 
 /* hovered buttons */
@@ -2099,7 +2080,7 @@ div.menu-item {
 
 .menu-separator {
 	margin: 0;
-	border-bottom: var(--basic-border);
+	border-bottom: var(--thin-border);
 }
 
 /* ───────────────────────────────────────────────────
@@ -4543,7 +4524,6 @@ body .markdown-preview-view pre {
 	background-color: var(--bg2);
 	padding: 0;
 	border: var(--codeblock-border);
-	border-top: none;
 	border-radius: var(--codeblock-roundness);
 }
 
