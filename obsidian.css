@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 1.500
+Version 1.501
 https://github.com/chrisgrieser/shimmering-focus/
 MIT License
 ─────────────────────────────────────────────────── */
@@ -3119,32 +3119,29 @@ body .workspace-leaf-resize-handle:active {
 	margin-bottom: 10px;
 }
 
-.community-plugin-info button {
-	margin-right: 18px;
+/* contains the buttons */
+.mod-community-plugin .community-plugin-desc + p {
+	margin-top: 10px;
+	margin-bottom: 15px;
+}
+
+.mod-community-plugin .community-plugin-info button {
+	margin: 0 18px 0 0;
 }
 
 /* copy URL button  */
-.modal.modal.mod-community-plugin .community-plugin-info button:last-child {
-	height: 2.1rem;
-
-	position: relative;
-	top: 1px;
-
-	padding-right: 3px;
-	padding-left: 2px;
-
+.modal.mod-community-plugin .community-plugin-info button:last-child {
+	height: 2.07rem;
+	padding: 0 3px 0 2px;
 	font-size: 0;
 }
 
 .modal.modal.mod-community-plugin .community-plugin-info button:last-child::BEFORE {
 	content: "link";
-
 	position: relative;
-	top: 6.5px;
 	left: 5px;
-
 	font-family: var(--icon-font);
-	font-size: 1.5rem;
+	font-size: 1.3rem;
 }
 
 .angular-shapes .modal.modal.mod-community-plugin .community-plugin-info button:last-child {
