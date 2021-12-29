@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 1.497
+Version 1.498
 https://github.com/chrisgrieser/shimmering-focus/
 MIT License
 ─────────────────────────────────────────────────── */
@@ -8287,8 +8287,12 @@ a.zoom-plugin-title:hover {
 ─────────────────────────────────────────────────── */
 
 body .cm-current-word {
-	border: none;
-	text-decoration: underline dashed var(--text-accent);
+	text-decoration: 1px dotted underline var(--text-muted);
+	text-underline-offset: 2px;
+}
+
+.cm-comment .cm-current-word {
+	text-decoration: none;
 }
 
 /* ───────────────────────────────────────────────────

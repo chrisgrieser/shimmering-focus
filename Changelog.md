@@ -1,3 +1,4 @@
+- 2021-12-29	minor
 - 2021-12-29	super for obsidian current word underline
 - 2021-12-28	file size reduction through conversion of ttf fonts to woff2 fonts
 - 2021-12-28	collapse indicators improved for new editor
