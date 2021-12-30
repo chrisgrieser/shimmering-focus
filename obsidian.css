@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 1.505
+Version 1.506
 https://github.com/chrisgrieser/shimmering-focus/
 MIT License
 ─────────────────────────────────────────────────── */
@@ -5208,6 +5208,16 @@ body:not(.no-active-line-highlighting) .cm-active,
 body:not(.no-active-line-highlighting) .CodeMirror-activeline .CodeMirror-linebackground {
 	background-color: var(--active-line);
 	border-radius: var(--roundish);
+}
+
+/* active list item highlighting */
+body:not(.no-active-line-highlighting) .cm-active .cm-formatting-list,
+body:not(.no-active-line-highlighting) .cm-active .list-bullet {
+	color: var(--text-accent);
+}
+
+body:not(.no-active-line-highlighting) .cm-active .cm-formatting-list-ul {
+	font-weight: 700;
 }
 
 /* <<< Highlights */
