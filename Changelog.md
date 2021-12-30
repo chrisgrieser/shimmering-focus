@@ -1,3 +1,4 @@
+- 2021-12-30	fixed styling of code blocks without language
 - 2021-12-30	active list item coloring, thanks for the idea @obadiahcruz
 - 2021-12-30	fixes for get info plugin
 - 2021-12-30	rephrasing of promo screenshot text

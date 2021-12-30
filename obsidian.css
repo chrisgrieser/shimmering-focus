@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 1.506
+Version 1.507
 https://github.com/chrisgrieser/shimmering-focus/
 MIT License
 ─────────────────────────────────────────────────── */
@@ -4528,29 +4528,32 @@ body .markdown-preview-view pre {
 }
 
 .markdown-preview-view pre[class*="language-"] code {
-	padding: 4px 9px 8px;
+	padding: 5px 9px;
 
 	/* wrapping in code block */
 	white-space: pre-wrap;
 	overflow-wrap: break-word;
 }
 
-/* padding not fixable right now */
-/* https://forum.obsidian.md/t/three-small-css-bugs-in-the-new-editor/29288 */
-.markdown-preview-view pre code {
-	color: var(--text-normal);
-}
-
 /* border on top created like this, since the
 ::after element cannot be moved on a border */
-/* needs CM& as condition,since every line in
+/* needs CM6 as condition,since every line in
 CM5 has the "pre" type */
-.mod-cm6 + .markdown-reading-view pre::BEFORE {
+.mod-cm6 + .markdown-reading-view pre[class*="language-"]::BEFORE {
 	display: block;
 	content: " ";
 	background-color: var(--bg3);
 	border-top-right-radius: var(--codeblock-roundness);
 	border-top-left-radius: var(--codeblock-roundness);
+}
+
+/* code block without language */
+.mod-cm6 + .markdown-reading-view pre:not([class*="language-"]) {
+	padding: 5px 9px;
+}
+
+.mod-cm6 + .markdown-reading-view pre:not([class*="language-"]) code {
+	color: var(--text-normal);
 }
 
 /* copy & edit code button */
@@ -4613,6 +4616,7 @@ pre[class*="language-"]::AFTER {
 
 pre[class~="language-c"]::AFTER { content: "C"; }
 pre[class~="language-python"]::AFTER { content: "Python"; }
+pre[class~="language-py"]::AFTER { content: "Python"; }
 pre[class~="language-nginx"]::AFTER { content: "Nginx"; }
 pre[class~="language-css"]::AFTER { content: "CSS"; }
 pre[class~="language-node"]::AFTER { content: "Node"; }
