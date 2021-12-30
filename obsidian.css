@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 1.510
+Version 1.511
 https://github.com/chrisgrieser/shimmering-focus/
 MIT License
 ─────────────────────────────────────────────────── */
@@ -492,12 +492,12 @@ only sidebars and everything scrolling */
 
 .theme-light {
 	--notice-border: 2px ridge hsl(var(--light-hue) var(--sat-light-3) 55%);
-	--search-match-outline: 2.5px solid hsl(170 70% 60%);
+	--search-match-outline: 2px solid hsl(170 70% 60%);
 }
 
 .theme-dark {
 	--notice-border: 2px ridge hsl(var(--dark-hue) var(--sat-dark-1) 45%);
-	--search-match-outline: 2px solid hsl(60 100% 50%);
+	--search-match-outline: 1px solid hsl(60 100% 50%);
 }
 
 /* ───────────────────────────────────────────────────
@@ -3136,7 +3136,8 @@ body .workspace-leaf-resize-handle:active {
 
 /* copy URL button  */
 .modal.mod-community-plugin .community-plugin-info button:last-child {
-	height: 2.07rem;
+	height: 2.09rem;
+	background-color: var(--bg3);
 	padding: 0 3px 0 2px;
 	font-size: 0;
 }
@@ -3146,7 +3147,7 @@ body .workspace-leaf-resize-handle:active {
 	position: relative;
 	left: 5px;
 	font-family: var(--icon-font);
-	font-size: 1.3rem;
+	font-size: 1.25rem;
 }
 
 .angular-shapes .modal.modal.mod-community-plugin .community-plugin-info button:last-child {
@@ -3978,7 +3979,7 @@ body > .app-container .obsidian-search-match-highlight:last-child {
 body:not(.classic-spellcheck-styling) .CodeMirror .cm-spell-error {
 	background-image: none;
 	text-decoration: underline wavy var(--spell-error-color);
-	text-decoration-thickness: 1.5px;
+	text-decoration-thickness: 1px;
 }
 
 body.no-yaml-spellcheck .cm-hmd-frontmatter.cm-overlay.cm-spell-error {
@@ -6543,6 +6544,16 @@ https://forum.obsidian.md/t/inline-code-occludes-text-selection-and-vim-cursor/1
 .cm-templater-command.cm-spell-error {
 	background-image: none;
 	text-decoration: none;
+}
+
+/* setting menu */
+.search-input-container.templater_search {
+	margin-top: 4px;
+	margin-bottom: 4px;
+}
+
+.search-input-container.templater_search input {
+	width: 500px;
 }
 
 /* ───────────────────────────────────────────────────
