@@ -1,3 +1,4 @@
+- 2021-12-30	fixed spacing definition between status bar
 - 2021-12-30	minor fix for status bar font size setting
 - 2021-12-29	super for obsidian current word underline
 - 2021-12-28	file size reduction through conversion of ttf fonts to woff2 fonts

@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 1.502
+Version 1.503
 https://github.com/chrisgrieser/shimmering-focus/
 MIT License
 ─────────────────────────────────────────────────── */
@@ -1570,7 +1570,7 @@ body:not(.default-statusbar) .status-bar {
 	right: 0;
 	bottom: 0;
 
-	padding: 7px 12px;
+	padding: 7px 0 7px 12px;
 
 	border-top: var(--muted-border);
 	border-left: var(--muted-border);
@@ -1584,11 +1584,7 @@ body:not(.default-statusbar) .status-bar {
 .status-bar::AFTER {
 	color: var(--extra-contrast);
 	padding: 0;
-	margin-left: 13px;
-}
-
-.status-bar-item:first-child {
-	margin-left: 0 !important;
+	margin-right: 13px;
 }
 
 body:not(.hide-signature) .status-bar::AFTER {
@@ -6277,6 +6273,14 @@ body:not(.show-graph-controls) .graph-controls.is-close:not(:hover) {
 ─────────────────────────────────────────────────── */
 
 /* ───────────────────────────────────────────────────
+<< Discord Rich Presence
+─────────────────────────────────────────────────── */
+
+.status-bar-item.plugin-obsidian-discordrpc:empty {
+	display: none;
+}
+
+/* ───────────────────────────────────────────────────
 << Dictionary
 ─────────────────────────────────────────────────── */
 .view-content.dictionary-view-content {
@@ -8267,9 +8271,8 @@ a.zoom-plugin-title:hover {
 << Cursor Location
 ─────────────────────────────────────────────────── */
 
-/* do not add between-items-margin when empty */
-.status-bar-item.plugin-obsidian-cursor-location-plugin:empty + .status-bar-item {
-	margin-left: 0;
+.plugin-obsidian-cursor-location-plugin:empty {
+	display: none;
 }
 
 /* ───────────────────────────────────────────────────
@@ -8293,10 +8296,6 @@ body .cm-current-word {
 body .cm-matched-string {
 	text-decoration: none;
 	outline: var(--search-match-hl);
-}
-
-body .cm-current-string {
-	text-decoration: none;
 }
 
 .cm-comment .cm-current-word {
