@@ -1,4 +1,5 @@
-- 2021-12-30	minor
+- 2021-12-30	fixes for get info plugin
+- 2021-12-30	rephrasing of promo screenshot text
 - 2021-12-30	fixed spacing definition between status bar
 - 2021-12-30	minor fix for status bar font size setting
 - 2021-12-29	super for obsidian current word underline

@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 1.504
+Version 1.505
 https://github.com/chrisgrieser/shimmering-focus/
 MIT License
 ─────────────────────────────────────────────────── */
@@ -1570,7 +1570,7 @@ body:not(.default-statusbar) .status-bar {
 	right: 0;
 	bottom: 0;
 
-	padding: 7px 0 7px 12px;
+	padding: 7px 0 6px 12px;
 
 	border-top: var(--muted-border);
 	border-left: var(--muted-border);
@@ -1589,6 +1589,8 @@ body:not(.default-statusbar) .status-bar {
 
 body:not(.hide-signature) .status-bar::AFTER {
 	content: var(--signature);
+	position: relative;
+	bottom: 1px;
 	font-size: calc(var(--status-bar-font-size) * 1.1);
 	font-weight: 500;
 }
@@ -8016,7 +8018,11 @@ body .tlfFileInfoTextArea {
 }
 
 .status-bar-item.plugin-get-info-plugin {
-	transform: scale(0.9);
+	height: var(--status-bar-font-size);
+	width: var(--status-bar-font-size);
+	position: relative;
+	bottom: 1px;
+	transform: scale(0.85);
 }
 
 body div.get-info-menu > div > div {
@@ -8296,7 +8302,7 @@ body .cm-matched-string {
 	outline: var(--search-match-hl);
 }
 
-.cm-comment .cm-current-word {
+.cm-comment .cm-matched-word {
 	text-decoration: none;
 }
 
