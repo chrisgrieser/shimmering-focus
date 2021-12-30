@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 1.514
+Version 1.515
 https://github.com/chrisgrieser/shimmering-focus/
 MIT License
 ─────────────────────────────────────────────────── */
@@ -1243,7 +1243,7 @@ body.block-cursor .CodeMirror-cursor {
 }
 
 /* multi cursor */
-.cm-cursorLayer .cm-cursor.cm-cursor-secondary {
+body:not(.mono-color-cursor) .cm-cursor.cm-cursor-secondary {
 	border-image: linear-gradient(hsl(220 100% 80%), hsl(40 100% 80%)) 1;
 }
 
@@ -1781,11 +1781,11 @@ p.mod-warning::BEFORE {
 	margin-left: 5px;
 }
 
-body:not(.normal-checkboxes) .checkbox-container::AFTER {
+.checkbox-container::AFTER {
 	display: none;
 }
 
-body:not(.normal-checkboxes) .checkbox-container {
+.checkbox-container {
 	height: 22px;
 	width: 22px;
 
@@ -1804,17 +1804,17 @@ body.angular-shapes .checkbox-container {
 }
 
 /* colors */
-body:not(.normal-checkboxes) .checkbox-container.is-enabled {
+.checkbox-container.is-enabled {
 	background-color: var(--interactive-bg);
 	border-color: var(--interactive-border);
 }
 
-body:not(.normal-checkboxes) .checkbox-container:hover {
+.checkbox-container:hover {
 	transition: var(--medium-transition);
 	border: 9px solid var(--interactive-hover-border);
 }
 
-body:not(.normal-checkboxes) .checkbox-container.is-enabled:hover {
+.checkbox-container.is-enabled:hover {
 	background-color: var(--bg2);
 	border-color: var(--interactive-hover-border);
 }
@@ -8601,12 +8601,6 @@ settings:
 	 id: mono-color-cursor
 	 title: Mono-colored Cursor
 	 description: Use a mono-colored, purple cursor.
-	 type: class-toggle
-	 default: false
-	-
-	 id: normal-checkboxes
-	 title: "Menus: Normal Checkboxes"
-	 description: Use the checkboxes from the default theme.
 	 type: class-toggle
 	 default: false
 	-
