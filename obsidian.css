@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 1.516
+Version 1.517
 https://github.com/chrisgrieser/shimmering-focus/
 MIT License
 ─────────────────────────────────────────────────── */
@@ -2542,11 +2542,6 @@ body .workspace-leaf-resize-handle:active {
 .modal-content h5 { font-size: var(--h5-size); }
 .modal-content h6 { font-size: var(--h6-size); }
 
-.modal-content li {
-	font-size: 1.1em;
-	line-height: 1.5em;
-}
-
 .modal-content {
 	margin-top: 0;
 }
@@ -2924,8 +2919,8 @@ body .workspace-leaf-resize-handle:active {
 	line-height: 1.2em;
 }
 
-.community-plugin-search-summary.u-muted {
-	padding-right: 5px;
+.community-plugin-search-summary {
+	padding-right: 4px;
 	padding-bottom: 2px;
 
 	border-bottom: var(--thick-border);
@@ -2935,6 +2930,14 @@ body .workspace-leaf-resize-handle:active {
 	font-weight: 600;
 	text-transform: capitalize;
 	text-align: end;
+}
+
+/* hide the ":" since it looks ugly with right-aligned text */
+.community-plugin-search-summary::AFTER {
+	content: "  ";
+	background-color: var(--bg3);
+	margin-left: -4px;
+	white-space: pre-wrap;
 }
 
 .community-plugin-downloads::BEFORE,
@@ -3142,7 +3145,7 @@ body .workspace-leaf-resize-handle:active {
 /* copy URL button  */
 .modal.mod-community-plugin .community-plugin-info button:last-child {
 	height: 2.09rem;
-	background-color: var(--bg3);
+	background-color: var(--bg2);
 	padding: 0 3px 0 2px;
 	font-size: 0;
 }
@@ -4444,6 +4447,10 @@ body {
 .cm-s-obsidian .cm-formatting-code.cm-inline-code,
 .cm-s-obsidian span.cm-inline-code {
 	color: var(--code-color);
+}
+
+.markdown-preview-view *:not(pre) > code {
+	border-radius: var(--slight-code-roundish);
 }
 
 .app-container .markdown-source-view .cm-contentContainer .cm-line .cm-inline-code:not(.cm-formatting-code),
