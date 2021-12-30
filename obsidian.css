@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 1.508
+Version 1.509
 https://github.com/chrisgrieser/shimmering-focus/
 MIT License
 ─────────────────────────────────────────────────── */
@@ -4260,7 +4260,7 @@ body .markdown-preview-view blockquote,
 body:not(.no-active-line-highlighting) .cm-s-obsidian .cm-active.cm-line.HyperMD-quote {
 	color: var(--text-normal);
 	background-color: var(--active-line-bg);
-	border-left-color: var(--muted-border-color);
+	border-left-color: var(--bg3);
 }
 
 /* Preview Mode */

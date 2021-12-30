@@ -1,3 +1,4 @@
+- 2021-12-30	minor
 - 2021-12-30	better contrast and active highlight  for blockquotes
 - 2021-12-30	fixed styling of code blocks without language
 - 2021-12-30	active list item coloring, thanks for the idea @obadiahcruz
