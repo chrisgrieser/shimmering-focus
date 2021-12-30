@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 1.519
+Version 1.520
 https://github.com/chrisgrieser/shimmering-focus/
 MIT License
 ─────────────────────────────────────────────────── */
@@ -3045,7 +3045,7 @@ body .workspace-leaf-resize-handle:active {
 	border-radius: var(--round);
 
 	font-family: "Inter";
-	font-size: 0.75rem;
+	font-size: 0.7rem;
 	line-height: 0.8em;
 }
 
@@ -3317,9 +3317,9 @@ body .workspace-leaf-resize-handle:active {
 	display: none;
 }
 
-.community-theme.is-selected .community-theme-title::BEFORE {
+.community-theme.is-selected .community-theme-title::AFTER {
 	content: var(--signature);
-	padding-right: 5px;
+	padding-left: 5px;
 	font-weight: 500;
 }
 
@@ -3401,9 +3401,16 @@ body .workspace-leaf-resize-handle:active {
 }
 
 .community-theme-downloads .community-plugin-downloads-text {
-	top: 0;
 	font-family: var(--default-font);
 	font-size: 0.85rem;
+}
+
+.community-theme-downloads .community-plugin-downloads-text::BEFORE {
+	content: "download";
+	position: relative;
+	top: 3px;
+	padding-right: 2px;
+	font-family: var(--icon-font);
 }
 
 .modal.mod-community-theme hr {
@@ -3440,7 +3447,7 @@ body .modal.mod-community-theme .modal-content .modal-title {
 .modal.mod-community-theme .community-theme-filters-container .setting-item-control button {
 	height: 30px;
 	color: var(--extra-contrast);
-	background-color: var(--bg2);
+	background-color: var(--bg3);
 	border-color: var(--basic-border-color);
 }
 
@@ -3461,10 +3468,6 @@ body .modal.mod-community-theme .modal-content .modal-title {
 	color: var(--alt-accent);
 }
 
-.modal.mod-community-theme .community-plugin-downloads-text::BEFORE {
-	content: "↓ ";
-}
-
 .modal.mod-community-theme .community-theme .clickable-icon:hover {
 	color: var(--alt-accent);
 }
@@ -3478,6 +3481,19 @@ body .modal.mod-community-theme .modal-content .modal-title {
 	font-size: 2.2em;
 	font-weight: 500;
 	text-transform: capitalize;
+}
+
+.community-theme-lightbox {
+
+}
+
+/* enlarged promo screenshots */
+.mod-image-lightbox {
+	background-color: var(--bg3);
+}
+
+.modal.mod-image-lightbox img.community-theme-lightbox {
+	cursor: default;
 }
 
 /* ───────────────────────────────────────────────────
