@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 1.507
+Version 1.508
 https://github.com/chrisgrieser/shimmering-focus/
 MIT License
 ─────────────────────────────────────────────────── */
@@ -210,7 +210,7 @@ the .create-ToC.sh.
 	--highlight-color: hsl(152 100% 50% / 40%);
 	--highlight-alt1: hsl(60 100% 50% / 40%);
 	--highlight-alt2: hsl(180 100% 50% / 40%);
-	--active-line: hsl(62 11% 63% / 10%);
+	--active-line-bg: hsl(62 11% 63% / 10%);
 	--spell-error-color: hsl(0 66% 64%);
 
 	--cursor-monocolor: var(--accent-lighter);
@@ -226,6 +226,7 @@ the .create-ToC.sh.
 	--text-faint: hsl(0 0% 60%);
 	--hr-line-gray: hsl(0 0% 66%);
 
+	--active-line-indicator: var(--accent-lighter);
 	--button-text: var(--interactive-normal);
 	--button-hover-text: var(--text-normal);
 	--interactive-bg: var(--accent-lighter);
@@ -248,6 +249,7 @@ the .create-ToC.sh.
 	--text-faint: hsl(0 0% 40%);
 	--hr-line-gray: hsl(0 0% 60%);
 
+	--active-line-indicator: var(--text-accent);
 	--button-text: var(--text-normal);
 	--button-hover-text: var(--interactive-normal);
 	--interactive-bg: var(--interactive-accent);
@@ -4222,12 +4224,15 @@ body:not(.no-alternating-header-italics) .markdown-preview-view h6 {
 
 body .markdown-preview-view blockquote,
 .app-container .cm-s-obsidian .cm-line.HyperMD-quote {
-	color: var(--extra-contrast);
 	border-left: 15px solid var(--basic-border-color);
 }
 
+.markdown-preview-view blockquote,
+.cm-line.HyperMD-quote .cm-quote {
+	color: var(--extra-contrast);
+}
+
 /* edit mode & live preview */
-.HyperMD-quote,
 .markdown-source-view.mod-cm6 .cm-line.HyperMD-quote {
 	background-color: var(--bg2);
 	padding: 0.4em 0.8em 0.5em 0;
@@ -4235,8 +4240,9 @@ body .markdown-preview-view blockquote,
 }
 
 /* the ">" */
-.cm-formatting.cm-formatting-quote {
-	font-weight: 900;
+.HyperMD-quote .cm-formatting.cm-formatting-quote {
+	color: var(--text-faint);
+	font-weight: 600;
 	font-style: normal;
 }
 
@@ -4248,6 +4254,13 @@ body .markdown-preview-view blockquote,
 .cm-string.cm-url.cm-quote.cm-quote-1,
 .cm-link.cm-quote.cm-quote-1 {
 	font-style: unset;
+}
+
+/* interaction with active line highlighting */
+body:not(.no-active-line-highlighting) .cm-s-obsidian .cm-active.cm-line.HyperMD-quote {
+	color: var(--text-normal);
+	background-color: var(--active-line-bg);
+	border-left-color: var(--muted-border-color);
 }
 
 /* Preview Mode */
@@ -5210,18 +5223,23 @@ body > div.app-container .markdown-preview-view ol > li.task-list-item.is-checke
 /* <<< Active Line Highlight */
 body:not(.no-active-line-highlighting) .cm-active,
 body:not(.no-active-line-highlighting) .CodeMirror-activeline .CodeMirror-linebackground {
-	background-color: var(--active-line);
+	background-color: var(--active-line-bg);
 	border-radius: var(--roundish);
 }
 
 /* active list item highlighting */
 body:not(.no-active-line-highlighting) .cm-active .cm-formatting-list,
 body:not(.no-active-line-highlighting) .cm-active .list-bullet {
-	color: var(--text-accent);
+	color: var(--active-line-indicator);
 }
 
 body:not(.no-active-line-highlighting) .cm-active .cm-formatting-list-ul {
 	font-weight: 700;
+}
+
+/* active block quote highlighting */
+body:not(.no-active-line-highlighting) .cm-active .cm-formatting.cm-formatting-quote {
+	color: var(--active-line-indicator);
 }
 
 /* <<< Highlights */
