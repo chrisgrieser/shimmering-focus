@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 1.509
+Version 1.510
 https://github.com/chrisgrieser/shimmering-focus/
 MIT License
 ─────────────────────────────────────────────────── */
@@ -488,15 +488,16 @@ only sidebars and everything scrolling */
 	--thick-muted-border: 4px solid var(--muted-border-color);
 	--thin-border: 1px solid var(--basic-border-color);
 	--thin-muted-border: 1px solid var(--muted-border-color);
-	--search-match-hl: 1px solid hsl(60 100% 40%);
 }
 
 .theme-light {
 	--notice-border: 2px ridge hsl(var(--light-hue) var(--sat-light-3) 55%);
+	--search-match-outline: 2.5px solid hsl(170 70% 60%);
 }
 
 .theme-dark {
 	--notice-border: 2px ridge hsl(var(--dark-hue) var(--sat-dark-1) 45%);
+	--search-match-outline: 2px solid hsl(60 100% 50%);
 }
 
 /* ───────────────────────────────────────────────────
@@ -3943,7 +3944,7 @@ body:not(.left-aligned-embeds) .pdf-embed {
 body > div.app-container .obsidian-search-match-highlight {
 	color: var(--text-normal) !important;
 	background: none;
-	outline: var(--search-match-hl);
+	outline: var(--search-match-outline);
 }
 
 .is-flashing {
@@ -8331,7 +8332,7 @@ body .cm-current-word {
 
 body .cm-matched-string {
 	text-decoration: none;
-	outline: var(--search-match-hl);
+	outline: var(--search-match-outline);
 }
 
 .cm-comment .cm-matched-word {
