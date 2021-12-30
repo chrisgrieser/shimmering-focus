@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 1.512
+Version 1.513
 https://github.com/chrisgrieser/shimmering-focus/
 MIT License
 ─────────────────────────────────────────────────── */
@@ -8513,8 +8513,8 @@ settings:
 	 default: false
 	-
 	 id: preset-color-scheme
-	 title: "Preset Color Schemes"
-	 description: 'New Color Scheme: Nord ❄️. Selecting a preset color scheme other than "Custom Colors" overrides any Brightness, Color Tone, and Color Intensity settings. (More color schemes coming in the future!)'
+	 title: "Color Schemes"
+	 description: 'New Color Scheme: Nord ❄️. Selecting a color scheme other than "Custom Colors" overrides any Brightness, Color Tone, and Color Intensity settings. (More color schemes coming in the future!)'
 	 type: class-select
 	 allowEmpty: false
 	 default: classic-colors
