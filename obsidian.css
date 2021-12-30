@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 1.511
+Version 1.512
 https://github.com/chrisgrieser/shimmering-focus/
 MIT License
 ─────────────────────────────────────────────────── */
@@ -352,7 +352,7 @@ the .create-ToC.sh.
 << Longform project colors
 ─────────────────────────────────────────────────── */
 :root {
-	--longform-hue-shift: 10;
+	--longform-hue-shift: 15;
 }
 
 .theme-light .longform-leaf {
@@ -3544,8 +3544,8 @@ body > div.app-container .view-content > div > .markdown-preview-view {
 }
 
 .markdown-preview-view div.markdown-embed {
-	border-top: var(--muted-border);
-	border-bottom: var(--muted-border);
+	border-top: var(--thick-border);
+	border-bottom: var(--thick-border);
 }
 
 /* ───────────────────────────────────────────────────
@@ -5235,10 +5235,6 @@ body:not(.no-active-line-highlighting) .cm-active .list-bullet {
 	color: var(--active-line-indicator);
 }
 
-body:not(.no-active-line-highlighting) .cm-active .cm-formatting-list-ul {
-	font-weight: 700;
-}
-
 /* active block quote highlighting */
 body:not(.no-active-line-highlighting) .cm-active .cm-formatting.cm-formatting-quote {
 	color: var(--active-line-indicator);
@@ -6552,8 +6548,9 @@ https://forum.obsidian.md/t/inline-code-occludes-text-selection-and-vim-cursor/1
 	margin-bottom: 4px;
 }
 
+/* wider input boxes */
 .search-input-container.templater_search input {
-	width: 500px;
+	width: 300px;
 }
 
 /* ───────────────────────────────────────────────────
@@ -8346,10 +8343,6 @@ body .cm-matched-string {
 	outline: var(--search-match-outline);
 }
 
-.cm-comment .cm-matched-word {
-	text-decoration: none;
-}
-
 /* ───────────────────────────────────────────────────
 << Show Current File Path
 ─────────────────────────────────────────────────── */
@@ -9013,7 +9006,7 @@ settings:
 	 title: Background Color Shift
 	 description: 'Degree longform notes have a different color than normal notes (hue added). Setting this to "0" will make longform projects have the same background color as other notes.'
 	 type: variable-number-slider
-	 default: 10
+	 default: 15
 	 min: -180
 	 max: 180
 	 step: 5
