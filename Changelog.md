@@ -1,3 +1,4 @@
+- 2021-12-31	fixes and improvements for community plugin browser
 - 2021-12-30	minor fixes for community plugin browser
 - 2021-12-30	removed normal checkbox options since buggy anyway
 - 2021-12-30	color fix for text-selections + multi-cursor with different color

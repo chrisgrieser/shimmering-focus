@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 1.517
+Version 1.518
 https://github.com/chrisgrieser/shimmering-focus/
 MIT License
 ─────────────────────────────────────────────────── */
@@ -2894,6 +2894,10 @@ body .workspace-leaf-resize-handle:active {
 	border-top-left-radius: calc(var(--roundish) * 2.5);
 }
 
+.community-plugin-search > .setting-item:first-child {
+	padding-bottom: 0;
+}
+
 .community-plugin-search,
 .community-plugin-search-results {
 	border-bottom-left-radius: calc(var(--roundish) * 2.5);
@@ -2920,13 +2924,11 @@ body .workspace-leaf-resize-handle:active {
 }
 
 .community-plugin-search-summary {
-	padding-right: 4px;
-	padding-bottom: 2px;
+	padding: 3px 2px;
 
 	border-bottom: var(--thick-border);
 
-	font-family: var(--smallcap-font);
-	font-size: 1em;
+	font-size: 0.8em;
 	font-weight: 600;
 	text-transform: capitalize;
 	text-align: end;
@@ -2937,6 +2939,15 @@ body .workspace-leaf-resize-handle:active {
 	content: "  ";
 	background-color: var(--bg3);
 	margin-left: -4px;
+	white-space: pre-wrap;
+}
+
+/* hide the "showing" */
+.community-plugin-search-summary::BEFORE {
+	content: "                            ";
+	position: relative;
+	right: -4.3em;
+	background-color: var(--bg3);
 	white-space: pre-wrap;
 }
 
@@ -2962,10 +2973,10 @@ body .workspace-leaf-resize-handle:active {
 .community-plugin-search-results .community-plugin-author {
 	display: inline-block;
 
-	color: var(--extra-contrast);
-	opacity: 0.8;
+	color: var(--text-faint);
 
-	margin-top: 3px;
+	margin-top: 5px;
+	margin-left: 3px;
 
 	font-family: var(--smallcap-font);
 	font-size: 0.85em;
@@ -3013,10 +3024,9 @@ body .workspace-leaf-resize-handle:active {
 
 /* installation icon */
 .flair.mod-pop {
-	top: 3px;
+	top: 0;
 	background: none;
 	font-size: 0;
-	line-height: 1;
 }
 
 .community-plugin-search .flair.mod-pop {
@@ -3036,7 +3046,7 @@ body .workspace-leaf-resize-handle:active {
 
 	font-family: "Inter";
 	font-size: 0.75rem;
-	line-height: 0.8;
+	line-height: 0.8em;
 }
 
 .community-plugin-info .community-plugin-name .flair.mod-pop::BEFORE {
@@ -3055,7 +3065,8 @@ body .workspace-leaf-resize-handle:active {
 }
 
 .community-plugin-downloads::BEFORE {
-	content: "↓";
+	content: "download";
+	font-family: var(--icon-font) !important;
 	vertical-align: top;
 }
 
@@ -3073,7 +3084,8 @@ body .workspace-leaf-resize-handle:active {
 ─────────────────────────────────────────────────── */
 
 .community-plugin-info {
-	padding: 10px 5px 10px 15px;
+	/* 50px for overscroll */
+	padding: 0 5px 50px 15px;
 	font-family: var(--default-font);
 }
 
@@ -3085,20 +3097,39 @@ body .workspace-leaf-resize-handle:active {
 }
 
 .community-plugin-info .community-plugin-name {
-	padding-bottom: 5px;
-	margin-bottom: 12px;
+	background-color: var(--bg2);
 
-	border-bottom: var(--thick-muted-border);
+	padding: 6px;
+	margin-right: -5px;
+	margin-left: -15px;
 
 	font-family: var(--heading-font);
 	font-size: calc(var(--h1-size) * 1.2);
 	font-weight: 700;
 	letter-spacing: var(--heading-letter-spacing);
+	text-align: end;
 }
 
-.community-plugin-info .community-plugin-downloads::BEFORE,
+/* repository link */
+.community-plugin-author + .community-plugin-author a {
+	font-size: 0;
+	text-decoration: none;
+}
+
+.community-plugin-author + .community-plugin-author a::BEFORE {
+	content: "launchdns";
+	position: relative;
+	bottom: -3.5px;
+	font-family: var(--icon-font);
+	font-size: 1rem;
+}
+
+.community-plugin-details .community-plugin-info .community-plugin-downloads::BEFORE {
+	font-size: 1em;
+	line-height: 1.4em;
+}
+
 .community-plugin-info .community-plugin-downloads {
-	margin-top: 0;
 	font-size: 1.2em;
 	line-height: 1.2em;
 }
@@ -3146,24 +3177,23 @@ body .workspace-leaf-resize-handle:active {
 .modal.mod-community-plugin .community-plugin-info button:last-child {
 	height: 2.09rem;
 	background-color: var(--bg2);
-	padding: 0 3px 0 2px;
+	padding: 1px 3px 0 2px;
 	font-size: 0;
+}
+
+.angular-shapes .modal.mod-community-plugin .community-plugin-info button:last-child {
+	padding-top: 0;
 }
 
 .modal.modal.mod-community-plugin .community-plugin-info button:last-child::BEFORE {
 	content: "link";
+
 	position: relative;
+	top: 5px;
 	left: 5px;
+
 	font-family: var(--icon-font);
 	font-size: 1.25rem;
-}
-
-.angular-shapes .modal.modal.mod-community-plugin .community-plugin-info button:last-child {
-	top: 2px;
-}
-
-.angular-shapes .modal.modal.mod-community-plugin .community-plugin-info button:last-child::BEFORE {
-	top: 5px;
 }
 
 /* headings */
