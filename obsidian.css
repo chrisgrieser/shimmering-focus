@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 1.503
+Version 1.504
 https://github.com/chrisgrieser/shimmering-focus/
 MIT License
 ─────────────────────────────────────────────────── */
@@ -1589,8 +1589,6 @@ body:not(.default-statusbar) .status-bar {
 
 body:not(.hide-signature) .status-bar::AFTER {
 	content: var(--signature);
-	position: relative;
-	bottom: 2px;
 	font-size: calc(var(--status-bar-font-size) * 1.1);
 	font-weight: 500;
 }
