@@ -1,3 +1,4 @@
+- 2021-12-31	minor
 - 2021-12-31	fixes and improvements for community plugin browser
 - 2021-12-30	minor fixes for community plugin browser
 - 2021-12-30	removed normal checkbox options since buggy anyway

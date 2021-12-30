@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 1.518
+Version 1.519
 https://github.com/chrisgrieser/shimmering-focus/
 MIT License
 ─────────────────────────────────────────────────── */
@@ -3223,7 +3223,6 @@ body .workspace-leaf-resize-handle:active {
 /* empty state */
 .community-plugin-details-empty-state {
 	padding-top: 16rem;
-	border-left: var(--muted-border);
 	font-size: 0;
 }
 
