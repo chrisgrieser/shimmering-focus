@@ -1,4 +1,4 @@
-- 2021-12-30	minor
+- 2021-12-30	color fix for text-selections + multi-cursor with different color
 - 2021-12-30	improved readability of search match outline
 - 2021-12-30	better contrast and active highlight  for blockquotes
 - 2021-12-30	fixed styling of code blocks without language

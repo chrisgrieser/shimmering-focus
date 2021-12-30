@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 1.513
+Version 1.514
 https://github.com/chrisgrieser/shimmering-focus/
 MIT License
 ─────────────────────────────────────────────────── */
@@ -220,7 +220,7 @@ the .create-ToC.sh.
 
 .theme-light {
 	--editor-alt-accent: var(--alt-accent-darker);
-	--selection-color: hsl(259 100% 93% / 86.7%);
+	--selection-color: hsl(259 80% 93% / 99%);
 	--extra-contrast: hsl(0 0% 36%);
 	--text-muted: hsl(0 0% 53%);
 	--text-faint: hsl(0 0% 60%);
@@ -243,7 +243,7 @@ the .create-ToC.sh.
 
 .theme-dark {
 	--editor-alt-accent: var(--alt-accent);
-	--selection-color: hsl(302 24% 21% / 73%);
+	--selection-color: hsl(302 24% 17% / 99%);
 	--extra-contrast: hsl(0 0% 68%);
 	--text-muted: hsl(0 0% 58%);
 	--text-faint: hsl(0 0% 40%);
@@ -1223,7 +1223,7 @@ body.angular-shapes {
 << Cursor
 ─────────────────────────────────────────────────── */
 
-.cm-s-obsidian .cm-cursor,
+.cm-cursorLayer .cm-cursor,
 .CodeMirror-cursor {
 	/* needs the "1" at the end:  https://www.digitalocean.com/community/tutorials/css-gradient-borders-pure-css */
 	border-image: linear-gradient(var(--cursor-duo-color-1), var(--cursor-duo-color-2)) 1;
@@ -1240,6 +1240,11 @@ body.block-cursor .cm-s-obsidian .cm-cursor,
 body.block-cursor .CodeMirror-cursor {
 	opacity: 0.5;
 	border-left-width: 0.6em;
+}
+
+/* multi cursor */
+.cm-cursorLayer .cm-cursor.cm-cursor-secondary {
+	border-image: linear-gradient(hsl(220 100% 80%), hsl(40 100% 80%)) 1;
 }
 
 /* ───────────────────────────────────────────────────
