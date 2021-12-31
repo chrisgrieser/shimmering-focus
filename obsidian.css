@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 1.523
+Version 1.524
 https://github.com/chrisgrieser/shimmering-focus/
 MIT License
 ─────────────────────────────────────────────────── */
@@ -1737,6 +1737,15 @@ a.style-settings-export,
 	letter-spacing: 0.5px;
 }
 
+.angular-shapes body .excalidraw .HelpDialog--btn,
+.angular-shapes a.style-settings-import,
+.angular-shapes a.style-settings-export,
+.angular-shapes .modal-container .modal .modal-button-container button,
+.angular-shapes .modal-container .modal .modal-content button:not(.mod-cta),
+.angular-shapes .modal-container .modal .modal-content button.mod-cta {
+	padding-bottom: 6px;
+}
+
 /* hovered buttons */
 body .excalidraw .HelpDialog--btn:hover,
 body .setting-item-control a.style-settings-import:hover,
@@ -1835,6 +1844,10 @@ input[type="password"] {
 	border-radius: var(--round);
 }
 
+body:not(.angular-shapes) input[type="text"] {
+	padding-top: 3px;
+}
+
 textarea {
 	padding: 4px 8px;
 	border-radius: calc(var(--roundish) * 1.5);
@@ -1844,14 +1857,6 @@ input[type="email"],
 input[type="password"],
 input[type="text"] {
 	width: 250px;
-}
-
-.angular-shapes input[type="text"] {
-	padding-top: 7px;
-}
-
-body:not(.angular-shapes) input[type="text"] {
-	padding-top: 3px;
 }
 
 .workspace-leaf-content input[type="text"] {
@@ -2926,7 +2931,7 @@ body .workspace-leaf-resize-handle:active {
 .community-plugin-search-summary {
 	padding: 3px 2px;
 
-	border-bottom: var(--thick-border);
+	border-bottom: var(--basic-border);
 
 	font-size: 0.8em;
 	font-weight: 600;
@@ -3026,11 +3031,12 @@ body .workspace-leaf-resize-handle:active {
 .flair.mod-pop {
 	top: 0;
 	background: none;
+	margin-left: 4px;
 	font-size: 0;
 }
 
 .community-plugin-search .flair.mod-pop {
-	top: 5px;
+	top: 4px;
 }
 
 .flair.mod-pop::BEFORE {
@@ -3045,13 +3051,8 @@ body .workspace-leaf-resize-handle:active {
 	border-radius: var(--round);
 
 	font-family: "Inter";
-	font-size: 0.7rem;
+	font-size: 0.65rem;
 	line-height: 0.8em;
-}
-
-.community-plugin-info .community-plugin-name .flair.mod-pop::BEFORE {
-	font-size: 1.2rem;
-	vertical-align: bottom;
 }
 
 /* download statistics */
@@ -3103,11 +3104,21 @@ body .workspace-leaf-resize-handle:active {
 	margin-right: -5px;
 	margin-left: -15px;
 
+	border-bottom: var(--basic-border);
+
 	font-family: var(--heading-font);
 	font-size: calc(var(--h1-size) * 1.2);
 	font-weight: 700;
 	letter-spacing: var(--heading-letter-spacing);
 	text-align: end;
+}
+
+/* installation icon */
+.community-plugin-info .community-plugin-name .flair.mod-pop::BEFORE {
+	position: relative;
+	top: 3px;
+	font-size: 1.3rem;
+	vertical-align: bottom;
 }
 
 /* repository link */
@@ -3181,11 +3192,7 @@ body .workspace-leaf-resize-handle:active {
 	font-size: 0;
 }
 
-.angular-shapes .modal.mod-community-plugin .community-plugin-info button:last-child {
-	padding-top: 0;
-}
-
-.modal.modal.mod-community-plugin .community-plugin-info button:last-child::BEFORE {
+.modal.mod-community-plugin .community-plugin-info button:last-child::BEFORE {
 	content: "link";
 
 	position: relative;
@@ -3194,6 +3201,15 @@ body .workspace-leaf-resize-handle:active {
 
 	font-family: var(--icon-font);
 	font-size: 1.25rem;
+}
+
+.angular-shapes .modal.mod-community-plugin .community-plugin-info button:last-child {
+	position: relative;
+	bottom: 2.5px;
+}
+
+.angular-shapes .modal.mod-community-plugin .community-plugin-info button:last-child::BEFORE {
+	top: 7px;
 }
 
 /* headings */
@@ -7202,7 +7218,7 @@ body:not(.longform-left-aligned) .longform-leaf *:not(.cm-header) {
 
 /* do not justify code blocks, headings, tables, and lists */
 body .app-container .longform-leaf .cm-s-obsidian .HyperMD-codeblock,
-body .app-container .longform-leaf table td,
+body .app-container .longform-leaf table td span,
 body .app-container .longform-leaf div.HyperMD-list-line.cm-line,
 body .app-container .longform-leaf div.HyperMD-header.cm-line,
 body .app-container .longform-leaf div.markdown-preview-view h1,
