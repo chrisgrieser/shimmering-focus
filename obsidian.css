@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 1.521
+Version 1.522
 https://github.com/chrisgrieser/shimmering-focus/
 MIT License
 ─────────────────────────────────────────────────── */
@@ -1726,7 +1726,7 @@ a.style-settings-export,
 
 	transition: var(--medium-transition);
 
-	padding: 5px 12px 6px;
+	padding: 5px 12px 7px;
 
 	border: 2px solid var(--interactive-border);
 	border-radius: var(--round);
@@ -7184,7 +7184,7 @@ body > div.app-container .longform-leaf .cm-s-obsidian .cm-hmd-frontmatter,
 .longform-leaf .markdown-preview-view code,
 .longform-leaf .cm-s-obsidian span.cm-inline-code,
 .longform-leaf .HyperMD-table-row,
-.longform-leaf .cm-formatting-task.cm-meta {
+.longform-leaf .cm-formatting-task {
 	font-family: var(--font-monospace);
 	font-size: var(--monospace-font-size);
 	text-align: start;
@@ -7590,6 +7590,7 @@ h6.BC-Matrix-header {
 
 body:not(.no-alternating-rows) .BC-Matrix-square li {
 	padding-left: 3px;
+	border-radius: calc(var(--roundish) * 0.7);
 }
 
 body:not(.no-alternating-rows) .BC-Matrix-square li:nth-child(even) {
@@ -7937,6 +7938,11 @@ body:not(.show-scrollbar) .workspace-split.mod-root .workspace-leaf-content[data
 	font-size: var(--menu-font-size);
 }
 
+.mod-root .workspace-leaf-content[data-type="style-settings"] .view-content {
+	padding-right: 20px;
+	padding-left: 20px;
+}
+
 /* settings tab  */
 .style-settings-heading {
 	padding-top: 0;
@@ -7989,12 +7995,6 @@ body a.style-settings-export {
 /* remove buggy and unnecessary export button for certain blocks */
 .style-settings-heading .setting-editor-extra-setting-button:last-child {
 	display: none;
-}
-
-/* settings tab as pane */
-.mod-root .workspace-leaf-content[data-type="style-settings"] .view-content {
-	padding-right: 20px;
-	padding-left: 20px;
 }
 
 /* ───────────────────────────────────────────────────
