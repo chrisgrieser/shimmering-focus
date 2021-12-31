@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 1.531
+Version 1.532
 https://github.com/chrisgrieser/shimmering-focus/
 MIT License
 ─────────────────────────────────────────────────── */
@@ -8229,6 +8229,11 @@ body .lt-ignore-btn:hover {
 	color: var(--button-hover-text);
 	background-color: var(--interactive-hover-bg);
 	border-color: var(--interactive-hover-border);
+}
+
+svg.sync-small {
+	height: var(--status-bar-font-size);
+	width: var(--status-bar-font-size);
 }
 
 /* ───────────────────────────────────────────────────
