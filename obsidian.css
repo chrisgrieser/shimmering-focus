@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 1.526
+Version 1.527
 https://github.com/chrisgrieser/shimmering-focus/
 MIT License
 ─────────────────────────────────────────────────── */
@@ -220,7 +220,7 @@ the .create-ToC.sh.
 
 .theme-light {
 	--editor-alt-accent: var(--alt-accent-darker);
-	--selection-color: hsl(259 80% 93% / 99%);
+	--selection-color: hsl(259 80% 91% / 99%);
 	--extra-contrast: hsl(0 0% 36%);
 	--text-muted: hsl(0 0% 53%);
 	--text-faint: hsl(0 0% 60%);
