@@ -1,3 +1,4 @@
+- 2021-12-31	minor
 - 2021-12-31	more redable selections
 - 2021-12-31	fix copy url button
 - 2021-12-31	minor improvements for theme and plugin browser

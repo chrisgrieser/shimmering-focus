@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 1.527
+Version 1.528
 https://github.com/chrisgrieser/shimmering-focus/
 MIT License
 ─────────────────────────────────────────────────── */
@@ -5546,7 +5546,7 @@ body.is-mobile .markdown-preview-view blockquote {
 .status-bar-item.plugin-editor-status::BEFORE {
 	content: "preview";
 	position: relative;
-	top: 2px;
+	top: 2.5px;
 	margin-right: 3px;
 	font-family: var(--icon-font);
 }
@@ -7602,6 +7602,7 @@ h6.BC-Matrix-header {
 	font-family: var(--smallcap-font);
 	font-size: 0.9em;
 	font-style: normal !important;
+	letter-spacing: 0.7px;
 }
 
 .workspace-leaf-content[data-type="BC-matrix"] .view-content button {
