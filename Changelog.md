@@ -1,3 +1,4 @@
+- 2021-12-31	minor
 - 2021-12-31	styled dictionary plugin context menu
 - 2021-12-31	fixed blockquotes for Legacy Editor Edit Mode
 - 2021-12-31	more redable selections

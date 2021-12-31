@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 1.530
+Version 1.531
 https://github.com/chrisgrieser/shimmering-focus/
 MIT License
 ─────────────────────────────────────────────────── */
@@ -8056,6 +8056,7 @@ body a.style-settings-export {
 
 .link-favicon:not(img) {
 	height: 1em !important;
+	cursor: default !important;
 	margin-right: 4px;
 	margin-bottom: 3px;
 	margin-left: 0;
