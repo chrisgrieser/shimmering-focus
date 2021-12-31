@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 1.524
+Version 1.525
 https://github.com/chrisgrieser/shimmering-focus/
 MIT License
 ─────────────────────────────────────────────────── */
@@ -3198,6 +3198,8 @@ body .workspace-leaf-resize-handle:active {
 	position: relative;
 	top: 5px;
 	left: 5px;
+
+	color: var(--extra-contrast);
 
 	font-family: var(--icon-font);
 	font-size: 1.25rem;
