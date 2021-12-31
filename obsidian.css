@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 1.529
+Version 1.530
 https://github.com/chrisgrieser/shimmering-focus/
 MIT License
 ─────────────────────────────────────────────────── */
@@ -397,6 +397,7 @@ the .create-ToC.sh.
 	--background-primary-alt: var(--bg2);
 	--background-secondary: var(--bg2);
 	--background-secondary-alt: var(--bg3);
+	--background-modifier-border: var(--muted-border-color);
 }
 
 ::-WEBKIT-SCROLLBAR,
@@ -6405,6 +6406,28 @@ body .view-content.dictionary-view-content .container {
 body .view-content.dictionary-view-content .main {
 	background-color: var(--bg3);
 	border-radius: var(--roundish);
+}
+
+body .dict-s-popover__select-option.dict-s-popover__select-option.dict-s-popover__select-option {
+	padding: 6px 5px;
+	border-bottom: none;
+}
+
+body:not(.no-alternating-rows) .dict-s-popover__select-option:nth-child(even) {
+	background-color: var(--a-row);
+}
+
+.dict-s-popover__select-option:hover {
+	color: var(--alt-accent);
+	background-color: var(--bg3);
+}
+
+body .dict-s-popover.dict-s-popover.dict-s-popover {
+	max-height: 300px;
+	max-width: 300px;
+	background-color: var(--bg1);
+	box-shadow: var(--small-shadow);
+	border-radius: calc(var(--roundish) * 1.2);
 }
 
 /* ───────────────────────────────────────────────────
