@@ -83,6 +83,7 @@ Type one of the following eight tags (e.g. `#definition`) to get a colored annot
 - Spoiler Syntax: Emphasized Strikethroughs (`*~~spoiler~~*`) will selectively hide text, except when hovered or the active line.
 
 ### Well-Suited for Academic Work
+- Footnote Indicator in the Gutter.
 - [Pandoc Citations](https://pandoc.org/MANUAL.html#citations-in-note-styles) (`[@citekey]`) and footnotes are visually emphasized
 - The alt-text of images is used as caption text, in line with Pandoc's conversion behavior
 - Extensive Styling and settings specifically for the [Longform Plugin](https://github.com/kevboh/longform) (see image below). (Prepend a `_` to file names of longform scenes to create sub-scenes.)
@@ -90,7 +91,8 @@ Type one of the following eight tags (e.g. `#definition`) to get a colored annot
 - You can also [fine-tune the spell checking](#fine-tuned-spellcheck), e.g. to turn it off in blockquotes when you are regularly citing material where spellcheck creates false positives (e.g. historical sources with old language).
 - [Multi-Color-Highlighting](#multi-color-highlighting--spoiler-syntax) and [Annotation Tags](#annotation-tags) have specifically been developed for academic reading.
 
-<img src="https://i.imgur.com/xLBDs3y.png" alt="Longform Plugin settings" width=60%>
+<img width=50% alt="Screenshot 2022-01-02 17 52 04" src="https://user-images.githubusercontent.com/73286100/147883093-df4e4e9e-2a7d-4dff-bf58-0964ca49ecf6.png">
+
 
 ### Fine-tuned Spellcheck (deprecated)
 Using the [Style Settings Plugin](https://github.com/mgmeyers/obsidian-style-settings/), you can deactivate the spellcheck in specific areas like for example YAML or blockquotes.
