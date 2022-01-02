@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 1.540
+Version 1.541
 https://github.com/chrisgrieser/shimmering-focus/
 MIT License
 ─────────────────────────────────────────────────── */
@@ -1295,7 +1295,7 @@ body.mod-macos:not(.show-titlebar) .workspace-split.mod-left-split .workspace-ta
 
 /* when left sidebar is collapsed, move header to the right */
 body.mod-macos:not(.show-titlebar) .workspace-split.mod-left-split.is-collapsed ~ .mod-root .workspace-leaf:nth-child(2) .view-header {
-	padding-left: 5vh; /* vh to work better for other screen resolutions */
+	padding-left: 7vh; /* vh to work better for other screen resolutions */
 }
 
 /* to display header bar properly on mobile */
@@ -1808,10 +1808,6 @@ p.mod-warning::BEFORE {
 << Toggles (Checkboxes)
 ─────────────────────────────────────────────────── */
 
-.checkbox-container {
-	margin-left: 5px;
-}
-
 .checkbox-container::AFTER {
 	display: none;
 }
@@ -1821,6 +1817,8 @@ p.mod-warning::BEFORE {
 	width: 22px;
 
 	background-color: var(--bg2);
+
+	margin-left: 5px;
 
 	border: 2px solid var(--interactive-border);
 	border-radius: var(--round);
@@ -5282,7 +5280,6 @@ body > .app-container span.cm-tag {
 /* preview mode */
 /* https://forum.obsidian.md/t/meta-post-common-css-hacks/1978/34 */
 input[type="checkbox"] {
-	padding: 1px;
 	margin: 1.5px 10px 3px 0 !important;
 
 	border: 2px solid var(--hr-line-gray);
