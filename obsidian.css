@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 1.533
+Version 1.534
 https://github.com/chrisgrieser/shimmering-focus/
 MIT License
 ─────────────────────────────────────────────────── */
@@ -3592,9 +3592,12 @@ body .modal.mod-community-theme .modal-content .modal-title {
 << Editor Properties
 ─────────────────────────────────────────────────── */
 /* sizes */
-.markdown-source-view.mod-cm6,
 .markdown-source-view.mod-cm5 {
 	padding-left: 10px;
+}
+
+.mod-cm6.markdown-source-view .cm-scroller {
+	padding-left: 27px;
 }
 
 body > .app-container .view-content > div > .markdown-preview-view {
@@ -3619,6 +3622,44 @@ body > div.app-container .view-content > div > .markdown-preview-view {
 .mod-cm5 .CodeMirror-lines {
 	/* !important necessary because styled in html */
 	padding-bottom: 11em !important;
+}
+
+/* ───────────────────────────────────────────────────
+<< Active Line Highlight
+─────────────────────────────────────────────────── */
+
+body:not(.no-active-highlight):not(.focused-highlight) .cm-active,
+body:not(.no-active-highlight):not(.focused-highlight) .CodeMirror-activeline .CodeMirror-linebackground {
+	background-color: var(--active-line-bg);
+	border-radius: var(--roundish);
+}
+
+/* active highlighting of markup */
+body:not(.no-active-highlight) .cm-active .cm-formatting-header,
+body:not(.no-active-highlight) .cm-active .cm-formatting-quote,
+body:not(.no-active-highlight) .cm-active .cm-formatting-list,
+body:not(.no-active-highlight) .cm-active .list-bullet {
+	color: var(--active-line-indicator);
+}
+
+.focused-highlight .cm-cursor::BEFORE {
+	content: " ";
+
+	height: inherit;
+	width: 9999px;
+
+	position: absolute;
+	left: -2000px;
+
+	background-color: var(--active-line-bg);
+
+	white-space: pre-wrap;
+
+	visibility: visible;
+}
+
+.focused-highlight .markdown-source-view .cm-scroller {
+	overflow-x: hidden;
 }
 
 /* ───────────────────────────────────────────────────
@@ -4350,7 +4391,7 @@ body .markdown-preview-view blockquote,
 }
 
 /* interaction with active line highlighting */
-body:not(.no-active-line-highlighting) .cm-s-obsidian .cm-active.cm-line.HyperMD-quote {
+body:not(.no-active-highlight):not(.focused-highlight) .cm-s-obsidian .cm-active.cm-line.HyperMD-quote {
 	color: var(--text-normal);
 	background-color: var(--active-line-bg);
 	border-left-color: var(--bg2);
@@ -4611,19 +4652,19 @@ div.HyperMD-codeblock-bg:not(.HyperMD-codeblock-begin-bg) {
 }
 
 /* interaction of active line highlight roundness with code blocks */
-body:not(.no-active-line-highlighting) .cm-active.HyperMD-codeblock,
-body:not(.no-active-line-highlighting) .CodeMirror-activeline .HyperMD-codeblock-bg.CodeMirror-linebackground {
+body:not(.no-active-highlight):not(.focused-highlight) .cm-active.HyperMD-codeblock,
+body:not(.no-active-highlight):not(.focused-highlight) .CodeMirror-activeline .HyperMD-codeblock-bg.CodeMirror-linebackground {
 	border-radius: 0;
 }
 
-body:not(.no-active-line-highlighting) .cm-active.HyperMD-codeblock-begin,
-body:not(.no-active-line-highlighting) .CodeMirror-activeline .HyperMD-codeblock-begin-bg.CodeMirror-linebackground {
+body:not(.no-active-highlight):not(.focused-highlight) .cm-active.HyperMD-codeblock-begin,
+body:not(.no-active-highlight):not(.focused-highlight) .CodeMirror-activeline .HyperMD-codeblock-begin-bg.CodeMirror-linebackground {
 	border-top-right-radius: var(--codeblock-roundness);
 	border-top-left-radius: var(--codeblock-roundness);
 }
 
-body:not(.no-active-line-highlighting) .cm-active.HyperMD-codeblock-end,
-body:not(.no-active-line-highlighting) .CodeMirror-activeline .HyperMD-codeblock-end-bg.CodeMirror-linebackground {
+body:not(.no-active-highlight):not(.focused-highlight) .cm-active.HyperMD-codeblock-end,
+body:not(.no-active-highlight):not(.focused-highlight) .CodeMirror-activeline .HyperMD-codeblock-end-bg.CodeMirror-linebackground {
 	border-bottom-right-radius: var(--codeblock-roundness);
 	border-bottom-left-radius: var(--codeblock-roundness);
 }
@@ -5316,21 +5357,6 @@ body > div.app-container .markdown-preview-view ol > li.task-list-item.is-checke
 /* ───────────────────────────────────────────────────
 << Highlights & Selection
 ─────────────────────────────────────────────────── */
-
-/* <<< Active Line Highlight */
-body:not(.no-active-line-highlighting) .cm-active,
-body:not(.no-active-line-highlighting) .CodeMirror-activeline .CodeMirror-linebackground {
-	background-color: var(--active-line-bg);
-	border-radius: var(--roundish);
-}
-
-/* active highlighting of markup */
-body:not(.no-active-line-highlighting) .cm-active .cm-formatting-header,
-body:not(.no-active-line-highlighting) .cm-active .cm-formatting-quote,
-body:not(.no-active-line-highlighting) .cm-active .cm-formatting-list,
-body:not(.no-active-line-highlighting) .cm-active .list-bullet {
-	color: var(--active-line-indicator);
-}
 
 /* <<< Highlights */
 .markdown-preview-view mark,
@@ -8621,7 +8647,7 @@ settings:
 	 default: false
 	-
 	 id: aesthetics
-	 title: Aesthetics 🎨
+	 title: Aesthetics
 	 description: Brightness, Color, Shapes, Cursor, & Decoration
 	 type: heading
 	 level: 2
@@ -8909,10 +8935,27 @@ settings:
 	-
 	 id: content-settings
 	 title: Views & Content
-	 description: Max View, Focus View, Images, PDFs, & Line Length
+	 description: Max View, Focus View, Images, PDFs, Active & ⚡️ Focused Line Highlight
 	 type: heading
 	 level: 2
 	 collapsed: true
+	-
+	 id: active-line-highlight
+	 title: ⚡️ Active Line Highlight
+	 description: '"Focused Highlight" will only emphasize the active line instead of the active block, similar to Code Editors. ⚠️ However, this comes at the cost of disabling any form of horizontal scrolling in the editor. (Focused Highlight does not work in the Legacy Editor.)'
+	 type: class-select
+	 allowEmpty: false
+	 default: active-block-highlight
+	 options:
+	 -
+		label: Default Line Highlight
+		value: active-block-highlight
+	 -
+		label: Focused Highlight
+		value: focused-highlight
+	 -
+		label: No Highlight
+		value: no-active-highlight
 	-
 	 id: max-view-enabled
 	 title: 'Enable "Max View"'
@@ -9155,11 +9198,6 @@ settings:
 	 id: annotation-tags-off
 	 title: 'Turn off "Annotation Tags"'
 	 description: '"Annotation Tags" are about a dozen of tags for academic reading, e.g. "#definition" that are visually emphasized.'
-	 type: class-toggle
-	 default: false
-	-
-	 id: no-active-line-highlighting
-	 title: Turn off Active Line Highlighting
 	 type: class-toggle
 	 default: false
 	-
