@@ -16,7 +16,7 @@ A minimalistic [Obsidian](https://obsidian.md/) theme focused on readability and
 	- [Max View & Focus View](#max-view--focus-view)
 	- [Image-related Features](#image-related-features)
 	- [Multi-Color-Highlighting & Spoiler Syntax](#multi-color-highlighting--spoiler-syntax)
-	- [Academic Work](#well-suited-for-academic-work)
+	- [Academic Work](#academic-work)
 	- [Fine-tuned Spellcheck \(deprecated\)](#fine-tuned-spellcheck-deprecated)
 	- [CSS Classes](#css-classes)
 	- [Focus Line Highlight](#focus-line-highlight)
