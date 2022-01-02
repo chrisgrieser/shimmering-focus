@@ -1,3 +1,4 @@
+- 2022-01-02	better avoidance of buttons oberlapping with macOS traffic lights (#76)
 - 2022-01-02	✨ new feature: footnote indicator in the gutter
 - 2022-01-02	stylelint order change
 - 2022-01-02	update readme

@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 1.539
+Version 1.540
 https://github.com/chrisgrieser/shimmering-focus/
 MIT License
 ─────────────────────────────────────────────────── */
@@ -1295,7 +1295,7 @@ body.mod-macos:not(.show-titlebar) .workspace-split.mod-left-split .workspace-ta
 
 /* when left sidebar is collapsed, move header to the right */
 body.mod-macos:not(.show-titlebar) .workspace-split.mod-left-split.is-collapsed ~ .mod-root .workspace-leaf:nth-child(2) .view-header {
-	padding-left: 40px;
+	padding-left: 5vh; /* vh to work better for other screen resolutions */
 }
 
 /* to display header bar properly on mobile */
