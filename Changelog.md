@@ -1,3 +1,4 @@
+- 2022-01-02	fix footntoe backrefs in preview mode
 - 2022-01-02	fixes for footnote indicator
 - 2022-01-02	fix editor padding to the right
 - 2022-01-02	more button distancing for #76

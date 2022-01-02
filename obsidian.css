@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 1.543
+Version 1.544
 https://github.com/chrisgrieser/shimmering-focus/
 MIT License
 ─────────────────────────────────────────────────── */
@@ -5475,8 +5475,6 @@ body:not(.no-pandoc-citation-emphasis) .cm-link.cm-quote.cm-hmd-barelink {
 }
 
 .footnote-backref {
-	position: relative;
-	top: 4px;
 	padding-left: 5px;
 }
 
