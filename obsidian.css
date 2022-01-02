@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 1.542
+Version 1.543
 https://github.com/chrisgrieser/shimmering-focus/
 MIT License
 ─────────────────────────────────────────────────── */
@@ -5515,7 +5515,7 @@ span.cm-link.cm-hmd-footnote {
 
 /* <<< Footnote Indicator in Gutter */
 body:not(.no-fn-indicator) .footnote-link:not(.footnote-backref)::BEFORE,
-body:not(.no-fn-indicator) .cm-s-obsidian span.cm-footref.cm-formatting::BEFORE {
+body:not(.no-fn-indicator) .mod-cm6.cm-s-obsidian span.cm-footref.cm-formatting::BEFORE {
 	content: "⦿";
 
 	font-size: 1rem;
@@ -5525,7 +5525,7 @@ body:not(.no-fn-indicator) .cm-s-obsidian span.cm-footref.cm-formatting::BEFORE 
 	background-color: var(--background-primary);
 
 	position: absolute;
-	left: 30px;
+	left: 15px;
 
 	padding: 0 3px;
 	margin-top: 3px;
@@ -5535,15 +5535,15 @@ body:not(.no-fn-indicator) .cm-s-obsidian span.cm-footref.cm-formatting::BEFORE 
 	counter-reset: footnote;
 }
 
-body.numbered-fn-indicator .footnote-link:not(.footnote-backref)::BEFORE,
-body.numbered-fn-indicator .cm-s-obsidian span.cm-footref.cm-formatting::BEFORE {
+body.numbered-fn-indicator .mod-cm6 .footnote-link:not(.footnote-backref)::BEFORE,
+body.numbered-fn-indicator .mod-cm6.cm-s-obsidian span.cm-footref.cm-formatting::BEFORE {
 	content: "^"counter(footnote);
 	font-size: 0.8rem;
 	margin-top: 5px;
 	counter-increment: footnote;
 }
 
-body:not(.no-fn-indicator) .cm-hmd-barelink:not(.cm-formatting-link) + .cm-footref.cm-formatting::BEFORE {
+body:not(.no-fn-indicator) .mod-cm6 .cm-hmd-barelink:not(.cm-formatting-link) + .cm-footref.cm-formatting::BEFORE {
 	display: none;
 }
 
