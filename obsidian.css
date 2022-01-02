@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 1.538
+Version 1.539
 https://github.com/chrisgrieser/shimmering-focus/
 MIT License
 ─────────────────────────────────────────────────── */
@@ -5520,6 +5520,40 @@ span.cm-link.cm-hmd-footnote {
 	vertical-align: top;
 }
 
+/* <<< Footnote Indicator in Gutter */
+body:not(.no-fn-indicator) .footnote-link:not(.footnote-backref)::BEFORE,
+body:not(.no-fn-indicator) .cm-s-obsidian span.cm-footref.cm-formatting::BEFORE {
+	content: "⦿";
+
+	font-size: 1rem;
+	line-height: 1rem;
+
+	color: var(--reference-color);
+	background-color: var(--background-primary);
+
+	position: absolute;
+	left: 30px;
+
+	padding: 0 3px;
+	margin-top: 3px;
+}
+
+.numbered-fn-indicator .view-content {
+	counter-reset: footnote;
+}
+
+body.numbered-fn-indicator .footnote-link:not(.footnote-backref)::BEFORE,
+body.numbered-fn-indicator .cm-s-obsidian span.cm-footref.cm-formatting::BEFORE {
+	content: "^"counter(footnote);
+	font-size: 0.8rem;
+	margin-top: 5px;
+	counter-increment: footnote;
+}
+
+body:not(.no-fn-indicator) .cm-hmd-barelink:not(.cm-formatting-link) + .cm-footref.cm-formatting::BEFORE {
+	display: none;
+}
+
 /* ───────────────────────────────────────────────────
 << Horizontal line (hr)
 ─────────────────────────────────────────────────── */
@@ -8946,7 +8980,7 @@ settings:
 	-
 	 id: content-settings
 	 title: Views & Content
-	 description: Max View, Focus View, Images, PDFs, Active & ⚡️ Focused Line Highlight
+	 description: Max View, Focus View, Images, PDFs, Active & Focused Line Highlight ⚡️
 	 type: heading
 	 level: 2
 	 collapsed: true
@@ -9187,18 +9221,29 @@ settings:
 	 hub: ignore
 	 default: false
 	-
-	 id: miscellaneous
-	 title: Miscellaneous
-	 description: File Name Trimming, Pandoc Citations, Annotation Tags, Active Line Highlighting, Alternating Row Colors, Relationship Lines
+	 id: academic-features
+	 title: Academic Work
+	 description: Pandoc Citations, Annotation Tags, Footnote Indicators
 	 type: heading
 	 level: 2
 	 collapsed: true
 	-
-	 id: trim-long-filenames
-	 title: 'Sidebar: Trim File Names'
-	 description: When enabled long filenames will be trimmed. When disabled, long filenames will be wrapped to the next line.
-	 type: class-toggle
-	 default: false
+	 id: footnote-gutter
+	 title: 🆕 Footnote Indicator
+	 description: Displays a small indicator in the gutter when a footnote is present. (Note that the numbered indicator does not count properly footnotes on the same line.)
+	 type: class-select
+	 allowEmpty: false
+	 default: simple-fn-indicator
+	 options:
+	 -
+		label: Default Footnote Indicator
+		value: simple-fn-indicator
+	 -
+		label: 🚧 Numbered Footnote Indicator
+		value: numbered-fn-indicator
+	 -
+		label: No Footnote Indicator
+		value: no-fn-indicator
 	-
 	 id: no-pandoc-citation-emphasis
 	 title: No Emphasis of Pandoc Citations
@@ -9209,6 +9254,19 @@ settings:
 	 id: annotation-tags-off
 	 title: 'Turn off "Annotation Tags"'
 	 description: '"Annotation Tags" are about a dozen of tags for academic reading, e.g. "#definition" that are visually emphasized.'
+	 type: class-toggle
+	 default: false
+	-
+	 id: miscellaneous
+	 title: Miscellaneous
+	 description: File Name Trimming, Alternating Row Colors, Relationship Lines
+	 type: heading
+	 level: 2
+	 collapsed: true
+	-
+	 id: trim-long-filenames
+	 title: 'Sidebar: Trim File Names'
+	 description: When enabled long filenames will be trimmed. When disabled, long filenames will be wrapped to the next line.
 	 type: class-toggle
 	 default: false
 	-

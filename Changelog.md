@@ -1,3 +1,4 @@
+- 2022-01-02	✨ new feature: footnote indicator in the gutter
 - 2022-01-02	stylelint order change
 - 2022-01-02	update readme
 - 2022-01-02	⚡️ New Feature: Focused Line Highlight (must be enabled in Style Settings)
