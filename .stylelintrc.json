@@ -36,6 +36,29 @@
 					]
 				},
 				{
+					"groupName": "Font & Text",
+					"emptyLineBefore": "threshold",
+					"noEmptyLineBetween": true,
+					"properties": [
+						"font-family",
+						"font-size",
+						"font-weight",
+						"text-rendering",
+						"font-style",
+						"line-height",
+						"letter-spacing",
+						"text-decoration",
+						"text-transform",
+						"text-shadow",
+						"text-align",
+						"hyphens",
+						"white-space",
+						"overflow-wrap",
+						"font-display",
+						"src"
+					]
+				},
+				{
 					"groupName": "Size",
 					"emptyLineBefore": "threshold",
 					"noEmptyLineBetween": true,
@@ -51,19 +74,6 @@
 						"background-position-x",
 						"backdrop-size",
 						"resize"
-					]
-				},
-				{
-					"groupName": "Position",
-					"emptyLineBefore": "threshold",
-					"noEmptyLineBetween": true,
-					"properties": [
-						"position",
-						"top",
-						"right",
-						"bottom",
-						"left",
-						"z-index"
 					]
 				},
 				{
@@ -84,15 +94,16 @@
 					]
 				},
 				{
-					"groupName": "Special",
+					"groupName": "Position",
 					"emptyLineBefore": "threshold",
 					"noEmptyLineBetween": true,
 					"properties": [
-						"transform",
-						"transition",
-						"transition-duration",
-						"filter",
-						"cursor"
+						"position",
+						"top",
+						"right",
+						"bottom",
+						"left",
+						"z-index"
 					]
 				},
 				{
@@ -134,26 +145,15 @@
 					]
 				},
 				{
-					"groupName": "Font & Text",
+					"groupName": "Special",
 					"emptyLineBefore": "threshold",
 					"noEmptyLineBetween": true,
 					"properties": [
-						"font-family",
-						"font-size",
-						"font-weight",
-						"text-rendering",
-						"font-style",
-						"line-height",
-						"letter-spacing",
-						"text-decoration",
-						"text-transform",
-						"text-shadow",
-						"text-align",
-						"hyphens",
-						"white-space",
-						"overflow-wrap",
-						"font-display",
-						"src"
+						"transform",
+						"transition",
+						"transition-duration",
+						"filter",
+						"cursor"
 					]
 				}
 			],
