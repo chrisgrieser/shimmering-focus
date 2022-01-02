@@ -32,4 +32,7 @@ sed -E -i '' "${versionLine}s/(.*\.)[[:digit:]]+/\1$nextVersion/" "$csspath"
 # add to git
 git add -A
 git commit -m "$commitMsg"
+
+git pull
+
 echo -n | git push  #pass for notification

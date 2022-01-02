@@ -19,6 +19,7 @@ A minimalistic [Obsidian](https://obsidian.md/) theme focused on readability and
 	- [Well-Suited for Academic Work](#well-suited-for-academic-work)
 	- [Fine-tuned Spellcheck \(deprecated\)](#fine-tuned-spellcheck-deprecated)
 	- [CSS Classes](#css-classes)
+	- [Focus Line Highlight](#focus-line-highlight)
 	- [Further Features](#further-features)
 - [Design Principles](#design-principles)
 	- [Extreme Minimalism](#extreme-minimalism)
@@ -101,10 +102,14 @@ Add `cssclass: {name}` to your yaml front matter to activate specific styling of
 - `cssclass: clean-top`: Removes Metadata Information, YAML frontmatter, and Breadcrumbs trail from the top of the note.
 - `cssclass: dataview-list-in-table`: If you are using a dataview query where some table cells contain lists, use this CSS class to remove the vertical table lines that are off.
 
+### Focus Line Highlight
 ![Focused Line Highlight](https://user-images.githubusercontent.com/73286100/147863593-a50fbeb0-04c2-4faf-8253-62abf8efca2d.gif)
 
+In contrast to typical active line highlights, the *focused* line highlight will only highlight the direct line where the cursor is located. However, this feature disables the ability to scroll horizontally, so it is disabled by default and must be enabled in the Style Settings. 
+
 ### Further Features
-- Relationship lines in lists & File Explorer
+- Relationship lines in various side bar tabs
+- File Explorer Icons
 - Indicates trailing white spaces when there is more than one space. This is useful for the Markdown [Two Space Rule](https://daringfireball.net/projects/markdown/syntax#p). (Obsidian 0.13+ / new Editor only).
 - Active line highlighting
 - Customizable Brightness of the Theme
@@ -126,7 +131,8 @@ Add `cssclass: {name}` to your yaml front matter to activate specific styling of
 ### Condensed Display of Information
 - Screen real estate is used much more efficiently to display more information at the same time.
 - Useful for smaller screens, split screens, bigger font sizes, or simply to see more information without having to scroll.
-- Smaller images / PDFs. (Click-and-Hold or use the [Max View Feature](#Max-View) to enlarge them again.)
+- Images and PDFs are displayed at a smaller sized. (Size can be configured with the Style Settings Plugin,) Click and hold an image to enlarge it again, or use the [Max View Feature](#Max-View).
+- Option to trim filenames in the sidebar for even more compactness.
 
 <img width=60% alt="Screenshot 2021-10-23 17 06 22" src="https://user-images.githubusercontent.com/73286100/138561771-1067d041-eeb2-4dfe-8d79-f7fa754ca419.png">
 
