@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 1.535
+Version 1.536
 https://github.com/chrisgrieser/shimmering-focus/
 MIT License
 ─────────────────────────────────────────────────── */
@@ -210,7 +210,7 @@ the .create-ToC.sh.
 	--highlight-color: hsl(152 100% 50% / 40%);
 	--highlight-alt1: hsl(60 100% 50% / 40%);
 	--highlight-alt2: hsl(180 100% 50% / 40%);
-	--active-line-bg: hsl(62 11% 63% / 10%);
+	--active-line-bg: hsl(62 11% 63% / 20%);
 	--spell-error-color: hsl(0 66% 64%);
 
 	--cursor-monocolor: var(--accent-lighter);
