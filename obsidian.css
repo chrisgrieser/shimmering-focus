@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 1.541
+Version 1.542
 https://github.com/chrisgrieser/shimmering-focus/
 MIT License
 ─────────────────────────────────────────────────── */
@@ -3603,10 +3603,6 @@ body .modal.mod-community-theme .modal-content .modal-title {
 /* sizes */
 .markdown-source-view.mod-cm5 {
 	padding-left: 10px;
-}
-
-.mod-cm6.markdown-source-view .cm-scroller {
-	padding-left: 27px;
 }
 
 body > .app-container .view-content > div > .markdown-preview-view {
