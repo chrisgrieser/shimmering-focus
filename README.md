@@ -16,7 +16,7 @@ A minimalistic [Obsidian](https://obsidian.md/) theme focused on readability and
 	- [Max View & Focus View](#max-view--focus-view)
 	- [Image-related Features](#image-related-features)
 	- [Multi-Color-Highlighting & Spoiler Syntax](#multi-color-highlighting--spoiler-syntax)
-	- [Well-Suited for Academic Work](#well-suited-for-academic-work)
+	- [Academic Work](#well-suited-for-academic-work)
 	- [Fine-tuned Spellcheck \(deprecated\)](#fine-tuned-spellcheck-deprecated)
 	- [CSS Classes](#css-classes)
 	- [Focus Line Highlight](#focus-line-highlight)
@@ -82,8 +82,8 @@ Type one of the following eight tags (e.g. `#definition`) to get a colored annot
 - You can use the [Extra Markdown Commands Plugin](https://github.com/chrisgrieser/obsidian-extra-md-commands) to get hotkeys for them.
 - Spoiler Syntax: Emphasized Strikethroughs (`*~~spoiler~~*`) will selectively hide text, except when hovered or the active line.
 
-### Well-Suited for Academic Work
-- Footnote Indicator in the Gutter.
+### Academic Work
+- Footnote Indicator added to the gutter
 - [Pandoc Citations](https://pandoc.org/MANUAL.html#citations-in-note-styles) (`[@citekey]`) and footnotes are visually emphasized
 - The alt-text of images is used as caption text, in line with Pandoc's conversion behavior
 - Extensive Styling and settings specifically for the [Longform Plugin](https://github.com/kevboh/longform) (see image below). (Prepend a `_` to file names of longform scenes to create sub-scenes.)
@@ -91,7 +91,7 @@ Type one of the following eight tags (e.g. `#definition`) to get a colored annot
 - You can also [fine-tune the spell checking](#fine-tuned-spellcheck), e.g. to turn it off in blockquotes when you are regularly citing material where spellcheck creates false positives (e.g. historical sources with old language).
 - [Multi-Color-Highlighting](#multi-color-highlighting--spoiler-syntax) and [Annotation Tags](#annotation-tags) have specifically been developed for academic reading.
 
-<img width=50% alt="Screenshot 2022-01-02 17 52 04" src="https://user-images.githubusercontent.com/73286100/147883093-df4e4e9e-2a7d-4dff-bf58-0964ca49ecf6.png">
+<img width=70% alt="Screenshot 2022-01-02 17 52 04" src="https://user-images.githubusercontent.com/73286100/147883093-df4e4e9e-2a7d-4dff-bf58-0964ca49ecf6.png">
 
 
 ### Fine-tuned Spellcheck (deprecated)
