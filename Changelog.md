@@ -1,3 +1,5 @@
+- 2022-01-02	minor
+- 2022-01-02	update readme
 - 2022-01-02	⚡️ New Feature: Focused Line Highlight (must be enabled in Style Settings)
 - 2022-01-01	fix font-weight of interactives
 - 2021-12-31	styled dictionary plugin context menu

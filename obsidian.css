@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 1.534
+Version 1.535
 https://github.com/chrisgrieser/shimmering-focus/
 MIT License
 ─────────────────────────────────────────────────── */
@@ -1257,6 +1257,14 @@ body.block-cursor .CodeMirror-cursor {
 body:not(.mono-color-cursor) .cm-cursor.cm-cursor-secondary {
 	border-image: linear-gradient(hsl(220 100% 80%), hsl(40 100% 80%)) 1;
 }
+
+/* soft blink */
+/* https://github.com/mgmeyers/obsidian-california-coast-theme/blob/main/src/enhancements/editor.scss#L15-L19 */
+/* https://github.com/mgmeyers/obsidian-california-coast-theme/blob/main/src/enhancements/editor.scss#L221-L261 */
+/* .mod-cm6.cm-s-obsidian .cm-cursorLayer {
+	animation-timing-function: ease-out;
+}
+ */
 
 /* ───────────────────────────────────────────────────
 < UI Elements
