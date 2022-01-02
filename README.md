@@ -101,6 +101,8 @@ Add `cssclass: {name}` to your yaml front matter to activate specific styling of
 - `cssclass: clean-top`: Removes Metadata Information, YAML frontmatter, and Breadcrumbs trail from the top of the note.
 - `cssclass: dataview-list-in-table`: If you are using a dataview query where some table cells contain lists, use this CSS class to remove the vertical table lines that are off.
 
+![Focused Line Highlight](https://user-images.githubusercontent.com/73286100/147863593-a50fbeb0-04c2-4faf-8253-62abf8efca2d.gif)
+
 ### Further Features
 - Relationship lines in lists & File Explorer
 - Indicates trailing white spaces when there is more than one space. This is useful for the Markdown [Two Space Rule](https://daringfireball.net/projects/markdown/syntax#p). (Obsidian 0.13+ / new Editor only).
