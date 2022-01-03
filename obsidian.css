@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 1.549
+Version 1.550
 https://github.com/chrisgrieser/shimmering-focus/
 MIT License
 ─────────────────────────────────────────────────── */
@@ -3542,10 +3542,6 @@ body .modal.mod-community-theme .modal-content .modal-title {
 	text-transform: capitalize;
 }
 
-.community-theme-lightbox {
-
-}
-
 /* enlarged promo screenshots */
 .mod-image-lightbox {
 	background-color: var(--bg3);
@@ -3854,9 +3850,12 @@ body .frontmatter-container .frontmatter-container-header {
 	color: var(--text-muted);
 }
 
-.heading-collapse-indicator .collapse-indicator,
-.list-collapse-indicator .collapse-indicator {
+.heading-collapse-indicator.collapse-indicator {
 	padding-right: 4px;
+}
+
+.list-collapse-indicator.collapse-indicator {
+	padding-left: 0;
 }
 
 .frontmatter-collapse-indicator .right-triangle {
@@ -7356,7 +7355,7 @@ body.hide-index-files .nav-file-title[data-path$="Index.md"] {
 /* https://github.com/kevboh/longform#scene-only-styling */
 
 .longform-leaf .markdown-preview-view,
-.longform-leaf .mod-cm5.cm-s-obsidian,
+.longform-leaf .markdown-source-view.mod-cm5,
 .longform-leaf .mod-cm6.cm-s-obsidian .cm-contentContainer {
 	font-family: var(--longform-font);
 	font-size: var(--longform-font-size);
@@ -7380,14 +7379,8 @@ body > div.app-container .longform-leaf .cm-s-obsidian .cm-hmd-frontmatter,
 	hyphens: none;
 }
 
-.longform-leaf .HyperMD-list-line {
-	text-align: start;
-	hyphens: none;
-}
-
 /* justify text */
-body:not(.longform-left-aligned) .longform-leaf .cm-contentContainer *:not(.cm-header),
-body:not(.longform-left-aligned) .longform-leaf *:not(.cm-header) {
+body:not(.longform-left-aligned) .longform-leaf {
 	text-align: justify;
 	hyphens: auto;
 }
