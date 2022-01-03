@@ -20,11 +20,15 @@ Steps to reproduce the behavior, e.g.
 3. Scroll down to '....'
 
 **In which mode / editor does the bug occur?**
-- [ ] Legacy Editor (or Obsidian 0.12 or below)
+- [ ] Legacy Editor
 - [ ] New Editor
 - [ ] Reading/Preview Mode
 - [ ] Source Mode
 - [ ] Live Preview
+
+**Version**
+- [ ] I am on the latest __Insider__ release
+- [ ] I am on the latest __public__ release
 
 **Checklist**
 - [ ] I have updated to the latest version of the theme (`Obsidian Settings → Appearance → Themes - Manage → Update`).
