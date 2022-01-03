@@ -1,3 +1,4 @@
+- 2022-01-03	search indicator, search container, search matche sin preview mode
 - 2022-01-03	overhauled search suggestions (search pane)
 - 2022-01-03	search container (cmd+f) now more consistent with the rest of the theme
 - 2022-01-02	fix footntoe backrefs in preview mode

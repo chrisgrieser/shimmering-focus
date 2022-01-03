@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 1.546
+Version 1.547
 https://github.com/chrisgrieser/shimmering-focus/
 MIT License
 ─────────────────────────────────────────────────── */
@@ -1981,7 +1981,7 @@ body .document-search-container input[type="text"] {
 body:not(.default-statusbar) .document-search-container {
 	position: relative;
 	bottom: 2.4em;
-	padding: 2px 5px;
+	padding: 2px 5px 5px;
 }
 
 div.document-replace {
@@ -2061,6 +2061,12 @@ body .app-container .obsidian-search-match-highlight {
 	background-color: var(--bg1); /* so they cover footnote indicators when overlapping */
 	position: absolute;
 	left: 17px;
+}
+
+/* preview mode */
+body .markdown-preview-view .search-highlight > div {
+	background: none;
+	outline: var(--search-match-outline);
 }
 
 /* ───────────────────────────────────────────────────
