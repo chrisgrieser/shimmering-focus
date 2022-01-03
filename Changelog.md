@@ -1,3 +1,4 @@
+- 2022-01-03	search container (cmd+f) now more consistent with the rest of the theme
 - 2022-01-02	fix footntoe backrefs in preview mode
 - 2022-01-02	fixes for footnote indicator
 - 2022-01-02	fix editor padding to the right

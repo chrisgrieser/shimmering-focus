@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 1.544
+Version 1.545
 https://github.com/chrisgrieser/shimmering-focus/
 MIT License
 ─────────────────────────────────────────────────── */
@@ -1734,6 +1734,7 @@ body:not(.show-scrollbar) ::-WEBKIT-SCROLLBAR {
 << Buttons
 ─────────────────────────────────────────────────── */
 /* buttons in default state */
+button.document-search-button,
 body .excalidraw .HelpDialog--btn,
 a.style-settings-import,
 a.style-settings-export,
@@ -1769,6 +1770,7 @@ a.style-settings-export,
 }
 
 /* hovered buttons */
+button.document-search-button:hover,
 body .excalidraw .HelpDialog--btn:hover,
 body .setting-item-control a.style-settings-import:hover,
 body .setting-item-control a.style-settings-export:hover,
@@ -1959,12 +1961,12 @@ input[type="range"]::-WEBKIT-SLIDER-THUMB {
 	display: block;
 
 	height: 3.9em;
-	width: 95%;
+	width: 90%;
 
 	background-color: var(--bg3);
 
 	bottom: 12px;
-	left: 2.5%;
+	left: 5%;
 
 	padding-top: 5px;
 
@@ -1983,11 +1985,11 @@ body:not(.default-statusbar) .document-search-container {
 }
 
 div.document-replace {
-	margin-top: 6px;
+	margin-top: 3px;
 }
 
 .document-search-container.mod-replace-mode {
-	height: 6.8em;
+	height: 6.6em;
 }
 
 /* for whatever reason the horizontal scrollbar
@@ -2014,29 +2016,16 @@ so this has to be used ლ(ಠ_ಠლ)╯ */
 
 .document-search input[type="text"],
 .document-replace input[type="text"] {
-	height: 2.2rem;
+	height: 2rem;
 	width: unset;
 	background-color: var(--bg1);
 	margin: 5px;
 	border: var(--muted-border);
 }
 
-button.document-search-button {
-	height: 2.2rem;
-
-	color: var(--text-on-accent);
-	background-color: var(--text-accent);
-	opacity: 0.65;
-
+body button.document-search-button {
+	height: 2rem;
 	margin: 5px 6px;
-
-	border-radius: var(--roundish);
-}
-
-.document-search-button:hover {
-	color: var(--interaction-normal);
-	background-color: var(--alt-accent);
-	opacity: 0.9;
 }
 
 body:not(.show-close-button) .document-search-close-button {
