@@ -16,10 +16,9 @@ A minimalistic [Obsidian](https://obsidian.md/) theme focused on readability and
 	- [Max View & Focus View](#max-view--focus-view)
 	- [Image-related Features](#image-related-features)
 	- [Multi-Color-Highlighting & Spoiler Syntax](#multi-color-highlighting--spoiler-syntax)
-	- [Academic Work](#academic-work)
-	- [Fine-tuned Spellcheck \(deprecated\)](#fine-tuned-spellcheck-deprecated)
 	- [CSS Classes](#css-classes)
 	- [Focus Line Highlight](#focus-line-highlight)
+	- [Academic Work](#academic-work)
 	- [Further Features](#further-features)
 - [Design Principles](#design-principles)
 	- [Extreme Minimalism](#extreme-minimalism)
@@ -82,18 +81,6 @@ Type one of the following eight tags (e.g. `#definition`) to get a colored annot
 - You can use the [Extra Markdown Commands Plugin](https://github.com/chrisgrieser/obsidian-extra-md-commands) to get hotkeys for them.
 - Spoiler Syntax: Emphasized Strikethroughs (`*~~spoiler~~*`) will selectively hide text, except when hovered or the active line.
 
-### Academic Work
-- Footnote Indicator added to the gutter
-- [Pandoc Citations](https://pandoc.org/MANUAL.html#citations-in-note-styles) (`[@citekey]`) and footnotes are visually emphasized
-- The alt-text of images is used as caption text, in line with Pandoc's conversion behavior
-- Extensive Styling and settings specifically for the [Longform Plugin](https://github.com/kevboh/longform) (see image below). (Prepend a `_` to file names of longform scenes to create sub-scenes.)
-- The [Max View](#max-view--focus-view) is useful for displaying wide markdown tables.
-- You can also [fine-tune the spell checking](#fine-tuned-spellcheck), e.g. to turn it off in blockquotes when you are regularly citing material where spellcheck creates false positives (e.g. historical sources with old language).
-- [Multi-Color-Highlighting](#multi-color-highlighting--spoiler-syntax) and [Annotation Tags](#annotation-tags) have specifically been developed for academic reading.
-
-<img width=70% alt="Screenshot 2022-01-02 17 52 04" src="https://user-images.githubusercontent.com/73286100/147883093-df4e4e9e-2a7d-4dff-bf58-0964ca49ecf6.png">
-
-
 ### Fine-tuned Spellcheck (deprecated)
 Using the [Style Settings Plugin](https://github.com/mgmeyers/obsidian-style-settings/), you can deactivate the spellcheck in specific areas like for example YAML or blockquotes.
 
@@ -109,11 +96,22 @@ Add `cssclass: {name}` to your yaml front matter to activate specific styling of
 
 In contrast to typical active line highlights, the *focused* line highlight will only highlight the direct line where the cursor is located. However, this feature disables the ability to scroll horizontally, so it is disabled by default and must be enabled in the Style Settings. 
 
+### Academic Work Features
+- Footnote indicator added to the gutter
+- [Pandoc Citations](https://pandoc.org/MANUAL.html#citations-in-note-styles) (`[@citekey]`) and footnotes are visually emphasized
+- The alt-text of images is used as caption text, in line with Pandoc's conversion behavior
+- Extensive Styling and settings specifically for the [Longform Plugin](https://github.com/kevboh/longform)
+	- Prepend a `_` to file names of longform scenes to create sub-scenes that are indented in the sidebar
+- The [Max View](#max-view--focus-view) is useful for displaying wide markdown tablen.
+- [Multi-Color-Highlighting](#multi-color-highlighting--spoiler-syntax) and [Annotation Tags](#annotation-tags) have specifically been made for academic reading.
+
+<img src="https://user-images.githubusercontent.com/73286100/147931964-d5e5d309-d821-4fa1-86c1-4a8952a249d3.png" alt="image" width=70%>
+
 ### Further Features
 - Relationship lines in various side bar tabs
-- File Explorer Icons
+- Gutter indicators for footnotes & search results
+- File explorer icons
 - Indicates trailing white spaces when there is more than one space. This is useful for the Markdown [Two Space Rule](https://daringfireball.net/projects/markdown/syntax#p). (Obsidian 0.13+ / new Editor only).
-- Active line highlighting
 - Customizable Brightness of the Theme
 - Dark Mode for PDFs (when using the theme in dark mode)
 - Styled [progress bars (`<progress>`)](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/progress)
