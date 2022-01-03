@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 1.545
+Version 1.546
 https://github.com/chrisgrieser/shimmering-focus/
 MIT License
 ─────────────────────────────────────────────────── */
@@ -214,8 +214,6 @@ the .create-ToC.sh.
 	--spell-error-color: hsl(0 66% 64%);
 
 	--cursor-monocolor: var(--accent-lighter);
-
-	--shadow-for-dark-bold: -0.5px 0.5px hsl(0 0% 35%);
 }
 
 .theme-light {
@@ -240,6 +238,7 @@ the .create-ToC.sh.
 	--cursor-duo-color-2: var(--accent-lighterer);
 	--a-row: rgb(0 0 0 / 2.5%);
 	--b-row: rgb(0 0 0 / 7.5%);
+	--search-match-color: hsl(30 100% 50%);
 }
 
 .theme-dark {
@@ -264,6 +263,7 @@ the .create-ToC.sh.
 	--cursor-duo-color-2: var(--accent-lighter);
 	--a-row: rgb(0 0 0 / 15%);
 	--b-row: rgb(0 0 0 / 30%);
+	--search-match-color: hsl(60 100% 70%);
 }
 
 /* ───────────────────────────────────────────────────
@@ -447,6 +447,7 @@ body.theme-dark {
 	--big-shadow: 4px 6px var(--shadow-blur) calc(var(--shadow-base-size) + 10px) var(--shadow-color);
 	--medium-shadow: 4px 6px var(--shadow-blur) calc(var(--shadow-base-size) + 5px) var(--shadow-color);
 	--small-shadow: 2px 4px var(--shadow-blur) calc(var(--shadow-base-size) + 0px) var(--shadow-color);
+	--shadow-for-dark-bold: -0.5px 0.5px hsl(0 0% 35%);
 }
 
 /* drop shadow when scrolled */
@@ -495,12 +496,12 @@ only sidebars and everything scrolling */
 
 .theme-light {
 	--notice-border: 2px ridge hsl(var(--light-hue) var(--sat-light-3) 55%);
-	--search-match-outline: 2px solid hsl(170 70% 60%);
+	--search-match-outline: 2px solid var(--search-match-color);
 }
 
 .theme-dark {
 	--notice-border: 2px ridge hsl(var(--dark-hue) var(--sat-dark-1) 45%);
-	--search-match-outline: 1px solid hsl(60 100% 50%);
+	--search-match-outline: 1px solid var(--search-match-color);
 }
 
 /* ───────────────────────────────────────────────────
@@ -1960,15 +1961,13 @@ input[type="range"]::-WEBKIT-SLIDER-THUMB {
 .document-search-container {
 	display: block;
 
-	height: 3.9em;
-	width: 90%;
+	height: 3.5em;
+	width: 85%;
 
 	background-color: var(--bg3);
 
 	bottom: 12px;
-	left: 5%;
-
-	padding-top: 5px;
+	left: 7.5%;
 
 	border: var(--thick-muted-border);
 	border-radius: calc(var(--roundish) * 3);
@@ -1982,14 +1981,56 @@ body .document-search-container input[type="text"] {
 body:not(.default-statusbar) .document-search-container {
 	position: relative;
 	bottom: 2.4em;
+	padding: 2px 5px;
 }
 
 div.document-replace {
-	margin-top: 3px;
+	margin-top: 2px;
 }
 
 .document-search-container.mod-replace-mode {
-	height: 6.6em;
+	height: 6.1em;
+}
+
+/* more recognizable red */
+.theme-dark .document-search-input.mod-no-match:hover,
+.theme-dark .document-search-input.mod-no-match {
+	background-color: hsl(0 30% 20%);
+}
+
+.theme-light .document-search-input.mod-no-match:hover,
+.theme-light .document-search-input.mod-no-match {
+	background-color: hsl(0 80% 85%);
+}
+
+.document-search input[type="text"],
+.document-replace input[type="text"] {
+	width: unset;
+	background-color: var(--bg1);
+	border: var(--muted-border);
+}
+
+.document-search input[type="text"],
+.document-replace input[type="text"],
+body button.document-search-button {
+	height: 2rem;
+	margin: 5px;
+}
+
+body:not(.show-close-button) .document-search-close-button {
+	display: none;
+}
+
+/* CM5 */
+/* ---------------------- */
+body > .app-container input.document-search-input:focus,
+body > .app-container input.document-replace-input:focus {
+	border: 2px solid var(--interactive-border);
+}
+
+body > .app-container input.document-search-input:hover,
+body > .app-container input.document-replace-input:hover {
+	border: 2px solid var(--interactive-hover-border);
 }
 
 /* for whatever reason the horizontal scrollbar
@@ -2003,44 +2044,23 @@ so this has to be used ლ(ಠ_ಠლ)╯ */
 	padding-bottom: 70px;
 }
 
-/* more recognizable red */
-.theme-dark .document-search-input.mod-no-match:hover,
-.theme-dark .document-search-input.mod-no-match {
-	background-color: hsl(357 30% 20%);
+/* ───────────────────────────────────────────────────
+<< Search matches
+─────────────────────────────────────────────────── */
+
+body .app-container .obsidian-search-match-highlight {
+	color: var(--text-normal);
+	background: none;
+	outline: var(--search-match-outline);
 }
 
-.theme-light .document-search-input.mod-no-match:hover,
-.theme-light .document-search-input.mod-no-match {
-	background-color: hsl(359 80% 85%);
-}
-
-.document-search input[type="text"],
-.document-replace input[type="text"] {
-	height: 2rem;
-	width: unset;
-	background-color: var(--bg1);
-	margin: 5px;
-	border: var(--muted-border);
-}
-
-body button.document-search-button {
-	height: 2rem;
-	margin: 5px 6px;
-}
-
-body:not(.show-close-button) .document-search-close-button {
-	display: none;
-}
-
-/* only needed for CM5 */
-body > .app-container input.document-search-input:focus,
-body > .app-container input.document-replace-input:focus {
-	border: 2px solid var(--interactive-border);
-}
-
-body > .app-container input.document-search-input:hover,
-body > .app-container input.document-replace-input:hover {
-	border: 2px solid var(--interactive-hover-border);
+/* gutter indicators */
+.obsidian-search-match-highlight::BEFORE {
+	content: "►";
+	color: var(--search-match-color);
+	background-color: var(--bg1); /* so they cover footnote indicators when overlapping */
+	position: absolute;
+	left: 17px;
 }
 
 /* ───────────────────────────────────────────────────
@@ -2312,10 +2332,6 @@ body:not(.no-alternating-rows) .suggestion-item:nth-child(even) .suggestion-pref
 .suggestion-container .suggestion,
 .suggestion-container {
 	border-radius: var(--roundish);
-}
-
-.suggestion-container .suggestion-item {
-	padding-left: 25px;
 }
 
 .suggestion-container .suggestion-note {
@@ -4058,42 +4074,6 @@ body:not(.left-aligned-embeds) .mod-cm6 .pdf-embed,
 body:not(.left-aligned-embeds) .pdf-embed {
 	margin-right: auto !important;
 	margin-left: auto !important;
-}
-
-/* ───────────────────────────────────────────────────
-<< Search Matches
-─────────────────────────────────────────────────── */
-/* applies to everything that is matched by any kind of search */
-
-.is-flashing,
-body > div.app-container .obsidian-search-match-highlight {
-	color: var(--text-normal) !important;
-	background: none;
-	outline: var(--search-match-outline);
-}
-
-.is-flashing {
-	border-radius: var(--roundish);
-}
-
-body > .app-container .obsidian-search-match-highlight:first-child {
-	border-bottom-left-radius: var(--roundish);
-	border-top-left-radius: var(--roundish);
-}
-
-body > .app-container .obsidian-search-match-highlight:last-child {
-	border-top-right-radius: var(--roundish);
-	border-bottom-right-radius: var(--roundish);
-}
-
-.search-result .search-result-file-matches {
-	font-size: calc(var(--sidebar-font-size) * 0.9);
-	line-height: 1.2em;
-	border-bottom: var(--basic-border);
-}
-
-.search-result .search-result-file-match::AFTER {
-	background-color: var(--basic-border-color);
 }
 
 /* ───────────────────────────────────────────────────
@@ -6126,29 +6106,125 @@ body.outline-remove-level-1:not(.no-alternating-rows) .outline .tree-item-childr
 	margin-left: 6px;
 }
 
-.search-result-file-match {
-	line-height: 1.4em;
-
-	width: 98%;
-	max-width: 90%;
-
-	padding-right: 1em;
-	padding-left: 0;
-	margin-bottom: 0.4em;
+.search-result-file-matches .search-result-file-match {
+	line-height: 1.3em;
+	width: 100%;
+	padding: 5px 16px 5px 5px;
+	border-radius: var(--roundish);
 }
 
-.search-result-file-matches {
-	margin-right: 0.6em;
-	margin-left: 0;
-	border-bottom: 2px solid var(--text-faint);
+.search-result .search-result-file-match::AFTER {
+	background-color: var(--basic-border-color);
 }
 
 /* search result highlights are colored text instead for
 readability */
 .search-result-file-matched-text {
 	font-weight: 600;
-	color: var(--alt-accent);
+	color: var(--search-match-color);
 	background: none;
+}
+
+.search-result .search-result-file-matches {
+	font-size: calc(var(--sidebar-font-size) * 0.9);
+	line-height: 1.2em;
+	margin-right: 0.6em;
+	margin-left: 0;
+	border-bottom: var(--basic-border);
+}
+
+/* <<< Search suggestion container */
+.suggestion-container.mod-search-suggestion {
+	padding: 0;
+	border: var(--thin-border);
+	border-radius: var(--roundish);
+}
+
+.mod-macos .suggestion-container.mod-search-suggestion {
+	margin-top: 12px; /* avoid collision with Mac traffic light */
+}
+
+/* Remove "Search Options" */
+body .search-suggest-item.mod-group:first-child {
+	display: none;
+}
+
+.search-suggest-item:nth-child(2),
+.search-suggest-item:nth-child(3),
+.search-suggest-item:nth-child(4),
+.search-suggest-item:nth-child(5),
+.search-suggest-item:nth-child(6) {
+	font-family: var(--menu-font-family);
+	background-color: var(--bg3) !important;
+	border-bottom: var(--thin-border);
+}
+
+.search-suggest-item:nth-child(2) .search-suggest-name::AFTER,
+.search-suggest-item:nth-child(3) .search-suggest-name::AFTER,
+.search-suggest-item:nth-child(4) .search-suggest-name::AFTER,
+.search-suggest-item:nth-child(5) .search-suggest-name::AFTER,
+.search-suggest-item:nth-child(6) .search-suggest-name::AFTER,
+.search-suggest-item:nth-child(2) .search-suggest-name::BEFORE,
+.search-suggest-item:nth-child(3) .search-suggest-name::BEFORE,
+.search-suggest-item:nth-child(4) .search-suggest-name::BEFORE,
+.search-suggest-item:nth-child(5) .search-suggest-name::BEFORE,
+.search-suggest-item:nth-child(6) .search-suggest-name::BEFORE {
+	content: "\"";
+}
+
+.search-suggest-item .search-suggest-info-text {
+	font-family: var(--menu-font-family);
+	font-size: 70%;
+	color: var(--extra-contrast);
+	position: absolute;
+	right: 8px;
+}
+
+body .suggestion-item.search-suggest-item {
+	font-size: var(--sidebar-font-size);
+	line-height: 1.3em;
+	padding: 4px 8px;
+	margin: 0;
+	border-radius: var(--roundish);
+}
+
+/* "History" */
+body .search-suggest-item.mod-group:not(:first-child) {
+	font-family: var(--smallcap-font);
+	font-size: calc(var(--sidebar-font-size) * 1.1);
+	text-transform: capitalize;
+	text-align: end;
+
+	color: var(--text-normal);
+	background-color: var(--basic-border-color);
+
+	padding-top: 4px;
+	padding-right: 8px;
+	margin-top: 0;
+}
+
+/* fix title getting hover/selected styling */
+body .suggestion-item.search-suggest-item.mod-group.is-selected,
+body .suggestion-item.search-suggest-item.mod-group:hover {
+	color: var(--text-normal);
+	background-color: var(--basic-border-color) !important;
+}
+
+/* delete history icon */
+body .search-suggest-item.mod-group:not(:first-child) .clickable-icon {
+	color: var(--text-normal);
+
+	position: absolute;
+	left: 0;
+
+	margin-top: 2px;
+	margin-left: 8px;
+
+	transform: scale(0.75);
+}
+
+body .search-suggest-item.mod-group:not(:first-child) .clickable-icon:hover {
+	color: var(--alt-accent);
 }
 
 /* ───────────────────────────────────────────────────
