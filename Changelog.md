@@ -1,3 +1,4 @@
+- 2022-01-03	fix display of Optima (Default Heading Font) for non-Mac Users
 - 2022-01-03	graph view icon change
 - 2022-01-03	search indicator, search container, search matche sin preview mode
 - 2022-01-03	overhauled search suggestions (search pane)
