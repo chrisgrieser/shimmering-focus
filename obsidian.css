@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 1.557
+Version 1.558
 https://github.com/chrisgrieser/shimmering-focus/
 MIT License
 ─────────────────────────────────────────────────── */
@@ -4077,6 +4077,7 @@ body.max-view-enabled:not(.is-mobile) .mod-left-split.is-collapsed ~ .mod-root d
 	max-width: 100%;
 }
 
+body:not(.is-mobile) .oz-pdf-widget-cm6 embed,
 body:not(.is-mobile) .pdf-embed,
 body:not(.is-mobile) .app-container div.oz-image-widget embed {
 	max-height: var(--pdf-size);
@@ -7327,6 +7328,11 @@ body:not(.left-aligned-embeds) div.oz-image-widget > embed,
 body:not(.left-aligned-embeds) div.oz-image-widget > img {
 	margin-right: auto;
 	margin-left: auto;
+}
+
+/* approximation since "auto" doesn't work here */
+body:not(.left-aligned-embeds) .oz-pdf-widget-cm6 embed {
+	margin-left: calc((100vh - var(--pdf-size)) / 4);
 }
 
 body div.oz-image-widget > img:active {

@@ -1,3 +1,4 @@
+- 2022-01-05	support for pdfs embedded with ozan's image in editor plugin
 - 2022-01-04	fix size of code in kanban cards
 - 2022-01-04	fix task checkbox size in kanbans
 - 2022-01-04	update readme
