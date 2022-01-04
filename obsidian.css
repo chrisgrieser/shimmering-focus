@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 1.556
+Version 1.557
 https://github.com/chrisgrieser/shimmering-focus/
 MIT License
 ─────────────────────────────────────────────────── */
@@ -6768,11 +6768,13 @@ body .kanban-plugin p {
 	font-size: 0.85em;
 }
 
-.kanban-plugin code {
+.kanban-plugin.kanban-plugin code {
 	font-size: calc(var(--monospace-font-size) * 0.95);
+	padding-right: 0;
+	padding-left: 0;
 }
 
-.kanban-plugin li code {
+.kanban-plugin.kanban-plugin li code {
 	font-size: calc(var(--monospace-font-size) * 0.95 * 0.85);
 }
 

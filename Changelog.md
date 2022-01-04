@@ -1,3 +1,4 @@
+- 2022-01-04	fix size of code in kanban cards
 - 2022-01-04	fix task checkbox size in kanbans
 - 2022-01-04	update readme
 - 2022-01-04	new style setting option to disable animations theme-wide
