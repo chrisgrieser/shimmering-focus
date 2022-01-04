@@ -16,9 +16,10 @@ A minimalistic [Obsidian](https://obsidian.md/) theme focused on readability and
 	- [Max View & Focus View](#max-view--focus-view)
 	- [Image-related Features](#image-related-features)
 	- [Multi-Color-Highlighting & Spoiler Syntax](#multi-color-highlighting--spoiler-syntax)
+	- [Fine-tuned Spellcheck \(deprecated\)](#fine-tuned-spellcheck-deprecated)
 	- [CSS Classes](#css-classes)
 	- [Focus Line Highlight](#focus-line-highlight)
-	- [Academic Work](#academic-work)
+	- [Academic Work Features](#academic-work-features)
 	- [Further Features](#further-features)
 - [Design Principles](#design-principles)
 	- [Extreme Minimalism](#extreme-minimalism)
@@ -221,6 +222,8 @@ In my day job, I am a researcher in Sociology who also codes some small utilitie
 
 - [Discord](https://discord.gg/veuWUTm): `@pseudometa#9546`
 - Twitter: [@pseudo_meta](https://twitter.com/pseudo_meta)
+
+Please report theme-related requests by creating a [GitHub issues](https://github.com/chrisgrieser/shimmering-focus/issues) — it is easier to keep track of them there. 
 
 ### Donations
 Donations are welcome via [PayPal](https://www.paypal.com/paypalme/ChrisGrieser) or [Ko-Fi](https://ko-fi.com/pseudometa). 🙏
