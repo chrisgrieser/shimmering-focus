@@ -1,3 +1,5 @@
+- 2022-01-04	fix task checkbox size in kanbans
+- 2022-01-04	update readme
 - 2022-01-04	new style setting option to disable animations theme-wide
 - 2022-01-04	differrentiate inactive panes (#79)
 - 2022-01-04	fix kanban header when shown permanently

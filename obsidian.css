@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 1.555
+Version 1.556
 https://github.com/chrisgrieser/shimmering-focus/
 MIT License
 ─────────────────────────────────────────────────── */
@@ -594,8 +594,6 @@ only sidebars and everything scrolling */
 		format("TrueType");
 }
 
-/*  ⬇️ new woff2 converted fonts */
-
 @font-face {
 	font-family: "Oxanium S";
 	font-weight: 400;
@@ -906,8 +904,11 @@ svg.reset > path { display: none }
 
 svg.reset {
 	background-color: currentColor;
-	margin-top: 2px;
 	-webkit-mask-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' preserveAspectRatio='xMidYMid meet' viewBox='0 0 32 32'%3e%3cpath d='M27 28a1 1 0 0 1-.5-.13l-19-11a1 1 0 0 1 0-1.74l19-11a1 1 0 0 1 1 0A1 1 0 0 1 28 5v22a1 1 0 0 1-1 1zM10 16l16 9.27V6.73z' fill='currentColor'/%3e%3cpath d='M2 4h2v24H2z' fill='currentColor'/%3e%3c/svg%3e");
+}
+
+.setting-restore-hotkey-button svg.reset {
+	margin-top: 2px;
 }
 
 /* edit mode */
@@ -6916,26 +6917,14 @@ body .kanban-plugin .kanban-plugin__markdown-preview-view hr {
 }
 
 /* checkboxes & angular shapes setting */
-body:not(.angular-shapes) .kanban-plugin input[type="checkbox"] {
+.kanban-plugin input[type="checkbox"] {
 	height: 0.85em;
 	width: 0.85em;
-	margin-top: 0;
-	margin-right: 5px;
-	margin-left: 0;
+	margin-top: 0 !important;
 }
 
 .kanban-plugin ul > li.task-list-item {
 	padding-left: 0;
-}
-
-body.angular-shapes .kanban-plugin input[type="checkbox"] {
-	height: 1em;
-	width: 1em;
-	margin-top: 0;
-}
-
-.kanban-plugin input[type="checkbox"] {
-	margin-left: 0;
 }
 
 /* ───────────────────────────────────────────────────
