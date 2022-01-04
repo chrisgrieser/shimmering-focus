@@ -1,3 +1,4 @@
+- 2022-01-04	fix various issues with icon alignments (especially mobile)
 - 2022-01-04	fix notifications placement and header bar on mobile (making the theme work properly on mobile is on the to do list)
 - 2022-01-04	fix #80
 - 2022-01-03	update issue template
