@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 1.553
+Version 1.554
 https://github.com/chrisgrieser/shimmering-focus/
 MIT License
 ─────────────────────────────────────────────────── */
@@ -515,15 +515,11 @@ only sidebars and everything scrolling */
 	--image-size: 50;
 	--pdf-size: 50vh;
 	--popover-size: 350;
-	/* --inactive-pane-opacity: 80%; */
+	--inactive-pane-opacity: 75%;
 	--tooltip-arrow-length: 10px;
 
 	--signature: "⟡";
 	--empty-state-symbol-size: 8rem;
-
-	--quick-transition: 200ms ease-in-out;
-	--medium-transition: 350ms ease-in-out;
-	--slow-transition: 600ms ease-in-out;
 }
 
 /* stylelint-enable no-duplicate-selectors */
@@ -1082,7 +1078,7 @@ svg.longform {
 }
 
 /* ───────────────────────────────────────────────────
-< Shapes
+< Global Settings
 ─────────────────────────────────────────────────── */
 
 /* ───────────────────────────────────────────────────
@@ -1100,7 +1096,21 @@ body.angular-shapes {
 }
 
 /* ───────────────────────────────────────────────────
-<< Cursor
+<< Angular or Round Shapes
+─────────────────────────────────────────────────── */
+
+body:not(.angular-shapes) {
+	--roundish: 7px;
+	--round: 50px;
+}
+
+body.angular-shapes {
+	--roundish: 0;
+	--round: 0;
+}
+
+/* ───────────────────────────────────────────────────
+< Cursor
 ─────────────────────────────────────────────────── */
 
 .cm-cursorLayer .cm-cursor,
@@ -6814,7 +6824,7 @@ body .kanban-plugin__lane-wrapper {
 }
 
 body .kanban-plugin__lane-header-wrapper {
-	padding: 7px 5px 4px;
+	padding: 5px 4px 3px;
 	border: none;
 }
 

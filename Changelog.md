@@ -1,3 +1,4 @@
+- 2022-01-04	differrentiate inactive panes (#79)
 - 2022-01-04	fix kanban header when shown permanently
 - 2022-01-04	fix various issues with icon alignments (especially mobile)
 - 2022-01-04	fix notifications placement and header bar on mobile (making the theme work properly on mobile is on the to do list)
