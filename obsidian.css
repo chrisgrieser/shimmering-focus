@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 1.554
+Version 1.555
 https://github.com/chrisgrieser/shimmering-focus/
 MIT License
 ─────────────────────────────────────────────────── */
@@ -1096,17 +1096,19 @@ body.angular-shapes {
 }
 
 /* ───────────────────────────────────────────────────
-<< Angular or Round Shapes
+<< Animations
 ─────────────────────────────────────────────────── */
 
-body:not(.angular-shapes) {
-	--roundish: 7px;
-	--round: 50px;
+body:not(.no-animations) {
+	--quick-transition: 200ms ease-in-out;
+	--medium-transition: 350ms ease-in-out;
+	--slow-transition: 600ms ease-in-out;
 }
 
-body.angular-shapes {
-	--roundish: 0;
-	--round: 0;
+body.no-animations {
+	--quick-transition: 0;
+	--medium-transition: 0;
+	--slow-transition: 0;
 }
 
 /* ───────────────────────────────────────────────────
@@ -8635,7 +8637,7 @@ settings:
 	-
 	 id: aesthetics
 	 title: Aesthetics
-	 description: Brightness, Color, Shapes, Cursor, & Decoration
+	 description: Brightness, Color, Shapes, Cursor, Decoration, Animations
 	 type: heading
 	 level: 2
 	 collapsed: true
@@ -8745,9 +8747,13 @@ settings:
 	 type: class-toggle
 	 default: false
 	-
+	 id: no-animations
+	 title: Turn off all animations
+	 type: class-toggle
+	 default: false
+	-
 	 id: hide-signature
 	 title: 'Status Bar: Hide the "✧" icon'
-	 description: Hide the decorative icon in the status bar.
 	 hub: ignore
 	 type: class-toggle
 	 default: false

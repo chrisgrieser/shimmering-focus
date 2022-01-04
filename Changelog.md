@@ -1,3 +1,4 @@
+- 2022-01-04	new style setting option to disable animations theme-wide
 - 2022-01-04	differrentiate inactive panes (#79)
 - 2022-01-04	fix kanban header when shown permanently
 - 2022-01-04	fix various issues with icon alignments (especially mobile)
