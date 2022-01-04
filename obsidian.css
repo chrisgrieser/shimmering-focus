@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 1.550
+Version 1.551
 https://github.com/chrisgrieser/shimmering-focus/
 MIT License
 ─────────────────────────────────────────────────── */
@@ -1465,7 +1465,7 @@ body .app-container .workspace-ribbon.is-collapsed {
 << Notices (Notifications)
 ─────────────────────────────────────────────────── */
 
-body:not(.show-titlebar) > div.notice-container {
+body:not(.show-titlebar):not(.is-mobile) > div.notice-container {
 	top: 0;
 }
 
@@ -1493,7 +1493,7 @@ body > div.notice-container .notice:hover {
 ─────────────────────────────────────────────────── */
 
 /* harmonize sizes for when titlebar is shown */
-.view-header-title {
+body .view-header-title {
 	font-family: var(--ui-font-family);
 	font-size: 0.9em;
 	font-weight: 500;
@@ -1515,7 +1515,7 @@ body:not(.is-mobile) .view-actions {
 
 /* show only on hover, when writing in the header bar,
 or when enabled by the style settings plugin */
-body:not(.show-header-bar) .app-container .workspace-split.mod-root > .workspace-leaf .view-header {
+body:not(.show-header-bar):not(.is-mobile) .app-container .workspace-split.mod-root > .workspace-leaf .view-header {
 	height: 0.9em;
 
 	background-color: var(--bg1);
@@ -1531,17 +1531,17 @@ body:not(.show-header-bar) .app-container .workspace-split.mod-root > .workspace
 	display: none;
 }
 
-body:not(.show-header-bar) .view-header-title,
-body:not(.show-header-bar) .view-header-icon,
-body:not(.show-header-bar) .view-action svg {
+body:not(.show-header-bar):not(.is-mobile) .view-header-title,
+body:not(.show-header-bar):not(.is-mobile) .view-header-icon,
+body:not(.show-header-bar):not(.is-mobile) .view-action svg {
 	color: var(--extra-contrast);
 	opacity: 0;
 	transition: var(--medium-transition);
 }
 
 /* shown header */
-body:not(.show-header-bar) .workspace-split.mod-root .workspace-leaf .view-header:hover,
-body:not(.show-header-bar) .workspace-split.mod-root .workspace-leaf .view-header:focus-within,
+body:not(.show-header-bar):not(.is-mobile) .workspace-split.mod-root .workspace-leaf .view-header:hover,
+body:not(.show-header-bar):not(.is-mobile) .workspace-split.mod-root .workspace-leaf .view-header:focus-within,
 body.show-header-bar .workspace-split.mod-root .workspace-leaf .workspace-leaf-content .view-header {
 	height: 1.9em;
 	background-color: var(--header-bg);
@@ -5555,11 +5555,16 @@ body:not(.no-fn-indicator) .mod-cm6 .cm-hmd-barelink:not(.cm-formatting-link) + 
 < Mobile
 ─────────────────────────────────────────────────── */
 
-/* slightly thinner on mobile */
+/* thinner header */
 .is-mobile .view-header {
 	height: 2.4em;
 }
 
+.is-mobile .view-header .view-header-title {
+	line-height: 2.05em;
+}
+
+/* Typography */
 .is-mobile .markdown-preview-view,
 .is-mobile .cm-s-obsidian div.cm-line {
 	font-size: var(--mobile-font-size);
@@ -5570,6 +5575,7 @@ body.is-mobile .markdown-preview-view blockquote {
 	text-align: start;
 }
 
+/* mobile settings */
 .mobile-option-setting-item > span:hover > svg {
 	color: var(--editor-alt-accent) !important;
 	background-color: var(--bg2);
