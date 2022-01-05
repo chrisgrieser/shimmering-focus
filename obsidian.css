@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 1.559
+Version 1.560
 https://github.com/chrisgrieser/shimmering-focus/
 MIT License
 ─────────────────────────────────────────────────── */
@@ -1528,6 +1528,11 @@ body:not(.show-statusbar):not(.default-statusbar) .status-bar:hover {
 /* so stuff on the bottom of the right sidebar can still be clicked */
 body:not(.default-statusbar) .mod-right-split .workspace-tabs:last-child .workspace-leaf-content {
 	padding-bottom: 2em;
+}
+
+/* fix for plugins adding empty elements to the statusbar */
+.status-bar-item:empty {
+	display: none;
 }
 
 /* ───────────────────────────────────────────────────
@@ -7593,11 +7598,6 @@ button.MS-OpenSnippet:hover svg.ms-snippet path {
 << Breadcrumbs
 ─────────────────────────────────────────────────── */
 
-/* fix as long as there is no status bar content */
-.status-bar-item.plugin-breadcrumbs {
-	display: none;
-}
-
 /* matrix */
 .BC-Matrix-square li::MARKER {
 	color: var(--text-faint);
@@ -8447,14 +8447,6 @@ body .excalidraw .HelpDialog--header {
 a.zoom-plugin-title:hover {
 	color: var(--alt-accent);
 	opacity: 0.8 !important;
-}
-
-/* ───────────────────────────────────────────────────
-<< Cursor Location
-─────────────────────────────────────────────────── */
-
-.plugin-obsidian-cursor-location-plugin:empty {
-	display: none;
 }
 
 /* ───────────────────────────────────────────────────

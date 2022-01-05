@@ -1,3 +1,4 @@
+- 2022-01-05	fix statusbar for plugins adding empty stuff to the stautsbar
 - 2022-01-05	do not reduce image size in kanbans
 - 2022-01-05	better issue templates
 - 2022-01-05	support for pdfs embedded with ozan's image in editor plugin
