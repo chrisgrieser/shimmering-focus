@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 1.565
+Version 1.566
 https://github.com/chrisgrieser/shimmering-focus/
 MIT License
 ─────────────────────────────────────────────────── */
@@ -4190,36 +4190,20 @@ body .cm-s-obsidian .cm-header,
 }
 
 /* headings in live preview with prefix */
-.is-live-preview .HyperMD-header::BEFORE {
+.is-live-preview .cm-header::BEFORE {
 	font-family: var(--font-monospace);
-	font-size: 0.7em;
+	font-size: 0.7rem;
+	font-style: normal;
 	color: var(--text-muted);
 	padding-right: 6px;
 }
 
-.is-live-preview .HyperMD-header-1::BEFORE {
-	content: "H1";
-}
-
-.is-live-preview .HyperMD-header-2::BEFORE {
-	content: "H2";
-}
-
-.is-live-preview .HyperMD-header-3::BEFORE {
-	content: "H3";
-}
-
-.is-live-preview .HyperMD-header-4::BEFORE {
-	content: "H4";
-}
-
-.is-live-preview .HyperMD-header-5::BEFORE {
-	content: "H5";
-}
-
-.is-live-preview .HyperMD-header-6::BEFORE {
-	content: "H6";
-}
+.is-live-preview .cm-line:not(.cm-active) .cm-header-1::BEFORE { content: "H1"; }
+.is-live-preview .cm-line:not(.cm-active) .cm-header-2::BEFORE { content: "H2"; }
+.is-live-preview .cm-line:not(.cm-active) .cm-header-3::BEFORE { content: "H3"; }
+.is-live-preview .cm-line:not(.cm-active) .cm-header-4::BEFORE { content: "H4"; }
+.is-live-preview .cm-line:not(.cm-active) .cm-header-5::BEFORE { content: "H5"; }
+.is-live-preview .cm-line:not(.cm-active) .cm-header-6::BEFORE { content: "H6"; }
 
 /* Alternation between italic & different font style
 for all headings to improve distinctiveness */
@@ -8094,6 +8078,8 @@ body a.style-settings-export {
 /* https://github.com/joethei/obsidian-link-favicon#for-designers */
 
 /* no external link icons if there is a favicon */
+/* first selector live preview, second reading mode */
+.link-favicon ~ .external-link,
 .external-link[data-favicon="true"] {
 	background-image: none;
 	padding-right: 0;

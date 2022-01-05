@@ -1,3 +1,4 @@
+- 2022-01-05	fixheading level indicators in live preview for new release
 - 2022-01-05	removed cursor annotion, too annoying :P
 - 2022-01-05	subtle cursor animation (thanks @NothingIsLost)
 - 2022-01-05	reduced size of collapse indicators bc of issue with users on insider release
