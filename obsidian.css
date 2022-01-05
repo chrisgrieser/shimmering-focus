@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 1.564
+Version 1.565
 https://github.com/chrisgrieser/shimmering-focus/
 MIT License
 ─────────────────────────────────────────────────── */
@@ -1142,11 +1142,6 @@ body.block-cursor .CodeMirror-cursor {
 /* multi cursor */
 body:not(.mono-color-cursor) .cm-cursor.cm-cursor-secondary {
 	border-image: linear-gradient(hsl(220 100% 80%), hsl(40 100% 80%)) 1;
-}
-
-/* tiny transition */
-body:not(.no-animations) .cm-cursor {
-	transition: all 50ms;
 }
 
 /* phase blink */
