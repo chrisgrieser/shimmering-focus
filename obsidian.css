@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 1.566
+Version 1.567
 https://github.com/chrisgrieser/shimmering-focus/
 MIT License
 ─────────────────────────────────────────────────── */
@@ -718,6 +718,9 @@ only sidebars and everything scrolling */
 	--h4-size: 1.3em;
 	--h5-size: 1.15em;
 	--h6-size: 1.05em;
+
+	/* needed for some edge cases */
+	--original-font: "Inter", -apple-system, blinkmacsystemfont, "Segoe UI", roboto, helvetica, arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Microsoft YaHei Light", sans-serif; /* stylelint-disable-line max-line-length */
 }
 
 .less-heading-letter-spacing {
@@ -2986,7 +2989,7 @@ body .workspace-leaf-resize-handle:active {
 .flair.mod-pop::BEFORE {
 	content: "✓";
 
-	font-family: "Inter";
+	font-family: var(--original-font);
 	font-size: 0.65rem;
 	line-height: 0.8em;
 
@@ -3559,6 +3562,7 @@ body:not(.no-active-highlight):not(.focused-highlight) .CodeMirror-activeline .C
 }
 
 /* active highlighting of markup */
+body:not(.no-active-highlight) .cm-active.cm-gutterElement,
 body:not(.no-active-highlight) .cm-active .cm-formatting-header,
 body:not(.no-active-highlight) .cm-active .cm-formatting-quote,
 body:not(.no-active-highlight) .cm-active .cm-formatting-list,
@@ -3748,8 +3752,16 @@ body .frontmatter-container .frontmatter-container-header {
 }
 
 /* ───────────────────────────────────────────────────
-<< Gutter & Collapse Indicators
+<< Collapse Indicators & Gutter
 ─────────────────────────────────────────────────── */
+
+/* fixes some fonts like iA Writer making the non-breaking space too big */
+/* can be removed with from 0.13.20 on */
+.mod-cm6 .collapse-indicator {
+	font-family: var(--original-font);
+	font-size: 1.1rem;
+}
+
 /* collapse indicator size increase fixed due to insider release */
 /* Preview Mode */
 .heading-collapse-indicator .right-triangle,
@@ -3758,11 +3770,9 @@ body .frontmatter-container .frontmatter-container-header {
 }
 
 .heading-collapse-indicator.collapse-indicator {
-	padding-right: 4px;
 }
 
 .list-collapse-indicator.collapse-indicator {
-	padding-left: 0;
 }
 
 .frontmatter-collapse-indicator .right-triangle {
@@ -3783,7 +3793,6 @@ body .frontmatter-container .frontmatter-container-header {
 }
 
 /* fix for gutter color @SlRvb */
-.markdown-source-view.mod-cm6 .cm-gutters,
 .CodeMirror-foldgutter {
 	background-color: transparent !important;
 }
@@ -3964,7 +3973,7 @@ body:not(.left-aligned-embeds) div.mermaid {
 /* bugfix for mermaid font */
 .mermaid {
 	font-size: 0.9em;
-	--mermaid-font: "Inter", -apple-system, "BlinkMacSystemFont", "Segoe UI", "Roboto", "Helvetica", "Arial", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Microsoft YaHei Light", sans-serif; /* stylelint-disable-line max-line-length */
+	--mermaid-font: var(--original-font);
 }
 
 /* ───────────────────────────────────────────────────
@@ -4711,17 +4720,7 @@ body:not(.no-ul-relationship-lines) .markdown-preview-view > div > div > ul {
 /* https://github.com/vslinko/obsidian-outliner/blob/main/styles.css */
 
 /* Edit Mode */
-body:not(.no-ul-relationship-lines) .cm-s-obsidian .HyperMD-list-line {
-	padding-top: 0.2em;
-	overflow: hidden;
-}
-
-body:not(.no-ul-relationship-lines) .cm-hmd-list-indent {
-	position: relative;
-}
-
-body { /* stylelint-disable-line no-duplicate-selectors */
-	/* default size for iA Writer Quattro */
+body {
 	--indention-size: 3.05ch;
 	--relationship-line-color: var(--text-faint);
 }
@@ -4732,6 +4731,15 @@ body { /* stylelint-disable-line no-duplicate-selectors */
 
 .relationship-line-fix-proportional {
 	--indention-size: 1.8ch;
+}
+
+body:not(.no-ul-relationship-lines) .cm-s-obsidian .HyperMD-list-line {
+	padding-top: 0.2em;
+	overflow-y: clip;
+}
+
+body:not(.no-ul-relationship-lines) .cm-hmd-list-indent {
+	position: relative;
 }
 
 body:not(.no-ul-relationship-lines) .cm-line .cm-hmd-list-indent::BEFORE,
