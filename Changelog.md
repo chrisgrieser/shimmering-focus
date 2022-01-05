@@ -1,3 +1,5 @@
+- 2022-01-05	do not reduce image size in kanbans
+- 2022-01-05	better issue templates
 - 2022-01-05	support for pdfs embedded with ozan's image in editor plugin
 - 2022-01-04	fix size of code in kanban cards
 - 2022-01-04	fix task checkbox size in kanbans

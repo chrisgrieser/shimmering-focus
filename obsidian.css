@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 1.558
+Version 1.559
 https://github.com/chrisgrieser/shimmering-focus/
 MIT License
 ─────────────────────────────────────────────────── */
@@ -4064,7 +4064,7 @@ body:not(.no-alternating-rows) .spellchecker-dictionary-item {
 }
 
 body:not(.is-mobile) .view-content .is-live-preview img,
-body:not(.is-mobile) .view-content .markdown-preview-view img,
+body:not(.is-mobile) .view-content > *:not(.kanban-plugin) .markdown-preview-view img,
 body:not(.is-mobile) .oz-image-widget-cm6 > img:not(:active),
 body:not(.is-mobile) .app-container div.oz-image-widget > img:not(:active) {
 	max-width: calc(var(--image-size) * 1%);
@@ -6741,6 +6741,10 @@ body .workspace-leaf-content[data-type="kanban"] .view-header:hover {
 
 div.kanban-plugin__board > div {
 	padding: 0.3em;
+}
+
+body:not(.show-header-bar) div.kanban-plugin__board > div {
+	padding-top: 0;
 }
 
 .kanban-plugin__board.kanban-plugin__board .kanban-plugin__item-tag,
