@@ -1,3 +1,4 @@
+- 2022-01-05	reduced size of collapse indicators bc of issue with users on insider release
 - 2022-01-05	fix statusbar for plugins adding empty stuff to the stautsbar
 - 2022-01-05	do not reduce image size in kanbans
 - 2022-01-05	better issue templates

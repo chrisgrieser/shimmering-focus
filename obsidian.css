@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 1.560
+Version 1.561
 https://github.com/chrisgrieser/shimmering-focus/
 MIT License
 ─────────────────────────────────────────────────── */
@@ -3727,12 +3727,10 @@ body .frontmatter-container .frontmatter-container-header {
 /* ───────────────────────────────────────────────────
 << Gutter & Collapse Indicators
 ─────────────────────────────────────────────────── */
-
+/* collapse indicator size increase fixed due to insider release */
 /* Preview Mode */
 .heading-collapse-indicator .right-triangle,
 .list-collapse-indicator .right-triangle {
-	height: 0.8rem;
-	width: 0.8rem;
 	color: var(--text-muted);
 }
 
@@ -3745,14 +3743,10 @@ body .frontmatter-container .frontmatter-container-header {
 }
 
 .frontmatter-collapse-indicator .right-triangle {
-	height: 0.6rem;
-	width: 0.6rem;
 }
 
 /* edit mode */
 .cm-s-obsidian.mod-cm6 .collapse-indicator .right-triangle {
-	height: 1em;
-	width: 1em;
 }
 
 /* hover / collapse colors, applies to edit & preview */
