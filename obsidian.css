@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 1.563
+Version 1.564
 https://github.com/chrisgrieser/shimmering-focus/
 MIT License
 ─────────────────────────────────────────────────── */
@@ -1146,7 +1146,7 @@ body:not(.mono-color-cursor) .cm-cursor.cm-cursor-secondary {
 
 /* tiny transition */
 body:not(.no-animations) .cm-cursor {
-	transition: all 100ms;
+	transition: all 50ms;
 }
 
 /* phase blink */
