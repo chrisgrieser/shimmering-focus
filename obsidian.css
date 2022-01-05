@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 1.561
+Version 1.562
 https://github.com/chrisgrieser/shimmering-focus/
 MIT License
 ─────────────────────────────────────────────────── */
@@ -21,15 +21,16 @@ the .create-ToC.sh.
 	- Borders
 - Other Variables
 - Fonts
-	- Base64-encoded Fonts
-	- Font Definitions
-	- Bold
+ 	- Base64-encoded Fonts
+ 	- Font Definitions
+ 	- Bold
 - Icons
-- Base Icons
+	- Base Icons
 	- Plugin Icons
-- Shapes
+- Global Settings
 	- Angular or Round Shapes
-	- Cursor
+	- Animations
+- Cursor
 - UI Elements
 	- Title Bar
 	- Ribbons
@@ -47,6 +48,7 @@ the .create-ToC.sh.
 	- Dropdown
 	- Slider
 	- Search & Replace (cmd + F)
+	- Search matches
 	- Context Menus
 	- Close Buttons
 - Prompts
@@ -61,10 +63,10 @@ the .create-ToC.sh.
 	- Modals in general
 	- Confirmation Modal
 	- Settings Menu
-		- Login Menu
-		- Community plugin list
-		- Core plugin
-		- Hotkey search
+ 		- Login Menu
+ 		- Community plugin list
+ 		- Core plugin
+ 		- Hotkey search
 	- Plugin Browser
 		- Plugin Search Results (left side)
 		- Plugin Info / Readme (right side)
@@ -76,24 +78,24 @@ the .create-ToC.sh.
 	- Trailing Whitespace
 	- Empty State
 	- Editor Properties
+	- Active Line Highlight
 	- Embeds
 		- Embedded Notes
 		- Embedded Search Queries
 	- YAML Header
-		- YAML Frontmatter
-		- Metadata Block
+ 		- YAML Frontmatter
+ 		- Metadata Block
 	- Gutter & Collapse Indicators
 	- Progress bars (<progress>)
 	- Images
 	- Mermaid
 	- PDFs
-	- Search Matches
 	- Spellcheck
 	- Max View
-		- Line Length & Tables
-		- Images
-		- PDFs
-		- Mermaid
+ 		- Line Length & Tables
+ 		- Images
+ 		- PDFs
+ 		- Mermaid
 - Markup
 	- Headings
 	- Blockquotes
@@ -105,22 +107,22 @@ the .create-ToC.sh.
 	- Bullet List
 	- Bullet Point Relationship Lines
 	- Links
-		- fold external URLs (CM6 Source Mode)
+ 		- fold external URLs (CM6 Source Mode)
 	- Tags
 		- Annotation Tags
 	- Comments & HTML Tags
 	- Tasks
 	- Checkboxes
-		- Custom Checkboxes by SlRvb Compatibility
+ 		- Custom Checkboxes by SlRvb Compatibility
 	- Highlights & Selection
-		- Active Line Highlight
-		- Highlights
-		- Selection (Selected Text)
+ 		- Highlights
+ 		- Selection (Selected Text)
 	- Multi-Color Highlighting
 	- Pseudo-Spoiler-Tag
 	- Strikethroughs
 	- Pandoc Citations
 	- Footnotes
+ 		- Footnote Indicator in Gutter
 	- Horizontal line (hr)
 - CSS Classes
 - Mobile
@@ -130,29 +132,31 @@ the .create-ToC.sh.
 		- Relationship Lines
 		- Folder Icons & Note Icons
 	- Panes
-		- Panes in general
+ 		- Panes in general
 		- Outline
 		- Backlinks & Outgoing
 		- Search Pane
+ 		- Search suggestion container
 		- Tag Pane
 		- Starred
 	- Popover (Page Preview)
 	- File Recovery
 	- Graph View
 - Community Plugins
+	- Discord Rich Presence
 	- Dictionary
 	- Git Plugin
 	- Calendar
 	- Templater
 	- Kanban
-		- Board
-		- Font
-		- Lanes
+ 		- Board
+ 		- Font
+ 		- Lanes
 	- Longform
-		- Longform Sidebar
-		- Longform Scene List Counting
-		- Longform Icons
-		- Longform Editor
+ 		- Longform Sidebar
+ 		- Longform Scene List
+ 		- Longform Icons
+ 		- Longform Editor
 	- Ozan's Image in Editor
 	- Recent Files
 	- Quick Explorer
@@ -174,8 +178,8 @@ the .create-ToC.sh.
 	- Hotkey Helper
 	- Excalidraw
 	- Zoom
-	- Cursor Location
 	- Advanced Tables
+	- Highlight Current Word
 	- Show Current File Path
 - Compatibility Info for the Obsidian Hub
 - Style Setting Options
@@ -816,7 +820,7 @@ svg {
 }
 
 /* ───────────────────────────────────────────────────
-< Base Icons
+<< Base Icons
 ─────────────────────────────────────────────────── */
 
 /* "span" targets LP, "a" normal preview */
@@ -1140,13 +1144,35 @@ body:not(.mono-color-cursor) .cm-cursor.cm-cursor-secondary {
 	border-image: linear-gradient(hsl(220 100% 80%), hsl(40 100% 80%)) 1;
 }
 
-/* soft blink */
+/* tiny transition */
+body:not(.no-animations) .cm-cursor {
+	transition: all 0.1s;
+}
+
+/* phase blink, thanks @mdmeyers */
 /* https://github.com/mgmeyers/obsidian-california-coast-theme/blob/main/src/enhancements/editor.scss#L15-L19 */
 /* https://github.com/mgmeyers/obsidian-california-coast-theme/blob/main/src/enhancements/editor.scss#L221-L261 */
-/* .mod-cm6.cm-s-obsidian .cm-cursorLayer {
+.mod-cm6.cm-s-obsidian .cm-cursorLayer {
 	animation-timing-function: ease-out;
 }
- */
+
+@keyframes cm-blink {
+  0% { opacity: 1; }
+  10% { opacity: 1; }
+  40% { opacity: 1; }
+  50% { opacity: 0; }
+  90% { opacity: 0; }
+  100% { opacity: 1; }
+}
+
+@keyframes cm-blink2 {
+  0% { opacity: 1; }
+  10% { opacity: 1; }
+  40% { opacity: 1; }
+  50% { opacity: 0; }
+  90% { opacity: 0; }
+  100% { opacity: 1; }
+}
 
 /* ───────────────────────────────────────────────────
 < UI Elements
