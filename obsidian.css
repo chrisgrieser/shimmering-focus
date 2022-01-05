@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 1.562
+Version 1.563
 https://github.com/chrisgrieser/shimmering-focus/
 MIT License
 ─────────────────────────────────────────────────── */
@@ -1146,13 +1146,14 @@ body:not(.mono-color-cursor) .cm-cursor.cm-cursor-secondary {
 
 /* tiny transition */
 body:not(.no-animations) .cm-cursor {
-	transition: all 0.1s;
+	transition: all 100ms;
 }
 
-/* phase blink, thanks @mdmeyers */
+/* phase blink */
+/* does not work well with focused highlight  */
 /* https://github.com/mgmeyers/obsidian-california-coast-theme/blob/main/src/enhancements/editor.scss#L15-L19 */
 /* https://github.com/mgmeyers/obsidian-california-coast-theme/blob/main/src/enhancements/editor.scss#L221-L261 */
-.mod-cm6.cm-s-obsidian .cm-cursorLayer {
+/* .mod-cm6.cm-s-obsidian .cm-cursorLayer .cm-cursor{
 	animation-timing-function: ease-out;
 }
 
@@ -1173,6 +1174,7 @@ body:not(.no-animations) .cm-cursor {
   90% { opacity: 0; }
   100% { opacity: 1; }
 }
+*/
 
 /* ───────────────────────────────────────────────────
 < UI Elements

@@ -1,3 +1,4 @@
+- 2022-01-05	minor
 - 2022-01-05	subtle cursor animation (thanks @NothingIsLost)
 - 2022-01-05	reduced size of collapse indicators bc of issue with users on insider release
 - 2022-01-05	fix statusbar for plugins adding empty stuff to the stautsbar
