@@ -19,18 +19,22 @@ Steps to reproduce the behavior, e.g.
 2. Click on '....'
 3. Scroll down to '....'
 
-**In which mode / editor does the bug occur?**
-- [ ] Legacy Editor
-- [ ] New Editor
+**In which mode does the bug occur?**
 - [ ] Reading/Preview Mode
 - [ ] Source Mode
 - [ ] Live Preview
 
-**Version**
-- [ ] I am on the latest __Insider__ release
-- [ ] I am on the latest __public__ release
+**Which editor are you using?**
+- [ ] Legacy Editor
+- [ ] New Editor
+
+**Which version of Obsidian are you using?**
+- [ ] Public Release (Desktop)
+- [ ] Public Release (Mobile)
+- [ ] Insider Release (Desktop)
+- [ ] Insider Release (Mobile)
 
 **Checklist**
 - [ ] I have updated to the latest version of the theme (`Obsidian Settings → Appearance → Themes - Manage → Update`).
-- [ ] I checked that the issue does not occur when using the default theme.
+- [ ] I made sure that the issue is related to this theme, by checking that the issue does not occur with other themes or the default theme.
 - [ ] In case I am missing an UI element, I have checked that it cannot be re-enabled with the [Style Settings plugin](https://github.com/mgmeyers/obsidian-style-settings).
