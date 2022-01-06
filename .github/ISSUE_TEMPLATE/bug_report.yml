@@ -70,8 +70,9 @@ body:
   - type: checkboxes
     id: plugin-specific
     attributes:
-      label: |
-        For issues regarding one of the plugins:
+      label: Plugin-Specific Problems
+      description: |
+        For issues regarding one of these plugin:
         - Longform
         - Kanban
         - Sliding Panes
@@ -82,7 +83,6 @@ body:
         - Starred (Core Plugin)
       options:
         - label: I took note of the [specific instructions regarding those plugin](https://github.com/chrisgrieser/shimmering-focus#instructions-for-specific-plugins).
-          required: true
   - type: checkboxes
     id: checklist
     attributes:
