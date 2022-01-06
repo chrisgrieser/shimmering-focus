@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 1.570
+Version 1.571
 https://github.com/chrisgrieser/shimmering-focus/
 MIT License
 ─────────────────────────────────────────────────── */
@@ -3763,6 +3763,7 @@ body .frontmatter-container .frontmatter-container-header {
 }
 
 /* hide collapse indicators until hovered/active line */
+body:not(.permanently-show-collapse-indicators) li:not(:hover) .collapse-indicator,
 body:not(.permanently-show-collapse-indicators) h1:not(:hover) .collapse-indicator,
 body:not(.permanently-show-collapse-indicators) h2:not(:hover) .collapse-indicator,
 body:not(.permanently-show-collapse-indicators) h3:not(:hover) .collapse-indicator,
@@ -3787,16 +3788,6 @@ body:not(.permanently-show-collapse-indicators) .cm-line:not(:hover):not(.cm-act
 /* hover / collapse colors, applies to edit & preview */
 .collapse-indicator:hover svg {
 	color: var(--alt-accent-lighter);
-	cursor: pointer;
-}
-
-.is-collapsed .collapse-indicator svg {
-	color: var(--accent-lighter);
-}
-
-/* fix for gutter color @SlRvb */
-.CodeMirror-foldgutter {
-	background-color: transparent !important;
 }
 
 /* CM6/CM5: the "..." when content is folded */
@@ -3829,6 +3820,10 @@ body:not(.show-fold-marker) .CodeMirror-foldmarker {
 .CodeMirror-linenumbers {
 	padding-top: 2px;
 	padding-right: 2px;
+}
+
+.CodeMirror-foldgutter {
+	background-color: transparent !important;
 }
 
 /* CM5: collapse indicator positioning */
@@ -8603,7 +8598,7 @@ settings:
 	 default: false
 	-
 	 id: show-urls
-	 title: 'Source Mode: Permanently show full URLs (new Editor only)'
+	 title: 'Permanently show full URLs (new Editor Source Mode only)'
 	 type: class-toggle
 	 description: In Source Mode, URLs on non-active lines will are folded (Obsidian 0.13+ only). Enable this to permanently show the full URL.
 	 default: false
@@ -8622,7 +8617,7 @@ settings:
 	-
 	 id: permanently-show-collapse-indicators
 	 title: Permanently show the Collapse Arrows
-	 description: When false, collapse arrows only become visible when hover or in the active line.
+	 description: When false, collapse arrows only become visible when hovered or in the active line.
 	 type: class-toggle
 	 default: false
 	-
