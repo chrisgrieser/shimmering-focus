@@ -1,3 +1,4 @@
+- 2022-01-06	minor visual fixes for backlink pane
 - 2022-01-06	discord statusbar icon grayscale
 - 2022-01-06	fixed info on sliding panes
 - 2022-01-06	added link to plugin-specific isntructions

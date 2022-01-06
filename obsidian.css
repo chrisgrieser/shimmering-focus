@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 1.575
+Version 1.576
 https://github.com/chrisgrieser/shimmering-focus/
 MIT License
 ─────────────────────────────────────────────────── */
@@ -5825,13 +5825,13 @@ body:not(.no-file-explorer-icons) .nav-file-title[data-path*="kanban"] .nav-file
 	background-color: var(--selection-color);
 }
 
+.tree-item-icon.collapse-icon {
+	padding-right: 6px;
+}
+
 .tree-item-icon svg {
 	height: 11px;
 	width: 11px;
-}
-
-.tree-item-icon {
-	padding-right: 3px !important;
 }
 
 .tree-item-icon::AFTER {
@@ -5935,19 +5935,6 @@ body.outline-remove-level-1:not(.no-alternating-rows) .outline .tree-item-childr
 	color: var(--text-normal);
 }
 
-.workspace-tabs .backlink-pane > .tree-item-self {
-	background-color: var(--bg1);
-}
-
-.backlink-pane > .tree-item-self > .tree-item-flair-outer > .tree-item-flair {
-	font-weight: 600;
-}
-
-.workspace-tabs .backlink-pane > .tree-item-self > .tree-item-flair-outer {
-	line-height: 1em;
-	margin-top: 3px;
-}
-
 .backlink-pane .tree-item-inner.is-collapsed {
 	font-weight: 600;
 	color: var(--text-accent) !important;
@@ -5965,10 +5952,6 @@ body.outline-remove-level-1:not(.no-alternating-rows) .outline .tree-item-childr
 .workspace-leaf-content[data-type="backlink"] .search-result-container {
 	padding-left: 0;
 	margin-left: 0;
-}
-
-.workspace-leaf-content[data-type="backlink"] .search-result-container .tree-item-flair {
-	margin-right: 0.07em;
 }
 
 .workspace-leaf-content[data-type="backlink"] .search-result-file-match {
