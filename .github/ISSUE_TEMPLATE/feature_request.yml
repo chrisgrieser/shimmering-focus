@@ -1,7 +1,7 @@
-name: Bug Report
-description: File a bug report
-title: "[Bug]: "
-labels: ["bug"]
+name: Feature request
+about: Suggest an idea for the theme
+title: "Feature Request: "
+labels: ["enhancement"]
 body:
   - type: textarea
     id: bug-description
