@@ -1,3 +1,4 @@
+- 2022-01-06	fixed various more issues for new public release
 - 2022-01-06	fix double bullet points for live preview
 - 2022-01-06	fix relationship lines for new release
 - 2022-01-05	fixheading level indicators in live preview for new release

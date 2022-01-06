@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 1.568
+Version 1.569
 https://github.com/chrisgrieser/shimmering-focus/
 MIT License
 ─────────────────────────────────────────────────── */
@@ -3759,27 +3759,18 @@ body .frontmatter-container .frontmatter-container-header {
 /* can be removed with from 0.13.20 on */
 .mod-cm6 .collapse-indicator {
 	font-family: var(--original-font);
-	font-size: 1.1rem;
+	font-size: 2rem;
 }
 
-/* collapse indicator size increase fixed due to insider release */
-/* Preview Mode */
-.heading-collapse-indicator .right-triangle,
-.list-collapse-indicator .right-triangle {
-	color: var(--text-muted);
-}
-
-.heading-collapse-indicator.collapse-indicator {
-}
-
-.list-collapse-indicator.collapse-indicator {
-}
-
-.frontmatter-collapse-indicator .right-triangle {
-}
-
-/* edit mode */
+.mod-cm6 + .markdown-reading-view .collapse-indicator svg,
 .cm-s-obsidian.mod-cm6 .collapse-indicator .right-triangle {
+	height: 0.65rem;
+	width: 0.65rem;
+}
+
+/* line numbers moved to allow for more space for collapse indicators */
+.cm-gutter.cm-lineNumbers {
+	margin-right: 4px;
 }
 
 /* hover / collapse colors, applies to edit & preview */
@@ -4207,12 +4198,17 @@ body .cm-s-obsidian .cm-header,
 	padding-right: 6px;
 }
 
-.is-live-preview .cm-line:not(.cm-active) .cm-header-1::BEFORE { content: "H1"; }
-.is-live-preview .cm-line:not(.cm-active) .cm-header-2::BEFORE { content: "H2"; }
-.is-live-preview .cm-line:not(.cm-active) .cm-header-3::BEFORE { content: "H3"; }
-.is-live-preview .cm-line:not(.cm-active) .cm-header-4::BEFORE { content: "H4"; }
-.is-live-preview .cm-line:not(.cm-active) .cm-header-5::BEFORE { content: "H5"; }
-.is-live-preview .cm-line:not(.cm-active) .cm-header-6::BEFORE { content: "H6"; }
+/* only first header gets the prefix */
+.cm-header + .cm-header::BEFORE {
+	display: none;
+}
+
+.is-live-preview .cm-header-1::BEFORE { content: "H1"; }
+.is-live-preview .cm-header-2::BEFORE { content: "H2"; }
+.is-live-preview .cm-header-3::BEFORE { content: "H3"; }
+.is-live-preview .cm-header-4::BEFORE { content: "H4"; }
+.is-live-preview .cm-header-5::BEFORE { content: "H5"; }
+.is-live-preview .cm-header-6::BEFORE { content: "H6"; }
 
 /* Alternation between italic & different font style
 for all headings to improve distinctiveness */
@@ -4232,7 +4228,7 @@ body:not(.no-alternating-header-italics) .markdown-preview-view h6 {
 .HyperMD-quote.CodeMirror-line,
 body .markdown-preview-view blockquote,
 .app-container .cm-s-obsidian .cm-line.HyperMD-quote {
-	border-left: 15px solid var(--basic-border-color);
+	border-left: 10px solid var(--basic-border-color);
 }
 
 .markdown-preview-view blockquote,
@@ -4562,7 +4558,7 @@ body .markdown-preview-view pre {
 
 /* border on top created like this, since the
 ::after element cannot be moved on a border */
-/* needs CM6 as condition,since every line in
+/* needs CM6 as condition, since every line in
 CM5 has the "pre" type */
 .mod-cm6 + .markdown-reading-view pre[class*="language-"]::BEFORE {
 	display: block;
@@ -4695,19 +4691,16 @@ pre[class~="language-as"]::AFTER { content: "AppleScript"; }
 ─────────────────────────────────────────────────── */
 
 /* less indention to save space */
-body:not(.no-ul-relationship-lines) .markdown-preview-view > div > div > ol,
-body:not(.no-ul-relationship-lines) .markdown-preview-view > div > div > ul {
-	padding-left: 27px;
+.markdown-preview-view > div > div > ol,
+.markdown-preview-view > div > div > ul {
+	padding-left: 1rem;
 }
 
-/* .markdown-source-view.mod-cm6 .cm-content .list-bullet {
-		color: transparent;
-}
-.markdown-source-view.mod-cm6 .cm-content .list-bullet::before {
+/* .mod-cm6 .cm-content .list-bullet::after {
 		color: var(--text-normal);
 		content: "⦿";
-}
- */
+} */
+
 /* ───────────────────────────────────────────────────
 << Bullet Point Relationship Lines
 ─────────────────────────────────────────────────── */
@@ -4715,7 +4708,7 @@ body:not(.no-ul-relationship-lines) .markdown-preview-view > div > div > ul {
 /* https://github.com/vslinko/obsidian-outliner/blob/main/styles.css */
 
 /* Edit Mode */
-body {
+body { /* stylelint-disable-line no-duplicate-selectors */
 	--indention-size: 3.05ch;
 	--relationship-line-color: var(--text-faint);
 }
