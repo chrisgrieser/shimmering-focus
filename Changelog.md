@@ -1,4 +1,6 @@
-- 2022-01-06	minor
+- 2022-01-06	collapse indicators are shown when hovered
+- 2022-01-06	finished new yaml issue forms
+- 2022-01-06	new bug report form
 - 2022-01-06	✨ collapse arrows hidden till hovered. (+ new Style Setting to disable this)
 - 2022-01-06	fixed various more issues for new public release
 - 2022-01-06	fix double bullet points for live preview
