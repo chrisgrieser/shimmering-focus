@@ -1,16 +1,20 @@
 name: Bug Report
 description: File a bug report
 title: "[Bug]: "
-labels: ["bug", "triage"]
-assignees:
-  - octocat
+labels: ["bug"]
 body:
   - type: textarea
     id: bug-description
     attributes:
       label: Bug Description
       description: A clear and concise description of what the bug is.
-      placeholder: Tell us what you see!
+    validations:
+      required: true
+  - type: textarea
+    id: screenshot
+    attributes:
+      label: Relevant Screenshot
+      description: If applicable, add screenshots or a screen recording to help explain your problem.
     validations:
       required: true
   - type: textarea
@@ -44,17 +48,17 @@ body:
   - type: checkboxes
     id: editor
     attributes:
-      label: "Which editor are you using?"
+      label: Which editor are you using?
       options:
         - label: New Editor
         - label: Legacy Editor
   - type: checkboxes
     id: mode
     attributes:
-      label: "In which mode(s) does the problem occur?"
+      label: In which mode(s) does the problem occur? (if applicable)
       options:
-        - label: Source / Edit
-        - label: Preview / Reading
+        - label: Source (Edit)
+        - label: Reading (Preview)
         - label: Live Preview
   - type: dropdown
     id: operating-system
