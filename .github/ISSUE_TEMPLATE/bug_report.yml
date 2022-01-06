@@ -68,6 +68,22 @@ body:
         - label: iOS
         - label: Android
   - type: checkboxes
+    id: plugin-specific
+    attributes:
+      label: |
+        For issues regarding one of the plugins:
+        - Longform
+        - Kanban
+        - Sliding Panes
+        - Breadcrumbs
+        - Quick Explorer
+        - Dataview
+        - Ozan's Image in Editor
+        - Starred (Core Plugin)
+      options:
+        - label: I took note of the [specific instructions regarding those plugin](https://github.com/chrisgrieser/shimmering-focus#instructions-for-specific-plugins).
+          required: true
+  - type: checkboxes
     id: checklist
     attributes:
       label: Make sure you have done the following
