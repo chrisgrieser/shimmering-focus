@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 1.569
+Version 1.570
 https://github.com/chrisgrieser/shimmering-focus/
 MIT License
 ─────────────────────────────────────────────────── */
@@ -3762,6 +3762,17 @@ body .frontmatter-container .frontmatter-container-header {
 	font-size: 2rem;
 }
 
+/* hide collapse indicators until hovered/active line */
+body:not(.permanently-show-collapse-indicators) h1:not(:hover) .collapse-indicator,
+body:not(.permanently-show-collapse-indicators) h2:not(:hover) .collapse-indicator,
+body:not(.permanently-show-collapse-indicators) h3:not(:hover) .collapse-indicator,
+body:not(.permanently-show-collapse-indicators) h4:not(:hover) .collapse-indicator,
+body:not(.permanently-show-collapse-indicators) h5:not(:hover) .collapse-indicator,
+body:not(.permanently-show-collapse-indicators) h6:not(:hover) .collapse-indicator,
+body:not(.permanently-show-collapse-indicators) .cm-line:not(:hover):not(.cm-active) .collapse-indicator {
+	color: transparent;
+}
+
 .mod-cm6 + .markdown-reading-view .collapse-indicator svg,
 .cm-s-obsidian.mod-cm6 .collapse-indicator .right-triangle {
 	height: 0.65rem;
@@ -4203,12 +4214,12 @@ body .cm-s-obsidian .cm-header,
 	display: none;
 }
 
-.is-live-preview .cm-header-1::BEFORE { content: "H1"; }
-.is-live-preview .cm-header-2::BEFORE { content: "H2"; }
-.is-live-preview .cm-header-3::BEFORE { content: "H3"; }
-.is-live-preview .cm-header-4::BEFORE { content: "H4"; }
-.is-live-preview .cm-header-5::BEFORE { content: "H5"; }
-.is-live-preview .cm-header-6::BEFORE { content: "H6"; }
+.is-live-preview .cm-header-1::BEFORE { content: "H1" }
+.is-live-preview .cm-header-2::BEFORE { content: "H2" }
+.is-live-preview .cm-header-3::BEFORE { content: "H3" }
+.is-live-preview .cm-header-4::BEFORE { content: "H4" }
+.is-live-preview .cm-header-5::BEFORE { content: "H5" }
+.is-live-preview .cm-header-6::BEFORE { content: "H6" }
 
 /* Alternation between italic & different font style
 for all headings to improve distinctiveness */
@@ -8609,16 +8620,22 @@ settings:
 	 description: When false, only the scroll bars in the Editor are shown.
 	 default: false
 	-
+	 id: permanently-show-collapse-indicators
+	 title: Permanently show the Collapse Arrows
+	 description: When false, collapse arrows only become visible when hover or in the active line.
+	 type: class-toggle
+	 default: false
+	-
 	 id: show-fold-marker
 	 title: Re-enable the Fold Markers
-	 type: class-toggle
 	 description: Fold markers are the ellipses ("...") next to a folded/collapsed item.
+	 type: class-toggle
 	 default: false
 	-
 	 id: show-graph-controls
 	 title: Permanently show the Graph Controls
-	 type: class-toggle
 	 description: When false, graph controls are still visible when open, or upon hovering the top-left area.
+	 type: class-toggle
 	 default: false
 	-
 	 id: show-starred-nav-buttons
