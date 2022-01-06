@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 1.576
+Version 1.577
 https://github.com/chrisgrieser/shimmering-focus/
 MIT License
 ─────────────────────────────────────────────────── */
@@ -5486,6 +5486,12 @@ body.is-mobile .markdown-preview-view blockquote {
 
 .mobile-option-setting-item svg {
 	stroke-width: 5px;
+}
+
+/* readability suggestion by @Mara */
+.is-mobile .setting-item-description {
+	white-space: pre-line;
+	word-break: break-word;
 }
 
 /* ───────────────────────────────────────────────────
