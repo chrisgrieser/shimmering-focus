@@ -60,16 +60,13 @@ body:
         - label: Source (Edit)
         - label: Reading (Preview)
         - label: Live Preview
-  - type: dropdown
+  - type: checkboxes
     id: operating-system
     attributes:
-      label: What OS are you using?
-      multiple: true
+      label: On which operating system did the problem occur?
       options:
-        - macOS
-        - Linux
-        - "Windows"
-        - iOS
-        - Android
-    validations:
-      required: true
+        - label: macOS
+        - label: Linux
+        - label: Windows
+        - label: iOS
+        - label: Android

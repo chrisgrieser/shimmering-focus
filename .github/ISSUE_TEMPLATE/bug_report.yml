@@ -1,0 +1,84 @@
+name: Bug Report
+description: File a bug report
+title: "[Bug]: "
+labels: ["bug"]
+body:
+  - type: textarea
+    id: bug-description
+    attributes:
+      label: Bug Description
+      description: A clear and concise description of what the bug is.
+    validations:
+      required: true
+  - type: textarea
+    id: screenshot
+    attributes:
+      label: Relevant Screenshot
+      description: If applicable, add screenshots or a screen recording to help explain your problem.
+    validations:
+      required: true
+  - type: textarea
+    id: reproduction-steps
+    attributes:
+      label: To Reproduce
+      description: Steps to reproduce the problem
+      placeholder: |
+        Example
+        1. Go to '...'
+        2. Click on '....'
+        3. Scroll down to '....'
+    validations:
+      required: false
+  - type: input
+    id: obsi-version
+    attributes:
+      label: Obsidian Version
+      description: You can find the version in the *About* Tab of the settings.
+      placeholder: 0.13.19
+    validations:
+      required: true
+  - type: input
+    id: installer-version
+    attributes:
+      label: Installer Version
+      description: You can find the version in the *About* Tab of the settings.
+      placeholder: 0.13.19
+    validations:
+      required: true
+  - type: checkboxes
+    id: editor
+    attributes:
+      label: Which editor are you using?
+      options:
+        - label: New Editor
+        - label: Legacy Editor
+  - type: checkboxes
+    id: mode
+    attributes:
+      label: In which mode(s) does the problem occur? (if applicable)
+      options:
+        - label: Source (Edit)
+        - label: Reading (Preview)
+        - label: Live Preview
+  - type: checkboxes
+    id: operating-system
+    attributes:
+      label: On which operating system did the problem occur?
+      options:
+        - label: macOS
+        - label: Linux
+        - label: Windows
+        - label: iOS
+        - label: Android
+  - type: checkboxes
+    id: checklist
+    attributes:
+      label: Make sure you have done the following
+      options:
+        - label: I updated to the latest version of the theme (`Obsidian Settings → Appearance → Themes - Manage → Update`).
+          required: true
+        - label: I made sure that the issue is related to this theme, by checking that the problem does not occur with other themes or the default theme.
+          required: true
+        - label: In case I am missing an UI element, I have checked that it cannot be re-enabled with the [Style Settings plugin](https://github.com/mgmeyers/obsidian-style-settings).
+          required: true
+
