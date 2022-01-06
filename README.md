@@ -16,7 +16,6 @@ A minimalistic [Obsidian](https://obsidian.md/) theme focused on readability and
 	- [Max View & Focus View](#max-view--focus-view)
 	- [Image-related Features](#image-related-features)
 	- [Multi-Color-Highlighting & Spoiler Syntax](#multi-color-highlighting--spoiler-syntax)
-	- [Fine-tuned Spellcheck \(deprecated\)](#fine-tuned-spellcheck-deprecated)
 	- [CSS Classes](#css-classes)
 	- [Focus Line Highlight](#focus-line-highlight)
 	- [Academic Work Features](#academic-work-features)
@@ -81,11 +80,6 @@ Type one of the following eight tags (e.g. `#definition`) to get a colored annot
 - Surround highlights with `*` or `**` for alternative highlight colors (`*==cyan==*` and `**==yellow==**`).
 - You can use the [Extra Markdown Commands Plugin](https://github.com/chrisgrieser/obsidian-extra-md-commands) to get hotkeys for them.
 - Spoiler Syntax: Emphasized Strikethroughs (`*~~spoiler~~*`) will selectively hide text, except when hovered or the active line.
-
-### Fine-tuned Spellcheck (deprecated)
-Using the [Style Settings Plugin](https://github.com/mgmeyers/obsidian-style-settings/), you can deactivate the spellcheck in specific areas like for example YAML or blockquotes.
-
-*⚠️ Note that this feature only works with the Legacy Editor of Obsidian 0.13+, so it will unfortunately be discontinued.*
 
 ### CSS Classes
 Add `cssclass: {name}` to your yaml front matter to activate specific styling of the note in Preview Mode. The following CSS classes are built in with this theme (more coming in the future):
