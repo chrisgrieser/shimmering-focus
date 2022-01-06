@@ -1,0 +1,90 @@
+name: Bug Report
+description: File a bug report
+title: "[Bug]: "
+labels: ["bug"]
+body:
+  - type: textarea
+    id: bug-description
+    attributes:
+      label: Bug Description
+      description: A clear and concise description of what the bug is.
+      placeholder: Tell us what you see!
+    validations:
+      required: true
+  - type: textarea
+    id: reproduction-steps
+    attributes:
+      label: To Reproduce
+      description: Steps to reproduce the problem
+      placeholder: |
+        Example
+        1. Go to '...'
+        2. Click on '....'
+        3. Scroll down to '....'
+    validations:
+      required: false
+  - type: input
+    id: obsi-version
+    attributes:
+      label: Obsidian Version
+      description: You can find the version in the *About* Tab of the settings.
+      placeholder: 0.13.19
+    validations:
+      required: true
+  - type: input
+    id: installer-version
+    attributes:
+      label: Installer Version
+      description: You can find the version in the *About* Tab of the settings.
+      placeholder: 0.13.19
+    validations:
+      required: true
+  - type: checkboxes
+    id: editor
+    attributes:
+      label: "Which editor are you using?"
+      options:
+        - label: New Editor
+        - label: Legacy Editor
+  - type: checkboxes
+    id: mode
+    attributes:
+      label: "In which mode(s) does the problem occur?"
+      options:
+        - label: Source / Edit
+        - label: Preview / Reading
+        - label: Live Preview
+  - type: checkboxes
+    id: operating-system
+    attributes:
+      label: What OS are you using?
+      options:
+        - label: macOS
+        - label: Linux
+        - label: Windows
+        - label: iOS
+        - label: Android
+  - type: dropdown
+    id: mode
+    attributes:
+      label: What OS are you using?
+      multiple: true
+      options:
+        - macOS
+        - Linux
+        - "Windows"
+        - iOS
+        - Android
+    validations:
+      required: true
+  - type: dropdown
+    id: version
+    attributes:
+      label: Version
+      description: What version of our software are you running?
+      options:
+        - 1.0.2 (Default)
+        - 1.0.3 (Edge)
+    validations:
+      required: true
+
