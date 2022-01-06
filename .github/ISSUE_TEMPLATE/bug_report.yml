@@ -23,8 +23,8 @@ body:
       placeholder: |
         For example:
         1. Go to '...'
-        2. Click on '....'
-        3. Scroll down to '....'
+        2. Click on '...'
+        3. Scroll down to '...'
   - type: input
     id: obsi-version
     attributes:
