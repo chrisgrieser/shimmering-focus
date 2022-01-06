@@ -56,18 +56,8 @@ body:
         - label: Source / Edit
         - label: Preview / Reading
         - label: Live Preview
-  - type: checkboxes
-    id: operating-system
-    attributes:
-      label: What OS are you using?
-      options:
-        - label: macOS
-        - label: Linux
-        - label: Windows
-        - label: iOS
-        - label: Android
   - type: dropdown
-    id: mode
+    id: operating-system
     attributes:
       label: What OS are you using?
       multiple: true
@@ -77,15 +67,5 @@ body:
         - "Windows"
         - iOS
         - Android
-    validations:
-      required: true
-  - type: dropdown
-    id: version
-    attributes:
-      label: Version
-      description: What version of our software are you running?
-      options:
-        - 1.0.2 (Default)
-        - 1.0.3 (Edge)
     validations:
       required: true
