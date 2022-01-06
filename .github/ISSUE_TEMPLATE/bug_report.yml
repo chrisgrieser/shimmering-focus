@@ -15,8 +15,6 @@ body:
     attributes:
       label: Relevant Screenshot
       description: If applicable, add screenshots or a screen recording to help explain your problem.
-    validations:
-      required: true
   - type: textarea
     id: reproduction-steps
     attributes:
@@ -27,8 +25,6 @@ body:
         1. Go to '...'
         2. Click on '....'
         3. Scroll down to '....'
-    validations:
-      required: false
   - type: input
     id: obsi-version
     attributes:

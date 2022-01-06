@@ -15,8 +15,6 @@ body:
     attributes:
       label: Relevant Screenshot
       description: If applicable, add screenshots or a screen recording to help explain the request.
-    validations:
-      required: true
   - type: checkboxes
     id: relevance
     attributes:
