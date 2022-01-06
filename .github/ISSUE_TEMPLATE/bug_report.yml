@@ -49,6 +49,7 @@ body:
     id: editor
     attributes:
       label: Which editor are you using?
+      description: If you are using the Legacy Editor, please be aware that new features for the theme are mostly only implemented for the new editor, so it is not a bug when they are missing.
       options:
         - label: New Editor
         - label: Legacy Editor
@@ -75,7 +76,7 @@ body:
     attributes:
       label: Make sure you have done the following
       options:
-        - label: I updated to the latest version of the theme (`Obsidian Settings → Appearance → Themes - Manage → Update`).
+        - label: I updated to the latest version of the theme (Settings → Appearance → Themes - Manage → Update).
           required: true
         - label: I made sure that the issue is related to this theme, by checking that the problem does not occur with other themes or the default theme.
           required: true

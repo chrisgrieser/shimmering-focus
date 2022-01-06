@@ -1,72 +1,35 @@
 name: Feature request
-about: Suggest an idea for the theme
+description: Suggest an idea for the theme
 title: "Feature Request: "
 labels: ["enhancement"]
 body:
   - type: textarea
-    id: bug-description
+    id: feature-requested
     attributes:
-      label: Bug Description
-      description: A clear and concise description of what the bug is.
+      label: Feature Requested
+      description: A clear and concise description of what the feature.
     validations:
       required: true
   - type: textarea
     id: screenshot
     attributes:
       label: Relevant Screenshot
-      description: If applicable, add screenshots or a screen recording to help explain your problem.
-    validations:
-      required: true
-  - type: textarea
-    id: reproduction-steps
-    attributes:
-      label: To Reproduce
-      description: Steps to reproduce the problem
-      placeholder: |
-        Example
-        1. Go to '...'
-        2. Click on '....'
-        3. Scroll down to '....'
-    validations:
-      required: false
-  - type: input
-    id: obsi-version
-    attributes:
-      label: Obsidian Version
-      description: You can find the version in the *About* Tab of the settings.
-      placeholder: 0.13.19
-    validations:
-      required: true
-  - type: input
-    id: installer-version
-    attributes:
-      label: Installer Version
-      description: You can find the version in the *About* Tab of the settings.
-      placeholder: 0.13.19
+      description: If applicable, add screenshots or a screen recording to help explain the request.
     validations:
       required: true
   - type: checkboxes
-    id: editor
+    id: relevance
     attributes:
-      label: Which editor are you using?
+      label: Relevance
+      description: If it's only relevant to you, have you considered using a [CSS Snippet](https://help.obsidian.md/How+to/Add+custom+styles.md#Use+Themes+and/or+CSS+snippets)?
       options:
-        - label: New Editor
-        - label: Legacy Editor
+        - label: The feature would be useful to more users than just me.
+          required: true
   - type: checkboxes
-    id: mode
+    id: checklist
     attributes:
-      label: In which mode(s) does the problem occur? (if applicable)
+      label: Style Settings
       options:
-        - label: Source (Edit)
-        - label: Reading (Preview)
-        - label: Live Preview
-  - type: checkboxes
-    id: operating-system
-    attributes:
-      label: On which operating system did the problem occur?
-      options:
-        - label: macOS
-        - label: Linux
-        - label: Windows
-        - label: iOS
-        - label: Android
+        - label: I have checked that the feature is not already available via the [Style Settings plugin](https://github.com/mgmeyers/obsidian-style-settings).
+          required: true
+
