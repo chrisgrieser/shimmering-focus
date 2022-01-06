@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 1.574
+Version 1.575
 https://github.com/chrisgrieser/shimmering-focus/
 MIT License
 ─────────────────────────────────────────────────── */
@@ -6436,8 +6436,8 @@ body:not(.show-graph-controls) .graph-controls.is-close:not(:hover) {
 << Discord Rich Presence
 ─────────────────────────────────────────────────── */
 
-.status-bar-item.plugin-obsidian-discordrpc:empty {
-	display: none;
+.status-bar-item.plugin-obsidian-discordrpc {
+	filter: grayscale(1);
 }
 
 /* ───────────────────────────────────────────────────

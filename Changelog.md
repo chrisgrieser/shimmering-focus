@@ -1,3 +1,7 @@
+- 2022-01-06	discord statusbar icon grayscale
+- 2022-01-06	fixed info on sliding panes
+- 2022-01-06	added link to plugin-specific isntructions
+- 2022-01-06	fixes for issue templates
 - 2022-01-06	hide line numbers on non-active non-hovered lines (+ Style Setting to re-enable)
 - 2022-01-06	collapse indicators are shown when hovered
 - 2022-01-06	finished new yaml issue forms
