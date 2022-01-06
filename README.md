@@ -177,8 +177,8 @@ This theme has been adjusted to be compatible with [SlRvb's Checkboxes](https://
 In accordance with the minimalistic philosophy of the theme, unnecessary UI elements of some plugins have also been removed. However, you can still access the full plugin functionality.
 
 - Longform: - Prepend a `_` to file names of longform scenes to create sub-scenes. 
+- Sliding Panes: You need to *disable* `Toggle rotated headers` in the Sliding Pane Settings for the theme to work properly.
 - Kanban: Right-click cards to edit them.
-- Sliding Panes: Enable `Swap Rotated Header Direction` in the Sliding Pane Settings.
 - Breadcrumbs: Even with buttons removed, you can refresh the index via Command Palette
 - Quick Explorer: Re-enable the title bar with the [Style Settings Plugin](https://github.com/mgmeyers/obsidian-style-settings/) for the breadcrumbs
 - Dataview: If the table lines are off, use the [`dataview-list-in-table` CSS Classes](#css-classes)
