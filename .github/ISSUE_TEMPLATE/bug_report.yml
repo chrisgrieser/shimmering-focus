@@ -21,7 +21,7 @@ body:
       label: To Reproduce
       description: Steps to reproduce the problem
       placeholder: |
-        Example
+        For example:
         1. Go to '...'
         2. Click on '....'
         3. Scroll down to '....'
