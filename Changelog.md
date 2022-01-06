@@ -1,3 +1,4 @@
+- 2022-01-06	hide line numbers on non-active non-hovered lines (+ Style Setting to re-enable)
 - 2022-01-06	collapse indicators are shown when hovered
 - 2022-01-06	finished new yaml issue forms
 - 2022-01-06	new bug report form

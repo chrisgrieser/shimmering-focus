@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 1.573
+Version 1.574
 https://github.com/chrisgrieser/shimmering-focus/
 MIT License
 ─────────────────────────────────────────────────── */
@@ -942,7 +942,7 @@ svg.vertical-three-dots > path { display: none }
 
 svg.vertical-three-dots {
 	background-color: currentColor;
-	margin-top: 0.5px;
+	margin-top: 1.5px;
 	transform: scale(1.1);
 	-webkit-mask-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' preserveAspectRatio='xMidYMid meet' viewBox='0 0 20 20'%3e%3cpath d='M3 11h14V9H3v2zm0 5h14v-2H3v2zM3 4v2h14V4H3z' fill='currentColor'/%3e%3c/svg%3e");
 }
@@ -3227,6 +3227,7 @@ body .workspace-leaf-resize-handle:active {
 	content: "Feature Overview";
 	font-family: var(--button-font);
 	font-size: var(--button-font-size);
+	font-weight: 500;
 	padding-left: 4px;
 }
 
@@ -3561,15 +3562,6 @@ body:not(.no-active-highlight):not(.focused-highlight) .CodeMirror-activeline .C
 	border-radius: var(--roundish);
 }
 
-/* active highlighting of markup */
-body:not(.no-active-highlight) .cm-active.cm-gutterElement,
-body:not(.no-active-highlight) .cm-active .cm-formatting-header,
-body:not(.no-active-highlight) .cm-active .cm-formatting-quote,
-body:not(.no-active-highlight) .cm-active .cm-formatting-list,
-body:not(.no-active-highlight) .cm-active .list-bullet {
-	color: var(--active-line-indicator);
-}
-
 .focused-highlight .cm-cursor::BEFORE {
 	content: " ";
 
@@ -3586,8 +3578,23 @@ body:not(.no-active-highlight) .cm-active .list-bullet {
 	visibility: visible;
 }
 
+/* needed, as focused line highlight created very long scrolling to the right */
 .focused-highlight .markdown-source-view .cm-scroller {
 	overflow-x: hidden;
+}
+
+/* show only active line number */
+body:not(.show-all-line-numbers) .cm-lineNumbers .cm-gutterElement:not(.cm-active):not(:hover) {
+	opacity: 0;
+}
+
+/* when disabled, active highlighting of markup */
+.show-all-line-numbers:not(.no-active-highlight) .cm-lineNumbers .cm-active.cm-gutterElement,
+.show-all-line-numbers:not(.no-active-highlight) .cm-active .cm-formatting-header,
+.show-all-line-numbers:not(.no-active-highlight) .cm-active .cm-formatting-quote,
+.show-all-line-numbers:not(.no-active-highlight) .cm-active .cm-formatting-list,
+.show-all-line-numbers:not(.no-active-highlight) .cm-active .list-bullet {
+	color: var(--active-line-indicator);
 }
 
 /* ───────────────────────────────────────────────────
@@ -3752,7 +3759,8 @@ body .frontmatter-container .frontmatter-container-header {
 }
 
 /* ───────────────────────────────────────────────────
-<< Collapse Indicators & Gutter
+<< Gutter
+<< Collapse Indicators
 ─────────────────────────────────────────────────── */
 
 /* fixes some fonts like iA Writer making the non-breaking space too big */
@@ -8626,6 +8634,12 @@ settings:
 	 type: class-toggle
 	 default: false
 	-
+	 id: show-all-line-numbers
+	 title: Show all line numbers
+	 description: "When 'Show line number' is enabled in the settings, all line numbers will be shown. When false, only the line numbers of the active and hovered line will be shown."
+	 type: class-toggle
+	 default: false
+	-
 	 id: show-graph-controls
 	 title: Permanently show the Graph Controls
 	 description: When false, graph controls are still visible when open, or upon hovering the top-left area.
@@ -8763,7 +8777,7 @@ settings:
 	-
 	 id: font-settings
 	 title: Typography
-	 description: Font, Headings, Blockquotes, Font Sizes, Heading Kerning, Alignment
+	 description: Font, Headings, Blockquotes, Font Sizes, Headings, Letter Spacing, Alignment
 	 type: heading
 	 level: 2
 	 collapsed: true
@@ -8931,28 +8945,11 @@ settings:
 	 format: em
 	-
 	 id: content-settings
-	 title: Views & Content
-	 description: Max View, Focus View, Images, PDFs, Active & Focused Line Highlight ⚡️
+	 title: Views & Media
+	 description: Max View, Focus View, Images, PDFs
 	 type: heading
 	 level: 2
 	 collapsed: true
-	-
-	 id: active-line-highlight
-	 title: ⚡️ Active Line Highlight
-	 description: '"Focused Highlight" will only emphasize the active line instead of the active block, similar to Code Editors. ⚠️ However, this comes at the cost of disabling any form of horizontal scrolling in the editor. (Focused Highlight does not work in the Legacy Editor.)'
-	 type: class-select
-	 allowEmpty: false
-	 default: active-block-highlight
-	 options:
-	 -
-		label: Default Line Highlight
-		value: active-block-highlight
-	 -
-		label: Focused Highlight
-		value: focused-highlight
-	 -
-		label: No Highlight
-		value: no-active-highlight
 	-
 	 id: max-view-enabled
 	 title: 'Enable "Max View"'
@@ -9004,60 +9001,46 @@ settings:
 	 type: class-toggle
 	 default: false
 	-
-	 id: spellcheck-settings
-	 title: Spellcheck (deprecated)
-	 description: Legacy Editor only
+	 id: gutter-features
+	 title: 🆕 Gutter & Active Line
+	 description: Active & Focused Line Highlight, Footnote Indicators
 	 type: heading
 	 level: 2
 	 collapsed: true
 	-
-	 id: classic-spellcheck-styling
-	 title: Use Classic Spellcheck Styling
-	 description: Turns off the spellcheck styling of this theme and use the classic spellcheck styling.
-	 type: class-toggle
-	 default: false
+	 id: active-line-highlight
+	 title: ⚡️ Active Line Highlight
+	 description: '"Focused Highlight" will only emphasize the active line instead of the active paragraph (block), similar to Code Editors. ⚠️ However, this comes at the cost of disabling any form of horizontal scrolling in the editor. (Focused Highlight does not work in the Legacy Editor.)'
+	 type: class-select
+	 allowEmpty: false
+	 default: active-block-highlight
+	 options:
+	 -
+		label: Default Line Highlight
+		value: active-block-highlight
+	 -
+		label: 🚧 Focused Highlight
+		value: focused-highlight
+	 -
+		label: No Highlight
+		value: no-active-highlight
 	-
-	 id: no-yaml-spellcheck
-	 title: No Spellcheck in YAML Header
-	 description: Turn off Spellcheck in YAML Header.
-	 type: class-toggle
-	 default: false
-	-
-	 id: no-blockquote-spellcheck
-	 title: No Spellcheck in Blockquotes
-	 description: Turn off Spellcheck in Blockquotes.
-	 type: class-toggle
-	 default: false
-	-
-	 id: no-html-spellcheck
-	 title: No Spellcheck for HTML Tags
-	 description: Turn off Spellcheck in HTML Tags (e.g. <br/> not marked)
-	 type: class-toggle
-	 default: false
-	-
-	 id: no-header-spellcheck
-	 title: No Spellcheck in Headers
-	 description: Turn off Spellcheck in all headings.
-	 type: class-toggle
-	 default: false
-	-
-	 id: no-strikethrough-spellcheck
-	 title: No Spellcheck in Strikethroughs
-	 description: Turn off Spellcheck in any text enclosed by the strikethrough syntax (~~foobar~~).
-	 type: class-toggle
-	 default: false
-	-
-	 id: no-comment-spellcheck
-	 title: No Spellcheck in Comments
-	 description: Turn off Spellcheck in comments (%%comments%% as well as <!--comments-->).
-	 type: class-toggle
-	 default: false
-	-
-	 id: no-barelink-spellcheck
-	 title: No Spellcheck in Pandoc Citations
-	 description: Turn off Spellcheck in Pandoc Citations (Bare Links).
-	 type: class-toggle
-	 default: false
+	 id: footnote-gutter
+	 title: "⦿ Footnote Indicator"
+	 description: Displays a small indicator in the gutter when a footnote is present. (Note that the numbered indicator does not count properly footnotes on the same line.)
+	 type: class-select
+	 allowEmpty: false
+	 default: simple-fn-indicator
+	 options:
+	 -
+		label: Default Footnote Indicator
+		value: simple-fn-indicator
+	 -
+		label: 🚧 Numbered Footnote Indicator
+		value: numbered-fn-indicator
+	 -
+		label: No Footnote Indicator
+		value: no-fn-indicator
 	-
 	 id: mobile
 	 title: Mobile
@@ -9096,7 +9079,7 @@ settings:
 	-
 	 id: popover-size
 	 title: 'Page Preview: Size'
-	 description: Width & Height of Page Previews (Popovers) in px. (Note that this means a quadratic growth of the preview size.)
+	 description: Width & Height of Page Previews (Popovers) in px. (Note that this setting means a quadratic growth of the preview size.)
 	 type: variable-number-slider
 	 default: 350
 	 min: 200
@@ -9173,29 +9156,18 @@ settings:
 	 hub: ignore
 	 default: false
 	-
-	 id: academic-features
-	 title: Academic Work
-	 description: Pandoc Citations, Annotation Tags, Footnote Indicators
+	 id: miscellaneous
+	 title: Miscellaneous
+	 description: File Name Trimming, Pandoc Citations, Annotation Tags, Alternating Row Colors, Relationship Lines
 	 type: heading
 	 level: 2
 	 collapsed: true
 	-
-	 id: footnote-gutter
-	 title: 🆕 Footnote Indicator
-	 description: Displays a small indicator in the gutter when a footnote is present. (Note that the numbered indicator does not count properly footnotes on the same line.)
-	 type: class-select
-	 allowEmpty: false
-	 default: simple-fn-indicator
-	 options:
-	 -
-		label: Default Footnote Indicator
-		value: simple-fn-indicator
-	 -
-		label: 🚧 Numbered Footnote Indicator
-		value: numbered-fn-indicator
-	 -
-		label: No Footnote Indicator
-		value: no-fn-indicator
+	 id: trim-long-filenames
+	 title: 'Sidebar: Trim File Names'
+	 description: When enabled long filenames will be trimmed. When disabled, long filenames will be wrapped to the next line. Affects most, but not all side bar plugin.
+	 type: class-toggle
+	 default: false
 	-
 	 id: no-pandoc-citation-emphasis
 	 title: No Emphasis of Pandoc Citations
@@ -9209,19 +9181,6 @@ settings:
 	 type: class-toggle
 	 default: false
 	-
-	 id: miscellaneous
-	 title: Miscellaneous
-	 description: File Name Trimming, Alternating Row Colors, Relationship Lines
-	 type: heading
-	 level: 2
-	 collapsed: true
-	-
-	 id: trim-long-filenames
-	 title: 'Sidebar: Trim File Names'
-	 description: When enabled long filenames will be trimmed. When disabled, long filenames will be wrapped to the next line.
-	 type: class-toggle
-	 default: false
-	-
 	 id: no-alternating-rows
 	 title: Turn off Alternating Row Coloring
 	 type: class-toggle
@@ -9232,6 +9191,61 @@ settings:
 	 description: If you want to use a custom relationship line snippet or the relationship lines from the Outliner plugin, you can disable this theme's relationship lines to prevent interference.
 	 type: class-toggle
 	 hub: ignore
+	 default: false
+	-
+	 id: spellcheck-settings
+	 title: Spellcheck (deprecated)
+	 description: Legacy Editor only
+	 type: heading
+	 level: 2
+	 collapsed: true
+	-
+	 id: classic-spellcheck-styling
+	 title: Use Classic Spellcheck Styling
+	 description: Turns off the spellcheck styling of this theme and use the classic spellcheck styling.
+	 type: class-toggle
+	 default: false
+	-
+	 id: no-yaml-spellcheck
+	 title: No Spellcheck in YAML Header
+	 description: Turn off Spellcheck in YAML Header.
+	 type: class-toggle
+	 default: false
+	-
+	 id: no-blockquote-spellcheck
+	 title: No Spellcheck in Blockquotes
+	 description: Turn off Spellcheck in Blockquotes.
+	 type: class-toggle
+	 default: false
+	-
+	 id: no-html-spellcheck
+	 title: No Spellcheck for HTML Tags
+	 description: Turn off Spellcheck in HTML Tags (e.g. <br/> not marked)
+	 type: class-toggle
+	 default: false
+	-
+	 id: no-header-spellcheck
+	 title: No Spellcheck in Headers
+	 description: Turn off Spellcheck in all headings.
+	 type: class-toggle
+	 default: false
+	-
+	 id: no-strikethrough-spellcheck
+	 title: No Spellcheck in Strikethroughs
+	 description: Turn off Spellcheck in any text enclosed by the strikethrough syntax (~~foobar~~).
+	 type: class-toggle
+	 default: false
+	-
+	 id: no-comment-spellcheck
+	 title: No Spellcheck in Comments
+	 description: Turn off Spellcheck in comments (%%comments%% as well as <!--comments-->).
+	 type: class-toggle
+	 default: false
+	-
+	 id: no-barelink-spellcheck
+	 title: No Spellcheck in Pandoc Citations
+	 description: Turn off Spellcheck in Pandoc Citations (Bare Links).
+	 type: class-toggle
 	 default: false
 */
 /* ─────────────────────────────────────────────────── */
