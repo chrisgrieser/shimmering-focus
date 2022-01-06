@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 1.571
+Version 1.572
 https://github.com/chrisgrieser/shimmering-focus/
 MIT License
 ─────────────────────────────────────────────────── */
@@ -3555,7 +3555,7 @@ body > div.app-container .view-content > div > .markdown-preview-view {
 << Active Line Highlight
 ─────────────────────────────────────────────────── */
 
-body:not(.no-active-highlight):not(.focused-highlight) .cm-active,
+body:not(.no-active-highlight):not(.focused-highlight) .cm-active:not(.cm-gutterElement),
 body:not(.no-active-highlight):not(.focused-highlight) .CodeMirror-activeline .CodeMirror-linebackground {
 	background-color: var(--active-line-bg);
 	border-radius: var(--roundish);
@@ -5670,7 +5670,6 @@ body:not(.no-file-explorer-icons) .nav-folder.is-collapsed .nav-folder-title[dat
 	content: "attach_file";
 }
 
-body:not(.no-file-explorer-icons) .nav-folder-title[data-path*="old"] .nav-folder-title-content::BEFORE,
 body:not(.no-file-explorer-icons) .nav-folder-title[data-path*="Archiv"] .nav-folder-title-content::BEFORE,
 body:not(.no-file-explorer-icons) .nav-folder-title[data-path*="archive"] .nav-folder-title-content::BEFORE {
 	content: "inventory_2";
