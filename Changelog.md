@@ -1,3 +1,4 @@
+- 2022-01-07	fix special characters in headings being displayed wrong + reduced file size a bit
 - 2022-01-07	unresolved link indicator (preview mode only)
 - 2022-01-07	unresolved links indicators
 - 2022-01-07	borders for sliding panes
