@@ -1,3 +1,4 @@
+- 2022-01-07	unresolved link indicator (preview mode only)
 - 2022-01-07	unresolved links indicators
 - 2022-01-07	borders for sliding panes
 - 2022-01-07	fix #84

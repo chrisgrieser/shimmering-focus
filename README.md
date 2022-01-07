@@ -18,7 +18,8 @@ A minimalistic [Obsidian](https://obsidian.md/) theme focused on readability and
 	- [Multi-Color-Highlighting & Spoiler Syntax](#multi-color-highlighting--spoiler-syntax)
 	- [CSS Classes](#css-classes)
 	- [Focus Line Highlight](#focus-line-highlight)
-	- [Academic Work Features](#academic-work-features)
+	- [Gutter Indicators](#gutter-indicators)
+	- [Academic Work](#academic-work)
 	- [Further Features](#further-features)
 - [Design Principles](#design-principles)
 	- [Extreme Minimalism](#extreme-minimalism)
@@ -91,16 +92,20 @@ Add `cssclass: {name}` to your yaml front matter to activate specific styling of
 
 In contrast to typical active line highlights, the *focused* line highlight will only highlight the direct line where the cursor is located. However, this feature disables the ability to scroll horizontally, so it is disabled by default and must be enabled in the Style Settings. 
 
-### Academic Work Features
-- Footnote indicator added to the gutter
-- [Pandoc Citations](https://pandoc.org/MANUAL.html#citations-in-note-styles) (`[@citekey]`) and footnotes are visually emphasized
-- The alt-text of images is used as caption text, in line with Pandoc's conversion behavior
-- Extensive Styling and settings specifically for the [Longform Plugin](https://github.com/kevboh/longform)
-	- Prepend a `_` to file names of longform scenes to create sub-scenes that are indented in the sidebar
-- The [Max View](#max-view--focus-view) is useful for displaying wide markdown tablen.
-- [Multi-Color-Highlighting](#multi-color-highlighting--spoiler-syntax) and [Annotation Tags](#annotation-tags) have specifically been made for academic reading.
+### Gutter Indicators
+To help increase scannability of long notes, some the presence of some easy-to-miss elements are indicated in the gutter. All indicators can be turned off with the [Style Settings Plugin](https://github.com/mgmeyers/obsidian-style-settings/).
+- Footnotes (all modes)
+- Search Result Matches (only Source Mode & Live Preview)
+- Unresolved links (only Preview Mode)
 
 <img src="https://user-images.githubusercontent.com/73286100/147931964-d5e5d309-d821-4fa1-86c1-4a8952a249d3.png" alt="image" width=70%>
+
+### Academic Work
+- Extensive Styling and settings specifically for the [Longform Plugin](https://github.com/kevboh/longform). Prepend a `_` to file names of longform scenes to create sub-scenes that are indented in the sidebar.
+- [Pandoc Citations](https://pandoc.org/MANUAL.html#citations-in-note-styles) (`[@citekey]`) and footnotes are visually emphasized
+- The alt-text of images is used as caption text, in line with Pandoc's conversion behavior
+- The [Max View](#max-view--focus-view) is useful for displaying wide markdown tables.
+- [Multi-Color-Highlighting](#multi-color-highlighting--spoiler-syntax) and [Annotation Tags](#annotation-tags) have specifically been made for academic reading.
 
 ### Further Features
 - Relationship lines in various side bar tabs
@@ -133,6 +138,7 @@ In contrast to typical active line highlights, the *focused* line highlight will
 
 ### High Readability
 - Theme Brightness is adjustable via [Style Settings Plugin](https://github.com/mgmeyers/obsidian-style-settings/).
+- [Gutter Indicators](#gutter-indicators) and the visual emphasis of Pandoc Citations and footnotes increase the scannability of longer notes.
 - Wider Input boxes, clearer icons, increased size of small UI elements (e.g. collapse indicators), thicker lines for tables & hr.
 - Increased contrast throughout, especially with the [annoying gray font on light-gray background](https://forum.obsidian.md/t/enhance-default-color-contrast-of-the-icons/23045/3).
 - Decreased font size variation to increase readability & information density
