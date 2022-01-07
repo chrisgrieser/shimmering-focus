@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 1.580
+Version 1.581
 https://github.com/chrisgrieser/shimmering-focus/
 MIT License
 ─────────────────────────────────────────────────── */
@@ -209,7 +209,7 @@ the .create-ToC.sh.
 
 	--code-color: var(--alt-accent-darker);
 	--scrollbar-bg-hover: var(--alt-accent-lighter);
-	--scrollbar-bg-active: var(--accent-lighterer);
+	--scrollbar-bg-active: var(--accent-lighter);
 
 	--highlight-color: hsl(152 100% 50% / 40%);
 	--highlight-alt1: hsl(60 100% 50% / 40%);
@@ -1598,7 +1598,7 @@ body:not(.show-scrollbar) ::-WEBKIT-SCROLLBAR {
 }
 
 ::-WEBKIT-SCROLLBAR-THUMB:active {
-	background-color: var(--scrollbar-bg-active) !important;
+	background-color: var(--scrollbar-bg-active);
 }
 
 /* ───────────────────────────────────────────────────
@@ -1965,7 +1965,7 @@ body .app-container .obsidian-search-match-highlight {
 }
 
 /* gutter indicators */
-.obsidian-search-match-highlight::BEFORE {
+body:not(.no-search-result-indicator) .obsidian-search-match-highlight::BEFORE {
 	content: "►";
 	color: var(--search-match-color);
 	background-color: var(--bg1); /* so they cover footnote indicators when overlapping */
@@ -3583,24 +3583,6 @@ body:not(.no-active-highlight):not(.focused-highlight) .CodeMirror-activeline .C
 	overflow-x: hidden;
 }
 
-/* show only active line number */
-body:not(.show-all-line-numbers) .cm-lineNumbers .cm-gutterElement:not(.cm-active):not(:hover) {
-	opacity: 0;
-}
-
-body:not(.show-all-line-numbers) .cm-lineNumbers .cm-gutterElement {
-	color: var(--text-muted);
-}
-
-/* when disabled, active highlighting of markup */
-.show-all-line-numbers:not(.no-active-highlight) .cm-lineNumbers .cm-active.cm-gutterElement,
-.show-all-line-numbers:not(.no-active-highlight) .cm-active .cm-formatting-header,
-.show-all-line-numbers:not(.no-active-highlight) .cm-active .cm-formatting-quote,
-.show-all-line-numbers:not(.no-active-highlight) .cm-active .cm-formatting-list,
-.show-all-line-numbers:not(.no-active-highlight) .cm-active .list-bullet {
-	color: var(--active-line-indicator);
-}
-
 /* ───────────────────────────────────────────────────
 << Embeds
 ─────────────────────────────────────────────────── */
@@ -3764,9 +3746,14 @@ body .frontmatter-container .frontmatter-container-header {
 
 /* ───────────────────────────────────────────────────
 << Gutter
-<< Collapse Indicators
 ─────────────────────────────────────────────────── */
+/* Search Result Indicators and Footnote Indicators
+are in the respective section for Search Results
+and Footnotes */
 
+/* ───────────────────────────────────────────────────
+<<< Collapse Indicators
+─────────────────────────────────────────────────── */
 /* fixes some fonts like iA Writer making the non-breaking space too big */
 /* can be removed with from 0.13.20 on */
 .mod-cm6 .collapse-indicator {
@@ -3829,11 +3816,6 @@ body:not(.show-fold-marker) .CodeMirror-foldmarker {
 	color: var(--accent-lighter);
 }
 
-.CodeMirror-linenumbers {
-	padding-top: 2px;
-	padding-right: 2px;
-}
-
 .CodeMirror-foldgutter {
 	background-color: transparent !important;
 }
@@ -3843,6 +3825,34 @@ body:not(.show-fold-marker) .CodeMirror-foldmarker {
 	position: relative;
 	left: -10px;
 	padding-right: 0;
+}
+
+/* ───────────────────────────────────────────────────
+<<< Line Numbers
+─────────────────────────────────────────────────── */
+
+/* show only active line number */
+body:not(.show-all-line-numbers) .cm-lineNumbers .cm-gutterElement:not(.cm-active):not(:hover) {
+	opacity: 0;
+}
+
+body:not(.show-all-line-numbers) .cm-lineNumbers .cm-gutterElement {
+	color: var(--text-muted);
+}
+
+/* when disabled, active highlighting of markup */
+.show-all-line-numbers:not(.no-active-highlight) .cm-lineNumbers .cm-active.cm-gutterElement,
+.show-all-line-numbers:not(.no-active-highlight) .cm-active .cm-formatting-header,
+.show-all-line-numbers:not(.no-active-highlight) .cm-active .cm-formatting-quote,
+.show-all-line-numbers:not(.no-active-highlight) .cm-active .cm-formatting-list,
+.show-all-line-numbers:not(.no-active-highlight) .cm-active .list-bullet {
+	color: var(--active-line-indicator);
+}
+
+/* CM5 */
+.CodeMirror-linenumbers {
+	padding-top: 2px;
+	padding-right: 2px;
 }
 
 /* ───────────────────────────────────────────────────
@@ -4805,20 +4815,27 @@ a:hover {
 	cursor: pointer;
 }
 
-/* unresolved links */
-a.internal-link.is-unresolved {
-	color: var(--unresolved-link-color);
-	opacity: var(--unresolved-opacity) !important;
-}
-
-body a.internal-link.is-unresolved:hover {
-	color: var(--alt-accent);
-	opacity: 0.8;
-}
-
 /* don't underline the brackets */
 .cm-s-obsidian .cm-url.cm-formatting {
 	text-decoration: none;
+}
+
+/* <<< Unresolved links */
+a.internal-link.is-unresolved {
+	color: var(--unresolved-link-color);
+	opacity: var(--unresolved-opacity);
+}
+
+/* unresolved gutter icon */
+body:not(.no-unresolved-link-indicator) a.internal-link.is-unresolved::BEFORE {
+	content: "✖︎";
+	background-color: var(--bg1);
+	position: absolute;
+	left: 20px;
+}
+
+a.internal-link.is-unresolved:hover {
+	opacity: var(--unresolved-opacity);
 }
 
 /* <<< fold external URLs (CM6 Source Mode) */
@@ -6562,7 +6579,7 @@ body .dict-s-popover.dict-s-popover.dict-s-popover {
 /* ───────────────────────────────────────────────────
 << Sliding Panes
 ─────────────────────────────────────────────────── */
-.plugin-sliding-panes .mod-root .workspace-leaf-content {
+.plugin-sliding-panes .mod-root .workspace-leaf ~ .workspace-leaf {
 	border-left: 10px solid var(--basic-border-color);
 }
 
@@ -7691,8 +7708,7 @@ body:not(.no-alternating-rows) .BC-Matrix-square li:nth-child(even) {
 }
 
 /* unresolved links */
-body > .app-container .internal-link.is-unresolved,
-body > .app-container .BC-Link.is-unresolved {
+.app-container .BC-Link.is-unresolved {
 	color: var(--unresolved-link-color);
 	opacity: var(--unresolved-opacity);
 }
@@ -9041,6 +9057,18 @@ settings:
 	 -
 		label: No Footnote Indicator
 		value: no-fn-indicator
+	-
+	 id: no-unresolved-link-indicator
+	 title: Disable Unresolved Link Indicators
+	 description: The indicators are only shown in Reading Mode.
+	 type: class-toggle
+	 default: false
+	-
+	 id: no-search-result-indicator
+	 title: Disable Search Result Indicators
+	 description: The indicators are only shown in Source Mode and Live Preview.
+	 type: class-toggle
+	 default: false
 	-
 	 id: mobile
 	 title: Mobile
