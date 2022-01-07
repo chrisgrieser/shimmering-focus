@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 1.579
+Version 1.580
 https://github.com/chrisgrieser/shimmering-focus/
 MIT License
 ─────────────────────────────────────────────────── */
@@ -6557,6 +6557,13 @@ body .dict-s-popover.dict-s-popover.dict-s-popover {
 .workspace-leaf-content[data-type="git-view"] .tools .buttons > div:hover {
 	color: var(--alt-accent) !important;
 	background: none !important;
+}
+
+/* ───────────────────────────────────────────────────
+<< Sliding Panes
+─────────────────────────────────────────────────── */
+.plugin-sliding-panes .mod-root .workspace-leaf-content {
+	border-left: 10px solid var(--basic-border-color);
 }
 
 /* ───────────────────────────────────────────────────
