@@ -1,3 +1,4 @@
+- 2022-01-07	fix #85
 - 2022-01-06	make mobile settings more readable (@Mara-Li)
 - 2022-01-06	minor visual fixes for backlink pane
 - 2022-01-06	discord statusbar icon grayscale
