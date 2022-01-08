@@ -3,7 +3,7 @@
 A minimalistic [Obsidian](https://obsidian.md/) theme focused on readability and condensed information display.
 
 <!-- manually updated-->
-![](https://img.shields.io/badge/downloads-9767-6E4E9B?style=plastic) ![](https://img.shields.io/github/last-commit/chrisgrieser/shimmering-focus?style=plastic) [![](https://img.shields.io/badge/changelog-click%20here-FFE800?style=plastic)](Changelog.md)
+![](https://img.shields.io/badge/downloads-9775-6E4E9B?style=plastic) ![](https://img.shields.io/github/last-commit/chrisgrieser/shimmering-focus?style=plastic) [![](https://img.shields.io/badge/changelog-click%20here-FFE800?style=plastic)](Changelog.md)
 
 <img src="https://raw.githubusercontent.com/chrisgrieser/shimmering-focus/main/dual-theme-screenshot.png" alt="Promo Screenshot">
 
@@ -183,7 +183,7 @@ This theme has been adjusted to be compatible with [SlRvb's Checkboxes](https://
 In accordance with the minimalistic philosophy of the theme, unnecessary UI elements of some plugins have also been removed. However, you can still access the full plugin functionality.
 
 - Longform: - Prepend a `_` to file names of longform scenes to create sub-scenes. 
-- Sliding Panes: You need to *disable* `Toggle rotated headers` in the Sliding Pane Settings for the theme to work properly.
+- Sliding Panes: As long as you are using `rotated headers`, the header is permanently shown.
 - Kanban: Right-click cards to edit them.
 - Breadcrumbs: Even with buttons removed, you can refresh the index via Command Palette
 - Quick Explorer: Re-enable the title bar with the [Style Settings Plugin](https://github.com/mgmeyers/obsidian-style-settings/) for the breadcrumbs
@@ -218,7 +218,7 @@ If you use Alfred, be sure to check out [my themes for Alfred](https://github.co
 ## Credits
 
 ### About the Developer
-In my day job, I am a researcher in Sociology who also codes some small utilities in his free time. In my PhD project, I investigate the governance of the app economy and how the tension between innovation and compatibility is managed in software ecosystems. If you are interested in this subject, feel free to visit [my academic homepage](https://chris-grieser.de/) and get in touch!
+In my day job, I am a researcher in Sociology. In my PhD project, I investigate the governance of the app economy and how the tension between innovation and compatibility is managed in software ecosystems. If you are interested in this subject, feel free to visit [my academic homepage](https://chris-grieser.de/) and get in touch!
 
 - [Discord](https://discord.gg/veuWUTm): `@pseudometa#9546`
 - Twitter: [@pseudo_meta](https://twitter.com/pseudo_meta)
@@ -232,8 +232,6 @@ Donations are welcome via [PayPal](https://www.paypal.com/paypalme/ChrisGrieser)
 Thanks for help and/or CSS snippets:
 - **@SlRvb**
 - **@javalent**
-- @kepano
-- @Mara
 - @Chetachie
 - @Atlas
 - @jdaniel

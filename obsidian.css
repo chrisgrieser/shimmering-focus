@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 1.587
+Version 1.588
 https://github.com/chrisgrieser/shimmering-focus/
 MIT License
 ─────────────────────────────────────────────────── */
@@ -462,6 +462,7 @@ body.theme-dark {
 	--tab-inset-shadow: -1px -1px 0px 0px var(--inset-shadow-color) inset;
 	--textbox-inset-shadow: -1px -1px 1px 0px var(--inset-shadow-color) inset;
 	--button-inset-shadow: -2px -2px 0px 0px var(--inset-shadow-color) inset;
+	--muted-button-shadow: -1px -1px 1px 0px var(--inset-shadow-color) inset;
 	--notice-inset-shadow: -1px -1px 2px 0px var(--inset-shadow-color) inset;
 }
 
@@ -472,7 +473,8 @@ body.theme-dark {
 	--toggle-disabled-inset-shadow: -3px -3px 2px 0px var(--inset-shadow-black) inset;
 	--tab-inset-shadow: -1px -1px 0px 0px var(--inset-shadow-black) inset;
 	--textbox-inset-shadow: -2px -2px 1px 0px var(--inset-shadow-black) inset;
-	--button-inset-shadow: -2px -2px 0px 0px var(--inset-shadow-color) inset;
+	--button-inset-shadow: -2px -2px 2px 0px var(--inset-shadow-color) inset;
+	--muted-button-shadow: -1px -1px 1px 0px var(--inset-shadow-black) inset;
 	--notice-inset-shadow: -1px -1px 2px 0px var(--inset-shadow-black) inset;
 }
 
@@ -1446,7 +1448,7 @@ body:not(.is-mobile) .view-header-icon {
 
 /* show only on hover, when writing in the header bar,
 or when enabled by the style settings plugin */
-body:not(.show-header-bar):not(.is-mobile) .app-container .workspace-split.mod-root > .workspace-leaf .view-header {
+body:not(.show-header-bar):not(.is-mobile):not(.plugin-sliding-panes-rotate-header) .app-container .workspace-split.mod-root > .workspace-leaf .view-header {
 	height: 0.9em;
 
 	background-color: var(--bg1);
@@ -1462,24 +1464,24 @@ body:not(.show-header-bar):not(.is-mobile) .app-container .workspace-split.mod-r
 	display: none;
 }
 
-body:not(.show-header-bar):not(.is-mobile) .view-header-title,
-body:not(.show-header-bar):not(.is-mobile) .view-header-icon,
-body:not(.show-header-bar):not(.is-mobile) .view-action svg {
+body:not(.show-header-bar):not(.is-mobile):not(.plugin-sliding-panes-rotate-header) .view-header-title,
+body:not(.show-header-bar):not(.is-mobile):not(.plugin-sliding-panes-rotate-header) .view-header-icon,
+body:not(.show-header-bar):not(.is-mobile):not(.plugin-sliding-panes-rotate-header) .view-action svg {
 	color: var(--extra-contrast);
 	opacity: 0;
 	transition: var(--medium-transition);
 }
 
 /* shown header */
-body:not(.show-header-bar):not(.is-mobile) .workspace-split.mod-root .workspace-leaf .view-header:hover,
-body:not(.show-header-bar):not(.is-mobile) .workspace-split.mod-root .workspace-leaf .view-header:focus-within,
-body.show-header-bar:not(.is-mobile) .workspace-split.mod-root .workspace-leaf .workspace-leaf-content .view-header {
+body:not(.show-header-bar):not(.is-mobile):not(.plugin-sliding-panes-rotate-header) .workspace-split.mod-root .workspace-leaf .view-header:hover,
+body:not(.show-header-bar):not(.is-mobile):not(.plugin-sliding-panes-rotate-header) .workspace-split.mod-root .workspace-leaf .view-header:focus-within,
+body.show-header-bar:not(.is-mobile):not(.plugin-sliding-panes-rotate-header) .workspace-split.mod-root .workspace-leaf .workspace-leaf-content .view-header {
 	height: 1.9em;
 	background-color: var(--header-bg);
 	transition: var(--medium-transition);
 }
 
-body.show-header-bar:not(.is-mobile) .view-header {
+body.show-header-bar:not(.is-mobile):not(.plugin-sliding-panes-rotate-header) .view-header {
 	border-bottom: var(--basic-border) !important;
 }
 
@@ -1501,13 +1503,13 @@ body .view-header:focus-within .view-header-title {
 }
 
 /* hover & active coloring */
-body.show-header-bar.is-mobile.view-header:hover,
-body:not(.is-mobile) .view-header:hover {
+body.show-header-bar.is-mobile .view-header:hover,
+body:not(.is-mobile):not(.plugin-sliding-panes-rotate-header) .view-header:hover {
 	border-bottom: 2px solid var(--alt-accent) !important;
 }
 
-body.show-header-bar.is-mobile.view-header:focus-within,
-body:not(.is-mobile) .view-header:focus-within {
+body.show-header-bar.is-mobile .view-header:focus-within,
+body:not(.is-mobile):not(.plugin-sliding-panes-rotate-header) .view-header:focus-within {
 	border-bottom: 2px solid var(--text-accent) !important;
 }
 
@@ -2719,11 +2721,12 @@ body .workspace-leaf-resize-handle:active {
 	margin-top: 0;
 	margin-bottom: 5px;
 
+	border-width: 2.5px;
 	border-bottom: var(--basic-border);
 }
 
 .vertical-tab-header-group:nth-child(2) .vertical-tab-header-group-title {
-	border-top: var(--basic-border);
+	border-top: var(--thin-border);
 }
 
 .vertical-tab-nav-item {
@@ -2909,8 +2912,11 @@ body .workspace-leaf-resize-handle:active {
 .modal.mod-community-plugin .community-plugin-search .setting-item-control button {
 	color: var(--extra-contrast);
 	background-color: var(--bg2);
+	box-shadow: var(--muted-button-shadow);
+
 	margin-right: 8px;
 	margin-left: 4px;
+
 	border-color: var(--basic-border-color);
 }
 
@@ -3197,6 +3203,7 @@ body .workspace-leaf-resize-handle:active {
 	font-size: 0;
 	height: 2.09rem;
 	background-color: var(--bg2);
+	box-shadow: var(--muted-button-shadow);
 	padding: 1px 3px 0 2px;
 }
 
@@ -3211,6 +3218,10 @@ body .workspace-leaf-resize-handle:active {
 	position: relative;
 	top: 5px;
 	left: 5px;
+}
+
+.modal.mod-community-plugin .community-plugin-info button:last-child:hover::BEFORE {
+	color: var(--button-hover-text);
 }
 
 .angular-shapes .modal.mod-community-plugin .community-plugin-info button:last-child {
@@ -4804,9 +4815,9 @@ body { /* stylelint-disable-line no-duplicate-selectors */
 	--indention-size: 1.8ch;
 }
 
-body:not(.no-ul-relationship-lines) .cm-s-obsidian .HyperMD-list-line {
+body:not(.no-ul-relationship-lines) .HyperMD-list-line.cm-line:not(.HyperMD-list-line-1) {
 	padding-top: 0.2em;
-	overflow-y: clip;
+	overflow: hidden;
 }
 
 body:not(.no-ul-relationship-lines) .cm-hmd-list-indent {
@@ -6623,8 +6634,31 @@ body .dict-s-popover.dict-s-popover.dict-s-popover {
 /* ───────────────────────────────────────────────────
 << Sliding Panes
 ─────────────────────────────────────────────────── */
-.plugin-sliding-panes .mod-root .workspace-leaf ~ .workspace-leaf {
-	border-left: 10px solid var(--basic-border-color);
+body.plugin-sliding-panes-rotate-header .workspace > .mod-root > .workspace-leaf > .workspace-leaf-content > .view-header.view-header.view-header {
+	border-right: var(--basic-border);
+	border-left: none;
+}
+
+body.plugin-sliding-panes-rotate-header .workspace > .mod-root > .workspace-leaf > .workspace-leaf-content > .view-header.view-header.view-header:hover {
+	border-color: var(--alt-accent);
+}
+
+body.plugin-sliding-panes-rotate-header .workspace > .mod-root > .workspace-leaf > .workspace-leaf-content > .view-header.view-header.view-header:focus-within {
+	border-color: var(--text-accent);
+}
+
+body.plugin-sliding-panes-rotate-header .workspace > .mod-root > .workspace-leaf > .workspace-leaf-content > .view-header .view-actions,
+body.plugin-sliding-panes-rotate-header .workspace > .mod-root > .workspace-leaf > .workspace-leaf-content > .view-header .view-header-icon.view-header-icon {
+	margin: 8px 4px;
+}
+
+body.plugin-sliding-panes-rotate-header .workspace > .mod-root > .workspace-leaf > .workspace-leaf-content > .view-header > .view-header-title-container > .view-header-title.view-header-title {
+	padding: 0;
+}
+
+body.plugin-sliding-panes-rotate-header .workspace > .mod-root > .workspace-leaf > .workspace-leaf-content > .view-header .view-actions.view-actions {
+	margin-top: 2px;
+	margin-bottom: 2px;
 }
 
 /* ───────────────────────────────────────────────────
