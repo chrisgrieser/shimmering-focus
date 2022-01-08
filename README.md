@@ -218,7 +218,7 @@ If you use Alfred, be sure to check out [my themes for Alfred](https://github.co
 ## Credits
 
 ### About the Developer
-In my day job, I am a researcher in Sociology. In my PhD project, I investigate the governance of the app economy and how the tension between innovation and compatibility is managed in software ecosystems. If you are interested in this subject, feel free to visit [my academic homepage](https://chris-grieser.de/) and get in touch!
+In my day job, I am a sociologist studying the social mechanisms underlying the digital economy. For my PhD project, I investigate the governance of the app economy and how software ecosystems manage the tension between innovation and compatibility. If you are interested in this subject, feel free to visit [my academic homepage](https://chris-grieser.de/) and get in touch.
 
 - [Discord](https://discord.gg/veuWUTm): `@pseudometa#9546`
 - Twitter: [@pseudo_meta](https://twitter.com/pseudo_meta)
