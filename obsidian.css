@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 1.585
+Version 1.586
 https://github.com/chrisgrieser/shimmering-focus/
 MIT License
 ─────────────────────────────────────────────────── */
@@ -5703,16 +5703,15 @@ body:not(.no-file-explorer-icons) .nav-file-tag {
 	display: none;
 }
 
-body:not(.no-file-explorer-icons) .nav-folder-title[data-path*="attachment"] .nav-folder-title-content::BEFORE {
+body:not(.no-file-explorer-icons) .nav-folder-title[data-path*="attachment" i] .nav-folder-title-content::BEFORE {
 	content: "attachment";
 }
 
-body:not(.no-file-explorer-icons) .nav-folder.is-collapsed .nav-folder-title[data-path*="attachment"] .nav-folder-title-content::BEFORE {
+body:not(.no-file-explorer-icons) .nav-folder.is-collapsed .nav-folder-title[data-path*="attachment" i] .nav-folder-title-content::BEFORE {
 	content: "attach_file";
 }
 
-body:not(.no-file-explorer-icons) .nav-folder-title[data-path*="Archiv"] .nav-folder-title-content::BEFORE,
-body:not(.no-file-explorer-icons) .nav-folder-title[data-path*="archive"] .nav-folder-title-content::BEFORE {
+body:not(.no-file-explorer-icons) .nav-folder-title[data-path*="archiv" i] .nav-folder-title-content::BEFORE {
 	content: "inventory_2";
 }
 
@@ -5721,8 +5720,7 @@ body:not(.no-file-explorer-icons) .nav-file-title-content::BEFORE {
 	content: "description";
 }
 
-body:not(.no-file-explorer-icons) .nav-file-title[data-path*="MoC"] .nav-file-title-content::BEFORE,
-body:not(.no-file-explorer-icons) .nav-file-title[data-path*="MOC"] .nav-file-title-content::BEFORE {
+body:not(.no-file-explorer-icons) .nav-file-title[data-path*="moc" i] .nav-file-title-content::BEFORE {
 	content: "map";
 }
 
@@ -5731,8 +5729,7 @@ body:not(.no-file-explorer-icons) .nav-file-title[data-path$="pptx"] .nav-file-t
 	color: hsl(38 100% 50%);
 }
 
-body:not(.no-file-explorer-icons) .nav-file-title[data-path*="presentation"] .nav-file-title-content::BEFORE,
-body:not(.no-file-explorer-icons) .nav-file-title[data-path*="Presentation"] .nav-file-title-content::BEFORE {
+body:not(.no-file-explorer-icons) .nav-file-title[data-path*="presentation" i] .nav-file-title-content::BEFORE {
 	content: "present_to_all";
 }
 
@@ -5765,23 +5762,17 @@ body:not(.no-file-explorer-icons) .nav-file-title[data-path$="csv"] .nav-file-ti
 	color: hsl(120 100% 25%);
 }
 
-body:not(.no-file-explorer-icons) .nav-file-title[data-path*="statistic"] .nav-file-title-content::BEFORE,
-body:not(.no-file-explorer-icons) .nav-file-title[data-path*="Statistik"] .nav-file-title-content::BEFORE {
+body:not(.no-file-explorer-icons) .nav-file-title[data-path*="statisti" i] .nav-file-title-content::BEFORE {
 	content: "pie_chart_outline";
 }
 
-body:not(.no-file-explorer-icons) .nav-file-title[data-path*="ToDo"] .nav-file-title-content::BEFORE,
-body:not(.no-file-explorer-icons) .nav-file-title[data-path*="Todo"] .nav-file-title-content::BEFORE,
-body:not(.no-file-explorer-icons) .nav-file-title[data-path*="To do"] .nav-file-title-content::BEFORE,
-body:not(.no-file-explorer-icons) .nav-file-title[data-path*="To Do"] .nav-file-title-content::BEFORE,
-body:not(.no-file-explorer-icons) .nav-file-title[data-path*="to do"] .nav-file-title-content::BEFORE {
+body:not(.no-file-explorer-icons) .nav-file-title[data-path*="todo" i] .nav-file-title-content::BEFORE,
+body:not(.no-file-explorer-icons) .nav-file-title[data-path*="to do" i] .nav-file-title-content::BEFORE {
 	content: "check_box";
 }
 
-body:not(.no-file-explorer-icons) .nav-file-title[data-path*="README"] .nav-file-title-content::BEFORE,
-body:not(.no-file-explorer-icons) .nav-file-title[data-path*="readme"] .nav-file-title-content::BEFORE,
-body:not(.no-file-explorer-icons) .nav-file-title[data-path*="Metadata"] .nav-file-title-content::BEFORE,
-body:not(.no-file-explorer-icons) .nav-file-title[data-path*="metadata"] .nav-file-title-content::BEFORE {
+body:not(.no-file-explorer-icons) .nav-file-title[data-path*="README" i] .nav-file-title-content::BEFORE,
+body:not(.no-file-explorer-icons) .nav-file-title[data-path*="metadata" i] .nav-file-title-content::BEFORE {
 	content: "info";
 }
 
@@ -5796,8 +5787,7 @@ body:not(.no-file-explorer-icons) .nav-file-title[data-path*="Word Count"] .nav-
 	content: "flag";
 }
 
-body:not(.no-file-explorer-icons) .nav-file-title[data-path*="Kanban"] .nav-file-title-content::BEFORE,
-body:not(.no-file-explorer-icons) .nav-file-title[data-path*="kanban"] .nav-file-title-content::BEFORE {
+body:not(.no-file-explorer-icons) .nav-file-title[data-path*="kanban" i] .nav-file-title-content::BEFORE {
 	content: "dashboard";
 }
 
