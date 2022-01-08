@@ -3,7 +3,8 @@
 
 	"plugins": [
 		"stylelint-order",
-		"stylelint-declaration-block-no-ignored-properties"
+		"stylelint-declaration-block-no-ignored-properties",
+		"stylelint-no-unsupported-browser-features"
 	],
 
 	"reportNeedlessDisables": [true, {"severity": "warning"}],
@@ -19,6 +20,12 @@
 		"no-descending-specificity": null,
 
 		"plugin/declaration-block-no-ignored-properties": true,
+
+		"plugin/no-unsupported-browser-features": [true, {
+		  "browsers": ["Chrome > 88"],
+		  "ignore": ["css-masks"]
+		}],
+
 		"order/order": [
 			["declarations", "custom-properties"],
 			{"severity": "warning"}
