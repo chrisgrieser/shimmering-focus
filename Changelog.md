@@ -1,3 +1,4 @@
+- 2022-01-08	various shadow-related fixes
 - 2022-01-08	number-font for the gutter
 - 2022-01-08	number-font for the gutter
 - 2022-01-08	exclude blockquotes without leading space from markup, too (@kometenstaub)

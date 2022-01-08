@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 1.592
+Version 1.593
 https://github.com/chrisgrieser/shimmering-focus/
 MIT License
 ─────────────────────────────────────────────────── */
@@ -456,14 +456,14 @@ body.theme-dark {
 
 /* <<< Inset Shadow */
 .theme-light {
-	--inset-shadow-color: hsl(0 0% 40% / 40%);
+	--inset-shadow-color: hsl(0 0% 45% / 40%);
 	--toggle-enabled-inset-shadow: -2px -2px 2px 0px var(--inset-shadow-color) inset;
 	--toggle-disabled-inset-shadow: -1px -1px 2px 0px var(--inset-shadow-color) inset;
-	--tab-inset-shadow: -1px -1px 0px 0px var(--inset-shadow-color) inset;
-	--textbox-inset-shadow: -1px -1px 1px 0px var(--inset-shadow-color) inset;
-	--button-inset-shadow: -2px -2px 0px 0px var(--inset-shadow-color) inset;
-	--muted-button-shadow: -1px -1px 1px 0px var(--inset-shadow-color) inset;
-	--notice-inset-shadow: -1px -1px 2px 0px var(--inset-shadow-color) inset;
+	--tab-inset-shadow: -1px -1px 0 var(--inset-shadow-color) inset;
+	--textbox-inset-shadow: 1px 1px 1px var(--inset-shadow-color) inset;
+	--button-inset-shadow: -2px -2px 3px var(--inset-shadow-color) inset;
+	--muted-button-shadow: -1px -1px 1px var(--inset-shadow-color) inset;
+	--notice-inset-shadow: -1px -1px 2px var(--inset-shadow-color) inset;
 }
 
 .theme-dark {
@@ -471,11 +471,11 @@ body.theme-dark {
 	--inset-shadow-black: hsl(0 0% 3% / 100%);
 	--toggle-enabled-inset-shadow: -2px -2px 2px 0px var(--inset-shadow-color) inset;
 	--toggle-disabled-inset-shadow: -3px -3px 2px 0px var(--inset-shadow-black) inset;
-	--tab-inset-shadow: -1px -1px 0px 0px var(--inset-shadow-black) inset;
-	--textbox-inset-shadow: -2px -2px 1px 0px var(--inset-shadow-black) inset;
-	--button-inset-shadow: -2px -2px 2px 0px var(--inset-shadow-color) inset;
-	--muted-button-shadow: -1px -1px 1px 0px var(--inset-shadow-black) inset;
-	--notice-inset-shadow: -1px -1px 2px 0px var(--inset-shadow-black) inset;
+	--tab-inset-shadow: -1px -1px 0px var(--inset-shadow-black) inset;
+	--textbox-inset-shadow: 2px 2px 1px var(--inset-shadow-black) inset;
+	--button-inset-shadow: -2px -2px 2px var(--inset-shadow-color) inset;
+	--muted-button-shadow: -1px -1px 1px var(--inset-shadow-black) inset;
+	--notice-inset-shadow: -1px -1px 2px var(--inset-shadow-black) inset;
 }
 
 /* drop shadow when scrolled */
@@ -2967,15 +2967,6 @@ body .workspace-leaf-resize-handle:active {
 	margin-left: -4px;
 }
 
-/* hide the "showing" */
-.community-plugin-search-summary::BEFORE {
-	content: " ";
-	white-space: pre-wrap;
-	width: 4.3em;
-	background-color: var(--bg3);
-	position: absolute;
-}
-
 .community-plugin-downloads::BEFORE,
 .community-plugin-downloads,
 .community-plugin-desc,
@@ -3108,7 +3099,7 @@ body .workspace-leaf-resize-handle:active {
 	font-family: var(--default-font);
 
 	/* 50px for overscroll */
-	padding: 0 5px 50px 15px;
+	padding: 0 12px 50px;
 }
 
 .community-plugin-details {
@@ -3127,9 +3118,8 @@ body .workspace-leaf-resize-handle:active {
 
 	background-color: var(--bg2);
 
-	padding: 6px 25px 6px 6px;
-	margin-right: -5px;
-	margin-left: -15px;
+	padding: 8px 10px 6px 8px;
+	margin: 0 -12px 7px;
 
 	border-bottom: var(--basic-border);
 }
@@ -3151,56 +3141,47 @@ body .workspace-leaf-resize-handle:active {
 .community-plugin-author + .community-plugin-author a::BEFORE {
 	content: "launchdns";
 	font-family: var(--icon-font);
-	font-size: 1rem;
+	font-size: 0.8rem;
 	position: relative;
-	bottom: -3.5px;
+	bottom: -2px;
 }
 
-/* properly lowercase the "by" */
-.community-plugin-info .community-plugin-author:nth-child(4)::FIRST-LETTER {
-	text-transform: lowercase;
-}
-
-.community-plugin-details .community-plugin-info .community-plugin-downloads::BEFORE {
-	font-size: 1em;
-	line-height: 1.4em;
-}
-
-.community-plugin-info .community-plugin-downloads {
-	font-size: 1.2em;
-	line-height: 1.2em;
-}
-
-.community-plugin-info .community-plugin-downloads-text,
-.community-plugin-info .community-plugin-version,
-.community-plugin-info .community-plugin-author {
-	font-family: var(--smallcap-font);
-	font-size: 1.0em;
-	line-height: 1.4em;
-	letter-spacing: 0.5px;
-
-	color: var(--extra-contrast);
-
-	vertical-align: unset;
-}
-
-.community-plugin-info .community-plugin-downloads::BEFORE {
-	font-family: unset;
-	font-size: 1.1em;
-}
-
+/* author + version info */
 .community-plugin-info .community-plugin-author:nth-child(3)::FIRST-LETTER {
 	text-transform: lowercase;
 }
 
-/* n6 for no download numbers, n7 for when there are dl numbers */
-.community-plugin-info p:nth-child(6),
-.community-plugin-info p:nth-child(7) {
-	margin-top: 5px;
-	margin-bottom: 10px;
+.community-plugin-info .community-plugin-author:nth-child(4)::FIRST-LETTER {
+	/* properly lowercase the "by" */
+	text-transform: lowercase;
 }
 
-/* contains the buttons */
+.community-plugin-info .community-plugin-version,
+.community-plugin-info .community-plugin-author {
+	font-family: var(--menu-font);
+	font-size: 0.85rem;
+	line-height: 1.4em;
+	letter-spacing: 0.5px;
+	color: var(--extra-contrast);
+}
+
+/* download numbers */
+body .community-plugin-info .community-plugin-downloads-text {
+	font-family: var(--number-font);
+	letter-spacing: 0.5px;
+	color: var(--extra-contrast);
+	top: -2px;
+}
+
+.community-plugin-info .community-plugin-downloads {
+	display: block;
+	font-size: 1.3rem;
+	position: absolute;
+	right: 10px;
+	margin-top: 5px;
+}
+
+/* Buttons */
 .mod-community-plugin .community-plugin-desc + p {
 	margin-top: 10px;
 	margin-bottom: 15px;
@@ -3305,7 +3286,7 @@ body .workspace-leaf-resize-handle:active {
 	content: "Feature Overview";
 	font-family: var(--button-font);
 	font-size: var(--button-font-size);
-	font-weight: 500;
+	font-weight: 600;
 	padding-left: 4px;
 }
 
@@ -3321,8 +3302,8 @@ body .workspace-leaf-resize-handle:active {
 	top: 80px;
 	right: 15%;
 
-	padding-top: 4px;
-	padding-bottom: 4px;
+	padding-top: 5px;
+	padding-bottom: 6px;
 	margin-right: 0;
 	margin-bottom: 5px;
 	margin-left: 0;
@@ -3346,6 +3327,7 @@ body .workspace-leaf-resize-handle:active {
 
 	color: var(--text-normal);
 	background-color: var(--bg2);
+	box-shadow: var(--muted-button-shadow);
 
 	position: absolute;
 	top: 137px;
@@ -3369,6 +3351,7 @@ body .workspace-leaf-resize-handle:active {
 
 .community-theme.is-selected .community-theme-title::AFTER {
 	content: var(--signature);
+	font-size: 120%;
 	font-weight: 500;
 	padding-left: 5px;
 }
@@ -3387,12 +3370,14 @@ body .workspace-leaf-resize-handle:active {
 
 .theme-light .community-theme.is-selected .community-theme-info .clickable-icon {
 	background-color: hsl(50 30% 80%);
+	box-shadow: -2px -2px 3px hsl(0 0% 60% / 50%) inset;
 	border-color: hsl(50 30% 60%);
 }
 
 .theme-dark .community-theme.is-selected .community-theme-info .clickable-icon {
 	background-color: hsl(50 60% 60%);
-	border-color: hsl(50 70% 40%);
+	box-shadow: -2px -2px 2px hsl(0 0% 30% / 50%) inset;
+	border-color: hsl(50 70% 70%);
 }
 
 .community-theme.is-selected svg.github-glyph > path {
@@ -3410,6 +3395,7 @@ body .workspace-leaf-resize-handle:active {
 .modal-container .modal.mod-community-theme .community-theme.is-selected button:first-child {
 	color: var(--text-faint);
 	background-color: var(--bg2);
+	box-shadow: none;
 	border-color: var(--bg1);
 	cursor: not-allowed;
 }
@@ -3427,6 +3413,7 @@ body .workspace-leaf-resize-handle:active {
 .community-theme {
 	color: var(--text-normal);
 	background: var(--bg3);
+	box-shadow: var(--small-shadow);
 	border-radius: calc(var(--roundish) * 2);
 }
 
@@ -3453,13 +3440,14 @@ body .workspace-leaf-resize-handle:active {
 .community-theme-downloads .community-plugin-downloads-text {
 	font-family: var(--default-font);
 	font-size: 0.85rem;
+	top: -2px;
 }
 
 .community-theme-downloads .community-plugin-downloads-text::BEFORE {
 	content: "download";
 	font-family: var(--icon-font);
 	position: relative;
-	top: 3px;
+	top: 2px;
 	padding-right: 2px;
 }
 
@@ -3474,10 +3462,6 @@ body .workspace-leaf-resize-handle:active {
 .modal.mod-community-theme .search-input-container input {
 	width: 250px;
 	background-color: var(--bg1);
-}
-
-body:not(.less-heading-letter-spacing) .modal.mod-community-theme .modal-title {
-	letter-spacing: 1px;
 }
 
 body .modal.mod-community-theme .modal-content .modal-title {
@@ -3496,8 +3480,13 @@ body .modal.mod-community-theme .modal-content .modal-title {
 /* sort order button */
 .modal.mod-community-theme .community-theme-filters-container .setting-item-control button {
 	height: 30px;
+
 	color: var(--extra-contrast);
 	background-color: var(--bg3);
+	box-shadow: var(--muted-button-shadow);
+
+	margin-bottom: 9px;
+
 	border-color: var(--basic-border-color);
 }
 
@@ -3518,6 +3507,11 @@ body .modal.mod-community-theme .modal-content .modal-title {
 	color: var(--alt-accent);
 }
 
+/* github icon */
+.modal.mod-community-theme .clickable-icon {
+	margin-top: -1px;
+}
+
 .modal.mod-community-theme .community-theme .clickable-icon:hover {
 	color: var(--alt-accent);
 }
@@ -3528,8 +3522,9 @@ body .modal.mod-community-theme .modal-content .modal-title {
 
 .modal.mod-community-theme .modal-title {
 	font-family: var(--heading-font);
-	font-size: 2.2em;
+	font-size: 2.4em;
 	font-weight: 500;
+	letter-spacing: 1px;
 	text-transform: capitalize;
 }
 
