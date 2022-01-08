@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 1.595
+Version 1.596
 https://github.com/chrisgrieser/shimmering-focus/
 MIT License
 ─────────────────────────────────────────────────── */
@@ -2409,21 +2409,22 @@ body > .app-container .workspace-split.mod-horizontal > .workspace-tabs > .works
 
 /* tab buttons */
 .workspace-tabs .workspace-tab-header-container {
+	min-height: 39px;
 	padding: 7px 11px 5px;
 	margin: 0;
 	border-bottom: var(--basic-border);
 }
 
-.workspace-tab-header {
-	height: 27px;
+.workspace-tab-header-container .workspace-tab-header {
+	height: 26px;
+
+	background-color: var(--bg3);
 	box-shadow: var(--tab-inset-shadow);
-	margin-right: 7px;
+
+	margin-right: 9px;
+
 	border: var(--thin-border);
 	border-radius: var(--roundish);
-}
-
-.workspace-tab-header-container .workspace-tab-header {
-	background-color: var(--bg3);
 }
 
 .workspace-tab-header.is-active {
@@ -6088,12 +6089,6 @@ body.outline-remove-level-1:not(.no-alternating-rows) .outline .tree-item-childr
 	padding-left: 1.2em;
 }
 
-/* nav buttons closer together, so they are not split up to two lines to quickly */
-.workspace-leaf-content[data-type="search"] .nav-action-button {
-	margin-right: 2px;
-	margin-left: 0;
-}
-
 .workspace-leaf-content[data-type="search"] .nav-header {
 	padding-right: 1px;
 	padding-left: 1px;
@@ -6526,8 +6521,9 @@ body:not(.show-graph-controls) .graph-controls.is-close:not(:hover) {
 into images in Preview Mode. Therefore, image-styling
 has to be reset. */
 
-img.emoji.emoji.emoji.emoji {
+img.emoji.emoji.emoji.emoji.emoji {
 	display: inline;
+	max-width: 1em; /* stylelint-disable-line plugin/declaration-block-no-ignored-properties */
 	margin-top: 0; /* stylelint-disable-line plugin/declaration-block-no-ignored-properties */
 	border: none;
 }
