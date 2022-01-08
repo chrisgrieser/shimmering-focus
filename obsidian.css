@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 1.590
+Version 1.591
 https://github.com/chrisgrieser/shimmering-focus/
 MIT License
 ─────────────────────────────────────────────────── */
@@ -710,6 +710,16 @@ only sidebars and everything scrolling */
 		format("woff2");
 }
 
+@font-face {
+	font-family: "Share Tech Mono Numbers";
+	font-weight: 500;
+	font-style: normal;
+	font-display: swap;
+	src:
+		url("data:font/woff2;charset=utf-8;base64,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")
+		format("woff2");
+}
+
 /* << Font Definitions */
 :root { /* stylelint-disable-line no-duplicate-selectors */
 	--default-font: "iA Writer Quattro S";
@@ -741,6 +751,8 @@ only sidebars and everything scrolling */
 	--h4-size: 1.3em;
 	--h5-size: 1.15em;
 	--h6-size: 1.05em;
+
+	--number-font: "Share Tech Mono Numbers";
 
 	/* needed for some edge cases */
 	--original-font: "Inter", -apple-system, blinkmacsystemfont, "Segoe UI", roboto, helvetica, arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Microsoft YaHei Light", sans-serif; /* stylelint-disable-line max-line-length */
@@ -3896,6 +3908,10 @@ body:not(.show-fold-marker) .CodeMirror-foldmarker {
 /* ───────────────────────────────────────────────────
 <<< Line Numbers
 ─────────────────────────────────────────────────── */
+.CodeMirror-linenumbers,
+.cm-lineNumbers {
+	font-family: var(--number-font);
+}
 
 /* show only active line number */
 body:not(.show-all-line-numbers) .cm-lineNumbers .cm-gutterElement:not(.cm-active):not(:hover) {

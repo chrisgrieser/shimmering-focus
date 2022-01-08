@@ -1,3 +1,4 @@
+- 2022-01-08	number-font for the gutter
 - 2022-01-08	exclude blockquotes without leading space from markup, too (@kometenstaub)
 - 2022-01-08	🌀 SLiding Panes with rotated headers now supported!
 - 2022-01-08	styled tabs and inset shadows
