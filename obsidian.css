@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 1.593
+Version 1.594
 https://github.com/chrisgrieser/shimmering-focus/
 MIT License
 ─────────────────────────────────────────────────── */
@@ -6507,6 +6507,19 @@ body:not(.show-graph-controls) .graph-controls.is-close:not(:hover) {
 /* ───────────────────────────────────────────────────
 < Community Plugins
 ─────────────────────────────────────────────────── */
+
+/* ───────────────────────────────────────────────────
+<< Emoji Toolbar
+─────────────────────────────────────────────────── */
+/* Having "Twitter emojis" enabled turns all emojis
+into images in Preview Mode. Therefore, image-styling
+has to be reset. */
+
+img.emoji.emoji.emoji.emoji {
+	display: inline;
+	margin-top: 0; /* stylelint-disable-line plugin/declaration-block-no-ignored-properties */
+	border: none;
+}
 
 /* ───────────────────────────────────────────────────
 << Discord Rich Presence

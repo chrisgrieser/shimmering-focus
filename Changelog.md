@@ -1,3 +1,4 @@
+- 2022-01-08	fix display of emojis when using emoji toolbar (#86)
 - 2022-01-08	various shadow-related fixes
 - 2022-01-08	number-font for the gutter
 - 2022-01-08	number-font for the gutter
