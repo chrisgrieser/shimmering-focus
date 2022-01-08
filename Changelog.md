@@ -1,3 +1,4 @@
+- 2022-01-08	minor
 - 2022-01-08	🌀 SLiding Panes with rotated headers now supported!
 - 2022-01-08	styled tabs and inset shadows
 - 2022-01-08	improved stylelint config

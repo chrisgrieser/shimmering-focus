@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 1.588
+Version 1.589
 https://github.com/chrisgrieser/shimmering-focus/
 MIT License
 ─────────────────────────────────────────────────── */
@@ -8682,7 +8682,7 @@ settings:
 	-
 	 id: show-header-bar
 	 title: Permanently show the Header Bar
-	 description: When false, the Header bar is still visible upon focus and hover
+	 description: When false, the Header bar is still visible upon focus and hover. (When you are using Sliding Panes with rotated headers, the headers will be permanently shown and this setting has no effect.)
 	 type: class-toggle
 	 default: false
 	-
