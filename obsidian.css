@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 1.594
+Version 1.595
 https://github.com/chrisgrieser/shimmering-focus/
 MIT License
 ─────────────────────────────────────────────────── */
@@ -2139,10 +2139,15 @@ div.search-input-clear-button:hover::BEFORE,
 }
 
 .modal-close-button {
+	background-color: var(--bg3);
+
 	top: 0;
 	right: 0;
 	z-index: 100;
-	padding: 2px 6px;
+
+	padding: 0 4px 3px;
+
+	border-radius: 50px;
 }
 
 /* only show on hover */
@@ -2150,6 +2155,7 @@ body:not(.show-close-button) .document-search-close-button,
 body:not(.show-close-button) div.search-input-clear-button,
 body:not(.show-close-button) .empty-state-close-button,
 body:not(.show-close-button) .modal-close-button {
+	background-color: none;
 	opacity: 0;
 	transition: var(--slow-transition);
 }
@@ -3122,6 +3128,11 @@ body .workspace-leaf-resize-handle:active {
 	margin: 0 -12px 7px;
 
 	border-bottom: var(--basic-border);
+}
+
+/* move title to the side if close button */
+.show-close-button .community-plugin-info .community-plugin-name {
+	text-align: start;
 }
 
 /* installation icon */
@@ -8671,7 +8682,7 @@ community:
 - obsidian-cursor-location-plugin
 - obsidian-dictionary-plugin
 - obsidian-highlight-current-word
-
+- obsidian-emoji-toolbar
 */
 
 /* ───────────────────────────────────────────────────
