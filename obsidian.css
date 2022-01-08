@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 1.586
+Version 1.587
 https://github.com/chrisgrieser/shimmering-focus/
 MIT License
 ─────────────────────────────────────────────────── */
@@ -419,14 +419,12 @@ the .create-ToC.sh.
 	background-color: var(--bg1);
 }
 
-.workspace-tabs .workspace-leaf,
-.workspace-tab-header-container .workspace-tab-header.is-active .workspace-tab-header-inner {
+.workspace-tabs .workspace-leaf {
 	background-color: var(--bg2);
 }
 
 .status-bar,
-.workspace-tabs,
-.workspace-tab-header-container .workspace-tab-header .workspace-tab-header-inner {
+.workspace-tabs {
 	background-color: var(--bg3);
 }
 
@@ -434,6 +432,7 @@ the .create-ToC.sh.
 << Shadows
 ─────────────────────────────────────────────────── */
 
+/* <<< Outside Shadow */
 .theme-light {
 	--shadow-color: hsl(0 0% 40% / 70%);
 	--shadow-base-size: 0px;
@@ -442,16 +441,39 @@ the .create-ToC.sh.
 .theme-dark {
 	--shadow-color: hsl(0 0% 1% / 30%);
 	--shadow-base-size: 3px;
+
+	--shadow-for-dark-bold: -0.5px 0.5px hsl(0 0% 35%);
 }
 
 body.theme-light,
 body.theme-dark {
-	--shadow-blur: 6px;
+	--shadow-blur: 3px;
 
 	--big-shadow: 4px 6px var(--shadow-blur) calc(var(--shadow-base-size) + 10px) var(--shadow-color);
 	--medium-shadow: 4px 6px var(--shadow-blur) calc(var(--shadow-base-size) + 5px) var(--shadow-color);
-	--small-shadow: 2px 4px var(--shadow-blur) calc(var(--shadow-base-size) + 0px) var(--shadow-color);
-	--shadow-for-dark-bold: -0.5px 0.5px hsl(0 0% 35%);
+	--small-shadow: 1px 3px var(--shadow-blur) calc(var(--shadow-base-size) + 0px) var(--shadow-color);
+}
+
+/* <<< Inset Shadow */
+.theme-light {
+	--inset-shadow-color: hsl(0 0% 40% / 40%);
+	--toggle-enabled-inset-shadow: -2px -2px 2px 0px var(--inset-shadow-color) inset;
+	--toggle-disabled-inset-shadow: -1px -1px 2px 0px var(--inset-shadow-color) inset;
+	--tab-inset-shadow: -1px -1px 0px 0px var(--inset-shadow-color) inset;
+	--textbox-inset-shadow: -1px -1px 1px 0px var(--inset-shadow-color) inset;
+	--button-inset-shadow: -2px -2px 0px 0px var(--inset-shadow-color) inset;
+	--notice-inset-shadow: -1px -1px 2px 0px var(--inset-shadow-color) inset;
+}
+
+.theme-dark {
+	--inset-shadow-color: hsl(0 0% 20% / 80%);
+	--inset-shadow-black: hsl(0 0% 3% / 100%);
+	--toggle-enabled-inset-shadow: -2px -2px 2px 0px var(--inset-shadow-color) inset;
+	--toggle-disabled-inset-shadow: -3px -3px 2px 0px var(--inset-shadow-black) inset;
+	--tab-inset-shadow: -1px -1px 0px 0px var(--inset-shadow-black) inset;
+	--textbox-inset-shadow: -2px -2px 1px 0px var(--inset-shadow-black) inset;
+	--button-inset-shadow: -2px -2px 0px 0px var(--inset-shadow-color) inset;
+	--notice-inset-shadow: -1px -1px 2px 0px var(--inset-shadow-black) inset;
 }
 
 /* drop shadow when scrolled */
@@ -1089,6 +1111,9 @@ svg.longform > path { display: none }
 
 svg.longform {
 	background-color: currentColor;
+	position: relative;
+	right: -1px;
+	transform: scale(1.1);
 	-webkit-mask-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' preserveAspectRatio='xMidYMid meet' viewBox='0 0 24 24'%3e%3cpath d='M3 2h2v20H3zm16 0H6v20h13c1.103 0 2-.897 2-2V4c0-1.103-.897-2-2-2zm-1 10H9v-2h9v2zm0-4H9V6h9v2z' fill='currentColor'/%3e%3c/svg%3e");
 }
 
@@ -1197,8 +1222,8 @@ body:not(.show-titlebar) .titlebar {
 }
 
 :root { /* stylelint-disable-line no-duplicate-selectors */
-	--mac-traffic-light-padding: 15px;
-	--normal-top-padding: 38px;
+	--mac-traffic-light-padding: 14px;
+	--normal-top-padding: 39px;
 }
 
 /* fix for macOS Traffic Lights */
@@ -1219,7 +1244,7 @@ body.mod-macos:not(.show-titlebar) .workspace-split.mod-left-split.is-collapsed 
 
 /* adapt height of ribbons */
 body:not(.show-titlebar) .workspace-ribbon.mod-left {
-	margin-top: calc(var(--mac-traffic-light-padding) + 38px);
+	margin-top: calc(var(--mac-traffic-light-padding) + var(--normal-top-padding));
 }
 
 body:not(.show-titlebar) .workspace-ribbon.mod-right {
@@ -1228,16 +1253,6 @@ body:not(.show-titlebar) .workspace-ribbon.mod-right {
 
 body.show-titlebar .workspace-ribbon.mod-left {
 	margin-top: 0;
-}
-
-/* adapt height of resize handles */
-body:not(.show-titlebar) .workspace-split.mod-left-split > .workspace-leaf-resize-handle {
-	top: calc(var(--mac-traffic-light-padding) + var(--normal-top-padding));
-}
-
-body.show-titlebar .workspace-split.mod-left-split > .workspace-leaf-resize-handle,
-body .workspace-split.mod-right-split > .workspace-leaf-resize-handle {
-	top: var(--normal-top-padding);
 }
 
 /* styling when of the titlebar when shown */
@@ -1309,10 +1324,13 @@ body .app-container .workspace-ribbon.is-collapsed {
 }
 
 .workspace-ribbon-collapse-btn {
-	background-color: var(--bg1);
 	padding-top: 20px;
 	margin-top: 0;
 	border-bottom: var(--ribbon-border);
+}
+
+body:not(.show-titlebar) .workspace-ribbon-collapse-btn {
+	border-top: var(--basic-border);
 }
 
 .workspace-ribbon-collapse-btn svg {
@@ -1340,7 +1358,7 @@ body .app-container .workspace-ribbon.is-collapsed {
 
 	color: var(--text-normal);
 	background-color: var(--notice-bg) !important;
-	box-shadow: var(--small-shadow);
+	box-shadow: var(--small-shadow), var(--notice-inset-shadow);
 
 	border: var(--notice-border);
 	border-radius: var(--roundish);
@@ -1350,6 +1368,10 @@ body .app-container .workspace-ribbon.is-collapsed {
 }
 
 .tooltip .tooltip-arrow {
+	display: none;
+}
+
+/* .tooltip .tooltip-arrow {
 	margin-top: calc(-1 * var(--tooltip-arrow-length) + 5px);
 	border-bottom: var(--tooltip-arrow);
 }
@@ -1368,7 +1390,7 @@ body .app-container .workspace-ribbon.is-collapsed {
 .tooltip.mod-top .tooltip-arrow {
 	margin-top: 0;
 	border-top: var(--tooltip-arrow);
-}
+} */
 
 /* ───────────────────────────────────────────────────
 << Notices (Notifications)
@@ -1385,7 +1407,7 @@ div.notice-container .notice {
 
 	color: var(--text-normal);
 	background-color: var(--notice-bg);
-	box-shadow: var(--small-shadow);
+	box-shadow: var(--small-shadow), var(--notice-inset-shadow);
 
 	padding: 5px 12px 7px;
 
@@ -1669,6 +1691,7 @@ a.style-settings-export,
 
 	color: var(--button-text);
 	background-color: var(--interactive-bg);
+	box-shadow: var(--button-inset-shadow);
 
 	padding: 5px 12px 7px;
 
@@ -1725,7 +1748,7 @@ p.mod-warning::BEFORE {
 }
 
 /* ───────────────────────────────────────────────────
-<< Toggles (Checkboxes)
+<< Toggles
 ─────────────────────────────────────────────────── */
 
 .checkbox-container::AFTER {
@@ -1747,6 +1770,14 @@ p.mod-warning::BEFORE {
 	cursor: pointer;
 }
 
+.checkbox-container.is-enabled {
+	box-shadow: var(--toggle-enabled-inset-shadow);
+}
+
+.checkbox-container:not(.is-enabled) {
+	box-shadow: var(--toggle-disabled-inset-shadow);
+}
+
 body.angular-shapes .checkbox-container {
 	height: 19px;
 	width: 19px;
@@ -1759,13 +1790,13 @@ body.angular-shapes .checkbox-container {
 }
 
 .checkbox-container:hover {
+	box-shadow: none;
 	border: 9px solid var(--interactive-hover-border);
 	transition: var(--medium-transition);
 }
 
 .checkbox-container.is-enabled:hover {
 	background-color: var(--bg2);
-	border-color: var(--interactive-hover-border);
 }
 
 /* ───────────────────────────────────────────────────
@@ -1777,9 +1808,13 @@ input[type="text"],
 input[type="number"],
 input[type="email"],
 input[type="password"] {
+	box-shadow: var(--textbox-inset-shadow);
+
 	left: 0;
+
 	padding-right: 10px;
 	padding-left: 10px;
+
 	border: var(--thin-border);
 	border-radius: var(--round);
 }
@@ -1789,6 +1824,7 @@ body:not(.angular-shapes) input[type="text"] {
 }
 
 textarea {
+	box-shadow: var(--textbox-inset-shadow);
 	padding: 4px 8px;
 	border-radius: calc(var(--roundish) * 1.5);
 }
@@ -1836,6 +1872,7 @@ input:hover {
 ─────────────────────────────────────────────────── */
 
 select.dropdown {
+	box-shadow: var(--textbox-inset-shadow);
 	padding: 6px 28px 6px 10px;
 	border: var(--thin-border);
 	border-radius: var(--round);
@@ -2332,26 +2369,17 @@ body > .app-container .nav-folder-title:hover {
 ─────────────────────────────────────────────────── */
 
 /* unset stuff from Obsidian's default theme */
-.workspace-tab-header-inner.is-after-active,
-.workspace-tab-header-inner.is-before-active,
-.workspace-tab-header.is-after-active,
-.workspace-tab-header.is-before-active {
-	background: transparent;
-}
-
-.workspace-tab-header.is-before-active .workspace-tab-header-inner,
-.workspace-tab-header.is-after-active .workspace-tab-header-inner {
-	border-radius: var(--roundish);
-}
-
 .workspace-tab-container-after,
 .workspace-tab-container-before {
 	display: none;
 }
 
+body .workspace-tab-header-container .workspace-tab-header .workspace-tab-header-inner {
+	background-color: transparent;
+}
+
 .workspace-tab-header-container {
 	background-color: transparent;
-	margin: 4px 0 4px 11px;
 }
 
 /* no rounded corners for the sidebar leafs */
@@ -2359,11 +2387,23 @@ body > .app-container .workspace-split.mod-horizontal > .workspace-tabs > .works
 	border-radius: 0;
 }
 
-/* own styling */
+/* tab buttons */
+.workspace-tabs .workspace-tab-header-container {
+	padding: 7px 11px 5px;
+	margin: 0;
+	border-bottom: var(--basic-border);
+}
+
 .workspace-tab-header {
-	margin-right: 6px;
+	height: 27px;
+	box-shadow: var(--tab-inset-shadow);
+	margin-right: 7px;
 	border: var(--thin-border);
 	border-radius: var(--roundish);
+}
+
+.workspace-tab-header-container .workspace-tab-header {
+	background-color: var(--bg3);
 }
 
 .workspace-tab-header.is-active {
@@ -2384,23 +2424,9 @@ body > .app-container .workspace-split.mod-horizontal > .workspace-tabs > .works
 	border-radius: var(--roundish);
 }
 
-/* hover & on-click colors */
-.workspace-tab-header:hover svg,
-.nav-action-button:hover svg,
-.nav-action-button.is-active:hover svg {
-	color: var(--alt-accent);
-}
-
+/* Navigation buttons */
 .nav-action-button.is-active {
 	background-color: var(--bg3);
-}
-
-.nav-action-button:hover,
-.nav-action-button.is-active:hover,
-.workspace-tab-header:hover .workspace-tab-header-inner,
-.workspace-tab-header:hover {
-	background-color: var(--bg1);
-	cursor: pointer;
 }
 
 .workspace-tab-header-inner:active svg,
@@ -2422,9 +2448,26 @@ body > .app-container .workspace-split.mod-horizontal > .workspace-tabs > .works
 
 .nav-action-button {
 	height: 27px;
+	box-shadow: var(--tab-inset-shadow);
 	padding: 2px 6px 0;
 	border: var(--thin-border);
 	border-radius: var(--roundish);
+}
+
+/* hover & on-click colors */
+.workspace-tab-header:hover svg,
+.nav-action-button:hover svg,
+.nav-action-button.is-active:hover svg {
+	color: var(--alt-accent);
+}
+
+.nav-action-button:hover,
+.nav-action-button.is-active:hover,
+.workspace-tab-header.is-active:hover .workspace-tab-header-inner,
+.workspace-tab-header:hover .workspace-tab-header-inner,
+.workspace-tab-header:hover {
+	background-color: var(--bg1);
+	cursor: pointer;
 }
 
 /* ───────────────────────────────────────────────────
@@ -2437,6 +2480,12 @@ on the titlebar visibility in the titlebar section */
 	transition: var(--medium-transition);
 }
 
+/* full height of vertical resize handles */
+body .app-container .workspace-split > .workspace-leaf-resize-handle {
+	height: 100%;
+	top: 0;
+}
+
 /* fix for the background not shining through */
 .mod-left-split .workspace-tabs {
 	padding-right: var(--resize-handle-color-thickness);
@@ -2446,8 +2495,7 @@ on the titlebar visibility in the titlebar section */
 	width: var(--resize-handle-color-thickness);
 }
 
-.workspace-split.mod-horizontal > .workspace-leaf > .workspace-leaf-resize-handle,
-.workspace-split.mod-horizontal > .workspace-tabs > .workspace-leaf-resize-handle {
+.workspace-split.mod-horizontal > * > .workspace-leaf-resize-handle {
 	height: var(--resize-handle-color-thickness);
 }
 
@@ -9015,7 +9063,7 @@ settings:
 	-
 	 id: gutter-features
 	 title: 🆕 Gutter & Active Line
-	 description: Active & Focused Line Highlight, Footnote Indicators
+	 description: Active & Focused Line Highlight, Indicators in the Gutter
 	 type: heading
 	 level: 2
 	 collapsed: true
