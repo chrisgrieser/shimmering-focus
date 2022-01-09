@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 1.612
+Version 1.613
 https://github.com/chrisgrieser/shimmering-focus/
 MIT License
 ─────────────────────────────────────────────────── */
@@ -3493,7 +3493,7 @@ body .community-plugin-info .community-plugin-downloads-text {
 
 body .modal.mod-community-theme .modal-content .modal-title {
 	font-weight: 700;
-	letter-spacing: var(--heading-letter-spacing);
+	letter-spacing: 2px;
 	margin-bottom: 20px;
 }
 
