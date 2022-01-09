@@ -1,4 +1,5 @@
-- 2022-01-09	✨ css-only multi-line admonitions: use >>> 
+- 2022-01-09	minor
+- 2022-01-09	✨ css-only multi-line admonitions: use >>>
 - 2022-01-09	✨ new cssclass: clean-embeds
 - 2022-01-09	contribution templates
 - 2022-01-09	✨ Built-in styling for Supercharged Links
