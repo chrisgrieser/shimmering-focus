@@ -220,15 +220,15 @@ This theme has been adjusted to be compatible with [SlRvb's Checkboxes](https://
 ### Instructions for specific Plugins
 In accordance with the minimalistic philosophy of the theme, unnecessary UI elements of some plugins have also been removed. However, you can still access the full plugin functionality.
 
-- Longform: Prepend a `_` to file names of longform scenes to create sub-scenes. 
-- Sliding Panes: As long as you are using `rotated headers`, the header is permanently shown.
-- Kanban: Right-click cards to edit them.
-- Supercharged Links: The theme includes [various built-in styling](#built-in-styling-for-supercharged-links). You can turn those of with the Style Settings plugin.
-- Breadcrumbs: Even with buttons removed, you can still refresh the index via Command Palette. [When Supercharged Links is installed, hovering over a link with the `up` yaml field displays the content of that field.](#built-in-styling-for-supercharged-links)
-- Quick Explorer: Re-enable the title bar with the [Style Settings Plugin](https://github.com/mgmeyers/obsidian-style-settings/) for the breadcrumbs
-- Dataview: If the table lines are off, use the [`dataview-list-in-table` CSS Classes](#css-classes)
-- Ozan's Image in Editor: Image Sizes are affected by the Image Settings & by the Max View Feature.
-- Starred (Core Plugin): To be able to star searches, re-enable the Starred pane buttons with the [Style Settings Plugin](https://github.com/mgmeyers/obsidian-style-settings/)
+- __Longform__: Prepend a `_` to file names of longform scenes to create sub-scenes. 
+- __Sliding Panes__: As long as you are using `rotated headers`, the header is permanently shown.
+- __Kanban__: Right-click cards to edit them.
+- __Supercharged Links__: The theme includes [various built-in styling](#built-in-styling-for-supercharged-links). You can turn those of with the Style Settings plugin.
+- __Breadcrumbs__: Even with buttons removed, you can still refresh the index via Command Palette. When Supercharged Links is installed, [hovering over a link with the `up` yaml field](#built-in-styling-for-supercharged-links) displays the content of that field.
+- __Quick Explorer__: Re-enable the title bar with the [Style Settings Plugin](https://github.com/mgmeyers/obsidian-style-settings/) for the breadcrumbs
+- __Dataview__: If the table lines are off, use the [`dataview-list-in-table` CSS Classes](#css-classes)
+- __Ozan's Image in Editor__: Image Sizes are affected by the Image Settings & by the Max View Feature.
+- __Starred (Core Plugin)__: To be able to star searches, re-enable the Starred pane buttons with the [Style Settings Plugin](https://github.com/mgmeyers/obsidian-style-settings/)
 
 ## Installation
 You can find *Shimmering Focus* in Obsidian's community themes browser under `Obsidian Settings ➞ Appearance ➞ Themes ➞ Manage`.
