@@ -105,6 +105,7 @@ To help increase scannability of long notes, some the presence of some easy-to-m
 
 ### CSS-only Multi-line Admonitions
 Using triple-blockquotes (`>>>`) will create CSS only admonitions which work in all three modes.
+<img width=60% alt="pseudo admonitions" src="https://user-images.githubusercontent.com/73286100/148685616-d0447649-82f3-4854-b59c-159ec2d172b0.gif">
 
 ### Built-in Styling for Supercharged Links
 This theme includes built-in styling for the [Supercharged Links Plugin](https://github.com/mdelobelle/obsidian_supercharged_links). This means you can make use of the plugin's features without the need write your own CSS! (If you already have your own Supercharged Links setup, you can turn those of with the Style Settings Plugin.) For now the theme includes the following styling:
