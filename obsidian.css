@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 1.611
+Version 1.612
 https://github.com/chrisgrieser/shimmering-focus/
 MIT License
 ─────────────────────────────────────────────────── */
@@ -3343,7 +3343,7 @@ body .community-plugin-info .community-plugin-downloads-text {
 }
 
 .community-theme.is-selected .community-theme-info::AFTER {
-	content: "⚠️  No Settings Button \A\A➡️  Access Settings via\A    ⌘ + ,   (Mac)\A      Ctrl + , (Win/Linux)\A\A🎨  Theme Customization via\A      Style Settings Plugin";
+	content: "⚠️  No Settings Button \A\A➡️  Access Settings via\A      ⌘ + ,   (Mac)\A      Ctrl + , (Win/Linux)\A\A🎨  Theme Customization via\A      Style Settings Plugin";
 
 	font-family: var(--menu-font-family);
 	font-size: 0.85rem;
@@ -5403,7 +5403,7 @@ body:not(.annotation-tags-off) .tag[href="#example"]::BEFORE {
 << Comments & HTML Tags
 ─────────────────────────────────────────────────── */
 
-.cm-s-obsidian span.cm-comment {
+.cm-comment.cm-comment.cm-comment.cm-comment.cm-comment {
 	color: var(--text-muted);
 }
 
