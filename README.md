@@ -3,7 +3,7 @@
 A minimalistic [Obsidian](https://obsidian.md/) theme focused on readability and condensed information display.
 
 <!-- manually updated-->
-![](https://img.shields.io/badge/downloads-9885-6E4E9B?style=plastic) ![](https://img.shields.io/github/last-commit/chrisgrieser/shimmering-focus?style=plastic) [![](https://img.shields.io/badge/changelog-click%20here-FFE800?style=plastic)](Changelog.md)
+![](https://img.shields.io/badge/downloads-9892-6E4E9B?style=plastic) ![](https://img.shields.io/github/last-commit/chrisgrieser/shimmering-focus?style=plastic) [![](https://img.shields.io/badge/changelog-click%20here-FFE800?style=plastic)](Changelog.md)
 
 <img src="https://raw.githubusercontent.com/chrisgrieser/shimmering-focus/main/dual-theme-screenshot.png" alt="Promo Screenshot">
 
@@ -19,7 +19,8 @@ A minimalistic [Obsidian](https://obsidian.md/) theme focused on readability and
 	- [CSS Classes](#css-classes)
 	- [Focus Line Highlight](#focus-line-highlight)
 	- [Gutter Indicators](#gutter-indicators)
-	- [CSS-only Multi-line Admonitions](#css-only-multi-line-admonitions)
+	- [Citation Syntax](#citation-syntax)
+	- [Multi-line Admonitions](#multi-line-admonitions)
 	- [Built-in Styling for Supercharged Links](#built-in-styling-for-supercharged-links)
 	- [Academic Work](#academic-work)
 	- [Further Features](#further-features)
@@ -103,8 +104,11 @@ To help increase scannability of long notes, some the presence of some easy-to-m
 
 <img src="https://user-images.githubusercontent.com/73286100/147931964-d5e5d309-d821-4fa1-86c1-4a8952a249d3.png" alt="image" width=70%>
 
-### CSS-only Multi-line Admonitions
-Using triple-blockquotes (`>>>`) will create CSS only admonitions which work in all three modes.
+### Citation Syntax
+Using a double-blockquote (`>>`) after a normal blockquote (`>`) will result in text formatted like a citation.
+
+### Multi-line Admonitions
+Using triple-blockquotes (`>>>`) will create admonitions which work in all three modes. No Plugin or css class required.
 
 <img width=60% alt="Screen Recording 2022-01-09 at 14 58 54" src="https://user-images.githubusercontent.com/73286100/148685705-2575e205-4554-4474-96e2-50d65d486e64.gif">
 

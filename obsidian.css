@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 1.601
+Version 1.602
 https://github.com/chrisgrieser/shimmering-focus/
 MIT License
 ─────────────────────────────────────────────────── */
@@ -4480,7 +4480,7 @@ body:not(.no-active-highlight):not(.focused-highlight) .cm-s-obsidian .cm-active
 
 /* option for normal size */
 body:not(.normal-blockquotes) blockquote,
-body:not(.normal-blockquotes) .HyperMD-quote.HyperMD-quote {
+body:not(.normal-blockquotes) .HyperMD-quote.HyperMD-quote-1 {
 	font-size: 0.87em;
 	line-height: 21px;
 }
@@ -4522,57 +4522,81 @@ body:not(.blockquotes-left-aligned) > .app-container .HyperMD-quote {
 }
 
 /* ───────────────────────────────────────────────────
-<< Pseudo-Admonitions
+<< Pseudo-Citations
 ─────────────────────────────────────────────────── */
+.markdown-preview-view div > blockquote > blockquote {
+	/* used for pseudo admonitions & for pseudo citations */
+	padding: 0;
+	border: none;
+}
+
+.markdown-preview-view div > blockquote > p + blockquote {
+	margin-top: -10px;
+}
+
+.markdown-preview-view div > blockquote > p + blockquote > p::BEFORE {
+	content: "— ";
+	padding-left: 20px;
+}
+
+.markdown-source-view .cm-line.HyperMD-quote-1 + .HyperMD-quote-2 {
+	padding-top: 0;
+}
+
+.markdown-preview-view div > blockquote > blockquote,
+.markdown-source-view .cm-line.HyperMD-quote-1 + .HyperMD-quote-2 .cm-quote-2:not(.cm-formatting-quote) {
+	font-size: 0.85rem;
+	font-style: italic;
+}
 
 /* ───────────────────────────────────────────────────
 << Pseudo-Admonitions
 ─────────────────────────────────────────────────── */
 .HyperMD-quote-3 .cm-formatting-quote-3::AFTER {
 	content: var(--pseudo-admonition-prefix);
+	padding-left: 3px;
 }
 
 .HyperMD-quote-3 ~ .HyperMD-quote-3 .cm-formatting-quote-3::AFTER {
 	display: none;
 }
 
-.HyperMD-quote-3 .cm-quote-3 {
+.HyperMD-quote .cm-quote-3:not(.cm-formatting-quote) {
 	font-family: var(--menu-font-family);
-}
-
-.markdown-preview-view blockquote > blockquote {
-	font-size: 1rem;
-	padding: 0;
-	border-left: none;
+	font-size: 0.85rem;
 }
 
 .markdown-preview-view blockquote > blockquote > blockquote::BEFORE {
 	content: var(--pseudo-admonition-prefix);
 
+	font-style: normal;
+
 	background-color: var(--bg2);
 
 	position: absolute;
-	top: -5px;
-	bottom: -5px;
-	left: -23px;
+	top: -6.5px;
+	bottom: -7px;
+	left: -35px;
 
-	padding-top: 5px;
-	padding-left: 2px;
+	padding: 5px 8px;
 
-	border: 5px solid var(--basic-border-color);
+	border: 7px double var(--basic-border-color);
 	border-right: none;
 }
 
 .markdown-preview-view blockquote > blockquote > blockquote {
 	font-family: var(--menu-font-family);
+	font-size: 0.9rem;
 
 	position: relative;
-	right: -5px;
-	bottom: -1px;
+	right: -15px;
+	bottom: -0.5px;
 
-	padding: 5px 10px;
+	margin-right: 10px;
 
-	outline: 5px solid var(--basic-border-color);
+	border: none;
+
+	outline: 7px double var(--basic-border-color);
 }
 
 /* ───────────────────────────────────────────────────
