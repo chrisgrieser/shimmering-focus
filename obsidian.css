@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 1.598
+Version 1.599
 https://github.com/chrisgrieser/shimmering-focus/
 MIT License
 ─────────────────────────────────────────────────── */
@@ -4453,8 +4453,8 @@ body .markdown-preview-view blockquote,
 	color: var(--text-accent) !important;
 }
 
-.cm-string.cm-url.cm-quote.cm-quote-1,
-.cm-link.cm-quote.cm-quote-1 {
+.cm-string.cm-url.cm-quote,
+.cm-link.cm-quote {
 	font-style: unset;
 }
 
@@ -4479,7 +4479,7 @@ body:not(.no-active-highlight):not(.focused-highlight) .cm-s-obsidian .cm-active
 
 /* option for normal size */
 body:not(.normal-blockquotes) blockquote,
-body:not(.normal-blockquotes) .HyperMD-quote.HyperMD-quote-1 {
+body:not(.normal-blockquotes) .HyperMD-quote.HyperMD-quote {
 	font-size: 0.87em;
 	line-height: 21px;
 }
@@ -4518,6 +4518,56 @@ body:not(.blockquotes-left-aligned) > .app-container .HyperMD-quote {
 
 .theme-dark .mod-cm5 .HyperMD-quote {
 	background-color: rgb(0 0 0 / 25%);
+}
+
+/* ───────────────────────────────────────────────────
+<< Pseudo-Admonitions
+─────────────────────────────────────────────────── */
+.HyperMD-quote-3 .cm-formatting-quote-3::AFTER {
+	content: "❓";
+}
+
+.HyperMD-quote-3 ~ .HyperMD-quote-3 .cm-formatting-quote-3::AFTER {
+	display: none;
+}
+
+.HyperMD-quote-3 .cm-quote-3 {
+	font-family: var(--menu-font-family);
+}
+
+.markdown-preview-view blockquote > blockquote {
+	font-size: 1rem;
+	padding: 0;
+	border-left: none;
+}
+
+.markdown-preview-view blockquote > blockquote > blockquote::BEFORE {
+	content: "❓";
+
+	background-color: var(--bg2);
+
+	position: absolute;
+	top: -5px;
+	bottom: -5px;
+	left: -23px;
+
+	padding-top: 5px;
+	padding-left: 2px;
+
+	border: 5px solid var(--basic-border-color);
+	border-right: none;
+}
+
+.markdown-preview-view blockquote > blockquote > blockquote {
+	font-family: var(--menu-font-family);
+
+	position: relative;
+	right: -5px;
+	bottom: -1px;
+
+	padding: 5px 10px;
+
+	outline: 5px solid var(--basic-border-color);
 }
 
 /* ───────────────────────────────────────────────────

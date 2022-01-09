@@ -3,7 +3,7 @@
 A minimalistic [Obsidian](https://obsidian.md/) theme focused on readability and condensed information display.
 
 <!-- manually updated-->
-![](https://img.shields.io/badge/downloads-9878-6E4E9B?style=plastic) ![](https://img.shields.io/github/last-commit/chrisgrieser/shimmering-focus?style=plastic) [![](https://img.shields.io/badge/changelog-click%20here-FFE800?style=plastic)](Changelog.md)
+![](https://img.shields.io/badge/downloads-9885-6E4E9B?style=plastic) ![](https://img.shields.io/github/last-commit/chrisgrieser/shimmering-focus?style=plastic) [![](https://img.shields.io/badge/changelog-click%20here-FFE800?style=plastic)](Changelog.md)
 
 <img src="https://raw.githubusercontent.com/chrisgrieser/shimmering-focus/main/dual-theme-screenshot.png" alt="Promo Screenshot">
 
@@ -19,6 +19,7 @@ A minimalistic [Obsidian](https://obsidian.md/) theme focused on readability and
 	- [CSS Classes](#css-classes)
 	- [Focus Line Highlight](#focus-line-highlight)
 	- [Gutter Indicators](#gutter-indicators)
+	- [CSS-only Multi-line Admonitions](#css-only-multi-line-admonitions)
 	- [Built-in Styling for Supercharged Links](#built-in-styling-for-supercharged-links)
 	- [Academic Work](#academic-work)
 	- [Further Features](#further-features)
@@ -101,6 +102,9 @@ To help increase scannability of long notes, some the presence of some easy-to-m
 - Unresolved links (only Preview Mode)
 
 <img src="https://user-images.githubusercontent.com/73286100/147931964-d5e5d309-d821-4fa1-86c1-4a8952a249d3.png" alt="image" width=70%>
+
+### CSS-only Multi-line Admonitions
+Using triple-blockquotes (`>>>`) will create CSS only admonitions which work in all three modes.
 
 ### Built-in Styling for Supercharged Links
 This theme includes built-in styling for the [Supercharged Links Plugin](https://github.com/mdelobelle/obsidian_supercharged_links). This means you can make use of the plugin's features without the need write your own CSS! (If you already have your own Supercharged Links setup, you can turn those of with the Style Settings Plugin.) For now the theme includes the following styling:
