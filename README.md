@@ -107,8 +107,10 @@ To help increase scannability of long notes, some the presence of some easy-to-m
 ### Citation Syntax
 Using a double-blockquote (`>>`) after a normal blockquote (`>`) will result in text formatted like a citation.
 
+<img width=60% alt="Screen Recording 2022-01-09 at 16 17 17" src="https://user-images.githubusercontent.com/73286100/148688725-f0c3e0a6-0712-4ead-b787-cf56dafc8e40.gif">
+
 ### Multi-line Admonitions
-Using triple-blockquotes (`>>>`) will create admonitions which work in all three modes. No Plugin or css class required.
+Using triple-blockquotes (`>>>`) will create admonitions which work in all three modes. No Plugin or `cssclass` required.
 
 <img width=60% alt="Screen Recording 2022-01-09 at 14 58 54" src="https://user-images.githubusercontent.com/73286100/148685705-2575e205-4554-4474-96e2-50d65d486e64.gif">
 
