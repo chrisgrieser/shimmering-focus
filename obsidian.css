@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 1.602
+Version 1.603
 https://github.com/chrisgrieser/shimmering-focus/
 MIT License
 ─────────────────────────────────────────────────── */
@@ -4522,7 +4522,7 @@ body:not(.blockquotes-left-aligned) > .app-container .HyperMD-quote {
 }
 
 /* ───────────────────────────────────────────────────
-<< Pseudo-Citations
+<< Citation Syntax
 ─────────────────────────────────────────────────── */
 .markdown-preview-view div > blockquote > blockquote {
 	/* used for pseudo admonitions & for pseudo citations */
@@ -4534,8 +4534,18 @@ body:not(.blockquotes-left-aligned) > .app-container .HyperMD-quote {
 	margin-top: -10px;
 }
 
+/* for LP */
+.HyperMD-quote-2 .cm-formatting-quote-1 + .cm-blockquote-border {
+	display: none;
+}
+
+/* first line LP, second Reading */
+.HyperMD-quote-2:not(.cm-active) .cm-quote-2:not(.cm-formatting-quote)::BEFORE,
 .markdown-preview-view div > blockquote > p + blockquote > p::BEFORE {
-	content: "— ";
+   content: "— ";
+}
+
+.markdown-preview-view div > blockquote > p + blockquote > p::BEFORE {
 	padding-left: 20px;
 }
 
@@ -4543,6 +4553,7 @@ body:not(.blockquotes-left-aligned) > .app-container .HyperMD-quote {
 	padding-top: 0;
 }
 
+/* styling of the citation text */
 .markdown-preview-view div > blockquote > blockquote,
 .markdown-source-view .cm-line.HyperMD-quote-1 + .HyperMD-quote-2 .cm-quote-2:not(.cm-formatting-quote) {
 	font-size: 0.85rem;
@@ -9514,7 +9525,7 @@ settings:
 	 default: false
 	-
 	 id: pseudo-admonition-prefix
-	 title: 'Pseudo-Admonitions: Select Icon'
+	 title: 'Pseudo-Admonitions: Prefixed Icon'
 	 type: variable-text
 	 default: "ℹ️"
 	-
