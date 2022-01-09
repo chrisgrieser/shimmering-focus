@@ -1,4 +1,4 @@
-- 2022-01-09	minor
+- 2022-01-09	added some missing inset shadows for interactives
 - 2022-01-09	✨ Citation Syntax: >> after > will format as cite
 - 2022-01-09	style setting option to change icon for Pseudo-Admonitions
 - 2022-01-09	✨ css-only multi-line admonitions: use >>>

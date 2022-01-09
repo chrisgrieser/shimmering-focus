@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 1.603
+Version 1.604
 https://github.com/chrisgrieser/shimmering-focus/
 MIT License
 ─────────────────────────────────────────────────── */
@@ -1130,9 +1130,13 @@ svg.longform > path { display: none }
 
 svg.longform {
 	background-color: currentColor;
+
 	position: relative;
+	top: 1px;
 	right: -1px;
+
 	transform: scale(1.1);
+
 	-webkit-mask-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' preserveAspectRatio='xMidYMid meet' viewBox='0 0 24 24'%3e%3cpath d='M3 2h2v20H3zm16 0H6v20h13c1.103 0 2-.897 2-2V4c0-1.103-.897-2-2-2zm-1 10H9v-2h9v2zm0-4H9V6h9v2z' fill='currentColor'/%3e%3c/svg%3e");
 }
 
@@ -1919,12 +1923,18 @@ select.dropdown:hover {
 input[type="range"] {
 	width: 150px;
 	background-color: var(--bg3) !important;
+	box-shadow: var(--textbox-inset-shadow);
 	border-radius: calc(var(--roundish) / 2);
 }
 
 input[type="range"]::-WEBKIT-SLIDER-THUMB {
 	background-color: var(--interactive-bg) !important;
+	box-shadow: var(--toggle-enabled-inset-shadow);
 	border-radius: var(--round);
+}
+
+input[type="range"]::-WEBKIT-SLIDER-THUMB {
+
 }
 
 /* ───────────────────────────────────────────────────
@@ -2865,6 +2875,7 @@ body .workspace-leaf-resize-handle:active {
 .setting-hotkey {
 	font-family: var(--button-font);
 	background-color: var(--bg2);
+	box-shadow: var(--muted-button-inset-shadow);
 	border: var(--thin-border);
 	border-radius: var(--roundish);
 }
