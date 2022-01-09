@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 1.610
+Version 1.611
 https://github.com/chrisgrieser/shimmering-focus/
 MIT License
 ─────────────────────────────────────────────────── */
@@ -1141,6 +1141,14 @@ svg.longform {
 ─────────────────────────────────────────────────── */
 
 /* ───────────────────────────────────────────────────
+<< GLobal Filter
+─────────────────────────────────────────────────── */
+
+.grayscale { filter: grayscale(0.85) }
+.sepia { filter: sepia(0.85) }
+
+/* ───────────────────────────────────────────────────
+
 << Angular or Round Shapes
 ─────────────────────────────────────────────────── */
 
@@ -9126,6 +9134,22 @@ settings:
 	 hub: ignore
 	 type: class-toggle
 	 default: false
+	-
+	 id: global-filter
+	 title: "Global Filter"
+	 type: class-select
+	 allowEmpty: false
+	 default: no-global-filter
+	 options:
+		-
+			label: No Filter (Default)
+			value: no-global-filter
+		-
+			label: Grayscale
+			value: grayscale
+		-
+			label: Sepia
+			value: sepia
 	-
 	 id: font-settings
 	 title: Typography
