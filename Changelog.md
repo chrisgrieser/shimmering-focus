@@ -1,3 +1,4 @@
+- 2022-01-09	modification for breadcrumb update
 - 2022-01-09	removed scrollbar background, more scrollbar thumb contrast
 - 2022-01-09	fix for pseudo admonitions in LP
 - 2022-01-09	added some missing inset shadows for interactives

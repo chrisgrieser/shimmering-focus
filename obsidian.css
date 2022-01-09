@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 1.609
+Version 1.610
 https://github.com/chrisgrieser/shimmering-focus/
 MIT License
 ─────────────────────────────────────────────────── */
@@ -8113,6 +8113,11 @@ body > .app-container div.BC-trail-grid-item {
 	padding-left: 5px;
 	border: var(--thin-border);
 	border-collapse: collapse;
+}
+
+/* Breadcrumbs Codeblock */
+.BC-tree pre.indent {
+	border: none;
 }
 
 /* ───────────────────────────────────────────────────
