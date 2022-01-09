@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 1.597
+Version 1.598
 https://github.com/chrisgrieser/shimmering-focus/
 MIT License
 ─────────────────────────────────────────────────── */
@@ -465,8 +465,8 @@ body.theme-dark {
 	--toggle-disabled-inset-shadow: -1px -1px 2px 0px var(--inset-shadow-color) inset;
 	--tab-inset-shadow: -1px -1px 0 var(--inset-shadow-color) inset;
 	--textbox-inset-shadow: 1px 1px 1px var(--inset-shadow-color) inset;
-	--button-inset-shadow: -2px -2px 3px var(--inset-shadow-color) inset;
-	--muted-button-shadow: -1px -1px 1px var(--inset-shadow-color) inset;
+	--button-inset-shadow: -1px -1px 3px var(--inset-shadow-color) inset;
+	--muted-button-inset-shadow: -1px -1px 2px var(--inset-shadow-color) inset;
 	--notice-inset-shadow: -1px -1px 2px var(--inset-shadow-color) inset;
 }
 
@@ -478,7 +478,7 @@ body.theme-dark {
 	--tab-inset-shadow: -1px -1px 0px var(--inset-shadow-black) inset;
 	--textbox-inset-shadow: 2px 2px 1px var(--inset-shadow-black) inset;
 	--button-inset-shadow: -2px -2px 2px var(--inset-shadow-color) inset;
-	--muted-button-shadow: -1px -1px 1px var(--inset-shadow-black) inset;
+	--muted-button-inset-shadow: -1px -1px 1px var(--inset-shadow-black) inset;
 	--notice-inset-shadow: -1px -1px 2px var(--inset-shadow-black) inset;
 }
 
@@ -2935,7 +2935,7 @@ body .workspace-leaf-resize-handle:active {
 .modal.mod-community-plugin .community-plugin-search .setting-item-control button {
 	color: var(--extra-contrast);
 	background-color: var(--bg2);
-	box-shadow: var(--muted-button-shadow);
+	box-shadow: var(--muted-button-inset-shadow);
 
 	margin-right: 8px;
 	margin-left: 4px;
@@ -3212,7 +3212,7 @@ body .community-plugin-info .community-plugin-downloads-text {
 	font-size: 0;
 	height: 2.09rem;
 	background-color: var(--bg2);
-	box-shadow: var(--muted-button-shadow);
+	box-shadow: var(--muted-button-inset-shadow);
 	padding: 1px 3px 0 2px;
 }
 
@@ -3332,7 +3332,7 @@ body .community-plugin-info .community-plugin-downloads-text {
 }
 
 .community-theme.is-selected .community-theme-info::AFTER {
-	content: "⚠️  No Settings Button \A\A➡️  Access Settings via\A      ⌘ + ,   (Mac)\A      Ctrl + , (Win/Linux)\A\A🎨  Theme Customization via\A      Style Settings Plugin";
+	content: "⚠️  No Settings Button \A\A➡️  Access Settings via\A    ⌘ + ,   (Mac)\A      Ctrl + , (Win/Linux)\A\A🎨  Theme Customization via\A      Style Settings Plugin";
 
 	font-family: var(--menu-font-family);
 	font-size: 0.85rem;
@@ -3343,7 +3343,7 @@ body .community-plugin-info .community-plugin-downloads-text {
 
 	color: var(--text-normal);
 	background-color: var(--bg2);
-	box-shadow: var(--muted-button-shadow);
+	box-shadow: var(--muted-button-inset-shadow);
 
 	position: absolute;
 	top: 137px;
@@ -3499,7 +3499,7 @@ body .modal.mod-community-theme .modal-content .modal-title {
 
 	color: var(--extra-contrast);
 	background-color: var(--bg3);
-	box-shadow: var(--muted-button-shadow);
+	box-shadow: var(--muted-button-inset-shadow);
 
 	margin-bottom: 9px;
 
@@ -3722,6 +3722,82 @@ body:not(.no-active-highlight):not(.focused-highlight) .CodeMirror-activeline .C
 	color: var(--text-normal);
 	background-color: var(--bg2);
 	border: var(--basic-border);
+}
+
+/* ───────────────────────────────────────────────────
+<<< Clean Embeds
+─────────────────────────────────────────────────── */
+/* credits: @Moonbase59 https://forum.obsidian.md/t/meta-post-common-css-hacks/1978/394 */
+
+/* remove title and the table from the "Metatable" plugin */
+.markdown-preview-view.clean-embeds .markdown-embed-title,
+.markdown-preview-view.clean-embeds .obsidian-metatable {
+	display: none;
+}
+
+/* Link icon */
+.markdown-preview-view.clean-embeds .markdown-embed-link,
+.markdown-preview-view.clean-embeds .file-embed-link {
+	text-align: right;
+	top: 4px;
+	right: 4px;
+}
+
+/* Link icon size & hide */
+.markdown-preview-view.clean-embeds .file-embed-link svg,
+.markdown-preview-view.clean-embeds .markdown-embed-link svg {
+	display: unset;
+	height: 1.3em;
+	width: 1.3em;
+	opacity: 0;
+}
+
+.markdown-preview-view.clean-embeds .markdown-embed-link:hover svg {
+	color: var(--alt-accent);
+}
+
+/* show on hover */
+.markdown-preview-view.clean-embeds .markdown-embed:hover .file-embed-link svg,
+.markdown-preview-view.clean-embeds .markdown-embed:hover .markdown-embed-link svg {
+	opacity: 1;
+}
+
+/* change background on hover, to exactly see what’s embedded */
+.markdown-preview-view.clean-embeds .markdown-embed:hover,
+.markdown-preview-view.clean-embeds .file-embed:hover {
+	background-color: var(--a-row);
+	outline: 1px solid var(--basic-border-color);
+}
+
+/* remove border and scroll */
+.markdown-preview-view.clean-embeds .markdown-embed,
+.markdown-preview-view.clean-embeds .file-embed {
+	padding: 0 5px;
+	margin: 0 -5px;
+	border: none;
+}
+
+.markdown-preview-view.clean-embeds .markdown-embed-content,
+.markdown-preview-view.clean-embeds .markdown-embed-content > .markdown-preview-view {
+	max-height: unset;
+	padding: 0;
+	margin: 0;
+	border: 0;
+}
+
+/* remove <br> between internal embeds */
+.clean-embeds .markdown-preview-section div > br {
+	display: none;
+}
+
+/* special considerations for printing (PDF export) */
+@media print {
+	/* remove frontmatter box if "Show frontmatter" was enabled */
+	/* Also remove metadata table from "Metatable" plugin */
+	pre.frontmatter,
+	.obsidian-metatable {
+		display: none;
+	}
 }
 
 /* ───────────────────────────────────────────────────

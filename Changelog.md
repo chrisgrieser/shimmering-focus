@@ -1,3 +1,5 @@
+- 2022-01-09	✨ new cssclass: clean-embeds
+- 2022-01-09	contribution templates
 - 2022-01-09	✨ Built-in styling for Supercharged Links
 - 2022-01-08	fix tab icons
 - 2022-01-08	fix close button overlap

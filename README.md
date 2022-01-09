@@ -3,7 +3,7 @@
 A minimalistic [Obsidian](https://obsidian.md/) theme focused on readability and condensed information display.
 
 <!-- manually updated-->
-![](https://img.shields.io/badge/downloads-9875-6E4E9B?style=plastic) ![](https://img.shields.io/github/last-commit/chrisgrieser/shimmering-focus?style=plastic) [![](https://img.shields.io/badge/changelog-click%20here-FFE800?style=plastic)](Changelog.md)
+![](https://img.shields.io/badge/downloads-9878-6E4E9B?style=plastic) ![](https://img.shields.io/github/last-commit/chrisgrieser/shimmering-focus?style=plastic) [![](https://img.shields.io/badge/changelog-click%20here-FFE800?style=plastic)](Changelog.md)
 
 <img src="https://raw.githubusercontent.com/chrisgrieser/shimmering-focus/main/dual-theme-screenshot.png" alt="Promo Screenshot">
 
@@ -86,6 +86,7 @@ Type one of the following eight tags (e.g. `#definition`) to get a colored annot
 ### CSS Classes
 Add `cssclass: {name}` to your yaml front matter to activate specific styling of the note in Preview Mode. The following CSS classes are built in with this theme (more coming in the future):
 - `cssclass: clean-top`: Removes Metadata Information, YAML frontmatter, and Breadcrumbs trail from the top of the note.
+- `cssclass: clean-embeds`: Embeds in that note are fully embedded, looking like one document.
 - `cssclass: dataview-list-in-table`: If you are using a dataview query where some table cells contain lists, use this CSS class to remove the vertical table lines that are off.
 
 ### Focus Line Highlight
@@ -272,6 +273,7 @@ Thanks for help and/or CSS snippets:
 - @Atlas
 - @jdaniel
 - @NothingIsLost
+- @Moonbase59
 
 [⬆️ Go Back to Top](#Table-of-Contents)
 
