@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 1.615
+Version 1.616
 https://github.com/chrisgrieser/shimmering-focus/
 MIT License
 ─────────────────────────────────────────────────── */
@@ -3183,6 +3183,10 @@ body .workspace-leaf-resize-handle:active {
 	text-transform: lowercase;
 }
 
+.community-plugin-info .community-plugin-version {
+	margin-top: -21px;
+}
+
 .community-plugin-info .community-plugin-version,
 .community-plugin-info .community-plugin-author {
 	font-family: var(--menu-font);
@@ -3203,9 +3207,8 @@ body .community-plugin-info .community-plugin-downloads-text {
 .community-plugin-info .community-plugin-downloads {
 	display: block;
 	font-size: 1.3rem;
-	position: absolute;
-	right: 10px;
-	margin-top: 5px;
+	text-align: end;
+	margin-top: 12px;
 }
 
 /* Buttons */
