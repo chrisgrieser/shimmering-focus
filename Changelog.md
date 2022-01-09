@@ -1,3 +1,4 @@
+- 2022-01-09	minor
 - 2022-01-09	fix for pseudo admonitions in LP
 - 2022-01-09	added some missing inset shadows for interactives
 - 2022-01-09	✨ Citation Syntax: >> after > will format as cite
