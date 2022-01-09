@@ -3,7 +3,7 @@
 A minimalistic [Obsidian](https://obsidian.md/) theme focused on readability and condensed information display.
 
 <!-- manually updated-->
-![](https://img.shields.io/badge/downloads-9926-6E4E9B?style=plastic) ![](https://img.shields.io/github/last-commit/chrisgrieser/shimmering-focus?style=plastic) [![](https://img.shields.io/badge/changelog-click%20here-FFE800?style=plastic)](Changelog.md)
+![](https://img.shields.io/badge/downloads-9940-6E4E9B?style=plastic) ![](https://img.shields.io/github/last-commit/chrisgrieser/shimmering-focus?style=plastic) [![](https://img.shields.io/badge/changelog-click%20here-FFE800?style=plastic)](Changelog.md)
 
 <img src="https://raw.githubusercontent.com/chrisgrieser/shimmering-focus/main/dual-theme-screenshot.png" alt="Promo Screenshot">
 
@@ -175,7 +175,7 @@ kanban-plugin, title, up
 <img width=60% alt="Screenshot 2021-10-23 17 06 22" src="https://user-images.githubusercontent.com/73286100/138561771-1067d041-eeb2-4dfe-8d79-f7fa754ca419.png">
 
 ### High Readability
-- Theme Brightness is adjustable via [Style Settings Plugin](https://github.com/mgmeyers/obsidian-style-settings/).
+- Brightness and line length are both adjustable via [Style Settings Plugin](https://github.com/mgmeyers/obsidian-style-settings/).
 - [Gutter Indicators](#gutter-indicators) and the visual emphasis of Pandoc Citations and footnotes increase the scannability of longer notes.
 - Wider Input boxes, clearer icons, increased size of small UI elements (e.g. collapse indicators), thicker lines for tables & hr.
 - Increased contrast throughout, especially with the [annoying gray font on light-gray background](https://forum.obsidian.md/t/enhance-default-color-contrast-of-the-icons/23045/3).

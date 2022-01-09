@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 1.614
+Version 1.615
 https://github.com/chrisgrieser/shimmering-focus/
 MIT License
 ─────────────────────────────────────────────────── */
@@ -545,6 +545,7 @@ only sidebars and everything scrolling */
 	--popover-size: 350;
 	--inactive-pane-opacity: 75%;
 	--tooltip-arrow-length: 10px;
+	--readable-length: 700px;
 
 	--signature: "⟡";
 	--pseudo-admonition-prefix: "ℹ️";
@@ -4275,6 +4276,16 @@ body:not(.no-alternating-rows) .spellchecker-dictionary-item {
 	max-width: 100%;
 }
 
+/* readable line length */
+body:not(.max-view-enabled) .mod-root .markdown-source-view.mod-cm6.is-readable-line-width .cm-content,
+body:not(.max-view-enabled) .mod-root .markdown-source-view.mod-cm6.is-readable-line-width:not(.rtl) .cm-contentContainer,
+body:not(.max-view-enabled) .mod-root .markdown-source-view.mod-cm6.is-readable-line-width .cm-contentContainer .cm-line,
+.max-view-enabled .mod-left-split:not(.is-collapsed) ~ .mod-root .markdown-source-view.mod-cm6.is-readable-line-width .cm-content,
+.max-view-enabled .mod-left-split:not(.is-collapsed) ~ .mod-root .markdown-source-view.mod-cm6.is-readable-line-width:not(.rtl) .cm-contentContainer,
+.max-view-enabled .mod-left-split:not(.is-collapsed) ~ .mod-root .markdown-source-view.mod-cm6.is-readable-line-width .cm-contentContainer .cm-line {
+	max-width: var(--readable-length);
+}
+
 /* CM5: Source Mode */
 .max-view-enabled .mod-left-split.is-collapsed ~ .mod-root .CodeMirror-wrap {
 	max-width: 100%;
@@ -4293,8 +4304,7 @@ body:not(.no-alternating-rows) .spellchecker-dictionary-item {
 	max-width: 100% !important;
 }
 
-body:not(.is-mobile) .view-content .is-live-preview img,
-body:not(.is-mobile) .view-content > *:not(.kanban-plugin) .markdown-preview-view img,
+body:not(.is-mobile) .app-container .view-content img,
 body:not(.is-mobile) .oz-image-widget-cm6 > img:not(:active),
 body:not(.is-mobile) .app-container div.oz-image-widget > img:not(:active) {
 	max-width: calc(var(--image-size) * 1%);
@@ -7175,17 +7185,17 @@ body .kanban-plugin__item {
 
 /* thinner lane scrollbar */
 .kanban-plugin .kanban-plugin__lane ::-WEBKIT-SCROLLBAR {
-	width: calc(var(--scrollbar-thickness) * 1.2);
+	width: calc(var(--scrollbar-thickness) * 0.9);
 }
 
 .kanban-plugin .kanban-plugin__lane ::-WEBKIT-SCROLLBAR-THUMB {
 	background-color: var(--bg1);
-	border-width: 3px;
+	border-width: 2px;
 }
 
 body .kanban-plugin__scroll-container.kanban-plugin__scroll-container {
-	padding-right: 1px;
-	margin-right: 1px;
+	padding-right: 3px;
+	margin-right: 3px;
 }
 
 /* vertical three dots on lane */
@@ -7321,6 +7331,16 @@ body .kanban-plugin .kanban-plugin__markdown-preview-view hr {
 
 .kanban-plugin ul > li.task-list-item {
 	padding-left: 0;
+}
+
+/* prevent images setting from propagating to Kanbans */
+.kanban-plugin.kanban-plugin.kanban-plugin .kanban-plugin__item img {
+	max-width: 100%;
+	margin-top: 0;
+}
+
+.kanban-plugin .image-embed[alt]::AFTER {
+	margin-bottom: 0;
 }
 
 /* ───────────────────────────────────────────────────
@@ -8948,7 +8968,7 @@ settings:
 	-
 	 id: show-hide-elements
 	 title: Show/Hide UI Elements
-	 description: Re-enable Elements hidden by this theme
+	 description: Re-enable elements hidden by this theme
 	 type: heading
 	 level: 2
 	 collapsed: true
@@ -9341,10 +9361,20 @@ settings:
 	-
 	 id: content-settings
 	 title: Views & Media
-	 description: Max View, Focus View, Images, PDFs
+	 description: Line Length, Max View, Focus View, Images, PDFs
 	 type: heading
 	 level: 2
 	 collapsed: true
+	-
+	 id: readable-length
+	 title: Line Length
+	 description: 'When "Readable Line length" is enabled and "Max View" is not active.'
+	 type: variable-number-slider
+	 default: 700
+	 min: 300
+	 max: 1300
+	 step: 50
+	 format: px
 	-
 	 id: max-view-enabled
 	 title: 'Enable "Max View"'
