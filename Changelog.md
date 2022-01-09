@@ -1,4 +1,4 @@
-- 2022-01-09	minor
+- 2022-01-09	thinner kanban scrollbar
 - 2022-01-09	added global color filters sepia & grayscale
 - 2022-01-09	modification for breadcrumb update
 - 2022-01-09	removed scrollbar background, more scrollbar thumb contrast

@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 1.613
+Version 1.614
 https://github.com/chrisgrieser/shimmering-focus/
 MIT License
 ─────────────────────────────────────────────────── */
@@ -539,7 +539,7 @@ only sidebars and everything scrolling */
 :root {
 	--resize-handle-color-thickness: 3px;
 	--resize-handle-color-hovered-thickness: 6px;
-	--scrollbar-bg-thickness: 8px;
+	--scrollbar-thickness: 8px;
 	--image-size: 50;
 	--pdf-size: 50vh;
 	--popover-size: 350;
@@ -1638,7 +1638,7 @@ body:not(.show-scrollbar) ::-WEBKIT-SCROLLBAR {
 ::-WEBKIT-SCROLLBAR-THUMB:active,
 ::-WEBKIT-SCROLLBAR-THUMB:hover,
 ::-WEBKIT-SCROLLBAR-THUMB {
-	width: var(--scrollbar-bg-thickness);
+	width: var(--scrollbar-thickness);
 	border-radius: var(--roundish);
 }
 
@@ -7173,6 +7173,21 @@ body .kanban-plugin__item {
 	border: var(--thin-border);
 }
 
+/* thinner lane scrollbar */
+.kanban-plugin .kanban-plugin__lane ::-WEBKIT-SCROLLBAR {
+	width: calc(var(--scrollbar-thickness) * 1.2);
+}
+
+.kanban-plugin .kanban-plugin__lane ::-WEBKIT-SCROLLBAR-THUMB {
+	background-color: var(--bg1);
+	border-width: 3px;
+}
+
+body .kanban-plugin__scroll-container.kanban-plugin__scroll-container {
+	padding-right: 1px;
+	margin-right: 1px;
+}
+
 /* vertical three dots on lane */
 .kanban-plugin__lane-settings-button-wrapper svg {
 	color: var(--text-faint);
@@ -7193,6 +7208,10 @@ body .kanban-plugin__lane {
 /* space between lanes */
 body .kanban-plugin__lane-wrapper {
 	margin-right: 9px;
+}
+
+.kanban-plugin__item-title-wrapper {
+	box-shadow: var(--muted-button-inset-shadow) !important;
 }
 
 .kanban-plugin__lane-settings-button-wrapper:hover svg {
