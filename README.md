@@ -3,7 +3,7 @@
 A minimalistic [Obsidian](https://obsidian.md/) theme focused on readability and condensed information display.
 
 <!-- manually updated-->
-![](https://img.shields.io/badge/downloads-9810-6E4E9B?style=plastic) ![](https://img.shields.io/github/last-commit/chrisgrieser/shimmering-focus?style=plastic) [![](https://img.shields.io/badge/changelog-click%20here-FFE800?style=plastic)](Changelog.md)
+![](https://img.shields.io/badge/downloads-9875-6E4E9B?style=plastic) ![](https://img.shields.io/github/last-commit/chrisgrieser/shimmering-focus?style=plastic) [![](https://img.shields.io/badge/changelog-click%20here-FFE800?style=plastic)](Changelog.md)
 
 <img src="https://raw.githubusercontent.com/chrisgrieser/shimmering-focus/main/dual-theme-screenshot.png" alt="Promo Screenshot">
 
@@ -19,6 +19,7 @@ A minimalistic [Obsidian](https://obsidian.md/) theme focused on readability and
 	- [CSS Classes](#css-classes)
 	- [Focus Line Highlight](#focus-line-highlight)
 	- [Gutter Indicators](#gutter-indicators)
+	- [Built-in Styling for Supercharged Links](#built-in-styling-for-supercharged-links)
 	- [Academic Work](#academic-work)
 	- [Further Features](#further-features)
 - [Design Principles](#design-principles)
@@ -33,12 +34,12 @@ A minimalistic [Obsidian](https://obsidian.md/) theme focused on readability and
 	- [Custom Checkboxes](#custom-checkboxes)
 	- [Instructions for specific Plugins](#instructions-for-specific-plugins)
 - [Installation](#installation)
-- [Contribute](#contribute)
-	- [Translation of Style Settings](#translation-of-style-settings)
-	- [Plugins & Features](#plugins--features)
+- [Contribute to the Theme](#contribute-to-the-theme)
+	- [Contribute CSS Snippets](#contribute-css-snippets)
+	- [Translation of the Theme's Style Settings](#translation-of-the-themes-style-settings)
 - [Related Work](#related-work)
 - [Credits](#credits)
-	- [About the Developer](#about-the-developer)
+	- [About the Theme Designer](#about-the-theme-designer)
 	- [Donations](#donations)
 	- [Thanks](#thanks)
 
@@ -100,18 +101,42 @@ To help increase scannability of long notes, some the presence of some easy-to-m
 
 <img src="https://user-images.githubusercontent.com/73286100/147931964-d5e5d309-d821-4fa1-86c1-4a8952a249d3.png" alt="image" width=70%>
 
+### Built-in Styling for Supercharged Links
+This theme includes built-in styling for the [Supercharged Links Plugin](https://github.com/mdelobelle/obsidian_supercharged_links). This means you can make use of the plugin's features without the need write your own CSS! (If you already have your own Supercharged Links setup, you can turn those of with the Style Settings Plugin.) For now the theme includes the following styling:
+- Links to _Kanban Boards_ get "🎆" prepended
+- Links to notes with the tag `#seedling` get "🌱" prepended
+- Notes with `#evergreen` get "🌲" prepended
+- Notes with `#moc` get "🗺" prepended
+- Notes with `#person` get "👤" prepended
+- Notes with `#checklist` get "☑️" prepended
+- Links to _Literature Notes_ get a tooltip with the content of the `title` yaml key when hovering and get "📖" prepended. (Actually, this applies to any note with a `title` yaml frontmatter key.)
+- Breadcrumbs users: Links to notes with the `up` yaml key get a tooltip with the content of that yaml key, and get "🥖" prepended.
+
+<img width=60% alt="Demo tooltips" src="https://publish-01.obsidian.md/access/e25082da1bfe16d54e36618cd5bfee68/00%20-%20Contribute%20to%20the%20Obsidian%20Hub/02%20Attachments/Tooltips-for-Literature-Notes-with-Supercharged-Links.gif">
+
+**Setup**
+- Install [the plugin](https://github.com/mdelobelle/obsidian_supercharged_links).
+- Make sure you have `Parse all tags in the file` enabled in the plugin's settings.
+- If you are using the "Page Preview" Core Plugin, configure it to not display previews for the cases where you want the tooltips to show up.
+- Paste the following field in the text field `Target Attributes for styling`:
+
+```text
+kanban-plugin, title, up
+```
+
 ### Academic Work
 - Extensive Styling and settings specifically for the [Longform Plugin](https://github.com/kevboh/longform). Prepend a `_` to file names of longform scenes to create sub-scenes that are indented in the sidebar.
-- [Pandoc Citations](https://pandoc.org/MANUAL.html#citations-in-note-styles) (`[@citekey]`) and footnotes are visually emphasized
+- [Pandoc Citations](https://pandoc.org/MANUAL.html#citations-in-note-styles) (`[@citekey]`) and footnotes are visually emphasized.
+- Footnotes get [separate indicators in the gutter](#gutter-indicators).
+- The [built-in styling for Supercharged Links](#built-in-styling-for-supercharged-links) includes tooltips showing the literature note for popups.
 - The alt-text of images is used as caption text, in line with Pandoc's conversion behavior
 - The [Max View](#max-view--focus-view) is useful for displaying wide markdown tables.
 - [Multi-Color-Highlighting](#multi-color-highlighting--spoiler-syntax) and [Annotation Tags](#annotation-tags) have specifically been made for academic reading.
+- Indicates trailing white spaces when there is more than one space. This is useful for the Markdown [Two Space Rule](https://daringfireball.net/projects/markdown/syntax#p). 
 
 ### Further Features
 - Relationship lines in various side bar tabs
-- Gutter indicators for footnotes & search results
 - File explorer icons
-- Indicates trailing white spaces when there is more than one space. This is useful for the Markdown [Two Space Rule](https://daringfireball.net/projects/markdown/syntax#p). (Obsidian 0.13+ / new Editor only).
 - Customizable Brightness of the Theme
 - Dark Mode for PDFs (when using the theme in dark mode)
 - Styled [progress bars (`<progress>`)](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/progress)
@@ -149,7 +174,7 @@ To help increase scannability of long notes, some the presence of some easy-to-m
 - Overscroll at the bottom of the editor and settings tabs.
 - Easy-to-read fonts for every use case:
 	- [iA Writer Quattro](https://github.com/iaolo/iA-Fonts/tree/master/iA%20Writer%20Quattro) as clear sans font for the editor
-	- [Recursive](https://www.recursive.design/) for as a clear menu font
+	- [Recursive](https://www.recursive.design/) for as a clear UI font
 	- [Input Mono](https://input.djr.com/) as monospace font for code
 	- [Optima](https://en.wikipedia.org/wiki/Optima) as humanist font for headings
 	- [Crimson Pro](https://fonts.google.com/specimen/Crimson+Pro) as serif font for Longform notes
@@ -167,7 +192,7 @@ This themes supports dozens of customization options via the [Style Settings Plu
 
 ### Further Customization Options
 - To add your own annotation tags, [use this template](CSS%20Snippets/annotation-tag-template.css).
-- To switch to Outlined [Material Icons](https://fonts.google.com/icons?selected=Material+Icons), add [this CSS snippet](CSS%20Snippets/outlined-material-icons.css).
+- To switch to outlined [Material Icons](https://fonts.google.com/icons?selected=Material+Icons), add [this CSS snippet](CSS%20Snippets/outlined-material-icons.css).
 
 ## Compatibility
 
@@ -182,10 +207,11 @@ This theme has been adjusted to be compatible with [SlRvb's Checkboxes](https://
 ### Instructions for specific Plugins
 In accordance with the minimalistic philosophy of the theme, unnecessary UI elements of some plugins have also been removed. However, you can still access the full plugin functionality.
 
-- Longform: - Prepend a `_` to file names of longform scenes to create sub-scenes. 
+- Longform: Prepend a `_` to file names of longform scenes to create sub-scenes. 
 - Sliding Panes: As long as you are using `rotated headers`, the header is permanently shown.
 - Kanban: Right-click cards to edit them.
-- Breadcrumbs: Even with buttons removed, you can refresh the index via Command Palette
+- Supercharged Links: The theme includes [various built-in styling](#built-in-styling-for-supercharged-links). You can turn those of with the Style Settings plugin.
+- Breadcrumbs: Even with buttons removed, you can still refresh the index via Command Palette. [When Supercharged Links is installed, hovering over a link with the `up` yaml field displays the content of that field.](#built-in-styling-for-supercharged-links)
 - Quick Explorer: Re-enable the title bar with the [Style Settings Plugin](https://github.com/mgmeyers/obsidian-style-settings/) for the breadcrumbs
 - Dataview: If the table lines are off, use the [`dataview-list-in-table` CSS Classes](#css-classes)
 - Ozan's Image in Editor: Image Sizes are affected by the Image Settings & by the Max View Feature.
@@ -194,30 +220,40 @@ In accordance with the minimalistic philosophy of the theme, unnecessary UI elem
 ## Installation
 You can find *Shimmering Focus* in Obsidian's community themes browser under `Obsidian Settings ➞ Appearance ➞ Themes ➞ Manage`.
 
-## Contribute
+## Contribute to the Theme
 
-### Translation of Style Settings
-Very welcome are [localizations of Style Settings Plugins](https://github.com/mgmeyers/obsidian-style-settings#localization-support), so the theme is more accessible to non-English speakers. This requires no knowledge of CSS. Please get in touch if you are interested in translating!
+### Contribute CSS Snippets
+The following types of CSS snippets are self-contained and relatively easy to contribute:
+- [CSS Classes](#css-classes), e.g. for tables.
+- More built-in styling for the [Supercharged Links Plugin](#built-in-styling-for-supercharged-links).
+- Support or fixes for [plugins that are not supported yet](https://publish.obsidian.md/hub/02+-+Community+Expansions/02.05+All+Community+Expansions/Themes/Shimmering+Focus#Plugin+Compatibility+1).
+- [Most open feature requests](https://github.com/chrisgrieser/shimmering-focus/issues?q=is%3Aissue+is%3Aopen+label%3Aenhancement) are also relatively easy to implement, I simply haven't gotten the time to get to them.
+- Color Schemes which can be selected via Style Settings. Simply use the following template. (Note that these will change, once I added options to customize other colors like accent colors.)
 
-### Plugins & Features
-Pull requests for plugins or features I haven't implemented are also welcome. If they are bigger changes, be sure to check with me before.
-
-- Try to follow the [design philosophy](#design-principles) of the theme.
-- All sections have a `< ` as prefix for quicker navigation. This means you can for example search for `< font` to navigate to the font section.
-- For consistency and code quality, use [stylelint](https://stylelint.io/) with the provided configuration (the `.stylelintrc.json` file). If you are not familiar with stylelint, check out [my guide in the Obsidian Hub](https://publish.obsidian.md/hub/04+-+Guides,+Workflows,+&+Courses/Guides/Why+and+How+to+use+Stylelint+for+your+Obsidian+Theme.md).
-
-```shell
-git clone git@github.com:chrisgrieser/shimmering-focus.git
-cd ./shimmering-focus
-npm install stylelint postcss stylelint-config-recommended stylelint-order stylelint-declaration-block-no-ignored-properties
+```css
+/* template for adding a preset color scheme to Shimmering Focus */
+.theme-dark.theme-dark,
+.theme-light.theme-light {
+	--light-hue: 220;
+	--dark-hue: 0;
+	--dark-sat: 0%;
+	--light-sat: 0%;
+	--brightness-light: 15%;
+	--brightness-dark: 5%;
+}
 ```
 
+If you have any of those working in a CSS snippet, [please open an issue](https://github.com/chrisgrieser/shimmering-focus/issues/new?assignees=&labels=contribution&template=contribute_css.yml&title=Contribution%3A+) and I'll add them to the theme. 🙂
+
+### Translation of the Theme's Style Settings
+Very welcome are [localizations of Style Settings Plugins](https://github.com/mgmeyers/obsidian-style-settings#localization-support), so the theme is more accessible to non-English speakers. This requires no knowledge of CSS. Please [get in touch with me](#about-the-theme-designer) first if you are interested in translating, since this one requires a bit of explanation.
+
 ## Related Work
-If you use Alfred, be sure to check out [my themes for Alfred](https://github.com/chrisgrieser/alfred-themes).
+If you use Alfred, you can also check out [my themes for Alfred](https://github.com/chrisgrieser/alfred-themes).
 
 ## Credits
 
-### About the Developer
+### About the Theme Designer
 In my day job, I am a sociologist studying the social mechanisms underlying the digital economy. For my PhD project, I investigate the governance of the app economy and how software ecosystems manage the tension between innovation and compatibility. If you are interested in this subject, feel free to visit [my academic homepage](https://chris-grieser.de/) and get in touch.
 
 - [Discord](https://discord.gg/veuWUTm): `@pseudometa#9546`

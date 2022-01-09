@@ -1,3 +1,4 @@
+- 2022-01-09	✨ Built-in styling for Supercharged Links
 - 2022-01-08	fix tab icons
 - 2022-01-08	fix close button overlap
 - 2022-01-08	fix display of emojis when using emoji toolbar (#86)
