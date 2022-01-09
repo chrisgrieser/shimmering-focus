@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 1.600
+Version 1.601
 https://github.com/chrisgrieser/shimmering-focus/
 MIT License
 ─────────────────────────────────────────────────── */
@@ -551,6 +551,7 @@ only sidebars and everything scrolling */
 	--tooltip-arrow-length: 10px;
 
 	--signature: "⟡";
+	--pseudo-admonition-prefix: "ℹ️";
 	--empty-state-symbol-size: 8rem;
 }
 
@@ -4528,7 +4529,7 @@ body:not(.blockquotes-left-aligned) > .app-container .HyperMD-quote {
 << Pseudo-Admonitions
 ─────────────────────────────────────────────────── */
 .HyperMD-quote-3 .cm-formatting-quote-3::AFTER {
-	content: "❓";
+	content: var(--pseudo-admonition-prefix);
 }
 
 .HyperMD-quote-3 ~ .HyperMD-quote-3 .cm-formatting-quote-3::AFTER {
@@ -4546,7 +4547,7 @@ body:not(.blockquotes-left-aligned) > .app-container .HyperMD-quote {
 }
 
 .markdown-preview-view blockquote > blockquote > blockquote::BEFORE {
-	content: "❓";
+	content: var(--pseudo-admonition-prefix);
 
 	background-color: var(--bg2);
 
@@ -9476,8 +9477,8 @@ settings:
 	 default: false
 	-
 	 id: miscellaneous
-	 title: Miscellaneous
-	 description: File Name Trimming, Pandoc Citations, Annotation Tags, Alternating Row Colors, Relationship Lines
+	 title: Other Theme Features
+	 description: File Name Trimming, Pseudo-Admonitions, Pandoc Citations, Annotation Tags, Alternating Row Colors, Relationship Lines
 	 type: heading
 	 level: 2
 	 collapsed: true
@@ -9487,6 +9488,11 @@ settings:
 	 description: When enabled long filenames will be trimmed. When disabled, long filenames will be wrapped to the next line. Affects most, but not all side bar plugin.
 	 type: class-toggle
 	 default: false
+	-
+	 id: pseudo-admonition-prefix
+	 title: 'Pseudo-Admonitions: Select Icon'
+	 type: variable-text
+	 default: "ℹ️"
 	-
 	 id: no-pandoc-citation-emphasis
 	 title: No Emphasis of Pandoc Citations

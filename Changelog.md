@@ -1,4 +1,4 @@
-- 2022-01-09	minor
+- 2022-01-09	style setting option to change icon for Pseudo-Admonitions
 - 2022-01-09	✨ css-only multi-line admonitions: use >>>
 - 2022-01-09	✨ new cssclass: clean-embeds
 - 2022-01-09	contribution templates
