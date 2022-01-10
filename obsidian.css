@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 1.618
+Version 1.619
 https://github.com/chrisgrieser/shimmering-focus/
 MIT License
 ─────────────────────────────────────────────────── */
@@ -4582,6 +4582,7 @@ body:not(.blockquotes-left-aligned) > .app-container .HyperMD-quote {
 .markdown-source-view .cm-line.HyperMD-quote-1 + .HyperMD-quote-2 .cm-quote-2:not(.cm-formatting-quote) {
 	font-size: 0.85rem;
 	font-style: italic;
+	color: var(--text-faint);
 }
 
 /* ───────────────────────────────────────────────────
