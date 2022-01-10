@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 1.619
+Version 1.620
 https://github.com/chrisgrieser/shimmering-focus/
 MIT License
 ─────────────────────────────────────────────────── */
@@ -226,6 +226,7 @@ the .create-ToC.sh.
 	--selection-color: hsl(259 80% 91% / 99%);
 	--extra-contrast: hsl(0 0% 36%);
 	--text-muted: hsl(0 0% 53%);
+	--middle-gray: hsl(0 0% 57%);
 	--text-faint: hsl(0 0% 60%);
 	--hr-line-gray: hsl(0 0% 66%);
 
@@ -251,6 +252,7 @@ the .create-ToC.sh.
 	--selection-color: hsl(302 24% 17% / 99%);
 	--extra-contrast: hsl(0 0% 68%);
 	--text-muted: hsl(0 0% 58%);
+	--middle-gray: hsl(0 0% 49%);
 	--text-faint: hsl(0 0% 40%);
 	--hr-line-gray: hsl(0 0% 60%);
 
@@ -4582,7 +4584,7 @@ body:not(.blockquotes-left-aligned) > .app-container .HyperMD-quote {
 .markdown-source-view .cm-line.HyperMD-quote-1 + .HyperMD-quote-2 .cm-quote-2:not(.cm-formatting-quote) {
 	font-size: 0.85rem;
 	font-style: italic;
-	color: var(--text-faint);
+	color: var(--middle-gray);
 }
 
 /* ───────────────────────────────────────────────────
@@ -4594,8 +4596,8 @@ body:not(.blockquotes-left-aligned) > .app-container .HyperMD-quote {
 	padding-left: 3px;
 }
 
-.HyperMD-quote-3 .cm-formatting-quote-3 ~ .cm-formatting-quote-3::AFTER,
-.HyperMD-quote-3 ~ .HyperMD-quote-3 .cm-formatting-quote-3::AFTER {
+.HyperMD-quote-3 .cm-formatting-quote-3 + .cm-formatting-quote-3::AFTER,
+.HyperMD-quote-3 + .HyperMD-quote-3 .cm-formatting-quote-3::AFTER {
 	opacity: 0;
 }
 
