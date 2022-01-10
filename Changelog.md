@@ -1,4 +1,4 @@
-- 2022-01-10	minor
+- 2022-01-10	removed Slr checkbox support for now, as not maintainable
 - 2022-01-09	fixed download numbers in community plugin browser being sticky
 - 2022-01-09	👓 new Style Setting: Line Length (#81)
 - 2022-01-09	thinner kanban scrollbar

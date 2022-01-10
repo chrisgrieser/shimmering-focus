@@ -3,7 +3,7 @@
 A minimalistic [Obsidian](https://obsidian.md/) theme focused on readability and condensed information display.
 
 <!-- manually updated-->
-![](https://img.shields.io/badge/downloads-10108-6E4E9B?style=plastic) ![](https://img.shields.io/github/last-commit/chrisgrieser/shimmering-focus?style=plastic) [![](https://img.shields.io/badge/changelog-click%20here-FFE800?style=plastic)](Changelog.md)
+![](https://img.shields.io/badge/downloads-10109-6E4E9B?style=plastic) ![](https://img.shields.io/github/last-commit/chrisgrieser/shimmering-focus?style=plastic) [![](https://img.shields.io/badge/changelog-click%20here-FFE800?style=plastic)](Changelog.md)
 
 <img src="https://raw.githubusercontent.com/chrisgrieser/shimmering-focus/main/dual-theme-screenshot.png" alt="Promo Screenshot">
 
@@ -33,7 +33,6 @@ A minimalistic [Obsidian](https://obsidian.md/) theme focused on readability and
 	- [Further Customization Options](#further-customization-options)
 - [Compatibility](#compatibility)
 	- [List of Compatible Plugins](#list-of-compatible-plugins)
-	- [Custom Checkboxes](#custom-checkboxes)
 	- [Instructions for specific Plugins](#instructions-for-specific-plugins)
 - [Installation](#installation)
 - [Contribute to the Theme](#contribute-to-the-theme)
@@ -154,7 +153,6 @@ kanban-plugin, title, up
 - Dark Mode for PDFs (when using the theme in dark mode)
 - Styled [progress bars (`<progress>`)](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/progress)
 - Resizable Graph View Controls (resize at the bottom-right)
-- Compatible with [SlRvb's Checkboxes](https://publish.obsidian.md/hub/02+-+Community+Expansions/02.05+All+Community+Expansions/CSS+Snippets/Alternate+Checkboxes+(SlRvb)).
 
 [⬆️ Go Back to Top](#Table-of-Contents)
 
@@ -213,9 +211,6 @@ This themes supports dozens of customization options via the [Style Settings Plu
 *Shimmering Focus* is compatible with and has includes styling for all core plugins, the most common community plugins, as well as about a dozen more community plugins.
 
 ➡️ [Full list of compatible plugins.](https://publish.obsidian.md/hub/02+-+Community+Expansions/02.05+All+Community+Expansions/Themes/Shimmering+Focus#Plugin+Compatibility+1)
-
-### Custom Checkboxes
-This theme has been adjusted to be compatible with [SlRvb's Checkboxes](https://publish.obsidian.md/hub/02+-+Community+Expansions/02.05+All+Community+Expansions/CSS+Snippets/Alternate+Checkboxes+(SlRvb)).
 
 ### Instructions for specific Plugins
 In accordance with the minimalistic philosophy of the theme, unnecessary UI elements of some plugins have also been removed. However, you can still access the full plugin functionality.

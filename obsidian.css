@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 1.620
+Version 1.621
 https://github.com/chrisgrieser/shimmering-focus/
 MIT License
 ─────────────────────────────────────────────────── */
@@ -113,7 +113,6 @@ the .create-ToC.sh.
 	- Comments & HTML Tags
 	- Tasks
 	- Checkboxes
- 		- Custom Checkboxes by SlRvb Compatibility
 	- Highlights & Selection
  		- Highlights
  		- Selection (Selected Text)
@@ -5462,6 +5461,8 @@ body > .app-container span.cm-tag {
 /* preview mode */
 /* https://forum.obsidian.md/t/meta-post-common-css-hacks/1978/34 */
 input[type="checkbox"] {
+	background-color: unset;
+
 	margin: 1.5px 10px 3px 0 !important;
 
 	border: 2px solid var(--hr-line-gray);
@@ -5501,45 +5502,6 @@ li[data-task="x"] > .task-list-item-checkbox:hover {
 /* fix for legacy-editor, discussed here https://discord.com/channels/686053708261228577/702656734631821413/920422345422819339 */
 .markdown-source-view.mod-cm5 .cm-formatting.cm-formatting-task {
 	margin-left: -10px;
-}
-
-/* <<< Custom Checkboxes by SlRvb Compatibility  */
-.markdown-source-view.mod-cm6 .task-list-item-checkbox[data-task="x"],
-.markdown-preview-view li[data-task="x"] > .task-list-item-checkbox,
-.markdown-preview-view li[data-task="x"] p .task-list-item-checkbox,
-.cm-s-obsidian span.hmd-hidden-token.cm-formatting-task[data-task="x"],
-input[type="checkbox"]:not(:checked) {
-	color: var(--text-normal);
-	margin-top: 2.5px;
-	margin-right: 10px;
-}
-
-body > div.app-container div.markdown-preview-view ul > li.task-list-item.is-checked,
-body > div.app-container div.markdown-preview-view ol > li.task-list-item.is-checked {
-	padding-left: 0;
-}
-
-body .markdown-source-view.mod-cm6 .task-list-item-checkbox::BEFORE,
-body .markdown-preview-view :not(li[data-task="x"]) > .task-list-item-checkbox:checked::BEFORE,
-body .markdown-preview-view :not(li[data-task="x"]) p .task-list-item-checkbox:checked::BEFORE {
-	top: 2px;
-	right: 1.5px;
-}
-
-/* icon placement in live preview */
-body.check-bg .markdown-source-view.mod-cm6.is-live-preview .task-list-item-checkbox::BEFORE,
-body.check-bg .is-live-preview.markdown-preview-view :not(li[data-task="x"]) > .task-list-item-checkbox:checked::BEFORE,
-body.check-bg .is-live-preview.markdown-preview-view :not(li[data-task="x"]) p .task-list-item-checkbox:checked::BEFORE {
-	top: -3px;
-	right: -2px;
-}
-
-body .markdown-source-view.mod-cm6 .task-list-item-checkbox > *,
-body > div.app-container .markdown-preview-view ul > li.task-list-item.is-checked,
-body > div.app-container .markdown-preview-view ol > li.task-list-item.is-checked {
-	font-weight: unset; /* stylelint-disable-line font-weight-notation */
-	padding-left: 5px;
-	margin-bottom: 0;
 }
 
 /* ───────────────────────────────────────────────────
