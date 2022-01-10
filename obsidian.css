@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 1.621
+Version 1.622
 https://github.com/chrisgrieser/shimmering-focus/
 MIT License
 ─────────────────────────────────────────────────── */
@@ -4613,7 +4613,7 @@ body:not(.blockquotes-left-aligned) > .app-container .HyperMD-quote {
 	background-color: var(--bg2);
 
 	position: absolute;
-	top: -6.5px;
+	top: -7px;
 	bottom: -7px;
 	left: -35px;
 
@@ -5460,10 +5460,11 @@ body > .app-container span.cm-tag {
 
 /* preview mode */
 /* https://forum.obsidian.md/t/meta-post-common-css-hacks/1978/34 */
-input[type="checkbox"] {
+.markdown-preview-view input[type="checkbox"] {
 	background-color: unset;
 
-	margin: 1.5px 10px 3px 0 !important;
+	margin-top: 2px;
+	margin-left: 7px;
 
 	border: 2px solid var(--hr-line-gray);
 	border-radius: var(--round);
