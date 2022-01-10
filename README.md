@@ -33,6 +33,7 @@ A minimalistic [Obsidian](https://obsidian.md/) theme focused on readability and
 	- [Further Customization Options](#further-customization-options)
 - [Compatibility](#compatibility)
 	- [List of Compatible Plugins](#list-of-compatible-plugins)
+	- [Custom Checkboxes](#custom-checkboxes)
 	- [Instructions for specific Plugins](#instructions-for-specific-plugins)
 - [Installation](#installation)
 - [Contribute to the Theme](#contribute-to-the-theme)
@@ -211,6 +212,9 @@ This themes supports dozens of customization options via the [Style Settings Plu
 *Shimmering Focus* is compatible with and has includes styling for all core plugins, the most common community plugins, as well as about a dozen more community plugins.
 
 ➡️ [Full list of compatible plugins.](https://publish.obsidian.md/hub/02+-+Community+Expansions/02.05+All+Community+Expansions/Themes/Shimmering+Focus#Plugin+Compatibility+1)
+
+### Custom Checkboxes
+The theme is *mostly* compatible with [custom checkboxes by SlRvb](https://publish.obsidian.md/hub/02+-+Community+Expansions/02.05+All+Community+Expansions/CSS+Snippets/Alternate+Checkboxes+(SlRvb).md) by adding this [compatibility snippet](CSS%20Snippets/slvrb-checkboxes-compatibility.css).
 
 ### Instructions for specific Plugins
 In accordance with the minimalistic philosophy of the theme, unnecessary UI elements of some plugins have also been removed. However, you can still access the full plugin functionality.
