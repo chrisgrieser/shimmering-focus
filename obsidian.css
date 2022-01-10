@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 1.622
+Version 1.623
 https://github.com/chrisgrieser/shimmering-focus/
 MIT License
 ─────────────────────────────────────────────────── */
@@ -9585,8 +9585,9 @@ settings:
 	-
 	 id: pseudo-admonition-prefix
 	 title: 'Pseudo-Admonitions: Prefixed Icon'
+	 description: Needs to be enclosed in quotation marks
 	 type: variable-text
-	 default: "ℹ️"
+	 default: '"ℹ️"'
 	-
 	 id: no-pandoc-citation-emphasis
 	 title: No Emphasis of Pandoc Citations

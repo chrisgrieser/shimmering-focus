@@ -1,3 +1,4 @@
+- 2022-01-10	fixed style setting for admonition icon to include quotation mark
 - 2022-01-10	fix checkboxes and admonition misalignment
 - 2022-01-10	removed Slr checkbox support for now, as not maintainable
 - 2022-01-09	fixed download numbers in community plugin browser being sticky
