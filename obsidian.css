@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 1.616
+Version 1.617
 https://github.com/chrisgrieser/shimmering-focus/
 MIT License
 ─────────────────────────────────────────────────── */
@@ -7158,6 +7158,7 @@ body .kanban-plugin p {
 
 .kanban-plugin.kanban-plugin code {
 	font-size: calc(var(--monospace-font-size) * 0.95);
+	background-color: var(--bg3);
 	padding-right: 0;
 	padding-left: 0;
 }
