@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 1.628
+Version 1.629
 https://github.com/chrisgrieser/shimmering-focus/
 MIT License
 ─────────────────────────────────────────────────── */
@@ -3328,6 +3328,7 @@ body .community-plugin-info .community-plugin-downloads-text {
 <<< GitHub Info for this Theme
 ─────────────────────────────────────────────────── */
 
+/* "Feature Overview" Button */
 .community-theme.is-selected .community-theme-info .clickable-icon::AFTER {
 	content: "Feature Overview";
 	font-family: var(--button-font);
@@ -3361,6 +3362,7 @@ body .community-plugin-info .community-plugin-downloads-text {
 	transition: var(--medium-transition);
 }
 
+/* Infobox */
 .community-theme.is-selected .community-theme-info::AFTER {
 	content: "⚠️  No Settings Button \A\A➡️  Access Settings via\A      ⌘ + ,   (Mac)\A      Ctrl + , (Win/Linux)\A\A🎨  Theme Customization via\A      Style Settings Plugin";
 
@@ -3459,7 +3461,7 @@ body .community-plugin-info .community-plugin-downloads-text {
 .community-theme {
 	color: var(--text-normal);
 	background: var(--bg3);
-	box-shadow: var(--small-shadow);
+	box-shadow: var(--small-shadow), var(--muted-button-inset-shadow);
 	border-radius: calc(var(--roundish) * 2);
 }
 
