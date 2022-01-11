@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 1.624
+Version 1.625
 https://github.com/chrisgrieser/shimmering-focus/
 MIT License
 ─────────────────────────────────────────────────── */
@@ -3226,10 +3226,15 @@ body .community-plugin-info .community-plugin-downloads-text {
 /* copy URL button  */
 .modal.mod-community-plugin .community-plugin-info button:last-child {
 	font-size: 0;
+
 	height: 2.09rem;
+
 	background-color: var(--bg2);
 	box-shadow: var(--muted-button-inset-shadow);
+
 	padding: 1px 3px 0 2px;
+
+	border-color: var(--basic-border-color);
 }
 
 .modal.mod-community-plugin .community-plugin-info button:last-child::BEFORE {
