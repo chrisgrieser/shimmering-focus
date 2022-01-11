@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 1.627
+Version 1.628
 https://github.com/chrisgrieser/shimmering-focus/
 MIT License
 ─────────────────────────────────────────────────── */
@@ -3000,18 +3000,13 @@ body .workspace-leaf-resize-handle:active {
 	content: "  ";
 	white-space: pre-wrap;
 	background-color: var(--bg3);
-	margin-left: -4px;
+	margin-left: -5px;
 }
 
 .community-plugin-downloads::BEFORE,
 .community-plugin-downloads,
-.community-plugin-desc,
-.community-plugin-search .community-plugin-version {
+.community-plugin-desc {
 	line-height: 80%;
-}
-
-.community-plugin-search .community-plugin-version {
-	margin-top: 10px;
 }
 
 .community-plugin-search .community-plugin-downloads {
@@ -3029,10 +3024,9 @@ body .workspace-leaf-resize-handle:active {
 	font-size: 0.85em;
 	line-height: 1em;
 
-	color: var(--text-faint);
+	color: var(--middle-gray);
 
 	margin-top: 5px;
-	margin-left: 3px;
 
 	vertical-align: top;
 }
@@ -3052,6 +3046,10 @@ body .workspace-leaf-resize-handle:active {
 	height: 30px;
 	color: var(--extra-contrast);
 	stroke-width: 4px;
+}
+
+.community-plugin-desc {
+	color: var(--extra-contrast);
 }
 
 /* plugin search input */
@@ -3109,7 +3107,7 @@ body .workspace-leaf-resize-handle:active {
 
 .community-plugin-search .community-plugin-downloads::BEFORE,
 .community-plugin-search .community-plugin-downloads-text {
-	color: var(--extra-contrast);
+	color: var(--middle-gray);
 }
 
 .community-plugin-downloads::BEFORE {
@@ -3188,16 +3186,14 @@ body .workspace-leaf-resize-handle:active {
 }
 
 /* author + version info */
-.community-plugin-info .community-plugin-author:nth-child(3)::FIRST-LETTER {
-	text-transform: lowercase;
-}
-
-.community-plugin-info .community-plugin-author:nth-child(4)::FIRST-LETTER {
+.community-plugin-info .community-plugin-version + .community-plugin-author::FIRST-LETTER {
 	/* properly lowercase the "by" */
 	text-transform: lowercase;
 }
 
-.community-plugin-info .community-plugin-version {
+/* move up; next-sibling selector ensures it only happens,
+when the plugin has download numbers (new one's don't)  */
+.community-plugin-info .community-plugin-downloads + .community-plugin-version {
 	margin-top: -21px;
 }
 
@@ -5212,6 +5208,8 @@ body:not(.annotation-tags-off) .tag[href="#method"],
 body:not(.annotation-tags-off) .tag[href="#important"],
 body:not(.annotation-tags-off) .tag[href="#quote"],
 body:not(.annotation-tags-off) .tag[href="#todo"],
+body:not(.annotation-tags-off) .tag[href="#critique"],
+body:not(.annotation-tags-off) .cm-s-obsidian .cm-line span.cm-tag-critique,
 body:not(.annotation-tags-off) .cm-s-obsidian .cm-line span.cm-tag-todo,
 body:not(.annotation-tags-off) .cm-s-obsidian .cm-line span.cm-tag-quote,
 body:not(.annotation-tags-off) .cm-s-obsidian .cm-line span.cm-tag-method,
@@ -5228,7 +5226,7 @@ body:not(.annotation-tags-off) .cm-s-obsidian .cm-line span.cm-tag-example {
 	font-style: normal;
 	text-decoration: none;
 
-	color: var(--annotation-tag-font-color) !important;
+	color: var(--annotation-tag-font-color);
 
 	padding-right: 8px;
 	padding-left: 8px;
@@ -5249,6 +5247,8 @@ body:not(.annotation-tags-off) .longform-leaf .tag[href="#method"],
 body:not(.annotation-tags-off) .longform-leaf .tag[href="#important"],
 body:not(.annotation-tags-off) .longform-leaf .tag[href="#quote"],
 body:not(.annotation-tags-off) .longform-leaf .tag[href="#todo"],
+body:not(.annotation-tags-off) .longform-leaf .tag[href="#critique"],
+body:not(.annotation-tags-off) .longform-leaf .cm-s-obsidian .cm-line span.cm-tag-critique,
 body:not(.annotation-tags-off) .longform-leaf .cm-s-obsidian .cm-line span.cm-tag-todo,
 body:not(.annotation-tags-off) .longform-leaf .cm-s-obsidian .cm-line span.cm-tag-quote,
 body:not(.annotation-tags-off) .longform-leaf .cm-s-obsidian .cm-line span.cm-tag-method,
@@ -5265,12 +5265,8 @@ body:not(.annotation-tags-off) .longform-leaf .cm-s-obsidian .cm-line span.cm-ta
 	font-size: var(--longform-font-size);
 }
 
-/* prevent line break between emoji and tag */
-.cm-hashtag-begin {
-	white-space: nowrap;
-}
-
 /* the "#" */
+body:not(.annotation-tags-off) .cm-s-obsidian .cm-line .cm-hashtag-begin.cm-tag-critique,
 body:not(.annotation-tags-off) .cm-s-obsidian .cm-line .cm-hashtag-begin.cm-tag-todo,
 body:not(.annotation-tags-off) .cm-s-obsidian .cm-line .cm-hashtag-begin.cm-tag-quote,
 body:not(.annotation-tags-off) .cm-s-obsidian .cm-line .cm-hashtag-begin.cm-tag-method,
@@ -5283,12 +5279,14 @@ body:not(.annotation-tags-off) .cm-s-obsidian .cm-line .cm-hashtag-begin.cm-tag-
 body:not(.annotation-tags-off) .cm-s-obsidian .cm-line .cm-hashtag-begin.cm-tag-agree,
 body:not(.annotation-tags-off) .cm-s-obsidian .cm-line .cm-hashtag-begin.cm-tag-important,
 body:not(.annotation-tags-off) .cm-s-obsidian .cm-line .cm-hashtag-begin.cm-tag-example {
+	white-space: nowrap;
 	padding-right: 0;
 	border-top-right-radius: 0;
 	border-bottom-right-radius: 0;
 }
 
 /* the tag text */
+body:not(.annotation-tags-off) .cm-s-obsidian .cm-line .cm-hashtag-end.cm-tag-critique,
 body:not(.annotation-tags-off) .cm-s-obsidian .cm-line .cm-hashtag-end.cm-tag-todo,
 body:not(.annotation-tags-off) .cm-s-obsidian .cm-line .cm-hashtag-end.cm-tag-quote,
 body:not(.annotation-tags-off) .cm-s-obsidian .cm-line .cm-hashtag-end.cm-tag-method,
@@ -5309,7 +5307,7 @@ body:not(.annotation-tags-off) .cm-s-obsidian .cm-line .cm-hashtag-end.cm-tag-ex
 
 body:not(.annotation-tags-off) .cm-tag-todo,
 body:not(.annotation-tags-off) .tag[href="#todo"] {
-	background-color: rgb(133 199 255 / 50%) !important;
+	background-color: rgb(133 199 255 / 50%);
 }
 
 body:not(.annotation-tags-off) .cm-hashtag-begin.cm-tag-todo::BEFORE,
@@ -5317,9 +5315,19 @@ body:not(.annotation-tags-off) .tag[href="#todo"]::BEFORE {
 	content: "☑️ ";
 }
 
+body:not(.annotation-tags-off) .cm-tag-critique,
+body:not(.annotation-tags-off) .tag[href="#critique"] {
+	background-color: hsl(330 60% 50% / 50%);
+}
+
+body:not(.annotation-tags-off) .cm-hashtag-begin.cm-tag-critique::BEFORE,
+body:not(.annotation-tags-off) .tag[href="#critique"]::BEFORE {
+	content: "☝️ ";
+}
+
 body:not(.annotation-tags-off) .cm-tag-question,
 body:not(.annotation-tags-off) .tag[href="#question"] {
-	background-color: rgb(0 235 230 / 50%) !important;
+	background-color: rgb(0 235 230 / 50%);
 }
 
 body:not(.annotation-tags-off) .cm-hashtag-begin.cm-tag-question::BEFORE,
@@ -5329,7 +5337,7 @@ body:not(.annotation-tags-off) .tag[href="#question"]::BEFORE {
 
 body:not(.annotation-tags-off) .cm-tag-quote,
 body:not(.annotation-tags-off) .tag[href="#quote"] {
-	background-color: rgb(255 108 212 / 50%) !important;
+	background-color: hsl(86 100% 51% / 50%);
 }
 
 body:not(.annotation-tags-off) .cm-hashtag-begin.cm-tag-quote::BEFORE,
@@ -5342,19 +5350,14 @@ body:not(.annotation-tags-off) .tag[href="#important"] {
 	background-color: rgb(255 120 15 / 50%);
 }
 
-.theme-dark:not(.annotation-tags-off) .cm-hashtag-begin.cm-tag-important::BEFORE,
-.theme-dark:not(.annotation-tags-off) .tag[href="#important"]::BEFORE {
+body:not(.annotation-tags-off) .cm-hashtag-begin.cm-tag-important::BEFORE,
+body:not(.annotation-tags-off) .tag[href="#important"]::BEFORE {
 	content: "❕ ";
-}
-
-.theme-light:not(.annotation-tags-off) .cm-hashtag-begin.cm-tag-important::BEFORE,
-.theme-light:not(.annotation-tags-off) .tag[href="#important"]::BEFORE {
-	content: "❗️ ";
 }
 
 body:not(.annotation-tags-off) .cm-tag-method,
 body:not(.annotation-tags-off) .tag[href="#method"] {
-	background-color: rgb(170 121 66 / 50%) !important;
+	background-color: rgb(170 121 66 / 50%);
 }
 
 body:not(.annotation-tags-off) .cm-hashtag-begin.cm-tag-method::BEFORE,
@@ -5364,7 +5367,7 @@ body:not(.annotation-tags-off) .tag[href="#method"]::BEFORE {
 
 body:not(.annotation-tags-off) .cm-tag-main,
 body:not(.annotation-tags-off) .tag[href="#main"] {
-	background-color: rgb(32 156 238 / 50%) !important;
+	background-color: rgb(32 156 238 / 50%);
 }
 
 body:not(.annotation-tags-off) .cm-hashtag-begin.cm-tag-main::BEFORE,
@@ -5374,7 +5377,7 @@ body:not(.annotation-tags-off) .tag[href="#main"]::BEFORE {
 
 body:not(.annotation-tags-off) .cm-tag-gap,
 body:not(.annotation-tags-off) .tag[href="#gap"] {
-	background-color: rgb(128 128 128 / 50%) !important;
+	background-color: rgb(128 128 128 / 50%);
 }
 
 body:not(.annotation-tags-off) .cm-hashtag-begin.cm-tag-gap::BEFORE,
@@ -5384,7 +5387,7 @@ body:not(.annotation-tags-off) .tag[href="#gap"]::BEFORE {
 
 body:not(.annotation-tags-off) .cm-tag-summary,
 body:not(.annotation-tags-off) .tag[href="#summary"] {
-	background-color: rgb(255 120 15 / 50%) !important;
+	background-color: rgb(255 120 15 / 50%);
 }
 
 body:not(.annotation-tags-off) .cm-hashtag-begin.cm-tag-summary::BEFORE,
@@ -5394,7 +5397,7 @@ body:not(.annotation-tags-off) .tag[href="#summary"]::BEFORE {
 
 body:not(.annotation-tags-off) .cm-tag-definition,
 body:not(.annotation-tags-off) .tag[href="#definition"] {
-	background-color: rgb(217 188 77 / 50%) !important;
+	background-color: rgb(217 188 77 / 50%);
 }
 
 body:not(.annotation-tags-off) .cm-hashtag-begin.cm-tag-definition::BEFORE,
@@ -5404,7 +5407,7 @@ body:not(.annotation-tags-off) .tag[href="#definition"]::BEFORE {
 
 body:not(.annotation-tags-off) .cm-tag-agree,
 body:not(.annotation-tags-off) .tag[href="#agree"] {
-	background-color: rgb(35 209 96 / 50%) !important;
+	background-color: rgb(35 209 96 / 50%);
 }
 
 body:not(.annotation-tags-off) .cm-hashtag-begin.cm-tag-agree::BEFORE,
@@ -5414,7 +5417,7 @@ body:not(.annotation-tags-off) .tag[href="#agree"]::BEFORE {
 
 body:not(.annotation-tags-off) .cm-tag-disagree,
 body:not(.annotation-tags-off) .tag[href="#disagree"] {
-	background-color: rgb(255 56 96 / 50%) !important;
+	background-color: rgb(255 56 96 / 50%);
 }
 
 body:not(.annotation-tags-off) .cm-hashtag-begin.cm-tag-disagree::BEFORE,
@@ -5424,7 +5427,7 @@ body:not(.annotation-tags-off) .tag[href="#disagree"]::BEFORE {
 
 body:not(.annotation-tags-off) .cm-tag-example,
 body:not(.annotation-tags-off) .tag[href="#example"] {
-	background-color: rgb(230 128 253 / 50%) !important;
+	background-color: rgb(230 128 253 / 50%);
 }
 
 body:not(.annotation-tags-off) .cm-hashtag-begin.cm-tag-example::BEFORE,
