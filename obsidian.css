@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 1.625
+Version 1.626
 https://github.com/chrisgrieser/shimmering-focus/
 MIT License
 ─────────────────────────────────────────────────── */
@@ -1829,6 +1829,7 @@ body.angular-shapes .checkbox-container {
 .search-input-container input,
 input[type="text"],
 input[type="number"],
+input[type="search"],
 input[type="email"],
 input[type="password"] {
 	box-shadow: var(--textbox-inset-shadow);
@@ -1842,6 +1843,10 @@ input[type="password"] {
 	border-radius: var(--round);
 }
 
+body:not(.angular-shapes) input[type="password"],
+body:not(.angular-shapes) input[type="number"],
+body:not(.angular-shapes) input[type="search"],
+body:not(.angular-shapes) input[type="email"],
 body:not(.angular-shapes) input[type="text"] {
 	padding-top: 3px;
 }
@@ -1855,6 +1860,7 @@ textarea {
 
 input[type="email"],
 input[type="password"],
+input[type="search"],
 input[type="text"] {
 	width: 250px;
 }
@@ -1863,24 +1869,34 @@ input[type="text"] {
 	width: 100%;
 }
 
-textarea:focus,
-input:focus {
-	border-color: var(--interactive-border) !important;
+body textarea:focus,
+body input[type]:focus {
+	border-color: var(--interactive-border);
 }
 
-textarea:hover,
-input:hover {
-	border-color: var(--interactive-hover-border) !important;
+body textarea:hover,
+body input[type]:hover {
+	border-color: var(--interactive-hover-border);
 }
 
 .theme-dark textarea,
-.theme-dark input {
+.theme-dark .modal-container input {
 	background-color: var(--bg3);
 }
 
 .theme-light textarea,
-.theme-light input {
+.theme-light .modal-container input {
 	background-color: var(--bg2);
+}
+
+/* slightly thicker border more readable in light mode */
+.theme-light textarea:focus,
+.theme-light .modal-container input:focus,
+.theme-light textarea:hover,
+.theme-light .modal-container input:hover {
+	background-color: var(--bg2);
+	padding-left: 9.5px;
+	border-width: 1.5px;
 }
 
 .theme-light .workspace-tabs input[type="text"] {
