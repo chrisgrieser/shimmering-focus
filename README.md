@@ -3,7 +3,7 @@
 A minimalistic [Obsidian](https://obsidian.md/) theme focused on readability and condensed information display.
 
 <!-- manually updated-->
-![](https://img.shields.io/badge/downloads-10121-6E4E9B?style=plastic) ![](https://img.shields.io/github/last-commit/chrisgrieser/shimmering-focus?style=plastic) [![](https://img.shields.io/badge/changelog-click%20here-FFE800?style=plastic)](Changelog.md)
+![](https://img.shields.io/badge/downloads-10129-6E4E9B?style=plastic) ![](https://img.shields.io/github/last-commit/chrisgrieser/shimmering-focus?style=plastic) [![](https://img.shields.io/badge/changelog-click%20here-FFE800?style=plastic)](Changelog.md)
 
 <img src="https://raw.githubusercontent.com/chrisgrieser/shimmering-focus/main/dual-theme-screenshot.png" alt="Promo Screenshot">
 
@@ -220,13 +220,13 @@ The theme is *mostly* compatible with [custom checkboxes by SlRvb](https://publi
 In accordance with the minimalistic philosophy of the theme, unnecessary UI elements of some plugins have also been removed. However, you can still access the full plugin functionality.
 
 - __Longform__: Prepend a `_` to file names of longform scenes to create sub-scenes. 
-- __Sliding Panes__: As long as you are using `rotated headers`, the header is permanently shown.
 - __Kanban__: Right-click cards to edit them.
 - __Supercharged Links__: The theme includes [various built-in styling](#built-in-styling-for-supercharged-links). You can turn those of with the Style Settings plugin.
 - __Breadcrumbs__: Even with buttons removed, you can still refresh the index via Command Palette. When Supercharged Links is installed, [hovering over a link with the `up` yaml field](#built-in-styling-for-supercharged-links) displays the content of that field.
 - __Quick Explorer__: Re-enable the title bar with the [Style Settings Plugin](https://github.com/mgmeyers/obsidian-style-settings/) for the breadcrumbs
 - __Dataview__: If the table lines are off, use the [`dataview-list-in-table` CSS Classes](#css-classes)
 - __Ozan's Image in Editor__: Image Sizes are affected by the Image Settings & by the Max View Feature.
+- __Sliding Panes__: As long as you are using `rotated headers`, the header is permanently shown.
 - __Starred (Core Plugin)__: To be able to star searches, re-enable the Starred pane buttons with the [Style Settings Plugin](https://github.com/mgmeyers/obsidian-style-settings/)
 
 ## Installation
@@ -288,4 +288,4 @@ Thanks for help and/or CSS snippets:
 
 [⬆️ Go Back to Top](#Table-of-Contents)
 
-[^1]: Requires the `Readable line length` editor setting to be *enabled*.
+[^1]: Requires the `Readable line length` editor setting to be enabled.

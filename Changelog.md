@@ -1,3 +1,5 @@
+- 2022-01-11	minor
+- 2022-01-11	⚠ for SlRvb's Checkboxes, now the use of the compatibility snippet is necessary (linked in repo)
 - 2022-01-10	fixed style setting for admonition icon to include quotation mark
 - 2022-01-10	fix checkboxes and admonition misalignment
 - 2022-01-10	removed Slr checkbox support for now, as not maintainable
