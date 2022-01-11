@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 1.629
+Version 1.630
 https://github.com/chrisgrieser/shimmering-focus/
 MIT License
 ─────────────────────────────────────────────────── */
@@ -301,9 +301,9 @@ the .create-ToC.sh.
 .nord-colors.theme-light {
 	--light-hue: 220;
 	--dark-hue: 220;
+	--light-sat: 25%;
 	--dark-sat: 20%;
-	--light-sat: 20%;
-	--brightness-light: 13.5%;
+	--brightness-light: 9%;
 	--brightness-dark: 9%;
 }
 
@@ -331,7 +331,7 @@ the .create-ToC.sh.
 	--suggester-b-row: hsl(var(--light-hue) var(--sat-light-2) calc(var(--b-light-1) - 3%));
 	--muted-border-color: hsl(var(--light-hue) var(--sat-light-3) calc(var(--b-light-3) + 3%));
 	--basic-border-color: hsl(var(--light-hue) var(--sat-light-3) calc(var(--b-light-3) - 5%));
-	--backdrop-color: hsl(var(--light-hue) calc(var(--sat-light-3) * 0.8) calc(var(--b-light-3) - 10%));
+	--backdrop-color: hsl(var(--light-hue) 30% calc(var(--b-light-3) - 15%));
 }
 
 .theme-dark {
@@ -354,7 +354,7 @@ the .create-ToC.sh.
 	--suggester-b-row: hsl(var(--dark-hue)  var(--sat-dark-1) calc(var(--b-dark-1) - 2%));
 	--muted-border-color: hsl(var(--dark-hue) var(--sat-dark-1) calc(var(--b-dark-1) - 6%));
 	--basic-border-color: hsl(var(--dark-hue) var(--sat-dark-1) calc(var(--b-dark-1) + 6%));
-	--backdrop-color: hsl(var(--dark-hue) calc(var(--sat-dark-2) * 1.2) calc(var(--b-dark-2) + 2%));
+	--backdrop-color: hsl(var(--dark-hue) 20% calc(var(--b-dark-3) - 2%));
 }
 
 /* ───────────────────────────────────────────────────
@@ -2296,6 +2296,7 @@ div.prompt-results {
 kbd.suggestion-hotkey {
 	font-family: var(--button-font);
 	background-color: var(--bg2);
+	box-shadow: var(--muted-button-inset-shadow);
 	border-radius: var(--roundish);
 }
 
@@ -3023,6 +3024,7 @@ body .workspace-leaf-resize-handle:active {
 	font-family: var(--smallcap-font);
 	font-size: 0.85em;
 	line-height: 1em;
+	text-align: end;
 
 	color: var(--middle-gray);
 
@@ -3172,17 +3174,21 @@ body .workspace-leaf-resize-handle:active {
 }
 
 /* repository link */
+.community-plugin-info .community-plugin-author + .community-plugin-author,
 .community-plugin-author + .community-plugin-author a {
 	font-size: 0;
 	text-decoration: none;
 }
 
 .community-plugin-author + .community-plugin-author a::BEFORE {
-	content: "launchdns";
+	content: "launch";
+
 	font-family: var(--icon-font);
-	font-size: 0.8rem;
-	position: relative;
-	bottom: -2px;
+	font-size: 1.25rem;
+
+	position: absolute;
+	top: 8em;
+	right: 12px;
 }
 
 /* author + version info */
