@@ -1,3 +1,4 @@
+- 2022-01-12	better community plugin browser
 - 2022-01-11	increase blue of nord theme
 - 2022-01-11	fixes for community plugin browser
 - 2022-01-11	fixed minor issues with styling of hovered/focused input fields

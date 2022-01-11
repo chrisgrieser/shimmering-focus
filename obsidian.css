@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 1.630
+Version 1.631
 https://github.com/chrisgrieser/shimmering-focus/
 MIT License
 ─────────────────────────────────────────────────── */
@@ -1128,13 +1128,8 @@ svg.longform > path { display: none }
 
 svg.longform {
 	background-color: currentColor;
-
 	position: relative;
-	top: 1px;
 	right: -1px;
-
-	transform: scale(1.1);
-
 	-webkit-mask-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' preserveAspectRatio='xMidYMid meet' viewBox='0 0 24 24'%3e%3cpath d='M3 2h2v20H3zm16 0H6v20h13c1.103 0 2-.897 2-2V4c0-1.103-.897-2-2-2zm-1 10H9v-2h9v2zm0-4H9V6h9v2z' fill='currentColor'/%3e%3c/svg%3e");
 }
 
@@ -3173,24 +3168,6 @@ body .workspace-leaf-resize-handle:active {
 	vertical-align: bottom;
 }
 
-/* repository link */
-.community-plugin-info .community-plugin-author + .community-plugin-author,
-.community-plugin-author + .community-plugin-author a {
-	font-size: 0;
-	text-decoration: none;
-}
-
-.community-plugin-author + .community-plugin-author a::BEFORE {
-	content: "launch";
-
-	font-family: var(--icon-font);
-	font-size: 1.25rem;
-
-	position: absolute;
-	top: 8em;
-	right: 12px;
-}
-
 /* author + version info */
 .community-plugin-info .community-plugin-version + .community-plugin-author::FIRST-LETTER {
 	/* properly lowercase the "by" */
@@ -3206,7 +3183,7 @@ when the plugin has download numbers (new one's don't)  */
 .community-plugin-info .community-plugin-version,
 .community-plugin-info .community-plugin-author {
 	font-family: var(--menu-font);
-	font-size: 0.85rem;
+	font-size: 0.9rem;
 	line-height: 1.4em;
 	letter-spacing: 0.5px;
 	color: var(--extra-contrast);
@@ -3222,36 +3199,72 @@ body .community-plugin-info .community-plugin-downloads-text {
 
 .community-plugin-info .community-plugin-downloads {
 	display: block;
-	font-size: 1.3rem;
+	font-size: 1.4rem;
 	text-align: end;
 	margin-top: 12px;
 }
 
 /* Buttons */
 .mod-community-plugin .community-plugin-desc + p {
-	margin-top: 10px;
-	margin-bottom: 15px;
+	margin-top: 18px;
+	margin-bottom: 10px;
 }
 
-.mod-community-plugin .community-plugin-info button {
+.mod-community-plugin .community-plugin-info.community-plugin-info.community-plugin-info button {
+	font-size: 0.75rem; /* smaller buttons */
 	margin: 0 18px 0 0;
 }
 
-/* copy URL button  */
-.modal.mod-community-plugin .community-plugin-info button:last-child {
+.community-plugin-info .community-plugin-version + .community-plugin-author {
+	/* move buttons up since repository button has been moved */
+	margin-bottom: -20px;
+}
+
+/* Repository Button */
+.community-plugin-info .community-plugin-author + .community-plugin-author,
+.community-plugin-author + .community-plugin-author a {
 	font-size: 0;
+	text-decoration: none;
+	text-align: end;
+	margin-top: 44px;
+	margin-bottom: -44px;
+}
 
-	height: 2.09rem;
+.community-plugin-author + .community-plugin-author a::AFTER {
+	content: "launch";
 
+	font-family: var(--icon-font);
+	font-size: 1.05rem;
+	line-height: 1.2em;
+
+	color: var(--extra-contrast);
 	background-color: var(--bg2);
 	box-shadow: var(--muted-button-inset-shadow);
 
-	padding: 1px 3px 0 2px;
+	padding: 6px 7px 6px 8px;
 
+	border: 2px solid  var(--basic-border-color);
+	border-radius: var(--round);
+
+	transition: var(--medium-transition);
+}
+
+.community-plugin-author + .community-plugin-author a:hover::AFTER {
+	color: var(--button-hover-text);
+	background-color: var(--interactive-hover-bg);
+	border-color: var(--interactive-hover-border);
+}
+
+/* copy URL button  */
+.modal.modal.mod-community-plugin .community-plugin-info button:last-child {
+	font-size: 0;
+	background-color: var(--bg2);
+	box-shadow: var(--muted-button-inset-shadow);
+	padding: 7px 3px 10px 2px;
 	border-color: var(--basic-border-color);
 }
 
-.modal.mod-community-plugin .community-plugin-info button:last-child::BEFORE {
+.modal.modal.mod-community-plugin .community-plugin-info button:last-child::BEFORE {
 	content: "link";
 
 	font-family: var(--icon-font);
@@ -3260,21 +3273,12 @@ body .community-plugin-info .community-plugin-downloads-text {
 	color: var(--extra-contrast);
 
 	position: relative;
-	top: 5px;
+	top: 6px;
 	left: 5px;
 }
 
 .modal.mod-community-plugin .community-plugin-info button:last-child:hover::BEFORE {
 	color: var(--button-hover-text);
-}
-
-.angular-shapes .modal.mod-community-plugin .community-plugin-info button:last-child {
-	position: relative;
-	bottom: 2.5px;
-}
-
-.angular-shapes .modal.mod-community-plugin .community-plugin-info button:last-child::BEFORE {
-	top: 7px;
 }
 
 /* headings */
@@ -9602,7 +9606,7 @@ settings:
 	 default: false
 	-
 	 id: miscellaneous
-	 title: Other Theme Features
+	 title: Miscellaneous
 	 description: File Name Trimming, Pseudo-Admonitions, Pandoc Citations, Annotation Tags, Alternating Row Colors, Relationship Lines
 	 type: heading
 	 level: 2
