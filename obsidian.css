@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 1.632
+Version 1.633
 https://github.com/chrisgrieser/shimmering-focus/
 MIT License
 ─────────────────────────────────────────────────── */
@@ -3177,7 +3177,7 @@ body .workspace-leaf-resize-handle:active {
 /* move up; next-sibling selector ensures it only happens,
 when the plugin has download numbers (new one's don't)  */
 .community-plugin-info .community-plugin-downloads + .community-plugin-version {
-	margin-top: -21px;
+	margin-top: -20px;
 }
 
 .community-plugin-info .community-plugin-version,
@@ -3206,8 +3206,8 @@ body .community-plugin-info .community-plugin-downloads-text {
 
 /* Buttons */
 .mod-community-plugin .community-plugin-desc + p {
-	margin-top: 18px;
-	margin-bottom: 10px;
+	margin-top: 17px;
+	margin-bottom: 14px;
 }
 
 .mod-community-plugin .community-plugin-info.community-plugin-info.community-plugin-info button {
