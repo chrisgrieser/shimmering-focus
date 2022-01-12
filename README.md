@@ -3,7 +3,7 @@
 A minimalistic [Obsidian](https://obsidian.md/) theme focused on readability and condensed information display.
 
 <!-- manually updated-->
-![](https://img.shields.io/badge/downloads-10413-6E4E9B?style=plastic) ![](https://img.shields.io/github/last-commit/chrisgrieser/shimmering-focus?style=plastic) [![](https://img.shields.io/badge/changelog-click%20here-FFE800?style=plastic)](Changelog.md)
+![](https://img.shields.io/badge/downloads-10456-6E4E9B?style=plastic) ![](https://img.shields.io/github/last-commit/chrisgrieser/shimmering-focus?style=plastic) [![](https://img.shields.io/badge/changelog-click%20here-FFE800?style=plastic)](Changelog.md)
 
 <img src="https://raw.githubusercontent.com/chrisgrieser/shimmering-focus/main/dual-theme-screenshot.png" alt="Promo Screenshot">
 
@@ -50,9 +50,9 @@ A minimalistic [Obsidian](https://obsidian.md/) theme focused on readability and
 ## Features
 
 ### Hiding/Showing UI Elements
-- By default, many UI elements are hidden, directing your focus to what matters – your notes.
+- By default, many UI elements are hidden, directing your focus to what matters: your notes.
 - You can re-enable individual hidden UI elements by using the [Style Settings Plugin](https://github.com/mgmeyers/obsidian-style-settings/).
-- The status bar, header bar, graph controls, resize handles, and collapse arrows but become visible upon hovering or being active.
+- The status bar, header bar, graph controls, resize handles, and collapse arrows are hidden but become visible upon hovering or being active.
 - Obsidian 0.13+: in Source Mode, URLs on non-active lines are folded.
 
 💡 The YAML frontmatter in Preview Mode is not removed by this theme, since you can already disable it with the native Obsidian settings under `Settings ➞ Editor ➞ Show Frontmatter`.
@@ -169,6 +169,7 @@ kanban-plugin, title, up
 - Screen real estate is used much more efficiently to display more information at the same time.
 - Useful for smaller screens, split screens, bigger font sizes, or simply to see more information without having to scroll.
 - Images and PDFs are displayed at a smaller sized. (Size can be configured with the Style Settings Plugin,) Click and hold an image to enlarge it again, or use the [Max View Feature](#Max-View).
+- Obsidian 0.13+: in Source Mode, URLs on non-active lines are folded.
 - Option to trim filenames in the sidebar for even more compactness.
 
 <img width=60% alt="Screenshot 2021-10-23 17 06 22" src="https://user-images.githubusercontent.com/73286100/138561771-1067d041-eeb2-4dfe-8d79-f7fa754ca419.png">

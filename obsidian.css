@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 1.641
+Version 1.642
 https://github.com/chrisgrieser/shimmering-focus/
 MIT License
 ─────────────────────────────────────────────────── */
@@ -1075,6 +1075,10 @@ svg.check-small,
 /* ───────────────────────────────────────────────────
 << Plugin Icons
 ─────────────────────────────────────────────────── */
+/* Run Init JavaScript */
+.side-dock-ribbon-action svg.any-key {
+	transform: scale(0.9);
+}
 
 /* dictionary plugin */
 svg.quote-glyph > path { display: none }
@@ -1247,7 +1251,7 @@ body:not(.show-titlebar) .titlebar {
 
 :root { /* stylelint-disable-line no-duplicate-selectors */
 	--mac-traffic-light-padding: 14px;
-	--normal-top-padding: 39px;
+	--normal-top-padding: 37.5px;
 }
 
 /* fix for macOS Traffic Lights */
@@ -1314,11 +1318,53 @@ body.show-titlebar .workspace-ribbon.mod-left {
 }
 
 /* ───────────────────────────────────────────────────
+<< Settings Button
+─────────────────────────────────────────────────── */
+/* because users will never learn */
+body:not(.show-ribbons) .workspace-ribbon.mod-left {
+	visibility: hidden;
+}
+
+body:not(.show-ribbons) .workspace-split.mod-left-split.is-collapsed + .mod-root,
+body:not(.show-ribbons) .workspace-split.mod-left-split {
+	margin-left: -30px;
+}
+
+body:not(.show-ribbons) .side-dock-settings .side-dock-ribbon-action:last-child svg {
+	height: 0.95em;
+	width: 0.95em;
+}
+
+body:not(.show-ribbons) .side-dock-settings .side-dock-ribbon-action:last-child {
+	background-color: var(--bg3);
+	box-shadow: var(--muted-button-inset-shadow);
+
+	position: absolute;
+	bottom: 0.5em;
+	left: 0.5em;
+
+	padding: 1px 4px 0 5px;
+
+	border: var(--thin-border);
+	border-radius: var(--roundish);
+
+	visibility: visible;
+}
+
+.hide-settings-button:not(.show-ribbons) .side-dock-settings .side-dock-ribbon-action:last-child {
+	display: none;
+}
+
+/* ───────────────────────────────────────────────────
 << Ribbons
 ─────────────────────────────────────────────────── */
 /* hide ribbons, when the setting is chosen */
-body:not(.show-ribbons) .workspace-ribbon {
+body:not(.show-ribbons) .workspace-ribbon.mod-right {
 	display: none;
+}
+
+.side-dock-ribbon-action svg {
+	width: 1.05rem;
 }
 
 .workspace-ribbon {
@@ -3386,7 +3432,7 @@ body .community-plugin-info .community-plugin-downloads-text {
 
 /* Infobox */
 .community-theme.is-selected .community-theme-info::AFTER {
-	content: "⚠️  No Settings Button \A\A➡️  Access Settings via\A      ⌘ + ,   (Mac)\A      Ctrl + , (Win/Linux)\A\A🎨  Theme Customization via\A      Style Settings Plugin";
+	content: "🎨 ⚙️ Theme Customization available by installing the Style Settings Plugin.";
 
 	font-family: var(--menu-font-family);
 	font-size: 0.85rem;
@@ -3400,18 +3446,18 @@ body .community-plugin-info .community-plugin-downloads-text {
 	box-shadow: var(--muted-button-inset-shadow);
 
 	position: absolute;
-	top: 137px;
-	right: 6%;
-	left: 6%;
+	top: 150px;
+	right: 7%;
+	left: 7%;
 
-	padding: 8px;
+	padding: 8px 8px 12px 14px;
 
 	border: var(--basic-border);
 	border-radius: var(--roundish);
 }
 
 .community-theme.is-selected {
-	min-height: 385px;
+	min-height: 330px;
 	border-color: var(--interactive-border);
 }
 
@@ -9002,6 +9048,12 @@ settings:
 	 type: heading
 	 level: 2
 	 collapsed: true
+	-
+	 id: hide-settings-button
+	 title: Hide Settings Button
+	 type: class-toggle
+	 description: "Hide the floating settings button. The settings can still be accessed by using the hotkey 'cmd + ,' on Mac or 'ctrl + ,' on Windows/Linux."
+	 default: false
 	-
 	 id: show-titlebar
 	 title: Re-enable Title Bar
