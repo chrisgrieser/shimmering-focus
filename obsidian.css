@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 1.635
+Version 1.636
 https://github.com/chrisgrieser/shimmering-focus/
 MIT License
 ─────────────────────────────────────────────────── */
@@ -301,9 +301,9 @@ the .create-ToC.sh.
 .nord-colors.theme-light {
 	--light-hue: 220;
 	--dark-hue: 220;
-	--light-sat: 25%;
+	--light-sat: 20%;
 	--dark-sat: 20%;
-	--brightness-light: 9%;
+	--brightness-light: 11%;
 	--brightness-dark: 9%;
 }
 
