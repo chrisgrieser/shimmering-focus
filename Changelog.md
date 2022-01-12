@@ -1,4 +1,4 @@
-- 2022-01-12	minor
+- 2022-01-12	images with ozans image plugin are now also zoomable on clicking
 - 2022-01-12	added style setting to turn off LP heading indicator
 - 2022-01-12	better community plugin browser
 - 2022-01-11	increase blue of nord theme

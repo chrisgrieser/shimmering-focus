@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 1.636
+Version 1.637
 https://github.com/chrisgrieser/shimmering-focus/
 MIT License
 ─────────────────────────────────────────────────── */
@@ -4331,9 +4331,10 @@ body:not(.max-view-enabled) .mod-root .markdown-source-view.mod-cm6.is-readable-
 }
 
 /* CM5 + CM6: Images Source Mode (Ozan's image in editor) */
-.max-view-enabled:not(.is-mobile) .mod-left-split.is-collapsed ~ .mod-root div.oz-image-widget-cm6 > img,
+body:not(.is-mobile) .app-container .oz-image-widget-cm6 > img:active,
+.max-view-enabled:not(.is-mobile) .mod-left-split.is-collapsed ~ .mod-root div.oz-image-widget-cm6 > img:not(:active),
 .max-view-enabled:not(.is-mobile) .mod-left-split.is-collapsed ~ .mod-root div.oz-image-widget > img {
-	max-width: 100% !important;
+	max-width: 100%;
 }
 
 body:not(.is-mobile) .app-container .view-content img,
