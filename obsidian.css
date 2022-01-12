@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 1.638
+Version 1.639
 https://github.com/chrisgrieser/shimmering-focus/
 MIT License
 ─────────────────────────────────────────────────── */
@@ -4186,7 +4186,7 @@ body:not(.left-aligned-embeds) .view-content img:not(.link-favicon) {
 }
 
 .theme-light .markdown-preview-view img:active {
-	background: hsl(0 0% 80%);
+	background: hsl(0 0% 75%);
 }
 
 .theme-dark .markdown-preview-view img:active {
@@ -4641,6 +4641,7 @@ body:not(.blockquotes-left-aligned) > .app-container .HyperMD-quote {
 	content: var(--pseudo-admonition-prefix);
 
 	font-style: normal;
+	text-align: start;
 
 	background-color: var(--bg2);
 
