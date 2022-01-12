@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 1.640
+Version 1.641
 https://github.com/chrisgrieser/shimmering-focus/
 MIT License
 ─────────────────────────────────────────────────── */
@@ -4496,6 +4496,7 @@ body .markdown-preview-view blockquote,
 	border-left: 10px solid var(--basic-border-color);
 }
 
+.cm-hmd-indent-in-quote,
 .markdown-preview-view blockquote,
 .cm-line.HyperMD-quote .cm-quote {
 	color: var(--extra-contrast);
@@ -4547,6 +4548,7 @@ body:not(.no-active-highlight):not(.focused-highlight) .cm-s-obsidian .cm-active
 
 /* option for normal size */
 body:not(.normal-blockquotes) blockquote,
+body:not(.normal-blockquotes) .cm-hmd-indent-in-quote,
 body:not(.normal-blockquotes) .HyperMD-quote.HyperMD-quote-1 {
 	font-size: 0.87em;
 	line-height: 21px;
@@ -6739,7 +6741,7 @@ body:not(.show-graph-controls) .graph-controls.is-close:not(:hover) {
 ─────────────────────────────────────────────────── */
 
 /* ───────────────────────────────────────────────────
-<< Supercharged links
+<< Supercharged Links
 ─────────────────────────────────────────────────── */
 
 body:not(.no-built-in-supercharged-links) .data-link-icon[data-link-tags*="#checklist" i]::BEFORE { content: "☑️ " }
@@ -6764,6 +6766,7 @@ body:not(.no-built-in-supercharged-links) .data-link-text:hover::AFTER {
 	position: absolute;
 
 	padding: 8px 10px;
+	margin-left: -25px;
 
 	border: var(--notice-border);
 	border-radius: var(--roundish);

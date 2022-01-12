@@ -1,3 +1,4 @@
+- 2022-01-12	minor
 - 2022-01-12	fix alignment issues with admonitions
 - 2022-01-12	images with ozans image plugin are now also zoomable on clicking
 - 2022-01-12	added style setting to turn off LP heading indicator
