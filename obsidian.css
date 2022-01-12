@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 1.637
+Version 1.638
 https://github.com/chrisgrieser/shimmering-focus/
 MIT License
 ─────────────────────────────────────────────────── */
@@ -303,7 +303,7 @@ the .create-ToC.sh.
 	--dark-hue: 220;
 	--light-sat: 20%;
 	--dark-sat: 20%;
-	--brightness-light: 11%;
+	--brightness-light: 13%;
 	--brightness-dark: 9%;
 }
 
@@ -4273,7 +4273,7 @@ body.no-barelink-spellcheck .cm-hmd-barelink.cm-overlay.cm-spell-error {
 	background-image: none;
 }
 
-/* spellcheck dictionary (when modifying words through settings) */
+/* spellcheck dictionary (modifying words through settings) */
 .spellchecker-dictionary-remove-button:hover {
 	color: var(--alt-accent);
 }
