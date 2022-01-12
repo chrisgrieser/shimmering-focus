@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 1.634
+Version 1.635
 https://github.com/chrisgrieser/shimmering-focus/
 MIT License
 ─────────────────────────────────────────────────── */
@@ -4459,6 +4459,10 @@ body .cm-s-obsidian .cm-header,
 .is-live-preview .cm-header-4::BEFORE { content: "H4" }
 .is-live-preview .cm-header-5::BEFORE { content: "H5" }
 .is-live-preview .cm-header-6::BEFORE { content: "H6" }
+
+.no-heading-level-in-lp .is-live-preview .cm-header::BEFORE {
+	display: none;
+}
 
 /* Alternation between italic & different font style
 for all headings to improve distinctiveness */
@@ -9310,6 +9314,12 @@ settings:
 	 id: no-alternating-header-italics
 	 title: No Alternating Italic of Headings
 	 description: In this theme, the Heading Levels alternate between italic/regular to make them more distinguishable. You can turn that feature off if you prefer non-italic for all heading levels.
+	 type: class-toggle
+	 default: false
+	-
+	 id: no-heading-level-in-lp
+	 title: No Heading Level Indicator in Live Preview
+	 description: "Removes the small 'H1', 'H2', that are in front of headings in Live Preview."
 	 type: class-toggle
 	 default: false
 	-
