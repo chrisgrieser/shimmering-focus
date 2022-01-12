@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 1.639
+Version 1.640
 https://github.com/chrisgrieser/shimmering-focus/
 MIT License
 ─────────────────────────────────────────────────── */
@@ -2290,8 +2290,13 @@ div.prompt-results {
 
 kbd.suggestion-hotkey {
 	font-family: var(--button-font);
+	line-height: 1.7em;
+
+	min-height: 1.9em;
+
 	background-color: var(--bg2);
 	box-shadow: var(--muted-button-inset-shadow);
+
 	border-radius: var(--roundish);
 }
 
@@ -2877,14 +2882,19 @@ body .workspace-leaf-resize-handle:active {
 /* avoids the creation of two-line-hotkeys  */
 /* when the command name is too long */
 .hotkey-list-container .setting-item .setting-item-info {
-	max-width: 80%;
+	max-width: 75%;
 	margin-right: 0;
 }
 
 .setting-hotkey {
 	font-family: var(--button-font);
+	line-height: 1.7em;
+
+	min-height: 2em;
+
 	background-color: var(--bg2);
 	box-shadow: var(--muted-button-inset-shadow);
+
 	border: var(--thin-border);
 	border-radius: var(--roundish);
 }
@@ -2898,7 +2908,7 @@ body .workspace-leaf-resize-handle:active {
 
 	color: var(--text-faint);
 
-	padding-top: 12px;
+	padding-top: 11px;
 }
 
 .setting-hotkey.mod-active {
@@ -4648,27 +4658,30 @@ body:not(.blockquotes-left-aligned) > .app-container .HyperMD-quote {
 	position: absolute;
 	top: -7px;
 	bottom: -7px;
-	left: -35px;
+	left: -28px;
 
 	padding: 5px 8px;
 
 	border: 7px double var(--basic-border-color);
 	border-right: none;
+	border-bottom-left-radius: var(--roundish);
+	border-top-left-radius: var(--roundish);
 }
 
-.markdown-preview-view blockquote > blockquote > blockquote {
+.markdown-reading-view .markdown-preview-view blockquote > blockquote > blockquote {
 	font-family: var(--menu-font-family);
 	font-size: 0.9rem;
 
+	width: 101%;
+
 	position: relative;
-	right: -15px;
-	bottom: -0.5px;
+	right: -5px;
 
-	margin-right: 10px;
+	margin-top: -10px;
+	margin-bottom: -10px;
 
-	border: none;
-
-	outline: 7px double var(--basic-border-color);
+	border: 7px double var(--basic-border-color);
+	border-left: none;
 }
 
 /* for LP */
