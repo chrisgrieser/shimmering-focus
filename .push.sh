@@ -36,3 +36,10 @@ git commit -m "$commitMsg"
 git pull
 
 echo -n | git push  #pass for notification
+
+if [[ "$commitMsg" =~ "#" ]] ; then
+	issueNo=$(echo "$commitMsg" | egrep -o "#\d+" |cut -c 2-)
+	repoURL=$(git remote -v | grep git@github.com | grep fetch | head -n1 | cut -f2 | cut -d' ' -f1 | sed -e's/:/\//' -e 's/git@/https:\/\//' -e 's/\.git//' )
+	open "$repoURL"/issues/"$issueNo"
+	exit
+fi

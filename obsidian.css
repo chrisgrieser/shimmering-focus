@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 1.644
+Version 1.645
 https://github.com/chrisgrieser/shimmering-focus/
 MIT License
 ─────────────────────────────────────────────────── */
@@ -5561,7 +5561,7 @@ body > .app-container span.cm-tag {
 
 /* preview mode */
 /* https://forum.obsidian.md/t/meta-post-common-css-hacks/1978/34 */
-.markdown-preview-view input[type="checkbox"] {
+input.task-list-item-checkbox[type="checkbox"] {
 	background-color: unset;
 
 	margin-top: 2px;

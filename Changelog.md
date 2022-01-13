@@ -1,3 +1,4 @@
+- 2022-01-13	fix #88
 - 2022-01-13	fix glitching input boxes
 - 2022-01-13	fix glitchy sliders
 - 2022-01-13	floating setting button to access settings without keybaord shortcut. New Style Setting to hide that button
