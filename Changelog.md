@@ -1,3 +1,4 @@
+- 2022-01-13	minor
 - 2022-01-13	added more explanations to annotation tags template (#46)
 - 2022-01-13	fix #88
 - 2022-01-13	fix glitching input boxes
