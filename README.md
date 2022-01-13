@@ -72,7 +72,7 @@ A minimalistic [Obsidian](https://obsidian.md/) theme focused on readability and
 ### Annotation Tags
 Type one of the following tags (e.g. `#definition`) to get a colored annotation tag. Also works in Edit Mode. Intended for Annotations when reading academic papers.
 
-<img width=40% alt="list-of-all-annotation-tags" src="assets/all-annotation-tags.png">
+<img width=25% alt="list-of-all-annotation-tags" src="assets/all-annotation-tags.png">
 
 ### Image-related Features
 - Click & hold an image to zoom (Preview Mode).
