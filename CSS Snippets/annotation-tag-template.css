@@ -4,14 +4,18 @@ https://github.com/chrisgrieser/shimmering-focus
 
 Instruction
 --------------
-1. replace the background-color in line 9 with a color of your choice
-2. Replace the icon in line 15 with an emoji of your choice.
+1. Replace the background-color with a color of your choice
+2. Replace the icon with an emoji of your choice.
 (The trailing space is needed for proper alignment.)
 3. Replace _every_ instance of "YOURTAG" with the (case-sensitive) tag of
-your choice. (There is a total of 8 instances you have replace.)
+your choice.
+4. Save the file as CSS snippet in `{your-vault-path}/.obsidian/snippets`
+https://help.obsidian.md/How+to/Add+custom+styles#Use+Themes+and+or+CSS+snippets
+5. go to Obsidian Settings ➞ Appearance, Reload the snippets and enable the
+snippet you just saved.
 
-Note that this CSS snippet requires the theme "Shimmering Focus"
-to be enabled to work properly.
+
+Note that this CSS snippet requires the theme "Shimmering Focus" to work properly.
 
 If you are using the Legacy Editor (CM5), replace every instance of
 ".cm-line" with ".CodeMirror-line".
@@ -19,37 +23,46 @@ If you are using the Legacy Editor (CM5), replace every instance of
 
 body:not(.annotation-tags-off) .cm-tag-YOURTAG,
 body:not(.annotation-tags-off) .tag[href="#YOURTAG"] {
-	background-color: rgb(0 235 230 / 50%) !important;
+	/* replace this color */
+	background-color: rgb(0 235 230 / 50%);
 }
 
 body:not(.annotation-tags-off) .cm-hashtag-begin.cm-tag-YOURTAG::BEFORE,
 body:not(.annotation-tags-off) .tag[href="#YOURTAG"]::BEFORE {
+	/* replace this icon */
 	content: "❓ ";
 }
 
 body:not(.annotation-tags-off) .tag[href="#YOURTAG"],
 body:not(.annotation-tags-off) .cm-s-obsidian .cm-line span.cm-tag-YOURTAG {
-	color: var(--annotation-tag-font-color) !important;
+	font-weight: 900;
+	font-style: normal;
+	text-decoration: none;
+
+	color: var(--annotation-tag-font-color);
 
 	padding-right: 8px;
 	padding-left: 8px;
 
 	border-radius: var(--roundish);
+}
 
-	font-weight: 900;
-	font-style: normal;
-	text-decoration: none;
+body:not(.annotation-tags-off) .longform-leaf .tag[href="#YOURTAG"],
+body:not(.annotation-tags-off) .longform-leaf .cm-s-obsidian .cm-line span.cm-tag-YOURTAG {
+	font-family: var(--longform-font);
+	font-size: var(--longform-font-size);
 }
 
 body:not(.annotation-tags-off) .cm-s-obsidian .cm-line .cm-hashtag-begin.cm-tag-YOURTAG {
+	white-space: nowrap;
 	padding-right: 0;
 	border-top-right-radius: 0;
 	border-bottom-right-radius: 0;
 }
 
 body:not(.annotation-tags-off) .cm-s-obsidian .cm-line .cm-hashtag-end.cm-tag-YOURTAG {
+	font-family: var(--default-font);
 	padding-left: 0;
 	border-bottom-left-radius: 0;
 	border-top-left-radius: 0;
-	font-family: var(--default-font);
 }

@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 1.645
+Version 1.646
 https://github.com/chrisgrieser/shimmering-focus/
 MIT License
 ─────────────────────────────────────────────────── */
@@ -4639,14 +4639,10 @@ body:not(.blockquotes-left-aligned) > .app-container .HyperMD-quote {
 /* ───────────────────────────────────────────────────
 << Citation Syntax
 ─────────────────────────────────────────────────── */
-.markdown-preview-view div > blockquote > blockquote {
+.markdown-preview-view *:not(blockquote) > blockquote > blockquote {
 	/* used for pseudo admonitions & for pseudo citations */
 	padding: 0;
 	border: none;
-}
-
-.markdown-preview-view div > blockquote > p + blockquote {
-	margin-top: -10px;
 }
 
 /* for LP */
@@ -4654,14 +4650,11 @@ body:not(.blockquotes-left-aligned) > .app-container .HyperMD-quote {
 	display: none;
 }
 
-/* first line LP, second Reading */
-.HyperMD-quote-2:not(.cm-active) .cm-quote-2:not(.cm-formatting-quote)::BEFORE,
-.markdown-preview-view div > blockquote > p + blockquote > p::BEFORE {
-   content: "— ";
-}
-
-.markdown-preview-view div > blockquote > p + blockquote > p::BEFORE {
-	padding-left: 20px;
+.is-live-preview .HyperMD-quote-2:not(.cm-active) .cm-hmd-indent-in-quote::AFTER,
+.cm-s-obsidian:not(.is-live-preview) .HyperMD-quote-2 .cm-hmd-indent-in-quote::AFTER,
+.markdown-preview-view *:not(blockquote) > blockquote > p + blockquote > p::BEFORE {
+	content: "— ";
+	color: var(--middle-gray);
 }
 
 .markdown-source-view .cm-line.HyperMD-quote-1 + .HyperMD-quote-2 {
@@ -4669,11 +4662,16 @@ body:not(.blockquotes-left-aligned) > .app-container .HyperMD-quote {
 }
 
 /* styling of the citation text */
-.markdown-preview-view div > blockquote > blockquote,
+.markdown-preview-view *:not(blockquote) > blockquote > blockquote,
 .markdown-source-view .cm-line.HyperMD-quote-1 + .HyperMD-quote-2 .cm-quote-2:not(.cm-formatting-quote) {
 	font-size: 0.85rem;
 	font-style: italic;
 	color: var(--middle-gray);
+}
+
+/* only needed for Shimmering Focus */
+.markdown-preview-view *:not(blockquote) > blockquote > p + blockquote {
+	margin-top: -10px;
 }
 
 /* ───────────────────────────────────────────────────

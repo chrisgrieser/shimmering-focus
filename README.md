@@ -3,7 +3,7 @@
 A minimalistic [Obsidian](https://obsidian.md/) theme focused on readability and condensed information display.
 
 <!-- manually updated-->
-![](https://img.shields.io/badge/downloads-10517-6E4E9B?style=plastic) ![](https://img.shields.io/github/last-commit/chrisgrieser/shimmering-focus?style=plastic) [![](https://img.shields.io/badge/changelog-click%20here-FFE800?style=plastic)](Changelog.md)
+![](https://img.shields.io/badge/downloads-10577-6E4E9B?style=plastic) ![](https://img.shields.io/github/last-commit/chrisgrieser/shimmering-focus?style=plastic) [![](https://img.shields.io/badge/changelog-click%20here-FFE800?style=plastic)](Changelog.md)
 
 <img src="https://raw.githubusercontent.com/chrisgrieser/shimmering-focus/main/dual-theme-screenshot.png" alt="Promo Screenshot">
 
@@ -12,8 +12,8 @@ A minimalistic [Obsidian](https://obsidian.md/) theme focused on readability and
 
 - [Features](#features)
 	- [Hiding/Showing UI Elements](#hidingshowing-ui-elements)
-	- [Annotation Tags](#annotation-tags)
 	- [Max View & Focus View](#max-view--focus-view)
+	- [Annotation Tags](#annotation-tags)
 	- [Image-related Features](#image-related-features)
 	- [Multi-Color-Highlighting & Spoiler Syntax](#multi-color-highlighting--spoiler-syntax)
 	- [CSS Classes](#css-classes)
@@ -59,11 +59,6 @@ A minimalistic [Obsidian](https://obsidian.md/) theme focused on readability and
 
 <img src="https://user-images.githubusercontent.com/73286100/131692972-e523f2d4-40c7-452c-83ac-a7f2fbd546ae.gif" alt="headerbar visible on hover" width=50%>
 
-### Annotation Tags
-Type one of the following eight tags (e.g. `#definition`) to get a colored annotation tag. Also works in Edit Mode. Intended for Annotations when reading academic papers.
-
-<img width=25% alt="Annotation Tags" src="https://user-images.githubusercontent.com/73286100/146721469-c453a9ed-0e28-4923-a171-f1e196c2e6e1.png">
-
 💡 You can add your own Annotation Tags by adding a snippet [using this template](CSS%20Snippets/annotation-tag-template.css).
 
 ### Max View & Focus View
@@ -73,6 +68,11 @@ Type one of the following eight tags (e.g. `#definition`) to get a colored annot
 💡  For both features, it is useful to set a hotkey for the built-in command `Toggle left sidebar`.
 
 <img src="https://user-images.githubusercontent.com/73286100/138562271-2f7d3589-d580-49e4-bea6-ca3e3004ab78.gif" alt="Promo Max View" width=60%>
+
+### Annotation Tags
+Type one of the following tags (e.g. `#definition`) to get a colored annotation tag. Also works in Edit Mode. Intended for Annotations when reading academic papers.
+
+<img width=40% alt="list-of-all-annotation-tags" src="assets/all-annotation-tags.png">
 
 ### Image-related Features
 - Click & hold an image to zoom (Preview Mode).
