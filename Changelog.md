@@ -1,3 +1,4 @@
+- 2022-01-13	fix glitchy sliders
 - 2022-01-13	floating setting button to access settings without keybaord shortcut. New Style Setting to hide that button
 - 2022-01-12	fix alignment issues with admonitions
 - 2022-01-12	images with ozans image plugin are now also zoomable on clicking

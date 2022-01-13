@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 1.642
+Version 1.643
 https://github.com/chrisgrieser/shimmering-focus/
 MIT License
 ─────────────────────────────────────────────────── */
@@ -1932,9 +1932,9 @@ body input[type]:hover {
 
 /* slightly thicker border more readable in light mode */
 .theme-light textarea:focus,
-.theme-light .modal-container input:focus,
+.theme-light .modal-container input:not([type="range"]):focus,
 .theme-light textarea:hover,
-.theme-light .modal-container input:hover {
+.theme-light .modal-container input:not([type="range"]):hover {
 	background-color: var(--bg2);
 	padding-left: 9.5px;
 	border-width: 1.5px;
