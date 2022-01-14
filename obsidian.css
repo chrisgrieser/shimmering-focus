@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 1.650
+Version 1.651
 https://github.com/chrisgrieser/shimmering-focus/
 MIT License
 ─────────────────────────────────────────────────── */
@@ -9727,8 +9727,8 @@ settings:
 	 default: '"ℹ️"'
 	-
 	 id: no-pandoc-citation-emphasis
-	 title: No Emphasis of Pandoc Citations
-	 description: Turn off the coloring of Pandoc Citations [@citekey] done by this theme.
+	 title: No Emphasis of Pandoc Citations and Dataview Inline Fields.
+	 description: Turn off the coloring of Pandoc Citations [@citekey] and dataview inline fields [key:: value] in source mode.
 	 type: class-toggle
 	 default: false
 	-

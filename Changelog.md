@@ -1,3 +1,4 @@
+- 2022-01-14	minor
 - 2022-01-14	styling for dataview inline fields (reading mode)
 - 2022-01-13	added issue template config
 - 2022-01-13	added more explanations to annotation tags template (#46)
