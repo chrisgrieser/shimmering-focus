@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 1.648
+Version 1.649
 https://github.com/chrisgrieser/shimmering-focus/
 MIT License
 ─────────────────────────────────────────────────── */
@@ -5105,6 +5105,7 @@ pre[class~="language-as"]::AFTER { content: "AppleScript"; }
 ─────────────────────────────────────────────────── */
 
 /* less indention to save space */
+.markdown-preview-view > div > div > div > ul.dataview.list-view-ul,
 .markdown-preview-view > div > div > ol,
 .markdown-preview-view > div > div > ul {
 	padding-left: 1rem;
