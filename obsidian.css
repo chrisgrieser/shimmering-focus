@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 1.649
+Version 1.650
 https://github.com/chrisgrieser/shimmering-focus/
 MIT License
 ─────────────────────────────────────────────────── */
@@ -8378,6 +8378,26 @@ pre button.copy:hover::BEFORE {
 
 .block-language-dataview pre.dataview-error::BEFORE {
 	display: none;
+}
+
+/* inline fields */
+body .dataview.inline-field-value,
+body .dataview.inline-field-key {
+	font-size: var(--monospace-font-size);
+}
+
+body .dataview.inline-field-value {
+	padding-right: 8px;
+	padding-left: 6px;
+	border-top-right-radius: var(--roundish);
+	border-bottom-right-radius: var(--roundish);
+}
+
+body .dataview.inline-field-key {
+	padding-right: 6px;
+	padding-left: 8px;
+	border-bottom-left-radius: var(--roundish);
+	border-top-left-radius: var(--roundish);
 }
 
 /* ───────────────────────────────────────────────────
