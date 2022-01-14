@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 1.647
+Version 1.648
 https://github.com/chrisgrieser/shimmering-focus/
 MIT License
 ─────────────────────────────────────────────────── */
@@ -2198,7 +2198,7 @@ div.search-input-clear-button:hover::BEFORE,
 }
 
 .empty-state-close-button svg {
-	stroke-width: 2px;
+	stroke-width: 3px;
 }
 
 .empty-state-close-button:hover {
@@ -2206,14 +2206,9 @@ div.search-input-clear-button:hover::BEFORE,
 }
 
 .modal-close-button {
-	background-color: var(--bg3);
-
 	top: 0;
 	right: 0;
-	z-index: 100;
-
 	padding: 0 4px 3px;
-
 	border-radius: 50px;
 }
 
@@ -2222,7 +2217,6 @@ body:not(.show-close-button) .document-search-close-button,
 body:not(.show-close-button) div.search-input-clear-button,
 body:not(.show-close-button) .empty-state-close-button,
 body:not(.show-close-button) .modal-close-button {
-	background-color: none;
 	opacity: 0;
 	transition: var(--slow-transition);
 }
@@ -3214,6 +3208,10 @@ body .workspace-leaf-resize-handle:active {
 	text-align: start;
 }
 
+body:not(.show-close-button) .mod-community-plugin .modal-close-button {
+	background-color: var(--bg3);
+}
+
 /* installation icon */
 .community-plugin-info .community-plugin-name .flair.mod-pop::BEFORE {
 	font-size: 1.3rem;
@@ -3896,6 +3894,11 @@ body:not(.no-active-highlight):not(.focused-highlight) .CodeMirror-activeline .C
 	.obsidian-metatable {
 		display: none;
 	}
+}
+
+/* fix margin for embedding a note starting with tasks */
+.markdown-embed .markdown-preview-section div > ul.contains-task-list:first-child {
+	margin-top: 0;
 }
 
 /* ───────────────────────────────────────────────────
