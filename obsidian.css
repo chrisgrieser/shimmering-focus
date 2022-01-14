@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 1.651
+Version 1.652
 https://github.com/chrisgrieser/shimmering-focus/
 MIT License
 ─────────────────────────────────────────────────── */
@@ -9722,13 +9722,13 @@ settings:
 	-
 	 id: pseudo-admonition-prefix
 	 title: 'Pseudo-Admonitions: Prefixed Icon'
-	 description: Needs to be enclosed in quotation marks
+	 description: Needs to be enclosed in quotation marks.
 	 type: variable-text
 	 default: '"ℹ️"'
 	-
 	 id: no-pandoc-citation-emphasis
 	 title: No Emphasis of Pandoc Citations and Dataview Inline Fields.
-	 description: Turn off the coloring of Pandoc Citations [@citekey] and dataview inline fields [key:: value] in source mode.
+	 description: "Turn off the coloring of Pandoc Citations [@citekey] and dataview inline fields [key:: value] in source mode."
 	 type: class-toggle
 	 default: false
 	-
