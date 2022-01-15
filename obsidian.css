@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 1.653
+Version 1.654
 https://github.com/chrisgrieser/shimmering-focus/
 MIT License
 ─────────────────────────────────────────────────── */
@@ -478,35 +478,6 @@ body.theme-dark {
 	--muted-button-inset-shadow: -1px -1px 1px var(--inset-shadow-black) inset;
 	--notice-inset-shadow: -1px -1px 2px var(--inset-shadow-black) inset;
 }
-
-/* drop shadow when scrolled */
-/* / needs some better selectors to target
-only sidebars and everything scrolling */
-/* needs some adjustment to work right in dark mode as well */
-/* https://discord.com/channels/686053708261228577/702656734631821413/921553490558459944 */
-
-/* .workspace-leaf-content .view-content > div > div,
-.workspace-leaf-content .view-content > div,
-.workspace-leaf-content .view-content > div,
-.outgoing-link-pane,
-.backlink-pane {
-	background:
-	 linear-gradient(
-		 var(--bg1) 30%,
-		 rgba(255, 255, 255, 0)
-	 )
-	 center top,
-	 radial-gradient(
-		 farthest-side at 50% 0,
-		 rgba(0, 0, 0, 0.6),
-		 rgba(0, 0, 0, 0)
-	 )
-	 center top;
-
-	background-repeat: no-repeat;
-	background-size: 100% 40px, 120% 3px;
-	background-attachment: local, scroll;
-} */
 
 /* ───────────────────────────────────────────────────
 << Borders
@@ -1206,33 +1177,6 @@ body.block-cursor .CodeMirror-cursor {
 body:not(.mono-color-cursor) .cm-cursor.cm-cursor-secondary {
 	border-image: linear-gradient(hsl(220 100% 80%), hsl(40 100% 80%)) 1;
 }
-
-/* phase blink */
-/* does not work well with focused highlight  */
-/* https://github.com/mgmeyers/obsidian-california-coast-theme/blob/main/src/enhancements/editor.scss#L15-L19 */
-/* https://github.com/mgmeyers/obsidian-california-coast-theme/blob/main/src/enhancements/editor.scss#L221-L261 */
-/* .mod-cm6.cm-s-obsidian .cm-cursorLayer .cm-cursor{
-	animation-timing-function: ease-out;
-}
-
-@keyframes cm-blink {
-  0% { opacity: 1; }
-  10% { opacity: 1; }
-  40% { opacity: 1; }
-  50% { opacity: 0; }
-  90% { opacity: 0; }
-  100% { opacity: 1; }
-}
-
-@keyframes cm-blink2 {
-  0% { opacity: 1; }
-  10% { opacity: 1; }
-  40% { opacity: 1; }
-  50% { opacity: 0; }
-  90% { opacity: 0; }
-  100% { opacity: 1; }
-}
-*/
 
 /* ───────────────────────────────────────────────────
 < UI Elements
