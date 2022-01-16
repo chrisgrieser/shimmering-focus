@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 1.656
+Version 1.657
 https://github.com/chrisgrieser/shimmering-focus/
 MIT License
 ─────────────────────────────────────────────────── */
@@ -8449,7 +8449,7 @@ body .dataview.inline-field-key {
 /* ───────────────────────────────────────────────────
 << Style Settings (Settings Tab)
 ─────────────────────────────────────────────────── */
-/* info box */
+/* info box at the top */
 .style-settings-heading[data-id="shimmering-focus"]::BEFORE {
 	content: "Feature Explanations \A github.com/chrisgrieser/shimmering-focus";
 
@@ -8469,7 +8469,7 @@ body .dataview.inline-field-key {
 
 	border-radius: var(--roundish);
 
-	cursor: default;
+	pointer-events: none;
 }
 
 .style-settings-export,
@@ -9529,8 +9529,8 @@ settings:
 		value: no-active-highlight
 	-
 	 id: footnote-gutter
-	 title: "⦿ Footnote Indicator"
-	 description: Displays a small indicator in the gutter when a footnote is present. (Note that the numbered indicator does not count properly footnotes on the same line.)
+	 title: "Footnote Indicator"
+	 description: Displays a small indicator (⦿) in the gutter when a footnote is present. (Note that the numbered indicator does not count properly footnotes on the same line.)
 	 type: class-select
 	 allowEmpty: false
 	 default: simple-fn-indicator
@@ -9547,13 +9547,13 @@ settings:
 	-
 	 id: no-unresolved-link-indicator
 	 title: Disable Unresolved Link Indicators
-	 description: The indicators are only shown in Reading Mode.
+	 description: The indicators (𝘅) are only shown in Reading Mode.
 	 type: class-toggle
 	 default: false
 	-
 	 id: no-search-result-indicator
 	 title: Disable Search Result Indicators
-	 description: The indicators are only shown in Source Mode and Live Preview.
+	 description: The indicators (▶) are only shown in Source Mode and Live Preview.
 	 type: class-toggle
 	 default: false
 	-
