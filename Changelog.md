@@ -1,3 +1,4 @@
+- 2022-01-16	added small infobox at style settings tab
 - 2022-01-16	new Style Setting: turn of only files or folders in the file explorer
 - 2022-01-14	make notices in dark mode more distinguishable
 - 2022-01-14	fix #89

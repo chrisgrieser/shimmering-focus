@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 1.655
+Version 1.656
 https://github.com/chrisgrieser/shimmering-focus/
 MIT License
 ─────────────────────────────────────────────────── */
@@ -8449,6 +8449,33 @@ body .dataview.inline-field-key {
 /* ───────────────────────────────────────────────────
 << Style Settings (Settings Tab)
 ─────────────────────────────────────────────────── */
+/* info box */
+.style-settings-heading[data-id="shimmering-focus"]::BEFORE {
+	content: "Feature Explanations \A github.com/chrisgrieser/shimmering-focus";
+
+	font-family: var(--menu-font-family);
+	font-size: 0.75rem;
+	font-weight: 500;
+	line-height: 1.7em;
+	white-space: pre-wrap;
+
+	background-color: var(--bg2);
+	box-shadow: var(--tab-inset-shadow);
+
+	position: absolute;
+	top: 15px;
+
+	padding: 3px 8px;
+
+	border-radius: var(--roundish);
+
+	cursor: default;
+}
+
+.style-settings-export,
+.style-settings-import {
+	margin-bottom: 20px;
+}
 
 /* as pane */
 body:not(.show-scrollbar) .workspace-split.mod-root .workspace-leaf-content[data-type="style-settings"] ::-WEBKIT-SCROLLBAR {
