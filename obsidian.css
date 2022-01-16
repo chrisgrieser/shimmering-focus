@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 1.658
+Version 1.659
 https://github.com/chrisgrieser/shimmering-focus/
 MIT License
 ─────────────────────────────────────────────────── */
@@ -8467,6 +8467,7 @@ body .dataview.inline-field-key {
 
 	padding: 3px 8px;
 
+	border: var(--basic-border);
 	border-radius: var(--roundish);
 
 	pointer-events: none;
