@@ -72,7 +72,7 @@ body:
     attributes:
       label: Plugin-Specific Problems
       description: |
-        For issues regarding one of these plugin:
+        Regarding one of these plugin:
         - Longform
         - Kanban
         - Sliding Panes
@@ -82,7 +82,7 @@ body:
         - Ozan's Image in Editor
         - Starred (Core Plugin)
       options:
-        - label: I took note of the [specific instructions regarding those plugin](https://github.com/chrisgrieser/shimmering-focus#instructions-for-specific-plugins).
+        - label: I took note of the [specific instructions regarding those plugins](https://github.com/chrisgrieser/shimmering-focus#instructions-for-specific-plugins).
   - type: checkboxes
     id: checklist
     attributes:
