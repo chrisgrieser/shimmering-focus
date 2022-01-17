@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 1.669
+Version 1.670
 https://github.com/chrisgrieser/shimmering-focus/
 MIT License
 ─────────────────────────────────────────────────── */
@@ -2911,6 +2911,16 @@ body .workspace-leaf-resize-handle:active {
 .setting-hotkey.mod-empty::BEFORE {
 	content: "none";
 	font-size: 0.75rem;
+}
+
+/* space between button and checklist, e.g.
+"relaunch" button or "update" button in plugin list */
+.setting-item-control button + .checkbox-container {
+	margin-left: 15px;
+}
+
+.setting-item-control button + .setting-editor-extra-setting-button {
+	margin-left: 15px;
 }
 
 /* overscroll */

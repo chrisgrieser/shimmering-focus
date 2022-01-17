@@ -5,7 +5,7 @@ csspath=~"/Library/Mobile Documents/iCloud~md~obsidian/Documents/Main Vault/.obs
 # get commit message
 commitMsg="$*"
 if [[ "$commitMsg" == "" || "$commitMsg" == " " ]] ; then
-	commitMsg="minor"
+	commitMsg="patch"
 fi
 
 # if issue-related, open that issue
@@ -28,7 +28,7 @@ sed -E -i '' "s/badge.*-[[:digit:]]+-/badge\/downloads-$dl-/" README.md
 
 # Update changelog
 echo "- "$(date +"%Y-%m-%d")"	$commitMsg" > ./Changelog.md
-git log --pretty=format:"- %ad%x09%s" --date=short | grep -Ev "minor$" | grep -Ev "typos?$" | grep -v "refactoring" | grep -v "Add files via upload" | grep -Ev "\tDelete" | grep -Ev "\tUpdate.*\.md" | sed -E "s/\t\+ /\t/g" >> ./Changelog.md
+git log --pretty=format:"- %ad%x09%s" --date=short | grep -Ev "minor$" | grep -Ev "patch$" | grep -Ev "typos?$" | grep -v "refactoring" | grep -v "Add files via upload" | grep -Ev "\tDelete" | grep -Ev "\tUpdate.*\.md" | sed -E "s/\t\+ /\t/g" >> ./Changelog.md
 
 # Bump version number
 versionLine=$(egrep -wn "^Version" "$csspath" | cut -d: -f1 | head -n1)
