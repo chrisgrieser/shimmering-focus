@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 1.666
+Version 1.667
 https://github.com/chrisgrieser/shimmering-focus/
 MIT License
 ─────────────────────────────────────────────────── */
@@ -8937,13 +8937,14 @@ a.zoom-plugin-title:hover {
 << Dynamic Highlight
 ─────────────────────────────────────────────────── */
 
-body .cm-matched-string[data-contents],
-body .cm-current-string {
+/* current word */
+body .cm-matched-word,
+body .cm-current-word {
 	text-decoration: 1.2px dotted underline var(--text-muted);
 	text-underline-offset: 3px;
-	outline: none;
 }
 
+/* current selection */
 body .cm-matched-string {
 	text-decoration: none;
 	outline: var(--search-match-outline);
