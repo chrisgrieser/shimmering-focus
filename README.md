@@ -97,10 +97,10 @@ Add `cssclass: {name}` to your yaml front matter to activate specific styling of
 In contrast to typical active line highlights, the *focused* line highlight will only highlight the direct line where the cursor is located. However, this feature disables the ability to scroll horizontally, so it is disabled by default and must be enabled in the Style Settings. 
 
 ### Gutter Indicators
-To help increase scannability of long notes, some the presence of some easy-to-miss elements are indicated in the gutter. All indicators can be turned off with the [Style Settings Plugin](https://github.com/mgmeyers/obsidian-style-settings/).
+To increase the scannability of long notes, the presence of some easy-to-miss elements are indicated in the gutter. All indicators can be turned off with the [Style Settings Plugin](https://github.com/mgmeyers/obsidian-style-settings/).
 - Footnotes (all modes)
-- Search Result Matches (only Source Mode & Live Preview)
-- Unresolved links (only Preview Mode)
+- Search Result Matches (Source Mode & Live Preview only)
+- Unresolved Links (Preview Mode only)
 
 <img src="https://user-images.githubusercontent.com/73286100/147931964-d5e5d309-d821-4fa1-86c1-4a8952a249d3.png" alt="image" width=70%>
 
