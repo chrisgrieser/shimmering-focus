@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 1.661
+Version 1.662
 https://github.com/chrisgrieser/shimmering-focus/
 MIT License
 ─────────────────────────────────────────────────── */
@@ -326,7 +326,7 @@ the .create-ToC.sh.
 	--bg3: hsl(var(--light-hue) var(--sat-light-3) var(--b-light-3));
 
 	--header-bg: hsl(var(--light-hue) calc(var(--sat-light-3) * 1.1) calc(var(--b-light-2) - 2%));
-	--notice-bg: hsl(var(--light-hue) calc(var(--sat-light-3) * 0.8) var(--b-light-2));
+	--notice-bg: hsl(var(--light-hue) calc(var(--sat-light-3) * 0.6) calc(var(--b-light-1) + 4%));
 	--resize-handle-color: hsl(var(--light-hue) var(--sat-light-2) calc(var(--b-light-2) - 1%));
 	--suggester-b-row: hsl(var(--light-hue) var(--sat-light-2) calc(var(--b-light-1) - 3%));
 	--muted-border-color: hsl(var(--light-hue) var(--sat-light-3) calc(var(--b-light-3) + 3%));
