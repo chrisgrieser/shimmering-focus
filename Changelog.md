@@ -1,4 +1,4 @@
-- 2022-01-17	minor
+- 2022-01-17	small scrollbar improvements
 - 2022-01-16	remove 0xad on extraction
 - 2022-01-16	added small infobox at style settings tab
 - 2022-01-16	new Style Setting: turn of only files or folders in the file explorer

@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 1.663
+Version 1.664
 https://github.com/chrisgrieser/shimmering-focus/
 MIT License
 ─────────────────────────────────────────────────── */
@@ -207,8 +207,6 @@ the .create-ToC.sh.
 	--unresolved-opacity: 0.6;
 
 	--code-color: var(--alt-accent-darker);
-	--scrollbar-bg-hover: var(--alt-accent-lighter);
-	--scrollbar-bg-active: var(--accent-lighter);
 
 	--highlight-color: hsl(152 100% 50% / 40%);
 	--highlight-alt1: hsl(60 100% 50% / 40%);
@@ -236,6 +234,8 @@ the .create-ToC.sh.
 	--interactive-border: var(--accent-lighterer);
 	--interactive-hover-bg: var(--alt-accent-lighterer);
 	--interactive-hover-border: var(--alt-accent-lighter);
+	--scrollbar-bg-hover: var(--alt-accent-lighterer);
+	--scrollbar-bg-active: var(--accent-lighterer);
 
 	--finished-task: var(--accent-lighter);
 	--cursor-duo-color-1: var(--alt-accent-lighterer);
@@ -262,6 +262,8 @@ the .create-ToC.sh.
 	--interactive-border: var(--text-accent);
 	--interactive-hover-bg: var(--alt-accent-darker);
 	--interactive-hover-border: var(--alt-accent-lighter);
+	--scrollbar-bg-hover: var(--alt-accent-lighter);
+	--scrollbar-bg-active: var(--accent-lighter);
 
 	--finished-task: var(--text-accent);
 	--cursor-duo-color-1: var(--alt-accent-lighter);
@@ -459,7 +461,7 @@ body.theme-dark {
 	--inset-shadow-color: hsl(0 0% 45% / 40%);
 	--toggle-enabled-inset-shadow: -2px -2px 2px 0px var(--inset-shadow-color) inset;
 	--toggle-disabled-inset-shadow: -1px -1px 2px 0px var(--inset-shadow-color) inset;
-	--tab-inset-shadow: -1px -1px 0 var(--inset-shadow-color) inset;
+	--small-inset-shadow: -1px -1px 0 var(--inset-shadow-color) inset;
 	--textbox-inset-shadow: 1px 1px 1px var(--inset-shadow-color) inset;
 	--button-inset-shadow: -1px -1px 3px var(--inset-shadow-color) inset;
 	--muted-button-inset-shadow: -1px -1px 2px var(--inset-shadow-color) inset;
@@ -471,7 +473,7 @@ body.theme-dark {
 	--inset-shadow-black: hsl(0 0% 3% / 100%);
 	--toggle-enabled-inset-shadow: -2px -2px 2px 0px var(--inset-shadow-color) inset;
 	--toggle-disabled-inset-shadow: -3px -3px 2px 0px var(--inset-shadow-black) inset;
-	--tab-inset-shadow: -1px -1px 0px var(--inset-shadow-black) inset;
+	--small-inset-shadow: -1px -1px 0px var(--inset-shadow-black) inset;
 	--textbox-inset-shadow: 2px 2px 1px var(--inset-shadow-black) inset;
 	--button-inset-shadow: -2px -2px 2px var(--inset-shadow-color) inset;
 	--muted-button-inset-shadow: -1px -1px 1px var(--inset-shadow-black) inset;
@@ -514,7 +516,7 @@ body.theme-dark {
 	--image-size: 50;
 	--pdf-size: 50vh;
 	--popover-size: 350;
-	--inactive-pane-opacity: 80%;
+	--inactive-pane-opacity: 75%;
 	--tooltip-arrow-length: 10px;
 	--readable-length: 700px;
 
@@ -1621,10 +1623,9 @@ body:not(.show-scrollbar) ::-WEBKIT-SCROLLBAR {
 	background-color: transparent;
 }
 
-::-WEBKIT-SCROLLBAR-THUMB:active,
-::-WEBKIT-SCROLLBAR-THUMB:hover,
-::-WEBKIT-SCROLLBAR-THUMB {
+body ::-WEBKIT-SCROLLBAR-THUMB {
 	width: var(--scrollbar-thickness);
+	box-shadow: var(--small-inset-shadow);
 	border-radius: var(--roundish);
 }
 
@@ -2429,7 +2430,7 @@ body > .app-container .workspace-split.mod-horizontal > .workspace-tabs > .works
 	height: 26px;
 
 	background-color: var(--bg3);
-	box-shadow: var(--tab-inset-shadow);
+	box-shadow: var(--small-inset-shadow);
 
 	margin-right: 9px;
 
@@ -2479,7 +2480,7 @@ body > .app-container .workspace-split.mod-horizontal > .workspace-tabs > .works
 
 .nav-action-button {
 	height: 27px;
-	box-shadow: var(--tab-inset-shadow);
+	box-shadow: var(--small-inset-shadow);
 	padding: 2px 6px 0;
 	border: var(--thin-border);
 	border-radius: var(--roundish);
@@ -8456,7 +8457,7 @@ body .dataview.inline-field-key {
 	white-space: pre-wrap;
 
 	background-color: var(--bg2);
-	box-shadow: var(--tab-inset-shadow);
+	box-shadow: var(--small-inset-shadow);
 
 	position: absolute;
 	top: 15px;
