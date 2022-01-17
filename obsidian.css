@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 1.665
+Version 1.666
 https://github.com/chrisgrieser/shimmering-focus/
 MIT License
 ─────────────────────────────────────────────────── */
@@ -7266,7 +7266,7 @@ body:not(.is-mobile) .kanban-plugin__item-postfix-button-wrapper {
 	display: none;
 }
 
-/* "add card" field */
+/* "add a card" field */
 body .kanban-plugin__item-button-wrapper {
 	padding-top: 0;
 	padding-bottom: 5px;
@@ -7286,7 +7286,7 @@ body .kanban-plugin__item-form {
 .kanban-plugin textarea.kanban-plugin__item-input {
 	font-size: 0.8em;
 	background-color: var(--bg1);
-	padding: 5px 8px;
+	padding: 3px 8px 5px;
 	border-radius: calc(var(--roundish) * 1.5);
 }
 
@@ -7296,9 +7296,9 @@ a.tag.kanban-plugin__item-tag {
 }
 
 /* hover colors */
-.kanban-plugin__new-item-button:hover {
-	color: var(--alt-accent) !important;
-	background-color: var(--active-hover-kanban-item) !important;
+body .kanban-plugin__new-item-button:hover {
+	color: var(--alt-accent);
+	background-color: var(--bg3) !important;
 }
 
 /* .kanban-plugin__item-content-wrapper:hover, */
