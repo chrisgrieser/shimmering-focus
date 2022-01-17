@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 1.668
+Version 1.669
 https://github.com/chrisgrieser/shimmering-focus/
 MIT License
 ─────────────────────────────────────────────────── */
@@ -413,8 +413,12 @@ the .create-ToC.sh.
 	background-color: var(--resize-handle-color);
 }
 
-::-WEBKIT-SCROLLBAR-THUMB {
+.theme-light ::-WEBKIT-SCROLLBAR-THUMB {
 	background-color: var(--bg3);
+}
+
+.theme-dark ::-WEBKIT-SCROLLBAR-THUMB {
+	background-color: var(--bg2);
 }
 
 .workspace-split.mod-root .view-content {
@@ -5971,7 +5975,7 @@ body.is-mobile .markdown-preview-view blockquote {
 <<< Folder Icons & Note Icons
 ─────────────────────────────────────────────────── */
 body:not(.no-folder-icons) .nav-folder-title-content::BEFORE,
-body:not(.no-file-explorer-icons) .nav-file-title-content::BEFORE {
+body:not(.no-file-explorer-icons) .workspace-leaf-content:not([data-type="recent-files"]) .nav-file-title-content::BEFORE {
 	font-family: var(--icon-font);
 	font-size: calc(var(--sidebar-font-size) + 0.05rem);
 	position: relative;
@@ -6011,7 +6015,7 @@ body:not(.no-file-explorer-icons) .nav-file-tag {
 	display: none;
 }
 
-body:not(.no-file-explorer-icons) .nav-file-title-content::BEFORE {
+body:not(.no-file-explorer-icons) .workspace-leaf-content:not([data-type="recent-files"]) .nav-file-title-content::BEFORE {
 	content: "description";
 }
 
@@ -6737,6 +6741,8 @@ body:not(.no-built-in-supercharged-links) .data-link-icon[data-link-tags*="#ever
 body:not(.no-built-in-supercharged-links) .data-link-icon[data-link-tags*="#seedling" i]::BEFORE { content: "🌱 " }
 body:not(.no-built-in-supercharged-links) .data-link-icon[data-link-title]::BEFORE { content: "📖 " }
 body:not(.no-built-in-supercharged-links) .data-link-icon[data-link-up]::BEFORE { content: "🥖 " }
+
+.data-link-icon[data-link-tags*="#moc" i]::BEFORE { content: "🗺 " !important }
 
 /* tooltips */
 body:not(.no-built-in-supercharged-links) .data-link-text:hover::AFTER {
@@ -7772,11 +7778,6 @@ body div.oz-image-widget > img:active {
 /* ───────────────────────────────────────────────────
 << Recent Files
 ─────────────────────────────────────────────────── */
-
-/* Show no icons for recent files plugin */
-.workspace-leaf-content[data-type="recent-files"] .nav-file-title .nav-file-title-content::BEFORE {
-	display: none;
-}
 
 .workspace-leaf-content[data-type="recent-files"] .nav-file {
 	border-radius: 0;
