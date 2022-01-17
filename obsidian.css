@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 1.667
+Version 1.668
 https://github.com/chrisgrieser/shimmering-focus/
 MIT License
 ─────────────────────────────────────────────────── */
@@ -1281,7 +1281,7 @@ body:not(.show-ribbons) .side-dock-settings .side-dock-ribbon-action:last-child 
 }
 
 body:not(.show-ribbons) .side-dock-settings .side-dock-ribbon-action:last-child {
-	background-color: var(--bg2);
+	background-color: var(--bg1);
 	box-shadow: var(--muted-button-inset-shadow);
 
 	position: absolute;
@@ -2359,7 +2359,7 @@ not only file explorer */
 body > .app-container .nav-file-title:hover,
 body > .app-container .nav-folder-title:hover {
 	background-color: var(--bg3);
-	border-radius: var(--roundish);
+	border-radius: 0;
 }
 
 .nav-file-title,
@@ -6481,7 +6481,6 @@ body:not(.show-starred-nav-buttons) .workspace-leaf-content[data-type="starred"]
 
 body:not(.no-alternating-rows) .workspace-leaf-content[data-type="starred"] .nav-file:nth-child(even) {
 	background-color: var(--a-row);
-	border-radius: var(--roundish);
 }
 
 /* for starred searches */
@@ -7780,7 +7779,7 @@ body div.oz-image-widget > img:active {
 }
 
 .workspace-leaf-content[data-type="recent-files"] .nav-file {
-	border-radius: var(--roundish);
+	border-radius: 0;
 }
 
 body:not(.no-alternating-rows) .workspace-leaf-content[data-type="recent-files"] .nav-file:nth-child(even) {
@@ -8086,7 +8085,10 @@ h6.BC-Matrix-header {
 
 body:not(.no-alternating-rows) .BC-Matrix-square li {
 	padding-left: 3px;
-	border-radius: calc(var(--roundish) * 0.7);
+}
+
+body:not(.no-alternating-rows) .BC-Matrix-square.BC-Matrix-square li:hover {
+	background-color: var(--bg3);
 }
 
 body:not(.no-alternating-rows) .BC-Matrix-square li:nth-child(even) {

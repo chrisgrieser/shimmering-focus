@@ -1,3 +1,4 @@
+- 2022-01-17	minor
 - 2022-01-17	dynamic highlights plugin
 - 2022-01-17	various improvements for kanban boards
 - 2022-01-17	small scrollbar improvements
