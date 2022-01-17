@@ -1,3 +1,4 @@
+- 2022-01-17	various improvements for kanban boards
 - 2022-01-17	small scrollbar improvements
 - 2022-01-16	remove 0xad on extraction
 - 2022-01-16	added small infobox at style settings tab
