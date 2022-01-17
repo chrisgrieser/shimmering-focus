@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 1.659
+Version 1.660
 https://github.com/chrisgrieser/shimmering-focus/
 MIT License
 ─────────────────────────────────────────────────── */
@@ -2289,19 +2289,19 @@ body.is-mobile .suggestion-prefix {
 
 /* Command Palette: move plugin name to the right */
 body:not(.move-plugin-name-to-left):not(.is-mobile) div.prompt {
-	min-width: 700px;
+	min-width: 720px;
 }
 
 body:not(.move-plugin-name-to-left):not(.is-mobile) .suggestion-prefix {
 	background-color: var(--bg1);
 	position: absolute;
-	right: 100px;
+	right: 110px;
 	padding-left: 8px;
 }
 
 body:not(.move-plugin-name-to-left):not(.is-mobile) .suggestion-content {
 	display: inline-block;
-	margin-right: 120px;
+	margin-right: 20px;
 }
 
 /* Alternating row colors */
