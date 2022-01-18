@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 1.674
+Version 1.675
 https://github.com/chrisgrieser/shimmering-focus/
 MIT License
 ─────────────────────────────────────────────────── */
@@ -4232,6 +4232,12 @@ body:not(.left-aligned-embeds) .view-content img:not(.link-favicon) {
 	background: hsl(0 0% 8%);
 }
 
+/* fix for GitHub shields */
+.app-container img[src*="img.shields.io" i] {
+	display: inline;
+	margin-top: 0; /* stylelint-disable-line plugin/declaration-block-no-ignored-properties */
+}
+
 /* ───────────────────────────────────────────────────
 << Mermaid
 ─────────────────────────────────────────────────── */
@@ -4518,7 +4524,7 @@ body:not(.no-alternating-header-italics) .markdown-preview-view h6 {
 /* ───────────────────────────────────────────────────
 << Blockquotes
 ─────────────────────────────────────────────────── */
-
+blockquote,
 .HyperMD-quote {
 	--blockquote-border-width: 10px;
 	--blockquote-color: var(--bg2);
