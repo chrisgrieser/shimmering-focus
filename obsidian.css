@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 1.672
+Version 1.673
 https://github.com/chrisgrieser/shimmering-focus/
 MIT License
 ─────────────────────────────────────────────────── */
@@ -1300,7 +1300,7 @@ body:not(.show-ribbons) .side-dock-settings .side-dock-ribbon-action:last-child 
 
 body:not(.show-ribbons) .side-dock-settings .side-dock-ribbon-action:last-child {
 	background-color: var(--bg1);
-	box-shadow: var(--muted-button-inset-shadow);
+	box-shadow: var(--small-inset-shadow);
 
 	position: absolute;
 	bottom: 0.5em;
@@ -4508,10 +4508,15 @@ body:not(.no-alternating-header-italics) .markdown-preview-view h6 {
 << Blockquotes
 ─────────────────────────────────────────────────── */
 
+.HyperMD-quote {
+	--blockquote-border-width: 10px;
+	--blockquote-color: var(--bg2);
+}
+
 .HyperMD-quote.CodeMirror-line,
 body .markdown-preview-view blockquote,
 .app-container .cm-s-obsidian .cm-line.HyperMD-quote {
-	border-left: 10px solid var(--basic-border-color);
+	border-left: var(--blockquote-border-width) solid var(--basic-border-color);
 }
 
 .cm-hmd-indent-in-quote,
@@ -4523,7 +4528,7 @@ body .markdown-preview-view blockquote,
 /* edit mode & live preview */
 .HyperMD-quote.CodeMirror-line,
 .markdown-source-view.mod-cm6 .cm-line.HyperMD-quote {
-	background-color: var(--bg2);
+	background-color: var(--blockquote-color);
 	padding: 0.4em 0.8em 0.5em 0;
 	border-radius: var(--roundish);
 }
@@ -4545,16 +4550,50 @@ body .markdown-preview-view blockquote,
 	font-style: unset;
 }
 
+/* hack to prevent rounded corners with consecutive block quotes */
+.HyperMD-quote + .HyperMD-quote::BEFORE {
+	content: "";
+
+	height: 1em;
+	width: var(--blockquote-border-width);
+
+	background-color: var(--basic-border-color);
+
+	position: absolute;
+
+	margin-top: -12px;
+	margin-left: -14px;
+}
+
+.HyperMD-quote + .HyperMD-quote {
+	/* so the position absolute below is in relation
+	to this element and not the editor */
+	position: relative;
+}
+
+.HyperMD-quote + .HyperMD-quote .cm-hmd-indent-in-quote::AFTER {
+	content: " ";
+
+	height: 1em;
+	width: 1em;
+
+	background-color: var(--blockquote-color);
+
+	position: absolute;
+	top: -5px;
+	right: 0;
+}
+
 /* interaction with active line highlighting */
 body:not(.no-active-highlight):not(.focused-highlight) .cm-s-obsidian .cm-active.cm-line.HyperMD-quote {
 	color: var(--text-normal);
 	background-color: var(--active-line-bg);
-	border-left-color: var(--bg2);
+	border-left-color: var(--blockquote-color);
 }
 
 /* Preview Mode */
 .markdown-preview-view blockquote {
-	background-color: var(--bg2);
+	background-color: var(--blockquote-color);
 	padding: 0.3em 0.7em 0.4em;
 	margin: 1.5em 0;
 	border: none;

@@ -1,4 +1,4 @@
-- 2022-01-18	patch
+- 2022-01-18	consecutive blockquotes have no rounded corners in between them
 - 2022-01-18	implement option to show vault name in titlebar (when it is shown) (#92)
 - 2022-01-17	dynamic highlights plugin
 - 2022-01-17	various improvements for kanban boards
