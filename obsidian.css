@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 1.670
+Version 1.671
 https://github.com/chrisgrieser/shimmering-focus/
 MIT License
 ─────────────────────────────────────────────────── */
@@ -1245,15 +1245,29 @@ body.show-titlebar .workspace-ribbon.mod-left {
 
 .titlebar-button:hover {
 	color: var(--alt-accent);
-	background-color: var(--bg2);
+	background-color: var(--bg1);
 }
 
 .titlebar-button:active {
 	color: var(--text-accent);
 }
 
+body:not(.show-titlebar-text) .titlebar-text {
+	/* display: none; */
+}
+
 .titlebar-text {
-	display: none;
+	font-family: var(--menu-font-family);
+	color: var(--text-normal);
+	margin-left: var(--cover-width);
+	--cover-width: 18ch;
+}
+
+.titlebar-text::AFTER {
+	content: "                                       ";
+	white-space: pre-wrap;
+	background-color: var(--bg2);
+	margin-left: calc(var(--cover-width) * -1);
 }
 
 .titlebar {
@@ -3797,7 +3811,6 @@ body:not(.no-active-highlight):not(.focused-highlight) .CodeMirror-activeline .C
 	right: 4px;
 }
 
-/* Link icon size & hide */
 .markdown-preview-view.clean-embeds .file-embed-link svg,
 .markdown-preview-view.clean-embeds .markdown-embed-link svg {
 	display: unset;
@@ -3810,7 +3823,6 @@ body:not(.no-active-highlight):not(.focused-highlight) .CodeMirror-activeline .C
 	color: var(--alt-accent);
 }
 
-/* show on hover */
 .markdown-preview-view.clean-embeds .markdown-embed:hover .file-embed-link svg,
 .markdown-preview-view.clean-embeds .markdown-embed:hover .markdown-embed-link svg {
 	opacity: 1;
@@ -3820,15 +3832,16 @@ body:not(.no-active-highlight):not(.focused-highlight) .CodeMirror-activeline .C
 .markdown-preview-view.clean-embeds .markdown-embed:hover,
 .markdown-preview-view.clean-embeds .file-embed:hover {
 	background-color: var(--a-row);
-	outline: 1px solid var(--basic-border-color);
+	border-color: var(--basic-border-color);
+	border-radius: calc(var(--roundish) * 1.5);
 }
 
 /* remove border and scroll */
 .markdown-preview-view.clean-embeds .markdown-embed,
 .markdown-preview-view.clean-embeds .file-embed {
 	padding: 0 5px;
-	margin: 0 -5px;
-	border: none;
+	margin: -1px -6px;
+	border: 1px solid transparent;
 }
 
 .markdown-preview-view.clean-embeds .markdown-embed-content,
@@ -9064,6 +9077,12 @@ settings:
 	 title: Re-enable Title Bar
 	 type: class-toggle
 	 description: Re-enable this to have a title bar, e.g. for moving the Obsidian window
+	 default: false
+	-
+	 id: show-titlebar-text
+	 title: Show Vault Name in Title Bar
+	 type: class-toggle
+	 description: When the Title Bar is re-enabled, shows the name of the vault there.
 	 default: false
 	-
 	 id: show-ribbons
