@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 1.676
+Version 1.677
 https://github.com/chrisgrieser/shimmering-focus/
 MIT License
 ─────────────────────────────────────────────────── */
@@ -4900,6 +4900,11 @@ body {
 	border-top-left-radius: var(--slight-code-roundish);
 }
 
+.is-live-preview .cm-formatting-code.cm-inline-code {
+	/* display: none; */
+}
+
+/* .is-live-preview .cm-inline-code, */
 .cm-inline-code:not(.cm-formatting-code) + .cm-formatting-code {
 	border-radius: 0 var(--slight-code-roundish) var(--slight-code-roundish) 0;
 }
@@ -8532,11 +8537,17 @@ body .dataview.inline-field-key {
 << Style Settings (Settings Tab)
 ─────────────────────────────────────────────────── */
 /* info box at the top */
+.setting-item.setting-item-heading.style-settings-heading[data-id="shimmering-focus"] {
+    display: flex;
+    padding-top: unset;
+    flex-wrap: wrap;
+}
+
 .style-settings-heading[data-id="shimmering-focus"]::BEFORE {
-	content: "Feature Explanations \A github.com/chrisgrieser/shimmering-focus";
+	content: "ℹ️ Shimmering Focus Readme \A github.com/chrisgrieser/shimmering-focus";
 
 	font-family: var(--menu-font-family);
-	font-size: 0.75rem;
+	font-size: 0.9rem;
 	font-weight: 500;
 	line-height: 1.7em;
 	white-space: pre-wrap;
@@ -8544,20 +8555,13 @@ body .dataview.inline-field-key {
 	background-color: var(--bg2);
 	box-shadow: var(--small-inset-shadow);
 
-	position: absolute;
-	top: 15px;
-
-	padding: 3px 8px;
+	padding: 3px 10px 5px;
+	margin: -53px 30vw 30px 0;
 
 	border: var(--basic-border);
 	border-radius: var(--roundish);
 
 	pointer-events: none;
-}
-
-.style-settings-export,
-.style-settings-import {
-	margin-bottom: 20px;
 }
 
 /* as pane */
@@ -8577,7 +8581,7 @@ body:not(.show-scrollbar) .workspace-split.mod-root .workspace-leaf-content[data
 /* settings tab  */
 .style-settings-heading {
 	padding-top: 0;
-	margin-top: 22px !important;
+	margin-top: 22px;
 	margin-bottom: 12px !important;
 	border-top: none;
 }

@@ -1,3 +1,4 @@
+- 2022-01-18	improved style settign info box
 - 2022-01-18	fix unresovled links color in Live Preview
 - 2022-01-18	displays shield.io images properly
 - 2022-01-18	consecutive blockquotes have no rounded corners in between them
