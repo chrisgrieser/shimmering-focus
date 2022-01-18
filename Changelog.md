@@ -1,3 +1,4 @@
+- 2022-01-18	small fixes for code blocks without language and inline code in LP
 - 2022-01-18	improved style settign info box
 - 2022-01-18	fix unresovled links color in Live Preview
 - 2022-01-18	displays shield.io images properly

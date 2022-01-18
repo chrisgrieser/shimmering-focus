@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 1.677
+Version 1.678
 https://github.com/chrisgrieser/shimmering-focus/
 MIT License
 ─────────────────────────────────────────────────── */
@@ -4893,15 +4893,16 @@ body {
 }
 
 /* proper rounding of inline round */
-.app-container .cm-formatting-code.cm-inline-code {
+.cm-inline-code:not(.cm-formatting-code) {
 	background-color: var(--bg2);
 	padding: 1px 2px;
-	border-bottom-left-radius: var(--slight-code-roundish);
-	border-top-left-radius: var(--slight-code-roundish);
+	border-radius: var(--slight-code-roundish);
 }
 
-.is-live-preview .cm-formatting-code.cm-inline-code {
-	/* display: none; */
+.cm-formatting-code {
+	padding: 1px 0;
+	border-bottom-left-radius: var(--slight-code-roundish);
+	border-top-left-radius: var(--slight-code-roundish);
 }
 
 /* .is-live-preview .cm-inline-code, */
@@ -4909,8 +4910,8 @@ body {
 	border-radius: 0 var(--slight-code-roundish) var(--slight-code-roundish) 0;
 }
 
-*:not(.cm-formatting-code.cm-inline-code) + .cm-inline-code:not(.cm-formatting-code) {
-	border-radius: var(--slight-code-roundish);
+.cm-active .cm-inline-code:not(.cm-formatting-code) {
+	border-radius: 0;
 }
 
 /* ───────────────────────────────────────────────────
@@ -5012,11 +5013,11 @@ CM5 has the "pre" type */
 }
 
 /* code block without language */
-.mod-cm6 + .markdown-reading-view pre:not([class*="language-"]) {
+.markdown-reading-view pre:not([class*="language-"]) {
 	padding: 5px 9px;
 }
 
-.mod-cm6 + .markdown-reading-view pre:not([class*="language-"]) code {
+.markdown-reading-view pre:not([class*="language-"]) code {
 	color: var(--text-normal);
 }
 
@@ -5035,7 +5036,7 @@ CM5 has the "pre" type */
 	border: var(--thin-border);
 }
 
-/* CM5: move positioning back */
+.markdown-reading-view pre:not([class*="language-"]) button.copy-code-button,
 .mod-cm5 + .markdown-reading-view button.copy-code-button {
 	margin-top: 0.3rem;
 }
