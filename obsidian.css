@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 1.673
+Version 1.674
 https://github.com/chrisgrieser/shimmering-focus/
 MIT License
 ─────────────────────────────────────────────────── */
@@ -1312,6 +1312,10 @@ body:not(.show-ribbons) .side-dock-settings .side-dock-ribbon-action:last-child 
 	border-radius: var(--roundish);
 
 	visibility: visible;
+}
+
+body:not(.show-ribbons) .side-dock-settings .side-dock-ribbon-action:last-child:hover {
+	background-color: var(--bg3);
 }
 
 .hide-settings-button:not(.show-ribbons) .side-dock-settings .side-dock-ribbon-action:last-child {
@@ -3743,6 +3747,13 @@ body:not(.no-active-highlight):not(.focused-highlight) .CodeMirror-activeline .C
 /* ───────────────────────────────────────────────────
 << Embeds
 ─────────────────────────────────────────────────── */
+/* ───────────────────────────────────────────────────
+<<< iframes
+─────────────────────────────────────────────────── */
+iframe {
+	border: var(--thin-border);
+}
+
 /* ───────────────────────────────────────────────────
 <<< Embedded Notes
 ─────────────────────────────────────────────────── */
