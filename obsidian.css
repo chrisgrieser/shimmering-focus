@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 1.679
+Version 1.680
 https://github.com/chrisgrieser/shimmering-focus/
 MIT License
 ─────────────────────────────────────────────────── */
@@ -5861,6 +5861,9 @@ body:not(.no-fn-indicator) .mod-cm6 .cm-hmd-barelink:not(.cm-formatting-link) + 
 	border-left: none;
 }
 
+/* writing cssclass is bundled with the styling for the Longform Editor */
+/* clean-embeds cssclass is in the section or Embeds */
+
 /* ───────────────────────────────────────────────────
 < Mobile
 ─────────────────────────────────────────────────── */
@@ -7755,7 +7758,10 @@ body.hide-index-files .nav-file-title[data-path$="Index.md"] {
 	content: "folder_special";
 }
 
-/* <<< Longform Editor */
+/* ───────────────────────────────────────────────────
+<<< Longform Editor
+<<< Writing cssclass
+─────────────────────────────────────────────────── */
 /* https://github.com/kevboh/longform#scene-only-styling */
 
 .writing .markdown-preview-view,
