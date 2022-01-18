@@ -1,3 +1,4 @@
+- 2022-01-18	add writing cssclass for 0.13.20+
 - 2022-01-18	small fixes for code blocks without language and inline code in LP
 - 2022-01-18	improved style settign info box
 - 2022-01-18	fix unresovled links color in Live Preview

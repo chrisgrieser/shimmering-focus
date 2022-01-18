@@ -3,7 +3,7 @@
 A minimalistic [Obsidian](https://obsidian.md/) theme focused on readability and condensed information display.
 
 <!-- manually updated-->
-![](https://img.shields.io/badge/downloads-11242-6E4E9B?style=plastic) ![](https://img.shields.io/github/last-commit/chrisgrieser/shimmering-focus?style=plastic) [![](https://img.shields.io/badge/changelog-click%20here-FFE800?style=plastic)](Changelog.md)
+![](https://img.shields.io/badge/downloads-11251-6E4E9B?style=plastic) ![](https://img.shields.io/github/last-commit/chrisgrieser/shimmering-focus?style=plastic) [![](https://img.shields.io/badge/changelog-click%20here-FFE800?style=plastic)](Changelog.md)
 
 <img src="https://raw.githubusercontent.com/chrisgrieser/shimmering-focus/main/dual-theme-screenshot.png" alt="Promo Screenshot">
 
@@ -21,20 +21,21 @@ A minimalistic [Obsidian](https://obsidian.md/) theme focused on readability and
 	- [Gutter Indicators](#gutter-indicators)
 	- [Citation Syntax](#citation-syntax)
 	- [Multi-line Admonitions](#multi-line-admonitions)
-	- [Built-in Styling for Supercharged Links](#built-in-styling-for-supercharged-links)
-	- [Academic Work](#academic-work)
+	- [For Academic Work](#for-academic-work)
+- [For Writers](#for-writers)
 	- [Further Features](#further-features)
 - [Design Principles](#design-principles)
 	- [Extreme Minimalism](#extreme-minimalism)
 	- [Condensed Display of Information](#condensed-display-of-information)
-	- [High Readability](#high-readability)
+	- [High Readability & Scannability](#high-readability--scannability)
 - [Customization](#customization)
 	- [Style Settings](#style-settings)
 	- [Further Customization Options](#further-customization-options)
-- [Compatibility](#compatibility)
+- [Plugins](#plugins)
 	- [List of Compatible Plugins](#list-of-compatible-plugins)
 	- [Custom Checkboxes](#custom-checkboxes)
 	- [Instructions for specific Plugins](#instructions-for-specific-plugins)
+	- [Built-in Styling for Supercharged Links](#built-in-styling-for-supercharged-links)
 - [Installation](#installation)
 - [Contribute to the Theme](#contribute-to-the-theme)
 	- [Contribute CSS Snippets](#contribute-css-snippets)
@@ -90,6 +91,7 @@ Add `cssclass: {name}` to your yaml front matter to activate specific styling of
 - `cssclass: clean-top`: Removes Metadata Information, YAML frontmatter, and Breadcrumbs trail from the top of the note.
 - `cssclass: clean-embeds`: Embeds in that note are fully embedded, looking like one document.
 - `cssclass: dataview-list-in-table`: If you are using a dataview query where some table cells contain lists, use this CSS class to remove the vertical table lines that are off.
+- `cssclass: writing` (Obsidian 0.13.20+): Uses a serif font and a tinted background the note.
 
 ### Focus Line Highlight
 ![Focused Line Highlight](https://user-images.githubusercontent.com/73286100/147863593-a50fbeb0-04c2-4faf-8253-62abf8efca2d.gif)
@@ -114,38 +116,17 @@ Using triple-blockquotes (`>>>`) will create admonitions which work in all three
 
 <img width=60% alt="Screen Recording 2022-01-09 at 14 58 54" src="https://user-images.githubusercontent.com/73286100/148685705-2575e205-4554-4474-96e2-50d65d486e64.gif">
 
-### Built-in Styling for Supercharged Links
-This theme includes built-in styling for the [Supercharged Links Plugin](https://github.com/mdelobelle/obsidian_supercharged_links). This means you can make use of the plugin's features without the need write your own CSS! (If you already have your own Supercharged Links setup, you can turn those of with the Style Settings Plugin.) For now the theme includes the following styling:
-- Links to _Kanban Boards_ get "🎆" prepended
-- Links to notes with the tag `#seedling` get "🌱" prepended
-- Notes with `#evergreen` get "🌲" prepended
-- Notes with `#moc` get "🗺" prepended
-- Notes with `#person` get "👤" prepended
-- Notes with `#checklist` get "☑️" prepended
-- Links to _Literature Notes_ get a tooltip with the content of the `title` yaml key when hovering and get "📖" prepended. (Actually, this applies to any note with a `title` yaml frontmatter key.)
-- Breadcrumbs users: Links to notes with the `up` yaml key get a tooltip with the content of that yaml key, and get "🥖" prepended.
-
-<img width=60% alt="Demo tooltips" src="https://publish-01.obsidian.md/access/e25082da1bfe16d54e36618cd5bfee68/00%20-%20Contribute%20to%20the%20Obsidian%20Hub/02%20Attachments/Tooltips-for-Literature-Notes-with-Supercharged-Links.gif">
-
-**Setup**
-- Install [the plugin](https://github.com/mdelobelle/obsidian_supercharged_links).
-- Make sure you have `Parse all tags in the file` enabled in the plugin's settings.
-- If you are using the "Page Preview" Core Plugin, configure it to not display previews for the cases where you want the tooltips to show up.
-- Paste the following field in the text field `Target Attributes for styling`:
-
-```text
-kanban-plugin, title, up
-```
-
-### Academic Work
-- Extensive Styling and settings specifically for the [Longform Plugin](https://github.com/kevboh/longform). Prepend a `_` to file names of longform scenes to create sub-scenes that are indented in the sidebar.
+### For Academic Work
 - [Pandoc Citations](https://pandoc.org/MANUAL.html#citations-in-note-styles) (`[@citekey]`) and footnotes are visually emphasized.
-- Footnotes get [separate indicators in the gutter](#gutter-indicators).
+- Footnotes have [separate indicators in the gutter](#gutter-indicators).
 - The [built-in styling for Supercharged Links](#built-in-styling-for-supercharged-links) includes tooltips showing the literature note for popups.
 - The alt-text of images is used as caption text, in line with Pandoc's conversion behavior
 - The [Max View](#max-view--focus-view) is useful for displaying wide markdown tables.
 - [Multi-Color-Highlighting](#multi-color-highlighting--spoiler-syntax) and [Annotation Tags](#annotation-tags) have specifically been made for academic reading.
-- Indicates trailing white spaces when there is more than one space. This is useful for the Markdown [Two Space Rule](https://daringfireball.net/projects/markdown/syntax#p). 
+
+## For Writers
+- Trailing white spaces are indicated when there is more than one space. This is useful for the Markdown [Two Space Rule](https://daringfireball.net/projects/markdown/syntax#p). 
+- Extensive Styling and settings specifically for the [Longform Plugin](https://github.com/kevboh/longform). Prepend a `_` to file names of longform scenes to create sub-scenes that are indented in the sidebar.
 
 ### Further Features
 - Relationship lines in various side bar tabs
@@ -163,7 +144,6 @@ kanban-plugin, title, up
 - This theme is mainly intended for experienced users using mainly the keyboard for navigation.
 - As much clutter as possible is removed, letting you focus on content & information that matters.
 - You can re-enable all hidden elements by using the [Style Settings Plugin](https://github.com/mgmeyers/obsidian-style-settings/).
-- 💡 The settings can still be accessed via `cmd + ,` or `ctrl + ,`.
 
 ### Condensed Display of Information
 - Screen real estate is used much more efficiently to display more information at the same time.
@@ -174,7 +154,7 @@ kanban-plugin, title, up
 
 <img width=60% alt="Screenshot 2021-10-23 17 06 22" src="https://user-images.githubusercontent.com/73286100/138561771-1067d041-eeb2-4dfe-8d79-f7fa754ca419.png">
 
-### High Readability
+### High Readability & Scannability
 - Brightness and line length are both adjustable via [Style Settings Plugin](https://github.com/mgmeyers/obsidian-style-settings/).
 - [Gutter Indicators](#gutter-indicators) and the visual emphasis of Pandoc Citations and footnotes increase the scannability of longer notes.
 - Wider Input boxes, clearer icons, increased size of small UI elements (e.g. collapse indicators), thicker lines for tables & hr.
@@ -190,7 +170,7 @@ kanban-plugin, title, up
 	- [Recursive](https://www.recursive.design/) for as a clear UI font
 	- [Input Mono](https://input.djr.com/) as monospace font for code
 	- [Optima](https://en.wikipedia.org/wiki/Optima) as humanist font for headings
-	- [Crimson Pro](https://fonts.google.com/specimen/Crimson+Pro) as serif font for Longform notes
+	- [Crimson Pro](https://fonts.google.com/specimen/Crimson+Pro) as serif font for writing
 
 <img src="https://user-images.githubusercontent.com/73286100/144147616-59ba2513-78cc-4143-91e5-c222bc307bd9.gif" alt="Screen Recording 2021-12-01 at 00 51 21a" width=60%>
 
@@ -207,7 +187,7 @@ This themes supports dozens of customization options via the [Style Settings Plu
 - To add your own annotation tags, [use this template](CSS%20Snippets/annotation-tag-template.css).
 - To switch to outlined [Material Icons](https://fonts.google.com/icons?selected=Material+Icons), add [this CSS snippet](CSS%20Snippets/outlined-material-icons.css).
 
-## Compatibility
+## Plugins
 
 ### List of Compatible Plugins
 *Shimmering Focus* is compatible with and has includes styling for all core plugins, the most common community plugins, as well as about a dozen more community plugins.
@@ -229,6 +209,29 @@ In accordance with the minimalistic philosophy of the theme, unnecessary UI elem
 - __Ozan's Image in Editor__: Image Sizes are affected by the Image Settings & by the Max View Feature.
 - __Sliding Panes__: As long as you are using `rotated headers`, the header is permanently shown.
 - __Starred (Core Plugin)__: To be able to star searches, re-enable the Starred pane buttons with the [Style Settings Plugin](https://github.com/mgmeyers/obsidian-style-settings/)
+
+### Built-in Styling for Supercharged Links
+This theme includes built-in styling for the [Supercharged Links Plugin](https://github.com/mdelobelle/obsidian_supercharged_links). This means you can make use of the plugin's features without the need write your own CSS! (If you already have your own Supercharged Links setup, you can turn those of with the Style Settings Plugin.) For now the theme includes the following styling:
+- Links to _Kanban Boards_ get "🎆" prepended
+- Links to notes with the tag `#seedling` get "🌱" prepended
+- Notes with `#evergreen` get "🌲" prepended
+- Notes with `#moc` get "🗺" prepended
+- Notes with `#person` get "👤" prepended
+- Notes with `#checklist` get "☑️" prepended
+- Links to _Literature Notes_ get a tooltip with the content of the `title` yaml key when hovering and get "📖" prepended. (Actually, this applies to any note with a `title` yaml frontmatter key.)
+- Breadcrumbs users: Links to notes with the `up` yaml key get a tooltip with the content of that yaml key, and get "🥖" prepended.
+
+<img width=60% alt="Demo tooltips" src="https://publish-01.obsidian.md/access/e25082da1bfe16d54e36618cd5bfee68/00%20-%20Contribute%20to%20the%20Obsidian%20Hub/02%20Attachments/Tooltips-for-Literature-Notes-with-Supercharged-Links.gif">
+
+**Setup**
+- Install [the plugin](https://github.com/mdelobelle/obsidian_supercharged_links).
+- Make sure you have `Parse all tags in the file` enabled in the plugin's settings.
+- If you are using the "Page Preview" Core Plugin, configure it to not display previews for the cases where you want the tooltips to show up.
+- Paste the following text into the field `Target Attributes for styling`:
+
+```text
+kanban-plugin, title, up
+```
 
 ## Installation
 You can find *Shimmering Focus* in Obsidian's community themes browser under `Obsidian Settings ➞ Appearance ➞ Themes ➞ Manage`.

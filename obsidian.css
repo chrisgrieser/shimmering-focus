@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 1.678
+Version 1.679
 https://github.com/chrisgrieser/shimmering-focus/
 MIT License
 ─────────────────────────────────────────────────── */
@@ -366,15 +366,10 @@ the .create-ToC.sh.
 	--longform-hue-shift: 15;
 }
 
+.theme-light .writing,
 .theme-light .longform-leaf {
 	--longform-light-hue: calc(var(--light-hue) + var(--longform-hue-shift));
-}
 
-.theme-dark .longform-leaf {
-	--longform-dark-hue: calc(var(--dark-hue) + var(--longform-hue-shift));
-}
-
-.theme-light .longform-leaf {
 	--bg1: hsl(var(--longform-light-hue) var(--sat-light-1) var(--b-light-1));
 	--bg2: hsl(var(--longform-light-hue) var(--sat-light-2) var(--b-light-2));
 	--bg3: hsl(var(--longform-light-hue) var(--sat-light-3) var(--b-light-3));
@@ -385,7 +380,10 @@ the .create-ToC.sh.
 	--basic-border-color: hsl(var(--longform-light-hue) var(--sat-light-3) calc(var(--b-light-3) - 5%));
 }
 
+.theme-dark .writing,
 .theme-dark .longform-leaf {
+	--longform-dark-hue: calc(var(--dark-hue) + var(--longform-hue-shift));
+
 	--bg1: hsl(var(--longform-dark-hue) var(--sat-dark-1) var(--b-dark-1));
 	--bg2: hsl(var(--longform-dark-hue) var(--sat-dark-2) var(--b-dark-2));
 	--bg3: hsl(var(--longform-dark-hue) var(--sat-dark-3) var(--b-dark-3));
@@ -488,6 +486,8 @@ body.theme-dark {
 << Borders
 ─────────────────────────────────────────────────── */
 
+.theme-dark .writing,
+.theme-light .writing,
 .longform-leaf,
 .theme-light,
 .theme-dark {
@@ -7758,6 +7758,8 @@ body.hide-index-files .nav-file-title[data-path$="Index.md"] {
 /* <<< Longform Editor */
 /* https://github.com/kevboh/longform#scene-only-styling */
 
+.writing .markdown-preview-view,
+.writing .mod-cm6.cm-s-obsidian .cm-contentContainer,
 .longform-leaf .markdown-preview-view,
 .longform-leaf .markdown-source-view.mod-cm5,
 .longform-leaf .mod-cm6.cm-s-obsidian .cm-contentContainer {
@@ -7765,11 +7767,19 @@ body.hide-index-files .nav-file-title[data-path$="Index.md"] {
 	font-size: var(--longform-font-size);
 }
 
+.writing .markdown-preview-view table,
 .longform-leaf .markdown-preview-view table {
 	line-height: 1.3rem;
 }
 
 /* keep any code smaller */
+body > div.app-container .writing .cm-s-obsidian .cm-hmd-frontmatter,
+.writing .markdown-preview-view .frontmatter-container,
+.writing .cm-s-obsidian .HyperMD-codeblock,
+.writing .markdown-preview-view code,
+.writing .cm-s-obsidian span.cm-inline-code,
+.writing .HyperMD-table-row,
+.writing .cm-formatting-task,
 body > div.app-container .longform-leaf .cm-s-obsidian .cm-hmd-frontmatter,
 .longform-leaf .markdown-preview-view .frontmatter-container,
 .longform-leaf .cm-s-obsidian .HyperMD-codeblock,
@@ -7784,12 +7794,23 @@ body > div.app-container .longform-leaf .cm-s-obsidian .cm-hmd-frontmatter,
 }
 
 /* justify text */
+body:not(.longform-left-aligned) .writing,
 body:not(.longform-left-aligned) .longform-leaf {
 	text-align: justify;
 	hyphens: auto;
 }
 
 /* do not justify code blocks, headings, tables, and lists */
+body .app-container .writing .cm-s-obsidian .HyperMD-codeblock,
+body .app-container .writing table td span,
+body .app-container .writing div.HyperMD-list-line.cm-line,
+body .app-container .writing div.HyperMD-header.cm-line,
+body .app-container .writing div.markdown-preview-view h1,
+body .app-container .writing div.markdown-preview-view h2,
+body .app-container .writing div.markdown-preview-view h3,
+body .app-container .writing div.markdown-preview-view h4,
+body .app-container .writing div.markdown-preview-view h5,
+body .app-container .writing div.markdown-preview-view h6,
 body .app-container .longform-leaf .cm-s-obsidian .HyperMD-codeblock,
 body .app-container .longform-leaf table td span,
 body .app-container .longform-leaf div.HyperMD-list-line.cm-line,
@@ -7805,6 +7826,13 @@ body .app-container .longform-leaf div.markdown-preview-view h6 {
 }
 
 /* style headings */
+.writing .markdown-preview-view h1,
+.writing .markdown-preview-view h2,
+.writing .markdown-preview-view h3,
+.writing .markdown-preview-view h4,
+.writing .markdown-preview-view h5,
+.writing .markdown-preview-view h6,
+.writing .cm-header,
 .longform-leaf .markdown-preview-view h1,
 .longform-leaf .markdown-preview-view h2,
 .longform-leaf .markdown-preview-view h3,
@@ -7816,11 +7844,13 @@ body .app-container .longform-leaf div.markdown-preview-view h6 {
 	line-height: 1em;
 }
 
+body.longform-text-indent .writing .markdown-preview-view p,
 body.longform-text-indent .longform-leaf .markdown-preview-view p {
 	text-indent: 2em;
 }
 
 /* fix for checkboxes  */
+.writing input[type="checkbox"],
 .longform-leaf input[type="checkbox"] {
 	margin: 3px 9px 4px 0 !important;
 }
@@ -9730,7 +9760,7 @@ settings:
 	 default: false
 	-
 	 id: longform-settings
-	 title: Longform Plugin Settings
+	 title: Longform Plugin & Writing cssclass
 	 description: Font, Alignment, Indentation, Background, Index File
 	 type: heading
 	 level: 2
@@ -9738,12 +9768,12 @@ settings:
 	-
 	 id: longform-font
 	 title: 'Longform Main Font'
-	 description: Font used in folders marked as Longform Project. (Except code, which will keep using the monospace font.)
+	 description: "Font used in longform/writing notes (Except code, which still use the monospace font.)"
 	 type: variable-text
 	 default: '"Crimson Pro S"'
 	-
 	 id: longform-font-size
-	 title: Longform Font Size
+	 title: Font Size writing/longform notes
 	 type: variable-number-slider
 	 default: 1.2
 	 min: 0.7
@@ -9759,13 +9789,13 @@ settings:
 	-
 	 id: longform-text-indent
 	 title: First-Line Indent (Preview Mode)
-	 description: Indent the first Line of a paragraph in longform notes (preview mode only).
+	 description: Indent the first Line of a paragraph in longform/writing notes (preview mode only).
 	 type: class-toggle
 	 default: false
 	-
 	 id: longform-hue-shift
 	 title: Background Color Shift
-	 description: 'Degree longform notes have a different color than normal notes (hue added). Setting this to "0" will make longform projects have the same background color as other notes.'
+	 description: 'Degree longform/writing notes have a different color than normal notes (hue added). Setting this to "0" will make longform projects have the same background color as other notes.'
 	 type: variable-number-slider
 	 default: 15
 	 min: -180
