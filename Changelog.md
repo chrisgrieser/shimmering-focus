@@ -1,3 +1,4 @@
+- 2022-01-18	fix unresovled links color in Live Preview
 - 2022-01-18	displays shield.io images properly
 - 2022-01-18	consecutive blockquotes have no rounded corners in between them
 - 2022-01-18	implement option to show vault name in titlebar (when it is shown) (#92)

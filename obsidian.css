@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 1.675
+Version 1.676
 https://github.com/chrisgrieser/shimmering-focus/
 MIT License
 ─────────────────────────────────────────────────── */
@@ -5232,6 +5232,7 @@ a:hover {
 }
 
 /* <<< Unresolved links */
+span.is-unresolved .cm-hmd-internal-link,
 a.internal-link.is-unresolved {
 	color: var(--unresolved-link-color);
 	opacity: var(--unresolved-opacity);
