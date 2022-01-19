@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 1.682
+Version 1.683
 https://github.com/chrisgrieser/shimmering-focus/
 MIT License
 ─────────────────────────────────────────────────── */
@@ -4897,31 +4897,34 @@ body {
 }
 
 /* interaction with blockquotes */
+.markdown-preview-view blockquote > *:not(pre) > code,
 .cm-quote.cm-inline-code.cm-inline-code.cm-inline-code.cm-inline-code.cm-inline-code {
 	background-color: var(--bg3);
 }
 
-/* proper rounding of inline round */
-.cm-inline-code:not(.cm-formatting-code) {
+.cm-inline-code {
 	background-color: var(--bg2);
 	padding: 1px 2px;
 	border-radius: var(--slight-code-roundish);
 }
 
+/* inline code surrounded by backticks */
 .cm-formatting-code + .cm-inline-code:not(.cm-formatting-code) {
 	border-radius: 0;
 }
 
-.cm-formatting-code {
+/* opening backtick */
+.cm-formatting-code.cm-formatting-code {
 	padding: 1px 0;
-	border-bottom-left-radius: var(--slight-code-roundish);
-	border-top-left-radius: var(--slight-code-roundish);
+	border-radius: var(--slight-code-roundish) 0 0 var(--slight-code-roundish);
 }
 
+/* closing backtick */
 .cm-inline-code:not(.cm-formatting-code) + .cm-formatting-code {
 	border-radius: 0 var(--slight-code-roundish) var(--slight-code-roundish) 0;
 }
 
+/* live preview */
 .is-live-preview .cm-active .cm-inline-code:not(.cm-formatting-code) {
 	border-radius: 0;
 }
