@@ -1,3 +1,4 @@
+- 2022-01-19	breadcrumbs matrix view more condensed
 - 2022-01-18	add writing cssclass for 0.13.20+
 - 2022-01-18	add writing cssclass for 0.13.20+
 - 2022-01-18	small fixes for code blocks without language and inline code in LP

@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 1.680
+Version 1.681
 https://github.com/chrisgrieser/shimmering-focus/
 MIT License
 ─────────────────────────────────────────────────── */
@@ -8141,14 +8141,22 @@ button.MS-OpenSnippet:hover svg.ms-snippet path {
 /* ───────────────────────────────────────────────────
 << Breadcrumbs
 ─────────────────────────────────────────────────── */
-
 /* matrix */
-.BC-Matrix-square li::MARKER {
-	color: var(--text-faint);
+.BC-Matrix ol > li::MARKER {
+	content: none;
+}
+
+.view-content .BC-Matrix .BC-Matrix-square ol {
+	padding-left: 0;
+}
+
+/* "Treat Current Note as Implied Sibling" enabled */
+.BC-active-note div {
+	font-weight: 600;
 }
 
 body > .app-container .workspace-leaf-content[data-type="BC-matrix"] > .view-content {
-	padding: 1px 3px 3px 2px;
+	padding: 1px 0 3px 2px;
 }
 
 body > .app-container .workspace-leaf-content[data-type="BC-matrix"] > .view-content div.BC-Matrix-square {
