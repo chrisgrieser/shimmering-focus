@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 1.683
+Version 1.684
 https://github.com/chrisgrieser/shimmering-focus/
 MIT License
 ─────────────────────────────────────────────────── */
@@ -3927,7 +3927,7 @@ body.colored-yaml .cm-s-obsidian .cm-hmd-frontmatter.cm-string {
 }
 
 /* <<< Metadata Block */
-body .frontmatter-container .frontmatter-container-header {
+.frontmatter-container .frontmatter-container-header {
 	font-family: var(--smallcap-font);
 	font-size: 0.9em;
 	font-weight: 400;
@@ -3938,16 +3938,20 @@ body .frontmatter-container .frontmatter-container-header {
 	border-bottom: var(--thin-border);
 }
 
+.frontmatter-container .frontmatter-container-header:hover {
+	color: var(--alt-accent);
+}
+
+.frontmatter-container-header:hover .frontmatter-collapse-indicator {
+	color: var(--alt-accent);
+}
+
 .markdown-preview-view .frontmatter-container {
 	font-size: 0.9em;
 	color: var(--extra-contrast);
 	background: var(--bg2);
 	border: var(--basic-border);
 	border-radius: var(--roundish);
-}
-
-.markdown-preview-view .frontmatter-container-header:hover {
-	color: var(--alt-accent);
 }
 
 .frontmatter-container .frontmatter-section {
@@ -3962,7 +3966,7 @@ body .frontmatter-container .frontmatter-container-header {
 .frontmatter-section-tags > a.tag {
 	font-size: 1em;
 
-	color: var(--extra-contrast) !important;
+	color: var(--extra-contrast);
 	background: none;
 
 	padding-right: 6px;
@@ -3974,22 +3978,25 @@ body .frontmatter-container .frontmatter-container-header {
 	border-radius: var(--roundish);
 }
 
-.frontmatter-section-tags > a.tag:hover {
+.frontmatter-section-tags .tag.tag:hover {
+	/* important needed */
 	text-decoration: none !important;
-	color: var(--alt-accent) !important;
-	background: var(--bg3);
+	color: var(--alt-accent);
+	background-color: var(--bg3);
 }
 
-.frontmatter-alias {
-	font-size: 1em !important;
+.frontmatter-container .frontmatter-alias {
+	font-size: 1em;
+	hyphens: auto;
+	white-space: pre-wrap;
 
-	color: var(--extra-contrast) !important;
-	background: none !important;
+	color: var(--extra-contrast);
+	background: none;
 
-	padding-right: 6px !important;
-	padding-left: 6px !important;
-	margin-right: 0 !important;
-	margin-left: 0 !important;
+	padding-right: 6px;
+	padding-left: 6px;
+	margin-right: 0;
+	margin-left: 0;
 }
 
 /* ───────────────────────────────────────────────────

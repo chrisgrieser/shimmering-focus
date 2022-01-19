@@ -1,4 +1,4 @@
-- 2022-01-19	patch
+- 2022-01-19	metadata block improvements
 - 2022-01-19	fixes for inline code
 - 2022-01-19	breadcrumbs matrix view more condensed
 - 2022-01-18	add writing cssclass for 0.13.20+
