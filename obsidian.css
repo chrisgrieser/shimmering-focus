@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 1.684
+Version 1.685
 https://github.com/chrisgrieser/shimmering-focus/
 MIT License
 ─────────────────────────────────────────────────── */
@@ -2530,7 +2530,7 @@ body > .app-container .workspace-split.mod-horizontal > .workspace-tabs > .works
 /* see also the change of resize handle height depending
 on the titlebar visibility in the titlebar section */
 
-.workspace-leaf-resize-handle {
+body .workspace-leaf-resize-handle {
 	transition: var(--medium-transition);
 }
 
@@ -8168,13 +8168,23 @@ button.MS-OpenSnippet:hover svg.ms-snippet path {
 	content: none;
 }
 
-.BC-Matrix ol > li {
-	padding: 0.5px 1px;
+.BC-Matrix.BC-Matrix.BC-Matrix ol > li {
+	line-height: 1.2em;
+	padding: 3px 5px 6px;
+}
+
+.BC-Matrix-square.BC-Matrix-square.BC-Matrix-square.BC-Matrix-square.BC-Matrix-square:first-child {
+	padding-top: 0;
+}
+
+/* overscroll */
+.BC-Matrix-square.BC-Matrix-square.BC-Matrix-square.BC-Matrix-square.BC-Matrix-square:last-child {
+	margin-bottom: 50px;
 }
 
 .view-content .BC-Matrix .BC-Matrix-square ol {
 	padding-left: 0;
-	margin-top: 0;
+	margin: 0;
 }
 
 /* "Treat Current Note as Implied Sibling" enabled */
@@ -8186,10 +8196,10 @@ body .app-container .workspace-leaf-content[data-type="BC-matrix"] .view-content
 	padding: 1px 0 3px 2px;
 }
 
-body .app-container .workspace-leaf-content[data-type="BC-matrix"] .view-content div.BC-Matrix-square {
+.BC-Matrix-square.BC-Matrix-square.BC-Matrix-square.BC-Matrix-square.BC-Matrix-square {
 	text-align: left;
-	padding-top: 3px;
-	padding-bottom: 6px;
+	padding-top: 2px;
+	padding-bottom: 0;
 	border: none;
 	border-bottom: var(--basic-border);
 }
@@ -8208,11 +8218,11 @@ body .app-container .workspace-leaf-content[data-type="BC-matrix"] .view-content
 	display: inline-flex;
 
 	font-family: var(--default-font);
-	font-size: 1.2em;
-	font-style: unset !important;
+	font-size: 1.1em;
+	font-style: unset;
 
-	padding: 0 6px;
-	margin-left: 0;
+	padding: 0;
+	margin-left: 5px;
 }
 
 /* "implied" and "real" */
@@ -8606,9 +8616,9 @@ body .dataview.inline-field-key {
 ─────────────────────────────────────────────────── */
 /* info box at the top */
 .setting-item.setting-item-heading.style-settings-heading[data-id="shimmering-focus"] {
-    display: flex;
-    padding-top: unset;
-    flex-wrap: wrap;
+	display: flex;
+	padding-top: unset;
+	flex-wrap: wrap;
 }
 
 .style-settings-heading[data-id="shimmering-focus"]::BEFORE {
