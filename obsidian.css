@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 1.681
+Version 1.682
 https://github.com/chrisgrieser/shimmering-focus/
 MIT License
 ─────────────────────────────────────────────────── */
@@ -4572,7 +4572,7 @@ body .markdown-preview-view blockquote,
 	content: "";
 
 	height: 1em;
-	width: var(--blockquote-border-width);
+	width: calc(var(--blockquote-border-width) - 1px);
 
 	background-color: var(--basic-border-color);
 
@@ -4582,13 +4582,17 @@ body .markdown-preview-view blockquote,
 	margin-left: -14px;
 }
 
+.HyperMD-quote + .HyperMD-quote.HyperMD-quote-lazy::BEFORE {
+	margin-left: -10px;
+}
+
 .HyperMD-quote + .HyperMD-quote {
 	/* so the position absolute below is in relation
 	to this element and not the editor */
 	position: relative;
 }
 
-.HyperMD-quote + .HyperMD-quote .cm-hmd-indent-in-quote::AFTER {
+.HyperMD-quote + .HyperMD-quote .cm-hmd-indent-in-quote::BEFORE {
 	content: " ";
 
 	height: 1em;
@@ -4878,7 +4882,7 @@ body {
 (i.e. code that is not in a pre (=block)) */
 .markdown-preview-view *:not(pre) > code,
 .cm-s-obsidian .cm-formatting-code.cm-inline-code,
-.cm-s-obsidian span.cm-inline-code {
+.cm-s-obsidian span.cm-inline-code.cm-inline-code {
 	color: var(--code-color);
 }
 
@@ -4892,11 +4896,20 @@ body {
 	padding: 1px 4px;
 }
 
+/* interaction with blockquotes */
+.cm-quote.cm-inline-code.cm-inline-code.cm-inline-code.cm-inline-code.cm-inline-code {
+	background-color: var(--bg3);
+}
+
 /* proper rounding of inline round */
 .cm-inline-code:not(.cm-formatting-code) {
 	background-color: var(--bg2);
 	padding: 1px 2px;
 	border-radius: var(--slight-code-roundish);
+}
+
+.cm-formatting-code + .cm-inline-code:not(.cm-formatting-code) {
+	border-radius: 0;
 }
 
 .cm-formatting-code {
@@ -4905,12 +4918,11 @@ body {
 	border-top-left-radius: var(--slight-code-roundish);
 }
 
-/* .is-live-preview .cm-inline-code, */
 .cm-inline-code:not(.cm-formatting-code) + .cm-formatting-code {
 	border-radius: 0 var(--slight-code-roundish) var(--slight-code-roundish) 0;
 }
 
-.cm-active .cm-inline-code:not(.cm-formatting-code) {
+.is-live-preview .cm-active .cm-inline-code:not(.cm-formatting-code) {
 	border-radius: 0;
 }
 
@@ -8146,8 +8158,13 @@ button.MS-OpenSnippet:hover svg.ms-snippet path {
 	content: none;
 }
 
+.BC-Matrix ol > li {
+	padding: 0.5px 1px;
+}
+
 .view-content .BC-Matrix .BC-Matrix-square ol {
 	padding-left: 0;
+	margin-top: 0;
 }
 
 /* "Treat Current Note as Implied Sibling" enabled */
@@ -8155,11 +8172,11 @@ button.MS-OpenSnippet:hover svg.ms-snippet path {
 	font-weight: 600;
 }
 
-body > .app-container .workspace-leaf-content[data-type="BC-matrix"] > .view-content {
+body .app-container .workspace-leaf-content[data-type="BC-matrix"] .view-content {
 	padding: 1px 0 3px 2px;
 }
 
-body > .app-container .workspace-leaf-content[data-type="BC-matrix"] > .view-content div.BC-Matrix-square {
+body .app-container .workspace-leaf-content[data-type="BC-matrix"] .view-content div.BC-Matrix-square {
 	text-align: left;
 	padding-top: 3px;
 	padding-bottom: 6px;
@@ -8167,16 +8184,12 @@ body > .app-container .workspace-leaf-content[data-type="BC-matrix"] > .view-con
 	border-bottom: var(--basic-border);
 }
 
-body > .app-container div.BC-Matrix-square ol {
-	margin-top: 0;
-}
-
-body > .app-container div.view-content > div.BC-Matrix > div {
+.BC-Matrix.BC-Matrix.BC-Matrix.BC-Matrix div {
 	margin: 0;
 	border: none;
 }
 
-body > .app-container div.view-content > div.BC-Matrix {
+.BC-Matrix.BC-Matrix.BC-Matrix.BC-Matrix {
 	padding: 0;
 }
 
