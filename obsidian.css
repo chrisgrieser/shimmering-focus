@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 1.685
+Version 1.686
 https://github.com/chrisgrieser/shimmering-focus/
 MIT License
 ─────────────────────────────────────────────────── */
@@ -2818,10 +2818,11 @@ body .workspace-leaf-resize-handle:active {
 	border-radius: var(--roundish);
 }
 
+.setting-add-hotkey-button.mod-active,
 .setting-add-hotkey-button:hover,
 .setting-restore-hotkey-button:hover,
 .setting-editor-extra-setting-button:hover {
-	color: var(--editor-alt-accent) !important;
+	color: var(--editor-alt-accent);
 	background-color: var(--bg3);
 	opacity: 1;
 }
@@ -2892,9 +2893,8 @@ body .workspace-leaf-resize-handle:active {
 
 .setting-hotkey {
 	font-family: var(--button-font);
+	font-size: 0.75rem;
 	line-height: 1.7em;
-
-	min-height: 2em;
 
 	background-color: var(--bg2);
 	box-shadow: var(--muted-button-inset-shadow);
@@ -2907,23 +2907,14 @@ body .workspace-leaf-resize-handle:active {
 	font-size: 0;
 	font-weight: 600;
 	line-height: 0;
-
-	min-height: 26px;
-
 	color: var(--text-faint);
-
-	padding-top: 11px;
+	padding-top: 9px;
 }
 
 .setting-hotkey.mod-active {
-	font-size: 0.75rem;
 	font-weight: 600;
 	color: var(--button-hover-text);
 	background-color: var(--interactive-hover-bg);
-}
-
-.setting-add-hotkey-button.mod-active {
-	color: var(--interactive-hover-bg);
 }
 
 .setting-hotkey.mod-empty::BEFORE {

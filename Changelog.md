@@ -1,3 +1,4 @@
+- 2022-01-19	patch
 - 2022-01-19	breadcrumbs matrix view improvements
 - 2022-01-19	metadata block improvements
 - 2022-01-19	fixes for inline code
