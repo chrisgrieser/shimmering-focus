@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 1.687
+Version 1.688
 https://github.com/chrisgrieser/shimmering-focus/
 MIT License
 ─────────────────────────────────────────────────── */
@@ -7274,17 +7274,22 @@ body:not(.show-header-bar) .workspace-leaf-content[data-type="kanban"] .view-hea
 	background-color: var(--kanban-background) !important;
 }
 
-body .workspace-leaf-content[data-type="kanban"] .view-header:focus-within,
-body .workspace-leaf-content[data-type="kanban"] .view-header:hover {
-	background-color: var(--bg2) !important;
+.workspace-leaf-content[data-type="kanban"] .view-header.view-header:focus-within,
+.workspace-leaf-content[data-type="kanban"] .view-header.view-header:hover {
+	background-color: var(--bg2);
 	background-image: unset;
+}
+
+.workspace-leaf-content[data-type="kanban"] .view-header:focus-within ~ .view-content .kanban-plugin__board > div,
+.workspace-leaf-content[data-type="kanban"] .view-header:hover ~ .view-content .kanban-plugin__board > div {
+	padding-top: 8px;
 }
 
 div.kanban-plugin__board > div {
 	padding: 0.3em;
 }
 
-body:not(.show-header-bar) div.kanban-plugin__board > div {
+body:not(.show-header-bar) .kanban-plugin__board > div {
 	padding-top: 0;
 }
 
