@@ -1,4 +1,4 @@
-- 2022-01-20	patch
+- 2022-01-20	make floating button on mobile compatible header plugin
 - 2022-01-20	header on mobile replace with floating toggle button (#93). New Style Setting to re-enable mobile header
 - 2022-01-19	breadcrumbs matrix view improvements
 - 2022-01-19	metadata block improvements

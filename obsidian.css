@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 1.688
+Version 1.689
 https://github.com/chrisgrieser/shimmering-focus/
 MIT License
 ─────────────────────────────────────────────────── */
@@ -5883,7 +5883,10 @@ body:not(.no-fn-indicator) .mod-cm6 .cm-hmd-barelink:not(.cm-formatting-link) + 
 < Mobile
 ─────────────────────────────────────────────────── */
 
-/* Typography */
+/* ───────────────────────────────────────────────────
+<< Typography
+─────────────────────────────────────────────────── */
+
 .is-mobile .markdown-preview-view,
 .is-mobile .cm-s-obsidian div.cm-line {
 	font-size: var(--mobile-font-size);
@@ -5915,6 +5918,9 @@ body.is-mobile .markdown-preview-view blockquote {
 	margin-top: 8px;
 }
 
+/* ───────────────────────────────────────────────────
+<< Header
+─────────────────────────────────────────────────── */
 /* hidden header */
 .is-mobile:not(.show-mobile-header) .view-header {
 	height: 0;
@@ -5927,8 +5933,8 @@ body.is-mobile .markdown-preview-view blockquote {
 }
 
 /* for whatever reason, the button is sometimes first child or second child... */
-.is-mobile:not(.show-mobile-header) .view-actions .view-action:nth-child(2),
-.is-mobile:not(.show-mobile-header) .view-actions .view-action:nth-child(1) {
+.is-mobile:not(.show-mobile-header) .view-action:nth-last-of-type(5),
+.is-mobile:not(.show-mobile-header) .view-action:nth-last-of-type(4) {
 	background-color: var(--bg2);
 	box-shadow: var(--muted-button-inset-shadow), var(--tiny-shadow);
 
