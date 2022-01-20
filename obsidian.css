@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 1.686
+Version 1.687
 https://github.com/chrisgrieser/shimmering-focus/
 MIT License
 ─────────────────────────────────────────────────── */
@@ -437,6 +437,11 @@ the .create-ToC.sh.
 ─────────────────────────────────────────────────── */
 
 /* <<< Outside Shadow */
+:root {
+	--shadow-for-dark-bold: -0.5px 0.5px hsl(0 0% 35%);
+	--shadow-blur: 3px;
+}
+
 .theme-light {
 	--shadow-color: hsl(0 0% 40% / 70%);
 	--shadow-base-size: 0px;
@@ -445,17 +450,14 @@ the .create-ToC.sh.
 .theme-dark {
 	--shadow-color: hsl(0 0% 1% / 30%);
 	--shadow-base-size: 3px;
-
-	--shadow-for-dark-bold: -0.5px 0.5px hsl(0 0% 35%);
 }
 
 body.theme-light,
 body.theme-dark {
-	--shadow-blur: 3px;
-
 	--big-shadow: 4px 6px var(--shadow-blur) calc(var(--shadow-base-size) + 10px) var(--shadow-color);
 	--medium-shadow: 4px 6px var(--shadow-blur) calc(var(--shadow-base-size) + 5px) var(--shadow-color);
 	--small-shadow: 1px 3px var(--shadow-blur) calc(var(--shadow-base-size) + 0px) var(--shadow-color);
+	--tiny-shadow: 0.5px 1.5px var(--shadow-blur) calc(var(--shadow-base-size) / 2) var(--shadow-color);
 }
 
 /* <<< Inset Shadow */
@@ -1284,23 +1286,23 @@ body:not(.show-titlebar-text) .titlebar-text {
 << Settings Button
 ─────────────────────────────────────────────────── */
 /* because users will never learn */
-body:not(.show-ribbons) .workspace-ribbon.mod-left {
+body:not(.show-ribbons):not(.is-mobile) .workspace-ribbon.mod-left {
 	visibility: hidden;
 }
 
-body:not(.show-ribbons) .workspace-split.mod-left-split.is-collapsed + .mod-root,
-body:not(.show-ribbons) .workspace-split.mod-left-split {
+body:not(.show-ribbons):not(.is-mobile) .workspace-split.mod-left-split.is-collapsed + .mod-root,
+body:not(.show-ribbons):not(.is-mobile) .workspace-split.mod-left-split {
 	margin-left: -30px;
 }
 
-body:not(.show-ribbons) .side-dock-settings .side-dock-ribbon-action:last-child svg {
+body:not(.show-ribbons):not(.is-mobile) .side-dock-settings .side-dock-ribbon-action:last-child svg {
 	height: 0.95em;
 	width: 0.95em;
 }
 
-body:not(.show-ribbons) .side-dock-settings .side-dock-ribbon-action:last-child {
+body:not(.show-ribbons):not(.is-mobile) .side-dock-settings .side-dock-ribbon-action:last-child {
 	background-color: var(--bg1);
-	box-shadow: var(--small-inset-shadow);
+	box-shadow: var(--small-inset-shadow), var(--tiny-shadow);
 
 	position: absolute;
 	bottom: 0.5em;
@@ -1314,7 +1316,7 @@ body:not(.show-ribbons) .side-dock-settings .side-dock-ribbon-action:last-child 
 	visibility: visible;
 }
 
-body:not(.show-ribbons) .side-dock-settings .side-dock-ribbon-action:last-child:hover {
+body:not(.show-ribbons):not(.is-mobile) .side-dock-settings .side-dock-ribbon-action:last-child:hover {
 	background-color: var(--bg3);
 }
 
@@ -3842,7 +3844,7 @@ iframe {
 .markdown-preview-view.clean-embeds .markdown-embed,
 .markdown-preview-view.clean-embeds .file-embed {
 	padding: 0 5px;
-	margin: -1px -6px;
+	margin: -1px -7px;
 	border: 1px solid transparent;
 }
 
@@ -5858,6 +5860,9 @@ body:not(.no-fn-indicator) .mod-cm6 .cm-hmd-barelink:not(.cm-formatting-link) + 
 /* ───────────────────────────────────────────────────
 < CSS Classes
 ─────────────────────────────────────────────────── */
+/* writing cssclass is bundled with the styling for the Longform Editor */
+/* clean-embeds cssclass is in the section or Embeds */
+
 /* clean top */
 .clean-top .BC-trail,
 .clean-top .frontmatter-container {
@@ -5874,25 +5879,9 @@ body:not(.no-fn-indicator) .mod-cm6 .cm-hmd-barelink:not(.cm-formatting-link) + 
 	border-left: none;
 }
 
-/* writing cssclass is bundled with the styling for the Longform Editor */
-/* clean-embeds cssclass is in the section or Embeds */
-
 /* ───────────────────────────────────────────────────
 < Mobile
 ─────────────────────────────────────────────────── */
-/* header */
-.is-mobile .view-header {
-	height: 2.4em;
-}
-
-.is-mobile .view-header .view-header-title {
-	line-height: 2.05em;
-}
-
-.is-mobile .view-actions,
-.is-mobile .view-header-icon {
-	margin-top: -3px;
-}
 
 /* Typography */
 .is-mobile .markdown-preview-view,
@@ -5905,7 +5894,6 @@ body.is-mobile .markdown-preview-view blockquote {
 	text-align: start;
 }
 
-/* mobile settings */
 .mobile-option-setting-item > span:hover > svg {
 	color: var(--editor-alt-accent) !important;
 	background-color: var(--bg2);
@@ -5920,6 +5908,58 @@ body.is-mobile .markdown-preview-view blockquote {
 .is-mobile .setting-item-description {
 	white-space: pre-line;
 	word-break: break-word;
+}
+
+/* fix tasks checkboxes alignment */
+.is-mobile input.task-list-item-checkbox[type="checkbox"] {
+	margin-top: 8px;
+}
+
+/* hidden header */
+.is-mobile:not(.show-mobile-header) .view-header {
+	height: 0;
+	border: none !important;
+	visibility: hidden;
+}
+
+.is-mobile:not(.show-mobile-header) svg.pencil {
+	margin: 1px;
+}
+
+/* for whatever reason, the button is sometimes first child or second child... */
+.is-mobile:not(.show-mobile-header) .view-actions .view-action:nth-child(2),
+.is-mobile:not(.show-mobile-header) .view-actions .view-action:nth-child(1) {
+	background-color: var(--bg2);
+	box-shadow: var(--muted-button-inset-shadow), var(--tiny-shadow);
+
+	position: absolute;
+	top: calc(90vh - 45px);
+	right: 10px;
+
+	padding: 10px 10px 4px;
+
+	border: var(--thin-border);
+	border-radius: var(--round);
+
+	visibility: visible;
+}
+
+/* when header is shown */
+.is-mobile svg.vertical-three-dots {
+	margin-top: 0;
+}
+
+.is-mobile.show-mobile-header .view-header .view-header-title {
+	line-height: 2.05em;
+}
+
+.is-mobile.show-mobile-header .view-header {
+	height: 2.4em;
+}
+
+.is-mobile.show-mobile-header .view-actions,
+.is-mobile.show-mobile-header .view-header-icon {
+	margin-top: -3px;
 }
 
 /* ───────────────────────────────────────────────────
@@ -9736,6 +9776,12 @@ settings:
 	 max: 2
 	 step: 0.05
 	 format: rem
+	-
+	 id: show-mobile-header
+	 title: Re-enable Header
+	 description: When false, a floating button to toggle between Reading and Source Mode will be shown.
+	 type: class-toggle
+	 default: false
 	-
 	 id: plugin-specific-settings
 	 title: Plugin-Specific Settings
