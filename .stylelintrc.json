@@ -23,7 +23,8 @@
 
 		"plugin/no-unsupported-browser-features": [true, {
 		  "browsers": ["Chrome > 88"],
-		  "ignore": ["css-masks"]
+		  "ignore": ["css-masks"],
+		  "ignorePartialSupport": true
 		}],
 
 		"order/order": [

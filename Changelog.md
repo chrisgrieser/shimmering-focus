@@ -1,3 +1,4 @@
+- 2022-01-21	new cssclass: list-2-col-cards
 - 2022-01-21	notices in light mode darker
 - 2022-01-21	fade out pane when working on header
 - 2022-01-21	hide sidebar tabs until hovered
