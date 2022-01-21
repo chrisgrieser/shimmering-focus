@@ -3,7 +3,7 @@
 A minimalistic [Obsidian](https://obsidian.md/) theme focused on readability and condensed information display.
 
 <!-- manually updated-->
-![](https://img.shields.io/badge/downloads-11634-6E4E9B?style=plastic) ![](https://img.shields.io/github/last-commit/chrisgrieser/shimmering-focus?style=plastic) [![](https://img.shields.io/badge/changelog-click%20here-FFE800?style=plastic)](Changelog.md)
+![](https://img.shields.io/badge/downloads-11636-6E4E9B?style=plastic) ![](https://img.shields.io/github/last-commit/chrisgrieser/shimmering-focus?style=plastic) [![](https://img.shields.io/badge/changelog-click%20here-FFE800?style=plastic)](Changelog.md)
 
 <img src="https://raw.githubusercontent.com/chrisgrieser/shimmering-focus/main/dual-theme-screenshot.png" alt="Promo Screenshot">
 
@@ -208,6 +208,7 @@ In accordance with the minimalistic philosophy of the theme, unnecessary UI elem
 - __Dataview__: If the table lines are off, use the [`dataview-list-in-table` CSS Classes](#css-classes)
 - __Ozan's Image in Editor__: Image Sizes are affected by the Image Settings & by the Max View Feature.
 - __Sliding Panes__: As long as you are using `rotated headers`, the header is permanently shown.
+- __Recent Files__: The active File is deliberately hidden, because, well it isn't recent yet?
 - __Starred (Core Plugin)__: To be able to star searches, re-enable the Starred pane buttons with the [Style Settings Plugin](https://github.com/mgmeyers/obsidian-style-settings/)
 
 ### Built-in Styling for Supercharged Links

@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 1.692
+Version 1.693
 https://github.com/chrisgrieser/shimmering-focus/
 MIT License
 ─────────────────────────────────────────────────── */
@@ -7071,19 +7071,19 @@ body.plugin-sliding-panes-rotate-header .workspace > .mod-root > .workspace-leaf
 }
 
 body.plugin-sliding-panes-rotate-header .workspace > .mod-root > .workspace-leaf > .workspace-leaf-content > .view-header .view-header-icon.view-header-icon {
-	margin: 3px 5px 10px;
+	margin: 3px 4px 10px;
 }
 
 body.plugin-sliding-panes-rotate-header .workspace > .mod-root > .workspace-leaf > .workspace-leaf-content > .view-header .view-actions {
-	margin: 2px 5px;
+	margin: 4px;
 }
 
 body.plugin-sliding-panes-rotate-header .workspace > .mod-root > .workspace-leaf > .workspace-leaf-content > .view-header .view-action.view-action {
-	margin: 4px 0;
+	margin: 5px 0;
 }
 
 body.plugin-sliding-panes-rotate-header .workspace > .mod-root > .workspace-leaf > .workspace-leaf-content > .view-header > .view-header-title-container > .view-header-title.view-header-title {
-	padding: 0 0 0 3px;
+	padding: 0 0 0 2px;
 }
 
 /* ───────────────────────────────────────────────────
@@ -7954,6 +7954,11 @@ body div.oz-image-widget > img:active {
 
 .workspace-leaf-content[data-type="recent-files"] .nav-file {
 	border-radius: 0;
+}
+
+/* hide active file */
+.workspace-leaf-content[data-type="recent-files"] .is-active {
+	display: none;
 }
 
 body:not(.no-alternating-rows) .workspace-leaf-content[data-type="recent-files"] .nav-file:nth-child(even) {

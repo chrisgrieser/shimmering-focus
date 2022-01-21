@@ -1,3 +1,4 @@
+- 2022-01-21	recent files plugin: hide active file (cause, well, it isn't recent yet?)
 - 2022-01-21	fixes for resize handle
 - 2022-01-21	fix #94
 - 2022-01-21	fix #49 and small improvements for sliding pane rotated headers
