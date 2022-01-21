@@ -1,3 +1,4 @@
+- 2022-01-21	patch
 - 2022-01-21	new cssclass: dataview-no-task-links
 - 2022-01-21	cleaner search suggestion box
 - 2022-01-21	fix #91

@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 1.697
+Version 1.698
 https://github.com/chrisgrieser/shimmering-focus/
 MIT License
 ─────────────────────────────────────────────────── */
@@ -1215,7 +1215,6 @@ body.mod-macos:not(.show-titlebar) .workspace-split.mod-left-split.is-collapsed 
 	padding-left: 7vh; /* vh to work better for other screen resolutions */
 }
 
-/* to display header bar properly on mobile */
 .theme-dark:not(.show-titlebar):not(.is-mobile),
 .theme-light:not(.show-titlebar):not(.is-mobile) {
 	padding: 0 !important;
@@ -5128,7 +5127,6 @@ pre[class~="language-as"]::AFTER { content: "AppleScript"; }
 ─────────────────────────────────────────────────── */
 
 /* less indention to save space */
-.markdown-preview-view .block-language-dataviewjs > div > ul,
 .markdown-preview-view > div > div > div > ul.dataview.list-view-ul,
 .markdown-preview-view > div > div > ol,
 .markdown-preview-view > div > div > ul {
@@ -6219,7 +6217,7 @@ body:not(.no-file-explorer-icons) .nav-file-title[data-path*="kanban" i] .nav-fi
 /* ───────────────────────────────────────────────────
 << Panes
 ─────────────────────────────────────────────────── */
-/* <<< Panes in general */
+/* <<< Core Panes in general */
 
 .tree-item-inner-subtext,
 .tree-item-inner,
@@ -6235,6 +6233,10 @@ body:not(.no-file-explorer-icons) .nav-file-title[data-path*="kanban" i] .nav-fi
 
 .tree-item-inner-subtext {
 	opacity: 0.8;
+}
+
+.tree-item-flair-outer::AFTER {
+	display: none;
 }
 
 .tree-item-inner:hover,
@@ -8513,6 +8515,17 @@ pre button.copy:hover::BEFORE {
 ─────────────────────────────────────────────────── */
 /* Styling from the "Tables" Section mostly applies */
 
+/* less indention to save space */
+.block-language-dataview > div > ul,
+.block-language-dataviewjs > div > ul {
+	padding-left: 1rem;
+}
+
+.markdown-preview-view .block-language-dataview .result-group {
+	padding-left: 0;
+}
+
+/* errors */
 .block-language-dataview pre.dataview-error {
 	font-family: var(--font-monospace);
 	font-size: var(--monospace-font-size);
