@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 1.699
+Version 1.700
 https://github.com/chrisgrieser/shimmering-focus/
 MIT License
 ─────────────────────────────────────────────────── */
@@ -2504,6 +2504,38 @@ body > .app-container .workspace-split.mod-horizontal > .workspace-tabs > .works
 }
 
 /* ───────────────────────────────────────────────────
+<< Hidden sidebars tabs
+─────────────────────────────────────────────────── */
+
+body:not(.show-sidebar-tabs) .workspace-tab-container-inner,
+body:not(.show-sidebar-tabs) .workspace-tab-header-container {
+	transition: var(--medium-transition);
+}
+
+body:not(.show-sidebar-tabs) .workspace-tab-header-container:not(:hover) {
+	height: 10px;
+	padding-top: 0;
+	padding-bottom: 0;
+}
+
+body:not(.show-sidebar-tabs) .workspace-tabs:not(:nth-child(3)) .workspace-tab-header-container {
+	border-top: var(--basic-border);
+}
+
+body:not(.show-sidebar-tabs) .workspace-tabs .workspace-tab-header-container:hover {
+	border-color: var(--scrollbar-bg-hover);
+}
+
+body:not(.show-sidebar-tabs) .workspace-tabs .workspace-tab-header-container:not(:hover) .workspace-tab-container-inner {
+	opacity: 0;
+}
+
+/* fix for mac traffic lights */
+body.mod-macos:not(.show-sidebar-tabs):not(.show-titlebar) .mod-left-split .workspace-tabs:nth-child(3) .workspace-tab-header-container:not(:hover) {
+	height: 17px;
+}
+
+/* ───────────────────────────────────────────────────
 << Resize Handles
 ─────────────────────────────────────────────────── */
 /* see also the change of resize handle height depending
@@ -3373,8 +3405,12 @@ body .community-plugin-info .community-plugin-downloads-text {
 }
 
 /* Infobox */
+.community-theme {
+	--infobox-space: 300px;
+}
+
 .community-theme.is-selected .community-theme-info::AFTER {
-	content: "🎨 ⚙️ Theme Customization available by installing the Style Settings Plugin.";
+	content: "⚠️ Sidebar Tabs hidden until hovered.\A Can be re-enabled via Style Settings Plugin. \A\A🎨 ⚙️ Theme Customization available by installing the Style Settings Plugin.";
 
 	font-family: var(--menu-font-family);
 	font-size: 0.85rem;
@@ -3388,7 +3424,7 @@ body .community-plugin-info .community-plugin-downloads-text {
 	box-shadow: var(--muted-button-inset-shadow);
 
 	position: absolute;
-	top: 150px;
+	top: 130px;
 	right: 7%;
 	left: 7%;
 
@@ -3399,7 +3435,7 @@ body .community-plugin-info .community-plugin-downloads-text {
 }
 
 .community-theme.is-selected {
-	min-height: 330px;
+	min-height: 380px;
 	border-color: var(--interactive-border);
 }
 
@@ -3471,16 +3507,18 @@ body .community-plugin-info .community-plugin-downloads-text {
 .community-theme {
 	color: var(--text-normal);
 	background: var(--bg3);
-	box-shadow: var(--small-shadow), var(--muted-button-inset-shadow);
+	box-shadow: var(--muted-button-inset-shadow);
 	border-radius: calc(var(--roundish) * 2);
 }
 
-.community-theme {
-	border: 3px solid transparent;
+.community-theme.is-selected,
+.community-theme:hover {
+	padding: 12px 7px;
+	border: 3px solid var(--interactive-hover-border);
 }
 
-.community-theme:hover {
-	border-color: var(--interactive-hover-border);
+.community-theme.is-selected:not(:hover) {
+	border-color: var(--interactive-border);
 }
 
 .modal.mod-community-theme {
@@ -9258,13 +9296,19 @@ settings:
 	 id: hide-settings-button
 	 title: Hide Settings Button
 	 type: class-toggle
-	 description: "Hide the floating settings button. The settings can still be accessed by using the hotkey 'cmd + ,' on Mac or 'ctrl + ,' on Windows/Linux."
+	 description: "Hide the floating Settings button. The settings can still be accessed by using the hotkey 'cmd + ,' on Mac or 'ctrl + ,' on Windows/Linux."
+	 default: false
+	-
+	 id: show-sidebar-tabs
+	 title: Permanently show the Sidebar Tabs
+	 type: class-toggle
+	 description: Re-enable this to have a title bar, e.g. for moving the Obsidian window
 	 default: false
 	-
 	 id: show-titlebar
 	 title: Re-enable Title Bar
 	 type: class-toggle
-	 description: Re-enable this to have a title bar, e.g. for moving the Obsidian window
+	 description: Enable this to have a title bar, for example to move the Obsidian window
 	 default: false
 	-
 	 id: show-titlebar-text
