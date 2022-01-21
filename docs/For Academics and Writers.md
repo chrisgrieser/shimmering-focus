@@ -1,13 +1,13 @@
 ---
-nav_order: 2
+nav_order: 4
 ---
 
 # Writing & Academics
 
 ## For Academics
 - [Pandoc Citations](https://pandoc.org/MANUAL.html#citations-in-note-styles) (`[@citekey]`) and footnotes are visually emphasized.
-- Footnotes have [separate indicators in the gutter](#gutter-indicators).
-- The [built-in styling for Supercharged Links](#built-in-styling-for-supercharged-links) includes tooltips showing the literature note for popups.
+- Footnotes have [separate indicators in the gutter](Reading%20and%20Scanning#gutter-indicators).
+- The [built-in styling for Supercharged Links](Plugin%20Compatibility%20and%20Instructions.html#built-in-styling-for-supercharged-links) includes tooltips showing the literature note for popups.
 - The alt-text of images is used as caption text, in line with Pandoc's conversion behavior
 - The [Max View](#max-view--focus-view) is useful for displaying wide markdown tables.
 
