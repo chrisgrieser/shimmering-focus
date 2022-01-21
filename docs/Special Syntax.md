@@ -7,7 +7,7 @@ nav_order: 4
 ## Annotation Tags
 Type one of the following tags (e.g. `#definition`) to get a colored annotation tag. Also works in Edit Mode. Intended for Annotations when reading academic papers.
 
-![list-of-all-annotation-tags](assets/all-annotation-tags.png)
+![list-of-all-annotation-tags](images/all-annotation-tags.png)
 
 💡 To add your own annotation tags, [use this template](https://github.com/chrisgrieser/shimmering-focus/blob/main/CSS%20Snippets/annotation-tag-template.css).
 
