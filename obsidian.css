@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 1.689
+Version 1.690
 https://github.com/chrisgrieser/shimmering-focus/
 MIT License
 ─────────────────────────────────────────────────── */
@@ -7077,6 +7077,12 @@ body.plugin-sliding-panes-rotate-header .workspace > .mod-root > .workspace-leaf
 	border-left: none;
 }
 
+body.plugin-sliding-panes-rotate-header .view-header-title-container::BEFORE {
+	display: none;
+}
+
+/* body.plugin-sliding-panes-rotate-header .view-header-icon */
+
 body.plugin-sliding-panes-rotate-header .workspace > .mod-root > .workspace-leaf > .workspace-leaf-content > .view-header.view-header.view-header:hover {
 	border-color: var(--alt-accent);
 }
@@ -7085,18 +7091,20 @@ body.plugin-sliding-panes-rotate-header .workspace > .mod-root > .workspace-leaf
 	border-color: var(--text-accent);
 }
 
-body.plugin-sliding-panes-rotate-header .workspace > .mod-root > .workspace-leaf > .workspace-leaf-content > .view-header .view-actions,
 body.plugin-sliding-panes-rotate-header .workspace > .mod-root > .workspace-leaf > .workspace-leaf-content > .view-header .view-header-icon.view-header-icon {
-	margin: 8px 4px;
+	margin: 3px 5px 10px;
+}
+
+body.plugin-sliding-panes-rotate-header .workspace > .mod-root > .workspace-leaf > .workspace-leaf-content > .view-header .view-actions {
+	margin: 2px 5px;
+}
+
+body.plugin-sliding-panes-rotate-header .workspace > .mod-root > .workspace-leaf > .workspace-leaf-content > .view-header .view-action.view-action {
+	margin: 4px 0;
 }
 
 body.plugin-sliding-panes-rotate-header .workspace > .mod-root > .workspace-leaf > .workspace-leaf-content > .view-header > .view-header-title-container > .view-header-title.view-header-title {
-	padding: 0;
-}
-
-body.plugin-sliding-panes-rotate-header .workspace > .mod-root > .workspace-leaf > .workspace-leaf-content > .view-header .view-actions.view-actions {
-	margin-top: 2px;
-	margin-bottom: 2px;
+	padding: 0 0 0 3px;
 }
 
 /* ───────────────────────────────────────────────────
