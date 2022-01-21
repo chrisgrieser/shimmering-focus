@@ -1,3 +1,4 @@
+- 2022-01-21	patch
 - 2022-01-21	ncier animation for hidden sidebars
 - 2022-01-21	new cssclass: list-2-col-cards
 - 2022-01-21	notices in light mode darker
