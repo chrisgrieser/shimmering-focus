@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 1.694
+Version 1.695
 https://github.com/chrisgrieser/shimmering-focus/
 MIT License
 ─────────────────────────────────────────────────── */
@@ -2421,7 +2421,7 @@ body > .app-container .workspace-split.mod-horizontal > .workspace-tabs > .works
 
 /* tab buttons */
 .workspace-tabs .workspace-tab-header-container {
-	min-height: 39px;
+	height: 39px;
 	padding: 7px 11px 5px;
 	margin: 0;
 	border-bottom: var(--basic-border);
@@ -6470,7 +6470,6 @@ readability */
 .suggestion-container.mod-search-suggestion {
 	padding: 0;
 	border: var(--thin-border);
-	border-radius: var(--roundish);
 }
 
 .mod-macos .suggestion-container.mod-search-suggestion {
@@ -6518,7 +6517,7 @@ body .suggestion-item.search-suggest-item {
 	line-height: 1.3em;
 	padding: 4px 8px;
 	margin: 0;
-	border-radius: var(--roundish);
+	border-radius: 0;
 }
 
 /* "History" */
