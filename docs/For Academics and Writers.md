@@ -1,8 +1,8 @@
 ---
-nav_order: 4
+nav_order: 5
 ---
 
-# Writing & Academics
+# For Writers & Academics
 
 ## For Academics
 - [Pandoc Citations](https://pandoc.org/MANUAL.html#citations-in-note-styles) (`[@citekey]`) and footnotes are visually emphasized.

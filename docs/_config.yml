@@ -1,4 +1,4 @@
-title: Shimmering Obsidian
+title: ⟡
 remote_theme: pmarsceill/just-the-docs
 color_scheme: "dark"
 
@@ -10,13 +10,7 @@ heading_anchors: true
 back_to_top: true
 back_to_top_text: "Back to top"
 
-footer_content: ""
-
-gh_edit_link: true # show or hide edit this page link
-gh_edit_link_text: "Edit on GitHub"
-gh_edit_repository: "https://github.com/chrisgrieser/shimmering-obsidian" # the github URL for your repo
-gh_edit_branch: "master" # the branch that your docs is served from
-gh_edit_source: docs # the source that your files originate from
+footer_content: "Created by @pseudometa aka Chris Grieser. MIT License."
 
 search:
   # Split pages into sections that can be searched individually
@@ -24,7 +18,7 @@ search:
   heading_level: 2
   # Maximum amount of previews per search result
   # Default: 3
-  previews: 3
+  previews: 4
   # Maximum amount of words to display before a matched word in the preview
   # Default: 5
   preview_words_before: 5
