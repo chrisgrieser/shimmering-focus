@@ -1,4 +1,4 @@
-- 2022-01-21	patch
+- 2022-01-21	hide sidebar tabs until hovered
 - 2022-01-21	fixes for theme browser
 - 2022-01-21	new cssclass: dataview-no-task-links
 - 2022-01-21	cleaner search suggestion box

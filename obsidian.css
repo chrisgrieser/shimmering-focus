@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 1.701
+Version 1.702
 https://github.com/chrisgrieser/shimmering-focus/
 MIT License
 ─────────────────────────────────────────────────── */
@@ -3406,10 +3406,10 @@ body .community-plugin-info .community-plugin-downloads-text {
 
 /* Infobox */
 .community-theme.is-selected .community-theme-info::AFTER {
-	content: "⚠️ Sidebar Tabs hidden until hovered.\A Can be re-enabled via Style Settings Plugin. \A\A🎨 ⚙️ Theme Customization available by installing the Style Settings Plugin.";
+	content: "⚙️ Theme Customization available by installing the Style Settings Plugin. \A\A⚠️ Sidebar Tabs now hidden until hovered. (Show perma- nently via Style Settings.)";
 
 	font-family: var(--menu-font-family);
-	font-size: 0.85rem;
+	font-size: 0.8rem;
 	line-height: 1.3rem;
 	letter-spacing: 0.3px;
 	text-align: start;
@@ -3420,18 +3420,18 @@ body .community-plugin-info .community-plugin-downloads-text {
 	box-shadow: var(--muted-button-inset-shadow);
 
 	position: absolute;
-	top: 130px;
+	top: 140px;
 	right: 7%;
 	left: 7%;
 
-	padding: 8px 8px 12px 14px;
+	padding: 4px 8px 8px;
 
 	border: var(--basic-border);
 	border-radius: var(--roundish);
 }
 
 .community-theme.is-selected {
-	min-height: 380px;
+	min-height: 360px;
 	border-color: var(--interactive-border);
 }
 
