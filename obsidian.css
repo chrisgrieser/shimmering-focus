@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 1.700
+Version 1.701
 https://github.com/chrisgrieser/shimmering-focus/
 MIT License
 ─────────────────────────────────────────────────── */
@@ -3405,10 +3405,6 @@ body .community-plugin-info .community-plugin-downloads-text {
 }
 
 /* Infobox */
-.community-theme {
-	--infobox-space: 300px;
-}
-
 .community-theme.is-selected .community-theme-info::AFTER {
 	content: "⚠️ Sidebar Tabs hidden until hovered.\A Can be re-enabled via Style Settings Plugin. \A\A🎨 ⚙️ Theme Customization available by installing the Style Settings Plugin.";
 
@@ -3509,6 +3505,11 @@ body .community-plugin-info .community-plugin-downloads-text {
 	background: var(--bg3);
 	box-shadow: var(--muted-button-inset-shadow);
 	border-radius: calc(var(--roundish) * 2);
+}
+
+.community-theme {
+	padding: 13px 8px;
+	border: 2px solid var(--basic-border-color);
 }
 
 .community-theme.is-selected,
