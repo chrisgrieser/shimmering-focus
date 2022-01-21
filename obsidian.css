@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 1.703
+Version 1.704
 https://github.com/chrisgrieser/shimmering-focus/
 MIT License
 ─────────────────────────────────────────────────── */
@@ -328,7 +328,7 @@ the .create-ToC.sh.
 	--bg3: hsl(var(--light-hue) var(--sat-light-3) var(--b-light-3));
 
 	--header-bg: hsl(var(--light-hue) calc(var(--sat-light-3) * 1.1) calc(var(--b-light-2) - 2%));
-	--notice-bg: hsl(var(--light-hue) calc(var(--sat-light-3) * 0.8) calc(var(--b-light-1) + 4%));
+	--notice-bg: hsl(var(--light-hue) calc(var(--sat-light-3) * 0.8) calc(var(--b-light-3) + 3%));
 	--resize-handle-color: hsl(var(--light-hue) var(--sat-light-2) calc(var(--b-light-2) - 1%));
 	--suggester-b-row: hsl(var(--light-hue) var(--sat-light-2) calc(var(--b-light-1) - 3%));
 	--muted-border-color: hsl(var(--light-hue) var(--sat-light-3) calc(var(--b-light-3) + 3%));
@@ -1537,14 +1537,9 @@ body:not(.is-mobile):not(.plugin-sliding-panes-rotate-header) .view-header:focus
 	border-bottom: 2px solid var(--text-accent) !important;
 }
 
-.view-header-icon:hover,
-.view-action:hover svg {
-	color: var(--alt-accent) !important;
-}
-
-.view-header-icon:active,
-.view-action:active svg {
-	color: var(--text-accent) !important;
+.view-header.view-header .view-header-icon:hover,
+.view-header.view-header .view-action:hover svg {
+	color: var(--alt-accent);
 }
 
 /* ───────────────────────────────────────────────────

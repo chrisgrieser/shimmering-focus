@@ -1,3 +1,4 @@
+- 2022-01-21	notices in light mode darker
 - 2022-01-21	fade out pane when working on header
 - 2022-01-21	hide sidebar tabs until hovered
 - 2022-01-21	fixes for theme browser
