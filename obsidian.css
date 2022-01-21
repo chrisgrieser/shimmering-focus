@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 1.691
+Version 1.692
 https://github.com/chrisgrieser/shimmering-focus/
 MIT License
 ─────────────────────────────────────────────────── */
@@ -234,7 +234,7 @@ the .create-ToC.sh.
 	--interactive-border: var(--accent-lighterer);
 	--interactive-hover-bg: var(--alt-accent-lighterer);
 	--interactive-hover-border: var(--alt-accent-lighter);
-	--scrollbar-bg-hover: var(--alt-accent-lighterer);
+	--scrollbar-bg-hover: var(--alt-accent-lighter);
 	--scrollbar-bg-active: var(--accent-lighterer);
 
 	--finished-task: var(--accent-lighter);
@@ -516,14 +516,13 @@ body.theme-dark {
 ─────────────────────────────────────────────────── */
 
 :root {
-	--resize-handle-color-thickness: 3px;
-	--resize-handle-color-hovered-thickness: 6px;
+	--resize-handle-thickness: 3px;
+	--resize-handle-hovered-thickness: 6px;
 	--scrollbar-thickness: 8px;
 	--image-size: 50;
 	--pdf-size: 50vh;
 	--popover-size: 350;
 	--inactive-pane-opacity: 75%;
-	--tooltip-arrow-length: 10px;
 	--readable-length: 700px;
 
 	--signature: "⟡";
@@ -1403,33 +1402,11 @@ body:not(.show-titlebar) .workspace-ribbon-collapse-btn {
 	border-radius: var(--roundish);
 
 	word-wrap: break-word;
-	--tooltip-arrow: var(--tooltip-arrow-length) solid var(--notice-bg);
 }
 
-.tooltip .tooltip-arrow {
+.tooltip-arrow {
 	display: none;
 }
-
-/* .tooltip .tooltip-arrow {
-	margin-top: calc(-1 * var(--tooltip-arrow-length) + 5px);
-	border-bottom: var(--tooltip-arrow);
-}
-
-.tooltip.mod-right .tooltip-arrow {
-	margin-top: 0;
-	margin-left: calc(-1 * var(--tooltip-arrow-length));
-	border-right: var(--tooltip-arrow);
-}
-
-.tooltip.mod-left .tooltip-arrow {
-	margin-top: 0;
-	border-left: var(--tooltip-arrow);
-}
-
-.tooltip.mod-top .tooltip-arrow {
-	margin-top: 0;
-	border-top: var(--tooltip-arrow);
-} */
 
 /* ───────────────────────────────────────────────────
 << Notices (Notifications)
@@ -2544,32 +2521,32 @@ body .app-container .workspace-split > .workspace-leaf-resize-handle {
 
 /* fix for the background not shining through */
 .mod-left-split .workspace-tabs {
-	padding-right: var(--resize-handle-color-thickness);
+	padding-right: var(--resize-handle-thickness);
 }
 
 .workspace-split.mod-horizontal > .workspace-leaf-resize-handle {
-	width: var(--resize-handle-color-thickness);
+	width: var(--resize-handle-thickness);
 }
 
 .workspace-split.mod-horizontal > * > .workspace-leaf-resize-handle {
-	height: var(--resize-handle-color-thickness);
+	height: var(--resize-handle-thickness);
 }
 
 .workspace-split.mod-horizontal > .workspace-leaf-resize-handle:hover {
-	width: var(--resize-handle-color-hovered-thickness);
+	width: var(--resize-handle-hovered-thickness);
 }
 
 .workspace-split.mod-horizontal > .workspace-leaf > .workspace-leaf-resize-handle:hover,
 .workspace-split.mod-horizontal > .workspace-tabs > .workspace-leaf-resize-handle:hover {
-	height: var(--resize-handle-color-hovered-thickness);
+	height: var(--resize-handle-hovered-thickness);
 }
 
-/* coloring */
-body .workspace-leaf-resize-handle:active {
+/* hover */
+body div.app-container .workspace-leaf-resize-handle:active {
 	background-color: var(--scrollbar-bg-active);
 }
 
-.workspace-leaf-resize-handle:hover {
+body .app-container .workspace-leaf-resize-handle:hover {
 	background-color: var(--scrollbar-bg-hover);
 }
 
@@ -7081,7 +7058,9 @@ body.plugin-sliding-panes-rotate-header .view-header-title-container::BEFORE {
 	display: none;
 }
 
-/* body.plugin-sliding-panes-rotate-header .view-header-icon */
+.plugin-sliding-panes-rotate-header .mod-left-split > .workspace-leaf-resize-handle {
+	background-color: var(--basic-border-color);
+}
 
 body.plugin-sliding-panes-rotate-header .workspace > .mod-root > .workspace-leaf > .workspace-leaf-content > .view-header.view-header.view-header:hover {
 	border-color: var(--alt-accent);

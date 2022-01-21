@@ -1,3 +1,4 @@
+- 2022-01-21	fixes for resize handle
 - 2022-01-21	fix #94
 - 2022-01-21	fix #49 and small improvements for sliding pane rotated headers
 - 2022-01-20	make floating button on mobile compatible header plugin
