@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 1.695
+Version 1.696
 https://github.com/chrisgrieser/shimmering-focus/
 MIT License
 ─────────────────────────────────────────────────── */
@@ -1205,8 +1205,9 @@ body:not(.show-titlebar) .titlebar {
 }
 
 /* fix for macOS Traffic Lights */
-body.mod-macos:not(.show-titlebar) .workspace-split.mod-left-split .workspace-tabs:nth-child(3) {
-	padding-top: var(--mac-traffic-light-padding);
+.mod-macos:not(.show-titlebar) .mod-left-split .workspace-tabs:nth-child(3) .workspace-tab-header-container {
+	height: calc(var(--mac-traffic-light-padding) + 37px);
+	padding-top: calc(var(--mac-traffic-light-padding) + 5px);
 }
 
 /* when left sidebar is collapsed, move header to the right */
@@ -5127,16 +5128,12 @@ pre[class~="language-as"]::AFTER { content: "AppleScript"; }
 ─────────────────────────────────────────────────── */
 
 /* less indention to save space */
+.markdown-preview-view .block-language-dataviewjs > div > ul,
 .markdown-preview-view > div > div > div > ul.dataview.list-view-ul,
 .markdown-preview-view > div > div > ol,
 .markdown-preview-view > div > div > ul {
 	padding-left: 1rem;
 }
-
-/* .mod-cm6 .cm-content .list-bullet::after {
-		color: var(--text-normal);
-		content: "⦿";
-} */
 
 /* ───────────────────────────────────────────────────
 << Bullet Point Relationship Lines
@@ -5854,6 +5851,12 @@ body:not(.no-fn-indicator) .mod-cm6 .cm-hmd-barelink:not(.cm-formatting-link) + 
 .markdown-preview-view.dataview-list-in-table table.dataview > thead > tr > th,
 .markdown-preview-view.dataview-list-in-table table.dataview > tbody > tr > td {
 	border-left: none;
+}
+
+/* dataview no task links */
+.dataview-no-task-links .block-language-dataview .contains-task-list .data-link-icon,
+.dataview-no-task-links .block-language-dataviewjs .contains-task-list .data-link-icon {
+	display: none;
 }
 
 /* ───────────────────────────────────────────────────
