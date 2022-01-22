@@ -9,12 +9,12 @@ back_to_top_text: "Back to top"
 
 footer_content: "Created by <a href=\"https://github.com/chrisgrieser/\">@pseudometa</a> aka <a href=\"https://chris-grieser.de/\">Chris Grieser</a>. <a href=\"https://github.com/chrisgrieser/shimmering-focus/blob/main/LICENSE\">MIT License</a>."
 
-gh_edit_link: false # show or hide edit this page link
-# gh_edit_link_text: "Edit this page on GitHub"
-# gh_edit_repository: "https://github.com/chrisgrieser/shimmering-focus" # the github URL for your repo
-# gh_edit_branch: "main" # the branch that your docs is served from
-# gh_edit_source: docs # the source that your files originate from
-# gh_edit_view_mode: "edit" # "tree" or "edit" if you want the user to jump into the editor immediately
+gh_edit_link: true # show or hide edit this page link
+gh_edit_link_text: "Edit this page on GitHub"
+gh_edit_repository: "https://github.com/chrisgrieser/shimmering-focus" # the github URL for your repo
+gh_edit_branch: "main" # the branch that your docs is served from
+gh_edit_source: docs # the source that your files originate from
+gh_edit_view_mode: "edit" # "tree" or "edit" if you want the user to jump into the editor immediately
 
 search_enabled: true
 search:
