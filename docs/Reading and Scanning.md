@@ -10,7 +10,7 @@ To increase the scannability of long notes, the presence of some easy-to-miss el
 - Search Result Matches (Source Mode & Live Preview only)
 - Unresolved Links (Preview Mode only)
 
-![](https://user-images.githubusercontent.com/73286100/147931964-d5e5d309-d821-4fa1-86c1-4a8952a249d3.png){: width=60% }
+![](https://user-images.githubusercontent.com/73286100/147931964-d5e5d309-d821-4fa1-86c1-4a8952a249d3.png){: width="250" }
 
 ## Features related to Readability
 - Brightness and line length are both adjustable via [Style Settings Plugin](https://github.com/mgmeyers/obsidian-style-settings/).
