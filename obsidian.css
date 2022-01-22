@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 1.718
+Version 1.719
 https://github.com/chrisgrieser/shimmering-focus/
 MIT License
 ─────────────────────────────────────────────────── */
@@ -475,7 +475,7 @@ body.theme-dark {
 	--big-shadow: 4px 6px var(--shadow-blur) calc(var(--shadow-base-size) + 10px) var(--shadow-color);
 	--medium-shadow: 4px 6px var(--shadow-blur) calc(var(--shadow-base-size) + 5px) var(--shadow-color);
 	--small-shadow: 1px 3px var(--shadow-blur) calc(var(--shadow-base-size) + 0px) var(--shadow-color);
-	--tiny-shadow: 0.5px 1.5px var(--shadow-blur) calc(var(--shadow-base-size) / 2) var(--shadow-color);
+	--tiny-shadow: 0.5px 1px var(--shadow-blur) calc(var(--shadow-base-size) / 2) var(--shadow-color);
 }
 
 /* <<< Inset Shadow */
