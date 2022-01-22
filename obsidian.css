@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 1.720
+Version 1.721
 https://github.com/chrisgrieser/shimmering-focus/
 MIT License
 ─────────────────────────────────────────────────── */
@@ -9262,7 +9262,7 @@ body .cm-matched-string {
 }
 
 /* for parent line highlights */
-.cm-line:not(.HyperMD-codeblock):not(.HyperMD-quote):not(.HyperMD-footnote):(.HyperMD-table-row) {
+.cm-line:not(.HyperMD-codeblock):not(.HyperMD-quote):not(.HyperMD-footnote):not(.HyperMD-table-row) {
 	border-radius: var(--roundish);
 }
 
