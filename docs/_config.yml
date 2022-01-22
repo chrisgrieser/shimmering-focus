@@ -2,7 +2,7 @@ title: Shimmering Focus ⟡
 remote_theme: pmarsceill/just-the-docs
 color_scheme: "dark"
 
-permalink: /:categories
+permalink: /:slug
 
 heading_anchors: true
 
