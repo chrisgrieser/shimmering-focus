@@ -1,5 +1,5 @@
 ---
-title: Get Started
+title: Home
 nav_order: 1
 description: "A minimalistic [Obsidian](https://obsidian.md/) theme focused on readability and condensed information display."
 ---
