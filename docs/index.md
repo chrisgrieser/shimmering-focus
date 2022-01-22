@@ -19,9 +19,10 @@ A minimalistic [Obsidian](https://obsidian.md/) theme focused on readability and
 
 ## Installation
 You can find *Shimmering Focus* in Obsidian's community themes browser under  
-`Obsidian Settings ➞ Appearance ➞ Themes ➞ Manage`
+`Obsidian Settings ➞ Appearance: Themes ➞ Manage`
 
 ## Donations
-🙏 Thank you!
 - [PayPal](https://www.paypal.com/paypalme/ChrisGrieser)
 - [Ko-Fi](https://ko-fi.com/pseudometa)
+
+🙏 Thank you!
