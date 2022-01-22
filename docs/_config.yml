@@ -3,13 +3,11 @@ remote_theme: pmarsceill/just-the-docs
 color_scheme: "dark"
 
 permalink: pretty
-
 heading_anchors: true
-
 back_to_top: true
 back_to_top_text: "Back to top"
 
-footer_content: "Created by @pseudometa aka <a href=\"https://chris-grieser.de/\">Chris Grieser</a>. <a href=\"https://github.com/chrisgrieser/shimmering-focus/blob/main/LICENSE\">MIT License</a>."
+footer_content: "Created by <a href=\"https://github.com/chrisgrieser/\">@pseudometa</a> aka <a href=\"https://chris-grieser.de/\">Chris Grieser</a>. <a href=\"https://github.com/chrisgrieser/shimmering-focus/blob/main/LICENSE\">MIT License</a>."
 
 search_enabled: true
 search:
