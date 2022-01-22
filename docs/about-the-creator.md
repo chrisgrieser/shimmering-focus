@@ -14,9 +14,4 @@ In my day job, I am a sociologist studying the social mechanisms underlying the 
 - [LinkedIn](https://www.linkedin.com/in/christopher-grieser-ba693b17a/)
 
 ## Other themes
-I also designed some [themes for Alfred](https://github.com/chrisgrieser/alfred-themes) you can check out.
-
-## Donations
-Donations are welcome. Thanks a lot! 🙏
-- [PayPal](https://www.paypal.com/paypalme/ChrisGrieser) 
-- [Ko-Fi](https://ko-fi.com/pseudometa)
+I also designed some [themes for Alfred](https://github.com/chrisgrieser/alfred-themes) you can check out!

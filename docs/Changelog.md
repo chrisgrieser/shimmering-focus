@@ -5,6 +5,11 @@ nav_order: 110
 # Changelog
 
 - 2022-01-22	patch
+- 2022-01-22	better icons for docs
+- 2022-01-22	added icons
+- 2022-01-22	pretty permalinks
+- 2022-01-22	info to improve the docs
+- 2022-01-22	update mobile docs
 - 2022-01-22	favicon setup
 - 2022-01-22	added favicon
 - 2022-01-22	sluggified urls

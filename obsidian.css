@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 1.717
+Version 1.718
 https://github.com/chrisgrieser/shimmering-focus/
 MIT License
 ─────────────────────────────────────────────────── */
@@ -3442,7 +3442,7 @@ body .community-plugin-info .community-plugin-downloads-text {
 
 /* Infobox */
 .community-theme.is-selected .community-theme-info::AFTER {
-	content: "⚙️ Theme Customization available by installing the Style Settings Plugin. \A\A⚠️ Sidebar Tabs now hidden until hovered. (Show perma- nently via Style Settings.)";
+	content: "🆕 Theme Docs:\A chrisgrieser.github.io\A/shimmering-focus \A\A⚠️ Sidebar Tabs now hidden until hovered. (Show perma- nently via Style Settings.)";
 
 	font-family: var(--menu-font-family);
 	font-size: 0.8rem;
