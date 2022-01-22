@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 1.722
+Version 1.723
 https://github.com/chrisgrieser/shimmering-focus/
 MIT License
 ─────────────────────────────────────────────────── */
@@ -5067,15 +5067,15 @@ body .markdown-preview-view pre {
 }
 
 /* border on top created like this, since the
-::after element cannot be moved on a border */
+::after element cannot be moved beyond a border */
 /* needs CM6 as condition, since every line in
 CM5 has the "pre" type */
 .mod-cm6 + .markdown-reading-view pre[class*="language-"]::BEFORE {
 	display: block;
 	content: " ";
 	background-color: var(--bg3);
-	border-top-right-radius: var(--codeblock-roundness);
-	border-top-left-radius: var(--codeblock-roundness);
+	border-top-right-radius: calc(var(--codeblock-roundness) * 0.8);
+	border-top-left-radius: calc(var(--codeblock-roundness) * 0.8);
 }
 
 /* code block without language */
@@ -5136,7 +5136,7 @@ pre[class*="language-"]::AFTER {
 
 	position: absolute;
 	top: 2px;
-	right: 4px;
+	right: 6px;
 }
 
 /* CM5: move positioning back */
@@ -5177,6 +5177,8 @@ pre[class~="language-url"]::AFTER { content: "url"; }
 pre[class~="language-uri"]::AFTER { content: "uri"; }
 pre[class~="language-applescript"]::AFTER { content: "AppleScript"; }
 pre[class~="language-as"]::AFTER { content: "AppleScript"; }
+pre[class~="language-markdown"]::AFTER { content: "Markdown"; }
+pre[class~="language-md"]::AFTER { content: "Markdown"; }
 
 /* fix for the buggy selection of inline text */
 /* https://forum.obsidian.md/t/inline-code-occludes-text-selection-and-vim-cursor/11552/10 */
