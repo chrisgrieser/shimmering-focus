@@ -2,12 +2,11 @@
 nav_order: 102
 ---
 
-# Plugin Compatibility & Instructions
+# Plugin-Specific Features
 
 <!-- MarkdownTOC -->
 
 - [List of Compatible Plugins](#list-of-compatible-plugins)
-- [Custom Checkboxes](#custom-checkboxes)
 - [Instructions for specific Plugins](#instructions-for-specific-plugins)
 - [Built-in Styling for Supercharged Links](#built-in-styling-for-supercharged-links)
 
@@ -18,9 +17,6 @@ nav_order: 102
 
 ➡️ [Full list of compatible plugins.](https://publish.obsidian.md/hub/02+-+Community+Expansions/02.05+All+Community+Expansions/Themes/Shimmering+Focus#Plugin+Compatibility+1)
 
-## Custom Checkboxes
-The theme is *mostly* compatible with [custom checkboxes by SlRvb](https://publish.obsidian.md/hub/02+-+Community+Expansions/02.05+All+Community+Expansions/CSS+Snippets/Alternate+Checkboxes+(SlRvb).md) by adding this [compatibility snippet](https://github.com/chrisgrieser/shimmering-focus/blob/main/CSS%20Snippets/slvrb-checkboxes-compatibility.css).
-
 ## Instructions for specific Plugins
 In accordance with the minimalistic philosophy of the theme, unnecessary UI elements of some plugins have also been removed. However, you can still access the full plugin functionality.
 
@@ -29,7 +25,7 @@ In accordance with the minimalistic philosophy of the theme, unnecessary UI elem
 - __Supercharged Links__: The theme includes [various built-in styling](#built-in-styling-for-supercharged-links). You can turn those of with the Style Settings plugin.
 - __Breadcrumbs__: Even with buttons removed, you can still refresh the index via Command Palette. When Supercharged Links is installed, [hovering over a link with the `up` yaml field](#built-in-styling-for-supercharged-links) displays the content of that field.
 - __Quick Explorer__: Re-enable the title bar with the [Style Settings Plugin](https://github.com/mgmeyers/obsidian-style-settings/) for the breadcrumbs
-- __Dataview__: If the table lines are off, use the [`dataview-list-in-table` CSS Classes](#css-classes)
+- __Dataview__: Check out the [dataview-specific CSS classes](css-classes#dataview).
 - __Ozan's Image in Editor__: Image Sizes are affected by the Image Settings & by the Max View Feature.
 - __Sliding Panes__: As long as you are using `rotated headers`, the header is permanently shown.
 - __Recent Files__: The active File is deliberately hidden, because, well it isn't recent yet?

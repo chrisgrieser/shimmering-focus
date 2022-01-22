@@ -81,8 +81,9 @@ body:
         - Dataview
         - Ozan's Image in Editor
         - Starred (Core Plugin)
+        - Recent Files
       options:
-        - label: I took note of the [specific instructions regarding those plugins](https://chrisgrieser.github.io/shimmering-focus/Plugin%20Compatibility%20&%20Instructions/).
+        - label: I took note of the [specific instructions regarding those plugins](https://chrisgrieser.github.io/shimmering-focus/plugin-specific-features/#instructions-for-specific-plugins).
   - type: checkboxes
     id: checklist
     attributes:
