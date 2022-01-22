@@ -1,4 +1,3 @@
-# Shimmering Focus ⟡
 
 A minimalistic [Obsidian](https://obsidian.md/) theme focused on readability and condensed information display.
 
