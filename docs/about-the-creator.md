@@ -10,3 +10,6 @@ In my day job, I am a sociologist studying the social mechanisms underlying the 
 
 ## Donations
 Donations are welcome via [PayPal](https://www.paypal.com/paypalme/ChrisGrieser) or [Ko-Fi](https://ko-fi.com/pseudometa). 🙏
+
+## Other themes
+I also designed some [themes for Alfred](https://github.com/chrisgrieser/alfred-themes) you can check out.
