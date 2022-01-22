@@ -27,6 +27,6 @@ nav_order: 2
 - Set a default image size with the Style Settings Plugin.
 - You can also use [Max View](#max-view--focus-view) to toggle between reduced and full image sizes.
 
-![](https://user-images.githubusercontent.com/73286100/147931964-d5e5d309-d821-4fa1-86c1-4a8952a249d3.png)
+![](https://user-images.githubusercontent.com/73286100/147931964-d5e5d309-d821-4fa1-86c1-4a8952a249d3.png){: width=60% }
 
 [^1]: Requires the `Readable line length` editor setting to be enabled.
