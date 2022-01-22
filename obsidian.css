@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 1.721
+Version 1.722
 https://github.com/chrisgrieser/shimmering-focus/
 MIT License
 ─────────────────────────────────────────────────── */
@@ -5398,6 +5398,7 @@ body:not(.annotation-tags-off) .cm-s-obsidian .cm-line span.cm-tag-example {
 	font-weight: 900;
 	font-style: normal;
 	text-decoration: none;
+	white-space: nowrap;
 
 	color: var(--annotation-tag-font-color);
 
