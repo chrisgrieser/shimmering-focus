@@ -1,10 +1,11 @@
 ---
 title: Home
+nav_order: 1
 ---
 
 A minimalistic [Obsidian](https://obsidian.md/) theme focused on readability and condensed information display.
 
-![](https://img.shields.io/badge/downloads-11710-6E4E9B?style=plastic) ![](https://img.shields.io/github/last-commit/chrisgrieser/shimmering-focus?style=plastic) [![](https://img.shields.io/badge/changelog-click%20here-FFE800?style=plastic)](Changelog)
+![](https://img.shields.io/badge/downloads-11710-6E4E9B?style=plastic) ![](https://img.shields.io/github/last-commit/chrisgrieser/shimmering-focus?style=plastic)
 
 ![Promo Screenshot](images/Promo%20Screenshot/promo-screenshot.png)
 
