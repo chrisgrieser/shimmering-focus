@@ -20,14 +20,16 @@ stylelint --fix "$csspath"
 cp "$csspath" ./obsidian.css
 
 # Copy .stylelintrc for documentation purposes
-cp ~/.stylelintrc.json ./
+cp ~/.stylelintrc.json ./scripts/
 
 # Update Theme Download numbers in README.md
 dl=$(curl -s "https://releases.obsidian.md/stats/theme" | grep -oe '"Shimmering Focus","download":[[:digit:]]*' | cut -d: -f2)
 sed -E -i '' "s/badge.*-[[:digit:]]+-/badge\/downloads-$dl-/" README.md
+sed -E -i '' "s/badge.*-[[:digit:]]+-/badge\/downloads-$dl-/" docs/README.md
 
 # Update changelog
-echo "- "$(date +"%Y-%m-%d")"	$commitMsg" > ./Changelog.md
+echo "---\nnav_order: 110\n---\n\n" > ./docs/Changelog.md
+echo "- "$(date +"%Y-%m-%d")"	$commitMsg" >> ./docs/Changelog.md
 git log --pretty=format:"- %ad%x09%s" --date=short | grep -Ev "minor$" | grep -Ev "patch$" | grep -Ev "typos?$" | grep -v "refactoring" | grep -v "Add files via upload" | grep -Ev "\tDelete" | grep -Ev "\tUpdate.*\.md" | sed -E "s/\t\+ /\t/g" >> ./Changelog.md
 
 # Bump version number
@@ -39,7 +41,5 @@ sed -E -i '' "${versionLine}s/(.*\.)[[:digit:]]+/\1$nextVersion/" "$csspath"
 # add to git
 git add -A
 git commit -m "$commitMsg"
-
 git pull
-
 echo -n | git push  #pass for notification
