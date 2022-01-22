@@ -2,7 +2,7 @@ title: Shimmering Focus ⟡
 remote_theme: pmarsceill/just-the-docs
 color_scheme: "dark"
 
-# permalink: pretty
+permalink: pretty #removed ".html" and stuff, permalinks are based on filenames per default.
 heading_anchors: true
 back_to_top: false
 back_to_top_text: "Back to top"
