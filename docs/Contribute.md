@@ -8,9 +8,9 @@ nav_order: 103
 
 This documentation is still quite new. Found a dead link or typo? Reports are welcome!
 
-I am still new to creating proper documentation sites. This one simply uses GitHub pages with Jekyll and the [Just the Docs theme](https://github.com/pmarsceill/just-the-docs). If you have more knowledge about website building and would like to help me out, feel free to get in touch. 🤗
-
 [Report Issue with Documentation](https://github.com/chrisgrieser/shimmering-focus/issues/new?assignees=&labels=documentation&template=documentation_fix.yml&title=%5BDocs%5D%3A+){: .btn .btn-primary .fs-4 .mb-4 .mb-md-0 .mr-2 }
+
+I am still new to creating proper documentation sites. This one simply uses GitHub pages with Jekyll and the [Just the Docs theme](https://github.com/pmarsceill/just-the-docs). If you have more knowledge about website building and would like to help me out, feel free to get in touch. 🤗
 
 ## Contribute CSS Snippets
 The following types of CSS snippets are self-contained and relatively easy to contribute:
