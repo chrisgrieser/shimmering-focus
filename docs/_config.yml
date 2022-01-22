@@ -2,16 +2,16 @@ title: Shimmering Focus ⟡
 remote_theme: pmarsceill/just-the-docs
 color_scheme: "dark"
 
-search_enabled: true
+permalink: /:categories
 
-permalink: slug
 heading_anchors: true
 
 back_to_top: true
 back_to_top_text: "Back to top"
 
-footer_content: "Created by @pseudometa aka Chris Grieser. MIT License."
+footer_content: "Created by @pseudometa aka [Chris Grieser](https://chris-grieser.de/). [MIT License](https://github.com/chrisgrieser/shimmering-focus/blob/main/LICENSE)"
 
+search_enabled: true
 search:
   # Split pages into sections that can be searched individually
   # Supports 1 - 6, default: 2
