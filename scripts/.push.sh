@@ -30,7 +30,7 @@ sed -E -i '' "s/badge.*-[[:digit:]]+-/badge\/downloads-$dl-/" docs/README.md
 # Update changelog
 echo "---\nnav_order: 110\n---\n\n" > ./docs/Changelog.md
 echo "- "$(date +"%Y-%m-%d")"	$commitMsg" >> ./docs/Changelog.md
-git log --pretty=format:"- %ad%x09%s" --date=short | grep -Ev "minor$" | grep -Ev "patch$" | grep -Ev "typos?$" | grep -v "refactoring" | grep -v "Add files via upload" | grep -Ev "\tDelete" | grep -Ev "\tUpdate.*\.md" | sed -E "s/\t\+ /\t/g" >> ./Changelog.md
+git log --pretty=format:"- %ad%x09%s" --date=short | grep -Ev "minor$" | grep -Ev "patch$" | grep -Ev "typos?$" | grep -v "refactoring" | grep -v "Add files via upload" | grep -Ev "\tDelete" | grep -Ev "\tUpdate.*\.md" | sed -E "s/\t\+ /\t/g" >> ./docs/Changelog.md
 
 # Bump version number
 versionLine=$(egrep -wn "^Version" "$csspath" | cut -d: -f1 | head -n1)
