@@ -1,5 +1,5 @@
 ---
-title: Home
+title: 🏠 Home
 nav_order: 1
 ---
 
@@ -15,14 +15,8 @@ A minimalistic [Obsidian](https://obsidian.md/) theme focused on readability and
 
 ---
 
-![Promo Screenshot](images/Promo%20Screenshot/promo-screenshot.png)
-
 ## Installation
 You can find *Shimmering Focus* in Obsidian's community themes browser under  
 `Obsidian Settings ➞ Appearance: Themes ➞ Manage`
 
-## Donations
-- [PayPal](https://www.paypal.com/paypalme/ChrisGrieser)
-- [Ko-Fi](https://ko-fi.com/pseudometa)
-
-🙏 Thank you!
+![Promo Screenshot](images/Promo%20Screenshot/promo-screenshot.png)

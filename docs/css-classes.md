@@ -2,7 +2,7 @@
 nav_order: 6
 ---
 
-# CSS Classes
+# 📜 CSS Classes
 Add a cssclass to your yaml front matter to activate specific styling of the note in Preview Mode. 
 
 ```yaml

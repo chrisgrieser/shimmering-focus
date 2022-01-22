@@ -2,7 +2,7 @@
 nav_order: 9
 ---
 
-# 📱 Mobile Features
+# 📱 Mobile
 
 - Setting to define a mobile-specific font size
 - To save precious mobile space, the header is replaced with a floating button that toggles between Reading and Editing Mode.

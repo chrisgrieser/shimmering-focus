@@ -2,7 +2,7 @@
 nav_order: 101
 ---
 
-# 🛠 Theme Settings
+# 🪛 Theme Settings
 
 ## Style Settings
 This themes supports dozens of customization options via the [Style Settings Plugin](https://github.com/mgmeyers/obsidian-style-settings/). 

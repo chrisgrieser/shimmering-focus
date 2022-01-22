@@ -2,7 +2,7 @@
 nav_order: 104
 ---
 
-# Troubleshooting
+# 🆘 Troubleshooting
 - Make sure that the issue is related to this theme, by checking that the problem does not occur with other themes or the default theme.
 - If you made sure that the issue is related to the theme, create an issue at GitHub by pressing the button below.
 

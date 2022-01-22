@@ -2,7 +2,7 @@
 nav_order: 103
 ---
 
-# Contribute
+# 👨‍👩‍👧‍👦 Contribute
 
 ## Improve the Documentation
 
