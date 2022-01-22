@@ -2,7 +2,7 @@
 nav_order: 2
 ---
 
-# Core Features
+# 🌟 Core Features
 
 <!-- MarkdownTOC -->
 
@@ -20,6 +20,8 @@ nav_order: 2
 - The YAML frontmatter in Preview Mode is not removed by this theme, since you can already disable it with the native Obsidian settings under `Settings ➞ Editor ➞ Show Frontmatter`.
 
 ![header bar visible on hover](https://user-images.githubusercontent.com/73286100/131692972-e523f2d4-40c7-452c-83ac-a7f2fbd546ae.gif)
+
+![sidebar tabs visible on hover](hidden-tab-sidebars.gif)
 
 ## Max View & Focus View
 - __Max View__ *(disabled by default)*: When the *left* sidebar is hidden, line length is extended to full length, and images & PDFs are expanded to full width. Readable line length and smaller image & PDF size are re-applied when the left sidebar is shown again. This is useful when dealing with big tables or many images. To enable *Max View* or adjust the size of images & PDFs, use the [Style Settings Plugin](https://github.com/mgmeyers/obsidian-style-settings/).

@@ -2,7 +2,7 @@
 nav_order: 6
 ---
 
-# Color & Aesthetics
+# 🎨 Color & Aesthetics
 
 - Theme colors are easily customizable with sliders for Color Tone (Hue), Color Intensity (Saturation), and Brightness (the [HSL Model](https://en.wikipedia.org/wiki/HSL_and_HSV)).
 - You can pre-select a preset color scheme, too.

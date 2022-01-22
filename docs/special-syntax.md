@@ -2,7 +2,7 @@
 nav_order: 4
 ---
 
-# Special Syntax
+# #️⃣ Special Syntax
 
 ## Annotation Tags
 Type one of the following tags (e.g. `#definition`) to get a colored annotation tag. Also works in Edit Mode. Intended for Annotations when reading academic papers.

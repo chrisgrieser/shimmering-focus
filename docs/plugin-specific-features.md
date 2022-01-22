@@ -2,7 +2,7 @@
 nav_order: 102
 ---
 
-# Plugin-Specific Features
+# ⚙️ Plugin-Specific Features
 
 <!-- MarkdownTOC -->
 

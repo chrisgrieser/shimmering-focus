@@ -2,7 +2,7 @@
 nav_order: 3
 ---
 
-# Readability & Scannability
+# 👓 Readability & Scannability
 
 ## Gutter Indicators
 To increase the scannability of long notes, the presence of some easy-to-miss elements are indicated in the gutter. All indicators can be turned off with the [Style Settings Plugin](https://github.com/mgmeyers/obsidian-style-settings/).
