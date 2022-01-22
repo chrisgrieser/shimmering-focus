@@ -2,7 +2,7 @@
 nav_order: 5
 ---
 
-# For Writers & Academics
+# Writers & Academics
 
 ## For Academics
 - [Pandoc Citations](https://pandoc.org/MANUAL.html#citations-in-note-styles) (`[@citekey]`) and footnotes are visually emphasized.
@@ -15,4 +15,4 @@ nav_order: 5
 - Trailing white spaces are indicated when there is more than one space. This is useful for the Markdown [Two Space Rule](https://daringfireball.net/projects/markdown/syntax#p).
 - Extensive Styling and settings specifically for the [Longform Plugin](https://github.com/kevboh/longform). Prepend a `_` to file names of longform scenes to create sub-scenes that are indented in the sidebar.
 
-![longform](longform.png)
+![longform](images/longform.png)
