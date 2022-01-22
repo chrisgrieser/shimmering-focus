@@ -11,7 +11,7 @@ A minimalistic [Obsidian](https://obsidian.md/) theme focused on readability and
 
 *This documentation is still quite new. Found a dead link or typo? Please report it!*
 
-[Report Issue with Documentation](https://github.com/chrisgrieser/shimmering-focus/issues/new?assignees=&labels=feature+request&template=documentation_fix.yml&title=%5BDocs%5D%3A+){: .btn .btn-primary .fs-4 .mb-4 .mb-md-0 .mr-2 }
+[Report Issue with Documentation](https://github.com/chrisgrieser/shimmering-focus/issues/new?assignees=&labels=documentation&template=documentation_fix.yml&title=%5BDocs%5D%3A+){: .btn .btn-primary .fs-4 .mb-4 .mb-md-0 .mr-2 }
 
 ---
 
