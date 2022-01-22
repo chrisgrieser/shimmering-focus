@@ -1,6 +1,12 @@
 #!/bin/zsh
 export PATH=/usr/local/bin/:/opt/homebrew/bin/:$PATH
+
+# ---------------------------
+# Config
 csspath=~"/Library/Mobile Documents/iCloud~md~obsidian/Documents/Main Vault/.obsidian/themes/Shimmering Focus.css"
+changelog_path="./docs/changelog.md"
+
+# ---------------------------
 
 # get commit message
 commitMsg="$*"
@@ -28,9 +34,9 @@ sed -E -i '' "s/badge.*-[[:digit:]]+-/badge\/downloads-$dl-/" README.md
 sed -E -i '' "s/badge.*-[[:digit:]]+-/badge\/downloads-$dl-/" docs/README.md
 
 # Update changelog
-echo "---\nnav_order: 110\n---\n\n# Changelog\n" > ./docs/Changelog.md
-echo "- "$(date +"%Y-%m-%d")"	$commitMsg" >> ./docs/Changelog.md
-git log --pretty=format:"- %ad%x09%s" --date=short | grep -Ev "minor$" | grep -Ev "patch$" | grep -Ev "typos?$" | grep -v "refactoring" | grep -v "Add files via upload" | grep -Ev "\tDelete" | grep -Ev "\tUpdate.*\.md" | sed -E "s/\t\+ /\t/g" >> ./docs/Changelog.md
+echo "---\nnav_order: 110\n---\n\n# Changelog\n" > "$changelog_path"
+echo "- "$(date +"%Y-%m-%d")"	$commitMsg" >> "$changelog_path"
+git log --pretty=format:"- %ad%x09%s" --date=short | grep -Ev "minor$" | grep -Ev "patch$" | grep -Ev "typos?$" | grep -v "refactoring" | grep -v "Add files via upload" | grep -Ev "\tDelete" | grep -Ev "\tUpdate.*\.md" | sed -E "s/\t\+ /\t/g" >> "$changelog_path"
 
 # Bump version number
 versionLine=$(egrep -wn "^Version" "$csspath" | cut -d: -f1 | head -n1)
