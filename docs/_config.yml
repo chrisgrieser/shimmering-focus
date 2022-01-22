@@ -4,7 +4,7 @@ color_scheme: "dark"
 
 search_enabled: true
 
-permalink: pretty
+permalink: slug
 heading_anchors: true
 
 back_to_top: true
