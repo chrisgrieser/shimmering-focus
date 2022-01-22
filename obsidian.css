@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 1.709
+Version 1.710
 https://github.com/chrisgrieser/shimmering-focus/
 MIT License
 ─────────────────────────────────────────────────── */
@@ -11,13 +11,15 @@ MIT License
 /* all sections begin with "<", to navigate to the
 respective section. This ToC is auto-generated via
 the .create-ToC.sh.
-
 - Colors
 	- Base Colors
+	- Color Schemes
 	- Brightness, Saturation, Hue
 	- Longform project colors
 	- Default variable colors & Base elements
 	- Shadows
+ 		- Outside Shadow
+ 		- Inset Shadow
 	- Borders
 - Other Variables
 - Fonts
@@ -28,11 +30,13 @@ the .create-ToC.sh.
 	- Base Icons
 	- Plugin Icons
 - Global Settings
+	- GLobal Filter
 	- Angular or Round Shapes
 	- Animations
 - Cursor
 - UI Elements
 	- Title Bar
+	- Settings Button
 	- Ribbons
 	- Tooltips
 	- Notices (Notifications)
@@ -43,12 +47,12 @@ the .create-ToC.sh.
 - Interactive Elements
 	- Buttons
 	- Warnings
-	- Toggles (Checkboxes)
+	- Toggles
 	- Input & Textarea
 	- Dropdown
 	- Slider
 	- Search & Replace (cmd + F)
-	- Search matches
+	- Search Matches
 	- Context Menus
 	- Close Buttons
 - Prompts
@@ -58,6 +62,7 @@ the .create-ToC.sh.
 - Sidebar
 	- Files in the Sidebar
 	- Tab Headers
+	- Hidden sidebars tabs
 	- Resize Handles
 - Modals & Settings
 	- Modals in general
@@ -80,12 +85,16 @@ the .create-ToC.sh.
 	- Editor Properties
 	- Active Line Highlight
 	- Embeds
+		- iframes
 		- Embedded Notes
 		- Embedded Search Queries
+		- Clean Embeds
 	- YAML Header
  		- YAML Frontmatter
  		- Metadata Block
-	- Gutter & Collapse Indicators
+	- Gutter
+		- Collapse Indicators
+		- Line Numbers
 	- Progress bars (<progress>)
 	- Images
 	- Mermaid
@@ -99,6 +108,8 @@ the .create-ToC.sh.
 - Markup
 	- Headings
 	- Blockquotes
+	- Citation Syntax
+	- Pseudo-Admonitions
 	- Tables
 	- Code
 		- Inline Code
@@ -107,6 +118,7 @@ the .create-ToC.sh.
 	- Bullet List
 	- Bullet Point Relationship Lines
 	- Links
+ 		- Unresolved links
  		- fold external URLs (CM6 Source Mode)
 	- Tags
 		- Annotation Tags
@@ -125,13 +137,15 @@ the .create-ToC.sh.
 	- Horizontal line (hr)
 - CSS Classes
 - Mobile
+	- Typography
+	- Header
 - Core Plugins
 	- Editor Status (CM6)
 	- File Explorer
 		- Relationship Lines
 		- Folder Icons & Note Icons
 	- Panes
- 		- Panes in general
+ 		- Core Panes in general
 		- Outline
 		- Backlinks & Outgoing
 		- Search Pane
@@ -142,9 +156,12 @@ the .create-ToC.sh.
 	- File Recovery
 	- Graph View
 - Community Plugins
+	- Supercharged Links
+	- Emoji Toolbar
 	- Discord Rich Presence
 	- Dictionary
 	- Git Plugin
+	- Sliding Panes
 	- Calendar
 	- Templater
 	- Kanban
@@ -155,7 +172,8 @@ the .create-ToC.sh.
  		- Longform Sidebar
  		- Longform Scene List
  		- Longform Icons
- 		- Longform Editor
+		- Longform Editor
+		- Writing cssclass
 	- Ozan's Image in Editor
 	- Recent Files
 	- Quick Explorer
@@ -178,7 +196,7 @@ the .create-ToC.sh.
 	- Excalidraw
 	- Zoom
 	- Advanced Tables
-	- Highlight Current Word
+	- Dynamic Highlight
 	- Show Current File Path
 - Compatibility Info for the Obsidian Hub
 - Style Setting Options
@@ -8751,7 +8769,7 @@ body .dataview.inline-field-key {
 }
 
 .style-settings-heading[data-id="shimmering-focus"]::BEFORE {
-	content: "ℹ️ Shimmering Focus Readme \A github.com/chrisgrieser/shimmering-focus";
+	content: "ℹ️ Shimmering Focus Readme \A chrisgrieser.github.io/shimmering-focus";
 
 	font-family: var(--menu-font-family);
 	font-size: 0.9rem;
