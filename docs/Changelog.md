@@ -5,6 +5,8 @@ nav_order: 110
 # Changelog
 
 - 2022-01-22	patch
+- 2022-01-22	favicon setup
+- 2022-01-22	added favicon
 - 2022-01-22	sluggified urls
 - 2022-01-22	Rename Index.md to index.md
 - 2022-01-22	update toc

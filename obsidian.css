@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 1.716
+Version 1.717
 https://github.com/chrisgrieser/shimmering-focus/
 MIT License
 ─────────────────────────────────────────────────── */
@@ -3550,8 +3550,7 @@ body .community-plugin-info .community-plugin-downloads-text {
 
 .community-theme.is-selected,
 .community-theme:hover {
-	padding: 12px 7px;
-	border: 3px solid var(--interactive-hover-border);
+	border-color: var(--interactive-hover-border);
 }
 
 .community-theme.is-selected:not(:hover) {
