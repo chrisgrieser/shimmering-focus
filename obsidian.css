@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 1.728
+Version 1.729
 https://github.com/chrisgrieser/shimmering-focus/
 MIT License
 ─────────────────────────────────────────────────── */
@@ -493,12 +493,12 @@ body.theme-dark {
 
 .theme-dark {
 	--inset-shadow-color: hsl(0 0% 20% / 80%);
-	--inset-shadow-black: hsl(0 0% 3% / 100%);
+	--inset-shadow-black: hsl(0 0% 2% / 100%);
 	--toggle-enabled-inset-shadow: -2px -2px 2px 0px var(--inset-shadow-color) inset;
 	--toggle-disabled-inset-shadow: -3px -3px 2px 0px var(--inset-shadow-black) inset;
 	--small-inset-shadow: -1px -1px 0px var(--inset-shadow-black) inset;
 	--reverted-inset-shadow: 2px 2px 1px var(--inset-shadow-black) inset;
-	--big-reverted-inset-shadow: 2px 2px 2px 3px var(--inset-shadow-black) inset;
+	--big-reverted-inset-shadow: 3px 3px 3px 3px var(--inset-shadow-black) inset;
 	--button-inset-shadow: -2px -2px 2px var(--inset-shadow-color) inset;
 	--muted-button-inset-shadow: -1px -1px 1px var(--inset-shadow-black) inset;
 	--notice-inset-shadow: -1px -1px 2px var(--inset-shadow-black) inset;
