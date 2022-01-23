@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 1.723
+Version 1.724
 https://github.com/chrisgrieser/shimmering-focus/
 MIT License
 ─────────────────────────────────────────────────── */
@@ -2527,7 +2527,7 @@ body > .app-container .workspace-split.mod-horizontal > .workspace-tabs > .works
 }
 
 /* ───────────────────────────────────────────────────
-<< Hidden sidebars tabs
+<< Hidden Sidebars Tabs
 ─────────────────────────────────────────────────── */
 
 body:not(.show-sidebar-tabs) .workspace-tab-header,
@@ -3272,12 +3272,13 @@ body .community-plugin-info .community-plugin-downloads-text {
 
 /* Buttons */
 .mod-community-plugin .community-plugin-desc + p {
-	margin-top: 17px;
+	margin-top: 20px;
 	margin-bottom: 14px;
 }
 
 .mod-community-plugin .community-plugin-info.community-plugin-info.community-plugin-info button {
-	font-size: 0.75rem; /* smaller buttons */
+	font-size: 0.75rem;
+	padding: 4px 11px 6px;
 	margin: 0 18px 0 0;
 }
 
@@ -3290,8 +3291,8 @@ body .community-plugin-info .community-plugin-downloads-text {
 .community-plugin-info .community-plugin-author + .community-plugin-author {
 	font-size: 0;
 	text-align: end;
-	margin-top: 44px;
-	margin-bottom: -44px;
+	margin-top: 42px;
+	margin-bottom: -42px;
 }
 
 .community-plugin-author + .community-plugin-author a {
@@ -3302,16 +3303,16 @@ body .community-plugin-info .community-plugin-downloads-text {
 	content: "launch";
 
 	font-family: var(--icon-font);
-	font-size: 1.05rem;
-	line-height: 1.2em;
+	font-size: 0.9rem;
+	line-height: 1.1em;
 
 	color: var(--extra-contrast);
 	background-color: var(--bg2);
 	box-shadow: var(--muted-button-inset-shadow);
 
-	padding: 6px 7px 6px 8px;
+	padding: 6px 9px 6px 10px;
 
-	border: 2px solid var(--basic-border-color);
+	border: var(--basic-border);
 	border-radius: var(--round);
 
 	transition: var(--medium-transition);
@@ -3328,7 +3329,7 @@ body .community-plugin-info .community-plugin-downloads-text {
 	font-size: 0;
 	background-color: var(--bg2);
 	box-shadow: var(--muted-button-inset-shadow);
-	padding: 7px 3px 10px 2px;
+	padding: 7px 4px 9px 3px;
 	border-color: var(--basic-border-color);
 }
 

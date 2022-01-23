@@ -4,7 +4,7 @@ nav_order: 110
 
 # Changelog
 
-- 2022-01-22	patch
+- 2022-01-23	smaller plugin browser buttons
 - 2022-01-22	improved contribution docs
 - 2022-01-22	better icons for docs
 - 2022-01-22	added icons
