@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 1.725
+Version 1.726
 https://github.com/chrisgrieser/shimmering-focus/
 MIT License
 ─────────────────────────────────────────────────── */
@@ -5150,40 +5150,41 @@ pre[class*="language-"]::AFTER {
 	bottom: 0;
 }
 
-pre[class~="language-c"]::AFTER { content: "C"; }
-pre[class~="language-python"]::AFTER { content: "Python"; }
-pre[class~="language-py"]::AFTER { content: "Python"; }
-pre[class~="language-nginx"]::AFTER { content: "Nginx"; }
-pre[class~="language-css"]::AFTER { content: "CSS"; }
-pre[class~="language-node"]::AFTER { content: "Node"; }
-pre[class~="language-react"]::AFTER { content: "React"; }
-pre[class~="language-javascript"]::AFTER { content: "JavaScript"; }
-pre[class~="language-js"]::AFTER { content: "JavaScript"; }
-pre[class~="language-typescript"]::AFTER { content: "TypeScript"; }
-pre[class~="language-ts"]::AFTER { content: "TypeScript"; }
-pre[class~="language-php"]::AFTER { content: "PHP"; }
-pre[class~="language-shell"]::AFTER { content: "Shell"; }
-pre[class~="language-bash"]::AFTER { content: "Bash"; }
-pre[class~="language-zsh"]::AFTER { content: "zsh"; }
-pre[class~="language-flow"]::AFTER { content: "Flow"; }
-pre[class~="language-sequence"]::AFTER { content: "Sequence"; }
-pre[class~="language-sql"]::AFTER { content: "SQL"; }
-pre[class~="language-yaml"]::AFTER { content: "YAML"; }
-pre[class~="language-ini"]::AFTER { content: "INI"; }
-pre[class~="language-xml"]::AFTER { content: "XML"; }
-pre[class~="language-git"]::AFTER { content: "GIT"; }
-pre[class~="language-cs"]::AFTER { content: "C#"; }
-pre[class~="language-cpp"]::AFTER { content: "C++"; }
-pre[class~="language-java"]::AFTER { content: "JAVA"; }
-pre[class~="language-html"]::AFTER { content: "HTML"; }
-pre[class~="language-txt"]::AFTER { content: "text"; }
-pre[class~="language-text"]::AFTER { content: "text"; }
-pre[class~="language-url"]::AFTER { content: "url"; }
-pre[class~="language-uri"]::AFTER { content: "uri"; }
-pre[class~="language-applescript"]::AFTER { content: "AppleScript"; }
-pre[class~="language-as"]::AFTER { content: "AppleScript"; }
-pre[class~="language-markdown"]::AFTER { content: "Markdown"; }
-pre[class~="language-md"]::AFTER { content: "Markdown"; }
+pre[class~="language-c" i]::AFTER { content: "C"; }
+pre[class~="language-python" i]::AFTER { content: "Python"; }
+pre[class~="language-py" i]::AFTER { content: "Python"; }
+pre[class~="language-nginx" i]::AFTER { content: "Nginx"; }
+pre[class~="language-css" i]::AFTER { content: "CSS"; }
+pre[class~="language-node" i]::AFTER { content: "Node"; }
+pre[class~="language-react" i]::AFTER { content: "React"; }
+pre[class~="language-javascript" i]::AFTER { content: "JavaScript"; }
+pre[class~="language-js" i]::AFTER { content: "JavaScript"; }
+pre[class~="language-typescript" i]::AFTER { content: "TypeScript"; }
+pre[class~="language-ts" i]::AFTER { content: "TypeScript"; }
+pre[class~="language-php" i]::AFTER { content: "PHP"; }
+pre[class~="language-shell" i]::AFTER { content: "Shell"; }
+pre[class~="language-bash" i]::AFTER { content: "Bash"; }
+pre[class~="language-zsh" i]::AFTER { content: "zsh"; }
+pre[class~="language-flow" i]::AFTER { content: "Flow"; }
+pre[class~="language-sequence" i]::AFTER { content: "Sequence"; }
+pre[class~="language-sql" i]::AFTER { content: "SQL"; }
+pre[class~="language-yaml" i]::AFTER { content: "YAML"; }
+pre[class~="language-ini" i]::AFTER { content: "INI"; }
+pre[class~="language-xml" i]::AFTER { content: "XML"; }
+pre[class~="language-git" i]::AFTER { content: "GIT"; }
+pre[class~="language-cs" i]::AFTER { content: "C#"; }
+pre[class~="language-cpp" i]::AFTER { content: "C++"; }
+pre[class~="language-java" i]::AFTER { content: "JAVA"; }
+pre[class~="language-html" i]::AFTER { content: "HTML"; }
+pre[class~="language-txt" i]::AFTER { content: "text"; }
+pre[class~="language-text" i]::AFTER { content: "text"; }
+pre[class~="language-url" i]::AFTER { content: "url"; }
+pre[class~="language-uri" i]::AFTER { content: "uri"; }
+pre[class~="language-applescript" i]::AFTER { content: "AppleScript"; }
+pre[class~="language-as" i]::AFTER { content: "AppleScript"; }
+pre[class~="language-markdown" i]::AFTER { content: "Markdown"; }
+pre[class~="language-md" i]::AFTER { content: "Markdown"; }
+pre[class~="language-regex" i]::AFTER { content: "Regex"; }
 
 /* fix for the buggy selection of inline text */
 /* https://forum.obsidian.md/t/inline-code-occludes-text-selection-and-vim-cursor/11552/10 */

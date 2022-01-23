@@ -4,6 +4,7 @@ nav_order: 110
 
 # Changelog
 
+- 2022-01-23	improved code block language recognition
 - 2022-01-23	inset shadows for hidden tab bars
 - 2022-01-23	smaller plugin browser buttons
 - 2022-01-22	improved contribution docs
