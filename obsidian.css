@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 1.724
+Version 1.725
 https://github.com/chrisgrieser/shimmering-focus/
 MIT License
 ─────────────────────────────────────────────────── */
@@ -484,7 +484,8 @@ body.theme-dark {
 	--toggle-enabled-inset-shadow: -2px -2px 2px 0px var(--inset-shadow-color) inset;
 	--toggle-disabled-inset-shadow: -1px -1px 2px 0px var(--inset-shadow-color) inset;
 	--small-inset-shadow: -1px -1px 0 var(--inset-shadow-color) inset;
-	--textbox-inset-shadow: 1px 1px 1px var(--inset-shadow-color) inset;
+	--reverted-inset-shadow: 1px 1px 1px var(--inset-shadow-color) inset;
+	--big-reverted-inset-shadow: 2px 2px 1px var(--inset-shadow-color) inset;
 	--button-inset-shadow: -1px -1px 3px var(--inset-shadow-color) inset;
 	--muted-button-inset-shadow: -1px -1px 2px var(--inset-shadow-color) inset;
 	--notice-inset-shadow: -1px -1px 2px var(--inset-shadow-color) inset;
@@ -496,7 +497,8 @@ body.theme-dark {
 	--toggle-enabled-inset-shadow: -2px -2px 2px 0px var(--inset-shadow-color) inset;
 	--toggle-disabled-inset-shadow: -3px -3px 2px 0px var(--inset-shadow-black) inset;
 	--small-inset-shadow: -1px -1px 0px var(--inset-shadow-black) inset;
-	--textbox-inset-shadow: 2px 2px 1px var(--inset-shadow-black) inset;
+	--reverted-inset-shadow: 2px 2px 1px var(--inset-shadow-black) inset;
+	--big-reverted-inset-shadow: 3px 3px 2px var(--inset-shadow-black) inset;
 	--button-inset-shadow: -2px -2px 2px var(--inset-shadow-color) inset;
 	--muted-button-inset-shadow: -1px -1px 1px var(--inset-shadow-black) inset;
 	--notice-inset-shadow: -1px -1px 2px var(--inset-shadow-black) inset;
@@ -1841,7 +1843,7 @@ input[type="number"],
 input[type="search"],
 input[type="email"],
 input[type="password"] {
-	box-shadow: var(--textbox-inset-shadow);
+	box-shadow: var(--reverted-inset-shadow);
 
 	left: 0;
 
@@ -1861,7 +1863,7 @@ body:not(.angular-shapes) input[type="text"] {
 }
 
 textarea {
-	box-shadow: var(--textbox-inset-shadow);
+	box-shadow: var(--reverted-inset-shadow);
 	padding: 4px 8px;
 	border: var(--thin-border);
 	border-radius: calc(var(--roundish) * 1.5);
@@ -1919,7 +1921,7 @@ body input[type]:hover {
 ─────────────────────────────────────────────────── */
 
 select.dropdown {
-	box-shadow: var(--textbox-inset-shadow);
+	box-shadow: var(--reverted-inset-shadow);
 	padding: 6px 28px 6px 10px;
 	border: var(--thin-border);
 	border-radius: var(--round);
@@ -1947,7 +1949,7 @@ select.dropdown:hover {
 input[type="range"] {
 	width: 150px;
 	background-color: var(--bg3) !important;
-	box-shadow: var(--textbox-inset-shadow);
+	box-shadow: var(--reverted-inset-shadow);
 	border-radius: calc(var(--roundish) / 2);
 }
 
@@ -2537,7 +2539,8 @@ body:not(.show-sidebar-tabs) .workspace-tab-header-container {
 }
 
 body:not(.show-sidebar-tabs) .workspace-tab-header-container:not(:hover) {
-	height: 10px;
+	height: 11px;
+	box-shadow: var(--reverted-inset-shadow);
 	padding-top: 0;
 	padding-bottom: 0;
 }
@@ -2548,6 +2551,7 @@ body:not(.show-sidebar-tabs) .workspace-tabs:not(:nth-child(3)) .workspace-tab-h
 
 body:not(.show-sidebar-tabs) .workspace-tabs.workspace-tabs.workspace-tabs.workspace-tabs .workspace-tab-header-container:hover {
 	height: 55px;
+	box-shadow: var(--big-reverted-inset-shadow);
 	padding-bottom: 4px;
 	border-color: var(--scrollbar-bg-hover);
 }
