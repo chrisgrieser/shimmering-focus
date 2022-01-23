@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 1.730
+Version 1.731
 https://github.com/chrisgrieser/shimmering-focus/
 MIT License
 ─────────────────────────────────────────────────── */
@@ -722,7 +722,9 @@ body.theme-dark {
 
 /* << Font Definitions */
 :root { /* stylelint-disable-line no-duplicate-selectors */
-	--default-font: "iA Writer Quattro S";
+	--editor-font: "iA Writer Quattro S";
+
+	--mobile-editor-font: "iA Writer Quattro S";
 
 	--font-monospace: "Input Mono S";
 	--monospace-font-size: 0.9rem;
@@ -756,6 +758,14 @@ body.theme-dark {
 
 	/* needed for some edge cases */
 	--original-font: "Inter", -apple-system, blinkmacsystemfont, "Segoe UI", roboto, helvetica, arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Microsoft YaHei Light", sans-serif; /* stylelint-disable-line max-line-length */
+}
+
+body:not(.is-mobile) {
+	--default-font: var(--editor-font);
+}
+
+.is-mobile {
+	--default-font: var(--mobile-editor-font);
 }
 
 body:not(.less-heading-letter-spacing) {
@@ -3206,7 +3216,7 @@ body .app-container .workspace-leaf-resize-handle:hover {
 ─────────────────────────────────────────────────── */
 
 .community-plugin-info {
-	font-family: var(--default-font);
+	font-family: var(--editor-font);
 
 	/* 50px for overscroll */
 	padding: 0 12px 50px;
@@ -3588,7 +3598,7 @@ body .community-plugin-info .community-plugin-downloads-text {
 }
 
 .community-theme-downloads .community-plugin-downloads-text {
-	font-family: var(--default-font);
+	font-family: var(--editor-font);
 	font-size: 0.85rem;
 	top: -2px;
 }
@@ -5367,7 +5377,7 @@ a.tag {
 
 /* ensures equal height of "#" and text of tags */
 .cm-formatting.cm-formatting-hashtag.cm-hashtag-begin.cm-hashtag.cm-meta {
-	font-family: var(--default-font);
+	font-family: var(--editor-font);
 }
 
 .cm-hashtag-end:hover,
@@ -5494,7 +5504,7 @@ body:not(.annotation-tags-off) .cm-s-obsidian .cm-line .cm-hashtag-end.cm-tag-ma
 body:not(.annotation-tags-off) .cm-s-obsidian .cm-line .cm-hashtag-end.cm-tag-agree,
 body:not(.annotation-tags-off) .cm-s-obsidian .cm-line .cm-hashtag-end.cm-tag-important,
 body:not(.annotation-tags-off) .cm-s-obsidian .cm-line .cm-hashtag-end.cm-tag-example {
-	font-family: var(--default-font); /* fixes their appearance in headings */
+	font-family: var(--editor-font); /* fixes their appearance in headings */
 	padding-left: 0;
 	border-bottom-left-radius: 0;
 	border-top-left-radius: 0;
@@ -5645,7 +5655,7 @@ body:not(.annotation-tags-off) .tag[href="#example"]::BEFORE {
 
 /* fix for tag/hashtag height difference when selected */
 .cm-tag:not(.cm-hmd-codeblock) {
-	font-family: var(--default-font);
+	font-family: var(--editor-font);
 }
 
 body > .app-container span.cm-tag.cm-bracket.cm-hmd-html-begin,
@@ -8374,7 +8384,7 @@ body .app-container .workspace-leaf-content[data-type="BC-matrix"] .view-content
 .BC-Matrix-square .BC-Matrix-headers h4.BC-Matrix-header {
 	display: inline-flex;
 
-	font-family: var(--default-font);
+	font-family: var(--editor-font);
 	font-size: 1.1em;
 	font-style: unset;
 
@@ -9639,8 +9649,8 @@ settings:
 	 level: 2
 	 collapsed: true
 	-
-	 id: default-font
-	 title: Main Font
+	 id: editor-font
+	 title: Editor Font (Desktop)
 	 type: variable-text
 	 default: '"iA Writer Quattro S"'
 	-
@@ -9929,7 +9939,7 @@ settings:
 	-
 	 id: mobile
 	 title: Mobile
-	 description: Settings specifically for mobile
+	 description: Header Bar, Font Size, Font Type
 	 type: heading
 	 level: 2
 	 collapsed: true
@@ -9942,6 +9952,11 @@ settings:
 	 max: 2
 	 step: 0.05
 	 format: rem
+	-
+	 id: mobile-editor-font
+	 title: Editor Font (Mobile)
+	 type: variable-text
+	 default: '"iA Writer Quattro S"'
 	-
 	 id: show-mobile-header
 	 title: Re-enable Header

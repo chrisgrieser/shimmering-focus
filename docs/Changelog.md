@@ -4,6 +4,7 @@ nav_order: 110
 
 # Changelog
 
+- 2022-01-24	🆕 new style setting: Mobile font type
 - 2022-01-23	better hidden tab bar transition
 - 2022-01-23	look hidden sidebars
 - 2022-01-23	overhaul dangling links sidebar
