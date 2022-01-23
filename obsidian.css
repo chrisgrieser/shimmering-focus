@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 1.726
+Version 1.727
 https://github.com/chrisgrieser/shimmering-focus/
 MIT License
 ─────────────────────────────────────────────────── */
@@ -1018,7 +1018,7 @@ svg.search {
 }
 
 /* file explorer / folder / new folder */
-svg.folder > path { display: none }
+/* svg.folder > path { display: none } */
 
 .workspace-tab-header-inner svg.folder {
 	background-color: currentColor;
@@ -8515,37 +8515,55 @@ body #block-ref-hover.show:hover {
 /* ───────────────────────────────────────────────────
 << Dangling Links
 ─────────────────────────────────────────────────── */
-.workspace-leaf-content[data-type="dangling-links"] {
-	line-height: 1.2em;
-}
 
 .workspace-leaf-content[data-type="dangling-links"] .view-content {
-	padding-top: 4px;
+	padding-left: 11px;
 }
 
-.workspace-leaf-content[data-type="dangling-links"] h3 {
+#dangling-links h3 {
 	display: none;
 }
 
-.workspace-leaf-content[data-type="dangling-links"] .nav-header {
+#dangling-links .nav-header {
 	margin-bottom: 8px;
 }
 
-.workspace-leaf-content[data-type="dangling-links"] .nav-header svg {
-	stroke-width: 2px !important;
+#dangling-links .nav-header svg {
+	stroke-width: 3px;
 }
 
-.workspace-leaf-content[data-type="dangling-links"] summary::MARKER {
-	color: var(--extra-contrast);
-}
-
-.workspace-leaf-content[data-type="dangling-links"] ul {
-	padding-left: 30px;
+#dangling-links ul {
+	padding-left: 0;
 	margin-top: 7px;
 }
 
-.workspace-leaf-content[data-type="dangling-links"] summary {
-	font-weight: 600;
+#dangling-links li {
+	line-height: 1.4em;
+	text-indent: -30px;
+	overflow-x: hidden;
+}
+
+#dangling-links li::MARKER {
+	content: "";
+}
+
+#dangling-links summary {
+	font-family: var(--smallcap-font);
+	font-size: 1rem;
+	line-height: 1.3em;
+	color: var(--text-muted);
+	cursor: pointer;
+}
+
+#dangling-links summary:hover {
+	color: var(--alt-accent);
+}
+
+#dangling-links svg.folder {
+	background-color: unset;
+	margin-bottom: -3px;
+	transform: scale(0.85);
+	-webkit-mask-image: none;
 }
 
 /* ───────────────────────────────────────────────────
