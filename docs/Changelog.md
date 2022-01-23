@@ -4,6 +4,7 @@ nav_order: 110
 
 # Changelog
 
+- 2022-01-23	look hidden sidebars
 - 2022-01-23	overhaul dangling links sidebar
 - 2022-01-23	improved code block language recognition
 - 2022-01-23	inset shadows for hidden tab bars
