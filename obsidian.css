@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 1.731
+Version 1.732
 https://github.com/chrisgrieser/shimmering-focus/
 MIT License
 ─────────────────────────────────────────────────── */
@@ -722,9 +722,11 @@ body.theme-dark {
 
 /* << Font Definitions */
 :root { /* stylelint-disable-line no-duplicate-selectors */
-	--editor-font: "iA Writer Quattro S";
+	--editor-font-family: "iA Writer Quattro S";
 
-	--mobile-editor-font: "iA Writer Quattro S";
+	--mobile-editor-font-family: "iA Writer Quattro S";
+	--mobile-menu-font-family: "Recursive S";
+	--mobile-font-size: 1.2rem;
 
 	--font-monospace: "Input Mono S";
 	--monospace-font-size: 0.9rem;
@@ -739,12 +741,13 @@ body.theme-dark {
 	--menu-font-family: "Recursive S";
 	--menu-font-size: 1rem;
 
-	--mobile-font-size: 1.2rem;
 	--footnote-size: 85%;
 	--button-font-size: 0.9rem;
 
 	--smallcap-font: "Alegreya Sans SC";
 	--setting-heading: "Alegreya Sans SC";
+
+	--number-font: "Share Tech Mono Numbers";
 
 	--heading-font: "Optima S";
 	--h1-size: 1.8em;
@@ -754,18 +757,18 @@ body.theme-dark {
 	--h5-size: 1.15em;
 	--h6-size: 1.05em;
 
-	--number-font: "Share Tech Mono Numbers";
-
 	/* needed for some edge cases */
 	--original-font: "Inter", -apple-system, blinkmacsystemfont, "Segoe UI", roboto, helvetica, arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Microsoft YaHei Light", sans-serif; /* stylelint-disable-line max-line-length */
 }
 
 body:not(.is-mobile) {
-	--default-font: var(--editor-font);
+	--default-font: var(--editor-font-family);
+	--menu-font: var(--menu-font-family);
 }
 
 .is-mobile {
 	--default-font: var(--mobile-editor-font);
+	--menu-font: var(--mobile-menu-font-family);
 }
 
 body:not(.less-heading-letter-spacing) {
@@ -776,7 +779,6 @@ body:not(.less-heading-letter-spacing) {
 	--heading-letter-spacing: 0.2px;
 }
 
-/* angular / roundish font */
 .angular-shapes {
 	--button-font: "Oxanium S";
 }
@@ -822,7 +824,7 @@ body > .app-container input,
 .modal-container .modal.mod-settings,
 .modal.mod-community-plugin,
 .modal.mod-community-theme {
-	font-family: var(--menu-font-family);
+	font-family: var(--menu-font);
 	font-size: var(--menu-font-size);
 }
 
@@ -1290,7 +1292,7 @@ body:not(.show-titlebar-text) .titlebar-text {
 }
 
 .titlebar-text {
-	font-family: var(--menu-font-family);
+	font-family: var(--menu-font);
 	color: var(--text-normal);
 	margin-left: var(--cover-width);
 	--cover-width: 18ch;
@@ -3216,7 +3218,7 @@ body .app-container .workspace-leaf-resize-handle:hover {
 ─────────────────────────────────────────────────── */
 
 .community-plugin-info {
-	font-family: var(--editor-font);
+	font-family: var(--default-font);
 
 	/* 50px for overscroll */
 	padding: 0 12px 50px;
@@ -3472,7 +3474,7 @@ body .community-plugin-info .community-plugin-downloads-text {
 .community-theme.is-selected .community-theme-info::AFTER {
 	content: "🆕 Theme Docs:\A chrisgrieser.github.io\A/shimmering-focus \A\A⚠️ Sidebar Tabs now hidden until hovered. (Show perma- nently via Style Settings.)";
 
-	font-family: var(--menu-font-family);
+	font-family: var(--menu-font);
 	font-size: 0.8rem;
 	line-height: 1.3rem;
 	letter-spacing: 0.3px;
@@ -3598,7 +3600,7 @@ body .community-plugin-info .community-plugin-downloads-text {
 }
 
 .community-theme-downloads .community-plugin-downloads-text {
-	font-family: var(--editor-font);
+	font-family: var(--default-font);
 	font-size: 0.85rem;
 	top: -2px;
 }
@@ -4797,7 +4799,7 @@ body:not(.blockquotes-left-aligned) > .app-container .HyperMD-quote {
 }
 
 .HyperMD-quote .cm-quote-3:not(.cm-formatting-quote) {
-	font-family: var(--menu-font-family);
+	font-family: var(--menu-font);
 	font-size: 0.85rem;
 }
 
@@ -4823,7 +4825,7 @@ body:not(.blockquotes-left-aligned) > .app-container .HyperMD-quote {
 }
 
 .markdown-reading-view .markdown-preview-view blockquote > blockquote > blockquote {
-	font-family: var(--menu-font-family);
+	font-family: var(--menu-font);
 	font-size: 0.9rem;
 
 	width: 101%;
@@ -5377,7 +5379,7 @@ a.tag {
 
 /* ensures equal height of "#" and text of tags */
 .cm-formatting.cm-formatting-hashtag.cm-hashtag-begin.cm-hashtag.cm-meta {
-	font-family: var(--editor-font);
+	font-family: var(--default-font);
 }
 
 .cm-hashtag-end:hover,
@@ -5504,7 +5506,7 @@ body:not(.annotation-tags-off) .cm-s-obsidian .cm-line .cm-hashtag-end.cm-tag-ma
 body:not(.annotation-tags-off) .cm-s-obsidian .cm-line .cm-hashtag-end.cm-tag-agree,
 body:not(.annotation-tags-off) .cm-s-obsidian .cm-line .cm-hashtag-end.cm-tag-important,
 body:not(.annotation-tags-off) .cm-s-obsidian .cm-line .cm-hashtag-end.cm-tag-example {
-	font-family: var(--editor-font); /* fixes their appearance in headings */
+	font-family: var(--default-font); /* fixes their appearance in headings */
 	padding-left: 0;
 	border-bottom-left-radius: 0;
 	border-top-left-radius: 0;
@@ -5655,7 +5657,7 @@ body:not(.annotation-tags-off) .tag[href="#example"]::BEFORE {
 
 /* fix for tag/hashtag height difference when selected */
 .cm-tag:not(.cm-hmd-codeblock) {
-	font-family: var(--editor-font);
+	font-family: var(--default-font);
 }
 
 body > .app-container span.cm-tag.cm-bracket.cm-hmd-html-begin,
@@ -6620,7 +6622,7 @@ body .search-suggest-item.mod-group:first-child {
 .search-suggest-item:nth-child(4),
 .search-suggest-item:nth-child(5),
 .search-suggest-item:nth-child(6) {
-	font-family: var(--menu-font-family);
+	font-family: var(--menu-font);
 	background-color: var(--bg3) !important;
 	border-bottom: var(--thin-border);
 }
@@ -6639,7 +6641,7 @@ body .search-suggest-item.mod-group:first-child {
 }
 
 .search-suggest-item .search-suggest-info-text {
-	font-family: var(--menu-font-family);
+	font-family: var(--menu-font);
 	font-size: 70%;
 	color: var(--extra-contrast);
 	position: absolute;
@@ -8384,7 +8386,7 @@ body .app-container .workspace-leaf-content[data-type="BC-matrix"] .view-content
 .BC-Matrix-square .BC-Matrix-headers h4.BC-Matrix-header {
 	display: inline-flex;
 
-	font-family: var(--editor-font);
+	font-family: var(--default-font);
 	font-size: 1.1em;
 	font-style: unset;
 
@@ -8820,7 +8822,7 @@ body .dataview.inline-field-key {
 .style-settings-heading[data-id="shimmering-focus"]::BEFORE {
 	content: "ℹ️ Shimmering Focus Readme \A chrisgrieser.github.io/shimmering-focus";
 
-	font-family: var(--menu-font-family);
+	font-family: var(--menu-font);
 	font-size: 0.9rem;
 	font-weight: 500;
 	line-height: 1.7em;
@@ -8876,7 +8878,7 @@ body:not(.show-scrollbar) .workspace-split.mod-root .workspace-leaf-content[data
 }
 
 .style-settings-heading .setting-item-description {
-	font-family: var(--menu-font-family);
+	font-family: var(--menu-font);
 	font-size: 0.8rem;
 	font-weight: 500;
 	line-height: 1.3em;
@@ -9649,7 +9651,7 @@ settings:
 	 level: 2
 	 collapsed: true
 	-
-	 id: editor-font
+	 id: editor-font-family
 	 title: Editor Font (Desktop)
 	 type: variable-text
 	 default: '"iA Writer Quattro S"'
@@ -9713,7 +9715,7 @@ settings:
 	 format: rem
 	-
 	 id: menu-font-family
-	 title: Menu Font
+	 title: Menu Font (Desktop)
 	 description: Affects the settings menu, plugin browser and theme browser.
 	 type: variable-text
 	 default: '"Recursive S"'
@@ -9953,10 +9955,16 @@ settings:
 	 step: 0.05
 	 format: rem
 	-
-	 id: mobile-editor-font
+	 id: mobile-editor-font-family
 	 title: Editor Font (Mobile)
 	 type: variable-text
 	 default: '"iA Writer Quattro S"'
+	-
+	 id: mobile-menu-font-family
+	 title: Menu Font (Mobile)
+	 description: Affects the settings menu, plugin browser and theme browser.
+	 type: variable-text
+	 default: '"Recursive S"'
 	-
 	 id: show-mobile-header
 	 title: Re-enable Header
