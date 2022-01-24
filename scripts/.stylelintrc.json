@@ -186,7 +186,7 @@
 		"no-missing-end-of-source-newline": [true, {"severity": "warning"}],
 		"max-empty-lines": [1, {"severity": "warning"} ],
 		"rule-empty-line-before": ["always-multi-line", {
-			"ignore": ["after-comment"],
+			"ignore": ["after-comment", "inside-block"],
 			"severity": "warning"
 		}],
 		"comment-empty-line-before": ["always",{

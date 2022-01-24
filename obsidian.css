@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 1.733
+Version 1.734
 https://github.com/chrisgrieser/shimmering-focus/
 MIT License
 ─────────────────────────────────────────────────── */
@@ -486,8 +486,8 @@ body.theme-dark {
 	--small-inset-shadow: -1px -1px 0 var(--inset-shadow-color) inset;
 	--reverted-inset-shadow: 1px 1px 1px var(--inset-shadow-color) inset;
 	--big-reverted-inset-shadow: 2px 2px 3px 2px hsl(0 0% 25% / 40%) inset;
-	--button-inset-shadow: -1px -1px 3px var(--inset-shadow-color) inset;
-	--muted-button-inset-shadow: -1px -1px 2px var(--inset-shadow-color) inset;
+	--button-inset-shadow: -1px -1px 1.5px var(--inset-shadow-color) inset;
+	--muted-button-inset-shadow: -1px -1px 1.5px var(--inset-shadow-color) inset;
 	--notice-inset-shadow: -1px -1px 2px var(--inset-shadow-color) inset;
 }
 
@@ -1684,6 +1684,20 @@ body ::-WEBKIT-SCROLLBAR-THUMB {
 < Vault Launch Progress Bar
 ─────────────────────────────────────────────────── */
 
+@keyframes faded-blink {
+	from { opacity: 1 }
+	50% { opacity: 0 }
+	to { opacity: 1 }
+}
+
+.progress-bar .progress-bar-message {
+	font-size: 0;
+	margin-bottom: 30px;
+	animation-duration: 0.8s;
+	animation-name: faded-blink;
+	animation-iteration-count: infinite;
+}
+
 .progress-bar .progress-bar-message::BEFORE {
 	content: var(--signature);
 	font-size: calc(var(--empty-state-symbol-size) * 1.2);
@@ -1691,29 +1705,12 @@ body ::-WEBKIT-SCROLLBAR-THUMB {
 	color: var(--text-normal);
 }
 
-.progress-bar .progress-bar-message {
-	font-size: 0;
-	margin-bottom: 40px;
-}
-
 .progress-bar {
-	background-color: var(--bg2);
-	backdrop-filter: blur(3px);
-}
-
-.progress-bar-indicator,
-.progress-bar-indicator .progress-bar-subline,
-.progress-bar-indicator .progress-bar-line {
-	height: 16px;
-	border-radius: var(--round);
-}
-
-.progress-bar-indicator .progress-bar-line {
 	background-color: var(--bg3);
 }
 
-.progress-bar-indicator .progress-bar-subline {
-	background-color: var(--scrollbar-bg-hover);
+.progress-bar-indicator {
+	display: none;
 }
 
 /* ───────────────────────────────────────────────────
@@ -7468,7 +7465,7 @@ body .kanban-plugin ul {
 /* <<< Lanes */
 body .kanban-plugin__lane {
 	background-color: var(--bg2);
-	box-shadow: var(--small-inset-shadow);
+	box-shadow: var(--small-inset-shadow), var(--tiny-shadow);
 	border: var(--basic-border);
 	border-radius: calc(var(--roundish) * 1.5);
 }
@@ -9949,6 +9946,12 @@ settings:
 	 level: 2
 	 collapsed: true
 	-
+	 id: show-mobile-header
+	 title: Re-enable Header
+	 description: When false, a floating button to toggle between Reading and Source Mode will be shown.
+	 type: class-toggle
+	 default: false
+	-
 	 id: mobile-font-size
 	 title: Mobile Font Size
 	 type: variable-number-slider
@@ -9974,12 +9977,6 @@ settings:
 	 description: Affects the left side bar, right side bar, status bar, and header bar.
 	 type: variable-text
 	 default: '"Recursive S"'
-	-
-	 id: show-mobile-header
-	 title: Re-enable Header
-	 description: When false, a floating button to toggle between Reading and Source Mode will be shown.
-	 type: class-toggle
-	 default: false
 	-
 	 id: plugin-specific-settings
 	 title: Plugin-Specific Settings

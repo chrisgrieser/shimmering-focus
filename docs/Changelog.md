@@ -4,6 +4,7 @@ nav_order: 110
 
 # Changelog
 
+- 2022-01-24	patch
 - 2022-01-24	mobile ui font
 - 2022-01-24	new style setting: mobile-specific menu font
 - 2022-01-24	🆕 new style setting: Mobile font type
