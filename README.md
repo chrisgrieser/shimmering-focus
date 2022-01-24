@@ -4,6 +4,6 @@ A minimalistic [Obsidian](https://obsidian.md/) theme focused on readability and
 
 ## [➡️ Documentation](https://chrisgrieser.github.io/shimmering-focus/)
 
-![](https://img.shields.io/badge/downloads-12034-6E4E9B?style=plastic) ![](https://img.shields.io/github/last-commit/chrisgrieser/shimmering-focus?style=plastic) [![](https://img.shields.io/badge/changelog-click%20here-FFE800?style=plastic)](https://chrisgrieser.github.io/shimmering-focus/changelog/)
+![](https://img.shields.io/badge/downloads-12047-6E4E9B?style=plastic) ![](https://img.shields.io/github/last-commit/chrisgrieser/shimmering-focus?style=plastic) [![](https://img.shields.io/badge/changelog-click%20here-FFE800?style=plastic)](https://chrisgrieser.github.io/shimmering-focus/changelog/)
 
 ![Promo Screenshot](docs/images/Promo%20Screenshot/promo-screenshot.png)
