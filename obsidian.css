@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 1.732
+Version 1.733
 https://github.com/chrisgrieser/shimmering-focus/
 MIT License
 ─────────────────────────────────────────────────── */
@@ -724,9 +724,10 @@ body.theme-dark {
 :root { /* stylelint-disable-line no-duplicate-selectors */
 	--editor-font-family: "iA Writer Quattro S";
 
+	--mobile-font-size: 1.2rem;
 	--mobile-editor-font-family: "iA Writer Quattro S";
 	--mobile-menu-font-family: "Recursive S";
-	--mobile-font-size: 1.2rem;
+	--mobile-ui-font-family: "Recursive S";
 
 	--font-monospace: "Input Mono S";
 	--monospace-font-size: 0.9rem;
@@ -764,11 +765,13 @@ body.theme-dark {
 body:not(.is-mobile) {
 	--default-font: var(--editor-font-family);
 	--menu-font: var(--menu-font-family);
+	--ui-font: var(--ui-font-family);
 }
 
 .is-mobile {
 	--default-font: var(--mobile-editor-font);
 	--menu-font: var(--mobile-menu-font-family);
+	--ui-font: var(--mobile-ui-font-family);
 }
 
 body:not(.less-heading-letter-spacing) {
@@ -816,7 +819,7 @@ body > .app-container input,
 /* Core Plugins */
 .workspace-tabs .workspace-leaf .workspace-leaf-content .view-content div,
 .workspace-tabs .workspace-leaf .workspace-leaf-content .view-content {
-	font-family: var(--ui-font-family);
+	font-family: var(--ui-font);
 	font-size: var(--sidebar-font-size);
 }
 
@@ -1475,7 +1478,7 @@ body > div.notice-container .notice:hover {
 
 /* harmonize sizes for when titlebar is shown */
 body .view-header-title {
-	font-family: var(--ui-font-family);
+	font-family: var(--ui-font);
 	font-size: 0.9em;
 	font-weight: 500;
 	line-height: 2;
@@ -1582,7 +1585,7 @@ body:not(.is-mobile):not(.plugin-sliding-panes-rotate-header) .view-header:focus
 https://github.com/chetachiezikeuzor/Yin-and-Yang-Theme */
 
 body:not(.default-statusbar) .status-bar {
-	font-family: var(--ui-font-family);
+	font-family: var(--ui-font);
 	line-height: 1;
 
 	max-height: unset;
@@ -9690,7 +9693,7 @@ settings:
 	 format: rem
 	-
 	 id: ui-font-family
-	 title: UI Font
+	 title: UI Font (Desktop)
 	 description: Affects the left side bar, right side bar, status bar, and header bar.
 	 type: variable-text
 	 default: '"Recursive S"'
@@ -9963,6 +9966,12 @@ settings:
 	 id: mobile-menu-font-family
 	 title: Menu Font (Mobile)
 	 description: Affects the settings menu, plugin browser and theme browser.
+	 type: variable-text
+	 default: '"Recursive S"'
+	-
+	 id: mobile-ui-font-family
+	 title: UI Font (Mobile)
+	 description: Affects the left side bar, right side bar, status bar, and header bar.
 	 type: variable-text
 	 default: '"Recursive S"'
 	-
