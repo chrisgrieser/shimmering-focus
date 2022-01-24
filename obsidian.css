@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 1.736
+Version 1.737
 https://github.com/chrisgrieser/shimmering-focus/
 MIT License
 ─────────────────────────────────────────────────── */
@@ -1183,8 +1183,7 @@ body.angular-shapes {
 body:not(.no-animations) {
 	--quick-transition: 200ms ease-in-out;
 	--medium-transition: 350ms ease-in-out;
-	--medium-slow-transition: 500ms ease-in-out;
-	--slow-transition: 600ms ease-in-out;
+	--slow-transition: 550ms ease-in-out;
 }
 
 body.no-animations {
@@ -2545,19 +2544,16 @@ body > .app-container .workspace-split.mod-horizontal > .workspace-tabs > .works
 << Hidden Sidebars Tabs
 ─────────────────────────────────────────────────── */
 
-body:not(.show-sidebar-tabs) .workspace-tab-header-container {
-	transition: var(--slow-transition);
-}
-
+body:not(.show-sidebar-tabs) .workspace-tab-header-container,
 body:not(.show-sidebar-tabs) .workspace-tab-header,
 body:not(.show-sidebar-tabs) .workspace-tab-container-inner {
-	transition: var(--medium-slow-transition);
+	transition: var(--medium-transition);
 }
 
 body:not(.show-sidebar-tabs) .workspace-tab-header-container:hover .workspace-tab-header,
 body:not(.show-sidebar-tabs) .workspace-tab-header-container:hover .workspace-tab-container-inner,
 body:not(.show-sidebar-tabs) .workspace-tab-header-container:hover {
-	transition: var(--medium-transition);
+	transition: var(--quick-transition);
 }
 
 body:not(.show-sidebar-tabs) .workspace-tab-header-container:not(:hover) {
