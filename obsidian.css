@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 1.737
+Version 1.738
 https://github.com/chrisgrieser/shimmering-focus/
 MIT License
 ─────────────────────────────────────────────────── */
@@ -5400,6 +5400,7 @@ https://discord.com/channels/686053708261228577/722584061087842365/8981137457740
 }
 
 /* all tags */
+body:not(.annotation-tags-off) .tag[href="#goal"],
 body:not(.annotation-tags-off) .tag[href="#question"],
 body:not(.annotation-tags-off) .tag[href="#gap"],
 body:not(.annotation-tags-off) .tag[href="#main"],
@@ -5413,6 +5414,7 @@ body:not(.annotation-tags-off) .tag[href="#important"],
 body:not(.annotation-tags-off) .tag[href="#quote"],
 body:not(.annotation-tags-off) .tag[href="#todo"],
 body:not(.annotation-tags-off) .tag[href="#critique"],
+body:not(.annotation-tags-off) .cm-s-obsidian .cm-line span.cm-tag-goal,
 body:not(.annotation-tags-off) .cm-s-obsidian .cm-line span.cm-tag-critique,
 body:not(.annotation-tags-off) .cm-s-obsidian .cm-line span.cm-tag-todo,
 body:not(.annotation-tags-off) .cm-s-obsidian .cm-line span.cm-tag-quote,
@@ -5453,6 +5455,8 @@ body:not(.annotation-tags-off) .longform-leaf .tag[href="#important"],
 body:not(.annotation-tags-off) .longform-leaf .tag[href="#quote"],
 body:not(.annotation-tags-off) .longform-leaf .tag[href="#todo"],
 body:not(.annotation-tags-off) .longform-leaf .tag[href="#critique"],
+body:not(.annotation-tags-off) .longform-leaf .tag[href="#goal"],
+body:not(.annotation-tags-off) .longform-leaf .cm-s-obsidian .cm-line span.cm-tag-goal,
 body:not(.annotation-tags-off) .longform-leaf .cm-s-obsidian .cm-line span.cm-tag-critique,
 body:not(.annotation-tags-off) .longform-leaf .cm-s-obsidian .cm-line span.cm-tag-todo,
 body:not(.annotation-tags-off) .longform-leaf .cm-s-obsidian .cm-line span.cm-tag-quote,
@@ -5471,6 +5475,7 @@ body:not(.annotation-tags-off) .longform-leaf .cm-s-obsidian .cm-line span.cm-ta
 }
 
 /* the "#" */
+body:not(.annotation-tags-off) .cm-s-obsidian .cm-line .cm-hashtag-begin.cm-tag-goal,
 body:not(.annotation-tags-off) .cm-s-obsidian .cm-line .cm-hashtag-begin.cm-tag-critique,
 body:not(.annotation-tags-off) .cm-s-obsidian .cm-line .cm-hashtag-begin.cm-tag-todo,
 body:not(.annotation-tags-off) .cm-s-obsidian .cm-line .cm-hashtag-begin.cm-tag-quote,
@@ -5491,6 +5496,7 @@ body:not(.annotation-tags-off) .cm-s-obsidian .cm-line .cm-hashtag-begin.cm-tag-
 }
 
 /* the tag text */
+body:not(.annotation-tags-off) .cm-s-obsidian .cm-line .cm-hashtag-end.cm-tag-goal,
 body:not(.annotation-tags-off) .cm-s-obsidian .cm-line .cm-hashtag-end.cm-tag-critique,
 body:not(.annotation-tags-off) .cm-s-obsidian .cm-line .cm-hashtag-end.cm-tag-todo,
 body:not(.annotation-tags-off) .cm-s-obsidian .cm-line .cm-hashtag-end.cm-tag-quote,
@@ -5508,6 +5514,16 @@ body:not(.annotation-tags-off) .cm-s-obsidian .cm-line .cm-hashtag-end.cm-tag-ex
 	padding-left: 0;
 	border-bottom-left-radius: 0;
 	border-top-left-radius: 0;
+}
+
+body:not(.annotation-tags-off) .cm-tag-goal,
+body:not(.annotation-tags-off) .tag[href="#goal"] {
+	background-color: rgb(0 235 230 / 50%);
+}
+
+body:not(.annotation-tags-off) .cm-hashtag-begin.cm-tag-goal::BEFORE,
+body:not(.annotation-tags-off) .tag[href="#goal"]::BEFORE {
+	content: "🏁 ";
 }
 
 body:not(.annotation-tags-off) .cm-tag-todo,
@@ -8087,11 +8103,6 @@ body div.oz-image-widget > img:active {
 
 .workspace-leaf-content[data-type="recent-files"] .nav-file {
 	border-radius: 0;
-}
-
-/* hide active file */
-.workspace-leaf-content[data-type="recent-files"] .is-active {
-	display: none;
 }
 
 body:not(.no-alternating-rows) .workspace-leaf-content[data-type="recent-files"] .nav-file:nth-child(even) {
