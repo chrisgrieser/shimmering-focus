@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 1.734
+Version 1.735
 https://github.com/chrisgrieser/shimmering-focus/
 MIT License
 ─────────────────────────────────────────────────── */
@@ -5203,13 +5203,15 @@ pre[class~="language-java" i]::AFTER { content: "JAVA"; }
 pre[class~="language-html" i]::AFTER { content: "HTML"; }
 pre[class~="language-txt" i]::AFTER { content: "text"; }
 pre[class~="language-text" i]::AFTER { content: "text"; }
-pre[class~="language-url" i]::AFTER { content: "url"; }
-pre[class~="language-uri" i]::AFTER { content: "uri"; }
+pre[class~="language-url" i]::AFTER { content: "URL"; }
+pre[class~="language-uri" i]::AFTER { content: "URI"; }
 pre[class~="language-applescript" i]::AFTER { content: "AppleScript"; }
 pre[class~="language-as" i]::AFTER { content: "AppleScript"; }
 pre[class~="language-markdown" i]::AFTER { content: "Markdown"; }
 pre[class~="language-md" i]::AFTER { content: "Markdown"; }
 pre[class~="language-regex" i]::AFTER { content: "Regex"; }
+pre[class~="language-lua" i]::AFTER { content: "Lua"; }
+pre[class~="language-haskell" i]::AFTER { content: "Haskell"; }
 
 /* fix for the buggy selection of inline text */
 /* https://forum.obsidian.md/t/inline-code-occludes-text-selection-and-vim-cursor/11552/10 */
