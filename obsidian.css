@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 1.739
+Version 1.740
 https://github.com/chrisgrieser/shimmering-focus/
 MIT License
 ─────────────────────────────────────────────────── */
@@ -441,11 +441,11 @@ the .create-ToC.sh.
 	background-color: var(--bg1);
 }
 
+.status-bar,
 .workspace-tabs .workspace-leaf {
 	background-color: var(--bg2);
 }
 
-.status-bar,
 .workspace-tabs {
 	background-color: var(--bg3);
 }
@@ -1596,8 +1596,8 @@ body:not(.default-statusbar) .status-bar {
 
 	padding: 7px 0 6px 12px;
 
-	border-top: var(--muted-border);
-	border-left: var(--muted-border);
+	border-top: var(--thin-border);
+	border-left: var(--thin-border);
 	border-top-left-radius: var(--roundish);
 }
 
@@ -1616,7 +1616,7 @@ body:not(.hide-signature) .status-bar::AFTER {
 	bottom: 1px;
 }
 
-.status-bar.default-statusbar {
+.default-statusbar .status-bar {
 	padding-right: 7px;
 	padding-left: 7px;
 }
