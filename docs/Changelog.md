@@ -4,6 +4,7 @@ nav_order: 110
 
 # Changelog
 
+- 2022-01-25	fixed look of wikilinks in pseudo-admonition source mode
 - 2022-01-24	re-enable active file in recent files plugin
 - 2022-01-24	mobile ui font
 - 2022-01-24	new style setting: mobile-specific menu font
