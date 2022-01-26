@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 1.744
+Version 1.745
 https://github.com/chrisgrieser/shimmering-focus/
 MIT License
 ─────────────────────────────────────────────────── */
@@ -4660,7 +4660,7 @@ body .markdown-preview-view blockquote,
 
 /* style links in blockquotes, e.g. quote sources */
 .cm-link.cm-quote:not(.cm-formatting) {
-	color: var(--text-accent) !important;
+	color: var(--text-accent);
 }
 
 .cm-string.cm-url.cm-quote,
@@ -5858,11 +5858,7 @@ em > del:hover,
 
 /* applies to all []-links (barelinks)
 partially also to footnotes */
-body:not(.no-pandoc-citation-emphasis) .cm-hmd-barelink {
-	color: var(--reference-color);
-}
-
-body:not(.no-pandoc-citation-emphasis) .cm-link.cm-quote.cm-hmd-barelink {
+body:not(.no-pandoc-citation-emphasis) .cm-hmd-barelink.cm-hmd-barelink {
 	color: var(--reference-color);
 }
 
