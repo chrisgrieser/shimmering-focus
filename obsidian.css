@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 1.740
+Version 1.741
 https://github.com/chrisgrieser/shimmering-focus/
 MIT License
 ─────────────────────────────────────────────────── */
@@ -1725,9 +1725,7 @@ button.document-search-button,
 body .excalidraw .HelpDialog--btn,
 a.style-settings-import,
 a.style-settings-export,
-.modal-container .modal .modal-button-container button,
-.modal-container .modal .modal-content button:not(.mod-cta),
-.modal-container .modal .modal-content button.mod-cta {
+.modal.modal.modal.modal.modal button {
 	font-family: var(--button-font);
 	font-size: var(--button-font-size);
 	font-weight: 500;
@@ -1751,9 +1749,7 @@ a.style-settings-export,
 .angular-shapes body .excalidraw .HelpDialog--btn,
 .angular-shapes a.style-settings-import,
 .angular-shapes a.style-settings-export,
-.angular-shapes .modal-container .modal .modal-button-container button,
-.angular-shapes .modal-container .modal .modal-content button:not(.mod-cta),
-.angular-shapes .modal-container .modal .modal-content button.mod-cta {
+.angular-shapes .modal.modal.modal.modal.modal button {
 	padding-bottom: 6px;
 }
 
@@ -1762,14 +1758,16 @@ button.document-search-button:hover,
 body .excalidraw .HelpDialog--btn:hover,
 body .setting-item-control a.style-settings-import:hover,
 body .setting-item-control a.style-settings-export:hover,
-body .modal-container .modal .modal-button-container button:not(.mod-cta):hover,
-body .modal-container .modal .modal-content button:not(.mod-cta):hover,
-body .modal-container .modal .modal-button-container button.mod-cta:hover,
-.modal-container .modal .modal-content button.mod-cta:hover {
+.modal.modal.modal.modal.modal button:hover {
 	color: var(--button-hover-text);
 	background-color: var(--interactive-hover-bg);
 	border-color: var(--interactive-hover-border);
 	transition: var(--medium-transition);
+}
+
+/* active button */
+.modal.modal.modal.modal.modal button:active {
+	box-shadow: none;
 }
 
 /* ───────────────────────────────────────────────────
@@ -1777,12 +1775,12 @@ body .modal-container .modal .modal-button-container button.mod-cta:hover,
 ─────────────────────────────────────────────────── */
 
 button.mod-warning:not(:hover) {
-	background-color: var(--text-error-hover) !important;
-	border-color: var(--text-error) !important;
+	background-color: var(--text-error-hover);
+	border-color: var(--text-error);
 }
 
 button.mod-warning:hover {
-	border-color: var(--interactive-hover-border) !important;
+	border-color: var(--interactive-hover-border);
 }
 
 p.mod-warning {
@@ -1961,15 +1959,19 @@ select.dropdown:hover {
 
 input[type="range"] {
 	width: 150px;
-	background-color: var(--bg3) !important;
+	background-color: var(--bg3);
 	box-shadow: var(--small-reverted-inset-shadow);
 	border-radius: calc(var(--roundish) / 2);
 }
 
 input[type="range"]::-WEBKIT-SLIDER-THUMB {
-	background-color: var(--interactive-bg) !important;
+	background-color: var(--interactive-bg);
 	box-shadow: var(--toggle-enabled-inset-shadow);
 	border-radius: var(--round);
+}
+
+input[type="range"]::-WEBKIT-SLIDER-THUMB:hover {
+	background-color: var(--interactive-hover-bg);
 }
 
 /* ───────────────────────────────────────────────────
@@ -3445,6 +3447,29 @@ body .community-plugin-info .community-plugin-downloads-text {
 	padding-left: 4px;
 }
 
+.modal.mod-community-theme .community-theme.is-selected .community-theme-info .clickable-icon:hover {
+	color: var(--button-hover-text);
+	background-color: var(--interactive-hover-bg);
+	border-color: var(--interactive-hover-border);
+	transition: var(--medium-transition);
+}
+
+.modal.mod-community-theme .community-theme.is-selected .community-theme-info .clickable-icon:active {
+	box-shadow: none;
+}
+
+.theme-light .community-theme.is-selected .community-theme-info .clickable-icon {
+	background-color: hsl(50 30% 80%);
+	box-shadow: -2px -2px 3px hsl(0 0% 60% / 50%) inset;
+	border-color: hsl(50 30% 60%);
+}
+
+.theme-dark .community-theme.is-selected .community-theme-info .clickable-icon {
+	background-color: hsl(50 60% 60%);
+	box-shadow: -2px -2px 2px hsl(0 0% 30% / 50%) inset;
+	border-color: hsl(50 70% 70%);
+}
+
 .community-theme.is-selected .community-theme-info .clickable-icon {
 	font-size: 0.9rem;
 	line-height: 1.4em;
@@ -3472,7 +3497,7 @@ body .community-plugin-info .community-plugin-downloads-text {
 
 /* Infobox */
 .community-theme.is-selected .community-theme-info::AFTER {
-	content: "🆕 Theme Docs:\A chrisgrieser.github.io\A/shimmering-focus \A\A⚠️ Sidebar Tabs now hidden until hovered. (Show perma- nently via Style Settings.)";
+	content: "ℹ️ Most UI elements become visible when hovered. \A\A🎨 Hidden UI elements can be re-enabled with Style Settings Plugin.";
 
 	font-family: var(--menu-font);
 	font-size: 0.8rem;
@@ -3515,25 +3540,6 @@ body .community-plugin-info .community-plugin-downloads-text {
 .community-theme.is-selected .community-plugin-downloads-text,
 .community-theme.is-selected .community-theme-info {
 	color: var(--text-muted);
-}
-
-.modal.mod-community-theme .community-theme.is-selected .community-theme-info .clickable-icon:hover {
-	color: var(--button-hover-text);
-	background-color: var(--interactive-hover-bg);
-	border-color: var(--interactive-hover-border);
-	transition: var(--medium-transition);
-}
-
-.theme-light .community-theme.is-selected .community-theme-info .clickable-icon {
-	background-color: hsl(50 30% 80%);
-	box-shadow: -2px -2px 3px hsl(0 0% 60% / 50%) inset;
-	border-color: hsl(50 30% 60%);
-}
-
-.theme-dark .community-theme.is-selected .community-theme-info .clickable-icon {
-	background-color: hsl(50 60% 60%);
-	box-shadow: -2px -2px 2px hsl(0 0% 30% / 50%) inset;
-	border-color: hsl(50 70% 70%);
 }
 
 .community-theme.is-selected svg.github-glyph > path {
@@ -5843,7 +5849,7 @@ body:not(.no-pandoc-citation-emphasis) .cm-hmd-barelink {
 }
 
 body:not(.no-pandoc-citation-emphasis) .cm-link.cm-quote.cm-hmd-barelink {
-	color: var(--reference-color) !important;
+	color: var(--reference-color);
 }
 
 /* ───────────────────────────────────────────────────
@@ -7011,10 +7017,17 @@ body:not(.show-graph-controls) .graph-controls.is-close:not(:hover) {
 ─────────────────────────────────────────────────── */
 
 /* ───────────────────────────────────────────────────
+<< Better Command Palette
+─────────────────────────────────────────────────── */
+.better-command-palette-title {
+	display: none;
+}
+
+/* ───────────────────────────────────────────────────
 << Supercharged Links
 ─────────────────────────────────────────────────── */
 
-body:not(.no-built-in-supercharged-links) .data-link-icon[data-link-tags*="#checklist" i]::BEFORE { content: "☑️ " }
+body:not(.no-built-in-supercharged-links) .data-link-icon[data-link-tags*="#checklist" i]::BEFORE { content: "✅ " }
 body:not(.no-built-in-supercharged-links) .data-link-icon[data-link-kanban-plugin]::BEFORE { content: "🎆 " }
 body:not(.no-built-in-supercharged-links) .data-link-icon[data-link-tags*="#moc" i]::BEFORE { content: "🗺 " }
 body:not(.no-built-in-supercharged-links) .data-link-icon[data-link-tags*="#person " i]::BEFORE { content: "👤 " }
@@ -8837,7 +8850,7 @@ body .dataview.inline-field-key {
 }
 
 .style-settings-heading[data-id="shimmering-focus"]::BEFORE {
-	content: "ℹ️ Shimmering Focus Readme \A chrisgrieser.github.io/shimmering-focus";
+	content: "Theme Documentation \A chrisgrieser.github.io/shimmering-focus";
 
 	font-family: var(--menu-font);
 	font-size: 0.9rem;
