@@ -4,6 +4,7 @@ nav_order: 110
 
 # Changelog
 
+- 2022-01-26	fix for quick switcher & improved prompts
 - 2022-01-26	styled Better Command Palette Plugin
 - 2022-01-26	minimalistic command palette pins
 - 2022-01-26	minor slider + button improvement
