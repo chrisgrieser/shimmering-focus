@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 1.741
+Version 1.742
 https://github.com/chrisgrieser/shimmering-focus/
 MIT License
 ─────────────────────────────────────────────────── */
@@ -2256,7 +2256,7 @@ div.prompt-results {
 
 .suggestion-item {
 	padding-right: 5px;
-	padding-left: 25px;
+	padding-left: 7px;
 }
 
 .suggestion-item.is-selected {
@@ -2268,10 +2268,18 @@ div.prompt-results {
 	display: none;
 }
 
-/* the pin */
+/* pin replacement */
+.suggestion-item .suggestion-flair svg {
+	display: none;
+}
+
 .suggestion-item .suggestion-flair {
-	left: 5px;
-	transform: scale(0.85);
+	left: 0;
+}
+
+.suggestion-item .suggestion-flair::BEFORE {
+	content: "";
+	border-left: 3px solid var(--text-faint);
 }
 
 .suggestion-highlight {

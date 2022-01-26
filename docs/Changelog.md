@@ -4,6 +4,7 @@ nav_order: 110
 
 # Changelog
 
+- 2022-01-26	minimalistic command palette pins
 - 2022-01-26	minor slider + button improvement
 - 2022-01-25	statusbar coloring
 - 2022-01-25	fixed look of wikilinks in pseudo-admonition source mode
