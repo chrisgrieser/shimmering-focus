@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 1.745
+Version 1.746
 https://github.com/chrisgrieser/shimmering-focus/
 MIT License
 ─────────────────────────────────────────────────── */
@@ -5438,6 +5438,7 @@ body:not(.annotation-tags-off) .tag[href="#agree"],
 body:not(.annotation-tags-off) .tag[href="#example"],
 body:not(.annotation-tags-off) .tag[href="#definition"],
 body:not(.annotation-tags-off) .tag[href="#method"],
+body:not(.annotation-tags-off) .tag[href="#data"],
 body:not(.annotation-tags-off) .tag[href="#important"],
 body:not(.annotation-tags-off) .tag[href="#quote"],
 body:not(.annotation-tags-off) .tag[href="#todo"],
@@ -5446,6 +5447,7 @@ body:not(.annotation-tags-off) .cm-s-obsidian .cm-line span.cm-tag-goal,
 body:not(.annotation-tags-off) .cm-s-obsidian .cm-line span.cm-tag-critique,
 body:not(.annotation-tags-off) .cm-s-obsidian .cm-line span.cm-tag-todo,
 body:not(.annotation-tags-off) .cm-s-obsidian .cm-line span.cm-tag-quote,
+body:not(.annotation-tags-off) .cm-s-obsidian .cm-line span.cm-tag-data,
 body:not(.annotation-tags-off) .cm-s-obsidian .cm-line span.cm-tag-method,
 body:not(.annotation-tags-off) .cm-s-obsidian .cm-line span.cm-tag-disagree,
 body:not(.annotation-tags-off) .cm-s-obsidian .cm-line span.cm-tag-gap,
@@ -5479,6 +5481,7 @@ body:not(.annotation-tags-off) .longform-leaf .tag[href="#agree"],
 body:not(.annotation-tags-off) .longform-leaf .tag[href="#example"],
 body:not(.annotation-tags-off) .longform-leaf .tag[href="#definition"],
 body:not(.annotation-tags-off) .longform-leaf .tag[href="#method"],
+body:not(.annotation-tags-off) .longform-leaf .tag[href="#data"],
 body:not(.annotation-tags-off) .longform-leaf .tag[href="#important"],
 body:not(.annotation-tags-off) .longform-leaf .tag[href="#quote"],
 body:not(.annotation-tags-off) .longform-leaf .tag[href="#todo"],
@@ -5488,6 +5491,7 @@ body:not(.annotation-tags-off) .longform-leaf .cm-s-obsidian .cm-line span.cm-ta
 body:not(.annotation-tags-off) .longform-leaf .cm-s-obsidian .cm-line span.cm-tag-critique,
 body:not(.annotation-tags-off) .longform-leaf .cm-s-obsidian .cm-line span.cm-tag-todo,
 body:not(.annotation-tags-off) .longform-leaf .cm-s-obsidian .cm-line span.cm-tag-quote,
+body:not(.annotation-tags-off) .longform-leaf .cm-s-obsidian .cm-line span.cm-tag-data,
 body:not(.annotation-tags-off) .longform-leaf .cm-s-obsidian .cm-line span.cm-tag-method,
 body:not(.annotation-tags-off) .longform-leaf .cm-s-obsidian .cm-line span.cm-tag-disagree,
 body:not(.annotation-tags-off) .longform-leaf .cm-s-obsidian .cm-line span.cm-tag-gap,
@@ -5508,6 +5512,7 @@ body:not(.annotation-tags-off) .cm-s-obsidian .cm-line .cm-hashtag-begin.cm-tag-
 body:not(.annotation-tags-off) .cm-s-obsidian .cm-line .cm-hashtag-begin.cm-tag-todo,
 body:not(.annotation-tags-off) .cm-s-obsidian .cm-line .cm-hashtag-begin.cm-tag-quote,
 body:not(.annotation-tags-off) .cm-s-obsidian .cm-line .cm-hashtag-begin.cm-tag-method,
+body:not(.annotation-tags-off) .cm-s-obsidian .cm-line .cm-hashtag-begin.cm-tag-data,
 body:not(.annotation-tags-off) .cm-s-obsidian .cm-line .cm-hashtag-begin.cm-tag-disagree,
 body:not(.annotation-tags-off) .cm-s-obsidian .cm-line .cm-hashtag-begin.cm-tag-gap,
 body:not(.annotation-tags-off) .cm-s-obsidian .cm-line .cm-hashtag-begin.cm-tag-summary,
@@ -5529,6 +5534,7 @@ body:not(.annotation-tags-off) .cm-s-obsidian .cm-line .cm-hashtag-end.cm-tag-cr
 body:not(.annotation-tags-off) .cm-s-obsidian .cm-line .cm-hashtag-end.cm-tag-todo,
 body:not(.annotation-tags-off) .cm-s-obsidian .cm-line .cm-hashtag-end.cm-tag-quote,
 body:not(.annotation-tags-off) .cm-s-obsidian .cm-line .cm-hashtag-end.cm-tag-method,
+body:not(.annotation-tags-off) .cm-s-obsidian .cm-line .cm-hashtag-end.cm-tag-data,
 body:not(.annotation-tags-off) .cm-s-obsidian .cm-line .cm-hashtag-end.cm-tag-disagree,
 body:not(.annotation-tags-off) .cm-s-obsidian .cm-line .cm-hashtag-end.cm-tag-gap,
 body:not(.annotation-tags-off) .cm-s-obsidian .cm-line .cm-hashtag-end.cm-tag-summary,
@@ -5612,6 +5618,16 @@ body:not(.annotation-tags-off) .tag[href="#method"] {
 body:not(.annotation-tags-off) .cm-hashtag-begin.cm-tag-method::BEFORE,
 body:not(.annotation-tags-off) .tag[href="#method"]::BEFORE {
 	content: "🔬 ";
+}
+
+body:not(.annotation-tags-off) .cm-tag-data,
+body:not(.annotation-tags-off) .tag[href="#data"] {
+	background-color: rgb(170 121 66 / 50%);
+}
+
+body:not(.annotation-tags-off) .cm-hashtag-begin.cm-tag-data::BEFORE,
+body:not(.annotation-tags-off) .tag[href="#data"]::BEFORE {
+	content: "📊 ";
 }
 
 body:not(.annotation-tags-off) .cm-tag-main,

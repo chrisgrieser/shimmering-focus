@@ -4,6 +4,7 @@ nav_order: 110
 
 # Changelog
 
+- 2022-01-27	new annotation tag: #data
 - 2022-01-27	fix pandoc citaiton coloring in blockquotes
 - 2022-01-26	fix for quick switcher & improved prompts
 - 2022-01-26	styled Better Command Palette Plugin
