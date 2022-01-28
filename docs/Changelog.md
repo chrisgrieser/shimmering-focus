@@ -4,7 +4,7 @@ nav_order: 110
 
 # Changelog
 
-- 2022-01-28	patch
+- 2022-01-28	coloring for core search assistant plugin
 - 2022-01-27	new annotation tag: #data
 - 2022-01-27	fix pandoc citaiton coloring in blockquotes
 - 2022-01-26	fix for quick switcher & improved prompts

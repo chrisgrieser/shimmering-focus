@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 1.748
+Version 1.749
 https://github.com/chrisgrieser/shimmering-focus/
 MIT License
 ─────────────────────────────────────────────────── */
@@ -7065,6 +7065,14 @@ body:not(.show-graph-controls) .graph-controls.is-close:not(:hover) {
 ─────────────────────────────────────────────────── */
 
 /* ───────────────────────────────────────────────────
+<< Core Search Assistant
+─────────────────────────────────────────────────── */
+.core-search-assistant_search-mode-outline {
+	/* needs important */
+	outline-color: var(--search-match-color) !important;
+}
+
+/* ───────────────────────────────────────────────────
 << Better Command Palette
 ─────────────────────────────────────────────────── */
 .better-command-palette-title {
@@ -9478,6 +9486,7 @@ community:
 - obsidian-emoji-toolbar
 - supercharged-links-obsidian
 - obsidian-better-command-palette
+- obsidian-core-search-assistant-plugin
 */
 
 /* ───────────────────────────────────────────────────
