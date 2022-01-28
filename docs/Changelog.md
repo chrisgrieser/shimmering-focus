@@ -4,6 +4,7 @@ nav_order: 110
 
 # Changelog
 
+- 2022-01-28	fix bugs with writing css class
 - 2022-01-28	update docs
 - 2022-01-28	styling core search assistant plugin
 - 2022-01-28	compatibility with footnote indicator plugin

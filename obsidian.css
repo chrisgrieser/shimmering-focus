@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 1.753
+Version 1.754
 https://github.com/chrisgrieser/shimmering-focus/
 MIT License
 ─────────────────────────────────────────────────── */
@@ -8061,8 +8061,8 @@ body.hide-index-files .nav-file-title[data-path$="Index.md"] {
 ─────────────────────────────────────────────────── */
 /* https://github.com/kevboh/longform#scene-only-styling */
 
-.writing .markdown-preview-view,
-.writing .mod-cm6.cm-s-obsidian .cm-contentContainer,
+.writing.markdown-preview-view,
+.writing.mod-cm6.cm-s-obsidian .cm-contentContainer,
 .longform-leaf .markdown-preview-view,
 .longform-leaf .markdown-source-view.mod-cm5,
 .longform-leaf .mod-cm6.cm-s-obsidian .cm-contentContainer {
@@ -8076,11 +8076,11 @@ body.hide-index-files .nav-file-title[data-path$="Index.md"] {
 }
 
 /* keep any code smaller */
-body > div.app-container .writing .cm-s-obsidian .cm-hmd-frontmatter,
-.writing .markdown-preview-view .frontmatter-container,
-.writing .cm-s-obsidian .HyperMD-codeblock,
-.writing .markdown-preview-view code,
-.writing .cm-s-obsidian span.cm-inline-code,
+body > div.app-container .writing.cm-s-obsidian .cm-hmd-frontmatter,
+.writing.markdown-preview-view .frontmatter-container,
+.writing.cm-s-obsidian .HyperMD-codeblock,
+.writing.markdown-preview-view code,
+.writing.cm-s-obsidian span.cm-inline-code,
 .writing .HyperMD-table-row,
 .writing .cm-formatting-task,
 body > div.app-container .longform-leaf .cm-s-obsidian .cm-hmd-frontmatter,
@@ -8096,6 +8096,11 @@ body > div.app-container .longform-leaf .cm-s-obsidian .cm-hmd-frontmatter,
 	hyphens: none;
 }
 
+body > div.app-container .writing.cm-s-obsidian .cm-hmd-frontmatter,
+body > div.app-container .longform-leaf .cm-s-obsidian .cm-hmd-frontmatter {
+	line-height: 1em;
+}
+
 /* justify text */
 body:not(.longform-left-aligned) .writing,
 body:not(.longform-left-aligned) .longform-leaf {
@@ -8104,16 +8109,16 @@ body:not(.longform-left-aligned) .longform-leaf {
 }
 
 /* do not justify code blocks, headings, tables, and lists */
-body .app-container .writing .cm-s-obsidian .HyperMD-codeblock,
+body .app-container .writing.cm-s-obsidian .HyperMD-codeblock,
 body .app-container .writing table td span,
 body .app-container .writing div.HyperMD-list-line.cm-line,
 body .app-container .writing div.HyperMD-header.cm-line,
-body .app-container .writing div.markdown-preview-view h1,
-body .app-container .writing div.markdown-preview-view h2,
-body .app-container .writing div.markdown-preview-view h3,
-body .app-container .writing div.markdown-preview-view h4,
-body .app-container .writing div.markdown-preview-view h5,
-body .app-container .writing div.markdown-preview-view h6,
+body .app-container .writing.markdown-preview-view h1,
+body .app-container .writing.markdown-preview-view h2,
+body .app-container .writing.markdown-preview-view h3,
+body .app-container .writing.markdown-preview-view h4,
+body .app-container .writing.markdown-preview-view h5,
+body .app-container .writing.markdown-preview-view h6,
 body .app-container .longform-leaf .cm-s-obsidian .HyperMD-codeblock,
 body .app-container .longform-leaf table td span,
 body .app-container .longform-leaf div.HyperMD-list-line.cm-line,
@@ -8129,13 +8134,13 @@ body .app-container .longform-leaf div.markdown-preview-view h6 {
 }
 
 /* style headings */
-.writing .markdown-preview-view h1,
-.writing .markdown-preview-view h2,
-.writing .markdown-preview-view h3,
-.writing .markdown-preview-view h4,
-.writing .markdown-preview-view h5,
-.writing .markdown-preview-view h6,
-.writing .cm-header,
+.writing.markdown-preview-view h1,
+.writing.markdown-preview-view h2,
+.writing.markdown-preview-view h3,
+.writing.markdown-preview-view h4,
+.writing.markdown-preview-view h5,
+.writing.markdown-preview-view h6,
+.writing .cm-header.cm-header,
 .longform-leaf .markdown-preview-view h1,
 .longform-leaf .markdown-preview-view h2,
 .longform-leaf .markdown-preview-view h3,
@@ -8147,7 +8152,7 @@ body .app-container .longform-leaf div.markdown-preview-view h6 {
 	line-height: 1em;
 }
 
-body.longform-text-indent .writing .markdown-preview-view p,
+body.longform-text-indent .writing.markdown-preview-view p,
 body.longform-text-indent .longform-leaf .markdown-preview-view p {
 	text-indent: 2em;
 }
@@ -9010,6 +9015,7 @@ body a.style-settings-export {
 	font-size: calc(var(--button-font-size) * 0.85);
 	text-decoration: none;
 
+	color: var(--extra-contrast);
 	background-color: var(--muted-button-bg);
 	box-shadow: var(--muted-button-inset-shadow);
 
