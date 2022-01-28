@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 1.749
+Version 1.750
 https://github.com/chrisgrieser/shimmering-focus/
 MIT License
 ─────────────────────────────────────────────────── */
@@ -528,14 +528,14 @@ body.theme-dark {
 	--notice-border: 2px solid hsl(var(--light-hue) var(--sat-light-3) 55%);
 	--search-match-outline: 2px solid var(--search-match-color);
 	--interactive-border-color: var(--accent-lighterer);
-	--interactive-hover-hover-border-color: var(--alt-accent-lighter);
+	--interactive-hover-border-color: var(--alt-accent-lighter);
 }
 
 .theme-dark {
 	--notice-border: 2px solid hsl(var(--dark-hue) var(--sat-dark-1) 45%);
 	--search-match-outline: 1px solid var(--search-match-color);
 	--interactive-border-color: var(--text-accent);
-	--interactive-hover-hover-border-color: var(--alt-accent);
+	--interactive-hover-border-color: var(--alt-accent);
 }
 
 /* ───────────────────────────────────────────────────
@@ -1767,7 +1767,7 @@ body .setting-item-control a.style-settings-export:hover,
 .modal.modal.modal.modal.modal button:hover {
 	color: var(--button-hover-text);
 	background-color: var(--interactive-hover-bg);
-	border-color: var(--interactive-hover-hover-border-color);
+	border-color: var(--interactive-hover-border-color);
 	transition: var(--medium-transition);
 }
 
@@ -1786,7 +1786,7 @@ button.mod-warning:not(:hover) {
 }
 
 button.mod-warning:hover {
-	border-color: var(--interactive-hover-hover-border-color);
+	border-color: var(--interactive-hover-border-color);
 }
 
 p.mod-warning {
@@ -1842,7 +1842,7 @@ body.angular-shapes .checkbox-container {
 
 .checkbox-container:hover {
 	box-shadow: none;
-	border: 9px solid var(--interactive-hover-hover-border-color);
+	border: 9px solid var(--interactive-hover-border-color);
 	transition: var(--medium-transition);
 }
 
@@ -1904,7 +1904,7 @@ body input[type]:focus {
 
 body textarea:hover,
 body input[type]:hover {
-	border-color: var(--interactive-hover-hover-border-color);
+	border-color: var(--interactive-hover-border-color);
 }
 
 .theme-dark textarea,
@@ -1956,7 +1956,7 @@ select.dropdown {
 
 select.dropdown:hover {
 	background-color: var(--bg2);
-	border-color: var(--interactive-hover-hover-border-color) !important;
+	border-color: var(--interactive-hover-border-color) !important;
 }
 
 /* ───────────────────────────────────────────────────
@@ -2056,7 +2056,7 @@ body > .app-container input.document-replace-input:focus {
 
 body > .app-container input.document-search-input:hover,
 body > .app-container input.document-replace-input:hover {
-	border: 2px solid var(--interactive-hover-hover-border-color);
+	border: 2px solid var(--interactive-hover-border-color);
 }
 
 /* for whatever reason the horizontal scrollbar
@@ -3383,7 +3383,7 @@ body .community-plugin-info .community-plugin-downloads-text {
 .community-plugin-author + .community-plugin-author a:hover::AFTER {
 	color: var(--button-hover-text);
 	background-color: var(--interactive-hover-bg);
-	border-color: var(--interactive-hover-hover-border-color);
+	border-color: var(--interactive-hover-border-color);
 }
 
 /* copy URL button  */
@@ -3486,7 +3486,7 @@ body .community-plugin-info .community-plugin-downloads-text {
 .modal.mod-community-theme .community-theme.is-selected .community-theme-info .clickable-icon:hover {
 	color: var(--button-hover-text);
 	background-color: var(--interactive-hover-bg);
-	border-color: var(--interactive-hover-hover-border-color);
+	border-color: var(--interactive-hover-border-color);
 	transition: var(--medium-transition);
 }
 
@@ -3622,7 +3622,7 @@ body .community-plugin-info .community-plugin-downloads-text {
 
 .community-theme.is-selected,
 .community-theme:hover {
-	border-color: var(--interactive-hover-hover-border-color);
+	border-color: var(--interactive-hover-border-color);
 }
 
 .community-theme.is-selected:not(:hover) {
@@ -5999,6 +5999,12 @@ body:not(.no-fn-indicator) .mod-cm6 .cm-hmd-barelink:not(.cm-formatting-link) + 
 	display: none;
 }
 
+/* styling when the footnote indicator plugin is used */
+.no-fn-indicator .footnote-link:not(.footnote-backref)::BEFORE,
+.no-fn-indicator .mod-cm6.cm-s-obsidian span.cm-footref.cm-formatting::BEFORE {
+	color: var(--reference-color);
+}
+
 /* ───────────────────────────────────────────────────
 << Horizontal line (hr)
 ─────────────────────────────────────────────────── */
@@ -7072,6 +7078,20 @@ body:not(.show-graph-controls) .graph-controls.is-close:not(:hover) {
 	outline-color: var(--search-match-color) !important;
 }
 
+body #core-search-assistant_card-view .content .item-container {
+  box-shadow: var(--tiny-shadow);
+  top: 0;
+  border: var(--basic-border);
+}
+
+#core-search-assistant_card-view .content .item-container:hover {
+	border-color: var(--interactive-hover-border-color);
+}
+
+#core-search-assistant_card-view .content .item-container.is-selected {
+	border-color: var(--text-accent);
+}
+
 /* ───────────────────────────────────────────────────
 << Better Command Palette
 ─────────────────────────────────────────────────── */
@@ -7836,7 +7856,7 @@ input#new-scene {
 }
 
 .new-draft-container select:hover {
-	border-color: var(--interactive-hover-hover-border-color);
+	border-color: var(--interactive-hover-border-color);
 }
 
 .new-draft-container select:focus {
@@ -9191,7 +9211,7 @@ body .lt-ignore-btn:hover {
 .lt-buttoncontainer > button:hover {
 	color: var(--button-hover-text);
 	background-color: var(--interactive-hover-bg);
-	border-color: var(--interactive-hover-hover-border-color);
+	border-color: var(--interactive-hover-border-color);
 }
 
 svg.sync-small {
@@ -9487,6 +9507,7 @@ community:
 - supercharged-links-obsidian
 - obsidian-better-command-palette
 - obsidian-core-search-assistant-plugin
+- obsidian-footnote-indicator
 */
 
 /* ───────────────────────────────────────────────────
