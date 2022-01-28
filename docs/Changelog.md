@@ -4,7 +4,10 @@ nav_order: 110
 
 # Changelog
 
+- 2022-01-28	styling for codeblock label plugin
+- 2022-01-28	Merge pull request #100 from tingmelvin/main
 - 2022-01-28	3 new cursor styles
+- 2022-01-28	Update obsidian.css
 - 2022-01-28	fix improved headers for kanbans
 - 2022-01-28	better header bar hiding
 - 2022-01-28	fix bugs with writing css class

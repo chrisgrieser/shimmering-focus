@@ -7455,7 +7455,7 @@ body.no-calendar-lines #calendar-container table.calendar th {
 	border: none;
 }
 
-/* bold today's date */ 
+/* bold today's date */
 .bold-calendar-today .workspace-leaf-content[data-type="calendar"] .day.today {
     font-family: var(--heading-font) !important;
     font-weight: 700 !important;
@@ -9500,9 +9500,37 @@ body .cm-matched-string {
 << CookLang Plugin
 ─────────────────────────────────────────────────── */
 
-.workspace-leaf-content[data-type=cook] .view-content {
-    padding-left: 1em;
-    padding-right: 1em;
+.workspace-leaf-content[data-type="cook"] .view-content {
+	padding-right: 1em;
+	padding-left: 1em;
+}
+
+/* ───────────────────────────────────────────────────
+<< Code Block Labels
+─────────────────────────────────────────────────── */
+/* https://github.com/stbowers/obsidian-codeblock-labels#obsidian-code-block-labels-plugin */
+
+.markdown-preview-view .codeblock-label {
+	font-size: calc(var(--monospace-font-size) * 0.9);
+	font-weight: 700;
+
+	background: transparent;
+
+	position: relative;
+	top: 1.95em;
+	left: 2px;
+	z-index: 1;
+
+	padding: 2px 8px;
+	margin-top: 0;
+
+	border-radius: var(--roundish);
+}
+
+.markdown-preview-view .codeblock-label + pre[class*="language-"]::AFTER {
+	font-style: italic;
+	color: var(--text-faint);
+	opacity: 0.8;
 }
 
 /* ───────────────────────────────────────────────────
@@ -9539,7 +9567,6 @@ community:
 - quick-explorer
 - templater-obsidian
 - obsidian-system-dark-mode
-- obsidian-extra-md-commands
 - obsidian-style-settings
 - obsidian-activity-history
 - breadcrumbs
@@ -9562,6 +9589,8 @@ community:
 - obsidian-better-command-palette
 - obsidian-core-search-assistant-plugin
 - obsidian-footnote-indicator
+- cooklang-obsidian
+- obsidian-codeblock-labels
 */
 
 /* ───────────────────────────────────────────────────
@@ -10080,7 +10109,7 @@ settings:
 	 collapsed: true
 	-
 	 id: active-line-highlight
-	 title: ⚡️ Active Line Highlight
+	 title: Active Line Highlight
 	 description: '"Focused Highlight" will only emphasize the active line instead of the active paragraph (block), similar to Code Editors. ⚠️ However, this comes at the cost of disabling any form of horizontal scrolling in the editor. (Focused Highlight does not work in the Legacy Editor.)'
 	 type: class-select
 	 allowEmpty: false
@@ -10225,7 +10254,7 @@ settings:
 	 default: false
 	-
 	 id: bold-calendar-today
-	 title: 'Calendar: Bold today's date'
+	 title: "Calendar: Bold today's date"
 	 description: Applies the heading font to today's date in the Calendar plugin's Calendar.
 	 type: class-toggle
 	 hub: ignore
