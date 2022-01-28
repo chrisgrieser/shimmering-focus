@@ -4,7 +4,7 @@ nav_order: 110
 
 # Changelog
 
-- 2022-01-28	patch
+- 2022-01-28	update docs
 - 2022-01-28	styling core search assistant plugin
 - 2022-01-28	compatibility with footnote indicator plugin
 - 2022-01-28	coloring for core search assistant plugin
