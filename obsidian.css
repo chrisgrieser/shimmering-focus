@@ -7455,6 +7455,12 @@ body.no-calendar-lines #calendar-container table.calendar th {
 	border: none;
 }
 
+/* bold today's date */ 
+.bold-calendar-today .workspace-leaf-content[data-type="calendar"] .day.today {
+    font-family: var(--heading-font) !important;
+    font-weight: 700 !important;
+}
+
 /* ───────────────────────────────────────────────────
 << Templater
 ─────────────────────────────────────────────────── */
@@ -9491,6 +9497,15 @@ body .cm-matched-string {
 }
 
 /* ───────────────────────────────────────────────────
+<< CookLang Plugin
+─────────────────────────────────────────────────── */
+
+.workspace-leaf-content[data-type=cook] .view-content {
+    padding-left: 1em;
+    padding-right: 1em;
+}
+
+/* ───────────────────────────────────────────────────
 < Compatibility Info for the Obsidian Hub
 ─────────────────────────────────────────────────── */
 
@@ -10205,6 +10220,13 @@ settings:
 	 id: no-calendar-lines
 	 title: 'Calendar: Remove vertical lines'
 	 description: Remove the lines in the Calendar plugin's Calendar (making it more similar to its default look).
+	 type: class-toggle
+	 hub: ignore
+	 default: false
+	-
+	 id: bold-calendar-today
+	 title: 'Calendar: Bold today's date'
+	 description: Applies the heading font to today's date in the Calendar plugin's Calendar.
 	 type: class-toggle
 	 hub: ignore
 	 default: false
