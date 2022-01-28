@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 1.747
+Version 1.748
 https://github.com/chrisgrieser/shimmering-focus/
 MIT License
 ─────────────────────────────────────────────────── */
@@ -2948,11 +2948,22 @@ body .app-container .workspace-leaf-resize-handle:hover {
 /* <<< Community plugin list */
 .installed-plugins-container .setting-item-description > div:first-child {
 	font-family: var(--smallcap-font);
-	line-height: 1.1em;
 
 	/* hide "Version: " in front of version number */
 	overflow-x: hidden;
-	text-indent: -3.4em;
+	text-indent: -3.6em;
+}
+
+.installed-plugins-container .setting-item-description > div:nth-child(2) {
+	font-family: var(--smallcap-font);
+}
+
+.installed-plugins-container .setting-item-description > div:nth-child(2)::FIRST-LETTER {
+	text-transform: lowercase;
+}
+
+.installed-plugins-container .setting-item-description {
+	line-height: 1.2em;
 }
 
 .installed-plugins-container .checkbox-container {
@@ -3006,18 +3017,18 @@ body .app-container .workspace-leaf-resize-handle:hover {
 	font-weight: 600;
 	line-height: 0;
 	color: var(--text-faint);
-	padding-top: 9px;
+	padding-top: 10px;
+}
+
+.setting-hotkey.mod-empty::BEFORE {
+	content: "none";
+	font-size: 0.75rem;
 }
 
 .setting-hotkey.mod-active {
 	font-weight: 600;
 	color: var(--button-hover-text);
 	background-color: var(--interactive-hover-bg);
-}
-
-.setting-hotkey.mod-empty::BEFORE {
-	content: "none";
-	font-size: 0.75rem;
 }
 
 /* space between button and checklist, e.g.
@@ -9598,7 +9609,7 @@ settings:
 	-
 	 id: preset-color-scheme
 	 title: "Color Schemes"
-	 description: 'New Color Scheme: Nord ❄️. Selecting a color scheme other than "Custom Colors" overrides any Brightness, Color Tone, and Color Intensity settings. (More color schemes coming in the future!)'
+	 description: 'Selecting a color scheme other than "Custom Colors" overrides any Brightness, Color Tone, and Color Intensity settings.'
 	 type: class-select
 	 allowEmpty: false
 	 default: classic-colors
@@ -9965,7 +9976,7 @@ settings:
 	 default: false
 	-
 	 id: gutter-features
-	 title: 🆕 Gutter & Active Line
+	 title: Gutter & Active Line
 	 description: Active & Focused Line Highlight, Indicators in the Gutter
 	 type: heading
 	 level: 2
