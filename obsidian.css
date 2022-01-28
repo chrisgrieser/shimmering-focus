@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 1.758
+Version 1.759
 https://github.com/chrisgrieser/shimmering-focus/
 MIT License
 ─────────────────────────────────────────────────── */
@@ -8811,6 +8811,10 @@ pre button.copy:hover::BEFORE {
 << Dataview
 ─────────────────────────────────────────────────── */
 /* Styling from the "Tables" Section mostly applies */
+
+body .table-view-table > thead > tr > th {
+	font-size: 1em;
+}
 
 /* less indention to save space */
 .block-language-dataview > div > ul,
