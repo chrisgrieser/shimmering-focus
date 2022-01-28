@@ -4,6 +4,7 @@ nav_order: 110
 
 # Changelog
 
+- 2022-01-28	some styling for longform compile tab
 - 2022-01-28	fix header for empty panes
 - 2022-01-28	styling for codeblock label plugin
 - 2022-01-28	Merge pull request #100 from tingmelvin/main

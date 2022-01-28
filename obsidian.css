@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 1.760
+Version 1.761
 https://github.com/chrisgrieser/shimmering-focus/
 MIT License
 ─────────────────────────────────────────────────── */
@@ -494,6 +494,7 @@ body.theme-dark {
 	--toggle-disabled-inset-shadow: -3px -3px 2px 0px var(--inset-shadow-black) inset;
 	--small-inset-shadow: -1px -1px 0px var(--inset-shadow-black) inset;
 	--small-reverted-inset-shadow: 2px 2px 1px var(--inset-shadow-black) inset;
+	--medium-reverted-inset-shadow: 2px 2px 1px 1px var(--inset-shadow-black) inset;
 	--big-reverted-inset-shadow: 3px 3px 3px 3px var(--inset-shadow-black) inset;
 	--button-inset-shadow: -2px -2px 2px var(--inset-shadow-color) inset;
 	--muted-button-inset-shadow: -1px -1px 1px var(--inset-shadow-black) inset;
@@ -7802,7 +7803,11 @@ body .kanban-plugin .kanban-plugin__markdown-preview-view hr {
 
 .workspace-leaf-content[data-type="VIEW_TYPE_LONGFORM_EXPLORER"] .view-content {
 	/* 30 px as overscroll */
-	padding: 7px 4px 30px 1px;
+	padding: 0 0 30px;
+}
+
+.workspace-leaf-content[data-type="VIEW_TYPE_LONGFORM_EXPLORER"] .view-content .tabs {
+	padding: 0 4px;
 }
 
 .draft-container.selected,
@@ -7827,7 +7832,7 @@ body .kanban-plugin .kanban-plugin__markdown-preview-view hr {
 
 	color: var(--extra-contrast);
 
-	padding: 4px 2px;
+	padding: 4px 3px 4px 5px;
 
 	border: none;
 	border-radius: var(--roundish);
@@ -7875,6 +7880,7 @@ input#new-draft,
 input#new-scene {
 	height: 20px;
 	color: var(--unresolved-link-color);
+	box-shadow: none;
 	border-radius: 0;
 }
 
@@ -7933,17 +7939,16 @@ input#new-scene {
 
 #project-picker {
 	background-color: var(--bg3);
-	padding: 1px 1px 3px;
-	margin: 0 0 0 4px;
-	border: var(--basic-border);
+	box-shadow: var(--muted-button-inset-shadow);
+	padding: 0 2px 2px;
+	border-bottom: var(--thin-border);
 	border-radius: var(--roundish);
 }
 
 div#select-projects select {
-	font-family: var(--smallcap-font);
-	font-size: calc(var(--sidebar-font-size) * 1.1);
 	font-weight: 700;
 	letter-spacing: 0.5px;
+	color: var(--text-faint);
 }
 
 #project-picker select {
@@ -7988,7 +7993,6 @@ div#select-projects select {
 #scene-list .scene-container {
 	display: block;
 	letter-spacing: 0.1px;
-	padding-left: 5px;
 }
 
 #scene-list .scene-container[data-scene-path*="/_"]::BEFORE {
@@ -8042,6 +8046,7 @@ body:not(.no-alternating-rows) li:nth-child(even) .scene-container {
 
 	color: var(--text-faint);
 	background-color: var(--bg3);
+	box-shadow: var(--small-inset-shadow);
 
 	padding: 4px;
 	margin-right: 1px;
@@ -8091,6 +8096,52 @@ body.hide-index-files .nav-file-title[data-path$="Index.md"] {
 
 .nav-folder-title[data-path$="Drafts"] .nav-folder-title-content::BEFORE {
 	content: "folder_special";
+}
+
+/* Compile */
+button.longform-remove-step-button {
+	background: none;
+	padding: 0;
+}
+
+.longform-compile-step.longform-compile-step.longform-compile-step.longform-compile-step {
+	box-shadow: var(--muted-button-inset-shadow);
+	border-radius: var(--roundish);
+}
+
+button.options-button.options-button.options-button {
+	background: none;
+	padding: 5px;
+	margin-right: 0;
+	border-radius: var(--roundish);
+}
+
+button.options-button.options-button.options-button:hover {
+	color: var(--alt-accent);
+	background: none;
+}
+
+.longform-workflow-picker .select {
+	width: 85%;
+	background-color: var(--bg3);
+	box-shadow: var(--small-reverted-inset-shadow);
+	padding: 0 4px;
+	border-radius: var(--roundish);
+}
+
+select#longform-workflows {
+	width: 100%;
+}
+
+.longform-workflow-picker-container.longform-workflow-picker-container.longform-workflow-picker-container.longform-workflow-picker-container {
+	margin-bottom: 10px;
+	border-bottom: var(--basic-border);
+}
+
+.add-step-container + p {
+	line-height: 1.3em;
+	color: var(--extra-contrast);
+	padding-left: 2px;
 }
 
 /* ───────────────────────────────────────────────────
