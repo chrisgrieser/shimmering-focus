@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 1.761
+Version 1.762
 https://github.com/chrisgrieser/shimmering-focus/
 MIT License
 ─────────────────────────────────────────────────── */
@@ -8049,7 +8049,7 @@ body:not(.no-alternating-rows) li:nth-child(even) .scene-container {
 	box-shadow: var(--small-inset-shadow);
 
 	padding: 4px;
-	margin-right: 1px;
+	margin-right: 7px;
 
 	border: var(--thin-border);
 	border-radius: var(--roundish);
