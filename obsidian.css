@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 1.757
+Version 1.758
 https://github.com/chrisgrieser/shimmering-focus/
 MIT License
 ─────────────────────────────────────────────────── */
@@ -3421,14 +3421,14 @@ body .community-plugin-info .community-plugin-downloads-text {
 .modal.modal.mod-community-plugin .community-plugin-info button:last-child {
 	font-size: 0;
 
-	height: 34px;
+	height: 33px;
 
 	background-color: var(--muted-button-bg);
 	box-shadow: var(--muted-button-inset-shadow);
 
-	padding: 5px 6px 5px 5px;
+	padding: 5px 4px 5px 3px;
 
-	border-color: var(--muted-button-border);
+	border: var(--muted-button-border);
 }
 
 .modal.modal.mod-community-plugin .community-plugin-info button:last-child::BEFORE {
@@ -7457,8 +7457,8 @@ body.no-calendar-lines #calendar-container table.calendar th {
 
 /* bold today's date */
 .bold-calendar-today .workspace-leaf-content[data-type="calendar"] .day.today {
-    font-family: var(--heading-font) !important;
-    font-weight: 700 !important;
+	font-family: var(--heading-font) !important;
+	font-weight: 700 !important;
 }
 
 /* ───────────────────────────────────────────────────
