@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 1.755
+Version 1.756
 https://github.com/chrisgrieser/shimmering-focus/
 MIT License
 ─────────────────────────────────────────────────── */
@@ -1527,12 +1527,12 @@ body:not(.show-header-bar):not(.is-mobile):not(.plugin-sliding-panes-rotate-head
 	transition: var(--slow-transition);
 }
 
-.mod-root .view-header:not(:hover):not(:focus-within) + .view-content {
+.workspace-leaf-content[data-type="markdown"] .view-header:not(:hover):not(:focus-within) + .view-content {
 	margin-top: calc(var(--hidden-header-hotarea-height) * -1);
 }
 
-.mod-root .view-header:not(:hover):not(:focus-within) + .view-content .markdown-preview-view,
-.mod-root .view-header:not(:hover):not(:focus-within) + .view-content .cm-content {
+.workspace-leaf-content[data-type="markdown"] .view-header:not(:hover):not(:focus-within) + .view-content .markdown-preview-view:not(.kanban-plugin__markdown-preview-view),
+.workspace-leaf-content[data-type="markdown"] .view-header:not(:hover):not(:focus-within) + .view-content .cm-content {
 	padding-top: var(--hidden-header-hotarea-height);
 }
 
@@ -7525,7 +7525,7 @@ body:not(.show-header-bar) .workspace-leaf-content[data-type="kanban"] .view-hea
 
 .workspace-leaf-content[data-type="kanban"] .view-header.view-header:focus-within,
 .workspace-leaf-content[data-type="kanban"] .view-header.view-header:hover {
-	background-color: var(--bg2);
+	background-color: var(--bg2) !important;
 	background-image: unset;
 }
 
