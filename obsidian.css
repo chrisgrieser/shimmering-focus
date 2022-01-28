@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 1.754
+Version 1.755
 https://github.com/chrisgrieser/shimmering-focus/
 MIT License
 ─────────────────────────────────────────────────── */
@@ -1482,6 +1482,12 @@ body > div.notice-container .notice:hover {
 << Header Bar
 ─────────────────────────────────────────────────── */
 
+.view-header,
+.view-header + .view-content {
+	transition: var(--slow-transition);
+	--hidden-header-hotarea-height: 0.9em;
+}
+
 /* harmonize sizes for when titlebar is shown */
 body .view-header-title {
 	font-family: var(--ui-font);
@@ -1503,11 +1509,6 @@ body:not(.is-mobile) .view-header-icon {
 	color: var(--extra-contrast);
 }
 
-/* fade out pane when working on header */
-.view-header + .view-content {
-	transition: var(--slow-transition);
-}
-
 .view-header:focus-within + .view-content {
 	opacity: var(--inactive-pane-opacity);
 }
@@ -1515,15 +1516,24 @@ body:not(.is-mobile) .view-header-icon {
 /* show only on hover, when writing in the header bar,
 or when enabled by the style settings plugin */
 body:not(.show-header-bar):not(.is-mobile):not(.plugin-sliding-panes-rotate-header) .app-container .workspace-split.mod-root > .workspace-leaf .view-header {
-	height: 0.9em;
+	height: var(--hidden-header-hotarea-height);
 
-	background-color: var(--bg1);
+	background-color: transparent;
 
 	border-color: var(--text-faint);
 	border-top: none;
 	border-bottom: none;
 
 	transition: var(--slow-transition);
+}
+
+.mod-root .view-header:not(:hover):not(:focus-within) + .view-content {
+	margin-top: calc(var(--hidden-header-hotarea-height) * -1);
+}
+
+.mod-root .view-header:not(:hover):not(:focus-within) + .view-content .markdown-preview-view,
+.mod-root .view-header:not(:hover):not(:focus-within) + .view-content .cm-content {
+	padding-top: var(--hidden-header-hotarea-height);
 }
 
 .view-header-title-container::AFTER {
@@ -8062,6 +8072,11 @@ body.hide-index-files .nav-file-title[data-path$="Index.md"] {
 /* https://github.com/kevboh/longform#scene-only-styling */
 
 .writing.markdown-preview-view,
+.writing.mod-cm6.cm-s-obsidian {
+	background-color: var(--bg1);
+}
+
+.writing.markdown-preview-view,
 .writing.mod-cm6.cm-s-obsidian .cm-contentContainer,
 .longform-leaf .markdown-preview-view,
 .longform-leaf .markdown-source-view.mod-cm5,
@@ -8094,11 +8109,6 @@ body > div.app-container .longform-leaf .cm-s-obsidian .cm-hmd-frontmatter,
 	font-size: var(--monospace-font-size);
 	text-align: start;
 	hyphens: none;
-}
-
-body > div.app-container .writing.cm-s-obsidian .cm-hmd-frontmatter,
-body > div.app-container .longform-leaf .cm-s-obsidian .cm-hmd-frontmatter {
-	line-height: 1em;
 }
 
 /* justify text */
@@ -8849,6 +8859,8 @@ body .dataview.inline-field-key {
 .suggestion-item .another-quick-switcher__item__directory {
 	font-family: var(--smallcap-font);
 	font-size: 0.8em;
+	padding-right: 2px;
+	padding-left: 5px;
 }
 
 .suggestion-item.is-selected .another-quick-switcher__item__icon,
