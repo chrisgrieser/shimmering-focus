@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 1.756
+Version 1.757
 https://github.com/chrisgrieser/shimmering-focus/
 MIT License
 ─────────────────────────────────────────────────── */
@@ -231,8 +231,6 @@ the .create-ToC.sh.
 	--highlight-alt2: hsl(180 100% 50% / 40%);
 	--active-line-bg: hsl(62 11% 63% / 15%);
 	--spell-error-color: hsl(0 66% 64%);
-
-	--cursor-monocolor: var(--accent-lighter);
 }
 
 .theme-light {
@@ -254,8 +252,6 @@ the .create-ToC.sh.
 	--scrollbar-bg-active: var(--accent-lighterer);
 
 	--finished-task: var(--accent-lighter);
-	--cursor-duo-color-1: var(--alt-accent-lighterer);
-	--cursor-duo-color-2: var(--accent-lighterer);
 	--a-row: rgb(0 0 0 / 2.5%);
 	--b-row: rgb(0 0 0 / 7.5%);
 	--search-match-color: hsl(30 100% 50%);
@@ -280,8 +276,6 @@ the .create-ToC.sh.
 	--scrollbar-bg-active: var(--accent-lighter);
 
 	--finished-task: var(--text-accent);
-	--cursor-duo-color-1: var(--alt-accent-lighter);
-	--cursor-duo-color-2: var(--accent-lighter);
 	--a-row: rgb(0 0 0 / 15%);
 	--b-row: rgb(0 0 0 / 30%);
 	--search-match-color: hsl(60 100% 70%);
@@ -1203,28 +1197,55 @@ body.no-animations {
 < Cursor
 ─────────────────────────────────────────────────── */
 
+/* Shimmering Beam (Default) */
 .cm-cursorLayer .cm-cursor,
 .CodeMirror-cursor {
-	/* needs the "1" at the end:  https://www.digitalocean.com/community/tutorials/css-gradient-borders-pure-css */
-	border-image: linear-gradient(var(--cursor-duo-color-1), var(--cursor-duo-color-2)) 1;
-	border-left-width: 3px;
+	width: 3px;
+	background: linear-gradient(var(--alt-accent-lighter), var(--accent-lighter));
+	border: none;
 }
 
-body.mono-color-cursor .cm-cursor,
-body.mono-color-cursor .CodeMirror-cursor {
-	border-image: none;
-	border-color: var(--cursor-monocolor);
+.theme-light .cm-cursorLayer .cm-cursor,
+.theme-light .CodeMirror-cursor {
+	background: linear-gradient(var(--alt-accent-lighterer), var(--accent-lighterer));
 }
 
-body.block-cursor .cm-s-obsidian .cm-cursor,
-body.block-cursor .CodeMirror-cursor {
+/* iA Writer */
+.ia-writer-cursor .cm-cursor,
+.ia-writer-cursor .CodeMirror-cursor {
+	background: hsl(196 100% 56%);
+}
+
+.theme-light.ia-writer-cursor .cm-cursor,
+.theme-light.ia-writer-cursor .CodeMirror-cursor {
+	background: hsl(196 100% 48%);
+}
+
+/* Dark Eclipse */
+.dark-eclipse-cursor .cm-cursor {
+	width: 2.7px;
+	background: hsl(0 0% 0%);
+	outline: 0.2px solid hsl(0 0% 100%);
+}
+
+.theme-light.dark-eclipse-cursor .cm-cursor {
+	outline-color: hsl(220 10% 80%);
+}
+
+/* Fire & Ice */
+.fire-and-ice-cursor .cm-cursor {
+	background-image: linear-gradient(to right, hsl(22 100% 50%) 50%, hsl(216 100% 65%) 50%);
+}
+
+.theme-light.fire-and-ice-cursor .cm-cursor {
+	background-image: linear-gradient(to right, hsl(10 100% 70%) 50%, hsl(205 100% 65%) 50%);
+}
+
+/* block cursor */
+.block-cursor .cm-cursor.cm-cursor.cm-cursor,
+.block-cursor .CodeMirror-cursor.CodeMirror-cursor {
+	width: 0.6em;
 	opacity: 0.5;
-	border-left-width: 0.6em;
-}
-
-/* multi cursor */
-body:not(.mono-color-cursor) .cm-cursor.cm-cursor-secondary {
-	border-image: linear-gradient(hsl(220 100% 80%), hsl(40 100% 80%)) 1;
 }
 
 /* ───────────────────────────────────────────────────
@@ -9730,15 +9751,28 @@ settings:
 	 step: 2
 	 format: '%'
 	-
+	 id: cursor-styles
+	 title: ✨ Cursor Style
+	 type: class-select
+	 allowEmpty: false
+	 default: shimmering-beam-cursor
+	 options:
+		-
+			label: Shimmering Beam (Default)
+			value: shimmering-beam-cursor
+		-
+			label: iA Writer
+			value: ia-writer-cursor
+		-
+			label: Dark Eclipse
+			value: dark-eclipse-cursor
+		-
+			label: Fire & Ice
+			value: fire-and-ice-cursor
+	-
 	 id: block-cursor
 	 title: Block Cursor
-	 description: Use a block cursor instead of a line cursor. For best results, also switch the main font to a monospace font.
-	 type: class-toggle
-	 default: false
-	-
-	 id: mono-color-cursor
-	 title: Mono-colored Cursor
-	 description: Use a mono-colored, purple cursor.
+	 description: Use a block cursor instead of a line cursor. For best results, switch the main font to a monospace font.
 	 type: class-toggle
 	 default: false
 	-

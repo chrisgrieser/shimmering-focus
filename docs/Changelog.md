@@ -4,6 +4,7 @@ nav_order: 110
 
 # Changelog
 
+- 2022-01-28	3 new cursor styles
 - 2022-01-28	fix improved headers for kanbans
 - 2022-01-28	better header bar hiding
 - 2022-01-28	fix bugs with writing css class
