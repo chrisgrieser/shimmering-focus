@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 1.746
+Version 1.747
 https://github.com/chrisgrieser/shimmering-focus/
 MIT License
 ─────────────────────────────────────────────────── */
@@ -249,9 +249,7 @@ the .create-ToC.sh.
 	--button-text: var(--interactive-normal);
 	--button-hover-text: var(--text-normal);
 	--interactive-bg: var(--accent-lighter);
-	--interactive-border: var(--accent-lighterer);
 	--interactive-hover-bg: var(--alt-accent-lighterer);
-	--interactive-hover-border: var(--alt-accent-lighter);
 	--scrollbar-bg-hover: var(--alt-accent-lighter);
 	--scrollbar-bg-active: var(--accent-lighterer);
 
@@ -277,9 +275,7 @@ the .create-ToC.sh.
 	--button-text: var(--text-normal);
 	--button-hover-text: var(--interactive-normal);
 	--interactive-bg: var(--interactive-accent);
-	--interactive-border: var(--text-accent);
 	--interactive-hover-bg: var(--alt-accent-darker);
-	--interactive-hover-border: var(--alt-accent-lighter);
 	--scrollbar-bg-hover: var(--alt-accent-lighter);
 	--scrollbar-bg-active: var(--accent-lighter);
 
@@ -375,6 +371,11 @@ the .create-ToC.sh.
 	--muted-border-color: hsl(var(--dark-hue) var(--sat-dark-1) calc(var(--b-dark-1) - 6%));
 	--basic-border-color: hsl(var(--dark-hue) var(--sat-dark-1) calc(var(--b-dark-1) + 6%));
 	--backdrop-color: hsl(var(--dark-hue) 20% calc(var(--b-dark-3) - 2%));
+}
+
+.theme-light,
+.theme-dark {
+	--muted-button-bg: var(--bg2);
 }
 
 /* ───────────────────────────────────────────────────
@@ -520,16 +521,21 @@ body.theme-dark {
 	--thick-muted-border: 4px solid var(--muted-border-color);
 	--thin-border: 1px solid var(--basic-border-color);
 	--thin-muted-border: 1px solid var(--muted-border-color);
+	--muted-button-border: var(--basic-border);
 }
 
 .theme-light {
 	--notice-border: 2px solid hsl(var(--light-hue) var(--sat-light-3) 55%);
 	--search-match-outline: 2px solid var(--search-match-color);
+	--interactive-border-color: var(--accent-lighterer);
+	--interactive-hover-hover-border-color: var(--alt-accent-lighter);
 }
 
 .theme-dark {
 	--notice-border: 2px solid hsl(var(--dark-hue) var(--sat-dark-1) 45%);
 	--search-match-outline: 1px solid var(--search-match-color);
+	--interactive-border-color: var(--text-accent);
+	--interactive-hover-hover-border-color: var(--alt-accent);
 }
 
 /* ───────────────────────────────────────────────────
@@ -1740,7 +1746,7 @@ a.style-settings-export,
 
 	padding: 5px 12px 7px;
 
-	border: 2px solid var(--interactive-border);
+	border: 2px solid var(--interactive-border-color);
 	border-radius: var(--round);
 
 	transition: var(--medium-transition);
@@ -1761,7 +1767,7 @@ body .setting-item-control a.style-settings-export:hover,
 .modal.modal.modal.modal.modal button:hover {
 	color: var(--button-hover-text);
 	background-color: var(--interactive-hover-bg);
-	border-color: var(--interactive-hover-border);
+	border-color: var(--interactive-hover-hover-border-color);
 	transition: var(--medium-transition);
 }
 
@@ -1780,7 +1786,7 @@ button.mod-warning:not(:hover) {
 }
 
 button.mod-warning:hover {
-	border-color: var(--interactive-hover-border);
+	border-color: var(--interactive-hover-hover-border-color);
 }
 
 p.mod-warning {
@@ -1808,7 +1814,7 @@ p.mod-warning::BEFORE {
 
 	margin-left: 5px;
 
-	border: 2px solid var(--interactive-border);
+	border: 2px solid var(--interactive-border-color);
 	border-radius: var(--round);
 
 	transition: var(--medium-transition);
@@ -1831,12 +1837,12 @@ body.angular-shapes .checkbox-container {
 /* colors */
 .checkbox-container.is-enabled {
 	background-color: var(--interactive-bg);
-	border-color: var(--interactive-border);
+	border-color: var(--interactive-border-color);
 }
 
 .checkbox-container:hover {
 	box-shadow: none;
-	border: 9px solid var(--interactive-hover-border);
+	border: 9px solid var(--interactive-hover-hover-border-color);
 	transition: var(--medium-transition);
 }
 
@@ -1893,12 +1899,12 @@ input[type="text"] {
 
 body textarea:focus,
 body input[type]:focus {
-	border-color: var(--interactive-border);
+	border-color: var(--interactive-border-color);
 }
 
 body textarea:hover,
 body input[type]:hover {
-	border-color: var(--interactive-hover-border);
+	border-color: var(--interactive-hover-hover-border-color);
 }
 
 .theme-dark textarea,
@@ -1950,7 +1956,7 @@ select.dropdown {
 
 select.dropdown:hover {
 	background-color: var(--bg2);
-	border-color: var(--interactive-hover-border) !important;
+	border-color: var(--interactive-hover-hover-border-color) !important;
 }
 
 /* ───────────────────────────────────────────────────
@@ -2045,12 +2051,12 @@ body:not(.show-close-button) .document-search-close-button {
 /* ---------------------- */
 body > .app-container input.document-search-input:focus,
 body > .app-container input.document-replace-input:focus {
-	border: 2px solid var(--interactive-border);
+	border: 2px solid var(--interactive-border-color);
 }
 
 body > .app-container input.document-search-input:hover,
 body > .app-container input.document-replace-input:hover {
-	border: 2px solid var(--interactive-hover-border);
+	border: 2px solid var(--interactive-hover-hover-border-color);
 }
 
 /* for whatever reason the horizontal scrollbar
@@ -2194,7 +2200,7 @@ div.search-input-clear-button:hover::BEFORE,
 	top: 0;
 	right: 0;
 	padding: 0 4px 3px;
-	border-radius: 50px;
+	border-radius: var(--round);
 }
 
 /* only show on hover */
@@ -3062,13 +3068,13 @@ body .app-container .workspace-leaf-resize-handle:hover {
 /* sort order button */
 .modal.mod-community-plugin .community-plugin-search .setting-item-control button {
 	color: var(--extra-contrast);
-	background-color: var(--bg2);
+	background-color: var(--muted-button-bg);
 	box-shadow: var(--muted-button-inset-shadow);
 
 	margin-right: 8px;
 	margin-left: 4px;
 
-	border-color: var(--basic-border-color);
+	border: var(--muted-button-border);
 }
 
 .setting-item-control button svg.up-and-down-arrows {
@@ -3336,8 +3342,8 @@ body .community-plugin-info .community-plugin-downloads-text {
 .community-plugin-info .community-plugin-author + .community-plugin-author {
 	font-size: 0;
 	text-align: end;
-	margin-top: 42px;
-	margin-bottom: -42px;
+	margin-top: 45px;
+	margin-bottom: -45px;
 }
 
 .community-plugin-author + .community-plugin-author a {
@@ -3348,16 +3354,16 @@ body .community-plugin-info .community-plugin-downloads-text {
 	content: "launch";
 
 	font-family: var(--icon-font);
-	font-size: 0.9rem;
+	font-size: 1rem;
 	line-height: 1.1em;
 
 	color: var(--extra-contrast);
-	background-color: var(--bg2);
+	background-color: var(--muted-button-bg);
 	box-shadow: var(--muted-button-inset-shadow);
 
-	padding: 6px 9px 6px 10px;
+	padding: 7px 6px 7px 7px;
 
-	border: var(--basic-border);
+	border: var(--muted-button-border);
 	border-radius: var(--round);
 
 	transition: var(--medium-transition);
@@ -3366,16 +3372,21 @@ body .community-plugin-info .community-plugin-downloads-text {
 .community-plugin-author + .community-plugin-author a:hover::AFTER {
 	color: var(--button-hover-text);
 	background-color: var(--interactive-hover-bg);
-	border-color: var(--interactive-hover-border);
+	border-color: var(--interactive-hover-hover-border-color);
 }
 
 /* copy URL button  */
 .modal.modal.mod-community-plugin .community-plugin-info button:last-child {
 	font-size: 0;
-	background-color: var(--bg2);
+
+	height: 34px;
+
+	background-color: var(--muted-button-bg);
 	box-shadow: var(--muted-button-inset-shadow);
-	padding: 7px 4px 9px 3px;
-	border-color: var(--basic-border-color);
+
+	padding: 5px 6px 5px 5px;
+
+	border-color: var(--muted-button-border);
 }
 
 .modal.modal.mod-community-plugin .community-plugin-info button:last-child::BEFORE {
@@ -3464,7 +3475,7 @@ body .community-plugin-info .community-plugin-downloads-text {
 .modal.mod-community-theme .community-theme.is-selected .community-theme-info .clickable-icon:hover {
 	color: var(--button-hover-text);
 	background-color: var(--interactive-hover-bg);
-	border-color: var(--interactive-hover-border);
+	border-color: var(--interactive-hover-hover-border-color);
 	transition: var(--medium-transition);
 }
 
@@ -3537,7 +3548,7 @@ body .community-plugin-info .community-plugin-downloads-text {
 
 .community-theme.is-selected {
 	min-height: 360px;
-	border-color: var(--interactive-border);
+	border-color: var(--interactive-border-color);
 }
 
 .community-theme.is-selected .community-theme-screenshot {
@@ -3600,11 +3611,11 @@ body .community-plugin-info .community-plugin-downloads-text {
 
 .community-theme.is-selected,
 .community-theme:hover {
-	border-color: var(--interactive-hover-border);
+	border-color: var(--interactive-hover-hover-border-color);
 }
 
 .community-theme.is-selected:not(:hover) {
-	border-color: var(--interactive-border);
+	border-color: var(--interactive-border-color);
 }
 
 .modal.mod-community-theme {
@@ -3669,7 +3680,7 @@ body .modal.mod-community-theme .modal-content .modal-title {
 
 	margin-bottom: 9px;
 
-	border-color: var(--basic-border-color);
+	border: var(--muted-button-border);
 }
 
 .community-theme-filters-container button svg {
@@ -7806,11 +7817,11 @@ input#new-scene {
 }
 
 .new-draft-container select:hover {
-	border-color: var(--interactive-hover-border);
+	border-color: var(--interactive-hover-hover-border-color);
 }
 
 .new-draft-container select:focus {
-	border-color: var(--interactive-border);
+	border-color: var(--interactive-border-color);
 }
 
 /* explanation text */
@@ -8959,8 +8970,14 @@ body a.style-settings-import,
 body a.style-settings-export {
 	font-size: calc(var(--button-font-size) * 0.85);
 	text-decoration: none;
+
+	background-color: var(--muted-button-bg);
+	box-shadow: var(--muted-button-inset-shadow);
+
 	margin-right: 0;
 	margin-left: 12px;
+
+	border: var(--muted-button-border);
 }
 
 /* remove buggy and unnecessary export button for certain blocks */
@@ -9155,7 +9172,7 @@ body .lt-ignore-btn:hover {
 .lt-buttoncontainer > button:hover {
 	color: var(--button-hover-text);
 	background-color: var(--interactive-hover-bg);
-	border-color: var(--interactive-hover-border);
+	border-color: var(--interactive-hover-hover-border-color);
 }
 
 svg.sync-small {
