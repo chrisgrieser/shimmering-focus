@@ -7101,6 +7101,14 @@ body:not(.show-graph-controls) .graph-controls.is-close:not(:hover) {
 }
 
 /* ───────────────────────────────────────────────────
+<< Publish
+─────────────────────────────────────────────────── */
+/* ensures Publish search bar plays fine */
+.publish-changes-info input[type="email"], input[type="password"], input[type="search"], input[type="text"] {
+    width: 100%;
+}
+
+/* ───────────────────────────────────────────────────
 < Community Plugins
 ─────────────────────────────────────────────────── */
 
