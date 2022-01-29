@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 1.769
+Version 1.770
 https://github.com/chrisgrieser/shimmering-focus/
 MIT License
 ─────────────────────────────────────────────────── */
@@ -761,7 +761,7 @@ body.theme-dark {
 	--h6-size: 1.05em;
 
 	/* needed for some edge cases */
-	--original-font: "Inter", -apple-system, blinkmacsystemfont, "Segoe UI", roboto, helvetica, arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Microsoft YaHei Light", sans-serif; /* stylelint-disable-line max-line-length */
+	--original-font: "Inter", -apple-system, blinkmacsystemfont, "Segoe UI", roboto, helvetica, arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Microsoft YaHei Light", sans-serif;
 }
 
 body:not(.is-mobile) {
@@ -5031,7 +5031,7 @@ body.no-alternating-rows > .app-container table > tbody > tr > td {
 /* ───────────────────────────────────────────────────
 <<< Inline Code
 ─────────────────────────────────────────────────── */
-body {
+body { /* stylelint-disable-line no-duplicate-selectors */
 	--slight-code-roundish: calc(var(--roundish) * 0.8);
 }
 
@@ -9664,8 +9664,6 @@ community:
 /* ───────────────────────────────────────────────────
 < Style Setting Options
 ─────────────────────────────────────────────────── */
-
-/* stylelint-disable max-line-length */
 
 /* @settings
 name: Shimmering Focus (Theme)
