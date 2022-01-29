@@ -4,6 +4,8 @@ nav_order: 110
 
 # Changelog
 
+- 2022-01-29	fixed glitch when hovering header bar with permanently shown header bar
+- 2022-01-29	added testimonials to docs landing page (lol)
 - 2022-01-29	minor fixes for scrollbars
 - 2022-01-28	some styling for longform compile tab
 - 2022-01-28	fix header for empty panes
