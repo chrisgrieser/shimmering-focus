@@ -22,6 +22,8 @@ if [[ "$commitMsg" =~ "#" ]] ; then
 fi
 
 # Lint
+cd "$(dirname "$0")"
+cd ..
 stylelint --fix "$csspath"
 cp "$csspath" ./obsidian.css
 markdownlint --fix *.md
