@@ -4,7 +4,7 @@ nav_order: 110
 
 # Changelog
 
-- 2022-01-29	refactoring header bar code
+- 2022-01-29	quicker header transition
 - 2022-01-29	fixed glitch when hovering header bar with permanently shown header bar
 - 2022-01-29	added testimonials to docs landing page (lol)
 - 2022-01-29	minor fixes for scrollbars

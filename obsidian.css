@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 1.766
+Version 1.767
 https://github.com/chrisgrieser/shimmering-focus/
 MIT License
 ─────────────────────────────────────────────────── */
@@ -1503,6 +1503,10 @@ body > div.notice-container .notice:hover {
 << Header Bar
 ─────────────────────────────────────────────────── */
 
+body {
+	--hidden-header-hotarea-height: 0.9em;
+}
+
 body:not(.show-header-bar):not(.is-mobile):not(.plugin-sliding-panes-rotate-header) .app-container .workspace-split.mod-root > .workspace-leaf .view-header {
 	height: var(--hidden-header-hotarea-height);
 	background-color: transparent;
@@ -1597,15 +1601,10 @@ body:not(.is-mobile):not(.plugin-sliding-panes-rotate-header) .view-header:focus
 }
 
 /* transitions */
-.view-header,
-.view-header + .view-content {
-	transition: var(--slow-transition);
-	--hidden-header-hotarea-height: 0.9em;
-}
-
-.view-header:hover,
-.view-header:focus-within {
+.view-header + .view-content,
+.view-header {
 	transition: var(--medium-transition);
+	transition-timing-function: linear;
 }
 
 .view-header:focus-within + .view-content {
@@ -1615,7 +1614,7 @@ body:not(.is-mobile):not(.plugin-sliding-panes-rotate-header) .view-header:focus
 .view-header-icon,
 .view-action svg,
 .view-header-title {
-	transition: var(--medium-transition);
+	transition: var(--quick-transition);
 }
 
 /* ───────────────────────────────────────────────────
