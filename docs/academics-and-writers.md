@@ -16,4 +16,8 @@ nav_order: 5
 - Extensive Styling and settings specifically for the [Longform Plugin](https://github.com/kevboh/longform). Prepend a `_` to file names of longform scenes to create sub-scenes that are indented in the sidebar.
 - The longform plugin as well as the `writing` [cssclass](css-classes) both use a serif font and independent styling, i.e. a different background color.
 
-![longform](images/longform.png)
+---
+
+![longform settings](images/longform.png)
+
+![writing cssclass demo](images/writing-cssclass.gif)
