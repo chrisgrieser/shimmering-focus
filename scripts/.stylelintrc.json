@@ -174,7 +174,7 @@
 		],
 
 		"indentation": ["tab", {"severity": "warning"}],
-		"max-line-length":  [200, {"severity": "warning"}],
+		"max-line-length":  [300, {"severity": "warning"}],
 		"font-weight-notation":  ["numeric", {"severity": "warning"}],
 
 		"comment-whitespace-inside": ["always", {"severity": "warning"} ],

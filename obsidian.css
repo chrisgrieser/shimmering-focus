@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 1.765
+Version 1.766
 https://github.com/chrisgrieser/shimmering-focus/
 MIT License
 ─────────────────────────────────────────────────── */
@@ -1503,14 +1503,40 @@ body > div.notice-container .notice:hover {
 << Header Bar
 ─────────────────────────────────────────────────── */
 
-.view-header,
-.view-header + .view-content {
-	transition: var(--slow-transition);
-	--hidden-header-hotarea-height: 0.9em;
+body:not(.show-header-bar):not(.is-mobile):not(.plugin-sliding-panes-rotate-header) .app-container .workspace-split.mod-root > .workspace-leaf .view-header {
+	height: var(--hidden-header-hotarea-height);
+	background-color: transparent;
+	border-color: var(--text-faint);
+	border-top: none;
+	border-bottom: none;
 }
 
-/* harmonize sizes for when titlebar is shown */
+body:not(.show-header-bar):not(.is-mobile):not(.plugin-sliding-panes-rotate-header) .workspace-leaf-content[data-type="empty"] .view-header:not(:hover) + .view-content,
+body:not(.show-header-bar):not(.is-mobile):not(.plugin-sliding-panes-rotate-header) .workspace-leaf-content[data-type="markdown"] .view-header:not(:hover):not(:focus-within) + .view-content {
+	margin-top: calc(var(--hidden-header-hotarea-height) * -1);
+}
+
+body:not(.show-header-bar):not(.is-mobile):not(.plugin-sliding-panes-rotate-header) .workspace-leaf-content[data-type="markdown"] .view-header:not(:hover):not(:focus-within) + .view-content .markdown-preview-view:not(.kanban-plugin__markdown-preview-view),
+body:not(.show-header-bar):not(.is-mobile):not(.plugin-sliding-panes-rotate-header) .workspace-leaf-content[data-type="markdown"] .view-header:not(:hover):not(:focus-within) + .view-content .cm-content {
+	padding-top: var(--hidden-header-hotarea-height);
+}
+
+body:not(.show-header-bar):not(.is-mobile):not(.plugin-sliding-panes-rotate-header) .view-header-title,
+body:not(.show-header-bar):not(.is-mobile):not(.plugin-sliding-panes-rotate-header) .view-header-icon,
+body:not(.show-header-bar):not(.is-mobile):not(.plugin-sliding-panes-rotate-header) .view-action svg {
+	color: var(--extra-contrast);
+	opacity: 0;
+}
+
+body:not(.show-header-bar):not(.is-mobile):not(.plugin-sliding-panes-rotate-header) .workspace-split.mod-root .workspace-leaf .view-header:hover,
+body:not(.show-header-bar):not(.is-mobile):not(.plugin-sliding-panes-rotate-header) .workspace-split.mod-root .workspace-leaf .view-header:focus-within,
+body.show-header-bar:not(.is-mobile):not(.plugin-sliding-panes-rotate-header) .workspace-split.mod-root .workspace-leaf .workspace-leaf-content .view-header {
+	height: 1.9em;
+	background-color: var(--header-bg);
+}
+
 body .view-header-title {
+	/* harmonize sizes for when titlebar is shown */
 	font-family: var(--ui-font);
 	font-size: 0.9em;
 	font-weight: 500;
@@ -1530,51 +1556,6 @@ body:not(.is-mobile) .view-header-icon {
 	color: var(--extra-contrast);
 }
 
-.view-header:focus-within + .view-content {
-	opacity: var(--inactive-pane-opacity);
-}
-
-/* show only on hover, when writing in the header bar,
-or when enabled by the style settings plugin */
-body:not(.show-header-bar):not(.is-mobile):not(.plugin-sliding-panes-rotate-header) .app-container .workspace-split.mod-root > .workspace-leaf .view-header {
-	height: var(--hidden-header-hotarea-height);
-
-	background-color: transparent;
-
-	border-color: var(--text-faint);
-	border-top: none;
-	border-bottom: none;
-
-	transition: var(--slow-transition);
-}
-
-body:not(.show-header-bar):not(.is-mobile):not(.plugin-sliding-panes-rotate-header) .workspace-leaf-content[data-type="empty"] .view-header:not(:hover) + .view-content,
-body:not(.show-header-bar):not(.is-mobile):not(.plugin-sliding-panes-rotate-header) .workspace-leaf-content[data-type="markdown"] .view-header:not(:hover):not(:focus-within) + .view-content {
-	margin-top: calc(var(--hidden-header-hotarea-height) * -1);
-}
-
-body:not(.show-header-bar):not(.is-mobile):not(.plugin-sliding-panes-rotate-header) .workspace-leaf-content[data-type="markdown"] .view-header:not(:hover):not(:focus-within) + .view-content .markdown-preview-view:not(.kanban-plugin__markdown-preview-view),
-body:not(.show-header-bar):not(.is-mobile):not(.plugin-sliding-panes-rotate-header) .workspace-leaf-content[data-type="markdown"] .view-header:not(:hover):not(:focus-within) + .view-content .cm-content {
-	padding-top: var(--hidden-header-hotarea-height);
-}
-
-body:not(.show-header-bar):not(.is-mobile):not(.plugin-sliding-panes-rotate-header) .view-header-title,
-body:not(.show-header-bar):not(.is-mobile):not(.plugin-sliding-panes-rotate-header) .view-header-icon,
-body:not(.show-header-bar):not(.is-mobile):not(.plugin-sliding-panes-rotate-header) .view-action svg {
-	color: var(--extra-contrast);
-	opacity: 0;
-	transition: var(--medium-transition);
-}
-
-/* shown header */
-body:not(.show-header-bar):not(.is-mobile):not(.plugin-sliding-panes-rotate-header) .workspace-split.mod-root .workspace-leaf .view-header:hover,
-body:not(.show-header-bar):not(.is-mobile):not(.plugin-sliding-panes-rotate-header) .workspace-split.mod-root .workspace-leaf .view-header:focus-within,
-body.show-header-bar:not(.is-mobile):not(.plugin-sliding-panes-rotate-header) .workspace-split.mod-root .workspace-leaf .workspace-leaf-content .view-header {
-	height: 1.9em;
-	background-color: var(--header-bg);
-	transition: var(--medium-transition);
-}
-
 body.show-header-bar:not(.is-mobile):not(.plugin-sliding-panes-rotate-header) .view-header {
 	border-bottom: var(--basic-border) !important;
 }
@@ -1589,7 +1570,6 @@ body .view-header:focus-within .view-header-icon,
 body .view-header:focus-within .view-action svg,
 body .view-header:focus-within .view-header-title {
 	opacity: 1 !important;
-	transition: var(--slow-transition);
 }
 
 .view-content:not(.is-mobile) {
@@ -1614,6 +1594,28 @@ body:not(.is-mobile):not(.plugin-sliding-panes-rotate-header) .view-header:focus
 .view-header.view-header .view-header-icon:hover,
 .view-header.view-header .view-action:hover svg {
 	color: var(--alt-accent);
+}
+
+/* transitions */
+.view-header,
+.view-header + .view-content {
+	transition: var(--slow-transition);
+	--hidden-header-hotarea-height: 0.9em;
+}
+
+.view-header:hover,
+.view-header:focus-within {
+	transition: var(--medium-transition);
+}
+
+.view-header:focus-within + .view-content {
+	opacity: var(--inactive-pane-opacity);
+}
+
+.view-header-icon,
+.view-action svg,
+.view-header-title {
+	transition: var(--medium-transition);
 }
 
 /* ───────────────────────────────────────────────────
