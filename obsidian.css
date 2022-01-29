@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 1.763
+Version 1.764
 https://github.com/chrisgrieser/shimmering-focus/
 MIT License
 ─────────────────────────────────────────────────── */
@@ -248,7 +248,7 @@ the .create-ToC.sh.
 	--button-hover-text: var(--text-normal);
 	--interactive-bg: var(--accent-lighter);
 	--interactive-hover-bg: var(--alt-accent-lighterer);
-	--scrollbar-bg-hover: var(--alt-accent-lighter);
+	--scrollbar-bg-hover: var(--alt-accent-lighterer);
 	--scrollbar-bg-active: var(--accent-lighterer);
 
 	--finished-task: var(--accent-lighter);
@@ -1704,6 +1704,7 @@ body:not(.show-scrollbar) ::-WEBKIT-SCROLLBAR {
 	background-color: transparent;
 }
 
+body ::-WEBKIT-SCROLLBAR-THUMB:active,
 body ::-WEBKIT-SCROLLBAR-THUMB {
 	width: var(--scrollbar-thickness);
 	box-shadow: var(--small-inset-shadow);

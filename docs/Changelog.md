@@ -4,7 +4,7 @@ nav_order: 110
 
 # Changelog
 
-- 2022-01-29	patch
+- 2022-01-29	minor fixes for scrollbars
 - 2022-01-28	some styling for longform compile tab
 - 2022-01-28	fix header for empty panes
 - 2022-01-28	styling for codeblock label plugin
