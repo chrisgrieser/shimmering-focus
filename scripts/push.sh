@@ -21,9 +21,11 @@ if [[ "$commitMsg" =~ "#" ]] ; then
 	open "$repoURL"/issues/"$issueNo"
 fi
 
-# Stylelint & copy
+# Lint
 stylelint --fix "$csspath"
 cp "$csspath" ./obsidian.css
+markdownlint --fix *.md
+markdownlint --fix docs/*.md
 
 # Copy .stylelintrc for documentation purposes
 cp ~/.stylelintrc.json ./scripts/
