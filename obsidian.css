@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 1.762
+Version 1.763
 https://github.com/chrisgrieser/shimmering-focus/
 MIT License
 ─────────────────────────────────────────────────── */
@@ -10324,13 +10324,13 @@ settings:
 	 collapsed: true
 	-
 	 id: longform-font
-	 title: 'Longform Main Font'
+	 title: 'Main Font'
 	 description: "Font used in longform/writing notes (Except code, which still use the monospace font.)"
 	 type: variable-text
 	 default: '"Crimson Pro S"'
 	-
 	 id: longform-font-size
-	 title: Font Size writing/longform notes
+	 title: Font Size longform/writing notes
 	 type: variable-number-slider
 	 default: 1.2
 	 min: 0.7
@@ -10352,7 +10352,7 @@ settings:
 	-
 	 id: longform-hue-shift
 	 title: Background Color Shift
-	 description: 'Degree longform/writing notes have a different color than normal notes (hue added). Setting this to "0" will make longform projects have the same background color as other notes.'
+	 description: 'Degree longform/writing notes have a different color than normal notes (hue added). Setting this to "0" will make longform projects have the same background color as other notes. Note that a low saturation or very high or low brightness will make the color shift less noticiable.'
 	 type: variable-number-slider
 	 default: 15
 	 min: -180
