@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 1.767
+Version 1.768
 https://github.com/chrisgrieser/shimmering-focus/
 MIT License
 ─────────────────────────────────────────────────── */
@@ -1222,7 +1222,7 @@ body.no-animations {
 }
 
 /* Dark Eclipse */
-.dark-eclipse-cursor .cm-cursor {
+.dark-eclipse-cursor .cm-cursor.cm-cursor {
 	width: 2.7px;
 	background: hsl(0 0% 0%);
 	outline: 0.2px solid hsl(0 0% 100%);
