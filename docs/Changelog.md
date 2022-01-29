@@ -5,9 +5,11 @@ nav_order: 110
 # Changelog
 
 - 2022-01-29	patch
+- 2022-01-29	Merge pull request #102 from tingmelvin/main
 - 2022-01-29	fix dark eclipse cursor in light mode
 - 2022-01-29	quicker header transition
 - 2022-01-29	fixed glitch when hovering header bar with permanently shown header bar
+- 2022-01-29	minor fix for Publish filter/search bar
 - 2022-01-29	added testimonials to docs landing page (lol)
 - 2022-01-29	minor fixes for scrollbars
 - 2022-01-28	some styling for longform compile tab
