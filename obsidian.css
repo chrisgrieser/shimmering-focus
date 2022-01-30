@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 1.774
+Version 1.775
 https://github.com/chrisgrieser/shimmering-focus/
 MIT License
 ─────────────────────────────────────────────────── */
@@ -1511,7 +1511,7 @@ body {
 	--hidden-header-hotarea-height: 0.9em;
 }
 
-body:not(.show-header-bar):not(.is-mobile):not(.plugin-sliding-panes-rotate-header) .mod-root .view-header {
+body:not(.show-header-bar):not(.is-mobile):not(.plugin-sliding-panes-rotate-header) .mod-root .view-header.view-header {
 	height: var(--hidden-header-hotarea-height);
 	background-color: transparent;
 	border-color: var(--text-faint);
