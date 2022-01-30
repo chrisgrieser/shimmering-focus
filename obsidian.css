@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 1.770
+Version 1.771
 https://github.com/chrisgrieser/shimmering-focus/
 MIT License
 ─────────────────────────────────────────────────── */
@@ -5392,16 +5392,28 @@ body:not(.no-ul-relationship-lines) ol ul::BEFORE {
 << Links
 ─────────────────────────────────────────────────── */
 /* hovered links in alt accent */
-.cm-string.cm-url:hover:not(.cm-formatting),
-body .cm-hmd-internal-link:hover,
-body div.app-container .workspace-tabs .workspace-leaf .view-content .internal-link:hover,
+.cm-url.cm-url:not(.cm-formatting):hover,
+.cm-hmd-internal-link.cm-hmd-internal-link.cm-hmd-internal-link:hover,
 .modal-content a:hover,
-.markdown-preview-view a.footnote-link:hover,
-.markdown-preview-view a.internal-link:hover,
-.markdown-preview-view a.external-link:hover,
+.footnote-link:hover,
+.internal-link.internal-link.internal-link:hover,
+.external-link:hover,
+.cm-link.cm-link:hover,
 a:hover {
 	color: var(--alt-accent);
 	cursor: pointer;
+}
+
+/* more underline spacing, thx @Melvin */
+.cm-url.cm-url:not(.cm-formatting),
+.cm-hmd-internal-link.cm-hmd-internal-link.cm-hmd-internal-link,
+.modal-content a,
+a,
+.footnote-link,
+.internal-link.internal-link.internal-link,
+.external-link,
+.cm-link.cm-link {
+	text-underline-offset: 1px;
 }
 
 /* don't underline the brackets */

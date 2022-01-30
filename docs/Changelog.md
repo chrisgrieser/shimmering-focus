@@ -4,7 +4,7 @@ nav_order: 110
 
 # Changelog
 
-- 2022-01-29	patch
+- 2022-01-30	more underline spacing for readability, thx @tingmelvin
 - 2022-01-29	Merge pull request #102 from tingmelvin/main
 - 2022-01-29	fix dark eclipse cursor in light mode
 - 2022-01-29	quicker header transition
