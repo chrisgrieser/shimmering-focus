@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 1.778
+Version 1.779
 https://github.com/chrisgrieser/shimmering-focus/
 MIT License
 ─────────────────────────────────────────────────── */
@@ -1193,7 +1193,13 @@ body.no-animations {
 	--slow-transition: 0;
 }
 
-:root {
+@keyframes faded-blink {
+	from { opacity: 1 }
+	50% { opacity: 0 }
+	to { opacity: 1 }
+}
+
+:root { /* stylelint-disable-line no-duplicate-selectors */
 	--transition-delay-passing-over-protection: 300ms;
 }
 
@@ -1734,12 +1740,6 @@ body ::-WEBKIT-SCROLLBAR-THUMB {
 /* ───────────────────────────────────────────────────
 < Vault Launch Progress Bar
 ─────────────────────────────────────────────────── */
-
-@keyframes faded-blink {
-	from { opacity: 1 }
-	50% { opacity: 0 }
-	to { opacity: 1 }
-}
 
 .progress-bar .progress-bar-message {
 	font-size: 0;
@@ -3843,15 +3843,21 @@ body:not(.plugin-sliding-panes) .workspace-leaf:not(.mod-active) .workspace-leaf
 	display: none;
 }
 
-.empty-state-title {
-	font-size: 0;
-}
-
 .empty-state-title::AFTER {
 	content: var(--signature);
 	font-size: var(--empty-state-symbol-size);
 	font-weight: 500;
 	color: var(--extra-contrast);
+}
+
+.empty-state-title {
+	font-size: 0;
+}
+
+body:not(.no-animations) .empty-state-title {
+	animation-duration: 10s;
+	animation-name: faded-blink;
+	animation-iteration-count: infinite;
 }
 
 /* ───────────────────────────────────────────────────
