@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 1.771
+Version 1.772
 https://github.com/chrisgrieser/shimmering-focus/
 MIT License
 ─────────────────────────────────────────────────── */
@@ -1193,6 +1193,10 @@ body.no-animations {
 	--slow-transition: 0;
 }
 
+:root {
+	--transition-delay-passing-over-protection: 300ms;
+}
+
 /* ───────────────────────────────────────────────────
 < Cursor
 ─────────────────────────────────────────────────── */
@@ -1507,7 +1511,7 @@ body {
 	--hidden-header-hotarea-height: 0.9em;
 }
 
-body:not(.show-header-bar):not(.is-mobile):not(.plugin-sliding-panes-rotate-header) .app-container .workspace-split.mod-root > .workspace-leaf .view-header {
+body:not(.show-header-bar):not(.is-mobile):not(.plugin-sliding-panes-rotate-header) .mod-root .view-header {
 	height: var(--hidden-header-hotarea-height);
 	background-color: transparent;
 	border-color: var(--text-faint);
@@ -1604,7 +1608,6 @@ body:not(.is-mobile):not(.plugin-sliding-panes-rotate-header) .view-header:focus
 .view-header + .view-content,
 .view-header {
 	transition: var(--medium-transition);
-	transition-timing-function: linear;
 }
 
 .view-header:focus-within + .view-content {
@@ -1615,6 +1618,17 @@ body:not(.is-mobile):not(.plugin-sliding-panes-rotate-header) .view-header:focus
 .view-action svg,
 .view-header-title {
 	transition: var(--quick-transition);
+}
+
+/* horizontal workspace split */
+
+/* non-top panes transition slightly later to prevent accidental triggering when passing over with the mouse  */
+body:not(.show-header-bar):not(.plugin-sliding-panes-rotate-header) .mod-horizontal .workspace-leaf:not(:nth-child(2)) .workspace-leaf-content[data-type="markdown"] .view-header:hover + .view-content .markdown-preview-view:not(.kanban-plugin__markdown-preview-view),
+body:not(.show-header-bar):not(.plugin-sliding-panes-rotate-header) .mod-horizontal .workspace-leaf:not(:nth-child(2)) .workspace-leaf-content[data-type="markdown"] .view-header:hover + .view-content .cm-content,
+body:not(.show-header-bar):not(.plugin-sliding-panes-rotate-header) .mod-horizontal .workspace-leaf:not(:nth-child(2)) .view-header:hover *,
+body:not(.show-header-bar):not(.plugin-sliding-panes-rotate-header) .mod-horizontal .workspace-leaf:not(:nth-child(2)) .view-header:hover + .view-content,
+body:not(.show-header-bar):not(.plugin-sliding-panes-rotate-header) .mod-horizontal .workspace-leaf:not(:nth-child(2)) .view-header:hover {
+	transition-delay: var(--transition-delay-passing-over-protection);
 }
 
 /* ───────────────────────────────────────────────────
@@ -2611,6 +2625,13 @@ body:not(.show-sidebar-tabs) .workspace-tab-header-container:hover {
 	transition: var(--quick-transition);
 }
 
+/* slight delay to prevent accidental triggering when passing over
+the non-top tab bars */
+body:not(.show-sidebar-tabs) .workspace-tabs:not(:nth-child(3)) .workspace-tab-header-container:hover *,
+body:not(.show-sidebar-tabs) .workspace-tabs:not(:nth-child(3)) .workspace-tab-header-container:hover {
+	transition-delay: var(--transition-delay-passing-over-protection);
+}
+
 body:not(.show-sidebar-tabs) .workspace-tab-header-container:not(:hover) {
 	height: 11px;
 	box-shadow: var(--small-reverted-inset-shadow);
@@ -2623,6 +2644,7 @@ body:not(.show-sidebar-tabs) .workspace-tabs:nth-child(3) .workspace-tab-header-
 	box-shadow: var(--medium-reverted-inset-shadow);
 }
 
+/* non-top tabs */
 body:not(.show-sidebar-tabs) .workspace-tabs:not(:nth-child(3)) .workspace-tab-header-container {
 	border-top: var(--basic-border);
 }
