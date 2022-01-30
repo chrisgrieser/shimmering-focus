@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 1.772
+Version 1.773
 https://github.com/chrisgrieser/shimmering-focus/
 MIT License
 ─────────────────────────────────────────────────── */
@@ -216,8 +216,8 @@ the .create-ToC.sh.
 	--accent-lighterer: hsl(243 80% 84%);
 	--accent-lightest: hsl(240 90% 90%);
 	--alt-accent-darker: hsl(164 100% 30%);
-	--alt-accent: hsl(163 97% 34%);
-	--alt-accent-lighter: hsl(164 100% 41%);
+	--alt-accent: hsl(164 100% 35%);
+	--alt-accent-lighter: hsl(164 100% 45%);
 	--alt-accent-lighterer: hsl(164 100% 55%);
 	--alt-accent-lightest: hsl(164 100% 70%);
 
@@ -248,7 +248,7 @@ the .create-ToC.sh.
 	--button-hover-text: var(--text-normal);
 	--interactive-bg: var(--accent-lighter);
 	--interactive-hover-bg: var(--alt-accent-lighterer);
-	--scrollbar-bg-hover: var(--alt-accent-lighterer);
+	--scrollbar-bg-hover: var(--alt-accent-lighter);
 	--scrollbar-bg-active: var(--accent-lighterer);
 
 	--finished-task: var(--accent-lighter);
@@ -2684,8 +2684,12 @@ body .workspace-leaf-resize-handle {
 	transition: var(--medium-transition);
 }
 
+.workspace-leaf-resize-handle:hover {
+	transition: var(--quick-transition);
+}
+
 /* full height of vertical resize handles */
-body .app-container .workspace-split > .workspace-leaf-resize-handle {
+:is(.mod-left-split, .mod-right-split) > .workspace-leaf-resize-handle.workspace-leaf-resize-handle {
 	height: 100%;
 	top: 0;
 }

@@ -4,6 +4,7 @@ nav_order: 110
 
 # Changelog
 
+- 2022-01-30	patch
 - 2022-01-30	slight transition delay to prevent accidental triggering when passing over hidden elements
 - 2022-01-30	more underline spacing for readability, thx @tingmelvin
 - 2022-01-29	Merge pull request #102 from tingmelvin/main
