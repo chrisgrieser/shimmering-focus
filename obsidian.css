@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 1.775
+Version 1.776
 https://github.com/chrisgrieser/shimmering-focus/
 MIT License
 ─────────────────────────────────────────────────── */
@@ -4217,7 +4217,7 @@ body:not(.permanently-show-collapse-indicators) .cm-line:not(:hover):not(.cm-act
 
 /* hover / collapse colors, applies to edit & preview */
 .collapse-indicator:hover svg {
-	color: var(--alt-accent-lighter);
+	color: var(--alt-accent);
 }
 
 /* CM6/CM5: the "..." when content is folded */
