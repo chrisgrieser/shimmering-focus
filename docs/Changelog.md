@@ -4,6 +4,7 @@ nav_order: 110
 
 # Changelog
 
+- 2022-01-30	style settings pane spacing
 - 2022-01-30	better inline-pane style setting pane
 - 2022-01-30	fix #99
 - 2022-01-30	slight transition delay to prevent accidental triggering when passing over hidden elements

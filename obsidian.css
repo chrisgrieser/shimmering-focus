@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 1.777
+Version 1.778
 https://github.com/chrisgrieser/shimmering-focus/
 MIT License
 ─────────────────────────────────────────────────── */
@@ -9118,8 +9118,9 @@ body:not(.show-scrollbar) .workspace-split.mod-root .workspace-leaf-content[data
 	padding: 20px;
 }
 
-.style-settings-container .setting-item-control {
-	/* display: inline; */
+.workspace-leaf-content[data-type="style-settings"] .setting-item.setting-item.setting-item {
+	flex-direction: row;
+	align-items: center;
 }
 
 /* settings tab  */
@@ -9145,12 +9146,17 @@ body:not(.show-scrollbar) .workspace-split.mod-root .workspace-leaf-content[data
 	margin-bottom: 5px;
 }
 
-.style-settings-heading .setting-item-description {
+.style-settings-container .setting-item-description {
 	font-family: var(--menu-font);
 	font-size: 0.8rem;
 	font-weight: 500;
 	line-height: 1.3em;
 	margin-bottom: 4px;
+}
+
+.style-settings-container .setting-item:not(.setting-item-heading) .setting-item-name + .setting-item-description {
+	margin-top: 3px;
+	margin-bottom: 0;
 }
 
 .style-settings-heading:not(.is-collapsed) .setting-item-description {
@@ -9181,6 +9187,10 @@ body a.style-settings-export {
 /* remove buggy and unnecessary export button for certain blocks */
 .style-settings-heading .setting-editor-extra-setting-button:last-child {
 	display: none;
+}
+
+.setting-item-name:hover .style-settings-collapse-indicator {
+	color: var(--alt-accent);
 }
 
 /* ───────────────────────────────────────────────────
