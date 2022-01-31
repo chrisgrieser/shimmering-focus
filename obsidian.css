@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 1.785
+Version 1.786
 https://github.com/chrisgrieser/shimmering-focus/
 MIT License
 ─────────────────────────────────────────────────── */
@@ -1207,48 +1207,86 @@ body.no-animations {
 < Cursor
 ─────────────────────────────────────────────────── */
 
+/* visual style */
 /* Shimmering Beam (Default) */
-.cm-cursorLayer .cm-cursor,
-.CodeMirror-cursor {
-	width: 3px;
-	background: linear-gradient(var(--alt-accent-lighter), var(--accent-lighter));
-	border: none;
+.theme-light { /* stylelint-disable-line no-duplicate-selectors */
+	--cursor-look: linear-gradient(var(--alt-accent-lighterer), var(--accent-lighterer));
+	--cursor-outline: 0;
 }
 
-.theme-light .cm-cursorLayer .cm-cursor,
-.theme-light .CodeMirror-cursor {
-	background: linear-gradient(var(--alt-accent-lighterer), var(--accent-lighterer));
+.theme-dark { /* stylelint-disable-line no-duplicate-selectors */
+	--cursor-look: linear-gradient(var(--alt-accent-lighter), var(--accent-lighter));
+	--cursor-outline: 0;
 }
 
 /* iA Writer */
-.ia-writer-cursor .cm-cursor,
-.ia-writer-cursor .CodeMirror-cursor {
-	background: hsl(196 100% 56%);
+.theme-light.ia-writer-cursor {
+	--cursor-look: hsl(196 100% 48%);
 }
 
-.theme-light.ia-writer-cursor .cm-cursor,
-.theme-light.ia-writer-cursor .CodeMirror-cursor {
-	background: hsl(196 100% 48%);
+.theme-dark.ia-writer-cursor {
+	--cursor-look: hsl(196 100% 56%);
 }
 
 /* Dark Eclipse */
+.theme-light.dark-eclipse-cursor {
+	--cursor-look: hsl(0 0% 0%);
+	--cursor-outline: 0.2px solid hsl(0 0% 100%);
+}
+
+.theme-dark.dark-eclipse-cursor {
+	--cursor-look: hsl(0 0% 0%);
+	--cursor-outline: 0.2px solid hsl(220 10% 80%);
+}
+
 .dark-eclipse-cursor .cm-cursor.cm-cursor {
 	width: 2.7px;
-	background: hsl(0 0% 0%);
-	outline: 0.2px solid hsl(0 0% 100%);
 }
 
-.theme-light.dark-eclipse-cursor .cm-cursor {
-	outline-color: hsl(220 10% 80%);
+/* Fire and Ice */
+.theme-light.fire-and-ice-cursor {
+	--cursor-look: linear-gradient(to right, hsl(10 100% 70%) 50%, hsl(205 100% 65%) 50%);
 }
 
-/* Fire & Ice */
-.fire-and-ice-cursor .cm-cursor {
-	background-image: linear-gradient(to right, hsl(22 100% 50%) 50%, hsl(216 100% 65%) 50%);
+.theme-dark.fire-and-ice-cursor {
+	--cursor-look: linear-gradient(to right, hsl(22 100% 50%) 50%, hsl(216 100% 65%) 50%);
 }
 
-.theme-light.fire-and-ice-cursor .cm-cursor {
-	background-image: linear-gradient(to right, hsl(10 100% 70%) 50%, hsl(205 100% 65%) 50%);
+/* Blink Style */
+.phase-blink-cursor .cm-cursorLayer {
+	/* important needed */
+	animation-name: none !important;
+}
+
+@keyframes phase-blink {
+	from {
+		background-color: transparent;
+		outline: none;
+	}
+	50% {
+		background-color: var(--cursor-look);
+		outline: var(--cursor-outline);
+	}
+	to {
+		background-color: transparent;
+		outline: none;
+	}
+}
+
+.phase-blink-cursor .cm-cursorLayer .cm-cursor,
+.phase-blink-cursor .CodeMirror-cursor {
+	animation-duration: 2s;
+	animation-name: phase-blink;
+	animation-iteration-count: infinite;
+}
+
+/* set cursor values */
+.cm-cursorLayer .cm-cursor,
+.CodeMirror-cursor {
+	width: 3px;
+	background: var(--cursor-look);
+	border: none;
+	outline: var(--cursor-outline);
 }
 
 /* block cursor */
@@ -9142,7 +9180,7 @@ body:not(.show-scrollbar) .workspace-split.mod-root .workspace-leaf-content[data
 	padding: 20px;
 }
 
-/* either sliding apnes or only open pane */
+/* either sliding panes or only open pane */
 .plugin-sliding-panes .workspace-leaf-content[data-type="style-settings"] .setting-item.setting-item,
 .workspace-leaf:nth-child(2):last-child .workspace-leaf-content[data-type="style-settings"] .setting-item {
 	flex-direction: row;
@@ -9161,7 +9199,7 @@ body:not(.show-scrollbar) .workspace-split.mod-root .workspace-leaf-content[data
 	margin-left: 10px;
 }
 
-.vertical-tab-content > .style-settings-heading > .setting-item-info > .setting-item-name {
+.style-settings-heading[data-level="0"] .setting-item-name {
 	font-size: 1.1em;
 	margin-bottom: 5px;
 }
@@ -9946,6 +9984,7 @@ settings:
 	-
 	 id: cursor-styles
 	 title: ✨ Cursor Style
+	 description: Color and general look of the cursor.
 	 type: class-select
 	 allowEmpty: false
 	 default: shimmering-beam-cursor
@@ -9962,6 +10001,20 @@ settings:
 		-
 			label: Fire & Ice
 			value: fire-and-ice-cursor
+	-
+	 id: cursor-blink-style
+	 title: 🚧 Cursor Blink Style (experimental)
+	 description: The way the cursor blinks
+	 type: class-select
+	 allowEmpty: false
+	 default: normal-blink
+	 options:
+		-
+			label: Default
+			value: normal-blink
+		-
+			label: Phase Blink
+			value: phase-blink-cursor
 	-
 	 id: block-cursor
 	 title: Block Cursor
