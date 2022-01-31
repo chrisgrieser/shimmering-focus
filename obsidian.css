@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 1.781
+Version 1.782
 https://github.com/chrisgrieser/shimmering-focus/
 MIT License
 ─────────────────────────────────────────────────── */
@@ -341,7 +341,7 @@ the .create-ToC.sh.
 	--suggester-b-row: hsl(var(--light-hue) var(--sat-light-2) calc(var(--b-light-1) - 3%));
 	--muted-border-color: hsl(var(--light-hue) var(--sat-light-3) calc(var(--b-light-3) + 3%));
 	--basic-border-color: hsl(var(--light-hue) var(--sat-light-3) calc(var(--b-light-3) - 5%));
-	--backdrop-color: hsl(var(--light-hue) 30% calc(var(--b-light-3) - 15%));
+	--backdrop-color: hsl(var(--light-hue) 30% calc(var(--b-light-3) - 5%));
 }
 
 .theme-dark {
@@ -364,7 +364,7 @@ the .create-ToC.sh.
 	--suggester-b-row: hsl(var(--dark-hue)  var(--sat-dark-1) calc(var(--b-dark-1) - 2%));
 	--muted-border-color: hsl(var(--dark-hue) var(--sat-dark-1) calc(var(--b-dark-1) - 6%));
 	--basic-border-color: hsl(var(--dark-hue) var(--sat-dark-1) calc(var(--b-dark-1) + 6%));
-	--backdrop-color: hsl(var(--dark-hue) 20% calc(var(--b-dark-3) - 2%));
+	--backdrop-color: hsl(var(--dark-hue) 20% calc(var(--b-dark-3) + 5%));
 }
 
 .theme-light,
@@ -1604,7 +1604,7 @@ body:not(.is-mobile):not(.plugin-sliding-panes-rotate-header) .view-header:focus
 
 .view-header.view-header .view-header-icon:hover,
 .view-header.view-header .view-action:hover svg {
-	color: var(--alt-accent);
+	color: var(--alt-accent) !important;
 }
 
 /* transitions */
@@ -2764,8 +2764,13 @@ body .app-container .workspace-leaf-resize-handle:hover {
 .prompt-bg,
 .modal-bg {
 	background-color: var(--backdrop-color);
-	backdrop-filter: blur(3px);
-	opacity: 0.85;
+	backdrop-filter: blur(2px);
+	opacity: 0.7;
+}
+
+.theme-light .prompt-bg,
+.theme-light .modal-bg {
+	filter: brightness(0.5);
 }
 
 .modal.mod-sync-history,
