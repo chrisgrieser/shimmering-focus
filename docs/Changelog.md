@@ -4,7 +4,7 @@ nav_order: 110
 
 # Changelog
 
-- 2022-01-31	patch
+- 2022-01-31	New: Change Cursor Blink Styles
 - 2022-01-31	better support for multi line comments
 - 2022-01-31	fix hover of pandoc citations
 - 2022-01-31	better backdrop of prompts and suggesters

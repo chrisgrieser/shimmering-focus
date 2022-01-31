@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 1.786
+Version 1.787
 https://github.com/chrisgrieser/shimmering-focus/
 MIT License
 ─────────────────────────────────────────────────── */
@@ -1211,12 +1211,12 @@ body.no-animations {
 /* Shimmering Beam (Default) */
 .theme-light { /* stylelint-disable-line no-duplicate-selectors */
 	--cursor-look: linear-gradient(var(--alt-accent-lighterer), var(--accent-lighterer));
-	--cursor-outline: 0;
+	--cursor-outline-color: transparent;
 }
 
 .theme-dark { /* stylelint-disable-line no-duplicate-selectors */
 	--cursor-look: linear-gradient(var(--alt-accent-lighter), var(--accent-lighter));
-	--cursor-outline: 0;
+	--cursor-outline-color: transparent;
 }
 
 /* iA Writer */
@@ -1231,12 +1231,12 @@ body.no-animations {
 /* Dark Eclipse */
 .theme-light.dark-eclipse-cursor {
 	--cursor-look: hsl(0 0% 0%);
-	--cursor-outline: 0.2px solid hsl(0 0% 100%);
+	--cursor-outline-color: hsl(220 10% 80%);
 }
 
 .theme-dark.dark-eclipse-cursor {
 	--cursor-look: hsl(0 0% 0%);
-	--cursor-outline: 0.2px solid hsl(220 10% 80%);
+	--cursor-outline-color: hsl(0 0% 100%);
 }
 
 .dark-eclipse-cursor .cm-cursor.cm-cursor {
@@ -1259,23 +1259,24 @@ body.no-animations {
 }
 
 @keyframes phase-blink {
-	from {
-		background-color: transparent;
-		outline: none;
+	/* has to be coded without opacity to avoid conflict with focus line highlight */
+	0% {
+		background-color: var(--cursor-look);
+		outline-color: var(--cursor-outline-color);
 	}
 	50% {
-		background-color: var(--cursor-look);
-		outline: var(--cursor-outline);
-	}
-	to {
 		background-color: transparent;
-		outline: none;
+		outline-color: transparent;
+	}
+	100% {
+		background-color: var(--cursor-look);
+		outline-color: var(--cursor-outline-color);
 	}
 }
 
 .phase-blink-cursor .cm-cursorLayer .cm-cursor,
 .phase-blink-cursor .CodeMirror-cursor {
-	animation-duration: 2s;
+	animation-duration: 2200ms;
 	animation-name: phase-blink;
 	animation-iteration-count: infinite;
 }
@@ -1286,7 +1287,7 @@ body.no-animations {
 	width: 3px;
 	background: var(--cursor-look);
 	border: none;
-	outline: var(--cursor-outline);
+	outline: 0.2px solid var(--cursor-outline-color);
 }
 
 /* block cursor */
