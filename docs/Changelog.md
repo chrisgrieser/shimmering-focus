@@ -4,7 +4,7 @@ nav_order: 110
 
 # Changelog
 
-- 2022-01-31	patch
+- 2022-01-31	more styling for better command palette
 - 2022-01-30	empty state animation
 - 2022-01-30	style settings pane spacing
 - 2022-01-30	better inline-pane style setting pane
