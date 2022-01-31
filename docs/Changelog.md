@@ -4,6 +4,7 @@ nav_order: 110
 
 # Changelog
 
+- 2022-01-31	better support for multi line comments
 - 2022-01-31	fix hover of pandoc citations
 - 2022-01-31	better backdrop of prompts and suggesters
 - 2022-01-31	more styling for better command palette
