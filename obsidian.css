@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 1.787
+Version 1.788
 https://github.com/chrisgrieser/shimmering-focus/
 MIT License
 ─────────────────────────────────────────────────── */
@@ -1260,7 +1260,7 @@ body.no-animations {
 
 @keyframes phase-blink {
 	/* has to be coded without opacity to avoid conflict with focus line highlight */
-	0% {
+	15% {
 		background-color: var(--cursor-look);
 		outline-color: var(--cursor-outline-color);
 	}
@@ -1268,7 +1268,7 @@ body.no-animations {
 		background-color: transparent;
 		outline-color: transparent;
 	}
-	100% {
+	85% {
 		background-color: var(--cursor-look);
 		outline-color: var(--cursor-outline-color);
 	}
