@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 1.784
+Version 1.785
 https://github.com/chrisgrieser/shimmering-focus/
 MIT License
 ─────────────────────────────────────────────────── */
@@ -1608,7 +1608,12 @@ body:not(.is-mobile):not(.plugin-sliding-panes-rotate-header) .view-header:focus
 }
 
 /* transitions */
-.view-header + .view-content,
+
+.view-header + .view-content {
+	transition: padding-top var(--quick-transition);
+	transition: opacity var(--slow-transition);
+}
+
 .view-header {
 	transition: var(--medium-transition);
 }
@@ -3457,7 +3462,7 @@ body .community-plugin-info .community-plugin-downloads-text {
 	background-color: var(--muted-button-bg);
 	box-shadow: var(--muted-button-inset-shadow);
 
-	padding: 5px 4px 5px 3px;
+	padding: 6px 4px 5px 3px;
 
 	border: var(--muted-button-border);
 }
@@ -3913,12 +3918,11 @@ body:not(.no-active-highlight):not(.focused-highlight) .CodeMirror-activeline .C
 	white-space: pre-wrap;
 
 	height: inherit;
-	width: 9999px;
-
-	background-color: var(--active-line-bg);
 
 	position: absolute;
 	left: -2000px;
+
+	border-left: 9999px solid var(--active-line-bg);
 
 	visibility: visible;
 }
