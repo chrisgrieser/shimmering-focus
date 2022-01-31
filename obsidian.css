@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 1.779
+Version 1.780
 https://github.com/chrisgrieser/shimmering-focus/
 MIT License
 ─────────────────────────────────────────────────── */
@@ -9124,7 +9124,9 @@ body:not(.show-scrollbar) .workspace-split.mod-root .workspace-leaf-content[data
 	padding: 20px;
 }
 
-.workspace-leaf-content[data-type="style-settings"] .setting-item.setting-item.setting-item {
+/* either sliding apnes or only open pane */
+.plugin-sliding-panes .workspace-leaf-content[data-type="style-settings"] .setting-item.setting-item,
+.workspace-leaf:nth-child(2):last-child .workspace-leaf-content[data-type="style-settings"] .setting-item {
 	flex-direction: row;
 	align-items: center;
 }
@@ -9749,7 +9751,7 @@ settings:
 	 id: show-sidebar-tabs
 	 title: Permanently show the Sidebar Tabs
 	 type: class-toggle
-	 description: Re-enable this to have a title bar, e.g. for moving the Obsidian window
+	 description: When false, the Sidebar Tabs become visible upon hovering.
 	 default: false
 	-
 	 id: show-titlebar
