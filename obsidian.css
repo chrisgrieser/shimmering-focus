@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 1.800
+Version 1.801
 https://github.com/chrisgrieser/shimmering-focus/
 MIT License
 ─────────────────────────────────────────────────── */
@@ -5524,6 +5524,7 @@ a {
 }
 
 /* unresolved gutter icon */
+body:not(.no-unresolved-link-indicator) .markdown-preview-view .is-unresolved::BEFORE,
 body:not(.no-unresolved-link-indicator) .cm-editor .is-unresolved::BEFORE {
 	content: "✖︎";
 	color: var(--unresolved-link-color);
