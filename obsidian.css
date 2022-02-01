@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 1.808
+Version 1.809
 https://github.com/chrisgrieser/shimmering-focus/
 MIT License
 ─────────────────────────────────────────────────── */
@@ -8072,11 +8072,11 @@ body .kanban-plugin .kanban-plugin__markdown-preview-view hr {
 
 /* hover */
 #draft-list .draft-container.selected:hover,
-#draft-list .draft-container:hover,
-#scene-list .scene-container:hover,
+#draft-list .draft-container.draft-container:hover,
+#scene-list .scene-container.scene-container:hover,
 #scene-list .scene-container.selected:hover {
 	color: var(--alt-accent);
-	background-color: var(--bg3) !important;
+	background-color: var(--bg3);
 }
 
 input#new-draft,
