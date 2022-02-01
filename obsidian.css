@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 1.798
+Version 1.799
 https://github.com/chrisgrieser/shimmering-focus/
 MIT License
 ─────────────────────────────────────────────────── */
@@ -7735,11 +7735,9 @@ body .kanban-plugin p {
 .kanban-plugin h4,
 .kanban-plugin h5,
 .kanban-plugin h6 {
-	font-family: var(--ui-font-family);
-	font-style: normal;
+	font-family: var(--default-font);
 	letter-spacing: 0.4px;
 	color: var(--text-normal);
-	margin: 0;
 }
 
 .kanban-plugin h1 { font-size: calc(var(--h1-size) * var(--kanban-heading-size-factor)) }
@@ -7808,6 +7806,14 @@ body .kanban-plugin__item {
 	background-color: var(--bg3);
 	box-shadow: none;
 	border: none;
+}
+
+.kanban-plugin .kanban-plugin__lane ::-WEBKIT-SCROLLBAR-THUMB:active {
+	background-color: var(--scrollbar-bg-active);
+}
+
+.kanban-plugin .kanban-plugin__lane ::-WEBKIT-SCROLLBAR-THUMB:hover {
+	background-color: var(--scrollbar-bg-hover);
 }
 
 body .kanban-plugin__scroll-container.kanban-plugin__scroll-container {
