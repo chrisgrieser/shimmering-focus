@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 1.797
+Version 1.798
 https://github.com/chrisgrieser/shimmering-focus/
 MIT License
 ─────────────────────────────────────────────────── */
@@ -7667,6 +7667,7 @@ https://forum.obsidian.md/t/inline-code-occludes-text-selection-and-vim-cursor/1
 :root {
 	--dot-spacing: 9px;
 	--dot-size: 1px;
+	--kanban-heading-size-factor: 0.75;
 }
 /* stylelint-enable no-duplicate-selectors */
 
@@ -7727,6 +7728,26 @@ body .kanban-plugin p {
 	letter-spacing: -0.2px;
 	margin: 0;
 }
+
+.kanban-plugin h1,
+.kanban-plugin h2,
+.kanban-plugin h3,
+.kanban-plugin h4,
+.kanban-plugin h5,
+.kanban-plugin h6 {
+	font-family: var(--ui-font-family);
+	font-style: normal;
+	letter-spacing: 0.4px;
+	color: var(--text-normal);
+	margin: 0;
+}
+
+.kanban-plugin h1 { font-size: calc(var(--h1-size) * var(--kanban-heading-size-factor)) }
+.kanban-plugin h2 { font-size: calc(var(--h2-size) * var(--kanban-heading-size-factor)) }
+.kanban-plugin h3 { font-size: calc(var(--h3-size) * var(--kanban-heading-size-factor)) }
+.kanban-plugin h4 { font-size: calc(var(--h4-size) * var(--kanban-heading-size-factor)) }
+.kanban-plugin h5 { font-size: calc(var(--h5-size) * var(--kanban-heading-size-factor)) }
+.kanban-plugin h6 { font-size: calc(var(--h6-size) * var(--kanban-heading-size-factor)) }
 
 /* cards being edited */
 .app-container .kanban-plugin .kanban-plugin__board textarea {

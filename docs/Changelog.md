@@ -4,6 +4,7 @@ nav_order: 110
 
 # Changelog
 
+- 2022-02-01	kanban heading sizes in cards reduced
 - 2022-02-01	transition protection for backgrounds
 - 2022-02-01	better space usage in right sidebar when conflicting with status bar
 - 2022-02-01	minor improvements to tag pane
