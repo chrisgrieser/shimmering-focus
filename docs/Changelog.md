@@ -4,7 +4,7 @@ nav_order: 110
 
 # Changelog
 
-- 2022-02-01	patch
+- 2022-02-01	fix for sliding panes
 - 2022-02-01	more compact core search assistant
 - 2022-02-01	fixes for link styling
 - 2022-02-01	kanban scrollbar hover/active colors

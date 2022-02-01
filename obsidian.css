@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 1.804
+Version 1.805
 https://github.com/chrisgrieser/shimmering-focus/
 MIT License
 ─────────────────────────────────────────────────── */
@@ -1660,7 +1660,6 @@ body:not(.is-mobile):not(.plugin-sliding-panes-rotate-header) .view-header:focus
 }
 
 /* transitions */
-
 .view-header + .view-content {
 	transition: padding-top var(--quick-transition);
 	transition: opacity var(--slow-transition);
@@ -1670,7 +1669,7 @@ body:not(.is-mobile):not(.plugin-sliding-panes-rotate-header) .view-header:focus
 	transition: var(--medium-transition);
 }
 
-.view-header:focus-within + .view-content {
+body:not(.plugin-sliding-panes) .view-header:focus-within + .view-content {
 	opacity: var(--inactive-pane-opacity);
 }
 
@@ -6247,7 +6246,7 @@ body.is-mobile .markdown-preview-view blockquote {
 }
 
 /* ───────────────────────────────────────────────────
-<< Header
+<< Header (Mobile)
 ─────────────────────────────────────────────────── */
 /* hidden header */
 .is-mobile:not(.show-mobile-header) .view-header {
@@ -8173,12 +8172,13 @@ div#select-projects select {
 	counter-reset: sidebar;
 }
 
-#scene-list .scene-container:not([data-scene-path*="/_"]):not([data-scene-path*="Notes for the Reader" i]):not([data-scene-path*="Appendix" i]):not([data-scene-path*="Metadata" i])::BEFORE {
+#scene-list .scene-container:not([data-scene-path*="/_"]):not([data-scene-path*="Acknowledgements" i]):not([data-scene-path*="Notes for the Reader" i]):not([data-scene-path*="Appendix" i]):not([data-scene-path*="Metadata" i])::BEFORE {
 	content: counter(sidebar) ".";
 	padding-right: 5px;
 	counter-increment: sidebar;
 }
 
+#scene-list .scene-container[data-scene-path*="Acknowledgements" i],
 #scene-list .scene-container[data-scene-path*="Notes for the Reader" i],
 #scene-list .scene-container[data-scene-path*="Appendix" i],
 #scene-list .scene-container[data-scene-path*="Metadata" i] {
