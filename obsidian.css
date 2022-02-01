@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 1.806
+Version 1.807
 https://github.com/chrisgrieser/shimmering-focus/
 MIT License
 ─────────────────────────────────────────────────── */
@@ -7318,7 +7318,6 @@ body:not(.no-built-in-supercharged-links) .data-link-icon[data-link-title]::BEFO
 body:not(.no-built-in-supercharged-links) .data-link-icon[data-link-up]::BEFORE { content: "🥖 " }
 
 /* tooltips */
-
 body:not(.no-built-in-supercharged-links) [data-link-data-href]:hover::AFTER,
 body:not(.no-built-in-supercharged-links) .data-link-icon:hover::AFTER {
 	font-size: 0.9rem;
@@ -7342,11 +7341,6 @@ body:not(.no-built-in-supercharged-links) .data-link-icon:hover::AFTER {
 body:not(.no-built-in-supercharged-links) [data-link-data-href][data-link-title]:hover::AFTER,
 body:not(.no-built-in-supercharged-links) .data-link-icon[data-link-title]:hover::AFTER {
 	content: "\""attr(data-link-title)"\"";
-}
-
-body:not(.no-built-in-supercharged-links) [data-link-data-href][data-link-up]:hover::AFTER,
-body:not(.no-built-in-supercharged-links) .data-link-icon[data-link-up]:hover::AFTER {
-	content: "⬆️ \""attr(data-link-up)"\"";
 }
 
 /* stylelint-enable function-whitespace-after */
@@ -7695,7 +7689,7 @@ https://forum.obsidian.md/t/inline-code-occludes-text-selection-and-vim-cursor/1
 }
 
 .theme-dark {
-	--kanban-background: hsl(var(--dark-hue) var(--sat-dark-1) calc(var(--b-dark-1) + 2%));
+	--kanban-background: hsl(var(--dark-hue) calc(var(--sat-dark-1) * 0.85) calc(var(--b-dark-1) + 2%));
 	--active-hover-kanban-item: hsl(var(--dark-hue) var(--sat-dark-1) calc(var(--b-dark-1) + 6%));
 	--dot-color: hsl(0 0% 0% / 20%);
 }
@@ -7774,6 +7768,7 @@ body .kanban-plugin p {
 	font-family: var(--default-font);
 	letter-spacing: 0.4px;
 	color: var(--text-normal);
+	margin-bottom: 3px;
 }
 
 .kanban-plugin h1 { font-size: calc(var(--h1-size) * var(--kanban-heading-size-factor)) }
@@ -7844,12 +7839,12 @@ body .kanban-plugin__item {
 	border: none;
 }
 
-.kanban-plugin .kanban-plugin__lane ::-WEBKIT-SCROLLBAR-THUMB:active {
-	background-color: var(--scrollbar-bg-active);
-}
-
 .kanban-plugin .kanban-plugin__lane ::-WEBKIT-SCROLLBAR-THUMB:hover {
 	background-color: var(--scrollbar-bg-hover);
+}
+
+.kanban-plugin .kanban-plugin__lane ::-WEBKIT-SCROLLBAR-THUMB:active {
+	background-color: var(--scrollbar-bg-active);
 }
 
 body .kanban-plugin__scroll-container.kanban-plugin__scroll-container {
