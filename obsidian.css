@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 1.801
+Version 1.802
 https://github.com/chrisgrieser/shimmering-focus/
 MIT License
 ─────────────────────────────────────────────────── */
@@ -7243,9 +7243,10 @@ body:not(.show-graph-controls) .graph-controls.is-close:not(:hover) {
 }
 
 body #core-search-assistant_card-view .content .item-container {
-	box-shadow: var(--tiny-shadow);
+	box-shadow: var(--tiny-shadow), var(--small-inset-shadow);
 	top: 0;
-	border: var(--basic-border);
+	border: var(--thin-border);
+	border-radius: var(--roundish);
 }
 
 #core-search-assistant_card-view .content .item-container:hover {
@@ -7254,6 +7255,31 @@ body #core-search-assistant_card-view .content .item-container {
 
 #core-search-assistant_card-view .content .item-container.is-selected {
 	border-color: var(--text-accent);
+}
+
+#core-search-assistant_card-view .item-container .file-name-container {
+	font-size: 0.8em;
+	line-height: 1.2em;
+	padding: 3px 6px;
+	/* background-color: var(--bg2); */
+}
+
+body:not(.full-search-assistant-card-view) #core-search-assistant_card-view .item-container .preview-container-wrapper :is(h1, .frontmatter-container) {
+	display: none;
+}
+
+#core-search-assistant_card-view > .content.content {
+	column-gap: 12px;
+	row-gap: 12px;
+}
+
+div#core-search-assistant_card-view {
+	background: var(--bg3);
+	padding: 20px 10px 10px;
+}
+
+.preview-container-wrapper {
+	background: var(--bg1);
 }
 
 /* ───────────────────────────────────────────────────
@@ -10505,6 +10531,12 @@ settings:
 	-
 	 id: grayscale-favicons
 	 title: 'Link Favicons: Grayscale Icons'
+	 type: class-toggle
+	 default: false
+	-
+	 id: full-search-assistant-card-view
+	 title: 'Core Search Assistant: Card View with full content'
+	 description: When false, some elements like frontmatter or h1 will be removed from the cards to save space.
 	 type: class-toggle
 	 default: false
 	-
