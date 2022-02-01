@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 1.803
+Version 1.804
 https://github.com/chrisgrieser/shimmering-focus/
 MIT License
 ─────────────────────────────────────────────────── */
@@ -4360,7 +4360,6 @@ body:not(.show-all-line-numbers) .cm-lineNumbers .cm-gutterElement {
 /* ───────────────────────────────────────────────────
 << Progress bars (<progress>)
 ─────────────────────────────────────────────────── */
-/* thanks @SkepticMystic */
 progress {
 	height: 0.65em;
 	background: none;
@@ -4388,6 +4387,9 @@ progress[value^="7"]::-WEBKIT-PROGRESS-VALUE { background: hsl(179 39% 47%) }
 progress[value^="8"]::-WEBKIT-PROGRESS-VALUE { background: hsl(171 48% 55%) }
 progress[value^="9"]::-WEBKIT-PROGRESS-VALUE { background: hsl(165 66% 62%) }
 progress[value^="10"]::-WEBKIT-PROGRESS-VALUE { background: hsl(160 92% 70%) }
+progress[value^="11"]::-WEBKIT-PROGRESS-VALUE { background: hsl(160 92% 70%) }
+progress[value^="12"]::-WEBKIT-PROGRESS-VALUE { background: hsl(160 92% 70%) }
+progress[value^="13"]::-WEBKIT-PROGRESS-VALUE { background: hsl(160 92% 70%) }
 
 /* ───────────────────────────────────────────────────
 << Images
