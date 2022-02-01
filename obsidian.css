@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 1.809
+Version 1.810
 https://github.com/chrisgrieser/shimmering-focus/
 MIT License
 ─────────────────────────────────────────────────── */
@@ -5029,7 +5029,8 @@ https://forum.obsidian.md/t/custom-css-for-tables-5-new-styles-ready-to-use-in-y
 	table-layout: fixed;
 }
 
-table {
+.markdown-preview-view table {
+	margin: 10px 0;
 	--table-border: var(--basic-border);
 	--table-roundness: var(--roundish);
 }
@@ -8159,6 +8160,10 @@ div#select-projects select {
 	color: var(--extra-contrast);
 	overflow: hidden;
 	text-overflow: ellipsis;
+}
+
+#select-drafts {
+	width: 100%;
 }
 
 #project-picker select:hover {
