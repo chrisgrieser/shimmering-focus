@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 1.807
+Version 1.808
 https://github.com/chrisgrieser/shimmering-focus/
 MIT License
 ─────────────────────────────────────────────────── */
@@ -1208,7 +1208,7 @@ body.no-animations {
 }
 
 :root { /* stylelint-disable-line no-duplicate-selectors */
-	--transition-delay-passing-over-protection: 300ms;
+	--transition-delay-passing-over-protection: 200ms;
 }
 
 /* ───────────────────────────────────────────────────
@@ -5502,7 +5502,8 @@ a:hover {
 .modal-content a,
 .internal-link.internal-link.internal-link,
 .external-link,
-a {
+a,
+u {
 	text-underline-offset: 1.5px;
 }
 
@@ -7737,7 +7738,12 @@ body:not(.show-header-bar):not(.plugin-sliding-panes-rotate-header) .workspace-l
 }
 
 div.kanban-plugin__board > div {
-	padding: 0.3em;
+	padding: 0 0 0 5px;
+}
+
+.kanban-plugin > .kanban-plugin__scroll-container.kanban-plugin__scroll-container {
+	padding-right: 0 !important;
+	margin-right: 0;
 }
 
 body:not(.show-header-bar) .kanban-plugin__board > div {
@@ -7818,7 +7824,6 @@ body .kanban-plugin__item-title-wrapper {
 
 body .kanban-plugin__item-wrapper {
 	background-color: var(--bg3);
-	box-shadow: var(--small-inset-shadow);
 	border: var(--thin-border);
 	border-radius: calc(var(--roundish) * 1.5);
 }
@@ -7930,7 +7935,6 @@ body .kanban-plugin__new-item-button:hover {
 	color: var(--alt-accent);
 }
 
-/* .kanban-plugin__item-content-wrapper:hover, */
 .kanban-plugin .kanban-plugin__item-wrapper:hover {
 	border-color: var(--alt-accent) !important;
 }
