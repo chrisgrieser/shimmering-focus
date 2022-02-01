@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 1.792
+Version 1.793
 https://github.com/chrisgrieser/shimmering-focus/
 MIT License
 ─────────────────────────────────────────────────── */
@@ -5507,21 +5507,18 @@ a,
 }
 
 /* <<< Unresolved links */
-span.is-unresolved .cm-hmd-internal-link.cm-hmd-internal-link,
-a.internal-link.is-unresolved {
+.is-unresolved.is-unresolved .cm-hmd-internal-link,
+.is-unresolved.is-unresolved.is-unresolved {
 	color: var(--unresolved-link-color);
+	opacity: 1;
 }
 
 /* unresolved gutter icon */
-body:not(.no-unresolved-link-indicator) a.internal-link.is-unresolved::BEFORE {
+body:not(.no-unresolved-link-indicator) .is-unresolved::BEFORE {
 	content: "✖︎";
 	background-color: var(--bg1);
 	position: absolute;
 	left: 20px;
-}
-
-a.internal-link.is-unresolved:hover {
-	opacity: var(--unresolved-opacity);
 }
 
 /* <<< fold external URLs (CM6 Source Mode) */
@@ -8746,11 +8743,6 @@ body:not(.no-alternating-rows) .BC-Matrix-square li:nth-child(even) {
 	padding-top: 5px;
 }
 
-/* unresolved links */
-.app-container .BC-Link.is-unresolved {
-	color: var(--unresolved-link-color);
-}
-
 /* Breadcrumb Trail */
 .trails-div {
 	padding-bottom: 2px;
@@ -9083,7 +9075,7 @@ body .dataview.inline-field-key {
 .another-quick-switcher__phantom_item .another-quick-switcher__item__icon,
 .another-quick-switcher__phantom_item .another-quick-switcher__item__directory,
 .suggestion-item:hover .another-quick-switcher__phantom_item {
-	opacity: 0.6;
+	opacity: 0.75;
 }
 
 /* hovered */
