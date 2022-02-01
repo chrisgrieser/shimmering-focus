@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 1.805
+Version 1.806
 https://github.com/chrisgrieser/shimmering-focus/
 MIT License
 ─────────────────────────────────────────────────── */
@@ -5489,7 +5489,6 @@ body:not(.no-ul-relationship-lines) ol ul::BEFORE {
 .cm-url.cm-url:not(.cm-formatting):hover,
 .cm-hmd-internal-link.cm-hmd-internal-link.cm-hmd-internal-link:hover,
 .modal-content a:hover,
-.footnote-link:hover,
 .internal-link.internal-link.internal-link:hover,
 .external-link:hover,
 a:hover {
@@ -5501,7 +5500,6 @@ a:hover {
 .cm-url.cm-url:not(.cm-formatting),
 .cm-hmd-internal-link.cm-hmd-internal-link.cm-hmd-internal-link,
 .modal-content a,
-.footnote-link,
 .internal-link.internal-link.internal-link,
 .external-link,
 a {
@@ -6091,8 +6089,14 @@ body:not(.no-pandoc-citation-emphasis) .cm-hmd-barelink.cm-hmd-barelink {
 }
 
 /* remove underline which only decreases readability */
-.markdown-preview-view a.footnote-link {
+.footnote-link {
 	text-decoration: none;
+	color: var(--reference-color);
+}
+
+.footnote-link:hover {
+	background-color: var(--bg3);
+	padding-bottom: 2px;
 }
 
 /* CM5: in-text-reference */
