@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 1.802
+Version 1.803
 https://github.com/chrisgrieser/shimmering-focus/
 MIT License
 ─────────────────────────────────────────────────── */
@@ -363,7 +363,7 @@ the .create-ToC.sh.
 	--suggester-b-row: hsl(var(--dark-hue)  var(--sat-dark-1) calc(var(--b-dark-1) - 2%));
 	--muted-border-color: hsl(var(--dark-hue) var(--sat-dark-1) calc(var(--b-dark-1) - 6%));
 	--basic-border-color: hsl(var(--dark-hue) var(--sat-dark-1) calc(var(--b-dark-1) + 6%));
-	--backdrop-color: hsl(var(--dark-hue) 20% calc(var(--b-dark-3) + 5%));
+	--backdrop-color: hsl(var(--dark-hue) 20% calc(var(--b-dark-3) + 0%));
 }
 
 .theme-light,
@@ -2819,7 +2819,7 @@ body .app-container .workspace-leaf-resize-handle:hover {
 .prompt-bg,
 .modal-bg {
 	background-color: var(--backdrop-color);
-	backdrop-filter: blur(2px);
+	backdrop-filter: blur(3px);
 	opacity: 0.7;
 }
 
