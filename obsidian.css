@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 1.791
+Version 1.792
 https://github.com/chrisgrieser/shimmering-focus/
 MIT License
 ─────────────────────────────────────────────────── */
@@ -221,8 +221,7 @@ the .create-ToC.sh.
 	--alt-accent-lighterer: hsl(164 100% 55%);
 	--alt-accent-lightest: hsl(164 100% 70%);
 
-	--unresolved-link-color: hsl(211 100% 52%);
-	--unresolved-opacity: 0.6;
+	--unresolved-link-color: hsl(211 100% 52% / 90%);
 
 	--code-color: var(--alt-accent-darker);
 
@@ -5508,10 +5507,9 @@ a,
 }
 
 /* <<< Unresolved links */
-span.is-unresolved .cm-hmd-internal-link,
+span.is-unresolved .cm-hmd-internal-link.cm-hmd-internal-link,
 a.internal-link.is-unresolved {
 	color: var(--unresolved-link-color);
-	opacity: var(--unresolved-opacity);
 }
 
 /* unresolved gutter icon */
@@ -7178,7 +7176,6 @@ body:not(.show-graph-controls) .graph-controls.is-close:not(:hover) {
 /* unresolved, getting same color as unresolved links */
 .graph-view.color-fill-unresolved {
 	color: var(--unresolved-link-color);
-	opacity: var(--unresolved-opacity);
 }
 
 /* hovered */
@@ -8752,7 +8749,6 @@ body:not(.no-alternating-rows) .BC-Matrix-square li:nth-child(even) {
 /* unresolved links */
 .app-container .BC-Link.is-unresolved {
 	color: var(--unresolved-link-color);
-	opacity: var(--unresolved-opacity);
 }
 
 /* Breadcrumb Trail */
@@ -9082,7 +9078,6 @@ body .dataview.inline-field-key {
 .another-quick-switcher__phantom_item .another-quick-switcher__item__directory,
 .suggestion-item .another-quick-switcher__phantom_item {
 	color: var(--unresolved-link-color);
-	opacity: var(--unresolved-opacity);
 }
 
 .another-quick-switcher__phantom_item .another-quick-switcher__item__icon,
