@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 1.794
+Version 1.795
 https://github.com/chrisgrieser/shimmering-focus/
 MIT License
 ─────────────────────────────────────────────────── */
@@ -1749,8 +1749,8 @@ body:not(.show-statusbar):not(.default-statusbar) .status-bar:hover {
 }
 
 /* so stuff on the bottom of the right sidebar can still be clicked */
-body:not(.default-statusbar) .mod-right-split .workspace-tabs:last-child .workspace-leaf-content {
-	padding-bottom: 2em;
+body:not(.default-statusbar) .mod-right-split .workspace-tabs:last-child .workspace-leaf-content > div:last-child {
+	padding-bottom: 2.2em;
 }
 
 /* fix for plugins adding empty elements to the statusbar */
