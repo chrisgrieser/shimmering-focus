@@ -4,7 +4,7 @@ nav_order: 110
 
 # Changelog
 
-- 2022-02-01	patch
+- 2022-02-01	transition protection for backgrounds
 - 2022-02-01	better space usage in right sidebar when conflicting with status bar
 - 2022-02-01	minor improvements to tag pane
 - 2022-02-01	unresolved links more readable
