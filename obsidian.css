@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 1.790
+Version 1.791
 https://github.com/chrisgrieser/shimmering-focus/
 MIT License
 ─────────────────────────────────────────────────── */
@@ -1279,6 +1279,11 @@ body.no-animations {
 	animation-duration: 2200ms;
 	animation-name: phase-blink;
 	animation-iteration-count: infinite;
+}
+
+.no-blink-cursor .cm-cursorLayer {
+	/* important needed */
+	animation-duration: 0ms !important;
 }
 
 /* set cursor values */
@@ -10003,17 +10008,19 @@ settings:
 	-
 	 id: cursor-blink-style
 	 title: 🚧 Cursor Blink Style (experimental)
-	 description: The way the cursor blinks
 	 type: class-select
 	 allowEmpty: false
 	 default: normal-blink
 	 options:
 		-
-			label: Default
+			label: Normal
 			value: normal-blink
 		-
-			label: Phase Blink
+			label: Phasing
 			value: phase-blink-cursor
+		-
+			label: No Blink
+			value: no-blink-cursor
 	-
 	 id: block-cursor
 	 title: Block Cursor

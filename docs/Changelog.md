@@ -4,7 +4,7 @@ nav_order: 110
 
 # Changelog
 
-- 2022-02-01	patch
+- 2022-02-01	option to turn off cursor blinking entirely
 - 2022-02-01	fixed supercharged links tooltips
 - 2022-01-31	modified phase blink values
 - 2022-01-31	New: Change Cursor Blink Styles
