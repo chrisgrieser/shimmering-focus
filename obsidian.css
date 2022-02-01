@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 1.795
+Version 1.796
 https://github.com/chrisgrieser/shimmering-focus/
 MIT License
 ─────────────────────────────────────────────────── */
@@ -7282,6 +7282,8 @@ body:not(.no-built-in-supercharged-links) .data-link-icon[data-link-title]::BEFO
 body:not(.no-built-in-supercharged-links) .data-link-icon[data-link-up]::BEFORE { content: "🥖 " }
 
 /* tooltips */
+
+body:not(.no-built-in-supercharged-links) [data-link-data-href]:hover::AFTER,
 body:not(.no-built-in-supercharged-links) .data-link-icon:hover::AFTER {
 	font-size: 0.9rem;
 
@@ -7294,17 +7296,19 @@ body:not(.no-built-in-supercharged-links) .data-link-icon:hover::AFTER {
 	position: absolute;
 
 	padding: 8px 10px;
-	margin-left: -25px;
+	margin-left: 50px;
 
 	border: var(--notice-border);
 	border-radius: var(--roundish);
 }
 
 /* stylelint-disable function-whitespace-after */
+body:not(.no-built-in-supercharged-links) [data-link-data-href][data-link-title]:hover::AFTER,
 body:not(.no-built-in-supercharged-links) .data-link-icon[data-link-title]:hover::AFTER {
 	content: "\""attr(data-link-title)"\"";
 }
 
+body:not(.no-built-in-supercharged-links) [data-link-data-href][data-link-up]:hover::AFTER,
 body:not(.no-built-in-supercharged-links) .data-link-icon[data-link-up]:hover::AFTER {
 	content: "⬆️ \""attr(data-link-up)"\"";
 }
