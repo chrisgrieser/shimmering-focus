@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 1.793
+Version 1.794
 https://github.com/chrisgrieser/shimmering-focus/
 MIT License
 ─────────────────────────────────────────────────── */
@@ -435,9 +435,12 @@ the .create-ToC.sh.
 	background-color: var(--bg1);
 }
 
-.status-bar,
 .workspace-tabs .workspace-leaf {
 	background-color: var(--bg2);
+}
+
+.status-bar {
+	background-color: var(--header-bg);
 }
 
 .workspace-tabs {
@@ -947,6 +950,12 @@ body:not(.angular-shapes) .view-header-icon svg {
 /* close button */
 svg.cross {
 	stroke-width: 5px;
+}
+
+/* tag pane button */
+svg.hashtag.hashtag {
+	stroke-width: 3px;
+	transform: scale(1.1);
 }
 
 /* hotkey button */
@@ -1685,8 +1694,6 @@ body:not(.show-header-bar):not(.plugin-sliding-panes-rotate-header) .mod-horizon
 /* ───────────────────────────────────────────────────
 << Status Bar
 ─────────────────────────────────────────────────── */
-/* based on some CSS snippets from @Chetachi's Yin-and-Yang Theme
-https://github.com/chetachiezikeuzor/Yin-and-Yang-Theme */
 
 body:not(.default-statusbar) .status-bar {
 	font-family: var(--ui-font);
@@ -1700,8 +1707,8 @@ body:not(.default-statusbar) .status-bar {
 
 	padding: 7px 0 6px 12px;
 
-	border-top: var(--thin-border);
-	border-left: var(--thin-border);
+	border-top: 2px ridge var(--basic-border-color);
+	border-left: 2px ridge var(--basic-border-color);
 	border-top-left-radius: var(--roundish);
 }
 
@@ -6904,6 +6911,14 @@ body .search-suggest-item.mod-group:not(:first-child) .clickable-icon:hover {
 <<< Tag Pane
 ─────────────────────────────────────────────────── */
 
+.workspace-leaf-content[data-type="tag"] .nav-action-button {
+	margin-bottom: 2px;
+}
+
+.tag-container .tree-item:nth-child(2) {
+	margin-top: 7px;
+}
+
 .tag-container {
 	padding-right: 0;
 	padding-left: 2px;
@@ -6911,7 +6926,11 @@ body .search-suggest-item.mod-group:not(:first-child) .clickable-icon:hover {
 
 .tree-item-self.tag-pane-tag {
 	padding-right: 2px;
-	padding-left: 1.2em;
+	padding-left: 17px;
+}
+
+.tag-container .tree-item-inner {
+	padding-left: 2px;
 }
 
 .tag-pane-tag-count {
@@ -6921,6 +6940,14 @@ body .search-suggest-item.mod-group:not(:first-child) .clickable-icon:hover {
 
 .tag-container .tree-item-flair-outer::AFTER {
 	display: none;
+}
+
+.tag-container .tree-item-icon.collapse-icon {
+	padding-right: 2px;
+}
+
+.tag-container .tree-item-icon.collapse-icon svg {
+	color: var(--text-muted);
 }
 
 /* ───────────────────────────────────────────────────

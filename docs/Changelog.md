@@ -4,6 +4,7 @@ nav_order: 110
 
 # Changelog
 
+- 2022-02-01	minor improvements to tag pane
 - 2022-02-01	unresolved links more readable
 - 2022-02-01	fix #105
 - 2022-02-01	option to turn off cursor blinking entirely
