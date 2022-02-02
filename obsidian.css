@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 1.823
+Version 1.824
 https://github.com/chrisgrieser/shimmering-focus/
 MIT License
 ─────────────────────────────────────────────────── */
@@ -7844,13 +7844,18 @@ body .kanban-plugin__lane {
 }
 
 body .kanban-plugin__item-title-wrapper {
-	padding: 5px 7px;
+	padding: 4px 6px;
 }
 
-body .kanban-plugin__item-wrapper {
+.kanban-plugin__item-wrapper.kanban-plugin__item-wrapper {
 	background-color: var(--bg3);
+	margin-top: 5px;
 	border: var(--thin-border);
 	border-radius: calc(var(--roundish) * 1.5);
+}
+
+.kanban-plugin__item-wrapper:first-child {
+	margin-top: 1px;
 }
 
 body .kanban-plugin__item {
@@ -7908,7 +7913,7 @@ body .kanban-plugin__lane-wrapper {
 }
 
 body .kanban-plugin__lane-header-wrapper {
-	padding: 5px 4px 3px;
+	padding: 4px 4px 6px;
 	border: none;
 }
 
@@ -8278,14 +8283,14 @@ body:not(.no-alternating-rows) li:nth-child(even) .scene-container {
 	font-size: 0;
 
 	height: 28px;
-	width: 33px;
+	width: 40px;
 
 	color: var(--text-faint);
 	background-color: var(--bg3);
 	box-shadow: var(--small-inset-shadow);
 
 	padding: 4px;
-	margin-right: 7px;
+	margin-right: 10px;
 
 	border: var(--thin-border);
 	border-radius: var(--roundish);
@@ -8294,7 +8299,7 @@ body:not(.no-alternating-rows) li:nth-child(even) .scene-container {
 .workspace-leaf-content[data-type="VIEW_TYPE_LONGFORM_EXPLORER"] .tab-list button::BEFORE {
 	position: relative;
 	bottom: 1px;
-	left: 2px;
+	left: 4px;
 }
 
 .workspace-leaf-content[data-type="VIEW_TYPE_LONGFORM_EXPLORER"] .tab-list button:nth-child(1)::BEFORE {
