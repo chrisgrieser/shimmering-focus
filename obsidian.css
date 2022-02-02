@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 1.821
+Version 1.822
 https://github.com/chrisgrieser/shimmering-focus/
 MIT License
 ─────────────────────────────────────────────────── */
@@ -1289,6 +1289,7 @@ body.no-animations {
 
 .breathing-cursor .cm-cursorLayer .cm-cursor,
 .breathing-cursor .CodeMirror-cursor {
+	width: 4px;
 	animation-duration: 1600ms;
 	animation-name: breathing-blink;
 }
