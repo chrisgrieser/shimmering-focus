@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 1.819
+Version 1.820
 https://github.com/chrisgrieser/shimmering-focus/
 MIT License
 ─────────────────────────────────────────────────── */
@@ -1252,6 +1252,25 @@ body.no-animations {
 
 .theme-dark.fire-and-ice-cursor {
 	--cursor-look: linear-gradient(to right, hsl(22 100% 50%) 50%, hsl(216 100% 65%) 50%);
+}
+
+/* Powerline */
+.powerline-cursor .cm-cursor::AFTER {
+	content: "|";
+
+	font-size: 2.2em;
+	font-weight: 100;
+
+	color: skyblue;
+
+	position: relative;
+	right: 0.3em;
+	bottom: 0.45em;
+}
+
+.powerline-cursor .cm-cursor.cm-cursor {
+	width: 0;
+	background: none;
 }
 
 /* Blink Style */
@@ -9905,7 +9924,7 @@ community:
 ─────────────────────────────────────────────────── */
 
 /* @settings
-name: Shimmering Focus (Theme)
+name: Shimmering Focus ⟡
 id: shimmering-focus
 settings:
 	-
@@ -10119,6 +10138,9 @@ settings:
 		-
 			label: Fire & Ice
 			value: fire-and-ice-cursor
+		-
+			label: Powerline 🚧
+			value: powerline-cursor
 	-
 	 id: cursor-blink-style
 	 title: Cursor Blink Style
