@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 1.810
+Version 1.811
 https://github.com/chrisgrieser/shimmering-focus/
 MIT License
 ─────────────────────────────────────────────────── */
@@ -546,7 +546,7 @@ body.theme-dark {
 	--image-size: 50;
 	--pdf-size: 50vh;
 	--popover-size: 350;
-	--inactive-pane-opacity: 75%;
+	--inactive-pane-opacity: 70%;
 	--readable-length: 700px;
 
 	--signature: "⟡";
@@ -1562,7 +1562,7 @@ body > div.notice-container .notice:hover {
 }
 
 /* ───────────────────────────────────────────────────
-<< Header Bar
+<< Header Bar (Desktop)
 ─────────────────────────────────────────────────── */
 
 body {
@@ -1669,6 +1669,8 @@ body:not(.is-mobile):not(.plugin-sliding-panes-rotate-header) .view-header:focus
 	transition: var(--medium-transition);
 }
 
+/* first sliding pane or without sliding pane opacity effect */
+.plugin-sliding-panes .mod-root .workspace-leaf:nth-child(2) .view-header:focus-within + .view-content,
 body:not(.plugin-sliding-panes) .view-header:focus-within + .view-content {
 	opacity: var(--inactive-pane-opacity);
 }
@@ -8142,7 +8144,7 @@ input#new-scene {
 }
 
 #project-picker {
-	background-color: var(--bg3);
+	background-color: var(--header-bg);
 	box-shadow: var(--muted-button-inset-shadow);
 	padding: 0 2px 2px;
 	border-bottom: var(--thin-border);
