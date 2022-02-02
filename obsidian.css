@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 1.813
+Version 1.814
 https://github.com/chrisgrieser/shimmering-focus/
 MIT License
 ─────────────────────────────────────────────────── */
@@ -3064,6 +3064,10 @@ body .app-container .workspace-leaf-resize-handle:hover {
 }
 
 /* <<< Community plugin list */
+.installed-plugins-container {
+	padding-top: 8px;
+}
+
 .installed-plugins-container .setting-item-description > div:first-child {
 	font-family: var(--smallcap-font);
 
@@ -3073,17 +3077,10 @@ body .app-container .workspace-leaf-resize-handle:hover {
 }
 
 .installed-plugins-container .setting-item-description > div:nth-child(2) {
+	font-family: var(--smallcap-font);
 	position: relative;
 	left: 4em;
 	margin-top: -1.17em;
-}
-
-.installed-plugins-container {
-	padding-top: 8px;
-}
-
-.installed-plugins-container .setting-item-description > div:nth-child(2) {
-	font-family: var(--smallcap-font);
 }
 
 .installed-plugins-container .setting-item-description > div:nth-child(2)::FIRST-LETTER {
