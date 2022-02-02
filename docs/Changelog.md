@@ -4,6 +4,7 @@ nav_order: 110
 
 # Changelog
 
+- 2022-02-02	add collapse blink to the docs
 - 2022-02-02	new cursor blink style: collapsing
 - 2022-02-02	plugin list more condensed
 - 2022-02-02	plugin list more condensed
