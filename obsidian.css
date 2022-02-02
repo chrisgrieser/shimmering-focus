@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 1.822
+Version 1.823
 https://github.com/chrisgrieser/shimmering-focus/
 MIT License
 ─────────────────────────────────────────────────── */
@@ -1242,7 +1242,7 @@ body.no-animations {
 
 .theme-dark.dark-eclipse-cursor {
 	--cursor-look: hsl(0 0% 0%);
-	--cursor-outline-color: hsl(0 0% 100%);
+	--cursor-outline-color: hsl(0 0% 90%);
 }
 
 /* Fire and Ice */
@@ -1289,8 +1289,8 @@ body.no-animations {
 
 .breathing-cursor .cm-cursorLayer .cm-cursor,
 .breathing-cursor .CodeMirror-cursor {
-	width: 4px;
-	animation-duration: 1600ms;
+	width: 3.4px;
+	animation-duration: 2200ms;
 	animation-name: breathing-blink;
 }
 
