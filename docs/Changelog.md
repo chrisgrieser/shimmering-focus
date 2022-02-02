@@ -4,7 +4,7 @@ nav_order: 110
 
 # Changelog
 
-- 2022-02-02	patch
+- 2022-02-02	new cursor blink style: collapsing
 - 2022-02-02	plugin list more condensed
 - 2022-02-02	plugin list more condensed
 - 2022-02-01	footnote styling consistent across modes

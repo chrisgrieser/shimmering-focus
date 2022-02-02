@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 1.814
+Version 1.815
 https://github.com/chrisgrieser/shimmering-focus/
 MIT License
 ─────────────────────────────────────────────────── */
@@ -1247,10 +1247,6 @@ body.no-animations {
 	--cursor-outline-color: hsl(0 0% 100%);
 }
 
-.dark-eclipse-cursor .cm-cursor.cm-cursor {
-	width: 2.7px;
-}
-
 /* Fire and Ice */
 .theme-light.fire-and-ice-cursor {
 	--cursor-look: linear-gradient(to right, hsl(10 100% 70%) 50%, hsl(205 100% 65%) 50%);
@@ -1261,13 +1257,7 @@ body.no-animations {
 }
 
 /* Blink Style */
-.phase-blink-cursor .cm-cursorLayer {
-	/* important needed */
-	animation-name: none !important;
-}
-
 @keyframes phase-blink {
-	/* has to be coded without opacity to avoid conflict with focus line highlight */
 	15% {
 		background-color: var(--cursor-look);
 		outline-color: var(--cursor-outline-color);
@@ -1282,11 +1272,28 @@ body.no-animations {
 	}
 }
 
+@keyframes collapse-blink {
+	45% {
+		width: 0;
+		outline-color: transparent;
+	}
+	55% {
+		width: 0;
+		outline-color: transparent;
+	}
+}
+
 .phase-blink-cursor .cm-cursorLayer .cm-cursor,
 .phase-blink-cursor .CodeMirror-cursor {
 	animation-duration: 2200ms;
 	animation-name: phase-blink;
-	animation-iteration-count: infinite;
+}
+
+.collapse-blink-cursor .cm-cursorLayer .cm-cursor,
+.collapse-blink-cursor .CodeMirror-cursor {
+	width: 4px;
+	animation-duration: 1600ms;
+	animation-name: collapse-blink;
 }
 
 .no-blink-cursor .cm-cursorLayer {
@@ -1294,12 +1301,22 @@ body.no-animations {
 	animation-duration: 0ms !important;
 }
 
+body:not(.normal-blink) .cm-cursorLayer {
+	/* important needed */
+	animation-name: none !important;
+}
+
 /* set cursor values */
 .cm-cursorLayer .cm-cursor,
 .CodeMirror-cursor {
 	width: 3px;
+
 	background: var(--cursor-look);
+
 	border: none;
+
+	animation-iteration-count: infinite;
+	animation-timing-function: ease-in-out;
 	outline: 0.2px solid var(--cursor-outline-color);
 }
 
@@ -10117,6 +10134,9 @@ settings:
 		-
 			label: Phasing
 			value: phase-blink-cursor
+		-
+			label: Collapsing
+			value: collapse-blink-cursor
 		-
 			label: No Blink
 			value: no-blink-cursor
