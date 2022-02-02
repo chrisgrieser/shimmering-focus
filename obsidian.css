@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 1.817
+Version 1.818
 https://github.com/chrisgrieser/shimmering-focus/
 MIT License
 ─────────────────────────────────────────────────── */
@@ -885,7 +885,6 @@ svg {
 ─────────────────────────────────────────────────── */
 
 .external-link.external-link {
-	/* background-size: 1em; */
 	background-position-y: 0.4em;
 	background-image: var(--external-url);
 	padding-right: 1em;
@@ -1271,7 +1270,7 @@ body.no-animations {
 	}
 }
 
-@keyframes collapse-blink {
+@keyframes breathing-blink {
 	45% {
 		width: 0;
 		outline-color: transparent;
@@ -1288,11 +1287,11 @@ body.no-animations {
 	animation-name: phase-blink;
 }
 
-.collapse-blink-cursor .cm-cursorLayer .cm-cursor,
-.collapse-blink-cursor .CodeMirror-cursor {
-	width: 4px;
+.breathing-cursor .cm-cursorLayer .cm-cursor,
+.breathing-cursor .CodeMirror-cursor {
+	width: 3.4px;
 	animation-duration: 1600ms;
-	animation-name: collapse-blink;
+	animation-name: breathing-blink;
 }
 
 .no-blink-cursor .cm-cursorLayer {
@@ -10122,7 +10121,7 @@ settings:
 			value: fire-and-ice-cursor
 	-
 	 id: cursor-blink-style
-	 title: 🚧 Cursor Blink Style (experimental)
+	 title: Cursor Blink Style
 	 type: class-select
 	 allowEmpty: false
 	 default: normal-blink
@@ -10131,11 +10130,11 @@ settings:
 			label: Normal
 			value: normal-blink
 		-
-			label: Phasing
+			label: Smooth Phasing
 			value: phase-blink-cursor
 		-
-			label: Collapsing
-			value: collapse-blink-cursor
+			label: Breathing
+			value: breathing-cursor
 		-
 			label: No Blink
 			value: no-blink-cursor

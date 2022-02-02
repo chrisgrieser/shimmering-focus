@@ -4,6 +4,7 @@ nav_order: 110
 
 # Changelog
 
+- 2022-02-02	patch
 - 2022-02-02	better external link icon
 - 2022-02-02	add collapse blink to the docs
 - 2022-02-02	new cursor blink style: collapsing
