@@ -5,7 +5,7 @@ nav_order: 101
 # 🪛 Theme Customization
 
 ## Style Settings
-This themes supports dozens of customization options via the [Style Settings Plugin](https://github.com/mgmeyers/obsidian-style-settings/).
+This themes supports dozens of customization options via the [Style Settings Plugin](https://github.com/mgmeyers/obsidian-style-settings/). Most importantly, __all__ UI elements that are hidden by the theme can be re-enabled with it.
 
 ![](https://user-images.githubusercontent.com/73286100/146689428-e29af1e7-92f8-4dce-afda-ef3545743d96.png)
 
