@@ -4,7 +4,7 @@ nav_order: 2
 
 # ⚜️ Design Philosophy
 
-*Shimmering Focus'* Design is based on following four main principles:
+*Shimmering Focus'* Design is based on following four main principles.
 
 ## Functional Minimalism
 
@@ -13,9 +13,7 @@ nav_order: 2
 
 Minimalism is the primary feature of the theme. It's main goal is to remove as much unnecessary clutter as possible, so you can focus on what matters. The primary target group of *Shimmering Focus* are therefore users comfortable with navigating their device mostly with the keyboard.
 
-Nevertheless, the theme is fully functional, through [UI elements becoming visible when hovering](/core-features#hidingshowing-ui-elements) and by allowing you *exactly* [customize what UI elements you want to re-enable](./theme-settings).
-
-![sidebar tabs visible on hover](images/hidden-tab-sidebars.gif)
+Nevertheless, the theme is fully functional, through [UI elements becoming visible when hovering](/shimmering-focus/core-features#hidingshowing-ui-elements) and by allowing you *exactly* [customize what UI elements you want to re-enable](shimmering-focus/theme-settings).
 
 ## Condensed Information Display
 The particular "flavor" of minimalism *Shimmering Focus* strives for should be regarded as *functional*, since minimalism is not a goal in itself, but rather serves the ulterior goals of focus and condensed information display.
