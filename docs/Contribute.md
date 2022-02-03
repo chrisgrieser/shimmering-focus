@@ -22,7 +22,7 @@ I am still new to creating proper documentation sites. This one simply uses GitH
 
 ## Contribute CSS Snippets
 The following types of CSS snippets are self-contained and relatively easy to contribute:
-- More [CSS Classes](/css-classes), e.g. for tables.
+- More [CSS Classes](/shimmering-focus/css-classes), e.g. for tables.
 - More built-in styling for the [Supercharged Links Plugin](#built-in-styling-for-supercharged-links).
 - Support or fixes for [plugins that are not supported yet](https://publish.obsidian.md/hub/02+-+Community+Expansions/02.05+All+Community+Expansions/Themes/Shimmering+Focus#Plugin+Compatibility+1).
 - [Most open feature requests](https://github.com/chrisgrieser/shimmering-focus/issues?q=is%3Aissue+is%3Aopen+label%3Aenhancement) are also relatively easy to implement, I simply haven't found the time to get to them yet.

@@ -31,7 +31,7 @@ The following CSS classes are built in with this theme:
 - `cssclass: list-2-col-cards`: Lists will become cards separated into two columns.
 
 ## Writing & Academic
-- `cssclass: writing`: Applies alternate note styling for writers. [See here for more information](academics-and-writers) (requires Obsidian 0.13.23).
+- `cssclass: writing`: Applies alternate note styling for writers. [See here for more information](/shimmering-focus/academics-and-writers) (requires Obsidian 0.13.23).
 - `cssclass: bibliography-list`: In preview mode, list items are formatted like an academic bibliography.
 
 ![writing cssclass](images/writing-cssclass.gif)

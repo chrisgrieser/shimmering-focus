@@ -13,7 +13,7 @@ nav_order: 2
 
 Minimalism is the primary feature of the theme. It's main goal is to remove as much unnecessary clutter as possible, so you can focus on what matters. The primary target group of *Shimmering Focus* are therefore users comfortable with navigating their device mostly with the keyboard.
 
-Nevertheless, the theme is fully functional, through [UI elements becoming visible when hovering](/shimmering-focus/core-features#hidingshowing-ui-elements) and by allowing you *exactly* [customize what UI elements you want to re-enable](shimmering-focus/theme-settings).
+Nevertheless, the theme is fully functional, through [UI elements becoming visible when hovering](/shimmering-focus/core-features#hidingshowing-ui-elements) and by allowing you *exactly* [customize what UI elements you want to re-enable](/shimmering-focus/theme-settings).
 
 ## Condensed Information Display
 The particular "flavor" of minimalism *Shimmering Focus* strives for should be regarded as *functional*, since minimalism is not a goal in itself, but rather serves the ulterior goals of focus and condensed information display.
@@ -27,9 +27,9 @@ The third design principle is to maximize readability. The theme exclusibely use
 
 As the theme's goal is to achieve minimalism, readability, and condensed information display at the same time, the elements are not distinguished by color or font size differences, but by font type and alignment variation.
 
-In addition, the theme offers [a variety of features around readabiltiy and scannability](reading-and-scanning), for example brightness sliders or indicators in the gutter.
+In addition, the theme offers [a variety of features around readabiltiy and scannability](/shimmering-focus/reading-and-scanning), for example brightness sliders or indicators in the gutter.
 
 ## Subtle Elegance
 Being minimalist does not mean that the theme should look plain, to the contrary. While *functional* minimalism means removing expendable elements, the elements that *do* remain receive their share of elegant makeovers.
 
-Subtle, yet elegant design means that the theme aims to look good without being distracting. Examples for this are styling of cursors or checkboxes. Since preferences in this regard vary, the theme offers [a wide range of aesthetic customization choices](color-and-aesthetics).
+Subtle, yet elegant design means that the theme aims to look good without being distracting. Examples for this are styling of cursors or checkboxes. Since preferences in this regard vary, the theme offers [a wide range of aesthetic customization choices](/shimmering-focus/color-and-aesthetics).

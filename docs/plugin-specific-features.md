@@ -24,9 +24,9 @@ In accordance with the minimalistic philosophy of the theme, unnecessary UI elem
 - __Longform__: Prepend a `_` to file names of longform scenes to create sub-scenes.
 - __Kanban__: Right-click cards to edit them.
 - __Supercharged Links__: The theme includes [various built-in styling](#built-in-styling-for-supercharged-links). You can turn those of with the Style Settings plugin.
-- __Breadcrumbs__: Even with buttons removed, you can still refresh the index via Command Palette. When Supercharged Links is installed, [hovering over a link with the `up` yaml field](#built-in-styling-for-supercharged-links) displays the content of that field.
+- __Breadcrumbs__: Even with buttons removed, you can still refresh the index via Command Palette. 
 - __Quick Explorer__: Re-enable the title bar with the [Style Settings Plugin](https://github.com/mgmeyers/obsidian-style-settings/) for the breadcrumbs
-- __Dataview__: Check out the [dataview-specific CSS classes](css-classes#dataview).
+- __Dataview__: Check out the [dataview-specific CSS classes](/shimmering-focus/css-classes#dataview).
 - __Ozan's Image in Editor__: Image Sizes are affected by the Image Settings & by the Max View Feature.
 - __Sliding Panes__: As long as you are using `rotated headers`, the header is permanently shown.
 - __Starred (Core Plugin)__: To be able to star searches, re-enable the Starred pane buttons with the [Style Settings Plugin](https://github.com/mgmeyers/obsidian-style-settings/)
@@ -40,7 +40,6 @@ This theme includes built-in styling for the [Supercharged Links Plugin](https:/
 - Notes with `#person` get `👤` prepended
 - Notes with `#checklist` get `☑️` prepended
 - Links to _Literature Notes_ get a tooltip with the content of the `title` yaml key when hovering and get `📖` prepended. (Actually, this applies to any note with a `title` yaml frontmatter key.)
-- Breadcrumbs users: Links to notes with the `up` yaml key get a tooltip with the content of that yaml key, and get `🥖` prepended.
 
 ![Demo tooltips](https://publish-01.obsidian.md/access/e25082da1bfe16d54e36618cd5bfee68/00%20-%20Contribute%20to%20the%20Obsidian%20Hub/02%20Attachments/Tooltips-for-Literature-Notes-with-Supercharged-Links.gif)
 
