@@ -13,9 +13,9 @@ nav_order: 2
 
 Minimalism is the primary feature of the theme. It's main goal is to remove as much unnecessary clutter as possible, so you can focus on what matters. The primary target group of *Shimmering Focus* are therefore users comfortable with navigating their device mostly with the keyboard.
 
-Nevertheless, the theme is fully functional, through [UI elements becoming visible when hovering](core-features#hidingshowing-ui-elements) and by allowing you *exactly* [customize what UI elements you want to re-enable](theme-settings).
+Nevertheless, the theme is fully functional, through [UI elements becoming visible when hovering](/core-features#hidingshowing-ui-elements) and by allowing you *exactly* [customize what UI elements you want to re-enable](./theme-settings).
 
-![sidebar tabs visible on hover](hidden-tab-sidebars.gif)
+![sidebar tabs visible on hover](images/hidden-tab-sidebars.gif)
 
 ## Condensed Information Display
 The particular "flavor" of minimalism *Shimmering Focus* strives for should be regarded as *functional*, since minimalism is not a goal in itself, but rather serves the ulterior goals of focus and condensed information display.
@@ -32,6 +32,6 @@ As the theme's goal is to achieve minimalism, readability, and condensed informa
 In addition, the theme offers [a variety of features around readabiltiy and scannability](reading-and-scanning), for example brightness sliders or indicators in the gutter.
 
 ## Subtle Elegance
-Being minimalist does not mean that the theme should look plain, to the contrary. While *functional* minimalism means removing expendable elements, the elements that *do* remain receive their share of elegant makeovers. 
+Being minimalist does not mean that the theme should look plain, to the contrary. While *functional* minimalism means removing expendable elements, the elements that *do* remain receive their share of elegant makeovers.
 
 Subtle, yet elegant design means that the theme aims to look good without being distracting. Examples for this are styling of cursors or checkboxes. Since preferences in this regard vary, the theme offers [a wide range of aesthetic customization choices](color-and-aesthetics).
