@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 1.827
+Version 1.828
 https://github.com/chrisgrieser/shimmering-focus/
 MIT License
 ─────────────────────────────────────────────────── */
@@ -1272,11 +1272,11 @@ body.no-animations {
 
 @keyframes breathing-blink {
 	45% {
-		width: 0;
+		width: 1px;
 		outline-color: transparent;
 	}
 	55% {
-		width: 0;
+		width: 1px;
 		outline-color: transparent;
 	}
 }
@@ -7759,6 +7759,10 @@ body:not(.show-header-bar) .workspace-leaf-content[data-type="kanban"] .view-hea
 	background-attachment: local;
 }
 
+.kanban-plugin {
+	background-color: var(--kanban-background) !important;
+}
+
 body:not(.show-header-bar) .workspace-leaf-content[data-type="kanban"] .view-header {
 	background-color: var(--kanban-background) !important;
 }
@@ -7777,6 +7781,11 @@ body:not(.show-header-bar):not(.plugin-sliding-panes-rotate-header) .workspace-l
 .workspace-leaf-content[data-type="kanban"] .view-header:focus-within ~ .view-content .kanban-plugin__board > div,
 .workspace-leaf-content[data-type="kanban"] .view-header:hover ~ .view-content .kanban-plugin__board > div {
 	padding-top: 8px;
+}
+
+.kanban-plugin__item:hover .kanban-plugin__item-title-wrapper,
+.kanban-plugin__item:hover {
+	background-color: var(--active-hover-kanban-item) !important;
 }
 
 div.kanban-plugin__board > div {
@@ -7801,30 +7810,30 @@ body:not(.show-header-bar) .kanban-plugin__board > div {
 }
 
 /* <<< Font  */
-body .kanban-plugin p {
+body :is(.kanban-plugin__drag-container,.kanban-plugin) p {
 	font-size: 0.95em;
 	letter-spacing: -0.2px;
 	margin: 0;
 }
 
-.kanban-plugin h1,
-.kanban-plugin h2,
-.kanban-plugin h3,
-.kanban-plugin h4,
-.kanban-plugin h5,
-.kanban-plugin h6 {
+:is(.kanban-plugin__drag-container,.kanban-plugin) h1,
+:is(.kanban-plugin__drag-container,.kanban-plugin) h2,
+:is(.kanban-plugin__drag-container,.kanban-plugin) h3,
+:is(.kanban-plugin__drag-container,.kanban-plugin) h4,
+:is(.kanban-plugin__drag-container,.kanban-plugin) h5,
+:is(.kanban-plugin__drag-container,.kanban-plugin) h6 {
 	font-family: var(--default-font);
 	letter-spacing: 0.4px;
 	color: var(--text-normal);
 	margin-bottom: 3px;
 }
 
-.kanban-plugin h1 { font-size: calc(var(--h1-size) * var(--kanban-heading-size-factor)) }
-.kanban-plugin h2 { font-size: calc(var(--h2-size) * var(--kanban-heading-size-factor)) }
-.kanban-plugin h3 { font-size: calc(var(--h3-size) * var(--kanban-heading-size-factor)) }
-.kanban-plugin h4 { font-size: calc(var(--h4-size) * var(--kanban-heading-size-factor)) }
-.kanban-plugin h5 { font-size: calc(var(--h5-size) * var(--kanban-heading-size-factor)) }
-.kanban-plugin h6 { font-size: calc(var(--h6-size) * var(--kanban-heading-size-factor)) }
+:is(.kanban-plugin__drag-container,.kanban-plugin) h1 { font-size: calc(var(--h1-size) * var(--kanban-heading-size-factor)) }
+:is(.kanban-plugin__drag-container,.kanban-plugin) h2 { font-size: calc(var(--h2-size) * var(--kanban-heading-size-factor)) }
+:is(.kanban-plugin__drag-container,.kanban-plugin) h3 { font-size: calc(var(--h3-size) * var(--kanban-heading-size-factor)) }
+:is(.kanban-plugin__drag-container,.kanban-plugin) h4 { font-size: calc(var(--h4-size) * var(--kanban-heading-size-factor)) }
+:is(.kanban-plugin__drag-container,.kanban-plugin) h5 { font-size: calc(var(--h5-size) * var(--kanban-heading-size-factor)) }
+:is(.kanban-plugin__drag-container,.kanban-plugin) h6 { font-size: calc(var(--h6-size) * var(--kanban-heading-size-factor)) }
 
 /* cards being edited */
 .app-container .kanban-plugin .kanban-plugin__board textarea {
@@ -7832,23 +7841,23 @@ body .kanban-plugin p {
 	letter-spacing: -0.1px;
 }
 
-.kanban-plugin li {
+:is(.kanban-plugin__drag-container,.kanban-plugin) li {
 	font-size: 0.85em;
 }
 
-.kanban-plugin.kanban-plugin code {
+:is(.kanban-plugin__drag-container,.kanban-plugin) code {
 	font-size: calc(var(--monospace-font-size) * 0.95);
 	background-color: var(--bg3);
 	padding-right: 0;
 	padding-left: 0;
 }
 
-.kanban-plugin.kanban-plugin li code {
+:is(.kanban-plugin__drag-container,.kanban-plugin) li code {
 	font-size: calc(var(--monospace-font-size) * 0.95 * 0.85);
 	padding: 1px 3px;
 }
 
-body .kanban-plugin ul {
+body :is(.kanban-plugin__drag-container,.kanban-plugin) ul {
 	margin-top: 3px;
 }
 
@@ -7864,14 +7873,15 @@ body .kanban-plugin__item-title-wrapper {
 	padding: 4px 6px;
 }
 
-.kanban-plugin__item-wrapper.kanban-plugin__item-wrapper {
-	background-color: var(--bg3);
+/* fix look of cards when dragging */
+.kanban-plugin__lane-wrapper.is-sorting .kanban-plugin__item-wrapper .kanban-plugin__item,
+.kanban-plugin__lane-wrapper:not(.is-sorting) .kanban-plugin__item-wrapper {
 	margin-top: 5px;
 	border: var(--thin-border);
 	border-radius: calc(var(--roundish) * 1.5);
 }
 
-.kanban-plugin__item-wrapper:first-child {
+.kanban-plugin__item-wrapper.kanban-plugin__item-wrapper:first-child {
 	margin-top: 1px;
 }
 
@@ -7986,14 +7996,8 @@ body .kanban-plugin__new-item-button:hover {
 	border-color: var(--alt-accent) !important;
 }
 
-.kanban-plugin__drag-container .kanban-plugin__item-title-wrapper,
-.kanban-plugin__item:hover .kanban-plugin__item-title-wrapper,
-.kanban-plugin__item:hover {
+.kanban-plugin__drag-container .kanban-plugin__item-title-wrapper {
 	background-color: var(--active-hover-kanban-item) !important;
-}
-
-.kanban-plugin {
-	background-color: var(--kanban-background) !important;
 }
 
 /* fix metadata in kanban card display */
@@ -8022,19 +8026,19 @@ body .kanban-plugin .kanban-plugin__markdown-preview-view hr {
 }
 
 /* checkboxes & angular shapes setting */
-.kanban-plugin input[type="checkbox"] {
+:is(.kanban-plugin__drag-container,.kanban-plugin) input[type="checkbox"] {
 	height: 0.85em;
 	width: 0.85em;
 	margin-top: 0;
 	margin-left: 0;
 }
 
-.kanban-plugin ul > li.task-list-item {
+:is(.kanban-plugin__drag-container,.kanban-plugin) ul > li.task-list-item {
 	padding-left: 0;
 }
 
 /* prevent images setting from propagating to Kanbans */
-.kanban-plugin.kanban-plugin.kanban-plugin .kanban-plugin__item img {
+.kanban-plugin__item.kanban-plugin__item.kanban-plugin__item.kanban-plugin__item img {
 	max-width: 100%;
 	margin-top: 0;
 }
