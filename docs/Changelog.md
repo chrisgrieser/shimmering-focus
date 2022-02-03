@@ -4,6 +4,7 @@ nav_order: 110
 
 # Changelog
 
+- 2022-02-03	remove cssclass dataview-no-task-link, since it's actually in the dataview settings
 - 2022-02-03	new cssclass: bibliography-list
 - 2022-02-02	better external link icon
 - 2022-02-02	add collapse blink to the docs

@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 1.825
+Version 1.826
 https://github.com/chrisgrieser/shimmering-focus/
 MIT License
 ─────────────────────────────────────────────────── */
@@ -6205,12 +6205,6 @@ body:not(.no-fn-indicator) .mod-cm6 .cm-hmd-barelink:not(.cm-formatting-link) + 
 .markdown-preview-view.dataview-list-in-table table.dataview > thead > tr > th,
 .markdown-preview-view.dataview-list-in-table table.dataview > tbody > tr > td {
 	border-left: none;
-}
-
-/* dataview no task links */
-.dataview-no-task-links .block-language-dataview .contains-task-list .data-link-icon,
-.dataview-no-task-links .block-language-dataviewjs .contains-task-list .data-link-icon {
-	display: none;
 }
 
 /* 2 column cards */
