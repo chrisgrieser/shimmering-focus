@@ -5,6 +5,7 @@ nav_order: 110
 # Changelog
 
 - 2022-02-03	patch
+- 2022-02-03	fix internal links in documentation
 - 2022-02-03	added explanation of design philosophy to the docs
 - 2022-02-03	fix look of kanbans when item is being dragged
 - 2022-02-03	strikethrough finished tasks in source mode

@@ -24,7 +24,7 @@ In accordance with the minimalistic philosophy of the theme, unnecessary UI elem
 - __Longform__: Prepend a `_` to file names of longform scenes to create sub-scenes.
 - __Kanban__: Right-click cards to edit them.
 - __Supercharged Links__: The theme includes [various built-in styling](#built-in-styling-for-supercharged-links). You can turn those of with the Style Settings plugin.
-- __Breadcrumbs__: Even with buttons removed, you can still refresh the index via Command Palette. 
+- __Breadcrumbs__: Even with buttons removed, you can still refresh the index via Command Palette.
 - __Quick Explorer__: Re-enable the title bar with the [Style Settings Plugin](https://github.com/mgmeyers/obsidian-style-settings/) for the breadcrumbs
 - __Dataview__: Check out the [dataview-specific CSS classes](/shimmering-focus/css-classes#dataview).
 - __Ozan's Image in Editor__: Image Sizes are affected by the Image Settings & by the Max View Feature.
