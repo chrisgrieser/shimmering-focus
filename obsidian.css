@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 1.826
+Version 1.827
 https://github.com/chrisgrieser/shimmering-focus/
 MIT License
 ─────────────────────────────────────────────────── */
@@ -5923,6 +5923,20 @@ body > .app-container span.cm-tag {
 
 .is-live-preview.mod-cm6 input.task-list-item-checkbox {
 	margin-top: 0;
+}
+
+/* strikethrough finished */
+.cm-formatting-task.cm-property + span {
+	text-decoration: line-through;
+	color: var(--text-muted);
+}
+
+/* do not strikethrough the space in front */
+.cm-formatting-task.cm-property + span::BEFORE {
+	content: " ";
+	white-space: pre-wrap;
+	background-color: var(--bg1);
+	position: absolute;
 }
 
 /* preview mode */
