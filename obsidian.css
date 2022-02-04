@@ -1,6 +1,6 @@
-/* ───────────────────────────────────────────────────
+ /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 1.831
+Version 1.832
 https://github.com/chrisgrieser/shimmering-focus/
 MIT License
 ─────────────────────────────────────────────────── */
@@ -1271,12 +1271,8 @@ body.no-animations {
 }
 
 @keyframes breathing-blink {
-	45% {
-		width: 1px;
-		outline-color: transparent;
-	}
-	55% {
-		width: 1px;
+	50% {
+		width: 0;
 		outline-color: transparent;
 	}
 }
@@ -5432,9 +5428,12 @@ pre[class~="language-haskell" i]::AFTER { content: "Haskell"; }
 
 /* less indention to save space */
 .markdown-preview-view > div > div > div > ul.dataview.list-view-ul,
-.markdown-preview-view > div > div > ol,
 .markdown-preview-view > div > div > ul {
 	padding-left: 1rem;
+}
+
+.markdown-preview-view ol {
+	padding-left: 1.6rem;
 }
 
 /* ───────────────────────────────────────────────────
