@@ -1,6 +1,6 @@
  /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 1.832
+Version 1.833
 https://github.com/chrisgrieser/shimmering-focus/
 MIT License
 ─────────────────────────────────────────────────── */
@@ -2468,7 +2468,7 @@ body:not(.move-plugin-name-to-left):not(.is-mobile) div.prompt {
 body:not(.move-plugin-name-to-left):not(.is-mobile) .suggestion-prefix {
 	background-color: var(--bg1);
 	position: absolute;
-	right: 110px;
+	right: 100px;
 	padding-left: 8px;
 }
 
@@ -3986,6 +3986,13 @@ body:not(.no-active-highlight):not(.focused-highlight) .CodeMirror-activeline .C
 	border-radius: var(--roundish);
 }
 
+body:not(.no-active-highlight) .cm-active .cm-formatting-header,
+body:not(.no-active-highlight) .cm-active .cm-formatting-quote,
+body:not(.no-active-highlight) .cm-active .cm-formatting-list,
+body:not(.no-active-highlight) .cm-active .list-bullet {
+	color: var(--active-line-indicator);
+}
+
 .focused-highlight .cm-cursor::BEFORE {
 	content: " ";
 
@@ -4362,11 +4369,7 @@ body:not(.show-all-line-numbers) .cm-lineNumbers .cm-gutterElement {
 }
 
 /* when disabled, active highlighting of markup */
-.show-all-line-numbers:not(.no-active-highlight) .cm-lineNumbers .cm-active.cm-gutterElement,
-.show-all-line-numbers:not(.no-active-highlight) .cm-active .cm-formatting-header,
-.show-all-line-numbers:not(.no-active-highlight) .cm-active .cm-formatting-quote,
-.show-all-line-numbers:not(.no-active-highlight) .cm-active .cm-formatting-list,
-.show-all-line-numbers:not(.no-active-highlight) .cm-active .list-bullet {
+.show-all-line-numbers:not(.no-active-highlight) .cm-lineNumbers .cm-active.cm-gutterElement {
 	color: var(--active-line-indicator);
 }
 
