@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 1.834
+Version 1.835
 https://github.com/chrisgrieser/shimmering-focus/
 MIT License
 ─────────────────────────────────────────────────── */
@@ -1419,48 +1419,6 @@ body:not(.show-titlebar-text) .titlebar-text {
 }
 
 /* ───────────────────────────────────────────────────
-<< Settings Button
-─────────────────────────────────────────────────── */
-/* because users will never learn */
-body:not(.show-ribbons):not(.is-mobile) .workspace-ribbon.mod-left {
-	visibility: hidden;
-}
-
-body:not(.show-ribbons):not(.is-mobile) .workspace-split.mod-left-split.is-collapsed + .mod-root,
-body:not(.show-ribbons):not(.is-mobile) .workspace-split.mod-left-split {
-	margin-left: -30px;
-}
-
-body:not(.show-ribbons):not(.is-mobile) .side-dock-settings .side-dock-ribbon-action:last-child svg {
-	height: 0.95em;
-	width: 0.95em;
-}
-
-body:not(.show-ribbons):not(.is-mobile) .side-dock-settings .side-dock-ribbon-action:last-child {
-	background-color: var(--bg1);
-	box-shadow: var(--small-inset-shadow), var(--tiny-shadow);
-
-	position: absolute;
-	bottom: 0.5em;
-	left: 0.5em;
-
-	padding: 1px 4px 0 5px;
-
-	border: var(--thin-border);
-	border-radius: var(--roundish);
-
-	visibility: visible;
-}
-
-body:not(.show-ribbons):not(.is-mobile) .side-dock-settings .side-dock-ribbon-action:last-child:hover {
-	background-color: var(--bg3);
-}
-
-.hide-settings-button:not(.show-ribbons) .side-dock-settings .side-dock-ribbon-action:last-child {
-	display: none;
-}
-
-/* ───────────────────────────────────────────────────
 << Ribbons
 ─────────────────────────────────────────────────── */
 /* hide ribbons, when the setting is chosen */
@@ -1520,6 +1478,46 @@ body:not(.show-titlebar) .workspace-ribbon-collapse-btn {
 .side-dock-ribbon-action:active svg,
 .workspace-ribbon-collapse-btn:active svg {
 	color: var(--text-accent);
+}
+
+/* << Settings Button */
+/* because they will never learn 😔 */
+body:not(.show-ribbons):not(.is-mobile) .workspace-ribbon.mod-left {
+	visibility: hidden;
+}
+
+body:not(.show-ribbons):not(.is-mobile) .workspace-split.mod-left-split.is-collapsed + .mod-root,
+body:not(.show-ribbons):not(.is-mobile) .workspace-split.mod-left-split {
+	margin-left: -30px;
+}
+
+body:not(.show-ribbons):not(.is-mobile) .side-dock-settings .side-dock-ribbon-action:last-child svg {
+	height: 0.95em;
+	width: 0.95em;
+}
+
+body:not(.show-ribbons):not(.is-mobile) .side-dock-settings .side-dock-ribbon-action:last-child {
+	background-color: var(--bg1);
+	box-shadow: var(--small-inset-shadow), var(--tiny-shadow);
+
+	position: absolute;
+	bottom: 0.5em;
+	left: 0.5em;
+
+	padding: 1px 4px 0 5px;
+
+	border: var(--thin-border);
+	border-radius: var(--roundish);
+
+	visibility: visible;
+}
+
+body:not(.show-ribbons):not(.is-mobile) .side-dock-settings .side-dock-ribbon-action:last-child:hover {
+	background-color: var(--bg3);
+}
+
+.hide-settings-button:not(.show-ribbons) .side-dock-settings .side-dock-ribbon-action:last-child {
+	display: none;
 }
 
 /* ───────────────────────────────────────────────────
