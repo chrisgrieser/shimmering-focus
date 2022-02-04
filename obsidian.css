@@ -1,6 +1,6 @@
- /* ───────────────────────────────────────────────────
+/* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 1.833
+Version 1.834
 https://github.com/chrisgrieser/shimmering-focus/
 MIT License
 ─────────────────────────────────────────────────── */
@@ -2468,7 +2468,7 @@ body:not(.move-plugin-name-to-left):not(.is-mobile) div.prompt {
 body:not(.move-plugin-name-to-left):not(.is-mobile) .suggestion-prefix {
 	background-color: var(--bg1);
 	position: absolute;
-	right: 100px;
+	right: 92px;
 	padding-left: 8px;
 }
 
