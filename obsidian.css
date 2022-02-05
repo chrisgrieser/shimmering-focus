@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 1.838
+Version 1.839
 https://github.com/chrisgrieser/shimmering-focus/
 MIT License
 ─────────────────────────────────────────────────── */
@@ -1590,9 +1590,9 @@ body:not(.show-header-bar):not(.is-mobile):not(.plugin-sliding-panes-rotate-head
 	margin-top: calc(var(--hidden-header-hotarea-height) * -1);
 }
 
-body:not(.show-header-bar):not(.is-mobile):not(.plugin-sliding-panes-rotate-header) .workspace-leaf-content[data-type="markdown"] .view-header:hover:not(:focus-within) + .view-content :is(.markdown-preview-view, .cm-content):not(.kanban-plugin__markdown-preview-view) {
-	/* padding-top: var(--hidden-header-hotarea-height); */
-}
+/* body:not(.show-header-bar):not(.is-mobile):not(.plugin-sliding-panes-rotate-header) .workspace-leaf-content[data-type="markdown"] .view-header:hover:not(:focus-within) + .view-content :is(.markdown-preview-view, .cm-content):not(.kanban-plugin__markdown-preview-view) {
+	padding-top: var(--hidden-header-hotarea-height);
+} */
 
 body:not(.show-header-bar):not(.is-mobile):not(.plugin-sliding-panes-rotate-header) :is(.view-header-title, .view-header-icon),
 body:not(.show-header-bar):not(.is-mobile):not(.plugin-sliding-panes-rotate-header) .view-action svg {
@@ -4680,16 +4680,10 @@ body.focus-view-enabled .mod-left-split.is-collapsed ~ .mod-right-split {
 << Headings
 ─────────────────────────────────────────────────── */
 
-body .cm-s-obsidian .cm-header,
-.markdown-preview-view h1,
-.markdown-preview-view h2,
-.markdown-preview-view h3,
-.markdown-preview-view h4,
-.markdown-preview-view h5,
-.markdown-preview-view h6 {
+.cm-header.cm-header,
+.markdown-preview-view :is(h1, h2, h3, h4, h5, h6) {
 	font-family: var(--heading-font);
 	font-weight: 700;
-	text-rendering: geometricPrecision;
 	line-height: 1.3em;
 	letter-spacing: var(--heading-letter-spacing);
 }
@@ -4724,12 +4718,7 @@ body .cm-s-obsidian .cm-header,
 	font-size: var(--h6-size);
 }
 
-.markdown-preview-view h1,
-.markdown-preview-view h2,
-.markdown-preview-view h3,
-.markdown-preview-view h4,
-.markdown-preview-view h5,
-.markdown-preview-view h6 {
+.markdown-preview-view :is(h1, h2, h3, h4, h5, h6) {
 	margin-top: 1em;
 	margin-bottom: 0.5em;
 }
@@ -4765,12 +4754,8 @@ body .cm-s-obsidian .cm-header,
 
 /* Alternation between italic & different font style
 for all headings to improve distinctiveness */
-body:not(.no-alternating-header-italics) .cm-header-2,
-body:not(.no-alternating-header-italics) .markdown-preview-view h2,
-body:not(.no-alternating-header-italics) .cm-header-4,
-body:not(.no-alternating-header-italics) .markdown-preview-view h4,
-body:not(.no-alternating-header-italics) .cm-header-6,
-body:not(.no-alternating-header-italics) .markdown-preview-view h6 {
+body:not(.no-alternating-header-italics) .markdown-preview-view :is(h2, h4, h6),
+body:not(.no-alternating-header-italics) :is(.cm-header-2, .cm-header-4, .cm-header-6) {
 	font-style: italic;
 }
 
@@ -8455,57 +8440,30 @@ body:not(.longform-left-aligned) .longform-leaf {
 }
 
 /* do not justify code blocks, headings, tables, and lists */
-body .app-container .writing.cm-s-obsidian .HyperMD-codeblock,
-body .app-container .writing table td span,
-body .app-container .writing div.HyperMD-list-line.cm-line,
-body .app-container .writing div.HyperMD-header.cm-line,
-body .app-container .writing.markdown-preview-view h1,
-body .app-container .writing.markdown-preview-view h2,
-body .app-container .writing.markdown-preview-view h3,
-body .app-container .writing.markdown-preview-view h4,
-body .app-container .writing.markdown-preview-view h5,
-body .app-container .writing.markdown-preview-view h6,
-body .app-container .longform-leaf .cm-s-obsidian .HyperMD-codeblock,
-body .app-container .longform-leaf table td span,
-body .app-container .longform-leaf div.HyperMD-list-line.cm-line,
-body .app-container .longform-leaf div.HyperMD-header.cm-line,
-body .app-container .longform-leaf div.markdown-preview-view h1,
-body .app-container .longform-leaf div.markdown-preview-view h2,
-body .app-container .longform-leaf div.markdown-preview-view h3,
-body .app-container .longform-leaf div.markdown-preview-view h4,
-body .app-container .longform-leaf div.markdown-preview-view h5,
-body .app-container .longform-leaf div.markdown-preview-view h6 {
+.writing.writing.writing.writing :is(.HyperMD-codeblock, .HyperMD-list-line, .HyperMD-header),
+.writing.writing.writing.writing table td span,
+.writing.writing.writing.writing :is(h1, h2, h3, h4, h5, h6),
+.longform-leaf.longform-leaf.longform-leaf.longform-leaf :is(h1, h2, h3, h4, h5, h6),
+.longform-leaf.longform-leaf.longform-leaf.longform-leaf :is(.HyperMD-codeblock, .HyperMD-list-line, .HyperMD-header),
+.longform-leaf.longform-leaf.longform-leaf.longform-leaf table td span {
 	text-align: start;
 	hyphens: none;
 }
 
 /* style headings */
-.writing.markdown-preview-view h1,
-.writing.markdown-preview-view h2,
-.writing.markdown-preview-view h3,
-.writing.markdown-preview-view h4,
-.writing.markdown-preview-view h5,
-.writing.markdown-preview-view h6,
-.writing .cm-header.cm-header,
-.longform-leaf .markdown-preview-view h1,
-.longform-leaf .markdown-preview-view h2,
-.longform-leaf .markdown-preview-view h3,
-.longform-leaf .markdown-preview-view h4,
-.longform-leaf .markdown-preview-view h5,
-.longform-leaf .markdown-preview-view h6,
-.longform-leaf .cm-header {
+.writing.writing :is(h1, h2, h3, h4, h5, h6),
+:is(.writing, .longform-leaf) .cm-header.cm-header,
+.longform-leaf.longform-leaf :is(h1, h2, h3, h4, h5, h6) {
 	font-family: var(--longform-font);
 	line-height: 1em;
 }
 
-body.longform-text-indent .writing.markdown-preview-view p,
-body.longform-text-indent .longform-leaf .markdown-preview-view p {
+.longform-text-indent.longform-text-indent :is(.markdown-preview-view, .longform-leaf) p {
 	text-indent: 2em;
 }
 
 /* fix for checkboxes  */
-.writing input[type="checkbox"],
-.longform-leaf input[type="checkbox"] {
+:is(.markdown-preview-view, .longform-leaf) input[type="checkbox"] {
 	margin: 3px 9px 4px 0 !important;
 }
 
@@ -8514,10 +8472,8 @@ body.longform-text-indent .longform-leaf .markdown-preview-view p {
 ─────────────────────────────────────────────────── */
 /* see also "Max View" */
 
-.oz-image-widget-cm6 > embed,
-.oz-image-widget-cm6 > img,
-div.oz-image-widget > embed,
-div.oz-image-widget > img {
+.oz-image-widget-cm6 > :is(embed, img),
+div.oz-image-widget > :is(embed, img) {
 	display: block;
 	border-radius: var(--roundish);
 	cursor: zoom-in;
@@ -8528,10 +8484,8 @@ body:not(.disable-image-borders) div.oz-image-widget > img {
 }
 
 /* center */
-body:not(.left-aligned-embeds) .oz-image-widget-cm6 > embed,
-body:not(.left-aligned-embeds) div.oz-image-widget-cm6 > img,
-body:not(.left-aligned-embeds) div.oz-image-widget > embed,
-body:not(.left-aligned-embeds) div.oz-image-widget > img {
+body:not(.left-aligned-embeds) div.oz-image-widget-cm6 > :is(embed, img),
+body:not(.left-aligned-embeds) div.oz-image-widget > :is(embed, img) {
 	margin-right: auto;
 	margin-left: auto;
 }
