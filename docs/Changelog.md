@@ -4,6 +4,7 @@ nav_order: 110
 
 # Changelog
 
+- 2022-02-05	fix look of links in citation style (>>)
 - 2022-02-05	improved passing-over protection for hidden elements
 - 2022-02-03	fix internal links in documentation
 - 2022-02-03	added explanation of design philosophy to the docs

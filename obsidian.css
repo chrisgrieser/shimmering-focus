@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 1.836
+Version 1.837
 https://github.com/chrisgrieser/shimmering-focus/
 MIT License
 ─────────────────────────────────────────────────── */
@@ -4951,6 +4951,24 @@ body:not(.blockquotes-left-aligned) > .app-container .HyperMD-quote {
 	color: var(--middle-gray);
 }
 
+/* fix styling of links */
+.markdown-source-view .cm-line.HyperMD-quote-1 + .HyperMD-quote-2 .cm-link {
+	color: var(--text-accent);
+}
+
+.markdown-source-view .cm-line.HyperMD-quote-1 + .HyperMD-quote-2.HyperMD-quote-2 :is(.cm-link, .cm-url) {
+	font-style: normal;
+}
+
+.markdown-source-view .cm-line.HyperMD-quote-1 + .HyperMD-quote-2 .cm-url.cm-url.cm-url.cm-url.cm-url::AFTER {
+	top: 3px;
+}
+
+.HyperMD-quote-2 .link-favicon {
+	/* needs important */
+	display: none !important;
+}
+
 /* only needed for Shimmering Focus */
 .markdown-preview-view *:not(blockquote) > blockquote > p + blockquote {
 	margin-top: -10px;
@@ -5499,6 +5517,10 @@ body:not(.no-ul-relationship-lines) ol ul::BEFORE {
 a:hover {
 	color: var(--alt-accent);
 	cursor: pointer;
+}
+
+.cm-link.cm-link.cm-link.cm-link.cm-link:not(.cm-formatting) {
+	color: var(--text-accent);
 }
 
 /* more underline spacing, thx @Melvin */
