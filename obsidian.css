@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 1.837
+Version 1.838
 https://github.com/chrisgrieser/shimmering-focus/
 MIT License
 ─────────────────────────────────────────────────── */
@@ -7817,12 +7817,7 @@ body :is(.kanban-plugin__drag-container,.kanban-plugin) p {
 	margin: 0;
 }
 
-:is(.kanban-plugin__drag-container,.kanban-plugin) h1,
-:is(.kanban-plugin__drag-container,.kanban-plugin) h2,
-:is(.kanban-plugin__drag-container,.kanban-plugin) h3,
-:is(.kanban-plugin__drag-container,.kanban-plugin) h4,
-:is(.kanban-plugin__drag-container,.kanban-plugin) h5,
-:is(.kanban-plugin__drag-container,.kanban-plugin) h6 {
+:is(.kanban-plugin__drag-container,.kanban-plugin) :is(h1, h2, h3, h4, h5, h6) {
 	font-family: var(--default-font);
 	letter-spacing: 0.4px;
 	color: var(--text-normal);
@@ -7836,24 +7831,23 @@ body :is(.kanban-plugin__drag-container,.kanban-plugin) p {
 :is(.kanban-plugin__drag-container,.kanban-plugin) h5 { font-size: calc(var(--h5-size) * var(--kanban-heading-size-factor)) }
 :is(.kanban-plugin__drag-container,.kanban-plugin) h6 { font-size: calc(var(--h6-size) * var(--kanban-heading-size-factor)) }
 
-/* cards being edited */
 .app-container .kanban-plugin .kanban-plugin__board textarea {
 	font-size: 0.95em;
 	letter-spacing: -0.1px;
 }
 
-:is(.kanban-plugin__drag-container,.kanban-plugin) li {
+.kanban-plugin__item.kanban-plugin__item li {
 	font-size: 0.85em;
 }
 
-:is(.kanban-plugin__drag-container,.kanban-plugin) code {
+.kanban-plugin__item.kanban-plugin__item code {
 	font-size: calc(var(--monospace-font-size) * 0.95);
 	background-color: var(--bg3);
 	padding-right: 0;
 	padding-left: 0;
 }
 
-:is(.kanban-plugin__drag-container,.kanban-plugin) li code {
+.kanban-plugin__item.kanban-plugin__item li code {
 	font-size: calc(var(--monospace-font-size) * 0.95 * 0.85);
 	padding: 1px 3px;
 }
