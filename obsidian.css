@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 1.839
+Version 1.840
 https://github.com/chrisgrieser/shimmering-focus/
 MIT License
 ─────────────────────────────────────────────────── */
@@ -2777,12 +2777,7 @@ body .app-container .workspace-leaf-resize-handle:hover {
 ─────────────────────────────────────────────────── */
 /* modals partially apply to settings/plugin browser as well */
 
-.modal h1,
-.modal h2,
-.modal h3,
-.modal h4,
-.modal h5,
-.modal h6 {
+.modal :is(h1, h2, h3, h4, h5, h6) {
 	font-weight: 500;
 	margin-top: 15px;
 	margin-bottom: 10px;
