@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 1.835
+Version 1.836
 https://github.com/chrisgrieser/shimmering-focus/
 MIT License
 ─────────────────────────────────────────────────── */
@@ -483,7 +483,7 @@ body.theme-dark {
 	--small-inset-shadow: -1px -1px 0 var(--inset-shadow-color) inset;
 	--small-reverted-inset-shadow: 1px 1px 1px var(--inset-shadow-color) inset;
 	--medium-reverted-inset-shadow: 2px 2px 1px var(--inset-shadow-color) inset;
-	--big-reverted-inset-shadow: 2px 2px 3px 2px hsl(0 0% 25% / 40%) inset;
+	--big-reverted-inset-shadow: 2px 2px 3px 1px hsl(0 0% 25% / 40%) inset;
 	--button-inset-shadow: -1px -1px 1.5px var(--inset-shadow-color) inset;
 	--muted-button-inset-shadow: -1px -1px 1.5px var(--inset-shadow-color) inset;
 	--notice-inset-shadow: -1px -1px 2px var(--inset-shadow-color) inset;
@@ -1590,8 +1590,8 @@ body:not(.show-header-bar):not(.is-mobile):not(.plugin-sliding-panes-rotate-head
 	margin-top: calc(var(--hidden-header-hotarea-height) * -1);
 }
 
-body:not(.show-header-bar):not(.is-mobile):not(.plugin-sliding-panes-rotate-header) .workspace-leaf-content[data-type="markdown"] .view-header:not(:hover):not(:focus-within) + .view-content :is(.markdown-preview-view, .cm-content):not(.kanban-plugin__markdown-preview-view) {
-	padding-top: var(--hidden-header-hotarea-height);
+body:not(.show-header-bar):not(.is-mobile):not(.plugin-sliding-panes-rotate-header) .workspace-leaf-content[data-type="markdown"] .view-header:hover:not(:focus-within) + .view-content :is(.markdown-preview-view, .cm-content):not(.kanban-plugin__markdown-preview-view) {
+	/* padding-top: var(--hidden-header-hotarea-height); */
 }
 
 body:not(.show-header-bar):not(.is-mobile):not(.plugin-sliding-panes-rotate-header) :is(.view-header-title, .view-header-icon),
@@ -1632,16 +1632,10 @@ body.show-header-bar:not(.is-mobile):not(.plugin-sliding-panes-rotate-header) .v
 	border-bottom: var(--basic-border) !important;
 }
 
-body.show-header-bar .view-header-icon,
-body.show-header-bar .view-action svg,
-body.show-header-bar .view-header-title,
-body .view-header:hover .view-header-icon,
-body .view-header:hover .view-action svg,
-body .view-header:hover .view-header-title,
-body .view-header:focus-within .view-header-icon,
-body .view-header:focus-within .view-action svg,
-body .view-header:focus-within .view-header-title {
-	opacity: 1 !important;
+body.show-header-bar .view-header.view-header.view-header *,
+body .view-header.view-header.view-header.view-header:hover *,
+body .view-header.view-header.view-header.view-header:focus-within * {
+	opacity: 1;
 }
 
 .view-content:not(.is-mobile) {
@@ -1669,36 +1663,27 @@ body:not(.is-mobile):not(.plugin-sliding-panes-rotate-header) .view-header:focus
 }
 
 /* transitions */
-.view-header + .view-content {
-	transition: padding-top var(--quick-transition);
-	transition: opacity var(--slow-transition);
+/* ----------- */
+
+body:not(.show-header-bar):not(.plugin-sliding-panes-rotate-header) .view-header:hover + .view-content,
+body:not(.show-header-bar):not(.plugin-sliding-panes-rotate-header) .view-header:hover *,
+body:not(.show-header-bar):not(.plugin-sliding-panes-rotate-header) .view-header:hover {
+	transition-delay: var(--transition-delay-passing-over-protection);
 }
 
 .view-header {
 	transition: var(--medium-transition);
 }
 
+.view-header + .view-content,
+.view-header * {
+	transition: var(--quick-transition);
+}
+
 /* first sliding pane or without sliding pane opacity effect */
 .plugin-sliding-panes .mod-root .workspace-leaf:nth-child(2) .view-header:focus-within + .view-content,
 body:not(.plugin-sliding-panes) .view-header:focus-within + .view-content {
 	opacity: var(--inactive-pane-opacity);
-}
-
-.view-header-icon,
-.view-action svg,
-.view-header-title {
-	transition: var(--quick-transition);
-}
-
-/* horizontal workspace split */
-
-/* non-top panes transition slightly later to prevent accidental triggering when passing over with the mouse  */
-body:not(.show-header-bar):not(.plugin-sliding-panes-rotate-header) .mod-horizontal .workspace-leaf:not(:nth-child(2)) .workspace-leaf-content[data-type="markdown"] .view-header:hover + .view-content .markdown-preview-view:not(.kanban-plugin__markdown-preview-view),
-body:not(.show-header-bar):not(.plugin-sliding-panes-rotate-header) .mod-horizontal .workspace-leaf:not(:nth-child(2)) .workspace-leaf-content[data-type="markdown"] .view-header:hover + .view-content .cm-content,
-body:not(.show-header-bar):not(.plugin-sliding-panes-rotate-header) .mod-horizontal .workspace-leaf:not(:nth-child(2)) .view-header:hover *,
-body:not(.show-header-bar):not(.plugin-sliding-panes-rotate-header) .mod-horizontal .workspace-leaf:not(:nth-child(2)) .view-header:hover + .view-content,
-body:not(.show-header-bar):not(.plugin-sliding-panes-rotate-header) .mod-horizontal .workspace-leaf:not(:nth-child(2)) .view-header:hover {
-	transition-delay: var(--transition-delay-passing-over-protection);
 }
 
 /* ───────────────────────────────────────────────────
@@ -2674,23 +2659,19 @@ body > .app-container .workspace-split.mod-horizontal > .workspace-tabs > .works
 }
 
 /* ───────────────────────────────────────────────────
-<< Hidden Sidebars Tabs
+<<< Hidden Tab Headers
 ─────────────────────────────────────────────────── */
 
-body:not(.show-sidebar-tabs) :is(.workspace-tab-header-container, .workspace-tab-header, .workspace-tab-container-inner) {
+body:not(.show-sidebar-tabs) .workspace-tab-header-container *,
+body:not(.show-sidebar-tabs) .workspace-tab-header-container {
 	transition: var(--medium-transition);
 }
 
-body:not(.show-sidebar-tabs) .workspace-tab-header-container:hover .workspace-tab-header,
-body:not(.show-sidebar-tabs) .workspace-tab-header-container:hover .workspace-tab-container-inner,
+body:not(.show-sidebar-tabs) .workspace-tab-header-container:hover *,
 body:not(.show-sidebar-tabs) .workspace-tab-header-container:hover {
 	transition: var(--quick-transition);
-}
 
-/* slight delay to prevent accidental triggering when passing over
-the non-top tab bars */
-body:not(.show-sidebar-tabs) .workspace-tabs:not(:nth-child(3)) .workspace-tab-header-container:hover *,
-body:not(.show-sidebar-tabs) .workspace-tabs:not(:nth-child(3)) .workspace-tab-header-container:hover {
+	/* slight delay to prevent accidental triggering when passing over */
 	transition-delay: var(--transition-delay-passing-over-protection);
 }
 
@@ -2723,7 +2704,7 @@ body:not(.show-sidebar-tabs) .workspace-tab-header-container:hover .workspace-ta
 
 body:not(.show-sidebar-tabs) .workspace-tabs .workspace-tab-header-container:not(:hover) .workspace-tab-header,
 body:not(.show-sidebar-tabs) .workspace-tabs .workspace-tab-header-container:not(:hover) .workspace-tab-header svg {
-	height: 0;
+	opacity: 0;
 	border: none;
 }
 
@@ -5357,7 +5338,7 @@ pre[class*="language-"]::AFTER {
 	color: var(--text-muted);
 
 	position: absolute;
-	top: 2px;
+	top: 3px;
 	right: 6px;
 }
 
@@ -5398,7 +5379,6 @@ pre[class~="language-text" i]::AFTER { content: "text"; }
 pre[class~="language-url" i]::AFTER { content: "URL"; }
 pre[class~="language-uri" i]::AFTER { content: "URI"; }
 pre[class~="language-applescript" i]::AFTER { content: "AppleScript"; }
-pre[class~="language-as" i]::AFTER { content: "AppleScript"; }
 pre[class~="language-markdown" i]::AFTER { content: "Markdown"; }
 pre[class~="language-md" i]::AFTER { content: "Markdown"; }
 pre[class~="language-regex" i]::AFTER { content: "Regex"; }
