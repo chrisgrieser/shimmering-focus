@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 1.840
+Version 1.841
 https://github.com/chrisgrieser/shimmering-focus/
 MIT License
 ─────────────────────────────────────────────────── */
@@ -548,6 +548,7 @@ body.theme-dark {
 	--popover-size: 350;
 	--inactive-pane-opacity: 70%;
 	--readable-length: 700px;
+	--modal-base-size: 70;
 
 	--signature: "⟡";
 	--pseudo-admonition-prefix: "ℹ️";
@@ -2818,8 +2819,8 @@ body .app-container .workspace-leaf-resize-handle:hover {
 .modal.mod-community-theme,
 .modal.mod-community-plugin,
 .modal.mod-settings {
-	height: 90%;
-	width: 92%;
+	height: calc(var(--modal-base-size) * 1% + 20%);
+	width: calc(var(--modal-base-size) * 1% + 20%);
 	max-width: unset;
 	background-color: var(--basic-border-color); /* ensures no thin line shining through */
 	border-radius: calc(var(--roundish) * 3);
@@ -2828,7 +2829,7 @@ body .app-container .workspace-leaf-resize-handle:hover {
 /* has to be adjusted when modal size is adjusted */
 .modal.mod-settings .vertical-tab-header,
 .modal.mod-settings .vertical-tab-content-container {
-	height: 95vh;
+	height: calc(var(--modal-base-size) * 1vh + 25vh);
 }
 
 /* ───────────────────────────────────────────────────
@@ -10616,10 +10617,19 @@ settings:
 	-
 	 id: miscellaneous
 	 title: Miscellaneous
-	 description: File Name Trimming, Pseudo-Admonitions, Pandoc Citations, Annotation Tags, Alternating Row Colors, Relationship Lines
+	 description: Menu Sizes, File Name Trimming, Pseudo-Admonitions, Pandoc Citations, Annotation Tags, Alternating Row Colors, Relationship Lines
 	 type: heading
 	 level: 2
 	 collapsed: true
+	-
+	 id: modal-base-size
+	 title: Menu Size
+	 description: Modifies the size of modals like the settings menu, plugin browser, or theme browser.
+	 type: variable-number-slider
+	 default: 70
+	 min: 0
+	 max: 70
+	 step: 2
 	-
 	 id: trim-long-filenames
 	 title: 'Sidebar: Trim File Names'
