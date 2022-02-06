@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 1.841
+Version 1.842
 https://github.com/chrisgrieser/shimmering-focus/
 MIT License
 ─────────────────────────────────────────────────── */
@@ -4134,11 +4134,8 @@ iframe {
 /* <<< YAML Frontmatter */
 
 /* YAML-Header in Edit Mode */
-body > .app-container .cm-s-obsidian .cm-hmd-frontmatter.cm-string,
-body > .app-container .cm-s-obsidian .cm-hmd-frontmatter.cm-number,
-body > .app-container .cm-s-obsidian .cm-hmd-frontmatter.cm-atom,
-body > .app-container .cm-s-obsidian .cm-hmd-frontmatter.cm-meta,
-body > .app-container .cm-s-obsidian .cm-hmd-frontmatter {
+.cm-hmd-frontmatter,
+.cm-hmd-frontmatter:is(.cm-string, .cm-number, .cm-atom, .cm-meta) {
 	font-size: 0.9em;
 	color: var(--text-muted);
 }
@@ -6053,7 +6050,7 @@ em > del:hover,
 
 /* applies to all []-links (barelinks)
 partially also to footnotes */
-body:not(.no-pandoc-citation-emphasis) .cm-hmd-barelink.cm-hmd-barelink {
+body:not(.no-pandoc-citation-emphasis) .cm-hmd-barelink.cm-hmd-barelink.cm-hmd-barelink.cm-hmd-barelink.cm-hmd-barelink {
 	color: var(--reference-color);
 }
 
@@ -8402,26 +8399,13 @@ select#longform-workflows {
 	font-size: var(--longform-font-size);
 }
 
-.writing .markdown-preview-view table,
+.writing.markdown-preview-view table,
 .longform-leaf .markdown-preview-view table {
 	line-height: 1.3rem;
 }
 
 /* keep any code smaller */
-body > div.app-container .writing.cm-s-obsidian .cm-hmd-frontmatter,
-.writing.markdown-preview-view .frontmatter-container,
-.writing.cm-s-obsidian .HyperMD-codeblock,
-.writing.markdown-preview-view code,
-.writing.cm-s-obsidian span.cm-inline-code,
-.writing .HyperMD-table-row,
-.writing .cm-formatting-task,
-body > div.app-container .longform-leaf .cm-s-obsidian .cm-hmd-frontmatter,
-.longform-leaf .markdown-preview-view .frontmatter-container,
-.longform-leaf .cm-s-obsidian .HyperMD-codeblock,
-.longform-leaf .markdown-preview-view code,
-.longform-leaf .cm-s-obsidian span.cm-inline-code,
-.longform-leaf .HyperMD-table-row,
-.longform-leaf .cm-formatting-task {
+.app-container.app-container.app-container.app-container.app-container.app-container :is(.longform-leaf, .writing) :is(.frontmatter-container, .cm-hmd-frontmatter, .cm-formatting-task, .HyperMD-codeblock, code, .cm-inline-code, .HyperMD-table-row) {
 	font-family: var(--font-monospace);
 	font-size: var(--monospace-font-size);
 	text-align: start;
@@ -8429,8 +8413,7 @@ body > div.app-container .longform-leaf .cm-s-obsidian .cm-hmd-frontmatter,
 }
 
 /* justify text */
-body:not(.longform-left-aligned) .writing,
-body:not(.longform-left-aligned) .longform-leaf {
+body:not(.longform-left-aligned) :is(.writing, .longform-leaf) .cm-line > :not(.cm-hmd-frontmatter) {
 	text-align: justify;
 	hyphens: auto;
 }
@@ -8454,12 +8437,12 @@ body:not(.longform-left-aligned) .longform-leaf {
 	line-height: 1em;
 }
 
-.longform-text-indent.longform-text-indent :is(.markdown-preview-view, .longform-leaf) p {
+.longform-text-indent.longform-text-indent :is(.writing, .longform-leaf) p {
 	text-indent: 2em;
 }
 
 /* fix for checkboxes  */
-:is(.markdown-preview-view, .longform-leaf) input[type="checkbox"] {
+:is(.writing, .longform-leaf) input[type="checkbox"] {
 	margin: 3px 9px 4px 0 !important;
 }
 
