@@ -4,6 +4,7 @@ nav_order: 110
 
 # Changelog
 
+- 2022-02-06	smoother header bar transition
 - 2022-02-06	improved header hover mechanics
 - 2022-02-06	headings with background – style setting to turn it off
 - 2022-02-05	new style setting to reduce the size of menus/modals (#108)

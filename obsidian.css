@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 1.848
+Version 1.849
 https://github.com/chrisgrieser/shimmering-focus/
 MIT License
 ─────────────────────────────────────────────────── */
@@ -1597,7 +1597,7 @@ body:not(.show-header-bar):not(.is-mobile):not(.plugin-sliding-panes-rotate-head
 }
 
 body:not(.show-header-bar):not(.is-mobile):not(.plugin-sliding-panes-rotate-header) .mod-root .workspace-leaf-content:not([data-type="kanban"]) .view-header:not(:hover):not(:focus-within) + .view-content :is(.markdown-preview-view, .cm-scroller) {
-	padding-top: calc(var(--visible-header-height) - 3px);
+	padding-top: calc(var(--hidden-header-hotarea-height) + 10px);
 }
 
 body:not(.show-header-bar):not(.is-mobile):not(.plugin-sliding-panes-rotate-header) :is(.view-header-title, .view-header-icon),
@@ -1682,6 +1682,7 @@ body:not(.show-header-bar):not(.plugin-sliding-panes-rotate-header) .view-header
 	transition: var(--medium-transition);
 }
 
+.view-header + .view-content :is(.markdown-preview-view, .cm-scroller),
 .view-header + .view-content,
 .view-header * {
 	transition: var(--quick-transition);
@@ -10296,7 +10297,7 @@ settings:
 	 default: '"Optima S"'
 	-
 	 id: no-heading-bg
-	 title: No Background in Headings
+	 title: Remove Heading Backgrounds
 	 type: class-toggle
 	 default: false
 	-
