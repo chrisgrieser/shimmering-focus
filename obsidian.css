@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 1.842
+Version 1.843
 https://github.com/chrisgrieser/shimmering-focus/
 MIT License
 ─────────────────────────────────────────────────── */
@@ -333,8 +333,9 @@ the .create-ToC.sh.
 	--bg1: hsl(var(--light-hue) var(--sat-light-1) var(--b-light-1));
 	--bg2: hsl(var(--light-hue) var(--sat-light-2) var(--b-light-2));
 	--bg3: hsl(var(--light-hue) var(--sat-light-3) var(--b-light-3));
+	--heading-bg: hsl(var(--light-hue) calc(var(--sat-light-3) / 2) calc(var(--b-light-3) - 1%));
 
-	--header-bg: hsl(var(--light-hue) calc(var(--sat-light-3) * 1.1) calc(var(--b-light-2) - 2%));
+	--alt-bg: hsl(var(--light-hue) calc(var(--sat-light-3) * 1.1) calc(var(--b-light-2) - 2%));
 	--notice-bg: hsl(var(--light-hue) calc(var(--sat-light-3) * 0.8) calc(var(--b-light-3) + 3%));
 	--resize-handle-color: hsl(var(--light-hue) var(--sat-light-2) calc(var(--b-light-2) - 1%));
 	--suggester-b-row: hsl(var(--light-hue) var(--sat-light-2) calc(var(--b-light-1) - 3%));
@@ -356,8 +357,9 @@ the .create-ToC.sh.
 	--bg1: hsl(var(--dark-hue) var(--sat-dark-1) var(--b-dark-1));
 	--bg2: hsl(var(--dark-hue) var(--sat-dark-2) var(--b-dark-2));
 	--bg3: hsl(var(--dark-hue) var(--sat-dark-3) var(--b-dark-3));
+	--heading-bg: hsl(var(--dark-hue) calc(var(--sat-dark-1) / 3) calc(var(--b-dark-1) + 5%));
 
-	--header-bg: hsl(var(--dark-hue) calc(var(--sat-dark-1) * 1.6) calc(var(--b-dark-2) - 2%));
+	--alt-bg: hsl(var(--dark-hue) calc(var(--sat-dark-1) * 1.6) calc(var(--b-dark-2) - 2%));
 	--notice-bg: hsl(var(--dark-hue) calc(var(--sat-dark-1) * 0.8) calc(var(--b-dark-2) - 1%));
 	--resize-handle-color: hsl(var(--dark-hue)  var(--sat-dark-2) calc(var(--b-dark-2) - 1%));
 	--suggester-b-row: hsl(var(--dark-hue)  var(--sat-dark-1) calc(var(--b-dark-1) - 2%));
@@ -386,7 +388,7 @@ the .create-ToC.sh.
 	--bg2: hsl(var(--longform-light-hue) var(--sat-light-2) var(--b-light-2));
 	--bg3: hsl(var(--longform-light-hue) var(--sat-light-3) var(--b-light-3));
 
-	--header-bg: hsl(var(--longform-light-hue) calc(var(--sat-light-3) * 1.1) calc(var(--b-light-2) - 2%));
+	--alt-bg: hsl(var(--longform-light-hue) calc(var(--sat-light-3) * 1.1) calc(var(--b-light-2) - 2%));
 	--resize-handle-color: hsl(var(--longform-light-hue) var(--sat-light-2) calc(var(--b-light-2) - 1%));
 	--muted-border-color: hsl(var(--longform-light-hue) var(--sat-light-3) calc(var(--b-light-3) + 3%));
 	--basic-border-color: hsl(var(--longform-light-hue) var(--sat-light-3) calc(var(--b-light-3) - 5%));
@@ -400,7 +402,7 @@ the .create-ToC.sh.
 	--bg2: hsl(var(--longform-dark-hue) var(--sat-dark-2) var(--b-dark-2));
 	--bg3: hsl(var(--longform-dark-hue) var(--sat-dark-3) var(--b-dark-3));
 
-	--header-bg: hsl(var(--longform-dark-hue) calc(var(--sat-dark-1) * 1.6) calc(var(--b-dark-2) - 2%));
+	--alt-bg: hsl(var(--longform-dark-hue) calc(var(--sat-dark-1) * 1.6) calc(var(--b-dark-2) - 2%));
 	--resize-handle-color: hsl(var(--longform-dark-hue)  var(--sat-dark-2) calc(var(--b-dark-2) - 1%));
 	--muted-border-color: hsl(var(--longform-dark-hue) var(--sat-dark-1) calc(var(--b-dark-1) - 6%));
 	--basic-border-color: hsl(var(--longform-dark-hue) var(--sat-dark-1) calc(var(--b-dark-1) + 6%));
@@ -440,7 +442,7 @@ the .create-ToC.sh.
 }
 
 .status-bar {
-	background-color: var(--header-bg);
+	background-color: var(--alt-bg);
 }
 
 .workspace-tabs {
@@ -1605,7 +1607,7 @@ body:not(.show-header-bar):not(.is-mobile):not(.plugin-sliding-panes-rotate-head
 body:not(.show-header-bar):not(.is-mobile):not(.plugin-sliding-panes-rotate-header) .workspace-split.mod-root .workspace-leaf .view-header:focus-within,
 body.show-header-bar:not(.is-mobile):not(.plugin-sliding-panes-rotate-header) .workspace-split.mod-root .workspace-leaf .workspace-leaf-content .view-header {
 	height: 1.9em;
-	background-color: var(--header-bg);
+	background-color: var(--alt-bg);
 }
 
 body .view-header-title {
@@ -2779,17 +2781,16 @@ body .app-container .workspace-leaf-resize-handle:hover {
 /* modals partially apply to settings/plugin browser as well */
 
 .modal :is(h1, h2, h3, h4, h5, h6) {
-	font-weight: 500;
-	margin-top: 15px;
-	margin-bottom: 10px;
+	margin-top: 10px;
+	margin-bottom: 15px;
 }
 
-.modal-content h1 { font-size: var(--h1-size); }
-.modal-content h2 { font-size: var(--h2-size); }
-.modal-content h3 { font-size: var(--h3-size); }
-.modal-content h4 { font-size: var(--h4-size); }
-.modal-content h5 { font-size: var(--h5-size); }
-.modal-content h6 { font-size: var(--h6-size); }
+.modal-content h1 { font-size: var(--h1-size) }
+.modal-content h2 { font-size: var(--h2-size) }
+.modal-content h3 { font-size: var(--h3-size) }
+.modal-content h4 { font-size: var(--h4-size) }
+.modal-content h5 { font-size: var(--h5-size) }
+.modal-content h6 { font-size: var(--h6-size) }
 
 .modal-content {
 	margin-top: 0;
@@ -2810,15 +2811,11 @@ body .app-container .workspace-leaf-resize-handle:hover {
 	opacity: 0.7;
 }
 
-.theme-light .prompt-bg,
-.theme-light .modal-bg {
+.theme-light :is(.prompt-bg, .modal-bg) {
 	filter: brightness(0.5);
 }
 
-.modal.mod-sync-history,
-.modal.mod-community-theme,
-.modal.mod-community-plugin,
-.modal.mod-settings {
+.modal:is(.mod-sync-history, .mod-community-theme, .mod-community-plugin, .mod-settings) {
 	height: calc(var(--modal-base-size) * 1% + 20%);
 	width: calc(var(--modal-base-size) * 1% + 20%);
 	max-width: unset;
@@ -2827,8 +2824,7 @@ body .app-container .workspace-leaf-resize-handle:hover {
 }
 
 /* has to be adjusted when modal size is adjusted */
-.modal.mod-settings .vertical-tab-header,
-.modal.mod-settings .vertical-tab-content-container {
+.modal.mod-settings :is(.vertical-tab-header, .vertical-tab-content-container) {
 	height: calc(var(--modal-base-size) * 1vh + 25vh);
 }
 
@@ -2840,10 +2836,11 @@ body .app-container .workspace-leaf-resize-handle:hover {
 	width: 65%;
 }
 
-.mod-confirmation .modal-title {
+.modal-title.modal-title {
 	font-family: var(--smallcap-font);
-	font-size: calc(var(--h1-size) * 1.25);
-	margin-bottom: 35px;
+	font-size: var(--h1-size);
+	margin-top: 5px;
+	margin-bottom: 20px;
 }
 
 .modal-container.mod-confirmation > .modal {
@@ -4741,6 +4738,16 @@ body.focus-view-enabled .mod-left-split.is-collapsed ~ .mod-right-split {
 .is-live-preview .cm-header-5::BEFORE { content: "H5" }
 .is-live-preview .cm-header-6::BEFORE { content: "H6" }
 
+.is-live-preview .HyperMD-header * {
+	line-height: 1em;
+	position: relative;
+	top: 3px;
+}
+
+.markdown-source-view:not(.is-live-preview) .HyperMD-header {
+	line-height: 2.5em;
+}
+
 .no-heading-level-in-lp .is-live-preview .cm-header::BEFORE {
 	display: none;
 }
@@ -4750,6 +4757,35 @@ for all headings to improve distinctiveness */
 body:not(.no-alternating-header-italics) .markdown-preview-view :is(h2, h4, h6),
 body:not(.no-alternating-header-italics) :is(.cm-header-2, .cm-header-4, .cm-header-6) {
 	font-style: italic;
+}
+
+/* Heading backgrounds */
+body:not(.no-heading-bg) .mod-root :is(h1, h2, h3, h4, h5, h6),
+body:not(.no-heading-bg) .HyperMD-header {
+	background-color: var(--heading-bg);
+	padding-bottom: 0;
+	border: var(--basic-border);
+	border-radius: var(--roundish);
+}
+
+.theme-light:not(.no-heading-bg) .mod-root :is(h1, h2, h3, h4, h5, h6),
+.theme-light:not(.no-heading-bg) .HyperMD-header {
+	border-color: var(--hr-line-gray);
+}
+
+.theme-dark:not(.no-heading-bg) .mod-root :is(h1, h2, h3, h4, h5, h6),
+.theme-dark:not(.no-heading-bg) .HyperMD-header {
+	border-width: 1px;
+	border-color: var(--text-faint);
+}
+
+body:not(.no-heading-bg) .mod-root :is(h1, h2, h3, h4, h5, h6) {
+	padding-left: 5px;
+	margin-left: -5px;
+}
+
+body:not(.no-heading-bg) .cm-formatting-header {
+	color: var(--text-muted);
 }
 
 /* ───────────────────────────────────────────────────
@@ -7328,6 +7364,10 @@ div#core-search-assistant_card-view {
 /* ───────────────────────────────────────────────────
 << Supercharged Links
 ─────────────────────────────────────────────────── */
+/* update links prompt */
+.frontmatter-modal-value input[type="text"] {
+	width: 80%;
+}
 
 body:not(.no-built-in-supercharged-links) .data-link-icon[data-link-tags*="#checklist" i]::BEFORE { content: "✅ " }
 body:not(.no-built-in-supercharged-links) .data-link-icon[data-link-kanban-plugin]::BEFORE { content: "🎆 " }
@@ -8168,7 +8208,7 @@ input#new-scene {
 }
 
 #project-picker {
-	background-color: var(--header-bg);
+	background-color: var(--alt-bg);
 	box-shadow: var(--muted-button-inset-shadow);
 	padding: 0 2px 2px;
 	border-bottom: var(--thin-border);
@@ -8320,7 +8360,8 @@ body:not(.no-alternating-rows) li:nth-child(even) .scene-container {
 
 /* hide index file in file explorer, which shouldn't
 be messed with anyway */
-body.hide-index-files .nav-file-title[data-path$="Index.md"] {
+.BC-Link[data-link-data-href="Index"],
+.hide-index-files .nav-file-title[data-path$="Index.md"] {
 	display: none;
 }
 
@@ -10243,6 +10284,11 @@ settings:
 	 description: Applies to h1 to h6 Headings
 	 type: variable-text
 	 default: '"Optima S"'
+	-
+	 id: no-heading-bg
+	 title: No Background in Headings
+	 type: class-toggle
+	 default: false
 	-
 	 id: less-heading-letter-spacing
 	 title: Compact Headings
