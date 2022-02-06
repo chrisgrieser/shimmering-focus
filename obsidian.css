@@ -8666,8 +8666,8 @@ button.MS-OpenSnippet:hover svg.ms-snippet path {
 	color: var(--extra-contrast);
 }
 
-.workspace-leaf-content[data-type="map-of-content"] #top-bar {
-	display: none !important;
+body .workspace-leaf-content.workspace-leaf-content[data-type="map-of-content"] #top-bar {
+	display: none;
 }
 
 /* upper half spacing */
