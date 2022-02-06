@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 1.850
+Version 1.851
 https://github.com/chrisgrieser/shimmering-focus/
 MIT License
 ─────────────────────────────────────────────────── */
@@ -1295,12 +1295,7 @@ body.no-animations {
 	animation-name: breathing-blink;
 }
 
-.no-blink-cursor .cm-cursorLayer {
-	/* important needed */
-	animation-duration: 0ms !important;
-}
-
-body:not(.normal-blink) .cm-cursorLayer {
+:is(.no-blink, .breathing-cursor, .phase-blink-cursor) .cm-cursorLayer {
 	/* important needed */
 	animation-name: none !important;
 }
@@ -4750,7 +4745,7 @@ body.focus-view-enabled .mod-left-split.is-collapsed ~ .mod-right-split {
 }
 
 .markdown-source-view:not(.is-live-preview) .HyperMD-header {
-	line-height: 2em;
+	line-height: 1.7em;
 }
 
 .no-heading-level-in-lp .is-live-preview .cm-header::BEFORE {
