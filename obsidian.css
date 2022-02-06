@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 1.846
+Version 1.847
 https://github.com/chrisgrieser/shimmering-focus/
 MIT License
 ─────────────────────────────────────────────────── */
@@ -4765,9 +4765,16 @@ body:not(.no-alternating-header-italics) :is(.cm-header-2, .cm-header-4, .cm-hea
 body:not(.no-heading-bg) .mod-root :is(h1, h2, h3, h4, h5, h6),
 body:not(.no-heading-bg) .HyperMD-header {
 	background-color: var(--heading-bg);
-	padding-bottom: 0;
 	border: var(--basic-border);
 	border-radius: var(--roundish);
+}
+
+body:not(.no-heading-bg) .HyperMD-header {
+	padding-bottom: 0;
+}
+
+body:not(.no-heading-bg) .cm-formatting-header {
+	color: var(--text-muted);
 }
 
 .theme-light:not(.no-heading-bg) .mod-root :is(h1, h2, h3, h4, h5, h6),
@@ -4782,12 +4789,10 @@ body:not(.no-heading-bg) .HyperMD-header {
 }
 
 body:not(.no-heading-bg) .mod-root :is(h1, h2, h3, h4, h5, h6) {
+	padding-top: 2px;
+	padding-bottom: 2px;
 	padding-left: 5px;
 	margin-left: -5px;
-}
-
-body:not(.no-heading-bg) .cm-formatting-header {
-	color: var(--text-muted);
 }
 
 /* ───────────────────────────────────────────────────
