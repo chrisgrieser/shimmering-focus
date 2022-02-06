@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 1.852
+Version 1.853
 https://github.com/chrisgrieser/shimmering-focus/
 MIT License
 ─────────────────────────────────────────────────── */
@@ -7633,12 +7633,12 @@ body.plugin-sliding-panes-rotate-header .workspace > .mod-root > .workspace-leaf
 	padding: 2px 0;
 }
 
-.workspace-leaf-content[data-type="calendar"] .month,
-.workspace-leaf-content[data-type="calendar"] .year {
+body .workspace-leaf-content[data-type="calendar"] .month,
+body .workspace-leaf-content[data-type="calendar"] .year {
 	font-family: var(--heading-font);
 	font-size: 1em;
 	font-weight: 500;
-	color: var(--text-normal) !important;
+	color: var(--text-normal);
 }
 
 /* "today" button */
