@@ -7642,20 +7642,23 @@ body .workspace-leaf-content[data-type="calendar"] .year {
 }
 
 /* "today" button */
-.workspace-leaf-content[data-type="calendar"] .reset-button {
-	font-size: 0.7em !important;
-	color: var(--extra-contrast) !important;
-	margin: 0 !important;
+.workspace-tabs .workspace-leaf .workspace-leaf-content[data-type="calendar"] .reset-button {
+	font-size: 0.7em;
+}
+
+body .workspace-leaf-content[data-type="calendar"] .reset-button {
+	color: var(--extra-contrast);
+	margin: 0 ;
 }
 
 .workspace-leaf-content[data-type="calendar"] .arrows {
 	background-color: var(--bg3) !important;
 }
 
-.workspace-leaf-content[data-type="calendar"] .nav {
-	padding: 0 !important;
-	margin-top: 8px !important;
-	margin-bottom: 10px !important;
+body .workspace-leaf-content[data-type="calendar"] .nav {
+	padding: 0;
+	margin-top: 8px;
+	margin-bottom: 10px;
 }
 
 /* week days */
@@ -7702,8 +7705,8 @@ body.no-calendar-lines #calendar-container table.calendar th {
 
 /* bold today's date */
 .bold-calendar-today .workspace-leaf-content[data-type="calendar"] .day.today {
-	font-family: var(--heading-font) !important;
-	font-weight: 700 !important;
+	font-family: var(--heading-font);
+	font-weight: 700;
 }
 
 /* ───────────────────────────────────────────────────
