@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 1.845
+Version 1.846
 https://github.com/chrisgrieser/shimmering-focus/
 MIT License
 ─────────────────────────────────────────────────── */
@@ -2838,7 +2838,7 @@ body .app-container .workspace-leaf-resize-handle:hover {
 	width: 65%;
 }
 
-.modal-title.modal-title {
+.mod-confirmation .modal-title {
 	font-family: var(--smallcap-font);
 	font-size: var(--h1-size);
 	margin-top: 5px;
@@ -7369,6 +7369,7 @@ div#core-search-assistant_card-view {
 /* update links prompt */
 .frontmatter-modal-value input[type="text"] {
 	width: 80%;
+	margin-top: 20px;
 }
 
 body:not(.no-built-in-supercharged-links) .data-link-icon[data-link-tags*="#checklist" i]::BEFORE { content: "✅ " }
