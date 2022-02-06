@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 1.844
+Version 1.845
 https://github.com/chrisgrieser/shimmering-focus/
 MIT License
 ─────────────────────────────────────────────────── */
@@ -4747,7 +4747,7 @@ body.focus-view-enabled .mod-left-split.is-collapsed ~ .mod-right-split {
 }
 
 .markdown-source-view:not(.is-live-preview) .HyperMD-header {
-	line-height: 2.5em;
+	line-height: 2em;
 }
 
 .no-heading-level-in-lp .is-live-preview .cm-header::BEFORE {
