@@ -7608,6 +7608,10 @@ body.plugin-sliding-panes-rotate-header .workspace > .mod-root > .workspace-leaf
 	padding: 0 0 0 2px;
 }
 
+.no-sliding-panes-shadows .plugin-sliding-panes-stacking .workspace > .mod-root > .workspace-leaf {
+	box-shadow: none;
+}
+
 /* ───────────────────────────────────────────────────
 << Calendar
 ─────────────────────────────────────────────────── */
@@ -7648,7 +7652,7 @@ body .workspace-leaf-content[data-type="calendar"] .year {
 
 body .workspace-leaf-content[data-type="calendar"] .reset-button {
 	color: var(--extra-contrast);
-	margin: 0 ;
+	margin: 0;
 }
 
 .workspace-leaf-content[data-type="calendar"] .arrows {
@@ -10540,7 +10544,7 @@ settings:
 	-
 	 id: plugin-specific-settings
 	 title: Plugin-Specific Settings
-	 description: File Explorer, Outline, Supercharged Links, Page Preview, Command Palette, Calendar, Link Favicons
+	 description: File Explorer, Outline, Sliding Panes, Supercharged Links, Page Preview, Command Palette, Calendar, Link Favicons
 	 type: heading
 	 level: 2
 	 collapsed: true
@@ -10560,6 +10564,12 @@ settings:
 	 id: outline-remove-level-1
 	 title: 'Outline: Remove First Level of Headings'
 	 description: In case you have only one H1 heading per file, this will make the outline sidebar more compact.
+	 type: class-toggle
+	 default: false
+	-
+	 id: no-sliding-panes-shadows
+	 title: 'Sliding Panes: Remove the Pane Shadows'
+	 description: 'Remove the shadow from panes, when using the "Toggle Stacking" option.'
 	 type: class-toggle
 	 default: false
 	-
