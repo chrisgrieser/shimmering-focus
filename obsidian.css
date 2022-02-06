@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 1.847
+Version 1.848
 https://github.com/chrisgrieser/shimmering-focus/
 MIT License
 ─────────────────────────────────────────────────── */
@@ -1580,7 +1580,8 @@ body > div.notice-container .notice:hover {
 ─────────────────────────────────────────────────── */
 
 body {
-	--hidden-header-hotarea-height: 0.9em;
+	--hidden-header-hotarea-height: 1.2em;
+	--visible-header-height: 1.9em;
 }
 
 body:not(.show-header-bar):not(.is-mobile):not(.plugin-sliding-panes-rotate-header) .mod-root .view-header.view-header {
@@ -1595,9 +1596,9 @@ body:not(.show-header-bar):not(.is-mobile):not(.plugin-sliding-panes-rotate-head
 	margin-top: calc(var(--hidden-header-hotarea-height) * -1);
 }
 
-/* body:not(.show-header-bar):not(.is-mobile):not(.plugin-sliding-panes-rotate-header) .workspace-leaf-content[data-type="markdown"] .view-header:hover:not(:focus-within) + .view-content :is(.markdown-preview-view, .cm-content):not(.kanban-plugin__markdown-preview-view) {
-	padding-top: var(--hidden-header-hotarea-height);
-} */
+body:not(.show-header-bar):not(.is-mobile):not(.plugin-sliding-panes-rotate-header) .mod-root .workspace-leaf-content:not([data-type="kanban"]) .view-header:not(:hover):not(:focus-within) + .view-content :is(.markdown-preview-view, .cm-scroller) {
+	padding-top: calc(var(--visible-header-height) - 3px);
+}
 
 body:not(.show-header-bar):not(.is-mobile):not(.plugin-sliding-panes-rotate-header) :is(.view-header-title, .view-header-icon),
 body:not(.show-header-bar):not(.is-mobile):not(.plugin-sliding-panes-rotate-header) .view-action svg {
@@ -1608,7 +1609,7 @@ body:not(.show-header-bar):not(.is-mobile):not(.plugin-sliding-panes-rotate-head
 body:not(.show-header-bar):not(.is-mobile):not(.plugin-sliding-panes-rotate-header) .workspace-split.mod-root .workspace-leaf .view-header:hover,
 body:not(.show-header-bar):not(.is-mobile):not(.plugin-sliding-panes-rotate-header) .workspace-split.mod-root .workspace-leaf .view-header:focus-within,
 body.show-header-bar:not(.is-mobile):not(.plugin-sliding-panes-rotate-header) .workspace-split.mod-root .workspace-leaf .workspace-leaf-content .view-header {
-	height: 1.9em;
+	height: var(--visible-header-height);
 	background-color: var(--alt-bg);
 }
 
@@ -1670,6 +1671,7 @@ body:not(.is-mobile):not(.plugin-sliding-panes-rotate-header) .view-header:focus
 /* transitions */
 /* ----------- */
 
+body:not(.show-header-bar):not(.plugin-sliding-panes-rotate-header) .view-header:hover + .view-content :is(.markdown-preview-view, .cm-scroller),
 body:not(.show-header-bar):not(.plugin-sliding-panes-rotate-header) .view-header:hover + .view-content,
 body:not(.show-header-bar):not(.plugin-sliding-panes-rotate-header) .view-header:hover *,
 body:not(.show-header-bar):not(.plugin-sliding-panes-rotate-header) .view-header:hover {
