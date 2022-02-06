@@ -4,6 +4,7 @@ nav_order: 110
 
 # Changelog
 
+- 2022-02-07	patch
 - 2022-02-06	option to remove sliding pane shadows
 - 2022-02-06	Merge pull request #109 from tingmelvin/main
 - 2022-02-06	fixed blink for defaults ettings
