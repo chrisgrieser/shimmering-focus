@@ -40,3 +40,4 @@ The following CSS classes are built in with this theme:
 
 ## Dataview
 - `cssclass: dataview-list-in-table`: If you are using a dataview query where some table cells contain lists, use this CSS class to remove the vertical table lines that are off.
+- `cssclass: remove-dataview-title`: Removes the title created by some dataview queries.
