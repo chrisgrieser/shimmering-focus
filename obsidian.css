@@ -1,13 +1,13 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 1.856
+Version 1.857
 https://github.com/chrisgrieser/shimmering-focus/
 MIT License
 ─────────────────────────────────────────────────── */
 
 /* ───────────────────────────────────────────────── */
-/* < Table of Content */
-/* ───────────────────────────────────────────────── */
+/* < Table of Content
+──────────────────────────────────────────────────── */
 /* all sections begin with "<", to navigate to the
 respective section. This ToC is auto-generated via
 the .create-ToC.sh.
@@ -203,13 +203,13 @@ the .create-ToC.sh.
 
  */
 /* ───────────────────────────────────────────────── */
-/* < Colors */
-/* ───────────────────────────────────────────────── */
+/* < Colors
+──────────────────────────────────────────────────── */
 /* stylelint-disable no-duplicate-selectors */
 
 /* ───────────────────────────────────────────────── */
-/* << Base Colors */
-/* ───────────────────────────────────────────────── */
+/* << Base Colors
+──────────────────────────────────────────────────── */
 
 :root {
 	--accent-lighter: hsl(243 66% 76%);
@@ -281,8 +281,8 @@ the .create-ToC.sh.
 }
 
 /* ───────────────────────────────────────────────── */
-/* << Color Schemes */
-/* ───────────────────────────────────────────────── */
+/* << Color Schemes
+──────────────────────────────────────────────────── */
 
 /* default values (no Style Settings Plugin) */
 :root {
@@ -317,8 +317,8 @@ the .create-ToC.sh.
 }
 
 /* ───────────────────────────────────────────────── */
-/* << Brightness, Saturation, Hue */
-/* ───────────────────────────────────────────────── */
+/* << Brightness, Saturation, Hue
+──────────────────────────────────────────────────── */
 
 .theme-light {
 	--b-light-1: calc(var(--brightness-light) + 82%);
@@ -374,8 +374,8 @@ the .create-ToC.sh.
 }
 
 /* ───────────────────────────────────────────────── */
-/* << Longform project colors */
-/* ───────────────────────────────────────────────── */
+/* << Longform project colors
+──────────────────────────────────────────────────── */
 :root {
 	--longform-hue-shift: 15;
 }
@@ -411,8 +411,8 @@ the .create-ToC.sh.
 }
 
 /* ───────────────────────────────────────────────── */
-/* << Default variable colors & Base elements */
-/* ───────────────────────────────────────────────── */
+/* << Default variable colors & Base elements
+──────────────────────────────────────────────────── */
 
 .theme-light,
 .theme-dark {
@@ -452,8 +452,8 @@ the .create-ToC.sh.
 }
 
 /* ───────────────────────────────────────────────── */
-/* << Shadows */
-/* ───────────────────────────────────────────────── */
+/* << Shadows
+──────────────────────────────────────────────────── */
 
 /* <<< Outside Shadow */
 :root {
@@ -508,8 +508,8 @@ body.theme-dark {
 }
 
 /* ───────────────────────────────────────────────── */
-/* << Borders */
-/* ───────────────────────────────────────────────── */
+/* << Borders
+──────────────────────────────────────────────────── */
 
 .theme-dark .writing,
 .theme-light .writing,
@@ -540,8 +540,8 @@ body.theme-dark {
 }
 
 /* ───────────────────────────────────────────────── */
-/* < Other Variables */
-/* ───────────────────────────────────────────────── */
+/* < Other Variables
+──────────────────────────────────────────────────── */
 
 :root {
 	--resize-handle-thickness: 3px;
@@ -561,8 +561,8 @@ body.theme-dark {
 
 /* stylelint-enable no-duplicate-selectors */
 /* ───────────────────────────────────────────────── */
-/* < Fonts */
-/* ───────────────────────────────────────────────── */
+/* < Fonts
+──────────────────────────────────────────────────── */
 /* << Base64-encoded Fonts */
 @font-face {
 	font-family: "iA Writer Quattro S";
@@ -865,8 +865,8 @@ body > .app-container {
 }
 
 /* ───────────────────────────────────────────────── */
-/* < Icons */
-/* ───────────────────────────────────────────────── */
+/* < Icons
+──────────────────────────────────────────────────── */
 
 @font-face {
 	font-family: "Material Icons (Filled)";
@@ -886,8 +886,8 @@ svg {
 }
 
 /* ───────────────────────────────────────────────── */
-/* << Base Icons */
-/* ───────────────────────────────────────────────── */
+/* << Base Icons
+──────────────────────────────────────────────────── */
 
 .external-link.external-link {
 	background-position-y: 0.4em;
@@ -1098,8 +1098,8 @@ svg.check-small,
 }
 
 /* ───────────────────────────────────────────────── */
-/* << Plugin Icons */
-/* ───────────────────────────────────────────────── */
+/* << Plugin Icons
+──────────────────────────────────────────────────── */
 /* Run Init JavaScript */
 .side-dock-ribbon-action svg.any-key {
 	transform: scale(0.9);
@@ -1163,12 +1163,12 @@ svg.longform {
 }
 
 /* ───────────────────────────────────────────────── */
-/* < Global Settings */
-/* ───────────────────────────────────────────────── */
+/* < Global Settings
+──────────────────────────────────────────────────── */
 
 /* ───────────────────────────────────────────────── */
-/* << GLobal Filter */
-/* ───────────────────────────────────────────────── */
+/* << GLobal Filter
+──────────────────────────────────────────────────── */
 
 .grayscale { filter: grayscale(0.85) }
 .sepia { filter: sepia(0.85) }
@@ -1189,8 +1189,8 @@ body.angular-shapes {
 }
 
 /* ───────────────────────────────────────────────── */
-/* << Animations */
-/* ───────────────────────────────────────────────── */
+/* << Animations
+──────────────────────────────────────────────────── */
 
 body:not(.no-animations) {
 	--quick-transition: 200ms ease-in-out;
@@ -1215,8 +1215,8 @@ body.no-animations {
 }
 
 /* ───────────────────────────────────────────────── */
-/* < Cursor */
-/* ───────────────────────────────────────────────── */
+/* < Cursor
+──────────────────────────────────────────────────── */
 
 /* visual style */
 /* Shimmering Beam (Default) */
@@ -1322,12 +1322,12 @@ body.no-animations {
 }
 
 /* ───────────────────────────────────────────────── */
-/* < UI Elements */
-/* ───────────────────────────────────────────────── */
+/* < UI Elements
+──────────────────────────────────────────────────── */
 
 /* ───────────────────────────────────────────────── */
-/* << Title Bar */
-/* ───────────────────────────────────────────────── */
+/* << Title Bar
+──────────────────────────────────────────────────── */
 body:not(.show-titlebar) .titlebar {
 	display: none;
 }
@@ -1419,8 +1419,8 @@ body:not(.show-titlebar-text) .titlebar-text {
 }
 
 /* ───────────────────────────────────────────────── */
-/* << Ribbons */
-/* ───────────────────────────────────────────────── */
+/* << Ribbons
+──────────────────────────────────────────────────── */
 /* hide ribbons, when the setting is chosen */
 body:not(.show-ribbons) .workspace-ribbon.mod-right {
 	display: none;
@@ -1521,8 +1521,8 @@ body:not(.show-ribbons):not(.is-mobile) .side-dock-settings .side-dock-ribbon-ac
 }
 
 /* ───────────────────────────────────────────────── */
-/* << Tooltips */
-/* ───────────────────────────────────────────────── */
+/* << Tooltips
+──────────────────────────────────────────────────── */
 
 .tooltip {
 	font-family: var(--button-font);
@@ -1544,8 +1544,8 @@ body:not(.show-ribbons):not(.is-mobile) .side-dock-settings .side-dock-ribbon-ac
 }
 
 /* ───────────────────────────────────────────────── */
-/* << Notices (Notifications) */
-/* ───────────────────────────────────────────────── */
+/* << Notices (Notifications)
+──────────────────────────────────────────────────── */
 
 body:not(.show-titlebar):not(.is-mobile) > div.notice-container {
 	top: 0;
@@ -1571,8 +1571,8 @@ body > div.notice-container .notice:hover {
 }
 
 /* ───────────────────────────────────────────────── */
-/* << Header Bar (Desktop) */
-/* ───────────────────────────────────────────────── */
+/* << Header Bar (Desktop)
+──────────────────────────────────────────────────── */
 
 body {
 	--hidden-header-hotarea-height: 1.2em;
@@ -1690,8 +1690,8 @@ body:not(.plugin-sliding-panes) .view-header:focus-within + .view-content {
 }
 
 /* ───────────────────────────────────────────────── */
-/* << Status Bar */
-/* ───────────────────────────────────────────────── */
+/* << Status Bar
+──────────────────────────────────────────────────── */
 
 body:not(.default-statusbar) .status-bar {
 	font-family: var(--ui-font);
@@ -1757,8 +1757,8 @@ body:not(.default-statusbar) .mod-right-split .workspace-tabs:last-child .worksp
 }
 
 /* ───────────────────────────────────────────────── */
-/* << Scrollbar */
-/* ───────────────────────────────────────────────── */
+/* << Scrollbar
+──────────────────────────────────────────────────── */
 
 /* hide all scrollbars except the one for the editor */
 body:not(.show-scrollbar) ::-WEBKIT-SCROLLBAR {
@@ -1791,8 +1791,8 @@ body ::-WEBKIT-SCROLLBAR-THUMB {
 }
 
 /* ───────────────────────────────────────────────── */
-/* < Vault Launch Progress Bar */
-/* ───────────────────────────────────────────────── */
+/* < Vault Launch Progress Bar
+──────────────────────────────────────────────────── */
 
 .progress-bar .progress-bar-message {
 	font-size: 0;
@@ -1818,12 +1818,12 @@ body ::-WEBKIT-SCROLLBAR-THUMB {
 }
 
 /* ───────────────────────────────────────────────── */
-/* < Interactive Elements */
-/* ───────────────────────────────────────────────── */
+/* < Interactive Elements
+──────────────────────────────────────────────────── */
 
 /* ───────────────────────────────────────────────── */
-/* << Buttons */
-/* ───────────────────────────────────────────────── */
+/* << Buttons
+──────────────────────────────────────────────────── */
 /* buttons in default state */
 button.document-search-button,
 body .excalidraw .HelpDialog--btn,
@@ -1875,8 +1875,8 @@ body .setting-item-control a.style-settings-export:hover,
 }
 
 /* ───────────────────────────────────────────────── */
-/* << Warnings */
-/* ───────────────────────────────────────────────── */
+/* << Warnings
+──────────────────────────────────────────────────── */
 
 button.mod-warning:not(:hover) {
 	background-color: var(--text-error-hover);
@@ -1897,8 +1897,8 @@ p.mod-warning::BEFORE {
 }
 
 /* ───────────────────────────────────────────────── */
-/* << Toggles */
-/* ───────────────────────────────────────────────── */
+/* << Toggles
+──────────────────────────────────────────────────── */
 
 .checkbox-container::AFTER {
 	display: none;
@@ -1949,8 +1949,8 @@ body.angular-shapes .checkbox-container {
 }
 
 /* ───────────────────────────────────────────────── */
-/* << Input & Textarea */
-/* ───────────────────────────────────────────────── */
+/* << Input & Textarea
+──────────────────────────────────────────────────── */
 
 .search-input-container input,
 input[type="text"],
@@ -2032,8 +2032,8 @@ body input[type]:hover {
 }
 
 /* ───────────────────────────────────────────────── */
-/* << Dropdown */
-/* ───────────────────────────────────────────────── */
+/* << Dropdown
+──────────────────────────────────────────────────── */
 
 select.dropdown {
 	box-shadow: var(--small-reverted-inset-shadow);
@@ -2058,8 +2058,8 @@ select.dropdown:hover {
 }
 
 /* ───────────────────────────────────────────────── */
-/* << Slider */
-/* ───────────────────────────────────────────────── */
+/* << Slider
+──────────────────────────────────────────────────── */
 
 input[type="range"] {
 	width: 150px;
@@ -2079,8 +2079,8 @@ input[type="range"]::-WEBKIT-SLIDER-THUMB:hover {
 }
 
 /* ───────────────────────────────────────────────── */
-/* << Search & Replace (cmd + F) */
-/* ───────────────────────────────────────────────── */
+/* << Search & Replace (cmd + F)
+──────────────────────────────────────────────────── */
 
 .document-search-container {
 	display: block;
@@ -2169,8 +2169,8 @@ so this has to be used ლ(ಠ_ಠლ)╯ */
 }
 
 /* ───────────────────────────────────────────────── */
-/* << Search Matches */
-/* ───────────────────────────────────────────────── */
+/* << Search Matches
+──────────────────────────────────────────────────── */
 
 body .app-container .obsidian-search-match-highlight {
 	color: var(--text-normal);
@@ -2194,8 +2194,8 @@ body .markdown-preview-view .search-highlight > div {
 }
 
 /* ───────────────────────────────────────────────── */
-/* << Context Menus */
-/* ───────────────────────────────────────────────── */
+/* << Context Menus
+──────────────────────────────────────────────────── */
 
 div.menu {
 	background-color: var(--bg1);
@@ -2258,8 +2258,8 @@ div.menu-item {
 }
 
 /* ───────────────────────────────────────────────── */
-/* << Close Buttons */
-/* ───────────────────────────────────────────────── */
+/* << Close Buttons
+──────────────────────────────────────────────────── */
 
 div.search-input-clear-button::BEFORE,
 .empty-state-close-button,
@@ -2470,8 +2470,8 @@ body:not(.no-alternating-rows) .suggestion-item:nth-child(even) .suggestion-pref
 }
 
 /* ───────────────────────────────────────────────── */
-/* << Editor Suggestions */
-/* ───────────────────────────────────────────────── */
+/* << Editor Suggestions
+──────────────────────────────────────────────────── */
 
 .suggestion-container {
 	background-color: var(--bg1);
@@ -2499,15 +2499,15 @@ body:not(.no-alternating-rows) .suggestion-item:nth-child(even) .suggestion-pref
 }
 
 /* ───────────────────────────────────────────────── */
-/* < Sidebar */
-/* ───────────────────────────────────────────────── */
+/* < Sidebar
+──────────────────────────────────────────────────── */
 .workspace-leaf-content .view-content {
 	padding: 4px 2px;
 }
 
 /* ───────────────────────────────────────────────── */
-/* << Files in the Sidebar */
-/* ───────────────────────────────────────────────── */
+/* << Files in the Sidebar
+──────────────────────────────────────────────────── */
 /* apply to any plugin using file lists,
 not only file explorer */
 
@@ -2555,8 +2555,8 @@ body > .app-container .nav-folder-title:hover {
 }
 
 /* ───────────────────────────────────────────────── */
-/* << Tab Headers */
-/* ───────────────────────────────────────────────── */
+/* << Tab Headers
+──────────────────────────────────────────────────── */
 
 /* unset stuff from Obsidian's default theme */
 .workspace-tab-container-after,
@@ -2662,8 +2662,8 @@ body > .app-container .workspace-split.mod-horizontal > .workspace-tabs > .works
 }
 
 /* ───────────────────────────────────────────────── */
-/* <<< Hidden Tab Headers */
-/* ───────────────────────────────────────────────── */
+/* <<< Hidden Tab Headers
+──────────────────────────────────────────────────── */
 
 body:not(.show-sidebar-tabs) .workspace-tab-header-container *,
 body:not(.show-sidebar-tabs) .workspace-tab-header-container {
@@ -2721,8 +2721,8 @@ body.mod-macos:not(.show-sidebar-tabs):not(.show-titlebar) .mod-left-split .work
 }
 
 /* ───────────────────────────────────────────────── */
-/* << Resize Handles */
-/* ───────────────────────────────────────────────── */
+/* << Resize Handles
+──────────────────────────────────────────────────── */
 /* see also the change of resize handle height depending
 on the titlebar visibility in the titlebar section */
 
@@ -2772,12 +2772,12 @@ body .app-container .workspace-leaf-resize-handle:hover {
 }
 
 /* ───────────────────────────────────────────────── */
-/* < Modals & Settings */
-/* ───────────────────────────────────────────────── */
+/* < Modals & Settings
+──────────────────────────────────────────────────── */
 
 /* ───────────────────────────────────────────────── */
-/* << Modals in general */
-/* ───────────────────────────────────────────────── */
+/* << Modals in general
+──────────────────────────────────────────────────── */
 /* modals partially apply to settings/plugin browser as well */
 
 .modal :is(h1, h2, h3, h4, h5, h6) {
@@ -2829,8 +2829,8 @@ body .app-container .workspace-leaf-resize-handle:hover {
 }
 
 /* ───────────────────────────────────────────────── */
-/* << Confirmation Modal */
-/* ───────────────────────────────────────────────── */
+/* << Confirmation Modal
+──────────────────────────────────────────────────── */
 
 .mod-confirmation input[type="text"] {
 	width: 65%;
@@ -2849,8 +2849,8 @@ body .app-container .workspace-leaf-resize-handle:hover {
 }
 
 /* ───────────────────────────────────────────────── */
-/* << Settings Menu */
-/* ───────────────────────────────────────────────── */
+/* << Settings Menu
+──────────────────────────────────────────────────── */
 
 .modal.mod-settings .modal-content {
 	padding-right: 0;
@@ -3145,12 +3145,12 @@ body .app-container .workspace-leaf-resize-handle:hover {
 }
 
 /* ───────────────────────────────────────────────── */
-/* << Plugin Browser */
-/* ───────────────────────────────────────────────── */
+/* << Plugin Browser
+──────────────────────────────────────────────────── */
 
 /* ───────────────────────────────────────────────── */
-/* <<< Plugin Search Results (left side) */
-/* ───────────────────────────────────────────────── */
+/* <<< Plugin Search Results (left side)
+──────────────────────────────────────────────────── */
 
 /* Search input */
 .community-plugin-search {
@@ -3340,8 +3340,8 @@ body .app-container .workspace-leaf-resize-handle:hover {
 }
 
 /* ───────────────────────────────────────────────── */
-/* <<< Plugin Info / Readme (right side) */
-/* ───────────────────────────────────────────────── */
+/* <<< Plugin Info / Readme (right side)
+──────────────────────────────────────────────────── */
 
 .community-plugin-info {
 	font-family: var(--default-font);
@@ -3560,12 +3560,12 @@ body .community-plugin-info .community-plugin-downloads-text {
 }
 
 /* ───────────────────────────────────────────────── */
-/* << Theme Browser */
-/* ───────────────────────────────────────────────── */
+/* << Theme Browser
+──────────────────────────────────────────────────── */
 
 /* ───────────────────────────────────────────────── */
-/* <<< GitHub Info for this Theme */
-/* ───────────────────────────────────────────────── */
+/* <<< GitHub Info for this Theme
+──────────────────────────────────────────────────── */
 
 /* "Feature Overview" Button */
 .community-theme.is-selected .community-theme-info .clickable-icon::AFTER {
@@ -3692,8 +3692,8 @@ body .community-plugin-info .community-plugin-downloads-text {
 }
 
 /* ───────────────────────────────────────────────── */
-/* <<< Remaining Community Theme Browser */
-/* ───────────────────────────────────────────────── */
+/* <<< Remaining Community Theme Browser
+──────────────────────────────────────────────────── */
 
 .modal-title,
 .community-theme-title {
@@ -3835,20 +3835,20 @@ body .modal.mod-community-theme .modal-content .modal-title {
 }
 
 /* ───────────────────────────────────────────────── */
-/* < Editor */
-/* ───────────────────────────────────────────────── */
+/* < Editor
+──────────────────────────────────────────────────── */
 
 /* ───────────────────────────────────────────────── */
-/* << Active / Inactive Note */
-/* ───────────────────────────────────────────────── */
+/* << Active / Inactive Note
+──────────────────────────────────────────────────── */
 body:not(.plugin-sliding-panes) .workspace-leaf:not(.mod-active) .workspace-leaf-content[data-type="markdown"] {
 	opacity: var(--inactive-pane-opacity);
 	transition: var(--slow-transition);
 }
 
 /* ───────────────────────────────────────────────── */
-/* << Trailing Whitespace */
-/* ───────────────────────────────────────────────── */
+/* << Trailing Whitespace
+──────────────────────────────────────────────────── */
 .cm-line .cm-trailing-space-a::BEFORE,
 .cm-line .cm-trailing-space-b::BEFORE,
 .cm-line .cm-trailing-space-new-line::BEFORE {
@@ -3872,8 +3872,8 @@ body:not(.plugin-sliding-panes) .workspace-leaf:not(.mod-active) .workspace-leaf
 }
 
 /* ───────────────────────────────────────────────── */
-/* << Empty State */
-/* ───────────────────────────────────────────────── */
+/* << Empty State
+──────────────────────────────────────────────────── */
 
 .empty-state-action {
 	display: none;
@@ -3897,8 +3897,8 @@ body:not(.no-animations) .empty-state-title {
 }
 
 /* ───────────────────────────────────────────────── */
-/* << Editor Properties */
-/* ───────────────────────────────────────────────── */
+/* << Editor Properties
+──────────────────────────────────────────────────── */
 /* sizes */
 .markdown-source-view.mod-cm5 {
 	padding-left: 10px;
@@ -3929,8 +3929,8 @@ body > div.app-container .view-content > div > .markdown-preview-view {
 }
 
 /* ───────────────────────────────────────────────── */
-/* << Active Line Highlight */
-/* ───────────────────────────────────────────────── */
+/* << Active Line Highlight
+──────────────────────────────────────────────────── */
 
 body:not(.no-active-highlight):not(.focused-highlight) .cm-active:not(.cm-gutterElement),
 body:not(.no-active-highlight):not(.focused-highlight) .CodeMirror-activeline .CodeMirror-linebackground {
@@ -3966,18 +3966,18 @@ body:not(.no-active-highlight) .cm-active .list-bullet {
 }
 
 /* ───────────────────────────────────────────────── */
-/* << Embeds */
+/* << Embeds
+──────────────────────────────────────────────────── */
 /* ───────────────────────────────────────────────── */
-/* ───────────────────────────────────────────────── */
-/* <<< iframes */
-/* ───────────────────────────────────────────────── */
+/* <<< iframes
+──────────────────────────────────────────────────── */
 iframe {
 	border: var(--thin-border);
 }
 
 /* ───────────────────────────────────────────────── */
-/* <<< Embedded Notes */
-/* ───────────────────────────────────────────────── */
+/* <<< Embedded Notes
+──────────────────────────────────────────────────── */
 
 .markdown-embed-link:hover {
 	color: var(--alt-accent);
@@ -3989,8 +3989,8 @@ iframe {
 }
 
 /* ───────────────────────────────────────────────── */
-/* <<< Embedded Search Queries */
-/* ───────────────────────────────────────────────── */
+/* <<< Embedded Search Queries
+──────────────────────────────────────────────────── */
 
 .internal-query .internal-query-header-icon,
 .internal-query .internal-query-header-title {
@@ -4025,8 +4025,8 @@ iframe {
 }
 
 /* ───────────────────────────────────────────────── */
-/* <<< Clean Embeds */
-/* ───────────────────────────────────────────────── */
+/* <<< Clean Embeds
+──────────────────────────────────────────────────── */
 /* credits: @Moonbase59 https://forum.obsidian.md/t/meta-post-common-css-hacks/1978/394 */
 
 /* remove title and the table from the "Metatable" plugin */
@@ -4105,8 +4105,8 @@ iframe {
 }
 
 /* ───────────────────────────────────────────────── */
-/* << YAML Header */
-/* ───────────────────────────────────────────────── */
+/* << YAML Header
+──────────────────────────────────────────────────── */
 
 /* <<< YAML Frontmatter */
 
@@ -4218,15 +4218,15 @@ body.colored-yaml .cm-s-obsidian .cm-hmd-frontmatter.cm-string {
 }
 
 /* ───────────────────────────────────────────────── */
-/* << Gutter */
-/* ───────────────────────────────────────────────── */
+/* << Gutter
+──────────────────────────────────────────────────── */
 /* Search Result Indicators and Footnote Indicators
 are in the respective section for Search Results
 and Footnotes */
 
 /* ───────────────────────────────────────────────── */
-/* <<< Collapse Indicators */
-/* ───────────────────────────────────────────────── */
+/* <<< Collapse Indicators
+──────────────────────────────────────────────────── */
 /* fixes some fonts like iA Writer making the non-breaking space too big */
 /* can be removed with from 0.13.20 on */
 .mod-cm6 .collapse-indicator {
@@ -4301,8 +4301,8 @@ body:not(.show-fold-marker) .CodeMirror-foldmarker {
 }
 
 /* ───────────────────────────────────────────────── */
-/* <<< Line Numbers */
-/* ───────────────────────────────────────────────── */
+/* <<< Line Numbers
+──────────────────────────────────────────────────── */
 .CodeMirror-linenumbers,
 .cm-lineNumbers {
 	font-family: var(--number-font);
@@ -4329,8 +4329,8 @@ body:not(.show-all-line-numbers) .cm-lineNumbers .cm-gutterElement {
 }
 
 /* ───────────────────────────────────────────────── */
-/* << Progress bars (<progress>) */
-/* ───────────────────────────────────────────────── */
+/* << Progress bars (<progress>)
+──────────────────────────────────────────────────── */
 progress {
 	height: 0.65em;
 	background: none;
@@ -4363,8 +4363,8 @@ progress[value^="12"]::-WEBKIT-PROGRESS-VALUE { background: hsl(160 92% 70%) }
 progress[value^="13"]::-WEBKIT-PROGRESS-VALUE { background: hsl(160 92% 70%) }
 
 /* ───────────────────────────────────────────────── */
-/* << Images */
-/* ───────────────────────────────────────────────── */
+/* << Images
+──────────────────────────────────────────────────── */
 /* see also section "Max View" */
 
 /* Image Files opened by Obsidian */
@@ -4462,8 +4462,8 @@ body:not(.left-aligned-embeds) .view-content img:not(.link-favicon) {
 }
 
 /* ───────────────────────────────────────────────── */
-/* << Mermaid */
-/* ───────────────────────────────────────────────── */
+/* << Mermaid
+──────────────────────────────────────────────────── */
 /* see also "Max View" */
 
 body:not(.left-aligned-embeds) div.mermaid {
@@ -4477,8 +4477,8 @@ body:not(.left-aligned-embeds) div.mermaid {
 }
 
 /* ───────────────────────────────────────────────── */
-/* << PDFs */
-/* ───────────────────────────────────────────────── */
+/* << PDFs
+──────────────────────────────────────────────────── */
 /* credits @phibr0 */
 .theme-dark:not(.no-pdf-dark-mode) .pdf-embed iframe,
 .theme-dark:not(.no-pdf-dark-mode) .workspace-leaf-content[data-type="pdf"] iframe {
@@ -4497,8 +4497,8 @@ body:not(.left-aligned-embeds) .pdf-embed {
 }
 
 /* ───────────────────────────────────────────────── */
-/* << Spellcheck */
-/* ───────────────────────────────────────────────── */
+/* << Spellcheck
+──────────────────────────────────────────────────── */
 /* all the following do not work in CM6 anymore */
 body:not(.classic-spellcheck-styling) .CodeMirror .cm-spell-error {
 	text-decoration: underline wavy var(--spell-error-color);
@@ -4557,8 +4557,8 @@ body:not(.no-alternating-rows) .spellchecker-dictionary-item {
 }
 
 /* ───────────────────────────────────────────────── */
-/* << Max View */
-/* ───────────────────────────────────────────────── */
+/* << Max View
+──────────────────────────────────────────────────── */
 /* full length editor and full size images when left sidebar is collapsed */
 /* (Note: You need to turn on "readable line length" in the editor settings */
 /* as well for this to work.) */
@@ -4643,12 +4643,12 @@ body.focus-view-enabled .mod-left-split.is-collapsed ~ .mod-right-split {
 }
 
 /* ───────────────────────────────────────────────── */
-/* < Markup */
-/* ───────────────────────────────────────────────── */
+/* < Markup
+──────────────────────────────────────────────────── */
 
 /* ───────────────────────────────────────────────── */
-/* << Headings */
-/* ───────────────────────────────────────────────── */
+/* << Headings
+──────────────────────────────────────────────────── */
 
 .cm-header.cm-header,
 .markdown-preview-view :is(h1, h2, h3, h4, h5, h6) {
@@ -4773,8 +4773,8 @@ body:not(.no-heading-bg) .kanban-plugin :is(h1, h2, h3, h4, h5, h6) {
 }
 
 /* ───────────────────────────────────────────────── */
-/* << Blockquotes */
-/* ───────────────────────────────────────────────── */
+/* << Blockquotes
+──────────────────────────────────────────────────── */
 blockquote,
 .HyperMD-quote {
 	--blockquote-border-width: 10px;
@@ -4917,8 +4917,8 @@ body:not(.blockquotes-left-aligned) > .app-container .HyperMD-quote {
 }
 
 /* ───────────────────────────────────────────────── */
-/* << Citation Syntax */
-/* ───────────────────────────────────────────────── */
+/* << Citation Syntax
+──────────────────────────────────────────────────── */
 .markdown-preview-view *:not(blockquote) > blockquote > blockquote {
 	/* used for pseudo admonitions & for pseudo citations */
 	padding: 0;
@@ -4973,8 +4973,8 @@ body:not(.blockquotes-left-aligned) > .app-container .HyperMD-quote {
 }
 
 /* ───────────────────────────────────────────────── */
-/* << Pseudo-Admonitions */
-/* ───────────────────────────────────────────────── */
+/* << Pseudo-Admonitions
+──────────────────────────────────────────────────── */
 
 .HyperMD-quote-3 .cm-formatting-quote-3::AFTER {
 	content: var(--pseudo-admonition-prefix);
@@ -5035,8 +5035,8 @@ body:not(.blockquotes-left-aligned) > .app-container .HyperMD-quote {
 }
 
 /* ───────────────────────────────────────────────── */
-/* << Tables */
-/* ───────────────────────────────────────────────── */
+/* << Tables
+──────────────────────────────────────────────────── */
 /* add some more table styling, e.g. from
 https://forum.obsidian.md/t/custom-css-for-tables-5-new-styles-ready-to-use-in-your-notes/17084 */
 
@@ -5130,8 +5130,8 @@ body.no-alternating-rows > .app-container table > tbody > tr > td {
 }
 
 /* ───────────────────────────────────────────────── */
-/* << Code */
-/* ───────────────────────────────────────────────── */
+/* << Code
+──────────────────────────────────────────────────── */
 /* styling of code in general */
 /* inline code in headers keep the header size */
 .cm-s-obsidian .cm-inline-code:not(.cm-header),
@@ -5142,17 +5142,16 @@ body.no-alternating-rows > .app-container table > tbody > tr > td {
 }
 
 /* ───────────────────────────────────────────────── */
-/* <<< Inline Code */
-/* ───────────────────────────────────────────────── */
+/* <<< Inline Code
+──────────────────────────────────────────────────── */
 body { /* stylelint-disable-line no-duplicate-selectors */
 	--slight-code-roundish: calc(var(--roundish) * 0.8);
 }
 
 /* "*:not(pre) > code" targets inline code
-(i.e. code that is not in a pre (=block)) */
+(i.e. code that is not in a pre (= block) ) */
 .markdown-preview-view *:not(pre) > code,
-.cm-s-obsidian .cm-formatting-code.cm-inline-code,
-.cm-s-obsidian span.cm-inline-code.cm-inline-code {
+.cm-inline-code.cm-inline-code.cm-inline-code {
 	color: var(--code-color);
 }
 
@@ -5200,8 +5199,8 @@ body { /* stylelint-disable-line no-duplicate-selectors */
 }
 
 /* ───────────────────────────────────────────────── */
-/* <<< Code Blocks */
-/* ───────────────────────────────────────────────── */
+/* <<< Code Blocks
+──────────────────────────────────────────────────── */
 
 /* Code blocks in Edit Mode */
 .markdown-preview-view,
@@ -5412,16 +5411,16 @@ pre[class~="language-haskell" i]::AFTER { content: "Haskell"; }
 }
 
 /* ───────────────────────────────────────────────── */
-/* << Syntax Highlighting */
-/* ───────────────────────────────────────────────── */
+/* << Syntax Highlighting
+──────────────────────────────────────────────────── */
 
 .theme-light .token.operator {
 	background: transparent;
 }
 
 /* ───────────────────────────────────────────────── */
-/* << Bullet List */
-/* ───────────────────────────────────────────────── */
+/* << Bullet List
+──────────────────────────────────────────────────── */
 
 /* less indention to save space */
 .markdown-preview-view > div > div > div > ul.dataview.list-view-ul,
@@ -5434,8 +5433,8 @@ pre[class~="language-haskell" i]::AFTER { content: "Haskell"; }
 }
 
 /* ───────────────────────────────────────────────── */
-/* << Bullet Point Relationship Lines */
-/* ───────────────────────────────────────────────── */
+/* << Bullet Point Relationship Lines
+──────────────────────────────────────────────────── */
 /* based on css from the outliner plugin */
 /* https://github.com/vslinko/obsidian-outliner/blob/main/styles.css */
 
@@ -5504,8 +5503,8 @@ body:not(.no-ul-relationship-lines) ol ul::BEFORE {
 }
 
 /* ───────────────────────────────────────────────── */
-/* << Links */
-/* ───────────────────────────────────────────────── */
+/* << Links
+──────────────────────────────────────────────────── */
 /* hovered links in alt accent */
 .cm-url.cm-url:not(.cm-formatting):hover,
 .cm-hmd-internal-link.cm-hmd-internal-link.cm-hmd-internal-link:hover,
@@ -5576,8 +5575,8 @@ body:not(.show-urls) .cm-line:not(.cm-active) .cm-url {
 }
 
 /* ───────────────────────────────────────────────── */
-/* << Tags */
-/* ───────────────────────────────────────────────── */
+/* << Tags
+──────────────────────────────────────────────────── */
 
 body .cm-line .cm-hashtag,
 a.tag {
@@ -5596,8 +5595,8 @@ a.tag:hover {
 }
 
 /* ───────────────────────────────────────────────── */
-/* <<< Annotation Tags */
-/* ───────────────────────────────────────────────── */
+/* <<< Annotation Tags
+──────────────────────────────────────────────────── */
 /* thanks to @atlas for the inspiration
 https://discord.com/channels/686053708261228577/722584061087842365/898113745774084127 */
 
@@ -5883,8 +5882,8 @@ body:not(.annotation-tags-off) .tag[href="#example"]::BEFORE {
 }
 
 /* ───────────────────────────────────────────────── */
-/* << Comments & HTML Tags */
-/* ───────────────────────────────────────────────── */
+/* << Comments & HTML Tags
+──────────────────────────────────────────────────── */
 
 .cm-comment.cm-comment.cm-comment.cm-comment.cm-comment {
 	color: var(--text-muted);
@@ -5987,8 +5986,8 @@ li[data-task="x"] > .task-list-item-checkbox:hover {
 }
 
 /* ───────────────────────────────────────────────── */
-/* << Highlights & Selection */
-/* ───────────────────────────────────────────────── */
+/* << Highlights & Selection
+──────────────────────────────────────────────────── */
 
 /* <<< Highlights */
 .markdown-preview-view mark,
@@ -6005,8 +6004,8 @@ li[data-task="x"] > .task-list-item-checkbox:hover {
 /* stylelint-enable no-duplicate-selectors */
 
 /* ───────────────────────────────────────────────── */
-/* << Multi-Color Highlighting */
-/* ───────────────────────────────────────────────── */
+/* << Multi-Color Highlighting
+──────────────────────────────────────────────────── */
 /* thanks to @Atlas for this snippet */
 /* https://discord.com/channels/686053708261228577/702656734631821413/881443661269827656 */
 
@@ -6028,8 +6027,8 @@ span.cm-strong.cm-highlight,
 }
 
 /* ───────────────────────────────────────────────── */
-/* << Pseudo-Spoiler-Tag */
-/* ───────────────────────────────────────────────── */
+/* << Pseudo-Spoiler-Tag
+──────────────────────────────────────────────────── */
 
 .theme-light { /* stylelint-disable-line no-duplicate-selectors */
 	--spoiler-bg: hsl(0 0% 7%);
@@ -6056,8 +6055,8 @@ em > del:hover,
 }
 
 /* ───────────────────────────────────────────────── */
-/* << Strikethroughs */
-/* ───────────────────────────────────────────────── */
+/* << Strikethroughs
+──────────────────────────────────────────────────── */
 
 /* make the "~" readable */
 .cm-formatting-strikethrough {
@@ -6065,8 +6064,8 @@ em > del:hover,
 }
 
 /* ───────────────────────────────────────────────── */
-/* << Pandoc Citations */
-/* ───────────────────────────────────────────────── */
+/* << Pandoc Citations
+──────────────────────────────────────────────────── */
 
 /* applies to all []-links (barelinks)
 partially also to footnotes */
@@ -6075,8 +6074,8 @@ body:not(.no-pandoc-citation-emphasis) .cm-hmd-barelink.cm-hmd-barelink.cm-hmd-b
 }
 
 /* ───────────────────────────────────────────────── */
-/* << Footnotes */
-/* ───────────────────────────────────────────────── */
+/* << Footnotes
+──────────────────────────────────────────────────── */
 
 /* Preview Mode */
 .footnotes hr {
@@ -6186,8 +6185,8 @@ body:not(.no-fn-indicator) .mod-cm6 .cm-hmd-barelink:not(.cm-formatting-link) + 
 }
 
 /* ───────────────────────────────────────────────── */
-/* << Horizontal line (hr) */
-/* ───────────────────────────────────────────────── */
+/* << Horizontal line (hr)
+──────────────────────────────────────────────────── */
 
 .cm-s-obsidian span.cm-hr {
 	letter-spacing: 0.1em;
@@ -6200,8 +6199,8 @@ body:not(.no-fn-indicator) .mod-cm6 .cm-hmd-barelink:not(.cm-formatting-link) + 
 }
 
 /* ───────────────────────────────────────────────── */
-/* < CSS Classes */
-/* ───────────────────────────────────────────────── */
+/* < CSS Classes
+──────────────────────────────────────────────────── */
 /* writing cssclass is bundled with the styling for the Longform Editor */
 /* clean-embeds cssclass is in the section or Embeds */
 
@@ -6258,12 +6257,12 @@ body:not(.no-fn-indicator) .mod-cm6 .cm-hmd-barelink:not(.cm-formatting-link) + 
 }
 
 /* ───────────────────────────────────────────────── */
-/* < Mobile */
-/* ───────────────────────────────────────────────── */
+/* < Mobile
+──────────────────────────────────────────────────── */
 
 /* ───────────────────────────────────────────────── */
-/* << Typography */
-/* ───────────────────────────────────────────────── */
+/* << Typography
+──────────────────────────────────────────────────── */
 
 .is-mobile .markdown-preview-view,
 .is-mobile .cm-s-obsidian div.cm-line {
@@ -6297,8 +6296,8 @@ body.is-mobile .markdown-preview-view blockquote {
 }
 
 /* ───────────────────────────────────────────────── */
-/* << Header (Mobile) */
-/* ───────────────────────────────────────────────── */
+/* << Header (Mobile)
+──────────────────────────────────────────────────── */
 /* hidden header */
 .is-mobile:not(.show-mobile-header) .view-header {
 	height: 0;
@@ -6347,12 +6346,12 @@ body.is-mobile .markdown-preview-view blockquote {
 }
 
 /* ───────────────────────────────────────────────── */
-/* < Core Plugins */
-/* ───────────────────────────────────────────────── */
+/* < Core Plugins
+──────────────────────────────────────────────────── */
 
 /* ───────────────────────────────────────────────── */
-/* << Editor Status (CM6) */
-/* ───────────────────────────────────────────────── */
+/* << Editor Status (CM6)
+──────────────────────────────────────────────────── */
 
 .status-bar-item.plugin-editor-status {
 	position: relative;
@@ -6368,8 +6367,8 @@ body.is-mobile .markdown-preview-view blockquote {
 }
 
 /* ───────────────────────────────────────────────── */
-/* << File Explorer */
-/* ───────────────────────────────────────────────── */
+/* << File Explorer
+──────────────────────────────────────────────────── */
 /* see also section "Files in the Sidebar" */
 
 /* hide vault title */
@@ -6396,8 +6395,8 @@ body.is-mobile .markdown-preview-view blockquote {
 }
 
 /* ───────────────────────────────────────────────── */
-/* <<< Relationship Lines */
-/* ───────────────────────────────────────────────── */
+/* <<< Relationship Lines
+──────────────────────────────────────────────────── */
 /* based on css from @Mara https://github.com/Mara-Li/Obsidian-Snippet-collection */
 
 :root { /* stylelint-disable-line no-duplicate-selectors */
@@ -6498,8 +6497,8 @@ body.is-mobile .markdown-preview-view blockquote {
 /* stylelint-enable selector-combinator-space-before, indentation */
 
 /* ───────────────────────────────────────────────── */
-/* <<< Folder Icons & Note Icons */
-/* ───────────────────────────────────────────────── */
+/* <<< Folder Icons & Note Icons
+──────────────────────────────────────────────────── */
 body:not(.no-folder-icons) .nav-folder-title-content::BEFORE,
 body:not(.no-file-explorer-icons) .workspace-leaf-content:not([data-type="recent-files"]) .nav-file-title-content::BEFORE {
 	font-family: var(--icon-font);
@@ -6615,8 +6614,8 @@ body:not(.no-file-explorer-icons) .nav-file-title[data-path*="kanban" i] .nav-fi
 }
 
 /* ───────────────────────────────────────────────── */
-/* << Panes */
-/* ───────────────────────────────────────────────── */
+/* << Panes
+──────────────────────────────────────────────────── */
 /* <<< Core Panes in general */
 
 .tree-item-inner-subtext,
@@ -6689,8 +6688,8 @@ body:not(.no-file-explorer-icons) .nav-file-title[data-path*="kanban" i] .nav-fi
 }
 
 /* ───────────────────────────────────────────────── */
-/* <<< Outline */
-/* ───────────────────────────────────────────────── */
+/* <<< Outline
+──────────────────────────────────────────────────── */
 
 .outline .tree-item-self {
 	line-height: 1.15em;
@@ -6756,8 +6755,8 @@ body.outline-remove-level-1:not(.no-alternating-rows) .outline .tree-item-childr
 }
 
 /* ───────────────────────────────────────────────── */
-/* <<< Backlinks & Outgoing */
-/* ───────────────────────────────────────────────── */
+/* <<< Backlinks & Outgoing
+──────────────────────────────────────────────────── */
 
 /* Inline Backlink Pane */
 .markdown-source-view .view-content,
@@ -6827,8 +6826,8 @@ body.outline-remove-level-1:not(.no-alternating-rows) .outline .tree-item-childr
 }
 
 /* ───────────────────────────────────────────────── */
-/* <<< Search Pane */
-/* ───────────────────────────────────────────────── */
+/* <<< Search Pane
+──────────────────────────────────────────────────── */
 
 .workspace-leaf-content[data-type="search"] .tree-item-self {
 	padding-left: 1.2em;
@@ -6965,8 +6964,8 @@ body .search-suggest-item.mod-group:not(:first-child) .clickable-icon:hover {
 }
 
 /* ───────────────────────────────────────────────── */
-/* <<< Tag Pane */
-/* ───────────────────────────────────────────────── */
+/* <<< Tag Pane
+──────────────────────────────────────────────────── */
 
 .workspace-leaf-content[data-type="tag"] .nav-action-button {
 	margin-bottom: 2px;
@@ -7008,8 +7007,8 @@ body .search-suggest-item.mod-group:not(:first-child) .clickable-icon:hover {
 }
 
 /* ───────────────────────────────────────────────── */
-/* <<< Starred */
-/* ───────────────────────────────────────────────── */
+/* <<< Starred
+──────────────────────────────────────────────────── */
 
 .workspace-leaf-content[data-type="starred"] .nav-file-title {
 	padding-left: 0;
@@ -7052,8 +7051,8 @@ body:not(.no-alternating-rows) .workspace-leaf-content[data-type="starred"] .nav
 }
 
 /* ───────────────────────────────────────────────── */
-/* << Popover (Page Preview) */
-/* ───────────────────────────────────────────────── */
+/* << Popover (Page Preview)
+──────────────────────────────────────────────────── */
 body .popover {
 	height: var(--popover-size) !important;
 	max-height: unset !important;
@@ -7087,8 +7086,8 @@ body .popover {
 }
 
 /* ───────────────────────────────────────────────── */
-/* << File Recovery */
-/* ───────────────────────────────────────────────── */
+/* << File Recovery
+──────────────────────────────────────────────────── */
 /* see also modals in general */
 
 .sync-history-list .setting-item {
@@ -7182,8 +7181,8 @@ body .popover {
 }
 
 /* ───────────────────────────────────────────────── */
-/* << Graph View */
-/* ───────────────────────────────────────────────── */
+/* << Graph View
+──────────────────────────────────────────────────── */
 /* https://help.obsidian.md/Plugins/Graph+view#Custom+CSS */
 
 /* graph controls */
@@ -7273,8 +7272,8 @@ body:not(.show-graph-controls) .graph-controls.is-close:not(:hover) {
 }
 
 /* ───────────────────────────────────────────────── */
-/* << Publish */
-/* ───────────────────────────────────────────────── */
+/* << Publish
+──────────────────────────────────────────────────── */
 .publish-changes-info input[type="email"],
 .publish-changes-info input[type="password"],
 .publish-changes-info input[type="search"],
@@ -7283,12 +7282,12 @@ body:not(.show-graph-controls) .graph-controls.is-close:not(:hover) {
 }
 
 /* ───────────────────────────────────────────────── */
-/* < Community Plugins */
-/* ───────────────────────────────────────────────── */
+/* < Community Plugins
+──────────────────────────────────────────────────── */
 
 /* ───────────────────────────────────────────────── */
-/* << Core Search Assistant */
-/* ───────────────────────────────────────────────── */
+/* << Core Search Assistant
+──────────────────────────────────────────────────── */
 .core-search-assistant_search-mode-outline {
 	/* needs important */
 	outline-color: var(--search-match-color) !important;
@@ -7335,8 +7334,8 @@ div#core-search-assistant_card-view {
 }
 
 /* ───────────────────────────────────────────────── */
-/* << Better Command Palette */
-/* ───────────────────────────────────────────────── */
+/* << Better Command Palette
+──────────────────────────────────────────────────── */
 .better-command-palette-title {
 	display: none;
 }
@@ -7350,8 +7349,8 @@ div#core-search-assistant_card-view {
 }
 
 /* ───────────────────────────────────────────────── */
-/* << Supercharged Links */
-/* ───────────────────────────────────────────────── */
+/* << Supercharged Links
+──────────────────────────────────────────────────── */
 /* update links prompt */
 .frontmatter-modal-value input[type="text"] {
 	width: 80%;
@@ -7396,8 +7395,8 @@ body:not(.no-built-in-supercharged-links) .data-link-icon[data-link-title]:hover
 
 /* stylelint-enable function-whitespace-after */
 /* ───────────────────────────────────────────────── */
-/* << Emoji Toolbar */
-/* ───────────────────────────────────────────────── */
+/* << Emoji Toolbar
+──────────────────────────────────────────────────── */
 /* Having "Twitter emojis" enabled turns all emojis
 into images in Preview Mode. Therefore, image-styling
 has to be reset. */
@@ -7410,16 +7409,16 @@ img.emoji.emoji.emoji.emoji.emoji {
 }
 
 /* ───────────────────────────────────────────────── */
-/* << Discord Rich Presence */
-/* ───────────────────────────────────────────────── */
+/* << Discord Rich Presence
+──────────────────────────────────────────────────── */
 
 .status-bar-item.plugin-obsidian-discordrpc {
 	filter: grayscale(1);
 }
 
 /* ───────────────────────────────────────────────── */
-/* << Dictionary */
-/* ───────────────────────────────────────────────── */
+/* << Dictionary
+──────────────────────────────────────────────────── */
 .view-content.dictionary-view-content {
 	padding: 8px 4px 3px;
 }
@@ -7458,8 +7457,8 @@ body .dict-s-popover.dict-s-popover.dict-s-popover {
 }
 
 /* ───────────────────────────────────────────────── */
-/* << Git Plugin */
-/* ───────────────────────────────────────────────── */
+/* << Git Plugin
+──────────────────────────────────────────────────── */
 
 /* status bar */
 .theme-dark .status-bar-item.plugin-obsidian-git {
@@ -7544,8 +7543,8 @@ body .dict-s-popover.dict-s-popover.dict-s-popover {
 }
 
 /* ───────────────────────────────────────────────── */
-/* << Sliding Panes */
-/* ───────────────────────────────────────────────── */
+/* << Sliding Panes
+──────────────────────────────────────────────────── */
 body.plugin-sliding-panes-rotate-header .workspace > .mod-root > .workspace-leaf > .workspace-leaf-content > .view-header.view-header.view-header {
 	border-right: var(--basic-border);
 	border-left: none;
@@ -7588,8 +7587,8 @@ body.plugin-sliding-panes-rotate-header .workspace > .mod-root > .workspace-leaf
 }
 
 /* ───────────────────────────────────────────────── */
-/* << Calendar */
-/* ───────────────────────────────────────────────── */
+/* << Calendar
+──────────────────────────────────────────────────── */
 
 .workspace-leaf-content[data-type="calendar"] .view-content {
 	font-family: var(--font-monospace);
@@ -7689,8 +7688,8 @@ body.no-calendar-lines #calendar-container table.calendar th {
 }
 
 /* ───────────────────────────────────────────────── */
-/* << Templater */
-/* ───────────────────────────────────────────────── */
+/* << Templater
+──────────────────────────────────────────────────── */
 
 .cm-s-obsidian .cm-templater-command {
 	font-size: 1em !important;
@@ -7736,8 +7735,8 @@ https://forum.obsidian.md/t/inline-code-occludes-text-selection-and-vim-cursor/1
 }
 
 /* ───────────────────────────────────────────────── */
-/* << Kanban */
-/* ───────────────────────────────────────────────── */
+/* << Kanban
+──────────────────────────────────────────────────── */
 
 /* stylelint-disable no-duplicate-selectors */
 .theme-light {
@@ -8058,8 +8057,8 @@ body .kanban-plugin .kanban-plugin__markdown-preview-view hr {
 }
 
 /* ───────────────────────────────────────────────── */
-/* << Longform */
-/* ───────────────────────────────────────────────── */
+/* << Longform
+──────────────────────────────────────────────────── */
 /* <<< Longform Sidebar */
 
 .workspace-leaf-content[data-type="VIEW_TYPE_LONGFORM_EXPLORER"] .tab-panel-container {
@@ -8484,8 +8483,8 @@ body:not(.longform-left-aligned) :is(.writing, .longform-leaf) .cm-line > :not(.
 }
 
 /* ───────────────────────────────────────────────── */
-/* << Ozan's Image in Editor */
-/* ───────────────────────────────────────────────── */
+/* << Ozan's Image in Editor
+──────────────────────────────────────────────────── */
 /* see also "Max View" */
 
 .oz-image-widget-cm6 > :is(embed, img),
@@ -8516,8 +8515,8 @@ body div.oz-image-widget > img:active {
 }
 
 /* ───────────────────────────────────────────────── */
-/* << Recent Files */
-/* ───────────────────────────────────────────────── */
+/* << Recent Files
+──────────────────────────────────────────────────── */
 
 .workspace-leaf-content[data-type="recent-files"] .nav-file {
 	border-radius: 0;
@@ -8528,8 +8527,8 @@ body:not(.no-alternating-rows) .workspace-leaf-content[data-type="recent-files"]
 }
 
 /* ───────────────────────────────────────────────── */
-/* << Quick Explorer */
-/* ───────────────────────────────────────────────── */
+/* << Quick Explorer
+──────────────────────────────────────────────────── */
 
 /* titlebar, when it is shown */
 .titlebar span.explorable {
@@ -8590,8 +8589,8 @@ body:not(.show-title-bar) > .qe-popup-menu {
 }
 
 /* ───────────────────────────────────────────────── */
-/* << My Snippets */
-/* ───────────────────────────────────────────────── */
+/* << My Snippets
+──────────────────────────────────────────────────── */
 
 .status-bar-item.plugin-mysnippets-plugin.cMenu-statusbar-button {
 	height: 1em;
@@ -8635,8 +8634,8 @@ button.MS-OpenSnippet:hover svg.ms-snippet path {
 }
 
 /* ───────────────────────────────────────────────── */
-/* << Map of Content (MoC) */
-/* ───────────────────────────────────────────────── */
+/* << Map of Content (MoC)
+──────────────────────────────────────────────────── */
 /* stylelint-disable selector-max-id */
 
 .workspace-leaf-content[data-type="map-of-content"] div,
@@ -8757,8 +8756,8 @@ button.MS-OpenSnippet:hover svg.ms-snippet path {
 /* stylelint-enable selector-max-id */
 
 /* ───────────────────────────────────────────────── */
-/* << Breadcrumbs */
-/* ───────────────────────────────────────────────── */
+/* << Breadcrumbs
+──────────────────────────────────────────────────── */
 /* matrix */
 .BC-Matrix ol > li::MARKER {
 	content: none;
@@ -8942,8 +8941,8 @@ body > .app-container div.BC-trail-grid-item {
 }
 
 /* ───────────────────────────────────────────────── */
-/* << Drag & Drop Blocks */
-/* ───────────────────────────────────────────────── */
+/* << Drag & Drop Blocks
+──────────────────────────────────────────────────── */
 
 body #search-res-hover.show,
 body #block-ref-hover.show {
@@ -8959,8 +8958,8 @@ body #block-ref-hover.show:hover {
 }
 
 /* ───────────────────────────────────────────────── */
-/* << Dangling Links */
-/* ───────────────────────────────────────────────── */
+/* << Dangling Links
+──────────────────────────────────────────────────── */
 
 .workspace-leaf-content[data-type="dangling-links"] .view-content {
 	padding-left: 11px;
@@ -9013,8 +9012,8 @@ body #block-ref-hover.show:hover {
 }
 
 /* ───────────────────────────────────────────────── */
-/* << Advanced Cursor */
-/* ───────────────────────────────────────────────── */
+/* << Advanced Cursor
+──────────────────────────────────────────────────── */
 .workspace-leaf-content[data-type="Saved Queries View"] .savedQ-view-q {
 	color: var(--extra-contrast);
 	background-color: transparent;
@@ -9028,8 +9027,8 @@ body #block-ref-hover.show:hover {
 }
 
 /* ───────────────────────────────────────────────── */
-/* << CodeMirror Options */
-/* ───────────────────────────────────────────────── */
+/* << CodeMirror Options
+──────────────────────────────────────────────────── */
 
 body .cm-s-obsidian .hmd-link-icon::AFTER {
 	height: 1em;
@@ -9081,8 +9080,8 @@ pre button.copy:hover::BEFORE {
 }
 
 /* ───────────────────────────────────────────────── */
-/* << Dataview */
-/* ───────────────────────────────────────────────── */
+/* << Dataview
+──────────────────────────────────────────────────── */
 /* Styling from the "Tables" Section mostly applies */
 
 body .table-view-table > thead > tr > th {
@@ -9132,8 +9131,8 @@ body .dataview.inline-field-key {
 }
 
 /* ───────────────────────────────────────────────── */
-/* << Another Quick Switcher */
-/* ───────────────────────────────────────────────── */
+/* << Another Quick Switcher
+──────────────────────────────────────────────────── */
 
 .another-quick-switcher__item__icon,
 .another-quick-switcher__item__directory svg {
@@ -9208,8 +9207,8 @@ body .dataview.inline-field-key {
 }
 
 /* ───────────────────────────────────────────────── */
-/* << Activity History */
-/* ───────────────────────────────────────────────── */
+/* << Activity History
+──────────────────────────────────────────────────── */
 
 .ObsidianHistoryBlock .HistoryBoard text {
 	font-size: 0.55em;
@@ -9240,8 +9239,8 @@ body .dataview.inline-field-key {
 }
 
 /* ───────────────────────────────────────────────── */
-/* << Style Settings (Settings Tab) */
-/* ───────────────────────────────────────────────── */
+/* << Style Settings (Settings Tab)
+──────────────────────────────────────────────────── */
 /* info box at the top */
 .style-settings-heading[data-id="shimmering-focus"] {
 	flex-wrap: wrap;
@@ -9370,8 +9369,8 @@ body a.style-settings-export {
 }
 
 /* ───────────────────────────────────────────────── */
-/* << Favicon Plugin */
-/* ───────────────────────────────────────────────── */
+/* << Favicon Plugin
+──────────────────────────────────────────────────── */
 /* https://github.com/joethei/obsidian-link-favicon#for-designers */
 
 /* no external link icons if there is a favicon */
@@ -9410,8 +9409,8 @@ img.link-favicon {
 }
 
 /* ───────────────────────────────────────────────── */
-/* << File Info Panel (Side bar) */
-/* ───────────────────────────────────────────────── */
+/* << File Info Panel (Side bar)
+──────────────────────────────────────────────────── */
 body .tlfFileInfoButton {
 	height: unset;
 	background-color: var(--bg1);
@@ -9463,8 +9462,8 @@ body .tlfFileInfoTextArea {
 }
 
 /* ───────────────────────────────────────────────── */
-/* << Get Info (Status bar) */
-/* ───────────────────────────────────────────────── */
+/* << Get Info (Status bar)
+──────────────────────────────────────────────────── */
 
 /* no top icon */
 .get-info-menu > div > div:first-child > span:first-child {
@@ -9518,8 +9517,8 @@ body div.get-info-menu > div > div {
 }
 
 /* ───────────────────────────────────────────────── */
-/* << Language Tool Integration */
-/* ───────────────────────────────────────────────── */
+/* << Language Tool Integration
+──────────────────────────────────────────────────── */
 
 .lt-status-bar-check-icon {
 	font-size: 0;
@@ -9565,8 +9564,8 @@ svg.sync-small {
 }
 
 /* ───────────────────────────────────────────────── */
-/* << Hotkey Helper */
-/* ───────────────────────────────────────────────── */
+/* << Hotkey Helper
+──────────────────────────────────────────────────── */
 
 /* alignment of new buttons in core plugin list */
 body.angular-shapes .plugin-list-plugins .setting-item:not(.mod-toggle):not(:first-child) .setting-item-control {
@@ -9578,8 +9577,8 @@ body:not(.angular-shapes) .plugin-list-plugins .setting-item:not(.mod-toggle):no
 }
 
 /* ───────────────────────────────────────────────── */
-/* << Excalidraw */
-/* ───────────────────────────────────────────────── */
+/* << Excalidraw
+──────────────────────────────────────────────────── */
 /* styling from buttons partially applies */
 
 /* prevent styling from rest of theme being applied */
@@ -9741,8 +9740,8 @@ body .excalidraw .HelpDialog--header {
 }
 
 /* ───────────────────────────────────────────────── */
-/* << Zoom */
-/* ───────────────────────────────────────────────── */
+/* << Zoom
+──────────────────────────────────────────────────── */
 
 a.zoom-plugin-title:hover {
 	color: var(--alt-accent);
@@ -9750,16 +9749,16 @@ a.zoom-plugin-title:hover {
 }
 
 /* ───────────────────────────────────────────────── */
-/* << Advanced Tables */
-/* ───────────────────────────────────────────────── */
+/* << Advanced Tables
+──────────────────────────────────────────────────── */
 
 .widget-icon:hover {
 	fill: var(--alt-accent) !important;
 }
 
 /* ───────────────────────────────────────────────── */
-/* << Dynamic Highlight */
-/* ───────────────────────────────────────────────── */
+/* << Dynamic Highlight
+──────────────────────────────────────────────────── */
 
 /* current word */
 body .cm-matched-word,
@@ -9780,8 +9779,8 @@ body .cm-matched-string {
 }
 
 /* ───────────────────────────────────────────────── */
-/* << Show Current File Path */
-/* ───────────────────────────────────────────────── */
+/* << Show Current File Path
+──────────────────────────────────────────────────── */
 
 .status-bar-item.plugin-obsidian-show-file-path {
 	position: relative;
@@ -9797,8 +9796,8 @@ body .cm-matched-string {
 }
 
 /* ───────────────────────────────────────────────── */
-/* << CookLang Plugin */
-/* ───────────────────────────────────────────────── */
+/* << CookLang Plugin
+──────────────────────────────────────────────────── */
 
 .workspace-leaf-content[data-type="cook"] .view-content {
 	padding-right: 1em;
@@ -9806,8 +9805,8 @@ body .cm-matched-string {
 }
 
 /* ───────────────────────────────────────────────── */
-/* << Code Block Labels */
-/* ───────────────────────────────────────────────── */
+/* << Code Block Labels
+──────────────────────────────────────────────────── */
 /* https://github.com/stbowers/obsidian-codeblock-labels#obsidian-code-block-labels-plugin */
 
 .markdown-preview-view .codeblock-label {
@@ -9834,8 +9833,8 @@ body .cm-matched-string {
 }
 
 /* ───────────────────────────────────────────────── */
-/* < Compatibility Info for the Obsidian Hub */
-/* ───────────────────────────────────────────────── */
+/* < Compatibility Info for the Obsidian Hub
+──────────────────────────────────────────────────── */
 
 /* @plugins
 core:
@@ -9895,8 +9894,8 @@ community:
 */
 
 /* ───────────────────────────────────────────────── */
-/* < Style Setting Options */
-/* ───────────────────────────────────────────────── */
+/* < Style Setting Options
+──────────────────────────────────────────────────── */
 
 /* @settings
 name: Shimmering Focus ⟡
