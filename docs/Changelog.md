@@ -4,6 +4,7 @@ nav_order: 110
 
 # Changelog
 
+- 2022-02-07	remove setting group titles
 - 2022-02-07	inline code in headings has proper size
 - 2022-02-07	update bug_report.yml
 - 2022-02-07	Merge pull request #112 from chrisgrieser/revert-110-main
