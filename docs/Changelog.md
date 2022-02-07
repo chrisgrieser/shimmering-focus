@@ -4,7 +4,7 @@ nav_order: 110
 
 # Changelog
 
-- 2022-02-07	patch
+- 2022-02-07	fix #113
 - 2022-02-07	remove setting group titles
 - 2022-02-07	inline code in headings has proper size
 - 2022-02-07	update bug_report.yml
