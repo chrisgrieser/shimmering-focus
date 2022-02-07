@@ -4,7 +4,12 @@ nav_order: 110
 
 # Changelog
 
-- 2022-02-07	patch
+- 2022-02-07	inline code in headings has proper size
+- 2022-02-07	update bug_report.yml
+- 2022-02-07	Merge pull request #112 from chrisgrieser/revert-110-main
+- 2022-02-07	Revert "Patch for a single `!important`"
+- 2022-02-07	Merge pull request #110 from tingmelvin/main
+- 2022-02-07	Merge branch 'chrisgrieser:main' into main
 - 2022-02-06	option to remove sliding pane shadows
 - 2022-02-06	Merge pull request #109 from tingmelvin/main
 - 2022-02-06	fixed blink for defaults ettings
