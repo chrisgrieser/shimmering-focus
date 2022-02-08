@@ -4,6 +4,7 @@ nav_order: 110
 
 # Changelog
 
+- 2022-02-08	patch
 - 2022-02-08	fix unresolved link indicators in kanbans & supercharged links empty tooltips
 - 2022-02-08	new style setting option to turn off graying out inactive panes
 - 2022-02-08	spacing for card gaps
