@@ -4,7 +4,7 @@ nav_order: 110
 
 # Changelog
 
-- 2022-02-08	patch
+- 2022-02-08	new style setting option to turn off graying out inactive panes
 - 2022-02-08	spacing for card gaps
 - 2022-02-08	further fixes for longform compile
 - 2022-02-08	fixes for longform overhaul

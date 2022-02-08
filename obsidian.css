@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 1.865
+Version 1.866
 https://github.com/chrisgrieser/shimmering-focus/
 MIT License
 ─────────────────────────────────────────────────── */
@@ -550,7 +550,6 @@ body.theme-dark {
 	--image-size: 50;
 	--pdf-size: 50vh;
 	--popover-size: 350;
-	--inactive-pane-opacity: 70%;
 	--readable-length: 700px;
 	--modal-base-size: 70;
 
@@ -1174,7 +1173,6 @@ svg.longform {
 .sepia { filter: sepia(0.85) }
 
 /* ───────────────────────────────────────────────────
-
 << Angular or Round Shapes
 ─────────────────────────────────────────────────── */
 
@@ -1212,6 +1210,14 @@ body.no-animations {
 
 :root { /* stylelint-disable-line no-duplicate-selectors */
 	--transition-delay-passing-over-protection: 200ms;
+}
+
+body:not(.no-grayed-out-inactive-pane) {
+	--inactive-pane-opacity: 70%;
+}
+
+.no-grayed-out-inactive-pane {
+	--inactive-pane-opacity: 0%;
 }
 
 /* ───────────────────────────────────────────────── */
@@ -10811,6 +10817,11 @@ settings:
 	 id: trim-long-filenames
 	 title: 'Sidebar: Trim File Names'
 	 description: When enabled long filenames will be trimmed. When disabled, long filenames will be wrapped to the next line. Affects most, but not all side bar plugin.
+	 type: class-toggle
+	 default: false
+	-
+	 id: no-grayed-out-inactive-pane
+	 title: 'Inactive Panes not grayed out'
 	 type: class-toggle
 	 default: false
 	-
