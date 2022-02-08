@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 1.863
+Version 1.864
 https://github.com/chrisgrieser/shimmering-focus/
 MIT License
 ─────────────────────────────────────────────────── */
@@ -6222,17 +6222,21 @@ body:not(.no-fn-indicator) .mod-cm6 .cm-hmd-barelink:not(.cm-formatting-link) + 
 }
 
 /* 2 column cards */
+:root { /* stylelint-disable-line no-duplicate-selectors */
+	--card-spacing: 7px;
+}
+
 .list-2-col-cards.markdown-preview-view.markdown-preview-view ul:not(.contains-task-list) {
 	padding-left: 0;
 	columns: 2 auto;
-	column-gap: 4px;
+	column-gap: var(--card-spacing);
 }
 
 .list-2-col-cards ul:not(.contains-task-list) li {
 	background-color: var(--bg2);
 
 	padding: 1px 10px 4px;
-	margin-bottom: 4px;
+	margin-bottom: var(--card-spacing);
 
 	border: var(--thin-border);
 	border-radius: var(--roundish);
