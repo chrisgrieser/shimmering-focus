@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 1.867
+Version 1.868
 https://github.com/chrisgrieser/shimmering-focus/
 MIT License
 ─────────────────────────────────────────────────── */
@@ -1166,7 +1166,7 @@ svg.longform {
 ──────────────────────────────────────────────────── */
 
 /* ───────────────────────────────────────────────── */
-/* << GLobal Filter
+/* << Global Filter
 ──────────────────────────────────────────────────── */
 
 .grayscale { filter: grayscale(0.85) }
@@ -1217,7 +1217,7 @@ body:not(.no-grayed-out-inactive-pane) {
 }
 
 .no-grayed-out-inactive-pane {
-	--inactive-pane-opacity: 0%;
+	--inactive-pane-opacity: 100%;
 }
 
 /* ───────────────────────────────────────────────── */
@@ -5555,7 +5555,7 @@ u {
 }
 
 /* unresolved gutter icon */
-body:not(.no-unresolved-link-indicator) .markdown-preview-view .is-unresolved:not(.BC-Link)::BEFORE,
+body:not(.no-unresolved-link-indicator) .markdown-preview-view:not(.kanban-plugin__item-markdown) .is-unresolved:not(.BC-Link)::BEFORE,
 body:not(.no-unresolved-link-indicator) .cm-editor .is-unresolved::BEFORE {
 	content: "✖︎";
 	color: var(--unresolved-link-color);
@@ -7378,9 +7378,12 @@ body:not(.no-built-in-supercharged-links) .data-link-icon[data-link-tags*="#seed
 body:not(.no-built-in-supercharged-links) .data-link-icon[data-link-title]::BEFORE { content: "📖 " }
 body:not(.no-built-in-supercharged-links) .data-link-icon[data-link-up]::BEFORE { content: "🥖 " }
 
-/* tooltips */
-body:not(.no-built-in-supercharged-links) [data-link-data-href]:hover::AFTER,
-body:not(.no-built-in-supercharged-links) .data-link-icon:hover::AFTER {
+/* tooltips for literature notes */
+/* stylelint-disable function-whitespace-after */
+body:not(.no-built-in-supercharged-links) [data-link-data-href][data-link-title]:hover::AFTER,
+body:not(.no-built-in-supercharged-links) .data-link-icon[data-link-title]:hover::AFTER {
+	content: "\""attr(data-link-title)"\"";
+
 	font-size: 0.9rem;
 
 	max-width: 350px;
@@ -7396,12 +7399,6 @@ body:not(.no-built-in-supercharged-links) .data-link-icon:hover::AFTER {
 
 	border: var(--notice-border);
 	border-radius: var(--roundish);
-}
-
-/* stylelint-disable function-whitespace-after */
-body:not(.no-built-in-supercharged-links) [data-link-data-href][data-link-title]:hover::AFTER,
-body:not(.no-built-in-supercharged-links) .data-link-icon[data-link-title]:hover::AFTER {
-	content: "\""attr(data-link-title)"\"";
 }
 
 /* stylelint-enable function-whitespace-after */
