@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 1.861
+Version 1.862
 https://github.com/chrisgrieser/shimmering-focus/
 MIT License
 ─────────────────────────────────────────────────── */
@@ -1790,6 +1790,10 @@ body ::-WEBKIT-SCROLLBAR-THUMB {
 	background-color: var(--scrollbar-bg-active);
 }
 
+::-WEBKIT-SCROLLBAR:hover ::-WEBKIT-SCROLLBAR-THUMB {
+	background-color: red;
+}
+
 /* ───────────────────────────────────────────────── */
 /* < Vault Launch Progress Bar
 ──────────────────────────────────────────────────── */
@@ -1829,7 +1833,7 @@ button.document-search-button,
 body .excalidraw .HelpDialog--btn,
 a.style-settings-import,
 a.style-settings-export,
-.view-content.view-content.view-content.view-content button,
+.workspace-leaf-content.workspace-leaf-content.workspace-leaf-content[data-type="VIEW_TYPE_LONGFORM_EXPLORER"] button,
 .modal.modal.modal.modal.modal button {
 	font-family: var(--button-font);
 	font-size: var(--button-font-size);
@@ -1860,7 +1864,7 @@ a.style-settings-export,
 }
 
 /* hovered buttons */
-.view-content.view-content.view-content.view-content button:hover,
+.workspace-leaf-content.workspace-leaf-content.workspace-leaf-content.workspace-leaf-content[data-type="VIEW_TYPE_LONGFORM_EXPLORER"] button:hover,
 button.document-search-button:hover,
 body .excalidraw .HelpDialog--btn:hover,
 body .setting-item-control a.style-settings-import:hover,
@@ -8408,7 +8412,10 @@ button.longform-remove-step-button.longform-remove-step-button.longform-remove-s
 .longform-compile-step.longform-compile-step.longform-compile-step.longform-compile-step {
 	background-color: var(--bg3);
 	box-shadow: var(--muted-button-inset-shadow);
+
 	padding: 5px;
+	margin-bottom: 10px;
+
 	border: var(--thin-border);
 	border-radius: var(--roundish);
 }
@@ -8427,7 +8434,12 @@ button.longform-remove-step-button.longform-remove-step-button.longform-remove-s
 	font-size: 0.85em;
 	color: var(--interactive-normal);
 	background-color: var(--alt-accent);
+	box-shadow: var(--small-inset-shadow);
 	border-radius: var(--roundish);
+}
+
+.longform-compile-step-option.longform-compile-step-option.longform-compile-step-option.longform-compile-step-option.longform-compile-step-option input {
+	color: var(--text-normal);
 }
 
 .longform-compile-step-option.longform-compile-step-option.longform-compile-step-option.longform-compile-step-option {
@@ -8440,7 +8452,7 @@ button.longform-remove-step-button.longform-remove-step-button.longform-remove-s
 
 .longform-compile-step-options.longform-compile-step-options.longform-compile-step-options.longform-compile-step-options {
 	background-color: var(--bg2);
-	box-shadow: var(--muted-button-inset-shadow);
+	box-shadow: var(--small-inset-shadow);
 	padding: 3px;
 	margin-top: 8px;
 	border: var(--basic-border);
@@ -8462,6 +8474,10 @@ button.longform-remove-step-button.longform-remove-step-button.longform-remove-s
 	border: var(--basic-border);
 }
 
+.longform-workflow-picker-container.longform-workflow-picker-container textarea::PLACEHOLDER {
+	color: var(--text-faint);
+}
+
 .longform-workflow-picker-container.longform-workflow-picker-container textarea:hover {
 	border-color: var(--interactive-hover-border-color);
 }
@@ -8477,7 +8493,7 @@ button.options-button.options-button.options-button.options-button.options-butto
 	background: none;
 	box-shadow: none;
 
-	padding: 5px;
+	padding: 4px;
 	margin-right: 0;
 
 	border: none;
@@ -8517,8 +8533,9 @@ select#longform-workflows:hover {
 }
 
 .longform-workflow-picker-container.longform-workflow-picker-container.longform-workflow-picker-container.longform-workflow-picker-container {
-	margin-bottom: 10px;
-	border-bottom: var(--basic-border);
+	padding-bottom: 15px;
+	margin-bottom: 15px;
+	border-bottom: var(--thick-border);
 }
 
 .add-step-container + p {
