@@ -4,6 +4,7 @@ nav_order: 110
 
 # Changelog
 
+- 2022-02-08	fixes for longform overhaul
 - 2022-02-08	overhaul of longform compile tab
 - 2022-02-07	fix #113
 - 2022-02-07	remove setting group titles

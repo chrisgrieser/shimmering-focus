@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 1.860
+Version 1.861
 https://github.com/chrisgrieser/shimmering-focus/
 MIT License
 ─────────────────────────────────────────────────── */
@@ -8299,8 +8299,28 @@ body:not(.no-alternating-rows) li:nth-child(even) .scene-container {
 	font-size: 1.2rem;
 }
 
-.workspace-leaf-content[data-type="VIEW_TYPE_LONGFORM_EXPLORER"] .tab-list button {
+/* font-family: var(--button-font);
+font-size: var(--button-font-size);
+font-weight: 500;
+line-height: 1.3em;
+letter-spacing: 0.5px;
+
+min-height: 1.5em;
+
+color: var(--button-text);
+background-color: var(--interactive-bg);
+box-shadow: var(--button-inset-shadow);
+
+padding: 5px 12px 7px;
+
+border: 2px solid var(--interactive-border-color);
+border-radius: var(--round);
+
+transition: var(--quick-transition); */
+
+.workspace-leaf-content[data-type="VIEW_TYPE_LONGFORM_EXPLORER"] .tab-list.tab-list.tab-list button {
 	font-size: 0;
+	line-height: unset;
 
 	height: 28px;
 	width: 40px;
@@ -8318,8 +8338,8 @@ body:not(.no-alternating-rows) li:nth-child(even) .scene-container {
 
 .workspace-leaf-content[data-type="VIEW_TYPE_LONGFORM_EXPLORER"] .tab-list button::BEFORE {
 	position: relative;
-	bottom: 1px;
-	left: 4px;
+	bottom: 4px;
+	left: 2px;
 }
 
 .workspace-leaf-content[data-type="VIEW_TYPE_LONGFORM_EXPLORER"] .tab-list button:nth-child(1)::BEFORE {
@@ -8334,13 +8354,13 @@ body:not(.no-alternating-rows) li:nth-child(even) .scene-container {
 	content: "merge_type";
 }
 
-.workspace-leaf-content[data-type="VIEW_TYPE_LONGFORM_EXPLORER"] button.selected {
+.workspace-leaf-content[data-type="VIEW_TYPE_LONGFORM_EXPLORER"] button.selected.selected.selected.selected.selected {
 	color: var(--extra-contrast);
-	background-color: var(--bg2);
+	background-color: var(--bg1);
 }
 
-.workspace-leaf-content[data-type="VIEW_TYPE_LONGFORM_EXPLORER"] button.selected:hover,
-.workspace-leaf-content[data-type="VIEW_TYPE_LONGFORM_EXPLORER"] button:hover {
+.workspace-leaf-content.workspace-leaf-content.workspace-leaf-content.workspace-leaf-content[data-type="VIEW_TYPE_LONGFORM_EXPLORER"] button.selected:hover,
+.workspace-leaf-content.workspace-leaf-content.workspace-leaf-content[data-type="VIEW_TYPE_LONGFORM_EXPLORER"] button:hover {
 	color: var(--alt-accent);
 }
 
@@ -8450,17 +8470,28 @@ button.longform-remove-step-button.longform-remove-step-button.longform-remove-s
 	border-color: var(--interactive-border-color);
 }
 
-button.options-button.options-button.options-button {
+button.options-button.options-button.options-button.options-button.options-button {
+	font-size: 0;
+
 	color: var(--extra-contrast);
 	background: none;
+	box-shadow: none;
+
 	padding: 5px;
 	margin-right: 0;
+
+	border: none;
 	border-radius: var(--roundish);
 }
 
-button.options-button.options-button.options-button:hover {
+button.options-button.options-button::BEFORE {
+	content: "☰";
+	font-size: 1.6rem;
+	font-weight: 900;
+}
+
+button.options-button.options-button.options-button.options-button.options-button:hover {
 	color: var(--alt-accent);
-	background: none;
 }
 
 .longform-workflow-picker .select {
