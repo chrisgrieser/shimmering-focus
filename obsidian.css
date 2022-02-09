@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 1.873
+Version 1.874
 https://github.com/chrisgrieser/shimmering-focus/
 MIT License
 ─────────────────────────────────────────────────── */
@@ -548,7 +548,7 @@ body.theme-dark {
 	--resize-handle-hovered-thickness: 6px;
 	--scrollbar-thickness: 8px;
 	--image-size: 50;
-	--pdf-size: 50vh;
+	--pdf-size: 50;
 	--popover-size: 350;
 	--readable-length: 700px;
 	--modal-base-size: 70;
@@ -4620,17 +4620,17 @@ body:not(.is-mobile) .app-container div.oz-image-widget > img:not(:active) {
 }
 
 /* <<< PDFs */
-body.max-view-enabled:not(.is-mobile) .mod-left-split.is-collapsed ~ .mod-root .view-content .markdown-preview-view .pdf-embed,
-body.max-view-enabled:not(.is-mobile) .mod-left-split.is-collapsed ~ .mod-root div.oz-image-widget embed {
-	max-height: 100%;
-	max-width: 100%;
+.max-view-enabled.max-view-enabled.max-view-enabled:not(.is-mobile) .mod-left-split.is-collapsed ~ .mod-root .view-content .markdown-preview-view .pdf-embed,
+.max-view-enabled.max-view-enabled.max-view-enabled:not(.is-mobile) .mod-left-split.is-collapsed ~ .mod-root .oz-image-widget embed {
+	max-height: unset;
+	max-width: unset;
 }
 
 body:not(.is-mobile) .oz-pdf-widget-cm6 embed,
 body:not(.is-mobile) .pdf-embed,
 body:not(.is-mobile) .app-container div.oz-image-widget embed {
-	max-height: var(--pdf-size);
-	max-width: var(--pdf-size);
+	max-height: calc(var(--pdf-size) * 1vh);
+	max-width: calc(var(--pdf-size) * 1%);
 }
 
 /* <<< Mermaid */
@@ -5631,6 +5631,8 @@ body:not(.annotation-tags-off) .tag[href="#important"],
 body:not(.annotation-tags-off) .tag[href="#quote"],
 body:not(.annotation-tags-off) .tag[href="#todo"],
 body:not(.annotation-tags-off) .tag[href="#critique"],
+body:not(.annotation-tags-off) .tag[href="#sidenote"],
+body:not(.annotation-tags-off) .cm-s-obsidian .cm-line span.cm-tag-sidenote,
 body:not(.annotation-tags-off) .cm-s-obsidian .cm-line span.cm-tag-goal,
 body:not(.annotation-tags-off) .cm-s-obsidian .cm-line span.cm-tag-critique,
 body:not(.annotation-tags-off) .cm-s-obsidian .cm-line span.cm-tag-todo,
@@ -5675,6 +5677,8 @@ body:not(.annotation-tags-off) .longform-leaf .tag[href="#quote"],
 body:not(.annotation-tags-off) .longform-leaf .tag[href="#todo"],
 body:not(.annotation-tags-off) .longform-leaf .tag[href="#critique"],
 body:not(.annotation-tags-off) .longform-leaf .tag[href="#goal"],
+body:not(.annotation-tags-off) .longform-leaf .tag[href="#sidenote"],
+body:not(.annotation-tags-off) .longform-leaf .cm-s-obsidian .cm-line span.cm-tag-sidenote,
 body:not(.annotation-tags-off) .longform-leaf .cm-s-obsidian .cm-line span.cm-tag-goal,
 body:not(.annotation-tags-off) .longform-leaf .cm-s-obsidian .cm-line span.cm-tag-critique,
 body:not(.annotation-tags-off) .longform-leaf .cm-s-obsidian .cm-line span.cm-tag-todo,
@@ -5695,6 +5699,7 @@ body:not(.annotation-tags-off) .longform-leaf .cm-s-obsidian .cm-line span.cm-ta
 }
 
 /* the "#" */
+body:not(.annotation-tags-off) .cm-s-obsidian .cm-line .cm-hashtag-begin.cm-tag-sidenote,
 body:not(.annotation-tags-off) .cm-s-obsidian .cm-line .cm-hashtag-begin.cm-tag-goal,
 body:not(.annotation-tags-off) .cm-s-obsidian .cm-line .cm-hashtag-begin.cm-tag-critique,
 body:not(.annotation-tags-off) .cm-s-obsidian .cm-line .cm-hashtag-begin.cm-tag-todo,
@@ -5717,6 +5722,7 @@ body:not(.annotation-tags-off) .cm-s-obsidian .cm-line .cm-hashtag-begin.cm-tag-
 }
 
 /* the tag text */
+body:not(.annotation-tags-off) .cm-s-obsidian .cm-line .cm-hashtag-end.cm-tag-sidenote,
 body:not(.annotation-tags-off) .cm-s-obsidian .cm-line .cm-hashtag-end.cm-tag-goal,
 body:not(.annotation-tags-off) .cm-s-obsidian .cm-line .cm-hashtag-end.cm-tag-critique,
 body:not(.annotation-tags-off) .cm-s-obsidian .cm-line .cm-hashtag-end.cm-tag-todo,
@@ -5736,6 +5742,16 @@ body:not(.annotation-tags-off) .cm-s-obsidian .cm-line .cm-hashtag-end.cm-tag-ex
 	padding-left: 0;
 	border-bottom-left-radius: 0;
 	border-top-left-radius: 0;
+}
+
+body:not(.annotation-tags-off) .cm-tag-sidenote,
+body:not(.annotation-tags-off) .tag[href="#sidenote"] {
+	background-color: rgb(128 128 128 / 50%);
+}
+
+body:not(.annotation-tags-off) .cm-hashtag-begin.cm-tag-sidenote::BEFORE,
+body:not(.annotation-tags-off) .tag[href="#sidenote"]::BEFORE {
+	content: "↪️ ";
 }
 
 body:not(.annotation-tags-off) .cm-tag-goal,
@@ -8635,6 +8651,7 @@ body:not(.longform-left-aligned) :is(.writing, .longform-leaf) .cm-line > :not(.
 ──────────────────────────────────────────────────── */
 /* see also "Max View" */
 
+.oz-pdf-widget-cm6 > embed,
 .oz-image-widget-cm6 > :is(embed, img),
 div.oz-image-widget > :is(embed, img) {
 	display: block;
@@ -8647,15 +8664,11 @@ body:not(.disable-image-borders) div.oz-image-widget > img {
 }
 
 /* center */
-body:not(.left-aligned-embeds) div.oz-image-widget-cm6 > :is(embed, img),
-body:not(.left-aligned-embeds) div.oz-image-widget > :is(embed, img) {
+body:not(.left-aligned-embeds) .oz-pdf-widget-cm6 > embed,
+body:not(.left-aligned-embeds) div.oz-image-widget-cm6 > img,
+body:not(.left-aligned-embeds) div.oz-image-widget > img {
 	margin-right: auto;
 	margin-left: auto;
-}
-
-/* approximation since "auto" doesn't work here */
-body:not(.left-aligned-embeds) .oz-pdf-widget-cm6 embed {
-	margin-left: calc((100vh - var(--pdf-size)) / 4);
 }
 
 body div.oz-image-widget > img:active {
@@ -10327,7 +10340,7 @@ settings:
 	-
 	 id: font-settings
 	 title: Typography
-	 description: Font, Headings, Blockquotes, Font Sizes, Headings, Letter Spacing, Alignment
+	 description: Font, Font Sizes, Headings, Blockquotes, Letter Spacing, Alignment
 	 type: heading
 	 level: 2
 	 collapsed: true
@@ -10551,7 +10564,6 @@ settings:
 	 min: 10
 	 max: 100
 	 step: 5
-	 format: vh
 	-
 	 id: disable-image-borders
 	 title: Remove image borders
