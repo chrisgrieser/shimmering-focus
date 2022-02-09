@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 1.870
+Version 1.871
 https://github.com/chrisgrieser/shimmering-focus/
 MIT License
 ─────────────────────────────────────────────────── */
@@ -10,7 +10,7 @@ MIT License
 ──────────────────────────────────────────────────── */
 /* all sections begin with "<", to navigate to the
 respective section. This ToC is auto-generated via
-the .create-ToC.sh.
+the create-ToC.sh file
 - Colors
 	- Base Colors
 	- Color Schemes
@@ -7370,20 +7370,18 @@ div#core-search-assistant_card-view {
 }
 
 body:not(.no-built-in-supercharged-links) .data-link-icon[data-link-tags*="#checklist" i]::BEFORE { content: "✅ " }
-body:not(.no-built-in-supercharged-links) .data-link-icon[data-link-kanban-plugin]::BEFORE { content: "🎴 " }
+body:not(.no-built-in-supercharged-links) .data-link-icon[data-link-kanban-plugin]::BEFORE { content: "🏞 " }
 body:not(.no-built-in-supercharged-links) .data-link-icon[data-link-tags*="#moc" i]::BEFORE { content: "🗺 " }
 body:not(.no-built-in-supercharged-links) .data-link-icon[data-link-tags*="#person " i]::BEFORE { content: "👤 " }
 body:not(.no-built-in-supercharged-links) .data-link-icon[data-link-tags="#person" i]::BEFORE { content: "👤 " }
 body:not(.no-built-in-supercharged-links) .data-link-icon[data-link-tags*="#evergreen" i]::BEFORE { content: "🌲 " }
 body:not(.no-built-in-supercharged-links) .data-link-icon[data-link-tags*="#seedling" i]::BEFORE { content: "🌱 " }
 body:not(.no-built-in-supercharged-links) .data-link-icon[data-link-title]::BEFORE { content: "📖 " }
-body:not(.no-built-in-supercharged-links) .data-link-icon[data-link-up]::BEFORE { content: "🥖 " }
 
-/* tooltips for literature notes */
-/* stylelint-disable function-whitespace-after */
-body:not(.no-built-in-supercharged-links) [data-link-data-href][data-link-title]:hover::AFTER,
-body:not(.no-built-in-supercharged-links) .data-link-icon[data-link-title]:hover::AFTER {
-	content: "\""attr(data-link-title)"\"";
+/* pseudo-tooltips for literature notes */
+body:not(.no-built-in-supercharged-links) .mod-root [data-link-data-href][data-link-title]:hover::AFTER,
+body:not(.no-built-in-supercharged-links) .mod-root .data-link-icon[data-link-title]:hover::AFTER {
+	content: "\""attr(data-link-title)"\""; /* stylelint-disable-line function-whitespace-after */
 
 	font-size: 0.9rem;
 
@@ -7402,7 +7400,6 @@ body:not(.no-built-in-supercharged-links) .data-link-icon[data-link-title]:hover
 	border-radius: var(--roundish);
 }
 
-/* stylelint-enable function-whitespace-after */
 /* ───────────────────────────────────────────────── */
 /* << Emoji Toolbar
 ──────────────────────────────────────────────────── */
