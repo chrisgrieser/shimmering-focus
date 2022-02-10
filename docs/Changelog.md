@@ -4,6 +4,7 @@ nav_order: 110
 
 # Changelog
 
+- 2022-02-10	great refactoring with ':is()'
 - 2022-02-10	refactored annotation tags
 - 2022-02-10	anno
 - 2022-02-10	settings menu sidebar restyling
