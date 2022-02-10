@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 1.885
+Version 1.886
 https://github.com/chrisgrieser/shimmering-focus/
 MIT License
 ──────────────────────────────────────────────────── */
@@ -2931,9 +2931,7 @@ body .app-container .workspace-leaf-resize-handle:hover {
 }
 
 /* color active/hovered sub menu */
-.vertical-tab-nav-item:active,
-.vertical-tab-header-group:first-child .vertical-tab-header-group-items .vertical-tab-nav-item.is-active,
-.vertical-tab-nav-item.is-active {
+.vertical-tab-nav-item.vertical-tab-nav-item.vertical-tab-nav-item.vertical-tab-nav-item:is(:active, .is-active) {
 	color: var(--text-accent);
 	background: var(--bg3);
 	padding-left: 6px;
@@ -2941,8 +2939,7 @@ body .app-container .workspace-leaf-resize-handle:hover {
 	border: none;
 }
 
-.vertical-tab-nav-item.is-active:hover,
-.vertical-tab-nav-item:hover {
+.vertical-tab-nav-item:is(.is-active:hover, :hover) {
 	color: var(--alt-accent);
 	background: var(--bg3);
 }
@@ -2962,9 +2959,7 @@ body .app-container .workspace-leaf-resize-handle:hover {
 }
 
 .setting-add-hotkey-button.mod-active,
-.setting-add-hotkey-button:hover,
-.setting-restore-hotkey-button:hover,
-.setting-editor-extra-setting-button:hover {
+:is(.setting-add-hotkey-button, .setting-restore-hotkey-button, .setting-editor-extra-setting-button):hover {
 	color: var(--editor-alt-accent);
 	background-color: var(--bg3);
 	opacity: 1;
