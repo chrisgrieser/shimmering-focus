@@ -2504,7 +2504,7 @@ body .app-container .nav-folder-title:hover {
 }
 
 /* hover file */
-:is(.nav-folder-title, .nav-file-title):hover .nav-folder-title-content {
+:is(.nav-folder-title, .nav-file-title):hover :is(.nav-folder-title-content, .nav-file-title-content) {
 	color: var(--alt-accent);
 }
 
