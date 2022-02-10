@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 1.890
+Version 1.891
 https://github.com/chrisgrieser/shimmering-focus/
 MIT License
 ──────────────────────────────────────────────────── */
@@ -1825,7 +1825,8 @@ body ::-WEBKIT-SCROLLBAR-THUMB {
 /* buttons in default state */
 button.document-search-button,
 body .excalidraw .HelpDialog--btn,
-a:is(.style-settings-export, .style-settings-import) .workspace-leaf-content.workspace-leaf-content.workspace-leaf-content[data-type="VIEW_TYPE_LONGFORM_EXPLORER"] button,
+a:is(.style-settings-export, .style-settings-import),
+.workspace-leaf-content.workspace-leaf-content.workspace-leaf-content[data-type="VIEW_TYPE_LONGFORM_EXPLORER"] button,
 .modal.modal.modal.modal.modal button {
 	font-family: var(--button-font);
 	font-size: var(--button-font-size);
