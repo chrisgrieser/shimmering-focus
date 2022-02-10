@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 1.883
+Version 1.884
 https://github.com/chrisgrieser/shimmering-focus/
 MIT License
 ──────────────────────────────────────────────────── */
@@ -2914,7 +2914,7 @@ body .app-container .workspace-leaf-resize-handle:hover {
 }
 
 /* thicker "community plugins", "hotkey" & "appearance" */
-.vertical-tab-header-group:first-child .vertical-tab-header-group-items .vertical-tab-nav-item:is(:nth-child(3), :nth-child(4), :last-child) {
+.vertical-tab-header-group:not(:last-child) .vertical-tab-header-group-items .vertical-tab-nav-item:is(:nth-child(3), :nth-child(4), :last-child) {
 	font-weight: 900;
 	color: var(--text-normal);
 }
