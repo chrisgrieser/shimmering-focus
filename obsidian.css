@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 1.881
+Version 1.882
 https://github.com/chrisgrieser/shimmering-focus/
 MIT License
 ──────────────────────────────────────────────────── */
@@ -2907,7 +2907,8 @@ body .app-container .workspace-leaf-resize-handle:hover {
 	margin-bottom: 5px;
 }
 
-.vertical-tab-header-group:first-child {
+.vertical-tab-header-group:not(:last-child) {
+	/* via non-last-child as settings search adds a group */
 	text-align: end;
 	border-bottom: var(--thick-border);
 }
@@ -9649,6 +9650,18 @@ body .cm-matched-string {
 }
 
 /* ───────────────────────────────────────────────── */
+/* << Settings Search
+──────────────────────────────────────────────────── */
+
+.settings-search-input {
+	padding: 3px;
+}
+
+.settings-search-input input {
+	width: 100%;
+}
+
+/* ───────────────────────────────────────────────── */
 /* << CookLang Plugin
 ──────────────────────────────────────────────────── */
 
@@ -9744,6 +9757,7 @@ community:
 - obsidian-footnote-indicator
 - cooklang-obsidian
 - obsidian-codeblock-labels
+- obsidian-settings-search
 */
 
 /* ───────────────────────────────────────────────── */
