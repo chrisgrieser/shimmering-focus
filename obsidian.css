@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 1.876
+Version 1.877
 https://github.com/chrisgrieser/shimmering-focus/
 MIT License
 ──────────────────────────────────────────────────── */
@@ -2975,7 +2975,7 @@ body .app-container .workspace-leaf-resize-handle:hover {
 	line-height: 1.25em;
 	color: var(--extra-contrast);
 	background: var(--bg2);
-	padding: 5px 7px;
+	padding: 5px 5px 5px 7px;
 	border: none;
 }
 
