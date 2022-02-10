@@ -16,4 +16,3 @@ This themes supports dozens of customization options via the [Style Settings Plu
 ## Theme Overlays
 - [willemstad](https://github.com/tingmelvin/willemstad) is a theme overlay by @tingmelvin that is used on top of Shimmering Focus. It adds additional options like Header Colors or more styling customization for the calendar plugin.
 - [Absolve](https://github.com/mulfok/obsidian-absolve) is a theme overlay by @mulfolk that. It can be used as overlay for Shimmering Focus as well as other themes and offers font settings, and design schemes.
-

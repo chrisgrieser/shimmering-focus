@@ -4,6 +4,8 @@ nav_order: 110
 
 # Changelog
 
+- 2022-02-10	settings menu sidebar restyling
+- 2022-02-09	add Absolve from @mulfolk to the customization docs
 - 2022-02-09	fix pdf issues with max view and alignment
 - 2022-02-08	fix unresolved link indicators in kanbans & supercharged links empty tooltips
 - 2022-02-08	new style setting option to turn off graying out inactive panes

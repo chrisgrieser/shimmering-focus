@@ -1,9 +1,9 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 1.874
+Version 1.875
 https://github.com/chrisgrieser/shimmering-focus/
 MIT License
-─────────────────────────────────────────────────── */
+──────────────────────────────────────────────────── */
 
 /* ───────────────────────────────────────────────── */
 /* < Table of Content
@@ -18,14 +18,14 @@ the create-ToC.sh file
 	- Longform project colors
 	- Default variable colors & Base elements
 	- Shadows
- 		- Outside Shadow
- 		- Inset Shadow
+		- Outside Shadow
+		- Inset Shadow
 	- Borders
 - Other Variables
 - Fonts
- 	- Base64-encoded Fonts
- 	- Font Definitions
- 	- Bold
+	- Base64-encoded Fonts
+	- Font Definitions
+	- Bold
 - Icons
 	- Base Icons
 	- Plugin Icons
@@ -68,9 +68,9 @@ the create-ToC.sh file
 	- Modals in general
 	- Confirmation Modal
 	- Settings Menu
- 		- Login Menu
- 		- Community plugin list
- 		- Core plugin
+		- Login Menu
+		- Community plugin list
+		- Core plugin
  		- Hotkey search
 	- Plugin Browser
 		- Plugin Search Results (left side)
@@ -90,8 +90,8 @@ the create-ToC.sh file
 		- Embedded Search Queries
 		- Clean Embeds
 	- YAML Header
- 		- YAML Frontmatter
- 		- Metadata Block
+		- YAML Frontmatter
+		- Metadata Block
 	- Gutter
 		- Collapse Indicators
 		- Line Numbers
@@ -295,8 +295,7 @@ the create-ToC.sh file
 }
 
 /* Classic Shimmering Focus */
-.classic-colors.theme-dark,
-.classic-colors.theme-light {
+.classic-colors.classic-colors {
 	--light-hue: 220;
 	--dark-hue: 0;
 	--dark-sat: 0%;
@@ -306,8 +305,7 @@ the create-ToC.sh file
 }
 
 /* Nord Theme */
-.nord-colors.theme-dark,
-.nord-colors.theme-light {
+.nord-colors.nord-colors {
 	--light-hue: 220;
 	--dark-hue: 220;
 	--light-sat: 20%;
@@ -388,7 +386,7 @@ the create-ToC.sh file
 	--bg2: hsl(var(--longform-light-hue) var(--sat-light-2) var(--b-light-2));
 	--bg3: hsl(var(--longform-light-hue) var(--sat-light-3) var(--b-light-3));
 
-	--heading-bg: hsl(var(--llongform-ight-hue) calc(var(--sat-light-3) / 2) calc(var(--b-light-3) - 1%));
+	--heading-bg: hsl(var(--longform-light-hue) calc(var(--sat-light-3) / 2) calc(var(--b-light-3) - 1%));
 	--alt-bg: hsl(var(--longform-light-hue) calc(var(--sat-light-3) * 1.1) calc(var(--b-light-2) - 2%));
 	--resize-handle-color: hsl(var(--longform-light-hue) var(--sat-light-2) calc(var(--b-light-2) - 1%));
 	--muted-border-color: hsl(var(--longform-light-hue) var(--sat-light-3) calc(var(--b-light-3) + 3%));
@@ -2951,12 +2949,13 @@ body .app-container .workspace-leaf-resize-handle:hover {
 }
 
 .vertical-tab-header-group {
-	padding: 0 0 5px 3px;
+	padding: 0 3px 5px;
 	margin-top: 0;
 	margin-bottom: 5px;
 }
 
 .vertical-tab-header-group:first-child {
+	text-align: end;
 	border-bottom: var(--thick-border);
 }
 
@@ -3014,7 +3013,8 @@ body .app-container .workspace-leaf-resize-handle:hover {
 .vertical-tab-header-group:first-child .vertical-tab-header-group-items .vertical-tab-nav-item:nth-child(3),
 .vertical-tab-header-group:first-child .vertical-tab-header-group-items .vertical-tab-nav-item:nth-child(4),
 .vertical-tab-header-group:first-child .vertical-tab-header-group-items .vertical-tab-nav-item:last-child {
-	font-weight: 800;
+	font-weight: 900;
+	color: var(--text-normal);
 }
 
 .theme-dark .vertical-tab-header-group:first-child .vertical-tab-header-group-items .vertical-tab-nav-item:nth-child(3),
