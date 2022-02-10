@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 1.887
+Version 1.888
 https://github.com/chrisgrieser/shimmering-focus/
 MIT License
 ──────────────────────────────────────────────────── */
@@ -2904,8 +2904,9 @@ body .app-container .workspace-leaf-resize-handle:hover {
 }
 
 .vertical-tab-header-group:not(:last-child) {
-	/* via non-last-child as settings search adds a group */
 	text-align: end;
+
+	/* via non-last-child as settings search adds a group */
 	border-bottom: var(--thick-border);
 }
 
@@ -2931,12 +2932,12 @@ body .app-container .workspace-leaf-resize-handle:hover {
 .vertical-tab-nav-item.vertical-tab-nav-item.vertical-tab-nav-item.vertical-tab-nav-item:is(:active, .is-active) {
 	color: var(--text-accent);
 	background: var(--bg3);
-	padding-left: 6px;
+	padding-left: 7px;
 	margin-left: 0;
 	border: none;
 }
 
-.vertical-tab-nav-item:is(.is-active:hover, :hover) {
+.vertical-tab-nav-item.vertical-tab-nav-item.vertical-tab-nav-item.vertical-tab-nav-item:is(.is-active:hover, :hover) {
 	color: var(--alt-accent);
 	background: var(--bg3);
 }
@@ -9599,7 +9600,7 @@ body .cm-matched-string {
 /* << Settings Search
 ──────────────────────────────────────────────────── */
 
-.settings-search-input.settings-search-input {
+.settings-search-input.settings-search-input.settings-search-input.settings-search-input.settings-search-input.settings-search-input {
 	padding: 3px;
 }
 
@@ -9703,7 +9704,7 @@ community:
 - obsidian-footnote-indicator
 - cooklang-obsidian
 - obsidian-codeblock-labels
-- obsidian-settings-search
+- settings-search
 */
 
 /* ───────────────────────────────────────────────── */
