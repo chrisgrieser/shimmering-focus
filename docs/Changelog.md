@@ -4,6 +4,7 @@ nav_order: 110
 
 # Changelog
 
+- 2022-02-10	patch
 - 2022-02-10	compatibility with settings search added
 - 2022-02-10	refactored annotation tags
 - 2022-02-10	anno

@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 1.882
+Version 1.883
 https://github.com/chrisgrieser/shimmering-focus/
 MIT License
 ──────────────────────────────────────────────────── */
@@ -9653,7 +9653,7 @@ body .cm-matched-string {
 /* << Settings Search
 ──────────────────────────────────────────────────── */
 
-.settings-search-input {
+.settings-search-input.settings-search-input {
 	padding: 3px;
 }
 
