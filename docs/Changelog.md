@@ -4,6 +4,7 @@ nav_order: 110
 
 # Changelog
 
+- 2022-02-10	more ':is()' refactoring
 - 2022-02-10	set
 - 2022-02-10	compatibility with settings search added
 - 2022-02-10	refactored annotation tags

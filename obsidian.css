@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 1.886
+Version 1.887
 https://github.com/chrisgrieser/shimmering-focus/
 MIT License
 ──────────────────────────────────────────────────── */
@@ -2614,10 +2614,8 @@ body > .app-container .workspace-split.mod-horizontal > .workspace-tabs > .works
 	color: var(--alt-accent);
 }
 
-.nav-action-button:hover,
-.nav-action-button.is-active:hover,
-.workspace-tab-header.is-active:hover .workspace-tab-header-inner,
-.workspace-tab-header:hover .workspace-tab-header-inner,
+.nav-action-button:is(:hover, .is-active:hover),
+.workspace-tab-header:is(:hover, .is-active:hover) .workspace-tab-header-inner,
 .workspace-tab-header:hover {
 	background-color: var(--bg1);
 	cursor: pointer;
@@ -2632,8 +2630,7 @@ body:not(.show-sidebar-tabs) .workspace-tab-header-container {
 	transition: var(--medium-transition);
 }
 
-body:not(.show-sidebar-tabs) .workspace-tab-header-container:hover *,
-body:not(.show-sidebar-tabs) .workspace-tab-header-container:hover {
+body:not(.show-sidebar-tabs) .workspace-tab-header-container:is(:hover *, :hover) {
 	transition: var(--quick-transition);
 
 	/* slight delay to prevent accidental triggering when passing over */
@@ -6099,8 +6096,7 @@ body.is-mobile .markdown-preview-view blockquote {
 }
 
 /* for whatever reason, the button is sometimes first child or second child... */
-.is-mobile:not(.show-mobile-header) .view-action:nth-last-of-type(5),
-.is-mobile:not(.show-mobile-header) .view-action:nth-last-of-type(4) {
+.is-mobile:not(.show-mobile-header) .view-action:is(:nth-last-of-type(5), :nth-last-of-type(4)) {
 	background-color: var(--bg2);
 	box-shadow: var(--muted-button-inset-shadow), var(--tiny-shadow);
 
@@ -6129,8 +6125,7 @@ body.is-mobile .markdown-preview-view blockquote {
 	height: 2.4em;
 }
 
-.is-mobile.show-mobile-header .view-actions,
-.is-mobile.show-mobile-header .view-header-icon {
+.is-mobile.show-mobile-header :is(.view-actions, .view-header-icon) {
 	margin-top: -3px;
 }
 
@@ -6196,8 +6191,7 @@ body.is-mobile .markdown-preview-view blockquote {
 
 /* Top Level Folder Titles */
 .nav-folder.mod-root > .nav-folder-children > .nav-folder > .nav-folder-title,
-.nav-folder.mod-root > .nav-folder-children .nav-file-title,
-.nav-folder.mod-root > .nav-folder-children .nav-folder-title {
+.nav-folder.mod-root > .nav-folder-children :is(.nav-file-title, .nav-folder-title) {
 	padding-left: 4px;
 }
 
@@ -6346,21 +6340,15 @@ body:not(.no-file-explorer-icons) .nav-file-title[data-path*="presentation" i] .
 	content: "present_to_all";
 }
 
-body:not(.no-file-explorer-icons) .nav-file-title[data-path$="sh"] .nav-file-title-content::BEFORE,
-body:not(.no-file-explorer-icons) .nav-file-title[data-path$="ts"] .nav-file-title-content::BEFORE,
-body:not(.no-file-explorer-icons) .nav-file-title[data-path$="js"] .nav-file-title-content::BEFORE {
+body:not(.no-file-explorer-icons) .nav-file-title:is([data-path$="sh"], [data-path$="ts"], [data-path$="js"]) .nav-file-title-content::BEFORE {
 	content: "code";
 }
 
-body:not(.no-file-explorer-icons) .nav-file-title[data-path$="tiff"] .nav-file-title-content::BEFORE,
-body:not(.no-file-explorer-icons) .nav-file-title[data-path$="jpg"] .nav-file-title-content::BEFORE,
-body:not(.no-file-explorer-icons) .nav-file-title[data-path$="png"] .nav-file-title-content::BEFORE,
-body:not(.no-file-explorer-icons) .nav-file-title[data-path$="jpeg"] .nav-file-title-content::BEFORE {
+body:not(.no-file-explorer-icons) .nav-file-title:is([data-path$="tiff"], [data-path$="jpg"], [data-path$="jpeg"], [data-path$="png"]) .nav-file-title-content::BEFORE {
 	content: "image";
 }
 
-body:not(.no-file-explorer-icons) .nav-file-title[data-path$="doc"] .nav-file-title-content::BEFORE,
-body:not(.no-file-explorer-icons) .nav-file-title[data-path$="docx"] .nav-file-title-content::BEFORE {
+body:not(.no-file-explorer-icons) .nav-file-title:is([data-path$="doc"], [data-path$="docx"], [data-path$="odt"]) .nav-file-title-content::BEFORE {
 	color: hsl(201 93% 25%);
 }
 
@@ -6369,8 +6357,7 @@ body:not(.no-file-explorer-icons) .nav-file-title[data-path$="pdf"] .nav-file-ti
 	color: hsl(347 47% 37%);
 }
 
-body:not(.no-file-explorer-icons) .nav-file-title[data-path$="xlsx"] .nav-file-title-content::BEFORE,
-body:not(.no-file-explorer-icons) .nav-file-title[data-path$="csv"] .nav-file-title-content::BEFORE {
+body:not(.no-file-explorer-icons) .nav-file-title:is([data-path$="csv"], [data-path$="xls"], [data-path$="xlsx"]) .nav-file-title-content::BEFORE {
 	content: "table_chart";
 	color: hsl(120 100% 25%);
 }
@@ -6379,13 +6366,11 @@ body:not(.no-file-explorer-icons) .nav-file-title[data-path*="statisti" i] .nav-
 	content: "pie_chart_outline";
 }
 
-body:not(.no-file-explorer-icons) .nav-file-title[data-path*="todo" i] .nav-file-title-content::BEFORE,
-body:not(.no-file-explorer-icons) .nav-file-title[data-path*="to do" i] .nav-file-title-content::BEFORE {
+body:not(.no-file-explorer-icons) .nav-file-title:is([data-path*="todo" i], [data-path*="to do" i]) .nav-file-title-content::BEFORE {
 	content: "check_box";
 }
 
-body:not(.no-file-explorer-icons) .nav-file-title[data-path*="README" i] .nav-file-title-content::BEFORE,
-body:not(.no-file-explorer-icons) .nav-file-title[data-path*="metadata" i] .nav-file-title-content::BEFORE {
+body:not(.no-file-explorer-icons) .nav-file-title:is([data-path*="metadata" i], [data-path*="README" i]) .nav-file-title-content::BEFORE {
 	content: "info";
 }
 
@@ -6393,8 +6378,7 @@ body:not(.no-file-explorer-icons) .nav-file-title[data-path*="Screenshot" i] .na
 	content: "photo_camera";
 }
 
-body:not(.no-file-explorer-icons) .nav-file-title[data-path*="Character Count" i] .nav-file-title-content::BEFORE,
-body:not(.no-file-explorer-icons) .nav-file-title[data-path*="Word Count" i] .nav-file-title-content::BEFORE {
+body:not(.no-file-explorer-icons) .nav-file-title:is([data-path*="Character Count" i], [data-path*="Word Count" i]) .nav-file-title-content::BEFORE {
 	content: "flag";
 }
 
@@ -6427,14 +6411,10 @@ body:not(.no-file-explorer-icons) .nav-file-title[data-path*="kanban" i] .nav-fi
 	display: none;
 }
 
-.tree-item-inner:hover,
-.tree-item-self:hover .tree-item-inner-subtext,
-.tree-item-self:hover,
-.tree-item-self:hover .tree-item-icon svg,
-.tree-item-self:hover .tree-item-inner,
+:is(.tree-item-inner, .tree-item-self):hover,
+.tree-item-self:hover :is(.tree-item-inner-subtext, .tree-item-icon svg, .tree-item-inner),
 .tree-item.is-collapsed:hover,
-.tree-item.is-collapsed:hover .tree-item-inner,
-.tree-item.is-collapsed:hover .tree-item-icon svg {
+.tree-item.is-collapsed:hover :is(.tree-item-inner, .tree-item-icon svg) {
 	color: var(--alt-accent) !important;
 }
 
@@ -6558,8 +6538,7 @@ body.outline-remove-level-1:not(.no-alternating-rows) .outline .tree-item-childr
 	margin-bottom: 5em;
 }
 
-.markdown-source-view .backlink-pane > .tree-item-self,
-.markdown-preview-view .backlink-pane > .tree-item-self {
+:is(.markdown-source-view, .markdown-preview-view) .backlink-pane > .tree-item-self {
 	background-color: var(--bg2);
 	border-radius: var(--roundish);
 }
@@ -6674,26 +6653,14 @@ body .search-suggest-item.mod-group:first-child {
 	display: none;
 }
 
-.search-suggest-item:nth-child(2),
-.search-suggest-item:nth-child(3),
-.search-suggest-item:nth-child(4),
-.search-suggest-item:nth-child(5),
-.search-suggest-item:nth-child(6) {
+.search-suggest-item:not(:first-child):not(:nth-child(n+7)) {
 	font-family: var(--menu-font);
 	background-color: var(--bg3) !important;
 	border-bottom: var(--thin-border);
 }
 
-.search-suggest-item:nth-child(2) .search-suggest-name::AFTER,
-.search-suggest-item:nth-child(3) .search-suggest-name::AFTER,
-.search-suggest-item:nth-child(4) .search-suggest-name::AFTER,
-.search-suggest-item:nth-child(5) .search-suggest-name::AFTER,
-.search-suggest-item:nth-child(6) .search-suggest-name::AFTER,
-.search-suggest-item:nth-child(2) .search-suggest-name::BEFORE,
-.search-suggest-item:nth-child(3) .search-suggest-name::BEFORE,
-.search-suggest-item:nth-child(4) .search-suggest-name::BEFORE,
-.search-suggest-item:nth-child(5) .search-suggest-name::BEFORE,
-.search-suggest-item:nth-child(6) .search-suggest-name::BEFORE {
+.search-suggest-item:not(:first-child):not(:nth-child(n+7)) .search-suggest-name::AFTER,
+.search-suggest-item:not(:first-child):not(:nth-child(n+7)) .search-suggest-name::BEFORE {
 	content: "\"";
 }
 
@@ -6729,8 +6696,7 @@ body .search-suggest-item.mod-group:not(:first-child) {
 }
 
 /* fix title getting hover/selected styling */
-body .suggestion-item.search-suggest-item.mod-group.is-selected,
-body .suggestion-item.search-suggest-item.mod-group:hover {
+body .suggestion-item.search-suggest-item.mod-group:is(.is-selected, :hover) {
 	color: var(--text-normal);
 	background-color: var(--basic-border-color) !important;
 }
@@ -6921,8 +6887,7 @@ body .popover {
 	background-color: var(--bg3);
 }
 
-.sync-history-list-item:hover,
-.sync-history-list-item.is-active:hover {
+.sync-history-list-item:is(:hover, .is-active) {
 	color: var(--alt-accent);
 	background-color: var(--bg3);
 }
@@ -7039,34 +7004,26 @@ body:not(.show-graph-controls) .graph-controls.is-close:not(:hover) {
 	opacity: 0;
 }
 
-/* regular node */
-/* .graph-view.color-fill {} */
-
 /* unresolved, getting same color as unresolved links */
 .graph-view.color-fill-unresolved {
 	color: var(--unresolved-link-color);
 }
 
 /* hovered */
-.graph-view.color-fill-highlight,
-.graph-view.color-line-highlight {
+.graph-view:is(.color-fill-highlight, .color-line-highlight) {
 	color: var(--alt-accent);
 	opacity: 0.8;
 }
 
 /* edges */
-.graph-view.color-line,
-.graph-view.color-arrow {
+.graph-view:is(.color-line, .color-arrow) {
 	color: var(--extra-contrast);
 }
 
 /* ───────────────────────────────────────────────── */
 /* << Publish
 ──────────────────────────────────────────────────── */
-.publish-changes-info input[type="email"],
-.publish-changes-info input[type="password"],
-.publish-changes-info input[type="search"],
-.publish-changes-info input[type="text"] {
+.publish-changes-info input:is([type="email"], [type="password"], [type="search"], [type="text"]) {
 	width: 100%;
 }
 
@@ -7125,11 +7082,8 @@ div#core-search-assistant_card-view {
 /* ───────────────────────────────────────────────── */
 /* << Better Command Palette
 ──────────────────────────────────────────────────── */
+.prompt-results .recent-text,
 .better-command-palette-title {
-	display: none;
-}
-
-.prompt-results .recent-text {
 	display: none;
 }
 
@@ -8544,9 +8498,7 @@ button.MS-OpenSnippet:hover svg.ms-snippet path {
 }
 
 /* bottom half spacing */
-#all-container li,
-#all-container ul,
-#all-container ul::BEFORE {
+#all-container :is(li, ul, ul::BEFORE) {
 	border: none !important;
 }
 
