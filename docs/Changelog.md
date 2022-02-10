@@ -4,6 +4,7 @@ nav_order: 110
 
 # Changelog
 
+- 2022-02-10	patch
 - 2022-02-10	settings menu sidebar restyling
 - 2022-02-09	add Absolve from @mulfolk to the customization docs
 - 2022-02-09	fix pdf issues with max view and alignment
