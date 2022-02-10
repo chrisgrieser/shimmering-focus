@@ -16,18 +16,28 @@ fi
 
 # if issue-related, open that issue
 if [[ "$commitMsg" =~ "#" ]] ; then
-	issueNo=$(echo "$commitMsg" | egrep -o "#\d+" |cut -c 2-)
+	issueNo=$(echo "$commitMsg" | grep -Eo "#\d+" |cut -c 2-)
 	repoURL=$(git remote -v | grep git@github.com | grep fetch | head -n1 | cut -f2 | cut -d' ' -f1 | sed -e's/:/\//' -e 's/git@/https:\/\//' -e 's/\.git//' )
 	open "$repoURL"/issues/"$issueNo"
 fi
 
-# Lint
-cd "$(dirname "$0")"
+# -----------------------------
+
+# Lint & Minify
+cd "$(dirname "$0")" || return
 cd ..
+
 stylelint --fix "$csspath"
-cp "$csspath" ./obsidian.css
-markdownlint --fix *.md
+markdownlint --fix ./*.md
 markdownlint --fix docs/*.md
+
+# split off to prevent style settings from getting minified
+split -p "@settings" "$csspath" temp
+cleancss tempaa > minified.css
+cat minified.css tempab > obsidian.css
+rm minified.css tempaa tempab
+
+# -------------------
 
 # Copy .stylelintrc for documentation purposes
 cp ~/.stylelintrc.json ./scripts/
@@ -38,12 +48,12 @@ sed -E -i '' "s/badge.*-[[:digit:]]+-/badge\/downloads-$dl-/" README.md
 sed -E -i '' "s/badge.*-[[:digit:]]+-/badge\/downloads-$dl-/" docs/index.md
 
 # Update changelog
-echo "---\nnav_order: 110\n---\n\n# Changelog\n" > "$changelog_path"
-echo "- "$(date +"%Y-%m-%d")"	$commitMsg" >> "$changelog_path"
+printf "---\nnav_order: 110\n---\n\n# Changelog\n" > "$changelog_path"
+echo "- ""$(date +"%Y-%m-%d")""	$commitMsg" >> "$changelog_path"
 git log --pretty=format:"- %ad%x09%s" --date=short | grep -Ev "minor$" | grep -Ev "patch$" | grep -Ev "typos?$" | grep -v "refactoring" | grep -v "Add files via upload" | grep -Ev "\tDelete" | grep -Ev "\tUpdate.*\.md" | sed -E "s/\t\+ /\t/g" >> "$changelog_path"
 
 # Bump version number
-versionLine=$(egrep -wn "^Version" "$csspath" | cut -d: -f1 | head -n1)
+versionLine=$(grep -Ewn "^Version" "$csspath" | cut -d: -f1 | head -n1)
 currentVersion=$(sed -n "${versionLine}p" "$csspath" | cut -d. -f2)
 nextVersion=$(( $currentVersion + 1 ))
 sed -E -i '' "${versionLine}s/(.*\.)[[:digit:]]+/\1$nextVersion/" "$csspath"
