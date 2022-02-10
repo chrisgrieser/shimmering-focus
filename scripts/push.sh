@@ -32,15 +32,16 @@ markdownlint --fix ./*.md
 markdownlint --fix docs/*.md
 
 # split off to prevent style settings from getting minified
-split -p "@settings" "$csspath" temp
+split -p "@SPLITMARKER" "$csspath" temp
 cleancss tempaa > minified.css
 cat minified.css tempab > obsidian.css
 rm minified.css tempaa tempab
 
 # -------------------
 
-# Copy .stylelintrc for documentation purposes
-cp ~/.stylelintrc.json ./scripts/
+# Copy for documentation purposes
+cp ~/.stylelintrc.json ./
+cp "$csspath" ./source.css
 
 # Update Theme Download numbers in README.md
 dl=$(curl -s "https://releases.obsidian.md/stats/theme" | grep -oe '"Shimmering Focus","download":[[:digit:]]*' | cut -d: -f2)

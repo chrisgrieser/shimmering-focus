@@ -3,6 +3,7 @@ nav_order: 110
 ---
 
 # Changelog
+- 2022-02-10	minify to reduce file size
 - 2022-02-10	testrun minifying
 - 2022-02-10	set
 - 2022-02-10	compatibility with settings search added
