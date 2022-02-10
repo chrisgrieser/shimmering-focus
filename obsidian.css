@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 1.877
+Version 1.878
 https://github.com/chrisgrieser/shimmering-focus/
 MIT License
 ──────────────────────────────────────────────────── */
@@ -1211,7 +1211,7 @@ body.no-animations {
 }
 
 body:not(.no-grayed-out-inactive-pane) {
-	--inactive-pane-opacity: 70%;
+	--inactive-pane-opacity: 75%;
 }
 
 .no-grayed-out-inactive-pane {
@@ -10824,7 +10824,7 @@ settings:
 	 default: false
 	-
 	 id: no-grayed-out-inactive-pane
-	 title: 'Inactive Panes not grayed out'
+	 title: 'Do Not Dim Inactive Panes'
 	 type: class-toggle
 	 default: false
 	-
