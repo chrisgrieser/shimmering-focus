@@ -33,13 +33,13 @@ In accordance with the minimalistic philosophy of the theme, unnecessary UI elem
 
 ## Built-in Styling for Supercharged Links
 This theme includes built-in styling for the [Supercharged Links Plugin](https://github.com/mdelobelle/obsidian_supercharged_links). This means you can make use of the plugin's features without the need write your own CSS! (If you already have your own Supercharged Links setup, you can turn those of with the Style Settings Plugin.) For now the theme includes the following styling:
-- Links to _Kanban Boards_ get `🎆` prepended
+- Links to *Kanban Boards* get `🎆` prepended
 - Links to notes with the tag `#seedling` get `🌱` prepended
 - Notes with `#evergreen` get `🌲` prepended
 - Notes with `#moc` get `🗺` prepended
 - Notes with `#person` get `👤` prepended
 - Notes with `#checklist` get `☑️` prepended
-- Links to _Literature Notes_ get a tooltip with the content of the `title` yaml key when hovering and get `📖` prepended. (Actually, this applies to any note with a `title` yaml frontmatter key.)
+- Links to *Literature Notes* get a tooltip with the content of the `title` yaml key when hovering and get `📖` prepended. (Actually, this applies to any note with a `title` yaml frontmatter key.)
 
 ![Demo tooltips](https://publish-01.obsidian.md/access/e25082da1bfe16d54e36618cd5bfee68/00%20-%20Contribute%20to%20the%20Obsidian%20Hub/02%20Attachments/Tooltips-for-Literature-Notes-with-Supercharged-Links.gif)
 
