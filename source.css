@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 1.895
+Version 1.896
 https://github.com/chrisgrieser/shimmering-focus/
 MIT License
 ──────────────────────────────────────────────────── */
@@ -71,7 +71,7 @@ the create-ToC.sh file
 		- Login Menu
 		- Community plugin list
 		- Core plugin
- 		- Hotkey search
+		- Hotkey search
 	- Plugin Browser
 		- Plugin Search Results (left side)
 		- Plugin Info / Readme (right side)
@@ -101,10 +101,10 @@ the create-ToC.sh file
 	- PDFs
 	- Spellcheck
 	- Max View
- 		- Line Length & Tables
- 		- Images
- 		- PDFs
- 		- Mermaid
+		- Line Length & Tables
+		- Images
+		- PDFs
+		- Mermaid
 - Markup
 	- Headings
 	- Blockquotes
@@ -118,22 +118,22 @@ the create-ToC.sh file
 	- Bullet List
 	- Bullet Point Relationship Lines
 	- Links
- 		- Unresolved links
- 		- fold external URLs (CM6 Source Mode)
+		- Unresolved links
+		- fold external URLs (CM6 Source Mode)
 	- Tags
 		- Annotation Tags
 	- Comments & HTML Tags
 	- Tasks
 	- Checkboxes
 	- Highlights & Selection
- 		- Highlights
- 		- Selection (Selected Text)
+		- Highlights
+		- Selection (Selected Text)
 	- Multi-Color Highlighting
 	- Pseudo-Spoiler-Tag
 	- Strikethroughs
 	- Pandoc Citations
 	- Footnotes
- 		- Footnote Indicator in Gutter
+		- Footnote Indicator in Gutter
 	- Horizontal line (hr)
 - CSS Classes
 - Mobile
@@ -145,11 +145,11 @@ the create-ToC.sh file
 		- Relationship Lines
 		- Folder Icons & Note Icons
 	- Panes
- 		- Core Panes in general
+		- Core Panes in general
 		- Outline
 		- Backlinks & Outgoing
 		- Search Pane
- 		- Search suggestion container
+		- Search suggestion container
 		- Tag Pane
 		- Starred
 	- Popover (Page Preview)
@@ -165,13 +165,13 @@ the create-ToC.sh file
 	- Calendar
 	- Templater
 	- Kanban
- 		- Board
- 		- Font
- 		- Lanes
+		- Board
+		- Font
+		- Lanes
 	- Longform
- 		- Longform Sidebar
- 		- Longform Scene List
- 		- Longform Icons
+		- Longform Sidebar
+		- Longform Scene List
+		- Longform Icons
 		- Longform Editor
 		- Writing cssclass
 	- Ozan's Image in Editor
@@ -7007,6 +7007,46 @@ body:not(.show-graph-controls) .graph-controls.is-close:not(:hover) {
 /* ───────────────────────────────────────────────── */
 /* << Core Search Assistant
 ──────────────────────────────────────────────────── */
+
+body .SC-tab-header {
+	background: none;
+	border-bottom: var(--thick-border);
+}
+
+.SC-tab-header-button.SC-tab-header-button.SC-tab-header-button.SC-tab-header-button.SC-tab-header-button.SC-tab-header-button {
+	color: var(--extra-contrast);
+	background-color: var(--bg2) !important; /* important needed */
+	box-shadow: none;
+
+	padding: 2px 4px;
+	margin-right: 10px;
+	margin-bottom: -1px;
+	margin-left: 0;
+
+	border: var(--thin-border);
+	border-radius: var(--roundish) var(--roundish) 0 0;
+}
+
+/* Create an active/current tablink class */
+.SC-tab-header-button.SC-tab-active,
+.SC-tab-header-button:hover {
+	background-color: var(--background-modifier-border) !important;
+}
+
+body .SC-tab-content {
+	padding-right: 0;
+	padding-left: 0;
+}
+
+.SC-tab-content + p:last-child {
+	padding-top: 15px;
+	margin-top: 40px;
+	border-top: var(--muted-border);
+}
+
+/* ───────────────────────────────────────────────── */
+/* << Core Search Assistant
+──────────────────────────────────────────────────── */
 .core-search-assistant_search-mode-outline {
 	/* needs important */
 	outline-color: var(--search-match-color) !important;
@@ -9691,6 +9731,7 @@ community:
 - cooklang-obsidian
 - obsidian-codeblock-labels
 - settings-search
+- obsidian-shellcommands
 */
 
 /* ───────────────────────────────────────────────── */
