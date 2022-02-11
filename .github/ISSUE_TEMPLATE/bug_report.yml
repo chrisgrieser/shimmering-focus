@@ -14,7 +14,7 @@ body:
     id: screenshot
     attributes:
       label: Relevant Screenshot
-      description: If applicable, add screenshots or a screen recording to help explain your problem.
+      description: Add screenshots or a screen recording to help explain your problem.
     validations:
       required: true
   - type: textarea
@@ -27,6 +27,8 @@ body:
         1. Go to '...'
         2. Click on '...'
         3. Scroll down to '...'
+    validations:
+      required: true
   - type: input
     id: obsi-version
     attributes:
