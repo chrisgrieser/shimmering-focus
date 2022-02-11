@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 1.896
+Version 1.897
 https://github.com/chrisgrieser/shimmering-focus/
 MIT License
 ──────────────────────────────────────────────────── */
@@ -4933,9 +4933,6 @@ body:not(.blockquotes-left-aligned) .app-container .HyperMD-quote {
 /* ───────────────────────────────────────────────── */
 /* << Tables
 ──────────────────────────────────────────────────── */
-/* add some more table styling, e.g. from
-https://forum.obsidian.md/t/custom-css-for-tables-5-new-styles-ready-to-use-in-your-notes/17084 */
-
 /* see also section "Max View" */
 
 .markdown-preview-view table:not(.dataview) {
@@ -4961,6 +4958,7 @@ tr:last-child td:last-child { border-bottom-right-radius: var(--table-roundness)
 
 /* draw only inner borders */
 body > .app-container table > thead > tr > th {
+	font-size: 1em;
 	border-top: none;
 	border-right: none;
 	border-bottom: var(--table-border);
@@ -8914,10 +8912,6 @@ pre button.copy:hover::BEFORE {
 /* << Dataview
 ──────────────────────────────────────────────────── */
 /* Styling from the "Tables" Section mostly applies */
-
-body .table-view-table > thead > tr > th {
-	font-size: 1em;
-}
 
 /* less indention to save space */
 :is(.block-language-dataview, .block-language-dataviewjs) > div > ul {
