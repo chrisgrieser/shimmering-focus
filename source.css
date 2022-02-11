@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 1.897
+Version 1.898
 https://github.com/chrisgrieser/shimmering-focus/
 MIT License
 ──────────────────────────────────────────────────── */
@@ -7003,7 +7003,7 @@ body:not(.show-graph-controls) .graph-controls.is-close:not(:hover) {
 ──────────────────────────────────────────────────── */
 
 /* ───────────────────────────────────────────────── */
-/* << Core Search Assistant
+/* << Shell Commands
 ──────────────────────────────────────────────────── */
 
 body .SC-tab-header {
@@ -7023,12 +7023,19 @@ body .SC-tab-header {
 
 	border: var(--thin-border);
 	border-radius: var(--roundish) var(--roundish) 0 0;
+
+	transition: none;
 }
 
 /* Create an active/current tablink class */
-.SC-tab-header-button.SC-tab-active,
-.SC-tab-header-button:hover {
-	background-color: var(--background-modifier-border) !important;
+.SC-tab-header-button.SC-tab-header-button.SC-tab-header-button.SC-tab-header-button.SC-tab-header-button.SC-tab-header-button.SC-tab-active {
+	color: var(--text-normal);
+	background-color: var(--bg3) !important; /* important needed */
+}
+
+.SC-tab-header-button.SC-tab-header-button.SC-tab-header-button.SC-tab-header-button.SC-tab-header-button.SC-tab-header-button:hover {
+	color: var(--alt-accent);
+	border-color: var(--basic-border-color);
 }
 
 body .SC-tab-content {
