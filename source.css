@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 1.893
+Version 1.894
 https://github.com/chrisgrieser/shimmering-focus/
 MIT License
 ──────────────────────────────────────────────────── */
@@ -1229,13 +1229,8 @@ body:not(.no-grayed-out-inactive-pane) {
 }
 
 /* iA Writer */
-.theme-light.ia-writer-cursor {
-	--cursor-look: hsl(196 100% 48%);
-}
-
-.theme-dark.ia-writer-cursor {
-	--cursor-look: hsl(196 100% 56%);
-}
+.theme-light.ia-writer-cursor { --cursor-look: hsl(196 100% 48%); }
+.theme-dark.ia-writer-cursor { --cursor-look: hsl(196 100% 56%); }
 
 /* Dark Eclipse */
 .theme-light.dark-eclipse-cursor {
@@ -1280,14 +1275,12 @@ body:not(.no-grayed-out-inactive-pane) {
 	}
 }
 
-.phase-blink-cursor .cm-cursorLayer .cm-cursor,
-.phase-blink-cursor .CodeMirror-cursor {
+.phase-blink-cursor :is(.cm-cursorLayer .cm-cursor, .CodeMirror-cursor) {
 	animation-duration: 2200ms;
 	animation-name: phase-blink;
 }
 
-.breathing-cursor .cm-cursorLayer .cm-cursor,
-.breathing-cursor .CodeMirror-cursor {
+.breathing-cursor :is(.cm-cursorLayer .cm-cursor, .CodeMirror-cursor) {
 	width: 3.4px;
 	animation-duration: 2200ms;
 	animation-name: breathing-blink;
@@ -1313,8 +1306,7 @@ body:not(.no-grayed-out-inactive-pane) {
 }
 
 /* block cursor */
-.block-cursor .cm-cursor.cm-cursor.cm-cursor,
-.block-cursor .CodeMirror-cursor.CodeMirror-cursor {
+.block-cursor.block-cursor :is(.cm-cursorLayer .cm-cursor, .CodeMirror-cursor) {
 	width: 0.6em;
 	opacity: 0.5;
 }
@@ -5485,8 +5477,8 @@ a.tag:hover {
 ──────────────────────────────────────────────────── */
 /* stylelint-disable max-line-length, no-duplicate-selectors */
 
-.theme-light { --annotation-tag-font-color: hsl(0 0% 13%) }
-.theme-dark { --annotation-tag-font-color: hsl(0 0% 100%) }
+.theme-light { --annotation-tag-font-color: hsl(0 0% 13%); }
+.theme-dark { --annotation-tag-font-color: hsl(0 0% 100%); }
 
 /* all tags */
 body:not(.annotation-tags-off) .tag:is([href="#goal"], [href="#question"], [href="#gap"], [href="#main"], [href="#disagree"], [href="#summary"], [href="#agree"], [href="#example"], [href="#definition"], [href="#method"], [href="#data"], [href="#important"], [href="#quote"], [href="#todo"], [href="#critique"], [href="#sidenote"], [href="#litreview"]),
@@ -9585,8 +9577,6 @@ body .cm-matched-string {
 
 body .cm-active-visual-line {
 	background-color: var(--active-line-bg);
-	z-index: 5;
-	margin-left: -10px;
 }
 
 /* disable standard active line highlighting */
