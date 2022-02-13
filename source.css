@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 1.899
+Version 1.900
 https://github.com/chrisgrieser/shimmering-focus/
 MIT License
 ──────────────────────────────────────────────────── */
@@ -7023,6 +7023,7 @@ body .SC-tab-header {
 	margin-left: 0;
 
 	border: var(--thin-border);
+	border-bottom: none;
 	border-radius: var(--roundish) var(--roundish) 0 0;
 
 	transition: none;
