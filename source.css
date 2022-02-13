@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 1.900
+Version 1.901
 https://github.com/chrisgrieser/shimmering-focus/
 MIT License
 ──────────────────────────────────────────────────── */
@@ -11,6 +11,8 @@ MIT License
 /* all sections begin with "<", to navigate to the
 respective section. This ToC is auto-generated via
 the create-ToC.sh file
+
+@start-of-ToC
 - Colors
 	- Base Colors
 	- Color Schemes
@@ -30,17 +32,17 @@ the create-ToC.sh file
 	- Base Icons
 	- Plugin Icons
 - Global Settings
-	- GLobal Filter
+	- Global Filter
 	- Angular or Round Shapes
 	- Animations
 - Cursor
 - UI Elements
 	- Title Bar
-	- Settings Button
 	- Ribbons
+	- Settings Button
 	- Tooltips
 	- Notices (Notifications)
-	- Header Bar
+	- Header Bar (Desktop)
 	- Status Bar
 	- Scrollbar
 - Vault Launch Progress Bar
@@ -56,13 +58,13 @@ the create-ToC.sh file
 	- Context Menus
 	- Close Buttons
 - Prompts
-	- Command Palette
 	- QuickSwitcher
+		- Command Palette
 	- Editor Suggestions
 - Sidebar
 	- Files in the Sidebar
 	- Tab Headers
-	- Hidden sidebars tabs
+		- Hidden Tab Headers
 	- Resize Handles
 - Modals & Settings
 	- Modals in general
@@ -70,7 +72,7 @@ the create-ToC.sh file
 	- Settings Menu
 		- Login Menu
 		- Community plugin list
-		- Core plugin
+		- Core plugins
 		- Hotkey search
 	- Plugin Browser
 		- Plugin Search Results (left side)
@@ -138,7 +140,7 @@ the create-ToC.sh file
 - CSS Classes
 - Mobile
 	- Typography
-	- Header
+	- Header (Mobile)
 - Core Plugins
 	- Editor Status (CM6)
 	- File Explorer
@@ -155,7 +157,11 @@ the create-ToC.sh file
 	- Popover (Page Preview)
 	- File Recovery
 	- Graph View
+	- Publish
 - Community Plugins
+	- Shell Commands
+	- Core Search Assistant
+	- Better Command Palette
 	- Supercharged Links
 	- Emoji Toolbar
 	- Discord Rich Presence
@@ -172,6 +178,7 @@ the create-ToC.sh file
 		- Longform Sidebar
 		- Longform Scene List
 		- Longform Icons
+		- Longform Compile
 		- Longform Editor
 		- Writing cssclass
 	- Ozan's Image in Editor
@@ -198,10 +205,15 @@ the create-ToC.sh file
 	- Advanced Tables
 	- Dynamic Highlight
 	- Show Current File Path
+	- Active Visual Line (Plugin)
+	- Settings Search
+	- CookLang Plugin
+	- Code Block Labels
 - Compatibility Info for the Obsidian Hub
 - Style Setting Options
 
- */
+@end-of-ToC
+*/
 /* ───────────────────────────────────────────────── */
 /* < Colors
 ──────────────────────────────────────────────────── */

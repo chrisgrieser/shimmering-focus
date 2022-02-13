@@ -3,7 +3,7 @@ nav_order: 110
 ---
 
 # Changelog
-- 2022-02-13	patch
+- 2022-02-13	updated toc
 - 2022-02-11	compatibility for the Shell Commands Plugin
 - 2022-02-10	removed focused line highlight, since there is now the Active Visual Line Plugin
 - 2022-02-10	minify to reduce file size
