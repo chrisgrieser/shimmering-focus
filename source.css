@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 1.902
+Version 1.903
 https://github.com/chrisgrieser/shimmering-focus/
 MIT License
 ──────────────────────────────────────────────────── */
@@ -3394,7 +3394,7 @@ body .community-plugin-info .community-plugin-downloads-text {
 	margin-bottom: -20px;
 }
 
-/* Repository Button */
+/* <<< Repository Button */
 .community-plugin-info .community-plugin-author + .community-plugin-author {
 	font-size: 0;
 	text-align: end;
@@ -3431,7 +3431,7 @@ body .community-plugin-info .community-plugin-downloads-text {
 	border-color: var(--interactive-hover-border-color);
 }
 
-/* copy URL button  */
+/* <<< Copy URL button  */
 .modal.modal.mod-community-plugin .community-plugin-info button:last-child {
 	font-size: 0;
 
@@ -3454,8 +3454,12 @@ body .community-plugin-info .community-plugin-downloads-text {
 	color: var(--extra-contrast);
 
 	position: relative;
-	top: 6px;
+	top: 4px;
 	left: 5px;
+}
+
+.angular-shapes .modal.modal.mod-community-plugin .community-plugin-info button:last-child::BEFORE {
+	top: 6px;
 }
 
 .modal.mod-community-plugin .community-plugin-info button:last-child:hover::BEFORE {
