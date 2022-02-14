@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 1.901
+Version 1.902
 https://github.com/chrisgrieser/shimmering-focus/
 MIT License
 ──────────────────────────────────────────────────── */
@@ -3571,7 +3571,7 @@ body .community-plugin-info .community-plugin-downloads-text {
 	transition: var(--medium-transition);
 }
 
-/* Infobox */
+/* <<< Infobox */
 .community-theme.is-selected .community-theme-info::AFTER {
 	content: "ℹ️ Most UI elements become visible when hovered. \A\A🎨 Hidden UI elements can be re-enabled with Style Settings Plugin.";
 
@@ -9090,7 +9090,7 @@ body .dataview.inline-field-key {
 .modal .setting-item-heading[data-id="shimmering-focus"]::BEFORE,
 .workspace-leaf-content[data-type="style-settings"] > .view-content > .setting-item:first-child::BEFORE {
 	display: block;
-	content: "Theme Documentation \A chrisgrieser.github.io/shimmering-focus";
+	content: "Theme Documentation:   chrisgrieser.github.io/shimmering-focus\A\AInstall the Settings Search Plugin to find settings more quickly.";
 
 	font-family: var(--menu-font);
 	font-size: 0.9rem;
@@ -9102,7 +9102,7 @@ body .dataview.inline-field-key {
 	box-shadow: var(--small-inset-shadow);
 
 	padding: 3px 10px 5px;
-	margin: -50px 30vw 30px 0;
+	margin: -50px 16vw 30px 0;
 
 	border: var(--basic-border);
 	border-radius: var(--roundish);
