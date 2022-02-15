@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 1.903
+Version 1.904
 https://github.com/chrisgrieser/shimmering-focus/
 MIT License
 ──────────────────────────────────────────────────── */
@@ -4180,10 +4180,10 @@ body:not(.permanently-show-collapse-indicators) .cm-line:not(:hover):not(.cm-act
 	color: var(--alt-accent);
 }
 
-/* CM6/CM5: the "..." when content is folded */
-body:not(.show-fold-marker) .cm-foldPlaceholder,
-body:not(.show-fold-marker) .CodeMirror-foldmarker {
-	display: none;
+/* the "..." when content is folded */
+.cm-foldPlaceholder,
+.CodeMirror-foldmarker {
+	/* placeholder */
 }
 
 /* CM5 */
@@ -9839,12 +9839,6 @@ settings:
 	 id: permanently-show-collapse-indicators
 	 title: Permanently show the Collapse Arrows
 	 description: When false, collapse arrows only become visible when hovered or in the active line.
-	 type: class-toggle
-	 default: false
-	-
-	 id: show-fold-marker
-	 title: Re-enable the Fold Markers
-	 description: Fold markers are the ellipses ("...") next to a folded/collapsed item.
 	 type: class-toggle
 	 default: false
 	-
