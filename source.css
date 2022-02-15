@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 1.904
+Version 1.905
 https://github.com/chrisgrieser/shimmering-focus/
 MIT License
 ──────────────────────────────────────────────────── */
@@ -5549,7 +5549,7 @@ body:not(.annotation-tags-off) :is(.cm-hashtag-begin.cm-tag-litreview, .tag[href
 }
 
 body:not(.annotation-tags-off) :is(.cm-hashtag-begin.cm-tag-sidenote, .tag[href="#sidenote"])::BEFORE {
-	content: "↪️ ";
+	content: "⬅️ ";
 }
 
 body:not(.annotation-tags-off) :is(.cm-tag-question, .tag[href="#question"]),
@@ -5591,7 +5591,7 @@ body:not(.annotation-tags-off) :is(.cm-hashtag-begin.cm-tag-summary, .tag[href="
 }
 
 body:not(.annotation-tags-off) :is(.cm-hashtag-begin.cm-tag-important, .tag[href="#important"])::BEFORE {
-	content: "❕ ";
+	content: "📌 ";
 }
 
 body:not(.annotation-tags-off) :is(.cm-tag-data, .tag[href="#data"]),
