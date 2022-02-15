@@ -3,7 +3,7 @@ nav_order: 110
 ---
 
 # Changelog
-- 2022-02-15	patch
+- 2022-02-15	new cursor blink style: inversion
 - 2022-02-15	make fold placeholders visible by default
 - 2022-02-13	updated toc
 - 2022-02-11	compatibility for the Shell Commands Plugin

@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 1.905
+Version 1.906
 https://github.com/chrisgrieser/shimmering-focus/
 MIT License
 ──────────────────────────────────────────────────── */
@@ -1264,7 +1264,7 @@ body:not(.no-grayed-out-inactive-pane) {
 	--cursor-look: linear-gradient(to right, hsl(22 100% 50%) 50%, hsl(216 100% 65%) 50%);
 }
 
-/* Blink Style */
+/* Blink Styles */
 @keyframes phase-blink {
 	15% {
 		background-color: var(--cursor-look);
@@ -1287,6 +1287,12 @@ body:not(.no-grayed-out-inactive-pane) {
 	}
 }
 
+@keyframes inversion-blink {
+	50% {
+		filter: invert(1);
+	}
+}
+
 .phase-blink-cursor :is(.cm-cursorLayer .cm-cursor, .CodeMirror-cursor) {
 	animation-duration: 2200ms;
 	animation-name: phase-blink;
@@ -1298,7 +1304,12 @@ body:not(.no-grayed-out-inactive-pane) {
 	animation-name: breathing-blink;
 }
 
-:is(.no-blink, .breathing-cursor, .phase-blink-cursor) .cm-cursorLayer {
+.inversion-blink-cursor :is(.cm-cursorLayer .cm-cursor, .CodeMirror-cursor) {
+	animation-duration: 1800ms;
+	animation-name: inversion-blink;
+}
+
+:is(.no-blink, .breathing-cursor, .phase-blink-cursor, .inversion-blink-cursor) .cm-cursorLayer {
 	/* important needed */
 	animation-name: none !important;
 }
@@ -9983,6 +9994,9 @@ settings:
 		-
 			label: Breathing
 			value: breathing-cursor
+		-
+			label: Inversion Blink
+			value: inversion-blink-cursor
 		-
 			label: No Blink
 			value: no-blink-cursor
