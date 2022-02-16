@@ -3,6 +3,7 @@ nav_order: 110
 ---
 
 # Changelog
+- 2022-02-16	fix some alignment issues of list collapse indicators
 - 2022-02-16	fix collapse indicator padding
 - 2022-02-16	ol and ul better aligned
 - 2022-02-15	new cursor blink style: inversion

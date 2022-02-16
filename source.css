@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 1.908
+Version 1.909
 https://github.com/chrisgrieser/shimmering-focus/
 MIT License
 ──────────────────────────────────────────────────── */
@@ -4182,6 +4182,10 @@ body:not(.permanently-show-collapse-indicators) .cm-line:not(:hover):not(.cm-act
 	width: 0.65rem;
 }
 
+.list-collapse-indicator.list-collapse-indicator.list-collapse-indicator {
+	margin-left: -54px;
+}
+
 /* line numbers moved to allow for more space for collapse indicators */
 .cm-gutter.cm-lineNumbers {
 	margin-right: 4px;
@@ -5334,9 +5338,12 @@ pre[class~="language-haskell" i]::AFTER { content: "Haskell"; }
 
 /* less indention to save space */
 .markdown-preview-view > div > div > div > ul.dataview.list-view-ul,
-.markdown-preview-view > div > div > ul,
-.markdown-preview-view ol {
+.markdown-preview-view > div > div > ul {
 	padding-left: 1rem;
+}
+
+.markdown-preview-view ol {
+	padding-left: 2rem;
 }
 
 .HyperMD-list-line-1 {
