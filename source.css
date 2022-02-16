@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 1.907
+Version 1.908
 https://github.com/chrisgrieser/shimmering-focus/
 MIT License
 ──────────────────────────────────────────────────── */
@@ -4162,17 +4162,18 @@ and Footnotes */
 /* ───────────────────────────────────────────────── */
 /* <<< Collapse Indicators
 ──────────────────────────────────────────────────── */
-/* fixes some fonts like iA Writer making the non-breaking space too big */
-/* can be removed with from 0.13.20 on */
-.mod-cm6 .collapse-indicator {
-	font-family: var(--original-font);
-	font-size: 2rem;
-}
-
 /* hide collapse indicators until hovered/active line */
 body:not(.permanently-show-collapse-indicators) :is(li, h1, h2, h3, h4, h5, h6):not(:hover) div:not(.is-collapsed) > .collapse-indicator,
 body:not(.permanently-show-collapse-indicators) .cm-line:not(:hover):not(.cm-active) div:not(.is-collapsed) > .collapse-indicator {
 	opacity: 0;
+}
+
+.HyperMD-header .collapse-indicator.collapse-icon.collapse-icon {
+	padding-right: 10px;
+}
+
+.HyperMD-list-line .collapse-indicator.collapse-icon.collapse-icon {
+	padding-right: 8px;
 }
 
 .mod-cm6 + .markdown-reading-view .collapse-indicator svg,
@@ -4192,20 +4193,15 @@ body:not(.permanently-show-collapse-indicators) .cm-line:not(:hover):not(.cm-act
 }
 
 /* the "..." when content is folded */
-.cm-foldPlaceholder,
-.CodeMirror-foldmarker {
-	/* placeholder */
-}
+/* .cm-foldPlaceholder {} */
 
 /* CM5 */
-.CodeMirror-foldgutter-folded.CodeMirror-guttermarker-subtle:hover,
-.CodeMirror-foldgutter-open.CodeMirror-guttermarker-subtle:hover,
+:is(.CodeMirror-foldgutter-folded, .CodeMirror-foldgutter-open).CodeMirror-guttermarker-subtle:hover,
 .CodeMirror-foldmarker:hover {
 	color: var(--alt-accent-lighter);
 }
 
-.CodeMirror-foldgutter-folded.CodeMirror-guttermarker-subtle::AFTER,
-.CodeMirror-foldgutter-open.CodeMirror-guttermarker-subtle::AFTER {
+:is(.CodeMirror-foldgutter-folded, .CodeMirror-foldgutter-open).CodeMirror-guttermarker-subtle::AFTER {
 	font-size: 1.5em;
 	line-height: 1.2em;
 }
@@ -4222,7 +4218,6 @@ body:not(.permanently-show-collapse-indicators) .cm-line:not(:hover):not(.cm-act
 	background-color: transparent !important;
 }
 
-/* CM5: collapse indicator positioning */
 .markdown-source-view.mod-cm5 .collapse-indicator {
 	position: relative;
 	left: -10px;
