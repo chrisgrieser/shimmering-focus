@@ -24,12 +24,14 @@ fi
 # -----------------------------
 
 # Lint & Minify
-cd "$(dirname "$0")" || return
+cd "$(dirname "$0")" || exit
 cd ..
 
 stylelint --fix "$csspath"
 markdownlint --fix ./*.md
 markdownlint --fix docs/*.md
+markdown-link-check ./README.md
+find ./docs -name \*.md -print0 | xargs -0 -n1 markdown-link-check
 
 # split off to prevent style settings from getting minified
 split -p "@SPLITMARKER" "$csspath" temp
@@ -63,4 +65,4 @@ sed -E -i '' "${versionLine}s/(.*\.)[[:digit:]]+/\1$nextVersion/" "$csspath"
 git add -A
 git commit -m "$commitMsg"
 git pull
-echo -n | git push  #pass for notification
+echo -n | git push  # pass for notification
