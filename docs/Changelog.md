@@ -3,6 +3,7 @@ nav_order: 110
 ---
 
 # Changelog
+- 2022-02-18	fix kanban header icon alignment
 - 2022-02-18	update readme
 - 2022-02-18	update for 0.13.25 (no global img)
 - 2022-02-18	finalize new build script
