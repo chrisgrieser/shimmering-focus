@@ -11,7 +11,7 @@ In my day job, I am a sociologist studying the social mechanisms underlying the 
 - [Twitter](https://twitter.com/pseudo_meta)
 - Discord: `@pseudometa#9546`
 - [ResearchGate](https://www.researchgate.net/profile/Christopher-Grieser)
-- [LinkedIn](https://www.linkedin.com/in/christopher-grieser-ba693b17a/)
+- [LinkedIn](https://www.linkedin.com/in/christopher-grieser-ba693b17a/) <!-- markdown-link-check-disable-line -->
 
 ## Other themes
 I also designed some [themes for Alfred](https://github.com/chrisgrieser/alfred-themes) you can check out!
