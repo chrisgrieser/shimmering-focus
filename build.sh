@@ -1,8 +1,8 @@
 #!/bin/zsh
 
 # WHAT THIS SCRIPT DOES
-# - takes commit message as argument
-#     - inserts "patch", if executed without argument)
+# - takes argument as commit message
+#     - uses "patch" as commit message if executed without argument
 #     - if the commit message contained a reference to an GitHub issue, open that GitHub issue
 # - adds the commit message to the changelog
 # - bumps version number in css file
@@ -11,7 +11,7 @@
 # - copies css from the vault (`csspath`) into this repository
 # - updates download counts in badges of the .md files
 # - Markdown is linted & checked for dead links
-# - adds a non-minifed css fiel and the global stylelint.json for documentation purposes
+# - adds a non-minified css file and the global stylelint.json for documentation purposes
 # - add, commit, pull, push to the remote repo
 
 # REQUIREMENTS
