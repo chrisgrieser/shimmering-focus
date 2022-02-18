@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 1.911
+Version 1.912
 https://github.com/chrisgrieser/shimmering-focus/
 MIT License
 ──────────────────────────────────────────────────── */
@@ -7563,8 +7563,7 @@ body:not(.show-header-bar) .workspace-leaf-content[data-type="kanban"] .view-hea
 	background-color: var(--kanban-background) !important;
 }
 
-.workspace-leaf-content[data-type="kanban"] .view-header.view-header:focus-within,
-.workspace-leaf-content[data-type="kanban"] .view-header.view-header:hover {
+.workspace-leaf-content[data-type="kanban"] .view-header.view-header:is(:focus-within, :hover) {
 	background: var(--bg2) !important;
 }
 
@@ -7574,8 +7573,7 @@ body:not(.show-header-bar):not(.plugin-sliding-panes-rotate-header) .workspace-l
 	transition-delay: var(--transition-delay-passing-over-protection);
 }
 
-.workspace-leaf-content[data-type="kanban"] .view-header:focus-within ~ .view-content .kanban-plugin__board > div,
-.workspace-leaf-content[data-type="kanban"] .view-header:hover ~ .view-content .kanban-plugin__board > div {
+.workspace-leaf-content[data-type="kanban"] .view-header:is(:focus-within, :hover) ~ .view-content .kanban-plugin__board > div {
 	padding-top: 8px;
 }
 
@@ -7610,10 +7608,11 @@ body :is(.kanban-plugin__drag-container,.kanban-plugin) p {
 	margin: 0;
 }
 
-:is(.kanban-plugin__drag-container,.kanban-plugin) :is(h1, h2, h3, h4, h5, h6) {
+body .app-container :is(.kanban-plugin__drag-container,.kanban-plugin) :is(h1, h2, h3, h4, h5, h6) {
 	font-family: var(--default-font);
 	letter-spacing: 0.4px;
 	color: var(--text-normal);
+	box-shadow: none;
 	margin-bottom: 3px;
 }
 
