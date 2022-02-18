@@ -59,12 +59,12 @@ markdown-link-check -q ./README.md
 # find ./docs -name \*.md -print0 | xargs -0 -n1 markdown-link-check -q
 
 # Update ToC
-# printf "/* @TOC-SPLIT-MARKER */\n/*\n" > temp_toc.css
-# grep -E "<+ " "$csspath" | sed -e "s/ \*\///" -e "s/\/\* //" -e "s/<<< /\t\t- /" -e "s/<< /\t- /" -e "s/< /- /" | tail -n +2 >> temp_toc.css
-# split -p "@TOC-SPLIT-MARKER" "$csspath" temp
-# cat tempaa temp_toc.css tempac > result.css
-# sleep 1
-# rm temp_toc.css tempaa tempab tempac
+printf "/* @TOC-SPLIT-MARKER */\n/*\n" > temp_toc.css
+grep -E "<+ " "$csspath" | sed -e "s/ \*\///" -e "s/\/\* //" -e "s/<<< /\t\t- /" -e "s/<< /\t- /" -e "s/< /- /" | tail -n +2 >> temp_toc.css
+split -p "@TOC-SPLIT-MARKER" "$csspath" temp
+cat tempaa temp_toc.css tempac > result.css
+sleep 1
+rm temp_toc.css tempaa tempab tempac
 
 # Bump version number
 versionLine=$(grep -Ewn "^Version" "$csspath" | cut -d: -f1 | head -n1)
