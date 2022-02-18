@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 1.915
+Version 1.916
 https://github.com/chrisgrieser/shimmering-focus/
 MIT License
 ──────────────────────────────────────────────────── */
@@ -71,15 +71,18 @@ the create-ToC.sh file */
 	- Modals in general
 	- Confirmation Modal
 	- Settings Menu
-		- Login Menu
+		- Login Menu 
 		- Community plugin list
 		- Core plugins
 		- Hotkey search
 	- Plugin Browser
 		- Plugin Search Results (left side)
 		- Plugin Info / Readme (right side)
+		- Repository Button
+		- Copy URL button 
 	- Theme Browser
 		- GitHub Info for this Theme
+		- Infobox
 		- Remaining Community Theme Browser
 - Editor
 	- Active / Inactive Note
@@ -118,7 +121,7 @@ the create-ToC.sh file */
 		- Inline Code
 		- Code Blocks
 	- Syntax Highlighting
-	- Bullet List
+	- Lists
 	- Bullet Point Relationship Lines
 	- Links
 		- Unresolved links
@@ -173,7 +176,7 @@ the create-ToC.sh file */
 	- Templater
 	- Kanban
 		- Board
-		- Font
+		- Font 
 		- Lanes
 	- Longform
 		- Longform Sidebar
@@ -212,7 +215,6 @@ the create-ToC.sh file */
 	- Code Block Labels
 - Compatibility Info for the Obsidian Hub
 - Style Setting Options
-
 /* @TOC-SPLIT-MARKER */
 
 /* ───────────────────────────────────────────────── */

@@ -62,8 +62,7 @@ markdown-link-check -q ./README.md
 printf "/* @TOC-SPLIT-MARKER */\n/*\n" > temp_toc.css
 grep -E "<+ " "$csspath" | sed -e "s/ \*\///" -e "s/\/\* //" -e "s/<<< /\t\t- /" -e "s/<< /\t- /" -e "s/< /- /" | tail -n +2 >> temp_toc.css
 split -p "@TOC-SPLIT-MARKER" "$csspath" temp
-cat tempaa temp_toc.css tempac > result.css
-sleep 1
+cat tempaa temp_toc.css tempac > "$csspath"
 rm temp_toc.css tempaa tempab tempac
 
 # Bump version number
