@@ -3,7 +3,9 @@ nav_order: 110
 ---
 
 # Changelog
-- 2022-02-18	patch
+- 2022-02-18	test-run 2
+- 2022-02-18	test-run automatic ToC update
+- 2022-02-18	improved build script
 - 2022-02-16	added markdown-link-check
 - 2022-02-16	fix some alignment issues of list collapse indicators
 - 2022-02-16	fix collapse indicator padding
