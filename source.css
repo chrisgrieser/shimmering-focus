@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 1.912
+Version 1.913
 https://github.com/chrisgrieser/shimmering-focus/
 MIT License
 ──────────────────────────────────────────────────── */
@@ -5338,7 +5338,8 @@ pre[class~="language-haskell" i]::AFTER { content: "Haskell"; }
 
 /* less indention to save space */
 .markdown-preview-view > div > div > div > ul.dataview.list-view-ul,
-.markdown-preview-view > div > div > ul {
+.markdown-preview-view > div > div > ul,
+.markdown-preview-view ul.contains-task-list {
 	padding-left: 1rem;
 }
 
