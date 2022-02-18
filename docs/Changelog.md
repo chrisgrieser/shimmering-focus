@@ -3,6 +3,8 @@ nav_order: 110
 ---
 
 # Changelog
+- 2022-02-18	update for 0.13.25 (no global img)
+- 2022-02-18	finalize new build script
 - 2022-02-18	test-run 3
 - 2022-02-18	test-run 2
 - 2022-02-18	test-run automatic ToC update
