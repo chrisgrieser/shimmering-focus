@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 1.920
+Version 1.921
 https://github.com/chrisgrieser/shimmering-focus/
 MIT License
 ──────────────────────────────────────────────────── */
@@ -2362,31 +2362,24 @@ div.prompt-results {
 }
 
 /* color selected / hovered */
-.suggestion-item.is-selected,
-.suggestion-item:hover,
-.suggestion-item.is-selected .suggestion-prefix,
-.suggestion-item:hover .suggestion-prefix {
+.suggestion-item:is(:hover, .is-selected),
+.suggestion-item:is(:hover, .is-selected) .suggestion-prefix {
 	background-color: var(--bg3) !important;
 }
 
-.suggestion-item.is-selected .suggestion-prefix,
-.suggestion-item.is-selected,
-.suggestion-item.is-selected .suggestion-flair,
-.suggestion-item.is-selected .suggestion-highlight {
+.suggestion-item.is-selected :is(.suggestion-prefix, .suggestion-flair, .suggestion-highlight),
+.suggestion-item.is-selected {
 	color: var(--text-accent);
 }
 
-.suggestion-item:hover .suggestion-flair,
+.suggestion-item:hover :is(.suggestion-prefix, .suggestion-flair, .suggestion-highlight),
 .suggestion-item.is-selected:hover .suggestion-prefix,
-.suggestion-item:hover .suggestion-prefix,
 .suggestion-item:hover,
-.suggestion-highlight,
-.suggestion-item:hover .suggestion-highlight {
+.suggestion-highlight {
 	color: var(--alt-accent);
 }
 
-.suggestion-item:hover .suggestion-flair,
-.suggestion-item.is-selected .suggestion-flair {
+.suggestion-item:is(:hover, .is-selected) .suggestion-flair {
 	opacity: 0.6;
 }
 
@@ -2449,7 +2442,7 @@ body:not(.move-plugin-name-to-left):not(.is-mobile) .suggestion-prefix {
 	padding-left: 8px;
 }
 
-body:not(.move-plugin-name-to-left):not(.is-mobile) .suggestion-content {
+body:not(.move-plugin-name-to-left):not(.is-mobile) :not(.suggestion-container) > .suggestion-content {
 	display: inline-block;
 	margin-right: 20px;
 }
@@ -2489,10 +2482,16 @@ body:not(.no-alternating-rows) .suggestion-item:nth-child(even) .suggestion-pref
 	color: var(--alt-accent);
 }
 
+.suggestion-container.suggestion-flair {
+	font-size: 0.8em;
+	top: 5px;
+	left: 5px;
+}
+
 /* ───────────────────────────────────────────────── */
 /* < Sidebar
 ──────────────────────────────────────────────────── */
-.workspace-leaf-content .view-content {
+.workspace-leaf-content .view-content .suggestion-flair {
 	padding: 4px 2px;
 }
 

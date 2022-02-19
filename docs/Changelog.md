@@ -3,6 +3,7 @@ nav_order: 110
 ---
 
 # Changelog
+- 2022-02-19	fix editor suggestions for headings
 - 2022-02-19	styling for codeblocks in kanbans
 - 2022-02-18	fix kanban header icon alignment
 - 2022-02-18	update readme
