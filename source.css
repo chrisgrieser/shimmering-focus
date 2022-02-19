@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 1.925
+Version 1.926
 https://github.com/chrisgrieser/shimmering-focus/
 MIT License
 ──────────────────────────────────────────────────── */
@@ -2483,10 +2483,14 @@ body:not(.no-alternating-rows) .suggestion-item:nth-child(even) .suggestion-pref
 	color: var(--alt-accent);
 }
 
-.suggestion-container.suggestion-flair {
+.suggestion-container .suggestion-flair {
 	font-size: 0.8em;
 	top: 5px;
-	left: 5px;
+	left: 4px;
+}
+
+.suggestion-container .suggestion-flair[aria-label="Alias"] {
+	left: 1px;
 }
 
 /* ───────────────────────────────────────────────── */

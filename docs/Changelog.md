@@ -3,6 +3,7 @@ nav_order: 110
 ---
 
 # Changelog
+- 2022-02-19	fix for editor suggestions
 - 2022-02-19	fix card view of core search assistant
 - 2022-02-19	minor kanban fixes
 - 2022-02-19	fix editor suggestions for headings
