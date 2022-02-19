@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 1.922
+Version 1.923
 https://github.com/chrisgrieser/shimmering-focus/
 MIT License
 ──────────────────────────────────────────────────── */
@@ -175,9 +175,10 @@ the create-ToC.sh file */
 	- Calendar
 	- Templater
 	- Kanban
-		- Board
-		- Font 
-		- Lanes
+		- Kanban: Board
+		- Kanban Font 
+		- Kanban: Lanes
+		- Kanban: Misc
 	- Longform
 		- Longform Sidebar
 		- Longform Scene List
@@ -7547,7 +7548,7 @@ https://forum.obsidian.md/t/inline-code-occludes-text-selection-and-vim-cursor/1
 }
 /* stylelint-enable no-duplicate-selectors */
 
-/* <<< Board */
+/* <<< Kanban: Board */
 .kanban-plugin__board button {
 	color: unset;
 	background: unset !important;
@@ -7608,7 +7609,7 @@ body:not(.show-header-bar) .kanban-plugin__board > div {
 	margin-top: 0;
 }
 
-/* <<< Font  */
+/* <<< Kanban Font  */
 body :is(.kanban-plugin__drag-container,.kanban-plugin) p {
 	font-size: 0.95em;
 	letter-spacing: -0.2px;
@@ -7618,8 +7619,11 @@ body :is(.kanban-plugin__drag-container,.kanban-plugin) p {
 body .app-container :is(.kanban-plugin__drag-container,.kanban-plugin) :is(h1, h2, h3, h4, h5, h6) {
 	font-family: var(--default-font);
 	letter-spacing: 0.4px;
+
 	color: var(--text-normal);
 	box-shadow: none;
+
+	padding-left: 5px;
 	margin-bottom: 3px;
 }
 
@@ -7667,7 +7671,7 @@ body :is(.kanban-plugin__drag-container,.kanban-plugin) ul {
 	margin-top: 3px;
 }
 
-/* <<< Lanes */
+/* <<< Kanban: Lanes */
 body .kanban-plugin__lane {
 	background-color: var(--bg2);
 	box-shadow: var(--small-inset-shadow), var(--tiny-shadow);
@@ -7764,6 +7768,8 @@ body:not(.is-mobile) .kanban-plugin__item-postfix-button-wrapper {
 	display: none;
 }
 
+/* <<< Kanban: Misc */
+
 /* "add a card" field */
 body .kanban-plugin__item-button-wrapper {
 	padding-top: 0;
@@ -7783,7 +7789,7 @@ body .kanban-plugin__item-form {
 .kanban-plugin button.kanban-plugin__new-item-button,
 .kanban-plugin textarea.kanban-plugin__item-input {
 	font-size: 0.8em;
-	background-color: var(--bg1);
+	background-color: var(--bg3);
 	padding: 3px 8px 5px;
 	border-radius: calc(var(--roundish) * 1.5);
 }
