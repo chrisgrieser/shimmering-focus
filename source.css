@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 1.926
+Version 1.927
 https://github.com/chrisgrieser/shimmering-focus/
 MIT License
 ──────────────────────────────────────────────────── */
@@ -8,9 +8,6 @@ MIT License
 /* ───────────────────────────────────────────────── */
 /* < Table of Content
 ──────────────────────────────────────────────────── */
-/* all sections begin with "<", to navigate to the
-respective section. This ToC is auto-generated via
-the create-ToC.sh file */
 
 /* @TOC-SPLIT-MARKER */
 /*
@@ -6193,6 +6190,11 @@ body.is-mobile .markdown-preview-view blockquote {
 	margin-top: 6px;
 }
 
+/* optionally hide attachment folders */
+.hide-attachment-folders .nav-folder-title[data-path$="/attachments" i] {
+	display: none;
+}
+
 /* ───────────────────────────────────────────────── */
 /* <<< Relationship Lines
 ──────────────────────────────────────────────────── */
@@ -10436,6 +10438,12 @@ settings:
 	 id: no-folder-icons
 	 title: 'File Explorer: No Folder Icons'
 	 description: Removes the icons next to folders in the file explorer.
+	 type: class-toggle
+	 default: false
+	-
+	 id: hide-attachment-folders
+	 title: 'File Explorer: Hide Attachments folders'
+	 description: 'Affects folders that have exactly the name "attachments" (case-insensitive).'
 	 type: class-toggle
 	 default: false
 	-
