@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 1.927
+Version 1.928
 https://github.com/chrisgrieser/shimmering-focus/
 MIT License
 ──────────────────────────────────────────────────── */
@@ -6191,7 +6191,7 @@ body.is-mobile .markdown-preview-view blockquote {
 }
 
 /* optionally hide attachment folders */
-.hide-attachment-folders .nav-folder-title[data-path$="/attachments" i] {
+.hide-attachment-folders .nav-folder-title:is([data-path$="/attachments" i], [data-path="attachments" i]) {
 	display: none;
 }
 
