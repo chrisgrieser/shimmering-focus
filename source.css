@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 1.928
+Version 1.929
 https://github.com/chrisgrieser/shimmering-focus/
 MIT License
 ──────────────────────────────────────────────────── */
@@ -5353,11 +5353,6 @@ pre[class~="language-haskell" i]::AFTER { content: "Haskell"; }
 
 .markdown-preview-view ol {
 	padding-left: 2rem;
-}
-
-.HyperMD-list-line-1 {
-	/* important needed */
-	padding-left: 20px !important;
 }
 
 /* ───────────────────────────────────────────────── */

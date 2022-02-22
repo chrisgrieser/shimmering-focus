@@ -3,7 +3,7 @@ nav_order: 110
 ---
 
 # Changelog
-- 2022-02-21	patch
+- 2022-02-22	fix list alignment in edit mode
 - 2022-02-21	new style setting to hide attachment folders
 - 2022-02-19	fix for editor suggestions
 - 2022-02-19	fix card view of core search assistant
