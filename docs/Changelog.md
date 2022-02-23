@@ -3,6 +3,7 @@ nav_order: 110
 ---
 
 # Changelog
+- 2022-02-23	Style Setting for thin cursor
 - 2022-02-22	fix list alignment in edit mode
 - 2022-02-21	new style setting to hide attachment folders
 - 2022-02-19	fix for editor suggestions

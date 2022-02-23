@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 1.929
+Version 1.930
 https://github.com/chrisgrieser/shimmering-focus/
 MIT License
 ──────────────────────────────────────────────────── */
@@ -1333,6 +1333,10 @@ body:not(.no-grayed-out-inactive-pane) {
 .block-cursor.block-cursor :is(.cm-cursorLayer .cm-cursor, .CodeMirror-cursor) {
 	width: 0.6em;
 	opacity: 0.5;
+}
+
+.thin-cursor.thin-cursor :is(.cm-cursorLayer .cm-cursor, .CodeMirror-cursor) {
+	width: 1px;
 }
 
 /* ───────────────────────────────────────────────── */
@@ -10005,14 +10009,14 @@ settings:
 	 format: '%'
 	-
 	 id: cursor-styles
-	 title: ✨ Cursor Style
+	 title: Cursor Style
 	 description: Color and general look of the cursor.
 	 type: class-select
 	 allowEmpty: false
 	 default: shimmering-beam-cursor
 	 options:
 		-
-			label: Shimmering Beam (Default)
+			label: Shimmering Beam
 			value: shimmering-beam-cursor
 		-
 			label: iA Writer
@@ -10046,11 +10050,22 @@ settings:
 			label: No Blink
 			value: no-blink-cursor
 	-
-	 id: block-cursor
-	 title: Block Cursor
-	 description: Use a block cursor instead of a line cursor. For best results, switch the main font to a monospace font.
-	 type: class-toggle
-	 default: false
+	 id: cursor-shape
+	 title: Cursor Shape
+	 description: When using a block cursor, you should also change the main font to a monospace font for best results.
+	 type: class-select
+	 allowEmpty: false
+	 default: normal-shape
+	 options:
+		-
+			label: Normal
+			value: normal-shape
+		-
+			label: Block Cursor
+			value: block-cursor
+		-
+			label: Thin Cursor
+			value: thin-cursor
 	-
 	 id: colored-yaml
 	 title: "YAML: Coloring"
