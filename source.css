@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 1.930
+Version 1.931
 https://github.com/chrisgrieser/shimmering-focus/
 MIT License
 ──────────────────────────────────────────────────── */
@@ -110,6 +110,7 @@ MIT License
 		- Mermaid
 - Markup
 	- Headings
+		- Headings interacting with other markup
 	- Blockquotes
 	- Citation Syntax
 	- Pseudo-Admonitions
@@ -4646,11 +4647,6 @@ body.focus-view-enabled .mod-left-split.is-collapsed ~ .mod-right-split {
 	padding-right: 6px;
 }
 
-/* only first header gets the prefix */
-.cm-header + .cm-header::BEFORE {
-	display: none;
-}
-
 .is-live-preview .cm-header-1::BEFORE { content: "H1" }
 .is-live-preview .cm-header-2::BEFORE { content: "H2" }
 .is-live-preview .cm-header-3::BEFORE { content: "H3" }
@@ -4662,6 +4658,11 @@ body.focus-view-enabled .mod-left-split.is-collapsed ~ .mod-right-split {
 	line-height: 1em;
 	position: relative;
 	top: 3px;
+}
+
+/* only first header gets the prefix */
+.cm-header ~ .cm-header::BEFORE {
+	display: none;
 }
 
 .markdown-source-view:not(.is-live-preview) .HyperMD-header {
@@ -4710,6 +4711,16 @@ body:not(.no-heading-bg) .mod-root .view-content > div:not(.kanban-plugin) :is(h
 
 body:not(.no-heading-bg) .kanban-plugin :is(h1, h2, h3, h4, h5, h6) {
 	padding-left: 2px;
+}
+
+/* <<< Headings interacting with other markup */
+.is-live-preview .HyperMD-header .cm-inline-code.cm-inline-code.cm-inline-code.cm-inline-code.cm-inline-code.cm-inline-code {
+	padding-top: 4px;
+	padding-bottom: 0;
+}
+
+.markdown-preview-view.markdown-preview-view :is(h1, h2, h3, h4, h5, h6) code {
+	font-size: 100%;
 }
 
 /* ───────────────────────────────────────────────── */
