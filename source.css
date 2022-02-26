@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 1.931
+Version 1.932
 https://github.com/chrisgrieser/shimmering-focus/
 MIT License
 ──────────────────────────────────────────────────── */
@@ -161,6 +161,7 @@ MIT License
 	- Graph View
 	- Publish
 - Community Plugins
+	- Quick Jump
 	- Shell Commands
 	- Core Search Assistant
 	- Better Command Palette
@@ -7059,6 +7060,33 @@ body:not(.show-graph-controls) .graph-controls.is-close:not(:hover) {
 ──────────────────────────────────────────────────── */
 
 /* ───────────────────────────────────────────────── */
+/* << Quick Jump
+──────────────────────────────────────────────────── */
+body .mod-active .obsidian-quick-jump-plugin__mark {
+	font-family: "Recursive";
+	font-weight: 700;
+	color: hsl(0 0% 95%);
+	margin-top: -1.1em;
+	margin-left: 4px;
+}
+
+body .is-live-preview .obsidian-quick-jump-plugin__mark {
+	margin-left: 4px;
+}
+
+/* Source Mode */
+/* keep it readable when overlaying URLs */
+.show-urls .markdown-source-view:not(.is-live-preview) .obsidian-quick-jump-plugin__mark {
+	background-color: hsl(0 0% 25%);
+	margin-left: -10px;
+}
+
+/* next to URL */
+body:not(.show-urls) .markdown-source-view:not(.is-live-preview) .obsidian-quick-jump-plugin__mark {
+	margin-left: 24px;
+}
+
+/* ───────────────────────────────────────────────── */
 /* << Shell Commands
 ──────────────────────────────────────────────────── */
 
@@ -9822,6 +9850,7 @@ community:
 - obsidian-codeblock-labels
 - settings-search
 - obsidian-shellcommands
+- obsidian-quick-jump
 */
 
 /* ───────────────────────────────────────────────── */

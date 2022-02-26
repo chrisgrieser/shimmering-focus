@@ -27,10 +27,6 @@
 		  "ignorePartialSupport": true
 		}],
 
-		"order/order": [
-			["declarations", "custom-properties"],
-			{"severity": "warning"}
-		],
 
 		"order/properties-order": [
 			[

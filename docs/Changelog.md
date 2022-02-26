@@ -3,6 +3,7 @@ nav_order: 110
 ---
 
 # Changelog
+- 2022-02-26	added styling for Obsidian quick jump
 - 2022-02-25	fix inline code in headings in LP/Preview
 - 2022-02-23	Style Setting for thin cursor
 - 2022-02-22	fix list alignment in edit mode
