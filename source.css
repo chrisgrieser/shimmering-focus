@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 1.934
+Version 1.935
 https://github.com/chrisgrieser/shimmering-focus/
 MIT License
 ──────────────────────────────────────────────────── */
@@ -3016,6 +3016,13 @@ body .app-container .workspace-leaf-resize-handle:hover {
 	text-indent: -3.6em;
 }
 
+/* Community Plugin list */
+/* space between button and checklist, e.g.
+"relaunch" button or "update" button in plugin list */
+.installed-plugins-container .setting-item-control button {
+	margin-right: 20px;
+}
+
 .installed-plugins-container .setting-item-description > div:nth-child(2) {
 	font-family: var(--smallcap-font);
 	position: relative;
@@ -3096,17 +3103,7 @@ body .app-container .workspace-leaf-resize-handle:hover {
 	background-color: var(--interactive-hover-bg);
 }
 
-/* space between button and checklist, e.g.
-"relaunch" button or "update" button in plugin list */
-.setting-item-control button + .checkbox-container {
-	margin-left: 15px;
-}
-
-.setting-item-control button + .setting-editor-extra-setting-button {
-	margin-left: 15px;
-}
-
-/* overscroll */
+/* overscroll in the modals */
 .vertical-tab-content > :last-child:not(.hotkey-settings-container),
 .hotkey-list-container {
 	padding-bottom: 55px;
