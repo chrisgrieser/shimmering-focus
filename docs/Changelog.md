@@ -3,6 +3,7 @@ nav_order: 110
 ---
 
 # Changelog
+- 2022-03-01	update plugin links in docs to new obsidian.md links
 - 2022-02-26	support for Quick Jump Plugin
 - 2022-02-26	added styling for Obsidian quick jump
 - 2022-02-25	fix inline code in headings in LP/Preview

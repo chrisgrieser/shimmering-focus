@@ -23,7 +23,7 @@ Using triple-blockquotes (`>>>`) will create admonitions which work in all three
 
 ## Multi-Color-Highlighting
 - Surround highlights with `*` or `**` for alternative highlight colors (`*==cyan==*` and `**==yellow==**`).
-- You can use the [Extra Markdown Commands Plugin](https://github.com/chrisgrieser/obsidian-extra-md-commands) to get hotkeys for them.
+- You can use the [Extra Markdown Commands Plugin](https://obsidian.md/plugins?id=obsidian-extra-md-commands) to get hotkeys for them.
 
 ## Spoiler Syntax
 Emphasized Strikethroughs (`*~~spoiler~~*`) will selectively hide text, except when hovered or the active line.

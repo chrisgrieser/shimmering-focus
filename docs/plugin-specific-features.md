@@ -25,11 +25,11 @@ In accordance with the minimalistic philosophy of the theme, unnecessary UI elem
 - __Kanban__: Right-click cards to edit them.
 - __Supercharged Links__: The theme includes [various built-in styling](#built-in-styling-for-supercharged-links). You can turn those of with the Style Settings plugin.
 - __Breadcrumbs__: Even with buttons removed, you can still refresh the index via Command Palette.
-- __Quick Explorer__: Re-enable the title bar with the [Style Settings Plugin](https://github.com/mgmeyers/obsidian-style-settings/) for the breadcrumbs
+- __Quick Explorer__: Re-enable the title bar with the [Style Settings Plugin](https://obsidian.md/plugins?id=obsidian-style-settings) for the breadcrumbs
 - __Dataview__: Check out the [dataview-specific CSS classes](/shimmering-focus/css-classes#dataview).
 - __Ozan's Image in Editor__: Image Sizes are affected by the Image Settings & by the Max View Feature.
 - __Sliding Panes__: As long as you are using `rotated headers`, the header is permanently shown.
-- __Starred (Core Plugin)__: To be able to star searches, re-enable the Starred pane buttons with the [Style Settings Plugin](https://github.com/mgmeyers/obsidian-style-settings/)
+- __Starred (Core Plugin)__: To be able to star searches, re-enable the Starred pane buttons with the [Style Settings Plugin](https://obsidian.md/plugins?id=obsidian-style-settings)
 
 ## Built-in Styling for Supercharged Links
 This theme includes built-in styling for the [Supercharged Links Plugin](https://github.com/mdelobelle/obsidian_supercharged_links). This means you can make use of the plugin's features without the need write your own CSS! (If you already have your own Supercharged Links setup, you can turn those of with the Style Settings Plugin.) For now the theme includes the following styling:

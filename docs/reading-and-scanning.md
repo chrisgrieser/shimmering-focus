@@ -5,7 +5,7 @@ nav_order: 3
 # 👓 Readability
 
 ## Gutter Indicators
-To increase the scannability of long notes, the presence of some easy-to-miss elements are indicated in the gutter. All indicators can be turned off with the [Style Settings Plugin](https://github.com/mgmeyers/obsidian-style-settings/).
+To increase the scannability of long notes, the presence of some easy-to-miss elements are indicated in the gutter. All indicators can be turned off with the [Style Settings Plugin](https://obsidian.md/plugins?id=obsidian-style-settings).
 - Footnotes (all modes)
 - Search Result Matches (Source Mode & Live Preview only)
 - Unresolved Links (Preview Mode only)
@@ -13,7 +13,7 @@ To increase the scannability of long notes, the presence of some easy-to-miss el
 ![](https://user-images.githubusercontent.com/73286100/147931964-d5e5d309-d821-4fa1-86c1-4a8952a249d3.png){: width="500" }
 
 ## Readability Features
-- Brightness and line length are both adjustable via [Style Settings Plugin](https://github.com/mgmeyers/obsidian-style-settings/).
+- Brightness and line length are both adjustable via [Style Settings Plugin](https://obsidian.md/plugins?id=obsidian-style-settings).
 - Dark Mode for PDFs (when using the theme in dark mode).
 - Decreased font size *variation* to increase readability & information density.
 - The [Max View](/shimmering-focus/core-features#max-view--focus-view) is useful for displaying wide markdown tables.
