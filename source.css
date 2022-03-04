@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 1.935
+Version 1.936
 https://github.com/chrisgrieser/shimmering-focus/
 MIT License
 ──────────────────────────────────────────────────── */
@@ -127,8 +127,7 @@ MIT License
 	- Tags
 		- Annotation Tags
 	- Comments & HTML Tags
-	- Tasks
-	- Checkboxes
+	- Tasks & Checkboxes
 	- Highlights & Selection
 		- Highlights
 		- Selection (Selected Text)
@@ -5703,15 +5702,12 @@ body:not(.annotation-tags-off) :is(.cm-hashtag-begin.cm-tag-example, .tag[href="
 	font-family: var(--default-font);
 }
 
-body .app-container span.cm-tag.cm-bracket.cm-hmd-html-begin,
-body .app-container span.cm-tag.cm-bracket.cm-hmd-html-end,
-body .app-container span.cm-tag {
+body .app-container span:is(.cm-tag.cm-bracket.cm-hmd-html-begin, .cm-tag.cm-bracket.cm-hmd-html-end, .cm-tag) {
 	color: var(--code-color);
 }
 
-/* ───────────────────────────────────────────────────
-<< Tasks
-<< Checkboxes
+/* ──────────────────────────────────────────────── */
+/* << Tasks & Checkboxes
 ─────────────────────────────────────────────────── */
 
 /* edit mode */
@@ -6045,7 +6041,7 @@ body:not(.no-fn-indicator) .mod-cm6 .cm-hmd-barelink:not(.cm-formatting-link) + 
 	page-break-inside: avoid;
 }
 
-.list-2-col-cards li::MARKER {
+.list-2-col-cards li:not(.task-list-item)::MARKER {
 	content: "";
 }
 

@@ -3,6 +3,7 @@ nav_order: 110
 ---
 
 # Changelog
+- 2022-03-04	fix dataview tasks indention when on same page as two-column-list-cssclass
 - 2022-03-01	update buttons in plugin list list properly spaced
 - 2022-03-01	update plugin links in docs to new obsidian.md links
 - 2022-02-26	support for Quick Jump Plugin
