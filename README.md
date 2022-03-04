@@ -12,7 +12,7 @@ A minimalistic [Obsidian](https://obsidian.md/) theme focused on readability and
 - [Academic Website](https://chris-grieser.de/)
 - [GitHub](https://github.com/chrisgrieser/)
 - [Twitter](https://twitter.com/pseudo_meta)
-- Discord: `@pseudometa#9546`
+- [Discord](https://discordapp.com/users/462774483044794368/)
 - [ResearchGate](https://www.researchgate.net/profile/Christopher-Grieser)
 - [LinkedIn](https://www.linkedin.com/in/christopher-grieser-ba693b17a/) <!-- markdown-link-check-disable-line -->
 
