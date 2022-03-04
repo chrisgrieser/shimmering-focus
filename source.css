@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 1.936
+Version 1.937
 https://github.com/chrisgrieser/shimmering-focus/
 MIT License
 ──────────────────────────────────────────────────── */
@@ -1637,10 +1637,6 @@ body .view-header-title {
 
 body:not(.is-mobile) .view-actions {
 	padding: 1px 4px 0 5px;
-}
-
-body:not(.is-mobile) .view-action:nth-last-child(-n+2) {
-	/* margin-top: -1px; */
 }
 
 body:not(.is-mobile) .view-header-icon {
