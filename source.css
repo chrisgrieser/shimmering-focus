@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 1.938
+Version 1.939
 https://github.com/chrisgrieser/shimmering-focus/
 MIT License
 ──────────────────────────────────────────────────── */
@@ -7126,63 +7126,70 @@ body .SC-tab-content {
 /* ───────────────────────────────────────────────── */
 /* << Core Search Assistant
 ──────────────────────────────────────────────────── */
-.core-search-assistant_search-mode-outline {
+/* stylelint-disable no-duplicate-selectors */
+.theme-light,
+.theme-dark {
 	/* needs important */
-	outline-color: var(--search-match-color) !important;
+	--search-mode-outline: var(--search-match-color);
+}
+/* stylelint-enable no-duplicate-selectors */
+
+body:not(.full-search-assistant-card-view) .card-view-container :is(h1, .frontmatter-container, .collapse-indicator) {
+	display: none;
 }
 
-body #core-search-assistant_card-view .content .item-container {
+.cards-container.cards-container.cards-container {
+	grid-gap: 12px;
+}
+
+body .card-view-container.card-view-container .core-search-assistant_card-container {
 	box-shadow: var(--tiny-shadow), var(--small-inset-shadow);
 	top: 0;
 	border: var(--thin-border);
 	border-radius: var(--roundish);
 }
 
-#core-search-assistant_card-view .content .item-container:hover {
-	border-color: var(--interactive-hover-border-color);
+.core-search-assistant_card-container .markdown-preview-view.markdown-preview-view.markdown-preview-view {
+	/* important needed */
+	padding-top: 14px !important;
+	padding-left: 3px;
 }
 
-#core-search-assistant_card-view .content .item-container.is-selected {
-	border-color: var(--text-accent);
+.core-search-assistant_card-container .card-container-header.card-container-header.card-container-header {
+	padding: 2px;
 }
 
-#core-search-assistant_card-view .item-container .file-name-container {
-	font-size: 0.8em;
-	line-height: 1.2em;
-	padding: 3px 6px;
+.core-search-assistant_card-container .file-name-container.file-name-container.file-name-container {
+	font-size: 80%;
 }
 
-body:not(.full-search-assistant-card-view) #core-search-assistant_card-view .item-container .preview-container-wrapper :is(h1, .frontmatter-container) {
-	display: none;
-}
-
-#core-search-assistant_card-view > .content.content {
-	column-gap: 12px;
-	row-gap: 12px;
-}
-
-div#core-search-assistant_card-view {
+div.card-view-container.card-view-container {
 	background: var(--bg3);
 	padding: 20px 10px 10px;
 }
 
-div#core-search-assistant_card-view .preview-container-wrapper {
-	background: var(--bg1);
+.core-search-assistant_card-container.core-search-assistant_card-container.core-search-assistant_card-container.core-search-assistant_card-container.core-search-assistant_card-container {
+	margin: 0;
+	border-width: 2px;
 }
 
-#core-search-assistant_card-view .view-content {
-	margin-top: 0;
+.core-search-assistant_card-container.core-search-assistant_card-container.core-search-assistant_card-container.core-search-assistant_card-container {
+	border-color: var(--muted-border-color);
 }
 
-#core-search-assistant_card-view .collapse-indicator {
-	display: none;
+.core-search-assistant_card-container.core-search-assistant_card-container.core-search-assistant_card-container.core-search-assistant_card-container.core-search-assistant_card-container.is-selected {
+	border-color: var(--interactive-border-color);
 }
 
-div#core-search-assistant_card-view .markdown-preview-view :is(h1, h2, h3, h4, h5, h6) {
+.core-search-assistant_card-container.core-search-assistant_card-container.core-search-assistant_card-container.core-search-assistant_card-container.core-search-assistant_card-container:hover {
+	border-color: var(--interactive-hover-border-color);
+}
+
+div.card-view-container.card-view-container .markdown-preview-view :is(h1, h2, h3, h4, h5, h6) {
 	margin: 0;
 }
 
-#core-search-assistant_card-view p {
+.card-view-container.card-view-container p {
 	margin-top: 4px;
 	margin-bottom: 4px;
 }

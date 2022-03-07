@@ -3,6 +3,7 @@ nav_order: 110
 ---
 
 # Changelog
+- 2022-03-07	fix core search assistant styling
 - 2022-03-07	fix heading line height
 - 2022-03-04	fix dataview tasks indention when on same page as two-column-list-cssclass
 - 2022-03-01	update buttons in plugin list list properly spaced
