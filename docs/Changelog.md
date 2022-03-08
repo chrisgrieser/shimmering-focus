@@ -3,7 +3,7 @@ nav_order: 110
 ---
 
 # Changelog
-- 2022-03-08	patch
+- 2022-03-08	file explorer icon for bibtex files
 - 2022-03-07	fix core search assistant styling
 - 2022-03-07	fix heading line height
 - 2022-03-04	fix dataview tasks indention when on same page as two-column-list-cssclass

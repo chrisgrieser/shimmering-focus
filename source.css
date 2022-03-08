@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 1.940
+Version 1.941
 https://github.com/chrisgrieser/shimmering-focus/
 MIT License
 ──────────────────────────────────────────────────── */
@@ -6334,7 +6334,7 @@ body:not(.no-folder-icons) .nav-folder-title[data-path*="archiv" i] .nav-folder-
 	content: "inventory_2";
 }
 
-/* File icons */
+/* Note icons */
 
 /* As icons are now used, the labeled boxes (e.g. "pdf") can be removed. */
 body:not(.no-file-explorer-icons) .nav-file-tag {
@@ -6360,6 +6360,11 @@ body:not(.no-file-explorer-icons) .nav-file-title:is([data-path$="sh"], [data-pa
 
 body:not(.no-file-explorer-icons) .nav-file-title:is([data-path$="tiff"], [data-path$="jpg"], [data-path$="jpeg"], [data-path$="png"]) .nav-file-title-content::BEFORE {
 	content: "image";
+}
+
+body:not(.no-file-explorer-icons) .nav-file-title:is([data-path$="bib"], [data-path$="bibtex"]) .nav-file-title-content::BEFORE {
+	content: "menu_book";
+	color: hsl(60 93% 25%);
 }
 
 body:not(.no-file-explorer-icons) .nav-file-title:is([data-path$="doc"], [data-path$="docx"], [data-path$="odt"]) .nav-file-title-content::BEFORE {
