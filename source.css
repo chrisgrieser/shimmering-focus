@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 1.939
+Version 1.940
 https://github.com/chrisgrieser/shimmering-focus/
 MIT License
 ──────────────────────────────────────────────────── */
@@ -6335,6 +6335,7 @@ body:not(.no-folder-icons) .nav-folder-title[data-path*="archiv" i] .nav-folder-
 }
 
 /* File icons */
+
 /* As icons are now used, the labeled boxes (e.g. "pdf") can be removed. */
 body:not(.no-file-explorer-icons) .nav-file-tag {
 	display: none;
@@ -6348,13 +6349,9 @@ body:not(.no-file-explorer-icons) .nav-file-title[data-path*="moc" i] .nav-file-
 	content: "map";
 }
 
-body:not(.no-file-explorer-icons) .nav-file-title[data-path$="pptx"] .nav-file-title-content::BEFORE {
+body:not(.no-file-explorer-icons) .nav-file-title:is([data-path$="pptx"], [data-path*="presentation" i]) .nav-file-title-content::BEFORE {
 	content: "present_to_all";
 	color: hsl(38 100% 50%);
-}
-
-body:not(.no-file-explorer-icons) .nav-file-title[data-path*="presentation" i] .nav-file-title-content::BEFORE {
-	content: "present_to_all";
 }
 
 body:not(.no-file-explorer-icons) .nav-file-title:is([data-path$="sh"], [data-path$="ts"], [data-path$="js"]) .nav-file-title-content::BEFORE {
@@ -8188,7 +8185,7 @@ body:not(.no-alternating-rows) li:nth-child(even) :is(.draft-container, .scene-c
 
 /* hide index file in file explorer, which shouldn't
 be messed with anyway */
-.BC-Link[data-link-data-href="Index"],
+.hide-index-files .BC-Link[data-link-data-href="Index"],
 .hide-index-files .nav-file-title[data-path$="Index.md"] {
 	display: none;
 }
@@ -8198,7 +8195,7 @@ be messed with anyway */
 	content: "settings";
 }
 
-.nav-folder-title[data-path$="Drafts"] .nav-folder-title-content::BEFORE {
+.nav-folder-title[data-path$="Drafts"] .nav-folder.nav-folder.nav-folder .nav-folder-title-content::BEFORE {
 	content: "folder_special";
 }
 
@@ -10597,7 +10594,7 @@ settings:
 	 step: 5
 	-
 	 id: hide-index-files
-	 title: 'Hide files named "Index.md" from File Explorer'
+	 title: 'Hide files named "Index.md" from File Explorer and Breadcrumbs Matrix'
 	 description: Files named that way are created by some plugins like the Longform Plugin and in many cases should not be changed.
 	 type: class-toggle
 	 hub: ignore
