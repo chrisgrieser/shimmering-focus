@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 1.942
+Version 1.943
 https://github.com/chrisgrieser/shimmering-focus/
 MIT License
 ──────────────────────────────────────────────────── */
@@ -3593,7 +3593,7 @@ body .community-plugin-info .community-plugin-downloads-text {
 
 /* <<< Infobox */
 .community-theme.is-selected .community-theme-info::AFTER {
-	content: "ℹ️ Most UI elements become visible when hovered. \A\A🎨 Hidden UI elements can be re-enabled with Style Settings Plugin.";
+	content: "ℹ️ Most UI elements become visible when hovered. \A\A🎨 Hidden UI elements can be re-enabled with the Style Settings Plugin.";
 
 	font-family: var(--menu-font);
 	font-size: 0.8rem;
