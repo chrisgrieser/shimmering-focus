@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 1.941
+Version 1.942
 https://github.com/chrisgrieser/shimmering-focus/
 MIT License
 ──────────────────────────────────────────────────── */
@@ -57,7 +57,7 @@ MIT License
 	- Close Buttons
 - Prompts
 	- QuickSwitcher
-		- Command Palette
+	- Command Palette
 	- Editor Suggestions
 - Sidebar
 	- Files in the Sidebar
@@ -2309,8 +2309,8 @@ body:not(.show-close-button) :is(.document-search-close-button, div.search-input
 }
 
 /* ───────────────────────────────────────────────────
-< Prompts
-<< QuickSwitcher
+/* < Prompts
+/* << QuickSwitcher
 ─────────────────────────────────────────────────── */
 /* also partially applies to the Editor Suggestions */
 
@@ -2383,9 +2383,9 @@ div.prompt-results {
 }
 
 /* ───────────────────────────────────────────────────
-<<< Command Palette
-(everything from QUickswitcher also applies=
+/* << Command Palette
 ─────────────────────────────────────────────────── */
+/* (everything from Quickswitcher also applies) */
 
 .prompt-instructions {
 	display: none;
@@ -4390,9 +4390,10 @@ body:not(.left-aligned-embeds) .view-content img:not(.link-favicon) {
 }
 
 /* fix for GitHub shields */
-.app-container img[src*="img.shields.io" i] {
+img[src*="img.shields.io" i][src*="img.shields.io" i][src*="img.shields.io" i][src*="img.shields.io" i] {
 	display: inline;
 	margin-top: 0; /* stylelint-disable-line plugin/declaration-block-no-ignored-properties */
+	border: none;
 }
 
 /* ───────────────────────────────────────────────── */
@@ -4413,9 +4414,7 @@ body:not(.left-aligned-embeds) div.mermaid {
 /* ───────────────────────────────────────────────── */
 /* << PDFs
 ──────────────────────────────────────────────────── */
-/* credits @phibr0 */
-.theme-dark:not(.no-pdf-dark-mode) .pdf-embed iframe,
-.theme-dark:not(.no-pdf-dark-mode) .workspace-leaf-content[data-type="pdf"] iframe {
+.theme-dark:not(.no-pdf-dark-mode) :is(.pdf-embed, .workspace-leaf-content[data-type="pdf"]) iframe {
 	filter: invert(0.85);
 }
 
@@ -4424,8 +4423,7 @@ body:not(.left-aligned-embeds) div.mermaid {
 }
 
 /* needs important because original css has importants too */
-body:not(.left-aligned-embeds) .mod-cm6 .pdf-embed,
-body:not(.left-aligned-embeds) .pdf-embed {
+body:not(.left-aligned-embeds) .pdf-embed.pdf-embed {
 	margin-right: auto !important;
 	margin-left: auto !important;
 }
@@ -7206,6 +7204,37 @@ div.card-view-container.card-view-container .markdown-preview-view :is(h1, h2, h
 
 .suggestion-item.recent .suggestion-content {
 	font-weight: 500;
+	font-style: italic;
+}
+
+/* pinned items bold */
+.prompt.better-command-palette .suggestion-flair[aria-label="Pinned"] {
+	display: none;
+}
+
+.prompt.better-command-palette .suggestion-flair[aria-label="Pinned"] ~ .suggestion-content {
+	font-weight: 600;
+}
+
+.better-command-palette .suggestion-item {
+	padding-left: 5px;
+}
+
+.prompt.better-command-palette .suggestion-flair[aria-label="Click to Hide"] {
+	color: var(--interactive-normal);
+	background: var(--extra-contrast);
+	padding-right: 4px;
+	padding-left: 4px;
+	margin-left: -10px;
+}
+
+.prompt.better-command-palette .suggestion-flair[aria-label="Click to Hide"]:not(:hover) {
+	color: transparent;
+	background: transparent;
+}
+
+.hidden-items-header:empty {
+	display: none;
 }
 
 /* ───────────────────────────────────────────────── */
@@ -8200,7 +8229,7 @@ be messed with anyway */
 	content: "settings";
 }
 
-.nav-folder-title[data-path$="Drafts"] .nav-folder.nav-folder.nav-folder .nav-folder-title-content::BEFORE {
+.nav-folder-title[data-path$="Drafts"] .nav-folder-title-content.nav-folder-title-content.nav-folder-title-content::BEFORE {
 	content: "folder_special";
 }
 
