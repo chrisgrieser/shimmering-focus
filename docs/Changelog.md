@@ -3,6 +3,7 @@ nav_order: 110
 ---
 
 # Changelog
+- 2022-03-13	fix sync history list height
 - 2022-03-11	update readme
 - 2022-03-11	improvements for better command palette
 - 2022-03-08	file explorer icon for bibtex files

@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 1.945
+Version 1.946
 https://github.com/chrisgrieser/shimmering-focus/
 MIT License
 ──────────────────────────────────────────────────── */
@@ -2803,6 +2803,10 @@ body .app-container .workspace-leaf-resize-handle:hover {
 	max-width: unset;
 	background-color: var(--basic-border-color); /* ensures no thin line shining through */
 	border-radius: calc(var(--roundish) * 3);
+}
+
+.mod-sync-history .sync-history-list-container {
+	height: calc(var(--modal-base-size) * 1% + 20%);
 }
 
 /* has to be adjusted when modal size is adjusted */
