@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 1.946
+Version 1.947
 https://github.com/chrisgrieser/shimmering-focus/
 MIT License
 ──────────────────────────────────────────────────── */
@@ -157,6 +157,8 @@ MIT License
 		- Starred
 	- Popover (Page Preview)
 	- File Recovery
+	- Sync
+	- Diff Version
 	- Graph View
 	- Publish
 - Community Plugins
@@ -2803,10 +2805,6 @@ body .app-container .workspace-leaf-resize-handle:hover {
 	max-width: unset;
 	background-color: var(--basic-border-color); /* ensures no thin line shining through */
 	border-radius: calc(var(--roundish) * 3);
-}
-
-.mod-sync-history .sync-history-list-container {
-	height: calc(var(--modal-base-size) * 1% + 20%);
 }
 
 /* has to be adjusted when modal size is adjusted */
@@ -6863,6 +6861,7 @@ body .popover {
 
 /* ───────────────────────────────────────────────── */
 /* << File Recovery
+/* << Sync
 ──────────────────────────────────────────────────── */
 /* see also modals in general */
 
@@ -6908,7 +6907,7 @@ body .popover {
 	background-color: var(--bg3);
 }
 
-.sync-history-list-item:is(:hover, .is-active) {
+.sync-history-list-item:hover {
 	color: var(--alt-accent);
 	background-color: var(--bg3);
 }
@@ -6953,6 +6952,127 @@ body .popover {
 .sync-history-content-empty::BEFORE {
 	content: var(--signature);
 	font-size: var(--empty-state-symbol-size);
+}
+
+/* ───────────────────────────────────────────────── */
+/* << Diff Version
+──────────────────────────────────────────────────── */
+.mod-sync-history.diff .sync-history-list {
+	min-width: unset;
+}
+
+.mod-sync-history.diff.diff.diff button.mod-cta {
+	font-size: 70%;
+	padding: 4px;
+	margin-top: 10px;
+	margin-right: 0;
+}
+
+.diff .sync-history-list {
+	background-color: var(--bg2);
+	padding: 0;
+	border-radius: var(--roundish);
+}
+
+.diff .sync-history-list-container:first-child .sync-history-list {
+	border-top-left-radius: calc(var(--roundish) * 2.5);
+}
+
+.diff .sync-history-list-container:last-child .sync-history-list {
+	border-top-right-radius: calc(var(--roundish) * 2.5);
+	border-bottom-right-radius: calc(var(--roundish) * 2.5);
+}
+
+.diff .sync-history-content-container {
+	height: 100%;
+
+	background-color: var(--bg1);
+
+	margin-right: 6px;
+	margin-left: 6px;
+
+	border: none;
+	border-radius: var(--roundish);
+}
+
+.diff :is(.d2h-lines-added, .d2h-lines-deleted) {
+	font-size: 130%;
+	color: hsl(0 100% 100%);
+	padding: 4px;
+	border: none;
+}
+
+.d2h-wrapper {
+	max-height: unset;
+}
+
+.d2h-lines-added {
+	background-color: var(--interactive-success);
+}
+
+.d2h-lines-deleted {
+	background-color: var(--text-error);
+}
+
+.diff.diff .d2h-file-name {
+	font-family: var(--heading-font);
+	font-size: var(--h1-size);
+	letter-spacing: var(--heading-letter-spacing);
+	color: var(--text-normal);
+}
+
+.diff .d2h-file-list-line {
+	padding: 2px;
+}
+
+/* move button down */
+.diff .d2h-file-wrapper {
+	height: calc(var(--modal-base-size) * 1vh + 10vh);
+}
+
+.d2h-diff-table.d2h-diff-table.d2h-diff-table tr {
+	background: none;
+}
+
+.diff .d2h-code-linenumber,
+.d2h-diff-table tr:first-child .d2h-info {
+	background-color: var(--bg2);
+}
+
+/* PR */
+.d2h-changed,
+.diff :is(.modal-title, .d2h-file-header),
+.d2h-file-list-title {
+	display: none;
+}
+
+.diff .d2h-code-linenumber {
+	width: 5.5em;
+	border: none;
+}
+
+.diff .d2h-code-line {
+	padding-right: 7px;
+	padding-left: 6em;
+}
+
+.diff .line-num2,
+.diff .line-num1 {
+	width: 2.5em;
+	padding-left: 0;
+}
+
+.diff .sync-history-list-container {
+	display: flex;
+	max-height: unset;
+	flex-direction: column-reverse;
+}
+
+.diff .d2h-file-name {
+	font-family: var(--heading-font);
+	font-size: var(--h4);
+	letter-spacing: var(--heading-letter-spacing);
+	color: var(--text-normal);
 }
 
 /* ───────────────────────────────────────────────── */
@@ -9882,6 +10002,7 @@ community:
 - settings-search
 - obsidian-shellcommands
 - obsidian-quick-jump
+- obsidian-sync-version-history
 */
 
 /* ───────────────────────────────────────────────── */
