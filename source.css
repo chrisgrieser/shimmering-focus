@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 1.947
+Version 1.948
 https://github.com/chrisgrieser/shimmering-focus/
 MIT License
 ──────────────────────────────────────────────────── */
@@ -5002,8 +5002,7 @@ tr:last-child td:last-child { border-bottom-right-radius: var(--table-roundness)
 /* draw only inner borders */
 body > .app-container table > thead > tr > th {
 	font-size: 1em;
-	border-top: none;
-	border-right: none;
+	border: none;
 	border-bottom: var(--table-border);
 }
 
