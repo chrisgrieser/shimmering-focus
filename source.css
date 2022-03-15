@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 1.949
+Version 1.950
 https://github.com/chrisgrieser/shimmering-focus/
 MIT License
 ──────────────────────────────────────────────────── */
@@ -6825,7 +6825,9 @@ body:not(.no-alternating-rows) .workspace-leaf-content[data-type="starred"] .nav
 /* ───────────────────────────────────────────────── */
 /* << Popover (Page Preview)
 ──────────────────────────────────────────────────── */
-body .popover {
+
+/* ":not(.jl)" prevents interference with the jump-to-link-plugin */
+body .popover:not(.jl) {
 	height: var(--popover-size) !important;
 	max-height: unset !important;
 	width: var(--popover-size) !important;
@@ -9973,6 +9975,7 @@ community:
 - settings-search
 - obsidian-shellcommands
 - obsidian-sync-version-history
+- mrj-jump-to-link
 */
 
 /* ───────────────────────────────────────────────── */
