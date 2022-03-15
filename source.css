@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 1.950
+Version 1.951
 https://github.com/chrisgrieser/shimmering-focus/
 MIT License
 ──────────────────────────────────────────────────── */
@@ -4913,6 +4913,8 @@ body:not(.blockquotes-left-aligned) .app-container .HyperMD-quote {
 /* ───────────────────────────────────────────────── */
 /* << Pseudo-Admonitions
 ──────────────────────────────────────────────────── */
+
+/* TODO: remove after when 0.14 goes public */
 
 .HyperMD-quote-3 .cm-formatting-quote-3::AFTER {
 	content: var(--pseudo-admonition-prefix);
