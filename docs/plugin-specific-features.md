@@ -7,7 +7,7 @@ nav_order: 102
 <!-- MarkdownTOC -->
 
 - [List of Compatible Plugins](#list-of-compatible-plugins)
-- [Instructions for specific Plugins](#instructions-for-specific-plugins)
+- [Information for Specific Plugins](#information-for-specific-plugins)
 - [Built-in Styling for Supercharged Links](#built-in-styling-for-supercharged-links)
 	- [Setup](#setup)
 
@@ -18,7 +18,7 @@ nav_order: 102
 
 ➡️ [Full list of compatible plugins.](https://publish.obsidian.md/hub/02+-+Community+Expansions/02.05+All+Community+Expansions/Themes/Shimmering+Focus#Plugin+Compatibility+1)
 
-## Instructions for specific Plugins
+## Information for Specific Plugins
 In accordance with the minimalistic philosophy of the theme, unnecessary UI elements of some plugins have also been removed. However, you can still access the full plugin functionality.
 
 - __Longform__: Prepend a `_` to file names of longform scenes to create sub-scenes.
@@ -30,6 +30,7 @@ In accordance with the minimalistic philosophy of the theme, unnecessary UI elem
 - __Ozan's Image in Editor__: Image Sizes are affected by the Image Settings & by the Max View Feature.
 - __Sliding Panes__: As long as you are using `rotated headers`, the header is permanently shown.
 - __Starred (Core Plugin)__: To be able to star searches, re-enable the Starred pane buttons with the [Style Settings Plugin](https://obsidian.md/plugins?id=obsidian-style-settings)
+- __Better Command Palette__: Recent entries are in *italics*, pinned entries are __bold__.
 
 ## Built-in Styling for Supercharged Links
 This theme includes built-in styling for the [Supercharged Links Plugin](https://github.com/mdelobelle/obsidian_supercharged_links). This means you can make use of the plugin's features without the need write your own CSS! (If you already have your own Supercharged Links setup, you can turn those of with the Style Settings Plugin.) For now the theme includes the following styling:
