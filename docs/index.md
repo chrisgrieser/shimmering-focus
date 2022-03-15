@@ -17,7 +17,7 @@ A minimalistic [Obsidian](https://obsidian.md/) theme focused on readability and
 1. You can find *Shimmering Focus* in Obsidian's community themes browser under  
 `Obsidian Settings ➞ Appearance: Themes ➞ Manage`.
 2. It is strongly recommended to install the [Style Settings Plugin](https://obsidian.md/plugins?id=obsidian-style-settings), as it unlocks many features and customization options.
-3. Take a look at [the core features](core-features#hidingshowing-ui-elements) to understand how to use the theme properly, especially the regarding which UI elements become visible on hover.
+3. Take a look at [the core features](core-features#hidingshowing-ui-elements) to understand how to use the theme properly, especially regarding which UI elements becoming only visible on hover.
 
 ---
 
