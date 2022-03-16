@@ -3,6 +3,7 @@ nav_order: 110
 ---
 
 # Changelog
+- 2022-03-16	fix justificiation of longform / writing cssclass
 - 2022-03-16	fix scrollbar hover/active colors
 - 2022-03-16	better padding for consecutive blockquotes
 - 2022-03-16	removed obsolete core search assisstant plugin style setting

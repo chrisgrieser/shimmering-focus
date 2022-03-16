@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 1.957
+Version 1.958
 https://github.com/chrisgrieser/shimmering-focus/
 MIT License
 ──────────────────────────────────────────────────── */
@@ -8510,8 +8510,8 @@ select#longform-workflows:hover {
 }
 
 /* ───────────────────────────────────────────────────
-<<< Longform Editor
-<<< Writing cssclass
+/* <<< Longform Editor
+/* <<< Writing cssclass
 ─────────────────────────────────────────────────── */
 /* https://github.com/kevboh/longform#scene-only-styling */
 
@@ -8543,7 +8543,7 @@ select#longform-workflows:hover {
 }
 
 /* justify text */
-body:not(.longform-left-aligned) :is(.writing, .longform-leaf) .cm-line > :not(.cm-hmd-frontmatter) {
+body:not(.longform-left-aligned) :is(.writing, .longform-leaf) .cm-line {
 	text-align: justify;
 	hyphens: auto;
 }
