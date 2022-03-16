@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 1.955
+Version 1.956
 https://github.com/chrisgrieser/shimmering-focus/
 MIT License
 ──────────────────────────────────────────────────── */
@@ -4738,10 +4738,9 @@ body .markdown-preview-view blockquote,
 }
 
 /* edit mode & live preview */
-.HyperMD-quote.CodeMirror-line,
-.markdown-source-view.mod-cm6 .cm-line.HyperMD-quote {
+.HyperMD-quote.HyperMD-quote.HyperMD-quote.HyperMD-quote {
 	background-color: var(--blockquote-color);
-	padding: 0.4em 0.8em 0.5em 0;
+	padding: 0 10px 3px;
 	border-radius: var(--roundish);
 }
 
@@ -4766,7 +4765,7 @@ body .markdown-preview-view blockquote,
 .HyperMD-quote + .HyperMD-quote::BEFORE {
 	content: "";
 
-	height: 1em;
+	height: 1.5em;
 	width: calc(var(--blockquote-border-width) - 1px);
 
 	background-color: var(--basic-border-color);

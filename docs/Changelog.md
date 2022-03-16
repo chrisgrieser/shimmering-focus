@@ -3,6 +3,7 @@ nav_order: 110
 ---
 
 # Changelog
+- 2022-03-16	better padding for consecutive blockquotes
 - 2022-03-16	removed obsolete core search assisstant plugin style setting
 - 2022-03-16	added ko-fi link to style settings
 - 2022-03-16	style setting icons
