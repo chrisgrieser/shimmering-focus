@@ -613,13 +613,6 @@ settings:
 	 type: variable-text
 	 default: '"Recursive S"'
 	-
-	 id: plugin-specific-settings
-	 title: ⚙️ Plugin-Specific Settings
-	 description: File Explorer, Outline, Sliding Panes, Supercharged Links, Page Preview, Command Palette, Calendar, Link Favicons
-	 type: heading
-	 level: 1
-	 collapsed: true
-	-
 	 id: no-file-explorer-icons
 	 title: 'File Explorer: No File Icons'
 	 description: Removes the icons next to files in the file explorer.
@@ -633,7 +626,7 @@ settings:
 	 default: false
 	-
 	 id: hide-attachment-folders
-	 title: 'File Explorer: Hide Attachments folders'
+	 title: 'File Explorer: Hide attachment folders'
 	 description: 'Affects folders that have exactly the name "attachments" (case-insensitive).'
 	 type: class-toggle
 	 default: false
@@ -675,12 +668,6 @@ settings:
 	-
 	 id: grayscale-favicons
 	 title: 'Link Favicons: Grayscale Icons'
-	 type: class-toggle
-	 default: false
-	-
-	 id: full-search-assistant-card-view
-	 title: 'Core Search Assistant: Card View with full content'
-	 description: When false, some elements like frontmatter or h1 will be removed from the cards to save space.
 	 type: class-toggle
 	 default: false
 	-
