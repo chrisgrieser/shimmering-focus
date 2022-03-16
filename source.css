@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 1.953
+Version 1.954
 https://github.com/chrisgrieser/shimmering-focus/
 MIT License
 ──────────────────────────────────────────────────── */
@@ -79,7 +79,7 @@ MIT License
 		- Copy URL button 
 	- Theme Browser
 		- GitHub Info for this Theme
-		- Infobox
+		- Theme Browser – Infobox
 		- Remaining Community Theme Browser
 - Editor
 	- Active / Inactive Note
@@ -3593,7 +3593,7 @@ body .community-plugin-info .community-plugin-downloads-text {
 	transition: var(--medium-transition);
 }
 
-/* <<< Infobox */
+/* <<< Theme Browser – Infobox */
 .community-theme.is-selected .community-theme-info::AFTER {
 	content: "ℹ️ Most UI elements become visible when hovered. \A\A🎨 Hidden UI elements can be re-enabled with the Style Settings Plugin.";
 
@@ -9416,10 +9416,11 @@ body a:is(.style-settings-export, .style-settings-import) {
 /* Donation */
 .style-settings-heading[data-id="info-donation"] {
 	background-color: var(--bg2);
-	box-shadow: ;
+	box-shadow: var(--small-inset-shadow);
 
 	padding: 10px 10px 5px;
 	margin-top: 40px;
+	margin-left: -15px;
 
 	border: var(--basic-border);
 	border-radius: var(--roundish);
@@ -9439,9 +9440,10 @@ body a:is(.style-settings-export, .style-settings-import) {
 .style-settings-heading[data-id="info-donation"] .setting-item-name:hover {
 	color: unset;
 	cursor: default;
+	pointer-events: none;
 }
 
-/* info box */
+/* info box at the top */
 .style-settings-heading[data-id="shimmering-focus"] {
 	flex-wrap: wrap;
 }
@@ -10880,7 +10882,7 @@ settings:
 	 default: false
 	-
 	 id: info-donation
-	 title: 🙏 Support Shimmering Focus
+	 title: ☕️ Support Shimmering Focus
 	 description: "If you like the theme, you can buy me a coffee: ko-fi.com/pseudometa"
 	 type: heading
 	 level: 1
