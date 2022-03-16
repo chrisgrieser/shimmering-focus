@@ -3,7 +3,7 @@ nav_order: 110
 ---
 
 # Changelog
-- 2022-03-15	patch
+- 2022-03-16	style setting icons
 - 2022-03-15	fix for jump-to-link plugin
 - 2022-03-15	remove support for QUick Jump plugin since deprecated
 - 2022-03-14	compatibility for Version History Diff Plugin

@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 1.951
+Version 1.952
 https://github.com/chrisgrieser/shimmering-focus/
 MIT License
 ──────────────────────────────────────────────────── */
@@ -9991,7 +9991,7 @@ id: shimmering-focus
 settings:
 	-
 	 id: show-hide-elements
-	 title: Show/Hide UI Elements
+	 title: 🙈 Show/Hide UI Elements
 	 description: Re-enable elements hidden by this theme
 	 type: heading
 	 level: 2
@@ -10088,7 +10088,7 @@ settings:
 	 default: false
 	-
 	 id: aesthetics
-	 title: Aesthetics
+	 title: 🎨 Aesthetics
 	 description: Brightness, Color, Shapes, Cursor, Decoration, Animations
 	 type: heading
 	 level: 2
@@ -10274,7 +10274,7 @@ settings:
 			value: sepia
 	-
 	 id: font-settings
-	 title: Typography
+	 title: 🔡 Typography
 	 description: Font, Font Sizes, Headings, Blockquotes, Letter Spacing, Alignment
 	 type: heading
 	 level: 2
@@ -10454,7 +10454,7 @@ settings:
 	 format: em
 	-
 	 id: content-settings
-	 title: Views & Media
+	 title: 🏞 Views & Media
 	 description: Line Length, Max View, Focus View, Images, PDFs
 	 type: heading
 	 level: 2
@@ -10520,7 +10520,7 @@ settings:
 	 default: false
 	-
 	 id: gutter-features
-	 title: Gutter & Active Line
+	 title: ❇️ Gutter & Active Line
 	 description: Active Highlight, Indicators in the Gutter
 	 type: heading
 	 level: 2
@@ -10561,7 +10561,7 @@ settings:
 	 default: false
 	-
 	 id: mobile
-	 title: Mobile
+	 title: 📱 Mobile
 	 description: Header Bar, Font Size, Font Type
 	 type: heading
 	 level: 2
@@ -10600,7 +10600,7 @@ settings:
 	 default: '"Recursive S"'
 	-
 	 id: plugin-specific-settings
-	 title: Plugin-Specific Settings
+	 title: ⚙️ Plugin-Specific Settings
 	 description: File Explorer, Outline, Sliding Panes, Supercharged Links, Page Preview, Command Palette, Calendar, Link Favicons
 	 type: heading
 	 level: 2
@@ -10685,7 +10685,7 @@ settings:
 	 default: false
 	-
 	 id: longform-settings
-	 title: Longform Plugin & Writing cssclass
+	 title: ✍️ Longform Plugin & Writing cssclass
 	 description: Font, Alignment, Indentation, Background, Index File
 	 type: heading
 	 level: 2
@@ -10735,7 +10735,7 @@ settings:
 	 default: false
 	-
 	 id: miscellaneous
-	 title: Miscellaneous
+	 title: ⚛️ Miscellaneous
 	 description: Menu Sizes, File Name Trimming, Inactive Panes, Pseudo-Admonitions, Pandoc Citations, Annotation Tags, Alternating Row Colors, Relationship Lines
 	 type: heading
 	 level: 2
@@ -10792,7 +10792,7 @@ settings:
 	 default: false
 	-
 	 id: spellcheck-settings
-	 title: Spellcheck (deprecated)
+	 title: 🖍 Spellcheck (deprecated)
 	 description: Legacy Editor only
 	 type: heading
 	 level: 2
