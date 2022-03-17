@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 1.958
+Version 1.959
 https://github.com/chrisgrieser/shimmering-focus/
 MIT License
 ──────────────────────────────────────────────────── */
@@ -204,6 +204,7 @@ MIT License
 	- File Info Panel (Side bar)
 	- Get Info (Status bar)
 	- Language Tool Integration
+	- Various Complements
 	- Hotkey Helper
 	- Excalidraw
 	- Zoom
@@ -9660,6 +9661,13 @@ svg.sync-small {
 }
 
 /* ───────────────────────────────────────────────── */
+/* << Various Complements
+──────────────────────────────────────────────────── */
+.various-complements__suggestion-item__description {
+	line-height: 1.1em;
+}
+
+/* ───────────────────────────────────────────────── */
 /* << Hotkey Helper
 ──────────────────────────────────────────────────── */
 
@@ -10012,6 +10020,7 @@ community:
 - obsidian-shellcommands
 - obsidian-sync-version-history
 - mrj-jump-to-link
+- various-complements
 */
 
 /* ───────────────────────────────────────────────── */
