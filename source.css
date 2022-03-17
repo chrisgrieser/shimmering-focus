@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 1.962
+Version 1.963
 https://github.com/chrisgrieser/shimmering-focus/
 MIT License
 ──────────────────────────────────────────────────── */
@@ -3136,8 +3136,8 @@ body .app-container .workspace-leaf-resize-handle:hover {
 	padding-bottom: 0;
 }
 
-.community-plugin-search,
-.community-plugin-search-results {
+/* fix for search results going over the border */
+.modal-content.community-plugin {
 	border-bottom-left-radius: calc(var(--roundish) * 2.5);
 }
 
