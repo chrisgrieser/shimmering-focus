@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 1.966
+Version 1.967
 https://github.com/chrisgrieser/shimmering-focus/
 MIT License
 ──────────────────────────────────────────────────── */
@@ -3596,7 +3596,7 @@ body .community-plugin-info .community-plugin-downloads-text {
 
 /* <<< Theme Browser – Infobox */
 .community-theme.is-selected .community-theme-info::AFTER {
-	content: "ℹ️ Most UI elements become visible when hovered. \A\A🎨 Hidden UI elements can be re-enabled with the Style Settings Plugin.";
+	content: "👉  Most UI elements are only visible when hovered. \A\A⚙️  Hidden UI elements can be re-enabled permanently with the Style Settings Plugin.";
 
 	font-family: var(--menu-font);
 	font-size: 0.8rem;
@@ -3636,8 +3636,7 @@ body .community-plugin-info .community-plugin-downloads-text {
 	padding-left: 5px;
 }
 
-.community-theme.is-selected .community-plugin-downloads-text,
-.community-theme.is-selected .community-theme-info {
+.community-theme.is-selected :is(.community-plugin-downloads-text, .community-theme-info) {
 	color: var(--text-muted);
 }
 
@@ -3647,8 +3646,7 @@ body .community-plugin-info .community-plugin-downloads-text {
 
 .community-theme.is-selected svg.github-glyph {
 	background-color: currentcolor;
-	margin-bottom: -1.5px;
-	transform: scale(1.1);
+	transform: scale(0.85);
 	-webkit-mask-image: var(--external-url);
 }
 
