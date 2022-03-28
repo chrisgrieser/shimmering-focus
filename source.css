@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 1.965
+Version 1.966
 https://github.com/chrisgrieser/shimmering-focus/
 MIT License
 ──────────────────────────────────────────────────── */
@@ -4782,7 +4782,7 @@ body .markdown-preview-view blockquote,
 	position: absolute;
 
 	margin-top: -12px;
-	margin-left: -14px;
+	margin-left: calc(-1 * var(--blockquote-border-width) - 4px);
 }
 
 .HyperMD-quote + .HyperMD-quote.HyperMD-quote-lazy::BEFORE {
