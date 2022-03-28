@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 1.967
+Version 1.968
 https://github.com/chrisgrieser/shimmering-focus/
 MIT License
 ──────────────────────────────────────────────────── */
@@ -120,7 +120,6 @@ MIT License
 		- Code Blocks
 	- Syntax Highlighting
 	- Lists
-	- Bullet Point Relationship Lines
 	- Links
 		- Unresolved links
 		- fold external URLs (CM6 Source Mode)
@@ -5346,63 +5345,9 @@ pre[class~="language-haskell" i]::AFTER { content: "Haskell"; }
 	padding-left: 2rem;
 }
 
-/* ───────────────────────────────────────────────── */
-/* << Bullet Point Relationship Lines
-──────────────────────────────────────────────────── */
-/* based on css from the outliner plugin */
-/* https://github.com/vslinko/obsidian-outliner/blob/main/styles.css */
-
-/* Edit Mode */
-body { /* stylelint-disable-line no-duplicate-selectors */
-	--indention-size: 3.05ch;
-	--relationship-line-color: var(--text-faint);
-}
-
-.relationship-line-fix-mono { --indention-size: 4.0ch }
-.relationship-line-fix-proportional { --indention-size: 1.8ch }
-
-body:not(.no-ul-relationship-lines) .HyperMD-list-line.cm-line:not(.HyperMD-list-line-1) {
-	padding-top: 0.2em;
-	overflow: hidden;
-}
-
-body:not(.no-ul-relationship-lines) .cm-hmd-list-indent {
-	position: relative;
-}
-
-body:not(.no-ul-relationship-lines) .cm-line .cm-hmd-list-indent::BEFORE,
-body:not(.no-ul-relationship-lines) .CodeMirror-line .cm-hmd-list-indent::BEFORE {
-	display: block;
-	content: "";
-
-	width: 100%;
-	background-position-x: 3px;
-
-	background-image: linear-gradient(to right, var(--relationship-line-color) 1px, transparent 1px);
-
-	position: absolute;
-	top: -1.6em;
-	left: 1.5px;
-
-	padding-bottom: 999em;
-
-	background-size: var(--indention-size) 1px;
-}
-
-/* Preview Mode */
-body:not(.no-ul-relationship-lines) :is(ul ul, ol ol, ul ol, ol ul) {
-	position: relative;
-}
-
-body:not(.no-ul-relationship-lines) :is(ul ul, ol ol, ul ol, ol ul)::BEFORE {
-	content: "";
-
-	position: absolute;
-	top: 0;
-	bottom: 0;
-	left: -0.85rem;
-
-	border-left: 1px solid var(--relationship-line-color);
+.markdown-rendered.show-indentation-guide li > ul::BEFORE,
+.markdown-source-view.mod-cm6 .cm-indent::BEFORE {
+	border-right: var(--muted-border);
 }
 
 /* ───────────────────────────────────────────────── */
@@ -10310,24 +10255,6 @@ settings:
 	 type: variable-text
 	 default: '"iA Writer Quattro S"'
 	-
-	 id: relationship-line-fix-menu
-	 title: Relationship Line Fix for Custom Main Font
-	 description: 'If you are using a custom main font, and the relationship lines for lists are off, try one of these. Otherwise, leave this at "Default".'
-	 type: class-select
-	 allowEmpty: false
-	 hub: ignore
-	 default: no-relationship-line-fix
-	 options:
-	 -
-		label: Default
-		value: no-relationship-line-fix
-	 -
-		label: Relationship Line Fix (Proportional Font)
-		value: relationship-line-fix-proportional
-	 -
-		label: Relationship Line Fix (Monospace Font)
-		value: relationship-line-fix-mono
-	-
 	 id: font-monospace
 	 title: Monospace Font
 	 description: Used in Code blocks, YAML in Edit Mode, tables in Edit Mode, etc.
@@ -10794,13 +10721,6 @@ settings:
 	 id: no-alternating-rows
 	 title: Turn off Alternating Row Coloring
 	 type: class-toggle
-	 default: false
-	-
-	 id: no-ul-relationship-lines
-	 title: Disable Relationship Lines for lists
-	 description: If you want to use a custom relationship line snippet or the relationship lines from the Outliner plugin, you can disable this theme's relationship lines to prevent interference.
-	 type: class-toggle
-	 hub: ignore
 	 default: false
 	-
 	 id: spellcheck-settings
