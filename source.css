@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 1.964
+Version 1.965
 https://github.com/chrisgrieser/shimmering-focus/
 MIT License
 ──────────────────────────────────────────────────── */
@@ -8009,7 +8009,7 @@ body .kanban-plugin .kanban-plugin__markdown-preview-view hr {
 }
 
 /* checkboxes & angular shapes setting */
-:is(.kanban-plugin__drag-container,.kanban-plugin) input[type="checkbox"] {
+:is(.kanban-plugin__drag-container,.kanban-plugin) input[type="checkbox"][type="checkbox"] {
 	height: 0.85em;
 	width: 0.85em;
 	margin-top: 0;
