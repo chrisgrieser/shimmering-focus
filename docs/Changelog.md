@@ -3,7 +3,7 @@ nav_order: 110
 ---
 
 # Changelog
-- 2022-03-17	patch
+- 2022-03-28	styling of callouts & removal of pseudo-admonitions
 - 2022-03-17	New Promo Screenshot
 - 2022-03-17	support & fixes for various complements plugin
 - 2022-03-16	fix justificiation of longform / writing cssclass

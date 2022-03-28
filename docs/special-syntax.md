@@ -16,16 +16,6 @@ Using a double-blockquote (`>>`) after a normal blockquote (`>`) will result in 
 
 ![](https://user-images.githubusercontent.com/73286100/148688725-f0c3e0a6-0712-4ead-b787-cf56dafc8e40.gif)
 
-## Multi-line Admonitions (⚠️ Deprecated)
-Using triple-blockquotes (`>>>`) will create admonitions which work in all three modes. No Plugin or `cssclass` required.
-
----
-⚠️ Due to the new Callout Syntax in Obsidian 0.14, this feature will be deprecated and removed from the theme in the foreseeable future.
-
----
-
-![](https://user-images.githubusercontent.com/73286100/148685705-2575e205-4554-4474-96e2-50d65d486e64.gif)
-
 ## Multi-Color-Highlighting
 - Surround highlights with `*` or `**` for alternative highlight colors (`*==cyan==*` and `**==yellow==**`).
 

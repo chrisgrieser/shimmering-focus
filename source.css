@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 1.963
+Version 1.964
 https://github.com/chrisgrieser/shimmering-focus/
 MIT License
 ──────────────────────────────────────────────────── */
@@ -113,7 +113,7 @@ MIT License
 		- Headings interacting with other markup
 	- Blockquotes
 	- Citation Syntax
-	- Pseudo-Admonitions
+	- Callouts
 	- Tables
 	- Code
 		- Inline Code
@@ -4723,8 +4723,9 @@ body:not(.no-heading-bg) .kanban-plugin :is(h1, h2, h3, h4, h5, h6) {
 /* << Blockquotes
 ──────────────────────────────────────────────────── */
 blockquote,
+.callout,
 .HyperMD-quote {
-	--blockquote-border-width: 10px;
+	--blockquote-border-width: 8px;
 	--blockquote-color: var(--bg2);
 }
 
@@ -4743,8 +4744,13 @@ body .markdown-preview-view blockquote,
 /* edit mode & live preview */
 .HyperMD-quote.HyperMD-quote.HyperMD-quote.HyperMD-quote {
 	background-color: var(--blockquote-color);
-	padding: 0 10px 3px;
+	padding: 3px 10px;
 	border-radius: var(--roundish);
+}
+
+/* less padding between quote blocks */
+.HyperMD-quote.HyperMD-quote.HyperMD-quote + .HyperMD-quote {
+	padding-top: 0;
 }
 
 /* the ">" */
@@ -4819,9 +4825,7 @@ body:not(.no-active-highlight):not(.active-visual-line) .cm-s-obsidian .cm-activ
 }
 
 /* option for normal size */
-body:not(.normal-blockquotes) blockquote,
-body:not(.normal-blockquotes) .cm-hmd-indent-in-quote,
-body:not(.normal-blockquotes) .HyperMD-quote.HyperMD-quote-1 {
+body:not(.normal-blockquotes) :is(blockquote, .cm-hmd-indent-in-quote, .HyperMD-quote.HyperMD-quote-1) {
 	font-size: 0.87em;
 	line-height: 21px;
 }
@@ -4914,67 +4918,45 @@ body:not(.blockquotes-left-aligned) .app-container .HyperMD-quote {
 }
 
 /* ───────────────────────────────────────────────── */
-/* << Pseudo-Admonitions
+/* << Callouts
 ──────────────────────────────────────────────────── */
+.cm-hmd-callout.cm-hmd-callout.cm-hmd-callout.cm-hmd-callout {
+	font-weight: 700;
 
-/* TODO: remove after when 0.14 goes public */
+	color: var(--extra-contrast);
+	background-color: var(--bg3);
 
-.HyperMD-quote-3 .cm-formatting-quote-3::AFTER {
-	content: var(--pseudo-admonition-prefix);
-	padding-left: 3px;
+	padding: 3.2px 6px 3.5px 4px;
+	margin-left: -4px;
+
+	border-bottom-right-radius: calc(var(--roundish) * 0.66);
 }
 
-.HyperMD-quote-3 .cm-formatting-quote-3 + .cm-formatting-quote-3::AFTER,
-.HyperMD-quote-3 + .HyperMD-quote-3 .cm-formatting-quote-3::AFTER {
-	opacity: 0;
+.callout-content p {
+	margin: 1px 0;
 }
 
-.HyperMD-quote .cm-quote-3:not(.cm-formatting-quote) {
-	font-family: var(--menu-font);
-	font-size: 0.85rem;
+.callout-content {
+	padding-left: 10px;
 }
 
-.markdown-preview-view blockquote > blockquote > blockquote::BEFORE {
-	content: var(--pseudo-admonition-prefix);
-
-	font-style: normal;
-	text-align: start;
-
-	background-color: var(--bg2);
-
-	position: absolute;
-	top: -7px;
-	bottom: -7px;
-	left: -28px;
-
-	padding: 5px 8px;
-
-	border: 7px double var(--basic-border-color);
-	border-right: none;
-	border-bottom-left-radius: var(--roundish);
-	border-top-left-radius: var(--roundish);
+body:not(.normal-blockquotes) .callout-content {
+	font-size: 0.87em;
+	line-height: 21px;
 }
 
-.markdown-reading-view .markdown-preview-view blockquote > blockquote > blockquote {
-	font-family: var(--menu-font);
-	font-size: 0.9rem;
-
-	width: 101%;
-
-	position: relative;
-	right: -5px;
-
-	margin-top: -10px;
-	margin-bottom: -10px;
-
-	border: 7px double var(--basic-border-color);
-	border-left: none;
+.callout-icon {
+	transform: scale(1.1);
 }
 
-/* for LP */
-.HyperMD-quote-3 .cm-formatting-quote-1 + .cm-blockquote-border,
-.HyperMD-quote-3 .cm-formatting-quote-3 .cm-blockquote-border {
-	display: none;
+.callout {
+	border-radius: var(--roundish);
+	border-left-width: var(--blockquote-border-width);
+}
+
+.callout-title {
+	padding-top: 2.5px;
+	padding-bottom: 2.5px;
 }
 
 /* ───────────────────────────────────────────────── */
@@ -10404,8 +10386,8 @@ settings:
 	 format: rem
 	-
 	 id: normal-blockquotes
-	 title: Normal-sized Blockquotes
-	 description: Blockquotes have the same size and line-height as the rest of the text.
+	 title: Normal-sized Blockquotes & Callouts
+	 description: Blockquotes & Callouts have the same size and line-height as the rest of the text.
 	 type: class-toggle
 	 default: false
 	-
