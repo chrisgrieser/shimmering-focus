@@ -3,6 +3,7 @@ nav_order: 110
 ---
 
 # Changelog
+- 2022-03-28	left-align all settings items (#130)
 - 2022-03-28	removed indention guides, since now included natively (Obsidian 0.14)
 - 2022-03-28	fix for tasks in kanbans
 - 2022-03-28	styling of callouts & removal of pseudo-admonitions
