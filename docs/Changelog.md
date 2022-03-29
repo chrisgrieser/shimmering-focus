@@ -3,6 +3,7 @@ nav_order: 110
 ---
 
 # Changelog
+- 2022-03-29	patch
 - 2022-03-29	improved build script
 - 2022-03-29	add info on unminified source css to obsidian.css
 - 2022-03-29	fixes for <progress> elements

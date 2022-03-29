@@ -80,7 +80,7 @@ mv tempaa info.css
 mv tempab unminified_css_code.css
 mv tempac style_settings.css
 cleancss unminified_css_code.css > minified_css_code.css
-cat info.css minified_css_code.css style_settings.css >> obsidian.css
+cat info.css minified_css_code.css style_settings.css > obsidian.css
 rm info.css unminified_css_code.css minified_css_code.css style_settings.css
 
 # ------------------------------------
