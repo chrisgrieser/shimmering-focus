@@ -60,10 +60,13 @@ markdown-link-check -q ./README.md
 
 # Update ToC
 printf "/* @TOC-SPLIT-MARKER */\n/*\n" > temp_toc.css
-grep -E "<+ " "$csspath" | sed -e "s/ \*\///" -e "s/\/\* //" -e "s/<<< /\t\t- /" -e "s/<< /\t- /" -e "s/< /- /" | tail -n +2 >> temp_toc.css
+grep -E "<+ " "$csspath" | sed -e "s/ \*\///" -e "s/\/\* //" -e "s/<<< /\t\t- /" -e "s/<< /\t- /" -e "s/< /- /" | tail -n +2 \
+	>> new_toc.css
 split -p "@TOC-SPLIT-MARKER" "$csspath" temp
-cat tempaa temp_toc.css tempac > "$csspath"
-rm temp_toc.css tempaa tempab tempac
+mv tempaa before_toc.css
+mv tempac after_toc.css
+cat before_toc.css new_toc.css after_toc.css > "$csspath"
+rm new_toc.css before_toc.css tempab after_toc.css
 
 # Bump version number
 versionLine=$(grep -Ewn "^Version" "$csspath" | cut -d: -f1 | head -n1)
@@ -72,10 +75,10 @@ nextVersion=$((currentVersion + 1))
 sed -E -i '' "${versionLine}s/(.*\.)[[:digit:]]+/\1$nextVersion/" "$csspath"
 
 # Minify
-split -p "@MINIFY-SPLITMARKER" "$csspath" temp # split off to prevent style settings from getting minified
-mv tempaa unminified_css_code.css
-mv tempab style_settings.css
-echo "/* Unminified source code: https://github.com/chrisgrieser/shimmering-focus/blob/main/source.css */" > info.css
+split -p "@MINIFY-SPLIT-MARKER" "$csspath" temp # split off to prevent style settings from getting minified
+mv tempaa info.css
+mv tempab unminified_css_code.css
+mv tempac style_settings.css
 cleancss unminified_css_code.css > minified_css_code.css
 cat info.css minified_css_code.css style_settings.css >> obsidian.css
 rm info.css unminified_css_code.css minified_css_code.css style_settings.css
