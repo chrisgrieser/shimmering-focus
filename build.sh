@@ -73,9 +73,12 @@ sed -E -i '' "${versionLine}s/(.*\.)[[:digit:]]+/\1$nextVersion/" "$csspath"
 
 # Minify
 split -p "@MINIFY-SPLITMARKER" "$csspath" temp # split off to prevent style settings from getting minified
-cleancss tempaa > minified.css
-cat minified.css tempab > obsidian.css
-rm minified.css tempaa tempab
+mv tempaa unminified_css_code.css
+mv tempab style_settings.css
+echo "/* Unminified source code: https://github.com/chrisgrieser/shimmering-focus/blob/main/source.css */" > info.css
+cleancss unminified_css_code.css > minified_css_code.css
+cat info.css minified_css_code.css style_settings.css >> obsidian.css
+rm info.css unminified_css_code.css minified_css_code.css style_settings.css
 
 # ------------------------------------
 
