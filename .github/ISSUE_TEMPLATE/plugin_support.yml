@@ -1,0 +1,30 @@
+name: Plugin Support
+description: Request support for an unsupported plugin
+title: "Plugin Support: "
+labels: ["plugin support"]
+body:
+  - type: checkboxes
+    id: checklist
+    attributes:
+      label: Make sure that the plugin is not in the [list of supported plugins](https://publish.obsidian.md/hub/02+-+Community+Expansions/02.05+All+Community+Expansions/Themes/Shimmering+Focus#Plugin+Compatibility+1). In case it is listed there, please open a [bug report](https://github.com/chrisgrieser/shimmering-focus/issues/new?assignees=&labels=bug&template=bug_report.yml&title=%5BBug%5D%3A+) instead.
+      options:
+        - label: The plugin is not listed there.
+          required: true
+  - type: textarea
+    id: plugin-support-request
+    attributes:
+      label: Description of issues the theme has with the plugin.
+    validations:
+      required: true
+  - type: textarea
+    id: screenshot
+    attributes:
+      label: Relevant Screenshot
+      description: If applicable, add screenshots or a screen recording to help explain the request.
+  - type: input
+    id: plugin-link
+    attributes:
+      label: Link to the Plugin
+      placeholder: https://obsidian.md/plugins?id=obsidian-smarter-md-hotkeys
+    validations:
+      required: true
