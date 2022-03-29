@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 1.975
+Version 1.976
 https://github.com/chrisgrieser/shimmering-focus/
 MIT License
 ──────────────────────────────────────────────────── */
@@ -12,7 +12,7 @@ MIT License
 
 - Colors
 	- Accent Colors
-		- Accent Color Palette
+	- Accent Color Palette
 		- Primary Accent
 		- Hover Accent
 		- Secondary Accent
@@ -178,18 +178,18 @@ MIT License
 	- Calendar
 	- Templater
 	- Kanban
-		- Kanban: Board
-		- Kanban Font
-		- Kanban: Lanes
-		- Kanban: Misc
-	- Longform
-		- Longform Sidebar
-		- Longform Scene List
-		- Longform Icons
-		- Longform Compile
-		- Longform Editor
-		- Writing cssclass
-	- Ozan's Image in Editor
+		- Kanban: board
+	- kanban font
+	-; kanban: lanes
+	-; kanban: misc
+	- longform
+	- longform sidebar
+	- longform scene list
+	- longform icons
+	- longform compile
+	- longform editor
+	- writing cssclass
+	- ozan"s Image in Editor
 	- Recent Files
 	- Quick Explorer
 	- My Snippets
@@ -400,35 +400,37 @@ MIT License
 		- Longform Compile
 		- Longform Editor
 		- Writing cssclass
-	- Ozan's Image in Editor
-	- Recent Files
-	- Quick Explorer
-	- My Snippets
-	- Map of Content (MoC)
-	- Breadcrumbs
-	- Drag & Drop Blocks
-	- Dangling Links
-	- Advanced Cursor
-	- CodeMirror Options
-	- Dataview
-	- Another Quick Switcher
-	- Activity History
-	- Style Settings (Settings Tab)
-		- Style Setting – Info Boxes
-	- Favicon Plugin
-	- File Info Panel (Side bar)
-	- Get Info (Status bar)
-	- Language Tool Integration
-	- Various Complements
-	- Hotkey Helper
-	- Excalidraw
-	- Zoom
-	- Advanced Tables
-	- Dynamic Highlight
-	- Show Current File Path
-	- Active Visual Line (Plugin)
-	- Settings Search
-	- CookLang Plugin
-	- Code Block Labels
-- Compatibility Info for the Obsidian Hub
-- Style Setting Options
+	- Ozan"s image in editor
+	- recent files
+	- quick explorer
+	- my snippets
+	- map of content (moc)
+	- breadcrumbs
+	- drag & drop blocks
+	- dangling links
+	- advanced cursor
+	- codemirror options
+	- dataview
+	- another quick switcher
+	- activity history
+	- style settings (settings tab)
+	- style setting – info boxes
+	- favicon plugin
+	- file info panel (side bar)
+	- get info (status bar)
+	- language tool integration
+	- various complements
+	- hotkey helper
+	- excalidraw
+	- zoom
+	- advanced tables
+	- dynamic Highlight
+	- show current file path
+	- active visual line (plugin)
+	- settings search
+	- cooklang plugin
+	- code block labels
+	- compatibility info for the obsidian hub
+	- style setting options;
+/* @TOC-SPLIT-MARKER */
+/*

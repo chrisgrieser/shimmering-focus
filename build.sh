@@ -59,7 +59,7 @@ markdown-link-check -q ./README.md
 # find ./docs -name \*.md -print0 | xargs -0 -n1 markdown-link-check -q
 
 # Update ToC
-printf "/* @TOC-SPLIT-MARKER */\n/*\n" > temp_toc.css
+printf "/* @TOC-SPLIT-MARKER */\n/*\n" > new_toc.css
 grep -E "<+ " "$csspath" | sed -e "s/ \*\///" -e "s/\/\* //" -e "s/<<< /\t\t- /" -e "s/<< /\t- /" -e "s/< /- /" | tail -n +2 \
 	>> new_toc.css
 split -p "@TOC-SPLIT-MARKER" "$csspath" temp
