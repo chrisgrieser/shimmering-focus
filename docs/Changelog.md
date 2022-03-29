@@ -3,6 +3,8 @@ nav_order: 110
 ---
 
 # Changelog
+- 2022-03-29	accent color refactoring
+- 2022-03-29	add info on unminified source css to obsidian.css
 - 2022-03-29	fixes for <progress> elements
 - 2022-03-29	new cssclass: no-inline-backlinks
 - 2022-03-28	add info on progress bars
