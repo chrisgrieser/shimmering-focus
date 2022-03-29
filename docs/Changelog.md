@@ -3,6 +3,7 @@ nav_order: 110
 ---
 
 # Changelog
+- 2022-03-29	fixes for <progress> elements
 - 2022-03-29	new cssclass: no-inline-backlinks
 - 2022-03-28	add info on progress bars
 - 2022-03-28	left-align all settings items (#130)

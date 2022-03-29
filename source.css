@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 1.971
+Version 1.972
 https://github.com/chrisgrieser/shimmering-focus/
 MIT License
 ──────────────────────────────────────────────────── */
@@ -4279,16 +4279,29 @@ progress::-WEBKIT-PROGRESS-VALUE {
 }
 
 /* https://coolors.co/gradient-palette/03045e-6cf9ca?number=10 */
-progress[value^="1"]::-WEBKIT-PROGRESS-VALUE { background: hsl(239 94% 19%) }
-progress[value^="2"]::-WEBKIT-PROGRESS-VALUE { background: hsl(229 75% 24%) }
-progress[value^="3"]::-WEBKIT-PROGRESS-VALUE { background: hsl(219 64% 28%) }
-progress[value^="4"]::-WEBKIT-PROGRESS-VALUE { background: hsl(209 55% 33%) }
-progress[value^="5"]::-WEBKIT-PROGRESS-VALUE { background: hsl(199 48% 38%) }
-progress[value^="6"]::-WEBKIT-PROGRESS-VALUE { background: hsl(189 43% 42%) }
-progress[value^="7"]::-WEBKIT-PROGRESS-VALUE { background: hsl(179 39% 47%) }
-progress[value^="8"]::-WEBKIT-PROGRESS-VALUE { background: hsl(171 48% 55%) }
-progress[value^="9"]::-WEBKIT-PROGRESS-VALUE { background: hsl(165 66% 62%) }
-progress[value^="10"]::-WEBKIT-PROGRESS-VALUE { background: hsl(160 92% 70%) }
+
+progress[value^="1"][max="10"]::-WEBKIT-PROGRESS-VALUE { background: hsl(160 92% 70%) }
+progress[value="9"][max="10"]::-WEBKIT-PROGRESS-VALUE { background: hsl(165 66% 62%) }
+progress[value="8"][max="10"]::-WEBKIT-PROGRESS-VALUE { background: hsl(171 48% 55%) }
+progress[value="7"][max="10"]::-WEBKIT-PROGRESS-VALUE { background: hsl(179 39% 47%) }
+progress[value="6"][max="10"]::-WEBKIT-PROGRESS-VALUE { background: hsl(189 43% 42%) }
+progress[value="5"][max="10"]::-WEBKIT-PROGRESS-VALUE { background: hsl(199 48% 38%) }
+progress[value="4"][max="10"]::-WEBKIT-PROGRESS-VALUE { background: hsl(209 55% 33%) }
+progress[value="3"][max="10"]::-WEBKIT-PROGRESS-VALUE { background: hsl(219 64% 28%) }
+progress[value="2"][max="10"]::-WEBKIT-PROGRESS-VALUE { background: hsl(229 75% 24%) }
+progress[value="1"][max="10"]::-WEBKIT-PROGRESS-VALUE { background: hsl(239 94% 19%) }
+
+progress[value^="1"][max="100"]::-WEBKIT-PROGRESS-VALUE { background: hsl(160 92% 70%) }
+progress[value^="9"][max="100"]::-WEBKIT-PROGRESS-VALUE { background: hsl(165 66% 62%) }
+progress[value^="8"][max="100"]::-WEBKIT-PROGRESS-VALUE { background: hsl(171 48% 55%) }
+progress[value^="7"][max="100"]::-WEBKIT-PROGRESS-VALUE { background: hsl(179 39% 47%) }
+progress[value^="6"][max="100"]::-WEBKIT-PROGRESS-VALUE { background: hsl(189 43% 42%) }
+progress[value^="5"][max="100"]::-WEBKIT-PROGRESS-VALUE { background: hsl(199 48% 38%) }
+progress[value^="4"][max="100"]::-WEBKIT-PROGRESS-VALUE { background: hsl(209 55% 33%) }
+progress[value^="3"][max="100"]::-WEBKIT-PROGRESS-VALUE { background: hsl(219 64% 28%) }
+progress[value^="2"][max="100"]::-WEBKIT-PROGRESS-VALUE { background: hsl(229 75% 24%) }
+progress[max="100"]:is([value="10"],[value="11"],[value="12"],[value="13"],[value="14"],[value="15"],[value="16"],[value="17"],[value="18"],[value="18"])::-WEBKIT-PROGRESS-VALUE { background: hsl(239 94% 19%) }
+progress[max="100"]:is([value="1"],[value="2"],[value="3"],[value="4"],[value="5"],[value="6"],[value="7"],[value="8"],[value="9"])::-WEBKIT-PROGRESS-VALUE { background: hsl(249 100% 14%) }
 
 /* ───────────────────────────────────────────────── */
 /* << Images
