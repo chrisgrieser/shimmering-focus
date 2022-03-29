@@ -3,7 +3,7 @@ nav_order: 110
 ---
 
 # Changelog
-- 2022-03-28	patch
+- 2022-03-29	new cssclass: no-inline-backlinks
 - 2022-03-28	add info on progress bars
 - 2022-03-28	left-align all settings items (#130)
 - 2022-03-28	removed indention guides, since now included natively (Obsidian 0.14)

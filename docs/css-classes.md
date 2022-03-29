@@ -29,6 +29,7 @@ The following CSS classes are built in with this theme:
 - `cssclass: clean-top`: Removes Metadata Information, YAML frontmatter, and Breadcrumbs trail from the top of the note.
 - `cssclass: clean-embeds`: Embeds in that note are fully embedded, looking like one document.
 - `cssclass: list-2-col-cards`: Lists will become cards separated into two columns.
+- `cssclass: no-inline-backlinks`: Do not display inline backlinks for that note.
 
 ## Writing & Academic
 - `cssclass: writing`: Applies alternate note styling for writers. [See here for more information](/shimmering-focus/academics-and-writers) (requires Obsidian 0.13.23).
