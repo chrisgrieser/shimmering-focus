@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 1.976
+Version 1.977
 Source CSS: https://github.com/chrisgrieser/shimmering-focus/blob/main/source.css
 MIT License
 ──────────────────────────────────────────────────── */
@@ -1677,14 +1677,12 @@ body:not(.show-header-bar):not(.is-mobile):not(.plugin-sliding-panes-rotate-head
 	padding-top: calc(var(--hidden-header-hotarea-height) + 10px);
 }
 
-body:not(.show-header-bar):not(.is-mobile):not(.plugin-sliding-panes-rotate-header) :is(.view-header-title, .view-header-icon),
-body:not(.show-header-bar):not(.is-mobile):not(.plugin-sliding-panes-rotate-header) .view-action svg {
+body:not(.show-header-bar):not(.is-mobile):not(.plugin-sliding-panes-rotate-header) :is(.view-header-title, .view-header-icon, .view-action svg) {
 	color: var(--extra-contrast);
 	opacity: 0;
 }
 
-body:not(.show-header-bar):not(.is-mobile):not(.plugin-sliding-panes-rotate-header) .workspace-split.mod-root .workspace-leaf .view-header:hover,
-body:not(.show-header-bar):not(.is-mobile):not(.plugin-sliding-panes-rotate-header) .workspace-split.mod-root .workspace-leaf .view-header:focus-within,
+body:not(.show-header-bar):not(.is-mobile):not(.plugin-sliding-panes-rotate-header) .workspace-split.mod-root .workspace-leaf .view-header:is(:hover, :focus-within),
 body.show-header-bar:not(.is-mobile):not(.plugin-sliding-panes-rotate-header) .workspace-split.mod-root .workspace-leaf .workspace-leaf-content .view-header {
 	height: var(--visible-header-height);
 	background-color: var(--alt-bg);
