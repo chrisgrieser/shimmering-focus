@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 1.980
+Version 1.981
 Source CSS: https://github.com/chrisgrieser/shimmering-focus/blob/main/source.css
 MIT License
 ──────────────────────────────────────────────────── */
@@ -572,7 +572,7 @@ body:is(.theme-light, .theme-dark) {
 /* << Borders
 ──────────────────────────────────────────────────── */
 
-:is(.theme-light, .theme-dark) .writing,
+.writing.writing,
 .longform-leaf,
 .theme-light,
 .theme-dark {
@@ -583,6 +583,7 @@ body:is(.theme-light, .theme-dark) {
 	--thin-border: 1px solid var(--basic-border-color);
 	--thin-muted-border: 1px solid var(--muted-border-color);
 	--muted-button-border: var(--basic-border);
+	--status-bar-border: 2px ridge var(--basic-border-color);
 }
 
 .theme-light {
@@ -1784,8 +1785,8 @@ body:not(.classic-statusbar) .status-bar {
 
 	padding: 7px 0 6px 12px;
 
-	border-top: 2px ridge var(--basic-border-color);
-	border-left: 2px ridge var(--basic-border-color);
+	border-top: var(--status-bar-border);
+	border-left: var(--status-bar-border);
 	border-top-left-radius: var(--roundish);
 }
 
@@ -1804,14 +1805,18 @@ body:not(.hide-signature) .status-bar::AFTER {
 	bottom: 1px;
 }
 
-.classic-statusbar .status-bar {
-	padding-right: 7px;
-	padding-left: 7px;
+.classic-statusbar .status-bar.status-bar.status-bar {
+	padding-right: 0;
+	border-top: var(--status-bar-border);
 }
 
 .status-bar-item.mod-clickable:hover,
 .lt-status-bar-btn:hover {
 	color: var(--hover-accent-2) !important;
+}
+
+.permanently-hide-statusbar .status-bar {
+	display: none;
 }
 
 /* only show on hover */
@@ -1825,17 +1830,13 @@ body:not(.permanently-show-statusbar):not(.classic-statusbar) .status-bar:hover 
 	transition: var(--medium-transition);
 }
 
-/* so stuff on the bottom of the right sidebar can still be clicked */
+/* fix so stuff on the bottom of the right sidebar can still be clicked */
 body:not(.classic-statusbar) .mod-right-split .workspace-tabs:last-child .workspace-leaf-content > div:last-child {
 	padding-bottom: 2.2em;
 }
 
 /* fix for plugins adding empty elements to the statusbar */
 .status-bar-item:empty {
-	display: none;
-}
-
-.permanently-hide-statusbar .status-bar {
 	display: none;
 }
 
@@ -10763,7 +10764,7 @@ settings:
 	-
 	 id: miscellaneous
 	 title: ⚛️ Miscellaneous
-	 description: Menu Sizes, File Name Trimming, Inactive Panes, Pseudo-Admonitions, Pandoc Citations, Annotation Tags, Alternating Row Colors, Relationship Lines
+	 description: Menu Sizes, File Name Trimming, Inactive Panes, Pseudo-Admonitions, Pandoc Citations, Annotation Tags, Alternating Row Colors
 	 type: heading
 	 level: 1
 	 collapsed: true
