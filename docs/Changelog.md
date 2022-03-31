@@ -3,6 +3,7 @@ nav_order: 110
 ---
 
 # Changelog
+- 2022-03-31	fix for style settings as pane
 - 2022-03-31	more status bar options + switched default highlight color
 - 2022-03-31	minor fixes for quick switcher and another quicker switcher
 - 2022-03-30	f

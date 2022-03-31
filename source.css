@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 1.979
+Version 1.980
 Source CSS: https://github.com/chrisgrieser/shimmering-focus/blob/main/source.css
 MIT License
 ──────────────────────────────────────────────────── */
@@ -9321,10 +9321,6 @@ body .dataview.inline-field-key {
 	margin-top: -33px;
 }
 
-.workspace-leaf-content[data-type="style-settings"] > .view-content > .setting-item:first-child::BEFORE {
-	margin: 0 20vw 5px 0;
-}
-
 body:not(.show-scrollbar) .workspace-split.mod-root .workspace-leaf-content[data-type="style-settings"] ::-WEBKIT-SCROLLBAR {
 	display: none;
 }
@@ -9458,7 +9454,6 @@ body a:is(.style-settings-export, .style-settings-import) {
 	content: "ℹ️ Theme Documentation:   chrisgrieser.github.io/shimmering-focus\AInstall the Settings Search Plugin to find settings more quickly.";
 
 	font-family: var(--menu-font);
-	font-size: 0.9rem;
 	font-weight: 500;
 	line-height: 2em;
 	white-space: pre-wrap;
@@ -9467,12 +9462,20 @@ body a:is(.style-settings-export, .style-settings-import) {
 	box-shadow: var(--small-inset-shadow);
 
 	padding: 3px 10px 5px;
-	margin: -50px 16vw 30px 0;
 
 	border: var(--basic-border);
 	border-radius: var(--roundish);
 
 	pointer-events: none;
+}
+
+.modal .setting-item-heading[data-id="shimmering-focus"]::BEFORE {
+	font-size: 0.9rem;
+	margin: -50px 16vw 30px 0;
+}
+
+.workspace-leaf-content[data-type="style-settings"] > .view-content > .setting-item:first-child::BEFORE {
+	font-size: 0.8rem;
 }
 
 /* ───────────────────────────────────────────────── */
@@ -10097,20 +10100,8 @@ settings:
 			label: hide permanantly
 			value: permanently-hide-statusbar
 		-
-			labestatusbar
+			label: classic statusbar
 			value: classic-statusbar
-	-
-	 id: permanently-show-statusbar
-	 title: Permanently show the Status Bar
-	 description: When false, the Status bar is still visible when hovering. (This setting will be overridden when you use the default status bar.)
-	 type: class-toggle
-	 default: false
-	-
-	 id: classic-statusbar
-	 title: Default Theme Status Bar
-	 description: Use the Status Bar from the default theme, which will also be permanently visible.
-	 type: class-toggle
-	 default: false
 	-
 	 id: show-urls
 	 title: 'Permanently show full URLs (new Editor Source Mode only)'
