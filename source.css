@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 1.982
+Version 1.983
 Source CSS: https://github.com/chrisgrieser/shimmering-focus/blob/main/source.css
 MIT License
 ──────────────────────────────────────────────────── */
@@ -1823,7 +1823,7 @@ body:not(.hide-signature) .status-bar::AFTER {
 /* only show on hover */
 body:not(.permanently-show-statusbar):not(.classic-statusbar) .status-bar {
 	opacity: 0;
-	transition: 800ms ease-in-out;
+	transition: var(--slow-transition);
 }
 
 body:not(.permanently-show-statusbar):not(.classic-statusbar) .status-bar:hover {
@@ -1855,7 +1855,7 @@ body:not(.show-scrollbar) ::-WEBKIT-SCROLLBAR {
 }
 
 /* removes scrollbar background */
-::-WEBKIT-SCROLLBAR {
+:is(.theme-light, .theme-dark):is(.theme-light, .theme-dark) ::-WEBKIT-SCROLLBAR {
 	background-color: transparent;
 }
 
