@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 1.987
+Version 1.988
 Source CSS: https://github.com/chrisgrieser/shimmering-focus/blob/main/source.css
 MIT License
 ──────────────────────────────────────────────────── */
@@ -2390,7 +2390,7 @@ div.prompt {
 }
 
 input.prompt-input {
-	font-size: calc(var(--button-font-size) + 0.4em);
+	font-size: calc(var(--button-font-size) + 0.3em);
 	width: unset;
 	margin-bottom: 3px;
 	border-radius: calc(var(--roundish) * 1.5);
