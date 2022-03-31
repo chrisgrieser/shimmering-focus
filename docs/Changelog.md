@@ -3,6 +3,7 @@ nav_order: 110
 ---
 
 # Changelog
+- 2022-03-31	further improvements for callouts
 - 2022-03-31	scrollbar slightly more minimal
 - 2022-03-31	fix for style settings as pane
 - 2022-03-31	more status bar options + switched default highlight color

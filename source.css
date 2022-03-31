@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 1.983
+Version 1.984
 Source CSS: https://github.com/chrisgrieser/shimmering-focus/blob/main/source.css
 MIT License
 ──────────────────────────────────────────────────── */
@@ -4823,7 +4823,7 @@ body .markdown-preview-view blockquote,
 .HyperMD-quote .cm-formatting.cm-formatting-quote {
 	font-weight: 600;
 	font-style: normal;
-	color: var(--text-faint);
+	color: var(--middle-gray);
 }
 
 /* style links in blockquotes, e.g. quote sources */
@@ -4855,14 +4855,8 @@ body .markdown-preview-view blockquote,
 	margin-left: -10px;
 }
 
-.HyperMD-quote + .HyperMD-quote {
-	/* so the position absolute below is in relation
-	to this element and not the editor */
-	position: relative;
-}
-
-.HyperMD-quote + .HyperMD-quote .cm-hmd-indent-in-quote::BEFORE {
-	content: " ";
+.HyperMD-quote + .HyperMD-quote::AFTER {
+	content: "";
 
 	height: 1em;
 	width: 1em;
@@ -4978,7 +4972,7 @@ body:not(.blockquotes-left-aligned) .app-container .HyperMD-quote {
 	display: none !important;
 }
 
-/* only needed for Shimmering Focus */
+/* only needed for Shimmering Focus' blockquotes */
 .markdown-preview-view *:not(blockquote) > blockquote > p + blockquote {
 	margin-top: -10px;
 }
@@ -4986,16 +4980,22 @@ body:not(.blockquotes-left-aligned) .app-container .HyperMD-quote {
 /* ───────────────────────────────────────────────── */
 /* << Callouts
 ──────────────────────────────────────────────────── */
-.cm-hmd-callout.cm-hmd-callout.cm-hmd-callout.cm-hmd-callout {
+.HyperMD-callout.HyperMD-callout.HyperMD-callout.HyperMD-callout {
 	font-weight: 700;
 
 	color: var(--extra-contrast);
 	background-color: var(--bg3);
 
-	padding: 3.2px 6px 3.5px 4px;
-	margin-left: -4px;
+	z-index: 40;
 
-	border-bottom-right-radius: calc(var(--roundish) * 0.66);
+	padding-top: 2px;
+	padding-bottom: 2px;
+
+	border-bottom-right-radius: 0;
+}
+
+.cm-hmd-callout.cm-hmd-callout.cm-hmd-callout {
+	color: var(--middle-gray);
 }
 
 .callout-content p {
@@ -5023,6 +5023,22 @@ body:not(.normal-blockquotes) .callout-content {
 .callout-title {
 	padding-top: 2.5px;
 	padding-bottom: 2.5px;
+	border-top-right-radius: var(--roundish);
+	border-bottom-right-radius: var(--roundish);
+}
+
+.callout-fold {
+	position: relative;
+	top: 2px;
+}
+
+.callout-fold:hover {
+	color: var(--hover-accent-2);
+	transform: scale(1.2);
+}
+
+div.is-collapsible:not(.is-collapsed)[data-callout] .callout-title {
+	border-bottom-right-radius: 0;
 }
 
 /* ───────────────────────────────────────────────── */
