@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 1.978
+Version 1.979
 Source CSS: https://github.com/chrisgrieser/shimmering-focus/blob/main/source.css
 MIT License
 ──────────────────────────────────────────────────── */
@@ -276,22 +276,22 @@ MIT License
 /* <<< Hover Accent */
 .theme-light {
 	--interactive-hover-bg: var(--hover-accent-4);
+	--text-hover-accent: var(--hover-accent-1);
 }
 
 .theme-dark {
 	--interactive-hover-bg: var(--hover-accent-1);
+	--text-hover-accent: var(--hover-accent-2);
 }
 
 /* <<< Secondary Accent */
 .theme-light {
-	--editor-secondary-accent: var(--secondary-accent-1);
 	--reference-color: var(--secondary-accent-1);
 	--tag-text-color: var(--secondary-accent-1);
 	--code-color: var(--secondary-accent-1);
 }
 
 .theme-dark {
-	--editor-secondary-accent: var(--secondary-accent-2);
 	--reference-color: var(--secondary-accent-2);
 	--tag-text-color: var(--secondary-accent-2);
 	--code-color: var(--secondary-accent-2);
@@ -301,8 +301,8 @@ MIT License
 :root {
 	--unresolved-link-color: hsl(211 100% 52% / 90%);
 
-	--highlight-color: hsl(152 100% 50% / 40%);
-	--highlight-alt1: hsl(60 100% 50% / 40%);
+	--highlight-color: hsl(60 100% 50% / 40%);
+	--highlight-alt1: hsl(152 100% 50% / 40%);
 	--highlight-alt2: hsl(180 100% 50% / 40%);
 }
 
@@ -1772,7 +1772,7 @@ body:not(.plugin-sliding-panes) .view-header:focus-within + .view-content {
 /* << Status Bar
 ──────────────────────────────────────────────────── */
 
-body:not(.default-statusbar) .status-bar {
+body:not(.classic-statusbar) .status-bar {
 	font-family: var(--ui-font);
 	line-height: 1;
 
@@ -1804,7 +1804,7 @@ body:not(.hide-signature) .status-bar::AFTER {
 	bottom: 1px;
 }
 
-.default-statusbar .status-bar {
+.classic-statusbar .status-bar {
 	padding-right: 7px;
 	padding-left: 7px;
 }
@@ -1815,23 +1815,27 @@ body:not(.hide-signature) .status-bar::AFTER {
 }
 
 /* only show on hover */
-body:not(.show-statusbar):not(.default-statusbar) .status-bar {
+body:not(.permanently-show-statusbar):not(.classic-statusbar) .status-bar {
 	opacity: 0;
 	transition: 800ms ease-in-out;
 }
 
-body:not(.show-statusbar):not(.default-statusbar) .status-bar:hover {
+body:not(.permanently-show-statusbar):not(.classic-statusbar) .status-bar:hover {
 	opacity: 1;
 	transition: var(--medium-transition);
 }
 
 /* so stuff on the bottom of the right sidebar can still be clicked */
-body:not(.default-statusbar) .mod-right-split .workspace-tabs:last-child .workspace-leaf-content > div:last-child {
+body:not(.classic-statusbar) .mod-right-split .workspace-tabs:last-child .workspace-leaf-content > div:last-child {
 	padding-bottom: 2.2em;
 }
 
 /* fix for plugins adding empty elements to the statusbar */
 .status-bar-item:empty {
+	display: none;
+}
+
+.permanently-hide-statusbar .status-bar {
 	display: none;
 }
 
@@ -2168,7 +2172,7 @@ body .document-search-container input[type="text"] {
 }
 
 /* move up to avoid collision with statusbar */
-body:not(.default-statusbar) .document-search-container {
+body:not(.classic-statusbar) .document-search-container {
 	position: relative;
 	bottom: 2.4em;
 	padding: 2px 5px 5px;
@@ -3037,7 +3041,7 @@ body .app-container .workspace-leaf-resize-handle:hover {
 
 .setting-add-hotkey-button.mod-active,
 :is(.setting-add-hotkey-button, .setting-restore-hotkey-button, .setting-editor-extra-setting-button):hover {
-	color: var(--editor-secondary-accent);
+	color: var(--text-hover-accent);
 	background-color: var(--bg3);
 	opacity: 1;
 }
@@ -6068,7 +6072,7 @@ body.is-mobile .markdown-preview-view blockquote {
 }
 
 .mobile-option-setting-item > span:hover > svg {
-	color: var(--editor-secondary-accent) !important;
+	color: var(--text-hover-accent) !important;
 	background-color: var(--bg2);
 	opacity: 1;
 }
@@ -8471,7 +8475,7 @@ select#longform-workflows {
 
 select#longform-workflows:hover {
 	text-decoration: none;
-	color: var(--editor-secondary-accent);
+	color: var(--text-hover-accent);
 }
 
 .longform-workflow-picker-container.longform-workflow-picker-container.longform-workflow-picker-container.longform-workflow-picker-container {
@@ -9250,7 +9254,7 @@ body .dataview.inline-field-key {
 }
 
 .suggestion-item:hover :is(.another-quick-switcher__item__icon, .another-quick-switcher__item__directory) {
-	color: var(--editor-secondary-accent);
+	color: var(--text-hover-accent);
 	opacity: 0.6;
 }
 
@@ -9273,7 +9277,7 @@ body .dataview.inline-field-key {
 /* hovered */
 .suggestion-item:hover .another-quick-switcher__phantom_item :is(.another-quick-switcher__item__icon, .another-quick-switcher__item__directory),
 .suggestion-item:hover .another-quick-switcher__phantom_item {
-	color: var(--editor-secondary-accent);
+	color: var(--text-hover-accent);
 	opacity: 0.6;
 }
 
@@ -9794,7 +9798,7 @@ body .excalidraw .color-picker-input {
 }
 
 /* help dialog & help icon */
-body:not(.default-statusbar) .excalidraw button.help-icon {
+body:not(.classic-statusbar) .excalidraw button.help-icon {
 	margin-right: -6px;
 	margin-bottom: 2em;
 }
@@ -10076,13 +10080,33 @@ settings:
 	 type: class-toggle
 	 default: false
 	-
-	 id: show-statusbar
+	 id: status-bar-mode
+	 title: "Status Bar"
+	 description: 'Display Options'
+	 type: class-select
+	 allowEmpty: false
+	 default: only-on-hover
+	 options:
+		-
+			label: only show on hover (Default)
+			value: only-on-hover-statusbar
+		-
+			label: show permanently
+			value: permanently-show-statusbar
+		-
+			label: hide permanantly
+			value: permanently-hide-statusbar
+		-
+			labestatusbar
+			value: classic-statusbar
+	-
+	 id: permanently-show-statusbar
 	 title: Permanently show the Status Bar
 	 description: When false, the Status bar is still visible when hovering. (This setting will be overridden when you use the default status bar.)
 	 type: class-toggle
 	 default: false
 	-
-	 id: default-statusbar
+	 id: classic-statusbar
 	 title: Default Theme Status Bar
 	 description: Use the Status Bar from the default theme, which will also be permanently visible.
 	 type: class-toggle
