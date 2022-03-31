@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 1.985
+Version 1.986
 Source CSS: https://github.com/chrisgrieser/shimmering-focus/blob/main/source.css
 MIT License
 ──────────────────────────────────────────────────── */
@@ -9469,7 +9469,7 @@ body a:is(.style-settings-export, .style-settings-import) {
 .modal .setting-item-heading[data-id="shimmering-focus"]::BEFORE,
 .workspace-leaf-content[data-type="style-settings"] > .view-content > .setting-item:first-child::BEFORE {
 	display: block;
-	content: "ℹ️ Theme Documentation:   chrisgrieser.github.io/shimmering-focus\AInstall the Settings Search Plugin to find settings more quickly.";
+	content: "ℹ️ Theme Documentation:   chrisgrieser.github.io/shimmering-focus\A🔍 Install the Settings Search Plugin to find settings more quickly.";
 
 	font-family: var(--menu-font);
 	font-weight: 500;
