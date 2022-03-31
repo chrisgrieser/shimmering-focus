@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 1.986
+Version 1.987
 Source CSS: https://github.com/chrisgrieser/shimmering-focus/blob/main/source.css
 MIT License
 ──────────────────────────────────────────────────── */
@@ -236,7 +236,7 @@ MIT License
 
 /* <<< Accent Color Palette */
 :root {
-	--primary-accent-0: hsl(250 30% 30% / 99%);
+	--primary-accent-0: hsl(250 20% 20% / 99%);
 	--primary-accent-1: hsl(250 60% 41%);
 	--primary-accent-2: hsl(250 75% 64%);
 	--primary-accent-3: hsl(250 80% 76%);
