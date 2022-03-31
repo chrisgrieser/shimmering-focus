@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 1.977
+Version 1.978
 Source CSS: https://github.com/chrisgrieser/shimmering-focus/blob/main/source.css
 MIT License
 ──────────────────────────────────────────────────── */
@@ -2384,14 +2384,10 @@ div.prompt {
 }
 
 input.prompt-input {
-	font-size: calc(var(--button-font-size) + 0.1em);
+	font-size: calc(var(--button-font-size) + 0.4em);
 	width: unset;
 	margin-bottom: 3px;
 	border-radius: calc(var(--roundish) * 1.5);
-}
-
-body:not(.angular-shapes) input.prompt-input {
-	padding-top: 7px;
 }
 
 div.prompt-results {
@@ -9213,9 +9209,18 @@ body .dataview.inline-field-key {
 }
 
 /* padding to the left not needed, since aliases won't be displayed there */
+.another-quick-switcher__item__descriptions,
 .another-quick-switcher__item__reason,
 .suggestion-item .another-quick-switcher__item {
 	margin-left: -17px;
+}
+
+.another-quick-switcher__item__descriptions {
+	line-height: 1em;
+}
+
+.another-quick-switcher__item__description__alias svg {
+	margin-right: 4px;
 }
 
 .another-quick-switcher__item__reason,
@@ -9255,11 +9260,8 @@ body .dataview.inline-field-key {
 }
 
 /* unresolved items */
-.another-quick-switcher__phantom_item .another-quick-switcher__item__entry,
-.another-quick-switcher__phantom_item .another-quick-switcher__item__icon,
-.suggestion-item.is-selected .another-quick-switcher__phantom_item .another-quick-switcher__item__directory,
-.another-quick-switcher__phantom_item .another-quick-switcher__item__directory,
-.suggestion-item .another-quick-switcher__phantom_item {
+.another-quick-switcher__phantom_item.another-quick-switcher__phantom_item :is(.another-quick-switcher__item__entry, .another-quick-switcher__item__icon, .another-quick-switcher__item__directory),
+.another-quick-switcher__phantom_item.another-quick-switcher__phantom_item {
 	color: var(--unresolved-link-color);
 }
 

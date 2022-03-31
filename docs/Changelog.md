@@ -3,7 +3,7 @@ nav_order: 110
 ---
 
 # Changelog
-- 2022-03-30	patch
+- 2022-03-31	minor fixes for quick switcher and another quicker switcher
 - 2022-03-30	f
 - 2022-03-29	improved build script
 - 2022-03-29	add info on unminified source css to obsidian.css
