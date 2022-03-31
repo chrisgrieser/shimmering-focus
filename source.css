@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 1.981
+Version 1.982
 Source CSS: https://github.com/chrisgrieser/shimmering-focus/blob/main/source.css
 MIT License
 ──────────────────────────────────────────────────── */
@@ -1806,6 +1806,7 @@ body:not(.hide-signature) .status-bar::AFTER {
 }
 
 .classic-statusbar .status-bar.status-bar.status-bar {
+	max-height: calc(var(--status-bar-font-size) * 2);
 	padding-right: 0;
 	border-top: var(--status-bar-border);
 }
