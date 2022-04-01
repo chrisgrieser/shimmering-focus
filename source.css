@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 1.1000
+Version 1.1001
 Source CSS: https://github.com/chrisgrieser/shimmering-focus/blob/main/source.css
 MIT License
 ──────────────────────────────────────────────────── */
@@ -5453,7 +5453,7 @@ pre[class~="language-haskell" i]::AFTER { content: "Haskell"; }
 }
 
 /* thicker => more readable */
-.list-bullet {
+.is-live-preview .list-bullet {
 	font-weight: 700;
 }
 

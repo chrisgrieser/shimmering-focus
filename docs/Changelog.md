@@ -3,6 +3,7 @@ nav_order: 110
 ---
 
 # Changelog
+- 2022-04-01	patch
 - 2022-04-01	fix #124
 - 2022-04-01	custom link callout
 - 2022-04-01	more compact suggester for various complements
