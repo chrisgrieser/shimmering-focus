@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 1.996
+Version 1.997
 Source CSS: https://github.com/chrisgrieser/shimmering-focus/blob/main/source.css
 MIT License
 ──────────────────────────────────────────────────── */
@@ -121,6 +121,7 @@ MIT License
 	- Blockquotes
 	- Citation Syntax
 	- Callouts
+		- Custom Callouts
 	- Tables
 	- Code
 		- Inline Code
@@ -5060,6 +5061,19 @@ div.is-collapsible:not(.is-collapsed)[data-callout] .callout-title {
 
 div.is-collapsible.is-collapsed[data-callout] .callout-title {
 	border-bottom-right-radius: var(--roundish);
+}
+
+/* <<< Custom Callouts */
+/* https://help.obsidian.md/How+to/Use+callouts#Customizations */
+/* https://lucide.dev/ */
+.callout[data-callout="link"],
+.callout[data-callout="url"] {
+	--callout-icon: link;
+	--callout-color: 127, 127, 127;
+}
+
+.callout[data-callout="url"] .callout-title-inner {
+	text-transform: uppercase;
 }
 
 /* ───────────────────────────────────────────────── */

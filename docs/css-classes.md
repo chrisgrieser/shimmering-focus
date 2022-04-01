@@ -2,18 +2,38 @@
 nav_order: 6
 ---
 
-# 📜 CSS Classes
+# 📜 CSS Classes & Callouts
 
 <!-- MarkdownTOC -->
 
-- [How to use CSS classes](#how-to-use-css-classes)
-- [General Purpose](#general-purpose)
-- [Writing & Academic](#writing--academic)
-- [Dataview](#dataview)
+- [Callouts](#callouts)
+	- [How to use Callouts](#how-to-use-callouts)
+	- [Custom Callouts](#custom-callouts)
+- [CSS Classes](#css-classes)
+	- [How to use CSS Classes](#how-to-use-css-classes)
+	- [General Purpose](#general-purpose)
+	- [Writing & Academic](#writing--academic)
+	- [Dataview](#dataview)
 
 <!-- /MarkdownTOC -->
 
-## How to use CSS classes
+## Callouts
+
+### How to use Callouts
+➡️ Read the info in the [Obsidian Docs](https://help.obsidian.md/How+to/Use+callouts).
+
+### Custom Callouts
+
+For links to be emphasized:
+
+```md
+> [!LINK]
+> [!URL]
+```
+
+## CSS Classes
+
+### How to use CSS Classes
 Add a cssclass to your yaml front matter to activate specific styling of the note in Preview Mode.
 
 ```yaml
@@ -24,14 +44,14 @@ cssclass: name
 
 The following CSS classes are built in with this theme:
 
-## General Purpose
+### General Purpose
 
 - `cssclass: clean-top`: Removes Metadata Information, YAML frontmatter, and Breadcrumbs trail from the top of the note.
 - `cssclass: clean-embeds`: Embeds in that note are fully embedded, looking like one document.
 - `cssclass: list-2-col-cards`: Lists will become cards separated into two columns.
 - `cssclass: no-inline-backlinks`: Do not display inline backlinks for that note.
 
-## Writing & Academic
+### Writing & Academic
 - `cssclass: writing`: Applies alternate note styling for writers. [See here for more information](/shimmering-focus/academics-and-writers) (requires Obsidian 0.13.23).
 - `cssclass: bibliography-list`: In preview mode, list items are formatted like an academic bibliography.
 
@@ -39,6 +59,6 @@ The following CSS classes are built in with this theme:
 
 ![bibliography cssclass](images/bibliography-list-cssclass.png)
 
-## Dataview
+### Dataview
 - `cssclass: dataview-list-in-table`: If you are using a dataview query where some table cells contain lists, use this CSS class to remove the vertical table lines that are off.
 - `cssclass: remove-dataview-title`: Removes the title created by some dataview queries.
