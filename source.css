@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 1.991
+Version 1.992
 Source CSS: https://github.com/chrisgrieser/shimmering-focus/blob/main/source.css
 MIT License
 ──────────────────────────────────────────────────── */
@@ -156,7 +156,8 @@ MIT License
 	- Panes
 		- Core Panes in general
 		- Outline
-		- Backlinks & Outgoing
+		- Inline Backlink Pane
+		- Backlinks & Outgoing (Sidebar)
 		- Search Pane
 		- Search suggestion container
 		- Tag Pane
@@ -613,6 +614,8 @@ body:is(.theme-light, .theme-dark) {
 	--popover-size: 350;
 	--readable-length: 700px;
 	--modal-base-size: 70;
+	--underline-offset: 1.5px;
+	--editor-overscroll: 6em;
 
 	--signature: "⟡";
 	--empty-state-symbol-size: 8rem;
@@ -3949,18 +3952,14 @@ body > .app-container .view-content > div > .markdown-preview-view {
 }
 
 /* overscroll */
-body > div.app-container .view-content > div > .markdown-preview-view {
-	padding-bottom: 12em;
-}
-
-.mod-cm6 .cm-content {
+.mod-cm6 .cm-contentContainer {
 	/* !important necessary because styled in html */
-	padding-bottom: 12em !important;
+	padding-bottom: var(--editor-overscroll) !important;
 }
 
 .mod-cm5 .CodeMirror-lines {
 	/* !important necessary because styled in html */
-	padding-bottom: 11em !important;
+	padding-bottom: calc(var(--editor-overscroll) - 1em) !important;
 }
 
 /* ───────────────────────────────────────────────── */
@@ -5043,7 +5042,6 @@ body:not(.normal-blockquotes) .callout-content {
 	padding-top: 2.5px;
 	padding-bottom: 2.5px;
 	border-top-right-radius: var(--roundish);
-	border-bottom-right-radius: var(--roundish);
 }
 
 .callout-fold {
@@ -5058,6 +5056,10 @@ body:not(.normal-blockquotes) .callout-content {
 
 div.is-collapsible:not(.is-collapsed)[data-callout] .callout-title {
 	border-bottom-right-radius: 0;
+}
+
+div.is-collapsible.is-collapsed[data-callout] .callout-title {
+	border-bottom-right-radius: var(--roundish);
 }
 
 /* ───────────────────────────────────────────────── */
@@ -5480,7 +5482,7 @@ a:hover {
 .external-link,
 a,
 u {
-	text-underline-offset: 1.5px;
+	text-underline-offset: var(--underline-offset);
 }
 
 /* don't underline the brackets */
@@ -6602,27 +6604,67 @@ body.outline-remove-level-1:not(.no-alternating-rows) .outline .tree-item-childr
 }
 
 /* ───────────────────────────────────────────────── */
-/* <<< Backlinks & Outgoing
+/* <<< Inline Backlink Pane
 ──────────────────────────────────────────────────── */
-
-/* Inline Backlink Pane */
-
-/* overflow */
-.view-content .embedded-backlinks {
-	padding-bottom: 10em;
-}
-
 :is(.markdown-source-view, .markdown-preview-view) .backlink-pane > .tree-item-self {
 	background-color: var(--bg2);
 	border-radius: var(--roundish);
 }
 
-/* minimal inline backlinks pane */
-.backlink-pane .backlink-pane .tree-item-inner {
-	color: red !important;
+.markdown-preview-view .embedded-backlinks {
+	margin-top: 3.5em;
 }
 
-/* Sidebar */
+.embedded-backlinks {
+	padding-top: 10px;
+	padding-left: 5px;
+	border-top: var(--thick-muted-border);
+}
+
+/* minimal inline backlinks pane */
+body:not(.classic-inline-backlinks) .embedded-backlinks::BEFORE {
+	content: "Backlinks";
+	font-family: var(--smallcap-font);
+	font-size: 1.1rem;
+	font-weight: 700;
+	color: var(--extra-contrast);
+}
+
+body:not(.classic-inline-backlinks) .embedded-backlinks :is(.nav-buttons-container, .backlink-pane > .tree-item-self, .tree-item-flair, .search-result-file-match, .tree-item-icon, .search-result-file-matches, .nav-header) {
+	display: none;
+}
+
+body:not(.classic-inline-backlinks) .embedded-backlinks .search-result-container {
+	padding: 0;
+	margin-left: 0;
+}
+
+body:not(.classic-inline-backlinks) .embedded-backlinks .tree-item-self.tree-item-self {
+	font-weight: 500;
+	background: none;
+	padding-left: 0;
+}
+
+body:not(.classic-inline-backlinks) .embedded-backlinks .tree-item-inner {
+	text-decoration: underline;
+	color: var(--primary-accent-2);
+	text-underline-offset: var(--underline-offset);
+}
+
+body:not(.classic-inline-backlinks) .embedded-backlinks .tree-item.search-result {
+	margin: 0;
+}
+
+body:not(.classic-inline-backlinks) .embedded-backlinks .tree-item-self::BEFORE {
+	content: "•";
+	font-weight: 700;
+	margin-right: 5px;
+}
+
+/* ───────────────────────────────────────────────── */
+/* <<< Backlinks & Outgoing (Sidebar)
+──────────────────────────────────────────────────── */
+
 /* "Linked / Unlinked Mentions" (label) */
 .backlink-pane > .tree-item-self > .tree-item-inner {
 	font-family: var(--smallcap-font);
@@ -10700,6 +10742,13 @@ settings:
 	 type: variable-text
 	 default: '"Recursive S"'
 	-
+	 id: plugin-specific
+	 title: ⚙️ Plugin-Specific Settings
+	 description: File Explorer, Backlinks, Outline, Sliding Panes, Page Preview, Calendar, Link Favicons, Command Palette
+	 type: heading
+	 level: 1
+	 collapsed: true
+	-
 	 id: no-file-explorer-icons
 	 title: 'File Explorer: No File Icons'
 	 description: Removes the icons next to files in the file explorer.
@@ -10715,6 +10764,12 @@ settings:
 	 id: hide-attachment-folders
 	 title: 'File Explorer: Hide attachment folders'
 	 description: 'Affects folders that have exactly the name "attachments" (case-insensitive).'
+	 type: class-toggle
+	 default: false
+	-
+	 id: classic-inline-backlinks
+	 title: 'Backlinks: Re-enable classic inline backlinks'
+	 description: For the in-document backlinks, this theme applies a more minimal styling. Enable this, to restore the default display of in-document backlinks.
 	 type: class-toggle
 	 default: false
 	-
