@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 1.993
+Version 1.994
 Source CSS: https://github.com/chrisgrieser/shimmering-focus/blob/main/source.css
 MIT License
 ──────────────────────────────────────────────────── */
@@ -10769,7 +10769,7 @@ settings:
 	-
 	 id: classic-inline-backlinks
 	 title: 'Backlinks: Re-enable classic inline backlinks'
-	 description: For the in-document backlinks, this theme applies a more minimal styling. Enable this, to restore the default display of in-document backlinks.
+	 description: 'You can also add the yaml "cssclass: no-inline-backlinks" to disable the inline backlinks for a specific note.'
 	 type: class-toggle
 	 default: false
 	-
