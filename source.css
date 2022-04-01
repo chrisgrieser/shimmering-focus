@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 1.1004
+Version 1.1005
 Source CSS: https://github.com/chrisgrieser/shimmering-focus/blob/main/source.css
 MIT License
 ──────────────────────────────────────────────────── */
@@ -3278,7 +3278,7 @@ body .app-container .workspace-leaf-resize-handle:hover {
 .community-plugin-search .community-plugin-name {
 	font-size: 0.9em;
 	font-weight: 600;
-	line-height: 90% !important;
+	line-height: 1.1em;
 }
 
 .community-plugin-search button.clickable-icon {
@@ -3424,6 +3424,10 @@ body:not(.show-close-button) .mod-community-plugin .modal-close-button {
 when the plugin has download numbers (new one's don't)  */
 .community-plugin-info .community-plugin-downloads + .community-plugin-version {
 	margin-top: -20px;
+
+	/* hide "version" */
+	text-indent: -69px;
+	overflow-x: hidden;
 }
 
 .community-plugin-info :is(.community-plugin-version, .community-plugin-author) {
