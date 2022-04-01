@@ -3,7 +3,7 @@ nav_order: 110
 ---
 
 # Changelog
-- 2022-04-01	patch
+- 2022-04-01	fix hiding of collapse indicators in preview mode
 - 2022-04-01	minimalistic inline backlinks
 - 2022-04-01	minor fixes for footnotes
 - 2022-04-01	backlinks button correct when pressed
