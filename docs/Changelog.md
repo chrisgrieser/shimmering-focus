@@ -3,7 +3,7 @@ nav_order: 110
 ---
 
 # Changelog
-- 2022-04-01	patch
+- 2022-04-01	minor fixes for footnotes
 - 2022-04-01	backlinks button correct when pressed
 - 2022-03-31	further improvements for callouts
 - 2022-03-31	scrollbar slightly more minimal

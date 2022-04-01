@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 1.990
+Version 1.991
 Source CSS: https://github.com/chrisgrieser/shimmering-focus/blob/main/source.css
 MIT License
 ──────────────────────────────────────────────────── */
@@ -2209,6 +2209,10 @@ body button.document-search-button {
 	margin: 5px;
 }
 
+.document-search-button.document-search-button {
+	padding-top: 3px;
+}
+
 body:not(.show-close-button) .document-search-close-button {
 	display: none;
 }
@@ -3969,6 +3973,12 @@ body:not(.no-active-highlight) .CodeMirror-activeline .CodeMirror-linebackground
 	border-radius: var(--roundish);
 }
 
+/* fix so the horizontal line above first footnote is not rounded */
+.cm-line:not(.HyperMD-footnote) + .HyperMD-footnote.cm-active {
+	border-top-right-radius: 0;
+	border-top-left-radius: 0;
+}
+
 body:not(.no-active-highlight) .cm-active :is(.cm-formatting-header,.cm-formatting-quote, .cm-formatting-list, .list-bullet) {
 	color: var(--active-line-indicator);
 }
@@ -4314,7 +4324,6 @@ body:not(.show-all-line-numbers) .cm-lineNumbers .cm-gutterElement:not(.cm-activ
 }
 
 body:not(.show-all-line-numbers) .cm-lineNumbers .cm-gutterElement {
-	font-size: 1.3em;
 	font-weight: 600;
 	color: var(--text-muted);
 }
@@ -5497,7 +5506,7 @@ body:not(.no-unresolved-link-indicator) .cm-editor .is-unresolved::BEFORE {
 	color: var(--unresolved-link-color);
 	background-color: var(--bg1);
 	position: absolute;
-	left: 20px;
+	left: 18px;
 }
 
 /* <<< fold external URLs (CM6 Source Mode) */
@@ -5910,15 +5919,30 @@ body:not(.no-pandoc-citation-emphasis) .cm-hmd-barelink.cm-hmd-barelink.cm-hmd-b
 }
 
 .footnotes ol {
-	padding-inline-start: 1em;
+	padding-inline-start: 1.6em;
 }
 
 .footnotes li {
 	padding-bottom: 0.8em;
 }
 
+.footnote-link {
+	/* remove underline which only decreases readability */
+	text-decoration: none;
+	color: var(--reference-color);
+	padding: 0 1px;
+	margin-left: 5px;
+	border-radius: calc(var(--roundish) * 0.6);
+}
+
 .footnote-backref {
-	padding-left: 5px;
+	font-size: 1.2em;
+	padding: 0 3px;
+}
+
+.footnote-link:hover {
+	color: var(--hover-accent-2);
+	background-color: var(--bg3);
 }
 
 .footnotes li::MARKER {
@@ -5946,24 +5970,16 @@ body:not(.no-pandoc-citation-emphasis) .cm-hmd-barelink.cm-hmd-barelink.cm-hmd-b
 	border-top: var(--muted-border);
 }
 
-/* remove underline which only decreases readability */
-.footnote-link {
-	text-decoration: none;
-	color: var(--reference-color);
-}
-
-.footnote-link:hover {
-	background-color: var(--bg3);
-	padding-bottom: 2px;
-}
-
 /* CM5: in-text-reference */
 span.cm-link.cm-hmd-footnote {
 	color: var(--reference-color) !important;
 	vertical-align: top;
 }
 
-/* <<< Footnote Indicator in Gutter */
+/* ───────────────────────────────────────────────── */
+/* <<< Footnote Indicator in Gutter
+──────────────────────────────────────────────────── */
+
 body:not(.no-fn-indicator) .footnote-ref::BEFORE,
 body:not(.no-fn-indicator) .mod-cm6.cm-s-obsidian span.cm-footref.cm-formatting::BEFORE {
 	content: "⦿";
@@ -5979,7 +5995,7 @@ body:not(.no-fn-indicator) .mod-cm6.cm-s-obsidian span.cm-footref.cm-formatting:
 	margin-top: 3px;
 }
 
-.footnote-ref::BEFORE {
+body .footnote-ref::BEFORE {
 	left: 15px;
 }
 
@@ -6007,7 +6023,7 @@ div > ul > li > ul > li > ul > li > ul > li > ul > li > .footnote-ref::BEFORE {
 	counter-reset: footnote;
 }
 
-body.numbered-fn-indicator .mod-cm6 .footnote-link:not(.footnote-backref)::BEFORE,
+body.numbered-fn-indicator .mod-cm6 .footnote-ref::BEFORE,
 body.numbered-fn-indicator .mod-cm6.cm-s-obsidian span.cm-footref.cm-formatting::BEFORE {
 	content: "^"counter(footnote);
 	font-size: 0.8rem;
@@ -6020,7 +6036,7 @@ body:not(.no-fn-indicator) .mod-cm6 .cm-hmd-barelink:not(.cm-formatting-link) + 
 }
 
 /* styling when the footnote indicator plugin is used */
-.no-fn-indicator .footnote-link:not(.footnote-backref)::BEFORE,
+.no-fn-indicator .footnote-ref::BEFORE,
 .no-fn-indicator .mod-cm6.cm-s-obsidian span.cm-footref.cm-formatting::BEFORE {
 	color: var(--reference-color);
 }
@@ -6590,14 +6606,10 @@ body.outline-remove-level-1:not(.no-alternating-rows) .outline .tree-item-childr
 ──────────────────────────────────────────────────── */
 
 /* Inline Backlink Pane */
-.markdown-source-view .view-content,
-.markdown-preview-view .nav-header {
-	margin-top: 1em;
-	border-top: 2px solid var(--hr-line-gray);
-}
 
-.markdown-source-view .view-content .backlink-pane {
-	margin-bottom: 5em;
+/* overflow */
+.view-content .embedded-backlinks {
+	padding-bottom: 10em;
 }
 
 :is(.markdown-source-view, .markdown-preview-view) .backlink-pane > .tree-item-self {
@@ -6606,6 +6618,9 @@ body.outline-remove-level-1:not(.no-alternating-rows) .outline .tree-item-childr
 }
 
 /* minimal inline backlinks pane */
+.backlink-pane .backlink-pane .tree-item-inner {
+	color: red !important;
+}
 
 /* Sidebar */
 /* "Linked / Unlinked Mentions" (label) */
