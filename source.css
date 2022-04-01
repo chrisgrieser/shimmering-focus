@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 1.998
+Version 1.999
 Source CSS: https://github.com/chrisgrieser/shimmering-focus/blob/main/source.css
 MIT License
 ──────────────────────────────────────────────────── */
@@ -1747,7 +1747,6 @@ body:not(.is-mobile):not(.plugin-sliding-panes-rotate-header) .view-header:focus
 
 /* transitions */
 /* ----------- */
-
 body:not(.show-header-bar):not(.plugin-sliding-panes-rotate-header) .view-header:hover + .view-content :is(.markdown-preview-view, .cm-scroller),
 body:not(.show-header-bar):not(.plugin-sliding-panes-rotate-header) .view-header:hover + .view-content,
 body:not(.show-header-bar):not(.plugin-sliding-panes-rotate-header) .view-header:hover *,
@@ -1826,6 +1825,7 @@ body:not(.hide-signature) .status-bar::AFTER {
 body:not(.permanently-show-statusbar):not(.classic-statusbar) .status-bar {
 	opacity: 0;
 	transition: var(--slow-transition);
+	transition-delay: var(--transition-delay-passing-over-protection);
 }
 
 body:not(.permanently-show-statusbar):not(.classic-statusbar) .status-bar:hover {
@@ -2069,23 +2069,19 @@ input:is([type="email"], [type="password"], [type="search"], [type="text"]) {
 	width: 100%;
 }
 
-body textarea:focus,
-body input[type]:focus {
+body :is(textarea, input[type]):focus {
 	border-color: var(--interactive-border-color);
 }
 
-body textarea:hover,
-body input[type]:hover {
+body :is(textarea, input[type]):hover {
 	border-color: var(--interactive-hover-border-color);
 }
 
-.theme-dark textarea,
-.theme-dark .modal-container input {
+.theme-dark :is(textarea, .modal-container input) {
 	background-color: var(--bg3);
 }
 
-.theme-light textarea,
-.theme-light .modal-container input {
+.theme-light :is(textarea, .modal-container input) {
 	background-color: var(--bg2);
 }
 
@@ -2457,7 +2453,7 @@ div.prompt-results {
 /* ───────────────────────────────────────────────────
 /* << Command Palette
 ─────────────────────────────────────────────────── */
-/* (everything from Quickswitcher also applies) */
+/* (everything from QuickSwitcher also applies) */
 
 .prompt-instructions {
 	display: none;
@@ -2570,9 +2566,9 @@ body:not(.no-alternating-rows) .suggestion-item:nth-child(even) .suggestion-pref
 	padding: 3px 1px;
 }
 
-/* e.g. backlinks buttons */
 .nav-action-button.is-active {
 	color: var(--extra-contrast);
+	background-color: var(--bg3);
 	box-shadow: var(--small-reverted-inset-shadow);
 }
 
@@ -2584,10 +2580,7 @@ not only file explorer */
 
 .search-result-file-title:hover,
 .tree-item-self.is-clickable:hover,
-.nav-file-title.is-active,
-.nav-folder-title.is-active,
-body .app-container .nav-file-title:hover,
-body .app-container .nav-folder-title:hover {
+body .app-container :is(.nav-file-title, .nav-folder-title):is(.is-active, :hover) {
 	background-color: var(--bg3);
 	border-radius: 0;
 }
@@ -2684,10 +2677,6 @@ body > .app-container .workspace-split.mod-horizontal > .workspace-tabs > .works
 }
 
 /* Navigation buttons */
-.nav-action-button.is-active {
-	background-color: var(--bg3);
-}
-
 :is(.workspace-tab-header-inner, .nav-action-button):active svg,
 .nav-action-button.is-active:is(:active svg, svg) {
 	color: var(--primary-accent-2);
@@ -2734,8 +2723,6 @@ body:not(.show-sidebar-tabs) .workspace-tab-header-container {
 
 body:not(.show-sidebar-tabs) .workspace-tab-header-container:is(:hover *, :hover) {
 	transition: var(--quick-transition);
-
-	/* slight delay to prevent accidental triggering when passing over */
 	transition-delay: var(--transition-delay-passing-over-protection);
 }
 
