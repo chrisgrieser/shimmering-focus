@@ -3,6 +3,7 @@ nav_order: 110
 ---
 
 # Changelog
+- 2022-04-01	accent colors tweaking
 - 2022-04-01	fixed headings in live preview
 - 2022-04-01	fix #124
 - 2022-04-01	custom link callout
