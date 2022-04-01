@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 1.1008
+Version 1.1009
 Source CSS: https://github.com/chrisgrieser/shimmering-focus/blob/main/source.css
 MIT License
 ──────────────────────────────────────────────────── */
@@ -5951,8 +5951,7 @@ body:not(.no-pandoc-citation-emphasis) .cm-hmd-barelink.cm-hmd-barelink.cm-hmd-b
 }
 
 /* footnotes (at the bottom) */
-.HyperMD-footnote.cm-line,
-.HyperMD-footnote.CodeMirror-line {
+.HyperMD-footnote.HyperMD-footnote {
 	font-size: 85%;
 	line-height: 1.15em;
 	text-align: justify;
@@ -5984,6 +5983,7 @@ body:not(.no-fn-indicator) .mod-cm6.cm-s-obsidian span.cm-footref.cm-formatting:
 	line-height: 1rem;
 
 	color: var(--reference-color);
+	background-color: var(--bg1); /* has to be set for longform/writing notes */
 
 	position: absolute;
 
@@ -6658,6 +6658,15 @@ body:not(.classic-inline-backlinks) .embedded-backlinks .tree-item-self::BEFORE 
 	content: "•";
 	font-weight: 700;
 	margin-right: 5px;
+}
+
+/* fix for writing/longform notes */
+body:not(.classic-inline-backlinks) :is(.writing, .longform-leaf) .search-result-file-title {
+	font-size: calc(var(--longform-font-size) * 0.9);
+}
+
+body:not(.classic-inline-backlinks) :is(.writing, .longform-leaf) .embedded-backlinks::BEFORE {
+	font-size: calc(var(--longform-font-size) * 1.0);
 }
 
 /* ───────────────────────────────────────────────── */
@@ -8641,6 +8650,12 @@ select#longform-workflows:hover {
 	font-size: var(--monospace-font-size);
 	text-align: start;
 	hyphens: none;
+}
+
+/* footnotes unjustify option */
+.longform-left-aligned :is(.writing, .longform-leaf) :is(.footnotes, .HyperMD-footnote) {
+	text-align: start;
+	hyphens: unset;
 }
 
 /* justify text */
