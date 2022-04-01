@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 1.1006
+Version 1.1007
 Source CSS: https://github.com/chrisgrieser/shimmering-focus/blob/main/source.css
 MIT License
 ──────────────────────────────────────────────────── */
@@ -2836,6 +2836,13 @@ body .app-container .workspace-leaf-resize-handle:hover {
 	margin-top: 0;
 }
 
+.modal h1 { font-size: var(--h1) }
+.modal h2 { font-size: var(--h2) }
+.modal h3 { font-size: var(--h3) }
+.modal h4 { font-size: var(--h4) }
+.modal h5 { font-size: var(--h5) }
+.modal h6 { font-size: var(--h6) }
+
 .modal {
 	background-color: var(--bg1);
 	box-shadow: var(--big-shadow);
@@ -3278,7 +3285,7 @@ body .app-container .workspace-leaf-resize-handle:hover {
 .community-plugin-search .community-plugin-name {
 	font-size: 0.9em;
 	font-weight: 600;
-	line-height: 1.1em;
+	line-height: 1.2em;
 }
 
 .community-plugin-search button.clickable-icon {
@@ -3373,6 +3380,16 @@ body .app-container .workspace-leaf-resize-handle:hover {
 
 	/* 50px for overscroll */
 	padding: 0 12px 50px;
+}
+
+.community-plugin-info :is(h1, h2, h3, h4, h5, h6) {
+	margin-top: 20px;
+	margin-bottom: 2px;
+}
+
+.community-plugin-info :is(p, ul, ol) {
+	margin-top: 0;
+	margin-bottom: 5px;
 }
 
 .community-plugin-details {
@@ -5994,6 +6011,11 @@ div > ul > li > ul > li > ul > li > ul > li > .footnote-ref::BEFORE {
 
 div > ul > li > ul > li > ul > li > ul > li > ul > li > .footnote-ref::BEFORE {
 	left: -9.8em;
+}
+
+/* don't display in Plugin Browser */
+.modal-container .footnote-ref::BEFORE {
+	display: none;
 }
 
 .numbered-fn-indicator .view-content {
