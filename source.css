@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 1.995
+Version 1.996
 Source CSS: https://github.com/chrisgrieser/shimmering-focus/blob/main/source.css
 MIT License
 ──────────────────────────────────────────────────── */
@@ -9775,6 +9775,15 @@ svg.sync-small {
 ──────────────────────────────────────────────────── */
 .various-complements__suggestion-item__description {
 	line-height: 1.1em;
+}
+
+.various-complements__suggestion-item {
+	padding-top: 0;
+	padding-bottom: 3px;
+}
+
+.various-complements__suggestion-item.various-complements__suggestion-item::BEFORE {
+	margin-top: 2px;
 }
 
 /* ───────────────────────────────────────────────── */
