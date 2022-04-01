@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 1.999
+Version 1.1000
 Source CSS: https://github.com/chrisgrieser/shimmering-focus/blob/main/source.css
 MIT License
 ──────────────────────────────────────────────────── */
@@ -5452,6 +5452,12 @@ pre[class~="language-haskell" i]::AFTER { content: "Haskell"; }
 	padding-left: 2rem;
 }
 
+/* thicker => more readable */
+.list-bullet {
+	font-weight: 700;
+}
+
+/* indention lines */
 .markdown-rendered.show-indentation-guide li > ul::BEFORE,
 .markdown-source-view.mod-cm6 .cm-indent::BEFORE {
 	border-right: var(--muted-border);
