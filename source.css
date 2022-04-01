@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 1.1001
+Version 1.1002
 Source CSS: https://github.com/chrisgrieser/shimmering-focus/blob/main/source.css
 MIT License
 ──────────────────────────────────────────────────── */
@@ -835,12 +835,12 @@ body:is(.theme-light, .theme-dark) {
 	--number-font: "Share Tech Mono Numbers";
 
 	--heading-font: "Optima S";
-	--h1-size: 1.8em;
-	--h2-size: 1.6em;
-	--h3-size: 1.45em;
-	--h4-size: 1.3em;
-	--h5-size: 1.15em;
-	--h6-size: 1.05em;
+	--h1: 1.8em;
+	--h2: 1.6em;
+	--h3: 1.45em;
+	--h4: 1.3em;
+	--h5: 1.15em;
+	--h6: 1.05em;
 
 	/* needed for some edge cases */
 	--original-font: "Inter", -apple-system, blinkmacsystemfont, "Segoe UI", roboto, helvetica, arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Microsoft YaHei Light", sans-serif;
@@ -2832,12 +2832,12 @@ body .app-container .workspace-leaf-resize-handle:hover {
 	margin-bottom: 15px;
 }
 
-.modal-content h1 { font-size: var(--h1-size) }
-.modal-content h2 { font-size: var(--h2-size) }
-.modal-content h3 { font-size: var(--h3-size) }
-.modal-content h4 { font-size: var(--h4-size) }
-.modal-content h5 { font-size: var(--h5-size) }
-.modal-content h6 { font-size: var(--h6-size) }
+.modal-content h1 { font-size: var(--h1) }
+.modal-content h2 { font-size: var(--h2) }
+.modal-content h3 { font-size: var(--h3) }
+.modal-content h4 { font-size: var(--h4) }
+.modal-content h5 { font-size: var(--h5) }
+.modal-content h6 { font-size: var(--h6) }
 
 .modal-content {
 	margin-top: 0;
@@ -2885,7 +2885,7 @@ body .app-container .workspace-leaf-resize-handle:hover {
 
 .mod-confirmation .modal-title {
 	font-family: var(--smallcap-font);
-	font-size: var(--h1-size);
+	font-size: var(--h1);
 	margin-top: 5px;
 	margin-bottom: 20px;
 }
@@ -2916,12 +2916,12 @@ body .app-container .workspace-leaf-resize-handle:hover {
 	font-family: var(--setting-heading);
 }
 
-.modal.mod-settings h1 { font-size: var(--h1-size) }
-.modal.mod-settings h2 { font-size: var(--h2-size) }
-.modal.mod-settings h3 { font-size: var(--h3-size) }
-.modal.mod-settings h4 { font-size: var(--h4-size) }
-.modal.mod-settings h5 { font-size: var(--h5-size) }
-.modal.mod-settings h6 { font-size: var(--h6-size) }
+.modal.mod-settings h1 { font-size: var(--h1) }
+.modal.mod-settings h2 { font-size: var(--h2) }
+.modal.mod-settings h3 { font-size: var(--h3) }
+.modal.mod-settings h4 { font-size: var(--h4) }
+.modal.mod-settings h5 { font-size: var(--h5) }
+.modal.mod-settings h6 { font-size: var(--h6) }
 
 .setting-item.setting-item-heading {
 	font-family: var(--setting-heading);
@@ -3391,7 +3391,7 @@ body .app-container .workspace-leaf-resize-handle:hover {
 
 .community-plugin-info .community-plugin-name {
 	font-family: var(--heading-font);
-	font-size: calc(var(--h1-size) * 1.2);
+	font-size: calc(var(--h1) * 1.2);
 	font-weight: 700;
 	letter-spacing: var(--heading-letter-spacing);
 	text-align: end;
@@ -4659,42 +4659,11 @@ body.focus-view-enabled .mod-left-split.is-collapsed ~ .mod-right-split {
 /* << Headings
 ──────────────────────────────────────────────────── */
 
-.cm-header.cm-header,
+.cm-header,
 .markdown-preview-view :is(h1, h2, h3, h4, h5, h6) {
 	font-family: var(--heading-font);
 	font-weight: 700;
-	line-height: 1.3em;
 	letter-spacing: var(--heading-letter-spacing);
-}
-
-.cm-header-1.cm-header-1.cm-header-1,
-.markdown-preview-view h1 {
-	font-size: var(--h1-size);
-}
-
-.cm-header-2.cm-header-2.cm-header-2,
-.markdown-preview-view h2 {
-	font-size: var(--h2-size);
-}
-
-.cm-header-3.cm-header-3.cm-header-3,
-.markdown-preview-view h3 {
-	font-size: var(--h3-size);
-}
-
-.cm-header-4.cm-header-4.cm-header-4,
-.markdown-preview-view h4 {
-	font-size: var(--h4-size);
-}
-
-.cm-header-5.cm-header-5.cm-header-5,
-.markdown-preview-view h5 {
-	font-size: var(--h5-size);
-}
-
-.cm-header-6.cm-header-6.cm-header-6,
-.markdown-preview-view h6 {
-	font-size: var(--h6-size);
 }
 
 .markdown-preview-view :is(h1, h2, h3, h4, h5, h6) {
@@ -4707,38 +4676,38 @@ body.focus-view-enabled .mod-left-split.is-collapsed ~ .mod-right-split {
 }
 
 /* headings in live preview with prefix */
-.is-live-preview .cm-header::BEFORE {
+body:not(.no-heading-level-in-lp) .is-live-preview .cm-header::BEFORE {
 	font-family: var(--font-monospace);
-	font-size: 0.7rem;
+	font-size: 0.8rem;
 	font-style: normal;
 	color: var(--text-muted);
-	padding-right: 6px;
+	padding-right: 5px;
 }
 
-.is-live-preview .cm-header-1::BEFORE { content: "H1" }
-.is-live-preview .cm-header-2::BEFORE { content: "H2" }
-.is-live-preview .cm-header-3::BEFORE { content: "H3" }
-.is-live-preview .cm-header-4::BEFORE { content: "H4" }
-.is-live-preview .cm-header-5::BEFORE { content: "H5" }
-.is-live-preview .cm-header-6::BEFORE { content: "H6" }
-
-.is-live-preview .HyperMD-header * {
-	line-height: 1em;
-	position: relative;
-	top: 3px;
-}
+body:not(.no-heading-level-in-lp) .is-live-preview :not(.cm-active) > .cm-header-1::BEFORE { content: "H1" }
+body:not(.no-heading-level-in-lp) .is-live-preview :not(.cm-active) > .cm-header-2::BEFORE { content: "H2" }
+body:not(.no-heading-level-in-lp) .is-live-preview :not(.cm-active) > .cm-header-3::BEFORE { content: "H3" }
+body:not(.no-heading-level-in-lp) .is-live-preview :not(.cm-active) > .cm-header-4::BEFORE { content: "H4" }
+body:not(.no-heading-level-in-lp) .is-live-preview :not(.cm-active) > .cm-header-5::BEFORE { content: "H5" }
+body:not(.no-heading-level-in-lp) .is-live-preview :not(.cm-active) > .cm-header-6::BEFORE { content: "H6" }
 
 /* only first header gets the prefix */
-.cm-header ~ .cm-header::BEFORE {
+.is-live-preview .cm-header ~ .cm-header::BEFORE {
 	display: none;
 }
 
+.markdown-preview-view :is(h1, h2, h3, h4, h5, h6),
 .markdown-source-view:not(.is-live-preview) .HyperMD-header {
-	line-height: 1.2em;
+	line-height: 1.3em;
 }
 
-.no-heading-level-in-lp .is-live-preview .cm-header::BEFORE {
-	display: none;
+/* no idea why, but this ensures same line height as in other modes */
+.is-live-preview .HyperMD-header {
+	line-height: 1.1em;
+}
+
+.is-live-preview .cm-header {
+	padding-left: 4px;
 }
 
 /* Alternation between italic & different font style
@@ -4774,7 +4743,7 @@ body:not(.no-heading-bg) .cm-formatting-header {
 body:not(.no-heading-bg) .mod-root .view-content > div:not(.kanban-plugin) :is(h1, h2, h3, h4, h5, h6) {
 	padding-top: 2px;
 	padding-bottom: 2px;
-	padding-left: 4px;
+	padding-left: 6px;
 }
 
 body:not(.no-heading-bg) .kanban-plugin :is(h1, h2, h3, h4, h5, h6) {
@@ -7127,7 +7096,7 @@ body .popover:not(.jl) {
 
 .diff.diff .d2h-file-name {
 	font-family: var(--heading-font);
-	font-size: var(--h1-size);
+	font-size: var(--h1);
 	letter-spacing: var(--heading-letter-spacing);
 	color: var(--text-normal);
 }
@@ -7922,12 +7891,12 @@ body .app-container :is(.kanban-plugin__drag-container,.kanban-plugin) :is(h1, h
 	margin-bottom: 3px;
 }
 
-:is(.kanban-plugin__drag-container,.kanban-plugin) h1 { font-size: calc(var(--h1-size) * var(--kanban-heading-size-factor)) }
-:is(.kanban-plugin__drag-container,.kanban-plugin) h2 { font-size: calc(var(--h2-size) * var(--kanban-heading-size-factor)) }
-:is(.kanban-plugin__drag-container,.kanban-plugin) h3 { font-size: calc(var(--h3-size) * var(--kanban-heading-size-factor)) }
-:is(.kanban-plugin__drag-container,.kanban-plugin) h4 { font-size: calc(var(--h4-size) * var(--kanban-heading-size-factor)) }
-:is(.kanban-plugin__drag-container,.kanban-plugin) h5 { font-size: calc(var(--h5-size) * var(--kanban-heading-size-factor)) }
-:is(.kanban-plugin__drag-container,.kanban-plugin) h6 { font-size: calc(var(--h6-size) * var(--kanban-heading-size-factor)) }
+:is(.kanban-plugin__drag-container,.kanban-plugin) h1 { font-size: calc(var(--h1) * var(--kanban-heading-size-factor)) }
+:is(.kanban-plugin__drag-container,.kanban-plugin) h2 { font-size: calc(var(--h2) * var(--kanban-heading-size-factor)) }
+:is(.kanban-plugin__drag-container,.kanban-plugin) h3 { font-size: calc(var(--h3) * var(--kanban-heading-size-factor)) }
+:is(.kanban-plugin__drag-container,.kanban-plugin) h4 { font-size: calc(var(--h4) * var(--kanban-heading-size-factor)) }
+:is(.kanban-plugin__drag-container,.kanban-plugin) h5 { font-size: calc(var(--h5) * var(--kanban-heading-size-factor)) }
+:is(.kanban-plugin__drag-container,.kanban-plugin) h6 { font-size: calc(var(--h6) * var(--kanban-heading-size-factor)) }
 
 .app-container .kanban-plugin .kanban-plugin__board textarea {
 	font-size: 0.95em;
@@ -9951,7 +9920,7 @@ body .excalidraw button.Modal__close:hover {
 }
 
 .excalidraw .Dialog__titleContent {
-	font-size: calc(var(--h1-size) * 1.2);
+	font-size: calc(var(--h1) * 1.2);
 	margin-top: 10px;
 	margin-bottom: 10px;
 }
@@ -9989,7 +9958,7 @@ a.zoom-plugin-title:hover {
 /* current word */
 body :is(.cm-matched-word,.cm-current-word) {
 	text-decoration: 1.2px dotted underline var(--text-muted);
-	text-underline-offset: 3px;
+	text-underline-offset: calc(var(--underline-offset) * 2);
 }
 
 /* current selection */
