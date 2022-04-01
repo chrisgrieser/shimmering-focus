@@ -12,7 +12,7 @@
 
 	"ignoreFiles": [
 		"**/Downloads/**",
-		"**/.obsidian/plugins/**"
+		"**/Main Vault/.obsidian/plugins/**"
 	],
 
 	"rules": {

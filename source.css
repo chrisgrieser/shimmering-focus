@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 1.989
+Version 1.990
 Source CSS: https://github.com/chrisgrieser/shimmering-focus/blob/main/source.css
 MIT License
 ──────────────────────────────────────────────────── */
@@ -104,7 +104,7 @@ MIT License
 		- Metadata Block
 	- Gutter
 		- Collapse Indicators
-		- Line Numbers
+		- Line Numbers (Gutter)
 	- Progress bars (<progress>)
 	- Images
 	- Mermaid
@@ -248,8 +248,8 @@ MIT License
 	--hover-accent-3: hsl(165 90% 45%);
 	--hover-accent-4: hsl(165 100% 55%);
 
-	--secondary-accent-1: hsl(165 70% 25%);
-	--secondary-accent-2: hsl(165 80% 35%);
+	--secondary-accent-1: hsl(165 70% 30%);
+	--secondary-accent-2: hsl(165 85% 40%);
 }
 
 /* <<< Primary Accent */
@@ -970,6 +970,10 @@ svg {
 .workspace-tab-header-inner-icon > svg.bullet-list {
 	background-color: currentcolor;
 	-webkit-mask-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' preserveAspectRatio='xMidYMid meet' viewBox='0 0 24 24'%3e%3cpath d='M17 11V4h2v17h-2v-8H7v8H5V4h2v7z' fill='currentColor'/%3e%3c/svg%3e");
+}
+
+svg.bullet-list.bullet-list {
+	stroke-width: 3px;
 }
 
 /* star */
@@ -2245,10 +2249,13 @@ body .app-container .obsidian-search-match-highlight {
 /* gutter indicators */
 body:not(.no-search-result-indicator) .obsidian-search-match-highlight::BEFORE {
 	content: "►";
+
 	color: var(--search-match-color);
 	background-color: var(--bg1); /* so they cover footnote indicators when overlapping */
+
 	position: absolute;
-	left: 17px;
+	left: -50px;
+	z-index: 5;
 }
 
 /* preview mode */
@@ -4293,11 +4300,12 @@ body:not(.permanently-show-collapse-indicators) .cm-line:not(:hover):not(.cm-act
 }
 
 /* ───────────────────────────────────────────────── */
-/* <<< Line Numbers
+/* <<< Line Numbers (Gutter)
 ──────────────────────────────────────────────────── */
 .CodeMirror-linenumbers,
 .cm-lineNumbers {
 	font-family: var(--number-font);
+	font-size: 1.1em;
 }
 
 /* show only active line number */
@@ -4306,6 +4314,8 @@ body:not(.show-all-line-numbers) .cm-lineNumbers .cm-gutterElement:not(.cm-activ
 }
 
 body:not(.show-all-line-numbers) .cm-lineNumbers .cm-gutterElement {
+	font-size: 1.3em;
+	font-weight: 600;
 	color: var(--text-muted);
 }
 
@@ -5954,7 +5964,7 @@ span.cm-link.cm-hmd-footnote {
 }
 
 /* <<< Footnote Indicator in Gutter */
-body:not(.no-fn-indicator) .footnote-link:not(.footnote-backref)::BEFORE,
+body:not(.no-fn-indicator) .footnote-ref::BEFORE,
 body:not(.no-fn-indicator) .mod-cm6.cm-s-obsidian span.cm-footref.cm-formatting::BEFORE {
 	content: "⦿";
 
@@ -5964,10 +5974,33 @@ body:not(.no-fn-indicator) .mod-cm6.cm-s-obsidian span.cm-footref.cm-formatting:
 	color: var(--reference-color);
 
 	position: absolute;
-	left: 15px;
 
 	padding: 0 3px;
 	margin-top: 3px;
+}
+
+.footnote-ref::BEFORE {
+	left: 15px;
+}
+
+.cm-s-obsidian span.cm-footref.cm-formatting::BEFORE {
+	left: -50px;
+}
+
+div > ul > li > ul > li > .footnote-ref::BEFORE {
+	left: -6.8em;
+}
+
+div > ul > li > ul > li > ul > li > .footnote-ref::BEFORE {
+	left: -7.8em;
+}
+
+div > ul > li > ul > li > ul > li > ul > li > .footnote-ref::BEFORE {
+	left: -8.8em;
+}
+
+div > ul > li > ul > li > ul > li > ul > li > ul > li > .footnote-ref::BEFORE {
+	left: -9.8em;
 }
 
 .numbered-fn-indicator .view-content {
@@ -6436,7 +6469,10 @@ body:not(.no-file-explorer-icons) .nav-file-title[data-path*="kanban" i] .nav-fi
 }
 
 .tree-item-flair {
+	font-family: var(--number-font);
+	font-weight: 700;
 	background-color: var(--bg3);
+	padding: 4px;
 }
 
 .tree-item-inner-subtext {
@@ -6454,15 +6490,10 @@ body:not(.no-file-explorer-icons) .nav-file-title[data-path*="kanban" i] .nav-fi
 	color: var(--hover-accent-2) !important;
 }
 
-.theme-light .tree-item-self:hover .tree-item-flair {
+.tree-item-self:hover .tree-item-flair.tree-item-flair {
 	font-weight: 600;
-	background: var(--hover-accent-2) !important;
+	background: var(--hover-accent-2);
 	opacity: 0.8;
-}
-
-.theme-dark .tree-item-self:hover .tree-item-flair {
-	font-weight: 600;
-	background: var(--highlight-color) !important;
 }
 
 .tree-item-self:active,
@@ -6472,11 +6503,6 @@ body:not(.no-file-explorer-icons) .nav-file-title[data-path*="kanban" i] .nav-fi
 
 .tree-item.is-collapsed .tree-item-icon svg {
 	color: var(--primary-accent-3);
-}
-
-.tree-item.is-collapsed .tree-item-flair {
-	font-weight: 600;
-	background-color: var(--selection-color);
 }
 
 .tree-item-icon.collapse-icon {
@@ -6578,6 +6604,8 @@ body.outline-remove-level-1:not(.no-alternating-rows) .outline .tree-item-childr
 	background-color: var(--bg2);
 	border-radius: var(--roundish);
 }
+
+/* minimal inline backlinks pane */
 
 /* Sidebar */
 /* "Linked / Unlinked Mentions" (label) */
