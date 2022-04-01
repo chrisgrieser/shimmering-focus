@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 1.1007
+Version 1.1008
 Source CSS: https://github.com/chrisgrieser/shimmering-focus/blob/main/source.css
 MIT License
 ──────────────────────────────────────────────────── */
@@ -168,6 +168,8 @@ MIT License
 	- Sync
 	- Diff Version
 	- Graph View
+		- Graph controls
+		- Graph itself
 	- Publish
 - Community Plugins
 	- Shell Commands
@@ -7181,10 +7183,10 @@ body .popover:not(.jl) {
 ──────────────────────────────────────────────────── */
 /* https://help.obsidian.md/Plugins/Graph+view#Custom+CSS */
 
-/* graph controls */
+/* <<< Graph controls */
 body:not(.show-graph-controls) .graph-controls.is-close:not(:hover) {
 	opacity: 0;
-	transition: 800ms ease-in-out;
+	transition: var(--slow-transition);
 }
 
 .graph-controls.is-close {
@@ -7203,8 +7205,9 @@ body:not(.show-graph-controls) .graph-controls.is-close:not(:hover) {
 }
 
 .graph-controls:not(.is-close) {
-	/* controls resizable, thanks @Manedblackwolf */
 	max-width: none;
+
+	/* controls resizable, thanks @Manedblackwolf */
 	resize: horizontal;
 	border: var(--basic-border);
 	border-radius: calc(var(--roundish) * 3);
@@ -7234,7 +7237,7 @@ body:not(.show-graph-controls) .graph-controls.is-close:not(:hover) {
 	color: var(--hover-accent-2);
 }
 
-/* graph itself */
+/* <<< Graph itself */
 /* node of current node (local graph) */
 .graph-view.color-fill-focused {
 	color: var(--primary-accent-2);
@@ -7327,7 +7330,6 @@ body .SC-tab-content {
 /* stylelint-disable no-duplicate-selectors */
 .theme-light,
 .theme-dark {
-	/* needs important */
 	--search-mode-outline: var(--search-match-color);
 }
 /* stylelint-enable no-duplicate-selectors */
