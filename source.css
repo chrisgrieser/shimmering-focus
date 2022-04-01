@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 1.988
+Version 1.989
 Source CSS: https://github.com/chrisgrieser/shimmering-focus/blob/main/source.css
 MIT License
 ──────────────────────────────────────────────────── */
@@ -965,9 +965,9 @@ svg {
 }
 
 /* outline/heading */
-svg.bullet-list > path { display: none }
+.workspace-tab-header-inner-icon > svg.bullet-list > path { display: none }
 
-svg.bullet-list {
+.workspace-tab-header-inner-icon > svg.bullet-list {
 	background-color: currentcolor;
 	-webkit-mask-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' preserveAspectRatio='xMidYMid meet' viewBox='0 0 24 24'%3e%3cpath d='M17 11V4h2v17h-2v-8H7v8H5V4h2v7z' fill='currentColor'/%3e%3c/svg%3e");
 }
@@ -1114,8 +1114,6 @@ svg.search {
 }
 
 /* file explorer / folder / new folder */
-/* svg.folder > path { display: none } */
-
 .workspace-tab-header-inner svg.folder {
 	background-color: currentcolor;
 	-webkit-mask-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' preserveAspectRatio='xMidYMid meet' viewBox='0 0 1024 1024'%3e%3cpath fill='currentColor' d='M128 384v448h768V384H128zm-32-64h832a32 32 0 0 1 32 32v512a32 32 0 0 1-32 32H96a32 32 0 0 1-32-32V352a32 32 0 0 1 32-32zm64-128h704v64H160zm96-128h512v64H256z'/%3e%3c/svg%3e");
@@ -1143,10 +1141,6 @@ svg.search {
 
 /* sort */
 svg.up-and-down-arrows > path { display: none }
-
-body:has(div) {
-	font-style: normal;
-}
 
 svg.up-and-down-arrows {
 	background-color: currentcolor;
@@ -2559,6 +2553,12 @@ body:not(.no-alternating-rows) .suggestion-item:nth-child(even) .suggestion-pref
 ──────────────────────────────────────────────────── */
 .workspace-leaf-content .view-content {
 	padding: 3px 1px;
+}
+
+/* e.g. backlinks buttons */
+.nav-action-button.is-active {
+	color: var(--extra-contrast);
+	box-shadow: var(--small-reverted-inset-shadow);
 }
 
 /* ───────────────────────────────────────────────── */
