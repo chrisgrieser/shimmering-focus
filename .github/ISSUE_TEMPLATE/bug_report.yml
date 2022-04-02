@@ -85,7 +85,8 @@ body:
         - Dataview
         - Ozan's Image in Editor
         - Starred (Core Plugin)
-        - Recent Files
+        - Better Command Palette
+        - Hover Editor
       options:
         - label: I took note of the [specific instructions regarding those plugins](https://chrisgrieser.github.io/shimmering-focus/plugin-specific-features/#instructions-for-specific-plugins).
   - type: checkboxes
@@ -99,6 +100,6 @@ body:
           required: true
         - label: In case I am missing an UI element, I have checked that it cannot be re-enabled with the [Style Settings plugin](https://github.com/mgmeyers/obsidian-style-settings).
           required: true
-        - label: If the bug occured after updating the theme, I read the last couple of entries in the [changelog](https://github.com/chrisgrieser/shimmering-focus/blob/main/docs/Changelog.md#changelog) to make sure the bug is not an intentional change. (In that case, there will most likely be a Style Setting to turn it off again.)
+        - label: If the bug occured after updating the theme, I read the last couple of entries in the [changelog](https://github.com/chrisgrieser/shimmering-focus/blob/main/docs/Changelog.md#changelog) to make sure the bug is not an intentional change. (In that case, there will most likely be a style setting to turn it off again.)
           required: true
 

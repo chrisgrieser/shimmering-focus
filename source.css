@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 1.1019
+Version 1.1020
 Source CSS: https://github.com/chrisgrieser/shimmering-focus/blob/main/source.css
 MIT License
 ──────────────────────────────────────────────────── */
@@ -7075,6 +7075,23 @@ body:not(.no-alternating-rows) .workspace-leaf-content[data-type="starred"] .nav
 	opacity: 1;
 }
 
+/* hide style settings, since already styled by this theme */
+.style-settings-heading[data-id="hover-editor"] .setting-item-info::AFTER {
+	content: "Changing some settings has no effect, since 'Shimmering Focus' overrides them. ";
+
+	font-family: var(--menu-font);
+	font-size: 0.7em;
+	font-weight: 500;
+
+	color: var(--extra-contrast);
+
+	padding-left: 1.3em;
+}
+
+.style-settings-heading[data-id="hover-editor"] .setting-item-name.setting-item-name.setting-item-name {
+	margin-bottom: 0;
+}
+
 /* ───────────────────────────────────────────────── */
 /* << File Recovery
 /* << Sync
@@ -10774,7 +10791,7 @@ settings:
 	-
 	 id: blockquote-font-options
 	 title: 💬 Blockquotes
-	 description: 'Relative Size, Alignment, Decoration'
+	 description: Relative Font Size, Alignment, Decoration
 	 type: heading
 	 level: 2
 	 collapsed: true
