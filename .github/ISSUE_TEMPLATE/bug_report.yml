@@ -41,7 +41,7 @@ body:
     id: installer-version
     attributes:
       label: Installer Version
-      description: You can find the version in the *About* Tab of the settings.
+      description: You can find the installer version in the *About* Tab of the settings.
       placeholder: 0.13.19
     validations:
       required: true
@@ -96,7 +96,7 @@ body:
       options:
         - label: I updated to the latest version of the theme (Settings → Appearance → Themes - Manage → Update).
           required: true
-        - label: I made sure that the issue is related to this theme, by checking that the problem does not occur with other themes or the default theme.
+        - label: I made sure that the issue is related to this theme by checking that the problem does not occur with the default theme.
           required: true
         - label: In case I am missing an UI element, I have checked that it cannot be re-enabled with the [Style Settings plugin](https://github.com/mgmeyers/obsidian-style-settings).
           required: true
