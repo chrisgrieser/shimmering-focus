@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 1.1012
+Version 1.1013
 Source CSS: https://github.com/chrisgrieser/shimmering-focus/blob/main/source.css
 MIT License
 ──────────────────────────────────────────────────── */
@@ -1288,7 +1288,7 @@ body.angular-shapes {
 
 body.squareish-shapes {
 	--roundish: 3px;
-	--round: 10px;
+	--round: 7px;
 }
 
 /* ───────────────────────────────────────────────── */
@@ -5808,7 +5808,7 @@ input.task-list-item-checkbox[type="checkbox"] {
 	margin-left: 7px;
 
 	border: 2px solid var(--hr-line-gray);
-	border-radius: var(--round);
+	border-radius: calc(var(--round) * 0.7);
 
 	filter: unset; /* removes hue filter */
 	cursor: pointer;
@@ -10937,8 +10937,8 @@ settings:
 	 default: false
 	-
 	 id: no-sliding-panes-shadows
-	 title: 'Sliding Panes: Remove the Pane Shadows'
-	 description: 'Remove the shadow from panes, when using the "Toggle Stacking" option.'
+	 title: 'Sliding Panes: Remove Pane Shadows'
+	 description: 'Removes the shadow that occur when using the "Toggle Stacking" option.'
 	 type: class-toggle
 	 default: false
 	-
