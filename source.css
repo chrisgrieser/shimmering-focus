@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 1.1011
+Version 1.1012
 Source CSS: https://github.com/chrisgrieser/shimmering-focus/blob/main/source.css
 MIT License
 ──────────────────────────────────────────────────── */
@@ -9516,12 +9516,27 @@ body:not(.show-scrollbar) .workspace-split.mod-root .workspace-leaf-content[data
 	align-items: center;
 }
 
-/* settings tab  */
+/* settings tab  / general */
 .style-settings-heading {
 	padding-top: 0;
 	margin-top: 22px;
 	margin-bottom: 12px !important;
 	border-top: none;
+}
+
+.style-settings-heading[data-level="2"] + .style-settings-container,
+.style-settings-heading[data-level="2"] {
+	padding-left: 20px;
+}
+
+.style-settings-heading[data-level="2"] .setting-item-name {
+	font-family: var(--ui-font);
+	font-size: 0.8em;
+	font-weight: 500;
+}
+
+.style-settings-heading[data-level="2"]:not(.is-collapsed) .setting-item-name {
+	font-weight: 700;
 }
 
 .style-settings-container .setting-editor-extra-setting-button {
@@ -10330,9 +10345,9 @@ settings:
 	 type: class-toggle
 	 default: false
 	-
-	 id: aesthetics
-	 title: 🎨 Aesthetics
-	 description: Brightness, Color, Shapes, Cursor, Decoration, Animations
+	 id: color-schemes
+	 title: 🎨 Colors & Shapes
+	 description: Preset Color Schemes, Roundness, Brightness, Saturation
 	 type: heading
 	 level: 1
 	 collapsed: true
@@ -10371,6 +10386,13 @@ settings:
 			label: Custom Colors
 			value: custom-colors
 	-
+	 id: custom-color-light-mode
+	 title: '☀️ Light Mode'
+	 description: Custom Colors
+	 type: heading
+	 level: 2
+	 collapsed: true
+	-
 	 id: brightness-light
 	 title: 'Custom Colors: Brightness (Light Mode)'
 	 description: Note that a high brightness in light mode results in a white theme, regardless of the selected hue.
@@ -10400,6 +10422,13 @@ settings:
 	 step: 2
 	 format: '%'
 	-
+	 id: custom-color-dark-mode
+	 title: '🌒 Dark Mode'
+	 description: Custom Colors
+	 type: heading
+	 level: 2
+	 collapsed: true
+	-
 	 id: brightness-dark
 	 title: 'Custom Colors: Brightness (Dark Mode)'
 	 description: Note that a low brightness in dark mode results in a black theme, regardless of the selected hue.
@@ -10428,6 +10457,13 @@ settings:
 	 max: 20
 	 step: 2
 	 format: '%'
+	-
+	 id: cursor-settings
+	 title: 🐭 Cursor
+	 description: Thickness, Look, Blinking Animation
+	 type: heading
+	 level: 1
+	 collapsed: true
 	-
 	 id: cursor-styles
 	 title: Cursor Style
@@ -10488,15 +10524,16 @@ settings:
 			label: Thin Cursor
 			value: thin-cursor
 	-
+	 id: aesthetics
+	 title: 🌟 Aesthetics
+	 description: 'Decorations, YAML Coloring, Animations, Global Filters'
+	 type: heading
+	 level: 1
+	 collapsed: true
+	-
 	 id: colored-yaml
 	 title: "YAML: Coloring"
 	 description: Use colored YAML frontmatter (in Edit Mode).
-	 type: class-toggle
-	 default: false
-	-
-	 id: quotation-mark-deco
-	 title: "Block Quotes: Decorative Quotation Mark"
-	 description: Show a decorative quotation mark next to blockquotes in Reading Mode.
 	 type: class-toggle
 	 default: false
 	-
@@ -10528,10 +10565,17 @@ settings:
 			value: sepia
 	-
 	 id: font-settings
-	 title: 🔡 Typography
-	 description: Font, Font Sizes, Headings, Blockquotes, Letter Spacing, Alignment
+	 title: 🔠 Typography
+	 description: Fonts, Headings, Blockquotes
 	 type: heading
 	 level: 1
+	 collapsed: true
+	-
+	 id: font-family-font-size
+	 title: 🔤 Fonts
+	 description: Font Family, Font Size
+	 type: heading
+	 level: 2
 	 collapsed: true
 	-
 	 id: editor-font-family
@@ -10594,17 +10638,12 @@ settings:
 	 step: 0.05
 	 format: rem
 	-
-	 id: normal-blockquotes
-	 title: Normal-sized Blockquotes & Callouts
-	 description: Blockquotes & Callouts have the same size and line-height as the rest of the text.
-	 type: class-toggle
-	 default: false
-	-
-	 id: blockquotes-left-aligned
-	 title: Left-aligned Blockquote Text
-	 description: Use left-aligned text in blockquotes instead of justified text.
-	 type: class-toggle
-	 default: false
+	 id: heading-font-options
+	 title: '#️⃣ Headings'
+	 description: Font Size per Heading Level, Background, Level Indicator, Letter Spacing
+	 type: heading
+	 level: 2
+	 collapsed: true
 	-
 	 id: heading-font
 	 title: Heading Font
@@ -10689,6 +10728,31 @@ settings:
 	 step: 0.05
 	 format: em
 	-
+	 id: blockquote-font-options
+	 title: 💬 Blockquotes
+	 description: 'Relative Size, Alignment, Decoration'
+	 type: heading
+	 level: 2
+	 collapsed: true
+	-
+	 id: normal-blockquotes
+	 title: Normal-sized Blockquotes
+	 description: Blockquotes (and Callouts) have the same size and line-height as the rest of the text.
+	 type: class-toggle
+	 default: false
+	-
+	 id: blockquotes-left-aligned
+	 title: Left-aligned Blockquote Text
+	 description: Use left-aligned text in blockquotes instead of justified text.
+	 type: class-toggle
+	 default: false
+	-
+	 id: quotation-mark-deco
+	 title: "Decorative Quotation Mark"
+	 description: Show a decorative quotation mark next to blockquotes in Reading Mode.
+	 type: class-toggle
+	 default: false
+	-
 	 id: content-settings
 	 title: 🏞 Views & Media
 	 description: Line Length, Max View, Focus View, Images, PDFs
@@ -10757,7 +10821,7 @@ settings:
 	-
 	 id: gutter-features
 	 title: ❇️ Gutter & Active Line
-	 description: Active Highlight, Indicators in the Gutter
+	 description: Active Line Highlights, Indicators in the Gutter
 	 type: heading
 	 level: 1
 	 collapsed: true
@@ -10837,7 +10901,7 @@ settings:
 	-
 	 id: plugin-specific
 	 title: ⚙️ Plugin-Specific Settings
-	 description: File Explorer, Backlinks, Outline, Sliding Panes, Page Preview, Calendar, Link Favicons, Command Palette
+	 description: File Explorer, Backlinks, Outline, Sliding Panes, Page Preview / Hover Editor, Calendar, Link Favicons, Command Palette
 	 type: heading
 	 level: 1
 	 collapsed: true
@@ -10885,7 +10949,7 @@ settings:
 	 default: false
 	-
 	 id: popover-size
-	 title: 'Page Preview: Size'
+	 title: 'Page Preview / Hover Editor: Size'
 	 description: Width & Height of Page Previews (Popovers) in px. (Note that this setting means a quadratic growth of the preview size.)
 	 type: variable-number-slider
 	 default: 350
@@ -10915,7 +10979,7 @@ settings:
 	-
 	 id: bold-calendar-today
 	 title: "Calendar: Bold today's date"
-	 description: Applies the heading font to today's date in the Calendar plugin's Calendar.
+	 description: Applies bold and the heading font to today's date in the Calendar plugin.
 	 type: class-toggle
 	 hub: ignore
 	 default: false
@@ -10972,7 +11036,7 @@ settings:
 	-
 	 id: miscellaneous
 	 title: ⚛️ Miscellaneous
-	 description: Menu Sizes, File Name Trimming, Inactive Panes, Pseudo-Admonitions, Pandoc Citations, Annotation Tags, Alternating Row Colors
+	 description: Menu Sizes, File Name Trimming, Inactive Panes, Pandoc Citations, Annotation Tags, Alternating Row Colors
 	 type: heading
 	 level: 1
 	 collapsed: true
@@ -10993,15 +11057,9 @@ settings:
 	 default: false
 	-
 	 id: no-grayed-out-inactive-pane
-	 title: 'Do Not Dim Inactive Panes'
+	 title: 'Do not dim inactive Panes'
 	 type: class-toggle
 	 default: false
-	-
-	 id: pseudo-admonition-prefix
-	 title: 'Pseudo-Admonitions: Prefixed Icon'
-	 description: Needs to be enclosed in quotation marks.
-	 type: variable-text
-	 default: '"ℹ️"'
 	-
 	 id: no-pandoc-citation-emphasis
 	 title: No Emphasis of Pandoc Citations and Dataview Inline Fields.
