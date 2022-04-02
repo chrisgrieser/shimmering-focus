@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 1.1010
+Version 1.1011
 Source CSS: https://github.com/chrisgrieser/shimmering-focus/blob/main/source.css
 MIT License
 ──────────────────────────────────────────────────── */
@@ -822,7 +822,7 @@ body:is(.theme-light, .theme-dark) {
 }
 
 /* << Font Definitions */
-:root { /* stylelint-disable-line no-duplicate-selectors */
+:root {
 	--editor-font-family: "iA Writer Quattro S";
 
 	--mobile-font-size: 1.2rem;
@@ -883,11 +883,12 @@ body:not(.less-heading-letter-spacing) {
 	--heading-letter-spacing: 0.2px;
 }
 
+.squareish-shapes,
 .angular-shapes {
 	--button-font: "Oxanium S";
 }
 
-body:not(.angular-shapes) {
+body:not(.angular-shapes):not(.squareish-shapes) {
 	--button-font: "Quicksand S";
 }
 
@@ -1272,7 +1273,7 @@ svg.longform {
 .sepia { filter: sepia(0.85) }
 
 /* ───────────────────────────────────────────────────
-<< Angular or Round Shapes
+/* << Angular or Round Shapes
 ─────────────────────────────────────────────────── */
 
 body:not(.angular-shapes) { /* stylelint-disable-line no-duplicate-selectors */
@@ -1283,6 +1284,11 @@ body:not(.angular-shapes) { /* stylelint-disable-line no-duplicate-selectors */
 body.angular-shapes {
 	--roundish: 0;
 	--round: 0;
+}
+
+body.squareish-shapes {
+	--roundish: 3px;
+	--round: 10px;
 }
 
 /* ───────────────────────────────────────────────── */
@@ -10331,11 +10337,22 @@ settings:
 	 level: 1
 	 collapsed: true
 	-
-	 id: angular-shapes
+	 id: shapes
 	 title: Shapes
-	 type: class-toggle
-	 description: Enable to use angular shapes (🔲) throughout the whole theme. Disable to use rounded shapes (🔘).
-	 default: false
+	 description: Round, angular, or square-ish shapes throughout the whole theme.
+	 type: class-select
+	 allowEmpty: false
+	 default: round-shapes
+	 options:
+		-
+			label: Round 🔘 (Default)
+			value: round-shapes
+		-
+			label: Angular 🟪
+			value: angular-shapes
+		-
+			label: 'New: Square-ish ⏹'
+			value: squareish-shapes
 	-
 	 id: preset-color-scheme
 	 title: "Color Schemes"
