@@ -40,6 +40,11 @@ This theme includes built-in styling for the [Supercharged Links Plugin](https:/
 - Notes with `#moc` get `🗺` prepended
 - Notes with `#person` get `👤` prepended
 - Notes with `#checklist` get `☑️` prepended
+- Notes with `#templater` get `*️⃣` prepended
+- Notes with `#autocompletion` get `🅰️` prepended
+- Notes with `#dataview` get `🔢` prepended
+- Notes with the [cssclass `writing`](/shimmering-focus/css-classes) get `✍️` prepended
+- *Index files* of the [Longform Plugin](https://obsidian.md/plugins?id=longform) with the [cssclass `writing`](/shimmering-focus/css-classes) get `⚙️` prepended
 - Links to *Literature Notes* get a tooltip with the content of the `title` yaml key when hovering and get `📖` prepended. (Actually, this applies to any note with a `title` yaml frontmatter key.)
 
 ![Demo tooltips](https://publish-01.obsidian.md/access/e25082da1bfe16d54e36618cd5bfee68/00%20-%20Contribute%20to%20the%20Obsidian%20Hub/02%20Attachments/Tooltips-for-Literature-Notes-with-Supercharged-Links.gif)
@@ -51,5 +56,5 @@ This theme includes built-in styling for the [Supercharged Links Plugin](https:/
 - Paste the following text into the field `Target Attributes for styling`:
 
 ```text
-kanban-plugin, title, up
+kanban-plugin, title, cssclass
 ```

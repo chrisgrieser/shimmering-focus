@@ -24,11 +24,14 @@ nav_order: 6
 
 ### Custom Callouts
 
-For links to be emphasized:
-
 ```md
 > [!LINK]
 > [!URL]
+```
+
+```md
+> [!MAIL]
+> [!EMAIL]
 ```
 
 ## CSS Classes
@@ -45,11 +48,11 @@ cssclass: name
 The following CSS classes are built in with this theme:
 
 ### General Purpose
-
 - `cssclass: clean-top`: Removes Metadata Information, YAML frontmatter, and Breadcrumbs trail from the top of the note.
 - `cssclass: clean-embeds`: Embeds in that note are fully embedded, looking like one document.
 - `cssclass: list-2-col-cards`: Lists will become cards separated into two columns.
 - `cssclass: no-inline-backlinks`: Do not display inline backlinks for that note.
+- `cssclass: full-width`: Use the full width, i.e., turn of readable line length for that note.
 
 ### Writing & Academic
 - `cssclass: writing`: Applies alternate note styling for writers. [See here for more information](/shimmering-focus/academics-and-writers) (requires Obsidian 0.13.23).

@@ -3,6 +3,7 @@ nav_order: 110
 ---
 
 # Changelog
+- 2022-04-02	new callouts, cssclasses, and supercharged links presets
 - 2022-04-01	fix #126
 - 2022-04-01	accent colors tweaking
 - 2022-04-01	fixed headings in live preview
