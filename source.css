@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 1.1017
+Version 1.1018
 Source CSS: https://github.com/chrisgrieser/shimmering-focus/blob/main/source.css
 MIT License
 ──────────────────────────────────────────────────── */
@@ -4189,7 +4189,7 @@ iframe {
 }
 
 /* harmonize with styling of Horizontal Lines (HR) */
-body > .app-container .cm-s-obsidian .cm-def.cm-hmd-frontmatter {
+.cm-def.cm-hmd-frontmatter.cm-hmd-frontmatter {
 	letter-spacing: 0.1em;
 	color: var(--text-muted);
 }
@@ -4199,19 +4199,19 @@ body > .app-container .cm-s-obsidian .cm-def.cm-hmd-frontmatter {
 }
 
 /* colored YAML */
-body.colored-yaml .cm-s-obsidian .cm-hmd-frontmatter.cm-atom {
+.colored-yaml .cm-hmd-frontmatter.cm-hmd-frontmatter.cm-atom {
 	color: var(--primary-accent-2);
 }
 
-body.colored-yaml .cm-s-obsidian .cm-hmd-frontmatter {
+.colored-yaml .cm-hmd-frontmatter.cm-hmd-frontmatter {
 	color: var(--hover-accent-2);
 }
 
-body.colored-yaml .cm-s-obsidian .cm-hmd-frontmatter.cm-number {
+.colored-yaml .cm-hmd-frontmatter.cm-hmd-frontmatter.cm-number {
 	color: var(--unresolved-link-color);
 }
 
-body.colored-yaml .cm-s-obsidian .cm-hmd-frontmatter.cm-string {
+.colored-yaml .cm-hmd-frontmatter.cm-hmd-frontmatter.cm-string {
 	color: hsl(54 69% 40%);
 }
 
@@ -7000,7 +7000,7 @@ body:not(.no-alternating-rows) .workspace-leaf-content[data-type="starred"] .nav
 /* << Hover Editor
 ──────────────────────────────────────────────────── */
 
-.popover.hover-popover:not(.hover-editor) {
+.popover.hover-popover.hover-popover {
 	background-color: var(--bg1);
 	box-shadow: var(--medium-shadow);
 	border: var(--notice-border);
@@ -7015,6 +7015,48 @@ body:not(.no-alternating-rows) .workspace-leaf-content[data-type="starred"] .nav
 	line-height: 1em;
 	margin-top: 0.5em;
 	margin-bottom: 0.2em;
+}
+
+.popover.hover-editor.is-active .popover-titlebar.popover-titlebar.popover-titlebar.popover-titlebar {
+	background-color: var(--alt-bg);
+}
+
+.hover-editor .popover-title::AFTER {
+	display: none;
+}
+
+.hover-editor .popover-title.popover-title.popover-title.popover-title.popover-title {
+	color: var(--text-normal);
+}
+
+.hover-editor svg {
+	color: var(--extra-contrast);
+}
+
+.hover-editor svg:hover {
+	color: var(--hover-accent-2);
+}
+
+.popover-header-icon.mod-pin-popover.is-active svg:hover {
+	fill: var(--hover-accent-2);
+}
+
+.hover-editor .view-header.view-header {
+	border-bottom-color: var(--basic-border-color);
+}
+
+.hover-editor.show-navbar .view-header.view-header.view-header {
+	height: 2.1em;
+	border-top: var(--basic-border);
+}
+
+.popover-header-icon.mod-pin-popover.is-active svg {
+	fill: var(--extra-contrast);
+}
+
+/* deactivate hidden header */
+.hover-editor .view-header.view-header.view-header.view-header.view-header * {
+	opacity: 1;
 }
 
 /* ───────────────────────────────────────────────── */
@@ -10213,6 +10255,7 @@ community:
 - obsidian-sync-version-history
 - mrj-jump-to-link
 - various-complements
+- obsidian-hover-editor
 */
 
 /* ───────────────────────────────────────────────── */
