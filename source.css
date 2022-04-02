@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 1.1014
+Version 1.1015
 Source CSS: https://github.com/chrisgrieser/shimmering-focus/blob/main/source.css
 MIT License
 ──────────────────────────────────────────────────── */
@@ -10306,7 +10306,7 @@ settings:
 	 id: show-urls
 	 title: 'Permanently show full URLs (new Editor Source Mode only)'
 	 type: class-toggle
-	 description: In Source Mode, URLs on non-active lines will are folded (Obsidian 0.13+ only). Enable this to permanently show the full URL.
+	 description: In Source Mode, URLs on non-active lines will be folded (Obsidian 0.13+ only). Enable this to permanently show the full URL.
 	 default: false
 	-
 	 id: show-close-button
@@ -10345,16 +10345,16 @@ settings:
 	 type: class-toggle
 	 default: false
 	-
-	 id: color-schemes
-	 title: 🎨 Colors & Shapes
-	 description: Preset Color Schemes, Roundness, Brightness, Saturation
+	 id: aesthetics
+	 title: 🎨 Aesthetics
+	 description: Color Schemes, Brightness, Roundness, Decorations
 	 type: heading
 	 level: 1
 	 collapsed: true
 	-
 	 id: shapes
 	 title: Shapes
-	 description: Round, angular, or square-ish shapes throughout the whole theme.
+	 description: Round, angular, or square-ish (🆕) shapes throughout the whole theme.
 	 type: class-select
 	 allowEmpty: false
 	 default: round-shapes
@@ -10366,7 +10366,7 @@ settings:
 			label: Angular 🟪
 			value: angular-shapes
 		-
-			label: 'New: Square-ish ⏹'
+			label: Square-ish ⏹
 			value: squareish-shapes
 	-
 	 id: preset-color-scheme
@@ -10377,7 +10377,7 @@ settings:
 	 default: classic-colors
 	 options:
 		-
-			label: Classic Shimmering Focus
+			label: Classic Shimmering Focus (Default)
 			value: classic-colors
 		-
 			label: Nord
@@ -10458,77 +10458,11 @@ settings:
 	 step: 2
 	 format: '%'
 	-
-	 id: cursor-settings
-	 title: 🐭 Cursor
-	 description: Thickness, Look, Blinking Animation
-	 type: heading
-	 level: 1
-	 collapsed: true
-	-
-	 id: cursor-styles
-	 title: Cursor Style
-	 description: Color and general look of the cursor.
-	 type: class-select
-	 allowEmpty: false
-	 default: shimmering-beam-cursor
-	 options:
-		-
-			label: Shimmering Beam
-			value: shimmering-beam-cursor
-		-
-			label: iA Writer
-			value: ia-writer-cursor
-		-
-			label: Dark Eclipse
-			value: dark-eclipse-cursor
-		-
-			label: Fire & Ice
-			value: fire-and-ice-cursor
-	-
-	 id: cursor-blink-style
-	 title: Cursor Blink Style
-	 type: class-select
-	 allowEmpty: false
-	 default: normal-blink
-	 options:
-		-
-			label: Normal
-			value: normal-blink
-		-
-			label: Smooth Phasing
-			value: phase-blink-cursor
-		-
-			label: Breathing
-			value: breathing-cursor
-		-
-			label: Inversion Blink
-			value: inversion-blink-cursor
-		-
-			label: No Blink
-			value: no-blink-cursor
-	-
-	 id: cursor-shape
-	 title: Cursor Shape
-	 description: When using a block cursor, you should also change the main font to a monospace font for best results.
-	 type: class-select
-	 allowEmpty: false
-	 default: normal-shape
-	 options:
-		-
-			label: Normal
-			value: normal-shape
-		-
-			label: Block Cursor
-			value: block-cursor
-		-
-			label: Thin Cursor
-			value: thin-cursor
-	-
-	 id: aesthetics
-	 title: 🌟 Aesthetics
+	 id: other-aesthetics
+	 title: 🌟 Other Aesthetic Options
 	 description: 'Decorations, YAML Coloring, Animations, Global Filters'
 	 type: heading
-	 level: 1
+	 level: 2
 	 collapsed: true
 	-
 	 id: colored-yaml
@@ -10563,6 +10497,72 @@ settings:
 		-
 			label: Sepia
 			value: sepia
+	-
+	 id: cursor-settings
+	 title: 🐭 Cursor
+	 description: Thickness, Style, Color, Blinking
+	 type: heading
+	 level: 1
+	 collapsed: true
+	-
+	 id: cursor-styles
+	 title: Cursor Style
+	 description: Color and general look of the cursor.
+	 type: class-select
+	 allowEmpty: false
+	 default: shimmering-beam-cursor
+	 options:
+		-
+			label: Shimmering Beam (Default)
+			value: shimmering-beam-cursor
+		-
+			label: iA Writer
+			value: ia-writer-cursor
+		-
+			label: Dark Eclipse
+			value: dark-eclipse-cursor
+		-
+			label: Fire & Ice
+			value: fire-and-ice-cursor
+	-
+	 id: cursor-blink-style
+	 title: Cursor Blink Style
+	 type: class-select
+	 allowEmpty: false
+	 default: normal-blink
+	 options:
+		-
+			label: Normal (Default)
+			value: normal-blink
+		-
+			label: Smooth Phasing
+			value: phase-blink-cursor
+		-
+			label: Breathing
+			value: breathing-cursor
+		-
+			label: Inversion Blink
+			value: inversion-blink-cursor
+		-
+			label: No Blink
+			value: no-blink-cursor
+	-
+	 id: cursor-shape
+	 title: Cursor Shape
+	 description: When using a block cursor, you should also change the main font to a monospace font for best results.
+	 type: class-select
+	 allowEmpty: false
+	 default: normal-shape
+	 options:
+		-
+			label: Normal (Default)
+			value: normal-shape
+		-
+			label: Block Cursor
+			value: block-cursor
+		-
+			label: Thin Cursor
+			value: thin-cursor
 	-
 	 id: font-settings
 	 title: 🔠 Typography
@@ -10664,7 +10664,7 @@ settings:
 	-
 	 id: no-alternating-header-italics
 	 title: No Alternating Italic of Headings
-	 description: In this theme, the Heading Levels alternate between italic/regular to make them more distinguishable. You can turn that feature off if you prefer non-italic for all heading levels.
+	 description: In this theme, the heading levels alternate between italic/regular to make them more distinguishable. You can turn that feature off if you prefer non-italic for all heading levels.
 	 type: class-toggle
 	 default: false
 	-
@@ -10748,7 +10748,7 @@ settings:
 	 default: false
 	-
 	 id: quotation-mark-deco
-	 title: "Decorative Quotation Mark"
+	 title: Decorative Quotation Mark
 	 description: Show a decorative quotation mark next to blockquotes in Reading Mode.
 	 type: class-toggle
 	 default: false
