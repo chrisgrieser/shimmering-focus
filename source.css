@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 1.1016
+Version 1.1017
 Source CSS: https://github.com/chrisgrieser/shimmering-focus/blob/main/source.css
 MIT License
 ──────────────────────────────────────────────────── */
@@ -165,6 +165,7 @@ MIT License
 		- Tag Pane
 		- Starred
 	- Popover (Page Preview)
+	- Hover Editor
 	- File Recovery
 	- Sync
 	- Diff Version
@@ -822,7 +823,7 @@ body:is(.theme-light, .theme-dark) {
 }
 
 /* << Font Definitions */
-:root {
+:root { /* stylelint-disable-line no-duplicate-selectors */
 	--editor-font-family: "iA Writer Quattro S";
 
 	--mobile-font-size: 1.2rem;
@@ -2145,6 +2146,10 @@ select.dropdown {
 	border-radius: var(--round);
 }
 
+body:not(.angular-shapes):not(.squareish-shapes) select.dropdown {
+	padding-top: 4px;
+}
+
 .theme-dark select.dropdown,
 .theme-dark .modal select.dropdown {
 	background-color: var(--bg3);
@@ -3235,7 +3240,7 @@ body .app-container .workspace-leaf-resize-handle:hover {
 }
 
 /* sort order button */
-.modal.mod-community-plugin .community-plugin-search .setting-item-control button {
+.modal.modal.mod-community-plugin .community-plugin-search .setting-item-control button {
 	color: var(--extra-contrast);
 	background-color: var(--muted-button-bg);
 	box-shadow: var(--muted-button-inset-shadow);
@@ -3553,6 +3558,14 @@ body .community-plugin-info .community-plugin-downloads-text {
 	transition: var(--medium-transition);
 }
 
+.squareish-shapes .community-plugin-author + .community-plugin-author a::AFTER {
+	padding: 7px 7px 8px 8px;
+}
+
+.squareish-shapes .community-plugin-info .community-plugin-author + .community-plugin-author {
+	margin-bottom: -48px;
+}
+
 .community-plugin-author + .community-plugin-author a:hover::AFTER {
 	color: var(--button-hover-text);
 	background-color: var(--interactive-hover-bg);
@@ -3588,6 +3601,12 @@ body .community-plugin-info .community-plugin-downloads-text {
 
 .angular-shapes .modal.modal.mod-community-plugin .community-plugin-info button:last-child::BEFORE {
 	top: 6px;
+}
+
+.squareish-shapes .modal.modal.mod-community-plugin .community-plugin-info button:last-child {
+	height: 36px;
+	position: relative;
+	top: 1.5px;
 }
 
 .modal.mod-community-plugin .community-plugin-info button:last-child:hover::BEFORE {
@@ -5468,7 +5487,7 @@ pre[class~="language-haskell" i]::AFTER { content: "Haskell"; }
 .markdown-preview-view > div > div > div > ul.dataview.list-view-ul,
 .markdown-preview-view > div > div > ul,
 .markdown-preview-view ul.contains-task-list {
-	padding-left: 1rem;
+	padding-left: 1.3rem;
 }
 
 .markdown-preview-view ol {
@@ -6978,39 +6997,24 @@ body:not(.no-alternating-rows) .workspace-leaf-content[data-type="starred"] .nav
 
 /* ───────────────────────────────────────────────── */
 /* << Popover (Page Preview)
+/* << Hover Editor
 ──────────────────────────────────────────────────── */
 
-/* ":not(.jl)" prevents interference with the jump-to-link-plugin */
-body .popover:not(.jl) {
-	height: var(--popover-size) !important;
-	max-height: unset !important;
-	width: var(--popover-size) !important;
-
+.popover.hover-popover:not(.hover-editor) {
 	background-color: var(--bg1);
 	box-shadow: var(--medium-shadow);
-
-	border: var(--muted-border) !important;
+	border: var(--notice-border);
 	border-radius: calc(var(--roundish) * 2);
 }
 
-.popover .markdown-embed {
-	height: 100% !important;
+.popover.hover-popover:not(.hover-editor) .markdown-embed-link {
+	right: 8px;
 }
 
-.popover .markdown-embed-link svg {
-	stroke-width: 2px;
-}
-
-.popover .markdown-embed-link {
-	color: var(--extra-contrast);
-	top: 4px;
-	right: 4px;
-	padding: 2px;
-	border-radius: var(--roundish);
-}
-
-.popover .markdown-embed-link:hover {
-	color: var(--hover-accent-2);
+.popover.hover-popover:not(.hover-editor) :is(h1, h2, h3, h4, h5 ,h6) {
+	line-height: 1em;
+	margin-top: 0.5em;
+	margin-bottom: 0.2em;
 }
 
 /* ───────────────────────────────────────────────── */
@@ -9383,9 +9387,8 @@ body .dataview.inline-field-key {
 	display: none;
 }
 
-/* padding to the left not needed, since aliases won't be displayed there */
+/* space to the left not needed, since aliases won't be displayed there */
 .another-quick-switcher__item__descriptions,
-.another-quick-switcher__item__reason,
 .suggestion-item .another-quick-switcher__item {
 	margin-left: -17px;
 }
@@ -9395,21 +9398,8 @@ body .dataview.inline-field-key {
 }
 
 .another-quick-switcher__item__description__alias svg {
+	width: 14px;
 	margin-right: 4px;
-}
-
-.another-quick-switcher__item__reason,
-.another-quick-switcher__item__reasons {
-	line-height: 1em;
-}
-
-.another-quick-switcher__item__reason {
-	padding-top: 2px;
-}
-
-.another-quick-switcher__item__reason__alias > svg {
-	margin-right: 10px;
-	transform: scale(0.8);
 }
 
 .another-quick-switcher__item__description__tag.another-quick-switcher__item__description__tag > svg {
@@ -9432,11 +9422,6 @@ body .dataview.inline-field-key {
 .suggestion-item:hover :is(.another-quick-switcher__item__icon, .another-quick-switcher__item__directory) {
 	color: var(--text-hover-accent);
 	opacity: 0.6;
-}
-
-.suggestion-item .another-quick-switcher__item__icon {
-	left: 5px;
-	transform: scale(0.85);
 }
 
 /* unresolved items */
@@ -9529,7 +9514,7 @@ body:not(.show-scrollbar) .workspace-split.mod-root .workspace-leaf-content[data
 	padding-left: 20px;
 }
 
-.style-settings-heading[data-level="2"] .setting-item-name {
+.style-settings-heading[data-id="shimmering-focus"] .style-settings-heading[data-level="2"] .setting-item-name {
 	font-family: var(--ui-font);
 	font-size: 0.8em;
 	font-weight: 500;
@@ -10901,7 +10886,7 @@ settings:
 	-
 	 id: plugin-specific
 	 title: ⚙️ Plugin-Specific Settings
-	 description: File Explorer, Backlinks, Outline, Sliding Panes, Page Preview / Hover Editor, Calendar, Link Favicons, Command Palette
+	 description: File Explorer, Backlinks, Outline, Sliding Panes, Calendar, Link Favicons, Command Palette
 	 type: heading
 	 level: 1
 	 collapsed: true
@@ -10947,16 +10932,6 @@ settings:
 	 description: This theme has some styling for the Supercharged Links plugin built-in, so can make use of the plugin without knowledge of CSS. See the theme's README on GitHub for more information.
 	 type: class-toggle
 	 default: false
-	-
-	 id: popover-size
-	 title: 'Page Preview / Hover Editor: Size'
-	 description: Width & Height of Page Previews (Popovers) in px. (Note that this setting means a quadratic growth of the preview size.)
-	 type: variable-number-slider
-	 default: 350
-	 min: 200
-	 max: 600
-	 step: 50
-	 format: px
 	-
 	 id: move-plugin-name-to-left
 	 title: 'Command Palette: Move the plugin name back to the left'
