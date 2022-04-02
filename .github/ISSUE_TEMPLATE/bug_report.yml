@@ -76,7 +76,7 @@ body:
     attributes:
       label: Plugin-Specific Problems
       description: |
-        Regarding one of these plugin:
+        In case the problem concerns one of these plugins:
         - Longform
         - Kanban
         - Sliding Panes
