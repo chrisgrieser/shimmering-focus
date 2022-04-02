@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 1.1018
+Version 1.1019
 Source CSS: https://github.com/chrisgrieser/shimmering-focus/blob/main/source.css
 MIT License
 ──────────────────────────────────────────────────── */
@@ -617,7 +617,7 @@ body:is(.theme-light, .theme-dark) {
 	--notice-border: 2px solid hsl(var(--dark-hue) var(--sat-dark-1) 45%);
 	--search-match-outline: 1px solid var(--search-match-color);
 	--interactive-border-color: var(--primary-accent-2);
-	--interactive-hover-border-color: var(--hover-accent-3);
+	--interactive-hover-border-color: var(--hover-accent-1);
 }
 
 /* ───────────────────────────────────────────────── */
@@ -7017,8 +7017,24 @@ body:not(.no-alternating-rows) .workspace-leaf-content[data-type="starred"] .nav
 	margin-bottom: 0.2em;
 }
 
-.popover.hover-editor.is-active .popover-titlebar.popover-titlebar.popover-titlebar.popover-titlebar {
+.hover-editor .popover-titlebar.popover-titlebar.popover-titlebar.popover-titlebar.popover-titlebar.popover-titlebar {
 	background-color: var(--alt-bg);
+}
+
+.theme-dark .hover-editor.is-active.is-active {
+	border-color: var(--primary-accent-2);
+}
+
+.theme-dark .hover-editor:not(.is-active):hover {
+	border-color: var(--hover-accent-2);
+}
+
+.theme-light .hover-editor.is-active.is-active {
+	border-color: var(--primary-accent-3);
+}
+
+.theme-light .hover-editor:not(.is-active):hover {
+	border-color: var(--hover-accent-3);
 }
 
 .hover-editor .popover-title::AFTER {
@@ -7031,6 +7047,10 @@ body:not(.no-alternating-rows) .workspace-leaf-content[data-type="starred"] .nav
 
 .hover-editor svg {
 	color: var(--extra-contrast);
+}
+
+.popover-header-icon.mod-pin-popover.is-active svg {
+	fill: var(--extra-contrast);
 }
 
 .hover-editor svg:hover {
@@ -7048,10 +7068,6 @@ body:not(.no-alternating-rows) .workspace-leaf-content[data-type="starred"] .nav
 .hover-editor.show-navbar .view-header.view-header.view-header {
 	height: 2.1em;
 	border-top: var(--basic-border);
-}
-
-.popover-header-icon.mod-pin-popover.is-active svg {
-	fill: var(--extra-contrast);
 }
 
 /* deactivate hidden header */
