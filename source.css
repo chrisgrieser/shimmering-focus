@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 1.1038
+Version 1.1039
 Source CSS: https://github.com/chrisgrieser/shimmering-focus/blob/main/source.css
 MIT License
 ──────────────────────────────────────────────────── */
@@ -228,7 +228,7 @@ MIT License
 	- Show Current File Path
 	- Active Visual Line (Plugin)
 	- Settings Search
-	- CookLang Plugin
+	- CookLang
 	- Code Block Labels
 - Compatibility Info for the Obsidian Hub
 - Style Setting Options
@@ -1902,7 +1902,7 @@ body:not(.show-scrollbar) ::-WEBKIT-SCROLLBAR {
 	display: none;
 }
 
-.workspace-split.mod-root ::-WEBKIT-SCROLLBAR {
+:is(.hover-editor, .workspace-split.mod-root) ::-WEBKIT-SCROLLBAR {
 	display: unset;
 }
 
@@ -1915,7 +1915,10 @@ body ::-WEBKIT-SCROLLBAR-THUMB:active,
 body ::-WEBKIT-SCROLLBAR-THUMB {
 	width: var(--scrollbar-thickness);
 	box-shadow: var(--small-inset-shadow);
-	border-radius: var(--roundish);
+}
+
+body:is(.theme-light, .theme-dark) ::-WEBKIT-SCROLLBAR-THUMB {
+	border-radius: calc(var(--roundish) * 0.6);
 }
 
 /* hover / active colors */
@@ -4044,11 +4047,8 @@ body:not(.no-active-highlight):not(.active-visual-line) .CodeMirror-activeline .
 	border-radius: var(--roundish);
 }
 
-.active-line-gutter .cm-gutterElement.cm-active {
-	padding-top: 2px;
-	padding-bottom: 2px;
-	border-top: var(--muted-border);
-	border-bottom: var(--muted-border);
+.active-line-gutter .cm-gutterElement.cm-active.cm-active {
+	outline: var(--muted-border);
 }
 
 /* fix so the horizontal line above first footnote is not rounded */
@@ -5348,9 +5348,13 @@ body:not(.no-active-highlight) .CodeMirror-activeline .HyperMD-codeblock-end-bg.
 /* Code Blocks in Preview Mode */
 .markdown-preview-view.markdown-preview-view pre {
 	background-color: var(--code-block-bg);
+
 	padding: 0;
+	margin-top: 0.5em;
+
 	border: var(--codeblock-border);
 	border-radius: var(--codeblock-roundness);
+
 	tab-size: var(--code-block-tab-size);
 }
 
@@ -5360,7 +5364,7 @@ body:not(.no-active-highlight) .CodeMirror-activeline .HyperMD-codeblock-end-bg.
 }
 
 /* No Wrapping */
-.no-code-block-wrapping .markdown-preview-view pre {
+.no-code-block-wrapping .markdown-preview-view pre code {
 	white-space: pre;
 }
 
@@ -5523,15 +5527,15 @@ pre[class$="haskell" i]::AFTER { content: "Haskell"; }
 	--sh-contant: hsl(0 70% 50%);
 }
 
-body[class*="syntax-hl"] .cm-atom:not(.cm-hmd-frontmatter), /* E.g. color tag, sans-serif */
+body[class*="syntax-hl"] .cm-atom.cm-hmd-codeblock, /* E.g. color tag, sans-serif */
 body[class*="syntax-hl"] .token.boolean,
 body[class*="syntax-hl"] .token.number,
-body[class*="syntax-hl"] .cm-number:not(.cm-hmd-frontmatter) { /* Number or e.g. 1px, 1em */
+body[class*="syntax-hl"] .cm-number.cm-hmd-codeblock { /* Number or e.g. 1px, 1em */
 	color: var(--sh-value);
 }
 
 body[class*="syntax-hl"] .cm-variable, /* Var in css */
-body[class*="syntax-hl"] .cm-hmd-codeblock.cm-quote, /* shell variables */
+body[class*="syntax-hl"] .cm-quote.cm-hmd-codeblock, /* shell variables */
 body[class*="syntax-hl"] .token.variable { /* Var in css e.g. --this-is-variable */
 	color: var(--sh-variable1);
 }
@@ -5541,6 +5545,7 @@ body[class*="syntax-hl"] .cm-variable-2 { /* Var definition in css */
 	color: var(--sh-variable2);
 }
 
+body[class*="syntax-hl"] .cm-comment.cm-hmd-codeblock,
 body[class*="syntax-hl"] .token.comment, /* Comment */
 body[class*="syntax-hl"] .token.doctype { /* In HTML e.g. <!DOCTYPE html> */
 	color: var(--sh-comment);
@@ -5900,7 +5905,7 @@ body:not(.annotation-tags-off) :is(.cm-hashtag-begin.cm-tag-example, .tag[href="
 ──────────────────────────────────────────────────── */
 
 .cm-commenturl,
-.cm-comment.cm-comment.cm-comment.cm-comment.cm-comment {
+.cm-comment.cm-comment.cm-comment.cm-comment.cm-comment:not(.cm-hmd-codeblock) {
 	color: var(--text-muted);
 }
 
@@ -9967,10 +9972,6 @@ img.link-favicon {
 	height: 0.9em !important;
 }
 
-.theme-dark .link-favicon[data-host*="github.com"] {
-	filter: invert(0.85);
-}
-
 .grayscale-favicons .link-favicon {
 	filter: grayscale(85%);
 }
@@ -10335,7 +10336,7 @@ a.zoom-plugin-title:hover {
 
 /* current word */
 body :is(.cm-matched-word,.cm-current-word) {
-	text-decoration: 1.2px dotted underline var(--text-muted);
+	text-decoration: 1.5px dotted underline var(--text-muted);
 	text-underline-offset: calc(var(--underline-offset) * 2);
 }
 
@@ -10388,7 +10389,7 @@ body .cm-active-visual-line {
 }
 
 /* ───────────────────────────────────────────────── */
-/* << CookLang Plugin
+/* << CookLang
 ──────────────────────────────────────────────────── */
 
 .workspace-leaf-content[data-type="cook"] .view-content {
