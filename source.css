@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 1.1029
+Version 1.1030
 Source CSS: https://github.com/chrisgrieser/shimmering-focus/blob/main/source.css
 MIT License
 ──────────────────────────────────────────────────── */
@@ -4038,8 +4038,8 @@ body > .app-container .view-content > div > .markdown-preview-view {
 /* << Active Line Highlight
 ──────────────────────────────────────────────────── */
 
-body:not(.no-active-highlight) .cm-active:not(.cm-gutterElement),
-body:not(.no-active-highlight) .CodeMirror-activeline .CodeMirror-linebackground {
+body:not(.no-active-highlight):not(.active-visual-line) .cm-active:not(.cm-gutterElement),
+body:not(.no-active-highlight):not(.active-visual-line) .CodeMirror-activeline .CodeMirror-linebackground {
 	background-color: var(--active-line-bg);
 	border-radius: var(--roundish);
 }
@@ -5275,7 +5275,7 @@ body { /* stylelint-disable-line no-duplicate-selectors */
 	--codeblock-border: var(--muted-border);
 	--codeblock-roundness: calc(var(--roundish) * 1.5);
 	--code-block-bg: var(--bg2);
-	--code-block-lang-bg: var(--bg3);
+	--code-block-alt-bg: var(--bg3);
 	--code-block-tab-size: 4;
 }
 
@@ -5289,7 +5289,7 @@ body { /* stylelint-disable-line no-duplicate-selectors */
 }
 
 .cm-s-obsidian div.HyperMD-codeblock-begin-bg {
-	background-color: var(--code-block-lang-bg);
+	background-color: var(--code-block-alt-bg);
 	border: var(--codeblock-border);
 	border-bottom: none;
 	border-top-right-radius: var(--codeblock-roundness);
@@ -5339,20 +5339,30 @@ body:not(.no-active-highlight) .CodeMirror-activeline .HyperMD-codeblock-end-bg.
 }
 
 /* Code Blocks in Preview Mode */
-body .markdown-preview-view pre[class*="language-"],
-body .markdown-preview-view pre {
+.markdown-preview-view.markdown-preview-view pre {
 	background-color: var(--code-block-bg);
 	padding: 0;
 	border: var(--codeblock-border);
 	border-radius: var(--codeblock-roundness);
+	tab-size: var(--code-block-tab-size);
 }
 
-.markdown-preview-view pre[class*="language-"] code {
-	/* wrapping in code block */
-	white-space: pre-wrap;
-	overflow-wrap: break-word;
+.markdown-preview-view pre code {
+	background-color: var(--code-block-bg);
 	padding: 5px 9px;
-	tab-size: var(--code-block-tab-size);
+}
+
+/* No Wrapping */
+.no-code-block-wrapping .markdown-preview-view pre {
+	white-space: pre;
+}
+
+.no-code-block-wrapping .markdown-preview-view pre ::-WEBKIT-SCROLLBAR {
+	height: calc(var(--scrollbar-thickness) * 0.9);
+}
+
+.no-code-block-wrapping .markdown-preview-view pre:not([class*="language-"]) {
+	overflow-x: scroll;
 }
 
 /* border on top created like this, since the
@@ -5362,7 +5372,7 @@ CM5 has the "pre" type */
 .mod-cm6 + .markdown-reading-view pre[class*="language-"]::BEFORE {
 	display: block;
 	content: " ";
-	background-color: var(--code-block-lang-bg);
+	background-color: var(--code-block-alt-bg);
 	border-top-right-radius: calc(var(--codeblock-roundness) * 0.8);
 	border-top-left-radius: calc(var(--codeblock-roundness) * 0.8);
 }
@@ -5381,7 +5391,7 @@ CM5 has the "pre" type */
 	font-size: 0;
 
 	color: var(--extra-contrast);
-	background-color: var(--bg3);
+	background-color: var(--code-block-alt-bg);
 
 	z-index: 100;
 
@@ -5404,7 +5414,7 @@ button.copy-code-button::BEFORE {
 
 .is-live-preview .cm-preview-code-block .edit-block-button {
 	color: var(--extra-contrast);
-	background-color: var(--bg3);
+	background-color: var(--code-block-alt-bg);
 	border: var(--thin-border);
 }
 
@@ -5491,7 +5501,7 @@ pre[class$="haskell" i]::AFTER { content: "Haskell"; }
 
 /* Dracula */
 :is(.theme-dark.dracula-syntax-hl-dark, .theme-light.dracula-syntax-hl-light) {
-	--code-block-lang-bg: hsl(231 15% 10%);
+	--code-block-alt-bg: hsl(231 15% 10%);
 	--code-block-bg: hsl(231 15% 18%);
 }
 
@@ -5509,8 +5519,7 @@ pre[class$="haskell" i]::AFTER { content: "Haskell"; }
 
 :is(.theme-dark.dracula-syntax-hl-dark, .theme-light.dracula-syntax-hl-light) .cm-atom:not(.cm-hmd-frontmatter) { color: hsl(250 100% 75%) } /* E.g. color tag, sans-serif */
 :is(.theme-dark.dracula-syntax-hl-dark, .theme-light.dracula-syntax-hl-light) .cm-number:not(.cm-hmd-frontmatter) { color: hsl(250 100% 75%) } /* Number or e.g. 1px, 1em */
-:is(.theme-dark.dracula-syntax-hl-dark, .theme-light.dracula-syntax-hl-light) .cm-meta:not(.cm-hmd-frontmatter):not(.cm-formatting) { color: hsl(0 70% 50%) } /* In html "<!DOCTYPE html>" wil be highlighted */
-:is(.theme-dark.dracula-syntax-hl-dark, .theme-light.dracula-syntax-hl-light) .cm-string:not(.cm-hmd-frontmatter) { color: hsl(60 100% 75%) } /* String e.g. a whole sentence within " Sample Sentece" */
+:is(.theme-dark.dracula-syntax-hl-dark, .theme-light.dracula-syntax-hl-light) .cm-string:not(.cm-hmd-frontmatter):not(.cm-url) { color: hsl(60 100% 75%) } /* String e.g. a whole sentence within " Sample Sentece" */
 
 :is(.theme-dark.dracula-syntax-hl-dark, .theme-light.dracula-syntax-hl-light) .token.comment { color: hsl(225 27% 51%) } /* Comment */
 :is(.theme-dark.dracula-syntax-hl-dark, .theme-light.dracula-syntax-hl-light) .token.doctype { color: hsl(225 27% 51%) } /* In HTML e.g. <!DOCTYPE html> */
@@ -10281,15 +10290,9 @@ body .cm-matched-string {
 /* ───────────────────────────────────────────────── */
 /* << Active Visual Line (Plugin)
 ──────────────────────────────────────────────────── */
-
+/* see also section: Active Line Highlight */
 body .cm-active-visual-line {
 	background-color: var(--active-line-bg);
-}
-
-/* disable standard active line highlighting */
-.active-visual-line.active-visual-line .cm-active:not(.cm-gutterElement):not(.HyperMD-quote),
-.active-visual-line.active-visual-line .CodeMirror-activeline .CodeMirror-linebackground {
-	background-color: transparent;
 }
 
 /* ───────────────────────────────────────────────── */
@@ -10527,7 +10530,7 @@ settings:
 	-
 	 id: aesthetics
 	 title: 🎨 Aesthetics
-	 description: Color Schemes, Brightness, Roundness, Decorations, Syntax Highlighting (Code Blocks)
+	 description: Color Schemes, Brightness, Roundness, Decorations
 	 type: heading
 	 level: 1
 	 collapsed: true
@@ -10726,48 +10729,6 @@ settings:
 	 step: 2
 	 format: '%'
 	-
-	 id: code-block-syntax-highlighting
-	 title: '🖥 Syntax Highlighting (🚧 Work-in-Progress)'
-	 description: Code Blocks
-	 type: heading
-	 level: 2
-	 collapsed: true
-	-
-	 id: code-block-syntax-hl-light-mode
-	 title: "Code Block Color Scheme (Light Mode)"
-	 type: class-select
-	 allowEmpty: false
-	 default: default-syntax-hl
-	 options:
-		-
-			label: Default
-			value: default-syntax-hl-light
-		-
-			label: Dracula
-			value: dracula-syntax-hl-light
-	-
-	 id: code-block-syntax-hl-dark-mode
-	 title: "Code Block Color Scheme (Dark Mode)"
-	 type: class-select
-	 allowEmpty: false
-	 default: default-syntax-hl
-	 options:
-		-
-			label: Default
-			value: default-syntax-hl-dark
-		-
-			label: Dracula
-			value: dracula-syntax-hl-dark
-	-
-	 id: code-block-tab-size
-	 title: Code Block Tab Size
-	 description: Changes the Tab Size inside code blogs independent from the GLobal Obsidian Setting for Tab Size.
-	 type: variable-number-slider
-	 default: 4
-	 min: 2
-	 max: 8
-	 step: 1
-	-
 	 id: other-aesthetics
 	 title: 🌟 Further Aesthetic Options
 	 description: 'Decorations, YAML Coloring, Animations, Global Filters'
@@ -10808,16 +10769,66 @@ settings:
 			label: Sepia
 			value: sepia
 	-
+	 id: code-blocks-options
+	 title: '🖥 Code Blocks'
+	 description: Tab Size, Line Wrapping, Syntax Highlighting
+	 type: heading
+	 level: 1
+	 collapsed: true
+	-
+	 id: code-block-tab-size
+	 title: Tab Size (Preview & Source Mode)
+	 description: This setting is independent from the global Obsidian setting for Tab Size.
+	 type: variable-number-slider
+	 default: 4
+	 min: 2
+	 max: 8
+	 step: 1
+	-
+	 id: no-code-block-wrapping
+	 title: Disable Line Wrapping in Code Blocks (Preview Mode)
+	 description: This setting is independent from the global Obsidian setting for Line Wrapping.
+	 type: class-toggle
+	 default: false
+	-
+	 id: code-block-syntax-hl-light-mode
+	 title: "Syntax Highlighting (Light Mode)"
+	 description: Color Scheme
+	 type: class-select
+	 allowEmpty: false
+	 default: default-syntax-hl
+	 options:
+		-
+			label: Default
+			value: default-syntax-hl-light
+		-
+			label: Dracula
+			value: dracula-syntax-hl-light
+	-
+	 id: code-block-syntax-hl-dark-mode
+	 title: "Syntax Highlighting (Dark Mode)"
+	 description: Color Scheme
+	 type: class-select
+	 allowEmpty: false
+	 default: default-syntax-hl
+	 options:
+		-
+			label: Default
+			value: default-syntax-hl-dark
+		-
+			label: Dracula
+			value: dracula-syntax-hl-dark
+	-
 	 id: cursor-settings
 	 title: 🐁 Cursor
-	 description: Thickness, Style, Color, Blinking
+	 description: Thickness, Style, Color, Blinking, Block Cursor
 	 type: heading
 	 level: 1
 	 collapsed: true
 	-
 	 id: cursor-styles
 	 title: Cursor Style
-	 description: Color and general look of the cursor.
+	 description: Color and appearance of the cursor.
 	 type: class-select
 	 allowEmpty: false
 	 default: shimmering-beam-cursor
