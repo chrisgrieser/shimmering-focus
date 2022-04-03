@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 1.1034
+Version 1.1035
 Source CSS: https://github.com/chrisgrieser/shimmering-focus/blob/main/source.css
 MIT License
 ──────────────────────────────────────────────────── */
@@ -5920,7 +5920,7 @@ input[type="checkbox"]:checked {
 	background-color: var(--finished-task);
 	background-image: url('data:image/svg+xml; utf8, <svg width="12px" height="10px" viewBox="0 0 12 8" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd"><g transform="translate(-4.000000, -6.000000)" fill="%23ffffff"><path d="M8.1043257,14.0367999 L4.52468714,10.5420499 C4.32525014,10.3497722 4.32525014,10.0368095 4.52468714,9.8424863 L5.24777413,9.1439454 C5.44721114,8.95166768 5.77142411,8.95166768 5.97086112,9.1439454 L8.46638057,11.5903727 L14.0291389,6.1442083 C14.2285759,5.95193057 14.5527889,5.95193057 14.7522259,6.1442083 L15.4753129,6.84377194 C15.6747499,7.03604967 15.6747499,7.35003511 15.4753129,7.54129009 L8.82741268,14.0367999 C8.62797568,14.2290777 8.3037627,14.2290777 8.1043257,14.0367999"></path></g></g></svg>');
 
-	border-width: 0;
+	border: none;
 
 	background-position: center;
 	background-size: 65%;
@@ -8140,19 +8140,32 @@ body:not(.show-header-bar) .kanban-plugin__board > div {
 /* <<< Kanban Font  */
 body :is(.kanban-plugin__drag-container,.kanban-plugin) p {
 	font-size: 0.95em;
+	line-height: 1.4em;
 	letter-spacing: -0.2px;
 	margin: 0;
 }
 
 body .app-container :is(.kanban-plugin__drag-container,.kanban-plugin) :is(h1, h2, h3, h4, h5, h6) {
 	font-family: var(--default-font);
-	letter-spacing: 0.4px;
+	letter-spacing: 0.5px;
 
 	color: var(--text-normal);
 	box-shadow: none;
 
+	padding-bottom: 1px;
 	padding-left: 5px;
 	margin-bottom: 3px;
+
+	border-width: 1px;
+}
+
+/* align with headings */
+.kanban-plugin__item-markdown > div > :not(h1, h2, h3, h4, h5, h6) {
+	margin-left: 3px;
+}
+
+body .kanban-plugin__item-title-wrapper {
+	padding: 3px 5px 4px 2px;
 }
 
 :is(.kanban-plugin__drag-container,.kanban-plugin) h1 { font-size: calc(var(--h1) * var(--kanban-heading-size-factor)) }
@@ -8205,10 +8218,6 @@ body .kanban-plugin__lane {
 	box-shadow: var(--small-inset-shadow), var(--tiny-shadow);
 	border: var(--basic-border);
 	border-radius: calc(var(--roundish) * 1.5);
-}
-
-body .kanban-plugin__item-title-wrapper {
-	padding: 4px 6px;
 }
 
 /* fix look of cards when dragging */
@@ -8371,6 +8380,7 @@ body .kanban-plugin .kanban-plugin__markdown-preview-view hr {
 	width: 0.85em;
 	margin-top: 0;
 	margin-left: 0;
+	border-width: 1.5px;
 }
 
 :is(.kanban-plugin__drag-container,.kanban-plugin) ul > li.task-list-item {
@@ -8378,14 +8388,14 @@ body .kanban-plugin .kanban-plugin__markdown-preview-view hr {
 }
 
 /* prevent images setting from propagating to Kanbans */
-.kanban-plugin__item.kanban-plugin__item.kanban-plugin__item.kanban-plugin__item img {
+.kanban-plugin__item.kanban-plugin__item.kanban-plugin__item.kanban-plugin__item.kanban-plugin__item img {
 	max-width: 100%;
 	margin-top: 0;
+	border-width: 1px;
 }
 
 .kanban-plugin .image-embed[alt]::AFTER {
-	padding-top: 0;
-	margin-bottom: 0;
+	display: none;
 }
 
 /* ───────────────────────────────────────────────── */
