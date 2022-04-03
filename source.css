@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 1.1031
+Version 1.1032
 Source CSS: https://github.com/chrisgrieser/shimmering-focus/blob/main/source.css
 MIT License
 ──────────────────────────────────────────────────── */
@@ -4044,6 +4044,13 @@ body:not(.no-active-highlight):not(.active-visual-line) .CodeMirror-activeline .
 	border-radius: var(--roundish);
 }
 
+.active-line-gutter .cm-gutterElement.cm-active {
+	padding-top: 2px;
+	padding-bottom: 2px;
+	border-top: var(--muted-border);
+	border-bottom: var(--muted-border);
+}
+
 /* fix so the horizontal line above first footnote is not rounded */
 .cm-line:not(.HyperMD-footnote) + .HyperMD-footnote.cm-active {
 	border-top-right-radius: 0;
@@ -4390,11 +4397,11 @@ body:not(.permanently-show-collapse-indicators) .cm-line:not(:hover):not(.cm-act
 }
 
 /* show only active line number */
-body:not(.show-all-line-numbers) .cm-lineNumbers .cm-gutterElement:not(.cm-active):not(:hover) {
+.minimal-line-numbering .cm-lineNumbers .cm-gutterElement:not(.cm-active):not(:hover) {
 	opacity: 0;
 }
 
-body:not(.show-all-line-numbers) .cm-lineNumbers .cm-gutterElement {
+.minimal-line-numbering .cm-lineNumbers .cm-gutterElement {
 	font-weight: 600;
 	color: var(--text-muted);
 }
@@ -10411,6 +10418,7 @@ community:
 - obsidian-hover-editor
 - darlal-switcher-plus
 - obsidian-banners
+- obsidian-active-visual-line
 */
 
 /* ───────────────────────────────────────────────── */
@@ -10433,7 +10441,7 @@ settings:
 	 id: hide-settings-button
 	 title: Hide Settings Button
 	 type: class-toggle
-	 description: "Hide the floating Settings button. The settings can still be accessed by using the hotkey 'cmd + ,' on Mac or 'ctrl + ,' on Windows/Linux."
+	 description: "Hide the floating Settings button in the bottom left. The settings can still be accessed the button by using the hotkey 'cmd + ,' (Mac) or 'ctrl + ,' (Windows/Linux)."
 	 default: false
 	-
 	 id: show-sidebar-tabs
@@ -10467,8 +10475,8 @@ settings:
 	 default: false
 	-
 	 id: status-bar-mode
-	 title: "Status Bar"
-	 description: 'Display Options'
+	 title: Status Bar
+	 description: Display Options
 	 type: class-select
 	 allowEmpty: false
 	 default: only-on-hover
@@ -10487,7 +10495,7 @@ settings:
 			value: classic-statusbar
 	-
 	 id: show-urls
-	 title: 'Permanently show full URLs (new Editor Source Mode only)'
+	 title: 'Permanently show full URLs (New Editor Source Mode)'
 	 type: class-toggle
 	 description: In Source Mode, URLs on non-active lines will be folded (Obsidian 0.13+ only). Enable this to permanently show the full URL.
 	 default: false
@@ -10501,18 +10509,12 @@ settings:
 	 id: show-scrollbar
 	 title: Re-enable Scrollbars
 	 type: class-toggle
-	 description: When false, only the scroll bars in the Editor are shown.
+	 description: When false, only the scroll bars in the Editor (and code blocks) are shown.
 	 default: false
 	-
 	 id: permanently-show-collapse-indicators
 	 title: Permanently show the Collapse Arrows
-	 description: When false, collapse arrows only become visible when hovered or in the active line.
-	 type: class-toggle
-	 default: false
-	-
-	 id: show-all-line-numbers
-	 title: Show all line numbers
-	 description: "When 'Show line number' is enabled in the settings, all line numbers will be shown. When false, only the line numbers of the active and hovered line will be shown."
+	 description: When false, collapse arrows only become visible when hovered, folder, or in the active line.
 	 type: class-toggle
 	 default: false
 	-
@@ -11142,13 +11144,31 @@ settings:
 	-
 	 id: gutter-features
 	 title: ❇️ Gutter & Active Line
-	 description: Active Line Highlights, Indicators in the Gutter
+	 description: Active Line Highlights, Indicators in the Gutter, Line Numbers
 	 type: heading
 	 level: 1
 	 collapsed: true
 	-
-	 id: no-active-highlight
-	 title: Disable Active Line Highlight
+	 id: active-line-highlight-options
+	 title: Active Line
+	 description: "Options for emphasizing the active line. 'Emphasized Background' is automatically turned off when The 'Active Visual Line' Plugin is installed."
+	 type: class-select
+	 allowEmpty: false
+	 default: active-line-emphasized-background
+	 options:
+	 -
+		label: Emphasized Background (Default)
+		value: active-line-emphasized-background
+	 -
+		label: Start & End Markers in Gutter
+		value: active-line-gutter
+	 -
+		label: No Active Line Highlight
+		value: no-active-highlight
+	-
+	 id: minimal-line-numbering
+	 title: Minimal Line Numbering
+	 description: "When 'Show line number' is enabled in the Obsidian settings, only the line number of the active and hovered line will be shown."
 	 type: class-toggle
 	 default: false
 	-
