@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 1.1037
+Version 1.1038
 Source CSS: https://github.com/chrisgrieser/shimmering-focus/blob/main/source.css
 MIT License
 ──────────────────────────────────────────────────── */
@@ -5565,7 +5565,7 @@ body[class*="syntax-hl"] .token.attr-name, /* In html: attribute within e.g. <di
 body[class*="syntax-hl"] .cm-qualifier, /* In css: e.g. .theme-dark or .theme-light */
 body[class*="syntax-hl"] .token.class-name, /* In CSS: classname within 'class classname ='. In BASH: the first command will be also highlighted, but can be overwritten with definition of '.token.builtin' */
 body[class*="syntax-hl"] .token.class, /* Fixes some elements which .selector broke, Selects class in CSS */
-body[class*="syntax-hl"] .cm-def.cm-def { /* Function or var Name: e.g. Slayer in 'function Slayer' */
+body[class*="syntax-hl"] .cm-def { /* Function or var Name: e.g. Slayer in 'function Slayer' */
 	color: var(--sh-function-class);
 }
 
