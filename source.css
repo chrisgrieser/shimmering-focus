@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 1.1027
+Version 1.1028
 Source CSS: https://github.com/chrisgrieser/shimmering-focus/blob/main/source.css
 MIT License
 ──────────────────────────────────────────────────── */
@@ -180,6 +180,7 @@ MIT License
 	- Better Command Palette
 	- Supercharged Links
 	- Emoji Toolbar
+	- Banners
 	- Discord Rich Presence
 	- Dictionary
 	- Git Plugin
@@ -7695,6 +7696,20 @@ img.emoji.emoji.emoji.emoji.emoji {
 }
 
 /* ───────────────────────────────────────────────── */
+/* << Banners
+──────────────────────────────────────────────────── */
+.banner-image.banner-image.banner-image.banner-image.banner-image.full-width {
+	max-width: 100%;
+	border: none;
+	border-radius: 0;
+}
+
+/* fix interaction with Ozan Image Plugin */
+.cm-hmd-frontmatter ~ .oz-image-widget-cm6 {
+	display: none;
+}
+
+/* ───────────────────────────────────────────────── */
 /* << Discord Rich Presence
 ──────────────────────────────────────────────────── */
 
@@ -10387,6 +10402,7 @@ community:
 - various-complements
 - obsidian-hover-editor
 - darlal-switcher-plus
+- obsidian-banners
 */
 
 /* ───────────────────────────────────────────────── */

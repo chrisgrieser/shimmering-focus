@@ -3,6 +3,7 @@ nav_order: 110
 ---
 
 # Changelog
+- 2022-04-03	support for banners plugin (fix #120)
 - 2022-04-03	fix task colors
 - 2022-04-03	callout improvemenmts
 - 2022-04-03	slightly increase color intensity for heading bg
