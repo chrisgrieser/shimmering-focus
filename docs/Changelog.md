@@ -3,7 +3,7 @@ nav_order: 110
 ---
 
 # Changelog
-- 2022-04-03	syntax highlighting + color refactoring
+- 2022-04-03	slightly increase color intensity for heading bg
 - 2022-04-02	Add info: Hover Editor Style settings being partially overridden
 - 2022-04-02	more improvements for hover editor
 - 2022-04-02	support for Hover Editor

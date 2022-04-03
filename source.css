@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 1.1023
+Version 1.1024
 Source CSS: https://github.com/chrisgrieser/shimmering-focus/blob/main/source.css
 MIT License
 ──────────────────────────────────────────────────── */
@@ -15,6 +15,8 @@ MIT License
 - Colors
 	- Text Colors & Grays
 	- Color Schemes
+		- Default Color Schemes
+		- Preset Custom Colors
 	- Accent Colors
 		- Primary Accent
 		- Hover Accent
@@ -268,23 +270,23 @@ MIT License
 /* ───────────────────────────────────────────────── */
 /* << Color Schemes
 ──────────────────────────────────────────────────── */
+/* ───────────────────────────────────────────────── */
+/* <<< Default Color Schemes
+──────────────────────────────────────────────────── */
 
 /* ────────────────────────────────────────────────────
-🚧 Work in Progress
+🚧 WORK-IN-PROGRESS
 
 Style settings for accent colors begin at:
 id: primary-accent-light
 
-
-──────────────────────────────────────────────────── */
-
+/* hide accent color settings while still in Work-in-Progress */
 .style-settings-container .setting-item[data-id*="-accent-"] {
 	display: none;
 }
 
 /* ───────────────────────────────────────────────── */
 
-/* Default Accent Colors */
 :root {
 	/* -0 and -5 have to use 99% for proper selection colors */
 	--primary-accent-0: hsl(250 20% 20% / 99%);
@@ -309,25 +311,18 @@ id: primary-accent-light
 	--tertiary-accent-dark: var(--text-normal);
 }
 
-/* default values (no Style Settings Plugin) */
 :root {
 	--light-hue: 220;
 	--dark-hue: 220;
 	--dark-sat: 5%;
 	--light-sat: 5%;
-	--brightness-light: 10%;
+	--brightness-light: 12%;
 	--brightness-dark: 5%;
 }
 
-/* Classic Shimmering Focus */
-.classic-colors.classic-colors {
-	--light-hue: 220;
-	--dark-hue: 0;
-	--dark-sat: 0%;
-	--light-sat: 0%;
-	--brightness-light: 15%;
-	--brightness-dark: 5%;
-}
+/* ───────────────────────────────────────────────── */
+/* <<< Preset Custom Colors
+──────────────────────────────────────────────────── */
 
 /* Nord Theme */
 .nord-colors.nord-colors {
@@ -417,7 +412,7 @@ id: primary-accent-light
 	--bg2: hsl(var(--light-hue) var(--sat-light-2) var(--b-light-2));
 	--bg3: hsl(var(--light-hue) var(--sat-light-3) var(--b-light-3));
 
-	--heading-bg: hsl(var(--light-hue) calc(var(--sat-light-3) / 2) calc(var(--b-light-3) - 1%));
+	--heading-bg: hsl(var(--light-hue) calc(var(--sat-light-3) * 0.8) calc(var(--b-light-3) - 1%));
 	--alt-bg: hsl(var(--light-hue) calc(var(--sat-light-3) * 1.1) calc(var(--b-light-2) - 2%));
 	--notice-bg: hsl(var(--light-hue) calc(var(--sat-light-3) * 0.8) calc(var(--b-light-3) + 3%));
 	--resize-handle-color: hsl(var(--light-hue) var(--sat-light-2) calc(var(--b-light-2) - 1%));
@@ -441,7 +436,7 @@ id: primary-accent-light
 	--bg2: hsl(var(--dark-hue) var(--sat-dark-2) var(--b-dark-2));
 	--bg3: hsl(var(--dark-hue) var(--sat-dark-3) var(--b-dark-3));
 
-	--heading-bg: hsl(var(--dark-hue) calc(var(--sat-dark-1) / 3) calc(var(--b-dark-1) + 5%));
+	--heading-bg: hsl(var(--dark-hue) calc(var(--sat-dark-1) * 0.5) calc(var(--b-dark-1) + 5%));
 	--alt-bg: hsl(var(--dark-hue) calc(var(--sat-dark-1) * 1.6) calc(var(--b-dark-2) - 2%));
 	--notice-bg: hsl(var(--dark-hue) calc(var(--sat-dark-1) * 0.8) calc(var(--b-dark-2) - 1%));
 	--resize-handle-color: hsl(var(--dark-hue)  var(--sat-dark-2) calc(var(--b-dark-2) - 1%));
