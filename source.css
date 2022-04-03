@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 1.1028
+Version 1.1029
 Source CSS: https://github.com/chrisgrieser/shimmering-focus/blob/main/source.css
 MIT License
 ──────────────────────────────────────────────────── */
@@ -425,6 +425,7 @@ id: primary-accent-light
 	--muted-border-color: hsl(var(--light-hue) var(--sat-light-3) calc(var(--b-light-3) + 3%));
 	--basic-border-color: hsl(var(--light-hue) var(--sat-light-3) calc(var(--b-light-3) - 5%));
 	--backdrop-color: hsl(var(--light-hue) 30% calc(var(--b-light-3) - 5%));
+	--muted-button-bg: var(--bg2);
 }
 
 .theme-dark {
@@ -449,10 +450,6 @@ id: primary-accent-light
 	--muted-border-color: hsl(var(--dark-hue) var(--sat-dark-1) calc(var(--b-dark-1) - 6%));
 	--basic-border-color: hsl(var(--dark-hue) var(--sat-dark-1) calc(var(--b-dark-1) + 6%));
 	--backdrop-color: hsl(var(--dark-hue) 20% calc(var(--b-dark-3) + 0%));
-}
-
-.theme-light,
-.theme-dark {
 	--muted-button-bg: var(--bg2);
 }
 
@@ -5274,23 +5271,25 @@ body { /* stylelint-disable-line no-duplicate-selectors */
 ──────────────────────────────────────────────────── */
 
 /* Code blocks in Edit Mode */
-.markdown-preview-view,
-.HyperMD-codeblock-bg {
+:is(.theme-light, .theme-dark) {
 	--codeblock-border: var(--muted-border);
 	--codeblock-roundness: calc(var(--roundish) * 1.5);
+	--code-block-bg: var(--bg2);
+	--code-block-lang-bg: var(--bg3);
+	--code-block-tab-size: 4;
 }
 
-.HyperMD-codeblock-end .cm-formatting-code-block,
-.HyperMD-codeblock-begin .cm-formatting-code-block {
+:is(.HyperMD-codeblock-end, .HyperMD-codeblock-begin) .cm-formatting-code-block {
 	color: var(--text-muted);
 }
 
 .cm-s-obsidian .HyperMD-codeblock {
 	line-height: 1.4em;
+	tab-size: var(--code-block-tab-size);
 }
 
 .cm-s-obsidian div.HyperMD-codeblock-begin-bg {
-	background-color: var(--bg3);
+	background-color: var(--code-block-lang-bg);
 	border: var(--codeblock-border);
 	border-bottom: none;
 	border-top-right-radius: var(--codeblock-roundness);
@@ -5304,7 +5303,7 @@ body { /* stylelint-disable-line no-duplicate-selectors */
 }
 
 div.HyperMD-codeblock-bg:not(.HyperMD-codeblock-begin-bg) {
-	background-color: var(--bg2);
+	background-color: var(--code-block-bg);
 	border-right: var(--codeblock-border);
 	border-left: var(--codeblock-border);
 }
@@ -5342,7 +5341,7 @@ body:not(.no-active-highlight) .CodeMirror-activeline .HyperMD-codeblock-end-bg.
 /* Code Blocks in Preview Mode */
 body .markdown-preview-view pre[class*="language-"],
 body .markdown-preview-view pre {
-	background-color: var(--bg2);
+	background-color: var(--code-block-bg);
 	padding: 0;
 	border: var(--codeblock-border);
 	border-radius: var(--codeblock-roundness);
@@ -5353,6 +5352,7 @@ body .markdown-preview-view pre {
 	white-space: pre-wrap;
 	overflow-wrap: break-word;
 	padding: 5px 9px;
+	tab-size: var(--code-block-tab-size);
 }
 
 /* border on top created like this, since the
@@ -5362,7 +5362,7 @@ CM5 has the "pre" type */
 .mod-cm6 + .markdown-reading-view pre[class*="language-"]::BEFORE {
 	display: block;
 	content: " ";
-	background-color: var(--bg3);
+	background-color: var(--code-block-lang-bg);
 	border-top-right-radius: calc(var(--codeblock-roundness) * 0.8);
 	border-top-left-radius: calc(var(--codeblock-roundness) * 0.8);
 }
@@ -5434,42 +5434,42 @@ pre[class*="language-"]::AFTER {
 	bottom: 0;
 }
 
-pre[class~="language-c" i]::AFTER { content: "C"; }
-pre[class~="language-python" i]::AFTER { content: "Python"; }
-pre[class~="language-py" i]::AFTER { content: "Python"; }
-pre[class~="language-nginx" i]::AFTER { content: "Nginx"; }
-pre[class~="language-css" i]::AFTER { content: "CSS"; }
-pre[class~="language-node" i]::AFTER { content: "Node"; }
-pre[class~="language-react" i]::AFTER { content: "React"; }
-pre[class~="language-javascript" i]::AFTER { content: "JavaScript"; }
-pre[class~="language-js" i]::AFTER { content: "JavaScript"; }
-pre[class~="language-typescript" i]::AFTER { content: "TypeScript"; }
-pre[class~="language-ts" i]::AFTER { content: "TypeScript"; }
-pre[class~="language-php" i]::AFTER { content: "PHP"; }
-pre[class~="language-shell" i]::AFTER { content: "Shell"; }
-pre[class~="language-bash" i]::AFTER { content: "Bash"; }
-pre[class~="language-zsh" i]::AFTER { content: "zsh"; }
-pre[class~="language-flow" i]::AFTER { content: "Flow"; }
-pre[class~="language-sequence" i]::AFTER { content: "Sequence"; }
-pre[class~="language-sql" i]::AFTER { content: "SQL"; }
-pre[class~="language-yaml" i]::AFTER { content: "YAML"; }
-pre[class~="language-ini" i]::AFTER { content: "INI"; }
-pre[class~="language-xml" i]::AFTER { content: "XML"; }
-pre[class~="language-git" i]::AFTER { content: "GIT"; }
-pre[class~="language-cs" i]::AFTER { content: "C#"; }
-pre[class~="language-cpp" i]::AFTER { content: "C++"; }
-pre[class~="language-java" i]::AFTER { content: "JAVA"; }
-pre[class~="language-html" i]::AFTER { content: "HTML"; }
-pre[class~="language-txt" i]::AFTER { content: "text"; }
-pre[class~="language-text" i]::AFTER { content: "text"; }
-pre[class~="language-url" i]::AFTER { content: "URL"; }
-pre[class~="language-uri" i]::AFTER { content: "URI"; }
-pre[class~="language-applescript" i]::AFTER { content: "AppleScript"; }
-pre[class~="language-markdown" i]::AFTER { content: "Markdown"; }
-pre[class~="language-md" i]::AFTER { content: "Markdown"; }
-pre[class~="language-regex" i]::AFTER { content: "Regex"; }
-pre[class~="language-lua" i]::AFTER { content: "Lua"; }
-pre[class~="language-haskell" i]::AFTER { content: "Haskell"; }
+pre[class$="c" i]::AFTER { content: "C"; }
+pre[class$="python" i]::AFTER { content: "Python"; }
+pre[class$="py" i]::AFTER { content: "Python"; }
+pre[class$="nginx" i]::AFTER { content: "Nginx"; }
+pre[class$="css" i]::AFTER { content: "CSS"; }
+pre[class$="node" i]::AFTER { content: "Node"; }
+pre[class$="react" i]::AFTER { content: "React"; }
+pre[class$="javascript" i]::AFTER { content: "JavaScript"; }
+pre[class$="js" i]::AFTER { content: "JavaScript"; }
+pre[class$="typescript" i]::AFTER { content: "TypeScript"; }
+pre[class$="ts" i]::AFTER { content: "TypeScript"; }
+pre[class$="php" i]::AFTER { content: "PHP"; }
+pre[class$="shell" i]::AFTER { content: "Shell"; }
+pre[class$="bash" i]::AFTER { content: "Bash"; }
+pre[class$="zsh" i]::AFTER { content: "zsh"; }
+pre[class$="flow" i]::AFTER { content: "Flow"; }
+pre[class$="sequence" i]::AFTER { content: "Sequence"; }
+pre[class$="sql" i]::AFTER { content: "SQL"; }
+pre[class$="yaml" i]::AFTER { content: "YAML"; }
+pre[class$="ini" i]::AFTER { content: "INI"; }
+pre[class$="xml" i]::AFTER { content: "XML"; }
+pre[class$="git" i]::AFTER { content: "GIT"; }
+pre[class$="cs" i]::AFTER { content: "C#"; }
+pre[class$="cpp" i]::AFTER { content: "C++"; }
+pre[class$="java" i]::AFTER { content: "JAVA"; }
+pre[class$="html" i]::AFTER { content: "HTML"; }
+pre[class$="txt" i]::AFTER { content: "text"; }
+pre[class$="text" i]::AFTER { content: "text"; }
+pre[class$="url" i]::AFTER { content: "URL"; }
+pre[class$="uri" i]::AFTER { content: "URI"; }
+pre[class$="applescript" i]::AFTER { content: "AppleScript"; }
+pre[class$="markdown" i]::AFTER { content: "Markdown"; }
+pre[class$="md" i]::AFTER { content: "Markdown"; }
+pre[class$="regex" i]::AFTER { content: "Regex"; }
+pre[class$="lua" i]::AFTER { content: "Lua"; }
+pre[class$="haskell" i]::AFTER { content: "Haskell"; }
 
 /* fix for the buggy selection of inline text */
 /* https://forum.obsidian.md/t/inline-code-occludes-text-selection-and-vim-cursor/11552/10 */
@@ -5490,48 +5490,53 @@ pre[class~="language-haskell" i]::AFTER { content: "Haskell"; }
 }
 
 /* Dracula */
-.theme-dark.dracula-syntax-hl-dark .cm-keyword { color: hsl(330 100% 75%) } /* Function, return, let, var */
-.theme-dark.dracula-syntax-hl-dark .cm-callee { color: hsl(330 100% 75%) } /* In css: var */
-.theme-dark.dracula-syntax-hl-dark .cm-def { color: hsl(115 100% 75%) } /* Function or var Name: e.g. Slayer in 'function Slayer' */
-.theme-dark.dracula-syntax-hl-dark .cm-property { color: hsl(170 100% 75%) } /* In CSS selects whole elements: e.g. background-color, font-family etc, In javasript: redner will be selected within ReactDOM.render */
-.theme-dark.dracula-syntax-hl-dark .cm-variable { color: hsl(170 100% 75%) } /* Var in css */
-.theme-dark.dracula-syntax-hl-dark .cm-variable-2 { color: hsl(60 30% 96%) } /* Var definition in css */
-.theme-dark.dracula-syntax-hl-dark .cm-operator { color: hsl(330 100% 75%) } /* Operators in javascript: = @ ! */
-.theme-dark.dracula-syntax-hl-dark .cm-qualifier { color: hsl(115 100% 75%) } /* IN css: e.g. .theme-dark or .theme-light */
-.theme-dark.dracula-syntax-hl-dark .cm-attribute { color: hsl(115 100% 75%) } /* In html: attribute within e.g. <div=attribute></div>, In BASH: will change options e.g. -l in `ls -l` */
-.theme-dark.dracula-syntax-hl-dark .cm-string-2 { color: hsl(330 100% 75%) } /* Some <div> elements were not selecting with simple .cm-string , but this .cm-string-2 fixes it */
-.theme-dark.dracula-syntax-hl-dark .cm-builtin { color: hsl(170 100% 75%) } /* In bash it selects default commands e.g. cd, ls, grep, wc, find etc. */
+:is(.theme-dark.dracula-syntax-hl-dark, .theme-light.dracula-syntax-hl-light) {
+	--code-block-lang-bg: hsl(231 15% 10%);
+	--code-block-bg: hsl(231 15% 18%);
+}
 
-.theme-dark.dracula-syntax-hl-dark .cm-atom:not(.cm-hmd-frontmatter) { color: hsl(250 100% 75%) } /* E.g. color tag, sans-serif */
-.theme-dark.dracula-syntax-hl-dark .cm-number:not(.cm-hmd-frontmatter) { color: hsl(250 100% 75%) } /* Number or e.g. 1px, 1em */
-.theme-dark.dracula-syntax-hl-dark .cm-meta:not(.cm-hmd-frontmatter):not(.cm-formatting) { color: hsl(0 70% 50%) !important } /* In html "<!DOCTYPE html>" wil be highlighted */
-.theme-dark.dracula-syntax-hl-dark .cm-string:not(.cm-hmd-frontmatter) { color: hsl(60 100% 75%) } /* String e.g. a whole sentence within " Sample Sentece" */
+:is(.theme-dark.dracula-syntax-hl-dark, .theme-light.dracula-syntax-hl-light) .cm-keyword { color: hsl(330 100% 75%) } /* Function, return, let, var */
+:is(.theme-dark.dracula-syntax-hl-dark, .theme-light.dracula-syntax-hl-light) .cm-callee { color: hsl(330 100% 75%) } /* In css: var */
+:is(.theme-dark.dracula-syntax-hl-dark, .theme-light.dracula-syntax-hl-light) .cm-def { color: hsl(115 100% 75%) } /* Function or var Name: e.g. Slayer in 'function Slayer' */
+:is(.theme-dark.dracula-syntax-hl-dark, .theme-light.dracula-syntax-hl-light) .cm-property { color: hsl(170 100% 75%) } /* In CSS selects whole elements: e.g. background-color, font-family etc, In javasript: redner will be selected within ReactDOM.render */
+:is(.theme-dark.dracula-syntax-hl-dark, .theme-light.dracula-syntax-hl-light) .cm-variable { color: hsl(170 100% 75%) } /* Var in css */
+:is(.theme-dark.dracula-syntax-hl-dark, .theme-light.dracula-syntax-hl-light) .cm-variable-2 { color: hsl(60 30% 96%) } /* Var definition in css */
+:is(.theme-dark.dracula-syntax-hl-dark, .theme-light.dracula-syntax-hl-light) .cm-operator { color: hsl(330 100% 75%) } /* Operators in javascript: = @ ! */
+:is(.theme-dark.dracula-syntax-hl-dark, .theme-light.dracula-syntax-hl-light) .cm-qualifier { color: hsl(115 100% 75%) } /* IN css: e.g. .theme-dark or .theme-light */
+:is(.theme-dark.dracula-syntax-hl-dark, .theme-light.dracula-syntax-hl-light) .cm-attribute { color: hsl(115 100% 75%) } /* In html: attribute within e.g. <div=attribute></div>, In BASH: will change options e.g. -l in `ls -l` */
+:is(.theme-dark.dracula-syntax-hl-dark, .theme-light.dracula-syntax-hl-light) .cm-string-2 { color: hsl(330 100% 75%) } /* Some <div> elements were not selecting with simple .cm-string , but this .cm-string-2 fixes it */
+:is(.theme-dark.dracula-syntax-hl-dark, .theme-light.dracula-syntax-hl-light) .cm-builtin { color: hsl(170 100% 75%) } /* In bash it selects default commands e.g. cd, ls, grep, wc, find etc. */
 
-.theme-dark.dracula-syntax-hl-dark .token.comment { color: hsl(225 27% 51%) } /* Comment */
-.theme-dark.dracula-syntax-hl-dark .token.doctype { color: hsl(225 27% 51%) } /* In HTML e.g. <!DOCTYPE html> */
-.theme-dark.dracula-syntax-hl-dark .token.punctuation { color: hsl(60 30% 96%) } /* Punctuation such as brackets, parentheses, commas, and more. */
-.theme-dark.dracula-syntax-hl-dark .token.operator{ } /* In BASH: color of the pipe |, In css color of = : ! * </> */
-.theme-dark.dracula-syntax-hl-dark .token.attr-name { color: hsl(115 100% 75%) } /* In html: attribute within e.g. <div=attribute></div> */
-.theme-dark.dracula-syntax-hl-dark .token.attr-value { color: hsl(60 100% 75%) } /* String e.g. a whole sentence within " Sample Sentece" */
-.theme-dark.dracula-syntax-hl-dark .token.class-name { color: hsl(115 100% 75%) } /* In CSS: classname within 'class classname ='. In BASH: the first command will be also highlighted, but can be overwritten with definition of '.token.builtin' */
-.theme-dark.dracula-syntax-hl-dark .token.builtin { color: hsl(170 100% 75%) !important } /* /* In bash it selects 'cd' , 'pwd'. '!important' to overwrite .token-class-name */
-.theme-dark.dracula-syntax-hl-dark .token.function { color: hsl(135 94% 65%) } /* In JS: Function Name, println. In Bash: if you select !important it it willl overwrite following: ls, grep, wc . Better use '.language-bash.is-loaded .token.function' -> to target 'ls, grep, wc' */
-.theme-dark.dracula-syntax-hl-dark .token.boolean { color: hsl(250 100% 75%) } /* Boolean: true, false */
-.theme-dark.dracula-syntax-hl-dark .token.constant { color: hsl(0 70% 50%) } /* Unknown */
-.theme-dark.dracula-syntax-hl-dark .token.number { color: hsl(250 100% 75%) } /* Number */
-.theme-dark.dracula-syntax-hl-dark .token.unit { color: hsl(330 100% 75%) } /* Unit e.g. px, em */
-.theme-dark.dracula-syntax-hl-dark .token.atrule { color: hsl(330 100% 75%) } /* In css: e.g. @font-family {} */
-.theme-dark.dracula-syntax-hl-dark .token.keyword { color: hsl(330 100% 75%) } /* e.g. var, let , const etc. */
-.theme-dark.dracula-syntax-hl-dark .token.property { color: hsl(170 100% 75%) } /* In CSS: properties e.g. background-color in background-color: red */
-.theme-dark.dracula-syntax-hl-dark .token.tag { color: hsl(330 100% 75%) } /* In html: div in <div></div> */
-.theme-dark.dracula-syntax-hl-dark .token.tag .punctuation { color: hsl(330 100% 75%) } /* In HTML allows to change color of brackets */
-.theme-dark.dracula-syntax-hl-dark .token.important { color: hsl(330 100% 75%) !important } /* !important in css */
-.theme-dark.dracula-syntax-hl-dark .token.selector { color: hsl(330 100% 75%) } /* In css selects div e.g. in div.elements, or pre in 'not(pre)' */
-.theme-dark.dracula-syntax-hl-dark .token.class { color: hsl(115 100% 75%) } /* Fixes some elements which .selector broke, Selects class in CSS */
-.theme-dark.dracula-syntax-hl-dark .token.string { color: hsl(60 100% 75%) } /* String e.g. a whole sentence within " Sample Sentece" */
-.theme-dark.dracula-syntax-hl-dark .token.method { color: hsl(135 94% 65%) } /* Method in Javscript e.g. render in ReactDOM.render */
-.theme-dark.dracula-syntax-hl-dark .token.variable { color: hsl(250 100% 75%) } /* Var in css e.g. --this-is-variable */
-.theme-dark.dracula-syntax-hl-dark .token.url { color: hsl(31 100% 71%) } /* In CSS: e.g. image path in background: url(pathtoimage.png) */
+:is(.theme-dark.dracula-syntax-hl-dark, .theme-light.dracula-syntax-hl-light) .cm-atom:not(.cm-hmd-frontmatter) { color: hsl(250 100% 75%) } /* E.g. color tag, sans-serif */
+:is(.theme-dark.dracula-syntax-hl-dark, .theme-light.dracula-syntax-hl-light) .cm-number:not(.cm-hmd-frontmatter) { color: hsl(250 100% 75%) } /* Number or e.g. 1px, 1em */
+:is(.theme-dark.dracula-syntax-hl-dark, .theme-light.dracula-syntax-hl-light) .cm-meta:not(.cm-hmd-frontmatter):not(.cm-formatting) { color: hsl(0 70% 50%) } /* In html "<!DOCTYPE html>" wil be highlighted */
+:is(.theme-dark.dracula-syntax-hl-dark, .theme-light.dracula-syntax-hl-light) .cm-string:not(.cm-hmd-frontmatter) { color: hsl(60 100% 75%) } /* String e.g. a whole sentence within " Sample Sentece" */
+
+:is(.theme-dark.dracula-syntax-hl-dark, .theme-light.dracula-syntax-hl-light) .token.comment { color: hsl(225 27% 51%) } /* Comment */
+:is(.theme-dark.dracula-syntax-hl-dark, .theme-light.dracula-syntax-hl-light) .token.doctype { color: hsl(225 27% 51%) } /* In HTML e.g. <!DOCTYPE html> */
+:is(.theme-dark.dracula-syntax-hl-dark, .theme-light.dracula-syntax-hl-light) .token.punctuation { color: hsl(60 30% 96%) } /* Punctuation such as brackets, parentheses, commas, and more. */
+:is(.theme-dark.dracula-syntax-hl-dark, .theme-light.dracula-syntax-hl-light) .token.operator{ } /* In BASH: color of the pipe |, In css color of = : ! * </> */
+:is(.theme-dark.dracula-syntax-hl-dark, .theme-light.dracula-syntax-hl-light) .token.attr-name { color: hsl(115 100% 75%) } /* In html: attribute within e.g. <div=attribute></div> */
+:is(.theme-dark.dracula-syntax-hl-dark, .theme-light.dracula-syntax-hl-light) .token.attr-value { color: hsl(60 100% 75%) } /* String e.g. a whole sentence within " Sample Sentece" */
+:is(.theme-dark.dracula-syntax-hl-dark, .theme-light.dracula-syntax-hl-light) .token.class-name { color: hsl(115 100% 75%) } /* In CSS: classname within 'class classname ='. In BASH: the first command will be also highlighted, but can be overwritten with definition of '.token.builtin' */
+:is(.theme-dark.dracula-syntax-hl-dark, .theme-light.dracula-syntax-hl-light) .token.builtin { color: hsl(170 100% 75%) !important } /* /* In bash it selects 'cd' , 'pwd'. '!important' to overwrite .token-class-name */
+:is(.theme-dark.dracula-syntax-hl-dark, .theme-light.dracula-syntax-hl-light) .token.function { color: hsl(135 94% 65%) } /* In JS: Function Name, println. In Bash: if you select !important it it willl overwrite following: ls, grep, wc . Better use '.language-bash.is-loaded .token.function' -> to target 'ls, grep, wc' */
+:is(.theme-dark.dracula-syntax-hl-dark, .theme-light.dracula-syntax-hl-light) .token.boolean { color: hsl(250 100% 75%) } /* Boolean: true, false */
+:is(.theme-dark.dracula-syntax-hl-dark, .theme-light.dracula-syntax-hl-light) .token.constant { color: hsl(0 70% 50%) } /* Unknown */
+:is(.theme-dark.dracula-syntax-hl-dark, .theme-light.dracula-syntax-hl-light) .token.number { color: hsl(250 100% 75%) } /* Number */
+:is(.theme-dark.dracula-syntax-hl-dark, .theme-light.dracula-syntax-hl-light) .token.unit { color: hsl(330 100% 75%) } /* Unit e.g. px, em */
+:is(.theme-dark.dracula-syntax-hl-dark, .theme-light.dracula-syntax-hl-light) .token.atrule { color: hsl(330 100% 75%) } /* In css: e.g. @font-family {} */
+:is(.theme-dark.dracula-syntax-hl-dark, .theme-light.dracula-syntax-hl-light) .token.keyword { color: hsl(330 100% 75%) } /* e.g. var, let , const etc. */
+:is(.theme-dark.dracula-syntax-hl-dark, .theme-light.dracula-syntax-hl-light) .token.property { color: hsl(170 100% 75%) } /* In CSS: properties e.g. background-color in background-color: red */
+:is(.theme-dark.dracula-syntax-hl-dark, .theme-light.dracula-syntax-hl-light) .token.tag { color: hsl(330 100% 75%) } /* In html: div in <div></div> */
+:is(.theme-dark.dracula-syntax-hl-dark, .theme-light.dracula-syntax-hl-light) .token.tag .punctuation { color: hsl(330 100% 75%) } /* In HTML allows to change color of brackets */
+:is(.theme-dark.dracula-syntax-hl-dark, .theme-light.dracula-syntax-hl-light) .token.important { color: hsl(330 100% 75%) !important } /* !important in css */
+:is(.theme-dark.dracula-syntax-hl-dark, .theme-light.dracula-syntax-hl-light) .token.selector { color: hsl(330 100% 75%) } /* In css selects div e.g. in div.elements, or pre in 'not(pre)' */
+:is(.theme-dark.dracula-syntax-hl-dark, .theme-light.dracula-syntax-hl-light) .token.class { color: hsl(115 100% 75%) } /* Fixes some elements which .selector broke, Selects class in CSS */
+:is(.theme-dark.dracula-syntax-hl-dark, .theme-light.dracula-syntax-hl-light) .token.string { color: hsl(60 100% 75%) } /* String e.g. a whole sentence within " Sample Sentece" */
+:is(.theme-dark.dracula-syntax-hl-dark, .theme-light.dracula-syntax-hl-light) .token.method { color: hsl(135 94% 65%) } /* Method in Javscript e.g. render in ReactDOM.render */
+:is(.theme-dark.dracula-syntax-hl-dark, .theme-light.dracula-syntax-hl-light) .token.variable { color: hsl(250 100% 75%) } /* Var in css e.g. --this-is-variable */
+:is(.theme-dark.dracula-syntax-hl-dark, .theme-light.dracula-syntax-hl-light) .token.url { color: hsl(31 100% 71%) } /* In CSS: e.g. image path in background: url(pathtoimage.png) */
 
 /* ───────────────────────────────────────────────── */
 /* << Lists
@@ -10728,6 +10733,19 @@ settings:
 	 level: 2
 	 collapsed: true
 	-
+	 id: code-block-syntax-hl-light-mode
+	 title: "Code Block Color Scheme (Light Mode)"
+	 type: class-select
+	 allowEmpty: false
+	 default: default-syntax-hl
+	 options:
+		-
+			label: Default
+			value: default-syntax-hl-light
+		-
+			label: Dracula
+			value: dracula-syntax-hl-light
+	-
 	 id: code-block-syntax-hl-dark-mode
 	 title: "Code Block Color Scheme (Dark Mode)"
 	 type: class-select
@@ -10740,6 +10758,15 @@ settings:
 		-
 			label: Dracula
 			value: dracula-syntax-hl-dark
+	-
+	 id: code-block-tab-size
+	 title: Code Block Tab Size
+	 description: Changes the Tab Size inside code blogs independent from the GLobal Obsidian Setting for Tab Size.
+	 type: variable-number-slider
+	 default: 4
+	 min: 2
+	 max: 8
+	 step: 1
 	-
 	 id: other-aesthetics
 	 title: 🌟 Further Aesthetic Options
