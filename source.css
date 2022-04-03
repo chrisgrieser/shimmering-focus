@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 1.1035
+Version 1.1036
 Source CSS: https://github.com/chrisgrieser/shimmering-focus/blob/main/source.css
 MIT License
 ──────────────────────────────────────────────────── */
@@ -8331,6 +8331,11 @@ body .kanban-plugin__item-form {
 	border-radius: calc(var(--roundish) * 1.5);
 }
 
+:is(.squareish-shapes, .angular-shapes) .kanban-plugin textarea.kanban-plugin__item-input {
+	padding-top: 5px;
+	padding-bottom: 3px;
+}
+
 /* tags */
 a.tag.kanban-plugin__item-tag {
 	background: none;
@@ -8339,6 +8344,7 @@ a.tag.kanban-plugin__item-tag {
 /* hover colors */
 body .kanban-plugin__new-item-button:hover {
 	color: var(--hover-accent-2);
+	background-color: var(--bg3) !important;
 }
 
 .kanban-plugin .kanban-plugin__item-wrapper:hover {
