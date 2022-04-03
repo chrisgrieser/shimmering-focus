@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 1.1040
+Version 1.1041
 Source CSS: https://github.com/chrisgrieser/shimmering-focus/blob/main/source.css
 MIT License
 ──────────────────────────────────────────────────── */
@@ -5637,6 +5637,8 @@ body[class*="syntax-hl"] .token.constant { /* Unknown */
 }
 
 /* thicker => more readable */
+
+.cm-formatting-list-ul,
 .is-live-preview .list-bullet {
 	font-weight: 700;
 }
@@ -5663,6 +5665,10 @@ a:hover {
 
 .cm-link.cm-link.cm-link.cm-link.cm-link:not(.cm-formatting) {
 	color: var(--primary-accent-2);
+}
+
+.cm-formatting-link.cm-formatting-link.cm-formatting-link {
+	color: var(--text-muted);
 }
 
 /* more underline spacing, thx @Melvin */

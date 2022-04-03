@@ -3,6 +3,7 @@ nav_order: 110
 ---
 
 # Changelog
+- 2022-04-04	fix #104
 - 2022-04-04	fix active line gutter vertical
 - 2022-04-04	refactor syntax highlighting code
 - 2022-04-03	minor tweaks for kanbans
