@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 1.1022
+Version 1.1023
 Source CSS: https://github.com/chrisgrieser/shimmering-focus/blob/main/source.css
 MIT License
 ──────────────────────────────────────────────────── */
@@ -13,23 +13,22 @@ MIT License
 /* @TOC-SPLIT-MARKER */
 /*
 - Colors
+	- Text Colors & Grays
+	- Color Schemes
 	- Accent Colors
-		- Accent Color Palette
 		- Primary Accent
 		- Hover Accent
 		- Secondary Accent (references, tags, code)
-		- Tertiary Accent (Bold + Italics)
-		- Other Accents
-	- Text Colors & Grays
-	- Color Schemes
+		- Tertiary Accent (Bold & Italics)
 	- Background Colors
-		- Longform & writing Background colors
+		- Longform & Writing Background colors
 	- Default variable colors & Base elements
 	- Shadows
 		- Outside Shadow
 		- Inset Shadow
 	- Borders
-- Other Variables
+	- Other Variables
+		- Other Accents
 - Fonts
 	- Base64-encoded Fonts
 	- Font Definitions
@@ -238,11 +237,56 @@ MIT License
 /* stylelint-disable no-duplicate-selectors */
 
 /* ───────────────────────────────────────────────── */
-/* << Accent Colors
+/* << Text Colors & Grays
+──────────────────────────────────────────────────── */
+.theme-light {
+	--text-normal: hsl(0 0% 20%);
+	--extra-contrast: hsl(0 0% 36%);
+	--text-muted: hsl(0 0% 53%);
+	--middle-gray: hsl(0 0% 57%);
+	--text-faint: hsl(0 0% 60%);
+	--hr-line-gray: hsl(0 0% 66%);
+	--interactive-normal: hsl(220 13% 95%);
+
+	--button-text: var(--interactive-normal);
+	--button-hover-text: var(--text-normal);
+}
+
+.theme-dark {
+	--text-normal: hsl(0 0% 87%);
+	--extra-contrast: hsl(0 0% 68%);
+	--text-muted: hsl(0 0% 58%);
+	--middle-gray: hsl(0 0% 49%);
+	--text-faint: hsl(0 0% 40%);
+	--hr-line-gray: hsl(0 0% 60%);
+	--interactive-normal: hsl(0 0% 16%);
+
+	--button-text: var(--text-normal);
+	--button-hover-text: var(--interactive-normal);
+}
+
+/* ───────────────────────────────────────────────── */
+/* << Color Schemes
 ──────────────────────────────────────────────────── */
 
-/* <<< Accent Color Palette */
+/* ────────────────────────────────────────────────────
+🚧 Work in Progress
+
+Style settings for accent colors begin at:
+id: primary-accent-light
+
+
+──────────────────────────────────────────────────── */
+
+.style-settings-container .setting-item[data-id*="-accent-"] {
+	display: none;
+}
+
+/* ───────────────────────────────────────────────── */
+
+/* Default Accent Colors */
 :root {
+	/* -0 and -5 have to use 99% for proper selection colors */
 	--primary-accent-0: hsl(250 20% 20% / 99%);
 	--primary-accent-1: hsl(250 50% 49%);
 	--primary-accent-2: hsl(250 75% 64%);
@@ -254,13 +298,50 @@ MIT License
 	--hover-accent-2: hsl(165 80% 35%);
 	--hover-accent-3: hsl(165 90% 45%);
 	--hover-accent-4: hsl(165 100% 55%);
-
-	--secondary-accent-1: hsl(165 70% 30%);
-	--secondary-accent-2: hsl(165 85% 40%);
-
-	--tertiary-accent-1: hsl(0 0% 20%);
-	--tertiary-accent-2: hsl(0 0% 87%);
 }
+
+.theme-light,
+.theme-dark {
+	--secondary-accent-light: hsl(165 70% 30%);
+	--secondary-accent-dark: hsl(165 85% 40%);
+
+	--tertiary-accent-light: var(--text-normal);
+	--tertiary-accent-dark: var(--text-normal);
+}
+
+/* default values (no Style Settings Plugin) */
+:root {
+	--light-hue: 220;
+	--dark-hue: 220;
+	--dark-sat: 5%;
+	--light-sat: 5%;
+	--brightness-light: 10%;
+	--brightness-dark: 5%;
+}
+
+/* Classic Shimmering Focus */
+.classic-colors.classic-colors {
+	--light-hue: 220;
+	--dark-hue: 0;
+	--dark-sat: 0%;
+	--light-sat: 0%;
+	--brightness-light: 15%;
+	--brightness-dark: 5%;
+}
+
+/* Nord Theme */
+.nord-colors.nord-colors {
+	--light-hue: 220;
+	--dark-hue: 220;
+	--light-sat: 20%;
+	--dark-sat: 20%;
+	--brightness-light: 13%;
+	--brightness-dark: 9%;
+}
+
+/* ───────────────────────────────────────────────── */
+/* << Accent Colors
+──────────────────────────────────────────────────── */
 
 /* <<< Primary Accent */
 .theme-light {
@@ -296,106 +377,26 @@ MIT License
 
 /* <<< Secondary Accent (references, tags, code) */
 .theme-light {
-	--reference-color: var(--secondary-accent-1);
-	--tag-text-color: var(--secondary-accent-1);
-	--code-color: var(--secondary-accent-1);
+	--reference-color: var(--secondary-accent-light);
+	--tag-text-color: var(--secondary-accent-light);
+	--code-color: var(--secondary-accent-light);
 }
 
 .theme-dark {
-	--reference-color: var(--secondary-accent-2);
-	--tag-text-color: var(--secondary-accent-2);
-	--code-color: var(--secondary-accent-2);
+	--reference-color: var(--secondary-accent-dark);
+	--tag-text-color: var(--secondary-accent-dark);
+	--code-color: var(--secondary-accent-dark);
 }
 
-/* <<< Tertiary Accent (Bold + Italics) */
+/* <<< Tertiary Accent (Bold & Italics) */
 .theme-light {
-	--italics-text-color: var(--tertiary-accent-1);
-	--bold-text-color: var(--tertiary-accent-1);
+	--italics-text-color: var(--tertiary-accent-light);
+	--bold-text-color: var(--tertiary-accent-light);
 }
 
 .theme-dark {
-	--italics-text-color: var(--tertiary-accent-2);
-	--bold-text-color: var(--tertiary-accent-2);
-}
-
-/* <<< Other Accents */
-:root {
-	--unresolved-link-color: hsl(211 100% 52% / 90%);
-
-	--highlight-color: hsl(60 100% 50% / 40%);
-	--highlight-alt1: hsl(152 100% 50% / 40%);
-	--highlight-alt2: hsl(180 100% 50% / 40%);
-}
-
-.theme-light {
-	--search-match-color: hsl(30 100% 50%);
-}
-
-.theme-dark {
-	--search-match-color: hsl(60 100% 70%);
-}
-
-/* ───────────────────────────────────────────────── */
-/* << Text Colors & Grays
-──────────────────────────────────────────────────── */
-.theme-light {
-	--text-normal: hsl(0 0% 20%);
-	--extra-contrast: hsl(0 0% 36%);
-	--text-muted: hsl(0 0% 53%);
-	--middle-gray: hsl(0 0% 57%);
-	--text-faint: hsl(0 0% 60%);
-	--hr-line-gray: hsl(0 0% 66%);
-	--interactive-normal: hsl(220 13% 95%);
-
-	--button-text: var(--interactive-normal);
-	--button-hover-text: var(--text-normal);
-}
-
-.theme-dark {
-	--text-normal: hsl(0 0% 87%);
-	--extra-contrast: hsl(0 0% 68%);
-	--text-muted: hsl(0 0% 58%);
-	--middle-gray: hsl(0 0% 49%);
-	--text-faint: hsl(0 0% 40%);
-	--hr-line-gray: hsl(0 0% 60%);
-	--interactive-normal: hsl(0 0% 16%);
-
-	--button-text: var(--text-normal);
-	--button-hover-text: var(--interactive-normal);
-}
-
-/* ───────────────────────────────────────────────── */
-/* << Color Schemes
-──────────────────────────────────────────────────── */
-
-/* default values (no Style Settings Plugin) */
-:root {
-	--light-hue: 220;
-	--dark-hue: 220;
-	--dark-sat: 5%;
-	--light-sat: 5%;
-	--brightness-light: 10%;
-	--brightness-dark: 5%;
-}
-
-/* Classic Shimmering Focus */
-.classic-colors.classic-colors {
-	--light-hue: 220;
-	--dark-hue: 0;
-	--dark-sat: 0%;
-	--light-sat: 0%;
-	--brightness-light: 15%;
-	--brightness-dark: 5%;
-}
-
-/* Nord Theme */
-.nord-colors.nord-colors {
-	--light-hue: 220;
-	--dark-hue: 220;
-	--light-sat: 20%;
-	--dark-sat: 20%;
-	--brightness-light: 13%;
-	--brightness-dark: 9%;
+	--italics-text-color: var(--tertiary-accent-dark);
+	--bold-text-color: var(--tertiary-accent-dark);
 }
 
 /* ───────────────────────────────────────────────── */
@@ -456,7 +457,7 @@ MIT License
 }
 
 /* ───────────────────────────────────────────────── */
-/* <<< Longform & writing Background colors
+/* <<< Longform & Writing Background colors
 ──────────────────────────────────────────────────── */
 :root {
 	--longform-hue-shift: 15;
@@ -622,7 +623,7 @@ body:is(.theme-light, .theme-dark) {
 }
 
 /* ───────────────────────────────────────────────── */
-/* < Other Variables
+/* << Other Variables
 ──────────────────────────────────────────────────── */
 
 :root {
@@ -651,6 +652,23 @@ body:is(.theme-light, .theme-dark) {
 .theme-dark {
 	--a-row: rgb(0 0 0 / 15%);
 	--b-row: rgb(0 0 0 / 30%);
+}
+
+/* <<< Other Accents */
+:root {
+	--unresolved-link-color: hsl(211 100% 52% / 90%);
+
+	--highlight-color: hsl(60 100% 50% / 40%);
+	--highlight-alt1: hsl(152 100% 50% / 40%);
+	--highlight-alt2: hsl(180 100% 50% / 40%);
+}
+
+.theme-light {
+	--search-match-color: hsl(30 100% 50%);
+}
+
+.theme-dark {
+	--search-match-color: hsl(60 100% 70%);
 }
 
 /* stylelint-enable no-duplicate-selectors */
@@ -5480,6 +5498,50 @@ pre[class~="language-haskell" i]::AFTER { content: "Haskell"; }
 	background: transparent;
 }
 
+/* Dracula */
+.theme-dark.dracula-syntax-hl-dark .cm-keyword { color: hsl(330 100% 75%) } /* Function, return, let, var */
+.theme-dark.dracula-syntax-hl-dark .cm-callee { color: hsl(330 100% 75%) } /* In css: var */
+.theme-dark.dracula-syntax-hl-dark .cm-def { color: hsl(115 100% 75%) } /* Function or var Name: e.g. Slayer in 'function Slayer' */
+.theme-dark.dracula-syntax-hl-dark .cm-property { color: hsl(170 100% 75%) } /* In CSS selects whole elements: e.g. background-color, font-family etc, In javasript: redner will be selected within ReactDOM.render */
+.theme-dark.dracula-syntax-hl-dark .cm-variable { color: hsl(170 100% 75%) } /* Var in css */
+.theme-dark.dracula-syntax-hl-dark .cm-variable-2 { color: hsl(60 30% 96%) } /* Var definition in css */
+.theme-dark.dracula-syntax-hl-dark .cm-operator { color: hsl(330 100% 75%) } /* Operators in javascript: = @ ! */
+.theme-dark.dracula-syntax-hl-dark .cm-qualifier { color: hsl(115 100% 75%) } /* IN css: e.g. .theme-dark or .theme-light */
+.theme-dark.dracula-syntax-hl-dark .cm-attribute { color: hsl(115 100% 75%) } /* In html: attribute within e.g. <div=attribute></div>, In BASH: will change options e.g. -l in `ls -l` */
+.theme-dark.dracula-syntax-hl-dark .cm-string-2 { color: hsl(330 100% 75%) } /* Some <div> elements were not selecting with simple .cm-string , but this .cm-string-2 fixes it */
+.theme-dark.dracula-syntax-hl-dark .cm-builtin { color: hsl(170 100% 75%) } /* In bash it selects default commands e.g. cd, ls, grep, wc, find etc. */
+
+.theme-dark.dracula-syntax-hl-dark .cm-atom:not(.cm-hmd-frontmatter) { color: hsl(250 100% 75%) } /* E.g. color tag, sans-serif */
+.theme-dark.dracula-syntax-hl-dark .cm-number:not(.cm-hmd-frontmatter) { color: hsl(250 100% 75%) } /* Number or e.g. 1px, 1em */
+.theme-dark.dracula-syntax-hl-dark .cm-meta:not(.cm-hmd-frontmatter) { color: hsl(0 70% 50%) !important } /* In html "<!DOCTYPE html>" wil be highlighted */
+.theme-dark.dracula-syntax-hl-dark .cm-string:not(.cm-hmd-frontmatter) { color: hsl(60 100% 75%) } /* String e.g. a whole sentence within " Sample Sentece" */
+
+.theme-dark.dracula-syntax-hl-dark .token.comment { color: hsl(225 27% 51%) } /* Comment */
+.theme-dark.dracula-syntax-hl-dark .token.doctype { color: hsl(225 27% 51%) } /* In HTML e.g. <!DOCTYPE html> */
+.theme-dark.dracula-syntax-hl-dark .token.punctuation { color: hsl(60 30% 96%) } /* Punctuation such as brackets, parentheses, commas, and more. */
+.theme-dark.dracula-syntax-hl-dark .token.operator{ } /* In BASH: color of the pipe |, In css color of = : ! * </> */
+.theme-dark.dracula-syntax-hl-dark .token.attr-name { color: hsl(115 100% 75%) } /* In html: attribute within e.g. <div=attribute></div> */
+.theme-dark.dracula-syntax-hl-dark .token.attr-value { color: hsl(60 100% 75%) } /* String e.g. a whole sentence within " Sample Sentece" */
+.theme-dark.dracula-syntax-hl-dark .token.class-name { color: hsl(115 100% 75%) } /* In CSS: classname within 'class classname ='. In BASH: the first command will be also highlighted, but can be overwritten with definition of '.token.builtin' */
+.theme-dark.dracula-syntax-hl-dark .token.builtin { color: hsl(170 100% 75%) !important } /* /* In bash it selects 'cd' , 'pwd'. '!important' to overwrite .token-class-name */
+.theme-dark.dracula-syntax-hl-dark .token.function { color: hsl(135 94% 65%) } /* In JS: Function Name, println. In Bash: if you select !important it it willl overwrite following: ls, grep, wc . Better use '.language-bash.is-loaded .token.function' -> to target 'ls, grep, wc' */
+.theme-dark.dracula-syntax-hl-dark .token.boolean { color: hsl(250 100% 75%) } /* Boolean: true, false */
+.theme-dark.dracula-syntax-hl-dark .token.constant { color: hsl(0 70% 50%) } /* Unknown */
+.theme-dark.dracula-syntax-hl-dark .token.number { color: hsl(250 100% 75%) } /* Number */
+.theme-dark.dracula-syntax-hl-dark .token.unit { color: hsl(330 100% 75%) } /* Unit e.g. px, em */
+.theme-dark.dracula-syntax-hl-dark .token.atrule { color: hsl(330 100% 75%) } /* In css: e.g. @font-family {} */
+.theme-dark.dracula-syntax-hl-dark .token.keyword { color: hsl(330 100% 75%) } /* e.g. var, let , const etc. */
+.theme-dark.dracula-syntax-hl-dark .token.property { color: hsl(170 100% 75%) } /* In CSS: properties e.g. background-color in background-color: red */
+.theme-dark.dracula-syntax-hl-dark .token.tag { color: hsl(330 100% 75%) } /* In html: div in <div></div> */
+.theme-dark.dracula-syntax-hl-dark .token.tag .punctuation { color: hsl(330 100% 75%) } /* In HTML allows to change color of brackets */
+.theme-dark.dracula-syntax-hl-dark .token.important { color: hsl(330 100% 75%) !important } /* !important in css */
+.theme-dark.dracula-syntax-hl-dark .token.selector { color: hsl(330 100% 75%) } /* In css selects div e.g. in div.elements, or pre in 'not(pre)' */
+.theme-dark.dracula-syntax-hl-dark .token.class { color: hsl(115 100% 75%) } /* Fixes some elements which .selector broke, Selects class in CSS */
+.theme-dark.dracula-syntax-hl-dark .token.string { color: hsl(60 100% 75%) } /* String e.g. a whole sentence within " Sample Sentece" */
+.theme-dark.dracula-syntax-hl-dark .token.method { color: hsl(135 94% 65%) } /* Method in Javscript e.g. render in ReactDOM.render */
+.theme-dark.dracula-syntax-hl-dark .token.variable { color: hsl(250 100% 75%) } /* Var in css e.g. --this-is-variable */
+.theme-dark.dracula-syntax-hl-dark .token.url { color: hsl(31 100% 71%) } /* In CSS: e.g. image path in background: url(pathtoimage.png) */
+
 /* ───────────────────────────────────────────────── */
 /* << Lists
 ──────────────────────────────────────────────────── */
@@ -6684,7 +6746,7 @@ body.outline-remove-level-1:not(.no-alternating-rows) .outline .tree-item-childr
 
 /* minimal inline backlinks pane */
 body:not(.classic-inline-backlinks) .embedded-backlinks::BEFORE {
-	content: "Backlinks";
+	/* content: "Backlinks"; */
 	font-family: var(--smallcap-font);
 	font-size: 1.1rem;
 	font-weight: 700;
@@ -7083,17 +7145,19 @@ body:not(.no-alternating-rows) .workspace-leaf-content[data-type="starred"] .nav
 	opacity: 1;
 }
 
-/* hide style settings, since already styled by this theme */
+/* info on style settings, since already styled by this theme */
 .style-settings-heading[data-id="hover-editor"] .setting-item-info::AFTER {
 	content: "Changing some settings has no effect, since 'Shimmering Focus' overrides them. ";
 
 	font-family: var(--menu-font);
-	font-size: 0.7em;
+	font-size: 0.65em;
 	font-weight: 500;
 
-	color: var(--extra-contrast);
+	color: var(--text-muted);
 
-	padding-left: 1.3em;
+	position: relative;
+	top: -2px;
+	left: 18px;
 }
 
 .style-settings-heading[data-id="hover-editor"] .setting-item-name.setting-item-name.setting-item-name {
@@ -9594,29 +9658,6 @@ body .qsp-symbol-indicator {
 /* ───────────────────────────────────────────────── */
 /* << Style Settings (Settings Tab)
 ──────────────────────────────────────────────────── */
-/* as pane */
-.workspace-leaf-content[data-type="style-settings"] :is(.style-settings-export, .style-settings-import) {
-	margin-top: -33px;
-}
-
-body:not(.show-scrollbar) .workspace-split.mod-root .workspace-leaf-content[data-type="style-settings"] ::-WEBKIT-SCROLLBAR {
-	display: none;
-}
-
-.workspace-split.mod-root .workspace-leaf-content[data-type="style-settings"] {
-	font-size: var(--menu-font-size);
-}
-
-.mod-root .workspace-leaf-content[data-type="style-settings"] .view-content {
-	padding: 20px;
-}
-
-/* either sliding panes or only open pane */
-.plugin-sliding-panes .workspace-leaf-content[data-type="style-settings"] .setting-item.setting-item,
-.workspace-leaf:nth-child(2):last-child .workspace-leaf-content[data-type="style-settings"] .setting-item {
-	flex-direction: row;
-	align-items: center;
-}
 
 /* settings tab  / general */
 .style-settings-heading {
@@ -9631,7 +9672,7 @@ body:not(.show-scrollbar) .workspace-split.mod-root .workspace-leaf-content[data
 	padding-left: 20px;
 }
 
-.style-settings-heading[data-id="shimmering-focus"] .style-settings-heading[data-level="2"] .setting-item-name {
+.style-settings-heading[data-id="shimmering-focus"] + .style-settings-container .style-settings-heading[data-level="2"] .setting-item-name {
 	font-family: var(--ui-font);
 	font-size: 0.8em;
 	font-weight: 500;
@@ -9675,6 +9716,30 @@ body:not(.show-scrollbar) .workspace-split.mod-root .workspace-leaf-content[data
 
 .style-settings-heading .setting-item-name:hover {
 	color: var(--hover-accent-2);
+}
+
+/* as pane */
+.workspace-leaf-content[data-type="style-settings"] :is(.style-settings-export, .style-settings-import) {
+	margin-top: -33px;
+}
+
+body:not(.show-scrollbar) .workspace-split.mod-root .workspace-leaf-content[data-type="style-settings"] ::-WEBKIT-SCROLLBAR {
+	display: none;
+}
+
+.workspace-split.mod-root .workspace-leaf-content[data-type="style-settings"] {
+	font-size: var(--menu-font-size);
+}
+
+.mod-root .workspace-leaf-content[data-type="style-settings"] .view-content {
+	padding: 20px;
+}
+
+/* either sliding panes or only open pane */
+.plugin-sliding-panes .workspace-leaf-content[data-type="style-settings"] .setting-item.setting-item,
+.workspace-leaf:nth-child(2):last-child .workspace-leaf-content[data-type="style-settings"] .setting-item {
+	flex-direction: row;
+	align-items: center;
 }
 
 /* most styling of the import/export buttons
@@ -10451,7 +10516,7 @@ settings:
 	-
 	 id: aesthetics
 	 title: 🎨 Aesthetics
-	 description: Color Schemes, Brightness, Roundness, Decorations
+	 description: Color Schemes, Brightness, Roundness, Decorations, Syntax Highlighting (Code Blocks)
 	 type: heading
 	 level: 1
 	 collapsed: true
@@ -10467,7 +10532,7 @@ settings:
 			label: Round 🔘 (Default)
 			value: round-shapes
 		-
-			label: Angular 🟪
+			label: Angular 🔲
 			value: angular-shapes
 		-
 			label: Square-ish ⏹
@@ -10475,7 +10540,7 @@ settings:
 	-
 	 id: preset-color-scheme
 	 title: "Color Schemes"
-	 description: 'Selecting a color scheme other than "Custom Colors" overrides any Brightness, Color Tone, and Color Intensity settings.'
+	 description: 'Selecting a color scheme other than "Custom Colors" overrides any Brightness, Hue, and Saturation settings.'
 	 type: class-select
 	 allowEmpty: false
 	 default: classic-colors
@@ -10497,8 +10562,52 @@ settings:
 	 level: 2
 	 collapsed: true
 	-
+	 id: primary-accent-light
+	 title: "Primary Accent (Light Mode)"
+	 description: 'Links, Selections, Buttons, Interactive UI Elements'
+	 type: class-select
+	 allowEmpty: false
+	 default: primary-accent-light-purple
+	 options:
+		-
+			label: Obsidian Original Purple (Default)
+			value: primary-accent-light-purple
+	-
+	 id: secondary-accent-light
+	 title: "Secondary Accent (Light Mode)"
+	 description: 'Code, Inline Tags, Footnotes, Pandoc Citations'
+	 type: class-select
+	 allowEmpty: false
+	 default: secondary-accent-light-green
+	 options:
+		-
+			label: Shimmering Green (Default)
+			value: secondary-accent-light-green
+	-
+	 id: tertiary-accent-light
+	 title: "Tertiary Accent (Light Mode)"
+	 description: 'Italic & Bold'
+	 type: class-select
+	 allowEmpty: false
+	 default: tertiary-accent-light-uncolered
+	 options:
+		-
+			label: Uncolored (Default)
+			value: tertiary-accent-light-uncolered
+	-
+	 id: hover-accent-light
+	 title: "Hover Accent (Light Mode)"
+	 description: 'Hovered Elements'
+	 type: class-select
+	 allowEmpty: false
+	 default: hover-accent-light-green
+	 options:
+		-
+			label: Shimmering Green (Default)
+			value: hover-accent-light-green
+	-
 	 id: brightness-light
-	 title: 'Custom Colors: Brightness (Light Mode)'
+	 title: 'Background: Brightness (Light Mode)'
 	 description: Note that a high brightness in light mode results in a white theme, regardless of the selected hue.
 	 type: variable-number-slider
 	 default: 7
@@ -10508,8 +10617,8 @@ settings:
 	 format: '%'
 	-
 	 id: light-hue
-	 title: 'Custom Colors: Hue (Light Mode)'
-	 description: 'Overall color tone of the theme. Mind that the appearance of the color is also affected by brightness and saturation.'
+	 title: 'Background: Hue (Light Mode)'
+	 description: 'Overall color tone of the theme background. Mind that the appearance of the color is also affected by brightness and saturation.'
 	 type: variable-number-slider
 	 default: 220
 	 min: 0
@@ -10517,8 +10626,8 @@ settings:
 	 step: 5
 	-
 	 id: light-sat
-	 title: 'Custom Colors: Saturation (Light Mode)'
-	 description: "Intensity of the chosen color tone (hue). Setting this to zero will result in grayscale, regardless of the hue chosen. "
+	 title: 'Background: Saturation (Light Mode)'
+	 description: "Intensity of the chosen hue. Setting this to zero will result in grayscale, regardless of the hue chosen. "
 	 type: variable-number-slider
 	 default: 10
 	 min: 0
@@ -10533,8 +10642,52 @@ settings:
 	 level: 2
 	 collapsed: true
 	-
+	 id: primary-accent-dark
+	 title: "Primary Accent (Dark Mode)"
+	 description: 'Links, Selections, Buttons, Interactive UI Elements'
+	 type: class-select
+	 allowEmpty: false
+	 default: primary-accent-dark-purple
+	 options:
+		-
+			label: Obsidian Original Purple (Default)
+			value: primary-accent-dark-purple
+	-
+	 id: secondary-accent-dark
+	 title: "Secondary Accent (Dark Mode)"
+	 description: 'Code, Inline Tags, Footnotes, Pandoc Citations'
+	 type: class-select
+	 allowEmpty: false
+	 default: secondary-accent-dark-green
+	 options:
+		-
+			label: Shimmering Green (Default)
+			value: secondary-accent-dark-green
+	-
+	 id: tertiary-accent-dark
+	 title: "Tertiary Accent (Dark Mode)"
+	 description: 'Italic & Bold'
+	 type: class-select
+	 allowEmpty: false
+	 default: tertiary-accent-dark-uncolered
+	 options:
+		-
+			label: Uncolored (Default)
+			value: tertiary-accent-dark-uncolered
+	-
+	 id: hover-accent-dark
+	 title: "Hover Accent (Dark Mode)"
+	 description: 'Hovered Elements'
+	 type: class-select
+	 allowEmpty: false
+	 default: hover-accent-dark-green
+	 options:
+		-
+			label: Shimmering Green (Default)
+			value: hover-accent-dark-green
+	-
 	 id: brightness-dark
-	 title: 'Custom Colors: Brightness (Dark Mode)'
+	 title: 'Background: Brightness (Dark Mode)'
 	 description: Note that a low brightness in dark mode results in a black theme, regardless of the selected hue.
 	 type: variable-number-slider
 	 default: 7
@@ -10544,8 +10697,8 @@ settings:
 	 format: '%'
 	-
 	 id: dark-hue
-	 title: 'Custom Colors: Hue (Dark Mode)'
-	 description: 'Overall color tone of the theme. Mind that the appearance of the color is also affected by brightness and saturation.'
+	 title: 'Background: Hue (Dark Mode)'
+	 description: 'Overall color tone of the theme background. Mind that the appearance of the color is also affected by brightness and saturation.'
 	 type: variable-number-slider
 	 default: 220
 	 min: 0
@@ -10553,14 +10706,34 @@ settings:
 	 step: 5
 	-
 	 id: dark-sat
-	 title: 'Custom Colors: Saturation (Dark Mode)'
-	 description: "Intensity of the chosen color tone (hue). Setting this to zero will result in grayscale, regardless of the hue chosen. "
+	 title: 'Background: Saturation (Dark Mode)'
+	 description: "Intensity of the chosen hue. Setting this to zero will result in grayscale, regardless of the hue chosen. "
 	 type: variable-number-slider
 	 default: 5
 	 min: 0
 	 max: 20
 	 step: 2
 	 format: '%'
+	-
+	 id: code-block-syntax-highlighting
+	 title: '🖥 Syntax Highlighting (🚧 Work-in-Progress)'
+	 description: Code Blocks
+	 type: heading
+	 level: 2
+	 collapsed: true
+	-
+	 id: code-block-syntax-hl-dark-mode
+	 title: "Code Block Color Scheme (Dark Mode)"
+	 type: class-select
+	 allowEmpty: false
+	 default: default-syntax-hl
+	 options:
+		-
+			label: Default
+			value: default-syntax-hl-dark
+		-
+			label: Dracula
+			value: dracula-syntax-hl-dark
 	-
 	 id: other-aesthetics
 	 title: 🌟 Further Aesthetic Options
@@ -10603,7 +10776,7 @@ settings:
 			value: sepia
 	-
 	 id: cursor-settings
-	 title: 🐭 Cursor
+	 title: 🐁 Cursor
 	 description: Thickness, Style, Color, Blinking
 	 type: heading
 	 level: 1
