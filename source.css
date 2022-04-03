@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 1.1032
+Version 1.1033
 Source CSS: https://github.com/chrisgrieser/shimmering-focus/blob/main/source.css
 MIT License
 ──────────────────────────────────────────────────── */
@@ -1293,7 +1293,7 @@ svg.longform {
 /* << Angular or Round Shapes
 ─────────────────────────────────────────────────── */
 
-body:not(.angular-shapes) { /* stylelint-disable-line no-duplicate-selectors */
+body:not(.angular-shapes) {
 	--roundish: 7px;
 	--round: 50px;
 }
@@ -1304,7 +1304,7 @@ body.angular-shapes {
 }
 
 body.squareish-shapes {
-	--roundish: 3px;
+	--roundish: 4px;
 	--round: 7px;
 }
 
@@ -4396,7 +4396,7 @@ body:not(.permanently-show-collapse-indicators) .cm-line:not(:hover):not(.cm-act
 	font-size: 1.1em;
 }
 
-/* show only active line number */
+/* minimal line number */
 .minimal-line-numbering .cm-lineNumbers .cm-gutterElement:not(.cm-active):not(:hover) {
 	opacity: 0;
 }
@@ -5531,7 +5531,8 @@ pre[class$="haskell" i]::AFTER { content: "Haskell"; }
 :is(.theme-dark.dracula-syntax-hl-dark, .theme-light.dracula-syntax-hl-light) .token.comment { color: hsl(225 27% 51%) } /* Comment */
 :is(.theme-dark.dracula-syntax-hl-dark, .theme-light.dracula-syntax-hl-light) .token.doctype { color: hsl(225 27% 51%) } /* In HTML e.g. <!DOCTYPE html> */
 :is(.theme-dark.dracula-syntax-hl-dark, .theme-light.dracula-syntax-hl-light) .token.punctuation { color: hsl(60 30% 96%) } /* Punctuation such as brackets, parentheses, commas, and more. */
-:is(.theme-dark.dracula-syntax-hl-dark, .theme-light.dracula-syntax-hl-light) .token.operator{ } /* In BASH: color of the pipe |, In css color of = : ! * </> */
+
+/* :is(.theme-dark.dracula-syntax-hl-dark, .theme-light.dracula-syntax-hl-light) .token.operator{ } /* In BASH: color of the pipe |, In css color of = : ! * </> */
 :is(.theme-dark.dracula-syntax-hl-dark, .theme-light.dracula-syntax-hl-light) .token.attr-name { color: hsl(115 100% 75%) } /* In html: attribute within e.g. <div=attribute></div> */
 :is(.theme-dark.dracula-syntax-hl-dark, .theme-light.dracula-syntax-hl-light) .token.attr-value { color: hsl(60 100% 75%) } /* String e.g. a whole sentence within " Sample Sentece" */
 :is(.theme-dark.dracula-syntax-hl-dark, .theme-light.dracula-syntax-hl-light) .token.class-name { color: hsl(115 100% 75%) } /* In CSS: classname within 'class classname ='. In BASH: the first command will be also highlighted, but can be overwritten with definition of '.token.builtin' */
