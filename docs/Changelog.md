@@ -3,6 +3,7 @@ nav_order: 110
 ---
 
 # Changelog
+- 2022-04-03	code block minor fixes
 - 2022-04-03	code block line wrapping option
 - 2022-04-03	Code blocks: Dracula Syntax Highlighting & Tab Size Setting
 - 2022-04-03	support for banners plugin (fix #120)
