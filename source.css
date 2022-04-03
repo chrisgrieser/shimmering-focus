@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 1.1021
+Version 1.1022
 Source CSS: https://github.com/chrisgrieser/shimmering-focus/blob/main/source.css
 MIT License
 ──────────────────────────────────────────────────── */
@@ -208,6 +208,7 @@ MIT License
 	- Advanced Cursor
 	- CodeMirror Options
 	- Dataview
+	- QuickSwitcher++
 	- Another Quick Switcher
 	- Activity History
 	- Style Settings (Settings Tab)
@@ -2179,7 +2180,7 @@ input[type="range"] {
 input[type="range"]::-WEBKIT-SLIDER-THUMB {
 	background-color: var(--interactive-bg);
 	box-shadow: var(--toggle-enabled-inset-shadow);
-	border-radius: var(--round);
+	border-radius: calc(var(--round) / 2);
 }
 
 input[type="range"]::-WEBKIT-SLIDER-THUMB:hover {
@@ -7021,20 +7022,8 @@ body:not(.no-alternating-rows) .workspace-leaf-content[data-type="starred"] .nav
 	background-color: var(--alt-bg);
 }
 
-.theme-dark .hover-editor.is-active.is-active {
-	border-color: var(--primary-accent-2);
-}
-
-.theme-dark .hover-editor:not(.is-active):hover {
-	border-color: var(--hover-accent-2);
-}
-
-.theme-light .hover-editor.is-active.is-active {
-	border-color: var(--primary-accent-3);
-}
-
-.theme-light .hover-editor:not(.is-active):hover {
-	border-color: var(--hover-accent-3);
+.popover.hover-editor .popover-content.popover-content {
+	border-radius: calc(var(--roundish) * 1.5);
 }
 
 .hover-editor .popover-title::AFTER {
@@ -7045,6 +7034,7 @@ body:not(.no-alternating-rows) .workspace-leaf-content[data-type="starred"] .nav
 	color: var(--text-normal);
 }
 
+/* icons */
 .hover-editor svg {
 	color: var(--extra-contrast);
 }
@@ -7061,6 +7051,7 @@ body:not(.no-alternating-rows) .workspace-leaf-content[data-type="starred"] .nav
 	fill: var(--hover-accent-2);
 }
 
+/* header */
 .hover-editor .view-header.view-header {
 	border-bottom-color: var(--basic-border-color);
 }
@@ -7068,6 +7059,23 @@ body:not(.no-alternating-rows) .workspace-leaf-content[data-type="starred"] .nav
 .hover-editor.show-navbar .view-header.view-header.view-header {
 	height: 2.1em;
 	border-top: var(--basic-border);
+}
+
+/* hover + active */
+.theme-dark .hover-editor.is-active.is-active {
+	border-color: var(--primary-accent-2);
+}
+
+.theme-dark .hover-editor:not(.is-active):hover {
+	border-color: var(--hover-accent-2);
+}
+
+.theme-light .hover-editor.is-active.is-active {
+	border-color: var(--primary-accent-3);
+}
+
+.theme-light .hover-editor:not(.is-active):hover {
+	border-color: var(--hover-accent-3);
 }
 
 /* deactivate hidden header */
@@ -9454,6 +9462,40 @@ body .dataview.inline-field-key {
 }
 
 /* ───────────────────────────────────────────────── */
+/* << QuickSwitcher++
+──────────────────────────────────────────────────── */
+
+/* symbol mode */
+.prompt {
+	/* variables from the plugin's css */
+	--symbol-indent-padding: 25px;
+	--symbol-base-padding: 3px;
+}
+
+body .qsp-symbol-indicator {
+	font-family: var(--button-font);
+	line-height: 1.3em;
+
+	width: 1.7em;
+
+	color: var(--extra-contrast);
+	background-color: var(--alt-bg);
+
+	margin: 1px 8px 0 0;
+
+	border: var(--thin-border);
+	border-radius: var(--roundish);
+}
+
+.suggestion-item.is-selected .qsp-symbol-indicator {
+	color: var(--primary-accent-2);
+}
+
+.suggestion-item:hover .qsp-symbol-indicator {
+	color: var(--hover-accent-2);
+}
+
+/* ───────────────────────────────────────────────── */
 /* << Another Quick Switcher
 ──────────────────────────────────────────────────── */
 
@@ -10289,6 +10331,7 @@ community:
 - mrj-jump-to-link
 - various-complements
 - obsidian-hover-editor
+- darlal-switcher-plus
 */
 
 /* ───────────────────────────────────────────────── */
