@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 1.1025
+Version 1.1026
 Source CSS: https://github.com/chrisgrieser/shimmering-focus/blob/main/source.css
 MIT License
 ──────────────────────────────────────────────────── */
@@ -5045,11 +5045,15 @@ body:not(.blockquotes-left-aligned) .app-container :is(.markdown-preview-view bl
 
 .callout-content p {
 	line-height: 1.2em;
-	margin: 5px 0;
+	margin: 6px 0;
+}
+
+.callout-content p + p {
+	margin-top: 12px;
 }
 
 .callout-content {
-	padding: 0 10px;
+	padding: 0 11px 2px;
 }
 
 body:not(.normal-blockquotes) .callout-content {
