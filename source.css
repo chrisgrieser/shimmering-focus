@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 1.1039
+Version 1.1040
 Source CSS: https://github.com/chrisgrieser/shimmering-focus/blob/main/source.css
 MIT License
 ──────────────────────────────────────────────────── */
@@ -4047,8 +4047,12 @@ body:not(.no-active-highlight):not(.active-visual-line) .CodeMirror-activeline .
 	border-radius: var(--roundish);
 }
 
-.active-line-gutter .cm-gutterElement.cm-active.cm-active {
-	outline: var(--muted-border);
+.active-line-gutter .cm-active::BEFORE {
+	content: " ";
+	height: 100%;
+	position: absolute;
+	left: -8px;
+	border-left: var(--thick-muted-border);
 }
 
 /* fix so the horizontal line above first footnote is not rounded */
@@ -5527,6 +5531,7 @@ pre[class$="haskell" i]::AFTER { content: "Haskell"; }
 	--sh-contant: hsl(0 70% 50%);
 }
 
+/* 'body[class*="syntax-hl"]' to not affect default syntax highlighting */
 body[class*="syntax-hl"] .cm-atom.cm-hmd-codeblock, /* E.g. color tag, sans-serif */
 body[class*="syntax-hl"] .token.boolean,
 body[class*="syntax-hl"] .token.number,
@@ -6055,8 +6060,7 @@ span.cm-strong.cm-highlight,
 	--spoiler-bg: hsl(0 0% 93%);
 }
 
-body:not(.no-pseudo-spoiler-tags) .cm-line:not(.cm-active) .cm-em.cm-strikethrough,
-body:not(.no-pseudo-spoiler-tags) em > del {
+body:not(.no-pseudo-spoiler-tags) :is(em > del, .cm-line:not(.cm-active) .cm-em.cm-strikethrough) {
 	font-style: initial;
 	text-decoration: unset;
 	color: var(--spoiler-bg);
@@ -6064,9 +6068,7 @@ body:not(.no-pseudo-spoiler-tags) em > del {
 	transition: var(--slow-transition);
 }
 
-body:not(.no-pseudo-spoiler-tags) em > del:hover,
-body:not(.no-pseudo-spoiler-tags) .cm-active .cm-em.cm-strikethrough,
-body:not(.no-pseudo-spoiler-tags) .cm-em.cm-strikethrough:hover {
+body:not(.no-pseudo-spoiler-tags) :is(em > del:hover, .cm-active .cm-em.cm-strikethrough, .cm-em.cm-strikethrough:hover) {
 	background-color: var(--bg3) !important;
 	transition: var(--medium-transition);
 }
@@ -6168,8 +6170,7 @@ span.cm-link.cm-hmd-footnote {
 /* <<< Footnote Indicator in Gutter
 ──────────────────────────────────────────────────── */
 
-body:not(.no-fn-indicator) .footnote-ref::BEFORE,
-body:not(.no-fn-indicator) .mod-cm6.cm-s-obsidian span.cm-footref.cm-formatting::BEFORE {
+body:not(.no-fn-indicator) :is(.mod-cm6 .footnote-ref,.mod-cm6.cm-s-obsidian span.cm-footref.cm-formatting)::BEFORE {
 	content: "⦿";
 
 	font-size: 1rem;
@@ -6217,8 +6218,7 @@ div > ul > li > ul > li > ul > li > ul > li > ul > li > .footnote-ref::BEFORE {
 	counter-reset: footnote;
 }
 
-body.numbered-fn-indicator .mod-cm6 .footnote-ref::BEFORE,
-body.numbered-fn-indicator .mod-cm6.cm-s-obsidian span.cm-footref.cm-formatting::BEFORE {
+body.numbered-fn-indicator :is(.mod-cm6 .footnote-ref,.mod-cm6.cm-s-obsidian span.cm-footref.cm-formatting)::BEFORE {
 	content: "^"counter(footnote);
 	font-size: 0.8rem;
 	margin-top: 5px;
@@ -6230,8 +6230,7 @@ body:not(.no-fn-indicator) .mod-cm6 .cm-hmd-barelink:not(.cm-formatting-link) + 
 }
 
 /* styling when the footnote indicator plugin is used */
-.no-fn-indicator .footnote-ref::BEFORE,
-.no-fn-indicator .mod-cm6.cm-s-obsidian span.cm-footref.cm-formatting::BEFORE {
+.no-fn-indicator :is(.mod-cm6 .footnote-ref,.mod-cm6.cm-s-obsidian span.cm-footref.cm-formatting)::BEFORE {
 	color: var(--reference-color);
 }
 
@@ -6270,7 +6269,7 @@ body:not(.no-fn-indicator) .mod-cm6 .cm-hmd-barelink:not(.cm-formatting-link) + 
 }
 
 /* 2 column cards */
-:root { /* stylelint-disable-line no-duplicate-selectors */
+.list-2-col-cards {
 	--card-spacing: 7px;
 }
 
@@ -6559,8 +6558,8 @@ body.is-mobile .markdown-preview-view blockquote {
 	> .nav-folder {
 	border-left: 2px var(--nestlinestyle3) var(--basic-border-color);
 }
-/* stylelint-enable selector-combinator-space-before, indentation */
 
+/* stylelint-enable selector-combinator-space-before, indentation */
 /* ───────────────────────────────────────────────── */
 /* <<< Folder Icons & Note Icons
 ──────────────────────────────────────────────────── */
@@ -6819,14 +6818,6 @@ body.outline-remove-level-1:not(.no-alternating-rows) .outline .tree-item-childr
 }
 
 /* minimal inline backlinks pane */
-body:not(.classic-inline-backlinks) .embedded-backlinks::BEFORE {
-	/* content: "Backlinks"; */
-	font-family: var(--smallcap-font);
-	font-size: 1.1rem;
-	font-weight: 700;
-	color: var(--extra-contrast);
-}
-
 body:not(.classic-inline-backlinks) .embedded-backlinks :is(.nav-buttons-container, .backlink-pane > .tree-item-self, .tree-item-flair, .search-result-file-match, .tree-item-icon, .search-result-file-matches, .nav-header, .search-empty-state) {
 	display: none;
 }
@@ -11234,7 +11225,7 @@ settings:
 		label: Emphasized Background (Default)
 		value: active-line-emphasized-background
 	 -
-		label: Start & End Markers in Gutter
+		label: Vertical Line in Gutter
 		value: active-line-gutter
 	 -
 		label: No Active Line Highlight
