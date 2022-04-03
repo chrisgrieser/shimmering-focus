@@ -3,7 +3,7 @@ nav_order: 110
 ---
 
 # Changelog
-- 2022-04-03	patch
+- 2022-04-03	file name trimming now also affects folders (#51)
 - 2022-04-03	new gutter options: active line markers, minimal line numbers
 - 2022-04-03	code block minor fixes
 - 2022-04-03	code block line wrapping option

@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 1.1033
+Version 1.1034
 Source CSS: https://github.com/chrisgrieser/shimmering-focus/blob/main/source.css
 MIT License
 ──────────────────────────────────────────────────── */
@@ -2663,7 +2663,7 @@ body .app-container :is(.nav-file-title, .nav-folder-title):is(.is-active, :hove
 	color: var(--primary-accent-2);
 }
 
-.trim-long-filenames :is(.nav-file-title-content, .tree-item-inner, .search-result-file-title) {
+.trim-long-filenames :is(.nav-file-title-content, .nav-folder-title-content, .tree-item-inner, .search-result-file-title) {
 	white-space: nowrap;
 	overflow: hidden;
 	text-overflow: ellipsis;
@@ -11384,12 +11384,13 @@ settings:
 	-
 	 id: trim-long-filenames
 	 title: 'Sidebar: Trim File Names'
-	 description: When enabled long filenames will be trimmed. When disabled, long filenames will be wrapped to the next line. Affects most, but not all side bar plugin.
+	 description: When enabled, long file and folder names will be trimmed. When disabled, long names will be wrapped to the next line.
 	 type: class-toggle
 	 default: false
 	-
 	 id: no-grayed-out-inactive-pane
-	 title: 'Do not dim inactive Panes'
+	 title: Do not dim Inactive Panes
+	 description: 'This also affects popovers from the Hover Editor Plugin.'
 	 type: class-toggle
 	 default: false
 	-
@@ -11401,17 +11402,19 @@ settings:
 	-
 	 id: annotation-tags-off
 	 title: 'Turn off "Annotation Tags"'
-	 description: '"Annotation Tags" are about a dozen of tags for academic reading, e.g. "#definition" that are visually emphasized.'
+	 description: '"Annotation Tags" are about a dozen of tags for academic reading, e.g. "#definition" that are visually emphasized. Visit the documentation for a list of all available annotation tags.'
 	 type: class-toggle
 	 default: false
 	-
 	 id: no-alternating-rows
 	 title: Turn off Alternating Row Coloring
+	 description: Affects Table Rows, Command Palette, Quick Switchers, Side Bar items, and Editor Suggesters.
 	 type: class-toggle
 	 default: false
 	-
 	 id: no-pseudo-spoiler-tags
-	 title: Disable the Spoiler Syntax (*~~spoiler~~*).
+	 title: Disable the Spoiler Syntax.
+	 description: The Spoiler Syntax (*~~spoiler~~*) will blacken the enclosed text until hovered.
 	 type: class-toggle
 	 default: false
 	-
