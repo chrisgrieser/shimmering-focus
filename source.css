@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 1.1024
+Version 1.1025
 Source CSS: https://github.com/chrisgrieser/shimmering-focus/blob/main/source.css
 MIT License
 ──────────────────────────────────────────────────── */
@@ -279,6 +279,10 @@ MIT License
 
 Style settings for accent colors begin at:
 id: primary-accent-light
+
+- Accent Color Settings
+- Add Accents Colors to Nord
+- Bauhaus Color Scheme
 
 /* hide accent color settings while still in Work-in-Progress */
 .style-settings-container .setting-item[data-id*="-accent-"] {
@@ -4458,7 +4462,7 @@ progress[max="100"]:is([value="1"],[value="2"],[value="3"],[value="4"],[value="5
 /* see also section "Max View" */
 
 /* Image Files opened by Obsidian */
-.workspace-leaf-content .view-content .image-container img {
+.workspace-leaf-content .view-content .image-container img[src] {
 	margin-top: 25%;
 	cursor: default;
 }
@@ -4484,19 +4488,14 @@ progress[max="100"]:is([value="1"],[value="2"],[value="3"],[value="4"],[value="5
 	margin-bottom: 1em;
 }
 
-.markdown-preview-view img:not(.link-favicon) {
+.markdown-preview-view img[src] {
 	display: block;
 	margin-top: 1em;
 	border-radius: var(--roundish);
 	cursor: zoom-in;
 }
 
-/* deactivated for now because of https://discord.com/channels/686053708261228577/716028884885307432/944305548780798012
-.mod-cm6.is-live-preview img {
-	cursor: pointer;
-} */
-
-body:not(.disable-image-borders) :is(.markdown-preview-view, .oz-image-widget-cm6) img:not(.link-favicon) {
+body:not(.disable-image-borders) :is(.markdown-preview-view, .oz-image-widget-cm6) img[src] {
 	border: var(--basic-border);
 }
 
@@ -4506,13 +4505,13 @@ body:not(.left-aligned-embeds) .image-embed[alt]::AFTER {
 	white-space: pre;
 }
 
-body:not(.left-aligned-embeds) .view-content img:not(.link-favicon) {
+body:not(.left-aligned-embeds) .view-content img[src] {
 	margin-right: auto;
 	margin-left: auto;
 }
 
 /* image zoom */
-.markdown-preview-view img:active {
+.markdown-preview-view img[src]:active {
 	display: block;
 
 	height: 100%;
@@ -4538,16 +4537,16 @@ body:not(.left-aligned-embeds) .view-content img:not(.link-favicon) {
 	object-fit: scale-down;
 }
 
-.theme-light .markdown-preview-view img:active {
+.theme-light .markdown-preview-view img[src]:active {
 	background: hsl(0 0% 75%);
 }
 
-.theme-dark .markdown-preview-view img:active {
+.theme-dark .markdown-preview-view img[src]:active {
 	background: hsl(0 0% 8%);
 }
 
 /* fix for GitHub shields */
-img[src*="img.shields.io" i][src*="img.shields.io" i][src*="img.shields.io" i][src*="img.shields.io" i] {
+img[src*="img.shields.io" i][src][src][src][src][src] {
 	display: inline;
 	margin-top: 0; /* stylelint-disable-line plugin/declaration-block-no-ignored-properties */
 	border: none;
@@ -4653,23 +4652,14 @@ body:not(.classic-spellcheck-styling) .CodeMirror .cm-spell-error {
 /* as well for this to work.) */
 
 /* <<< Line Length & Tables */
-/* CM6 + CM5: Preview Mode */
-.max-view-enabled .mod-left-split.is-collapsed ~ .mod-root .markdown-preview-section {
-	max-width: 100%;
-}
-
-/* CM6: Source Mode & Live Preview (all three is-elements needed) */
+.max-view-enabled .mod-left-split.is-collapsed ~ .mod-root .markdown-preview-section,
 .max-view-enabled .mod-left-split.is-collapsed ~ .mod-root .markdown-source-view.mod-cm6.is-readable-line-width :is(.cm-content, .cm-contentContainer, .cm-contentContainer .cm-line) {
 	max-width: 100%;
 }
 
 /* readable line length */
-body:not(.max-view-enabled) .mod-root .markdown-source-view.mod-cm6.is-readable-line-width .cm-content,
-body:not(.max-view-enabled) .mod-root .markdown-source-view.mod-cm6.is-readable-line-width:not(.rtl) .cm-contentContainer,
-body:not(.max-view-enabled) .mod-root .markdown-source-view.mod-cm6.is-readable-line-width .cm-contentContainer .cm-line,
-.max-view-enabled .mod-left-split:not(.is-collapsed) ~ .mod-root .markdown-source-view.mod-cm6.is-readable-line-width .cm-content,
-.max-view-enabled .mod-left-split:not(.is-collapsed) ~ .mod-root .markdown-source-view.mod-cm6.is-readable-line-width:not(.rtl) .cm-contentContainer,
-.max-view-enabled .mod-left-split:not(.is-collapsed) ~ .mod-root .markdown-source-view.mod-cm6.is-readable-line-width .cm-contentContainer .cm-line {
+body:not(.max-view-enabled) .mod-root .markdown-source-view.mod-cm6.is-readable-line-width :is(.cm-content, .cm-contentContainer, .cm-contentContainer .cm-line),
+.max-view-enabled .mod-left-split:not(.is-collapsed) ~ .mod-root .markdown-source-view.mod-cm6.is-readable-line-width :is(.cm-content, .cm-contentContainer, .cm-contentContainer .cm-line) {
 	max-width: var(--readable-length);
 }
 
@@ -4694,9 +4684,9 @@ body:not(.is-mobile) .app-container .oz-image-widget-cm6 > img:active,
 	cursor: default; 	/* no zoom-in icon needed anymore */
 }
 
-body:not(.is-mobile) .app-container .markdown-preview-view img,
-body:not(.is-mobile) .oz-image-widget-cm6 > img:not(:active),
-body:not(.is-mobile) .app-container div.oz-image-widget > img:not(:active) {
+body:not(.is-mobile) .app-container .markdown-preview-view img[src],
+body:not(.is-mobile) .oz-image-widget-cm6 > img[src]:not(:active),
+body:not(.is-mobile) .app-container div.oz-image-widget > img[src]:not(:active) {
 	max-width: calc(var(--image-size) * 1%);
 }
 
@@ -5054,11 +5044,12 @@ body:not(.blockquotes-left-aligned) .app-container :is(.markdown-preview-view bl
 }
 
 .callout-content p {
-	margin: 1px 0;
+	line-height: 1.2em;
+	margin: 5px 0;
 }
 
 .callout-content {
-	padding-left: 10px;
+	padding: 0 10px;
 }
 
 body:not(.normal-blockquotes) .callout-content {
