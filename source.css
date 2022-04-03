@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 1.1026
+Version 1.1027
 Source CSS: https://github.com/chrisgrieser/shimmering-focus/blob/main/source.css
 MIT License
 ──────────────────────────────────────────────────── */
@@ -5503,7 +5503,7 @@ pre[class~="language-haskell" i]::AFTER { content: "Haskell"; }
 
 .theme-dark.dracula-syntax-hl-dark .cm-atom:not(.cm-hmd-frontmatter) { color: hsl(250 100% 75%) } /* E.g. color tag, sans-serif */
 .theme-dark.dracula-syntax-hl-dark .cm-number:not(.cm-hmd-frontmatter) { color: hsl(250 100% 75%) } /* Number or e.g. 1px, 1em */
-.theme-dark.dracula-syntax-hl-dark .cm-meta:not(.cm-hmd-frontmatter) { color: hsl(0 70% 50%) !important } /* In html "<!DOCTYPE html>" wil be highlighted */
+.theme-dark.dracula-syntax-hl-dark .cm-meta:not(.cm-hmd-frontmatter):not(.cm-formatting) { color: hsl(0 70% 50%) !important } /* In html "<!DOCTYPE html>" wil be highlighted */
 .theme-dark.dracula-syntax-hl-dark .cm-string:not(.cm-hmd-frontmatter) { color: hsl(60 100% 75%) } /* String e.g. a whole sentence within " Sample Sentece" */
 
 .theme-dark.dracula-syntax-hl-dark .token.comment { color: hsl(225 27% 51%) } /* Comment */
