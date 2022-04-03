@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 1.1020
+Version 1.1021
 Source CSS: https://github.com/chrisgrieser/shimmering-focus/blob/main/source.css
 MIT License
 ──────────────────────────────────────────────────── */
@@ -2059,7 +2059,7 @@ body.angular-shapes .checkbox-container {
 
 .checkbox-container:hover {
 	box-shadow: none;
-	border: 9px solid var(--interactive-hover-border-color);
+	border: 9px solid var(--hover-accent-3);
 	transition: var(--medium-transition);
 }
 
@@ -3531,8 +3531,8 @@ body .community-plugin-info .community-plugin-downloads-text {
 .community-plugin-info .community-plugin-author + .community-plugin-author {
 	font-size: 0;
 	text-align: end;
-	margin-top: 44px;
-	margin-bottom: -45px;
+	margin-top: 43px;
+	margin-bottom: -44px;
 }
 
 .community-plugin-author + .community-plugin-author a {
@@ -3559,7 +3559,7 @@ body .community-plugin-info .community-plugin-downloads-text {
 }
 
 .squareish-shapes .community-plugin-author + .community-plugin-author a::AFTER {
-	padding: 7px 7px 8px 8px;
+	padding: 7px 7px 7px 8px;
 }
 
 .squareish-shapes .community-plugin-info .community-plugin-author + .community-plugin-author {
@@ -3604,7 +3604,7 @@ body .community-plugin-info .community-plugin-downloads-text {
 }
 
 .squareish-shapes .modal.modal.mod-community-plugin .community-plugin-info button:last-child {
-	height: 36px;
+	height: 34px;
 	position: relative;
 	top: 1.5px;
 }
@@ -10520,7 +10520,7 @@ settings:
 	 format: '%'
 	-
 	 id: other-aesthetics
-	 title: 🌟 Other Aesthetic Options
+	 title: 🌟 Further Aesthetic Options
 	 description: 'Decorations, YAML Coloring, Animations, Global Filters'
 	 type: heading
 	 level: 2
