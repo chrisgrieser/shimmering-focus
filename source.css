@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 1.1051
+Version 1.1052
 Source CSS: https://github.com/chrisgrieser/shimmering-focus/blob/main/source.css
 MIT License
 ──────────────────────────────────────────────────── */
@@ -10730,16 +10730,16 @@ settings:
 	 default: primary-accent-light-purple
 	 options:
 		-
-			label: Obsidian Purple (Default)
+			label: 🟣 Obsidian Purple (Default)
 			value: primary-accent-light-purple
 		-
-			label: Soft Blue
+			label: 🔵 Soft Blue
 			value: primary-accent-light-blue
 		-
-			label: Fire Red-Orange
+			label: 🟠 Orange Ember
 			value: primary-accent-light-orange
 		-
-			label: Green Glow
+			label: 🟢 Green Glow
 			value: primary-accent-light-green
 	-
 	 id: secondary-accent-light
@@ -10819,19 +10819,19 @@ settings:
 	 default: primary-accent-dark-purple
 	 options:
 		-
-			label: Obsidian Purple (Default)
+			label: 🟣 Obsidian Purple (Default)
 			value: primary-accent-dark-purple
 		-
-			label: Soft Blue
+			label: 🔵 Soft Blue
 			value: primary-accent-dark-blue
 		-
-			label: Fire Red-Orange
+			label: 🟠 Orange Ember
 			value: primary-accent-dark-orange
 		-
-			label: Green Glow
+			label: 🟢 Green Glow
 			value: primary-accent-dark-green
 		-
-			label: Shining Yellow
+			label: 🟡 Shining Yellow
 			value: primary-accent-dark-yellow
 	-
 	 id: secondary-accent-dark
