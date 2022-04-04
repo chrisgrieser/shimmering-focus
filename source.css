@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 1.1046
+Version 1.1047
 Source CSS: https://github.com/chrisgrieser/shimmering-focus/blob/main/source.css
 MIT License
 ──────────────────────────────────────────────────── */
@@ -5526,10 +5526,10 @@ pre[class$="haskell" i]::AFTER { content: "Haskell"; }
 /* ───────────────────────────────────────────────── */
 /* << Syntax Highlighting
 ──────────────────────────────────────────────────── */
-/* https://github.com/nothingislost/obsidian-codemirror-options/blob/main/styles.css */
 
 /* Dracula */
-:is(.theme-dark.dracula-syntax-hl-dark, .theme-light.dracula-syntax-hl-light) {
+.theme-dark.dracula-syntax-hl-dark,
+.theme-light.dracula-syntax-hl-light {
 	--code-block-alt-bg: hsl(231 15% 10%);
 	--code-block-bg: hsl(231 15% 18%);
 	--sh-variable1: hsl(60 30% 96%);
@@ -5548,95 +5548,108 @@ pre[class$="haskell" i]::AFTER { content: "Haskell"; }
 }
 
 /* ':is(.theme-dark[class$="hl-dark"], .theme-light[class$="hl-light"])' to not affect default syntax highlighting */
-:is(.theme-dark[class$="hl-dark"], .theme-light[class$="hl-light"]) .token.constant, /* unknown */
-:is(.theme-dark[class$="hl-dark"], .theme-light[class$="hl-light"]) .cm-atom.cm-hmd-codeblock, /* E.g. color tag, sans-serif */
-:is(.theme-dark[class$="hl-dark"], .theme-light[class$="hl-light"]) .token.symbol,
-:is(.theme-dark[class$="hl-dark"], .theme-light[class$="hl-light"]) .token.boolean,
-:is(.theme-dark[class$="hl-dark"], .theme-light[class$="hl-light"]) .token.number,
-:is(.theme-dark[class$="hl-dark"], .theme-light[class$="hl-light"]) .cm-number.cm-hmd-codeblock { /* Number or e.g. 1px, 1em */
+:is(.theme-dark.dracula-syntax-hl-dark, .theme-light.dracula-syntax-hl-light) :is(
+	.token.constant, /* unknown */
+	.cm-atom.cm-hmd-codeblock, /* E.g. color tag, sans-serif */
+	.token.symbol,
+	.token.boolean,
+	.token.number,
+	.cm-number.cm-hmd-codeblock) { /* Number or e.g. 1px, 1em */
 	color: var(--sh-value);
 }
 
-:is(.theme-dark[class$="hl-dark"], .theme-light[class$="hl-light"]) .cm-variable, /* Var in css */
-:is(.theme-dark[class$="hl-dark"], .theme-light[class$="hl-light"]) .cm-quote.cm-hmd-codeblock, /* shell variables */
-:is(.theme-dark[class$="hl-dark"], .theme-light[class$="hl-light"]) .token.variable { /* Var in css e.g. --this-is-variable */
+:is(.theme-dark.dracula-syntax-hl-dark, .theme-light.dracula-syntax-hl-light) :is(
+	.cm-variable, /* Var in css */
+	.cm-quote.cm-hmd-codeblock, /* shell variables */
+	.token.variable) { /* Var in css e.g. --this-is-variable */
 	color: var(--sh-variable1);
 }
 
-:is(.theme-dark[class$="hl-dark"], .theme-light[class$="hl-light"]) .token.variable.assign-left,
-:is(.theme-dark[class$="hl-dark"], .theme-light[class$="hl-light"]) .cm-variable-2 { /* Var definition in css */
+:is(.theme-dark.dracula-syntax-hl-dark, .theme-light.dracula-syntax-hl-light) :is(
+	.token.variable.assign-left,
+	.cm-variable-2) { /* Var definition in css */
 	color: var(--sh-variable2);
 }
 
-:is(.theme-dark[class$="hl-dark"], .theme-light[class$="hl-light"]) .token.prolog,
-:is(.theme-dark[class$="hl-dark"], .theme-light[class$="hl-light"]) .token.cdata,
-:is(.theme-dark[class$="hl-dark"], .theme-light[class$="hl-light"]) .cm-comment.cm-hmd-codeblock,
-:is(.theme-dark[class$="hl-dark"], .theme-light[class$="hl-light"]) .token.comment, /* Comment */
-:is(.theme-dark[class$="hl-dark"], .theme-light[class$="hl-light"]) .token.doctype { /* In HTML e.g. <!DOCTYPE html> */
+:is(.theme-dark.dracula-syntax-hl-dark, .theme-light.dracula-syntax-hl-light) :is(
+	.token.prolog,
+	.token.cdata,
+	.cm-comment.cm-hmd-codeblock,
+	.token.comment, /* Comment */
+	.token.doctype) { /* In HTML e.g. <!DOCTYPE html> */
 	color: var(--sh-comment);
 }
 
-:is(.theme-dark[class$="hl-dark"], .theme-light[class$="hl-light"]) .token.tag, /* In html: div in <div></div> */
-:is(.theme-dark[class$="hl-dark"], .theme-light[class$="hl-light"]) .token.tag .punctuation, /* In HTML allows to change color of brackets */
-:is(.theme-dark[class$="hl-dark"], .theme-light[class$="hl-light"]) .cm-operator, /* Operators in javascript: = @ ! */
-:is(.theme-dark[class$="hl-dark"], .theme-light[class$="hl-light"]) .token.operator { /* In BASH: color of the pipe |, In css color of = : ! * </> */
+:is(.theme-dark.dracula-syntax-hl-dark, .theme-light.dracula-syntax-hl-light) :is(
+	.token.tag, /* In html: div in <div></div> */
+	.token.tag .punctuation, /* In HTML allows to change color of brackets */
+	.cm-operator, /* Operators in javascript: = @ ! */
+	.token.operator) { /* In BASH: color of the pipe |, In css color of = : ! * </> */
 	color: var(--sh-operator);
 }
 
-:is(.theme-dark[class$="hl-dark"], .theme-light[class$="hl-light"]) .token.punctuation { /* Punctuation such as brackets, parentheses, commas, and more. */
+:is(.theme-dark.dracula-syntax-hl-dark, .theme-light.dracula-syntax-hl-light) :is(
+	.token.punctuation) { /* Punctuation such as brackets, parentheses, commas, and more. */
 	color: var(--sh-punctuation);
 }
 
-:is(.theme-dark[class$="hl-dark"], .theme-light[class$="hl-light"]) .token.keyword, /* e.g. var, let , const etc. */
-:is(.theme-dark[class$="hl-dark"], .theme-light[class$="hl-light"]) .cm-keyword, /* Function, return, let, var */
-:is(.theme-dark[class$="hl-dark"], .theme-light[class$="hl-light"]) .cm-callee, /* In css: var */
-:is(.theme-dark[class$="hl-dark"], .theme-light[class$="hl-light"]) .token.selector { /* In css selects div e.g. in div.elements, or pre in 'not(pre)' */
+:is(.theme-dark.dracula-syntax-hl-dark, .theme-light.dracula-syntax-hl-light) :is(
+	.token.keyword, /* e.g. var, let , const etc. */
+	.cm-keyword, /* Function, return, let, var */
+	.cm-callee, /* In css: var */
+	.token.selector) { /* In css selects div e.g. in div.elements, or pre in 'not(pre)' */
 	color: var(--sh-keyword);
 }
 
-:is(.theme-dark[class$="hl-dark"], .theme-light[class$="hl-light"]) .cm-attribute, /* In html: attribute within e.g. <div=attribute></div>, In BASH: will change options e.g. -l in `ls -l` */
-:is(.theme-dark[class$="hl-dark"], .theme-light[class$="hl-light"]) .token.attr-name, /* In html: attribute within e.g. <div=attribute></div> */
-:is(.theme-dark[class$="hl-dark"], .theme-light[class$="hl-light"]) .cm-qualifier, /* In css: e.g. .theme-dark or .theme-light */
-:is(.theme-dark[class$="hl-dark"], .theme-light[class$="hl-light"]) .token.class-name, /* In CSS: classname within 'class classname ='. In BASH: the first command will be also highlighted, but can be overwritten with definition of '.token.builtin' */
-:is(.theme-dark[class$="hl-dark"], .theme-light[class$="hl-light"]) .token.class, /* Fixes some elements which .selector broke, Selects class in CSS */
-:is(.theme-dark[class$="hl-dark"], .theme-light[class$="hl-light"]) .cm-type,
-:is(.theme-dark[class$="hl-dark"], .theme-light[class$="hl-light"]) .cm-def { /* Function or var Name: e.g. Slayer in 'function Slayer' */
+:is(.theme-dark.dracula-syntax-hl-dark, .theme-light.dracula-syntax-hl-light) :is(
+	.cm-attribute, /* In html: attribute within e.g. <div=attribute></div>, In BASH: will change options e.g. -l in `ls -l` */
+	.token.attr-name, /* In html: attribute within e.g. <div=attribute></div> */
+	.cm-qualifier, /* In css: e.g. .theme-dark or .theme-light */
+	.token.class-name, /* In CSS: classname within 'class classname ='. In BASH: the first command will be also highlighted, but can be overwritten with definition of '.token.builtin' */
+	.token.class, /* Fixes some elements which .selector broke, Selects class in CSS */
+	.cm-type,
+	.cm-def.cm-hmd-codeblock) { /* Function or var Name: e.g. Slayer in 'function Slayer' */
 	color: var(--sh-function-class);
 }
 
-:is(.theme-dark[class$="hl-dark"], .theme-light[class$="hl-light"]) .cm-builtin, /* In bash it selects default commands e.g. cd, ls, grep, wc, find etc. */
-:is(.theme-dark[class$="hl-dark"], .theme-light[class$="hl-light"]) .token.builtin, /* In bash it selects 'cd' , 'pwd'. '!important' to overwrite .token-class-name */
-:is(.theme-dark[class$="hl-dark"], .theme-light[class$="hl-light"]) .token.property, /* In CSS: properties e.g. background-color in background-color: red */
-:is(.theme-dark[class$="hl-dark"], .theme-light[class$="hl-light"]) .cm-property { /* In CSS selects whole elements: e.g. background-color, font-family etc, In javasript: redner will be selected within ReactDOM.render */
+:is(.theme-dark.dracula-syntax-hl-dark, .theme-light.dracula-syntax-hl-light) :is(
+	.cm-builtin, /* In bash it selects default commands e.g. cd, ls, grep, wc, find etc. */
+	.token.builtin, /* In bash it selects 'cd' , 'pwd'. '!important' to overwrite .token-class-name */
+	.token.property, /* In CSS: properties e.g. background-color in background-color: red */
+	.cm-property) { /* In CSS selects whole elements: e.g. background-color, font-family etc, In javasript: redner will be selected within ReactDOM.render */
 	color: var(--sh-property);
 }
 
-:is(.theme-dark[class$="hl-dark"], .theme-light[class$="hl-light"]) .token.regex, /* !important in css */
-:is(.theme-dark[class$="hl-dark"], .theme-light[class$="hl-light"]) .token.important, /* !important in css */
-:is(.theme-dark[class$="hl-dark"], .theme-light[class$="hl-light"]) .token.url { /* In CSS: e.g. image path in background: url(pathtoimage.png) */
+:is(.theme-dark.dracula-syntax-hl-dark, .theme-light.dracula-syntax-hl-light) :is(
+	.token.regex, /* !important in css */
+	.token.important, /* !important in css */
+	.token.url) { /* In CSS: e.g. image path in background: url(pathtoimage.png) */
 	color: var(--sh-important-url-regex);
 }
 
-:is(.theme-dark[class$="hl-dark"], .theme-light[class$="hl-light"]) .cm-string.cm-hmd-codeblock, /* String e.g. a whole sentence within " Sample Sentece" */
-:is(.theme-dark[class$="hl-dark"], .theme-light[class$="hl-light"]) .cm-string-2, /* Some <div> elements were not selecting with simple .cm-string , but this .cm-string-2 fixes it */
-:is(.theme-dark[class$="hl-dark"], .theme-light[class$="hl-light"]) .cm-string-3,
-:is(.theme-dark[class$="hl-dark"], .theme-light[class$="hl-light"]) .token.char,
-:is(.theme-dark[class$="hl-dark"], .theme-light[class$="hl-light"]) .token.string, /* String e.g. a whole sentence within " Sample Sentece" */
-:is(.theme-dark[class$="hl-dark"], .theme-light[class$="hl-light"]) .token.attr-value { /* String e.g. a whole sentence within " Sample Sentece" */
+:is(.theme-dark.dracula-syntax-hl-dark, .theme-light.dracula-syntax-hl-light) :is(
+	.cm-string.cm-hmd-codeblock, /* String e.g. a whole sentence within " Sample Sentece" */
+	.cm-string-2, /* Some <div> elements were not selecting with simple .cm-string , but this .cm-string-2 fixes it */
+	.cm-string-3,
+	.token.char,
+	.token.string, /* String e.g. a whole sentence within " Sample Sentece" */
+	.token.attr-value) { /* String e.g. a whole sentence within " Sample Sentece" */
 	color: var(--sh-string);
 }
 
-:is(.theme-dark[class$="hl-dark"], .theme-light[class$="hl-light"]) .token.unit, /* Unit e.g. px, em */
-:is(.theme-dark[class$="hl-dark"], .theme-light[class$="hl-light"]) .token.atrule { /* In css: e.g. @font-family {} */
+:is(.theme-dark.dracula-syntax-hl-dark, .theme-light.dracula-syntax-hl-light) :is(
+	.token.unit, /* Unit e.g. px, em */
+	.token.atrule) { /* In css: e.g. @font-family {} */
 	color: var(--sh-unit);
 }
 
-:is(.theme-dark[class$="hl-dark"], .theme-light[class$="hl-light"]) .token.function, /* In JS: Function Name, println. In Bash: if you select !important it it willl overwrite following: ls, grep, wc . Better use '.language-bash.is-loaded .token.function' -> to target 'ls, grep, wc' */
-:is(.theme-dark[class$="hl-dark"], .theme-light[class$="hl-light"]) .token.method { /* Method in Javscript e.g. render in ReactDOM.render */
+:is(.theme-dark.dracula-syntax-hl-dark, .theme-light.dracula-syntax-hl-light) :is(
+	.token.function, /* In JS: Function Name, println. In Bash: if you select !important it it willl overwrite following: ls, grep, wc . Better use '.language-bash.is-loaded .token.function' -> to target 'ls, grep, wc' */
+	.token.method) { /* Method in Javscript e.g. render in ReactDOM.render */
 	color: var(--sh-method);
 }
 
-/* fix for default theme */
+/* fix for default syntax highlighting */
 .theme-light .token.operator {
 	background: transparent;
 }
@@ -10889,11 +10902,11 @@ settings:
 	 description: Color Scheme
 	 type: class-select
 	 allowEmpty: false
-	 default: default-syntax-hl
+	 default: default-syntax-highl-light
 	 options:
 		-
 			label: Default
-			value: default-syntax-hl-light
+			value: default-syntax-highl-light
 		-
 			label: Dracula
 			value: dracula-syntax-hl-light
@@ -10903,11 +10916,11 @@ settings:
 	 description: Color Scheme
 	 type: class-select
 	 allowEmpty: false
-	 default: default-syntax-hl
+	 default: default-syntax-highl-dark
 	 options:
 		-
 			label: Default
-			value: default-syntax-hl-dark
+			value: default-syntax-highl-dark
 		-
 			label: Dracula
 			value: dracula-syntax-hl-dark
