@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 1.1055
+Version 1.1056
 Source CSS: https://github.com/chrisgrieser/shimmering-focus/blob/main/source.css
 MIT License
 ──────────────────────────────────────────────────── */
@@ -138,10 +138,7 @@ MIT License
 		- Annotation Tags
 	- Comments & HTML Tags
 	- Tasks & Checkboxes
-	- Highlights & Selection
-		- Highlights
-		- Selection (Selected Text)
-	- Multi-Color Highlighting
+	- Highlights & Multi-Color Highlighting
 	- Pseudo-Spoiler-Tag
 	- Strikethroughs
 	- Pandoc Citations
@@ -286,11 +283,9 @@ TODO
 
 /*
 	value: primary-accent-dark-purple
-	value: primary-accent-dark-orange
 	value: primary-accent-dark-green
 	value: primary-accent-dark-yellow
 	value: primary-accent-light-purple
-	value: primary-accent-light-orange
 	value: primary-accent-light-green
 */
 
@@ -317,7 +312,7 @@ TODO
 .theme-light.primary-accent-light-orange,
 .theme-dark.primary-accent-dark-orange {
 	--primary-accent-0: hsl(24 69% 22% / 99%);
-	--primary-accent-1: hsl(16 100% 30%);
+	--primary-accent-1: hsl(20 90% 30%);
 	--primary-accent-2: hsl(24 69% 42%);
 	--primary-accent-3: hsl(32 65% 55%);
 	--primary-accent-4: hsl(40 87% 67%);
@@ -350,7 +345,6 @@ TODO
 
 .theme-light,
 .theme-dark {
-
 	--tertiary-accent-light: var(--text-normal);
 	--tertiary-accent-dark: var(--text-normal);
 }
@@ -384,21 +378,23 @@ TODO
 
 /* <<< Primary Accent */
 .theme-light {
-	--selection-color: var(--primary-accent-5);
+	--text-selection: var(--primary-accent-5);
 
 	--scrollbar-bg-active: var(--primary-accent-4);
 	--interactive-bg: var(--primary-accent-3);
 	--active-line-indicator: var(--primary-accent-2);
+	--link-color: var(--primary-accent-2);
 
 	--finished-task: var(--primary-accent-3);
 }
 
 .theme-dark {
-	--selection-color: var(--primary-accent-0);
+	--text-selection: var(--primary-accent-0);
 
 	--scrollbar-bg-active: var(--primary-accent-3);
 	--interactive-bg: var(--primary-accent-1);
 	--active-line-indicator: var(--primary-accent-2);
+	--link-color: var(--primary-accent-2);
 
 	--finished-task: var(--primary-accent-2);
 }
@@ -692,9 +688,9 @@ body:is(.theme-light, .theme-dark) {
 /* <<< Other Accents */
 :root {
 	--unresolved-hue-rotate: -40deg;
-	--highlight-color: hsl(60 100% 50% / 40%);
-	--highlight-alt1: hsl(152 100% 50% / 40%);
-	--highlight-alt2: hsl(180 100% 50% / 40%);
+	--highlight-hue-1: 60; /* yellow */
+	--highlight-hue-2: 150; /* green */
+	--highlight-hue-3: 185; /* cyan */
 }
 
 .theme-light {
@@ -5728,8 +5724,9 @@ a:hover {
 	cursor: pointer;
 }
 
+.cm-hmd-internal-link.cm-hmd-internal-link.cm-hmd-internal-link,
 .cm-link.cm-link.cm-link.cm-link.cm-link:not(.cm-formatting) {
-	color: var(--primary-accent-2);
+	color: var(--link-color);
 }
 
 .cm-formatting-link.cm-formatting-link.cm-formatting-link {
@@ -5752,14 +5749,10 @@ u {
 	text-decoration: none;
 }
 
-.cm-hmd-internal-link.cm-hmd-internal-link.cm-hmd-internal-link {
-	color: var(--primary-accent-2);
-}
-
 /* <<< Unresolved links */
 .is-unresolved.is-unresolved .cm-hmd-internal-link,
 .is-unresolved.is-unresolved.is-unresolved {
-	color: var(--primary-accent-2);
+	color: var(--link-color);
 	opacity: 1;
 	filter: hue-rotate(var(--unresolved-hue-rotate));
 }
@@ -6079,44 +6072,38 @@ li[data-task="x"] > .task-list-item-checkbox:hover {
 }
 
 /* ───────────────────────────────────────────────── */
-/* << Highlights & Selection
+/* << Highlights & Multi-Color Highlighting
 ──────────────────────────────────────────────────── */
 
-/* <<< Highlights */
+:root { /* stylelint-disable-line no-duplicate-selectors */
+	--highlight-color-1: hsl(var(--highlight-hue-1) 100% 50% / 40%);
+	--highlight-color-2: hsl(var(--highlight-hue-2) 100% 50% / 40%);
+	--highlight-color-3: hsl(var(--highlight-hue-3) 100% 50% / 40%);
+}
+
 .markdown-preview-view mark,
 .cm-s-obsidian span.cm-highlight {
-	background-color: var(--highlight-color);
+	background-color: var(--highlight-color-1);
 }
 
-/* <<< Selection (Selected Text) */
-/* stylelint-disable no-duplicate-selectors */
-.theme-light,
-.theme-dark {
-	--text-selection: var(--selection-color);
-}
-/* stylelint-enable no-duplicate-selectors */
-
-/* ───────────────────────────────────────────────── */
-/* << Multi-Color Highlighting
-──────────────────────────────────────────────────── */
 /* thanks to @Atlas for this snippet */
 /* https://discord.com/channels/686053708261228577/702656734631821413/881443661269827656 */
 
-/* Cyan Highlight *== ==* */
+/* *== ==* */
 .markdown-preview-view em > mark,
 span.cm-em.cm-highlight {
 	font-style: initial;
 	text-shadow: none;
-	background-color: var(--highlight-alt2);
+	background-color: var(--highlight-color-2);
 }
 
-/* Yellow Highlight **== ==** */
+/* **== ==** */
 span.cm-strong.cm-highlight,
 .markdown-preview-view strong > mark {
 	font-weight: 500;
 	text-rendering: initial;
 	text-shadow: none;
-	background-color: var(--highlight-alt1);
+	background-color: var(--highlight-color-3);
 }
 
 /* ───────────────────────────────────────────────── */
@@ -9934,6 +9921,25 @@ body a:is(.style-settings-export, .style-settings-import) {
 	color: var(--hover-accent-2);
 }
 
+/* highlight color style settings */
+.style-settings-container .setting-item[data-id="highlight-hue-1"] input.slider::-WEBKIT-SLIDER-THUMB {
+	background-color: hsl(var(--highlight-hue-1) 80% 50%);
+}
+
+.style-settings-container .setting-item[data-id="highlight-hue-2"] input.slider::-WEBKIT-SLIDER-THUMB {
+	background-color: hsl(var(--highlight-hue-2) 80% 50%);
+}
+
+.style-settings-container .setting-item[data-id="highlight-hue-3"] input.slider::-WEBKIT-SLIDER-THUMB {
+	background-color: hsl(var(--highlight-hue-3) 80% 50%);
+}
+
+.style-settings-container .setting-item[data-id^="highlight-hue"] input.slider::-WEBKIT-SLIDER-THUMB {
+	height: 1.6em;
+	position: relative;
+	top: -0.5em;
+}
+
 /* ───────────────────────────────────────────────── */
 /* <<< Style Setting – Info Boxes
 ──────────────────────────────────────────────────── */
@@ -10668,8 +10674,8 @@ settings:
 	 default: false
 	-
 	 id: aesthetics
-	 title: 🎨 Aesthetics
-	 description: Color Schemes, Brightness, Roundness, Decorations
+	 title: 🎨 Color & Aesthetics
+	 description: Color Schemes, Brightness, Roundness, Highlight Colors, Decorations
 	 type: heading
 	 level: 1
 	 collapsed: true
@@ -10682,13 +10688,13 @@ settings:
 	 default: squareish-shapes
 	 options:
 		-
-			label: Square-ish ⏹ (Default)
+			label: ⏹ Square-ish (Default)
 			value: squareish-shapes
 		-
-			label: Round 🔘
+			label: 🔘 Round
 			value: round-shapes
 		-
-			label: Angular 🔲
+			label: 🔲 Angular
 			value: angular-shapes
 	-
 	 id: preset-color-scheme
@@ -10743,7 +10749,7 @@ settings:
 	 default: secondary-accent-light-green
 	 options:
 		-
-			label: Shimmering Green (Default)
+			label: 🟢 Shimmering Green (Default)
 			value: secondary-accent-light-green
 	-
 	 id: tertiary-accent-light
@@ -10765,7 +10771,7 @@ settings:
 	 default: hover-accent-light-green
 	 options:
 		-
-			label: Shimmering Green (Default)
+			label: 🟢 Shimmering Green (Default)
 			value: hover-accent-light-green
 	-
 	 id: brightness-light
@@ -10889,8 +10895,42 @@ settings:
 	 step: 2
 	 format: '%'
 	-
+	 id: highlight-color-options
+	 title: 🌈 Highlight Colors
+	 description: 'Colors used for regular ==highlights== and for *==alternative highlights==*'
+	 type: heading
+	 level: 2
+	 collapsed: true
+	-
+	 id: highlight-hue-1
+	 title: Regular Highlights
+	 description: "Color tone for regular ==highlights=="
+	 type: variable-number-slider
+	 default: 60
+	 min: 0
+	 max: 360
+	 step: 5
+	-
+	 id: highlight-hue-2
+	 title: Multi-Color-Highlight 1
+	 description: "Color tone for alternative *==highlights==*"
+	 type: variable-number-slider
+	 default: 150
+	 min: 0
+	 max: 360
+	 step: 5
+	-
+	 id: highlight-hue-3
+	 title:  Multi-Color-Highlight 2
+	 description: "Color tone for the other alternative **==highlights==**"
+	 type: variable-number-slider
+	 default: 185
+	 min: 0
+	 max: 360
+	 step: 5
+	-
 	 id: other-aesthetics
-	 title: 🌟 Further Aesthetic Options
+	 title: 🌟 Further Options
 	 description: 'Decorations, YAML Coloring, Animations, Global Filters'
 	 type: heading
 	 level: 2

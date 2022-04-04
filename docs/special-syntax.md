@@ -24,7 +24,9 @@ Using a double-blockquote (`>>`) after a normal blockquote (`>`) will result in 
 ![](https://user-images.githubusercontent.com/73286100/148688725-f0c3e0a6-0712-4ead-b787-cf56dafc8e40.gif)
 
 ## Multi-Color-Highlighting
-- Surround highlights with `*` or `**` for alternative highlight colors (`*==cyan==*` and `**==yellow==**`).
+- Surround highlights with `*` or `**` for alternative highlight colors (`*==green==*` and `**==cyan==**`).
+- The colors can be customized in the Style Settings.
 
 ## Spoiler Syntax
-Emphasized Strikethroughs (`*~~spoiler~~*`) will selectively hide text, except when hovered or the active line.
+- Emphasized Strikethroughs (`*~~spoiler~~*`) will selectively hide text, except when hovered or the active line.
+- Can be disabled in the Style Settings.
