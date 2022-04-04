@@ -3,6 +3,7 @@ nav_order: 110
 ---
 
 # Changelog
+- 2022-04-04	improved syntax highlighting
 - 2022-04-04	squarish shapes as default
 - 2022-04-04	switched to vertical line as default for active line highlight
 - 2022-04-04	styling for MathJax (fix #121)

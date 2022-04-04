@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 1.1044
+Version 1.1045
 Source CSS: https://github.com/chrisgrieser/shimmering-focus/blob/main/source.css
 MIT License
 ──────────────────────────────────────────────────── */
@@ -5542,14 +5542,15 @@ pre[class$="haskell" i]::AFTER { content: "Haskell"; }
 	--sh-property: hsl(170 100% 75%);
 	--sh-string: hsl(60 100% 75%);
 	--sh-punctuation: hsl(60 30% 96%);
-	--sh-important-url: hsl(31 100% 71%);
+	--sh-important-url-regex: hsl(31 100% 71%);
 	--sh-unit: hsl(330 100% 75%);
 	--sh-method: hsl(135 94% 65%);
-	--sh-contant: hsl(0 70% 50%);
 }
 
 /* 'body[class*="syntax-hl"]' to not affect default syntax highlighting */
+body[class*="syntax-hl"] .token.constant, /* unknown */
 body[class*="syntax-hl"] .cm-atom.cm-hmd-codeblock, /* E.g. color tag, sans-serif */
+body[class*="syntax-hl"] .token.symbol,
 body[class*="syntax-hl"] .token.boolean,
 body[class*="syntax-hl"] .token.number,
 body[class*="syntax-hl"] .cm-number.cm-hmd-codeblock { /* Number or e.g. 1px, 1em */
@@ -5567,6 +5568,8 @@ body[class*="syntax-hl"] .cm-variable-2 { /* Var definition in css */
 	color: var(--sh-variable2);
 }
 
+body[class*="syntax-hl"] .token.prolog,
+body[class*="syntax-hl"] .token.cdata,
 body[class*="syntax-hl"] .cm-comment.cm-hmd-codeblock,
 body[class*="syntax-hl"] .token.comment, /* Comment */
 body[class*="syntax-hl"] .token.doctype { /* In HTML e.g. <!DOCTYPE html> */
@@ -5580,8 +5583,12 @@ body[class*="syntax-hl"] .token.operator { /* In BASH: color of the pipe |, In c
 	color: var(--sh-operator);
 }
 
+body[class*="syntax-hl"] .token.punctuation { /* Punctuation such as brackets, parentheses, commas, and more. */
+	color: var(--sh-punctuation);
+}
+
 body[class*="syntax-hl"] .token.keyword, /* e.g. var, let , const etc. */
-body[class*="syntax-hl"] .cm-keyword.cm-keyword, /* Function, return, let, var */
+body[class*="syntax-hl"] .cm-keyword, /* Function, return, let, var */
 body[class*="syntax-hl"] .cm-callee, /* In css: var */
 body[class*="syntax-hl"] .token.selector { /* In css selects div e.g. in div.elements, or pre in 'not(pre)' */
 	color: var(--sh-keyword);
@@ -5592,6 +5599,7 @@ body[class*="syntax-hl"] .token.attr-name, /* In html: attribute within e.g. <di
 body[class*="syntax-hl"] .cm-qualifier, /* In css: e.g. .theme-dark or .theme-light */
 body[class*="syntax-hl"] .token.class-name, /* In CSS: classname within 'class classname ='. In BASH: the first command will be also highlighted, but can be overwritten with definition of '.token.builtin' */
 body[class*="syntax-hl"] .token.class, /* Fixes some elements which .selector broke, Selects class in CSS */
+body[class*="syntax-hl"] .cm-type,
 body[class*="syntax-hl"] .cm-def { /* Function or var Name: e.g. Slayer in 'function Slayer' */
 	color: var(--sh-function-class);
 }
@@ -5603,20 +5611,19 @@ body[class*="syntax-hl"] .cm-property { /* In CSS selects whole elements: e.g. b
 	color: var(--sh-property);
 }
 
+body[class*="syntax-hl"] .token.regex, /* !important in css */
 body[class*="syntax-hl"] .token.important, /* !important in css */
 body[class*="syntax-hl"] .token.url { /* In CSS: e.g. image path in background: url(pathtoimage.png) */
-	color: var(--sh-important-url);
+	color: var(--sh-important-url-regex);
 }
 
-body[class*="syntax-hl"] .cm-string:not(.cm-hmd-frontmatter):not(.cm-url), /* String e.g. a whole sentence within " Sample Sentece" */
+body[class*="syntax-hl"] .cm-string.cm-hmd-codeblock, /* String e.g. a whole sentence within " Sample Sentece" */
 body[class*="syntax-hl"] .cm-string-2, /* Some <div> elements were not selecting with simple .cm-string , but this .cm-string-2 fixes it */
+body[class*="syntax-hl"] .cm-string-3,
+body[class*="syntax-hl"] .token.char,
 body[class*="syntax-hl"] .token.string, /* String e.g. a whole sentence within " Sample Sentece" */
 body[class*="syntax-hl"] .token.attr-value { /* String e.g. a whole sentence within " Sample Sentece" */
 	color: var(--sh-string);
-}
-
-body[class*="syntax-hl"] .token.punctuation { /* Punctuation such as brackets, parentheses, commas, and more. */
-	color: var(--sh-punctuation);
 }
 
 body[class*="syntax-hl"] .token.unit, /* Unit e.g. px, em */
@@ -5627,10 +5634,6 @@ body[class*="syntax-hl"] .token.atrule { /* In css: e.g. @font-family {} */
 body[class*="syntax-hl"] .token.function, /* In JS: Function Name, println. In Bash: if you select !important it it willl overwrite following: ls, grep, wc . Better use '.language-bash.is-loaded .token.function' -> to target 'ls, grep, wc' */
 body[class*="syntax-hl"] .token.method { /* Method in Javscript e.g. render in ReactDOM.render */
 	color: var(--sh-method);
-}
-
-body[class*="syntax-hl"] .token.constant { /* Unknown */
-	color: var(--sh-contant);
 }
 
 /* fix for default theme */
