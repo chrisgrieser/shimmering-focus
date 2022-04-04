@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 1.1041
+Version 1.1042
 Source CSS: https://github.com/chrisgrieser/shimmering-focus/blob/main/source.css
 MIT License
 ──────────────────────────────────────────────────── */
@@ -125,6 +125,7 @@ MIT License
 	- Callouts
 		- Custom Callouts
 	- Tables
+	- MathJax
 	- Code
 		- Inline Code
 		- Code Blocks
@@ -1293,7 +1294,7 @@ svg.longform {
 /* << Angular or Round Shapes
 ─────────────────────────────────────────────────── */
 
-body:not(.angular-shapes) {
+body:not(.angular-shapes):not(.squareish-shapes) { /* stylelint-disable-line no-duplicate-selectors */
 	--roundish: 7px;
 	--round: 50px;
 }
@@ -5206,6 +5207,25 @@ body .table-view-table > thead > tr > th {
 .table-view-table > tbody > tr > td {
 	word-wrap: normal;
 	word-break: normal;
+}
+
+/* ───────────────────────────────────────────────── */
+/* << MathJax
+──────────────────────────────────────────────────── */
+body .cm-s-obsidian span.cm-math {
+	font-family: var(--font-monospace);
+	background-color: var(--alt-bg);
+	padding: 2px;
+}
+
+.cm-formatting-math-begin:not(.cm-math-block) {
+	border-bottom-left-radius: var(--roundish);
+	border-top-left-radius: var(--roundish);
+}
+
+.cm-formatting-math-end:not(.cm-math-block) {
+	border-top-right-radius: var(--roundish);
+	border-bottom-right-radius: var(--roundish);
 }
 
 /* ───────────────────────────────────────────────── */
@@ -10979,7 +10999,7 @@ settings:
 	-
 	 id: font-monospace
 	 title: Monospace Font
-	 description: Used in Code blocks, YAML in Edit Mode, tables in Edit Mode, etc.
+	 description: Used in Code blocks, YAML headers, tables & MathJax in Source Mode
 	 type: variable-text
 	 default: '"Input Mono S"'
 	-
