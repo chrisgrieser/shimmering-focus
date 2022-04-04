@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 1.1053
+Version 1.1054
 Source CSS: https://github.com/chrisgrieser/shimmering-focus/blob/main/source.css
 MIT License
 ──────────────────────────────────────────────────── */
@@ -133,7 +133,7 @@ MIT License
 	- Lists
 	- Links
 		- Unresolved links
-		- fold external URLs (CM6 Source Mode)
+		- Fold external URLs (CM6 Source Mode)
 	- Tags
 		- Annotation Tags
 	- Comments & HTML Tags
@@ -5667,7 +5667,7 @@ pre.language-haskell::AFTER { content: "Haskell" }
 	.cm-builtin, /* In bash it selects default commands e.g. cd, ls, grep, wc, find etc. */
 	.token.builtin, /* In bash it selects 'cd' , 'pwd'. '!important' to overwrite .token-class-name */
 	.token.property, /* In CSS: properties e.g. background-color in background-color: red */
-	.cm-property) { /* In CSS selects whole elements: e.g. background-color, font-family etc, In javasript: redner will be selected within ReactDOM.render */
+	.cm-property.cm-hmd-codeblock) { /* In CSS selects whole elements: e.g. background-color, font-family etc, In javasript: redner will be selected within ReactDOM.render */
 	color: var(--sh-property);
 }
 
@@ -5721,9 +5721,10 @@ pre.language-haskell::AFTER { content: "Haskell" }
 }
 
 /* thicker => more readable */
-
+/* other font family to not be too thick */
 .cm-formatting-list-ul,
 .is-live-preview .list-bullet {
+	font-family: "Source Code Pro";
 	font-weight: 700;
 }
 
@@ -5778,8 +5779,9 @@ u {
 /* <<< Unresolved links */
 .is-unresolved.is-unresolved .cm-hmd-internal-link,
 .is-unresolved.is-unresolved.is-unresolved {
-	color: var(--unresolved-link-color);
+	color: var(--primary-accent-2);
 	opacity: 1;
+	filter: hue-rotate(-40deg);
 }
 
 /* unresolved gutter icon */
@@ -5792,7 +5794,7 @@ body:not(.no-unresolved-link-indicator) .cm-editor .is-unresolved::BEFORE {
 	left: 18px;
 }
 
-/* <<< fold external URLs (CM6 Source Mode) */
+/* <<< Fold external URLs (CM6 Source Mode) */
 body:not(.show-urls) .cm-s-obsidian:not(.is-live-preview) .cm-line:not(.cm-active) .cm-string.cm-url:not(.cm-formatting) {
 	font-size: 0;
 }
