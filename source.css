@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 1.1043
+Version 1.1044
 Source CSS: https://github.com/chrisgrieser/shimmering-focus/blob/main/source.css
 MIT License
 ──────────────────────────────────────────────────── */
@@ -900,12 +900,11 @@ body:not(.less-heading-letter-spacing) {
 	--heading-letter-spacing: 0.2px;
 }
 
-.squareish-shapes,
-.angular-shapes {
+body:not(.round-shapes) {
 	--button-font: "Oxanium S";
 }
 
-body:not(.angular-shapes):not(.squareish-shapes) {
+.round-shapes {
 	--button-font: "Quicksand S";
 }
 
@@ -1293,7 +1292,7 @@ svg.longform {
 /* << Angular or Round Shapes
 ─────────────────────────────────────────────────── */
 
-body:not(.angular-shapes):not(.squareish-shapes) { /* stylelint-disable-line no-duplicate-selectors */
+body.round-shapes {
 	--roundish: 7px;
 	--round: 50px;
 }
@@ -1303,7 +1302,7 @@ body.angular-shapes {
 	--round: 0;
 }
 
-body.squareish-shapes {
+body:not(.angular-shapes):not(.round-shapes) {
 	--roundish: 4px;
 	--round: 7px;
 }
@@ -2103,7 +2102,7 @@ input:is([type="email"], [type="password"], [type="search"], [type="text"]) {
 	border-radius: var(--round);
 }
 
-body:not(.angular-shapes):not(.squareish-shapes) input:is([type="number"], [type="email"], [type="password"], [type="search"], [type="text"]) {
+.round-shapes input:is([type="number"], [type="email"], [type="password"], [type="search"], [type="text"]) {
 	padding-top: 3px;
 }
 
@@ -2165,7 +2164,7 @@ select.dropdown {
 	border-radius: var(--round);
 }
 
-body:not(.angular-shapes):not(.squareish-shapes) select.dropdown {
+.round-shapes select.dropdown {
 	padding-top: 4px;
 }
 
@@ -3551,7 +3550,7 @@ body .community-plugin-info .community-plugin-downloads-text {
 	font-size: 0;
 	text-align: end;
 	margin-top: 43px;
-	margin-bottom: -44px;
+	margin-bottom: -48px;
 }
 
 .community-plugin-author + .community-plugin-author a {
@@ -3569,7 +3568,7 @@ body .community-plugin-info .community-plugin-downloads-text {
 	background-color: var(--muted-button-bg);
 	box-shadow: var(--muted-button-inset-shadow);
 
-	padding: 6px 6px 7px 7px;
+	padding: 7px 7px 7px 8px;
 
 	border: var(--muted-button-border);
 	border-radius: var(--round);
@@ -3577,12 +3576,12 @@ body .community-plugin-info .community-plugin-downloads-text {
 	transition: var(--medium-transition);
 }
 
-.squareish-shapes .community-plugin-author + .community-plugin-author a::AFTER {
-	padding: 7px 7px 7px 8px;
+body:not(.squareish-shapes) .community-plugin-author + .community-plugin-author a::AFTER {
+	padding: 6px 6px 7px 7px;
 }
 
-.squareish-shapes .community-plugin-info .community-plugin-author + .community-plugin-author {
-	margin-bottom: -48px;
+body:not(.squareish-shapes) .community-plugin-info .community-plugin-author + .community-plugin-author {
+	margin-bottom: -44px;
 }
 
 .community-plugin-author + .community-plugin-author a:hover::AFTER {
@@ -3595,10 +3594,13 @@ body .community-plugin-info .community-plugin-downloads-text {
 .modal.modal.mod-community-plugin .community-plugin-info button:last-child {
 	font-size: 0;
 
-	height: 33px;
+	height: 34px;
 
 	background-color: var(--muted-button-bg);
 	box-shadow: var(--muted-button-inset-shadow);
+
+	position: relative;
+	top: 1.5px;
 
 	padding: 6px 4px 5px 3px;
 
@@ -3622,10 +3624,9 @@ body .community-plugin-info .community-plugin-downloads-text {
 	top: 6px;
 }
 
-.squareish-shapes .modal.modal.mod-community-plugin .community-plugin-info button:last-child {
-	height: 34px;
-	position: relative;
-	top: 1.5px;
+.round-shapes .modal.modal.mod-community-plugin .community-plugin-info button:last-child {
+	height: 33px;
+	top: 0;
 }
 
 .modal.mod-community-plugin .community-plugin-info button:last-child:hover::BEFORE {
@@ -8405,7 +8406,7 @@ body .kanban-plugin__item-form {
 	border-radius: calc(var(--roundish) * 1.5);
 }
 
-:is(.squareish-shapes, .angular-shapes) .kanban-plugin textarea.kanban-plugin__item-input {
+body:not(.round-shapes) .kanban-plugin textarea.kanban-plugin__item-input {
 	padding-top: 5px;
 	padding-bottom: 3px;
 }
@@ -10626,20 +10627,20 @@ settings:
 	-
 	 id: shapes
 	 title: Shapes
-	 description: Round, angular, or square-ish (🆕) shapes throughout the whole theme.
+	 description: Round, angular, or square-ish shapes throughout the whole theme.
 	 type: class-select
 	 allowEmpty: false
-	 default: round-shapes
+	 default: squareish-shapes
 	 options:
 		-
-			label: Round 🔘 (Default)
+			label: Square-ish ⏹ (Default)
+			value: squareish-shapes
+		-
+			label: Round 🔘
 			value: round-shapes
 		-
 			label: Angular 🔲
 			value: angular-shapes
-		-
-			label: Square-ish ⏹
-			value: squareish-shapes
 	-
 	 id: preset-color-scheme
 	 title: "Color Schemes"
