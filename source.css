@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 1.1056
+Version 1.1057
 Source CSS: https://github.com/chrisgrieser/shimmering-focus/blob/main/source.css
 MIT License
 ──────────────────────────────────────────────────── */
@@ -42,7 +42,7 @@ MIT License
 - Global Settings
 	- Global Filter
 	- Angular or Round Shapes
-	- Animations
+	- Animations & DImmed Pane
 - Cursor
 - UI Elements
 	- Title Bar
@@ -1341,13 +1341,13 @@ body:not(.angular-shapes):not(.round-shapes) {
 }
 
 /* ───────────────────────────────────────────────── */
-/* << Animations
+/* << Animations & DImmed Pane
 ──────────────────────────────────────────────────── */
 
 body:not(.no-animations) {
 	--quick-transition: 200ms ease-in-out;
 	--medium-transition: 350ms ease-in-out;
-	--slow-transition: 550ms ease-in-out;
+	--slow-transition: 600ms ease-in-out;
 }
 
 body.no-animations {
@@ -9940,6 +9940,20 @@ body a:is(.style-settings-export, .style-settings-import) {
 	top: -0.5em;
 }
 
+/* blinking signature */
+.style-settings-heading[data-id="shimmering-focus"] .setting-item-name::AFTER {
+	content: var(--signature);
+	font-size: 1.4rem;
+	line-height: 0.8rem;
+	padding-left: 7px;
+}
+
+body:not(.no-animations) .style-settings-heading[data-id="shimmering-focus"] .setting-item-name::AFTER {
+	animation-duration: 8s;
+	animation-name: faded-blink;
+	animation-iteration-count: infinite;
+}
+
 /* ───────────────────────────────────────────────── */
 /* <<< Style Setting – Info Boxes
 ──────────────────────────────────────────────────── */
@@ -10570,7 +10584,7 @@ community:
 
 /* @MINIFY-SPLIT-MARKER */
 /* @settings
-name: Shimmering Focus ⟡
+name: Shimmering Focus
 id: shimmering-focus
 settings:
 	-
@@ -10675,7 +10689,7 @@ settings:
 	-
 	 id: aesthetics
 	 title: 🎨 Color & Aesthetics
-	 description: Color Schemes, Brightness, Roundness, Highlight Colors, Decorations
+	 description: Color Schemes, Brightness, Roundness, 🆕 🌈 Highlight Colors, Decorations
 	 type: heading
 	 level: 1
 	 collapsed: true
