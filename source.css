@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 1.1064
+Version 1.1065
 Source CSS: https://github.com/chrisgrieser/shimmering-focus/blob/main/source.css
 MIT License
 ──────────────────────────────────────────────────── */
@@ -8410,6 +8410,8 @@ body .kanban-plugin__lane-wrapper {
 
 .kanban-plugin .kanban-plugin__lane-header-wrapper .kanban-plugin__lane-settings-button {
 	margin-right: 2px;
+	margin-left: 2px;
+	transform: scale(1.2);
 }
 
 body .kanban-plugin__lane-header-wrapper {
@@ -8539,38 +8541,32 @@ body .kanban-plugin .kanban-plugin__markdown-preview-view hr {
 /* ───────────────────────────────────────────────── */
 /* <<< Kanban: Item Counter
 ──────────────────────────────────────────────────── */
-.kanban-plugin__lane::BEFORE {
-	content: attr(data-count);
+.kanban-plugin__lane-title {
+	display: flex;
+}
+
+.kanban-plugin__lane-title-text {
+	display: inline-flex;
+	flex-grow: 1;
+}
+
+/* Kanban Item Counter */
+div.kanban-plugin__lane-title-count {
+	display: inline-flex;
 
 	font-family: var(--number-font);
-	font-size: 0.9em;
-	line-height: 1.3em;
+	font-size: 1em;
+	line-height: 1.4em;
 
 	background-color: var(--bg3);
 	box-shadow: var(--small-inset-shadow);
 
-	position: absolute;
-
-	padding: 0 3px 1px;
-	margin-top: 5px;
-	margin-left: 1.4em;
+	padding: 0 4px 1px;
+	margin-bottom: -2px;
 
 	border: var(--thin-border);
 	border-radius: var(--roundish);
 }
-
-.kanban-plugin__lane-title {
-	margin-left: 1.8em;
-}
-
-/* alternative approach */
-/* .kanban-plugin__lane-title-count.kanban-plugin__lane-title-count {
-	display: inline;
-}
-
-.kanban-plugin__lane-title {
-	display: flex;
-} */
 
 /* ───────────────────────────────────────────────── */
 /* << Longform
