@@ -2,7 +2,9 @@
 nav_order: 200
 ---
 
-# About the Creator
+# Credits
+
+## About the Creator
 In my day job, I am a sociologist studying the social mechanisms underlying the digital economy. For my PhD project, I investigate the governance of the app economy and how software ecosystems manage the tension between innovation and compatibility. If you are interested in this subject, feel free to get in touch!
 
 ## Profiles
@@ -15,3 +17,8 @@ In my day job, I am a sociologist studying the social mechanisms underlying the 
 
 ## Other themes
 I also designed some [themes for Alfred](https://github.com/chrisgrieser/alfred-themes) you can check out!
+
+## Thanks & Credits
+- With Snippets from: [@SlRvb](https://github.com/SlRvb), [@Atlas](https://github.com/zcysxy), [@CecilaMay](https://github.com/ceciliamay), [@DamianKorcz](https://github.com/damiankorcz), [@Mara-Li](https://github.com/Mara-Li), [@kepano](https://github.com/kepano), [@jdanielmourao](https://github.com/jdanielmourao), [@MelvinTing](https://github.com/tingmelvin/)
+- Many thanks for helping me out in learning CSS in the beginning: [@SlRvb](https://github.com/SlRvb), [@javalent](https://github.com/valentine195), and [@NothingIsLost](https://github.com/nothingislost)
+- [Dracula Syntax Highlighting](https://draculatheme.com/)
