@@ -3,7 +3,7 @@ nav_order: 110
 ---
 
 # Changelog
-- 2022-04-04	patch
+- 2022-04-04	accent blue
 - 2022-04-04	fix syntax highlighting
 - 2022-04-04	fix for syntax highlighting
 - 2022-04-04	improved syntax highlighting

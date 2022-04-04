@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 1.1049
+Version 1.1050
 Source CSS: https://github.com/chrisgrieser/shimmering-focus/blob/main/source.css
 MIT License
 ──────────────────────────────────────────────────── */
@@ -15,9 +15,10 @@ MIT License
 - Colors
 	- Text Colors & Grays
 	- Color Schemes
-		- Default Color Schemes
-		- Preset Custom Colors
-	- Accent Colors
+		- Accent Color Settings
+		- Default Color Scheme
+		- Preset Color Schemes
+	- Accent Color Definitions
 		- Primary Accent
 		- Hover Accent
 		- Secondary Accent (references, tags, code)
@@ -283,6 +284,16 @@ TODO
 - Add Accents Colors to Nord
 - Bauhaus Color Scheme
 
+/*
+	value: primary-accent-dark-purple
+	value: primary-accent-dark-orange
+	value: primary-accent-dark-green
+	value: primary-accent-dark-yellow
+	value: primary-accent-light-purple
+	value: primary-accent-light-orange
+	value: primary-accent-light-green
+*/
+
 /* hide accent color settings while still in Work-in-Progress */
 .style-settings-container .setting-item[data-id*="-accent-"] {
 	display: none;
@@ -291,12 +302,25 @@ TODO
 /* ───────────────────────────────────────────────── */
 
 /* ───────────────────────────────────────────────── */
-/* <<< Default Color Schemes
+/* <<< Accent Color Settings
+──────────────────────────────────────────────────── */
+.theme-light.primary-accent-light-blue,
+.theme-dark.primary-accent-dark-blue {
+	--primary-accent-0: hsl(212 54% 20% / 99%);
+	--primary-accent-1: hsl(210 50% 39%);
+	--primary-accent-2: hsl(210 75% 54%);
+	--primary-accent-3: hsl(210 90% 71%);
+	--primary-accent-4: hsl(210 90% 78%);
+	--primary-accent-5: hsl(209 100% 90% / 99%);
+}
+
+/* ───────────────────────────────────────────────── */
+/* <<< Default Color Scheme
 ──────────────────────────────────────────────────── */
 
 :root {
 	/* -0 and -5 have to use 99% for proper selection colors */
-	--primary-accent-0: hsl(250 20% 20% / 99%);
+	--primary-accent-0: hsl(250 30% 20% / 99%);
 	--primary-accent-1: hsl(250 50% 49%);
 	--primary-accent-2: hsl(250 75% 64%);
 	--primary-accent-3: hsl(250 90% 76%);
@@ -328,7 +352,7 @@ TODO
 }
 
 /* ───────────────────────────────────────────────── */
-/* <<< Preset Custom Colors
+/* <<< Preset Color Schemes
 ──────────────────────────────────────────────────── */
 
 /* Nord Theme */
@@ -342,7 +366,7 @@ TODO
 }
 
 /* ───────────────────────────────────────────────── */
-/* << Accent Colors
+/* << Accent Color Definitions
 ──────────────────────────────────────────────────── */
 
 /* <<< Primary Accent */
@@ -351,7 +375,7 @@ TODO
 
 	--scrollbar-bg-active: var(--primary-accent-4);
 	--interactive-bg: var(--primary-accent-3);
-	--active-line-indicator: var(--primary-accent-3);
+	--active-line-indicator: var(--primary-accent-2);
 
 	--finished-task: var(--primary-accent-3);
 }
@@ -9734,12 +9758,12 @@ body .qsp-symbol-indicator {
 
 .suggestion-item.is-selected :is(.another-quick-switcher__item__icon, .another-quick-switcher__item__directory) {
 	color: var(--primary-accent-2);
-	opacity: 0.6;
+	opacity: 0.8;
 }
 
 .suggestion-item:hover :is(.another-quick-switcher__item__icon, .another-quick-switcher__item__directory) {
 	color: var(--text-hover-accent);
-	opacity: 0.6;
+	opacity: 0.8;
 }
 
 /* unresolved items */
@@ -10693,8 +10717,17 @@ settings:
 	 default: primary-accent-light-purple
 	 options:
 		-
-			label: Obsidian Original Purple (Default)
+			label: Obsidian Purple (Default)
 			value: primary-accent-light-purple
+		-
+			label: Soft Blue
+			value: primary-accent-light-blue
+		-
+			label: Fire Red-Orange
+			value: primary-accent-light-orange
+		-
+			label: Green Glow
+			value: primary-accent-light-green
 	-
 	 id: secondary-accent-light
 	 title: "Secondary Accent (Light Mode)"
@@ -10773,8 +10806,20 @@ settings:
 	 default: primary-accent-dark-purple
 	 options:
 		-
-			label: Obsidian Original Purple (Default)
+			label: Obsidian Purple (Default)
 			value: primary-accent-dark-purple
+		-
+			label: Soft Blue
+			value: primary-accent-dark-blue
+		-
+			label: Fire Red-Orange
+			value: primary-accent-dark-orange
+		-
+			label: Green Glow
+			value: primary-accent-dark-green
+		-
+			label: Shining Yellow
+			value: primary-accent-dark-yellow
 	-
 	 id: secondary-accent-dark
 	 title: "Secondary Accent (Dark Mode)"
