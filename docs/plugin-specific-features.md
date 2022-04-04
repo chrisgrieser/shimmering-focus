@@ -23,7 +23,7 @@ In accordance with the minimalistic philosophy of the theme, unnecessary UI elem
 
 - __Longform__: Prepend a `_` to file names of longform scenes to create sub-scenes.
 - __Kanban__: Right-click cards to edit them.
-- __Supercharged Links__: The theme includes [various built-in styling](#built-in-styling-for-supercharged-links). You can turn those of with the Style Settings plugin.
+- __Supercharged Links__: The theme includes [various built-in styling](#built-in-styling-for-supercharged-links). You can turn those off with the Style Settings plugin.
 - __Breadcrumbs__: Even with buttons removed, you can still refresh the index via Command Palette.
 - __Quick Explorer__: Re-enable the title bar with the [Style Settings Plugin](https://obsidian.md/plugins?id=obsidian-style-settings) for the breadcrumbs
 - __Dataview__: Check out the [dataview-specific CSS classes](/shimmering-focus/css-classes#dataview).
@@ -44,6 +44,7 @@ This theme includes built-in styling for the [Supercharged Links Plugin](https:/
 - Notes with `#templater` get `*️⃣` prepended
 - Notes with `#autocompletion` get `🅰️` prepended
 - Notes with `#dataview` get `🔢` prepended
+- Notes with `#obsidian` get `🟪` prepended
 - Notes with the [cssclass `writing`](/shimmering-focus/css-classes) get `✍️` prepended
 - *Index files* of the [Longform Plugin](https://obsidian.md/plugins?id=longform) with the [cssclass `writing`](/shimmering-focus/css-classes) get `⚙️` prepended
 - Links to *Literature Notes* get a tooltip with the content of the `title` yaml key when hovering and get `📖` prepended. (Actually, this applies to any note with a `title` yaml frontmatter key.)
@@ -57,5 +58,5 @@ This theme includes built-in styling for the [Supercharged Links Plugin](https:/
 - Paste the following text into the field `Target Attributes for styling`:
 
 ```text
-kanban-plugin, title, cssclass
+kanban-plugin, title, cssclass, version, drafts
 ```
