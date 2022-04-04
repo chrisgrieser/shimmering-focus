@@ -3,6 +3,7 @@ nav_order: 110
 ---
 
 # Changelog
+- 2022-04-04	new: Kanban Item Counter
 - 2022-04-04	kanban
 - 2022-04-04	fixes for dropdowns
 - 2022-04-04	style setting signature animation

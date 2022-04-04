@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 1.1060
+Version 1.1061
 Source CSS: https://github.com/chrisgrieser/shimmering-focus/blob/main/source.css
 MIT License
 ──────────────────────────────────────────────────── */
@@ -187,9 +187,10 @@ MIT License
 	- Templater
 	- Kanban
 		- Kanban: Board
-		- Kanban Font 
+		- Kanban: Font
 		- Kanban: Lanes
 		- Kanban: Misc
+		- Kanban Item Counter
 	- Longform
 		- Longform Sidebar
 		- Longform Scene List
@@ -8197,7 +8198,9 @@ https://forum.obsidian.md/t/inline-code-occludes-text-selection-and-vim-cursor/1
 }
 /* stylelint-enable no-duplicate-selectors */
 
-/* <<< Kanban: Board */
+/* ───────────────────────────────────────────────── */
+/* <<< Kanban: Board
+──────────────────────────────────────────────────── */
 .kanban-plugin__board button {
 	color: unset;
 	background: unset !important;
@@ -8258,7 +8261,9 @@ body:not(.show-header-bar) .kanban-plugin__board > div {
 	margin-top: 0;
 }
 
-/* <<< Kanban Font  */
+/* ───────────────────────────────────────────────── */
+/* <<< Kanban: Font
+──────────────────────────────────────────────────── */
 body :is(.kanban-plugin__drag-container,.kanban-plugin) p {
 	font-size: 0.95em;
 	line-height: 1.4em;
@@ -8426,7 +8431,9 @@ body:not(.is-mobile) .kanban-plugin__item-postfix-button-wrapper {
 	display: none;
 }
 
-/* <<< Kanban: Misc */
+/* ───────────────────────────────────────────────── */
+/* <<< Kanban: Misc
+──────────────────────────────────────────────────── */
 
 /* "add a card" field */
 body .kanban-plugin__item-button-wrapper {
@@ -8523,6 +8530,31 @@ body .kanban-plugin .kanban-plugin__markdown-preview-view hr {
 
 .kanban-plugin .image-embed[alt]::AFTER {
 	display: none;
+}
+
+/* ───────────────────────────────────────────────── */
+/* <<< Kanban Item Counter
+──────────────────────────────────────────────────── */
+.kanban-plugin__lane::BEFORE {
+	content: attr(data-count);
+
+	font-size: 0.9em;
+	line-height: 1.3em;
+
+	background-color: var(--background-secondary-alt);
+
+	position: absolute;
+
+	padding: 0 3px;
+	margin-top: 4px;
+	margin-left: 1.4em;
+
+	border: 1px solid var(--text-muted);
+	border-radius: 3px;
+}
+
+.kanban-plugin__lane-title {
+	margin-left: 1.8em;
 }
 
 /* ───────────────────────────────────────────────── */
