@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 1.1052
+Version 1.1053
 Source CSS: https://github.com/chrisgrieser/shimmering-focus/blob/main/source.css
 MIT License
 ──────────────────────────────────────────────────── */
@@ -129,7 +129,7 @@ MIT License
 	- Code
 		- Inline Code
 		- Code Blocks
-	- Syntax Highlighting
+		- Syntax Highlighting
 	- Lists
 	- Links
 		- Unresolved links
@@ -283,6 +283,7 @@ TODO
 - Accent Color Settings
 - Add Accents Colors to Nord
 - Bauhaus Color Scheme
+- 🤔 use hue shift for unresolved links https://developer.mozilla.org/en-US/docs/Web/CSS/filter-function/hue-rotate
 
 /*
 	value: primary-accent-dark-purple
@@ -668,7 +669,6 @@ body:is(.theme-light, .theme-dark) {
 	--scrollbar-thickness: 8px;
 	--image-size: 50;
 	--pdf-size: 50;
-	--popover-size: 350;
 	--readable-length: 700px;
 	--modal-base-size: 70;
 	--underline-offset: 1.5px;
@@ -4461,7 +4461,21 @@ body:not(.minimal-line-numbering):not(.no-active-highlight) .cm-lineNumbers .cm-
 /* ───────────────────────────────────────────────── */
 /* << Progress bars (<progress>)
 ──────────────────────────────────────────────────── */
+/* https://coolors.co/gradient-palette/03045e-6cf9ca?number=10 */
+
 progress {
+	--progress-1: hsl(160 92% 70%);
+	--progress-2: hsl(165 66% 62%);
+	--progress-3: hsl(171 48% 55%);
+	--progress-4: hsl(179 39% 47%);
+	--progress-5: hsl(189 43% 42%);
+	--progress-6: hsl(199 48% 38%);
+	--progress-7: hsl(209 55% 33%);
+	--progress-8: hsl(219 64% 28%);
+	--progress-9: hsl(229 75% 24%);
+	--progress-10: hsl(239 94% 19%);
+	--progress-11: hsl(249 100% 14%);
+
 	height: 0.65em;
 	background: none;
 	margin-bottom: 4px;
@@ -4470,37 +4484,35 @@ progress {
 progress::-WEBKIT-PROGRESS-BAR {
 	background: var(--bg3);
 	border: var(--thin-border);
-	border-radius: calc(var(--roundish) * 3);
 }
 
+progress::-WEBKIT-PROGRESS-BAR,
 progress::-WEBKIT-PROGRESS-VALUE {
 	border-radius: calc(var(--roundish) * 3);
 }
 
-/* https://coolors.co/gradient-palette/03045e-6cf9ca?number=10 */
+progress[value^="1"][max="10"]::-WEBKIT-PROGRESS-VALUE { background: var(--progress-1) }
+progress[value="9"][max="10"]::-WEBKIT-PROGRESS-VALUE { background: var(--progress-2) }
+progress[value="8"][max="10"]::-WEBKIT-PROGRESS-VALUE { background: var(--progress-3) }
+progress[value="7"][max="10"]::-WEBKIT-PROGRESS-VALUE { background: var(--progress-4) }
+progress[value="6"][max="10"]::-WEBKIT-PROGRESS-VALUE { background: var(--progress-5) }
+progress[value="5"][max="10"]::-WEBKIT-PROGRESS-VALUE { background: var(--progress-6) }
+progress[value="4"][max="10"]::-WEBKIT-PROGRESS-VALUE { background: var(--progress-7) }
+progress[value="3"][max="10"]::-WEBKIT-PROGRESS-VALUE { background: var(--progress-8) }
+progress[value="2"][max="10"]::-WEBKIT-PROGRESS-VALUE { background: var(--progress-9) }
+progress[value="1"][max="10"]::-WEBKIT-PROGRESS-VALUE { background: var(--progress-10) }
 
-progress[value^="1"][max="10"]::-WEBKIT-PROGRESS-VALUE { background: hsl(160 92% 70%) }
-progress[value="9"][max="10"]::-WEBKIT-PROGRESS-VALUE { background: hsl(165 66% 62%) }
-progress[value="8"][max="10"]::-WEBKIT-PROGRESS-VALUE { background: hsl(171 48% 55%) }
-progress[value="7"][max="10"]::-WEBKIT-PROGRESS-VALUE { background: hsl(179 39% 47%) }
-progress[value="6"][max="10"]::-WEBKIT-PROGRESS-VALUE { background: hsl(189 43% 42%) }
-progress[value="5"][max="10"]::-WEBKIT-PROGRESS-VALUE { background: hsl(199 48% 38%) }
-progress[value="4"][max="10"]::-WEBKIT-PROGRESS-VALUE { background: hsl(209 55% 33%) }
-progress[value="3"][max="10"]::-WEBKIT-PROGRESS-VALUE { background: hsl(219 64% 28%) }
-progress[value="2"][max="10"]::-WEBKIT-PROGRESS-VALUE { background: hsl(229 75% 24%) }
-progress[value="1"][max="10"]::-WEBKIT-PROGRESS-VALUE { background: hsl(239 94% 19%) }
-
-progress[value^="1"][max="100"]::-WEBKIT-PROGRESS-VALUE { background: hsl(160 92% 70%) }
-progress[value^="9"][max="100"]::-WEBKIT-PROGRESS-VALUE { background: hsl(165 66% 62%) }
-progress[value^="8"][max="100"]::-WEBKIT-PROGRESS-VALUE { background: hsl(171 48% 55%) }
-progress[value^="7"][max="100"]::-WEBKIT-PROGRESS-VALUE { background: hsl(179 39% 47%) }
-progress[value^="6"][max="100"]::-WEBKIT-PROGRESS-VALUE { background: hsl(189 43% 42%) }
-progress[value^="5"][max="100"]::-WEBKIT-PROGRESS-VALUE { background: hsl(199 48% 38%) }
-progress[value^="4"][max="100"]::-WEBKIT-PROGRESS-VALUE { background: hsl(209 55% 33%) }
-progress[value^="3"][max="100"]::-WEBKIT-PROGRESS-VALUE { background: hsl(219 64% 28%) }
-progress[value^="2"][max="100"]::-WEBKIT-PROGRESS-VALUE { background: hsl(229 75% 24%) }
-progress[max="100"]:is([value="10"],[value="11"],[value="12"],[value="13"],[value="14"],[value="15"],[value="16"],[value="17"],[value="18"],[value="18"])::-WEBKIT-PROGRESS-VALUE { background: hsl(239 94% 19%) }
-progress[max="100"]:is([value="1"],[value="2"],[value="3"],[value="4"],[value="5"],[value="6"],[value="7"],[value="8"],[value="9"])::-WEBKIT-PROGRESS-VALUE { background: hsl(249 100% 14%) }
+progress[value^="1"][max="100"]::-WEBKIT-PROGRESS-VALUE { background: var(--progress-1) }
+progress[value^="9"][max="100"]::-WEBKIT-PROGRESS-VALUE { background: var(--progress-2) }
+progress[value^="8"][max="100"]::-WEBKIT-PROGRESS-VALUE { background: var(--progress-3) }
+progress[value^="7"][max="100"]::-WEBKIT-PROGRESS-VALUE { background: var(--progress-4) }
+progress[value^="6"][max="100"]::-WEBKIT-PROGRESS-VALUE { background: var(--progress-5) }
+progress[value^="5"][max="100"]::-WEBKIT-PROGRESS-VALUE { background: var(--progress-6) }
+progress[value^="4"][max="100"]::-WEBKIT-PROGRESS-VALUE { background: var(--progress-7) }
+progress[value^="3"][max="100"]::-WEBKIT-PROGRESS-VALUE { background: var(--progress-8) }
+progress[value^="2"][max="100"]::-WEBKIT-PROGRESS-VALUE { background: var(--progress-9) }
+progress[max="100"]:is([value="10"],[value="11"],[value="12"],[value="13"],[value="14"],[value="15"],[value="16"],[value="17"],[value="18"],[value="18"])::-WEBKIT-PROGRESS-VALUE { background: var(--progress-10) }
+progress[max="100"]:is([value="1"],[value="2"],[value="3"],[value="4"],[value="5"],[value="6"],[value="7"],[value="8"],[value="9"])::-WEBKIT-PROGRESS-VALUE { background: var(--progress-11) }
 
 /* ───────────────────────────────────────────────── */
 /* << Images
@@ -5515,42 +5527,42 @@ pre[class*="language-"]::AFTER {
 	bottom: 0;
 }
 
-pre[class$="c" i]::AFTER { content: "C"; }
-pre[class$="python" i]::AFTER { content: "Python"; }
-pre[class$="py" i]::AFTER { content: "Python"; }
-pre[class$="nginx" i]::AFTER { content: "Nginx"; }
-pre[class$="css" i]::AFTER { content: "CSS"; }
-pre[class$="node" i]::AFTER { content: "Node"; }
-pre[class$="react" i]::AFTER { content: "React"; }
-pre[class$="javascript" i]::AFTER { content: "JavaScript"; }
-pre[class$="js" i]::AFTER { content: "JavaScript"; }
-pre[class$="typescript" i]::AFTER { content: "TypeScript"; }
-pre[class$="ts" i]::AFTER { content: "TypeScript"; }
-pre[class$="php" i]::AFTER { content: "PHP"; }
-pre[class$="shell" i]::AFTER { content: "Shell"; }
-pre[class$="bash" i]::AFTER { content: "Bash"; }
-pre[class$="zsh" i]::AFTER { content: "zsh"; }
-pre[class$="flow" i]::AFTER { content: "Flow"; }
-pre[class$="sequence" i]::AFTER { content: "Sequence"; }
-pre[class$="sql" i]::AFTER { content: "SQL"; }
-pre[class$="yaml" i]::AFTER { content: "YAML"; }
-pre[class$="ini" i]::AFTER { content: "INI"; }
-pre[class$="xml" i]::AFTER { content: "XML"; }
-pre[class$="git" i]::AFTER { content: "GIT"; }
-pre[class$="cs" i]::AFTER { content: "C#"; }
-pre[class$="cpp" i]::AFTER { content: "C++"; }
-pre[class$="java" i]::AFTER { content: "JAVA"; }
-pre[class$="html" i]::AFTER { content: "HTML"; }
-pre[class$="txt" i]::AFTER { content: "text"; }
-pre[class$="text" i]::AFTER { content: "text"; }
-pre[class$="url" i]::AFTER { content: "URL"; }
-pre[class$="uri" i]::AFTER { content: "URI"; }
-pre[class$="applescript" i]::AFTER { content: "AppleScript"; }
-pre[class$="markdown" i]::AFTER { content: "Markdown"; }
-pre[class$="md" i]::AFTER { content: "Markdown"; }
-pre[class$="regex" i]::AFTER { content: "Regex"; }
-pre[class$="lua" i]::AFTER { content: "Lua"; }
-pre[class$="haskell" i]::AFTER { content: "Haskell"; }
+pre.language-c::AFTER { content: "C" }
+pre.language-python::AFTER { content: "Python" }
+pre.language-py::AFTER { content: "Python" }
+pre.language-nginx::AFTER { content: "Nginx" }
+pre.language-css::AFTER { content: "CSS" }
+pre.language-node::AFTER { content: "Node" }
+pre.language-react::AFTER { content: "React" }
+pre.language-javascript::AFTER { content: "JavaScript" }
+pre.language-js::AFTER { content: "JavaScript" }
+pre.language-typescript::AFTER { content: "TypeScript" }
+pre.language-ts::AFTER { content: "TypeScript" }
+pre.language-php::AFTER { content: "PHP" }
+pre.language-shell::AFTER { content: "Shell" }
+pre.language-bash::AFTER { content: "Bash" }
+pre.language-zsh::AFTER { content: "zsh" }
+pre.language-flow::AFTER { content: "Flow" }
+pre.language-sequence::AFTER { content: "Sequence" }
+pre.language-sql::AFTER { content: "SQL" }
+pre.language-yaml::AFTER { content: "YAML" }
+pre.language-ini::AFTER { content: "INI" }
+pre.language-xml::AFTER { content: "XML" }
+pre.language-git::AFTER { content: "GIT" }
+pre.language-cs::AFTER { content: "C#" }
+pre.language-cpp::AFTER { content: "C++" }
+pre.language-java::AFTER { content: "JAVA" }
+pre.language-html::AFTER { content: "HTML" }
+pre.language-txt::AFTER { content: "text" }
+pre.language-text::AFTER { content: "text" }
+pre.language-url::AFTER { content: "URL" }
+pre.language-uri::AFTER { content: "URI" }
+pre.language-applescript::AFTER { content: "AppleScript" }
+pre.language-markdown::AFTER { content: "Markdown" }
+pre.language-md::AFTER { content: "Markdown" }
+pre.language-regex::AFTER { content: "Regex" }
+pre.language-lua::AFTER { content: "Lua" }
+pre.language-haskell::AFTER { content: "Haskell" }
 
 /* fix for the buggy selection of inline text */
 /* https://forum.obsidian.md/t/inline-code-occludes-text-selection-and-vim-cursor/11552/10 */
@@ -5563,7 +5575,7 @@ pre[class$="haskell" i]::AFTER { content: "Haskell"; }
 }
 
 /* ───────────────────────────────────────────────── */
-/* << Syntax Highlighting
+/* <<< Syntax Highlighting
 ──────────────────────────────────────────────────── */
 
 /* Dracula */
