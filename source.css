@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 1.1061
+Version 1.1062
 Source CSS: https://github.com/chrisgrieser/shimmering-focus/blob/main/source.css
 MIT License
 ──────────────────────────────────────────────────── */
@@ -8538,18 +8538,19 @@ body .kanban-plugin .kanban-plugin__markdown-preview-view hr {
 .kanban-plugin__lane::BEFORE {
 	content: attr(data-count);
 
+	font-family: var(--number-font);
 	font-size: 0.9em;
 	line-height: 1.3em;
 
-	background-color: var(--background-secondary-alt);
+	background-color: var(--bg3);
 
 	position: absolute;
 
-	padding: 0 3px;
+	padding: 0 3px 1px;
 	margin-top: 4px;
 	margin-left: 1.4em;
 
-	border: 1px solid var(--text-muted);
+	border: var(--thin-border);
 	border-radius: 3px;
 }
 
