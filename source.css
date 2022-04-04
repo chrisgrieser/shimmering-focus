@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 1.1054
+Version 1.1055
 Source CSS: https://github.com/chrisgrieser/shimmering-focus/blob/main/source.css
 MIT License
 ──────────────────────────────────────────────────── */
@@ -283,7 +283,6 @@ TODO
 - Accent Color Settings
 - Add Accents Colors to Nord
 - Bauhaus Color Scheme
-- 🤔 use hue shift for unresolved links https://developer.mozilla.org/en-US/docs/Web/CSS/filter-function/hue-rotate
 
 /*
 	value: primary-accent-dark-purple
@@ -692,8 +691,7 @@ body:is(.theme-light, .theme-dark) {
 
 /* <<< Other Accents */
 :root {
-	--unresolved-link-color: hsl(211 100% 52% / 90%);
-
+	--unresolved-hue-rotate: -40deg;
 	--highlight-color: hsl(60 100% 50% / 40%);
 	--highlight-alt1: hsl(152 100% 50% / 40%);
 	--highlight-alt2: hsl(180 100% 50% / 40%);
@@ -4252,31 +4250,13 @@ body:not(.no-active-highlight) .cm-active :is(.cm-formatting-header,.cm-formatti
 	color: var(--text-muted);
 }
 
-/* harmonize with styling of Horizontal Lines (HR) */
-.cm-def.cm-hmd-frontmatter.cm-hmd-frontmatter {
+body:not(.colored-yaml) .cm-def.cm-hmd-frontmatter {
 	letter-spacing: 0.1em;
 	color: var(--text-muted);
 }
 
 .cm-atom.cm-hmd-frontmatter {
 	font-weight: 700;
-}
-
-/* colored YAML */
-.colored-yaml .cm-hmd-frontmatter.cm-hmd-frontmatter.cm-atom {
-	color: var(--primary-accent-2);
-}
-
-.colored-yaml .cm-hmd-frontmatter.cm-hmd-frontmatter {
-	color: var(--hover-accent-2);
-}
-
-.colored-yaml .cm-hmd-frontmatter.cm-hmd-frontmatter.cm-number {
-	color: var(--unresolved-link-color);
-}
-
-.colored-yaml .cm-hmd-frontmatter.cm-hmd-frontmatter.cm-string {
-	color: hsl(54 69% 40%);
 }
 
 /* <<< Metadata Block */
@@ -5781,17 +5761,16 @@ u {
 .is-unresolved.is-unresolved.is-unresolved {
 	color: var(--primary-accent-2);
 	opacity: 1;
-	filter: hue-rotate(-40deg);
+	filter: hue-rotate(var(--unresolved-hue-rotate));
 }
 
 /* unresolved gutter icon */
 body:not(.no-unresolved-link-indicator) .markdown-preview-view:not(.kanban-plugin__item-markdown) .is-unresolved:not(.BC-Link)::BEFORE,
 body:not(.no-unresolved-link-indicator) .cm-editor .is-unresolved::BEFORE {
 	content: "✖︎";
-	color: var(--unresolved-link-color);
 	background-color: var(--bg1);
 	position: absolute;
-	left: 18px;
+	left: -25px;
 }
 
 /* <<< Fold external URLs (CM6 Source Mode) */
@@ -7598,19 +7577,19 @@ body:not(.show-graph-controls) .graph-controls.is-close:not(:hover) {
 
 /* <<< Graph itself */
 /* node of current node (local graph) */
-.graph-view.color-fill-focused {
+.graph-view:is(.color-fill-unresolved, .color-fill-focused) {
 	color: var(--primary-accent-2);
 	opacity: 0.8;
+}
+
+/* unresolved, getting same color as unresolved links */
+.graph-view.color-fill-unresolved {
+	filter: hue-rotate(var(--unresolved-hue-rotate));
 }
 
 /* border around circle */
 .graph-view.color-circle {
 	opacity: 0;
-}
-
-/* unresolved, getting same color as unresolved links */
-.graph-view.color-fill-unresolved {
-	color: var(--unresolved-link-color);
 }
 
 /* hovered */
@@ -8626,9 +8605,9 @@ body .kanban-plugin .kanban-plugin__markdown-preview-view hr {
 
 input:is(#new-draft, #new-scene) {
 	height: 20px;
-	color: var(--unresolved-link-color);
 	box-shadow: none;
 	border-radius: 0;
+	filter: hue-rotate(var(--unresolved-hue-rotate));
 }
 
 .new-draft-container select {
@@ -9783,32 +9762,32 @@ body .qsp-symbol-indicator {
 	padding-left: 5px;
 }
 
-.suggestion-item.is-selected :is(.another-quick-switcher__item__icon, .another-quick-switcher__item__directory) {
+.suggestion-item.is-selected :is(.another-quick-switcher__item__icon, .another-quick-switcher__item__directory, .another-quick-switcher__item__description) {
 	color: var(--primary-accent-2);
-	opacity: 0.8;
+	filter: saturate(50%);
 }
 
-.suggestion-item:hover :is(.another-quick-switcher__item__icon, .another-quick-switcher__item__directory) {
+.suggestion-item:hover :is(.another-quick-switcher__item__icon, .another-quick-switcher__item__directory, .another-quick-switcher__item__description) {
 	color: var(--text-hover-accent);
-	opacity: 0.8;
+	filter: saturate(50%);
 }
 
 /* unresolved items */
-.another-quick-switcher__phantom_item.another-quick-switcher__phantom_item :is(.another-quick-switcher__item__entry, .another-quick-switcher__item__icon, .another-quick-switcher__item__directory),
 .another-quick-switcher__phantom_item.another-quick-switcher__phantom_item {
-	color: var(--unresolved-link-color);
+	color: var(--primary-accent-2);
+	filter: hue-rotate(var(--unresolved-hue-rotate));
 }
 
 .another-quick-switcher__phantom_item :is(.another-quick-switcher__item__icon, .another-quick-switcher__item__directory),
 .suggestion-item:hover .another-quick-switcher__phantom_item {
-	opacity: 0.75;
+	filter: saturate(50%);
 }
 
 /* hovered */
 .suggestion-item:hover .another-quick-switcher__phantom_item :is(.another-quick-switcher__item__icon, .another-quick-switcher__item__directory),
 .suggestion-item:hover .another-quick-switcher__phantom_item {
 	color: var(--text-hover-accent);
-	opacity: 0.6;
+	filter: saturate(60%) hue-rotate(0);
 }
 
 /* ───────────────────────────────────────────────── */

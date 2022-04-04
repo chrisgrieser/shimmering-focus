@@ -3,6 +3,7 @@ nav_order: 110
 ---
 
 # Changelog
+- 2022-04-04	coupled unresolved color to primary accent
 - 2022-04-04	fix finished task color
 - 2022-04-04	refacgtored progress and langauges
 - 2022-04-04	add orange accent (dev branch)
