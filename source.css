@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 1.1058
+Version 1.1059
 Source CSS: https://github.com/chrisgrieser/shimmering-focus/blob/main/source.css
 MIT License
 ──────────────────────────────────────────────────── */
@@ -302,7 +302,7 @@ TODO
 .theme-light.primary-accent-light-blue,
 .theme-dark.primary-accent-dark-blue {
 	--primary-accent-0: hsl(212 54% 20% / 99%);
-	--primary-accent-1: hsl(210 50% 39%);
+	--primary-accent-1: hsl(210 50% 44%);
 	--primary-accent-2: hsl(210 75% 54%);
 	--primary-accent-3: hsl(210 90% 71%);
 	--primary-accent-4: hsl(210 90% 78%);
@@ -2191,29 +2191,39 @@ body :is(textarea, input[type]):hover {
 ──────────────────────────────────────────────────── */
 
 select.dropdown {
+	/* replace arrows, so they aren't in the purple accent color, 🏴‍☠️ @Damian */
+	background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='10' height='10' fill='rgb(128, 128, 128)'><polygon points='0,0 10,0 5,5'/></svg>");
 	box-shadow: var(--small-reverted-inset-shadow);
+
 	padding: 6px 28px 6px 10px;
+
 	border: var(--thin-border);
-	border-radius: var(--round);
+	border-radius: calc(var(--roundish) * 1.5);
+
+	background-position: right 0.7em top 60%, 0 0;
+	background-size: 0.65em auto, 100%;
 }
 
 .round-shapes select.dropdown {
 	padding-top: 4px;
 }
 
-.theme-dark select.dropdown,
-.theme-dark .modal select.dropdown {
+.theme-dark select.dropdown.dropdown:is(:hover, :focus),
+.theme-light select.dropdown.dropdown {
+	background-color: var(--bg2);
+}
+
+.theme-light select.dropdown.dropdown:is(:hover, :focus),
+.theme-dark select.dropdown.dropdown {
 	background-color: var(--bg3);
 }
 
-.theme-light select.dropdown,
-.theme-light .modal select.dropdown {
-	background-color: var(--bg2);
+select.dropdown.dropdown:hover {
+	border-color: var(--interactive-hover-border-color);
 }
 
-select.dropdown:hover {
-	background-color: var(--bg2);
-	border-color: var(--interactive-hover-border-color) !important;
+select.dropdown.dropdown:focus {
+	border-color: var(--interactive-border-color);
 }
 
 /* ───────────────────────────────────────────────── */
