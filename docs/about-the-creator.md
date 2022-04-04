@@ -22,7 +22,8 @@ In my day job, I am a sociologist studying the social mechanisms underlying the 
 I also designed some [themes for Alfred](https://github.com/chrisgrieser/alfred-themes) you can check out!
 
 ## Thanks & Credits
-- With Snippets from: [@SlRvb](https://github.com/SlRvb), [@Atlas](https://github.com/zcysxy), [@CecilaMay](https://github.com/ceciliamay), [@DamianKorcz](https://github.com/damiankorcz), [@Mara-Li](https://github.com/Mara-Li), [@kepano](https://github.com/kepano), [@jdanielmourao](https://github.com/jdanielmourao), [@MelvinTing](https://github.com/tingmelvin/), and [@Chetachie](https://github.com/chetachiezikeuzor).
+- With Snippets from: [@SlRvb](https://github.com/SlRvb), [@Atlas](https://github.com/zcysxy), [@CecilaMay](https://github.com/ceciliamay), [@DamianKorcz](https://github.com/damiankorcz), [@Mara-Li](https://github.com/Mara-Li), [@kepano](https://github.com/kepano), [@jdanielmourao](https://github.com/jdanielmourao), [@xRyul](https://github.com/xRyul/), [@deathau](https://github.com/deathau/), [@MelvinTing](https://github.com/tingmelvin/), and [@Chetachie](https://github.com/chetachiezikeuzor).
 - Many thanks for helping me out in learning CSS in the beginning: [@SlRvb](https://github.com/SlRvb), [@javalent](https://github.com/valentine195), and [@NothingIsLost](https://github.com/nothingislost).
 - A lot of the theme's features are only possible thanks to the [Style Settings Plugin](https://obsidian.md/plugins?id=obsidian-style-settings) by [@mgmeyers](https://github.com/mgmeyers).
-- [Dracula Syntax Highlighting](https://draculatheme.com/).
+- [Dracula Color Scheme](https://draculatheme.com/) for Syntax Highlighting by [@zenorocha](https://github.com/zenorocha/).
+- [iA Writer Quattro](https://github.com/iaolo/iA-Fonts/tree/master/iA%20Writer%20Quattro).
