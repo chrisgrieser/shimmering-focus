@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 1.1042
+Version 1.1043
 Source CSS: https://github.com/chrisgrieser/shimmering-focus/blob/main/source.css
 MIT License
 ──────────────────────────────────────────────────── */
@@ -97,7 +97,6 @@ MIT License
 	- Editor Properties
 	- Active Line Highlight
 	- Embeds
-		- iframes
 		- Embedded Notes
 		- Embedded Search Queries
 		- Clean Embeds
@@ -4042,13 +4041,9 @@ body > .app-container .view-content > div > .markdown-preview-view {
 /* << Active Line Highlight
 ──────────────────────────────────────────────────── */
 
-body:not(.no-active-highlight):not(.active-visual-line) .cm-active:not(.cm-gutterElement),
-body:not(.no-active-highlight):not(.active-visual-line) .CodeMirror-activeline .CodeMirror-linebackground {
-	background-color: var(--active-line-bg);
-	border-radius: var(--roundish);
-}
-
-.active-line-gutter .cm-active::BEFORE {
+/* Vertical Line in Gutter */
+body:not(.active-line-emphasized-bg):not(.no-active-highlight) .CodeMirror-activeline::BEFORE,
+body:not(.active-line-emphasized-bg):not(.no-active-highlight) .cm-active::BEFORE {
 	content: " ";
 	height: 100%;
 	position: absolute;
@@ -4056,8 +4051,14 @@ body:not(.no-active-highlight):not(.active-visual-line) .CodeMirror-activeline .
 	border-left: var(--thick-muted-border);
 }
 
+.active-line-emphasized-bg:not(.active-visual-line) .cm-active:not(.cm-gutterElement),
+.active-line-emphasized-bg:not(.active-visual-line) .CodeMirror-activeline .CodeMirror-linebackground {
+	background-color: var(--active-line-bg);
+	border-radius: var(--roundish);
+}
+
 /* fix so the horizontal line above first footnote is not rounded */
-.cm-line:not(.HyperMD-footnote) + .HyperMD-footnote.cm-active {
+.active-line-emphasized-bg .cm-line:not(.HyperMD-footnote) + .HyperMD-footnote.cm-active {
 	border-top-right-radius: 0;
 	border-top-left-radius: 0;
 }
@@ -4069,11 +4070,6 @@ body:not(.no-active-highlight) .cm-active :is(.cm-formatting-header,.cm-formatti
 /* ───────────────────────────────────────────────── */
 /* << Embeds
 ──────────────────────────────────────────────────── */
-
-/* <<< iframes */
-iframe {
-	border: var(--thin-border);
-}
 
 /* ───────────────────────────────────────────────── */
 /* <<< Embedded Notes
@@ -4412,7 +4408,7 @@ body:not(.permanently-show-collapse-indicators) .cm-line:not(:hover):not(.cm-act
 }
 
 /* when disabled, active highlighting of markup */
-.show-all-line-numbers:not(.no-active-highlight) .cm-lineNumbers .cm-active.cm-gutterElement {
+body:not(.minimal-line-numbering):not(.no-active-highlight) .cm-lineNumbers .cm-active.cm-gutterElement {
 	color: var(--active-line-indicator);
 }
 
@@ -4925,7 +4921,7 @@ body .markdown-preview-view blockquote,
 }
 
 /* interaction with active line highlighting */
-body:not(.no-active-highlight):not(.active-visual-line) .cm-s-obsidian .cm-active.cm-line.HyperMD-quote {
+.active-line-emphasized-bg:not(.active-visual-line) .cm-s-obsidian .cm-active.cm-line.HyperMD-quote {
 	color: var(--text-normal);
 	background-color: var(--active-line-bg);
 	border-left-color: var(--blockquote-color);
@@ -5352,19 +5348,19 @@ div.HyperMD-codeblock-bg:not(.HyperMD-codeblock-begin-bg) {
 }
 
 /* interaction of active line highlight roundness with code blocks */
-body:not(.no-active-highlight) .cm-active.HyperMD-codeblock,
-body:not(.no-active-highlight) .CodeMirror-activeline .HyperMD-codeblock-bg.CodeMirror-linebackground {
+.active-line-emphasized-bg .cm-active.HyperMD-codeblock,
+.active-line-emphasized-bg .CodeMirror-activeline .HyperMD-codeblock-bg.CodeMirror-linebackground {
 	border-radius: 0;
 }
 
-body:not(.no-active-highlight) .cm-active.HyperMD-codeblock-begin,
-body:not(.no-active-highlight) .CodeMirror-activeline .HyperMD-codeblock-begin-bg.CodeMirror-linebackground {
+.active-line-emphasized-bg .cm-active.HyperMD-codeblock-begin,
+.active-line-emphasized-bg .CodeMirror-activeline .HyperMD-codeblock-begin-bg.CodeMirror-linebackground {
 	border-top-right-radius: var(--codeblock-roundness);
 	border-top-left-radius: var(--codeblock-roundness);
 }
 
-body:not(.no-active-highlight) .cm-active.HyperMD-codeblock-end,
-body:not(.no-active-highlight) .CodeMirror-activeline .HyperMD-codeblock-end-bg.CodeMirror-linebackground {
+.active-line-emphasized-bg .cm-active.HyperMD-codeblock-end,
+.active-line-emphasized-bg .CodeMirror-activeline .HyperMD-codeblock-end-bg.CodeMirror-linebackground {
 	border-bottom-right-radius: var(--codeblock-roundness);
 	border-bottom-left-radius: var(--codeblock-roundness);
 }
@@ -11242,17 +11238,17 @@ settings:
 	-
 	 id: active-line-highlight-options
 	 title: Active Line
-	 description: "Options for emphasizing the active line. 'Emphasized Background' is automatically turned off when The 'Active Visual Line' Plugin is installed."
+	 description: "Options for emphasizing the active line. ('Emphasized Background' is automatically turned off when the 'Active Visual Line' Plugin is installed.)"
 	 type: class-select
 	 allowEmpty: false
-	 default: active-line-emphasized-background
+	 default: active-line-gutter
 	 options:
 	 -
-		label: Emphasized Background (Default)
-		value: active-line-emphasized-background
-	 -
-		label: Vertical Line in Gutter
+		label: Vertical Line in Gutter (Default)
 		value: active-line-gutter
+	 -
+		label: Emphasized Background
+		value: active-line-emphasized-bg
 	 -
 		label: No Active Line Highlight
 		value: no-active-highlight
