@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 1.1062
+Version 1.1063
 Source CSS: https://github.com/chrisgrieser/shimmering-focus/blob/main/source.css
 MIT License
 ──────────────────────────────────────────────────── */
@@ -190,7 +190,7 @@ MIT License
 		- Kanban: Font
 		- Kanban: Lanes
 		- Kanban: Misc
-		- Kanban Item Counter
+		- Kanban: Item Counter
 	- Longform
 		- Longform Sidebar
 		- Longform Scene List
@@ -8533,7 +8533,7 @@ body .kanban-plugin .kanban-plugin__markdown-preview-view hr {
 }
 
 /* ───────────────────────────────────────────────── */
-/* <<< Kanban Item Counter
+/* <<< Kanban: Item Counter
 ──────────────────────────────────────────────────── */
 .kanban-plugin__lane::BEFORE {
 	content: attr(data-count);
@@ -8551,7 +8551,7 @@ body .kanban-plugin .kanban-plugin__markdown-preview-view hr {
 	margin-left: 1.4em;
 
 	border: var(--thin-border);
-	border-radius: 3px;
+	border-radius: var(--roundish);
 }
 
 .kanban-plugin__lane-title {
