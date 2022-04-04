@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 1.1050
+Version 1.1051
 Source CSS: https://github.com/chrisgrieser/shimmering-focus/blob/main/source.css
 MIT License
 ──────────────────────────────────────────────────── */
@@ -314,6 +314,18 @@ TODO
 	--primary-accent-5: hsl(209 100% 90% / 99%);
 }
 
+.theme-light.primary-accent-light-orange,
+.theme-dark.primary-accent-dark-orange {
+	--primary-accent-0: hsl(24 69% 22% / 99%);
+	--primary-accent-1: hsl(16 100% 30%);
+	--primary-accent-2: hsl(24 69% 42%);
+	--primary-accent-3: hsl(32 65% 55%);
+	--primary-accent-4: hsl(40 87% 67%);
+	--primary-accent-5: hsl(40 87% 87% / 99%);
+}
+
+/* https://coolors.co/gradient-palette/992900-f4c362?number=4 */
+
 /* ───────────────────────────────────────────────── */
 /* <<< Default Color Scheme
 ──────────────────────────────────────────────────── */
@@ -331,18 +343,19 @@ TODO
 	--hover-accent-2: hsl(165 80% 35%);
 	--hover-accent-3: hsl(165 90% 45%);
 	--hover-accent-4: hsl(165 100% 55%);
+
+	--secondary-accent-light: hsl(165 70% 30%);
+	--secondary-accent-dark: hsl(165 85% 40%);
 }
 
 .theme-light,
 .theme-dark {
-	--secondary-accent-light: hsl(165 70% 30%);
-	--secondary-accent-dark: hsl(165 85% 40%);
 
 	--tertiary-accent-light: var(--text-normal);
 	--tertiary-accent-dark: var(--text-normal);
 }
 
-:root {
+:root { /* backgrounds */
 	--light-hue: 220;
 	--dark-hue: 220;
 	--dark-sat: 5%;
