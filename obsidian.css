@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 1.1086
+Version 1.1087
 Source CSS: https://github.com/chrisgrieser/shimmering-focus/blob/main/source.css
 MIT License
 ──────────────────────────────────────────────────── */
@@ -1055,13 +1055,13 @@ settings:
 	 default: false
 	-
 	 id: no-animations
-	 title: Turn off all animations.
+	 title: Turn off animations & transitions
 	 description: Can improve performance on older machines.
 	 type: class-toggle
 	 default: false
 	-
 	 id: no-shadows
-	 title: Turn off all shadows and 3D-effects.
+	 title: Turn off shadows (3D-like look)
 	 description: Can improve performance on older machines.
 	 type: class-toggle
 	 default: false
