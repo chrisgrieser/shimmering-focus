@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 1.1079
+Version 1.1080
 Source CSS: https://github.com/chrisgrieser/shimmering-focus/blob/main/source.css
 MIT License
 ──────────────────────────────────────────────────── */
@@ -43,7 +43,7 @@ MIT License
 - Global Settings
 	- Global Filter
 	- Angular or Round Shapes
-	- Animations & DImmed Pane
+	- Animations, Transition & Dimmed Pane
 - Cursor
 - UI Elements
 	- Title Bar
@@ -94,7 +94,6 @@ MIT License
 		- Remaining Community Theme Browser
 - Editor
 	- Active / Inactive Note
-	- Trailing Whitespace
 	- Empty State
 	- Editor Properties
 	- Active Line Highlight
@@ -137,7 +136,8 @@ MIT License
 		- Fold external URLs (CM6 Source Mode)
 	- Tags
 		- Annotation Tags
-	- Comments, HTML tags, Escape Characters
+	- Comments, HTML Tags, Escape Characters
+	- Trailing Whitespace
 	- Tasks & Checkboxes
 	- Highlights & Multi-Color Highlighting
 	- Pseudo-Spoiler-Tag
@@ -1343,16 +1343,18 @@ body:not(.angular-shapes):not(.round-shapes) {
 }
 
 /* ───────────────────────────────────────────────── */
-/* << Animations & DImmed Pane
+/* << Animations, Transition & Dimmed Pane
 ──────────────────────────────────────────────────── */
 
 body:not(.no-animations) {
+	--very-quick-transition: 100ms ease-in-out;
 	--quick-transition: 200ms ease-in-out;
 	--medium-transition: 350ms ease-in-out;
 	--slow-transition: 600ms ease-in-out;
 }
 
 body.no-animations {
+	--very-quick-transition: 0;
 	--quick-transition: 0;
 	--medium-transition: 0;
 	--slow-transition: 0;
@@ -2021,7 +2023,7 @@ a:is(.style-settings-export, .style-settings-import),
 	border: 2px solid var(--interactive-border-color);
 	border-radius: var(--round);
 
-	transition: var(--quick-transition);
+	transition: var(--very-quick-transition);
 }
 
 .angular-shapes .view-content button,
@@ -4027,29 +4029,6 @@ body:not(.plugin-sliding-panes) .workspace-leaf:not(.mod-active) .workspace-leaf
 }
 
 /* ───────────────────────────────────────────────── */
-/* << Trailing Whitespace
-──────────────────────────────────────────────────── */
-.cm-line :is(.cm-trailing-space-a, .cm-trailing-space-b, .cm-trailing-space-new-line)::BEFORE {
-	color: var(--text-faint);
-	position: absolute;
-}
-
-.cm-line .cm-trailing-space-a::BEFORE {
-	content: "\00B7\00B7";
-}
-
-.cm-trailing-space-b::BEFORE,
-.cm-trailing-space-b + .cm-trailing-space-a::BEFORE {
-	content: "\00B7";
-	padding-left: 11px;
-}
-
-.cm-line .cm-trailing-space-new-line::BEFORE {
-	content: "\21B5";
-	padding-left: 15px;
-}
-
-/* ───────────────────────────────────────────────── */
 /* << Empty State
 ──────────────────────────────────────────────────── */
 
@@ -6035,7 +6014,7 @@ body:not(.annotation-tags-off) :is(.cm-hashtag-begin.cm-tag-example, .tag[href="
 
 /* stylelint-enable max-line-length, no-duplicate-selectors */
 /* ───────────────────────────────────────────────── */
-/* << Comments, HTML tags, Escape Characters
+/* << Comments, HTML Tags, Escape Characters
 ──────────────────────────────────────────────────── */
 
 .cm-commenturl,
@@ -6060,6 +6039,29 @@ body .cm-s-obsidian :is(.cm-hmd-escape-char, .cm-hmd-escape-backslash) {
 
 body .app-container span:is(.cm-tag.cm-bracket.cm-hmd-html-begin, .cm-tag.cm-bracket.cm-hmd-html-end, .cm-tag) {
 	color: var(--code-color);
+}
+
+/* ───────────────────────────────────────────────── */
+/* << Trailing Whitespace
+──────────────────────────────────────────────────── */
+.cm-line :is(.cm-trailing-space-a, .cm-trailing-space-b, .cm-trailing-space-new-line)::BEFORE {
+	color: var(--text-faint);
+	position: absolute;
+}
+
+.cm-line .cm-trailing-space-a::BEFORE {
+	content: "\00B7\00B7";
+}
+
+.cm-trailing-space-b::BEFORE,
+.cm-trailing-space-b + .cm-trailing-space-a::BEFORE {
+	content: "\00B7";
+	padding-left: 11px;
+}
+
+.cm-line .cm-trailing-space-new-line::BEFORE {
+	content: "\21B5";
+	padding-left: 15px;
 }
 
 /* ──────────────────────────────────────────────── */
