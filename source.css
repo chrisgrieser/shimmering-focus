@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 1.1070
+Version 1.1071
 Source CSS: https://github.com/chrisgrieser/shimmering-focus/blob/main/source.css
 MIT License
 ──────────────────────────────────────────────────── */
@@ -4121,7 +4121,12 @@ body:not(.active-line-emphasized-bg):not(.no-active-highlight) .cm-active::BEFOR
 	height: 100%;
 	position: absolute;
 	left: -8px;
-	border-left: var(--thick-muted-border);
+	border-left: var(--thick-border);
+}
+
+.theme-dark.theme-dark.theme-dark .CodeMirror-activeline::BEFORE,
+.theme-dark.theme-dark.theme-dark .cm-active::BEFORE {
+	border-color: var(--bg3);
 }
 
 .active-line-emphasized-bg:not(.active-visual-line) .cm-active:not(.cm-gutterElement),
