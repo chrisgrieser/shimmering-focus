@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 1.1078
+Version 1.1079
 Source CSS: https://github.com/chrisgrieser/shimmering-focus/blob/main/source.css
 MIT License
 ──────────────────────────────────────────────────── */
@@ -1077,7 +1077,7 @@ settings:
 	-
 	 id: no-pseudo-spoiler-tags
 	 title: Disable the Spoiler Syntax.
-	 description: The Spoiler Syntax (*~~spoiler~~*) will blacken the enclosed text until hovered.
+	 description: The spoiler syntax (*~~spoiler~~*) will blacken the enclosed text until hovered.
 	 type: class-toggle
 	 default: false
 	-
