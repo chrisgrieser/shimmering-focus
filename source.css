@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 1.1068
+Version 1.1069
 Source CSS: https://github.com/chrisgrieser/shimmering-focus/blob/main/source.css
 MIT License
 ──────────────────────────────────────────────────── */
@@ -2531,6 +2531,16 @@ div.prompt-results {
 	display: none;
 }
 
+/* hide suggestion highlights (only annoying) */
+.prompt .suggestion-item .suggestion-highlight {
+	font-weight: 500;
+	color: var(--text-normal);
+}
+
+.prompt .suggestion-item :is(.suggestion-note, .suggestion-prefix) {
+	color: var(--extra-contrast);
+}
+
 .suggestion-flair {
 	top: 5px;
 	left: 3px;
@@ -2542,12 +2552,12 @@ div.prompt-results {
 	background-color: var(--bg3) !important;
 }
 
-.suggestion-item.is-selected :is(.suggestion-prefix, .suggestion-flair),
+.suggestion-item.is-selected :is(.suggestion-prefix, .suggestion-flair, .suggestion-highlight),
 .suggestion-item.is-selected {
 	color: var(--primary-accent-2);
 }
 
-.suggestion-item:hover :is(.suggestion-prefix, .suggestion-flair),
+.suggestion-item:hover :is(.suggestion-prefix, .suggestion-flair, .suggestion-highlight),
 .suggestion-item.is-selected:hover .suggestion-prefix,
 .suggestion-item:hover {
 	color: var(--hover-accent-2);
@@ -9805,7 +9815,7 @@ body .qsp-symbol-indicator {
 
 .suggestion-item .another-quick-switcher__item__directory {
 	font-family: var(--smallcap-font);
-	font-size: 0.8em;
+	font-size: 0.9em;
 	padding-right: 2px;
 	padding-left: 5px;
 }
