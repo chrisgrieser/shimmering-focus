@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 1.1072
+Version 1.1073
 Source CSS: https://github.com/chrisgrieser/shimmering-focus/blob/main/source.css
 MIT License
 ──────────────────────────────────────────────────── */
@@ -214,6 +214,7 @@ MIT License
 	- Activity History
 	- Style Settings (Settings Tab)
 		- Style Settings: Hue Sliders
+		- Style Settings: Unlock Thema Beta
 		- Style Setting – Info Boxes
 	- Favicon Plugin
 	- File Info Panel (Side bar)
@@ -275,9 +276,6 @@ MIT License
 /* ────────────────────────────────────────────────────
 🚧 WORK-IN-PROGRESS
 
-Style settings for accent colors begin at:
-id: primary-accent-light
-
 TODO
 - Accent Color Settings
 - Add Accents Colors to Nord
@@ -290,11 +288,6 @@ TODO
 	value: primary-accent-light-purple
 	value: primary-accent-light-green
 */
-
-/* hide accent color settings while still in Work-in-Progress */
-.style-settings-container .setting-item[data-id*="-accent-"] {
-	display: none;
-}
 
 /* ───────────────────────────────────────────────── */
 
@@ -10094,6 +10087,30 @@ body:not(.no-animations) .style-settings-heading[data-id="shimmering-focus"] .se
 }
 
 /* ───────────────────────────────────────────────── */
+/* <<< Style Settings: Unlock Thema Beta
+──────────────────────────────────────────────────── */
+
+body:not(.unlock-theme-beta) .style-settings-container .setting-item[data-id*="-accent-"] {
+	display: none;
+}
+
+.style-settings-container .setting-item[data-id*="-accent-"]::BEFORE {
+	content: "Beta";
+
+	font-size: 0.9em;
+	line-height: 1.2em;
+
+	background-color: var(--bg3);
+	box-shadow: var(--small-inset-shadow);
+
+	padding: 3px 5px;
+	margin-right: 9px;
+
+	border: var(--thin-border);
+	border-radius: var(--roundish);
+}
+
+/* ───────────────────────────────────────────────── */
 /* <<< Style Setting – Info Boxes
 ──────────────────────────────────────────────────── */
 
@@ -10896,7 +10913,7 @@ settings:
 	-
 	 id: secondary-accent-light
 	 title: "Secondary Accent (Light Mode)"
-	 description: 'Code, Inline Tags, Finished Tasks, Footnotes, Pandoc Citations'
+	 description: 'Inline Code, Inline Tags, Finished Tasks, Footnotes, Pandoc Citations'
 	 type: class-select
 	 allowEmpty: false
 	 default: secondary-accent-light-green
@@ -10988,7 +11005,7 @@ settings:
 	-
 	 id: secondary-accent-dark
 	 title: "Secondary Accent (Dark Mode)"
-	 description: 'Code, Inline Tags, Finished Tasks, Footnotes, Pandoc Citations'
+	 description: 'Inline Code, Inline Tags, Finished Tasks, Footnotes, Pandoc Citations'
 	 type: class-select
 	 allowEmpty: false
 	 default: secondary-accent-dark-green
@@ -11720,7 +11737,7 @@ settings:
 	-
 	 id: miscellaneous
 	 title: ⚛️ Miscellaneous
-	 description: Menu Sizes, File Name Trimming, Inactive Panes, Pandoc Citations, Annotation Tags, Alternating Row Colors, Spoiler Tags
+	 description: Menu Sizes, File Name Trimming, Inactive Panes, Pandoc Citations, Annotation Tags, Alternating Row Colors, Spoiler Tags, Theme Beta
 	 type: heading
 	 level: 1
 	 collapsed: true
@@ -11767,6 +11784,12 @@ settings:
 	 id: no-pseudo-spoiler-tags
 	 title: Disable the Spoiler Syntax.
 	 description: The Spoiler Syntax (*~~spoiler~~*) will blacken the enclosed text until hovered.
+	 type: class-toggle
+	 default: false
+	-
+	 id: unlock-theme-beta
+	 title: Unlock Theme Beta
+	 description: 'Unlocks some features of the theme that are still under development. Note that due to the work-in-progress, these features may not work as expected yet. Also, some settings may simply do not do anything yet.'
 	 type: class-toggle
 	 default: false
 	-
