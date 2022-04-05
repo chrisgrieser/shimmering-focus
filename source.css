@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 1.1085
+Version 1.1086
 Source CSS: https://github.com/chrisgrieser/shimmering-focus/blob/main/source.css
 MIT License
 ──────────────────────────────────────────────────── */
@@ -4944,6 +4944,12 @@ body:not(.active-line-emphasized-bg):not(.no-active-highlight) .HyperMD-quote:is
 	margin: 1.5em 0;
 	border: none;
 	border-radius: var(--roundish);
+}
+
+/* block quotes in lists */
+.markdown-preview-view li blockquote {
+	margin-top: 6px;
+	margin-bottom: 2px;
 }
 
 /* option for normal size */
