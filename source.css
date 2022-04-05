@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 1.1074
+Version 1.1075
 Source CSS: https://github.com/chrisgrieser/shimmering-focus/blob/main/source.css
 MIT License
 ──────────────────────────────────────────────────── */
@@ -4109,8 +4109,7 @@ body > .app-container .view-content > div > .markdown-preview-view {
 ──────────────────────────────────────────────────── */
 
 /* Vertical Line in Gutter */
-body:not(.active-line-emphasized-bg):not(.no-active-highlight) .CodeMirror-activeline::BEFORE,
-body:not(.active-line-emphasized-bg):not(.no-active-highlight) .cm-active::BEFORE {
+body:not(.active-line-emphasized-bg):not(.no-active-highlight) :is(.cm-active, .CodeMirror-activeline):not(.HyperMD-quote)::BEFORE {
 	content: " ";
 	height: 100%;
 	position: absolute;
@@ -4965,6 +4964,7 @@ body .markdown-preview-view blockquote,
 	background-color: var(--basic-border-color);
 
 	position: absolute;
+	z-index: -1;
 
 	margin-top: -12px;
 	margin-left: calc(-1 * var(--blockquote-border-width) - 4px);
@@ -4978,20 +4978,25 @@ body .markdown-preview-view blockquote,
 	content: "";
 
 	height: 1em;
-	width: 1em;
+	width: 0.5em;
 
 	background-color: var(--blockquote-color);
 
 	position: absolute;
-	top: -5px;
+	top: -3px;
 	right: 0;
+	z-index: -1;
 }
 
 /* interaction with active line highlighting */
 .active-line-emphasized-bg:not(.active-visual-line) .cm-s-obsidian .cm-active.cm-line.HyperMD-quote {
 	color: var(--text-normal);
 	background-color: var(--active-line-bg);
-	border-left-color: var(--blockquote-color);
+	border-color: var(--muted-border-color);
+}
+
+body:not(.active-line-emphasized-bg):not(.no-active-highlight) .HyperMD-quote:is(.cm-active, .CodeMirror-activeline) {
+	border-color: var(--alt-bg);
 }
 
 /* Preview Mode */
