@@ -27,6 +27,8 @@ Using a double-blockquote (`>>`) after a normal blockquote (`>`) will result in 
 - Surround highlights with `*` or `**` for alternative highlight colors (`*==green==*` and `**==cyan==**`).
 - The colors can be customized in the Style Settings.
 
+![list-of-all-annotation-tags](images/multi-color-highlights.png){: width="250" }
+
 ## Spoiler Syntax
 - Emphasized Strikethroughs (`*~~spoiler~~*`) will selectively hide text, except when hovered or the active line.
 - Can be disabled in the Style Settings.
