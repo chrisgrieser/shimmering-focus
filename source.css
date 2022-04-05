@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 1.1087
+Version 1.1088
 Source CSS: https://github.com/chrisgrieser/shimmering-focus/blob/main/source.css
 MIT License
 ──────────────────────────────────────────────────── */
@@ -4266,17 +4266,16 @@ body:not(.no-active-highlight) .cm-active :is(.cm-formatting-header,.cm-formatti
 ──────────────────────────────────────────────────── */
 
 /* <<< YAML Frontmatter */
-
-/* YAML-Header in Edit Mode */
-.cm-hmd-frontmatter,
-.cm-hmd-frontmatter:is(.cm-string, .cm-number, .cm-atom, .cm-meta) {
+.cm-hmd-frontmatter {
 	font-size: 0.9em;
+}
+
+body:not(.colored-yaml) .cm-hmd-frontmatter {
 	color: var(--text-muted);
 }
 
-body:not(.colored-yaml) .cm-def.cm-hmd-frontmatter {
+.cm-def.cm-hmd-frontmatter {
 	letter-spacing: 0.1em;
-	color: var(--text-muted);
 }
 
 .cm-atom.cm-hmd-frontmatter {
@@ -5633,7 +5632,7 @@ pre.language-haskell::AFTER { content: "Haskell" }
 
 :is(.theme-dark.dracula-syntax-hl-dark, .theme-light.dracula-syntax-hl-light) :is(
 	.token.keyword, /* e.g. var, let , const etc. */
-	.cm-keyword, /* Function, return, let, var */
+	.cm-keyword.cm-hmd-codeblock, /* Function, return, let, var */
 	.cm-callee, /* In css: var */
 	.token.selector) { /* In css selects div e.g. in div.elements, or pre in 'not(pre)' */
 	color: var(--sh-keyword);

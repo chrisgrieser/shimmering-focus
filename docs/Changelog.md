@@ -3,7 +3,7 @@ nav_order: 110
 ---
 
 # Changelog
-- 2022-04-05	patch
+- 2022-04-06	fixed yaml coloring issue
 - 2022-04-05	new style setting to turn of citation syntax
 - 2022-04-05	re-organized style settings
 - 2022-04-05	removed deprecated spellcheck settings
