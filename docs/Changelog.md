@@ -3,6 +3,7 @@ nav_order: 110
 ---
 
 # Changelog
+- 2022-04-05	consistent search match colors
 - 2022-04-05	minor quick switcher improvements
 - 2022-04-05	update kanban lane item counter look
 - 2022-04-04	kanban item counter overhauled
