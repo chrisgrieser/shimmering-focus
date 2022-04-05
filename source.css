@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 1.1069
+Version 1.1070
 Source CSS: https://github.com/chrisgrieser/shimmering-focus/blob/main/source.css
 MIT License
 ──────────────────────────────────────────────────── */
@@ -21,11 +21,12 @@ MIT License
 	- Accent Color Definitions
 		- Primary Accent
 		- Hover Accent
-		- Secondary Accent (references, tags, code)
+		- Secondary Accent (references, tags, code, finished tasks)
 		- Tertiary Accent (Bold & Italics)
 	- Background Colors
 		- Longform & Writing Background colors
-	- Default variable colors & Base elements
+	- Default Variables
+	- Base elements
 	- Shadows
 		- Outside Shadow
 		- Inset Shadow
@@ -78,7 +79,7 @@ MIT License
 	- Modals in general
 	- Confirmation Modal
 	- Settings Menu
-		- Login Menu
+		- Login Menu 
 		- Community plugin list
 		- Core plugins
 		- Hotkey search
@@ -86,7 +87,7 @@ MIT License
 		- Plugin Search Results (left side)
 		- Plugin Info / Readme (right side)
 		- Repository Button
-		- Copy URL button
+		- Copy URL button 
 	- Theme Browser
 		- GitHub Info for this Theme
 		- Theme Browser – Infobox
@@ -339,7 +340,7 @@ TODO
 	--hover-accent-3: hsl(165 90% 45%);
 	--hover-accent-4: hsl(165 100% 55%);
 
-	--secondary-accent-light: hsl(165 70% 30%);
+	--secondary-accent-light: hsl(165 70% 35%);
 	--secondary-accent-dark: hsl(165 85% 40%);
 }
 
@@ -5828,14 +5829,14 @@ a.tag {
 	color: var(--tag-text-color);
 }
 
+a.tag:hover {
+	text-decoration: underline;
+	color: var(--hover-accent-2);
+}
+
 /* ensures equal height of "#" and text of tags */
 .cm-formatting.cm-formatting-hashtag.cm-hashtag-begin.cm-hashtag.cm-meta {
 	font-family: var(--default-font);
-}
-
-.cm-hashtag-end:hover,
-a.tag:hover {
-	text-decoration: underline !important;
 }
 
 /* ───────────────────────────────────────────────── */
@@ -6064,7 +6065,7 @@ body .app-container span:is(.cm-tag.cm-bracket.cm-hmd-html-begin, .cm-tag.cm-bra
 input.task-list-item-checkbox[type="checkbox"] {
 	background-color: unset;
 
-	margin-top: 2px;
+	margin-top: 1.5px;
 	margin-left: 7px;
 
 	border: 2px solid var(--hr-line-gray);
@@ -8552,6 +8553,10 @@ body .kanban-plugin__new-item-button:hover {
 
 .kanban-plugin.kanban-plugin ul {
 	padding-left: 15px;
+}
+
+.kanban-plugin .markdown-preview-view ul.contains-task-list {
+	padding-left: 0;
 }
 
 body .kanban-plugin .kanban-plugin__markdown-preview-view hr {
