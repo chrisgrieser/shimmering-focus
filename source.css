@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 1.1076
+Version 1.1077
 Source CSS: https://github.com/chrisgrieser/shimmering-focus/blob/main/source.css
 MIT License
 ──────────────────────────────────────────────────── */
@@ -137,7 +137,7 @@ MIT License
 		- Fold external URLs (CM6 Source Mode)
 	- Tags
 		- Annotation Tags
-	- Comments & HTML Tags
+	- Comments, HTML tags, Escape Characters
 	- Tasks & Checkboxes
 	- Highlights & Multi-Color Highlighting
 	- Pseudo-Spoiler-Tag
@@ -693,10 +693,14 @@ body:is(.theme-light, .theme-dark) {
 
 .theme-light {
 	--search-match-color: hsl(30 100% 50%);
+	--text-error: hsl(0 100% 25%);
+	--error-bg: hsl(0 80% 85%);
 }
 
 .theme-dark {
 	--search-match-color: hsl(60 100% 70%);
+	--text-error: hsl(0 100% 60%);
+	--error-bg: hsl(0 30% 20%);
 }
 
 /* stylelint-enable no-duplicate-selectors */
@@ -2190,7 +2194,7 @@ body :is(textarea, input[type]):hover {
 
 select.dropdown {
 	/* replace arrows, so they aren't in the purple accent color, 🏴‍☠️ @Damian */
-	background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='10' height='10' fill='rgb(128, 128, 128)'><polygon points='0,0 10,0 5,5'/></svg>");
+	background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='10' height='10' fill='hsl(0, 0%, 50%)'><polygon points='0,0 10,0 5,5'/></svg>");
 	box-shadow: var(--small-reverted-inset-shadow);
 
 	padding: 6px 28px 6px 10px;
@@ -2284,14 +2288,8 @@ div.document-replace {
 }
 
 /* more recognizable red */
-.theme-dark .document-search-input.mod-no-match:hover,
-.theme-dark .document-search-input.mod-no-match {
-	background-color: hsl(0 30% 20%);
-}
-
-.theme-light .document-search-input.mod-no-match:hover,
-.theme-light .document-search-input.mod-no-match {
-	background-color: hsl(0 80% 85%);
+.document-search-input:is(.mod-no-match:hover, .mod-no-match) {
+	background-color: var(--error-bg);
 }
 
 :is(.document-search, .document-replace) input[type="text"] {
@@ -6037,12 +6035,17 @@ body:not(.annotation-tags-off) :is(.cm-hashtag-begin.cm-tag-example, .tag[href="
 
 /* stylelint-enable max-line-length, no-duplicate-selectors */
 /* ───────────────────────────────────────────────── */
-/* << Comments & HTML Tags
+/* << Comments, HTML tags, Escape Characters
 ──────────────────────────────────────────────────── */
 
 .cm-commenturl,
 .cm-comment.cm-comment.cm-comment.cm-comment.cm-comment:not(.cm-hmd-codeblock) {
 	color: var(--text-muted);
+}
+
+/* escapse characters */
+body .cm-s-obsidian :is(.cm-hmd-escape-char, .cm-hmd-escape-backslash) {
+	color: var(--text-error);
 }
 
 /* make html comments readable by disabling ligatures in edit mode */
