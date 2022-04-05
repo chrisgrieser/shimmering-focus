@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 1.1066
+Version 1.1067
 Source CSS: https://github.com/chrisgrieser/shimmering-focus/blob/main/source.css
 MIT License
 ──────────────────────────────────────────────────── */
@@ -2507,16 +2507,14 @@ div.prompt-results {
 	border-bottom-left-radius: var(--roundish);
 }
 
-.suggestion-prefix {
-	font-family: var(--smallcap-font);
-	font-size: 1em;
-	letter-spacing: -0.1px;
-	color: var(--text-muted);
-}
-
 .suggestion-item {
 	padding-right: 5px;
 	padding-left: 25px;
+}
+
+/* item descriptions */
+.suggestion-note {
+	line-height: 1.3em;
 }
 
 .suggestion-item.is-selected {
@@ -2525,6 +2523,16 @@ div.prompt-results {
 
 .suggestion-highlight {
 	font-weight: 800;
+}
+
+.suggestion-empty,
+.prompt-instructions {
+	display: none;
+}
+
+.suggestion-flair {
+	top: 5px;
+	left: 3px;
 }
 
 /* color selected / hovered */
@@ -2554,8 +2562,12 @@ div.prompt-results {
 ─────────────────────────────────────────────────── */
 /* (everything from QuickSwitcher also applies) */
 
-.prompt-instructions {
-	display: none;
+/* plugin name */
+.suggestion-prefix {
+	font-family: var(--smallcap-font);
+	font-size: 1em;
+	letter-spacing: -0.1px;
+	color: var(--text-muted);
 }
 
 /* pin replacement */
@@ -2622,6 +2634,9 @@ body:not(.no-alternating-rows) .suggestion-item:nth-child(even) .suggestion-pref
 /* ───────────────────────────────────────────────── */
 /* << Editor Suggestions
 ──────────────────────────────────────────────────── */
+
+/* .suggestion-container necessary to avoid conflicts
+with prompts */
 
 .suggestion-container {
 	background-color: var(--bg1);
@@ -9753,6 +9768,10 @@ body .qsp-symbol-indicator {
 
 .suggestion-item:hover .qsp-symbol-indicator {
 	color: var(--hover-accent-2);
+}
+
+.suggestion-flair {
+	font-family: var(--button-font);
 }
 
 /* ───────────────────────────────────────────────── */
