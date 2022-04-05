@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 1.1071
+Version 1.1072
 Source CSS: https://github.com/chrisgrieser/shimmering-focus/blob/main/source.css
 MIT License
 ──────────────────────────────────────────────────── */
@@ -213,6 +213,7 @@ MIT License
 	- Another Quick Switcher
 	- Activity History
 	- Style Settings (Settings Tab)
+		- Style Settings: Hue Sliders
 		- Style Setting – Info Boxes
 	- Favicon Plugin
 	- File Info Panel (Side bar)
@@ -1361,9 +1362,9 @@ body.no-animations {
 }
 
 @keyframes faded-blink {
-	from { opacity: 1 }
-	50% { opacity: 0 }
-	to { opacity: 1 }
+	from { color: var(--text-normal) }
+	50% { color: var(--primary-accent-3) }
+	to { color: var(--text-normal) }
 }
 
 :root { /* stylelint-disable-line no-duplicate-selectors */
@@ -4124,6 +4125,7 @@ body:not(.active-line-emphasized-bg):not(.no-active-highlight) .cm-active::BEFOR
 	border-left: var(--thick-border);
 }
 
+/* more contrasted color in dark mode */
 .theme-dark.theme-dark.theme-dark .CodeMirror-activeline::BEFORE,
 .theme-dark.theme-dark.theme-dark .cm-active::BEFORE {
 	border-color: var(--bg3);
@@ -6116,13 +6118,14 @@ li[data-task="x"] > .task-list-item-checkbox:hover {
 /* << Highlights & Multi-Color Highlighting
 ──────────────────────────────────────────────────── */
 
-:root { /* stylelint-disable-line no-duplicate-selectors */
+mark,
+.cm-highlight {
 	--highlight-color-1: hsl(var(--highlight-hue-1) 100% 50% / 40%);
 	--highlight-color-2: hsl(var(--highlight-hue-2) 100% 50% / 40%);
 	--highlight-color-3: hsl(var(--highlight-hue-3) 100% 50% / 40%);
 }
 
-.markdown-preview-view mark,
+.markdown-rendered mark,
 .cm-s-obsidian span.cm-highlight {
 	background-color: var(--highlight-color-1);
 }
@@ -6131,16 +6134,14 @@ li[data-task="x"] > .task-list-item-checkbox:hover {
 /* https://discord.com/channels/686053708261228577/702656734631821413/881443661269827656 */
 
 /* *== ==* */
-.markdown-preview-view em > mark,
-span.cm-em.cm-highlight {
+body:not(.no-multi-color-highlights) :is(em > mark, .cm-em.cm-highlight) {
 	font-style: initial;
 	text-shadow: none;
 	background-color: var(--highlight-color-2);
 }
 
 /* **== ==** */
-span.cm-strong.cm-highlight,
-.markdown-preview-view strong > mark {
+body:not(.no-multi-color-highlights) :is(strong > mark, .cm-strong.cm-highlight) {
 	font-weight: 500;
 	text-rendering: initial;
 	text-shadow: none;
@@ -10005,25 +10006,6 @@ body a:is(.style-settings-export, .style-settings-import) {
 	color: var(--hover-accent-2);
 }
 
-/* highlight color style settings */
-.style-settings-container .setting-item[data-id="highlight-hue-1"] input.slider::-WEBKIT-SLIDER-THUMB {
-	background-color: hsl(var(--highlight-hue-1) 80% 50%);
-}
-
-.style-settings-container .setting-item[data-id="highlight-hue-2"] input.slider::-WEBKIT-SLIDER-THUMB {
-	background-color: hsl(var(--highlight-hue-2) 80% 50%);
-}
-
-.style-settings-container .setting-item[data-id="highlight-hue-3"] input.slider::-WEBKIT-SLIDER-THUMB {
-	background-color: hsl(var(--highlight-hue-3) 80% 50%);
-}
-
-.style-settings-container .setting-item[data-id^="highlight-hue"] input.slider::-WEBKIT-SLIDER-THUMB {
-	height: 1.6em;
-	position: relative;
-	top: -0.5em;
-}
-
 /* blinking signature */
 .style-settings-heading[data-id="shimmering-focus"] .setting-item-name::AFTER {
 	content: var(--signature);
@@ -10036,6 +10018,79 @@ body:not(.no-animations) .style-settings-heading[data-id="shimmering-focus"] .se
 	animation-duration: 12s;
 	animation-name: faded-blink;
 	animation-iteration-count: infinite;
+}
+
+/* ───────────────────────────────────────────────── */
+/* <<< Style Settings: Hue Sliders
+──────────────────────────────────────────────────── */
+
+.style-settings-container {
+	--hue-slider-sat: 70%;
+	--hue-slider-br: 70%;
+	--hue-scale:
+		linear-gradient(
+			to right,
+			hsl(0 var(--hue-slider-sat) var(--hue-slider-br)),
+			hsl(30 var(--hue-slider-sat) var(--hue-slider-br)),
+			hsl(60 var(--hue-slider-sat) var(--hue-slider-br)),
+			hsl(90 var(--hue-slider-sat) var(--hue-slider-br)),
+			hsl(120 var(--hue-slider-sat) var(--hue-slider-br)),
+			hsl(150 var(--hue-slider-sat) var(--hue-slider-br)),
+			hsl(180 var(--hue-slider-sat) var(--hue-slider-br)),
+			hsl(210 var(--hue-slider-sat) var(--hue-slider-br)),
+			hsl(240 var(--hue-slider-sat) var(--hue-slider-br)),
+			hsl(270 var(--hue-slider-sat) var(--hue-slider-br)),
+			hsl(300 var(--hue-slider-sat) var(--hue-slider-br)),
+			hsl(330 var(--hue-slider-sat) var(--hue-slider-br)),
+			hsl(360 var(--hue-slider-sat) var(--hue-slider-br))
+		);
+}
+
+/* highlight color style settings */
+.style-settings-container .setting-item:is([data-id^="highlight-hue-"], [data-id$="-hue"]) input.slider::-WEBKIT-SLIDER-THUMB {
+	height: 1.9em;
+	width: 0.4em;
+
+	background-color: var(--extra-contrast);
+
+	position: relative;
+	top: -0.7em;
+
+	border-radius: calc(var(--roundish) * 0.5);
+}
+
+.style-settings-container .setting-item:is([data-id^="highlight-hue-"], [data-id$="-hue"]) input.slider {
+	height: 0.8em;
+	background: var(--hue-scale);
+}
+
+/* demo color box */
+.style-settings-container .setting-item[data-id^="highlight-hue-"] .setting-item-control::BEFORE {
+	font-size: 0.8em;
+	white-space: pre-wrap;
+
+	position: relative;
+	left: -3em;
+
+	padding: 0 5px;
+
+	border: var(--basic-border);
+	border-radius: var(--roundish);
+}
+
+.style-settings-container .setting-item[data-id="highlight-hue-1"] .setting-item-control::BEFORE {
+	content: "    ==highlight==    ";
+	background-color: hsl(var(--highlight-hue-1) 100% 50% / 40%);
+}
+
+.style-settings-container .setting-item[data-id="highlight-hue-2"] .setting-item-control::BEFORE {
+	content: "  *==highlight==*  ";
+	background-color: hsl(var(--highlight-hue-2) 100% 50% / 40%);
+}
+
+.style-settings-container .setting-item[data-id="highlight-hue-3"] .setting-item-control::BEFORE {
+	content: "**==highlight==**";
+	background-color: hsl(var(--highlight-hue-3) 100% 50% / 40%);
 }
 
 /* ───────────────────────────────────────────────── */
@@ -10841,7 +10896,7 @@ settings:
 	-
 	 id: secondary-accent-light
 	 title: "Secondary Accent (Light Mode)"
-	 description: 'Code, Inline Tags, Footnotes, Pandoc Citations'
+	 description: 'Code, Inline Tags, Finished Tasks, Footnotes, Pandoc Citations'
 	 type: class-select
 	 allowEmpty: false
 	 default: secondary-accent-light-green
@@ -10933,7 +10988,7 @@ settings:
 	-
 	 id: secondary-accent-dark
 	 title: "Secondary Accent (Dark Mode)"
-	 description: 'Code, Inline Tags, Footnotes, Pandoc Citations'
+	 description: 'Code, Inline Tags, Finished Tasks, Footnotes, Pandoc Citations'
 	 type: class-select
 	 allowEmpty: false
 	 default: secondary-accent-dark-green
@@ -11002,7 +11057,6 @@ settings:
 	-
 	 id: highlight-hue-1
 	 title: Regular Highlights
-	 description: "Color tone for regular ==highlights=="
 	 type: variable-number-slider
 	 default: 60
 	 min: 0
@@ -11010,8 +11064,7 @@ settings:
 	 step: 5
 	-
 	 id: highlight-hue-2
-	 title: Multi-Color-Highlight 1
-	 description: "Color tone for alternative *==highlights==*"
+	 title: Multi-Color Highlight 1
 	 type: variable-number-slider
 	 default: 150
 	 min: 0
@@ -11019,13 +11072,17 @@ settings:
 	 step: 5
 	-
 	 id: highlight-hue-3
-	 title:  Multi-Color-Highlight 2
-	 description: "Color tone for the other alternative **==highlights==**"
+	 title:  Multi-Color Highlight 2
 	 type: variable-number-slider
 	 default: 185
 	 min: 0
 	 max: 360
 	 step: 5
+	-
+	 id: no-multi-color-highlights
+	 title: Disable Multi-Color Highlights
+	 type: class-toggle
+	 default: false
 	-
 	 id: other-aesthetics
 	 title: 🌟 Further Options

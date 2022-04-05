@@ -3,6 +3,7 @@ nav_order: 110
 ---
 
 # Changelog
+- 2022-04-05	fixes for multi-color-highlights
 - 2022-04-05	active line highlight more contrast
 - 2022-04-05	finished tasks now in secondary instead of primary accent
 - 2022-04-05	remove search match highlights from command palette + QS
