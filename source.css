@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 1.1080
+Version 1.1081
 Source CSS: https://github.com/chrisgrieser/shimmering-focus/blob/main/source.css
 MIT License
 ──────────────────────────────────────────────────── */
@@ -213,7 +213,7 @@ MIT License
 	- Another Quick Switcher
 	- Activity History
 	- Style Settings (Settings Tab)
-		- Style Settings: Hue Sliders
+		- Style Settings: Hue Sliders & Color Demo Boxes
 		- Style Settings: Unlock Thema Beta
 		- Style Setting – Info Boxes
 	- Favicon Plugin
@@ -488,9 +488,13 @@ TODO
 	--longform-hue-shift: 15;
 }
 
-.theme-light :is(.writing, .longform-leaf) {
+.theme-light,
+.theme-dark {
 	--longform-light-hue: calc(var(--light-hue) + var(--longform-hue-shift));
+	--longform-dark-hue: calc(var(--dark-hue) + var(--longform-hue-shift));
+}
 
+.theme-light :is(.writing, .longform-leaf) {
 	--bg1: hsl(var(--longform-light-hue) var(--sat-light-1) var(--b-light-1));
 	--bg2: hsl(var(--longform-light-hue) var(--sat-light-2) var(--b-light-2));
 	--bg3: hsl(var(--longform-light-hue) var(--sat-light-3) var(--b-light-3));
@@ -503,8 +507,6 @@ TODO
 }
 
 .theme-dark :is(.writing, .longform-leaf) {
-	--longform-dark-hue: calc(var(--dark-hue) + var(--longform-hue-shift));
-
 	--bg1: hsl(var(--longform-dark-hue) var(--sat-dark-1) var(--b-dark-1));
 	--bg2: hsl(var(--longform-dark-hue) var(--sat-dark-2) var(--b-dark-2));
 	--bg3: hsl(var(--longform-dark-hue) var(--sat-dark-3) var(--b-dark-3));
@@ -10050,7 +10052,7 @@ body:not(.no-animations) .style-settings-heading[data-id="shimmering-focus"] .se
 }
 
 /* ───────────────────────────────────────────────── */
-/* <<< Style Settings: Hue Sliders
+/* <<< Style Settings: Hue Sliders & Color Demo Boxes
 ──────────────────────────────────────────────────── */
 
 .style-settings-container {
@@ -10093,7 +10095,7 @@ body:not(.no-animations) .style-settings-heading[data-id="shimmering-focus"] .se
 	background: var(--hue-scale);
 }
 
-/* demo color box */
+/* demo color box: highlight colors */
 .style-settings-container .setting-item[data-id^="highlight-hue-"] .setting-item-control::BEFORE {
 	font-size: 0.8em;
 	white-space: pre-wrap;
@@ -10120,6 +10122,36 @@ body:not(.no-animations) .style-settings-heading[data-id="shimmering-focus"] .se
 .style-settings-container .setting-item[data-id="highlight-hue-3"] .setting-item-control::BEFORE {
 	content: "**==highlight==**";
 	background-color: hsl(var(--highlight-hue-3) 100% 50% / 40%);
+}
+
+/* demo box: longform hue shift */
+.theme-dark .style-settings-container {
+	--demo-color: hsl(var(--longform-dark-hue) 70% var(--b-dark-1));
+}
+
+.theme-light .style-settings-container {
+	--demo-color: hsl(var(--longform-light-hue) 70% var(--b-light-1));
+}
+
+.style-settings-container .setting-item[data-id="longform-hue-shift"] .setting-item-control::BEFORE {
+	content: " ";
+
+	white-space: pre-wrap;
+
+	height: 1.6em;
+	width: 1.6em;
+
+	background-color: var(--demo-color);
+
+	position: relative;
+	left: -1.2em;
+
+	border: var(--basic-border);
+	border-radius: var(--roundish);
+}
+
+.style-settings-container .setting-item[data-id="longform-hue-shift"] .setting-item-info {
+	margin-right: 40px;
 }
 
 /* ───────────────────────────────────────────────── */
@@ -11589,7 +11621,7 @@ settings:
 		label: Default Footnote Indicator
 		value: simple-fn-indicator
 	 -
-		label: 🚧 Numbered Footnote Indicator
+		label: Numbered Footnote Indicator
 		value: numbered-fn-indicator
 	 -
 		label: No Footnote Indicator
@@ -11723,7 +11755,7 @@ settings:
 	-
 	 id: longform-settings
 	 title: ✍️ Longform Plugin & Writing cssclass
-	 description: Font, Alignment, Indentation, Background, Index File
+	 description: Font, Alignment, First-Line Indent, Background Color, Index File
 	 type: heading
 	 level: 1
 	 collapsed: true
@@ -11757,7 +11789,7 @@ settings:
 	-
 	 id: longform-hue-shift
 	 title: Background Color Shift
-	 description: 'Degree longform/writing notes have a different color than normal notes (hue added/substracted). Setting this to "0" will make longform projects have the same background color as other notes. Note that a low saturation or very high or low brightness will make the color shift less noticeable.'
+	 description: 'Degree to which longform and writing notes have a different color tone than normal notes (i.e., hue added/substracted). Setting this to "0" will make longform projects have the same background color as other notes. (Note that custom colors settings with a low saturation or very high/low brightness will values make the color shift less noticeable.)'
 	 type: variable-number-slider
 	 default: 15
 	 min: -180
@@ -11766,7 +11798,7 @@ settings:
 	-
 	 id: hide-index-files
 	 title: 'Hide files named "Index.md" from File Explorer and Breadcrumbs Matrix'
-	 description: Files named that way are created by some plugins like the Longform Plugin and in many cases should not be changed.
+	 description: Files named that way are created by the Longform Plugin and normally should not be changed.
 	 type: class-toggle
 	 hub: ignore
 	 default: false
@@ -11800,7 +11832,7 @@ settings:
 	 default: false
 	-
 	 id: no-pandoc-citation-emphasis
-	 title: No Emphasis of Pandoc Citations and Dataview Inline Fields.
+	 title: No Emphasis of Pandoc Citations and Dataview Inline Fields
 	 description: "Turn off the coloring of Pandoc Citations [@citekey] and dataview inline fields [key:: value] in source mode."
 	 type: class-toggle
 	 default: false
@@ -11818,7 +11850,7 @@ settings:
 	 default: false
 	-
 	 id: no-pseudo-spoiler-tags
-	 title: Disable the Spoiler Syntax.
+	 title: Disable the Spoiler Syntax
 	 description: The spoiler syntax (*~~spoiler~~*) will blacken the enclosed text until hovered.
 	 type: class-toggle
 	 default: false
