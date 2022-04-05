@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 1.1065
+Version 1.1066
 Source CSS: https://github.com/chrisgrieser/shimmering-focus/blob/main/source.css
 MIT License
 ──────────────────────────────────────────────────── */
@@ -190,7 +190,6 @@ MIT License
 		- Kanban: Font
 		- Kanban: Lanes
 		- Kanban: Misc
-		- Kanban: Item Counter
 	- Longform
 		- Longform Sidebar
 		- Longform Scene List
@@ -5164,19 +5163,15 @@ div.is-collapsible.is-collapsed[data-callout] .callout-title {
 ──────────────────────────────────────────────────── */
 /* see also section "Max View" */
 
-.markdown-preview-view table:not(.dataview) {
-	width: 100%;
-	table-layout: fixed;
-}
-
 .markdown-preview-view table {
 	margin: 10px 0;
 	--table-border: var(--basic-border);
 	--table-roundness: var(--roundish);
 }
 
-table th {
-	font-weight: 600;
+.markdown-preview-view table:not(.dataview) {
+	width: 100%;
+	table-layout: fixed;
 }
 
 /* rounded corners */
@@ -5188,6 +5183,7 @@ tr:last-child td:last-child { border-bottom-right-radius: var(--table-roundness)
 /* draw only inner borders */
 body > .app-container table > thead > tr > th {
 	font-size: 1em;
+	font-weight: 600;
 	border: none;
 	border-bottom: var(--table-border);
 }
@@ -8338,12 +8334,28 @@ body :is(.kanban-plugin__drag-container,.kanban-plugin) ul {
 	margin-top: 3px;
 }
 
-/* <<< Kanban: Lanes */
+/* ───────────────────────────────────────────────── */
+/* <<< Kanban: Lanes
+──────────────────────────────────────────────────── */
 body .kanban-plugin__lane {
 	background-color: var(--bg2);
 	box-shadow: var(--small-inset-shadow), var(--tiny-shadow);
 	border: var(--basic-border);
 	border-radius: calc(var(--roundish) * 1.5);
+}
+
+.kanban-plugin .kanban-plugin__lane-title-count {
+	font-family: var(--number-font);
+	line-height: 1.4em;
+
+	color: var(--text-normal);
+	background-color: var(--bg1);
+
+	padding: 0 4px 1px;
+	margin-bottom: -2px;
+
+	border: var(--thin-border);
+	border-radius: var(--roundish);
 }
 
 /* fix look of cards when dragging */
@@ -8387,12 +8399,6 @@ body .kanban-plugin__scroll-container.kanban-plugin__scroll-container {
 	margin-right: 3px;
 }
 
-/* vertical three dots on lane */
-.kanban-plugin__lane-settings-button-wrapper svg {
-	color: var(--text-faint);
-	stroke-width: 4px;
-}
-
 body .kanban-plugin__lane-items {
 	padding-top: 0;
 	padding-bottom: 0;
@@ -8402,10 +8408,6 @@ body .kanban-plugin__lane-items {
 /* space between lanes */
 body .kanban-plugin__lane-wrapper {
 	margin-right: 9px;
-}
-
-.kanban-plugin__lane-settings-button-wrapper:hover svg {
-	color: var(--hover-accent-2);
 }
 
 .kanban-plugin .kanban-plugin__lane-header-wrapper .kanban-plugin__lane-settings-button {
@@ -8428,6 +8430,23 @@ body .kanban-plugin__lane-header-wrapper {
 
 .round-shapes .kanban-plugin .kanban-plugin__lane-title-text div > p {
 	margin-top: -2px;
+}
+
+/* lane icons */
+:is(.kanban-plugin__icon, .kanban-plugin__lane-grip) svg {
+	color: var(--text-faint);
+}
+
+.kanban-plugin__lane-grip svg {
+	transform: scale(1.2);
+}
+
+.kanban-plugin__icon svg {
+	transform: scale(1.1);
+}
+
+:is(.kanban-plugin__icon, .kanban-plugin__lane-grip):hover svg {
+	color: var(--hover-accent-2);
 }
 
 /* vertical three dots on card */
@@ -8536,36 +8555,6 @@ body .kanban-plugin .kanban-plugin__markdown-preview-view hr {
 
 .kanban-plugin .image-embed[alt]::AFTER {
 	display: none;
-}
-
-/* ───────────────────────────────────────────────── */
-/* <<< Kanban: Item Counter
-──────────────────────────────────────────────────── */
-.kanban-plugin__lane-title {
-	display: flex;
-}
-
-.kanban-plugin__lane-title-text {
-	display: inline-flex;
-	flex-grow: 1;
-}
-
-/* Kanban Item Counter */
-div.kanban-plugin__lane-title-count {
-	display: inline-flex;
-
-	font-family: var(--number-font);
-	font-size: 1em;
-	line-height: 1.4em;
-
-	background-color: var(--bg3);
-	box-shadow: var(--small-inset-shadow);
-
-	padding: 0 4px 1px;
-	margin-bottom: -2px;
-
-	border: var(--thin-border);
-	border-radius: var(--roundish);
 }
 
 /* ───────────────────────────────────────────────── */
