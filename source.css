@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 1.1088
+Version 1.1089
 Source CSS: https://github.com/chrisgrieser/shimmering-focus/blob/main/source.css
 MIT License
 ──────────────────────────────────────────────────── */
@@ -2354,11 +2354,13 @@ so this has to be used ლ(ಠ_ಠლ)╯ */
 /* << Search Matches
 ──────────────────────────────────────────────────── */
 
-/* affects prompts, suggesters, and search matches, e.g. in the settings */
+/* affects prompts, suggesters, and search matches, e.g. in the settings
+with color instead of outline, since it marks individuals letters */
 .suggestion-highlight {
 	color: var(--search-match-color);
 }
 
+body .is-flashing, /* e.g. when jumping to a heading */
 body .app-container .obsidian-search-match-highlight {
 	color: var(--text-normal);
 	background: none;
@@ -5001,7 +5003,7 @@ body:not(.no-citation-syntax) .HyperMD-quote-2 .cm-formatting-quote-1 + .cm-bloc
 }
 
 body:not(.no-citation-syntax) .is-live-preview .HyperMD-quote-2:not(.cm-active) .cm-hmd-indent-in-quote::AFTER,
-body:not(.no-citation-syntax) .cm-s-obsidian:not(.is-live-preview) .HyperMD-quote-2 .cm-hmd-indent-in-quote::AFTER,
+body:not(.no-citation-syntax) .cm-s-obsidian:not(.is-live-preview) .HyperMD-quote-2 .cm-formatting-quote-2::AFTER,
 body:not(.no-citation-syntax) .markdown-preview-view *:not(blockquote) > blockquote > p + blockquote > p::BEFORE {
 	content: "— ";
 	color: var(--middle-gray);
@@ -5016,12 +5018,11 @@ body:not(.no-citation-syntax) .markdown-preview-view.markdown-preview-view *:not
 body:not(.no-citation-syntax) .markdown-source-view .cm-line.HyperMD-quote-1 + .HyperMD-quote-2 .cm-quote-2:not(.cm-formatting-quote) {
 	font-size: 0.85rem;
 	font-style: italic;
-	text-align: start !important;
 	color: var(--middle-gray);
 }
 
 /* fix styling of links */
-body:not(.no-citation-syntax) .markdown-source-view .cm-line.HyperMD-quote-1 + .HyperMD-quote-2 .cm-link {
+body:not(.no-citation-syntax) .markdown-source-view .cm-line.HyperMD-quote-1 + .HyperMD-quote-2 .cm-link:not(.cm-formatting) {
 	color: var(--primary-accent-2);
 }
 
@@ -5031,11 +5032,6 @@ body:not(.no-citation-syntax) .markdown-source-view .cm-line.HyperMD-quote-1 + .
 
 body:not(.no-citation-syntax) .markdown-source-view .cm-line.HyperMD-quote-1 + .HyperMD-quote-2 .cm-url.cm-url.cm-url.cm-url.cm-url::AFTER {
 	top: 3px;
-}
-
-body:not(.no-citation-syntax) .HyperMD-quote-2 .link-favicon {
-	/* needs important */
-	display: none !important;
 }
 
 /* only needed for Shimmering Focus' blockquotes */
