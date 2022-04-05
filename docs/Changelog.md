@@ -3,7 +3,7 @@ nav_order: 110
 ---
 
 # Changelog
-- 2022-04-05	patch
+- 2022-04-05	removed deprecated spellcheck settings
 - 2022-04-05	styled escape characters
 - 2022-04-05	callout hover effect + phone callout
 - 2022-04-05	fix emphasize of active blockquote lines

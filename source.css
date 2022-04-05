@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 1.1081
+Version 1.1082
 Source CSS: https://github.com/chrisgrieser/shimmering-focus/blob/main/source.css
 MIT License
 ──────────────────────────────────────────────────── */
@@ -4638,58 +4638,6 @@ body:not(.left-aligned-embeds) .pdf-embed.pdf-embed {
 /* ───────────────────────────────────────────────── */
 /* << Spellcheck
 ──────────────────────────────────────────────────── */
-/* all the following do not work in CM6 anymore */
-body:not(.classic-spellcheck-styling) .CodeMirror .cm-spell-error {
-	text-decoration: underline wavy hsl(0 66% 64%);
-	background-image: none;
-	text-decoration-thickness: 1px;
-}
-
-.no-yaml-spellcheck .cm-hmd-frontmatter.cm-overlay.cm-spell-error {
-	text-decoration: none;
-	background-image: none;
-}
-
-.no-blockquote-spellcheck .cm-quote-1.cm-overlay.cm-spell-error {
-	text-decoration: none;
-	background-image: none;
-}
-
-.no-header-spellcheck .cm-header.cm-overlay.cm-spell-error {
-	text-decoration: none;
-	background-image: none;
-}
-
-.no-html-spellcheck .cm-tag.cm-overlay.cm-spell-error {
-	text-decoration: none;
-	background-image: none;
-}
-
-.no-strikethrough-spellcheck .cm-strikethrough.cm-overlay.cm-spell-error {
-	text-decoration: none;
-	background-image: none;
-}
-
-.no-comment-spellcheck .cm-comment.cm-overlay.cm-spell-error {
-	text-decoration: none;
-	background-image: none;
-}
-
-.no-barelink-spellcheck .cm-hmd-barelink.cm-overlay.cm-spell-error {
-	text-decoration: none;
-	background-image: none;
-}
-
-/* spellcheck dictionary (modifying words through settings) */
-.spellchecker-dictionary-remove-button:hover {
-	color: var(--hover-accent-2);
-}
-
-:not(.no-alternating-rows) .spellchecker-dictionary-item {
-	padding: 2px 6px;
-	margin-bottom: 0;
-	border-radius: var(--roundish);
-}
 
 .spellchecker-dictionary-item:nth-child(even) {
 	background-color: var(--a-row);
@@ -6150,10 +6098,12 @@ li[data-task="x"] > .task-list-item-checkbox:hover {
 ──────────────────────────────────────────────────── */
 
 mark,
-.cm-highlight {
-	--highlight-color-1: hsl(var(--highlight-hue-1) 100% 50% / 40%);
-	--highlight-color-2: hsl(var(--highlight-hue-2) 100% 50% / 40%);
-	--highlight-color-3: hsl(var(--highlight-hue-3) 100% 50% / 40%);
+.cm-highlight,
+.style-settings-container {
+	--highlight-sla-values: 100% 50% / 40%;
+	--highlight-color-1: hsl(var(--highlight-hue-1) var(--highlight-sla-values));
+	--highlight-color-2: hsl(var(--highlight-hue-2) var(--highlight-sla-values));
+	--highlight-color-3: hsl(var(--highlight-hue-3) var(--highlight-sla-values));
 }
 
 .markdown-rendered mark,
@@ -10111,17 +10061,17 @@ body:not(.no-animations) .style-settings-heading[data-id="shimmering-focus"] .se
 
 .style-settings-container .setting-item[data-id="highlight-hue-1"] .setting-item-control::BEFORE {
 	content: "    ==highlight==    ";
-	background-color: hsl(var(--highlight-hue-1) 100% 50% / 40%);
+	background-color: hsl(var(--highlight-hue-1) var(--highlight-sla-values));
 }
 
 .style-settings-container .setting-item[data-id="highlight-hue-2"] .setting-item-control::BEFORE {
 	content: "  *==highlight==*  ";
-	background-color: hsl(var(--highlight-hue-2) 100% 50% / 40%);
+	background-color: hsl(var(--highlight-hue-2) var(--highlight-sla-values));
 }
 
 .style-settings-container .setting-item[data-id="highlight-hue-3"] .setting-item-control::BEFORE {
 	content: "**==highlight==**";
-	background-color: hsl(var(--highlight-hue-3) 100% 50% / 40%);
+	background-color: hsl(var(--highlight-hue-3) var(--highlight-sla-values));
 }
 
 /* demo box: longform hue shift */
@@ -11858,61 +11808,6 @@ settings:
 	 id: unlock-theme-beta
 	 title: Unlock Theme Beta
 	 description: 'Unlocks some features of the theme that are still under development. Note that due to the work-in-progress, these features may not work as expected yet. Also, some settings may simply not do anything yet.'
-	 type: class-toggle
-	 default: false
-	-
-	 id: spellcheck-settings
-	 title: 🖍 Spellcheck (deprecated)
-	 description: Legacy Editor only
-	 type: heading
-	 level: 1
-	 collapsed: true
-	-
-	 id: classic-spellcheck-styling
-	 title: Use Classic Spellcheck Styling
-	 description: Turns off the spellcheck styling of this theme and use the classic spellcheck styling.
-	 type: class-toggle
-	 default: false
-	-
-	 id: no-yaml-spellcheck
-	 title: No Spellcheck in YAML Header
-	 description: Turn off Spellcheck in YAML Header.
-	 type: class-toggle
-	 default: false
-	-
-	 id: no-blockquote-spellcheck
-	 title: No Spellcheck in Blockquotes
-	 description: Turn off Spellcheck in Blockquotes.
-	 type: class-toggle
-	 default: false
-	-
-	 id: no-html-spellcheck
-	 title: No Spellcheck for HTML Tags
-	 description: Turn off Spellcheck in HTML Tags (e.g. <br/> not marked)
-	 type: class-toggle
-	 default: false
-	-
-	 id: no-header-spellcheck
-	 title: No Spellcheck in Headers
-	 description: Turn off Spellcheck in all headings.
-	 type: class-toggle
-	 default: false
-	-
-	 id: no-strikethrough-spellcheck
-	 title: No Spellcheck in Strikethroughs
-	 description: Turn off Spellcheck in any text enclosed by the strikethrough syntax (~~foobar~~).
-	 type: class-toggle
-	 default: false
-	-
-	 id: no-comment-spellcheck
-	 title: No Spellcheck in Comments
-	 description: Turn off Spellcheck in comments (%%comments%% as well as <!--comments-->).
-	 type: class-toggle
-	 default: false
-	-
-	 id: no-barelink-spellcheck
-	 title: No Spellcheck in Pandoc Citations
-	 description: Turn off Spellcheck in Pandoc Citations (Bare Links).
 	 type: class-toggle
 	 default: false
 	-
