@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 1.1073
+Version 1.1074
 Source CSS: https://github.com/chrisgrieser/shimmering-focus/blob/main/source.css
 MIT License
 ──────────────────────────────────────────────────── */
@@ -9787,7 +9787,7 @@ body .qsp-symbol-indicator {
 	color: var(--hover-accent-2);
 }
 
-.suggestion-flair {
+.prompt .suggestion-flair {
 	font-family: var(--button-font);
 }
 

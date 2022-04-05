@@ -3,6 +3,7 @@ nav_order: 110
 ---
 
 # Changelog
+- 2022-04-05	patch
 - 2022-04-05	style setting to unlock theme beta
 - 2022-04-05	fixes for multi-color-highlights
 - 2022-04-05	active line highlight more contrast
