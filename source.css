@@ -78,7 +78,7 @@ MIT License
 	- Modals in general
 	- Confirmation Modal
 	- Settings Menu
-		- Login Menu 
+		- Login Menu
 		- Community plugin list
 		- Core plugins
 		- Hotkey search
@@ -86,7 +86,7 @@ MIT License
 		- Plugin Search Results (left side)
 		- Plugin Info / Readme (right side)
 		- Repository Button
-		- Copy URL button 
+		- Copy URL button
 	- Theme Browser
 		- GitHub Info for this Theme
 		- Theme Browser – Infobox
@@ -384,8 +384,6 @@ TODO
 	--interactive-bg: var(--primary-accent-3);
 	--active-line-indicator: var(--primary-accent-2);
 	--link-color: var(--primary-accent-2);
-
-	--finished-task: var(--primary-accent-3);
 }
 
 .theme-dark {
@@ -395,8 +393,6 @@ TODO
 	--interactive-bg: var(--primary-accent-1);
 	--active-line-indicator: var(--primary-accent-2);
 	--link-color: var(--primary-accent-2);
-
-	--finished-task: var(--primary-accent-2);
 }
 
 /* <<< Hover Accent */
@@ -410,17 +406,19 @@ TODO
 	--text-hover-accent: var(--hover-accent-2);
 }
 
-/* <<< Secondary Accent (references, tags, code) */
+/* <<< Secondary Accent (references, tags, code, finished tasks) */
 .theme-light {
 	--reference-color: var(--secondary-accent-light);
 	--tag-text-color: var(--secondary-accent-light);
 	--code-color: var(--secondary-accent-light);
+	--finished-task: var(--secondary-accent-light);
 }
 
 .theme-dark {
 	--reference-color: var(--secondary-accent-dark);
 	--tag-text-color: var(--secondary-accent-dark);
 	--code-color: var(--secondary-accent-dark);
+	--finished-task: var(--secondary-accent-dark);
 }
 
 /* <<< Tertiary Accent (Bold & Italics) */
@@ -524,12 +522,13 @@ TODO
 }
 
 /* ───────────────────────────────────────────────── */
-/* << Default variable colors & Base elements
+/* << Default Variables
 ──────────────────────────────────────────────────── */
 
 .theme-light,
 .theme-dark {
 	--text-accent: var(--primary-accent-2);
+	--interactive-accent: var(--primary-accent-2);
 
 	--background-primary: var(--bg1);
 	--background-primary-alt: var(--bg2);
@@ -538,6 +537,10 @@ TODO
 
 	--background-modifier-border: var(--muted-border-color);
 }
+
+/* ───────────────────────────────────────────────── */
+/* << Base elements
+──────────────────────────────────────────────────── */
 
 .workspace-leaf-resize-handle {
 	background-color: var(--resize-handle-color);
