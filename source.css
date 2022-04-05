@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 1.1083
+Version 1.1084
 Source CSS: https://github.com/chrisgrieser/shimmering-focus/blob/main/source.css
 MIT License
 ──────────────────────────────────────────────────── */
@@ -1377,31 +1377,57 @@ body:not(.no-grayed-out-inactive-pane) {
 /* < Cursor
 ──────────────────────────────────────────────────── */
 
+/* Default values */
+.cm-cursorLayer .cm-cursor,
+.CodeMirror-cursor {
+	width: 3px;
+	background: var(--cursor-look);
+	border: none;
+	animation-iteration-count: infinite;
+	animation-timing-function: ease-in-out;
+}
+
+/* Cursor Shape */
+.block-cursor.block-cursor :is(.cm-cursorLayer .cm-cursor, .CodeMirror-cursor) {
+	width: 1ch;
+	opacity: 0.5;
+}
+
+.thin-cursor.thin-cursor :is(.cm-cursorLayer .cm-cursor, .CodeMirror-cursor) {
+	width: 1px;
+}
+
 /* visual style */
 /* Shimmering Beam */
 .theme-light { /* stylelint-disable-line no-duplicate-selectors */
 	--cursor-look: linear-gradient(hsl(164 100% 55%), hsl(243 80% 84%));
-	--cursor-outline-color: transparent;
 }
 
 .theme-dark { /* stylelint-disable-line no-duplicate-selectors */
 	--cursor-look: linear-gradient(hsl(164 100% 45%), hsl(243 66% 76%));
-	--cursor-outline-color: transparent;
 }
 
 /* iA Writer */
-.theme-light.ia-writer-cursor { --cursor-look: hsl(196 100% 48%); }
-.theme-dark.ia-writer-cursor { --cursor-look: hsl(196 100% 56%); }
+.theme-light.ia-writer-cursor {
+	--cursor-look: hsl(196 100% 48%);
+}
+
+.theme-dark.ia-writer-cursor {
+	--cursor-look: hsl(196 100% 56%);
+}
 
 /* Dark Eclipse */
 .theme-light.dark-eclipse-cursor {
-	--cursor-look: hsl(0 0% 0%);
 	--cursor-outline-color: hsl(220 10% 80%);
 }
 
 .theme-dark.dark-eclipse-cursor {
+}
+
+.theme-dark.dark-eclipse-cursor :is(.cm-cursorLayer .cm-cursor, .CodeMirror-cursor) {
 	--cursor-look: hsl(0 0% 0%);
 	--cursor-outline-color: hsl(0 0% 90%);
+	outline: 0.2px solid var(--cursor-outline-color);
 }
 
 /* Fire and Ice */
@@ -1448,7 +1474,6 @@ body:not(.no-grayed-out-inactive-pane) {
 }
 
 .breathing-cursor :is(.cm-cursorLayer .cm-cursor, .CodeMirror-cursor) {
-	width: 3.4px;
 	animation-duration: 2600ms;
 	animation-name: breathing-blink;
 }
@@ -1461,30 +1486,6 @@ body:not(.no-grayed-out-inactive-pane) {
 :is(.no-blink, .breathing-cursor, .phase-blink-cursor, .inversion-blink-cursor) .cm-cursorLayer {
 	/* important needed */
 	animation-name: none !important;
-}
-
-/* set cursor values */
-.cm-cursorLayer .cm-cursor,
-.CodeMirror-cursor {
-	width: 3px;
-
-	background: var(--cursor-look);
-
-	border: none;
-
-	animation-iteration-count: infinite;
-	animation-timing-function: ease-in-out;
-	outline: 0.2px solid var(--cursor-outline-color);
-}
-
-/* block cursor */
-.block-cursor.block-cursor :is(.cm-cursorLayer .cm-cursor, .CodeMirror-cursor) {
-	width: 0.6em;
-	opacity: 0.5;
-}
-
-.thin-cursor.thin-cursor :is(.cm-cursorLayer .cm-cursor, .CodeMirror-cursor) {
-	width: 1px;
 }
 
 /* ───────────────────────────────────────────────── */
@@ -10026,6 +10027,7 @@ body:not(.no-animations) .style-settings-heading[data-id="shimmering-focus"] .se
 	width: 0.4em;
 
 	background-color: var(--extra-contrast);
+	box-shadow: -1px -1px 1px hsl(0 0% 20% / 80%) inset;
 
 	position: relative;
 	top: -0.7em;
@@ -10040,13 +10042,16 @@ body:not(.no-animations) .style-settings-heading[data-id="shimmering-focus"] .se
 
 /* demo color box: highlight colors */
 .style-settings-container .setting-item[data-id^="highlight-hue-"] .setting-item-control::BEFORE {
-	font-size: 0.8em;
+	font-size: 0.7em;
+	line-height: 1.8em;
 	white-space: pre-wrap;
+
+	height: 1.8em;
 
 	position: relative;
 	left: -3em;
 
-	padding: 0 5px;
+	padding: 0 3px;
 
 	border: var(--basic-border);
 	border-radius: var(--roundish);
@@ -11400,6 +11405,61 @@ settings:
 	 type: class-toggle
 	 default: false
 	-
+	 id: special-syntax
+	 title: 🌀 Special Syntax
+	 description: Highlight Colors 🆕, Multi-Color Highlights, Spoiler Tags, Pandoc Citations, Annotation Tags
+	 type: heading
+	 level: 1
+	 collapsed: true
+	-
+	 id: highlight-hue-1
+	 title: Regular Highlights
+	 type: variable-number-slider
+	 default: 60
+	 min: 0
+	 max: 360
+	 step: 5
+	-
+	 id: highlight-hue-2
+	 title: Multi-Color Highlight 1
+	 type: variable-number-slider
+	 default: 150
+	 min: 0
+	 max: 360
+	 step: 5
+	-
+	 id: highlight-hue-3
+	 title:  Multi-Color Highlight 2
+	 type: variable-number-slider
+	 default: 185
+	 min: 0
+	 max: 360
+	 step: 5
+	-
+	 id: no-multi-color-highlights
+	 title: Disable Multi-Color Highlights
+	 description: Multi-Color Highlights are created by combining regular highlights with italic (*==highlight==*) or bold (**==highlight==**).
+	 type: class-toggle
+	 default: false
+	-
+	 id: no-pseudo-spoiler-tags
+	 title: Disable Spoiler Syntax
+	 description: The spoiler syntax (*~~spoiler~~*) will blacken the enclosed text until hovered.
+	 type: class-toggle
+	 default: false
+	-
+	 id: no-pandoc-citation-emphasis
+	 title: No Emphasis of Pandoc Citations and Dataview Inline Fields
+	 description: "Turn off the coloring of Pandoc Citations [@citekey] and dataview inline fields [key:: value] in Source Mode."
+	 type: class-toggle
+	 default: false
+	-
+	 id: annotation-tags-off
+	 title: Disable Annotation Tags
+	 description: '"Annotation Tags" are tags that are visually emphasized when used inline (i.e., not the YAML frontmatter). They include: #definition, #question, #goal, #todo, #summary, #important, #main, #critique, #gap, #litreview, #quote, #agree, #disagree, #example, #data, #method, and #sidenote.'
+	 type: class-toggle
+	 default: false
+	-
 	 id: cursor-settings
 	 title: 🐁 Cursor
 	 description: Thickness, Style, Color, Blinking, Block Cursor
@@ -11465,9 +11525,6 @@ settings:
 		-
 			label: Thin Cursor
 			value: thin-cursor
-		-
-			label: Underscor Cursor
-			value: underscore-cursor
 	-
 	 id: code-blocks-options
 	 title: '🖥 Code Blocks'
@@ -11681,61 +11738,6 @@ settings:
 	 description: Files named that way are created by the Longform Plugin and normally should not be changed.
 	 type: class-toggle
 	 hub: ignore
-	 default: false
-	-
-	 id: special-syntax
-	 title: 🌀 Special Syntax
-	 description: Highlight Colors 🆕, Multi-Color Highlights, Spoiler Tags, Pandoc Citations, Annotation Tags,
-	 type: heading
-	 level: 1
-	 collapsed: true
-	-
-	 id: highlight-hue-1
-	 title: Regular Highlights
-	 type: variable-number-slider
-	 default: 60
-	 min: 0
-	 max: 360
-	 step: 5
-	-
-	 id: highlight-hue-2
-	 title: Multi-Color Highlight 1
-	 type: variable-number-slider
-	 default: 150
-	 min: 0
-	 max: 360
-	 step: 5
-	-
-	 id: highlight-hue-3
-	 title:  Multi-Color Highlight 2
-	 type: variable-number-slider
-	 default: 185
-	 min: 0
-	 max: 360
-	 step: 5
-	-
-	 id: no-multi-color-highlights
-	 title: Disable Multi-Color Highlights
-	 description: Multi-Color Highlights are created by combining regular highlights with italic (*==highlight==*) or bold (**==highlight==**).
-	 type: class-toggle
-	 default: false
-	-
-	 id: no-pseudo-spoiler-tags
-	 title: Disable Spoiler Syntax
-	 description: The spoiler syntax (*~~spoiler~~*) will blacken the enclosed text until hovered.
-	 type: class-toggle
-	 default: false
-	-
-	 id: no-pandoc-citation-emphasis
-	 title: No Emphasis of Pandoc Citations and Dataview Inline Fields
-	 description: "Turn off the coloring of Pandoc Citations [@citekey] and dataview inline fields [key:: value] in Source Mode."
-	 type: class-toggle
-	 default: false
-	-
-	 id: annotation-tags-off
-	 title: Disable Annotation Tags
-	 description: '"Annotation Tags" are tags that are visually emphasized when used inline (i.e., not the YAML frontmatter). They include: #definition, #question, #goal, #todo, #summary, #important, #main, #critique, #gap, #litreview, #quote, #agree, #disagree, #example, #data, #method, and #sidenote.'
-	 type: class-toggle
 	 default: false
 	-
 	 id: miscellaneous

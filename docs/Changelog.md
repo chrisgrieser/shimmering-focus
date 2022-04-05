@@ -3,6 +3,7 @@ nav_order: 110
 ---
 
 # Changelog
+- 2022-04-05	patch
 - 2022-04-05	re-organized style settings
 - 2022-04-05	removed deprecated spellcheck settings
 - 2022-04-05	styled escape characters
