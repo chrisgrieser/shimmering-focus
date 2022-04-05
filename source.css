@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 1.1082
+Version 1.1083
 Source CSS: https://github.com/chrisgrieser/shimmering-focus/blob/main/source.css
 MIT License
 ──────────────────────────────────────────────────── */
@@ -41,7 +41,6 @@ MIT License
 	- Base Icons
 	- Plugin Icons
 - Global Settings
-	- Global Filter
 	- Angular or Round Shapes
 	- Animations, Transition & Dimmed Pane
 - Cursor
@@ -214,6 +213,7 @@ MIT License
 	- Activity History
 	- Style Settings (Settings Tab)
 		- Style Settings: Hue Sliders & Color Demo Boxes
+		- Style Settings: Conditional Settings Display
 		- Style Settings: Unlock Thema Beta
 		- Style Setting – Info Boxes
 	- Favicon Plugin
@@ -1318,13 +1318,6 @@ svg.longform {
 /* < Global Settings
 ──────────────────────────────────────────────────── */
 
-/* ───────────────────────────────────────────────── */
-/* << Global Filter
-──────────────────────────────────────────────────── */
-
-.grayscale { filter: grayscale(0.85) }
-.sepia { filter: sepia(0.85) }
-
 /* ───────────────────────────────────────────────────
 /* << Angular or Round Shapes
 ─────────────────────────────────────────────────── */
@@ -1385,7 +1378,7 @@ body:not(.no-grayed-out-inactive-pane) {
 ──────────────────────────────────────────────────── */
 
 /* visual style */
-/* Shimmering Beam (Default) */
+/* Shimmering Beam */
 .theme-light { /* stylelint-disable-line no-duplicate-selectors */
 	--cursor-look: linear-gradient(hsl(164 100% 55%), hsl(243 80% 84%));
 	--cursor-outline-color: transparent;
@@ -10105,6 +10098,16 @@ body:not(.no-animations) .style-settings-heading[data-id="shimmering-focus"] .se
 }
 
 /* ───────────────────────────────────────────────── */
+/* <<< Style Settings: Conditional Settings Display
+──────────────────────────────────────────────────── */
+
+body:not(.custom-colors) .setting-item:is([data-id="custom-color-light-mode"], [data-id="custom-color-dark-mode"]),
+.show-titlebar .setting-item[data-id="show-titlebar-text"],
+.no-multi-color-highlights .setting-item:is([data-id="highlight-hue-2"], [data-id="highlight-hue-3"]) {
+	display: none;
+}
+
+/* ───────────────────────────────────────────────── */
 /* <<< Style Settings: Unlock Thema Beta
 ──────────────────────────────────────────────────── */
 
@@ -10784,13 +10787,13 @@ settings:
 	 id: show-titlebar
 	 title: Re-enable Title Bar
 	 type: class-toggle
-	 description: Enable this to have a title bar, for example to move the Obsidian window
+	 description: Enable this to have a title bar, for example to move the Obsidian window.
 	 default: false
 	-
 	 id: show-titlebar-text
 	 title: Show Vault Name in Title Bar
 	 type: class-toggle
-	 description: When the Title Bar is re-enabled, shows the name of the vault there.
+	 description: When the Title Bar is re-enabled, show the name of the vault there.
 	 default: false
 	-
 	 id: show-ribbons
@@ -10813,7 +10816,7 @@ settings:
 	 default: only-on-hover
 	 options:
 		-
-			label: only show on hover (Default)
+			label: only show on hover
 			value: only-on-hover-statusbar
 		-
 			label: show permanently
@@ -10826,7 +10829,7 @@ settings:
 			value: classic-statusbar
 	-
 	 id: show-urls
-	 title: 'Permanently show full URLs (New Editor Source Mode)'
+	 title: 'Permanently show full URLs (Source Mode)'
 	 type: class-toggle
 	 description: In Source Mode, URLs on non-active lines will be folded (Obsidian 0.13+ only). Enable this to permanently show the full URL.
 	 default: false
@@ -10834,13 +10837,13 @@ settings:
 	 id: show-close-button
 	 title: Re-enable Close Buttons
 	 type: class-toggle
-	 description: When false, you can close the menu with `Esc` or by clicking outside the menu area.
+	 description: "When false, you can close menus and modals with by pressing 'Esc' or by clicking outside the menu area."
 	 default: false
 	-
 	 id: show-scrollbar
 	 title: Re-enable Scrollbars
 	 type: class-toggle
-	 description: When false, only the scroll bars in the Editor (and code blocks) are shown.
+	 description: When false, only the scroll bars in the editor are shown.
 	 default: false
 	-
 	 id: permanently-show-collapse-indicators
@@ -10850,7 +10853,7 @@ settings:
 	 default: false
 	-
 	 id: show-graph-controls
-	 title: Permanently show the Graph Controls
+	 title: 'Graph View: Permanently show the Graph Controls'
 	 description: When false, graph controls are still visible when open, or upon hovering the top-left area.
 	 type: class-toggle
 	 default: false
@@ -10863,7 +10866,7 @@ settings:
 	-
 	 id: aesthetics
 	 title: 🎨 Color & Aesthetics
-	 description: Color Schemes, Brightness, Roundness, 🆕 🌈 Highlight Colors, Decorations
+	 description: Color Schemes, Custom Colors, Brightness, Roundness, Decorations
 	 type: heading
 	 level: 1
 	 collapsed: true
@@ -10876,7 +10879,7 @@ settings:
 	 default: squareish-shapes
 	 options:
 		-
-			label: ⏹ Square-ish (Default)
+			label: ⏹ Square-ish
 			value: squareish-shapes
 		-
 			label: 🔘 Round
@@ -10887,19 +10890,19 @@ settings:
 	-
 	 id: preset-color-scheme
 	 title: "Color Schemes"
-	 description: 'Selecting a color scheme other than "Custom Colors" overrides any Brightness, Hue, and Saturation settings.'
+	 description: 'Select "🌈 Custom Colors" to fully customize background colors and accent colors (soon™️) yourself.'
 	 type: class-select
 	 allowEmpty: false
 	 default: classic-colors
 	 options:
 		-
-			label: Classic Shimmering Focus (Default)
+			label: Classic
 			value: classic-colors
 		-
 			label: Nord
 			value: nord-colors
 		-
-			label: Custom Colors
+			label: 🌈 Custom Colors
 			value: custom-colors
 	-
 	 id: custom-color-light-mode
@@ -10917,7 +10920,7 @@ settings:
 	 default: primary-accent-light-purple
 	 options:
 		-
-			label: 🟣 Obsidian Purple (Default)
+			label: 🟣 Obsidian Purple
 			value: primary-accent-light-purple
 		-
 			label: 🔵 Soft Blue
@@ -10937,7 +10940,7 @@ settings:
 	 default: secondary-accent-light-green
 	 options:
 		-
-			label: 🟢 Shimmering Green (Default)
+			label: 🟢 Shimmering Green
 			value: secondary-accent-light-green
 	-
 	 id: tertiary-accent-light
@@ -10948,7 +10951,7 @@ settings:
 	 default: tertiary-accent-light-uncolered
 	 options:
 		-
-			label: Uncolored (Default)
+			label: Uncolored
 			value: tertiary-accent-light-uncolered
 	-
 	 id: hover-accent-light
@@ -10959,7 +10962,7 @@ settings:
 	 default: hover-accent-light-green
 	 options:
 		-
-			label: 🟢 Shimmering Green (Default)
+			label: 🟢 Shimmering Green
 			value: hover-accent-light-green
 	-
 	 id: brightness-light
@@ -11006,7 +11009,7 @@ settings:
 	 default: primary-accent-dark-purple
 	 options:
 		-
-			label: 🟣 Obsidian Purple (Default)
+			label: 🟣 Obsidian Purple
 			value: primary-accent-dark-purple
 		-
 			label: 🔵 Soft Blue
@@ -11029,7 +11032,7 @@ settings:
 	 default: secondary-accent-dark-green
 	 options:
 		-
-			label: Shimmering Green (Default)
+			label: Shimmering Green
 			value: secondary-accent-dark-green
 	-
 	 id: tertiary-accent-dark
@@ -11040,7 +11043,7 @@ settings:
 	 default: tertiary-accent-dark-uncolered
 	 options:
 		-
-			label: Uncolored (Default)
+			label: Uncolored
 			value: tertiary-accent-dark-uncolered
 	-
 	 id: hover-accent-dark
@@ -11051,7 +11054,7 @@ settings:
 	 default: hover-accent-dark-green
 	 options:
 		-
-			label: Shimmering Green (Default)
+			label: Shimmering Green
 			value: hover-accent-dark-green
 	-
 	 id: brightness-dark
@@ -11075,205 +11078,13 @@ settings:
 	-
 	 id: dark-sat
 	 title: 'Background: Saturation (Dark Mode)'
-	 description: "Intensity of the chosen hue. Setting this to zero will result in grayscale, regardless of the hue chosen. "
+	 description: "Intensity of the chosen hue. A low value will result in grayscale, regardless of the hue chosen. "
 	 type: variable-number-slider
 	 default: 5
 	 min: 0
 	 max: 20
 	 step: 2
 	 format: '%'
-	-
-	 id: highlight-color-options
-	 title: 🌈 Highlight Colors
-	 description: 'Colors used for regular ==highlights== and for *==alternative highlights==*'
-	 type: heading
-	 level: 2
-	 collapsed: true
-	-
-	 id: highlight-hue-1
-	 title: Regular Highlights
-	 type: variable-number-slider
-	 default: 60
-	 min: 0
-	 max: 360
-	 step: 5
-	-
-	 id: highlight-hue-2
-	 title: Multi-Color Highlight 1
-	 type: variable-number-slider
-	 default: 150
-	 min: 0
-	 max: 360
-	 step: 5
-	-
-	 id: highlight-hue-3
-	 title:  Multi-Color Highlight 2
-	 type: variable-number-slider
-	 default: 185
-	 min: 0
-	 max: 360
-	 step: 5
-	-
-	 id: no-multi-color-highlights
-	 title: Disable Multi-Color Highlights
-	 type: class-toggle
-	 default: false
-	-
-	 id: other-aesthetics
-	 title: 🌟 Further Options
-	 description: 'Decorations, YAML Coloring, Animations, Global Filters'
-	 type: heading
-	 level: 2
-	 collapsed: true
-	-
-	 id: colored-yaml
-	 title: "YAML: Coloring"
-	 description: Use colored YAML frontmatter (in Edit Mode).
-	 type: class-toggle
-	 default: false
-	-
-	 id: no-animations
-	 title: Turn off all animations
-	 type: class-toggle
-	 default: false
-	-
-	 id: hide-signature
-	 title: 'Status Bar: Hide the "✧" icon'
-	 hub: ignore
-	 type: class-toggle
-	 default: false
-	-
-	 id: global-filter
-	 title: "Global Filter"
-	 type: class-select
-	 allowEmpty: false
-	 default: no-global-filter
-	 options:
-		-
-			label: No Filter (Default)
-			value: no-global-filter
-		-
-			label: Grayscale
-			value: grayscale
-		-
-			label: Sepia
-			value: sepia
-	-
-	 id: code-blocks-options
-	 title: '🖥 Code Blocks'
-	 description: Tab Size, Line Wrapping, Syntax Highlighting
-	 type: heading
-	 level: 1
-	 collapsed: true
-	-
-	 id: code-block-tab-size
-	 title: Tab Size (Preview & Source Mode)
-	 description: This setting is independent from the global Obsidian setting for Tab Size.
-	 type: variable-number-slider
-	 default: 4
-	 min: 2
-	 max: 8
-	 step: 1
-	-
-	 id: no-code-block-wrapping
-	 title: Disable Line Wrapping in Code Blocks (Preview Mode)
-	 description: This setting is independent from the global Obsidian setting for Line Wrapping.
-	 type: class-toggle
-	 default: false
-	-
-	 id: code-block-syntax-hl-light-mode
-	 title: "Syntax Highlighting (Light Mode)"
-	 description: Color Scheme
-	 type: class-select
-	 allowEmpty: false
-	 default: default-syntax-highl-light
-	 options:
-		-
-			label: Default
-			value: default-syntax-highl-light
-		-
-			label: Dracula
-			value: dracula-syntax-hl-light
-	-
-	 id: code-block-syntax-hl-dark-mode
-	 title: "Syntax Highlighting (Dark Mode)"
-	 description: Color Scheme
-	 type: class-select
-	 allowEmpty: false
-	 default: default-syntax-highl-dark
-	 options:
-		-
-			label: Default
-			value: default-syntax-highl-dark
-		-
-			label: Dracula
-			value: dracula-syntax-hl-dark
-	-
-	 id: cursor-settings
-	 title: 🐁 Cursor
-	 description: Thickness, Style, Color, Blinking, Block Cursor
-	 type: heading
-	 level: 1
-	 collapsed: true
-	-
-	 id: cursor-styles
-	 title: Cursor Style
-	 description: Color and appearance of the cursor.
-	 type: class-select
-	 allowEmpty: false
-	 default: shimmering-beam-cursor
-	 options:
-		-
-			label: Shimmering Beam (Default)
-			value: shimmering-beam-cursor
-		-
-			label: iA Writer
-			value: ia-writer-cursor
-		-
-			label: Dark Eclipse
-			value: dark-eclipse-cursor
-		-
-			label: Fire & Ice
-			value: fire-and-ice-cursor
-	-
-	 id: cursor-blink-style
-	 title: Cursor Blink Style
-	 type: class-select
-	 allowEmpty: false
-	 default: normal-blink
-	 options:
-		-
-			label: Normal (Default)
-			value: normal-blink
-		-
-			label: Smooth Phasing
-			value: phase-blink-cursor
-		-
-			label: Breathing
-			value: breathing-cursor
-		-
-			label: Inversion Blink
-			value: inversion-blink-cursor
-		-
-			label: No Blink
-			value: no-blink-cursor
-	-
-	 id: cursor-shape
-	 title: Cursor Shape
-	 description: When using a block cursor, you should also change the main font to a monospace font for best results. This setting does not affect the Vim cursor.
-	 type: class-select
-	 allowEmpty: false
-	 default: normal-shape
-	 options:
-		-
-			label: Normal (Default)
-			value: normal-shape
-		-
-			label: Block Cursor
-			value: block-cursor
-		-
-			label: Thin Cursor
-			value: thin-cursor
 	-
 	 id: font-settings
 	 title: 🔠 Typography
@@ -11464,6 +11275,65 @@ settings:
 	 type: class-toggle
 	 default: false
 	-
+	 id: gutter-features
+	 title: ❇️ Gutter & Active Line
+	 description: Active Line Highlights, Indicators in the Gutter, Line Numbers
+	 type: heading
+	 level: 1
+	 collapsed: true
+	-
+	 id: active-line-highlight-options
+	 title: Active Line
+	 description: "Options for emphasizing the active line. ('Emphasized Background' is automatically turned off when the 'Active Visual Line' Plugin is installed.)"
+	 type: class-select
+	 allowEmpty: false
+	 default: active-line-gutter
+	 options:
+	 -
+		label: Vertical Line in Gutter
+		value: active-line-gutter
+	 -
+		label: Emphasized Background
+		value: active-line-emphasized-bg
+	 -
+		label: No Active Line Highlight
+		value: no-active-highlight
+	-
+	 id: minimal-line-numbering
+	 title: Minimal Line Numbering
+	 description: "When 'Show line number' is enabled in the Obsidian settings, only the line number of the active and hovered line will be shown."
+	 type: class-toggle
+	 default: false
+	-
+	 id: footnote-gutter
+	 title: "Footnote Indicator"
+	 description: Displays a small indicator (⦿) in the gutter when a footnote is present. (Note that numbered indicators do not count properly footnotes on the same line.)
+	 type: class-select
+	 allowEmpty: false
+	 default: simple-fn-indicator
+	 options:
+	 -
+		label: Default Footnote Indicator
+		value: simple-fn-indicator
+	 -
+		label: Numbered Footnote Indicator
+		value: numbered-fn-indicator
+	 -
+		label: No Footnote Indicator
+		value: no-fn-indicator
+	-
+	 id: no-unresolved-link-indicator
+	 title: Disable Unresolved Link Indicators
+	 description: The indicators (𝘅) are only shown in Reading Mode.
+	 type: class-toggle
+	 default: false
+	-
+	 id: no-search-result-indicator
+	 title: Disable Search Result Indicators
+	 description: The indicators (▶) are only shown in Source Mode and Live Preview.
+	 type: class-toggle
+	 default: false
+	-
 	 id: content-settings
 	 title: 🏞 Views & Media
 	 description: Line Length, Max View, Focus View, Images, PDFs
@@ -11530,64 +11400,124 @@ settings:
 	 type: class-toggle
 	 default: false
 	-
-	 id: gutter-features
-	 title: ❇️ Gutter & Active Line
-	 description: Active Line Highlights, Indicators in the Gutter, Line Numbers
+	 id: cursor-settings
+	 title: 🐁 Cursor
+	 description: Thickness, Style, Color, Blinking, Block Cursor
 	 type: heading
 	 level: 1
 	 collapsed: true
 	-
-	 id: active-line-highlight-options
-	 title: Active Line
-	 description: "Options for emphasizing the active line. ('Emphasized Background' is automatically turned off when the 'Active Visual Line' Plugin is installed.)"
+	 id: cursor-styles
+	 title: Cursor Style
+	 description: Color and appearance of the cursor.
 	 type: class-select
 	 allowEmpty: false
-	 default: active-line-gutter
+	 default: shimmering-beam-cursor
 	 options:
-	 -
-		label: Vertical Line in Gutter (Default)
-		value: active-line-gutter
-	 -
-		label: Emphasized Background
-		value: active-line-emphasized-bg
-	 -
-		label: No Active Line Highlight
-		value: no-active-highlight
+		-
+			label: Shimmering Beam
+			value: shimmering-beam-cursor
+		-
+			label: iA Writer
+			value: ia-writer-cursor
+		-
+			label: Dark Eclipse
+			value: dark-eclipse-cursor
+		-
+			label: Fire & Ice
+			value: fire-and-ice-cursor
 	-
-	 id: minimal-line-numbering
-	 title: Minimal Line Numbering
-	 description: "When 'Show line number' is enabled in the Obsidian settings, only the line number of the active and hovered line will be shown."
-	 type: class-toggle
-	 default: false
-	-
-	 id: footnote-gutter
-	 title: "Footnote Indicator"
-	 description: Displays a small indicator (⦿) in the gutter when a footnote is present. (Note that the numbered indicator does not count properly footnotes on the same line.)
+	 id: cursor-blink-style
+	 title: Cursor Blink Style
 	 type: class-select
 	 allowEmpty: false
-	 default: simple-fn-indicator
+	 default: normal-blink
 	 options:
-	 -
-		label: Default Footnote Indicator
-		value: simple-fn-indicator
-	 -
-		label: Numbered Footnote Indicator
-		value: numbered-fn-indicator
-	 -
-		label: No Footnote Indicator
-		value: no-fn-indicator
+		-
+			label: Normal
+			value: normal-blink
+		-
+			label: Smooth Phasing
+			value: phase-blink-cursor
+		-
+			label: Breathing
+			value: breathing-cursor
+		-
+			label: Inversion Blink
+			value: inversion-blink-cursor
+		-
+			label: No Blink
+			value: no-blink-cursor
 	-
-	 id: no-unresolved-link-indicator
-	 title: Disable Unresolved Link Indicators
-	 description: The indicators (𝘅) are only shown in Reading Mode.
+	 id: cursor-shape
+	 title: Cursor Shape
+	 description: When using a block cursor, you should also change the main font to a monospace font for best results. (This setting does not affect the Vim cursor.)
+	 type: class-select
+	 allowEmpty: false
+	 default: normal-shape
+	 options:
+		-
+			label: Normal
+			value: normal-shape
+		-
+			label: Block Cursor
+			value: block-cursor
+		-
+			label: Thin Cursor
+			value: thin-cursor
+		-
+			label: Underscor Cursor
+			value: underscore-cursor
+	-
+	 id: code-blocks-options
+	 title: '🖥 Code Blocks'
+	 description: 'Syntax Highlighting 🆕, Tab Size, Line Wrapping'
+	 type: heading
+	 level: 1
+	 collapsed: true
+	-
+	 id: code-block-tab-size
+	 title: Tab Size (Preview & Source Mode)
+	 description: This setting is independent from the global Obsidian setting for Tab Size.
+	 type: variable-number-slider
+	 default: 4
+	 min: 2
+	 max: 8
+	 step: 1
+	-
+	 id: no-code-block-wrapping
+	 title: Disable Line Wrapping in Code Blocks (Preview Mode)
+	 description: This setting is independent from the global Obsidian setting for Line Wrapping.
 	 type: class-toggle
 	 default: false
 	-
-	 id: no-search-result-indicator
-	 title: Disable Search Result Indicators
-	 description: The indicators (▶) are only shown in Source Mode and Live Preview.
-	 type: class-toggle
-	 default: false
+	 id: code-block-syntax-hl-light-mode
+	 title: "Syntax Highlighting (Light Mode)"
+	 description: Color Scheme
+	 type: class-select
+	 allowEmpty: false
+	 default: default-syntax-highl-light
+	 options:
+		-
+			label: Default
+			value: default-syntax-highl-light
+		-
+			label: Dracula
+			value: dracula-syntax-hl-light
+	-
+	 id: code-block-syntax-hl-dark-mode
+	 title: "Syntax Highlighting (Dark Mode)"
+	 description: Color Scheme
+	 type: class-select
+	 allowEmpty: false
+	 default: default-syntax-highl-dark
+	 options:
+		-
+			label: Default
+			value: default-syntax-highl-dark
+		-
+			label: Dracula
+			value: dracula-syntax-hl-dark
 	-
 	 id: mobile
 	 title: 📱 Mobile
@@ -11673,7 +11603,7 @@ settings:
 	-
 	 id: no-built-in-supercharged-links
 	 title: 'Supercharged Links: Turn off built-in styling'
-	 description: This theme has some styling for the Supercharged Links plugin built-in, so can make use of the plugin without knowledge of CSS. See the theme's README on GitHub for more information.
+	 description: "This theme has some styling for the Supercharged Links plugin built-in, so can make use of the plugin without knowledge of CSS. See the theme's documentation for more information."
 	 type: class-toggle
 	 default: false
 	-
@@ -11747,15 +11677,70 @@ settings:
 	 step: 5
 	-
 	 id: hide-index-files
-	 title: 'Hide files named "Index.md" from File Explorer and Breadcrumbs Matrix'
+	 title: 'Hide files named "Index.md" from the File Explorer and the Breadcrumbs Matrix.'
 	 description: Files named that way are created by the Longform Plugin and normally should not be changed.
 	 type: class-toggle
 	 hub: ignore
 	 default: false
 	-
+	 id: special-syntax
+	 title: 🌀 Special Syntax
+	 description: Highlight Colors 🆕, Multi-Color Highlights, Spoiler Tags, Pandoc Citations, Annotation Tags,
+	 type: heading
+	 level: 1
+	 collapsed: true
+	-
+	 id: highlight-hue-1
+	 title: Regular Highlights
+	 type: variable-number-slider
+	 default: 60
+	 min: 0
+	 max: 360
+	 step: 5
+	-
+	 id: highlight-hue-2
+	 title: Multi-Color Highlight 1
+	 type: variable-number-slider
+	 default: 150
+	 min: 0
+	 max: 360
+	 step: 5
+	-
+	 id: highlight-hue-3
+	 title:  Multi-Color Highlight 2
+	 type: variable-number-slider
+	 default: 185
+	 min: 0
+	 max: 360
+	 step: 5
+	-
+	 id: no-multi-color-highlights
+	 title: Disable Multi-Color Highlights
+	 description: Multi-Color Highlights are created by combining regular highlights with italic (*==highlight==*) or bold (**==highlight==**).
+	 type: class-toggle
+	 default: false
+	-
+	 id: no-pseudo-spoiler-tags
+	 title: Disable Spoiler Syntax
+	 description: The spoiler syntax (*~~spoiler~~*) will blacken the enclosed text until hovered.
+	 type: class-toggle
+	 default: false
+	-
+	 id: no-pandoc-citation-emphasis
+	 title: No Emphasis of Pandoc Citations and Dataview Inline Fields
+	 description: "Turn off the coloring of Pandoc Citations [@citekey] and dataview inline fields [key:: value] in Source Mode."
+	 type: class-toggle
+	 default: false
+	-
+	 id: annotation-tags-off
+	 title: Disable Annotation Tags
+	 description: '"Annotation Tags" are tags that are visually emphasized when used inline (i.e., not the YAML frontmatter). They include: #definition, #question, #goal, #todo, #summary, #important, #main, #critique, #gap, #litreview, #quote, #agree, #disagree, #example, #data, #method, and #sidenote.'
+	 type: class-toggle
+	 default: false
+	-
 	 id: miscellaneous
 	 title: ⚛️ Miscellaneous
-	 description: Menu Sizes, File Name Trimming, Inactive Panes, Pandoc Citations, Annotation Tags, Alternating Row Colors, Spoiler Tags, Theme Beta
+	 description: Menu Size, File Name Trimming, Inactive Panes, Alternating Row Colors, Colored YAML, Animations, Theme Beta
 	 type: heading
 	 level: 1
 	 collapsed: true
@@ -11781,27 +11766,26 @@ settings:
 	 type: class-toggle
 	 default: false
 	-
-	 id: no-pandoc-citation-emphasis
-	 title: No Emphasis of Pandoc Citations and Dataview Inline Fields
-	 description: "Turn off the coloring of Pandoc Citations [@citekey] and dataview inline fields [key:: value] in source mode."
-	 type: class-toggle
-	 default: false
-	-
-	 id: annotation-tags-off
-	 title: 'Turn off "Annotation Tags"'
-	 description: '"Annotation Tags" are about a dozen of tags for academic reading, e.g. "#definition" that are visually emphasized. Visit the documentation for a list of all available annotation tags.'
-	 type: class-toggle
-	 default: false
-	-
 	 id: no-alternating-rows
 	 title: Turn off Alternating Row Coloring
 	 description: Affects Table Rows, Command Palette, Quick Switchers, Side Bar items, and Editor Suggesters.
 	 type: class-toggle
 	 default: false
 	-
-	 id: no-pseudo-spoiler-tags
-	 title: Disable the Spoiler Syntax
-	 description: The spoiler syntax (*~~spoiler~~*) will blacken the enclosed text until hovered.
+	 id: colored-yaml
+	 title: "YAML: Coloring"
+	 description: Use colored YAML frontmatter (in Edit Mode).
+	 type: class-toggle
+	 default: false
+	-
+	 id: no-animations
+	 title: Turn off all animations
+	 type: class-toggle
+	 default: false
+	-
+	 id: hide-signature
+	 title: 'Status Bar: Hide the decorative "✧" icon'
+	 hub: ignore
 	 type: class-toggle
 	 default: false
 	-
