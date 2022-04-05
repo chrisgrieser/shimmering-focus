@@ -34,6 +34,10 @@ nav_order: 6
 > [!EMAIL]
 ```
 
+```md
+> [!PHONE]
+```
+
 ## CSS Classes
 
 ### How to use CSS Classes

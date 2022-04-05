@@ -3,6 +3,7 @@ nav_order: 110
 ---
 
 # Changelog
+- 2022-04-05	callout hover effect + phone callout
 - 2022-04-05	fix emphasize of active blockquote lines
 - 2022-04-05	style setting to unlock theme beta
 - 2022-04-05	fixes for multi-color-highlights
