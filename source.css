@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 1.1101
+Version 1.1102
 Source CSS: https://github.com/chrisgrieser/shimmering-focus/blob/main/source.css
 MIT License
 ──────────────────────────────────────────────────── */
@@ -4367,7 +4367,7 @@ pre.language-yaml.frontmatter::AFTER { content: "YAML Frontmatter" }
 /* either disabled via Style Setting or via cssclass of the same name (thx @SlRvb) */
 /* idea from @EmrieCandera */
 
-/* base look when hovered */
+/* base look */
 body:not(.no-floating-metadata).unlock-theme-beta .markdown-preview-view:not(.no-floating-metadata) :is(.frontmatter.language-yaml, .frontmatter-container) {
 	line-height: 2.2em;
 
@@ -4381,8 +4381,6 @@ body:not(.no-floating-metadata).unlock-theme-beta .markdown-preview-view:not(.no
 
 	border: var(--basic-border);
 	border-radius: var(--roundish);
-
-	transition: var(--quick-transition);
 }
 
 body:not(.no-floating-metadata).unlock-theme-beta .markdown-preview-view:not(.no-floating-metadata) .frontmatter-container {
@@ -4402,9 +4400,9 @@ body:not(.no-floating-metadata).unlock-theme-beta .markdown-preview-view:not(.no
 	border-width: 1px;
 }
 
-/* small shadow when hovered */
+/* look when hovered */
 body:not(.no-floating-metadata).unlock-theme-beta .markdown-preview-view:not(.no-floating-metadata) :is(.frontmatter.language-yaml, .frontmatter-container):hover {
-	box-shadow: var(--small-shadow);
+	box-shadow: var(--small-shadow); /* switch to outer shadow */
 }
 
 body:not(.no-floating-metadata).unlock-theme-beta .markdown-preview-view:not(.no-floating-metadata) .frontmatter-section.mod-aliases {
@@ -4464,6 +4462,11 @@ body:not(.show-header-bar):not(.no-floating-metadata).unlock-theme-beta .view-he
 body:not(.show-header-bar):not(.no-floating-metadata).unlock-theme-beta .view-header:is(:focus-within, :hover) + .view-content .markdown-preview-view:not(.no-floating-metadata) .frontmatter.language-yaml {
 	top: calc(var(--floating-metadata-top-header-visible) + 2.2rem);
 	transition-delay: var(--transition-delay-passing-over-protection);
+}
+
+body:not(.show-header-bar):not(.no-floating-metadata).unlock-theme-beta .markdown-preview-view:not(.no-floating-metadata) :is(.frontmatter.language-yaml, .frontmatter-container) {
+	transition: var(--quick-transition);
+	transition-property: top;
 }
 
 /* ───────────────────────────────────────────────── */
