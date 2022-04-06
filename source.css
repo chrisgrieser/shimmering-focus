@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 1.1100
+Version 1.1101
 Source CSS: https://github.com/chrisgrieser/shimmering-focus/blob/main/source.css
 MIT License
 ──────────────────────────────────────────────────── */
@@ -1794,7 +1794,6 @@ body.show-header-bar:not(.is-mobile):not(.plugin-sliding-panes-rotate-header) .w
 }
 
 body .view-header-title {
-	/* harmonize sizes for when titlebar is shown */
 	font-family: var(--ui-font);
 	font-size: 0.9em;
 	font-weight: 500;
@@ -1832,12 +1831,12 @@ body .view-header.view-header.view-header.view-header:is(:hover, :focus-within) 
 }
 
 /* hover & active coloring */
-body.show-header-bar.is-mobile .view-header:hover,
+body.show-header-bar .view-header:hover,
 body:not(.is-mobile):not(.plugin-sliding-panes-rotate-header) .view-header:hover {
 	border-bottom: 2px solid var(--hover-accent-2) !important;
 }
 
-body.show-header-bar.is-mobile .view-header:focus-within,
+body:is(.show-header-bar, .is-mobile) .view-header:focus-within,
 body:not(.is-mobile):not(.plugin-sliding-panes-rotate-header) .view-header:focus-within {
 	border-bottom: 2px solid var(--primary-accent-2) !important;
 }
@@ -4380,16 +4379,18 @@ body:not(.no-floating-metadata).unlock-theme-beta .markdown-preview-view:not(.no
 
 	padding: 4px 2rem 5px 7px;
 
-	border: var(--thin-border);
+	border: var(--basic-border);
 	border-radius: var(--roundish);
+
+	transition: var(--quick-transition);
 }
 
 body:not(.no-floating-metadata).unlock-theme-beta .markdown-preview-view:not(.no-floating-metadata) .frontmatter-container {
-	top: 1rem;
+	top: var(--floating-metadata-top);
 }
 
 body:not(.no-floating-metadata).unlock-theme-beta .markdown-preview-view:not(.no-floating-metadata) .frontmatter.language-yaml {
-	top: 3rem;
+	top: calc(var(--floating-metadata-top) + 2.2rem);
 }
 
 /* look when not hovered */
@@ -4398,6 +4399,7 @@ body:not(.no-floating-metadata).unlock-theme-beta .markdown-preview-view:not(.no
 	width: 2.2rem;
 	box-shadow: var(--small-inset-shadow);
 	padding: 0;
+	border-width: 1px;
 }
 
 /* small shadow when hovered */
@@ -4439,9 +4441,29 @@ body:not(.no-floating-metadata).unlock-theme-beta .markdown-preview-view:not(.no
 
 body:not(.no-floating-metadata).unlock-theme-beta .markdown-preview-view:not(.no-floating-metadata) :is(.frontmatter.language-yaml, .frontmatter-container) .frontmatter-container-header,
 body:not(.no-floating-metadata).unlock-theme-beta .markdown-preview-view:not(.no-floating-metadata) .frontmatter.language-yaml .copy-code-button,
-body:not(.no-floating-metadata).unlock-theme-beta .markdown-preview-view:not(.no-floating-metadata) .frontmatter.language-yaml::AFTER, 
+body:not(.no-floating-metadata).unlock-theme-beta .markdown-preview-view:not(.no-floating-metadata) .frontmatter.language-yaml::AFTER,
 body:not(.no-floating-metadata).unlock-theme-beta .markdown-preview-view:not(.no-floating-metadata) :is(.frontmatter.language-yaml, .frontmatter-container):not(:hover) > * {
 	display: none;
+}
+
+/* interaction with header only visible on hover */
+body:not(.show-header-bar).unlock-theme-beta {
+	--floating-metadata-top: 3.85rem;
+	--floating-metadata-top-header-visible: 2.65rem;
+}
+
+body.show-header-bar.unlock-theme-beta {
+	--floating-metadata-top: 2.65rem;
+}
+
+body:not(.show-header-bar):not(.no-floating-metadata).unlock-theme-beta .view-header:is(:focus-within, :hover) + .view-content .markdown-preview-view:not(.no-floating-metadata) .frontmatter-container {
+	top: var(--floating-metadata-top-header-visible);
+	transition-delay: var(--transition-delay-passing-over-protection);
+}
+
+body:not(.show-header-bar):not(.no-floating-metadata).unlock-theme-beta .view-header:is(:focus-within, :hover) + .view-content .markdown-preview-view:not(.no-floating-metadata) .frontmatter.language-yaml {
+	top: calc(var(--floating-metadata-top-header-visible) + 2.2rem);
+	transition-delay: var(--transition-delay-passing-over-protection);
 }
 
 /* ───────────────────────────────────────────────── */
