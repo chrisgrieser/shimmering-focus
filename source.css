@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 1.1108
+Version 1.1109
 Source CSS: https://github.com/chrisgrieser/shimmering-focus/blob/main/source.css
 MIT License
 ──────────────────────────────────────────────────── */
@@ -6368,6 +6368,11 @@ mark,
 	--highlight-color-1: hsl(var(--highlight-hue-1) var(--highlight-sla-values));
 	--highlight-color-2: hsl(var(--highlight-hue-2) var(--highlight-sla-values));
 	--highlight-color-3: hsl(var(--highlight-hue-3) var(--highlight-sla-values));
+}
+
+mark {
+	padding-right: 2px;
+	padding-left: 2px;
 }
 
 .markdown-rendered mark,
