@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 1.1094
+Version 1.1095
 Source CSS: https://github.com/chrisgrieser/shimmering-focus/blob/main/source.css
 MIT License
 ──────────────────────────────────────────────────── */
@@ -3868,10 +3868,6 @@ body:not(.squareish-shapes) .community-plugin-info .community-plugin-author + .c
 	padding-left: 5px;
 }
 
-.community-theme.is-selected :is(.community-plugin-downloads-text, .community-theme-info) {
-	color: var(--text-muted);
-}
-
 .community-theme.is-selected svg.github-glyph > path {
 	display: none;
 }
@@ -3897,7 +3893,7 @@ body:not(.squareish-shapes) .community-plugin-info .community-plugin-author + .c
 
 .modal-title,
 .community-theme-title {
-	color: var(--extra-contrast);
+	color: var(--text-normal);
 }
 
 .community-theme.is-selected,
@@ -3934,8 +3930,12 @@ body:not(.squareish-shapes) .community-plugin-info .community-plugin-author + .c
 	font-size: 1em;
 }
 
+.community-theme.community-theme.community-theme :is(.community-plugin-downloads-text, .community-theme-info) {
+	color: var(--extra-contrast);
+}
+
 .community-theme-downloads .community-plugin-downloads-text {
-	font-family: var(--default-font);
+	font-family: var(--number-font);
 	font-size: 0.85rem;
 	top: -2px;
 }
@@ -3975,7 +3975,7 @@ body .modal.mod-community-theme .modal-content .modal-title {
 }
 
 /* sort order button */
-.modal.mod-community-theme .community-theme-filters-container .setting-item-control button {
+.modal.modal.mod-community-theme .community-theme-filters-container .setting-item-control button {
 	height: 30px;
 
 	color: var(--extra-contrast);
@@ -4004,17 +4004,14 @@ body .modal.mod-community-theme .modal-content .modal-title {
 	color: var(--hover-accent-2);
 }
 
-/* github icon */
-.modal.mod-community-theme .clickable-icon {
+/* Github icon */
+.community-theme-downloads + .clickable-icon {
+	color: var(--extra-contrast);
 	margin-top: -1px;
 }
 
-.modal.mod-community-theme .community-theme .clickable-icon:hover {
+.community-theme-downloads + .clickable-icon:hover {
 	color: var(--hover-accent-2);
-}
-
-.modal.mod-community-theme .clickable-icon:hover {
-	color: var(--interactive-normal);
 }
 
 .modal.mod-community-theme .modal-title {

@@ -3,7 +3,7 @@ nav_order: 110
 ---
 
 # Changelog
-- 2022-04-06	patch
+- 2022-04-06	improve contrasts in theme browser
 - 2022-04-06	fix for dark eclipse cursor style
 - 2022-04-06	various minor fixes
 - 2022-04-06	citation syntax and is-flashing fixes
