@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 1.1098
+Version 1.1099
 Source CSS: https://github.com/chrisgrieser/shimmering-focus/blob/main/source.css
 MIT License
 ──────────────────────────────────────────────────── */
@@ -3829,7 +3829,7 @@ body:not(.squareish-shapes) .community-plugin-info .community-plugin-author + .c
 
 /* <<< Theme Browser – Infobox */
 .community-theme.is-selected .community-theme-info::AFTER {
-	content: "👉  Most UI elements are only visible when hovered. \A\A⚙️  Hidden UI elements can be re-enabled permanently with the Style Settings Plugin.";
+	content: "👉  Most UI elements are only visible when hovered. \A\A⚙️  All hidden UI elements can be re-enabled permanently with the Style Settings Plugin.";
 
 	font-family: var(--menu-font);
 	font-size: 0.8rem;
@@ -4165,7 +4165,7 @@ body:not(.no-active-highlight) .cm-active :is(.cm-formatting-header,.cm-formatti
 	transform: scale(1.5);
 }
 
-.internal-query-header-title::AFTER,
+.internal-query-header-title::AFTER, /* does not support :is() */
 .internal-query-header-title::BEFORE {
 	display: none;
 }
@@ -4190,21 +4190,24 @@ body:not(.no-active-highlight) .cm-active :is(.cm-formatting-header,.cm-formatti
 /* credits: @Moonbase59 https://forum.obsidian.md/t/meta-post-common-css-hacks/1978/394 */
 
 /* remove title and the table from the "Metatable" plugin */
-.markdown-preview-view.clean-embeds .markdown-embed-title,
-.markdown-preview-view.clean-embeds .obsidian-metatable {
+.markdown-preview-view.clean-embeds :is(.obsidian-metatable, .markdown-embed-title) {
 	display: none;
 }
 
 /* Link icon */
-.markdown-preview-view.clean-embeds .markdown-embed-link,
-.markdown-preview-view.clean-embeds .file-embed-link {
+.markdown-preview-view.clean-embeds :is(.file-embed-link, .markdown-embed-link) {
 	text-align: right;
+
 	top: 4px;
 	right: 4px;
+
+	padding: 0 5px;
+	margin: -1px -7px;
+
+	border: 1px solid transparent;
 }
 
-.markdown-preview-view.clean-embeds .file-embed-link svg,
-.markdown-preview-view.clean-embeds .markdown-embed-link svg {
+.markdown-preview-view.clean-embeds :is(.file-embed-link, .markdown-embed-link) svg {
 	display: unset;
 	height: 1.3em;
 	width: 1.3em;
@@ -4215,25 +4218,15 @@ body:not(.no-active-highlight) .cm-active :is(.cm-formatting-header,.cm-formatti
 	color: var(--hover-accent-2);
 }
 
-.markdown-preview-view.clean-embeds .markdown-embed:hover .file-embed-link svg,
-.markdown-preview-view.clean-embeds .markdown-embed:hover .markdown-embed-link svg {
+.markdown-preview-view.clean-embeds .markdown-embed:hover :is(.file-embed-link, .markdown-embed-link) svg {
 	opacity: 1;
 }
 
 /* change background on hover, to exactly see what’s embedded */
-.markdown-preview-view.clean-embeds .markdown-embed:hover,
-.markdown-preview-view.clean-embeds .file-embed:hover {
+.markdown-preview-view.clean-embeds :is(.file-embed-link, .markdown-embed-link):hover {
 	background-color: var(--a-row);
 	border-color: var(--basic-border-color);
 	border-radius: calc(var(--roundish) * 1.5);
-}
-
-/* remove border and scroll */
-.markdown-preview-view.clean-embeds .markdown-embed,
-.markdown-preview-view.clean-embeds .file-embed {
-	padding: 0 5px;
-	margin: -1px -7px;
-	border: 1px solid transparent;
 }
 
 .markdown-preview-view.clean-embeds .markdown-embed-content,
@@ -4378,6 +4371,18 @@ body:not(.no-floating-metadata).unlock-theme-beta .markdown-preview-view:not(.no
 	padding: 4px 2rem 5px 7px;
 }
 
+body:not(.no-floating-metadata).unlock-theme-beta .markdown-preview-view:not(.no-floating-metadata) .frontmatter-container:not(:hover) {
+	height: 2.2rem;
+	width: 2.2rem;
+	box-shadow: var(--small-inset-shadow);
+	padding: 0;
+	border-width: 1px;
+}
+
+body:not(.no-floating-metadata).unlock-theme-beta .markdown-preview-view:not(.no-floating-metadata) .frontmatter-container:hover {
+	box-shadow: var(--small-shadow);
+}
+
 body:not(.no-floating-metadata).unlock-theme-beta .markdown-preview-view:not(.no-floating-metadata) .frontmatter-section.mod-aliases {
 	margin-top: 0;
 }
@@ -4386,17 +4391,11 @@ body:not(.no-floating-metadata).unlock-theme-beta .markdown-preview-view:not(.no
 	display: none;
 }
 
-body:not(.no-floating-metadata).unlock-theme-beta .markdown-preview-view:not(.no-floating-metadata) .frontmatter-container:not(:hover) {
-	height: 2.2rem;
-	width: 2.2rem;
-	padding: 0;
-}
-
 body:not(.no-floating-metadata).unlock-theme-beta .markdown-preview-view:not(.no-floating-metadata) .frontmatter-container:not(:hover)::BEFORE {
 	content: "M";
 	font-family: var(--heading-font);
 	font-size: 1.3rem;
-	padding-left: 0.33em;
+	padding-left: 0.35em;
 }
 
 body:not(.no-floating-metadata).unlock-theme-beta .markdown-preview-view:not(.no-floating-metadata) .frontmatter-container:not(:hover) > * {
