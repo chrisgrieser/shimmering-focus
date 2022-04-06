@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 1.1090
+Version 1.1091
 Source CSS: https://github.com/chrisgrieser/shimmering-focus/blob/main/source.css
 MIT License
 ──────────────────────────────────────────────────── */
@@ -7859,7 +7859,7 @@ body:not(.no-built-in-supercharged-links) .data-link-icon[data-link-tags~="#ever
 body:not(.no-built-in-supercharged-links) .data-link-icon[data-link-tags~="#moc" i]::BEFORE { content: "🗺 " }
 body:not(.no-built-in-supercharged-links) .data-link-icon[data-link-tags~="#seedling" i]::BEFORE { content: "🌱 " }
 
-/* writing cssclass */
+/* writing cssclass, needs *= to catch , after cssclass */
 body:not(.no-built-in-supercharged-links) .data-link-icon[data-link-cssclass*="writing"]::BEFORE { content: "✍️ " }
 
 /* longform index notes */
