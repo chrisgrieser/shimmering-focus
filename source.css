@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 1.1091
+Version 1.1092
 Source CSS: https://github.com/chrisgrieser/shimmering-focus/blob/main/source.css
 MIT License
 ──────────────────────────────────────────────────── */
@@ -681,12 +681,15 @@ body:is(.theme-light, .theme-dark) {
 	--resize-handle-thickness: 3px;
 	--resize-handle-hovered-thickness: 6px;
 	--scrollbar-thickness: 8px;
+
 	--image-size: 50;
 	--pdf-size: 50;
-	--readable-length: 700px;
 	--modal-base-size: 70;
+
+	--readable-length: 700px;
 	--underline-offset: 1.5px;
 	--editor-overscroll: 6em;
+	--status-bar-height: 2.2em;
 
 	--signature: "⟡";
 	--empty-state-symbol-size: 8rem;
@@ -1879,13 +1882,13 @@ body:not(.classic-statusbar) .status-bar {
 	font-family: var(--ui-font);
 	line-height: 1;
 
-	max-height: unset;
+	max-height: var(--status-bar-height);
 
 	position: absolute;
 	right: 0;
 	bottom: 0;
 
-	padding: 7px 0 6px 12px;
+	padding: 6px 0 7px 10px;
 
 	border-top: var(--status-bar-border);
 	border-left: var(--status-bar-border);
@@ -1896,7 +1899,7 @@ body:not(.classic-statusbar) .status-bar {
 .status-bar::AFTER {
 	color: var(--extra-contrast);
 	padding: 0;
-	margin-right: 13px;
+	margin-right: 12px; /* space between status bar items */
 }
 
 body:not(.hide-signature) .status-bar::AFTER {
@@ -1935,8 +1938,8 @@ body:not(.permanently-show-statusbar):not(.classic-statusbar) .status-bar:hover 
 }
 
 /* fix so stuff on the bottom of the right sidebar can still be clicked */
-body:not(.classic-statusbar) .mod-right-split .workspace-tabs:last-child .workspace-leaf-content > div:last-child {
-	padding-bottom: 2.2em;
+body:not(.classic-statusbar):not(.permanently-hide-statusbar) .mod-right-split .workspace-tabs:last-child .workspace-leaf-content > div:last-child {
+	padding-bottom: calc(var(--status-bar-height) + 0.1em);
 }
 
 /* fix for plugins adding empty elements to the statusbar */
@@ -8332,6 +8335,11 @@ body:not(.show-header-bar) .kanban-plugin__board > div {
 	padding-top: 0;
 	padding-left: 0;
 	margin-top: 0;
+}
+
+/* space for Status Bar */
+body:not(.classic-statusbar):not(.permanently-hide-statusbar) .kanban-plugin__board {
+	padding-bottom: calc(var(--status-bar-height) + 0.1em);
 }
 
 /* ───────────────────────────────────────────────── */
