@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 1.1095
+Version 1.1096
 Source CSS: https://github.com/chrisgrieser/shimmering-focus/blob/main/source.css
 MIT License
 ──────────────────────────────────────────────────── */
@@ -3782,7 +3782,7 @@ body:not(.squareish-shapes) .community-plugin-info .community-plugin-author + .c
 	color: var(--button-hover-text);
 	background-color: var(--interactive-hover-bg);
 	border-color: var(--interactive-hover-border-color);
-	transition: var(--medium-transition);
+	transition: var(--very-quick-transition);
 }
 
 .modal.mod-community-theme .community-theme.is-selected .community-theme-info .clickable-icon:active {
@@ -3896,22 +3896,24 @@ body:not(.squareish-shapes) .community-plugin-info .community-plugin-author + .c
 	color: var(--text-normal);
 }
 
-.community-theme.is-selected,
-.community-theme {
+.community-theme.community-theme {
 	color: var(--text-normal);
 	background: var(--bg3);
 	box-shadow: var(--muted-button-inset-shadow);
+
+	padding: 12px 7px;
+
+	border: var(--basic-border);
+	border-width: 3px;
 	border-radius: calc(var(--roundish) * 2);
 }
 
-.community-theme {
-	padding: 13px 8px;
-	border: 2px solid var(--basic-border-color);
+.theme-light .community-theme {
+	border-width: 4px;
 }
 
-.community-theme.is-selected,
 .community-theme:hover {
-	border-color: var(--interactive-hover-border-color);
+	border-color: var(--hover-accent-3);
 }
 
 .community-theme.is-selected:not(:hover) {
@@ -3969,7 +3971,6 @@ body .modal.mod-community-theme .modal-content .modal-title {
 
 .community-theme-mode-toggle-label {
 	font-size: 0.9em;
-	font-style: italic;
 	color: var(--extra-contrast);
 	margin-right: 4px;
 }
