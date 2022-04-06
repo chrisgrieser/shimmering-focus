@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 1.1105
+Version 1.1106
 Source CSS: https://github.com/chrisgrieser/shimmering-focus/blob/main/source.css
 MIT License
 ──────────────────────────────────────────────────── */
@@ -4421,17 +4421,17 @@ body .markdown-rendered .frontmatter.mod-failed .mod-error {
 }
 
 /* interaction with floating metadata */
-body:not(.no-floating-metadata).unlock-theme-beta .markdown-preview-view:not(.no-floating-metadata) .frontmatter.language-yaml.mod-failed:hover::AFTER {
+body:not(.no-floating-metadata):not(.is-mobile).unlock-theme-beta .markdown-preview-view:not(.no-floating-metadata) .frontmatter.language-yaml.mod-failed:hover::AFTER {
 	display: block;
 	font-size: 1.1rem;
 	right: 2rem;
 }
 
-body:not(.no-floating-metadata).unlock-theme-beta .markdown-preview-view:not(.no-floating-metadata) .frontmatter.language-yaml.mod-failed {
+body:not(.no-floating-metadata):not(.is-mobile).unlock-theme-beta .markdown-preview-view:not(.no-floating-metadata) .frontmatter.language-yaml.mod-failed {
 	background-color: var(--error-bg);
 }
 
-body:not(.no-floating-metadata).unlock-theme-beta .markdown-preview-view:not(.no-floating-metadata) .frontmatter.mod-failed + .frontmatter-container:hover::AFTER {
+body:not(.no-floating-metadata):not(.is-mobile).unlock-theme-beta .markdown-preview-view:not(.no-floating-metadata) .frontmatter.mod-failed + .frontmatter-container:hover::AFTER {
 	content: var(--error-symbol)" YAML Invalid"; /* stylelint-disable-line function-whitespace-after */
 
 	font-family: var(--font-monospace);
@@ -4450,10 +4450,12 @@ body:not(.no-floating-metadata).unlock-theme-beta .markdown-preview-view:not(.no
 /* idea from @EmrieCandera */
 
 /* base look */
-body:not(.no-floating-metadata).unlock-theme-beta .markdown-preview-view:not(.no-floating-metadata) :is(.frontmatter.language-yaml, .frontmatter-container) {
+body:not(.no-floating-metadata):not(.is-mobile).unlock-theme-beta .markdown-preview-view:not(.no-floating-metadata) :is(.frontmatter.language-yaml, .frontmatter-container) {
 	line-height: 2.2em;
 
 	max-width: calc(var(--readable-length) + 3.4rem);
+
+	background-color: var(--bg2);
 
 	position: absolute;
 	right: 1rem;
@@ -4465,20 +4467,20 @@ body:not(.no-floating-metadata).unlock-theme-beta .markdown-preview-view:not(.no
 	border-radius: var(--roundish);
 }
 
-body:not(.no-floating-metadata).unlock-theme-beta .markdown-preview-view:not(.no-floating-metadata) .frontmatter-container :is(.tag, .frontmatter-alias, .frontmatter-alias-icon) {
+body:not(.no-floating-metadata):not(.is-mobile).unlock-theme-beta .markdown-preview-view:not(.no-floating-metadata) .frontmatter-container :is(.tag, .frontmatter-alias, .frontmatter-alias-icon) {
 	color: var(--text-normal);
 }
 
-body:not(.no-floating-metadata).unlock-theme-beta .markdown-preview-view:not(.no-floating-metadata) .frontmatter-container {
+body:not(.no-floating-metadata):not(.is-mobile).unlock-theme-beta .markdown-preview-view:not(.no-floating-metadata) .frontmatter-container {
 	top: var(--floating-metadata-top);
 }
 
-body:not(.no-floating-metadata).unlock-theme-beta .markdown-preview-view:not(.no-floating-metadata) .frontmatter.language-yaml {
+body:not(.no-floating-metadata):not(.is-mobile).unlock-theme-beta .markdown-preview-view:not(.no-floating-metadata) .frontmatter.language-yaml {
 	top: calc(var(--floating-metadata-top) + 2.2rem);
 }
 
 /* look when not hovered */
-body:not(.no-floating-metadata).unlock-theme-beta .markdown-preview-view:not(.no-floating-metadata) :is(.frontmatter.language-yaml, .frontmatter-container):not(:hover) {
+body:not(.no-floating-metadata):not(.is-mobile).unlock-theme-beta .markdown-preview-view:not(.no-floating-metadata) :is(.frontmatter.language-yaml, .frontmatter-container):not(:hover) {
 	height: 2.2rem;
 	width: 2.2rem;
 	box-shadow: var(--small-inset-shadow);
@@ -4487,47 +4489,47 @@ body:not(.no-floating-metadata).unlock-theme-beta .markdown-preview-view:not(.no
 }
 
 /* look when hovered */
-body:not(.no-floating-metadata).unlock-theme-beta .markdown-preview-view:not(.no-floating-metadata) :is(.frontmatter.language-yaml, .frontmatter-container):hover {
+body:not(.no-floating-metadata):not(.is-mobile).unlock-theme-beta .markdown-preview-view:not(.no-floating-metadata) :is(.frontmatter.language-yaml, .frontmatter-container):hover {
 	box-shadow: var(--small-shadow); /* switch to outer shadow */
 }
 
-body:not(.no-floating-metadata).unlock-theme-beta .markdown-preview-view:not(.no-floating-metadata) .frontmatter-section.mod-aliases {
+body:not(.no-floating-metadata):not(.is-mobile).unlock-theme-beta .markdown-preview-view:not(.no-floating-metadata) .frontmatter-section.mod-aliases {
 	margin-top: 0;
 }
 
 /* unset some interfering codeblock styling with floating YAML */
-body:not(.no-floating-metadata).unlock-theme-beta .markdown-preview-view:not(.no-floating-metadata) .frontmatter.language-yaml::BEFORE {
+body:not(.no-floating-metadata):not(.is-mobile).unlock-theme-beta .markdown-preview-view:not(.no-floating-metadata) .frontmatter.language-yaml::BEFORE {
 	background: none;
 }
 
 /* unset some interfering codeblock styling with floating YAML */
-body:not(.no-floating-metadata).unlock-theme-beta .markdown-preview-view:not(.no-floating-metadata) .frontmatter.language-yaml:not(.mod-failed):hover::BEFORE {
+body:not(.no-floating-metadata):not(.is-mobile).unlock-theme-beta .markdown-preview-view:not(.no-floating-metadata) .frontmatter.language-yaml:not(.mod-failed):hover::BEFORE {
 	display: none;
 }
 
 /* the floating buttons */
-body:not(.no-floating-metadata).unlock-theme-beta .markdown-preview-view:not(.no-floating-metadata) :is(.frontmatter.language-yaml, .frontmatter-container):not(:hover)::BEFORE {
+body:not(.no-floating-metadata):not(.is-mobile).unlock-theme-beta .markdown-preview-view:not(.no-floating-metadata) :is(.frontmatter.language-yaml, .frontmatter-container):not(:hover)::BEFORE {
 	font-family: var(--heading-font);
 	color: var(--extra-contrast);
 }
 
-body:not(.no-floating-metadata).unlock-theme-beta .markdown-preview-view:not(.no-floating-metadata) .frontmatter-container:not(:hover)::BEFORE {
+body:not(.no-floating-metadata):not(.is-mobile).unlock-theme-beta .markdown-preview-view:not(.no-floating-metadata) .frontmatter-container:not(:hover)::BEFORE {
 	content: "M";
 	font-size: 1.3rem;
 	padding-left: 0.35em;
 }
 
-body:not(.no-floating-metadata).unlock-theme-beta .markdown-preview-view:not(.no-floating-metadata) .frontmatter.language-yaml:not(:hover)::BEFORE {
+body:not(.no-floating-metadata):not(.is-mobile).unlock-theme-beta .markdown-preview-view:not(.no-floating-metadata) .frontmatter.language-yaml:not(:hover)::BEFORE {
 	content: "Y";
 	font-size: 1.4rem;
 	text-shadow: none;
 	padding-left: 0.43em;
 }
 
-body:not(.no-floating-metadata).unlock-theme-beta .markdown-preview-view:not(.no-floating-metadata) :is(.frontmatter.language-yaml, .frontmatter-container) .frontmatter-container-header,
-body:not(.no-floating-metadata).unlock-theme-beta .markdown-preview-view:not(.no-floating-metadata) .frontmatter.language-yaml .copy-code-button,
-body:not(.no-floating-metadata).unlock-theme-beta .markdown-preview-view:not(.no-floating-metadata) .frontmatter.language-yaml::AFTER,
-body:not(.no-floating-metadata).unlock-theme-beta .markdown-preview-view:not(.no-floating-metadata) :is(.frontmatter.language-yaml, .frontmatter-container):not(:hover) > * {
+body:not(.no-floating-metadata):not(.is-mobile).unlock-theme-beta .markdown-preview-view:not(.no-floating-metadata) :is(.frontmatter.language-yaml, .frontmatter-container) .frontmatter-container-header,
+body:not(.no-floating-metadata):not(.is-mobile).unlock-theme-beta .markdown-preview-view:not(.no-floating-metadata) .frontmatter.language-yaml .copy-code-button,
+body:not(.no-floating-metadata):not(.is-mobile).unlock-theme-beta .markdown-preview-view:not(.no-floating-metadata) .frontmatter.language-yaml::AFTER,
+body:not(.no-floating-metadata):not(.is-mobile).unlock-theme-beta .markdown-preview-view:not(.no-floating-metadata) :is(.frontmatter.language-yaml, .frontmatter-container):not(:hover) > * {
 	display: none;
 }
 
