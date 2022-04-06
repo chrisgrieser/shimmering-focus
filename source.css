@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 1.1099
+Version 1.1100
 Source CSS: https://github.com/chrisgrieser/shimmering-focus/blob/main/source.css
 MIT License
 ──────────────────────────────────────────────────── */
@@ -103,7 +103,7 @@ MIT License
 	- YAML Header
 		- YAML Frontmatter
 		- Metadata Block
-		- Floating Metadata
+		- Floating Metadata & YAML
 	- Gutter
 		- Collapse Indicators
 		- Line Numbers (Gutter)
@@ -4278,6 +4278,8 @@ body:not(.colored-yaml) .cm-hmd-frontmatter {
 	font-weight: 700;
 }
 
+pre.language-yaml.frontmatter::AFTER { content: "YAML Frontmatter" }
+
 /* <<< Metadata Block */
 .markdown-preview-view .frontmatter-container {
 	font-size: 0.9em;
@@ -4361,25 +4363,45 @@ body:not(.colored-yaml) .cm-hmd-frontmatter {
 }
 
 /* ───────────────────────────────────────────────── */
-/* <<< Floating Metadata
+/* <<< Floating Metadata & YAML
 ──────────────────────────────────────────────────── */
-body:not(.no-floating-metadata).unlock-theme-beta .markdown-preview-view:not(.no-floating-metadata) .frontmatter-container {
+/* either disabled via Style Setting or via cssclass of the same name (thx @SlRvb) */
+/* idea from @EmrieCandera */
+
+/* base look when hovered */
+body:not(.no-floating-metadata).unlock-theme-beta .markdown-preview-view:not(.no-floating-metadata) :is(.frontmatter.language-yaml, .frontmatter-container) {
+	line-height: 2.2em;
+
 	max-width: calc(var(--readable-length) + 3.4rem);
+
 	position: absolute;
-	top: 1rem;
 	right: 1rem;
+	z-index: 100;
+
 	padding: 4px 2rem 5px 7px;
+
+	border: var(--thin-border);
+	border-radius: var(--roundish);
 }
 
-body:not(.no-floating-metadata).unlock-theme-beta .markdown-preview-view:not(.no-floating-metadata) .frontmatter-container:not(:hover) {
+body:not(.no-floating-metadata).unlock-theme-beta .markdown-preview-view:not(.no-floating-metadata) .frontmatter-container {
+	top: 1rem;
+}
+
+body:not(.no-floating-metadata).unlock-theme-beta .markdown-preview-view:not(.no-floating-metadata) .frontmatter.language-yaml {
+	top: 3rem;
+}
+
+/* look when not hovered */
+body:not(.no-floating-metadata).unlock-theme-beta .markdown-preview-view:not(.no-floating-metadata) :is(.frontmatter.language-yaml, .frontmatter-container):not(:hover) {
 	height: 2.2rem;
 	width: 2.2rem;
 	box-shadow: var(--small-inset-shadow);
 	padding: 0;
-	border-width: 1px;
 }
 
-body:not(.no-floating-metadata).unlock-theme-beta .markdown-preview-view:not(.no-floating-metadata) .frontmatter-container:hover {
+/* small shadow when hovered */
+body:not(.no-floating-metadata).unlock-theme-beta .markdown-preview-view:not(.no-floating-metadata) :is(.frontmatter.language-yaml, .frontmatter-container):hover {
 	box-shadow: var(--small-shadow);
 }
 
@@ -4387,18 +4409,38 @@ body:not(.no-floating-metadata).unlock-theme-beta .markdown-preview-view:not(.no
 	margin-top: 0;
 }
 
-body:not(.no-floating-metadata).unlock-theme-beta .markdown-preview-view:not(.no-floating-metadata) .frontmatter-container .frontmatter-container-header {
+/* unset some interfering codeblock styling with floating YAML */
+body:not(.no-floating-metadata).unlock-theme-beta .markdown-preview-view:not(.no-floating-metadata) .frontmatter.language-yaml::BEFORE {
+	background: none;
+}
+
+/* unset some interfering codeblock styling with floating YAML */
+body:not(.no-floating-metadata).unlock-theme-beta .markdown-preview-view:not(.no-floating-metadata) .frontmatter.language-yaml:hover::BEFORE {
 	display: none;
+}
+
+body:not(.no-floating-metadata).unlock-theme-beta .markdown-preview-view:not(.no-floating-metadata) :is(.frontmatter.language-yaml, .frontmatter-container):not(:hover)::BEFORE {
+	font-family: var(--heading-font);
+	color: var(--extra-contrast);
 }
 
 body:not(.no-floating-metadata).unlock-theme-beta .markdown-preview-view:not(.no-floating-metadata) .frontmatter-container:not(:hover)::BEFORE {
 	content: "M";
-	font-family: var(--heading-font);
 	font-size: 1.3rem;
 	padding-left: 0.35em;
 }
 
-body:not(.no-floating-metadata).unlock-theme-beta .markdown-preview-view:not(.no-floating-metadata) .frontmatter-container:not(:hover) > * {
+body:not(.no-floating-metadata).unlock-theme-beta .markdown-preview-view:not(.no-floating-metadata) .frontmatter.language-yaml:not(:hover)::BEFORE {
+	content: "Y";
+	font-size: 1.4rem;
+	text-shadow: none;
+	padding-left: 0.43em;
+}
+
+body:not(.no-floating-metadata).unlock-theme-beta .markdown-preview-view:not(.no-floating-metadata) :is(.frontmatter.language-yaml, .frontmatter-container) .frontmatter-container-header,
+body:not(.no-floating-metadata).unlock-theme-beta .markdown-preview-view:not(.no-floating-metadata) .frontmatter.language-yaml .copy-code-button,
+body:not(.no-floating-metadata).unlock-theme-beta .markdown-preview-view:not(.no-floating-metadata) .frontmatter.language-yaml::AFTER, 
+body:not(.no-floating-metadata).unlock-theme-beta .markdown-preview-view:not(.no-floating-metadata) :is(.frontmatter.language-yaml, .frontmatter-container):not(:hover) > * {
 	display: none;
 }
 
@@ -5499,15 +5541,15 @@ div.HyperMD-codeblock-bg:not(.HyperMD-codeblock-begin-bg) {
 }
 
 /* No Wrapping */
-.no-code-block-wrapping .markdown-preview-view pre code {
+.no-code-block-wrapping .markdown-preview-view pre:not(.frontmatter) code {
 	white-space: pre;
 }
 
-.no-code-block-wrapping .markdown-preview-view pre ::-WEBKIT-SCROLLBAR {
+.no-code-block-wrapping .markdown-preview-view pre:not(.frontmatter) ::-WEBKIT-SCROLLBAR {
 	height: calc(var(--scrollbar-thickness) * 0.9);
 }
 
-.no-code-block-wrapping .markdown-preview-view pre:not([class*="language-"]) {
+.no-code-block-wrapping .markdown-preview-view pre:not(.frontmatter):not([class*="language-"]) {
 	overflow-x: scroll;
 }
 
@@ -10918,9 +10960,9 @@ settings:
 	 default: false
 	-
 	 id: no-floating-metadata
-	 title: 🆕 Permanently show the Metadata Block in Preview Mode
+	 title: 🆕 Permanently show the Metadata Block / YAML Frontmatter in Preview Mode
 	 type: class-toggle
-	 description: 'When false, the metadata block becomes visible upon hovering the "M" in the top right. You can also add the cssclass "no-floating-metadata" to a note to permanently show the meta on that specific note.'
+	 description: 'When false, the metadata block becomes visible upon hovering the "M" / "Y" in the top right. You can also add the cssclass "no-floating-metadata" to a note to permanently show the meta on that specific note.'
 	 default: false
 	-
 	 id: show-sidebar-tabs
@@ -11695,7 +11737,7 @@ settings:
 	-
 	 id: code-block-syntax-hl-light-mode
 	 title: "Syntax Highlighting (Light Mode)"
-	 description: Color Scheme
+	 description: Affects Code Blocks, YAML Frontmatter in Preview Mode, and MathJax
 	 type: class-select
 	 allowEmpty: false
 	 default: default-syntax-highl-light
@@ -11709,7 +11751,7 @@ settings:
 	-
 	 id: code-block-syntax-hl-dark-mode
 	 title: "Syntax Highlighting (Dark Mode)"
-	 description: Color Scheme
+	 description: Affects Code Blocks, YAML Frontmatter in Preview Mode, and MathJax
 	 type: class-select
 	 allowEmpty: false
 	 default: default-syntax-highl-dark
