@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 1.1103
+Version 1.1104
 Source CSS: https://github.com/chrisgrieser/shimmering-focus/blob/main/source.css
 MIT License
 ──────────────────────────────────────────────────── */
@@ -100,9 +100,10 @@ MIT License
 		- Embedded Notes
 		- Embedded Search Queries
 		- Clean Embeds
-	- YAML Header
+	- YAML & Metadata
 		- YAML Frontmatter
 		- Metadata Block
+		- Invalid Metadata
 		- Floating Metadata & YAML
 	- Gutter
 		- Collapse Indicators
@@ -692,6 +693,7 @@ body:is(.theme-light, .theme-dark) {
 	--editor-overscroll: 6em;
 	--status-bar-height: 2.2em;
 
+	--error-symbol: "⚠️";
 	--signature: "⟡";
 	--empty-state-symbol-size: 8rem;
 
@@ -4257,10 +4259,12 @@ body:not(.no-active-highlight) .cm-active :is(.cm-formatting-header,.cm-formatti
 }
 
 /* ───────────────────────────────────────────────── */
-/* << YAML Header
+/* << YAML & Metadata
 ──────────────────────────────────────────────────── */
 
-/* <<< YAML Frontmatter */
+/* ───────────────────────────────────────────────── */
+/* <<< YAML Frontmatter
+──────────────────────────────────────────────────── */
 .cm-hmd-frontmatter {
 	font-size: 0.9em;
 }
@@ -4277,13 +4281,18 @@ body:not(.colored-yaml) .cm-hmd-frontmatter {
 	font-weight: 700;
 }
 
-pre.language-yaml.frontmatter::AFTER { content: "YAML Frontmatter" }
+pre.language-yaml.frontmatter::AFTER {
+	content: "YAML Frontmatter";
+}
 
 .frontmatter.language-yaml.language-yaml {
 	border: var(--basic-border);
 }
 
-/* <<< Metadata Block */
+/* ───────────────────────────────────────────────── */
+/* <<< Metadata Block
+──────────────────────────────────────────────────── */
+
 .markdown-preview-view .frontmatter-container {
 	font-size: 0.9em;
 	color: var(--extra-contrast);
@@ -4366,6 +4375,75 @@ pre.language-yaml.frontmatter::AFTER { content: "YAML Frontmatter" }
 }
 
 /* ───────────────────────────────────────────────── */
+/* <<< Invalid Metadata
+──────────────────────────────────────────────────── */
+/* no copy code button for yaml frontmatter,
+since it looks buggy for whatever reason */
+.frontmatter.mod-failed .copy-code-button {
+	display: none;
+}
+
+/* pre.mod-failed::AFTER lays over the red tint in Obsidian default theme
+but is also used for language label by this theme
+conflict causes */
+.frontmatter.mod-failed.mod-failed::AFTER {
+	content: var(--error-symbol)" YAML Invalid"; /* stylelint-disable-line function-whitespace-after */
+
+	height: unset;
+	width: unset;
+
+	color: var(--text-color);
+	background: none;
+	opacity: 1;
+
+	top: 3px;
+	right: 6px;
+}
+
+.frontmatter.mod-failed.mod-failed.mod-failed::BEFORE {
+	background-color: var(--error-bg);
+}
+
+/* remove "YAML Invalid" text since redundant */
+body .markdown-rendered .frontmatter.mod-failed .mod-error {
+	display: none;
+}
+
+/* metadata block turns red when invalid */
+.frontmatter.mod-failed + .frontmatter-container {
+	background-color: var(--error-bg);
+}
+
+/* since the header cannot be folder */
+.frontmatter.mod-failed + .frontmatter-container .frontmatter-container-header {
+	color: var(--text-normal);
+	cursor: default;
+}
+
+/* interaction with floating metadata */
+body:not(.no-floating-metadata).unlock-theme-beta .markdown-preview-view:not(.no-floating-metadata) .frontmatter.language-yaml.mod-failed:hover::AFTER {
+	display: block;
+	font-size: 1.1rem;
+	right: 2rem;
+}
+
+body:not(.no-floating-metadata).unlock-theme-beta .markdown-preview-view:not(.no-floating-metadata) .frontmatter.language-yaml.mod-failed {
+	background-color: var(--error-bg);
+}
+
+body:not(.no-floating-metadata).unlock-theme-beta .markdown-preview-view:not(.no-floating-metadata) .frontmatter.mod-failed + .frontmatter-container:hover::AFTER {
+	content: var(--error-symbol)" YAML Invalid"; /* stylelint-disable-line function-whitespace-after */
+
+	font-family: var(--font-monospace);
+	font-size: 1.1rem;
+	font-weight: 600;
+
+	color: var(--text-normal);
+
+	padding: 12px 10px 9px;
+}
+
+/* ───────────────────────────────────────────────── */
 /* <<< Floating Metadata & YAML
 ──────────────────────────────────────────────────── */
 /* either disabled via Style Setting or via cssclass of the same name (thx @SlRvb) */
@@ -4419,10 +4497,11 @@ body:not(.no-floating-metadata).unlock-theme-beta .markdown-preview-view:not(.no
 }
 
 /* unset some interfering codeblock styling with floating YAML */
-body:not(.no-floating-metadata).unlock-theme-beta .markdown-preview-view:not(.no-floating-metadata) .frontmatter.language-yaml:hover::BEFORE {
+body:not(.no-floating-metadata).unlock-theme-beta .markdown-preview-view:not(.no-floating-metadata) .frontmatter.language-yaml:not(.mod-failed):hover::BEFORE {
 	display: none;
 }
 
+/* the floating buttons */
 body:not(.no-floating-metadata).unlock-theme-beta .markdown-preview-view:not(.no-floating-metadata) :is(.frontmatter.language-yaml, .frontmatter-container):not(:hover)::BEFORE {
 	font-family: var(--heading-font);
 	color: var(--extra-contrast);
@@ -5589,7 +5668,11 @@ CM5 has the "pre" type */
 .mod-cm6 + .markdown-reading-view pre[class*="language-"]::BEFORE {
 	display: block;
 	content: " ";
+
+	line-height: 1.5em;
+
 	background-color: var(--code-block-alt-bg);
+
 	border-top-right-radius: calc(var(--codeblock-roundness) * 0.8);
 	border-top-left-radius: calc(var(--codeblock-roundness) * 0.8);
 }
@@ -5770,6 +5853,7 @@ pre.language-haskell::AFTER { content: "Haskell" }
 	.token.tag, /* In html: div in <div></div> */
 	.token.tag .punctuation, /* In HTML allows to change color of brackets */
 	.cm-operator, /* Operators in javascript: = @ ! */
+	.language-yaml .key + .punctuation, /* colon after key before value in Frontmatter */
 	.token.operator) { /* In BASH: color of the pipe |, In css color of = : ! * </> */
 	color: var(--sh-operator);
 }
@@ -6522,7 +6606,7 @@ body:not(.no-fn-indicator) .mod-cm6 .cm-hmd-barelink:not(.cm-formatting-link) + 
 - no-floating-metadata cssclass is in the section for Floating Metadata */
 
 /* clean top */
-.clean-top :is(.BC-trail, .frontmatter-container) {
+.clean-top :is(.BC-trail, .frontmatter-container, .frontmatter.language-yaml) {
 	display: none;
 }
 
@@ -9312,6 +9396,11 @@ body:not(.longform-left-aligned) :is(.writing, .longform-leaf) .cm-line {
 /* fix for checkboxes  */
 :is(.writing, .longform-leaf) input[type="checkbox"] {
 	margin: 3px 9px 4px 0 !important;
+}
+
+/* fix for code block header hack */
+.app-container :is(.writing, .longform-leaf) pre[class*="language-"]::BEFORE {
+	line-height: 1.3em;
 }
 
 /* ───────────────────────────────────────────────── */
