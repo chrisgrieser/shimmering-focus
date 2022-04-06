@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 1.1106
+Version 1.1107
 Source CSS: https://github.com/chrisgrieser/shimmering-focus/blob/main/source.css
 MIT License
 ──────────────────────────────────────────────────── */
@@ -4329,17 +4329,18 @@ pre.language-yaml.frontmatter::AFTER {
 	display: none;
 }
 
+.frontmatter-container .frontmatter-alias,
 .frontmatter-section-tags > a.tag {
 	font-size: 1em;
-	line-height: 1.0em;
+	line-height: 1.3em;
+	hyphens: auto;
+	white-space: pre-wrap;
 
 	color: var(--extra-contrast);
 	background: none;
 
-	padding-right: 6px;
-	padding-left: 6px;
-	margin-right: 0;
-	margin-left: 0;
+	padding: 3px 6px;
+	margin: 0;
 
 	border: none;
 	border-radius: var(--roundish);
@@ -4350,19 +4351,6 @@ pre.language-yaml.frontmatter::AFTER {
 	text-decoration: none !important;
 	color: var(--hover-accent-2);
 	background-color: var(--bg3);
-}
-
-.frontmatter-container .frontmatter-alias {
-	font-size: 1em;
-	hyphens: auto;
-	white-space: pre-wrap;
-
-	color: var(--extra-contrast);
-	background: none;
-
-	padding-right: 6px;
-	padding-left: 6px;
-	margin: 0;
 }
 
 .frontmatter-alias-icon > svg {
@@ -4455,8 +4443,6 @@ body:not(.no-floating-metadata):not(.is-mobile).unlock-theme-beta .markdown-prev
 
 	max-width: calc(var(--readable-length) + 3.4rem);
 
-	background-color: var(--bg2);
-
 	position: absolute;
 	right: 1rem;
 	z-index: 100;
@@ -4467,7 +4453,7 @@ body:not(.no-floating-metadata):not(.is-mobile).unlock-theme-beta .markdown-prev
 	border-radius: var(--roundish);
 }
 
-body:not(.no-floating-metadata):not(.is-mobile).unlock-theme-beta .markdown-preview-view:not(.no-floating-metadata) .frontmatter-container :is(.tag, .frontmatter-alias, .frontmatter-alias-icon) {
+body:not(.no-floating-metadata):not(.is-mobile).unlock-theme-beta .markdown-preview-view:not(.no-floating-metadata) .frontmatter-container :is(.tag:not(:hover), .frontmatter-alias, .frontmatter-alias-icon) {
 	color: var(--text-normal);
 }
 
@@ -4483,8 +4469,12 @@ body:not(.no-floating-metadata):not(.is-mobile).unlock-theme-beta .markdown-prev
 body:not(.no-floating-metadata):not(.is-mobile).unlock-theme-beta .markdown-preview-view:not(.no-floating-metadata) :is(.frontmatter.language-yaml, .frontmatter-container):not(:hover) {
 	height: 2.2rem;
 	width: 2.2rem;
+
+	background-color: var(--bg2);
 	box-shadow: var(--small-inset-shadow);
+
 	padding: 0;
+
 	border-width: 1px;
 }
 
