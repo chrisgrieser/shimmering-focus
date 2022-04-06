@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 1.1097
+Version 1.1098
 Source CSS: https://github.com/chrisgrieser/shimmering-focus/blob/main/source.css
 MIT License
 ──────────────────────────────────────────────────── */
@@ -4370,36 +4370,36 @@ body:not(.colored-yaml) .cm-hmd-frontmatter {
 /* ───────────────────────────────────────────────── */
 /* <<< Floating Metadata
 ──────────────────────────────────────────────────── */
-body:not(.floating-metadata-block).unlock-theme-beta .frontmatter-container {
+body:not(.no-floating-metadata).unlock-theme-beta .markdown-preview-view:not(.no-floating-metadata) .frontmatter-container {
 	max-width: calc(var(--readable-length) + 3.4rem);
 	position: absolute;
 	top: 1rem;
 	right: 1rem;
-	padding: 3px 1rem 5px 6px;
+	padding: 4px 2rem 5px 7px;
 }
 
-body:not(.floating-metadata-block).unlock-theme-beta .frontmatter-section.mod-aliases {
+body:not(.no-floating-metadata).unlock-theme-beta .markdown-preview-view:not(.no-floating-metadata) .frontmatter-section.mod-aliases {
 	margin-top: 0;
 }
 
-body:not(.floating-metadata-block).unlock-theme-beta .frontmatter-container .frontmatter-container-header {
+body:not(.no-floating-metadata).unlock-theme-beta .markdown-preview-view:not(.no-floating-metadata) .frontmatter-container .frontmatter-container-header {
 	display: none;
 }
 
-body:not(.floating-metadata-block).unlock-theme-beta .frontmatter-container:not(:hover) {
+body:not(.no-floating-metadata).unlock-theme-beta .markdown-preview-view:not(.no-floating-metadata) .frontmatter-container:not(:hover) {
 	height: 2.2rem;
 	width: 2.2rem;
 	padding: 0;
 }
 
-body:not(.floating-metadata-block).unlock-theme-beta .frontmatter-container:not(:hover)::BEFORE {
+body:not(.no-floating-metadata).unlock-theme-beta .markdown-preview-view:not(.no-floating-metadata) .frontmatter-container:not(:hover)::BEFORE {
 	content: "M";
 	font-family: var(--heading-font);
 	font-size: 1.3rem;
 	padding-left: 0.33em;
 }
 
-body:not(.floating-metadata-block).unlock-theme-beta .frontmatter-container:not(:hover) > * {
+body:not(.no-floating-metadata).unlock-theme-beta .markdown-preview-view:not(.no-floating-metadata) .frontmatter-container:not(:hover) > * {
 	display: none;
 }
 
@@ -5145,7 +5145,7 @@ body:not(.no-citation-syntax) .markdown-preview-view *:not(blockquote) > blockqu
 
 /* callout syntax */
 .cm-hmd-callout.cm-hmd-callout.cm-hmd-callout {
-	color: var(--middle-gray);
+	color: var(--extra-contrast);
 }
 
 .callout-content p {
@@ -10921,7 +10921,7 @@ settings:
 	 id: no-floating-metadata
 	 title: 🆕 Permanently show the Metadata Block in Preview Mode
 	 type: class-toggle
-	 description: 'When false, the metadata block becomes visible upon hovering the "M" in the top right.'
+	 description: 'When false, the metadata block becomes visible upon hovering the "M" in the top right. You can also add the cssclass "no-floating-metadata" to a note to permanently show the meta on that specific note.'
 	 default: false
 	-
 	 id: show-sidebar-tabs

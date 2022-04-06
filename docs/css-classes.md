@@ -56,6 +56,7 @@ The following CSS classes are built in with this theme:
 - `cssclass: clean-embeds`: Embeds in that note are fully embedded, looking like one document.
 - `cssclass: list-2-col-cards`: Lists will become cards separated into two columns.
 - `cssclass: no-inline-backlinks`: Do not display inline backlinks for that note.
+- `cssclass: no-floating-metadata`: Show the Metadata Block in Preview Mode permanently.
 - `cssclass: full-width`: Use the full width, i.e., turn of readable line length for that note.
 
 ### Writing & Academic
