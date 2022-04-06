@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 1.1102
+Version 1.1103
 Source CSS: https://github.com/chrisgrieser/shimmering-focus/blob/main/source.css
 MIT License
 ──────────────────────────────────────────────────── */
@@ -4102,7 +4102,7 @@ body > .app-container .view-content > div > .markdown-preview-view {
 ──────────────────────────────────────────────────── */
 
 /* Vertical Line in Gutter */
-body:not(.active-line-emphasized-bg):not(.no-active-highlight) :is(.cm-active, .CodeMirror-activeline):not(.HyperMD-quote, .HyperMD-header, .HyperMD-list-line)::BEFORE {
+body:not(.active-line-emphasized-bg):not(.no-active-highlight) :is(.cm-active, .CodeMirror-activeline):not(.HyperMD-quote, .HyperMD-header)::BEFORE {
 	content: " ";
 	height: 100%;
 	position: absolute;
@@ -4278,6 +4278,10 @@ body:not(.colored-yaml) .cm-hmd-frontmatter {
 }
 
 pre.language-yaml.frontmatter::AFTER { content: "YAML Frontmatter" }
+
+.frontmatter.language-yaml.language-yaml {
+	border: var(--basic-border);
+}
 
 /* <<< Metadata Block */
 .markdown-preview-view .frontmatter-container {
@@ -5635,11 +5639,12 @@ button.copy-code-button:hover,
 .is-live-preview .cm-preview-code-block .edit-block-button:hover {
 	color: var(--button-hover-text);
 	background-color: var(--interactive-hover-bg) !important;
+	border-color: var(--interactive-hover-border-color);
 }
 
 /* language replacements */
 pre[class*="language-"]::AFTER {
-	content: attr(class);
+	content: attr(class); /* fallback when none of the languages below is used */
 
 	font-size: calc(var(--monospace-font-size) * 0.9);
 	text-shadow: none;
@@ -6511,8 +6516,10 @@ body:not(.no-fn-indicator) .mod-cm6 .cm-hmd-barelink:not(.cm-formatting-link) + 
 /* ───────────────────────────────────────────────── */
 /* < CSS Classes
 ──────────────────────────────────────────────────── */
-/* writing cssclass is bundled with the styling for the Longform Editor */
-/* clean-embeds cssclass is in the section or Embeds */
+/*
+- writing cssclass is bundled with the styling for the Longform Editor
+- clean-embeds cssclass is in the section for Embeds
+- no-floating-metadata cssclass is in the section for Floating Metadata */
 
 /* clean top */
 .clean-top :is(.BC-trail, .frontmatter-container) {
@@ -7471,18 +7478,21 @@ body:not(.no-alternating-rows) .workspace-leaf-content[data-type="starred"] .nav
 }
 
 /* info on style settings, since already styled by this theme */
-.style-settings-heading[data-id="hover-editor"] .setting-item-info::AFTER {
-	content: "Changing some settings has no effect, since 'Shimmering Focus' overrides them. ";
+.style-settings-heading[data-id="hover-editor"]:not(.is-collapsed) + .style-settings-container::BEFORE {
+	display: inline-block;
+	content: "⚠️ Note that some of the settings for the Hover Editor have no effect, since they are overriden when in conflict with the styling from 'Shimmering Focus'.";
 
 	font-family: var(--menu-font);
-	font-size: 0.65em;
-	font-weight: 500;
+	font-size: 0.9em;
 
-	color: var(--text-muted);
+	color: var(--extra-contrast);
+	background-color: var(--bg2);
+	box-shadow: var(--small-inset-shadow);
 
-	position: relative;
-	top: -2px;
-	left: 18px;
+	padding: 2px 5px;
+
+	border: var(--basic-border);
+	border-radius: var(--roundish);
 }
 
 .style-settings-heading[data-id="hover-editor"] .setting-item-name.setting-item-name.setting-item-name {

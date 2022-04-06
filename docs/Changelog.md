@@ -3,7 +3,7 @@ nav_order: 110
 ---
 
 # Changelog
-- 2022-04-06	patch
+- 2022-04-06	hover editor info improved
 - 2022-04-06	fix interaction of header bar & floating metadata
 - 2022-04-06	floating yaml frontmatter added to beta
 - 2022-04-06	add floating metadata to beta
