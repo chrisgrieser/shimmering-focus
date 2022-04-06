@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 1.1093
+Version 1.1094
 Source CSS: https://github.com/chrisgrieser/shimmering-focus/blob/main/source.css
 MIT License
 ──────────────────────────────────────────────────── */
@@ -2528,6 +2528,7 @@ div.prompt-results {
 }
 
 .suggestion-item {
+	line-height: 1.4em;
 	padding-right: 5px;
 	padding-left: 25px;
 }
@@ -9865,7 +9866,9 @@ body .qsp-symbol-indicator {
 	margin-left: -17px;
 }
 
+.another-quick-switcher__item__description,
 .another-quick-switcher__item__descriptions {
+	font-family: var(--ui-font);
 	line-height: 1em;
 }
 
