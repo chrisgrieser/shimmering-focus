@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 1.1096
+Version 1.1097
 Source CSS: https://github.com/chrisgrieser/shimmering-focus/blob/main/source.css
 MIT License
 ──────────────────────────────────────────────────── */
@@ -103,6 +103,7 @@ MIT License
 	- YAML Header
 		- YAML Frontmatter
 		- Metadata Block
+		- Floating Metadata
 	- Gutter
 		- Collapse Indicators
 		- Line Numbers (Gutter)
@@ -4285,13 +4286,21 @@ body:not(.colored-yaml) .cm-hmd-frontmatter {
 }
 
 /* <<< Metadata Block */
+.markdown-preview-view .frontmatter-container {
+	font-size: 0.9em;
+	color: var(--extra-contrast);
+	background: var(--bg2);
+	border: var(--basic-border);
+	border-radius: var(--roundish);
+}
+
 .frontmatter-container .frontmatter-container-header {
 	font-family: var(--smallcap-font);
 	font-size: 0.9em;
 	font-weight: 400;
 	text-transform: capitalize;
 
-	margin-bottom: 5px;
+	margin-bottom: 2px;
 
 	border-bottom: var(--thin-border);
 }
@@ -4302,14 +4311,6 @@ body:not(.colored-yaml) .cm-hmd-frontmatter {
 
 .frontmatter-container-header:hover .frontmatter-collapse-indicator {
 	color: var(--hover-accent-2);
-}
-
-.markdown-preview-view .frontmatter-container {
-	font-size: 0.9em;
-	color: var(--extra-contrast);
-	background: var(--bg2);
-	border: var(--basic-border);
-	border-radius: var(--roundish);
 }
 
 .frontmatter-container .frontmatter-section {
@@ -4323,6 +4324,7 @@ body:not(.colored-yaml) .cm-hmd-frontmatter {
 
 .frontmatter-section-tags > a.tag {
 	font-size: 1em;
+	line-height: 1.0em;
 
 	color: var(--extra-contrast);
 	background: none;
@@ -4353,8 +4355,52 @@ body:not(.colored-yaml) .cm-hmd-frontmatter {
 
 	padding-right: 6px;
 	padding-left: 6px;
-	margin-right: 0;
-	margin-left: 0;
+	margin: 0;
+}
+
+.frontmatter-alias-icon > svg {
+	color: var(--extra-contrast);
+}
+
+.frontmatter-section.mod-aliases + .frontmatter-section.mod-tags {
+	padding-top: 4px;
+	border-top: var(--thin-border);
+}
+
+/* ───────────────────────────────────────────────── */
+/* <<< Floating Metadata
+──────────────────────────────────────────────────── */
+body:not(.floating-metadata-block).unlock-theme-beta .frontmatter-container {
+	max-width: calc(var(--readable-length) + 3.4rem);
+	position: absolute;
+	top: 1rem;
+	right: 1rem;
+	padding: 3px 1rem 5px 6px;
+}
+
+body:not(.floating-metadata-block).unlock-theme-beta .frontmatter-section.mod-aliases {
+	margin-top: 0;
+}
+
+body:not(.floating-metadata-block).unlock-theme-beta .frontmatter-container .frontmatter-container-header {
+	display: none;
+}
+
+body:not(.floating-metadata-block).unlock-theme-beta .frontmatter-container:not(:hover) {
+	height: 2.2rem;
+	width: 2.2rem;
+	padding: 0;
+}
+
+body:not(.floating-metadata-block).unlock-theme-beta .frontmatter-container:not(:hover)::BEFORE {
+	content: "M";
+	font-family: var(--heading-font);
+	font-size: 1.3rem;
+	padding-left: 0.33em;
+}
+
+body:not(.floating-metadata-block).unlock-theme-beta .frontmatter-container:not(:hover) > * {
+	display: none;
 }
 
 /* ───────────────────────────────────────────────── */
@@ -4888,7 +4934,7 @@ body .markdown-preview-view blockquote,
 .markdown-preview-view blockquote,
 .markdown-preview-view blockquote :is(em, strong),
 .cm-line.HyperMD-quote .cm-quote {
-	color: var(--extra-contrast);
+	color: var(--text-normal);
 }
 
 /* edit mode & live preview */
@@ -4933,7 +4979,7 @@ body .markdown-preview-view blockquote,
 	z-index: -1;
 
 	margin-top: -12px;
-	margin-left: calc(-1 * var(--blockquote-border-width) - 4px);
+	margin-left: calc(-1 * (var(--blockquote-border-width) + 4px));
 }
 
 .HyperMD-quote + .HyperMD-quote.HyperMD-quote-lazy::BEFORE {
@@ -5033,7 +5079,8 @@ body:not(.no-citation-syntax) .is-live-preview .HyperMD-quote-2:not(.cm-active) 
 body:not(.no-citation-syntax) .cm-s-obsidian:not(.is-live-preview) .HyperMD-quote-2 .cm-formatting-quote-2::AFTER,
 body:not(.no-citation-syntax) .markdown-preview-view *:not(blockquote) > blockquote > p + blockquote > p::BEFORE {
 	content: "— ";
-	color: var(--middle-gray);
+	font-weight: 500;
+	color: var(--extra-contrast);
 }
 
 body:not(.no-citation-syntax) .markdown-source-view .cm-line.HyperMD-quote-1 + .HyperMD-quote-2 {
@@ -5043,9 +5090,17 @@ body:not(.no-citation-syntax) .markdown-source-view .cm-line.HyperMD-quote-1 + .
 /* styling of the citation text */
 body:not(.no-citation-syntax) .markdown-preview-view.markdown-preview-view *:not(blockquote) > blockquote > blockquote,
 body:not(.no-citation-syntax) .markdown-source-view .cm-line.HyperMD-quote-1 + .HyperMD-quote-2 .cm-quote-2:not(.cm-formatting-quote) {
-	font-size: 0.85rem;
 	font-style: italic;
-	color: var(--middle-gray);
+	color: var(--extra-contrast);
+}
+
+body:not(.no-citation-syntax) .markdown-source-view .cm-line.HyperMD-quote-1 + .HyperMD-quote-2 .cm-quote-2:not(.cm-formatting-quote) {
+	font-size: 85%;
+}
+
+body:not(.no-citation-syntax) .markdown-preview-view.markdown-preview-view *:not(blockquote) > blockquote > blockquote {
+	font-size: 100%;
+	margin-left: 2em;
 }
 
 /* fix styling of links */
@@ -10194,10 +10249,12 @@ body:not(.custom-colors) .setting-item:is([data-id="custom-color-light-mode"], [
 /* <<< Style Settings: Unlock Thema Beta
 ──────────────────────────────────────────────────── */
 
+body:not(.unlock-theme-beta) .style-settings-container .setting-item[data-id="no-floating-metadata"],
 body:not(.unlock-theme-beta) .style-settings-container .setting-item[data-id*="-accent-"] {
 	display: none;
 }
 
+.style-settings-container .setting-item[data-id="no-floating-metadata"]::BEFORE,
 .style-settings-container .setting-item[data-id*="-accent-"]::BEFORE {
 	content: "Beta";
 
@@ -10850,7 +10907,7 @@ settings:
 	-
 	 id: show-hide-elements
 	 title: 🙈 Show/Hide UI Elements
-	 description: Re-enable elements hidden by this theme
+	 description: Re-enable elements hidden by this theme.
 	 type: heading
 	 level: 1
 	 collapsed: true
@@ -10859,6 +10916,12 @@ settings:
 	 title: Hide Settings Button
 	 type: class-toggle
 	 description: "Hide the floating Settings button in the bottom left. The settings can still be accessed the button by using the hotkey 'cmd + ,' (Mac) or 'ctrl + ,' (Windows/Linux)."
+	 default: false
+	-
+	 id: no-floating-metadata
+	 title: 🆕 Permanently show the Metadata Block in Preview Mode
+	 type: class-toggle
+	 description: 'When false, the metadata block becomes visible upon hovering the "M" in the top right.'
 	 default: false
 	-
 	 id: show-sidebar-tabs
@@ -10893,7 +10956,6 @@ settings:
 	-
 	 id: status-bar-mode
 	 title: Status Bar
-	 description: Display Options
 	 type: class-select
 	 allowEmpty: false
 	 default: only-on-hover
