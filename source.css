@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 1.1104
+Version 1.1105
 Source CSS: https://github.com/chrisgrieser/shimmering-focus/blob/main/source.css
 MIT License
 ──────────────────────────────────────────────────── */
@@ -167,10 +167,8 @@ MIT License
 		- Tag Pane
 		- Starred
 	- Popover (Page Preview)
-	- Hover Editor
 	- File Recovery
 	- Sync
-	- Diff Version
 	- Graph View
 		- Graph controls
 		- Graph itself
@@ -234,6 +232,8 @@ MIT License
 	- Settings Search
 	- CookLang
 	- Code Block Labels
+	- Version History Diff
+	- Hover Editor
 - Compatibility Info for the Obsidian Hub
 - Style Setting Options
 /* @TOC-SPLIT-MARKER */
@@ -4465,6 +4465,10 @@ body:not(.no-floating-metadata).unlock-theme-beta .markdown-preview-view:not(.no
 	border-radius: var(--roundish);
 }
 
+body:not(.no-floating-metadata).unlock-theme-beta .markdown-preview-view:not(.no-floating-metadata) .frontmatter-container :is(.tag, .frontmatter-alias, .frontmatter-alias-icon) {
+	color: var(--text-normal);
+}
+
 body:not(.no-floating-metadata).unlock-theme-beta .markdown-preview-view:not(.no-floating-metadata) .frontmatter-container {
 	top: var(--floating-metadata-top);
 }
@@ -7476,9 +7480,9 @@ body:not(.no-alternating-rows) .workspace-leaf-content[data-type="starred"] .nav
 
 /* ───────────────────────────────────────────────── */
 /* << Popover (Page Preview)
-/* << Hover Editor
 ──────────────────────────────────────────────────── */
 
+/* also applies to Hover Editor */
 .popover.hover-popover.hover-popover {
 	background-color: var(--bg1);
 	box-shadow: var(--medium-shadow);
@@ -7494,93 +7498,6 @@ body:not(.no-alternating-rows) .workspace-leaf-content[data-type="starred"] .nav
 	line-height: 1em;
 	margin-top: 0.5em;
 	margin-bottom: 0.2em;
-}
-
-.hover-editor .popover-titlebar.popover-titlebar.popover-titlebar.popover-titlebar.popover-titlebar.popover-titlebar {
-	background-color: var(--alt-bg);
-}
-
-.popover.hover-editor .popover-content.popover-content {
-	border-radius: calc(var(--roundish) * 1.5);
-}
-
-.hover-editor .popover-title::AFTER {
-	display: none;
-}
-
-.hover-editor .popover-title.popover-title.popover-title.popover-title.popover-title {
-	color: var(--text-normal);
-}
-
-/* icons */
-.hover-editor svg {
-	color: var(--extra-contrast);
-}
-
-.popover-header-icon.mod-pin-popover.is-active svg {
-	fill: var(--extra-contrast);
-}
-
-.hover-editor svg:hover {
-	color: var(--hover-accent-2);
-}
-
-.popover-header-icon.mod-pin-popover.is-active svg:hover {
-	fill: var(--hover-accent-2);
-}
-
-/* header */
-.hover-editor .view-header.view-header {
-	border-bottom-color: var(--basic-border-color);
-}
-
-.hover-editor.show-navbar .view-header.view-header.view-header {
-	height: 2.1em;
-	border-top: var(--basic-border);
-}
-
-/* hover + active */
-.theme-dark .hover-editor.is-active.is-active {
-	border-color: var(--primary-accent-2);
-}
-
-.theme-dark .hover-editor:not(.is-active):hover {
-	border-color: var(--hover-accent-2);
-}
-
-.theme-light .hover-editor.is-active.is-active {
-	border-color: var(--primary-accent-3);
-}
-
-.theme-light .hover-editor:not(.is-active):hover {
-	border-color: var(--hover-accent-3);
-}
-
-/* deactivate hidden header */
-.hover-editor .view-header.view-header.view-header.view-header.view-header * {
-	opacity: 1;
-}
-
-/* info on style settings, since already styled by this theme */
-.style-settings-heading[data-id="hover-editor"]:not(.is-collapsed) + .style-settings-container::BEFORE {
-	display: inline-block;
-	content: "⚠️ Note that some of the settings for the Hover Editor have no effect, since they are overriden when in conflict with the styling from 'Shimmering Focus'.";
-
-	font-family: var(--menu-font);
-	font-size: 0.9em;
-
-	color: var(--extra-contrast);
-	background-color: var(--bg2);
-	box-shadow: var(--small-inset-shadow);
-
-	padding: 2px 5px;
-
-	border: var(--basic-border);
-	border-radius: var(--roundish);
-}
-
-.style-settings-heading[data-id="hover-editor"] .setting-item-name.setting-item-name.setting-item-name {
-	margin-bottom: 0;
 }
 
 /* ───────────────────────────────────────────────── */
@@ -7676,127 +7593,6 @@ body:not(.no-alternating-rows) .workspace-leaf-content[data-type="starred"] .nav
 .sync-history-content-empty::BEFORE {
 	content: var(--signature);
 	font-size: var(--empty-state-symbol-size);
-}
-
-/* ───────────────────────────────────────────────── */
-/* << Diff Version
-──────────────────────────────────────────────────── */
-.mod-sync-history.diff .sync-history-list {
-	min-width: unset;
-}
-
-.mod-sync-history.diff.diff.diff button.mod-cta {
-	font-size: 70%;
-	padding: 4px;
-	margin-top: 10px;
-	margin-right: 0;
-}
-
-.diff .sync-history-list {
-	background-color: var(--bg2);
-	padding: 0;
-	border-radius: var(--roundish);
-}
-
-.diff .sync-history-list-container:first-child .sync-history-list {
-	border-top-left-radius: calc(var(--roundish) * 2.5);
-}
-
-.diff .sync-history-list-container:last-child .sync-history-list {
-	border-top-right-radius: calc(var(--roundish) * 2.5);
-	border-bottom-right-radius: calc(var(--roundish) * 2.5);
-}
-
-.diff .sync-history-content-container {
-	height: 100%;
-
-	background-color: var(--bg1);
-
-	margin-right: 6px;
-	margin-left: 6px;
-
-	border: none;
-	border-radius: var(--roundish);
-}
-
-.diff :is(.d2h-lines-added, .d2h-lines-deleted) {
-	font-size: 130%;
-	color: hsl(0 100% 100%);
-	padding: 4px;
-	border: none;
-}
-
-.d2h-wrapper {
-	max-height: unset;
-}
-
-.d2h-lines-added {
-	background-color: var(--interactive-success);
-}
-
-.d2h-lines-deleted {
-	background-color: var(--text-error);
-}
-
-.diff.diff .d2h-file-name {
-	font-family: var(--heading-font);
-	font-size: var(--h1);
-	letter-spacing: var(--heading-letter-spacing);
-	color: var(--text-normal);
-}
-
-.diff .d2h-file-list-line {
-	padding: 2px;
-}
-
-/* move button down */
-.diff .d2h-file-wrapper {
-	height: calc(var(--modal-base-size) * 1vh + 10vh);
-}
-
-.d2h-diff-table.d2h-diff-table.d2h-diff-table tr {
-	background: none;
-}
-
-.diff .d2h-code-linenumber,
-.d2h-diff-table tr:first-child .d2h-info {
-	background-color: var(--bg2);
-}
-
-/* PR */
-.d2h-changed,
-.diff :is(.modal-title, .d2h-file-header),
-.d2h-file-list-title {
-	display: none;
-}
-
-.diff .d2h-code-linenumber {
-	width: 5.5em;
-	border: none;
-}
-
-.diff .d2h-code-line {
-	padding-right: 7px;
-	padding-left: 6em;
-}
-
-.diff .line-num2,
-.diff .line-num1 {
-	width: 2.5em;
-	padding-left: 0;
-}
-
-.diff .sync-history-list-container {
-	display: flex;
-	max-height: unset;
-	flex-direction: column-reverse;
-}
-
-.diff .d2h-file-name {
-	font-family: var(--heading-font);
-	font-size: var(--h4);
-	letter-spacing: var(--heading-letter-spacing);
-	color: var(--text-normal);
 }
 
 /* ───────────────────────────────────────────────── */
@@ -10991,6 +10787,198 @@ body .cm-active-visual-line {
 }
 
 /* ───────────────────────────────────────────────── */
+/* << Version History Diff
+──────────────────────────────────────────────────── */
+/* also affected by styling for modals
+and file recovery plugin */
+
+.mod-sync-history.diff .sync-history-list {
+	min-width: unset;
+}
+
+.mod-sync-history.diff.diff.diff button.mod-cta {
+	font-size: 70%;
+	min-height: 2.4em;
+	padding: 4px;
+	margin: 7px 0 4px;
+	margin-right: 0;
+}
+
+.diff .sync-history-list {
+	background-color: var(--bg2);
+	padding: 0;
+	border-radius: var(--roundish);
+}
+
+.diff .sync-history-list-container:first-child .sync-history-list {
+	border-top-left-radius: calc(var(--roundish) * 2.5);
+}
+
+.diff .sync-history-list-container:last-child .sync-history-list {
+	border-top-right-radius: calc(var(--roundish) * 2.5);
+	border-bottom-right-radius: calc(var(--roundish) * 2.5);
+}
+
+.diff .sync-history-content-container {
+	height: 100%;
+
+	background-color: var(--bg1);
+
+	margin-right: 6px;
+	margin-left: 6px;
+
+	border: none;
+	border-radius: var(--roundish);
+}
+
+.diff.diff :is(.d2h-lines-added, .d2h-lines-deleted) {
+	font-size: 130%;
+	color: hsl(0 100% 100%);
+	padding: 4px;
+	border: none;
+}
+
+.d2h-lines-added {
+	background-color: var(--interactive-success);
+}
+
+.d2h-lines-deleted {
+	background-color: var(--text-error);
+}
+
+.diff.diff .d2h-file-name {
+	font-family: var(--heading-font);
+	font-size: var(--h1);
+	letter-spacing: var(--heading-letter-spacing);
+	color: var(--text-normal);
+}
+
+.d2h-file-list {
+	padding: 0;
+	margin: 0;
+}
+
+.d2h-file-list-line.d2h-file-list-line.d2h-file-list-line {
+	padding: 0 0 10px 4px;
+}
+
+.d2h-diff-table.d2h-diff-table.d2h-diff-table tr {
+	background: none;
+}
+
+.d2h-code-linenumber.d2h-code-linenumber.d2h-code-linenumber,
+.d2h-diff-table tr:first-child .d2h-info {
+	background-color: var(--bg2);
+}
+
+.d2h-code-linenumber.d2h-code-linenumber.d2h-code-linenumber,
+.diff .d2h-del {
+	border-color: var(--muted-border-color);
+}
+
+.diff .modal-title {
+	display: none;
+}
+
+.diff .sync-history-list-container {
+	display: flex;
+	max-height: unset;
+	flex-direction: column-reverse;
+}
+
+/* ───────────────────────────────────────────────── */
+/* << Hover Editor
+──────────────────────────────────────────────────── */
+/* also inherits some styling from Popovers (Page Preview) */
+
+.hover-editor .popover-titlebar.popover-titlebar.popover-titlebar.popover-titlebar.popover-titlebar.popover-titlebar {
+	background-color: var(--alt-bg);
+}
+
+.popover.hover-editor .popover-content.popover-content {
+	border-radius: calc(var(--roundish) * 1.5);
+}
+
+.hover-editor .popover-title::AFTER {
+	display: none;
+}
+
+.hover-editor .popover-title.popover-title.popover-title.popover-title.popover-title {
+	color: var(--text-normal);
+}
+
+/* icons */
+.hover-editor svg {
+	color: var(--extra-contrast);
+}
+
+.popover-header-icon.mod-pin-popover.is-active svg {
+	fill: var(--extra-contrast);
+}
+
+.hover-editor svg:hover {
+	color: var(--hover-accent-2);
+}
+
+.popover-header-icon.mod-pin-popover.is-active svg:hover {
+	fill: var(--hover-accent-2);
+}
+
+/* header */
+.hover-editor .view-header.view-header {
+	border-bottom-color: var(--basic-border-color);
+}
+
+.hover-editor.show-navbar .view-header.view-header.view-header {
+	height: 2.1em;
+	border-top: var(--basic-border);
+}
+
+/* hover + active */
+.theme-dark .hover-editor.is-active.is-active {
+	border-color: var(--primary-accent-2);
+}
+
+.theme-dark .hover-editor:not(.is-active):hover {
+	border-color: var(--hover-accent-2);
+}
+
+.theme-light .hover-editor.is-active.is-active {
+	border-color: var(--primary-accent-3);
+}
+
+.theme-light .hover-editor:not(.is-active):hover {
+	border-color: var(--hover-accent-3);
+}
+
+/* deactivate hidden header */
+.hover-editor .view-header.view-header.view-header.view-header.view-header * {
+	opacity: 1;
+}
+
+/* info on style settings, since already styled by this theme */
+.style-settings-heading[data-id="hover-editor"]:not(.is-collapsed) + .style-settings-container::BEFORE {
+	display: inline-block;
+	content: "⚠️ Note that some of the settings for the Hover Editor have no effect, since they are overriden when in conflict with the styling from 'Shimmering Focus'.";
+
+	font-family: var(--menu-font);
+	font-size: 0.9em;
+
+	color: var(--extra-contrast);
+	background-color: var(--bg2);
+	box-shadow: var(--small-inset-shadow);
+
+	padding: 2px 5px;
+
+	border: var(--basic-border);
+	border-radius: var(--roundish);
+}
+
+.style-settings-heading[data-id="hover-editor"] .setting-item-name.setting-item-name.setting-item-name {
+	margin-bottom: 0;
+}
+
+/* ───────────────────────────────────────────────── */
 /* < Compatibility Info for the Obsidian Hub
 ──────────────────────────────────────────────────── */
 
@@ -11009,6 +10997,7 @@ core:
 - tag-pane
 - file-recovery
 - publish
+- editor-status
 
 community:
 - recent-files-obsidian
