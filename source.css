@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 1.1109
+Version 1.1110
 Source CSS: https://github.com/chrisgrieser/shimmering-focus/blob/main/source.css
 MIT License
 ──────────────────────────────────────────────────── */
@@ -6020,9 +6020,8 @@ body:not(.show-urls) .cm-line:not(.cm-active) .cm-url {
 body:not(.no-unresolved-link-indicator) .markdown-preview-view:not(.kanban-plugin__item-markdown) .is-unresolved:not(.BC-Link)::BEFORE,
 body:not(.no-unresolved-link-indicator) .cm-editor .is-unresolved::BEFORE {
 	content: "✖︎";
-	background-color: var(--bg1);
 	position: absolute;
-	left: -25px;
+	left: -50px;
 }
 
 .markdown-preview-view.markdown-preview-view.markdown-preview-view.markdown-preview-view div > ul > li > ul > li > .is-unresolved::BEFORE {
@@ -6522,7 +6521,7 @@ span.cm-link.cm-hmd-footnote {
 /* <<< Footnote Indicator in Gutter
 ──────────────────────────────────────────────────── */
 
-body:not(.no-fn-indicator) :is(.mod-cm6 .footnote-ref,.mod-cm6.cm-s-obsidian span.cm-footref.cm-formatting)::BEFORE {
+body:not(.no-fn-indicator) :is(.mod-cm6 .footnote-ref,.mod-cm6.cm-s-obsidian span.cm-footref.cm-formatting, .is-live-preview .cm-footref)::BEFORE {
 	content: "⦿";
 
 	font-size: 1rem;
@@ -6537,6 +6536,12 @@ body:not(.no-fn-indicator) :is(.mod-cm6 .footnote-ref,.mod-cm6.cm-s-obsidian spa
 	margin-top: 3px;
 }
 
+/* live preview */
+.is-live-preview .cm-footref::BEFORE {
+	left: -50px;
+}
+
+/* source mode */
 body .footnote-ref::BEFORE {
 	left: 25px;
 }

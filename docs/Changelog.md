@@ -3,7 +3,7 @@ nav_order: 110
 ---
 
 # Changelog
-- 2022-04-07	patch
+- 2022-04-07	fix footnote indicator for live preview
 - 2022-04-07	fixes for version history diff plugin
 - 2022-04-07	styling of invalid metadata blocks
 - 2022-04-06	hover editor info improved
