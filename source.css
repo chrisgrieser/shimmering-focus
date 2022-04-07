@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 1.1110
+Version 1.1111
 Source CSS: https://github.com/chrisgrieser/shimmering-focus/blob/main/source.css
 MIT License
 ──────────────────────────────────────────────────── */
@@ -5215,13 +5215,13 @@ body:not(.no-citation-syntax) .markdown-preview-view *:not(blockquote) > blockqu
 	border: none;
 }
 
-/* for LP */
-body:not(.no-citation-syntax) .HyperMD-quote-2 .cm-formatting-quote-1 + .cm-blockquote-border {
-	display: none;
+/* fix for LP */
+body:not(.no-citation-syntax) .is-live-preview .HyperMD-quote-1 + .HyperMD-quote-2:not(.cm-active) .cm-transparent:not(:first-child) {
+	border-width: 0;
 }
 
-body:not(.no-citation-syntax) .is-live-preview .HyperMD-quote-2:not(.cm-active) .cm-hmd-indent-in-quote::AFTER,
-body:not(.no-citation-syntax) .cm-s-obsidian:not(.is-live-preview) .HyperMD-quote-2 .cm-formatting-quote-2::AFTER,
+body:not(.no-citation-syntax) .is-live-preview .HyperMD-quote-1 + .HyperMD-quote-2:not(.cm-active) .cm-transparent:not(:first-child)::AFTER,
+body:not(.no-citation-syntax) .cm-s-obsidian:not(.is-live-preview) .HyperMD-quote-1 + .HyperMD-quote-2 .cm-formatting-quote-2::AFTER,
 body:not(.no-citation-syntax) .markdown-preview-view *:not(blockquote) > blockquote > p + blockquote > p::BEFORE {
 	content: "— ";
 	font-weight: 500;
@@ -5975,6 +5975,7 @@ a:hover {
 }
 
 /* more underline spacing, thx @Melvin */
+.cm-underline,
 .cm-url.cm-url:not(.cm-formatting),
 .cm-hmd-internal-link.cm-hmd-internal-link.cm-hmd-internal-link,
 .modal-content a,
@@ -6013,7 +6014,6 @@ body:not(.show-urls) .cm-line:not(.cm-active) .cm-url {
 .is-unresolved.is-unresolved.is-unresolved {
 	color: var(--link-color);
 	opacity: 1;
-	filter: hue-rotate(var(--unresolved-hue-rotate));
 }
 
 /* unresolved gutter icon */
@@ -6021,23 +6021,7 @@ body:not(.no-unresolved-link-indicator) .markdown-preview-view:not(.kanban-plugi
 body:not(.no-unresolved-link-indicator) .cm-editor .is-unresolved::BEFORE {
 	content: "✖︎";
 	position: absolute;
-	left: -50px;
-}
-
-.markdown-preview-view.markdown-preview-view.markdown-preview-view.markdown-preview-view div > ul > li > ul > li > .is-unresolved::BEFORE {
-	left: -6.8em;
-}
-
-.markdown-preview-view.markdown-preview-view.markdown-preview-view.markdown-preview-view div > ul > li > ul > li > ul > li > .is-unresolved::BEFORE {
-	left: -7.8em;
-}
-
-.markdown-preview-view.markdown-preview-view.markdown-preview-view.markdown-preview-view div > ul > li > ul > li > ul > li > ul > li > .is-unresolved::BEFORE {
-	left: -8.8em;
-}
-
-.markdown-preview-view.markdown-preview-view.markdown-preview-view.markdown-preview-view div > ul > li > ul > li > ul > li > ul > li > ul > li > .is-unresolved::BEFORE {
-	left: -9.8em;
+	left: 20px;
 }
 
 /* ───────────────────────────────────────────────── */
@@ -10703,6 +10687,11 @@ a.zoom-plugin-title:hover {
 body :is(.cm-matched-word,.cm-current-word) {
 	text-decoration: 1.5px dotted underline var(--text-muted);
 	text-underline-offset: calc(var(--underline-offset) * 2);
+}
+
+.is-live-preview .cm-link :is(.cm-matched-word,.cm-current-word) {
+	text-decoration: none;
+	text-underline-offset: 0;
 }
 
 /* current selection */
