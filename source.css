@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 1.1113
+Version 1.1114
 Source CSS: https://github.com/chrisgrieser/shimmering-focus/blob/main/source.css
 MIT License
 ──────────────────────────────────────────────────── */
@@ -6022,13 +6022,29 @@ body:not(.show-urls) .cm-line:not(.cm-active) .cm-url {
 }
 
 /* unresolved gutter icon */
-body:not(.no-unresolved-link-indicator) .markdown-preview-view:not(.kanban-plugin__item-markdown) .is-unresolved:not(.BC-Link)::BEFORE,
+body:not(.no-unresolved-link-indicator) .markdown-preview-view .is-unresolved::BEFORE,
 body:not(.no-unresolved-link-indicator) .cm-editor .is-unresolved::BEFORE {
 	content: "✖︎";
 	font-size: 1rem;
 	background-color: var(--bg1);
 	position: absolute;
-	left: -47px;
+	left: 28px;
+}
+
+div > ul > li > ul > li > .is-unresolved.is-unresolved.is-unresolved::BEFORE {
+	left: -4.7em;
+}
+
+div > ul > li > ul > li > ul > li > .is-unresolved.is-unresolved.is-unresolved::BEFORE {
+	left: -7.2em;
+}
+
+div > ul > li > ul > li > ul > li > ul > li > .is-unresolved.is-unresolved.is-unresolved::BEFORE {
+	left: -8.7em;
+}
+
+div > ul > li > ul > li > ul > li > ul > li > ul > li > .is-unresolved.is-unresolved.is-unresolved::BEFORE {
+	left: -10.2em;
 }
 
 /* ───────────────────────────────────────────────── */
@@ -8653,6 +8669,11 @@ body:not(.no-heading-bg) .kanban-plugin :is(h1, h2, h3, h4, h5, h6) {
 	display: none;
 }
 
+/* no unresolved link gutter indicator */
+.kanban-plugin__markdown-preview .is-unresolved::BEFORE {
+	display: none;
+}
+
 /* ───────────────────────────────────────────────── */
 /* << Longform
 ──────────────────────────────────────────────────── */
@@ -9460,6 +9481,11 @@ button.MS-OpenSnippet:hover svg.ms-snippet path {
 /* matrix */
 .BC-Matrix ol > li::MARKER {
 	content: none;
+}
+
+/* no unresolved link gutter indicator */
+.BC-link.is-unresolved::BEFORE {
+	display: none;
 }
 
 .BC-Matrix.BC-Matrix.BC-Matrix ol > li {
