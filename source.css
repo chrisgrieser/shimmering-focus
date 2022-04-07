@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 1.1115
+Version 1.1116
 Source CSS: https://github.com/chrisgrieser/shimmering-focus/blob/main/source.css
 MIT License
 ──────────────────────────────────────────────────── */
@@ -248,8 +248,8 @@ MIT License
 ──────────────────────────────────────────────────── */
 .theme-light {
 	--text-normal: hsl(0 0% 20%);
-	--extra-contrast: hsl(0 0% 36%);
-	--text-muted: hsl(0 0% 53%);
+	--extra-contrast: hsl(0 0% 35%);
+	--text-muted: hsl(0 0% 50%);
 	--middle-gray: hsl(0 0% 57%);
 	--text-faint: hsl(0 0% 60%);
 	--hr-line-gray: hsl(0 0% 66%);
@@ -5567,7 +5567,7 @@ body { /* stylelint-disable-line no-duplicate-selectors */
 
 /* Code blocks in Edit Mode */
 :is(.theme-light, .theme-dark) {
-	--codeblock-border: var(--muted-border);
+	--codeblock-border: var(--thin-muted-border);
 	--codeblock-roundness: calc(var(--roundish) * 1.5);
 	--code-block-bg: var(--bg2);
 	--code-block-alt-bg: var(--bg3);
@@ -5925,6 +5925,10 @@ pre.language-haskell::AFTER { content: "Haskell" }
 /* fix for default syntax highlighting */
 .theme-light .token.operator {
 	background: transparent;
+}
+
+.language-yaml .key + .punctuation { /* colon after key before value in Frontmatter */
+	color: var(--extra-contrast);
 }
 
 /* ───────────────────────────────────────────────── */
