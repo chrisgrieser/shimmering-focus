@@ -1,9 +1,13 @@
-## [➡️ Theme Documentation](https://chrisgrieser.github.io/shimmering-focus/)
-<br><br>
+
+---
+
+### [➡️ ➡️ Theme Documentation](https://chrisgrieser.github.io/shimmering-focus/)
+
+---
 
 # Shimmering Focus ⟡
 
-A minimalistic [Obsidian](https://obsidian.md/) theme focused on readability and condensed information display. [7th place in Gems of the Year 2021.](https://obsidian.md/goty2021)
+A minimalistic [Obsidian](https://obsidian.md/) theme focused on readability and condensed information display. 
 
 ![](https://img.shields.io/badge/downloads-21688-6E4E9B?style=plastic)
 
