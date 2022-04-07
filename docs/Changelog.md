@@ -3,6 +3,7 @@ nav_order: 110
 ---
 
 # Changelog
+- 2022-04-07	fix unresolved links gutter indicator
 - 2022-04-07	fix heading level indicator in live preview
 - 2022-04-07	fixes for citaiton syntax in LP and underlines
 - 2022-04-07	fix footnote indicator for live preview

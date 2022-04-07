@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 1.1112
+Version 1.1113
 Source CSS: https://github.com/chrisgrieser/shimmering-focus/blob/main/source.css
 MIT License
 ──────────────────────────────────────────────────── */
@@ -304,7 +304,9 @@ TODO
 	--primary-accent-2: hsl(210 75% 54%);
 	--primary-accent-3: hsl(210 90% 71%);
 	--primary-accent-4: hsl(210 90% 78%);
-	--primary-accent-5: hsl(209 100% 90% / 99%);
+	--primary-accent-5: hsl(210 100% 90% / 99%);
+
+	--unresolved-link-color: hsl(180 75% 44%); /* ~40 hue less than primary-accent-2 */
 }
 
 .theme-light.primary-accent-light-orange,
@@ -315,6 +317,8 @@ TODO
 	--primary-accent-3: hsl(32 65% 55%);
 	--primary-accent-4: hsl(40 87% 67%);
 	--primary-accent-5: hsl(40 87% 87% / 99%);
+
+	--unresolved-link-color: hsl(344 69% 42%); /* ~40 hue less than primary-accent-2 */
 }
 
 /* https://coolors.co/gradient-palette/992900-f4c362?number=4 */
@@ -339,6 +343,8 @@ TODO
 
 	--secondary-accent-light: hsl(165 70% 35%);
 	--secondary-accent-dark: hsl(165 85% 40%);
+
+	--unresolved-link-color: hsl(210 75% 64%); /* 40 hue less than primary-accent-2 */
 }
 
 .theme-light,
@@ -712,7 +718,6 @@ body:is(.theme-light, .theme-dark) {
 
 /* <<< Other Accents */
 :root {
-	--unresolved-hue-rotate: -40deg;
 	--highlight-hue-1: 60; /* yellow */
 	--highlight-hue-2: 150; /* green */
 	--highlight-hue-3: 185; /* cyan */
@@ -7646,14 +7651,14 @@ body:not(.show-graph-controls) .graph-controls.is-close:not(:hover) {
 
 /* <<< Graph itself */
 /* node of current node (local graph) */
-.graph-view:is(.color-fill-unresolved, .color-fill-focused) {
+.graph-view.color-fill-focused {
 	color: var(--primary-accent-2);
 	opacity: 0.8;
 }
 
 /* unresolved, getting same color as unresolved links */
 .graph-view.color-fill-unresolved {
-	filter: hue-rotate(var(--unresolved-hue-rotate));
+	color: var(--unresolved-link-color);
 }
 
 /* border around circle */
@@ -8725,9 +8730,9 @@ body:not(.no-heading-bg) .kanban-plugin :is(h1, h2, h3, h4, h5, h6) {
 
 input:is(#new-draft, #new-scene) {
 	height: 20px;
+	color: var(--unresolved-link-color);
 	box-shadow: none;
 	border-radius: 0;
-	filter: hue-rotate(var(--unresolved-hue-rotate));
 }
 
 .new-draft-container select {
@@ -9905,8 +9910,7 @@ body .qsp-symbol-indicator {
 
 /* unresolved items */
 .another-quick-switcher__phantom_item.another-quick-switcher__phantom_item {
-	color: var(--primary-accent-2);
-	filter: hue-rotate(var(--unresolved-hue-rotate));
+	color: var(--unresolved-link-color);
 }
 
 .another-quick-switcher__phantom_item :is(.another-quick-switcher__item__icon, .another-quick-switcher__item__directory),
@@ -9918,7 +9922,7 @@ body .qsp-symbol-indicator {
 .suggestion-item:hover .another-quick-switcher__phantom_item :is(.another-quick-switcher__item__icon, .another-quick-switcher__item__directory),
 .suggestion-item:hover .another-quick-switcher__phantom_item {
 	color: var(--text-hover-accent);
-	filter: saturate(60%) hue-rotate(0);
+	filter: saturate(60%);
 }
 
 /* ───────────────────────────────────────────────── */
