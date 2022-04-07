@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 1.1117
+Version 1.1118
 Source CSS: https://github.com/chrisgrieser/shimmering-focus/blob/main/source.css
 MIT License
 ──────────────────────────────────────────────────── */
@@ -2561,7 +2561,7 @@ div.prompt-results {
 }
 
 .prompt .suggestion-item :is(.suggestion-note, .suggestion-prefix) {
-	color: var(--extra-contrast);
+	color: var(--text-muted);
 }
 
 .suggestion-flair {
@@ -2600,19 +2600,18 @@ div.prompt-results {
 	font-family: var(--smallcap-font);
 	font-size: 1em;
 	letter-spacing: -0.1px;
-	color: var(--text-muted);
 }
 
 /* pin replacement */
-.prompt-input[placeholder^="Select a command"] + .prompt-results .suggestion-flair svg {
+.prompt-input[placeholder^="Select a command"] ~ .prompt-results .suggestion-flair svg {
 	display: none;
 }
 
-.prompt-input[placeholder^="Select a command"] + .prompt-results .suggestion-flair {
+.prompt-input[placeholder^="Select a command"] ~ .prompt-results .suggestion-flair {
 	left: 0;
 }
 
-.prompt-input[placeholder^="Select a command"] + .prompt-results .suggestion-flair::BEFORE {
+.prompt-input[placeholder^="Select a command"] ~ .prompt-results .suggestion-flair::BEFORE {
 	content: "";
 	border-left: 3px solid var(--text-faint);
 }
@@ -2621,7 +2620,7 @@ div.prompt-results {
 	display: none;
 }
 
-.prompt-input[placeholder^="Select a command"] + .prompt-results .suggestion-item {
+.prompt-input[placeholder^="Select a command"] ~ .prompt-results .suggestion-item {
 	padding-left: 7px;
 }
 
@@ -2635,6 +2634,11 @@ kbd.suggestion-hotkey {
 	box-shadow: var(--muted-button-inset-shadow);
 
 	border-radius: var(--roundish);
+}
+
+/* fix casing for lowercased commands */
+.prompt-input[placeholder^="Select a command"] ~ .prompt-results .suggestion-content::FIRST-LETTER {
+	text-transform: uppercase;
 }
 
 body.move-plugin-name-to-left .suggestion-prefix,
