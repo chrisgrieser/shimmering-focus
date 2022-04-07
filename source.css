@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 1.1118
+Version 1.1119
 Source CSS: https://github.com/chrisgrieser/shimmering-focus/blob/main/source.css
 MIT License
 ──────────────────────────────────────────────────── */
@@ -4453,7 +4453,7 @@ body:not(.no-floating-metadata):not(.is-mobile).unlock-theme-beta .markdown-prev
 	max-width: calc(var(--readable-length) + 3.4rem);
 
 	position: absolute;
-	right: 1rem;
+	right: 0.7rem;
 	z-index: 100;
 
 	padding: 4px 2rem 5px 7px;
@@ -4492,8 +4492,12 @@ body:not(.no-floating-metadata):not(.is-mobile).unlock-theme-beta .markdown-prev
 	box-shadow: var(--small-shadow); /* switch to outer shadow */
 }
 
-body:not(.no-floating-metadata):not(.is-mobile).unlock-theme-beta .markdown-preview-view:not(.no-floating-metadata) .frontmatter-section.mod-aliases {
+body:not(.no-floating-metadata):not(.is-mobile).unlock-theme-beta .markdown-preview-view:not(.no-floating-metadata) .frontmatter-section:hover.mod-aliases {
 	margin-top: 0;
+}
+
+body:not(.no-floating-metadata):not(.is-mobile).unlock-theme-beta .markdown-preview-view:not(.no-floating-metadata) .frontmatter-section:hover {
+	font-size: 0.95rem; /* slightly bigger font */
 }
 
 /* unset some interfering codeblock styling with floating YAML */
@@ -5168,7 +5172,7 @@ body:not(.active-line-emphasized-bg):not(.no-active-highlight) .HyperMD-quote:is
 /* Preview Mode */
 .markdown-preview-view blockquote {
 	background-color: var(--blockquote-color);
-	padding: 0.3em 0.7em 0.4em;
+	padding: 0.35em 0.8em 0.5em 0.7em;
 	margin: 1.5em 0;
 	border: none;
 	border-radius: var(--roundish);
