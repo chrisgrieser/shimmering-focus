@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 1.1124
+Version 1.1125
 Source CSS: https://github.com/chrisgrieser/shimmering-focus/blob/main/source.css
 MIT License
 ──────────────────────────────────────────────────── */
@@ -5501,16 +5501,6 @@ body .cm-s-obsidian span.cm-math {
 	font-family: var(--font-monospace);
 	background-color: var(--alt-bg);
 	padding: 2px;
-}
-
-.cm-formatting-math-begin:not(.cm-math-block) {
-	border-bottom-left-radius: var(--roundish);
-	border-top-left-radius: var(--roundish);
-}
-
-.cm-formatting-math-end:not(.cm-math-block) {
-	border-top-right-radius: var(--roundish);
-	border-bottom-right-radius: var(--roundish);
 }
 
 /* ───────────────────────────────────────────────── */

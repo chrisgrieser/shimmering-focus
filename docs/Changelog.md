@@ -3,6 +3,7 @@ nav_order: 110
 ---
 
 # Changelog
+- 2022-04-07	patch
 - 2022-04-07	footnotes in Reading mode do not affect line height anymore
 - 2022-04-07	new cssclass: tags-in-gutter (preview mode)
 - 2022-04-07	fix image size in LP
