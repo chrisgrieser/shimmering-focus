@@ -23,5 +23,4 @@ In my day job, I am a sociologist studying the social mechanisms underlying the 
 - [LinkedIn](https://www.linkedin.com/in/christopher-grieser-ba693b17a/)
 
 ### Donate
-- [PayPal](https://www.paypal.com/PayPalme/ChrisGrieser)
-- [Ko-Fi](https://ko-fi.com/pseudometa)
+<a href='https://ko-fi.com/Y8Y86SQ91' target='_blank'><img height='36' style='border:0px;height:36px;' src='https://cdn.ko-fi.com/cdn/kofi1.png?v=3' border='0' alt='Buy Me a Coffee at ko-fi.com' /></a>
