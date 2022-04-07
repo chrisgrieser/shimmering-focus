@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 1.1127
+Version 1.1128
 Source CSS: https://github.com/chrisgrieser/shimmering-focus/blob/main/source.css
 MIT License
 ──────────────────────────────────────────────────── */
@@ -6088,7 +6088,7 @@ a.tag:hover {
 /* inspired by https://forum.obsidian.md/t/meta-post-common-css-hacks/1978/327 */
 
 /* either via style setting or via cssclass */
-.tags-in-gutter a.tag::AFTER {
+.tags-in-gutter :not(.frontmatter-section-tags) > a.tag::AFTER {
 	content: attr(href);
 
 	font-family: var(--ui-font);
