@@ -3,6 +3,7 @@ nav_order: 110
 ---
 
 # Changelog
+- 2022-04-07	patch
 - 2022-04-07	fix image size in LP
 - 2022-04-07	fix edit block look
 - 2022-04-07	another quick switcher alignments

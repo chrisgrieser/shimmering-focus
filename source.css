@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 1.1121
+Version 1.1122
 Source CSS: https://github.com/chrisgrieser/shimmering-focus/blob/main/source.css
 MIT License
 ──────────────────────────────────────────────────── */
@@ -5022,6 +5022,13 @@ body:not(.no-heading-level-in-lp) .is-live-preview .cm-line:not(.cm-active) > .c
 
 .is-live-preview .cm-header {
 	padding-left: 4px;
+}
+
+.is-live-preview .HyperMD-header + .cm-line {
+	/* margin shouldn't be used in CodeMirror, and
+	the padding from the heading-line is needed for
+	the header backgrounds, therefore this solution */
+	padding-top: 4px;
 }
 
 /* Alternation between italic & different font style
