@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 1.1111
+Version 1.1112
 Source CSS: https://github.com/chrisgrieser/shimmering-focus/blob/main/source.css
 MIT License
 ──────────────────────────────────────────────────── */
@@ -4979,14 +4979,14 @@ body:not(.no-heading-level-in-lp) .is-live-preview .cm-header::BEFORE {
 	padding-right: 5px;
 }
 
-body:not(.no-heading-level-in-lp) .is-live-preview :not(.cm-active) > .cm-header-1::BEFORE { content: "H1" }
-body:not(.no-heading-level-in-lp) .is-live-preview :not(.cm-active) > .cm-header-2::BEFORE { content: "H2" }
-body:not(.no-heading-level-in-lp) .is-live-preview :not(.cm-active) > .cm-header-3::BEFORE { content: "H3" }
-body:not(.no-heading-level-in-lp) .is-live-preview :not(.cm-active) > .cm-header-4::BEFORE { content: "H4" }
-body:not(.no-heading-level-in-lp) .is-live-preview :not(.cm-active) > .cm-header-5::BEFORE { content: "H5" }
-body:not(.no-heading-level-in-lp) .is-live-preview :not(.cm-active) > .cm-header-6::BEFORE { content: "H6" }
+body:not(.no-heading-level-in-lp) .is-live-preview .cm-line:not(.cm-active) > .cm-header-1::BEFORE { content: "H1" }
+body:not(.no-heading-level-in-lp) .is-live-preview .cm-line:not(.cm-active) > .cm-header-2::BEFORE { content: "H2" }
+body:not(.no-heading-level-in-lp) .is-live-preview .cm-line:not(.cm-active) > .cm-header-3::BEFORE { content: "H3" }
+body:not(.no-heading-level-in-lp) .is-live-preview .cm-line:not(.cm-active) > .cm-header-4::BEFORE { content: "H4" }
+body:not(.no-heading-level-in-lp) .is-live-preview .cm-line:not(.cm-active) > .cm-header-5::BEFORE { content: "H5" }
+body:not(.no-heading-level-in-lp) .is-live-preview .cm-line:not(.cm-active) > .cm-header-6::BEFORE { content: "H6" }
 
-/* only first header gets the prefix */
+/* only first header element gets the prefix */
 .is-live-preview .cm-header ~ .cm-header::BEFORE {
 	display: none;
 }
@@ -6012,7 +6012,7 @@ body:not(.show-urls) .cm-line:not(.cm-active) .cm-url {
 /* <<< Unresolved Links
 ──────────────────────────────────────────────────── */
 .is-unresolved.is-unresolved.is-unresolved {
-	color: var(--link-color);
+	color: var(--unresolved-link-color);
 	opacity: 1;
 }
 
@@ -6020,8 +6020,10 @@ body:not(.show-urls) .cm-line:not(.cm-active) .cm-url {
 body:not(.no-unresolved-link-indicator) .markdown-preview-view:not(.kanban-plugin__item-markdown) .is-unresolved:not(.BC-Link)::BEFORE,
 body:not(.no-unresolved-link-indicator) .cm-editor .is-unresolved::BEFORE {
 	content: "✖︎";
+	font-size: 1rem;
+	background-color: var(--bg1);
 	position: absolute;
-	left: 20px;
+	left: -47px;
 }
 
 /* ───────────────────────────────────────────────── */
