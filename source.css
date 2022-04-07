@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 1.1125
+Version 1.1126
 Source CSS: https://github.com/chrisgrieser/shimmering-focus/blob/main/source.css
 MIT License
 ──────────────────────────────────────────────────── */
@@ -158,7 +158,7 @@ MIT License
 		- Relationship Lines
 		- Folder Icons & Note Icons
 	- Panes
-		- Core Panes in general
+		- Core Plugin Panes in general
 		- Outline
 		- Inline Backlink Pane
 		- Backlinks & Outgoing (Sidebar)
@@ -1109,7 +1109,8 @@ svg.gear {
 
 .plugin-list-plugins svg.gear,
 .installed-plugins-container svg.gear {
-	transform: scale(1.15);
+	height: 1.15rem;
+	width: 1.15rem;
 }
 
 /* link */
@@ -1158,7 +1159,8 @@ svg.any-key {
 }
 
 .setting-add-hotkey-button svg.any-key {
-	transform: scale(0.75);
+	height: 0.95rem;
+	width: 0.95rem;
 }
 
 /* reset */
@@ -7086,7 +7088,7 @@ body:not(.no-file-explorer-icons) .nav-file-title[data-path*="kanban" i] .nav-fi
 /* ───────────────────────────────────────────────── */
 /* << Panes
 ──────────────────────────────────────────────────── */
-/* <<< Core Panes in general */
+/* <<< Core Plugin Panes in general */
 
 .tree-item-inner-subtext,
 .tree-item-inner,
