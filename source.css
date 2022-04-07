@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 1.1126
+Version 1.1127
 Source CSS: https://github.com/chrisgrieser/shimmering-focus/blob/main/source.css
 MIT License
 ──────────────────────────────────────────────────── */
@@ -4580,7 +4580,7 @@ and Footnotes */
 /* <<< Collapse Indicators
 ──────────────────────────────────────────────────── */
 /* hide collapse indicators until hovered/active line */
-body:not(.permanently-show-collapse-indicators) div:not(.is-collapsed) > :is(li, h1, h2, h3, h4, h5, h6):not(:hover) > .collapse-indicator,
+body:not(.permanently-show-collapse-indicators) :is(div, ul):not(.is-collapsed) > :is(li, h1, h2, h3, h4, h5, h6):not(:hover) > .collapse-indicator,
 body:not(.permanently-show-collapse-indicators) .cm-line:not(:hover):not(.cm-active) div:not(.is-collapsed) > .collapse-indicator {
 	opacity: 0;
 }
@@ -6035,7 +6035,7 @@ body:not(.show-urls) .cm-line:not(.cm-active) .cm-url {
 ──────────────────────────────────────────────────── */
 .is-unresolved.is-unresolved.is-unresolved {
 	color: var(--unresolved-link-color);
-	opacity: 1;
+	opacity: 0.9;
 }
 
 /* unresolved gutter icon */
@@ -6107,6 +6107,10 @@ a.tag:hover {
 
 	text-overflow: ellipsis;
 	overflow: hidden;
+}
+
+.tags-in-gutter a.tag:hover::AFTER {
+	color: var(--hover-accent-2);
 }
 
 /* ───────────────────────────────────────────────── */
