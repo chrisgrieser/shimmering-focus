@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 1.1119
+Version 1.1120
 Source CSS: https://github.com/chrisgrieser/shimmering-focus/blob/main/source.css
 MIT License
 ──────────────────────────────────────────────────── */
@@ -4366,6 +4366,7 @@ pre.language-yaml.frontmatter::AFTER {
 	color: var(--extra-contrast);
 }
 
+/* separator line if there are tags & aliases */
 .frontmatter-section.mod-aliases + .frontmatter-section.mod-tags {
 	padding-top: 4px;
 	border-top: var(--thin-border);
@@ -4529,6 +4530,11 @@ body:not(.no-floating-metadata):not(.is-mobile).unlock-theme-beta .markdown-prev
 	padding-left: 0.43em;
 }
 
+/* separator line if there are tags & aliases */
+body:not(.no-floating-metadata).unlock-theme-beta .markdown-preview-view:not(.no-floating-metadata) .frontmatter-container:hover .frontmatter-section.mod-aliases + .frontmatter-section.mod-tags {
+	border-width: 2px;
+}
+
 body:not(.no-floating-metadata):not(.is-mobile).unlock-theme-beta .markdown-preview-view:not(.no-floating-metadata) :is(.frontmatter.language-yaml, .frontmatter-container) .frontmatter-container-header,
 body:not(.no-floating-metadata):not(.is-mobile).unlock-theme-beta .markdown-preview-view:not(.no-floating-metadata) .frontmatter.language-yaml .copy-code-button,
 body:not(.no-floating-metadata):not(.is-mobile).unlock-theme-beta .markdown-preview-view:not(.no-floating-metadata) .frontmatter.language-yaml::AFTER,
@@ -4564,7 +4570,7 @@ body:not(.show-header-bar):not(.no-floating-metadata).unlock-theme-beta .markdow
 /* ───────────────────────────────────────────────── */
 /* << Gutter
 ──────────────────────────────────────────────────── */
-/* Search Result Indicators and Footnote Indicators
+/* Search Result Indicators, Tag indicator, and Footnote Indicators
 are in the respective section for Search Results
 and Footnotes */
 
@@ -5307,7 +5313,7 @@ body:not(.no-citation-syntax) .markdown-preview-view *:not(blockquote) > blockqu
 }
 
 .callout-content p {
-	line-height: 1.2em;
+	line-height: 1.3em;
 	margin: 6px 0;
 }
 
@@ -5723,14 +5729,14 @@ button.copy-code-button::BEFORE {
 	font-size: 0.8rem;
 }
 
-.is-live-preview .cm-preview-code-block .edit-block-button {
+body .is-live-preview.mod-cm6 .edit-block-button {
 	color: var(--extra-contrast);
 	background-color: var(--code-block-alt-bg);
 	border: var(--thin-border);
 }
 
 button.copy-code-button:hover,
-.is-live-preview .cm-preview-code-block .edit-block-button:hover {
+body .is-live-preview.mod-cm6 .edit-block-button:hover {
 	color: var(--button-hover-text);
 	background-color: var(--interactive-hover-bg) !important;
 	border-color: var(--interactive-hover-border-color);
@@ -6079,6 +6085,39 @@ a.tag:hover {
 	font-family: var(--default-font);
 }
 
+/* Tags in Gutter */
+/* inspired by https://forum.obsidian.md/t/meta-post-common-css-hacks/1978/327 */
+
+/* either via style setting or via cssclass */
+.tags-in-gutter a.tag::AFTER {
+	content: attr(href);
+
+	font-family: var(--ui-font);
+	font-size: 0.7em;
+	font-weight: 500;
+	white-space: nowrap;
+
+	max-width: 4rem;
+
+	color: var(--extra-contrast);
+
+	position: absolute;
+	left: 8px;
+
+	margin-top: 4px;
+
+	text-overflow: ellipsis;
+	overflow: hidden;
+}
+
+.cm-tag-question.cm-formatting::AFTER {
+    content: "#question";
+    font-size: 0.7em;
+    color: red;
+    position: absolute;
+    left: -70px; /* adjust depending on theme */
+}
+
 /* ───────────────────────────────────────────────── */
 /* <<< Annotation Tags
 ──────────────────────────────────────────────────── */
@@ -6087,18 +6126,17 @@ a.tag:hover {
 .theme-light { --annotation-tag-font-color: hsl(0 0% 13%); }
 .theme-dark { --annotation-tag-font-color: hsl(0 0% 100%); }
 
-/* all tags */
+/* all annotation tags */
 body:not(.annotation-tags-off) .tag:is([href="#goal"], [href="#question"], [href="#gap"], [href="#main"], [href="#disagree"], [href="#summary"], [href="#agree"], [href="#example"], [href="#definition"], [href="#method"], [href="#data"], [href="#important"], [href="#quote"], [href="#todo"], [href="#critique"], [href="#sidenote"], [href="#litreview"]),
 body:not(.annotation-tags-off) .cm-s-obsidian .cm-line span:is(.cm-tag-litreview, .cm-tag-sidenote, .cm-tag-goal, .cm-tag-critique, .cm-tag-todo, .cm-tag-quote, .cm-tag-method, .cm-tag-data, .cm-tag-disagree, .cm-tag-gap, .cm-tag-summary, .cm-tag-definition, .cm-tag-question, .cm-tag-main, .cm-tag-agree, .cm-tag-important, .cm-tag-example) {
 	font-weight: 900;
 	font-style: normal;
-	text-decoration: none;
 	white-space: nowrap;
 
 	color: var(--annotation-tag-font-color);
 
-	padding-right: 8px;
-	padding-left: 8px;
+	padding-right: 6px;
+	padding-left: 6px;
 
 	border-radius: var(--roundish);
 }
@@ -6126,6 +6164,7 @@ body:not(.annotation-tags-off) .cm-s-obsidian .cm-line .cm-hashtag-end:is(.cm-ta
 	border-top-left-radius: 0;
 }
 
+/* the individual annotation tags */
 body:not(.annotation-tags-off) :is(.cm-tag-gap, .tag[href="#gap"]),
 body:not(.annotation-tags-off) :is(.cm-tag-sidenote, .tag[href="#sidenote"]),
 body:not(.annotation-tags-off) :is(.cm-tag-litreview, .tag[href="#litreview"]) {
@@ -11625,7 +11664,7 @@ settings:
 	-
 	 id: gutter-features
 	 title: ❇️ Gutter & Active Line
-	 description: Active Line Highlights, Indicators in the Gutter, Line Numbers
+	 description: Active Line Highlights, Indicators in the Gutter, Line Numbers, 🆕 Tags-in-Gutter
 	 type: heading
 	 level: 1
 	 collapsed: true
@@ -11647,12 +11686,6 @@ settings:
 		label: No Active Line Highlight
 		value: no-active-highlight
 	-
-	 id: minimal-line-numbering
-	 title: Minimal Line Numbering
-	 description: "When 'Show line number' is enabled in the Obsidian settings, only the line number of the active and hovered line will be shown."
-	 type: class-toggle
-	 default: false
-	-
 	 id: footnote-gutter
 	 title: "Footnote Indicator"
 	 description: Displays a small indicator (⦿) in the gutter when a footnote is present. (Note that numbered indicators do not count properly footnotes on the same line.)
@@ -11673,6 +11706,18 @@ settings:
 	 id: no-unresolved-link-indicator
 	 title: Disable Unresolved Link Indicators
 	 description: The indicators (𝘅) are only shown in Reading Mode.
+	 type: class-toggle
+	 default: false
+	-
+	 id: tags-in-gutter
+	 title: 🆕 Show Tags in Gutter (Preview Mode)
+	 description: 'Can also be selectively enabled per note by adding the cssclass "tags-in-gutter".'
+	 type: class-toggle
+	 default: false
+	-
+	 id: minimal-line-numbering
+	 title: Minimal Line Numbering
+	 description: "When 'Show line number' is enabled in the Obsidian settings, only the line number of the active and hovered line will be shown."
 	 type: class-toggle
 	 default: false
 	-
