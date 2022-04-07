@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 1.1120
+Version 1.1121
 Source CSS: https://github.com/chrisgrieser/shimmering-focus/blob/main/source.css
 MIT License
 ──────────────────────────────────────────────────── */
@@ -4784,14 +4784,13 @@ progress[max="100"]:is([value="1"],[value="2"],[value="3"],[value="4"],[value="5
 	margin-bottom: 1em;
 }
 
-.markdown-preview-view img[src] {
-	display: block;
+img[src] {
 	margin-top: 1em;
 	border-radius: var(--roundish);
 	cursor: zoom-in;
 }
 
-body:not(.disable-image-borders) :is(.markdown-preview-view, .oz-image-widget-cm6) img[src] {
+body:not(.disable-image-borders) img[src] {
 	border: var(--basic-border);
 }
 
@@ -4802,6 +4801,7 @@ body:not(.left-aligned-embeds) .image-embed[alt]::AFTER {
 }
 
 body:not(.left-aligned-embeds) .view-content img[src] {
+	display: block;
 	margin-right: auto;
 	margin-left: auto;
 }
@@ -4928,7 +4928,7 @@ body:not(.is-mobile) .app-container .oz-image-widget-cm6 > img:active,
 	cursor: default; 	/* no zoom-in icon needed anymore */
 }
 
-body:not(.is-mobile) .app-container .markdown-preview-view img[src],
+body:not(.is-mobile) .app-container.app-container img[src],
 body:not(.is-mobile) .oz-image-widget-cm6 > img[src]:not(:active),
 body:not(.is-mobile) .app-container div.oz-image-widget > img[src]:not(:active) {
 	max-width: calc(var(--image-size) * 1%);
