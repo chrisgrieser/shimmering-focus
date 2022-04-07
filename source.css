@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 1.1123
+Version 1.1124
 Source CSS: https://github.com/chrisgrieser/shimmering-focus/blob/main/source.css
 MIT License
 ──────────────────────────────────────────────────── */
@@ -927,7 +927,7 @@ body:is(.theme-light, .theme-dark) {
 	--menu-font-family: "Recursive S";
 	--menu-font-size: 1rem;
 
-	--footnote-size: 85%;
+	--footnote-text-size: 85%;
 	--button-font-size: 0.9rem;
 
 	--smallcap-font: "Alegreya Sans SC";
@@ -6502,14 +6502,36 @@ body:not(.no-pandoc-citation-emphasis) .cm-hmd-barelink.cm-hmd-barelink.cm-hmd-b
 /* << Footnotes
 ──────────────────────────────────────────────────── */
 
-/* Preview Mode */
+/* footnotes-references in text */
+
+/* Stop footnotes in Preview mode affecting line height */
+sup {
+	font-size: 0.75em;
+	top: -0.3em;
+	vertical-align: top;
+}
+
+.footnote-link:not(.footnote-backref) {
+	text-decoration: none; /* remove underline which only decreases readability */
+	color: var(--reference-color);
+	padding: 0 1px;
+	margin-left: -4px;
+	border-radius: calc(var(--roundish) * 0.6);
+}
+
+.footnote-link:hover {
+	color: var(--hover-accent-2);
+	background-color: var(--bg3);
+}
+
+/* footnotes at the bottom */
 .footnotes hr {
 	margin-top: 60px;
 	margin-bottom: 0;
 }
 
 .footnotes {
-	font-size: var(--footnote-size);
+	font-size: var(--footnote-text-size);
 	line-height: 1.15em;
 	text-align: justify;
 	hyphens: auto;
@@ -6521,14 +6543,6 @@ body:not(.no-pandoc-citation-emphasis) .cm-hmd-barelink.cm-hmd-barelink.cm-hmd-b
 
 .footnotes li {
 	padding-bottom: 0.8em;
-}
-
-.footnote-link:not(.footnote-backref) {
-	/* remove underline which only decreases readability */
-	text-decoration: none;
-	color: var(--reference-color);
-	padding: 0 1px;
-	border-radius: calc(var(--roundish) * 0.6);
 }
 
 .footnote-backref {
@@ -6543,17 +6557,11 @@ body:not(.no-pandoc-citation-emphasis) .cm-hmd-barelink.cm-hmd-barelink.cm-hmd-b
 	border-radius: calc(var(--roundish) * 0.6);
 }
 
-.footnote-link:hover {
-	color: var(--hover-accent-2);
-	background-color: var(--bg3);
-}
-
 .footnotes li::MARKER,
 .cm-s-obsidian .cm-line .cm-footref {
 	color: var(--reference-color);
 }
 
-/* footnotes (at the bottom) */
 .HyperMD-footnote.HyperMD-footnote {
 	font-size: 85%;
 	line-height: 1.15em;
