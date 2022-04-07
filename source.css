@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 1.1122
+Version 1.1123
 Source CSS: https://github.com/chrisgrieser/shimmering-focus/blob/main/source.css
 MIT License
 ──────────────────────────────────────────────────── */
@@ -6115,14 +6115,6 @@ a.tag:hover {
 
 	text-overflow: ellipsis;
 	overflow: hidden;
-}
-
-.cm-tag-question.cm-formatting::AFTER {
-    content: "#question";
-    font-size: 0.7em;
-    color: red;
-    position: absolute;
-    left: -70px; /* adjust depending on theme */
 }
 
 /* ───────────────────────────────────────────────── */

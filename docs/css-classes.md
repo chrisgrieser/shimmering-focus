@@ -57,6 +57,7 @@ The following CSS classes are built in with this theme:
 - `cssclass: list-2-col-cards`: Lists will become cards separated into two columns.
 - `cssclass: no-inline-backlinks`: Do not display inline backlinks for that note.
 - `cssclass: no-floating-metadata`: Show the Metadata Block in Preview Mode permanently.
+- `cssclass: tags-in-gutter`: In Preview Mode, shows tags in the gutter.
 - `cssclass: full-width`: Use the full width, i.e., turn of readable line length for that note.
 
 ### Writing & Academic
