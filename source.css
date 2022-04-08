@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 1.1137
+Version 1.1138
 Source CSS: https://github.com/chrisgrieser/shimmering-focus/blob/main/source.css
 MIT License
 ──────────────────────────────────────────────────── */
@@ -602,8 +602,9 @@ TODO
 body:is(.theme-light, .theme-dark) {
 	--big-shadow: 4px 6px var(--shadow-blur) calc(var(--shadow-base-size) + 10px) var(--shadow-color);
 	--medium-shadow: 4px 6px var(--shadow-blur) calc(var(--shadow-base-size) + 5px) var(--shadow-color);
-	--small-shadow: 1px 3px var(--shadow-blur) calc(var(--shadow-base-size) + 0px) var(--shadow-color);
+	--small-shadow: 1px 3px var(--shadow-blur) var(--shadow-base-size) var(--shadow-color);
 	--tiny-shadow: 0.5px 1px var(--shadow-blur) calc(var(--shadow-base-size) / 2) var(--shadow-color);
+	--status-bar-shadow: -1px -1px var(--shadow-blur) var(--shadow-base-size) var(--shadow-color);
 }
 
 /* <<< Inset Shadow */
@@ -666,7 +667,6 @@ body:is(.theme-light, .theme-dark) {
 	--thin-border: 1px solid var(--basic-border-color);
 	--thin-muted-border: 1px solid var(--muted-border-color);
 	--muted-button-border: var(--basic-border);
-	--status-bar-border: 2px ridge var(--basic-border-color);
 	--hr-line: var(--thick-muted-border);
 }
 
@@ -1893,14 +1893,17 @@ body:not(.classic-statusbar) .status-bar {
 
 	max-height: var(--status-bar-height);
 
+	box-shadow: var(--status-bar-shadow);
+
 	position: absolute;
 	right: 0;
 	bottom: 0;
 
 	padding: 6px 0 7px 10px;
 
-	border-top: var(--status-bar-border);
-	border-left: var(--status-bar-border);
+	border-style: ridge;
+	border-top: var(--basic-border);
+	border-left: var(--basic-border);
 	border-top-left-radius: var(--roundish);
 }
 
