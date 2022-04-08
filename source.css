@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 1.1130
+Version 1.1131
 Source CSS: https://github.com/chrisgrieser/shimmering-focus/blob/main/source.css
 MIT License
 ──────────────────────────────────────────────────── */
@@ -2025,7 +2025,7 @@ body:is(.theme-light, .theme-dark) ::-WEBKIT-SCROLLBAR-THUMB:active {
 /* << Buttons
 ──────────────────────────────────────────────────── */
 /* buttons in default state */
-button.document-search-button,
+.app-container.app-container button,
 body .excalidraw .HelpDialog--btn,
 a:is(.style-settings-export, .style-settings-import),
 .workspace-leaf-content.workspace-leaf-content.workspace-leaf-content[data-type="VIEW_TYPE_LONGFORM_EXPLORER"] button,
@@ -2057,8 +2057,8 @@ a:is(.style-settings-export, .style-settings-import),
 }
 
 /* hovered buttons */
+.app-container.app-container button:hover,
 .workspace-leaf-content.workspace-leaf-content.workspace-leaf-content.workspace-leaf-content[data-type="VIEW_TYPE_LONGFORM_EXPLORER"] button:hover,
-button.document-search-button:hover,
 body .excalidraw .HelpDialog--btn:hover,
 body .setting-item-control a:is(.style-settings-export, .style-settings-import):hover,
 .modal.modal.modal.modal.modal button:hover {
@@ -2331,7 +2331,7 @@ body button.document-search-button {
 }
 
 .document-search-button.document-search-button {
-	padding-top: 3px;
+	padding-top: 4px;
 }
 
 body:not(.show-close-button) .document-search-close-button {
@@ -7102,6 +7102,16 @@ body:not(.no-file-explorer-icons) .nav-file-title[data-path*="kanban" i] .nav-fi
 	color: var(--extra-contrast);
 }
 
+/* separate hover effect, since in outline, clicking the collapse icon has a different
+action (folding) than clicking the heading itself (as opposed to other sidebar plugins */
+.tree-item-icon.tree-item-icon.collapse-icon:not(:hover) svg {
+	color: var(--text-faint);
+}
+
+.tree-item-icon.collapse-icon:hover {
+	transform: scale(1.2);
+}
+
 .tree-item-flair {
 	font-family: var(--number-font);
 	font-weight: 700;
@@ -7133,10 +7143,6 @@ body:not(.no-file-explorer-icons) .nav-file-title[data-path*="kanban" i] .nav-fi
 .tree-item-self:active,
 .tree-item-self:active .tree-item-icon svg {
 	color: var(--primary-accent-2);
-}
-
-.tree-item.is-collapsed .tree-item-icon svg {
-	color: var(--primary-accent-3);
 }
 
 .tree-item-icon.collapse-icon {
@@ -7172,19 +7178,9 @@ body:not(.no-file-explorer-icons) .nav-file-title[data-path*="kanban" i] .nav-fi
 	margin-right: 19px;
 }
 
-/* separate hover effect, since in outline, clicking the collapse icon has a different
-action (folding) than clicking the heading itself (as opposed to other sidebar plugins */
-.outline .collapse-icon:not(:hover) svg {
-	color: var(--text-faint) !important;  /* needs important */
-}
-
 /* increase clickable area */
 .outline .collapse-icon {
 	padding: 2px;
-}
-
-.outline .collapse-icon:hover {
-	transform: scale(1.2);
 }
 
 /* relationship lines */
@@ -7313,7 +7309,6 @@ body:not(.classic-inline-backlinks) :is(.writing, .longform-leaf) .embedded-back
 
 .workspace-leaf-content[data-type="backlink"] .search-result-file-match {
 	font-weight: 500;
-	margin-left: 1.3em;
 }
 
 /* outgoing and backlink unlinked mentions */
@@ -7330,7 +7325,28 @@ body:not(.classic-inline-backlinks) :is(.writing, .longform-leaf) .embedded-back
 }
 
 .search-result-hover-button:hover {
-	background-color: var(--hover-accent-2);
+	color: var(--button-hover-text);
+	background-color: var(--interactive-hover-border-color);
+}
+
+/* the link button makes the
+unlinked mention to a linked mention by adding
+wikilinks */
+.search-result-file-match-replace-button.search-result-file-match-replace-button.search-result-file-match-replace-button {
+	font-size: 0;
+	padding: 5px;
+	margin-right: 16px;
+}
+
+.search-result-file-match-replace-button::BEFORE {
+	content: "link";
+
+	font-family: var(--icon-font);
+	font-size: 1.2rem;
+
+	position: relative;
+	top: 4px;
+	left: 1px;
 }
 
 /* ───────────────────────────────────────────────── */
