@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 1.1143
+Version 1.1144
 Source CSS: https://github.com/chrisgrieser/shimmering-focus/blob/main/source.css
 MIT License
 ──────────────────────────────────────────────────── */
@@ -125,8 +125,8 @@ MIT License
 	- Blockquotes
 	- Citation Syntax
 	- Callouts
-		- Custom Callouts
-		- Special Callouts
+		- Callouts
+		- Sidenote Callouts
 	- Tables
 	- MathJax
 	- Code
@@ -5410,7 +5410,7 @@ div.is-collapsible.is-collapsed[data-callout] .callout-title {
 	border-bottom-right-radius: var(--roundish);
 }
 
-/* <<< Custom Callouts */
+/* <<< Callouts */
 /* https://help.obsidian.md/How+to/Use+callouts#Customizations */
 /* https://lucide.dev/ */
 .callout[data-callout="link"],
@@ -5434,7 +5434,7 @@ div.is-collapsible.is-collapsed[data-callout] .callout-title {
 	--callout-color: 255, 179, 68;
 }
 
-/* <<< Special Callouts */
+/* <<< Sidenote Callouts */
 .callout[data-callout$="sidenote"] {
 	--callout-icon: lightbulb;
 	--callout-color: 255, 210, 107;
@@ -5445,7 +5445,12 @@ div.is-collapsible.is-collapsed[data-callout] .callout-title {
 }
 
 .sidenote-callout-outdent .callout[data-callout$="sidenote"] {
-	margin-right: -30px;
+	margin-right: -30px; /* more makes it cut off with a narrow window size */
+}
+
+.callout[data-callout$="sidenote"] .callout-title {
+	padding-top: 1px;
+	padding-bottom: 1px;
 }
 
 body .callout {
