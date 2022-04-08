@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 1.1134
+Version 1.1135
 Source CSS: https://github.com/chrisgrieser/shimmering-focus/blob/main/source.css
 MIT License
 ──────────────────────────────────────────────────── */
@@ -686,7 +686,7 @@ settings:
 	-
 	 id: special-syntax
 	 title: 🌀 Special Syntax
-	 description: Highlight Colors 🆕, Multi-Color Highlights, Spoiler Syntax, Annotation Tags, Trailing Whites Space, Citation Syntax, Pandoc Citations
+	 description: 🆕 Highlight Colors, Multi-Color Highlights, Spoiler Syntax, Annotation Tags, 🆕 Trailing Whites Space, Citation Syntax, Pandoc Citations
 	 type: heading
 	 level: 1
 	 collapsed: true
