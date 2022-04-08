@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 1.1145
+Version 1.1146
 Source CSS: https://github.com/chrisgrieser/shimmering-focus/blob/main/source.css
 MIT License
 ──────────────────────────────────────────────────── */
@@ -1093,9 +1093,9 @@ svg {
 ──────────────────────────────────────────────────── */
 
 .external-link.external-link {
-	background-position-y: 0.4em;
+	background-position-y: 0.35em;
 	background-image: var(--external-url);
-	padding-right: 1em;
+	padding-right: 1.1em;
 }
 
 /* outline/heading */
