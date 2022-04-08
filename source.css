@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 1.1168
+Version 1.1169
 Source CSS: https://github.com/chrisgrieser/shimmering-focus/blob/main/source.css
 MIT License
 ──────────────────────────────────────────────────── */
@@ -4438,17 +4438,17 @@ body .markdown-rendered .frontmatter.mod-failed .mod-error {
 }
 
 /* interaction with floating metadata */
-body:not(.no-floating-metadata):not(.is-mobile).unlock-theme-beta .markdown-preview-view:not(.no-floating-metadata) .frontmatter.language-yaml.mod-failed:hover::AFTER {
+body:not(.no-floating-metadata):not(.is-mobile) .markdown-preview-view:not(.no-floating-metadata) .frontmatter.language-yaml.mod-failed:hover::AFTER {
 	display: block;
 	font-size: 1.1rem;
 	right: 2rem;
 }
 
-body:not(.no-floating-metadata):not(.is-mobile).unlock-theme-beta .markdown-preview-view:not(.no-floating-metadata) .frontmatter.language-yaml.mod-failed {
+body:not(.no-floating-metadata):not(.is-mobile) .markdown-preview-view:not(.no-floating-metadata) .frontmatter.language-yaml.mod-failed {
 	background-color: var(--error-bg);
 }
 
-body:not(.no-floating-metadata):not(.is-mobile).unlock-theme-beta .markdown-preview-view:not(.no-floating-metadata) .frontmatter.mod-failed + .frontmatter-container:hover::AFTER {
+body:not(.no-floating-metadata):not(.is-mobile) .markdown-preview-view:not(.no-floating-metadata) .frontmatter.mod-failed + .frontmatter-container:hover::AFTER {
 	content: var(--error-symbol)" YAML Invalid"; /* stylelint-disable-line function-whitespace-after */
 
 	font-family: var(--font-monospace);
@@ -4487,6 +4487,7 @@ body:not(.no-floating-metadata):not(.is-mobile) .markdown-preview-view:not(.no-f
 }
 
 body:not(.no-floating-metadata):not(.is-mobile) .markdown-preview-view:not(.no-floating-metadata) .frontmatter-container {
+	font-size: 0.95rem; /* slightly bigger font */
 	top: var(--floating-metadata-top);
 }
 
@@ -4510,14 +4511,6 @@ body:not(.no-floating-metadata):not(.is-mobile) .markdown-preview-view:not(.no-f
 /* look when hovered */
 body:not(.no-floating-metadata):not(.is-mobile) .markdown-preview-view:not(.no-floating-metadata) :is(.frontmatter.language-yaml, .frontmatter-container):hover {
 	box-shadow: var(--small-shadow); /* switch to outer shadow */
-}
-
-body:not(.no-floating-metadata):not(.is-mobile) .markdown-preview-view:not(.no-floating-metadata) .frontmatter-section:hover.mod-aliases {
-	margin-top: 0;
-}
-
-body:not(.no-floating-metadata):not(.is-mobile) .markdown-preview-view:not(.no-floating-metadata) .frontmatter-section:hover {
-	font-size: 0.95rem; /* slightly bigger font */
 }
 
 /* unset some interfering codeblock styling with floating YAML */

@@ -3,6 +3,7 @@ nav_order: 110
 ---
 
 # Changelog
+- 2022-04-09	fix for floating metadata font size flitch
 - 2022-04-09	meta
 - 2022-04-08	option for text-only status bar
 - 2022-04-08	fix #134
