@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 1.1169
+Version 1.1170
 Source CSS: https://github.com/chrisgrieser/shimmering-focus/blob/main/source.css
 MIT License
 ──────────────────────────────────────────────────── */
@@ -1536,13 +1536,13 @@ body:not(.show-titlebar) .titlebar {
 }
 
 :root { /* stylelint-disable-line no-duplicate-selectors */
-	--mac-traffic-light-padding: 0.9rem;
+	--mac-traffic-light-padding: 1.2rem;
 	--normal-top-padding: 37.5px;
 }
 
 /* fix for macOS Traffic Lights */
-.mod-macos:not(.show-titlebar) .mod-left-split .workspace-tabs:nth-child(3) .workspace-tab-header-container {
-	height: calc(var(--mac-traffic-light-padding) + 37px);
+.mod-macos:not(.show-titlebar) .mod-left-split .workspace-tabs:nth-child(3) .workspace-tab-header-container.workspace-tab-header-container.workspace-tab-header-container {
+	height: calc(var(--mac-traffic-light-padding) + 40px);
 	padding-top: calc(var(--mac-traffic-light-padding) + 5px);
 }
 
@@ -9617,8 +9617,8 @@ button.MS-OpenSnippet:hover svg.ms-snippet path {
 }
 
 .BC-Matrix.BC-Matrix.BC-Matrix ol > li {
-	line-height: 1.1em;
-	padding: 3px;
+	line-height: 1.15em;
+	padding: 3px 3px 3.5px;
 }
 
 .BC-Matrix-square.BC-Matrix-square.BC-Matrix-square.BC-Matrix-square.BC-Matrix-square:first-child {
@@ -9641,7 +9641,7 @@ button.MS-OpenSnippet:hover svg.ms-snippet path {
 }
 
 body .app-container .workspace-leaf-content[data-type="BC-matrix"] .view-content {
-	padding: 1px 0 3px 2px;
+	padding: 0 0 3px 2px;
 }
 
 .BC-Matrix-square.BC-Matrix-square.BC-Matrix-square.BC-Matrix-square.BC-Matrix-square {
