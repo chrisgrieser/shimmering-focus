@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 1.1165
+Version 1.1166
 Source CSS: https://github.com/chrisgrieser/shimmering-focus/blob/main/source.css
 MIT License
 ──────────────────────────────────────────────────── */
@@ -1536,7 +1536,7 @@ body:not(.show-titlebar) .titlebar {
 }
 
 :root { /* stylelint-disable-line no-duplicate-selectors */
-	--mac-traffic-light-padding: 0.95rem;
+	--mac-traffic-light-padding: 0.9rem;
 	--normal-top-padding: 37.5px;
 }
 
