@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 1.1133
+Version 1.1134
 Source CSS: https://github.com/chrisgrieser/shimmering-focus/blob/main/source.css
 MIT License
 ──────────────────────────────────────────────────── */
@@ -6310,26 +6310,25 @@ body .app-container span:is(.cm-tag.cm-bracket.cm-hmd-html-begin, .cm-tag.cm-bra
 /* ───────────────────────────────────────────────── */
 /* << Trailing Whitespace (Two Space Rule)
 ──────────────────────────────────────────────────── */
-:is(.cm-trailing-space-a, .cm-trailing-space-b, .cm-trailing-space-new-line)::BEFORE {
-	font-size: 0.9em;
+body:not(.hide-trailing-whitespace) :is(.cm-trailing-space-a, .cm-trailing-space-b, .cm-trailing-space-new-line)::BEFORE {
+	font-size: 1em;
 	font-weight: 600;
+	letter-spacing: -2px;
 	color: var(--text-muted);
 }
 
-.cm-trailing-space-a::BEFORE {
-	content: "\00B7  \00B7"; /* dot character */
+body:not(.hide-trailing-whitespace) :is(.cm-trailing-space-b, .cm-trailing-space-a)::BEFORE {
+	content: "\00B7"; /* dot character */
+}
+
+/* first characters */
+body:not(.hide-trailing-whitespace) :not(.cm-trailing-space-b) + .cm-trailing-space-a::BEFORE {
+	content: "\00B7  \00B7";
 	padding-left: 5px;
 }
 
-:is(.cm-trailing-space-b, .cm-trailing-space-b + .cm-trailing-space-a)::BEFORE {
-	content: "\00B7";
-	padding-left: 0;
-}
-
-.cm-trailing-space-new-line::BEFORE {
+body:not(.hide-trailing-whitespace) .cm-trailing-space-new-line::BEFORE {
 	content: "\21B5"; /* return character */
-	position: relative;
-	left: -2px;
 }
 
 /* ──────────────────────────────────────────────── */
@@ -11191,19 +11190,19 @@ settings:
 	 id: no-floating-metadata
 	 title: 🆕 Permanently show the Metadata Block / YAML Frontmatter in Preview Mode
 	 type: class-toggle
-	 description: 'When false, the metadata block becomes visible upon hovering the "M" / "Y" in the top right. You can also add the cssclass "no-floating-metadata" to a note to permanently show the meta on that specific note.'
+	 description: 'By default, the metadata block in this theme only becomes visible upon hovering the "M" / "Y" in the top right. You can also add the cssclass "no-floating-metadata" to a note to permanently show the meta on that specific note.'
 	 default: false
 	-
 	 id: show-sidebar-tabs
 	 title: Permanently show the Sidebar Tabs
 	 type: class-toggle
-	 description: When false, the Sidebar Tabs become visible upon hovering.
+	 description: By default, the Sidebar Tabs become visible upon hovering.
 	 default: false
 	-
 	 id: show-titlebar
 	 title: Re-enable Title Bar
 	 type: class-toggle
-	 description: Enable this to have a title bar, for example to move the Obsidian window.
+	 description: Enable this to show title bar again. The titlebar is needed by some plugins to work correctly, and to move the Obsidian window with the mouse.
 	 default: false
 	-
 	 id: show-titlebar-text
@@ -11215,12 +11214,12 @@ settings:
 	 id: show-ribbons
 	 title: Re-enable Ribbons
 	 type: class-toggle
-	 description: Ribbons are the thin vertical bars to the very left & right. The left ribbon is the element that contains the settings button.
+	 description: '"Ribbons" are the thin vertical bars to the very left & right. Without the ribbons, you can still trigger any action via the Command Palette.'
 	 default: false
 	-
 	 id: show-header-bar
 	 title: Permanently show the Header Bar
-	 description: When false, the Header bar is still visible upon focus and hover. (When you are using Sliding Panes with rotated headers, the headers will be permanently shown and this setting has no effect.)
+	 description: By default, the Header bar is still visible upon focus and hover. (When you are using Sliding Panes with rotated headers, the headers will be permanently shown and this setting has no effect.)
 	 type: class-toggle
 	 default: false
 	-
@@ -11246,30 +11245,30 @@ settings:
 	 id: show-urls
 	 title: 'Permanently show full URLs (Source Mode)'
 	 type: class-toggle
-	 description: In Source Mode, URLs on non-active lines will be folded (Obsidian 0.13+ only). Enable this to permanently show the full URL.
+	 description: In Source Mode, URLs will be folded except for the active line. Enable this to permanently show the full URL.
 	 default: false
 	-
 	 id: show-close-button
-	 title: Re-enable Close Buttons
+	 title: Permanently Show Close Buttons
 	 type: class-toggle
-	 description: "When false, you can close menus and modals with by pressing 'Esc' or by clicking outside the menu area."
+	 description: "By default, this theme only shows close button on hover. You can close menus without close button by pressing 'Esc' or by clicking outside the menu area."
 	 default: false
 	-
 	 id: show-scrollbar
 	 title: Re-enable Scrollbars
 	 type: class-toggle
-	 description: When false, only the scroll bars in the editor are shown.
+	 description: By default, this theme only shows scroll bars in the editor.
 	 default: false
 	-
 	 id: permanently-show-collapse-indicators
 	 title: Permanently show the Collapse Arrows
-	 description: When false, collapse arrows only become visible when hovered, folder, or in the active line.
+	 description: By default, collapse arrows only become visible when hovered, folded, or in the active line.
 	 type: class-toggle
 	 default: false
 	-
 	 id: show-graph-controls
 	 title: 'Graph View: Permanently show the Graph Controls'
-	 description: When false, graph controls are still visible when open, or upon hovering the top-left area.
+	 description: By default, graph controls are only visible when opened, or upon hovering the top-left area of the Graph View.
 	 type: class-toggle
 	 default: false
 	-
@@ -11823,7 +11822,7 @@ settings:
 	-
 	 id: special-syntax
 	 title: 🌀 Special Syntax
-	 description: Highlight Colors 🆕, Multi-Color Highlights, Spoiler Syntax, Annotation Tags, Citation Syntax, Pandoc Citations
+	 description: Highlight Colors 🆕, Multi-Color Highlights, Spoiler Syntax, Annotation Tags, Trailing Whites Space, Citation Syntax, Pandoc Citations
 	 type: heading
 	 level: 1
 	 collapsed: true
@@ -11867,6 +11866,12 @@ settings:
 	 id: annotation-tags-off
 	 title: Disable Annotation Tags
 	 description: '"Annotation Tags" are tags that are visually emphasized when used inline (i.e., not the YAML frontmatter). They include: #definition, #question, #goal, #todo, #summary, #important, #main, #critique, #gap, #litreview, #quote, #agree, #disagree, #example, #data, #method, and #sidenote.'
+	 type: class-toggle
+	 default: false
+	-
+	 id: hide-trailing-whitespace
+	 title: Hide Trailing Spaces
+	 description: 'By default, this theme shows trailing spaces when there are more than one. This can be for the so-called "Two Space Rule" in Markdown, where exactly two spaces at the end of a line force a line break.''
 	 type: class-toggle
 	 default: false
 	-
@@ -12007,7 +12012,7 @@ settings:
 	-
 	 id: show-mobile-header
 	 title: Re-enable Header
-	 description: When false, a floating button to toggle between Reading and Source Mode will be shown.
+	 description: By default, this theme shows a floating button to toggle between Reading and Source Mode.
 	 type: class-toggle
 	 default: false
 	-
