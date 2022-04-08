@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 1.1135
+Version 1.1136
 Source CSS: https://github.com/chrisgrieser/shimmering-focus/blob/main/source.css
 MIT License
 ──────────────────────────────────────────────────── */
@@ -11822,7 +11822,7 @@ settings:
 	-
 	 id: special-syntax
 	 title: 🌀 Special Syntax
-	 description: 🆕 Highlight Colors, Multi-Color Highlights, Spoiler Syntax, Annotation Tags, 🆕 Trailing Whites Space, Citation Syntax, Pandoc Citations
+	 description: '🆕 Highlight Colors, Multi-Color Highlights, Spoiler Syntax, Annotation Tags, 🆕 Trailing Whites Space, Citation Syntax, Pandoc Citations'
 	 type: heading
 	 level: 1
 	 collapsed: true
@@ -11871,7 +11871,7 @@ settings:
 	-
 	 id: hide-trailing-whitespace
 	 title: Hide Trailing Spaces
-	 description: 'By default, this theme shows trailing spaces when there are more than one. This can be for the so-called "Two Space Rule" in Markdown, where exactly two spaces at the end of a line force a line break.''
+	 description: 'By default, this theme shows trailing spaces when there are more than one. This can be for the so-called "Two Space Rule" in Markdown, where exactly two spaces at the end of a line force a line break.'
 	 type: class-toggle
 	 default: false
 	-
@@ -11955,7 +11955,7 @@ settings:
 	-
 	 id: code-blocks-options
 	 title: '🖥 Code Blocks'
-	 description: 'Syntax Highlighting 🆕, Tab Size, Line Wrapping'
+	 description: '🆕 Syntax Highlighting, Tab Size, Line Wrapping'
 	 type: heading
 	 level: 1
 	 collapsed: true

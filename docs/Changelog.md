@@ -3,7 +3,7 @@ nav_order: 110
 ---
 
 # Changelog
-- 2022-04-08	patch
+- 2022-04-08	hotfix
 - 2022-04-08	setting for trailing whitespace display
 - 2022-04-08	better spacing for trailign white space indicator
 - 2022-04-08	fixes for backlink pane
