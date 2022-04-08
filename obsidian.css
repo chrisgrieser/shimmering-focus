@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 1.1148
+Version 1.1149
 Source CSS: https://github.com/chrisgrieser/shimmering-focus/blob/main/source.css
 MIT License
 ──────────────────────────────────────────────────── */
@@ -1147,7 +1147,7 @@ settings:
 	-
 	 id: unlock-theme-beta
 	 title: Unlock Theme Beta
-	 description: 'Unlocks some features of the theme that are still under development. Note that due to the work-in-progress, these features may not work as expected yet. Also, some settings may simply not do anything yet.'
+	 description: 'Unlocks some features of the theme that are still under development. Note that due to the work-in-progress, these features may not work as expected yet. Also, some settings may simply not do anything yet. Currently, that is most of those settings can be found under Colors ➞ Custom Colors. '
 	 type: class-toggle
 	 default: false
 	-

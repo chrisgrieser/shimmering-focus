@@ -3,7 +3,7 @@ nav_order: 110
 ---
 
 # Changelog
-- 2022-04-08	typo
+- 2022-04-08	patch
 - 2022-04-08	hotfix #133
 - 2022-04-08	update readme
 - 2022-04-08	move floating metadata from beta to main
