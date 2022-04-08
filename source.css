@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 1.1157
+Version 1.1158
 Source CSS: https://github.com/chrisgrieser/shimmering-focus/blob/main/source.css
 MIT License
 ──────────────────────────────────────────────────── */
@@ -8494,7 +8494,7 @@ body .app-container :is(.kanban-plugin__drag-container,.kanban-plugin) :is(h1, h
 	box-shadow: none;
 
 	padding-bottom: 1px;
-	padding-left: 5px;
+	padding-left: 4px !important;
 	margin-bottom: 3px;
 
 	border-width: 1px;
@@ -8703,11 +8703,6 @@ body .kanban-plugin__item-form {
 	background-color: var(--bg3);
 	padding: 3px 8px 5px;
 	border-radius: calc(var(--roundish) * 1.5);
-}
-
-body:not(.round-shapes) .kanban-plugin textarea.kanban-plugin__item-input {
-	padding-top: 5px;
-	padding-bottom: 3px;
 }
 
 /* tags */
