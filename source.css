@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 1.1149
+Version 1.1150
 Source CSS: https://github.com/chrisgrieser/shimmering-focus/blob/main/source.css
 MIT License
 ──────────────────────────────────────────────────── */
@@ -10386,8 +10386,9 @@ body:not(.unlock-theme-beta) .style-settings-container .setting-item[data-id*="-
 	display: none;
 }
 
-.style-settings-container .setting-item[data-id*="tint-"]::BEFORE,
-.style-settings-container .setting-item[data-id*="-accent-"]::BEFORE {
+/* beta badge */
+.style-settings-container .setting-item[data-id*="-accent-"]::BEFORE .style-settings-container .setting-item[data-id="unlock-theme-beta"]::BEFORE,
+.style-settings-container .setting-item[data-id*="tint-"]::BEFORE {
 	content: "Beta";
 
 	font-size: 0.9em;
@@ -12344,7 +12345,7 @@ settings:
 	-
 	 id: unlock-theme-beta
 	 title: Unlock Theme Beta
-	 description: 'Unlocks some features of the theme that are still under development. Note that due to the work-in-progress, these features may not work as expected yet. Also, some settings may simply not do anything yet. Currently, that is most of those settings can be found under Colors ➞ Custom Colors. '
+	 description: 'Unlocks some features of the theme that are still under development. Note that due to the work-in-progress, these features may not work as expected yet. Also, some settings may simply not do anything yet. Currently, the beta mostly unlocks settings for Custom Colors. '
 	 type: class-toggle
 	 default: false
 	-
