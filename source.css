@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 1.1173
+Version 1.1174
 Source CSS: https://github.com/chrisgrieser/shimmering-focus/blob/main/source.css
 MIT License
 ──────────────────────────────────────────────────── */
@@ -5358,7 +5358,7 @@ body:not(.normal-blockquotes) .callout-content {
 
 /* more readable */
 .theme-light .callout-icon svg {
-	filter: brightness(70%);
+	filter: brightness(77%);
 }
 
 .callout {
