@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 1.1152
+Version 1.1153
 Source CSS: https://github.com/chrisgrieser/shimmering-focus/blob/main/source.css
 MIT License
 ──────────────────────────────────────────────────── */
@@ -297,24 +297,6 @@ MIT License
 /* ───────────────────────────────────────────────── */
 /* << Color Schemes
 ──────────────────────────────────────────────────── */
-
-/* ────────────────────────────────────────────────────
-🚧 WORK-IN-PROGRESS
-
-TODO
-- Accent Color Settings
-- Add Accents Colors to Nord
-- Bauhaus Color Scheme
-
-/*
-	value: primary-accent-dark-purple
-	value: primary-accent-dark-green
-	value: primary-accent-dark-yellow
-	value: primary-accent-light-purple
-	value: primary-accent-light-green
-*/
-
-/* ───────────────────────────────────────────────── */
 
 /* ───────────────────────────────────────────────── */
 /* <<< Accent Color Settings
@@ -8705,6 +8687,7 @@ body .kanban-plugin__item-form {
 .kanban-plugin button.kanban-plugin__new-item-button {
 	font-family: var(--button-font);
 	color: var(--text-muted);
+	box-shadow: none; /* remove box shadow added by button styling from this theme */
 }
 
 .kanban-plugin button.kanban-plugin__new-item-button,

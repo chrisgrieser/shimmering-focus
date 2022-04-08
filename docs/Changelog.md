@@ -3,6 +3,7 @@ nav_order: 110
 ---
 
 # Changelog
+- 2022-04-08	patch
 - 2022-04-08	minor theme browser improvements
 - 2022-04-08	better info on theme beta
 - 2022-04-08	hotfix #133
