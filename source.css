@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 1.1140
+Version 1.1141
 Source CSS: https://github.com/chrisgrieser/shimmering-focus/blob/main/source.css
 MIT License
 ──────────────────────────────────────────────────── */
@@ -2722,7 +2722,7 @@ with prompts */
 /* < Sidebar
 ──────────────────────────────────────────────────── */
 .workspace-leaf-content .view-content {
-	padding: 3px 1px;
+	padding: 2px 1px;
 }
 
 .nav-action-button.is-active {
@@ -2746,7 +2746,7 @@ body .app-container :is(.nav-file-title, .nav-folder-title):is(.is-active, :hove
 
 .nav-file-title,
 .nav-folder-title {
-	line-height: 1.3em;
+	line-height: 1.15em;
 	white-space: normal;
 
 	width: 100%;
@@ -2754,7 +2754,7 @@ body .app-container :is(.nav-file-title, .nav-folder-title):is(.is-active, :hove
 	color: var(--extra-contrast);
 
 	padding-top: 0;
-	padding-bottom: 1.5px;
+	padding-bottom: 1px;
 }
 
 /* hover file */
@@ -7199,6 +7199,10 @@ action (folding) than clicking the heading itself (as opposed to other sidebar p
 	border-radius: 0;
 }
 
+.workspace-leaf-content[data-type="outline"] > .view-content {
+	padding-top: 0;
+}
+
 /* fold icon to the right */
 .outline .tree-item-self.is-clickable {
 	flex-direction: row-reverse;
@@ -7982,6 +7986,7 @@ body:not(.no-built-in-supercharged-links) .data-link-icon[data-link-tags~="#pers
 body:not(.no-built-in-supercharged-links) .data-link-icon[data-link-tags~="#evergreen" i]::BEFORE { content: "🌲 " }
 body:not(.no-built-in-supercharged-links) .data-link-icon[data-link-tags~="#moc" i]::BEFORE { content: "🗺 " }
 body:not(.no-built-in-supercharged-links) .data-link-icon[data-link-tags~="#seedling" i]::BEFORE { content: "🌱 " }
+body:not(.no-built-in-supercharged-links) .data-link-icon[data-link-tags~="#pkm" i]::BEFORE { content: "🧠 " }
 
 /* writing cssclass, needs *= to catch , after cssclass */
 body:not(.no-built-in-supercharged-links) .data-link-icon[data-link-cssclass*="writing"]::BEFORE { content: "✍️ " }
@@ -9596,9 +9601,13 @@ button.MS-OpenSnippet:hover svg.ms-snippet path {
 	display: none;
 }
 
+.workspace-leaf-content[data-type="BC-matrix"] > .view-content {
+	padding-top: 0;
+}
+
 .BC-Matrix.BC-Matrix.BC-Matrix ol > li {
-	line-height: 1.2em;
-	padding: 3px 5px 6px;
+	line-height: 1.1em;
+	padding: 3px;
 }
 
 .BC-Matrix-square.BC-Matrix-square.BC-Matrix-square.BC-Matrix-square.BC-Matrix-square:first-child {
@@ -9625,7 +9634,6 @@ body .app-container .workspace-leaf-content[data-type="BC-matrix"] .view-content
 }
 
 .BC-Matrix-square.BC-Matrix-square.BC-Matrix-square.BC-Matrix-square.BC-Matrix-square {
-	text-align: left;
 	padding-top: 2px;
 	padding-bottom: 0;
 	border: none;
@@ -9639,6 +9647,11 @@ body .app-container .workspace-leaf-content[data-type="BC-matrix"] .view-content
 
 .BC-Matrix.BC-Matrix.BC-Matrix.BC-Matrix {
 	padding: 0;
+}
+
+/* hide headings in Breadcrumbs */
+.minimal-breadcrumbs-matrix .BC-Matrix-headers.BC-Matrix-headers.BC-Matrix-headers.BC-Matrix-headers {
+	display: none;
 }
 
 /* "up", "same", and "down" */
@@ -12098,7 +12111,7 @@ settings:
 	-
 	 id: plugin-specific
 	 title: ⚙️ Plugin-Specific Settings
-	 description: File Explorer, Backlinks, Outline, Sliding Panes, Calendar, Link Favicons, Command Palette
+	 description: File Explorer, Backlinks, Outline, Breadcrumbs, Sliding Panes, Calendar, Link Favicons, Command Palette
 	 type: heading
 	 level: 1
 	 collapsed: true
@@ -12130,6 +12143,12 @@ settings:
 	 id: outline-remove-level-1
 	 title: 'Outline: Remove First Level of Headings'
 	 description: In case you have only one H1 heading per file, this will make the outline sidebar more compact.
+	 type: class-toggle
+	 default: false
+	-
+	 id: minimal-breadcrumbs-matrix
+	 title: 'Breadcrumbs (Matrix View): Remove Headings'
+	 description: Make the Matrix View more compact by removing all headings ("real", "implied", "up",... ).
 	 type: class-toggle
 	 default: false
 	-
