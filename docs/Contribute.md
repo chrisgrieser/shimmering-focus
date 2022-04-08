@@ -6,14 +6,17 @@ nav_order: 103
 
 <!-- MarkdownTOC -->
 
+- [Theme Beta](#theme-beta)
 - [Improve the Documentation](#improve-the-documentation)
 - [Contribute CSS Snippets](#contribute-css-snippets)
 - [Translation of the Theme's Style Settings](#translation-of-the-themes-style-settings)
 
 <!-- /MarkdownTOC -->
 
-## Improve the Documentation
+## Theme Beta
+You can unlock the *Theme Beta* in the Style Settings and contribute by testing out new, under development features.
 
+## Improve the Documentation
 This documentation is still quite new. Found a dead link or typo? Reports are welcome! (If you know your way around GitHub, feel free to make a Pull Request.)
 
 [Report Issue with Documentation](https://github.com/chrisgrieser/shimmering-focus/issues/new?assignees=&labels=documentation&template=documentation_fix.yml&title=%5BDocs%5D%3A+){: .btn .btn-primary .fs-4 .mb-4 .mb-md-0 .mr-2 }

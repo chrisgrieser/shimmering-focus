@@ -12,7 +12,6 @@ To increase the scannability of long notes, the presence of some easy-to-miss el
 
 ![](https://user-images.githubusercontent.com/73286100/147931964-d5e5d309-d821-4fa1-86c1-4a8952a249d3.png){: width="500" }
 
-
 ## Readability Features
 - Brightness and line length are both adjustable via [Style Settings Plugin](https://obsidian.md/plugins?id=obsidian-style-settings).
 - Dark Mode for PDFs (when using the theme in dark mode).
