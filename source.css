@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 1.1150
+Version 1.1151
 Source CSS: https://github.com/chrisgrieser/shimmering-focus/blob/main/source.css
 MIT License
 ──────────────────────────────────────────────────── */
@@ -60,7 +60,7 @@ MIT License
 	- Toggles
 	- Input & Textarea
 	- Dropdown
-	- Slider
+	- Sliders
 	- Search & Replace (cmd + F)
 	- Search Matches
 	- Context Menus
@@ -2277,7 +2277,7 @@ select.dropdown.dropdown:focus {
 }
 
 /* ───────────────────────────────────────────────── */
-/* << Slider
+/* << Sliders
 ──────────────────────────────────────────────────── */
 
 input[type="range"] {
@@ -2290,6 +2290,7 @@ input[type="range"] {
 input[type="range"]::-WEBKIT-SLIDER-THUMB {
 	background-color: var(--interactive-bg);
 	box-shadow: var(--toggle-enabled-inset-shadow);
+	border: var(--thin-border);
 	border-radius: calc(var(--round) / 2);
 }
 
@@ -10387,8 +10388,10 @@ body:not(.unlock-theme-beta) .style-settings-container .setting-item[data-id*="-
 }
 
 /* beta badge */
-.style-settings-container .setting-item[data-id*="-accent-"]::BEFORE .style-settings-container .setting-item[data-id="unlock-theme-beta"]::BEFORE,
-.style-settings-container .setting-item[data-id*="tint-"]::BEFORE {
+.style-settings-container .setting-item[data-id*="tint-"]::BEFORE,
+.style-settings-container .setting-item[data-id*="-accent-"]::BEFORE,
+.style-settings-container .setting-item[data-id="preset-color-scheme"]::BEFORE,
+.style-settings-container .setting-item[data-id="unlock-theme-beta"]::BEFORE {
 	content: "Beta";
 
 	font-size: 0.9em;
@@ -11386,7 +11389,7 @@ settings:
 	 description: Custom Colors
 	 type: heading
 	 level: 2
-	 collapsed: true
+	 collapsed: false
 	-
 	 id: primary-accent-light
 	 title: "Primary Accent (Light Mode)"
@@ -11421,7 +11424,7 @@ settings:
 	-
 	 id: tertiary-accent-light
 	 title: "Tertiary Accent (Light Mode)"
-	 description: 'Italic & Bold. "Uncolored" will have same use the same color as standard text.'
+	 description: 'Italic & Bold. When set to "Uncolored", bold and italic will have the same color as normal text.'
 	 type: class-select
 	 allowEmpty: false
 	 default: tertiary-accent-light-uncolered
@@ -11489,7 +11492,7 @@ settings:
 	 description: Custom Colors
 	 type: heading
 	 level: 2
-	 collapsed: true
+	 collapsed: false
 	-
 	 id: primary-accent-dark
 	 title: "Primary Accent (Dark Mode)"
@@ -11527,7 +11530,7 @@ settings:
 	-
 	 id: tertiary-accent-dark
 	 title: "Tertiary Accent (Dark Mode)"
-	 description: 'Italic & Bold'
+	 description: 'Italic & Bold. When set to "Uncolored", bold and italic will have the same color as normal text.'
 	 type: class-select
 	 allowEmpty: false
 	 default: tertiary-accent-dark-uncolered
