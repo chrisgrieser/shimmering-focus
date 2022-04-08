@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 1.1132
+Version 1.1133
 Source CSS: https://github.com/chrisgrieser/shimmering-focus/blob/main/source.css
 MIT License
 ──────────────────────────────────────────────────── */
@@ -139,7 +139,7 @@ MIT License
 	- Tags
 		- Annotation Tags
 	- Comments, HTML Tags, Escape Characters
-	- Trailing Whitespace
+	- Trailing Whitespace (Two Space Rule)
 	- Tasks & Checkboxes
 	- Highlights & Multi-Color Highlighting
 	- Pseudo-Spoiler-Tag
@@ -6308,26 +6308,28 @@ body .app-container span:is(.cm-tag.cm-bracket.cm-hmd-html-begin, .cm-tag.cm-bra
 }
 
 /* ───────────────────────────────────────────────── */
-/* << Trailing Whitespace
+/* << Trailing Whitespace (Two Space Rule)
 ──────────────────────────────────────────────────── */
-.cm-line :is(.cm-trailing-space-a, .cm-trailing-space-b, .cm-trailing-space-new-line)::BEFORE {
-	color: var(--text-faint);
-	position: absolute;
+:is(.cm-trailing-space-a, .cm-trailing-space-b, .cm-trailing-space-new-line)::BEFORE {
+	font-size: 0.9em;
+	font-weight: 600;
+	color: var(--text-muted);
 }
 
-.cm-line .cm-trailing-space-a::BEFORE {
-	content: "\00B7\00B7";
+.cm-trailing-space-a::BEFORE {
+	content: "\00B7  \00B7"; /* dot character */
+	padding-left: 5px;
 }
 
-.cm-trailing-space-b::BEFORE,
-.cm-trailing-space-b + .cm-trailing-space-a::BEFORE {
+:is(.cm-trailing-space-b, .cm-trailing-space-b + .cm-trailing-space-a)::BEFORE {
 	content: "\00B7";
-	padding-left: 11px;
+	padding-left: 0;
 }
 
-.cm-line .cm-trailing-space-new-line::BEFORE {
-	content: "\21B5";
-	padding-left: 15px;
+.cm-trailing-space-new-line::BEFORE {
+	content: "\21B5"; /* return character */
+	position: relative;
+	left: -2px;
 }
 
 /* ──────────────────────────────────────────────── */
