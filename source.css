@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 1.1146
+Version 1.1147
 Source CSS: https://github.com/chrisgrieser/shimmering-focus/blob/main/source.css
 MIT License
 ──────────────────────────────────────────────────── */
@@ -257,11 +257,14 @@ MIT License
 
 .theme-light.use-gray-tint-light {
 	--sat-of-grays: 15%;
-	--high-sat-of-grays: calc(var(--sat-of-grays) * 3);
 }
 
 .theme-dark.use-gray-tint-dark {
 	--sat-of-grays: 8%;
+}
+
+.theme-light,
+.theme-dark {
 	--high-sat-of-grays: calc(var(--sat-of-grays) * 3);
 }
 
@@ -4567,17 +4570,17 @@ body.show-header-bar {
 	--floating-metadata-top: 2.65rem;
 }
 
-body:not(.show-header-bar):not(.no-floating-metadata) .view-header:is(:focus-within, :hover) + .view-content .markdown-preview-view:not(.no-floating-metadata) .frontmatter-container {
+body:not(.show-header-bar):not(.no-floating-metadata):not(.is-mobile) .view-header:is(:focus-within, :hover) + .view-content .markdown-preview-view:not(.no-floating-metadata) .frontmatter-container {
 	top: var(--floating-metadata-top-header-visible);
 	transition-delay: var(--transition-delay-passing-over-protection);
 }
 
-body:not(.show-header-bar):not(.no-floating-metadata) .view-header:is(:focus-within, :hover) + .view-content .markdown-preview-view:not(.no-floating-metadata) .frontmatter.language-yaml {
+body:not(.show-header-bar):not(.no-floating-metadata):not(.is-mobile) .view-header:is(:focus-within, :hover) + .view-content .markdown-preview-view:not(.no-floating-metadata) .frontmatter.language-yaml {
 	top: calc(var(--floating-metadata-top-header-visible) + 2.2rem);
 	transition-delay: var(--transition-delay-passing-over-protection);
 }
 
-body:not(.show-header-bar):not(.no-floating-metadata) .markdown-preview-view:not(.no-floating-metadata) :is(.frontmatter.language-yaml, .frontmatter-container) {
+body:not(.show-header-bar):not(.no-floating-metadata):not(.is-mobile) .markdown-preview-view:not(.no-floating-metadata) :is(.frontmatter.language-yaml, .frontmatter-container) {
 	transition: var(--quick-transition);
 	transition-property: top;
 }
