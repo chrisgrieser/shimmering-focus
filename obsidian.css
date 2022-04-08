@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 1.1147
+Version 1.1148
 Source CSS: https://github.com/chrisgrieser/shimmering-focus/blob/main/source.css
 MIT License
 ──────────────────────────────────────────────────── */
@@ -250,7 +250,7 @@ settings:
 	-
 	 id: tint-of-grays-light
 	 title: 'Text: Color Tint (Light Mode)'
-	 description: 'Slight tint for standard text (i.e.,hue with low saturation'
+	 description: 'Slight tint for standard text (i.e.,hue with low saturation)'
 	 type: variable-number-slider
 	 default: 220
 	 min: 0
