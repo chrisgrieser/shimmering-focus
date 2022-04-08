@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 1.1161
+Version 1.1162
 Source CSS: https://github.com/chrisgrieser/shimmering-focus/blob/main/source.css
 MIT License
 ──────────────────────────────────────────────────── */
@@ -106,7 +106,7 @@ settings:
 			label: show permanently
 			value: permanently-show-statusbar
 		-
-			label: hide permanantly
+			label: hide permanently
 			value: permanently-hide-statusbar
 		-
 			label: permanent & text-only
