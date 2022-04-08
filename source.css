@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 1.1151
+Version 1.1152
 Source CSS: https://github.com/chrisgrieser/shimmering-focus/blob/main/source.css
 MIT License
 ──────────────────────────────────────────────────── */
@@ -4060,6 +4060,11 @@ body .modal.mod-community-theme .modal-content .modal-title {
 
 .modal.mod-image-lightbox img.community-theme-lightbox {
 	cursor: default;
+}
+
+.modal.modal.mod-community-theme img,
+.modal.mod-image-lightbox img.community-theme-lightbox {
+	border: none; /* no border, since shadow screenshots look off */
 }
 
 /* ───────────────────────────────────────────────── */
