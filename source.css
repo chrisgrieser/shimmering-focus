@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 1.1160
+Version 1.1161
 Source CSS: https://github.com/chrisgrieser/shimmering-focus/blob/main/source.css
 MIT License
 ──────────────────────────────────────────────────── */
@@ -1899,12 +1899,9 @@ body:not(.classic-statusbar) .status-bar {
 
 	padding: 6px 0 7px 10px;
 
-	border-top: var(--basic-border);
-	border-left: var(--basic-border);
+	border-top: 2px ridge var(--basic-border-color);
+	border-left: 2px ridge var(--basic-border-color);
 	border-top-left-radius: var(--roundish);
-
-	border-left-style: ridge;
-	border-top-style: ridge;
 }
 
 .status-bar-item,
@@ -1938,24 +1935,36 @@ body:not(.hide-signature) .status-bar::AFTER {
 }
 
 /* only show on hover */
-body:not(.permanently-show-statusbar):not(.classic-statusbar) .status-bar {
+body:not(.permanently-show-statusbar, .minimal-status-bar, .classic-statusbar) .status-bar {
 	opacity: 0;
 	transition: var(--slow-transition);
 	transition-delay: var(--transition-delay-passing-over-protection);
 }
 
-body:not(.permanently-show-statusbar):not(.classic-statusbar) .status-bar:hover {
+body:not(.permanently-show-statusbar, .minimal-status-bar, .classic-statusbar) .status-bar:hover {
 	opacity: 1;
 	transition: var(--medium-transition);
 }
 
+.minimal-status-bar .status-bar.status-bar {
+	background: transparent;
+	box-shadow: none;
+	border: none;
+}
+
 /* fix so stuff on the bottom of the right sidebar can still be clicked */
-body:not(.classic-statusbar):not(.permanently-hide-statusbar) .mod-right-split .workspace-tabs:last-child .workspace-leaf-content > div:last-child {
+body:not(.permanently-show-statusbar, .minimal-status-bar, .classic-statusbar) .mod-right-split .workspace-tabs:last-child .workspace-leaf-content > div:last-child {
 	padding-bottom: calc(var(--status-bar-height) + 0.1em);
 }
 
 /* fix for plugins adding empty elements to the statusbar */
 .status-bar-item:empty {
+	display: none;
+}
+
+/* style settings to hide some items */
+.hide-languagetool-status-bar .status-bar-item.plugin-obsidian-languagetool-plugin,
+.hide-backlinks-status-bar .status-bar-item.plugin-backlink {
 	display: none;
 }
 
@@ -7368,11 +7377,6 @@ body:not(.classic-inline-backlinks) :is(.writing, .longform-leaf) .embedded-back
 	background-color: var(--interactive-hover-border-color);
 }
 
-.hide-languagetool-status-bar .status-bar-item.plugin-obsidian-languagetool-plugin,
-.hide-backlinks-status-bar .status-bar-item.plugin-backlink {
-	display: none;
-}
-
 /* the link button makes the
 unlinked mention to a linked mention by adding
 wikilinks */
@@ -11305,6 +11309,9 @@ settings:
 		-
 			label: hide permanantly
 			value: permanently-hide-statusbar
+		-
+			label: permanent & text-only
+			value: minimal-status-bar
 		-
 			label: classic statusbar
 			value: classic-statusbar
