@@ -3,6 +3,7 @@ nav_order: 110
 ---
 
 # Changelog
+- 2022-04-08	patch
 - 2022-04-08	sidenote callouts
 - 2022-04-08	statusbar tweaks
 - 2022-04-08	fix code block copy button

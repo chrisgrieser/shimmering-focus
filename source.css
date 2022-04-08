@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 1.1139
+Version 1.1140
 Source CSS: https://github.com/chrisgrieser/shimmering-focus/blob/main/source.css
 MIT License
 ──────────────────────────────────────────────────── */
@@ -5282,11 +5282,11 @@ body:not(.no-citation-syntax) .markdown-preview-view.markdown-preview-view *:not
 }
 
 /* fix styling of links */
-body:not(.no-citation-syntax) .markdown-source-view .cm-line.HyperMD-quote-1 + .HyperMD-quote-2 .cm-link:not(.cm-formatting) {
+body:not(.no-citation-syntax) .markdown-source-view .cm-line.HyperMD-quote-1 + .HyperMD-quote-2 :is(.cm-link, .cm-hmd-internal-link):not(.cm-formatting) {
 	color: var(--primary-accent-2);
 }
 
-body:not(.no-citation-syntax) .markdown-source-view .cm-line.HyperMD-quote-1 + .HyperMD-quote-2.HyperMD-quote-2 :is(.cm-link, .cm-url) {
+body:not(.no-citation-syntax) .markdown-source-view .cm-line.HyperMD-quote-1 + .HyperMD-quote-2.HyperMD-quote-2 :is(.cm-link, .cm-url, .cm-hmd-internal-link, .cm-formatting-link) {
 	font-style: normal;
 }
 
