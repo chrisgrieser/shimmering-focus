@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 1.1164
+Version 1.1165
 Source CSS: https://github.com/chrisgrieser/shimmering-focus/blob/main/source.css
 MIT License
 ──────────────────────────────────────────────────── */
@@ -46,6 +46,7 @@ MIT License
 - Cursor
 - UI Elements
 	- Title Bar
+		- Traffic Light Fixes
 	- Ribbons
 	- Settings Button
 	- Tooltips
@@ -1524,6 +1525,7 @@ body:not(.no-grayed-out-inactive-pane) {
 
 /* ───────────────────────────────────────────────── */
 /* << Title Bar
+/* <<< Traffic Light Fixes
 ──────────────────────────────────────────────────── */
 body:not(.show-titlebar) .titlebar {
 	display: none;
@@ -1534,7 +1536,7 @@ body:not(.show-titlebar) .titlebar {
 }
 
 :root { /* stylelint-disable-line no-duplicate-selectors */
-	--mac-traffic-light-padding: 14px;
+	--mac-traffic-light-padding: 0.95rem;
 	--normal-top-padding: 37.5px;
 }
 
@@ -1549,8 +1551,7 @@ body.mod-macos:not(.show-titlebar) .workspace-split.mod-left-split.is-collapsed 
 	padding-left: 7vh; /* vh to work better for other screen resolutions */
 }
 
-.theme-dark:not(.show-titlebar):not(.is-mobile),
-.theme-light:not(.show-titlebar):not(.is-mobile) {
+body:not(.show-titlebar, .is-mobile) {
 	padding: 0 !important;
 }
 

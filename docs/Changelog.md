@@ -3,7 +3,7 @@ nav_order: 110
 ---
 
 # Changelog
-- 2022-04-08	patch
+- 2022-04-09	patch
 - 2022-04-08	option for text-only status bar
 - 2022-04-08	fix #134
 - 2022-04-08	add overscroll to the style settings menu
