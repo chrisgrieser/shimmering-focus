@@ -3,6 +3,7 @@ nav_order: 110
 ---
 
 # Changelog
+- 2022-04-08	patch
 - 2022-04-08	fixes for backlink pane
 - 2022-04-08	overhauled outline pane
 - 2022-04-08	outline

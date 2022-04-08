@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 1.1131
+Version 1.1132
 Source CSS: https://github.com/chrisgrieser/shimmering-focus/blob/main/source.css
 MIT License
 ──────────────────────────────────────────────────── */
@@ -7164,7 +7164,7 @@ action (folding) than clicking the heading itself (as opposed to other sidebar p
 
 .outline .tree-item-self {
 	line-height: 1.15em;
-	padding: 4px;
+	padding: 5px 4px;
 	border-radius: 0;
 }
 
