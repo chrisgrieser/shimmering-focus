@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 1.1129
+Version 1.1130
 Source CSS: https://github.com/chrisgrieser/shimmering-focus/blob/main/source.css
 MIT License
 ──────────────────────────────────────────────────── */
@@ -7118,10 +7118,10 @@ body:not(.no-file-explorer-icons) .nav-file-title[data-path*="kanban" i] .nav-fi
 }
 
 :is(.tree-item-inner, .tree-item-self):hover,
-.tree-item-self:hover :is(.tree-item-inner-subtext, .tree-item-icon svg, .tree-item-inner),
-.tree-item.is-collapsed:hover,
-.tree-item.is-collapsed:hover :is(.tree-item-inner, .tree-item-icon svg) {
-	color: var(--hover-accent-2) !important;
+.tree-item-self.tree-item-self:hover :is(.tree-item-inner-subtext, .tree-item-icon svg, .tree-item-inner),
+.tree-item.is-collapsed.tree-item.is-collapsed:hover,
+.tree-item.is-collapsed.tree-item.is-collapsed:hover :is(.tree-item-inner, .tree-item-icon svg) {
+	color: var(--hover-accent-2);
 }
 
 .tree-item-self:hover .tree-item-flair.tree-item-flair {
@@ -7158,65 +7158,67 @@ body:not(.no-file-explorer-icons) .nav-file-title[data-path*="kanban" i] .nav-fi
 
 .outline .tree-item-self {
 	line-height: 1.15em;
-	padding-top: 5px;
-	padding-bottom: 5px;
+	padding: 4px;
 	border-radius: 0;
 }
 
-.outline .tree-item-icon.collapse-icon {
-	padding-right: 6px !important;
-	padding-left: 3px;
+/* fold icon to the right */
+.outline .tree-item-self.is-clickable {
+	flex-direction: row-reverse;
 }
 
-.outline .tree-item-icon.collapse-icon svg {
-	color: var(--text-muted);
+/* make fold icon clickable */
+.outline .tree-item-inner {
+	margin-right: 19px;
 }
 
-.outline .pane-empty {
-	display: none;
+/* separate hover effect, since in outline, clicking the collapse icon has a different
+action (folding) than clicking the heading itself (as opposed to other sidebar plugins */
+.outline .collapse-icon:not(:hover) svg {
+	color: var(--text-faint) !important;  /* needs important */
+}
+
+/* increase clickable area */
+.outline .collapse-icon {
+	padding: 2px;
+}
+
+.outline .collapse-icon:hover {
+	transform: scale(1.2);
 }
 
 /* relationship lines */
 .outline .tree-item-children {
-	margin-left: 10px;
+	margin-left: 8px;
 	border-left: var(--basic-border);
 }
 
-.outline .tree-item-children .tree-item-self {
-	padding-left: 23px;
+.outline .tree-item-children .tree-item-inner {
+	padding-left: 8px;
 }
 
-/* less indention for first level */
-.outline > .tree-item > .tree-item-children {
-	margin-left: 7.5px;
-}
-
-/* alternating row colors */
-body:not(.no-alternating-rows):not(.outline-remove-level-1) .outline .tree-item:nth-child(odd) {
-	background-color: var(--a-row);
+.outline .tree-item-children .tree-item-children {
+	margin-left: 16px;
 }
 
 /* remove h1 from outline pane */
-body.outline-remove-level-1 .outline > .tree-item > .tree-item-self {
+.outline-remove-level-1 .outline > .tree-item > .tree-item-self {
 	display: none;
 }
 
-body.outline-remove-level-1 .outline > .tree-item > .tree-item-children {
-	margin-left: 0;
+.outline-remove-level-1 .outline > .tree-item > .tree-item-children {
+	margin-left: -6px;
 	border-left: none;
 }
 
-body.outline-remove-level-1 .outline > .tree-item > .tree-item-children > .tree-item > .tree-item-children {
-	margin-left: 7.5px;
-}
-
-body.outline-remove-level-1 .outline > .tree-item > .tree-item-children > .tree-item > .tree-item-self {
-	padding-left: 20px;
-}
-
+/* alternating row colors */
 /* prevents double-layered row colors */
-body.outline-remove-level-1:not(.no-alternating-rows) .outline .tree-item-children .tree-item:nth-child(odd) {
+body:not(.no-alternating-rows) .outline .tree-item-children .tree-item:nth-child(odd) {
 	background-color: var(--a-row);
+}
+
+.outline .pane-empty {
+	display: none;
 }
 
 /* ───────────────────────────────────────────────── */
@@ -9306,6 +9308,11 @@ body div.oz-image-widget > img:active {
 
 body:not(.no-alternating-rows) .workspace-leaf-content[data-type="recent-files"] .nav-file:nth-child(even) {
 	background-color: var(--a-row);
+}
+
+.workspace-leaf-content[data-type="recent-files"] .nav-file-title.nav-file-title {
+	padding-right: 0;
+	padding-left: 0;
 }
 
 /* ───────────────────────────────────────────────── */
