@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 1.1171
+Version 1.1172
 Source CSS: https://github.com/chrisgrieser/shimmering-focus/blob/main/source.css
 MIT License
 ──────────────────────────────────────────────────── */
@@ -126,7 +126,7 @@ MIT License
 	- Blockquotes
 	- Citation Syntax
 	- Callouts
-		- Callouts
+		- Custom Callouts
 		- Sidenote Callouts
 	- Tables
 	- MathJax
@@ -5363,11 +5363,13 @@ body:not(.normal-blockquotes) .callout-content {
 
 .callout {
 	background-color: var(--bg2);
+	border-color: rgb(var(--callout-color) 0.7); /* add transparency for less bright colors */
 	border-radius: var(--roundish);
 	border-left-width: var(--blockquote-border-width);
 }
 
 .callout-title {
+	background-color: rgb(var(--callout-color) 0.13); /* default theme has 0.1 opacity */
 	padding: 2.5px var(--callout-left-padding);
 	border: var(--thin-border);
 	border-left: none;
@@ -5408,7 +5410,7 @@ div.is-collapsible.is-collapsed[data-callout] .callout-title {
 	border-bottom-right-radius: var(--roundish);
 }
 
-/* <<< Callouts */
+/* <<< Custom Callouts */
 /* https://help.obsidian.md/How+to/Use+callouts#Customizations */
 /* https://lucide.dev/ */
 .callout[data-callout="link"],
