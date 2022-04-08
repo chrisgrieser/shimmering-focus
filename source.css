@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 1.1154
+Version 1.1155
 Source CSS: https://github.com/chrisgrieser/shimmering-focus/blob/main/source.css
 MIT License
 ──────────────────────────────────────────────────── */
@@ -10125,14 +10125,13 @@ body .qsp-symbol-indicator {
 /* << Style Settings (Settings Tab)
 ──────────────────────────────────────────────────── */
 
-/* settings tab  / general */
 .style-settings-heading {
-	padding-top: 0;
-	margin-top: 22px;
-	margin-bottom: 12px !important;
+	padding: 0;
+	margin: 0;
 	border-top: none;
 }
 
+/* settings tab  / general */
 .style-settings-heading[data-level="2"] + .style-settings-container,
 .style-settings-heading[data-level="2"] {
 	padding-left: 20px;
@@ -10152,7 +10151,7 @@ body .qsp-symbol-indicator {
 	margin-left: 10px;
 }
 
-.style-settings-heading[data-level="0"] .setting-item-name {
+.style-settings-heading[data-level="0"] .setting-item-name.setting-item-name.setting-item-name.setting-item-name {
 	font-size: 1.1em;
 	margin-bottom: 5px;
 }
@@ -10197,7 +10196,7 @@ body:not(.show-scrollbar) .workspace-split.mod-root .workspace-leaf-content[data
 	font-size: var(--menu-font-size);
 }
 
-.mod-root .workspace-leaf-content[data-type="style-settings"] .view-content {
+.workspace-leaf-content[data-type="style-settings"] .view-content {
 	padding: 20px;
 }
 
@@ -10222,6 +10221,15 @@ body a:is(.style-settings-export, .style-settings-import) {
 	margin-left: 12px;
 
 	border: var(--muted-button-border);
+}
+
+/* overscroll */
+.style-settings-heading[data-level="0"]:not(.is-collapsed) + .style-settings-container:last-child {
+	padding-bottom: var(--editor-overscroll);
+}
+
+.style-settings-heading[data-level="0"].is-collapsed:nth-last-child(2) {
+	margin-bottom: var(--editor-overscroll);
 }
 
 /* remove buggy and unnecessary export button for certain blocks */
@@ -11138,14 +11146,10 @@ and file recovery plugin */
 	background-color: var(--bg2);
 	box-shadow: var(--small-inset-shadow);
 
-	padding: 2px 5px;
+	padding: 3px 7px 5px;
 
 	border: var(--basic-border);
 	border-radius: var(--roundish);
-}
-
-.style-settings-heading[data-id="hover-editor"] .setting-item-name.setting-item-name.setting-item-name {
-	margin-bottom: 0;
 }
 
 /* ───────────────────────────────────────────────── */

@@ -3,6 +3,7 @@ nav_order: 110
 ---
 
 # Changelog
+- 2022-04-08	add overscroll to the style settings menu
 - 2022-04-08	fix for status bar in dark mode
 - 2022-04-08	minor theme browser improvements
 - 2022-04-08	better info on theme beta
