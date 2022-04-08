@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 1.1159
+Version 1.1160
 Source CSS: https://github.com/chrisgrieser/shimmering-focus/blob/main/source.css
 MIT License
 ──────────────────────────────────────────────────── */
@@ -6887,7 +6887,7 @@ body.is-mobile .markdown-preview-view blockquote {
 /* see also section "Files in the Sidebar" */
 
 /* hide vault title */
-.nav-folder.mod-root > .nav-folder-title {
+body:not(.show-vault-in-file-explorer) .nav-folder.mod-root > .nav-folder-title {
 	display: none;
 }
 
@@ -11270,6 +11270,12 @@ settings:
 	 title: Show Vault Name in Title Bar
 	 type: class-toggle
 	 description: When the Title Bar is re-enabled, show the name of the vault there.
+	 default: false
+	-
+	 id: show-vault-in-file-explorer
+	 title: Show Vault Name in File Explorer
+	 type: class-toggle
+	 description: Enable this, if you want to drag and drop items to your vault root.
 	 default: false
 	-
 	 id: show-ribbons
