@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 1.1144
+Version 1.1145
 Source CSS: https://github.com/chrisgrieser/shimmering-focus/blob/main/source.css
 MIT License
 ──────────────────────────────────────────────────── */
@@ -255,9 +255,13 @@ MIT License
 	--sat-of-grays: 0%;
 }
 
-.theme-dark.use-gray-tint-dark,
 .theme-light.use-gray-tint-light {
 	--sat-of-grays: 15%;
+	--high-sat-of-grays: calc(var(--sat-of-grays) * 3);
+}
+
+.theme-dark.use-gray-tint-dark {
+	--sat-of-grays: 8%;
 	--high-sat-of-grays: calc(var(--sat-of-grays) * 3);
 }
 
@@ -476,7 +480,7 @@ TODO
 	--suggester-b-row: hsl(var(--light-hue) var(--sat-light-2) calc(var(--b-light-1) - 3%));
 	--muted-border-color: hsl(var(--light-hue) var(--sat-light-3) calc(var(--b-light-3) + 3%));
 	--basic-border-color: hsl(var(--light-hue) var(--sat-light-3) calc(var(--b-light-3) - 5%));
-	--backdrop-color: hsl(var(--light-hue) 30% calc(var(--b-light-3) - 5%));
+	--backdrop-color: hsl(var(--light-hue) 20% calc(var(--b-light-3) - 50%));
 	--muted-button-bg: var(--bg2);
 }
 
@@ -501,7 +505,7 @@ TODO
 	--suggester-b-row: hsl(var(--dark-hue)  var(--sat-dark-1) calc(var(--b-dark-1) - 2%));
 	--muted-border-color: hsl(var(--dark-hue) var(--sat-dark-1) calc(var(--b-dark-1) - 6%));
 	--basic-border-color: hsl(var(--dark-hue) var(--sat-dark-1) calc(var(--b-dark-1) + 6%));
-	--backdrop-color: hsl(var(--dark-hue) 20% calc(var(--b-dark-3) + 0%));
+	--backdrop-color: hsl(var(--dark-hue) 20% calc(var(--b-dark-3) - 10%));
 	--muted-button-bg: var(--bg2);
 }
 
@@ -3022,12 +3026,7 @@ body .app-container .workspace-leaf-resize-handle:hover {
 .prompt-bg,
 .modal-bg {
 	background-color: var(--backdrop-color);
-	backdrop-filter: blur(3px);
-	opacity: 0.7;
-}
-
-.theme-light :is(.prompt-bg, .modal-bg) {
-	filter: brightness(0.5);
+	opacity: 0.75;
 }
 
 .modal:is(.mod-sync-history, .mod-community-theme, .mod-community-plugin, .mod-settings) {
@@ -3932,12 +3931,11 @@ body:not(.squareish-shapes) .community-plugin-info .community-plugin-author + .c
 	padding: 12px 7px;
 
 	border: var(--basic-border);
-	border-width: 3px;
 	border-radius: calc(var(--roundish) * 2);
 }
 
 .theme-light .community-theme {
-	border-width: 4px;
+	border-width: 3px;
 }
 
 .community-theme:hover {
@@ -4793,7 +4791,6 @@ progress[max="100"]:is([value="1"],[value="2"],[value="3"],[value="4"],[value="5
 	font-family: var(--smallcap-font);
 	font-size: 0.85rem;
 	font-weight: 500;
-	text-rendering: geometricprecision;
 
 	color: var(--text-muted);
 
