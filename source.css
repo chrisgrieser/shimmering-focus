@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 1.1138
+Version 1.1139
 Source CSS: https://github.com/chrisgrieser/shimmering-focus/blob/main/source.css
 MIT License
 ──────────────────────────────────────────────────── */
@@ -105,7 +105,6 @@ MIT License
 		- Metadata Block
 		- Invalid Metadata
 		- Floating Metadata & YAML
-		- Inline Metadata
 	- Gutter
 		- Collapse Indicators
 		- Line Numbers (Gutter)
@@ -127,6 +126,7 @@ MIT License
 	- Citation Syntax
 	- Callouts
 		- Custom Callouts
+		- Special Callouts
 	- Tables
 	- MathJax
 	- Code
@@ -4576,14 +4576,6 @@ body:not(.show-header-bar):not(.no-floating-metadata).unlock-theme-beta .markdow
 }
 
 /* ───────────────────────────────────────────────── */
-/* <<< Inline Metadata
-──────────────────────────────────────────────────── */
-
-.frontmatter.frontmatter.language-yaml {
-	float: inline-end;
-}
-
-/* ───────────────────────────────────────────────── */
 /* << Gutter
 ──────────────────────────────────────────────────── */
 /* Search Result Indicators, Tag indicator, and Footnote Indicators
@@ -5085,10 +5077,9 @@ body:not(.no-heading-bg) .mod-root .view-content > div:not(.kanban-plugin) :is(h
 	padding-top: 2px;
 	padding-bottom: 2px;
 	padding-left: 6px;
-	margin-right: -1px;
 
-	/* "stretch" for better alignment */
-	margin-left: -2px;
+	/* "stretch" slightly for better alignment */
+	/* margin-left: -1px; */
 }
 
 /* <<< Headings interacting with other markup */
@@ -5353,8 +5344,14 @@ body:not(.normal-blockquotes) .callout-content {
 	line-height: 21px;
 }
 
-.callout-icon {
-	transform: scale(1.1);
+.callout-icon svg {
+	height: 1.1rem;
+	width: 1.1rem;
+}
+
+/* more readable */
+.theme-light .callout-icon svg {
+	filter: brightness(70%);
 }
 
 .callout {
@@ -5426,6 +5423,24 @@ div.is-collapsible.is-collapsed[data-callout] .callout-title {
 .callout[data-callout="phone"] {
 	--callout-icon: phone;
 	--callout-color: 255, 179, 68;
+}
+
+/* <<< Special Callouts */
+.callout[data-callout$="sidenote"] {
+	--callout-icon: lightbulb;
+	--callout-color: 255, 210, 107;
+	font-size: 90%;
+	max-width: calc(var(--readable-length) * var(--sidenote-callout-width) * 0.01);
+	margin: 3px 0 3px 7px;
+	float: right;
+}
+
+.sidenote-callout-outdent .callout[data-callout$="sidenote"] {
+	margin-right: -30px;
+}
+
+body .callout {
+	clear: right;
 }
 
 /* ───────────────────────────────────────────────── */
@@ -11834,6 +11849,28 @@ settings:
 	 id: no-pdf-dark-mode
 	 title: No Dark Mode for PDFs
 	 description: Disable Dark Mode for PDFs when Obsidian is set to dark mode.
+	 type: class-toggle
+	 default: false
+	-
+	 id: callouts-options
+	 title: 📞 Callouts
+	 description: 🆕 Sidenote Callout Width & Outdention
+	 type: heading
+	 level: 1
+	 collapsed: true
+	-
+	 id: sidenote-callout-width
+	 title: Width of Sidenote Callouts
+	 description: 'Percentage of the readable line length. Affects callouts with "> [!sidenote]". '
+	 type: variable-number-slider
+	 default: 34
+	 min: 10
+	 max: 60
+	 step: 2
+	-
+	 id: sidenote-callout-outdent
+	 title: '"Outdent" the Sidenote Callout'
+	 description: Moves them slightly to the right for extra space.
 	 type: class-toggle
 	 default: false
 	-
