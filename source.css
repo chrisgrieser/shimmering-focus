@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 1.1158
+Version 1.1159
 Source CSS: https://github.com/chrisgrieser/shimmering-focus/blob/main/source.css
 MIT License
 ──────────────────────────────────────────────────── */
@@ -8068,7 +8068,9 @@ img.emoji.emoji.emoji.emoji.emoji {
 /* << Discord Rich Presence
 ──────────────────────────────────────────────────── */
 .status-bar-item.plugin-obsidian-discordrpc {
-	filter: contrast(2) grayscale(1);
+	position: relative;
+	bottom: -1px;
+	filter: grayscale(1) contrast(1.3) brightness(0.7);
 }
 
 /* ───────────────────────────────────────────────── */
