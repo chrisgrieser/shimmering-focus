@@ -12,8 +12,8 @@ nav_order: 6
 - [CSS Classes](#css-classes)
 	- [How to use CSS Classes](#how-to-use-css-classes)
 	- [General Purpose](#general-purpose)
-	- [Writing & Academic](#writing--academic)
 	- [Dataview](#dataview)
+	- [Writing & Academic](#writing--academic)
 
 <!-- /MarkdownTOC -->
 
@@ -23,6 +23,18 @@ nav_order: 6
 ➡️ Read the info in the [Obsidian Docs](https://help.obsidian.md/How+to/Use+callouts).
 
 ### Custom Callouts
+
+#### Special Callouts
+
+The Sidenote Callout width and outdention is customizable in the Style Settings.
+
+```md
+> [!SIDENOTE]
+```
+
+![sidenote callout](images/sidenote-callout.png)
+
+#### Standard Callouts
 
 ```md
 > [!LINK]
@@ -60,6 +72,10 @@ The following CSS classes are built in with this theme:
 - `cssclass: tags-in-gutter`: In Preview Mode, shows tags in the gutter.
 - `cssclass: full-width`: Use the full width, i.e., turn of readable line length for that note.
 
+### Dataview
+- `cssclass: dataview-list-in-table`: If you are using a dataview query where some table cells contain lists, use this CSS class to remove the vertical table lines that are off.
+- `cssclass: remove-dataview-title`: Removes the title created by some dataview queries.
+
 ### Writing & Academic
 - `cssclass: writing`: Applies alternate note styling for writers. [See here for more information](/shimmering-focus/academics-and-writers) (requires Obsidian 0.13.23).
 - `cssclass: bibliography-list`: In preview mode, list items are formatted like an academic bibliography.
@@ -67,7 +83,3 @@ The following CSS classes are built in with this theme:
 ![writing cssclass](images/writing-cssclass.gif)
 
 ![bibliography cssclass](images/bibliography-list-cssclass.png)
-
-### Dataview
-- `cssclass: dataview-list-in-table`: If you are using a dataview query where some table cells contain lists, use this CSS class to remove the vertical table lines that are off.
-- `cssclass: remove-dataview-title`: Removes the title created by some dataview queries.

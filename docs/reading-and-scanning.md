@@ -2,7 +2,7 @@
 nav_order: 3
 ---
 
-# 👓 Readability
+# 👓 Readability & Scannability
 
 ## Gutter Indicators
 To increase the scannability of long notes, the presence of some easy-to-miss elements are indicated in the gutter. All indicators can be turned off with the [Style Settings Plugin](https://obsidian.md/plugins?id=obsidian-style-settings).
@@ -12,6 +12,7 @@ To increase the scannability of long notes, the presence of some easy-to-miss el
 
 ![](https://user-images.githubusercontent.com/73286100/147931964-d5e5d309-d821-4fa1-86c1-4a8952a249d3.png){: width="500" }
 
+
 ## Readability Features
 - Brightness and line length are both adjustable via [Style Settings Plugin](https://obsidian.md/plugins?id=obsidian-style-settings).
 - Dark Mode for PDFs (when using the theme in dark mode).
@@ -20,3 +21,8 @@ To increase the scannability of long notes, the presence of some easy-to-miss el
 - Command Palette: Plugin Names are moved to the for easier scannability.
 
 ![](https://user-images.githubusercontent.com/73286100/144147616-59ba2513-78cc-4143-91e5-c222bc307bd9.gif)
+
+## Tags in Gutter
+- Using the [cssclass](/shimmering-focus/css-classes) `tags-in-gutter` will display tags in the gutter, similar to keywords in some college books.
+
+![tags in gutter demo](images/tags-in-gutter.png)
