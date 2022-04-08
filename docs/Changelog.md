@@ -3,6 +3,7 @@ nav_order: 110
 ---
 
 # Changelog
+- 2022-04-08	fix code block copy button
 - 2022-04-08	hotfix
 - 2022-04-08	setting for trailing whitespace display
 - 2022-04-08	better spacing for trailign white space indicator

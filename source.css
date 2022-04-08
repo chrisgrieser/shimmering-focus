@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 1.1136
+Version 1.1137
 Source CSS: https://github.com/chrisgrieser/shimmering-focus/blob/main/source.css
 MIT License
 ──────────────────────────────────────────────────── */
@@ -105,6 +105,7 @@ MIT License
 		- Metadata Block
 		- Invalid Metadata
 		- Floating Metadata & YAML
+		- Inline Metadata
 	- Gutter
 		- Collapse Indicators
 		- Line Numbers (Gutter)
@@ -131,6 +132,8 @@ MIT License
 	- Code
 		- Inline Code
 		- Code Blocks
+		- copy & edit code button
+		- language replacements
 		- Syntax Highlighting
 	- Lists
 	- Links
@@ -4570,6 +4573,14 @@ body:not(.show-header-bar):not(.no-floating-metadata).unlock-theme-beta .markdow
 }
 
 /* ───────────────────────────────────────────────── */
+/* <<< Inline Metadata
+──────────────────────────────────────────────────── */
+
+.frontmatter.frontmatter.language-yaml {
+	float: inline-end;
+}
+
+/* ───────────────────────────────────────────────── */
 /* << Gutter
 ──────────────────────────────────────────────────── */
 /* Search Result Indicators, Tag indicator, and Footnote Indicators
@@ -5702,16 +5713,17 @@ CM5 has the "pre" type */
 	color: var(--text-normal);
 }
 
-/* copy & edit code button */
+/* <<< copy & edit code button */
 .markdown-preview-view button.copy-code-button {
 	font-size: 0;
 
 	color: var(--extra-contrast);
 	background-color: var(--code-block-alt-bg);
+	box-shadow: var(--small-inset-shadow);
 
 	z-index: 100;
 
-	padding: 5px 2px 5px 8px;
+	padding: 10px 4px 5px 8px;
 	margin-top: 1.75rem;
 
 	border: var(--thin-border);
@@ -5725,7 +5737,7 @@ CM5 has the "pre" type */
 button.copy-code-button::BEFORE {
 	content: "content_copy";
 	font-family: var(--icon-font);
-	font-size: 0.8rem;
+	font-size: 14px;
 }
 
 body .is-live-preview.mod-cm6 .edit-block-button {
@@ -5741,7 +5753,7 @@ body .is-live-preview.mod-cm6 .edit-block-button:hover {
 	border-color: var(--interactive-hover-border-color);
 }
 
-/* language replacements */
+/* <<< language replacements */
 pre[class*="language-"]::AFTER {
 	content: attr(class); /* fallback when none of the languages below is used */
 
@@ -10248,9 +10260,11 @@ body:not(.no-animations) .style-settings-heading[data-id="shimmering-focus"] .se
 .style-settings-container .setting-item[data-id^="highlight-hue-"] .setting-item-control::BEFORE {
 	font-size: 0.7em;
 	line-height: 1.8em;
+	text-align: center;
 	white-space: pre-wrap;
 
 	height: 1.8em;
+	width: 10em;
 
 	position: relative;
 	left: -3em;
@@ -10262,12 +10276,12 @@ body:not(.no-animations) .style-settings-heading[data-id="shimmering-focus"] .se
 }
 
 .style-settings-container .setting-item[data-id="highlight-hue-1"] .setting-item-control::BEFORE {
-	content: "    ==highlight==    ";
+	content: "==highlight==";
 	background-color: hsl(var(--highlight-hue-1) var(--highlight-sla-values));
 }
 
 .style-settings-container .setting-item[data-id="highlight-hue-2"] .setting-item-control::BEFORE {
-	content: "  *==highlight==*  ";
+	content: "*==highlight==*";
 	background-color: hsl(var(--highlight-hue-2) var(--highlight-sla-values));
 }
 
@@ -11871,7 +11885,7 @@ settings:
 	-
 	 id: hide-trailing-whitespace
 	 title: Hide Trailing Spaces
-	 description: 'By default, this theme shows trailing spaces when there are more than one. This can be for the so-called "Two Space Rule" in Markdown, where exactly two spaces at the end of a line force a line break.'
+	 description: 'By default, this theme shows trailing spaces when there are more than one, indicated with "· · ↵". This can be for the so-called "Two Space Rule" in Markdown, where exactly two spaces at the end of a line force a line break.'
 	 type: class-toggle
 	 default: false
 	-
@@ -12169,7 +12183,7 @@ settings:
 	-
 	 id: miscellaneous
 	 title: ⚛️ Miscellaneous
-	 description: Menu Size, File Name Trimming, Inactive Panes, Alternating Row Colors, Colored YAML, Animations, Theme Beta
+	 description: Menu Size, File Name Trimming, Inactive Panes, Alternating Row Colors, Colored YAML, Animations, 🆕 Theme Beta
 	 type: heading
 	 level: 1
 	 collapsed: true
