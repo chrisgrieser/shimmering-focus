@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 1.1142
+Version 1.1143
 Source CSS: https://github.com/chrisgrieser/shimmering-focus/blob/main/source.css
 MIT License
 ──────────────────────────────────────────────────── */
@@ -249,27 +249,39 @@ MIT License
 /* ───────────────────────────────────────────────── */
 /* << Text Colors & Grays
 ──────────────────────────────────────────────────── */
+:root {
+	--tint-of-grays-dark: 220;
+	--tint-of-grays-light: 200;
+	--sat-of-grays: 0%;
+}
+
+.theme-dark.use-gray-tint-dark,
+.theme-light.use-gray-tint-light {
+	--sat-of-grays: 15%;
+	--high-sat-of-grays: calc(var(--sat-of-grays) * 3);
+}
+
 .theme-light {
-	--text-normal: hsl(0 0% 20%);
-	--extra-contrast: hsl(0 0% 35%);
-	--text-muted: hsl(0 0% 50%);
-	--middle-gray: hsl(0 0% 57%);
-	--text-faint: hsl(0 0% 60%);
-	--hr-line-gray: hsl(0 0% 66%);
-	--interactive-normal: hsl(220 13% 95%);
+	--text-normal: hsl(var(--tint-of-grays-light) var(--high-sat-of-grays) 20%);
+	--extra-contrast: hsl(var(--tint-of-grays-light) var(--sat-of-grays) 35%);
+	--text-muted: hsl(var(--tint-of-grays-light) var(--sat-of-grays) 50%);
+	--middle-gray: hsl(var(--tint-of-grays-light) var(--sat-of-grays) 57%);
+	--text-faint: hsl(var(--tint-of-grays-light) var(--sat-of-grays) 60%);
+	--hr-line-gray: hsl(var(--tint-of-grays-light) var(--sat-of-grays) 66%);
+	--interactive-normal: hsl(var(--tint-of-grays-light) var(--high-sat-of-grays)  95%);
 
 	--button-text: var(--interactive-normal);
 	--button-hover-text: var(--text-normal);
 }
 
 .theme-dark {
-	--text-normal: hsl(0 0% 87%);
-	--extra-contrast: hsl(0 0% 68%);
-	--text-muted: hsl(0 0% 58%);
-	--middle-gray: hsl(0 0% 49%);
-	--text-faint: hsl(0 0% 40%);
-	--hr-line-gray: hsl(0 0% 60%);
-	--interactive-normal: hsl(0 0% 16%);
+	--text-normal: hsl(var(--tint-of-grays-dark) var(--high-sat-of-grays) 87%);
+	--extra-contrast: hsl(var(--tint-of-grays-dark) var(--sat-of-grays) 68%);
+	--text-muted: hsl(var(--tint-of-grays-dark) var(--sat-of-grays) 58%);
+	--middle-gray: hsl(var(--tint-of-grays-dark) var(--sat-of-grays) 49%);
+	--text-faint: hsl(var(--tint-of-grays-dark) var(--sat-of-grays) 40%);
+	--hr-line-gray: hsl(var(--tint-of-grays-dark) var(--sat-of-grays) 60%);
+	--interactive-normal: hsl(var(--tint-of-grays-dark) var(--high-sat-of-grays) 16%);
 
 	--button-text: var(--text-normal);
 	--button-hover-text: var(--interactive-normal);
@@ -1432,7 +1444,7 @@ body:not(.no-grayed-out-inactive-pane) {
 	width: 1px;
 }
 
-/* visual style */
+/* VISUAL STYLE */
 /* Shimmering Beam */
 .theme-light { /* stylelint-disable-line no-duplicate-selectors */
 	--cursor-look: linear-gradient(hsl(164 100% 55%), hsl(243 80% 84%));
@@ -1495,9 +1507,7 @@ body:not(.no-grayed-out-inactive-pane) {
 }
 
 @keyframes inversion-blink {
-	50% {
-		filter: invert(1);
-	}
+	50% { filter: invert(1) }
 }
 
 .phase-blink-cursor :is(.cm-cursorLayer .cm-cursor, .CodeMirror-cursor) {
@@ -1516,8 +1526,7 @@ body:not(.no-grayed-out-inactive-pane) {
 }
 
 :is(.no-blink, .breathing-cursor, .phase-blink-cursor, .inversion-blink-cursor) .cm-cursorLayer {
-	/* important needed */
-	animation-name: none !important;
+	animation-name: none !important; /* important needed */
 }
 
 /* ───────────────────────────────────────────────── */
@@ -4456,7 +4465,7 @@ body:not(.no-floating-metadata):not(.is-mobile).unlock-theme-beta .markdown-prev
 /* idea from @EmrieCandera */
 
 /* base look */
-body:not(.no-floating-metadata):not(.is-mobile).unlock-theme-beta .markdown-preview-view:not(.no-floating-metadata) :is(.frontmatter.language-yaml, .frontmatter-container) {
+body:not(.no-floating-metadata):not(.is-mobile) .markdown-preview-view:not(.no-floating-metadata) :is(.frontmatter.language-yaml, .frontmatter-container) {
 	line-height: 2.2em;
 
 	max-width: calc(var(--readable-length) + 3.4rem);
@@ -4471,20 +4480,20 @@ body:not(.no-floating-metadata):not(.is-mobile).unlock-theme-beta .markdown-prev
 	border-radius: var(--roundish);
 }
 
-body:not(.no-floating-metadata):not(.is-mobile).unlock-theme-beta .markdown-preview-view:not(.no-floating-metadata) .frontmatter-container :is(.tag:not(:hover), .frontmatter-alias, .frontmatter-alias-icon) {
+body:not(.no-floating-metadata):not(.is-mobile) .markdown-preview-view:not(.no-floating-metadata) .frontmatter-container :is(.tag:not(:hover), .frontmatter-alias, .frontmatter-alias-icon) {
 	color: var(--text-normal);
 }
 
-body:not(.no-floating-metadata):not(.is-mobile).unlock-theme-beta .markdown-preview-view:not(.no-floating-metadata) .frontmatter-container {
+body:not(.no-floating-metadata):not(.is-mobile) .markdown-preview-view:not(.no-floating-metadata) .frontmatter-container {
 	top: var(--floating-metadata-top);
 }
 
-body:not(.no-floating-metadata):not(.is-mobile).unlock-theme-beta .markdown-preview-view:not(.no-floating-metadata) .frontmatter.language-yaml {
+body:not(.no-floating-metadata):not(.is-mobile) .markdown-preview-view:not(.no-floating-metadata) .frontmatter.language-yaml {
 	top: calc(var(--floating-metadata-top) + 2.2rem);
 }
 
 /* look when not hovered */
-body:not(.no-floating-metadata):not(.is-mobile).unlock-theme-beta .markdown-preview-view:not(.no-floating-metadata) :is(.frontmatter.language-yaml, .frontmatter-container):not(:hover) {
+body:not(.no-floating-metadata):not(.is-mobile) .markdown-preview-view:not(.no-floating-metadata) :is(.frontmatter.language-yaml, .frontmatter-container):not(:hover) {
 	height: 2.2rem;
 	width: 2.2rem;
 
@@ -4497,41 +4506,41 @@ body:not(.no-floating-metadata):not(.is-mobile).unlock-theme-beta .markdown-prev
 }
 
 /* look when hovered */
-body:not(.no-floating-metadata):not(.is-mobile).unlock-theme-beta .markdown-preview-view:not(.no-floating-metadata) :is(.frontmatter.language-yaml, .frontmatter-container):hover {
+body:not(.no-floating-metadata):not(.is-mobile) .markdown-preview-view:not(.no-floating-metadata) :is(.frontmatter.language-yaml, .frontmatter-container):hover {
 	box-shadow: var(--small-shadow); /* switch to outer shadow */
 }
 
-body:not(.no-floating-metadata):not(.is-mobile).unlock-theme-beta .markdown-preview-view:not(.no-floating-metadata) .frontmatter-section:hover.mod-aliases {
+body:not(.no-floating-metadata):not(.is-mobile) .markdown-preview-view:not(.no-floating-metadata) .frontmatter-section:hover.mod-aliases {
 	margin-top: 0;
 }
 
-body:not(.no-floating-metadata):not(.is-mobile).unlock-theme-beta .markdown-preview-view:not(.no-floating-metadata) .frontmatter-section:hover {
+body:not(.no-floating-metadata):not(.is-mobile) .markdown-preview-view:not(.no-floating-metadata) .frontmatter-section:hover {
 	font-size: 0.95rem; /* slightly bigger font */
 }
 
 /* unset some interfering codeblock styling with floating YAML */
-body:not(.no-floating-metadata):not(.is-mobile).unlock-theme-beta .markdown-preview-view:not(.no-floating-metadata) .frontmatter.language-yaml::BEFORE {
+body:not(.no-floating-metadata):not(.is-mobile) .markdown-preview-view:not(.no-floating-metadata) .frontmatter.language-yaml::BEFORE {
 	background: none;
 }
 
 /* unset some interfering codeblock styling with floating YAML */
-body:not(.no-floating-metadata):not(.is-mobile).unlock-theme-beta .markdown-preview-view:not(.no-floating-metadata) .frontmatter.language-yaml:not(.mod-failed):hover::BEFORE {
+body:not(.no-floating-metadata):not(.is-mobile) .markdown-preview-view:not(.no-floating-metadata) .frontmatter.language-yaml:not(.mod-failed):hover::BEFORE {
 	display: none;
 }
 
 /* the floating buttons */
-body:not(.no-floating-metadata):not(.is-mobile).unlock-theme-beta .markdown-preview-view:not(.no-floating-metadata) :is(.frontmatter.language-yaml, .frontmatter-container):not(:hover)::BEFORE {
+body:not(.no-floating-metadata):not(.is-mobile) .markdown-preview-view:not(.no-floating-metadata) :is(.frontmatter.language-yaml, .frontmatter-container):not(:hover)::BEFORE {
 	font-family: var(--heading-font);
 	color: var(--extra-contrast);
 }
 
-body:not(.no-floating-metadata):not(.is-mobile).unlock-theme-beta .markdown-preview-view:not(.no-floating-metadata) .frontmatter-container:not(:hover)::BEFORE {
+body:not(.no-floating-metadata):not(.is-mobile) .markdown-preview-view:not(.no-floating-metadata) .frontmatter-container:not(:hover)::BEFORE {
 	content: "M";
 	font-size: 1.3rem;
 	padding-left: 0.35em;
 }
 
-body:not(.no-floating-metadata):not(.is-mobile).unlock-theme-beta .markdown-preview-view:not(.no-floating-metadata) .frontmatter.language-yaml:not(:hover)::BEFORE {
+body:not(.no-floating-metadata):not(.is-mobile) .markdown-preview-view:not(.no-floating-metadata) .frontmatter.language-yaml:not(:hover)::BEFORE {
 	content: "Y";
 	font-size: 1.4rem;
 	text-shadow: none;
@@ -4539,38 +4548,38 @@ body:not(.no-floating-metadata):not(.is-mobile).unlock-theme-beta .markdown-prev
 }
 
 /* separator line if there are tags & aliases */
-body:not(.no-floating-metadata).unlock-theme-beta .markdown-preview-view:not(.no-floating-metadata) .frontmatter-container:hover .frontmatter-section.mod-aliases + .frontmatter-section.mod-tags {
+body:not(.no-floating-metadata) .markdown-preview-view:not(.no-floating-metadata) .frontmatter-container:hover .frontmatter-section.mod-aliases + .frontmatter-section.mod-tags {
 	border-width: 2px;
 }
 
-body:not(.no-floating-metadata):not(.is-mobile).unlock-theme-beta .markdown-preview-view:not(.no-floating-metadata) :is(.frontmatter.language-yaml, .frontmatter-container) .frontmatter-container-header,
-body:not(.no-floating-metadata):not(.is-mobile).unlock-theme-beta .markdown-preview-view:not(.no-floating-metadata) .frontmatter.language-yaml .copy-code-button,
-body:not(.no-floating-metadata):not(.is-mobile).unlock-theme-beta .markdown-preview-view:not(.no-floating-metadata) .frontmatter.language-yaml::AFTER,
-body:not(.no-floating-metadata):not(.is-mobile).unlock-theme-beta .markdown-preview-view:not(.no-floating-metadata) :is(.frontmatter.language-yaml, .frontmatter-container):not(:hover) > * {
+body:not(.no-floating-metadata):not(.is-mobile) .markdown-preview-view:not(.no-floating-metadata) :is(.frontmatter.language-yaml, .frontmatter-container) .frontmatter-container-header,
+body:not(.no-floating-metadata):not(.is-mobile) .markdown-preview-view:not(.no-floating-metadata) .frontmatter.language-yaml .copy-code-button,
+body:not(.no-floating-metadata):not(.is-mobile) .markdown-preview-view:not(.no-floating-metadata) .frontmatter.language-yaml::AFTER,
+body:not(.no-floating-metadata):not(.is-mobile) .markdown-preview-view:not(.no-floating-metadata) :is(.frontmatter.language-yaml, .frontmatter-container):not(:hover) > * {
 	display: none;
 }
 
 /* interaction with header only visible on hover */
-body:not(.show-header-bar).unlock-theme-beta {
+body:not(.show-header-bar) {
 	--floating-metadata-top: 3.85rem;
 	--floating-metadata-top-header-visible: 2.65rem;
 }
 
-body.show-header-bar.unlock-theme-beta {
+body.show-header-bar {
 	--floating-metadata-top: 2.65rem;
 }
 
-body:not(.show-header-bar):not(.no-floating-metadata).unlock-theme-beta .view-header:is(:focus-within, :hover) + .view-content .markdown-preview-view:not(.no-floating-metadata) .frontmatter-container {
+body:not(.show-header-bar):not(.no-floating-metadata) .view-header:is(:focus-within, :hover) + .view-content .markdown-preview-view:not(.no-floating-metadata) .frontmatter-container {
 	top: var(--floating-metadata-top-header-visible);
 	transition-delay: var(--transition-delay-passing-over-protection);
 }
 
-body:not(.show-header-bar):not(.no-floating-metadata).unlock-theme-beta .view-header:is(:focus-within, :hover) + .view-content .markdown-preview-view:not(.no-floating-metadata) .frontmatter.language-yaml {
+body:not(.show-header-bar):not(.no-floating-metadata) .view-header:is(:focus-within, :hover) + .view-content .markdown-preview-view:not(.no-floating-metadata) .frontmatter.language-yaml {
 	top: calc(var(--floating-metadata-top-header-visible) + 2.2rem);
 	transition-delay: var(--transition-delay-passing-over-protection);
 }
 
-body:not(.show-header-bar):not(.no-floating-metadata).unlock-theme-beta .markdown-preview-view:not(.no-floating-metadata) :is(.frontmatter.language-yaml, .frontmatter-container) {
+body:not(.show-header-bar):not(.no-floating-metadata) .markdown-preview-view:not(.no-floating-metadata) :is(.frontmatter.language-yaml, .frontmatter-container) {
 	transition: var(--quick-transition);
 	transition-property: top;
 }
@@ -10246,6 +10255,7 @@ body:not(.no-animations) .style-settings-heading[data-id="shimmering-focus"] .se
 /* <<< Style Settings: Hue Sliders & Color Demo Boxes
 ──────────────────────────────────────────────────── */
 
+/* use hue slider */
 .style-settings-container {
 	--hue-slider-sat: 70%;
 	--hue-slider-br: 70%;
@@ -10268,8 +10278,12 @@ body:not(.no-animations) .style-settings-heading[data-id="shimmering-focus"] .se
 		);
 }
 
-/* highlight color style settings */
-.style-settings-container .setting-item:is([data-id^="highlight-hue-"], [data-id$="-hue"]) input.slider::-WEBKIT-SLIDER-THUMB {
+.style-settings-container .setting-item:is([data-id^="highlight-hue-"], [data-id$="-hue"], [data-id^="tint-"]) input.slider {
+	height: 0.8em;
+	background: var(--hue-scale);
+}
+
+.style-settings-container .setting-item:is([data-id^="highlight-hue-"], [data-id$="-hue"], [data-id^="tint-"]) input.slider::-WEBKIT-SLIDER-THUMB {
 	height: 1.9em;
 	width: 0.4em;
 
@@ -10280,11 +10294,6 @@ body:not(.no-animations) .style-settings-heading[data-id="shimmering-focus"] .se
 	top: -0.7em;
 
 	border-radius: calc(var(--roundish) * 0.5);
-}
-
-.style-settings-container .setting-item:is([data-id^="highlight-hue-"], [data-id$="-hue"]) input.slider {
-	height: 0.8em;
-	background: var(--hue-scale);
 }
 
 /* demo color box: highlight colors */
@@ -10355,6 +10364,8 @@ body:not(.no-animations) .style-settings-heading[data-id="shimmering-focus"] .se
 /* <<< Style Settings: Conditional Settings Display
 ──────────────────────────────────────────────────── */
 
+body:not(.use-gray-tint-light) .setting-item:is([data-id="tint-of-grays-light"]),
+body:not(.use-gray-tint-dark) .setting-item:is([data-id="tint-of-grays-dark"]),
 body:not(.custom-colors) .setting-item:is([data-id="custom-color-light-mode"], [data-id="custom-color-dark-mode"]),
 .show-titlebar .setting-item[data-id="show-titlebar-text"],
 .no-multi-color-highlights .setting-item:is([data-id="highlight-hue-2"], [data-id="highlight-hue-3"]) {
@@ -10365,12 +10376,12 @@ body:not(.custom-colors) .setting-item:is([data-id="custom-color-light-mode"], [
 /* <<< Style Settings: Unlock Thema Beta
 ──────────────────────────────────────────────────── */
 
-body:not(.unlock-theme-beta) .style-settings-container .setting-item[data-id="no-floating-metadata"],
+body:not(.unlock-theme-beta) .style-settings-container .setting-item[data-id*="tint-"],
 body:not(.unlock-theme-beta) .style-settings-container .setting-item[data-id*="-accent-"] {
 	display: none;
 }
 
-.style-settings-container .setting-item[data-id="no-floating-metadata"]::BEFORE,
+.style-settings-container .setting-item[data-id*="tint-"]::BEFORE,
 .style-settings-container .setting-item[data-id*="-accent-"]::BEFORE {
 	content: "Beta";
 
@@ -11404,7 +11415,7 @@ settings:
 	-
 	 id: tertiary-accent-light
 	 title: "Tertiary Accent (Light Mode)"
-	 description: 'Italic & Bold'
+	 description: 'Italic & Bold. "Uncolored" will have same use the same color as standard text.'
 	 type: class-select
 	 allowEmpty: false
 	 default: tertiary-accent-light-uncolered
@@ -11423,6 +11434,20 @@ settings:
 		-
 			label: 🟢 Shimmering Green
 			value: hover-accent-light-green
+	-
+	 id: use-gray-tint-light
+	 title: 'Slightly colored text (Light Mode)'
+	 type: class-toggle
+	 default: false
+	-
+	 id: tint-of-grays-light
+	 title: 'Text: Color Tint (Light Mode)'
+	 description: 'Slight tint for standard text (i.e.,hue with low saturation'
+	 type: variable-number-slider
+	 default: 220
+	 min: 0
+	 max: 360
+	 step: 5
 	-
 	 id: brightness-light
 	 title: 'Background: Brightness (Light Mode)'
@@ -11491,7 +11516,7 @@ settings:
 	 default: secondary-accent-dark-green
 	 options:
 		-
-			label: Shimmering Green
+			label: 🟢 Shimmering Green
 			value: secondary-accent-dark-green
 	-
 	 id: tertiary-accent-dark
@@ -11513,8 +11538,22 @@ settings:
 	 default: hover-accent-dark-green
 	 options:
 		-
-			label: Shimmering Green
+			label: 🟢 Shimmering Green
 			value: hover-accent-dark-green
+	-
+	 id: use-gray-tint-dark
+	 title: 'Slightly colored text (Dark Mode)'
+	 type: class-toggle
+	 default: false
+	-
+	 id: tint-of-grays-dark
+	 title: 'Text: Color Tint (Dark Mode)'
+	 description: 'Slight tint for text (i.e., hue with low saturation)'
+	 type: variable-number-slider
+	 default: 220
+	 min: 0
+	 max: 360
+	 step: 5
 	-
 	 id: brightness-dark
 	 title: 'Background: Brightness (Dark Mode)'
