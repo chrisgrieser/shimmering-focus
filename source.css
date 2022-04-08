@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 1.1155
+Version 1.1156
 Source CSS: https://github.com/chrisgrieser/shimmering-focus/blob/main/source.css
 MIT License
 ──────────────────────────────────────────────────── */
@@ -605,7 +605,7 @@ body:is(.theme-light, .theme-dark) {
 	--medium-shadow: 4px 6px var(--shadow-blur) calc(var(--shadow-base-size) + 5px) var(--shadow-color);
 	--small-shadow: 1px 3px var(--shadow-blur) var(--shadow-base-size) var(--shadow-color);
 	--tiny-shadow: 0.5px 1px var(--shadow-blur) calc(var(--shadow-base-size) / 2) var(--shadow-color);
-	--status-bar-shadow: -1px -1px var(--shadow-blur) var(--shadow-base-size) var(--shadow-color);
+	--status-bar-shadow: -1px -1px var(--shadow-blur) calc(var(--shadow-base-size) / 2) var(--shadow-color);
 }
 
 /* <<< Inset Shadow */
@@ -7368,6 +7368,11 @@ body:not(.classic-inline-backlinks) :is(.writing, .longform-leaf) .embedded-back
 	background-color: var(--interactive-hover-border-color);
 }
 
+.hide-languagetool-status-bar .status-bar-item.plugin-obsidian-languagetool-plugin,
+.hide-backlinks-status-bar .status-bar-item.plugin-backlink {
+	display: none;
+}
+
 /* the link button makes the
 unlinked mention to a linked mention by adding
 wikilinks */
@@ -8626,6 +8631,7 @@ body .kanban-plugin__lane-wrapper {
 }
 
 .kanban-plugin .kanban-plugin__lane-header-wrapper .kanban-plugin__lane-settings-button {
+	box-shadow: none;
 	margin-right: 2px;
 	margin-left: 2px;
 	transform: scale(1.2);
@@ -8686,7 +8692,7 @@ body .kanban-plugin__item-form {
 	padding-top: 3px;
 }
 
-.kanban-plugin button.kanban-plugin__new-item-button {
+.kanban-plugin button.kanban-plugin__new-item-button.kanban-plugin__new-item-button {
 	font-family: var(--button-font);
 	color: var(--text-muted);
 	box-shadow: none; /* remove box shadow added by button styling from this theme */
@@ -8711,7 +8717,7 @@ a.tag.kanban-plugin__item-tag {
 }
 
 /* hover colors */
-body .kanban-plugin__new-item-button:hover {
+body .kanban-plugin__new-item-button.kanban-plugin__new-item-button:hover {
 	color: var(--hover-accent-2);
 	background-color: var(--bg3) !important; /* important needed */
 }
@@ -12179,6 +12185,16 @@ settings:
 	 id: classic-inline-backlinks
 	 title: 'Backlinks: Re-enable classic inline backlinks'
 	 description: 'You can also add the yaml "cssclass: no-inline-backlinks" to disable the inline backlinks for a specific note.'
+	 type: class-toggle
+	 default: false
+	-
+	 id: hide-backlinks-status-bar
+	 title: 'Backlinks: Hide the Status Bar Item'
+	 type: class-toggle
+	 default: false
+	-
+	 id: hide-languagetool-status-bar
+	 title: 'Language Tool: Hide the Status Bar Item'
 	 type: class-toggle
 	 default: false
 	-
