@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 1.1162
+Version 1.1163
 Source CSS: https://github.com/chrisgrieser/shimmering-focus/blob/main/source.css
 MIT License
 ──────────────────────────────────────────────────── */
@@ -2763,7 +2763,7 @@ body .app-container :is(.nav-file-title, .nav-folder-title):is(.is-active, :hove
 
 	color: var(--extra-contrast);
 
-	padding-top: 0;
+	padding-top: 1px;
 	padding-bottom: 1px;
 }
 
