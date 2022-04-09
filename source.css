@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 1.1174
+Version 1.1175
 Source CSS: https://github.com/chrisgrieser/shimmering-focus/blob/main/source.css
 MIT License
 ──────────────────────────────────────────────────── */
@@ -237,6 +237,7 @@ MIT License
 	- CookLang
 	- Code Block Labels
 	- Version History Diff
+	- MetaEdit
 	- Hover Editor
 - Compatibility Info for the Obsidian Hub
 - Style Setting Options
@@ -585,33 +586,35 @@ MIT License
 /* << Shadows
 ──────────────────────────────────────────────────── */
 
-/* <<< Outside Shadow */
 :root {
 	--shadow-for-dark-bold: -0.5px 0.5px hsl(0 0% 35%);
 	--shadow-blur: 3px;
 }
 
 .theme-light {
-	--shadow-color: hsl(0 0% 40% / 70%);
 	--shadow-base-size: 0px;
+	--outside-shadow-color: hsl(0 0% 20% / 30%);
+	--inset-shadow-color: hsl(0 0% 45% / 40%);
 }
 
 .theme-dark {
-	--shadow-color: hsl(0 0% 1% / 30%);
 	--shadow-base-size: 3px;
+	--outside-shadow-color: hsl(0 0% 1% / 30%);
+	--inset-shadow-color: hsl(0 0% 20% / 80%);
+	--inset-shadow-black: hsl(0 0% 2% / 100%);
 }
 
+/* <<< Outside Shadow */
 body:is(.theme-light, .theme-dark) {
-	--big-shadow: 4px 6px var(--shadow-blur) calc(var(--shadow-base-size) + 10px) var(--shadow-color);
-	--medium-shadow: 4px 6px var(--shadow-blur) calc(var(--shadow-base-size) + 5px) var(--shadow-color);
-	--small-shadow: 1px 3px var(--shadow-blur) var(--shadow-base-size) var(--shadow-color);
-	--tiny-shadow: 0.5px 1px var(--shadow-blur) calc(var(--shadow-base-size) / 2) var(--shadow-color);
-	--status-bar-shadow: -1px -1px var(--shadow-blur) calc(var(--shadow-base-size) / 2) var(--shadow-color);
+	--big-shadow: 4px 6px var(--shadow-blur) calc(var(--shadow-base-size) + 10px) var(--outside-shadow-color);
+	--medium-shadow: 4px 6px var(--shadow-blur) calc(var(--shadow-base-size) + 5px) var(--outside-shadow-color);
+	--small-shadow: 1px 3px var(--shadow-blur) var(--shadow-base-size) var(--outside-shadow-color);
+	--tiny-shadow: 0.5px 1px var(--shadow-blur) calc(var(--shadow-base-size) / 2) var(--outside-shadow-color);
+	--status-bar-shadow: -1px -1px var(--shadow-blur) calc(var(--shadow-base-size) / 2) var(--outside-shadow-color);
 }
 
 /* <<< Inset Shadow */
 .theme-light {
-	--inset-shadow-color: hsl(0 0% 45% / 40%);
 	--toggle-enabled-inset-shadow: -2px -2px 2px 0px var(--inset-shadow-color) inset;
 	--toggle-disabled-inset-shadow: -1px -1px 2px 0px var(--inset-shadow-color) inset;
 	--small-inset-shadow: -1px -1px 0 var(--inset-shadow-color) inset;
@@ -624,8 +627,6 @@ body:is(.theme-light, .theme-dark) {
 }
 
 .theme-dark {
-	--inset-shadow-color: hsl(0 0% 20% / 80%);
-	--inset-shadow-black: hsl(0 0% 2% / 100%);
 	--toggle-enabled-inset-shadow: -2px -2px 2px 0px var(--inset-shadow-color) inset;
 	--toggle-disabled-inset-shadow: -3px -3px 2px 0px var(--inset-shadow-black) inset;
 	--small-inset-shadow: -1px -1px 0px var(--inset-shadow-black) inset;
@@ -652,6 +653,7 @@ body:is(.theme-light, .theme-dark) {
 	--medium-shadow: 0;
 	--small-shadow: 0;
 	--tiny-shadow: 0;
+	--status-bar-shadow: 0;
 }
 
 /* ───────────────────────────────────────────────── */
@@ -3019,9 +3021,13 @@ body .app-container .workspace-leaf-resize-handle:hover {
 .modal h6 { font-size: var(--h6) }
 
 .modal {
+	min-width: 650px;
+
 	background-color: var(--bg1);
-	box-shadow: var(--big-shadow);
+	box-shadow: var(--medium-shadow);
+
 	padding: 7px 15px 20px;
+
 	border: var(--thick-border);
 	border-radius: calc(var(--roundish) * 2);
 }
@@ -3036,7 +3042,10 @@ body .app-container .workspace-leaf-resize-handle:hover {
 	height: calc(var(--modal-base-size) * 1% + 20%);
 	width: calc(var(--modal-base-size) * 1% + 20%);
 	max-width: unset;
+
 	background-color: var(--basic-border-color); /* ensures no thin line shining through */
+	box-shadow: var(--big-shadow);
+
 	border-radius: calc(var(--roundish) * 3);
 }
 
@@ -11077,6 +11086,22 @@ and file recovery plugin */
 }
 
 /* ───────────────────────────────────────────────── */
+/* << MetaEdit
+──────────────────────────────────────────────────── */
+.metaEditPromptInput {
+
+}
+
+.suggestion-item button.not-a-button {
+	padding: 0 2px 0 3px;
+}
+
+.suggestion-item button.not-a-button:hover {
+	color: var(--hover-accent-2);
+	background-color: var(--bg2);
+}
+
+/* ───────────────────────────────────────────────── */
 /* << Hover Editor
 ──────────────────────────────────────────────────── */
 /* also inherits some styling from Popovers (Page Preview) */
@@ -11233,6 +11258,7 @@ community:
 - darlal-switcher-plus
 - obsidian-banners
 - obsidian-active-visual-line
+- metaedit
 */
 
 /* ───────────────────────────────────────────────── */
