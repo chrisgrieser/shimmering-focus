@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 1.1182
+Version 1.1183
 Source CSS: https://github.com/chrisgrieser/shimmering-focus/blob/main/source.css
 MIT License
 ──────────────────────────────────────────────────── */
@@ -5158,7 +5158,7 @@ body .markdown-preview-view blockquote,
 .cm-hmd-indent-in-quote,
 .markdown-preview-view blockquote,
 .markdown-preview-view blockquote :is(em, strong),
-.cm-line.HyperMD-quote .cm-quote {
+.cm-line.HyperMD-quote .cm-quote:not(.cm-formatting, .cm-url) {
 	color: var(--text-normal);
 }
 

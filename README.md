@@ -9,7 +9,7 @@
 
 A minimalistic [Obsidian](https://obsidian.md/) theme focused on readability and condensed information display.
 
-![](https://img.shields.io/badge/downloads-21895-6E4E9B?style=plastic)
+![](https://img.shields.io/badge/downloads-21896-6E4E9B?style=plastic)
 
 ![Promo Screenshot](docs/images/Promo%20Screenshot/promo-screenshot.png)
 
