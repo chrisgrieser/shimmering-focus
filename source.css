@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 1.1175
+Version 1.1176
 Source CSS: https://github.com/chrisgrieser/shimmering-focus/blob/main/source.css
 MIT License
 ──────────────────────────────────────────────────── */
@@ -208,6 +208,7 @@ MIT License
 	- My Snippets
 	- Map of Content (MoC)
 	- Breadcrumbs
+		- Breadcrumbs Matrix
 	- Drag & Drop Blocks
 	- Dangling Links
 	- Advanced Cursor
@@ -5466,6 +5467,15 @@ body .callout {
 	clear: right;
 }
 
+.callout[data-callout$="postit"] {
+	--callout-icon: activity;
+	--callout-color: 255, 210, 107;
+	font-size: 90%;
+	max-width: 100px;
+	position: absolute;
+	right: 0;
+}
+
 /* ───────────────────────────────────────────────── */
 /* << Tables
 ──────────────────────────────────────────────────── */
@@ -9617,7 +9627,15 @@ button.MS-OpenSnippet:hover svg.ms-snippet path {
 /* ───────────────────────────────────────────────── */
 /* << Breadcrumbs
 ──────────────────────────────────────────────────── */
-/* matrix */
+/* <<< Breadcrumbs Matrix */
+
+/* spacing */
+.BC-Matrix.BC-Matrix.BC-Matrix ol > li {
+	line-height: 1.2em;
+	padding: 4px;
+	margin: 0;
+}
+
 .BC-Matrix ol > li::MARKER {
 	content: none;
 }
@@ -9629,11 +9647,6 @@ button.MS-OpenSnippet:hover svg.ms-snippet path {
 
 .workspace-leaf-content[data-type="BC-matrix"] > .view-content {
 	padding-top: 0;
-}
-
-.BC-Matrix.BC-Matrix.BC-Matrix ol > li {
-	line-height: 1.15em;
-	padding: 3px 3px 3.5px;
 }
 
 .BC-Matrix-square.BC-Matrix-square.BC-Matrix-square.BC-Matrix-square.BC-Matrix-square:first-child {
@@ -9660,8 +9673,6 @@ body .app-container .workspace-leaf-content[data-type="BC-matrix"] .view-content
 }
 
 .BC-Matrix-square.BC-Matrix-square.BC-Matrix-square.BC-Matrix-square.BC-Matrix-square {
-	padding-top: 2px;
-	padding-bottom: 0;
 	border: none;
 	border-bottom: var(--basic-border);
 }

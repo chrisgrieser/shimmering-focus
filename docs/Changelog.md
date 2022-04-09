@@ -3,6 +3,7 @@ nav_order: 110
 ---
 
 # Changelog
+- 2022-04-09	patch
 - 2022-04-09	improvements to shadow look
 - 2022-04-09	fix #135
 - 2022-04-09	fix for floating metadata font size flitch
