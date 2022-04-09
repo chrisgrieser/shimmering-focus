@@ -4878,6 +4878,27 @@ img[src*="img.shields.io" i][src][src][src][src][src] {
 }
 
 /* non-existing images */
+.internal-embed.is-loaded.file-embed.mod-empty {
+	max-width: 70%;
+
+	color: var(--text-error);
+	background-color: var(--bg2);
+
+	margin-right: auto;
+	margin-left: auto;
+
+	border: var(--basic-border);
+}
+
+.internal-embed.is-loaded.file-embed.mod-empty::BEFORE {
+	content: var(--error-symbol);
+	margin-right: 5px;
+}
+
+.internal-embed.is-loaded.file-embed.mod-empty:hover {
+	color: var(--text-normal);
+	background-color: var(--error-bg);
+}
 
 /* ───────────────────────────────────────────────── */
 /* << Mermaid
