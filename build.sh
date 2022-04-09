@@ -78,7 +78,7 @@ sed -E -i '' "${versionLine}s/(.*\.)[[:digit:]]+/\1$nextVersion/" "$csspath"
 split -p "@MINIFY-SPLIT-MARKER" "$csspath" temp # split off to prevent style settings from getting minified
 mv tempaa info.css
 mv tempab unminified_css_code.css
-mv tempac style_settings.css
+grep -vE "# << " tempac > style_settings.css # remove yaml-navigation markers
 cleancss unminified_css_code.css > minified_css_code.css
 cat info.css minified_css_code.css style_settings.css > obsidian.css
 rm info.css unminified_css_code.css minified_css_code.css style_settings.css

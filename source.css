@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 1.1186
+Version 1.1187
 Source CSS: https://github.com/chrisgrieser/shimmering-focus/blob/main/source.css
 MIT License
 ──────────────────────────────────────────────────── */
@@ -62,7 +62,7 @@ MIT License
 	- Input & Textarea
 	- Dropdown
 	- Sliders
-	- Search & Replace (cmd + F)
+	- Search & Replace
 	- Search Matches
 	- Context Menus
 	- Close Buttons
@@ -215,7 +215,7 @@ MIT License
 	- Advanced Cursor
 	- CodeMirror Options
 	- Dataview
-	- QuickSwitcher++
+	- QuickSwitcher Plus Plus
 	- Another Quick Switcher
 	- Activity History
 	- Style Settings (Settings Tab)
@@ -242,7 +242,20 @@ MIT License
 	- MetaEdit
 	- Hover Editor
 - Compatibility Info for the Obsidian Hub
-- Style Setting Options
+- Style Setting (YAML)
+# 	- Show / Hide UI Elements (+)
+# 	- Aesthetics & Custom Colors (+)
+# 	- Typography (+)
+# 	- Gutter & Active Line (+)
+# 	- Content (+)
+# 	- Callouts (+)
+# 	- Special Syntax (+)
+# 	- Cursor (+)
+# 	- Code Blocks (+)
+# 	- Mobile (+)
+# 	- Plugin-Specific Settings (+)
+# 	- Longform (+)
+# 	- Miscellaneous (+)
 /* @TOC-SPLIT-MARKER */
 
 /* ───────────────────────────────────────────────── */
@@ -2306,7 +2319,7 @@ input[type="range"]::-WEBKIT-SLIDER-THUMB:hover {
 }
 
 /* ───────────────────────────────────────────────── */
-/* << Search & Replace (cmd + F)
+/* << Search & Replace
 ──────────────────────────────────────────────────── */
 
 .document-search-container {
@@ -5279,7 +5292,7 @@ body:not(.normal-blockquotes) :is(blockquote, .cm-hmd-indent-in-quote, .HyperMD-
 }
 
 /* option to left-align */
-body:not(.blockquotes-left-aligned) .app-container :is(.markdown-preview-view blockquote, .HyperMD-quote) {
+body:not(.blockquotes-left-aligned) .app-container :is(.markdown-preview-view blockquote) {
 	text-align: justify;
 	hyphens: auto;
 }
@@ -10074,7 +10087,7 @@ body .dataview.inline-field-key {
 }
 
 /* ───────────────────────────────────────────────── */
-/* << QuickSwitcher++
+/* << QuickSwitcher Plus Plus
 ──────────────────────────────────────────────────── */
 
 /* symbol mode */
@@ -11363,7 +11376,7 @@ community:
 */
 
 /* ───────────────────────────────────────────────── */
-/* < Style Setting Options
+/* < Style Setting (YAML)
 ──────────────────────────────────────────────────── */
 
 /* @MINIFY-SPLIT-MARKER */
@@ -11372,6 +11385,7 @@ name: Shimmering Focus
 id: shimmering-focus
 settings:
 	-
+# << Show / Hide UI Elements (+)
 	 id: show-hide-elements
 	 title: 🙈 Show/Hide UI Elements
 	 description: Re-enable elements hidden by this theme.
@@ -11485,6 +11499,7 @@ settings:
 	 type: class-toggle
 	 default: false
 	-
+# << Aesthetics & Custom Colors (+)
 	 id: aesthetics
 	 title: 🎨 Color & Aesthetics
 	 description: Color Schemes, Custom Colors, Brightness, Roundness, Decorations
@@ -11735,6 +11750,7 @@ settings:
 	 step: 2
 	 format: '%'
 	-
+# << Typography (+)
 	 id: font-settings
 	 title: 🔠 Typography
 	 description: Fonts, Headings, Blockquotes
@@ -11913,7 +11929,7 @@ settings:
 	 default: false
 	-
 	 id: blockquotes-left-aligned
-	 title: Left-aligned Blockquote Text
+	 title: Left-aligned Blockquote Text (Preview Mode)
 	 description: Use left-aligned text in blockquotes instead of justified text.
 	 type: class-toggle
 	 default: false
@@ -11924,6 +11940,7 @@ settings:
 	 type: class-toggle
 	 default: false
 	-
+# << Gutter & Active Line (+)
 	 id: gutter-features
 	 title: ❇️ Gutter & Active Line
 	 description: Active Line Highlights, Indicators in the Gutter, Line Numbers, 🆕 Tags-in-Gutter
@@ -11989,6 +12006,7 @@ settings:
 	 type: class-toggle
 	 default: false
 	-
+# << Content (+)
 	 id: content-settings
 	 title: 🏞 Views & Media
 	 description: Line Length, Max View, Focus View, Images, PDFs
@@ -12055,6 +12073,7 @@ settings:
 	 type: class-toggle
 	 default: false
 	-
+# << Callouts (+)
 	 id: callout-options
 	 title: 📞 Callouts
 	 description: 🆕 Sidenote Callouts
@@ -12087,6 +12106,7 @@ settings:
 	 step: 5
 	 format: px
 	-
+# << Special Syntax (+)
 	 id: special-syntax
 	 title: 🌀 Special Syntax
 	 description: '🆕 Highlight Colors, Multi-Color Highlights, Spoiler Syntax, Annotation Tags, 🆕 Trailing Whites Space, Citation Syntax, Pandoc Citations'
@@ -12154,6 +12174,7 @@ settings:
 	 type: class-toggle
 	 default: false
 	-
+# << Cursor (+)
 	 id: cursor-settings
 	 title: 🐁 Cursor
 	 description: Thickness, Style, Color, Blinking, Block Cursor
@@ -12220,6 +12241,7 @@ settings:
 			label: Thin Cursor
 			value: thin-cursor
 	-
+# << Code Blocks (+)
 	 id: code-blocks-options
 	 title: '🖥 Code Blocks'
 	 description: '🆕 Syntax Highlighting, Tab Size, Line Wrapping'
@@ -12270,6 +12292,7 @@ settings:
 			label: Dracula
 			value: dracula-syntax-hl-dark
 	-
+# << Mobile (+)
 	 id: mobile
 	 title: 📱 Mobile
 	 description: Header Bar, Font Size, Font Type
@@ -12309,6 +12332,7 @@ settings:
 	 type: variable-text
 	 default: '"Recursive S"'
 	-
+# << Plugin-Specific Settings (+)
 	 id: plugin-specific
 	 title: ⚙️ Plugin-Specific Settings
 	 description: File Explorer, Backlinks, Outline, Breadcrumbs, Sliding Panes, Calendar, Link Favicons, Command Palette
@@ -12400,6 +12424,7 @@ settings:
 	 hub: ignore
 	 default: false
 	-
+# << Longform (+)
 	 id: longform-settings
 	 title: ✍️ Longform Plugin & Writing cssclass
 	 description: Font, Alignment, First-Line Indent, Background Color, Index File
@@ -12450,6 +12475,7 @@ settings:
 	 hub: ignore
 	 default: false
 	-
+# << Miscellaneous (+)
 	 id: miscellaneous
 	 title: ⚛️ Miscellaneous
 	 description: Menu Size, File Name Trimming, Inactive Panes, Alternating Row Colors, Colored YAML, Animations, 🆕 Theme Beta
