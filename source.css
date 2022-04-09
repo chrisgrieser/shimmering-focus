@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 1.1181
+Version 1.1182
 Source CSS: https://github.com/chrisgrieser/shimmering-focus/blob/main/source.css
 MIT License
 ──────────────────────────────────────────────────── */
@@ -5170,7 +5170,7 @@ body .markdown-preview-view blockquote,
 }
 
 /* less padding between quote blocks */
-.HyperMD-quote.HyperMD-quote.HyperMD-quote + .HyperMD-quote {
+.HyperMD-quote:not(.HyperMD-callout) + .HyperMD-quote.HyperMD-quote.HyperMD-quote {
 	padding-top: 0;
 }
 
@@ -5374,7 +5374,7 @@ body:not(.no-citation-syntax) .markdown-preview-view *:not(blockquote) > blockqu
 }
 
 .callout-content p {
-	line-height: 1.3em;
+	line-height: 1.4em;
 	margin: 6px 0;
 }
 
@@ -5386,9 +5386,8 @@ body:not(.no-citation-syntax) .markdown-preview-view *:not(blockquote) > blockqu
 	padding: 0 var(--callout-left-padding) 2px;
 }
 
-body:not(.normal-blockquotes) .callout-content {
+body:not(.normal-blockquotes) .callout-content p {
 	font-size: 0.87em;
-	line-height: 21px;
 }
 
 .callout-icon svg {
@@ -5479,6 +5478,7 @@ div.is-collapsible.is-collapsed[data-callout] .callout-title {
 	--callout-icon: lightbulb;
 	--callout-color: 255, 210, 107;
 	font-size: 90%;
+	line-height: 1.3em;
 	max-width: calc(var(--readable-length) * var(--sidenote-callout-width) * 0.01);
 	margin: 3px 0 3px 7px;
 	float: right;
@@ -5500,6 +5500,7 @@ body .callout {
 /* <<< Post-it Callouts */
 .unlock-theme-beta .callout[data-callout$="postit"] {
 	font-size: 90%;
+	line-height: 1.2em;
 	hyphens: auto;
 
 	max-height: var(--postit-callout-size);

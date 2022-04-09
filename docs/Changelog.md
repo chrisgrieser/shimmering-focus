@@ -3,6 +3,7 @@ nav_order: 110
 ---
 
 # Changelog
+- 2022-04-09	patch
 - 2022-04-09	better beta badges
 - 2022-04-09	styling for post-it callouts
 - 2022-04-09	styled error display for non-existing images
