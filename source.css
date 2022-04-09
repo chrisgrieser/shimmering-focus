@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 1.1185
+Version 1.1186
 Source CSS: https://github.com/chrisgrieser/shimmering-focus/blob/main/source.css
 MIT License
 ──────────────────────────────────────────────────── */
@@ -10230,6 +10230,10 @@ body .qsp-symbol-indicator {
 	border-top: none;
 }
 
+body .style-settings-heading[data-level="0"] {
+	margin-bottom: 15px;
+}
+
 /* settings tab  / general */
 .style-settings-heading[data-level="2"] + .style-settings-container,
 .style-settings-heading[data-level="2"] {
@@ -10470,7 +10474,7 @@ body:not(.no-animations) .style-settings-heading[data-id="shimmering-focus"] .se
 body:not(.use-gray-tint-light) .setting-item:is([data-id="tint-of-grays-light"]),
 body:not(.use-gray-tint-dark) .setting-item:is([data-id="tint-of-grays-dark"]),
 body:not(.custom-colors) .setting-item:is([data-id="custom-color-light-mode"], [data-id="custom-color-dark-mode"]),
-.show-titlebar .setting-item[data-id="show-titlebar-text"],
+body:not(.show-titlebar) .setting-item[data-id="show-titlebar-text"],
 .no-multi-color-highlights .setting-item:is([data-id="highlight-hue-2"], [data-id="highlight-hue-3"]) {
 	display: none;
 }
@@ -11396,7 +11400,7 @@ settings:
 	 id: show-titlebar
 	 title: Re-enable Title Bar
 	 type: class-toggle
-	 description: Enable this to show title bar again. The titlebar is needed by some plugins to work correctly, and to move the Obsidian window with the mouse.
+	 description: The titlebar is needed to move the Obsidian window with the mouse. Some plugins also require the title bar.
 	 default: false
 	-
 	 id: show-titlebar-text
