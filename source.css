@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 1.1180
+Version 1.1181
 Source CSS: https://github.com/chrisgrieser/shimmering-focus/blob/main/source.css
 MIT License
 ──────────────────────────────────────────────────── */
@@ -10476,34 +10476,46 @@ body:not(.custom-colors) .setting-item:is([data-id="custom-color-light-mode"], [
 /* ───────────────────────────────────────────────── */
 /* <<< Style Settings: Unlock Thema Beta
 ──────────────────────────────────────────────────── */
+/* stylelint-disable selector-max-empty-lines */
 /* hide settings */
-body:not(.unlock-theme-beta) .style-settings-container .setting-item[data-id="postit-callout-size"],
-body:not(.unlock-theme-beta) .style-settings-container .setting-item[data-id*="tint-"],
-body:not(.unlock-theme-beta) .style-settings-container .setting-item[data-id*="-accent-"] {
+body:not(.unlock-theme-beta) .style-settings-container .setting-item:is(
+	[data-id="postit-callout-size"],
+
+	[data-id*="tint-"],
+	[data-id*="-accent-"]
+) {
 	display: none;
 }
 
 /* beta badge */
-.style-settings-container .setting-item[data-id="postit-callout-size"]::BEFORE,
-.style-settings-container .setting-item[data-id*="tint-"]::BEFORE,
-.style-settings-container .setting-item[data-id*="-accent-"]::BEFORE,
-.style-settings-container .setting-item[data-id="preset-color-scheme"]::BEFORE,
-.style-settings-container .setting-item[data-id="unlock-theme-beta"]::BEFORE {
+.style-settings-container .setting-item:is(
+	[data-id="aesthetics"],
+	[data-id="callout-options"]
+)::AFTER,
+.style-settings-container .setting-item:is(
+	[data-id="postit-callout-size"],
+
+	[data-id*="tint-"],
+	[data-id*="-accent-"],
+	[data-id="preset-color-scheme"],
+[data-id="unlock-theme-beta"])::BEFORE {
 	content: "Beta";
 
 	font-size: 0.9em;
-	line-height: 1.2em;
+	line-height: 1.1em;
 
 	background-color: var(--bg3);
 	box-shadow: var(--small-inset-shadow);
 
 	padding: 3px 5px;
+	margin-top: -5px;
 	margin-right: 9px;
 
 	border: var(--thin-border);
 	border-radius: var(--roundish);
 }
 
+/* stylelint-enable selector-max-empty-lines */
 /* ───────────────────────────────────────────────── */
 /* <<< Style Setting – Info Boxes
 ──────────────────────────────────────────────────── */
@@ -12032,7 +12044,7 @@ settings:
 	 type: class-toggle
 	 default: false
 	-
-	 id: callouts-options
+	 id: callout-options
 	 title: 📞 Callouts
 	 description: 🆕 Sidenote Callouts
 	 type: heading
