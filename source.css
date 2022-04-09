@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 1.1178
+Version 1.1179
 Source CSS: https://github.com/chrisgrieser/shimmering-focus/blob/main/source.css
 MIT License
 ──────────────────────────────────────────────────── */
@@ -4883,11 +4883,13 @@ img[src*="img.shields.io" i][src][src][src][src][src] {
 
 	color: var(--text-error);
 	background-color: var(--bg2);
+	box-shadow: var(--button-inset-shadow);
 
 	margin-right: auto;
 	margin-left: auto;
 
 	border: var(--basic-border);
+	border-radius: var(--roundish);
 }
 
 .internal-embed.is-loaded.file-embed.mod-empty::BEFORE {
@@ -4898,6 +4900,7 @@ img[src*="img.shields.io" i][src][src][src][src][src] {
 .internal-embed.is-loaded.file-embed.mod-empty:hover {
 	color: var(--text-normal);
 	background-color: var(--error-bg);
+	border-color: var(--text-error);
 }
 
 /* ───────────────────────────────────────────────── */
