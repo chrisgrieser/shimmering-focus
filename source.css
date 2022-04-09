@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 1.1177
+Version 1.1178
 Source CSS: https://github.com/chrisgrieser/shimmering-focus/blob/main/source.css
 MIT License
 ──────────────────────────────────────────────────── */
@@ -116,7 +116,7 @@ MIT License
 	- Spellcheck
 	- Max View
 		- Line Length & Tables
-		- Images
+		- Images (Max View)
 		- PDFs
 		- Mermaid
 - Markup
@@ -128,6 +128,7 @@ MIT License
 	- Callouts
 		- Custom Callouts
 		- Sidenote Callouts
+		- Post-it Callouts
 	- Tables
 	- MathJax
 	- Code
@@ -712,6 +713,9 @@ body:is(.theme-light, .theme-dark) {
 	--empty-state-symbol-size: 8rem;
 
 	--active-line-bg: hsl(62 11% 63% / 15%);
+
+	--sidenote-callout-width: 35%;
+	--postit-callout-size: 135px;
 }
 
 .theme-light {
@@ -4873,6 +4877,8 @@ img[src*="img.shields.io" i][src][src][src][src][src] {
 	border: none;
 }
 
+/* non-existing images */
+
 /* ───────────────────────────────────────────────── */
 /* << Mermaid
 ──────────────────────────────────────────────────── */
@@ -4937,7 +4943,7 @@ body:not(.max-view-enabled) .mod-root .markdown-source-view.mod-cm6.is-readable-
 	max-width: 100%;
 }
 
-/* <<< Images */
+/* <<< Images (Max View) */
 
 /* Images Preview Mode */
 .max-view-enabled:not(.is-mobile) .mod-left-split.is-collapsed ~ .mod-root .view-content .markdown-preview-view img {
@@ -5467,13 +5473,39 @@ body .callout {
 	clear: right;
 }
 
-.callout[data-callout$="postit"] {
-	--callout-icon: activity;
-	--callout-color: 255, 210, 107;
+/* <<< Post-it Callouts */
+.unlock-theme-beta .callout[data-callout$="postit"] {
 	font-size: 90%;
-	max-width: 100px;
+	hyphens: auto;
+
+	max-height: var(--postit-callout-size);
+	max-width: var(--postit-callout-size);
+
+	color: var(--text-normal);
+	background-color: hsl(55 60% 80%);
+
 	position: absolute;
-	right: 0;
+	right: 3px;
+	z-index: 100;
+
+	padding: 0;
+
+	border: var(--thin-border);
+	border-radius: var(--roundish);
+
+	overflow: hidden;
+}
+
+.unlock-theme-beta .callout[data-callout$="postit"] .callout-title {
+	display: none;
+}
+
+.unlock-theme-beta .callout[data-callout$="postit"] .callout-content {
+	padding: 1px 4px;
+}
+
+.unlock-theme-beta .callout[data-callout$="postit"] .callout-content p {
+	margin: 0;
 }
 
 /* ───────────────────────────────────────────────── */
@@ -10411,13 +10443,15 @@ body:not(.custom-colors) .setting-item:is([data-id="custom-color-light-mode"], [
 /* ───────────────────────────────────────────────── */
 /* <<< Style Settings: Unlock Thema Beta
 ──────────────────────────────────────────────────── */
-
+/* hide settings */
+body:not(.unlock-theme-beta) .style-settings-container .setting-item[data-id="postit-callout-size"],
 body:not(.unlock-theme-beta) .style-settings-container .setting-item[data-id*="tint-"],
 body:not(.unlock-theme-beta) .style-settings-container .setting-item[data-id*="-accent-"] {
 	display: none;
 }
 
 /* beta badge */
+.style-settings-container .setting-item[data-id="postit-callout-size"]::BEFORE,
 .style-settings-container .setting-item[data-id*="tint-"]::BEFORE,
 .style-settings-container .setting-item[data-id*="-accent-"]::BEFORE,
 .style-settings-container .setting-item[data-id="preset-color-scheme"]::BEFORE,
@@ -11967,7 +12001,7 @@ settings:
 	-
 	 id: callouts-options
 	 title: 📞 Callouts
-	 description: 🆕 Sidenote Callout Width & Outdention
+	 description: 🆕 Sidenote Callouts
 	 type: heading
 	 level: 1
 	 collapsed: true
@@ -11986,6 +12020,16 @@ settings:
 	 description: Moves them slightly to the right for extra space.
 	 type: class-toggle
 	 default: false
+	-
+	 id: postit-callout-size
+	 title: Size of Post-it Callouts
+	 description: 'Affects callouts with "> [!postit]". Mind that this variable affects width *and* height (quadratic growth).'
+	 type: variable-number-slider
+	 default: 135
+	 min: 90
+	 max: 250
+	 step: 5
+	 format: px
 	-
 	 id: special-syntax
 	 title: 🌀 Special Syntax
