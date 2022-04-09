@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 1.1179
+Version 1.1180
 Source CSS: https://github.com/chrisgrieser/shimmering-focus/blob/main/source.css
 MIT License
 ──────────────────────────────────────────────────── */
@@ -5505,8 +5505,9 @@ body .callout {
 	max-height: var(--postit-callout-size);
 	max-width: var(--postit-callout-size);
 
-	color: var(--text-normal);
+	color: var(--interactive-normal);
 	background-color: hsl(55 60% 80%);
+	box-shadow: var(--small-shadow);
 
 	position: absolute;
 	right: 3px;
@@ -5518,6 +5519,14 @@ body .callout {
 	border-radius: var(--roundish);
 
 	overflow: hidden;
+}
+
+.theme-light .callout[data-callout$="postit"] {
+	color: var(--text-normal);
+}
+
+.theme-dark .callout[data-callout$="postit"] {
+	color: var(--interactive-normal);
 }
 
 .unlock-theme-beta .callout[data-callout$="postit"] .callout-title {
