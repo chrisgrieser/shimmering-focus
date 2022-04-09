@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 1.1183
+Version 1.1184
 Source CSS: https://github.com/chrisgrieser/shimmering-focus/blob/main/source.css
 MIT License
 ──────────────────────────────────────────────────── */
@@ -715,7 +715,7 @@ body:is(.theme-light, .theme-dark) {
 	--active-line-bg: hsl(62 11% 63% / 15%);
 
 	--sidenote-callout-width: 35%;
-	--postit-callout-size: 135px;
+	--post-it-callout-size: 135px;
 }
 
 .theme-light {
@@ -5498,13 +5498,13 @@ body .callout {
 }
 
 /* <<< Post-it Callouts */
-.unlock-theme-beta .callout[data-callout$="postit"] {
+.unlock-theme-beta .callout[data-callout$="post-it"] {
 	font-size: 90%;
 	line-height: 1.2em;
 	hyphens: auto;
 
-	max-height: var(--postit-callout-size);
-	max-width: var(--postit-callout-size);
+	max-height: var(--post-it-callout-size);
+	max-width: var(--post-it-callout-size);
 
 	color: var(--interactive-normal);
 	background-color: hsl(55 60% 80%);
@@ -5522,23 +5522,23 @@ body .callout {
 	overflow: hidden;
 }
 
-.theme-light .callout[data-callout$="postit"] {
+.theme-light .callout[data-callout$="post-it"] {
 	color: var(--text-normal);
 }
 
-.theme-dark .callout[data-callout$="postit"] {
+.theme-dark .callout[data-callout$="post-it"] {
 	color: var(--interactive-normal);
 }
 
-.unlock-theme-beta .callout[data-callout$="postit"] .callout-title {
+.unlock-theme-beta .callout[data-callout$="post-it"] .callout-title {
 	display: none;
 }
 
-.unlock-theme-beta .callout[data-callout$="postit"] .callout-content {
+.unlock-theme-beta .callout[data-callout$="post-it"] .callout-content {
 	padding: 1px 4px;
 }
 
-.unlock-theme-beta .callout[data-callout$="postit"] .callout-content p {
+.unlock-theme-beta .callout[data-callout$="post-it"] .callout-content p {
 	margin: 0;
 }
 
@@ -10480,7 +10480,7 @@ body:not(.custom-colors) .setting-item:is([data-id="custom-color-light-mode"], [
 /* stylelint-disable selector-max-empty-lines */
 /* hide settings */
 body:not(.unlock-theme-beta) .style-settings-container .setting-item:is(
-	[data-id="postit-callout-size"],
+	[data-id="post-it-callout-size"],
 
 	[data-id*="tint-"],
 	[data-id*="-accent-"]
@@ -10494,7 +10494,7 @@ body:not(.unlock-theme-beta) .style-settings-container .setting-item:is(
 	[data-id="callout-options"]
 )::AFTER,
 .style-settings-container .setting-item:is(
-	[data-id="postit-callout-size"],
+	[data-id="post-it-callout-size"],
 
 	[data-id*="tint-"],
 	[data-id*="-accent-"],
@@ -12067,9 +12067,9 @@ settings:
 	 type: class-toggle
 	 default: false
 	-
-	 id: postit-callout-size
+	 id: post-it-callout-size
 	 title: Size of Post-it Callouts
-	 description: 'Affects callouts with "> [!postit]". Mind that this variable affects width *and* height (quadratic growth).'
+	 description: 'Affects callouts with "> [!post-it]". Mind that this variable affects width *and* height (quadratic growth).'
 	 type: variable-number-slider
 	 default: 135
 	 min: 90
