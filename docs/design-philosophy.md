@@ -15,6 +15,8 @@ Minimalism is the primary feature of the theme. It's main goal is to remove as m
 
 Nevertheless, the theme is fully functional, through [UI elements becoming visible when hovering](/shimmering-focus/core-features#hidingshowing-ui-elements) and by allowing you *exactly* [customize what UI elements you want to re-enable](/shimmering-focus/theme-settings).
 
+While themes like [@kepano's Minimal](https://github.com/kepano/obsidian-minimal) aim for a minimal *aesthetic*, Shimmering Focus' goal is a minimal *user interface*.
+
 ## Condensed Information Display
 The particular "flavor" of minimalism *Shimmering Focus* strives for should be regarded as *functional*, since minimalism is not a goal in itself, but rather serves the ulterior goals of focus and condensed information display.
 
