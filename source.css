@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 1.1191
+Version 1.1192
 Source CSS: https://github.com/chrisgrieser/shimmering-focus/blob/main/source.css
 MIT License
 ──────────────────────────────────────────────────── */
@@ -6500,7 +6500,7 @@ body:not(.hide-trailing-whitespace) .cm-trailing-space-new-line::BEFORE {
 	margin-top: 0;
 }
 
-/* strikethrough finished */
+/* strikethrough when finished */
 .cm-formatting-task.cm-property + span {
 	text-decoration: line-through;
 	color: var(--text-muted);
@@ -6516,11 +6516,11 @@ body:not(.hide-trailing-whitespace) .cm-trailing-space-new-line::BEFORE {
 
 /* preview mode */
 /* https://forum.obsidian.md/t/meta-post-common-css-hacks/1978/34 */
-input.task-list-item-checkbox[type="checkbox"] {
+body ul > li.task-list-item .task-list-item-checkbox {
 	background-color: unset;
 
 	margin-top: 1.5px;
-	margin-left: 7px;
+	margin-left: -19px;
 
 	border: 2px solid var(--hr-line-gray);
 	border-radius: calc(var(--round) * 0.7);
