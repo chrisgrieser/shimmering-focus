@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 1.1190
+Version 1.1191
 Source CSS: https://github.com/chrisgrieser/shimmering-focus/blob/main/source.css
 MIT License
 ──────────────────────────────────────────────────── */
@@ -5146,7 +5146,7 @@ body:not(.no-heading-bg) .mod-root .view-content > div:not(.kanban-plugin) :is(h
 	padding-left: 6px;
 
 	/* "stretch" slightly for better alignment */
-	/* margin-left: -1px; */
+	margin-left: -1px;
 }
 
 /* <<< Headings interacting with other markup */
