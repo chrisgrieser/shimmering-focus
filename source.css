@@ -5960,6 +5960,7 @@ pre.language-haskell::AFTER { content: "Haskell" }
 /* ───────────────────────────────────────────────── */
 /* <<< Syntax Highlighting
 ──────────────────────────────────────────────────── */
+/* stylelint-disable indentation */
 
 /* Dracula */
 .theme-dark.dracula-syntax-hl-dark,
@@ -6093,6 +6094,7 @@ pre.language-haskell::AFTER { content: "Haskell" }
 	color: var(--extra-contrast);
 }
 
+/* stylelint-enable indentation */
 /* ───────────────────────────────────────────────── */
 /* << Lists
 ──────────────────────────────────────────────────── */
@@ -6265,7 +6267,7 @@ a.tag:hover {
 /* ───────────────────────────────────────────────── */
 /* <<< Annotation Tags
 ──────────────────────────────────────────────────── */
-/* stylelint-disable max-line-length, no-duplicate-selectors */
+/* stylelint-disable no-duplicate-selectors */
 
 .theme-light { --annotation-tag-font-color: hsl(0 0% 13%); }
 .theme-dark { --annotation-tag-font-color: hsl(0 0% 100%); }
@@ -6427,7 +6429,7 @@ body:not(.annotation-tags-off) :is(.cm-hashtag-begin.cm-tag-example, .tag[href="
 	content: "⚛️ ";
 }
 
-/* stylelint-enable max-line-length, no-duplicate-selectors */
+/* stylelint-enable no-duplicate-selectors */
 /* ───────────────────────────────────────────────── */
 /* << Comments, HTML Tags, Escape Characters
 ──────────────────────────────────────────────────── */
@@ -8056,20 +8058,6 @@ div.card-view-container.card-view-container .markdown-preview-view :is(h1, h2, h
 	display: none;
 }
 
-.suggestion-item.recent .suggestion-content {
-	font-weight: 500;
-	font-style: italic;
-}
-
-/* pinned items bold */
-.prompt.better-command-palette .suggestion-flair[aria-label="Pinned"] {
-	display: none;
-}
-
-.prompt.better-command-palette .suggestion-flair[aria-label="Pinned"] ~ .suggestion-content {
-	font-weight: 600;
-}
-
 .better-command-palette .suggestion-item {
 	padding-left: 5px;
 }
@@ -8089,6 +8077,37 @@ div.card-view-container.card-view-container .markdown-preview-view :is(h1, h2, h
 
 .hidden-items-header:empty {
 	display: none;
+}
+
+/* pinned items bold/starred */
+.prompt.better-command-palette .suggestion-flair[aria-label="Pinned"] {
+	display: none;
+}
+
+.prompt.better-command-palette .suggestion-flair[aria-label="Pinned"] ~ .suggestion-content {
+	font-weight: 600;
+}
+
+.prompt.better-command-palette .suggestion-flair[aria-label="Pinned"] ~ .suggestion-content::AFTER {
+	content: "☆";
+	padding-left: 5px;
+}
+
+/* recent item italic + clock */
+.suggestion-item.recent .suggestion-content {
+	font-weight: 500;
+	font-style: italic;
+}
+
+.suggestion-item.recent .suggestion-content::AFTER {
+	content: "◷"; /* alternatives: ◴◵◶◷ */
+	font-style: normal;
+	padding-left: 5px;
+}
+
+/* recent + starred */
+.prompt.better-command-palette .recent .suggestion-flair[aria-label="Pinned"] ~ .suggestion-content::AFTER {
+	content: "☆ ◷";
 }
 
 /* ───────────────────────────────────────────────── */
@@ -10207,6 +10226,20 @@ body .qsp-symbol-indicator {
 	filter: saturate(60%);
 }
 
+/* starred item bold */
+.another-quick-switcher__starred_item::BEFORE {
+	display: none;
+}
+
+.another-quick-switcher__starred_item .another-quick-switcher__item__title::AFTER {
+	content: "☆";
+	padding-left: 5px;
+}
+
+.another-quick-switcher__starred_item {
+	font-weight: 600;
+}
+
 /* ───────────────────────────────────────────────── */
 /* << Activity History
 ──────────────────────────────────────────────────── */
@@ -10501,7 +10534,7 @@ body:not(.show-titlebar) .setting-item[data-id="show-titlebar-text"],
 /* ───────────────────────────────────────────────── */
 /* <<< Style Settings: Unlock Thema Beta
 ──────────────────────────────────────────────────── */
-/* stylelint-disable selector-max-empty-lines */
+/* stylelint-disable selector-max-empty-lines, indentation */
 /* hide settings */
 body:not(.unlock-theme-beta) .style-settings-container .setting-item:is(
 	[data-id="post-it-callout-size"],
@@ -10540,7 +10573,7 @@ body:not(.unlock-theme-beta) .style-settings-container .setting-item:is(
 	border-radius: var(--roundish);
 }
 
-/* stylelint-enable selector-max-empty-lines */
+/* stylelint-enable selector-max-empty-lines, indentation */
 /* ───────────────────────────────────────────────── */
 /* <<< Style Setting – Info Boxes
 ──────────────────────────────────────────────────── */
@@ -11302,7 +11335,7 @@ and file recovery plugin */
 .mte.mte button {
 	font-size: 75%;
 
-	height: 30px; /* same as the input height */
+	height: 30px;
 
 	color: var(--text-normal);
 	background-color: var(--muted-button-bg);
@@ -12623,7 +12656,7 @@ settings:
 	-
 	 id: no-grayed-out-inactive-pane
 	 title: Do not dim Inactive Panes
-	 description: 'This also affects popovers from the Hover Editor Plugin.'
+	 description: 'Also affects popovers from the Hover Editor Plugin.'
 	 type: class-toggle
 	 default: false
 	-

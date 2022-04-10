@@ -82,11 +82,7 @@ body:
         - Sliding Panes
         - Breadcrumbs
         - Quick Explorer
-        - Dataview
-        - Ozan's Image in Editor
         - Starred (Core Plugin)
-        - Better Command Palette
-        - Hover Editor
       options:
         - label: I took note of the [specific instructions regarding those plugins](https://chrisgrieser.github.io/shimmering-focus/plugin-specific-features/#instructions-for-specific-plugins).
   - type: checkboxes

@@ -79,6 +79,7 @@ split -p "@MINIFY-SPLIT-MARKER" "$csspath" temp # split off to prevent style set
 mv tempaa info.css
 mv tempab unminified_css_code.css
 grep -vE "^# << " tempac > style_settings.css # remove yaml-navigation markers
+rm tempac
 cleancss unminified_css_code.css > minified_css_code.css
 cat info.css minified_css_code.css style_settings.css > obsidian.css
 rm info.css unminified_css_code.css minified_css_code.css style_settings.css
