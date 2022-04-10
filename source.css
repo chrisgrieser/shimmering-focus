@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 1.1192
+Version 1.1193
 Source CSS: https://github.com/chrisgrieser/shimmering-focus/blob/main/source.css
 MIT License
 ──────────────────────────────────────────────────── */
@@ -5596,7 +5596,7 @@ body > .app-container table > tbody > tr > td {
 	border: none;
 }
 
-body .app-container table > :is(thead, tbody) > tr > :is(th, td):not(:first-child) {
+.markdown-preview-view.markdown-preview-view.markdown-preview-view table > :is(thead, tbody) > tr > :is(th, td):not(:first-child) {
 	border-left: var(--table-border);
 }
 
