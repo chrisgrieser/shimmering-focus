@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 1.1189
+Version 1.1190
 Source CSS: https://github.com/chrisgrieser/shimmering-focus/blob/main/source.css
 MIT License
 ──────────────────────────────────────────────────── */
@@ -6681,8 +6681,6 @@ sup {
 .footnotes {
 	font-size: var(--footnote-text-size);
 	line-height: 1.15em;
-	text-align: justify;
-	hyphens: auto;
 }
 
 .footnotes ol {
@@ -6713,8 +6711,6 @@ sup {
 .HyperMD-footnote.HyperMD-footnote {
 	font-size: 85%;
 	line-height: 1.15em;
-	text-align: justify;
-	hyphens: auto;
 	padding: 0.4em 5px;
 }
 
@@ -9419,27 +9415,10 @@ select#longform-workflows:hover {
 	hyphens: none;
 }
 
-/* footnotes unjustify option */
-.longform-left-aligned :is(.writing, .longform-leaf) :is(.footnotes, .HyperMD-footnote) {
-	text-align: start;
-	hyphens: unset;
-}
-
 /* justify text */
-body:not(.longform-left-aligned) :is(.writing, .longform-leaf) .cm-line {
+body:not(.longform-left-aligned) :is(.writing, .longform-leaf) :is(.cm-line:not(.HyperMD-codeblock, .HyperMD-list-line, .HyperMD-header), p, .footnotes, .HyperMD-footnote) {
 	text-align: justify;
 	hyphens: auto;
-}
-
-/* do not justify code blocks, headings, tables, and lists */
-.writing.writing.writing.writing :is(.HyperMD-codeblock, .HyperMD-list-line, .HyperMD-header),
-.writing.writing.writing.writing table td span,
-.writing.writing.writing.writing :is(h1, h2, h3, h4, h5, h6),
-.longform-leaf.longform-leaf.longform-leaf.longform-leaf :is(h1, h2, h3, h4, h5, h6),
-.longform-leaf.longform-leaf.longform-leaf.longform-leaf :is(.HyperMD-codeblock, .HyperMD-list-line, .HyperMD-header),
-.longform-leaf.longform-leaf.longform-leaf.longform-leaf table td span {
-	text-align: start;
-	hyphens: none;
 }
 
 /* style headings */
