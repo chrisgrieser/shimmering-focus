@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 1.1193
+Version 1.1194
 Source CSS: https://github.com/chrisgrieser/shimmering-focus/blob/main/source.css
 MIT License
 ──────────────────────────────────────────────────── */
@@ -5393,9 +5393,18 @@ body:not(.no-citation-syntax) .markdown-preview-view *:not(blockquote) > blockqu
 	color: var(--extra-contrast);
 }
 
-.callout-content p {
+.callout-content :is(ul, p) {
 	line-height: 1.4em;
 	margin: 6px 0;
+}
+
+.callout-content li {
+	line-height: 1.1em;
+	margin: 5px 0;
+}
+
+.callout-content ul {
+	padding-left: 20px;
 }
 
 .callout-content p + p {
@@ -7327,7 +7336,7 @@ action (folding) than clicking the heading itself (as opposed to other sidebar p
 
 /* make fold icon clickable */
 .outline .tree-item-inner {
-	margin-right: 19px;
+	margin-right: 20px;
 }
 
 /* increase clickable area */
