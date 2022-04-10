@@ -3,7 +3,7 @@ nav_order: 110
 ---
 
 # Changelog
-- 2022-04-10	patch
+- 2022-04-10	styling for markdown table editor
 - 2022-04-10	(intrnal) use navigation markers in style settings css
 - 2022-04-09	rename postit callout to post-it
 - 2022-04-09	better beta badges

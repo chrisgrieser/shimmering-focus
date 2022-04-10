@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 1.1188
+Version 1.1189
 Source CSS: https://github.com/chrisgrieser/shimmering-focus/blob/main/source.css
 MIT License
 ──────────────────────────────────────────────────── */
@@ -240,6 +240,8 @@ MIT License
 	- Code Block Labels
 	- Version History Diff
 	- MetaEdit
+	- Notion Like Table
+	- Markdown Table Editor
 	- Hover Editor
 - Compatibility Info for the Obsidian Hub
 - Style Setting (YAML)
@@ -686,7 +688,7 @@ body:is(.theme-light, .theme-dark) {
 	--thick-muted-border: 4px solid var(--muted-border-color);
 	--thin-border: 1px solid var(--basic-border-color);
 	--thin-muted-border: 1px solid var(--muted-border-color);
-	--muted-button-border: var(--basic-border);
+	--muted-button-border: 2px solid var(--text-faint);
 	--hr-line: var(--thick-muted-border);
 }
 
@@ -11206,10 +11208,6 @@ and file recovery plugin */
 /* ───────────────────────────────────────────────── */
 /* << MetaEdit
 ──────────────────────────────────────────────────── */
-.metaEditPromptInput {
-
-}
-
 .suggestion-item button.not-a-button {
 	padding: 0 2px 0 3px;
 }
@@ -11217,6 +11215,125 @@ and file recovery plugin */
 .suggestion-item button.not-a-button:hover {
 	color: var(--hover-accent-2);
 	background-color: var(--bg2);
+}
+
+/* ───────────────────────────────────────────────── */
+/* << Notion Like Table
+──────────────────────────────────────────────────── */
+.NLT__table.NLT__table.NLT__table.NLT__table button {
+	line-height: 1em;
+
+	color: var(--text-normal);
+	background: var(--muted-button-bg);
+	box-shadow: var(--small-inset-shadow);
+
+	padding: 0;
+
+	border: var(--thin-border);
+}
+
+.NLT__table.NLT__table .tag {
+	color: unset;
+}
+
+.NLT__tag.NLT__tag {
+	padding: 1px 5px;
+}
+
+.NLT__tag-cell.NLT__tag-cell {
+	padding: 0;
+}
+
+.NLT__table.NLT__table .tag::AFTER {
+	display: none;
+}
+
+.NLT__thead {
+	background-color: var(--bg2);
+}
+
+/* ───────────────────────────────────────────────── */
+/* << Markdown Table Editor
+──────────────────────────────────────────────────── */
+.mte.header {
+	font-weight: 600;
+	background-color: var(--bg3);
+}
+
+.workspace-leaf-content[data-type="markdown-table-editor-view"] > .view-content {
+	background-color: var(--bg2);
+	padding: 0;
+}
+
+.view-content > .mte.grid {
+	margin: 20px 10px;
+}
+
+.mte.data {
+	background-color: var(--bg1);
+}
+
+.mte.mte.mte.button-container {
+	background-color: var(--bg3);
+	padding: 10px;
+	margin: 0;
+	border-bottom: var(--basic-border);
+}
+
+.mte.mte.button-container:first-child {
+	padding-top: 20px;
+}
+
+.mte.button-container:last-child {
+	margin-top: 30px;
+	margin-bottom: 10px;
+	border-top: var(--basic-border);
+}
+
+.mte.button-container:nth-child(2) {
+	display: none; /* redundant */
+}
+
+.mte.button-container:nth-child(1) > input {
+	background-color: var(--bg1);
+	margin: 0 15px 0 0;
+}
+
+.mte.mte button {
+	font-size: 75%;
+
+	height: 30px; /* same as the input height */
+
+	color: var(--text-normal);
+	background-color: var(--muted-button-bg);
+	box-shadow: var(--muted-button-inset-shadow);
+
+	padding: 4px 8px;
+
+	border: var(--muted-button-border);
+	border-width: 1px;
+}
+
+.mte.grid {
+	margin: 5px;
+}
+
+.mte.cell.cell.cell.cell.cell.cell {
+	padding: 2px 5px;
+}
+
+.mte.cell.cell.cell.cell.cell.cell:hover {
+	padding: 0 3px;
+	border: 2px solid var(--interactive-hover-border-color);
+}
+
+/* vertical three lines */
+.mte.cell + span > svg {
+	margin: -3px 2px 6px;
+}
+
+.mte.cell + span:hover > svg {
+	color: var(--hover-accent-2);
 }
 
 /* ───────────────────────────────────────────────── */
@@ -11377,6 +11494,8 @@ community:
 - obsidian-banners
 - obsidian-active-visual-line
 - metaedit
+- obsidian-notion-like-tables
+- markdown-table-editor
 */
 
 /* ───────────────────────────────────────────────── */
