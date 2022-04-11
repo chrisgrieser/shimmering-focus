@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 1.1219
+Version 1.1220
 Source CSS: https://github.com/chrisgrieser/shimmering-focus/blob/main/source.css
 MIT License
 ──────────────────────────────────────────────────── */
@@ -3029,23 +3029,26 @@ body .workspace-leaf-resize-handle {
 	padding-right: var(--resize-handle-thickness);
 }
 
+/* vertical resize handle */
 .workspace-split.mod-horizontal > .workspace-leaf-resize-handle {
 	width: var(--resize-handle-thickness);
+	outline: var(--thin-border);
 }
 
+/* horizontal resize handle */
 .workspace-split.mod-horizontal > * > .workspace-leaf-resize-handle {
 	height: var(--resize-handle-thickness);
 }
 
+/* hover */
 .workspace-split.mod-horizontal > .workspace-leaf-resize-handle:hover {
 	width: var(--resize-handle-hovered-thickness);
 }
 
-.workspace-split.mod-horizontal > :is(.workspace-leaf, .workspace-tabs) > .workspace-leaf-resize-handle:hover {
+.workspace-split.mod-horizontal > * > .workspace-leaf-resize-handle:hover {
 	height: var(--resize-handle-hovered-thickness);
 }
 
-/* hover */
 body div.app-container .workspace-leaf-resize-handle:active {
 	background-color: var(--scrollbar-bg-active);
 }
