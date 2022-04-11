@@ -3,6 +3,7 @@ nav_order: 110
 ---
 
 # Changelog
+- 2022-04-12	patch
 - 2022-04-12	scrol
 - 2022-04-11	various complements add to dictionary button
 - 2022-04-11	lien height fixes

@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 1.1217
+Version 1.1218
 Source CSS: https://github.com/chrisgrieser/shimmering-focus/blob/main/source.css
 MIT License
 ──────────────────────────────────────────────────── */
@@ -2042,7 +2042,18 @@ body ::-WEBKIT-SCROLLBAR-THUMB:active,
 body ::-WEBKIT-SCROLLBAR-THUMB {
 	width: var(--scrollbar-thickness);
 	box-shadow: var(--small-inset-shadow);
+	border: var(--thin-muted-border);
 }
+
+/* stylelint-disable no-duplicate-selectors */
+.theme-light ::-WEBKIT-SCROLLBAR-THUMB {
+	border: var(--thin-border);
+}
+
+.theme-dark ::-WEBKIT-SCROLLBAR-THUMB {
+	border: var(--thin-muted-border);
+}
+/* stylelint-enable no-duplicate-selectors */
 
 body:is(.theme-light, .theme-dark):is(.theme-light, .theme-dark) ::-WEBKIT-SCROLLBAR-THUMB {
 	border-radius: calc(var(--roundish) * 0.6);
