@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 1.1215
+Version 1.1216
 Source CSS: https://github.com/chrisgrieser/shimmering-focus/blob/main/source.css
 MIT License
 ──────────────────────────────────────────────────── */
@@ -3360,6 +3360,9 @@ body .app-container .workspace-leaf-resize-handle:hover {
 
 	background-color: var(--bg2);
 	box-shadow: var(--muted-button-inset-shadow);
+
+	padding-right: 6px;
+	padding-left: 8px;
 
 	border: var(--thin-border);
 	border-radius: var(--roundish);
