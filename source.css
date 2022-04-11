@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 1.1214
+Version 1.1215
 Source CSS: https://github.com/chrisgrieser/shimmering-focus/blob/main/source.css
 MIT License
 ──────────────────────────────────────────────────── */
@@ -10884,6 +10884,23 @@ svg.sync-small {
 
 .various-complements__suggestion-item.various-complements__suggestion-item::BEFORE {
 	margin-top: 2px;
+}
+
+/* the "add to custom dictionary" modal, importants needed */
+.modal.modal.modal button.button-enabled[aria-label="Open the file"] {
+	height: 2.1em;
+	background-color: var(--interactive-bg) !important;
+	margin-top: 1px;
+	border-width: 1px;
+}
+
+.modal.modal.modal button.button-enabled[aria-label="Open the file"]:hover {
+	background-color: var(--interactive-hover-bg) !important;
+}
+
+.modal button.button-enabled[aria-label="Open the file"] svg {
+	height: 1.3em;
+	width: 2.5em;
 }
 
 /* ───────────────────────────────────────────────── */
