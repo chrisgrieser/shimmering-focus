@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 1.1209
+Version 1.1210
 Source CSS: https://github.com/chrisgrieser/shimmering-focus/blob/main/source.css
 MIT License
 ──────────────────────────────────────────────────── */
@@ -9427,11 +9427,6 @@ select#longform-workflows:hover {
 	font-size: var(--longform-font-size);
 }
 
-.writing.markdown-preview-view table,
-.longform-leaf .markdown-preview-view table {
-	line-height: 1.3rem;
-}
-
 /* keep any code smaller */
 .app-container.app-container.app-container.app-container.app-container.app-container :is(.longform-leaf, .writing) :is(.frontmatter-container, .cm-hmd-frontmatter, .cm-formatting-task, .HyperMD-codeblock, code, .cm-inline-code, .HyperMD-table-row) {
 	font-family: var(--font-monospace);
@@ -9447,30 +9442,40 @@ body:not(.longform-left-aligned) :is(.writing, .longform-leaf) :is(.cm-line:not(
 }
 
 /* line height */
-:is(.writing, .longform-leaf) :is(.cm-line, .cm-line > *) {
-	line-height: 1.1em;
-}
 
 /* headings */
 .writing.writing :is(h1, h2, h3, h4, h5, h6),
 :is(.writing, .longform-leaf) .cm-header.cm-header,
 .longform-leaf.longform-leaf :is(h1, h2, h3, h4, h5, h6) {
 	font-family: var(--longform-font-text-theme);
-	/* line-height: 1rem; */
 }
 
 .longform-text-indent.longform-text-indent :is(.writing, .longform-leaf) p {
 	text-indent: 2em;
 }
 
+/* line height */
+.writing.markdown-preview-view table,
+.longform-leaf .markdown-preview-view table {
+	line-height: 1.3rem;
+}
+
+:is(.writing, .longform-leaf) :is(.cm-line, .cm-line > :is(.cm-header, .cm-hmd-frontmatter)) {
+	line-height: 1.1em;
+}
+
+:is(.writing, .longform-leaf) .cm-line > :not(.cm-header, .cm-hmd-frontmatter) {
+	line-height: 1.35em;
+}
+
+.app-container :is(.writing, .longform-leaf) pre[class*="language-"]::BEFORE {
+	/* fix for code block header hack */
+	line-height: 1.3em;
+}
+
 /* fix for checkboxes  */
 :is(.writing, .longform-leaf) input[type="checkbox"] {
 	margin: 3px 9px 4px 0 !important;
-}
-
-/* fix for code block header hack */
-.app-container :is(.writing, .longform-leaf) pre[class*="language-"]::BEFORE {
-	line-height: 1.3em;
 }
 
 /* ───────────────────────────────────────────────── */
