@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 1.1199
+Version 1.1200
 Source CSS: https://github.com/chrisgrieser/shimmering-focus/blob/main/source.css
 MIT License
 ──────────────────────────────────────────────────── */
@@ -80,7 +80,7 @@ MIT License
 	- Confirmation Modal
 	- Settings Menu
 		- Login Menu 
-		- Community plugin list
+		- Community Plugin List
 		- Core plugins
 		- Hotkey search
 	- Plugin Browser
@@ -294,6 +294,7 @@ MIT License
 	--text-muted: hsl(var(--tint-of-grays-light) var(--sat-of-grays) 50%);
 	--middle-gray: hsl(var(--tint-of-grays-light) var(--sat-of-grays) 57%);
 	--text-faint: hsl(var(--tint-of-grays-light) var(--sat-of-grays) 60%);
+	--extra-faint: hsl(var(--tint-of-grays-light) calc(var(--sat-of-grays) * 0.7) 70%);
 	--hr-line-gray: hsl(var(--tint-of-grays-light) var(--sat-of-grays) 66%);
 	--interactive-normal: hsl(var(--tint-of-grays-light) var(--high-sat-of-grays)  95%);
 
@@ -307,6 +308,7 @@ MIT License
 	--text-muted: hsl(var(--tint-of-grays-dark) var(--sat-of-grays) 58%);
 	--middle-gray: hsl(var(--tint-of-grays-dark) var(--sat-of-grays) 49%);
 	--text-faint: hsl(var(--tint-of-grays-dark) var(--sat-of-grays) 40%);
+	--extra-faint: hsl(var(--tint-of-grays-dark) calc(var(--sat-of-grays) * 0.7) 25%);
 	--hr-line-gray: hsl(var(--tint-of-grays-dark) var(--sat-of-grays) 60%);
 	--interactive-normal: hsl(var(--tint-of-grays-dark) var(--high-sat-of-grays) 16%);
 
@@ -329,7 +331,6 @@ MIT License
 	--primary-accent-3: hsl(210 90% 71%);
 	--primary-accent-4: hsl(210 90% 78%);
 	--primary-accent-5: hsl(210 100% 90% / 99%);
-
 	--unresolved-link-color: hsl(180 75% 44%); /* ~40 hue less than primary-accent-2 */
 	--button-text: var(--interactive-normal);
 }
@@ -342,7 +343,6 @@ MIT License
 	--primary-accent-3: hsl(32 65% 55%);
 	--primary-accent-4: hsl(40 87% 67%);
 	--primary-accent-5: hsl(40 87% 87% / 99%);
-
 	--unresolved-link-color: hsl(344 69% 42%); /* ~40 hue less than primary-accent-2 */
 }
 
@@ -360,16 +360,15 @@ MIT License
 	--primary-accent-3: hsl(250 90% 76%);
 	--primary-accent-4: hsl(250 90% 83%);
 	--primary-accent-5: hsl(250 90% 91% / 99%);
+	--unresolved-link-color: hsl(210 75% 64%); /* 40 hue less than primary-accent-2 */
 
 	--hover-accent-1: hsl(165 70% 25%);
 	--hover-accent-2: hsl(165 80% 35%);
 	--hover-accent-3: hsl(165 90% 45%);
 	--hover-accent-4: hsl(165 100% 55%);
 
-	--secondary-accent-light: hsl(165 70% 35%);
-	--secondary-accent-dark: hsl(165 85% 40%);
-
-	--unresolved-link-color: hsl(210 75% 64%); /* 40 hue less than primary-accent-2 */
+	--secondary-accent-1: hsl(165 70% 35%);
+	--secondary-accent-2: hsl(165 85% 40%);
 }
 
 .theme-light,
@@ -437,17 +436,19 @@ MIT License
 
 /* <<< Secondary Accent (references, tags, code, finished tasks) */
 .theme-light {
-	--reference-color: var(--secondary-accent-light);
-	--tag-text-color: var(--secondary-accent-light);
-	--code-color: var(--secondary-accent-light);
-	--finished-task: var(--secondary-accent-light);
+	--sucess-color: var(--secondary-accent-2);
+	--reference-color: var(--secondary-accent-2);
+	--tag-text-color: var(--secondary-accent-2);
+	--code-color: var(--secondary-accent-2);
+	--finished-task: var(--secondary-accent-2);
 }
 
 .theme-dark {
-	--reference-color: var(--secondary-accent-dark);
-	--tag-text-color: var(--secondary-accent-dark);
-	--code-color: var(--secondary-accent-dark);
-	--finished-task: var(--secondary-accent-dark);
+	--sucess-color: var(--secondary-accent-1);
+	--reference-color: var(--secondary-accent-1);
+	--tag-text-color: var(--secondary-accent-1);
+	--code-color: var(--secondary-accent-1);
+	--finished-task: var(--secondary-accent-1);
 }
 
 /* <<< Tertiary Accent (Bold & Italics) */
@@ -640,8 +641,8 @@ body:is(.theme-light, .theme-dark) {
 	--small-reverted-inset-shadow: 1px 1px 1px var(--inset-shadow-color) inset;
 	--medium-reverted-inset-shadow: 2px 2px 1px var(--inset-shadow-color) inset;
 	--big-reverted-inset-shadow: 2px 2px 3px 1px hsl(0 0% 25% / 40%) inset;
-	--button-inset-shadow: -1px -1px 1.5px var(--inset-shadow-color) inset;
-	--muted-button-inset-shadow: -1px -1px 1.5px var(--inset-shadow-color) inset;
+	--button-inset-shadow: -1.5px -1.5px 2px var(--inset-shadow-color) inset;
+	--muted-button-inset-shadow: -2px -2px 2px var(--inset-shadow-color) inset;
 	--notice-inset-shadow: -1px -1px 2px var(--inset-shadow-color) inset;
 }
 
@@ -653,7 +654,7 @@ body:is(.theme-light, .theme-dark) {
 	--medium-reverted-inset-shadow: 2px 2px 1px 1px var(--inset-shadow-black) inset;
 	--big-reverted-inset-shadow: 3px 3px 3px 3px var(--inset-shadow-black) inset;
 	--button-inset-shadow: -2px -2px 2px var(--inset-shadow-color) inset;
-	--muted-button-inset-shadow: -1px -1px 1px var(--inset-shadow-black) inset;
+	--muted-button-inset-shadow: -2px -2px 2px var(--inset-shadow-black) inset;
 	--notice-inset-shadow: -1px -1px 2px var(--inset-shadow-black) inset;
 }
 
@@ -689,7 +690,7 @@ body:is(.theme-light, .theme-dark) {
 	--thick-muted-border: 4px solid var(--muted-border-color);
 	--thin-border: 1px solid var(--basic-border-color);
 	--thin-muted-border: 1px solid var(--muted-border-color);
-	--muted-button-border: 2px solid var(--text-faint);
+	--muted-button-border: 2px solid var(--extra-faint);
 	--hr-line: var(--thick-muted-border);
 }
 
@@ -3273,7 +3274,7 @@ body .app-container .workspace-leaf-resize-handle:hover {
 	margin-top: 30px;
 }
 
-/* <<< Community plugin list */
+/* <<< Community Plugin List */
 .installed-plugins-container {
 	padding-top: 8px;
 }
@@ -3550,12 +3551,12 @@ body .app-container .workspace-leaf-resize-handle:hover {
 	line-height: 0.8em;
 
 	color: var(--interactive-normal);
-	background-color: var(--hover-accent-2);
+	background-color: var(--sucess-color);
 
 	padding-right: 0.2em;
 	padding-left: 0.2em;
 
-	border-radius: var(--round);
+	border-radius: calc(var(--round) * 0.6);
 }
 
 /* download statistics */
@@ -3706,7 +3707,7 @@ body .community-plugin-info .community-plugin-downloads-text {
 	font-size: 0;
 	text-align: end;
 	margin-top: 43px;
-	margin-bottom: -48px;
+	margin-bottom: -46px;
 }
 
 .community-plugin-author + .community-plugin-author a {
@@ -4513,7 +4514,7 @@ body:not(.no-floating-metadata):not(.is-mobile) .markdown-preview-view:not(.no-f
 /* idea from @EmrieCandera */
 
 /* less margin for first heading */
-body:not(.no-floating-metadata):not(.is-mobile) .markdown-preview-pusher + div + div :is(h1, h2, h3, h4, h5, h6) {
+body:not(.no-floating-metadata):not(.is-mobile) .markdown-preview-view:not(.no-floating-metadata) .markdown-preview-pusher + div + div :is(h1, h2, h3, h4, h5, h6) {
 	margin-top: 0.2em;
 }
 
@@ -4574,7 +4575,7 @@ body:not(.no-floating-metadata):not(.is-mobile) .markdown-preview-view:not(.no-f
 	display: none;
 }
 
-/* the floating buttons */
+/* look of the floating buttons */
 body:not(.no-floating-metadata):not(.is-mobile) .markdown-preview-view:not(.no-floating-metadata) :is(.frontmatter.language-yaml, .frontmatter-container):not(:hover)::BEFORE {
 	font-family: var(--heading-font);
 	color: var(--extra-contrast);
@@ -12257,7 +12258,7 @@ settings:
 	-
 	 id: post-it-callout-size
 	 title: Size of Post-it Callouts
-	 description: 'Affects callouts with "> [!post-it]". This variable affects width *and* height (i.e., quadratic growth). Mind that post-it's with too much content get cut off — they are post-its after all.'
+	 description: "Affects callouts with '> [!post-it]'. This variable affects width *and* height (i.e., quadratic growth). Mind that post-it's with too much content get cut off — they are post-its after all."
 	 type: variable-number-slider
 	 default: 135
 	 min: 90
