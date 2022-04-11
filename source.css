@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 1.1206
+Version 1.1207
 Source CSS: https://github.com/chrisgrieser/shimmering-focus/blob/main/source.css
 MIT License
 ──────────────────────────────────────────────────── */
@@ -223,7 +223,7 @@ MIT License
 		- Style Settings: Hue Sliders & Color Demo Boxes
 		- Style Settings: Conditional Settings Display
 		- Style Settings: Unlock Thema Beta
-		- Style Setting – Info Boxes
+		- Style Settings: Info Boxes
 	- Favicon Plugin
 	- File Info Panel (Side bar)
 	- Get Info (Status bar)
@@ -936,7 +936,7 @@ body:is(.theme-light, .theme-dark) {
 }
 
 /* << Font Definitions */
-:root { /* stylelint-disable-line no-duplicate-selectors */
+body { /* stylelint-disable-line no-duplicate-selectors */
 	--mobile-font-size: 1.2rem;
 
 	--monospace-font-size: 0.9rem;
@@ -1047,7 +1047,7 @@ body .app-container input,
 .modal-container .modal.mod-settings,
 .modal.mod-community-plugin,
 .modal.mod-community-theme {
-	font-family: var(--interface-font);
+	font-family: var(--font-interface);
 	font-size: var(--menu-font-size);
 }
 
@@ -1623,7 +1623,7 @@ body:not(.show-titlebar-text) .titlebar-text {
 }
 
 .titlebar-text {
-	font-family: var(--interface-font);
+	font-family: var(--font-interface);
 	color: var(--text-normal);
 	margin-left: var(--cover-width);
 	--cover-width: 18ch;
@@ -3664,7 +3664,7 @@ when the plugin has download numbers (new one's don't)  */
 }
 
 .community-plugin-info :is(.community-plugin-version, .community-plugin-author) {
-	font-family: var(--interface-font);
+	font-family: var(--font-interface);
 	font-size: 0.9rem;
 	line-height: 1.4em;
 	letter-spacing: 0.5px;
@@ -3904,7 +3904,7 @@ body:not(.squareish-shapes) .community-plugin-info .community-plugin-author + .c
 .community-theme.is-selected .community-theme-info::AFTER {
 	content: "👉  Most UI elements are only visible when hovered. \A\A⚙️  All hidden UI elements can be re-enabled permanently with the Style Settings Plugin.";
 
-	font-family: var(--interface-font);
+	font-family: var(--font-interface);
 	font-size: 0.8rem;
 	line-height: 1.3rem;
 	letter-spacing: 0.3px;
@@ -7576,7 +7576,7 @@ body .search-suggest-item.mod-group:first-child {
 }
 
 .search-suggest-item:not(:first-child):not(:nth-child(n+7)) {
-	font-family: var(--interface-font);
+	font-family: var(--font-interface);
 	background-color: var(--bg3) !important;
 	border-bottom: var(--thin-border);
 }
@@ -7587,7 +7587,7 @@ body .search-suggest-item.mod-group:first-child {
 }
 
 .search-suggest-item .search-suggest-info-text {
-	font-family: var(--interface-font);
+	font-family: var(--font-interface);
 	font-size: 70%;
 	color: var(--extra-contrast);
 	position: absolute;
@@ -10326,11 +10326,12 @@ body .style-settings-heading[data-level="0"] {
 .style-settings-heading .setting-item-name {
 	font-family: var(--setting-heading);
 	line-height: 1em;
-	margin-bottom: 5px;
+	margin-top: 8px;
+	margin-bottom: 3px;
 }
 
 .style-settings-container .setting-item-description {
-	font-family: var(--interface-font);
+	font-family: var(--font-interface);
 	font-size: 0.8rem;
 	font-weight: 500;
 	line-height: 1.3em;
@@ -10587,7 +10588,7 @@ body:not(.unlock-theme-beta) .style-settings-container .setting-item:is(
 
 /* stylelint-enable selector-max-empty-lines, indentation */
 /* ───────────────────────────────────────────────── */
-/* <<< Style Setting – Info Boxes
+/* <<< Style Settings: Info Boxes
 ──────────────────────────────────────────────────── */
 
 /* Donation */
@@ -10610,7 +10611,7 @@ body:not(.unlock-theme-beta) .style-settings-container .setting-item:is(
 }
 
 .style-settings-heading[data-id="info-donation"] .setting-item-name {
-	font-family: var(--interface-font);
+	font-family: var(--font-interface);
 	font-size: 0.95rem;
 }
 
@@ -10625,12 +10626,12 @@ body:not(.unlock-theme-beta) .style-settings-container .setting-item:is(
 	flex-wrap: wrap;
 }
 
-.modal .setting-item-heading[data-id="shimmering-focus"]::BEFORE,
+.setting-item-heading[data-id="shimmering-focus"]::BEFORE,
 .workspace-leaf-content[data-type="style-settings"] > .view-content > .setting-item:first-child::BEFORE {
 	display: block;
 	content: "ℹ️ Theme Documentation:   chrisgrieser.github.io/shimmering-focus\A🔍 Install the Settings Search Plugin to find settings more quickly.";
 
-	font-family: var(--interface-font);
+	font-family: var(--font-interface);
 	font-weight: 500;
 	line-height: 2em;
 	white-space: pre-wrap;
@@ -11458,7 +11459,7 @@ and file recovery plugin */
 	display: inline-block;
 	content: "⚠️ Note that some of the settings for the Hover Editor have no effect, since they are overriden when in conflict with the styling from 'Shimmering Focus'.";
 
-	font-family: var(--interface-font);
+	font-family: var(--font-interface);
 	font-size: 0.9em;
 
 	color: var(--extra-contrast);
@@ -11466,6 +11467,7 @@ and file recovery plugin */
 	box-shadow: var(--small-inset-shadow);
 
 	padding: 3px 7px 5px;
+	margin-bottom: 15px;
 
 	border: var(--basic-border);
 	border-radius: var(--roundish);
@@ -11923,7 +11925,7 @@ settings:
 # << Typography (+)
 	 id: font-settings
 	 title: 🔠 Typography
-	 description: 'Fonts, Headings, Blockquotes. ⚠️ To accomodate Obsidan's latest font update, some font style settings had to be reset, so you may have to set them once again. (This setting will be overriden when you have set custom fonts in the Obsidian settings.)'
+	 description: "Fonts, Headings, Blockquotes. ⚠️ To accomodate Obsidan's latest font update, some font style settings had to be reset, so you may have to set them once again. (This setting will be overriden when you have set custom fonts in the Obsidian settings.)"
 	 type: heading
 	 level: 1
 	 collapsed: true
