@@ -3,6 +3,7 @@ nav_order: 110
 ---
 
 # Changelog
+- 2022-04-11	floating metadata less space on top & removed now unecessary clean-top cssclass
 - 2022-04-11	header bar hover color without delay
 - 2022-04-11	improvements to markdown editor table
 - 2022-04-11	fix tasks in LP (fix #137)

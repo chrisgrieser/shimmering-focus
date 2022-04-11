@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 1.1198
+Version 1.1199
 Source CSS: https://github.com/chrisgrieser/shimmering-focus/blob/main/source.css
 MIT License
 ──────────────────────────────────────────────────── */
@@ -215,6 +215,7 @@ MIT License
 	- Advanced Cursor
 	- CodeMirror Options
 	- Dataview
+		- dataview cssclasses
 	- QuickSwitcher Plus Plus
 	- Another Quick Switcher
 	- Activity History
@@ -4511,6 +4512,11 @@ body:not(.no-floating-metadata):not(.is-mobile) .markdown-preview-view:not(.no-f
 /* either disabled via Style Setting or via cssclass of the same name (thx @SlRvb) */
 /* idea from @EmrieCandera */
 
+/* less margin for first heading */
+body:not(.no-floating-metadata):not(.is-mobile) .markdown-preview-pusher + div + div :is(h1, h2, h3, h4, h5, h6) {
+	margin-top: 0.2em;
+}
+
 /* base look */
 body:not(.no-floating-metadata):not(.is-mobile) .markdown-preview-view:not(.no-floating-metadata) :is(.frontmatter.language-yaml, .frontmatter-container) {
 	line-height: 2.2em;
@@ -4600,13 +4606,18 @@ body:not(.no-floating-metadata):not(.is-mobile) .markdown-preview-view:not(.no-f
 }
 
 /* interaction with header only visible on hover */
+
+/* stylelint-disable-next-line no-duplicate-selectors */
+:root {
+	--floating-metadata-top-header-visible: 1.05rem;
+}
+
 body:not(.show-header-bar) {
-	--floating-metadata-top: 3.85rem;
-	--floating-metadata-top-header-visible: 2.65rem;
+	--floating-metadata-top: 2.25rem;
 }
 
 body.show-header-bar {
-	--floating-metadata-top: 2.65rem;
+	--floating-metadata-top: var(--floating-metadata-top-header-visible);
 }
 
 body:not(.show-header-bar):not(.no-floating-metadata):not(.is-mobile) .view-header:is(:focus-within, :hover) + .view-content .markdown-preview-view:not(.no-floating-metadata) .frontmatter-container {
@@ -4621,6 +4632,8 @@ body:not(.show-header-bar):not(.no-floating-metadata):not(.is-mobile) .view-head
 
 body:not(.show-header-bar):not(.no-floating-metadata):not(.is-mobile) .markdown-preview-view:not(.no-floating-metadata) :is(.frontmatter.language-yaml, .frontmatter-container) {
 	transition: var(--quick-transition);
+
+	/* so transition only affects movement due to header showing, not for the metadata-hovering */
 	transition-property: top;
 }
 
@@ -6832,24 +6845,10 @@ body:not(.no-fn-indicator) .mod-cm6 .cm-hmd-barelink:not(.cm-formatting-link) + 
 /* ───────────────────────────────────────────────── */
 /* < CSS Classes
 ──────────────────────────────────────────────────── */
-/*
-- writing cssclass is bundled with the styling for the Longform Editor
-- clean-embeds cssclass is in the section for Embeds
-- no-floating-metadata cssclass is in the section for Floating Metadata */
-
-/* clean top */
-.clean-top :is(.BC-trail, .frontmatter-container, .frontmatter.language-yaml) {
-	display: none;
-}
-
-.clean-top h1 {
-	margin-top: 0.2em;
-}
-
-/* dataview tables without lines */
-.markdown-preview-view.dataview-list-in-table table.dataview > :is(thead, tbody) > tr > :is(th, td) {
-	border-left: none;
-}
+/* - writing cssclass is bundled with the styling for the Longform Editor
+	- clean-embeds cssclass is in the section for Embeds
+	- no-floating-metadata cssclass is in the section for Floating Metadata
+	- dataview-related css classes are int he dataview section */
 
 /* 2 column cards */
 .list-2-col-cards {
@@ -6879,6 +6878,7 @@ body:not(.no-fn-indicator) .mod-cm6 .cm-hmd-barelink:not(.cm-formatting-link) + 
 	content: "";
 }
 
+/* bibliography list */
 .bibliography-list li {
 	margin-left: 1.5em;
 	text-indent: -2.2em;
@@ -6888,14 +6888,12 @@ body:not(.no-fn-indicator) .mod-cm6 .cm-hmd-barelink:not(.cm-formatting-link) + 
 	content: "";
 }
 
-.remove-dataview-title .block-language-dataview h4 {
-	display: none;
-}
-
+/* no inline backlinks */
 .no-inline-backlinks .embedded-backlinks {
 	display: none;
 }
 
+/* full-width */
 .full-width.full-width .markdown-preview-section,
 .full-width.full-width.full-width.full-width.full-width.markdown-source-view.mod-cm6.is-readable-line-width :is(.cm-content, .cm-contentContainer, .cm-contentContainer .cm-line) {
 	max-width: 100%;
@@ -10103,6 +10101,17 @@ body .dataview.inline-field-key {
 	border-top-left-radius: var(--roundish);
 }
 
+/* <<< dataview cssclasses */
+
+/* dataview tables without lines */
+.markdown-preview-view.dataview-list-in-table table.dataview > :is(thead, tbody) > tr > :is(th, td) {
+	border-left: none;
+}
+
+.remove-dataview-title .block-language-dataview h4 {
+	display: none;
+}
+
 /* ───────────────────────────────────────────────── */
 /* << QuickSwitcher Plus Plus
 ──────────────────────────────────────────────────── */
@@ -12248,7 +12257,7 @@ settings:
 	-
 	 id: post-it-callout-size
 	 title: Size of Post-it Callouts
-	 description: 'Affects callouts with "> [!post-it]". Mind that this variable affects width *and* height (quadratic growth).'
+	 description: 'Affects callouts with "> [!post-it]". This variable affects width *and* height (i.e., quadratic growth). Mind that post-it's with too much content get cut off — they are post-its after all.'
 	 type: variable-number-slider
 	 default: 135
 	 min: 90
