@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 1.1205
+Version 1.1206
 Source CSS: https://github.com/chrisgrieser/shimmering-focus/blob/main/source.css
 MIT License
 ──────────────────────────────────────────────────── */
@@ -408,7 +408,7 @@ settings:
 	-
 	 id: font-settings
 	 title: 🔠 Typography
-	 description: Fonts, Headings, Blockquotes
+	 description: 'Fonts, Headings, Blockquotes. ⚠️ To accomodate Obsidan's latest font update, some font style settings had to be reset, so you may have to set them once again. (This setting will be overriden when you have set custom fonts in the Obsidian settings.)'
 	 type: heading
 	 level: 1
 	 collapsed: true
