@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 1.1210
+Version 1.1211
 Source CSS: https://github.com/chrisgrieser/shimmering-focus/blob/main/source.css
 MIT License
 ──────────────────────────────────────────────────── */
@@ -1802,7 +1802,7 @@ body > div.notice-container .notice:hover {
 /* << Header Bar (Desktop)
 ──────────────────────────────────────────────────── */
 
-body {
+body { /* stylelint-disable-line no-duplicate-selectors */
 	--hidden-header-hotarea-height: 1.2em;
 	--visible-header-height: 1.9em;
 }
