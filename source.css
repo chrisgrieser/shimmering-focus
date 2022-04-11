@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 1.1203
+Version 1.1204
 Source CSS: https://github.com/chrisgrieser/shimmering-focus/blob/main/source.css
 MIT License
 ──────────────────────────────────────────────────── */
@@ -436,19 +436,19 @@ MIT License
 
 /* <<< Secondary Accent (references, tags, code, finished tasks) */
 .theme-light {
-	--sucess-color: var(--secondary-accent-2);
-	--reference-color: var(--secondary-accent-2);
-	--tag-text-color: var(--secondary-accent-2);
-	--code-color: var(--secondary-accent-2);
-	--finished-task: var(--secondary-accent-2);
-}
-
-.theme-dark {
 	--sucess-color: var(--secondary-accent-1);
 	--reference-color: var(--secondary-accent-1);
 	--tag-text-color: var(--secondary-accent-1);
 	--code-color: var(--secondary-accent-1);
 	--finished-task: var(--secondary-accent-1);
+}
+
+.theme-dark {
+	--sucess-color: var(--secondary-accent-2);
+	--reference-color: var(--secondary-accent-2);
+	--tag-text-color: var(--secondary-accent-2);
+	--code-color: var(--secondary-accent-2);
+	--finished-task: var(--secondary-accent-2);
 }
 
 /* <<< Tertiary Accent (Bold & Italics) */
