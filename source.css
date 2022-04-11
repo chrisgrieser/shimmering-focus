@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 1.1194
+Version 1.1195
 Source CSS: https://github.com/chrisgrieser/shimmering-focus/blob/main/source.css
 MIT License
 ──────────────────────────────────────────────────── */
@@ -1932,15 +1932,19 @@ body:not(.classic-statusbar) .status-bar {
 .status-bar::AFTER {
 	color: var(--extra-contrast);
 	padding: 0;
-	margin-right: 11px; /* space between status bar items */
+	margin-right: 9px; /* space between status bar items */
 }
 
 body:not(.hide-signature) .status-bar::AFTER {
 	content: var(--signature);
+
 	font-size: calc(var(--status-bar-font-size) * 1.1);
 	font-weight: 500;
+
 	position: relative;
 	bottom: 1px;
+
+	padding-right: 5px;
 }
 
 .classic-statusbar .status-bar.status-bar.status-bar {
@@ -1975,10 +1979,6 @@ body:not(.permanently-show-statusbar, .minimal-status-bar, .classic-statusbar) .
 	box-shadow: none;
 	padding-bottom: 3px;
 	border: none;
-}
-
-.minimal-status-bar .status-bar::AFTER {
-	margin-right: 6px;
 }
 
 /* fix so stuff on the bottom of the right sidebar can still be clicked */
@@ -6523,13 +6523,12 @@ body:not(.hide-trailing-whitespace) .cm-trailing-space-new-line::BEFORE {
 	position: absolute;
 }
 
-/* preview mode */
+/* Preview mode / LP */
 /* https://forum.obsidian.md/t/meta-post-common-css-hacks/1978/34 */
-body ul > li.task-list-item .task-list-item-checkbox {
+input.task-list-item-checkbox[type="checkbox"] {
 	background-color: unset;
 
 	margin-top: 1.5px;
-	margin-left: -19px;
 
 	border: 2px solid var(--hr-line-gray);
 	border-radius: calc(var(--round) * 0.7);
@@ -6541,8 +6540,8 @@ body ul > li.task-list-item .task-list-item-checkbox {
 	vertical-align: top;
 }
 
-ul li.task-list-item.is-checked {
-	border-radius: var(--roundish);
+.is-live-preview .task-list-item-checkbox[type="checkbox"] {
+	margin-left: -4px;
 }
 
 input[type="checkbox"]:checked {
