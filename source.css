@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 1.1201
+Version 1.1202
 Source CSS: https://github.com/chrisgrieser/shimmering-focus/blob/main/source.css
 MIT License
 ──────────────────────────────────────────────────── */
@@ -9440,7 +9440,16 @@ body:not(.longform-left-aligned) :is(.writing, .longform-leaf) :is(.cm-line:not(
 	hyphens: auto;
 }
 
-/* style headings */
+/* line height */
+:is(.writing, .longform-leaf) .cm-line {
+	line-height: 1.05em;
+}
+
+:is(.writing, .longform-leaf) .cm-line > :not(.cm-hmd-frontmatter) {
+	line-height: 1.3em;
+}
+
+/* headings */
 .writing.writing :is(h1, h2, h3, h4, h5, h6),
 :is(.writing, .longform-leaf) .cm-header.cm-header,
 .longform-leaf.longform-leaf :is(h1, h2, h3, h4, h5, h6) {
