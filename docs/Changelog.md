@@ -3,6 +3,7 @@ nav_order: 110
 ---
 
 # Changelog
+- 2022-04-11	header bar hover color without delay
 - 2022-04-11	improvements to markdown editor table
 - 2022-04-11	fix tasks in LP (fix #137)
 - 2022-04-10	fix justification issues for longform / writing notes

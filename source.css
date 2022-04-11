@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 1.1197
+Version 1.1198
 Source CSS: https://github.com/chrisgrieser/shimmering-focus/blob/main/source.css
 MIT License
 ──────────────────────────────────────────────────── */
@@ -1884,9 +1884,16 @@ body:not(.is-mobile):not(.plugin-sliding-panes-rotate-header) .view-header:focus
 /* ----------- */
 body:not(.show-header-bar):not(.plugin-sliding-panes-rotate-header) .view-header:hover + .view-content :is(.markdown-preview-view, .cm-scroller),
 body:not(.show-header-bar):not(.plugin-sliding-panes-rotate-header) .view-header:hover + .view-content,
-body:not(.show-header-bar):not(.plugin-sliding-panes-rotate-header) .view-header:hover *,
 body:not(.show-header-bar):not(.plugin-sliding-panes-rotate-header) .view-header:hover {
 	transition-delay: var(--transition-delay-passing-over-protection);
+}
+
+body:not(.show-header-bar):not(.plugin-sliding-panes-rotate-header) .view-header:hover *:not(:hover) {
+	/* this ensures that the transition delay is only applied to opacity,
+	i.e. the showing/hiding of the header, not the hover-accent when
+	the item themselves are hovered */
+	transition-delay: var(--transition-delay-passing-over-protection);
+	transition-property: opacity;
 }
 
 .view-header {
