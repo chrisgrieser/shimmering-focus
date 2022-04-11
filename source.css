@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 1.1204
+Version 1.1205
 Source CSS: https://github.com/chrisgrieser/shimmering-focus/blob/main/source.css
 MIT License
 ──────────────────────────────────────────────────── */
@@ -937,24 +937,15 @@ body:is(.theme-light, .theme-dark) {
 
 /* << Font Definitions */
 :root { /* stylelint-disable-line no-duplicate-selectors */
-	--editor-font-family: "iA Writer Quattro S";
-
 	--mobile-font-size: 1.2rem;
-	--mobile-editor-font-family: "iA Writer Quattro S";
-	--mobile-menu-font-family: "Recursive S";
-	--mobile-ui-font-family: "Recursive S";
 
-	--font-monospace: "Input Mono S";
 	--monospace-font-size: 0.9rem;
 
-	--longform-font: "Crimson Pro S";
+	--longform-font-text-theme: "Crimson Pro S";
 	--longform-font-size: 1.2rem;
 
-	--ui-font-family: "Recursive S";
 	--sidebar-font-size: 0.85rem;
 	--status-bar-font-size: 0.85rem;
-
-	--menu-font-family: "Recursive S";
 	--menu-font-size: 1rem;
 
 	--footnote-text-size: 85%;
@@ -973,20 +964,34 @@ body:is(.theme-light, .theme-dark) {
 	--h5: 1.15em;
 	--h6: 1.05em;
 
-	/* needed for some edge cases */
-	--original-font: "Inter", -apple-system, blinkmacsystemfont, "Segoe UI", roboto, helvetica, arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Microsoft YaHei Light", sans-serif;
+	/* new with Obsidian 0.14.5 */
+	--font-text-theme: "iA Writer Quattro S";
+	--font-interface-theme: "Recursive S";
+	--font-monospace-theme: "Input Mono S";
+
+	/* not used in Obsidian core, but used here mimicking the same logic */
+	--mobile-font-text-theme: "iA Writer Quattro S";
+	--mobile-font-interface-theme: "Recursive S";
 }
 
-body:not(.is-mobile) {
-	--default-font: var(--editor-font-family);
-	--menu-font: var(--menu-font-family);
-	--ui-font: var(--ui-font-family);
+/* REFERENCE: How fonts are defined in default Obsidian
+- overrides are the user fonts from Obsidian settings (Appearance ➞ Font)
+- theme fonts are the one that should be set by this theme / the style settings
+- last are the fonts used in Obsidian's default theme
+body {
+--font-interface: var(--font-interface-override), var(--font-interface-theme), var(--font-default);
+--font-text: var(--font-text-override), var(--font-text-theme), var(--font-interface);
+--font-monospace: var(--font-monospace-override), var(--font-monospace-theme), 'Source Code Pro', monospace;
+} */
+
+/* mimicking Obsidian's font override style */
+.is-mobile.is-mobile {
+	--font-text: var(--font-text-override), var(--mobile-font-text-theme);
+	--font-interface: var(--font-interface-override), var(--mobile-font-interface-theme);
 }
 
-.is-mobile {
-	--default-font: var(--mobile-editor-font);
-	--menu-font: var(--mobile-menu-font-family);
-	--ui-font: var(--mobile-ui-font-family);
+body :is(.longform-leaf, .writing) {
+	--font-text: var(--longform-font-text-theme);
 }
 
 body:not(.less-heading-letter-spacing) {
@@ -1042,7 +1047,7 @@ body .app-container input,
 .modal-container .modal.mod-settings,
 .modal.mod-community-plugin,
 .modal.mod-community-theme {
-	font-family: var(--menu-font);
+	font-family: var(--interface-font);
 	font-size: var(--menu-font-size);
 }
 
@@ -1618,7 +1623,7 @@ body:not(.show-titlebar-text) .titlebar-text {
 }
 
 .titlebar-text {
-	font-family: var(--menu-font);
+	font-family: var(--interface-font);
 	color: var(--text-normal);
 	margin-left: var(--cover-width);
 	--cover-width: 18ch;
@@ -3092,10 +3097,6 @@ body .app-container .workspace-leaf-resize-handle:hover {
 /* << Confirmation Modal
 ──────────────────────────────────────────────────── */
 
-.mod-confirmation input[type="text"] {
-	width: 65%;
-}
-
 .mod-confirmation .modal-title {
 	font-family: var(--smallcap-font);
 	font-size: var(--h1);
@@ -3142,7 +3143,7 @@ body .app-container .workspace-leaf-resize-handle:hover {
 	font-weight: 600;
 
 	padding-bottom: 0;
-	margin-top: 12px;
+	margin-top: 5px;
 	margin-bottom: 5px;
 
 	border-bottom: var(--muted-border);
@@ -3546,7 +3547,7 @@ body .app-container .workspace-leaf-resize-handle:hover {
 .flair.mod-pop::BEFORE {
 	content: "✓";
 
-	font-family: var(--original-font);
+	font-family: var(--font-default);
 	font-size: 0.65rem;
 	line-height: 0.8em;
 
@@ -3663,7 +3664,7 @@ when the plugin has download numbers (new one's don't)  */
 }
 
 .community-plugin-info :is(.community-plugin-version, .community-plugin-author) {
-	font-family: var(--menu-font);
+	font-family: var(--interface-font);
 	font-size: 0.9rem;
 	line-height: 1.4em;
 	letter-spacing: 0.5px;
@@ -3903,7 +3904,7 @@ body:not(.squareish-shapes) .community-plugin-info .community-plugin-author + .c
 .community-theme.is-selected .community-theme-info::AFTER {
 	content: "👉  Most UI elements are only visible when hovered. \A\A⚙️  All hidden UI elements can be re-enabled permanently with the Style Settings Plugin.";
 
-	font-family: var(--menu-font);
+	font-family: var(--interface-font);
 	font-size: 0.8rem;
 	line-height: 1.3rem;
 	letter-spacing: 0.3px;
@@ -4947,16 +4948,8 @@ img[src*="img.shields.io" i][src][src][src][src][src] {
 /* ───────────────────────────────────────────────── */
 /* << Mermaid
 ──────────────────────────────────────────────────── */
-/* see also "Max View" */
-
 body:not(.left-aligned-embeds) div.mermaid {
 	text-align: center;
-}
-
-/* bugfix for mermaid font */
-.mermaid {
-	font-size: 0.9em;
-	--mermaid-font: var(--original-font);
 }
 
 /* ───────────────────────────────────────────────── */
@@ -6269,7 +6262,7 @@ a.tag:hover {
 
 /* ensures equal height of "#" and text of tags */
 .cm-formatting.cm-formatting-hashtag.cm-hashtag-begin.cm-hashtag.cm-meta {
-	font-family: var(--default-font);
+	font-family: var(--font-text);
 }
 
 /* Tags in Gutter */
@@ -6327,7 +6320,7 @@ body:not(.annotation-tags-off) .cm-s-obsidian .cm-line span:is(.cm-tag-litreview
 /* annotation tags in longform notes */
 body:not(.annotation-tags-off) .longform-leaf .tag:is([href="#goal"], [href="#question"], [href="#gap"], [href="#main"], [href="#disagree"], [href="#summary"], [href="#agree"], [href="#example"], [href="#definition"], [href="#method"], [href="#data"], [href="#important"], [href="#quote"], [href="#todo"], [href="#critique"], [href="#sidenote"], [href="#litreview"]),
 body:not(.annotation-tags-off) .longform-leaf .cm-s-obsidian .cm-line span:is(.cm-tag-litreview, .cm-tag-sidenote, .cm-tag-goal, .cm-tag-critique, .cm-tag-todo, .cm-tag-quote, .cm-tag-method, .cm-tag-data, .cm-tag-disagree, .cm-tag-gap, .cm-tag-summary, .cm-tag-definition, .cm-tag-question, .cm-tag-main, .cm-tag-agree, .cm-tag-important, .cm-tag-example) {
-	font-family: var(--longform-font);
+	font-family: var(--longform-font-text-theme);
 	font-size: var(--longform-font-size);
 }
 
@@ -6341,7 +6334,7 @@ body:not(.annotation-tags-off) .cm-s-obsidian .cm-line .cm-hashtag-begin:is(.cm-
 
 /* the tag text */
 body:not(.annotation-tags-off) .cm-s-obsidian .cm-line .cm-hashtag-end:is(.cm-tag-litreview, .cm-tag-sidenote, .cm-tag-goal, .cm-tag-critique, .cm-tag-todo, .cm-tag-quote, .cm-tag-method, .cm-tag-data, .cm-tag-disagree, .cm-tag-gap, .cm-tag-summary, .cm-tag-definition, .cm-tag-question, .cm-tag-main, .cm-tag-agree, .cm-tag-important, .cm-tag-example) {
-	font-family: var(--default-font); /* fixes their appearance in headings */
+	font-family: var(--font-text); /* fixes their appearance in headings */
 	padding-left: 0;
 	border-bottom-left-radius: 0;
 	border-top-left-radius: 0;
@@ -6488,7 +6481,7 @@ body .cm-s-obsidian :is(.cm-hmd-escape-char, .cm-hmd-escape-backslash) {
 
 /* fix for tag/hashtag height difference when selected */
 .cm-tag:not(.cm-hmd-codeblock) {
-	font-family: var(--default-font);
+	font-family: var(--font-text);
 }
 
 body .app-container span:is(.cm-tag.cm-bracket.cm-hmd-html-begin, .cm-tag.cm-bracket.cm-hmd-html-end, .cm-tag) {
@@ -7583,7 +7576,7 @@ body .search-suggest-item.mod-group:first-child {
 }
 
 .search-suggest-item:not(:first-child):not(:nth-child(n+7)) {
-	font-family: var(--menu-font);
+	font-family: var(--interface-font);
 	background-color: var(--bg3) !important;
 	border-bottom: var(--thin-border);
 }
@@ -7594,7 +7587,7 @@ body .search-suggest-item.mod-group:first-child {
 }
 
 .search-suggest-item .search-suggest-info-text {
-	font-family: var(--menu-font);
+	font-family: var(--interface-font);
 	font-size: 70%;
 	color: var(--extra-contrast);
 	position: absolute;
@@ -8633,7 +8626,7 @@ body :is(.kanban-plugin__drag-container,.kanban-plugin) p {
 }
 
 body .app-container :is(.kanban-plugin__drag-container,.kanban-plugin) :is(h1, h2, h3, h4, h5, h6) {
-	font-family: var(--default-font);
+	font-family: var(--font-text);
 	letter-spacing: 0.5px;
 
 	color: var(--text-normal);
@@ -9419,7 +9412,6 @@ select#longform-workflows:hover {
 .longform-leaf .markdown-preview-view,
 .longform-leaf .markdown-source-view.mod-cm5,
 .longform-leaf .mod-cm6.cm-s-obsidian .cm-contentContainer {
-	font-family: var(--longform-font);
 	font-size: var(--longform-font-size);
 }
 
@@ -9455,7 +9447,7 @@ body:not(.longform-left-aligned) :is(.writing, .longform-leaf) :is(.cm-line:not(
 .writing.writing :is(h1, h2, h3, h4, h5, h6),
 :is(.writing, .longform-leaf) .cm-header.cm-header,
 .longform-leaf.longform-leaf :is(h1, h2, h3, h4, h5, h6) {
-	font-family: var(--longform-font);
+	font-family: var(--longform-font-text-theme);
 	line-height: 1em;
 }
 
@@ -9809,7 +9801,7 @@ body .app-container .workspace-leaf-content[data-type="BC-matrix"] .view-content
 .BC-Matrix-square .BC-Matrix-headers h4.BC-Matrix-header {
 	display: inline-flex;
 
-	font-family: var(--default-font);
+	font-family: var(--font-text);
 	font-size: 1.1em;
 	font-style: unset;
 
@@ -10338,7 +10330,7 @@ body .style-settings-heading[data-level="0"] {
 }
 
 .style-settings-container .setting-item-description {
-	font-family: var(--menu-font);
+	font-family: var(--interface-font);
 	font-size: 0.8rem;
 	font-weight: 500;
 	line-height: 1.3em;
@@ -10618,7 +10610,7 @@ body:not(.unlock-theme-beta) .style-settings-container .setting-item:is(
 }
 
 .style-settings-heading[data-id="info-donation"] .setting-item-name {
-	font-family: var(--menu-font-family);
+	font-family: var(--interface-font);
 	font-size: 0.95rem;
 }
 
@@ -10638,7 +10630,7 @@ body:not(.unlock-theme-beta) .style-settings-container .setting-item:is(
 	display: block;
 	content: "ℹ️ Theme Documentation:   chrisgrieser.github.io/shimmering-focus\A🔍 Install the Settings Search Plugin to find settings more quickly.";
 
-	font-family: var(--menu-font);
+	font-family: var(--interface-font);
 	font-weight: 500;
 	line-height: 2em;
 	white-space: pre-wrap;
@@ -11466,7 +11458,7 @@ and file recovery plugin */
 	display: inline-block;
 	content: "⚠️ Note that some of the settings for the Hover Editor have no effect, since they are overriden when in conflict with the styling from 'Shimmering Focus'.";
 
-	font-family: var(--menu-font);
+	font-family: var(--interface-font);
 	font-size: 0.9em;
 
 	color: var(--extra-contrast);
@@ -11943,14 +11935,15 @@ settings:
 	 level: 2
 	 collapsed: true
 	-
-	 id: editor-font-family
-	 title: Editor Font (Desktop)
+	 id: font-text-theme
+	 title: Text Font (Desktop)
+	 description: 'Used in Reading and Editing Mode. ⚠️ This setting will be overriden when you have set a custom text font in the Obsidian settings (Appearance ➞ Font ➞ Text Font).'
 	 type: variable-text
 	 default: '"iA Writer Quattro S"'
 	-
-	 id: font-monospace
+	 id: font-monospace-theme
 	 title: Monospace Font
-	 description: Used in Code blocks, YAML headers, tables & MathJax in Source Mode
+	 description: 'Used in Code blocks, YAML headers, tables & MathJax in Source Mode. ⚠️ This setting will be overriden when you have set a custom monospace font in the Obsidian settings (Appearance ➞ Font ➞ Monospace Font).'
 	 type: variable-text
 	 default: '"Input Mono S"'
 	-
@@ -11963,9 +11956,9 @@ settings:
 	 step: 0.05
 	 format: rem
 	-
-	 id: ui-font-family
-	 title: UI Font (Desktop)
-	 description: Affects the left side bar, right side bar, status bar, and header bar.
+	 id: font-interface-theme
+	 title: Interace Font (Desktop)
+	 description: 'Affects the sidebars, header bar, status bar, and menus.  ⚠️ This setting will be overriden when you have set a custom interface font in the Obsidian settings (Appearance ➞ Font ➞ Interface Font).'
 	 type: variable-text
 	 default: '"Recursive S"'
 	-
@@ -11988,14 +11981,9 @@ settings:
 	 step: 0.05
 	 format: rem
 	-
-	 id: menu-font-family
-	 title: Menu Font (Desktop)
-	 description: Affects the settings menu, plugin browser and theme browser.
-	 type: variable-text
-	 default: '"Recursive S"'
-	-
 	 id: menu-font-size
 	 title: Menu Font Size
+	 description: Affects the settings menu, plugin browser and theme browser.
 	 type: variable-number-slider
 	 default: 1
 	 min: 0.7
@@ -12493,20 +12481,15 @@ settings:
 	 step: 0.05
 	 format: rem
 	-
-	 id: mobile-editor-font-family
-	 title: Editor Font (Mobile)
+	 id: mobile-font-text-theme
+	 title: Text Font (Mobile)
+	 description: 'Used in Reading and Editing Mode. ⚠️ This setting will be overriden when you have set a custom text font in the Obsidian settings (Appearance ➞ Font ➞ Text Font).'
 	 type: variable-text
 	 default: '"iA Writer Quattro S"'
 	-
-	 id: mobile-menu-font-family
+	 id: mobile-font-interface-theme
 	 title: Menu Font (Mobile)
-	 description: Affects the settings menu, plugin browser and theme browser.
-	 type: variable-text
-	 default: '"Recursive S"'
-	-
-	 id: mobile-ui-font-family
-	 title: UI Font (Mobile)
-	 description: Affects the left side bar, right side bar, status bar, and header bar.
+	 description: 'Affects the sidebars, header bar, status bar, and menus.  ⚠️ This setting will be overriden when you have set a custom interface font in the Obsidian settings (Appearance ➞ Font ➞ Interface Font).'
 	 type: variable-text
 	 default: '"Recursive S"'
 	-
