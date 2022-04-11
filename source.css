@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 1.1196
+Version 1.1197
 Source CSS: https://github.com/chrisgrieser/shimmering-focus/blob/main/source.css
 MIT License
 ──────────────────────────────────────────────────── */
@@ -11309,18 +11309,19 @@ and file recovery plugin */
 }
 
 .mte.button-container:nth-child(2) {
-	display: none; /* redundant */
+	display: none;
 }
 
 .mte.button-container:nth-child(1) > input {
+	width: 3.2em;
 	background-color: var(--bg1);
-	margin: 0 15px 0 0;
+	margin: 0 15px 6px -1.3em;
 }
 
 .mte.mte button {
 	font-size: 75%;
 
-	height: 30px;
+	height: 29px; /* same as input height */
 
 	color: var(--text-normal);
 	background-color: var(--muted-button-bg);
@@ -11334,6 +11335,7 @@ and file recovery plugin */
 
 .mte.grid {
 	margin: 5px;
+	outline: var(--basic-border);
 }
 
 .mte.cell.cell.cell.cell.cell.cell {
