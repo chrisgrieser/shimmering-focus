@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 1.1218
+Version 1.1219
 Source CSS: https://github.com/chrisgrieser/shimmering-focus/blob/main/source.css
 MIT License
 ──────────────────────────────────────────────────── */
@@ -4720,21 +4720,32 @@ body:not(.permanently-show-collapse-indicators) .cm-line:not(:hover):not(.cm-act
 }
 
 /* the "..." when content is folded */
+.cm-foldPlaceholder.cm-foldPlaceholder.cm-foldPlaceholder.cm-foldPlaceholder {
+	visibility: hidden;
+}
+
 .cm-foldPlaceholder::BEFORE {
 	content: "unfold_more";
 
 	font-family: var(--icon-font);
-	font-size: 1.5rem;
+	font-size: 1.4rem;
 	line-height: 1em;
 
+	background-color: var(--bg2);
+
 	position: relative;
-	top: 2px;
+	top: 4px;
+
+	padding-bottom: 1px;
+
+	border-radius: var(--roundish);
 
 	visibility: visible;
 }
 
-.cm-foldPlaceholder.cm-foldPlaceholder.cm-foldPlaceholder.cm-foldPlaceholder {
-	visibility: hidden;
+.cm-foldPlaceholder:hover::BEFORE {
+	color: var(--hover-accent-2);
+	background-color: var(--bg3);
 }
 
 /* CM5 */
