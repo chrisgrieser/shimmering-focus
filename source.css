@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 1.1200
+Version 1.1201
 Source CSS: https://github.com/chrisgrieser/shimmering-focus/blob/main/source.css
 MIT License
 ──────────────────────────────────────────────────── */
@@ -6226,7 +6226,14 @@ body:not(.no-unresolved-link-indicator) .cm-editor .is-unresolved::BEFORE {
 	font-size: 1rem;
 	background-color: var(--bg1);
 	position: absolute;
-	left: 28px;
+}
+
+body:not(.no-unresolved-link-indicator) .cm-editor .is-unresolved::BEFORE {
+	left: -2.8em;
+}
+
+body:not(.no-unresolved-link-indicator) .markdown-preview-view .is-unresolved::BEFORE {
+	left: 1.8em;
 }
 
 div > ul > li > ul > li > .is-unresolved.is-unresolved.is-unresolved::BEFORE {

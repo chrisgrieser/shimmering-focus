@@ -3,6 +3,7 @@ nav_order: 110
 ---
 
 # Changelog
+- 2022-04-11	fix unresolved link indicators in LP
 - 2022-04-11	hotfix
 - 2022-04-11	floating metadata less space on top & removed now unecessary clean-top cssclass
 - 2022-04-11	header bar hover color without delay
