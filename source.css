@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 1.1207
+Version 1.1208
 Source CSS: https://github.com/chrisgrieser/shimmering-focus/blob/main/source.css
 MIT License
 ──────────────────────────────────────────────────── */
@@ -642,7 +642,7 @@ body:is(.theme-light, .theme-dark) {
 	--medium-reverted-inset-shadow: 2px 2px 1px var(--inset-shadow-color) inset;
 	--big-reverted-inset-shadow: 2px 2px 3px 1px hsl(0 0% 25% / 40%) inset;
 	--button-inset-shadow: -1.5px -1.5px 2px var(--inset-shadow-color) inset;
-	--muted-button-inset-shadow: -2px -2px 2px var(--inset-shadow-color) inset;
+	--muted-button-inset-shadow: -1.5px -1.5px 1px var(--inset-shadow-color) inset;
 	--notice-inset-shadow: -1px -1px 2px var(--inset-shadow-color) inset;
 }
 
@@ -1039,7 +1039,7 @@ body .app-container input,
 /* Core Plugins */
 .workspace-tabs .workspace-leaf .workspace-leaf-content .view-content div,
 .workspace-tabs .workspace-leaf .workspace-leaf-content .view-content {
-	font-family: var(--ui-font);
+	font-family: var(--font-interface);
 	font-size: var(--sidebar-font-size);
 }
 
@@ -1835,7 +1835,7 @@ body.show-header-bar:not(.is-mobile):not(.plugin-sliding-panes-rotate-header) .w
 }
 
 body .view-header-title {
-	font-family: var(--ui-font);
+	font-family: var(--font-interface);
 	font-size: 0.9em;
 	font-weight: 500;
 	line-height: 2;
@@ -1924,7 +1924,7 @@ body:not(.plugin-sliding-panes) .view-header:focus-within + .view-content {
 ──────────────────────────────────────────────────── */
 
 body:not(.classic-statusbar) .status-bar {
-	font-family: var(--ui-font);
+	font-family: var(--font-interface);
 	line-height: 1;
 
 	max-height: var(--status-bar-height);
@@ -6272,7 +6272,7 @@ a.tag:hover {
 .tags-in-gutter :not(.frontmatter-section-tags) > a.tag::AFTER {
 	content: attr(href);
 
-	font-family: var(--ui-font);
+	font-family: var(--font-interface);
 	font-size: 0.7em;
 	font-weight: 500;
 	white-space: nowrap;
@@ -10177,7 +10177,7 @@ body .qsp-symbol-indicator {
 }
 
 .another-quick-switcher__item__descriptions {
-	font-family: var(--ui-font);
+	font-family: var(--font-interface);
 	line-height: 1em;
 }
 
@@ -10294,6 +10294,10 @@ body .qsp-symbol-indicator {
 	border-top: none;
 }
 
+.style-settings-heading :is(.setting-item-title, .setting-item-description) {
+	margin-left: 1px;
+}
+
 body .style-settings-heading[data-level="0"] {
 	margin-bottom: 15px;
 }
@@ -10305,7 +10309,7 @@ body .style-settings-heading[data-level="0"] {
 }
 
 .style-settings-heading[data-id="shimmering-focus"] + .style-settings-container .style-settings-heading[data-level="2"] .setting-item-name {
-	font-family: var(--ui-font);
+	font-family: var(--font-interface);
 	font-size: 0.8em;
 	font-weight: 500;
 }
@@ -10613,6 +10617,7 @@ body:not(.unlock-theme-beta) .style-settings-container .setting-item:is(
 .style-settings-heading[data-id="info-donation"] .setting-item-name {
 	font-family: var(--font-interface);
 	font-size: 0.95rem;
+	margin-top: 0;
 }
 
 .style-settings-heading[data-id="info-donation"] .setting-item-name:hover {
@@ -11714,7 +11719,7 @@ settings:
 			value: custom-colors
 	-
 	 id: custom-color-light-mode
-	 title: '☀️ Light Mode'
+	 title: '🔆 Light Mode'
 	 description: Custom Colors
 	 type: heading
 	 level: 2
@@ -11994,7 +11999,7 @@ settings:
 	 format: rem
 	-
 	 id: heading-font-options
-	 title: '#️⃣ Headings'
+	 title: 🔼 Headings
 	 description: Font Size per Heading Level, Background, Level Indicator, Letter Spacing
 	 type: heading
 	 level: 2
@@ -12084,7 +12089,7 @@ settings:
 	 format: em
 	-
 	 id: blockquote-font-options
-	 title: 💬 Blockquotes
+	 title: ⏹ Blockquotes
 	 description: Relative Font Size, Alignment, Decoration
 	 type: heading
 	 level: 2

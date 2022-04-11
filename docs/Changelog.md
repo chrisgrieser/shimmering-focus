@@ -3,6 +3,7 @@ nav_order: 110
 ---
 
 # Changelog
+- 2022-04-11	patch
 - 2022-04-11	hotfix fonts
 - 2022-04-11	add info on font style settings reset to style settings menu
 - 2022-04-11	theme fonts overriden by new Obsidian settings, change in font variables in style settings
