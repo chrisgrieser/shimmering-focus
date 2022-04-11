@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 1.1211
+Version 1.1212
 Source CSS: https://github.com/chrisgrieser/shimmering-focus/blob/main/source.css
 MIT License
 ──────────────────────────────────────────────────── */
@@ -9457,15 +9457,16 @@ body:not(.longform-left-aligned) :is(.writing, .longform-leaf) :is(.cm-line:not(
 /* line height */
 .writing.markdown-preview-view table,
 .longform-leaf .markdown-preview-view table {
-	line-height: 1.3rem;
+	line-height: 1.3em;
 }
 
-:is(.writing, .longform-leaf) :is(.cm-line, .cm-line > :is(.cm-header, .cm-hmd-frontmatter)) {
-	line-height: 1.1em;
-}
-
-:is(.writing, .longform-leaf) .cm-line > :not(.cm-header, .cm-hmd-frontmatter) {
+:is(.writing, .longform-leaf) .cm-line :not(.cm-header, .cm-hmd-frontmatter),
+:is(.writing, .longform-leaf) .cm-line {
 	line-height: 1.35em;
+}
+
+:is(.writing, .longform-leaf) .cm-line > :is(.cm-header, .cm-hmd-frontmatter) {
+	line-height: 1.15em;
 }
 
 .app-container :is(.writing, .longform-leaf) pre[class*="language-"]::BEFORE {
