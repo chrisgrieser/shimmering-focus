@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 1.1208
+Version 1.1209
 Source CSS: https://github.com/chrisgrieser/shimmering-focus/blob/main/source.css
 MIT License
 ──────────────────────────────────────────────────── */
@@ -1925,7 +1925,7 @@ body:not(.plugin-sliding-panes) .view-header:focus-within + .view-content {
 
 body:not(.classic-statusbar) .status-bar {
 	font-family: var(--font-interface);
-	line-height: 1;
+	line-height: 1em;
 
 	max-height: var(--status-bar-height);
 
@@ -1940,6 +1940,15 @@ body:not(.classic-statusbar) .status-bar {
 	border-top: 2px ridge var(--basic-border-color);
 	border-left: 2px ridge var(--basic-border-color);
 	border-top-left-radius: var(--roundish);
+}
+
+/* when permanently visible, safe space */
+body.permanently-show-statusbar .status-bar {
+	padding: 1px 0 3px 6px;
+}
+
+body.permanently-show-statusbar .status-bar.status-bar::AFTER {
+	padding-right: 0;
 }
 
 .status-bar-item,
@@ -2449,7 +2458,7 @@ body:not(.no-search-result-indicator) .obsidian-search-match-highlight::BEFORE {
 	background-color: var(--bg1); /* so they cover footnote indicators when overlapping */
 
 	position: absolute;
-	left: -50px;
+	left: -57px;
 	z-index: 5;
 }
 
@@ -4342,7 +4351,7 @@ body:not(.no-active-highlight) .cm-active :is(.cm-formatting-header,.cm-formatti
 /* <<< YAML Frontmatter
 ──────────────────────────────────────────────────── */
 .cm-hmd-frontmatter {
-	font-size: 0.9em;
+	font-size: 0.9rem;
 }
 
 body:not(.colored-yaml) .cm-hmd-frontmatter {
@@ -4350,7 +4359,7 @@ body:not(.colored-yaml) .cm-hmd-frontmatter {
 }
 
 .cm-def.cm-hmd-frontmatter {
-	letter-spacing: 0.1em;
+	letter-spacing: 0.1rem;
 }
 
 .cm-atom.cm-hmd-frontmatter {
@@ -5100,13 +5109,17 @@ body:not(.no-heading-level-in-lp) .is-live-preview .cm-line:not(.cm-active) > .c
 }
 
 .markdown-preview-view :is(h1, h2, h3, h4, h5, h6),
+.markdown-source-view:not(.is-live-preview) .cm-header {
+	line-height: 1.2em;
+}
+
 .markdown-source-view:not(.is-live-preview) .HyperMD-header {
-	line-height: 1.3em;
+	line-height: 1em;
 }
 
 /* no idea why, but this ensures same line height as in other modes */
 .is-live-preview .HyperMD-header {
-	line-height: 1.1em;
+	line-height: 1.1rem;
 }
 
 .is-live-preview .cm-header {
@@ -6212,37 +6225,36 @@ body:not(.show-urls) .cm-line:not(.cm-active) .cm-url {
 	opacity: 0.9;
 }
 
-/* unresolved gutter icon */
-body:not(.no-unresolved-link-indicator) .markdown-preview-view .is-unresolved::BEFORE,
-body:not(.no-unresolved-link-indicator) .cm-editor .is-unresolved::BEFORE {
-	content: "✖︎";
-	font-size: 1rem;
+/* unresolved gutter indicator */
+body:not(.no-unresolved-link-indicator) .is-unresolved::BEFORE {
+	content: "✘";
+	font-size: 1.3rem;
 	background-color: var(--bg1);
 	position: absolute;
 }
 
 body:not(.no-unresolved-link-indicator) .cm-editor .is-unresolved::BEFORE {
-	left: -2.8em;
+	left: -2.35em;
 }
 
 body:not(.no-unresolved-link-indicator) .markdown-preview-view .is-unresolved::BEFORE {
-	left: 1.8em;
+	left: 1.3em;
 }
 
 div > ul > li > ul > li > .is-unresolved.is-unresolved.is-unresolved::BEFORE {
-	left: -4.7em;
+	left: -4.2em;
 }
 
 div > ul > li > ul > li > ul > li > .is-unresolved.is-unresolved.is-unresolved::BEFORE {
-	left: -7.2em;
+	left: -6.7em;
 }
 
 div > ul > li > ul > li > ul > li > ul > li > .is-unresolved.is-unresolved.is-unresolved::BEFORE {
-	left: -8.7em;
+	left: -8.2em;
 }
 
 div > ul > li > ul > li > ul > li > ul > li > ul > li > .is-unresolved.is-unresolved.is-unresolved::BEFORE {
-	left: -10.2em;
+	left: -9.7em;
 }
 
 /* ───────────────────────────────────────────────── */
@@ -9435,12 +9447,8 @@ body:not(.longform-left-aligned) :is(.writing, .longform-leaf) :is(.cm-line:not(
 }
 
 /* line height */
-:is(.writing, .longform-leaf) .cm-line {
-	line-height: 1.05em;
-}
-
-:is(.writing, .longform-leaf) .cm-line > :not(.cm-hmd-frontmatter) {
-	line-height: 1.3em;
+:is(.writing, .longform-leaf) :is(.cm-line, .cm-line > *) {
+	line-height: 1.1em;
 }
 
 /* headings */
@@ -9448,7 +9456,7 @@ body:not(.longform-left-aligned) :is(.writing, .longform-leaf) :is(.cm-line:not(
 :is(.writing, .longform-leaf) .cm-header.cm-header,
 .longform-leaf.longform-leaf :is(h1, h2, h3, h4, h5, h6) {
 	font-family: var(--longform-font-text-theme);
-	line-height: 1em;
+	/* line-height: 1rem; */
 }
 
 .longform-text-indent.longform-text-indent :is(.writing, .longform-leaf) p {
@@ -10631,7 +10639,7 @@ body:not(.unlock-theme-beta) .style-settings-container .setting-item:is(
 	flex-wrap: wrap;
 }
 
-.setting-item-heading[data-id="shimmering-focus"]::BEFORE,
+.modal .setting-item-heading[data-id="shimmering-focus"]::BEFORE,
 .workspace-leaf-content[data-type="style-settings"] > .view-content > .setting-item:first-child::BEFORE {
 	display: block;
 	content: "ℹ️ Theme Documentation:   chrisgrieser.github.io/shimmering-focus\A🔍 Install the Settings Search Plugin to find settings more quickly.";
@@ -10654,7 +10662,7 @@ body:not(.unlock-theme-beta) .style-settings-container .setting-item:is(
 
 .modal .setting-item-heading[data-id="shimmering-focus"]::BEFORE {
 	font-size: 0.9rem;
-	margin: -50px 16vw 30px 0;
+	margin: -45px 16vw 30px 0;
 }
 
 .workspace-leaf-content[data-type="style-settings"] > .view-content > .setting-item:first-child::BEFORE {
