@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 1.1202
+Version 1.1203
 Source CSS: https://github.com/chrisgrieser/shimmering-focus/blob/main/source.css
 MIT License
 ──────────────────────────────────────────────────── */
@@ -8663,8 +8663,10 @@ body .kanban-plugin__item-title-wrapper {
 :is(.kanban-plugin__drag-container,.kanban-plugin) h6 { font-size: calc(var(--h6) * var(--kanban-heading-size-factor)) }
 
 .app-container .kanban-plugin .kanban-plugin__board textarea {
-	font-size: 0.95em;
+	font-size: 0.9em;
+	line-height: 1.35em;
 	letter-spacing: -0.1px;
+	padding-top: 7px;
 }
 
 .kanban-plugin__item.kanban-plugin__item li {
