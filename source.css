@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 1.1212
+Version 1.1213
 Source CSS: https://github.com/chrisgrieser/shimmering-focus/blob/main/source.css
 MIT License
 ──────────────────────────────────────────────────── */
@@ -4594,14 +4594,19 @@ body:not(.no-floating-metadata):not(.is-mobile) .markdown-preview-view:not(.no-f
 body:not(.no-floating-metadata):not(.is-mobile) .markdown-preview-view:not(.no-floating-metadata) .frontmatter-container:not(:hover)::BEFORE {
 	content: "M";
 	font-size: 1.3rem;
-	padding-left: 0.35em;
+	padding-left: 0.5rem;
 }
 
 body:not(.no-floating-metadata):not(.is-mobile) .markdown-preview-view:not(.no-floating-metadata) .frontmatter.language-yaml:not(:hover)::BEFORE {
 	content: "Y";
 	font-size: 1.4rem;
 	text-shadow: none;
-	padding-left: 0.43em;
+	padding-left: 0.65rem;
+}
+
+body:not(.no-floating-metadata):not(.is-mobile) :is(.longform-leaf .markdown-preview-view:not(.no-floating-metadata), .markdown-preview-view:not(.no-floating-metadata).writing) .frontmatter.language-yaml:not(:hover)::BEFORE {
+	/* now idea why this is needed (ಠ_ಠ) */
+	padding-top: 0.1rem;
 }
 
 /* separator line if there are tags & aliases */
