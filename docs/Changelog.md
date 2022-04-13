@@ -3,6 +3,7 @@ nav_order: 110
 ---
 
 # Changelog
+- 2022-04-13	patch
 - 2022-04-13	(internal) test yamllint
 - 2022-04-13	add yamllint test to build script
 - 2022-04-13	plugin update bar styled

@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 1.1223
+Version 1.1224
 Source CSS: https://github.com/chrisgrieser/shimmering-focus/blob/main/source.css
 MIT License
 ──────────────────────────────────────────────────── */
@@ -266,7 +266,6 @@ MIT License
 /* ───────────────────────────────────────────────── */
 /* < Colors
 ──────────────────────────────────────────────────── */
-/* stylelint-disable no-duplicate-selectors */
 
 /* ───────────────────────────────────────────────── */
 /* << Text Colors & Grays
@@ -321,6 +320,7 @@ MIT License
 /* ───────────────────────────────────────────────── */
 /* << Color Schemes
 ──────────────────────────────────────────────────── */
+/* stylelint-disable no-duplicate-selectors */
 
 /* ───────────────────────────────────────────────── */
 /* <<< Accent Color Settings
@@ -938,7 +938,7 @@ body:is(.theme-light, .theme-dark) {
 }
 
 /* << Font Definitions */
-body { /* stylelint-disable-line no-duplicate-selectors */
+body {
 	--mobile-font-size: 1.2rem;
 
 	--monospace-font-size: 0.9rem;
