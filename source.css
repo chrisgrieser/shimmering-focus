@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 1.1224
+Version 1.1225
 Source CSS: https://github.com/chrisgrieser/shimmering-focus/blob/main/source.css
 MIT License
 ──────────────────────────────────────────────────── */
@@ -246,6 +246,7 @@ MIT License
 	- Notion Like Table
 	- Markdown Table Editor
 	- Hover Editor
+	- Omnisearch
 - Compatibility Info for the Obsidian Hub
 - Style Setting (YAML)
 # 	- Show / Hide UI Elements (+)
@@ -11549,6 +11550,33 @@ and file recovery plugin */
 
 	border: var(--basic-border);
 	border-radius: var(--roundish);
+}
+
+/* ───────────────────────────────────────────────── */
+/* << Omnisearch
+──────────────────────────────────────────────────── */
+.omnisearch-modal.prompt {
+	max-height: 90%;
+	width: 900px;
+	top: 30px;
+}
+
+.omnisearch-result.suggestion-item {
+	padding-left: 5px;
+}
+
+.omnisearch-result__body {
+	line-height: 1.35em;
+}
+
+.omnisearch-result:hover .omnisearch-result__body {
+	color: var(--text-hover-accent);
+	filter: saturate(40%);
+}
+
+.omnisearch-result.is-selected:not(:hover) .omnisearch-result__body {
+	color: var(--primary-accent-2);
+	filter: saturate(40%);
 }
 
 /* ───────────────────────────────────────────────── */
