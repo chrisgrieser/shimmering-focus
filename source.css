@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 1.1231
+Version 1.1232
 Source CSS: https://github.com/chrisgrieser/shimmering-focus/blob/main/source.css
 MIT License
 ──────────────────────────────────────────────────── */
@@ -5140,8 +5140,10 @@ body:not(.no-heading-level-in-lp) .is-live-preview .cm-header::BEFORE {
 
 	position: relative;
 	top: -1px;
+	left: -2px;
 
-	padding-right: 5px;
+	padding-right: 2px;
+	padding-left: 0;
 }
 
 body:not(.no-heading-level-in-lp) .is-live-preview .cm-line:not(.cm-active) > .cm-header-1::BEFORE { content: "H1" }
