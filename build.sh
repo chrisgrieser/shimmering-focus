@@ -1,18 +1,22 @@
 #!/bin/zsh
 
 # WHAT THIS SCRIPT DOES
+# - Check the yaml from the Style Settings for errors. If there are any, the
+#	 build is aborted, the errors are passed (e.g. for a notification) and the
+#	 Style Settings tab is opened.
 # - takes argument as commit message
 #     - uses "patch" as commit message if executed without argument
 #     - if the commit message contained a reference to an GitHub issue, open that GitHub issue
 # - adds the commit message to the changelog
 # - bumps version number in css file
 # - CSS is linted and minified
+# - The docs are linted and checked for invalid links
 # - ToC in the CSS file is updated
 # - copies css from the vault (`CSS_PATH`) into this repository
 # - updates download counts in badges of the .md files
 # - Markdown is linted & checked for dead links
-# - adds a non-minified css file and the global stylelint.json for documentation purposes
-# - add, commit, pull, push to the remote repo
+# - adds a non-minified css file and the global stylelint.json for documentation
+# - git add, commit, pull, push to the remote repo
 
 # REQUIREMENTS
 # - cssclean
