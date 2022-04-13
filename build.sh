@@ -39,6 +39,7 @@ YAMLLINT_OUTPUT=$(sed -n '/@settings/,$p' "$CSS_PATH" | tail -n+2 | sed -e '$ d'
 if [[ $? == 1 ]]; then
 	echo "YAML ERROR"
 	echo "$YAMLLINT_OUTPUT" | tail -n+2
+	open "obsidian://advanced-uri?settingid=obsidian-style-settings" # open Style Settings if Advanced URI plugin installed
 	exit 1
 fi
 
