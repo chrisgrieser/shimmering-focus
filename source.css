@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 1.1227
+Version 1.1228
 Source CSS: https://github.com/chrisgrieser/shimmering-focus/blob/main/source.css
 MIT License
 ──────────────────────────────────────────────────── */
@@ -5135,7 +5135,12 @@ body:not(.no-heading-level-in-lp) .is-live-preview .cm-header::BEFORE {
 	font-family: var(--font-monospace);
 	font-size: 0.8rem;
 	font-style: normal;
+
 	color: var(--text-muted);
+
+	position: relative;
+	top: -1px;
+
 	padding-right: 5px;
 }
 
@@ -5162,10 +5167,11 @@ body:not(.no-heading-level-in-lp) .is-live-preview .cm-line:not(.cm-active) > .c
 
 /* no idea why, but this ensures same line height as in other modes */
 .is-live-preview .HyperMD-header {
-	line-height: 1.1rem;
+	line-height: 1.6rem;
 }
 
 .is-live-preview .cm-header {
+	line-height: 1.1rem;
 	padding-left: 4px;
 }
 
