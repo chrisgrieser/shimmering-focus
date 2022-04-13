@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 1.1222
+Version 1.1223
 Source CSS: https://github.com/chrisgrieser/shimmering-focus/blob/main/source.css
 MIT License
 ──────────────────────────────────────────────────── */
@@ -8181,7 +8181,7 @@ div.card-view-container.card-view-container .markdown-preview-view :is(h1, h2, h
 /* tag-based */
 body:not(.no-built-in-supercharged-links) .data-link-icon[data-link-tags~="#autocompletion" i]::BEFORE { content: "🅰️ " }
 body:not(.no-built-in-supercharged-links) .data-link-icon[data-link-tags~="#dataview" i]::BEFORE { content: "🔢 " }
-body:not(.no-built-in-supercharged-links) .data-link-icon[data-link-tags~="#templater" i]::BEFORE { content: "*️⃣ " }
+body:not(.no-built-in-supercharged-links) .data-link-icon[data-link-tags~="#templater" i]::BEFORE { content: "📄 " }
 body:not(.no-built-in-supercharged-links) .data-link-icon[data-link-tags~="#obsidian" i]::BEFORE { content: "🟪 " }
 body:not(.no-built-in-supercharged-links) .data-link-icon[data-link-tags~="#checklist" i]::BEFORE { content: "✅ " }
 body:not(.no-built-in-supercharged-links) .data-link-icon[data-link-tags~="#person" i]::BEFORE { content: "👤 " }
@@ -11629,1163 +11629,1163 @@ community:
 /* < Style Setting (YAML)
 ──────────────────────────────────────────────────── */
 
-/* @MINIFY-SPLIT-MARKER */
+/* @MINIFY-SPLIT-MARKER @YAMLLINT-START-MARKER */
 /* @settings
 name: Shimmering Focus
 id: shimmering-focus
-settings:
-	-
 # << Show / Hide UI Elements (+)
-	 id: show-hide-elements
-	 title: 🙈 Show/Hide UI Elements
-	 description: Re-enable elements hidden by this theme.
-	 type: heading
-	 level: 1
-	 collapsed: true
-	-
-	 id: hide-settings-button
-	 title: Hide Settings Button
-	 type: class-toggle
-	 description: "Hide the floating Settings button in the bottom left. The settings can still be accessed the button by using the hotkey 'cmd + ,' (Mac) or 'ctrl + ,' (Windows/Linux)."
-	 default: false
-	-
-	 id: no-floating-metadata
-	 title: 🆕 Permanently show the Metadata Block / YAML Frontmatter in Preview Mode
-	 type: class-toggle
-	 description: 'By default, the metadata block in this theme only becomes visible upon hovering the "M" / "Y" in the top right. You can also add the cssclass "no-floating-metadata" to a note to permanently show the meta on that specific note.'
-	 default: false
-	-
-	 id: show-sidebar-tabs
-	 title: Permanently show the Sidebar Tabs
-	 type: class-toggle
-	 description: By default, the Sidebar Tabs become visible upon hovering.
-	 default: false
-	-
-	 id: show-titlebar
-	 title: Re-enable Title Bar
-	 type: class-toggle
-	 description: The titlebar is needed to move the Obsidian window with the mouse. Some plugins also require the title bar.
-	 default: false
-	-
-	 id: show-titlebar-text
-	 title: Show Vault Name in Title Bar
-	 type: class-toggle
-	 description: When the Title Bar is re-enabled, show the name of the vault there.
-	 default: false
-	-
-	 id: show-vault-in-file-explorer
-	 title: Show Vault Name in File Explorer
-	 type: class-toggle
-	 description: Enable this, if you want to drag and drop items to your vault root.
-	 default: false
-	-
-	 id: show-ribbons
-	 title: Re-enable Ribbons
-	 type: class-toggle
-	 description: '"Ribbons" are the thin vertical bars to the very left & right. Without the ribbons, you can still trigger any action via the Command Palette.'
-	 default: false
-	-
-	 id: show-header-bar
-	 title: Permanently show the Header Bar
-	 description: By default, the Header bar is still visible upon focus and hover. (When you are using Sliding Panes with rotated headers, the headers will be permanently shown and this setting has no effect.)
-	 type: class-toggle
-	 default: false
-	-
-	 id: status-bar-mode
-	 title: Status Bar
-	 type: class-select
-	 allowEmpty: false
-	 default: only-on-hover
-	 options:
-		-
-			label: only show on hover
-			value: only-on-hover-statusbar
-		-
-			label: show permanently
-			value: permanently-show-statusbar
-		-
-			label: hide permanently
-			value: permanently-hide-statusbar
-		-
-			label: permanent & text-only
-			value: minimal-status-bar
-		-
-			label: classic statusbar
-			value: classic-statusbar
-	-
-	 id: show-urls
-	 title: 'Permanently show full URLs (Source Mode)'
-	 type: class-toggle
-	 description: In Source Mode, URLs will be folded except for the active line. Enable this to permanently show the full URL.
-	 default: false
-	-
-	 id: show-close-button
-	 title: Permanently Show Close Buttons
-	 type: class-toggle
-	 description: "By default, this theme only shows close button on hover. You can close menus without close button by pressing 'Esc' or by clicking outside the menu area."
-	 default: false
-	-
-	 id: show-scrollbar
-	 title: Re-enable Scrollbars
-	 type: class-toggle
-	 description: By default, this theme only shows scroll bars in the editor.
-	 default: false
-	-
-	 id: permanently-show-collapse-indicators
-	 title: Permanently show the Collapse Arrows
-	 description: By default, collapse arrows only become visible when hovered, folded, or in the active line.
-	 type: class-toggle
-	 default: false
-	-
-	 id: show-graph-controls
-	 title: 'Graph View: Permanently show the Graph Controls'
-	 description: By default, graph controls are only visible when opened, or upon hovering the top-left area of the Graph View.
-	 type: class-toggle
-	 default: false
-	-
-	 id: show-starred-nav-buttons
-	 title: 'Starred Pane: Re-enable Buttons'
-	 description: The two buttons to star the current file and the current search.
-	 type: class-toggle
-	 default: false
-	-
+settings:
+  -
+   id: show-hide-elements
+   title: 🙈 Show/Hide UI Elements
+   description: Re-enable elements hidden by this theme.
+   type: heading
+   level: 1
+   collapsed: true
+  -
+   id: hide-settings-button
+   title: Hide Settings Button
+   type: class-toggle
+   description: "Hide the floating Settings button in the bottom left. The settings can still be accessed the button by using the hotkey 'cmd + ,' (Mac) or 'ctrl + ,' (Windows/Linux)."
+   default: false
+  -
+   id: no-floating-metadata
+   title: 🆕 Permanently show the Metadata Block / YAML Frontmatter in Preview Mode
+   type: class-toggle
+   description: 'By default, the metadata block in this theme only becomes visible upon hovering the "M" / "Y" in the top right. You can also add the cssclass "no-floating-metadata" to a note to permanently show the meta on that specific note.'
+   default: false
+  -
+   id: show-sidebar-tabs
+   title: Permanently show the Sidebar Tabs
+   type: class-toggle
+   description: By default, the Sidebar Tabs become visible upon hovering.
+   default: false
+  -
+   id: show-titlebar
+   title: Re-enable Title Bar
+   type: class-toggle
+   description: The titlebar is needed to move the Obsidian window with the mouse. Some plugins also require the title bar.
+   default: false
+  -
+   id: show-titlebar-text
+   title: Show Vault Name in Title Bar
+   type: class-toggle
+   description: When the Title Bar is re-enabled, show the name of the vault there.
+   default: false
+  -
+   id: show-vault-in-file-explorer
+   title: Show Vault Name in File Explorer
+   type: class-toggle
+   description: Enable this, if you want to drag and drop items to your vault root.
+   default: false
+  -
+   id: show-ribbons
+   title: Re-enable Ribbons
+   type: class-toggle
+   description: '"Ribbons" are the thin vertical bars to the very left & right. Without the ribbons, you can still trigger any action via the Command Palette.'
+   default: false
+  -
+   id: show-header-bar
+   title: Permanently show the Header Bar
+   description: By default, the Header bar is still visible upon focus and hover. (When you are using Sliding Panes with rotated headers, the headers will be permanently shown and this setting has no effect.)
+   type: class-toggle
+   default: false
+  -
+   id: status-bar-mode
+   title: Status Bar
+   type: class-select
+   allowEmpty: false
+   default: only-on-hover
+   options:
+    -
+      label: only show on hover
+      value: only-on-hover-statusbar
+    -
+      label: show permanently
+      value: permanently-show-statusbar
+    -
+      label: hide permanently
+      value: permanently-hide-statusbar
+    -
+      label: permanent & text-only
+      value: minimal-status-bar
+    -
+      label: classic statusbar
+      value: classic-statusbar
+  -
+   id: show-urls
+   title: 'Permanently show full URLs (Source Mode)'
+   type: class-toggle
+   description: In Source Mode, URLs will be folded except for the active line. Enable this to permanently show the full URL.
+   default: false
+  -
+   id: show-close-button
+   title: Permanently Show Close Buttons
+   type: class-toggle
+   description: "By default, this theme only shows close button on hover. You can close menus without close button by pressing 'Esc' or by clicking outside the menu area."
+   default: false
+  -
+   id: show-scrollbar
+   title: Re-enable Scrollbars
+   type: class-toggle
+   description: By default, this theme only shows scroll bars in the editor.
+   default: false
+  -
+   id: permanently-show-collapse-indicators
+   title: Permanently show the Collapse Arrows
+   description: By default, collapse arrows only become visible when hovered, folded, or in the active line.
+   type: class-toggle
+   default: false
+  -
+   id: show-graph-controls
+   title: 'Graph View: Permanently show the Graph Controls'
+   description: By default, graph controls are only visible when opened, or upon hovering the top-left area of the Graph View.
+   type: class-toggle
+   default: false
+  -
+   id: show-starred-nav-buttons
+   title: 'Starred Pane: Re-enable Buttons'
+   description: The two buttons to star the current file and the current search.
+   type: class-toggle
+   default: false
+  -
 # << Aesthetics & Custom Colors (+)
-	 id: aesthetics
-	 title: 🎨 Color & Aesthetics
-	 description: Color Schemes, Custom Colors, Brightness, Roundness, Decorations
-	 type: heading
-	 level: 1
-	 collapsed: true
-	-
-	 id: shapes
-	 title: Shapes
-	 description: Round, angular, or square-ish shapes throughout the whole theme.
-	 type: class-select
-	 allowEmpty: false
-	 default: squareish-shapes
-	 options:
-		-
-			label: ⏹ Square-ish
-			value: squareish-shapes
-		-
-			label: 🔘 Round
-			value: round-shapes
-		-
-			label: 🔲 Angular
-			value: angular-shapes
-	-
-	 id: preset-color-scheme
-	 title: "Color Schemes"
-	 description: 'Select "🌈 Custom Colors" to fully customize background colors and accent colors (soon™️) yourself.'
-	 type: class-select
-	 allowEmpty: false
-	 default: classic-colors
-	 options:
-		-
-			label: Classic
-			value: classic-colors
-		-
-			label: Nord
-			value: nord-colors
-		-
-			label: 🌈 Custom Colors
-			value: custom-colors
-	-
-	 id: custom-color-light-mode
-	 title: '🔆 Light Mode'
-	 description: Custom Colors
-	 type: heading
-	 level: 2
-	 collapsed: false
-	-
-	 id: primary-accent-light
-	 title: "Primary Accent (Light Mode)"
-	 description: 'Links, Selections, Buttons, Interactive UI Elements'
-	 type: class-select
-	 allowEmpty: false
-	 default: primary-accent-light-purple
-	 options:
-		-
-			label: 🟣 Obsidian Purple
-			value: primary-accent-light-purple
-		-
-			label: 🔵 Soft Blue
-			value: primary-accent-light-blue
-		-
-			label: 🟠 Orange Ember
-			value: primary-accent-light-orange
-		-
-			label: 🟢 Green Glow
-			value: primary-accent-light-green
-	-
-	 id: secondary-accent-light
-	 title: "Secondary Accent (Light Mode)"
-	 description: 'Inline Code, Inline Tags, Finished Tasks, Footnotes, Pandoc Citations'
-	 type: class-select
-	 allowEmpty: false
-	 default: secondary-accent-light-green
-	 options:
-		-
-			label: 🟢 Shimmering Green
-			value: secondary-accent-light-green
-	-
-	 id: tertiary-accent-light
-	 title: "Tertiary Accent (Light Mode)"
-	 description: 'Italic & Bold. When set to "Uncolored", bold and italic will have the same color as normal text.'
-	 type: class-select
-	 allowEmpty: false
-	 default: tertiary-accent-light-uncolered
-	 options:
-		-
-			label: Uncolored
-			value: tertiary-accent-light-uncolered
-	-
-	 id: hover-accent-light
-	 title: "Hover Accent (Light Mode)"
-	 description: 'Hovered Elements'
-	 type: class-select
-	 allowEmpty: false
-	 default: hover-accent-light-green
-	 options:
-		-
-			label: 🟢 Shimmering Green
-			value: hover-accent-light-green
-	-
-	 id: use-gray-tint-light
-	 title: 'Slightly colored text (Light Mode)'
-	 type: class-toggle
-	 default: false
-	-
-	 id: tint-of-grays-light
-	 title: 'Text: Color Tint (Light Mode)'
-	 description: 'Slight tint for standard text (i.e.,hue with low saturation)'
-	 type: variable-number-slider
-	 default: 220
-	 min: 0
-	 max: 360
-	 step: 5
-	-
-	 id: brightness-light
-	 title: 'Background: Brightness (Light Mode)'
-	 description: Note that a high brightness in light mode results in a white theme, regardless of the selected hue.
-	 type: variable-number-slider
-	 default: 7
-	 min: 0
-	 max: 15
-	 step: 1
-	 format: '%'
-	-
-	 id: light-hue
-	 title: 'Background: Hue (Light Mode)'
-	 description: 'Overall color tone of the theme background. Mind that the appearance of the color is also affected by brightness and saturation.'
-	 type: variable-number-slider
-	 default: 220
-	 min: 0
-	 max: 360
-	 step: 5
-	-
-	 id: light-sat
-	 title: 'Background: Saturation (Light Mode)'
-	 description: "Intensity of the chosen hue. Setting this to zero will result in grayscale, regardless of the hue chosen. "
-	 type: variable-number-slider
-	 default: 10
-	 min: 0
-	 max: 20
-	 step: 2
-	 format: '%'
-	-
-	 id: custom-color-dark-mode
-	 title: '🌒 Dark Mode'
-	 description: Custom Colors
-	 type: heading
-	 level: 2
-	 collapsed: false
-	-
-	 id: primary-accent-dark
-	 title: "Primary Accent (Dark Mode)"
-	 description: 'Links, Selections, Buttons, Interactive UI Elements'
-	 type: class-select
-	 allowEmpty: false
-	 default: primary-accent-dark-purple
-	 options:
-		-
-			label: 🟣 Obsidian Purple
-			value: primary-accent-dark-purple
-		-
-			label: 🔵 Soft Blue
-			value: primary-accent-dark-blue
-		-
-			label: 🟠 Orange Ember
-			value: primary-accent-dark-orange
-		-
-			label: 🟢 Green Glow
-			value: primary-accent-dark-green
-		-
-			label: 🟡 Shining Yellow
-			value: primary-accent-dark-yellow
-	-
-	 id: secondary-accent-dark
-	 title: "Secondary Accent (Dark Mode)"
-	 description: 'Inline Code, Inline Tags, Finished Tasks, Footnotes, Pandoc Citations'
-	 type: class-select
-	 allowEmpty: false
-	 default: secondary-accent-dark-green
-	 options:
-		-
-			label: 🟢 Shimmering Green
-			value: secondary-accent-dark-green
-	-
-	 id: tertiary-accent-dark
-	 title: "Tertiary Accent (Dark Mode)"
-	 description: 'Italic & Bold. When set to "Uncolored", bold and italic will have the same color as normal text.'
-	 type: class-select
-	 allowEmpty: false
-	 default: tertiary-accent-dark-uncolered
-	 options:
-		-
-			label: Uncolored
-			value: tertiary-accent-dark-uncolered
-	-
-	 id: hover-accent-dark
-	 title: "Hover Accent (Dark Mode)"
-	 description: 'Hovered Elements'
-	 type: class-select
-	 allowEmpty: false
-	 default: hover-accent-dark-green
-	 options:
-		-
-			label: 🟢 Shimmering Green
-			value: hover-accent-dark-green
-	-
-	 id: use-gray-tint-dark
-	 title: 'Slightly colored text (Dark Mode)'
-	 type: class-toggle
-	 default: false
-	-
-	 id: tint-of-grays-dark
-	 title: 'Text: Color Tint (Dark Mode)'
-	 description: 'Slight tint for text (i.e., hue with low saturation)'
-	 type: variable-number-slider
-	 default: 220
-	 min: 0
-	 max: 360
-	 step: 5
-	-
-	 id: brightness-dark
-	 title: 'Background: Brightness (Dark Mode)'
-	 description: Note that a low brightness in dark mode results in a black theme, regardless of the selected hue.
-	 type: variable-number-slider
-	 default: 7
-	 min: 0
-	 max: 15
-	 step: 1
-	 format: '%'
-	-
-	 id: dark-hue
-	 title: 'Background: Hue (Dark Mode)'
-	 description: 'Overall color tone of the theme background. Mind that the appearance of the color is also affected by brightness and saturation.'
-	 type: variable-number-slider
-	 default: 220
-	 min: 0
-	 max: 360
-	 step: 5
-	-
-	 id: dark-sat
-	 title: 'Background: Saturation (Dark Mode)'
-	 description: "Intensity of the chosen hue. A low value will result in grayscale, regardless of the hue chosen. "
-	 type: variable-number-slider
-	 default: 5
-	 min: 0
-	 max: 20
-	 step: 2
-	 format: '%'
-	-
+   id: aesthetics
+   title: 🎨 Color & Aesthetics
+   description: Color Schemes, Custom Colors, Brightness, Roundness, Decorations
+   type: heading
+   level: 1
+   collapsed: true
+  -
+   id: shapes
+   title: Shapes
+   description: Round, angular, or square-ish shapes throughout the whole theme.
+   type: class-select
+   allowEmpty: false
+   default: squareish-shapes
+   options:
+    -
+      label: ⏹ Square-ish
+      value: squareish-shapes
+    -
+      label: 🔘 Round
+      value: round-shapes
+    -
+      label: 🔲 Angular
+      value: angular-shapes
+  -
+   id: preset-color-scheme
+   title: "Color Schemes"
+   description: 'Select "🌈 Custom Colors" to fully customize background colors and accent colors (soon™️) yourself.'
+   type: class-select
+   allowEmpty: false
+   default: classic-colors
+   options:
+    -
+      label: Classic
+      value: classic-colors
+    -
+      label: Nord
+      value: nord-colors
+    -
+      label: 🌈 Custom Colors
+      value: custom-colors
+  -
+   id: custom-color-light-mode
+   title: '🔆 Light Mode'
+   description: Custom Colors
+   type: heading
+   level: 2
+   collapsed: false
+  -
+   id: primary-accent-light
+   title: "Primary Accent (Light Mode)"
+   description: 'Links, Selections, Buttons, Interactive UI Elements'
+   type: class-select
+   allowEmpty: false
+   default: primary-accent-light-purple
+   options:
+    -
+      label: 🟣 Obsidian Purple
+      value: primary-accent-light-purple
+    -
+      label: 🔵 Soft Blue
+      value: primary-accent-light-blue
+    -
+      label: 🟠 Orange Ember
+      value: primary-accent-light-orange
+    -
+      label: 🟢 Green Glow
+      value: primary-accent-light-green
+  -
+   id: secondary-accent-light
+   title: "Secondary Accent (Light Mode)"
+   description: 'Inline Code, Inline Tags, Finished Tasks, Footnotes, Pandoc Citations'
+   type: class-select
+   allowEmpty: false
+   default: secondary-accent-light-green
+   options:
+    -
+      label: 🟢 Shimmering Green
+      value: secondary-accent-light-green
+  -
+   id: tertiary-accent-light
+   title: "Tertiary Accent (Light Mode)"
+   description: 'Italic & Bold. When set to "Uncolored", bold and italic will have the same color as normal text.'
+   type: class-select
+   allowEmpty: false
+   default: tertiary-accent-light-uncolered
+   options:
+    -
+      label: Uncolored
+      value: tertiary-accent-light-uncolered
+  -
+   id: hover-accent-light
+   title: "Hover Accent (Light Mode)"
+   description: 'Hovered Elements'
+   type: class-select
+   allowEmpty: false
+   default: hover-accent-light-green
+   options:
+    -
+      label: 🟢 Shimmering Green
+      value: hover-accent-light-green
+  -
+   id: use-gray-tint-light
+   title: 'Slightly colored text (Light Mode)'
+   type: class-toggle
+   default: false
+  -
+   id: tint-of-grays-light
+   title: 'Text: Color Tint (Light Mode)'
+   description: 'Slight tint for standard text (i.e.,hue with low saturation)'
+   type: variable-number-slider
+   default: 220
+   min: 0
+   max: 360
+   step: 5
+  -
+   id: brightness-light
+   title: 'Background: Brightness (Light Mode)'
+   description: Note that a high brightness in light mode results in a white theme, regardless of the selected hue.
+   type: variable-number-slider
+   default: 7
+   min: 0
+   max: 15
+   step: 1
+   format: '%'
+  -
+   id: light-hue
+   title: 'Background: Hue (Light Mode)'
+   description: 'Overall color tone of the theme background. Mind that the appearance of the color is also affected by brightness and saturation.'
+   type: variable-number-slider
+   default: 220
+   min: 0
+   max: 360
+   step: 5
+  -
+   id: light-sat
+   title: 'Background: Saturation (Light Mode)'
+   description: "Intensity of the chosen hue. Setting this to zero will result in grayscale, regardless of the hue chosen. "
+   type: variable-number-slider
+   default: 10
+   min: 0
+   max: 20
+   step: 2
+   format: '%'
+  -
+   id: custom-color-dark-mode
+   title: '🌒 Dark Mode'
+   description: Custom Colors
+   type: heading
+   level: 2
+   collapsed: false
+  -
+   id: primary-accent-dark
+   title: "Primary Accent (Dark Mode)"
+   description: 'Links, Selections, Buttons, Interactive UI Elements'
+   type: class-select
+   allowEmpty: false
+   default: primary-accent-dark-purple
+   options:
+    -
+      label: 🟣 Obsidian Purple
+      value: primary-accent-dark-purple
+    -
+      label: 🔵 Soft Blue
+      value: primary-accent-dark-blue
+    -
+      label: 🟠 Orange Ember
+      value: primary-accent-dark-orange
+    -
+      label: 🟢 Green Glow
+      value: primary-accent-dark-green
+    -
+      label: 🟡 Shining Yellow
+      value: primary-accent-dark-yellow
+  -
+   id: secondary-accent-dark
+   title: "Secondary Accent (Dark Mode)"
+   description: 'Inline Code, Inline Tags, Finished Tasks, Footnotes, Pandoc Citations'
+   type: class-select
+   allowEmpty: false
+   default: secondary-accent-dark-green
+   options:
+    -
+      label: 🟢 Shimmering Green
+      value: secondary-accent-dark-green
+  -
+   id: tertiary-accent-dark
+   title: "Tertiary Accent (Dark Mode)"
+   description: 'Italic & Bold. When set to "Uncolored", bold and italic will have the same color as normal text.'
+   type: class-select
+   allowEmpty: false
+   default: tertiary-accent-dark-uncolered
+   options:
+    -
+      label: Uncolored
+      value: tertiary-accent-dark-uncolered
+  -
+   id: hover-accent-dark
+   title: "Hover Accent (Dark Mode)"
+   description: 'Hovered Elements'
+   type: class-select
+   allowEmpty: false
+   default: hover-accent-dark-green
+   options:
+    -
+      label: 🟢 Shimmering Green
+      value: hover-accent-dark-green
+  -
+   id: use-gray-tint-dark
+   title: 'Slightly colored text (Dark Mode)'
+   type: class-toggle
+   default: false
+  -
+   id: tint-of-grays-dark
+   title: 'Text: Color Tint (Dark Mode)'
+   description: 'Slight tint for text (i.e., hue with low saturation)'
+   type: variable-number-slider
+   default: 220
+   min: 0
+   max: 360
+   step: 5
+  -
+   id: brightness-dark
+   title: 'Background: Brightness (Dark Mode)'
+   description: Note that a low brightness in dark mode results in a black theme, regardless of the selected hue.
+   type: variable-number-slider
+   default: 7
+   min: 0
+   max: 15
+   step: 1
+   format: '%'
+  -
+   id: dark-hue
+   title: 'Background: Hue (Dark Mode)'
+   description: 'Overall color tone of the theme background. Mind that the appearance of the color is also affected by brightness and saturation.'
+   type: variable-number-slider
+   default: 220
+   min: 0
+   max: 360
+   step: 5
+  -
+   id: dark-sat
+   title: 'Background: Saturation (Dark Mode)'
+   description: "Intensity of the chosen hue. A low value will result in grayscale, regardless of the hue chosen. "
+   type: variable-number-slider
+   default: 5
+   min: 0
+   max: 20
+   step: 2
+   format: '%'
+  -
 # << Typography (+)
-	 id: font-settings
-	 title: 🔠 Typography
-	 description: "Fonts, Headings, Blockquotes. ⚠️ To accomodate Obsidan's latest font update, some font style settings had to be reset, so you may have to set them once again. (This setting will be overriden when you have set custom fonts in the Obsidian settings.)"
-	 type: heading
-	 level: 1
-	 collapsed: true
-	-
-	 id: font-family-font-size
-	 title: 🔤 Fonts
-	 description: Font Family, Font Size
-	 type: heading
-	 level: 2
-	 collapsed: true
-	-
-	 id: font-text-theme
-	 title: Text Font (Desktop)
-	 description: 'Used in Reading and Editing Mode. ⚠️ This setting will be overriden when you have set a custom text font in the Obsidian settings (Appearance ➞ Font ➞ Text Font).'
-	 type: variable-text
-	 default: '"iA Writer Quattro S"'
-	-
-	 id: font-monospace-theme
-	 title: Monospace Font
-	 description: 'Used in Code blocks, YAML headers, tables & MathJax in Source Mode. ⚠️ This setting will be overriden when you have set a custom monospace font in the Obsidian settings (Appearance ➞ Font ➞ Monospace Font).'
-	 type: variable-text
-	 default: '"Input Mono S"'
-	-
-	 id: monospace-font-size
-	 title: Monospace Font Size
-	 type: variable-number-slider
-	 default: 0.9
-	 min: 0.6
-	 max: 1.6
-	 step: 0.05
-	 format: rem
-	-
-	 id: font-interface-theme
-	 title: Interace Font (Desktop)
-	 description: 'Affects the sidebars, header bar, status bar, and menus.  ⚠️ This setting will be overriden when you have set a custom interface font in the Obsidian settings (Appearance ➞ Font ➞ Interface Font).'
-	 type: variable-text
-	 default: '"Recursive S"'
-	-
-	 id: sidebar-font-size
-	 title: Side Bar Font Size
-	 description: Affects the left side bar and right side bar.
-	 type: variable-number-slider
-	 default: 0.85
-	 min: 0.6
-	 max: 1.6
-	 step: 0.05
-	 format: rem
-	-
-	 id: status-bar-font-size
-	 title: Status Bar Font Size
-	 type: variable-number-slider
-	 default: 0.85
-	 min: 0.5
-	 max: 1.5
-	 step: 0.05
-	 format: rem
-	-
-	 id: menu-font-size
-	 title: Menu Font Size
-	 description: Affects the settings menu, plugin browser and theme browser.
-	 type: variable-number-slider
-	 default: 1
-	 min: 0.7
-	 max: 1.3
-	 step: 0.05
-	 format: rem
-	-
-	 id: heading-font-options
-	 title: 🔼 Headings
-	 description: Font Size per Heading Level, Background, Level Indicator, Letter Spacing
-	 type: heading
-	 level: 2
-	 collapsed: true
-	-
-	 id: heading-font
-	 title: Heading Font
-	 description: Applies to h1 to h6 Headings
-	 type: variable-text
-	 default: '"Optima S"'
-	-
-	 id: no-heading-bg
-	 title: Remove Heading Backgrounds
-	 type: class-toggle
-	 default: false
-	-
-	 id: less-heading-letter-spacing
-	 title: Compact Headings
-	 description: Makes Headings more compact by decreasing their letter spacing.
-	 type: class-toggle
-	 default: false
-	-
-	 id: no-alternating-header-italics
-	 title: No Alternating Italic of Headings
-	 description: In this theme, the heading levels alternate between italic/regular to make them more distinguishable. You can turn that feature off if you prefer non-italic for all heading levels.
-	 type: class-toggle
-	 default: false
-	-
-	 id: no-heading-level-in-lp
-	 title: No Heading Level Indicator in Live Preview
-	 description: "Removes the small 'H1', 'H2', that are in front of headings in Live Preview."
-	 type: class-toggle
-	 default: false
-	-
-	 id: h1-size
-	 title: Level 1 Headings
-	 type: variable-number-slider
-	 default: 1.8
-	 min: 1
-	 max: 3.5
-	 step: 0.1
-	 format: em
-	-
-	 id: h2-size
-	 title: Level 2 Headings
-	 type: variable-number-slider
-	 default: 1.6
-	 min: 1
-	 max: 2.7
-	 step: 0.05
-	 format: em
-	-
-	 id: h3-size
-	 title: Level 3 Headings
-	 type: variable-number-slider
-	 default: 1.45
-	 min: 1
-	 max: 2.7
-	 step: 0.05
-	 format: em
-	-
-	 id: h4-size
-	 title: Level 4 Headings
-	 type: variable-number-slider
-	 default: 1.3
-	 min: 1
-	 max: 2.7
-	 step: 0.05
-	 format: em
-	-
-	 id: h5-size
-	 title: Level 5 Headings
-	 type: variable-number-slider
-	 default: 1.15
-	 min: 1
-	 max: 2.7
-	 step: 0.05
-	 format: em
-	-
-	 id: h6-size
-	 title: Level 6 Headings
-	 type: variable-number-slider
-	 default: 1.05
-	 min: 1
-	 max: 2.7
-	 step: 0.05
-	 format: em
-	-
-	 id: blockquote-font-options
-	 title: ⏹ Blockquotes
-	 description: Relative Font Size, Alignment, Decoration
-	 type: heading
-	 level: 2
-	 collapsed: true
-	-
-	 id: normal-blockquotes
-	 title: Normal-sized Blockquotes
-	 description: Blockquotes (and Callouts) have the same size and line-height as the rest of the text.
-	 type: class-toggle
-	 default: false
-	-
-	 id: blockquotes-left-aligned
-	 title: Left-aligned Blockquote Text (Preview Mode)
-	 description: Use left-aligned text in blockquotes instead of justified text.
-	 type: class-toggle
-	 default: false
-	-
-	 id: quotation-mark-deco
-	 title: Decorative Quotation Mark
-	 description: Show a decorative quotation mark next to blockquotes in Reading Mode.
-	 type: class-toggle
-	 default: false
-	-
+   id: font-settings
+   title: 🔠 Typography
+   description: "Fonts, Headings, Blockquotes. ⚠️ To accomodate Obsidan's latest font update, some font style settings had to be reset, so you may have to set them once again. (This setting will be overriden when you have set custom fonts in the Obsidian settings.)"
+   type: heading
+   level: 1
+   collapsed: true
+  -
+   id: font-family-font-size
+   title: 🔤 Fonts
+   description: Font Family, Font Size
+   type: heading
+   level: 2
+   collapsed: true
+  -
+   id: font-text-theme
+   title: Text Font (Desktop)
+   description: 'Used in Reading and Editing Mode. ⚠️ This setting will be overriden when you have set a custom text font in the Obsidian settings (Appearance ➞ Font ➞ Text Font).'
+   type: variable-text
+   default: '"iA Writer Quattro S"'
+  -
+   id: font-monospace-theme
+   title: Monospace Font
+   description: 'Used in Code blocks, YAML headers, tables & MathJax in Source Mode. ⚠️ This setting will be overriden when you have set a custom monospace font in the Obsidian settings (Appearance ➞ Font ➞ Monospace Font).'
+   type: variable-text
+   default: '"Input Mono S"'
+  -
+   id: monospace-font-size
+   title: Monospace Font Size
+   type: variable-number-slider
+   default: 0.9
+   min: 0.6
+   max: 1.6
+   step: 0.05
+   format: rem
+  -
+   id: font-interface-theme
+   title: Interace Font (Desktop)
+   description: 'Affects the sidebars, header bar, status bar, and menus.  ⚠️ This setting will be overriden when you have set a custom interface font in the Obsidian settings (Appearance ➞ Font ➞ Interface Font).'
+   type: variable-text
+   default: '"Recursive S"'
+  -
+   id: sidebar-font-size
+   title: Side Bar Font Size
+   description: Affects the left side bar and right side bar.
+   type: variable-number-slider
+   default: 0.85
+   min: 0.6
+   max: 1.6
+   step: 0.05
+   format: rem
+  -
+   id: status-bar-font-size
+   title: Status Bar Font Size
+   type: variable-number-slider
+   default: 0.85
+   min: 0.5
+   max: 1.5
+   step: 0.05
+   format: rem
+  -
+   id: menu-font-size
+   title: Menu Font Size
+   description: Affects the settings menu, plugin browser and theme browser.
+   type: variable-number-slider
+   default: 1
+   min: 0.7
+   max: 1.3
+   step: 0.05
+   format: rem
+  -
+   id: heading-font-options
+   title: 🔼 Headings
+   description: Font Size per Heading Level, Background, Level Indicator, Letter Spacing
+   type: heading
+   level: 2
+   collapsed: true
+  -
+   id: heading-font
+   title: Heading Font
+   description: Applies to h1 to h6 Headings
+   type: variable-text
+   default: '"Optima S"'
+  -
+   id: no-heading-bg
+   title: Remove Heading Backgrounds
+   type: class-toggle
+   default: false
+  -
+   id: less-heading-letter-spacing
+   title: Compact Headings
+   description: Makes Headings more compact by decreasing their letter spacing.
+   type: class-toggle
+   default: false
+  -
+   id: no-alternating-header-italics
+   title: No Alternating Italic of Headings
+   description: In this theme, the heading levels alternate between italic/regular to make them more distinguishable. You can turn that feature off if you prefer non-italic for all heading levels.
+   type: class-toggle
+   default: false
+  -
+   id: no-heading-level-in-lp
+   title: No Heading Level Indicator in Live Preview
+   description: "Removes the small 'H1', 'H2', that are in front of headings in Live Preview."
+   type: class-toggle
+   default: false
+  -
+   id: h1-size
+   title: Level 1 Headings
+   type: variable-number-slider
+   default: 1.8
+   min: 1
+   max: 3.5
+   step: 0.1
+   format: em
+  -
+   id: h2-size
+   title: Level 2 Headings
+   type: variable-number-slider
+   default: 1.6
+   min: 1
+   max: 2.7
+   step: 0.05
+   format: em
+  -
+   id: h3-size
+   title: Level 3 Headings
+   type: variable-number-slider
+   default: 1.45
+   min: 1
+   max: 2.7
+   step: 0.05
+   format: em
+  -
+   id: h4-size
+   title: Level 4 Headings
+   type: variable-number-slider
+   default: 1.3
+   min: 1
+   max: 2.7
+   step: 0.05
+   format: em
+  -
+   id: h5-size
+   title: Level 5 Headings
+   type: variable-number-slider
+   default: 1.15
+   min: 1
+   max: 2.7
+   step: 0.05
+   format: em
+  -
+   id: h6-size
+   title: Level 6 Headings
+   type: variable-number-slider
+   default: 1.05
+   min: 1
+   max: 2.7
+   step: 0.05
+   format: em
+  -
+   id: blockquote-font-options
+   title: ⏹ Blockquotes
+   description: Relative Font Size, Alignment, Decoration
+   type: heading
+   level: 2
+   collapsed: true
+  -
+   id: normal-blockquotes
+   title: Normal-sized Blockquotes
+   description: Blockquotes (and Callouts) have the same size and line-height as the rest of the text.
+   type: class-toggle
+   default: false
+  -
+   id: blockquotes-left-aligned
+   title: Left-aligned Blockquote Text (Preview Mode)
+   description: Use left-aligned text in blockquotes instead of justified text.
+   type: class-toggle
+   default: false
+  -
+   id: quotation-mark-deco
+   title: Decorative Quotation Mark
+   description: Show a decorative quotation mark next to blockquotes in Reading Mode.
+   type: class-toggle
+   default: false
+  -
 # << Gutter & Active Line (+)
-	 id: gutter-features
-	 title: ❇️ Gutter & Active Line
-	 description: Active Line Highlights, Indicators in the Gutter, Line Numbers, 🆕 Tags-in-Gutter
-	 type: heading
-	 level: 1
-	 collapsed: true
-	-
-	 id: active-line-highlight-options
-	 title: Active Line
-	 description: "Options for emphasizing the active line. ('Emphasized Background' is automatically turned off when the 'Active Visual Line' Plugin is installed.)"
-	 type: class-select
-	 allowEmpty: false
-	 default: active-line-gutter
-	 options:
-	 -
-		label: Vertical Line in Gutter
-		value: active-line-gutter
-	 -
-		label: Emphasized Background
-		value: active-line-emphasized-bg
-	 -
-		label: No Active Line Highlight
-		value: no-active-highlight
-	-
-	 id: footnote-gutter
-	 title: "Footnote Indicator"
-	 description: Displays a small indicator (⦿) in the gutter when a footnote is present. (Note that numbered indicators do not count properly footnotes on the same line.)
-	 type: class-select
-	 allowEmpty: false
-	 default: simple-fn-indicator
-	 options:
-	 -
-		label: Default Footnote Indicator
-		value: simple-fn-indicator
-	 -
-		label: Numbered Footnote Indicator
-		value: numbered-fn-indicator
-	 -
-		label: No Footnote Indicator
-		value: no-fn-indicator
-	-
-	 id: no-unresolved-link-indicator
-	 title: Disable Unresolved Link Indicators
-	 description: The indicators (𝘅) are only shown in Reading Mode.
-	 type: class-toggle
-	 default: false
-	-
-	 id: tags-in-gutter
-	 title: 🆕 Show Tags in Gutter (Preview Mode)
-	 description: 'Can also be selectively enabled per note by adding the cssclass "tags-in-gutter".'
-	 type: class-toggle
-	 default: false
-	-
-	 id: minimal-line-numbering
-	 title: Minimal Line Numbering
-	 description: "When 'Show line number' is enabled in the Obsidian settings, only the line number of the active and hovered line will be shown."
-	 type: class-toggle
-	 default: false
-	-
-	 id: no-search-result-indicator
-	 title: Disable Search Result Indicators
-	 description: The indicators (▶) are only shown in Source Mode and Live Preview.
-	 type: class-toggle
-	 default: false
-	-
+   id: gutter-features
+   title: ❇️ Gutter & Active Line
+   description: Active Line Highlights, Indicators in the Gutter, Line Numbers, 🆕 Tags-in-Gutter
+   type: heading
+   level: 1
+   collapsed: true
+  -
+   id: active-line-highlight-options
+   title: Active Line
+   description: "Options for emphasizing the active line. ('Emphasized Background' is automatically turned off when the 'Active Visual Line' Plugin is installed.)"
+   type: class-select
+   allowEmpty: false
+   default: active-line-gutter
+   options:
+   -
+    label: Vertical Line in Gutter
+    value: active-line-gutter
+   -
+    label: Emphasized Background
+    value: active-line-emphasized-bg
+   -
+    label: No Active Line Highlight
+    value: no-active-highlight
+  -
+   id: footnote-gutter
+   title: "Footnote Indicator"
+   description: Displays a small indicator (⦿) in the gutter when a footnote is present. (Note that numbered indicators do not count properly footnotes on the same line.)
+   type: class-select
+   allowEmpty: false
+   default: simple-fn-indicator
+   options:
+   -
+    label: Default Footnote Indicator
+    value: simple-fn-indicator
+   -
+    label: Numbered Footnote Indicator
+    value: numbered-fn-indicator
+   -
+    label: No Footnote Indicator
+    value: no-fn-indicator
+  -
+   id: no-unresolved-link-indicator
+   title: Disable Unresolved Link Indicators
+   description: The indicators (𝘅) are only shown in Reading Mode.
+   type: class-toggle
+   default: false
+  -
+   id: tags-in-gutter
+   title: 🆕 Show Tags in Gutter (Preview Mode)
+   description: 'Can also be selectively enabled per note by adding the cssclass "tags-in-gutter".'
+   type: class-toggle
+   default: false
+  -
+   id: minimal-line-numbering
+   title: Minimal Line Numbering
+   description: "When 'Show line number' is enabled in the Obsidian settings, only the line number of the active and hovered line will be shown."
+   type: class-toggle
+   default: false
+  -
+   id: no-search-result-indicator
+   title: Disable Search Result Indicators
+   description: The indicators (▶) are only shown in Source Mode and Live Preview.
+   type: class-toggle
+   default: false
+  -
 # << Content (+)
-	 id: content-settings
-	 title: 🏞 Views & Media
-	 description: Line Length, Max View, Focus View, Images, PDFs
-	 type: heading
-	 level: 1
-	 collapsed: true
-	-
-	 id: readable-length
-	 title: Line Length
-	 description: 'When "Readable Line length" is enabled and "Max View" is not active.'
-	 type: variable-number-slider
-	 default: 700
-	 min: 300
-	 max: 1300
-	 step: 50
-	 format: px
-	-
-	 id: max-view-enabled
-	 title: 'Enable "Max View"'
-	 description: 'Makes panes full length and images/PDFs full width when the left sidebar is hidden. Switches back to readable line length and smaller images/PDFs when the left sidebar is shown. Can be combined with "Focus View". (Requires "Readable Line Length" to be enabled.)'
-	 type: class-toggle
-	 default: false
-	-
-	 id: focus-view-enabled
-	 title: 'Enable "Focus View"'
-	 description: 'Hiding the left side bar will also hide the right one. Note that with this feature, the right side bar stays hidden until the left one is shown again. Can be combined with "Max View".'
-	 type: class-toggle
-	 default: false
-	-
-	 id: image-size
-	 title: Size of Images
-	 description: Size of Images in % (when Max View is disabled or not active)
-	 type: variable-number-slider
-	 default: 50
-	 min: 10
-	 max: 100
-	 step: 5
-	-
-	 id: pdf-size
-	 title: Size of embedded PDFs
-	 description: Size of embedded PDFs in % (when Max View is disabled or not active)
-	 type: variable-number-slider
-	 default: 50
-	 min: 10
-	 max: 100
-	 step: 5
-	-
-	 id: disable-image-borders
-	 title: Remove image borders
-	 description: Disables the frame put around images.
-	 type: class-toggle
-	 hub: ignore
-	 default: false
-	-
-	 id: left-aligned-embeds
-	 title: Align Images & PDFs to the left
-	 description: When disabled, they will be aligned to the center instead.
-	 type: class-toggle
-	 default: false
-	-
-	 id: no-pdf-dark-mode
-	 title: No Dark Mode for PDFs
-	 description: Disable Dark Mode for PDFs when Obsidian is set to dark mode.
-	 type: class-toggle
-	 default: false
-	-
+   id: content-settings
+   title: 🏞 Views & Media
+   description: Line Length, Max View, Focus View, Images, PDFs
+   type: heading
+   level: 1
+   collapsed: true
+  -
+   id: readable-length
+   title: Line Length
+   description: 'When "Readable Line length" is enabled and "Max View" is not active.'
+   type: variable-number-slider
+   default: 700
+   min: 300
+   max: 1300
+   step: 50
+   format: px
+  -
+   id: max-view-enabled
+   title: 'Enable "Max View"'
+   description: 'Makes panes full length and images/PDFs full width when the left sidebar is hidden. Switches back to readable line length and smaller images/PDFs when the left sidebar is shown. Can be combined with "Focus View". (Requires "Readable Line Length" to be enabled.)'
+   type: class-toggle
+   default: false
+  -
+   id: focus-view-enabled
+   title: 'Enable "Focus View"'
+   description: 'Hiding the left side bar will also hide the right one. Note that with this feature, the right side bar stays hidden until the left one is shown again. Can be combined with "Max View".'
+   type: class-toggle
+   default: false
+  -
+   id: image-size
+   title: Size of Images
+   description: Size of Images in % (when Max View is disabled or not active)
+   type: variable-number-slider
+   default: 50
+   min: 10
+   max: 100
+   step: 5
+  -
+   id: pdf-size
+   title: Size of embedded PDFs
+   description: Size of embedded PDFs in % (when Max View is disabled or not active)
+   type: variable-number-slider
+   default: 50
+   min: 10
+   max: 100
+   step: 5
+  -
+   id: disable-image-borders
+   title: Remove image borders
+   description: Disables the frame put around images.
+   type: class-toggle
+   hub: ignore
+   default: false
+  -
+   id: left-aligned-embeds
+   title: Align Images & PDFs to the left
+   description: When disabled, they will be aligned to the center instead.
+   type: class-toggle
+   default: false
+  -
+   id: no-pdf-dark-mode
+   title: No Dark Mode for PDFs
+   description: Disable Dark Mode for PDFs when Obsidian is set to dark mode.
+   type: class-toggle
+   default: false
+  -
 # << Callouts (+)
-	 id: callout-options
-	 title: 📞 Callouts
-	 description: 🆕 Sidenote Callouts
-	 type: heading
-	 level: 1
-	 collapsed: true
-	-
-	 id: sidenote-callout-width
-	 title: Width of Sidenote Callouts
-	 description: 'Percentage of the readable line length. Affects callouts with "> [!sidenote]". '
-	 type: variable-number-slider
-	 default: 34
-	 min: 10
-	 max: 60
-	 step: 2
-	-
-	 id: sidenote-callout-outdent
-	 title: '"Outdent" the Sidenote Callout'
-	 description: Moves them slightly to the right for extra space.
-	 type: class-toggle
-	 default: false
-	-
-	 id: post-it-callout-size
-	 title: Size of Post-it Callouts
-	 description: "Affects callouts with '> [!post-it]'. This variable affects width *and* height (i.e., quadratic growth). Mind that post-it's with too much content get cut off — they are post-its after all."
-	 type: variable-number-slider
-	 default: 135
-	 min: 90
-	 max: 250
-	 step: 5
-	 format: px
-	-
+   id: callout-options
+   title: 📞 Callouts
+   description: 🆕 Sidenote Callouts
+   type: heading
+   level: 1
+   collapsed: true
+  -
+   id: sidenote-callout-width
+   title: Width of Sidenote Callouts
+   description: 'Percentage of the readable line length. Affects callouts with "> [!sidenote]". '
+   type: variable-number-slider
+   default: 34
+   min: 10
+   max: 60
+   step: 2
+  -
+   id: sidenote-callout-outdent
+   title: '"Outdent" the Sidenote Callout'
+   description: Moves them slightly to the right for extra space.
+   type: class-toggle
+   default: false
+  -
+   id: post-it-callout-size
+   title: Size of Post-it Callouts
+   description: "Affects callouts with '> [!post-it]'. This variable affects width *and* height (i.e., quadratic growth). Mind that post-it's with too much content get cut off — they are post-its after all."
+   type: variable-number-slider
+   default: 135
+   min: 90
+   max: 250
+   step: 5
+   format: px
+  -
 # << Special Syntax (+)
-	 id: special-syntax
-	 title: 🌀 Special Syntax
-	 description: '🆕 Highlight Colors, Multi-Color Highlights, Spoiler Syntax, Annotation Tags, 🆕 Trailing Whites Space, Citation Syntax, Pandoc Citations'
-	 type: heading
-	 level: 1
-	 collapsed: true
-	-
-	 id: highlight-hue-1
-	 title: Regular Highlights
-	 type: variable-number-slider
-	 default: 60
-	 min: 0
-	 max: 360
-	 step: 5
-	-
-	 id: highlight-hue-2
-	 title: Multi-Color Highlight 1
-	 type: variable-number-slider
-	 default: 150
-	 min: 0
-	 max: 360
-	 step: 5
-	-
-	 id: highlight-hue-3
-	 title:  Multi-Color Highlight 2
-	 type: variable-number-slider
-	 default: 185
-	 min: 0
-	 max: 360
-	 step: 5
-	-
-	 id: no-multi-color-highlights
-	 title: Disable Multi-Color Highlights
-	 description: Multi-Color Highlights are created by combining regular highlights with italic (*==highlight==*) or bold (**==highlight==**).
-	 type: class-toggle
-	 default: false
-	-
-	 id: no-pseudo-spoiler-tags
-	 title: Disable Spoiler Syntax
-	 description: The spoiler syntax (*~~spoiler~~*) will blacken the enclosed text until hovered.
-	 type: class-toggle
-	 default: false
-	-
-	 id: annotation-tags-off
-	 title: Disable Annotation Tags
-	 description: '"Annotation Tags" are tags that are visually emphasized when used inline (i.e., not the YAML frontmatter). They include: #definition, #question, #goal, #todo, #summary, #important, #main, #critique, #gap, #litreview, #quote, #agree, #disagree, #example, #data, #method, and #sidenote.'
-	 type: class-toggle
-	 default: false
-	-
-	 id: hide-trailing-whitespace
-	 title: Hide Trailing Spaces
-	 description: 'By default, this theme shows trailing spaces when there are more than one, indicated with "· · ↵". This can be for the so-called "Two Space Rule" in Markdown, where exactly two spaces at the end of a line force a line break.'
-	 type: class-toggle
-	 default: false
-	-
-	 id: no-citation-syntax
-	 title: Disable Citation Syntax
-	 description: The Citation Syntax turn a double-blockquote paragraph (>>) that follows a normal blockquote (>) paragraph into an indented citation.
-	 type: class-toggle
-	 default: false
-	-
-	 id: no-pandoc-citation-emphasis
-	 title: No Emphasis of Pandoc Citations and Dataview Inline Fields
-	 description: "Turn off the coloring of Pandoc Citations [@citekey] and dataview inline fields [key:: value] in Source Mode."
-	 type: class-toggle
-	 default: false
-	-
+   id: special-syntax
+   title: 🌀 Special Syntax
+   description: '🆕 Highlight Colors, Multi-Color Highlights, Spoiler Syntax, Annotation Tags, 🆕 Trailing Whites Space, Citation Syntax, Pandoc Citations'
+   type: heading
+   level: 1
+   collapsed: true
+  -
+   id: highlight-hue-1
+   title: Regular Highlights
+   type: variable-number-slider
+   default: 60
+   min: 0
+   max: 360
+   step: 5
+  -
+   id: highlight-hue-2
+   title: Multi-Color Highlight 1
+   type: variable-number-slider
+   default: 150
+   min: 0
+   max: 360
+   step: 5
+  -
+   id: highlight-hue-3
+   title:  Multi-Color Highlight 2
+   type: variable-number-slider
+   default: 185
+   min: 0
+   max: 360
+   step: 5
+  -
+   id: no-multi-color-highlights
+   title: Disable Multi-Color Highlights
+   description: Multi-Color Highlights are created by combining regular highlights with italic (*==highlight==*) or bold (**==highlight==**).
+   type: class-toggle
+   default: false
+  -
+   id: no-pseudo-spoiler-tags
+   title: Disable Spoiler Syntax
+   description: The spoiler syntax (*~~spoiler~~*) will blacken the enclosed text until hovered.
+   type: class-toggle
+   default: false
+  -
+   id: annotation-tags-off
+   title: Disable Annotation Tags
+   description: '"Annotation Tags" are tags that are visually emphasized when used inline (i.e., not the YAML frontmatter). They include: #definition, #question, #goal, #todo, #summary, #important, #main, #critique, #gap, #litreview, #quote, #agree, #disagree, #example, #data, #method, and #sidenote.'
+   type: class-toggle
+   default: false
+  -
+   id: hide-trailing-whitespace
+   title: Hide Trailing Spaces
+   description: 'By default, this theme shows trailing spaces when there are more than one, indicated with "· · ↵". This can be for the so-called "Two Space Rule" in Markdown, where exactly two spaces at the end of a line force a line break.'
+   type: class-toggle
+   default: false
+  -
+   id: no-citation-syntax
+   title: Disable Citation Syntax
+   description: The Citation Syntax turn a double-blockquote paragraph (>>) that follows a normal blockquote (>) paragraph into an indented citation.
+   type: class-toggle
+   default: false
+  -
+   id: no-pandoc-citation-emphasis
+   title: No Emphasis of Pandoc Citations and Dataview Inline Fields
+   description: "Turn off the coloring of Pandoc Citations [@citekey] and dataview inline fields [key:: value] in Source Mode."
+   type: class-toggle
+   default: false
+  -
 # << Cursor (+)
-	 id: cursor-settings
-	 title: 🐁 Cursor
-	 description: Thickness, Style, Color, Blinking, Block Cursor
-	 type: heading
-	 level: 1
-	 collapsed: true
-	-
-	 id: cursor-styles
-	 title: Cursor Style
-	 description: Color and appearance of the cursor.
-	 type: class-select
-	 allowEmpty: false
-	 default: shimmering-beam-cursor
-	 options:
-		-
-			label: Shimmering Beam
-			value: shimmering-beam-cursor
-		-
-			label: iA Writer
-			value: ia-writer-cursor
-		-
-			label: Dark Eclipse
-			value: dark-eclipse-cursor
-		-
-			label: Fire & Ice
-			value: fire-and-ice-cursor
-	-
-	 id: cursor-blink-style
-	 title: Cursor Blink Style
-	 type: class-select
-	 allowEmpty: false
-	 default: normal-blink
-	 options:
-		-
-			label: Normal
-			value: normal-blink
-		-
-			label: Smooth Phasing
-			value: phase-blink-cursor
-		-
-			label: Breathing
-			value: breathing-cursor
-		-
-			label: Inversion Blink
-			value: inversion-blink-cursor
-		-
-			label: No Blink
-			value: no-blink-cursor
-	-
-	 id: cursor-shape
-	 title: Cursor Shape
-	 description: When using a block cursor, you should also change the main font to a monospace font for best results. (This setting does not affect the Vim cursor.)
-	 type: class-select
-	 allowEmpty: false
-	 default: normal-shape
-	 options:
-		-
-			label: Normal
-			value: normal-shape
-		-
-			label: Block Cursor
-			value: block-cursor
-		-
-			label: Thin Cursor
-			value: thin-cursor
-	-
+   id: cursor-settings
+   title: 🐁 Cursor
+   description: Thickness, Style, Color, Blinking, Block Cursor
+   type: heading
+   level: 1
+   collapsed: true
+  -
+   id: cursor-styles
+   title: Cursor Style
+   description: Color and appearance of the cursor.
+   type: class-select
+   allowEmpty: false
+   default: shimmering-beam-cursor
+   options:
+    -
+      label: Shimmering Beam
+      value: shimmering-beam-cursor
+    -
+      label: iA Writer
+      value: ia-writer-cursor
+    -
+      label: Dark Eclipse
+      value: dark-eclipse-cursor
+    -
+      label: Fire & Ice
+      value: fire-and-ice-cursor
+  -
+   id: cursor-blink-style
+   title: Cursor Blink Style
+   type: class-select
+   allowEmpty: false
+   default: normal-blink
+   options:
+    -
+      label: Normal
+      value: normal-blink
+    -
+      label: Smooth Phasing
+      value: phase-blink-cursor
+    -
+      label: Breathing
+      value: breathing-cursor
+    -
+      label: Inversion Blink
+      value: inversion-blink-cursor
+    -
+      label: No Blink
+      value: no-blink-cursor
+  -
+   id: cursor-shape
+   title: Cursor Shape
+   description: When using a block cursor, you should also change the main font to a monospace font for best results. (This setting does not affect the Vim cursor.)
+   type: class-select
+   allowEmpty: false
+   default: normal-shape
+   options:
+    -
+      label: Normal
+      value: normal-shape
+    -
+      label: Block Cursor
+      value: block-cursor
+    -
+      label: Thin Cursor
+      value: thin-cursor
+  -
 # << Code Blocks (+)
-	 id: code-blocks-options
-	 title: '🖥 Code Blocks'
-	 description: '🆕 Syntax Highlighting, Tab Size, Line Wrapping'
-	 type: heading
-	 level: 1
-	 collapsed: true
-	-
-	 id: code-block-tab-size
-	 title: Tab Size (Preview & Source Mode)
-	 description: This setting is independent from the global Obsidian setting for Tab Size.
-	 type: variable-number-slider
-	 default: 4
-	 min: 2
-	 max: 8
-	 step: 1
-	-
-	 id: no-code-block-wrapping
-	 title: Disable Line Wrapping in Code Blocks (Preview Mode)
-	 description: This setting is independent from the global Obsidian setting for Line Wrapping.
-	 type: class-toggle
-	 default: false
-	-
-	 id: code-block-syntax-hl-light-mode
-	 title: "Syntax Highlighting (Light Mode)"
-	 description: Affects Code Blocks, YAML Frontmatter in Preview Mode, and MathJax
-	 type: class-select
-	 allowEmpty: false
-	 default: default-syntax-highl-light
-	 options:
-		-
-			label: Default
-			value: default-syntax-highl-light
-		-
-			label: Dracula
-			value: dracula-syntax-hl-light
-	-
-	 id: code-block-syntax-hl-dark-mode
-	 title: "Syntax Highlighting (Dark Mode)"
-	 description: Affects Code Blocks, YAML Frontmatter in Preview Mode, and MathJax
-	 type: class-select
-	 allowEmpty: false
-	 default: default-syntax-highl-dark
-	 options:
-		-
-			label: Default
-			value: default-syntax-highl-dark
-		-
-			label: Dracula
-			value: dracula-syntax-hl-dark
-	-
+   id: code-blocks-options
+   title: '🖥 Code Blocks'
+   description: '🆕 Syntax Highlighting, Tab Size, Line Wrapping'
+   type: heading
+   level: 1
+   collapsed: true
+  -
+   id: code-block-tab-size
+   title: Tab Size (Preview & Source Mode)
+   description: This setting is independent from the global Obsidian setting for Tab Size.
+   type: variable-number-slider
+   default: 4
+   min: 2
+   max: 8
+   step: 1
+  -
+   id: no-code-block-wrapping
+   title: Disable Line Wrapping in Code Blocks (Preview Mode)
+   description: This setting is independent from the global Obsidian setting for Line Wrapping.
+   type: class-toggle
+   default: false
+  -
+   id: code-block-syntax-hl-light-mode
+   title: "Syntax Highlighting (Light Mode)"
+   description: Affects Code Blocks, YAML Frontmatter in Preview Mode, and MathJax
+   type: class-select
+   allowEmpty: false
+   default: default-syntax-highl-light
+   options:
+    -
+      label: Default
+      value: default-syntax-highl-light
+    -
+      label: Dracula
+      value: dracula-syntax-hl-light
+  -
+   id: code-block-syntax-hl-dark-mode
+   title: "Syntax Highlighting (Dark Mode)"
+   description: Affects Code Blocks, YAML Frontmatter in Preview Mode, and MathJax
+   type: class-select
+   allowEmpty: false
+   default: default-syntax-highl-dark
+   options:
+    -
+      label: Default
+      value: default-syntax-highl-dark
+    -
+      label: Dracula
+      value: dracula-syntax-hl-dark
+  -
 # << Mobile (+)
-	 id: mobile
-	 title: 📱 Mobile
-	 description: Header Bar, Font Size, Font Type
-	 type: heading
-	 level: 1
-	 collapsed: true
-	-
-	 id: show-mobile-header
-	 title: Re-enable Header
-	 description: By default, this theme shows a floating button to toggle between Reading and Source Mode.
-	 type: class-toggle
-	 default: false
-	-
-	 id: mobile-font-size
-	 title: Mobile Font Size
-	 type: variable-number-slider
-	 default: 1.25
-	 min: 0.5
-	 max: 2
-	 step: 0.05
-	 format: rem
-	-
-	 id: mobile-font-text-theme
-	 title: Text Font (Mobile)
-	 description: 'Used in Reading and Editing Mode. ⚠️ This setting will be overriden when you have set a custom text font in the Obsidian settings (Appearance ➞ Font ➞ Text Font).'
-	 type: variable-text
-	 default: '"iA Writer Quattro S"'
-	-
-	 id: mobile-font-interface-theme
-	 title: Menu Font (Mobile)
-	 description: 'Affects the sidebars, header bar, status bar, and menus.  ⚠️ This setting will be overriden when you have set a custom interface font in the Obsidian settings (Appearance ➞ Font ➞ Interface Font).'
-	 type: variable-text
-	 default: '"Recursive S"'
-	-
+   id: mobile
+   title: 📱 Mobile
+   description: Header Bar, Font Size, Font Type
+   type: heading
+   level: 1
+   collapsed: true
+  -
+   id: show-mobile-header
+   title: Re-enable Header
+   description: By default, this theme shows a floating button to toggle between Reading and Source Mode.
+   type: class-toggle
+   default: false
+  -
+   id: mobile-font-size
+   title: Mobile Font Size
+   type: variable-number-slider
+   default: 1.25
+   min: 0.5
+   max: 2
+   step: 0.05
+   format: rem
+  -
+   id: mobile-font-text-theme
+   title: Text Font (Mobile)
+   description: 'Used in Reading and Editing Mode. ⚠️ This setting will be overriden when you have set a custom text font in the Obsidian settings (Appearance ➞ Font ➞ Text Font).'
+   type: variable-text
+   default: '"iA Writer Quattro S"'
+  -
+   id: mobile-font-interface-theme
+   title: Menu Font (Mobile)
+   description: 'Affects the sidebars, header bar, status bar, and menus.  ⚠️ This setting will be overriden when you have set a custom interface font in the Obsidian settings (Appearance ➞ Font ➞ Interface Font).'
+   type: variable-text
+   default: '"Recursive S"'
+  -
 # << Plugin-Specific Settings (+)
-	 id: plugin-specific
-	 title: ⚙️ Plugin-Specific Settings
-	 description: File Explorer, Backlinks, Outline, Breadcrumbs, Sliding Panes, Calendar, Link Favicons, Command Palette
-	 type: heading
-	 level: 1
-	 collapsed: true
-	-
-	 id: no-file-explorer-icons
-	 title: 'File Explorer: No File Icons'
-	 description: Removes the icons next to files in the file explorer.
-	 type: class-toggle
-	 default: false
-	-
-	 id: no-folder-icons
-	 title: 'File Explorer: No Folder Icons'
-	 description: Removes the icons next to folders in the file explorer.
-	 type: class-toggle
-	 default: false
-	-
-	 id: hide-attachment-folders
-	 title: 'File Explorer: Hide attachment folders'
-	 description: 'Affects folders that have exactly the name "attachments" (case-insensitive).'
-	 type: class-toggle
-	 default: false
-	-
-	 id: classic-inline-backlinks
-	 title: 'Backlinks: Re-enable classic inline backlinks'
-	 description: 'You can also add the yaml "cssclass: no-inline-backlinks" to disable the inline backlinks for a specific note.'
-	 type: class-toggle
-	 default: false
-	-
-	 id: hide-backlinks-status-bar
-	 title: 'Backlinks: Hide the Status Bar Item'
-	 type: class-toggle
-	 default: false
-	-
-	 id: hide-languagetool-status-bar
-	 title: 'Language Tool: Hide the Status Bar Item'
-	 type: class-toggle
-	 default: false
-	-
-	 id: outline-remove-level-1
-	 title: 'Outline: Remove First Level of Headings'
-	 description: In case you have only one H1 heading per file, this will make the outline sidebar more compact.
-	 type: class-toggle
-	 default: false
-	-
-	 id: minimal-breadcrumbs-matrix
-	 title: 'Breadcrumbs (Matrix View): Remove Headings'
-	 description: Make the Matrix View more compact by removing all headings ("real", "implied", "up",... ).
-	 type: class-toggle
-	 default: false
-	-
-	 id: no-sliding-panes-shadows
-	 title: 'Sliding Panes: Remove Pane Shadows'
-	 description: 'Removes the shadow that occur when using the "Toggle Stacking" option.'
-	 type: class-toggle
-	 default: false
-	-
-	 id: no-built-in-supercharged-links
-	 title: 'Supercharged Links: Turn off built-in styling'
-	 description: "This theme has some styling for the Supercharged Links plugin built-in, so can make use of the plugin without knowledge of CSS. See the theme's documentation for more information."
-	 type: class-toggle
-	 default: false
-	-
-	 id: move-plugin-name-to-left
-	 title: 'Command Palette: Move the plugin name back to the left'
-	 description: Enable this in case some commands are aren't displayed properly in the Command Palette.
-	 type: class-toggle
-	 hub: ignore
-	 default: false
-	-
-	 id: grayscale-favicons
-	 title: 'Link Favicons: Grayscale Icons'
-	 type: class-toggle
-	 default: false
-	-
-	 id: no-calendar-lines
-	 title: 'Calendar: Remove vertical lines'
-	 description: Remove the lines in the Calendar plugin's Calendar (making it more similar to its default look).
-	 type: class-toggle
-	 hub: ignore
-	 default: false
-	-
-	 id: bold-calendar-today
-	 title: "Calendar: Bold today's date"
-	 description: Applies bold and the heading font to today's date in the Calendar plugin.
-	 type: class-toggle
-	 hub: ignore
-	 default: false
-	-
+   id: plugin-specific
+   title: ⚙️ Plugin-Specific Settings
+   description: File Explorer, Backlinks, Outline, Breadcrumbs, Sliding Panes, Calendar, Link Favicons, Command Palette
+   type: heading
+   level: 1
+   collapsed: true
+  -
+   id: no-file-explorer-icons
+   title: 'File Explorer: No File Icons'
+   description: Removes the icons next to files in the file explorer.
+   type: class-toggle
+   default: false
+  -
+   id: no-folder-icons
+   title: 'File Explorer: No Folder Icons'
+   description: Removes the icons next to folders in the file explorer.
+   type: class-toggle
+   default: false
+  -
+   id: hide-attachment-folders
+   title: 'File Explorer: Hide attachment folders'
+   description: 'Affects folders that have exactly the name "attachments" (case-insensitive).'
+   type: class-toggle
+   default: false
+  -
+   id: classic-inline-backlinks
+   title: 'Backlinks: Re-enable classic inline backlinks'
+   description: 'You can also add the yaml "cssclass: no-inline-backlinks" to disable the inline backlinks for a specific note.'
+   type: class-toggle
+   default: false
+  -
+   id: hide-backlinks-status-bar
+   title: 'Backlinks: Hide the Status Bar Item'
+   type: class-toggle
+   default: false
+  -
+   id: hide-languagetool-status-bar
+   title: 'Language Tool: Hide the Status Bar Item'
+   type: class-toggle
+   default: false
+  -
+   id: outline-remove-level-1
+   title: 'Outline: Remove First Level of Headings'
+   description: In case you have only one H1 heading per file, this will make the outline sidebar more compact.
+   type: class-toggle
+   default: false
+  -
+   id: minimal-breadcrumbs-matrix
+   title: 'Breadcrumbs (Matrix View): Remove Headings'
+   description: Make the Matrix View more compact by removing all headings ("real", "implied", "up",... ).
+   type: class-toggle
+   default: false
+  -
+   id: no-sliding-panes-shadows
+   title: 'Sliding Panes: Remove Pane Shadows'
+   description: 'Removes the shadow that occur when using the "Toggle Stacking" option.'
+   type: class-toggle
+   default: false
+  -
+   id: no-built-in-supercharged-links
+   title: 'Supercharged Links: Turn off built-in styling'
+   description: "This theme has some styling for the Supercharged Links plugin built-in, so can make use of the plugin without knowledge of CSS. See the theme's documentation for more information."
+   type: class-toggle
+   default: false
+  -
+   id: move-plugin-name-to-left
+   title: 'Command Palette: Move the plugin name back to the left'
+   description: Enable this in case some commands are aren't displayed properly in the Command Palette.
+   type: class-toggle
+   hub: ignore
+   default: false
+  -
+   id: grayscale-favicons
+   title: 'Link Favicons: Grayscale Icons'
+   type: class-toggle
+   default: false
+  -
+   id: no-calendar-lines
+   title: 'Calendar: Remove vertical lines'
+   description: Remove the lines in the Calendar plugin's Calendar (making it more similar to its default look).
+   type: class-toggle
+   hub: ignore
+   default: false
+  -
+   id: bold-calendar-today
+   title: "Calendar: Bold today's date"
+   description: Applies bold and the heading font to today's date in the Calendar plugin.
+   type: class-toggle
+   hub: ignore
+   default: false
+  -
 # << Longform (+)
-	 id: longform-settings
-	 title: ✍️ Longform Plugin & Writing cssclass
-	 description: Font, Alignment, First-Line Indent, Background Color, Index File
-	 type: heading
-	 level: 1
-	 collapsed: true
-	-
-	 id: longform-font
-	 title: 'Main Font'
-	 description: "Font used in longform/writing notes (Except code, which still use the monospace font.)"
-	 type: variable-text
-	 default: '"Crimson Pro S"'
-	-
-	 id: longform-font-size
-	 title: Font Size longform/writing notes
-	 type: variable-number-slider
-	 default: 1.2
-	 min: 0.7
-	 max: 2
-	 step: 0.05
-	 format: 'rem'
-	-
-	 id: longform-left-aligned
-	 title: Left-aligned text
-	 description: Use left-aligned text instead of justified text.
-	 type: class-toggle
-	 default: false
-	-
-	 id: longform-text-indent
-	 title: First-Line Indent (Preview Mode)
-	 description: Indent the first Line of a paragraph in longform/writing notes (preview mode only).
-	 type: class-toggle
-	 default: false
-	-
-	 id: longform-hue-shift
-	 title: Background Color Shift
-	 description: 'Degree to which longform and writing notes have a different color tone than normal notes (i.e., hue added/substracted). Setting this to "0" will make longform projects have the same background color as other notes. (Note that custom colors settings with a low saturation or very high/low brightness will values make the color shift less noticeable.)'
-	 type: variable-number-slider
-	 default: 15
-	 min: -180
-	 max: 180
-	 step: 5
-	-
-	 id: hide-index-files
-	 title: 'Hide files named "Index.md" from the File Explorer and the Breadcrumbs Matrix.'
-	 description: Files named that way are created by the Longform Plugin and normally should not be changed.
-	 type: class-toggle
-	 hub: ignore
-	 default: false
-	-
+   id: longform-settings
+   title: ✍️ Longform Plugin & Writing cssclass
+   description: Font, Alignment, First-Line Indent, Background Color, Index File
+   type: heading
+   level: 1
+   collapsed: true
+  -
+   id: longform-font
+   title: 'Main Font'
+   description: "Font used in longform/writing notes (Except code, which still use the monospace font.)"
+   type: variable-text
+   default: '"Crimson Pro S"'
+  -
+   id: longform-font-size
+   title: Font Size longform/writing notes
+   type: variable-number-slider
+   default: 1.2
+   min: 0.7
+   max: 2
+   step: 0.05
+   format: 'rem'
+  -
+   id: longform-left-aligned
+   title: Left-aligned text
+   description: Use left-aligned text instead of justified text.
+   type: class-toggle
+   default: false
+  -
+   id: longform-text-indent
+   title: First-Line Indent (Preview Mode)
+   description: Indent the first Line of a paragraph in longform/writing notes (preview mode only).
+   type: class-toggle
+   default: false
+  -
+   id: longform-hue-shift
+   title: Background Color Shift
+   description: 'Degree to which longform and writing notes have a different color tone than normal notes (i.e., hue added/substracted). Setting this to "0" will make longform projects have the same background color as other notes. (Note that custom colors settings with a low saturation or very high/low brightness will values make the color shift less noticeable.)'
+   type: variable-number-slider
+   default: 15
+   min: -180
+   max: 180
+   step: 5
+  -
+   id: hide-index-files
+   title: 'Hide files named "Index.md" from the File Explorer and the Breadcrumbs Matrix.'
+   description: Files named that way are created by the Longform Plugin and normally should not be changed.
+   type: class-toggle
+   hub: ignore
+   default: false
+  -
 # << Miscellaneous (+)
-	 id: miscellaneous
-	 title: ⚛️ Miscellaneous
-	 description: Menu Size, File Name Trimming, Inactive Panes, Alternating Row Colors, Colored YAML, Animations, 🆕 Theme Beta
-	 type: heading
-	 level: 1
-	 collapsed: true
-	-
-	 id: modal-base-size
-	 title: Menu Size
-	 description: Modifies the size of modals like the settings menu, plugin browser, or theme browser.
-	 type: variable-number-slider
-	 default: 70
-	 min: 0
-	 max: 70
-	 step: 2
-	-
-	 id: trim-long-filenames
-	 title: 'Sidebar: Trim File Names'
-	 description: When enabled, long file and folder names will be trimmed. When disabled, long names will be wrapped to the next line.
-	 type: class-toggle
-	 default: false
-	-
-	 id: no-grayed-out-inactive-pane
-	 title: Do not dim Inactive Panes
-	 description: 'Also affects popovers from the Hover Editor Plugin.'
-	 type: class-toggle
-	 default: false
-	-
-	 id: no-alternating-rows
-	 title: Turn off Alternating Row Coloring
-	 description: Affects Table Rows, Command Palette, Quick Switchers, Side Bar items, and Editor Suggesters.
-	 type: class-toggle
-	 default: false
-	-
-	 id: colored-yaml
-	 title: "YAML: Coloring"
-	 description: Use colored YAML frontmatter (in Edit Mode).
-	 type: class-toggle
-	 default: false
-	-
-	 id: no-animations
-	 title: Turn off animations & transitions
-	 description: Can improve performance on older machines.
-	 type: class-toggle
-	 default: false
-	-
-	 id: no-shadows
-	 title: Turn off shadows (3D-like look)
-	 description: Can improve performance on older machines.
-	 type: class-toggle
-	 default: false
-	-
-	 id: hide-signature
-	 title: 'Status Bar: Hide the decorative "✧" icon'
-	 hub: ignore
-	 type: class-toggle
-	 default: false
-	-
-	 id: unlock-theme-beta
-	 title: Unlock Theme Beta
-	 description: 'Unlocks some features of the theme that are still under development. Note that due to the work-in-progress, these features may not work as expected yet. Also, some settings may simply not do anything yet. Currently, the beta mostly unlocks settings for Custom Colors. '
-	 type: class-toggle
-	 default: false
-	-
-	 id: info-donation
-	 title: ☕️ Support Shimmering Focus
-	 description: "If you like the theme, you can buy me a coffee: ko-fi.com/pseudometa"
-	 type: heading
-	 level: 1
-	 collapsed: true
+   id: miscellaneous
+   title: ⚛️ Miscellaneous
+   description: Menu Size, File Name Trimming, Inactive Panes, Alternating Row Colors, Colored YAML, Animations, 🆕 Theme Beta
+   type: heading
+   level: 1
+   collapsed: true
+  -
+   id: modal-base-size
+   title: Menu Size
+   description: Modifies the size of modals like the settings menu, plugin browser, or theme browser.
+   type: variable-number-slider
+   default: 70
+   min: 0
+   max: 70
+   step: 2
+  -
+   id: trim-long-filenames
+   title: 'Sidebar: Trim File Names'
+   description: When enabled, long file and folder names will be trimmed. When disabled, long names will be wrapped to the next line.
+   type: class-toggle
+   default: false
+  -
+   id: no-grayed-out-inactive-pane
+   title: Do not dim Inactive Panes
+   description: 'Also affects popovers from the Hover Editor Plugin.'
+   type: class-toggle
+   default: false
+  -
+   id: no-alternating-rows
+   title: Turn off Alternating Row Coloring
+   description: Affects Table Rows, Command Palette, Quick Switchers, Side Bar items, and Editor Suggesters.
+   type: class-toggle
+   default: false
+  -
+   id: colored-yaml
+   title: "YAML: Coloring"
+   description: Use colored YAML frontmatter (in Edit Mode).
+   type: class-toggle
+   default: false
+  -
+   id: no-animations
+   title: Turn off animations & transitions
+   description: Can improve performance on older machines.
+   type: class-toggle
+   default: false
+  -
+   id: no-shadows
+   title: Turn off shadows (3D-like look)
+   description: Can improve performance on older machines.
+   type: class-toggle
+   default: false
+  -
+   id: hide-signature
+   title: 'Status Bar: Hide the decorative "✧" icon'
+   hub: ignore
+   type: class-toggle
+   default: false
+  -
+   id: unlock-theme-beta
+   title: Unlock Theme Beta
+   description: 'Unlocks some features of the theme that are still under development. Note that due to the work-in-progress, these features may not work as expected yet. Also, some settings may simply not do anything yet. Currently, the beta mostly unlocks settings for Custom Colors. '
+   type: class-toggle
+   default: false
+  -
+   id: info-donation
+   title: ☕️ Support Shimmering Focus
+   description: "If you like the theme, you can buy me a coffee: ko-fi.com/pseudometa"
+   type: heading
+   level: 1
+   collapsed: true
 */
 /* ─────────────────────────────────────────────────── */

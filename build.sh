@@ -37,6 +37,7 @@ CHANGELOG_PATH="./docs/changelog.md"
 # - requires style settings placed at at the very bottom of the theme css
 YAMLLINT_OUTPUT=$(sed -n '/@settings/,$p' "$CSS_PATH" | tail -n+2 | sed -e '$ d'| sed -e '$ d' | yamllint - -d relaxed --no-warnings)
 if [[ $? == 1 ]]; then
+	echo "YAML ERROR"
 	echo "$YAMLLINT_OUTPUT" | tail -n+2
 	exit 1
 fi
