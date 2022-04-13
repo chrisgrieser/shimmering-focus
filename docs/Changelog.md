@@ -3,6 +3,7 @@ nav_order: 110
 ---
 
 # Changelog
+- 2022-04-13	patch
 - 2022-04-13	fix multi-line-header line-height in LP (#140)
 - 2022-04-13	styling for omnisearch plugin (still in beta)
 - 2022-04-13	(internal) test yamllint
