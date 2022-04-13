@@ -8,7 +8,7 @@
 # - bumps version number in css file
 # - CSS is linted and minified
 # - ToC in the CSS file is updated
-# - copies css from the vault (`csspath`) into this repository
+# - copies css from the vault (`CSS_PATH`) into this repository
 # - updates download counts in badges of the .md files
 # - Markdown is linted & checked for dead links
 # - adds a non-minified css file and the global stylelint.json for documentation purposes
@@ -19,27 +19,37 @@
 # - stylelint
 # - markdownlint
 # - markdown-link-check
+# - yamllint
 # - git authentication with SSH & Push Access
 # - this script placed somewhere in the git repository
 
 # ---------------------------
 
-# Config
+# CONFIG
 export PATH=/usr/local/bin/:/opt/homebrew/bin/:$PATH
-csspath=~"/Library/Mobile Documents/iCloud~md~obsidian/Documents/Main Vault/.obsidian/themes/Shimmering Focus.css"
-changelog_path="./docs/changelog.md"
+CSS_PATH=~"/Library/Mobile Documents/iCloud~md~obsidian/Documents/Main Vault/.obsidian/themes/Shimmering Focus.css"
+CHANGELOG_PATH="./docs/changelog.md"
 
 # ---------------------------
 
+# YAMLLINT TEST
+# - Abort build if yaml invalid
+# - requires style settings placed at at the very bottom of the theme css
+YAMLLINT_OUTPUT=$(sed -n '/@settings/,$p' "$CSS_PATH" | tail -n+2 | sed -e '$ d'| sed -e '$ d' | yamllint - -d relaxed --no-warnings)
+if [[ $? == 1 ]]; then
+	echo "$YAMLLINT_OUTPUT" | tail -n+2
+	exit 1
+fi
+
 # get commit message
-commitMsg="$*"
-if [[ "$commitMsg" == "" || "$commitMsg" == " " ]] ; then
-	commitMsg="patch"
+COMMIT_MSG="$*"
+if [[ "$COMMIT_MSG" == "" || "$COMMIT_MSG" == " " ]] ; then
+	COMMIT_MSG="patch"
 fi
 
 # if issue-related, open that issue
-if [[ "$commitMsg" =~ "#" ]] ; then
-	issueNo=$(echo "$commitMsg" | grep -Eo "#\d+" |cut -c 2-)
+if [[ "$COMMIT_MSG" =~ "#" ]] ; then
+	issueNo=$(echo "$COMMIT_MSG" | grep -Eo "#\d+" |cut -c 2-)
 	repoURL=$(git remote -v | grep git@github.com | grep fetch | head -n1 | cut -f2 | cut -d' ' -f1 | sed -e's/:/\//' -e 's/git@/https:\/\//' -e 's/\.git//' )
 	open "$repoURL"/issues/"$issueNo"
 fi
@@ -50,17 +60,16 @@ cd "$(dirname "$0")" || exit
 r=$(git rev-parse --git-dir) && r=$(cd "$r" && pwd)/ && cd "${r%%/.git/*}"
 
 # Linters
-stylelint --fix "$csspath"
+stylelint --fix "$CSS_PATH"
 markdownlint --fix ./*.md
 markdownlint --fix docs/*.md
 markdown-link-check -q ./README.md
-
 # creates too many errors with docs linking right now
 # find ./docs -name \*.md -print0 | xargs -0 -n1 markdown-link-check -q
 
 # Update ToC
 printf "/* @TOC-SPLIT-MARKER */\n/*\n" > new_toc.css
-grep -E "<+ " "$csspath" | sed -e "s/ \*\///" \
+grep -E "<+ " "$CSS_PATH" | sed -e "s/ \*\///" \
 	-e "s/\/\* //" \
 	-e "s/<<<<< /\t\t\t\t- /" \
 	-e "s/<<<< /\t\t\t- /" \
@@ -68,20 +77,20 @@ grep -E "<+ " "$csspath" | sed -e "s/ \*\///" \
 	-e "s/<< /\t- /" -e "s/< /- /" \
 	| tail -n +2 \
 	>> new_toc.css
-split -p "@TOC-SPLIT-MARKER" "$csspath" temp
+split -p "@TOC-SPLIT-MARKER" "$CSS_PATH" temp
 mv tempaa before_toc.css
 mv tempac after_toc.css
-cat before_toc.css new_toc.css after_toc.css > "$csspath"
+cat before_toc.css new_toc.css after_toc.css > "$CSS_PATH"
 rm new_toc.css before_toc.css tempab after_toc.css
 
 # Bump version number
-versionLine=$(grep -Ewn "^Version" "$csspath" | cut -d: -f1 | head -n1)
-currentVersion=$(sed -n "${versionLine}p" "$csspath" | cut -d. -f2)
+versionLine=$(grep -Ewn "^Version" "$CSS_PATH" | cut -d: -f1 | head -n1)
+currentVersion=$(sed -n "${versionLine}p" "$CSS_PATH" | cut -d. -f2)
 nextVersion=$((currentVersion + 1))
-sed -E -i '' "${versionLine}s/(.*\.)[[:digit:]]+/\1$nextVersion/" "$csspath"
+sed -E -i '' "${versionLine}s/(.*\.)[[:digit:]]+/\1$nextVersion/" "$CSS_PATH"
 
 # Minify
-split -p "@MINIFY-SPLIT-MARKER" "$csspath" temp # split off to prevent style settings from getting minified
+split -p "@MINIFY-SPLIT-MARKER" "$CSS_PATH" temp # split off to prevent style settings from getting minified
 mv tempaa info.css
 mv tempab unminified_css_code.css
 grep -vE "^# << " tempac > style_settings.css # remove yaml-navigation markers
@@ -94,7 +103,7 @@ rm info.css unminified_css_code.css minified_css_code.css style_settings.css
 
 # Copy for documentation purposes
 cp ~/.stylelintrc.json ./
-cp "$csspath" ./source.css
+cp "$CSS_PATH" ./source.css
 
 # Update Theme Download numbers in README.md
 dl=$(curl -s "https://releases.obsidian.md/stats/theme" | grep -oe '"Shimmering Focus","download":[[:digit:]]*' | cut -d: -f2)
@@ -102,13 +111,13 @@ sed -E -i '' "s/badge.*-[[:digit:]]+-/badge\/downloads-$dl-/" README.md
 sed -E -i '' "s/badge.*-[[:digit:]]+-/badge\/downloads-$dl-/" docs/index.md
 
 # Update changelog
-printf "---\nnav_order: 110\n---\n\n# Changelog\n" > "$changelog_path"
-echo "- ""$(date +"%Y-%m-%d")""	$commitMsg" >> "$changelog_path"
-git log --pretty=format:"- %ad%x09%s" --date=short | grep -Ev "minor$" | grep -Ev "patch$" | grep -Ev "typos?$" | grep -v "refactoring" | grep -v "Add files via upload" | grep -Ev "\tDelete" | grep -Ev "\tUpdate.*\.md" | sed -E "s/\t\+ /\t/g" >> "$changelog_path"
+printf "---\nnav_order: 110\n---\n\n# Changelog\n" > "$CHANGELOG_PATH"
+echo "- ""$(date +"%Y-%m-%d")""	$COMMIT_MSG" >> "$CHANGELOG_PATH"
+git log --pretty=format:"- %ad%x09%s" --date=short | grep -Ev "minor$" | grep -Ev "patch$" | grep -Ev "typos?$" | grep -v "refactoring" | grep -v "Add files via upload" | grep -Ev "\tDelete" | grep -Ev "\tUpdate.*\.md" | sed -E "s/\t\+ /\t/g" >> "$CHANGELOG_PATH"
 
 
 # add to git
 git add -A
-git commit -m "$commitMsg"
+git commit -m "$COMMIT_MSG"
 git pull
 echo -n | git push  # pass for notification
