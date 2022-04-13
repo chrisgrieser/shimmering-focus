@@ -3,7 +3,7 @@ nav_order: 110
 ---
 
 # Changelog
-- 2022-04-12	patch
+- 2022-04-13	plugin update bar styled
 - 2022-04-12	clearer fold indicators
 - 2022-04-12	scrol
 - 2022-04-11	various complements add to dictionary button

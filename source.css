@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 1.1220
+Version 1.1221
 Source CSS: https://github.com/chrisgrieser/shimmering-focus/blob/main/source.css
 MIT License
 ──────────────────────────────────────────────────── */
@@ -54,7 +54,9 @@ MIT License
 	- Header Bar (Desktop)
 	- Status Bar
 	- Scrollbar
-- Vault Launch Progress Bar
+	- Progress Bar
+		- Vault Launch
+		- Updating Plugins
 - Interactive Elements
 	- Buttons
 	- Warnings
@@ -2069,9 +2071,10 @@ body:is(.theme-light, .theme-dark) ::-WEBKIT-SCROLLBAR-THUMB:active {
 }
 
 /* ───────────────────────────────────────────────── */
-/* < Vault Launch Progress Bar
+/* << Progress Bar
 ──────────────────────────────────────────────────── */
 
+/* <<< Vault Launch */
 .progress-bar .progress-bar-message {
 	font-size: 0;
 	margin-bottom: 30px;
@@ -2093,6 +2096,12 @@ body:is(.theme-light, .theme-dark) ::-WEBKIT-SCROLLBAR-THUMB:active {
 
 .progress-bar-indicator {
 	display: none;
+}
+
+/* <<< Updating Plugins */
+.is-loading::BEFORE {
+	height: 6px;
+	background: linear-gradient(to right, var(--primary-accent-2), var(--primary-accent-3));
 }
 
 /* ───────────────────────────────────────────────── */
