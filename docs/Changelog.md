@@ -3,7 +3,7 @@ nav_order: 110
 ---
 
 # Changelog
-- 2022-04-14	patch
+- 2022-04-14	new smallcap font (beta)
 - 2022-04-14	alternative image zoom method: hovering (enable via style settings)
 - 2022-04-14	resize handle visibility slightly improved
 - 2022-04-14	minor fixed for sidebar tab transition effects
