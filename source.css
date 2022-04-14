@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 1.1244
+Version 1.1245
 Source CSS: https://github.com/chrisgrieser/shimmering-focus/blob/main/source.css
 MIT License
 ──────────────────────────────────────────────────── */
@@ -253,7 +253,7 @@ MIT License
 # 	- Aesthetics & Custom Colors (+)
 # 	- Typography (+)
 # 	- Gutter & Active Line (+)
-# 	- Content (+)
+# 	- Views Media (+)
 # 	- Callouts (+)
 # 	- Special Syntax (+)
 # 	- Cursor (+)
@@ -2539,11 +2539,11 @@ div.menu-item {
 	transform: scale(0.9);
 }
 
-.menu-item:is(:hover, :hover svg, .selected:hover, .selected:hover svg, .selected:hover .menu-item-title) {
+.menu-item:is(:hover, :hover svg, .selected:hover, .selected:hover svg) {
 	color: var(--hover-accent-2);
 }
 
-.menu-item:hover .menu-item-title {
+.menu-item:is(:hover, .selected:hover) .menu-item-title {
 	color: var(--hover-accent-2);
 }
 
@@ -3073,7 +3073,7 @@ body div.app-container .workspace-leaf-resize-handle:active {
 }
 
 body .app-container .workspace-leaf-resize-handle:hover {
-	background-color: var(--hover-accent-3);
+	background-color: var(--scrollbar-bg-hover);
 }
 
 /* ───────────────────────────────────────────────── */
@@ -3094,13 +3094,6 @@ body .app-container .workspace-leaf-resize-handle:hover {
 	margin-top: 0;
 }
 
-.modal h1 { font-size: var(--h1) }
-.modal h2 { font-size: var(--h2) }
-.modal h3 { font-size: var(--h3) }
-.modal h4 { font-size: var(--h4) }
-.modal h5 { font-size: var(--h5) }
-.modal h6 { font-size: var(--h6) }
-
 .modal {
 	min-width: 650px;
 
@@ -3112,6 +3105,13 @@ body .app-container .workspace-leaf-resize-handle:hover {
 	border: var(--thick-border);
 	border-radius: calc(var(--roundish) * 2);
 }
+
+.modal h1 { font-size: var(--h1) }
+.modal h2 { font-size: var(--h2) }
+.modal h3 { font-size: var(--h3) }
+.modal h4 { font-size: var(--h4) }
+.modal h5 { font-size: var(--h5) }
+.modal h6 { font-size: var(--h6) }
 
 .prompt-bg,
 .modal-bg {
@@ -3171,13 +3171,6 @@ body .app-container .workspace-leaf-resize-handle:hover {
 .modal.mod-settings :is(h1, h2, h3, h4, h5, h6) {
 	font-family: var(--setting-heading);
 }
-
-.modal.mod-settings h1 { font-size: var(--h1) }
-.modal.mod-settings h2 { font-size: var(--h2) }
-.modal.mod-settings h3 { font-size: var(--h3) }
-.modal.mod-settings h4 { font-size: var(--h4) }
-.modal.mod-settings h5 { font-size: var(--h5) }
-.modal.mod-settings h6 { font-size: var(--h6) }
 
 .setting-item.setting-item-heading {
 	font-family: var(--setting-heading);
@@ -3705,7 +3698,7 @@ when the plugin has download numbers (new one's don't)  */
 /* hide "version" */
 .community-plugin-version {
 	text-indent: -69px;
-	overflow-x: hidden;
+	overflow: hidden;
 }
 
 .community-plugin-info :is(.community-plugin-version, .community-plugin-author) {
@@ -4919,7 +4912,6 @@ progress[max="100"]:is([value="1"],[value="2"],[value="3"],[value="4"],[value="5
 img[src] {
 	margin-top: 1em;
 	border-radius: var(--roundish);
-	cursor: zoom-in;
 }
 
 body:not(.disable-image-borders) img[src] {
@@ -4938,8 +4930,8 @@ body:not(.left-aligned-embeds) .view-content img[src] {
 	margin-left: auto;
 }
 
-/* image zoom */
-.markdown-preview-view img[src]:active {
+/* image zoom via click */
+body:not(.hover-zoom) .markdown-preview-view img[src]:active {
 	display: block;
 
 	height: 100%;
@@ -4965,12 +4957,26 @@ body:not(.left-aligned-embeds) .view-content img[src] {
 	object-fit: scale-down;
 }
 
-.theme-light .markdown-preview-view img[src]:active {
+body:not(.hover-zoom) img[src] {
+	cursor: zoom-in;
+}
+
+.theme-light:not(.hover-zoom) .markdown-preview-view img[src]:active {
 	background: hsl(0 0% 75%);
 }
 
-.theme-dark .markdown-preview-view img[src]:active {
+.theme-dark:not(.hover-zoom) .markdown-preview-view img[src]:active {
 	background: hsl(0 0% 8%);
+}
+
+/* images zoom via hover */
+.hover-zoom .markdown-preview-view.markdown-preview-view.markdown-preview-view img[src] {
+	transition: var(--quick-transition);
+}
+
+.hover-zoom .markdown-preview-view.markdown-preview-view.markdown-preview-view img[src]:hover {
+	max-width: 100%;
+	transition-delay: calc(var(--transition-delay-passing-over-protection) * 3);
 }
 
 /* fix for GitHub shields */
@@ -12293,10 +12299,10 @@ settings:
    type: class-toggle
    default: false
   -
-# << Content (+)
+# << Views Media (+)
    id: content-settings
    title: 🏞 Views & Media
-   description: Line Length, Max View, Focus View, Images, PDFs
+   description: Line Length, Max View, Focus View, Images, PDFs, 🆕 Image Zoom Methods
    type: heading
    level: 1
    collapsed: true
@@ -12323,9 +12329,15 @@ settings:
    type: class-toggle
    default: false
   -
+   id: hover-zoom
+   title: 'Image Zoom via Hover'
+   description: 'By default, you can zoom in images by clicking & holding. Enable this to zoom in images by hovering instead.'
+   type: class-toggle
+   default: false
+  -
    id: image-size
    title: Size of Images
-   description: Size of Images in % (when Max View is disabled or not active)
+   description: Size of Images in % (without Max With or Image Zoom)
    type: variable-number-slider
    default: 50
    min: 10
@@ -12334,7 +12346,7 @@ settings:
   -
    id: pdf-size
    title: Size of embedded PDFs
-   description: Size of embedded PDFs in % (when Max View is disabled or not active)
+   description: Size of embedded PDFs in % (without Max With or Image Zoom)
    type: variable-number-slider
    default: 50
    min: 10
@@ -12818,7 +12830,7 @@ settings:
   -
    id: unlock-theme-beta
    title: Unlock Theme Beta
-   description: 'Unlocks some features of the theme that are still under development. Note that due to the work-in-progress, these features may not work as expected yet. Also, some settings may simply not do anything yet. Currently, the beta mostly unlocks settings for Custom Colors. '
+   description: 'Unlocks some features of the theme that are still under development. Note that due to the work-in-progress, these features may not work as expected yet. Also, some settings may simply not do anything yet.'
    type: class-toggle
    default: false
   -
