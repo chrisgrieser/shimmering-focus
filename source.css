@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 1.1246
+Version 1.1247
 Source CSS: https://github.com/chrisgrieser/shimmering-focus/blob/main/source.css
 MIT License
 ──────────────────────────────────────────────────── */
@@ -5554,11 +5554,11 @@ body:not(.normal-blockquotes) .callout-content p {
 	transform: scale(1.3);
 }
 
-div.is-collapsible:not(.is-collapsed)[data-callout] .callout-title {
+div[data-callout].is-collapsible:not(.is-collapsed) .callout-title {
 	border-bottom-right-radius: 0;
 }
 
-div.is-collapsible.is-collapsed[data-callout] .callout-title {
+div[data-callout].is-collapsible.is-collapsed .callout-title {
 	border-bottom-right-radius: var(--roundish);
 }
 
