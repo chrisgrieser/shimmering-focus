@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 1.1247
+Version 1.1248
 Source CSS: https://github.com/chrisgrieser/shimmering-focus/blob/main/source.css
 MIT License
 ──────────────────────────────────────────────────── */
@@ -9579,6 +9579,11 @@ body:not(.no-alternating-rows) .workspace-leaf-content[data-type="recent-files"]
 .workspace-leaf-content[data-type="recent-files"] .nav-file-title.nav-file-title {
 	padding-right: 0;
 	padding-left: 0;
+}
+
+/* active file is always top and gets not very distinguishable from tab header bg otherwise */
+.workspace-leaf-content[data-type="recent-files"] .nav-file-title.is-active:not(:hover) {
+	background: none;
 }
 
 /* ───────────────────────────────────────────────── */
