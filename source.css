@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 1.1236
+Version 1.1237
 Source CSS: https://github.com/chrisgrieser/shimmering-focus/blob/main/source.css
 MIT License
 ──────────────────────────────────────────────────── */
@@ -10193,7 +10193,7 @@ body .dataview.inline-field-key {
 	border-left: none;
 }
 
-.remove-dataview-title .block-language-dataview h4 {
+.remove-dataview-title :is(.block-language-dataview, .block-language-dataviewjs) h4 {
 	display: none;
 }
 
