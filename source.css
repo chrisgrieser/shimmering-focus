@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 1.1262
+Version 1.1263
 Source CSS: https://github.com/chrisgrieser/shimmering-focus/blob/main/source.css
 MIT License
 ──────────────────────────────────────────────────── */
@@ -10449,6 +10449,10 @@ body .qsp-symbol-indicator {
 	border-top: none;
 }
 
+.style-settings-heading .setting-item-name {
+	font-size: 1.15rem;
+}
+
 .style-settings-heading :is(.setting-item-title, .setting-item-description) {
 	margin-left: 1px;
 }
@@ -10467,6 +10471,7 @@ body .style-settings-heading[data-level="0"] {
 	font-family: var(--font-interface);
 	font-size: 0.8em;
 	font-weight: 500;
+	letter-spacing: 0;
 }
 
 .style-settings-heading[data-level="2"]:not(.is-collapsed) .setting-item-name {
@@ -10731,18 +10736,20 @@ body:not(.unlock-theme-beta) .style-settings-container .setting-item:is(
 [data-id="unlock-theme-beta"])::BEFORE {
 	content: "Beta";
 
-	font-size: 0.9em;
+	font-size: 1rem;
 	line-height: 1.1em;
 
 	background-color: var(--bg3);
-	box-shadow: var(--small-inset-shadow);
+	box-shadow: var(--muted-button-inset-shadow);
 
-	padding: 3px 5px;
+	padding: 3px 5px 4px 6px;
 	margin-top: -5px;
 	margin-right: 9px;
 
 	border: var(--thin-border);
 	border-radius: var(--roundish);
+
+	cursor: default;
 }
 
 /* stylelint-enable selector-max-empty-lines, indentation */
@@ -10752,6 +10759,8 @@ body:not(.unlock-theme-beta) .style-settings-container .setting-item:is(
 
 /* Donation */
 .style-settings-heading[data-id="info-donation"] {
+	letter-spacing: 0.1px;
+
 	background-color: var(--bg2);
 	box-shadow: var(--small-inset-shadow);
 
@@ -10804,6 +10813,8 @@ body:not(.unlock-theme-beta) .style-settings-container .setting-item:is(
 
 	border: var(--basic-border);
 	border-radius: var(--roundish);
+
+	cursor: default;
 
 	pointer-events: none;
 }
