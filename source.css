@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 1.1235
+Version 1.1236
 Source CSS: https://github.com/chrisgrieser/shimmering-focus/blob/main/source.css
 MIT License
 ──────────────────────────────────────────────────── */
@@ -2239,7 +2239,7 @@ body.angular-shapes .checkbox-container {
 }
 
 .checkbox-container.is-enabled:hover {
-	background-color: var(--bg2);
+	background-color: var(--hover-accent-4);
 }
 
 /* ───────────────────────────────────────────────── */
@@ -11894,7 +11894,7 @@ settings:
       label: 🟢 Shimmering Green
       value: hover-accent-light-green
     -
-      label: 🟣 Raspberry Red-Purple
+      label: 🟣 Raspberry Pink
       value: hover-accent-light-pink
   -
    id: use-gray-tint-light
@@ -12002,6 +12002,9 @@ settings:
     -
       label: 🟢 Shimmering Green
       value: hover-accent-dark-green
+    -
+      label: 🟣 Raspberry Pink
+      value: hover-accent-dark-pink
   -
    id: use-gray-tint-dark
    title: 'Slightly colored text (Dark Mode)'
