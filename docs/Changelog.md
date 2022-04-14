@@ -3,6 +3,7 @@ nav_order: 110
 ---
 
 # Changelog
+- 2022-04-14	resize handle visibility slightly improved
 - 2022-04-14	minor fixed for sidebar tab transition effects
 - 2022-04-14	custom color tweaks
 - 2022-04-14	fix more line height issues with headings in LP

@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 1.1242
+Version 1.1243
 Source CSS: https://github.com/chrisgrieser/shimmering-focus/blob/main/source.css
 MIT License
 ──────────────────────────────────────────────────── */
@@ -729,8 +729,8 @@ body:is(.theme-light, .theme-dark) {
 ──────────────────────────────────────────────────── */
 
 :root {
-	--resize-handle-thickness: 3px;
-	--resize-handle-hovered-thickness: 6px;
+	--resize-handle-thickness: 2px;
+	--resize-handle-hovered-thickness: 5px;
 	--scrollbar-thickness: 8px;
 
 	--image-size: 50;
@@ -2968,6 +2968,61 @@ body > .app-container .workspace-split.mod-horizontal > .workspace-tabs > .works
 /* ───────────────────────────────────────────────── */
 /* <<< Hidden Tab Headers
 ──────────────────────────────────────────────────── */
+body:not(.show-sidebar-tabs) .workspace-tab-header-container {
+	transition: var(--medium-transition);
+}
+
+body:not(.show-sidebar-tabs) .workspace-tab-header-container * {
+	transition: var(--medium-transition);
+	transition-property: border, opacity, margin-top; /* so transition of hovering the tab itself does not get delayed */
+}
+
+body:not(.show-sidebar-tabs) .workspace-tab-header-container:is(:hover *, :hover) {
+	transition: var(--quick-transition);
+	transition-delay: var(--transition-delay-passing-over-protection);
+}
+
+body:not(.show-sidebar-tabs) .workspace-tab-header-container:not(:hover) {
+	height: 11px;
+	box-shadow: var(--small-reverted-inset-shadow);
+	padding-top: 0;
+	padding-bottom: 0;
+}
+
+/* top tabs */
+body:not(.show-sidebar-tabs) .workspace-tabs:nth-child(3) .workspace-tab-header-container:not(:hover) {
+	box-shadow: var(--medium-reverted-inset-shadow);
+}
+
+/* non-top tabs */
+body:not(.show-sidebar-tabs) .workspace-tabs:not(:nth-child(3)) .workspace-tab-header-container {
+	border-top: var(--basic-border);
+}
+
+body:not(.show-sidebar-tabs) .workspace-tabs.workspace-tabs.workspace-tabs.workspace-tabs .workspace-tab-header-container:hover {
+	height: 55px;
+	box-shadow: var(--big-reverted-inset-shadow);
+	padding-bottom: 4px;
+}
+
+body:not(.show-sidebar-tabs) .workspace-tab-header-container:hover .workspace-tab-header {
+	margin-top: 10px;
+}
+
+body:not(.show-sidebar-tabs) .workspace-tabs .workspace-tab-header-container:not(:hover) .workspace-tab-header,
+body:not(.show-sidebar-tabs) .workspace-tabs .workspace-tab-header-container:not(:hover) .workspace-tab-header svg {
+	opacity: 0;
+	border: none;
+}
+
+/* fix for mac traffic lights */
+body.mod-macos:not(.show-sidebar-tabs):not(.show-titlebar) .mod-left-split .workspace-tabs:nth-child(3) .workspace-tab-header-container:not(:hover) {
+	height: 17px;
+}
+
+body.mod-macos:not(.show-sidebar-tabs):not(.show-titlebar) .mod-left-split .workspace-tabs:nth-child(3) .workspace-tab-header-container:hover .workspace-tab-header {
+	margin-top: 2px;
+}
 
 /* ───────────────────────────────────────────────── */
 /* << Resize Handles
@@ -2977,6 +3032,7 @@ on the titlebar visibility in the titlebar section */
 
 body .workspace-leaf-resize-handle {
 	transition: var(--medium-transition);
+	outline: var(--thin-border);
 }
 
 .workspace-leaf-resize-handle:hover {
@@ -2997,7 +3053,6 @@ body .workspace-leaf-resize-handle {
 /* vertical resize handle */
 .workspace-split.mod-horizontal > .workspace-leaf-resize-handle {
 	width: var(--resize-handle-thickness);
-	outline: var(--thin-border);
 }
 
 /* horizontal resize handle */
