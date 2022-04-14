@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 1.1239
+Version 1.1240
 Source CSS: https://github.com/chrisgrieser/shimmering-focus/blob/main/source.css
 MIT License
 ──────────────────────────────────────────────────── */
@@ -267,6 +267,7 @@ MIT License
 /* ───────────────────────────────────────────────── */
 /* < Colors
 ──────────────────────────────────────────────────── */
+/* stylelint-disable no-duplicate-selectors */
 
 /* ───────────────────────────────────────────────── */
 /* << Text Colors & Grays
@@ -299,9 +300,6 @@ MIT License
 	--extra-faint: hsl(var(--tint-of-grays-light) calc(var(--sat-of-grays) * 0.7) 70%);
 	--hr-line-gray: hsl(var(--tint-of-grays-light) var(--sat-of-grays) 66%);
 	--interactive-normal: hsl(var(--tint-of-grays-light) var(--high-sat-of-grays)  95%);
-
-	--button-text: var(--interactive-normal);
-	--button-hover-text: var(--text-normal);
 }
 
 .theme-dark {
@@ -313,15 +311,17 @@ MIT License
 	--extra-faint: hsl(var(--tint-of-grays-dark) calc(var(--sat-of-grays) * 0.7) 25%);
 	--hr-line-gray: hsl(var(--tint-of-grays-dark) var(--sat-of-grays) 60%);
 	--interactive-normal: hsl(var(--tint-of-grays-dark) var(--high-sat-of-grays) 16%);
+}
 
-	--button-text: var(--text-normal);
-	--button-hover-text: var(--interactive-normal);
+.theme-light,
+.theme-dark {
+	--button-text: var(--interactive-normal);
+	--button-hover-text: var(--text-normal);
 }
 
 /* ───────────────────────────────────────────────── */
 /* << Color Schemes
 ──────────────────────────────────────────────────── */
-/* stylelint-disable no-duplicate-selectors */
 
 /* ───────────────────────────────────────────────── */
 /* <<< Accent Color Settings
@@ -331,11 +331,10 @@ MIT License
 	--primary-accent-0: hsl(212 54% 20% / 99%);
 	--primary-accent-1: hsl(210 50% 44%);
 	--primary-accent-2: hsl(210 75% 54%);
-	--primary-accent-3: hsl(210 90% 71%);
+	--primary-accent-3: hsl(210 90% 67%);
 	--primary-accent-4: hsl(210 90% 78%);
 	--primary-accent-5: hsl(210 100% 90% / 99%);
 	--unresolved-link-color: hsl(180 75% 40%); /* ~40 hue less than primary-accent-2 */
-	--button-text: var(--interactive-normal);
 }
 
 .theme-light.primary-accent-light-orange,
@@ -352,9 +351,9 @@ MIT License
 .theme-light.hover-accent-light-pink,
 .theme-dark.hover-accent-dark-pink {
 	--hover-accent-1: hsl(324 100% 30%);
-	--hover-accent-2: hsl(324 70% 45%);
-	--hover-accent-3: hsl(334 85% 60%);
-	--hover-accent-4: hsl(334 100% 75%);
+	--hover-accent-2: hsl(324 70% 50%);
+	--hover-accent-3: hsl(334 85% 65%);
+	--hover-accent-4: hsl(324 90% 75%);
 }
 
 /* https://coolors.co/gradient-palette/992900-f4c362?number=4 */
@@ -418,31 +417,43 @@ MIT License
 /* <<< Primary Accent */
 .theme-light {
 	--text-selection: var(--primary-accent-5);
+	--link-color: var(--primary-accent-2);
+
+	--interactive-bg: var(--primary-accent-3);
+	--interactive-border-color: var(--primary-accent-4);
 
 	--scrollbar-bg-active: var(--primary-accent-4);
-	--interactive-bg: var(--primary-accent-3);
 	--active-line-indicator: var(--primary-accent-2);
-	--link-color: var(--primary-accent-2);
 }
 
 .theme-dark {
 	--text-selection: var(--primary-accent-0);
+	--link-color: var(--primary-accent-2);
+
+	--interactive-bg: var(--primary-accent-2);
+	--interactive-border-color: var(--primary-accent-1);
 
 	--scrollbar-bg-active: var(--primary-accent-3);
-	--interactive-bg: var(--primary-accent-2);
 	--active-line-indicator: var(--primary-accent-2);
-	--link-color: var(--primary-accent-2);
 }
 
 /* <<< Hover Accent */
 .theme-light {
-	--interactive-hover-bg: var(--hover-accent-4);
 	--text-hover-accent: var(--hover-accent-2);
+
+	--scrollbar-bg-hover: var(--hover-accent-3);
+
+	--interactive-hover-bg: var(--hover-accent-3);
+	--interactive-hover-border-color: var(--hover-accent-4);
 }
 
 .theme-dark {
-	--interactive-hover-bg: var(--hover-accent-2);
 	--text-hover-accent: var(--hover-accent-2);
+
+	--scrollbar-bg-hover: var(--hover-accent-3);
+
+	--interactive-hover-bg: var(--hover-accent-2);
+	--interactive-hover-border-color: var(--hover-accent-3);
 }
 
 /* <<< Secondary Accent (references, tags, code, finished tasks) */
@@ -708,15 +719,11 @@ body:is(.theme-light, .theme-dark) {
 .theme-light {
 	--notice-border: 2px solid hsl(var(--light-hue) var(--sat-light-3) 55%);
 	--search-match-outline: 2px solid var(--search-match-color);
-	--interactive-border-color: var(--primary-accent-4);
-	--interactive-hover-border-color: var(--hover-accent-3);
 }
 
 .theme-dark {
 	--notice-border: 2px solid hsl(var(--dark-hue) var(--sat-dark-1) 45%);
 	--search-match-outline: 1px solid var(--search-match-color);
-	--interactive-border-color: var(--primary-accent-2);
-	--interactive-hover-border-color: var(--hover-accent-1);
 }
 
 /* ───────────────────────────────────────────────── */
@@ -2072,7 +2079,7 @@ body:is(.theme-light, .theme-dark):is(.theme-light, .theme-dark) ::-WEBKIT-SCROL
 
 /* hover / active colors */
 body:is(.theme-light, .theme-dark) ::-WEBKIT-SCROLLBAR-THUMB:hover {
-	background-color: var(--hover-accent-3);
+	background-color: var(--scrollbar-bg-hover);
 }
 
 body:is(.theme-light, .theme-dark) ::-WEBKIT-SCROLLBAR-THUMB:active {
@@ -2232,7 +2239,7 @@ body.angular-shapes .checkbox-container {
 	border-color: var(--interactive-border-color);
 }
 
-.checkbox-container:hover {
+.checkbox-container.checkbox-container:hover {
 	box-shadow: none;
 	border: 9px solid var(--hover-accent-3);
 	transition: var(--medium-transition);
@@ -2364,16 +2371,13 @@ input[type="range"] {
 input[type="range"]::-WEBKIT-SLIDER-THUMB {
 	background-color: var(--interactive-bg);
 	box-shadow: var(--toggle-enabled-inset-shadow);
-	border: var(--thin-border);
+	border: 1px solid var(--interactive-border-color);
 	border-radius: calc(var(--round) / 2);
-}
-
-.theme-dark input[type="range"]::-WEBKIT-SLIDER-THUMB {
-	background-color: var(--primary-accent-2);
 }
 
 input[type="range"]::-WEBKIT-SLIDER-THUMB:hover {
 	background-color: var(--interactive-hover-bg);
+	border-color: transparent;
 }
 
 /* ───────────────────────────────────────────────── */
