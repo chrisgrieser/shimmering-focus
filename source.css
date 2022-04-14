@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 1.1253
+Version 1.1254
 Source CSS: https://github.com/chrisgrieser/shimmering-focus/blob/main/source.css
 MIT License
 ──────────────────────────────────────────────────── */
@@ -4986,11 +4986,11 @@ body:not(.hover-zoom) img[src] {
 }
 
 /* images zoom via hover */
-.hover-zoom .markdown-preview-view.markdown-preview-view.markdown-preview-view img[src] {
+.hover-zoom img[src][src][src][src][src][src] {
 	transition: var(--quick-transition);
 }
 
-.hover-zoom .markdown-preview-view.markdown-preview-view.markdown-preview-view img[src]:hover {
+.hover-zoom img[src][src][src][src][src][src]:hover {
 	max-width: 100%;
 	transition-delay: calc(var(--transition-delay-passing-over-protection) * 3);
 }
