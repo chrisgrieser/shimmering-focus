@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 1.1259
+Version 1.1260
 Source CSS: https://github.com/chrisgrieser/shimmering-focus/blob/main/source.css
 MIT License
 ──────────────────────────────────────────────────── */
@@ -6261,6 +6261,7 @@ pre.language-haskell::AFTER { content: "Haskell" }
 .modal-content a:hover,
 .internal-link.internal-link.internal-link:hover,
 .external-link:hover,
+.embedded-backlinks.embedded-backlinks .tree-item-inner:hover,
 a:hover {
 	text-decoration: underline double 1px;
 	color: var(--hover-accent-2);
