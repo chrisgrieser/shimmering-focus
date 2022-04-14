@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 1.1234
+Version 1.1235
 Source CSS: https://github.com/chrisgrieser/shimmering-focus/blob/main/source.css
 MIT License
 ──────────────────────────────────────────────────── */
@@ -347,6 +347,14 @@ MIT License
 	--primary-accent-4: hsl(40 87% 67%);
 	--primary-accent-5: hsl(40 87% 87% / 99%);
 	--unresolved-link-color: hsl(344 69% 42%); /* ~40 hue less than primary-accent-2 */
+}
+
+.theme-light.hover-accent-light-pink,
+.theme-dark.hover-accent-dark-pink {
+	--hover-accent-1: hsl(324 100% 30%);
+	--hover-accent-2: hsl(324 70% 45%);
+	--hover-accent-3: hsl(334 85% 60%);
+	--hover-accent-4: hsl(334 100% 75%);
 }
 
 /* https://coolors.co/gradient-palette/992900-f4c362?number=4 */
@@ -10487,7 +10495,7 @@ body a:is(.style-settings-export, .style-settings-import) {
 	padding-left: 7px;
 }
 
-body:not(.no-animations) .style-settings-heading[data-id="shimmering-focus"] .setting-item-name::AFTER {
+body:not(.no-animations) .style-settings-heading[data-id="shimmering-focus"]:not(:hover) .setting-item-name::AFTER {
 	animation-duration: 12s;
 	animation-name: faded-blink;
 	animation-iteration-count: infinite;
@@ -11847,14 +11855,11 @@ settings:
       label: 🟣 Obsidian Purple
       value: primary-accent-light-purple
     -
-      label: 🔵 Soft Blue
+      label: 🔵 Calm Blue
       value: primary-accent-light-blue
     -
-      label: 🟠 Orange Ember
+      label: 🟠 Autumn Orange
       value: primary-accent-light-orange
-    -
-      label: 🟢 Green Glow
-      value: primary-accent-light-green
   -
    id: secondary-accent-light
    title: "Secondary Accent (Light Mode)"
@@ -11888,6 +11893,9 @@ settings:
     -
       label: 🟢 Shimmering Green
       value: hover-accent-light-green
+    -
+      label: 🟣 Raspberry Red-Purple
+      value: hover-accent-light-pink
   -
    id: use-gray-tint-light
    title: 'Slightly colored text (Light Mode)'
