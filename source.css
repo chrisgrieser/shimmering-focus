@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 1.1258
+Version 1.1259
 Source CSS: https://github.com/chrisgrieser/shimmering-focus/blob/main/source.css
 MIT License
 ──────────────────────────────────────────────────── */
@@ -5557,6 +5557,11 @@ body:not(.normal-blockquotes) .callout-content p {
 	border: var(--thin-border);
 	border-left: none;
 	border-top-right-radius: var(--roundish);
+}
+
+.callout-title-inner {
+	line-height: 1.3em;
+	margin-bottom: 2px;
 }
 
 /* hover */
