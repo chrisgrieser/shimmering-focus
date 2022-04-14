@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 1.1252
+Version 1.1253
 Source CSS: https://github.com/chrisgrieser/shimmering-focus/blob/main/source.css
 MIT License
 ──────────────────────────────────────────────────── */
@@ -6613,18 +6613,19 @@ body:not(.hide-trailing-whitespace) .cm-trailing-space-new-line::BEFORE {
 	margin-top: 0;
 }
 
-/* strikethrough when finished */
-.cm-formatting-task.cm-property + span {
-	text-decoration: line-through;
-	color: var(--text-muted);
+/* strikethrough more readable */
+.task-list-item.task-list-item.is-checked {
+	color: var(--middle-gray);
 }
 
-/* do not strikethrough the space in front */
-.cm-formatting-task.cm-property + span::BEFORE {
-	content: " ";
-	white-space: pre-wrap;
-	background-color: var(--bg1);
-	position: absolute;
+.cm-formatting-task.cm-property ~ span {
+	text-decoration: line-through;
+	color: var(--middle-gray);
+}
+
+.cm-formatting-task.cm-property ~ span:hover,
+.task-list-item.is-checked:hover {
+	text-decoration: none;
 }
 
 /* Preview mode / LP */

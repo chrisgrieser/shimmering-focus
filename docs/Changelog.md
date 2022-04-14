@@ -3,6 +3,7 @@ nav_order: 110
 ---
 
 # Changelog
+- 2022-04-14	no task strikethrough when hovered for readability
 - 2022-04-14	link hover dotted underline
 - 2022-04-14	new smallcap font (beta)
 - 2022-04-14	alternative image zoom method: hovering (enable via style settings)
