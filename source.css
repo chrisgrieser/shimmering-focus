@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 1.1256
+Version 1.1257
 Source CSS: https://github.com/chrisgrieser/shimmering-focus/blob/main/source.css
 MIT License
 ──────────────────────────────────────────────────── */
@@ -951,6 +951,7 @@ body:is(.theme-light, .theme-dark) {
 		format("woff2");
 }
 
+/* Marcellus */
 @font-face {
     font-family: "Marcellus SC";
     font-weight: normal;
@@ -961,6 +962,7 @@ body:is(.theme-light, .theme-dark) {
     	format("woff2");
 }
 
+/* Marcellus */
 .unlock-theme-beta {
 	--smallcap-font: "Marcellus SC";
 	--setting-heading: "Marcellus SC";
@@ -3339,6 +3341,18 @@ body .app-container .workspace-leaf-resize-handle:hover {
 	text-indent: -3.6em;
 }
 
+/* Marcellus */
+.unlock-theme-beta .installed-plugins-container .setting-item-description > div:first-child {
+	font-size: 0.9em;
+	text-indent: -3.9em;
+}
+
+.unlock-theme-beta .installed-plugins-container .setting-item-description > div:nth-child(2) {
+	font-family: var(--smallcap-font);
+	font-size: 0.9em;
+	margin-top: -1.35em;
+}
+
 /* Community Plugin list */
 /* space between button and checklist, e.g.
 "relaunch" button or "update" button in plugin list */
@@ -4997,7 +5011,7 @@ body:not(.hover-zoom) img[src] {
 }
 
 /* fix for GitHub shields */
-img[src*="img.shields.io" i][src][src][src][src][src] {
+img:is([src*="img.shields.io"],[src*="ko-fi.com"])[src][src][src][src][src] {
 	display: inline;
 	margin-top: 0; /* stylelint-disable-line plugin/declaration-block-no-ignored-properties */
 	border: none;
@@ -10486,7 +10500,7 @@ body:not(.show-scrollbar) .workspace-split.mod-root .workspace-leaf-content[data
 
 /* most styling of the import/export buttons
 are at the button section */
-body a:is(.style-settings-export, .style-settings-import) {
+.modal a:is(.style-settings-export, .style-settings-import) {
 	font-size: calc(var(--button-font-size) * 0.85);
 	text-decoration: none;
 
