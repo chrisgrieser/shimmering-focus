@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 1.1254
+Version 1.1255
 Source CSS: https://github.com/chrisgrieser/shimmering-focus/blob/main/source.css
 MIT License
 ──────────────────────────────────────────────────── */
@@ -4988,6 +4988,7 @@ body:not(.hover-zoom) img[src] {
 /* images zoom via hover */
 .hover-zoom img[src][src][src][src][src][src] {
 	transition: var(--quick-transition);
+	cursor: default;
 }
 
 .hover-zoom img[src][src][src][src][src][src]:hover {
@@ -6242,7 +6243,7 @@ pre.language-haskell::AFTER { content: "Haskell" }
 .internal-link.internal-link.internal-link:hover,
 .external-link:hover,
 a:hover {
-	text-decoration: underline dashed;
+	text-decoration: underline double;
 	color: var(--hover-accent-2);
 	cursor: pointer;
 }
