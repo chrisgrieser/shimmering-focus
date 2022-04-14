@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 1.1250
+Version 1.1251
 Source CSS: https://github.com/chrisgrieser/shimmering-focus/blob/main/source.css
 MIT License
 ──────────────────────────────────────────────────── */
@@ -6236,7 +6236,6 @@ pre.language-haskell::AFTER { content: "Haskell" }
 /* ───────────────────────────────────────────────── */
 /* << Links
 ──────────────────────────────────────────────────── */
-/* hovered links in alt accent */
 .cm-url.cm-url:not(.cm-formatting):hover,
 .cm-hmd-internal-link.cm-hmd-internal-link.cm-hmd-internal-link:hover,
 .modal-content a:hover,
@@ -6268,11 +6267,6 @@ u {
 	text-underline-offset: var(--underline-offset);
 }
 
-/* don't underline the brackets */
-.cm-s-obsidian .cm-url.cm-formatting {
-	text-decoration: none;
-}
-
 /* <<< Fold external URLs (CM6 Source Mode) */
 body:not(.show-urls) .cm-s-obsidian:not(.is-live-preview) .cm-line:not(.cm-active) .cm-string.cm-url:not(.cm-formatting) {
 	font-size: 0;
@@ -6286,6 +6280,8 @@ body:not(.show-urls) .cm-s-obsidian:not(.is-live-preview) .cm-line:not(.cm-activ
 	top: 2px;
 }
 
+/* don't underline the brackets */
+.cm-s-obsidian .cm-url.cm-formatting,
 body:not(.show-urls) .cm-line:not(.cm-active) .cm-url {
 	text-decoration: none;
 }
@@ -9862,8 +9858,7 @@ button.MS-OpenSnippet:hover svg.ms-snippet path {
 	margin: 0;
 }
 
-/* "Treat Current Note as Implied Sibling" enabled */
-.BC-active-note div {
+.BC-active-note div { /* "Treat Current Note as Implied Sibling" enabled */
 	font-weight: 600;
 }
 
@@ -9929,7 +9924,7 @@ body:not(.no-alternating-rows) .BC-Matrix-square li {
 }
 
 body:not(.no-alternating-rows) .BC-Matrix-square.BC-Matrix-square li:hover {
-	background-color: var(--bg3);
+	/* background-color: var(--bg3); */
 }
 
 body:not(.no-alternating-rows) .BC-Matrix-square li:nth-child(even) {
