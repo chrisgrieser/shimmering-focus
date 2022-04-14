@@ -3,6 +3,7 @@ nav_order: 110
 ---
 
 # Changelog
+- 2022-04-14	patch
 - 2022-04-14	custom color tweaks
 - 2022-04-14	fix more line height issues with headings in LP
 - 2022-04-14	fix heading font resizing

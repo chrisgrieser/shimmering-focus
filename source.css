@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 1.1240
+Version 1.1241
 Source CSS: https://github.com/chrisgrieser/shimmering-focus/blob/main/source.css
 MIT License
 ──────────────────────────────────────────────────── */
@@ -297,7 +297,6 @@ MIT License
 	--text-muted: hsl(var(--tint-of-grays-light) var(--sat-of-grays) 50%);
 	--middle-gray: hsl(var(--tint-of-grays-light) var(--sat-of-grays) 57%);
 	--text-faint: hsl(var(--tint-of-grays-light) var(--sat-of-grays) 60%);
-	--extra-faint: hsl(var(--tint-of-grays-light) calc(var(--sat-of-grays) * 0.7) 70%);
 	--hr-line-gray: hsl(var(--tint-of-grays-light) var(--sat-of-grays) 66%);
 	--interactive-normal: hsl(var(--tint-of-grays-light) var(--high-sat-of-grays)  95%);
 }
@@ -308,7 +307,6 @@ MIT License
 	--text-muted: hsl(var(--tint-of-grays-dark) var(--sat-of-grays) 58%);
 	--middle-gray: hsl(var(--tint-of-grays-dark) var(--sat-of-grays) 49%);
 	--text-faint: hsl(var(--tint-of-grays-dark) var(--sat-of-grays) 40%);
-	--extra-faint: hsl(var(--tint-of-grays-dark) calc(var(--sat-of-grays) * 0.7) 25%);
 	--hr-line-gray: hsl(var(--tint-of-grays-dark) var(--sat-of-grays) 60%);
 	--interactive-normal: hsl(var(--tint-of-grays-dark) var(--high-sat-of-grays) 16%);
 }
@@ -712,7 +710,7 @@ body:is(.theme-light, .theme-dark) {
 	--thick-muted-border: 4px solid var(--muted-border-color);
 	--thin-border: 1px solid var(--basic-border-color);
 	--thin-muted-border: 1px solid var(--muted-border-color);
-	--muted-button-border: 2px solid var(--extra-faint);
+	--muted-button-border: var(--basic-border);
 	--hr-line: var(--thick-muted-border);
 }
 
@@ -12257,7 +12255,7 @@ settings:
   -
    id: footnote-gutter
    title: "Footnote Indicator"
-   description: Displays a small indicator (⦿) in the gutter when a footnote is present. (Note that numbered indicators do not count properly footnotes on the same line.)
+   description: Displays a small indicator (⦿) in the gutter when a footnote is present. (Note that numbered indicators can not properly count footnotes on the same line.)
    type: class-select
    allowEmpty: false
    default: simple-fn-indicator
