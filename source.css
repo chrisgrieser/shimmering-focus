@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 1.1243
+Version 1.1244
 Source CSS: https://github.com/chrisgrieser/shimmering-focus/blob/main/source.css
 MIT License
 ──────────────────────────────────────────────────── */
@@ -3009,8 +3009,7 @@ body:not(.show-sidebar-tabs) .workspace-tab-header-container:hover .workspace-ta
 	margin-top: 10px;
 }
 
-body:not(.show-sidebar-tabs) .workspace-tabs .workspace-tab-header-container:not(:hover) .workspace-tab-header,
-body:not(.show-sidebar-tabs) .workspace-tabs .workspace-tab-header-container:not(:hover) .workspace-tab-header svg {
+body:not(.show-sidebar-tabs) .workspace-tabs .workspace-tab-header-container:not(:hover) :is(.workspace-tab-header, .workspace-tab-header svg) {
 	opacity: 0;
 	border: none;
 }
