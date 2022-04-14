@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 1.1245
+Version 1.1246
 Source CSS: https://github.com/chrisgrieser/shimmering-focus/blob/main/source.css
 MIT License
 ──────────────────────────────────────────────────── */
@@ -12330,7 +12330,7 @@ settings:
    default: false
   -
    id: hover-zoom
-   title: 'Image Zoom via Hover'
+   title: '🆕 Image Zoom via Hover'
    description: 'By default, you can zoom in images by clicking & holding. Enable this to zoom in images by hovering instead.'
    type: class-toggle
    default: false
