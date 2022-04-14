@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 1.1249
+Version 1.1250
 Source CSS: https://github.com/chrisgrieser/shimmering-focus/blob/main/source.css
 MIT License
 ──────────────────────────────────────────────────── */
@@ -2753,6 +2753,7 @@ kbd.suggestion-hotkey {
 	background-color: var(--bg2);
 	box-shadow: var(--muted-button-inset-shadow);
 
+	border: var(--thin-border);
 	border-radius: var(--roundish);
 }
 
