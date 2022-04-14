@@ -3,6 +3,7 @@ nav_order: 110
 ---
 
 # Changelog
+- 2022-04-14	fix heading font resizing
 - 2022-04-14	apply remove-dataview-title cssclass to dataviewjs as well
 - 2022-04-14	added raspberry to hover accent choice (beta)
 - 2022-04-14	fix unresolved link color in LP
