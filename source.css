@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 1.1255
+Version 1.1256
 Source CSS: https://github.com/chrisgrieser/shimmering-focus/blob/main/source.css
 MIT License
 ──────────────────────────────────────────────────── */
@@ -6243,7 +6243,7 @@ pre.language-haskell::AFTER { content: "Haskell" }
 .internal-link.internal-link.internal-link:hover,
 .external-link:hover,
 a:hover {
-	text-decoration: underline double;
+	text-decoration: underline double 1px;
 	color: var(--hover-accent-2);
 	cursor: pointer;
 }
@@ -9838,6 +9838,24 @@ button.MS-OpenSnippet:hover svg.ms-snippet path {
 	content: none;
 }
 
+/* links */
+.BC-Matrix.BC-Matrix.BC-Matrix ol > li:hover {
+	background-color: var(--bg3);
+}
+
+.BC-Matrix.BC-Matrix ol > li .BC-Link {
+	color: var(--extra-contrast);
+}
+
+.BC-Matrix.BC-Matrix.BC-Matrix.BC-Matrix ol > li .BC-Link:hover {
+	text-decoration: none;
+}
+
+/* hide headings in Breadcrumbs */
+.minimal-breadcrumbs-matrix .BC-Matrix-headers.BC-Matrix-headers.BC-Matrix-headers.BC-Matrix-headers {
+	display: none;
+}
+
 /* no unresolved link gutter indicator */
 .BC-link.is-unresolved::BEFORE {
 	display: none;
@@ -9863,6 +9881,7 @@ button.MS-OpenSnippet:hover svg.ms-snippet path {
 
 .BC-active-note div { /* "Treat Current Note as Implied Sibling" enabled */
 	font-weight: 600;
+	color: var(--primary-accent-2);
 }
 
 body .app-container .workspace-leaf-content[data-type="BC-matrix"] .view-content {
@@ -9881,11 +9900,6 @@ body .app-container .workspace-leaf-content[data-type="BC-matrix"] .view-content
 
 .BC-Matrix.BC-Matrix.BC-Matrix.BC-Matrix {
 	padding: 0;
-}
-
-/* hide headings in Breadcrumbs */
-.minimal-breadcrumbs-matrix .BC-Matrix-headers.BC-Matrix-headers.BC-Matrix-headers.BC-Matrix-headers {
-	display: none;
 }
 
 /* "up", "same", and "down" */

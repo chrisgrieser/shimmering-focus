@@ -3,7 +3,7 @@ nav_order: 110
 ---
 
 # Changelog
-- 2022-04-14	patch
+- 2022-04-14	links and breadcrumbs links styling
 - 2022-04-14	make image hover zoom also apply to ozan's image in editor plugin
 - 2022-04-14	no task strikethrough when hovered for readability
 - 2022-04-14	link hover dotted underline
