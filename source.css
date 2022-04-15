@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 1.1278
+Version 1.1279
 Source CSS: https://github.com/chrisgrieser/shimmering-focus/blob/main/source.css
 MIT License
 ──────────────────────────────────────────────────── */
@@ -2700,8 +2700,8 @@ div.prompt-results {
 /* plugin name */
 .suggestion-prefix {
 	font-family: var(--smallcap-font);
-	font-size: 1em;
-	letter-spacing: -0.1px;
+	font-size: 0.9em;
+	letter-spacing: 0.2px;
 }
 
 /* pin replacement */
