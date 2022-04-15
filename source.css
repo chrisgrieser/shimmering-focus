@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 1.1280
+Version 1.1281
 Source CSS: https://github.com/chrisgrieser/shimmering-focus/blob/main/source.css
 MIT License
 ──────────────────────────────────────────────────── */
@@ -2770,8 +2770,8 @@ body:not(.move-plugin-name-to-left):not(.is-mobile) :not(.suggestion-container) 
 }
 
 /* Alternating row colors */
-body:not(.no-alternating-rows) .suggestion-item:nth-child(even),
-body:not(.no-alternating-rows) .suggestion-item:nth-child(even) .suggestion-prefix {
+body:not(.no-alternating-rows) .suggestion-item:nth-child(odd),
+body:not(.no-alternating-rows) .suggestion-item:nth-child(odd) .suggestion-prefix {
 	background-color: var(--suggester-b-row);
 }
 
