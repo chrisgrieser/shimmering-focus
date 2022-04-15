@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 1.1268
+Version 1.1269
 Source CSS: https://github.com/chrisgrieser/shimmering-focus/blob/main/source.css
 MIT License
 ──────────────────────────────────────────────────── */
@@ -2515,8 +2515,15 @@ div.menu-item-title {
 }
 
 div.menu-item {
-	padding: 0 9px;
-	border-radius: var(--roundish);
+	padding: 0 8px;
+}
+
+body .menu-separator {
+	border-bottom: var(--muted-border);
+}
+
+body:not(.no-alternating-rows) .menu-item:nth-child(odd) {
+	background-color: var(--a-row);
 }
 
 :is(.theme-light, .theme-dark) .menu div.menu-item:is(.selected, :hover) {
@@ -2524,13 +2531,9 @@ div.menu-item {
 }
 
 .menu-item-icon {
+	width: 23px;
 	top: 4px;
 	bottom: 0;
-}
-
-.menu-item.selected,
-.menu-item.selected svg {
-	color: var(--primary-accent-2);
 }
 
 .menu-item svg {
@@ -2538,15 +2541,11 @@ div.menu-item {
 	transform: scale(0.9);
 }
 
-.menu-item:is(:hover, :hover svg, .selected:hover, .selected:hover svg) {
+.menu-item.menu-item:hover :is(.menu-item-title, svg) {
 	color: var(--hover-accent-2);
 }
 
-.menu-item:is(:hover, .selected:hover) .menu-item-title {
-	color: var(--hover-accent-2);
-}
-
-.menu-item.selected .menu-item-title {
+.menu-item.selected :is(.menu-item-title, svg) {
 	color: var(--primary-accent-2);
 }
 
