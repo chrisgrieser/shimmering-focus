@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 1.1272
+Version 1.1273
 Source CSS: https://github.com/chrisgrieser/shimmering-focus/blob/main/source.css
 MIT License
 ──────────────────────────────────────────────────── */
@@ -6304,14 +6304,18 @@ pre.language-haskell::AFTER { content: "Haskell" }
 .external-link:hover,
 .embedded-backlinks.embedded-backlinks .tree-item-inner:hover,
 a:hover {
-	text-decoration: underline double 1px;
 	color: var(--hover-accent-2);
 	cursor: pointer;
 }
 
 /* links to heading of the same note */
-.markdown-preview-view [href^="#"] {
+.markdown-preview-view a[href^="#"] {
 	text-decoration: underline dashed;
+}
+
+/* links to heading of the same note */
+.markdown-preview-view .internal-link {
+	text-decoration: underline double 1.2px;
 }
 
 .cm-hmd-internal-link.cm-hmd-internal-link.cm-hmd-internal-link,
@@ -9918,7 +9922,7 @@ button.MS-OpenSnippet:hover svg.ms-snippet path {
 	color: var(--extra-contrast);
 }
 
-.BC-Matrix.BC-Matrix.BC-Matrix.BC-Matrix ol > li .BC-Link:hover {
+.BC-Matrix.BC-Matrix.BC-Matrix.BC-Matrix ol > li .BC-Link {
 	text-decoration: none;
 }
 
