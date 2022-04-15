@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 1.1270
+Version 1.1271
 Source CSS: https://github.com/chrisgrieser/shimmering-focus/blob/main/source.css
 MIT License
 ──────────────────────────────────────────────────── */
@@ -1952,7 +1952,7 @@ body:not(.classic-statusbar) .status-bar {
 	right: 0;
 	bottom: 0;
 
-	padding: 6px 0 6px 10px;
+	padding: 6px 5px 6px 10px;
 
 	border-top: 2px ridge var(--basic-border-color);
 	border-left: 2px ridge var(--basic-border-color);
@@ -1961,7 +1961,7 @@ body:not(.classic-statusbar) .status-bar {
 
 /* when permanently visible, safe space */
 body.permanently-show-statusbar .status-bar {
-	padding: 3px 0 4px 6px;
+	padding: 3px 5px 4px 6px;
 }
 
 body.permanently-show-statusbar .status-bar.status-bar::AFTER {
@@ -1977,14 +1977,10 @@ body.permanently-show-statusbar .status-bar.status-bar::AFTER {
 
 body:not(.hide-signature) .status-bar::AFTER {
 	content: var(--signature);
-
 	font-size: calc(var(--status-bar-font-size) * 1.1);
 	font-weight: 500;
-
 	position: relative;
 	bottom: 1px;
-
-	padding-right: 5px;
 }
 
 .classic-statusbar .status-bar.status-bar.status-bar {
@@ -2022,7 +2018,7 @@ body:not(.permanently-show-statusbar, .minimal-status-bar, .classic-statusbar) .
 }
 
 /* fix so stuff on the bottom of the right sidebar can still be clicked */
-body:not(.permanently-show-statusbar, .minimal-status-bar, .classic-statusbar) .mod-right-split .workspace-tabs:last-child .workspace-leaf-content > div:last-child {
+body:not(.permanently-show-statusbar, .classic-statusbar) .mod-right-split .workspace-tabs:last-child .workspace-leaf-content > div:last-child {
 	padding-bottom: calc(var(--status-bar-height) + 0.1em);
 }
 
@@ -10465,6 +10461,16 @@ body .qsp-symbol-indicator {
 	border-top: none;
 }
 
+.style-settings-heading .setting-item-name {
+	font-family: var(--setting-heading);
+	font-size: 1.15rem;
+	line-height: 1em;
+	letter-spacing: 0.5px;
+
+	margin-top: 8px;
+	margin-bottom: 3px;
+}
+
 .style-settings-heading :is(.setting-item-title, .setting-item-description) {
 	margin-left: 1px;
 }
@@ -10497,14 +10503,6 @@ body .style-settings-heading[data-level="0"] {
 .style-settings-heading[data-level="0"] .setting-item-name.setting-item-name.setting-item-name.setting-item-name {
 	font-size: 1.1em;
 	margin-bottom: 5px;
-}
-
-.style-settings-heading .setting-item-name {
-	font-family: var(--setting-heading);
-	font-size: 1.15rem;
-	line-height: 1em;
-	margin-top: 8px;
-	margin-bottom: 3px;
 }
 
 .style-settings-container .setting-item-description {
