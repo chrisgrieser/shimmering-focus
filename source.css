@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 1.1269
+Version 1.1270
 Source CSS: https://github.com/chrisgrieser/shimmering-focus/blob/main/source.css
 MIT License
 ──────────────────────────────────────────────────── */
@@ -11043,8 +11043,17 @@ svg.sync-small {
 	padding-bottom: 3px;
 }
 
+/* the icon */
 .various-complements__suggestion-item.various-complements__suggestion-item::BEFORE {
+	height: 0.9em;
+	width: 0.9em;
 	margin-top: 2px;
+}
+
+/* the alias icon */
+.various-complements__suggestion-item__content__alias::BEFORE {
+	position: relative;
+	top: -2px;
 }
 
 /* the "add to custom dictionary" modal, importants needed */
