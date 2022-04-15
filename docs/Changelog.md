@@ -3,7 +3,7 @@ nav_order: 110
 ---
 
 # Changelog
-- 2022-04-15	patch
+- 2022-04-15	styling for mind map plugin
 - 2022-04-15	link underline style dependent on link type
 - 2022-04-15	minor context menu improvements
 - 2022-04-15	fix kanban scrollbars

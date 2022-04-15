@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 1.1276
+Version 1.1277
 Source CSS: https://github.com/chrisgrieser/shimmering-focus/blob/main/source.css
 MIT License
 ──────────────────────────────────────────────────── */
@@ -248,6 +248,7 @@ MIT License
 	- Markdown Table Editor
 	- Hover Editor
 	- Omnisearch
+	- Mind Map
 - Compatibility Info for the Obsidian Hub
 - Style Setting (YAML)
 # 	- Show / Hide UI Elements (+)
@@ -11721,6 +11722,21 @@ and file recovery plugin */
 }
 
 /* ───────────────────────────────────────────────── */
+/* << Mind Map
+──────────────────────────────────────────────────── */
+.workspace-leaf-content[data-type="mindmap"] {
+	cursor: grab;
+}
+
+.workspace-leaf-content[data-type="mindmap"]:active {
+	cursor: grabbing;
+}
+
+.workspace-leaf-content[data-type="mindmap"] a {
+	text-decoration: none;
+}
+
+/* ───────────────────────────────────────────────── */
 /* < Compatibility Info for the Obsidian Hub
 ──────────────────────────────────────────────────── */
 
@@ -11793,6 +11809,7 @@ community:
 - obsidian-notion-like-tables
 - markdown-table-editor
 - obsidian-omnisearch
+- obsidian-mind-map
 */
 
 /* ───────────────────────────────────────────────── */
