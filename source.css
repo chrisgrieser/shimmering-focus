@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 1.1279
+Version 1.1280
 Source CSS: https://github.com/chrisgrieser/shimmering-focus/blob/main/source.css
 MIT License
 ──────────────────────────────────────────────────── */
@@ -2704,6 +2704,10 @@ div.prompt-results {
 	letter-spacing: 0.2px;
 }
 
+.suggestion-item:is(:hover, .is-selected) .suggestion-prefix {
+	filter: saturate(60%);
+}
+
 /* pin replacement */
 .prompt-input[placeholder^="Select a command"] ~ .prompt-results .suggestion-flair svg {
 	display: none;
@@ -2718,7 +2722,7 @@ div.prompt-results {
 	border-left: 3px solid var(--text-faint);
 }
 
-.suggestion-prefix::AFTER {
+body:not(.move-plugin-name-to-left) .suggestion-prefix::AFTER {
 	display: none;
 }
 
