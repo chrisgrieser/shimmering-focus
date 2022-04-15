@@ -3,6 +3,7 @@ nav_order: 110
 ---
 
 # Changelog
+- 2022-04-15	fix kanban scrollbars
 - 2022-04-15	scrol
 - 2022-04-15	improved styling of the settings menu
 - 2022-04-14	links and breadcrumbs links styling

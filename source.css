@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 1.1267
+Version 1.1268
 Source CSS: https://github.com/chrisgrieser/shimmering-focus/blob/main/source.css
 MIT License
 ──────────────────────────────────────────────────── */
@@ -8887,7 +8887,11 @@ body .kanban-plugin__item {
 	border-radius: calc(var(--roundish) * 1.3);
 }
 
-/* thinner lane scrollbar */
+/* Scrollbars */
+.kanban-plugin__item.kanban-plugin__item ::-WEBKIT-SCROLLBAR {
+	display: none;
+}
+
 .kanban-plugin .kanban-plugin__lane ::-WEBKIT-SCROLLBAR {
 	width: calc(var(--scrollbar-thickness) * 0.6);
 }
