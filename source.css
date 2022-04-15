@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 1.1271
+Version 1.1272
 Source CSS: https://github.com/chrisgrieser/shimmering-focus/blob/main/source.css
 MIT License
 ──────────────────────────────────────────────────── */
@@ -6307,6 +6307,11 @@ a:hover {
 	text-decoration: underline double 1px;
 	color: var(--hover-accent-2);
 	cursor: pointer;
+}
+
+/* links to heading of the same note */
+.markdown-preview-view [href^="#"] {
+	text-decoration: underline dashed;
 }
 
 .cm-hmd-internal-link.cm-hmd-internal-link.cm-hmd-internal-link,
