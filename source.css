@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 1.1281
+Version 1.1282
 Source CSS: https://github.com/chrisgrieser/shimmering-focus/blob/main/source.css
 MIT License
 ──────────────────────────────────────────────────── */
@@ -2431,8 +2431,9 @@ body button.document-search-button {
 	margin: 5px;
 }
 
-.document-search-button.document-search-button {
+.document-search-button.document-search-button.document-search-button {
 	padding-top: 4px;
+	border-width: 1.5px;
 }
 
 body:not(.show-close-button) .document-search-close-button {
@@ -5038,7 +5039,7 @@ body:not(.hover-zoom) img[src] {
 
 .hover-zoom img[src][src][src][src][src][src]:hover {
 	max-width: 100%;
-	transition-delay: calc(var(--transition-delay-passing-over-protection) * 3);
+	transition-delay: calc(var(--transition-delay-passing-over-protection) * 5);
 }
 
 /* fix for GitHub shields */
