@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 1.1275
+Version 1.1276
 Source CSS: https://github.com/chrisgrieser/shimmering-focus/blob/main/source.css
 MIT License
 ──────────────────────────────────────────────────── */
@@ -3189,7 +3189,7 @@ body .app-container .workspace-leaf-resize-handle:hover {
 .modal.mod-settings :is(h1, h2, h3, h4, h5, h6),
 .setting-item-heading:not(.style-settings-heading) .setting-item-name {
 	line-height: 1em;
-	background-color: var(--muted-border-color);
+	background-color: var(--basic-border-color);
 	border-radius: var(--roundish) var(--roundish) 0 0;
 }
 
@@ -3202,14 +3202,18 @@ body .app-container .workspace-leaf-resize-handle:hover {
 	margin-top: 5px;
 	margin-bottom: 5px;
 	border-width: 3px;
-	border-bottom: var(--muted-border);
+	border-bottom: 3px solid var(--basic-border-color);
 }
 
 .modal.mod-settings :is(h1, h2, h3, h4, h5, h6) {
 	display: inline-block;
 	padding: 4px 6px 5px;
 	margin-top: 15px;
-	margin-bottom: -2px;
+	margin-bottom: -1px;
+}
+
+.modal.mod-settings :is(h1, h2, h3, h4, h5, h6) + .setting-item {
+	border-top: 3px solid var(--basic-border-color);
 }
 
 /* setting items */
