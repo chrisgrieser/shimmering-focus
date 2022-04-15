@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 1.1274
+Version 1.1275
 Source CSS: https://github.com/chrisgrieser/shimmering-focus/blob/main/source.css
 MIT License
 ──────────────────────────────────────────────────── */
@@ -457,7 +457,6 @@ MIT License
 
 /* <<< Secondary Accent (references, tags, code, finished tasks) */
 .theme-light {
-	--sucess-color: var(--secondary-accent-1);
 	--reference-color: var(--secondary-accent-1);
 	--tag-text-color: var(--secondary-accent-1);
 	--code-color: var(--secondary-accent-1);
@@ -465,7 +464,6 @@ MIT License
 }
 
 .theme-dark {
-	--sucess-color: var(--secondary-accent-2);
 	--reference-color: var(--secondary-accent-2);
 	--tag-text-color: var(--secondary-accent-2);
 	--code-color: var(--secondary-accent-2);
@@ -773,13 +771,17 @@ body:is(.theme-light, .theme-dark) {
 .theme-light {
 	--search-match-color: hsl(30 100% 50%);
 	--text-error: hsl(0 100% 25%);
+
 	--error-bg: hsl(0 80% 85%);
+	--sucess-color: hsl(121 100% 40%);
 }
 
 .theme-dark {
 	--search-match-color: hsl(60 100% 70%);
 	--text-error: hsl(0 100% 60%);
+
 	--error-bg: hsl(0 30% 20%);
+	--sucess-color: hsl(121 100% 45%);
 }
 
 /* stylelint-enable no-duplicate-selectors */
