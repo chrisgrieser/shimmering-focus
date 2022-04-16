@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 1.1283
+Version 1.1284
 Source CSS: https://github.com/chrisgrieser/shimmering-focus/blob/main/source.css
 MIT License
 ──────────────────────────────────────────────────── */
@@ -782,7 +782,7 @@ body:is(.theme-light, .theme-dark) {
 	--text-error: hsl(0 100% 60%);
 
 	--error-bg: hsl(0 30% 20%);
-	--sucess-color: hsl(121 100% 45%);
+	--sucess-color: hsl(151 80% 35%);
 }
 
 /* stylelint-enable no-duplicate-selectors */
