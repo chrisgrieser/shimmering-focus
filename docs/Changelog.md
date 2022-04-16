@@ -3,7 +3,7 @@ nav_order: 110
 ---
 
 # Changelog
-- 2022-04-16	patch
+- 2022-04-16	highlights with slightly more contrast
 - 2022-04-16	confirmation modal
 - 2022-04-15	styling for mind map plugin
 - 2022-04-15	link underline style dependent on link type
