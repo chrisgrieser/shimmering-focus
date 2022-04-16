@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 1.1299
+Version 1.1300
 Source CSS: https://github.com/chrisgrieser/shimmering-focus/blob/main/source.css
 MIT License
 ──────────────────────────────────────────────────── */
@@ -8281,6 +8281,7 @@ div.card-view-container.card-view-container .markdown-preview-view :is(h1, h2, h
 
 .prompt.better-command-palette .suggestion-flair[aria-label="Pinned"] ~ .suggestion-content::BEFORE {
 	content: "☆";
+	font-style: normal;
 	padding-right: 5px;
 }
 
