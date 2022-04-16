@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 1.1298
+Version 1.1299
 Source CSS: https://github.com/chrisgrieser/shimmering-focus/blob/main/source.css
 MIT License
 ──────────────────────────────────────────────────── */
@@ -9681,6 +9681,10 @@ body div.oz-image-widget > img:active {
 
 .workspace-leaf-content[data-type="recent-files"] .nav-file {
 	border-radius: 0;
+}
+
+.workspace-leaf-content[data-type="recent-files"] .view-content {
+	padding-top: 0;
 }
 
 body:not(.no-alternating-rows) .workspace-leaf-content[data-type="recent-files"] .nav-file:nth-child(even) {
