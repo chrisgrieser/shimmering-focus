@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 1.1302
+Version 1.1303
 Source CSS: https://github.com/chrisgrieser/shimmering-focus/blob/main/source.css
 MIT License
 ──────────────────────────────────────────────────── */
@@ -6334,7 +6334,7 @@ pre.language-haskell::AFTER { content: "Haskell" }
 }
 
 /* turn off loose lists */
-body:not(.re-enable-loose-lists).markdown-preview-view :is(ol, ul) > li > p {
+body:not(.re-enable-loose-lists) .markdown-preview-view :is(ol, ul) > li > p {
 	margin-top: 0;
 	margin-bottom: 0;
 }
