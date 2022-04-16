@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 1.1295
+Version 1.1296
 Source CSS: https://github.com/chrisgrieser/shimmering-focus/blob/main/source.css
 MIT License
 ──────────────────────────────────────────────────── */
@@ -1444,9 +1444,11 @@ body.no-animations {
 	--slow-transition: 0;
 }
 
-@keyframes faded-blink {
+@keyframes signature-blink {
 	from { color: var(--text-normal) }
-	50% { color: var(--primary-accent-2) }
+	25% { color: var(--primary-accent-2) }
+	50% { color: var(--secondary-accent-1) }
+	75% { color: var(--hover-accent-2) }
 	to { color: var(--text-normal) }
 }
 
@@ -2094,8 +2096,8 @@ body:is(.theme-light, .theme-dark) ::-WEBKIT-SCROLLBAR-THUMB:active {
 .progress-bar .progress-bar-message {
 	font-size: 0;
 	margin-bottom: 30px;
-	animation-duration: 0.8s;
-	animation-name: faded-blink;
+	animation-duration: 1.5s;
+	animation-name: signature-blink;
 	animation-iteration-count: infinite;
 }
 
@@ -4254,8 +4256,8 @@ body:not(.plugin-sliding-panes) .workspace-leaf:not(.mod-active) .workspace-leaf
 
 	color: var(--extra-contrast);
 
-	animation-duration: 10s;
-	animation-name: faded-blink;
+	animation-duration: 8s;
+	animation-name: signature-blink;
 	animation-iteration-count: infinite;
 }
 
@@ -10635,8 +10637,8 @@ are at the button section */
 }
 
 body:not(.no-animations) .style-settings-heading[data-id="shimmering-focus"]:not(:hover) .setting-item-name::AFTER {
-	animation-duration: 12s;
-	animation-name: faded-blink;
+	animation-duration: 8s;
+	animation-name: signature-blink;
 	animation-iteration-count: infinite;
 }
 
