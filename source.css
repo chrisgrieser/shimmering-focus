@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 1.1290
+Version 1.1291
 Source CSS: https://github.com/chrisgrieser/shimmering-focus/blob/main/source.css
 MIT License
 ──────────────────────────────────────────────────── */
@@ -8795,6 +8795,7 @@ body :is(.kanban-plugin__drag-container,.kanban-plugin) p {
 	line-height: 1.4em;
 	letter-spacing: -0.2px;
 	margin: 0;
+	overflow-y: hidden; /* prevents scrollbars & scrolling appearing */
 }
 
 body .app-container :is(.kanban-plugin__drag-container,.kanban-plugin) :is(h1, h2, h3, h4, h5, h6) {
@@ -8908,10 +8909,6 @@ body .kanban-plugin__item {
 }
 
 /* Scrollbars */
-.kanban-plugin__item.kanban-plugin__item ::-WEBKIT-SCROLLBAR {
-	display: none;
-}
-
 .kanban-plugin .kanban-plugin__lane ::-WEBKIT-SCROLLBAR {
 	width: calc(var(--scrollbar-thickness) * 0.6);
 }

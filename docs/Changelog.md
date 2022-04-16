@@ -3,6 +3,7 @@ nav_order: 110
 ---
 
 # Changelog
+- 2022-04-16	fix scrolling in Kanban items
 - 2022-04-16	highlights with slightly more contrast
 - 2022-04-16	confirmation modal
 - 2022-04-15	styling for mind map plugin
