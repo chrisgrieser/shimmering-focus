@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 1.1296
+Version 1.1297
 Source CSS: https://github.com/chrisgrieser/shimmering-focus/blob/main/source.css
 MIT License
 ──────────────────────────────────────────────────── */
@@ -2707,10 +2707,6 @@ div.prompt-results {
 	font-family: var(--smallcap-font);
 	font-size: 0.9em;
 	letter-spacing: 0.2px;
-}
-
-.suggestion-item:is(:hover, .is-selected) .suggestion-prefix {
-	filter: saturate(60%);
 }
 
 /* pin replacement */
@@ -8318,6 +8314,7 @@ body:not(.no-built-in-supercharged-links) .data-link-icon[data-link-tags~="#ever
 body:not(.no-built-in-supercharged-links) .data-link-icon[data-link-tags~="#moc" i]::BEFORE { content: "🗺 " }
 body:not(.no-built-in-supercharged-links) .data-link-icon[data-link-tags~="#pkm" i]::BEFORE { content: "🧠 " }
 body:not(.no-built-in-supercharged-links) .data-link-icon[data-link-tags~="#seedling" i]::BEFORE { content: "🌱 " }
+body:not(.no-built-in-supercharged-links) .data-link-icon[data-link-tags~="#mindmap" i]::BEFORE { content: "🕸 " }
 
 /* writing cssclass, needs *= to catch , after cssclass */
 body:not(.no-built-in-supercharged-links) .data-link-icon[data-link-cssclass*="writing"]::BEFORE { content: "✍️ " }
