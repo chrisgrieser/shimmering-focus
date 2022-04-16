@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 1.1304
+Version 1.1305
 Source CSS: https://github.com/chrisgrieser/shimmering-focus/blob/main/source.css
 MIT License
 ──────────────────────────────────────────────────── */
@@ -8327,16 +8327,18 @@ div.card-view-container.card-view-container .markdown-preview-view :is(h1, h2, h
 
 /* tag-based */
 body:not(.no-built-in-supercharged-links) .data-link-icon[data-link-tags~="#autocompletion" i]::BEFORE { content: "🅰️ " }
+body:not(.no-built-in-supercharged-links) .data-link-icon[data-link-tags~="#mermaid" i]::BEFORE { content: "🧜‍♀️ " }
 body:not(.no-built-in-supercharged-links) .data-link-icon[data-link-tags~="#dataview" i]::BEFORE { content: "🔢 " }
 body:not(.no-built-in-supercharged-links) .data-link-icon[data-link-tags~="#templater" i]::BEFORE { content: "📄 " }
 body:not(.no-built-in-supercharged-links) .data-link-icon[data-link-tags~="#obsidian" i]::BEFORE { content: "🟪 " }
 body:not(.no-built-in-supercharged-links) .data-link-icon[data-link-tags~="#checklist" i]::BEFORE { content: "✅ " }
+body:not(.no-built-in-supercharged-links) .data-link-icon[data-link-tags~="#mindmap" i]::BEFORE { content: "🕸 " }
 body:not(.no-built-in-supercharged-links) .data-link-icon[data-link-tags~="#person" i]::BEFORE { content: "👤 " }
 body:not(.no-built-in-supercharged-links) .data-link-icon[data-link-tags~="#evergreen" i]::BEFORE { content: "🌲 " }
+body:not(.no-built-in-supercharged-links) .data-link-icon[data-link-tags~="#bookmarks" i]::BEFORE { content: "🔖 " }
 body:not(.no-built-in-supercharged-links) .data-link-icon[data-link-tags~="#moc" i]::BEFORE { content: "🗺 " }
 body:not(.no-built-in-supercharged-links) .data-link-icon[data-link-tags~="#pkm" i]::BEFORE { content: "🧠 " }
 body:not(.no-built-in-supercharged-links) .data-link-icon[data-link-tags~="#seedling" i]::BEFORE { content: "🌱 " }
-body:not(.no-built-in-supercharged-links) .data-link-icon[data-link-tags~="#mindmap" i]::BEFORE { content: "🕸 " }
 
 /* writing cssclass, needs *= to catch , after cssclass */
 body:not(.no-built-in-supercharged-links) .data-link-icon[data-link-cssclass*="writing"]::BEFORE { content: "✍️ " }
@@ -8363,6 +8365,7 @@ body:not(.no-built-in-supercharged-links) .workspace-split.mod-root :is([data-li
 	box-shadow: var(--notice-inset-shadow), var(--small-shadow);
 
 	position: absolute;
+	z-index: 9000;
 
 	padding: 8px 10px;
 	margin-left: 50px;
