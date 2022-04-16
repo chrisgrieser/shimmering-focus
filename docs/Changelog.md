@@ -3,7 +3,7 @@ nav_order: 110
 ---
 
 # Changelog
-- 2022-04-16	patch
+- 2022-04-16	new secondary accent (Amber yellow) + hue shift of calm blue
 - 2022-04-16	super
 - 2022-04-16	styled spellcheck dictionary removal menu
 - 2022-04-16	better screen saver

@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 1.1305
+Version 1.1306
 Source CSS: https://github.com/chrisgrieser/shimmering-focus/blob/main/source.css
 MIT License
 ──────────────────────────────────────────────────── */
@@ -330,14 +330,24 @@ MIT License
 ──────────────────────────────────────────────────── */
 .theme-light.primary-accent-light-blue,
 .theme-dark.primary-accent-dark-blue {
+	--primary-accent-0: hsl(200 54% 20% / 99%);
+	--primary-accent-1: hsl(200 50% 34%);
+	--primary-accent-2: hsl(200 75% 44%);
+	--primary-accent-3: hsl(200 90% 57%);
+	--primary-accent-4: hsl(200 90% 68%);
+	--primary-accent-5: hsl(200 100% 80% / 99%);
+	--unresolved-link-color: hsl(160 75% 45%); /* ~40 hue less than primary-accent-2 */
+}
+/* .theme-light.primary-accent-light-blue,
+.theme-dark.primary-accent-dark-blue {
 	--primary-accent-0: hsl(212 54% 20% / 99%);
 	--primary-accent-1: hsl(210 50% 44%);
 	--primary-accent-2: hsl(210 75% 54%);
 	--primary-accent-3: hsl(210 90% 67%);
 	--primary-accent-4: hsl(210 90% 78%);
 	--primary-accent-5: hsl(210 100% 90% / 99%);
-	--unresolved-link-color: hsl(180 75% 40%); /* ~40 hue less than primary-accent-2 */
-}
+	--unresolved-link-color: hsl(180 75% 40%);
+} */
 
 .theme-light.primary-accent-light-orange,
 .theme-dark.primary-accent-dark-orange {
@@ -356,6 +366,12 @@ MIT License
 	--hover-accent-2: hsl(324 70% 50%);
 	--hover-accent-3: hsl(334 85% 65%);
 	--hover-accent-4: hsl(324 90% 75%);
+}
+
+.theme-light.secondary-accent-light-yellow,
+.theme-dark.secondary-accent-dark-yellow {
+	--secondary-accent-1: hsl(39 76% 45%);
+	--secondary-accent-2: hsl(39 76% 58%);
 }
 
 /* https://coolors.co/gradient-palette/992900-f4c362?number=4 */
@@ -12080,7 +12096,7 @@ settings:
       label: 🟣 Obsidian Purple
       value: primary-accent-light-purple
     -
-      label: 🔵 Calm Blue
+      label: 🔵 Beach Blue
       value: primary-accent-light-blue
     -
       label: 🟠 Autumn Orange
@@ -12096,6 +12112,9 @@ settings:
     -
       label: 🟢 Shimmering Green
       value: secondary-accent-light-green
+    -
+      label: 🟡 Amber Yellow
+      value: secondary-accent-light-yellow
   -
    id: tertiary-accent-light
    title: "Tertiary Accent (Light Mode)"
@@ -12183,17 +12202,11 @@ settings:
       label: 🟣 Obsidian Purple
       value: primary-accent-dark-purple
     -
-      label: 🔵 Soft Blue
+      label: 🔵 Beach Blue
       value: primary-accent-dark-blue
     -
-      label: 🟠 Orange Ember
+      label: 🟠 Autumn Orange
       value: primary-accent-dark-orange
-    -
-      label: 🟢 Green Glow
-      value: primary-accent-dark-green
-    -
-      label: 🟡 Shining Yellow
-      value: primary-accent-dark-yellow
   -
    id: secondary-accent-dark
    title: "Secondary Accent (Dark Mode)"
@@ -12205,6 +12218,9 @@ settings:
     -
       label: 🟢 Shimmering Green
       value: secondary-accent-dark-green
+    -
+      label: 🟡 Amber Yellow
+      value: secondary-accent-dark-yellow
   -
    id: tertiary-accent-dark
    title: "Tertiary Accent (Dark Mode)"
