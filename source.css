@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 1.1291
+Version 1.1292
 Source CSS: https://github.com/chrisgrieser/shimmering-focus/blob/main/source.css
 MIT License
 ──────────────────────────────────────────────────── */
@@ -81,6 +81,7 @@ MIT License
 	- Modals in general
 	- Confirmation Modal
 	- Settings Menu
+		- Settings Headings
 		- Login Menu 
 		- Community Plugin List
 		- Core plugins list
@@ -249,6 +250,7 @@ MIT License
 	- Hover Editor
 	- Omnisearch
 	- Mind Map
+	- Linter
 - Compatibility Info for the Obsidian Hub
 - Style Setting (YAML)
 # 	- Show / Hide UI Elements (+)
@@ -3086,6 +3088,7 @@ body .app-container .workspace-leaf-resize-handle:hover {
 /* modals partially apply to settings/plugin browser as well */
 
 .modal :is(h1, h2, h3, h4, h5, h6) {
+	line-height: 1.2em;
 	margin-top: 10px;
 	margin-bottom: 15px;
 }
@@ -3188,44 +3191,47 @@ body .app-container .workspace-leaf-resize-handle:hover {
 	margin-right: 0;
 }
 
-/* setting headings */
-.modal.mod-settings :is(h1, h2, h3, h4, h5, h6),
+/* <<< Settings Headings */
+.modal.mod-settings :is(h3, h4, h5, h6),
 .setting-item.setting-item-heading {
 	font-family: var(--setting-heading);
 	font-size: 1.3em;
 	font-weight: 600;
 	letter-spacing: 1px; /* added for Marcellus SC Font */
+
 	padding-bottom: 0;
-}
-
-.modal.mod-settings :is(h1, h2, h3, h4, h5, h6),
-.setting-item-heading:not(.style-settings-heading) .setting-item-name {
-	line-height: 1em;
-	background-color: var(--basic-border-color);
-	border-radius: var(--roundish) var(--roundish) 0 0;
-}
-
-.setting-item-heading:not(.style-settings-heading) .setting-item-name {
-	padding: 3px 6px;
-	margin-bottom: -2px;
-}
-
-.setting-item.setting-item-heading {
-	margin-top: 5px;
+	margin-top: 20px;
 	margin-bottom: 5px;
-	border-width: 3px;
+
 	border-bottom: 3px solid var(--basic-border-color);
 }
 
-.modal.mod-settings :is(h1, h2, h3, h4, h5, h6) {
-	display: inline-block;
-	padding: 4px 6px 5px;
-	margin-top: 15px;
-	margin-bottom: -1px;
+.modal.mod-settings :is(h1, h2) {
+	font-family: var(--heading-font);
+	font-size: 1.8em;
+	letter-spacing: var(--heading-letter-spacing);
+	margin-top: 40px;
+	margin-bottom: 35px;
 }
 
-.modal.mod-settings :is(h1, h2, h3, h4, h5, h6) + .setting-item {
-	border-top: 3px solid var(--basic-border-color);
+.modal.mod-settings :is(h1, h2):first-child {
+	margin-top: 5px;
+}
+
+.setting-item-heading:not(.style-settings-heading) .setting-item-name {
+	line-height: 1em;
+	background-color: var(--basic-border-color);
+	padding: 3px 6px;
+	margin-bottom: -2px;
+	border-radius: var(--roundish) var(--roundish) 0 0;
+}
+
+.modal.mod-settings :is(h3, h4, h5, h6) {
+	padding-left: 4px;
+}
+
+.modal.mod-settings :is(h3, h4, h5, h6) + .setting-item {
+	border-top: none;
 }
 
 /* setting items */
@@ -10482,10 +10488,10 @@ body .qsp-symbol-indicator {
 /* << Style Settings (Settings Tab)
 ──────────────────────────────────────────────────── */
 
-.style-settings-heading {
+.style-settings-heading.style-settings-heading.style-settings-heading {
 	padding: 0;
-	margin: 0;
-	border-top: none;
+	margin-top: 10px;
+	border-bottom: var(--basic-border);
 }
 
 .style-settings-heading .setting-item-name {
@@ -10504,6 +10510,11 @@ body .qsp-symbol-indicator {
 
 body .style-settings-heading[data-level="0"] {
 	margin-bottom: 15px;
+}
+
+body .style-settings-heading[data-level="0"] .setting-item-name {
+	font-family: var(--heading-font);
+	letter-spacing: var(--heading-letter-spacing);
 }
 
 /* settings tab  / general */
@@ -11096,6 +11107,15 @@ svg.sync-small {
 .modal button.button-enabled[aria-label="Open the file"] svg {
 	height: 1.3em;
 	width: 2.5em;
+}
+
+/* setting menu */
+.modal.mod-settings .various-complements__settings__header {
+	padding-left: 25px;
+}
+
+.various-complements__settings__header::BEFORE {
+	transform: scale(0.8);
 }
 
 /* ───────────────────────────────────────────────── */
@@ -11752,6 +11772,17 @@ and file recovery plugin */
 }
 
 /* ───────────────────────────────────────────────── */
+/* << Linter
+──────────────────────────────────────────────────── */
+
+/* fix display of setting menu */
+.modal.mod-settings h3 > a[href^="https://github.com/platers/obsidian-linter/"] {
+	font-family: var(--font-interface);
+	font-size: 0.9em;
+	text-decoration: none;
+}
+
+/* ───────────────────────────────────────────────── */
 /* < Compatibility Info for the Obsidian Hub
 ──────────────────────────────────────────────────── */
 
@@ -11825,6 +11856,7 @@ community:
 - markdown-table-editor
 - obsidian-omnisearch
 - obsidian-mind-map
+- obsidian-linter
 */
 
 /* ───────────────────────────────────────────────── */
