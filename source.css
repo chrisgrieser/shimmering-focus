@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 1.1288
+Version 1.1289
 Source CSS: https://github.com/chrisgrieser/shimmering-focus/blob/main/source.css
 MIT License
 ──────────────────────────────────────────────────── */
@@ -2797,6 +2797,7 @@ with prompts */
 .suggestion-container .suggestion-note {
 	font-family: var(--smallcap-font);
 	font-size: 0.8em;
+	letter-spacing: 0.3px;
 	text-align: end;
 }
 
