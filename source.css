@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 1.1284
+Version 1.1285
 Source CSS: https://github.com/chrisgrieser/shimmering-focus/blob/main/source.css
 MIT License
 ──────────────────────────────────────────────────── */
@@ -4575,7 +4575,7 @@ body .markdown-rendered .frontmatter.mod-failed .mod-error {
 }
 
 /* metadata block turns red when invalid */
-.frontmatter.mod-failed + .frontmatter-container {
+.frontmatter.mod-failed.mod-failed.mod-failed.mod-failed.mod-failed.mod-failed + .frontmatter-container {
 	background-color: var(--error-bg);
 }
 
@@ -4588,19 +4588,19 @@ body .markdown-rendered .frontmatter.mod-failed .mod-error {
 /* interaction with floating metadata */
 body:not(.no-floating-metadata):not(.is-mobile) .markdown-preview-view:not(.no-floating-metadata) .frontmatter.language-yaml.mod-failed:hover::AFTER {
 	display: block;
-	font-size: 1.1rem;
+	font-size: 1rem;
 	right: 2rem;
 }
 
-body:not(.no-floating-metadata):not(.is-mobile) .markdown-preview-view:not(.no-floating-metadata) .frontmatter.language-yaml.mod-failed {
+body:not(.no-floating-metadata):not(.is-mobile) .markdown-preview-view:not(.no-floating-metadata) .frontmatter.language-yaml.mod-failed.mod-failed {
 	background-color: var(--error-bg);
 }
 
-body:not(.no-floating-metadata):not(.is-mobile) .markdown-preview-view:not(.no-floating-metadata) .frontmatter.mod-failed + .frontmatter-container:hover::AFTER {
+body:not(.no-floating-metadata):not(.is-mobile) .markdown-preview-view:not(.no-floating-metadata) .frontmatter.mod-failed.mod-failed + .frontmatter-container:hover::AFTER {
 	content: var(--error-symbol)" YAML Invalid"; /* stylelint-disable-line function-whitespace-after */
 
 	font-family: var(--font-monospace);
-	font-size: 1.1rem;
+	font-size: 1rem;
 	font-weight: 600;
 
 	color: var(--text-normal);
