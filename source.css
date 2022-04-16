@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 1.1294
+Version 1.1295
 Source CSS: https://github.com/chrisgrieser/shimmering-focus/blob/main/source.css
 MIT License
 ──────────────────────────────────────────────────── */
@@ -3474,7 +3474,7 @@ input:is([type="email"], [type="password"]) {
 
 .setting-hotkey.mod-empty::BEFORE {
 	content: "none";
-	font-size: 0.75rem;
+	font-size: calc(0.75 * var(--font-size-text));
 }
 
 .setting-hotkey.mod-active {
@@ -3660,7 +3660,7 @@ input:is([type="email"], [type="password"]) {
 	content: "✓";
 
 	font-family: var(--font-default);
-	font-size: 0.65rem;
+	font-size: calc(0.65 * var(--font-size-text));
 	line-height: 0.8em;
 
 	color: var(--interactive-normal);
@@ -3831,7 +3831,7 @@ body .community-plugin-info .community-plugin-downloads-text {
 	content: "launch";
 
 	font-family: var(--icon-font);
-	font-size: 1rem;
+	font-size: var(--font-size-text);
 	line-height: 1.1em;
 
 	color: var(--extra-contrast);
@@ -3881,7 +3881,7 @@ body:not(.squareish-shapes) .community-plugin-info .community-plugin-author + .c
 	content: "link";
 
 	font-family: var(--icon-font);
-	font-size: 1.25rem;
+	font-size: calc(1.25 * var(--font-size-text));
 
 	color: var(--extra-contrast);
 
@@ -6063,7 +6063,7 @@ CM5 has the "pre" type */
 button.copy-code-button::BEFORE {
 	content: "content_copy";
 	font-family: var(--icon-font);
-	font-size: 14px;
+	font-size: calc(0.85 * var(--font-size-text));
 }
 
 body .is-live-preview.mod-cm6 .edit-block-button {
@@ -6373,7 +6373,7 @@ body:not(.show-urls) .cm-s-obsidian:not(.is-live-preview) .cm-line:not(.cm-activ
 body:not(.show-urls) .cm-s-obsidian:not(.is-live-preview) .cm-line:not(.cm-active) .cm-string.cm-url:not(.cm-formatting)::AFTER {
 	content: "link";
 	font-family: var(--icon-font);
-	font-size: 0.9rem;
+	font-size: calc(var(--font-text-size) * 0.9);
 	position: relative;
 	top: 2px;
 }
@@ -7676,9 +7676,8 @@ body:not(.classic-inline-backlinks) :is(.writing, .longform-leaf) .embedded-back
 	background-color: var(--interactive-hover-border-color);
 }
 
-/* the link button makes the
-unlinked mention to a linked mention by adding
-wikilinks */
+/* the link button that makes the unlinked mention
+to a linked mention by adding wikilinks */
 .search-result-file-match-replace-button.search-result-file-match-replace-button.search-result-file-match-replace-button {
 	font-size: 0;
 	padding: 5px;
@@ -7689,7 +7688,7 @@ wikilinks */
 	content: "link";
 
 	font-family: var(--icon-font);
-	font-size: 1.2rem;
+	font-size: calc(1.2 * var(--font-size-text));
 
 	position: relative;
 	top: 4px;
@@ -9338,7 +9337,7 @@ body:not(.no-alternating-rows) li:nth-child(even) :is(.draft-container, .scene-c
 
 .workspace-leaf-content[data-type="VIEW_TYPE_LONGFORM_EXPLORER"] button::BEFORE {
 	font-family: var(--icon-font);
-	font-size: 1.2rem;
+	font-size: calc(1.2 * var(--font-size-text));
 }
 
 .workspace-leaf-content[data-type="VIEW_TYPE_LONGFORM_EXPLORER"] .tab-list.tab-list.tab-list button {
@@ -9520,7 +9519,7 @@ button.options-button.options-button.options-button.options-button.options-butto
 
 button.options-button.options-button::BEFORE {
 	content: "☰";
-	font-size: 1.6rem;
+	font-size: calc(1.6 * var(--font-size-text));
 	font-weight: 900;
 }
 
@@ -10075,7 +10074,7 @@ body:not(.no-alternating-rows) .BC-Matrix-square li:nth-child(even) {
 .BC-trail button::BEFORE {
 	content: "unfold_more";
 	font-family: var(--icon-font);
-	font-size: 1.1rem;
+	font-size: calc(1.1 * var(--font-size-text));
 	letter-spacing: 0 !important;
 	color: var(--basic-border-color);
 }
@@ -10259,7 +10258,7 @@ pre button.copy {
 pre button.copy::BEFORE {
 	content: "content_copy";
 	font-family: var(--icon-font);
-	font-size: 0.7rem;
+	font-size: calc(0.7 * var(--font-size-text));
 }
 
 pre button.copy:hover::BEFORE {

@@ -3,6 +3,7 @@ nav_order: 110
 ---
 
 # Changelog
+- 2022-04-16	better font-size 0 hack (thx @melvinting)
 - 2022-04-16	turn off loose lists (+ style setting to re-enable them)
 - 2022-04-16	always angular table styling
 - 2022-04-16	settings headings fixes
