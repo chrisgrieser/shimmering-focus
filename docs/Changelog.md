@@ -3,7 +3,7 @@ nav_order: 110
 ---
 
 # Changelog
-- 2022-04-16	patch
+- 2022-04-16	super
 - 2022-04-16	styled spellcheck dictionary removal menu
 - 2022-04-16	better screen saver
 - 2022-04-16	better font-size 0 hack (thx @melvinting)
