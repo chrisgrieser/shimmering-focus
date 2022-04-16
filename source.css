@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 1.1297
+Version 1.1298
 Source CSS: https://github.com/chrisgrieser/shimmering-focus/blob/main/source.css
 MIT License
 ──────────────────────────────────────────────────── */
@@ -776,7 +776,7 @@ body:is(.theme-light, .theme-dark) {
 	--text-error: hsl(0 100% 25%);
 
 	--error-bg: hsl(0 80% 85%);
-	--sucess-color: hsl(121 100% 40%);
+	--sucess-color: hsl(101 90% 40%);
 }
 
 .theme-dark {
@@ -3472,7 +3472,7 @@ input:is([type="email"], [type="password"]) {
 
 .setting-hotkey.mod-empty::BEFORE {
 	content: "none";
-	font-size: calc(0.75 * var(--font-size-text));
+	font-size: calc(0.75 * var(--font-text-size));
 }
 
 .setting-hotkey.mod-active {
@@ -3658,7 +3658,7 @@ input:is([type="email"], [type="password"]) {
 	content: "✓";
 
 	font-family: var(--font-default);
-	font-size: calc(0.65 * var(--font-size-text));
+	font-size: calc(0.65 * var(--font-text-size));
 	line-height: 0.8em;
 
 	color: var(--interactive-normal);
@@ -3829,7 +3829,7 @@ body .community-plugin-info .community-plugin-downloads-text {
 	content: "launch";
 
 	font-family: var(--icon-font);
-	font-size: var(--font-size-text);
+	font-size: var(--font-text-size);
 	line-height: 1.1em;
 
 	color: var(--extra-contrast);
@@ -3879,7 +3879,7 @@ body:not(.squareish-shapes) .community-plugin-info .community-plugin-author + .c
 	content: "link";
 
 	font-family: var(--icon-font);
-	font-size: calc(1.25 * var(--font-size-text));
+	font-size: calc(1.25 * var(--font-text-size));
 
 	color: var(--extra-contrast);
 
@@ -6058,10 +6058,10 @@ CM5 has the "pre" type */
 	margin-top: 0.3rem;
 }
 
-button.copy-code-button::BEFORE {
+.markdown-preview-view button.copy-code-button::BEFORE {
 	content: "content_copy";
 	font-family: var(--icon-font);
-	font-size: calc(0.85 * var(--font-size-text));
+	font-size: calc(0.85 * var(--font-text-size));
 }
 
 body .is-live-preview.mod-cm6 .edit-block-button {
@@ -7017,8 +7017,7 @@ body:not(.no-fn-indicator) .mod-cm6 .cm-hmd-barelink:not(.cm-formatting-link) + 
 	color: var(--text-muted);
 }
 
-.is-live-preview .cm-line hr,
-.markdown-preview-view hr {
+:is(.modal, .is-live-preview .cm-line, .markdown-preview-view) hr {
 	border-top: var(--hr-line);
 }
 
@@ -7686,7 +7685,7 @@ to a linked mention by adding wikilinks */
 	content: "link";
 
 	font-family: var(--icon-font);
-	font-size: calc(1.2 * var(--font-size-text));
+	font-size: calc(1.2 * var(--font-text-size));
 
 	position: relative;
 	top: 4px;
@@ -9336,7 +9335,7 @@ body:not(.no-alternating-rows) li:nth-child(even) :is(.draft-container, .scene-c
 
 .workspace-leaf-content[data-type="VIEW_TYPE_LONGFORM_EXPLORER"] button::BEFORE {
 	font-family: var(--icon-font);
-	font-size: calc(1.2 * var(--font-size-text));
+	font-size: calc(1.2 * var(--font-text-size));
 }
 
 .workspace-leaf-content[data-type="VIEW_TYPE_LONGFORM_EXPLORER"] .tab-list.tab-list.tab-list button {
@@ -9518,7 +9517,7 @@ button.options-button.options-button.options-button.options-button.options-butto
 
 button.options-button.options-button::BEFORE {
 	content: "☰";
-	font-size: calc(1.6 * var(--font-size-text));
+	font-size: calc(1.6 * var(--font-text-size));
 	font-weight: 900;
 }
 
@@ -10073,7 +10072,7 @@ body:not(.no-alternating-rows) .BC-Matrix-square li:nth-child(even) {
 .BC-trail button::BEFORE {
 	content: "unfold_more";
 	font-family: var(--icon-font);
-	font-size: calc(1.1 * var(--font-size-text));
+	font-size: calc(1.1 * var(--font-text-size));
 	letter-spacing: 0 !important;
 	color: var(--basic-border-color);
 }
@@ -10257,7 +10256,7 @@ pre button.copy {
 pre button.copy::BEFORE {
 	content: "content_copy";
 	font-family: var(--icon-font);
-	font-size: calc(0.7 * var(--font-size-text));
+	font-size: calc(0.7 * var(--font-text-size));
 }
 
 pre button.copy:hover::BEFORE {
