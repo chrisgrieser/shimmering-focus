@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 1.1286
+Version 1.1287
 Source CSS: https://github.com/chrisgrieser/shimmering-focus/blob/main/source.css
 MIT License
 ──────────────────────────────────────────────────── */
@@ -7944,7 +7944,7 @@ body:not(.no-alternating-rows) .workspace-leaf-content[data-type="starred"] .nav
 .sync-history-list .u-muted {
 	display: inline;
 	font-family: var(--smallcap-font);
-	font-size: 1.05em;
+	font-size: 0.8em;
 	padding-left: 10px;
 }
 
@@ -8262,9 +8262,13 @@ div.card-view-container.card-view-container .markdown-preview-view :is(h1, h2, h
 	font-weight: 600;
 }
 
-.prompt.better-command-palette .suggestion-flair[aria-label="Pinned"] ~ .suggestion-content::AFTER {
+.theme-dark .prompt.better-command-palette .suggestion-flair[aria-label="Pinned"] ~ .suggestion-content {
+	text-shadow: var(--shadow-for-dark-bold);
+}
+
+.prompt.better-command-palette .suggestion-flair[aria-label="Pinned"] ~ .suggestion-content::BEFORE {
 	content: "☆";
-	padding-left: 5px;
+	padding-right: 5px;
 }
 
 /* recent item italic + clock */
@@ -8275,13 +8279,10 @@ div.card-view-container.card-view-container .markdown-preview-view :is(h1, h2, h
 
 .suggestion-item.recent .suggestion-content::AFTER {
 	content: "◷"; /* alternatives: ◴◵◶◷ */
+	font-size: 130%;
 	font-style: normal;
-	padding-left: 5px;
-}
-
-/* recent + starred */
-.prompt.better-command-palette .recent .suggestion-flair[aria-label="Pinned"] ~ .suggestion-content::AFTER {
-	content: "☆ ◷";
+	line-height: 0.9em;
+	padding-left: 7px;
 }
 
 /* ───────────────────────────────────────────────── */
@@ -10392,6 +10393,7 @@ body .qsp-symbol-indicator {
 .suggestion-item .another-quick-switcher__item__directory {
 	font-family: var(--smallcap-font);
 	font-size: 0.9em;
+	letter-spacing: 0.1px;
 	padding-right: 2px;
 	padding-left: 5px;
 }
@@ -10428,13 +10430,17 @@ body .qsp-symbol-indicator {
 	display: none;
 }
 
-.another-quick-switcher__starred_item .another-quick-switcher__item__title::AFTER {
+.another-quick-switcher__starred_item .another-quick-switcher__item__entry::BEFORE {
 	content: "☆";
-	padding-left: 5px;
+	padding-right: 5px;
 }
 
 .another-quick-switcher__starred_item {
 	font-weight: 600;
+}
+
+.theme-dark .another-quick-switcher__starred_item {
+	text-shadow: var(--shadow-for-dark-bold);
 }
 
 /* ───────────────────────────────────────────────── */
