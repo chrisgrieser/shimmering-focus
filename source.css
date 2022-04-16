@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 1.1282
+Version 1.1283
 Source CSS: https://github.com/chrisgrieser/shimmering-focus/blob/main/source.css
 MIT License
 ──────────────────────────────────────────────────── */
@@ -5577,7 +5577,7 @@ body:not(.no-citation-syntax) .markdown-preview-view *:not(blockquote) > blockqu
 	padding: 0 var(--callout-left-padding) 2px;
 }
 
-body:not(.normal-blockquotes) .callout-content p {
+body:not(.normal-blockquotes) .callout-content :is(ul, p) {
 	font-size: 0.87em;
 }
 
