@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 1.1293
+Version 1.1294
 Source CSS: https://github.com/chrisgrieser/shimmering-focus/blob/main/source.css
 MIT License
 ──────────────────────────────────────────────────── */
@@ -6311,6 +6311,12 @@ pre.language-haskell::AFTER { content: "Haskell" }
 .markdown-rendered.show-indentation-guide li > ul::BEFORE,
 .markdown-source-view.mod-cm6 .cm-indent::BEFORE {
 	border-right: var(--muted-border);
+}
+
+/* turn off loose lists */
+body:not(.re-enable-loose-lists).markdown-preview-view :is(ol, ul) > li > p {
+	margin-top: 0;
+	margin-bottom: 0;
 }
 
 /* ───────────────────────────────────────────────── */
@@ -12961,7 +12967,7 @@ settings:
 # << Miscellaneous (+)
    id: miscellaneous
    title: ⚛️ Miscellaneous
-   description: Menu Size, File Name Trimming, Inactive Panes, Alternating Row Colors, Colored YAML, Animations, 🆕 Theme Beta
+   description: Menu Size, File Name Trimming, Inactive Panes, Loose Lists, Alternating Row Colors, Colored YAML, Animations, 🆕 Theme Beta
    type: heading
    level: 1
    collapsed: true
@@ -12984,6 +12990,12 @@ settings:
    id: no-grayed-out-inactive-pane
    title: Do not dim Inactive Panes
    description: 'Also affects popovers from the Hover Editor Plugin.'
+   type: class-toggle
+   default: false
+  -
+   id: re-enable-loose-lists
+   title: 'Re-enable Loose Lists'
+   description: 'When a list contains a blank line in between its items, markdown specs consider it "loose list" and the list will render with additional spacing in Reading Mode. By default, loose lists are turned off in this theme, since they are mostly created unintentionally.'
    type: class-toggle
    default: false
   -
