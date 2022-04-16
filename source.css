@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 1.1300
+Version 1.1301
 Source CSS: https://github.com/chrisgrieser/shimmering-focus/blob/main/source.css
 MIT License
 ──────────────────────────────────────────────────── */
@@ -5115,6 +5115,28 @@ body:not(.left-aligned-embeds) .pdf-embed.pdf-embed {
 
 .spellchecker-dictionary-item:nth-child(even) {
 	background-color: var(--a-row);
+}
+
+.spellchecker-dictionary-item {
+	padding-top: 3px;
+	padding-bottom: 3px;
+	margin: 0;
+}
+
+.spellchecker-dictionary-remove-button {
+	padding-right: 4px;
+	padding-left: 4px;
+	margin-left: 5px;
+	border-radius: var(--roundish);
+}
+
+.spellchecker-dictionary-remove-button svg {
+	stroke-width: 12px;
+}
+
+.spellchecker-dictionary-remove-button:hover {
+	color: var(--text-error);
+	background-color: var(--bg3);
 }
 
 /* ───────────────────────────────────────────────── */
