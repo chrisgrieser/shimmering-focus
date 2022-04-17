@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 1.1307
+Version 1.1308
 Source CSS: https://github.com/chrisgrieser/shimmering-focus/blob/main/source.css
 MIT License
 ──────────────────────────────────────────────────── */
@@ -6358,7 +6358,7 @@ body:not(.re-enable-loose-lists) .markdown-preview-view :is(ol, ul) > li > p {
 /* ───────────────────────────────────────────────── */
 /* << Links
 ──────────────────────────────────────────────────── */
-.cm-url.cm-url:not(.cm-formatting):hover,
+.cm-url.cm-url.cm-url.cm-url.cm-url.cm-url:not(.cm-formatting):hover,
 .cm-hmd-internal-link.cm-hmd-internal-link.cm-hmd-internal-link:hover,
 .modal-content a:hover,
 .internal-link.internal-link.internal-link:hover,
