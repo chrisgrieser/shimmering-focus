@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 1.1321
+Version 1.1322
 Source CSS: https://github.com/chrisgrieser/shimmering-focus/blob/main/source.css
 MIT License
 ──────────────────────────────────────────────────── */
@@ -8362,7 +8362,7 @@ div.card-view-container.card-view-container .markdown-preview-view :is(h1, h2, h
 /* since hyper key is displayed as caps lock, can move
 plugin names a little bit more to the right */
 body:not(.move-plugin-name-to-left):not(.is-mobile) .better-command-palette .suggestion-prefix {
-	right: 77px;
+	right: 87px;
 }
 
 /* ───────────────────────────────────────────────── */
@@ -12167,7 +12167,7 @@ settings:
   -
    id: strong-em-color-light
    title: "Bold & Italic (Light Mode)"
-   description: 'Italic & Bold. When set to "Uncolored", bold and italic will have the same color as normal text.'
+   description: 'When set to "Uncolored", bold and italic will have the same color as normal text.'
    type: class-select
    allowEmpty: false
    default: strong-em-uncolored-light
@@ -12279,7 +12279,7 @@ settings:
   -
    id: strong-em-color-dark
    title: "Bold & Italic (Dark Mode)"
-   description: 'Italic & Bold. When set to "Uncolored", bold and italic will have the same color as normal text.'
+   description: 'When set to "Uncolored", bold and italic will have the same color as normal text.'
    type: class-select
    allowEmpty: false
    default:  strong-em-uncolored-dark
