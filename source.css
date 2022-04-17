@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 1.1316
+Version 1.1317
 Source CSS: https://github.com/chrisgrieser/shimmering-focus/blob/main/source.css
 MIT License
 ──────────────────────────────────────────────────── */
@@ -10872,7 +10872,7 @@ body:not(.unlock-theme-beta) .style-settings-container .setting-item:is(
 ──────────────────────────────────────────────────── */
 
 /* Donation */
-.style-settings-heading[data-id="info-donation"] {
+.style-settings-heading[data-id="info-donation"][data-id="info-donation"][data-id="info-donation"] {
 	letter-spacing: 0.1px;
 
 	background-color: var(--bg2);
