@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 1.1306
+Version 1.1307
 Source CSS: https://github.com/chrisgrieser/shimmering-focus/blob/main/source.css
 MIT License
 ──────────────────────────────────────────────────── */
@@ -5482,7 +5482,7 @@ body:not(.active-line-emphasized-bg):not(.no-active-highlight) .HyperMD-quote:is
 }
 
 /* option for normal size */
-body:not(.normal-blockquotes) :is(blockquote, .cm-hmd-indent-in-quote, .HyperMD-quote.HyperMD-quote-1) {
+body:not(.normal-blockquotes) :is(blockquote, .cm-hmd-indent-in-quote, .HyperMD-quote.HyperMD-quote-1, .cm-quote.cm-inline-code, blockquote code) {
 	font-size: 0.87em;
 	line-height: 21px;
 }
@@ -5900,7 +5900,7 @@ body { /* stylelint-disable-line no-duplicate-selectors */
 /* "*:not(pre) > code" targets inline code
 (i.e. code that is not in a pre (= block) ) */
 .markdown-preview-view *:not(pre) > code,
-.cm-inline-code.cm-inline-code.cm-inline-code {
+.cm-inline-code.cm-inline-code.cm-inline-code.cm-inline-code.cm-inline-code {
 	color: var(--code-color);
 }
 

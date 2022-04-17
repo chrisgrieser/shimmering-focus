@@ -3,6 +3,7 @@ nav_order: 110
 ---
 
 # Changelog
+- 2022-04-17	inline code in block quote get proper font sizes
 - 2022-04-16	new secondary accent (Amber yellow) + hue shift of calm blue
 - 2022-04-16	super
 - 2022-04-16	styled spellcheck dictionary removal menu
