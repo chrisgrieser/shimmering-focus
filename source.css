@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 1.1310
+Version 1.1311
 Source CSS: https://github.com/chrisgrieser/shimmering-focus/blob/main/source.css
 MIT License
 ──────────────────────────────────────────────────── */
@@ -330,12 +330,12 @@ MIT License
 ──────────────────────────────────────────────────── */
 .theme-light.primary-accent-light-blue,
 .theme-dark.primary-accent-dark-blue {
-	--primary-accent-0: hsl(200 54% 20% / 99%);
-	--primary-accent-1: hsl(200 50% 34%);
-	--primary-accent-2: hsl(200 75% 44%);
-	--primary-accent-3: hsl(200 90% 57%);
-	--primary-accent-4: hsl(200 90% 68%);
-	--primary-accent-5: hsl(200 100% 80% / 99%);
+	--primary-accent-0: hsl(190 50% 20% / 99%);
+	--primary-accent-1: hsl(190 50% 30%);
+	--primary-accent-2: hsl(190 75% 41%);
+	--primary-accent-3: hsl(190 90% 50%);
+	--primary-accent-4: hsl(190 90% 60%);
+	--primary-accent-5: hsl(190 70% 85% / 99%);
 	--unresolved-link-color: hsl(160 75% 45%); /* ~40 hue less than primary-accent-2 */
 }
 /* .theme-light.primary-accent-light-blue,
@@ -356,7 +356,7 @@ MIT License
 	--primary-accent-2: hsl(24 69% 42%);
 	--primary-accent-3: hsl(32 65% 55%);
 	--primary-accent-4: hsl(40 87% 67%);
-	--primary-accent-5: hsl(40 87% 87% / 99%);
+	--primary-accent-5: hsl(40 70% 87% / 99%);
 	--unresolved-link-color: hsl(344 69% 42%); /* ~40 hue less than primary-accent-2 */
 }
 
@@ -370,7 +370,7 @@ MIT License
 
 .theme-light.secondary-accent-light-yellow,
 .theme-dark.secondary-accent-dark-yellow {
-	--secondary-accent-1: hsl(39 76% 45%);
+	--secondary-accent-1: hsl(39 76% 41%);
 	--secondary-accent-2: hsl(39 76% 58%);
 }
 
@@ -387,7 +387,7 @@ MIT License
 	--primary-accent-2: hsl(250 75% 64%);
 	--primary-accent-3: hsl(250 90% 76%);
 	--primary-accent-4: hsl(250 90% 83%);
-	--primary-accent-5: hsl(250 90% 91% / 99%);
+	--primary-accent-5: hsl(250 70% 91% / 99%);
 	--unresolved-link-color: hsl(210 75% 64%); /* 40 hue less than primary-accent-2 */
 
 	--hover-accent-1: hsl(165 70% 25%);
