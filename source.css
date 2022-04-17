@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 1.1315
+Version 1.1316
 Source CSS: https://github.com/chrisgrieser/shimmering-focus/blob/main/source.css
 MIT License
 ──────────────────────────────────────────────────── */
@@ -6359,7 +6359,7 @@ body:not(.re-enable-loose-lists) .markdown-preview-view :is(ol, ul) > li > p {
 .cm-url.cm-url.cm-url.cm-url.cm-url.cm-url:not(.cm-formatting):hover,
 .cm-hmd-internal-link.cm-hmd-internal-link.cm-hmd-internal-link:hover,
 .modal-content a:hover,
-.internal-link.internal-link.internal-link:hover,
+.internal-link.internal-link.internal-link.internal-link.internal-link:hover,
 .external-link:hover,
 .embedded-backlinks.embedded-backlinks .tree-item-inner:hover,
 a:hover {
@@ -6367,12 +6367,13 @@ a:hover {
 	cursor: pointer;
 }
 
-/* links to headings */
+/* dotted underline links to headings */
 .markdown-preview-view .internal-link[href*="#"] {
 	text-decoration: underline dotted;
 }
 
-/* links to heading of the same note */
+/* double underline internal links */
+.cm-hmd-internal-link.cm-hmd-internal-link.cm-hmd-internal-link .cm-underline,
 .cm-hmd-internal-link.cm-hmd-internal-link.cm-hmd-internal-link:hover,
 .markdown-preview-view .internal-link {
 	text-decoration: underline double 1px;
@@ -6424,7 +6425,12 @@ body:not(.show-urls) .cm-line:not(.cm-active) .cm-url {
 .cm-hmd-internal-link > .cm-underline,
 .is-unresolved.is-unresolved.is-unresolved.is-unresolved {
 	color: var(--unresolved-link-color);
-	opacity: 0.9;
+}
+
+.cm-hmd-internal-link:hover > .cm-underline,
+.is-unresolved.is-unresolved.is-unresolved.is-unresolved:hover {
+	color: var(--hover-accent-2);
+	opacity: 0.6;
 }
 
 /* unresolved gutter indicator */
@@ -6433,6 +6439,7 @@ body:not(.no-unresolved-link-indicator) .is-unresolved::BEFORE {
 	font-size: 1.3rem;
 	background-color: var(--bg1);
 	position: absolute;
+	margin-top: -3px; /* move up to accounts for double unterline */
 }
 
 body:not(.no-unresolved-link-indicator) .cm-editor .is-unresolved::BEFORE {
@@ -7632,7 +7639,7 @@ body:not(.classic-inline-backlinks) .embedded-backlinks .tree-item-self.tree-ite
 }
 
 body:not(.classic-inline-backlinks) .embedded-backlinks .tree-item-inner {
-	text-decoration: underline;
+	text-decoration: underline double 1px;
 	color: var(--primary-accent-2);
 	text-underline-offset: var(--underline-offset);
 }
