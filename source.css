@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 1.1312
+Version 1.1313
 Source CSS: https://github.com/chrisgrieser/shimmering-focus/blob/main/source.css
 MIT License
 ──────────────────────────────────────────────────── */
@@ -15,7 +15,7 @@ MIT License
 - Colors
 	- Text Colors & Grays
 	- Color Schemes
-		- Accent Color Settings
+		- Accent Colors
 		- Default Color Scheme
 		- Preset Color Schemes
 	- Accent Color Definitions
@@ -315,18 +315,12 @@ MIT License
 	--interactive-normal: hsl(var(--tint-of-grays-dark) var(--high-sat-of-grays) 16%);
 }
 
-.theme-light,
-.theme-dark {
-	--button-text: var(--interactive-normal);
-	--button-hover-text: var(--text-normal);
-}
-
 /* ───────────────────────────────────────────────── */
 /* << Color Schemes
 ──────────────────────────────────────────────────── */
 
 /* ───────────────────────────────────────────────── */
-/* <<< Accent Color Settings
+/* <<< Accent Colors
 ──────────────────────────────────────────────────── */
 .theme-light.primary-accent-light-blue,
 .theme-dark.primary-accent-dark-blue {
@@ -358,6 +352,7 @@ MIT License
 	--hover-accent-2: hsl(324 70% 50%);
 	--hover-accent-3: hsl(334 85% 65%);
 	--hover-accent-4: hsl(324 90% 75%);
+	--button-hover-text: var(--interactive-normal);
 }
 
 .theme-light.secondary-accent-light-yellow,
@@ -395,6 +390,10 @@ MIT License
 .theme-dark {
 	--tertiary-accent-light: var(--text-normal);
 	--tertiary-accent-dark: var(--text-normal);
+
+	/* button text and button hover text dependent on primary & hover accent */
+	--button-text: var(--interactive-normal);
+	--button-hover-text: var(--text-normal);
 }
 
 :root { /* backgrounds */
@@ -3400,7 +3399,7 @@ input:is([type="email"], [type="password"]) {
 
 .installed-plugins-container .setting-item-description > div:nth-child(2) {
 	position: relative;
-	left: 4em;
+	left: 6em;
 	margin-top: -1.35em;
 	margin-bottom: 1px;
 }
