@@ -3,6 +3,7 @@ nav_order: 110
 ---
 
 # Changelog
+- 2022-04-17	better pressed down button look
 - 2022-04-17	pressed-down button shadows
 - 2022-04-17	more consistent styling of the different link types
 - 2022-04-17	add options for coloring bold/italic text to the beta

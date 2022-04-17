@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 1.1318
+Version 1.1319
 Source CSS: https://github.com/chrisgrieser/shimmering-focus/blob/main/source.css
 MIT License
 ──────────────────────────────────────────────────── */
@@ -2195,7 +2195,8 @@ body .setting-item-control a:is(.style-settings-export, .style-settings-import):
 
 /* active button */
 .modal.modal.modal.modal.modal button:active {
-	box-shadow: var(--pressed-button-inset-shadow); /* no shadow for "pressed down" look */
+	box-shadow: var(--pressed-button-inset-shadow); /* shadow for "pressed down" look */
+	padding: 6px 11px 6px 13px; /* text moving down and right */
 }
 
 /* ───────────────────────────────────────────────── */
@@ -5074,7 +5075,7 @@ body:not(.hover-zoom) img[src] {
 }
 
 /* fix for GitHub shields */
-img:is([src*="img.shields.io"],[src*="ko-fi.com"])[src][src][src][src][src] {
+img:is([src*="img.shields.io"],[src*="ko-fi.com"], [src*="buymeacoffee"])[src][src][src][src][src] {
 	display: inline;
 	margin-top: 0; /* stylelint-disable-line plugin/declaration-block-no-ignored-properties */
 	border: none;
