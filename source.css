@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 1.1322
+Version 1.1323
 Source CSS: https://github.com/chrisgrieser/shimmering-focus/blob/main/source.css
 MIT License
 ──────────────────────────────────────────────────── */
@@ -10005,7 +10005,7 @@ button.MS-OpenSnippet:hover svg.ms-snippet path {
 /* spacing */
 .BC-Matrix.BC-Matrix.BC-Matrix ol > li {
 	line-height: 1.2em;
-	padding: 4px;
+	padding: 4px 4px 4px 5px;
 	margin: 0;
 }
 
