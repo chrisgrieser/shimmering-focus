@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 1.1323
+Version 1.1324
 Source CSS: https://github.com/chrisgrieser/shimmering-focus/blob/main/source.css
 MIT License
 ──────────────────────────────────────────────────── */
@@ -18,7 +18,7 @@ MIT License
 		- Accent Colors
 		- Default Color Scheme
 		- Preset Color Schemes
-	- Accent Color Definitions
+	- Accent Definitions
 		- Primary Accent
 		- Hover Accent
 		- Secondary Accent (references, tags, code, finished tasks)
@@ -254,19 +254,19 @@ MIT License
 	- Linter
 - Compatibility Info for the Obsidian Hub
 - Style Setting (YAML)
-# 	- Show / Hide UI Elements (+)
-# 	- Aesthetics & Custom Colors (+)
-# 	- Typography (+)
-# 	- Gutter & Active Line (+)
-# 	- Views Media (+)
-# 	- Callouts (+)
-# 	- Special Syntax (+)
-# 	- Cursor (+)
-# 	- Code Blocks (+)
-# 	- Mobile (+)
-# 	- Plugin-Specific Settings (+)
-# 	- Longform (+)
-# 	- Miscellaneous (+)
+ 	- Show / Hide UI Elements (+)
+ 	- Aesthetics & Custom Colors (+)
+ 	- Typography (+)
+ 	- Gutter & Active Line (+)
+ 	- Views Media (+)
+ 	- Callouts (+)
+ 	- Special Syntax (+)
+ 	- Cursor (+)
+ 	- Code Blocks (+)
+ 	- Mobile (+)
+ 	- Plugin-Specific Settings (+)
+ 	- Longform (+)
+ 	- Miscellaneous (+)
 /* @TOC-SPLIT-MARKER */
 
 /* ───────────────────────────────────────────────── */
@@ -293,7 +293,7 @@ MIT License
 
 .theme-light,
 .theme-dark {
-	--high-sat-of-grays: calc(var(--sat-of-grays) * 5);
+	--high-sat-of-grays: calc(var(--sat-of-grays) * 4.5);
 	--medium-sat-of-grays: calc(var(--sat-of-grays) * 2);
 }
 
@@ -304,7 +304,10 @@ MIT License
 	--middle-gray: hsl(var(--tint-of-grays-light) var(--sat-of-grays) 57%);
 	--text-faint: hsl(var(--tint-of-grays-light) var(--sat-of-grays) 60%);
 	--hr-line-gray: hsl(var(--tint-of-grays-light) var(--sat-of-grays) 66%);
-	--interactive-normal: hsl(var(--tint-of-grays-light) var(--high-sat-of-grays)  95%);
+
+	--light-in-light-dark-in-dark: hsl(var(--tint-of-grays-light) var(--high-sat-of-grays) 95%);
+	--always-light: var(--light-in-light-dark-in-dark);
+	--always-dark: var(--text-normal);
 }
 
 .theme-dark {
@@ -314,7 +317,10 @@ MIT License
 	--middle-gray: hsl(var(--tint-of-grays-dark) var(--sat-of-grays) 49%);
 	--text-faint: hsl(var(--tint-of-grays-dark) var(--sat-of-grays) 40%);
 	--hr-line-gray: hsl(var(--tint-of-grays-dark) var(--sat-of-grays) 60%);
-	--interactive-normal: hsl(var(--tint-of-grays-dark) var(--high-sat-of-grays) 16%);
+
+	--light-in-light-dark-in-dark: hsl(var(--tint-of-grays-dark) var(--high-sat-of-grays) 16%);
+	--always-light: var(--text-normal);
+	--always-dark: var(--light-in-light-dark-in-dark);
 }
 
 /* ───────────────────────────────────────────────── */
@@ -334,7 +340,7 @@ MIT License
 	--primary-accent-5: hsl(190 70% 85% / 99%);
 	--unresolved-link-color: hsl(160 75% 45%); /* ~40 hue less than primary-accent-2 */
 
-	--button-text: var(--text-normal);
+	--button-text: var(--always-dark);
 }
 
 .theme-light.primary-accent-light-orange,
@@ -354,7 +360,7 @@ MIT License
 	--hover-accent-2: hsl(324 70% 50%);
 	--hover-accent-3: hsl(334 85% 65%);
 	--hover-accent-4: hsl(324 90% 75%);
-	--button-hover-text: var(--interactive-normal);
+	--button-hover-text: var(--always-light);
 }
 
 .theme-light.secondary-accent-light-yellow,
@@ -362,8 +368,6 @@ MIT License
 	--secondary-accent-1: hsl(39 76% 41%);
 	--secondary-accent-2: hsl(39 76% 58%);
 }
-
-/* https://coolors.co/gradient-palette/992900-f4c362?number=4 */
 
 /* ───────────────────────────────────────────────── */
 /* <<< Default Color Scheme
@@ -391,7 +395,7 @@ MIT License
 .theme-light,
 .theme-dark {
 	/* button text and button hover text dependent on primary & hover accent */
-	--button-text: var(--interactive-normal);
+	--button-text: var(--light-in-light-dark-in-dark);
 	--button-hover-text: var(--text-normal);
 
 	--italics-text-color: var(--text-normal);
@@ -422,7 +426,7 @@ MIT License
 }
 
 /* ───────────────────────────────────────────────── */
-/* << Accent Color Definitions
+/* << Accent Definitions
 ──────────────────────────────────────────────────── */
 
 /* <<< Primary Accent */
@@ -602,10 +606,11 @@ MIT License
 .theme-dark {
 	--text-accent: var(--primary-accent-2);
 	--interactive-accent: var(--primary-accent-2);
+	--interactive-normal: var(--light-in-light-dark-in-dark);
 
 	--background-primary: var(--bg1);
 	--background-primary-alt: var(--bg2);
-	--background-secondary: var(--bg2);
+	--background-secondary: var(--alt-bg);
 	--background-secondary-alt: var(--bg3);
 
 	--background-modifier-border: var(--muted-border-color);
@@ -3685,7 +3690,7 @@ input:is([type="email"], [type="password"]) {
 	font-size: calc(0.65 * var(--font-text-size));
 	line-height: 0.8em;
 
-	color: var(--interactive-normal);
+	color: var(--light-in-light-dark-in-dark);
 	background-color: var(--sucess-color);
 
 	padding-right: 0.2em;
@@ -5760,7 +5765,7 @@ body .callout {
 	max-height: var(--post-it-callout-size);
 	max-width: var(--post-it-callout-size);
 
-	color: var(--interactive-normal);
+	color: var(--light-in-light-dark-in-dark);
 	background-color: hsl(55 60% 80%);
 	box-shadow: var(--small-shadow);
 
@@ -5781,7 +5786,7 @@ body .callout {
 }
 
 .theme-dark .callout[data-callout$="post-it"] {
-	color: var(--interactive-normal);
+	color: var(--light-in-light-dark-in-dark);
 }
 
 .unlock-theme-beta .callout[data-callout$="post-it"] .callout-title {
@@ -8310,7 +8315,7 @@ div.card-view-container.card-view-container .markdown-preview-view :is(h1, h2, h
 }
 
 .prompt.better-command-palette .suggestion-flair[aria-label="Click to Hide"] {
-	color: var(--interactive-normal);
+	color: var(--light-in-light-dark-in-dark);
 	background: var(--extra-contrast);
 	padding-right: 4px;
 	padding-left: 4px;
@@ -8704,7 +8709,7 @@ body .workspace-leaf-content[data-type="calendar"] .nav {
 	font-weight: 900;
 	text-decoration: underline 2px;
 
-	color: var(--interactive-normal);
+	color: var(--light-in-light-dark-in-dark);
 	background-color: var(--primary-accent-2);
 	opacity: 0.7;
 
@@ -8712,7 +8717,7 @@ body .workspace-leaf-content[data-type="calendar"] .nav {
 }
 
 .workspace-leaf-content[data-type="calendar"] .day.active svg .dot {
-	color: var(--interactive-normal) !important;
+	color: var(--light-in-light-dark-in-dark) !important;
 }
 
 /* remove lines */
@@ -9522,7 +9527,7 @@ button.longform-remove-step-button.longform-remove-step-button.longform-remove-s
 
 .longform-step-kind-pill.longform-step-kind-pill.longform-step-kind-pill.longform-step-kind-pill.longform-step-kind-pill {
 	font-size: 0.85em;
-	color: var(--interactive-normal);
+	color: var(--light-in-light-dark-in-dark);
 	background-color: var(--hover-accent-2);
 	box-shadow: var(--small-inset-shadow);
 	border-radius: var(--roundish);
@@ -9851,7 +9856,7 @@ button.MySnippetsButton:hover {
 
 button.MS-OpenSnippet:hover path,
 button.MySnippetsButton:hover path {
-	fill: var(--interactive-normal);
+	fill: var(--light-in-light-dark-in-dark);
 }
 
 .MySnippets-statusbar-menu {
@@ -9878,7 +9883,7 @@ button.MS-OpenSnippet svg.ms-snippet path {
 }
 
 button.MS-OpenSnippet:hover svg.ms-snippet path {
-	fill: var(--interactive-normal);
+	fill: var(--light-in-light-dark-in-dark);
 }
 
 /* ───────────────────────────────────────────────── */
@@ -10339,7 +10344,7 @@ pre button.copy::BEFORE {
 }
 
 pre button.copy:hover::BEFORE {
-	color: var(--interactive-normal);
+	color: var(--light-in-light-dark-in-dark);
 }
 
 /* ───────────────────────────────────────────────── */

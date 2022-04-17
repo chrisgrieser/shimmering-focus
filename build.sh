@@ -80,7 +80,9 @@ grep -E "<+ " "$CSS_PATH" | sed -e "s/ \*\///" \
 	-e "s/<<<<< /\t\t\t\t- /" \
 	-e "s/<<<< /\t\t\t- /" \
 	-e "s/<<< /\t\t- /" \
-	-e "s/<< /\t- /" -e "s/< /- /" \
+	-e "s/<< /\t- /" \
+	-e "s/< /- /" \
+	| tr -d "#" \
 	| tail -n +2 \
 	>> new_toc.css
 split -p "@TOC-SPLIT-MARKER" "$CSS_PATH" temp
