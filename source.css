@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 1.1308
+Version 1.1309
 Source CSS: https://github.com/chrisgrieser/shimmering-focus/blob/main/source.css
 MIT License
 ──────────────────────────────────────────────────── */
@@ -2777,8 +2777,8 @@ body:not(.move-plugin-name-to-left):not(.is-mobile) div.prompt {
 body:not(.move-plugin-name-to-left):not(.is-mobile) .suggestion-prefix {
 	background-color: var(--bg1);
 	position: absolute;
-	right: 92px;
-	padding-left: 8px;
+	right: 92px; /* this determines the placement of plugin names */
+	padding-left: 6px;
 }
 
 body:not(.move-plugin-name-to-left):not(.is-mobile) :not(.suggestion-container) > .suggestion-content {
@@ -8335,6 +8335,12 @@ div.card-view-container.card-view-container .markdown-preview-view :is(h1, h2, h
 	font-style: normal;
 	line-height: 0.9em;
 	padding-left: 7px;
+}
+
+/* since hyper key is displayed as caps lock, can move
+plugin names a little bit more to the right */
+body:not(.move-plugin-name-to-left):not(.is-mobile) .better-command-palette .suggestion-prefix {
+	right: 77px;
 }
 
 /* ───────────────────────────────────────────────── */
