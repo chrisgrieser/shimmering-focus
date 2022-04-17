@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 1.1317
+Version 1.1318
 Source CSS: https://github.com/chrisgrieser/shimmering-focus/blob/main/source.css
 MIT License
 ──────────────────────────────────────────────────── */
@@ -654,6 +654,7 @@ MIT License
 	--shadow-base-size: 0px;
 	--outside-shadow-color: hsl(0 0% 20% / 30%);
 	--inset-shadow-color: hsl(0 0% 45% / 40%);
+	--inset-shadow-black: hsl(0 0% 20% / 60%);
 }
 
 .theme-dark {
@@ -677,24 +678,30 @@ body:is(.theme-light, .theme-dark) {
 	--toggle-enabled-inset-shadow: -2px -2px 2px 0px var(--inset-shadow-color) inset;
 	--toggle-disabled-inset-shadow: -1px -1px 2px 0px var(--inset-shadow-color) inset;
 	--small-inset-shadow: -1px -1px 0 var(--inset-shadow-color) inset;
+	--notice-inset-shadow: -1px -1px 2px var(--inset-shadow-color) inset;
+
 	--small-reverted-inset-shadow: 1px 1px 1px var(--inset-shadow-color) inset;
 	--medium-reverted-inset-shadow: 2px 2px 1px var(--inset-shadow-color) inset;
 	--big-reverted-inset-shadow: 2px 2px 3px 1px hsl(0 0% 25% / 40%) inset;
+
 	--button-inset-shadow: -1.5px -1.5px 2px var(--inset-shadow-color) inset;
+	--pressed-button-inset-shadow: 1.5px 1.5px 2px 2.5px var(--inset-shadow-black) inset;
 	--muted-button-inset-shadow: -1.5px -1.5px 1px var(--inset-shadow-color) inset;
-	--notice-inset-shadow: -1px -1px 2px var(--inset-shadow-color) inset;
 }
 
 .theme-dark {
 	--toggle-enabled-inset-shadow: -2px -2px 2px 0px var(--inset-shadow-color) inset;
 	--toggle-disabled-inset-shadow: -3px -3px 2px 0px var(--inset-shadow-black) inset;
 	--small-inset-shadow: -1px -1px 0px var(--inset-shadow-black) inset;
+	--notice-inset-shadow: -1px -1px 2px var(--inset-shadow-black) inset;
+
 	--small-reverted-inset-shadow: 2px 2px 1px var(--inset-shadow-black) inset;
 	--medium-reverted-inset-shadow: 2px 2px 1px 1px var(--inset-shadow-black) inset;
 	--big-reverted-inset-shadow: 3px 3px 3px 3px var(--inset-shadow-black) inset;
+
 	--button-inset-shadow: -2px -2px 2px var(--inset-shadow-color) inset;
+	--pressed-button-inset-shadow: 1.5px 1.5px 2px 2px var(--inset-shadow-black) inset;
 	--muted-button-inset-shadow: -1.5px -1.5px 1px var(--inset-shadow-black) inset;
-	--notice-inset-shadow: -1px -1px 2px var(--inset-shadow-black) inset;
 }
 
 /* turn off shadows */
@@ -2188,7 +2195,7 @@ body .setting-item-control a:is(.style-settings-export, .style-settings-import):
 
 /* active button */
 .modal.modal.modal.modal.modal button:active {
-	box-shadow: none; /* no shadow for "pressed down" look */
+	box-shadow: var(--pressed-button-inset-shadow); /* no shadow for "pressed down" look */
 }
 
 /* ───────────────────────────────────────────────── */
