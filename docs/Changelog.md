@@ -3,7 +3,7 @@ nav_order: 110
 ---
 
 # Changelog
-- 2022-04-17	patch
+- 2022-04-17	add options for coloring bold/italic text to the beta
 - 2022-04-17	color tweaks
 - 2022-04-17	inline code in block quote get proper font sizes
 - 2022-04-16	new secondary accent (Amber yellow) + hue shift of calm blue

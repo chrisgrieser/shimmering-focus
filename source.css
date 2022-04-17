@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 1.1313
+Version 1.1314
 Source CSS: https://github.com/chrisgrieser/shimmering-focus/blob/main/source.css
 MIT License
 ──────────────────────────────────────────────────── */
@@ -22,7 +22,7 @@ MIT License
 		- Primary Accent
 		- Hover Accent
 		- Secondary Accent (references, tags, code, finished tasks)
-		- Tertiary Accent (Bold & Italics)
+		- Bold & Italics with Accent
 	- Background Colors
 		- Longform & Writing Background colors
 	- Default Variables
@@ -388,12 +388,12 @@ MIT License
 
 .theme-light,
 .theme-dark {
-	--tertiary-accent-light: var(--text-normal);
-	--tertiary-accent-dark: var(--text-normal);
-
 	/* button text and button hover text dependent on primary & hover accent */
 	--button-text: var(--interactive-normal);
 	--button-hover-text: var(--text-normal);
+
+	--italics-text-color: var(--text-normal);
+	--bold-text-color: var(--text-normal);
 }
 
 :root { /* backgrounds */
@@ -480,15 +480,25 @@ MIT License
 	--finished-task: var(--secondary-accent-2);
 }
 
-/* <<< Tertiary Accent (Bold & Italics) */
-.theme-light {
-	--italics-text-color: var(--tertiary-accent-light);
-	--bold-text-color: var(--tertiary-accent-light);
+/* <<< Bold & Italics with Accent */
+.theme-light.strong-em-hover-accent-light {
+	--italics-text-color: var(--hover-accent-2);
+	--bold-text-color: var(--hover-accent-2);
 }
 
-.theme-dark {
-	--italics-text-color: var(--tertiary-accent-dark);
-	--bold-text-color: var(--tertiary-accent-dark);
+.theme-dark.strong-em-hover-accent-dark {
+	--italics-text-color: var(--hover-accent-3);
+	--bold-text-color: var(--hover-accent-3);
+}
+
+.theme-light.strong-em-secondary-accent-light {
+	--italics-text-color: var(--secondary-accent-1);
+	--bold-text-color: var(--secondary-accent-1);
+}
+
+.theme-dark.strong-em-secondary-accent-dark {
+	--italics-text-color: var(--secondary-accent-2);
+	--bold-text-color: var(--secondary-accent-2);
 }
 
 /* ───────────────────────────────────────────────── */
@@ -755,8 +765,6 @@ body:is(.theme-light, .theme-dark) {
 	--signature: "⟡";
 	--empty-state-symbol-size: 8rem;
 
-	--active-line-bg: hsl(62 11% 63% / 15%);
-
 	--sidenote-callout-width: 35%;
 	--post-it-callout-size: 135px;
 }
@@ -776,12 +784,12 @@ body:is(.theme-light, .theme-dark) {
 	--highlight-hue-1: 60; /* yellow */
 	--highlight-hue-2: 150; /* green */
 	--highlight-hue-3: 185; /* cyan */
+	--active-line-bg: hsl(62 11% 63% / 15%);
 }
 
 .theme-light {
 	--search-match-color: hsl(30 100% 50%);
 	--text-error: hsl(0 100% 25%);
-
 	--error-bg: hsl(0 80% 85%);
 	--sucess-color: hsl(101 90% 40%);
 }
@@ -789,7 +797,6 @@ body:is(.theme-light, .theme-dark) {
 .theme-dark {
 	--search-match-color: hsl(60 100% 70%);
 	--text-error: hsl(0 100% 60%);
-
 	--error-bg: hsl(0 30% 20%);
 	--sucess-color: hsl(151 80% 35%);
 }
@@ -1129,13 +1136,13 @@ body > .app-container {
 	--external-url: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' preserveAspectRatio='xMidYMid meet' viewBox='0 0 1536 1536'%3e%3cpath d='M1280 800V320q0-26-19-45t-45-19H736q-42 0-59 39q-17 41 14 70l144 144l-534 534q-19 19-19 45t19 45l102 102q19 19 45 19t45-19l534-534l144 144q18 19 45 19q12 0 25-5q39-17 39-59zm256-512v960q0 119-84.5 203.5T1248 1536H288q-119 0-203.5-84.5T0 1248V288Q0 169 84.5 84.5T288 0h960q119 0 203.5 84.5T1536 288z' fill='grey'/%3e%3c/svg%3e");
 }
 
-svg {
-	-webkit-mask-repeat: no-repeat;
-}
-
 /* ───────────────────────────────────────────────── */
 /* << Base Icons
 ──────────────────────────────────────────────────── */
+
+svg {
+	-webkit-mask-repeat: no-repeat;
+}
 
 .external-link.external-link {
 	background-position-y: 0.35em;
@@ -10566,8 +10573,8 @@ body .style-settings-heading[data-level="0"] .setting-item-name {
 
 /* settings tab  / general */
 .style-settings-heading[data-level="2"] + .style-settings-container,
-.style-settings-heading[data-level="2"] {
-	padding-left: 20px;
+.style-settings-heading[data-level="2"][data-level="2"] {
+	margin-left: 20px;
 }
 
 .style-settings-heading[data-id="shimmering-focus"] + .style-settings-container .style-settings-heading[data-level="2"] .setting-item-name {
@@ -10763,11 +10770,11 @@ body:not(.no-animations) .style-settings-heading[data-id="shimmering-focus"]:not
 }
 
 /* demo box: longform hue shift */
-.theme-dark .style-settings-container {
+.theme-dark .setting-item[data-id="longform-hue-shift"] {
 	--demo-color: hsl(var(--longform-dark-hue) 70% var(--b-dark-1));
 }
 
-.theme-light .style-settings-container {
+.theme-light .setting-item[data-id="longform-hue-shift"] {
 	--demo-color: hsl(var(--longform-light-hue) 70% var(--b-light-1));
 }
 
@@ -10813,7 +10820,7 @@ body:not(.unlock-theme-beta) .style-settings-container .setting-item:is(
 	[data-id="post-it-callout-size"],
 
 	[data-id*="tint-"],
-	[data-id*="-accent-"]
+	[data-id*="-accent-"] [data-id^="strong-em-"]
 ) {
 	display: none;
 }
@@ -10822,23 +10829,27 @@ body:not(.unlock-theme-beta) .style-settings-container .setting-item:is(
 .style-settings-container .setting-item:is(
 	[data-id="aesthetics"],
 	[data-id="callout-options"]
-)::AFTER,
+).is-collapsed::AFTER,
 .style-settings-container .setting-item:is(
 	[data-id="post-it-callout-size"],
 
 	[data-id*="tint-"],
 	[data-id*="-accent-"],
+	[data-id^="strong-em-"],
 	[data-id="preset-color-scheme"],
 [data-id="unlock-theme-beta"])::BEFORE {
 	content: "Beta";
 
+	font-family: var(--font-interface);
 	font-size: 1rem;
-	line-height: 1.1em;
+	font-weight: 500;
+	line-height: 1em;
+	letter-spacing: 0;
 
 	background-color: var(--bg3);
 	box-shadow: var(--muted-button-inset-shadow);
 
-	padding: 3px 5px 4px 6px;
+	padding: 3px 5px 4px;
 	margin-top: -5px;
 	margin-right: 9px;
 
@@ -12110,17 +12121,6 @@ settings:
       label: 🟡 Amber Yellow
       value: secondary-accent-light-yellow
   -
-   id: tertiary-accent-light
-   title: "Tertiary Accent (Light Mode)"
-   description: 'Italic & Bold. When set to "Uncolored", bold and italic will have the same color as normal text.'
-   type: class-select
-   allowEmpty: false
-   default: tertiary-accent-light-uncolered
-   options:
-    -
-      label: Uncolored
-      value: tertiary-accent-light-uncolered
-  -
    id: hover-accent-light
    title: "Hover Accent (Light Mode)"
    description: 'Hovered Elements'
@@ -12132,8 +12132,25 @@ settings:
       label: 🟢 Shimmering Green
       value: hover-accent-light-green
     -
-      label: 🟣 Raspberry Pink
+      label: 🦩 Flamingo Pink
       value: hover-accent-light-pink
+  -
+   id: strong-em-color-light
+   title: "Bold & Italic (Light Mode)"
+   description: 'Italic & Bold. When set to "Uncolored", bold and italic will have the same color as normal text.'
+   type: class-select
+   allowEmpty: false
+   default: strong-em-uncolored-light
+   options:
+    -
+      label: Uncolored
+      value: strong-em-uncolored-light
+    -
+      label: Use Hover Accent
+      value: strong-em-hover-accent-light
+    -
+      label: Use Secondary Accent
+      value: strong-em-secondary-accent-light
   -
    id: use-gray-tint-light
    title: 'Slightly colored text (Light Mode)'
@@ -12216,17 +12233,6 @@ settings:
       label: 🟡 Amber Yellow
       value: secondary-accent-dark-yellow
   -
-   id: tertiary-accent-dark
-   title: "Tertiary Accent (Dark Mode)"
-   description: 'Italic & Bold. When set to "Uncolored", bold and italic will have the same color as normal text.'
-   type: class-select
-   allowEmpty: false
-   default: tertiary-accent-dark-uncolered
-   options:
-    -
-      label: Uncolored
-      value: tertiary-accent-dark-uncolered
-  -
    id: hover-accent-dark
    title: "Hover Accent (Dark Mode)"
    description: 'Hovered Elements'
@@ -12238,8 +12244,25 @@ settings:
       label: 🟢 Shimmering Green
       value: hover-accent-dark-green
     -
-      label: 🟣 Raspberry Pink
+      label: 🦩 Flamingo Pink
       value: hover-accent-dark-pink
+  -
+   id: strong-em-color-dark
+   title: "Bold & Italic (Dark Mode)"
+   description: 'Italic & Bold. When set to "Uncolored", bold and italic will have the same color as normal text.'
+   type: class-select
+   allowEmpty: false
+   default:  strong-em-uncolored-dark
+   options:
+    -
+      label: Uncolored
+      value: strong-em-uncolored-dark
+    -
+      label: Use Hover Accent
+      value: strong-em-hover-accent-dark
+    -
+      label: Use Secondary Accent
+      value: strong-em-secondary-accent-dark
   -
    id: use-gray-tint-dark
    title: 'Slightly colored text (Dark Mode)'
@@ -12634,7 +12657,7 @@ settings:
   -
    id: post-it-callout-size
    title: Size of Post-it Callouts
-   description: "Affects callouts with '> [!post-it]'. This variable affects width *and* height (i.e., quadratic growth). Mind that post-it's with too much content get cut off — they are post-its after all."
+   description: "Affects callouts with '> [!post-it]'. This variable affects width and height, i.e. quadratic growth). Mind that post-its with too much content get cut off — they are post-its after all."
    type: variable-number-slider
    default: 135
    min: 90
