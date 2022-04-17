@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 1.1319
+Version 1.1320
 Source CSS: https://github.com/chrisgrieser/shimmering-focus/blob/main/source.css
 MIT License
 ──────────────────────────────────────────────────── */
@@ -292,12 +292,13 @@ MIT License
 
 .theme-light,
 .theme-dark {
-	--high-sat-of-grays: calc(var(--sat-of-grays) * 3);
+	--high-sat-of-grays: calc(var(--sat-of-grays) * 5);
+	--medium-sat-of-grays: calc(var(--sat-of-grays) * 2);
 }
 
 .theme-light {
 	--text-normal: hsl(var(--tint-of-grays-light) var(--high-sat-of-grays) 20%);
-	--extra-contrast: hsl(var(--tint-of-grays-light) var(--sat-of-grays) 35%);
+	--extra-contrast: hsl(var(--tint-of-grays-light) var(--medium-sat-of-grays) 35%);
 	--text-muted: hsl(var(--tint-of-grays-light) var(--sat-of-grays) 50%);
 	--middle-gray: hsl(var(--tint-of-grays-light) var(--sat-of-grays) 57%);
 	--text-faint: hsl(var(--tint-of-grays-light) var(--sat-of-grays) 60%);
@@ -307,7 +308,7 @@ MIT License
 
 .theme-dark {
 	--text-normal: hsl(var(--tint-of-grays-dark) var(--high-sat-of-grays) 87%);
-	--extra-contrast: hsl(var(--tint-of-grays-dark) var(--sat-of-grays) 68%);
+	--extra-contrast: hsl(var(--tint-of-grays-dark) var(--medium-sat-of-grays) 68%);
 	--text-muted: hsl(var(--tint-of-grays-dark) var(--sat-of-grays) 58%);
 	--middle-gray: hsl(var(--tint-of-grays-dark) var(--sat-of-grays) 49%);
 	--text-faint: hsl(var(--tint-of-grays-dark) var(--sat-of-grays) 40%);
