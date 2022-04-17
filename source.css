@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 1.1320
+Version 1.1321
 Source CSS: https://github.com/chrisgrieser/shimmering-focus/blob/main/source.css
 MIT License
 ──────────────────────────────────────────────────── */
@@ -154,6 +154,7 @@ MIT License
 	- Pseudo-Spoiler-Tag
 	- Strikethroughs
 	- Pandoc Citations
+	- Block IDs
 	- Footnotes
 		- Footnote Indicator in Gutter
 	- Horizontal line (hr)
@@ -6907,6 +6908,13 @@ body:not(.no-pandoc-citation-emphasis) .cm-hmd-barelink.cm-hmd-barelink.cm-hmd-b
 }
 
 /* ───────────────────────────────────────────────── */
+/* << Block IDs
+──────────────────────────────────────────────────── */
+body:not(.permanently-show-block-ids) .cm-line:not(.cm-active, :hover) .cm-blockid {
+	display: none;
+}
+
+/* ───────────────────────────────────────────────── */
 /* << Footnotes
 ──────────────────────────────────────────────────── */
 
@@ -12025,6 +12033,12 @@ settings:
    title: 'Permanently show full URLs (Source Mode)'
    type: class-toggle
    description: In Source Mode, URLs will be folded except for the active line. Enable this to permanently show the full URL.
+   default: false
+  -
+   id: permanently-show-blockids
+   title: 'Permanently show Block IDs (Source Mode)'
+   type: class-toggle
+   description: In Source Mode, Block IDs are hidden until the respective line is active or hovered. Enable this re-enable the permanent display of block IDs.
    default: false
   -
    id: show-close-button
