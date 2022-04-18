@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 1.1341
+Version 1.1342
 Source CSS: https://github.com/chrisgrieser/shimmering-focus/blob/main/source.css
 MIT License
 ──────────────────────────────────────────────────── */
@@ -4706,8 +4706,8 @@ body:not(.no-floating-metadata):not(.is-mobile) .markdown-preview-view:not(.no-f
 
 	max-width: calc(var(--readable-length) + 3.4rem);
 
-	position: absolute;
-	right: 0.7rem;
+	position: fixed;
+	right: 1.2rem;
 	z-index: 100;
 
 	padding: 4px 2rem 5px 7px;
@@ -4798,10 +4798,11 @@ body:not(.no-floating-metadata):not(.is-mobile) .markdown-preview-view:not(.no-f
 /* stylelint-disable-next-line no-duplicate-selectors */
 :root {
 	--floating-metadata-top-header-visible: 1.05rem;
+	--floating-metadata-top-no-header: 2.2rem;
 }
 
 body:not(.show-header-bar) {
-	--floating-metadata-top: 2.25rem;
+	--floating-metadata-top: var(--floating-metadata-top-no-header);
 }
 
 body.show-header-bar {
