@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 1.1339
+Version 1.1340
 Source CSS: https://github.com/chrisgrieser/shimmering-focus/blob/main/source.css
 MIT License
 ──────────────────────────────────────────────────── */
@@ -1513,11 +1513,11 @@ body:not(.no-grayed-out-inactive-pane) {
 
 /* VISUAL STYLE */
 /* Shimmering Beam */
-.theme-light.shimmering-beam-cursor { /* stylelint-disable-line no-duplicate-selectors */
+.theme-light.shimmering-beam-cursor {
 	--cursor-look: linear-gradient(hsl(164 100% 55%), hsl(243 80% 84%));
 }
 
-.theme-dark.shimmering-beam-cursor { /* stylelint-disable-line no-duplicate-selectors */
+.theme-dark.shimmering-beam-cursor {
 	--cursor-look: linear-gradient(hsl(164 100% 45%), hsl(243 66% 76%));
 }
 
@@ -5038,7 +5038,7 @@ progress[max="100"]:is([value="1"],[value="2"],[value="3"],[value="4"],[value="5
 }
 
 /* Image Alt as caption */
-.image-embed[alt]::AFTER {
+.image-embed[alt]:not([alt$=".png"], [alt$=".jpg"], [alt$=".jpeg"], [alt$=".tiff"])::AFTER {
 	display: block;
 	content: attr(alt);
 
