@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 1.1328
+Version 1.1329
 Source CSS: https://github.com/chrisgrieser/shimmering-focus/blob/main/source.css
 MIT License
 ──────────────────────────────────────────────────── */
@@ -1511,11 +1511,11 @@ body:not(.no-grayed-out-inactive-pane) {
 
 /* VISUAL STYLE */
 /* Shimmering Beam */
-.theme-light { /* stylelint-disable-line no-duplicate-selectors */
+.theme-light.shimmering-beam-cursor { /* stylelint-disable-line no-duplicate-selectors */
 	--cursor-look: linear-gradient(hsl(164 100% 55%), hsl(243 80% 84%));
 }
 
-.theme-dark { /* stylelint-disable-line no-duplicate-selectors */
+.theme-dark.shimmering-beam-cursor { /* stylelint-disable-line no-duplicate-selectors */
 	--cursor-look: linear-gradient(hsl(164 100% 45%), hsl(243 66% 76%));
 }
 
@@ -1529,13 +1529,16 @@ body:not(.no-grayed-out-inactive-pane) {
 }
 
 /* Dark Eclipse */
-.theme-light.dark-eclipse-cursor {
+.theme-light { /* stylelint-disable-line no-duplicate-selectors */
 	--cursor-outline-color: hsl(220 10% 80%);
 }
 
-.dark-eclipse-cursor :is(.cm-cursorLayer .cm-cursor, .CodeMirror-cursor) {
-	--cursor-look: hsl(0 0% 0%);
+.theme-dark { /* stylelint-disable-line no-duplicate-selectors */
 	--cursor-outline-color: hsl(0 0% 90%);
+}
+
+:is(.cm-cursorLayer .cm-cursor, .CodeMirror-cursor) {
+	--cursor-look: hsl(0 0% 0%);
 	outline: 0.2px solid var(--cursor-outline-color);
 }
 
@@ -12714,17 +12717,17 @@ settings:
    description: Color and appearance of the cursor.
    type: class-select
    allowEmpty: false
-   default: shimmering-beam-cursor
+   default: dark-eclipse-cursor
    options:
+    -
+      label: Dark Eclipse
+      value: dark-eclipse-cursor
     -
       label: Shimmering Beam
       value: shimmering-beam-cursor
     -
       label: iA Writer
       value: ia-writer-cursor
-    -
-      label: Dark Eclipse
-      value: dark-eclipse-cursor
     -
       label: Fire & Ice
       value: fire-and-ice-cursor
