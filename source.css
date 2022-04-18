@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 1.1345
+Version 1.1346
 Source CSS: https://github.com/chrisgrieser/shimmering-focus/blob/main/source.css
 MIT License
 ──────────────────────────────────────────────────── */
@@ -6449,9 +6449,21 @@ a:hover {
 	color: var(--link-color);
 }
 
-/* icon for PDF (unembedded) links */
+/* icon for certain filetypes links */
 .markdown-preview-view a.internal-link[href$=".pdf"]::BEFORE {
 	content: "📕 ";
+}
+
+.markdown-preview-view a.internal-link:is([href$=".docx"], [href$=".doc"], [href$=".odt"])::BEFORE {
+	content: "📘 ";
+}
+
+.markdown-preview-view a.internal-link:is([href$=".pptx"], [href$=".ppt"], [href$=".odp"])::BEFORE {
+	content: "📙 ";
+}
+
+.markdown-preview-view a.internal-link:is([href$=".xlsx"], [href$=".xls"], [href$=".ods"], [href$=".csv"])::BEFORE {
+	content: "📗 ";
 }
 
 /* with supercharged links installed, also displayed in edit mode */
