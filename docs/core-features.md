@@ -21,8 +21,6 @@ nav_order: 2
 
 ![header bar visible on hover](https://user-images.githubusercontent.com/73286100/131692972-e523f2d4-40c7-452c-83ac-a7f2fbd546ae.gif)
 
-![sidebar tabs visible on hover](images/hidden-tab-sidebars.gif)
-
 ![metadata visible on hover](images/floating-metadata.gif)
 
 ## Max View & Focus View

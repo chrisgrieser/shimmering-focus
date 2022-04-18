@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 1.1330
+Version 1.1331
 Source CSS: https://github.com/chrisgrieser/shimmering-focus/blob/main/source.css
 MIT License
 ──────────────────────────────────────────────────── */
@@ -770,7 +770,6 @@ body:is(.theme-light, .theme-dark) {
 	--modal-base-size: 70;
 
 	--readable-length: 700px;
-	--underline-offset: 1.5px;
 	--editor-overscroll: 6em;
 	--status-bar-height: 2.2em;
 
@@ -6403,7 +6402,7 @@ a:hover {
 
 /* more underline spacing, thx @Melvin */
 * {
-	text-underline-offset: var(--underline-offset);
+	text-underline-offset: 1.5px;
 }
 
 /* <<< Fold external URLs (CM6 Source Mode) */
@@ -7663,7 +7662,6 @@ body:not(.classic-inline-backlinks) .embedded-backlinks .tree-item-self.tree-ite
 body:not(.classic-inline-backlinks) .embedded-backlinks .tree-item-inner {
 	text-decoration: underline double 1px;
 	color: var(--primary-accent-2);
-	text-underline-offset: var(--underline-offset);
 }
 
 body:not(.classic-inline-backlinks) .embedded-backlinks .tree-item.search-result {
@@ -9690,8 +9688,6 @@ body:not(.longform-left-aligned) :is(.writing, .longform-leaf) :is(.cm-line:not(
 	hyphens: auto;
 }
 
-/* line height */
-
 /* headings */
 .writing.writing :is(h1, h2, h3, h4, h5, h6),
 :is(.writing, .longform-leaf) .cm-header.cm-header,
@@ -9706,12 +9702,12 @@ body:not(.longform-left-aligned) :is(.writing, .longform-leaf) :is(.cm-line:not(
 /* line height */
 .writing.markdown-preview-view table,
 .longform-leaf .markdown-preview-view table {
-	line-height: 1.3em;
+	line-height: 1.2em;
 }
 
 :is(.writing, .longform-leaf) .cm-line :not(.cm-header, .cm-hmd-frontmatter),
 :is(.writing, .longform-leaf) .cm-line {
-	line-height: 1.25em;
+	line-height: 1.2em;
 }
 
 :is(.writing, .longform-leaf) .cm-line > :is(.cm-header, .cm-hmd-frontmatter) {
@@ -11335,12 +11331,10 @@ a.zoom-plugin-title:hover {
 /* current word */
 body :is(.cm-matched-word,.cm-current-word) {
 	text-decoration: 1.5px dotted underline var(--text-muted);
-	text-underline-offset: calc(var(--underline-offset) * 2);
 }
 
 .is-live-preview .cm-link :is(.cm-matched-word,.cm-current-word) {
 	text-decoration: none;
-	text-underline-offset: 0;
 }
 
 /* current selection */
