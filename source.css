@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 1.1333
+Version 1.1334
 Source CSS: https://github.com/chrisgrieser/shimmering-focus/blob/main/source.css
 MIT License
 ──────────────────────────────────────────────────── */
@@ -106,7 +106,7 @@ MIT License
 		- Clean Embeds
 	- YAML & Metadata
 		- YAML Frontmatter
-			- Colorful YAML look
+			- Colorful YAML Look
 		- Metadata Block
 		- Invalid Metadata
 		- Floating Metadata & YAML
@@ -1124,12 +1124,12 @@ body > .app-container {
 }
 
 /* more readable in dark mode when uncolored */
-.theme-dark:not(.strong-em-hover-accent-light, .strong-em-hover-accent-dark, .strong-em-secondary-accent-light, .strong-em-secondary-accent-dark) :is(.cm-strong, .markdown-preview-view strong) {
+.theme-dark:not(.strong-em-hover-accent-dark, .strong-em-secondary-accent-dark) :is(.cm-strong, .markdown-preview-view strong) {
 	font-weight: 600;
 	text-shadow: var(--shadow-for-dark-bold);
 }
 
-.theme-dark:not(.strong-em-hover-accent-light, .strong-em-hover-accent-dark, .strong-em-secondary-accent-light, .strong-em-secondary-accent-dark) .markdown-preview-view strong a {
+.theme-dark:not(.strong-em-hover-accent-dark, .strong-em-secondary-accent-dark) .markdown-preview-view strong a {
 	font-weight: 800;
 	text-shadow: none;
 }
@@ -4480,7 +4480,7 @@ body:not(.no-active-highlight) .cm-active :is(.cm-formatting-header,.cm-formatti
 ──────────────────────────────────────────────────── */
 
 /* default look */
-.cm-hmd-frontmatter {
+.cm-hmd-frontmatter.cm-hmd-frontmatter {
 	font-size: 0.9rem;
 	color: var(--text-muted);
 }
@@ -4492,11 +4492,11 @@ body:not(.no-active-highlight) .cm-active :is(.cm-formatting-header,.cm-formatti
 }
 
 /* keys */
-.cm-hmd-frontmatter:is(.cm-meta, .cm-atom) {
+.cm-hmd-frontmatter.cm-atom {
 	font-weight: 700;
 }
 
-/* <<<< Colorful YAML look */
+/* <<<< Colorful YAML Look */
 
 /* normal text */
 .colored-yaml .cm-hmd-frontmatter {
@@ -4521,8 +4521,9 @@ body:not(.no-active-highlight) .cm-active :is(.cm-formatting-header,.cm-formatti
 }
 
 /* punctuation with uncolored bold/italics in grey, to differentiate it from the yaml value text */
-.colored-yaml:not(.strong-em-hover-accent-light, .strong-em-hover-accent-dark, .strong-em-secondary-accent-light, .strong-em-secondary-accent-dark) :is(.cm-hmd-frontmatter.cm-meta, .frontmatter.language-yaml .punctuation) {
-	color: var(--extra-contrast);
+.theme-dark.colored-yaml:not(.strong-em-secondary-accent-dark, .strong-em-hover-accent-dark) :is(.cm-hmd-frontmatter.cm-meta, .frontmatter.language-yaml .punctuation),
+.theme-light.colored-yaml:not(.strong-em-hover-accent-light, .strong-em-secondary-accent-light) :is(.cm-hmd-frontmatter.cm-meta, .frontmatter.language-yaml .punctuation) {
+	color: var(--text-muted);
 }
 
 /* boolean in yaml */
