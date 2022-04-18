@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 1.1338
+Version 1.1339
 Source CSS: https://github.com/chrisgrieser/shimmering-focus/blob/main/source.css
 MIT License
 ──────────────────────────────────────────────────── */
@@ -1627,8 +1627,13 @@ body:not(.show-titlebar) .titlebar {
 }
 
 /* when left sidebar is collapsed, move header to the right */
-body.mod-macos:not(.show-titlebar) .workspace-split.mod-left-split.is-collapsed ~ .mod-root .workspace-leaf:nth-child(2) .view-header {
-	padding-left: 7vh; /* vh to work better for other screen resolutions */
+.mod-macos:not(.show-titlebar):not(.plugin-sliding-panes-rotate-header) .workspace-split.mod-left-split.is-collapsed ~ .mod-root .workspace-leaf:nth-child(2) .view-header {
+	padding-left: 3rem;
+}
+
+/* for sliding panes with rotated headers, move down instead */
+.mod-macos:not(.show-titlebar).plugin-sliding-panes-rotate-header .workspace-split.mod-left-split.is-collapsed ~ .mod-root .workspace-leaf:nth-child(2) .view-header {
+	padding-top: 1.3rem;
 }
 
 body:not(.show-titlebar, .is-mobile) {

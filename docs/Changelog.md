@@ -3,6 +3,7 @@ nav_order: 110
 ---
 
 # Changelog
+- 2022-04-18	fix sliding panes header when using rotated headers with collapsed left side bar
 - 2022-04-18	minor dataview-related fixes
 - 2022-04-18	fix favicon plugin icons in blockquote
 - 2022-04-18	yaml frontmatter now in theme accent colors (if colored yaml enabled in settings)
