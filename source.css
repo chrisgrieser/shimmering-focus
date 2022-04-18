@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 1.1336
+Version 1.1337
 Source CSS: https://github.com/chrisgrieser/shimmering-focus/blob/main/source.css
 MIT License
 ──────────────────────────────────────────────────── */
@@ -10346,8 +10346,12 @@ body :is(#search-res-hover, #block-ref-hover).show:hover {
 	padding-left: 1rem;
 }
 
-.markdown-preview-view .block-language-dataview .result-group {
-	padding-left: 0;
+.markdown-preview-view :is(.block-language-dataview, .block-language-dataviewjs) .result-group {
+	padding-left: 1px;
+}
+
+.dataview.dataview.dataview a {
+	text-decoration-style: solid;
 }
 
 /* errors */
