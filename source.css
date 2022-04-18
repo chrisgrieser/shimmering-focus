@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 1.1342
+Version 1.1343
 Source CSS: https://github.com/chrisgrieser/shimmering-focus/blob/main/source.css
 MIT License
 ──────────────────────────────────────────────────── */
@@ -4531,9 +4531,10 @@ body:not(.no-active-highlight) .cm-active :is(.cm-formatting-header,.cm-formatti
 	color: var(--text-muted);
 }
 
-/* boolean in yaml */
-.colored-yaml .frontmatter.language-yaml .boolean,
-.colored-yaml .cm-hmd-frontmatter.cm-keyword {
+/* strings & boolean in yaml */
+.colored-yaml .frontmatter.language-yaml :is(.boolean, .number, .string),
+.colored-yaml .cm-hmd-frontmatter:is(.cm-keyword, .cm-string) {
+	font-weight: 500;
 	color: var(--secondary-accent-text);
 }
 

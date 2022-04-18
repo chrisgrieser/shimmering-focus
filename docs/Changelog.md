@@ -3,6 +3,7 @@ nav_order: 110
 ---
 
 # Changelog
+- 2022-04-18	patch
 - 2022-04-18	floating metadata scrolls with editor for a bit (fixed instead absolute position)
 - 2022-04-18	only use image alt text when alias was explicitly set
 - 2022-04-18	fix sliding panes header when using rotated headers with collapsed left side bar
