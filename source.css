@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 1.1340
+Version 1.1341
 Source CSS: https://github.com/chrisgrieser/shimmering-focus/blob/main/source.css
 MIT License
 ──────────────────────────────────────────────────── */
@@ -5042,9 +5042,10 @@ progress[max="100"]:is([value="1"],[value="2"],[value="3"],[value="4"],[value="5
 	display: block;
 	content: attr(alt);
 
-	font-family: var(--smallcap-font);
+	font-family: var(--font-interface);
 	font-size: 0.85rem;
 	font-weight: 500;
+	font-style: italic;
 
 	color: var(--text-muted);
 

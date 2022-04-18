@@ -3,6 +3,7 @@ nav_order: 110
 ---
 
 # Changelog
+- 2022-04-18	patch
 - 2022-04-18	only use image alt text when alias was explicitly set
 - 2022-04-18	fix sliding panes header when using rotated headers with collapsed left side bar
 - 2022-04-18	minor dataview-related fixes
