@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 1.1344
+Version 1.1345
 Source CSS: https://github.com/chrisgrieser/shimmering-focus/blob/main/source.css
 MIT License
 ──────────────────────────────────────────────────── */
@@ -6449,6 +6449,13 @@ a:hover {
 	color: var(--link-color);
 }
 
+/* icon for PDF (unembedded) links */
+.markdown-preview-view a.internal-link[href$=".pdf"]::BEFORE {
+	content: "📕 ";
+}
+
+/* with supercharged links installed, also displayed in edit mode */
+
 /* more underline spacing, thx @Melvin */
 * {
 	text-underline-offset: 1.5px;
@@ -8420,6 +8427,12 @@ body:not(.move-plugin-name-to-left):not(.is-mobile) .better-command-palette .sug
 /* ───────────────────────────────────────────────── */
 /* << Supercharged Links
 ──────────────────────────────────────────────────── */
+
+/* unembedded pdf links
+(in preview mode done without this plugin, see link section */
+.cm-formatting-link:not(.cm-formatting-embed) ~ .data-link-icon[data-link-path$=".pdf"]::BEFORE {
+	content: "📕 ";
+}
 
 /* tag-based */
 body:not(.no-built-in-supercharged-links) .data-link-icon[data-link-tags~="#autocompletion" i]::BEFORE { content: "🅰️ " }
