@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 1.1335
+Version 1.1336
 Source CSS: https://github.com/chrisgrieser/shimmering-focus/blob/main/source.css
 MIT License
 ──────────────────────────────────────────────────── */
@@ -10961,6 +10961,12 @@ body:not(.unlock-theme-beta) .style-settings-container .setting-item:is(
 object.link-favicon {
 	height: 1em !important; /* needs important */
 	margin: 0 4px 2px 0;
+}
+
+/* line height of blockquotes does not move favicon,
+therefore this fix is needed */
+body:not(.normal-blockquotes) :is(blockquote, .HyperMD-quote.HyperMD-quote-1) .link-favicon {
+	margin-bottom: 8px;
 }
 
 .kanban-plugin__board .link-favicon {
