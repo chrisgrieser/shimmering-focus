@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 1.1324
+Version 1.1325
 Source CSS: https://github.com/chrisgrieser/shimmering-focus/blob/main/source.css
 MIT License
 ──────────────────────────────────────────────────── */
@@ -338,7 +338,7 @@ MIT License
 	--primary-accent-3: hsl(190 90% 50%);
 	--primary-accent-4: hsl(190 90% 60%);
 	--primary-accent-5: hsl(190 70% 85% / 99%);
-	--unresolved-link-color: hsl(160 75% 45%); /* ~40 hue less than primary-accent-2 */
+	--unresolved-link-color: hsl(150 65% 45%); /* ~40 hue less than primary-accent-2 */
 
 	--button-text: var(--always-dark);
 }
@@ -6387,9 +6387,18 @@ a:hover {
 	text-decoration: underline dotted;
 }
 
+/* dashed alias link */
+.markdown-source-view .cm-link-alias.cm-link-alias.cm-link-alias {
+	text-decoration: underline dashed 1px;
+}
+
+.markdown-preview-view a[aria-label]:not(.external-link) {
+	text-decoration: underline dashed;
+}
+
 /* double underline internal links */
-.cm-hmd-internal-link.cm-hmd-internal-link.cm-hmd-internal-link .cm-underline,
-.cm-hmd-internal-link.cm-hmd-internal-link.cm-hmd-internal-link:hover,
+.is-live-preview .cm-hmd-internal-link.cm-hmd-internal-link .cm-underline,
+.markdown-source-view .cm-hmd-internal-link.cm-hmd-internal-link:hover,
 .markdown-preview-view .internal-link {
 	text-decoration: underline double 1px;
 }
@@ -6399,19 +6408,15 @@ a:hover {
 	color: var(--link-color);
 }
 
+.cm-link-alias-pipe.cm-link-alias-pipe.cm-link-alias-pipe.cm-link-alias-pipe.cm-link-alias-pipe,
 .cm-formatting-link.cm-formatting-link.cm-formatting-link {
+	text-decoration: none;
 	color: var(--text-muted);
+	cursor: default;
 }
 
 /* more underline spacing, thx @Melvin */
-.cm-underline,
-.cm-url.cm-url:not(.cm-formatting),
-.cm-hmd-internal-link.cm-hmd-internal-link.cm-hmd-internal-link,
-.modal-content a,
-.internal-link.internal-link.internal-link,
-.external-link,
-a,
-u {
+* {
 	text-underline-offset: var(--underline-offset);
 }
 
@@ -10029,6 +10034,11 @@ button.MS-OpenSnippet:hover svg.ms-snippet path {
 
 .BC-Matrix.BC-Matrix.BC-Matrix.BC-Matrix ol > li .BC-Link {
 	text-decoration: none;
+}
+
+/* remove gutter indicators as unecessary here */
+.BC-Link.is-unresolved::BEFORE {
+	display: none;
 }
 
 /* hide headings in Breadcrumbs */

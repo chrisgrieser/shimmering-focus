@@ -3,6 +3,7 @@ nav_order: 110
 ---
 
 # Changelog
+- 2022-04-18	link underlines different based on link type
 - 2022-04-18	refactored text color variables
 - 2022-04-17	hide block IDs when not active/hovered line (+ new style setting to turn that off)
 - 2022-04-17	gray color tweaks
