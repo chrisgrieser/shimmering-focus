@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 1.1334
+Version 1.1335
 Source CSS: https://github.com/chrisgrieser/shimmering-focus/blob/main/source.css
 MIT License
 ──────────────────────────────────────────────────── */
@@ -1112,24 +1112,24 @@ body > .app-container {
 }
 
 /* << Bold & Italics Styling */
-.cm-em,
-.markdown-preview-view em {
+.cm-em.cm-em.cm-em.cm-em.cm-em,
+.markdown-preview-view.markdown-preview-view em {
 	color: var(--italics-text-color);
 }
 
-.cm-strong,
-.markdown-preview-view strong {
+.cm-strong.cm-strong.cm-strong.cm-strong,
+.markdown-preview-view.markdown-preview-view strong {
 	font-weight: 800;
 	color: var(--bold-text-color);
 }
 
 /* more readable in dark mode when uncolored */
-.theme-dark:not(.strong-em-hover-accent-dark, .strong-em-secondary-accent-dark) :is(.cm-strong, .markdown-preview-view strong) {
+.theme-dark.theme-dark.theme-dark:not(.strong-em-hover-accent-dark, .strong-em-secondary-accent-dark) :is(.cm-strong, .markdown-preview-view strong) {
 	font-weight: 600;
 	text-shadow: var(--shadow-for-dark-bold);
 }
 
-.theme-dark:not(.strong-em-hover-accent-dark, .strong-em-secondary-accent-dark) .markdown-preview-view strong a {
+.theme-dark.theme-dark.theme-dark:not(.strong-em-hover-accent-dark, .strong-em-secondary-accent-dark) .markdown-preview-view strong a {
 	font-weight: 800;
 	text-shadow: none;
 }
