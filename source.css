@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 1.1343
+Version 1.1344
 Source CSS: https://github.com/chrisgrieser/shimmering-focus/blob/main/source.css
 MIT License
 ──────────────────────────────────────────────────── */
@@ -11945,7 +11945,7 @@ settings:
   -
    id: show-hide-elements
    title: 🙈 Show/Hide UI Elements
-   description: Re-enable elements hidden by this theme.
+   description: Re-enable elements hidden by this theme
    type: heading
    level: 1
    collapsed: true
