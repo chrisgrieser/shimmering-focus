@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 1.1346
+Version 1.1347
 Source CSS: https://github.com/chrisgrieser/shimmering-focus/blob/main/source.css
 MIT License
 ──────────────────────────────────────────────────── */
@@ -6450,6 +6450,7 @@ a:hover {
 }
 
 /* icon for certain filetypes links */
+/* with supercharged links installed, also displayed in edit mode */
 .markdown-preview-view a.internal-link[href$=".pdf"]::BEFORE {
 	content: "📕 ";
 }
@@ -6465,8 +6466,6 @@ a:hover {
 .markdown-preview-view a.internal-link:is([href$=".xlsx"], [href$=".xls"], [href$=".ods"], [href$=".csv"])::BEFORE {
 	content: "📗 ";
 }
-
-/* with supercharged links installed, also displayed in edit mode */
 
 /* more underline spacing, thx @Melvin */
 * {
@@ -8440,10 +8439,22 @@ body:not(.move-plugin-name-to-left):not(.is-mobile) .better-command-palette .sug
 /* << Supercharged Links
 ──────────────────────────────────────────────────── */
 
-/* unembedded pdf links
-(in preview mode done without this plugin, see link section */
-.cm-formatting-link:not(.cm-formatting-embed) ~ .data-link-icon[data-link-path$=".pdf"]::BEFORE {
+/* file type links
+(in preview mode done without this plugin, see link section) */
+.data-link-icon[data-link-path$=".pdf"]::BEFORE {
 	content: "📕 ";
+}
+
+.data-link-icon:is([data-link-path$=".docx"], [data-link-path$=".doc"], [data-link-path$=".odt"])::BEFORE {
+	content: "📘 ";
+}
+
+.data-link-icon:is([data-link-path$=".pptx"], [data-link-path$=".ppt"], [data-link-path$=".odp"])::BEFORE {
+	content: "📙 ";
+}
+
+.data-link-icon:is([data-link-path$=".xlsx"], [data-link-path$=".xls"], [data-link-path$=".ods"], [data-link-path$=".csv"])::BEFORE {
+	content: "📗 ";
 }
 
 /* tag-based */
