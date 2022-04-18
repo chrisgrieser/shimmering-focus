@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 1.1325
+Version 1.1326
 Source CSS: https://github.com/chrisgrieser/shimmering-focus/blob/main/source.css
 MIT License
 ──────────────────────────────────────────────────── */
@@ -218,7 +218,6 @@ MIT License
 	- Drag & Drop Blocks
 	- Dangling Links
 	- Advanced Cursor
-	- CodeMirror Options
 	- Dataview
 		- dataview cssclasses
 	- QuickSwitcher Plus Plus
@@ -1156,12 +1155,6 @@ body > .app-container {
 
 svg {
 	-webkit-mask-repeat: no-repeat;
-}
-
-.external-link.external-link {
-	background-position-y: 0.35em;
-	background-image: var(--external-url);
-	padding-right: 1.1em;
 }
 
 /* outline/heading */
@@ -6408,13 +6401,6 @@ a:hover {
 	color: var(--link-color);
 }
 
-.cm-link-alias-pipe.cm-link-alias-pipe.cm-link-alias-pipe.cm-link-alias-pipe.cm-link-alias-pipe,
-.cm-formatting-link.cm-formatting-link.cm-formatting-link {
-	text-decoration: none;
-	color: var(--text-muted);
-	cursor: default;
-}
-
 /* more underline spacing, thx @Melvin */
 * {
 	text-underline-offset: var(--underline-offset);
@@ -6433,10 +6419,19 @@ body:not(.show-urls) .cm-s-obsidian:not(.is-live-preview) .cm-line:not(.cm-activ
 	top: 2px;
 }
 
-/* don't underline the brackets */
+/* remove icon */
+.external-link {
+	background-image: none;
+}
+
+/* don't underline the formatting */
 .cm-s-obsidian .cm-url.cm-formatting,
-body:not(.show-urls) .cm-line:not(.cm-active) .cm-url {
+body:not(.show-urls) .cm-line:not(.cm-active) .cm-url,
+.cm-link-alias-pipe.cm-link-alias-pipe.cm-link-alias-pipe.cm-link-alias-pipe.cm-link-alias-pipe,
+.cm-formatting-link.cm-formatting-link.cm-formatting-link {
 	text-decoration: none;
+	color: var(--text-muted);
+	cursor: default;
 }
 
 /* ───────────────────────────────────────────────── */
@@ -10305,59 +10300,6 @@ body :is(#search-res-hover, #block-ref-hover).show:hover {
 }
 
 /* ───────────────────────────────────────────────── */
-/* << CodeMirror Options
-──────────────────────────────────────────────────── */
-
-body .cm-s-obsidian .hmd-link-icon::AFTER {
-	height: 1em;
-	width: 1em;
-
-	background-color: var(--text-muted);
-
-	position: relative;
-	top: -1px;
-
-	transform: scale(1.15);
-	cursor: pointer;
-
-	-webkit-mask-image: var(--external-url);
-}
-
-/* folded URL */
-body > .app-container .cm-s-obsidian .hmd-link-icon:hover::AFTER {
-	background-color: var(--hover-accent-2);
-	opacity: 0.8;
-}
-
-/* move and shrink copy button */
-pre button.copy {
-	font-size: 0;
-
-	color: var(--extra-contrast);
-	background-color: var(--bg3);
-
-	position: absolute;
-	top: 7px;
-	right: 7px;
-
-	padding: 6px 6px 4px 8px;
-	margin: 0;
-
-	border: 2px solid var(--bg1);
-	border-radius: var(--roundish);
-}
-
-pre button.copy::BEFORE {
-	content: "content_copy";
-	font-family: var(--icon-font);
-	font-size: calc(0.7 * var(--font-text-size));
-}
-
-pre button.copy:hover::BEFORE {
-	color: var(--light-in-light-dark-in-dark);
-}
-
-/* ───────────────────────────────────────────────── */
 /* << Dataview
 ──────────────────────────────────────────────────── */
 /* Styling from the "Tables" Section mostly applies */
@@ -10979,31 +10921,13 @@ body:not(.unlock-theme-beta) .style-settings-container .setting-item:is(
 ──────────────────────────────────────────────────── */
 /* https://github.com/joethei/obsidian-link-favicon#for-designers */
 
-/* no external link icons if there is a favicon */
-/* first selector live preview, second reading mode */
-.link-favicon ~ .external-link,
-.external-link[data-favicon="true"] {
-	background-image: none;
-	padding-right: 0;
-}
-
-.link-favicon:not(img) {
-	height: 1em !important;
-	margin-right: 4px;
-	margin-bottom: 3px;
-	margin-left: 0;
-	cursor: default !important;
-}
-
-img.link-favicon {
-	width: 1.2em !important;
-	margin-right: 0;
-	margin-bottom: 9px;
-	margin-left: 0;
+object.link-favicon {
+	height: 1em !important; /* needs important */
+	margin: 0 4px 2px 0;
 }
 
 .kanban-plugin__board .link-favicon {
-	height: 0.9em !important;
+	height: 0.9em !important;  /* needs important */
 }
 
 .grayscale-favicons .link-favicon {
@@ -11904,7 +11828,6 @@ community:
 - recent-files-obsidian
 - advanced-cursors
 - obsidian-another-quick-switcher
-- obsidian-codemirror-options
 - obsidian-kanban
 - oz-image-plugin
 - calendar
