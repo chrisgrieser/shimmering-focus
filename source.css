@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 1.1332
+Version 1.1333
 Source CSS: https://github.com/chrisgrieser/shimmering-focus/blob/main/source.css
 MIT License
 ──────────────────────────────────────────────────── */
@@ -4558,7 +4558,7 @@ pre.language-yaml.frontmatter::AFTER {
 	font-weight: 400;
 	text-transform: capitalize;
 
-	margin-bottom: 2px;
+	margin-bottom: 7px;
 
 	border-bottom: var(--thin-border);
 }
