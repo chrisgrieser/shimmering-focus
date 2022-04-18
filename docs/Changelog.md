@@ -3,6 +3,7 @@ nav_order: 110
 ---
 
 # Changelog
+- 2022-04-18	patch
 - 2022-04-18	remove external link icon & core mirror options plugin support
 - 2022-04-18	link underlines different based on link type
 - 2022-04-18	refactored text color variables

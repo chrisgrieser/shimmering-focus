@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 1.1326
+Version 1.1327
 Source CSS: https://github.com/chrisgrieser/shimmering-focus/blob/main/source.css
 MIT License
 ──────────────────────────────────────────────────── */
@@ -335,7 +335,7 @@ MIT License
 	--primary-accent-1: hsl(190 50% 30%);
 	--primary-accent-2: hsl(190 75% 41%);
 	--primary-accent-3: hsl(190 90% 50%);
-	--primary-accent-4: hsl(190 90% 60%);
+	--primary-accent-4: hsl(190 90% 65%);
 	--primary-accent-5: hsl(190 70% 85% / 99%);
 	--unresolved-link-color: hsl(150 65% 45%); /* ~40 hue less than primary-accent-2 */
 
@@ -2140,7 +2140,7 @@ body:is(.theme-light, .theme-dark) ::-WEBKIT-SCROLLBAR-THUMB:active {
 /* <<< Updating Plugins */
 .is-loading::BEFORE {
 	height: 6px;
-	background: linear-gradient(to right, var(--primary-accent-2), var(--primary-accent-3));
+	background: linear-gradient(to right, var(--primary-accent-1), var(--primary-accent-4));
 }
 
 /* ───────────────────────────────────────────────── */
