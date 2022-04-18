@@ -3,6 +3,7 @@ nav_order: 110
 ---
 
 # Changelog
+- 2022-04-18	yaml frontmatter now in theme accent colors (if colored yaml enabled in settings)
 - 2022-04-18	refactored underline styling
 - 2022-04-18	bold no shadow when not uncolored
 - 2022-04-18	dark eclipse now default cursor style (better with other accent colors)

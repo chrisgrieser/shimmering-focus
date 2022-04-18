@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 1.1331
+Version 1.1332
 Source CSS: https://github.com/chrisgrieser/shimmering-focus/blob/main/source.css
 MIT License
 ──────────────────────────────────────────────────── */
@@ -22,7 +22,7 @@ MIT License
 		- Primary Accent
 		- Hover Accent
 		- Secondary Accent (references, tags, code, finished tasks)
-		- Bold & Italics with Accent
+		- Bold & Italics Accent
 	- Background Colors
 		- Longform & Writing Background colors
 	- Default Variables
@@ -36,7 +36,7 @@ MIT License
 - Fonts
 	- Base64-encoded Fonts
 	- Font Definitions
-	- Bold & Italics
+	- Bold & Italics Styling
 - Icons
 	- Base Icons
 	- Plugin Icons
@@ -106,6 +106,7 @@ MIT License
 		- Clean Embeds
 	- YAML & Metadata
 		- YAML Frontmatter
+			- Colorful YAML look
 		- Metadata Block
 		- Invalid Metadata
 		- Floating Metadata & YAML
@@ -396,9 +397,6 @@ MIT License
 	/* button text and button hover text dependent on primary & hover accent */
 	--button-text: var(--light-in-light-dark-in-dark);
 	--button-hover-text: var(--text-normal);
-
-	--italics-text-color: var(--text-normal);
-	--bold-text-color: var(--text-normal);
 }
 
 :root { /* backgrounds */
@@ -476,6 +474,7 @@ MIT License
 	--tag-text-color: var(--secondary-accent-1);
 	--code-color: var(--secondary-accent-1);
 	--finished-task: var(--secondary-accent-1);
+	--secondary-accent-text: var(--secondary-accent-1);
 }
 
 .theme-dark {
@@ -483,9 +482,16 @@ MIT License
 	--tag-text-color: var(--secondary-accent-2);
 	--code-color: var(--secondary-accent-2);
 	--finished-task: var(--secondary-accent-2);
+	--secondary-accent-text: var(--secondary-accent-2);
 }
 
-/* <<< Bold & Italics with Accent */
+/* <<< Bold & Italics Accent */
+.theme-light,
+.theme-dark {
+	--italics-text-color: var(--text-normal);
+	--bold-text-color: var(--text-normal);
+}
+
 .theme-light.strong-em-hover-accent-light {
 	--italics-text-color: var(--hover-accent-2);
 	--bold-text-color: var(--hover-accent-2);
@@ -1105,7 +1111,7 @@ body > .app-container {
 	-webkit-font-variant-numeric: tabular-nums;
 }
 
-/* << Bold & Italics */
+/* << Bold & Italics Styling */
 .cm-em,
 .markdown-preview-view em {
 	color: var(--italics-text-color);
@@ -4472,22 +4478,60 @@ body:not(.no-active-highlight) .cm-active :is(.cm-formatting-header,.cm-formatti
 /* ───────────────────────────────────────────────── */
 /* <<< YAML Frontmatter
 ──────────────────────────────────────────────────── */
+
+/* default look */
 .cm-hmd-frontmatter {
 	font-size: 0.9rem;
-}
-
-body:not(.colored-yaml) .cm-hmd-frontmatter {
 	color: var(--text-muted);
 }
 
+/* the "---"" */
 .cm-def.cm-hmd-frontmatter {
 	letter-spacing: 0.1rem;
+	color: var(--text-muted);
 }
 
-.cm-atom.cm-hmd-frontmatter {
+/* keys */
+.cm-hmd-frontmatter:is(.cm-meta, .cm-atom) {
 	font-weight: 700;
 }
 
+/* <<<< Colorful YAML look */
+
+/* normal text */
+.colored-yaml .cm-hmd-frontmatter {
+	color: var(--text-normal);
+}
+
+/* the "---" */
+.colored-yaml .cm-def.cm-hmd-frontmatter {
+	color: var(--secondary-accent-text);
+}
+
+/* keys */
+.colored-yaml .frontmatter.language-yaml .atrule,
+.colored-yaml .cm-atom.cm-hmd-frontmatter {
+	color: var(--primary-accent-2);
+}
+
+/* punctuation */
+.colored-yaml .cm-hmd-frontmatter.cm-meta,
+.colored-yaml .frontmatter.language-yaml .punctuation {
+	color: var(--bold-text-color);
+}
+
+/* punctuation with uncolored bold/italics in grey, to differentiate it from the yaml value text */
+.colored-yaml:not(.strong-em-hover-accent-light, .strong-em-hover-accent-dark, .strong-em-secondary-accent-light, .strong-em-secondary-accent-dark) :is(.cm-hmd-frontmatter.cm-meta, .frontmatter.language-yaml .punctuation) {
+	color: var(--extra-contrast);
+}
+
+/* boolean in yaml */
+.colored-yaml .frontmatter.language-yaml .boolean,
+.colored-yaml .cm-hmd-frontmatter.cm-keyword {
+	color: var(--secondary-accent-text);
+}
+
+/* misc */
 pre.language-yaml.frontmatter::AFTER {
 	content: "YAML Frontmatter";
 }
@@ -6318,10 +6362,6 @@ pre.language-haskell::AFTER { content: "Haskell" }
 /* fix for default syntax highlighting */
 .theme-light .token.operator {
 	background: transparent;
-}
-
-.language-yaml .key + .punctuation { /* colon after key before value in Frontmatter */
-	color: var(--extra-contrast);
 }
 
 /* stylelint-enable indentation */
@@ -12028,6 +12068,12 @@ settings:
       label: 🔲 Angular
       value: angular-shapes
   -
+   id: colored-yaml
+   title: "Colored YAML Frontmatter (Edit Mode)"
+   description: 'Use colored YAML frontmatter in Edit Mode. (In Reading Mode, YAML Frontmatter is always colored.) Colors in the YAML Frontmatter are determined by accent colors.'
+   type: class-toggle
+   default: false
+  -
    id: preset-color-scheme
    title: "Color Schemes"
    description: 'Select "🌈 Custom Colors" to fully customize background colors and accent colors (soon™️) yourself.'
@@ -12787,7 +12833,7 @@ settings:
   -
    id: code-block-syntax-hl-light-mode
    title: "Syntax Highlighting (Light Mode)"
-   description: Affects Code Blocks, YAML Frontmatter in Preview Mode, and MathJax
+   description: Affects Code Blocks and MathJax
    type: class-select
    allowEmpty: false
    default: default-syntax-highl-light
@@ -13029,12 +13075,6 @@ settings:
    id: no-alternating-rows
    title: Turn off Alternating Row Coloring
    description: Affects Table Rows, Command Palette, Quick Switchers, Side Bar items, and Editor Suggesters.
-   type: class-toggle
-   default: false
-  -
-   id: colored-yaml
-   title: "YAML: Coloring"
-   description: Use colored YAML frontmatter (in Edit Mode).
    type: class-toggle
    default: false
   -
