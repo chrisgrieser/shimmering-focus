@@ -3,6 +3,7 @@ nav_order: 110
 ---
 
 # Changelog
+- 2022-04-19	patch
 - 2022-04-19	new "goal" callout
 - 2022-04-19	fix #143
 - 2022-04-19	✨ new preset color scheme: Gamma
