@@ -3,7 +3,7 @@ nav_order: 110
 ---
 
 # Changelog
-- 2022-04-19	refactoring: color variable re-organization
+- 2022-04-19	✨ new preset color scheme: Gamma
 - 2022-04-18	icons for links to office documents
 - 2022-04-18	add icon to internal links to pdfs in preview mode
 - 2022-04-18	floating metadata scrolls with editor for a bit (fixed instead absolute position)

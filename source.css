@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 1.1348
+Version 1.1349
 Source CSS: https://github.com/chrisgrieser/shimmering-focus/blob/main/source.css
 MIT License
 ──────────────────────────────────────────────────── */
@@ -276,34 +276,33 @@ MIT License
 /* ───────────────────────────────────────────────── */
 /* << Text Colors & Grays
 ──────────────────────────────────────────────────── */
+
 :root { /* default values */
+	--tint-of-grays-light: 220;
 	--tint-of-grays-dark: 220;
-	--tint-of-grays-light: 200;
-	--sat-of-grays: 0%;
+	--sat-of-grays-light: 0%;
+	--sat-of-grays-dark: 0%;
 }
 
 .custom-colors.theme-light.use-gray-tint-light {
-	--sat-of-grays: 15%;
+	--sat-of-grays-light: 15%;
 }
 
 .custom-colors.theme-dark.use-gray-tint-dark {
-	--sat-of-grays: 8%;
+	--sat-of-grays-dark: 8%;
 }
 
 /* calculations */
-.theme-light,
-.theme-dark {
-	--high-sat-of-grays: calc(var(--sat-of-grays) * 4.5);
-	--medium-sat-of-grays: calc(var(--sat-of-grays) * 2);
-}
-
 .theme-light {
+	--high-sat-of-grays: calc(var(--sat-of-grays-light) * 4.5);
+	--medium-sat-of-grays: calc(var(--sat-of-grays-light) * 2);
+
 	--text-normal: hsl(var(--tint-of-grays-light) var(--high-sat-of-grays) 20%);
 	--extra-contrast: hsl(var(--tint-of-grays-light) var(--medium-sat-of-grays) 35%);
-	--text-muted: hsl(var(--tint-of-grays-light) var(--sat-of-grays) 50%);
-	--middle-gray: hsl(var(--tint-of-grays-light) var(--sat-of-grays) 57%);
-	--text-faint: hsl(var(--tint-of-grays-light) var(--sat-of-grays) 60%);
-	--hr-line-gray: hsl(var(--tint-of-grays-light) var(--sat-of-grays) 66%);
+	--text-muted: hsl(var(--tint-of-grays-light) var(--sat-of-grays-light) 50%);
+	--middle-gray: hsl(var(--tint-of-grays-light) var(--sat-of-grays-light) 57%);
+	--text-faint: hsl(var(--tint-of-grays-light) var(--sat-of-grays-light) 60%);
+	--hr-line-gray: hsl(var(--tint-of-grays-light) var(--sat-of-grays-light) 66%);
 
 	--light-in-light-dark-in-dark: hsl(var(--tint-of-grays-light) var(--high-sat-of-grays) 95%);
 	--always-light: var(--light-in-light-dark-in-dark);
@@ -311,12 +310,15 @@ MIT License
 }
 
 .theme-dark {
+	--high-sat-of-grays: calc(var(--sat-of-grays-dark) * 4.5);
+	--medium-sat-of-grays: calc(var(--sat-of-grays-dark) * 2);
+
 	--text-normal: hsl(var(--tint-of-grays-dark) var(--high-sat-of-grays) 87%);
 	--extra-contrast: hsl(var(--tint-of-grays-dark) var(--medium-sat-of-grays) 68%);
-	--text-muted: hsl(var(--tint-of-grays-dark) var(--sat-of-grays) 58%);
-	--middle-gray: hsl(var(--tint-of-grays-dark) var(--sat-of-grays) 49%);
-	--text-faint: hsl(var(--tint-of-grays-dark) var(--sat-of-grays) 40%);
-	--hr-line-gray: hsl(var(--tint-of-grays-dark) var(--sat-of-grays) 60%);
+	--text-muted: hsl(var(--tint-of-grays-dark) var(--sat-of-grays-dark) 58%);
+	--middle-gray: hsl(var(--tint-of-grays-dark) var(--sat-of-grays-dark) 49%);
+	--text-faint: hsl(var(--tint-of-grays-dark) var(--sat-of-grays-dark) 40%);
+	--hr-line-gray: hsl(var(--tint-of-grays-dark) var(--sat-of-grays-dark) 60%);
 
 	--light-in-light-dark-in-dark: hsl(var(--tint-of-grays-dark) var(--high-sat-of-grays) 16%);
 	--always-light: var(--text-normal);
@@ -422,6 +424,11 @@ MIT License
 
 .theme-light,
 .theme-dark {
+	--tint-of-grays-dark: 220;
+	--tint-of-grays-light: 220;
+	--sat-of-grays-light: 0%;
+	--sat-of-grays-dark: 0%;
+
 	--primary-accent-0: var(--purple-0);
 	--primary-accent-1: var(--purple-1);
 	--primary-accent-2: var(--purple-2);
@@ -444,9 +451,7 @@ MIT License
 
 	--bold-italics-1: var(--text-normal);
 	--bold-italics-2: var(--text-normal);
-}
 
-:root { /* backgrounds */
 	--light-h: 220;
 	--dark-h: 220;
 	--dark-s: 5%;
@@ -460,6 +465,18 @@ MIT License
 ──────────────────────────────────────────────────── */
 /* Co-designed with @lkadre */
 .gamma-colors.gamma-colors {
+	--tint-of-grays-light: 260;
+	--tint-of-grays-dark: 260;
+	--sat-of-grays-light: 15%;
+	--sat-of-grays-dark: 8%;
+
+	--light-b: 10%;
+	--light-h: 225;
+	--light-s: 14%;
+	--dark-b: 7%;
+	--dark-h: 225;
+	--dark-s: 4%;
+
 	--primary-accent-0: var(--cyan-blue-0);
 	--primary-accent-1: var(--cyan-blue-1);
 	--primary-accent-2: var(--cyan-blue-2);
@@ -480,8 +497,8 @@ MIT License
 	--secondary-accent-2: var(--orange-alt-2);
 	--secondary-accent-3: var(--orange-alt-3);
 
-	--bold-italics-1: var(--secondary-accent-2);
-	--bold-italics-2: var(--secondary-accent-3);
+	--bold-italics-1: var(--hover-accent-2);
+	--bold-italics-2: var(--hover-accent-3);
 }
 
 /* ───────────────────────────────────────────────── */
@@ -1607,6 +1624,20 @@ body:not(.no-grayed-out-inactive-pane) {
 }
 
 /* VISUAL STYLE */
+/* Dark Eclipse */
+.theme-light { /* stylelint-disable-line no-duplicate-selectors */
+	--cursor-outline-color: hsl(220 10% 80%);
+}
+
+.theme-dark { /* stylelint-disable-line no-duplicate-selectors */
+	--cursor-outline-color: hsl(0 0% 90%);
+}
+
+:is(.cm-cursorLayer .cm-cursor, .CodeMirror-cursor) {
+	--cursor-look: hsl(0 0% 0%);
+	outline: 0.2px solid var(--cursor-outline-color);
+}
+
 /* Shimmering Beam */
 .theme-light.shimmering-beam-cursor {
 	--cursor-look: linear-gradient(hsl(164 100% 55%), hsl(243 80% 84%));
@@ -1623,20 +1654,6 @@ body:not(.no-grayed-out-inactive-pane) {
 
 .theme-dark.ia-writer-cursor {
 	--cursor-look: hsl(196 100% 56%);
-}
-
-/* Dark Eclipse */
-.theme-light { /* stylelint-disable-line no-duplicate-selectors */
-	--cursor-outline-color: hsl(220 10% 80%);
-}
-
-.theme-dark { /* stylelint-disable-line no-duplicate-selectors */
-	--cursor-outline-color: hsl(0 0% 90%);
-}
-
-:is(.cm-cursorLayer .cm-cursor, .CodeMirror-cursor) {
-	--cursor-look: hsl(0 0% 0%);
-	outline: 0.2px solid var(--cursor-outline-color);
 }
 
 /* Fire and Ice */
@@ -10972,7 +10989,8 @@ body:not(.no-animations) .style-settings-heading[data-id="shimmering-focus"]:not
 
 body:not(.use-gray-tint-light) .setting-item:is([data-id="tint-of-grays-light"]),
 body:not(.use-gray-tint-dark) .setting-item:is([data-id="tint-of-grays-dark"]),
-body:not(.custom-colors) .setting-item:is([data-id="custom-color-light-mode"], [data-id="custom-color-dark-mode"]),
+body:not(.custom-colors) .setting-item:is([data-id="custom-color-light-mode"], [data-id="custom-color-light-mode"] + .style-settings-container, [data-id="custom-color-dark-mode"], [data-id="custom-color-dark-mode"] + .style-settings-container),
+body:not(.custom-colors) div:is([data-id="custom-color-light-mode"] + .style-settings-container, [data-id="custom-color-dark-mode"] + .style-settings-container),
 body:not(.show-titlebar) .setting-item[data-id="show-titlebar-text"],
 .no-multi-color-highlights .setting-item:is([data-id="highlight-hue-2"], [data-id="highlight-hue-3"]) {
 	display: none;
@@ -12243,6 +12261,9 @@ settings:
     -
       label: Nord
       value: nord-colors
+    -
+      label: Gamma
+      value: gamma-colors
     -
       label: 🌈 Custom Colors
       value: custom-colors
