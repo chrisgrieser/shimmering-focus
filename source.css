@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 1.1352
+Version 1.1353
 Source CSS: https://github.com/chrisgrieser/shimmering-focus/blob/main/source.css
 MIT License
 ──────────────────────────────────────────────────── */
@@ -429,6 +429,14 @@ MIT License
 	--sat-of-grays-light: 0%;
 	--sat-of-grays-dark: 0%;
 
+	--bg-light-brightness: 12%;
+	--bg-light-hue: 220;
+	--bg-light-sat: 5%;
+
+	--bg-dark-brightness: 5%;
+	--bg-dark-hue: 220;
+	--bg-dark-sat: 5%;
+
 	--primary-accent-0: var(--purple-0);
 	--primary-accent-1: var(--purple-1);
 	--primary-accent-2: var(--purple-2);
@@ -451,13 +459,6 @@ MIT License
 
 	--bold-italics-1: var(--text-normal);
 	--bold-italics-2: var(--text-normal);
-
-	--light-h: 220;
-	--dark-h: 220;
-	--dark-s: 5%;
-	--light-s: 5%;
-	--light-b: 12%;
-	--dark-b: 5%;
 }
 
 /* ───────────────────────────────────────────────── */
@@ -470,12 +471,13 @@ MIT License
 	--sat-of-grays-light: 15%;
 	--sat-of-grays-dark: 8%;
 
-	--light-b: 10%;
-	--light-h: 225;
-	--light-s: 14%;
-	--dark-b: 7%;
-	--dark-h: 225;
-	--dark-s: 4%;
+	--bg-light-brightness: 10%;
+	--bg-light-hue: 225;
+	--bg-light-sat: 14%;
+
+	--bg-dark-brightness: 7%;
+	--bg-dark-hue: 225;
+	--bg-dark-sat: 4%;
 
 	--primary-accent-0: var(--cyan-blue-0);
 	--primary-accent-1: var(--cyan-blue-1);
@@ -507,12 +509,13 @@ MIT License
 
 /* TODO: add accent colors to Nord Theme */
 .nord-colors.nord-colors {
-	--light-h: 220;
-	--dark-h: 220;
-	--light-s: 20%;
-	--dark-s: 20%;
-	--light-b: 13%;
-	--dark-b: 9%;
+	--bg-light-brightness: 13%;
+	--bg-light-hue: 220;
+	--bg-light-sat: 20%;
+
+	--bg-dark-brightness: 9%;
+	--bg-dark-hue: 220;
+	--bg-dark-sat: 20%;
 }
 
 /* ───────────────────────────────────────────────── */
@@ -617,62 +620,62 @@ MIT License
 /* << Background Color Calculations
 ──────────────────────────────────────────────────── */
 
-.custom-colors.custom-colors {
-	--light-h: var(--light-hue);
-	--dark-h: var(--dark-hue);
-	--light-s: var(--light-sat);
-	--dark-s: var(--dark-sat);
-	--light-b: var(--brightness-light);
-	--dark-b: var(--brightness-dark);
+.custom-colors.custom-colors {  /* get colors from style settings */
+	--bg-light-brightness: var(--brightness-light);
+	--bg-light-hue: var(--light-hue);
+	--bg-light-sat: var(--bg-light-satat);
+	--bg-dark-hue: var(--bg-dark-hueue);
+	--bg-dark-sat: var(--bg-dark-satat);
+	--bg-dark-brightness: var(--brightness-dark);
 }
 
 .theme-light {
-	--brightness-light-1: calc(var(--light-b) + 82%);
-	--brightness-light-2: calc(var(--light-b) + 78%);
-	--brightness-light-3: calc(var(--light-b) + 73%);
+	--brightness-light-1: calc(var(--bg-light-brightness) + 82%);
+	--brightness-light-2: calc(var(--bg-light-brightness) + 78%);
+	--brightness-light-3: calc(var(--bg-light-brightness) + 73%);
 
 	--sat-correction: 5%;
-	--sat-light-1: calc(calc(var(--light-s) + var(--sat-correction)) * 2);
-	--sat-light-2: calc(calc(var(--light-s) + var(--sat-correction)) * 1.7);
-	--sat-light-3: calc(calc(var(--light-s) + var(--sat-correction)) * 1.4);
+	--sat-light-1: calc(calc(var(--bg-light-sat) + var(--sat-correction)) * 2);
+	--sat-light-2: calc(calc(var(--bg-light-sat) + var(--sat-correction)) * 1.7);
+	--sat-light-3: calc(calc(var(--bg-light-sat) + var(--sat-correction)) * 1.4);
 
-	--bg1: hsl(var(--light-h) var(--sat-light-1) var(--brightness-light-1));
-	--bg2: hsl(var(--light-h) var(--sat-light-2) var(--brightness-light-2));
-	--bg3: hsl(var(--light-h) var(--sat-light-3) var(--brightness-light-3));
+	--bg1: hsl(var(--bg-light-hue) var(--sat-light-1) var(--brightness-light-1));
+	--bg2: hsl(var(--bg-light-hue) var(--sat-light-2) var(--brightness-light-2));
+	--bg3: hsl(var(--bg-light-hue) var(--sat-light-3) var(--brightness-light-3));
 
-	--heading-bg: hsl(var(--light-h) calc(var(--sat-light-3) * 0.8) calc(var(--brightness-light-3) - 1%));
-	--alt-bg: hsl(var(--light-h) calc(var(--sat-light-3) * 1.1) calc(var(--brightness-light-2) - 2%));
-	--notice-bg: hsl(var(--light-h) calc(var(--sat-light-3) * 0.8) calc(var(--brightness-light-3) + 3%));
-	--resize-handle-color: hsl(var(--light-h) var(--sat-light-2) calc(var(--brightness-light-2) - 1%));
-	--suggester-b-row: hsl(var(--light-h) var(--sat-light-2) calc(var(--brightness-light-1) - 3%));
-	--muted-border-color: hsl(var(--light-h) var(--sat-light-3) calc(var(--brightness-light-3) + 3%));
-	--basic-border-color: hsl(var(--light-h) var(--sat-light-3) calc(var(--brightness-light-3) - 5%));
-	--backdrop-color: hsl(var(--light-h) 20% calc(var(--brightness-light-3) - 50%));
+	--heading-bg: hsl(var(--bg-light-hue) calc(var(--sat-light-3) * 0.8) calc(var(--brightness-light-3) - 1%));
+	--alt-bg: hsl(var(--bg-light-hue) calc(var(--sat-light-3) * 1.1) calc(var(--brightness-light-2) - 2%));
+	--notice-bg: hsl(var(--bg-light-hue) calc(var(--sat-light-3) * 0.8) calc(var(--brightness-light-3) + 3%));
+	--resize-handle-color: hsl(var(--bg-light-hue) var(--sat-light-2) calc(var(--brightness-light-2) - 1%));
+	--suggester-b-row: hsl(var(--bg-light-hue) var(--sat-light-2) calc(var(--brightness-light-1) - 3%));
+	--muted-border-color: hsl(var(--bg-light-hue) var(--sat-light-3) calc(var(--brightness-light-3) + 3%));
+	--basic-border-color: hsl(var(--bg-light-hue) var(--sat-light-3) calc(var(--brightness-light-3) - 5%));
+	--backdrop-color: hsl(var(--bg-light-hue) 20% calc(var(--brightness-light-3) - 50%));
 	--muted-button-bg: var(--bg2);
 }
 
 .theme-dark {
-	--brightness-dark-1: calc(var(--dark-b) + 11%);
-	--brightness-dark-2: calc(var(--dark-b) + 7%);
-	--brigtness-dark-3: calc(var(--dark-b) + 2%);
+	--brightness-dark-1: calc(var(--bg-dark-brightness) + 11%);
+	--brightness-dark-2: calc(var(--bg-dark-brightness) + 7%);
+	--brigtness-dark-3: calc(var(--bg-dark-brightness) + 2%);
 
 	--sat-correction: 1%;
-	--sat-dark-1: calc(calc(var(--dark-s) + var(--sat-correction)) * 1.1);
-	--sat-dark-2: calc(calc(var(--dark-s) + var(--sat-correction)) * 1.5);
-	--sat-dark-3: calc(calc(var(--dark-s) + var(--sat-correction)) * 2);
+	--sat-dark-1: calc(calc(var(--bg-dark-sat) + var(--sat-correction)) * 1.1);
+	--sat-dark-2: calc(calc(var(--bg-dark-sat) + var(--sat-correction)) * 1.5);
+	--sat-dark-3: calc(calc(var(--bg-dark-sat) + var(--sat-correction)) * 2);
 
-	--bg1: hsl(var(--dark-h) var(--sat-dark-1) var(--brightness-dark-1));
-	--bg2: hsl(var(--dark-h) var(--sat-dark-2) var(--brightness-dark-2));
-	--bg3: hsl(var(--dark-h) var(--sat-dark-3) var(--brigtness-dark-3));
+	--bg1: hsl(var(--bg-dark-hue) var(--sat-dark-1) var(--brightness-dark-1));
+	--bg2: hsl(var(--bg-dark-hue) var(--sat-dark-2) var(--brightness-dark-2));
+	--bg3: hsl(var(--bg-dark-hue) var(--sat-dark-3) var(--brigtness-dark-3));
 
-	--heading-bg: hsl(var(--dark-h) calc(var(--sat-dark-1) * 0.5) calc(var(--brightness-dark-1) + 5%));
-	--alt-bg: hsl(var(--dark-h) calc(var(--sat-dark-1) * 1.6) calc(var(--brightness-dark-2) - 2%));
-	--notice-bg: hsl(var(--dark-h) calc(var(--sat-dark-1) * 0.8) calc(var(--brightness-dark-2) - 1%));
-	--resize-handle-color: hsl(var(--dark-h)  var(--sat-dark-2) calc(var(--brightness-dark-2) - 1%));
-	--suggester-b-row: hsl(var(--dark-h)  var(--sat-dark-1) calc(var(--brightness-dark-1) - 2%));
-	--muted-border-color: hsl(var(--dark-h) var(--sat-dark-1) calc(var(--brightness-dark-1) - 6%));
-	--basic-border-color: hsl(var(--dark-h) var(--sat-dark-1) calc(var(--brightness-dark-1) + 6%));
-	--backdrop-color: hsl(var(--dark-h) 20% calc(var(--brigtness-dark-3) - 10%));
+	--heading-bg: hsl(var(--bg-dark-hue) calc(var(--sat-dark-1) * 0.5) calc(var(--brightness-dark-1) + 5%));
+	--alt-bg: hsl(var(--bg-dark-hue) calc(var(--sat-dark-1) * 1.6) calc(var(--brightness-dark-2) - 2%));
+	--notice-bg: hsl(var(--bg-dark-hue) calc(var(--sat-dark-1) * 0.8) calc(var(--brightness-dark-2) - 1%));
+	--resize-handle-color: hsl(var(--bg-dark-hue)  var(--sat-dark-2) calc(var(--brightness-dark-2) - 1%));
+	--suggester-b-row: hsl(var(--bg-dark-hue)  var(--sat-dark-1) calc(var(--brightness-dark-1) - 2%));
+	--muted-border-color: hsl(var(--bg-dark-hue) var(--sat-dark-1) calc(var(--brightness-dark-1) - 6%));
+	--basic-border-color: hsl(var(--bg-dark-hue) var(--sat-dark-1) calc(var(--brightness-dark-1) + 6%));
+	--backdrop-color: hsl(var(--bg-dark-hue) 20% calc(var(--brigtness-dark-3) - 10%));
 	--muted-button-bg: var(--bg2);
 }
 
@@ -685,8 +688,8 @@ MIT License
 
 .theme-light,
 .theme-dark {
-	--longform-light-hue: calc(var(--light-h) + var(--longform-hue-shift));
-	--longform-dark-hue: calc(var(--dark-h) + var(--longform-hue-shift));
+	--longform-light-hue: calc(var(--bg-light-hue) + var(--longform-hue-shift));
+	--longform-dark-hue: calc(var(--bg-dark-hue) + var(--longform-hue-shift));
 }
 
 .theme-light :is(.writing, .longform-leaf) {
@@ -749,9 +752,6 @@ MIT License
 /* <<< Fixed Colors
 ──────────────────────────────────────────────────── */
 :root {
-	--highlight-hue-1: 60; /* yellow */
-	--highlight-hue-2: 150; /* green */
-	--highlight-hue-3: 185; /* cyan */
 	--active-line-bg: hsl(62 11% 63% / 15%);
 }
 
@@ -887,12 +887,12 @@ body:is(.theme-light, .theme-dark) {
 }
 
 .theme-light {
-	--notice-border: 2px solid hsl(var(--light-h) var(--sat-light-3) 55%);
+	--notice-border: 2px solid hsl(var(--bg-light-hue) var(--sat-light-3) 55%);
 	--search-match-outline: 2px solid var(--search-match-color);
 }
 
 .theme-dark {
-	--notice-border: 2px solid hsl(var(--dark-h) var(--sat-dark-1) 45%);
+	--notice-border: 2px solid hsl(var(--bg-dark-hue) var(--sat-dark-1) 45%);
 	--search-match-outline: 1px solid var(--search-match-color);
 }
 
@@ -1224,12 +1224,12 @@ body > .app-container {
 }
 
 /* << Bold & Italics Styling */
-.cm-em.cm-em.cm-em.cm-em.cm-em,
+.cm-em.cm-em.cm-em.cm-em.cm-em:not(.cm-highlight),
 .markdown-preview-view.markdown-preview-view em {
 	color: var(--italics-text-color);
 }
 
-.cm-strong.cm-strong.cm-strong.cm-strong.cm-strong,
+.cm-strong.cm-strong.cm-strong.cm-strong.cm-strong:not(.cm-highlight),
 .markdown-preview-view.markdown-preview-view strong {
 	font-weight: 800;
 	color: var(--bold-text-color);
@@ -7026,7 +7026,12 @@ li[data-task="x"] > .task-list-item-checkbox:hover {
 mark,
 .cm-highlight,
 .style-settings-container {
+	--highlight-hue-1: 60; /* yellow */
+	--highlight-hue-2: 150; /* green */
+	--highlight-hue-3: 185; /* cyan */
+
 	--highlight-sla-values: 100% 50% / 30%;
+
 	--highlight-color-1: hsl(var(--highlight-hue-1) var(--highlight-sla-values));
 	--highlight-color-2: hsl(var(--highlight-hue-2) var(--highlight-sla-values));
 	--highlight-color-3: hsl(var(--highlight-hue-3) var(--highlight-sla-values));
@@ -7045,14 +7050,14 @@ mark {
 /* thanks to @Atlas for this snippet */
 /* https://discord.com/channels/686053708261228577/702656734631821413/881443661269827656 */
 
-/* *== ==* */
+/* Alternative 1) *== ==* */
 body:not(.no-multi-color-highlights) :is(em > mark, .cm-em.cm-highlight) {
 	font-style: initial;
 	text-shadow: none;
 	background-color: var(--highlight-color-2);
 }
 
-/* **== ==** */
+/* Alternative 2) **== ==** */
 body:not(.no-multi-color-highlights) :is(strong > mark, .cm-strong.cm-highlight) {
 	font-weight: 500;
 	text-rendering: initial;
@@ -8998,14 +9003,14 @@ https://forum.obsidian.md/t/inline-code-occludes-text-selection-and-vim-cursor/1
 
 /* stylelint-disable no-duplicate-selectors */
 .theme-light {
-	--kanban-background: hsl(var(--light-h) var(--sat-light-3) calc(var(--brightness-light-2) + 1%));
-	--active-hover-kanban-item: hsl(var(--light-h) var(--sat-light-3) calc(var(--brightness-light-1) - 5%));
+	--kanban-background: hsl(var(--bg-light-hue) var(--sat-light-3) calc(var(--brightness-light-2) + 1%));
+	--active-hover-kanban-item: hsl(var(--bg-light-hue) var(--sat-light-3) calc(var(--brightness-light-1) - 5%));
 	--dot-color: hsl(0 0% 50% / 20%);
 }
 
 .theme-dark {
-	--kanban-background: hsl(var(--dark-h) calc(var(--sat-dark-1) * 0.85) calc(var(--brightness-dark-1) + 2%));
-	--active-hover-kanban-item: hsl(var(--dark-h) var(--sat-dark-1) calc(var(--brightness-dark-1) + 6%));
+	--kanban-background: hsl(var(--bg-dark-hue) calc(var(--sat-dark-1) * 0.85) calc(var(--brightness-dark-1) + 2%));
+	--active-hover-kanban-item: hsl(var(--bg-dark-hue) var(--sat-dark-1) calc(var(--brightness-dark-1) + 6%));
 	--dot-color: hsl(0 0% 0% / 20%);
 }
 
@@ -9600,11 +9605,11 @@ div#select-projects select,
 
 /* alternating row colors, factoring in the coloring */
 .theme-light #scene-list {
-	--scene-list-b-row: hsl(var(--light-h) var(--sat-light-2) calc(var(--brightness-light-2) - 2%));
+	--scene-list-b-row: hsl(var(--bg-light-hue) var(--sat-light-2) calc(var(--brightness-light-2) - 2%));
 }
 
 .theme-dark #scene-list {
-	--scene-list-b-row: hsl(var(--dark-h) var(--sat-dark-2) calc(var(--brightness-dark-2) - 2%));
+	--scene-list-b-row: hsl(var(--bg-dark-hue) var(--sat-dark-2) calc(var(--brightness-dark-2) - 2%));
 }
 
 #scene-list li:nth-child(even) .scene-container[data-scene-path*="/_"]::BEFORE {
