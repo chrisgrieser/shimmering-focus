@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 1.1353
+Version 1.1354
 Source CSS: https://github.com/chrisgrieser/shimmering-focus/blob/main/source.css
 MIT License
 ──────────────────────────────────────────────────── */
@@ -2352,6 +2352,11 @@ p.mod-warning::BEFORE {
 	margin-right: 4px;
 }
 
+.mod-settings .mod-warning:not(button)::BEFORE {
+	content: var(--error-symbol);
+	padding-right: 5px;
+}
+
 /* ───────────────────────────────────────────────── */
 /* << Toggles
 ──────────────────────────────────────────────────── */
@@ -3647,11 +3652,6 @@ input:is([type="email"], [type="password"]) {
 /* kofi buttons */
 .kofi-button {
 	margin-top: 20px;
-}
-
-.mod-settings .mod-warning::BEFORE {
-	content: var(--error-symbol);
-	padding-right: 5px;
 }
 
 /* ───────────────────────────────────────────────── */
@@ -11146,7 +11146,7 @@ object.link-favicon {
 /* line height of blockquotes does not move favicon,
 therefore this fix is needed */
 body:not(.normal-blockquotes) :is(blockquote, .HyperMD-quote.HyperMD-quote-1) .link-favicon {
-	margin-bottom: 8px;
+	/* margin-bottom: 8px; */
 }
 
 .kanban-plugin__board .link-favicon {
