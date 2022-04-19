@@ -3,7 +3,7 @@ nav_order: 110
 ---
 
 # Changelog
-- 2022-04-20	patch
+- 2022-04-20	increased delay for image zoom via hover
 - 2022-04-19	refactor: reorganized background color var names
 - 2022-04-19	new "goal" callout
 - 2022-04-19	fix #143
