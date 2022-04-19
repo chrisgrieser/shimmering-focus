@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 1.1349
+Version 1.1350
 Source CSS: https://github.com/chrisgrieser/shimmering-focus/blob/main/source.css
 MIT License
 ──────────────────────────────────────────────────── */
@@ -1625,18 +1625,21 @@ body:not(.no-grayed-out-inactive-pane) {
 
 /* VISUAL STYLE */
 /* Dark Eclipse */
-.theme-light { /* stylelint-disable-line no-duplicate-selectors */
+/* stylelint-disable no-duplicate-selectors */
+.theme-light {
 	--cursor-outline-color: hsl(220 10% 80%);
 }
 
-.theme-dark { /* stylelint-disable-line no-duplicate-selectors */
+.theme-dark {
 	--cursor-outline-color: hsl(0 0% 90%);
 }
 
-:is(.cm-cursorLayer .cm-cursor, .CodeMirror-cursor) {
+.theme-light,
+.theme-dark {
 	--cursor-look: hsl(0 0% 0%);
 	outline: 0.2px solid var(--cursor-outline-color);
 }
+/* stylelint-enable no-duplicate-selectors */
 
 /* Shimmering Beam */
 .theme-light.shimmering-beam-cursor {
@@ -1689,7 +1692,7 @@ body:not(.no-grayed-out-inactive-pane) {
 }
 
 @keyframes inversion-blink {
-	50% { filter: invert(1) }
+	50% { filter: invert(0.8) }
 }
 
 .phase-blink-cursor :is(.cm-cursorLayer .cm-cursor, .CodeMirror-cursor) {
@@ -12782,7 +12785,7 @@ settings:
   -
    id: image-size
    title: Size of Images
-   description: Size of Images in % (without Max With or Image Zoom)
+   description: Size of Images in % (without Max View or Image Zoom)
    type: variable-number-slider
    default: 50
    min: 10
@@ -12791,7 +12794,7 @@ settings:
   -
    id: pdf-size
    title: Size of embedded PDFs
-   description: Size of embedded PDFs in % (without Max With or Image Zoom)
+   description: Size of embedded PDFs in % (without Max View or Image Zoom)
    type: variable-number-slider
    default: 50
    min: 10

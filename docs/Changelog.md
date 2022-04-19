@@ -3,6 +3,7 @@ nav_order: 110
 ---
 
 # Changelog
+- 2022-04-19	fix #143
 - 2022-04-19	✨ new preset color scheme: Gamma
 - 2022-04-18	icons for links to office documents
 - 2022-04-18	add icon to internal links to pdfs in preview mode
