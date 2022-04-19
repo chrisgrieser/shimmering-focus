@@ -50,6 +50,10 @@ The Sidenote Callout width and outdention is customizable in the Style Settings.
 > [!PHONE]
 ```
 
+```md
+> [!GOAL]
+```
+
 ## CSS Classes
 
 ### How to use CSS Classes

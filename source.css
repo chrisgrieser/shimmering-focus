@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 1.1350
+Version 1.1351
 Source CSS: https://github.com/chrisgrieser/shimmering-focus/blob/main/source.css
 MIT License
 ──────────────────────────────────────────────────── */
@@ -5896,6 +5896,11 @@ div[data-callout].is-collapsible.is-collapsed .callout-title {
 .callout[data-callout="phone"] {
 	--callout-icon: phone;
 	--callout-color: 255, 179, 68;
+}
+
+.callout[data-callout="goal"] {
+	--callout-icon: flag;
+	--callout-color: 202, 164, 255;
 }
 
 /* <<< Sidenote Callouts */
