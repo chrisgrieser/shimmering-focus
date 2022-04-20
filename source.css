@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 1.1360
+Version 1.1361
 Source CSS: https://github.com/chrisgrieser/shimmering-focus/blob/main/source.css
 MIT License
 ──────────────────────────────────────────────────── */
@@ -3644,6 +3644,7 @@ input:is([type="email"], [type="password"]) {
 	font-size: calc(0.75 * var(--font-text-size));
 }
 
+/* "Press Hotkey" */
 .setting-hotkey.mod-active {
 	font-weight: 600;
 	color: var(--button-hover-text);
