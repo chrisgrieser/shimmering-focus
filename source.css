@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 1.1361
+Version 1.1362
 Source CSS: https://github.com/chrisgrieser/shimmering-focus/blob/main/source.css
 MIT License
 ──────────────────────────────────────────────────── */
@@ -5003,9 +5003,9 @@ and Footnotes */
 /* <<< Collapse Indicators
 ──────────────────────────────────────────────────── */
 /* hide collapse indicators until hovered/active line */
-body:not(.permanently-show-collapse-indicators) :is(div, ul):not(.is-collapsed) > :is(li, h1, h2, h3, h4, h5, h6):not(:hover) > .collapse-indicator,
+body:not(.permanently-show-collapse-indicators) :is(div, ul, ol):not(.is-collapsed) > :is(li, h1, h2, h3, h4, h5, h6):not(:hover) > .collapse-indicator,
 body:not(.permanently-show-collapse-indicators) .cm-line:not(:hover):not(.cm-active) div:not(.is-collapsed) > .collapse-indicator {
-	opacity: 0;
+	/* opacity: 0; */
 }
 
 :is(.HyperMD-header, .HyperMD-list-line) .collapse-indicator.collapse-icon.collapse-icon {
@@ -5036,7 +5036,8 @@ body:not(.permanently-show-collapse-indicators) .cm-line:not(:hover):not(.cm-act
 }
 
 .list-collapse-indicator.list-collapse-indicator.list-collapse-indicator {
-	margin-left: -54px;
+	margin-top: -1px;
+	margin-left: -62px;
 }
 
 /* line numbers moved to allow for more space for collapse indicators */
