@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 1.1367
+Version 1.1368
 Source CSS: https://github.com/chrisgrieser/shimmering-focus/blob/main/source.css
 MIT License
 ──────────────────────────────────────────────────── */
@@ -290,7 +290,7 @@ MIT License
 }
 
 .custom-colors.theme-dark.use-gray-tint-dark {
-	--sat-of-grays-dark: 8%;
+	--sat-of-grays-dark: 6%;
 }
 
 /* calculations */
@@ -758,7 +758,7 @@ MIT License
 }
 
 .theme-light {
-	--search-match-color: hsl(30 100% 50%);
+	--search-match-color: hsl(30 100% 45%);
 	--text-error: hsl(0 100% 25%);
 	--error-bg: hsl(0 80% 85%);
 	--sucess-color: hsl(101 90% 40%);
@@ -1379,7 +1379,7 @@ svg.pencil {
 	-webkit-mask-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' preserveAspectRatio='xMidYMid meet' viewBox='0 0 24 24'%3e%3cpath d='M18.988 2.012l3 3L19.701 7.3l-3-3zM8 16h3l7.287-7.287l-3-3L8 13z' fill='currentColor'/%3e%3cpath d='M19 19H8.158c-.026 0-.053.01-.079.01c-.033 0-.066-.009-.1-.01H5V5h6.847l2-2H5c-1.103 0-2 .896-2 2v14c0 1.104.897 2 2 2h14a2 2 0 0 0 2-2v-8.668l-2 2V19z' fill='currentColor'/%3e%3c/svg%3e");
 }
 
-/* preview mode */
+/* Reading Mode */
 svg.reading-glasses > path { display: none }
 
 svg.reading-glasses {
@@ -1609,10 +1609,14 @@ body:not(.no-grayed-out-inactive-pane) {
 .cm-cursorLayer .cm-cursor,
 .CodeMirror-cursor {
 	width: 3px;
+
 	background: var(--cursor-look);
+
 	border: none;
+
 	animation-iteration-count: infinite;
 	animation-timing-function: ease-in-out;
+	outline: var(--cursor-outline);
 }
 
 /* Cursor Shape */
@@ -1639,50 +1643,57 @@ body:not(.no-grayed-out-inactive-pane) {
 .theme-light,
 .theme-dark {
 	--cursor-look: hsl(0 0% 0%);
-	outline: 0.2px solid var(--cursor-outline-color);
+	--cursor-outline: 1px solid var(--cursor-outline-color);
 }
+
 /* stylelint-enable no-duplicate-selectors */
 
 /* Shimmering Beam */
 .theme-light.shimmering-beam-cursor {
 	--cursor-look: linear-gradient(hsl(164 100% 55%), hsl(243 80% 84%));
+	--cursor-outline: 0;
 }
 
 .theme-dark.shimmering-beam-cursor {
 	--cursor-look: linear-gradient(hsl(164 100% 45%), hsl(243 66% 76%));
+	--cursor-outline: 0;
 }
 
 /* iA Writer */
 .theme-light.ia-writer-cursor {
 	--cursor-look: hsl(196 100% 48%);
+	--cursor-outline: 0;
 }
 
 .theme-dark.ia-writer-cursor {
 	--cursor-look: hsl(196 100% 56%);
+	--cursor-outline: 0;
 }
 
 /* Fire and Ice */
 .theme-light.fire-and-ice-cursor {
 	--cursor-look: linear-gradient(to right, hsl(10 100% 70%) 50%, hsl(205 100% 65%) 50%);
+	--cursor-outline: 0;
 }
 
 .theme-dark.fire-and-ice-cursor {
 	--cursor-look: linear-gradient(to right, hsl(22 100% 50%) 50%, hsl(216 100% 65%) 50%);
+	--cursor-outline: 0;
 }
 
 /* Blink Styles */
 @keyframes phase-blink {
 	15% {
 		background-color: var(--cursor-look);
-		outline-color: var(--cursor-outline-color);
+		outline: var(--cursor-outline);
 	}
 	50% {
 		background-color: transparent;
-		outline-color: transparent;
+		outline: 0;
 	}
 	85% {
 		background-color: var(--cursor-look);
-		outline-color: var(--cursor-outline-color);
+		outline: var(--cursor-outline);
 	}
 }
 
@@ -1694,7 +1705,7 @@ body:not(.no-grayed-out-inactive-pane) {
 }
 
 @keyframes inversion-blink {
-	50% { filter: invert(0.8) }
+	50% { filter: invert(1) }
 }
 
 .phase-blink-cursor :is(.cm-cursorLayer .cm-cursor, .CodeMirror-cursor) {
@@ -2656,7 +2667,7 @@ body:not(.no-search-result-indicator) .obsidian-search-match-highlight::BEFORE {
 	z-index: 5;
 }
 
-/* preview mode */
+/* Reading Mode */
 body .markdown-preview-view .search-highlight > div {
 	background: none;
 	outline: var(--search-match-outline);
@@ -5408,7 +5419,7 @@ body:not(.max-view-enabled) .mod-root .markdown-source-view.mod-cm6.is-readable-
 
 /* <<< Images (Max View) */
 
-/* Images Preview Mode */
+/* Images Reading Mode */
 .max-view-enabled:not(.is-mobile) .mod-left-split.is-collapsed ~ .mod-root .view-content .markdown-preview-view img {
 	max-width: 100%;
 	cursor: default;
@@ -5468,7 +5479,7 @@ body.focus-view-enabled .mod-left-split.is-collapsed ~ .mod-right-split {
 ──────────────────────────────────────────────────── */
 
 /* because Obsidian does not use it's own
-heading variables in Preview mode, lol? */
+heading variables in Reading Mode, lol? */
 .markdown-rendered h1 { font-size: var(--h1) }
 .markdown-rendered h2 { font-size: var(--h2) }
 .markdown-rendered h3 { font-size: var(--h3) }
@@ -5498,7 +5509,7 @@ heading variables in Preview mode, lol? */
 }
 
 .markdown-source-view:not(.is-live-preview) .cm-header {
-	line-height: 1.3em;
+	line-height: 1.2em;
 }
 
 .markdown-source-view .HyperMD-header {
@@ -5576,7 +5587,7 @@ body:not(.no-heading-bg) .cm-formatting-header {
 	border-color: var(--hr-line-gray);
 }
 
-/* Preview Mode */
+/* Reading Mode */
 body:not(.no-heading-bg) .mod-root .view-content > div:not(.kanban-plugin) :is(h1, h2, h3, h4, h5, h6) {
 	padding-top: 2px;
 	padding-bottom: 2px;
@@ -5693,7 +5704,7 @@ body:not(.active-line-emphasized-bg):not(.no-active-highlight) .HyperMD-quote:is
 	border-color: var(--alt-bg);
 }
 
-/* Preview Mode */
+/* Reading Mode */
 .markdown-preview-view blockquote {
 	background-color: var(--blockquote-color);
 	padding: 0.35em 0.8em 0.5em 0.7em;
@@ -6251,7 +6262,7 @@ div.HyperMD-codeblock-bg:not(.HyperMD-codeblock-begin-bg) {
 	border-bottom-left-radius: var(--codeblock-roundness);
 }
 
-/* Code Blocks in Preview Mode */
+/* Code Blocks in Reading Mode */
 .markdown-preview-view.markdown-preview-view pre {
 	background-color: var(--code-block-bg);
 
@@ -6550,6 +6561,10 @@ pre.language-haskell::AFTER { content: "Haskell" }
 	background: transparent;
 }
 
+.theme-light code[class*="language-"] {
+	text-shadow: none;
+}
+
 /* stylelint-enable indentation */
 /* ───────────────────────────────────────────────── */
 /* << Lists
@@ -6666,9 +6681,14 @@ body:not(.show-urls) .cm-s-obsidian:not(.is-live-preview) .cm-line:not(.cm-activ
 	top: 2px;
 }
 
-/* remove icon */
-.external-link {
+/* external link icon */
+body:not(.show-external-link-icon) .external-link {
 	background-image: none;
+}
+
+.show-external-link-icon .external-link {
+	background-position-y: 0.3em;
+	background-image: var(--external-url);
 }
 
 /* don't underline the formatting */
@@ -7028,7 +7048,7 @@ body:not(.hide-trailing-whitespace) .cm-trailing-space-new-line::BEFORE {
 	text-decoration: none;
 }
 
-/* Preview mode / LP */
+/* Reading Mode / LP */
 /* https://forum.obsidian.md/t/meta-post-common-css-hacks/1978/34 */
 input.task-list-item-checkbox[type="checkbox"] {
 	background-color: unset;
@@ -7175,7 +7195,7 @@ body:not(.permanently-show-block-ids) .cm-line:not(.cm-active, :hover) .cm-block
 
 /* footnotes-references in text */
 
-/* Stop footnotes in Preview mode affecting line height */
+/* Stop footnotes in Reading Mode affecting line height */
 sup {
 	font-size: 0.75em;
 	top: -0.3em;
@@ -8624,7 +8644,7 @@ body:not(.move-plugin-name-to-left):not(.is-mobile) .better-command-palette .sug
 ──────────────────────────────────────────────────── */
 
 /* file type links
-(in preview mode done without this plugin, see link section) */
+(in Reading Mode done without this plugin, see link section) */
 .data-link-icon[data-link-path$=".pdf"]::BEFORE {
 	content: "📕 ";
 }
@@ -8700,7 +8720,7 @@ body:not(.no-built-in-supercharged-links) .workspace-split.mod-root :is([data-li
 /* << Emoji Toolbar
 ──────────────────────────────────────────────────── */
 /* Having "Twitter emojis" enabled turns all emojis
-into images in Preview Mode. Therefore, image-styling
+into images in Reading Mode. Therefore, image-styling
 has to be reset. */
 
 img.emoji.emoji.emoji.emoji.emoji {
@@ -11196,10 +11216,15 @@ object.link-favicon {
 	margin: 0 4px 2px 0;
 }
 
+/* remove external url icon */
+.external-link[data-favicon="true"] {
+	background-image: none;
+}
+
 /* line height of blockquotes does not move favicon,
 therefore this fix is needed */
-body:not(.normal-blockquotes) :is(blockquote, .HyperMD-quote.HyperMD-quote-1) .link-favicon {
-	/* margin-bottom: 8px; */
+body:not(.normal-blockquotes) .HyperMD-quote.HyperMD-quote-1 .link-favicon {
+	margin-bottom: 8px;
 }
 
 .kanban-plugin__board .link-favicon {
@@ -12027,6 +12052,37 @@ and file recovery plugin */
 /* ───────────────────────────────────────────────── */
 /* << Omnisearch
 ──────────────────────────────────────────────────── */
+.omnisearch-modal .modal-title {
+	display: none;
+}
+
+.omnisearch-modal .omnisearch-result__counter {
+	font-family: var(--font-monospace-theme);
+	font-size: 0.75em;
+
+	background-color: var(--bg3);
+
+	position: relative;
+	top: -1px;
+
+	padding: 0 2px;
+
+	border: var(--thin-border);
+}
+
+body:not(.no-alternating-rows) .omnisearch-result:nth-child(odd) .omnisearch-result__counter::AFTER {
+	background-color: var(--suggester-b-row);
+}
+
+.omnisearch-result.omnisearch-result.omnisearch-result.omnisearch-result:is(:hover, .is-selected) .omnisearch-result__counter::AFTER {
+	background-color: var(--bg3);
+}
+
+.omnisearch-modal .suggestion-highlight.suggestion-highlight {
+	font-weight: 600;
+	color: var(--search-match-color);
+}
+
 .omnisearch-modal.prompt {
 	max-height: 90%;
 	width: 900px;
@@ -12178,7 +12234,7 @@ settings:
    default: false
   -
    id: no-floating-metadata
-   title: 🆕 Permanently show the Metadata Block / YAML Frontmatter in Preview Mode
+   title: 🆕 Permanently show the Metadata Block / YAML Frontmatter in Reading Mode
    type: class-toggle
    description: 'By default, the metadata block in this theme only becomes visible upon hovering the "M" / "Y" in the top right. You can also add the cssclass "no-floating-metadata" to a note to permanently show the meta on that specific note.'
    default: false
@@ -12245,6 +12301,12 @@ settings:
    title: 'Permanently show full URLs (Source Mode)'
    type: class-toggle
    description: In Source Mode, URLs will be folded except for the active line. Enable this to permanently show the full URL.
+   default: false
+  -
+   id: show-external-link-icon
+   title: 'Re-enable the external link icon (Reading Mode)'
+   type: class-toggle
+   description: 'In Reading Mode, external links are distinguishable from internal link since they the former have a single underline, while the latter have double underlines. Enable this, to additionaly use an icon to indicate external links. (Note that the icon will always be hidden when using the Link Favicon Plugin.)'
    default: false
   -
    id: permanently-show-blockids
@@ -12733,7 +12795,7 @@ settings:
    default: false
   -
    id: blockquotes-left-aligned
-   title: Left-aligned Blockquote Text (Preview Mode)
+   title: Left-aligned Blockquote Text (Reading Mode)
    description: Use left-aligned text in blockquotes instead of justified text.
    type: class-toggle
    default: false
@@ -12793,7 +12855,7 @@ settings:
    default: false
   -
    id: tags-in-gutter
-   title: 🆕 Show Tags in Gutter (Preview Mode)
+   title: 🆕 Show Tags in Gutter (Reading Mode)
    description: 'Can also be selectively enabled per note by adding the cssclass "tags-in-gutter".'
    type: class-toggle
    default: false
@@ -13069,7 +13131,7 @@ settings:
    step: 1
   -
    id: no-code-block-wrapping
-   title: Disable Line Wrapping in Code Blocks (Preview Mode)
+   title: Disable Line Wrapping in Code Blocks (Reading Mode)
    description: This setting is independent from the global Obsidian setting for Line Wrapping.
    type: class-toggle
    default: false
@@ -13090,7 +13152,7 @@ settings:
   -
    id: code-block-syntax-hl-dark-mode
    title: "Syntax Highlighting (Dark Mode)"
-   description: Affects Code Blocks, YAML Frontmatter in Preview Mode, and MathJax
+   description: Affects Code Blocks, YAML Frontmatter in Reading Mode, and MathJax
    type: class-select
    allowEmpty: false
    default: default-syntax-highl-dark
@@ -13259,8 +13321,8 @@ settings:
    default: false
   -
    id: longform-text-indent
-   title: First-Line Indent (Preview Mode)
-   description: Indent the first Line of a paragraph in longform/writing notes (preview mode only).
+   title: First-Line Indent (Reading Mode)
+   description: Indent the first Line of a paragraph in longform/writing notes (Reading Mode only).
    type: class-toggle
    default: false
   -
