@@ -3,7 +3,7 @@ nav_order: 110
 ---
 
 # Changelog
-- 2022-04-20	patch
+- 2022-04-20	fix custom colors settings #144
 - 2022-04-20	fixes for collapse indicators of numbered lists bigger than 10
 - 2022-04-20	syntax highlighting does not affect yaml, since colored yaml is styled by accent color
 - 2022-04-20	navigation button with pressed down look

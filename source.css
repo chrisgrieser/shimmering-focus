@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 1.1366
+Version 1.1367
 Source CSS: https://github.com/chrisgrieser/shimmering-focus/blob/main/source.css
 MIT License
 ──────────────────────────────────────────────────── */
@@ -624,10 +624,11 @@ MIT License
 .custom-colors.custom-colors {  /* get colors from style settings */
 	--bg-light-brightness: var(--brightness-light);
 	--bg-light-hue: var(--light-hue);
-	--bg-light-sat: var(--bg-light-satat);
-	--bg-dark-hue: var(--bg-dark-hueue);
-	--bg-dark-sat: var(--bg-dark-satat);
+	--bg-light-sat: var(--light-sat);
+
 	--bg-dark-brightness: var(--brightness-dark);
+	--bg-dark-hue: var(--dark-hue);
+	--bg-dark-sat: var(--dark-sat);
 }
 
 .theme-light {
