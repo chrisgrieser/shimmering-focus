@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 1.1358
+Version 1.1359
 Source CSS: https://github.com/chrisgrieser/shimmering-focus/blob/main/source.css
 MIT License
 ──────────────────────────────────────────────────── */
@@ -7339,13 +7339,13 @@ body:not(.no-fn-indicator) .mod-cm6 .cm-hmd-barelink:not(.cm-formatting-link) + 
 
 /* 2 column cards */
 .list-2-col-cards {
-	--card-spacing: 7px;
+	--card-spacing: 4px;
 }
 
 .list-2-col-cards.markdown-preview-view.markdown-preview-view ul:not(.contains-task-list) {
 	padding-left: 0;
 	columns: 2 auto;
-	column-gap: var(--card-spacing);
+	column-gap: calc(var(--card-spacing) + 2px);
 }
 
 .list-2-col-cards ul:not(.contains-task-list) li {
