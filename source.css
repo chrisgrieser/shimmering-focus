@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 1.1363
+Version 1.1364
 Source CSS: https://github.com/chrisgrieser/shimmering-focus/blob/main/source.css
 MIT License
 ──────────────────────────────────────────────────── */
@@ -1959,7 +1959,7 @@ div.notice-container .notice {
 	background-color: var(--notice-bg);
 	box-shadow: var(--small-shadow), var(--notice-inset-shadow);
 
-	padding: 5px 12px 7px;
+	padding: 6px 12px 7px;
 
 	border: var(--notice-border);
 	border-radius: var(--roundish);
