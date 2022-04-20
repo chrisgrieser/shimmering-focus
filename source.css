@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 1.1355
+Version 1.1356
 Source CSS: https://github.com/chrisgrieser/shimmering-focus/blob/main/source.css
 MIT License
 ──────────────────────────────────────────────────── */
@@ -4393,11 +4393,13 @@ body:not(.plugin-sliding-panes) .workspace-leaf:not(.mod-active) .workspace-leaf
 	display: none;
 }
 
-.empty-state-title {
+/* mod-root ensures that "Plugin no longer active" messages
+are not targeted by this */
+.mod-root .empty-state-title {
 	font-size: 0;
 }
 
-.empty-state-title::AFTER {
+.mod-root .empty-state-title::AFTER {
 	content: var(--signature);
 
 	font-size: var(--empty-state-symbol-size);
@@ -4408,6 +4410,36 @@ body:not(.plugin-sliding-panes) .workspace-leaf:not(.mod-active) .workspace-leaf
 	animation-duration: 8s;
 	animation-name: signature-blink;
 	animation-iteration-count: infinite;
+}
+
+/* "plugin no longer active" messages */
+.workspace-split:is(.mod-right-split, .mod-left-split) .empty-state-title.empty-state-title.empty-state-title.empty-state-title {
+	font-family: var(--heading-font);
+	font-size: 1.1rem;
+	letter-spacing: calc(var(--heading-letter-spacing) * 0.6);
+
+	background-color: var(--bg1);
+	box-shadow: var(--small-inset-shadow);
+
+	padding: 1px 6px;
+	margin-bottom: 5px;
+
+	border: var(--thin-border);
+	border-radius: var(--roundish);
+}
+
+.workspace-split:is(.mod-right-split, .mod-left-split) .empty-state-title::BEFORE {
+	content: var(--error-symbol);
+	padding-right: 5px;
+}
+
+.workspace-split:is(.mod-right-split, .mod-left-split) .empty-state-title + div {
+	padding-left: 3px;
+}
+
+/* imagine using css to fix typos from other people lol */
+.workspace-split:is(.mod-right-split, .mod-left-split) .empty-state-title + div::AFTER {
+	content: ".";
 }
 
 /* ───────────────────────────────────────────────── */
