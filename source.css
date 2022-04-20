@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 1.1365
+Version 1.1366
 Source CSS: https://github.com/chrisgrieser/shimmering-focus/blob/main/source.css
 MIT License
 ──────────────────────────────────────────────────── */
@@ -5195,8 +5195,10 @@ progress[max="100"]:is([value="1"],[value="2"],[value="3"],[value="4"],[value="5
 /* see also section "Max View" */
 
 /* Image Files opened by Obsidian */
-.workspace-leaf-content .view-content .image-container img[src] {
-	margin-top: 25%;
+.workspace-leaf-content .view-content .image-container img[src][src][src][src] {
+	max-width: 100%;
+	margin-top: 10%;
+	margin-bottom: 10%;
 	cursor: default;
 }
 
