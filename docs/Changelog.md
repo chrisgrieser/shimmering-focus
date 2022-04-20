@@ -3,6 +3,7 @@ nav_order: 110
 ---
 
 # Changelog
+- 2022-04-20	navigation button with pressed down look
 - 2022-04-20	plugin not active warning page styled
 - 2022-04-20	increased delay for image zoom via hover
 - 2022-04-19	refactor: reorganized background color var names

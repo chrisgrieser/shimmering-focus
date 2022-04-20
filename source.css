@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 1.1356
+Version 1.1357
 Source CSS: https://github.com/chrisgrieser/shimmering-focus/blob/main/source.css
 MIT License
 ──────────────────────────────────────────────────── */
@@ -74,6 +74,7 @@ MIT License
 - Sidebar
 	- Files in the Sidebar
 	- Tab Headers
+	- Navigation buttons
 		- Hidden Tab Headers
 	- Resize Handles
 - Modals & Settings
@@ -3084,11 +3085,9 @@ body > .app-container .workspace-split.mod-horizontal > .workspace-tabs > .works
 	border-radius: var(--roundish);
 }
 
-/* Navigation buttons */
-:is(.workspace-tab-header-inner, .nav-action-button):active svg,
-.nav-action-button.is-active:is(:active svg, svg) {
-	color: var(--primary-accent-2);
-}
+/* ───────────────────────────────────────────────── */
+/* << Navigation buttons
+──────────────────────────────────────────────────── */
 
 .nav-action-button svg,
 .workspace-tab-header-inner-icon svg {
@@ -3100,10 +3099,10 @@ body > .app-container .workspace-split.mod-horizontal > .workspace-tabs > .works
 	padding: 8px 5px 0;
 }
 
-.nav-action-button {
+.nav-action-button.nav-action-button {
 	height: 27px;
 
-	background-color: var(--bg2);
+	background-color: var(--alt-bg);
 	box-shadow: var(--small-inset-shadow);
 
 	padding: 2px 6px 0;
@@ -3112,15 +3111,23 @@ body > .app-container .workspace-split.mod-horizontal > .workspace-tabs > .works
 	border-radius: var(--roundish);
 }
 
-/* hover & on-click colors */
+/* hover & active colors */
 :is(.workspace-tab-header, .nav-action-button, .nav-action-button.is-active):hover svg {
 	color: var(--hover-accent-2);
 }
 
-.nav-action-button:is(:hover, .is-active:hover),
+.nav-action-button:is(:hover, .is-active),
 .workspace-tab-header:hover {
 	background-color: var(--bg1);
 	cursor: pointer;
+}
+
+.nav-action-button.is-active {
+	color: var(--primary-accent-2);
+
+	/* "pressed down" look */
+	box-shadow: var(--small-reverted-inset-shadow);
+	padding: 3px 5px 0 7px;
 }
 
 /* ───────────────────────────────────────────────── */
