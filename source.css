@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 1.1364
+Version 1.1365
 Source CSS: https://github.com/chrisgrieser/shimmering-focus/blob/main/source.css
 MIT License
 ──────────────────────────────────────────────────── */
@@ -337,7 +337,7 @@ MIT License
 	--cyan-blue-3: hsl(190 90% 50%);
 	--cyan-blue-4: hsl(190 90% 65%);
 	--cyan-blue-5: hsl(190 70% 85% / 99%);
-	--cyan-blue-shifted: hsl(150 65% 45%);
+	--cyan-blue-shifted: hsl(150 75% 40%);
 
 	--purple-0: hsl(250 30% 20% / 99%);
 	--purple-1: hsl(250 50% 49%);
