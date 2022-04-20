@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 1.1362
+Version 1.1363
 Source CSS: https://github.com/chrisgrieser/shimmering-focus/blob/main/source.css
 MIT License
 ──────────────────────────────────────────────────── */
@@ -5005,7 +5005,7 @@ and Footnotes */
 /* hide collapse indicators until hovered/active line */
 body:not(.permanently-show-collapse-indicators) :is(div, ul, ol):not(.is-collapsed) > :is(li, h1, h2, h3, h4, h5, h6):not(:hover) > .collapse-indicator,
 body:not(.permanently-show-collapse-indicators) .cm-line:not(:hover):not(.cm-active) div:not(.is-collapsed) > .collapse-indicator {
-	/* opacity: 0; */
+	opacity: 0;
 }
 
 :is(.HyperMD-header, .HyperMD-list-line) .collapse-indicator.collapse-icon.collapse-icon {
@@ -5013,7 +5013,7 @@ body:not(.permanently-show-collapse-indicators) .cm-line:not(:hover):not(.cm-act
 }
 
 .heading-collapse-indicator.heading-collapse-indicator {
-	padding-left: 3px;
+	padding-left: 1px;
 }
 
 .mod-cm6 + .markdown-reading-view .collapse-indicator:not(.frontmatter-collapse-indicator) svg,
@@ -6561,6 +6561,10 @@ pre.language-haskell::AFTER { content: "Haskell" }
 
 .markdown-preview-view ol {
 	padding-left: 2rem;
+}
+
+.markdown-preview-view div > :is(ol, ul) {
+	margin-top: -5px;
 }
 
 /* thicker => more readable */
