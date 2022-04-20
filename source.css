@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 1.1357
+Version 1.1358
 Source CSS: https://github.com/chrisgrieser/shimmering-focus/blob/main/source.css
 MIT License
 ──────────────────────────────────────────────────── */
@@ -3085,6 +3085,11 @@ body > .app-container .workspace-split.mod-horizontal > .workspace-tabs > .works
 	border-radius: var(--roundish);
 }
 
+.workspace-tab-header:hover {
+	background-color: var(--bg1);
+	cursor: pointer;
+}
+
 /* ───────────────────────────────────────────────── */
 /* << Navigation buttons
 ──────────────────────────────────────────────────── */
@@ -3116,13 +3121,12 @@ body > .app-container .workspace-split.mod-horizontal > .workspace-tabs > .works
 	color: var(--hover-accent-2);
 }
 
-.nav-action-button:is(:hover, .is-active),
-.workspace-tab-header:hover {
+.nav-action-button:is(:hover, .is-active, :active) {
 	background-color: var(--bg1);
 	cursor: pointer;
 }
 
-.nav-action-button.is-active {
+.nav-action-button:is(.is-active, :active) {
 	color: var(--primary-accent-2);
 
 	/* "pressed down" look */
@@ -4868,7 +4872,7 @@ body:not(.no-floating-metadata):not(.is-mobile) .markdown-preview-view:not(.no-f
 	max-width: calc(var(--readable-length) + 3.4rem);
 
 	position: fixed;
-	right: 1.2rem;
+	right: 1.5rem;
 	z-index: 100;
 
 	padding: 4px 2rem 5px 7px;
@@ -6413,8 +6417,6 @@ pre.language-haskell::AFTER { content: "Haskell" }
 /* Dracula */
 .theme-dark.dracula-syntax-hl-dark,
 .theme-light.dracula-syntax-hl-light {
-	--code-block-alt-bg: hsl(231 15% 10%);
-	--code-block-bg: hsl(231 15% 18%);
 	--sh-variable1: hsl(60 30% 96%);
 	--sh-variable2: hsl(250 100% 75%);
 	--sh-value: hsl(250 100% 75%);
@@ -6430,8 +6432,13 @@ pre.language-haskell::AFTER { content: "Haskell" }
 	--sh-method: hsl(135 94% 65%);
 }
 
+:is(.theme-dark.dracula-syntax-hl-dark, .theme-light.dracula-syntax-hl-light) pre:not(.frontmatter) {
+	--code-block-alt-bg: hsl(231 15% 10%);
+	--code-block-bg: hsl(231 15% 18%);
+}
+
 /* ':is(.theme-dark[class$="hl-dark"], .theme-light[class$="hl-light"])' to not affect default syntax highlighting */
-:is(.theme-dark.dracula-syntax-hl-dark, .theme-light.dracula-syntax-hl-light) :is(
+:is(.theme-dark.dracula-syntax-hl-dark, .theme-light.dracula-syntax-hl-light) pre:not(.frontmatter) :is(
 	.token.constant, /* unknown */
 	.cm-atom.cm-hmd-codeblock, /* E.g. color tag, sans-serif */
 	.token.symbol,
@@ -6441,20 +6448,20 @@ pre.language-haskell::AFTER { content: "Haskell" }
 	color: var(--sh-value);
 }
 
-:is(.theme-dark.dracula-syntax-hl-dark, .theme-light.dracula-syntax-hl-light) :is(
+:is(.theme-dark.dracula-syntax-hl-dark, .theme-light.dracula-syntax-hl-light) pre:not(.frontmatter) :is(
 	.cm-variable, /* Var in css */
 	.cm-quote.cm-hmd-codeblock, /* shell variables */
 	.token.variable) { /* Var in css e.g. --this-is-variable */
 	color: var(--sh-variable1);
 }
 
-:is(.theme-dark.dracula-syntax-hl-dark, .theme-light.dracula-syntax-hl-light) :is(
+:is(.theme-dark.dracula-syntax-hl-dark, .theme-light.dracula-syntax-hl-light) pre:not(.frontmatter) :is(
 	.token.variable.assign-left,
 	.cm-variable-2) { /* Var definition in css */
 	color: var(--sh-variable2);
 }
 
-:is(.theme-dark.dracula-syntax-hl-dark, .theme-light.dracula-syntax-hl-light) :is(
+:is(.theme-dark.dracula-syntax-hl-dark, .theme-light.dracula-syntax-hl-light) pre:not(.frontmatter) :is(
 	.token.prolog,
 	.token.cdata,
 	.cm-comment.cm-hmd-codeblock,
@@ -6463,7 +6470,7 @@ pre.language-haskell::AFTER { content: "Haskell" }
 	color: var(--sh-comment);
 }
 
-:is(.theme-dark.dracula-syntax-hl-dark, .theme-light.dracula-syntax-hl-light) :is(
+:is(.theme-dark.dracula-syntax-hl-dark, .theme-light.dracula-syntax-hl-light) pre:not(.frontmatter) :is(
 	.token.tag, /* In html: div in <div></div> */
 	.token.tag .punctuation, /* In HTML allows to change color of brackets */
 	.cm-operator, /* Operators in javascript: = @ ! */
@@ -6472,12 +6479,12 @@ pre.language-haskell::AFTER { content: "Haskell" }
 	color: var(--sh-operator);
 }
 
-:is(.theme-dark.dracula-syntax-hl-dark, .theme-light.dracula-syntax-hl-light) :is(
+:is(.theme-dark.dracula-syntax-hl-dark, .theme-light.dracula-syntax-hl-light) pre:not(.frontmatter) :is(
 	.token.punctuation) { /* Punctuation such as brackets, parentheses, commas, and more. */
 	color: var(--sh-punctuation);
 }
 
-:is(.theme-dark.dracula-syntax-hl-dark, .theme-light.dracula-syntax-hl-light) :is(
+:is(.theme-dark.dracula-syntax-hl-dark, .theme-light.dracula-syntax-hl-light) pre:not(.frontmatter) :is(
 	.token.keyword, /* e.g. var, let , const etc. */
 	.cm-keyword.cm-hmd-codeblock, /* Function, return, let, var */
 	.cm-callee, /* In css: var */
@@ -6485,7 +6492,7 @@ pre.language-haskell::AFTER { content: "Haskell" }
 	color: var(--sh-keyword);
 }
 
-:is(.theme-dark.dracula-syntax-hl-dark, .theme-light.dracula-syntax-hl-light) :is(
+:is(.theme-dark.dracula-syntax-hl-dark, .theme-light.dracula-syntax-hl-light) pre:not(.frontmatter) :is(
 	.cm-attribute, /* In html: attribute within e.g. <div=attribute></div>, In BASH: will change options e.g. -l in `ls -l` */
 	.token.attr-name, /* In html: attribute within e.g. <div=attribute></div> */
 	.cm-qualifier, /* In css: e.g. .theme-dark or .theme-light */
@@ -6496,7 +6503,7 @@ pre.language-haskell::AFTER { content: "Haskell" }
 	color: var(--sh-function-class);
 }
 
-:is(.theme-dark.dracula-syntax-hl-dark, .theme-light.dracula-syntax-hl-light) :is(
+:is(.theme-dark.dracula-syntax-hl-dark, .theme-light.dracula-syntax-hl-light) pre:not(.frontmatter) :is(
 	.cm-builtin, /* In bash it selects default commands e.g. cd, ls, grep, wc, find etc. */
 	.token.builtin, /* In bash it selects 'cd' , 'pwd'. '!important' to overwrite .token-class-name */
 	.token.property, /* In CSS: properties e.g. background-color in background-color: red */
@@ -6504,14 +6511,14 @@ pre.language-haskell::AFTER { content: "Haskell" }
 	color: var(--sh-property);
 }
 
-:is(.theme-dark.dracula-syntax-hl-dark, .theme-light.dracula-syntax-hl-light) :is(
+:is(.theme-dark.dracula-syntax-hl-dark, .theme-light.dracula-syntax-hl-light) pre:not(.frontmatter) :is(
 	.token.regex, /* !important in css */
 	.token.important, /* !important in css */
 	.token.url) { /* In CSS: e.g. image path in background: url(pathtoimage.png) */
 	color: var(--sh-important-url-regex);
 }
 
-:is(.theme-dark.dracula-syntax-hl-dark, .theme-light.dracula-syntax-hl-light) :is(
+:is(.theme-dark.dracula-syntax-hl-dark, .theme-light.dracula-syntax-hl-light) pre:not(.frontmatter) :is(
 	.cm-string.cm-hmd-codeblock, /* String e.g. a whole sentence within " Sample Sentece" */
 	.cm-string-2, /* Some <div> elements were not selecting with simple .cm-string , but this .cm-string-2 fixes it */
 	.cm-string-3,
@@ -6521,13 +6528,13 @@ pre.language-haskell::AFTER { content: "Haskell" }
 	color: var(--sh-string);
 }
 
-:is(.theme-dark.dracula-syntax-hl-dark, .theme-light.dracula-syntax-hl-light) :is(
+:is(.theme-dark.dracula-syntax-hl-dark, .theme-light.dracula-syntax-hl-light) pre:not(.frontmatter) :is(
 	.token.unit, /* Unit e.g. px, em */
 	.token.atrule) { /* In css: e.g. @font-family {} */
 	color: var(--sh-unit);
 }
 
-:is(.theme-dark.dracula-syntax-hl-dark, .theme-light.dracula-syntax-hl-light) :is(
+:is(.theme-dark.dracula-syntax-hl-dark, .theme-light.dracula-syntax-hl-light) pre:not(.frontmatter) :is(
 	.token.function, /* In JS: Function Name, println. In Bash: if you select !important it it willl overwrite following: ls, grep, wc . Better use '.language-bash.is-loaded .token.function' -> to target 'ls, grep, wc' */
 	.token.method) { /* Method in Javscript e.g. render in ReactDOM.render */
 	color: var(--sh-method);
@@ -12296,7 +12303,7 @@ settings:
   -
    id: colored-yaml
    title: "Colored YAML Frontmatter (Edit Mode)"
-   description: 'Use colored YAML frontmatter in Edit Mode. (In Reading Mode, YAML Frontmatter is always colored.) Colors in the YAML Frontmatter are determined by accent colors.'
+   description: 'Use colored YAML frontmatter in Source Mode & Live Preview. (In Reading Mode, YAML Frontmatter is always colored.) Colors in the YAML Frontmatter are determined by accent colors.'
    type: class-toggle
    default: false
   -
@@ -12308,13 +12315,13 @@ settings:
    default: classic-colors
    options:
     -
-      label: Classic
+      label: 🟪🟩 Classic
       value: classic-colors
     -
-      label: Nord
+      label: 🟦⬜️🟦 Nord
       value: nord-colors
     -
-      label: Gamma
+      label: 🟦🟪🟨 Gamma
       value: gamma-colors
     -
       label: 🌈 Custom Colors
