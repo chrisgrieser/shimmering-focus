@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 1.1371
+Version 1.1372
 Source CSS: https://github.com/chrisgrieser/shimmering-focus/blob/main/source.css
 MIT License
 ──────────────────────────────────────────────────── */
@@ -2025,7 +2025,7 @@ body .view-header-title {
 }
 
 body:not(.is-mobile) .view-actions {
-	padding: 1px 4px 0 5px;
+	padding: 0 0.25em;
 }
 
 body:not(.is-mobile) .view-header-icon {
@@ -6707,12 +6707,12 @@ body:not(.show-urls) .cm-line:not(.cm-active) .cm-url,
 .cm-hmd-internal-link > .cm-underline,
 .is-unresolved.is-unresolved.is-unresolved.is-unresolved {
 	color: var(--unresolved-link-color);
+	opacity: 0.8;
 }
 
 .cm-hmd-internal-link:hover > .cm-underline,
 .is-unresolved.is-unresolved.is-unresolved.is-unresolved:hover {
 	color: var(--hover-accent-2);
-	opacity: 0.6;
 }
 
 /* unresolved gutter indicator */
