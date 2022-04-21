@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 1.1382
+Version 1.1383
 Source CSS: https://github.com/chrisgrieser/shimmering-focus/blob/main/source.css
 MIT License
 ──────────────────────────────────────────────────── */
@@ -574,6 +574,7 @@ MIT License
 	--code-color: var(--secondary-accent-2);
 	--finished-task: var(--secondary-accent-2);
 	--secondary-accent-text: var(--secondary-accent-2);
+	--hotkey-color: var(--secondary-accent-2);
 }
 
 .theme-dark {
@@ -582,6 +583,7 @@ MIT License
 	--code-color: var(--secondary-accent-3);
 	--finished-task: var(--secondary-accent-3);
 	--secondary-accent-text: var(--secondary-accent-3);
+	--hotkey-color: var(--secondary-accent-3);
 }
 
 /* ───────────────────────────────────────────────── */
@@ -1247,12 +1249,12 @@ body > .app-container {
 }
 
 /* more readable in dark mode when uncolored */
-.theme-dark.theme-dark.theme-dark:not(.strong-em-hover-accent-dark, .strong-em-secondary-accent-dark) :is(.cm-strong, .markdown-preview-view strong) {
+.theme-dark.theme-dark.custom-colors:not(.strong-em-hover-accent-dark, .strong-em-secondary-accent-dark) :is(.cm-strong, .markdown-preview-view strong) {
 	font-weight: 600;
 	text-shadow: var(--shadow-for-dark-bold);
 }
 
-.theme-dark.theme-dark.theme-dark:not(.strong-em-hover-accent-dark, .strong-em-secondary-accent-dark) .markdown-preview-view strong a {
+.theme-dark.theme-dark.custom-colors:not(.strong-em-hover-accent-dark, .strong-em-secondary-accent-dark) .markdown-preview-view strong a {
 	font-weight: 800;
 	text-shadow: none;
 }
@@ -1762,8 +1764,14 @@ body:not(.no-grayed-out-inactive-pane) {
 	margin-left: 10px;
 }
 
-.cm-vimCursorLayer .cm-fat-cursor {
+.cm-focused .cm-vimCursorLayer .cm-fat-cursor.cm-fat-cursor.cm-fat-cursor {
+	color: var(--button-text);
+	background-color: var(--primary-accent-3);
+	outline: 0.2px solid var(--text-normal);
+}
 
+.ͼo:not(.cm-focused) .cm-fat-cursor {
+	outline: 1.5px solid var(--hover-accent-3);
 }
 
 /* ───────────────────────────────────────────────── */
@@ -2966,6 +2974,7 @@ kbd.suggestion-hotkey {
 
 	min-height: 2em;
 
+	color: var(--hotkey-color);
 	background-color: var(--bg2);
 	box-shadow: var(--muted-button-inset-shadow);
 
@@ -8682,14 +8691,15 @@ div.card-view-container.card-view-container .markdown-preview-view :is(h1, h2, h
 	font-weight: 600;
 }
 
-.theme-dark .prompt.better-command-palette .suggestion-flair[aria-label="Pinned"] ~ .suggestion-content {
-	text-shadow: var(--shadow-for-dark-bold);
-}
-
 .prompt.better-command-palette .suggestion-flair[aria-label="Pinned"] ~ .suggestion-content::BEFORE {
 	content: "☆";
 	font-style: normal;
 	padding-right: 5px;
+}
+
+.theme-dark.custom-colors:not(.strong-em-hover-accent-dark, .strong-em-secondary-accent-dark) .prompt.better-command-palette .suggestion-flair[aria-label="Pinned"] ~ .suggestion-content {
+	font-weight: 600;
+	text-shadow: var(--shadow-for-dark-bold);
 }
 
 /* recent item italic + clock */
