@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 1.1387
+Version 1.1388
 Source CSS: https://github.com/chrisgrieser/shimmering-focus/blob/main/source.css
 MIT License
 ──────────────────────────────────────────────────── */
@@ -1799,7 +1799,7 @@ body:not(.no-grayed-out-inactive-pane) {
 	background-color: var(--primary-accent-3);
 }
 
-.ͼo:not(.cm-focused) .cm-fat-cursor {
+[class*="ͼ"]:not(.cm-focused) .cm-fat-cursor {
 	outline: 2px solid var(--hover-accent-3);
 	outline-offset: -1px;
 }
