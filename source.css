@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 1.1380
+Version 1.1381
 Source CSS: https://github.com/chrisgrieser/shimmering-focus/blob/main/source.css
 MIT License
 ──────────────────────────────────────────────────── */
@@ -12007,12 +12007,20 @@ and file recovery plugin */
 }
 
 /* vertical three lines */
-.mte.cell + span > svg {
-	margin: -3px 2px 6px;
-}
 
 .mte.cell + span:hover > svg {
 	color: var(--hover-accent-2);
+}
+
+.mte.cell + span > svg {
+	display: none;
+	margin: -3px 2px 6px;
+}
+
+/* display only when hovered */
+.mte.cell + span:hover > svg,
+.mte.cell:hover + span > svg {
+	display: unset;
 }
 
 /* ───────────────────────────────────────────────── */
