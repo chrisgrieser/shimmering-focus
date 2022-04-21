@@ -3,6 +3,7 @@ nav_order: 110
 ---
 
 # Changelog
+- 2022-04-21	patch
 - 2022-04-21	use Rajdhani as number font
 - 2022-04-21	use carre as number font
 - 2022-04-21	changed quasrish button text font to quicksand

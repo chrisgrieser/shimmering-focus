@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 1.1378
+Version 1.1379
 Source CSS: https://github.com/chrisgrieser/shimmering-focus/blob/main/source.css
 MIT License
 ──────────────────────────────────────────────────── */
@@ -4027,8 +4027,8 @@ body .community-plugin-info .community-plugin-downloads-text {
 .community-plugin-info .community-plugin-author + .community-plugin-author {
 	font-size: 0;
 	text-align: end;
-	margin-top: 43px;
-	margin-bottom: -46px;
+	margin-top: 50px;
+	margin-bottom: -45px;
 }
 
 .community-plugin-author + .community-plugin-author a {
@@ -4040,7 +4040,6 @@ body .community-plugin-info .community-plugin-downloads-text {
 
 	font-family: var(--icon-font);
 	font-size: var(--font-text-size);
-	line-height: 1.1em;
 
 	color: var(--extra-contrast);
 	background-color: var(--muted-button-bg);
@@ -4077,9 +4076,6 @@ body:not(.squareish-shapes) .community-plugin-info .community-plugin-author + .c
 	background-color: var(--muted-button-bg);
 	box-shadow: var(--muted-button-inset-shadow);
 
-	position: relative;
-	top: 1.5px;
-
 	padding: 6px 4px 5px 3px;
 
 	border: var(--muted-button-border);
@@ -4099,12 +4095,12 @@ body:not(.squareish-shapes) .community-plugin-info .community-plugin-author + .c
 }
 
 .angular-shapes .modal.modal.mod-community-plugin .community-plugin-info button:last-child::BEFORE {
+	position: relative;
 	top: 6px;
 }
 
 .round-shapes .modal.modal.mod-community-plugin .community-plugin-info button:last-child {
 	height: 33px;
-	top: 0;
 }
 
 .modal.mod-community-plugin .community-plugin-info button:last-child:hover::BEFORE {
