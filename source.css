@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 1.1386
+Version 1.1387
 Source CSS: https://github.com/chrisgrieser/shimmering-focus/blob/main/source.css
 MIT License
 ──────────────────────────────────────────────────── */
@@ -337,7 +337,7 @@ MIT License
 	--cyan-blue-0: hsl(190 50% 20% / 99%);
 	--cyan-blue-1: hsl(190 50% 30%);
 	--cyan-blue-2: hsl(190 80% 39%);
-	--cyan-blue-3: hsl(190 90% 50%);
+	--cyan-blue-3: hsl(190 80% 50%);
 	--cyan-blue-4: hsl(190 90% 65%);
 	--cyan-blue-5: hsl(190 70% 85% / 99%);
 	--cyan-blue-shifted: hsl(150 75% 40%);
@@ -1800,7 +1800,8 @@ body:not(.no-grayed-out-inactive-pane) {
 }
 
 .ͼo:not(.cm-focused) .cm-fat-cursor {
-	outline: 1.5px solid var(--hover-accent-3);
+	outline: 2px solid var(--hover-accent-3);
+	outline-offset: -1px;
 }
 
 /* ───────────────────────────────────────────────── */
@@ -8045,7 +8046,7 @@ body:not(.classic-inline-backlinks) .embedded-backlinks .tree-item-self.tree-ite
 
 body:not(.classic-inline-backlinks) .embedded-backlinks .tree-item-inner {
 	text-decoration: underline double 1px;
-	color: var(--primary-accent-2);
+	color: var(--link-color);
 }
 
 body:not(.classic-inline-backlinks) .embedded-backlinks .tree-item.search-result {
