@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 1.1388
+Version 1.1389
 Source CSS: https://github.com/chrisgrieser/shimmering-focus/blob/main/source.css
 MIT License
 ──────────────────────────────────────────────────── */
@@ -657,7 +657,7 @@ MIT License
 	--suggester-b-row: hsl(var(--bg-light-hue) var(--sat-light-2) calc(var(--brightness-light-1) - 3%));
 	--muted-border-color: hsl(var(--bg-light-hue) var(--sat-light-3) calc(var(--brightness-light-3) + 3%));
 	--basic-border-color: hsl(var(--bg-light-hue) var(--sat-light-3) calc(var(--brightness-light-3) - 5%));
-	--backdrop-color: hsl(var(--bg-light-hue) 20% calc(var(--brightness-light-3) - 50%));
+	--backdrop-color: hsl(var(--bg-light-hue) 30% calc(var(--brightness-light-3) - 60%));
 	--muted-button-bg: var(--bg2);
 }
 
@@ -682,7 +682,7 @@ MIT License
 	--suggester-b-row: hsl(var(--bg-dark-hue)  var(--sat-dark-1) calc(var(--brightness-dark-1) - 2%));
 	--muted-border-color: hsl(var(--bg-dark-hue) var(--sat-dark-1) calc(var(--brightness-dark-1) - 6%));
 	--basic-border-color: hsl(var(--bg-dark-hue) var(--sat-dark-1) calc(var(--brightness-dark-1) + 6%));
-	--backdrop-color: hsl(var(--bg-dark-hue) 20% calc(var(--brigtness-dark-3) - 10%));
+	--backdrop-color: hsl(var(--bg-dark-hue) 40% calc(var(--brigtness-dark-3) - 5%));
 	--muted-button-bg: var(--bg2);
 }
 
@@ -812,7 +812,7 @@ MIT License
 
 .theme-dark {
 	--shadow-base-size: 3px;
-	--outside-shadow-color: hsl(0 0% 1% / 30%);
+	--outside-shadow-color: hsl(0 0% 3% / 60%);
 	--inset-shadow-color: hsl(0 0% 20% / 80%);
 	--inset-shadow-black: hsl(0 0% 2% / 100%);
 }
@@ -824,6 +824,7 @@ body:is(.theme-light, .theme-dark) {
 	--small-shadow: 1px 3px var(--shadow-blur) var(--shadow-base-size) var(--outside-shadow-color);
 	--tiny-shadow: 0.5px 1px var(--shadow-blur) calc(var(--shadow-base-size) / 2) var(--outside-shadow-color);
 	--status-bar-shadow: -1px -1px var(--shadow-blur) calc(var(--shadow-base-size) / 2) var(--outside-shadow-color);
+	--big-reverted-shadow: 0px -2px var(--shadow-blur) calc(var(--shadow-base-size) * 2) var(--outside-shadow-color);
 }
 
 /* <<< Inset Shadow */
@@ -1753,7 +1754,7 @@ body:not(.no-grayed-out-inactive-pane) {
 
 .cm-panels.cm-panels.cm-panels {
 	background-color: var(--alt-bg);
-	box-shadow: var(--big-reverted-inset-shadow);
+	box-shadow: var(--big-reverted-shadow);
 	border-top: var(--basic-border);
 }
 
@@ -1769,7 +1770,18 @@ body:not(.no-grayed-out-inactive-pane) {
 .cm-vim-panel input {
 	font-weight: 600;
 	max-width: 95%;
+	margin-top: 6px;
 	margin-left: 10px;
+}
+
+.cm-vim-panel div {
+	margin-top: 10px;
+}
+
+.cm-vim-panel span:nth-child(2) {
+	font-family: unset !important; /* needs important */
+	font-size: unset;
+	font-weight: unset;
 }
 
 /* error */
@@ -1800,8 +1812,16 @@ body:not(.no-grayed-out-inactive-pane) {
 }
 
 [class*="ͼ"]:not(.cm-focused) .cm-fat-cursor {
-	outline: 2px solid var(--hover-accent-3);
+	outline: 2px solid;
 	outline-offset: -1px;
+}
+
+.theme-dark [class*="ͼ"]:not(.cm-focused) .cm-fat-cursor {
+	outline-color: var(--primary-accent-3);
+}
+
+.theme-light [class*="ͼ"]:not(.cm-focused) .cm-fat-cursor {
+	outline-color: var(--primary-accent-2);
 }
 
 /* ───────────────────────────────────────────────── */
