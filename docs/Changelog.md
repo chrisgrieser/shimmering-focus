@@ -3,6 +3,7 @@ nav_order: 110
 ---
 
 # Changelog
+- 2022-04-21	changed quasrish button text font to quicksand
 - 2022-04-21	(non-embedded) image links get indicator icon
 - 2022-04-20	fix custom colors settings #144
 - 2022-04-20	fixes for collapse indicators of numbered lists bigger than 10

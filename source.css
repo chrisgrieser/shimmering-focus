@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 1.1375
+Version 1.1376
 Source CSS: https://github.com/chrisgrieser/shimmering-focus/blob/main/source.css
 MIT License
 ──────────────────────────────────────────────────── */
@@ -1170,11 +1170,11 @@ body:not(.less-heading-letter-spacing) {
 	--heading-letter-spacing: 0.2px;
 }
 
-body:not(.round-shapes) {
+.angular-shapes {
 	--button-font: "Oxanium S";
 }
 
-.round-shapes {
+body:not(.angular-shapes) {
 	--button-font: "Quicksand S";
 }
 
@@ -2374,6 +2374,19 @@ p.mod-warning::BEFORE {
 .mod-settings .mod-warning:not(button)::BEFORE {
 	content: var(--error-symbol);
 	padding-right: 5px;
+}
+
+.tooltip.mod-error {
+	font-size: 0.8em;
+	font-weight: 600;
+	color: var(--text-normal);
+	background-color: var(--error-bg);
+	border-color: var(--text-error);
+}
+
+.tooltip.mod-error::BEFORE {
+	content: "⚠️";
+	margin-right: 4px;
 }
 
 /* ───────────────────────────────────────────────── */
