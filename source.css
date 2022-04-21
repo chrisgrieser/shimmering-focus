@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 1.1370
+Version 1.1371
 Source CSS: https://github.com/chrisgrieser/shimmering-focus/blob/main/source.css
 MIT License
 ──────────────────────────────────────────────────── */
@@ -342,7 +342,7 @@ MIT License
 	--purple-0: hsl(250 30% 20% / 99%);
 	--purple-1: hsl(250 50% 49%);
 	--purple-2: hsl(250 75% 64%);
-	--purple-3: hsl(250 90% 76%);
+	--purple-3: hsl(250 90% 74%);
 	--purple-4: hsl(250 90% 83%);
 	--purple-5: hsl(250 70% 91% / 99%);
 	--purple-shifted: hsl(210 75% 64%); /* 40 hue less than primary-accent-2 */
@@ -540,7 +540,7 @@ MIT License
 	--link-color: var(--primary-accent-2);
 
 	--interactive-bg: var(--primary-accent-2);
-	--interactive-border-color: var(--primary-accent-1);
+	--interactive-border-color: var(--primary-accent-3);
 
 	--scrollbar-bg-active: var(--primary-accent-3);
 	--active-line-indicator: var(--primary-accent-2);
@@ -10914,7 +10914,7 @@ body:not(.show-scrollbar) .workspace-split.mod-root .workspace-leaf-content[data
 
 /* most styling of the import/export buttons
 are at the button section */
-.modal a:is(.style-settings-export, .style-settings-import) {
+a:is(.style-settings-export, .style-settings-import) {
 	font-size: calc(var(--button-font-size) * 0.85);
 	text-decoration: none;
 
@@ -11199,7 +11199,7 @@ body:not(.unlock-theme-beta) .style-settings-container .setting-item:is(
 
 .modal .setting-item-heading[data-id="shimmering-focus"]::BEFORE {
 	font-size: 0.9rem;
-	margin: -45px 16vw 30px 0;
+	margin: -3.5em 3em 3em 0;
 }
 
 .workspace-leaf-content[data-type="style-settings"] > .view-content > .setting-item:first-child::BEFORE {
