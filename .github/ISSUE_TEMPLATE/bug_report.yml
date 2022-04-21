@@ -41,7 +41,7 @@ body:
     id: installer-version
     attributes:
       label: Installer Version
-      description: You can find the installer version in the *About* Tab of the Obsidian settings.
+      description: You can find the installer version in the *About* tab of the Obsidian settings.
       placeholder: "0.13.19"
     validations:
       required: true
@@ -49,7 +49,7 @@ body:
     id: font-size
     attributes:
       label: Font Size
-      description: You can find the font size under *Appearance* Tab of the Obsidian settings.
+      description: You can find your font size setting under the *Appearance* tab of the Obsidian settings.
       placeholder: "16"
     validations:
       required: true
