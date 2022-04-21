@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 1.1383
+Version 1.1384
 Source CSS: https://github.com/chrisgrieser/shimmering-focus/blob/main/source.css
 MIT License
 ──────────────────────────────────────────────────── */
@@ -44,6 +44,7 @@ MIT License
 	- Animations, Transition & Dimmed Pane
 - Cursor
 	- Vim Mode
+	- Vim Cursor
 - UI Elements
 	- Title Bar
 		- Traffic Light Fixes
@@ -1754,6 +1755,7 @@ body:not(.no-grayed-out-inactive-pane) {
 
 /* the ":" */
 .cm-vim-panel > div > span {
+	/* makes the ":" look bigger */
 	font-family: "Optima S" !important; /* needs important */
 	font-size: 1.6em;
 	font-weight: 600;
@@ -1764,10 +1766,13 @@ body:not(.no-grayed-out-inactive-pane) {
 	margin-left: 10px;
 }
 
+/* ───────────────────────────────────────────────── */
+/* << Vim Cursor
+──────────────────────────────────────────────────── */
 .cm-focused .cm-vimCursorLayer .cm-fat-cursor.cm-fat-cursor.cm-fat-cursor {
 	color: var(--button-text);
 	background-color: var(--primary-accent-3);
-	outline: 0.2px solid var(--text-normal);
+	outline: 1px solid var(--always-dark);
 }
 
 .ͼo:not(.cm-focused) .cm-fat-cursor {
@@ -4558,13 +4563,11 @@ body > .app-container .view-content > div > .markdown-preview-view {
 
 /* overscroll */
 .mod-cm6 .cm-contentContainer {
-	/* !important necessary because styled in html */
-	padding-bottom: var(--editor-overscroll) !important;
+	padding-bottom: var(--editor-overscroll) !important; /* !important needed */
 }
 
 .mod-cm5 .CodeMirror-lines {
-	/* !important necessary because styled in html */
-	padding-bottom: calc(var(--editor-overscroll) - 1em) !important;
+	padding-bottom: calc(var(--editor-overscroll) - 1em) !important; /* !important needed */
 }
 
 /* ───────────────────────────────────────────────── */
@@ -4776,8 +4779,8 @@ body:not(.no-active-highlight) .cm-active :is(.cm-formatting-header,.cm-formatti
 }
 
 /* punctuation with uncolored bold/italics in grey, to differentiate it from the yaml value text */
-.theme-dark.colored-yaml:not(.strong-em-secondary-accent-dark, .strong-em-hover-accent-dark) :is(.cm-hmd-frontmatter.cm-meta, .frontmatter.language-yaml .punctuation),
-.theme-light.colored-yaml:not(.strong-em-hover-accent-light, .strong-em-secondary-accent-light) :is(.cm-hmd-frontmatter.cm-meta, .frontmatter.language-yaml .punctuation) {
+.theme-dark.custom-colors.colored-yaml:not(.strong-em-secondary-accent-dark, .strong-em-hover-accent-dark) :is(.cm-hmd-frontmatter.cm-meta, .frontmatter.language-yaml .punctuation),
+.theme-light.custom-colors.colored-yaml:not(.strong-em-hover-accent-light, .strong-em-secondary-accent-light) :is(.cm-hmd-frontmatter.cm-meta, .frontmatter.language-yaml .punctuation) {
 	color: var(--text-muted);
 }
 
