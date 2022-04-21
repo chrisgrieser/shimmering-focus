@@ -3,7 +3,7 @@ nav_order: 110
 ---
 
 # Changelog
-- 2022-04-21	patch
+- 2022-04-21	fix inline code colors in live preview
 - 2022-04-21	styled vim cursor
 - 2022-04-21	styling for vim panel
 - 2022-04-21	use Rajdhani as number font

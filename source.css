@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 1.1384
+Version 1.1385
 Source CSS: https://github.com/chrisgrieser/shimmering-focus/blob/main/source.css
 MIT License
 ──────────────────────────────────────────────────── */
@@ -1747,6 +1747,10 @@ body:not(.no-grayed-out-inactive-pane) {
 	margin-bottom: calc(var(--status-bar-height) - 0.4em);
 }
 
+.theme-dark .cm-vim-panel input {
+	background-color: var(--bg1);
+}
+
 .cm-panels.cm-panels.cm-panels {
 	background-color: var(--alt-bg);
 	box-shadow: var(--big-reverted-inset-shadow);
@@ -1759,20 +1763,40 @@ body:not(.no-grayed-out-inactive-pane) {
 	font-family: "Optima S" !important; /* needs important */
 	font-size: 1.6em;
 	font-weight: 600;
+	margin-left: 5px;
 }
 
 .cm-vim-panel input {
+	font-weight: 600;
 	max-width: 95%;
 	margin-left: 10px;
+}
+
+/* error */
+.cm-vim-message {
+	color: var(--text-error);
+	margin: 8px 5px;
+}
+
+.cm-vim-message::BEFORE {
+	content: var(--error-symbol);
+	margin-right: 8px;
 }
 
 /* ───────────────────────────────────────────────── */
 /* << Vim Cursor
 ──────────────────────────────────────────────────── */
 .cm-focused .cm-vimCursorLayer .cm-fat-cursor.cm-fat-cursor.cm-fat-cursor {
-	color: var(--button-text);
+	color: var(--light-in-light-dark-in-dark);
+	outline: 1px solid var(--text-muted);
+}
+
+.theme-light .cm-focused .cm-vimCursorLayer .cm-fat-cursor.cm-fat-cursor.cm-fat-cursor {
+	background-color: var(--primary-accent-2);
+}
+
+.theme-dark .cm-focused .cm-vimCursorLayer .cm-fat-cursor.cm-fat-cursor.cm-fat-cursor {
 	background-color: var(--primary-accent-3);
-	outline: 1px solid var(--always-dark);
 }
 
 .ͼo:not(.cm-focused) .cm-fat-cursor {
@@ -2497,6 +2521,7 @@ body.angular-shapes .checkbox-container {
 /* << Input & Textarea
 ──────────────────────────────────────────────────── */
 
+.cm-vim-panel.cm-vim-panel input,
 .search-input-container input,
 input:is([type="email"], [type="password"], [type="search"], [type="text"]) {
 	box-shadow: var(--small-reverted-inset-shadow);
@@ -2510,7 +2535,7 @@ input:is([type="email"], [type="password"], [type="search"], [type="text"]) {
 	border-radius: var(--round);
 }
 
-.round-shapes input:is([type="number"], [type="email"], [type="password"], [type="search"], [type="text"]) {
+.round-shapes.round-shapes input:is([type="number"], [type="email"], [type="password"], [type="search"], [type="text"]) {
 	padding-top: 3px;
 }
 
@@ -2529,11 +2554,11 @@ input:is([type="email"], [type="password"], [type="search"], [type="text"]) {
 	width: 100%;
 }
 
-body :is(textarea, input[type]):focus {
+body :is(textarea, input[type][type]):focus {
 	border-color: var(--interactive-border-color);
 }
 
-body :is(textarea, input[type]):hover {
+body :is(textarea, input[type][type]):hover {
 	border-color: var(--interactive-hover-border-color);
 }
 
@@ -6218,19 +6243,22 @@ body { /* stylelint-disable-line no-duplicate-selectors */
 
 /* "*:not(pre) > code" targets inline code
 (i.e. code that is not in a pre (= block) ) */
+.is-live-preview code,
 .markdown-preview-view *:not(pre) > code,
 .cm-inline-code.cm-inline-code.cm-inline-code.cm-inline-code.cm-inline-code {
 	color: var(--code-color);
 }
 
+.is-live-preview code,
 .markdown-preview-view *:not(pre) > code {
 	border-radius: var(--slight-code-roundish);
 }
 
+.is-live-preview code,
 .app-container .markdown-source-view .cm-contentContainer .cm-line .cm-inline-code:not(.cm-formatting-code),
 .markdown-preview-view *:not(pre) > code {
 	background-color: var(--bg2);
-	padding: 1px 4px;
+	padding: 1px 3px;
 }
 
 /* interaction with blockquotes */
