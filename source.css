@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 1.1374
+Version 1.1375
 Source CSS: https://github.com/chrisgrieser/shimmering-focus/blob/main/source.css
 MIT License
 ──────────────────────────────────────────────────── */
@@ -6669,6 +6669,10 @@ a:hover {
 	content: "📗 ";
 }
 
+.markdown-preview-view a.internal-link:is([href$=".png"], [href$=".jpg"], [href$=".jpeg"], [href$=".tiff"])::BEFORE {
+	content: "🌁 ";
+}
+
 /* more underline spacing, thx @Melvin */
 * {
 	text-underline-offset: 1.5px;
@@ -8665,6 +8669,10 @@ body:not(.move-plugin-name-to-left):not(.is-mobile) .better-command-palette .sug
 
 .data-link-icon:is([data-link-path$=".xlsx"], [data-link-path$=".xls"], [data-link-path$=".ods"], [data-link-path$=".csv"])::BEFORE {
 	content: "📗 ";
+}
+
+.data-link-icon:is([href$=".png"], [href$=".jpg"], [href$=".jpeg"], [href$=".tiff"])::BEFORE {
+	content: "🌁 ";
 }
 
 /* tag-based */
