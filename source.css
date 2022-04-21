@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 1.1381
+Version 1.1382
 Source CSS: https://github.com/chrisgrieser/shimmering-focus/blob/main/source.css
 MIT License
 ──────────────────────────────────────────────────── */
@@ -43,6 +43,7 @@ MIT License
 	- Angular or Round Shapes
 	- Animations, Transition & Dimmed Pane
 - Cursor
+	- Vim Mode
 - UI Elements
 	- Title Bar
 		- Traffic Light Fixes
@@ -1733,6 +1734,36 @@ body:not(.no-grayed-out-inactive-pane) {
 
 :is(.no-blink, .breathing-cursor, .phase-blink-cursor, .inversion-blink-cursor) .cm-cursorLayer {
 	animation-name: none !important; /* important needed */
+}
+
+/* ───────────────────────────────────────────────── */
+/* << Vim Mode
+──────────────────────────────────────────────────── */
+.cm-vim-panel {
+	/* avoid collision with status bar */
+	margin-bottom: calc(var(--status-bar-height) - 0.4em);
+}
+
+.cm-panels.cm-panels.cm-panels {
+	background-color: var(--alt-bg);
+	box-shadow: var(--big-reverted-inset-shadow);
+	border-top: var(--basic-border);
+}
+
+/* the ":" */
+.cm-vim-panel > div > span {
+	font-family: "Optima S" !important; /* needs important */
+	font-size: 1.6em;
+	font-weight: 600;
+}
+
+.cm-vim-panel input {
+	max-width: 95%;
+	margin-left: 10px;
+}
+
+.cm-vimCursorLayer .cm-fat-cursor {
+
 }
 
 /* ───────────────────────────────────────────────── */
