@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 1.1394
+Version 1.1395
 Source CSS: https://github.com/chrisgrieser/shimmering-focus/blob/main/source.css
 MIT License
 ──────────────────────────────────────────────────── */
@@ -652,8 +652,8 @@ settings:
     value: no-active-highlight
   -
    id: line-number-options
-   title: Line Numbering Style
-   description: "'Minimal Line Numbering' shows only line number for the active and hovered line. 'Block Indicator' replaces the line numbers with indicators where a block starts or ends (e.g. useful for Vim Mode). This setting has no effect when 'Show line number' is the Obsidian Settings is disabled."
+   title: 🆕 Line Numbering Style
+   description: "'Minimal Line Numbering' shows only line number for the active and hovered line. 🆕 'Block Indicator' replaces the line numbers with indicators where a block starts or ends (e.g. useful for Vim Mode when you do not use 'G' for motions to specific lines). This setting has no effect when 'Show line number' is the Obsidian Settings is disabled."
    type: class-select
    allowEmpty: false
    default: default-line-numbering
