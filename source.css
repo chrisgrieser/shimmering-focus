@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 1.1391
+Version 1.1392
 Source CSS: https://github.com/chrisgrieser/shimmering-focus/blob/main/source.css
 MIT License
 ──────────────────────────────────────────────────── */
@@ -1797,7 +1797,7 @@ body:not(.no-grayed-out-inactive-pane) {
 }
 
 /* vimrc plugin */
-.status-bar-item.plugin-obsidian-vimrc-support {
+.status-bar-item.plugin-obsidian-vimrc-support::FIRST-LETTER {
 	font-size: calc(var(--status-bar-font-size) * 0.9);
 	filter: saturate(0.75);
 }
@@ -8791,18 +8791,6 @@ body:not(.move-plugin-name-to-left):not(.is-mobile) .better-command-palette .sug
 	content: "📕 ";
 }
 
-.data-link-icon:is([data-link-path$=".docx"], [data-link-path$=".doc"], [data-link-path$=".odt"])::BEFORE {
-	content: "📘 ";
-}
-
-.data-link-icon:is([data-link-path$=".pptx"], [data-link-path$=".ppt"], [data-link-path$=".odp"])::BEFORE {
-	content: "📙 ";
-}
-
-.data-link-icon:is([data-link-path$=".xlsx"], [data-link-path$=".xls"], [data-link-path$=".ods"], [data-link-path$=".csv"])::BEFORE {
-	content: "📗 ";
-}
-
 .data-link-icon:is([href$=".png"], [href$=".jpg"], [href$=".jpeg"], [href$=".tiff"])::BEFORE {
 	content: "🌁 ";
 }
@@ -9405,8 +9393,8 @@ body .kanban-plugin__lane {
 	color: var(--text-normal);
 	background-color: var(--bg1);
 
-	padding: 0 4px 1px;
-	margin-bottom: -2px;
+	padding: 0 4px;
+	margin-bottom: -1px;
 
 	border: var(--thin-border);
 	border-radius: var(--roundish);
