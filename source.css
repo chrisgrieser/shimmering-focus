@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 1.1402
+Version 1.1403
 Source CSS: https://github.com/chrisgrieser/shimmering-focus/blob/main/source.css
 MIT License
 ──────────────────────────────────────────────────── */
@@ -5288,6 +5288,10 @@ body:not(.permanently-show-collapse-indicators) .cm-line:not(:hover):not(.cm-act
 .minimal-line-numbering .cm-lineNumbers .cm-gutterElement {
 	font-weight: 600;
 	color: var(--text-muted);
+}
+
+.minimal-line-numbering .cm-lineNumbers:hover .cm-gutterElement.cm-active {
+	color: var(--active-line-indicator);
 }
 
 /* when disabled, active highlighting of markup */
