@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 1.1395
+Version 1.1396
 Source CSS: https://github.com/chrisgrieser/shimmering-focus/blob/main/source.css
 MIT License
 ──────────────────────────────────────────────────── */
@@ -13007,12 +13007,6 @@ settings:
    -
     label: Block Indicator
     value: block-indicator
-  -
-   id: minimal-line-numbering
-   title: Minimal Line Numbering
-   description: "When 'Show line number' is enabled in the Obsidian settings, only the line number of the active and hovered line will be shown."
-   type: class-toggle
-   default: false
   -
    id: footnote-gutter
    title: "Footnote Indicator"
