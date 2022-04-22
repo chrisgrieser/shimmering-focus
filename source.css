@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 1.1390
+Version 1.1391
 Source CSS: https://github.com/chrisgrieser/shimmering-focus/blob/main/source.css
 MIT License
 ──────────────────────────────────────────────────── */
@@ -1761,27 +1761,28 @@ body:not(.no-grayed-out-inactive-pane) {
 /* the ":" */
 .cm-vim-panel > div > span {
 	/* makes the ":" look bigger */
-	font-family: "Optima S" !important; /* needs important */
-	font-size: 1.6em;
+	font-family: "Inter" !important; /* needs important */
+	font-size: 1.8em;
 	font-weight: 600;
+	line-height: 1em;
 	margin-left: 5px;
 }
 
 .cm-vim-panel input {
 	font-weight: 600;
 	max-width: 95%;
-	margin-top: 6px;
+	position: relative;
+	top: -2px;
 	margin-left: 10px;
 }
 
 .cm-vim-panel div {
-	margin-top: 10px;
+	margin-top: 4px;
 }
 
+/* remove instruction */
 .cm-vim-panel span:nth-child(2) {
-	font-family: unset !important; /* needs important */
-	font-size: unset;
-	font-weight: unset;
+	display: none;
 }
 
 /* error */
@@ -1793,6 +1794,12 @@ body:not(.no-grayed-out-inactive-pane) {
 .cm-vim-message::BEFORE {
 	content: var(--error-symbol);
 	margin-right: 8px;
+}
+
+/* vimrc plugin */
+.status-bar-item.plugin-obsidian-vimrc-support {
+	font-size: calc(var(--status-bar-font-size) * 0.9);
+	filter: saturate(0.75);
 }
 
 /* ───────────────────────────────────────────────── */
