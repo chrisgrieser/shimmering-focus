@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 1.1393
+Version 1.1394
 Source CSS: https://github.com/chrisgrieser/shimmering-focus/blob/main/source.css
 MIT License
 ──────────────────────────────────────────────────── */
@@ -478,7 +478,7 @@ settings:
    format: rem
   -
    id: font-interface-theme
-   title: Interace Font (Desktop)
+   title: Interface Font (Desktop)
    description: 'Affects the sidebars, header bar, status bar, and menus.  ⚠️ This setting will be overriden when you have set a custom interface font in the Obsidian settings (Appearance ➞ Font ➞ Interface Font).'
    type: variable-text
    default: '"Recursive S"'
@@ -1025,7 +1025,7 @@ settings:
    default: '"iA Writer Quattro S"'
   -
    id: mobile-font-interface-theme
-   title: Menu Font (Mobile)
+   title: Interface Font (Mobile)
    description: 'Affects the sidebars, header bar, status bar, and menus.  ⚠️ This setting will be overriden when you have set a custom interface font in the Obsidian settings (Appearance ➞ Font ➞ Interface Font).'
    type: variable-text
    default: '"Recursive S"'
