@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 1.1398
+Version 1.1399
 Source CSS: https://github.com/chrisgrieser/shimmering-focus/blob/main/source.css
 MIT License
 ──────────────────────────────────────────────────── */
@@ -3028,6 +3028,7 @@ body:not(.move-plugin-name-to-left) .suggestion-prefix::AFTER {
 
 kbd.suggestion-hotkey {
 	font-family: var(--button-font);
+	font-weight: 600;
 	line-height: 1.7em;
 
 	min-height: 2em;
@@ -3038,6 +3039,10 @@ kbd.suggestion-hotkey {
 
 	border: var(--thin-border);
 	border-radius: var(--roundish);
+}
+
+.angular-shapes kbd.suggestion-hotkey {
+	font-weight: 500;
 }
 
 /* fix casing for lowercased commands */
@@ -3075,9 +3080,7 @@ body:not(.no-alternating-rows) .suggestion-item:nth-child(odd) .suggestion-prefi
 /* ───────────────────────────────────────────────── */
 /* << Editor Suggestions
 ──────────────────────────────────────────────────── */
-
-/* .suggestion-container necessary to avoid conflicts
-with prompts */
+/* ".suggestion-container" necessary to avoid conflicts with prompts */
 
 .suggestion-container {
 	background-color: var(--bg1);
@@ -3091,9 +3094,8 @@ with prompts */
 }
 
 .suggestion-container .suggestion-note {
-	font-family: var(--smallcap-font);
+	font-family: var(--font-interface);
 	font-size: 0.8em;
-	letter-spacing: 0.3px;
 	text-align: end;
 }
 
@@ -6857,7 +6859,7 @@ body:not(.show-urls) .cm-line:not(.cm-active) .cm-url,
 .cm-hmd-internal-link > .cm-underline,
 .is-unresolved.is-unresolved.is-unresolved.is-unresolved {
 	color: var(--unresolved-link-color);
-	opacity: 0.8;
+	opacity: 0.9;
 }
 
 .cm-hmd-internal-link:hover > .cm-underline,
