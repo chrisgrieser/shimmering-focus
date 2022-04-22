@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 1.1401
+Version 1.1402
 Source CSS: https://github.com/chrisgrieser/shimmering-focus/blob/main/source.css
 MIT License
 ──────────────────────────────────────────────────── */
@@ -337,7 +337,7 @@ MIT License
 	--cyan-blue-0: hsl(190 50% 20% / 99%);
 	--cyan-blue-1: hsl(190 50% 30%);
 	--cyan-blue-2: hsl(190 80% 39%);
-	--cyan-blue-3: hsl(190 80% 50%);
+	--cyan-blue-3: hsl(190 70% 47%);
 	--cyan-blue-4: hsl(190 90% 65%);
 	--cyan-blue-5: hsl(190 70% 85% / 99%);
 	--cyan-blue-shifted: hsl(150 75% 40%);
@@ -5266,7 +5266,9 @@ body:not(.permanently-show-collapse-indicators) .cm-line:not(:hover):not(.cm-act
 .CodeMirror-linenumbers,
 .cm-lineNumbers {
 	font-family: var(--number-font);
-	font-size: 1.1em;
+	font-size: 1.2em;
+	line-height: 1em;
+	letter-spacing: 1px;
 }
 
 .block-indicator .cm-lineNumbers .cm-gutterElement {
@@ -5279,7 +5281,7 @@ body:not(.permanently-show-collapse-indicators) .cm-line:not(:hover):not(.cm-act
 }
 
 /* minimal line number */
-.minimal-line-numbering .cm-lineNumbers .cm-gutterElement:not(.cm-active):not(:hover) {
+.minimal-line-numbering .cm-lineNumbers:not(:hover) .cm-gutterElement:not(.cm-active) {
 	opacity: 0;
 }
 
@@ -6571,6 +6573,7 @@ pre.language-md::AFTER { content: "Markdown" }
 pre.language-regex::AFTER { content: "Regex" }
 pre.language-lua::AFTER { content: "Lua" }
 pre.language-haskell::AFTER { content: "Haskell" }
+pre.language-vim::AFTER { content: "vimrc" }
 
 /* fix for the buggy selection of inline text */
 /* https://forum.obsidian.md/t/inline-code-occludes-text-selection-and-vim-cursor/11552/10 */
