@@ -3,7 +3,7 @@ nav_order: 110
 ---
 
 # Changelog
-- 2022-04-22	patch
+- 2022-04-22	new line numbering style: block indicators
 - 2022-04-22	further improvements for vim mode
 - 2022-04-21	more vim mode improvements
 - 2022-04-21	fix inline code colors in live preview

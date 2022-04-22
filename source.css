@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 1.1392
+Version 1.1393
 Source CSS: https://github.com/chrisgrieser/shimmering-focus/blob/main/source.css
 MIT License
 ──────────────────────────────────────────────────── */
@@ -5253,6 +5253,15 @@ body:not(.permanently-show-collapse-indicators) .cm-line:not(:hover):not(.cm-act
 	font-size: 1.1em;
 }
 
+.block-indicator .cm-lineNumbers .cm-gutterElement {
+	color: transparent;
+	border-left: 3px solid var(--muted-border-color);
+}
+
+.block-indicator .cm-lineNumbers .cm-gutterElement:nth-child(even) {
+	border-left-color: transparent;
+}
+
 /* minimal line number */
 .minimal-line-numbering .cm-lineNumbers .cm-gutterElement:not(.cm-active):not(:hover) {
 	opacity: 0;
@@ -5264,7 +5273,7 @@ body:not(.permanently-show-collapse-indicators) .cm-line:not(:hover):not(.cm-act
 }
 
 /* when disabled, active highlighting of markup */
-body:not(.minimal-line-numbering):not(.no-active-highlight) .cm-lineNumbers .cm-active.cm-gutterElement {
+body:not(.minimal-line-numbering):not(.block-indicator):not(.no-active-highlight) .cm-lineNumbers .cm-active.cm-gutterElement {
 	color: var(--active-line-indicator);
 }
 
@@ -12385,7 +12394,7 @@ settings:
    default: false
   -
    id: no-floating-metadata
-   title: 🆕 Permanently show the Metadata Block / YAML Frontmatter in Reading Mode
+   title: Permanently show the Metadata Block / YAML Frontmatter in Reading Mode
    type: class-toggle
    description: 'By default, the metadata block in this theme only becomes visible upon hovering the "M" / "Y" in the top right. You can also add the cssclass "no-floating-metadata" to a note to permanently show the meta on that specific note.'
    default: false
@@ -12960,7 +12969,7 @@ settings:
 # << Gutter & Active Line (+)
    id: gutter-features
    title: ❇️ Gutter & Active Line
-   description: Active Line Highlights, Indicators in the Gutter, Line Numbers, 🆕 Tags-in-Gutter
+   description: Active Line Highlights, Indicators in the Gutter, 🆕 Line Numbering Styles, Tags-in-Gutter
    type: heading
    level: 1
    collapsed: true
@@ -12981,6 +12990,29 @@ settings:
    -
     label: No Active Line Highlight
     value: no-active-highlight
+  -
+   id: line-number-options
+   title: Line Numbering Style
+   description: "'Minimal Line Numbering' shows only line number for the active and hovered line. 'Block Indicator' replaces the line numbers with indicators where a block starts or ends (e.g. useful for Vim Mode). This setting has no effect when 'Show line number' is the Obsidian Settings is disabled."
+   type: class-select
+   allowEmpty: false
+   default: default-line-numbering
+   options:
+   -
+    label: Default
+    value: default-line-numbering
+   -
+    label: Minimal Line Numbering
+    value: minimal-line-numbering
+   -
+    label: Block Indicator
+    value: block-indicator
+  -
+   id: minimal-line-numbering
+   title: Minimal Line Numbering
+   description: "When 'Show line number' is enabled in the Obsidian settings, only the line number of the active and hovered line will be shown."
+   type: class-toggle
+   default: false
   -
    id: footnote-gutter
    title: "Footnote Indicator"
@@ -13006,14 +13038,8 @@ settings:
    default: false
   -
    id: tags-in-gutter
-   title: 🆕 Show Tags in Gutter (Reading Mode)
+   title: Show Tags in Gutter (Reading Mode)
    description: 'Can also be selectively enabled per note by adding the cssclass "tags-in-gutter".'
-   type: class-toggle
-   default: false
-  -
-   id: minimal-line-numbering
-   title: Minimal Line Numbering
-   description: "When 'Show line number' is enabled in the Obsidian settings, only the line number of the active and hovered line will be shown."
    type: class-toggle
    default: false
   -
@@ -13099,7 +13125,7 @@ settings:
 # << Callouts (+)
    id: callout-options
    title: 📞 Callouts
-   description: 🆕 Sidenote Callouts
+   description: Sidenote Callouts
    type: heading
    level: 1
    collapsed: true
@@ -13120,7 +13146,7 @@ settings:
    default: false
   -
    id: post-it-callout-size
-   title: Size of Post-it Callouts
+   title: 🆕 Size of Post-it Callouts
    description: "Affects callouts with '> [!post-it]'. This variable affects width and height, i.e. quadratic growth). Mind that post-its with too much content get cut off — they are post-its after all."
    type: variable-number-slider
    default: 135
@@ -13132,7 +13158,7 @@ settings:
 # << Special Syntax (+)
    id: special-syntax
    title: 🌀 Special Syntax
-   description: '🆕 Highlight Colors, Multi-Color Highlights, Spoiler Syntax, Annotation Tags, 🆕 Trailing Whites Space, Citation Syntax, Pandoc Citations'
+   description: 'Highlight Colors, Multi-Color Highlights, Spoiler Syntax, Annotation Tags, Trailing Whites Space, Citation Syntax, Pandoc Citations'
    type: heading
    level: 1
    collapsed: true
@@ -13267,7 +13293,7 @@ settings:
 # << Code Blocks (+)
    id: code-blocks-options
    title: '🖥 Code Blocks'
-   description: '🆕 Syntax Highlighting, Tab Size, Line Wrapping'
+   description: 'Syntax Highlighting, Tab Size, Line Wrapping'
    type: heading
    level: 1
    collapsed: true
