@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 1.1396
+Version 1.1397
 Source CSS: https://github.com/chrisgrieser/shimmering-focus/blob/main/source.css
 MIT License
 ──────────────────────────────────────────────────── */
@@ -261,7 +261,7 @@ MIT License
  	- Aesthetics & Custom Colors (+)
  	- Typography (+)
  	- Gutter & Active Line (+)
- 	- Views Media (+)
+ 	- Views & Media (+)
  	- Callouts (+)
  	- Special Syntax (+)
  	- Cursor (+)
@@ -13027,7 +13027,7 @@ settings:
   -
    id: no-unresolved-link-indicator
    title: Disable Unresolved Link Indicators
-   description: The indicators (𝘅) are only shown in Reading Mode.
+   description: The indicators (𝘅) are only shown in Reading Mode and Live Preview.
    type: class-toggle
    default: false
   -
@@ -13043,7 +13043,7 @@ settings:
    type: class-toggle
    default: false
   -
-# << Views Media (+)
+# << Views & Media (+)
    id: content-settings
    title: 🏞 Views & Media
    description: Line Length, Max View, Focus View, Images, PDFs, 🆕 Image Zoom Methods
