@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 1.1399
+Version 1.1400
 Source CSS: https://github.com/chrisgrieser/shimmering-focus/blob/main/source.css
 MIT License
 ──────────────────────────────────────────────────── */
@@ -43,8 +43,8 @@ MIT License
 	- Angular or Round Shapes
 	- Animations, Transition & Dimmed Pane
 - Cursor
-	- Vim Mode
 	- Vim Cursor
+- Vim Mode
 - UI Elements
 	- Title Bar
 		- Traffic Light Fixes
@@ -1694,7 +1694,7 @@ body:not(.no-grayed-out-inactive-pane) {
 	--cursor-outline: 0;
 }
 
-/* Blink Styles */
+/* >> Blink Styles */
 @keyframes phase-blink {
 	15% {
 		background-color: var(--cursor-look);
@@ -1741,7 +1741,50 @@ body:not(.no-grayed-out-inactive-pane) {
 }
 
 /* ───────────────────────────────────────────────── */
-/* << Vim Mode
+/* << Vim Cursor
+──────────────────────────────────────────────────── */
+
+/* unfocused */
+[class*="ͼ"]:not(.cm-focused) .cm-fat-cursor {
+	outline: 2px solid;
+	outline-offset: -1px;
+}
+
+.theme-dark [class*="ͼ"]:not(.cm-focused) .cm-fat-cursor {
+	outline-color: var(--primary-accent-3);
+}
+
+.theme-light [class*="ͼ"]:not(.cm-focused) .cm-fat-cursor {
+	outline-color: var(--primary-accent-2);
+}
+
+/* Dark Eclipse */
+.cm-focused .cm-vimCursorLayer .cm-fat-cursor.cm-fat-cursor.cm-fat-cursor {
+	color: var(--always-light);
+	background-color: var(--cursor-look);
+	outline: var(--cursor-outline);
+}
+
+.theme-light .cm-focused .cm-vimCursorLayer .cm-fat-cursor.cm-fat-cursor.cm-fat-cursor {
+	background-color: hsl(0 0% 30%);
+}
+
+/* Theme Accent */
+.vim-cursor-theme-accent .cm-focused .cm-vimCursorLayer .cm-fat-cursor.cm-fat-cursor.cm-fat-cursor {
+	color: var(--light-in-light-dark-in-dark);
+	outline: 1px solid var(--text-muted);
+}
+
+.vim-cursor-theme-accent.theme-light .cm-focused .cm-vimCursorLayer .cm-fat-cursor.cm-fat-cursor.cm-fat-cursor {
+	background-color: var(--primary-accent-2);
+}
+
+.vim-cursor-theme-accent.theme-dark .cm-focused .cm-vimCursorLayer .cm-fat-cursor.cm-fat-cursor.cm-fat-cursor {
+	background-color: var(--primary-accent-3);
+}
+
+/* ───────────────────────────────────────────────── */
+/* < Vim Mode
 ──────────────────────────────────────────────────── */
 .cm-vim-panel {
 	/* avoid collision with status bar */
@@ -1800,35 +1843,6 @@ body:not(.no-grayed-out-inactive-pane) {
 .status-bar-item.plugin-obsidian-vimrc-support::FIRST-LETTER {
 	font-size: calc(var(--status-bar-font-size) * 0.9);
 	filter: saturate(0.75);
-}
-
-/* ───────────────────────────────────────────────── */
-/* << Vim Cursor
-──────────────────────────────────────────────────── */
-.cm-focused .cm-vimCursorLayer .cm-fat-cursor.cm-fat-cursor.cm-fat-cursor {
-	color: var(--light-in-light-dark-in-dark);
-	outline: 1px solid var(--text-muted);
-}
-
-.theme-light .cm-focused .cm-vimCursorLayer .cm-fat-cursor.cm-fat-cursor.cm-fat-cursor {
-	background-color: var(--primary-accent-2);
-}
-
-.theme-dark .cm-focused .cm-vimCursorLayer .cm-fat-cursor.cm-fat-cursor.cm-fat-cursor {
-	background-color: var(--primary-accent-3);
-}
-
-[class*="ͼ"]:not(.cm-focused) .cm-fat-cursor {
-	outline: 2px solid;
-	outline-offset: -1px;
-}
-
-.theme-dark [class*="ͼ"]:not(.cm-focused) .cm-fat-cursor {
-	outline-color: var(--primary-accent-3);
-}
-
-.theme-light [class*="ͼ"]:not(.cm-focused) .cm-fat-cursor {
-	outline-color: var(--primary-accent-2);
 }
 
 /* ───────────────────────────────────────────────── */
@@ -13222,7 +13236,7 @@ settings:
 # << Cursor (+)
    id: cursor-settings
    title: 🐁 Cursor
-   description: Thickness, Style, Color, Blinking, Block Cursor
+   description: Thickness, Style, Color, Blinking, Block Cursor,🆕 Vim Cursor
    type: heading
    level: 1
    collapsed: true
@@ -13285,6 +13299,20 @@ settings:
     -
       label: Thin Cursor
       value: thin-cursor
+  -
+   id: vim-cursor-look
+   title: Vim Cursor Style
+   description: The look of the cursor when using Vim in Normal Mode.
+   type: class-select
+   allowEmpty: false
+   default: vim-cursor-dark-eclipse
+   options:
+    -
+      label: Dark Eclipse
+      value: vim-cursor-dark-eclipse
+    -
+      label: Theme Accent
+      value: vim-cursor-theme-accent
   -
 # << Code Blocks (+)
    id: code-blocks-options
