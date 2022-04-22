@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 1.1400
+Version 1.1401
 Source CSS: https://github.com/chrisgrieser/shimmering-focus/blob/main/source.css
 MIT License
 ──────────────────────────────────────────────────── */
@@ -1758,7 +1758,7 @@ body:not(.no-grayed-out-inactive-pane) {
 	outline-color: var(--primary-accent-2);
 }
 
-/* Dark Eclipse */
+/* Dark Eclipse (Default) */
 .cm-focused .cm-vimCursorLayer .cm-fat-cursor.cm-fat-cursor.cm-fat-cursor {
 	color: var(--always-light);
 	background-color: var(--cursor-look);
@@ -11383,7 +11383,7 @@ object.link-favicon {
 
 /* line height of blockquotes does not move favicon,
 therefore this fix is needed */
-body:not(.normal-blockquotes) .HyperMD-quote.HyperMD-quote-1 .link-favicon {
+body:not(.normal-blockquotes) .HyperMD-quote.HyperMD-quote-1:not(.cm-active) .link-favicon {
 	margin-bottom: 8px;
 }
 
