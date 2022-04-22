@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 1.1404
+Version 1.1405
 Source CSS: https://github.com/chrisgrieser/shimmering-focus/blob/main/source.css
 MIT License
 ──────────────────────────────────────────────────── */
@@ -6753,7 +6753,7 @@ pre.language-vim::AFTER { content: "vimrc" }
 /* other font family to not be too thick */
 .cm-formatting-list-ul,
 .is-live-preview .list-bullet {
-	font-family: "Source Code Pro";
+	font-family: "Source Code Pro", monospace;
 	font-weight: 700;
 }
 
@@ -6793,13 +6793,15 @@ a:hover {
 	text-decoration: underline dashed 1px;
 }
 
-.markdown-preview-view a[aria-label]:not(.external-link) {
+.markdown-preview-view .internal-link[aria-label] {
 	text-decoration: underline dashed;
 }
 
-/* also note the undoing of this styling in the
-dataview section, since dataview internal links
-do have aria labels */
+.dataview.dataview a.internal-link {
+	/* undoing of this styling in dataview section,
+	since dataview internal links do have aria labels */
+	text-decoration-style: solid;
+}
 
 /* double underline internal links */
 .is-live-preview .cm-hmd-internal-link.cm-hmd-internal-link .cm-underline,
@@ -10766,10 +10768,6 @@ body :is(#search-res-hover, #block-ref-hover).show:hover {
 
 .markdown-preview-view :is(.block-language-dataview, .block-language-dataviewjs) .result-group {
 	padding-left: 1px;
-}
-
-.dataview.dataview.dataview a {
-	text-decoration-style: solid;
 }
 
 /* errors */
