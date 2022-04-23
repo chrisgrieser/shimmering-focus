@@ -3,6 +3,7 @@ nav_order: 110
 ---
 
 # Changelog
+- 2022-04-23	use Ubuntu mono as number font
 - 2022-04-23	code block line numbers in Edit Mode (by @pryley, #146)
 - 2022-04-23	more custom color accents
 - 2022-04-23	❄️ nord color scheme updated to use blue accent colors
