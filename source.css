@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 1.1408
+Version 1.1409
 Source CSS: https://github.com/chrisgrieser/shimmering-focus/blob/main/source.css
 MIT License
 ──────────────────────────────────────────────────── */
@@ -5232,11 +5232,8 @@ body:not(.permanently-show-collapse-indicators) .cm-line:not(:hover):not(.cm-act
 	width: 0.65rem;
 }
 
-/* hover size increase */
 .mod-cm6 + .markdown-reading-view .collapse-indicator:not(.frontmatter-collapse-indicator):hover svg,
 .cm-s-obsidian.mod-cm6 .collapse-indicator:hover .right-triangle {
-	height: 0.9rem;
-	width: 0.9rem;
 	color: var(--hover-accent-2);
 }
 
@@ -6569,6 +6566,11 @@ body .is-live-preview.mod-cm6 .edit-block-button:hover {
 	border-color: var(--interactive-hover-border-color);
 }
 
+/* indention lines in code blocks more visible */
+.HyperMD-codeblock .cm-indent.cm-indent.cm-indent::BEFORE {
+	border-color: var(--basic-border-color);
+}
+
 /* <<< language replacements */
 pre[class*="language-"]::AFTER {
 	content: attr(class); /* fallback when none of the languages below is used */
@@ -6635,6 +6637,42 @@ pre.language-vim::AFTER { content: "vimrc" }
 
 .mods-cm5 .theme-light .cm-inline-code {
 	background-color: rgb(0 0 0 / 5%) !important;
+}
+
+/* Line Numbers in Edit Mode */
+body:not(.no-codeblock-line-numbers) .HyperMD-codeblock-begin {
+	counter-reset: codeblock-line-numbers;
+}
+
+body:not(.no-codeblock-line-numbers) .HyperMD-codeblock.cm-line:not(.HyperMD-codeblock-begin, .HyperMD-codeblock-end) {
+	padding-left: 3.25em;
+}
+
+body:not(.no-codeblock-line-numbers) .HyperMD-codeblock.cm-line:not(.HyperMD-codeblock-begin, .HyperMD-codeblock-end)::AFTER {
+	content: counter(codeblock-line-numbers);
+
+	font-size: 0.75em;
+	text-align: right;
+
+	width: 2em;
+
+	color: var(--text-muted);
+
+	position: absolute;
+	left: 0;
+
+	padding-top: 1px;
+	padding-right: 4px;
+
+	/* needs to use ::after to avoid interference with the active line indicator
+	but since it's position absolute, it's all good :P */
+	border-right: var(--thin-border);
+
+	counter-increment: codeblock-line-numbers;
+}
+
+body:not(.no-codeblock-line-numbers) .HyperMD-codeblock .cm-foldPlaceholder::BEFORE {
+	display: none;
 }
 
 /* ───────────────────────────────────────────────── */
@@ -13403,6 +13441,12 @@ settings:
    id: no-code-block-wrapping
    title: Disable Line Wrapping in Code Blocks (Reading Mode)
    description: This setting is independent from the global Obsidian setting for Line Wrapping.
+   type: class-toggle
+   default: false
+  -
+   id: no-codeblock-line-numbers
+   title: Disable Line Numbering in Code Blocks (Edit Mode)
+   description: 'By default, this theme adds line numbers in code blocks in Source Mode and Live Preview. Enable this, to turn off the line numbers.'
    type: class-toggle
    default: false
   -
