@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 1.1406
+Version 1.1407
 Source CSS: https://github.com/chrisgrieser/shimmering-focus/blob/main/source.css
 MIT License
 ──────────────────────────────────────────────────── */
@@ -342,13 +342,13 @@ MIT License
 	--cyan-blue-5: hsl(187 70% 85% / 99%);
 	--cyan-blue-shifted: hsl(147 75% 40%);
 
-	--dark-blue-0: hsl(220 60% 20% / 99%);
-	--dark-blue-1: hsl(220 50% 35%);
-	--dark-blue-2: hsl(220 60% 53%);
-	--dark-blue-3: hsl(220 70% 65%);
-	--dark-blue-4: hsl(220 90% 75%);
-	--dark-blue-5: hsl(220 50% 88% / 99%);
-	--dark-blue-shifted: hsl(180 75% 40%);
+	--deep-blue-0: hsl(220 60% 20% / 99%);
+	--deep-blue-1: hsl(220 50% 35%);
+	--deep-blue-2: hsl(220 60% 53%);
+	--deep-blue-3: hsl(220 70% 65%);
+	--deep-blue-4: hsl(220 90% 75%);
+	--deep-blue-5: hsl(220 50% 88% / 99%);
+	--deep-blue-shifted: hsl(180 75% 40%);
 
 	--purple-0: hsl(250 30% 20% / 99%);
 	--purple-1: hsl(250 50% 49%);
@@ -384,8 +384,21 @@ MIT License
 /* ───────────────────────────────────────────────── */
 /* << Custom Individual Accent Colors
 ──────────────────────────────────────────────────── */
-.custom-colors.theme-light.primary-accent-light-blue,
+.custom-colors.theme-light.primary-accent-light-dark-blue,
 .custom-colors.theme-dark.primary-accent-dark-blue {
+	--primary-accent-0: var(--deep-blue-0);
+	--primary-accent-1: var(--deep-blue-1);
+	--primary-accent-2: var(--deep-blue-2);
+	--primary-accent-3: var(--deep-blue-3);
+	--primary-accent-4: var(--deep-blue-4);
+	--primary-accent-5: var(--deep-blue-5);
+
+	--unresolved-link-color: var(--deep-blue-shifted);
+	--button-text: var(--light-in-light-dark-in-dark);
+}
+
+.custom-colors.theme-light.primary-accent-light-cyan,
+.custom-colors.theme-dark.primary-accent-dark-cyan {
 	--primary-accent-0: var(--cyan-blue-0);
 	--primary-accent-1: var(--cyan-blue-1);
 	--primary-accent-2: var(--cyan-blue-2);
@@ -393,7 +406,7 @@ MIT License
 	--primary-accent-4: var(--cyan-blue-4);
 	--primary-accent-5: var(--cyan-blue-5);
 
-	--unresolved-link-color: var(--cyan-blue-shifted); /* ~40 hue less than primary-accent-2 */
+	--unresolved-link-color: var(--cyan-blue-shifted);
 	--button-text: var(--always-dark);
 }
 
@@ -406,7 +419,7 @@ MIT License
 	--primary-accent-4: var(--orange-4);
 	--primary-accent-5: var(--orange-5);
 
-	--unresolved-link-color: var(--orange-shifted); /* ~40 hue less than primary-accent-2 */
+	--unresolved-link-color: var(--orange-shifted);
 	--button-text: var(--always-light);
 }
 
@@ -418,6 +431,16 @@ MIT License
 	--hover-accent-4: var(--pink-4);
 
 	--button-hover-text: var(--always-light);
+}
+
+.custom-colors.theme-light.hover-accent-light-cyan,
+.custom-colors.theme-dark.hover-accent-dark-cyan {
+	--hover-accent-1: var(--cyan-blue-1);
+	--hover-accent-2: var(--cyan-blue-2);
+	--hover-accent-3: var(--cyan-blue-3);
+	--hover-accent-4: var(--cyan-blue-4);
+
+	--button-hover-text: var(--always-dark);
 }
 
 .custom-colors.theme-light.secondary-accent-light-yellow,
@@ -513,7 +536,6 @@ MIT License
 /* <<< Nord Color Schemes
 ──────────────────────────────────────────────────── */
 
-/* TODO: add accent colors to Nord Theme */
 .nord-colors.nord-colors {
 	--tint-of-grays-light: 200;
 	--tint-of-grays-dark: 200;
@@ -527,13 +549,13 @@ MIT License
 	--bg-dark-hue: 220;
 	--bg-dark-sat: 20%;
 
-	--primary-accent-0: var(--dark-blue-0);
-	--primary-accent-1: var(--dark-blue-1);
-	--primary-accent-2: var(--dark-blue-2);
-	--primary-accent-3: var(--dark-blue-3);
-	--primary-accent-4: var(--dark-blue-4);
-	--primary-accent-5: var(--dark-blue-5);
-	--unresolved-link-color: var(--dark-blue-shifted);
+	--primary-accent-0: var(--deep-blue-0);
+	--primary-accent-1: var(--deep-blue-1);
+	--primary-accent-2: var(--deep-blue-2);
+	--primary-accent-3: var(--deep-blue-3);
+	--primary-accent-4: var(--deep-blue-4);
+	--primary-accent-5: var(--deep-blue-5);
+	--unresolved-link-color: var(--deep-blue-shifted);
 	--button-text: var(--light-in-light-dark-in-dark);
 
 	--hover-accent-1: var(--cyan-blue-1);
@@ -6832,7 +6854,7 @@ a:hover {
 
 /* double underline internal links */
 .is-live-preview .cm-hmd-internal-link.cm-hmd-internal-link .cm-underline,
-.markdown-source-view .cm-hmd-internal-link.cm-hmd-internal-link:hover,
+.markdown-source-view .cm-hmd-internal-link:not(.cm-link-alias):hover,
 .markdown-preview-view .internal-link {
 	text-decoration: underline double 1px;
 }
@@ -12599,10 +12621,10 @@ settings:
       label: 🟪🟩 Classic
       value: classic-colors
     -
-      label: 🟦⬜️🟦 Nord
+      label: ❄️ Nord
       value: nord-colors
     -
-      label: 🟦🟪🟨 Gamma
+      label: 𝛾 Gamma
       value: gamma-colors
     -
       label: 🌈 Custom Colors
@@ -12626,7 +12648,10 @@ settings:
       label: 🟣 Obsidian Purple
       value: primary-accent-light-purple
     -
-      label: 🔵 Beach Blue
+      label: 🏖 Beach Blue
+      value: primary-accent-light-cyan
+    -
+      label: 🔵 Deep Blue
       value: primary-accent-light-blue
     -
       label: 🟠 Autumn Orange
@@ -12659,6 +12684,9 @@ settings:
     -
       label: 🦩 Flamingo Pink
       value: hover-accent-light-pink
+    -
+      label: 🏖 Beach Blue
+      value: hover-accent-light-cyan
   -
    id: strong-em-color-light
    title: "Bold & Italic (Light Mode)"
@@ -12738,7 +12766,10 @@ settings:
       label: 🟣 Obsidian Purple
       value: primary-accent-dark-purple
     -
-      label: 🔵 Beach Blue
+      label: 🏖 Beach Blue
+      value: primary-accent-dark-cyan
+    -
+      label: 🔵 Deep Blue
       value: primary-accent-dark-blue
     -
       label: 🟠 Autumn Orange
@@ -12771,6 +12802,9 @@ settings:
     -
       label: 🦩 Flamingo Pink
       value: hover-accent-dark-pink
+    -
+      label: 🏖 Beach Blue
+      value: hover-accent-dark-cyan
   -
    id: strong-em-color-dark
    title: "Bold & Italic (Dark Mode)"
@@ -13341,11 +13375,11 @@ settings:
    description: The look of the cursor when using Vim in Normal Mode.
    type: class-select
    allowEmpty: false
-   default: vim-cursor-dark-eclipse
+   default: vim-cursor-monolith
    options:
     -
-      label: Dark Eclipse
-      value: vim-cursor-dark-eclipse
+      label: Monolith
+      value: vim-cursor-monolith
     -
       label: Theme Accent
       value: vim-cursor-theme-accent
