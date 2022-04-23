@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 1.1412
+Version 1.1413
 Source CSS: https://github.com/chrisgrieser/shimmering-focus/blob/main/source.css
 MIT License
 ──────────────────────────────────────────────────── */
@@ -6639,8 +6639,6 @@ body:not(.no-codeblock-line-numbers) .HyperMD-codeblock.cm-line:not(.HyperMD-cod
 	padding-left: 3.25em;
 }
 
-/* needs to use ::after to avoid interference with the active line indicator
-but since it's position absolute, it's all good :P */
 body:not(.no-codeblock-line-numbers) .HyperMD-codeblock:not(.HyperMD-codeblock-begin, .HyperMD-codeblock-end)::AFTER {
 	content: counter(codeblock-line-numbers);
 
@@ -6663,6 +6661,9 @@ body:not(.no-codeblock-line-numbers) .HyperMD-codeblock:not(.HyperMD-codeblock-b
 	counter-increment: codeblock-line-numbers;
 }
 
+/* since ::before can't be used (conflict with active line indicator),
+the snippet above needs ::after, which does not work well with <br>,
+so this has to be added to fix this. */
 .HyperMD-codeblock br {
 	display: inline-block;
 	content: " ";
