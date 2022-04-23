@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 1.1405
+Version 1.1406
 Source CSS: https://github.com/chrisgrieser/shimmering-focus/blob/main/source.css
 MIT License
 ──────────────────────────────────────────────────── */
@@ -334,13 +334,21 @@ MIT License
 ──────────────────────────────────────────────────── */
 
 :root {
-	--cyan-blue-0: hsl(190 50% 20% / 99%);
-	--cyan-blue-1: hsl(190 50% 30%);
-	--cyan-blue-2: hsl(190 80% 39%);
-	--cyan-blue-3: hsl(190 70% 47%);
-	--cyan-blue-4: hsl(190 90% 65%);
-	--cyan-blue-5: hsl(190 70% 85% / 99%);
-	--cyan-blue-shifted: hsl(150 75% 40%);
+	--cyan-blue-0: hsl(187 50% 20% / 99%);
+	--cyan-blue-1: hsl(187 50% 30%);
+	--cyan-blue-2: hsl(187 80% 39%);
+	--cyan-blue-3: hsl(187 70% 47%);
+	--cyan-blue-4: hsl(187 90% 65%);
+	--cyan-blue-5: hsl(187 70% 85% / 99%);
+	--cyan-blue-shifted: hsl(147 75% 40%);
+
+	--dark-blue-0: hsl(220 60% 20% / 99%);
+	--dark-blue-1: hsl(220 50% 35%);
+	--dark-blue-2: hsl(220 60% 53%);
+	--dark-blue-3: hsl(220 70% 65%);
+	--dark-blue-4: hsl(220 90% 75%);
+	--dark-blue-5: hsl(220 50% 88% / 99%);
+	--dark-blue-shifted: hsl(180 75% 40%);
 
 	--purple-0: hsl(250 30% 20% / 99%);
 	--purple-1: hsl(250 50% 49%);
@@ -436,7 +444,6 @@ MIT License
 	--bg-light-brightness: 12%;
 	--bg-light-hue: 220;
 	--bg-light-sat: 5%;
-
 	--bg-dark-brightness: 5%;
 	--bg-dark-hue: 220;
 	--bg-dark-sat: 5%;
@@ -447,7 +454,6 @@ MIT License
 	--primary-accent-3: var(--purple-3);
 	--primary-accent-4: var(--purple-4);
 	--primary-accent-5: var(--purple-5);
-
 	--unresolved-link-color: var(--purple-shifted);
 	--button-text: var(--light-in-light-dark-in-dark); /* button text and button hover text dependent on primary & hover accent */
 
@@ -455,7 +461,6 @@ MIT License
 	--hover-accent-2: var(--green-2);
 	--hover-accent-3: var(--green-3);
 	--hover-accent-4: var(--green-4);
-
 	--button-hover-text: var(--text-normal);
 
 	--secondary-accent-2: var(--green-2);
@@ -478,7 +483,6 @@ MIT License
 	--bg-light-brightness: 10%;
 	--bg-light-hue: 225;
 	--bg-light-sat: 14%;
-
 	--bg-dark-brightness: 7%;
 	--bg-dark-hue: 225;
 	--bg-dark-sat: 4%;
@@ -489,15 +493,13 @@ MIT License
 	--primary-accent-3: var(--cyan-blue-3);
 	--primary-accent-4: var(--cyan-blue-4);
 	--primary-accent-5: var(--cyan-blue-5);
-
-	--unresolved-link-color: var(--cyan-blue-shifted); /* ~40 hue less than primary-accent-2 */
+	--unresolved-link-color: var(--cyan-blue-shifted);
 	--button-text: var(--always-dark);
 
 	--hover-accent-1: var(--pink-1);
 	--hover-accent-2: var(--pink-2);
 	--hover-accent-3: var(--pink-3);
 	--hover-accent-4: var(--pink-4);
-
 	--button-hover-text: var(--always-light);
 
 	--secondary-accent-2: var(--orange-alt-2);
@@ -513,13 +515,38 @@ MIT License
 
 /* TODO: add accent colors to Nord Theme */
 .nord-colors.nord-colors {
+	--tint-of-grays-light: 200;
+	--tint-of-grays-dark: 200;
+	--sat-of-grays-light: 15%;
+	--sat-of-grays-dark: 8%;
+
 	--bg-light-brightness: 13%;
 	--bg-light-hue: 220;
 	--bg-light-sat: 20%;
-
 	--bg-dark-brightness: 9%;
 	--bg-dark-hue: 220;
 	--bg-dark-sat: 20%;
+
+	--primary-accent-0: var(--dark-blue-0);
+	--primary-accent-1: var(--dark-blue-1);
+	--primary-accent-2: var(--dark-blue-2);
+	--primary-accent-3: var(--dark-blue-3);
+	--primary-accent-4: var(--dark-blue-4);
+	--primary-accent-5: var(--dark-blue-5);
+	--unresolved-link-color: var(--dark-blue-shifted);
+	--button-text: var(--light-in-light-dark-in-dark);
+
+	--hover-accent-1: var(--cyan-blue-1);
+	--hover-accent-2: var(--cyan-blue-2);
+	--hover-accent-3: var(--cyan-blue-3);
+	--hover-accent-4: var(--cyan-blue-4);
+	--button-hover-text: var(--always-dark);
+
+	--secondary-accent-2: var(--green-2);
+	--secondary-accent-3: var(--green-3);
+
+	--bold-italics-1: var(--hover-accent-2);
+	--bold-italics-2: var(--hover-accent-3);
 }
 
 /* ───────────────────────────────────────────────── */
