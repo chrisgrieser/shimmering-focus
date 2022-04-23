@@ -3,6 +3,7 @@ nav_order: 110
 ---
 
 # Changelog
+- 2022-04-23	patch
 - 2022-04-23	more custom color accents
 - 2022-04-23	❄️ nord color scheme updated to use blue accent colors
 - 2022-04-23	show line numbers on hover

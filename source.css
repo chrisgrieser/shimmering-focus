@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 1.1407
+Version 1.1408
 Source CSS: https://github.com/chrisgrieser/shimmering-focus/blob/main/source.css
 MIT License
 ──────────────────────────────────────────────────── */
@@ -371,11 +371,10 @@ MIT License
 	--orange-5: hsl(40 70% 87% / 99%);
 	--orange-shifted: hsl(344 69% 42%);
 
-	/* TODO integrate with orange from above? */
-	--orange-alt-2: hsl(39 76% 41%);
-	--orange-alt-3: hsl(39 76% 58%);
+	--yellow-orange-2: hsl(39 76% 41%);
+	--yellow-orange-3: hsl(39 76% 58%);
 
-	--pink-1: hsl(324 100% 30%);
+	--pink-1: hsl(324 80% 30%);
 	--pink-2: hsl(324 70% 50%);
 	--pink-3: hsl(334 85% 65%);
 	--pink-4: hsl(324 90% 75%);
@@ -445,8 +444,8 @@ MIT License
 
 .custom-colors.theme-light.secondary-accent-light-yellow,
 .custom-colors.theme-dark.secondary-accent-dark-yellow {
-	--secondary-accent-2: var(--orange-alt-2);
-	--secondary-accent-3: var(--orange-alt-3);
+	--secondary-accent-2: var(--yellow-orange-2);
+	--secondary-accent-3: var(--yellow-orange-3);
 }
 
 /* ───────────────────────────────────────────────── */
@@ -525,8 +524,8 @@ MIT License
 	--hover-accent-4: var(--pink-4);
 	--button-hover-text: var(--always-light);
 
-	--secondary-accent-2: var(--orange-alt-2);
-	--secondary-accent-3: var(--orange-alt-3);
+	--secondary-accent-2: var(--yellow-orange-2);
+	--secondary-accent-3: var(--yellow-orange-3);
 
 	--bold-italics-1: var(--hover-accent-2);
 	--bold-italics-2: var(--hover-accent-3);
