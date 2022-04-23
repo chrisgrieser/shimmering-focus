@@ -4,11 +4,7 @@ A minimalistic [Obsidian](https://obsidian.md/) theme focused on readability and
 
 ---
 
----
-
 # [➡️ Theme Documentation](https://chrisgrieser.github.io/shimmering-focus/)
-
----
 
 ---
 
