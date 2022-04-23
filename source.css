@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 1.1411
+Version 1.1412
 Source CSS: https://github.com/chrisgrieser/shimmering-focus/blob/main/source.css
 MIT License
 ──────────────────────────────────────────────────── */
@@ -6639,7 +6639,9 @@ body:not(.no-codeblock-line-numbers) .HyperMD-codeblock.cm-line:not(.HyperMD-cod
 	padding-left: 3.25em;
 }
 
-body:not(.no-codeblock-line-numbers) .HyperMD-codeblock.cm-line:not(.HyperMD-codeblock-begin, .HyperMD-codeblock-end)::AFTER {
+/* needs to use ::after to avoid interference with the active line indicator
+but since it's position absolute, it's all good :P */
+body:not(.no-codeblock-line-numbers) .HyperMD-codeblock:not(.HyperMD-codeblock-begin, .HyperMD-codeblock-end)::AFTER {
 	content: counter(codeblock-line-numbers);
 
 	font-family: var(--number-font);
@@ -6656,11 +6658,15 @@ body:not(.no-codeblock-line-numbers) .HyperMD-codeblock.cm-line:not(.HyperMD-cod
 	padding-top: 1px;
 	padding-right: 4px;
 
-	/* needs to use ::after to avoid interference with the active line indicator
-	but since it's position absolute, it's all good :P */
 	border-right: var(--thin-border);
 
 	counter-increment: codeblock-line-numbers;
+}
+
+.HyperMD-codeblock br {
+	display: inline-block;
+	content: " ";
+	height: 1rem;
 }
 
 body:not(.no-codeblock-line-numbers) .HyperMD-codeblock .cm-foldPlaceholder::BEFORE {
@@ -10591,7 +10597,7 @@ button.MS-OpenSnippet:hover svg.ms-snippet path {
 
 /* overscroll */
 .BC-Matrix-square.BC-Matrix-square.BC-Matrix-square.BC-Matrix-square.BC-Matrix-square:last-child {
-	margin-bottom: 50px;
+	margin-bottom: 20px;
 }
 
 .view-content .BC-Matrix .BC-Matrix-square ol {
