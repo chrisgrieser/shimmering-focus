@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 1.1432
+Version 1.1433
 Source CSS: https://github.com/chrisgrieser/shimmering-focus/blob/main/source.css
 MIT License
 ──────────────────────────────────────────────────── */
@@ -2477,8 +2477,8 @@ body:is(.theme-light, .theme-dark) ::-WEBKIT-SCROLLBAR-THUMB:active {
 }
 
 /* <<< Updating Plugins */
-.is-loading::BEFORE {
-	height: 6px;
+.modal .is-loading::BEFORE {
+	height: 7px;
 	background:
 		linear-gradient(
 			45deg,
@@ -2539,6 +2539,7 @@ body .setting-item-control a:is(.style-settings-export, .style-settings-import):
 }
 
 /* active button */
+.app-container.app-container button:active,
 .modal.modal.modal.modal.modal button:active {
 	box-shadow: var(--pressed-button-inset-shadow); /* shadow for "pressed down" look */
 	padding: 4px 11px 7px 13px; /* text moving down and right */
