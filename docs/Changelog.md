@@ -3,6 +3,7 @@ nav_order: 110
 ---
 
 # Changelog
+- 2022-04-24	VIM mode indicator
 - 2022-04-24	smoother transition of minimal line numbers
 - 2022-04-24	text color tint options moved from beta to public
 - 2022-04-24	only show beta badges when actually in beta (lol)

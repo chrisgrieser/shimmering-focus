@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 1.1426
+Version 1.1427
 Source CSS: https://github.com/chrisgrieser/shimmering-focus/blob/main/source.css
 MIT License
 ──────────────────────────────────────────────────── */
@@ -1866,6 +1866,39 @@ body:not(.no-grayed-out-inactive-pane) {
 .cm-vim-message::BEFORE {
 	content: var(--error-symbol);
 	margin-right: 8px;
+}
+
+/* mode indicator */
+body:not(.vim-no-mode-indicator) .cm-selectionLayer::BEFORE {
+	font-size: 0.7rem;
+
+	background-color: var(--bg3);
+	box-shadow: var(--small-inset-shadow);
+	opacity: 0.8;
+
+	position: fixed;
+	top: 7px;
+	right: 15px;
+
+	padding: 1px 4px;
+
+	border: var(--thin-border);
+	border-radius: var(--roundish);
+}
+
+body:not(.vim-no-mode-indicator) .cm-vimCursorLayer:empty + .cm-selectionLayer:empty::BEFORE {
+	content: "Insert";
+	color: var(--secondary-accent-text);
+}
+
+body:not(.vim-no-mode-indicator) .cm-vimCursorLayer:not(:empty) + .cm-selectionLayer:empty::BEFORE {
+	content: "Normal";
+	color: var(--hover-accent-2);
+}
+
+body:not(.vim-no-mode-indicator) .cm-vimCursorLayer:not(:empty) + .cm-selectionLayer:not(:empty)::BEFORE {
+	content: "Visual";
+	color: var(--primary-accent-2);
 }
 
 /* ───────────────────────────────────────────────── */
@@ -13359,8 +13392,8 @@ settings:
   -
 # << Cursor (+)
    id: cursor-settings
-   title: 🐁 Cursor
-   description: Thickness, Style, Color, Blinking, Block Cursor,🆕 Vim Cursor
+   title: 🖱 Cursor & Vim Mode
+   description: Thickness, Style, Color, Blinking, Block Cursor,🆕 Vim Cursor,🆕 Vim Mode Indicator
    type: heading
    level: 1
    collapsed: true
@@ -13437,6 +13470,12 @@ settings:
     -
       label: Theme Accent
       value: vim-cursor-theme-accent
+  -
+   id: vim-no-mode-indicator
+   title: Disable Vim Mode Indicator
+   description: 'Turn off the Vim Mode Indicator in the top right. (The indicator can only identify Normal, Insert, and Visual Mode.)'
+   type: class-toggle
+   default: false
   -
 # << Code Blocks (+)
    id: code-blocks-options
