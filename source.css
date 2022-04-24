@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 1.1431
+Version 1.1432
 Source CSS: https://github.com/chrisgrieser/shimmering-focus/blob/main/source.css
 MIT License
 ──────────────────────────────────────────────────── */
@@ -1858,7 +1858,7 @@ body:not(.no-grayed-out-inactive-pane) {
 
 .cm-vimCursorLayer:not(:empty) + .cm-selectionLayer:not(:empty)::BEFORE {
 	content: "Visual";
-	color: var(--primary-accent-2);
+	color: var(--link-color);
 }
 
 /* ───────────────────────────────────────────────── */
