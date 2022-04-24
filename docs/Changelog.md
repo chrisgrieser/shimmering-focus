@@ -3,6 +3,7 @@ nav_order: 110
 ---
 
 # Changelog
+- 2022-04-24	🎨 Bold & Italic now colored per default (+ Style setting to switch to uncolored)
 - 2022-04-24	color tweaks
 - 2022-04-24	color tweaks gamma scheme & nord scheme
 - 2022-04-24	several minor improvements to code blocks

@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 1.1419
+Version 1.1420
 Source CSS: https://github.com/chrisgrieser/shimmering-focus/blob/main/source.css
 MIT License
 ──────────────────────────────────────────────────── */
@@ -352,7 +352,7 @@ MIT License
 
 	--purple-0: hsl(250 30% 20% / 99%);
 	--purple-1: hsl(250 50% 49%);
-	--purple-2: hsl(250 75% 64%);
+	--purple-2: hsl(250 60% 64%);
 	--purple-3: hsl(250 90% 74%);
 	--purple-4: hsl(250 90% 83%);
 	--purple-5: hsl(250 70% 91% / 99%);
@@ -487,9 +487,6 @@ MIT License
 
 	--secondary-accent-2: var(--green-2);
 	--secondary-accent-3: var(--green-3);
-
-	--bold-italics-1: var(--text-normal);
-	--bold-italics-2: var(--text-normal);
 }
 
 /* ───────────────────────────────────────────────── */
@@ -526,9 +523,6 @@ MIT License
 
 	--secondary-accent-2: var(--yellow-orange-2);
 	--secondary-accent-3: var(--yellow-orange-3);
-
-	--bold-italics-1: var(--hover-accent-2);
-	--bold-italics-2: var(--hover-accent-3);
 }
 
 /* ───────────────────────────────────────────────── */
@@ -565,9 +559,6 @@ MIT License
 
 	--secondary-accent-2: var(--green-2);
 	--secondary-accent-3: var(--green-3);
-
-	--bold-italics-1: var(--hover-accent-2);
-	--bold-italics-2: var(--hover-accent-3);
 }
 
 /* ───────────────────────────────────────────────── */
@@ -638,24 +629,21 @@ MIT License
 /* ───────────────────────────────────────────────── */
 /* <<< Bold & Italics Accent Calculations
 ──────────────────────────────────────────────────── */
-
-/* bold-italics = uncolored (default with custom colors) */
-.custom-colors.theme-light,
-.custom-colors.theme-dark {
-	--bold-italics-1: var(--text-normal);
-	--bold-italics-2: var(--text-normal);
-}
-
-/* bold-italics = hover accent */
-.custom-colors.theme-dark.strong-em-hover-accent-dark,
-.custom-colors.theme-light.strong-em-hover-accent-light {
+/* default: bold-italics = hover accent */
+.theme-light,
+.theme-dark {
 	--bold-italics-1: var(--hover-accent-2);
 	--bold-italics-2: var(--hover-accent-3);
 }
 
+/* bold-italics = uncolored (default with custom colors) */
+body.strong-em-uncolored {
+	--bold-italics-1: var(--text-normal);
+	--bold-italics-2: var(--text-normal);
+}
+
 /* bold-italics = secondary accent */
-.custom-colors.theme-dark.strong-em-secondary-accent-dark,
-.custom-colors.theme-light.strong-em-secondary-accent-light {
+body.strong-em-secondary-accent {
 	--bold-italics-1: var(--secondary-accent-2);
 	--bold-italics-2: var(--secondary-accent-3);
 }
@@ -11353,7 +11341,7 @@ body:not(.unlock-theme-beta) .style-settings-container .setting-item:is(
 	[data-id="post-it-callout-size"],
 
 	[data-id*="tint-"],
-	[data-id*="-accent-"] [data-id^="strong-em-"]
+	[data-id*="-accent-"]
 ) {
 	display: none;
 }
@@ -11368,7 +11356,6 @@ body:not(.unlock-theme-beta) .style-settings-container .setting-item:is(
 
 	[data-id*="tint-"],
 	[data-id*="-accent-"],
-	[data-id^="strong-em-"],
 	[data-id="preset-color-scheme"],
 [data-id="unlock-theme-beta"])::BEFORE {
 	content: "Beta";
@@ -12631,7 +12618,7 @@ settings:
 # << Aesthetics & Custom Colors (+)
    id: aesthetics
    title: 🎨 Color & Aesthetics
-   description: Color Schemes, Custom Colors, Brightness, Roundness, Decorations
+   description: Color Schemes, Coloring of YAML, 🆕 Coloring of Bold/Italic, Brightness, Roundness, Decorations
    type: heading
    level: 1
    collapsed: true
@@ -12644,20 +12631,37 @@ settings:
    default: squareish-shapes
    options:
     -
-      label: ⏹ Square-ish
+      label: ⏹ Rounded
       value: squareish-shapes
     -
       label: 🔘 Round
       value: round-shapes
     -
-      label: 🔲 Angular
+      label: 🔲 Pointy
       value: angular-shapes
   -
    id: colored-yaml
-   title: "Colored YAML Frontmatter (Edit Mode)"
+   title: Colored YAML Frontmatter (Edit Mode)
    description: 'Use colored YAML frontmatter in Source Mode & Live Preview. (In Reading Mode, YAML Frontmatter is always colored.) Colors in the YAML Frontmatter are determined by accent colors.'
    type: class-toggle
    default: false
+  -
+   id: colored-bold-italic
+   title: 🆕 Bold & Italic Text Color
+   description: 'Whether Bold & Italic should have the same color as normal text or have a different color. (Note that with the Classic Color Scheme, secondary & hovered accent are both the same.)'
+   type: class-select
+   allowEmpty: false
+   default: strong-em-hover-accent
+   options:
+    -
+      label: Use Hover Accent
+      value: strong-em-hover-accent
+    -
+      label: Use Secondary Accent
+      value: strong-em-secondary-accent
+    -
+      label: Same as Normal Text
+      value: strong-em-uncolored
   -
    id: preset-color-scheme
    title: "Color Schemes"
@@ -12673,10 +12677,10 @@ settings:
       label: ❄️ Nord
       value: nord-colors
     -
-      label: 𝛾 Gamma
+      label: 𝚪 Gamma
       value: gamma-colors
     -
-      label: 🌈 Custom Colors
+      label: 💫 Custom Colors
       value: custom-colors
   -
    id: custom-color-light-mode
@@ -12736,23 +12740,6 @@ settings:
     -
       label: 🏖 Beach Blue
       value: hover-accent-light-cyan
-  -
-   id: strong-em-color-light
-   title: "Bold & Italic (Light Mode)"
-   description: 'When set to "Uncolored", bold and italic will have the same color as normal text.'
-   type: class-select
-   allowEmpty: false
-   default: strong-em-uncolored-light
-   options:
-    -
-      label: Uncolored
-      value: strong-em-uncolored-light
-    -
-      label: Use Hover Accent
-      value: strong-em-hover-accent-light
-    -
-      label: Use Secondary Accent
-      value: strong-em-secondary-accent-light
   -
    id: use-gray-tint-light
    title: 'Slightly colored text (Light Mode)'
@@ -12854,23 +12841,6 @@ settings:
     -
       label: 🏖 Beach Blue
       value: hover-accent-dark-cyan
-  -
-   id: strong-em-color-dark
-   title: "Bold & Italic (Dark Mode)"
-   description: 'When set to "Uncolored", bold and italic will have the same color as normal text.'
-   type: class-select
-   allowEmpty: false
-   default:  strong-em-uncolored-dark
-   options:
-    -
-      label: Uncolored
-      value: strong-em-uncolored-dark
-    -
-      label: Use Hover Accent
-      value: strong-em-hover-accent-dark
-    -
-      label: Use Secondary Accent
-      value: strong-em-secondary-accent-dark
   -
    id: use-gray-tint-dark
    title: 'Slightly colored text (Dark Mode)'
