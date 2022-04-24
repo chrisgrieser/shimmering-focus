@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 1.1420
+Version 1.1421
 Source CSS: https://github.com/chrisgrieser/shimmering-focus/blob/main/source.css
 MIT License
 ──────────────────────────────────────────────────── */
@@ -11339,22 +11339,19 @@ body:not(.show-titlebar) .setting-item[data-id="show-titlebar-text"],
 /* hide settings */
 body:not(.unlock-theme-beta) .style-settings-container .setting-item:is(
 	[data-id="post-it-callout-size"],
-
-	[data-id*="tint-"],
 	[data-id*="-accent-"]
 ) {
 	display: none;
 }
 
 /* beta badge */
-.style-settings-container .setting-item:is(
+.unlock-theme-beta .style-settings-container .setting-item:is(
 	[data-id="aesthetics"],
 	[data-id="callout-options"]
 ).is-collapsed::AFTER,
-.style-settings-container .setting-item:is(
+.unlock-theme-beta .style-settings-container .setting-item:is(
 	[data-id="post-it-callout-size"],
 
-	[data-id*="tint-"],
 	[data-id*="-accent-"],
 	[data-id="preset-color-scheme"],
 [data-id="unlock-theme-beta"])::BEFORE {
@@ -12748,7 +12745,7 @@ settings:
   -
    id: tint-of-grays-light
    title: 'Text: Color Tint (Light Mode)'
-   description: 'Slight tint for standard text (i.e.,hue with low saturation)'
+   description: 'Slight tint for standard text (i.e., hue with low saturation)'
    type: variable-number-slider
    default: 220
    min: 0
