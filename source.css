@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 1.1427
+Version 1.1428
 Source CSS: https://github.com/chrisgrieser/shimmering-focus/blob/main/source.css
 MIT License
 ──────────────────────────────────────────────────── */
@@ -43,8 +43,10 @@ MIT License
 	- Angular or Round Shapes
 	- Animations, Transition & Dimmed Pane
 - Cursor
-	- Vim Cursor
 - Vim Mode
+	- Vim Cursor
+	- Vim Mode Indicator
+	- Vim Panel
 - UI Elements
 	- Title Bar
 		- Traffic Light Fixes
@@ -1770,6 +1772,10 @@ body:not(.no-grayed-out-inactive-pane) {
 }
 
 /* ───────────────────────────────────────────────── */
+/* < Vim Mode
+──────────────────────────────────────────────────── */
+
+/* ───────────────────────────────────────────────── */
 /* << Vim Cursor
 ──────────────────────────────────────────────────── */
 
@@ -1813,7 +1819,43 @@ body:not(.no-grayed-out-inactive-pane) {
 }
 
 /* ───────────────────────────────────────────────── */
-/* < Vim Mode
+/* << Vim Mode Indicator
+──────────────────────────────────────────────────── */
+
+.cm-selectionLayer::BEFORE {
+	font-size: 0.7rem;
+
+	background-color: var(--bg3);
+	box-shadow: var(--small-inset-shadow);
+	opacity: 0.8;
+
+	position: fixed;
+	top: 7px;
+	right: 15px;
+
+	padding: 1px 4px;
+
+	border: var(--thin-border);
+	border-radius: var(--roundish);
+}
+
+.cm-vimCursorLayer:empty + .cm-selectionLayer:empty::BEFORE {
+	content: "Insert";
+	color: var(--secondary-accent-text);
+}
+
+.cm-vimCursorLayer:not(:empty) + .cm-selectionLayer:empty::BEFORE {
+	content: "Normal";
+	color: var(--hover-accent-2);
+}
+
+.cm-vimCursorLayer:not(:empty) + .cm-selectionLayer:not(:empty)::BEFORE {
+	content: "Visual";
+	color: var(--primary-accent-2);
+}
+
+/* ───────────────────────────────────────────────── */
+/* << Vim Panel
 ──────────────────────────────────────────────────── */
 .cm-vim-panel {
 	/* avoid collision with status bar */
@@ -1866,39 +1908,6 @@ body:not(.no-grayed-out-inactive-pane) {
 .cm-vim-message::BEFORE {
 	content: var(--error-symbol);
 	margin-right: 8px;
-}
-
-/* mode indicator */
-body:not(.vim-no-mode-indicator) .cm-selectionLayer::BEFORE {
-	font-size: 0.7rem;
-
-	background-color: var(--bg3);
-	box-shadow: var(--small-inset-shadow);
-	opacity: 0.8;
-
-	position: fixed;
-	top: 7px;
-	right: 15px;
-
-	padding: 1px 4px;
-
-	border: var(--thin-border);
-	border-radius: var(--roundish);
-}
-
-body:not(.vim-no-mode-indicator) .cm-vimCursorLayer:empty + .cm-selectionLayer:empty::BEFORE {
-	content: "Insert";
-	color: var(--secondary-accent-text);
-}
-
-body:not(.vim-no-mode-indicator) .cm-vimCursorLayer:not(:empty) + .cm-selectionLayer:empty::BEFORE {
-	content: "Normal";
-	color: var(--hover-accent-2);
-}
-
-body:not(.vim-no-mode-indicator) .cm-vimCursorLayer:not(:empty) + .cm-selectionLayer:not(:empty)::BEFORE {
-	content: "Visual";
-	color: var(--primary-accent-2);
 }
 
 /* ───────────────────────────────────────────────── */
