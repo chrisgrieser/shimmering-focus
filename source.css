@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 1.1416
+Version 1.1417
 Source CSS: https://github.com/chrisgrieser/shimmering-focus/blob/main/source.css
 MIT License
 ──────────────────────────────────────────────────── */
@@ -959,7 +959,7 @@ body:is(.theme-light, .theme-dark) {
 :root {
 	--resize-handle-thickness: 2px;
 	--resize-handle-hovered-thickness: 5px;
-	--scrollbar-thickness: 8px;
+	--scrollbar-thickness: 12px;
 
 	--image-size: 50;
 	--pdf-size: 50;
@@ -2367,9 +2367,10 @@ body:not(.permanently-show-statusbar, .classic-statusbar) .mod-right-split .work
 /* hide all scrollbars except the one for the editor */
 body:not(.show-scrollbar) ::-WEBKIT-SCROLLBAR {
 	display: none;
+	width: var(--scrollbar-thickness);
 }
 
-:is(.hover-editor, .workspace-split.mod-root) ::-WEBKIT-SCROLLBAR {
+.workspace-split.mod-root ::-WEBKIT-SCROLLBAR {
 	display: unset;
 }
 
@@ -2380,7 +2381,6 @@ body:not(.show-scrollbar) ::-WEBKIT-SCROLLBAR {
 
 body ::-WEBKIT-SCROLLBAR-THUMB:active,
 body ::-WEBKIT-SCROLLBAR-THUMB {
-	width: var(--scrollbar-thickness);
 	box-shadow: var(--small-inset-shadow);
 	border: var(--thin-muted-border);
 }
@@ -6450,6 +6450,11 @@ div.HyperMD-codeblock-bg:not(.HyperMD-codeblock-begin-bg) {
 	font-size: calc(var(--monospace-font-size) * 0.9);
 	color: var(--text-muted);
 	padding: 0 1px;
+}
+
+/* clicking flair = copying code in LP, therefore hover accent */
+.cm-line.HyperMD-codeblock .code-block-flair:hover {
+	color: var(--hover-accent-2);
 }
 
 /* embedded code block */
@@ -12241,6 +12246,10 @@ and file recovery plugin */
 
 .hover-editor .popover-titlebar.popover-titlebar.popover-titlebar.popover-titlebar.popover-titlebar.popover-titlebar {
 	background-color: var(--alt-bg);
+}
+
+.hover-editor ::-WEBKIT-SCROLLBAR {
+	display: unset;
 }
 
 .popover.hover-editor .popover-content.popover-content {
