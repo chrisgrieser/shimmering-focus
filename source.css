@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 1.1417
+Version 1.1418
 Source CSS: https://github.com/chrisgrieser/shimmering-focus/blob/main/source.css
 MIT License
 ──────────────────────────────────────────────────── */
@@ -498,16 +498,16 @@ MIT License
 /* Co-designed with @lkadre */
 .gamma-colors.gamma-colors {
 	--tint-of-grays-light: 260;
-	--tint-of-grays-dark: 260;
+	--tint-of-grays-dark: 270;
 	--sat-of-grays-light: 15%;
 	--sat-of-grays-dark: 8%;
 
 	--bg-light-brightness: 10%;
-	--bg-light-hue: 225;
+	--bg-light-hue: 235;
 	--bg-light-sat: 14%;
 	--bg-dark-brightness: 7%;
-	--bg-dark-hue: 225;
-	--bg-dark-sat: 4%;
+	--bg-dark-hue: 235;
+	--bg-dark-sat: 9%;
 
 	--primary-accent-0: var(--cyan-blue-0);
 	--primary-accent-1: var(--cyan-blue-1);

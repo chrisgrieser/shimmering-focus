@@ -3,6 +3,7 @@ nav_order: 110
 ---
 
 # Changelog
+- 2022-04-24	color tweaks gamma scheme & nord scheme
 - 2022-04-24	several minor improvements to code blocks
 - 2022-04-24	better active line indicator while in code blocks
 - 2022-04-24	make code block line numbers appear in empty lines as well
