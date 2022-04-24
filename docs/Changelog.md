@@ -3,6 +3,7 @@ nav_order: 110
 ---
 
 # Changelog
+- 2022-04-24	text color tint options moved from beta to public
 - 2022-04-24	only show beta badges when actually in beta (lol)
 - 2022-04-24	🎨 Bold & Italic now colored per default (+ Style setting to switch to uncolored)
 - 2022-04-24	color tweaks
