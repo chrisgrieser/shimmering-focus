@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 1.1429
+Version 1.1430
 Source CSS: https://github.com/chrisgrieser/shimmering-focus/blob/main/source.css
 MIT License
 ──────────────────────────────────────────────────── */
@@ -1825,7 +1825,6 @@ body:not(.no-grayed-out-inactive-pane) {
 .cm-selectionLayer::BEFORE {
 	font-family: var(--font-interface);
 	font-size: 0.7rem;
-	font-weight: 600;
 	letter-spacing: 0.2px;
 
 	background-color: var(--alt-bg);
@@ -1839,6 +1838,12 @@ body:not(.no-grayed-out-inactive-pane) {
 
 	border: var(--thin-border);
 	border-radius: var(--roundish);
+
+	filter: saturate(0.8);
+}
+
+.theme-light .cm-selectionLayer::BEFORE {
+	font-weight: 600;
 }
 
 .cm-vimCursorLayer:empty + .cm-selectionLayer:empty::BEFORE {
