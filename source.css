@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 1.1430
+Version 1.1431
 Source CSS: https://github.com/chrisgrieser/shimmering-focus/blob/main/source.css
 MIT License
 ──────────────────────────────────────────────────── */
@@ -1831,8 +1831,8 @@ body:not(.no-grayed-out-inactive-pane) {
 	box-shadow: var(--small-inset-shadow);
 
 	position: fixed;
-	top: 7px;
-	right: 15px;
+	top: 6px;
+	right: calc(var(--scrollbar-thickness) + 3px);
 
 	padding: 1px 4px;
 
