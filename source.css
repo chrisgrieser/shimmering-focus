@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 1.1425
+Version 1.1426
 Source CSS: https://github.com/chrisgrieser/shimmering-focus/blob/main/source.css
 MIT License
 ──────────────────────────────────────────────────── */
@@ -255,6 +255,8 @@ MIT License
 	- Omnisearch
 	- Mind Map
 	- Linter
+	- Typing Speed
+	- vimrc support
 - Compatibility Info for the Obsidian Hub
 - Style Setting (YAML)
  	- Show / Hide UI Elements (+)
@@ -1864,16 +1866,6 @@ body:not(.no-grayed-out-inactive-pane) {
 .cm-vim-message::BEFORE {
 	content: var(--error-symbol);
 	margin-right: 8px;
-}
-
-/* vimrc plugin */
-.status-bar-item.plugin-obsidian-vimrc-support::FIRST-LETTER {
-	font-size: calc(var(--status-bar-font-size) * 0.8);
-}
-
-.status-bar-item.plugin-obsidian-vimrc-support {
-	margin-top: -1px;
-	filter: saturate(0.7);
 }
 
 /* ───────────────────────────────────────────────── */
@@ -5328,8 +5320,6 @@ body:not(.permanently-show-collapse-indicators) .cm-line:not(:hover):not(.cm-act
 
 .minimal-line-numbering .cm-lineNumbers .cm-gutterElement {
 	color: var(--text-muted);
-	transition: var(--very-quick-transition);
-	transition-delay: var(--transition-delay-passing-over-protection);
 }
 
 .minimal-line-numbering .cm-lineNumbers .cm-gutterElement.cm-active {
@@ -5339,6 +5329,14 @@ body:not(.permanently-show-collapse-indicators) .cm-line:not(:hover):not(.cm-act
 .minimal-line-numbering .cm-lineNumbers:hover .cm-gutterElement.cm-active {
 	font-weight: 600;
 	color: var(--active-line-indicator);
+	transition: var(--very-quick-transition);
+	transition-property: color, font-weight;
+	transition-delay: var(--transition-delay-passing-over-protection);
+}
+
+.minimal-line-numbering .cm-lineNumbers:hover .cm-gutterElement:not(.cm-active) {
+	transition: var(--very-quick-transition);
+	transition-delay: var(--transition-delay-passing-over-protection);
 }
 
 /* when disabled, active highlighting of markup */
@@ -9014,6 +9012,8 @@ img.emoji.emoji.emoji.emoji.emoji {
 ──────────────────────────────────────────────────── */
 .status-bar-item.plugin-obsidian-discordrpc {
 	font-size: 85%;
+	position: relative;
+	top: 1.5px;
 	filter: grayscale(1) contrast(1.3) opacity(0.8);
 }
 
@@ -12417,6 +12417,26 @@ body:not(.no-alternating-rows) .omnisearch-result:nth-child(odd) .omnisearch-res
 }
 
 /* ───────────────────────────────────────────────── */
+/* << Typing Speed
+──────────────────────────────────────────────────── */
+
+/* hide when "darken after 3s non-typing" option selected */
+.status-bar-item.plugin-typing-speed[style$="0.5;"] {
+	display: none;
+}
+
+/* ───────────────────────────────────────────────── */
+/* << vimrc support
+──────────────────────────────────────────────────── */
+.status-bar-item.plugin-obsidian-vimrc-support::FIRST-LETTER {
+	font-size: calc(var(--status-bar-font-size) * 0.8);
+}
+
+.status-bar-item.plugin-obsidian-vimrc-support {
+	filter: saturate(0.7);
+}
+
+/* ───────────────────────────────────────────────── */
 /* < Compatibility Info for the Obsidian Hub
 ──────────────────────────────────────────────────── */
 
@@ -12490,6 +12510,8 @@ community:
 - obsidian-omnisearch
 - obsidian-mind-map
 - obsidian-linter
+- typing-speed
+- obsidian-vimrc-support
 */
 
 /* ───────────────────────────────────────────────── */
