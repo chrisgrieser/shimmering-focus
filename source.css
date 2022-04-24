@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 1.1428
+Version 1.1429
 Source CSS: https://github.com/chrisgrieser/shimmering-focus/blob/main/source.css
 MIT License
 ──────────────────────────────────────────────────── */
@@ -1823,11 +1823,13 @@ body:not(.no-grayed-out-inactive-pane) {
 ──────────────────────────────────────────────────── */
 
 .cm-selectionLayer::BEFORE {
+	font-family: var(--font-interface);
 	font-size: 0.7rem;
+	font-weight: 600;
+	letter-spacing: 0.2px;
 
-	background-color: var(--bg3);
+	background-color: var(--alt-bg);
 	box-shadow: var(--small-inset-shadow);
-	opacity: 0.8;
 
 	position: fixed;
 	top: 7px;
