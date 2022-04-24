@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 1.1423
+Version 1.1424
 Source CSS: https://github.com/chrisgrieser/shimmering-focus/blob/main/source.css
 MIT License
 ──────────────────────────────────────────────────── */
@@ -801,7 +801,7 @@ body.strong-em-secondary-accent {
 .theme-light {
 	--search-match-color: hsl(30 100% 45%);
 	--text-error: hsl(0 100% 25%);
-	--error-bg: hsl(0 80% 85%);
+	--error-bg: hsl(10 40% 75%);
 	--sucess-color: hsl(101 90% 40%);
 }
 
@@ -5307,7 +5307,7 @@ body:not(.permanently-show-collapse-indicators) .cm-line:not(:hover):not(.cm-act
 .CodeMirror-linenumbers,
 .cm-lineNumbers {
 	font-family: var(--number-font);
-	font-size: 1.1em;
+	font-size: 1.2em;
 	line-height: 1em;
 	letter-spacing: 1px;
 }
@@ -5327,13 +5327,17 @@ body:not(.permanently-show-collapse-indicators) .cm-line:not(:hover):not(.cm-act
 }
 
 .minimal-line-numbering .cm-lineNumbers .cm-gutterElement {
-	font-weight: 600;
 	color: var(--text-muted);
-	transition: var(--quick-transition);
+	transition: var(--very-quick-transition);
 	transition-delay: var(--transition-delay-passing-over-protection);
 }
 
+.minimal-line-numbering .cm-lineNumbers .cm-gutterElement.cm-active {
+	transition-delay: 0;
+}
+
 .minimal-line-numbering .cm-lineNumbers:hover .cm-gutterElement.cm-active {
+	font-weight: 600;
 	color: var(--active-line-indicator);
 }
 
@@ -6658,6 +6662,7 @@ body:not(.no-codeblock-line-numbers) .HyperMD-codeblock:not(.HyperMD-codeblock-b
 	font-size: 0.9em;
 	text-align: right;
 
+	height: 100%; /* ensures border closes w/ wrapped lines */
 	width: 1.25em;
 
 	color: var(--text-muted);
