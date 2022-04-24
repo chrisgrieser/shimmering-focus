@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 1.1413
+Version 1.1414
 Source CSS: https://github.com/chrisgrieser/shimmering-focus/blob/main/source.css
 MIT License
 ──────────────────────────────────────────────────── */
@@ -1880,8 +1880,12 @@ body:not(.no-grayed-out-inactive-pane) {
 
 /* vimrc plugin */
 .status-bar-item.plugin-obsidian-vimrc-support::FIRST-LETTER {
-	font-size: calc(var(--status-bar-font-size) * 0.9);
-	filter: saturate(0.75);
+	font-size: calc(var(--status-bar-font-size) * 0.75);
+}
+
+.status-bar-item.plugin-obsidian-vimrc-support {
+	margin-top: -1px;
+	filter: saturate(0.7);
 }
 
 /* ───────────────────────────────────────────────── */
