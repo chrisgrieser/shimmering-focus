@@ -3,7 +3,7 @@ nav_order: 110
 ---
 
 # Changelog
-- 2022-04-24	patch
+- 2022-04-24	better active line indicator while in code blocks
 - 2022-04-24	make code block line numbers appear in empty lines as well
 - 2022-04-23	use Ubuntu mono as number font
 - 2022-04-23	code block line numbers in Edit Mode (by @pryley, #146)

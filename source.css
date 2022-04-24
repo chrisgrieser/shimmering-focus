@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 1.1414
+Version 1.1415
 Source CSS: https://github.com/chrisgrieser/shimmering-focus/blob/main/source.css
 MIT License
 ──────────────────────────────────────────────────── */
@@ -4687,7 +4687,8 @@ body > .app-container .view-content > div > .markdown-preview-view {
 ──────────────────────────────────────────────────── */
 
 /* Vertical Line in Gutter */
-body:not(.active-line-emphasized-bg):not(.no-active-highlight) :is(.cm-active, .CodeMirror-activeline):not(.HyperMD-quote, .HyperMD-header)::BEFORE {
+.no-codeblock-line-numbers:not(.active-line-emphasized-bg):not(.no-active-highlight) :is(.cm-active, .CodeMirror-activeline).HyperMD-codeblock::BEFORE,
+body:not(.active-line-emphasized-bg):not(.no-active-highlight) :is(.cm-active, .CodeMirror-activeline):not(.HyperMD-quote, .HyperMD-header, .HyperMD-codeblock)::BEFORE {
 	content: " ";
 	height: 100%;
 	position: absolute;
@@ -4696,8 +4697,15 @@ body:not(.active-line-emphasized-bg):not(.no-active-highlight) :is(.cm-active, .
 }
 
 /* more contrasted color in dark mode */
-.theme-dark.theme-dark.theme-dark :is(.CodeMirror-activeline, .cm-active)::BEFORE {
-	border-color: var(--bg3);
+.theme-dark.theme-dark.theme-dark :is(.CodeMirror-activeline, .cm-active):not(.HyperMD-quote, .HyperMD-header, .HyperMD-codeblock)::BEFORE {
+	border-color: var(--alt-bg);
+}
+
+/* interaction with code block line numbers */
+body:not(.no-codeblock-line-numbers):not(.no-active-highlight) .HyperMD-codeblock.cm-active:not(.HyperMD-codeblock-begin, .HyperMD-codeblock-end)::BEFORE {
+	font-weight: 600;
+	color: var(--active-line-indicator);
+	background-color: var(--alt-bg);
 }
 
 .active-line-emphasized-bg:not(.active-visual-line) .cm-active:not(.cm-gutterElement),
@@ -4712,7 +4720,7 @@ body:not(.active-line-emphasized-bg):not(.no-active-highlight) :is(.cm-active, .
 	border-top-left-radius: 0;
 }
 
-body:not(.no-active-highlight) .cm-active :is(.cm-formatting-header,.cm-formatting-quote, .cm-formatting-list, .list-bullet) {
+body:not(.no-active-highlight) .cm-active :is(.cm-formatting-header,.cm-formatting-quote, .cm-formatting-list, .list-bullet, .cm-formatting-code-block) {
 	color: var(--active-line-indicator);
 }
 
@@ -5306,7 +5314,7 @@ body:not(.permanently-show-collapse-indicators) .cm-line:not(:hover):not(.cm-act
 .CodeMirror-linenumbers,
 .cm-lineNumbers {
 	font-family: var(--number-font);
-	font-size: 1.2em;
+	font-size: 1.1em;
 	line-height: 1em;
 	letter-spacing: 1px;
 }
@@ -6640,38 +6648,28 @@ body:not(.no-codeblock-line-numbers) .HyperMD-codeblock-begin {
 }
 
 body:not(.no-codeblock-line-numbers) .HyperMD-codeblock.cm-line:not(.HyperMD-codeblock-begin, .HyperMD-codeblock-end) {
-	padding-left: 3.25em;
+	padding-left: 3em;
 }
 
-body:not(.no-codeblock-line-numbers) .HyperMD-codeblock:not(.HyperMD-codeblock-begin, .HyperMD-codeblock-end)::AFTER {
+body:not(.no-codeblock-line-numbers) .HyperMD-codeblock:not(.HyperMD-codeblock-begin, .HyperMD-codeblock-end)::BEFORE {
 	content: counter(codeblock-line-numbers);
 
 	font-family: var(--number-font);
-	font-size: 0.85em;
+	font-size: 0.9em;
 	text-align: right;
 
-	width: 1.8em;
+	width: 1.25em;
 
 	color: var(--text-muted);
 
 	position: absolute;
 	left: 0;
 
-	padding-top: 1px;
 	padding-right: 4px;
 
 	border-right: var(--thin-border);
 
 	counter-increment: codeblock-line-numbers;
-}
-
-/* since ::before can't be used (conflict with active line indicator),
-the snippet above needs ::after, which does not work well with <br>,
-so this has to be added to fix this. */
-.HyperMD-codeblock br {
-	display: inline-block;
-	content: " ";
-	height: 1rem;
 }
 
 body:not(.no-codeblock-line-numbers) .HyperMD-codeblock .cm-foldPlaceholder::BEFORE {
@@ -13427,7 +13425,7 @@ settings:
 # << Code Blocks (+)
    id: code-blocks-options
    title: '🖥 Code Blocks'
-   description: 'Syntax Highlighting, Tab Size, Line Wrapping'
+   description: '🆕 Line Numbering, Tab Size, Line Wrapping, Syntax Highlighting'
    type: heading
    level: 1
    collapsed: true
