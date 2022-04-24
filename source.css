@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 1.1418
+Version 1.1419
 Source CSS: https://github.com/chrisgrieser/shimmering-focus/blob/main/source.css
 MIT License
 ──────────────────────────────────────────────────── */
@@ -289,11 +289,11 @@ MIT License
 }
 
 .custom-colors.theme-light.use-gray-tint-light {
-	--sat-of-grays-light: 15%;
+	--sat-of-grays-light: 20%;
 }
 
 .custom-colors.theme-dark.use-gray-tint-dark {
-	--sat-of-grays-dark: 6%;
+	--sat-of-grays-dark: 10%;
 }
 
 /* calculations */
@@ -337,8 +337,8 @@ MIT License
 	--cyan-blue-0: hsl(187 50% 20% / 99%);
 	--cyan-blue-1: hsl(187 50% 30%);
 	--cyan-blue-2: hsl(187 80% 39%);
-	--cyan-blue-3: hsl(187 70% 47%);
-	--cyan-blue-4: hsl(187 90% 65%);
+	--cyan-blue-3: hsl(187 70% 54%);
+	--cyan-blue-4: hsl(187 75% 63%);
 	--cyan-blue-5: hsl(187 70% 85% / 99%);
 	--cyan-blue-shifted: hsl(147 75% 40%);
 
@@ -383,8 +383,8 @@ MIT License
 /* ───────────────────────────────────────────────── */
 /* << Custom Individual Accent Colors
 ──────────────────────────────────────────────────── */
-.custom-colors.theme-light.primary-accent-light-dark-blue,
-.custom-colors.theme-dark.primary-accent-dark-blue {
+.custom-colors.theme-light.primary-accent-light-blue,
+.custom-colors.theme-dark.primary-accent-blue {
 	--primary-accent-0: var(--deep-blue-0);
 	--primary-accent-1: var(--deep-blue-1);
 	--primary-accent-2: var(--deep-blue-2);
@@ -497,17 +497,17 @@ MIT License
 ──────────────────────────────────────────────────── */
 /* Co-designed with @lkadre */
 .gamma-colors.gamma-colors {
-	--tint-of-grays-light: 260;
+	--tint-of-grays-light: 270;
 	--tint-of-grays-dark: 270;
-	--sat-of-grays-light: 15%;
-	--sat-of-grays-dark: 8%;
+	--sat-of-grays-light: 20%;
+	--sat-of-grays-dark: 10%;
 
 	--bg-light-brightness: 10%;
-	--bg-light-hue: 235;
-	--bg-light-sat: 14%;
+	--bg-light-hue: 220;
+	--bg-light-sat: 13%;
 	--bg-dark-brightness: 7%;
 	--bg-dark-hue: 235;
-	--bg-dark-sat: 9%;
+	--bg-dark-sat: 11%;
 
 	--primary-accent-0: var(--cyan-blue-0);
 	--primary-accent-1: var(--cyan-blue-1);
@@ -536,10 +536,10 @@ MIT License
 ──────────────────────────────────────────────────── */
 
 .nord-colors.nord-colors {
-	--tint-of-grays-light: 200;
-	--tint-of-grays-dark: 200;
-	--sat-of-grays-light: 15%;
-	--sat-of-grays-dark: 8%;
+	--tint-of-grays-light: 230;
+	--tint-of-grays-dark: 230;
+	--sat-of-grays-light: 20%;
+	--sat-of-grays-dark: 10%;
 
 	--bg-light-brightness: 13%;
 	--bg-light-hue: 220;
@@ -689,7 +689,7 @@ MIT License
 	--brightness-light-2: calc(var(--bg-light-brightness) + 78%);
 	--brightness-light-3: calc(var(--bg-light-brightness) + 73%);
 
-	--sat-correction: 5%;
+	--sat-correction: 10%;
 	--sat-light-1: calc(calc(var(--bg-light-sat) + var(--sat-correction)) * 2);
 	--sat-light-2: calc(calc(var(--bg-light-sat) + var(--sat-correction)) * 1.7);
 	--sat-light-3: calc(calc(var(--bg-light-sat) + var(--sat-correction)) * 1.4);
@@ -1805,7 +1805,7 @@ body:not(.no-grayed-out-inactive-pane) {
 }
 
 .theme-light .cm-focused .cm-vimCursorLayer .cm-fat-cursor.cm-fat-cursor.cm-fat-cursor {
-	background-color: hsl(0 0% 30%);
+	background-color: hsl(0 0% 25%);
 }
 
 /* Theme Accent */
@@ -1880,7 +1880,7 @@ body:not(.no-grayed-out-inactive-pane) {
 
 /* vimrc plugin */
 .status-bar-item.plugin-obsidian-vimrc-support::FIRST-LETTER {
-	font-size: calc(var(--status-bar-font-size) * 0.75);
+	font-size: calc(var(--status-bar-font-size) * 0.8);
 }
 
 .status-bar-item.plugin-obsidian-vimrc-support {
