@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 1.1447
+Version 1.1448
 Source CSS: https://github.com/chrisgrieser/shimmering-focus/blob/main/source.css
 MIT License
 ──────────────────────────────────────────────────── */
@@ -11209,10 +11209,10 @@ body .qsp-symbol-indicator {
 }
 
 .style-settings-heading .setting-item-name {
-	font-family: var(--setting-heading);
-	font-size: 1.15rem;
+	font-family: var(--font-interface);
+	font-size: 1rem;
 	line-height: 1em;
-	letter-spacing: 0.5px;
+	letter-spacing: 0;
 
 	margin-top: 8px;
 	margin-bottom: 3px;
