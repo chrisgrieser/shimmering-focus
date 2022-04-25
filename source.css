@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 1.1444
+Version 1.1445
 Source CSS: https://github.com/chrisgrieser/shimmering-focus/blob/main/source.css
 MIT License
 ──────────────────────────────────────────────────── */
@@ -341,8 +341,8 @@ MIT License
 	--cyan-blue-0: hsl(187 80% 17% / 99%);
 	--cyan-blue-1: hsl(187 70% 26%);
 	--cyan-blue-2: hsl(190 80% 32%);
-	--cyan-blue-3: hsl(187 70% 50%);
-	--cyan-blue-4: hsl(187 75% 63%);
+	--cyan-blue-3: hsl(187 60% 50%);
+	--cyan-blue-4: hsl(187 65% 63%);
 	--cyan-blue-5: hsl(187 70% 88% / 99%);
 	--cyan-blue-shifted: hsl(147 70% 38%);
 
@@ -380,7 +380,7 @@ MIT License
 
 	--pink-1: hsl(330 80% 30%);
 	--pink-2: hsl(330 70% 50%);
-	--pink-3: hsl(336 95% 66%);
+	--pink-3: hsl(336 85% 64%);
 	--pink-4: hsl(330 90% 75%);
 }
 
@@ -610,7 +610,7 @@ MIT License
 }
 
 .theme-dark {
-	--text-hover-accent: var(--hover-accent-2);
+	--text-hover-accent: var(--hover-accent-3);
 
 	--scrollbar-bg-hover: var(--hover-accent-3);
 
@@ -1831,30 +1831,32 @@ body:not(.no-grayed-out-inactive-pane) {
 
 .cm-vim-panel div span::BEFORE,
 .cm-selectionLayer::BEFORE {
-	font-family: var(--font-interface);
-	font-size: 0.7rem;
-	line-height: 1.4em;
+	font-family: var(--font-monospace);
+	font-size: 0.8rem;
+	font-weight: 500;
+	line-height: 1.3rem;
+	text-transform: uppercase;
 	text-align: center;
 
-	height: 1rem;
-	width: 2.4rem;
+	height: 1.25rem;
+	width: 3.5rem;
 
 	background-color: var(--alt-bg);
 	box-shadow: var(--small-inset-shadow);
 	filter: saturate(0.8);
 
 	position: fixed;
-	top: 6px;
-	right: calc(var(--scrollbar-thickness) + 2px);
+	top: 0;
+	left: 0;
 
-	padding: 1px 3px;
+	padding: 2px 6px;
 
 	border: var(--thin-border);
-	border-radius: var(--roundish);
+	border-radius: 0 0 var(--roundish) 0;
 }
 
-.theme-light :is(.cm-panels-bottom, .cm-selectionLayer)::BEFORE {
-	font-weight: 600;
+.theme-light :is(.cm-vim-panel div span, .cm-selectionLayer)::BEFORE {
+	font-weight: 600 !important;
 }
 
 .cm-vimCursorLayer:empty + .cm-selectionLayer:empty::BEFORE {
@@ -1864,21 +1866,21 @@ body:not(.no-grayed-out-inactive-pane) {
 
 .cm-vimCursorLayer:not(:empty) + .cm-selectionLayer:empty::BEFORE {
 	content: "Normal";
-	color: var(--hover-accent-2);
+	color: var(--text-hover-accent);
 }
 
 .cm-vimCursorLayer:not(:empty) + .cm-selectionLayer:not(:empty)::BEFORE {
 	content: "Visual";
-	color: var(--link-color);
+	color: var(--active-text-color);
 }
 
 .cm-vim-panel div span:only-child::BEFORE {
-	content: "Cmd";
-	color: var(--text-normal);
+	content: "Command";
+	color: var(--extra-contrast);
 }
 
 .cm-vim-panel div span:nth-child(2)::BEFORE {
-	content: "Find";
+	content: "Search";
 	color: var(--unresolved-link-color);
 	filter: saturate(1);
 }
@@ -2667,6 +2669,8 @@ body.angular-shapes .checkbox-container {
 .cm-vim-panel.cm-vim-panel input,
 .search-input-container input,
 input:is([type="email"], [type="password"], [type="search"], [type="text"]) {
+	font-weight: 600;
+
 	box-shadow: var(--small-reverted-inset-shadow);
 
 	left: 0;
@@ -2676,6 +2680,10 @@ input:is([type="email"], [type="password"], [type="search"], [type="text"]) {
 
 	border: var(--thin-border);
 	border-radius: var(--round);
+}
+
+body.angular-shapes.angular-shapes input {
+	font-weight: 500;
 }
 
 .round-shapes.round-shapes input:is([type="number"], [type="email"], [type="password"], [type="search"], [type="text"]) {
@@ -2897,6 +2905,8 @@ body .app-container .obsidian-search-match-highlight {
 /* gutter indicators */
 body:not(.no-search-result-indicator) .obsidian-search-match-highlight::BEFORE {
 	content: "►";
+
+	font-style: normal; /* so italic text does not get an italic search marker */
 
 	color: var(--search-match-color);
 	background-color: var(--bg1); /* so they cover footnote indicators when overlapping */
@@ -5769,6 +5779,10 @@ heading variables in Reading Mode, lol? */
 .markdown-rendered h5 { font-size: var(--h5) }
 .markdown-rendered h6 { font-size: var(--h6) }
 
+p {
+	margin-top: 10px;
+}
+
 .cm-header,
 .markdown-preview-view :is(h1, h2, h3, h4, h5, h6) {
 	font-family: var(--heading-font);
@@ -5776,9 +5790,9 @@ heading variables in Reading Mode, lol? */
 	letter-spacing: var(--heading-letter-spacing);
 }
 
-.markdown-preview-view :is(h1, h2, h3, h4, h5, h6) {
-	margin-top: 1em;
-	margin-bottom: 0.5em;
+.markdown-rendered.markdown-rendered :is(h1, h2, h3, h4, h5, h6) {
+	margin-top: 1rem;
+	margin-bottom: 0.6rem;
 }
 
 .cm-formatting.cm-formatting-header {
@@ -6921,7 +6935,7 @@ body:not(.no-codeblock-line-numbers) .HyperMD-codeblock .cm-foldPlaceholder::BEF
 }
 
 .markdown-preview-view div > :is(ol, ul) {
-	margin-top: -5px;
+	margin-top: 5px;
 }
 
 /* thicker => more readable */
@@ -7282,7 +7296,7 @@ body:not(.annotation-tags-off) :is(.cm-hashtag-begin.cm-tag-todo, .tag[href="#to
 }
 
 body:not(.annotation-tags-off) :is(.cm-hashtag-begin.cm-tag-main, .tag[href="#main"])::BEFORE {
-	content: "Ⓜ️ ";
+	content: "🟦 ";
 }
 
 body:not(.annotation-tags-off) :is(.cm-tag-definition, .tag[href="#definition"]) {
@@ -9017,9 +9031,12 @@ body:not(.no-built-in-supercharged-links) .data-link-icon[data-link-tags~="#temp
 body:not(.no-built-in-supercharged-links) .data-link-icon[data-link-tags~="#obsidian" i]::BEFORE { content: "🟪 " }
 body:not(.no-built-in-supercharged-links) .data-link-icon[data-link-tags~="#checklist" i]::BEFORE { content: "✅ " }
 body:not(.no-built-in-supercharged-links) .data-link-icon[data-link-tags~="#mindmap" i]::BEFORE { content: "🕸 " }
+
 body:not(.no-built-in-supercharged-links) .data-link-icon[data-link-tags~="#person" i]::BEFORE { content: "👤 " }
 body:not(.no-built-in-supercharged-links) .data-link-icon[data-link-tags~="#evergreen" i]::BEFORE { content: "🌲 " }
-body:not(.no-built-in-supercharged-links) .data-link-icon[data-link-tags~="#bookmarks" i]::BEFORE { content: "🔖 " }
+body:not(.no-built-in-supercharged-links) .data-link-icon[data-link-tags*="#bookmark" i]::BEFORE { content: "🔖 " }
+body:not(.no-built-in-supercharged-links) .data-link-icon[data-link-tags*="#finance" i]::BEFORE { content: "📈 " }
+body:not(.no-built-in-supercharged-links) .data-link-icon[data-link-tags*="#design" i]::BEFORE { content: "🎨 " }
 body:not(.no-built-in-supercharged-links) .data-link-icon[data-link-tags~="#moc" i]::BEFORE { content: "🗺 " }
 body:not(.no-built-in-supercharged-links) .data-link-icon[data-link-tags~="#pkm" i]::BEFORE { content: "🧠 " }
 body:not(.no-built-in-supercharged-links) .data-link-icon[data-link-tags~="#seedling" i]::BEFORE { content: "🌱 " }
