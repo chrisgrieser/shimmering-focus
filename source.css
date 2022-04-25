@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 1.1445
+Version 1.1446
 Source CSS: https://github.com/chrisgrieser/shimmering-focus/blob/main/source.css
 MIT License
 ──────────────────────────────────────────────────── */
@@ -1832,14 +1832,14 @@ body:not(.no-grayed-out-inactive-pane) {
 .cm-vim-panel div span::BEFORE,
 .cm-selectionLayer::BEFORE {
 	font-family: var(--font-monospace);
-	font-size: 0.8rem;
+	font-size: 0.7rem;
 	font-weight: 500;
 	line-height: 1.3rem;
 	text-transform: uppercase;
 	text-align: center;
 
 	height: 1.25rem;
-	width: 3.5rem;
+	width: 3rem;
 
 	background-color: var(--alt-bg);
 	box-shadow: var(--small-inset-shadow);
@@ -1849,7 +1849,7 @@ body:not(.no-grayed-out-inactive-pane) {
 	top: 0;
 	left: 0;
 
-	padding: 2px 6px;
+	padding: 2px;
 
 	border: var(--thin-border);
 	border-radius: 0 0 var(--roundish) 0;
@@ -1876,6 +1876,7 @@ body:not(.no-grayed-out-inactive-pane) {
 
 .cm-vim-panel div span:only-child::BEFORE {
 	content: "Command";
+	font-size: 0.6rem;
 	color: var(--extra-contrast);
 }
 
@@ -5387,16 +5388,41 @@ body:not(.permanently-show-collapse-indicators) .cm-line:not(:hover):not(.cm-act
 	letter-spacing: 1px;
 }
 
-.block-indicator .cm-lineNumbers .cm-gutterElement {
-	color: transparent;
-	border-left: 3px solid var(--muted-border-color);
+/* relative line numbers */
+.relative-line-numbering .cm-lineNumbers:not(:hover) .cm-gutterElement:not(.cm-active) {
+	opacity: 0;
 }
 
-.block-indicator .cm-lineNumbers .cm-gutterElement:nth-child(even) {
-	border-left-color: transparent;
+.relative-line-numbering .cm-lineNumbers:not(:hover) .cm-gutterElement.cm-active ~ .cm-gutterElement {
+	font-size: 0;
+	opacity: 1;
 }
 
-/* minimal line number */
+.relative-line-numbering .cm-lineNumbers:not(:hover) .cm-gutterElement.cm-active ~ .cm-gutterElement::BEFORE {
+	font-size: var(--font-text-size);
+}
+
+.relative-line-numbering .cm-lineNumbers:not(:hover) .cm-gutterElement.cm-active + .cm-gutterElement::BEFORE {
+	content: "1";
+}
+
+.relative-line-numbering .cm-lineNumbers:not(:hover) .cm-gutterElement.cm-active + .cm-gutterElement + .cm-gutterElement::BEFORE {
+	content: "2";
+}
+
+.relative-line-numbering .cm-lineNumbers:not(:hover) .cm-gutterElement.cm-active + .cm-gutterElement + .cm-gutterElement + .cm-gutterElement::BEFORE {
+	content: "3";
+}
+
+.relative-line-numbering .cm-lineNumbers:not(:hover) .cm-gutterElement.cm-active + .cm-gutterElement + .cm-gutterElement + .cm-gutterElement + .cm-gutterElement::BEFORE {
+	content: "4";
+}
+
+.relative-line-numbering .cm-lineNumbers:not(:hover) .cm-gutterElement.cm-active + .cm-gutterElement + .cm-gutterElement + .cm-gutterElement + .cm-gutterElement + .cm-gutterElement::BEFORE {
+	content: "5";
+}
+
+/* minimal line numbers */
 .minimal-line-numbering .cm-lineNumbers:not(:hover) .cm-gutterElement:not(.cm-active) {
 	opacity: 0;
 }
@@ -5423,7 +5449,7 @@ body:not(.permanently-show-collapse-indicators) .cm-line:not(:hover):not(.cm-act
 }
 
 /* when disabled, active highlighting of markup */
-body:not(.minimal-line-numbering):not(.block-indicator):not(.no-active-highlight) .cm-lineNumbers .cm-active.cm-gutterElement {
+body:not(.minimal-line-numbering):not(.relative-line-numbering):not(.no-active-highlight) .cm-lineNumbers .cm-active.cm-gutterElement {
 	color: var(--active-line-indicator);
 }
 
@@ -13233,7 +13259,7 @@ settings:
   -
    id: line-number-options
    title: 🆕 Line Numbering Style
-   description: "'Minimal Line Numbering' shows line numbers only for the active and hovered line. 🆕 'Block Indicator' replaces line numbers with indicators where a block starts/ends (e.g. useful for Vim Mode when not using '#G' motions). This setting has no effect when the 'Show line number' settings is disabled."
+   description: "🆕 'Relative Line Numbering' shows only the active line and the following five lines, revealing true line numbers only on hover (useful for Vim Mode). 'Minimal Line Numbering' shows line numbers only for the active and hovered line. This setting has no effect when Obsidian's 'Show line number' settings is disabled."
    type: class-select
    allowEmpty: false
    default: default-line-numbering
@@ -13245,8 +13271,8 @@ settings:
     label: Minimal Line Numbering
     value: minimal-line-numbering
    -
-    label: Block Indicator
-    value: block-indicator
+    label: Relative Line Numbering
+    value: relative-line-numbering
   -
    id: footnote-gutter
    title: "Footnote Indicator"
