@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 1.1450
+Version 1.1451
 Source CSS: https://github.com/chrisgrieser/shimmering-focus/blob/main/source.css
 MIT License
 ──────────────────────────────────────────────────── */
@@ -1824,6 +1824,7 @@ body:not(.no-grayed-out-inactive-pane) {
 	font-size: 0.7rem;
 	font-weight: 500;
 	line-height: 1.3rem;
+	letter-spacing: 0.4px;
 	text-transform: uppercase;
 	text-align: center;
 
