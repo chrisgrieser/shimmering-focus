@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 1.1433
+Version 1.1434
 Source CSS: https://github.com/chrisgrieser/shimmering-focus/blob/main/source.css
 MIT License
 ──────────────────────────────────────────────────── */
@@ -1780,16 +1780,16 @@ body:not(.no-grayed-out-inactive-pane) {
 ──────────────────────────────────────────────────── */
 
 /* unfocused */
-[class*="ͼ"]:not(.cm-focused) .cm-fat-cursor {
+.cm-editor:not(.cm-focused) .cm-fat-cursor {
 	outline: 2px solid;
 	outline-offset: -1px;
 }
 
-.theme-dark [class*="ͼ"]:not(.cm-focused) .cm-fat-cursor {
+.theme-dark .cm-editor:not(.cm-focused) .cm-fat-cursor {
 	outline-color: var(--primary-accent-3);
 }
 
-.theme-light [class*="ͼ"]:not(.cm-focused) .cm-fat-cursor {
+.theme-light .cm-editor:not(.cm-focused) .cm-fat-cursor {
 	outline-color: var(--primary-accent-2);
 }
 
@@ -1822,10 +1822,16 @@ body:not(.no-grayed-out-inactive-pane) {
 /* << Vim Mode Indicator
 ──────────────────────────────────────────────────── */
 
+.cm-vim-panel > div > span::BEFORE,
 .cm-selectionLayer::BEFORE {
 	font-family: var(--font-interface);
 	font-size: 0.7rem;
+	line-height: 1.4em;
 	letter-spacing: 0.2px;
+	text-align: center;
+
+	height: 1rem;
+	width: 2.5rem;
 
 	background-color: var(--alt-bg);
 	box-shadow: var(--small-inset-shadow);
@@ -1842,6 +1848,7 @@ body:not(.no-grayed-out-inactive-pane) {
 	filter: saturate(0.8);
 }
 
+.cm-panels-bottom::BEFORE,
 .theme-light .cm-selectionLayer::BEFORE {
 	font-weight: 600;
 }
@@ -1859,6 +1866,16 @@ body:not(.no-grayed-out-inactive-pane) {
 .cm-vimCursorLayer:not(:empty) + .cm-selectionLayer:not(:empty)::BEFORE {
 	content: "Visual";
 	color: var(--link-color);
+}
+
+.cm-vim-panel > div > span:first-child::BEFORE {
+	content: "Find";
+	color: var(--unresolved-link-color);
+}
+
+.cm-vim-panel div span:nth-child(2)::BEFORE {
+	content: "Cmd";
+	color: var(--text-normal);
 }
 
 /* ───────────────────────────────────────────────── */
@@ -1903,7 +1920,7 @@ body:not(.no-grayed-out-inactive-pane) {
 
 /* remove instruction */
 .cm-vim-panel span:nth-child(2) {
-	display: none;
+	font-size: 0;
 }
 
 /* error */
@@ -7478,7 +7495,7 @@ body:not(.no-pseudo-spoiler-tags) :is(em > del, .cm-line:not(.cm-active) .cm-em.
 }
 
 body:not(.no-pseudo-spoiler-tags) :is(em > del:hover, .cm-active .cm-em.cm-strikethrough, .cm-em.cm-strikethrough:hover) {
-	background-color: var(--bg3) !important;
+	background-color: var(--bg3);
 	transition: var(--medium-transition);
 }
 
