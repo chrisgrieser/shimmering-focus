@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 1.1441
+Version 1.1442
 Source CSS: https://github.com/chrisgrieser/shimmering-focus/blob/main/source.css
 MIT License
 ──────────────────────────────────────────────────── */
@@ -340,7 +340,7 @@ MIT License
 :root {
 	--cyan-blue-0: hsl(187 80% 17% / 99%);
 	--cyan-blue-1: hsl(187 70% 25%);
-	--cyan-blue-2: hsl(190 90% 30%);
+	--cyan-blue-2: hsl(190 80% 32%);
 	--cyan-blue-3: hsl(187 70% 54%);
 	--cyan-blue-4: hsl(187 75% 63%);
 	--cyan-blue-5: hsl(187 70% 85% / 99%);
@@ -411,6 +411,11 @@ MIT License
 
 	--unresolved-link-color: var(--cyan-blue-shifted);
 	--button-text: var(--always-dark);
+}
+
+/* readability improvement */
+.theme-light:is(.custom-colors.primary-accent-light-cyan, .gamma-colors) :is(.cm-hmd-internal-link, .cm-link) {
+	text-shadow: 0.2px 0.2px 0 var(--cyan-blue-2);
 }
 
 .custom-colors.theme-light.primary-accent-light-orange,
@@ -527,11 +532,6 @@ MIT License
 
 	--secondary-accent-2: var(--yellow-orange-2);
 	--secondary-accent-3: var(--yellow-orange-3);
-}
-
-/* readability improvement */
-.theme-light.gamma-colors :is(.cm-hmd-internal-link, .cm-link) {
-	text-shadow: 0.1px 0.1px 0 var(--cyan-blue-2);
 }
 
 /* ───────────────────────────────────────────────── */
