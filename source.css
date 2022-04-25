@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 1.1436
+Version 1.1437
 Source CSS: https://github.com/chrisgrieser/shimmering-focus/blob/main/source.css
 MIT License
 ──────────────────────────────────────────────────── */
@@ -1848,8 +1848,7 @@ body:not(.no-grayed-out-inactive-pane) {
 	filter: saturate(0.8);
 }
 
-.theme-light .cm-panels-bottom::BEFORE,
-.theme-light .cm-selectionLayer::BEFORE {
+.theme-light :is(.cm-panels-bottom, .cm-selectionLayer)::BEFORE {
 	font-weight: 600;
 }
 
@@ -1868,7 +1867,7 @@ body:not(.no-grayed-out-inactive-pane) {
 	color: var(--link-color);
 }
 
-.cm-vim-panel > div > span:first-child::BEFORE {
+.cm-vim-panel > div > span:only-child::BEFORE {
 	content: "Cmd";
 	color: var(--text-normal);
 }
@@ -1883,7 +1882,7 @@ body:not(.no-grayed-out-inactive-pane) {
 ──────────────────────────────────────────────────── */
 .cm-vim-panel {
 	/* avoid collision with status bar */
-	margin-bottom: calc(var(--status-bar-height) - 0.4em);
+	margin-bottom: calc(var(--status-bar-height) - 0.6em);
 }
 
 .theme-dark .cm-vim-panel input {
@@ -1896,9 +1895,9 @@ body:not(.no-grayed-out-inactive-pane) {
 	border-top: var(--basic-border);
 }
 
-/* the ":" */
+/* the ":" or "/" */
 .cm-vim-panel > div > span {
-	/* makes the ":" look bigger */
+	/* makes them look bigger */
 	font-family: "Inter" !important; /* needs important */
 	font-size: 1.8em;
 	font-weight: 600;
@@ -1920,7 +1919,7 @@ body:not(.no-grayed-out-inactive-pane) {
 
 /* remove instruction */
 .cm-vim-panel span:nth-child(2) {
-	font-size: 0;
+	font-size: 0; /* needs font size 0 instead display: none, so the vim indicator attached to it remains visible */
 }
 
 /* error */
