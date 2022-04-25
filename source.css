@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 1.1449
+Version 1.1450
 Source CSS: https://github.com/chrisgrieser/shimmering-focus/blob/main/source.css
 MIT License
 ──────────────────────────────────────────────────── */
@@ -338,7 +338,7 @@ MIT License
 ──────────────────────────────────────────────────── */
 
 :root {
-	--cyan-blue-0: hsl(187 80% 17% / 99%);
+	--cyan-blue-0: hsl(187 80% 13% / 99%);
 	--cyan-blue-1: hsl(187 70% 26%);
 	--cyan-blue-2: hsl(190 80% 32%);
 	--cyan-blue-3: hsl(187 60% 50%);
@@ -1845,7 +1845,7 @@ body:not(.no-grayed-out-inactive-pane) {
 }
 
 .theme-light :is(.cm-vim-panel div span, .cm-selectionLayer)::BEFORE {
-	font-weight: 600 !important;
+	font-weight: 600;
 }
 
 .cm-vimCursorLayer:empty + .cm-selectionLayer:empty::BEFORE {
@@ -5369,7 +5369,7 @@ body:not(.permanently-show-collapse-indicators) .cm-line:not(:hover):not(.cm-act
 .CodeMirror-linenumbers,
 .cm-lineNumbers {
 	font-family: var(--number-font);
-	font-size: 1.2em;
+	font-size: 1rem;
 	line-height: 1em;
 	letter-spacing: 1px;
 }
@@ -5386,6 +5386,7 @@ body:not(.permanently-show-collapse-indicators) .cm-line:not(:hover):not(.cm-act
 
 .relative-line-numbering .cm-lineNumbers:not(:hover) .cm-gutterElement.cm-active ~ .cm-gutterElement::BEFORE {
 	font-size: var(--font-text-size);
+	margin-right: -1px;
 }
 
 .relative-line-numbering .cm-lineNumbers:not(:hover) .cm-gutterElement.cm-active + .cm-gutterElement::BEFORE {
@@ -5435,7 +5436,7 @@ body:not(.permanently-show-collapse-indicators) .cm-line:not(:hover):not(.cm-act
 }
 
 /* when disabled, active highlighting of markup */
-body:not(.minimal-line-numbering):not(.relative-line-numbering):not(.no-active-highlight) .cm-lineNumbers .cm-active.cm-gutterElement {
+body:not(.minimal-line-numbering):not(.no-active-highlight) .cm-lineNumbers .cm-active.cm-gutterElement {
 	color: var(--active-line-indicator);
 }
 
@@ -13232,7 +13233,7 @@ settings:
   -
    id: line-number-options
    title: 🆕 Line Numbering Style
-   description: "'Relative Line Numbering' shows only the active line and the following five lines, revealing true line numbers only on hover (useful for Vim Mode). 'Minimal Line Numbering' shows line numbers only for the active and hovered line. This setting has no effect when Obsidian's 'Show line number' settings is disabled."
+   description: "'Relative' shows only the active line and the following five lines, revealing true line numbers only on hover (useful for Vim Mode). 'Minimal' shows line numbers only for the active and hovered line. This setting has no effect when Obsidian's 'Show line number' settings is disabled."
    type: class-select
    allowEmpty: false
    default: default-line-numbering
@@ -13241,10 +13242,10 @@ settings:
     label: Default
     value: default-line-numbering
    -
-    label: Minimal Line Numbering
+    label: Minimal
     value: minimal-line-numbering
    -
-    label: Relative Line Numbering
+    label: Relative
     value: relative-line-numbering
   -
    id: footnote-gutter

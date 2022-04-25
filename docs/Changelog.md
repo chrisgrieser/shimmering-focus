@@ -3,6 +3,7 @@ nav_order: 110
 ---
 
 # Changelog
+- 2022-04-26	patch
 - 2022-04-26	removed smallcap font from theme for better readability
 - 2022-04-26	no smallcap font in style settings
 - 2022-04-26	replaced block indicators with relative line numbering (for vim users)
