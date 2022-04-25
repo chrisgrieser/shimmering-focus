@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 1.1440
+Version 1.1441
 Source CSS: https://github.com/chrisgrieser/shimmering-focus/blob/main/source.css
 MIT License
 ──────────────────────────────────────────────────── */
@@ -293,7 +293,7 @@ MIT License
 }
 
 .custom-colors.theme-light.use-gray-tint-light {
-	--sat-of-grays-light: 20%;
+	--sat-of-grays-light: 18%;
 }
 
 .custom-colors.theme-dark.use-gray-tint-dark {
@@ -338,9 +338,9 @@ MIT License
 ──────────────────────────────────────────────────── */
 
 :root {
-	--cyan-blue-0: hsl(187 50% 20% / 99%);
-	--cyan-blue-1: hsl(187 50% 30%);
-	--cyan-blue-2: hsl(187 80% 39%);
+	--cyan-blue-0: hsl(187 80% 17% / 99%);
+	--cyan-blue-1: hsl(187 70% 25%);
+	--cyan-blue-2: hsl(190 90% 30%);
 	--cyan-blue-3: hsl(187 70% 54%);
 	--cyan-blue-4: hsl(187 75% 63%);
 	--cyan-blue-5: hsl(187 70% 85% / 99%);
@@ -498,14 +498,14 @@ MIT License
 ──────────────────────────────────────────────────── */
 /* Co-designed with @lkadre */
 .gamma-colors.gamma-colors {
-	--tint-of-grays-light: 270;
+	--tint-of-grays-light: 280;
 	--tint-of-grays-dark: 270;
-	--sat-of-grays-light: 20%;
+	--sat-of-grays-light: 18%;
 	--sat-of-grays-dark: 10%;
 
-	--bg-light-brightness: 10%;
-	--bg-light-hue: 220;
-	--bg-light-sat: 13%;
+	--bg-light-brightness: 14%;
+	--bg-light-hue: 215;
+	--bg-light-sat: 15%;
 	--bg-dark-brightness: 7%;
 	--bg-dark-hue: 235;
 	--bg-dark-sat: 11%;
@@ -529,14 +529,19 @@ MIT License
 	--secondary-accent-3: var(--yellow-orange-3);
 }
 
+/* readability improvement */
+.theme-light.gamma-colors :is(.cm-hmd-internal-link, .cm-link) {
+	text-shadow: 0.1px 0.1px 0 var(--cyan-blue-2);
+}
+
 /* ───────────────────────────────────────────────── */
 /* <<< Nord Color Schemes
 ──────────────────────────────────────────────────── */
 
 .nord-colors.nord-colors {
-	--tint-of-grays-light: 230;
-	--tint-of-grays-dark: 230;
-	--sat-of-grays-light: 20%;
+	--tint-of-grays-light: 225;
+	--tint-of-grays-dark: 225;
+	--sat-of-grays-light: 18%;
 	--sat-of-grays-dark: 10%;
 
 	--bg-light-brightness: 13%;
