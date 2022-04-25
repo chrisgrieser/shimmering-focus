@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 1.1434
+Version 1.1435
 Source CSS: https://github.com/chrisgrieser/shimmering-focus/blob/main/source.css
 MIT License
 ──────────────────────────────────────────────────── */
@@ -6123,8 +6123,16 @@ body:not(.no-citation-syntax) .markdown-preview-view *:not(blockquote) > blockqu
 	margin: 5px 0;
 }
 
-.callout-content ul {
+.callout .task-list-item-checkbox {
+	height: 1em;
+	width: 1em;
+	top: -2px;
+	margin-bottom: 0;
+}
+
+.callout-content.callout-content ul {
 	padding-left: 20px;
+	margin-top: 5px;
 }
 
 .callout-content p + p {
