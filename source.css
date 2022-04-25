@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 1.1437
+Version 1.1438
 Source CSS: https://github.com/chrisgrieser/shimmering-focus/blob/main/source.css
 MIT License
 ──────────────────────────────────────────────────── */
@@ -5477,6 +5477,10 @@ progress[max="100"]:is([value="1"],[value="2"],[value="3"],[value="4"],[value="5
 ──────────────────────────────────────────────────── */
 /* see also section "Max View" */
 
+:root { /* stylelint-disable-line no-duplicate-selectors */
+	--hover-zoom-delay: 1000ms;
+}
+
 /* Image Files opened by Obsidian */
 .workspace-leaf-content .view-content .image-container img[src][src][src][src] {
 	max-width: 100%;
@@ -5574,7 +5578,7 @@ body:not(.hover-zoom) img[src] {
 
 .hover-zoom img[src][src][src][src][src]:not(.community-theme-screenshot):hover {
 	max-width: 100%;
-	transition-delay: 1.5s;
+	transition-delay: var(--hover-zoom-delay);
 }
 
 /* fix for GitHub shields */
@@ -11408,6 +11412,7 @@ body:not(.no-animations) .style-settings-heading[data-id="shimmering-focus"]:not
 /* <<< Style Settings: Conditional Settings Display
 ──────────────────────────────────────────────────── */
 
+body:not(.hover-zoom) .setting-item:is([data-id="hover-zoom-delay"]),
 body:not(.use-gray-tint-light) .setting-item:is([data-id="tint-of-grays-light"]),
 body:not(.use-gray-tint-dark) .setting-item:is([data-id="tint-of-grays-dark"]),
 body:not(.custom-colors) .setting-item:is([data-id="custom-color-light-mode"], [data-id="custom-color-light-mode"] + .style-settings-container, [data-id="custom-color-dark-mode"], [data-id="custom-color-dark-mode"] + .style-settings-container),
@@ -13292,6 +13297,16 @@ settings:
    description: 'By default, you can zoom in images by clicking & holding. Enable this to zoom in images by hovering instead.'
    type: class-toggle
    default: false
+  -
+   id: hover-zoom-delay
+   title: '🆕 Hover Zoom Delay'
+   desciption: Duration the cursor needs to hover over an image before it is zoomed in (in milliseconds).
+   type: variable-number-slider
+   default: 1000
+   min: 0
+   max: 2000
+   step: 100
+   format: ms
   -
    id: image-size
    title: Size of Images
