@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 1.1439
+Version 1.1440
 Source CSS: https://github.com/chrisgrieser/shimmering-focus/blob/main/source.css
 MIT License
 ──────────────────────────────────────────────────── */
@@ -1873,6 +1873,7 @@ body:not(.no-grayed-out-inactive-pane) {
 .cm-vim-panel div span:nth-child(2)::BEFORE {
 	content: "Find";
 	color: var(--unresolved-link-color);
+	filter: saturate(1);
 }
 
 /* ───────────────────────────────────────────────── */
