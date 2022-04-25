@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 1.1435
+Version 1.1436
 Source CSS: https://github.com/chrisgrieser/shimmering-focus/blob/main/source.css
 MIT License
 ──────────────────────────────────────────────────── */
@@ -1848,7 +1848,7 @@ body:not(.no-grayed-out-inactive-pane) {
 	filter: saturate(0.8);
 }
 
-.cm-panels-bottom::BEFORE,
+.theme-light .cm-panels-bottom::BEFORE,
 .theme-light .cm-selectionLayer::BEFORE {
 	font-weight: 600;
 }
@@ -1869,13 +1869,13 @@ body:not(.no-grayed-out-inactive-pane) {
 }
 
 .cm-vim-panel > div > span:first-child::BEFORE {
-	content: "Find";
-	color: var(--unresolved-link-color);
+	content: "Cmd";
+	color: var(--text-normal);
 }
 
 .cm-vim-panel div span:nth-child(2)::BEFORE {
-	content: "Cmd";
-	color: var(--text-normal);
+	content: "Find";
+	color: var(--unresolved-link-color);
 }
 
 /* ───────────────────────────────────────────────── */
@@ -7051,7 +7051,7 @@ body:not(.show-urls) .cm-line:not(.cm-active) .cm-url,
 .cm-hmd-internal-link > .cm-underline,
 .is-unresolved.is-unresolved.is-unresolved.is-unresolved {
 	color: var(--unresolved-link-color);
-	opacity: 0.9;
+	opacity: 1;
 }
 
 .cm-hmd-internal-link:hover > .cm-underline,

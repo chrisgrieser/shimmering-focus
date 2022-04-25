@@ -3,6 +3,7 @@ nav_order: 110
 ---
 
 # Changelog
+- 2022-04-25	patch
 - 2022-04-25	fix tasks in callouts (#150)
 - 2022-04-25	vim mode indicator recognizes cmd and find mode as well
 - 2022-04-24	VIM mode indicator
