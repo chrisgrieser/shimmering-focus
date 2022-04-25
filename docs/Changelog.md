@@ -3,6 +3,7 @@ nav_order: 110
 ---
 
 # Changelog
+- 2022-04-25	more color tweaks
 - 2022-04-25	color tweaking
 - 2022-04-25	readability improvmeent for gamma color scheme
 - 2022-04-25	new style setting to adjust hover zoom delay

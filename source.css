@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 1.1443
+Version 1.1444
 Source CSS: https://github.com/chrisgrieser/shimmering-focus/blob/main/source.css
 MIT License
 ──────────────────────────────────────────────────── */
@@ -341,7 +341,7 @@ MIT License
 	--cyan-blue-0: hsl(187 80% 17% / 99%);
 	--cyan-blue-1: hsl(187 70% 26%);
 	--cyan-blue-2: hsl(190 80% 32%);
-	--cyan-blue-3: hsl(187 70% 54%);
+	--cyan-blue-3: hsl(187 70% 50%);
 	--cyan-blue-4: hsl(187 75% 63%);
 	--cyan-blue-5: hsl(187 70% 88% / 99%);
 	--cyan-blue-shifted: hsl(147 70% 38%);
@@ -376,12 +376,12 @@ MIT License
 	--orange-shifted: hsl(344 69% 42%);
 
 	--yellow-orange-2: hsl(39 76% 41%);
-	--yellow-orange-3: hsl(39 76% 58%);
+	--yellow-orange-3: hsl(39 80% 63%);
 
-	--pink-1: hsl(324 80% 30%);
-	--pink-2: hsl(324 70% 50%);
-	--pink-3: hsl(334 85% 65%);
-	--pink-4: hsl(324 90% 75%);
+	--pink-1: hsl(330 80% 30%);
+	--pink-2: hsl(330 70% 50%);
+	--pink-3: hsl(336 95% 66%);
+	--pink-4: hsl(330 90% 75%);
 }
 
 /* ───────────────────────────────────────────────── */
@@ -506,14 +506,14 @@ MIT License
 	--tint-of-grays-light: 280;
 	--tint-of-grays-dark: 270;
 	--sat-of-grays-light: 18%;
-	--sat-of-grays-dark: 10%;
+	--sat-of-grays-dark: 8%;
 
 	--bg-light-brightness: 14%;
 	--bg-light-hue: 215;
 	--bg-light-sat: 15%;
 	--bg-dark-brightness: 7%;
 	--bg-dark-hue: 235;
-	--bg-dark-sat: 11%;
+	--bg-dark-sat: 10%;
 
 	--primary-accent-0: var(--cyan-blue-0);
 	--primary-accent-1: var(--cyan-blue-1);
@@ -596,7 +596,7 @@ MIT License
 	--interactive-border-color: var(--primary-accent-3);
 
 	--scrollbar-bg-active: var(--primary-accent-3);
-	--active-line-indicator: var(--primary-accent-2);
+	--active-line-indicator: var(--primary-accent-3);
 }
 
 /* Hover Accent */
@@ -1845,9 +1845,9 @@ body:not(.no-grayed-out-inactive-pane) {
 
 	position: fixed;
 	top: 6px;
-	right: calc(var(--scrollbar-thickness) + 3px);
+	right: calc(var(--scrollbar-thickness) + 2px);
 
-	padding: 1px 2px;
+	padding: 1px 3px;
 
 	border: var(--thin-border);
 	border-radius: var(--roundish);
