@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 1.1446
+Version 1.1447
 Source CSS: https://github.com/chrisgrieser/shimmering-focus/blob/main/source.css
 MIT License
 ──────────────────────────────────────────────────── */
@@ -648,7 +648,7 @@ settings:
   -
    id: line-number-options
    title: 🆕 Line Numbering Style
-   description: "🆕 'Relative Line Numbering' shows only the active line and the following five lines, revealing true line numbers only on hover (useful for Vim Mode). 'Minimal Line Numbering' shows line numbers only for the active and hovered line. This setting has no effect when Obsidian's 'Show line number' settings is disabled."
+   description: "'Relative Line Numbering' shows only the active line and the following five lines, revealing true line numbers only on hover (useful for Vim Mode). 'Minimal Line Numbering' shows line numbers only for the active and hovered line. This setting has no effect when Obsidian's 'Show line number' settings is disabled."
    type: class-select
    allowEmpty: false
    default: default-line-numbering

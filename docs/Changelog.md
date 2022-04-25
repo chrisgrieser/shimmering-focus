@@ -3,6 +3,7 @@ nav_order: 110
 ---
 
 # Changelog
+- 2022-04-26	patch
 - 2022-04-26	replaced block indicators with relative line numbering (for vim users)
 - 2022-04-25	improved vim mode indicator
 - 2022-04-25	more color tweaks
