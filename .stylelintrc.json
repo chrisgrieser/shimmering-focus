@@ -36,7 +36,11 @@
 					"noEmptyLineBetween": true,
 					"properties": [
 						"display",
-						"content"
+						"content",
+						"flex",
+						"flex-grow",
+						"flex-basis",
+						"flex-direction"
 					]
 				},
 				{
@@ -91,10 +95,13 @@
 						"background",
 						"background-color",
 						"background-image",
+						"background-repeat",
+						"image-rendering",
 						"backdrop-filter",
 						"backdrop-repeat",
 						"box-shadow",
-						"opacity"
+						"opacity",
+						"filter"
 					]
 				},
 				{
@@ -120,6 +127,8 @@
 						"padding-right",
 						"padding-bottom",
 						"padding-left",
+						"padding-inline",
+						"padding-inline-start",
 						"margin",
 						"margin-top",
 						"margin-right",
@@ -128,7 +137,7 @@
 					]
 				},
 				{
-					"groupName": "Border",
+					"groupName": "Border & Outline",
 					"emptyLineBefore": "threshold",
 					"noEmptyLineBetween": true,
 					"properties": [
@@ -145,18 +154,24 @@
 						"border-top-right-radius",
 						"border-bottom-right-radius",
 						"border-bottom-left-radius",
-						"border-top-left-radius"
+						"border-top-left-radius",
+						"outline",
+						"outline-offset",
+						"outline-color",
+						"outline-width",
+						"outline-style"
 					]
 				},
 				{
-					"groupName": "Special",
+					"groupName": "Transition & Cursor",
 					"emptyLineBefore": "threshold",
 					"noEmptyLineBetween": true,
 					"properties": [
 						"transform",
 						"transition",
+						"transition-property",
 						"transition-duration",
-						"filter",
+						"transition-delay",
 						"cursor"
 					]
 				}

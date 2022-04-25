@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 1.1438
+Version 1.1439
 Source CSS: https://github.com/chrisgrieser/shimmering-focus/blob/main/source.css
 MIT License
 ──────────────────────────────────────────────────── */
@@ -1657,10 +1657,10 @@ body:not(.no-grayed-out-inactive-pane) {
 	background: var(--cursor-look);
 
 	border: none;
+	outline: var(--cursor-outline);
 
 	animation-iteration-count: infinite;
 	animation-timing-function: ease-in-out;
-	outline: var(--cursor-outline);
 }
 
 /* Cursor Shape */
@@ -1822,30 +1822,28 @@ body:not(.no-grayed-out-inactive-pane) {
 /* << Vim Mode Indicator
 ──────────────────────────────────────────────────── */
 
-.cm-vim-panel > div > span::BEFORE,
+.cm-vim-panel div span::BEFORE,
 .cm-selectionLayer::BEFORE {
 	font-family: var(--font-interface);
 	font-size: 0.7rem;
 	line-height: 1.4em;
-	letter-spacing: 0.2px;
 	text-align: center;
 
 	height: 1rem;
-	width: 2.5rem;
+	width: 2.4rem;
 
 	background-color: var(--alt-bg);
 	box-shadow: var(--small-inset-shadow);
+	filter: saturate(0.8);
 
 	position: fixed;
 	top: 6px;
 	right: calc(var(--scrollbar-thickness) + 3px);
 
-	padding: 1px 4px;
+	padding: 1px 2px;
 
 	border: var(--thin-border);
 	border-radius: var(--roundish);
-
-	filter: saturate(0.8);
 }
 
 .theme-light :is(.cm-panels-bottom, .cm-selectionLayer)::BEFORE {
@@ -1867,7 +1865,7 @@ body:not(.no-grayed-out-inactive-pane) {
 	color: var(--link-color);
 }
 
-.cm-vim-panel > div > span:only-child::BEFORE {
+.cm-vim-panel div span:only-child::BEFORE {
 	content: "Cmd";
 	color: var(--text-normal);
 }
@@ -2290,11 +2288,12 @@ body:not(.show-header-bar):not(.plugin-sliding-panes-rotate-header) .view-header
 }
 
 body:not(.show-header-bar):not(.plugin-sliding-panes-rotate-header) .view-header:hover *:not(:hover) {
+	transition-property: opacity;
+
 	/* this ensures that the transition delay is only applied to opacity,
 	i.e. the showing/hiding of the header, not the hover-accent when
 	the item themselves are hovered */
 	transition-delay: var(--transition-delay-passing-over-protection);
-	transition-property: opacity;
 }
 
 .view-header {
@@ -3446,8 +3445,8 @@ body.mod-macos:not(.show-sidebar-tabs):not(.show-titlebar) .mod-left-split .work
 on the titlebar visibility in the titlebar section */
 
 body .workspace-leaf-resize-handle {
-	transition: var(--medium-transition);
 	outline: var(--thin-border);
+	transition: var(--medium-transition);
 }
 
 .workspace-leaf-resize-handle:hover {
@@ -7399,11 +7398,11 @@ body:not(.hide-trailing-whitespace) .cm-trailing-space-new-line::BEFORE {
 /* https://forum.obsidian.md/t/meta-post-common-css-hacks/1978/34 */
 input.task-list-item-checkbox[type="checkbox"] {
 	background-color: unset;
+	filter: unset; /* removes hue filter */
 
 	border: 2px solid var(--hr-line-gray);
 	border-radius: calc(var(--round) * 0.7);
 
-	filter: unset; /* removes hue filter */
 	cursor: pointer;
 
 	-webkit-appearance: none;
@@ -7417,12 +7416,12 @@ input.task-list-item-checkbox[type="checkbox"] {
 input[type="checkbox"]:checked {
 	background-color: var(--finished-task);
 	background-image: url('data:image/svg+xml; utf8, <svg width="12px" height="10px" viewBox="0 0 12 8" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd"><g transform="translate(-4.000000, -6.000000)" fill="%23ffffff"><path d="M8.1043257,14.0367999 L4.52468714,10.5420499 C4.32525014,10.3497722 4.32525014,10.0368095 4.52468714,9.8424863 L5.24777413,9.1439454 C5.44721114,8.95166768 5.77142411,8.95166768 5.97086112,9.1439454 L8.46638057,11.5903727 L14.0291389,6.1442083 C14.2285759,5.95193057 14.5527889,5.95193057 14.7522259,6.1442083 L15.4753129,6.84377194 C15.6747499,7.03604967 15.6747499,7.35003511 15.4753129,7.54129009 L8.82741268,14.0367999 C8.62797568,14.2290777 8.3037627,14.2290777 8.1043257,14.0367999"></path></g></g></svg>');
+	background-repeat: no-repeat;
 
 	border: none;
 
 	background-position: center;
 	background-size: 65%;
-	background-repeat: no-repeat;
 }
 
 .angular-shapes [type="checkbox"]:checked {
@@ -9090,9 +9089,9 @@ img.emoji.emoji.emoji.emoji.emoji {
 ──────────────────────────────────────────────────── */
 .status-bar-item.plugin-obsidian-discordrpc {
 	font-size: 85%;
+	filter: grayscale(1) contrast(1.3) opacity(0.8);
 	position: relative;
 	top: 1.5px;
-	filter: grayscale(1) contrast(1.3) opacity(0.8);
 }
 
 /* ───────────────────────────────────────────────── */
@@ -9150,8 +9149,8 @@ body .dict-s-popover.dict-s-popover.dict-s-popover {
 
 .status-bar-item.plugin-obsidian-git {
 	background-position-y: 1px;
-	padding-left: 15px;
 	background-repeat: no-repeat;
+	padding-left: 15px;
 }
 
 /* open source control view */
@@ -12160,8 +12159,8 @@ and file recovery plugin */
 
 .diff .sync-history-list-container {
 	display: flex;
-	max-height: unset;
 	flex-direction: column-reverse;
+	max-height: unset;
 }
 
 /* ───────────────────────────────────────────────── */
