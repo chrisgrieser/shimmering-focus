@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 1.1442
+Version 1.1443
 Source CSS: https://github.com/chrisgrieser/shimmering-focus/blob/main/source.css
 MIT License
 ──────────────────────────────────────────────────── */
@@ -339,12 +339,12 @@ MIT License
 
 :root {
 	--cyan-blue-0: hsl(187 80% 17% / 99%);
-	--cyan-blue-1: hsl(187 70% 25%);
+	--cyan-blue-1: hsl(187 70% 26%);
 	--cyan-blue-2: hsl(190 80% 32%);
 	--cyan-blue-3: hsl(187 70% 54%);
 	--cyan-blue-4: hsl(187 75% 63%);
-	--cyan-blue-5: hsl(187 70% 85% / 99%);
-	--cyan-blue-shifted: hsl(147 75% 40%);
+	--cyan-blue-5: hsl(187 70% 88% / 99%);
+	--cyan-blue-shifted: hsl(147 70% 38%);
 
 	--deep-blue-0: hsl(220 60% 20% / 99%);
 	--deep-blue-1: hsl(220 50% 35%);
@@ -410,7 +410,7 @@ MIT License
 	--primary-accent-5: var(--cyan-blue-5);
 
 	--unresolved-link-color: var(--cyan-blue-shifted);
-	--button-text: var(--always-dark);
+	--button-text: var(--text-normal);
 }
 
 /* readability improvement */
@@ -522,7 +522,7 @@ MIT License
 	--primary-accent-4: var(--cyan-blue-4);
 	--primary-accent-5: var(--cyan-blue-5);
 	--unresolved-link-color: var(--cyan-blue-shifted);
-	--button-text: var(--always-dark);
+	--button-text: var(--text-normal);
 
 	--hover-accent-1: var(--pink-1);
 	--hover-accent-2: var(--pink-2);
@@ -578,6 +578,7 @@ MIT License
 .theme-light {
 	--text-selection: var(--primary-accent-5);
 	--link-color: var(--primary-accent-2);
+	--active-text-color: var(--primary-accent-2);
 
 	--interactive-bg: var(--primary-accent-3);
 	--interactive-border-color: var(--primary-accent-4);
@@ -589,6 +590,7 @@ MIT License
 .theme-dark {
 	--text-selection: var(--primary-accent-0);
 	--link-color: var(--primary-accent-3);
+	--active-text-color: var(--primary-accent-3);
 
 	--interactive-bg: var(--primary-accent-2);
 	--interactive-border-color: var(--primary-accent-3);
@@ -2008,7 +2010,7 @@ body.show-titlebar .workspace-ribbon.mod-left {
 }
 
 .titlebar-button:active {
-	color: var(--primary-accent-2);
+	color: var(--active-text-color);
 }
 
 body:not(.show-titlebar-text) .titlebar-text {
@@ -2277,7 +2279,7 @@ body:not(.is-mobile):not(.plugin-sliding-panes-rotate-header) .view-header:hover
 
 body:is(.show-header-bar, .is-mobile) .view-header:focus-within,
 body:not(.is-mobile):not(.plugin-sliding-panes-rotate-header) .view-header:focus-within {
-	border-bottom: 2px solid var(--primary-accent-2) !important;
+	border-bottom: 2px solid var(--active-text-color) !important;
 }
 
 .view-header.view-header .view-header-icon:hover,
@@ -2503,7 +2505,7 @@ body:is(.theme-light, .theme-dark) ::-WEBKIT-SCROLLBAR-THUMB:active {
 	background:
 		linear-gradient(
 			45deg,
-			var(--primary-accent-2) 0% 20%,
+			var(--active-text-color) 0% 20%,
 			var(--hover-accent-2) 40% 60%,
 			var(--secondary-accent-3) 80% 100%
 		);
@@ -2958,7 +2960,7 @@ body:not(.no-alternating-rows) .menu-item:nth-child(odd) {
 }
 
 .menu-item.selected :is(.menu-item-title, svg) {
-	color: var(--primary-accent-2);
+	color: var(--active-text-color);
 }
 
 .menu-separator {
@@ -3092,7 +3094,7 @@ div.prompt-results {
 
 .suggestion-item.is-selected :is(.suggestion-prefix, .suggestion-flair, .suggestion-highlight),
 .suggestion-item.is-selected {
-	color: var(--primary-accent-2);
+	color: var(--active-text-color);
 }
 
 .suggestion-item:hover :is(.suggestion-prefix, .suggestion-flair, .suggestion-highlight),
@@ -3213,7 +3215,7 @@ body:not(.no-alternating-rows) .suggestion-item:nth-child(odd) .suggestion-prefi
 }
 
 .suggestion-container .suggestion-item.is-selected .suggestion-note {
-	color: var(--primary-accent-2);
+	color: var(--active-text-color);
 }
 
 .suggestion-container .suggestion-item:hover .suggestion-note {
@@ -3267,7 +3269,7 @@ body .app-container :is(.nav-file-title, .nav-folder-title):is(.is-active, :hove
 /* active file */
 .nav-file-title.is-active {
 	font-weight: 900;
-	color: var(--primary-accent-2);
+	color: var(--active-text-color);
 }
 
 .trim-long-filenames :is(.nav-file-title-content, .nav-folder-title-content, .tree-item-inner, .search-result-file-title) {
@@ -3379,7 +3381,7 @@ body > .app-container .workspace-split.mod-horizontal > .workspace-tabs > .works
 }
 
 .nav-action-button:is(.is-active, :active) {
-	color: var(--primary-accent-2);
+	color: var(--active-text-color);
 
 	/* "pressed down" look */
 	box-shadow: var(--small-reverted-inset-shadow);
@@ -3727,7 +3729,7 @@ body .app-container .workspace-leaf-resize-handle:hover {
 
 /* color active/hovered sub menu */
 .vertical-tab-nav-item.vertical-tab-nav-item.vertical-tab-nav-item.vertical-tab-nav-item:is(:active, .is-active) {
-	color: var(--primary-accent-2);
+	color: var(--active-text-color);
 	background: var(--bg3);
 	padding-left: 7px;
 	margin-left: 0;
@@ -4945,7 +4947,7 @@ body:not(.no-active-highlight) .cm-active :is(.cm-formatting-header,.cm-formatti
 /* keys */
 .colored-yaml .frontmatter.language-yaml .atrule,
 .colored-yaml .cm-atom.cm-hmd-frontmatter {
-	color: var(--primary-accent-2);
+	color: var(--active-text-color);
 }
 
 /* punctuation */
@@ -5931,7 +5933,7 @@ body .markdown-preview-view blockquote,
 
 /* style links in blockquotes, e.g. quote sources */
 .cm-link.cm-quote:not(.cm-formatting) {
-	color: var(--primary-accent-2);
+	color: var(--link-color);
 }
 
 .cm-string.cm-url.cm-quote,
@@ -6078,7 +6080,7 @@ body:not(.no-citation-syntax) .markdown-preview-view.markdown-preview-view *:not
 
 /* fix styling of links */
 body:not(.no-citation-syntax) .markdown-source-view .cm-line.HyperMD-quote-1 + .HyperMD-quote-2 :is(.cm-link, .cm-hmd-internal-link):not(.cm-formatting) {
-	color: var(--primary-accent-2);
+	color: var(--link-color);
 }
 
 body:not(.no-citation-syntax) .markdown-source-view .cm-line.HyperMD-quote-1 + .HyperMD-quote-2.HyperMD-quote-2 :is(.cm-link, .cm-url, .cm-hmd-internal-link, .cm-formatting-link) {
@@ -6983,6 +6985,7 @@ a:hover {
 	text-decoration: underline double 1px;
 }
 
+a,
 .cm-hmd-internal-link.cm-hmd-internal-link.cm-hmd-internal-link,
 .cm-link.cm-link.cm-link.cm-link.cm-link:not(.cm-formatting) {
 	color: var(--link-color);
@@ -8169,7 +8172,7 @@ action (folding) than clicking the heading itself (as opposed to other sidebar p
 
 .tree-item-self:active,
 .tree-item-self:active .tree-item-icon svg {
-	color: var(--primary-accent-2);
+	color: var(--active-text-color);
 }
 
 .tree-item-icon.collapse-icon {
@@ -8320,7 +8323,7 @@ body:not(.classic-inline-backlinks) :is(.writing, .longform-leaf) .embedded-back
 
 .backlink-pane .tree-item-inner.is-collapsed {
 	font-weight: 600;
-	color: var(--primary-accent-2) !important;
+	color: var(--active-text-color) !important;
 }
 
 .backlink-pane {
@@ -8656,7 +8659,7 @@ body:not(.no-alternating-rows) .workspace-leaf-content[data-type="starred"] .nav
 
 .sync-history-list-item.is-active {
 	font-weight: 600;
-	color: var(--primary-accent-2);
+	color: var(--active-text-color);
 	background-color: var(--bg3);
 }
 
@@ -8686,7 +8689,7 @@ body:not(.no-alternating-rows) .workspace-leaf-content[data-type="starred"] .nav
 }
 
 .modal.mod-sync-history textarea:focus {
-	border-color: var(--primary-accent-2);
+	border-color: var(--active-text-color);
 }
 
 .sync-history-content-buttons {
@@ -8759,7 +8762,7 @@ body:not(.show-graph-controls) .graph-controls.is-close:not(:hover) {
 }
 
 .graph-controls-button:active {
-	color: var(--primary-accent-2);
+	color: var(--active-text-color);
 }
 
 .tree-item-self:hover .graph-control-section-header {
@@ -8769,7 +8772,7 @@ body:not(.show-graph-controls) .graph-controls.is-close:not(:hover) {
 /* <<< Graph itself */
 /* node of current node (local graph) */
 .graph-view.color-fill-focused {
-	color: var(--primary-accent-2);
+	color: var(--active-text-color);
 	opacity: 0.8;
 }
 
@@ -9247,7 +9250,7 @@ body.plugin-sliding-panes-rotate-header .workspace > .mod-root > .workspace-leaf
 }
 
 body.plugin-sliding-panes-rotate-header .workspace > .mod-root > .workspace-leaf > .workspace-leaf-content > .view-header.view-header.view-header:focus-within {
-	border-color: var(--primary-accent-2);
+	border-color: var(--active-text-color);
 }
 
 body.plugin-sliding-panes-rotate-header .workspace > .mod-root > .workspace-leaf > .workspace-leaf-content > .view-header .view-header-icon.view-header-icon {
@@ -9337,7 +9340,7 @@ body .workspace-leaf-content[data-type="calendar"] .nav {
 }
 
 .workspace-leaf-content[data-type="calendar"] .day.today {
-	color: var(--primary-accent-2);
+	color: var(--active-text-color);
 }
 
 .workspace-leaf-content[data-type="calendar"] .day.active {
@@ -9345,7 +9348,7 @@ body .workspace-leaf-content[data-type="calendar"] .nav {
 	text-decoration: underline 2px;
 
 	color: var(--light-in-light-dark-in-dark);
-	background-color: var(--primary-accent-2);
+	background-color: var(--active-text-color);
 	opacity: 0.7;
 
 	border-radius: 0;
@@ -9879,13 +9882,13 @@ body:not(.no-heading-bg) .kanban-plugin :is(h1, h2, h3, h4, h5, h6) {
 }
 
 :is(#draft-list .draft-container, #scene-list .scene-container).selected {
-	color: var(--primary-accent-2);
+	color: var(--active-text-color);
 	background-color: var(--bg3);
 }
 
 /* dragging */
 :is(#draft-list .draft-container, #scene-list .scene-container) :is(.dragging, :active) {
-	color: var(--primary-accent-2);
+	color: var(--active-text-color);
 	background-color: transparent;
 }
 
@@ -10449,7 +10452,7 @@ body:not(.show-title-bar) > .qe-popup-menu {
 }
 
 .menu.qe-popup-menu .menu-item.selected::BEFORE {
-	color: var(--primary-accent-2);
+	color: var(--active-text-color);
 }
 
 .menu.qe-popup-menu .menu-item:is(:hover, .selected) {
@@ -10699,7 +10702,7 @@ button.MS-OpenSnippet:hover svg.ms-snippet path {
 
 .BC-active-note div { /* "Treat Current Note as Implied Sibling" enabled */
 	font-weight: 600;
-	color: var(--primary-accent-2);
+	color: var(--active-text-color);
 }
 
 body .app-container .workspace-leaf-content[data-type="BC-matrix"] .view-content {
@@ -11016,7 +11019,7 @@ body .qsp-symbol-indicator {
 }
 
 .suggestion-item.is-selected .qsp-symbol-indicator {
-	color: var(--primary-accent-2);
+	color: var(--active-text-color);
 }
 
 .suggestion-item:hover .qsp-symbol-indicator {
@@ -11076,7 +11079,7 @@ body .qsp-symbol-indicator {
 }
 
 .suggestion-item.is-selected :is(.another-quick-switcher__item__icon, .another-quick-switcher__item__directory, .another-quick-switcher__item__description) {
-	color: var(--primary-accent-2);
+	color: var(--active-text-color);
 	filter: saturate(50%);
 }
 
@@ -12371,16 +12374,12 @@ and file recovery plugin */
 }
 
 /* hover + active */
-.theme-dark .hover-editor.is-active.is-active {
-	border-color: var(--primary-accent-2);
+.hover-editor.is-active.is-active {
+	border-color: var(--primary-accent-3);
 }
 
 .theme-dark .hover-editor:not(.is-active):hover {
 	border-color: var(--hover-accent-2);
-}
-
-.theme-light .hover-editor.is-active.is-active {
-	border-color: var(--primary-accent-3);
 }
 
 .theme-light .hover-editor:not(.is-active):hover {
@@ -12470,7 +12469,7 @@ body:not(.no-alternating-rows) .omnisearch-result:nth-child(odd) .omnisearch-res
 }
 
 .omnisearch-result.is-selected:not(:hover) .omnisearch-result__body {
-	color: var(--primary-accent-2);
+	color: var(--active-text-color);
 	filter: saturate(40%);
 }
 
