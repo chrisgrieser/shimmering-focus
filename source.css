@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 1.1454
+Version 1.1455
 Source CSS: https://github.com/chrisgrieser/shimmering-focus/blob/main/source.css
 MIT License
 ──────────────────────────────────────────────────── */
@@ -7915,7 +7915,8 @@ body:not(.show-vault-in-file-explorer) .nav-folder.mod-root > .nav-folder-title 
 	display: none;
 }
 
-body:not(.show-file-explorer-navigation) .nav-buttons-container {
+/* hide navigation buttons */
+body:not(.show-file-explorer-navigation) :is(.nav-buttons-container, .nav-header) {
 	display: none;
 }
 
@@ -7934,7 +7935,7 @@ body:not(.show-file-explorer-navigation) .nav-buttons-container {
 }
 
 .workspace-leaf-content[data-type="file-explorer"] .nav-folder.mod-root {
-	margin-top: 6px;
+	margin-top: 2px;
 }
 
 /* optionally hide attachment folders */
@@ -12667,12 +12668,6 @@ settings:
    description: When the Title Bar is re-enabled, show the name of the vault there.
    default: false
   -
-   id: show-vault-in-file-explorer
-   title: Show Vault Name in File Explorer
-   type: class-toggle
-   description: Enable this, if you want to drag and drop items to your vault root.
-   default: false
-  -
    id: show-ribbons
    title: Re-enable Ribbons
    type: class-toggle
@@ -12741,6 +12736,18 @@ settings:
    title: Permanently show the Collapse Arrows
    description: By default, collapse arrows only become visible when hovered, folded, or in the active line.
    type: class-toggle
+   default: false
+  -
+   id: show-vault-in-file-explorer
+   title: 'File Explorer: Show Vault Name'
+   type: class-toggle
+   description: Enable this, if you want to drag and drop items to your vault root.
+   default: false
+  -
+   id: show-file-explorer-navigation
+   title: 'File Explorer: Re-enable Navigation Buttons'
+   type: class-toggle
+   description: 'The navigation buttons are the buttons for new file, new folder, and sorting. You can do the former two without the buttons via the context menu.'
    default: false
   -
    id: show-graph-controls
