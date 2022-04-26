@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 1.1466
+Version 1.1467
 Source CSS: https://github.com/chrisgrieser/shimmering-focus/blob/main/source.css
 MIT License
 ──────────────────────────────────────────────────── */
@@ -1858,9 +1858,6 @@ body:not(.no-grayed-out-inactive-pane) {
 
 	border: var(--thin-border);
 	border-radius: 0 0 var(--roundish) 0;
-
-	border-left-width: 2px;
-	border-top-width: 2px;
 }
 
 .theme-light :is(.cm-vim-panel div span, .cm-selectionLayer)::BEFORE {
@@ -2221,9 +2218,9 @@ body { /* stylelint-disable-line no-duplicate-selectors */
 body:not(.show-header-bar):not(.is-mobile):not(.plugin-sliding-panes-rotate-header) .mod-root .view-header.view-header {
 	height: var(--hidden-header-hotarea-height);
 	background-color: transparent;
-	border-color: var(--text-faint);
 	border-top: none;
 	border-bottom: none;
+	border-color: var(--text-faint);
 }
 
 body:not(.show-header-bar):not(.is-mobile):not(.plugin-sliding-panes-rotate-header) .mod-root .workspace-leaf-content:not([data-type="kanban"]) .view-header:not(:hover):not(:focus-within) + .view-content {
@@ -6225,9 +6222,9 @@ body:not(.normal-blockquotes) .callout-content :is(ul, p) {
 
 .callout {
 	background-color: var(--bg2);
+	border-left-width: var(--blockquote-border-width);
 	border-color: rgb(var(--callout-color), 70%); /* stylelint-disable-line color-function-notation */
 	border-radius: var(--roundish);
-	border-left-width: var(--blockquote-border-width);
 	--callout-icon: triangle; /* default callout icon */
 }
 
@@ -7507,18 +7504,25 @@ li[data-task="x"] > .task-list-item-checkbox:hover {
 /* ───────────────────────────────────────────────── */
 /* << Highlights & Multi-Color Highlighting
 ──────────────────────────────────────────────────── */
-
-:root { /* stylelint-disable-line no-duplicate-selectors */
+/* stylelint-disable no-duplicate-selectors */
+:root {
 	--highlight-hue-1: 60; /* yellow */
 	--highlight-hue-2: 150; /* green */
 	--highlight-hue-3: 185; /* cyan */
 }
 
+.theme-light {
+	--highlight-sla-values: 100% 50% / 35%;
+}
+
+.theme-dark {
+	--highlight-sla-values: 100% 75% / 60%;
+}
+
+/* stylelint-enable no-duplicate-selectors */
 mark,
 .cm-highlight,
 .style-settings-container {
-	--highlight-sla-values: 100% 50% / 30%;
-
 	--highlight-color-1: hsl(var(--highlight-hue-1) var(--highlight-sla-values));
 	--highlight-color-2: hsl(var(--highlight-hue-2) var(--highlight-sla-values));
 	--highlight-color-3: hsl(var(--highlight-hue-3) var(--highlight-sla-values));
@@ -7531,6 +7535,7 @@ mark {
 
 .markdown-rendered mark,
 .cm-s-obsidian span.cm-highlight {
+	color: var(--always-dark);
 	background-color: var(--highlight-color-1);
 }
 
@@ -11375,7 +11380,7 @@ body:not(.no-animations) .style-settings-heading[data-id="shimmering-focus"]:not
 /* use hue slider */
 .style-settings-container {
 	--hue-slider-sat: 70%;
-	--hue-slider-br: 70%;
+	--hue-slider-br: 60%;
 	--hue-scale:
 		linear-gradient(
 			to right,
@@ -11422,6 +11427,8 @@ body:not(.no-animations) .style-settings-heading[data-id="shimmering-focus"]:not
 
 	height: 1.8em;
 	width: 10em;
+
+	color: var(--always-dark);
 
 	position: relative;
 	left: -3em;
