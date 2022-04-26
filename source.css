@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 1.1479
+Version 1.1480
 Source CSS: https://github.com/chrisgrieser/shimmering-focus/blob/main/source.css
 MIT License
 ──────────────────────────────────────────────────── */
@@ -1804,12 +1804,13 @@ body:not(.no-grayed-out-inactive-pane) {
 
 /* Dark Eclipse (Default) */
 .cm-focused .cm-vimCursorLayer .cm-fat-cursor.cm-fat-cursor.cm-fat-cursor {
-	color: var(--always-light);
+	color: var(--extra-contrast);
 	background-color: hsl(0 0% 0%);
 	outline: 1px solid var(--cursor-outline-color);
 }
 
 .theme-light .cm-focused .cm-vimCursorLayer .cm-fat-cursor.cm-fat-cursor.cm-fat-cursor {
+	color: var(--always-light);
 	background-color: hsl(0 0% 25%);
 }
 
@@ -2921,9 +2922,11 @@ body .app-container .obsidian-search-match-highlight {
 }
 
 /* gutter indicators */
+body:not(.no-search-result-indicator) .cm-matched-string::before, /* dynamic highlights plugin */
 body:not(.no-search-result-indicator) .obsidian-search-match-highlight::before {
 	content: "►";
 
+	font-size: 0.8em;
 	font-style: normal; /* so italic text does not get an italic search marker */
 
 	color: var(--search-match-color);
@@ -2932,6 +2935,8 @@ body:not(.no-search-result-indicator) .obsidian-search-match-highlight::before {
 	position: absolute;
 	left: -57px;
 	z-index: 5;
+
+	margin-top: 2px;
 }
 
 /* Reading Mode */
@@ -12065,6 +12070,8 @@ a.zoom-plugin-title:hover {
 /* ───────────────────────────────────────────────── */
 /* << Dynamic Highlight
 ──────────────────────────────────────────────────── */
+/* search match indicator in the gutter defined
+in the search match section */
 
 /* current word */
 body :is(.cm-matched-word,.cm-current-word) {
