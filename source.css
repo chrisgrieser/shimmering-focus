@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 1.1467
+Version 1.1468
 Source CSS: https://github.com/chrisgrieser/shimmering-focus/blob/main/source.css
 MIT License
 ──────────────────────────────────────────────────── */
@@ -411,11 +411,6 @@ MIT License
 
 	--unresolved-link-color: var(--cyan-blue-shifted);
 	--button-text: var(--text-normal);
-}
-
-/* readability improvement */
-.theme-light:is(.custom-colors.primary-accent-light-cyan, .gamma-colors) :is(.cm-hmd-internal-link, .cm-link:not(.cm-hmd-barelink)) {
-	text-shadow: 0.2px 0.2px 0 var(--cyan-blue-2);
 }
 
 .custom-colors.theme-light.primary-accent-light-orange,
@@ -7040,8 +7035,13 @@ a:hover {
 
 a,
 .cm-hmd-internal-link.cm-hmd-internal-link.cm-hmd-internal-link,
-.cm-link.cm-link.cm-link.cm-link.cm-link:not(.cm-formatting) {
+.cm-link.cm-link.cm-link.cm-link.cm-link:not(.cm-formatting, .cm-hmd-barelink) {
 	color: var(--link-color);
+}
+
+/* readability improvement */
+.theme-light :is(a, .cm-hmd-internal-link, .cm-link:not(.cm-hmd-barelink, .cm-formatting)) {
+	text-shadow: 0.1px 0.1px;
 }
 
 /* icon for certain filetypes links */
@@ -7161,10 +7161,15 @@ div > ul > li > ul > li > ul > li > ul > li > ul > li > .is-unresolved.is-unreso
 /* << Tags
 ──────────────────────────────────────────────────── */
 
-body .cm-line .cm-hashtag,
+.cm-hashtag.cm-hashtag.cm-hashtag,
 a.tag {
 	text-decoration: none;
 	color: var(--tag-text-color);
+}
+
+/* readability improvement */
+.theme-light :is(.cm-hashtag, .tag) {
+	text-shadow: 0.1px 0.1px;
 }
 
 a.tag:hover {
@@ -7599,6 +7604,11 @@ body:not(.no-pseudo-spoiler-tags) :is(em > del:hover, .cm-active .cm-em.cm-strik
 partially also to footnotes */
 body:not(.no-pandoc-citation-emphasis) .cm-hmd-barelink.cm-hmd-barelink.cm-hmd-barelink.cm-hmd-barelink.cm-hmd-barelink {
 	color: var(--reference-color);
+}
+
+/* readability improvement */
+.theme-light:not(.no-pandoc-citation-emphasis) .cm-hmd-barelink {
+	text-shadow: 0.1px 0.1px;
 }
 
 /* ───────────────────────────────────────────────── */
@@ -9013,10 +9023,6 @@ div.card-view-container.card-view-container .markdown-preview-view :is(h1, h2, h
 .prompt.better-command-palette .suggestion-flair[aria-label="Click to Hide"]:not(:hover) {
 	color: transparent;
 	background: transparent;
-}
-
-.hidden-items-header:empty {
-	display: none;
 }
 
 /* pinned items bold/starred */
