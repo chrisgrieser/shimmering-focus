@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 1.1458
+Version 1.1459
 Source CSS: https://github.com/chrisgrieser/shimmering-focus/blob/main/source.css
 MIT License
 ──────────────────────────────────────────────────── */
@@ -1838,7 +1838,7 @@ body:not(.no-grayed-out-inactive-pane) {
 	text-transform: uppercase;
 	text-align: center;
 
-	height: 1.25rem;
+	height: 1.2rem;
 	width: 3rem;
 
 	background-color: var(--alt-bg);
@@ -1853,6 +1853,9 @@ body:not(.no-grayed-out-inactive-pane) {
 
 	border: var(--thin-border);
 	border-radius: 0 0 var(--roundish) 0;
+
+	border-left-width: 2px;
+	border-top-width: 2px;
 }
 
 .theme-light :is(.cm-vim-panel div span, .cm-selectionLayer)::BEFORE {
@@ -5391,38 +5394,46 @@ body:not(.permanently-show-collapse-indicators) .cm-line:not(:hover):not(.cm-act
 	letter-spacing: 1px;
 }
 
+.cm-lineNumbers .cm-active.cm-gutterElement {
+	color: var(--active-line-indicator);
+}
+
 /* relative line numbers */
-.relative-line-numbering .cm-lineNumbers:not(:hover) .cm-gutterElement:not(.cm-active) {
+.relative-line-numbering .cm-lineNumbers .cm-gutterElement:not(.cm-active) {
 	opacity: 0;
 }
 
-.relative-line-numbering .cm-lineNumbers:not(:hover) .cm-gutterElement.cm-active ~ .cm-gutterElement {
+.relative-line-numbering .cm-lineNumbers .cm-gutterElement.cm-active {
+	font-weight: 600;
+}
+
+.relative-line-numbering .cm-lineNumbers .cm-gutterElement.cm-active ~ .cm-gutterElement {
 	font-size: 0;
 	opacity: 1;
 }
 
-.relative-line-numbering .cm-lineNumbers:not(:hover) .cm-gutterElement.cm-active ~ .cm-gutterElement::BEFORE {
+.relative-line-numbering .cm-lineNumbers .cm-gutterElement.cm-active ~ .cm-gutterElement::BEFORE {
 	font-size: var(--font-text-size);
 	margin-right: -1px;
 }
 
-.relative-line-numbering .cm-lineNumbers:not(:hover) .cm-gutterElement.cm-active + .cm-gutterElement::BEFORE {
+.relative-line-numbering .cm-lineNumbers .cm-gutterElement.cm-active + .cm-gutterElement::BEFORE {
 	content: "1";
 }
 
-.relative-line-numbering .cm-lineNumbers:not(:hover) .cm-gutterElement.cm-active + .cm-gutterElement + .cm-gutterElement::BEFORE {
+.relative-line-numbering .cm-lineNumbers .cm-gutterElement.cm-active + .cm-gutterElement + .cm-gutterElement::BEFORE {
 	content: "2";
 }
 
-.relative-line-numbering .cm-lineNumbers:not(:hover) .cm-gutterElement.cm-active + .cm-gutterElement + .cm-gutterElement + .cm-gutterElement::BEFORE {
+.relative-line-numbering .cm-lineNumbers .cm-gutterElement.cm-active + .cm-gutterElement + .cm-gutterElement + .cm-gutterElement::BEFORE {
 	content: "3";
 }
 
-.relative-line-numbering .cm-lineNumbers:not(:hover) .cm-gutterElement.cm-active + .cm-gutterElement + .cm-gutterElement + .cm-gutterElement + .cm-gutterElement::BEFORE {
+.relative-line-numbering .cm-lineNumbers .cm-gutterElement.cm-active + .cm-gutterElement + .cm-gutterElement + .cm-gutterElement + .cm-gutterElement::BEFORE {
 	content: "4";
 }
 
-.relative-line-numbering .cm-lineNumbers:not(:hover) .cm-gutterElement.cm-active + .cm-gutterElement + .cm-gutterElement + .cm-gutterElement + .cm-gutterElement + .cm-gutterElement::BEFORE {
+.relative-line-numbering .cm-lineNumbers .cm-gutterElement.cm-active + .cm-gutterElement + .cm-gutterElement + .cm-gutterElement + .cm-gutterElement + .cm-gutterElement::BEFORE {
 	content: "5";
 }
 
@@ -5431,7 +5442,7 @@ body:not(.permanently-show-collapse-indicators) .cm-line:not(:hover):not(.cm-act
 	opacity: 0;
 }
 
-.minimal-line-numbering .cm-lineNumbers .cm-gutterElement {
+.minimal-line-numbering .cm-lineNumbers:not(:hover) .cm-gutterElement.cm-active {
 	color: var(--text-muted);
 }
 
@@ -5450,11 +5461,6 @@ body:not(.permanently-show-collapse-indicators) .cm-line:not(:hover):not(.cm-act
 .minimal-line-numbering .cm-lineNumbers:hover .cm-gutterElement:not(.cm-active) {
 	transition: var(--very-quick-transition);
 	transition-delay: var(--transition-delay-passing-over-protection);
-}
-
-/* when disabled, active highlighting of markup */
-body:not(.minimal-line-numbering):not(.no-active-highlight) .cm-lineNumbers .cm-active.cm-gutterElement {
-	color: var(--active-line-indicator);
 }
 
 /* CM5 */
@@ -13265,7 +13271,7 @@ settings:
   -
    id: line-number-options
    title: 🆕 Line Numbering Style
-   description: "'Relative' shows only the active line and the following five lines, revealing true line numbers only on hover (useful for Vim Mode). 'Minimal' shows line numbers only for the active and hovered line. This setting has no effect when Obsidian's 'Show line number' settings is disabled."
+   description: "'Relative' shows only the active line and the following five lines (useful for Vim Mode). 'Minimal' shows line numbers only for the active and hovered line. This setting has no effect when Obsidian's 'Show line number' settings is disabled."
    type: class-select
    allowEmpty: false
    default: default-line-numbering

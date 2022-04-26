@@ -3,7 +3,7 @@ nav_order: 110
 ---
 
 # Changelog
-- 2022-04-26	patch
+- 2022-04-26	line numbering hover fixes
 - 2022-04-26	style settings tab reworked
 - 2022-04-26	fix custom colors
 - 2022-04-26	hide file explorer navigation buttons (#136)
