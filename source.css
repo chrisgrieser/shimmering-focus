@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 1.1469
+Version 1.1470
 Source CSS: https://github.com/chrisgrieser/shimmering-focus/blob/main/source.css
 MIT License
 ──────────────────────────────────────────────────── */
@@ -743,7 +743,7 @@ body.strong-em-secondary-accent {
 /* <<< Longform & Writing Background Calculations
 ──────────────────────────────────────────────────── */
 :root {
-	--longform-hue-shift: 15;
+	--longform-hue-shift: 25;
 }
 
 .theme-light,
@@ -6546,6 +6546,11 @@ body { /* stylelint-disable-line no-duplicate-selectors */
 	border-radius: 0;
 }
 
+/* fixes when background color changes, e.g. writing css class */
+.cm-s-obsidian span.cm-inline-code.cm-formatting-code {
+	background-color: var(--code-block-bg);
+}
+
 /* ───────────────────────────────────────────────── */
 /* <<< Code Blocks
 ──────────────────────────────────────────────────── */
@@ -9962,12 +9967,10 @@ body:not(.no-heading-bg) .kanban-plugin :is(h1, h2, h3, h4, h5, h6) {
 	padding: 4px 3px 4px 5px;
 
 	border: none;
-	border-radius: var(--roundish);
 }
 
 :is(#draft-list, #scene-list) li {
 	border: none;
-	border-radius: var(--roundish);
 }
 
 :is(#draft-list .draft-container, #scene-list .scene-container).selected {
@@ -10049,7 +10052,6 @@ input:is(#new-draft, #new-scene) {
 	box-shadow: var(--muted-button-inset-shadow);
 	padding: 0 2px 2px;
 	border-bottom: var(--thin-border);
-	border-radius: var(--roundish);
 }
 
 div#select-projects select {
@@ -10181,14 +10183,9 @@ body:not(.no-alternating-rows) li:nth-child(even) :is(.draft-container, .scene-c
 	content: "merge_type";
 }
 
-.workspace-leaf-content[data-type="VIEW_TYPE_LONGFORM_EXPLORER"] button.selected.selected.selected.selected.selected {
+.workspace-leaf-content[data-type="VIEW_TYPE_LONGFORM_EXPLORER"] button.selected.selected.selected:not(:hover) {
 	color: var(--extra-contrast);
 	background-color: var(--bg1);
-}
-
-.workspace-leaf-content.workspace-leaf-content.workspace-leaf-content.workspace-leaf-content[data-type="VIEW_TYPE_LONGFORM_EXPLORER"] button.selected:hover,
-.workspace-leaf-content.workspace-leaf-content.workspace-leaf-content[data-type="VIEW_TYPE_LONGFORM_EXPLORER"] button:hover {
-	color: var(--hover-accent-2);
 }
 
 /* hide index file in file explorer, which shouldn't
@@ -10407,12 +10404,12 @@ select#longform-workflows:hover {
 .app-container.app-container.app-container.app-container.app-container.app-container :is(.longform-leaf, .writing) :is(.frontmatter-container, .cm-hmd-frontmatter, .cm-formatting-task, .HyperMD-codeblock, code, .cm-inline-code, .HyperMD-table-row) {
 	font-family: var(--font-monospace);
 	font-size: var(--monospace-font-size);
-	text-align: start;
-	hyphens: none;
 }
 
 /* justify text */
-body:not(.longform-left-aligned) :is(.writing, .longform-leaf) :is(.cm-line:not(.HyperMD-codeblock, .HyperMD-list-line, .HyperMD-header), p, .footnotes, .HyperMD-footnote) {
+body:not(.longform-left-aligned) :is(.writing, .longform-leaf) .HyperMD-quote,
+body:not(.longform-left-aligned) :is(.writing, .longform-leaf) .cm-line:not(.HyperMD-codeblock, .HyperMD-header) > span,
+body:not(.longform-left-aligned) :is(.writing, .longform-leaf) :is(p, .footnotes, .HyperMD-footnote) {
 	text-align: justify;
 	hyphens: auto;
 }
@@ -10446,6 +10443,12 @@ body:not(.longform-left-aligned) :is(.writing, .longform-leaf) :is(.cm-line:not(
 .app-container :is(.writing, .longform-leaf) pre[class*="language-"]::BEFORE {
 	/* fix for code block header hack */
 	line-height: 1.3em;
+}
+
+/* fix for code block backgrounds */
+:is(.writing, .longform-leaf) {
+	--code-block-bg: var(--bg2);
+	--code-block-alt-bg: var(--bg3);
 }
 
 /* fix for checkboxes  */
