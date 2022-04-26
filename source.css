@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 1.1473
+Version 1.1474
 Source CSS: https://github.com/chrisgrieser/shimmering-focus/blob/main/source.css
 MIT License
 ──────────────────────────────────────────────────── */
@@ -5242,7 +5242,7 @@ body:not(.no-floating-metadata):not(.is-mobile) .markdown-preview-view:not(.no-f
 	display: none;
 }
 
-/* interaction with header only visible on hover */
+/* positioning & interaction with header only visible on hover */
 
 /* stylelint-disable-next-line no-duplicate-selectors */
 :root {
@@ -7680,7 +7680,7 @@ sup {
 }
 
 .footnotes ol {
-	padding-inline-start: 1.6em;
+	padding-inline-start: 1em;
 }
 
 .footnotes li {
@@ -7688,13 +7688,15 @@ sup {
 }
 
 .footnote-backref {
-	font-size: 1.2em;
-	line-height: 1em;
+	font-size: 1em;
 
 	color: var(--middle-gray);
 
-	padding: 0 3px;
-	margin-left: 5px;
+	position: relative;
+	top: 2px;
+
+	padding: 0 1px;
+	margin-left: 4px;
 
 	border-radius: calc(var(--roundish) * 0.6);
 }
@@ -7733,7 +7735,7 @@ body:not(.no-fn-indicator) :is(.mod-cm6 .footnote-ref,.mod-cm6.cm-s-obsidian spa
 	line-height: 1rem;
 
 	color: var(--reference-color);
-	background-color: var(--bg1); /* has to be set for longform/writing notes */
+	background-color: var(--bg1) !important; /* has to be set for longform/writing notes */
 
 	position: absolute;
 
@@ -7794,6 +7796,7 @@ body:not(.no-fn-indicator) .mod-cm6 .cm-hmd-barelink:not(.cm-formatting-link) + 
 /* styling when the footnote indicator plugin is used */
 :is(.footnote-ref, .mod-cm6.cm-s-obsidian span.cm-footref.cm-formatting)::BEFORE {
 	color: var(--reference-color);
+	background-color: var(--bg1);
 }
 
 /* ───────────────────────────────────────────────── */
@@ -10410,8 +10413,8 @@ select#longform-workflows:hover {
 }
 
 /* justify text */
-body:not(.longform-left-aligned) :is(.writing, .longform-leaf) .HyperMD-quote,
-body:not(.longform-left-aligned) :is(.writing, .longform-leaf) .cm-line:not(.HyperMD-codeblock, .HyperMD-header) > span,
+body:not(.longform-left-aligned) :is(.writing, .longform-leaf) .cm-line:not(.HyperMD-codeblock, .HyperMD-header) > :not(.cm-hmd-frontmatter),
+body:not(.longform-left-aligned) :is(.writing, .longform-leaf) .cm-line:not(.HyperMD-codeblock, .HyperMD-header),
 body:not(.longform-left-aligned) :is(.writing, .longform-leaf) :is(p, .footnotes, .HyperMD-footnote) {
 	text-align: justify;
 	hyphens: auto;
@@ -10429,13 +10432,8 @@ body:not(.longform-left-aligned) :is(.writing, .longform-leaf) :is(p, .footnotes
 }
 
 /* line height */
-.writing.markdown-preview-view table,
-.longform-leaf .markdown-preview-view table {
-	line-height: 1.2em;
-}
-
-:is(.writing, .longform-leaf) .cm-line :not(.cm-header, .cm-hmd-frontmatter),
-:is(.writing, .longform-leaf) .cm-line {
+:is(.writing, .longform-leaf) :is(.cm-line, table),
+:is(.writing, .longform-leaf) .cm-line > :not(.cm-header, .cm-hmd-frontmatter) {
 	line-height: 1.2em;
 }
 
