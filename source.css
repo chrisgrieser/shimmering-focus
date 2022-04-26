@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 1.1468
+Version 1.1469
 Source CSS: https://github.com/chrisgrieser/shimmering-focus/blob/main/source.css
 MIT License
 ──────────────────────────────────────────────────── */
@@ -5415,23 +5415,39 @@ body:not(.permanently-show-collapse-indicators) .cm-line:not(:hover):not(.cm-act
 }
 
 .relative-line-numbering .cm-lineNumbers .cm-gutterElement.cm-active + .cm-gutterElement::BEFORE {
-	content: "1";
-}
-
-.relative-line-numbering .cm-lineNumbers .cm-gutterElement.cm-active + .cm-gutterElement + .cm-gutterElement::BEFORE {
 	content: "2";
 }
 
-.relative-line-numbering .cm-lineNumbers .cm-gutterElement.cm-active + .cm-gutterElement + .cm-gutterElement + .cm-gutterElement::BEFORE {
+.relative-line-numbering .cm-lineNumbers .cm-gutterElement.cm-active + .cm-gutterElement + .cm-gutterElement::BEFORE {
 	content: "3";
 }
 
-.relative-line-numbering .cm-lineNumbers .cm-gutterElement.cm-active + .cm-gutterElement + .cm-gutterElement + .cm-gutterElement + .cm-gutterElement::BEFORE {
+.relative-line-numbering .cm-lineNumbers .cm-gutterElement.cm-active + .cm-gutterElement + .cm-gutterElement + .cm-gutterElement::BEFORE {
 	content: "4";
 }
 
-.relative-line-numbering .cm-lineNumbers .cm-gutterElement.cm-active + .cm-gutterElement + .cm-gutterElement + .cm-gutterElement + .cm-gutterElement + .cm-gutterElement::BEFORE {
+.relative-line-numbering .cm-lineNumbers .cm-gutterElement.cm-active + .cm-gutterElement + .cm-gutterElement + .cm-gutterElement + .cm-gutterElement::BEFORE {
 	content: "5";
+}
+
+.relative-line-numbering .cm-lineNumbers .cm-gutterElement.cm-active + .cm-gutterElement + .cm-gutterElement + .cm-gutterElement + .cm-gutterElement + .cm-gutterElement::BEFORE {
+	content: "6";
+}
+
+.relative-line-numbering .cm-lineNumbers .cm-gutterElement.cm-active + .cm-gutterElement + .cm-gutterElement + .cm-gutterElement + .cm-gutterElement + .cm-gutterElement + .cm-gutterElement::BEFORE {
+	content: "7";
+}
+
+.relative-line-numbering .cm-lineNumbers .cm-gutterElement.cm-active + .cm-gutterElement + .cm-gutterElement + .cm-gutterElement + .cm-gutterElement + .cm-gutterElement + .cm-gutterElement + .cm-gutterElement::BEFORE {
+	content: "8";
+}
+
+.relative-line-numbering .cm-lineNumbers .cm-gutterElement.cm-active + .cm-gutterElement + .cm-gutterElement + .cm-gutterElement + .cm-gutterElement + .cm-gutterElement + .cm-gutterElement + .cm-gutterElement + .cm-gutterElement::BEFORE {
+	content: "9";
+}
+
+.relative-line-numbering .cm-lineNumbers .cm-gutterElement.cm-active + .cm-gutterElement + .cm-gutterElement + .cm-gutterElement + .cm-gutterElement + .cm-gutterElement + .cm-gutterElement + .cm-gutterElement + .cm-gutterElement + .cm-gutterElement::BEFORE {
+	content: "10";
 }
 
 /* minimal line numbers */
@@ -6170,7 +6186,7 @@ body:not(.no-citation-syntax) .markdown-preview-view *:not(blockquote) > blockqu
 	color: var(--extra-contrast);
 }
 
-.callout-content :is(ul, p) {
+.callout-content :is(ul, p, ol) {
 	line-height: 1.4em;
 	margin: 6px 0;
 }
