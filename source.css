@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 1.1452
+Version 1.1453
 Source CSS: https://github.com/chrisgrieser/shimmering-focus/blob/main/source.css
 MIT License
 ──────────────────────────────────────────────────── */
@@ -357,7 +357,7 @@ MIT License
 	--purple-0: hsl(250 30% 20% / 99%);
 	--purple-1: hsl(250 50% 49%);
 	--purple-2: hsl(250 60% 64%);
-	--purple-3: hsl(250 90% 74%);
+	--purple-3: hsl(250 90% 76%);
 	--purple-4: hsl(250 90% 83%);
 	--purple-5: hsl(250 70% 91% / 99%);
 	--purple-shifted: hsl(210 75% 64%); /* 40 hue less than primary-accent-2 */
@@ -7087,7 +7087,8 @@ body:not(.show-urls) .cm-line:not(.cm-active) .cm-url,
 /* ───────────────────────────────────────────────── */
 /* <<< Unresolved Links
 ──────────────────────────────────────────────────── */
-.cm-hmd-internal-link > .cm-underline,
+
+.is-unresolved .cm-underline,
 .is-unresolved.is-unresolved.is-unresolved.is-unresolved {
 	color: var(--unresolved-link-color);
 	opacity: 1;
