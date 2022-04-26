@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 1.1480
+Version 1.1481
 Source CSS: https://github.com/chrisgrieser/shimmering-focus/blob/main/source.css
 MIT License
 ──────────────────────────────────────────────────── */
@@ -1699,6 +1699,17 @@ body:not(.no-grayed-out-inactive-pane) {
 
 /* stylelint-enable no-duplicate-selectors */
 
+/* Theme Accent */
+.cursor-theme-primary-accent {
+	--cursor-look: var(--primary-accent-4);
+	--cursor-outline: 1px solid var(--always-dark);
+}
+
+.cursor-theme-hover-accent {
+	--cursor-look: var(--hover-accent-4);
+	--cursor-outline: 1px solid var(--always-dark);
+}
+
 /* Shimmering Beam */
 .theme-light.shimmering-beam-cursor {
 	--cursor-look: linear-gradient(hsl(164 100% 55%), hsl(243 80% 84%));
@@ -1786,22 +1797,6 @@ body:not(.no-grayed-out-inactive-pane) {
 /* << Vim Cursor
 ──────────────────────────────────────────────────── */
 
-/* unfocused */
-.cm-editor:not(.cm-focused) .cm-fat-cursor {
-	color: transparent;
-	background-color: transparent;
-	outline: 2px solid;
-	outline-offset: -1px;
-}
-
-.theme-dark .cm-editor:not(.cm-focused) .cm-fat-cursor {
-	outline-color: var(--primary-accent-3);
-}
-
-.theme-light .cm-editor:not(.cm-focused) .cm-fat-cursor {
-	outline-color: var(--primary-accent-2);
-}
-
 /* Dark Eclipse (Default) */
 .cm-focused .cm-vimCursorLayer .cm-fat-cursor.cm-fat-cursor.cm-fat-cursor {
 	color: var(--extra-contrast);
@@ -1815,17 +1810,49 @@ body:not(.no-grayed-out-inactive-pane) {
 }
 
 /* Theme Accent */
-.vim-cursor-theme-accent .cm-focused .cm-vimCursorLayer .cm-fat-cursor.cm-fat-cursor.cm-fat-cursor {
+:is(.vim-cursor-theme-hover-accent, .vim-cursor-theme-primary-accent) .cm-focused .cm-vimCursorLayer .cm-fat-cursor.cm-fat-cursor.cm-fat-cursor {
 	color: var(--light-in-light-dark-in-dark);
-	outline: 1px solid var(--text-muted);
+	outline: 0;
 }
 
-.vim-cursor-theme-accent.theme-light .cm-focused .cm-vimCursorLayer .cm-fat-cursor.cm-fat-cursor.cm-fat-cursor {
-	background-color: var(--primary-accent-2);
-}
-
-.vim-cursor-theme-accent.theme-dark .cm-focused .cm-vimCursorLayer .cm-fat-cursor.cm-fat-cursor.cm-fat-cursor {
+.vim-cursor-theme-primary-accent.theme-light .cm-focused .cm-vimCursorLayer .cm-fat-cursor.cm-fat-cursor.cm-fat-cursor {
 	background-color: var(--primary-accent-3);
+}
+
+.vim-cursor-theme-primary-accent.theme-dark .cm-focused .cm-vimCursorLayer .cm-fat-cursor.cm-fat-cursor.cm-fat-cursor {
+	background-color: var(--primary-accent-3);
+}
+
+.vim-cursor-theme-hover-accent.theme-light .cm-focused .cm-vimCursorLayer .cm-fat-cursor.cm-fat-cursor.cm-fat-cursor {
+	background-color: var(--hover-accent-3);
+}
+
+.vim-cursor-theme-hover-accent.theme-dark .cm-focused .cm-vimCursorLayer .cm-fat-cursor.cm-fat-cursor.cm-fat-cursor {
+	background-color: var(--hover-accent-3);
+}
+
+/* unfocused */
+.cm-editor:not(.cm-focused) .cm-fat-cursor {
+	color: transparent;
+	background-color: transparent;
+	outline: 2px solid;
+	outline-offset: -1px;
+}
+
+.theme-light .cm-editor:not(.cm-focused) .cm-fat-cursor {
+	outline-color: var(--primary-accent-2);
+}
+
+.theme-dark .cm-editor:not(.cm-focused) .cm-fat-cursor {
+	outline-color: var(--primary-accent-3);
+}
+
+.theme-light.vim-cursor-theme-hover-accent .cm-editor:not(.cm-focused) .cm-fat-cursor {
+	outline-color: var(--hover-accent-2);
+}
+
+.theme-dark.vim-cursor-theme-hover-accent .cm-editor:not(.cm-focused) .cm-fat-cursor {
+	outline-color: var(--hover-accent-3);
 }
 
 /* ───────────────────────────────────────────────── */
@@ -1876,7 +1903,7 @@ body:not(.no-grayed-out-inactive-pane) {
 	font-weight: 600;
 }
 
-.cm-vimCursorLayer:empty + .cm-selectionLayer:empty::before {
+.cm-vimCursorLayer:empty + .cm-selectionLayer::before {
 	content: "Insert";
 	color: var(--secondary-accent-text);
 }
@@ -13557,8 +13584,8 @@ settings:
    collapsed: true
   -
    id: cursor-styles
-   title: Cursor Style
-   description: Color and appearance of the cursor.
+   title: 🆕 Cursor Style
+   description: Color and look of the cursor.
    type: class-select
    allowEmpty: false
    default: dark-eclipse-cursor
@@ -13575,6 +13602,12 @@ settings:
     -
       label: Fire & Ice
       value: fire-and-ice-cursor
+    -
+      label: 🆕 Theme Primary Accent
+      value: cursor-theme-primary-accent
+    -
+      label: 🆕 Theme Hover Accent
+      value: cursor-theme-hover-accent
   -
    id: cursor-blink-style
    title: Cursor Blink Style
@@ -13626,8 +13659,11 @@ settings:
       label: Monolith
       value: vim-cursor-monolith
     -
-      label: Theme Accent
-      value: vim-cursor-theme-accent
+      label: Theme Primary Accent
+      value: vim-cursor-theme-primary-accent
+    -
+      label: Theme Hover Accent
+      value: vim-cursor-theme-hover-accent
   -
    id: vim-mode-indicator
    title: 🆕 Vim Mode Indicator

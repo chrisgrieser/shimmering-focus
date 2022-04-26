@@ -3,6 +3,7 @@ nav_order: 110
 ---
 
 # Changelog
+- 2022-04-26	theme accents as option for cursor and vim cursor styles
 - 2022-04-26	dynamic highlights search matches get gutter indicator
 - 2022-04-26	linting (lowercase pseudo-elements)
 - 2022-04-26	option to place vim mode indicator at the bottom
