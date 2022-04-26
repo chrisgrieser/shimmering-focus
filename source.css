@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 1.1465
+Version 1.1466
 Source CSS: https://github.com/chrisgrieser/shimmering-focus/blob/main/source.css
 MIT License
 ──────────────────────────────────────────────────── */
@@ -375,7 +375,7 @@ MIT License
 	--orange-5: hsl(40 70% 87% / 99%);
 	--orange-shifted: hsl(344 69% 42%);
 
-	--yellow-orange-2: hsl(39 76% 41%);
+	--yellow-orange-2: hsl(43 100% 30%);
 	--yellow-orange-3: hsl(39 80% 63%);
 
 	--pink-1: hsl(330 80% 30%);
