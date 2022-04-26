@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 1.1476
+Version 1.1477
 Source CSS: https://github.com/chrisgrieser/shimmering-focus/blob/main/source.css
 MIT License
 ──────────────────────────────────────────────────── */
@@ -12609,11 +12609,8 @@ body:not(.no-alternating-rows) .omnisearch-result:nth-child(odd) .omnisearch-res
 /* ───────────────────────────────────────────────── */
 /* << vimrc support
 ──────────────────────────────────────────────────── */
-.status-bar-item.plugin-obsidian-vimrc-support::FIRST-LETTER {
-	font-size: calc(var(--status-bar-font-size) * 0.8);
-}
-
 .status-bar-item.plugin-obsidian-vimrc-support {
+	font-size: calc(var(--status-bar-font-size) * 0.8);
 	filter: saturate(0.7);
 }
 
@@ -13110,7 +13107,7 @@ settings:
 # << Typography (+)
    id: font-settings
    title: 🔠 Typography
-   description: "Fonts, Headings, Blockquotes. ⚠️ To accomodate Obsidan's latest font update, some font style settings had to be reset, so you may have to set them once again. (This setting will be overriden when you have set custom fonts in the Obsidian settings.)"
+   description: "Fonts, Headings, Blockquotes."
    type: heading
    level: 1
    collapsed: true

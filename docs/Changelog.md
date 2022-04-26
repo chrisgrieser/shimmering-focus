@@ -3,6 +3,7 @@ nav_order: 110
 ---
 
 # Changelog
+- 2022-04-26	patch
 - 2022-04-26	option to place vim mode indicator at the bottom
 - 2022-04-26	different longform background color hue shift for dark & light mode
 - 2022-04-26	longform sidebar fixes
