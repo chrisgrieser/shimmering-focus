@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 1.1456
+Version 1.1457
 Source CSS: https://github.com/chrisgrieser/shimmering-focus/blob/main/source.css
 MIT License
 ──────────────────────────────────────────────────── */
@@ -11215,6 +11215,14 @@ body .qsp-symbol-indicator {
 	margin-bottom: 3px;
 }
 
+.style-settings-heading:not(.is-collapsed) .setting-item-name {
+	font-weight: 600;
+}
+
+.style-settings-heading.is-collapsed .setting-item-name {
+	font-weight: 500;
+}
+
 .style-settings-heading :is(.setting-item-title, .setting-item-description) {
 	margin-left: 1px;
 }
@@ -11236,13 +11244,8 @@ body .style-settings-heading[data-level="0"] .setting-item-name.setting-item-nam
 }
 
 .style-settings-heading[data-id="shimmering-focus"] + .style-settings-container .style-settings-heading[data-level="2"] .setting-item-name {
-	font-size: 0.8em;
-	font-weight: 500;
+	font-size: 1rem;
 	letter-spacing: 0;
-}
-
-.style-settings-heading[data-level="2"]:not(.is-collapsed) .setting-item-name {
-	font-weight: 700;
 }
 
 .style-settings-container .setting-editor-extra-setting-button {
