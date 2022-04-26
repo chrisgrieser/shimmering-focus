@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 1.1461
+Version 1.1462
 Source CSS: https://github.com/chrisgrieser/shimmering-focus/blob/main/source.css
 MIT License
 ──────────────────────────────────────────────────── */
@@ -1191,6 +1191,11 @@ body {
 	/* not used in Obsidian core, but used here mimicking the same logic */
 	--mobile-font-text-theme: "iA Writer Quattro S";
 	--mobile-font-interface-theme: "Recursive S";
+
+	/* inserting emoji fallback fonts for better emoji display */
+	--emoji-fallback-fonts: "Apple Color Emoji", "Segoe UI Emoji";
+	--font-interface: var(--font-interface-override), var(--font-interface-theme), var(--emoji-fallback-fonts), var(--font-default);
+	--font-text: var(--font-text-override), var(--font-text-theme), var(--emoji-fallback-fonts), var(--font-interface);
 }
 
 /* REFERENCE: How fonts are defined in default Obsidian
@@ -6998,12 +7003,13 @@ body:not(.re-enable-loose-lists) .markdown-preview-view :is(ol, ul) > li > p {
 /* << Links
 ──────────────────────────────────────────────────── */
 .cm-url.cm-url.cm-url.cm-url.cm-url.cm-url:not(.cm-formatting):hover,
-.cm-hmd-internal-link.cm-hmd-internal-link.cm-hmd-internal-link:hover,
+.cm-hmd-internal-link.cm-hmd-internal-link.cm-hmd-internal-link.cm-hmd-internal-link:hover,
 .modal-content a:hover,
 .internal-link.internal-link.internal-link.internal-link.internal-link:hover,
 .external-link:hover,
 .embedded-backlinks.embedded-backlinks .tree-item-inner:hover,
 a:hover {
+	text-shadow: none; /* undo readability tweak */
 	color: var(--hover-accent-2);
 	cursor: pointer;
 }
@@ -7333,7 +7339,7 @@ body:not(.annotation-tags-off) :is(.cm-hashtag-begin.cm-tag-todo, .tag[href="#to
 }
 
 body:not(.annotation-tags-off) :is(.cm-hashtag-begin.cm-tag-main, .tag[href="#main"])::BEFORE {
-	content: "🟦 ";
+	content: "Ⓜ️ ";
 }
 
 body:not(.annotation-tags-off) :is(.cm-tag-definition, .tag[href="#definition"]) {
