@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 1.1451
+Version 1.1452
 Source CSS: https://github.com/chrisgrieser/shimmering-focus/blob/main/source.css
 MIT License
 ──────────────────────────────────────────────────── */
@@ -3640,10 +3640,10 @@ body .app-container .workspace-leaf-resize-handle:hover {
 }
 
 .setting-item-heading:not(.style-settings-heading) .setting-item-name {
-	line-height: 1em;
+	line-height: 1.3em;
 	background-color: var(--basic-border-color);
-	padding: 3px 6px;
-	margin-bottom: -2px;
+	padding: 3px 6px 1px;
+	margin-bottom: -3px;
 	border-radius: var(--roundish) var(--roundish) 0 0;
 }
 
@@ -11217,7 +11217,6 @@ body .style-settings-heading[data-level="0"] .setting-item-name {
 }
 
 .style-settings-heading[data-id="shimmering-focus"] + .style-settings-container .style-settings-heading[data-level="2"] .setting-item-name {
-	font-family: var(--font-interface);
 	font-size: 0.8em;
 	font-weight: 500;
 	letter-spacing: 0;
