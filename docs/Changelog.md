@@ -3,6 +3,7 @@ nav_order: 110
 ---
 
 # Changelog
+- 2022-04-26	fix custom colors
 - 2022-04-26	hide file explorer navigation buttons (#136)
 - 2022-04-26	removed smallcap font from theme for better readability
 - 2022-04-26	no smallcap font in style settings

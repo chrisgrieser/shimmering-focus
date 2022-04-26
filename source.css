@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 1.1455
+Version 1.1456
 Source CSS: https://github.com/chrisgrieser/shimmering-focus/blob/main/source.css
 MIT License
 ──────────────────────────────────────────────────── */
@@ -673,6 +673,17 @@ body.strong-em-secondary-accent {
 /* << Background Color Calculations
 ──────────────────────────────────────────────────── */
 
+/* default values */
+:root {
+	--brightness-light: 12%;
+	--light-hue: 220;
+	--light-sat: 5%;
+
+	--brightness-dark: 12%;
+	--dark-hue: 220;
+	--dark-sat: 5%;
+}
+
 .custom-colors.custom-colors {  /* get colors from style settings */
 	--bg-light-brightness: var(--brightness-light);
 	--bg-light-hue: var(--light-hue);
@@ -1223,8 +1234,7 @@ div.status-bar-item {
 }
 
 textarea,
-button,
-select.dropdown {
+button {
 	font-family: var(--button-font);
 	font-size: calc(var(--button-font-size));
 	letter-spacing: 1px;
@@ -2733,6 +2743,8 @@ body :is(textarea, input[type][type]):hover {
 ──────────────────────────────────────────────────── */
 
 select.dropdown {
+	font-size: 0.9em;
+
 	/* replace arrows, so they aren't in the purple accent color, 🏴‍☠️ @Damian */
 	background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='10' height='10' fill='hsl(0, 0%, 50%)'><polygon points='0,0 10,0 5,5'/></svg>");
 	box-shadow: var(--small-reverted-inset-shadow);
@@ -11211,8 +11223,9 @@ body .style-settings-heading[data-level="0"] {
 	margin-bottom: 15px;
 }
 
-body .style-settings-heading[data-level="0"] .setting-item-name {
+body .style-settings-heading[data-level="0"] .setting-item-name.setting-item-name.setting-item-name.setting-item-name {
 	font-family: var(--heading-font);
+	font-size: 1.25em;
 	letter-spacing: var(--heading-letter-spacing);
 }
 
