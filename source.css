@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 1.1462
+Version 1.1463
 Source CSS: https://github.com/chrisgrieser/shimmering-focus/blob/main/source.css
 MIT License
 ──────────────────────────────────────────────────── */
@@ -341,8 +341,8 @@ MIT License
 	--cyan-blue-0: hsl(187 80% 13% / 99%);
 	--cyan-blue-1: hsl(187 70% 26%);
 	--cyan-blue-2: hsl(190 80% 32%);
-	--cyan-blue-3: hsl(187 60% 50%);
-	--cyan-blue-4: hsl(187 65% 63%);
+	--cyan-blue-3: hsl(187 60% 59%);
+	--cyan-blue-4: hsl(187 90% 74%);
 	--cyan-blue-5: hsl(187 70% 88% / 99%);
 	--cyan-blue-shifted: hsl(147 70% 38%);
 
@@ -357,8 +357,8 @@ MIT License
 	--purple-0: hsl(250 30% 20% / 99%);
 	--purple-1: hsl(250 50% 49%);
 	--purple-2: hsl(250 60% 64%);
-	--purple-3: hsl(250 90% 76%);
-	--purple-4: hsl(250 90% 83%);
+	--purple-3: hsl(250 80% 75%);
+	--purple-4: hsl(250 90% 85%);
 	--purple-5: hsl(250 70% 91% / 99%);
 	--purple-shifted: hsl(210 75% 64%); /* 40 hue less than primary-accent-2 */
 
@@ -388,7 +388,7 @@ MIT License
 /* << Custom Individual Accent Colors
 ──────────────────────────────────────────────────── */
 .custom-colors.theme-light.primary-accent-light-blue,
-.custom-colors.theme-dark.primary-accent-blue {
+.custom-colors.theme-dark.primary-accent-dark-blue {
 	--primary-accent-0: var(--deep-blue-0);
 	--primary-accent-1: var(--deep-blue-1);
 	--primary-accent-2: var(--deep-blue-2);
@@ -486,7 +486,7 @@ MIT License
 	--primary-accent-4: var(--purple-4);
 	--primary-accent-5: var(--purple-5);
 	--unresolved-link-color: var(--purple-shifted);
-	--button-text: var(--light-in-light-dark-in-dark); /* button text and button hover text dependent on primary & hover accent */
+	--button-text: var(--text-normal); /* button text and button hover text dependent on primary & hover accent */
 
 	--hover-accent-1: var(--green-1);
 	--hover-accent-2: var(--green-2);
@@ -580,8 +580,8 @@ MIT License
 	--link-color: var(--primary-accent-2);
 	--active-text-color: var(--primary-accent-2);
 
-	--interactive-bg: var(--primary-accent-3);
-	--interactive-border-color: var(--primary-accent-4);
+	--interactive-bg: var(--primary-accent-4);
+	--interactive-border-color: var(--primary-accent-3);
 
 	--scrollbar-bg-active: var(--primary-accent-4);
 	--active-line-indicator: var(--primary-accent-2);
