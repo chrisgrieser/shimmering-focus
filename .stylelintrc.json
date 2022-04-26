@@ -232,7 +232,7 @@
 		"at-rule-name-case": ["lower", {"severity": "warning"} ],
 		"function-name-case": ["lower", {"severity": "warning"} ],
 		"selector-pseudo-class-case": ["lower", {"severity": "warning"} ],
-		"selector-pseudo-element-case": ["upper", {"severity": "warning"} ],
+		"selector-pseudo-element-case": ["lower", {"severity": "warning"} ],
 		"selector-type-case": ["lower", {"severity": "warning"} ],
 		"unit-case": ["lower", {"severity": "warning"} ],
 		"value-keyword-case": ["lower", {"severity": "warning"} ],

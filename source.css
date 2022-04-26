@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 1.1477
+Version 1.1478
 Source CSS: https://github.com/chrisgrieser/shimmering-focus/blob/main/source.css
 MIT License
 ──────────────────────────────────────────────────── */
@@ -785,11 +785,11 @@ body.strong-em-secondary-accent {
 	background-color: var(--resize-handle-color);
 }
 
-.theme-light ::-WEBKIT-SCROLLBAR-THUMB {
+.theme-light ::-webkit-scrollbar-thumb {
 	background-color: var(--bg3);
 }
 
-.theme-dark ::-WEBKIT-SCROLLBAR-THUMB {
+.theme-dark ::-webkit-scrollbar-thumb {
 	background-color: var(--bg2);
 }
 
@@ -1831,8 +1831,8 @@ body:not(.no-grayed-out-inactive-pane) {
 /* << Vim Mode Indicator
 ──────────────────────────────────────────────────── */
 
-.cm-vim-panel div span::BEFORE,
-.cm-selectionLayer::BEFORE {
+.cm-vim-panel div span::before,
+.cm-selectionLayer::before {
 	font-family: var(--font-monospace);
 	font-size: 0.8rem;
 	font-weight: 500;
@@ -1858,42 +1858,42 @@ body:not(.no-grayed-out-inactive-pane) {
 	border-radius: 0 0 var(--roundish) 0;
 }
 
-.bottom-vim-indicator :is(.cm-vim-panel div span, .cm-selectionLayer)::BEFORE {
+.bottom-vim-indicator :is(.cm-vim-panel div span, .cm-selectionLayer)::before {
 	top: unset;
 	bottom: 0;
 	border-radius: 0 var(--roundish) 0 0;
 }
 
-.bottom-vim-indicator .cm-vim-panel div span::BEFORE {
+.bottom-vim-indicator .cm-vim-panel div span::before {
 	background-color: var(--bg1);
 }
 
-.theme-light :is(.cm-vim-panel div span, .cm-selectionLayer)::BEFORE {
+.theme-light :is(.cm-vim-panel div span, .cm-selectionLayer)::before {
 	font-weight: 600;
 }
 
-.cm-vimCursorLayer:empty + .cm-selectionLayer:empty::BEFORE {
+.cm-vimCursorLayer:empty + .cm-selectionLayer:empty::before {
 	content: "Insert";
 	color: var(--secondary-accent-text);
 }
 
-.cm-vimCursorLayer:not(:empty) + .cm-selectionLayer:empty::BEFORE {
+.cm-vimCursorLayer:not(:empty) + .cm-selectionLayer:empty::before {
 	content: "Normal";
 	color: var(--text-hover-accent);
 }
 
-.cm-vimCursorLayer:not(:empty) + .cm-selectionLayer:not(:empty)::BEFORE {
+.cm-vimCursorLayer:not(:empty) + .cm-selectionLayer:not(:empty)::before {
 	content: "Visual";
 	color: var(--active-text-color);
 }
 
-.cm-vim-panel div span:only-child::BEFORE {
+.cm-vim-panel div span:only-child::before {
 	content: "Command";
 	font-size: 0.75rem;
 	color: var(--extra-contrast);
 }
 
-.cm-vim-panel div span:nth-child(2)::BEFORE {
+.cm-vim-panel div span:nth-child(2)::before {
 	content: "Search";
 	color: var(--unresolved-link-color);
 	filter: saturate(1);
@@ -1950,7 +1950,7 @@ body:not(.no-grayed-out-inactive-pane) {
 	margin: 8px 5px;
 }
 
-.cm-vim-message::BEFORE {
+.cm-vim-message::before {
 	content: var(--error-symbol);
 	margin-right: 8px;
 }
@@ -2040,7 +2040,7 @@ body:not(.show-titlebar-text) .titlebar-text {
 	--cover-width: 18ch;
 }
 
-.titlebar-text::AFTER {
+.titlebar-text::after {
 	content: "                                       ";
 	white-space: pre-wrap;
 	background-color: var(--bg2);
@@ -2283,7 +2283,7 @@ body .view-header.view-header.view-header.view-header:is(:hover, :focus-within) 
 	height: 100%;
 }
 
-.view-header-title-container::AFTER {
+.view-header-title-container::after {
 	display: none;
 }
 
@@ -2364,18 +2364,18 @@ body.permanently-show-statusbar .status-bar {
 	padding: 3px 5px 4px 6px;
 }
 
-body.permanently-show-statusbar .status-bar.status-bar::AFTER {
+body.permanently-show-statusbar .status-bar.status-bar::after {
 	padding-right: 0;
 }
 
 .status-bar-item,
-.status-bar::AFTER {
+.status-bar::after {
 	color: var(--extra-contrast);
 	padding: 0;
 	margin-right: 9px; /* space between status bar items */
 }
 
-body:not(.hide-signature) .status-bar::AFTER {
+body:not(.hide-signature) .status-bar::after {
 	content: var(--signature);
 	font-size: calc(var(--status-bar-font-size) * 1.1);
 	font-weight: 500;
@@ -2438,46 +2438,46 @@ body:not(.permanently-show-statusbar, .classic-statusbar) .mod-right-split .work
 ──────────────────────────────────────────────────── */
 
 /* hide all scrollbars except the one for the editor */
-body:not(.show-scrollbar) ::-WEBKIT-SCROLLBAR {
+body:not(.show-scrollbar) ::-webkit-scrollbar {
 	display: none;
 	width: var(--scrollbar-thickness);
 }
 
-.workspace-split.mod-root ::-WEBKIT-SCROLLBAR {
+.workspace-split.mod-root ::-webkit-scrollbar {
 	display: unset;
 }
 
 /* removes scrollbar background */
-:is(.theme-light, .theme-dark):is(.theme-light, .theme-dark) ::-WEBKIT-SCROLLBAR {
+:is(.theme-light, .theme-dark):is(.theme-light, .theme-dark) ::-webkit-scrollbar {
 	background-color: transparent;
 }
 
-body ::-WEBKIT-SCROLLBAR-THUMB:active,
-body ::-WEBKIT-SCROLLBAR-THUMB {
+body ::-webkit-scrollbar-thumb:active,
+body ::-webkit-scrollbar-thumb {
 	box-shadow: var(--small-inset-shadow);
 	border: var(--thin-muted-border);
 }
 
 /* stylelint-disable no-duplicate-selectors */
-.theme-light ::-WEBKIT-SCROLLBAR-THUMB {
+.theme-light ::-webkit-scrollbar-thumb {
 	border: var(--thin-border);
 }
 
-.theme-dark ::-WEBKIT-SCROLLBAR-THUMB {
+.theme-dark ::-webkit-scrollbar-thumb {
 	border: var(--thin-muted-border);
 }
 /* stylelint-enable no-duplicate-selectors */
 
-body:is(.theme-light, .theme-dark):is(.theme-light, .theme-dark) ::-WEBKIT-SCROLLBAR-THUMB {
+body:is(.theme-light, .theme-dark):is(.theme-light, .theme-dark) ::-webkit-scrollbar-thumb {
 	border-radius: calc(var(--roundish) * 0.6);
 }
 
 /* hover / active colors */
-body:is(.theme-light, .theme-dark) ::-WEBKIT-SCROLLBAR-THUMB:hover {
+body:is(.theme-light, .theme-dark) ::-webkit-scrollbar-thumb:hover {
 	background-color: var(--scrollbar-bg-hover);
 }
 
-body:is(.theme-light, .theme-dark) ::-WEBKIT-SCROLLBAR-THUMB:active {
+body:is(.theme-light, .theme-dark) ::-webkit-scrollbar-thumb:active {
 	background-color: var(--scrollbar-bg-active);
 }
 
@@ -2500,7 +2500,7 @@ body:is(.theme-light, .theme-dark) ::-WEBKIT-SCROLLBAR-THUMB:active {
 	animation-iteration-count: infinite;
 }
 
-.progress-bar .progress-bar-message::BEFORE {
+.progress-bar .progress-bar-message::before {
 	content: var(--signature);
 	font-size: calc(var(--empty-state-symbol-size) * 1.2);
 	font-weight: 500;
@@ -2516,7 +2516,7 @@ body:is(.theme-light, .theme-dark) ::-WEBKIT-SCROLLBAR-THUMB:active {
 }
 
 /* <<< Updating Plugins */
-.modal .is-loading::BEFORE {
+.modal .is-loading::before {
 	height: 7px;
 	background:
 		linear-gradient(
@@ -2601,12 +2601,12 @@ p.mod-warning {
 	color: var(--text-error-hover);
 }
 
-p.mod-warning::BEFORE {
+p.mod-warning::before {
 	content: "⚠️";
 	margin-right: 4px;
 }
 
-.mod-settings .mod-warning:not(button)::BEFORE {
+.mod-settings .mod-warning:not(button)::before {
 	content: var(--error-symbol);
 	padding-right: 5px;
 }
@@ -2619,7 +2619,7 @@ p.mod-warning::BEFORE {
 	border-color: var(--text-error);
 }
 
-.tooltip.mod-error::BEFORE {
+.tooltip.mod-error::before {
 	content: "⚠️";
 	margin-right: 4px;
 }
@@ -2628,7 +2628,7 @@ p.mod-warning::BEFORE {
 /* << Toggles
 ──────────────────────────────────────────────────── */
 
-.checkbox-container::AFTER {
+.checkbox-container::after {
 	display: none;
 }
 
@@ -2804,13 +2804,13 @@ input[type="range"] {
 	border-radius: calc(var(--roundish) / 2);
 }
 
-input[type="range"]::-WEBKIT-SLIDER-THUMB {
+input[type="range"]::-webkit-slider-thumb {
 	background-color: var(--interactive-bg);
 	box-shadow: var(--toggle-enabled-inset-shadow);
 	border-radius: calc(var(--round) / 2);
 }
 
-input[type="range"]::-WEBKIT-SLIDER-THUMB:hover {
+input[type="range"]::-webkit-slider-thumb:hover {
 	background-color: var(--interactive-hover-bg);
 }
 
@@ -2919,7 +2919,7 @@ body .app-container .obsidian-search-match-highlight {
 }
 
 /* gutter indicators */
-body:not(.no-search-result-indicator) .obsidian-search-match-highlight::BEFORE {
+body:not(.no-search-result-indicator) .obsidian-search-match-highlight::before {
 	content: "►";
 
 	font-style: normal; /* so italic text does not get an italic search marker */
@@ -2998,19 +2998,19 @@ body:not(.no-alternating-rows) .menu-item:nth-child(odd) {
 /* << Close Buttons
 ──────────────────────────────────────────────────── */
 
-div.search-input-clear-button::BEFORE,
+div.search-input-clear-button::before,
 .empty-state-close-button,
 .modal-close-button {
 	color: var(--text-muted);
 	z-index: 100;
 }
 
-div.search-input-clear-button::BEFORE {
+div.search-input-clear-button::before {
 	background-color: transparent;
 }
 
 .document-search-close-button:hover,
-div.search-input-clear-button:hover::BEFORE,
+div.search-input-clear-button:hover::before,
 .empty-state-close-button:hover,
 .modal-close-button:hover {
 	color: var(--hover-accent-2);
@@ -3153,12 +3153,12 @@ div.prompt-results {
 	left: 0;
 }
 
-.prompt-input[placeholder^="Select a command"] ~ .prompt-results .suggestion-flair::BEFORE {
+.prompt-input[placeholder^="Select a command"] ~ .prompt-results .suggestion-flair::before {
 	content: "";
 	border-left: 3px solid var(--text-faint);
 }
 
-body:not(.move-plugin-name-to-left) .suggestion-prefix::AFTER {
+body:not(.move-plugin-name-to-left) .suggestion-prefix::after {
 	display: none;
 }
 
@@ -3186,7 +3186,7 @@ kbd.suggestion-hotkey {
 }
 
 /* fix casing for lowercased commands */
-.prompt-input[placeholder^="Select a command"] ~ .prompt-results .suggestion-content::FIRST-LETTER {
+.prompt-input[placeholder^="Select a command"] ~ .prompt-results .suggestion-content::first-letter {
 	text-transform: uppercase;
 }
 
@@ -3853,7 +3853,7 @@ input:is([type="email"], [type="password"]) {
 	color: var(--extra-contrast);
 }
 
-.installed-plugins-container .setting-item-description > div:nth-child(2)::FIRST-LETTER {
+.installed-plugins-container .setting-item-description > div:nth-child(2)::first-letter {
 	text-transform: lowercase;
 }
 
@@ -3918,7 +3918,7 @@ input:is([type="email"], [type="password"]) {
 	padding-top: 10px;
 }
 
-.setting-hotkey.mod-empty::BEFORE {
+.setting-hotkey.mod-empty::before {
 	content: "none";
 	font-size: calc(0.75 * var(--font-text-size));
 }
@@ -4010,14 +4010,14 @@ input:is([type="email"], [type="password"]) {
 }
 
 /* hide the ":" since it looks ugly with right-aligned text */
-.community-plugin-search-summary::AFTER {
+.community-plugin-search-summary::after {
 	content: "  ";
 	white-space: pre-wrap;
 	background-color: var(--bg3);
 	margin-left: -5px;
 }
 
-.community-plugin-downloads::BEFORE,
+.community-plugin-downloads::before,
 .community-plugin-downloads,
 .community-plugin-desc {
 	line-height: 80%;
@@ -4051,7 +4051,7 @@ input:is([type="email"], [type="password"]) {
 }
 
 /* lowercase "by" */
-.community-plugin-search .community-plugin-author::FIRST-LETTER {
+.community-plugin-search .community-plugin-author::first-letter {
 	text-transform: lowercase;
 }
 
@@ -4104,7 +4104,7 @@ input:is([type="email"], [type="password"]) {
 	top: 4px;
 }
 
-.flair.mod-pop::BEFORE {
+.flair.mod-pop::before {
 	content: "✓";
 
 	font-family: var(--font-default);
@@ -4125,12 +4125,12 @@ input:is([type="email"], [type="password"]) {
 	display: none;
 }
 
-.community-plugin-search .community-plugin-downloads::BEFORE,
+.community-plugin-search .community-plugin-downloads::before,
 .community-plugin-search .community-plugin-downloads-text {
 	color: var(--text-muted);
 }
 
-.community-plugin-downloads::BEFORE {
+.community-plugin-downloads::before {
 	content: "download";
 	font-family: var(--icon-font);
 	vertical-align: top;
@@ -4198,7 +4198,7 @@ body:not(.show-close-button) .mod-community-plugin .modal-close-button {
 }
 
 /* installation icon */
-.community-plugin-info .community-plugin-name .flair.mod-pop::BEFORE {
+.community-plugin-info .community-plugin-name .flair.mod-pop::before {
 	font-size: 1.3rem;
 	position: relative;
 	top: 3px;
@@ -4206,7 +4206,7 @@ body:not(.show-close-button) .mod-community-plugin .modal-close-button {
 }
 
 /* author + version info */
-.community-plugin-info .community-plugin-version + .community-plugin-author::FIRST-LETTER {
+.community-plugin-info .community-plugin-version + .community-plugin-author::first-letter {
 	/* properly lowercase the "by" */
 	text-transform: lowercase;
 }
@@ -4275,7 +4275,7 @@ body .community-plugin-info .community-plugin-downloads-text {
 	text-decoration: none;
 }
 
-.community-plugin-author + .community-plugin-author a::AFTER {
+.community-plugin-author + .community-plugin-author a::after {
 	content: "launch";
 
 	font-family: var(--icon-font);
@@ -4293,7 +4293,7 @@ body .community-plugin-info .community-plugin-downloads-text {
 	transition: var(--medium-transition);
 }
 
-body:not(.squareish-shapes) .community-plugin-author + .community-plugin-author a::AFTER {
+body:not(.squareish-shapes) .community-plugin-author + .community-plugin-author a::after {
 	padding: 6px 6px 7px 7px;
 }
 
@@ -4301,7 +4301,7 @@ body:not(.squareish-shapes) .community-plugin-info .community-plugin-author + .c
 	margin-bottom: -44px;
 }
 
-.community-plugin-author + .community-plugin-author a:hover::AFTER {
+.community-plugin-author + .community-plugin-author a:hover::after {
 	color: var(--button-hover-text);
 	background-color: var(--interactive-hover-bg);
 	border-color: var(--interactive-hover-border-color);
@@ -4321,7 +4321,7 @@ body:not(.squareish-shapes) .community-plugin-info .community-plugin-author + .c
 	border: var(--muted-button-border);
 }
 
-.modal.modal.mod-community-plugin .community-plugin-info button:last-child::BEFORE {
+.modal.modal.mod-community-plugin .community-plugin-info button:last-child::before {
 	content: "link";
 
 	font-family: var(--icon-font);
@@ -4334,7 +4334,7 @@ body:not(.squareish-shapes) .community-plugin-info .community-plugin-author + .c
 	left: 5px;
 }
 
-.angular-shapes .modal.modal.mod-community-plugin .community-plugin-info button:last-child::BEFORE {
+.angular-shapes .modal.modal.mod-community-plugin .community-plugin-info button:last-child::before {
 	position: relative;
 	top: 6px;
 }
@@ -4343,7 +4343,7 @@ body:not(.squareish-shapes) .community-plugin-info .community-plugin-author + .c
 	height: 33px;
 }
 
-.modal.mod-community-plugin .community-plugin-info button:last-child:hover::BEFORE {
+.modal.mod-community-plugin .community-plugin-info button:last-child:hover::before {
 	color: var(--button-hover-text);
 }
 
@@ -4372,7 +4372,7 @@ body:not(.squareish-shapes) .community-plugin-info .community-plugin-author + .c
 	padding-top: 16rem;
 }
 
-.community-plugin-details-empty-state::AFTER {
+.community-plugin-details-empty-state::after {
 	content: var(--signature);
 	font-size: var(--empty-state-symbol-size);
 	font-weight: 500;
@@ -4400,7 +4400,7 @@ body:not(.squareish-shapes) .community-plugin-info .community-plugin-author + .c
 ──────────────────────────────────────────────────── */
 
 /* "Feature Overview" Button */
-.community-theme.is-selected .community-theme-info .clickable-icon::AFTER {
+.community-theme.is-selected .community-theme-info .clickable-icon::after {
 	content: "Feature Overview";
 
 	font-family: var(--button-font);
@@ -4461,7 +4461,7 @@ body:not(.squareish-shapes) .community-plugin-info .community-plugin-author + .c
 }
 
 /* <<< Theme Browser – Infobox */
-.community-theme.is-selected .community-theme-info::AFTER {
+.community-theme.is-selected .community-theme-info::after {
 	content: "👉  Most UI elements are only visible when hovered. \A\A⚙️  All hidden UI elements can be re-enabled permanently with the Style Settings Plugin.";
 
 	font-family: var(--font-interface);
@@ -4495,7 +4495,7 @@ body:not(.squareish-shapes) .community-plugin-info .community-plugin-author + .c
 	display: none;
 }
 
-.community-theme.is-selected .community-theme-title::AFTER {
+.community-theme.is-selected .community-theme-title::after {
 	content: var(--signature);
 	font-size: 120%;
 	font-weight: 500;
@@ -4573,7 +4573,7 @@ body:not(.squareish-shapes) .community-plugin-info .community-plugin-author + .c
 	top: -2px;
 }
 
-.community-theme-downloads .community-plugin-downloads-text::BEFORE {
+.community-theme-downloads .community-plugin-downloads-text::before {
 	content: "download";
 	font-family: var(--icon-font);
 	position: relative;
@@ -4694,7 +4694,7 @@ are not targeted by this */
 	font-size: 0;
 }
 
-.mod-root .empty-state-title::AFTER {
+.mod-root .empty-state-title::after {
 	content: var(--signature);
 
 	font-size: var(--empty-state-symbol-size);
@@ -4723,7 +4723,7 @@ are not targeted by this */
 	border-radius: var(--roundish);
 }
 
-.workspace-split:is(.mod-right-split, .mod-left-split) .empty-state-title::BEFORE {
+.workspace-split:is(.mod-right-split, .mod-left-split) .empty-state-title::before {
 	content: var(--error-symbol);
 	padding-right: 5px;
 }
@@ -4733,7 +4733,7 @@ are not targeted by this */
 }
 
 /* imagine using css to fix typos from other people lol */
-.workspace-split:is(.mod-right-split, .mod-left-split) .empty-state-title + div::AFTER {
+.workspace-split:is(.mod-right-split, .mod-left-split) .empty-state-title + div::after {
 	content: ".";
 }
 
@@ -4768,8 +4768,8 @@ body > .app-container .view-content > div > .markdown-preview-view {
 ──────────────────────────────────────────────────── */
 
 /* Vertical Line in Gutter */
-.no-codeblock-line-numbers:not(.active-line-emphasized-bg):not(.no-active-highlight) :is(.cm-active, .CodeMirror-activeline).HyperMD-codeblock::BEFORE,
-body:not(.active-line-emphasized-bg):not(.no-active-highlight) :is(.cm-active, .CodeMirror-activeline):not(.HyperMD-quote, .HyperMD-header, .HyperMD-codeblock)::BEFORE {
+.no-codeblock-line-numbers:not(.active-line-emphasized-bg):not(.no-active-highlight) :is(.cm-active, .CodeMirror-activeline).HyperMD-codeblock::before,
+body:not(.active-line-emphasized-bg):not(.no-active-highlight) :is(.cm-active, .CodeMirror-activeline):not(.HyperMD-quote, .HyperMD-header, .HyperMD-codeblock)::before {
 	content: " ";
 	height: 100%;
 	position: absolute;
@@ -4777,17 +4777,17 @@ body:not(.active-line-emphasized-bg):not(.no-active-highlight) :is(.cm-active, .
 	border-left: var(--thick-border);
 }
 
-body:not(.active-line-emphasized-bg):not(.no-active-highlight) :is(.cm-active, .CodeMirror-activeline).HyperMD-list-line::BEFORE {
+body:not(.active-line-emphasized-bg):not(.no-active-highlight) :is(.cm-active, .CodeMirror-activeline).HyperMD-list-line::before {
 	top: 2px;
 }
 
 /* more contrasted color in dark mode */
-.theme-dark.theme-dark.theme-dark :is(.CodeMirror-activeline, .cm-active):not(.HyperMD-quote, .HyperMD-header, .HyperMD-codeblock)::BEFORE {
+.theme-dark.theme-dark.theme-dark :is(.CodeMirror-activeline, .cm-active):not(.HyperMD-quote, .HyperMD-header, .HyperMD-codeblock)::before {
 	border-color: var(--alt-bg);
 }
 
 /* interaction with code block line numbers */
-body:not(.no-codeblock-line-numbers):not(.no-active-highlight) .HyperMD-codeblock.cm-active:not(.HyperMD-codeblock-begin, .HyperMD-codeblock-end)::BEFORE {
+body:not(.no-codeblock-line-numbers):not(.no-active-highlight) .HyperMD-codeblock.cm-active:not(.HyperMD-codeblock-begin, .HyperMD-codeblock-end)::before {
 	font-weight: 600;
 	color: var(--active-line-indicator);
 	background-color: var(--alt-bg);
@@ -4842,8 +4842,8 @@ body:not(.no-active-highlight) .cm-active :is(.cm-formatting-header,.cm-formatti
 	transform: scale(1.5);
 }
 
-.internal-query-header-title::AFTER, /* does not support :is() */
-.internal-query-header-title::BEFORE {
+.internal-query-header-title::after,
+.internal-query-header-title::before {
 	display: none;
 }
 
@@ -4997,7 +4997,7 @@ body:not(.no-active-highlight) .cm-active :is(.cm-formatting-header,.cm-formatti
 }
 
 /* misc */
-pre.language-yaml.frontmatter::AFTER {
+pre.language-yaml.frontmatter::after {
 	content: "YAML Frontmatter";
 }
 
@@ -5091,7 +5091,7 @@ since it looks buggy for whatever reason */
 /* pre.mod-failed::AFTER lays over the red tint in Obsidian default theme
 but is also used for language label by this theme
 conflict causes */
-.frontmatter.mod-failed.mod-failed::AFTER {
+.frontmatter.mod-failed.mod-failed::after {
 	content: var(--error-symbol)" YAML Invalid"; /* stylelint-disable-line function-whitespace-after */
 
 	height: unset;
@@ -5105,7 +5105,7 @@ conflict causes */
 	right: 6px;
 }
 
-.frontmatter.mod-failed.mod-failed.mod-failed::BEFORE {
+.frontmatter.mod-failed.mod-failed.mod-failed::before {
 	background-color: var(--error-bg);
 }
 
@@ -5126,7 +5126,7 @@ body .markdown-rendered .frontmatter.mod-failed .mod-error {
 }
 
 /* interaction with floating metadata */
-body:not(.no-floating-metadata):not(.is-mobile) .markdown-preview-view:not(.no-floating-metadata) .frontmatter.language-yaml.mod-failed:hover::AFTER {
+body:not(.no-floating-metadata):not(.is-mobile) .markdown-preview-view:not(.no-floating-metadata) .frontmatter.language-yaml.mod-failed:hover::after {
 	display: block;
 	font-size: 1rem;
 	right: 2rem;
@@ -5136,7 +5136,7 @@ body:not(.no-floating-metadata):not(.is-mobile) .markdown-preview-view:not(.no-f
 	background-color: var(--error-bg);
 }
 
-body:not(.no-floating-metadata):not(.is-mobile) .markdown-preview-view:not(.no-floating-metadata) .frontmatter.mod-failed.mod-failed + .frontmatter-container:hover::AFTER {
+body:not(.no-floating-metadata):not(.is-mobile) .markdown-preview-view:not(.no-floating-metadata) .frontmatter.mod-failed.mod-failed + .frontmatter-container:hover::after {
 	content: var(--error-symbol)" YAML Invalid"; /* stylelint-disable-line function-whitespace-after */
 
 	font-family: var(--font-monospace);
@@ -5207,35 +5207,35 @@ body:not(.no-floating-metadata):not(.is-mobile) .markdown-preview-view:not(.no-f
 }
 
 /* unset some interfering codeblock styling with floating YAML */
-body:not(.no-floating-metadata):not(.is-mobile) .markdown-preview-view:not(.no-floating-metadata) .frontmatter.language-yaml::BEFORE {
+body:not(.no-floating-metadata):not(.is-mobile) .markdown-preview-view:not(.no-floating-metadata) .frontmatter.language-yaml::before {
 	background: none;
 }
 
 /* unset some interfering codeblock styling with floating YAML */
-body:not(.no-floating-metadata):not(.is-mobile) .markdown-preview-view:not(.no-floating-metadata) .frontmatter.language-yaml:not(.mod-failed):hover::BEFORE {
+body:not(.no-floating-metadata):not(.is-mobile) .markdown-preview-view:not(.no-floating-metadata) .frontmatter.language-yaml:not(.mod-failed):hover::before {
 	display: none;
 }
 
 /* look of the floating buttons */
-body:not(.no-floating-metadata):not(.is-mobile) .markdown-preview-view:not(.no-floating-metadata) :is(.frontmatter.language-yaml, .frontmatter-container):not(:hover)::BEFORE {
+body:not(.no-floating-metadata):not(.is-mobile) .markdown-preview-view:not(.no-floating-metadata) :is(.frontmatter.language-yaml, .frontmatter-container):not(:hover)::before {
 	font-family: "Optima S"; /* fixed font so font changes do not screw up alignment */
 	color: var(--extra-contrast);
 }
 
-body:not(.no-floating-metadata):not(.is-mobile) .markdown-preview-view:not(.no-floating-metadata) .frontmatter-container:not(:hover)::BEFORE {
+body:not(.no-floating-metadata):not(.is-mobile) .markdown-preview-view:not(.no-floating-metadata) .frontmatter-container:not(:hover)::before {
 	content: "M";
 	font-size: 1.3rem;
 	padding-left: 0.5rem;
 }
 
-body:not(.no-floating-metadata):not(.is-mobile) .markdown-preview-view:not(.no-floating-metadata) .frontmatter.language-yaml:not(:hover)::BEFORE {
+body:not(.no-floating-metadata):not(.is-mobile) .markdown-preview-view:not(.no-floating-metadata) .frontmatter.language-yaml:not(:hover)::before {
 	content: "Y";
 	font-size: 1.4rem;
 	text-shadow: none;
 	padding-left: 0.65rem;
 }
 
-body:not(.no-floating-metadata):not(.is-mobile) :is(.longform-leaf .markdown-preview-view:not(.no-floating-metadata), .markdown-preview-view:not(.no-floating-metadata).writing) .frontmatter.language-yaml:not(:hover)::BEFORE {
+body:not(.no-floating-metadata):not(.is-mobile) :is(.longform-leaf .markdown-preview-view:not(.no-floating-metadata), .markdown-preview-view:not(.no-floating-metadata).writing) .frontmatter.language-yaml:not(:hover)::before {
 	/* now idea why this is needed (ಠ_ಠ) */
 	padding-top: 0.1rem;
 }
@@ -5247,7 +5247,7 @@ body:not(.no-floating-metadata) .markdown-preview-view:not(.no-floating-metadata
 
 body:not(.no-floating-metadata):not(.is-mobile) .markdown-preview-view:not(.no-floating-metadata) :is(.frontmatter.language-yaml, .frontmatter-container) .frontmatter-container-header,
 body:not(.no-floating-metadata):not(.is-mobile) .markdown-preview-view:not(.no-floating-metadata) .frontmatter.language-yaml .copy-code-button,
-body:not(.no-floating-metadata):not(.is-mobile) .markdown-preview-view:not(.no-floating-metadata) .frontmatter.language-yaml::AFTER,
+body:not(.no-floating-metadata):not(.is-mobile) .markdown-preview-view:not(.no-floating-metadata) .frontmatter.language-yaml::after,
 body:not(.no-floating-metadata):not(.is-mobile) .markdown-preview-view:not(.no-floating-metadata) :is(.frontmatter.language-yaml, .frontmatter-container):not(:hover) > * {
 	display: none;
 }
@@ -5340,7 +5340,7 @@ body:not(.permanently-show-collapse-indicators) .cm-line:not(:hover):not(.cm-act
 	visibility: hidden;
 }
 
-.cm-foldPlaceholder::BEFORE {
+.cm-foldPlaceholder::before {
 	content: "unfold_more";
 
 	font-family: var(--icon-font);
@@ -5359,7 +5359,7 @@ body:not(.permanently-show-collapse-indicators) .cm-line:not(:hover):not(.cm-act
 	visibility: visible;
 }
 
-.cm-foldPlaceholder:hover::BEFORE {
+.cm-foldPlaceholder:hover::before {
 	color: var(--hover-accent-2);
 	background-color: var(--bg3);
 }
@@ -5370,7 +5370,7 @@ body:not(.permanently-show-collapse-indicators) .cm-line:not(:hover):not(.cm-act
 	color: var(--hover-accent-3);
 }
 
-:is(.CodeMirror-foldgutter-folded, .CodeMirror-foldgutter-open).CodeMirror-guttermarker-subtle::AFTER {
+:is(.CodeMirror-foldgutter-folded, .CodeMirror-foldgutter-open).CodeMirror-guttermarker-subtle::after {
 	font-size: 1.5em;
 	line-height: 1.2em;
 }
@@ -5422,44 +5422,44 @@ body:not(.permanently-show-collapse-indicators) .cm-line:not(:hover):not(.cm-act
 	opacity: 1;
 }
 
-.relative-line-numbering .cm-lineNumbers .cm-gutterElement.cm-active ~ .cm-gutterElement::BEFORE {
+.relative-line-numbering .cm-lineNumbers .cm-gutterElement.cm-active ~ .cm-gutterElement::before {
 	font-size: var(--font-text-size);
 	margin-right: -1px;
 }
 
-.relative-line-numbering .cm-lineNumbers .cm-gutterElement.cm-active + .cm-gutterElement::BEFORE {
+.relative-line-numbering .cm-lineNumbers .cm-gutterElement.cm-active + .cm-gutterElement::before {
 	content: "2";
 }
 
-.relative-line-numbering .cm-lineNumbers .cm-gutterElement.cm-active + .cm-gutterElement + .cm-gutterElement::BEFORE {
+.relative-line-numbering .cm-lineNumbers .cm-gutterElement.cm-active + .cm-gutterElement + .cm-gutterElement::before {
 	content: "3";
 }
 
-.relative-line-numbering .cm-lineNumbers .cm-gutterElement.cm-active + .cm-gutterElement + .cm-gutterElement + .cm-gutterElement::BEFORE {
+.relative-line-numbering .cm-lineNumbers .cm-gutterElement.cm-active + .cm-gutterElement + .cm-gutterElement + .cm-gutterElement::before {
 	content: "4";
 }
 
-.relative-line-numbering .cm-lineNumbers .cm-gutterElement.cm-active + .cm-gutterElement + .cm-gutterElement + .cm-gutterElement + .cm-gutterElement::BEFORE {
+.relative-line-numbering .cm-lineNumbers .cm-gutterElement.cm-active + .cm-gutterElement + .cm-gutterElement + .cm-gutterElement + .cm-gutterElement::before {
 	content: "5";
 }
 
-.relative-line-numbering .cm-lineNumbers .cm-gutterElement.cm-active + .cm-gutterElement + .cm-gutterElement + .cm-gutterElement + .cm-gutterElement + .cm-gutterElement::BEFORE {
+.relative-line-numbering .cm-lineNumbers .cm-gutterElement.cm-active + .cm-gutterElement + .cm-gutterElement + .cm-gutterElement + .cm-gutterElement + .cm-gutterElement::before {
 	content: "6";
 }
 
-.relative-line-numbering .cm-lineNumbers .cm-gutterElement.cm-active + .cm-gutterElement + .cm-gutterElement + .cm-gutterElement + .cm-gutterElement + .cm-gutterElement + .cm-gutterElement::BEFORE {
+.relative-line-numbering .cm-lineNumbers .cm-gutterElement.cm-active + .cm-gutterElement + .cm-gutterElement + .cm-gutterElement + .cm-gutterElement + .cm-gutterElement + .cm-gutterElement::before {
 	content: "7";
 }
 
-.relative-line-numbering .cm-lineNumbers .cm-gutterElement.cm-active + .cm-gutterElement + .cm-gutterElement + .cm-gutterElement + .cm-gutterElement + .cm-gutterElement + .cm-gutterElement + .cm-gutterElement::BEFORE {
+.relative-line-numbering .cm-lineNumbers .cm-gutterElement.cm-active + .cm-gutterElement + .cm-gutterElement + .cm-gutterElement + .cm-gutterElement + .cm-gutterElement + .cm-gutterElement + .cm-gutterElement::before {
 	content: "8";
 }
 
-.relative-line-numbering .cm-lineNumbers .cm-gutterElement.cm-active + .cm-gutterElement + .cm-gutterElement + .cm-gutterElement + .cm-gutterElement + .cm-gutterElement + .cm-gutterElement + .cm-gutterElement + .cm-gutterElement::BEFORE {
+.relative-line-numbering .cm-lineNumbers .cm-gutterElement.cm-active + .cm-gutterElement + .cm-gutterElement + .cm-gutterElement + .cm-gutterElement + .cm-gutterElement + .cm-gutterElement + .cm-gutterElement + .cm-gutterElement::before {
 	content: "9";
 }
 
-.relative-line-numbering .cm-lineNumbers .cm-gutterElement.cm-active + .cm-gutterElement + .cm-gutterElement + .cm-gutterElement + .cm-gutterElement + .cm-gutterElement + .cm-gutterElement + .cm-gutterElement + .cm-gutterElement + .cm-gutterElement::BEFORE {
+.relative-line-numbering .cm-lineNumbers .cm-gutterElement.cm-active + .cm-gutterElement + .cm-gutterElement + .cm-gutterElement + .cm-gutterElement + .cm-gutterElement + .cm-gutterElement + .cm-gutterElement + .cm-gutterElement + .cm-gutterElement::before {
 	content: "10";
 }
 
@@ -5518,38 +5518,38 @@ progress {
 	margin-bottom: 4px;
 }
 
-progress::-WEBKIT-PROGRESS-BAR {
+progress::-webkit-progress-bar {
 	background: var(--bg3);
 	border: var(--thin-border);
 }
 
-progress::-WEBKIT-PROGRESS-BAR,
-progress::-WEBKIT-PROGRESS-VALUE {
+progress::-webkit-progress-bar,
+progress::-webkit-progress-value {
 	border-radius: calc(var(--roundish) * 3);
 }
 
-progress[value^="1"][max="10"]::-WEBKIT-PROGRESS-VALUE { background: var(--progress-1) }
-progress[value="9"][max="10"]::-WEBKIT-PROGRESS-VALUE { background: var(--progress-2) }
-progress[value="8"][max="10"]::-WEBKIT-PROGRESS-VALUE { background: var(--progress-3) }
-progress[value="7"][max="10"]::-WEBKIT-PROGRESS-VALUE { background: var(--progress-4) }
-progress[value="6"][max="10"]::-WEBKIT-PROGRESS-VALUE { background: var(--progress-5) }
-progress[value="5"][max="10"]::-WEBKIT-PROGRESS-VALUE { background: var(--progress-6) }
-progress[value="4"][max="10"]::-WEBKIT-PROGRESS-VALUE { background: var(--progress-7) }
-progress[value="3"][max="10"]::-WEBKIT-PROGRESS-VALUE { background: var(--progress-8) }
-progress[value="2"][max="10"]::-WEBKIT-PROGRESS-VALUE { background: var(--progress-9) }
-progress[value="1"][max="10"]::-WEBKIT-PROGRESS-VALUE { background: var(--progress-10) }
+progress[value^="1"][max="10"]::-webkit-progress-value { background: var(--progress-1) }
+progress[value="9"][max="10"]::-webkit-progress-value { background: var(--progress-2) }
+progress[value="8"][max="10"]::-webkit-progress-value { background: var(--progress-3) }
+progress[value="7"][max="10"]::-webkit-progress-value { background: var(--progress-4) }
+progress[value="6"][max="10"]::-webkit-progress-value { background: var(--progress-5) }
+progress[value="5"][max="10"]::-webkit-progress-value { background: var(--progress-6) }
+progress[value="4"][max="10"]::-webkit-progress-value { background: var(--progress-7) }
+progress[value="3"][max="10"]::-webkit-progress-value { background: var(--progress-8) }
+progress[value="2"][max="10"]::-webkit-progress-value { background: var(--progress-9) }
+progress[value="1"][max="10"]::-webkit-progress-value { background: var(--progress-10) }
 
-progress[value^="1"][max="100"]::-WEBKIT-PROGRESS-VALUE { background: var(--progress-1) }
-progress[value^="9"][max="100"]::-WEBKIT-PROGRESS-VALUE { background: var(--progress-2) }
-progress[value^="8"][max="100"]::-WEBKIT-PROGRESS-VALUE { background: var(--progress-3) }
-progress[value^="7"][max="100"]::-WEBKIT-PROGRESS-VALUE { background: var(--progress-4) }
-progress[value^="6"][max="100"]::-WEBKIT-PROGRESS-VALUE { background: var(--progress-5) }
-progress[value^="5"][max="100"]::-WEBKIT-PROGRESS-VALUE { background: var(--progress-6) }
-progress[value^="4"][max="100"]::-WEBKIT-PROGRESS-VALUE { background: var(--progress-7) }
-progress[value^="3"][max="100"]::-WEBKIT-PROGRESS-VALUE { background: var(--progress-8) }
-progress[value^="2"][max="100"]::-WEBKIT-PROGRESS-VALUE { background: var(--progress-9) }
-progress[max="100"]:is([value="10"],[value="11"],[value="12"],[value="13"],[value="14"],[value="15"],[value="16"],[value="17"],[value="18"],[value="18"])::-WEBKIT-PROGRESS-VALUE { background: var(--progress-10) }
-progress[max="100"]:is([value="1"],[value="2"],[value="3"],[value="4"],[value="5"],[value="6"],[value="7"],[value="8"],[value="9"])::-WEBKIT-PROGRESS-VALUE { background: var(--progress-11) }
+progress[value^="1"][max="100"]::-webkit-progress-value { background: var(--progress-1) }
+progress[value^="9"][max="100"]::-webkit-progress-value { background: var(--progress-2) }
+progress[value^="8"][max="100"]::-webkit-progress-value { background: var(--progress-3) }
+progress[value^="7"][max="100"]::-webkit-progress-value { background: var(--progress-4) }
+progress[value^="6"][max="100"]::-webkit-progress-value { background: var(--progress-5) }
+progress[value^="5"][max="100"]::-webkit-progress-value { background: var(--progress-6) }
+progress[value^="4"][max="100"]::-webkit-progress-value { background: var(--progress-7) }
+progress[value^="3"][max="100"]::-webkit-progress-value { background: var(--progress-8) }
+progress[value^="2"][max="100"]::-webkit-progress-value { background: var(--progress-9) }
+progress[max="100"]:is([value="10"],[value="11"],[value="12"],[value="13"],[value="14"],[value="15"],[value="16"],[value="17"],[value="18"],[value="18"])::-webkit-progress-value { background: var(--progress-10) }
+progress[max="100"]:is([value="1"],[value="2"],[value="3"],[value="4"],[value="5"],[value="6"],[value="7"],[value="8"],[value="9"])::-webkit-progress-value { background: var(--progress-11) }
 
 /* ───────────────────────────────────────────────── */
 /* << Images
@@ -5574,7 +5574,7 @@ progress[max="100"]:is([value="1"],[value="2"],[value="3"],[value="4"],[value="5
 }
 
 /* Image Alt as caption */
-.image-embed[alt]:not([alt$=".png"], [alt$=".jpg"], [alt$=".jpeg"], [alt$=".tiff"])::AFTER {
+.image-embed[alt]:not([alt$=".png"], [alt$=".jpg"], [alt$=".jpeg"], [alt$=".tiff"])::after {
 	display: block;
 	content: attr(alt);
 
@@ -5599,7 +5599,7 @@ body:not(.disable-image-borders) img[src] {
 }
 
 /* centers image and image caption */
-body:not(.left-aligned-embeds) .image-embed[alt]::AFTER {
+body:not(.left-aligned-embeds) .image-embed[alt]::after {
 	text-align: center;
 	white-space: pre;
 }
@@ -5682,7 +5682,7 @@ img:is([src*="img.shields.io"],[src*="ko-fi.com"], [src*="buymeacoffee"])[src][s
 	border-radius: var(--roundish);
 }
 
-.internal-embed.is-loaded.file-embed.mod-empty::BEFORE {
+.internal-embed.is-loaded.file-embed.mod-empty::before {
 	content: var(--error-symbol);
 	margin-right: 5px;
 }
@@ -5892,7 +5892,7 @@ body:not(.no-alternating-header-italics) :is(.cm-header-2, .cm-header-4, .cm-hea
 /* <<< LP Heading Level Indicator
 ──────────────────────────────────────────────────── */
 
-body:not(.no-heading-level-in-lp) .is-live-preview .cm-header::BEFORE {
+body:not(.no-heading-level-in-lp) .is-live-preview .cm-header::before {
 	font-family: var(--font-monospace);
 	font-size: 0.9rem;
 	font-style: normal;
@@ -5908,14 +5908,14 @@ body:not(.no-heading-level-in-lp) .is-live-preview .cm-header::BEFORE {
 	padding-left: 4px;
 }
 
-body:not(.no-heading-level-in-lp) .is-live-preview .cm-line:not(.cm-active) > .cm-header-1::BEFORE { content: "H1" }
-body:not(.no-heading-level-in-lp) .is-live-preview .cm-line:not(.cm-active) > .cm-header-2::BEFORE { content: "H2" }
-body:not(.no-heading-level-in-lp) .is-live-preview .cm-line:not(.cm-active) > .cm-header-3::BEFORE { content: "H3" }
-body:not(.no-heading-level-in-lp) .is-live-preview .cm-line:not(.cm-active) > .cm-header-4::BEFORE { content: "H4" }
-body:not(.no-heading-level-in-lp) .is-live-preview .cm-line:not(.cm-active) > .cm-header-5::BEFORE { content: "H5" }
-body:not(.no-heading-level-in-lp) .is-live-preview .cm-line:not(.cm-active) > .cm-header-6::BEFORE { content: "H6" }
+body:not(.no-heading-level-in-lp) .is-live-preview .cm-line:not(.cm-active) > .cm-header-1::before { content: "H1" }
+body:not(.no-heading-level-in-lp) .is-live-preview .cm-line:not(.cm-active) > .cm-header-2::before { content: "H2" }
+body:not(.no-heading-level-in-lp) .is-live-preview .cm-line:not(.cm-active) > .cm-header-3::before { content: "H3" }
+body:not(.no-heading-level-in-lp) .is-live-preview .cm-line:not(.cm-active) > .cm-header-4::before { content: "H4" }
+body:not(.no-heading-level-in-lp) .is-live-preview .cm-line:not(.cm-active) > .cm-header-5::before { content: "H5" }
+body:not(.no-heading-level-in-lp) .is-live-preview .cm-line:not(.cm-active) > .cm-header-6::before { content: "H6" }
 
-.is-live-preview .cm-header ~ .cm-header::BEFORE {
+.is-live-preview .cm-header ~ .cm-header::before {
 	display: none; /* only first header element gets the prefix */
 }
 
@@ -6018,7 +6018,7 @@ body .markdown-preview-view blockquote,
 }
 
 /* hack to prevent rounded corners with consecutive block quotes */
-.HyperMD-quote + .HyperMD-quote::BEFORE {
+.HyperMD-quote + .HyperMD-quote::before {
 	content: "";
 
 	height: 1.5em;
@@ -6033,11 +6033,11 @@ body .markdown-preview-view blockquote,
 	margin-left: calc(-1 * (var(--blockquote-border-width) + 4px));
 }
 
-.HyperMD-quote + .HyperMD-quote.HyperMD-quote-lazy::BEFORE {
+.HyperMD-quote + .HyperMD-quote.HyperMD-quote-lazy::before {
 	margin-left: -10px;
 }
 
-.HyperMD-quote + .HyperMD-quote::AFTER {
+.HyperMD-quote + .HyperMD-quote::after {
 	content: "";
 
 	height: 1em;
@@ -6084,7 +6084,7 @@ body:not(.normal-blockquotes) :is(blockquote, .cm-hmd-indent-in-quote, .HyperMD-
 }
 
 /* option for decorative blockquote */
-.quotation-mark-deco blockquote p::BEFORE {
+.quotation-mark-deco blockquote p::before {
 	content: "”";
 
 	font-family: "Times";
@@ -6126,9 +6126,9 @@ body:not(.no-citation-syntax) .is-live-preview .HyperMD-quote-1 + .HyperMD-quote
 	border-width: 0;
 }
 
-body:not(.no-citation-syntax) .is-live-preview .HyperMD-quote-1 + .HyperMD-quote-2:not(.cm-active) .cm-transparent:not(:first-child)::AFTER,
-body:not(.no-citation-syntax) .cm-s-obsidian:not(.is-live-preview) .HyperMD-quote-1 + .HyperMD-quote-2 .cm-formatting-quote-2::AFTER,
-body:not(.no-citation-syntax) .markdown-preview-view *:not(blockquote) > blockquote > p + blockquote > p::BEFORE {
+body:not(.no-citation-syntax) .is-live-preview .HyperMD-quote-1 + .HyperMD-quote-2:not(.cm-active) .cm-transparent:not(:first-child)::after,
+body:not(.no-citation-syntax) .cm-s-obsidian:not(.is-live-preview) .HyperMD-quote-1 + .HyperMD-quote-2 .cm-formatting-quote-2::after,
+body:not(.no-citation-syntax) .markdown-preview-view *:not(blockquote) > blockquote > p + blockquote > p::before {
 	content: "— ";
 	font-weight: 500;
 	color: var(--extra-contrast);
@@ -6163,7 +6163,7 @@ body:not(.no-citation-syntax) .markdown-source-view .cm-line.HyperMD-quote-1 + .
 	font-style: normal;
 }
 
-body:not(.no-citation-syntax) .markdown-source-view .cm-line.HyperMD-quote-1 + .HyperMD-quote-2 .cm-url.cm-url.cm-url.cm-url.cm-url::AFTER {
+body:not(.no-citation-syntax) .markdown-source-view .cm-line.HyperMD-quote-1 + .HyperMD-quote-2 .cm-url.cm-url.cm-url.cm-url.cm-url::after {
 	top: 3px;
 }
 
@@ -6664,7 +6664,7 @@ div.HyperMD-codeblock-bg:not(.HyperMD-codeblock-begin-bg) {
 	white-space: pre;
 }
 
-.no-code-block-wrapping .markdown-preview-view pre:not(.frontmatter) ::-WEBKIT-SCROLLBAR {
+.no-code-block-wrapping .markdown-preview-view pre:not(.frontmatter) ::-webkit-scrollbar {
 	height: calc(var(--scrollbar-thickness) * 0.9);
 }
 
@@ -6676,7 +6676,7 @@ div.HyperMD-codeblock-bg:not(.HyperMD-codeblock-begin-bg) {
 ::after element cannot be moved beyond a border */
 /* needs CM6 as condition, since every line in
 CM5 has the "pre" type */
-.mod-cm6 + .markdown-reading-view pre[class*="language-"]::BEFORE {
+.mod-cm6 + .markdown-reading-view pre[class*="language-"]::before {
 	display: block;
 	content: " ";
 
@@ -6718,7 +6718,7 @@ CM5 has the "pre" type */
 	margin-top: 0.3rem;
 }
 
-.markdown-preview-view button.copy-code-button::BEFORE {
+.markdown-preview-view button.copy-code-button::before {
 	content: "content_copy";
 	font-family: var(--icon-font);
 	font-size: calc(0.85 * var(--font-text-size));
@@ -6738,12 +6738,12 @@ body .is-live-preview.mod-cm6 .edit-block-button:hover {
 }
 
 /* indention lines in code blocks more visible */
-.HyperMD-codeblock .cm-indent.cm-indent.cm-indent::BEFORE {
+.HyperMD-codeblock .cm-indent.cm-indent.cm-indent::before {
 	border-color: var(--basic-border-color);
 }
 
 /* <<< language replacements */
-pre[class*="language-"]::AFTER {
+pre[class*="language-"]::after {
 	content: attr(class); /* fallback when none of the languages below is used */
 
 	font-size: calc(var(--monospace-font-size) * 0.9);
@@ -6757,48 +6757,48 @@ pre[class*="language-"]::AFTER {
 }
 
 /* CM5: move positioning back */
-.mod-cm5 + .markdown-reading-view pre[class*="language-"]::AFTER {
+.mod-cm5 + .markdown-reading-view pre[class*="language-"]::after {
 	top: unset;
 	bottom: 0;
 }
 
-pre.language-c::AFTER { content: "C" }
-pre.language-python::AFTER { content: "Python" }
-pre.language-py::AFTER { content: "Python" }
-pre.language-nginx::AFTER { content: "Nginx" }
-pre.language-css::AFTER { content: "CSS" }
-pre.language-node::AFTER { content: "Node" }
-pre.language-react::AFTER { content: "React" }
-pre.language-javascript::AFTER { content: "JavaScript" }
-pre.language-js::AFTER { content: "JavaScript" }
-pre.language-typescript::AFTER { content: "TypeScript" }
-pre.language-ts::AFTER { content: "TypeScript" }
-pre.language-php::AFTER { content: "PHP" }
-pre.language-shell::AFTER { content: "Shell" }
-pre.language-bash::AFTER { content: "Bash" }
-pre.language-zsh::AFTER { content: "zsh" }
-pre.language-flow::AFTER { content: "Flow" }
-pre.language-sequence::AFTER { content: "Sequence" }
-pre.language-sql::AFTER { content: "SQL" }
-pre.language-yaml::AFTER { content: "YAML" }
-pre.language-ini::AFTER { content: "INI" }
-pre.language-xml::AFTER { content: "XML" }
-pre.language-git::AFTER { content: "GIT" }
-pre.language-cs::AFTER { content: "C#" }
-pre.language-cpp::AFTER { content: "C++" }
-pre.language-java::AFTER { content: "JAVA" }
-pre.language-html::AFTER { content: "HTML" }
-pre.language-txt::AFTER { content: "text" }
-pre.language-text::AFTER { content: "text" }
-pre.language-url::AFTER { content: "URL" }
-pre.language-uri::AFTER { content: "URI" }
-pre.language-applescript::AFTER { content: "AppleScript" }
-pre.language-markdown::AFTER { content: "Markdown" }
-pre.language-md::AFTER { content: "Markdown" }
-pre.language-regex::AFTER { content: "Regex" }
-pre.language-lua::AFTER { content: "Lua" }
-pre.language-haskell::AFTER { content: "Haskell" }
-pre.language-vim::AFTER { content: "vimrc" }
+pre.language-c::after { content: "C" }
+pre.language-python::after { content: "Python" }
+pre.language-py::after { content: "Python" }
+pre.language-nginx::after { content: "Nginx" }
+pre.language-css::after { content: "CSS" }
+pre.language-node::after { content: "Node" }
+pre.language-react::after { content: "React" }
+pre.language-javascript::after { content: "JavaScript" }
+pre.language-js::after { content: "JavaScript" }
+pre.language-typescript::after { content: "TypeScript" }
+pre.language-ts::after { content: "TypeScript" }
+pre.language-php::after { content: "PHP" }
+pre.language-shell::after { content: "Shell" }
+pre.language-bash::after { content: "Bash" }
+pre.language-zsh::after { content: "zsh" }
+pre.language-flow::after { content: "Flow" }
+pre.language-sequence::after { content: "Sequence" }
+pre.language-sql::after { content: "SQL" }
+pre.language-yaml::after { content: "YAML" }
+pre.language-ini::after { content: "INI" }
+pre.language-xml::after { content: "XML" }
+pre.language-git::after { content: "GIT" }
+pre.language-cs::after { content: "C#" }
+pre.language-cpp::after { content: "C++" }
+pre.language-java::after { content: "JAVA" }
+pre.language-html::after { content: "HTML" }
+pre.language-txt::after { content: "text" }
+pre.language-text::after { content: "text" }
+pre.language-url::after { content: "URL" }
+pre.language-uri::after { content: "URI" }
+pre.language-applescript::after { content: "AppleScript" }
+pre.language-markdown::after { content: "Markdown" }
+pre.language-md::after { content: "Markdown" }
+pre.language-regex::after { content: "Regex" }
+pre.language-lua::after { content: "Lua" }
+pre.language-haskell::after { content: "Haskell" }
+pre.language-vim::after { content: "vimrc" }
 
 /* fix for the buggy selection of inline text */
 /* https://forum.obsidian.md/t/inline-code-occludes-text-selection-and-vim-cursor/11552/10 */
@@ -6819,7 +6819,7 @@ body:not(.no-codeblock-line-numbers) .HyperMD-codeblock.cm-line:not(.HyperMD-cod
 	padding-left: 3em;
 }
 
-body:not(.no-codeblock-line-numbers) .HyperMD-codeblock:not(.HyperMD-codeblock-begin, .HyperMD-codeblock-end)::BEFORE {
+body:not(.no-codeblock-line-numbers) .HyperMD-codeblock:not(.HyperMD-codeblock-begin, .HyperMD-codeblock-end)::before {
 	content: counter(codeblock-line-numbers);
 
 	font-family: var(--number-font);
@@ -6841,7 +6841,7 @@ body:not(.no-codeblock-line-numbers) .HyperMD-codeblock:not(.HyperMD-codeblock-b
 	counter-increment: codeblock-line-numbers;
 }
 
-body:not(.no-codeblock-line-numbers) .HyperMD-codeblock .cm-foldPlaceholder::BEFORE {
+body:not(.no-codeblock-line-numbers) .HyperMD-codeblock .cm-foldPlaceholder::before {
 	display: none;
 }
 
@@ -7014,8 +7014,8 @@ body:not(.no-codeblock-line-numbers) .HyperMD-codeblock .cm-foldPlaceholder::BEF
 }
 
 /* indention lines */
-.markdown-rendered.show-indentation-guide li > ul::BEFORE,
-.markdown-source-view.mod-cm6 .cm-indent::BEFORE {
+.markdown-rendered.show-indentation-guide li > ul::before,
+.markdown-source-view.mod-cm6 .cm-indent::before {
 	border-right: var(--muted-border);
 }
 
@@ -7080,23 +7080,23 @@ a,
 
 /* icon for certain filetypes links */
 /* with supercharged links installed, also displayed in edit mode */
-.markdown-preview-view a.internal-link[href$=".pdf"]::BEFORE {
+.markdown-preview-view a.internal-link[href$=".pdf"]::before {
 	content: "📕 ";
 }
 
-.markdown-preview-view a.internal-link:is([href$=".docx"], [href$=".doc"], [href$=".odt"])::BEFORE {
+.markdown-preview-view a.internal-link:is([href$=".docx"], [href$=".doc"], [href$=".odt"])::before {
 	content: "📘 ";
 }
 
-.markdown-preview-view a.internal-link:is([href$=".pptx"], [href$=".ppt"], [href$=".odp"])::BEFORE {
+.markdown-preview-view a.internal-link:is([href$=".pptx"], [href$=".ppt"], [href$=".odp"])::before {
 	content: "📙 ";
 }
 
-.markdown-preview-view a.internal-link:is([href$=".xlsx"], [href$=".xls"], [href$=".ods"], [href$=".csv"])::BEFORE {
+.markdown-preview-view a.internal-link:is([href$=".xlsx"], [href$=".xls"], [href$=".ods"], [href$=".csv"])::before {
 	content: "📗 ";
 }
 
-.markdown-preview-view a.internal-link:is([href$=".png"], [href$=".jpg"], [href$=".jpeg"], [href$=".tiff"])::BEFORE {
+.markdown-preview-view a.internal-link:is([href$=".png"], [href$=".jpg"], [href$=".jpeg"], [href$=".tiff"])::before {
 	content: "🌁 ";
 }
 
@@ -7114,7 +7114,7 @@ body:not(.show-urls) .cm-s-obsidian:not(.is-live-preview) .cm-line:not(.cm-activ
 	font-size: 0;
 }
 
-body:not(.show-urls) .cm-s-obsidian:not(.is-live-preview) .cm-line:not(.cm-active) .cm-string.cm-url:not(.cm-formatting)::AFTER {
+body:not(.show-urls) .cm-s-obsidian:not(.is-live-preview) .cm-line:not(.cm-active) .cm-string.cm-url:not(.cm-formatting)::after {
 	content: "link";
 	font-family: var(--icon-font);
 	font-size: calc(var(--font-text-size) * 0.9);
@@ -7159,7 +7159,7 @@ body:not(.show-urls) .cm-line:not(.cm-active) .cm-url,
 }
 
 /* unresolved gutter indicator */
-body:not(.no-unresolved-link-indicator) .is-unresolved::BEFORE {
+body:not(.no-unresolved-link-indicator) .is-unresolved::before {
 	content: "✘";
 	font-size: 1.3rem;
 	background-color: var(--bg1);
@@ -7167,27 +7167,27 @@ body:not(.no-unresolved-link-indicator) .is-unresolved::BEFORE {
 	margin-top: -3px; /* move up to accounts for double unterline */
 }
 
-body:not(.no-unresolved-link-indicator) .is-live-preview .is-unresolved::BEFORE {
+body:not(.no-unresolved-link-indicator) .is-live-preview .is-unresolved::before {
 	left: -3em;
 }
 
-body:not(.no-unresolved-link-indicator) .markdown-preview-view .is-unresolved::BEFORE {
+body:not(.no-unresolved-link-indicator) .markdown-preview-view .is-unresolved::before {
 	left: 1.3em;
 }
 
-div > ul > li > ul > li > .is-unresolved.is-unresolved.is-unresolved::BEFORE {
+div > ul > li > ul > li > .is-unresolved.is-unresolved.is-unresolved::before {
 	left: -4.2em;
 }
 
-div > ul > li > ul > li > ul > li > .is-unresolved.is-unresolved.is-unresolved::BEFORE {
+div > ul > li > ul > li > ul > li > .is-unresolved.is-unresolved.is-unresolved::before {
 	left: -6.7em;
 }
 
-div > ul > li > ul > li > ul > li > ul > li > .is-unresolved.is-unresolved.is-unresolved::BEFORE {
+div > ul > li > ul > li > ul > li > ul > li > .is-unresolved.is-unresolved.is-unresolved::before {
 	left: -8.2em;
 }
 
-div > ul > li > ul > li > ul > li > ul > li > ul > li > .is-unresolved.is-unresolved.is-unresolved::BEFORE {
+div > ul > li > ul > li > ul > li > ul > li > ul > li > .is-unresolved.is-unresolved.is-unresolved::before {
 	left: -9.7em;
 }
 
@@ -7220,7 +7220,7 @@ a.tag:hover {
 /* inspired by https://forum.obsidian.md/t/meta-post-common-css-hacks/1978/327 */
 
 /* either via style setting or via cssclass */
-.tags-in-gutter :not(.frontmatter-section-tags) > a.tag::AFTER {
+.tags-in-gutter :not(.frontmatter-section-tags) > a.tag::after {
 	content: attr(href);
 
 	font-family: var(--font-interface);
@@ -7241,7 +7241,7 @@ a.tag:hover {
 	overflow: hidden;
 }
 
-.tags-in-gutter a.tag:hover::AFTER {
+.tags-in-gutter a.tag:hover::after {
 	color: var(--hover-accent-2);
 }
 
@@ -7298,15 +7298,15 @@ body:not(.annotation-tags-off) :is(.cm-tag-litreview, .tag[href="#litreview"]) {
 	background-color: rgb(128 128 128 / 50%);
 }
 
-body:not(.annotation-tags-off) :is(.cm-hashtag-begin.cm-tag-gap, .tag[href="#gap"])::BEFORE {
+body:not(.annotation-tags-off) :is(.cm-hashtag-begin.cm-tag-gap, .tag[href="#gap"])::before {
 	content: "🕳 ";
 }
 
-body:not(.annotation-tags-off) :is(.cm-hashtag-begin.cm-tag-litreview, .tag[href="#litreview"])::BEFORE {
+body:not(.annotation-tags-off) :is(.cm-hashtag-begin.cm-tag-litreview, .tag[href="#litreview"])::before {
 	content: "📚 ";
 }
 
-body:not(.annotation-tags-off) :is(.cm-hashtag-begin.cm-tag-sidenote, .tag[href="#sidenote"])::BEFORE {
+body:not(.annotation-tags-off) :is(.cm-hashtag-begin.cm-tag-sidenote, .tag[href="#sidenote"])::before {
 	content: "⬅️ ";
 }
 
@@ -7315,11 +7315,11 @@ body:not(.annotation-tags-off) :is(.cm-tag-goal, .tag[href="#goal"]) {
 	background-color: rgb(0 235 230 / 50%);
 }
 
-body:not(.annotation-tags-off) :is(.cm-hashtag-begin.cm-tag-goal, .tag[href="#goal"])::BEFORE {
+body:not(.annotation-tags-off) :is(.cm-hashtag-begin.cm-tag-goal, .tag[href="#goal"])::before {
 	content: "🏁 ";
 }
 
-body:not(.annotation-tags-off) :is(.cm-hashtag-begin.cm-tag-question, .tag[href="#question"])::BEFORE {
+body:not(.annotation-tags-off) :is(.cm-hashtag-begin.cm-tag-question, .tag[href="#question"])::before {
 	content: "❓ ";
 }
 
@@ -7327,7 +7327,7 @@ body:not(.annotation-tags-off) :is(.cm-tag-critique, .tag[href="#critique"]) {
 	background-color: hsl(330 60% 50% / 50%);
 }
 
-body:not(.annotation-tags-off) :is(.cm-hashtag-begin.cm-tag-critique, .tag[href="#critique"])::BEFORE {
+body:not(.annotation-tags-off) :is(.cm-hashtag-begin.cm-tag-critique, .tag[href="#critique"])::before {
 	content: "☝️ ";
 }
 
@@ -7335,7 +7335,7 @@ body:not(.annotation-tags-off) :is(.cm-tag-quote, .tag[href="#quote"]) {
 	background-color: hsl(86 100% 51% / 50%);
 }
 
-body:not(.annotation-tags-off) :is(.cm-hashtag-begin.cm-tag-quote, .tag[href="#quote"])::BEFORE {
+body:not(.annotation-tags-off) :is(.cm-hashtag-begin.cm-tag-quote, .tag[href="#quote"])::before {
 	content: "💬 ";
 }
 
@@ -7344,11 +7344,11 @@ body:not(.annotation-tags-off) :is(.cm-tag-important, .tag[href="#important"]) {
 	background-color: rgb(255 120 15 / 50%);
 }
 
-body:not(.annotation-tags-off) :is(.cm-hashtag-begin.cm-tag-summary, .tag[href="#summary"])::BEFORE {
+body:not(.annotation-tags-off) :is(.cm-hashtag-begin.cm-tag-summary, .tag[href="#summary"])::before {
 	content: "✴️ ";
 }
 
-body:not(.annotation-tags-off) :is(.cm-hashtag-begin.cm-tag-important, .tag[href="#important"])::BEFORE {
+body:not(.annotation-tags-off) :is(.cm-hashtag-begin.cm-tag-important, .tag[href="#important"])::before {
 	content: "📌 ";
 }
 
@@ -7357,11 +7357,11 @@ body:not(.annotation-tags-off) :is(.cm-tag-method, .tag[href="#method"]) {
 	background-color: rgb(170 121 66 / 50%);
 }
 
-body:not(.annotation-tags-off) :is(.cm-hashtag-begin.cm-tag-method, .tag[href="#method"])::BEFORE {
+body:not(.annotation-tags-off) :is(.cm-hashtag-begin.cm-tag-method, .tag[href="#method"])::before {
 	content: "🔬 ";
 }
 
-body:not(.annotation-tags-off) :is(.cm-hashtag-begin.cm-tag-data, .tag[href="#data"])::BEFORE {
+body:not(.annotation-tags-off) :is(.cm-hashtag-begin.cm-tag-data, .tag[href="#data"])::before {
 	content: "📊 ";
 }
 
@@ -7370,11 +7370,11 @@ body:not(.annotation-tags-off) :is(.cm-tag-main, .tag[href="#main"]) {
 	background-color: rgb(32 156 238 / 50%);
 }
 
-body:not(.annotation-tags-off) :is(.cm-hashtag-begin.cm-tag-todo, .tag[href="#todo"])::BEFORE {
+body:not(.annotation-tags-off) :is(.cm-hashtag-begin.cm-tag-todo, .tag[href="#todo"])::before {
 	content: "☑️ ";
 }
 
-body:not(.annotation-tags-off) :is(.cm-hashtag-begin.cm-tag-main, .tag[href="#main"])::BEFORE {
+body:not(.annotation-tags-off) :is(.cm-hashtag-begin.cm-tag-main, .tag[href="#main"])::before {
 	content: "Ⓜ️ ";
 }
 
@@ -7382,7 +7382,7 @@ body:not(.annotation-tags-off) :is(.cm-tag-definition, .tag[href="#definition"])
 	background-color: rgb(217 188 77 / 50%);
 }
 
-body:not(.annotation-tags-off) :is(.cm-hashtag-begin.cm-tag-definition, .tag[href="#definition"])::BEFORE {
+body:not(.annotation-tags-off) :is(.cm-hashtag-begin.cm-tag-definition, .tag[href="#definition"])::before {
 	content: "💡 ";
 }
 
@@ -7390,7 +7390,7 @@ body:not(.annotation-tags-off) :is(.cm-tag-agree, .tag[href="#agree"]) {
 	background-color: rgb(35 209 96 / 50%);
 }
 
-body:not(.annotation-tags-off) :is(.cm-hashtag-begin.cm-tag-agree, .tag[href="#agree"])::BEFORE {
+body:not(.annotation-tags-off) :is(.cm-hashtag-begin.cm-tag-agree, .tag[href="#agree"])::before {
 	content: "✅ ";
 }
 
@@ -7398,7 +7398,7 @@ body:not(.annotation-tags-off) :is(.cm-tag-disagree, .tag[href="#disagree"]) {
 	background-color: rgb(255 56 96 / 50%);
 }
 
-body:not(.annotation-tags-off) :is(.cm-hashtag-begin.cm-tag-disagree, .tag[href="#disagree"])::BEFORE {
+body:not(.annotation-tags-off) :is(.cm-hashtag-begin.cm-tag-disagree, .tag[href="#disagree"])::before {
 	content: "⛔️ ";
 }
 
@@ -7406,7 +7406,7 @@ body:not(.annotation-tags-off) :is(.cm-tag-example, .tag[href="#example"]) {
 	background-color: rgb(230 128 253 / 50%);
 }
 
-body:not(.annotation-tags-off) :is(.cm-hashtag-begin.cm-tag-example, .tag[href="#example"])::BEFORE {
+body:not(.annotation-tags-off) :is(.cm-hashtag-begin.cm-tag-example, .tag[href="#example"])::before {
 	content: "⚛️ ";
 }
 
@@ -7442,24 +7442,24 @@ body .app-container span:is(.cm-tag.cm-bracket.cm-hmd-html-begin, .cm-tag.cm-bra
 /* ───────────────────────────────────────────────── */
 /* << Trailing Whitespace (Two Space Rule)
 ──────────────────────────────────────────────────── */
-body:not(.hide-trailing-whitespace) :is(.cm-trailing-space-a, .cm-trailing-space-b, .cm-trailing-space-new-line)::BEFORE {
+body:not(.hide-trailing-whitespace) :is(.cm-trailing-space-a, .cm-trailing-space-b, .cm-trailing-space-new-line)::before {
 	font-size: 1em;
 	font-weight: 600;
 	letter-spacing: -2px;
 	color: var(--text-muted);
 }
 
-body:not(.hide-trailing-whitespace) :is(.cm-trailing-space-b, .cm-trailing-space-a)::BEFORE {
+body:not(.hide-trailing-whitespace) :is(.cm-trailing-space-b, .cm-trailing-space-a)::before {
 	content: "\00B7"; /* dot character */
 }
 
 /* first characters */
-body:not(.hide-trailing-whitespace) :not(.cm-trailing-space-b) + .cm-trailing-space-a::BEFORE {
+body:not(.hide-trailing-whitespace) :not(.cm-trailing-space-b) + .cm-trailing-space-a::before {
 	content: "\00B7  \00B7";
 	padding-left: 5px;
 }
 
-body:not(.hide-trailing-whitespace) .cm-trailing-space-new-line::BEFORE {
+body:not(.hide-trailing-whitespace) .cm-trailing-space-new-line::before {
 	content: "\21B5"; /* return character */
 }
 
@@ -7711,7 +7711,7 @@ sup {
 	border-radius: calc(var(--roundish) * 0.6);
 }
 
-.footnotes li::MARKER,
+.footnotes li::marker,
 .cm-s-obsidian .cm-line .cm-footref {
 	color: var(--reference-color);
 }
@@ -7738,7 +7738,7 @@ span.cm-link.cm-hmd-footnote {
 /* <<< Footnote Indicator in Gutter
 ──────────────────────────────────────────────────── */
 
-body:not(.no-fn-indicator) :is(.mod-cm6 .footnote-ref,.mod-cm6.cm-s-obsidian span.cm-footref.cm-formatting, .is-live-preview .cm-footref)::BEFORE {
+body:not(.no-fn-indicator) :is(.mod-cm6 .footnote-ref,.mod-cm6.cm-s-obsidian span.cm-footref.cm-formatting, .is-live-preview .cm-footref)::before {
 	content: "⦿";
 
 	font-size: 1rem;
@@ -7754,37 +7754,37 @@ body:not(.no-fn-indicator) :is(.mod-cm6 .footnote-ref,.mod-cm6.cm-s-obsidian spa
 }
 
 /* live preview */
-.is-live-preview .cm-footref::BEFORE {
+.is-live-preview .cm-footref::before {
 	left: -50px;
 }
 
 /* source mode */
-body .footnote-ref::BEFORE {
+body .footnote-ref::before {
 	left: 25px;
 }
 
-body .cm-s-obsidian span.cm-footref.cm-formatting::BEFORE {
+body .cm-s-obsidian span.cm-footref.cm-formatting::before {
 	left: -60px;
 }
 
-div > ul > li > ul > li > .footnote-ref::BEFORE {
+div > ul > li > ul > li > .footnote-ref::before {
 	left: -6.8em;
 }
 
-div > ul > li > ul > li > ul > li > .footnote-ref::BEFORE {
+div > ul > li > ul > li > ul > li > .footnote-ref::before {
 	left: -7.8em;
 }
 
-div > ul > li > ul > li > ul > li > ul > li > .footnote-ref::BEFORE {
+div > ul > li > ul > li > ul > li > ul > li > .footnote-ref::before {
 	left: -8.8em;
 }
 
-div > ul > li > ul > li > ul > li > ul > li > ul > li > .footnote-ref::BEFORE {
+div > ul > li > ul > li > ul > li > ul > li > ul > li > .footnote-ref::before {
 	left: -9.8em;
 }
 
 /* don't display in Plugin Browser */
-.modal-container .footnote-ref::BEFORE {
+.modal-container .footnote-ref::before {
 	display: none;
 }
 
@@ -7792,19 +7792,19 @@ div > ul > li > ul > li > ul > li > ul > li > ul > li > .footnote-ref::BEFORE {
 	counter-reset: footnote;
 }
 
-body.numbered-fn-indicator :is(.mod-cm6 .footnote-ref,.mod-cm6.cm-s-obsidian span.cm-footref.cm-formatting)::BEFORE {
+body.numbered-fn-indicator :is(.mod-cm6 .footnote-ref,.mod-cm6.cm-s-obsidian span.cm-footref.cm-formatting)::before {
 	content: "^"counter(footnote);
 	font-size: 0.8rem;
 	margin-top: 5px;
 	counter-increment: footnote;
 }
 
-body:not(.no-fn-indicator) .mod-cm6 .cm-hmd-barelink:not(.cm-formatting-link) + .cm-footref.cm-formatting::BEFORE {
+body:not(.no-fn-indicator) .mod-cm6 .cm-hmd-barelink:not(.cm-formatting-link) + .cm-footref.cm-formatting::before {
 	display: none;
 }
 
 /* styling when the footnote indicator plugin is used */
-:is(.footnote-ref, .mod-cm6.cm-s-obsidian span.cm-footref.cm-formatting)::BEFORE {
+:is(.footnote-ref, .mod-cm6.cm-s-obsidian span.cm-footref.cm-formatting)::before {
 	color: var(--reference-color);
 	background-color: var(--bg1);
 }
@@ -7854,7 +7854,7 @@ body:not(.no-fn-indicator) .mod-cm6 .cm-hmd-barelink:not(.cm-formatting-link) + 
 	page-break-inside: avoid;
 }
 
-.list-2-col-cards li:not(.task-list-item)::MARKER {
+.list-2-col-cards li:not(.task-list-item)::marker {
 	content: "";
 }
 
@@ -7864,7 +7864,7 @@ body:not(.no-fn-indicator) .mod-cm6 .cm-hmd-barelink:not(.cm-formatting-link) + 
 	text-indent: -2.2em;
 }
 
-.bibliography-list li::MARKER {
+.bibliography-list li::marker {
 	content: "";
 }
 
@@ -7979,7 +7979,7 @@ body.is-mobile .markdown-preview-view blockquote {
 	bottom: 2px;
 }
 
-.status-bar-item.plugin-editor-status::BEFORE {
+.status-bar-item.plugin-editor-status::before {
 	content: "preview";
 	font-family: var(--icon-font);
 	position: relative;
@@ -8129,8 +8129,8 @@ body:not(.show-file-explorer-navigation) :is(.nav-buttons-container, .nav-header
 /* ───────────────────────────────────────────────── */
 /* <<< Folder Icons & Note Icons
 ──────────────────────────────────────────────────── */
-body:not(.no-folder-icons) .nav-folder-title-content::BEFORE,
-body:not(.no-file-explorer-icons) .workspace-leaf-content:not([data-type="recent-files"]) .nav-file-title-content::BEFORE {
+body:not(.no-folder-icons) .nav-folder-title-content::before,
+body:not(.no-file-explorer-icons) .workspace-leaf-content:not([data-type="recent-files"]) .nav-file-title-content::before {
 	font-family: var(--icon-font);
 	font-size: calc(var(--sidebar-font-size) + 0.05rem);
 	position: relative;
@@ -8139,11 +8139,11 @@ body:not(.no-file-explorer-icons) .workspace-leaf-content:not([data-type="recent
 }
 
 /* Folders icons */
-body:not(.no-folder-icons) .nav-folder-title-content::BEFORE {
+body:not(.no-folder-icons) .nav-folder-title-content::before {
 	content: "folder_open";
 }
 
-body:not(.no-folder-icons) .nav-folder.is-collapsed .nav-folder-title-content::BEFORE {
+body:not(.no-folder-icons) .nav-folder.is-collapsed .nav-folder-title-content::before {
 	content: "folder";
 }
 
@@ -8152,15 +8152,15 @@ body:not(.no-folder-icons) .nav-folder-collapse-indicator {
 	display: none;
 }
 
-body:not(.no-folder-icons) .nav-folder-title[data-path*="attachment" i] .nav-folder-title-content::BEFORE {
+body:not(.no-folder-icons) .nav-folder-title[data-path*="attachment" i] .nav-folder-title-content::before {
 	content: "attachment";
 }
 
-body:not(.no-folder-icons) .nav-folder.is-collapsed .nav-folder-title[data-path*="attachment" i] .nav-folder-title-content::BEFORE {
+body:not(.no-folder-icons) .nav-folder.is-collapsed .nav-folder-title[data-path*="attachment" i] .nav-folder-title-content::before {
 	content: "attach_file";
 }
 
-body:not(.no-folder-icons) .nav-folder-title[data-path*="archiv" i] .nav-folder-title-content::BEFORE {
+body:not(.no-folder-icons) .nav-folder-title[data-path*="archiv" i] .nav-folder-title-content::before {
 	content: "inventory_2";
 }
 
@@ -8171,67 +8171,67 @@ body:not(.no-file-explorer-icons) .nav-file-tag {
 	display: none;
 }
 
-body:not(.no-file-explorer-icons) .workspace-leaf-content:not([data-type="recent-files"]) .nav-file-title-content::BEFORE {
+body:not(.no-file-explorer-icons) .workspace-leaf-content:not([data-type="recent-files"]) .nav-file-title-content::before {
 	content: "description";
 }
 
-body:not(.no-file-explorer-icons) .nav-file-title[data-path*="moc" i] .nav-file-title-content::BEFORE {
+body:not(.no-file-explorer-icons) .nav-file-title[data-path*="moc" i] .nav-file-title-content::before {
 	content: "map";
 }
 
-body:not(.no-file-explorer-icons) .nav-file-title:is([data-path$="pptx"], [data-path*="presentation" i]) .nav-file-title-content::BEFORE {
+body:not(.no-file-explorer-icons) .nav-file-title:is([data-path$="pptx"], [data-path*="presentation" i]) .nav-file-title-content::before {
 	content: "present_to_all";
 	color: hsl(38 100% 50%);
 }
 
-body:not(.no-file-explorer-icons) .nav-file-title:is([data-path$="sh"], [data-path$="ts"], [data-path$="js"]) .nav-file-title-content::BEFORE {
+body:not(.no-file-explorer-icons) .nav-file-title:is([data-path$="sh"], [data-path$="ts"], [data-path$="js"]) .nav-file-title-content::before {
 	content: "code";
 }
 
-body:not(.no-file-explorer-icons) .nav-file-title:is([data-path$="tiff"], [data-path$="jpg"], [data-path$="jpeg"], [data-path$="png"]) .nav-file-title-content::BEFORE {
+body:not(.no-file-explorer-icons) .nav-file-title:is([data-path$="tiff"], [data-path$="jpg"], [data-path$="jpeg"], [data-path$="png"]) .nav-file-title-content::before {
 	content: "image";
 }
 
-body:not(.no-file-explorer-icons) .nav-file-title:is([data-path$="bib"], [data-path$="bibtex"]) .nav-file-title-content::BEFORE {
+body:not(.no-file-explorer-icons) .nav-file-title:is([data-path$="bib"], [data-path$="bibtex"]) .nav-file-title-content::before {
 	content: "menu_book";
 	color: hsl(60 93% 25%);
 }
 
-body:not(.no-file-explorer-icons) .nav-file-title:is([data-path$="doc"], [data-path$="docx"], [data-path$="odt"]) .nav-file-title-content::BEFORE {
+body:not(.no-file-explorer-icons) .nav-file-title:is([data-path$="doc"], [data-path$="docx"], [data-path$="odt"]) .nav-file-title-content::before {
 	color: hsl(201 93% 25%);
 }
 
-body:not(.no-file-explorer-icons) .nav-file-title[data-path$="pdf"] .nav-file-title-content::BEFORE {
+body:not(.no-file-explorer-icons) .nav-file-title[data-path$="pdf"] .nav-file-title-content::before {
 	content: "picture_as_pdf";
 	color: hsl(347 47% 37%);
 }
 
-body:not(.no-file-explorer-icons) .nav-file-title:is([data-path$="csv"], [data-path$="xls"], [data-path$="xlsx"]) .nav-file-title-content::BEFORE {
+body:not(.no-file-explorer-icons) .nav-file-title:is([data-path$="csv"], [data-path$="xls"], [data-path$="xlsx"]) .nav-file-title-content::before {
 	content: "table_chart";
 	color: hsl(120 100% 25%);
 }
 
-body:not(.no-file-explorer-icons) .nav-file-title[data-path*="statisti" i] .nav-file-title-content::BEFORE {
+body:not(.no-file-explorer-icons) .nav-file-title[data-path*="statisti" i] .nav-file-title-content::before {
 	content: "pie_chart_outline";
 }
 
-body:not(.no-file-explorer-icons) .nav-file-title:is([data-path*="todo" i], [data-path*="to do" i]) .nav-file-title-content::BEFORE {
+body:not(.no-file-explorer-icons) .nav-file-title:is([data-path*="todo" i], [data-path*="to do" i]) .nav-file-title-content::before {
 	content: "check_box";
 }
 
-body:not(.no-file-explorer-icons) .nav-file-title:is([data-path*="metadata" i], [data-path*="README" i]) .nav-file-title-content::BEFORE {
+body:not(.no-file-explorer-icons) .nav-file-title:is([data-path*="metadata" i], [data-path*="README" i]) .nav-file-title-content::before {
 	content: "info";
 }
 
-body:not(.no-file-explorer-icons) .nav-file-title[data-path*="Screenshot" i] .nav-file-title-content::BEFORE {
+body:not(.no-file-explorer-icons) .nav-file-title[data-path*="Screenshot" i] .nav-file-title-content::before {
 	content: "photo_camera";
 }
 
-body:not(.no-file-explorer-icons) .nav-file-title:is([data-path*="Character Count" i], [data-path*="Word Count" i]) .nav-file-title-content::BEFORE {
+body:not(.no-file-explorer-icons) .nav-file-title:is([data-path*="Character Count" i], [data-path*="Word Count" i]) .nav-file-title-content::before {
 	content: "flag";
 }
 
-body:not(.no-file-explorer-icons) .nav-file-title[data-path*="kanban" i] .nav-file-title-content::BEFORE {
+body:not(.no-file-explorer-icons) .nav-file-title[data-path*="kanban" i] .nav-file-title-content::before {
 	content: "dashboard";
 }
 
@@ -8269,7 +8269,7 @@ action (folding) than clicking the heading itself (as opposed to other sidebar p
 	opacity: 0.8;
 }
 
-.tree-item-flair-outer::AFTER {
+.tree-item-flair-outer::after {
 	display: none;
 }
 
@@ -8300,7 +8300,7 @@ action (folding) than clicking the heading itself (as opposed to other sidebar p
 	width: 11px;
 }
 
-.tree-item-icon::AFTER {
+.tree-item-icon::after {
 	display: none;
 }
 
@@ -8410,7 +8410,7 @@ body:not(.classic-inline-backlinks) .embedded-backlinks .tree-item.search-result
 	margin: 0;
 }
 
-body:not(.classic-inline-backlinks) .embedded-backlinks .tree-item-self::BEFORE {
+body:not(.classic-inline-backlinks) .embedded-backlinks .tree-item-self::before {
 	content: "•";
 	font-weight: 700;
 	margin-right: 5px;
@@ -8421,7 +8421,7 @@ body:not(.classic-inline-backlinks) :is(.writing, .longform-leaf) .search-result
 	font-size: calc(var(--longform-font-size) * 0.9);
 }
 
-body:not(.classic-inline-backlinks) :is(.writing, .longform-leaf) .embedded-backlinks::BEFORE {
+body:not(.classic-inline-backlinks) :is(.writing, .longform-leaf) .embedded-backlinks::before {
 	font-size: calc(var(--longform-font-size) * 1.0);
 }
 
@@ -8485,7 +8485,7 @@ to a linked mention by adding wikilinks */
 	margin-right: 16px;
 }
 
-.search-result-file-match-replace-button::BEFORE {
+.search-result-file-match-replace-button::before {
 	content: "link";
 
 	font-family: var(--icon-font);
@@ -8521,7 +8521,7 @@ to a linked mention by adding wikilinks */
 	border-radius: var(--roundish);
 }
 
-.search-result .search-result-file-match::AFTER {
+.search-result .search-result-file-match::after {
 	background-color: var(--basic-border-color);
 }
 
@@ -8562,8 +8562,8 @@ body .search-suggest-item.mod-group:first-child {
 	border-bottom: var(--thin-border);
 }
 
-.search-suggest-item:not(:first-child):not(:nth-child(n+7)) .search-suggest-name::AFTER,
-.search-suggest-item:not(:first-child):not(:nth-child(n+7)) .search-suggest-name::BEFORE {
+.search-suggest-item:not(:first-child):not(:nth-child(n+7)) .search-suggest-name::after,
+.search-suggest-item:not(:first-child):not(:nth-child(n+7)) .search-suggest-name::before {
 	content: "\"";
 }
 
@@ -8650,7 +8650,7 @@ body .search-suggest-item.mod-group:not(:first-child) .clickable-icon:hover {
 	margin-left: 3px;
 }
 
-.tag-container .tree-item-flair-outer::AFTER {
+.tag-container .tree-item-flair-outer::after {
 	display: none;
 }
 
@@ -8674,7 +8674,7 @@ body .search-suggest-item.mod-group:not(:first-child) .clickable-icon:hover {
 	padding-top: 5px;
 }
 
-.workspace-leaf-content[data-type="starred"] .nav-file-title .nav-file-title-content::BEFORE,
+.workspace-leaf-content[data-type="starred"] .nav-file-title .nav-file-title-content::before,
 .workspace-leaf-content[data-type="starred"] .nav-file-icon svg.document {
 	display: none;
 }
@@ -8816,7 +8816,7 @@ body:not(.no-alternating-rows) .workspace-leaf-content[data-type="starred"] .nav
 	left: 40%;
 }
 
-.sync-history-content-empty::BEFORE {
+.sync-history-content-empty::before {
 	content: var(--signature);
 	font-size: var(--empty-state-symbol-size);
 }
@@ -9071,7 +9071,7 @@ div.card-view-container.card-view-container .markdown-preview-view :is(h1, h2, h
 	font-weight: 600;
 }
 
-.prompt.better-command-palette .suggestion-flair[aria-label="Pinned"] ~ .suggestion-content::BEFORE {
+.prompt.better-command-palette .suggestion-flair[aria-label="Pinned"] ~ .suggestion-content::before {
 	content: "☆";
 	font-style: normal;
 	padding-right: 5px;
@@ -9088,7 +9088,7 @@ div.card-view-container.card-view-container .markdown-preview-view :is(h1, h2, h
 	font-style: italic;
 }
 
-.suggestion-item.recent .suggestion-content::AFTER {
+.suggestion-item.recent .suggestion-content::after {
 	content: "◷"; /* alternatives: ◴◵◶◷ */
 	font-size: 130%;
 	font-style: normal;
@@ -9108,47 +9108,47 @@ body:not(.move-plugin-name-to-left):not(.is-mobile) .better-command-palette .sug
 
 /* file type links
 (in Reading Mode done without this plugin, see link section) */
-.data-link-icon[data-link-path$=".pdf"]::BEFORE {
+.data-link-icon[data-link-path$=".pdf"]::before {
 	content: "📕 ";
 }
 
-.data-link-icon:is([href$=".png"], [href$=".jpg"], [href$=".jpeg"], [href$=".tiff"])::BEFORE {
+.data-link-icon:is([href$=".png"], [href$=".jpg"], [href$=".jpeg"], [href$=".tiff"])::before {
 	content: "🌁 ";
 }
 
 /* tag-based */
-body:not(.no-built-in-supercharged-links) .data-link-icon[data-link-tags~="#autocompletion" i]::BEFORE { content: "🅰️ " }
-body:not(.no-built-in-supercharged-links) .data-link-icon[data-link-tags~="#mermaid" i]::BEFORE { content: "🧜‍♀️ " }
-body:not(.no-built-in-supercharged-links) .data-link-icon[data-link-tags~="#dataview" i]::BEFORE { content: "🔢 " }
-body:not(.no-built-in-supercharged-links) .data-link-icon[data-link-tags~="#templater" i]::BEFORE { content: "📄 " }
-body:not(.no-built-in-supercharged-links) .data-link-icon[data-link-tags~="#obsidian" i]::BEFORE { content: "🟪 " }
-body:not(.no-built-in-supercharged-links) .data-link-icon[data-link-tags~="#checklist" i]::BEFORE { content: "✅ " }
-body:not(.no-built-in-supercharged-links) .data-link-icon[data-link-tags~="#mindmap" i]::BEFORE { content: "🕸 " }
+body:not(.no-built-in-supercharged-links) .data-link-icon[data-link-tags~="#autocompletion" i]::before { content: "🅰️ " }
+body:not(.no-built-in-supercharged-links) .data-link-icon[data-link-tags~="#mermaid" i]::before { content: "🧜‍♀️ " }
+body:not(.no-built-in-supercharged-links) .data-link-icon[data-link-tags~="#dataview" i]::before { content: "🔢 " }
+body:not(.no-built-in-supercharged-links) .data-link-icon[data-link-tags~="#templater" i]::before { content: "📄 " }
+body:not(.no-built-in-supercharged-links) .data-link-icon[data-link-tags~="#obsidian" i]::before { content: "🟪 " }
+body:not(.no-built-in-supercharged-links) .data-link-icon[data-link-tags~="#checklist" i]::before { content: "✅ " }
+body:not(.no-built-in-supercharged-links) .data-link-icon[data-link-tags~="#mindmap" i]::before { content: "🕸 " }
 
-body:not(.no-built-in-supercharged-links) .data-link-icon[data-link-tags~="#person" i]::BEFORE { content: "👤 " }
-body:not(.no-built-in-supercharged-links) .data-link-icon[data-link-tags~="#evergreen" i]::BEFORE { content: "🌲 " }
-body:not(.no-built-in-supercharged-links) .data-link-icon[data-link-tags*="#bookmark" i]::BEFORE { content: "🔖 " }
-body:not(.no-built-in-supercharged-links) .data-link-icon[data-link-tags*="#finance" i]::BEFORE { content: "📈 " }
-body:not(.no-built-in-supercharged-links) .data-link-icon[data-link-tags*="#design" i]::BEFORE { content: "🎨 " }
-body:not(.no-built-in-supercharged-links) .data-link-icon[data-link-tags~="#moc" i]::BEFORE { content: "🗺 " }
-body:not(.no-built-in-supercharged-links) .data-link-icon[data-link-tags~="#pkm" i]::BEFORE { content: "🧠 " }
-body:not(.no-built-in-supercharged-links) .data-link-icon[data-link-tags~="#seedling" i]::BEFORE { content: "🌱 " }
-body:not(.no-built-in-supercharged-links) .data-link-icon[data-link-tags~="#archive" i]::BEFORE { content: "🗄 " }
+body:not(.no-built-in-supercharged-links) .data-link-icon[data-link-tags~="#person" i]::before { content: "👤 " }
+body:not(.no-built-in-supercharged-links) .data-link-icon[data-link-tags~="#evergreen" i]::before { content: "🌲 " }
+body:not(.no-built-in-supercharged-links) .data-link-icon[data-link-tags*="#bookmark" i]::before { content: "🔖 " }
+body:not(.no-built-in-supercharged-links) .data-link-icon[data-link-tags*="#finance" i]::before { content: "📈 " }
+body:not(.no-built-in-supercharged-links) .data-link-icon[data-link-tags*="#design" i]::before { content: "🎨 " }
+body:not(.no-built-in-supercharged-links) .data-link-icon[data-link-tags~="#moc" i]::before { content: "🗺 " }
+body:not(.no-built-in-supercharged-links) .data-link-icon[data-link-tags~="#pkm" i]::before { content: "🧠 " }
+body:not(.no-built-in-supercharged-links) .data-link-icon[data-link-tags~="#seedling" i]::before { content: "🌱 " }
+body:not(.no-built-in-supercharged-links) .data-link-icon[data-link-tags~="#archive" i]::before { content: "🗄 " }
 
 /* writing cssclass, needs *= to catch , after cssclass */
-body:not(.no-built-in-supercharged-links) .data-link-icon[data-link-cssclass*="writing"]::BEFORE { content: "✍️ " }
+body:not(.no-built-in-supercharged-links) .data-link-icon[data-link-cssclass*="writing"]::before { content: "✍️ " }
 
 /* longform index notes */
-body:not(.no-built-in-supercharged-links) .data-link-icon[data-link-drafts][data-link-version]::BEFORE { content: "⚙️ " }
+body:not(.no-built-in-supercharged-links) .data-link-icon[data-link-drafts][data-link-version]::before { content: "⚙️ " }
 
 /* kanban notes */
-body:not(.no-built-in-supercharged-links) .data-link-icon[data-link-kanban-plugin]::BEFORE { content: "🏞 " }
+body:not(.no-built-in-supercharged-links) .data-link-icon[data-link-kanban-plugin]::before { content: "🏞 " }
 
 /* literature notes */
-body:not(.no-built-in-supercharged-links) .data-link-icon[data-link-title]::BEFORE { content: "📓 " }
+body:not(.no-built-in-supercharged-links) .data-link-icon[data-link-title]::before { content: "📓 " }
 
 /* pseudo-tooltips for literature notes */
-body:not(.no-built-in-supercharged-links) .workspace-split.mod-root :is([data-link-data-href], .data-link-icon)[data-link-title]:hover::AFTER {
+body:not(.no-built-in-supercharged-links) .workspace-split.mod-root :is([data-link-data-href], .data-link-icon)[data-link-title]:hover::after {
 	content: "\""attr(data-link-title)"\""; /* stylelint-disable-line function-whitespace-after */
 
 	font-size: 0.9rem;
@@ -9347,7 +9347,7 @@ body.plugin-sliding-panes-rotate-header .workspace > .mod-root > .workspace-leaf
 	border-left: none;
 }
 
-body.plugin-sliding-panes-rotate-header .view-header-title-container::BEFORE {
+body.plugin-sliding-panes-rotate-header .view-header-title-container::before {
 	display: none;
 }
 
@@ -9690,7 +9690,7 @@ body .kanban-plugin__item-title-wrapper {
 	padding: 3px 5px 2px;
 }
 
-.kanban-plugin__item.kanban-plugin__item pre[class*="language-"]::AFTER {
+.kanban-plugin__item.kanban-plugin__item pre[class*="language-"]::after {
 	font-size: calc(var(--monospace-font-size) * 0.7);
 }
 
@@ -9745,21 +9745,21 @@ body .kanban-plugin__item {
 }
 
 /* Scrollbars */
-.kanban-plugin .kanban-plugin__lane ::-WEBKIT-SCROLLBAR {
+.kanban-plugin .kanban-plugin__lane ::-webkit-scrollbar {
 	width: calc(var(--scrollbar-thickness) * 0.6);
 }
 
-.kanban-plugin .kanban-plugin__lane ::-WEBKIT-SCROLLBAR-THUMB {
+.kanban-plugin .kanban-plugin__lane ::-webkit-scrollbar-thumb {
 	background-color: var(--bg3);
 	box-shadow: none;
 	border: none;
 }
 
-.kanban-plugin .kanban-plugin__lane ::-WEBKIT-SCROLLBAR-THUMB:hover {
+.kanban-plugin .kanban-plugin__lane ::-webkit-scrollbar-thumb:hover {
 	background-color: var(--hover-accent-3);
 }
 
-.kanban-plugin .kanban-plugin__lane ::-WEBKIT-SCROLLBAR-THUMB:active {
+.kanban-plugin .kanban-plugin__lane ::-webkit-scrollbar-thumb:active {
 	background-color: var(--scrollbar-bg-active);
 }
 
@@ -9933,12 +9933,12 @@ body:not(.no-heading-bg) .kanban-plugin :is(h1, h2, h3, h4, h5, h6) {
 	border-width: 1px;
 }
 
-.kanban-plugin .image-embed[alt]::AFTER {
+.kanban-plugin .image-embed[alt]::after {
 	display: none;
 }
 
 /* no unresolved link gutter indicator */
-.kanban-plugin__markdown-preview .is-unresolved::BEFORE {
+.kanban-plugin__markdown-preview .is-unresolved::before {
 	display: none;
 }
 
@@ -10101,7 +10101,7 @@ div#select-projects select,
 	counter-reset: sidebar;
 }
 
-#scene-list .scene-container:not([data-scene-path*="/_"]):not([data-scene-path*="Acknowledgements" i]):not([data-scene-path*="Notes for the Reader" i]):not([data-scene-path*="Appendix" i]):not([data-scene-path*="Metadata" i])::BEFORE {
+#scene-list .scene-container:not([data-scene-path*="/_"]):not([data-scene-path*="Acknowledgements" i]):not([data-scene-path*="Notes for the Reader" i]):not([data-scene-path*="Appendix" i]):not([data-scene-path*="Metadata" i])::before {
 	content: counter(sidebar) ".";
 	padding-right: 5px;
 	counter-increment: sidebar;
@@ -10122,7 +10122,7 @@ div#select-projects select,
 	letter-spacing: 0.1px;
 }
 
-#scene-list .scene-container[data-scene-path*="/_"]::BEFORE {
+#scene-list .scene-container[data-scene-path*="/_"]::before {
 	content: "  ";
 	white-space: pre-wrap;
 	background-color: var(--bg2);
@@ -10130,7 +10130,7 @@ div#select-projects select,
 	right: -8px;
 }
 
-.view-content #scene-list .sortable-scene-list li .scene-container:is(:hover, .selected)::BEFORE {
+.view-content #scene-list .sortable-scene-list li .scene-container:is(:hover, .selected)::before {
 	background-color: var(--bg3);
 }
 
@@ -10143,7 +10143,7 @@ div#select-projects select,
 	--scene-list-b-row: hsl(var(--bg-dark-hue) var(--sat-dark-2) calc(var(--brightness-dark-2) - 2%));
 }
 
-#scene-list li:nth-child(even) .scene-container[data-scene-path*="/_"]::BEFORE {
+#scene-list li:nth-child(even) .scene-container[data-scene-path*="/_"]::before {
 	background-color: var(--scene-list-b-row);
 }
 
@@ -10158,7 +10158,7 @@ body:not(.no-alternating-rows) li:nth-child(even) :is(.draft-container, .scene-c
 	border-bottom: var(--basic-border);
 }
 
-.workspace-leaf-content[data-type="VIEW_TYPE_LONGFORM_EXPLORER"] button::BEFORE {
+.workspace-leaf-content[data-type="VIEW_TYPE_LONGFORM_EXPLORER"] button::before {
 	font-family: var(--icon-font);
 	font-size: calc(1.2 * var(--font-text-size));
 }
@@ -10181,21 +10181,21 @@ body:not(.no-alternating-rows) li:nth-child(even) :is(.draft-container, .scene-c
 	border-radius: var(--roundish);
 }
 
-.workspace-leaf-content[data-type="VIEW_TYPE_LONGFORM_EXPLORER"] .tab-list button::BEFORE {
+.workspace-leaf-content[data-type="VIEW_TYPE_LONGFORM_EXPLORER"] .tab-list button::before {
 	position: relative;
 	bottom: 4px;
 	left: 2px;
 }
 
-.workspace-leaf-content[data-type="VIEW_TYPE_LONGFORM_EXPLORER"] .tab-list button:nth-child(1)::BEFORE {
+.workspace-leaf-content[data-type="VIEW_TYPE_LONGFORM_EXPLORER"] .tab-list button:nth-child(1)::before {
 	content: "format_list_numbered";
 }
 
-.workspace-leaf-content[data-type="VIEW_TYPE_LONGFORM_EXPLORER"] .tab-list button:nth-child(2)::BEFORE {
+.workspace-leaf-content[data-type="VIEW_TYPE_LONGFORM_EXPLORER"] .tab-list button:nth-child(2)::before {
 	content: "import_contacts";
 }
 
-.workspace-leaf-content[data-type="VIEW_TYPE_LONGFORM_EXPLORER"] .tab-list button:nth-child(3)::BEFORE {
+.workspace-leaf-content[data-type="VIEW_TYPE_LONGFORM_EXPLORER"] .tab-list button:nth-child(3)::before {
 	content: "merge_type";
 }
 
@@ -10212,11 +10212,11 @@ be messed with anyway */
 }
 
 /* icons for file explorer */
-.nav-file-title[data-path$="Index.md"] .nav-file-title-content::BEFORE {
+.nav-file-title[data-path$="Index.md"] .nav-file-title-content::before {
 	content: "settings";
 }
 
-.nav-folder-title[data-path$="Drafts"] .nav-folder-title-content.nav-folder-title-content.nav-folder-title-content::BEFORE {
+.nav-folder-title[data-path$="Drafts"] .nav-folder-title-content.nav-folder-title-content.nav-folder-title-content::before {
 	content: "folder_special";
 }
 
@@ -10309,7 +10309,7 @@ button.longform-remove-step-button.longform-remove-step-button.longform-remove-s
 	border: var(--basic-border);
 }
 
-.longform-workflow-picker-container.longform-workflow-picker-container textarea::PLACEHOLDER {
+.longform-workflow-picker-container.longform-workflow-picker-container textarea::placeholder {
 	color: var(--text-faint);
 }
 
@@ -10335,7 +10335,7 @@ button.options-button.options-button.options-button.options-button.options-butto
 	border-radius: var(--roundish);
 }
 
-button.options-button.options-button::BEFORE {
+button.options-button.options-button::before {
 	content: "☰";
 	font-size: calc(1.6 * var(--font-text-size));
 	font-weight: 900;
@@ -10452,7 +10452,7 @@ body:not(.longform-left-aligned) :is(.writing, .longform-leaf) :is(p, .footnotes
 }
 
 /* fix for code block header hack */
-.app-container :is(.writing, .longform-leaf) pre[class*="language-"]::BEFORE {
+.app-container :is(.writing, .longform-leaf) pre[class*="language-"]::before {
 	line-height: 1.3em;
 }
 
@@ -10550,11 +10550,11 @@ body:not(.show-title-bar) > .qe-popup-menu {
 }
 
 /* hover & select colors */
-.menu.qe-popup-menu .menu-item:is(:hover, .selected)::BEFORE {
+.menu.qe-popup-menu .menu-item:is(:hover, .selected)::before {
 	color: var(--hover-accent-2);
 }
 
-.menu.qe-popup-menu .menu-item.selected::BEFORE {
+.menu.qe-popup-menu .menu-item.selected::before {
 	color: var(--active-text-color);
 }
 
@@ -10563,7 +10563,7 @@ body:not(.show-title-bar) > .qe-popup-menu {
 }
 
 /* icons */
-.menu.qe-popup-menu .menu-item::BEFORE {
+.menu.qe-popup-menu .menu-item::before {
 	font-family: var(--icon-font);
 	padding-right: 4px;
 }
@@ -10572,11 +10572,11 @@ body:not(.show-title-bar) > .qe-popup-menu {
 	display: none;
 }
 
-.menu.qe-popup-menu .menu-item.is-qe-folder::BEFORE {
+.menu.qe-popup-menu .menu-item.is-qe-folder::before {
 	content: "folder";
 }
 
-.menu.qe-popup-menu .menu-item.is-qe-file::BEFORE {
+.menu.qe-popup-menu .menu-item.is-qe-file::before {
 	content: "description";
 }
 
@@ -10664,7 +10664,7 @@ button.MS-OpenSnippet:hover svg.ms-snippet path {
 }
 
 /* bottom half spacing */
-#all-container :is(li, ul, ul::BEFORE) {
+#all-container :is(li, ul, ul::before) {
 	border: none !important;
 }
 
@@ -10753,7 +10753,7 @@ button.MS-OpenSnippet:hover svg.ms-snippet path {
 	margin: 0;
 }
 
-.BC-Matrix ol > li::MARKER {
+.BC-Matrix ol > li::marker {
 	content: none;
 }
 
@@ -10771,7 +10771,7 @@ button.MS-OpenSnippet:hover svg.ms-snippet path {
 }
 
 /* remove gutter indicators as unecessary here */
-.BC-Link.is-unresolved::BEFORE {
+.BC-Link.is-unresolved::before {
 	display: none;
 }
 
@@ -10781,7 +10781,7 @@ button.MS-OpenSnippet:hover svg.ms-snippet path {
 }
 
 /* no unresolved link gutter indicator */
-.BC-link.is-unresolved::BEFORE {
+.BC-link.is-unresolved::before {
 	display: none;
 }
 
@@ -10897,7 +10897,7 @@ body:not(.no-alternating-rows) .BC-Matrix-square li:nth-child(even) {
 	border: none !important;
 }
 
-.BC-trail button::BEFORE {
+.BC-trail button::before {
 	content: "unfold_more";
 	font-family: var(--icon-font);
 	font-size: calc(1.1 * var(--font-text-size));
@@ -10909,7 +10909,7 @@ body:not(.no-alternating-rows) .BC-Matrix-square li:nth-child(even) {
 	background: none !important;
 }
 
-.BC-trail button:hover::BEFORE {
+.BC-trail button:hover::before {
 	color: var(--hover-accent-2);
 }
 
@@ -11000,7 +11000,7 @@ body :is(#search-res-hover, #block-ref-hover).show:hover {
 	overflow-x: hidden;
 }
 
-#dangling-links li::MARKER {
+#dangling-links li::marker {
 	content: "";
 }
 
@@ -11060,7 +11060,7 @@ body :is(#search-res-hover, #block-ref-hover).show:hover {
 	padding: 8px 8px 6px;
 }
 
-.block-language-dataview pre.dataview-error::BEFORE {
+.block-language-dataview pre.dataview-error::before {
 	display: none;
 }
 
@@ -11209,11 +11209,11 @@ body .qsp-symbol-indicator {
 }
 
 /* starred item bold */
-.another-quick-switcher__starred_item::BEFORE {
+.another-quick-switcher__starred_item::before {
 	display: none;
 }
 
-.another-quick-switcher__starred_item .another-quick-switcher__item__entry::BEFORE {
+.another-quick-switcher__starred_item .another-quick-switcher__item__entry::before {
 	content: "☆";
 	padding-right: 5px;
 }
@@ -11342,7 +11342,7 @@ body .style-settings-heading[data-level="0"] .setting-item-name.setting-item-nam
 	margin-top: -33px;
 }
 
-body:not(.show-scrollbar) .workspace-split.mod-root .workspace-leaf-content[data-type="style-settings"] ::-WEBKIT-SCROLLBAR {
+body:not(.show-scrollbar) .workspace-split.mod-root .workspace-leaf-content[data-type="style-settings"] ::-webkit-scrollbar {
 	display: none;
 }
 
@@ -11396,14 +11396,14 @@ a:is(.style-settings-export, .style-settings-import) {
 }
 
 /* blinking signature */
-.style-settings-heading[data-id="shimmering-focus"] .setting-item-name::AFTER {
+.style-settings-heading[data-id="shimmering-focus"] .setting-item-name::after {
 	content: var(--signature);
 	font-size: 1.4rem;
 	line-height: 0.8rem;
 	padding-left: 7px;
 }
 
-body:not(.no-animations) .style-settings-heading[data-id="shimmering-focus"]:not(:hover) .setting-item-name::AFTER {
+body:not(.no-animations) .style-settings-heading[data-id="shimmering-focus"]:not(:hover) .setting-item-name::after {
 	animation-duration: 8s;
 	animation-name: signature-blink;
 	animation-iteration-count: infinite;
@@ -11441,7 +11441,7 @@ body:not(.no-animations) .style-settings-heading[data-id="shimmering-focus"]:not
 	background: var(--hue-scale);
 }
 
-.style-settings-container .setting-item:is([data-id^="highlight-hue-"], [data-id$="-hue"], [data-id^="tint-"]) input.slider::-WEBKIT-SLIDER-THUMB {
+.style-settings-container .setting-item:is([data-id^="highlight-hue-"], [data-id$="-hue"], [data-id^="tint-"]) input.slider::-webkit-slider-thumb {
 	height: 1.9em;
 	width: 0.4em;
 
@@ -11455,7 +11455,7 @@ body:not(.no-animations) .style-settings-heading[data-id="shimmering-focus"]:not
 }
 
 /* demo color box: highlight colors */
-.style-settings-container .setting-item[data-id^="highlight-hue-"] .setting-item-control::BEFORE {
+.style-settings-container .setting-item[data-id^="highlight-hue-"] .setting-item-control::before {
 	font-size: 0.7em;
 	line-height: 1.8em;
 	text-align: center;
@@ -11475,31 +11475,31 @@ body:not(.no-animations) .style-settings-heading[data-id="shimmering-focus"]:not
 	border-radius: var(--roundish);
 }
 
-.style-settings-container .setting-item[data-id="highlight-hue-1"] .setting-item-control::BEFORE {
+.style-settings-container .setting-item[data-id="highlight-hue-1"] .setting-item-control::before {
 	content: "==highlight==";
 	background-color: hsl(var(--highlight-hue-1) var(--highlight-sla-values));
 }
 
-.style-settings-container .setting-item[data-id="highlight-hue-2"] .setting-item-control::BEFORE {
+.style-settings-container .setting-item[data-id="highlight-hue-2"] .setting-item-control::before {
 	content: "*==highlight==*";
 	background-color: hsl(var(--highlight-hue-2) var(--highlight-sla-values));
 }
 
-.style-settings-container .setting-item[data-id="highlight-hue-3"] .setting-item-control::BEFORE {
+.style-settings-container .setting-item[data-id="highlight-hue-3"] .setting-item-control::before {
 	content: "**==highlight==**";
 	background-color: hsl(var(--highlight-hue-3) var(--highlight-sla-values));
 }
 
 /* demo box: longform hue shift */
-.setting-item[data-id="longform-hue-shift-light"] .setting-item-control::BEFORE {
+.setting-item[data-id="longform-hue-shift-light"] .setting-item-control::before {
 	background-color: hsl(var(--longform-light-hue) 45% 90%);
 }
 
-.setting-item[data-id="longform-hue-shift-dark"] .setting-item-control::BEFORE {
+.setting-item[data-id="longform-hue-shift-dark"] .setting-item-control::before {
 	background-color: hsl(var(--longform-dark-hue) 40% 25%);
 }
 
-.style-settings-container .setting-item[data-id^="longform-hue-shift"] .setting-item-control::BEFORE {
+.style-settings-container .setting-item[data-id^="longform-hue-shift"] .setting-item-control::before {
 	content: " ";
 
 	white-space: pre-wrap;
@@ -11548,13 +11548,13 @@ body:not(.unlock-theme-beta) .style-settings-container .setting-item:is(
 .unlock-theme-beta .style-settings-container .setting-item:is(
 	[data-id="aesthetics"],
 	[data-id="callout-options"]
-).is-collapsed::AFTER,
+).is-collapsed::after,
 .unlock-theme-beta .style-settings-container .setting-item:is(
 	[data-id="post-it-callout-size"],
 
 	[data-id*="-accent-"],
 	[data-id="preset-color-scheme"],
-[data-id="unlock-theme-beta"])::BEFORE {
+[data-id="unlock-theme-beta"])::before {
 	content: "Beta";
 
 	font-family: var(--font-interface);
@@ -11619,8 +11619,8 @@ body:not(.unlock-theme-beta) .style-settings-container .setting-item:is(
 	flex-wrap: wrap;
 }
 
-.modal .setting-item-heading[data-id="shimmering-focus"]::BEFORE,
-.workspace-leaf-content[data-type="style-settings"] > .view-content > .setting-item:first-child::BEFORE {
+.modal .setting-item-heading[data-id="shimmering-focus"]::before,
+.workspace-leaf-content[data-type="style-settings"] > .view-content > .setting-item:first-child::before {
 	display: block;
 	content: "ℹ️ Theme Documentation:   chrisgrieser.github.io/shimmering-focus\A🔍 Install the Settings Search Plugin to find settings more quickly.";
 
@@ -11643,12 +11643,12 @@ body:not(.unlock-theme-beta) .style-settings-container .setting-item:is(
 	pointer-events: none;
 }
 
-.modal .setting-item-heading[data-id="shimmering-focus"]::BEFORE {
+.modal .setting-item-heading[data-id="shimmering-focus"]::before {
 	font-size: 0.9rem;
 	margin: -3.5em 3em 3em 0;
 }
 
-.workspace-leaf-content[data-type="style-settings"] > .view-content > .setting-item:first-child::BEFORE {
+.workspace-leaf-content[data-type="style-settings"] > .view-content > .setting-item:first-child::before {
 	font-size: 0.8rem;
 }
 
@@ -11794,7 +11794,7 @@ body div.get-info-menu > div > div {
 	text-decoration: none !important;
 }
 
-.lt-status-bar-check-icon::BEFORE {
+.lt-status-bar-check-icon::before {
 	content: "spellcheck";
 	font-family: var(--icon-font);
 	font-size: var(--status-bar-font-size);
@@ -11845,14 +11845,14 @@ svg.sync-small {
 }
 
 /* the icon */
-.various-complements__suggestion-item.various-complements__suggestion-item::BEFORE {
+.various-complements__suggestion-item.various-complements__suggestion-item::before {
 	height: 0.9em;
 	width: 0.9em;
 	margin-top: 2px;
 }
 
 /* the alias icon */
-.various-complements__suggestion-item__content__alias::BEFORE {
+.various-complements__suggestion-item__content__alias::before {
 	position: relative;
 	top: -2px;
 }
@@ -11879,7 +11879,7 @@ svg.sync-small {
 	padding-left: 25px;
 }
 
-.various-complements__settings__header::BEFORE {
+.various-complements__settings__header::before {
 	transform: scale(0.8);
 }
 
@@ -12105,7 +12105,7 @@ body .cm-matched-string {
 	bottom: 2px;
 }
 
-.status-bar-item.plugin-obsidian-show-file-path::BEFORE {
+.status-bar-item.plugin-obsidian-show-file-path::before {
 	content: "folder";
 	font-family: var(--icon-font);
 	position: relative;
@@ -12164,7 +12164,7 @@ body .cm-active-visual-line {
 	border-radius: var(--roundish);
 }
 
-.markdown-preview-view .codeblock-label + pre[class*="language-"]::AFTER {
+.markdown-preview-view .codeblock-label + pre[class*="language-"]::after {
 	font-style: italic;
 	color: var(--text-faint);
 	opacity: 0.8;
@@ -12309,7 +12309,7 @@ and file recovery plugin */
 	padding: 0;
 }
 
-.NLT__table.NLT__table .tag::AFTER {
+.NLT__table.NLT__table .tag::after {
 	display: none;
 }
 
@@ -12428,7 +12428,7 @@ and file recovery plugin */
 	background-color: var(--alt-bg);
 }
 
-.hover-editor ::-WEBKIT-SCROLLBAR {
+.hover-editor ::-webkit-scrollbar {
 	display: unset;
 }
 
@@ -12436,7 +12436,7 @@ and file recovery plugin */
 	border-radius: calc(var(--roundish) * 1.5);
 }
 
-.hover-editor .popover-title::AFTER {
+.hover-editor .popover-title::after {
 	display: none;
 }
 
@@ -12490,7 +12490,7 @@ and file recovery plugin */
 }
 
 /* info on style settings, since already styled by this theme */
-.style-settings-heading[data-id="hover-editor"]:not(.is-collapsed) + .style-settings-container::BEFORE {
+.style-settings-heading[data-id="hover-editor"]:not(.is-collapsed) + .style-settings-container::before {
 	display: inline-block;
 	content: "⚠️ Note that some of the settings for the Hover Editor have no effect, since they are overriden when in conflict with the styling from 'Shimmering Focus'.";
 
@@ -12534,11 +12534,11 @@ and file recovery plugin */
 	background-color: var(--bg2);
 }
 
-body:not(.no-alternating-rows) .omnisearch-result:nth-child(odd) .omnisearch-result__counter::AFTER {
+body:not(.no-alternating-rows) .omnisearch-result:nth-child(odd) .omnisearch-result__counter::after {
 	background-color: var(--suggester-b-row);
 }
 
-.omnisearch-result.omnisearch-result.omnisearch-result.omnisearch-result:is(:hover, .is-selected) .omnisearch-result__counter::AFTER {
+.omnisearch-result.omnisearch-result.omnisearch-result.omnisearch-result:is(:hover, .is-selected) .omnisearch-result__counter::after {
 	background-color: var(--bg3);
 }
 
@@ -12884,7 +12884,7 @@ settings:
   -
    id: preset-color-scheme
    title: "Color Schemes"
-   description: 'Select "🌈 Custom Colors" to fully customize background colors and accent colors (soon™️) yourself.'
+   description: 'Select "💫 Custom Colors" to fully customize background colors and accent colors (soon™️) yourself.'
    type: class-select
    allowEmpty: false
    default: classic-colors
