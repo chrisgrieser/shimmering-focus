@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 1.1459
+Version 1.1460
 Source CSS: https://github.com/chrisgrieser/shimmering-focus/blob/main/source.css
 MIT License
 ──────────────────────────────────────────────────── */
@@ -414,7 +414,7 @@ MIT License
 }
 
 /* readability improvement */
-.theme-light:is(.custom-colors.primary-accent-light-cyan, .gamma-colors) :is(.cm-hmd-internal-link, .cm-link) {
+.theme-light:is(.custom-colors.primary-accent-light-cyan, .gamma-colors) :is(.cm-hmd-internal-link, .cm-link:not(.cm-hmd-barelink)) {
 	text-shadow: 0.2px 0.2px 0 var(--cyan-blue-2);
 }
 
@@ -1833,12 +1833,12 @@ body:not(.no-grayed-out-inactive-pane) {
 	font-family: var(--font-monospace);
 	font-size: 0.7rem;
 	font-weight: 500;
-	line-height: 1.3rem;
+	line-height: 0.8rem;
 	letter-spacing: 0.4px;
 	text-transform: uppercase;
 	text-align: center;
 
-	height: 1.2rem;
+	height: 0.8rem;
 	width: 3rem;
 
 	background-color: var(--alt-bg);
