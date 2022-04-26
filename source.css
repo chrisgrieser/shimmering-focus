@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 1.1483
+Version 1.1484
 Source CSS: https://github.com/chrisgrieser/shimmering-focus/blob/main/source.css
 MIT License
 ──────────────────────────────────────────────────── */
@@ -5456,32 +5456,32 @@ body:not(.permanently-show-collapse-indicators) .cm-line:not(:hover):not(.cm-act
 	opacity: 1;
 }
 
-.relative-line-numbering .cm-lineNumbers .cm-gutterElement.cm-active ~ .cm-gutterElement::before {
+.relative-line-numbering .cm-lineNumbers .cm-gutterElement.cm-active ~ .cm-gutterElement::after {
 	font-size: var(--font-text-size);
 	margin-right: -1px;
 }
 
-.relative-line-numbering .cm-lineNumbers .cm-gutterElement.cm-active + .cm-gutterElement::before {
+.relative-line-numbering .cm-lineNumbers .cm-gutterElement.cm-active + .cm-gutterElement::after {
 	content: "2";
 }
 
-.relative-line-numbering .cm-lineNumbers .cm-gutterElement.cm-active + .cm-gutterElement + .cm-gutterElement::before {
+.relative-line-numbering .cm-lineNumbers .cm-gutterElement.cm-active + .cm-gutterElement + .cm-gutterElement::after {
 	content: "3";
 }
 
-.relative-line-numbering .cm-lineNumbers .cm-gutterElement.cm-active + .cm-gutterElement + .cm-gutterElement + .cm-gutterElement::before {
+.relative-line-numbering .cm-lineNumbers .cm-gutterElement.cm-active + .cm-gutterElement + .cm-gutterElement + .cm-gutterElement::after {
 	content: "4";
 }
 
-.relative-line-numbering .cm-lineNumbers .cm-gutterElement.cm-active + .cm-gutterElement + .cm-gutterElement + .cm-gutterElement + .cm-gutterElement::before {
+.relative-line-numbering .cm-lineNumbers .cm-gutterElement.cm-active + .cm-gutterElement + .cm-gutterElement + .cm-gutterElement + .cm-gutterElement::after {
 	content: "5";
 }
 
-.relative-line-numbering .cm-lineNumbers .cm-gutterElement.cm-active + .cm-gutterElement + .cm-gutterElement + .cm-gutterElement + .cm-gutterElement + .cm-gutterElement::before {
+.relative-line-numbering .cm-lineNumbers .cm-gutterElement.cm-active + .cm-gutterElement + .cm-gutterElement + .cm-gutterElement + .cm-gutterElement + .cm-gutterElement::after {
 	content: "6";
 }
 
-.relative-line-numbering .cm-lineNumbers .cm-gutterElement.cm-active + .cm-gutterElement + .cm-gutterElement + .cm-gutterElement + .cm-gutterElement + .cm-gutterElement + .cm-gutterElement::before {
+.relative-line-numbering .cm-lineNumbers .cm-gutterElement.cm-active + .cm-gutterElement + .cm-gutterElement + .cm-gutterElement + .cm-gutterElement + .cm-gutterElement + .cm-gutterElement::after {
 	content: "7";
 }
 
