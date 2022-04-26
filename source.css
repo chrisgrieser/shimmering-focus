@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 1.1475
+Version 1.1476
 Source CSS: https://github.com/chrisgrieser/shimmering-focus/blob/main/source.css
 MIT License
 ──────────────────────────────────────────────────── */
@@ -268,7 +268,7 @@ MIT License
  	- Views & Media (+)
  	- Callouts (+)
  	- Special Syntax (+)
- 	- Cursor (+)
+ 	- Cursor & Vim Mode (+)
  	- Code Blocks (+)
  	- Mobile (+)
  	- Plugin-Specific Settings (+)
@@ -1834,15 +1834,15 @@ body:not(.no-grayed-out-inactive-pane) {
 .cm-vim-panel div span::BEFORE,
 .cm-selectionLayer::BEFORE {
 	font-family: var(--font-monospace);
-	font-size: 0.7rem;
+	font-size: 0.8rem;
 	font-weight: 500;
-	line-height: 0.8rem;
-	letter-spacing: 0.4px;
+	line-height: 1.32rem;
+	letter-spacing: 0.3px;
 	text-transform: uppercase;
 	text-align: center;
 
-	height: 0.8rem;
-	width: 3rem;
+	height: 1.3rem;
+	width: 3.8rem;
 
 	background-color: var(--alt-bg);
 	box-shadow: var(--small-inset-shadow);
@@ -1852,10 +1852,20 @@ body:not(.no-grayed-out-inactive-pane) {
 	top: 0;
 	left: 0;
 
-	padding: 2px;
+	padding: 1px 2px;
 
 	border: var(--thin-border);
 	border-radius: 0 0 var(--roundish) 0;
+}
+
+.bottom-vim-indicator :is(.cm-vim-panel div span, .cm-selectionLayer)::BEFORE {
+	top: unset;
+	bottom: 0;
+	border-radius: 0 var(--roundish) 0 0;
+}
+
+.bottom-vim-indicator .cm-vim-panel div span::BEFORE {
+	background-color: var(--bg1);
 }
 
 .theme-light :is(.cm-vim-panel div span, .cm-selectionLayer)::BEFORE {
@@ -1879,7 +1889,7 @@ body:not(.no-grayed-out-inactive-pane) {
 
 .cm-vim-panel div span:only-child::BEFORE {
 	content: "Command";
-	font-size: 0.6rem;
+	font-size: 0.75rem;
 	color: var(--extra-contrast);
 }
 
@@ -1894,7 +1904,7 @@ body:not(.no-grayed-out-inactive-pane) {
 ──────────────────────────────────────────────────── */
 .cm-vim-panel {
 	/* avoid collision with status bar */
-	margin-bottom: calc(var(--status-bar-height) - 0.6em);
+	height: calc(var(--status-bar-height) + 1.75rem);
 }
 
 .theme-dark .cm-vim-panel input {
@@ -10434,15 +10444,15 @@ body:not(.longform-left-aligned) :is(.writing, .longform-leaf) :is(p, .footnotes
 /* line height */
 :is(.writing, .longform-leaf) :is(.cm-line, table),
 :is(.writing, .longform-leaf) .cm-line > :not(.cm-header, .cm-hmd-frontmatter) {
-	line-height: 1.2em;
+	line-height: 1.3em;
 }
 
 :is(.writing, .longform-leaf) .cm-line > :is(.cm-header, .cm-hmd-frontmatter) {
 	line-height: 1em;
 }
 
+/* fix for code block header hack */
 .app-container :is(.writing, .longform-leaf) pre[class*="language-"]::BEFORE {
-	/* fix for code block header hack */
 	line-height: 1.3em;
 }
 
@@ -13544,7 +13554,7 @@ settings:
    type: class-toggle
    default: false
   -
-# << Cursor (+)
+# << Cursor & Vim Mode (+)
    id: cursor-settings
    title: 🖱 Cursor & Vim Mode
    description: Thickness, Style, Color, Blinking, Block Cursor,🆕 Vim Cursor,🆕 Vim Mode Indicator
@@ -13612,7 +13622,7 @@ settings:
       value: thin-cursor
   -
    id: vim-cursor-look
-   title: Vim Cursor Style
+   title: 🆕 Vim Cursor Style
    description: The look of the cursor when using Vim in Normal Mode.
    type: class-select
    allowEmpty: false
@@ -13625,11 +13635,22 @@ settings:
       label: Theme Accent
       value: vim-cursor-theme-accent
   -
-   id: vim-no-mode-indicator
-   title: Disable Vim Mode Indicator
-   description: 'Turn off the Vim Mode Indicator in the top right. (The indicator can only identify Normal, Insert, and Visual Mode.)'
-   type: class-toggle
-   default: false
+   id: vim-mode-indicator
+   title: 🆕 Vim Mode Indicator
+   description: "Select the position of the indicator, that shows the current Vim mode, or disable it entirely. Note that 'Bottom' will conflict with with long status bars."
+   type: class-select
+   allowEmpty: false
+   default: top-vim-indicator
+   options:
+    -
+      label: Top
+      value: top-vim-indicator
+    -
+      label: Bottom
+      value: bottom-vim-indicator
+    -
+      label: No Mode Indicator
+      value: no-vim-indicator
   -
 # << Code Blocks (+)
    id: code-blocks-options
