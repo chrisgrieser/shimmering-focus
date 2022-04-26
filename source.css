@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 1.1470
+Version 1.1471
 Source CSS: https://github.com/chrisgrieser/shimmering-focus/blob/main/source.css
 MIT License
 ──────────────────────────────────────────────────── */
@@ -9985,8 +9985,8 @@ body:not(.no-heading-bg) .kanban-plugin :is(h1, h2, h3, h4, h5, h6) {
 }
 
 /* shadow of dragging */
-:is(#draft-list, #scene-list) .sortable-chosen {
-	background-color: none;
+:is(#draft-list, #scene-list) .scene-ghost {
+	background-color: transparent;
 	border: none;
 	border-radius: var(--roundish);
 }
