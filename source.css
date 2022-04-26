@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 1.1471
+Version 1.1472
 Source CSS: https://github.com/chrisgrieser/shimmering-focus/blob/main/source.css
 MIT License
 ──────────────────────────────────────────────────── */
@@ -1787,6 +1787,8 @@ body:not(.no-grayed-out-inactive-pane) {
 
 /* unfocused */
 .cm-editor:not(.cm-focused) .cm-fat-cursor {
+	color: transparent;
+	background-color: transparent;
 	outline: 2px solid;
 	outline-offset: -1px;
 }
