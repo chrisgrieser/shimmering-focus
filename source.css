@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 1.1472
+Version 1.1473
 Source CSS: https://github.com/chrisgrieser/shimmering-focus/blob/main/source.css
 MIT License
 ──────────────────────────────────────────────────── */
@@ -743,13 +743,14 @@ body.strong-em-secondary-accent {
 /* <<< Longform & Writing Background Calculations
 ──────────────────────────────────────────────────── */
 :root {
-	--longform-hue-shift: 25;
+	--longform-hue-shift-light: 25;
+	--longform-hue-shift-dark: 25;
 }
 
 .theme-light,
 .theme-dark {
-	--longform-light-hue: calc(var(--bg-light-hue) + var(--longform-hue-shift));
-	--longform-dark-hue: calc(var(--bg-dark-hue) + var(--longform-hue-shift));
+	--longform-light-hue: calc(var(--bg-light-hue) + var(--longform-hue-shift-light));
+	--longform-dark-hue: calc(var(--bg-dark-hue) + var(--longform-hue-shift-dark));
 }
 
 .theme-light :is(.writing, .longform-leaf) {
@@ -9988,7 +9989,7 @@ body:not(.no-heading-bg) .kanban-plugin :is(h1, h2, h3, h4, h5, h6) {
 
 /* shadow of dragging */
 :is(#draft-list, #scene-list) .scene-ghost {
-	background-color: transparent;
+	background-color: var(--bg1);
 	border: none;
 	border-radius: var(--roundish);
 }
@@ -11482,23 +11483,21 @@ body:not(.no-animations) .style-settings-heading[data-id="shimmering-focus"]:not
 }
 
 /* demo box: longform hue shift */
-.theme-dark .setting-item[data-id="longform-hue-shift"] {
-	--demo-color: hsl(var(--longform-dark-hue) 70% var(--brightness-dark-1));
+.setting-item[data-id="longform-hue-shift-light"] .setting-item-control::BEFORE {
+	background-color: hsl(var(--longform-light-hue) 45% 90%);
 }
 
-.theme-light .setting-item[data-id="longform-hue-shift"] {
-	--demo-color: hsl(var(--longform-light-hue) 70% var(--brightness-light-1));
+.setting-item[data-id="longform-hue-shift-dark"] .setting-item-control::BEFORE {
+	background-color: hsl(var(--longform-dark-hue) 40% 25%);
 }
 
-.style-settings-container .setting-item[data-id="longform-hue-shift"] .setting-item-control::BEFORE {
+.style-settings-container .setting-item[data-id^="longform-hue-shift"] .setting-item-control::BEFORE {
 	content: " ";
 
 	white-space: pre-wrap;
 
 	height: 1.6em;
 	width: 1.6em;
-
-	background-color: var(--demo-color);
 
 	position: relative;
 	left: -1.2em;
@@ -11507,7 +11506,7 @@ body:not(.no-animations) .style-settings-heading[data-id="shimmering-focus"]:not
 	border-radius: var(--roundish);
 }
 
-.style-settings-container .setting-item[data-id="longform-hue-shift"] .setting-item-info {
+.style-settings-container .setting-item[data-id^="longform-hue-shift"] .setting-item-info {
 	margin-right: 40px;
 }
 
@@ -13853,11 +13852,20 @@ settings:
    type: class-toggle
    default: false
   -
-   id: longform-hue-shift
-   title: Background Color Shift
+   id: longform-hue-shift-light
+   title: Background Color Shift (Light Mode)
    description: 'Degree to which longform and writing notes have a different color tone than normal notes (i.e., hue added/substracted). Setting this to "0" will make longform projects have the same background color as other notes. (Note that custom colors settings with a low saturation or very high/low brightness will values make the color shift less noticeable.)'
    type: variable-number-slider
-   default: 15
+   default: 25
+   min: -180
+   max: 180
+   step: 5
+  -
+   id: longform-hue-shift-dark
+   title: Background Color Shift (Dark Mode)
+   description: 'Degree to which longform and writing notes have a different color tone than normal notes (i.e., hue added/substracted). Setting this to "0" will make longform projects have the same background color as other notes. (Note that custom colors settings with a low saturation or very high/low brightness will values make the color shift less noticeable.)'
+   type: variable-number-slider
+   default: 25
    min: -180
    max: 180
    step: 5

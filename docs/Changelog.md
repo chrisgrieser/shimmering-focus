@@ -3,7 +3,7 @@ nav_order: 110
 ---
 
 # Changelog
-- 2022-04-26	patch
+- 2022-04-26	different longform background color hue shift for dark & light mode
 - 2022-04-26	longform sidebar fixes
 - 2022-04-26	slight readability improvements
 - 2022-04-26	reworked highlight colors
