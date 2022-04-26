@@ -3,6 +3,7 @@ nav_order: 110
 ---
 
 # Changelog
+- 2022-04-26	patch
 - 2022-04-26	color tweaks
 - 2022-04-26	emoji font fallback
 - 2022-04-26	line numbering hover fixes
