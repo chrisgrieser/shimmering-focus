@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 1.1474
+Version 1.1475
 Source CSS: https://github.com/chrisgrieser/shimmering-focus/blob/main/source.css
 MIT License
 ──────────────────────────────────────────────────── */
@@ -10068,7 +10068,7 @@ div#select-projects select {
 div#select-projects select,
 #project-picker select {
 	white-space: nowrap;
-	color: var(--extra-contrast);
+	color: var(--text-normal);
 	overflow: hidden;
 	text-overflow: ellipsis;
 }
