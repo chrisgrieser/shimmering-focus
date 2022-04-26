@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 1.1453
+Version 1.1454
 Source CSS: https://github.com/chrisgrieser/shimmering-focus/blob/main/source.css
 MIT License
 ──────────────────────────────────────────────────── */
@@ -7108,8 +7108,8 @@ body:not(.no-unresolved-link-indicator) .is-unresolved::BEFORE {
 	margin-top: -3px; /* move up to accounts for double unterline */
 }
 
-body:not(.no-unresolved-link-indicator) .cm-editor .is-unresolved::BEFORE {
-	left: -2.35em;
+body:not(.no-unresolved-link-indicator) .is-live-preview .is-unresolved::BEFORE {
+	left: -3em;
 }
 
 body:not(.no-unresolved-link-indicator) .markdown-preview-view .is-unresolved::BEFORE {
@@ -7912,6 +7912,10 @@ body.is-mobile .markdown-preview-view blockquote {
 
 /* hide vault title */
 body:not(.show-vault-in-file-explorer) .nav-folder.mod-root > .nav-folder-title {
+	display: none;
+}
+
+body:not(.show-file-explorer-navigation) .nav-buttons-container {
 	display: none;
 }
 
