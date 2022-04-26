@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 1.1457
+Version 1.1458
 Source CSS: https://github.com/chrisgrieser/shimmering-focus/blob/main/source.css
 MIT License
 ──────────────────────────────────────────────────── */
@@ -303,7 +303,7 @@ MIT License
 /* calculations */
 .theme-light {
 	--high-sat-of-grays: calc(var(--sat-of-grays-light) * 4.5);
-	--medium-sat-of-grays: calc(var(--sat-of-grays-light) * 2);
+	--medium-sat-of-grays: calc(var(--sat-of-grays-light) * 1.6);
 
 	--text-normal: hsl(var(--tint-of-grays-light) var(--high-sat-of-grays) 20%);
 	--extra-contrast: hsl(var(--tint-of-grays-light) var(--medium-sat-of-grays) 35%);
@@ -4762,6 +4762,10 @@ body:not(.active-line-emphasized-bg):not(.no-active-highlight) :is(.cm-active, .
 	position: absolute;
 	left: -8px;
 	border-left: var(--thick-border);
+}
+
+body:not(.active-line-emphasized-bg):not(.no-active-highlight) :is(.cm-active, .CodeMirror-activeline).HyperMD-list-line::BEFORE {
+	top: 2px;
 }
 
 /* more contrasted color in dark mode */
