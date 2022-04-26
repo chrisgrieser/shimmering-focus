@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 1.1478
+Version 1.1479
 Source CSS: https://github.com/chrisgrieser/shimmering-focus/blob/main/source.css
 MIT License
 ──────────────────────────────────────────────────── */
@@ -1805,8 +1805,8 @@ body:not(.no-grayed-out-inactive-pane) {
 /* Dark Eclipse (Default) */
 .cm-focused .cm-vimCursorLayer .cm-fat-cursor.cm-fat-cursor.cm-fat-cursor {
 	color: var(--always-light);
-	background-color: var(--cursor-look);
-	outline: var(--cursor-outline);
+	background-color: hsl(0 0% 0%);
+	outline: 1px solid var(--cursor-outline-color);
 }
 
 .theme-light .cm-focused .cm-vimCursorLayer .cm-fat-cursor.cm-fat-cursor.cm-fat-cursor {
@@ -1846,7 +1846,6 @@ body:not(.no-grayed-out-inactive-pane) {
 
 	background-color: var(--alt-bg);
 	box-shadow: var(--small-inset-shadow);
-	filter: saturate(0.8);
 
 	position: fixed;
 	top: 0;
@@ -1856,6 +1855,10 @@ body:not(.no-grayed-out-inactive-pane) {
 
 	border: var(--thin-border);
 	border-radius: 0 0 var(--roundish) 0;
+}
+
+.no-vim-indicator :is(.cm-vim-panel div span, .cm-selectionLayer)::before {
+	display: none;
 }
 
 .bottom-vim-indicator :is(.cm-vim-panel div span, .cm-selectionLayer)::before {
@@ -1896,7 +1899,6 @@ body:not(.no-grayed-out-inactive-pane) {
 .cm-vim-panel div span:nth-child(2)::before {
 	content: "Search";
 	color: var(--unresolved-link-color);
-	filter: saturate(1);
 }
 
 /* ───────────────────────────────────────────────── */
@@ -5449,18 +5451,6 @@ body:not(.permanently-show-collapse-indicators) .cm-line:not(:hover):not(.cm-act
 
 .relative-line-numbering .cm-lineNumbers .cm-gutterElement.cm-active + .cm-gutterElement + .cm-gutterElement + .cm-gutterElement + .cm-gutterElement + .cm-gutterElement + .cm-gutterElement::before {
 	content: "7";
-}
-
-.relative-line-numbering .cm-lineNumbers .cm-gutterElement.cm-active + .cm-gutterElement + .cm-gutterElement + .cm-gutterElement + .cm-gutterElement + .cm-gutterElement + .cm-gutterElement + .cm-gutterElement::before {
-	content: "8";
-}
-
-.relative-line-numbering .cm-lineNumbers .cm-gutterElement.cm-active + .cm-gutterElement + .cm-gutterElement + .cm-gutterElement + .cm-gutterElement + .cm-gutterElement + .cm-gutterElement + .cm-gutterElement + .cm-gutterElement::before {
-	content: "9";
-}
-
-.relative-line-numbering .cm-lineNumbers .cm-gutterElement.cm-active + .cm-gutterElement + .cm-gutterElement + .cm-gutterElement + .cm-gutterElement + .cm-gutterElement + .cm-gutterElement + .cm-gutterElement + .cm-gutterElement + .cm-gutterElement::before {
-	content: "10";
 }
 
 /* minimal line numbers */
@@ -13317,7 +13307,7 @@ settings:
   -
    id: line-number-options
    title: 🆕 Line Numbering Style
-   description: "'Relative' shows only the active line and the following five lines (useful for Vim Mode). 'Minimal' shows line numbers only for the active and hovered line. This setting has no effect when Obsidian's 'Show line number' settings is disabled."
+   description: "'Relative' shows only the active line and the following seven lines (useful for Vim Mode). 'Minimal' shows line numbers only for the active and hovered line. This setting has no effect when Obsidian's 'Show line number' settings is disabled."
    type: class-select
    allowEmpty: false
    default: default-line-numbering
