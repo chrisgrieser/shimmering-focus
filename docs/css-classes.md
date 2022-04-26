@@ -47,6 +47,11 @@ The Sidenote Callout width and outdention is customizable in the Style Settings.
 ```
 
 ```md
+> [!FILE]
+> [!ATTACHMENT]
+```
+
+```md
 > [!PHONE]
 ```
 
