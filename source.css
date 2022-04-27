@@ -251,13 +251,13 @@ MIT License
 	- Code Block Labels
 	- Version History Diff
 	- MetaEdit
+	- Dynamic ToC Plugin
 	- Notion Like Table
 	- Markdown Table Editor
 	- Hover Editor
 	- Omnisearch
 	- Mind Map
 	- Linter
-	- Typing Speed
 	- vimrc support
 - Compatibility Info for the Obsidian Hub
 - Style Setting (YAML)
@@ -12317,6 +12317,38 @@ and file recovery plugin */
 }
 
 /* ───────────────────────────────────────────────── */
+/* << Dynamic ToC Plugin
+──────────────────────────────────────────────────── */
+
+/* don't apply heading link styling */
+.dynamic-toc.dynamic-toc.dynamic-toc a {
+	text-decoration: none;
+	filter: brightness(0.85);
+}
+
+.dynamic-toc.dynamic-toc.dynamic-toc {
+	background-color: var(--bg2);
+	border-radius: var(--roundish);
+}
+
+.dynamic-toc > :is(ol, ul) > li > a {
+	font-weight: 600;
+}
+
+.dynamic-toc.dynamic-toc :is(h1, h2, h3, h4, h5, h6) {
+	margin-bottom: 4px;
+}
+
+.dynamic-toc > :is(ol, ul) {
+	padding-bottom: 7px;
+}
+
+/* indention guides */
+.dynamic-toc.dynamic-toc.dynamic-toc :is(ol, ul)::before {
+	border-color: var(--basic-border-color);
+}
+
+/* ───────────────────────────────────────────────── */
 /* << Notion Like Table
 ──────────────────────────────────────────────────── */
 .NLT__table.NLT__table.NLT__table.NLT__table button {
@@ -12632,15 +12664,6 @@ body:not(.no-alternating-rows) .omnisearch-result:nth-child(odd) .omnisearch-res
 }
 
 /* ───────────────────────────────────────────────── */
-/* << Typing Speed
-──────────────────────────────────────────────────── */
-
-/* hide when "darken after 3s non-typing" option selected */
-.status-bar-item.plugin-typing-speed[style$="0.5;"] {
-	display: none;
-}
-
-/* ───────────────────────────────────────────────── */
 /* << vimrc support
 ──────────────────────────────────────────────────── */
 .status-bar-item.plugin-obsidian-vimrc-support {
@@ -12724,6 +12747,7 @@ community:
 - obsidian-linter
 - typing-speed
 - obsidian-vimrc-support
+- obsidian-dynamic-toc
 */
 
 /* ───────────────────────────────────────────────── */
