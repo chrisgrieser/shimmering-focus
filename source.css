@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 1.1484
+Version 1.1485
 Source CSS: https://github.com/chrisgrieser/shimmering-focus/blob/main/source.css
 MIT License
 ──────────────────────────────────────────────────── */
@@ -7128,10 +7128,8 @@ a,
 	content: "🌁 ";
 }
 
-/* more underline spacing, thx @Melvin */
-* {
-	text-underline-offset: 1.5px;
-}
+/* more underline spacing, 🏴‍☠️ @Melvin */
+* { text-underline-offset: 1.5px }
 
 /* ───────────────────────────────────────────────── */
 /* <<< External Links
@@ -7163,7 +7161,7 @@ body:not(.show-external-link-icon) .external-link {
 
 /* don't underline the formatting */
 .cm-s-obsidian .cm-url.cm-formatting,
-body:not(.show-urls) .cm-line:not(.cm-active) .cm-url,
+body:not(.show-urls) .cm-line:not(.cm-active) .cm-string.cm-url,
 .cm-link-alias-pipe.cm-link-alias-pipe.cm-link-alias-pipe.cm-link-alias-pipe.cm-link-alias-pipe,
 .cm-formatting-link.cm-formatting-link.cm-formatting-link {
 	text-decoration: none;
