@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 1.1486
+Version 1.1487
 Source CSS: https://github.com/chrisgrieser/shimmering-focus/blob/main/source.css
 MIT License
 ──────────────────────────────────────────────────── */
@@ -1864,7 +1864,7 @@ body:not(.no-grayed-out-inactive-pane) {
 	font-family: var(--font-monospace);
 	font-size: 0.8rem;
 	font-weight: 500;
-	line-height: 1.32rem;
+	line-height: 1.35rem;
 	letter-spacing: 0.3px;
 	text-transform: uppercase;
 	text-align: center;
@@ -1891,7 +1891,7 @@ body:not(.no-grayed-out-inactive-pane) {
 
 .bottom-vim-indicator :is(.cm-vim-panel div span, .cm-selectionLayer)::before {
 	top: unset;
-	bottom: 0;
+	bottom: -1px;
 	border-radius: 0 var(--roundish) 0 0;
 }
 
