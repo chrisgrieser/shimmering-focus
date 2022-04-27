@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 1.1487
+Version 1.1488
 Source CSS: https://github.com/chrisgrieser/shimmering-focus/blob/main/source.css
 MIT License
 ──────────────────────────────────────────────────── */
@@ -3977,6 +3977,14 @@ input:is([type="email"], [type="password"]) {
 /* kofi buttons */
 .kofi-button {
 	margin-top: 20px;
+}
+
+/* Excluded Files menu */
+/* Regex flait */
+.flair.mod-flat {
+	color: var(--button-text);
+	background-color: var(--interactive-bg);
+	box-shadow: var(--small-inset-shadow);
 }
 
 /* ───────────────────────────────────────────────── */
