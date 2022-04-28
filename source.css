@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 1.1490
+Version 1.1491
 Source CSS: https://github.com/chrisgrieser/shimmering-focus/blob/main/source.css
 MIT License
 ──────────────────────────────────────────────────── */
@@ -9406,8 +9406,14 @@ body.plugin-sliding-panes-rotate-header .workspace > .mod-root > .workspace-leaf
 	padding: 0 0 0 2px;
 }
 
+/* option to remove shadows */
 .no-sliding-panes-shadows.plugin-sliding-panes-stacking .workspace > .mod-root > .workspace-leaf.workspace-leaf {
 	box-shadow: none;
+}
+
+/* fix for vim mode indicator */
+body.plugin-sliding-panes-rotate-header :is(.cm-vim-panel div span, .cm-selectionLayer)::before {
+	left: 2.5em;
 }
 
 /* ───────────────────────────────────────────────── */
