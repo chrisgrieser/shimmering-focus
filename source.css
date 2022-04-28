@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 1.1489
+Version 1.1490
 Source CSS: https://github.com/chrisgrieser/shimmering-focus/blob/main/source.css
 MIT License
 ──────────────────────────────────────────────────── */
@@ -7579,17 +7579,12 @@ li[data-task="x"] > .task-list-item-checkbox:hover {
 ──────────────────────────────────────────────────── */
 /* stylelint-disable no-duplicate-selectors */
 :root {
+	/* default values for style settings */
 	--highlight-hue-1: 60; /* yellow */
 	--highlight-hue-2: 150; /* green */
 	--highlight-hue-3: 185; /* cyan */
-}
 
-.theme-light {
-	--highlight-sla-values: 100% 50% / 35%;
-}
-
-.theme-dark {
-	--highlight-sla-values: 100% 75% / 60%;
+	--highlight-sla-values: 80% 50% / 40%;
 }
 
 /* stylelint-enable no-duplicate-selectors */
@@ -7608,7 +7603,7 @@ mark {
 
 .markdown-rendered mark,
 .cm-s-obsidian span.cm-highlight {
-	color: var(--always-dark);
+	/* color: var(--always-dark); */
 	background-color: var(--highlight-color-1);
 }
 

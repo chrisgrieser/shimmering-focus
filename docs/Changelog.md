@@ -3,6 +3,7 @@ nav_order: 110
 ---
 
 # Changelog
+- 2022-04-28	fix #151
 - 2022-04-27	styling for ToCs from the Dynamic ToC plugin
 - 2022-04-26	file/attachment custon callout
 - 2022-04-26	theme accents as option for cursor and vim cursor styles
