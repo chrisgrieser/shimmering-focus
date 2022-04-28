@@ -1,13 +1,13 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 1.1492
+Version 1.1493
 Source CSS: https://github.com/chrisgrieser/shimmering-focus/blob/main/source.css
 MIT License
 ──────────────────────────────────────────────────── */
 /* @MINIFY-SPLIT-MARKER */
 
 /* ───────────────────────────────────────────────── */
-/* < Table of Content
+/* < Table of Content (ToC)
 ──────────────────────────────────────────────────── */
 
 /* @TOC-SPLIT-MARKER */
@@ -18,7 +18,7 @@ MIT License
 	- Custom Individual Accent Colors
 	- Color Schemes
 		- Default Color Scheme (Classic Shimmering Focus)
-	- Gamma Color Scheme
+		- Gamma Color Scheme
 		- Nord Color Schemes
 	- Accent Color Calculations
 		- Bold & Italics Accent Calculations
@@ -494,7 +494,7 @@ MIT License
 }
 
 /* ───────────────────────────────────────────────── */
-/* << Gamma Color Scheme
+/* <<< Gamma Color Scheme
 ──────────────────────────────────────────────────── */
 /* Co-designed with @lkadre */
 .gamma-colors.gamma-colors {
@@ -3174,7 +3174,6 @@ div.prompt-results {
 
 /* plugin name */
 .suggestion-prefix {
-	font-family: var(--font-text);
 	font-size: 0.9em;
 }
 
@@ -5382,6 +5381,10 @@ body:not(.permanently-show-collapse-indicators) .cm-line:not(:hover):not(.cm-act
 	visibility: hidden;
 }
 
+.HyperMD-codeblock .cm-foldPlaceholder::before {
+	display: none;
+}
+
 .cm-foldPlaceholder::before {
 	content: "unfold_more";
 
@@ -6695,44 +6698,6 @@ div.HyperMD-codeblock-bg:not(.HyperMD-codeblock-begin-bg) {
 	padding: 5px 9px;
 }
 
-/* No Wrapping */
-.no-code-block-wrapping .markdown-preview-view pre:not(.frontmatter) code {
-	white-space: pre;
-}
-
-.no-code-block-wrapping .markdown-preview-view pre:not(.frontmatter) ::-webkit-scrollbar {
-	height: calc(var(--scrollbar-thickness) * 0.9);
-}
-
-.no-code-block-wrapping .markdown-preview-view pre:not(.frontmatter):not([class*="language-"]) {
-	overflow-x: scroll;
-}
-
-/* border on top created like this, since the
-::after element cannot be moved beyond a border */
-/* needs CM6 as condition, since every line in
-CM5 has the "pre" type */
-.mod-cm6 + .markdown-reading-view pre[class*="language-"]::before {
-	display: block;
-	content: " ";
-
-	line-height: 1.5em;
-
-	background-color: var(--code-block-alt-bg);
-
-	border-top-right-radius: calc(var(--codeblock-roundness) * 0.8);
-	border-top-left-radius: calc(var(--codeblock-roundness) * 0.8);
-}
-
-/* code block without language */
-.markdown-reading-view pre:not([class*="language-"]) {
-	padding: 5px 9px;
-}
-
-.markdown-reading-view pre:not([class*="language-"]) code {
-	color: var(--text-normal);
-}
-
 /* <<< copy & edit code button */
 .markdown-preview-view button.copy-code-button {
 	font-size: 0;
@@ -6776,6 +6741,32 @@ body .is-live-preview.mod-cm6 .edit-block-button:hover {
 /* indention lines in code blocks more visible */
 .HyperMD-codeblock .cm-indent.cm-indent.cm-indent::before {
 	border-color: var(--basic-border-color);
+}
+
+/* border on top created like this, since the
+::after element cannot be moved beyond a border */
+/* needs CM6 as condition, since every line in
+CM5 has the "pre" type */
+.mod-cm6 + .markdown-reading-view pre[class*="language-"]::before {
+	display: block;
+	content: " ";
+
+	line-height: 1.5em;
+
+	background-color: var(--code-block-alt-bg);
+
+	border-top-right-radius: calc(var(--codeblock-roundness) * 0.8);
+	border-top-left-radius: calc(var(--codeblock-roundness) * 0.8);
+}
+
+/* code block without language */
+.markdown-reading-view pre:not([class^="language-"]) {
+	padding: 7px 7px 0;
+	overflow-y: hidden;
+}
+
+.markdown-reading-view pre:not([class^="language-"]) code {
+	color: var(--text-normal);
 }
 
 /* <<< language replacements */
@@ -6877,8 +6868,17 @@ body:not(.no-codeblock-line-numbers) .HyperMD-codeblock:not(.HyperMD-codeblock-b
 	counter-increment: codeblock-line-numbers;
 }
 
-body:not(.no-codeblock-line-numbers) .HyperMD-codeblock .cm-foldPlaceholder::before {
-	display: none;
+/* No Wrapping */
+.no-code-block-wrapping .markdown-preview-view pre:not(.frontmatter) code {
+	white-space: pre;
+}
+
+.no-code-block-wrapping .markdown-preview-view pre:not(.frontmatter) ::-webkit-scrollbar {
+	height: calc(var(--scrollbar-thickness) * 0.9);
+}
+
+.no-code-block-wrapping .markdown-preview-view pre:not(.frontmatter):not([class*="language-"]) {
+	overflow-x: scroll;
 }
 
 /* ───────────────────────────────────────────────── */
@@ -11184,7 +11184,6 @@ body .qsp-symbol-indicator {
 
 .another-quick-switcher__item__description,
 .another-quick-switcher__item__descriptions {
-	font-family: var(--font-interface);
 	line-height: 1em;
 }
 
@@ -11208,7 +11207,6 @@ body .qsp-symbol-indicator {
 }
 
 .suggestion-item .another-quick-switcher__item__directory {
-	font-family: var(--font-text);
 	font-size: 0.9em;
 	letter-spacing: 0.1px;
 	padding-right: 2px;
