@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 1.1502
+Version 1.1503
 Source CSS: https://github.com/chrisgrieser/shimmering-focus/blob/main/source.css
 MIT License
 ──────────────────────────────────────────────────── */
@@ -176,7 +176,7 @@ settings:
   -
    id: aesthetics
    title: 🎨 Color & Aesthetics
-   description: Color Schemes, Coloring of YAML, 🆕 Coloring of Bold/Italic, Brightness, Roundness, Decorations
+   description: Color Schemes, Coloring of YAML, 🆕 Coloring of Bold/Italic, Brightness, Roundness
    type: heading
    level: 1
    collapsed: true
@@ -206,7 +206,7 @@ settings:
   -
    id: colored-bold-italic
    title: 🆕 Bold & Italic Text Color
-   description: 'Whether Bold & Italic should have the same color as normal text or have a different color. (Note that with the Classic Color Scheme, secondary & hovered accent are both the same.)'
+   description: 'Whether Bold & Italic should have the same color as normal text or have a different color. (Note that with the Classic Color Scheme, secondary & hovered accent are the same.)'
    type: class-select
    allowEmpty: false
    default: strong-em-hover-accent
@@ -445,27 +445,27 @@ settings:
   -
    id: font-settings
    title: 🔠 Typography
-   description: "Fonts, Headings, Blockquotes."
+   description: "Fonts, Headings, Blockquotes"
    type: heading
    level: 1
    collapsed: true
   -
    id: font-family-font-size
    title: 🔤 Fonts
-   description: Font Family, Font Size
+   description: Font Families & Font Sizes
    type: heading
    level: 2
    collapsed: true
   -
    id: font-text-theme
    title: Text Font (Desktop)
-   description: 'Used in Reading and Editing Mode. ⚠️ This setting will be overriden when you have set a custom text font in the Obsidian settings (Appearance ➞ Font ➞ Text Font).'
+   description: 'Used in Reading and Editing Mode. This setting will be overriden when you have set a custom text font in the Obsidian settings (Appearance ➞ Font ➞ Text Font).'
    type: variable-text
    default: '"iA Writer Quattro S"'
   -
    id: font-monospace-theme
    title: Monospace Font
-   description: 'Used in Code blocks, YAML headers, tables & MathJax in Source Mode. ⚠️ This setting will be overriden when you have set a custom monospace font in the Obsidian settings (Appearance ➞ Font ➞ Monospace Font).'
+   description: 'Used in code blocks, YAML headers, tables & MathJax in Source Mode. This setting will be overriden when you have set a custom monospace font in the Obsidian settings (Appearance ➞ Font ➞ Monospace Font).'
    type: variable-text
    default: '"Input Mono S"'
   -
@@ -480,7 +480,7 @@ settings:
   -
    id: font-interface-theme
    title: Interface Font (Desktop)
-   description: 'Affects the sidebars, header bar, status bar, and menus.  ⚠️ This setting will be overriden when you have set a custom interface font in the Obsidian settings (Appearance ➞ Font ➞ Interface Font).'
+   description: 'Affects the sidebars, header bar, status bar, and menus.  This setting will be overriden when you have set a custom interface font in the Obsidian settings (Appearance ➞ Font ➞ Interface Font).'
    type: variable-text
    default: '"Recursive S"'
   -
@@ -637,7 +637,7 @@ settings:
   -
    id: active-line-highlight-options
    title: Active Line
-   description: "Options for emphasizing the active line. ('Emphasized Background' is automatically turned off when the 'Active Visual Line' Plugin is installed.)"
+   description: "Options for emphasizing the active line. ('Emphasized Background' is automatically turned off when the Active Visual Line Plugin is installed.)"
    type: class-select
    allowEmpty: false
    default: active-line-gutter
@@ -654,7 +654,7 @@ settings:
   -
    id: line-number-options
    title: 🆕 Line Numbering Style
-   description: "'Relative' shows only the active line and the following seven lines (useful for Vim Mode). 'Minimal' shows line numbers only for the active and hovered line. This setting has no effect when Obsidian's 'Show line number' settings is disabled."
+   description: "'Relative' shows only the active line and the following seven lines (useful for Vim Mode). 'Minimal' shows line numbers only for the active and hovered line. Note that both have no effect when Obsidian's 'Show line number' setting is disabled."
    type: class-select
    allowEmpty: false
    default: default-line-numbering
@@ -706,7 +706,7 @@ settings:
   -
    id: content-settings
    title: 🏞 Views & Media
-   description: Line Length, Max View, Focus View, Images, PDFs, 🆕 Image Zoom Methods
+   description: Line Length, Max View, Focus View, Images, 🆕 Image Zoom Methods, PDFs
    type: heading
    level: 1
    collapsed: true
@@ -820,7 +820,7 @@ settings:
   -
    id: special-syntax
    title: 🌀 Special Syntax
-   description: 'Highlight Colors, Multi-Color Highlights, Spoiler Syntax, Annotation Tags, Trailing Whites Space, Citation Syntax, Pandoc Citations'
+   description: 'Highlight Colors, Multi-Color Highlights, Spoiler Syntax, Annotation Tags, Trailing Whites Space, Citation Syntax, Pandoc Citations, Loose Lists'
    type: heading
    level: 1
    collapsed: true
@@ -885,9 +885,15 @@ settings:
    type: class-toggle
    default: false
   -
+   id: re-enable-loose-lists
+   title: 'Re-enable Loose Lists'
+   description: 'When a list contains a blank line in between its items, it is considered a "loose list" and will be rendered with additional spacing in Reading Mode. By default, loose lists are turned off in this theme, since most of the time, they are created by accident.'
+   type: class-toggle
+   default: false
+  -
    id: cursor-settings
    title: 🖱 Cursor & Vim Mode
-   description: Thickness, Style, Color, Blinking, Block Cursor,🆕 Vim Cursor,🆕 Vim Mode Indicator
+   description: Thickness, Color, Blinking, Block Cursor, 🆕 Vim Cursor, 🆕 Vim Mode Indicator
    type: heading
    level: 1
    collapsed: true
@@ -1083,7 +1089,7 @@ settings:
   -
    id: plugin-specific
    title: ⚙️ Plugin-Specific Settings
-   description: File Explorer, Backlinks, Outline, Breadcrumbs, Sliding Panes, Calendar, Link Favicons, Command Palette
+   description: File Explorer, Backlinks, Outline, Breadcrumbs, Sliding Panes, Supercharged Links, Calendar, Link Favicons, Command Palette
    type: heading
    level: 1
    collapsed: true
@@ -1233,7 +1239,7 @@ settings:
   -
    id: miscellaneous
    title: ⚛️ Miscellaneous
-   description: Menu Size, File Name Trimming, Inactive Panes, Loose Lists, Alternating Row Colors, Colored YAML, Animations, 🆕 Theme Beta
+   description: Menu Size, File Name Trimming, Inactive Panes, Alternating Row Colors, Colored YAML, Animations, 🆕 Theme Beta
    type: heading
    level: 1
    collapsed: true
@@ -1256,12 +1262,6 @@ settings:
    id: no-grayed-out-inactive-pane
    title: Do not dim Inactive Panes
    description: 'Also affects popovers from the Hover Editor Plugin.'
-   type: class-toggle
-   default: false
-  -
-   id: re-enable-loose-lists
-   title: 'Re-enable Loose Lists'
-   description: 'When a list contains a blank line in between its items, markdown specs consider it "loose list" and the list will render with additional spacing in Reading Mode. By default, loose lists are turned off in this theme, since they are mostly created unintentionally.'
    type: class-toggle
    default: false
   -
