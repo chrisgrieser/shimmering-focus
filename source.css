@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 1.1495
+Version 1.1496
 Source CSS: https://github.com/chrisgrieser/shimmering-focus/blob/main/source.css
 MIT License
 ──────────────────────────────────────────────────── */
@@ -1172,11 +1172,11 @@ body {
 	--number-font: "Ubuntu Mono Numbers";
 
 	--heading-font: "Optima S";
-	--h1: 1.8em;
+	--h1: 1.85em;
 	--h2: 1.6em;
-	--h3: 1.45em;
-	--h4: 1.3em;
-	--h5: 1.15em;
+	--h3: 1.35em;
+	--h4: 1.15em;
+	--h5: 1.1em;
 	--h6: 1.05em;
 
 	/* new with Obsidian 0.14.5 */
@@ -7203,7 +7203,7 @@ body:not(.no-unresolved-link-indicator) .is-unresolved::before {
 	font-size: 1.3rem;
 	background-color: var(--bg1);
 	position: absolute;
-	margin-top: -3px; /* move up to accounts for double unterline */
+	margin-top: -2px; /* move up to accounts for double unterline */
 }
 
 body:not(.no-unresolved-link-indicator) .is-live-preview .is-unresolved::before {
@@ -12336,6 +12336,7 @@ and file recovery plugin */
 	border-radius: var(--roundish);
 }
 
+.dynamic-toc > :is(ol, ul) > li::marker,
 .dynamic-toc > :is(ol, ul) > li > a {
 	font-weight: 600;
 }
@@ -13277,10 +13278,10 @@ settings:
    id: h1
    title: Level 1 Headings
    type: variable-number-slider
-   default: 1.8
+   default: 1.85
    min: 1
    max: 3
-   step: 0.1
+   step: 0.05
    format: em
   -
    id: h2
@@ -13295,7 +13296,7 @@ settings:
    id: h3
    title: Level 3 Headings
    type: variable-number-slider
-   default: 1.45
+   default: 1.35
    min: 1
    max: 3
    step: 0.05
@@ -13304,7 +13305,7 @@ settings:
    id: h4
    title: Level 4 Headings
    type: variable-number-slider
-   default: 1.3
+   default: 1.15
    min: 1
    max: 3
    step: 0.05
@@ -13313,7 +13314,7 @@ settings:
    id: h5
    title: Level 5 Headings
    type: variable-number-slider
-   default: 1.15
+   default: 1.1
    min: 1
    max: 3
    step: 0.05
