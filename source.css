@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 1.1494
+Version 1.1495
 Source CSS: https://github.com/chrisgrieser/shimmering-focus/blob/main/source.css
 MIT License
 ──────────────────────────────────────────────────── */
@@ -7724,7 +7724,7 @@ sup {
 }
 
 .footnotes ol {
-	padding-inline-start: 1em;
+	padding-inline-start: 1.7em;
 }
 
 .footnotes li {
