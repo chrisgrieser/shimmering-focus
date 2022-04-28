@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 1.1500
+Version 1.1501
 Source CSS: https://github.com/chrisgrieser/shimmering-focus/blob/main/source.css
 MIT License
 ──────────────────────────────────────────────────── */
@@ -57,7 +57,7 @@ settings:
    default: false
   -
    id: no-floating-metadata
-   title: Permanently show the Metadata Block / YAML Frontmatter in Reading Mode
+   title: Permanently show the Metadata Block / YAML Frontmatter (Reading Mode)
    type: class-toggle
    description: 'By default, the metadata block in this theme only becomes visible upon hovering the "M" / "Y" in the top right. You can also add the cssclass "no-floating-metadata" to a note to permanently show the meta on that specific note.'
    default: false
@@ -121,7 +121,7 @@ settings:
    default: false
   -
    id: show-external-link-icon
-   title: 'Re-enable the external link icon (Reading Mode)'
+   title: 'Re-enable the External Link Icon (Reading Mode)'
    type: class-toggle
    description: 'In Reading Mode, external links are distinguishable from internal link since they the former have a single underline, while the latter have double underlines. Enable this, to additionaly use an icon to indicate external links. (Note that the icon will always be hidden when using the Link Favicon Plugin.)'
    default: false
