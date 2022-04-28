@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 1.1497
+Version 1.1498
 Source CSS: https://github.com/chrisgrieser/shimmering-focus/blob/main/source.css
 MIT License
 ──────────────────────────────────────────────────── */
@@ -1935,15 +1935,15 @@ body:not(.no-grayed-out-inactive-pane) {
 /* << Vim Panel
 ──────────────────────────────────────────────────── */
 .cm-vim-panel {
-	/* avoid collision with status bar */
-	height: calc(var(--status-bar-height) + 1.75rem);
+	/* avoid collision with status bar & vim bottom indicator */
+	margin-bottom: calc(var(--status-bar-height) - 0.5rem);
 }
 
 .theme-dark .cm-vim-panel input {
 	background-color: var(--bg1);
 }
 
-.cm-panels.cm-panels.cm-panels {
+.cm-panels.cm-panels.cm-panels-bottom {
 	background-color: var(--alt-bg);
 	box-shadow: var(--big-reverted-shadow);
 	border-top: var(--basic-border);
@@ -1960,8 +1960,7 @@ body:not(.no-grayed-out-inactive-pane) {
 }
 
 .cm-vim-panel input {
-	font-weight: 600;
-	max-width: 95%;
+	max-width: 97%;
 	position: relative;
 	top: -2px;
 	margin-left: 10px;
@@ -1977,7 +1976,7 @@ body:not(.no-grayed-out-inactive-pane) {
 }
 
 /* error */
-.cm-vim-message {
+/* .cm-vim-message {
 	color: var(--text-error);
 	margin: 8px 5px;
 }
@@ -1985,9 +1984,7 @@ body:not(.no-grayed-out-inactive-pane) {
 .cm-vim-message::before {
 	content: var(--error-symbol);
 	margin-right: 8px;
-}
-
-/* registers */
+} */
 
 /* ───────────────────────────────────────────────── */
 /* < UI Elements

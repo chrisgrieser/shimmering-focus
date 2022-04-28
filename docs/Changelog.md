@@ -3,6 +3,7 @@ nav_order: 110
 ---
 
 # Changelog
+- 2022-04-28	fix vim panel for bigger messages
 - 2022-04-28	fix for quicksand font weight
 - 2022-04-28	minor changes to default heading size differences
 - 2022-04-28	make code blocks in callouts more readable
