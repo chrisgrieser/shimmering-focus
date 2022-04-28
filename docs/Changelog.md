@@ -3,6 +3,7 @@ nav_order: 110
 ---
 
 # Changelog
+- 2022-04-28	make code blocks in callouts more readable
 - 2022-04-28	fixes for code blocks without language
 - 2022-04-28	fix rotated header alignment
 - 2022-04-28	fix for vim indicator when using sliding panes
