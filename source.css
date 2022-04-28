@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 1.1498
+Version 1.1499
 Source CSS: https://github.com/chrisgrieser/shimmering-focus/blob/main/source.css
 MIT License
 ──────────────────────────────────────────────────── */
@@ -1956,7 +1956,6 @@ body:not(.no-grayed-out-inactive-pane) {
 	font-size: 1.8em;
 	font-weight: 600;
 	line-height: 1em;
-	margin-left: 5px;
 }
 
 .cm-vim-panel input {
@@ -1971,20 +1970,24 @@ body:not(.no-grayed-out-inactive-pane) {
 }
 
 /* remove instruction */
-.cm-vim-panel span:nth-child(2) {
+.cm-vim-panel span:nth-child(2):not(.cm-vim-message) {
 	font-size: 0; /* needs font size 0 instead display: none, so the vim indicator attached to it remains visible */
 }
 
-/* error */
-/* .cm-vim-message {
-	color: var(--text-error);
-	margin: 8px 5px;
-}
+/* mostly error messages and the register */
+.cm-vim-message {
+	font-family: var(--font-monospace);
+	white-space: pre-wrap !important; /* needs important */
 
-.cm-vim-message::before {
-	content: var(--error-symbol);
-	margin-right: 8px;
-} */
+	color: var(--text-normal) !important; /* needs important */
+	background-color: var(--bg1);
+	box-shadow: var(--muted-button-inset-shadow);
+
+	padding: 4px 8px;
+
+	border: var(--thin-border);
+	border-radius: var(--roundish);
+}
 
 /* ───────────────────────────────────────────────── */
 /* < UI Elements
