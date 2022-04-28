@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 1.1501
+Version 1.1502
 Source CSS: https://github.com/chrisgrieser/shimmering-focus/blob/main/source.css
 MIT License
 ──────────────────────────────────────────────────── */
@@ -12777,7 +12777,7 @@ settings:
    id: hide-settings-button
    title: Hide Settings Button
    type: class-toggle
-   description: "Hide the floating Settings button in the bottom left. The settings can still be accessed the button by using the hotkey 'cmd + ,' (Mac) or 'ctrl + ,' (Windows/Linux)."
+   description: "Hide the floating Settings button in the bottom left. You can still access the settings by using the hotkey 'cmd + ,' (Mac) or 'ctrl + ,' (Windows/Linux)."
    default: false
   -
    id: no-floating-metadata

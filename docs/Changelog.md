@@ -3,7 +3,7 @@ nav_order: 110
 ---
 
 # Changelog
-- 2022-04-28	patch
+- 2022-04-28	typo
 - 2022-04-28	fix for vim's :reg
 - 2022-04-28	fix vim panel for bigger messages
 - 2022-04-28	fix for quicksand font weight
