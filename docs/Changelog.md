@@ -3,6 +3,7 @@ nav_order: 110
 ---
 
 # Changelog
+- 2022-04-28	fix rotated header alignment
 - 2022-04-28	fix for vim indicator when using sliding panes
 - 2022-04-28	fix #151
 - 2022-04-27	styling for ToCs from the Dynamic ToC plugin
