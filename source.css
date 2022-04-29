@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 1.1515
+Version 1.1516
 Source CSS: https://github.com/chrisgrieser/shimmering-focus/blob/main/source.css
 MIT License
 ──────────────────────────────────────────────────── */
@@ -2499,7 +2499,6 @@ body ::-webkit-scrollbar-thumb {
 	border: var(--thin-muted-border);
 }
 
-/* stylelint-disable no-duplicate-selectors */
 .theme-light ::-webkit-scrollbar-thumb {
 	border: var(--thin-border);
 }
@@ -2507,7 +2506,6 @@ body ::-webkit-scrollbar-thumb {
 .theme-dark ::-webkit-scrollbar-thumb {
 	border: var(--thin-muted-border);
 }
-/* stylelint-enable no-duplicate-selectors */
 
 body:is(.theme-light, .theme-dark):is(.theme-light, .theme-dark) ::-webkit-scrollbar-thumb {
 	border-radius: calc(var(--roundish) * 0.6);
@@ -9784,21 +9782,21 @@ body .kanban-plugin__item {
 
 /* Scrollbars */
 .kanban-plugin .kanban-plugin__lane ::-webkit-scrollbar {
-	width: calc(var(--scrollbar-thickness) * 0.6);
+	width: calc(var(--scrollbar-thickness) * 0.5);
 }
 
 .kanban-plugin .kanban-plugin__lane ::-webkit-scrollbar-thumb {
 	background-color: var(--bg3);
 	box-shadow: none;
+}
+
+/* border makes the scrollbar to thin to style */
+:is(.kanban-plugin, .kanban-plugin .kanban-plugin__lane) ::-webkit-scrollbar-thumb {
 	border: none;
 }
 
-.kanban-plugin .kanban-plugin__lane ::-webkit-scrollbar-thumb:hover {
-	background-color: var(--hover-accent-3);
-}
-
-.kanban-plugin .kanban-plugin__lane ::-webkit-scrollbar-thumb:active {
-	background-color: var(--scrollbar-bg-active);
+.kanban-plugin.kanban-plugin ::-webkit-scrollbar {
+	height: calc(var(--scrollbar-thickness) * 0.9);
 }
 
 body .kanban-plugin__scroll-container.kanban-plugin__scroll-container {
@@ -9855,6 +9853,10 @@ body .kanban-plugin__lane-header-wrapper {
 
 :is(.kanban-plugin__icon, .kanban-plugin__lane-grip):hover svg {
 	color: var(--hover-accent-2);
+}
+
+.kanban-plugin.kanban-plugin .kanban-plugin__item-metadata {
+	margin: 3px 0 0 3px;
 }
 
 /* vertical three dots on card */
