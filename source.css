@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 1.1523
+Version 1.1524
 Source CSS: https://github.com/chrisgrieser/shimmering-focus/blob/main/source.css
 MIT License
 ──────────────────────────────────────────────────── */
@@ -5222,13 +5222,14 @@ body:not(.no-floating-metadata):not(.is-mobile) .markdown-preview-view:not(.no-f
 	color: var(--text-normal);
 }
 
-body:not(.no-floating-metadata):not(.is-mobile) .markdown-preview-view:not(.no-floating-metadata) .frontmatter-container {
-	font-size: 0.95rem; /* slightly bigger font */
+body:not(.no-floating-metadata):not(.is-mobile) .markdown-preview-view:not(.no-floating-metadata) .frontmatter.language-yaml {
 	top: var(--floating-metadata-top);
+	margin: 0;
 }
 
-body:not(.no-floating-metadata):not(.is-mobile) .markdown-preview-view:not(.no-floating-metadata) .frontmatter.language-yaml {
-	top: calc(var(--floating-metadata-top) + 2.2rem);
+body:not(.no-floating-metadata):not(.is-mobile) .markdown-preview-view:not(.no-floating-metadata) .frontmatter-container {
+	font-size: 0.95rem;
+	top: calc(var(--floating-metadata-top) + 2.8rem);
 }
 
 /* look when not hovered */
@@ -5276,6 +5277,7 @@ body:not(.no-floating-metadata):not(.is-mobile) .markdown-preview-view:not(.no-f
 	font-size: 1.4rem;
 	text-shadow: none;
 	padding-left: 0.65rem;
+	margin: 0;
 }
 
 body:not(.no-floating-metadata):not(.is-mobile) :is(.longform-leaf .markdown-preview-view:not(.no-floating-metadata), .markdown-preview-view:not(.no-floating-metadata).writing) .frontmatter.language-yaml:not(:hover)::before {
@@ -5299,12 +5301,12 @@ body:not(.no-floating-metadata):not(.is-mobile) .markdown-preview-view:not(.no-f
 
 /* stylelint-disable-next-line no-duplicate-selectors */
 :root {
-	--floating-metadata-top-header-visible: 1.05rem;
+	--floating-metadata-top-header-visible: 2.9rem;
 	--floating-metadata-top-no-header: 2.2rem;
 }
 
 :is(.longform-leaf, .writing) {
-	--floating-metadata-top-header-visible: 1.35rem;
+	--floating-metadata-top-header-visible: 3rem;
 	--floating-metadata-top-no-header: 2.5rem;
 }
 
@@ -5318,21 +5320,19 @@ body.show-header-bar {
 	--floating-metadata-top: var(--floating-metadata-top-header-visible);
 }
 
-body:not(.show-header-bar):not(.no-floating-metadata):not(.is-mobile) .view-header:is(:focus-within, :hover) + .view-content .markdown-preview-view:not(.no-floating-metadata) .frontmatter-container {
+body:not(.show-header-bar):not(.no-floating-metadata):not(.is-mobile) .view-header:is(:focus-within, :hover) + .view-content .markdown-preview-view:not(.no-floating-metadata) .frontmatter.language-yaml {
 	top: var(--floating-metadata-top-header-visible);
 	transition-delay: var(--transition-delay-passing-over-protection);
 }
 
-body:not(.show-header-bar):not(.no-floating-metadata):not(.is-mobile) .view-header:is(:focus-within, :hover) + .view-content .markdown-preview-view:not(.no-floating-metadata) .frontmatter.language-yaml {
-	top: calc(var(--floating-metadata-top-header-visible) + 2.2rem);
+body:not(.show-header-bar):not(.no-floating-metadata):not(.is-mobile) .view-header:is(:focus-within, :hover) + .view-content .markdown-preview-view:not(.no-floating-metadata) .frontmatter-container {
+	top: calc(var(--floating-metadata-top-header-visible) + 2.8rem);
 	transition-delay: var(--transition-delay-passing-over-protection);
 }
 
 body:not(.show-header-bar):not(.no-floating-metadata):not(.is-mobile) .markdown-preview-view:not(.no-floating-metadata) :is(.frontmatter.language-yaml, .frontmatter-container) {
-	transition: var(--quick-transition);
-
-	/* so transition only affects movement due to header showing, not for the metadata-hovering */
-	transition-property: top;
+	transition: var(--medium-transition);
+	transition-property: top; /* so transition only affects movement due to header showing, not for the metadata-hovering */
 }
 
 /* ───────────────────────────────────────────────── */
