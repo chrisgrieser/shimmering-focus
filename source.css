@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 1.1504
+Version 1.1505
 Source CSS: https://github.com/chrisgrieser/shimmering-focus/blob/main/source.css
 MIT License
 ──────────────────────────────────────────────────── */
@@ -13476,7 +13476,7 @@ settings:
   -
    id: no-pdf-dark-mode
    title: No Dark Mode for PDFs
-   description: Disable Dark Mode for PDFs when Obsidian is set to dark mode.
+   description: By default, PDFs in dark mode are also displayed in dark mode. Enable this to always display PDFs in their original colors.
    type: class-toggle
    default: false
   -
@@ -13555,17 +13555,17 @@ settings:
       value: classic-statusbar
   -
    id: hide-languagetool-status-bar
-   title: 'Language Tool: Hide the Status Bar Item'
+   title: 'Hide Language Tools'
    type: class-toggle
    default: false
   -
    id: hide-backlinks-status-bar
-   title: 'Backlinks: Hide the Status Bar Item'
+   title: 'Hide Backlinks'
    type: class-toggle
    default: false
   -
    id: hide-signature
-   title: 'Status Bar: Hide the decorative "✧" icon'
+   title: 'Hide the decorative "✧"'
    hub: ignore
    type: class-toggle
    default: false
