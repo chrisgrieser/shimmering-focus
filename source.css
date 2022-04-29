@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 1.1520
+Version 1.1521
 Source CSS: https://github.com/chrisgrieser/shimmering-focus/blob/main/source.css
 MIT License
 ──────────────────────────────────────────────────── */
@@ -12356,13 +12356,7 @@ and file recovery plugin */
 /* << Dynamic ToC Plugin
 ──────────────────────────────────────────────────── */
 
-/* don't apply heading link styling */
-.dynamic-toc.dynamic-toc.dynamic-toc a {
-	text-decoration: none;
-}
-
 .theme-dark .dynamic-toc a {
-	text-decoration: none;
 	filter: brightness(0.85);
 }
 
@@ -12371,9 +12365,13 @@ and file recovery plugin */
 	border-radius: var(--roundish);
 }
 
-.dynamic-toc > :is(ol, ul) > li::marker,
-.dynamic-toc > :is(ol, ul) > li > a {
-	font-weight: 600;
+/* don't apply heading link styling */
+.dynamic-toc.dynamic-toc.dynamic-toc a {
+	text-decoration: none;
+}
+
+.dynamic-toc.dynamic-toc.dynamic-toc > :is(ol, ul) > li > a {
+	text-decoration: underline 1.5px;
 }
 
 .dynamic-toc.dynamic-toc :is(h1, h2, h3, h4, h5, h6) {
