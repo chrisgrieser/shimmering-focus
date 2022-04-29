@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 1.1506
+Version 1.1507
 Source CSS: https://github.com/chrisgrieser/shimmering-focus/blob/main/source.css
 MIT License
 ──────────────────────────────────────────────────── */
@@ -1541,9 +1541,9 @@ svg.check-small,
 }
 
 /* dictionary plugin */
-svg.quote-glyph > path { display: none }
+.workspace-tab-header[data-type="dictionary-view"] svg.quote-glyph > path { display: none }
 
-svg.quote-glyph {
+.workspace-tab-header[data-type="dictionary-view"] svg.quote-glyph {
 	background-color: currentcolor;
 	-webkit-mask-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' preserveAspectRatio='xMidYMid meet' viewBox='0 0 32 32'%3e%3cpath d='M20 22h2l-5-12h-2l-5 12h2l1.24-3h5.53zm-5.93-5l1.82-4.42h.25L18 17z' fill='currentColor'/%3e%3cpath d='M12 28H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h20a2 2 0 0 1 2 2v11h-2V6H6v20h6z' fill='currentColor'/%3e%3cpath d='M23 27.18l-2.59-2.59L19 26l4 4l7-7l-1.41-1.41L23 27.18z' fill='currentColor'/%3e%3c/svg%3e");
 }
@@ -2578,7 +2578,6 @@ body:is(.theme-light, .theme-dark) ::-webkit-scrollbar-thumb:active {
 .app-container.app-container button,
 body .excalidraw .HelpDialog--btn,
 a:is(.style-settings-export, .style-settings-import),
-.workspace-leaf-content.workspace-leaf-content.workspace-leaf-content[data-type="VIEW_TYPE_LONGFORM_EXPLORER"] button,
 .modal.modal.modal.modal.modal button {
 	font-family: var(--button-font);
 	font-size: var(--button-font-size);
@@ -2608,7 +2607,6 @@ a:is(.style-settings-export, .style-settings-import),
 
 /* hovered buttons */
 .app-container.app-container button:hover,
-.workspace-leaf-content.workspace-leaf-content.workspace-leaf-content.workspace-leaf-content[data-type="VIEW_TYPE_LONGFORM_EXPLORER"] button:hover,
 body .excalidraw .HelpDialog--btn:hover,
 body .setting-item-control a:is(.style-settings-export, .style-settings-import):hover,
 .modal.modal.modal.modal.modal button:hover {
@@ -3353,11 +3351,8 @@ body .app-container :is(.nav-file-title, .nav-folder-title):is(.is-active, :hove
 	display: none;
 }
 
+.workspace-tab-header-container,
 body .workspace-tab-header-container .workspace-tab-header .workspace-tab-header-inner {
-	background-color: transparent;
-}
-
-.workspace-tab-header-container {
 	background-color: transparent;
 }
 
@@ -3408,6 +3403,9 @@ body > .app-container .workspace-split.mod-horizontal > .workspace-tabs > .works
 	background-color: var(--bg1);
 	cursor: pointer;
 }
+
+/* hover styling is partially also in the navigation
+buttons section below */
 
 /* ───────────────────────────────────────────────── */
 /* << Navigation buttons
@@ -10238,8 +10236,14 @@ body:not(.no-alternating-rows) li:nth-child(even) :is(.draft-container, .scene-c
 	content: "merge_type";
 }
 
-.workspace-leaf-content[data-type="VIEW_TYPE_LONGFORM_EXPLORER"] button.selected.selected.selected:not(:hover) {
+.workspace-leaf-content[data-type="VIEW_TYPE_LONGFORM_EXPLORER"] button.selected.selected.selected {
 	color: var(--extra-contrast);
+	background-color: var(--bg1);
+}
+
+/* hover look */
+.workspace-leaf-content[data-type="VIEW_TYPE_LONGFORM_EXPLORER"] .tab-list.tab-list button:hover {
+	color: var(--hover-accent-2);
 	background-color: var(--bg1);
 }
 
