@@ -3,6 +3,7 @@ nav_order: 110
 ---
 
 # Changelog
+- 2022-04-29	patch
 - 2022-04-29	minor kanban fixes
 - 2022-04-29	minor kanban fixes
 - 2022-04-29	collapse URLs in pandoc reference list plugin

@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 1.1519
+Version 1.1520
 Source CSS: https://github.com/chrisgrieser/shimmering-focus/blob/main/source.css
 MIT License
 ──────────────────────────────────────────────────── */
@@ -578,7 +578,7 @@ MIT License
 .theme-light {
 	--text-selection: var(--primary-accent-5);
 	--link-color: var(--primary-accent-2);
-	--active-text-color: var(--primary-accent-2);
+	--active-color: var(--primary-accent-2);
 
 	--interactive-bg: var(--primary-accent-4);
 	--interactive-border-color: var(--primary-accent-3);
@@ -590,7 +590,7 @@ MIT License
 .theme-dark {
 	--text-selection: var(--primary-accent-0);
 	--link-color: var(--primary-accent-3);
-	--active-text-color: var(--primary-accent-3);
+	--active-color: var(--primary-accent-3);
 
 	--interactive-bg: var(--primary-accent-2);
 	--interactive-border-color: var(--primary-accent-3);
@@ -842,7 +842,9 @@ body.strong-em-secondary-accent {
 .theme-light,
 .theme-dark {
 	--text-accent: var(--primary-accent-2);
-	--interactive-accent: var(--primary-accent-2);
+	--interactive-accent: var(--interactive-bg);
+	--interactive-accent-hover: var(--interactive-hover-bg);
+
 	--interactive-normal: var(--light-in-light-dark-in-dark);
 
 	--background-primary: var(--bg1);
@@ -1922,7 +1924,7 @@ body:not(.no-grayed-out-inactive-pane) {
 
 .cm-vimCursorLayer:not(:empty) + .cm-selectionLayer:not(:empty)::before {
 	content: "Visual";
-	color: var(--active-text-color);
+	color: var(--active-color);
 }
 
 .cm-vim-panel div span:only-child::before {
@@ -2067,7 +2069,7 @@ body.show-titlebar .workspace-ribbon.mod-left {
 }
 
 .titlebar-button:active {
-	color: var(--active-text-color);
+	color: var(--active-color);
 }
 
 body:not(.show-titlebar-text) .titlebar-text {
@@ -2299,7 +2301,7 @@ body .view-header-title {
 }
 
 body:not(.is-mobile) .view-actions {
-	padding: 0 0.25em;
+	padding: 0.1em 0.25em 0;
 }
 
 body:not(.is-mobile) .view-header-icon {
@@ -2336,7 +2338,7 @@ body:not(.is-mobile):not(.plugin-sliding-panes-rotate-header) .view-header:hover
 
 body:is(.show-header-bar, .is-mobile) .view-header:focus-within,
 body:not(.is-mobile):not(.plugin-sliding-panes-rotate-header) .view-header:focus-within {
-	border-bottom: 2px solid var(--active-text-color) !important;
+	border-bottom: 2px solid var(--active-color) !important;
 }
 
 .view-header.view-header .view-header-icon:hover,
@@ -2345,7 +2347,6 @@ body:not(.is-mobile):not(.plugin-sliding-panes-rotate-header) .view-header:focus
 }
 
 /* transitions */
-/* ----------- */
 body:not(.show-header-bar):not(.plugin-sliding-panes-rotate-header) .view-header:hover + .view-content :is(.markdown-preview-view, .cm-scroller),
 body:not(.show-header-bar):not(.plugin-sliding-panes-rotate-header) .view-header:hover + .view-content,
 body:not(.show-header-bar):not(.plugin-sliding-panes-rotate-header) .view-header:hover {
@@ -2560,7 +2561,7 @@ body:is(.theme-light, .theme-dark) ::-webkit-scrollbar-thumb:active {
 	background:
 		linear-gradient(
 			45deg,
-			var(--active-text-color) 0% 20%,
+			var(--active-color) 0% 20%,
 			var(--hover-accent-2) 40% 60%,
 			var(--secondary-accent-3) 80% 100%
 		);
@@ -3024,7 +3025,7 @@ body:not(.no-alternating-rows) .menu-item:nth-child(odd) {
 }
 
 .menu-item.selected :is(.menu-item-title, svg) {
-	color: var(--active-text-color);
+	color: var(--active-color);
 }
 
 .menu-separator {
@@ -3158,7 +3159,7 @@ div.prompt-results {
 
 .suggestion-item.is-selected :is(.suggestion-prefix, .suggestion-flair, .suggestion-highlight),
 .suggestion-item.is-selected {
-	color: var(--active-text-color);
+	color: var(--active-color);
 }
 
 .suggestion-item:hover :is(.suggestion-prefix, .suggestion-flair, .suggestion-highlight),
@@ -3277,7 +3278,7 @@ body:not(.no-alternating-rows) .suggestion-item:nth-child(odd) .suggestion-prefi
 }
 
 .suggestion-container .suggestion-item.is-selected .suggestion-note {
-	color: var(--active-text-color);
+	color: var(--active-color);
 }
 
 .suggestion-container .suggestion-item:hover .suggestion-note {
@@ -3331,7 +3332,7 @@ body .app-container :is(.nav-file-title, .nav-folder-title):is(.is-active, :hove
 /* active file */
 .nav-file-title.is-active {
 	font-weight: 900;
-	color: var(--active-text-color);
+	color: var(--active-color);
 }
 
 .trim-long-filenames :is(.nav-file-title-content, .nav-folder-title-content, .tree-item-inner, .search-result-file-title) {
@@ -3443,7 +3444,7 @@ buttons section below */
 }
 
 .nav-action-button:is(.is-active, :active) {
-	color: var(--active-text-color);
+	color: var(--active-color);
 
 	/* "pressed down" look */
 	box-shadow: var(--small-reverted-inset-shadow);
@@ -3791,7 +3792,7 @@ body .app-container .workspace-leaf-resize-handle:hover {
 
 /* color active/hovered sub menu */
 .vertical-tab-nav-item.vertical-tab-nav-item.vertical-tab-nav-item.vertical-tab-nav-item:is(:active, .is-active) {
-	color: var(--active-text-color);
+	color: var(--active-color);
 	background: var(--bg3);
 	padding-left: 7px;
 	margin-left: 0;
@@ -5019,7 +5020,7 @@ body:not(.no-active-highlight) .cm-active :is(.cm-formatting-header,.cm-formatti
 /* keys */
 .colored-yaml .frontmatter.language-yaml .atrule,
 .colored-yaml .cm-atom.cm-hmd-frontmatter {
-	color: var(--active-text-color);
+	color: var(--active-color);
 }
 
 /* punctuation */
@@ -8326,7 +8327,7 @@ action (folding) than clicking the heading itself (as opposed to other sidebar p
 
 .tree-item-self:active,
 .tree-item-self:active .tree-item-icon svg {
-	color: var(--active-text-color);
+	color: var(--active-color);
 }
 
 .tree-item-icon.collapse-icon {
@@ -8476,7 +8477,7 @@ body:not(.classic-inline-backlinks) :is(.writing, .longform-leaf) .embedded-back
 
 .backlink-pane .tree-item-inner.is-collapsed {
 	font-weight: 600;
-	color: var(--active-text-color) !important;
+	color: var(--active-color) !important;
 }
 
 .backlink-pane {
@@ -8809,7 +8810,7 @@ body:not(.no-alternating-rows) .workspace-leaf-content[data-type="starred"] .nav
 
 .sync-history-list-item.is-active {
 	font-weight: 600;
-	color: var(--active-text-color);
+	color: var(--active-color);
 	background-color: var(--bg3);
 }
 
@@ -8839,7 +8840,7 @@ body:not(.no-alternating-rows) .workspace-leaf-content[data-type="starred"] .nav
 }
 
 .modal.mod-sync-history textarea:focus {
-	border-color: var(--active-text-color);
+	border-color: var(--active-color);
 }
 
 .sync-history-content-buttons {
@@ -8912,7 +8913,7 @@ body:not(.show-graph-controls) .graph-controls.is-close:not(:hover) {
 }
 
 .graph-controls-button:active {
-	color: var(--active-text-color);
+	color: var(--active-color);
 }
 
 .tree-item-self:hover .graph-control-section-header {
@@ -8922,7 +8923,7 @@ body:not(.show-graph-controls) .graph-controls.is-close:not(:hover) {
 /* <<< Graph itself */
 /* node of current node (local graph) */
 .graph-view.color-fill-focused {
-	color: var(--active-text-color);
+	color: var(--active-color);
 	opacity: 0.8;
 }
 
@@ -9390,7 +9391,7 @@ body.plugin-sliding-panes-rotate-header .workspace > .mod-root > .workspace-leaf
 }
 
 body.plugin-sliding-panes-rotate-header .workspace > .mod-root > .workspace-leaf > .workspace-leaf-content > .view-header.view-header.view-header:focus-within {
-	border-color: var(--active-text-color);
+	border-color: var(--active-color);
 }
 
 body.plugin-sliding-panes-rotate-header .workspace > .mod-root > .workspace-leaf > .workspace-leaf-content > .view-header .view-header-icon.view-header-icon {
@@ -9487,7 +9488,7 @@ body .workspace-leaf-content[data-type="calendar"] .nav {
 }
 
 .workspace-leaf-content[data-type="calendar"] .day.today {
-	color: var(--active-text-color);
+	color: var(--active-color);
 }
 
 .workspace-leaf-content[data-type="calendar"] .day.active {
@@ -9495,7 +9496,7 @@ body .workspace-leaf-content[data-type="calendar"] .nav {
 	text-decoration: underline 2px;
 
 	color: var(--light-in-light-dark-in-dark);
-	background-color: var(--active-text-color);
+	background-color: var(--active-color);
 	opacity: 0.7;
 
 	border-radius: 0;
@@ -9611,6 +9612,12 @@ body:not(.show-header-bar) .workspace-leaf-content[data-type="kanban"] .view-hea
 
 .kanban-plugin {
 	background-color: var(--kanban-background) !important;
+}
+
+.kanban-plugin .kanban-plugin__lane-form-wrapper {
+	box-shadow: var(--medium-shadow);
+	border: var(--basic-border);
+	border-width: 3px;
 }
 
 body:not(.show-header-bar) .workspace-leaf-content[data-type="kanban"] .view-header {
@@ -9927,8 +9934,8 @@ body .kanban-plugin__new-item-button.kanban-plugin__new-item-button:hover {
 	border-color: var(--hover-accent-2) !important;
 }
 
-.kanban-plugin__drag-container .kanban-plugin__item-title-wrapper {
-	background-color: var(--active-hover-kanban-item) !important;
+.kanban-plugin__drag-container {
+	border-color: var(--active-color) !important;
 }
 
 /* fix metadata in kanban card display */
@@ -10042,13 +10049,13 @@ body:not(.no-heading-bg) .kanban-plugin :is(h1, h2, h3, h4, h5, h6) {
 }
 
 :is(#draft-list .draft-container, #scene-list .scene-container).selected {
-	color: var(--active-text-color);
+	color: var(--active-color);
 	background-color: var(--bg3);
 }
 
 /* dragging */
 :is(#draft-list .draft-container, #scene-list .scene-container) :is(.dragging, :active) {
-	color: var(--active-text-color);
+	color: var(--active-color);
 	background-color: transparent;
 }
 
@@ -10618,7 +10625,7 @@ body:not(.show-title-bar) > .qe-popup-menu {
 }
 
 .menu.qe-popup-menu .menu-item.selected::before {
-	color: var(--active-text-color);
+	color: var(--active-color);
 }
 
 .menu.qe-popup-menu .menu-item:is(:hover, .selected) {
@@ -10868,7 +10875,7 @@ button.MS-OpenSnippet:hover svg.ms-snippet path {
 
 .BC-active-note div { /* "Treat Current Note as Implied Sibling" enabled */
 	font-weight: 600;
-	color: var(--active-text-color);
+	color: var(--active-color);
 }
 
 body .app-container .workspace-leaf-content[data-type="BC-matrix"] .view-content {
@@ -11185,7 +11192,7 @@ body .qsp-symbol-indicator {
 }
 
 .suggestion-item.is-selected .qsp-symbol-indicator {
-	color: var(--active-text-color);
+	color: var(--active-color);
 }
 
 .suggestion-item:hover .qsp-symbol-indicator {
@@ -11243,7 +11250,7 @@ body .qsp-symbol-indicator {
 }
 
 .suggestion-item.is-selected :is(.another-quick-switcher__item__icon, .another-quick-switcher__item__directory, .another-quick-switcher__item__description) {
-	color: var(--active-text-color);
+	color: var(--active-color);
 	filter: saturate(50%);
 }
 
@@ -12667,7 +12674,7 @@ body:not(.no-alternating-rows) .omnisearch-result:nth-child(odd) .omnisearch-res
 }
 
 .omnisearch-result.is-selected:not(:hover) .omnisearch-result__body {
-	color: var(--active-text-color);
+	color: var(--active-color);
 	filter: saturate(40%);
 }
 
