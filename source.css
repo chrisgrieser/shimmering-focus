@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 1.1510
+Version 1.1511
 Source CSS: https://github.com/chrisgrieser/shimmering-focus/blob/main/source.css
 MIT License
 ──────────────────────────────────────────────────── */
@@ -10102,10 +10102,11 @@ input:is(#new-draft, #new-scene) {
 }
 
 #project-picker {
-	background-color: var(--heading-bg);
-	box-shadow: var(--muted-button-inset-shadow);
-	padding: 0 2px 2px;
-	border-bottom: var(--thin-border);
+	background-color: var(--bg3);
+	box-shadow: var(--small-inset-shadow);
+	padding: 0 1px 1px 0;
+	margin-top: 3px;
+	border: var(--thin-border);
 }
 
 div#select-projects select {

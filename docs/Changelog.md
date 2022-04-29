@@ -3,7 +3,7 @@ nav_order: 110
 ---
 
 # Changelog
-- 2022-04-29	patch
+- 2022-04-29	longform sidebar most consistent with rests of theme
 - 2022-04-29	styling for pandoc reference list plugin
 - 2022-04-29	longform icons hover now consistent with navigation buttons
 - 2022-04-29	re-organized style settings
