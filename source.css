@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 1.1505
+Version 1.1506
 Source CSS: https://github.com/chrisgrieser/shimmering-focus/blob/main/source.css
 MIT License
 ──────────────────────────────────────────────────── */
@@ -13489,14 +13489,14 @@ settings:
    collapsed: true
   -
    id: trim-long-filenames
-   title: 'Sidebar in General: Trim File Names'
-   description: When enabled, long file and folder names will be trimmed. When disabled, long names will be wrapped to the next line.
+   title: 'Sidebar: Trim File Names'
+   description: When enabled, long file and folder names will be trimmed. When disabled, long names will be wrapped to the next line. This setting affects sidebar tabs in general, not only the file explorer.
    type: class-toggle
    default: false
   -
    id: hide-attachment-folders
-   title: 'File Explorer: Hide attachment folders'
-   description: 'Affects folders with exactly the name "attachments" (case-insensitive).'
+   title: 'File Explorer: Hide attachments folders'
+   description: 'Affects folders exactly named "attachments" (case-insensitive).'
    type: class-toggle
    default: false
   -
