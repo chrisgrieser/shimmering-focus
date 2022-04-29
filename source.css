@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 1.1503
+Version 1.1504
 Source CSS: https://github.com/chrisgrieser/shimmering-focus/blob/main/source.css
 MIT License
 ──────────────────────────────────────────────────── */
@@ -268,10 +268,12 @@ MIT License
  	- Blockquotes (+)
  	- Gutter & Active Line (+)
  	- Views & Media (+)
- 	- Callouts (+)
+ 	- File Explorer & Sidebar (+)
+ 	- Status Bar (+)
  	- Special Syntax (+)
  	- Cursor & Vim Mode (+)
  	- Code Blocks (+)
+ 	- Callouts (+)
  	- Mobile (+)
  	- Plugin-Specific Settings (+)
  	- Longform (+)
@@ -12818,28 +12820,6 @@ settings:
    type: class-toggle
    default: false
   -
-   id: status-bar-mode
-   title: Status Bar
-   type: class-select
-   allowEmpty: false
-   default: only-on-hover
-   options:
-    -
-      label: only show on hover
-      value: only-on-hover-statusbar
-    -
-      label: show permanently
-      value: permanently-show-statusbar
-    -
-      label: hide permanently
-      value: permanently-hide-statusbar
-    -
-      label: permanent & text-only
-      value: minimal-status-bar
-    -
-      label: classic statusbar
-      value: classic-statusbar
-  -
    id: show-urls
    title: 'Permanently show full URLs (Source Mode)'
    type: class-toggle
@@ -12876,27 +12856,9 @@ settings:
    type: class-toggle
    default: false
   -
-   id: show-vault-in-file-explorer
-   title: 'File Explorer: Show Vault Name'
-   type: class-toggle
-   description: Enable this, if you want to drag and drop items to your vault root.
-   default: false
-  -
-   id: show-file-explorer-navigation
-   title: 'File Explorer: Re-enable Navigation Buttons'
-   type: class-toggle
-   description: 'The navigation buttons are the buttons for new file, new folder, and sorting. You can do the former two without the buttons via the context menu.'
-   default: false
-  -
    id: show-graph-controls
    title: 'Graph View: Permanently show the Graph Controls'
    description: By default, graph controls are only visible when opened, or upon hovering the top-left area of the Graph View.
-   type: class-toggle
-   default: false
-  -
-   id: show-starred-nav-buttons
-   title: 'Starred Pane: Re-enable Buttons'
-   description: The two buttons to star the current file and the current search.
    type: class-toggle
    default: false
   -
@@ -13361,7 +13323,7 @@ settings:
 # << Gutter & Active Line (+)
    id: gutter-features
    title: ❇️ Gutter & Active Line
-   description: Active Line Highlights, Indicators in the Gutter, 🆕 Line Numbering Styles, Tags-in-Gutter
+   description: Active Line Highlights, Indicators in the Gutter, 🆕 Relative/Minimal Line Numbering, Tags-in-Gutter
    type: heading
    level: 1
    collapsed: true
@@ -13499,17 +13461,17 @@ settings:
    max: 100
    step: 5
   -
+   id: left-aligned-embeds
+   title: Align Images & PDFs to the left
+   description: When disabled, they will be aligned to the center instead.
+   type: class-toggle
+   default: false
+  -
    id: disable-image-borders
    title: Remove image borders
    description: Disables the frame put around images.
    type: class-toggle
    hub: ignore
-   default: false
-  -
-   id: left-aligned-embeds
-   title: Align Images & PDFs to the left
-   description: When disabled, they will be aligned to the center instead.
-   type: class-toggle
    default: false
   -
    id: no-pdf-dark-mode
@@ -13518,38 +13480,95 @@ settings:
    type: class-toggle
    default: false
   -
-# << Callouts (+)
-   id: callout-options
-   title: 📞 Callouts
-   description: Sidenote Callouts
+# << File Explorer & Sidebar (+)
+   id: file-explorer-sidebar-options
+   title: 📂 File Explorer & Sidebar
+   description: File Name Trimming, Icons, Show/Hide elements
    type: heading
    level: 1
    collapsed: true
   -
-   id: sidenote-callout-width
-   title: Width of Sidenote Callouts
-   description: 'Percentage of the readable line length. Affects callouts with "> [!sidenote]". '
-   type: variable-number-slider
-   default: 34
-   min: 10
-   max: 60
-   step: 2
-  -
-   id: sidenote-callout-outdent
-   title: '"Outdent" the Sidenote Callout'
-   description: Moves them slightly to the right for extra space.
+   id: trim-long-filenames
+   title: 'Sidebar in General: Trim File Names'
+   description: When enabled, long file and folder names will be trimmed. When disabled, long names will be wrapped to the next line.
    type: class-toggle
    default: false
   -
-   id: post-it-callout-size
-   title: 🆕 Size of Post-it Callouts
-   description: "Affects callouts with '> [!post-it]'. This variable affects width and height, i.e. quadratic growth). Mind that post-its with too much content get cut off — they are post-its after all."
-   type: variable-number-slider
-   default: 135
-   min: 90
-   max: 250
-   step: 5
-   format: px
+   id: hide-attachment-folders
+   title: 'File Explorer: Hide attachment folders'
+   description: 'Affects folders with exactly the name "attachments" (case-insensitive).'
+   type: class-toggle
+   default: false
+  -
+   id: show-vault-in-file-explorer
+   title: 'File Explorer: Show Vault Name'
+   type: class-toggle
+   description: Enable this, if you want to drag and drop items to your vault root.
+   default: false
+  -
+   id: show-file-explorer-navigation
+   title: 'File Explorer: Re-enable Navigation Buttons'
+   type: class-toggle
+   description: 'The navigation buttons are the buttons for new file, new folder, and sorting. You can do the former two without the buttons via the context menu.'
+   default: false
+  -
+   id: no-file-explorer-icons
+   title: 'File Explorer: No File Icons'
+   description: Remove the icons next to files in the file explorer. Enable this if you use a plugin that already adds icons.
+   type: class-toggle
+   default: false
+  -
+   id: no-folder-icons
+   title: 'File Explorer: No Folder Icons'
+   description: Remove the icons next to folders in the file explorer. Enable this if you use a plugin that already adds icons.
+   type: class-toggle
+   default: false
+  -
+# << Status Bar (+)
+   id: status-bar-options
+   title: 💈 Status Bar
+   description: Type of Status Bar, Hiding Items
+   type: heading
+   level: 1
+   collapsed: true
+  -
+   id: status-bar-mode
+   title: Status Bar
+   type: class-select
+   allowEmpty: false
+   default: only-on-hover
+   options:
+    -
+      label: only show on hover
+      value: only-on-hover-statusbar
+    -
+      label: show permanently
+      value: permanently-show-statusbar
+    -
+      label: hide permanently
+      value: permanently-hide-statusbar
+    -
+      label: permanent & text-only
+      value: minimal-status-bar
+    -
+      label: classic statusbar
+      value: classic-statusbar
+  -
+   id: hide-languagetool-status-bar
+   title: 'Language Tool: Hide the Status Bar Item'
+   type: class-toggle
+   default: false
+  -
+   id: hide-backlinks-status-bar
+   title: 'Backlinks: Hide the Status Bar Item'
+   type: class-toggle
+   default: false
+  -
+   id: hide-signature
+   title: 'Status Bar: Hide the decorative "✧" icon'
+   hub: ignore
+   type: class-toggle
+   default: false
   -
 # << Special Syntax (+)
    id: special-syntax
@@ -13789,6 +13808,39 @@ settings:
       label: Dracula
       value: dracula-syntax-hl-dark
   -
+# << Callouts (+)
+   id: callout-options
+   title: 📞 Callouts
+   description: Sidenote Callouts
+   type: heading
+   level: 1
+   collapsed: true
+  -
+   id: sidenote-callout-width
+   title: Width of Sidenote Callouts
+   description: 'Percentage of the readable line length. Affects callouts with "> [!sidenote]". '
+   type: variable-number-slider
+   default: 34
+   min: 10
+   max: 60
+   step: 2
+  -
+   id: sidenote-callout-outdent
+   title: '"Outdent" the Sidenote Callout'
+   description: Moves them slightly to the right for extra space.
+   type: class-toggle
+   default: false
+  -
+   id: post-it-callout-size
+   title: 🆕 Size of Post-it Callouts
+   description: "Callouts with '> [!post-it]'. This variable affects width and height (i.e., quadratic growth). Mind that post-its with too much content get cut off — they are post-its after all."
+   type: variable-number-slider
+   default: 135
+   min: 90
+   max: 250
+   step: 5
+   format: px
+  -
 # << Mobile (+)
    id: mobile
    title: 📱 Mobile
@@ -13827,28 +13879,10 @@ settings:
 # << Plugin-Specific Settings (+)
    id: plugin-specific
    title: ⚙️ Plugin-Specific Settings
-   description: File Explorer, Backlinks, Outline, Breadcrumbs, Sliding Panes, Supercharged Links, Calendar, Link Favicons, Command Palette
+   description: Backlinks, Outline, Starred, Command Palette, Breadcrumbs, Sliding Panes, Supercharged Links, Link Favicons, Calendar
    type: heading
    level: 1
    collapsed: true
-  -
-   id: no-file-explorer-icons
-   title: 'File Explorer: No File Icons'
-   description: Removes the icons next to files in the file explorer.
-   type: class-toggle
-   default: false
-  -
-   id: no-folder-icons
-   title: 'File Explorer: No Folder Icons'
-   description: Removes the icons next to folders in the file explorer.
-   type: class-toggle
-   default: false
-  -
-   id: hide-attachment-folders
-   title: 'File Explorer: Hide attachment folders'
-   description: 'Affects folders that have exactly the name "attachments" (case-insensitive).'
-   type: class-toggle
-   default: false
   -
    id: classic-inline-backlinks
    title: 'Backlinks: Re-enable classic inline backlinks'
@@ -13856,20 +13890,23 @@ settings:
    type: class-toggle
    default: false
   -
-   id: hide-backlinks-status-bar
-   title: 'Backlinks: Hide the Status Bar Item'
-   type: class-toggle
-   default: false
-  -
-   id: hide-languagetool-status-bar
-   title: 'Language Tool: Hide the Status Bar Item'
-   type: class-toggle
-   default: false
-  -
    id: outline-remove-level-1
    title: 'Outline: Remove First Level of Headings'
    description: In case you have only one H1 heading per file, this will make the outline sidebar more compact.
    type: class-toggle
+   default: false
+  -
+   id: show-starred-nav-buttons
+   title: 'Starred Pane: Re-enable Buttons'
+   description: The two buttons to star the current file and the current search.
+   type: class-toggle
+   default: false
+  -
+   id: move-plugin-name-to-left
+   title: 'Command Palette: Move the plugin name back to the left'
+   description: Enable this in case some commands are aren't displayed properly in the Command Palette.
+   type: class-toggle
+   hub: ignore
    default: false
   -
    id: minimal-breadcrumbs-matrix
@@ -13888,13 +13925,6 @@ settings:
    title: 'Supercharged Links: Turn off built-in styling'
    description: "This theme has some styling for the Supercharged Links plugin built-in, so can make use of the plugin without knowledge of CSS. See the theme's documentation for more information."
    type: class-toggle
-   default: false
-  -
-   id: move-plugin-name-to-left
-   title: 'Command Palette: Move the plugin name back to the left'
-   description: Enable this in case some commands are aren't displayed properly in the Command Palette.
-   type: class-toggle
-   hub: ignore
    default: false
   -
    id: grayscale-favicons
@@ -13979,7 +14009,7 @@ settings:
 # << Miscellaneous (+)
    id: miscellaneous
    title: ⚛️ Miscellaneous
-   description: Menu Size, File Name Trimming, Inactive Panes, Alternating Row Colors, Colored YAML, Animations, 🆕 Theme Beta
+   description: Menu Size, Inactive Panes, Alternating Row Colors, Animations, 🆕 Theme Beta
    type: heading
    level: 1
    collapsed: true
@@ -13992,12 +14022,6 @@ settings:
    min: 0
    max: 70
    step: 2
-  -
-   id: trim-long-filenames
-   title: 'Sidebar: Trim File Names'
-   description: When enabled, long file and folder names will be trimmed. When disabled, long names will be wrapped to the next line.
-   type: class-toggle
-   default: false
   -
    id: no-grayed-out-inactive-pane
    title: Do not dim Inactive Panes
@@ -14020,12 +14044,6 @@ settings:
    id: no-shadows
    title: Turn off shadows (3D-like look)
    description: Can improve performance on older machines.
-   type: class-toggle
-   default: false
-  -
-   id: hide-signature
-   title: 'Status Bar: Hide the decorative "✧" icon'
-   hub: ignore
    type: class-toggle
    default: false
   -
