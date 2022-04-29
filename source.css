@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 1.1521
+Version 1.1522
 Source CSS: https://github.com/chrisgrieser/shimmering-focus/blob/main/source.css
 MIT License
 ──────────────────────────────────────────────────── */
@@ -5306,10 +5306,17 @@ body:not(.no-floating-metadata):not(.is-mobile) .markdown-preview-view:not(.no-f
 	--floating-metadata-top-no-header: 2.2rem;
 }
 
+:is(.longform-leaf, .writing) {
+	--floating-metadata-top-header-visible: 1.35rem;
+	--floating-metadata-top-no-header: 2.5rem;
+}
+
+body:not(.show-header-bar) :is(.longform-leaf, .writing),
 body:not(.show-header-bar) {
 	--floating-metadata-top: var(--floating-metadata-top-no-header);
 }
 
+body.show-header-bar :is(.longform-leaf, .writing),
 body.show-header-bar {
 	--floating-metadata-top: var(--floating-metadata-top-header-visible);
 }
@@ -6104,7 +6111,7 @@ body:not(.active-line-emphasized-bg):not(.no-active-highlight) .HyperMD-quote:is
 .markdown-preview-view blockquote {
 	background-color: var(--blockquote-color);
 	padding: 0.35em 0.8em 0.5em 0.7em;
-	margin: 1.5em 0;
+	margin: 1.2em 0;
 	border: none;
 	border-radius: var(--roundish);
 }
