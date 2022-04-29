@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 1.1522
+Version 1.1523
 Source CSS: https://github.com/chrisgrieser/shimmering-focus/blob/main/source.css
 MIT License
 ──────────────────────────────────────────────────── */
@@ -3877,10 +3877,7 @@ input:is([type="email"], [type="password"]) {
 }
 
 .installed-plugins-container .setting-item-description > div:nth-child(2) {
-	position: relative;
-	left: 6em;
-	margin-top: -1.35em;
-	margin-bottom: 1px;
+	margin: -1.35em 3em 1px 6em; /* right marging needed to prevent the div laying over the buttons */
 }
 
 .installed-plugins-container .setting-item-description > div:nth-child(-n+2) {
