@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 1.1513
+Version 1.1514
 Source CSS: https://github.com/chrisgrieser/shimmering-focus/blob/main/source.css
 MIT License
 ──────────────────────────────────────────────────── */
@@ -603,7 +603,7 @@ MIT License
 .theme-light {
 	--text-hover-accent: var(--hover-accent-2);
 
-	--scrollbar-bg-hover: var(--hover-accent-3);
+	--scrollbar-bg-hover: var(--hover-accent-4);
 
 	--interactive-hover-bg: var(--hover-accent-3);
 	--interactive-hover-border-color: var(--hover-accent-4);
@@ -12708,14 +12708,37 @@ body:not(.no-alternating-rows) .omnisearch-result:nth-child(odd) .omnisearch-res
 
 body .pwc-reference-list .csl-entry.csl-entry.csl-entry {
 	font-family: var(--longform-font-text-theme);
-	font-size: 1.2em;
-	line-height: 1.05;
+	font-size: 1.25em;
+	line-height: 1.0;
 
-	padding: 0 6px;
+	padding: 0 3px;
 	padding-left: calc(var(--bibliography-indent) + 6px);
 	text-indent: calc(var(--bibliography-indent) * -1);
 
 	border-bottom: none;
+}
+
+/* collapsed links */
+.pwc-reference-list a {
+	font-size: 0;
+	text-decoration: none;
+}
+
+.pwc-reference-list a::after {
+	content: "link";
+
+	font-family: var(--icon-font);
+	font-size: calc(var(--font-text-size) * 0.85);
+
+	background-color: var(--bg3);
+
+	position: relative;
+	bottom: -2px;
+
+	padding: 1px;
+
+	border: var(--thin-border);
+	border-radius: var(--roundish);
 }
 
 /* empty state */
