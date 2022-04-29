@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 1.1524
+Version 1.1525
 Source CSS: https://github.com/chrisgrieser/shimmering-focus/blob/main/source.css
 MIT License
 ──────────────────────────────────────────────────── */
@@ -5213,6 +5213,7 @@ body:not(.no-floating-metadata):not(.is-mobile) .markdown-preview-view:not(.no-f
 	z-index: 100;
 
 	padding: 4px 2rem 5px 7px;
+	margin: 0;
 
 	border: var(--basic-border);
 	border-radius: var(--roundish);
@@ -5222,14 +5223,8 @@ body:not(.no-floating-metadata):not(.is-mobile) .markdown-preview-view:not(.no-f
 	color: var(--text-normal);
 }
 
-body:not(.no-floating-metadata):not(.is-mobile) .markdown-preview-view:not(.no-floating-metadata) .frontmatter.language-yaml {
-	top: var(--floating-metadata-top);
-	margin: 0;
-}
-
 body:not(.no-floating-metadata):not(.is-mobile) .markdown-preview-view:not(.no-floating-metadata) .frontmatter-container {
 	font-size: 0.95rem;
-	top: calc(var(--floating-metadata-top) + 2.8rem);
 }
 
 /* look when not hovered */
@@ -5277,7 +5272,6 @@ body:not(.no-floating-metadata):not(.is-mobile) .markdown-preview-view:not(.no-f
 	font-size: 1.4rem;
 	text-shadow: none;
 	padding-left: 0.65rem;
-	margin: 0;
 }
 
 body:not(.no-floating-metadata):not(.is-mobile) :is(.longform-leaf .markdown-preview-view:not(.no-floating-metadata), .markdown-preview-view:not(.no-floating-metadata).writing) .frontmatter.language-yaml:not(:hover)::before {
@@ -5298,9 +5292,7 @@ body:not(.no-floating-metadata):not(.is-mobile) .markdown-preview-view:not(.no-f
 }
 
 /* positioning & interaction with header only visible on hover */
-
-/* stylelint-disable-next-line no-duplicate-selectors */
-:root {
+:root { /* stylelint-disable-line no-duplicate-selectors */
 	--floating-metadata-top-header-visible: 2.9rem;
 	--floating-metadata-top-no-header: 2.2rem;
 }
@@ -5320,19 +5312,36 @@ body.show-header-bar {
 	--floating-metadata-top: var(--floating-metadata-top-header-visible);
 }
 
+/* yaml w/o header */
+/* metadata w/o yaml & w/o header */
+body:not(.no-floating-metadata):not(.is-mobile) .markdown-preview-view:not(.no-floating-metadata) .frontmatter-container,
+body:not(.no-floating-metadata):not(.is-mobile) .markdown-preview-view:not(.no-floating-metadata) .frontmatter.language-yaml {
+	top: var(--floating-metadata-top);
+}
+
+/* metadata w/ yaml & w/o header */
+body:not(.no-floating-metadata):not(.is-mobile) .markdown-preview-view:not(.no-floating-metadata).show-frontmatter .frontmatter-container {
+	top: calc(var(--floating-metadata-top) + 2.8rem);
+}
+
+/* yaml w/ header */
+/* metadata w/o yaml & w/ header */
+body:not(.show-header-bar):not(.no-floating-metadata):not(.is-mobile) .view-header:is(:focus-within, :hover) + .view-content .markdown-preview-view:not(.no-floating-metadata) .frontmatter-container,
 body:not(.show-header-bar):not(.no-floating-metadata):not(.is-mobile) .view-header:is(:focus-within, :hover) + .view-content .markdown-preview-view:not(.no-floating-metadata) .frontmatter.language-yaml {
 	top: var(--floating-metadata-top-header-visible);
 	transition-delay: var(--transition-delay-passing-over-protection);
 }
 
-body:not(.show-header-bar):not(.no-floating-metadata):not(.is-mobile) .view-header:is(:focus-within, :hover) + .view-content .markdown-preview-view:not(.no-floating-metadata) .frontmatter-container {
+/* metadata w/ yaml and w/ header */
+body:not(.show-header-bar):not(.no-floating-metadata):not(.is-mobile) .view-header:is(:focus-within, :hover) + .view-content .markdown-preview-view:not(.no-floating-metadata).show-frontmatter .frontmatter-container {
 	top: calc(var(--floating-metadata-top-header-visible) + 2.8rem);
 	transition-delay: var(--transition-delay-passing-over-protection);
 }
 
+/* sync: so transition only affects movement due to header showing, not for the metadata-hovering */
 body:not(.show-header-bar):not(.no-floating-metadata):not(.is-mobile) .markdown-preview-view:not(.no-floating-metadata) :is(.frontmatter.language-yaml, .frontmatter-container) {
 	transition: var(--medium-transition);
-	transition-property: top; /* so transition only affects movement due to header showing, not for the metadata-hovering */
+	transition-property: top;
 }
 
 /* ───────────────────────────────────────────────── */
