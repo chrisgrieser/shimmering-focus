@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 1.1508
+Version 1.1509
 Source CSS: https://github.com/chrisgrieser/shimmering-focus/blob/main/source.css
 MIT License
 ──────────────────────────────────────────────────── */
@@ -3863,12 +3863,12 @@ input:is([type="email"], [type="password"]) {
 }
 
 .installed-plugins-container .setting-item-description > div:first-child {
+	text-indent: -4.4em;
 	margin-top: -0.1em;
 	margin-bottom: 2px;
 
 	/* hide "Version: " in front of version number */
 	overflow-x: hidden;
-	text-indent: -4.4em;
 }
 
 /* space between button and checklist, e.g.
@@ -7900,8 +7900,8 @@ body:not(.no-fn-indicator) .mod-cm6 .cm-hmd-barelink:not(.cm-formatting-link) + 
 
 /* bibliography list */
 .bibliography-list li {
-	margin-left: 1.5em;
 	text-indent: -2.2em;
+	margin-left: 1.5em;
 }
 
 .bibliography-list li::marker {
@@ -12709,10 +12709,9 @@ body .pwc-reference-list .csl-entry.csl-entry.csl-entry {
 
 	padding: 0 6px;
 	padding-left: calc(var(--bibliography-indent) + 6px);
+	text-indent: calc(var(--bibliography-indent) * -1);
 
 	border-bottom: none;
-
-	text-indent: calc(var(--bibliography-indent) * -1);
 }
 
 /* ───────────────────────────────────────────────── */

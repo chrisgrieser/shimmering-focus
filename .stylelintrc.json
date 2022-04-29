@@ -127,6 +127,7 @@
 						"padding-right",
 						"padding-bottom",
 						"padding-left",
+						"text-indent",
 						"padding-inline",
 						"padding-inline-start",
 						"margin",
