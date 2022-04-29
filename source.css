@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 1.1512
+Version 1.1513
 Source CSS: https://github.com/chrisgrieser/shimmering-focus/blob/main/source.css
 MIT License
 ──────────────────────────────────────────────────── */
@@ -790,11 +790,11 @@ body.strong-em-secondary-accent {
 	background-color: var(--resize-handle-color);
 }
 
-.theme-light ::-webkit-scrollbar-thumb {
+.theme-light.theme-light ::-webkit-scrollbar-thumb {
 	background-color: var(--bg3);
 }
 
-.theme-dark ::-webkit-scrollbar-thumb {
+.theme-dark.theme-dark ::-webkit-scrollbar-thumb {
 	background-color: var(--bg2);
 }
 
@@ -970,7 +970,7 @@ body:is(.theme-light, .theme-dark) {
 :root {
 	--resize-handle-thickness: 2px;
 	--resize-handle-hovered-thickness: 5px;
-	--scrollbar-thickness: 12px;
+	--scrollbar-thickness: 9px;
 
 	--image-size: 50;
 	--pdf-size: 50;
