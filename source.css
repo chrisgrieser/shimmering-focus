@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 1.1516
+Version 1.1517
 Source CSS: https://github.com/chrisgrieser/shimmering-focus/blob/main/source.css
 MIT License
 ──────────────────────────────────────────────────── */
@@ -8776,6 +8776,7 @@ body:not(.no-alternating-rows) .workspace-leaf-content[data-type="starred"] .nav
 	background-color: var(--bg3);
 	padding-top: 13px;
 	padding-bottom: 3px;
+	margin-left: 0;
 	border-bottom: var(--basic-border);
 }
 
