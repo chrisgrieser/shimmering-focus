@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 1.1509
+Version 1.1510
 Source CSS: https://github.com/chrisgrieser/shimmering-focus/blob/main/source.css
 MIT License
 ──────────────────────────────────────────────────── */
@@ -12712,6 +12712,19 @@ body .pwc-reference-list .csl-entry.csl-entry.csl-entry {
 	text-indent: calc(var(--bibliography-indent) * -1);
 
 	border-bottom: none;
+}
+
+/* empty state */
+.pwc-no-content.pwc-no-content.pwc-no-content.pwc-no-content.pwc-no-content {
+	font-size: 0;
+	text-align: center;
+	margin-top: 20%;
+}
+
+.pwc-no-content::after {
+	content: var(--signature);
+	font-size: calc(var(--empty-state-symbol-size) * 0.8);
+	color: var(--extra-contrast);
 }
 
 /* ───────────────────────────────────────────────── */
