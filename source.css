@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 1.1507
+Version 1.1508
 Source CSS: https://github.com/chrisgrieser/shimmering-focus/blob/main/source.css
 MIT License
 ──────────────────────────────────────────────────── */
@@ -259,6 +259,7 @@ MIT License
 	- Mind Map
 	- Linter
 	- vimrc support
+	- Pandoc Reference List
 - Compatibility Info for the Obsidian Hub
 - Style Setting (YAML)
  	- Show / Hide UI Elements (+)
@@ -10478,6 +10479,7 @@ body:not(.longform-left-aligned) :is(.writing, .longform-leaf) :is(p, .footnotes
 :is(.writing, .longform-leaf) .cm-header.cm-header,
 .longform-leaf.longform-leaf :is(h1, h2, h3, h4, h5, h6) {
 	font-family: var(--longform-font-text-theme);
+	letter-spacing: calc(var(--heading-letter-spacing) * 0.3);
 }
 
 .longform-text-indent.longform-text-indent :is(.writing, .longform-leaf) p {
@@ -10487,7 +10489,7 @@ body:not(.longform-left-aligned) :is(.writing, .longform-leaf) :is(p, .footnotes
 /* line height */
 :is(.writing, .longform-leaf) :is(.cm-line, table),
 :is(.writing, .longform-leaf) .cm-line > :not(.cm-header, .cm-hmd-frontmatter) {
-	line-height: 1.3em;
+	line-height: 1.25em;
 }
 
 :is(.writing, .longform-leaf) .cm-line > :is(.cm-header, .cm-hmd-frontmatter) {
@@ -12686,6 +12688,34 @@ body:not(.no-alternating-rows) .omnisearch-result:nth-child(odd) .omnisearch-res
 }
 
 /* ───────────────────────────────────────────────── */
+/* << Pandoc Reference List
+──────────────────────────────────────────────────── */
+
+.pwc-reference-list {
+	--bibliography-indent: 1em;
+}
+
+.pwc-reference-list.pwc-reference-list.pwc-reference-list.pwc-reference-list .pwc-reference-list__title {
+	font-family: var(--heading-font);
+	font-size: var(--h3);
+	letter-spacing: calc(var(--heading-letter-spacing) * 0.5);
+	margin-bottom: 5px;
+}
+
+body .pwc-reference-list .csl-entry.csl-entry.csl-entry {
+	font-family: var(--longform-font-text-theme);
+	font-size: 1.2em;
+	line-height: 1.05;
+
+	padding: 0 6px;
+	padding-left: calc(var(--bibliography-indent) + 6px);
+
+	border-bottom: none;
+
+	text-indent: calc(var(--bibliography-indent) * -1);
+}
+
+/* ───────────────────────────────────────────────── */
 /* < Compatibility Info for the Obsidian Hub
 ──────────────────────────────────────────────────── */
 
@@ -12762,6 +12792,7 @@ community:
 - typing-speed
 - obsidian-vimrc-support
 - obsidian-dynamic-toc
+- obsidian-pandoc-reference-list
 */
 
 /* ───────────────────────────────────────────────── */
