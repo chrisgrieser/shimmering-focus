@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 1.1514
+Version 1.1515
 Source CSS: https://github.com/chrisgrieser/shimmering-focus/blob/main/source.css
 MIT License
 ──────────────────────────────────────────────────── */
@@ -6372,8 +6372,8 @@ div[data-callout].is-collapsible.is-collapsed .callout-title {
 	--callout-color: 202, 164, 255;
 }
 
-.callout[data-callout="attachment"],
-.callout[data-callout="file"] {
+.callout[data-callout^="attachment"],
+.callout[data-callout^="file"] {
 	--callout-icon: paperclip;
 	--callout-color: 255, 90, 143;
 }
@@ -12735,7 +12735,7 @@ body .pwc-reference-list .csl-entry.csl-entry.csl-entry {
 	position: relative;
 	bottom: -2px;
 
-	padding: 1px;
+	padding: 1px 2px;
 
 	border: var(--thin-border);
 	border-radius: var(--roundish);
