@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 1.1517
+Version 1.1518
 Source CSS: https://github.com/chrisgrieser/shimmering-focus/blob/main/source.css
 MIT License
 ──────────────────────────────────────────────────── */
@@ -9691,7 +9691,7 @@ body .app-container :is(.kanban-plugin__drag-container,.kanban-plugin) :is(h1, h
 }
 
 body .kanban-plugin__item-title-wrapper {
-	padding: 3px 5px 4px 2px;
+	padding: 3px 5px 0 2px;
 }
 
 :is(.kanban-plugin__drag-container,.kanban-plugin) h1 { font-size: calc(var(--h1) * var(--kanban-heading-size-factor)) }
@@ -9828,11 +9828,17 @@ body .kanban-plugin__lane-header-wrapper {
 	border: none;
 }
 
+.kanban-plugin__lane-input.kanban-plugin__lane-input.kanban-plugin__lane-input.kanban-plugin__lane-input,
 .kanban-plugin .kanban-plugin__lane-title-text div > p {
 	font-family: var(--button-font);
 	font-size: 1.1em;
 	letter-spacing: 0.1px;
 	margin-top: -1px;
+}
+
+.kanban-plugin__lane-input.kanban-plugin__lane-input.kanban-plugin__lane-input.kanban-plugin__lane-input {
+	line-height: 1;
+	background-color: var(--bg1);
 }
 
 .round-shapes .kanban-plugin .kanban-plugin__lane-title-text div > p {
