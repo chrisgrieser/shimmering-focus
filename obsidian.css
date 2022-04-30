@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 1.1527
+Version 1.1528
 Source CSS: https://github.com/chrisgrieser/shimmering-focus/blob/main/source.css
 MIT License
 ──────────────────────────────────────────────────── */
@@ -110,19 +110,19 @@ settings:
   -
    id: shapes
    title: Shapes
-   description: Round, angular, or square-ish shapes throughout the whole theme.
+   description: Roundish, rounded, or angular shapes throughout the whole theme.
    type: class-select
    allowEmpty: false
    default: squareish-shapes
    options:
     -
-      label: ⏹ Rounded
+      label: ⏹ Roundish
       value: squareish-shapes
     -
       label: 🔘 Round
       value: round-shapes
     -
-      label: 🔲 Pointy
+      label: 🔲 Angular
       value: angular-shapes
   -
    id: colored-yaml
@@ -150,7 +150,7 @@ settings:
   -
    id: preset-color-scheme
    title: "Color Schemes"
-   description: 'Select "💫 Custom Colors" to fully customize background colors and accent colors (soon™️) yourself.'
+   description: 'Select "🌈 Custom Colors" to fully customize background colors and accent colors (soon™️) yourself.'
    type: class-select
    allowEmpty: false
    default: classic-colors
@@ -162,10 +162,10 @@ settings:
       label: ❄️ Nord
       value: nord-colors
     -
-      label: 𝚪 Gamma
+      label: ⚛️🌊 Gamma
       value: gamma-colors
     -
-      label: 💫 Custom Colors
+      label: 🌈 Custom Colors
       value: custom-colors
   -
    id: custom-color-light-mode
