@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 1.1526
+Version 1.1527
 Source CSS: https://github.com/chrisgrieser/shimmering-focus/blob/main/source.css
 MIT License
 ──────────────────────────────────────────────────── */
@@ -10626,7 +10626,7 @@ body:not(.no-alternating-rows) .workspace-leaf-content[data-type="recent-files"]
 
 /* prevent appearing on top of the traffic lights of macOS */
 body:not(.show-title-bar) > .qe-popup-menu {
-	padding-top: 1.2em !important;
+	padding-top: 1.2em;
 }
 
 .menu.qe-popup-menu .menu-item {
@@ -10638,7 +10638,7 @@ body:not(.show-title-bar) > .qe-popup-menu {
 }
 
 /* hover & select colors */
-.menu.qe-popup-menu .menu-item:is(:hover, .selected)::before {
+.menu.menu.qe-popup-menu .menu-item:hover::before {
 	color: var(--hover-accent-2);
 }
 
@@ -10646,8 +10646,8 @@ body:not(.show-title-bar) > .qe-popup-menu {
 	color: var(--active-color);
 }
 
-.menu.qe-popup-menu .menu-item:is(:hover, .selected) {
-	background-color: var(--bg3) !important;
+.menu.menu.menu.qe-popup-menu .menu-item:is(:hover, .selected) {
+	background-color: var(--bg3);
 }
 
 /* icons */
