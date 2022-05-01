@@ -19,7 +19,7 @@
 # - git add, commit, pull, push to the remote repo
 
 # REQUIREMENTS
-# - cssclean
+# - clean-css-cli
 # - stylelint
 # - markdownlint
 # - markdown-link-check
