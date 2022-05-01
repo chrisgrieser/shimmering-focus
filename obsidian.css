@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 2.3
+Version 2.4
 Source CSS: https://github.com/chrisgrieser/shimmering-focus/blob/main/source.css
 MIT License
 ──────────────────────────────────────────────────── */
@@ -653,7 +653,7 @@ settings:
   -
    id: tags-in-gutter
    title: Show Tags in Gutter (Reading Mode)
-   description: 'Can also be selectively enabled per note by adding the cssclass "tags-in-gutter".'
+   description: 'Note that this will look off, if your gutter is too narrow (through a narrow window or high zoom in level). Can also be selectively enabled per note by adding the cssclass "tags-in-gutter".'
    type: class-toggle
    default: false
   -
