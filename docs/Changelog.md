@@ -3,6 +3,7 @@ nav_order: 110
 ---
 
 # Changelog
+- 2022-05-01	fix for style settings pane
 - 2022-05-01	fix glitch in community plugin lsit when scrollbars are enabled
 - 2022-05-01	fix navigation buttons for search pane
 - 2022-05-01	fix for unresolved items with another quick switcher

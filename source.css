@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 2.7
+Version 2.8
 Source CSS: https://github.com/chrisgrieser/shimmering-focus/blob/main/source.css
 MIT License
 ──────────────────────────────────────────────────── */
@@ -11757,16 +11757,12 @@ body:not(.unlock-theme-beta) .style-settings-container .setting-item:is(
 	cursor: default;
 
 	pointer-events: none;
+	font-size: 0.75rem;
 }
 
 .modal .setting-item-heading[data-id="shimmering-focus"]::before {
-	font-size: 0.9rem;
-	/* margin to the right needed so the SHimmering Focus heading is properly aligned when zoomed out */
-	margin: -3.5em 10em 3em 0;
-}
-
-.workspace-leaf-content[data-type="style-settings"] > .view-content > .setting-item:first-child::before {
-	font-size: 0.8rem;
+	/* margin to the right needed so the Shimmering Focus heading is properly aligned when zoomed out */
+	margin: -4.1em 10em 2em 0;
 }
 
 /* ───────────────────────────────────────────────── */
