@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 1.1529
+Version 2.1
 Source CSS: https://github.com/chrisgrieser/shimmering-focus/blob/main/source.css
 MIT License
 ──────────────────────────────────────────────────── */
@@ -103,7 +103,7 @@ settings:
   -
    id: aesthetics
    title: 🎨 Color & Aesthetics
-   description: Color Schemes, Coloring of YAML, 🆕 Coloring of Bold/Italic, Brightness, Roundness
+   description: Color Schemes, 🆕 Custom Colors, Coloring of YAML, 🆕 Coloring of Bold/Italic, Brightness, Roundness
    type: heading
    level: 1
    collapsed: true
@@ -153,17 +153,17 @@ settings:
    description: 'Select "🌈 Custom Colors" to fully customize background colors and accent colors (soon™️) yourself.'
    type: class-select
    allowEmpty: false
-   default: classic-colors
+   default: gamma-colors
    options:
     -
-      label: 🟪🟩 Classic
+      label: 🟦🟨🟪 Gamma
+      value: gamma-colors
+    -
+      label: 🟣🟢 Classic
       value: classic-colors
     -
       label: ❄️ Nord
       value: nord-colors
-    -
-      label: ⚛️🌊 Gamma
-      value: gamma-colors
     -
       label: 🌈 Custom Colors
       value: custom-colors
@@ -180,7 +180,7 @@ settings:
    description: 'Links, Selections, Buttons, Interactive UI Elements'
    type: class-select
    allowEmpty: false
-   default: primary-accent-light-purple
+   default: primary-accent-light-cyan
    options:
     -
       label: 🟣 Obsidian Purple
@@ -200,7 +200,7 @@ settings:
    description: 'Inline Code, Inline Tags, Finished Tasks, Footnotes, Pandoc Citations'
    type: class-select
    allowEmpty: false
-   default: secondary-accent-light-green
+   default: secondary-accent-light-yellow
    options:
     -
       label: 🟢 Shimmering Green
@@ -214,7 +214,7 @@ settings:
    description: 'Hovered Elements'
    type: class-select
    allowEmpty: false
-   default: hover-accent-light-green
+   default: hover-accent-light-pink
    options:
     -
       label: 🟢 Shimmering Green
@@ -226,8 +226,8 @@ settings:
       label: 🏖 Beach Blue
       value: hover-accent-light-cyan
   -
-   id: use-gray-tint-light
-   title: 'Slightly colored text (Light Mode)'
+   id: no-gray-tint-light
+   title: 'Turn off the slight color tint of Normal Text (Light Mode)'
    type: class-toggle
    default: false
   -
@@ -235,7 +235,7 @@ settings:
    title: 'Text: Color Tint (Light Mode)'
    description: 'Slight tint for standard text (i.e., hue with low saturation)'
    type: variable-number-slider
-   default: 220
+   default: 235
    min: 0
    max: 360
    step: 5
@@ -244,9 +244,9 @@ settings:
    title: 'Background: Brightness (Light Mode)'
    description: Note that a high brightness in light mode results in a white theme, regardless of the selected hue.
    type: variable-number-slider
-   default: 7
+   default: 15
    min: 0
-   max: 15
+   max: 20
    step: 1
    format: '%'
   -
@@ -263,7 +263,7 @@ settings:
    title: 'Background: Saturation (Light Mode)'
    description: "Intensity of the chosen hue. Setting this to zero will result in grayscale, regardless of the hue chosen. "
    type: variable-number-slider
-   default: 10
+   default: 14
    min: 0
    max: 20
    step: 2
@@ -327,8 +327,8 @@ settings:
       label: 🏖 Beach Blue
       value: hover-accent-dark-cyan
   -
-   id: use-gray-tint-dark
-   title: 'Slightly colored text (Dark Mode)'
+   id: no-gray-tint-dark
+   title: 'Turn off the slight color tint of Normal Text (Dark Mode)'
    type: class-toggle
    default: false
   -

@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 1.1529
+Version 2.1
 Source CSS: https://github.com/chrisgrieser/shimmering-focus/blob/main/source.css
 MIT License
 ──────────────────────────────────────────────────── */
@@ -17,8 +17,8 @@ MIT License
 	- Pure Colors
 	- Custom Individual Accent Colors
 	- Color Schemes
-		- Default Color Scheme (Classic Shimmering Focus)
-		- Gamma Color Scheme
+		- Gamma Color Scheme (Default)
+		- Classic Color Scheme
 		- Nord Color Schemes
 	- Accent Color Calculations
 		- Bold & Italics Accent Calculations
@@ -291,18 +291,18 @@ MIT License
 ──────────────────────────────────────────────────── */
 
 :root { /* default values */
-	--tint-of-grays-light: 220;
-	--tint-of-grays-dark: 220;
-	--sat-of-grays-light: 0%;
-	--sat-of-grays-dark: 0%;
-}
-
-.custom-colors.theme-light.use-gray-tint-light {
+	--tint-of-grays-light: 280;
+	--tint-of-grays-dark: 270;
 	--sat-of-grays-light: 18%;
+	--sat-of-grays-dark: 8%;
 }
 
-.custom-colors.theme-dark.use-gray-tint-dark {
-	--sat-of-grays-dark: 10%;
+.custom-colors.theme-light.no-gray-tint-light {
+	--sat-of-grays-light: 0%;
+}
+
+.custom-colors.theme-dark.no-gray-tint-dark {
+	--sat-of-grays-dark: 0%;
 }
 
 /* calculations */
@@ -415,6 +415,19 @@ MIT License
 	--primary-accent-5: var(--cyan-blue-5);
 
 	--unresolved-link-color: var(--cyan-blue-shifted);
+	--button-text: var(--light-in-light-dark-in-dark);
+}
+
+.custom-colors.theme-light.primary-accent-light-purple,
+.custom-colors.theme-dark.primary-accent-dark-purple {
+	--primary-accent-0: var(--purple-0);
+	--primary-accent-1: var(--purple-1);
+	--primary-accent-2: var(--purple-2);
+	--primary-accent-3: var(--purple-3);
+	--primary-accent-4: var(--purple-4);
+	--primary-accent-5: var(--purple-5);
+
+	--unresolved-link-color: var(--purple-shifted);
 	--button-text: var(--text-normal);
 }
 
@@ -431,6 +444,16 @@ MIT License
 	--button-text: var(--always-light);
 }
 
+.custom-colors.theme-light.hover-accent-light-green,
+.custom-colors.theme-dark.hover-accent-dark-green {
+	--hover-accent-1: var(--green-1);
+	--hover-accent-2: var(--green-2);
+	--hover-accent-3: var(--green-3);
+	--hover-accent-4: var(--green-4);
+
+	--button-hover-text: var(--always-dark);
+}
+
 .custom-colors.theme-light.hover-accent-light-pink,
 .custom-colors.theme-dark.hover-accent-dark-pink {
 	--hover-accent-1: var(--pink-1);
@@ -438,7 +461,7 @@ MIT License
 	--hover-accent-3: var(--pink-3);
 	--hover-accent-4: var(--pink-4);
 
-	--button-hover-text: var(--always-light);
+	--button-hover-text: var(--always-dark);
 }
 
 .custom-colors.theme-light.hover-accent-light-cyan,
@@ -457,51 +480,21 @@ MIT License
 	--secondary-accent-3: var(--yellow-orange-3);
 }
 
-/* ───────────────────────────────────────────────── */
-/* << Color Schemes
-──────────────────────────────────────────────────── */
-
-/* ───────────────────────────────────────────────── */
-/* <<< Default Color Scheme (Classic Shimmering Focus)
-──────────────────────────────────────────────────── */
-
-.theme-light,
-.theme-dark {
-	--tint-of-grays-dark: 220;
-	--tint-of-grays-light: 220;
-	--sat-of-grays-light: 0%;
-	--sat-of-grays-dark: 0%;
-
-	--bg-light-brightness: 12%;
-	--bg-light-hue: 220;
-	--bg-light-sat: 5%;
-	--bg-dark-brightness: 5%;
-	--bg-dark-hue: 220;
-	--bg-dark-sat: 5%;
-
-	--primary-accent-0: var(--purple-0);
-	--primary-accent-1: var(--purple-1);
-	--primary-accent-2: var(--purple-2);
-	--primary-accent-3: var(--purple-3);
-	--primary-accent-4: var(--purple-4);
-	--primary-accent-5: var(--purple-5);
-	--unresolved-link-color: var(--purple-shifted);
-	--button-text: var(--text-normal); /* button text and button hover text dependent on primary & hover accent */
-
-	--hover-accent-1: var(--green-1);
-	--hover-accent-2: var(--green-2);
-	--hover-accent-3: var(--green-3);
-	--hover-accent-4: var(--green-4);
-	--button-hover-text: var(--text-normal);
-
+.custom-colors.theme-light.secondary-accent-light-green,
+.custom-colors.theme-dark.secondary-accent-dark-green {
 	--secondary-accent-2: var(--green-2);
 	--secondary-accent-3: var(--green-3);
 }
 
 /* ───────────────────────────────────────────────── */
-/* <<< Gamma Color Scheme
+/* << Color Schemes
+──────────────────────────────────────────────────── */
+
+/* ───────────────────────────────────────────────── */
+/* <<< Gamma Color Scheme (Default)
 ──────────────────────────────────────────────────── */
 /* Co-designed with @lkadre */
+:is(.theme-light, .theme-dark),
 .gamma-colors.gamma-colors {
 	--tint-of-grays-light: 280;
 	--tint-of-grays-dark: 270;
@@ -532,6 +525,42 @@ MIT License
 
 	--secondary-accent-2: var(--yellow-orange-2);
 	--secondary-accent-3: var(--yellow-orange-3);
+}
+
+/* ───────────────────────────────────────────────── */
+/* <<< Classic Color Scheme
+──────────────────────────────────────────────────── */
+
+.classic-colors.classic-colors {
+	--tint-of-grays-dark: 220;
+	--tint-of-grays-light: 220;
+	--sat-of-grays-light: 0%;
+	--sat-of-grays-dark: 0%;
+
+	--bg-light-brightness: 12%;
+	--bg-light-hue: 220;
+	--bg-light-sat: 5%;
+	--bg-dark-brightness: 5%;
+	--bg-dark-hue: 220;
+	--bg-dark-sat: 5%;
+
+	--primary-accent-0: var(--purple-0);
+	--primary-accent-1: var(--purple-1);
+	--primary-accent-2: var(--purple-2);
+	--primary-accent-3: var(--purple-3);
+	--primary-accent-4: var(--purple-4);
+	--primary-accent-5: var(--purple-5);
+	--unresolved-link-color: var(--purple-shifted);
+	--button-text: var(--text-normal); /* button text and button hover text dependent on primary & hover accent */
+
+	--hover-accent-1: var(--green-1);
+	--hover-accent-2: var(--green-2);
+	--hover-accent-3: var(--green-3);
+	--hover-accent-4: var(--green-4);
+	--button-hover-text: var(--text-normal);
+
+	--secondary-accent-2: var(--green-2);
+	--secondary-accent-3: var(--green-3);
 }
 
 /* ───────────────────────────────────────────────── */
@@ -675,13 +704,13 @@ body.strong-em-secondary-accent {
 
 /* default values */
 :root {
-	--brightness-light: 12%;
+	--brightness-light: 14%;
 	--light-hue: 220;
-	--light-sat: 5%;
+	--light-sat: 15%;
 
-	--brightness-dark: 12%;
-	--dark-hue: 220;
-	--dark-sat: 5%;
+	--brightness-dark: 7%;
+	--dark-hue: 235;
+	--dark-sat: 10%;
 }
 
 .custom-colors.custom-colors {  /* get colors from style settings */
@@ -7101,7 +7130,6 @@ body:not(.re-enable-loose-lists) .markdown-preview-view :is(ol, ul) > li > p {
 .external-link:hover,
 .embedded-backlinks.embedded-backlinks .tree-item-inner:hover,
 a:hover {
-	text-shadow: none; /* undo readability tweak */
 	color: var(--hover-accent-2);
 	cursor: pointer;
 }
@@ -11611,8 +11639,8 @@ body:not(.no-animations) .style-settings-heading[data-id="shimmering-focus"]:not
 ──────────────────────────────────────────────────── */
 
 body:not(.hover-zoom) .setting-item:is([data-id="hover-zoom-delay"]),
-body:not(.use-gray-tint-light) .setting-item:is([data-id="tint-of-grays-light"]),
-body:not(.use-gray-tint-dark) .setting-item:is([data-id="tint-of-grays-dark"]),
+.no-gray-tint-light .setting-item:is([data-id="tint-of-grays-light"]),
+.no-gray-tint-dark .setting-item:is([data-id="tint-of-grays-dark"]),
 body:not(.custom-colors) .setting-item:is([data-id="custom-color-light-mode"], [data-id="custom-color-light-mode"] + .style-settings-container, [data-id="custom-color-dark-mode"], [data-id="custom-color-dark-mode"] + .style-settings-container),
 body:not(.custom-colors) div:is([data-id="custom-color-light-mode"] + .style-settings-container, [data-id="custom-color-dark-mode"] + .style-settings-container),
 body:not(.show-titlebar) .setting-item[data-id="show-titlebar-text"],
@@ -11627,21 +11655,16 @@ body:not(.show-titlebar) .setting-item[data-id="show-titlebar-text"],
 /* hide settings */
 body:not(.unlock-theme-beta) .style-settings-container .setting-item:is(
 	[data-id="post-it-callout-size"],
-	[data-id*="-accent-"]
 ) {
 	display: none;
 }
 
 /* beta badge */
 .unlock-theme-beta .style-settings-container .setting-item:is(
-	[data-id="aesthetics"],
 	[data-id="callout-options"]
 ).is-collapsed::after,
 .unlock-theme-beta .style-settings-container .setting-item:is(
 	[data-id="post-it-callout-size"],
-
-	[data-id*="-accent-"],
-	[data-id="preset-color-scheme"],
 [data-id="unlock-theme-beta"])::before {
 	content: "Beta";
 
@@ -11733,7 +11756,8 @@ body:not(.unlock-theme-beta) .style-settings-container .setting-item:is(
 
 .modal .setting-item-heading[data-id="shimmering-focus"]::before {
 	font-size: 0.9rem;
-	margin: -3.5em 3em 3em 0;
+	/* margin to the right needed so the SHimmering Focus heading is properly aligned when zoomed out */
+	margin: -3.5em 10em 3em 0;
 }
 
 .workspace-leaf-content[data-type="style-settings"] > .view-content > .setting-item:first-child::before {
@@ -12982,7 +13006,7 @@ settings:
 # << Aesthetics & Custom Colors (+)
    id: aesthetics
    title: 🎨 Color & Aesthetics
-   description: Color Schemes, Coloring of YAML, 🆕 Coloring of Bold/Italic, Brightness, Roundness
+   description: Color Schemes, 🆕 Custom Colors, Coloring of YAML, 🆕 Coloring of Bold/Italic, Brightness, Roundness
    type: heading
    level: 1
    collapsed: true
@@ -13032,17 +13056,17 @@ settings:
    description: 'Select "🌈 Custom Colors" to fully customize background colors and accent colors (soon™️) yourself.'
    type: class-select
    allowEmpty: false
-   default: classic-colors
+   default: gamma-colors
    options:
     -
-      label: 🟪🟩 Classic
+      label: 🟦🟨🟪 Gamma
+      value: gamma-colors
+    -
+      label: 🟣🟢 Classic
       value: classic-colors
     -
       label: ❄️ Nord
       value: nord-colors
-    -
-      label: ⚛️🌊 Gamma
-      value: gamma-colors
     -
       label: 🌈 Custom Colors
       value: custom-colors
@@ -13059,7 +13083,7 @@ settings:
    description: 'Links, Selections, Buttons, Interactive UI Elements'
    type: class-select
    allowEmpty: false
-   default: primary-accent-light-purple
+   default: primary-accent-light-cyan
    options:
     -
       label: 🟣 Obsidian Purple
@@ -13079,7 +13103,7 @@ settings:
    description: 'Inline Code, Inline Tags, Finished Tasks, Footnotes, Pandoc Citations'
    type: class-select
    allowEmpty: false
-   default: secondary-accent-light-green
+   default: secondary-accent-light-yellow
    options:
     -
       label: 🟢 Shimmering Green
@@ -13093,7 +13117,7 @@ settings:
    description: 'Hovered Elements'
    type: class-select
    allowEmpty: false
-   default: hover-accent-light-green
+   default: hover-accent-light-pink
    options:
     -
       label: 🟢 Shimmering Green
@@ -13105,8 +13129,8 @@ settings:
       label: 🏖 Beach Blue
       value: hover-accent-light-cyan
   -
-   id: use-gray-tint-light
-   title: 'Slightly colored text (Light Mode)'
+   id: no-gray-tint-light
+   title: 'Turn off the slight color tint of Normal Text (Light Mode)'
    type: class-toggle
    default: false
   -
@@ -13114,7 +13138,7 @@ settings:
    title: 'Text: Color Tint (Light Mode)'
    description: 'Slight tint for standard text (i.e., hue with low saturation)'
    type: variable-number-slider
-   default: 220
+   default: 235
    min: 0
    max: 360
    step: 5
@@ -13123,9 +13147,9 @@ settings:
    title: 'Background: Brightness (Light Mode)'
    description: Note that a high brightness in light mode results in a white theme, regardless of the selected hue.
    type: variable-number-slider
-   default: 7
+   default: 15
    min: 0
-   max: 15
+   max: 20
    step: 1
    format: '%'
   -
@@ -13142,7 +13166,7 @@ settings:
    title: 'Background: Saturation (Light Mode)'
    description: "Intensity of the chosen hue. Setting this to zero will result in grayscale, regardless of the hue chosen. "
    type: variable-number-slider
-   default: 10
+   default: 14
    min: 0
    max: 20
    step: 2
@@ -13206,8 +13230,8 @@ settings:
       label: 🏖 Beach Blue
       value: hover-accent-dark-cyan
   -
-   id: use-gray-tint-dark
-   title: 'Slightly colored text (Dark Mode)'
+   id: no-gray-tint-dark
+   title: 'Turn off the slight color tint of Normal Text (Dark Mode)'
    type: class-toggle
    default: false
   -
