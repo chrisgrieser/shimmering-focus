@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 2.6
+Version 2.7
 Source CSS: https://github.com/chrisgrieser/shimmering-focus/blob/main/source.css
 MIT License
 ──────────────────────────────────────────────────── */
@@ -3902,7 +3902,7 @@ input:is([type="email"], [type="password"]) {
 	margin-bottom: 2px;
 
 	/* hide "Version: " in front of version number */
-	overflow-x: hidden;
+	overflow: hidden;
 }
 
 /* space between button and checklist, e.g.
