@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 2.5
+Version 2.6
 Source CSS: https://github.com/chrisgrieser/shimmering-focus/blob/main/source.css
 MIT License
 ──────────────────────────────────────────────────── */
@@ -8085,7 +8085,7 @@ body:not(.show-vault-in-file-explorer) .nav-folder.mod-root > .nav-folder-title 
 }
 
 /* hide navigation buttons */
-body:not(.show-file-explorer-navigation) :is(.nav-buttons-container, .nav-header) {
+body:not(.show-file-explorer-navigation) .workspace-leaf-content[data-type="file-explorer"] :is(.nav-buttons-container, .nav-header) {
 	display: none;
 }
 

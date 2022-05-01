@@ -3,6 +3,7 @@ nav_order: 110
 ---
 
 # Changelog
+- 2022-05-01	fix navigation buttons for search pane
 - 2022-05-01	fix for unresolved items with another quick switcher
 - 2022-05-01	hotfix
 - 2022-05-01	version 2.0: gamma now default colors cheme, moved csutom color options out of beta
