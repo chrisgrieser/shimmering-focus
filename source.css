@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 2.8
+Version 2.9
 Source CSS: https://github.com/chrisgrieser/shimmering-focus/blob/main/source.css
 MIT License
 ──────────────────────────────────────────────────── */
@@ -11519,8 +11519,8 @@ a:is(.style-settings-export, .style-settings-import) {
 /* blinking signature */
 .style-settings-heading[data-id="shimmering-focus"] .setting-item-name::after {
 	content: var(--signature);
-	font-size: 1.4rem;
-	line-height: 0.8rem;
+	font-size: 1.7rem;
+	line-height: 0.6rem;
 	padding-left: 7px;
 }
 
@@ -11738,7 +11738,7 @@ body:not(.unlock-theme-beta) .style-settings-container .setting-item:is(
 .modal .setting-item-heading[data-id="shimmering-focus"]::before,
 .workspace-leaf-content[data-type="style-settings"] > .view-content > .setting-item:first-child::before {
 	display: block;
-	content: "ℹ️ Theme Documentation:   chrisgrieser.github.io/shimmering-focus\A🔍 Install the Settings Search Plugin to find settings more quickly.";
+	content: "ℹ️ Theme Documentation:  chrisgrieser.github.io/shimmering-focus\A🔍 Install the Settings Search Plugin to find settings more quickly.";
 
 	font-family: var(--font-interface);
 	font-weight: 500;
