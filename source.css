@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 2.4
+Version 2.5
 Source CSS: https://github.com/chrisgrieser/shimmering-focus/blob/main/source.css
 MIT License
 ──────────────────────────────────────────────────── */
@@ -11266,6 +11266,10 @@ body .qsp-symbol-indicator {
 	margin-left: -17px;
 }
 
+.another-quick-switcher__phantom_item::before {
+	display: none;
+}
+
 .another-quick-switcher__item__description,
 .another-quick-switcher__item__descriptions {
 	line-height: 1em;
@@ -11310,6 +11314,7 @@ body .qsp-symbol-indicator {
 /* unresolved items */
 .another-quick-switcher__phantom_item.another-quick-switcher__phantom_item {
 	color: var(--unresolved-link-color);
+	opacity: 0.85;
 }
 
 .another-quick-switcher__phantom_item :is(.another-quick-switcher__item__icon, .another-quick-switcher__item__directory),
