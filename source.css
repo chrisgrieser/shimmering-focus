@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 2.13
+Version 2.14
 Source CSS: https://github.com/chrisgrieser/shimmering-focus/blob/main/source.css
 MIT License
 ──────────────────────────────────────────────────── */
@@ -12771,11 +12771,12 @@ body:not(.no-alternating-rows) .omnisearch-result:nth-child(odd) .omnisearch-res
 	--bibliography-indent: 1em;
 }
 
-.pwc-reference-list.pwc-reference-list.pwc-reference-list.pwc-reference-list .pwc-reference-list__title {
+.pwc-reference-list.pwc-reference-list.pwc-reference-list.pwc-reference-list .pwc-reference-list__title.pwc-reference-list__title > div {
 	font-family: var(--heading-font);
 	font-size: var(--h3);
 	letter-spacing: calc(var(--heading-letter-spacing) * 0.5);
 	margin-bottom: 5px;
+	margin-left: 1px;
 }
 
 body .pwc-reference-list .csl-entry.csl-entry.csl-entry {
@@ -12813,6 +12814,10 @@ body .pwc-reference-list .csl-entry.csl-entry.csl-entry {
 }
 
 /* copy button */
+.pwc-reference-list:not(:hover) .pwc-copy-list {
+	opacity: 0;
+}
+
 .pwc-copy-list svg {
 	display: none;
 }
@@ -12825,7 +12830,7 @@ body .pwc-reference-list .csl-entry.csl-entry.csl-entry {
 	background-color: var(--bg3);
 	box-shadow: var(--tiny-inset-shadow);
 
-	padding: 2px 2px 2px 4px;
+	padding: 3px 3px 3px 5px;
 
 	border: var(--thin-border);
 	border-radius: var(--roundish);
@@ -12834,6 +12839,28 @@ body .pwc-reference-list .csl-entry.csl-entry.csl-entry {
 .pwc-copy-list:hover::before {
 	color: var(--hover-accent-2);
 	background-color: var(--bg1);
+}
+
+.pwc-tooltip.pwc-tooltip {
+	font-family: var(--longform-font-text-theme);
+	font-size: 110%;
+	line-height: 1.2;
+
+	color: var(--text-normal);
+	background-color: var(--notice-bg);
+	box-shadow: var(--small-shadow), var(--notice-inset-shadow);
+
+	padding: 4px 7px;
+
+	border: var(--notice-border);
+	border-radius: var(--roundish);
+}
+
+/* fix for pandoc citians emphasis removed by this plugin */
+body:not(.no-pandoc-citation-emphasis) .cm-hmd-barelink :is(.cm-pandoc-citation, .cm-pandoc-citation-formatting, .cm-pandoc-citation-extra) {
+	text-decoration: none;
+	color: var(--secondary-accent-text);
+	cursor: context-menu;
 }
 
 /* ───────────────────────────────────────────────── */
