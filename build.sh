@@ -47,6 +47,13 @@ if [[ $? == 1 ]]; then
 	exit 1
 fi
 
+# Abort if CLI missing
+which cleancss &> /dev/null
+if [[ $? == 1 ]]; then
+	echo "clean-css-cli is not installed."
+	exit 1
+fi
+
 # get commit message
 COMMIT_MSG="$*"
 if [[ "$COMMIT_MSG" == "" || "$COMMIT_MSG" == " " ]] ; then
