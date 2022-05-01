@@ -3,6 +3,8 @@ nav_order: 110
 ---
 
 # Changelog
+- 2022-05-01	patch
+- 2022-05-01	update promo screenshot
 - 2022-05-01	fix dracula syntax highlighting in source mode
 - 2022-05-01	fix #155
 - 2022-05-01	fix for style settings pane

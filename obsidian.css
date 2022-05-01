@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 2.12
+Version 2.13
 Source CSS: https://github.com/chrisgrieser/shimmering-focus/blob/main/source.css
 MIT License
 ──────────────────────────────────────────────────── */
@@ -181,8 +181,8 @@ settings:
       value: strong-em-uncolored
   -
    id: preset-color-scheme
-   title: "Color Schemes"
-   description: 'Select "🌈 Custom Colors" to fully customize background colors and accent colors (soon™️) yourself.'
+   title: "Color Scheme"
+   description: 'Select "🌈 Custom Colors" to fully customize brightness, as well as accent, text, and background colors.'
    type: class-select
    allowEmpty: false
    default: gamma-colors
