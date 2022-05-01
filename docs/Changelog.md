@@ -3,6 +3,7 @@ nav_order: 110
 ---
 
 # Changelog
+- 2022-05-01	patch
 - 2022-05-01	hotfix
 - 2022-05-01	version 2.0: gamma now default colors cheme, moved csutom color options out of beta
 - 2022-05-01	updates for pandoc reference lsit plugin

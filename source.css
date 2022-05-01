@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 2.2
+Version 2.3
 Source CSS: https://github.com/chrisgrieser/shimmering-focus/blob/main/source.css
 MIT License
 ──────────────────────────────────────────────────── */
@@ -7320,7 +7320,7 @@ a.tag:hover {
 	font-weight: 500;
 	white-space: nowrap;
 
-	max-width: 4rem;
+	max-width: 3.5rem;
 
 	color: var(--extra-contrast);
 
