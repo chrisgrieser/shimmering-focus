@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 2.11
+Version 2.12
 Source CSS: https://github.com/chrisgrieser/shimmering-focus/blob/main/source.css
 MIT License
 ──────────────────────────────────────────────────── */
@@ -6973,59 +6973,60 @@ body:not(.no-codeblock-line-numbers) .HyperMD-codeblock:not(.HyperMD-codeblock-b
 	--sh-method: hsl(135 94% 65%);
 }
 
-:is(.theme-dark.dracula-syntax-hl-dark, .theme-light.dracula-syntax-hl-light) pre:not(.frontmatter) {
+:is(.theme-dark.dracula-syntax-hl-dark, .theme-light.dracula-syntax-hl-light) :is(pre:not(.frontmatter), .HyperMD-codeblock) {
 	--code-block-alt-bg: hsl(231 15% 10%);
 	--code-block-bg: hsl(231 15% 18%);
 }
 
-/* ':is(.theme-dark[class$="hl-dark"], .theme-light[class$="hl-light"])' to not affect default syntax highlighting */
-:is(.theme-dark.dracula-syntax-hl-dark, .theme-light.dracula-syntax-hl-light) pre:not(.frontmatter) :is(
+/* ':is(...)' is used to not affect default syntax highlighting */
+:is(.theme-dark.dracula-syntax-hl-dark, .theme-light.dracula-syntax-hl-light) :is(pre:not(.frontmatter), .HyperMD-codeblock) :is(
 	.token.constant, /* unknown */
 	.cm-atom.cm-hmd-codeblock, /* E.g. color tag, sans-serif */
 	.token.symbol,
 	.token.boolean,
 	.token.number,
 	.cm-number.cm-hmd-codeblock) { /* Number or e.g. 1px, 1em */
-	color: var(--sh-value);
+	color: var(--sh-value) !important;
 }
 
-:is(.theme-dark.dracula-syntax-hl-dark, .theme-light.dracula-syntax-hl-light) pre:not(.frontmatter) :is(
+:is(.theme-dark.dracula-syntax-hl-dark, .theme-light.dracula-syntax-hl-light) :is(pre:not(.frontmatter), .HyperMD-codeblock) :is(
 	.cm-variable, /* Var in css */
 	.cm-quote.cm-hmd-codeblock, /* shell variables */
 	.token.variable) { /* Var in css e.g. --this-is-variable */
 	color: var(--sh-variable1);
 }
 
-:is(.theme-dark.dracula-syntax-hl-dark, .theme-light.dracula-syntax-hl-light) pre:not(.frontmatter) :is(
+:is(.theme-dark.dracula-syntax-hl-dark, .theme-light.dracula-syntax-hl-light) :is(pre:not(.frontmatter), .HyperMD-codeblock) :is(
 	.token.variable.assign-left,
 	.cm-variable-2) { /* Var definition in css */
 	color: var(--sh-variable2);
 }
 
-:is(.theme-dark.dracula-syntax-hl-dark, .theme-light.dracula-syntax-hl-light) pre:not(.frontmatter) :is(
+:is(.theme-dark.dracula-syntax-hl-dark, .theme-light.dracula-syntax-hl-light) :is(pre:not(.frontmatter), .HyperMD-codeblock) :is(
 	.token.prolog,
 	.token.cdata,
 	.cm-comment.cm-hmd-codeblock,
-	.token.comment, /* Comment */
+	.token.comment,
 	.token.doctype) { /* In HTML e.g. <!DOCTYPE html> */
 	color: var(--sh-comment);
 }
 
-:is(.theme-dark.dracula-syntax-hl-dark, .theme-light.dracula-syntax-hl-light) pre:not(.frontmatter) :is(
+:is(.theme-dark.dracula-syntax-hl-dark, .theme-light.dracula-syntax-hl-light) :is(pre:not(.frontmatter), .HyperMD-codeblock) :is(
 	.token.tag, /* In html: div in <div></div> */
 	.token.tag .punctuation, /* In HTML allows to change color of brackets */
 	.cm-operator, /* Operators in javascript: = @ ! */
 	.language-yaml .key + .punctuation, /* colon after key before value in Frontmatter */
+	.cm-attribute, /* In html: attribute within e.g. <div=attribute></div>, In BASH: will change options e.g. -l in `ls -l` */
 	.token.operator) { /* In BASH: color of the pipe |, In css color of = : ! * </> */
 	color: var(--sh-operator);
 }
 
-:is(.theme-dark.dracula-syntax-hl-dark, .theme-light.dracula-syntax-hl-light) pre:not(.frontmatter) :is(
+:is(.theme-dark.dracula-syntax-hl-dark, .theme-light.dracula-syntax-hl-light) :is(pre:not(.frontmatter), .HyperMD-codeblock) :is(
 	.token.punctuation) { /* Punctuation such as brackets, parentheses, commas, and more. */
 	color: var(--sh-punctuation);
 }
 
-:is(.theme-dark.dracula-syntax-hl-dark, .theme-light.dracula-syntax-hl-light) pre:not(.frontmatter) :is(
+:is(.theme-dark.dracula-syntax-hl-dark, .theme-light.dracula-syntax-hl-light) :is(pre:not(.frontmatter), .HyperMD-codeblock) :is(
 	.token.keyword, /* e.g. var, let , const etc. */
 	.cm-keyword.cm-hmd-codeblock, /* Function, return, let, var */
 	.cm-callee, /* In css: var */
@@ -7033,8 +7034,7 @@ body:not(.no-codeblock-line-numbers) .HyperMD-codeblock:not(.HyperMD-codeblock-b
 	color: var(--sh-keyword);
 }
 
-:is(.theme-dark.dracula-syntax-hl-dark, .theme-light.dracula-syntax-hl-light) pre:not(.frontmatter) :is(
-	.cm-attribute, /* In html: attribute within e.g. <div=attribute></div>, In BASH: will change options e.g. -l in `ls -l` */
+:is(.theme-dark.dracula-syntax-hl-dark, .theme-light.dracula-syntax-hl-light) :is(pre:not(.frontmatter), .HyperMD-codeblock) :is(
 	.token.attr-name, /* In html: attribute within e.g. <div=attribute></div> */
 	.cm-qualifier, /* In css: e.g. .theme-dark or .theme-light */
 	.token.class-name, /* In CSS: classname within 'class classname ='. In BASH: the first command will be also highlighted, but can be overwritten with definition of '.token.builtin' */
@@ -7044,7 +7044,7 @@ body:not(.no-codeblock-line-numbers) .HyperMD-codeblock:not(.HyperMD-codeblock-b
 	color: var(--sh-function-class);
 }
 
-:is(.theme-dark.dracula-syntax-hl-dark, .theme-light.dracula-syntax-hl-light) pre:not(.frontmatter) :is(
+:is(.theme-dark.dracula-syntax-hl-dark, .theme-light.dracula-syntax-hl-light) :is(pre:not(.frontmatter), .HyperMD-codeblock) :is(
 	.cm-builtin, /* In bash it selects default commands e.g. cd, ls, grep, wc, find etc. */
 	.token.builtin, /* In bash it selects 'cd' , 'pwd'. '!important' to overwrite .token-class-name */
 	.token.property, /* In CSS: properties e.g. background-color in background-color: red */
@@ -7052,14 +7052,14 @@ body:not(.no-codeblock-line-numbers) .HyperMD-codeblock:not(.HyperMD-codeblock-b
 	color: var(--sh-property);
 }
 
-:is(.theme-dark.dracula-syntax-hl-dark, .theme-light.dracula-syntax-hl-light) pre:not(.frontmatter) :is(
+:is(.theme-dark.dracula-syntax-hl-dark, .theme-light.dracula-syntax-hl-light) :is(pre:not(.frontmatter), .HyperMD-codeblock) :is(
 	.token.regex, /* !important in css */
 	.token.important, /* !important in css */
 	.token.url) { /* In CSS: e.g. image path in background: url(pathtoimage.png) */
 	color: var(--sh-important-url-regex);
 }
 
-:is(.theme-dark.dracula-syntax-hl-dark, .theme-light.dracula-syntax-hl-light) pre:not(.frontmatter) :is(
+:is(.theme-dark.dracula-syntax-hl-dark, .theme-light.dracula-syntax-hl-light) :is(pre:not(.frontmatter), .HyperMD-codeblock) :is(
 	.cm-string.cm-hmd-codeblock, /* String e.g. a whole sentence within " Sample Sentece" */
 	.cm-string-2, /* Some <div> elements were not selecting with simple .cm-string , but this .cm-string-2 fixes it */
 	.cm-string-3,
@@ -7069,14 +7069,14 @@ body:not(.no-codeblock-line-numbers) .HyperMD-codeblock:not(.HyperMD-codeblock-b
 	color: var(--sh-string);
 }
 
-:is(.theme-dark.dracula-syntax-hl-dark, .theme-light.dracula-syntax-hl-light) pre:not(.frontmatter) :is(
+:is(.theme-dark.dracula-syntax-hl-dark, .theme-light.dracula-syntax-hl-light) :is(pre:not(.frontmatter), .HyperMD-codeblock) :is(
 	.token.unit, /* Unit e.g. px, em */
 	.token.atrule) { /* In css: e.g. @font-family {} */
 	color: var(--sh-unit);
 }
 
-:is(.theme-dark.dracula-syntax-hl-dark, .theme-light.dracula-syntax-hl-light) pre:not(.frontmatter) :is(
-	.token.function, /* In JS: Function Name, println. In Bash: if you select !important it it willl overwrite following: ls, grep, wc . Better use '.language-bash.is-loaded .token.function' -> to target 'ls, grep, wc' */
+:is(.theme-dark.dracula-syntax-hl-dark, .theme-light.dracula-syntax-hl-light) :is(pre:not(.frontmatter), .HyperMD-codeblock) :is(
+	.token.function, /* In JS: Function Name, println. In Bash: if you select !important it it will overwrite following: ls, grep, wc . Better use '.language-bash.is-loaded .token.function' -> to target 'ls, grep, wc' */
 	.token.method) { /* Method in Javscript e.g. render in ReactDOM.render */
 	color: var(--sh-method);
 }
@@ -11595,7 +11595,7 @@ body:not(.no-animations) .style-settings-heading[data-id="shimmering-focus"]:not
 	height: 1.8em;
 	width: 10em;
 
-	color: var(--always-dark);
+	color: var(--text-normal);
 
 	position: relative;
 	left: -3em;

@@ -3,7 +3,7 @@ nav_order: 110
 ---
 
 # Changelog
-- 2022-05-01	patch
+- 2022-05-01	fix dracula syntax highlighting in source mode
 - 2022-05-01	fix #155
 - 2022-05-01	fix for style settings pane
 - 2022-05-01	fix glitch in community plugin lsit when scrollbars are enabled
