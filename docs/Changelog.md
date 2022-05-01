@@ -3,7 +3,7 @@ nav_order: 110
 ---
 
 # Changelog
-- 2022-04-30	patch
+- 2022-05-01	updates for pandoc reference lsit plugin
 - 2022-04-30	minor quick explorer fixes
 - 2022-04-29	floating metadata alignment correct when yaml hidden or shown (Obsi setting)
 - 2022-04-29	switched yaml and metadata order for floating metadata

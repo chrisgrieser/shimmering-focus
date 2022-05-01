@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 1.1528
+Version 1.1529
 Source CSS: https://github.com/chrisgrieser/shimmering-focus/blob/main/source.css
 MIT License
 ──────────────────────────────────────────────────── */
@@ -892,6 +892,7 @@ body:is(.theme-light, .theme-dark) {
 .theme-light {
 	--toggle-enabled-inset-shadow: -2px -2px 2px 0px var(--inset-shadow-color) inset;
 	--toggle-disabled-inset-shadow: -1px -1px 2px 0px var(--inset-shadow-color) inset;
+	--tiny-inset-shadow: -0.5px -0.5px 0 var(--inset-shadow-color) inset;
 	--small-inset-shadow: -1px -1px 0 var(--inset-shadow-color) inset;
 	--notice-inset-shadow: -1px -1px 2px var(--inset-shadow-color) inset;
 
@@ -907,6 +908,7 @@ body:is(.theme-light, .theme-dark) {
 .theme-dark {
 	--toggle-enabled-inset-shadow: -2px -2px 2px 0px var(--inset-shadow-color) inset;
 	--toggle-disabled-inset-shadow: -3px -3px 2px 0px var(--inset-shadow-black) inset;
+	--tiny-inset-shadow: -0.5px -0.5px 0 var(--inset-shadow-color) inset;
 	--small-inset-shadow: -1px -1px 0px var(--inset-shadow-black) inset;
 	--notice-inset-shadow: -1px -1px 2px var(--inset-shadow-black) inset;
 
@@ -12774,6 +12776,26 @@ body .pwc-reference-list .csl-entry.csl-entry.csl-entry {
 	font-size: calc(var(--empty-state-symbol-size) * 0.8);
 	color: var(--extra-contrast);
 }
+
+/* copy button */
+.pwc-copy-list svg {
+	display: none;
+}
+
+.pwc-copy-list::before {
+	font-family: var(--icon-font);
+	content: "content_copy";
+	background-color: var(--bg3);
+	padding: 2px 2px 2px 4px;
+	border-radius: var(--roundish);
+	border: var(--thin-border);
+	box-shadow: var(--tiny-inset-shadow);
+}
+.pwc-copy-list:hover::before {
+	color: var(--hover-accent-2);
+	background-color: var(--bg1);
+}
+
 
 /* ───────────────────────────────────────────────── */
 /* < Compatibility Info for the Obsidian Hub
