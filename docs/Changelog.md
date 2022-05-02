@@ -3,6 +3,7 @@ nav_order: 110
 ---
 
 # Changelog
+- 2022-05-02	better pandoc citation styling when pandoc reference plugin is installed
 - 2022-05-02	more consistent file type icons
 - 2022-05-02	minor fixes for prompts
 - 2022-05-02	better promo screenshot

@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 2.20
+Version 2.21
 Source CSS: https://github.com/chrisgrieser/shimmering-focus/blob/main/source.css
 MIT License
 ──────────────────────────────────────────────────── */
@@ -7784,8 +7784,7 @@ body:not(.no-pseudo-spoiler-tags) :is(em > del:hover, .cm-active .cm-em.cm-strik
 /* << Pandoc Citations
 ──────────────────────────────────────────────────── */
 
-/* applies to all []-links (barelinks)
-partially also to footnotes */
+/* applies to all []-links (barelinks), partially also to footnotes */
 body:not(.no-pandoc-citation-emphasis) .cm-hmd-barelink.cm-hmd-barelink.cm-hmd-barelink.cm-hmd-barelink.cm-hmd-barelink {
 	color: var(--reference-color);
 }
@@ -12915,16 +12914,40 @@ body .pwc-reference-list .csl-entry.csl-entry.csl-entry {
 	border-radius: var(--roundish);
 }
 
-/* pandoc citians styling */
-body:not(.no-pandoc-citation-emphasis) :is(.pandoc-citation, .pandoc-citation-formatting, .pandoc-citation-extra),
-body:not(.no-pandoc-citation-emphasis) .cm-hmd-barelink :is(.cm-pandoc-citation, .cm-pandoc-citation-formatting, .cm-pandoc-citation-extra) {
+/* pandoc citations styling */
+body .markdown-preview-view :is(.pandoc-citation, .pandoc-citation-formatting, .pandoc-citation-extra),
+body .cm-hmd-barelink :is(.cm-pandoc-citation, .cm-pandoc-citation-formatting, .cm-pandoc-citation-extra) {
 	text-decoration: none;
+}
+
+body:not(.no-pandoc-citation-emphasis) .markdown-preview-view :is(.pandoc-citation, .pandoc-citation-formatting, .pandoc-citation-extra),
+body:not(.no-pandoc-citation-emphasis) .cm-hmd-barelink :is(.cm-pandoc-citation, .cm-pandoc-citation-formatting, .cm-pandoc-citation-extra) {
 	color: var(--reference-color);
 }
 
+.cm-pandoc-citation-formatting,
+.pandoc-citation-formatting,
 .pandoc-citation-extra,
 .cm-pandoc-citation-extra {
 	filter: saturate(0.4);
+}
+
+/* round brackets in reading mode */
+.pandoc-citation-formatting {
+	font-size: 0;
+}
+
+.pandoc-citation-formatting::before {
+	content: "(";
+	font-size: var(--font-text-size);
+}
+
+:is(.pandoc-citation + .pandoc-citation-extra, .pandoc-citation) + .pandoc-citation-formatting::before {
+	content: ")";
+}
+
+:is(.writing, .longform-leaf) .pandoc-citation-formatting::before {
+	font-size: var(--longform-font-size);
 }
 
 /* ───────────────────────────────────────────────── */
