@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 2.14
+Version 2.15
 Source CSS: https://github.com/chrisgrieser/shimmering-focus/blob/main/source.css
 MIT License
 ──────────────────────────────────────────────────── */
@@ -3977,6 +3977,7 @@ input:is([type="email"], [type="password"]) {
 .setting-hotkey {
 	font-family: var(--button-font);
 	font-size: 0.75rem;
+	font-weight: 600;
 	line-height: 1.7em;
 
 	color: var(--secondary-accent-text);
@@ -12857,6 +12858,7 @@ body .pwc-reference-list .csl-entry.csl-entry.csl-entry {
 }
 
 /* fix for pandoc citians emphasis removed by this plugin */
+body:not(.no-pandoc-citation-emphasis) :is(.pandoc-citation, .pandoc-citation-formatting, .pandoc-citation-extra),
 body:not(.no-pandoc-citation-emphasis) .cm-hmd-barelink :is(.cm-pandoc-citation, .cm-pandoc-citation-formatting, .cm-pandoc-citation-extra) {
 	text-decoration: none;
 	color: var(--secondary-accent-text);
