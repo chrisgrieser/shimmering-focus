@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 2.19
+Version 2.20
 Source CSS: https://github.com/chrisgrieser/shimmering-focus/blob/main/source.css
 MIT License
 ──────────────────────────────────────────────────── */
@@ -37,6 +37,7 @@ MIT License
 	- Font Definitions
 	- Bold & Italics Styling
 - Icons
+	- File Type Icons
 	- Base Icons
 	- Plugin Icons
 - Global Settings
@@ -148,6 +149,7 @@ MIT License
 		- Syntax Highlighting
 	- Lists
 	- Links
+		- Link Icons
 		- External Links
 		- Fold external URLs (CM6 Source Mode)
 		- Unresolved Links
@@ -172,7 +174,7 @@ MIT License
 	- Editor Status (CM6)
 	- File Explorer
 		- Relationship Lines
-		- Folder Icons & Note Icons
+		- File Explorer Icons
 	- Panes
 		- Core Plugin Panes in general
 		- Outline
@@ -1343,6 +1345,13 @@ body > .app-container {
 /* < Icons
 ──────────────────────────────────────────────────── */
 
+svg {
+	-webkit-mask-repeat: no-repeat;
+}
+
+/* ───────────────────────────────────────────────── */
+/* << File Type Icons
+──────────────────────────────────────────────────── */
 @font-face {
 	font-family: "Material Icons (Filled)";
 	font-display: swap;
@@ -1352,17 +1361,29 @@ body > .app-container {
 }
 
 :root { /* stylelint-disable-line no-duplicate-selectors */
+	--external-url-icon: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' preserveAspectRatio='xMidYMid meet' viewBox='0 0 1536 1536'%3e%3cpath d='M1280 800V320q0-26-19-45t-45-19H736q-42 0-59 39q-17 41 14 70l144 144l-534 534q-19 19-19 45t19 45l102 102q19 19 45 19t45-19l534-534l144 144q18 19 45 19q12 0 25-5q39-17 39-59zm256-512v960q0 119-84.5 203.5T1248 1536H288q-119 0-203.5-84.5T0 1248V288Q0 169 84.5 84.5T288 0h960q119 0 203.5 84.5T1536 288z' fill='grey'/%3e%3c/svg%3e");
+
+	--pdf-icon-color: hsl(347 50% 47%);
+	--slide-icon-color: hsl(38 70% 50%);
+	--word-icon-color: hsl(201 70% 35%);
+	--excel-icon-color: hsl(120 80% 35%);
+	--bibtex-icon-color: hsl(60 80% 35%);
+	--image-icon-color: hsl(264 65% 63%);
+
 	--icon-font: "Material Icons (Filled)";
-	--external-url: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' preserveAspectRatio='xMidYMid meet' viewBox='0 0 1536 1536'%3e%3cpath d='M1280 800V320q0-26-19-45t-45-19H736q-42 0-59 39q-17 41 14 70l144 144l-534 534q-19 19-19 45t19 45l102 102q19 19 45 19t45-19l534-534l144 144q18 19 45 19q12 0 25-5q39-17 39-59zm256-512v960q0 119-84.5 203.5T1248 1536H288q-119 0-203.5-84.5T0 1248V288Q0 169 84.5 84.5T288 0h960q119 0 203.5 84.5T1536 288z' fill='grey'/%3e%3c/svg%3e");
+
+	/* these use material icons */
+	--pdf-icon: "picture_as_pdf";
+	--slides-icon: "slides";
+	--word-icon: "text_snippet";
+	--bibtex-icon: "menu_book";
+	--excel-icon: "table_chart";
+	--image-icon: "image";
 }
 
 /* ───────────────────────────────────────────────── */
 /* << Base Icons
 ──────────────────────────────────────────────────── */
-
-svg {
-	-webkit-mask-repeat: no-repeat;
-}
 
 /* outline/heading */
 .workspace-tab-header-inner-icon > svg.bullet-list > path { display: none }
@@ -4602,7 +4623,7 @@ body:not(.squareish-shapes) .community-plugin-info .community-plugin-author + .c
 .community-theme.is-selected svg.github-glyph {
 	background-color: var(--always-dark);
 	transform: scale(0.85);
-	-webkit-mask-image: var(--external-url);
+	-webkit-mask-image: var(--external-url-icon);
 }
 
 /* greyed out "selected" button */
@@ -7192,31 +7213,53 @@ a,
 	text-shadow: 0.1px 0.1px;
 }
 
-/* icon for certain filetypes links */
-/* with supercharged links installed, also displayed in edit mode */
-.markdown-preview-view a.internal-link[href$=".pdf"]::before {
-	content: "📕 ";
-}
-
-.markdown-preview-view a.internal-link:is([href$=".docx"], [href$=".doc"], [href$=".odt"])::before {
-	content: "📘 ";
-}
-
-.markdown-preview-view a.internal-link:is([href$=".pptx"], [href$=".ppt"], [href$=".odp"])::before {
-	content: "📙 ";
-}
-
-.markdown-preview-view a.internal-link:is([href$=".xlsx"], [href$=".xls"], [href$=".ods"], [href$=".csv"])::before {
-	content: "📗 ";
-}
-
-.markdown-preview-view a.internal-link:is([href$=".png"], [href$=".jpg"], [href$=".jpeg"], [href$=".tiff"])::before {
-	content: "🌁 ";
-}
-
 /* more underline spacing, 🏴‍☠️ @Melvin */
 * { text-underline-offset: 1.5px }
 
+/* ───────────────────────────────────────────────── */
+/* <<< Link Icons
+──────────────────────────────────────────────────── */
+/* icon for certain filetypes links
+with supercharged links installed, also displayed in edit mode */
+
+.markdown-preview-view a.internal-link::before {
+	font-family: var(--icon-font);
+	font-size: 80%;
+	line-height: 1;
+}
+
+/* stylelint-disable function-whitespace-after */
+.markdown-preview-view a.internal-link[href$=".pdf"]::before {
+	content: var(--pdf-icon)" ";
+	color: var(--pdf-icon-color);
+}
+
+.markdown-preview-view a.internal-link:is([href$=".bib"], [href$=".bibtex"])::before {
+	content: var(--bibtex-icon)" ";
+	color: var(--bibtex-icon-color);
+}
+
+.markdown-preview-view a.internal-link:is([href$=".docx"], [href$=".doc"], [href$=".odt"])::before {
+	content: var(--word-icon)" ";
+	color: var(--word-icon-color);
+}
+
+.markdown-preview-view a.internal-link:is([href$=".pptx"], [href$=".ppt"], [href$=".odp"])::before {
+	content: var(--slides-icon)" ";
+	color: var(--slide-icon-color);
+}
+
+.markdown-preview-view a.internal-link:is([href$=".xlsx"], [href$=".xls"], [href$=".ods"], [href$=".csv"])::before {
+	content: var(--excel-icon)" ";
+	color: var(--excel-icon-color);
+}
+
+.markdown-preview-view a.internal-link:is([href$=".png"], [href$=".jpg"], [href$=".jpeg"], [href$=".tiff"])::before {
+	content: var(--image-icon)" ";
+	color: var(--image-icon-color);
+}
+
+/* stylelint-enable function-whitespace-after */
 /* ───────────────────────────────────────────────── */
 /* <<< External Links
 ──────────────────────────────────────────────────── */
@@ -7242,7 +7285,7 @@ body:not(.show-external-link-icon) .external-link {
 
 .show-external-link-icon .external-link {
 	background-position-y: 0.3em;
-	background-image: var(--external-url);
+	background-image: var(--external-url-icon);
 }
 
 /* don't underline the formatting */
@@ -8109,6 +8152,11 @@ body:not(.show-file-explorer-navigation) .workspace-leaf-content[data-type="file
 	display: none;
 }
 
+/* optionally hide attachment folders */
+.hide-attachment-folders .nav-folder-title:is([data-path$="/attachments" i], [data-path="attachments" i]) {
+	display: none;
+}
+
 .workspace-leaf-content[data-type="file-explorer"] {
 	padding-right: 2px;
 }
@@ -8125,11 +8173,6 @@ body:not(.show-file-explorer-navigation) .workspace-leaf-content[data-type="file
 
 .workspace-leaf-content[data-type="file-explorer"] .nav-folder.mod-root {
 	margin-top: 2px;
-}
-
-/* optionally hide attachment folders */
-.hide-attachment-folders .nav-folder-title:is([data-path$="/attachments" i], [data-path="attachments" i]) {
-	display: none;
 }
 
 /* ───────────────────────────────────────────────── */
@@ -8234,13 +8277,13 @@ body:not(.show-file-explorer-navigation) .workspace-leaf-content[data-type="file
 
 /* stylelint-enable selector-combinator-space-before, indentation */
 /* ───────────────────────────────────────────────── */
-/* <<< Folder Icons & Note Icons
+/* <<< File Explorer Icons
 ──────────────────────────────────────────────────── */
 body:not(.no-folder-icons) .nav-folder-title-content::before,
 body:not(.no-file-explorer-icons) .workspace-leaf-content:not([data-type="recent-files"]) .nav-file-title-content::before {
 	font-family: var(--icon-font);
 	font-size: calc(var(--sidebar-font-size) + 0.05rem);
-	position: relative;
+	line-height: 1.1;
 	padding-right: 3px;
 	vertical-align: bottom;
 }
@@ -8286,36 +8329,38 @@ body:not(.no-file-explorer-icons) .nav-file-title[data-path*="moc" i] .nav-file-
 	content: "map";
 }
 
-body:not(.no-file-explorer-icons) .nav-file-title:is([data-path$="pptx"], [data-path*="presentation" i]) .nav-file-title-content::before {
-	content: "present_to_all";
-	color: hsl(38 100% 50%);
-}
-
 body:not(.no-file-explorer-icons) .nav-file-title:is([data-path$="sh"], [data-path$="ts"], [data-path$="js"]) .nav-file-title-content::before {
 	content: "code";
 }
 
 body:not(.no-file-explorer-icons) .nav-file-title:is([data-path$="tiff"], [data-path$="jpg"], [data-path$="jpeg"], [data-path$="png"]) .nav-file-title-content::before {
-	content: "image";
+	content: var(--image-icon);
+	color: var(--image-icon-color);
 }
 
 body:not(.no-file-explorer-icons) .nav-file-title:is([data-path$="bib"], [data-path$="bibtex"]) .nav-file-title-content::before {
-	content: "menu_book";
-	color: hsl(60 93% 25%);
+	content: var(--bibtex-icon);
+	color: var(--bibtex-icon-color);
+}
+
+body:not(.no-file-explorer-icons) .nav-file-title:is([data-path$="pptx"], [data-path*="presentation" i]) .nav-file-title-content::before {
+	content: var(--slides-icon);
+	color: var(--slide-icon-color);
 }
 
 body:not(.no-file-explorer-icons) .nav-file-title:is([data-path$="doc"], [data-path$="docx"], [data-path$="odt"]) .nav-file-title-content::before {
-	color: hsl(201 93% 25%);
-}
-
-body:not(.no-file-explorer-icons) .nav-file-title[data-path$="pdf"] .nav-file-title-content::before {
-	content: "picture_as_pdf";
-	color: hsl(347 47% 37%);
+	content: var(--word-icon);
+	color: var(--word-icon-color);
 }
 
 body:not(.no-file-explorer-icons) .nav-file-title:is([data-path$="csv"], [data-path$="xls"], [data-path$="xlsx"]) .nav-file-title-content::before {
-	content: "table_chart";
-	color: hsl(120 100% 25%);
+	content: var(--excel-icon);
+	color: var(--excel-icon-color);
+}
+
+body:not(.no-file-explorer-icons) .nav-file-title[data-path$="pdf"] .nav-file-title-content::before {
+	content: var(--pdf-icon);
+	color: var(--pdf-icon-color);
 }
 
 body:not(.no-file-explorer-icons) .nav-file-title[data-path*="statisti" i] .nav-file-title-content::before {
@@ -9209,12 +9254,16 @@ body:not(.move-plugin-name-to-left):not(.is-mobile) .better-command-palette .sug
 
 /* file type links
 (in Reading Mode done without this plugin, see link section) */
-.data-link-icon[data-link-path$=".pdf"]::before {
-	content: "📕 ";
-}
+.markdown-source-view .data-link-icon[data-link-path$=".pdf"]::before {
+	content: var(--pdf-icon)" "; /* stylelint-disable-line function-whitespace-after */
 
-.data-link-icon:is([href$=".png"], [href$=".jpg"], [href$=".jpeg"], [href$=".tiff"])::before {
-	content: "🌁 ";
+	font-family: var(--icon-font);
+	font-size: 85%;
+
+	color: var(--pdf-icon-color);
+
+	position: relative;
+	top: 2px;
 }
 
 /* tag-based */
@@ -12866,12 +12915,16 @@ body .pwc-reference-list .csl-entry.csl-entry.csl-entry {
 	border-radius: var(--roundish);
 }
 
-/* fix for pandoc citians emphasis removed by this plugin */
+/* pandoc citians styling */
 body:not(.no-pandoc-citation-emphasis) :is(.pandoc-citation, .pandoc-citation-formatting, .pandoc-citation-extra),
 body:not(.no-pandoc-citation-emphasis) .cm-hmd-barelink :is(.cm-pandoc-citation, .cm-pandoc-citation-formatting, .cm-pandoc-citation-extra) {
 	text-decoration: none;
-	color: var(--secondary-accent-text);
-	cursor: context-menu;
+	color: var(--reference-color);
+}
+
+.pandoc-citation-extra,
+.cm-pandoc-citation-extra {
+	filter: saturate(0.4);
 }
 
 /* ───────────────────────────────────────────────── */

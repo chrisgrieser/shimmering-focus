@@ -3,7 +3,7 @@ nav_order: 110
 ---
 
 # Changelog
-- 2022-05-02	patch
+- 2022-05-02	more consistent file type icons
 - 2022-05-02	minor fixes for prompts
 - 2022-05-02	better promo screenshot
 - 2022-05-02	more styling for pandoc reference list plugin
