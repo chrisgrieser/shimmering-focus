@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 2.16
+Version 2.17
 Source CSS: https://github.com/chrisgrieser/shimmering-focus/blob/main/source.css
 MIT License
 ──────────────────────────────────────────────────── */
@@ -2462,9 +2462,8 @@ body:not(.hide-signature) .status-bar::after {
 	border-top: var(--status-bar-border);
 }
 
-.status-bar-item.mod-clickable:hover,
-.lt-status-bar-btn:hover {
-	color: var(--hover-accent-2) !important;
+.status-bar :is(.status-bar-item.mod-clickable, .lt-status-bar-btn):hover {
+	color: var(--hover-accent-2);
 }
 
 .permanently-hide-statusbar .status-bar {
@@ -6635,8 +6634,8 @@ body { /* stylelint-disable-line no-duplicate-selectors */
 	padding: 1px 3px;
 }
 
-/* interaction with headers */
-.markdown-source-view .cm-line .cm-inline-code.cm-header.cm-header.cm-header {
+/* interaction with headers with bg */
+body:not(.no-heading-bg) .markdown-source-view .cm-line .cm-inline-code.cm-header.cm-header.cm-header {
 	background-color: unset;
 }
 
