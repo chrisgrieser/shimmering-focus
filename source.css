@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 2.15
+Version 2.16
 Source CSS: https://github.com/chrisgrieser/shimmering-focus/blob/main/source.css
 MIT License
 ──────────────────────────────────────────────────── */
@@ -6629,10 +6629,15 @@ body { /* stylelint-disable-line no-duplicate-selectors */
 }
 
 .is-live-preview code,
-.app-container .markdown-source-view .cm-contentContainer .cm-line .cm-inline-code:not(.cm-formatting-code),
+.markdown-source-view .cm-line .cm-inline-code:not(.cm-formatting-code),
 .markdown-preview-view *:not(pre) > code {
 	background-color: var(--bg2);
 	padding: 1px 3px;
+}
+
+/* interaction with headers */
+.markdown-source-view .cm-line .cm-inline-code.cm-header.cm-header.cm-header {
+	background-color: unset;
 }
 
 /* interaction with blockquotes */
