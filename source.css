@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 2.17
+Version 2.18
 Source CSS: https://github.com/chrisgrieser/shimmering-focus/blob/main/source.css
 MIT License
 ──────────────────────────────────────────────────── */
@@ -3132,14 +3132,14 @@ div.prompt {
 	background-color: var(--bg1);
 	box-shadow: var(--medium-shadow);
 	padding: 4px;
-	border: 5px solid var(--bg2);
+	border: var(--thick-border);
 	border-radius: calc(var(--roundish) * 2);
 }
 
 input.prompt-input {
-	font-size: calc(var(--button-font-size) + 0.2em);
+	font-size: calc(var(--button-font-size) + 0.3em);
 	width: unset;
-	padding: 3px 9px 5px;
+	padding: 5px 9px 7px;
 	border-radius: calc(var(--roundish) * 1.5);
 }
 
@@ -3171,9 +3171,14 @@ div.prompt-results {
 }
 
 /* hide suggestion highlights (only annoying) */
-.prompt .suggestion-item .suggestion-highlight {
+.prompt .suggestion-content .suggestion-highlight {
 	font-weight: 500;
 	color: var(--text-normal);
+}
+
+.prompt .suggestion-prefix .suggestion-highlight {
+	font-weight: 500;
+	color: var(--text-muted);
 }
 
 .prompt .suggestion-item :is(.suggestion-note, .suggestion-prefix) {
