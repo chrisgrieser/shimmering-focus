@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 2.31
+Version 2.32
 Source CSS: https://github.com/chrisgrieser/shimmering-focus/blob/main/source.css
 MIT License
 ──────────────────────────────────────────────────── */
@@ -5466,12 +5466,12 @@ body:not(.permanently-show-collapse-indicators) .cm-line:not(:hover):not(.cm-act
 }
 
 /* the "..." when content is folded */
-.cm-foldPlaceholder.cm-foldPlaceholder.cm-foldPlaceholder.cm-foldPlaceholder {
-	visibility: hidden;
+body:not(.show-fold-indicators) .cm-foldPlaceholder::before {
+	display: none;
 }
 
-.HyperMD-codeblock .cm-foldPlaceholder::before {
-	display: none;
+.cm-foldPlaceholder.cm-foldPlaceholder.cm-foldPlaceholder.cm-foldPlaceholder {
+	visibility: hidden;
 }
 
 .cm-foldPlaceholder::before {
@@ -5484,13 +5484,18 @@ body:not(.permanently-show-collapse-indicators) .cm-line:not(:hover):not(.cm-act
 	background-color: var(--bg2);
 
 	position: relative;
-	top: 4px;
+	top: 2px;
 
 	padding-bottom: 1px;
 
 	border-radius: var(--roundish);
 
 	visibility: visible;
+}
+
+/* avoid interference with code blocks */
+.HyperMD-codeblock .cm-foldPlaceholder::before {
+	display: none;
 }
 
 .cm-foldPlaceholder:hover::before {
@@ -13174,6 +13179,12 @@ settings:
    id: permanently-show-collapse-indicators
    title: Permanently show the Collapse Arrows
    description: By default, collapse arrows only become visible when hovered, folded, or in the active line.
+   type: class-toggle
+   default: false
+  -
+   id: show-fold-indicators
+   title: Re-enable the Folder Indicators
+   description: 'Fold Indicators are the "..." next to a folded item.'
    type: class-toggle
    default: false
   -

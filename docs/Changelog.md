@@ -3,7 +3,7 @@ nav_order: 110
 ---
 
 # Changelog
-- 2022-05-03	patch
+- 2022-05-03	hide fold indicators (+ option to re-enable them) (#160)
 - 2022-05-03	improvements for longform compile
 - 2022-05-03	further pandoc reference list improvements
 - 2022-05-03	minor tweaks to items in file explorer / kanban being dragged
