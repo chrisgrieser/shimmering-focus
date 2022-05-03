@@ -3,7 +3,7 @@ nav_order: 110
 ---
 
 # Changelog
-- 2022-05-03	patch
+- 2022-05-03	further pandoc reference list improvements
 - 2022-05-03	minor tweaks to items in file explorer / kanban being dragged
 - 2022-05-03	more advanced styling for pandoc reference list plugin
 - 2022-05-02	better pandoc citation styling when pandoc reference plugin is installed

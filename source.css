@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 2.25
+Version 2.26
 Source CSS: https://github.com/chrisgrieser/shimmering-focus/blob/main/source.css
 MIT License
 ──────────────────────────────────────────────────── */
@@ -12906,6 +12906,12 @@ body .pwc-reference-list .csl-entry.csl-entry.csl-entry {
 	background-color: var(--bg1);
 }
 
+/* hover tooltips */
+.cm-pandoc-citation:hover,
+.pandoc-citation:hover {
+	cursor: help;
+}
+
 .pwc-tooltip.pwc-tooltip {
 	font-family: var(--longform-font-text-theme);
 	font-size: 110%;
@@ -12937,10 +12943,11 @@ body:not(.no-pandoc-citation-emphasis) .cm-hmd-barelink :is(.cm-pandoc-citation,
 .pandoc-citation-formatting,
 .pandoc-citation-extra,
 .cm-pandoc-citation-extra {
-	filter: saturate(0.4);
+	filter: saturate(0.25);
 }
 
-/* round brackets in reading mode */
+/* reading mode styling */
+.markdown-preview-view .pandoc-citation-at,
 .pandoc-citation-formatting {
 	font-size: 0;
 }
@@ -12957,11 +12964,6 @@ body:not(.no-pandoc-citation-emphasis) .cm-hmd-barelink :is(.cm-pandoc-citation,
 /* cause longform notes have different size */
 :is(.writing, .longform-leaf) .pandoc-citation-formatting::before {
 	font-size: var(--longform-font-size);
-}
-
-.cm-pandoc-citation:hover,
-.pandoc-citation:hover {
-	cursor: help;
 }
 
 /* ───────────────────────────────────────────────── */
