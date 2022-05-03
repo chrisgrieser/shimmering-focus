@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 2.33
+Version 2.34
 Source CSS: https://github.com/chrisgrieser/shimmering-focus/blob/main/source.css
 MIT License
 ──────────────────────────────────────────────────── */
@@ -191,6 +191,8 @@ MIT License
 		- Graph controls
 		- Graph itself
 	- Publish
+- Hardcore Mode
+	- Madness Mode
 - Community Plugins
 	- Shell Commands
 	- Core Search Assistant
@@ -2064,7 +2066,7 @@ body:not(.show-titlebar) .titlebar {
 }
 
 body:not(.show-titlebar, .is-mobile) {
-	padding: 0 !important;
+	padding: 0 !important; /* needed */
 }
 
 .workspace {
@@ -9080,6 +9082,230 @@ body:not(.show-graph-controls) .graph-controls.is-close:not(:hover) {
 }
 
 /* ───────────────────────────────────────────────── */
+/* < Hardcore Mode
+──────────────────────────────────────────────────── */
+
+.hardcore-mode:not(.is-mobile) :is(
+	.titlebar,
+	.collapse-indicator,
+	.cm-foldPlaceholder,
+	.side-dock-settings .side-dock-ribbon-action:last-child,
+	.workspace-ribbon,
+	.view-header,
+	.frontmatter,
+	.frontmatter-container,
+	.mod-left-split,
+	.mod-right-split,
+	.status-bar,
+	.prompt-instructions,
+	.tooltip,
+	.notice,
+	.cm-panels-bottom,
+	.embedded-backlinks,
+	.cm-active-visual-line,
+	.workspace-leaf-resize-handle,
+	.suggestion-container.mod-search-suggestion,
+	.document-search-close-button,
+	.search-input-clear-button,
+	.empty-state-close-button,
+	.modal-close-button
+) { display: none }
+
+.hardcore-mode:not(.is-mobile) .cm-gutter {
+	display: none !important; /* needed */
+}
+
+/* does not work in ":is()" */
+.hardcore-mode:not(.is-mobile) .cm-active::before,
+.hardcore-mode:not(.is-mobile) .cm-selectionLayer::before,
+.hardcore-mode:not(.is-mobile) ::-webkit-scrollbar {
+	display: none;
+}
+
+/* remove decoration */
+.hardcore-mode:not(.is-mobile) .cm-active,
+.hardcore-mode:not(.is-mobile) .mod-root :is(h1, h2, h3, h4, h5, h6),
+.hardcore-mode:not(.is-mobile) .HyperMD-header {
+	background: none;
+	box-shadow: none;
+	border: none;
+}
+
+.hardcore-mode.hardcore-mode:not(.is-mobile) :is(.cm-link, .cm-hmd-internal-link, .cm-underline) {
+	text-decoration: none;
+}
+
+/* fixes */
+.hardcore-mode:not(.is-mobile) .view-content.view-content.view-content.view-content.view-content.view-content.view-content.view-content.view-content {
+	margin-top: 0;
+}
+
+.hardcore-mode:not(.is-mobile) .mod-root.mod-root.mod-root.mod-root.mod-root {
+	margin-left: 0;
+}
+
+body.hardcore-mode:not(.is-mobile) {
+	padding: 0 !important;  /* needed */
+}
+
+/* hardcore theme browser */
+.hardcore-mode:not(.is-mobile) .community-theme-container + hr,
+.hardcore-mode:not(.is-mobile) .community-theme-filters-container,
+.hardcore-mode:not(.is-mobile) .modal-title:not(:first-child),
+.hardcore-mode:not(.is-mobile) .community-theme.is-selected :is(.modal-button-container, .clickable-icon),
+.hardcore-mode:not(.is-mobile) .community-theme-remove-button,
+.hardcore-mode:not(.is-mobile) .community-theme:not(.is-selected) {
+	display: none;
+}
+
+.hardcore-mode:not(.is-mobile) .community-theme.is-selected .community-theme-info::after {
+	content: "Nice Try! \A\A But in Hardcore Mode, it won't be that easy to switch themes. 😈";
+	color: var(--text-error);
+}
+
+/* show toggle for madness mode */
+body:not(.hardcore-mode) .setting-item:is([data-id="madness-mode"]) {
+	display: none;
+}
+
+.setting-item:is([data-id="madness-mode"], [data-id="hardcore-mode"]) .checkbox-container {
+	border-color: var(--text-error);
+}
+
+.setting-item:is([data-id="madness-mode"], [data-id="hardcore-mode"]) .checkbox-container.is-enabled {
+	background-color: var(--error-bg);
+}
+
+/* ───────────────────────────────────────────────── */
+/* << Madness Mode
+──────────────────────────────────────────────────── */
+
+.madness-mode:not(.is-mobile) :is(
+	.cm-cursor,
+	.cm-fat-cursor,
+	.cm-formatting,
+	.cm-formatting-link
+) {
+	opacity: 0;
+}
+
+.madness-mode:not(.is-mobile) {
+	--text-selection: transparent;
+}
+
+/* trollish settings */
+.madness-mode:not(.is-mobile) .modal .style-settings-heading[data-id="shimmering-focus"] {
+	font-family: var(--font-interface);
+	font-size: 1.1rem;
+	font-weight: 500;
+
+	color: var(--text-error);
+	background-color: var(--bg3);
+	box-shadow: var(--small-inset-shadow);
+
+	padding: 10px 20px;
+	margin: 2rem 20px 0;
+
+	border: var(--basic-border);
+	border-radius: var(--roundish);
+}
+
+.madness-mode:not(.is-mobile) .modal .style-settings-heading[data-id="shimmering-focus"]::after {
+	content: "You didn't think it would be that easy to turn off Madness Mode, did you? 😈 \A\A You are gonna have to find a different way to your save your sanity. 😱";
+	text-align: center;
+	white-space: pre-wrap;
+	cursor: default;
+}
+
+.madness-mode:not(.is-mobile) .modal .style-settings-heading[data-id="shimmering-focus"] .setting-item-name,
+.madness-mode:not(.is-mobile) .vertical-tab-header-group:not(:last-child),
+.madness-mode:not(.is-mobile) .vertical-tab-nav-item:not(.is-active) {
+	display: none;
+}
+
+.madness-mode:not(.is-mobile) .vertical-tab-nav-item.is-active {
+	font-size: 0;
+	padding-top: 0.8rem;
+}
+
+.madness-mode:not(.is-mobile) .vertical-tab-nav-item.is-active::before {
+	content: "Help!";
+	font-size: var(--font-text-size);
+	color: var(--text-error);
+}
+
+/* trollish settings button */
+.madness-mode:not(.is-mobile) .mod-root.mod-root.mod-root.mod-root.mod-root {
+	margin-left: -30px;
+}
+
+.madness-mode:not(.is-mobile) .workspace-ribbon.mod-left.mod-left.mod-left.mod-left,
+.madness-mode:not(.is-mobile) .side-dock-settings .side-dock-ribbon-action:last-child {
+	display: unset;
+	cursor: default;
+}
+
+.madness-mode:not(.is-mobile) .side-dock-settings .side-dock-ribbon-action:hover svg {
+	display: none;
+}
+
+.madness-mode:not(.is-mobile) .side-dock-settings.side-dock-settings.side-dock-settings .side-dock-ribbon-action:hover {
+	background: none;
+	box-shadow: none;
+	border: none;
+}
+
+.madness-mode:not(.is-mobile) .side-dock-settings .side-dock-ribbon-action:hover::after {
+	content: "No Settings button \Ain Madness Mode! 😈";
+
+	color: var(--text-error);
+	background-color: var(--bg3);
+	box-shadow: var(--small-shadow);
+
+	position: relative;
+	top: -3rem;
+
+	padding: 1px 5px;
+
+	border: var(--basic-border);
+	border-radius: var(--roundish);
+}
+
+/* removed settings */
+.workspace-leaf-content[data-type="style-settings"] .view-content > .setting-item:first-child,
+.madness-mode:not(.is-mobile) .modal .style-settings-heading:not([data-id="shimmering-focus"]),
+.madness-mode:not(.is-mobile) .setting-editor-extra-setting-button,
+.madness-mode:not(.is-mobile) .setting-item.setting-item.style-settings-heading[data-id="shimmering-focus"]::before,
+.madness-mode:not(.is-mobile) .modal .setting-item:not(.style-settings-heading) {
+	display: none;
+}
+
+/* sanity: way out */
+.madness-mode:not(.is-mobile) .workspace-leaf-content[data-type="style-settings"] .style-settings-heading[data-level="1"] + .style-settings-container .setting-item:not([data-id="madness-mode"]),
+.madness-mode:not(.is-mobile) .workspace-leaf-content[data-type="style-settings"] .style-settings-heading[data-level="1"]:not([data-id="show-hide-elements"]) {
+	display: none;
+}
+
+.madness-mode:not(.is-mobile) .workspace-leaf-content[data-type="style-settings"] .style-settings-container[data-level="1"]::after {
+	display: block;
+	content: "😮‍💨 Back to Sanity! Hope you had fun with Madness Mode!";
+
+	text-align: center;
+
+	width: fit-content;
+
+	color: var(--sucess-color);
+	background-color: var(--bg3);
+	box-shadow: var(--small-shadow);
+
+	padding: 2px 8px;
+	margin-top: 30px;
+
+	border: var(--basic-border);
+	border-radius: var(--roundish);
+ }
+
+/* ───────────────────────────────────────────────── */
 /* < Community Plugins
 ──────────────────────────────────────────────────── */
 
@@ -11778,19 +12004,25 @@ body:not(.show-titlebar) .setting-item[data-id="show-titlebar-text"],
 /* ───────────────────────────────────────────────── */
 /* <<< Style Settings: Unlock Thema Beta
 ──────────────────────────────────────────────────── */
-/* stylelint-disable selector-max-empty-lines, indentation */
+/* stylelint-disable indentation */
 /* hide settings */
 body:not(.unlock-theme-beta) .style-settings-container .setting-item:is(
-	[data-id="post-it-callout-size"],) {
+	[data-id="post-it-callout-size"],
+	[data-id="hardcore-mode"],
+	[data-id="madness-mode"]
+) {
 	display: none;
 }
 
 /* beta badge */
 .unlock-theme-beta .style-settings-container .setting-item:is(
-	[data-id="callout-options"]
+	[data-id="callout-options"],
+	[data-id="show-hide-elements"]
 ).is-collapsed::after,
 .unlock-theme-beta .style-settings-container .setting-item:is(
 	[data-id="post-it-callout-size"],
+	[data-id="hardcore-mode"],
+	[data-id="madness-mode"],
 [data-id="unlock-theme-beta"])::before {
 	content: "Beta";
 
@@ -11813,7 +12045,7 @@ body:not(.unlock-theme-beta) .style-settings-container .setting-item:is(
 	cursor: default;
 }
 
-/* stylelint-enable selector-max-empty-lines, indentation */
+/* stylelint-enable indentation */
 /* ───────────────────────────────────────────────── */
 /* <<< Style Settings: Info Boxes
 ──────────────────────────────────────────────────── */
@@ -13188,7 +13420,7 @@ settings:
    default: false
   -
    id: show-fold-indicators
-   title: 🆕 Re-enable the Folder Indicators
+   title: 🆕 Re-enable the Fold Indicators
    description: 'Fold Indicators are the "..." next to a folded item.'
    type: class-toggle
    default: false
@@ -13196,6 +13428,18 @@ settings:
    id: show-graph-controls
    title: 'Graph View: Permanently show the Graph Controls'
    description: By default, graph controls are only visible when opened, or upon hovering the top-left area of the Graph View.
+   type: class-toggle
+   default: false
+  -
+   id: hardcore-mode
+   title: '⚠️ Hardcore Mode'
+   description: 'Experienced Obsidian users only: Try the ultimate challenge and permanently hide EVERY element that is not absolutely essential: On top of all UI elements listed above, hardcore mode will also remove the settings button, both side bars, tooltips, the gutter, and much more. Test your knowledge of Obsidian and prove that you are a real power user by enduring this special, just-for-fun mode.'
+   type: class-toggle
+   default: false
+  -
+   id: madness-mode
+   title: '😈 Madness Mode'
+   description: 'Can you also survive with invisible selections, transparent cursors, no markup, and... some other surprises?'
    type: class-toggle
    default: false
   -
@@ -14229,7 +14473,7 @@ settings:
   -
    id: outline-remove-level-1
    title: 'Outline: Remove First Level of Headings'
-   description: In case you have only one H1 heading per file, this will make the outline sidebar more compact.
+   description: In case you have only one H1 heading per file, this will make the outline sidebar even more compact.
    type: class-toggle
    default: false
   -
@@ -14248,13 +14492,13 @@ settings:
   -
    id: no-citations-in-reading-view
    title: '🆕 Pandoc Reference List: Hide Citations in Reading Mode'
-   description: Completely hide Pandoc Citations when in Reading Mode.
+   description: Completely hide Pandoc Citations when in Reading Mode. This only works as long as the Pandoc Reference List plugin is enabled.
    type: class-toggle
    default: false
   -
    id: minimal-breadcrumbs-matrix
    title: 'Breadcrumbs (Matrix View): Remove Headings'
-   description: Make the Matrix View more compact by removing all headings ("real", "implied", "up",... ).
+   description: Make the Matrix View even more compact by removing all headings ("real", "implied", "up",… ).
    type: class-toggle
    default: false
   -
