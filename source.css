@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 2.24
+Version 2.25
 Source CSS: https://github.com/chrisgrieser/shimmering-focus/blob/main/source.css
 MIT License
 ──────────────────────────────────────────────────── */
@@ -1982,8 +1982,7 @@ body:not(.no-grayed-out-inactive-pane) {
 }
 
 .cm-vim-panel div span:only-child::before {
-	content: "Cmd";
-	font-size: 0.9rem;
+	content: "Ex";
 	color: var(--extra-contrast);
 }
 
