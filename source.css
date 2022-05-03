@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 2.29
+Version 2.30
 Source CSS: https://github.com/chrisgrieser/shimmering-focus/blob/main/source.css
 MIT License
 ──────────────────────────────────────────────────── */
@@ -10440,14 +10440,24 @@ button.longform-remove-step-button.longform-remove-step-button.longform-remove-s
 }
 
 .longform-compile-step.longform-compile-step.longform-compile-step.longform-compile-step {
-	background-color: var(--bg3);
-	box-shadow: var(--muted-button-inset-shadow);
+	background-color: var(--bg2);
+	box-shadow: var(--button-inset-shadow);
 
 	padding: 5px;
-	margin-bottom: 10px;
+	margin-bottom: 0;
 
-	border: var(--thin-border);
+	border: var(--basic-border);
 	border-radius: var(--roundish);
+}
+
+.tab-panel-container .longform-compile-step.longform-compile-step.longform-compile-step.longform-compile-step {
+	background-color: var(--bg3);
+	box-shadow: var(--small-inset-shadow);
+	margin-bottom: 7px;
+}
+
+.longform-compile-step.longform-compile-step.longform-compile-step.longform-compile-step:hover {
+	border-color: var(--interactive-hover-border-color);
 }
 
 .longform-compile-step :is(label, h4),
@@ -10461,10 +10471,24 @@ button.longform-remove-step-button.longform-remove-step-button.longform-remove-s
 
 .longform-step-kind-pill.longform-step-kind-pill.longform-step-kind-pill.longform-step-kind-pill.longform-step-kind-pill {
 	font-size: 0.85em;
+
 	color: var(--light-in-light-dark-in-dark);
-	background-color: var(--hover-accent-2);
+	background-color: var(--secondary-accent-text);
 	box-shadow: var(--small-inset-shadow);
+
+	padding: 0 5px;
+
 	border-radius: var(--roundish);
+}
+
+.longform-compile-step p {
+	margin-top: 4px;
+	margin-bottom: 0;
+}
+
+.longform-compile-step.longform-compile-step.longform-compile-step.longform-compile-step > h3 {
+	padding-top: 3px;
+	padding-bottom: 5px;
 }
 
 .longform-compile-step-option.longform-compile-step-option.longform-compile-step-option.longform-compile-step-option.longform-compile-step-option input {
@@ -10575,20 +10599,36 @@ select#longform-workflows:hover {
 }
 
 .compile-status.compile-status.compile-status.compile-status.compile-status {
-	font-weight: 700;
+	font-size: 0.8rem;
+	line-height: 1.2;
 	letter-spacing: 0.4px;
 	color: var(--text-normal);
 	padding-right: 5px;
 }
 
 .longform-compile-run-container.longform-compile-run-container.longform-compile-run-container.longform-compile-run-container {
-	padding-top: 20px;
-	margin-top: 20px;
+	padding-top: 15px;
+	margin-top: 15px;
 	border-top: var(--thick-border);
 }
 
-.add-step-container.add-step-container.add-step-container.add-step-container button:hover {
+.add-step-container {
+	margin-top: 6px;
+}
+
+.add-step-container.add-step-container.add-step-container.add-step-container.add-step-container button {
 	text-decoration: none;
+	color: var(--button-text);
+}
+
+.add-step-container.add-step-container.add-step-container.add-step-container.add-step-container button:hover {
+	color: var(--button-hover-text);
+}
+
+.compile-button.compile-button.compile-button.compile-button:disabled {
+	background-color: var(--bg3);
+	border: var(--muted-button-border);
+	cursor: not-allowed;
 }
 
 /* ───────────────────────────────────────────────────
