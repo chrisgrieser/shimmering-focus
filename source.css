@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 2.22
+Version 2.23
 Source CSS: https://github.com/chrisgrieser/shimmering-focus/blob/main/source.css
 MIT License
 ──────────────────────────────────────────────────── */
@@ -173,8 +173,8 @@ MIT License
 - Core Plugins
 	- Editor Status (CM6)
 	- File Explorer
-		- Relationship Lines
-		- File Explorer Icons
+		- File Explorer: Relationship Lines
+		- File Explorer: Icons
 	- Panes
 		- Core Plugin Panes in general
 		- Outline
@@ -873,7 +873,9 @@ body.strong-em-secondary-accent {
 .theme-light,
 .theme-dark {
 	--text-accent: var(--primary-accent-2);
+	--text-on-accent: var(--button-text);
 	--interactive-accent: var(--interactive-bg);
+	--interactive-accent-rgb: var(--interactive-bg);
 	--interactive-accent-hover: var(--interactive-hover-bg);
 
 	--interactive-normal: var(--light-in-light-dark-in-dark);
@@ -932,7 +934,7 @@ body:is(.theme-light, .theme-dark) {
 	--big-reverted-inset-shadow: 2px 2px 3px 1px hsl(0 0% 25% / 40%) inset;
 
 	--button-inset-shadow: -1.5px -1.5px 2px var(--inset-shadow-color) inset;
-	--pressed-button-inset-shadow: 1.5px 1.5px 2px 2.5px var(--inset-shadow-black) inset;
+	--pressed-button-inset-shadow: 1px 1px 2px 2.5px var(--inset-shadow-black) inset;
 	--muted-button-inset-shadow: -1.5px -1.5px 1px var(--inset-shadow-color) inset;
 }
 
@@ -948,7 +950,7 @@ body:is(.theme-light, .theme-dark) {
 	--big-reverted-inset-shadow: 3px 3px 3px 3px var(--inset-shadow-black) inset;
 
 	--button-inset-shadow: -2px -2px 2px var(--inset-shadow-color) inset;
-	--pressed-button-inset-shadow: 1.5px 1.5px 2px 2px var(--inset-shadow-black) inset;
+	--pressed-button-inset-shadow: 1px 1px 2px 2px var(--inset-shadow-black) inset;
 	--muted-button-inset-shadow: -1.5px -1.5px 1px var(--inset-shadow-black) inset;
 }
 
@@ -2670,7 +2672,7 @@ body .setting-item-control a:is(.style-settings-export, .style-settings-import):
 	border-color: var(--interactive-hover-border-color);
 }
 
-/* active button */
+/* active button (pressed-down button) */
 .app-container.app-container button:active,
 .modal.modal.modal.modal.modal button:active {
 	box-shadow: var(--pressed-button-inset-shadow); /* shadow for "pressed down" look */
@@ -8174,8 +8176,12 @@ body:not(.show-file-explorer-navigation) .workspace-leaf-content[data-type="file
 	margin-top: 2px;
 }
 
+body .nav-folder-title.is-being-dragged-over {
+	background-color: var(--text-selection);
+}
+
 /* ───────────────────────────────────────────────── */
-/* <<< Relationship Lines
+/* <<< File Explorer: Relationship Lines
 ──────────────────────────────────────────────────── */
 /* based on css from @Mara https://github.com/Mara-Li/Obsidian-Snippet-collection */
 
@@ -8276,7 +8282,7 @@ body:not(.show-file-explorer-navigation) .workspace-leaf-content[data-type="file
 
 /* stylelint-enable selector-combinator-space-before, indentation */
 /* ───────────────────────────────────────────────── */
-/* <<< File Explorer Icons
+/* <<< File Explorer: Icons
 ──────────────────────────────────────────────────── */
 body:not(.no-folder-icons) .nav-folder-title-content::before,
 body:not(.no-file-explorer-icons) .workspace-leaf-content:not([data-type="recent-files"]) .nav-file-title-content::before {
@@ -10050,8 +10056,10 @@ body .kanban-plugin__new-item-button.kanban-plugin__new-item-button:hover {
 	border-color: var(--hover-accent-2) !important;
 }
 
-.kanban-plugin__drag-container {
-	border-color: var(--active-color) !important;
+/* item while it's being dragged */
+body .kanban-plugin__drag-container > .kanban-plugin__item-wrapper .kanban-plugin__item {
+	box-shadow: var(--small-shadow); /* box-shadow needs overwrite, since artificial border is created with it */
+	border: 2px solid var(--active-color);
 }
 
 /* fix metadata in kanban card display */
@@ -13031,7 +13039,6 @@ community:
 - obsidian-omnisearch
 - obsidian-mind-map
 - obsidian-linter
-- typing-speed
 - obsidian-vimrc-support
 - obsidian-dynamic-toc
 - obsidian-pandoc-reference-list
