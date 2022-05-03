@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 2.32
+Version 2.33
 Source CSS: https://github.com/chrisgrieser/shimmering-focus/blob/main/source.css
 MIT License
 ──────────────────────────────────────────────────── */
@@ -13007,6 +13007,11 @@ body:not(.no-pandoc-citation-emphasis) .mod-root :is(.cm-pandoc-citation-formatt
 	font-size: var(--longform-font-size);
 }
 
+/* optional turning of of citations in Reading Mode */
+.no-citations-in-reading-view .markdown-preview-view :is(.pandoc-citation, .pandoc-citation-extra, .pandoc-citation-formatting) {
+    display: none;
+}
+
 /* ───────────────────────────────────────────────── */
 /* < Compatibility Info for the Obsidian Hub
 ──────────────────────────────────────────────────── */
@@ -13183,7 +13188,7 @@ settings:
    default: false
   -
    id: show-fold-indicators
-   title: Re-enable the Folder Indicators
+   title: 🆕 Re-enable the Folder Indicators
    description: 'Fold Indicators are the "..." next to a folded item.'
    type: class-toggle
    default: false
@@ -14211,7 +14216,7 @@ settings:
 # << Plugin-Specific Settings (+)
    id: plugin-specific
    title: ⚙️ Plugin-Specific Settings
-   description: Backlinks, Outline, Starred, Command Palette, Breadcrumbs, Sliding Panes, Supercharged Links, Link Favicons, Calendar
+   description: Backlinks, Outline, Starred, Command Palette, 🆕 Pandoc Reference List, Breadcrumbs, Sliding Panes, Supercharged Links, Link Favicons, Calendar
    type: heading
    level: 1
    collapsed: true
@@ -14236,9 +14241,15 @@ settings:
   -
    id: move-plugin-name-to-left
    title: 'Command Palette: Move the plugin name back to the left'
-   description: Enable this in case some commands are aren't displayed properly in the Command Palette.
+   description: Enable this in case some commands are aren't displayed properly in the Command Palette. Also applies to the Better Command Palette Plugin.
    type: class-toggle
    hub: ignore
+   default: false
+  -
+   id: no-citations-in-reading-view
+   title: '🆕 Pandoc Reference List: Hide Citations in Reading Mode'
+   description: Completely hide Pandoc Citations when in Reading Mode.
+   type: class-toggle
    default: false
   -
    id: minimal-breadcrumbs-matrix
