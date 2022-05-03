@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 2.26
+Version 2.27
 Source CSS: https://github.com/chrisgrieser/shimmering-focus/blob/main/source.css
 MIT License
 ──────────────────────────────────────────────────── */
@@ -50,7 +50,7 @@ MIT License
 	- Vim Panel
 - UI Elements
 	- Title Bar
-		- Traffic Light Fixes
+		- Mac Traffic Light Fixes
 	- Ribbons
 	- Settings Button
 	- Tooltips
@@ -741,7 +741,7 @@ body.strong-em-secondary-accent {
 
 	--heading-bg: hsl(var(--bg-light-hue) calc(var(--sat-light-3) * 0.8) calc(var(--brightness-light-3) - 1%));
 	--alt-bg: hsl(var(--bg-light-hue) calc(var(--sat-light-3) * 1.1) calc(var(--brightness-light-2) - 2%));
-	--notice-bg: hsl(var(--bg-light-hue) calc(var(--sat-light-3) * 0.8) calc(var(--brightness-light-3) + 3%));
+	--notice-bg: hsl(var(--bg-light-hue) calc(var(--sat-light-3) * 0.8) calc(var(--brightness-light-3) + 7%));
 	--resize-handle-color: hsl(var(--bg-light-hue) var(--sat-light-2) calc(var(--brightness-light-2) - 1%));
 	--suggester-b-row: hsl(var(--bg-light-hue) var(--sat-light-2) calc(var(--brightness-light-1) - 3%));
 	--muted-border-color: hsl(var(--bg-light-hue) var(--sat-light-3) calc(var(--brightness-light-3) + 3%));
@@ -766,7 +766,7 @@ body.strong-em-secondary-accent {
 
 	--heading-bg: hsl(var(--bg-dark-hue) calc(var(--sat-dark-1) * 0.5) calc(var(--brightness-dark-1) + 5%));
 	--alt-bg: hsl(var(--bg-dark-hue) calc(var(--sat-dark-1) * 1.6) calc(var(--brightness-dark-2) - 2%));
-	--notice-bg: hsl(var(--bg-dark-hue) calc(var(--sat-dark-1) * 0.8) calc(var(--brightness-dark-2) - 1%));
+	--notice-bg: hsl(var(--bg-dark-hue) calc(var(--sat-dark-1) * 0.8) calc(var(--brightness-dark-2) + 3%));
 	--resize-handle-color: hsl(var(--bg-dark-hue)  var(--sat-dark-2) calc(var(--brightness-dark-2) - 1%));
 	--suggester-b-row: hsl(var(--bg-dark-hue)  var(--sat-dark-1) calc(var(--brightness-dark-1) - 2%));
 	--muted-border-color: hsl(var(--bg-dark-hue) var(--sat-dark-1) calc(var(--brightness-dark-1) - 6%));
@@ -2057,10 +2057,14 @@ body:not(.no-grayed-out-inactive-pane) {
 
 /* ───────────────────────────────────────────────── */
 /* << Title Bar
-/* <<< Traffic Light Fixes
+/* <<< Mac Traffic Light Fixes
 ──────────────────────────────────────────────────── */
 body:not(.show-titlebar) .titlebar {
 	display: none;
+}
+
+body:not(.show-titlebar, .is-mobile) {
+	padding: 0 !important;
 }
 
 .workspace {
@@ -2086,10 +2090,6 @@ body:not(.show-titlebar) .titlebar {
 /* for sliding panes with rotated headers, move down instead */
 .mod-macos:not(.show-titlebar).plugin-sliding-panes-rotate-header .workspace-split.mod-left-split.is-collapsed ~ .mod-root .workspace-leaf:nth-child(2) .view-header {
 	padding-top: 1.3rem;
-}
-
-body:not(.show-titlebar, .is-mobile) {
-	padding: 0 !important;
 }
 
 /* adapt height of ribbons */
@@ -12857,12 +12857,8 @@ body .pwc-reference-list .csl-entry.csl-entry.csl-entry {
 }
 
 /* collapsed links */
-.pwc-reference-list a svg.link {
-	margin-bottom: -2px;
-}
-
-.theme-light .pwc-reference-list a svg.link {
-	filter: brightness(1.3);
+.pwc-reference-list.collapsed-links.collapsed-links a::after {
+	background-color: var(--link-color);
 }
 
 /* empty state */
@@ -12891,6 +12887,7 @@ body .pwc-reference-list .csl-entry.csl-entry.csl-entry {
 	content: "content_copy";
 
 	font-family: var(--icon-font);
+	font-size: 0.9rem;
 
 	background-color: var(--bg3);
 	box-shadow: var(--tiny-inset-shadow);
@@ -12948,16 +12945,16 @@ body:not(.no-pandoc-citation-emphasis) .cm-hmd-barelink :is(.cm-pandoc-citation,
 
 /* reading mode styling */
 .markdown-preview-view .pandoc-citation-at,
-.pandoc-citation-formatting {
+.markdown-preview-view .pandoc-citation-formatting {
 	font-size: 0;
 }
 
-.pandoc-citation-formatting::before {
+.markdown-preview-view .pandoc-citation-formatting::before {
 	content: "(";
 	font-size: var(--font-text-size);
 }
 
-:is(.pandoc-citation + .pandoc-citation-extra, .pandoc-citation) + .pandoc-citation-formatting::before {
+.markdown-preview-view :is(.pandoc-citation + .pandoc-citation-extra, .pandoc-citation) + .pandoc-citation-formatting::before {
 	content: ")";
 }
 
