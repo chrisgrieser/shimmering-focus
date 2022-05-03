@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 2.27
+Version 2.28
 Source CSS: https://github.com/chrisgrieser/shimmering-focus/blob/main/source.css
 MIT License
 ──────────────────────────────────────────────────── */
@@ -3014,17 +3014,15 @@ body:not(.no-search-result-indicator) .cm-matched-string::before, /* dynamic hig
 body:not(.no-search-result-indicator) .obsidian-search-match-highlight::before {
 	content: "►";
 
-	font-size: 0.8em;
+	font-size: 1.1rem;
 	font-style: normal; /* so italic text does not get an italic search marker */
 
 	color: var(--search-match-color);
 	background-color: var(--bg1); /* so they cover footnote indicators when overlapping */
 
 	position: absolute;
-	left: -57px;
+	left: -60px;
 	z-index: 5;
-
-	margin-top: 2px;
 }
 
 /* Reading Mode */
@@ -7186,8 +7184,12 @@ a:hover {
 	text-decoration: underline dashed 1px;
 }
 
+.is-live-preview .cm-link-alias.cm-link-alias.cm-link-alias .cm-underline {
+	text-decoration: none;
+}
+
 .markdown-preview-view .internal-link[aria-label] {
-	text-decoration: underline dashed;
+	text-decoration: underline dashed 1px;
 }
 
 .dataview.dataview a.internal-link {
@@ -10616,7 +10618,7 @@ select#longform-workflows:hover {
 
 /* justify text */
 body:not(.longform-left-aligned) :is(.writing, .longform-leaf) .cm-line:not(.HyperMD-codeblock, .HyperMD-header) > :not(.cm-hmd-frontmatter),
-body:not(.longform-left-aligned) :is(.writing, .longform-leaf) .cm-line:not(.HyperMD-codeblock, .HyperMD-header),
+body:not(.longform-left-aligned) :is(.writing, .longform-leaf) .cm-line:not(.HyperMD-codeblock, .HyperMD-header, .HyperMD-task-line),
 body:not(.longform-left-aligned) :is(.writing, .longform-leaf) :is(p, .footnotes, .HyperMD-footnote) {
 	text-align: justify;
 	hyphens: auto;
