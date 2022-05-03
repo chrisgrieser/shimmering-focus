@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 2.30
+Version 2.31
 Source CSS: https://github.com/chrisgrieser/shimmering-focus/blob/main/source.css
 MIT License
 ──────────────────────────────────────────────────── */
@@ -12978,11 +12978,8 @@ body:not(.no-pandoc-citation-emphasis) .cm-hmd-barelink :is(.cm-pandoc-citation,
 	color: var(--reference-color);
 }
 
-.cm-pandoc-citation-formatting,
-.pandoc-citation-formatting,
-.pandoc-citation-extra,
-.cm-pandoc-citation-extra {
-	filter: saturate(0.25);
+body:not(.no-pandoc-citation-emphasis) .mod-root :is(.cm-pandoc-citation-formatting, .pandoc-citation-formatting, .pandoc-citation-extra, .cm-pandoc-citation-extra) {
+	color: var(--text-muted);
 }
 
 /* reading mode styling */
