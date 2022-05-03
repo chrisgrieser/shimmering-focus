@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 2.28
+Version 2.29
 Source CSS: https://github.com/chrisgrieser/shimmering-focus/blob/main/source.css
 MIT License
 ──────────────────────────────────────────────────── */
@@ -1722,7 +1722,7 @@ body:not(.no-grayed-out-inactive-pane) {
 /* Default values */
 .cm-cursorLayer .cm-cursor,
 .CodeMirror-cursor {
-	width: 3px;
+	width: 2.5px;
 
 	background: var(--cursor-look);
 
