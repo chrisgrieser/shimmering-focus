@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 2.35
+Version 2.36
 Source CSS: https://github.com/chrisgrieser/shimmering-focus/blob/main/source.css
 MIT License
 ──────────────────────────────────────────────────── */
@@ -9097,6 +9097,7 @@ body:not(.show-graph-controls) .graph-controls.is-close:not(:hover) {
 	.mod-left-split,
 	.mod-right-split,
 	.status-bar,
+	.tooltip,
 	.prompt-instructions,
 	.cm-panels-bottom,
 	.embedded-backlinks,
@@ -9151,21 +9152,17 @@ body.hardcore-mode:not(.is-mobile) {
 /* unknown hotkeys */
 .hardcore-mode:not(.is-mobile) :is(.suggestion-hotkey, .setting-hotkey) {
 	font-size: 0;
+	line-height: 1;
 	text-align: center;
 	height: calc(var(--font-text-size) * 1.4);
-	width: 3.5rem;
 	cursor: help;
 }
 
 .hardcore-mode:not(.is-mobile) :is(.suggestion-hotkey, .setting-hotkey)::before {
-	content: "? ? ?";
+	content: "??";
 	font-size: var(--font-text-size);
 	color: var(--secondary-accent-text);
 	position: relative;
-}
-
-.hardcore-mode:not(.is-mobile) :is(.suggestion-hotkey, .setting-hotkey):not(.mod-empty)::before {
-	top: calc(var(--font-text-size) * 0.6);
 }
 
 /* unknown hotkeys */
@@ -9196,6 +9193,12 @@ body.hardcore-mode:not(.is-mobile) {
 	color: var(--text-error);
 }
 
+/* cryptic command palette */
+.hardcore-mode:not(.is-mobile):not(.madness-mode) .prompt-results .suggestion-prefix,
+.hardcore-mode:not(.is-mobile) .prompt-input {
+	font-family: "Flow Circular";
+}
+
 /* ───────────────────────────────────────────────── */
 /* << Hardcore/Madness Mode Toggles
 ──────────────────────────────────────────────────── */
@@ -9205,10 +9208,6 @@ body:not(.hardcore-mode) .setting-item:is([data-id="madness-mode"]) {
 
 .setting-item:is([data-id="madness-mode"], [data-id="hardcore-mode"]) .checkbox-container {
 	border-color: var(--text-error);
-}
-
-.setting-item:is([data-id="madness-mode"], [data-id="hardcore-mode"]) .checkbox-container.is-enabled {
-	background-color: var(--error-bg);
 }
 
 /* ───────────────────────────────────────────────── */
@@ -9306,6 +9305,11 @@ body:not(.hardcore-mode) .setting-item:is([data-id="madness-mode"]) {
 
 	border: var(--basic-border);
 	border-radius: var(--roundish);
+}
+
+/* more cryptic command palette */
+.madness-mode:not(.is-mobile) .prompt-results .suggestion-content {
+	font-family: "Flow Circular";
 }
 
 /* removed settings */
@@ -13478,13 +13482,13 @@ settings:
   -
    id: hardcore-mode
    title: '⚠️ Hardcore Mode'
-   description: 'Experienced Obsidian users only! Try the ultimate challenge and permanently hide EVERY element that is not absolutely essential: On top of all things listed above, hardcore mode will remove the settings button, both side bars, tooltips, the gutter, and much more. Test your knowledge of Obsidian and prove that you are a real power user by enduring this special, just-for-fun mode.'
+   description: 'Experienced Obsidian users only! Try the ultimate challenge and permanently hide EVERY element that is not absolutely essential: On top of all things listed above, hardcore mode will remove the settings button, both side bars, button labels, and much more. Test your knowledge of Obsidian and prove that you are a real power user by enduring this special, just-for-fun mode.'
    type: class-toggle
    default: false
   -
    id: madness-mode
    title: '😈 Madness Mode'
-   description: 'Can you also endure invisible cursors, hostile settings, and a theme gone mad?'
+   description: "Can you also endure confused cursors, hostile settings, invisible selections, and a theme gone rogue? Enable this mode and attempt to escape this mad theme that won't let you let you go… (Hint: There is a hidden way to turn off madness mode without deleting any files in the .obsidian folder.)"
    type: class-toggle
    default: false
   -
