@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 2.42
+Version 2.43
 Source CSS: https://github.com/chrisgrieser/shimmering-focus/blob/main/source.css
 MIT License
 ──────────────────────────────────────────────────── */
@@ -9178,21 +9178,6 @@ body.hardcore-mode:not(.is-mobile) {
 	position: relative;
 }
 
-/* hardcore theme browser */
-.hardcore-mode:not(.is-mobile) .community-theme-container + hr,
-.hardcore-mode:not(.is-mobile) .community-theme-filters-container,
-.hardcore-mode:not(.is-mobile) .modal-title:not(:first-child),
-.hardcore-mode:not(.is-mobile) .community-theme.is-selected :is(.modal-button-container, .clickable-icon),
-.hardcore-mode:not(.is-mobile) .community-theme-remove-button,
-.hardcore-mode:not(.is-mobile) .community-theme:not(.is-selected) {
-	display: none;
-}
-
-.hardcore-mode:not(.is-mobile) .community-theme.is-selected .community-theme-info::after {
-	content: "Nice Try!\A\A But in Hardcore Mode, it won't be that easy to switch themes. 😈";
-	color: var(--text-error);
-}
-
 /* cryptic command palette */
 .hardcore-mode:not(.is-mobile):not(.madness-mode) .prompt-results .suggestion-prefix,
 .hardcore-mode:not(.is-mobile) .prompt-input {
@@ -9248,8 +9233,8 @@ body:not(.hardcore-mode) .setting-item:is([data-id="madness-mode"]) {
 }
 
 .madness-mode:not(.is-mobile) .modal .style-settings-heading[data-id="shimmering-focus"] .setting-item-name,
-.madness-mode:not(.is-mobile) .vertical-tab-header-group:not(:last-child),
-.madness-mode:not(.is-mobile) .vertical-tab-nav-item:not(.is-active) {
+.madness-mode:not(.is-mobile) .vertical-tab-header-group:nth-last-child(2) .vertical-tab-nav-item:not(:nth-child(3)),
+.madness-mode:not(.is-mobile) .vertical-tab-header-group:last-child .vertical-tab-nav-item:not(.is-active) {
 	display: none;
 }
 
@@ -9264,6 +9249,23 @@ body:not(.hardcore-mode) .setting-item:is([data-id="madness-mode"]) {
 	font-size: var(--font-text-size);
 	font-style: italic;
 	color: var(--text-error);
+}
+
+.madness-mode:not(.is-mobile) .style-settings-import,
+.madness-mode:not(.is-mobile) .style-settings-export,
+.workspace-leaf-content[data-type="style-settings"] .view-content > .setting-item:first-child,
+.madness-mode:not(.is-mobile) .modal .style-settings-heading:not([data-id="shimmering-focus"]),
+.madness-mode:not(.is-mobile) .setting-editor-extra-setting-button,
+.madness-mode:not(.is-mobile) .setting-item.setting-item.style-settings-heading[data-id="shimmering-focus"]::before {
+	display: none;
+}
+
+body.madness-mode:not(.is-mobile) {
+	cursor: help;
+}
+
+.madness-mode:not(.is-mobile) .modal .vertical-tab-content .setting-item-info {
+	font-family: "Flow Circular";
 }
 
 /* trollish settings button */
@@ -9316,6 +9318,25 @@ body.madness-mode:not(.is-mobile) .side-dock-settings .side-dock-ribbon-action {
 	border-radius: var(--roundish);
 }
 
+/* mad theme browser */
+.madness-mode:not(.is-mobile) .community-theme-container + hr,
+.madness-mode:not(.is-mobile) .community-theme-filters-container,
+.madness-mode:not(.is-mobile) .modal-title:not(:first-child),
+.madness-mode:not(.is-mobile) .community-theme.is-selected :is(.modal-button-container, .clickable-icon),
+.madness-mode:not(.is-mobile) .community-theme-remove-button,
+.madness-mode:not(.is-mobile) .community-theme:not(.is-selected) {
+	display: none;
+}
+
+.madness-mode:not(.is-mobile) .mod-community-theme {
+	cursor: move;
+}
+
+.madness-mode:not(.is-mobile) .community-theme.is-selected .community-theme-info::after {
+	content: "Nice try!\A\A But in Madness Mode, you are not allowed to switch themes. 😈";
+	color: var(--text-error);
+}
+
 /* more cryptic command palette */
 .madness-mode:not(.is-mobile) .prompt-results .suggestion-content {
 	font-family: "Flow Circular";
@@ -9335,25 +9356,12 @@ body.madness-mode:not(.is-mobile) .prompt {
 }
 
 /* more cryptic editor */
-.madness-mode:not(.is-mobile) :is(.cm-line, .markdown-preview-view) {
+.madness-mode.madness-mode.madness-mode.madness-mode.madness-mode.madness-mode.madness-mode.madness-mode.madness-mode:not(.is-mobile) :is(.cm-line, .cm-line *, .markdown-preview-view) {
 	font-family: "Flow Circular";
 }
 
-/* removed settings */
-.workspace-leaf-content[data-type="style-settings"] .view-content > .setting-item:first-child,
-.madness-mode:not(.is-mobile) .modal .style-settings-heading:not([data-id="shimmering-focus"]),
-.madness-mode:not(.is-mobile) .setting-editor-extra-setting-button,
-.madness-mode:not(.is-mobile) .setting-item.setting-item.style-settings-heading[data-id="shimmering-focus"]::before,
-.madness-mode:not(.is-mobile) .modal .setting-item:not(.style-settings-heading) {
-	display: none;
-}
-
-body.madness-mode:not(.is-mobile) {
-	cursor: help;
-}
-
 /* drunk Obsi 🏴‍☠️ Damian */
-body.madness-mode:not(.is-mobile) .modal {
+body.madness-mode:not(.is-mobile) .modal.mod-settings {
 	transform: skew(4deg);
 	cursor: grabbing;
 }
