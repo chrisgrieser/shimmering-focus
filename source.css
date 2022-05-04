@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 2.48
+Version 2.49
 Source CSS: https://github.com/chrisgrieser/shimmering-focus/blob/main/source.css
 MIT License
 ──────────────────────────────────────────────────── */
@@ -201,7 +201,6 @@ MIT License
 	- Supercharged Links
 	- Emoji Toolbar
 	- Banners
-	- Discord Rich Presence
 	- Dictionary
 	- Git Plugin
 	- Sliding Panes
@@ -1238,7 +1237,17 @@ body {
 	/* inserting emoji fallback fonts for better emoji display */
 	--emoji-fallback-fonts: "Apple Color Emoji", "Segoe UI Emoji";
 	--font-interface: var(--font-interface-override), var(--font-interface-theme), var(--emoji-fallback-fonts), var(--font-default);
-	--font-text: var(--font-text-override), var(--font-text-theme), var(--emoji-fallback-fonts), var(--font-interface);
+	--font-text: var(--font-text-override), var(--font-text-theme), var(--emoji-fallback-fonts), var(--font-default);
+}
+
+/* mimicking Obsidian's font override style */
+.is-mobile.is-mobile {
+	--font-text: var(--font-text-override), var(--mobile-font-text-theme), var(--emoji-fallback-fonts), var(--font-default);
+	--font-interface: var(--font-interface-override), var(--mobile-font-interface-theme), var(--emoji-fallback-fonts), var(--font-default);
+}
+
+.is-mobile .markdown-source-view.mod-cm6 .cm-scroller {
+	font-family: var(--font-text);
 }
 
 /* REFERENCE: How fonts are defined in default Obsidian
@@ -1250,12 +1259,6 @@ body {
 --font-text: var(--font-text-override), var(--font-text-theme), var(--font-interface);
 --font-monospace: var(--font-monospace-override), var(--font-monospace-theme), 'Source Code Pro', monospace;
 } */
-
-/* mimicking Obsidian's font override style */
-.is-mobile.is-mobile {
-	--font-text: var(--font-text-override), var(--mobile-font-text-theme);
-	--font-interface: var(--font-interface-override), var(--mobile-font-interface-theme);
-}
 
 body :is(.longform-leaf, .writing) {
 	--font-text: var(--longform-font-text-theme);
@@ -2254,7 +2257,7 @@ body:not(.show-ribbons):not(.is-mobile) .side-dock-settings .side-dock-ribbon-ac
 	background-color: var(--bg3);
 }
 
-.hide-settings-button:not(.show-ribbons) .side-dock-settings .side-dock-ribbon-action:last-child {
+.hide-settings-button:not(.show-ribbons):not(.is-mobile) .side-dock-settings .side-dock-ribbon-action:last-child {
 	display: none;
 }
 
@@ -7368,7 +7371,7 @@ a.tag {
 }
 
 /* readability improvement */
-.theme-light :is(.cm-hashtag, .tag) {
+.theme-light :is(.cm-hashtag, .tag:not(.frontmatter)) {
 	text-shadow: 0.1px 0.1px;
 }
 
@@ -8043,14 +8046,18 @@ body:not(.no-fn-indicator) .mod-cm6 .cm-hmd-barelink:not(.cm-formatting-link) + 
 /* < Mobile
 ──────────────────────────────────────────────────── */
 
+.mod-root > .workspace-leaf.workspace-leaf.workspace-leaf {
+	width: 100%;
+}
+
 /* ───────────────────────────────────────────────── */
 /* << Typography
 ──────────────────────────────────────────────────── */
 
 .is-mobile .markdown-preview-view,
-.is-mobile .cm-s-obsidian div.cm-line {
+.is-mobile .cm-s-obsidian div.cm-line.cm-line:not(.HyperMD-header) {
 	font-size: var(--mobile-font-size);
-	line-height: 1.5;
+	line-height: 1.4;
 }
 
 body.is-mobile .markdown-preview-view blockquote {
@@ -9733,14 +9740,6 @@ img.emoji.emoji.emoji.emoji.emoji {
 /* fix interaction with Ozan Image Plugin */
 .cm-hmd-frontmatter ~ .oz-image-widget-cm6 {
 	display: none;
-}
-
-/* ───────────────────────────────────────────────── */
-/* << Discord Rich Presence
-──────────────────────────────────────────────────── */
-.status-bar-item.plugin-obsidian-discordrpc {
-	font-size: 85%;
-	filter: grayscale(1) contrast(1.3) opacity(0.8);
 }
 
 /* ───────────────────────────────────────────────── */
