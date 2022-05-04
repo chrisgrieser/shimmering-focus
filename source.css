@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 2.56
+Version 2.57
 Source CSS: https://github.com/chrisgrieser/shimmering-focus/blob/main/source.css
 MIT License
 ──────────────────────────────────────────────────── */
@@ -9275,8 +9275,9 @@ body.madness-mode:not(.is-mobile) {
 	cursor: wait;
 }
 
+.madness-mode:not(.is-mobile) .modal .style-settings-container,
 .madness-mode:not(.is-mobile) .modal .style-settings-heading[data-id="shimmering-focus"] .setting-item-name,
-.madness-mode:not(.is-mobile) .vertical-tab-header-group:nth-last-child(2) .vertical-tab-nav-item:not(:nth-child(3), :nth-child(7), :nth-child(4)),
+.madness-mode:not(.is-mobile) .vertical-tab-header-group:nth-last-child(2) .vertical-tab-nav-item:not(:nth-child(3), :nth-child(7)),
 .madness-mode:not(.is-mobile) .vertical-tab-header-group:last-child .vertical-tab-nav-item:not(.is-active),
 .madness-mode:not(.is-mobile) .modal .style-settings-heading[data-id="shimmering-focus"]::before {
 	display: none;
@@ -9323,12 +9324,12 @@ body.madness-mode:not(.is-mobile) {
 }
 
 .madness-mode:not(.is-mobile) .workspace-ribbon.mod-left.mod-left.mod-left.mod-left,
-.madness-mode:not(.is-mobile) .side-dock-settings .side-dock-ribbon-action:last-child {
+.madness-mode:not(.is-mobile) .side-dock-settings.side-dock-settings .side-dock-ribbon-action:last-child {
 	display: unset;
 }
 
 body.madness-mode:not(.is-mobile) .side-dock-settings .side-dock-ribbon-action {
-	animation-duration: 4s;
+	animation-duration: 3s;
 	animation-name: moveAround2;
 	animation-iteration-count: infinite;
 }
@@ -9341,9 +9342,9 @@ body.madness-mode:not(.is-mobile) .side-dock-settings .side-dock-ribbon-action {
 }
 
 .madness-mode:not(.is-mobile) .side-dock-settings .side-dock-ribbon-action::after {
-	content: "HAHAHA! 😈";
+	content: "Click me if you can! 😈";
 
-	white-space: nowrap;
+	white-space: pre;
 
 	color: var(--text-error);
 	background-color: var(--bg3);
@@ -9390,6 +9391,15 @@ body.madness-mode:not(.is-mobile) .side-dock-settings .side-dock-ribbon-action {
 /* enable showing command palette */
 .madness-mode:not(.is-mobile) .mod-settings .plugin-list-plugins .setting-item.mod-toggle:nth-child(13) > .setting-item-info {
 	font-family: var(--font-interface-override), "Flow Circular";
+	font-weight: 600;
+}
+
+.madness-mode:not(.is-mobile) .mod-settings .plugin-list-plugins .setting-item.mod-toggle:nth-child(13) > .setting-item-info .setting-item-description {
+	display: none;
+}
+
+.madness-mode:not(.is-mobile) .mod-settings .plugin-list-plugins .setting-item.mod-toggle:nth-child(13) > .setting-item-info .setting-item-name::before {
+	content: "Enable ";
 }
 
 /* hide pins */
@@ -9423,15 +9433,20 @@ body.madness-mode:not(.is-mobile) .modal.mod-settings {
 
 /* SANITY: THE WAY OUT */
 /* decode font when custom font has been selected */
+.madness-mode:not(.is-mobile) .modal.mod-settings .mod-toggle:nth-child(3) + .setting-item-heading + .setting-item > .setting-item-info,
 .madness-mode:not(.is-mobile) .prompt-results .suggestion-prefix {
 	font-family: var(--font-interface-override), "Flow Circular";
 }
 
-.madness-mode:not(.is-mobile) .modal.mod-settings .mod-toggle:nth-child(3) + .setting-item-heading > .setting-item-info::before {
-	content: "You regain some sanity. Maybe you can see some things more clearly?";
-	font-family: var(--font-interface-override), "Flow Circular";
+.madness-mode:not(.is-mobile) .modal.mod-settings .mod-toggle:nth-child(3) + .setting-item-heading + .setting-item > .setting-item-info::after {
+	content: "You regain some sanity. Maybe you can see some things more clearly now?";
 	font-size: 1rem;
-	margin-left: 5px;
+}
+
+/* hint emoji */
+.madness-mode:not(.is-mobile) .modal.mod-settings .mod-toggle:nth-child(3) + .setting-item-heading + .setting-item .setting-item-name::after {
+	content: " 🤔 How could I decrypt this?";
+	font-family: var(--font-interface);
 }
 
 .madness-mode:not(.is-mobile) .workspace-leaf-content[data-type="style-settings"] .style-settings-heading[data-id="shimmering-focus"] {
