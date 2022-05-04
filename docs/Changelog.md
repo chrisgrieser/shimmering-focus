@@ -3,6 +3,7 @@ nav_order: 110
 ---
 
 # Changelog
+- 2022-05-04	patch
 - 2022-05-04	more hints for solving madness mode
 - 2022-05-04	much improved madness mode
 - 2022-05-04	madness mode improvements
