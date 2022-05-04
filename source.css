@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 2.39
+Version 2.40
 Source CSS: https://github.com/chrisgrieser/shimmering-focus/blob/main/source.css
 MIT License
 ──────────────────────────────────────────────────── */
@@ -9278,7 +9278,6 @@ body:not(.hardcore-mode) .setting-item:is([data-id="madness-mode"]) {
 .madness-mode:not(.is-mobile) .workspace-ribbon.mod-left.mod-left.mod-left.mod-left,
 .madness-mode:not(.is-mobile) .side-dock-settings .side-dock-ribbon-action:last-child {
 	display: unset;
-	cursor: wait;
 }
 
 .madness-mode:not(.is-mobile) .side-dock-settings .side-dock-ribbon-action:hover svg {
