@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 2.45
+Version 2.46
 Source CSS: https://github.com/chrisgrieser/shimmering-focus/blob/main/source.css
 MIT License
 ──────────────────────────────────────────────────── */
@@ -859,14 +859,14 @@ body.strong-em-secondary-accent {
 	--search-match-color: hsl(30 100% 45%);
 	--text-error: hsl(0 100% 25%);
 	--error-bg: hsl(10 40% 75%);
-	--sucess-color: hsl(101 90% 40%);
+	--success-color: hsl(101 90% 35%);
 }
 
 .theme-dark {
 	--search-match-color: hsl(60 100% 70%);
 	--text-error: hsl(0 100% 60%);
 	--error-bg: hsl(0 30% 20%);
-	--sucess-color: hsl(151 80% 35%);
+	--success-color: hsl(151 80% 35%);
 }
 
 /* ───────────────────────────────────────────────── */
@@ -4228,7 +4228,7 @@ input:is([type="email"], [type="password"]) {
 	line-height: 0.8em;
 
 	color: var(--light-in-light-dark-in-dark);
-	background-color: var(--sucess-color);
+	background-color: var(--success-color);
 
 	padding-right: 0.2em;
 	padding-left: 0.2em;
@@ -9162,7 +9162,6 @@ body.hardcore-mode:not(.is-mobile) {
 	content: "??";
 	font-size: var(--font-text-size);
 	color: var(--secondary-accent-text);
-	position: relative;
 }
 
 /* unknown hotkeys */
@@ -9209,6 +9208,14 @@ body:not(.hardcore-mode) .setting-item:is([data-id="madness-mode"]) {
 }
 
 /* trollish settings */
+body.madness-mode:not(.is-mobile) {
+	cursor: help;
+}
+
+.madness-mode:not(.is-mobile) .modal .vertical-tab-content .setting-item-info {
+	font-family: "Flow Circular";
+}
+
 .madness-mode:not(.is-mobile) .modal .style-settings-heading[data-id="shimmering-focus"] {
 	font-family: var(--font-interface);
 	font-size: 1.1rem;
@@ -9233,22 +9240,36 @@ body:not(.hardcore-mode) .setting-item:is([data-id="madness-mode"]) {
 }
 
 .madness-mode:not(.is-mobile) .modal .style-settings-heading[data-id="shimmering-focus"] .setting-item-name,
-.madness-mode:not(.is-mobile) .vertical-tab-header-group:nth-last-child(2) .vertical-tab-nav-item:not(:nth-child(3)),
+.madness-mode:not(.is-mobile) .vertical-tab-header-group:nth-last-child(2) .vertical-tab-nav-item:not(:nth-child(3), :nth-child(7), :nth-child(4)),
 .madness-mode:not(.is-mobile) .vertical-tab-header-group:last-child .vertical-tab-nav-item:not(.is-active),
 .madness-mode:not(.is-mobile) .modal .style-settings-heading[data-id="shimmering-focus"]::before {
 	display: none;
 }
 
+.madness-mode:not(.is-mobile) .vertical-tab-header-group:nth-last-child(2) .vertical-tab-nav-item {
+	font-weight: 500;
+}
+
 .madness-mode:not(.is-mobile) .vertical-tab-nav-item.is-active {
 	font-size: 0;
-	padding-top: 0.8rem;
 	cursor: wait;
+}
+
+/* hotkeys */
+.madness-mode:not(.is-mobile) .setting-hotkey.mod-empty::before {
+	position: relative;
+	top: -0.6rem;
+}
+
+/* allow resetting command palette hotkey, if removed */
+.madness-mode:not(.is-mobile) .hotkey-list-container.hotkey-list-container .setting-restore-hotkey-button {
+	display: unset;
 }
 
 .madness-mode:not(.is-mobile) .vertical-tab-nav-item.is-active::before {
 	content: "Help!";
 	font-size: var(--font-text-size);
-	font-style: italic;
+	line-height: 1;
 	color: var(--text-error);
 }
 
@@ -9258,14 +9279,6 @@ body:not(.hardcore-mode) .setting-item:is([data-id="madness-mode"]) {
 .madness-mode:not(.is-mobile) .modal .style-settings-heading:not([data-id="shimmering-focus"]),
 .madness-mode:not(.is-mobile) .setting-editor-extra-setting-button {
 	display: none;
-}
-
-body.madness-mode:not(.is-mobile) {
-	cursor: help;
-}
-
-.madness-mode:not(.is-mobile) .modal .vertical-tab-content .setting-item-info {
-	font-family: "Flow Circular";
 }
 
 /* trollish settings button */
@@ -9333,6 +9346,22 @@ body.madness-mode:not(.is-mobile) .side-dock-settings .side-dock-ribbon-action {
 	font-family: "Flow Circular";
 }
 
+/* hide editor suggestions to remove slash commands */
+.madness-mode:not(.is-mobile) .suggestion-container {
+	display: none;
+}
+
+/* enable showing command palette */
+.madness-mode:not(.is-mobile) .mod-settings .plugin-list-plugins .setting-item.mod-toggle:nth-child(13) > .setting-item-info {
+	font-family: var(--font-interface-override), "Flow Circular";
+}
+
+/* hide pins */
+.madness-mode:not(.is-mobile) .prompt.better-command-palette .suggestion-flair[aria-label="Pinned"] ~ .suggestion-content::before,
+.madness-mode:not(.is-mobile) .prompt-input[placeholder^="Select a command"] ~ .prompt-results .suggestion-flair::before {
+	display: none;
+}
+
 body.madness-mode:not(.is-mobile) .prompt {
 	cursor: context-menu;
 	animation-duration: 10s;
@@ -9351,16 +9380,22 @@ body.madness-mode:not(.is-mobile) .prompt {
 	font-family: "Flow Circular";
 }
 
-/* drunk Obsi 🏴‍☠️ Damian */
 body.madness-mode:not(.is-mobile) .modal.mod-settings {
 	transform: skew(4deg);
 	cursor: grabbing;
 }
 
-/* SANITY: WAY OUT */
+/* SANITY: THE WAY OUT */
 /* decode font when custom font has been selected */
 .madness-mode:not(.is-mobile) .prompt-results .suggestion-prefix {
-	font-family: var(--font-interface-override), var(--font-text-override), "Flow Circular";
+	font-family: var(--font-interface-override), "Flow Circular";
+}
+
+.madness-mode:not(.is-mobile) .modal.mod-settings .mod-toggle:nth-child(3) + .setting-item-heading > .setting-item-info::before {
+	content: "You regain some sanity. Maybe you can see some things more clearly?";
+	font-family: var(--font-interface-override), "Flow Circular";
+	font-size: 1rem;
+	margin-left: 5px;
 }
 
 .madness-mode:not(.is-mobile) .workspace-leaf-content[data-type="style-settings"] .style-settings-heading[data-id="shimmering-focus"] {
@@ -9379,6 +9414,7 @@ body.madness-mode:not(.is-mobile) .modal.mod-settings {
 	animation-iteration-count: infinite;
 }
 
+/* drunken Obsi 🏴‍☠️ Damian */
 @keyframes sway {
 	from { transform: rotate(1.5deg) }
 	50% { transform: rotate(-1.5deg) }
@@ -9389,6 +9425,7 @@ body.madness-mode:not(.is-mobile) .modal.mod-settings {
 	border: none;
 }
 
+.madness-mode:not(.is-mobile) .workspace-leaf-content[data-type="style-settings"] .style-settings-heading[data-level="1"] + .style-settings-container .setting-item[data-id="madness-mode"] .setting-item-description,
 .madness-mode:not(.is-mobile) .workspace-leaf-content[data-type="style-settings"] .style-settings-heading[data-level="1"] + .style-settings-container .setting-item:not([data-id="madness-mode"]),
 .madness-mode:not(.is-mobile) .workspace-leaf-content[data-type="style-settings"] .style-settings-heading[data-level="1"]:not([data-id="show-hide-elements"]) {
 	display: none;
@@ -9402,8 +9439,8 @@ body.madness-mode:not(.is-mobile) .modal.mod-settings {
 
 	width: fit-content;
 
-	color: var(--sucess-color);
-	background-color: var(--bg3);
+	color: var(--success-color);
+	background-color: var(--bg2);
 	box-shadow: var(--small-inset-shadow);
 
 	padding: 2px 8px;
@@ -13546,8 +13583,8 @@ settings:
    default: false
   -
    id: madness-mode
-   title: '😈 Madness Mode'
-   description: "Can you also endure confused cursors, hostile settings menus, cryptic commands, and a theme gone rogue – all on top of hardcore mode? Find a way to turn off madness mode in this mini-game that tests your knowledge of Obsidian. (Hint: If you are stuck, delete the file '{vault-root}/.obsidian/plugins/obsidian-style-settings/data.json' and restart Obsidian. However, for the true solution, you do not have to leave Obsidian to turn of Madness Mode.)"
+   title: '😈 Madness Mode (Mini Game)'
+   description: "After enabling Madness Mode, are you able to find a way to disable it again? Endure confused cursors, hostile buttons, cryptic commands, and an evil theme – all on top of the limitations of hardcore mode. You will need a firm understanding of Obsidian mechanics to regain your sanity in this puzzle game! (If you are stuck, delete the file '{vaultRoot}/.obsidian/plugins/obsidian-style-settings/data.json' and restart Obsidian. For the true solution, you do not have to leave Obsidian though.)"
    type: class-toggle
    default: false
   -
