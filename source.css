@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 2.53
+Version 2.54
 Source CSS: https://github.com/chrisgrieser/shimmering-focus/blob/main/source.css
 MIT License
 ──────────────────────────────────────────────────── */
@@ -8055,7 +8055,7 @@ body:not(.no-fn-indicator) .mod-cm6 .cm-hmd-barelink:not(.cm-formatting-link) + 
 /* < Mobile
 ──────────────────────────────────────────────────── */
 
-.mod-root > .workspace-leaf.workspace-leaf.workspace-leaf {
+.is-mobile .mod-root:first-of-type:last-of-type > .workspace-leaf.workspace-leaf {
 	width: 100%;
 }
 

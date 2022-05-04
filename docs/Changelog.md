@@ -3,7 +3,8 @@ nav_order: 110
 ---
 
 # Changelog
-- 2022-05-04	patch
+- 2022-05-04	fix #162
+- 2022-05-04	added info on banner plugin limitations
 - 2022-05-04	table colors follow theme background
 - 2022-05-04	improved card view (cssclass: list-2-col-cards)
 - 2022-05-04	various mobile fixes
