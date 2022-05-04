@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 2.59
+Version 2.60
 Source CSS: https://github.com/chrisgrieser/shimmering-focus/blob/main/source.css
 MIT License
 ──────────────────────────────────────────────────── */
@@ -193,7 +193,7 @@ MIT License
 		- Graph itself
 	- Publish
 - Hardcore Mode
-	- Hardcore/Madness Mode Toggles
+	- Hardcore/Madness Mode Style Settings
 	- Madness Mode
 - Community Plugins
 	- Shell Commands
@@ -9228,14 +9228,18 @@ body.hardcore-mode:not(.is-mobile) {
 }
 
 /* ───────────────────────────────────────────────── */
-/* << Hardcore/Madness Mode Toggles
+/* << Hardcore/Madness Mode Style Settings
 ──────────────────────────────────────────────────── */
-body:not(.hardcore-mode) .setting-item:is([data-id="madness-mode"]) {
+body:not(.hardcore-mode) .setting-item[data-id="madness-mode"] {
 	display: none;
 }
 
 .setting-item:is([data-id="madness-mode"], [data-id="hardcore-mode"]) .checkbox-container {
 	border-color: var(--text-error);
+}
+
+.setting-item[data-id="madness-mode"] .setting-item-description {
+	white-space: pre-wrap;
 }
 
 /* ───────────────────────────────────────────────── */
@@ -9333,8 +9337,8 @@ body.madness-mode:not(.is-mobile) {
 	box-shadow: var(--small-inset-shadow), var(--tiny-shadow);
 
 	position: absolute;
-	bottom: 4rem;
-	left: 0.5em;
+	top: 10rem;
+	left: 1rem;
 
 	padding: 1px 4px 0 5px;
 
@@ -9348,6 +9352,19 @@ body.madness-mode:not(.is-mobile) {
 	background-color: var(--bg3);
 }
 
+body.madness-mode:not(.is-mobile) .side-dock-ribbon-action[aria-label="Open command palette"] {
+	animation-duration: 3s;
+	animation-name: moveAround3;
+	animation-iteration-count: infinite;
+}
+
+@keyframes moveAround3 {
+	from { left: -10vw }
+	10% { left: 4vw }
+	40% { left: 4vw }
+	to { left: 110vw }
+}
+
 /* trollish settings button */
 .madness-mode:not(.is-mobile) .mod-root.mod-root.mod-root.mod-root.mod-root {
 	margin-left: -30px;
@@ -9359,16 +9376,17 @@ body.madness-mode:not(.is-mobile) {
 	display: unset;
 }
 
-body.madness-mode:not(.is-mobile) .side-dock-settings .side-dock-ribbon-action {
-	animation-duration: 3s;
+body.madness-mode:not(.is-mobile) .side-dock-ribbon-action:last-child {
+	animation-duration: 4s;
 	animation-name: moveAround2;
 	animation-iteration-count: infinite;
 }
 
 @keyframes moveAround2 {
 	from { transform: translateX(70px) translateY(0) }
-	33% { transform: translateX(0) translateY(-30px) }
-	66% { transform: translateX(30px) translateY(-50px) }
+	25% { transform: translateX(0) translateY(-30px) }
+	50% { transform: translateX(-50px) translateY(90px) }
+	75% { transform: translateX(30px) translateY(-50px) }
 	to { transform: translateX(70px) translateY(0) }
 }
 
@@ -9409,11 +9427,6 @@ body.madness-mode:not(.is-mobile) .side-dock-settings .side-dock-ribbon-action {
 	color: var(--text-error);
 }
 
-/* more cryptic command palette */
-.madness-mode:not(.is-mobile) .prompt-results .suggestion-content {
-	font-family: "Flow Circular";
-}
-
 /* hide editor suggestions to remove slash commands */
 .madness-mode:not(.is-mobile) .suggestion-container {
 	display: none;
@@ -9433,9 +9446,14 @@ body.madness-mode:not(.is-mobile) .side-dock-settings .side-dock-ribbon-action {
 	content: "Enable ";
 }
 
-/* hide pins */
+/* command palette */
+.madness-mode:not(.is-mobile) .prompt-results .suggestion-content {
+	font-family: "Flow Circular";
+}
+
 .madness-mode:not(.is-mobile) .prompt.better-command-palette .suggestion-flair[aria-label="Pinned"] ~ .suggestion-content::before,
 .madness-mode:not(.is-mobile) .prompt-input[placeholder^="Select a command"] ~ .prompt-results .suggestion-flair::before {
+	/* hide pins */
 	display: none;
 }
 
@@ -9447,13 +9465,13 @@ body.madness-mode:not(.is-mobile) .prompt {
 }
 
 @keyframes moveAround {
-	from { transform: translateY(70px) }
-	50% { transform: translateY(-70px) }
-	to { transform: translateY(70px) }
+	from { transform: translateY(0) }
+	50% { transform: translateY(82vh) }
+	to { transform: translateY(0) }
 }
 
 /* more cryptic editor */
-.madness-mode.madness-mode.madness-mode.madness-mode.madness-mode.madness-mode.madness-mode.madness-mode.madness-mode:not(.is-mobile) :is(.cm-line, .cm-line *, .markdown-preview-view) {
+.madness-mode.madness-mode.madness-mode.madness-mode.madness-mode.madness-mode.madness-mode.madness-mode.madness-mode:not(.is-mobile) :is(.cm-line, .cm-line *, .markdown-preview-view, .markdown-preview-view *) {
 	font-family: "Flow Circular";
 }
 
@@ -9476,7 +9494,7 @@ body.madness-mode:not(.is-mobile) .modal.mod-settings {
 
 /* hint emoji */
 .madness-mode:not(.is-mobile) .modal.mod-settings .mod-toggle:nth-child(3) + .setting-item-heading + .setting-item .setting-item-name::after {
-	content: " 🤔 How could I decrypt this?";
+	content: " 🤔 Can this setting help me gain some clarity?";
 	font-family: var(--font-interface);
 }
 
@@ -13565,7 +13583,7 @@ id: shimmering-focus
 settings:
   -
    id: show-hide-elements
-   title: 🙈 Show/Hide UI Elements
+   title: 🫣 Show/Hide UI Elements
    description: Re-enable elements hidden by this theme
    type: heading
    level: 1
@@ -13669,7 +13687,17 @@ settings:
   -
    id: madness-mode
    title: '😈 Madness Mode (Mini Game)'
-   description: "After enabling it, are you able to find a way to disable Madness Mode again? Endure confused cursors, hostile buttons, cryptic commands, and an evil theme – all on top of the limitations of hardcore mode. You will need a firm understanding of Obsidian mechanics to regain your sanity in this small puzzle game! (If you are stuck, delete the file '{vaultRoot}/.obsidian/plugins/obsidian-style-settings/data.json' and restart Obsidian. For the true solution, you do not have to leave Obsidian though.)"
+   description: |
+     After enabling Madness Mode, are you able to disable it again? Endure hacked cursors, evil buttons, cryptic commands, and a theme gone rogue – all on top of the limitations of hardcore mode. You will need a solid understanding of Obsidian mechanics to regain your sanity in this devilish small puzzle game!
+
+     Rules:
+     1. No hotkeys. Typing text into text fields is allowed though.
+     2. The deletion/modification of files in '.obsidian' is forbidden. The game can be beaton without leaving Obsidian.
+     3. If you talk about the Madness Mode on Discord, please use spoiler tags! Also, don't share screenshots containing a solution step.
+
+     I recommend exporting your style settings before starting the game. If you are stuck, you can turn off Madness Mode by deleting the file '{vaultRoot}/.obsidian/plugins/obsidian-style-settings/data.json' and restarting Obsidian, which will reset your Style Settings.
+
+     Ready to fight a hostile theme? Then go and enable Madness Mode! ↗️
    type: class-toggle
    default: false
   -
@@ -14139,7 +14167,7 @@ settings:
   -
 # << Gutter & Active Line (+)
    id: gutter-features
-   title: ❇️ Gutter & Active Line
+   title: 💈 Gutter & Active Line
    description: Active Line Highlights, Indicators in the Gutter, 🆕 Relative/Minimal Line Numbering, Tags-in-Gutter
    type: heading
    level: 1
@@ -14245,7 +14273,7 @@ settings:
    default: false
   -
    id: hover-zoom
-   title: '🆕 Image Zoom via Hover'
+   title: 'Image Zoom via Hover'
    description: 'By default, you can zoom in images by clicking & holding. Enable this to zoom in images by hovering instead.'
    type: class-toggle
    default: false
@@ -14343,7 +14371,7 @@ settings:
   -
 # << Status Bar (+)
    id: status-bar-options
-   title: 💈 Status Bar
+   title: 🚥 Status Bar
    description: Type of Status Bar, Hiding Items
    type: heading
    level: 1
