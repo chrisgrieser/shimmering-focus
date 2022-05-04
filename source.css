@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 2.34
+Version 2.35
 Source CSS: https://github.com/chrisgrieser/shimmering-focus/blob/main/source.css
 MIT License
 ──────────────────────────────────────────────────── */
@@ -192,6 +192,7 @@ MIT License
 		- Graph itself
 	- Publish
 - Hardcore Mode
+	- Hardcore/Madness Mode Toggles
 	- Madness Mode
 - Community Plugins
 	- Shell Commands
@@ -9089,7 +9090,6 @@ body:not(.show-graph-controls) .graph-controls.is-close:not(:hover) {
 	.titlebar,
 	.collapse-indicator,
 	.cm-foldPlaceholder,
-	.side-dock-settings .side-dock-ribbon-action:last-child,
 	.workspace-ribbon,
 	.view-header,
 	.frontmatter,
@@ -9098,8 +9098,6 @@ body:not(.show-graph-controls) .graph-controls.is-close:not(:hover) {
 	.mod-right-split,
 	.status-bar,
 	.prompt-instructions,
-	.tooltip,
-	.notice,
 	.cm-panels-bottom,
 	.embedded-backlinks,
 	.cm-active-visual-line,
@@ -9108,7 +9106,9 @@ body:not(.show-graph-controls) .graph-controls.is-close:not(:hover) {
 	.document-search-close-button,
 	.search-input-clear-button,
 	.empty-state-close-button,
-	.modal-close-button
+	.setting-delete-hotkey,
+	.modal-close-button,
+	.setting-restore-hotkey-button
 ) { display: none }
 
 .hardcore-mode:not(.is-mobile) .cm-gutter {
@@ -9148,6 +9148,39 @@ body.hardcore-mode:not(.is-mobile) {
 	padding: 0 !important;  /* needed */
 }
 
+/* unknown hotkeys */
+.hardcore-mode:not(.is-mobile) :is(.suggestion-hotkey, .setting-hotkey) {
+	font-size: 0;
+	text-align: center;
+	height: calc(var(--font-text-size) * 1.4);
+	width: 3.5rem;
+	cursor: help;
+}
+
+.hardcore-mode:not(.is-mobile) :is(.suggestion-hotkey, .setting-hotkey)::before {
+	content: "? ? ?";
+	font-size: var(--font-text-size);
+	color: var(--secondary-accent-text);
+	position: relative;
+}
+
+.hardcore-mode:not(.is-mobile) :is(.suggestion-hotkey, .setting-hotkey):not(.mod-empty)::before {
+	top: calc(var(--font-text-size) * 0.6);
+}
+
+/* unknown hotkeys */
+.hardcore-mode:not(.is-mobile) .modal.modal.modal button {
+	font-size: 0;
+	cursor: help;
+}
+
+.hardcore-mode:not(.is-mobile) .modal button::before {
+	content: "? ? ?";
+	font-size: var(--font-text-size);
+	line-height: 1;
+	position: relative;
+}
+
 /* hardcore theme browser */
 .hardcore-mode:not(.is-mobile) .community-theme-container + hr,
 .hardcore-mode:not(.is-mobile) .community-theme-filters-container,
@@ -9159,11 +9192,13 @@ body.hardcore-mode:not(.is-mobile) {
 }
 
 .hardcore-mode:not(.is-mobile) .community-theme.is-selected .community-theme-info::after {
-	content: "Nice Try! \A\A But in Hardcore Mode, it won't be that easy to switch themes. 😈";
+	content: "Nice Try!\A\A But in Hardcore Mode, it won't be that easy to switch themes. 😈";
 	color: var(--text-error);
 }
 
-/* show toggle for madness mode */
+/* ───────────────────────────────────────────────── */
+/* << Hardcore/Madness Mode Toggles
+──────────────────────────────────────────────────── */
 body:not(.hardcore-mode) .setting-item:is([data-id="madness-mode"]) {
 	display: none;
 }
@@ -9211,10 +9246,10 @@ body:not(.hardcore-mode) .setting-item:is([data-id="madness-mode"]) {
 }
 
 .madness-mode:not(.is-mobile) .modal .style-settings-heading[data-id="shimmering-focus"]::after {
-	content: "You didn't think it would be that easy to turn off Madness Mode, did you? 😈 \A\A You are gonna have to find a different way to your save your sanity. 😱";
+	content: "You didn't think it would be that easy to turn off Madness Mode, did you? 😈 \A\A You are gonna have to find a different way to regain your sanity. 😱";
 	text-align: center;
 	white-space: pre-wrap;
-	cursor: default;
+	cursor: wait;
 }
 
 .madness-mode:not(.is-mobile) .modal .style-settings-heading[data-id="shimmering-focus"] .setting-item-name,
@@ -9226,11 +9261,13 @@ body:not(.hardcore-mode) .setting-item:is([data-id="madness-mode"]) {
 .madness-mode:not(.is-mobile) .vertical-tab-nav-item.is-active {
 	font-size: 0;
 	padding-top: 0.8rem;
+	cursor: wait;
 }
 
 .madness-mode:not(.is-mobile) .vertical-tab-nav-item.is-active::before {
 	content: "Help!";
 	font-size: var(--font-text-size);
+	font-style: italic;
 	color: var(--text-error);
 }
 
@@ -9242,7 +9279,7 @@ body:not(.hardcore-mode) .setting-item:is([data-id="madness-mode"]) {
 .madness-mode:not(.is-mobile) .workspace-ribbon.mod-left.mod-left.mod-left.mod-left,
 .madness-mode:not(.is-mobile) .side-dock-settings .side-dock-ribbon-action:last-child {
 	display: unset;
-	cursor: default;
+	cursor: wait;
 }
 
 .madness-mode:not(.is-mobile) .side-dock-settings .side-dock-ribbon-action:hover svg {
@@ -9256,14 +9293,14 @@ body:not(.hardcore-mode) .setting-item:is([data-id="madness-mode"]) {
 }
 
 .madness-mode:not(.is-mobile) .side-dock-settings .side-dock-ribbon-action:hover::after {
-	content: "No Settings button \Ain Madness Mode! 😈";
+	content: "HAHAHA! 😈";
 
 	color: var(--text-error);
 	background-color: var(--bg3);
 	box-shadow: var(--small-shadow);
 
 	position: relative;
-	top: -3rem;
+	top: -5rem;
 
 	padding: 1px 5px;
 
@@ -9278,6 +9315,14 @@ body:not(.hardcore-mode) .setting-item:is([data-id="madness-mode"]) {
 .madness-mode:not(.is-mobile) .setting-item.setting-item.style-settings-heading[data-id="shimmering-focus"]::before,
 .madness-mode:not(.is-mobile) .modal .setting-item:not(.style-settings-heading) {
 	display: none;
+}
+
+body.madness-mode:not(.is-mobile) {
+	cursor: help;
+}
+
+.madness-mode:not(.is-mobile) .modal {
+	cursor: grabbing;
 }
 
 /* sanity: way out */
@@ -13433,13 +13478,13 @@ settings:
   -
    id: hardcore-mode
    title: '⚠️ Hardcore Mode'
-   description: 'Experienced Obsidian users only: Try the ultimate challenge and permanently hide EVERY element that is not absolutely essential: On top of all UI elements listed above, hardcore mode will also remove the settings button, both side bars, tooltips, the gutter, and much more. Test your knowledge of Obsidian and prove that you are a real power user by enduring this special, just-for-fun mode.'
+   description: 'Experienced Obsidian users only! Try the ultimate challenge and permanently hide EVERY element that is not absolutely essential: On top of all things listed above, hardcore mode will remove the settings button, both side bars, tooltips, the gutter, and much more. Test your knowledge of Obsidian and prove that you are a real power user by enduring this special, just-for-fun mode.'
    type: class-toggle
    default: false
   -
    id: madness-mode
    title: '😈 Madness Mode'
-   description: 'Can you also survive with invisible selections, transparent cursors, no markup, and... some other surprises?'
+   description: 'Can you also endure invisible cursors, hostile settings, and a theme gone mad?'
    type: class-toggle
    default: false
   -

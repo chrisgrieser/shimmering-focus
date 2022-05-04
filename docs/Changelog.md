@@ -3,6 +3,7 @@ nav_order: 110
 ---
 
 # Changelog
+- 2022-05-04	patch
 - 2022-05-04	add hardcore & madness mode to beta
 - 2022-05-03	add option to completely hide pandoc citatiosn in reading mode, if (Pandoc reference list plugin is installed)
 - 2022-05-03	hide fold indicators (+ option to re-enable them) (#160)
