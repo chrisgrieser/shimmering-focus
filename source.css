@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 2.37
+Version 2.38
 Source CSS: https://github.com/chrisgrieser/shimmering-focus/blob/main/source.css
 MIT License
 ──────────────────────────────────────────────────── */
@@ -13488,7 +13488,7 @@ settings:
   -
    id: madness-mode
    title: '😈 Madness Mode'
-   description: "Knowledgeables Obsidian users only! Can you also endure confused cursors, hostile setting menus, invisible selections, and a theme gone rogue? Enable this mode and see if you are able to escape the madness… (Hint: If you are stuck, delete the file '{vault-root}/.obsidian/plugins/obsidian-style-settings/data.json'. However, the true challenge is to find a way to deactivate Madness Mode from within Obsidian.)"
+   description: "Knowledgeable Obsidian users only! Can you also endure confused cursors, hostile setting menus, invisible selections, and a theme gone rogue? Enable this mode and see if you are able to escape the madness… (Hint: If you are stuck, delete the file '{vault-root}/.obsidian/plugins/obsidian-style-settings/data.json'. However, the true challenge is to find a way to deactivate Madness Mode from within Obsidian.)"
    type: class-toggle
    default: false
   -
