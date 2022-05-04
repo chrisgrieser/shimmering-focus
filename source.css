@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 2.43
+Version 2.44
 Source CSS: https://github.com/chrisgrieser/shimmering-focus/blob/main/source.css
 MIT License
 ──────────────────────────────────────────────────── */
@@ -9234,7 +9234,8 @@ body:not(.hardcore-mode) .setting-item:is([data-id="madness-mode"]) {
 
 .madness-mode:not(.is-mobile) .modal .style-settings-heading[data-id="shimmering-focus"] .setting-item-name,
 .madness-mode:not(.is-mobile) .vertical-tab-header-group:nth-last-child(2) .vertical-tab-nav-item:not(:nth-child(3)),
-.madness-mode:not(.is-mobile) .vertical-tab-header-group:last-child .vertical-tab-nav-item:not(.is-active) {
+.madness-mode:not(.is-mobile) .vertical-tab-header-group:last-child .vertical-tab-nav-item:not(.is-active),
+.madness-mode:not(.is-mobile) .modal .style-settings-heading[data-id="shimmering-focus"]::before {
 	display: none;
 }
 
@@ -9255,8 +9256,7 @@ body:not(.hardcore-mode) .setting-item:is([data-id="madness-mode"]) {
 .madness-mode:not(.is-mobile) .style-settings-export,
 .workspace-leaf-content[data-type="style-settings"] .view-content > .setting-item:first-child,
 .madness-mode:not(.is-mobile) .modal .style-settings-heading:not([data-id="shimmering-focus"]),
-.madness-mode:not(.is-mobile) .setting-editor-extra-setting-button,
-.madness-mode:not(.is-mobile) .setting-item.setting-item.style-settings-heading[data-id="shimmering-focus"]::before {
+.madness-mode:not(.is-mobile) .setting-editor-extra-setting-button {
 	display: none;
 }
 
@@ -9279,8 +9279,7 @@ body.madness-mode:not(.is-mobile) {
 }
 
 body.madness-mode:not(.is-mobile) .side-dock-settings .side-dock-ribbon-action {
-	cursor: help;
-	animation-duration: 3s;
+	animation-duration: 4s;
 	animation-name: moveAround2;
 	animation-iteration-count: infinite;
 }
@@ -9292,25 +9291,17 @@ body.madness-mode:not(.is-mobile) .side-dock-settings .side-dock-ribbon-action {
 	to { transform: translateX(70px) translateY(0) }
 }
 
-.madness-mode:not(.is-mobile) .side-dock-settings .side-dock-ribbon-action:hover svg {
-	display: none;
-}
-
-.madness-mode:not(.is-mobile) .side-dock-settings.side-dock-settings.side-dock-settings .side-dock-ribbon-action:hover {
-	background: none;
-	box-shadow: none;
-	border: none;
-}
-
-.madness-mode:not(.is-mobile) .side-dock-settings .side-dock-ribbon-action:hover::after {
+.madness-mode:not(.is-mobile) .side-dock-settings .side-dock-ribbon-action::after {
 	content: "HAHAHA! 😈";
+
+	white-space: nowrap;
 
 	color: var(--text-error);
 	background-color: var(--bg3);
 	box-shadow: var(--small-shadow);
 
-	position: relative;
-	top: -8rem;
+	position: absolute;
+	top: -3rem;
 
 	padding: 1px 5px;
 
@@ -9366,7 +9357,38 @@ body.madness-mode:not(.is-mobile) .modal.mod-settings {
 	cursor: grabbing;
 }
 
-/* sanity: way out */
+/* SANITY: WAY OUT */
+/* decode font when custom font has been selected */
+.madness-mode:not(.is-mobile) .prompt-results .suggestion-prefix {
+	font-family: var(--font-interface-override), var(--font-text-override), "Flow Circular";
+}
+
+.madness-mode:not(.is-mobile) .workspace-leaf-content[data-type="style-settings"] .style-settings-heading[data-id="shimmering-focus"] {
+	font-size: 0;
+}
+
+.madness-mode:not(.is-mobile) .workspace-leaf-content[data-type="style-settings"] .style-settings-heading[data-id="shimmering-focus"] .setting-item-name {
+	display: none;
+}
+
+.madness-mode:not(.is-mobile) .workspace-leaf-content[data-type="style-settings"] .style-settings-heading[data-id="shimmering-focus"]::before {
+	content: "Don't click me!";
+	font-size: 1.4rem;
+	animation-duration: 0.3s;
+	animation-name: sway;
+	animation-iteration-count: infinite;
+}
+
+@keyframes sway {
+	from { transform: rotate(1.5deg) }
+	50% { transform: rotate(-1.5deg) }
+	to { transform: rotate(1.5deg) }
+}
+
+.madness-mode:not(.is-mobile) .workspace-leaf-content[data-type="style-settings"] .style-settings-heading[data-level="1"] + .style-settings-container .setting-item[data-id="madness-mode"] {
+	border: none;
+}
+
 .madness-mode:not(.is-mobile) .workspace-leaf-content[data-type="style-settings"] .style-settings-heading[data-level="1"] + .style-settings-container .setting-item:not([data-id="madness-mode"]),
 .madness-mode:not(.is-mobile) .workspace-leaf-content[data-type="style-settings"] .style-settings-heading[data-level="1"]:not([data-id="show-hide-elements"]) {
 	display: none;
@@ -9374,7 +9396,7 @@ body.madness-mode:not(.is-mobile) .modal.mod-settings {
 
 .madness-mode:not(.is-mobile) .workspace-leaf-content[data-type="style-settings"] .style-settings-container[data-level="1"]::after {
 	display: block;
-	content: "😮‍💨 Back to Sanity! Hope you had fun with Madness Mode!";
+	content: "😮‍💨 A way back to sanity, congratulations! Hope you had fun with Madness Mode!";
 
 	text-align: center;
 
@@ -13525,7 +13547,7 @@ settings:
   -
    id: madness-mode
    title: '😈 Madness Mode'
-   description: "Knowledgeable Obsidian users only! Can you also endure confused cursors, hostile settings menus, cryptic commands, useless panes, and a theme gone rogue – all on top of hardcore mode? Enable this mode and see if you are able to escape the madness… (Hint: If you are stuck, delete the file '{vault-root}/.obsidian/plugins/obsidian-style-settings/data.json' and restart Obsidian. However, the true challenge is to find a way to deactivate Madness Mode from within Obsidian.)"
+   description: "Can you also endure confused cursors, hostile settings menus, cryptic commands, and a theme gone rogue – all on top of hardcore mode? Find a way to turn off madness mode in this mini-game that tests your knowledge of Obsidian. (Hint: If you are stuck, delete the file '{vault-root}/.obsidian/plugins/obsidian-style-settings/data.json' and restart Obsidian. However, for the true solution, you do not have to leave Obsidian to turn of Madness Mode.)"
    type: class-toggle
    default: false
   -
