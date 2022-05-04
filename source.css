@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 2.50
+Version 2.51
 Source CSS: https://github.com/chrisgrieser/shimmering-focus/blob/main/source.css
 MIT License
 ──────────────────────────────────────────────────── */
@@ -22,6 +22,7 @@ MIT License
 		- Nord Color Schemes
 	- Accent Color Calculations
 		- Bold & Italics Accent Calculations
+	- Custom Colors
 	- Background Color Calculations
 		- Longform & Writing Background Calculations
 		- Base Element Styling with background colors
@@ -703,7 +704,7 @@ body.strong-em-secondary-accent {
 }
 
 /* ───────────────────────────────────────────────── */
-/* << Background Color Calculations
+/* << Custom Colors
 ──────────────────────────────────────────────────── */
 
 /* default values */
@@ -726,6 +727,10 @@ body.strong-em-secondary-accent {
 	--bg-dark-hue: var(--dark-hue);
 	--bg-dark-sat: var(--dark-sat);
 }
+
+/* ───────────────────────────────────────────────── */
+/* << Background Color Calculations
+──────────────────────────────────────────────────── */
 
 .theme-light {
 	--brightness-light-1: calc(var(--bg-light-brightness) + 82%);
@@ -1028,13 +1033,13 @@ body:is(.theme-light, .theme-dark) {
 }
 
 .theme-light {
-	--a-row: rgb(0 0 0 / 2.5%);
-	--b-row: rgb(0 0 0 / 7.5%);
+	--a-row: hsla(var(--bg-light-hue) 50% 50% / 2.5%);
+	--b-row: hsla(var(--bg-light-hue) 50% 50% / 7.5%);
 }
 
 .theme-dark {
-	--a-row: rgb(0 0 0 / 15%);
-	--b-row: rgb(0 0 0 / 30%);
+	--a-row: hsla(var(--bg-dark-hue) 70% 10% / 5%);
+	--b-row: hsla(var(--bg-dark-hue) 70% 10% / 25%);
 }
 
 /* stylelint-enable no-duplicate-selectors */
