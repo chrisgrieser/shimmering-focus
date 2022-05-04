@@ -3,6 +3,7 @@ nav_order: 110
 ---
 
 # Changelog
+- 2022-05-04	improved card view (cssclass: list-2-col-cards)
 - 2022-05-04	various mobile fixes
 - 2022-05-04	more hints for solving madness mode
 - 2022-05-04	much improved madness mode

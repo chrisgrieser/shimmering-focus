@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 2.49
+Version 2.50
 Source CSS: https://github.com/chrisgrieser/shimmering-focus/blob/main/source.css
 MIT License
 ──────────────────────────────────────────────────── */
@@ -8019,6 +8019,10 @@ body:not(.no-fn-indicator) .mod-cm6 .cm-hmd-barelink:not(.cm-formatting-link) + 
 
 .list-2-col-cards li:not(.task-list-item)::marker {
 	content: "";
+}
+
+.list-2-col-cards.list-2-col-cards ul:not(.contains-task-list) li a {
+	text-decoration: none;
 }
 
 /* bibliography list */
