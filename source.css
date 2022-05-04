@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 2.58
+Version 2.59
 Source CSS: https://github.com/chrisgrieser/shimmering-focus/blob/main/source.css
 MIT License
 ──────────────────────────────────────────────────── */
@@ -1034,13 +1034,13 @@ body:is(.theme-light, .theme-dark) {
 }
 
 .theme-light {
-	--a-row: hsla(var(--bg-light-hue) 50% 50% / 2.5%);
-	--b-row: hsla(var(--bg-light-hue) 50% 50% / 7.5%);
+	--a-row: hsla(0 0% 0% / 2.5%);
+	--b-row: hsla(0 0% 0% / 7.5%);
 }
 
 .theme-dark {
-	--a-row: hsla(var(--bg-dark-hue) 70% 10% / 5%);
-	--b-row: hsla(var(--bg-dark-hue) 70% 10% / 25%);
+	--a-row: hsla(0 0% 0% / 15%);
+	--b-row: hsla(0 0% 0% / 30%);
 }
 
 /* stylelint-enable no-duplicate-selectors */
@@ -6567,12 +6567,22 @@ body .callout {
 /* ───────────────────────────────────────────────── */
 /* << Tables
 ──────────────────────────────────────────────────── */
-/* see also section "Max View" */
+/* see also section "Max View" for table width */
 
 .markdown-preview-view table {
 	margin: 10px 0;
 	--table-border: var(--basic-border);
 	--table-roundness: var(--roundish);
+}
+
+.theme-dark table {
+	--table-a-row: hsla(var(--bg-dark-hue) 70% 10% / 15%);
+	--table-b-row: hsla(var(--bg-dark-hue) 70% 10% / 35%);
+}
+
+.theme-light table {
+	--table-a-row: hsla(var(--bg-light-hue) 50% 50% / 2.5%);
+	--table-b-row: hsla(var(--bg-light-hue) 50% 50% / 7.5%);
 }
 
 .markdown-preview-view table:not(.dataview) {
@@ -6608,12 +6618,12 @@ thead {
 }
 
 tr {
-	background-color: var(--a-row);
+	background-color: var(--table-a-row);
 }
 
 /* alternating rows */
 body:not(.no-alternating-rows) tr:nth-child(even) {
-	background-color: var(--b-row);
+	background-color: var(--table-b-row);
 }
 
 .no-alternating-rows > .app-container table > tbody > tr > td {
@@ -9292,12 +9302,6 @@ body.madness-mode:not(.is-mobile) {
 	cursor: wait;
 }
 
-/* hotkeys */
-.madness-mode:not(.is-mobile) .setting-hotkey.mod-empty::before {
-	position: relative;
-	top: -0.6rem;
-}
-
 /* allow resetting command palette hotkey, if removed */
 .madness-mode:not(.is-mobile) .hotkey-list-container.hotkey-list-container .setting-restore-hotkey-button {
 	display: unset;
@@ -9316,6 +9320,32 @@ body.madness-mode:not(.is-mobile) {
 .madness-mode:not(.is-mobile) .modal .style-settings-heading:not([data-id="shimmering-focus"]),
 .madness-mode:not(.is-mobile) .setting-editor-extra-setting-button {
 	display: none;
+}
+
+/* floating command palette button */
+.madness-mode:not(.is-mobile) .side-dock-ribbon-action[aria-label="Open command palette"] svg {
+	height: 0.95em;
+	width: 0.95em;
+}
+
+.madness-mode:not(.is-mobile) .side-dock-ribbon-action[aria-label="Open command palette"] {
+	background-color: var(--bg1);
+	box-shadow: var(--small-inset-shadow), var(--tiny-shadow);
+
+	position: absolute;
+	bottom: 4rem;
+	left: 0.5em;
+
+	padding: 1px 4px 0 5px;
+
+	border: var(--thin-border);
+	border-radius: var(--roundish);
+
+	visibility: visible;
+}
+
+.madness-mode:not(.is-mobile) .side-dock-ribbon-action[aria-label="Open command palette"]:hover {
+	background-color: var(--bg3);
 }
 
 /* trollish settings button */
