@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 2.51
+Version 2.52
 Source CSS: https://github.com/chrisgrieser/shimmering-focus/blob/main/source.css
 MIT License
 ──────────────────────────────────────────────────── */
@@ -9249,7 +9249,8 @@ body.madness-mode:not(.is-mobile) {
 }
 
 .madness-mode:not(.is-mobile) .modal .style-settings-heading[data-id="shimmering-focus"]::after {
-	content: "You didn't think it would be that easy to turn off Madness Mode, did you? 😈 \A\A You are gonna have to find a different way to regain your sanity. 😱";
+	content: "The Style Settings have gone mad! 😱\A\A You are gonna have to find a different way to regain your sanity...";
+	font-style: italic;
 	text-align: center;
 	white-space: pre-wrap;
 	cursor: wait;
