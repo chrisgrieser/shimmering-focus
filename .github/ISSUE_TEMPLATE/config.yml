@@ -5,10 +5,10 @@ contact_links:
     about: "Ask in the channel #appearance for help from the community"
   - name: Questions
     url: https://github.com/chrisgrieser/shimmering-focus/discussions/categories/q-a
-    about: "For questions regarding the theme."
+    about: "For questions regarding the theme"
   - name: Showcases
     url: https://github.com/chrisgrieser/shimmering-focus/discussions/categories/show-and-tell
-    about: "Show off how your how your Obsidian looks with the theme or share custom color setting."
+    about: "Show off how your Obsidian looks with the theme or share custom color setting"
   - name: 😈 Madness Mode
     url: https://github.com/chrisgrieser/shimmering-focus/discussions/categories/madness-mode
-    about: "Discuss your experience of the theme's infamous mini game."
+    about: "Discuss your experience of the theme's infamous mini game"
