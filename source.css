@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 2.40
+Version 2.41
 Source CSS: https://github.com/chrisgrieser/shimmering-focus/blob/main/source.css
 MIT License
 ──────────────────────────────────────────────────── */
@@ -9214,17 +9214,12 @@ body:not(.hardcore-mode) .setting-item:is([data-id="madness-mode"]) {
 /* << Madness Mode
 ──────────────────────────────────────────────────── */
 
-.madness-mode:not(.is-mobile) :is(
-	.cm-cursor,
-	.cm-fat-cursor,
-	.cm-formatting,
-	.cm-formatting-link
-) {
-	opacity: 0;
+.madness-mode:not(.is-mobile) :is(.cm-cursor, .cm-fat-cursor):is(.cm-cursor, .cm-fat-cursor):is(.cm-cursor, .cm-fat-cursor):is(.cm-cursor, .cm-fat-cursor) {
+	background-color: var(--text-error);
 }
 
 .madness-mode:not(.is-mobile) {
-	--text-selection: transparent;
+	--text-selection: var(--error-bg);
 }
 
 /* trollish settings */
@@ -9311,6 +9306,11 @@ body:not(.hardcore-mode) .setting-item:is([data-id="madness-mode"]) {
 	font-family: "Flow Circular";
 }
 
+/* more cryptic editor */
+.madness-mode:not(.is-mobile) :is(.cm-line, .markdown-preview-view) {
+	font-family: "Flow Circular";
+}
+
 /* removed settings */
 .workspace-leaf-content[data-type="style-settings"] .view-content > .setting-item:first-child,
 .madness-mode:not(.is-mobile) .modal .style-settings-heading:not([data-id="shimmering-focus"]),
@@ -9320,12 +9320,22 @@ body:not(.hardcore-mode) .setting-item:is([data-id="madness-mode"]) {
 	display: none;
 }
 
-body.madness-mode:not(.is-mobile) {
-	cursor: help;
-}
-
 .madness-mode:not(.is-mobile) .modal {
 	cursor: grabbing;
+}
+
+/* drunk Obsi 🏴‍☠️ Damian */
+body.madness-mode:not(.is-mobile) .modal {
+	cursor: help;
+	animation-duration: 2s;
+	animation-name: sway;
+	animation-iteration-count: infinite;
+}
+
+@keyframes sway {
+	from { transform: rotate(1deg) }
+	50% { transform: rotate(-1deg) }
+	to { transform: rotate(1deg) }
 }
 
 /* sanity: way out */
@@ -13487,7 +13497,7 @@ settings:
   -
    id: madness-mode
    title: '😈 Madness Mode'
-   description: "Knowledgeable Obsidian users only! Can you also endure confused cursors, hostile settings menus, invisible selections, and a theme gone rogue? Enable this mode and see if you are able to escape the madness… (Hint: If you are stuck, delete the file '{vault-root}/.obsidian/plugins/obsidian-style-settings/data.json' and restart Obsidian. However, the true challenge is to find a way to deactivate Madness Mode from within Obsidian.)"
+   description: "Knowledgeable Obsidian users only! Can you also endure confused cursors, hostile settings menus, cryptic commands, useless panes, and a theme gone rogue – all on top of hardcore mode? Enable this mode and see if you are able to escape the madness… (Hint: If you are stuck, delete the file '{vault-root}/.obsidian/plugins/obsidian-style-settings/data.json' and restart Obsidian. However, the true challenge is to find a way to deactivate Madness Mode from within Obsidian.)"
    type: class-toggle
    default: false
   -
