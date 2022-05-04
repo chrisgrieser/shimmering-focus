@@ -1,23 +1,22 @@
 name: Contribution
-description: Contribute a CSS snippet to the theme
+description: Suggest a CSS snippet for the theme
 title: "Contribution: "
 labels: ["contribution"]
 body:
   - type: markdown
     attributes:
       value: |
-        First of all, thank you for making a contribution! If you haven't already, refer to the README for [information on contributions](https://github.com/chrisgrieser/shimmering-focus#contribute-to-the-theme).
+        First of all, thank you for making a contribution! Please note that due to compatibility reasons and the specific design vision of the theme, not all contributions will be added.
   - type: dropdown
     id: contribution-type
     attributes:
       label: Type of Contribution
       options:
-        - Built-in Styling for Supercharged Links
-        - CSS Class(es)
-        - Support or fix for another plugin
-        - Implementing a feature request
-        - Color Scheme(s)
-        - Translation of Style Settings
+        - Theme Improvement
+        - Support for a plugin
+        - Feature Request implementation
+        - Bug Fix
+        - Color Scheme
         - Other
     validations:
       required: true
