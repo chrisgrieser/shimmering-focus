@@ -3,6 +3,7 @@ nav_order: 110
 ---
 
 # Changelog
+- 2022-05-04	patch
 - 2022-05-04	improvements to madness mode
 - 2022-05-04	improvements to madness mode
 - 2022-05-04	add hardcore & madness mode to beta
