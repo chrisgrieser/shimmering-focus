@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 2.47
+Version 2.48
 Source CSS: https://github.com/chrisgrieser/shimmering-focus/blob/main/source.css
 MIT License
 ──────────────────────────────────────────────────── */
@@ -13584,7 +13584,7 @@ settings:
   -
    id: madness-mode
    title: '😈 Madness Mode (Mini Game)'
-   description: "Can you find a way to disable Madness Mode? Endure confused cursors, hostile buttons, cryptic commands, and an evil theme – all on top of the limitations of hardcore mode. You will need a firm understanding of Obsidian mechanics to regain your sanity in this brief puzzle game! (If you are stuck, delete the file '{vaultRoot}/.obsidian/plugins/obsidian-style-settings/data.json' and restart Obsidian. For the true solution, you do not have to leave Obsidian though.)"
+   description: "After enabling it, are you able to find a way to disable Madness Mode again? Endure confused cursors, hostile buttons, cryptic commands, and an evil theme – all on top of the limitations of hardcore mode. You will need a firm understanding of Obsidian mechanics to regain your sanity in this small puzzle game! (If you are stuck, delete the file '{vaultRoot}/.obsidian/plugins/obsidian-style-settings/data.json' and restart Obsidian. For the true solution, you do not have to leave Obsidian though.)"
    type: class-toggle
    default: false
   -
