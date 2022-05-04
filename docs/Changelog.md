@@ -3,6 +3,7 @@ nav_order: 110
 ---
 
 # Changelog
+- 2022-05-04	improved madness mode
 - 2022-05-04	madness mode improvements
 - 2022-05-04	improvements to madness mode
 - 2022-05-04	improvements to madness mode

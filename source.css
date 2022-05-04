@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 2.41
+Version 2.42
 Source CSS: https://github.com/chrisgrieser/shimmering-focus/blob/main/source.css
 MIT License
 ──────────────────────────────────────────────────── */
@@ -9220,6 +9220,7 @@ body:not(.hardcore-mode) .setting-item:is([data-id="madness-mode"]) {
 
 .madness-mode:not(.is-mobile) {
 	--text-selection: var(--error-bg);
+	--signature: "?";
 }
 
 /* trollish settings */
@@ -9275,6 +9276,20 @@ body:not(.hardcore-mode) .setting-item:is([data-id="madness-mode"]) {
 	display: unset;
 }
 
+body.madness-mode:not(.is-mobile) .side-dock-settings .side-dock-ribbon-action {
+	cursor: help;
+	animation-duration: 3s;
+	animation-name: moveAround2;
+	animation-iteration-count: infinite;
+}
+
+@keyframes moveAround2 {
+	from { transform: translateX(70px) translateY(0) }
+	33% { transform: translateX(0) translateY(-30px) }
+	66% { transform: translateX(30px) translateY(-50px) }
+	to { transform: translateX(70px) translateY(0) }
+}
+
 .madness-mode:not(.is-mobile) .side-dock-settings .side-dock-ribbon-action:hover svg {
 	display: none;
 }
@@ -9293,7 +9308,7 @@ body:not(.hardcore-mode) .setting-item:is([data-id="madness-mode"]) {
 	box-shadow: var(--small-shadow);
 
 	position: relative;
-	top: -5rem;
+	top: -8rem;
 
 	padding: 1px 5px;
 
@@ -9304,6 +9319,19 @@ body:not(.hardcore-mode) .setting-item:is([data-id="madness-mode"]) {
 /* more cryptic command palette */
 .madness-mode:not(.is-mobile) .prompt-results .suggestion-content {
 	font-family: "Flow Circular";
+}
+
+body.madness-mode:not(.is-mobile) .prompt {
+	cursor: context-menu;
+	animation-duration: 10s;
+	animation-name: moveAround;
+	animation-iteration-count: infinite;
+}
+
+@keyframes moveAround {
+	from { transform: translateY(70px) }
+	50% { transform: translateY(-70px) }
+	to { transform: translateY(70px) }
 }
 
 /* more cryptic editor */
@@ -9320,22 +9348,14 @@ body:not(.hardcore-mode) .setting-item:is([data-id="madness-mode"]) {
 	display: none;
 }
 
-.madness-mode:not(.is-mobile) .modal {
-	cursor: grabbing;
+body.madness-mode:not(.is-mobile) {
+	cursor: help;
 }
 
 /* drunk Obsi 🏴‍☠️ Damian */
 body.madness-mode:not(.is-mobile) .modal {
-	cursor: help;
-	animation-duration: 2s;
-	animation-name: sway;
-	animation-iteration-count: infinite;
-}
-
-@keyframes sway {
-	from { transform: rotate(1deg) }
-	50% { transform: rotate(-1deg) }
-	to { transform: rotate(1deg) }
+	transform: skew(4deg);
+	cursor: grabbing;
 }
 
 /* sanity: way out */
