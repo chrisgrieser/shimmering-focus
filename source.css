@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 2.57
+Version 2.58
 Source CSS: https://github.com/chrisgrieser/shimmering-focus/blob/main/source.css
 MIT License
 ──────────────────────────────────────────────────── */
@@ -2120,12 +2120,12 @@ body:not(.show-titlebar, .is-mobile) {
 }
 
 /* adapt height of ribbons */
-body:not(.show-titlebar) .workspace-ribbon.mod-left {
-	margin-top: calc(var(--mac-traffic-light-padding) + var(--normal-top-padding));
+body:not(.show-titlebar).show-sidebar-tabs .workspace-ribbon.mod-left {
+	margin-top: calc(var(--mac-traffic-light-padding) + 38px);
 }
 
-body:not(.show-titlebar) .workspace-ribbon.mod-right {
-	margin-top: var(--normal-top-padding);
+body:not(.show-titlebar):not(.show-sidebar-tabs) .workspace-ribbon.mod-left {
+	margin-top: 24px;
 }
 
 body.show-titlebar .workspace-ribbon.mod-left {
@@ -2224,7 +2224,7 @@ body .app-container .workspace-ribbon.is-collapsed {
 	border-bottom: var(--ribbon-border);
 }
 
-body:not(.show-titlebar) .workspace-ribbon-collapse-btn {
+body:not(.show-titlebar) .workspace-ribbon.mod-left .workspace-ribbon-collapse-btn {
 	border-top: var(--basic-border);
 }
 
@@ -9323,6 +9323,7 @@ body.madness-mode:not(.is-mobile) {
 	margin-left: -30px;
 }
 
+.madness-mode:not(.is-mobile) .side-dock-ribbon-action[aria-label="Open command palette"],
 .madness-mode:not(.is-mobile) .workspace-ribbon.mod-left.mod-left.mod-left.mod-left,
 .madness-mode:not(.is-mobile) .side-dock-settings.side-dock-settings .side-dock-ribbon-action:last-child {
 	display: unset;

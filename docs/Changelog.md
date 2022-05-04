@@ -3,6 +3,7 @@ nav_order: 110
 ---
 
 # Changelog
+- 2022-05-04	better ribbon alignments
 - 2022-05-04	fixes and hints for madness mode
 - 2022-05-04	added unicode emojis to theme beta
 - 2022-05-04	style setting to turn off blinking of the Vim cursor
