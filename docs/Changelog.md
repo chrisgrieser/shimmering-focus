@@ -3,6 +3,7 @@ nav_order: 110
 ---
 
 # Changelog
+- 2022-05-04	sone more hints for madness mode
 - 2022-05-04	overhauled madness mode
 - 2022-05-04	fix fix alternating row colors
 - 2022-05-04	better ribbon alignments
