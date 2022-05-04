@@ -3,6 +3,7 @@ nav_order: 110
 ---
 
 # Changelog
+- 2022-05-04	style setting to turn off blinking of the Vim cursor
 - 2022-05-04	fix #162
 - 2022-05-04	added info on banner plugin limitations
 - 2022-05-04	table colors follow theme background

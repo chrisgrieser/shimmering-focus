@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 2.54
+Version 2.55
 Source CSS: https://github.com/chrisgrieser/shimmering-focus/blob/main/source.css
 MIT License
 ──────────────────────────────────────────────────── */
@@ -1859,7 +1859,7 @@ body:not(.no-grayed-out-inactive-pane) {
 	animation-name: inversion-blink;
 }
 
-:is(.no-blink, .breathing-cursor, .phase-blink-cursor, .inversion-blink-cursor) .cm-cursorLayer {
+:is(.no-blink, .breathing-cursor, .phase-blink-cursor, .inversion-blink-cursor) .cm-cursorLayer:not(.cm-vimCursorLayer) {
 	animation-name: none !important; /* important needed */
 }
 
@@ -1881,6 +1881,10 @@ body:not(.no-grayed-out-inactive-pane) {
 .theme-light .cm-focused .cm-vimCursorLayer .cm-fat-cursor.cm-fat-cursor.cm-fat-cursor {
 	color: var(--always-light);
 	background-color: hsl(0 0% 25%);
+}
+
+.no-vim-cursor-blinking .cm-vimCursorLayer {
+    animation: none !important; /* needed */
 }
 
 /* Theme Accent */
@@ -14486,6 +14490,11 @@ settings:
     -
       label: No Mode Indicator
       value: no-vim-indicator
+  -
+   id: no-vim-cursor-blinking
+   title: Disable the blinking of the Vim Cursor
+   type: class-toggle
+   default: false
   -
 # << Code Blocks (+)
    id: code-blocks-options
