@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 2.36
+Version 2.37
 Source CSS: https://github.com/chrisgrieser/shimmering-focus/blob/main/source.css
 MIT License
 ──────────────────────────────────────────────────── */
@@ -9345,7 +9345,7 @@ body.madness-mode:not(.is-mobile) {
 
 	color: var(--sucess-color);
 	background-color: var(--bg3);
-	box-shadow: var(--small-shadow);
+	box-shadow: var(--small-inset-shadow);
 
 	padding: 2px 8px;
 	margin-top: 30px;
@@ -13482,13 +13482,13 @@ settings:
   -
    id: hardcore-mode
    title: '⚠️ Hardcore Mode'
-   description: 'Experienced Obsidian users only! Try the ultimate challenge and permanently hide EVERY element that is not absolutely essential: On top of all things listed above, hardcore mode will remove the settings button, both side bars, button labels, and much more. Test your knowledge of Obsidian and prove that you are a real power user by enduring this special, just-for-fun mode.'
+   description: 'Experienced Obsidian users only! Try the ultimate challenge and permanently hide EVERY element that is not absolutely essential: On top of all things listed above, hardcore mode will remove the settings button, both side bars, hotkey labels, and much more. Test your knowledge of Obsidian and prove that you are a real power user by getting things done in this special, just-for-fun mode.'
    type: class-toggle
    default: false
   -
    id: madness-mode
    title: '😈 Madness Mode'
-   description: "Can you also endure confused cursors, hostile settings, invisible selections, and a theme gone rogue? Enable this mode and attempt to escape this mad theme that won't let you let you go… (Hint: There is a hidden way to turn off madness mode without deleting any files in the .obsidian folder.)"
+   description: "Knowledgeables Obsidian users only! Can you also endure confused cursors, hostile setting menus, invisible selections, and a theme gone rogue? Enable this mode and see if you are able to escape the madness… (Hint: If you are stuck, delete the file '{vault-root}/.obsidian/plugins/obsidian-style-settings/data.json'. However, the true challenge is to find a way to deactivate Madness Mode from within Obsidian.)"
    type: class-toggle
    default: false
   -
