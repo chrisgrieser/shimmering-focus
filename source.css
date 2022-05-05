@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 2.75
+Version 2.76
 Source CSS: https://github.com/chrisgrieser/shimmering-focus/blob/main/source.css
 MIT License
 ──────────────────────────────────────────────────── */
@@ -193,7 +193,7 @@ MIT License
 		- Graph itself
 	- Publish
 - Hardcore Mode
-	- Hardcore/Madness Mode Style Settings
+	- Hardcore & Madness Mode Style Settings
 	- Madness Mode
 - Community Plugins
 	- Shell Commands
@@ -9241,7 +9241,7 @@ body.hardcore-mode:not(.is-mobile) {
 }
 
 /* ───────────────────────────────────────────────── */
-/* << Hardcore/Madness Mode Style Settings
+/* << Hardcore & Madness Mode Style Settings
 ──────────────────────────────────────────────────── */
 body:not(.hardcore-mode) .setting-item[data-id="madness-mode"] {
 	display: none;
@@ -9268,7 +9268,7 @@ body:not(.hardcore-mode) .setting-item[data-id="madness-mode"] {
 }
 
 /* prevent madness mode being started from the style setting pane */
-.workspace-leaf-content[data-type="style-settings"] .setting-item[data-id="madness-mode"] .checkbox-container {
+.workspace-leaf-content[data-type="style-settings"] .setting-item[data-id="madness-mode"] .checkbox-container:not(.is-enabled) {
 	display: none;
 }
 
@@ -9376,12 +9376,12 @@ body.madness-mode:not(.is-mobile) {
 	display: none;
 }
 
-.loader-cube {
+.madness-mode:not(.is-mobile) .loader-cube {
 	display: block !important; /* needed */
 	width: 50%;
 }
 
-.loader-cube::after {
+.madness-mode:not(.is-mobile) .loader-cube::after {
 	content: "\"What is blurred may be deciphered.\A\A An ancient temple will offer salvation.\A\A Don't be deceived by empty threats.\"";
 	font-family: var(--mad-font);
 	white-space: pre;
@@ -9430,7 +9430,7 @@ body.madness-mode:not(.is-mobile) {
 
 	position: absolute;
 	top: 10rem;
-	left: 1rem;
+	left: 4rem;
 
 	padding: 1px 4px 0 5px;
 
@@ -9445,16 +9445,16 @@ body.madness-mode:not(.is-mobile) {
 }
 
 body.madness-mode:not(.is-mobile) .side-dock-ribbon-action[aria-label="Open command palette"] {
-	animation-duration: 3s;
+	animation-duration: 2.5s;
 	animation-name: moveAround3;
 	animation-iteration-count: infinite;
 }
 
 @keyframes moveAround3 {
-	from { left: -10vw }
-	10% { left: 4vw }
-	40% { left: 4vw }
-	to { left: 110vw }
+	from { top: -10vh }
+	10% { top: 10vh }
+	50% { top: 10vh }
+	to { top: 110vh }
 }
 
 /* trollish settings button */
