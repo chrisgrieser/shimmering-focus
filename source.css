@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 2.86
+Version 2.87
 Source CSS: https://github.com/chrisgrieser/shimmering-focus/blob/main/source.css
 MIT License
 ──────────────────────────────────────────────────── */
@@ -5618,6 +5618,18 @@ body:not(.show-fold-indicators) .cm-foldPlaceholder::before {
 
 .relative-line-numbering .cm-lineNumbers .cm-gutterElement.cm-active + .cm-gutterElement + .cm-gutterElement + .cm-gutterElement + .cm-gutterElement + .cm-gutterElement + .cm-gutterElement::after {
 	content: "7";
+}
+
+.relative-line-numbering .cm-lineNumbers .cm-gutterElement.cm-active + .cm-gutterElement + .cm-gutterElement + .cm-gutterElement + .cm-gutterElement + .cm-gutterElement + .cm-gutterElement + .cm-gutterElement::after {
+	content: "8";
+}
+
+.relative-line-numbering .cm-lineNumbers .cm-gutterElement.cm-active + .cm-gutterElement + .cm-gutterElement + .cm-gutterElement + .cm-gutterElement + .cm-gutterElement + .cm-gutterElement + .cm-gutterElement + .cm-gutterElement::after {
+	content: "9";
+}
+
+.relative-line-numbering .cm-lineNumbers .cm-gutterElement.cm-active + .cm-gutterElement + .cm-gutterElement + .cm-gutterElement + .cm-gutterElement + .cm-gutterElement + .cm-gutterElement + .cm-gutterElement + .cm-gutterElement + .cm-gutterElement::after {
+	content: "10";
 }
 
 /* minimal line numbers */
@@ -14433,7 +14445,7 @@ settings:
   -
    id: line-number-options
    title: 🆕 Line Numbering Style
-   description: "'Relative' shows only the active line and the following seven lines (useful for Vim Mode). 'Minimal' shows line numbers only for the active and hovered line. Note that both have no effect when Obsidian's 'Show line number' setting is disabled."
+   description: "'Relative' shows only the active line and the following ten lines (useful for Vim Mode). 'Minimal' shows line numbers only for the active and hovered line. Note that both have no effect when Obsidian's 'Show line number' setting is disabled."
    type: class-select
    allowEmpty: false
    default: default-line-numbering
