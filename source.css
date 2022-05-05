@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 2.79
+Version 2.80
 Source CSS: https://github.com/chrisgrieser/shimmering-focus/blob/main/source.css
 MIT License
 ──────────────────────────────────────────────────── */
@@ -9382,7 +9382,7 @@ body.madness-mode:not(.is-mobile) {
 }
 
 .madness-mode:not(.is-mobile) .loader-cube::after {
-	content: "\"What is blurred may be deciphered.\A\A Seek the temple of enlightenment for salvation.\A\A Don't be deceived by empty threats.\"";
+	content: "\"Seek the temple of enlightenment for salvation.\A\A What is blurred may be deciphered.\A You find the temple by having style.\A When you are there, patience is required.\A Don't let empty threats stop you from reaching salvation.\"";
 	font-family: var(--mad-font);
 	white-space: pre;
 }
@@ -9549,7 +9549,7 @@ body.madness-mode:not(.is-mobile) .side-dock-ribbon-action:last-child {
 /* hint */
 .madness-mode:not(.is-mobile) .prompt-input[placeholder^="Select a command"] + .prompt-results::before {
 	display: block;
-	content: "🪧 \"Temple of Enlightenment\" straight ahead.";
+	content: "🪧 Temple of Enlightenment. Seek some *fashion* and you will find the path.";
 
 	font-family: var(--font-interface-override), "Flow Circular";
 	line-height: 1.3;
@@ -13671,7 +13671,7 @@ body .pwc-reference-list .csl-entry.csl-entry.csl-entry {
 	border-radius: var(--roundish);
 }
 
-.pwc-tooltip.pwc-tooltip em:only-child {
+/* .pwc-tooltip.pwc-tooltip em:only-child {
 	font-style: normal;
 	color: var(--text-error);
 }
@@ -13680,7 +13680,7 @@ body .pwc-reference-list .csl-entry.csl-entry.csl-entry {
 	content: var(--error-symbol);
 	margin-right: 5px;
 }
-
+ */
 .unicode-emojis .pwc-tooltip.pwc-tooltip em:only-child::before {
 	font-family: "Noto Emoji";
 }
