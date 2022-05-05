@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 2.63
+Version 2.64
 Source CSS: https://github.com/chrisgrieser/shimmering-focus/blob/main/source.css
 MIT License
 ──────────────────────────────────────────────────── */
@@ -1282,7 +1282,11 @@ body {
 } */
 
 body :is(.longform-leaf, .writing) {
-	--font-text: var(--longform-font-text-theme);
+	--font-text: var(--longform-font-text-theme), var(--emoji-fallback-fonts);
+}
+
+body.unicode-emojis :is(.longform-leaf, .writing) {
+	--font-text: var(--longform-font-text-theme), "Noto Emoji", var(--emoji-fallback-fonts);
 }
 
 body:not(.less-heading-letter-spacing) {
@@ -13520,6 +13524,20 @@ body .pwc-reference-list .csl-entry.csl-entry.csl-entry {
 	border-radius: var(--roundish);
 }
 
+.pwc-tooltip.pwc-tooltip em:only-child {
+	font-style: normal;
+	color: var(--text-error);
+}
+
+.pwc-tooltip.pwc-tooltip em:only-child::before {
+	content: var(--error-symbol);
+	margin-right: 5px;
+}
+
+.unicode-emojis .pwc-tooltip.pwc-tooltip em:only-child::before {
+	font-family: "Noto Emoji";
+}
+
 /* pandoc citations styling */
 body .markdown-preview-view :is(.pandoc-citation, .pandoc-citation-formatting, .pandoc-citation-extra),
 body .cm-hmd-barelink :is(.cm-pandoc-citation, .cm-pandoc-citation-formatting, .cm-pandoc-citation-extra) {
@@ -13533,6 +13551,10 @@ body:not(.no-pandoc-citation-emphasis) .cm-hmd-barelink :is(.cm-pandoc-citation,
 
 body:not(.no-pandoc-citation-emphasis) .mod-root :is(.cm-pandoc-citation-formatting, .pandoc-citation-formatting, .pandoc-citation-extra, .cm-pandoc-citation-extra) {
 	color: var(--text-muted);
+}
+
+body:not(.no-pandoc-citation-emphasis) .pandoc-citation.is-missing {
+	text-decoration: wavy 1px underline var(--text-error);
 }
 
 /* reading mode styling */
@@ -14488,7 +14510,7 @@ settings:
 # << Special Syntax (+)
    id: special-syntax
    title: 🌀 Special Syntax
-   description: 'Highlight Colors, Multi-Color Highlights, Spoiler Syntax, Annotation Tags, Trailing Whites Space, Citation Syntax, Pandoc Citations, Loose Lists'
+   description: 'Highlight Colors, Multi-Color Highlights, Spoiler Syntax, Annotation Tags, Trailing Whites Space, Citation Syntax, Pandoc Citations, Dataview Inline Fields, Loose Lists'
    type: heading
    level: 1
    collapsed: true
@@ -14549,7 +14571,7 @@ settings:
   -
    id: no-pandoc-citation-emphasis
    title: No Emphasis of Pandoc Citations and Dataview Inline Fields
-   description: "Turn off the coloring of Pandoc Citations [@citekey] and dataview inline fields [key:: value] in Source Mode."
+   description: "Turn off the coloring of Pandoc Citations [@citekey] and dataview inline fields [key:: value] in Source Mode. (Also affects the styling for the Pandoc Reference List Plugin.)"
    type: class-toggle
    default: false
   -
