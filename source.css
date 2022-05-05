@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 2.88
+Version 2.89
 Source CSS: https://github.com/chrisgrieser/shimmering-focus/blob/main/source.css
 MIT License
 ──────────────────────────────────────────────────── */
@@ -9400,7 +9400,7 @@ body.madness-mode:not(.is-mobile) {
 }
 
 .madness-mode:not(.is-mobile) .loader-cube::after {
-	content: "\"Seek the temple of enlightenment for salvation.\A\A What is blurred may be deciphered.\A You find the temple by having style.\A When you are there, patience is required.\A Don't let empty threats stop you from reaching salvation.\"";
+	content: "\"Seek the temple of enlightenment for salvation.\A\A What is blurred may be deciphered.\A You discover the path to the temple by having style.\A When you are there, patience is required.\A Don't let empty threats stop you from reaching salvation.\"";
 	font-family: var(--mad-font);
 	white-space: pre;
 }
@@ -9571,7 +9571,7 @@ body.madness-mode:not(.is-mobile) .side-dock-ribbon-action:last-child {
 /* hint */
 .madness-mode:not(.is-mobile) .prompt-input[placeholder^="Select a command"] + .prompt-results::before {
 	display: block;
-	content: "🪧 Temple of Enlightenment. Only those seeking *fashion* will find it.";
+	content: "🪧 Temple of Enlightenment. Change your semblance, and you will find it.";
 
 	font-family: var(--font-interface-override), "Flow Circular";
 	line-height: 1.3;
