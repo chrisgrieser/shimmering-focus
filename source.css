@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 2.72
+Version 2.73
 Source CSS: https://github.com/chrisgrieser/shimmering-focus/blob/main/source.css
 MIT License
 ──────────────────────────────────────────────────── */
@@ -9267,6 +9267,11 @@ body:not(.hardcore-mode) .setting-item[data-id="madness-mode"] {
 	animation-iteration-count: infinite;
 }
 
+/* prevent madness mode being started from the style setting pane */
+.workspace-leaf-content[data-type="style-settings"] .setting-item[data-id="madness-mode"] .checkbox-container {
+	display: none;
+}
+
 @keyframes shaky {
 	from { transform: translateY(1px) translateX(-1px) }
 	25% { transform: translateY(-1px) translateX(1px) }
@@ -13877,16 +13882,16 @@ settings:
    id: madness-mode
    title: '😈 Madness Mode'
    description: |
-     After enabling Madness Mode, are you able to disable it again? Endure evil buttons, cryptic settings, hacked cursors, and a theme gone rogue – all on top of the limitations of hardcore mode. You will need a solid understanding of Obsidian mechanics to regain your sanity in this devilish small puzzle game!
+     After enabling Madness Mode, are you able to disable it again? Endure evil buttons, cryptic settings, hacked cursors, and a hostile theme in general – all on top of the limitations of hardcore mode. You will need a solid understanding of Obsidian mechanics to regain your sanity in this devilish small puzzle game!
 
      Rules:
      1. No hotkeys. Typing text into text fields is allowed though.
      2. The deletion/modification of files in '.obsidian' is forbidden. There is no need to leave Obsidian to beat the game.
      3. If you talk about Madness Mode on Discord, please use spoiler tags and don't share screenshots that contain a solution step.
 
-     I recommend exporting your style settings before starting the game. If you are stuck, you can turn off Madness Mode by deleting the file '{vaultRoot}/.obsidian/plugins/obsidian-style-settings/data.json' and restarting Obsidian – this will effectively reset your Style Settings.
+     Be aware that during Madness Mode, you won't be able to properly use your vault. If you are stuck, you can turn off Madness Mode by deleting the file '{vaultRoot}/.obsidian/plugins/obsidian-style-settings/data.json' and restarting Obsidian – this will effectively reset your Style Settings. (Therefore, it's also recommended to export the style settings before the game.)
 
-     Ready to fight a hostile theme? Then enable Madness Mode and see if you can stay sane! ↗️
+     Ready to face a theme gone mad? Then enable Madness Mode and see if you can recover your sanity!
    type: class-toggle
    default: false
   -
