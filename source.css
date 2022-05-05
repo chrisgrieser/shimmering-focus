@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 2.68
+Version 2.69
 Source CSS: https://github.com/chrisgrieser/shimmering-focus/blob/main/source.css
 MIT License
 ──────────────────────────────────────────────────── */
@@ -9252,6 +9252,15 @@ body:not(.hardcore-mode) .setting-item[data-id="madness-mode"] {
 
 .setting-item[data-id="madness-mode"] {
 	font-family: var(--mad-font);
+	font-size: 1.1rem;
+	font-weight: 800;
+}
+
+.setting-item[data-id="madness-mode"] .setting-item-name::after {
+	content: " (Mini Game)";
+	font-family: var(--font-interface);
+	font-size: 0.8rem;
+	color: var(--text-muted);
 }
 
 .setting-item:is([data-id="madness-mode"], [data-id="hardcore-mode"]) .checkbox-container {
@@ -9276,6 +9285,10 @@ body:not(.hardcore-mode) .setting-item[data-id="madness-mode"] {
 		format("woff2");
 }
 
+:root { /* stylelint-disable-line no-duplicate-selectors */
+	--mad-font: "Exocet";
+}
+
 .madness-mode:not(.is-mobile) :is(.cm-cursor, .cm-fat-cursor):is(.cm-cursor, .cm-fat-cursor):is(.cm-cursor, .cm-fat-cursor):is(.cm-cursor, .cm-fat-cursor) {
 	background-color: var(--text-error);
 }
@@ -9283,7 +9296,6 @@ body:not(.hardcore-mode) .setting-item[data-id="madness-mode"] {
 .madness-mode:not(.is-mobile) {
 	--text-selection: var(--error-bg);
 	--signature: "✠";
-	--mad-font: "Exocet";
 }
 
 /* trollish settings */
@@ -13676,7 +13688,7 @@ community:
 /* < Style Setting (YAML)
 ──────────────────────────────────────────────────── */
 
-/* @MINIFY-SPLIT-MARKER @YAMLLINT-START-MARKER */
+/* @MINIFY-SPLIT-MARKER */
 /* @settings
 name: Shimmering Focus
 id: shimmering-focus
@@ -13787,7 +13799,7 @@ settings:
    default: false
   -
    id: madness-mode
-   title: '😈 Madness Mode (Mini Game)'
+   title: '😈 Madness Mode'
    description: |
      After enabling Madness Mode, are you able to disable it again? Endure evil buttons, cryptic commands, hacked cursors, and a theme gone rogue – all on top of the limitations of hardcore mode. You will need a solid understanding of Obsidian mechanics to regain your sanity in this devilish small puzzle game!
 
@@ -13796,9 +13808,9 @@ settings:
      2. The deletion/modification of files in '.obsidian' is forbidden. There is no need to leave Obsidian to beat the game.
      3. If you talk about Madness Mode on Discord, please use spoiler tags and don't share screenshots that contain a solution step.
 
-     I recommend exporting your style settings before starting the game. If you are stuck, you can turn off Madness Mode by deleting the file '{vaultRoot}/.obsidian/plugins/obsidian-style-settings/data.json' and restarting Obsidian, which will reset your Style Settings.
+     I recommend exporting your style settings before starting the game. If you are stuck, you can turn off Madness Mode by deleting the file '{vaultRoot}/.obsidian/plugins/obsidian-style-settings/data.json' and restarting Obsidian – this will effectively reset your Style Settings.
 
-     Ready to fight a hostile theme? Then go and enable Madness Mode! ↗️
+     Ready to fight a hostile theme? Then enable Madness Mode and see if you can stay sane! ↗️
    type: class-toggle
    default: false
   -
