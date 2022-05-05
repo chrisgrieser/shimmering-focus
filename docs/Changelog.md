@@ -3,7 +3,7 @@ nav_order: 110
 ---
 
 # Changelog
-- 2022-05-05	patch
+- 2022-05-05	update invalid citekey tooltips (Pandoc reference plugin)
 - 2022-05-05	fixes for pandoc citations outside of square brackets
 - 2022-05-05	fix grayscale favicon option
 - 2022-05-05	fix inline code in callouts

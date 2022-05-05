@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 2.84
+Version 2.85
 Source CSS: https://github.com/chrisgrieser/shimmering-focus/blob/main/source.css
 MIT License
 ──────────────────────────────────────────────────── */
@@ -13681,19 +13681,19 @@ body .pwc-reference-list .csl-entry.csl-entry.csl-entry {
 	border-radius: var(--roundish);
 }
 
-/* .pwc-tooltip.pwc-tooltip em:only-child {
+.pwc-tooltip.is-missing {
 	font-style: normal;
 	color: var(--text-error);
 }
 
-.pwc-tooltip.pwc-tooltip em:only-child::before {
+.pwc-tooltip.is-missing::before {
 	content: var(--error-symbol);
 	margin-right: 5px;
 }
-.unicode-emojis .pwc-tooltip.pwc-tooltip em:only-child::before {
+
+.unicode-emojis .pwc-tooltip.is-missing::before {
 	font-family: "Noto Emoji";
 }
- */
 
 /* pandoc citations styling */
 body .pandoc-citation.pandoc-citation {
