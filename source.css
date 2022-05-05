@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 2.62
+Version 2.63
 Source CSS: https://github.com/chrisgrieser/shimmering-focus/blob/main/source.css
 MIT License
 ──────────────────────────────────────────────────── */
@@ -1250,7 +1250,7 @@ body {
 	--mobile-font-interface-theme: "Recursive S";
 
 	/* inserting emoji fallback fonts for better emoji display */
-	--emoji-fallback-fonts: "Apple Color Emoji", "Segoe UI Emoji", "Noto Emoji";
+	--emoji-fallback-fonts: "Apple Color Emoji", "Segoe UI Emoji";
 	--font-interface: var(--font-interface-override), var(--font-interface-theme), var(--emoji-fallback-fonts), var(--font-default);
 	--font-text: var(--font-text-override), var(--font-text-theme), var(--emoji-fallback-fonts), var(--font-default);
 }
@@ -6003,9 +6003,14 @@ p {
 
 .cm-header,
 .markdown-preview-view :is(h1, h2, h3, h4, h5, h6) {
-	font-family: var(--heading-font);
+	font-family: var(--heading-font), var(--emoji-fallback-fonts);
 	font-weight: 700;
 	letter-spacing: var(--heading-letter-spacing);
+}
+
+.unicode-emojis .cm-header,
+.unicode-emojis .markdown-preview-view :is(h1, h2, h3, h4, h5, h6) {
+	font-family: var(--heading-font), "Noto Emoji", var(--emoji-fallback-fonts);
 }
 
 .markdown-rendered.markdown-rendered :is(h1, h2, h3, h4, h5, h6) {
@@ -7273,6 +7278,13 @@ with supercharged links installed, also displayed in edit mode */
 	font-family: var(--icon-font);
 	font-size: 80%;
 	line-height: 1;
+}
+
+.unicode-emojis .markdown-preview-view a.internal-link::before {
+	/* this font stack order necessary to preserve the Material
+	Icons, but also apply NoTo Emoji for Supercharged Links.
+	Inter is necessary to prevent Noto from styling spaces */
+	font-family: var(--icon-font), "Inter", "Noto Emoji";
 }
 
 /* stylelint-disable function-whitespace-after */
