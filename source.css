@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 2.67
+Version 2.68
 Source CSS: https://github.com/chrisgrieser/shimmering-focus/blob/main/source.css
 MIT License
 ──────────────────────────────────────────────────── */
@@ -9532,8 +9532,13 @@ body.madness-mode:not(.is-mobile) .prompt {
 	font-family: "Flow Circular";
 }
 
-.madness-mode:not(.is-mobile) :is(.cm-line, .markdown-preview-view div):hover {
-	background-color: var(--text-error);
+/* fake element picker */
+.view-content.view-content :is(.cm-line > *, .cm-line, p, li, ol, ul, h1, h2, h3, h4, h5, h6, blockquote):hover {
+	background-color: hsl(210 60% 76%);
+	border-right: 10px solid hsl(107 33% 78%);
+	border-radius: 0 !important;
+	outline: 1.2px dashed hsl(271 68% 49%);
+	outline-offset: -1px;
 }
 
 /* SANITY: THE WAY OUT */
@@ -9550,7 +9555,7 @@ body.madness-mode:not(.is-mobile) .prompt {
 
 /* hint emoji */
 .madness-mode:not(.is-mobile) .modal.mod-settings .mod-toggle:nth-child(3) + .setting-item-heading + .setting-item .setting-item-name::after {
-	content: " 🤨 Can this setting help me gain some clarity?";
+	content: " 🤨 Can this setting give me some clarity?";
 	font-family: var(--font-interface);
 }
 
