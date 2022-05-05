@@ -14,9 +14,8 @@
 # - ToC in the CSS file is updated
 # - copies css from the vault (`CSS_PATH`) into this repository
 # - updates download counts in badges of the .md files
-# - Markdown is linted & checked for dead links
-# - adds a non-minified css file and the global stylelint.json for documentation
-# - git add, commit, pull, push to the remote repo
+# - adds a copy of the non-minified css file and the global stylelint config for documentation
+# - git add, commit, pull, and push to the remote repo
 
 # REQUIREMENTS
 # - clean-css-cli
