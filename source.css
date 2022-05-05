@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 2.70
+Version 2.71
 Source CSS: https://github.com/chrisgrieser/shimmering-focus/blob/main/source.css
 MIT License
 ──────────────────────────────────────────────────── */
@@ -9483,13 +9483,12 @@ body.madness-mode:not(.is-mobile) .side-dock-ribbon-action:last-child {
 }
 
 .madness-mode:not(.is-mobile) .mod-community-theme {
+	transform: rotate(-2deg) skew(-2deg);
 	cursor: move;
 }
 
 .madness-mode:not(.is-mobile) .community-theme.is-selected .community-theme-info::after {
-	content: "You didn't think it would be that easy, did you?\A\A I deleted all other themes before you came here. 😈";
-	font-family: var(--mad-font);
-	font-weight: 700;
+	content: "You didn't think it would be that easy, did you? 🤭\A\A I deleted all other themes before you came here. 😈";
 	color: var(--text-error);
 }
 
