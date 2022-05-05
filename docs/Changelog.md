@@ -3,6 +3,7 @@ nav_order: 110
 ---
 
 # Changelog
+- 2022-05-05	more madness...
 - 2022-05-05	styled missing citations for Pandoc reference list
 - 2022-05-05	Unicode Emojis also apply to headings & Supercharged Links
 - 2022-05-04	sone more hints for madness mode
