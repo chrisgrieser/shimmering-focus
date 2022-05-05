@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 2.69
+Version 2.70
 Source CSS: https://github.com/chrisgrieser/shimmering-focus/blob/main/source.css
 MIT License
 ──────────────────────────────────────────────────── */
@@ -9250,10 +9250,11 @@ body:not(.hardcore-mode) .setting-item[data-id="madness-mode"] {
 	display: none;
 }
 
-.setting-item[data-id="madness-mode"] {
+.setting-item[data-id="madness-mode"] .setting-item-name {
 	font-family: var(--mad-font);
 	font-size: 1.1rem;
 	font-weight: 800;
+	color: var(--text-error);
 }
 
 .setting-item[data-id="madness-mode"] .setting-item-name::after {
@@ -9261,6 +9262,20 @@ body:not(.hardcore-mode) .setting-item[data-id="madness-mode"] {
 	font-family: var(--font-interface);
 	font-size: 0.8rem;
 	color: var(--text-muted);
+}
+
+.modal .setting-item[data-id="madness-mode"] .checkbox-container:not(.is-enabled) {
+	animation-duration: 0.2s;
+	animation-name: shaky;
+	animation-iteration-count: infinite;
+}
+
+@keyframes shaky {
+	from { transform: translateY(1px) translateX(-1px) }
+	25% { transform: translateY(-1px) translateX(1px) }
+	50% { transform: translateY(1px) translateX(1px) }
+	75% { transform: translateY(-1px) translateX(1px) }
+	to { transform: translateY(1px) translateX(-1px) }
 }
 
 .setting-item:is([data-id="madness-mode"], [data-id="hardcore-mode"]) .checkbox-container {
@@ -9285,9 +9300,7 @@ body:not(.hardcore-mode) .setting-item[data-id="madness-mode"] {
 		format("woff2");
 }
 
-:root { /* stylelint-disable-line no-duplicate-selectors */
-	--mad-font: "Exocet";
-}
+:root { --mad-font: "Exocet" } /* stylelint-disable-line no-duplicate-selectors */
 
 .madness-mode:not(.is-mobile) :is(.cm-cursor, .cm-fat-cursor):is(.cm-cursor, .cm-fat-cursor):is(.cm-cursor, .cm-fat-cursor):is(.cm-cursor, .cm-fat-cursor) {
 	background-color: var(--text-error);
@@ -13801,7 +13814,7 @@ settings:
    id: madness-mode
    title: '😈 Madness Mode'
    description: |
-     After enabling Madness Mode, are you able to disable it again? Endure evil buttons, cryptic commands, hacked cursors, and a theme gone rogue – all on top of the limitations of hardcore mode. You will need a solid understanding of Obsidian mechanics to regain your sanity in this devilish small puzzle game!
+     After enabling Madness Mode, are you able to disable it again? Endure evil buttons, cryptic settings, hacked cursors, and a theme gone rogue – all on top of the limitations of hardcore mode. You will need a solid understanding of Obsidian mechanics to regain your sanity in this devilish small puzzle game!
 
      Rules:
      1. No hotkeys. Typing text into text fields is allowed though.

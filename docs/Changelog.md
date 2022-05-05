@@ -3,7 +3,7 @@ nav_order: 110
 ---
 
 # Changelog
-- 2022-05-05	patch
+- 2022-05-05	shaky madness mode
 - 2022-05-05	added fake element picker to madness mode
 - 2022-05-05	more madness...
 - 2022-05-05	styled missing citations for Pandoc reference list
