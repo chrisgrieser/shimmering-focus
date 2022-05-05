@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 2.85
+Version 2.86
 Source CSS: https://github.com/chrisgrieser/shimmering-focus/blob/main/source.css
 MIT License
 ──────────────────────────────────────────────────── */
@@ -9451,16 +9451,20 @@ body.madness-mode:not(.is-mobile) {
 }
 
 body.madness-mode:not(.is-mobile) .side-dock-ribbon-action[aria-label="Open command palette"] {
-	animation-duration: 2.5s;
+	animation-duration: 4.5s;
 	animation-name: moveAround3;
 	animation-iteration-count: infinite;
 }
 
 @keyframes moveAround3 {
 	from { top: -10vh }
-	10% { top: 10vh }
-	50% { top: 10vh }
-	to { top: 110vh }
+	5% { top: 10vh }
+	25% { top: 10vh }
+	50% { top: 110vh }
+	51% { top: -10vh }
+	55% { top: 8vh }
+	75% { top: 8vh }
+	from { top: 110vh }
 }
 
 /* trollish settings button */
@@ -9555,7 +9559,7 @@ body.madness-mode:not(.is-mobile) .side-dock-ribbon-action:last-child {
 /* hint */
 .madness-mode:not(.is-mobile) .prompt-input[placeholder^="Select a command"] + .prompt-results::before {
 	display: block;
-	content: "🪧 Temple of Enlightenment. Seek some *fashion* and you will find the path.";
+	content: "🪧 Temple of Enlightenment. Only those seeking *fashion* will find it.";
 
 	font-family: var(--font-interface-override), "Flow Circular";
 	line-height: 1.3;
@@ -9615,7 +9619,7 @@ body.madness-mode:not(.is-mobile) .prompt {
 
 /* hint emoji */
 .madness-mode:not(.is-mobile) .modal.mod-settings .mod-toggle:nth-child(3) + .setting-item-heading + .setting-item .setting-item-name::after {
-	content: " 🤨 Can this setting give me some clarity?";
+	content: " 🤨 Hmm...";
 	font-family: var(--font-interface);
 }
 
