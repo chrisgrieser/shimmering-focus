@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 2.87
+Version 2.88
 Source CSS: https://github.com/chrisgrieser/shimmering-focus/blob/main/source.css
 MIT License
 ──────────────────────────────────────────────────── */
@@ -928,6 +928,7 @@ body:is(.theme-light, .theme-dark) {
 	--tiny-shadow: 0.5px 1px var(--shadow-blur) calc(var(--shadow-base-size) / 2) var(--outside-shadow-color);
 	--status-bar-shadow: -1px -1px var(--shadow-blur) calc(var(--shadow-base-size) / 2) var(--outside-shadow-color);
 	--big-reverted-shadow: 0px -2px var(--shadow-blur) calc(var(--shadow-base-size) * 2) var(--outside-shadow-color);
+	--medium-reverted-shadow: 0px -1px var(--shadow-blur) calc(var(--shadow-base-size) * 1) var(--outside-shadow-color);
 }
 
 /* <<< Inset Shadow */
@@ -1955,13 +1956,12 @@ body.no-animations {
 	font-family: var(--font-monospace);
 	font-size: 0.8rem;
 	font-weight: 500;
-	line-height: 1.35rem;
-	letter-spacing: 0.3px;
+	line-height: 1.6;
 	text-transform: uppercase;
 	text-align: center;
 
 	height: 1.3rem;
-	width: 3.4rem;
+	width: 3.3rem;
 
 	background-color: var(--alt-bg);
 	box-shadow: var(--small-inset-shadow);
@@ -1970,7 +1970,7 @@ body.no-animations {
 	top: 0;
 	left: 0;
 
-	padding: 1px 2px;
+	padding: 1px;
 
 	border: var(--thin-border);
 	border-radius: 0 0 var(--roundish) 0;
@@ -2010,7 +2010,7 @@ body.no-animations {
 }
 
 .cm-vim-panel div span:only-child::before {
-	content: "Ex";
+	content: "CMD";
 	color: var(--extra-contrast);
 }
 
@@ -2033,7 +2033,7 @@ body.no-animations {
 
 .cm-panels.cm-panels.cm-panels-bottom {
 	background-color: var(--alt-bg);
-	box-shadow: var(--big-reverted-shadow);
+	box-shadow: var(--medium-reverted-shadow);
 	border-top: var(--basic-border);
 }
 
