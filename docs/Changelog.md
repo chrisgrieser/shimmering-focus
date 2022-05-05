@@ -3,6 +3,7 @@ nav_order: 110
 ---
 
 # Changelog
+- 2022-05-05	fix inline code in callouts
 - 2022-05-05	better hints for the path to the temple (madness mode)
 - 2022-05-05	renamed temple (madness mode)
 - 2022-05-05	styled the new heading search for another quick switcher

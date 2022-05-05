@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 2.80
+Version 2.81
 Source CSS: https://github.com/chrisgrieser/shimmering-focus/blob/main/source.css
 MIT License
 ──────────────────────────────────────────────────── */
@@ -6371,13 +6371,6 @@ body:not(.no-citation-syntax) .markdown-preview-view *:not(blockquote) > blockqu
 	margin: 5px 0;
 }
 
-.callout .task-list-item-checkbox {
-	height: 1em;
-	width: 1em;
-	top: -2px;
-	margin-bottom: 0;
-}
-
 .callout-content.callout-content ul {
 	padding-left: 20px;
 	margin-top: 5px;
@@ -6393,22 +6386,6 @@ body:not(.no-citation-syntax) .markdown-preview-view *:not(blockquote) > blockqu
 
 body:not(.normal-blockquotes) .callout-content :is(ul, p) {
 	font-size: 0.87em;
-}
-
-.callout-icon svg {
-	height: 1.1rem;
-	width: 1.1rem;
-	margin-bottom: 1px;
-}
-
-.callout.callout.callout pre {
-	background-color: var(--alt-bg);
-	border: var(--basic-border);
-}
-
-/* more readable */
-.theme-light .callout-icon svg {
-	filter: brightness(77%);
 }
 
 .callout {
@@ -6430,6 +6407,35 @@ body:not(.normal-blockquotes) .callout-content :is(ul, p) {
 .callout-title-inner {
 	line-height: 1.3em;
 	margin-bottom: 1px;
+}
+
+/* icon */
+.callout-icon svg {
+	height: 1.1rem;
+	width: 1.1rem;
+	margin-bottom: 1px;
+}
+
+.theme-light .callout-icon svg {
+	/* more readable */
+	filter: brightness(77%);
+}
+
+/* interaction with other markup */
+.callout.callout.callout pre {
+	background-color: var(--alt-bg);
+	border: var(--basic-border);
+}
+
+.callout.callout.callout code {
+	background-color: var(--bg3);
+}
+
+.callout .task-list-item-checkbox {
+	height: 1em;
+	width: 1em;
+	top: -2px;
+	margin-bottom: 0;
 }
 
 /* hover */
