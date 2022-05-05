@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 2.73
+Version 2.74
 Source CSS: https://github.com/chrisgrieser/shimmering-focus/blob/main/source.css
 MIT License
 ──────────────────────────────────────────────────── */
@@ -9570,7 +9570,7 @@ body.madness-mode:not(.is-mobile) .prompt {
 }
 
 /* fake element picker */
-.view-content.view-content :is(.cm-line > *, .cm-line, p, li, ol, ul, h1, h2, h3, h4, h5, h6, blockquote):hover {
+.madness-mode:not(.is-mobile) .view-content.view-content :is(.cm-line > *, .cm-line, p, li, ol, ul, h1, h2, h3, h4, h5, h6, blockquote):hover {
 	background-color: hsl(210 60% 76%);
 	border-right: 10px solid hsl(107 33% 78%);
 	border-radius: 0 !important;

@@ -3,6 +3,7 @@ nav_order: 110
 ---
 
 # Changelog
+- 2022-05-05	patch
 - 2022-05-05	close of alternative route for madness mode
 - 2022-05-05	added temple of meditation to madness mode
 - 2022-05-05	meaner theme browser (madness mode)
