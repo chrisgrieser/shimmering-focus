@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 2.74
+Version 2.75
 Source CSS: https://github.com/chrisgrieser/shimmering-focus/blob/main/source.css
 MIT License
 ──────────────────────────────────────────────────── */
@@ -9359,7 +9359,7 @@ body.madness-mode:not(.is-mobile) {
 
 .madness-mode:not(.is-mobile) .modal .style-settings-container,
 .madness-mode:not(.is-mobile) .modal .style-settings-heading[data-id="shimmering-focus"] .setting-item-name,
-.madness-mode:not(.is-mobile) .vertical-tab-header-group:nth-last-child(2) .vertical-tab-nav-item:not(:nth-child(3), :nth-child(7)),
+.madness-mode:not(.is-mobile) .vertical-tab-header-group:nth-last-child(2) .vertical-tab-nav-item:not(:nth-child(3), :nth-child(7), :nth-child(6)),
 .madness-mode:not(.is-mobile) .vertical-tab-header-group:last-child .vertical-tab-nav-item:not(.is-active),
 .madness-mode:not(.is-mobile) .modal .style-settings-heading[data-id="shimmering-focus"]::before {
 	display: none;
@@ -9370,13 +9370,30 @@ body.madness-mode:not(.is-mobile) {
 	cursor: wait;
 }
 
+/* hint: login menu */
+.madness-mode:not(.is-mobile) .mod-settings .loader-cube .sk-cube,
+.madness-mode:not(.is-mobile) .mod-settings .loader-cube + div {
+	display: none;
+}
+
+.loader-cube {
+	display: block !important; /* needed */
+	width: 50%;
+}
+
+.loader-cube::after {
+	content: "\"What is blurred may be deciphered.\A\A An ancient temple will offer salvation.\A\A Don't be deceived by empty threats.\"";
+	font-family: var(--mad-font);
+	white-space: pre;
+}
+
 /* allow resetting command palette hotkey, if removed */
 .madness-mode:not(.is-mobile) .hotkey-list-container.hotkey-list-container .setting-restore-hotkey-button {
 	display: unset;
 }
 
 .madness-mode:not(.is-mobile) .vertical-tab-nav-item.is-active::before {
-	content: "WTF?";
+	content: "What the...";
 	font-size: var(--font-text-size);
 	line-height: 1;
 	color: var(--text-error);
@@ -9532,7 +9549,7 @@ body.madness-mode:not(.is-mobile) .side-dock-ribbon-action:last-child {
 /* hint */
 .madness-mode:not(.is-mobile) .prompt-input[placeholder^="Select a command"] + .prompt-results::before {
 	display: block;
-	content: "🪡 Is there a needle in this haystack?";
+	content: "🪧 \"Ancient Temple\" straight ahead.";
 
 	font-family: var(--font-interface-override), "Flow Circular";
 	line-height: 1.3;
