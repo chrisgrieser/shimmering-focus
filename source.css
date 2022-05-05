@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 2.83
+Version 2.84
 Source CSS: https://github.com/chrisgrieser/shimmering-focus/blob/main/source.css
 MIT License
 ──────────────────────────────────────────────────── */
@@ -13733,7 +13733,7 @@ body:not(.no-pandoc-citation-emphasis) .pandoc-citation.is-missing {
 
 /* optional turning of of citations in Reading Mode */
 .no-citations-in-reading-view .markdown-preview-view :is(.pandoc-citation, .pandoc-citation-extra, .pandoc-citation-formatting) {
-    display: none;
+	display: none;
 }
 
 /* ───────────────────────────────────────────────── */
