@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 2.78
+Version 2.79
 Source CSS: https://github.com/chrisgrieser/shimmering-focus/blob/main/source.css
 MIT License
 ──────────────────────────────────────────────────── */
@@ -9382,7 +9382,7 @@ body.madness-mode:not(.is-mobile) {
 }
 
 .madness-mode:not(.is-mobile) .loader-cube::after {
-	content: "\"What is blurred may be deciphered.\A\A An ancient temple will offer salvation.\A\A Don't be deceived by empty threats.\"";
+	content: "\"What is blurred may be deciphered.\A\A Seek the temple of enlightenment for salvation.\A\A Don't be deceived by empty threats.\"";
 	font-family: var(--mad-font);
 	white-space: pre;
 }
@@ -9549,7 +9549,7 @@ body.madness-mode:not(.is-mobile) .side-dock-ribbon-action:last-child {
 /* hint */
 .madness-mode:not(.is-mobile) .prompt-input[placeholder^="Select a command"] + .prompt-results::before {
 	display: block;
-	content: "🪧 \"Ancient Temple\" straight ahead.";
+	content: "🪧 \"Temple of Enlightenment\" straight ahead.";
 
 	font-family: var(--font-interface-override), "Flow Circular";
 	line-height: 1.3;
