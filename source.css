@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 2.71
+Version 2.72
 Source CSS: https://github.com/chrisgrieser/shimmering-focus/blob/main/source.css
 MIT License
 ──────────────────────────────────────────────────── */
@@ -1731,10 +1731,7 @@ body.no-animations {
 }
 
 :root { /* stylelint-disable-line no-duplicate-selectors */
-	--transition-delay-passing-over-protection: 200ms;
-}
-
-body:not(.no-grayed-out-inactive-pane) {
+	--transition-delay-passing-over-protection: 220ms;
 	--inactive-pane-opacity: 75%;
 }
 
@@ -9388,6 +9385,17 @@ body.madness-mode:not(.is-mobile) {
 	display: none;
 }
 
+/* font change modal */
+.madness-mode:not(.is-mobile) .mod-confirmation .modal {
+	position: absolute;
+	bottom: 10rem;
+	transform: skew(-3deg) scale(1.6, 0.9);
+}
+
+.madness-mode:not(.is-mobile) .mod-confirmation .setting-item-name {
+	font-family: "Flow Circular";
+}
+
 /* floating command palette button */
 .madness-mode:not(.is-mobile) .side-dock-ribbon-action[aria-label="Open command palette"] svg {
 	height: 0.95em;
@@ -9583,6 +9591,13 @@ body.madness-mode:not(.is-mobile) .prompt {
 	font-family: var(--font-interface);
 }
 
+.madness-mode:not(.is-mobile) .modal.mod-settings .plugin-list-plugins .setting-item-heading::after {
+	content: "😵‍💫 Do I need one of these?";
+	font-family: var(--font-interface);
+	font-size: 1rem;
+	font-weight: 500;
+}
+
 /* false hint */
 .madness-mode:not(.is-mobile) .modal.mod-settings .vertical-tab-content > .setting-item:not(.style-settings-heading):nth-child(2) .setting-item-control::before {
 	display: block;
@@ -9591,23 +9606,79 @@ body.madness-mode:not(.is-mobile) .prompt {
 	font-size: 1rem;
 }
 
-.madness-mode:not(.is-mobile) .modal.mod-settings .plugin-list-plugins .setting-item-heading::after {
-	content: "😵‍💫 Do I need one of these?";
+/* style settings as pane */
+.madness-mode:not(.is-mobile) .workspace-leaf-content[data-type="style-settings"] .style-settings-heading {
+	border-bottom: none;
+}
+
+.madness-mode:not(.is-mobile) .workspace-leaf-content[data-type="style-settings"] .view-content > .setting-item:first-child::before {
+	display: block;
+	content: "🏛🛐🏛 \A\"Enter and calm your mind with some brief meditation.\"";
+
 	font-family: var(--font-interface);
 	font-size: 1rem;
-	font-weight: 500;
+	text-align: center;
+
+	padding: 10px;
+
+	border: var(--basic-border);
+}
+
+.madness-mode:not(.is-mobile) .workspace-leaf-content[data-type="style-settings"] .view-content > .setting-item:first-child {
+	cursor: progress;
+}
+
+/* show only upon hovering */
+.madness-mode:not(.is-mobile) .workspace-leaf-content[data-type="style-settings"] .view-content > .setting-item:not(:hover) + .style-settings-heading[data-id="shimmering-focus"] {
+	opacity: 0;
+	visibility: hidden;
 }
 
 .madness-mode:not(.is-mobile) .workspace-leaf-content[data-type="style-settings"] .style-settings-heading[data-id="shimmering-focus"] {
 	font-size: 0;
+	transition: 4s ease-in;
+	transition-delay: 8s;
 }
 
-.madness-mode:not(.is-mobile) .workspace-leaf-content[data-type="style-settings"] .style-settings-heading[data-id="shimmering-focus"] .setting-item-name {
+.madness-mode:not(.is-mobile) .workspace-leaf-content[data-type="style-settings"] .style-settings-heading[data-id="shimmering-focus"] :is(.setting-item-name, .setting-item-description) {
 	display: none;
 }
 
 .madness-mode:not(.is-mobile) .workspace-leaf-content[data-type="style-settings"] .style-settings-heading[data-id="shimmering-focus"]::before {
-	content: "Don't click me!";
+	content: "You feel at peace. But there is one last challenge to overcome, the hardest of them all. An angry voice demands: ";
+
+	font-family: var(--font-interface);
+	font-size: 1rem;
+	font-weight: 500;
+
+	padding-left: 5px;
+
+	cursor: help;
+}
+
+.madness-mode:not(.is-mobile) .workspace-leaf-content[data-type="style-settings"] .setting-item:first-child {
+	display: block;
+}
+
+.madness-mode:not(.is-mobile) .workspace-leaf-content[data-type="style-settings"] .style-settings-heading[data-id="show-hide-elements"] {
+	font-size: 0;
+	animation-duration: 0.3s;
+	animation-name: shaky;
+	animation-iteration-count: infinite;
+}
+
+.madness-mode:not(.is-mobile) .workspace-leaf-content[data-type="style-settings"] .style-settings-heading[data-id="shimmering-focus"]:not(.is-collapsed),
+.madness-mode:not(.is-mobile) .workspace-leaf-content[data-type="style-settings"] .style-settings-heading[data-id="show-hide-elements"]:not(.is-collapsed),
+.madness-mode:not(.is-mobile) .workspace-leaf-content[data-type="style-settings"] .style-settings-heading[data-id="show-hide-elements"] :is(.setting-item-name, .setting-item-description) {
+	display: none;
+}
+
+.madness-mode:not(.is-mobile) .workspace-leaf-content[data-type="style-settings"] .style-settings-container {
+	margin-top: 4rem;
+}
+
+.madness-mode:not(.is-mobile) .workspace-leaf-content[data-type="style-settings"] .style-settings-heading[data-id="show-hide-elements"]::before {
+	content: "Don't you dare click me!! 👿";
 
 	font-family: var(--mad-font);
 	font-size: 1.4rem;
@@ -9615,16 +9686,7 @@ body.madness-mode:not(.is-mobile) .prompt {
 
 	color: var(--text-error);
 
-	animation-duration: 0.3s;
-	animation-name: sway;
-	animation-iteration-count: infinite;
-}
-
-/* drunken Obsi 🏴‍☠️ Damian */
-@keyframes sway {
-	from { transform: rotate(1.5deg) }
-	50% { transform: rotate(-1.5deg) }
-	to { transform: rotate(1.5deg) }
+	margin-bottom: 5rem;
 }
 
 .madness-mode:not(.is-mobile) .workspace-leaf-content[data-type="style-settings"] .style-settings-heading[data-level="1"] + .style-settings-container .setting-item[data-id="madness-mode"] {
@@ -9639,9 +9701,11 @@ body.madness-mode:not(.is-mobile) .prompt {
 
 .madness-mode:not(.is-mobile) .workspace-leaf-content[data-type="style-settings"] .style-settings-container[data-level="1"]::after {
 	display: block;
-	content: "😮‍💨 A way back to sanity, congratulations! Hope you had fun with Madness Mode!";
+	content: "A way back to sanity, congratulations! 😌\AHope you had fun with Madness Mode!";
 
+	line-height: 2;
 	text-align: center;
+	white-space: pre;
 
 	width: fit-content;
 

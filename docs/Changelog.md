@@ -3,6 +3,7 @@ nav_order: 110
 ---
 
 # Changelog
+- 2022-05-05	added temple of meditation to madness mode
 - 2022-05-05	meaner theme browser (madness mode)
 - 2022-05-05	shaky madness mode
 - 2022-05-05	added fake element picker to madness mode
