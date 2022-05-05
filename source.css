@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 2.77
+Version 2.78
 Source CSS: https://github.com/chrisgrieser/shimmering-focus/blob/main/source.css
 MIT License
 ──────────────────────────────────────────────────── */
@@ -1897,7 +1897,7 @@ body.no-animations {
 }
 
 .no-vim-cursor-blinking .cm-vimCursorLayer {
-    animation: none !important; /* needed */
+	animation: none !important; /* needed */
 }
 
 /* Theme Accent */
@@ -2650,7 +2650,7 @@ body:is(.theme-light, .theme-dark) ::-webkit-scrollbar-thumb:active {
 }
 
 .theme-light .modal .is-loading::before {
-	filter: brightness(1.4);
+	filter: brightness(1.2);
 }
 
 /* ───────────────────────────────────────────────── */
@@ -12118,6 +12118,33 @@ body .qsp-symbol-indicator {
 
 .another-quick-switcher__starred_item .another-quick-switcher__item__title {
 	font-weight: 600;
+}
+
+/* Header Search */
+.another-quick-switcher__item__title__header::marker {
+	content: "• ";
+}
+
+.another-quick-switcher__item__title__header1::marker {
+	content: "";
+}
+
+body .another-quick-switcher__item__title__header_hit__counter,
+body .another-quick-switcher__item__title__header_hit {
+	color: var(--search-match-color);
+}
+
+.suggestion-item:hover :is(.another-quick-switcher__item__title__header_hit, .another-quick-switcher__item__title__header_hit__counter) {
+	color: var(--text-hover-accent);
+}
+
+.suggestion-item.is-selected :is(.another-quick-switcher__item__title__header_hit, .another-quick-switcher__item__title__header_hit__counter) {
+	color: var(--active-color);
+}
+
+.another-quick-switcher__item__title__header_hit__counter {
+	line-height: 1;
+	filter: saturate(0.6);
 }
 
 /* ───────────────────────────────────────────────── */

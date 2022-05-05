@@ -3,6 +3,7 @@ nav_order: 110
 ---
 
 # Changelog
+- 2022-05-05	styled the new heading search for another quick switcher
 - 2022-05-05	bug fixes madness mode
 - 2022-05-05	bug fixes for madness mode
 - 2022-05-05	added account login hints to madness mode
