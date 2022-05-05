@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 2.82
+Version 2.83
 Source CSS: https://github.com/chrisgrieser/shimmering-focus/blob/main/source.css
 MIT License
 ──────────────────────────────────────────────────── */
@@ -13690,33 +13690,30 @@ body .pwc-reference-list .csl-entry.csl-entry.csl-entry {
 	content: var(--error-symbol);
 	margin-right: 5px;
 }
- */
 .unicode-emojis .pwc-tooltip.pwc-tooltip em:only-child::before {
 	font-family: "Noto Emoji";
 }
+ */
 
 /* pandoc citations styling */
-body .markdown-preview-view :is(.pandoc-citation, .pandoc-citation-formatting, .pandoc-citation-extra),
-body .cm-hmd-barelink :is(.cm-pandoc-citation, .cm-pandoc-citation-formatting, .cm-pandoc-citation-extra) {
+body .pandoc-citation.pandoc-citation {
 	text-decoration: none;
 }
 
-body:not(.no-pandoc-citation-emphasis) .markdown-preview-view :is(.pandoc-citation, .pandoc-citation-formatting, .pandoc-citation-extra),
-body:not(.no-pandoc-citation-emphasis) .cm-hmd-barelink :is(.cm-pandoc-citation, .cm-pandoc-citation-formatting, .cm-pandoc-citation-extra) {
+body:not(.no-pandoc-citation-emphasis) .view-content :is(.pandoc-citation, .cm-pandoc-citation) {
 	color: var(--reference-color);
 }
 
-body:not(.no-pandoc-citation-emphasis) .mod-root :is(.cm-pandoc-citation-formatting, .pandoc-citation-formatting, .pandoc-citation-extra, .cm-pandoc-citation-extra) {
+body:not(.no-pandoc-citation-emphasis) .view-content.view-content :is(.cm-pandoc-citation-formatting, .pandoc-citation-formatting, .pandoc-citation-extra, .cm-pandoc-citation-extra) {
 	color: var(--text-muted);
 }
 
 body:not(.no-pandoc-citation-emphasis) .pandoc-citation.is-missing {
-	text-decoration: wavy 1px underline var(--text-error);
+	text-decoration: wavy underline 1px var(--text-error);
 }
 
 /* reading mode styling */
-.markdown-preview-view .pandoc-citation-at,
-.markdown-preview-view .pandoc-citation-formatting {
+.markdown-preview-view :is(.pandoc-citation-at, .pandoc-citation-formatting) {
 	font-size: 0;
 }
 
