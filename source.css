@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 2.81
+Version 2.82
 Source CSS: https://github.com/chrisgrieser/shimmering-focus/blob/main/source.css
 MIT License
 ──────────────────────────────────────────────────── */
@@ -239,7 +239,7 @@ MIT License
 		- Style Settings: Conditional Settings Display
 		- Style Settings: Unlock Thema Beta
 		- Style Settings: Info Boxes
-	- Favicon Plugin
+	- Link Favicon Plugin
 	- File Info Panel (Side bar)
 	- Get Info (Status bar)
 	- Language Tool Integration
@@ -12585,7 +12585,7 @@ body:not(.unlock-theme-beta) .style-settings-container .setting-item:is(
 }
 
 /* ───────────────────────────────────────────────── */
-/* << Favicon Plugin
+/* << Link Favicon Plugin
 ──────────────────────────────────────────────────── */
 /* https://github.com/joethei/obsidian-link-favicon#for-designers */
 
@@ -12612,6 +12612,10 @@ body:not(.normal-blockquotes) .HyperMD-quote.HyperMD-quote-1:not(.cm-active) .li
 
 .grayscale-favicons .link-favicon {
 	filter: grayscale(85%);
+}
+
+.grayscale-favicons .link-favicon[data-is-readable-a-a="false"] {
+	filter: hue-rotate(180deg) invert(1) grayscale(85%);
 }
 
 /* fix look of Github icons */
