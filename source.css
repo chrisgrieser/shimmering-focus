@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 2.66
+Version 2.67
 Source CSS: https://github.com/chrisgrieser/shimmering-focus/blob/main/source.css
 MIT License
 ──────────────────────────────────────────────────── */
@@ -9484,7 +9484,7 @@ body.madness-mode:not(.is-mobile) .side-dock-ribbon-action:last-child {
 }
 
 .madness-mode:not(.is-mobile) .mod-settings .plugin-list-plugins .setting-item.mod-toggle:nth-child(13) > .setting-item-info .setting-item-name::before {
-	content: "Enable ";
+	content: "Do NOT, I repeat, NOT enable the ";
 }
 
 /* command palette */
