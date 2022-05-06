@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 2.94
+Version 2.95
 Source CSS: https://github.com/chrisgrieser/shimmering-focus/blob/main/source.css
 MIT License
 ──────────────────────────────────────────────────── */
@@ -9270,6 +9270,10 @@ body:not(.hardcore-mode) .setting-item[data-id="madness-mode"] {
 	color: var(--text-muted);
 }
 
+.is-mobile .setting-item[data-id="madness-mode"] .setting-item-name::after {
+	content: " (Desktop only)";
+}
+
 .modal .setting-item[data-id="madness-mode"] .checkbox-container:not(.is-enabled) {
 	animation-duration: 0.2s;
 	animation-name: shaky;
@@ -9295,6 +9299,11 @@ body:not(.hardcore-mode) .setting-item[data-id="madness-mode"] {
 
 .setting-item[data-id="madness-mode"] .setting-item-description {
 	white-space: pre-wrap;
+}
+
+/* disable on mobile, since too hard */
+.is-mobile .setting-item:is([data-id="madness-mode"], [data-id="hardcore-mode"]) .checkbox-container {
+	display: none;
 }
 
 /* ───────────────────────────────────────────────── */
