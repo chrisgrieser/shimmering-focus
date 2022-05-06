@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 2.93
+Version 2.94
 Source CSS: https://github.com/chrisgrieser/shimmering-focus/blob/main/source.css
 MIT License
 ──────────────────────────────────────────────────── */
@@ -13702,7 +13702,7 @@ body .pwc-reference-list .csl-entry.csl-entry.csl-entry {
 	font-family: "Noto Emoji";
 }
 
-/* pandoc citations styling */
+/* pandoc citations in-text */
 body .pandoc-citation.pandoc-citation {
 	text-decoration: none;
 }
@@ -13715,8 +13715,9 @@ body:not(.no-pandoc-citation-emphasis) .view-content.view-content :is(.cm-pandoc
 	color: var(--text-muted);
 }
 
-body:not(.no-pandoc-citation-emphasis) .pandoc-citation.is-missing {
+body:not(.no-pandoc-citation-emphasis) .pandoc-citation.is-missing.is-missing {
 	text-decoration: wavy underline 1px var(--text-error);
+	color: var(--text-error);
 }
 
 /* reading mode styling */

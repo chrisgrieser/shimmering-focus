@@ -3,6 +3,7 @@ nav_order: 110
 ---
 
 # Changelog
+- 2022-05-06	patch
 - 2022-05-06	add info on pandoc reference list plugin style settings being overriden
 - 2022-05-06	improved code blocks in callouts
 - 2022-05-06	madness mode hint rephrasing
