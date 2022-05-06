@@ -32,6 +32,7 @@ In accordance with the minimalistic philosophy of the theme, unnecessary UI elem
 - __Starred (Core Plugin)__: To be able to star searches, re-enable the Starred pane buttons with the [Style Settings Plugin](https://obsidian.md/plugins?id=obsidian-style-settings)
 - __Hover Editor__: Some style settings for the Hover Editor have no effect, since Shimmering Focus overrides them for consistency reasons.
 - __Banners__: The empty space on top of the banner is the hot zone that actives the header bar on hovering. To remove the space, you will have to permanently show the header bar via the respective Style Setting.
+- __Pandoc Reference__: The style settings of the Pandoc Reference List are all overridden, since *Shimmering Focus* applies its own styling for Pandoc citations.
 
 ## Built-in Styling for Supercharged Links
 This theme includes built-in styling for the [Supercharged Links Plugin](https://github.com/mdelobelle/obsidian_supercharged_links). This means you can make use of the plugin's features without the need write your own CSS! (If you already have your own Supercharged Links setup, you can turn those of with the Style Settings Plugin.) For now the theme includes the following styling:

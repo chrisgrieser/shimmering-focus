@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 2.92
+Version 2.93
 Source CSS: https://github.com/chrisgrieser/shimmering-focus/blob/main/source.css
 MIT License
 ──────────────────────────────────────────────────── */
@@ -13586,8 +13586,8 @@ body:not(.no-alternating-rows) .omnisearch-result:nth-child(odd) .omnisearch-res
 /* ───────────────────────────────────────────────── */
 /* << Discord Rich Presence
 ──────────────────────────────────────────────────── */
-.status-bar-item.plugin-obsidian-discordrpc {
-	/* using noto emojis ensures emojis are unicode and therefore properly colored */
+.status-bar-item.plugin-obsidian-discordrpc::first-letter {
+	/* using noto emojis to make the globe properly colored */
 	font-family: "Noto Emoji", var(--font-interface);
 }
 
@@ -13740,6 +13740,12 @@ body:not(.no-pandoc-citation-emphasis) .pandoc-citation.is-missing {
 
 /* optional turning of of citations in Reading Mode */
 .no-citations-in-reading-view .markdown-preview-view :is(.pandoc-citation, .pandoc-citation-extra, .pandoc-citation-formatting) {
+	display: none;
+}
+
+/* Style Settings disabled, sicne overriden by the theme anyway... */
+.style-settings-heading[data-id="pandoc-reference-list"] + .style-settings-container,
+.style-settings-heading[data-id="pandoc-reference-list"] {
 	display: none;
 }
 
