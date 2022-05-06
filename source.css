@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 2.89
+Version 2.90
 Source CSS: https://github.com/chrisgrieser/shimmering-focus/blob/main/source.css
 MIT License
 ──────────────────────────────────────────────────── */
@@ -3975,7 +3975,7 @@ input:is([type="email"], [type="password"]) {
 }
 
 .installed-plugins-container .setting-item-description > div:nth-child(2) {
-	margin: -1.35em 3em 1px 6em; /* right marging needed to prevent the div laying over the buttons */
+	margin: -1.35em 3em 1px 7em; /* right marging needed to prevent the div laying over the buttons */
 }
 
 .installed-plugins-container .setting-item-description > div:nth-child(-n+2) {
@@ -6434,13 +6434,8 @@ body:not(.normal-blockquotes) .callout-content :is(ul, p) {
 }
 
 /* interaction with other markup */
-.callout.callout.callout pre {
-	background-color: var(--alt-bg);
-	border: var(--basic-border);
-}
-
-.callout.callout.callout code {
-	background-color: var(--bg3);
+.callout.callout.callout :is(code, pre) {
+	background-color: var(--bg1);
 }
 
 .callout .task-list-item-checkbox {

@@ -3,6 +3,7 @@ nav_order: 110
 ---
 
 # Changelog
+- 2022-05-06	improved code blocks in callouts
 - 2022-05-06	madness mode hint rephrasing
 - 2022-05-05	minor tweaks to vim indicator and vim panel shadows
 - 2022-05-05	relative line numbering shows 10 instead of 7 lines
