@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 2.90
+Version 2.91
 Source CSS: https://github.com/chrisgrieser/shimmering-focus/blob/main/source.css
 MIT License
 ──────────────────────────────────────────────────── */
@@ -12622,11 +12622,11 @@ body:not(.normal-blockquotes) .HyperMD-quote.HyperMD-quote-1:not(.cm-active) .li
 }
 
 .grayscale-favicons .link-favicon {
-	filter: grayscale(85%);
+	filter: grayscale(1);
 }
 
 .grayscale-favicons .link-favicon[data-is-readable-a-a="false"] {
-	filter: hue-rotate(180deg) invert(1) grayscale(85%);
+	filter: hue-rotate(180deg) invert(1) grayscale(1);
 }
 
 /* fix look of Github icons */
