@@ -3,6 +3,7 @@ nav_order: 110
 ---
 
 # Changelog
+- 2022-05-07	patch
 - 2022-05-07	overlaying sidebar option + style setting re-organization
 - 2022-05-06	change promo screenshot quote attribution
 - 2022-05-06	ensure Madness mode cannot be enabled on mobile (would be too hard)
