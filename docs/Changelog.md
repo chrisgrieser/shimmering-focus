@@ -3,6 +3,7 @@ nav_order: 110
 ---
 
 # Changelog
+- 2022-05-07	no setting descriptiosn in hardcore mode
 - 2022-05-07	fix unknown hotkeys look in Hardcore Mode
 - 2022-05-07	overlaying sidebar option + style setting re-organization
 - 2022-05-06	change promo screenshot quote attribution

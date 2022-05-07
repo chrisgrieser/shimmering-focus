@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 2.101
+Version 2.102
 Source CSS: https://github.com/chrisgrieser/shimmering-focus/blob/main/source.css
 MIT License
 ──────────────────────────────────────────────────── */
@@ -13278,6 +13278,7 @@ body.hardcore-mode:not(.is-mobile) {
 }
 
 /* cryptic command palette */
+.hardcore-mode:not(.is-mobile):not(.madness-mode) .setting-item-description,
 .hardcore-mode:not(.is-mobile):not(.madness-mode) .prompt-results .suggestion-prefix,
 .hardcore-mode:not(.is-mobile) .prompt-input {
 	font-family: "Flow Circular";
