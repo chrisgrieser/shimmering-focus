@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 2.103
+Version 2.104
 Source CSS: https://github.com/chrisgrieser/shimmering-focus/blob/main/source.css
 MIT License
 ──────────────────────────────────────────────────── */
@@ -1123,14 +1123,14 @@ settings:
    default: default-line-numbering
    options:
    -
-    label: Default
+    label: Absolute
     value: default-line-numbering
-   -
-    label: Minimal
-    value: minimal-line-numbering
    -
     label: Relative
     value: relative-line-numbering
+   -
+    label: Minimal
+    value: minimal-line-numbering
   -
    id: footnote-gutter
    title: "Footnote Indicator"
