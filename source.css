@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 2.107
+Version 2.108
 Source CSS: https://github.com/chrisgrieser/shimmering-focus/blob/main/source.css
 MIT License
 ──────────────────────────────────────────────────── */
@@ -162,8 +162,9 @@ MIT License
 	- Trailing Whitespace (Two Space Rule)
 	- Tasks & Checkboxes
 	- Highlights & Multi-Color Highlighting
-	- Pseudo-Spoiler-Tag
 	- Strikethroughs
+		- Pseudo-Spoiler-Tag
+		- Margin Notes
 	- Pandoc Citations
 	- Block IDs
 	- Footnotes
@@ -286,7 +287,7 @@ MIT License
  		- Callouts (+)
  		- Images & PDFs (+)
  	- Cursor & Vim Mode (+)
- 	- Special Syntax (+)
+ 	- Special Markup (+)
  	- Gutter & Active Line (+)
  	- Mobile (+)
  	- Plugin-Specific Settings (+)
@@ -7854,7 +7855,16 @@ body:not(.no-multi-color-highlights) :is(strong > mark, .cm-strong.cm-highlight)
 }
 
 /* ───────────────────────────────────────────────── */
-/* << Pseudo-Spoiler-Tag
+/* << Strikethroughs
+──────────────────────────────────────────────────── */
+
+/* make the "~" readable */
+.cm-formatting-strikethrough {
+	text-decoration: none;
+}
+
+/* ───────────────────────────────────────────────── */
+/* <<< Pseudo-Spoiler-Tag
 ──────────────────────────────────────────────────── */
 
 .theme-light { /* stylelint-disable-line no-duplicate-selectors */
@@ -7879,12 +7889,46 @@ body:not(.no-pseudo-spoiler-tags) :is(em > del:hover, .cm-active .cm-em.cm-strik
 }
 
 /* ───────────────────────────────────────────────── */
-/* << Strikethroughs
+/* <<< Margin Notes
 ──────────────────────────────────────────────────── */
 
-/* make the "~" readable */
-.cm-formatting-strikethrough {
+.strikethrough-margin-notes .cm-line:not(.cm-active) .cm-formatting-strikethrough {
+	font-size: 0;
+	color: transparent;
+	background-color: transparent;
+	margin-left: -0.2rem;
+}
+
+.strikethrough-margin-notes .cm-strikethrough {
 	text-decoration: none;
+	background-color: var(--alt-bg);
+}
+
+.strikethrough-margin-notes del,
+.strikethrough-margin-notes .cm-line:not(.cm-active) .cm-strikethrough:not(.cm-formatting-strikethrough) {
+	display: block;
+
+	font-size: 90%;
+
+	min-width: 5rem;
+
+	box-shadow: var(--small-inset-shadow);
+
+	position: absolute;
+
+	padding: 0 3px;
+	margin-top: -1.2rem;
+
+	border-right: 5px solid var(--bg1);
+}
+
+.strikethrough-margin-notes .cm-line:not(.cm-active) .cm-strikethrough:not(.cm-formatting-strikethrough) {
+	left: 101%;
+}
+
+.strikethrough-margin-notes del {
+	text-decoration: none;
+	left: 90%;
 }
 
 /* ───────────────────────────────────────────────── */
@@ -11911,6 +11955,7 @@ body:not(.unlock-theme-beta) .style-settings-container .setting-item:is(
 	[data-id="post-it-callout-size"],
 	[data-id="unicode-emojis"],
 	[data-id="aside-width"],
+	[data-id="strikethrough-margin-notes"],
 	[data-id="hardcore-mode"],
 	[data-id="madness-mode"]
 ) {
@@ -11927,6 +11972,7 @@ body:not(.unlock-theme-beta) .style-settings-container .setting-item:is(
 .unlock-theme-beta .style-settings-container .setting-item:is(
 	[data-id="post-it-callout-size"],
 	[data-id="aside-width"],
+	[data-id="strikethrough-margin-notes"],
 	[data-id="unicode-emojis"],
 	[data-id="hardcore-mode"],
 	[data-id="madness-mode"],
@@ -12005,7 +12051,7 @@ body:not(.unlock-theme-beta) .style-settings-container .setting-item:is(
 	font-weight: 500;
 	line-height: 2em;
 	letter-spacing: 0; /* do not propagate letter spacing applied to setting headings */
-	white-space: pre-wrap;
+	white-space: pre;
 
 	background-color: var(--bg2);
 	box-shadow: var(--small-inset-shadow);
@@ -12022,7 +12068,7 @@ body:not(.unlock-theme-beta) .style-settings-container .setting-item:is(
 
 .modal .setting-item-heading[data-id="shimmering-focus"]::before {
 	/* margin to the right needed so the Shimmering Focus heading is properly aligned when zoomed out */
-	margin: -4.1em 10em 2em 0;
+	margin: -4.1em 100% 2em 0;
 }
 
 /* ───────────────────────────────────────────────── */
@@ -14896,10 +14942,10 @@ settings:
    type: class-toggle
    default: false
   -
-# << Special Syntax (+)
+# << Special Markup (+)
    id: special-syntax
-   title: 🌀 Special Syntax
-   description: 'Highlight Colors, Multi-Color Highlights, Spoiler Syntax, Annotation Tags, Trailing Whites Space, Citation Syntax, Pandoc Citations, Dataview Inline Fields, Loose Lists'
+   title: 🌀 Special Markup
+   description: 'Highlight Colors, Multi-Color Highlights, Spoiler Syntax, Margin Notes, Annotation Tags, Trailing Whites Space, Citation Syntax, Pandoc Citations, Dataview Inline Fields, Loose Lists'
    type: heading
    level: 1
    collapsed: true
@@ -14931,6 +14977,12 @@ settings:
    id: no-multi-color-highlights
    title: Disable Multi-Color Highlights
    description: Multi-Color Highlights are created by combining regular highlights with italic (*==highlight==*) or bold (**==highlight==**).
+   type: class-toggle
+   default: false
+  -
+   id: strikethrough-margin-notes
+   title: Turn Strikekthroughs into Margin Notes
+   description: 'Turns Strikethrough Syntax (~~text~~) into margin notes. They become editable when in the active line. Works in Reading Mode, Live Preview, and Source Mode.'
    type: class-toggle
    default: false
   -
