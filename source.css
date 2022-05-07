@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 2.102
+Version 2.103
 Source CSS: https://github.com/chrisgrieser/shimmering-focus/blob/main/source.css
 MIT License
 ──────────────────────────────────────────────────── */
@@ -13278,10 +13278,10 @@ body.hardcore-mode:not(.is-mobile) {
 }
 
 /* cryptic command palette */
-.hardcore-mode:not(.is-mobile):not(.madness-mode) .setting-item-description,
+.hardcore-mode:not(.is-mobile):not(.madness-mode) :not([data-id="hardcore-mode"], [data-id="madness-mode"]) > * > .setting-item-description,
 .hardcore-mode:not(.is-mobile):not(.madness-mode) .prompt-results .suggestion-prefix,
 .hardcore-mode:not(.is-mobile) .prompt-input {
-	font-family: "Flow Circular";
+	font-family: "Flow Circular", "Noto Emoji";
 }
 
 /* ───────────────────────────────────────────────── */
@@ -13906,7 +13906,7 @@ settings:
    id: no-floating-metadata
    title: Permanently show the Metadata Block / YAML Frontmatter (Reading Mode)
    type: class-toggle
-   description: 'By default, the metadata block in this theme only becomes visible upon hovering the "M" / "Y" in the top right. You can also add the cssclass "no-floating-metadata" to a note to permanently show the meta on that specific note.'
+   description: 'By default, the metadata block in this theme only becomes visible upon hovering the "M" / "Y" in the top right. You can also add the cssclass "no-floating-metadata" to a note to permanently show the metadata on that specific note.'
    default: false
   -
    id: show-sidebar-tabs
@@ -13989,7 +13989,7 @@ settings:
   -
    id: hardcore-mode
    title: '⚠️ Hardcore Mode'
-   description: 'Experienced Obsidian users only! Try the ultimate challenge and permanently hide EVERY element that is not absolutely essential: On top of all things listed above, hardcore mode will remove the settings button, both side bars, hotkey labels, and much more. Test your knowledge of Obsidian and prove that you are a real power user by getting things done in this special, just-for-fun mode.'
+   description: 'Experienced Obsidian users only! Try the ultimate challenge and permanently hide everything element that is not absolutely essential: On top of all things listed above being permanently hidden, hardcore mode will remove the settings button, disable both side bars and the gutter, and censor all sorts of labels and descriptions. Test your knowledge of Obsidian and prove that you are a real power user by getting things done even under these challenging conditions!'
    type: class-toggle
    default: false
   -
@@ -14000,7 +14000,7 @@ settings:
 
      Rules:
      1. No hotkeys. Typing text into text fields is allowed though.
-     2. The deletion/modification of files in '.obsidian' is forbidden. There is no need to leave Obsidian to beat the game.
+     2. No deletion/modification of files in '.obsidian'. You don't need to leave Obsidian to beat the game.
      3. If you talk about Madness Mode on Discord, please use spoiler tags and don't share screenshots that contain a solution step.
 
      Be aware that during Madness Mode, you won't be able to properly use your vault. If you are stuck, you can turn off Madness Mode by deleting the file '{vaultRoot}/.obsidian/plugins/obsidian-style-settings/data.json' and restarting Obsidian. As this will effectively reset your Style Settings, you should consider making a backup before starting the game ('Export' button at the top right).
