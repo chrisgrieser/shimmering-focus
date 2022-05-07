@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 2.100
+Version 2.101
 Source CSS: https://github.com/chrisgrieser/shimmering-focus/blob/main/source.css
 MIT License
 ──────────────────────────────────────────────────── */
@@ -13195,6 +13195,7 @@ body:not(.no-pandoc-citation-emphasis) .pandoc-citation.is-missing.is-missing {
 	.empty-state-close-button,
 	.setting-delete-hotkey,
 	.modal-close-button,
+	.setting-editor-extra-setting-button,
 	.setting-restore-hotkey-button
 ) { display: none }
 
@@ -13239,8 +13240,12 @@ body.hardcore-mode:not(.is-mobile) {
 .hardcore-mode:not(.is-mobile) :is(.suggestion-hotkey, .setting-hotkey) {
 	font-size: 0;
 	line-height: 1;
-	text-align: center;
+
 	height: calc(var(--font-text-size) * 1.4);
+	width: 2rem;
+
+	padding-left: 7px;
+
 	cursor: help;
 }
 
@@ -13250,7 +13255,16 @@ body.hardcore-mode:not(.is-mobile) {
 	color: var(--secondary-accent-text);
 }
 
-/* unknown hotkeys */
+.hardcore-mode:not(.is-mobile) .setting-hotkey.mod-empty {
+	width: 2rem;
+}
+
+.hardcore-mode:not(.is-mobile) .setting-hotkey.mod-empty::before {
+	position: relative;
+	top: -9px;
+}
+
+/* unknown buttons */
 .hardcore-mode:not(.is-mobile) .modal.modal.modal button {
 	font-size: 0;
 	cursor: help;
@@ -13981,14 +13995,14 @@ settings:
    id: madness-mode
    title: '😈 Madness Mode'
    description: |
-     After enabling Madness Mode, are you able to disable it again? Endure evil buttons, cryptic settings, hacked cursors, and hostile interfaces – all on top of the limitations of hardcore mode! You will need a solid understanding of Obsidian mechanics to regain your sanity in this devilish small puzzle game!
+     After enabling Madness Mode, are you able to disable it again? Endure evil buttons, cryptic settings, hacked cursors, and hostile interfaces – all on top of the limitations of Hardcore Mode! You will need a solid understanding of Obsidian mechanics to regain your sanity in this devilish small puzzle game!
 
      Rules:
      1. No hotkeys. Typing text into text fields is allowed though.
      2. The deletion/modification of files in '.obsidian' is forbidden. There is no need to leave Obsidian to beat the game.
      3. If you talk about Madness Mode on Discord, please use spoiler tags and don't share screenshots that contain a solution step.
 
-     Be aware that during Madness Mode, you won't be able to properly use your vault. If you are stuck, you can turn off Madness Mode by deleting the file '{vaultRoot}/.obsidian/plugins/obsidian-style-settings/data.json' and restarting Obsidian. As this will effectively reset your Style Settings, it's also recommended to export the style settings before the game (button at the top right).
+     Be aware that during Madness Mode, you won't be able to properly use your vault. If you are stuck, you can turn off Madness Mode by deleting the file '{vaultRoot}/.obsidian/plugins/obsidian-style-settings/data.json' and restarting Obsidian. As this will effectively reset your Style Settings, you should consider making a backup before starting the game ('Export' button at the top right).
 
      Ready to face a theme gone mad? Then enable Madness Mode and see if you can recover your sanity!
    type: class-toggle
