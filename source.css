@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 2.111
+Version 2.112
 Source CSS: https://github.com/chrisgrieser/shimmering-focus/blob/main/source.css
 MIT License
 ──────────────────────────────────────────────────── */
@@ -134,7 +134,7 @@ MIT License
 - Markup
 	- Headings
 		- LP Heading Level Indicator
-		- Heading backgrounds
+		- Heading Backgrounds
 		- Headings interacting with other markup
 	- Blockquotes
 	- Citation Syntax
@@ -6068,15 +6068,15 @@ p {
 
 .markdown-source-view.is-live-preview .cm-header,
 .markdown-preview-view :is(h1, h2, h3, h4, h5, h6) {
-	line-height: 1.15em;
+	line-height: 1.15;
 }
 
 .markdown-source-view:not(.is-live-preview) .cm-header {
-	line-height: 1.2em;
+	line-height: 1.2;
 }
 
 .markdown-source-view .HyperMD-header {
-	line-height: 1.05em;
+	line-height: 1.0;
 }
 
 .is-live-preview .HyperMD-header + .cm-line {
@@ -6125,7 +6125,7 @@ body:not(.no-heading-level-in-lp) .is-live-preview .cm-line:not(.cm-active) > .c
 }
 
 /* ───────────────────────────────────────────────── */
-/* <<< Heading backgrounds
+/* <<< Heading Backgrounds
 ──────────────────────────────────────────────────── */
 
 body:not(.no-heading-bg) .mod-root :is(h1, h2, h3, h4, h5, h6),
@@ -6150,7 +6150,7 @@ body:not(.no-heading-bg) .cm-formatting-header {
 	border-color: var(--hr-line-gray);
 }
 
-/* Reading Mode */
+/* Reading Mode Adjustments */
 body:not(.no-heading-bg) .mod-root .view-content > div:not(.kanban-plugin) :is(h1, h2, h3, h4, h5, h6) {
 	padding-top: 2px;
 	padding-bottom: 2px;
