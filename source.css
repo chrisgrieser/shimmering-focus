@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 2.96
+Version 2.97
 Source CSS: https://github.com/chrisgrieser/shimmering-focus/blob/main/source.css
 MIT License
 ──────────────────────────────────────────────────── */
@@ -78,6 +78,7 @@ MIT License
 	- Command Palette
 	- Editor Suggestions
 - Sidebar
+	- Special Sidebar Settings
 	- Files in the Sidebar
 	- Tab Headers
 	- Navigation buttons
@@ -271,20 +272,23 @@ MIT License
  	- Show / Hide UI Elements (+)
  	- Aesthetics & Custom Colors (+)
  	- Typography (+)
- 	- Font Settings (+)
- 	- Headings (+)
- 	- Blockquotes (+)
- 	- Gutter & Active Line (+)
- 	- Views & Media (+)
- 	- File Explorer & Sidebar (+)
- 	- Status Bar (+)
- 	- Special Syntax (+)
+ 		- Font Settings (+)
+ 		- Headings (+)
+ 		- Blockquotes (+)
+ 	- User Interface (+)
+ 		- Sidebars (+)
+ 		- File Explorer (+)
+ 		- Status Bar (+)
+ 	- Editor Content (+)
+ 		- Code Blocks (+)
+ 		- Callouts (+)
+ 		- Images & PDFs (+)
  	- Cursor & Vim Mode (+)
- 	- Code Blocks (+)
- 	- Callouts (+)
+ 	- Special Syntax (+)
+ 	- Gutter & Active Line (+)
  	- Mobile (+)
  	- Plugin-Specific Settings (+)
- 	- Longform (+)
+ 	- Longform & Writing (+)
  	- Miscellaneous (+)
 /* @TOC-SPLIT-MARKER */
 
@@ -3397,6 +3401,28 @@ body:not(.no-alternating-rows) .suggestion-item:nth-child(odd) .suggestion-prefi
 }
 
 /* ───────────────────────────────────────────────── */
+/* << Special Sidebar Settings
+──────────────────────────────────────────────────── */
+
+/* Focus View: When the left sidebar is hidden, hide the right one as well */
+body.focus-view-enabled .mod-left-split.is-collapsed ~ .mod-right-split {
+	display: none;
+}
+
+/* Overlaying Sidebars */
+.overlaying-right-sidebar .mod-right-split {
+	position: absolute;
+	right: 0;
+}
+/*
+.mod-left-split {
+	position: fixed;
+	left: 30px;
+	z-index: 1;
+}
+*/
+
+/* ───────────────────────────────────────────────── */
 /* << Files in the Sidebar
 ──────────────────────────────────────────────────── */
 /* apply to any plugin using file lists,
@@ -5982,11 +6008,6 @@ body.max-view-enabled .mod-left-split.is-collapsed ~ .mod-root svg[id^="m"][widt
 svg[id^="m"][width][height][viewBox] {
 	height: auto;
 	min-width: 20%;
-}
-
-/* Focus View: When the left sidebar is hidden, hide the right one as well */
-body.focus-view-enabled .mod-left-split.is-collapsed ~ .mod-right-split {
-	display: none;
 }
 
 /* ───────────────────────────────────────────────── */
@@ -13847,8 +13868,8 @@ community:
 /* @settings
 name: Shimmering Focus
 id: shimmering-focus
-# << Show / Hide UI Elements (+)
 settings:
+# << Show / Hide UI Elements (+)
   -
    id: show-hide-elements
    title: 👀 Show/Hide UI Elements
@@ -14246,7 +14267,6 @@ settings:
    format: '%'
   -
 # << Typography (+)
-# << Font Settings (+)
    id: font-settings
    title: 🔠 Typography
    description: "Fonts, Headings, Blockquotes"
@@ -14254,6 +14274,7 @@ settings:
    level: 1
    collapsed: true
   -
+# <<< Font Settings (+)
    id: font-family-font-size
    title: 🔤 Fonts
    description: Font Families & Font Sizes
@@ -14288,16 +14309,6 @@ settings:
    type: variable-text
    default: '"Recursive S"'
   -
-   id: sidebar-font-size
-   title: Side Bar Font Size
-   description: Affects the left side bar and right side bar.
-   type: variable-number-slider
-   default: 0.85
-   min: 0.6
-   max: 1.6
-   step: 0.05
-   format: rem
-  -
    id: menu-font-size
    title: Menu Font Size
    description: Affects the settings menu, plugin browser and theme browser.
@@ -14308,7 +14319,7 @@ settings:
    step: 0.05
    format: rem
   -
-# << Headings (+)
+# <<< Headings (+)
    id: heading-font-options
    title: 🔼 Headings
    description: Font Size per Heading Level, Background, Level Indicator, Letter Spacing
@@ -14399,7 +14410,7 @@ settings:
    step: 0.05
    format: em
   -
-# << Blockquotes (+)
+# <<< Blockquotes (+)
    id: blockquote-font-options
    title: ⏹ Blockquotes
    description: Relative Font Size, Alignment, Decoration
@@ -14425,100 +14436,21 @@ settings:
    type: class-toggle
    default: false
   -
-# << Gutter & Active Line (+)
-   id: gutter-features
-   title: 💈 Gutter & Active Line
-   description: Active Line Highlights, Indicators in the Gutter, 🆕 Relative/Minimal Line Numbering, Tags-in-Gutter
+# << User Interface (+)
+   id: ui-settings
+   title: 👤 User Interface
+   description: "Sidebars, File Explorer, Status Bar"
    type: heading
    level: 1
    collapsed: true
   -
-   id: active-line-highlight-options
-   title: Active Line
-   description: "Options for emphasizing the active line. ('Emphasized Background' is automatically turned off when the Active Visual Line Plugin is installed.)"
-   type: class-select
-   allowEmpty: false
-   default: active-line-gutter
-   options:
-   -
-    label: Vertical Line in Gutter
-    value: active-line-gutter
-   -
-    label: Emphasized Background
-    value: active-line-emphasized-bg
-   -
-    label: No Active Line Highlight
-    value: no-active-highlight
-  -
-   id: line-number-options
-   title: 🆕 Line Numbering Style
-   description: "'Relative' shows only the active line and the nine following lines (useful for Vim Mode). 'Minimal' shows line numbers only for the active and hovered line. Note that both have no effect when Obsidian's 'Show line number' setting is disabled."
-   type: class-select
-   allowEmpty: false
-   default: default-line-numbering
-   options:
-   -
-    label: Default
-    value: default-line-numbering
-   -
-    label: Minimal
-    value: minimal-line-numbering
-   -
-    label: Relative
-    value: relative-line-numbering
-  -
-   id: footnote-gutter
-   title: "Footnote Indicator"
-   description: Displays a small indicator (⦿) in the gutter when a footnote is present. (Note that numbered indicators can not properly count footnotes on the same line.)
-   type: class-select
-   allowEmpty: false
-   default: simple-fn-indicator
-   options:
-   -
-    label: Default Footnote Indicator
-    value: simple-fn-indicator
-   -
-    label: Numbered Footnote Indicator
-    value: numbered-fn-indicator
-   -
-    label: No Footnote Indicator
-    value: no-fn-indicator
-  -
-   id: no-unresolved-link-indicator
-   title: Disable Unresolved Link Indicators
-   description: The indicators (𝘅) are only shown in Reading Mode and Live Preview.
-   type: class-toggle
-   default: false
-  -
-   id: tags-in-gutter
-   title: Show Tags in Gutter (Reading Mode)
-   description: 'Note that this will look off, if your gutter is too narrow (through a narrow window or high zoom in level). Can also be selectively enabled per note by adding the cssclass "tags-in-gutter".'
-   type: class-toggle
-   default: false
-  -
-   id: no-search-result-indicator
-   title: Disable Search Result Indicators
-   description: The indicators (▶) are only shown in Source Mode and Live Preview.
-   type: class-toggle
-   default: false
-  -
-# << Views & Media (+)
-   id: content-settings
-   title: 🖼 Views & Media
-   description: Line Length, Max View, Focus View, Images, 🆕 Image Zoom Methods, PDFs
+# <<< Sidebars (+)
+   id: sidebar-options
+   title: ↔️ Sidebar
+   description: Max View, Focus View, File Name Trimming, 🆕 Overlaying Sidebar
    type: heading
-   level: 1
+   level: 2
    collapsed: true
-  -
-   id: readable-length
-   title: Line Length
-   description: 'When "Readable Line length" is enabled and "Max View" is not active.'
-   type: variable-number-slider
-   default: 700
-   min: 300
-   max: 1300
-   step: 50
-   format: px
   -
    id: max-view-enabled
    title: 'Enable "Max View"'
@@ -14531,6 +14463,226 @@ settings:
    description: 'Hiding the left side bar will also hide the right one. Note that with this feature, the right side bar stays hidden until the left one is shown again. Can be combined with "Max View".'
    type: class-toggle
    default: false
+  -
+   id: overlaying-right-sidebar
+   title: '🆕 Overlaying Right Sidebar'
+   description: 'The right sidebar is placed on top of the editor instead of making the editor more narrow (i.e. the behavior on mobile).'
+   type: class-toggle
+   default: false
+  -
+   id: sidebar-font-size
+   title: Side Bar Font Size
+   type: variable-number-slider
+   default: 0.85
+   min: 0.6
+   max: 1.6
+   step: 0.05
+   format: rem
+  -
+   id: trim-long-filenames
+   title: 'Sidebar: Trim File Names'
+   description: When enabled, long file and folder names will be trimmed. When disabled, long names will be wrapped to the next line. This setting affects sidebar tabs in general.
+   type: class-toggle
+   default: false
+  -
+# <<< File Explorer (+)
+   id: file-explorer-options
+   title: 📂 File Explorer
+   description: Icons, Attachment Folders, Buttons
+   type: heading
+   level: 2
+   collapsed: true
+  -
+   id: hide-attachment-folders
+   title: 'File Explorer: Hide attachments folders'
+   description: 'Affects folders exactly named "attachments" (case-insensitive).'
+   type: class-toggle
+   default: false
+  -
+   id: show-vault-in-file-explorer
+   title: 'File Explorer: Show Vault Name'
+   type: class-toggle
+   description: Enable this, if you want to drag and drop items to your vault root.
+   default: false
+  -
+   id: show-file-explorer-navigation
+   title: 'File Explorer: Re-enable Navigation Buttons'
+   type: class-toggle
+   description: 'The navigation buttons are the buttons for new file, new folder, and sorting. You can do the former two without the buttons via the context menu.'
+   default: false
+  -
+   id: no-file-explorer-icons
+   title: 'File Explorer: No File Icons'
+   description: Remove the icons next to files in the file explorer. Enable this if you use a plugin that already adds icons.
+   type: class-toggle
+   default: false
+  -
+   id: no-folder-icons
+   title: 'File Explorer: No Folder Icons'
+   description: Remove the icons next to folders in the file explorer. Enable this if you use a plugin that already adds icons.
+   type: class-toggle
+   default: false
+  -
+# <<< Status Bar (+)
+   id: status-bar-options
+   title: 🚥 Status Bar
+   description: Type of Status Bar, Hiding Items, Font Size
+   type: heading
+   level: 2
+   collapsed: true
+  -
+   id: status-bar-mode
+   title: Status Bar
+   type: class-select
+   allowEmpty: false
+   default: only-on-hover
+   options:
+    -
+      label: only show on hover
+      value: only-on-hover-statusbar
+    -
+      label: show permanently
+      value: permanently-show-statusbar
+    -
+      label: permanent & text-only
+      value: minimal-status-bar
+    -
+      label: hide permanently
+      value: permanently-hide-statusbar
+    -
+      label: classic statusbar
+      value: classic-statusbar
+  -
+   id: status-bar-font-size
+   title: Status Bar Font Size
+   type: variable-number-slider
+   default: 0.85
+   min: 0.5
+   max: 1.5
+   step: 0.05
+   format: rem
+  -
+   id: hide-languagetool-status-bar
+   title: 'Hide Language Tools'
+   type: class-toggle
+   default: false
+  -
+   id: hide-backlinks-status-bar
+   title: 'Hide Backlinks'
+   type: class-toggle
+   default: false
+  -
+   id: hide-signature
+   title: 'Hide the decorative "✧"'
+   hub: ignore
+   type: class-toggle
+   default: false
+  -
+# << Editor Content (+)
+   id: editor-content-settings
+   title: 📺 Editor Content
+   description: "Code Blocks, Callouts, Images, PDFs"
+   type: heading
+   level: 1
+   collapsed: true
+  -
+# <<< Code Blocks (+)
+   id: code-blocks-options
+   title: '🖥 Code Blocks'
+   description: '🆕 Line Numbering, Tab Size, Line Wrapping, Syntax Highlighting'
+   type: heading
+   level: 2
+   collapsed: true
+  -
+   id: code-block-tab-size
+   title: Tab Size (Preview & Source Mode)
+   description: This setting is independent from the global Obsidian setting for Tab Size.
+   type: variable-number-slider
+   default: 4
+   min: 2
+   max: 8
+   step: 1
+  -
+   id: no-code-block-wrapping
+   title: Disable Line Wrapping in Code Blocks (Reading Mode)
+   description: This setting is independent from the global Obsidian setting for Line Wrapping.
+   type: class-toggle
+   default: false
+  -
+   id: no-codeblock-line-numbers
+   title: Disable Line Numbering in Code Blocks (Edit Mode)
+   description: 'By default, this theme adds line numbers in code blocks in Source Mode and Live Preview. Enable this, to turn off the line numbers.'
+   type: class-toggle
+   default: false
+  -
+   id: code-block-syntax-hl-light-mode
+   title: "Syntax Highlighting (Light Mode)"
+   description: Affects Code Blocks and MathJax
+   type: class-select
+   allowEmpty: false
+   default: default-syntax-highl-light
+   options:
+    -
+      label: Default
+      value: default-syntax-highl-light
+    -
+      label: Dracula
+      value: dracula-syntax-hl-light
+  -
+   id: code-block-syntax-hl-dark-mode
+   title: "Syntax Highlighting (Dark Mode)"
+   description: Affects Code Blocks, YAML Frontmatter in Reading Mode, and MathJax
+   type: class-select
+   allowEmpty: false
+   default: default-syntax-highl-dark
+   options:
+    -
+      label: Default
+      value: default-syntax-highl-dark
+    -
+      label: Dracula
+      value: dracula-syntax-hl-dark
+  -
+# <<< Callouts (+)
+   id: callout-options
+   title: 📞 Callouts
+   description: Sidenote Callouts
+   type: heading
+   level: 2
+   collapsed: true
+  -
+   id: sidenote-callout-width
+   title: Width of Sidenote Callouts
+   description: 'Percentage of the readable line length. Affects callouts with "> [!sidenote]". '
+   type: variable-number-slider
+   default: 34
+   min: 10
+   max: 60
+   step: 2
+  -
+   id: sidenote-callout-outdent
+   title: '"Outdent" the Sidenote Callout'
+   description: Moves them slightly to the right for extra space.
+   type: class-toggle
+   default: false
+  -
+   id: post-it-callout-size
+   title: 🆕 Size of Post-it Callouts
+   description: "Callouts with '> [!post-it]'. This variable affects width and height (i.e., quadratic growth). Mind that post-its with too much content get cut off — they are post-its after all."
+   type: variable-number-slider
+   default: 135
+   min: 90
+   max: 250
+   step: 5
+   format: px
+  -
+# <<< Images & PDFs (+)
+   id: content-settings
+   title: 🖼 Images & PDFs
+   description: Zoom Methods, Size, Decoration
+   type: heading
+   level: 2
+   collapsed: true
   -
    id: hover-zoom
    title: 'Image Zoom via Hover'
@@ -14582,179 +14734,6 @@ settings:
    id: no-pdf-dark-mode
    title: No Dark Mode for PDFs
    description: By default, PDFs in dark mode are also displayed in dark mode. Enable this to always display PDFs in their original colors.
-   type: class-toggle
-   default: false
-  -
-# << File Explorer & Sidebar (+)
-   id: file-explorer-sidebar-options
-   title: 📂 File Explorer & Sidebar
-   description: File Name Trimming, Icons, Show/Hide elements
-   type: heading
-   level: 1
-   collapsed: true
-  -
-   id: trim-long-filenames
-   title: 'Sidebar: Trim File Names'
-   description: When enabled, long file and folder names will be trimmed. When disabled, long names will be wrapped to the next line. This setting affects sidebar tabs in general, not only the file explorer.
-   type: class-toggle
-   default: false
-  -
-   id: hide-attachment-folders
-   title: 'File Explorer: Hide attachments folders'
-   description: 'Affects folders exactly named "attachments" (case-insensitive).'
-   type: class-toggle
-   default: false
-  -
-   id: show-vault-in-file-explorer
-   title: 'File Explorer: Show Vault Name'
-   type: class-toggle
-   description: Enable this, if you want to drag and drop items to your vault root.
-   default: false
-  -
-   id: show-file-explorer-navigation
-   title: 'File Explorer: Re-enable Navigation Buttons'
-   type: class-toggle
-   description: 'The navigation buttons are the buttons for new file, new folder, and sorting. You can do the former two without the buttons via the context menu.'
-   default: false
-  -
-   id: no-file-explorer-icons
-   title: 'File Explorer: No File Icons'
-   description: Remove the icons next to files in the file explorer. Enable this if you use a plugin that already adds icons.
-   type: class-toggle
-   default: false
-  -
-   id: no-folder-icons
-   title: 'File Explorer: No Folder Icons'
-   description: Remove the icons next to folders in the file explorer. Enable this if you use a plugin that already adds icons.
-   type: class-toggle
-   default: false
-  -
-# << Status Bar (+)
-   id: status-bar-options
-   title: 🚥 Status Bar
-   description: Type of Status Bar, Hiding Items
-   type: heading
-   level: 1
-   collapsed: true
-  -
-   id: status-bar-mode
-   title: Status Bar
-   type: class-select
-   allowEmpty: false
-   default: only-on-hover
-   options:
-    -
-      label: only show on hover
-      value: only-on-hover-statusbar
-    -
-      label: show permanently
-      value: permanently-show-statusbar
-    -
-      label: permanent & text-only
-      value: minimal-status-bar
-    -
-      label: hide permanently
-      value: permanently-hide-statusbar
-    -
-      label: classic statusbar
-      value: classic-statusbar
-  -
-   id: status-bar-font-size
-   title: Status Bar Font Size
-   type: variable-number-slider
-   default: 0.85
-   min: 0.5
-   max: 1.5
-   step: 0.05
-   format: rem
-  -
-   id: hide-languagetool-status-bar
-   title: 'Hide Language Tools'
-   type: class-toggle
-   default: false
-  -
-   id: hide-backlinks-status-bar
-   title: 'Hide Backlinks'
-   type: class-toggle
-   default: false
-  -
-   id: hide-signature
-   title: 'Hide the decorative "✧"'
-   hub: ignore
-   type: class-toggle
-   default: false
-  -
-# << Special Syntax (+)
-   id: special-syntax
-   title: 🌀 Special Syntax
-   description: 'Highlight Colors, Multi-Color Highlights, Spoiler Syntax, Annotation Tags, Trailing Whites Space, Citation Syntax, Pandoc Citations, Dataview Inline Fields, Loose Lists'
-   type: heading
-   level: 1
-   collapsed: true
-  -
-   id: highlight-hue-1
-   title: Regular Highlights
-   type: variable-number-slider
-   default: 60
-   min: 0
-   max: 360
-   step: 5
-  -
-   id: highlight-hue-2
-   title: Multi-Color Highlight 1
-   type: variable-number-slider
-   default: 150
-   min: 0
-   max: 360
-   step: 5
-  -
-   id: highlight-hue-3
-   title:  Multi-Color Highlight 2
-   type: variable-number-slider
-   default: 185
-   min: 0
-   max: 360
-   step: 5
-  -
-   id: no-multi-color-highlights
-   title: Disable Multi-Color Highlights
-   description: Multi-Color Highlights are created by combining regular highlights with italic (*==highlight==*) or bold (**==highlight==**).
-   type: class-toggle
-   default: false
-  -
-   id: no-pseudo-spoiler-tags
-   title: Disable Spoiler Syntax
-   description: The spoiler syntax (*~~spoiler~~*) will blacken the enclosed text until hovered.
-   type: class-toggle
-   default: false
-  -
-   id: annotation-tags-off
-   title: Disable Annotation Tags
-   description: '"Annotation Tags" are tags that are visually emphasized when used inline (i.e., not the YAML frontmatter). They include: #definition, #question, #goal, #todo, #summary, #important, #main, #critique, #gap, #litreview, #quote, #agree, #disagree, #example, #data, #method, and #sidenote.'
-   type: class-toggle
-   default: false
-  -
-   id: hide-trailing-whitespace
-   title: Hide Trailing Spaces
-   description: 'By default, this theme shows trailing spaces when there are more than one, indicated with "· · ↵". This can be for the so-called "Two Space Rule" in Markdown, where exactly two spaces at the end of a line force a line break.'
-   type: class-toggle
-   default: false
-  -
-   id: no-citation-syntax
-   title: Disable Citation Syntax
-   description: The Citation Syntax turn a double-blockquote paragraph (>>) that follows a normal blockquote (>) paragraph into an indented citation.
-   type: class-toggle
-   default: false
-  -
-   id: no-pandoc-citation-emphasis
-   title: No Emphasis of Pandoc Citations and Dataview Inline Fields
-   description: "Turn off the coloring of Pandoc Citations [@citekey] and dataview inline fields [key:: value] in Source Mode. (Also affects the styling for the Pandoc Reference List Plugin.)"
-   type: class-toggle
-   default: false
-  -
-   id: re-enable-loose-lists
-   title: 'Re-enable Loose Lists'
-   description: 'When a list contains a blank line in between its items, it is considered a "loose list" and will be rendered with additional spacing in Reading Mode. By default, loose lists are turned off in this theme, since most of the time, they are created by accident.'
    type: class-toggle
    default: false
   -
@@ -14870,95 +14849,156 @@ settings:
    type: class-toggle
    default: false
   -
-# << Code Blocks (+)
-   id: code-blocks-options
-   title: '🖥 Code Blocks'
-   description: '🆕 Line Numbering, Tab Size, Line Wrapping, Syntax Highlighting'
+# << Special Syntax (+)
+   id: special-syntax
+   title: 🌀 Special Syntax
+   description: 'Highlight Colors, Multi-Color Highlights, Spoiler Syntax, Annotation Tags, Trailing Whites Space, Citation Syntax, Pandoc Citations, Dataview Inline Fields, Loose Lists'
    type: heading
    level: 1
    collapsed: true
   -
-   id: code-block-tab-size
-   title: Tab Size (Preview & Source Mode)
-   description: This setting is independent from the global Obsidian setting for Tab Size.
+   id: highlight-hue-1
+   title: Regular Highlights
    type: variable-number-slider
-   default: 4
-   min: 2
-   max: 8
-   step: 1
-  -
-   id: no-code-block-wrapping
-   title: Disable Line Wrapping in Code Blocks (Reading Mode)
-   description: This setting is independent from the global Obsidian setting for Line Wrapping.
-   type: class-toggle
-   default: false
-  -
-   id: no-codeblock-line-numbers
-   title: Disable Line Numbering in Code Blocks (Edit Mode)
-   description: 'By default, this theme adds line numbers in code blocks in Source Mode and Live Preview. Enable this, to turn off the line numbers.'
-   type: class-toggle
-   default: false
-  -
-   id: code-block-syntax-hl-light-mode
-   title: "Syntax Highlighting (Light Mode)"
-   description: Affects Code Blocks and MathJax
-   type: class-select
-   allowEmpty: false
-   default: default-syntax-highl-light
-   options:
-    -
-      label: Default
-      value: default-syntax-highl-light
-    -
-      label: Dracula
-      value: dracula-syntax-hl-light
-  -
-   id: code-block-syntax-hl-dark-mode
-   title: "Syntax Highlighting (Dark Mode)"
-   description: Affects Code Blocks, YAML Frontmatter in Reading Mode, and MathJax
-   type: class-select
-   allowEmpty: false
-   default: default-syntax-highl-dark
-   options:
-    -
-      label: Default
-      value: default-syntax-highl-dark
-    -
-      label: Dracula
-      value: dracula-syntax-hl-dark
-  -
-# << Callouts (+)
-   id: callout-options
-   title: 📞 Callouts
-   description: Sidenote Callouts
-   type: heading
-   level: 1
-   collapsed: true
-  -
-   id: sidenote-callout-width
-   title: Width of Sidenote Callouts
-   description: 'Percentage of the readable line length. Affects callouts with "> [!sidenote]". '
-   type: variable-number-slider
-   default: 34
-   min: 10
-   max: 60
-   step: 2
-  -
-   id: sidenote-callout-outdent
-   title: '"Outdent" the Sidenote Callout'
-   description: Moves them slightly to the right for extra space.
-   type: class-toggle
-   default: false
-  -
-   id: post-it-callout-size
-   title: 🆕 Size of Post-it Callouts
-   description: "Callouts with '> [!post-it]'. This variable affects width and height (i.e., quadratic growth). Mind that post-its with too much content get cut off — they are post-its after all."
-   type: variable-number-slider
-   default: 135
-   min: 90
-   max: 250
+   default: 60
+   min: 0
+   max: 360
    step: 5
-   format: px
+  -
+   id: highlight-hue-2
+   title: Multi-Color Highlight 1
+   type: variable-number-slider
+   default: 150
+   min: 0
+   max: 360
+   step: 5
+  -
+   id: highlight-hue-3
+   title:  Multi-Color Highlight 2
+   type: variable-number-slider
+   default: 185
+   min: 0
+   max: 360
+   step: 5
+  -
+   id: no-multi-color-highlights
+   title: Disable Multi-Color Highlights
+   description: Multi-Color Highlights are created by combining regular highlights with italic (*==highlight==*) or bold (**==highlight==**).
+   type: class-toggle
+   default: false
+  -
+   id: no-pseudo-spoiler-tags
+   title: Disable Spoiler Syntax
+   description: The spoiler syntax (*~~spoiler~~*) will blacken the enclosed text until hovered.
+   type: class-toggle
+   default: false
+  -
+   id: annotation-tags-off
+   title: Disable Annotation Tags
+   description: '"Annotation Tags" are tags that are visually emphasized when used inline (i.e., not the YAML frontmatter). They include: #definition, #question, #goal, #todo, #summary, #important, #main, #critique, #gap, #litreview, #quote, #agree, #disagree, #example, #data, #method, and #sidenote.'
+   type: class-toggle
+   default: false
+  -
+   id: hide-trailing-whitespace
+   title: Hide Trailing Spaces
+   description: 'By default, this theme shows trailing spaces when there are more than one, indicated with "· · ↵". This can be for the so-called "Two Space Rule" in Markdown, where exactly two spaces at the end of a line force a line break.'
+   type: class-toggle
+   default: false
+  -
+   id: no-citation-syntax
+   title: Disable Citation Syntax
+   description: The Citation Syntax turn a double-blockquote paragraph (>>) that follows a normal blockquote (>) paragraph into an indented citation.
+   type: class-toggle
+   default: false
+  -
+   id: no-pandoc-citation-emphasis
+   title: No Emphasis of Pandoc Citations and Dataview Inline Fields
+   description: "Turn off the coloring of Pandoc Citations [@citekey] and dataview inline fields [key:: value] in Source Mode. (Also affects the styling for the Pandoc Reference List Plugin.)"
+   type: class-toggle
+   default: false
+  -
+   id: re-enable-loose-lists
+   title: 'Re-enable Loose Lists'
+   description: 'When a list contains a blank line in between its items, it is considered a "loose list" and will be rendered with additional spacing in Reading Mode. By default, loose lists are turned off in this theme, since most of the time, they are created by accident.'
+   type: class-toggle
+   default: false
+  -
+# << Gutter & Active Line (+)
+   id: gutter-features
+   title: 💈 Gutter & Active Line
+   description: Active Line Highlights, Indicators in the Gutter, 🆕 Relative/Minimal Line Numbering, Tags-in-Gutter
+   type: heading
+   level: 1
+   collapsed: true
+  -
+   id: active-line-highlight-options
+   title: Active Line
+   description: "Options for emphasizing the active line. ('Emphasized Background' is automatically turned off when the Active Visual Line Plugin is installed.)"
+   type: class-select
+   allowEmpty: false
+   default: active-line-gutter
+   options:
+   -
+    label: Vertical Line in Gutter
+    value: active-line-gutter
+   -
+    label: Emphasized Background
+    value: active-line-emphasized-bg
+   -
+    label: No Active Line Highlight
+    value: no-active-highlight
+  -
+   id: line-number-options
+   title: 🆕 Line Numbering Style
+   description: "'Relative' shows only the active line and the nine following lines (useful for Vim Mode). 'Minimal' shows line numbers only for the active and hovered line. Note that both have no effect when Obsidian's 'Show line number' setting is disabled."
+   type: class-select
+   allowEmpty: false
+   default: default-line-numbering
+   options:
+   -
+    label: Default
+    value: default-line-numbering
+   -
+    label: Minimal
+    value: minimal-line-numbering
+   -
+    label: Relative
+    value: relative-line-numbering
+  -
+   id: footnote-gutter
+   title: "Footnote Indicator"
+   description: Displays a small indicator (⦿) in the gutter when a footnote is present. (Note that numbered indicators can not properly count footnotes on the same line.)
+   type: class-select
+   allowEmpty: false
+   default: simple-fn-indicator
+   options:
+   -
+    label: Default Footnote Indicator
+    value: simple-fn-indicator
+   -
+    label: Numbered Footnote Indicator
+    value: numbered-fn-indicator
+   -
+    label: No Footnote Indicator
+    value: no-fn-indicator
+  -
+   id: no-unresolved-link-indicator
+   title: Disable Unresolved Link Indicators
+   description: The indicators (𝘅) are only shown in Reading Mode and Live Preview.
+   type: class-toggle
+   default: false
+  -
+   id: tags-in-gutter
+   title: Show Tags in Gutter (Reading Mode)
+   description: 'Note that this will look off, if your gutter is too narrow (through a narrow window or high zoom in level). Can also be selectively enabled per note by adding the cssclass "tags-in-gutter".'
+   type: class-toggle
+   default: false
+  -
+   id: no-search-result-indicator
+   title: Disable Search Result Indicators
+   description: The indicators (▶) are only shown in Source Mode and Live Preview.
+   type: class-toggle
+   default: false
   -
 # << Mobile (+)
    id: mobile
@@ -15071,7 +15111,7 @@ settings:
    hub: ignore
    default: false
   -
-# << Longform (+)
+# << Longform & Writing (+)
    id: longform-settings
    title: ✍️ Longform Plugin & Writing cssclass
    description: Font, Alignment, First-Line Indent, Background Color, Index File
@@ -15134,7 +15174,7 @@ settings:
 # << Miscellaneous (+)
    id: miscellaneous
    title: ✴️ Miscellaneous
-   description: Menu Size, Inactive Panes, Alternating Row Colors, Animations, 🆕 Theme Beta
+   description: Menu Size, Line Length, Inactive Panes, Alternating Row Colors, Animations, 🆕 Theme Beta
    type: heading
    level: 1
    collapsed: true
@@ -15147,6 +15187,16 @@ settings:
    min: 0
    max: 70
    step: 2
+  -
+   id: readable-length
+   title: Line Length
+   description: 'When the "Readable Line length" setting is enabled and "Max View" is not active.'
+   type: variable-number-slider
+   default: 700
+   min: 300
+   max: 1300
+   step: 50
+   format: px
   -
    id: no-grayed-out-inactive-pane
    title: Do not dim Inactive Panes
