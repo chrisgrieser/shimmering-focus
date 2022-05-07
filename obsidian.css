@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 2.104
+Version 2.105
 Source CSS: https://github.com/chrisgrieser/shimmering-focus/blob/main/source.css
 MIT License
 ──────────────────────────────────────────────────── */
@@ -896,7 +896,6 @@ settings:
   -
    id: disable-image-borders
    title: Remove image borders
-   description: Disables the frame put around images.
    type: class-toggle
    hub: ignore
    default: false
