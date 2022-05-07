@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 2.110
+Version 2.111
 Source CSS: https://github.com/chrisgrieser/shimmering-focus/blob/main/source.css
 MIT License
 ──────────────────────────────────────────────────── */
@@ -5682,6 +5682,16 @@ body:not(.show-fold-indicators) .cm-foldPlaceholder::before {
 .minimal-line-numbering .cm-lineNumbers:hover .cm-gutterElement:not(.cm-active) {
 	transition: var(--very-quick-transition);
 	transition-delay: var(--transition-delay-passing-over-protection);
+}
+
+.dot-line-numbering .cm-lineNumbers .cm-gutterElement {
+	font-size: 0;
+}
+
+.dot-line-numbering .cm-lineNumbers .cm-gutterElement::before {
+	content: "·";
+	font-size: calc(var(--font-text-size) * 1.5);
+	font-weight: 900;
 }
 
 /* CM5 */
@@ -12007,6 +12017,41 @@ body:not(.unlock-theme-beta) .style-settings-container .setting-item:is(
 /* <<< Style Settings: Info Boxes
 ──────────────────────────────────────────────────── */
 
+/* info box at the top */
+.style-settings-heading[data-id="shimmering-focus"] {
+	flex-wrap: wrap;
+}
+
+.modal .setting-item-heading[data-id="shimmering-focus"]::before,
+.workspace-leaf-content[data-type="style-settings"] > .view-content > .setting-item:first-child::before {
+	display: block;
+	content: "ℹ️ Theme Documentation:  chrisgrieser.github.io/shimmering-focus\A🔍 Install the Settings Search Plugin to find settings more quickly.";
+
+	font-family: var(--font-interface-override), var(--font-interface-theme), "Noto Emoji", var(--font-default);
+	font-size: 0.75rem;
+	font-weight: 500;
+	line-height: 2em;
+	letter-spacing: 0; /* do not propagate letter spacing applied to setting headings */
+	white-space: pre;
+
+	background-color: var(--bg2);
+	box-shadow: var(--small-inset-shadow);
+
+	padding: 3px 10px 5px;
+
+	border: var(--basic-border);
+	border-radius: var(--roundish);
+
+	cursor: default;
+
+	pointer-events: none;
+}
+
+.modal .setting-item-heading[data-id="shimmering-focus"]::before {
+	/* margin to the right needed so the Shimmering Focus heading is properly aligned when zoomed out */
+	margin: -4.1em 100% 2em 0;
+}
+
 /* Donation */
 .style-settings-heading[data-id="info-donation"][data-id="info-donation"][data-id="info-donation"] {
 	letter-spacing: 0.1px;
@@ -12038,41 +12083,6 @@ body:not(.unlock-theme-beta) .style-settings-container .setting-item:is(
 	color: unset;
 	cursor: default;
 	pointer-events: none;
-}
-
-/* info box at the top */
-.style-settings-heading[data-id="shimmering-focus"] {
-	flex-wrap: wrap;
-}
-
-.modal .setting-item-heading[data-id="shimmering-focus"]::before,
-.workspace-leaf-content[data-type="style-settings"] > .view-content > .setting-item:first-child::before {
-	display: block;
-	content: "ℹ️ Theme Documentation:  chrisgrieser.github.io/shimmering-focus\A🔍 Install the Settings Search Plugin to find settings more quickly.";
-
-	font-family: var(--font-interface);
-	font-size: 0.75rem;
-	font-weight: 500;
-	line-height: 2em;
-	letter-spacing: 0; /* do not propagate letter spacing applied to setting headings */
-	white-space: pre;
-
-	background-color: var(--bg2);
-	box-shadow: var(--small-inset-shadow);
-
-	padding: 3px 10px 5px;
-
-	border: var(--basic-border);
-	border-radius: var(--roundish);
-
-	cursor: default;
-
-	pointer-events: none;
-}
-
-.modal .setting-item-heading[data-id="shimmering-focus"]::before {
-	/* margin to the right needed so the Shimmering Focus heading is properly aligned when zoomed out */
-	margin: -4.1em 100% 2em 0;
 }
 
 /* ───────────────────────────────────────────────── */
@@ -14166,7 +14176,7 @@ settings:
    description: Custom Colors
    type: heading
    level: 2
-   collapsed: false
+   collapsed: true
   -
    id: primary-accent-light
    title: "Primary Accent (Light Mode)"
@@ -14958,7 +14968,7 @@ settings:
 # << Special Markup (+)
    id: special-syntax
    title: 🌀 Special Markup
-   description: 'Highlight Colors, Multi-Color Highlights, Spoiler Syntax, Margin Notes, Annotation Tags, Trailing Whites Space, Citation Syntax, Pandoc Citations, Dataview Inline Fields, Loose Lists'
+   description: 'Highlight Colors, Multi-Color Highlights, Spoiler Syntax, Annotation Tags, Trailing Whites Space, Citation Syntax, Pandoc Citations, Dataview Inline Fields, Loose Lists'
    type: heading
    level: 1
    collapsed: true
@@ -15076,6 +15086,9 @@ settings:
    -
     label: Minimal
     value: minimal-line-numbering
+   -
+    label: Dots
+    value: dot-line-numbering
   -
    id: footnote-gutter
    title: "Footnote Indicator"
