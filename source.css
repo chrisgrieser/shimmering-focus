@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 2.108
+Version 2.109
 Source CSS: https://github.com/chrisgrieser/shimmering-focus/blob/main/source.css
 MIT License
 ──────────────────────────────────────────────────── */
@@ -27,7 +27,8 @@ MIT License
 		- Longform & Writing Background Calculations
 		- Base Element Styling with background colors
 		- Fixed Colors
-	- Setting Default Obsidian Variables
+	- Variables
+	- Default Obsidian Variables
 	- Shadows
 		- Outside Shadow
 		- Inset Shadow
@@ -883,7 +884,10 @@ body.strong-em-secondary-accent {
 }
 
 /* ───────────────────────────────────────────────── */
-/* << Setting Default Obsidian Variables
+/* << Variables
+──────────────────────────────────────────────────── */
+/* ───────────────────────────────────────────────── */
+/* << Default Obsidian Variables
 ──────────────────────────────────────────────────── */
 
 .theme-light,
@@ -14982,7 +14986,7 @@ settings:
   -
    id: strikethrough-margin-notes
    title: Turn Strikekthroughs into Margin Notes
-   description: 'Turns Strikethrough Syntax (~~text~~) into margin notes. They become editable when in the active line. Works in Reading Mode, Live Preview, and Source Mode.'
+   description: 'Turns Strikethrough Syntax (~~text~~) into margin notes. They become editable when in the active line. Works in Reading Mode, Live Preview, and Source Mode. However, you cannot use markup inside them.'
    type: class-toggle
    default: false
   -

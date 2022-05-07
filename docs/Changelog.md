@@ -3,6 +3,7 @@ nav_order: 110
 ---
 
 # Changelog
+- 2022-05-07	patch
 - 2022-05-07	added margin notes via strikethrough to the beta
 - 2022-05-07	added aside callouts to beta
 - 2022-05-07	toc
