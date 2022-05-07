@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 2.106
+Version 2.107
 Source CSS: https://github.com/chrisgrieser/shimmering-focus/blob/main/source.css
 MIT License
 ──────────────────────────────────────────────────── */
@@ -141,6 +141,7 @@ MIT License
 		- Custom Callouts
 		- Sidenote Callouts
 		- Post-it Callouts
+		- Aside Callouts
 	- Tables
 	- MathJax
 	- Code
@@ -1035,9 +1036,6 @@ body:is(.theme-light, .theme-dark) {
 	--error-symbol: "⚠️";
 	--signature: "⟡";
 	--empty-state-symbol-size: 8rem;
-
-	--sidenote-callout-width: 35%;
-	--post-it-callout-size: 135px;
 }
 
 .theme-light {
@@ -6370,6 +6368,10 @@ body:not(.no-citation-syntax) .markdown-preview-view *:not(blockquote) > blockqu
 .HyperMD-callout,
 .callout {
 	--callout-left-padding: 10px;
+
+	--sidenote-callout-width: 35%;
+	--post-it-callout-size: 135px;
+	--aside-width: 10rem;
 }
 
 .HyperMD-callout.HyperMD-callout.HyperMD-callout.HyperMD-callout {
@@ -6430,7 +6432,6 @@ body:not(.normal-blockquotes) .callout-content :is(ul, p) {
 	background-color: rgb(var(--callout-color), 13%);  /* stylelint-disable-line color-function-notation */
 	padding: 2.5px var(--callout-left-padding);
 	border: var(--thin-border);
-	border-left: none;
 	border-top-right-radius: var(--roundish);
 }
 
@@ -6468,7 +6469,7 @@ body:not(.normal-blockquotes) .callout-content :is(ul, p) {
 	border-width: calc(var(--blockquote-border-width) * 1.5);
 }
 
-.callout:hover :is(.callout-title, .callout-content) {
+.callout:not([data-callout$="sidenote"], [data-callout$="post-it"], [data-callout$="aside"]):hover :is(.callout-title, .callout-content) {
 	padding-left: calc(var(--callout-left-padding) - var(--blockquote-border-width) * 0.5);
 }
 
@@ -6538,8 +6539,14 @@ div[data-callout].is-collapsible.is-collapsed .callout-title {
 	--callout-color: 255, 210, 107;
 	font-size: 90%;
 	line-height: 1.3em;
+
 	max-width: calc(var(--readable-length) * var(--sidenote-callout-width) * 0.01);
+
 	margin: 3px 0 3px 7px;
+
+	border: none;
+	border-radius: var(--roundish);
+
 	float: right;
 }
 
@@ -6550,6 +6557,7 @@ div[data-callout].is-collapsible.is-collapsed .callout-title {
 .callout[data-callout$="sidenote"] .callout-title {
 	padding-top: 1px;
 	padding-bottom: 1px;
+	border-top-left-radius: var(--roundish);
 }
 
 body .callout {
@@ -6565,7 +6573,7 @@ body .callout {
 	max-height: var(--post-it-callout-size);
 	max-width: var(--post-it-callout-size);
 
-	color: var(--light-in-light-dark-in-dark);
+	color: var(--always-dark);
 	background-color: hsl(55 60% 80%);
 	box-shadow: var(--small-shadow);
 
@@ -6581,24 +6589,32 @@ body .callout {
 	overflow: hidden;
 }
 
-.theme-light .callout[data-callout$="post-it"] {
-	color: var(--text-normal);
-}
-
-.theme-dark .callout[data-callout$="post-it"] {
-	color: var(--light-in-light-dark-in-dark);
-}
-
-.unlock-theme-beta .callout[data-callout$="post-it"] .callout-title {
+.unlock-theme-beta .callout:is([data-callout$="post-it"], [data-callout$="aside"]) .callout-title {
 	display: none;
 }
 
-.unlock-theme-beta .callout[data-callout$="post-it"] .callout-content {
+.unlock-theme-beta .callout:is([data-callout$="post-it"], [data-callout$="aside"]) .callout-content {
 	padding: 1px 4px;
 }
 
-.unlock-theme-beta .callout[data-callout$="post-it"] .callout-content p {
+.unlock-theme-beta .callout:is([data-callout$="post-it"], [data-callout$="aside"]) .callout-content p {
 	margin: 0;
+}
+
+/* <<< Aside Callouts */
+.unlock-theme-beta .callout[data-callout$="aside"] {
+	font-size: 90%;
+	line-height: 1.2em;
+	hyphens: auto;
+
+	max-width: var(--aside-width);
+
+	position: absolute;
+	right: 3px;
+
+	padding: 3px;
+
+	border: none;
 }
 
 /* ───────────────────────────────────────────────── */
@@ -11894,20 +11910,23 @@ body:not(.show-titlebar) .setting-item[data-id="show-titlebar-text"],
 body:not(.unlock-theme-beta) .style-settings-container .setting-item:is(
 	[data-id="post-it-callout-size"],
 	[data-id="unicode-emojis"],
+	[data-id="aside-width"],
 	[data-id="hardcore-mode"],
 	[data-id="madness-mode"]
 ) {
 	display: none;
 }
 
-/* beta badge */
+/* beta badge for sections */
 .unlock-theme-beta .style-settings-container .setting-item:is(
 	[data-id="callout-options"],
 	[data-id="aesthetics"],
 	[data-id="show-hide-elements"]
 ).is-collapsed::after,
+/* beta badge for setting */
 .unlock-theme-beta .style-settings-container .setting-item:is(
 	[data-id="post-it-callout-size"],
+	[data-id="aside-width"],
 	[data-id="unicode-emojis"],
 	[data-id="hardcore-mode"],
 	[data-id="madness-mode"],
@@ -14465,7 +14484,7 @@ settings:
   -
 # <<< Sidebars (+)
    id: sidebar-options
-   title: ↔️ Sidebar
+   title: ⚖️ Sidebars
    description: Max View, Focus View, File Name Trimming, 🆕 Overlaying Sidebar
    type: heading
    level: 2
@@ -14694,6 +14713,16 @@ settings:
    max: 250
    step: 5
    format: px
+  -
+   id: aside-width
+   title: 🆕 Width of Aside Callouts
+   description: "Callouts with '> [!aside]'."
+   type: variable-number-slider
+   default: 10
+   min: 5
+   max: 15
+   step: 0.5
+   format: rem
   -
 # <<< Images & PDFs (+)
    id: content-settings
