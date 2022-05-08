@@ -3,6 +3,7 @@ nav_order: 110
 ---
 
 # Changelog
+- 2022-05-08	madness & hardcore mode public release
 - 2022-05-08	move hardcore & madness mode out of beta
 - 2022-05-08	line height adjustments for headings in longform notes
 - 2022-05-07	new line numbering style: dots

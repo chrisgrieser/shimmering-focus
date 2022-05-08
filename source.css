@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 2.114
+Version 2.115
 Source CSS: https://github.com/chrisgrieser/shimmering-focus/blob/main/source.css
 MIT License
 ──────────────────────────────────────────────────── */
@@ -13386,7 +13386,7 @@ body:not(.hardcore-mode) .setting-item[data-id="madness-mode"] {
 }
 
 .setting-item[data-id="madness-mode"] .setting-item-name {
-	font-family: var(--mad-font), "Noto Emoji";
+	font-family: var(--mad-font);
 	font-size: 1.1rem;
 	font-weight: 800;
 	color: var(--text-error);
