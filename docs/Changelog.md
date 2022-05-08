@@ -3,7 +3,7 @@ nav_order: 110
 ---
 
 # Changelog
-- 2022-05-08	patch
+- 2022-05-08	line height adjustments for headings in longform notes
 - 2022-05-07	new line numbering style: dots
 - 2022-05-07	do not show link favicon when on active line
 - 2022-05-07	added margin notes via strikethrough to the beta
