@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 2.115
+Version 2.116
 Source CSS: https://github.com/chrisgrieser/shimmering-focus/blob/main/source.css
 MIT License
 ──────────────────────────────────────────────────── */
@@ -144,7 +144,7 @@ settings:
   -
    id: hardcore-mode
    title: '⚠️ Hardcore Mode'
-   description: 'Experienced Obsidian users only! Try the ultimate challenge and permanently hide everything element that is not absolutely essential: On top of all things listed above being permanently hidden, hardcore mode will remove the settings button, disable both side bars and the gutter, and censor all sorts of labels and descriptions. Test your knowledge of Obsidian and prove that you are a real power user by getting things done even under these challenging conditions!'
+   description: 'Experienced Obsidian users only! Try the ultimate challenge and permanently hide everything element that is not absolutely essential: On top of permanently removing all things listed above, hardcore mode will remove the settings button, disable both side bars and the gutter, and censor all sorts of labels and descriptions. Test your knowledge of Obsidian and prove that you are a real power user by getting things done even under these challenging conditions!'
    type: class-toggle
    default: false
   -
