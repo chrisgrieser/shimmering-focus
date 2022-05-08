@@ -3,6 +3,7 @@ nav_order: 110
 ---
 
 # Changelog
+- 2022-05-08	patch
 - 2022-05-08	some more custom color accents
 - 2022-05-08	fix default values for custom colors
 - 2022-05-08	madness & hardcore mode public release

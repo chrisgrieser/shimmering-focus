@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 2.118
+Version 2.119
 Source CSS: https://github.com/chrisgrieser/shimmering-focus/blob/main/source.css
 MIT License
 ──────────────────────────────────────────────────── */
@@ -390,6 +390,14 @@ MIT License
 	--beige-gray-5: hsl(40 30% 90% / 99%);
 	--beige-gray-shifted: hsl(0 10% 64%);
 
+	--black-0: hsl(0 0% 0% / 99%);
+	--black-1: hsl(0 0% 10%);
+	--black-2: hsl(0 0% 20%);
+	--black-3: hsl(0 0% 30%);
+	--black-4: hsl(0 0% 40%);
+	--black-5: hsl(0 0% 50% / 99%);
+	--black-shifted: hsl(40 30% 64%);
+
 	--green-1: hsl(165 70% 25%);
 	--green-2: hsl(165 80% 35%);
 	--green-3: hsl(165 90% 45%);
@@ -428,6 +436,19 @@ MIT License
 	--button-text: var(--light-in-light-dark-in-dark);
 }
 
+.custom-colors.theme-light.primary-accent-light-black,
+.custom-colors.theme-dark.primary-accent-dark-black {
+	--primary-accent-0: var(--black-0);
+	--primary-accent-1: var(--black-1);
+	--primary-accent-2: var(--black-2);
+	--primary-accent-3: var(--black-3);
+	--primary-accent-4: var(--black-4);
+	--primary-accent-5: var(--black-5);
+
+	--unresolved-link-color: var(--black-shifted);
+	--button-text: var(--always-light);
+}
+
 .custom-colors.theme-light.primary-accent-light-beige-gray,
 .custom-colors.theme-dark.primary-accent-dark-beige-gray {
 	--primary-accent-0: var(--beige-gray-0);
@@ -438,7 +459,7 @@ MIT License
 	--primary-accent-5: var(--beige-gray-5);
 
 	--unresolved-link-color: var(--beige-gray-shifted);
-	--button-text: var(--always-light);
+	--button-text: var(--text-normal);
 }
 
 .custom-colors.theme-light.primary-accent-light-cyan,
@@ -14237,6 +14258,9 @@ settings:
     -
       label: 👢 Beige Gray
       value: primary-accent-light-beige-gray
+    -
+      label: ♠️ Pure Black
+      value: primary-accent-light-black
   -
    id: secondary-accent-light
    title: "Secondary Accent (Light Mode)"
@@ -14344,6 +14368,9 @@ settings:
     -
       label: 👢 Beige Gray
       value: primary-accent-dark-beige-gray
+    -
+      label: ♠️ Pure Black
+      value: primary-accent-light-black
   -
    id: secondary-accent-dark
    title: "Secondary Accent (Dark Mode)"
