@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 2.116
+Version 2.117
 Source CSS: https://github.com/chrisgrieser/shimmering-focus/blob/main/source.css
 MIT License
 ──────────────────────────────────────────────────── */
@@ -14244,7 +14244,7 @@ settings:
    title: 'Text: Color Tint (Light Mode)'
    description: 'Slight tint for standard text (i.e., hue with low saturation)'
    type: variable-number-slider
-   default: 235
+   default: 280
    min: 0
    max: 360
    step: 5
@@ -14253,7 +14253,7 @@ settings:
    title: 'Background: Brightness (Light Mode)'
    description: Note that a high brightness in light mode results in a white theme, regardless of the selected hue.
    type: variable-number-slider
-   default: 15
+   default: 14
    min: 0
    max: 20
    step: 1
@@ -14272,7 +14272,7 @@ settings:
    title: 'Background: Saturation (Light Mode)'
    description: "Intensity of the chosen hue. Setting this to zero will result in grayscale, regardless of the hue chosen. "
    type: variable-number-slider
-   default: 14
+   default: 15
    min: 0
    max: 20
    step: 2
@@ -14290,7 +14290,7 @@ settings:
    description: 'Links, Selections, Buttons, Interactive UI Elements'
    type: class-select
    allowEmpty: false
-   default: primary-accent-dark-purple
+   default: primary-accent-dark-cyan
    options:
     -
       label: 🟣 Obsidian Purple
@@ -14310,7 +14310,7 @@ settings:
    description: 'Inline Code, Inline Tags, Finished Tasks, Footnotes, Pandoc Citations'
    type: class-select
    allowEmpty: false
-   default: secondary-accent-dark-green
+   default: secondary-accent-dark-yellow
    options:
     -
       label: 🟢 Shimmering Green
@@ -14324,7 +14324,7 @@ settings:
    description: 'Hovered Elements'
    type: class-select
    allowEmpty: false
-   default: hover-accent-dark-green
+   default: hover-accent-dark-pink
    options:
     -
       label: 🟢 Shimmering Green
@@ -14345,7 +14345,7 @@ settings:
    title: 'Text: Color Tint (Dark Mode)'
    description: 'Slight tint for text (i.e., hue with low saturation)'
    type: variable-number-slider
-   default: 220
+   default: 270
    min: 0
    max: 360
    step: 5
@@ -14364,7 +14364,7 @@ settings:
    title: 'Background: Hue (Dark Mode)'
    description: 'Overall color tone of the theme background. Mind that the appearance of the color is also affected by brightness and saturation.'
    type: variable-number-slider
-   default: 220
+   default: 235
    min: 0
    max: 360
    step: 5
@@ -14373,7 +14373,7 @@ settings:
    title: 'Background: Saturation (Dark Mode)'
    description: "Intensity of the chosen hue. A low value will result in grayscale, regardless of the hue chosen. "
    type: variable-number-slider
-   default: 5
+   default: 10
    min: 0
    max: 20
    step: 2
