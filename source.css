@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 2.117
+Version 2.118
 Source CSS: https://github.com/chrisgrieser/shimmering-focus/blob/main/source.css
 MIT License
 ──────────────────────────────────────────────────── */
@@ -382,6 +382,14 @@ MIT License
 	--purple-5: hsl(250 70% 91% / 99%);
 	--purple-shifted: hsl(210 75% 64%); /* 40 hue less than primary-accent-2 */
 
+	--beige-gray-0: hsl(40 30% 15% / 99%);
+	--beige-gray-1: hsl(40 20% 30%);
+	--beige-gray-2: hsl(40 20% 40%);
+	--beige-gray-3: hsl(40 20% 55%);
+	--beige-gray-4: hsl(40 20% 70%);
+	--beige-gray-5: hsl(40 30% 90% / 99%);
+	--beige-gray-shifted: hsl(0 10% 64%);
+
 	--green-1: hsl(165 70% 25%);
 	--green-2: hsl(165 80% 35%);
 	--green-3: hsl(165 90% 45%);
@@ -418,6 +426,19 @@ MIT License
 
 	--unresolved-link-color: var(--deep-blue-shifted);
 	--button-text: var(--light-in-light-dark-in-dark);
+}
+
+.custom-colors.theme-light.primary-accent-light-beige-gray,
+.custom-colors.theme-dark.primary-accent-dark-beige-gray {
+	--primary-accent-0: var(--beige-gray-0);
+	--primary-accent-1: var(--beige-gray-1);
+	--primary-accent-2: var(--beige-gray-2);
+	--primary-accent-3: var(--beige-gray-3);
+	--primary-accent-4: var(--beige-gray-4);
+	--primary-accent-5: var(--beige-gray-5);
+
+	--unresolved-link-color: var(--beige-gray-shifted);
+	--button-text: var(--always-light);
 }
 
 .custom-colors.theme-light.primary-accent-light-cyan,
@@ -467,6 +488,16 @@ MIT License
 	--hover-accent-4: var(--green-4);
 
 	--button-hover-text: var(--always-dark);
+}
+
+.custom-colors.theme-light.hover-accent-light-orange,
+.custom-colors.theme-dark.hover-accent-dark-orange {
+	--hover-accent-1: var(--orange-1);
+	--hover-accent-2: var(--orange-2);
+	--hover-accent-3: var(--orange-3);
+	--hover-accent-4: var(--orange-4);
+
+	--button-hover-text: var(--light-in-light-dark-in-dark);
 }
 
 .custom-colors.theme-light.hover-accent-light-pink,
@@ -14203,6 +14234,9 @@ settings:
     -
       label: 🟠 Autumn Orange
       value: primary-accent-light-orange
+    -
+      label: 👢 Beige Gray
+      value: primary-accent-light-beige-gray
   -
    id: secondary-accent-light
    title: "Secondary Accent (Light Mode)"
@@ -14234,6 +14268,9 @@ settings:
     -
       label: 🏖 Beach Blue
       value: hover-accent-light-cyan
+    -
+      label: 🟠 Autumn Orange
+      value: hover-accent-light-orange
   -
    id: no-gray-tint-light
    title: 'Turn off the slight color tint of Normal Text (Light Mode)'
@@ -14273,9 +14310,9 @@ settings:
    description: "Intensity of the chosen hue. Setting this to zero will result in grayscale, regardless of the hue chosen. "
    type: variable-number-slider
    default: 15
-   min: 0
+   min: -10
    max: 20
-   step: 2
+   step: 1
    format: '%'
   -
    id: custom-color-dark-mode
@@ -14283,7 +14320,7 @@ settings:
    description: Custom Colors
    type: heading
    level: 2
-   collapsed: false
+   collapsed: true
   -
    id: primary-accent-dark
    title: "Primary Accent (Dark Mode)"
@@ -14304,6 +14341,9 @@ settings:
     -
       label: 🟠 Autumn Orange
       value: primary-accent-dark-orange
+    -
+      label: 👢 Beige Gray
+      value: primary-accent-dark-beige-gray
   -
    id: secondary-accent-dark
    title: "Secondary Accent (Dark Mode)"
@@ -14335,6 +14375,9 @@ settings:
     -
       label: 🏖 Beach Blue
       value: hover-accent-dark-cyan
+    -
+      label: 🟠 Autumn Orange
+      value: hover-accent-dark-orange
   -
    id: no-gray-tint-dark
    title: 'Turn off the slight color tint of Normal Text (Dark Mode)'
@@ -14374,9 +14417,9 @@ settings:
    description: "Intensity of the chosen hue. A low value will result in grayscale, regardless of the hue chosen. "
    type: variable-number-slider
    default: 10
-   min: 0
+   min: -5
    max: 20
-   step: 2
+   step: 1
    format: '%'
   -
 # << Typography (+)
