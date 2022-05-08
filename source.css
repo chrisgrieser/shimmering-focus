@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 2.113
+Version 2.114
 Source CSS: https://github.com/chrisgrieser/shimmering-focus/blob/main/source.css
 MIT License
 ──────────────────────────────────────────────────── */
@@ -11979,9 +11979,7 @@ body:not(.unlock-theme-beta) .style-settings-container .setting-item:is(
 	[data-id="post-it-callout-size"],
 	[data-id="unicode-emojis"],
 	[data-id="aside-width"],
-	[data-id="strikethrough-margin-notes"],
-	[data-id="hardcore-mode"],
-	[data-id="madness-mode"]
+	[data-id="strikethrough-margin-notes"]
 ) {
 	display: none;
 }
@@ -11998,8 +11996,6 @@ body:not(.unlock-theme-beta) .style-settings-container .setting-item:is(
 	[data-id="aside-width"],
 	[data-id="strikethrough-margin-notes"],
 	[data-id="unicode-emojis"],
-	[data-id="hardcore-mode"],
-	[data-id="madness-mode"],
 [data-id="unlock-theme-beta"])::before {
 	content: "Beta";
 
