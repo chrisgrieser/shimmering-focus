@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 2.121
+Version 2.122
 Source CSS: https://github.com/chrisgrieser/shimmering-focus/blob/main/source.css
 MIT License
 ──────────────────────────────────────────────────── */
@@ -13318,7 +13318,7 @@ body:not(.no-pandoc-citation-emphasis) .pandoc-citation.is-missing.is-missing {
 /* << Hardcore Mode
 ──────────────────────────────────────────────────── */
 
-.hardcore-mode:not(.is-mobile) :is(
+:is(.hardcore-mode, .madness-mode):not(.is-mobile) :is(
 	.titlebar,
 	.collapse-indicator,
 	.cm-foldPlaceholder,
@@ -13345,45 +13345,45 @@ body:not(.no-pandoc-citation-emphasis) .pandoc-citation.is-missing.is-missing {
 	.setting-restore-hotkey-button
 ) { display: none }
 
-.hardcore-mode:not(.is-mobile) .cm-gutter {
+:is(.hardcore-mode, .madness-mode):not(.is-mobile) .cm-gutter {
 	display: none !important; /* needed */
 }
 
 /* does not work in ":is()" */
-.hardcore-mode:not(.is-mobile) .cm-active::before,
-.hardcore-mode:not(.is-mobile) .cm-selectionLayer::before,
-.hardcore-mode:not(.is-mobile) ::-webkit-scrollbar {
+:is(.hardcore-mode, .madness-mode):not(.is-mobile) .cm-active::before,
+:is(.hardcore-mode, .madness-mode):not(.is-mobile) .cm-selectionLayer::before,
+:is(.hardcore-mode, .madness-mode):not(.is-mobile) ::-webkit-scrollbar {
 	display: none;
 }
 
 /* remove decoration */
-.hardcore-mode:not(.is-mobile) .cm-active,
-.hardcore-mode:not(.is-mobile) .mod-root :is(h1, h2, h3, h4, h5, h6),
-.hardcore-mode:not(.is-mobile) .HyperMD-header {
+:is(.hardcore-mode, .madness-mode):not(.is-mobile) .cm-active,
+:is(.hardcore-mode, .madness-mode):not(.is-mobile) .mod-root :is(h1, h2, h3, h4, h5, h6),
+:is(.hardcore-mode, .madness-mode):not(.is-mobile) .HyperMD-header {
 	background: none;
 	box-shadow: none;
 	border: none;
 }
 
-.hardcore-mode.hardcore-mode:not(.is-mobile) :is(.cm-link, .cm-hmd-internal-link, .cm-underline) {
+:is(.hardcore-mode, .madness-mode):is(.hardcore-mode, .madness-mode):not(.is-mobile) :is(.cm-link, .cm-hmd-internal-link, .cm-underline) {
 	text-decoration: none;
 }
 
 /* fixes */
-.hardcore-mode:not(.is-mobile) .view-content.view-content.view-content.view-content.view-content.view-content.view-content.view-content.view-content {
+:is(.hardcore-mode, .madness-mode):not(.is-mobile) .view-content.view-content.view-content.view-content.view-content.view-content.view-content.view-content.view-content {
 	margin-top: 0;
 }
 
-.hardcore-mode:not(.is-mobile) .mod-root.mod-root.mod-root.mod-root.mod-root {
+:is(.hardcore-mode, .madness-mode):not(.is-mobile) .mod-root.mod-root.mod-root.mod-root.mod-root {
 	margin-left: 0;
 }
 
-body.hardcore-mode:not(.is-mobile) {
+body:is(.hardcore-mode, .madness-mode):not(.is-mobile) {
 	padding: 0 !important;  /* needed */
 }
 
 /* unknown hotkeys */
-.hardcore-mode:not(.is-mobile) :is(.suggestion-hotkey, .setting-hotkey) {
+:is(.hardcore-mode, .madness-mode):not(.is-mobile) :is(.suggestion-hotkey, .setting-hotkey) {
 	font-size: 0;
 	line-height: 1;
 
@@ -13395,28 +13395,28 @@ body.hardcore-mode:not(.is-mobile) {
 	cursor: help;
 }
 
-.hardcore-mode:not(.is-mobile) :is(.suggestion-hotkey, .setting-hotkey)::before {
+:is(.hardcore-mode, .madness-mode):not(.is-mobile) :is(.suggestion-hotkey, .setting-hotkey)::before {
 	content: "??";
 	font-size: var(--font-text-size);
 	color: var(--secondary-accent-text);
 }
 
-.hardcore-mode:not(.is-mobile) .setting-hotkey.mod-empty {
+:is(.hardcore-mode, .madness-mode):not(.is-mobile) .setting-hotkey.mod-empty {
 	width: 2rem;
 }
 
-.hardcore-mode:not(.is-mobile) .setting-hotkey.mod-empty::before {
+:is(.hardcore-mode, .madness-mode):not(.is-mobile) .setting-hotkey.mod-empty::before {
 	position: relative;
 	top: -9px;
 }
 
 /* unknown buttons */
-.hardcore-mode:not(.is-mobile) .modal.modal.modal button {
+:is(.hardcore-mode, .madness-mode):not(.is-mobile) .modal.modal.modal button {
 	font-size: 0;
 	cursor: help;
 }
 
-.hardcore-mode:not(.is-mobile) .modal button::before {
+:is(.hardcore-mode, .madness-mode):not(.is-mobile) .modal button::before {
 	content: "? ? ?";
 	font-size: var(--font-text-size);
 	line-height: 1;
@@ -13426,17 +13426,13 @@ body.hardcore-mode:not(.is-mobile) {
 /* cryptic command palette */
 .hardcore-mode:not(.is-mobile):not(.madness-mode) :not([data-id="hardcore-mode"], [data-id="madness-mode"]) > * > .setting-item-description,
 .hardcore-mode:not(.is-mobile):not(.madness-mode) .prompt-results .suggestion-prefix,
-.hardcore-mode:not(.is-mobile) .prompt-input {
+:is(.hardcore-mode, .madness-mode):not(.is-mobile) .prompt-input {
 	font-family: "Flow Circular", "Noto Emoji";
 }
 
 /* ───────────────────────────────────────────────── */
 /* << Hardcore & Madness Mode Style Settings
 ──────────────────────────────────────────────────── */
-body:not(.hardcore-mode) .setting-item[data-id="madness-mode"] {
-	display: none;
-}
-
 .setting-item[data-id="madness-mode"] .setting-item-name {
 	font-family: var(--mad-font);
 	font-size: 1.1rem;
@@ -14141,8 +14137,6 @@ settings:
      Try the ultimate challenge and permanently hide everything element that is not absolutely essential: On top of permanently removing all things listed above, hardcore mode will remove the settings button, disable both side bars and the gutter, and censor all sorts of labels and descriptions.
 
      Test your knowledge of Obsidian and prove that you are a real power user by getting things done even under these challenging conditions!
-
-     Enabling Hardcore Mode also unlocks Madness Mode, if you want an even more extreme challenge. 😈
    type: class-toggle
    default: false
   -
