@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 2.122
+Version 2.123
 Source CSS: https://github.com/chrisgrieser/shimmering-focus/blob/main/source.css
 MIT License
 ──────────────────────────────────────────────────── */
@@ -472,7 +472,7 @@ MIT License
 	--primary-accent-5: var(--cyan-blue-5);
 
 	--unresolved-link-color: var(--cyan-blue-shifted);
-	--button-text: var(--light-in-light-dark-in-dark);
+	--button-text: var(--text-normal);
 }
 
 .custom-colors.theme-light.primary-accent-light-purple,
@@ -12154,7 +12154,7 @@ body:not(.unlock-theme-beta) .style-settings-container .setting-item:is(
 }
 
 object.link-favicon {
-	height: 1em !important; /* needs */
+	height: 1em !important; /* needed */
 	margin: 0 4px 2px 0;
 }
 
@@ -12187,7 +12187,7 @@ body:not(.normal-blockquotes) .HyperMD-quote.HyperMD-quote-1:not(.cm-active) .li
 }
 
 /* fix look of Github icons */
-.theme-light .link-favicon[data-host="github.com"] {
+.theme-light .link-favicon[data-host*="github.com"] {
 	filter: none;
 }
 

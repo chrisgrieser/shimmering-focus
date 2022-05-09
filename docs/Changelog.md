@@ -3,6 +3,7 @@ nav_order: 110
 ---
 
 # Changelog
+- 2022-05-09	patch
 - 2022-05-09	make madness mode visible by default
 - 2022-05-08	some more custom color accents
 - 2022-05-08	fix default values for custom colors
