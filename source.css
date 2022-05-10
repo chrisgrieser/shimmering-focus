@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 2.123
+Version 2.124
 Source CSS: https://github.com/chrisgrieser/shimmering-focus/blob/main/source.css
 MIT License
 ──────────────────────────────────────────────────── */
@@ -7586,8 +7586,8 @@ a.tag:hover {
 .theme-dark { --annotation-tag-font-color: hsl(0 0% 100%); }
 
 /* all annotation tags */
-body:not(.annotation-tags-off) .tag:is([href="#goal"], [href="#question"], [href="#gap"], [href="#main"], [href="#disagree"], [href="#summary"], [href="#agree"], [href="#example"], [href="#definition"], [href="#method"], [href="#data"], [href="#important"], [href="#quote"], [href="#todo"], [href="#critique"], [href="#sidenote"], [href="#litreview"]),
-body:not(.annotation-tags-off) .cm-s-obsidian .cm-line span:is(.cm-tag-litreview, .cm-tag-sidenote, .cm-tag-goal, .cm-tag-critique, .cm-tag-todo, .cm-tag-quote, .cm-tag-method, .cm-tag-data, .cm-tag-disagree, .cm-tag-gap, .cm-tag-summary, .cm-tag-definition, .cm-tag-question, .cm-tag-main, .cm-tag-agree, .cm-tag-important, .cm-tag-example) {
+body:not(.annotation-tags-off) .tag:is([href="#goal"], [href="#idea"], [href="#question"], [href="#gap"], [href="#main"], [href="#disagree"], [href="#summary"], [href="#agree"], [href="#example"], [href="#definition"], [href="#method"], [href="#data"], [href="#important"], [href="#quote"], [href="#todo"], [href="#critique"], [href="#sidenote"], [href="#litreview"]),
+body:not(.annotation-tags-off) .cm-s-obsidian .cm-line span:is(.cm-tag-litreview, .cm-tag-idea, .cm-tag-sidenote, .cm-tag-goal, .cm-tag-critique, .cm-tag-todo, .cm-tag-quote, .cm-tag-method, .cm-tag-data, .cm-tag-disagree, .cm-tag-gap, .cm-tag-summary, .cm-tag-definition, .cm-tag-question, .cm-tag-main, .cm-tag-agree, .cm-tag-important, .cm-tag-example) {
 	font-weight: 900;
 	font-style: normal;
 	white-space: nowrap;
@@ -7601,14 +7601,14 @@ body:not(.annotation-tags-off) .cm-s-obsidian .cm-line span:is(.cm-tag-litreview
 }
 
 /* annotation tags in longform notes */
-body:not(.annotation-tags-off) .longform-leaf .tag:is([href="#goal"], [href="#question"], [href="#gap"], [href="#main"], [href="#disagree"], [href="#summary"], [href="#agree"], [href="#example"], [href="#definition"], [href="#method"], [href="#data"], [href="#important"], [href="#quote"], [href="#todo"], [href="#critique"], [href="#sidenote"], [href="#litreview"]),
-body:not(.annotation-tags-off) .longform-leaf .cm-s-obsidian .cm-line span:is(.cm-tag-litreview, .cm-tag-sidenote, .cm-tag-goal, .cm-tag-critique, .cm-tag-todo, .cm-tag-quote, .cm-tag-method, .cm-tag-data, .cm-tag-disagree, .cm-tag-gap, .cm-tag-summary, .cm-tag-definition, .cm-tag-question, .cm-tag-main, .cm-tag-agree, .cm-tag-important, .cm-tag-example) {
+body:not(.annotation-tags-off) .longform-leaf .tag:is([href="#goal"], [href="#idea"], [href="#question"], [href="#gap"], [href="#main"], [href="#disagree"], [href="#summary"], [href="#agree"], [href="#example"], [href="#definition"], [href="#method"], [href="#data"], [href="#important"], [href="#quote"], [href="#todo"], [href="#critique"], [href="#sidenote"], [href="#litreview"]),
+body:not(.annotation-tags-off) .longform-leaf .cm-s-obsidian .cm-line span:is(.cm-tag-litreview, .cm-tag-idea, .cm-tag-sidenote, .cm-tag-goal, .cm-tag-critique, .cm-tag-todo, .cm-tag-quote, .cm-tag-method, .cm-tag-data, .cm-tag-disagree, .cm-tag-gap, .cm-tag-summary, .cm-tag-definition, .cm-tag-question, .cm-tag-main, .cm-tag-agree, .cm-tag-important, .cm-tag-example) {
 	font-family: var(--longform-font-text-theme);
 	font-size: var(--longform-font-size);
 }
 
 /* the "#" */
-body:not(.annotation-tags-off) .cm-s-obsidian .cm-line .cm-hashtag-begin:is(.cm-tag-litreview, .cm-tag-sidenote, .cm-tag-goal, .cm-tag-critique, .cm-tag-todo, .cm-tag-quote, .cm-tag-method, .cm-tag-data, .cm-tag-disagree, .cm-tag-gap, .cm-tag-summary, .cm-tag-definition, .cm-tag-question, .cm-tag-main, .cm-tag-agree, .cm-tag-important, .cm-tag-example) {
+body:not(.annotation-tags-off) .cm-s-obsidian .cm-line .cm-hashtag-begin:is(.cm-tag-litreview, .cm-tag-idea, .cm-tag-sidenote, .cm-tag-goal, .cm-tag-critique, .cm-tag-todo, .cm-tag-quote, .cm-tag-method, .cm-tag-data, .cm-tag-disagree, .cm-tag-gap, .cm-tag-summary, .cm-tag-definition, .cm-tag-question, .cm-tag-main, .cm-tag-agree, .cm-tag-important, .cm-tag-example) {
 	white-space: nowrap;
 	padding-right: 0;
 	border-top-right-radius: 0;
@@ -7616,7 +7616,7 @@ body:not(.annotation-tags-off) .cm-s-obsidian .cm-line .cm-hashtag-begin:is(.cm-
 }
 
 /* the tag text */
-body:not(.annotation-tags-off) .cm-s-obsidian .cm-line .cm-hashtag-end:is(.cm-tag-litreview, .cm-tag-sidenote, .cm-tag-goal, .cm-tag-critique, .cm-tag-todo, .cm-tag-quote, .cm-tag-method, .cm-tag-data, .cm-tag-disagree, .cm-tag-gap, .cm-tag-summary, .cm-tag-definition, .cm-tag-question, .cm-tag-main, .cm-tag-agree, .cm-tag-important, .cm-tag-example) {
+body:not(.annotation-tags-off) .cm-s-obsidian .cm-line .cm-hashtag-end:is(.cm-tag-litreview, .cm-tag-idea, .cm-tag-sidenote, .cm-tag-goal, .cm-tag-critique, .cm-tag-todo, .cm-tag-quote, .cm-tag-method, .cm-tag-data, .cm-tag-disagree, .cm-tag-gap, .cm-tag-summary, .cm-tag-definition, .cm-tag-question, .cm-tag-main, .cm-tag-agree, .cm-tag-important, .cm-tag-example) {
 	font-family: var(--font-text); /* fixes their appearance in headings */
 	padding-left: 0;
 	border-bottom-left-radius: 0;
@@ -7663,8 +7663,13 @@ body:not(.annotation-tags-off) :is(.cm-hashtag-begin.cm-tag-critique, .tag[href=
 	content: "☝️ ";
 }
 
+body:not(.annotation-tags-off) :is(.cm-tag-idea, .tag[href="#idea"]),
 body:not(.annotation-tags-off) :is(.cm-tag-quote, .tag[href="#quote"]) {
 	background-color: hsl(86 100% 51% / 50%);
+}
+
+body:not(.annotation-tags-off) :is(.cm-hashtag-begin.cm-tag-idea, .tag[href="#idea"])::before {
+	content: "🤔 ";
 }
 
 body:not(.annotation-tags-off) :is(.cm-hashtag-begin.cm-tag-quote, .tag[href="#quote"])::before {
@@ -15094,7 +15099,7 @@ settings:
   -
    id: annotation-tags-off
    title: Disable Annotation Tags
-   description: '"Annotation Tags" are tags that are visually emphasized when used inline (i.e., not the YAML frontmatter). They include: #definition, #question, #goal, #todo, #summary, #important, #main, #critique, #gap, #litreview, #quote, #agree, #disagree, #example, #data, #method, and #sidenote.'
+   description: '"Annotation Tags" are tags that are visually emphasized when used inline (i.e., not the YAML frontmatter). They include: #definition, #question, #goal, #todo, #summary, #important, #main, #critique, #gap, #litreview, #quote, #agree, #disagree, #example, #data, #method, #idea, and #sidenote.'
    type: class-toggle
    default: false
   -
