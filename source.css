@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 2.127
+Version 2.128
 Source CSS: https://github.com/chrisgrieser/shimmering-focus/blob/main/source.css
 MIT License
 ──────────────────────────────────────────────────── */
@@ -7944,6 +7944,11 @@ body:not(.no-multi-color-highlights) :is(strong > mark, .cm-strong.cm-highlight)
 /* make the "~" readable */
 .cm-formatting-strikethrough {
 	text-decoration: none;
+}
+
+del,
+.cm-strikethrough {
+	color: var(--middle-gray);
 }
 
 /* ───────────────────────────────────────────────── */

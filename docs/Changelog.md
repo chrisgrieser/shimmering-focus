@@ -3,7 +3,7 @@ nav_order: 110
 ---
 
 # Changelog
-- 2022-05-10	patch
+- 2022-05-10	strikethroughs in gray-ish to stand out more
 - 2022-05-10	separate settings for images & PDFs
 - 2022-05-10	bold in headings visible by making it underline
 - 2022-05-10	added annotation tag #idea
