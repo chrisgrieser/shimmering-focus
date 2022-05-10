@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 2.126
+Version 2.127
 Source CSS: https://github.com/chrisgrieser/shimmering-focus/blob/main/source.css
 MIT License
 ──────────────────────────────────────────────────── */
@@ -9543,7 +9543,7 @@ body:not(.no-built-in-supercharged-links) .data-link-icon[data-link-kanban-plugi
 body:not(.no-built-in-supercharged-links) .data-link-icon[data-link-tags~="#pdf-annotations" i]::before { content: "📓 " }
 
 /* pseudo-tooltips for literature notes */
-body:not(.no-built-in-supercharged-links) .workspace-split.mod-root :is([data-link-data-href], .data-link-icon)[data-link-tags~="#pdf-annotations" i]:hover::after {
+body:not(.no-built-in-supercharged-links) .workspace-split.mod-root :not(.cm-link-alias) > :is([data-link-data-href], .data-link-icon)[data-link-tags~="#pdf-annotations" i]:hover::after {
 	content: "\""attr(data-link-aliases)"\""; /* stylelint-disable-line function-whitespace-after */
 
 	font-size: 0.9rem;
