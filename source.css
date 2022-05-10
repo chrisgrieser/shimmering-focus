@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 2.124
+Version 2.125
 Source CSS: https://github.com/chrisgrieser/shimmering-focus/blob/main/source.css
 MIT License
 ──────────────────────────────────────────────────── */
@@ -6146,6 +6146,15 @@ for all headings to improve distinctiveness */
 body:not(.no-alternating-header-italics) .markdown-preview-view :is(h2, h4, h6),
 body:not(.no-alternating-header-italics) :is(.cm-header-2, .cm-header-4, .cm-header-6) {
 	font-style: italic;
+}
+
+/* interaction with other markup */
+
+/* bold in headings visible by making it underline */
+.cm-header.cm-strong,
+.markdown-preview-view :is(h1, h2, h3, h4, h5, h6) strong {
+	text-decoration: underline;
+	text-underline-offset: 2.5px;
 }
 
 /* ───────────────────────────────────────────────── */

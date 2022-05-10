@@ -3,6 +3,7 @@ nav_order: 110
 ---
 
 # Changelog
+- 2022-05-10	bold in headings visible by making it underline
 - 2022-05-10	added annotation tag #idea
 - 2022-05-09	make madness mode visible by default
 - 2022-05-08	some more custom color accents
