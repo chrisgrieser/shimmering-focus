@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 2.125
+Version 2.126
 Source CSS: https://github.com/chrisgrieser/shimmering-focus/blob/main/source.css
 MIT License
 ──────────────────────────────────────────────────── */
@@ -286,7 +286,8 @@ MIT License
  	- Editor Content (+)
  		- Code Blocks (+)
  		- Callouts (+)
- 		- Images & PDFs (+)
+ 		- Images (+)
+ 		- PDFs (+)
  	- Cursor & Vim Mode (+)
  	- Special Markup (+)
  	- Gutter & Active Line (+)
@@ -5857,12 +5858,12 @@ body:not(.disable-image-borders) img[src] {
 }
 
 /* centers image and image caption */
-body:not(.left-aligned-embeds) .image-embed[alt]::after {
+body:not(.left-aligned-images) .image-embed[alt]::after {
 	text-align: center;
 	white-space: pre;
 }
 
-body:not(.left-aligned-embeds) .view-content img[src] {
+body:not(.left-aligned-images) .view-content img[src] {
 	display: block;
 	margin-right: auto;
 	margin-left: auto;
@@ -5969,9 +5970,8 @@ body:not(.left-aligned-embeds) div.mermaid {
 	border-radius: var(--roundish);
 }
 
-/* needs important because original css has importants too */
-body:not(.left-aligned-embeds) .pdf-embed.pdf-embed {
-	margin-right: auto !important;
+body:not(.left-aligned-pdfs) .pdf-embed.pdf-embed {
+	margin-right: auto !important; /* needs importants */
 	margin-left: auto !important;
 }
 
@@ -14884,9 +14884,9 @@ settings:
    step: 0.5
    format: rem
   -
-# <<< Images & PDFs (+)
+# <<< Images (+)
    id: content-settings
-   title: 🖼 Images & PDFs
+   title: 🖼 Images
    description: Size, Zoom Methods, Alignment, Decoration
    type: heading
    level: 2
@@ -14917,17 +14917,8 @@ settings:
    max: 100
    step: 5
   -
-   id: pdf-size
-   title: Size of PDFs
-   description: Size of embedded PDFs in % (without Max View or Image Zoom)
-   type: variable-number-slider
-   default: 50
-   min: 10
-   max: 100
-   step: 5
-  -
-   id: left-aligned-embeds
-   title: Align Images & PDFs to the left
+   id: left-aligned-images
+   title: Align Images to the left
    description: When disabled, they will be aligned to the center instead.
    type: class-toggle
    default: false
@@ -14938,9 +14929,32 @@ settings:
    hub: ignore
    default: false
   -
+# <<< PDFs (+)
+   id: content-settings
+   title: 📕 PDFs
+   description: Size, Dark Mode, Alignment
+   type: heading
+   level: 2
+   collapsed: true
+  -
+   id: pdf-size
+   title: Size of PDFs
+   description: Size of embedded PDFs in % (without Max View or Image Zoom)
+   type: variable-number-slider
+   default: 50
+   min: 10
+   max: 100
+   step: 5
+  -
    id: no-pdf-dark-mode
    title: No Dark Mode for PDFs
    description: By default, PDFs in dark mode are also displayed in dark mode. Enable this to always display PDFs in their original colors.
+   type: class-toggle
+   default: false
+  -
+   id: left-aligned-pdfs
+   title: Align PDFs to the left
+   description: When disabled, they will be aligned to the center instead.
    type: class-toggle
    default: false
   -
