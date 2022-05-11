@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 2.128
+Version 2.129
 Source CSS: https://github.com/chrisgrieser/shimmering-focus/blob/main/source.css
 MIT License
 ──────────────────────────────────────────────────── */
@@ -7401,7 +7401,7 @@ a,
 /* icon for certain filetypes links
 with supercharged links installed, also displayed in edit mode */
 
-.markdown-preview-view a.internal-link::before {
+.markdown-preview-view a.internal-link:is([href$=".png"], [href$=".jpg"], [href$=".jpeg"], [href$=".tiff"], [href$=".xlsx"], [href$=".xls"], [href$=".ods"], [href$=".csv"], [href$=".pptx"], [href$=".ppt"], [href$=".odp"], [href$=".bib"], [href$=".bibtex"], [href$=".docx"], [href$=".doc"], [href$=".odt"])::before {
 	font-family: var(--icon-font);
 	font-size: 80%;
 	line-height: 1;
@@ -7489,18 +7489,18 @@ body:not(.show-urls) .cm-line:not(.cm-active) .cm-string.cm-url,
 ──────────────────────────────────────────────────── */
 
 .is-unresolved .cm-underline,
-.is-unresolved.is-unresolved.is-unresolved.is-unresolved {
+.is-unresolved.is-unresolved.is-unresolved:not(.pandoc-citation) {
 	color: var(--unresolved-link-color);
 	opacity: 1;
 }
 
 .cm-hmd-internal-link:hover > .cm-underline,
-.is-unresolved.is-unresolved.is-unresolved.is-unresolved:hover {
+.is-unresolved.is-unresolved.is-unresolved:not(.pandoc-citation):hover {
 	color: var(--hover-accent-2);
 }
 
 /* unresolved gutter indicator */
-body:not(.no-unresolved-link-indicator) .is-unresolved::before {
+body:not(.no-unresolved-link-indicator) .is-unresolved:not(.pandoc-citation)::before {
 	content: "✘";
 	font-size: 1.3rem;
 	background-color: var(--bg1);
@@ -9548,7 +9548,7 @@ body:not(.no-built-in-supercharged-links) .data-link-icon[data-link-kanban-plugi
 body:not(.no-built-in-supercharged-links) .data-link-icon[data-link-tags~="#pdf-annotations" i]::before { content: "📓 " }
 
 /* pseudo-tooltips for literature notes */
-body:not(.no-built-in-supercharged-links) .workspace-split.mod-root :not(.cm-link-alias) > :is([data-link-data-href], .data-link-icon)[data-link-tags~="#pdf-annotations" i]:hover::after {
+body:not(.no-built-in-supercharged-links) .workspace-split.mod-root :not(.cm-link-alias) > :is([data-link-data-href], .data-link-icon)[data-link-tags~="#pdf-annotations" i]:not([aria-label]):hover::after {
 	content: "\""attr(data-link-aliases)"\""; /* stylelint-disable-line function-whitespace-after */
 
 	font-size: 0.9rem;
@@ -13283,7 +13283,7 @@ body .pwc-reference-list .csl-entry.csl-entry.csl-entry {
 }
 
 /* pandoc citations in-text */
-body .pandoc-citation.pandoc-citation {
+body .pandoc-citation.pandoc-citation.pandoc-citation {
 	text-decoration: none;
 }
 
@@ -13295,9 +13295,10 @@ body:not(.no-pandoc-citation-emphasis) .view-content.view-content :is(.cm-pandoc
 	color: var(--text-muted);
 }
 
-body:not(.no-pandoc-citation-emphasis) .pandoc-citation.is-missing.is-missing {
+body:not(.no-pandoc-citation-emphasis) .pandoc-citation.is-unresolved.is-unresolved {
 	text-decoration: wavy underline 1px var(--text-error);
 	color: var(--text-error);
+	opacity: 1;
 }
 
 /* reading mode styling */

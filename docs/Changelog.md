@@ -3,6 +3,7 @@ nav_order: 110
 ---
 
 # Changelog
+- 2022-05-11	update for pandoc reference plugin
 - 2022-05-10	strikethroughs in gray-ish to stand out more
 - 2022-05-10	separate settings for images & PDFs
 - 2022-05-10	bold in headings visible by making it underline
