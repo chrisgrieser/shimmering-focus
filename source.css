@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 2.129
+Version 2.130
 Source CSS: https://github.com/chrisgrieser/shimmering-focus/blob/main/source.css
 MIT License
 ──────────────────────────────────────────────────── */
@@ -4044,12 +4044,8 @@ input:is([type="email"], [type="password"]) {
 }
 
 .installed-plugins-container .setting-item-description > div:first-child {
-	text-indent: -4.4em;
 	margin-top: -0.1em;
 	margin-bottom: 2px;
-
-	/* hide "Version: " in front of version number */
-	overflow: hidden;
 }
 
 /* space between button and checklist, e.g.
@@ -4059,7 +4055,7 @@ input:is([type="email"], [type="password"]) {
 }
 
 .installed-plugins-container .setting-item-description > div:nth-child(2) {
-	margin: -1.35em 3em 1px 7em; /* right marging needed to prevent the div laying over the buttons */
+	margin: -1.35em 3em 1px 10em; /* right marging needed to prevent the div laying over the buttons */
 }
 
 .installed-plugins-container .setting-item-description > div:nth-child(-n+2) {
@@ -4442,12 +4438,6 @@ body:not(.show-close-button) .mod-community-plugin .modal-close-button {
 when the plugin has download numbers (new one's don't)  */
 .community-plugin-info .community-plugin-downloads + .community-plugin-version {
 	margin-top: -20px;
-}
-
-/* hide "version" */
-.community-plugin-version {
-	text-indent: -69px;
-	overflow: hidden;
 }
 
 .community-plugin-info :is(.community-plugin-version, .community-plugin-author) {
