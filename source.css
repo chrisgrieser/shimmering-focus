@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 2.131
+Version 2.132
 Source CSS: https://github.com/chrisgrieser/shimmering-focus/blob/main/source.css
 MIT License
 ──────────────────────────────────────────────────── */
@@ -90,7 +90,7 @@ MIT License
 	- Confirmation Modal
 	- Settings Menu
 		- Settings Headings
-		- Login Menu 
+		- Login Menu
 		- Community Plugin List
 		- Core plugins list
 		- Hotkey search
@@ -781,7 +781,7 @@ body.strong-em-secondary-accent {
 	--dark-sat: 10%;
 }
 
-.custom-colors.custom-colors {  /* get colors from style settings */
+.custom-colors.custom-colors { /* get colors from style settings */
 	--bg-light-brightness: var(--brightness-light);
 	--bg-light-hue: var(--light-hue);
 	--bg-light-sat: var(--light-sat);
@@ -837,8 +837,8 @@ body.strong-em-secondary-accent {
 	--heading-bg: hsl(var(--bg-dark-hue) calc(var(--sat-dark-1) * 0.5) calc(var(--brightness-dark-1) + 5%));
 	--alt-bg: hsl(var(--bg-dark-hue) calc(var(--sat-dark-1) * 1.6) calc(var(--brightness-dark-2) - 2%));
 	--notice-bg: hsl(var(--bg-dark-hue) calc(var(--sat-dark-1) * 0.8) calc(var(--brightness-dark-2) + 3%));
-	--resize-handle-color: hsl(var(--bg-dark-hue)  var(--sat-dark-2) calc(var(--brightness-dark-2) - 1%));
-	--suggester-b-row: hsl(var(--bg-dark-hue)  var(--sat-dark-1) calc(var(--brightness-dark-1) - 2%));
+	--resize-handle-color: hsl(var(--bg-dark-hue) var(--sat-dark-2) calc(var(--brightness-dark-2) - 1%));
+	--suggester-b-row: hsl(var(--bg-dark-hue) var(--sat-dark-1) calc(var(--brightness-dark-1) - 2%));
 	--muted-border-color: hsl(var(--bg-dark-hue) var(--sat-dark-1) calc(var(--brightness-dark-1) - 6%));
 	--basic-border-color: hsl(var(--bg-dark-hue) var(--sat-dark-1) calc(var(--brightness-dark-1) + 6%));
 	--backdrop-color: hsl(var(--bg-dark-hue) 40% calc(var(--brigtness-dark-3) - 5%));
@@ -878,7 +878,7 @@ body.strong-em-secondary-accent {
 
 	--heading-bg: hsl(var(--longform-dark-hue) calc(var(--sat-dark-1) / 3) calc(var(--brightness-dark-1) + 5%));
 	--alt-bg: hsl(var(--longform-dark-hue) calc(var(--sat-dark-1) * 1.6) calc(var(--brightness-dark-2) - 2%));
-	--resize-handle-color: hsl(var(--longform-dark-hue)  var(--sat-dark-2) calc(var(--brightness-dark-2) - 1%));
+	--resize-handle-color: hsl(var(--longform-dark-hue) var(--sat-dark-2) calc(var(--brightness-dark-2) - 1%));
 	--muted-border-color: hsl(var(--longform-dark-hue) var(--sat-dark-1) calc(var(--brightness-dark-1) - 6%));
 	--basic-border-color: hsl(var(--longform-dark-hue) var(--sat-dark-1) calc(var(--brightness-dark-1) + 6%));
 }
@@ -4015,7 +4015,7 @@ body .app-container .workspace-leaf-resize-handle:hover {
 	background-color: var(--bg3);
 }
 
-/* <<< Login Menu  */
+/* <<< Login Menu */
 .modal.mod-settings .loader-cube + div > h2 {
 	display: block;
 	font-size: 2em;
@@ -4101,7 +4101,7 @@ input:is([type="email"], [type="password"]) {
 	padding-right: 0;
 }
 
-/* avoids the creation of two-line-hotkeys  */
+/* avoids the creation of two-line-hotkeys */
 /* when the command name is too long */
 .hotkey-list-container .setting-item .setting-item-info {
 	max-width: 75%;
@@ -4435,7 +4435,7 @@ body:not(.show-close-button) .mod-community-plugin .modal-close-button {
 }
 
 /* move up; next-sibling selector ensures it only happens,
-when the plugin has download numbers (new one's don't)  */
+when the plugin has download numbers (new one's don't) */
 .community-plugin-info .community-plugin-downloads + .community-plugin-version {
 	margin-top: -20px;
 }
@@ -5952,6 +5952,7 @@ body:not(.left-aligned-embeds) div.mermaid {
 /* ───────────────────────────────────────────────── */
 /* << PDFs
 ──────────────────────────────────────────────────── */
+.theme-dark:not(.no-pdf-dark-mode) .oz-pdf-widget-cm6,
 .theme-dark:not(.no-pdf-dark-mode) :is(.pdf-embed, .workspace-leaf-content[data-type="pdf"]) iframe {
 	filter: invert(0.85);
 }
@@ -6498,7 +6499,7 @@ body:not(.normal-blockquotes) .callout-content :is(ul, p, code) {
 }
 
 .callout-title {
-	background-color: rgb(var(--callout-color), 13%);  /* stylelint-disable-line color-function-notation */
+	background-color: rgb(var(--callout-color), 13%); /* stylelint-disable-line color-function-notation */
 	padding: 2.5px var(--callout-left-padding);
 	border: var(--thin-border);
 	border-top-right-radius: var(--roundish);
@@ -10931,7 +10932,7 @@ body:not(.longform-left-aligned) :is(.writing, .longform-leaf) :is(p, .footnotes
 	--code-block-alt-bg: var(--bg3);
 }
 
-/* fix for checkboxes  */
+/* fix for checkboxes */
 :is(.writing, .longform-leaf) input[type="checkbox"] {
 	margin: 3px 9px 4px 0 !important;
 }
@@ -11795,7 +11796,7 @@ body .style-settings-heading[data-level="0"] .setting-item-name.setting-item-nam
 	letter-spacing: var(--heading-letter-spacing);
 }
 
-/* settings tab  / general */
+/* settings tab / general */
 .style-settings-heading[data-level="2"] + .style-settings-container,
 .style-settings-heading[data-level="2"][data-level="2"] {
 	margin-left: 20px;
@@ -12184,7 +12185,7 @@ body:not(.normal-blockquotes) .HyperMD-quote.HyperMD-quote-1:not(.cm-active) .li
 }
 
 .kanban-plugin__board .link-favicon {
-	height: 0.9em !important;  /* needs important */
+	height: 0.9em !important; /* needs important */
 }
 
 .grayscale-favicons .link-favicon {
@@ -12442,7 +12443,7 @@ body:not(.show-header-bar) .app-container .workspace-split.mod-root .workspace-l
 	background-color: var(--bg1);
 }
 
-/* island in general  */
+/* island in general */
 body .excalidraw .Island {
 	border: var(--thin-muted-border);
 	border-radius: calc(var(--roundish) * 2);
@@ -13327,7 +13328,7 @@ body:not(.no-pandoc-citation-emphasis) .pandoc-citation.is-unresolved.is-unresol
 /* ───────────────────────────────────────────────── */
 /* << Hardcore Mode
 ──────────────────────────────────────────────────── */
-
+/* stylelint-disable indentation */
 :is(.hardcore-mode, .madness-mode):not(.is-mobile) :is(
 	.titlebar,
 	.collapse-indicator,
@@ -13354,6 +13355,7 @@ body:not(.no-pandoc-citation-emphasis) .pandoc-citation.is-unresolved.is-unresol
 	.setting-editor-extra-setting-button,
 	.setting-restore-hotkey-button
 ) { display: none }
+/* stylelint-enable indentation */
 
 :is(.hardcore-mode, .madness-mode):not(.is-mobile) .cm-gutter {
 	display: none !important; /* needed */
@@ -13389,7 +13391,7 @@ body:not(.no-pandoc-citation-emphasis) .pandoc-citation.is-unresolved.is-unresol
 }
 
 body:is(.hardcore-mode, .madness-mode):not(.is-mobile) {
-	padding: 0 !important;  /* needed */
+	padding: 0 !important; /* needed */
 }
 
 /* unknown hotkeys */
@@ -13949,7 +13951,7 @@ body.madness-mode:not(.is-mobile) .prompt {
 
 	border: var(--basic-border);
 	border-radius: var(--roundish);
- }
+}
 
 /* ───────────────────────────────────────────────── */
 /* < Compatibility Info for the Obsidian Hub
