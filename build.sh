@@ -21,7 +21,6 @@
 # - clean-css-cli
 # - stylelint
 # - markdownlint
-# - markdown-link-check
 # - yamllint
 # - git authentication with SSH & Push Access
 # - this script placed somewhere in the git repository
@@ -75,9 +74,6 @@ r=$(git rev-parse --git-dir) && r=$(cd "$r" && pwd)/ && cd "${r%%/.git/*}"
 stylelint --fix "$CSS_PATH"
 markdownlint --fix ./*.md
 markdownlint --fix docs/*.md
-markdown-link-check -q ./README.md
-# creates too many errors with docs linking right now
-# find ./docs -name \*.md -print0 | xargs -0 -n1 markdown-link-check -q
 
 # Update ToC
 printf "/* @TOC-SPLIT-MARKER */\n/*\n" > new_toc.css
@@ -127,7 +123,6 @@ sed -E -i '' "s/badge.*-[[:digit:]]+-/badge\/downloads-$dl-/" docs/index.md
 printf "---\nnav_order: 110\n---\n\n# Changelog\n" > "$CHANGELOG_PATH"
 echo "- ""$(date +"%Y-%m-%d")""	$COMMIT_MSG" >> "$CHANGELOG_PATH"
 git log --pretty=format:"- %ad%x09%s" --date=short | grep -Ev "minor$" | grep -Ev "patch$" | grep -Ev "typos?$" | grep -v "refactoring" | grep -v "Add files via upload" | grep -Ev "\tDelete" | grep -Ev "\tUpdate.*\.md" | sed -E "s/\t\+ /\t/g" >> "$CHANGELOG_PATH"
-
 
 # add to git
 git add -A
