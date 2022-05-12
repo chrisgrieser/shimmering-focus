@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 2.132
+Version 2.133
 Source CSS: https://github.com/chrisgrieser/shimmering-focus/blob/main/source.css
 MIT License
 ──────────────────────────────────────────────────── */
@@ -5797,7 +5797,7 @@ progress[value^="5"][max="100"]::-webkit-progress-value { background: var(--prog
 progress[value^="4"][max="100"]::-webkit-progress-value { background: var(--progress-7) }
 progress[value^="3"][max="100"]::-webkit-progress-value { background: var(--progress-8) }
 progress[value^="2"][max="100"]::-webkit-progress-value { background: var(--progress-9) }
-progress[max="100"]:is([value="10"],[value="11"],[value="12"],[value="13"],[value="14"],[value="15"],[value="16"],[value="17"],[value="18"],[value="18"])::-webkit-progress-value { background: var(--progress-10) }
+progress[max="100"]:is([value="10"],[value="11"],[value="12"],[value="13"],[value="14"],[value="15"],[value="16"],[value="17"],[value="18"],[value="19"])::-webkit-progress-value { background: var(--progress-10) }
 progress[max="100"]:is([value="1"],[value="2"],[value="3"],[value="4"],[value="5"],[value="6"],[value="7"],[value="8"],[value="9"])::-webkit-progress-value { background: var(--progress-11) }
 
 /* ───────────────────────────────────────────────── */
