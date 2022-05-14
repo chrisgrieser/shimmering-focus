@@ -3,6 +3,7 @@ nav_order: 110
 ---
 
 # Changelog
+- 2022-05-14	remove faded-blink animation for expty state (CPU hog, thanks @gala8y)
 - 2022-05-13	remove pure black as accent color (not working well)
 - 2022-05-13	pdf dark mode also applies to Ozan's image in Editor Plugin (Source Mode)
 - 2022-05-12	unhide the version word preceding version numbers (fix #166)

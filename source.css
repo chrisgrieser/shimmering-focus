@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 2.134
+Version 2.135
 Source CSS: https://github.com/chrisgrieser/shimmering-focus/blob/main/source.css
 MIT License
 ──────────────────────────────────────────────────── */
@@ -1761,14 +1761,6 @@ body.no-animations {
 	--quick-transition: 0;
 	--medium-transition: 0;
 	--slow-transition: 0;
-}
-
-@keyframes signature-blink {
-	from { color: var(--text-normal) }
-	25% { color: var(--primary-accent-2) }
-	50% { color: var(--secondary-accent-2) }
-	75% { color: var(--hover-accent-2) }
-	to { color: var(--text-normal) }
 }
 
 :root { /* stylelint-disable-line no-duplicate-selectors */
@@ -4892,15 +4884,9 @@ are not targeted by this */
 
 .mod-root .empty-state-title::after {
 	content: var(--signature);
-
 	font-size: var(--empty-state-symbol-size);
 	font-weight: 500;
-
 	color: var(--extra-contrast);
-
-	animation-duration: 8s;
-	animation-name: signature-blink;
-	animation-iteration-count: infinite;
 }
 
 /* "plugin no longer active" messages */
@@ -11874,18 +11860,12 @@ a:is(.style-settings-export, .style-settings-import) {
 	color: var(--hover-accent-2);
 }
 
-/* blinking signature */
+/* signature */
 .style-settings-heading[data-id="shimmering-focus"] .setting-item-name::after {
 	content: var(--signature);
 	font-size: 1.7rem;
 	line-height: 0.6rem;
 	padding-left: 7px;
-}
-
-body:not(.no-animations) .style-settings-heading[data-id="shimmering-focus"]:not(:hover) .setting-item-name::after {
-	animation-duration: 8s;
-	animation-name: signature-blink;
-	animation-iteration-count: infinite;
 }
 
 /* ───────────────────────────────────────────────── */
