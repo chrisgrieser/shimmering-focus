@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 2.135
+Version 2.136
 Source CSS: https://github.com/chrisgrieser/shimmering-focus/blob/main/source.css
 MIT License
 ──────────────────────────────────────────────────── */
@@ -11587,7 +11587,6 @@ body .qsp-symbol-indicator {
 	display: none;
 }
 
-.another-quick-switcher__item__description,
 .another-quick-switcher__item__descriptions {
 	line-height: 1em;
 }
@@ -11595,10 +11594,6 @@ body .qsp-symbol-indicator {
 .another-quick-switcher__item__description__tag,
 .another-quick-switcher__item__description__alias {
 	line-height: 1.2em;
-}
-
-.another-quick-switcher__item__description + .another-quick-switcher__item__description {
-	margin-top: 5px;
 }
 
 .another-quick-switcher__item__description__alias svg {
