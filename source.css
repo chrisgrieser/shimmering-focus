@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 2.136
+Version 2.137
 Source CSS: https://github.com/chrisgrieser/shimmering-focus/blob/main/source.css
 MIT License
 ──────────────────────────────────────────────────── */
@@ -5636,34 +5636,38 @@ body:not(.show-fold-indicators) .cm-foldPlaceholder::before {
 }
 
 .relative-line-numbering .cm-lineNumbers .cm-gutterElement.cm-active + .cm-gutterElement::after {
-	content: "2";
+	content: "1";
 }
 
 .relative-line-numbering .cm-lineNumbers .cm-gutterElement.cm-active + .cm-gutterElement + .cm-gutterElement::after {
-	content: "3";
+	content: "2";
 }
 
 .relative-line-numbering .cm-lineNumbers .cm-gutterElement.cm-active + .cm-gutterElement + .cm-gutterElement + .cm-gutterElement::after {
-	content: "4";
+	content: "3";
 }
 
 .relative-line-numbering .cm-lineNumbers .cm-gutterElement.cm-active + .cm-gutterElement + .cm-gutterElement + .cm-gutterElement + .cm-gutterElement::after {
-	content: "5";
+	content: "4";
 }
 
 .relative-line-numbering .cm-lineNumbers .cm-gutterElement.cm-active + .cm-gutterElement + .cm-gutterElement + .cm-gutterElement + .cm-gutterElement + .cm-gutterElement::after {
-	content: "6";
+	content: "5";
 }
 
 .relative-line-numbering .cm-lineNumbers .cm-gutterElement.cm-active + .cm-gutterElement + .cm-gutterElement + .cm-gutterElement + .cm-gutterElement + .cm-gutterElement + .cm-gutterElement::after {
-	content: "7";
+	content: "6";
 }
 
 .relative-line-numbering .cm-lineNumbers .cm-gutterElement.cm-active + .cm-gutterElement + .cm-gutterElement + .cm-gutterElement + .cm-gutterElement + .cm-gutterElement + .cm-gutterElement + .cm-gutterElement::after {
-	content: "8";
+	content: "7";
 }
 
 .relative-line-numbering .cm-lineNumbers .cm-gutterElement.cm-active + .cm-gutterElement + .cm-gutterElement + .cm-gutterElement + .cm-gutterElement + .cm-gutterElement + .cm-gutterElement + .cm-gutterElement + .cm-gutterElement::after {
+	content: "8";
+}
+
+.relative-line-numbering .cm-lineNumbers .cm-gutterElement.cm-active + .cm-gutterElement + .cm-gutterElement + .cm-gutterElement + .cm-gutterElement + .cm-gutterElement + .cm-gutterElement + .cm-gutterElement + .cm-gutterElement + .cm-gutterElement::after {
 	content: "9";
 }
 
