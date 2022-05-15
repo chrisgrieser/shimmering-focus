@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 2.137
+Version 2.138
 Source CSS: https://github.com/chrisgrieser/shimmering-focus/blob/main/source.css
 MIT License
 ──────────────────────────────────────────────────── */
@@ -72,6 +72,7 @@ MIT License
 	- Sliders
 	- Search & Replace
 	- Search Matches
+	- is-flashing
 	- Context Menus
 	- Close Buttons
 - Prompts
@@ -3057,6 +3058,7 @@ so this has to be used ლ(ಠ_ಠლ)╯ */
 
 /* ───────────────────────────────────────────────── */
 /* << Search Matches
+/* << is-flashing
 ──────────────────────────────────────────────────── */
 
 /* affects prompts, suggesters, and search matches, e.g. in the settings
@@ -3065,11 +3067,19 @@ with color instead of outline, since it marks individuals letters */
 	color: var(--search-match-color);
 }
 
-body .is-flashing, /* e.g. when jumping to a heading */
 body .app-container .obsidian-search-match-highlight {
 	color: var(--text-normal);
-	background: none;
 	outline: var(--search-match-outline);
+}
+
+body .is-flashing { /* e.g. when jumping to a heading */
+	background-color: transparent;
+	outline: var(--search-match-outline);
+}
+
+/* to prevent white headings */
+body:not(.no-heading-bg) .is-flashing :is(h1, h2, h3, h4, h5, h6) {
+	background: var(--heading-bg) !important; /* needed */
 }
 
 /* gutter indicators */
