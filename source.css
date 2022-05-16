@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 2.140
+Version 2.141
 Source CSS: https://github.com/chrisgrieser/shimmering-focus/blob/main/source.css
 MIT License
 ──────────────────────────────────────────────────── */
@@ -10052,7 +10052,6 @@ body .kanban-plugin__item-title-wrapper {
 /* inline code */
 .kanban-plugin__item.kanban-plugin__item :not(pre) > code {
 	font-size: calc(var(--monospace-font-size) * 0.95);
-	background-color: var(--bg3);
 	padding-right: 0;
 	padding-left: 0;
 }
@@ -10060,7 +10059,6 @@ body .kanban-plugin__item-title-wrapper {
 /* code blocks */
 .kanban-plugin__item.kanban-plugin__item pre code {
 	font-size: calc(var(--monospace-font-size) * 0.8);
-	background-color: var(--bg3);
 	padding: 3px 5px 2px;
 }
 
