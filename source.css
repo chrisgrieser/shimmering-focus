@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 2.138
+Version 2.139
 Source CSS: https://github.com/chrisgrieser/shimmering-focus/blob/main/source.css
 MIT License
 ──────────────────────────────────────────────────── */
@@ -4982,7 +4982,7 @@ body:not(.active-line-emphasized-bg):not(.no-active-highlight) :is(.cm-active, .
 body:not(.no-codeblock-line-numbers):not(.no-active-highlight) .HyperMD-codeblock.cm-active:not(.HyperMD-codeblock-begin, .HyperMD-codeblock-end)::before {
 	font-weight: 600;
 	color: var(--active-line-indicator);
-	background-color: var(--alt-bg);
+	background-color: var(--b-row);
 }
 
 .active-line-emphasized-bg:not(.active-visual-line) .cm-active:not(.cm-gutterElement),
@@ -7088,7 +7088,7 @@ body:not(.no-codeblock-line-numbers) .HyperMD-codeblock-begin {
 }
 
 body:not(.no-codeblock-line-numbers) .HyperMD-codeblock.cm-line:not(.HyperMD-codeblock-begin, .HyperMD-codeblock-end) {
-	padding-left: 3em;
+	padding-left: 2.8em;
 }
 
 body:not(.no-codeblock-line-numbers) .HyperMD-codeblock:not(.HyperMD-codeblock-begin, .HyperMD-codeblock-end)::before {
@@ -7102,11 +7102,12 @@ body:not(.no-codeblock-line-numbers) .HyperMD-codeblock:not(.HyperMD-codeblock-b
 	width: 1.25em;
 
 	color: var(--text-muted);
+	background-color: var(--alt-bg);
 
 	position: absolute;
 	left: 0;
 
-	padding-right: 4px;
+	padding-right: 1.5em; /* space is needed for collapse indicators */
 
 	border-right: var(--thin-border);
 
