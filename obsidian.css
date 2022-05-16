@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 2.139
+Version 2.140
 Source CSS: https://github.com/chrisgrieser/shimmering-focus/blob/main/source.css
 MIT License
 ──────────────────────────────────────────────────── */
@@ -798,7 +798,7 @@ settings:
   -
    id: no-codeblock-line-numbers
    title: Disable Line Numbering in Code Blocks (Edit Mode)
-   description: 'By default, this theme adds line numbers in code blocks in Source Mode and Live Preview. Enable this, to turn off the line numbers.'
+   description: 'By default, this theme adds line numbers to code blocks in Source Mode and Live Preview.'
    type: class-toggle
    default: false
   -
