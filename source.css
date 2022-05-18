@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 2.144
+Version 2.145
 Source CSS: https://github.com/chrisgrieser/shimmering-focus/blob/main/source.css
 MIT License
 ──────────────────────────────────────────────────── */
@@ -5817,7 +5817,7 @@ progress[max="100"]:is([value="1"],[value="2"],[value="3"],[value="4"],[value="5
 	margin-bottom: 1em;
 }
 
-img[src] {
+.markdown-preview-view img[src] {
 	margin-top: 1em;
 	border-radius: var(--roundish);
 }
