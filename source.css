@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 2.142
+Version 2.143
 Source CSS: https://github.com/chrisgrieser/shimmering-focus/blob/main/source.css
 MIT License
 ──────────────────────────────────────────────────── */
@@ -7341,7 +7341,7 @@ body:not(.is-mobile) .markdown-preview-view .internal-link[aria-label] {
 	text-decoration: underline dashed 1px;
 }
 
-.dataview.dataview a.internal-link {
+.dataview.dataview.dataview a.internal-link {
 	/* undoing of this styling in dataview section,
 	since dataview internal links do have aria labels, too :( */
 	text-decoration-style: solid;
@@ -8219,7 +8219,7 @@ body:not(.no-fn-indicator) .mod-cm6 .cm-hmd-barelink:not(.cm-formatting-link) + 
 	content: "";
 }
 
-.list-2-col-cards.list-2-col-cards ul:not(.contains-task-list) li a {
+.list-2-col-cards.list-2-col-cards.list-2-col-cards ul:not(.contains-task-list) li a {
 	text-decoration: none;
 }
 
