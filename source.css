@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 2.145
+Version 2.146
 Source CSS: https://github.com/chrisgrieser/shimmering-focus/blob/main/source.css
 MIT License
 ──────────────────────────────────────────────────── */
@@ -2976,15 +2976,17 @@ input[type="range"]::-webkit-slider-thumb:hover {
 .document-search-container {
 	display: block;
 
-	height: 3.5em;
+	height: 3.4em;
 	width: 85%;
 
 	background-color: var(--bg3);
+	box-shadow: var(--muted-button-inset-shadow);
 
 	bottom: 12px;
 	left: 7.5%;
 
-	border: var(--thick-muted-border);
+	border: var(--muted-border);
+	border-width: 3px;
 	border-radius: calc(var(--roundish) * 3);
 }
 
