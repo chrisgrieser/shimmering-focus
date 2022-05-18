@@ -33,6 +33,7 @@ In accordance with the minimalistic philosophy of the theme, unnecessary UI elem
 - __Hover Editor__: Some style settings for the Hover Editor have no effect, since Shimmering Focus overrides them for consistency reasons.
 - __Banners__: The empty space on top of the banner is the hot zone that actives the header bar on hovering. To remove the space, you will have to permanently show the header bar via the respective Style Setting.
 - __Pandoc Reference__: The style settings of the Pandoc Reference List are all overridden, since *Shimmering Focus* applies its own styling for Pandoc citations.
+- __Hider__: Using the Hider Plugin alongside Shimmering Focus will cause some bugs, since of of them try to hide the same things in different ways. Since Shimmering Focus' feature set is a superset of the Hider Plugin's feature set, you can just disable the Hider plugin all together when using Shimmering Focus.
 
 ## Built-in Styling for Supercharged Links
 This theme includes built-in styling for the [Supercharged Links Plugin](https://github.com/mdelobelle/obsidian_supercharged_links). This means you can make use of the plugin's features without the need write your own CSS! (If you already have your own Supercharged Links setup, you can turn those of with the Style Settings Plugin.) For now the theme includes the following styling:

@@ -3,7 +3,7 @@ nav_order: 110
 ---
 
 # Changelog
-- 2022-05-18	patch
+- 2022-05-18	add info on hider plugin
 - 2022-05-16	minor improvements to code block line numbers
 - 2022-05-15	relative line numbering option consistent with code editors
 - 2022-05-14	remove faded-blink animation for expty state (CPU hog, thanks @gala8y)
