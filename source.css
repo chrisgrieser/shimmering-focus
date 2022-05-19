@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 2.146
+Version 2.147
 Source CSS: https://github.com/chrisgrieser/shimmering-focus/blob/main/source.css
 MIT License
 ──────────────────────────────────────────────────── */
@@ -4534,9 +4534,8 @@ body:not(.squareish-shapes) .community-plugin-info .community-plugin-author + .c
 	left: 5px;
 }
 
-.angular-shapes .modal.modal.mod-community-plugin .community-plugin-info button:last-child::before {
-	position: relative;
-	top: 6px;
+.angular-shapes .modal.modal.mod-community-plugin .community-plugin-info button:last-child {
+	padding-top: 3px;
 }
 
 .round-shapes .modal.modal.mod-community-plugin .community-plugin-info button:last-child {
