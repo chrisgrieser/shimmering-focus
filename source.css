@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 2.149
+Version 2.150
 Source CSS: https://github.com/chrisgrieser/shimmering-focus/blob/main/source.css
 MIT License
 ──────────────────────────────────────────────────── */
@@ -268,6 +268,7 @@ MIT License
 	- vimrc support
 	- Discord Rich Presence
 	- Pandoc Reference List
+	- Control Character
 - Hardcore & Madness Mode
 	- Hardcore Mode
 	- Hardcore & Madness Mode Style Settings
@@ -13305,6 +13306,14 @@ body:not(.no-pandoc-citation-emphasis) .pandoc-citation.is-unresolved.is-unresol
 }
 
 /* ───────────────────────────────────────────────── */
+/* << Control Character
+──────────────────────────────────────────────────── */
+
+body .control-character[type="newline"]::after {
+	-webkit-mask-size: 50%;
+}
+
+/* ───────────────────────────────────────────────── */
 /* < Hardcore & Madness Mode
 ──────────────────────────────────────────────────── */
 /* ───────────────────────────────────────────────── */
@@ -14013,6 +14022,7 @@ community:
 - obsidian-dynamic-toc
 - obsidian-pandoc-reference-list
 - obsidian-discordrpc
+- control-characters
 */
 
 /* ───────────────────────────────────────────────── */
