@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 2.147
+Version 2.148
 Source CSS: https://github.com/chrisgrieser/shimmering-focus/blob/main/source.css
 MIT License
 ──────────────────────────────────────────────────── */
@@ -2361,6 +2361,10 @@ div.notice-container .notice {
 
 	border: var(--notice-border);
 	border-radius: var(--roundish);
+}
+
+body:not(.is-mobile) .notice {
+	max-width: 400px;
 }
 
 .angular-shapes .notice-container .notice {
@@ -12758,6 +12762,10 @@ and file recovery plugin */
 	display: flex;
 	flex-direction: column-reverse;
 	max-height: unset;
+}
+
+.sync-history-list-item[id="0"] {
+	font-weight: 600;
 }
 
 /* ───────────────────────────────────────────────── */
