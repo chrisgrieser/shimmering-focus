@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 2.148
+Version 2.149
 Source CSS: https://github.com/chrisgrieser/shimmering-focus/blob/main/source.css
 MIT License
 ──────────────────────────────────────────────────── */
@@ -5894,7 +5894,7 @@ body:not(.hover-zoom) img[src] {
 }
 
 /* fix for GitHub shields */
-img:is([src*="img.shields.io"],[src*="ko-fi.com"], [src*="buymeacoffee"])[src][src][src][src][src] {
+img:is([src*="shields"],[src*="ko-fi.com"], [src*="buymeacoffee"])[src][src][src][src][src] {
 	display: inline;
 	margin-top: 0; /* stylelint-disable-line plugin/declaration-block-no-ignored-properties */
 	border: none;
