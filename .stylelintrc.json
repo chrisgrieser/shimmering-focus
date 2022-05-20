@@ -36,6 +36,8 @@
 					"noEmptyLineBetween": true,
 					"properties": [
 						"display",
+						"counter-reset",
+						"counter-increment",
 						"content",
 						"flex",
 						"flex-grow",
