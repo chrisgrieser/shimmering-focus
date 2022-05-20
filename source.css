@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 2.150
+Version 2.151
 Source CSS: https://github.com/chrisgrieser/shimmering-focus/blob/main/source.css
 MIT License
 ──────────────────────────────────────────────────── */
@@ -269,6 +269,8 @@ MIT License
 	- Discord Rich Presence
 	- Pandoc Reference List
 	- Control Character
+	- Jump to Link
+	- New Plugin Placeholder
 - Hardcore & Madness Mode
 	- Hardcore Mode
 	- Hardcore & Madness Mode Style Settings
@@ -13312,6 +13314,20 @@ body:not(.no-pandoc-citation-emphasis) .pandoc-citation.is-unresolved.is-unresol
 body .control-character[type="newline"]::after {
 	-webkit-mask-size: 50%;
 }
+
+/* ───────────────────────────────────────────────── */
+/* << Jump to Link
+──────────────────────────────────────────────────── */
+
+/* prevent hints from laying over link text */
+body .jl.popover {
+	margin-left: -1.5em;
+}
+
+/* ───────────────────────────────────────────────── */
+/* << New Plugin Placeholder
+──────────────────────────────────────────────────── */
+/* marker to jumpt to for new plugins */
 
 /* ───────────────────────────────────────────────── */
 /* < Hardcore & Madness Mode

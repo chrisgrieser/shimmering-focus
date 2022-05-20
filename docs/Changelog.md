@@ -3,6 +3,7 @@ nav_order: 110
 ---
 
 # Changelog
+- 2022-05-20	hints for jump-to-link-plugin placed better
 - 2022-05-19	support for control character plugin
 - 2022-05-18	add info on hider plugin
 - 2022-05-16	minor improvements to code block line numbers
