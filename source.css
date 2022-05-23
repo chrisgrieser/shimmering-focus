@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 2.153
+Version 2.154
 Source CSS: https://github.com/chrisgrieser/shimmering-focus/blob/main/source.css
 MIT License
 ──────────────────────────────────────────────────── */
@@ -1790,6 +1790,7 @@ body.no-animations {
 
 	border: none;
 	outline: var(--cursor-outline);
+	outline-offset: -0.1px;
 
 	animation-iteration-count: infinite;
 	animation-timing-function: ease-in-out;
