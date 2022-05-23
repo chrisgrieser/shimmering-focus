@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 2.152
+Version 2.153
 Source CSS: https://github.com/chrisgrieser/shimmering-focus/blob/main/source.css
 MIT License
 ──────────────────────────────────────────────────── */
@@ -1784,7 +1784,7 @@ body.no-animations {
 /* Default values */
 .cm-cursorLayer .cm-cursor,
 .CodeMirror-cursor {
-	width: 2.5px;
+	width: 2px;
 
 	background: var(--cursor-look);
 
