@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 2.154
+Version 2.155
 Source CSS: https://github.com/chrisgrieser/shimmering-focus/blob/main/source.css
 MIT License
 ──────────────────────────────────────────────────── */
@@ -2577,9 +2577,9 @@ body:not(.permanently-show-statusbar, .minimal-status-bar, .classic-statusbar) .
 }
 
 .minimal-status-bar .status-bar.status-bar {
-	background: transparent;
+	background: var(--bg1);
 	box-shadow: none;
-	padding-bottom: 3px;
+	padding: 3px 0 3px 5px;
 	border: none;
 }
 
@@ -10366,7 +10366,7 @@ body:not(.no-heading-bg) .kanban-plugin :is(h1, h2, h3, h4, h5, h6) {
 }
 
 .workspace-leaf-content[data-type="VIEW_TYPE_LONGFORM_EXPLORER"] .view-content .tabs {
-	padding: 0 4px;
+	/* padding: 0 4px; */
 }
 
 :is(.draft-container, .scene-container):is(.selected, .selected:hover) {
@@ -10388,9 +10388,10 @@ body:not(.no-heading-bg) .kanban-plugin :is(h1, h2, h3, h4, h5, h6) {
 
 	color: var(--extra-contrast);
 
-	padding: 4px 3px 4px 5px;
+	padding: 4px 6px;
 
 	border: none;
+	border-radius: 0;
 }
 
 :is(#draft-list, #scene-list) li {
@@ -10565,7 +10566,7 @@ body:not(.no-alternating-rows) li:nth-child(even) :is(.draft-container, .scene-c
 
 /* <<< Longform Icons */
 .workspace-leaf-content[data-type="VIEW_TYPE_LONGFORM_EXPLORER"] .tabs .tab-list {
-	padding: 9px 0 1px;
+	padding: 9px 4px 1px;
 	margin: 0;
 	border-bottom: var(--basic-border);
 }
