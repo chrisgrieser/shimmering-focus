@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 2.155
+Version 2.156
 Source CSS: https://github.com/chrisgrieser/shimmering-focus/blob/main/source.css
 MIT License
 ──────────────────────────────────────────────────── */
@@ -2577,7 +2577,7 @@ body:not(.permanently-show-statusbar, .minimal-status-bar, .classic-statusbar) .
 }
 
 .minimal-status-bar .status-bar.status-bar {
-	background: var(--bg1);
+	background: transparent;
 	box-shadow: none;
 	padding: 3px 0 3px 5px;
 	border: none;
@@ -13319,6 +13319,11 @@ body:not(.no-pandoc-citation-emphasis) .pandoc-citation.is-unresolved.is-unresol
 
 body .control-character[type="newline"]::after {
 	-webkit-mask-size: 50%;
+}
+
+/* removed styling since overriden by me anyway lol */
+.style-settings-heading[data-id="control-characters"] {
+	display: none;
 }
 
 /* ───────────────────────────────────────────────── */
