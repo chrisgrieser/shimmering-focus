@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 2.156
+Version 2.157
 Source CSS: https://github.com/chrisgrieser/shimmering-focus/blob/main/source.css
 MIT License
 ──────────────────────────────────────────────────── */
@@ -5157,7 +5157,7 @@ body:not(.no-active-highlight) .cm-active :is(.cm-formatting-header,.cm-formatti
 }
 
 /* keys */
-.cm-hmd-frontmatter.cm-atom {
+body:not(.colored-yaml) .cm-hmd-frontmatter.cm-atom {
 	font-weight: 700;
 }
 
