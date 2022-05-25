@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 2.157
+Version 2.158
 Source CSS: https://github.com/chrisgrieser/shimmering-focus/blob/main/source.css
 MIT License
 ──────────────────────────────────────────────────── */
@@ -974,7 +974,7 @@ body:is(.theme-light, .theme-dark) {
 	--medium-shadow: 4px 6px var(--shadow-blur) calc(var(--shadow-base-size) + 5px) var(--outside-shadow-color);
 	--small-shadow: 1px 3px var(--shadow-blur) var(--shadow-base-size) var(--outside-shadow-color);
 	--tiny-shadow: 0.5px 1px var(--shadow-blur) calc(var(--shadow-base-size) / 2) var(--outside-shadow-color);
-	--status-bar-shadow: -1px -1px var(--shadow-blur) calc(var(--shadow-base-size) / 2) var(--outside-shadow-color);
+	--status-bar-shadow: -0.5px -0.5px var(--shadow-blur) calc(var(--shadow-base-size) / 2) var(--outside-shadow-color);
 	--big-reverted-shadow: 0px -2px var(--shadow-blur) calc(var(--shadow-base-size) * 2) var(--outside-shadow-color);
 	--medium-reverted-shadow: 0px -1px var(--shadow-blur) calc(var(--shadow-base-size) * 1) var(--outside-shadow-color);
 }
@@ -2525,7 +2525,7 @@ body:not(.classic-statusbar) .status-bar {
 	border-top-left-radius: var(--roundish);
 }
 
-/* when permanently visible, safe space */
+/* when permanently visible, save space */
 body.permanently-show-statusbar .status-bar {
 	padding: 3px 5px 4px 6px;
 }
@@ -5162,7 +5162,6 @@ body:not(.colored-yaml) .cm-hmd-frontmatter.cm-atom {
 }
 
 /* <<<< Colorful YAML Look */
-
 /* normal text */
 .colored-yaml .cm-hmd-frontmatter {
 	color: var(--text-normal);
