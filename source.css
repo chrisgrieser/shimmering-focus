@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 2.159
+Version 2.160
 Source CSS: https://github.com/chrisgrieser/shimmering-focus/blob/main/source.css
 MIT License
 ──────────────────────────────────────────────────── */
@@ -3078,12 +3078,9 @@ with color instead of outline, since it marks individuals letters */
 	color: var(--search-match-color);
 }
 
+body .is-flashing, /* e.g. when jumping to a heading */
 body .app-container .obsidian-search-match-highlight {
 	color: var(--text-normal);
-	outline: var(--search-match-outline);
-}
-
-body .is-flashing { /* e.g. when jumping to a heading */
 	background-color: transparent;
 	outline: var(--search-match-outline);
 }
