@@ -3,7 +3,7 @@ nav_order: 110
 ---
 
 # Changelog
-- 2022-05-25	patch
+- 2022-05-26	patch
 - 2022-05-20	minor improvements for code blocks in edit mode
 - 2022-05-20	hints for jump-to-link-plugin placed better
 - 2022-05-19	support for control character plugin
