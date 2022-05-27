@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 2.164
+Version 2.165
 Source CSS: https://github.com/chrisgrieser/shimmering-focus/blob/main/source.css
 MIT License
 ──────────────────────────────────────────────────── */
@@ -2527,7 +2527,7 @@ body:not(.classic-statusbar) .status-bar {
 
 /* when permanently visible, save space */
 body.permanently-show-statusbar .status-bar {
-	padding: 3px 5px 4px 6px;
+	padding: 3px 4px 4px 5px;
 }
 
 body.permanently-show-statusbar .status-bar.status-bar::after {
@@ -2539,7 +2539,8 @@ body.permanently-show-statusbar .status-bar.status-bar::after {
 	font-size: var(--status-bar-font-size);
 	color: var(--extra-contrast);
 	padding: 0;
-	margin-right: 9px; /* space between status bar items */
+	margin-right: 4px; /* = space between status bar items */
+	margin-left: 3px;
 }
 
 body:not(.hide-signature) .status-bar::after {
