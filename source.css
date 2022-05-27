@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 2.161
+Version 2.162
 Source CSS: https://github.com/chrisgrieser/shimmering-focus/blob/main/source.css
 MIT License
 ──────────────────────────────────────────────────── */
@@ -7113,10 +7113,15 @@ body:not(.no-codeblock-line-numbers) .HyperMD-codeblock:not(.HyperMD-codeblock-b
 	padding-right: 1.5em; /* space is needed for collapse indicators */
 }
 
+/* code block end */
 body:not(.no-codeblock-line-numbers) .HyperMD-codeblock-end .cm-formatting-code-block {
-	background-color: var(--alt-bg);
 	padding: 2px 4.5px 2px 4px;
 	margin-left: -4px;
+}
+
+body:not(.no-codeblock-line-numbers) .HyperMD-codeblock-end .cm-formatting-code-block:first-child {
+	/* "first-child" ensures that indented code blocks (e.g. in lists) do not look off */
+	background-color: var(--alt-bg);
 }
 
 /* No Wrapping */
