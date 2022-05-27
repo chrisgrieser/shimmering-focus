@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 2.162
+Version 2.163
 Source CSS: https://github.com/chrisgrieser/shimmering-focus/blob/main/source.css
 MIT License
 ──────────────────────────────────────────────────── */
@@ -13321,6 +13321,11 @@ body .control-character[type="newline"]::after {
 /* removed styling since overriden by me anyway lol */
 .style-settings-heading[data-id="control-characters"] {
 	display: none;
+}
+
+body .control-character:is([type="tab"], [type="space"]),
+body .control-character.control-character::after {
+	background: var(--active-color);
 }
 
 /* ───────────────────────────────────────────────── */

@@ -3,7 +3,7 @@ nav_order: 110
 ---
 
 # Changelog
-- 2022-05-27	patch
+- 2022-05-27	control characters follow theme accents
 - 2022-05-27	tables not full width by default anymore
 - 2022-05-20	minor improvements for code blocks in edit mode
 - 2022-05-20	hints for jump-to-link-plugin placed better
