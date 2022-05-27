@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 2.160
+Version 2.161
 Source CSS: https://github.com/chrisgrieser/shimmering-focus/blob/main/source.css
 MIT License
 ──────────────────────────────────────────────────── */
@@ -6689,10 +6689,10 @@ body .callout {
 	--table-b-row: hsla(var(--bg-light-hue) 50% 50% / 7.5%);
 }
 
-.markdown-preview-view table:not(.dataview) {
+/* .markdown-preview-view table:not(.dataview) {
 	width: 100%;
 	table-layout: fixed;
-}
+} */
 
 /* outer border */
 table {
