@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 2.165
+Version 2.166
 Source CSS: https://github.com/chrisgrieser/shimmering-focus/blob/main/source.css
 MIT License
 ──────────────────────────────────────────────────── */
@@ -7359,10 +7359,18 @@ body:not(.is-mobile) .markdown-preview-view .internal-link[aria-label] {
 }
 
 /* double underline internal links */
+body:not(.no-double-underline) {
+	--wikilink-underlines: double 1px;
+}
+
+.no-double-underline {
+	--wikilink-underlines: solid;
+}
+
 .is-live-preview .cm-hmd-internal-link.cm-hmd-internal-link .cm-underline,
 .markdown-source-view .cm-hmd-internal-link:not(.cm-link-alias):hover,
 .markdown-preview-view .internal-link {
-	text-decoration: underline double 1px;
+	text-decoration: underline var(--wikilink-underlines);
 }
 
 a,
@@ -7519,8 +7527,7 @@ div > ul > li > ul > li > ul > li > ul > li > ul > li > .is-unresolved.is-unreso
 /* ───────────────────────────────────────────────── */
 /* << Tags
 ──────────────────────────────────────────────────── */
-
-.cm-hashtag.cm-hashtag.cm-hashtag,
+.cm-hashtag.cm-hashtag.cm-hashtag.cm-hashtag,
 a.tag {
 	text-decoration: none;
 	color: var(--tag-text-color);
@@ -15418,7 +15425,7 @@ settings:
 # << Miscellaneous (+)
    id: miscellaneous
    title: ✴️ Miscellaneous
-   description: Menu Size, Line Length, Inactive Panes, Alternating Row Colors, Animations, 🆕 Theme Beta
+   description: Menu Size, Line Length, Double Underlines, Inactive Panes, Alternating Row Colors, Animations, 🆕 Theme Beta
    type: heading
    level: 1
    collapsed: true
@@ -15445,6 +15452,11 @@ settings:
    id: no-grayed-out-inactive-pane
    title: Do not dim Inactive Panes
    description: 'Also affects popovers from the Hover Editor Plugin.'
+   type: class-toggle
+   default: false
+  -
+   id: no-double-underline
+   title: No double-underlines to internal links
    type: class-toggle
    default: false
   -
