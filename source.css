@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 2.166
+Version 2.167
 Source CSS: https://github.com/chrisgrieser/shimmering-focus/blob/main/source.css
 MIT License
 ──────────────────────────────────────────────────── */
@@ -15456,7 +15456,7 @@ settings:
    default: false
   -
    id: no-double-underline
-   title: No double-underlines to internal links
+   title: No double-underlines for internal links
    type: class-toggle
    default: false
   -
