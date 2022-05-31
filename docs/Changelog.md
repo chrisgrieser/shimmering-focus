@@ -3,7 +3,7 @@ nav_order: 110
 ---
 
 # Changelog
-- 2022-05-30	patch
+- 2022-05-31	patch
 - 2022-05-30	option to turn off double underlines
 - 2022-05-27	control characters follow theme accents
 - 2022-05-27	tables not full width by default anymore

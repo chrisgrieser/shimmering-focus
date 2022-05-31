@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 2.167
+Version 2.168
 Source CSS: https://github.com/chrisgrieser/shimmering-focus/blob/main/source.css
 MIT License
 ──────────────────────────────────────────────────── */
@@ -6358,6 +6358,7 @@ body:not(.blockquotes-left-aligned) .app-container :is(.markdown-preview-view bl
 /* ───────────────────────────────────────────────── */
 /* << Citation Syntax
 ──────────────────────────────────────────────────── */
+body:not(.no-citation-syntax) .markdown-preview-view *:not(blockquote) > blockquote > * > li > blockquote,
 body:not(.no-citation-syntax) .markdown-preview-view *:not(blockquote) > blockquote > blockquote {
 	padding: 0;
 	border: none;
@@ -6368,8 +6369,10 @@ body:not(.no-citation-syntax) .is-live-preview .HyperMD-quote-1 + .HyperMD-quote
 	border-width: 0;
 }
 
+/* leading – */
 body:not(.no-citation-syntax) .is-live-preview .HyperMD-quote-1 + .HyperMD-quote-2:not(.cm-active) .cm-transparent:not(:first-child)::after,
 body:not(.no-citation-syntax) .cm-s-obsidian:not(.is-live-preview) .HyperMD-quote-1 + .HyperMD-quote-2 .cm-formatting-quote-2::after,
+body:not(.no-citation-syntax) .markdown-preview-view *:not(blockquote) > blockquote > * > li > blockquote > p::before,
 body:not(.no-citation-syntax) .markdown-preview-view *:not(blockquote) > blockquote > p + blockquote > p::before {
 	content: "— ";
 	font-weight: 500;
