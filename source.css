@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 2.168
+Version 2.169
 Source CSS: https://github.com/chrisgrieser/shimmering-focus/blob/main/source.css
 MIT License
 ──────────────────────────────────────────────────── */
@@ -12825,6 +12825,7 @@ and file recovery plugin */
 
 .dynamic-toc > :is(ol, ul) {
 	padding-bottom: 7px;
+	margin-left: 7px;
 }
 
 /* indention guides */
