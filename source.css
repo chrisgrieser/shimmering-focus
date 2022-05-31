@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 2.170
+Version 2.171
 Source CSS: https://github.com/chrisgrieser/shimmering-focus/blob/main/source.css
 MIT License
 ──────────────────────────────────────────────────── */
@@ -7762,8 +7762,12 @@ body:not(.annotation-tags-off) :is(.cm-hashtag-begin.cm-tag-example, .tag[href="
 }
 
 /* escapse characters */
-body .cm-s-obsidian :is(.cm-hmd-escape-char, .cm-hmd-escape-backslash) {
+body .cm-s-obsidian.cm-s-obsidian.cm-s-obsidian.cm-s-obsidian.cm-s-obsidian :is(.cm-hmd-escape-char, .cm-hmd-escape-backslash) {
 	color: var(--text-error);
+}
+
+.cm-hmd-escape-backslash {
+	filter: saturate(0.3);
 }
 
 /* make html comments readable by disabling ligatures in edit mode */
