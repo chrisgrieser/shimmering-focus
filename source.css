@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 2.169
+Version 2.170
 Source CSS: https://github.com/chrisgrieser/shimmering-focus/blob/main/source.css
 MIT License
 ──────────────────────────────────────────────────── */
@@ -364,6 +364,7 @@ MIT License
 ──────────────────────────────────────────────────── */
 
 :root {
+	/* rule of thumb: shifted colors are ~40 hue less than accent-2 */
 	--cyan-blue-0: hsl(187 80% 13% / 99%);
 	--cyan-blue-1: hsl(187 70% 26%);
 	--cyan-blue-2: hsl(190 80% 32%);
@@ -386,7 +387,7 @@ MIT License
 	--purple-3: hsl(250 80% 75%);
 	--purple-4: hsl(250 90% 85%);
 	--purple-5: hsl(250 70% 91% / 99%);
-	--purple-shifted: hsl(210 75% 64%); /* 40 hue less than primary-accent-2 */
+	--purple-shifted: hsl(210 75% 64%);
 
 	--beige-gray-0: hsl(40 30% 15% / 99%);
 	--beige-gray-1: hsl(40 20% 30%);
@@ -6058,8 +6059,7 @@ svg[id^="m"][width][height][viewBox] {
 /* << Headings
 ──────────────────────────────────────────────────── */
 
-/* because Obsidian does not use it's own
-heading variables in Reading Mode, lol? */
+/* because Obsidian does not use it's own heading variables in Reading Mode, lol? */
 .markdown-rendered h1 { font-size: var(--h1) }
 .markdown-rendered h2 { font-size: var(--h2) }
 .markdown-rendered h3 { font-size: var(--h3) }
@@ -6068,7 +6068,13 @@ heading variables in Reading Mode, lol? */
 .markdown-rendered h6 { font-size: var(--h6) }
 
 p {
-	margin-top: 10px;
+	margin-top: 0.5rem;
+	margin-bottom: 0.6rem;
+}
+
+.markdown-rendered.markdown-rendered :is(h1, h2, h3, h4, h5, h6) {
+	margin-top: 1.5rem;
+	margin-bottom: 0.3rem;
 }
 
 .cm-header,
@@ -6081,11 +6087,6 @@ p {
 .unicode-emojis .cm-header,
 .unicode-emojis .markdown-preview-view :is(h1, h2, h3, h4, h5, h6) {
 	font-family: var(--heading-font), "Noto Emoji", var(--emoji-fallback-fonts);
-}
-
-.markdown-rendered.markdown-rendered :is(h1, h2, h3, h4, h5, h6) {
-	margin-top: 1rem;
-	margin-bottom: 0.6rem;
 }
 
 .cm-formatting.cm-formatting-header {
