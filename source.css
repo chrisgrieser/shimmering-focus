@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 2.171
+Version 2.172
 Source CSS: https://github.com/chrisgrieser/shimmering-focus/blob/main/source.css
 MIT License
 ──────────────────────────────────────────────────── */
@@ -6796,7 +6796,7 @@ body { /* stylelint-disable-line no-duplicate-selectors */
 (i.e. code that is not in a pre (= block) ) */
 .is-live-preview code,
 .markdown-preview-view *:not(pre) > code,
-.cm-inline-code.cm-inline-code.cm-inline-code.cm-inline-code.cm-inline-code {
+.cm-inline-code.cm-inline-code.cm-inline-code.cm-inline-code.cm-inline-code.cm-inline-code {
 	color: var(--code-color);
 }
 
@@ -7761,7 +7761,7 @@ body:not(.annotation-tags-off) :is(.cm-hashtag-begin.cm-tag-example, .tag[href="
 	color: var(--text-muted);
 }
 
-/* escapse characters */
+/* escape characters */
 body .cm-s-obsidian.cm-s-obsidian.cm-s-obsidian.cm-s-obsidian.cm-s-obsidian :is(.cm-hmd-escape-char, .cm-hmd-escape-backslash) {
 	color: var(--text-error);
 }
@@ -10376,10 +10376,6 @@ body:not(.no-heading-bg) .kanban-plugin :is(h1, h2, h3, h4, h5, h6) {
 .workspace-leaf-content[data-type="VIEW_TYPE_LONGFORM_EXPLORER"] .view-content {
 	/* 30 px as overscroll */
 	padding: 0 0 30px;
-}
-
-.workspace-leaf-content[data-type="VIEW_TYPE_LONGFORM_EXPLORER"] .view-content .tabs {
-	/* padding: 0 4px; */
 }
 
 :is(.draft-container, .scene-container):is(.selected, .selected:hover) {
