@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 2.172
+Version 2.173
 Source CSS: https://github.com/chrisgrieser/shimmering-focus/blob/main/source.css
 MIT License
 ──────────────────────────────────────────────────── */
@@ -7122,6 +7122,13 @@ body:not(.no-codeblock-line-numbers) .HyperMD-codeblock:not(.HyperMD-codeblock-b
 body:not(.no-codeblock-line-numbers) .HyperMD-codeblock-end .cm-formatting-code-block {
 	padding: 2px 4.5px 2px 4px;
 	margin-left: -4.5px;
+}
+
+body:not(.no-codeblock-line-numbers) .is-live-preview .HyperMD-codeblock-end span:nth-child(2)::before {
+	content: " ";
+	background-color: var(--alt-bg);
+	padding: 2px 0.95em;
+	margin-left: -5px;
 }
 
 body:not(.no-codeblock-line-numbers) .HyperMD-codeblock-end .cm-formatting-code-block:first-child {
