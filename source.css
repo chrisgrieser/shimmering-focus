@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 2.173
+Version 2.174
 Source CSS: https://github.com/chrisgrieser/shimmering-focus/blob/main/source.css
 MIT License
 ──────────────────────────────────────────────────── */
@@ -6486,7 +6486,7 @@ body:not(.normal-blockquotes) .callout-content :is(ul, p, code) {
 
 .callout-title {
 	background-color: rgb(var(--callout-color), 13%); /* stylelint-disable-line color-function-notation */
-	padding: 2.5px var(--callout-left-padding);
+	padding: 2.5px calc(var(--callout-left-padding) - 2px);
 	border: var(--thin-border);
 	border-top-right-radius: var(--roundish);
 }
