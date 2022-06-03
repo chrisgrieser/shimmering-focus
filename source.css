@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 2.175
+Version 2.176
 Source CSS: https://github.com/chrisgrieser/shimmering-focus/blob/main/source.css
 MIT License
 ──────────────────────────────────────────────────── */
@@ -144,7 +144,6 @@ MIT License
 		- Custom Callouts
 		- Sidenote Callouts
 		- Post-it Callouts
-		- Aside Callouts
 	- Tables
 	- MathJax
 	- Code
@@ -6665,22 +6664,6 @@ body .callout {
 	margin: 0;
 }
 
-/* <<< Aside Callouts */
-.unlock-theme-beta .callout[data-callout$="aside"] {
-	font-size: 90%;
-	line-height: 1.2em;
-	hyphens: auto;
-
-	max-width: var(--aside-width);
-
-	position: absolute;
-	right: 3px;
-
-	padding: 3px;
-
-	border: none;
-}
-
 /* ───────────────────────────────────────────────── */
 /* << Tables
 ──────────────────────────────────────────────────── */
@@ -12050,25 +12033,17 @@ body:not(.show-titlebar) .setting-item[data-id="show-titlebar-text"],
 /* stylelint-disable indentation */
 /* hide settings */
 body:not(.unlock-theme-beta) .style-settings-container .setting-item:is(
-	[data-id="post-it-callout-size"],
-	[data-id="unicode-emojis"],
-	[data-id="aside-width"],
-	[data-id="strikethrough-margin-notes"]
-) {
+	[data-id="post-it-callout-size"],) {
 	display: none;
 }
 
 /* beta badge for sections */
 .unlock-theme-beta .style-settings-container .setting-item:is(
-	[data-id="callout-options"],
-	[data-id="aesthetics"]
-).is-collapsed::after,
-/* beta badge for setting */
+	[data-id="callout-options"],)
+.is-collapsed::after,
+
 .unlock-theme-beta .style-settings-container .setting-item:is(
 	[data-id="post-it-callout-size"],
-	[data-id="aside-width"],
-	[data-id="strikethrough-margin-notes"],
-	[data-id="unicode-emojis"],
 [data-id="unlock-theme-beta"])::before {
 	content: "Beta";
 
@@ -14255,7 +14230,7 @@ settings:
    default: false
   -
    id: colored-bold-italic
-   title: 🆕 Bold & Italic Text Color
+   title: Bold & Italic Text Color
    description: 'Whether Bold & Italic should have the same color as normal text or have a different color. (Note that with the Classic Color Scheme, secondary & hovered accent are the same.)'
    type: class-select
    allowEmpty: false
@@ -14828,7 +14803,7 @@ settings:
 # <<< Code Blocks (+)
    id: code-blocks-options
    title: '🖥 Code Blocks'
-   description: '🆕 Line Numbering, Tab Size, Line Wrapping, Syntax Highlighting'
+   description: 'Line Numbering, Tab Size, Line Wrapping, Syntax Highlighting'
    type: heading
    level: 2
    collapsed: true
@@ -14915,16 +14890,6 @@ settings:
    step: 5
    format: px
   -
-   id: aside-width
-   title: 🆕 Width of Aside Callouts
-   description: "Callouts with '> [!aside]'."
-   type: variable-number-slider
-   default: 10
-   min: 5
-   max: 15
-   step: 0.5
-   format: rem
-  -
 # <<< Images (+)
    id: content-settings
    title: 🖼 Images
@@ -14940,7 +14905,7 @@ settings:
    default: false
   -
    id: hover-zoom-delay
-   title: '🆕 Hover Zoom Delay'
+   title: Hover Zoom Delay
    desciption: Duration the cursor needs to hover over an image before it is zoomed in (in milliseconds).
    type: variable-number-slider
    default: 1000
@@ -15002,13 +14967,13 @@ settings:
 # << Cursor & Vim Mode (+)
    id: cursor-settings
    title: 🖱 Cursor & Vim Mode
-   description: Thickness, Color, Blinking, Block Cursor, 🆕 Vim Cursor, 🆕 Vim Mode Indicator
+   description: Thickness, Color, Blinking, Block Cursor, Vim Cursor, Vim Mode Indicator
    type: heading
    level: 1
    collapsed: true
   -
    id: cursor-styles
-   title: 🆕 Cursor Style
+   title: Cursor Style
    description: Color and look of the cursor.
    type: class-select
    allowEmpty: false
@@ -15027,10 +14992,10 @@ settings:
       label: Fire & Ice
       value: fire-and-ice-cursor
     -
-      label: 🆕 Theme Primary Accent
+      label: Primary Accent
       value: cursor-theme-primary-accent
     -
-      label: 🆕 Theme Hover Accent
+      label: Theme Hover Accent
       value: cursor-theme-hover-accent
   -
    id: cursor-blink-style
@@ -15146,12 +15111,6 @@ settings:
    id: no-multi-color-highlights
    title: Disable Multi-Color Highlights
    description: Multi-Color Highlights are created by combining regular highlights with italic (*==highlight==*) or bold (**==highlight==**).
-   type: class-toggle
-   default: false
-  -
-   id: strikethrough-margin-notes
-   title: Turn Strikekthroughs into Margin Notes
-   description: 'Turns Strikethrough Syntax (~~text~~) into margin notes. They become editable when in the active line. Works in Reading Mode, Live Preview, and Source Mode. However, you cannot use markup inside them.'
    type: class-toggle
    default: false
   -
