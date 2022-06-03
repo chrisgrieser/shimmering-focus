@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 2.174
+Version 2.175
 Source CSS: https://github.com/chrisgrieser/shimmering-focus/blob/main/source.css
 MIT License
 ──────────────────────────────────────────────────── */
@@ -106,6 +106,7 @@ MIT License
 		- Remaining Community Theme Browser
 - Editor
 	- Active / Inactive Note
+	- Editor Line Length Ruler
 	- Empty State
 	- Editor Properties
 	- Active Line Highlight
@@ -4881,6 +4882,13 @@ body .modal.mod-community-theme .modal-content .modal-title {
 body:not(.plugin-sliding-panes) .workspace-leaf:not(.mod-active) .workspace-leaf-content[data-type="markdown"] {
 	opacity: var(--inactive-pane-opacity);
 	transition: var(--slow-transition);
+}
+
+/* ───────────────────────────────────────────────── */
+/* << Editor Line Length Ruler
+──────────────────────────────────────────────────── */
+body.atomic-ruler .cm-line:nth-child(10) {
+	border-bottom: var(--thick-muted-border);
 }
 
 /* ───────────────────────────────────────────────── */
@@ -15437,7 +15445,7 @@ settings:
 # << Miscellaneous (+)
    id: miscellaneous
    title: ✴️ Miscellaneous
-   description: Menu Size, Line Length, Double Underlines, Inactive Panes, Alternating Row Colors, Animations, 🆕 Theme Beta
+   description: Menu Size, Line Length, 🆕 Atomic Notes Ruler, Double Underlines, Dimmed Inactive Panes, Alternating Row Colors, Animations, 🆕 Theme Beta
    type: heading
    level: 1
    collapsed: true
@@ -15460,6 +15468,12 @@ settings:
    max: 1300
    step: 50
    format: px
+  -
+   id: atomic-ruler
+   title: '🆕 Atomic Notes Ruler'
+   description: 'Puts a horizontal ruler after 15 lines. Useful for practitioners of atomic notes to keep their notes short.'
+   type: class-toggle
+   default: false
   -
    id: no-grayed-out-inactive-pane
    title: Do not dim Inactive Panes
