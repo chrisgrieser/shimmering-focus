@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 2.177
+Version 2.178
 Source CSS: https://github.com/chrisgrieser/shimmering-focus/blob/main/source.css
 MIT License
 ──────────────────────────────────────────────────── */
@@ -14540,13 +14540,13 @@ settings:
    format: rem
   -
    id: priority-emoji-font-text
-   title: Prioritize Emojis over the Text Font
+   title: Prioritize Emojis over Text Font
    description: "Prioritizing emojis will prevent some fonts from applying their own built-in font substitutes, but will lead to whitespace issues with some other fonts. This setting can be *enabled* if you are using the default 'iA Writer Quattro S' font from this theme to improve some minor emoji issues."
    type: class-toggle
    default: false
   -
    id: priority-emoji-font-interface
-   title: Prioritize Emojis over the Interface Font
+   title: Prioritize Emojis over Interface Font
    description: "This setting should be *disabled* if you are using the default interface font 'Recursive S' from this theme."
    type: class-toggle
    default: false
