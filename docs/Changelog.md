@@ -3,6 +3,7 @@ nav_order: 110
 ---
 
 # Changelog
+- 2022-06-04	style settings for emoji font priorization
 - 2022-06-03	move unicode emojis to public rel, remove beta stuff
 - 2022-06-03	new: Atomic Notes Ruler setting
 - 2022-06-02	code block gutter in LP looks more correct

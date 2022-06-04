@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 2.176
+Version 2.177
 Source CSS: https://github.com/chrisgrieser/shimmering-focus/blob/main/source.css
 MIT License
 ──────────────────────────────────────────────────── */
@@ -1300,6 +1300,14 @@ body {
 	--emoji-fallback-fonts: "Apple Color Emoji", "Segoe UI Emoji";
 	--font-interface: var(--font-interface-override), var(--font-interface-theme), var(--emoji-fallback-fonts), var(--font-default);
 	--font-text: var(--font-text-override), var(--font-text-theme), var(--emoji-fallback-fonts), var(--font-default);
+}
+
+body.priority-emoji-font-interface {
+	--font-interface: var(--emoji-fallback-fonts), var(--font-interface-override), var(--font-interface-theme), var(--font-default);
+}
+
+body.priority-emoji-font-text {
+	--font-text: var(--emoji-fallback-fonts), var(--font-text-override), var(--font-text-theme), var(--font-default);
 }
 
 body.unicode-emojis {
@@ -12039,9 +12047,7 @@ body:not(.unlock-theme-beta) .style-settings-container .setting-item:is(
 
 /* beta badge for sections */
 .unlock-theme-beta .style-settings-container .setting-item:is(
-	[data-id="callout-options"],)
-.is-collapsed::after,
-
+	[data-id="callout-options"],) .is-collapsed::after,
 .unlock-theme-beta .style-settings-container .setting-item:is(
 	[data-id="post-it-callout-size"],
 [data-id="unlock-theme-beta"])::before {
@@ -14532,6 +14538,18 @@ settings:
    max: 1.3
    step: 0.05
    format: rem
+  -
+   id: priority-emoji-font-text
+   title: Prioritize Emojis over the Text Font
+   description: "Prioritizing emojis will prevent some fonts from applying their own built-in font substitutes, but will lead to whitespace issues with some other fonts. This setting can be *enabled* if you are using the default 'iA Writer Quattro S' font from this theme to improve some minor emoji issues."
+   type: class-toggle
+   default: false
+  -
+   id: priority-emoji-font-interface
+   title: Prioritize Emojis over the Interface Font
+   description: "This setting should be *disabled* if you are using the default interface font 'Recursive S' from this theme."
+   type: class-toggle
+   default: false
   -
 # <<< Headings (+)
    id: heading-font-options
