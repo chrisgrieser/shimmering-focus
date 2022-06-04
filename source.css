@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 2.181
+Version 2.182
 Source CSS: https://github.com/chrisgrieser/shimmering-focus/blob/main/source.css
 MIT License
 ──────────────────────────────────────────────────── */
@@ -11558,8 +11558,24 @@ body .dataview.inline-field-key {
 	border-top-left-radius: var(--roundish);
 }
 
-/* <<< dataview cssclasses */
+/* Result counts */
+.dataview.small-text.small-text {
+	font-size: 90%;
+	color: var(--text-muted);
+}
 
+/* remove table hover, since redundant with hovers from this theme */
+body .dataview:is(.task-list-basic-item, .task-list-item):hover {
+	background: none;
+	box-shadow: none;
+	cursor: default;
+}
+
+body .table-view-table > tbody > tr:hover {
+	background-color: var(--active-line-bg);
+}
+
+/* <<< dataview cssclasses */
 /* dataview tables without lines */
 .markdown-preview-view.dataview-list-in-table table.dataview > :is(thead, tbody) > tr > :is(th, td) {
 	border-left: none;
