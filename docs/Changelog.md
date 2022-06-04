@@ -3,7 +3,7 @@ nav_order: 110
 ---
 
 # Changelog
-- 2022-06-04	patch
+- 2022-06-04	removed emoji priorization setting as it doesn't work well :(
 - 2022-06-04	style settings for emoji font priorization
 - 2022-06-03	move unicode emojis to public rel, remove beta stuff
 - 2022-06-03	new: Atomic Notes Ruler setting
