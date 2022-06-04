@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 2.179
+Version 2.180
 Source CSS: https://github.com/chrisgrieser/shimmering-focus/blob/main/source.css
 MIT License
 ──────────────────────────────────────────────────── */
@@ -1990,8 +1990,7 @@ body.no-animations {
 /* << Vim Mode Indicator
 ──────────────────────────────────────────────────── */
 
-.cm-vim-panel div span::before,
-.cm-selectionLayer::before {
+.workspace-leaf.mod-active :is(.cm-vim-panel div span, .cm-selectionLayer)::before {
 	font-family: var(--font-monospace);
 	font-size: 0.8rem;
 	font-weight: 500;
@@ -2019,41 +2018,41 @@ body.no-animations {
 	display: none;
 }
 
-.bottom-vim-indicator :is(.cm-vim-panel div span, .cm-selectionLayer)::before {
+.bottom-vim-indicator .workspace-leaf.mod-active :is(.cm-vim-panel div span, .cm-selectionLayer)::before {
 	top: unset;
 	bottom: -2px;
 	border-radius: 0 var(--roundish) 0 0;
 }
 
-.bottom-vim-indicator .cm-vim-panel div span::before {
+.bottom-vim-indicator .workspace-leaf.mod-active .cm-vim-panel div span::before {
 	background-color: var(--bg1);
 }
 
-.theme-light :is(.cm-vim-panel div span, .cm-selectionLayer)::before {
+.theme-light .workspace-leaf.mod-active :is(.cm-vim-panel div span, .cm-selectionLayer)::before {
 	font-weight: 600;
 }
 
-.cm-vimCursorLayer:empty + .cm-selectionLayer::before {
+.workspace-leaf.mod-active .cm-vimCursorLayer:empty + .cm-selectionLayer::before {
 	content: "Insert";
 	color: var(--secondary-accent-text);
 }
 
-.cm-vimCursorLayer:not(:empty) + .cm-selectionLayer:empty::before {
+.workspace-leaf.mod-active .cm-vimCursorLayer:not(:empty) + .cm-selectionLayer:empty::before {
 	content: "Normal";
 	color: var(--text-hover-accent);
 }
 
-.cm-vimCursorLayer:not(:empty) + .cm-selectionLayer:not(:empty)::before {
+.workspace-leaf.mod-active .cm-vimCursorLayer:not(:empty) + .cm-selectionLayer:not(:empty)::before {
 	content: "Visual";
 	color: var(--active-color);
 }
 
-.cm-vim-panel div span:only-child::before {
+.workspace-leaf.mod-active .cm-vim-panel div span:only-child::before {
 	content: "CMD";
 	color: var(--extra-contrast);
 }
 
-.cm-vim-panel div span:nth-child(2)::before {
+.workspace-leaf.mod-active .cm-vim-panel div span:nth-child(2)::before {
 	content: "Search";
 	color: var(--unresolved-link-color);
 }
