@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 2.183
+Version 2.184
 Source CSS: https://github.com/chrisgrieser/shimmering-focus/blob/main/source.css
 MIT License
 ──────────────────────────────────────────────────── */
@@ -14142,7 +14142,7 @@ settings:
    description: 'In Reading Mode, external links are distinguishable from internal link since they the former have a single underline, while the latter have double underlines. Enable this, to additionaly use an icon to indicate external links. (Note that the icon will always be hidden when using the Link Favicon Plugin.)'
    default: false
   -
-   id: permanently-show-blockids
+   id: permanently-show-block-ids
    title: 'Permanently show Block IDs (Source Mode)'
    type: class-toggle
    description: In Source Mode, Block IDs are hidden until the respective line is active or hovered. Enable this re-enable the permanent display of block IDs.
