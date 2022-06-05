@@ -23,7 +23,7 @@
 
 		"plugin/no-unsupported-browser-features": [true, {
 		  "browsers": ["last 10 Chrome versions", "last 2 iOS versions"],
-		  "ignore": ["css-masks"],
+		  "ignore": ["css-masks", "cursor"],
 		  "ignorePartialSupport": true
 		}],
 

@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 2.184
+Version 2.185
 Source CSS: https://github.com/chrisgrieser/shimmering-focus/blob/main/source.css
 MIT License
 ──────────────────────────────────────────────────── */
@@ -105,9 +105,9 @@ settings:
    default: false
   -
    id: permanently-show-block-ids
-   title: 'Permanently show Block IDs (Source Mode)'
+   title: 'Permanently show Block IDs'
    type: class-toggle
-   description: In Source Mode, Block IDs are hidden until the respective line is active or hovered. Enable this re-enable the permanent display of block IDs.
+   description: In Source Mode & Live Preview, Block IDs are hidden until the respective line is active or hovered. Enable this re-enable the permanent display of block IDs. (Not that this setting does not affect Reading Mode, since Block IDs are never shown there in the first place.)
    default: false
   -
    id: show-close-button
