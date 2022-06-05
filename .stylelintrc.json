@@ -22,7 +22,7 @@
 		"plugin/declaration-block-no-ignored-properties": true,
 
 		"plugin/no-unsupported-browser-features": [true, {
-		  "browsers": ["Chrome > 88"],
+		  "browsers": ["last 10 Chrome versions", "last 2 iOS versions"],
 		  "ignore": ["css-masks"],
 		  "ignorePartialSupport": true
 		}],

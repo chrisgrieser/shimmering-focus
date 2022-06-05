@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 2.182
+Version 2.183
 Source CSS: https://github.com/chrisgrieser/shimmering-focus/blob/main/source.css
 MIT License
 ──────────────────────────────────────────────────── */
@@ -7493,7 +7493,7 @@ body:not(.show-urls) .cm-line:not(.cm-active) .cm-string.cm-url,
 }
 
 /* unresolved gutter indicator */
-body:not(.no-unresolved-link-indicator) .is-unresolved:not(.pandoc-citation)::before {
+body:not(.no-unresolved-link-indicator) .view-content > *:not(.kanban-plugin) .is-unresolved:not(.pandoc-citation)::before {
 	content: "✘";
 	font-size: 1.3rem;
 	background-color: var(--bg1);
