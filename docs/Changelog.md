@@ -3,6 +3,7 @@ nav_order: 110
 ---
 
 # Changelog
+- 2022-06-06	patch
 - 2022-06-06	fix for sync history
 - 2022-06-05	fixed unresolved link indicators being displayed in kanbans
 - 2022-06-04	fixes for new dataview styling

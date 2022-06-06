@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 2.186
+Version 2.187
 Source CSS: https://github.com/chrisgrieser/shimmering-focus/blob/main/source.css
 MIT License
 ──────────────────────────────────────────────────── */
@@ -271,6 +271,7 @@ MIT License
 	- Pandoc Reference List
 	- Control Character
 	- Jump to Link
+	- Highlighted Yank
 	- New Plugin Placeholder
 - Hardcore & Madness Mode
 	- Hardcore Mode
@@ -13359,9 +13360,18 @@ body .jl.popover {
 }
 
 /* ───────────────────────────────────────────────── */
+/* << Highlighted Yank
+──────────────────────────────────────────────────── */
+
+body .yank-deco {
+	color: var(--always-dark);
+	background-color: var(--unresolved-link-color);
+}
+
+/* ───────────────────────────────────────────────── */
 /* << New Plugin Placeholder
 ──────────────────────────────────────────────────── */
-/* marker to jumpt to for new plugins */
+/* marker to jump to for new plugins */
 
 /* ───────────────────────────────────────────────── */
 /* < Hardcore & Madness Mode
@@ -13371,30 +13381,31 @@ body .jl.popover {
 ──────────────────────────────────────────────────── */
 /* stylelint-disable indentation */
 :is(.hardcore-mode, .madness-mode):not(.is-mobile) :is(
-                                                       .titlebar,
-                                                       .collapse-indicator,
-                                                       .cm-foldPlaceholder,
-                                                       .workspace-ribbon,
-                                                       .view-header,
-                                                       .frontmatter,
-                                                       .frontmatter-container,
-                                                       .mod-left-split,
-                                                       .mod-right-split,
-                                                       .status-bar,
-                                                       .tooltip,
-                                                       .prompt-instructions,
-                                                       .cm-panels-bottom,
-                                                       .embedded-backlinks,
-                                                       .cm-active-visual-line,
-                                                       .workspace-leaf-resize-handle,
-                                                       .suggestion-container.mod-search-suggestion,
-                                                       .document-search-close-button,
-                                                       .search-input-clear-button,
-                                                       .empty-state-close-button,
-                                                       .setting-delete-hotkey,
-                                                       .modal-close-button,
-                                                       .setting-editor-extra-setting-button,
-                                                       .setting-restore-hotkey-button) { display: none }
+	.titlebar,
+	.collapse-indicator,
+	.cm-foldPlaceholder,
+	.workspace-ribbon,
+	.view-header,
+	.frontmatter,
+	.frontmatter-container,
+	.mod-left-split,
+	.mod-right-split,
+	.status-bar,
+	.tooltip,
+	.prompt-instructions,
+	.cm-panels-bottom,
+	.embedded-backlinks,
+	.cm-active-visual-line,
+	.workspace-leaf-resize-handle,
+	.suggestion-container.mod-search-suggestion,
+	.document-search-close-button,
+	.search-input-clear-button,
+	.empty-state-close-button,
+	.setting-delete-hotkey,
+	.modal-close-button,
+	.setting-editor-extra-setting-button,
+	.setting-restore-hotkey-button
+) { display: none }
 /* stylelint-enable indentation */
 
 :is(.hardcore-mode, .madness-mode):not(.is-mobile) .cm-gutter {
