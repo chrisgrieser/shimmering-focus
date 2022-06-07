@@ -3,6 +3,7 @@ nav_order: 110
 ---
 
 # Changelog
+- 2022-06-07	some fixes for footnotes
 - 2022-06-07	RIP most of cursor styling due to new release
 - 2022-06-06	fix for sync history
 - 2022-06-05	fixed unresolved link indicators being displayed in kanbans
