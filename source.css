@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 2.187
+Version 2.188
 Source CSS: https://github.com/chrisgrieser/shimmering-focus/blob/main/source.css
 MIT License
 ──────────────────────────────────────────────────── */
@@ -46,6 +46,8 @@ MIT License
 	- Angular or Round Shapes
 	- Animations, Transition & Dimmed Pane
 - Cursor
+	- Text Selection
+	- Normal Cursor
 - Vim Mode
 	- Vim Cursor
 	- Vim Mode Indicator
@@ -1783,70 +1785,50 @@ body.no-animations {
 /* < Cursor
 ──────────────────────────────────────────────────── */
 
-/* Default values */
-.cm-cursorLayer .cm-cursor,
-.CodeMirror-cursor {
-	width: 2px;
+/* ───────────────────────────────────────────────── */
+/* << Text Selection
+──────────────────────────────────────────────────── */
+.markdown-source-view.mod-cm6 div.cm-editor ::selection {
+	background-color: var(--text-selection);
 
-	background: var(--cursor-look);
-
-	border: none;
-	outline: var(--cursor-outline);
-	outline-offset: -0.1px;
-
-	animation-iteration-count: infinite;
-	animation-timing-function: ease-in-out;
+	/* coloring these would remove color from all markup, too */
+	/* color: var(--text-normal); */
 }
 
-/* Cursor Shape */
-.block-cursor.block-cursor :is(.cm-cursorLayer .cm-cursor, .CodeMirror-cursor) {
-	width: 1ch;
-	opacity: 0.5;
+.markdown-source-view.mod-cm6 .cm-editor .cm-selectionBackground {
+	background: transparent;
 }
 
-.thin-cursor.thin-cursor :is(.cm-cursorLayer .cm-cursor, .CodeMirror-cursor) {
-	width: 1px;
+/* ───────────────────────────────────────────────── */
+/* << Normal Cursor
+──────────────────────────────────────────────────── */
+/* Cursor color with selection */
+.markdown-source-view.mod-cm6 div.cm-editor .cm-cursor {
+	border-width: 2px;
+	border-left-color: var(--cursor-look);
 }
 
-/* VISUAL STYLE */
-/* Dark Eclipse */
-/* stylelint-disable no-duplicate-selectors */
-.theme-light {
-	--cursor-outline-color: hsl(220 10% 80%);
+/* cursor color without selection */
+body .markdown-source-view.mod-cm6 .cm-content {
+	caret-color: var(--cursor-look);
 }
 
-.theme-dark {
-	--cursor-outline-color: hsl(0 0% 90%);
+/* Default */
+.theme-light { /* stylelint-disable-line no-duplicate-selectors */
+	--cursor-look: hsl(0, 0%, 0%);
 }
 
-.theme-light,
-.theme-dark {
-	--cursor-look: hsl(0 0% 0%);
-	--cursor-outline: 1px solid var(--cursor-outline-color);
+.theme-dark { /* stylelint-disable-line no-duplicate-selectors */
+	--cursor-look: hsl(0, 0%, 100%);
 }
 
-/* stylelint-enable no-duplicate-selectors */
-
-/* Theme Accent */
+/* Theme Accents */
 .cursor-theme-primary-accent {
 	--cursor-look: var(--primary-accent-4);
-	--cursor-outline: 1px solid var(--always-dark);
 }
 
 .cursor-theme-hover-accent {
 	--cursor-look: var(--hover-accent-4);
-	--cursor-outline: 1px solid var(--always-dark);
-}
-
-/* Shimmering Beam */
-.theme-light.shimmering-beam-cursor {
-	--cursor-look: linear-gradient(hsl(164 100% 55%), hsl(243 80% 84%));
-	--cursor-outline: 0;
-}
-
-.theme-dark.shimmering-beam-cursor {
-	--cursor-look: linear-gradient(hsl(164 100% 45%), hsl(243 66% 76%));
-	--cursor-outline: 0;
 }
 
 /* iA Writer */
@@ -1860,63 +1842,6 @@ body.no-animations {
 	--cursor-outline: 0;
 }
 
-/* Fire and Ice */
-.theme-light.fire-and-ice-cursor {
-	--cursor-look: linear-gradient(to right, hsl(10 100% 70%) 50%, hsl(205 100% 65%) 50%);
-	--cursor-outline: 0;
-}
-
-.theme-dark.fire-and-ice-cursor {
-	--cursor-look: linear-gradient(to right, hsl(22 100% 50%) 50%, hsl(216 100% 65%) 50%);
-	--cursor-outline: 0;
-}
-
-/* >> Blink Styles */
-@keyframes phase-blink {
-	15% {
-		background-color: var(--cursor-look);
-		outline: var(--cursor-outline);
-	}
-	50% {
-		background-color: transparent;
-		outline: 0;
-	}
-	85% {
-		background-color: var(--cursor-look);
-		outline: var(--cursor-outline);
-	}
-}
-
-@keyframes breathing-blink {
-	50% {
-		width: 0;
-		outline-color: transparent;
-	}
-}
-
-@keyframes inversion-blink {
-	50% { filter: invert(1) }
-}
-
-.phase-blink-cursor :is(.cm-cursorLayer .cm-cursor, .CodeMirror-cursor) {
-	animation-duration: 2200ms;
-	animation-name: phase-blink;
-}
-
-.breathing-cursor :is(.cm-cursorLayer .cm-cursor, .CodeMirror-cursor) {
-	animation-duration: 2600ms;
-	animation-name: breathing-blink;
-}
-
-.inversion-blink-cursor :is(.cm-cursorLayer .cm-cursor, .CodeMirror-cursor) {
-	animation-duration: 2400ms;
-	animation-name: inversion-blink;
-}
-
-:is(.no-blink, .breathing-cursor, .phase-blink-cursor, .inversion-blink-cursor) .cm-cursorLayer:not(.cm-vimCursorLayer) {
-	animation-name: none !important; /* important needed */
-}
-
 /* ───────────────────────────────────────────────── */
 /* < Vim Mode
 ──────────────────────────────────────────────────── */
@@ -1926,6 +1851,14 @@ body.no-animations {
 ──────────────────────────────────────────────────── */
 
 /* Dark Eclipse (Default) */
+.theme-light .cm-vimCursorLayer {
+	--cursor-outline-color: hsl(220 10% 80%);
+}
+
+.theme-dark .cm-vimCursorLayer {
+	--cursor-outline-color: hsl(0 0% 90%);
+}
+
 .cm-focused .cm-vimCursorLayer .cm-fat-cursor.cm-fat-cursor.cm-fat-cursor {
 	color: var(--extra-contrast);
 	background-color: hsl(0 0% 0%);
@@ -13381,31 +13314,30 @@ body .yank-deco {
 ──────────────────────────────────────────────────── */
 /* stylelint-disable indentation */
 :is(.hardcore-mode, .madness-mode):not(.is-mobile) :is(
-	.titlebar,
-	.collapse-indicator,
-	.cm-foldPlaceholder,
-	.workspace-ribbon,
-	.view-header,
-	.frontmatter,
-	.frontmatter-container,
-	.mod-left-split,
-	.mod-right-split,
-	.status-bar,
-	.tooltip,
-	.prompt-instructions,
-	.cm-panels-bottom,
-	.embedded-backlinks,
-	.cm-active-visual-line,
-	.workspace-leaf-resize-handle,
-	.suggestion-container.mod-search-suggestion,
-	.document-search-close-button,
-	.search-input-clear-button,
-	.empty-state-close-button,
-	.setting-delete-hotkey,
-	.modal-close-button,
-	.setting-editor-extra-setting-button,
-	.setting-restore-hotkey-button
-) { display: none }
+                                                       .titlebar,
+                                                       .collapse-indicator,
+                                                       .cm-foldPlaceholder,
+                                                       .workspace-ribbon,
+                                                       .view-header,
+                                                       .frontmatter,
+                                                       .frontmatter-container,
+                                                       .mod-left-split,
+                                                       .mod-right-split,
+                                                       .status-bar,
+                                                       .tooltip,
+                                                       .prompt-instructions,
+                                                       .cm-panels-bottom,
+                                                       .embedded-backlinks,
+                                                       .cm-active-visual-line,
+                                                       .workspace-leaf-resize-handle,
+                                                       .suggestion-container.mod-search-suggestion,
+                                                       .document-search-close-button,
+                                                       .search-input-clear-button,
+                                                       .empty-state-close-button,
+                                                       .setting-delete-hotkey,
+                                                       .modal-close-button,
+                                                       .setting-editor-extra-setting-button,
+                                                       .setting-restore-hotkey-button) { display: none }
 /* stylelint-enable indentation */
 
 :is(.hardcore-mode, .madness-mode):not(.is-mobile) .cm-gutter {
@@ -14995,78 +14927,33 @@ settings:
 # << Cursor & Vim Mode (+)
    id: cursor-settings
    title: 🖱 Cursor & Vim Mode
-   description: Thickness, Color, Blinking, Block Cursor, Vim Cursor, Vim Mode Indicator
+   description: Cursor Color, Vim Cursor, Vim Mode Indicator
    type: heading
    level: 1
    collapsed: true
   -
    id: cursor-styles
-   title: Cursor Style
-   description: Color and look of the cursor.
+   title: Cursor Color
+   description: "'Black/White' means that the cursor will be pure black in light mode and pure white in dark mode, maximizing contrast."
    type: class-select
    allowEmpty: false
-   default: dark-eclipse-cursor
+   default: black-white-cursor
    options:
     -
-      label: Dark Eclipse
-      value: dark-eclipse-cursor
-    -
-      label: Shimmering Beam
-      value: shimmering-beam-cursor
+      label: Black/White (Default)
+      value: black-white-cursor
     -
       label: iA Writer
       value: ia-writer-cursor
     -
-      label: Fire & Ice
-      value: fire-and-ice-cursor
-    -
-      label: Primary Accent
+      label: Theme Primary Accent
       value: cursor-theme-primary-accent
     -
       label: Theme Hover Accent
       value: cursor-theme-hover-accent
   -
-   id: cursor-blink-style
-   title: Cursor Blink Style
-   type: class-select
-   allowEmpty: false
-   default: normal-blink
-   options:
-    -
-      label: Normal
-      value: normal-blink
-    -
-      label: Smooth Phasing
-      value: phase-blink-cursor
-    -
-      label: Breathing
-      value: breathing-cursor
-    -
-      label: Inversion Blink
-      value: inversion-blink-cursor
-    -
-      label: No Blink
-      value: no-blink-cursor
-  -
-   id: cursor-shape
-   title: Cursor Shape
-   description: When using a block cursor, you should also change the main font to a monospace font for best results. (This setting does not affect the Vim cursor.)
-   type: class-select
-   allowEmpty: false
-   default: normal-shape
-   options:
-    -
-      label: Normal
-      value: normal-shape
-    -
-      label: Block Cursor
-      value: block-cursor
-    -
-      label: Thin Cursor
-      value: thin-cursor
-  -
    id: vim-cursor-look
-   title: 🆕 Vim Cursor Style
+   title: Vim Cursor Style
    description: The look of the cursor when using Vim in Normal Mode.
    type: class-select
    allowEmpty: false
@@ -15083,7 +14970,7 @@ settings:
       value: vim-cursor-theme-hover-accent
   -
    id: vim-mode-indicator
-   title: 🆕 Vim Mode Indicator
+   title: Vim Mode Indicator
    description: "Select the position of the indicator, that shows the current Vim mode, or disable it entirely. Note that 'Bottom' will conflict with with long status bars."
    type: class-select
    allowEmpty: false
