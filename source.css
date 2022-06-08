@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 2.190
+Version 2.191
 Source CSS: https://github.com/chrisgrieser/shimmering-focus/blob/main/source.css
 MIT License
 ──────────────────────────────────────────────────── */
@@ -273,6 +273,7 @@ MIT License
 	- Control Character
 	- Jump to Link
 	- Highlighted Yank
+	- Hider
 	- New Plugin Placeholder
 - Hardcore & Madness Mode
 	- Hardcore Mode
@@ -13313,6 +13314,17 @@ body .jl.popover {
 body .yank-deco {
 	color: var(--always-dark);
 	background-color: var(--unresolved-link-color);
+}
+
+/* ───────────────────────────────────────────────── */
+/* << Hider
+──────────────────────────────────────────────────── */
+/* Hider is actually not needed with this theme,
+but the hider CSS for ribbon-hiding and this theme's
+CSS are incompatible, requiring this override */
+
+body.hider-ribbon .workspace-ribbon.mod-left {
+	display: unset;
 }
 
 /* ───────────────────────────────────────────────── */

@@ -3,6 +3,7 @@ nav_order: 110
 ---
 
 # Changelog
+- 2022-06-08	compatibility with Hider plugin (#164)
 - 2022-06-08	styling of upcoming another quick switcher hotkeys
 - 2022-06-07	some fixes for footnotes
 - 2022-06-07	RIP most of cursor styling due to new release
