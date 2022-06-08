@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 2.189
+Version 2.190
 Source CSS: https://github.com/chrisgrieser/shimmering-focus/blob/main/source.css
 MIT License
 ──────────────────────────────────────────────────── */
@@ -249,7 +249,6 @@ MIT License
 	- Get Info (Status bar)
 	- Language Tool Integration
 	- Various Complements
-	- Hotkey Helper
 	- Excalidraw
 	- Zoom
 	- Advanced Tables
@@ -11678,6 +11677,31 @@ body .another-quick-switcher__item__title__header_hit {
 	filter: saturate(0.6);
 }
 
+/* Numbered Hotkey tip */
+.another-quick-switcher__item__hot-key-guide::before,
+.another-quick-switcher__item__hot-key-guide::after {
+	display: none;
+}
+
+body .another-quick-switcher__item__hot-key-guide {
+	font-family: var(--font-monospace-theme);
+	font-size: 0.75em;
+
+	color: var(--hotkey-color);
+	background-color: var(--bg3);
+	box-shadow: var(--tiny-inset-shadow);
+	opacity: 1;
+
+	position: relative;
+	top: -1px;
+
+	padding: 0 2px;
+	margin-left: 7px;
+
+	border: var(--thin-border);
+	border-radius: var(--roundish);
+}
+
 /* ───────────────────────────────────────────────── */
 /* << Activity History
 ──────────────────────────────────────────────────── */
@@ -12335,19 +12359,6 @@ svg.sync-small {
 
 .various-complements__settings__header::before {
 	transform: scale(0.8);
-}
-
-/* ───────────────────────────────────────────────── */
-/* << Hotkey Helper
-──────────────────────────────────────────────────── */
-
-/* alignment of new buttons in core plugin list */
-body.angular-shapes .plugin-list-plugins .setting-item:not(.mod-toggle):not(:first-child) .setting-item-control {
-	margin-right: 39px;
-}
-
-body:not(.angular-shapes) .plugin-list-plugins .setting-item:not(.mod-toggle):not(:first-child) .setting-item-control {
-	margin-right: 42px;
 }
 
 /* ───────────────────────────────────────────────── */
@@ -13010,6 +13021,7 @@ and file recovery plugin */
 	display: none;
 }
 
+/* matches counter */
 .omnisearch-modal .omnisearch-result__counter {
 	font-family: var(--font-monospace-theme);
 	font-size: 0.75em;
@@ -13979,7 +13991,6 @@ community:
 - link-favicon
 - get-info-plugin
 - obsidian-languagetool-plugin
-- hotkey-helper
 - obsidian-git
 - various-complements
 - obsidian-excalidraw-plugin
