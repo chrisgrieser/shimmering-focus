@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 2.191
+Version 2.192
 Source CSS: https://github.com/chrisgrieser/shimmering-focus/blob/main/source.css
 MIT License
 ──────────────────────────────────────────────────── */
@@ -1401,6 +1401,11 @@ body > .app-container {
 .cm-em.cm-em.cm-em.cm-em.cm-em:not(.cm-highlight),
 .markdown-preview-view.markdown-preview-view em {
 	color: var(--italics-text-color);
+}
+
+/* italics weaker colored */
+body:not(.strong-em-uncolored) :is(.cm-em, em):not(.cm-highlight) {
+	filter: saturate(0.5);
 }
 
 .cm-strong.cm-strong.cm-strong.cm-strong.cm-strong:not(.cm-highlight),
