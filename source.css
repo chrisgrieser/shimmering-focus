@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 2.194
+Version 2.195
 Source CSS: https://github.com/chrisgrieser/shimmering-focus/blob/main/source.css
 MIT License
 ──────────────────────────────────────────────────── */
@@ -367,11 +367,16 @@ MIT License
 ──────────────────────────────────────────────────── */
 
 :root {
-	/* rule of thumb: shifted colors are ~40 hue less than accent-2 */
+	/* RULE OF THUMBS:
+	shifted colors are ~40 hue less than accent-2
+	desaturated colors have ~20% less saturation */
+
 	--cyan-blue-0: hsl(187 80% 13% / 99%);
 	--cyan-blue-1: hsl(187 70% 26%);
 	--cyan-blue-2: hsl(190 80% 32%);
 	--cyan-blue-3: hsl(187 60% 59%);
+	--cyan-blue-2-desat: hsl(190 80% 12%);
+	--cyan-blue-3-desat: hsl(187 60% 39%);
 	--cyan-blue-4: hsl(187 90% 74%);
 	--cyan-blue-5: hsl(187 70% 88% / 99%);
 	--cyan-blue-shifted: hsl(147 70% 38%);
@@ -403,22 +408,30 @@ MIT License
 	--green-1: hsl(165 70% 25%);
 	--green-2: hsl(165 80% 35%);
 	--green-3: hsl(165 90% 45%);
+	--green-2-desat: hsl(165 80% 15%);
+	--green-3-desat: hsl(165 90% 25%);
 	--green-4: hsl(165 100% 55%);
 
 	--orange-0: hsl(24 69% 22% / 99%);
 	--orange-1: hsl(20 90% 30%);
 	--orange-2: hsl(24 69% 42%);
 	--orange-3: hsl(32 65% 55%);
+	--orange-2-desat: hsl(24 69% 22%);
+	--orange-3-desat: hsl(32 65% 35%);
 	--orange-4: hsl(40 87% 67%);
 	--orange-5: hsl(40 70% 87% / 99%);
 	--orange-shifted: hsl(344 69% 42%);
 
 	--yellow-orange-2: hsl(43 100% 30%);
 	--yellow-orange-3: hsl(39 80% 63%);
+	--yellow-orange-2-desat: hsl(43 100% 10%);
+	--yellow-orange-3-desat: hsl(39 80% 43%);
 
 	--pink-1: hsl(330 80% 30%);
 	--pink-2: hsl(330 70% 50%);
 	--pink-3: hsl(336 85% 64%);
+	--pink-2-desat: hsl(330 70% 30%);
+	--pink-3-desat: hsl(336 85% 44%);
 	--pink-4: hsl(330 90% 75%);
 }
 
@@ -495,6 +508,8 @@ MIT License
 	--hover-accent-1: var(--green-1);
 	--hover-accent-2: var(--green-2);
 	--hover-accent-3: var(--green-3);
+	--hover-accent-2-desat: var(--green-2-desat);
+	--hover-accent-3-desat: var(--green-3-desat);
 	--hover-accent-4: var(--green-4);
 
 	--button-hover-text: var(--always-dark);
@@ -505,6 +520,8 @@ MIT License
 	--hover-accent-1: var(--orange-1);
 	--hover-accent-2: var(--orange-2);
 	--hover-accent-3: var(--orange-3);
+	--hover-accent-2-desat: var(--orange-2-desat);
+	--hover-accent-3-desat: var(--orange-3-desat);
 	--hover-accent-4: var(--orange-4);
 
 	--button-hover-text: var(--light-in-light-dark-in-dark);
@@ -515,6 +532,8 @@ MIT License
 	--hover-accent-1: var(--pink-1);
 	--hover-accent-2: var(--pink-2);
 	--hover-accent-3: var(--pink-3);
+	--hover-accent-2-desat: var(--pink-2-desat);
+	--hover-accent-3-desat: var(--pink-3-desat);
 	--hover-accent-4: var(--pink-4);
 
 	--button-hover-text: var(--always-dark);
@@ -525,6 +544,8 @@ MIT License
 	--hover-accent-1: var(--cyan-blue-1);
 	--hover-accent-2: var(--cyan-blue-2);
 	--hover-accent-3: var(--cyan-blue-3);
+	--hover-accent-2-desat: var(--cyan-blue-2-desat);
+	--hover-accent-3-desat: var(--cyan-blue-3-desat);
 	--hover-accent-4: var(--cyan-blue-4);
 
 	--button-hover-text: var(--always-dark);
@@ -534,12 +555,16 @@ MIT License
 .custom-colors.theme-dark.secondary-accent-dark-yellow {
 	--secondary-accent-2: var(--yellow-orange-2);
 	--secondary-accent-3: var(--yellow-orange-3);
+	--secondary-accent-2-desat: var(--yellow-orange-2-desat);
+	--secondary-accent-3-desat: var(--yellow-orange-3-desat);
 }
 
 .custom-colors.theme-light.secondary-accent-light-green,
 .custom-colors.theme-dark.secondary-accent-dark-green {
 	--secondary-accent-2: var(--green-2);
 	--secondary-accent-3: var(--green-3);
+	--secondary-accent-2-desat: var(--green-2-desat);
+	--secondary-accent-3-desat: var(--green-3-desat);
 }
 
 /* ───────────────────────────────────────────────── */
@@ -576,11 +601,15 @@ MIT License
 	--hover-accent-1: var(--pink-1);
 	--hover-accent-2: var(--pink-2);
 	--hover-accent-3: var(--pink-3);
+	--hover-accent-2-desat: var(--pink-2-desat);
+	--hover-accent-3-desat: var(--pink-3-desat);
 	--hover-accent-4: var(--pink-4);
 	--button-hover-text: var(--always-light);
 
 	--secondary-accent-2: var(--yellow-orange-2);
 	--secondary-accent-3: var(--yellow-orange-3);
+	--secondary-accent-2-desat: var(--yellow-orange-2-desat);
+	--secondary-accent-3-desat: var(--yellow-orange-3-desat);
 }
 
 /* ───────────────────────────────────────────────── */
@@ -612,11 +641,15 @@ MIT License
 	--hover-accent-1: var(--green-1);
 	--hover-accent-2: var(--green-2);
 	--hover-accent-3: var(--green-3);
+	--hover-accent-2-desat: var(--green-2-desat);
+	--hover-accent-3-desat: var(--green-3-desat);
 	--hover-accent-4: var(--green-4);
 	--button-hover-text: var(--text-normal);
 
 	--secondary-accent-2: var(--green-2);
 	--secondary-accent-3: var(--green-3);
+	--secondary-accent-2-desat: var(--green-2-desat);
+	--secondary-accent-3-desat: var(--green-3-desat);
 }
 
 /* ───────────────────────────────────────────────── */
@@ -648,11 +681,15 @@ MIT License
 	--hover-accent-1: var(--cyan-blue-1);
 	--hover-accent-2: var(--cyan-blue-2);
 	--hover-accent-3: var(--cyan-blue-3);
+	--hover-accent-2-desat: var(--cyan-blue-2-desat);
+	--hover-accent-3-desat: var(--cyan-blue-3-desat);
 	--hover-accent-4: var(--cyan-blue-4);
 	--button-hover-text: var(--always-dark);
 
 	--secondary-accent-2: var(--green-2);
 	--secondary-accent-3: var(--green-3);
+	--secondary-accent-2-desat: var(--green-2-desat);
+	--secondary-accent-3-desat: var(--green-3-desat);
 }
 
 /* ───────────────────────────────────────────────── */
@@ -728,30 +765,36 @@ MIT License
 /* default: bold-italics = hover accent */
 .theme-light,
 .theme-dark {
-	--bold-italics-1: var(--hover-accent-2);
-	--bold-italics-2: var(--hover-accent-3);
+	--bold-light: var(--hover-accent-2);
+	--bold-dark: var(--hover-accent-3);
+	--italics-light: var(--hover-accent-2-desat);
+	--italics-dark: var(--hover-accent-3-desat);
 }
 
 /* bold-italics = uncolored (default with custom colors) */
 body.strong-em-uncolored {
-	--bold-italics-1: var(--text-normal);
-	--bold-italics-2: var(--text-normal);
+	--bold-light: var(--text-normal);
+	--bold-dark: var(--text-normal);
+	--italics-light: var(--text-normal);
+	--italics-dark: var(--text-normal);
 }
 
 /* bold-italics = secondary accent */
 body.strong-em-secondary-accent {
-	--bold-italics-1: var(--secondary-accent-2);
-	--bold-italics-2: var(--secondary-accent-3);
+	--bold-light: var(--secondary-accent-2);
+	--bold-dark: var(--secondary-accent-3);
+	--italics-light: var(--secondary-accent-2-desat);
+	--italics-dark: var(--secondary-accent-3-desat);
 }
 
 .theme-light {
-	--italics-text-color: var(--bold-italics-1);
-	--bold-text-color: var(--bold-italics-1);
+	--italics-text-color: var(--italics-light);
+	--bold-text-color: var(--bold-light);
 }
 
 .theme-dark {
-	--italics-text-color: var(--bold-italics-2);
-	--bold-text-color: var(--bold-italics-2);
+	--italics-text-color: var(--italics-dark);
+	--bold-text-color: var(--bold-dark);
 }
 
 /* ───────────────────────────────────────────────── */
@@ -1401,13 +1444,6 @@ body > .app-container {
 .cm-em.cm-em.cm-em.cm-em.cm-em:not(.cm-highlight),
 .markdown-preview-view.markdown-preview-view em {
 	color: var(--italics-text-color);
-}
-
-/* italics weaker colored */
-/* only works when when multi-color highlights turned off, since otherwise
-*==text==* would be affected as well */
-body:not(.strong-em-uncolored).no-multi-color-highlights :is(.cm-em, em):not(.cm-highlight) {
-	filter: saturate(0.5);
 }
 
 .cm-strong.cm-strong.cm-strong.cm-strong.cm-strong:not(.cm-highlight),
@@ -6435,6 +6471,7 @@ body:not(.normal-blockquotes) .callout-content :is(ul, p, code) {
 	background-color: rgb(var(--callout-color), 13%); /* stylelint-disable-line color-function-notation */
 	padding: 2.5px calc(var(--callout-left-padding) - 2px);
 	border: var(--thin-border);
+	border-left: none;
 	border-top-right-radius: var(--roundish);
 }
 
@@ -6465,15 +6502,6 @@ body:not(.normal-blockquotes) .callout-content :is(ul, p, code) {
 	width: 1em;
 	top: -2px;
 	margin-bottom: 0;
-}
-
-/* hover */
-.callout:hover {
-	border-width: calc(var(--blockquote-border-width) * 1.5);
-}
-
-.callout:not([data-callout$="sidenote"], [data-callout$="post-it"], [data-callout$="aside"]):hover :is(.callout-title, .callout-content) {
-	padding-left: calc(var(--callout-left-padding) - var(--blockquote-border-width) * 0.5);
 }
 
 .callout,
@@ -6625,77 +6653,73 @@ body .callout {
 	--table-b-row: hsla(var(--bg-light-hue) 50% 50% / 7.5%);
 }
 
-/* .markdown-preview-view table:not(.dataview) {
-	width: 100%;
-	table-layout: fixed;
-	} */
+/* outer border */
+table {
+	border: var(--thin-border);
+}
 
-	/* outer border */
-	table {
-		border: var(--thin-border);
-	}
+/* draw only inner borders */
+body > .app-container table > thead > tr > th {
+	font-size: 1em;
+	font-weight: 600;
+	border: none;
+	border-bottom: var(--table-border);
+}
 
-	/* draw only inner borders */
-	body > .app-container table > thead > tr > th {
-		font-size: 1em;
-		font-weight: 600;
-		border: none;
-		border-bottom: var(--table-border);
-	}
+body > .app-container table > tbody > tr > td {
+	border: none;
+}
 
-	body > .app-container table > tbody > tr > td {
-		border: none;
-	}
+.markdown-preview-view.markdown-preview-view.markdown-preview-view table > :is(thead, tbody) > tr > :is(th, td):not(:first-child) {
+	border-left: var(--table-border);
+}
 
-	.markdown-preview-view.markdown-preview-view.markdown-preview-view table > :is(thead, tbody) > tr > :is(th, td):not(:first-child) {
-		border-left: var(--table-border);
-	}
+/* backgrounds */
+thead {
+	font-weight: 900;
+	background-color: var(--bg3);
+}
 
-	/* backgrounds */
-	thead {
-		font-weight: 900;
-		background-color: var(--bg3);
-	}
+/* needs higher specificity to override annoying dataview hover effects */
+.app-container.app-container.app-container tr {
+	background-color: var(--table-a-row);
+}
 
-	tr {
-		background-color: var(--table-a-row);
-	}
+/* alternating rows */
+body:not(.no-alternating-rows) .app-container.app-container tr:nth-child(even) {
+	background-color: var(--table-b-row);
+}
 
-	/* alternating rows */
-	body:not(.no-alternating-rows) tr:nth-child(even) {
-		background-color: var(--table-b-row);
-	}
+.no-alternating-rows > .app-container table > tbody > tr > td {
+	border-top: var(--table-border);
+}
 
-	.no-alternating-rows > .app-container table > tbody > tr > td {
-		border-top: var(--table-border);
-	}
+/* CM6: Live Preview */
+.mod-cm6 table :is(th, td) {
+	padding: 4px 10px;
+}
 
-	/* CM6: Live Preview */
-	.mod-cm6 table :is(th, td) {
-		padding: 4px 10px;
-	}
+.cm-s-obsidian.mod-cm6 table th {
+	font-size: 1.05em;
+}
 
-	.cm-s-obsidian.mod-cm6 table th {
-		font-size: 1.05em;
-	}
+.cm-hmd-table-sep,
+.HyperMD-table-row-1 {
+	color: var(--text-faint);
+}
 
-	.cm-hmd-table-sep,
-	.HyperMD-table-row-1 {
-		color: var(--text-faint);
-	}
+/* potential SABOTAGE: fix table contents broken across lines */
+/* https://discord.com/channels/686053708261228577/702656734631821413/940691880801341502 */
+body .table-view-table > thead > tr > th {
+	white-space: pre;
+}
 
-	/* potential SABOTAGE: fix table contents broken across lines */
-	/* https://discord.com/channels/686053708261228577/702656734631821413/940691880801341502 */
-	body .table-view-table > thead > tr > th {
-		white-space: pre;
-	}
+.table-view-table > tbody > tr > td {
+	word-wrap: normal;
+	word-break: normal;
+}
 
-	.table-view-table > tbody > tr > td {
-		word-wrap: normal;
-		word-break: normal;
-	}
-
-	/* ───────────────────────────────────────────────── */
+/* ───────────────────────────────────────────────── */
 /* << MathJax
 ──────────────────────────────────────────────────── */
 body .cm-s-obsidian span.cm-math {
@@ -8381,7 +8405,7 @@ body .nav-folder-title.is-being-dragged-over {
 	padding-left: 4px;
 }
 
-/* stylelint-disable selector-combinator-space-before, indentation */
+/* stylelint-disable selector-combinator-space-before */
 /* top folder line */
 .nav-folder.mod-root
 > .nav-folder-children
@@ -8464,7 +8488,7 @@ body .nav-folder-title.is-being-dragged-over {
 	border-left: 2px var(--nestlinestyle3) var(--basic-border-color);
 }
 
-/* stylelint-enable selector-combinator-space-before, indentation */
+/* stylelint-enable selector-combinator-space-before */
 /* ───────────────────────────────────────────────── */
 /* <<< File Explorer: Icons
 ──────────────────────────────────────────────────── */
@@ -11513,14 +11537,10 @@ body .dataview.inline-field-key {
 }
 
 /* remove table hover, since redundant with hovers from this theme */
-body .dataview:is(.task-list-basic-item, .task-list-item):hover {
+body .dataview.dataview:hover {
 	background: none;
 	box-shadow: none;
 	cursor: default;
-}
-
-body .table-view-table > tbody > tr:hover {
-	background-color: var(--active-line-bg);
 }
 
 /* <<< dataview cssclasses */

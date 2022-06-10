@@ -3,6 +3,7 @@ nav_order: 110
 ---
 
 # Changelog
+- 2022-06-10	italics color & callout fixes
 - 2022-06-09	fix #173
 - 2022-06-09	weaker italics coloring
 - 2022-06-08	compatibility with Hider plugin (#164)
