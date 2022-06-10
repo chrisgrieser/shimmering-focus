@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 2.195
+Version 2.196
 Source CSS: https://github.com/chrisgrieser/shimmering-focus/blob/main/source.css
 MIT License
 ──────────────────────────────────────────────────── */
@@ -369,14 +369,14 @@ MIT License
 :root {
 	/* RULE OF THUMBS:
 	shifted colors are ~40 hue less than accent-2
-	desaturated colors have ~20% less saturation */
+	desaturated colors have ~40% less saturation */
 
 	--cyan-blue-0: hsl(187 80% 13% / 99%);
 	--cyan-blue-1: hsl(187 70% 26%);
 	--cyan-blue-2: hsl(190 80% 32%);
 	--cyan-blue-3: hsl(187 60% 59%);
-	--cyan-blue-2-desat: hsl(190 80% 12%);
-	--cyan-blue-3-desat: hsl(187 60% 39%);
+	--cyan-blue-2-desat: hsl(190 40% 32%);
+	--cyan-blue-3-desat: hsl(187 20% 59%);
 	--cyan-blue-4: hsl(187 90% 74%);
 	--cyan-blue-5: hsl(187 70% 88% / 99%);
 	--cyan-blue-shifted: hsl(147 70% 38%);
@@ -408,30 +408,30 @@ MIT License
 	--green-1: hsl(165 70% 25%);
 	--green-2: hsl(165 80% 35%);
 	--green-3: hsl(165 90% 45%);
-	--green-2-desat: hsl(165 80% 15%);
-	--green-3-desat: hsl(165 90% 25%);
+	--green-2-desat: hsl(165 40% 35%);
+	--green-3-desat: hsl(165 50% 45%);
 	--green-4: hsl(165 100% 55%);
 
 	--orange-0: hsl(24 69% 22% / 99%);
 	--orange-1: hsl(20 90% 30%);
 	--orange-2: hsl(24 69% 42%);
 	--orange-3: hsl(32 65% 55%);
-	--orange-2-desat: hsl(24 69% 22%);
-	--orange-3-desat: hsl(32 65% 35%);
+	--orange-2-desat: hsl(24 29% 42%);
+	--orange-3-desat: hsl(32 25% 55%);
 	--orange-4: hsl(40 87% 67%);
 	--orange-5: hsl(40 70% 87% / 99%);
 	--orange-shifted: hsl(344 69% 42%);
 
 	--yellow-orange-2: hsl(43 100% 30%);
 	--yellow-orange-3: hsl(39 80% 63%);
-	--yellow-orange-2-desat: hsl(43 100% 10%);
-	--yellow-orange-3-desat: hsl(39 80% 43%);
+	--yellow-orange-2-desat: hsl(43 60% 30%);
+	--yellow-orange-3-desat: hsl(39 40% 63%);
 
 	--pink-1: hsl(330 80% 30%);
 	--pink-2: hsl(330 70% 50%);
 	--pink-3: hsl(336 85% 64%);
-	--pink-2-desat: hsl(330 70% 30%);
-	--pink-3-desat: hsl(336 85% 44%);
+	--pink-2-desat: hsl(330 30% 50%);
+	--pink-3-desat: hsl(336 45% 64%);
 	--pink-4: hsl(330 90% 75%);
 }
 
