@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 2.197
+Version 2.198
 Source CSS: https://github.com/chrisgrieser/shimmering-focus/blob/main/source.css
 MIT License
 ──────────────────────────────────────────────────── */
@@ -11555,6 +11555,13 @@ body .dataview.dataview:hover {
 
 .remove-dataview-title :is(.block-language-dataview, .block-language-dataviewjs) h4 {
 	display: none;
+}
+
+/* lists more condensed */
+body .dataview-result-list-ul {
+	padding-inline-start: 15px;
+	margin-block-start: 0 !important; /* needs important */
+	margin-block-end: 0 !important;
 }
 
 /* ───────────────────────────────────────────────── */
