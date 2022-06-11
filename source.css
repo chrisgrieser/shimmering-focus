@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 2.196
+Version 2.197
 Source CSS: https://github.com/chrisgrieser/shimmering-focus/blob/main/source.css
 MIT License
 ──────────────────────────────────────────────────── */
@@ -3933,9 +3933,13 @@ body .app-container .workspace-leaf-resize-handle:hover {
 
 .vertical-tab-nav-item {
 	line-height: 1.25em;
+	text-align: right;
+
 	color: var(--extra-contrast);
 	background: var(--bg2);
+
 	padding: 5px 5px 5px 7px;
+
 	border: none;
 }
 
