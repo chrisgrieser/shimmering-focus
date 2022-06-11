@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 2.199
+Version 2.200
 Source CSS: https://github.com/chrisgrieser/shimmering-focus/blob/main/source.css
 MIT License
 ──────────────────────────────────────────────────── */
@@ -6642,7 +6642,7 @@ body .callout {
 /* see also section "Max View" for table width */
 
 .markdown-preview-view table {
-	margin: 10px 0;
+	margin: 0.5em 0 1.5em;
 	--table-border: var(--basic-border);
 	--table-roundness: var(--roundish);
 }
