@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 2.204
+Version 2.205
 Source CSS: https://github.com/chrisgrieser/shimmering-focus/blob/main/source.css
 MIT License
 ──────────────────────────────────────────────────── */
@@ -1817,7 +1817,7 @@ body.no-animations {
 
 :root { /* stylelint-disable-line no-duplicate-selectors */
 	--transition-delay-passing-over-protection: 220ms;
-	--inactive-pane-opacity: 75%;
+	--inactive-pane-opacity: 85%;
 }
 
 .no-grayed-out-inactive-pane {
@@ -6516,7 +6516,7 @@ body:not(.normal-blockquotes) .callout-content :is(ul, p, code) {
 	top: 2px;
 }
 
-.callout:hover .callout-fold {
+.callout-title:hover .callout-fold {
 	color: var(--hover-accent-2);
 	transform: scale(1.3);
 }
