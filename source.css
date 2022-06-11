@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 2.202
+Version 2.203
 Source CSS: https://github.com/chrisgrieser/shimmering-focus/blob/main/source.css
 MIT License
 ──────────────────────────────────────────────────── */
@@ -1836,10 +1836,6 @@ body.no-animations {
 
 	/* coloring these would remove color from all markup, too */
 	/* color: var(--text-normal); */
-}
-
-.markdown-source-view.mod-cm6 .cm-editor .cm-selectionBackground {
-	background: transparent;
 }
 
 /* ───────────────────────────────────────────────── */
