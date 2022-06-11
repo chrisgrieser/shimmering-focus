@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 2.201
+Version 2.202
 Source CSS: https://github.com/chrisgrieser/shimmering-focus/blob/main/source.css
 MIT License
 ──────────────────────────────────────────────────── */
@@ -4132,10 +4132,10 @@ input:is([type="email"], [type="password"]) {
 }
 
 /* Excluded Files menu */
-/* Regex flait */
+/* Regex flair */
 .flair.mod-flat {
 	color: var(--button-text);
-	background-color: var(--interactive-bg);
+	background-color: var(--muted-button-bg);
 	box-shadow: var(--small-inset-shadow);
 }
 
