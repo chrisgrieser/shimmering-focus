@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 2.203
+Version 2.204
 Source CSS: https://github.com/chrisgrieser/shimmering-focus/blob/main/source.css
 MIT License
 ──────────────────────────────────────────────────── */
@@ -8177,65 +8177,67 @@ body:not(.no-fn-indicator) .mod-cm6 .cm-hmd-barelink:not(.cm-formatting-link) + 
 /* ───────────────────────────────────────────────── */
 /* < CSS Classes
 ──────────────────────────────────────────────────── */
-/* - writing cssclass is bundled with the styling for the Longform Editor
-	- clean-embeds cssclass is in the section for Embeds
-	- no-floating-metadata cssclass is in the section for Floating Metadata
-	- dataview-related css classes are int he dataview section */
+/*
+- writing cssclass is bundled with the styling for the Longform Editor
+- clean-embeds cssclass is in the section for Embeds
+- no-floating-metadata cssclass is in the section for Floating Metadata
+- dataview-related css classes are int he dataview section
+*/
 
-	/* 2 column cards */
-	.list-2-col-cards {
-		--card-spacing: 4px;
-	}
+/* 2 column cards */
+.list-2-col-cards {
+	--card-spacing: 4px;
+}
 
-	.list-2-col-cards.markdown-preview-view.markdown-preview-view ul:not(.contains-task-list) {
-		padding-left: 0;
-		columns: 2 auto;
-		column-gap: calc(var(--card-spacing) + 2px);
-	}
+.list-2-col-cards.markdown-preview-view.markdown-preview-view ul:not(.contains-task-list) {
+	padding-left: 0;
+	columns: 2 auto;
+	column-gap: calc(var(--card-spacing) + 2px);
+}
 
-	.list-2-col-cards ul:not(.contains-task-list) li {
-		background-color: var(--bg2);
-		box-shadow: var(--small-inset-shadow);
+.list-2-col-cards ul:not(.contains-task-list) li {
+	background-color: var(--bg2);
+	box-shadow: var(--small-inset-shadow);
 
-		padding: 1px 10px 4px;
-		margin-bottom: var(--card-spacing);
+	padding: 1px 10px 4px;
+	margin-bottom: var(--card-spacing);
 
-		border: var(--thin-border);
-		border-radius: var(--roundish);
+	border: var(--thin-border);
+	border-radius: var(--roundish);
 
-		page-break-inside: avoid;
-	}
+	page-break-inside: avoid;
+}
 
-	.list-2-col-cards li:not(.task-list-item)::marker {
-		content: "";
-	}
+.list-2-col-cards li:not(.task-list-item)::marker {
+	content: "";
+}
 
-	.list-2-col-cards.list-2-col-cards.list-2-col-cards ul:not(.contains-task-list) li a {
-		text-decoration: none;
-	}
+.list-2-col-cards.list-2-col-cards.list-2-col-cards ul:not(.contains-task-list) li a {
+	text-decoration: none;
+}
 
-	/* bibliography list */
-	.bibliography-list li {
-		text-indent: -2.2em;
-		margin-left: 1.5em;
-	}
+/* bibliography list */
+.bibliography-list li {
+	text-indent: -2.2em;
+	margin-left: 1.5em;
+}
 
-	.bibliography-list li::marker {
-		content: "";
-	}
+.bibliography-list li::marker {
+	content: "";
+}
 
-	/* no inline backlinks */
-	.no-inline-backlinks .embedded-backlinks {
-		display: none;
-	}
+/* no inline backlinks */
+.no-inline-backlinks .embedded-backlinks {
+	display: none;
+}
 
-	/* full-width */
-	.full-width.full-width .markdown-preview-section,
-	.full-width.full-width.full-width.full-width.full-width.markdown-source-view.mod-cm6.is-readable-line-width :is(.cm-content, .cm-contentContainer, .cm-contentContainer .cm-line) {
-		max-width: 100%;
-	}
+/* full-width */
+.full-width.full-width .markdown-preview-section,
+.full-width.full-width.full-width.full-width.full-width.markdown-source-view.mod-cm6.is-readable-line-width :is(.cm-content, .cm-contentContainer, .cm-contentContainer .cm-line) {
+	max-width: 100%;
+}
 
-	/* ───────────────────────────────────────────────── */
+/* ───────────────────────────────────────────────── */
 /* < Mobile
 ──────────────────────────────────────────────────── */
 
