@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 2.208
+Version 2.209
 Source CSS: https://github.com/chrisgrieser/shimmering-focus/blob/main/source.css
 MIT License
 ──────────────────────────────────────────────────── */
@@ -10908,6 +10908,11 @@ body:not(.longform-left-aligned) :is(.writing, .longform-leaf) :is(p, .footnotes
 	top: -3px;
 }
 
+/* emphasized tasks */
+body.longform-tasks-different :is(.writing, .longform-leaf) :is(.HyperMD-task-line, ul.contains-task-list) {
+	color: var(--text-muted);
+}
+
 /* fix for code block header hack */
 .app-container :is(.writing, .longform-leaf) pre[class*="language-"]::before {
 	line-height: 1.3;
@@ -15354,6 +15359,12 @@ settings:
    max: 2
    step: 0.05
    format: 'rem'
+  -
+   id: longform-tasks-different
+   title: 'Tasks: Use Gray instead of Normal Text Color'
+   description: "This can help with differentiating tasks from 'finished' text."
+   type: class-toggle
+   default: false
   -
    id: longform-left-aligned
    title: Left-aligned text
