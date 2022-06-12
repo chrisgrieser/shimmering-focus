@@ -3,6 +3,7 @@ nav_order: 110
 ---
 
 # Changelog
+- 2022-06-12	reduce menu width on wide windows
 - 2022-06-12	longform sidebar a bit mroe compact
 - 2022-06-11	fix bug with multiple selections not being visible
 - 2022-06-11	settings items right-aligned

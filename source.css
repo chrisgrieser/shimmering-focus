@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 2.206
+Version 2.207
 Source CSS: https://github.com/chrisgrieser/shimmering-focus/blob/main/source.css
 MIT License
 ──────────────────────────────────────────────────── */
@@ -3754,7 +3754,7 @@ body .app-container .workspace-leaf-resize-handle:hover {
 .modal:is(.mod-sync-history, .mod-community-theme, .mod-community-plugin, .mod-settings) {
 	height: calc(var(--modal-base-size) * 1% + 20%);
 	width: calc(var(--modal-base-size) * 1% + 20%);
-	max-width: unset;
+	max-width: 62rem;
 
 	background-color: var(--basic-border-color); /* ensures no thin line shining through */
 	box-shadow: var(--big-shadow);
