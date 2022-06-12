@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 2.207
+Version 2.208
 Source CSS: https://github.com/chrisgrieser/shimmering-focus/blob/main/source.css
 MIT License
 ──────────────────────────────────────────────────── */
@@ -12143,7 +12143,8 @@ body:not(.unlock-theme-beta) .style-settings-container .setting-item:is(
 	box-shadow: var(--small-inset-shadow);
 
 	padding: 10px 10px 5px;
-	margin-top: 40px;
+	margin-top: 30px;
+	margin-bottom: 50px;
 	margin-left: -15px;
 
 	border: var(--basic-border);
