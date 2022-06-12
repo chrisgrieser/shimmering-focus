@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 2.205
+Version 2.206
 Source CSS: https://github.com/chrisgrieser/shimmering-focus/blob/main/source.css
 MIT License
 ──────────────────────────────────────────────────── */
@@ -3934,7 +3934,7 @@ body .app-container .workspace-leaf-resize-handle:hover {
 	color: var(--extra-contrast);
 	background: var(--bg2);
 
-	padding: 5px 5px 5px 7px;
+	padding: 5px 6px;
 
 	border: none;
 }
@@ -10345,6 +10345,10 @@ body:not(.no-heading-bg) .kanban-plugin :is(h1, h2, h3, h4, h5, h6) {
 	padding-left: 0;
 }
 
+body .tab-panel-container.tab-panel-container :is(#draft-list, #scene-list) {
+	margin: 0;
+}
+
 .workspace-leaf-content[data-type="VIEW_TYPE_LONGFORM_EXPLORER"] .view-content {
 	/* 30 px as overscroll */
 	padding: 0 0 30px;
@@ -10450,15 +10454,18 @@ input:is(#new-draft, #new-scene) {
 
 /* project picker */
 .workspace-leaf-content .view-content div#project-picker-container {
+	line-height: 1;
 	margin-bottom: 0;
 }
 
 #project-picker {
+	line-height: 1;
+
 	background-color: var(--bg3);
 	box-shadow: var(--small-inset-shadow);
 
 	padding: 0 1px 1px 0;
-	margin: 3px 1px 0 3px;
+	margin: 2px 2px 0;
 
 	border: var(--thin-border);
 	border-radius: var(--roundish);
@@ -10547,7 +10554,8 @@ body:not(.no-alternating-rows) li:nth-child(even) :is(.draft-container, .scene-c
 
 /* <<< Longform Icons */
 .workspace-leaf-content[data-type="VIEW_TYPE_LONGFORM_EXPLORER"] .tabs .tab-list {
-	padding: 9px 4px 1px;
+	line-height: 1.2;
+	padding: 4px 4px 0;
 	margin: 0;
 	border-bottom: var(--basic-border);
 }
@@ -10561,8 +10569,8 @@ body:not(.no-alternating-rows) li:nth-child(even) :is(.draft-container, .scene-c
 	font-size: 0;
 	line-height: unset;
 
-	height: 28px;
-	width: 40px;
+	height: 25px;
+	width: 37px;
 
 	color: var(--text-faint);
 	background-color: var(--bg3);
@@ -10577,7 +10585,7 @@ body:not(.no-alternating-rows) li:nth-child(even) :is(.draft-container, .scene-c
 
 .workspace-leaf-content[data-type="VIEW_TYPE_LONGFORM_EXPLORER"] .tab-list button::before {
 	position: relative;
-	bottom: 4px;
+	bottom: 5px;
 	left: 2px;
 }
 

@@ -6,7 +6,6 @@
 #	 Style Settings tab is opened.
 # - takes argument as commit message
 #     - uses "patch" as commit message if executed without argument
-#     - if the commit message contained a reference to an GitHub issue, open that GitHub issue
 # - adds the commit message to the changelog
 # - bumps version number in css file
 # - CSS is linted and minified
@@ -56,13 +55,6 @@ fi
 COMMIT_MSG="$*"
 if [[ "$COMMIT_MSG" == "" || "$COMMIT_MSG" == " " ]] ; then
 	COMMIT_MSG="patch"
-fi
-
-# if issue-related, open that issue
-if [[ "$COMMIT_MSG" =~ "#" ]] ; then
-	issueNo=$(echo "$COMMIT_MSG" | grep -Eo "#\d+" |cut -c 2-)
-	repoURL=$(git remote -v | grep git@github.com | grep fetch | head -n1 | cut -f2 | cut -d' ' -f1 | sed -e's/:/\//' -e 's/git@/https:\/\//' -e 's/\.git//' )
-	open "$repoURL"/issues/"$issueNo"
 fi
 
 # go to git root for Linters
