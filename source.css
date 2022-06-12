@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 2.211
+Version 2.212
 Source CSS: https://github.com/chrisgrieser/shimmering-focus/blob/main/source.css
 MIT License
 ──────────────────────────────────────────────────── */
@@ -6076,19 +6076,19 @@ p {
 	color: var(--text-faint);
 }
 
-.markdown-source-view.is-live-preview .cm-header,
+.markdown-source-view:not(.is-live-preview) .HyperMD-header,
 .markdown-preview-view :is(h1, h2, h3, h4, h5, h6) {
-	line-height: 1.15;
+	line-height: 1.2;
 }
 
-.markdown-source-view:not(.is-live-preview) .cm-header {
+.markdown-source-view .cm-header {
 	line-height: 1.2;
 	position: relative;
 	top: -1px;
 }
 
-.markdown-source-view .HyperMD-header {
-	line-height: 1.0;
+.markdown-source-view.is-live-preview .HyperMD-header {
+	line-height: 1.35;
 }
 
 .is-live-preview .HyperMD-header + .cm-line {
