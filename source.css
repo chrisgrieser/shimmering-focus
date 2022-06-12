@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 2.212
+Version 2.213
 Source CSS: https://github.com/chrisgrieser/shimmering-focus/blob/main/source.css
 MIT License
 ──────────────────────────────────────────────────── */
@@ -10905,7 +10905,7 @@ body:not(.longform-left-aligned) :is(.writing, .longform-leaf) :is(p, .footnotes
 :is(.writing, .longform-leaf) .cm-header.cm-header {
 	line-height: 1.05;
 	position: relative;
-	top: -3px;
+	top: -2px;
 }
 
 /* emphasized tasks */
