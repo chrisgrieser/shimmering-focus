@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 2.209
+Version 2.210
 Source CSS: https://github.com/chrisgrieser/shimmering-focus/blob/main/source.css
 MIT License
 ──────────────────────────────────────────────────── */
@@ -5816,7 +5816,6 @@ body:not(.disable-image-borders) img[src] {
 /* centers image and image caption */
 body:not(.left-aligned-images) .image-embed[alt]::after {
 	text-align: center;
-	white-space: pre;
 }
 
 body:not(.left-aligned-images) .view-content img[src] {
@@ -13730,7 +13729,7 @@ body.madness-mode:not(.is-mobile) .side-dock-ribbon-action[aria-label="Open comm
 	51% { top: -10vh }
 	55% { top: 8vh }
 	75% { top: 8vh }
-	from { top: 110vh }
+	to { top: 110vh }
 }
 
 /* trollish settings button */
