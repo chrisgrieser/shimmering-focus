@@ -3,6 +3,7 @@ nav_order: 110
 ---
 
 # Changelog
+- 2022-06-12	patch
 - 2022-06-12	fix line breaks for long image subtitles
 - 2022-06-12	option to differentiate tasks in longform notes
 - 2022-06-12	reduce menu width on wide windows

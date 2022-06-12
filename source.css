@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 2.210
+Version 2.211
 Source CSS: https://github.com/chrisgrieser/shimmering-focus/blob/main/source.css
 MIT License
 ──────────────────────────────────────────────────── */
@@ -2838,7 +2838,7 @@ input:is([type="email"], [type="password"], [type="search"], [type="text"]) {
 	border-radius: var(--round);
 }
 
-.round-shapes.round-shapes input:is([type="number"], [type="email"], [type="password"], [type="search"], [type="text"]) {
+body:not(.angular-shapes) input:is([type="number"], [type="email"], [type="password"], [type="search"], [type="text"]) {
 	padding-top: 3px;
 }
 
@@ -2869,6 +2869,7 @@ body :is(textarea, input[type][type]):hover {
 	background-color: var(--bg3);
 }
 
+.theme-dark .community-plugin-search .search-input-container input,
 .theme-light :is(textarea, .modal-container input) {
 	background-color: var(--bg2);
 }
