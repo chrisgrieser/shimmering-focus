@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 2.214
+Version 2.215
 Source CSS: https://github.com/chrisgrieser/shimmering-focus/blob/main/source.css
 MIT License
 ──────────────────────────────────────────────────── */
@@ -3298,15 +3298,15 @@ div.prompt-results {
 }
 
 /* pin replacement */
-.prompt-input[placeholder^="Select a command"] ~ .prompt-results .suggestion-flair svg {
+.prompt:not(.better-command-palette) .prompt-input[placeholder^="Select a command"] ~ .prompt-results .suggestion-flair svg {
 	display: none;
 }
 
-.prompt-input[placeholder^="Select a command"] ~ .prompt-results .suggestion-flair {
+.prompt:not(.better-command-palette) .prompt-input[placeholder^="Select a command"] ~ .prompt-results .suggestion-flair {
 	left: 0;
 }
 
-.prompt-input[placeholder^="Select a command"] ~ .prompt-results .suggestion-flair::before {
+.prompt:not(.better-command-palette) .prompt-input[placeholder^="Select a command"] ~ .prompt-results .suggestion-flair::before {
 	content: "";
 	border-left: 3px solid var(--text-faint);
 }
@@ -3329,6 +3329,9 @@ kbd.suggestion-hotkey {
 	color: var(--hotkey-color);
 	background-color: var(--bg2);
 	box-shadow: var(--muted-button-inset-shadow);
+
+	padding-right: 6px;
+	padding-left: 6px;
 
 	border: var(--thin-border);
 	border-radius: var(--roundish);
@@ -9427,14 +9430,23 @@ div.card-view-container.card-view-container .markdown-preview-view :is(h1, h2, h
 .prompt.better-command-palette .suggestion-flair[aria-label="Click to Hide"] {
 	color: var(--light-in-light-dark-in-dark);
 	background: var(--extra-contrast);
-	padding-right: 4px;
-	padding-left: 4px;
-	margin-left: -10px;
+
+	position: absolute;
+	right: 70px;
+	left: unset;
+
+	padding-right: 3px;
+	padding-left: 3px;
+
+	border-radius: var(--roundish);
 }
 
-.prompt.better-command-palette .suggestion-flair[aria-label="Click to Hide"]:not(:hover) {
-	color: transparent;
-	background: transparent;
+.prompt.better-command-palette .suggestion-flair[aria-label="Click to Hide"]:hover {
+	background: var(--text-error);
+}
+
+.prompt.better-command-palette .suggestion-item:not(:hover) .suggestion-flair[aria-label="Click to Hide"]:not(:hover) {
+	display: none;
 }
 
 /* pinned items bold/starred */
@@ -9466,7 +9478,7 @@ div.card-view-container.card-view-container .markdown-preview-view :is(h1, h2, h
 /* since hyper key is displayed as caps lock, can move
 plugin names a little bit more to the right */
 body:not(.move-plugin-name-to-left):not(.is-mobile) .better-command-palette .suggestion-prefix {
-	right: 87px;
+	right: 90px;
 }
 
 /* ───────────────────────────────────────────────── */
@@ -11736,9 +11748,13 @@ body .another-quick-switcher__item__title__header_hit {
 }
 
 /* Numbered Hotkey tip */
-.another-quick-switcher__item__hot-key-guide::before,
+body:not(.mod-macos) .another-quick-switcher__item__hot-key-guide::before,
 .another-quick-switcher__item__hot-key-guide::after {
 	display: none;
+}
+
+.mod-macos .another-quick-switcher__item__hot-key-guide::before {
+	content: "⌘";
 }
 
 body .another-quick-switcher__item__hot-key-guide {
