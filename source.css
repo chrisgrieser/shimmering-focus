@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 2.216
+Version 2.217
 Source CSS: https://github.com/chrisgrieser/shimmering-focus/blob/main/source.css
 MIT License
 ──────────────────────────────────────────────────── */
@@ -7792,19 +7792,8 @@ body:not(.hide-trailing-whitespace) .cm-trailing-space-new-line::before {
 	margin-top: 0;
 }
 
-/* strikethrough more readable */
-.task-list-item.task-list-item.is-checked {
-	color: var(--middle-gray);
-}
-
 .cm-formatting-task.cm-property ~ span {
 	text-decoration: line-through;
-	color: var(--middle-gray);
-}
-
-.cm-formatting-task.cm-property ~ span:hover,
-.task-list-item.is-checked:hover {
-	text-decoration: none;
 }
 
 /* Reading Mode / LP */
