@@ -3,6 +3,7 @@ nav_order: 110
 ---
 
 # Changelog
+- 2022-06-13	patch
 - 2022-06-13	improvements another QA & better command pal
 - 2022-06-13	fix LP headers when folding is off
 - 2022-06-12	fix line breaks for long image subtitles
