@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 2.219
+Version 2.220
 Source CSS: https://github.com/chrisgrieser/shimmering-focus/blob/main/source.css
 MIT License
 ──────────────────────────────────────────────────── */
@@ -13367,7 +13367,11 @@ body .control-character.control-character::after {
 ──────────────────────────────────────────────────── */
 
 /* prevent hints from laying over link text */
-body .jl.popover {
+body .jl.popover.popover.popover {
+	font-family: var(--font-interface);
+	font-size: 0.75rem;
+	line-height: 1.1;
+	padding: 0 2px;
 	margin-left: -1.5em;
 }
 
