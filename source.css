@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 2.221
+Version 2.222
 Source CSS: https://github.com/chrisgrieser/shimmering-focus/blob/main/source.css
 MIT License
 ──────────────────────────────────────────────────── */
@@ -7736,9 +7736,11 @@ body .cm-s-obsidian.cm-s-obsidian.cm-s-obsidian.cm-s-obsidian.cm-s-obsidian :is(
 	filter: saturate(0.3);
 }
 
-/* make html comments readable by disabling ligatures in edit mode */
-.CodeMirror.cm-s-obsidian {
-	font-feature-settings: "liga" 0;
+/* make html comments readable by disabling ligatures in edit mode
+(only in effect when using a font different from iA Writer Quattro)  */
+.markdown-preview-view,
+.cm-s-obsidian {
+	font-variant-ligatures: none;
 }
 
 /* fix for tag/hashtag height difference when selected */
