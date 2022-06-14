@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 2.224
+Version 2.225
 Source CSS: https://github.com/chrisgrieser/shimmering-focus/blob/main/source.css
 MIT License
 ──────────────────────────────────────────────────── */
@@ -13263,12 +13263,6 @@ body .pwc-reference-list .csl-entry.csl-entry.csl-entry {
 .pwc-copy-list:hover::before {
 	color: var(--hover-accent-2);
 	background-color: var(--bg1);
-}
-
-/* hover tooltips */
-.cm-pandoc-citation:hover,
-.pandoc-citation:hover {
-	cursor: help;
 }
 
 .pwc-tooltip.pwc-tooltip {
