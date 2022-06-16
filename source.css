@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 2.227
+Version 2.228
 Source CSS: https://github.com/chrisgrieser/shimmering-focus/blob/main/source.css
 MIT License
 ──────────────────────────────────────────────────── */
@@ -1852,11 +1852,11 @@ body .markdown-source-view.mod-cm6 .cm-content {
 
 /* Default */
 .theme-light { /* stylelint-disable-line no-duplicate-selectors */
-	--cursor-look: hsl(0, 0%, 0%);
+	--cursor-look: hsl(0 0% 0%);
 }
 
 .theme-dark { /* stylelint-disable-line no-duplicate-selectors */
-	--cursor-look: hsl(0, 0%, 100%);
+	--cursor-look: hsl(0 0% 100%);
 }
 
 /* Theme Accents */
