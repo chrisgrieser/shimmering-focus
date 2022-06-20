@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 2.229
+Version 2.230
 Source CSS: https://github.com/chrisgrieser/shimmering-focus/blob/main/source.css
 MIT License
 ──────────────────────────────────────────────────── */
@@ -10925,7 +10925,7 @@ body:not(.longform-left-aligned) :is(.writing, .longform-leaf) :is(p, .footnotes
 }
 
 /* emphasized tasks */
-body.longform-tasks-different :is(.writing, .longform-leaf) :is(.HyperMD-task-line, ul.contains-task-list, .HyperMD-task-line + .HyperMD-list-line-2) {
+body.longform-tasks-different :is(.writing, .longform-leaf) :is(.HyperMD-task-line, ul.contains-task-list, .HyperMD-task-line + .HyperMD-list-line-2, .HyperMD-task-line + .HyperMD-list-line-2 + .HyperMD-list-line-2 + .HyperMD-list-line-2, .HyperMD-task-line + .HyperMD-list-line-2 + .HyperMD-list-line-2 + .HyperMD-list-line-2 + .HyperMD-list-line-2) {
 	color: var(--text-muted);
 }
 
