@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 2.228
+Version 2.229
 Source CSS: https://github.com/chrisgrieser/shimmering-focus/blob/main/source.css
 MIT License
 ──────────────────────────────────────────────────── */
@@ -957,7 +957,7 @@ body.strong-em-secondary-accent {
 	--search-match-color: hsl(30 100% 45%);
 	--text-error: hsl(0 100% 25%);
 	--error-bg: hsl(10 40% 75%);
-	--success-color: hsl(101 90% 35%);
+	--success-color: hsl(101 100% 25%);
 }
 
 .theme-dark {
@@ -3931,13 +3931,9 @@ body .app-container .workspace-leaf-resize-handle:hover {
 
 .vertical-tab-nav-item {
 	line-height: 1.25em;
-	text-align: right;
-
 	color: var(--extra-contrast);
 	background: var(--bg2);
-
 	padding: 5px 6px;
-
 	border: none;
 }
 
@@ -7026,6 +7022,7 @@ pre.language-html::after { content: "HTML" }
 pre.language-txt::after { content: "Plain Text" }
 pre.language-text::after { content: "Plain Text" }
 pre.language-url::after { content: "URL" }
+pre.language-urls::after { content: "URLs" }
 pre.language-uri::after { content: "URI" }
 pre.language-applescript::after { content: "AppleScript" }
 pre.language-markdown::after { content: "Markdown" }
@@ -10928,7 +10925,7 @@ body:not(.longform-left-aligned) :is(.writing, .longform-leaf) :is(p, .footnotes
 }
 
 /* emphasized tasks */
-body.longform-tasks-different :is(.writing, .longform-leaf) :is(.HyperMD-task-line, ul.contains-task-list) {
+body.longform-tasks-different :is(.writing, .longform-leaf) :is(.HyperMD-task-line, ul.contains-task-list, .HyperMD-task-line + .HyperMD-list-line-2) {
 	color: var(--text-muted);
 }
 

@@ -3,7 +3,7 @@ nav_order: 110
 ---
 
 # Changelog
-- 2022-06-16	patch
+- 2022-06-20	patch
 - 2022-06-16	fix sync status bar icon
 - 2022-06-13	improvements another QA & better command pal
 - 2022-06-13	fix LP headers when folding is off
