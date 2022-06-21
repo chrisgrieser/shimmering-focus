@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 2.230
+Version 2.231
 Source CSS: https://github.com/chrisgrieser/shimmering-focus/blob/main/source.css
 MIT License
 ──────────────────────────────────────────────────── */
@@ -274,6 +274,7 @@ MIT License
 	- Jump to Link
 	- Highlighted Yank
 	- Hider
+	- Metabind
 	- New Plugin Placeholder
 - Hardcore & Madness Mode
 	- Hardcore Mode
@@ -2852,7 +2853,7 @@ input:is([type="email"], [type="password"], [type="search"], [type="text"]) {
 }
 
 .workspace-leaf-content input[type="text"] {
-	width: 100%;
+	/* width: 100%; */
 }
 
 body :is(textarea, input[type][type]):focus {
@@ -10925,7 +10926,7 @@ body:not(.longform-left-aligned) :is(.writing, .longform-leaf) :is(p, .footnotes
 }
 
 /* emphasized tasks */
-body.longform-tasks-different :is(.writing, .longform-leaf) :is(.HyperMD-task-line, ul.contains-task-list, .HyperMD-task-line + .HyperMD-list-line-2, .HyperMD-task-line + .HyperMD-list-line-2 + .HyperMD-list-line-2 + .HyperMD-list-line-2, .HyperMD-task-line + .HyperMD-list-line-2 + .HyperMD-list-line-2 + .HyperMD-list-line-2 + .HyperMD-list-line-2) {
+body.longform-tasks-different :is(.writing, .longform-leaf) :is(.HyperMD-task-line, ul.contains-task-list) {
 	color: var(--text-muted);
 }
 
@@ -13407,9 +13408,15 @@ body.hider-ribbon .workspace-ribbon.mod-left {
 }
 
 /* ───────────────────────────────────────────────── */
+/* << Metabind
+──────────────────────────────────────────────────── */
+.meta-bind-plugin-input-wrapper input {
+	width: unset;
+}
+
+/* ───────────────────────────────────────────────── */
 /* << New Plugin Placeholder
 ──────────────────────────────────────────────────── */
-/* marker to jump to for new plugins */
 
 /* ───────────────────────────────────────────────── */
 /* < Hardcore & Madness Mode
@@ -14119,6 +14126,7 @@ community:
 - obsidian-pandoc-reference-list
 - obsidian-discordrpc
 - control-characters
+- obsidian-meta-bind-plugin
 */
 
 /* ───────────────────────────────────────────────── */
