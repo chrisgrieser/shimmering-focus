@@ -3,6 +3,7 @@ nav_order: 110
 ---
 
 # Changelog
+- 2022-06-24	fix for vim search panel
 - 2022-06-24	fix #176
 - 2022-06-16	fix sync status bar icon
 - 2022-06-13	improvements another QA & better command pal

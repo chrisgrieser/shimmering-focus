@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 2.232
+Version 2.233
 Source CSS: https://github.com/chrisgrieser/shimmering-focus/blob/main/source.css
 MIT License
 ──────────────────────────────────────────────────── */
@@ -2056,7 +2056,8 @@ body .markdown-source-view.mod-cm6 .cm-content {
 	line-height: 1em;
 }
 
-.cm-vim-panel input {
+.cm-vim-panel.cm-vim-panel input {
+	width: 97%;
 	max-width: 97%;
 	position: relative;
 	top: -2px;
