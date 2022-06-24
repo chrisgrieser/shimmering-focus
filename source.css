@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 2.231
+Version 2.232
 Source CSS: https://github.com/chrisgrieser/shimmering-focus/blob/main/source.css
 MIT License
 ──────────────────────────────────────────────────── */
@@ -7734,8 +7734,7 @@ body .cm-s-obsidian.cm-s-obsidian.cm-s-obsidian.cm-s-obsidian.cm-s-obsidian :is(
 
 /* make html comments readable by disabling ligatures in edit mode
 (only in effect when using a font different from iA Writer Quattro)  */
-.markdown-preview-view,
-.cm-s-obsidian {
+.cm-s-obsidian .cm-comment {
 	font-variant-ligatures: none;
 }
 
