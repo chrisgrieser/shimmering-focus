@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 2.233
+Version 2.234
 Source CSS: https://github.com/chrisgrieser/shimmering-focus/blob/main/source.css
 MIT License
 ──────────────────────────────────────────────────── */
@@ -51,6 +51,7 @@ MIT License
 - Vim Mode
 	- Vim Cursor
 	- Vim Mode Indicator
+	- Vim Mode Layer
 	- Vim Panel
 - UI Elements
 	- Title Bar
@@ -2027,6 +2028,31 @@ body .markdown-source-view.mod-cm6 .cm-content {
 .workspace-leaf.mod-active .cm-vim-panel div span:nth-child(2)::before {
 	content: "Search";
 	color: var(--unresolved-link-color);
+}
+
+/* ───────────────────────────────────────────────── */
+/* << Vim Mode Layer
+──────────────────────────────────────────────────── */
+.theme-dark .workspace-leaf {
+	--vim-mode-layer: hsla(0 0% 0% / 15%);
+}
+
+.theme-light .workspace-leaf {
+	--vim-mode-layer: hsla(0 0% 100% / 50%);
+}
+
+.normal-mode-layer .workspace-leaf .cm-vimCursorLayer:not(:empty) + .cm-selectionLayer:empty::after,
+.insert-mode-layer .workspace-leaf .cm-vimCursorLayer:empty + .cm-selectionLayer::after {
+	content: " ";
+
+	height: 100vw;
+	width: 100%;
+
+	background-color: var(--vim-mode-layer);
+
+	position: fixed; /* so it stays in the scrollable area */
+	top: 0;
+	left: 0;
 }
 
 /* ───────────────────────────────────────────────── */
@@ -15066,7 +15092,7 @@ settings:
   -
    id: vim-cursor-look
    title: Vim Cursor Style
-   description: The look of the cursor when using Vim in Normal Mode.
+   description: The look of the cursor when using Vim in Normal Mode. (In Insert Mode, the cursor style from above will be applied.)
    type: class-select
    allowEmpty: false
    default: vim-cursor-monolith
@@ -15081,9 +15107,14 @@ settings:
       label: Theme Hover Accent
       value: vim-cursor-theme-hover-accent
   -
+   id: no-vim-cursor-blinking
+   title: Disable the blinking of the Vim Cursor
+   type: class-toggle
+   default: false
+  -
    id: vim-mode-indicator
    title: Vim Mode Indicator
-   description: "Select the position of the indicator, that shows the current Vim mode, or disable it entirely. Note that 'Bottom' will conflict with with long status bars."
+   description: "Select the position of the indicator that shows the current Vim mode, or disable it entirely. Note that 'Bottom' will conflict with with long status bars."
    type: class-select
    allowEmpty: false
    default: top-vim-indicator
@@ -15095,13 +15126,25 @@ settings:
       label: Bottom
       value: bottom-vim-indicator
     -
-      label: No Mode Indicator
+      label: Disable Mode Indicator
       value: no-vim-indicator
   -
-   id: no-vim-cursor-blinking
-   title: Disable the blinking of the Vim Cursor
-   type: class-toggle
-   default: false
+   id: vim-mode-layer
+   title: 🆕 Vim Mode Layer
+   description: "Adds a thin shadow over the whole editor when in a certain vim mode."
+   type: class-select
+   allowEmpty: false
+   default: no-vim-layer
+   options:
+    -
+      label: Disable Mode Shadow
+      value: no-vim-layer
+    -
+      label: Insert Mode Shadow
+      value: insert-mode-layer
+    -
+      label: Normal Mode Shadow
+      value: normal-mode-layer
   -
 # << Special Markup (+)
    id: special-syntax
