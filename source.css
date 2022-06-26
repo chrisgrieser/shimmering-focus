@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 2.236
+Version 2.237
 Source CSS: https://github.com/chrisgrieser/shimmering-focus/blob/main/source.css
 MIT License
 ──────────────────────────────────────────────────── */
@@ -6270,7 +6270,9 @@ body .markdown-preview-view blockquote,
 
 /* hack to prevent rounded corners with consecutive block quotes */
 .HyperMD-quote + .HyperMD-quote::before {
-	content: "";
+	content: " ";
+
+	white-space: pre;
 
 	height: 1.5em;
 	width: calc(var(--blockquote-border-width) - 1px);
@@ -6278,7 +6280,6 @@ body .markdown-preview-view blockquote,
 	background-color: var(--basic-border-color);
 
 	position: absolute;
-	z-index: -1;
 
 	margin-top: -12px;
 	margin-left: calc(-1 * (var(--blockquote-border-width) + 4px));
@@ -13374,7 +13375,7 @@ body:not(.no-pandoc-citation-emphasis) .pandoc-citation.is-unresolved.is-unresol
 	display: none;
 }
 
-/* Style Settings disabled, sicne overriden by the theme anyway... */
+/* Style Settings disabled, since overriden by the theme anyway... */
 .style-settings-heading[data-id="pandoc-reference-list"] + .style-settings-container,
 .style-settings-heading[data-id="pandoc-reference-list"] {
 	display: none;
