@@ -3,7 +3,7 @@ nav_order: 110
 ---
 
 # Changelog
-- 2022-06-26	patch
+- 2022-06-28	patch
 - 2022-06-24	new updated promo-screenshot.png
 - 2022-06-24	new style setting: vim mode shadow
 - 2022-06-24	fix for vim search panel

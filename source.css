@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 2.238
+Version 2.239
 Source CSS: https://github.com/chrisgrieser/shimmering-focus/blob/main/source.css
 MIT License
 ──────────────────────────────────────────────────── */
@@ -7127,6 +7127,10 @@ body:not(.no-codeblock-line-numbers) .HyperMD-codeblock-end .cm-formatting-code-
 	height: calc(var(--scrollbar-thickness) * 0.9);
 }
 
+.no-code-block-wrapping .markdown-preview-view pre:not(.frontmatter) ::-webkit-scrollbar-thumb {
+	background-color: var(--alt-bg);
+}
+
 .no-code-block-wrapping .markdown-preview-view pre:not(.frontmatter):not([class*="language-"]) {
 	overflow-x: scroll;
 }
@@ -7348,7 +7352,7 @@ body:not(.is-mobile) .markdown-preview-view .internal-link[aria-label] {
 .dataview.dataview.dataview a.internal-link {
 	/* undoing of this styling in dataview section,
 	since dataview internal links do have aria labels, too :( */
-	text-decoration-style: solid;
+	text-decoration: solid underline 1.5px;
 }
 
 /* double underline internal links */
@@ -9545,7 +9549,7 @@ body:not(.no-built-in-supercharged-links) .data-link-icon[data-link-tags*="#fina
 body:not(.no-built-in-supercharged-links) .data-link-icon[data-link-tags*="#design" i]::before { content: "🎨 " }
 body:not(.no-built-in-supercharged-links) .data-link-icon[data-link-tags~="#moc" i]::before { content: "🗺 " }
 body:not(.no-built-in-supercharged-links) .data-link-icon[data-link-tags~="#pkm" i]::before { content: "🧠 " }
-body:not(.no-built-in-supercharged-links) .data-link-icon[data-link-tags~="#seedling" i]::before { content: "🌱 " }
+body:not(.no-built-in-supercharged-links) .data-link-icon[data-link-tags~="#seedling" i]::after { content: " 🌱" }
 body:not(.no-built-in-supercharged-links) .data-link-icon[data-link-tags~="#archive" i]::before { content: "🗄 " }
 
 /* writing cssclass, needs *= to catch , after cssclass */
@@ -11619,7 +11623,6 @@ body .dataview.dataview:hover {
 
 /* lists in tables more condensed */
 table td .dataview-result-list-ul {
-	font-size: 85%;
 	line-height: 1.2;
 	padding-inline-start: 12px;
 	margin-block-start: 0 !important; /* needs important */
