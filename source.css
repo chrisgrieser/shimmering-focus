@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 2.239
+Version 2.240
 Source CSS: https://github.com/chrisgrieser/shimmering-focus/blob/main/source.css
 MIT License
 ──────────────────────────────────────────────────── */
@@ -11793,21 +11793,26 @@ body:not(.mod-macos) .another-quick-switcher__item__hot-key-guide::before,
 
 body .another-quick-switcher__item__hot-key-guide {
 	font-family: var(--font-monospace-theme);
-	font-size: 0.75em;
+	font-size: 0.65em;
+	line-height: 1;
 
 	color: var(--hotkey-color);
 	background-color: var(--bg3);
 	box-shadow: var(--tiny-inset-shadow);
-	opacity: 1;
+	opacity: 0.9;
 
-	position: relative;
-	top: -1px;
+	position: absolute;
+	right: 3px;
 
-	padding: 0 2px;
+	padding: 4px 3px;
 	margin-left: 7px;
 
 	border: var(--thin-border);
 	border-radius: var(--roundish);
+}
+
+body .another-quick-switcher__item__directory {
+	margin-right: 1.8em;
 }
 
 /* ───────────────────────────────────────────────── */
