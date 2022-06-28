@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 2.240
+Version 2.241
 Source CSS: https://github.com/chrisgrieser/shimmering-focus/blob/main/source.css
 MIT License
 ──────────────────────────────────────────────────── */
@@ -11805,7 +11805,6 @@ body .another-quick-switcher__item__hot-key-guide {
 	right: 3px;
 
 	padding: 4px 3px;
-	margin-left: 7px;
 
 	border: var(--thin-border);
 	border-radius: var(--roundish);
