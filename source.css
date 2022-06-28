@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 2.241
+Version 2.242
 Source CSS: https://github.com/chrisgrieser/shimmering-focus/blob/main/source.css
 MIT License
 ──────────────────────────────────────────────────── */
@@ -4513,6 +4513,7 @@ body:not(.squareish-shapes) .community-plugin-info .community-plugin-author + .c
 }
 
 /* <<< Copy URL button  */
+.modal.modal.modal.mod-community-plugin .community-plugin-info button:last-child:active, /* needed to prevent pressed-down-button effect making this weird here */
 .modal.modal.mod-community-plugin .community-plugin-info button:last-child {
 	font-size: 0;
 
