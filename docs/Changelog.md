@@ -3,6 +3,7 @@ nav_order: 110
 ---
 
 # Changelog
+- 2022-06-29	hide scrollbars on mobile to save space
 - 2022-06-29	style setting to disable alttext as image caption
 - 2022-06-24	new updated promo-screenshot.png
 - 2022-06-24	new style setting: vim mode shadow
