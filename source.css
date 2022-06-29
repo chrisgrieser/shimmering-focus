@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 2.244
+Version 2.245
 Source CSS: https://github.com/chrisgrieser/shimmering-focus/blob/main/source.css
 MIT License
 ──────────────────────────────────────────────────── */
@@ -8270,10 +8270,6 @@ body:not(.no-fn-indicator) .mod-cm6 .cm-hmd-barelink:not(.cm-formatting-link) + 
 	width: 100%;
 }
 
-body:not(.show-mobile-scrollbars) .is-mobile ::-webkit-scrollbar {
-  display: none;
-}
-
 /* ───────────────────────────────────────────────── */
 /* << Typography
 ──────────────────────────────────────────────────── */
@@ -15330,12 +15326,6 @@ settings:
    id: show-mobile-header
    title: Re-enable Header
    description: By default, this theme shows a floating button to toggle between Reading and Source Mode.
-   type: class-toggle
-   default: false
-  -
-   id: show-mobile-scrollbars
-   title: Re-enable Scrollbars
-   description: By default, this theme hides the scrollbars on mobile to save precious space on mobile.
    type: class-toggle
    default: false
   -
