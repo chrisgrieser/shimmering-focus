@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 2.242
+Version 2.243
 Source CSS: https://github.com/chrisgrieser/shimmering-focus/blob/main/source.css
 MIT License
 ──────────────────────────────────────────────────── */
@@ -5815,7 +5815,7 @@ progress[max="100"]:is([value="1"],[value="2"],[value="3"],[value="4"],[value="5
 }
 
 /* Image Alt as caption */
-.image-embed[alt]:not([alt$=".png"], [alt$=".jpg"], [alt$=".jpeg"], [alt$=".tiff"])::after {
+body:not(.no-image-alttext-caption) .image-embed[alt]:not([alt$=".png"], [alt$=".jpg"], [alt$=".jpeg"], [alt$=".tiff"])::after {
 	display: block;
 	content: attr(alt);
 
@@ -15005,8 +15005,14 @@ settings:
    level: 2
    collapsed: true
   -
+   id: no-image-alttext-caption
+   title: Disable Alt-text as Image Caption
+   description: 'By default, the alt-text of images is used as image caption in Reading Mode.'
+   type: class-toggle
+   default: false
+  -
    id: hover-zoom
-   title: 'Image Zoom via Hover'
+   title: Image Zoom via Hover
    description: 'By default, you can zoom in images by clicking & holding. Enable this to zoom in images by hovering instead.'
    type: class-toggle
    default: false
