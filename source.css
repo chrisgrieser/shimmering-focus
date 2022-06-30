@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 2.246
+Version 2.247
 Source CSS: https://github.com/chrisgrieser/shimmering-focus/blob/main/source.css
 MIT License
 ──────────────────────────────────────────────────── */
@@ -371,14 +371,12 @@ MIT License
 :root {
 	/* RULE OF THUMBS:
 	shifted colors are ~40 hue less than accent-2
-	desaturated colors have ~30% less saturation */
+	desaturated colors have ~20% less saturation */
 
 	--cyan-blue-0: hsl(187 80% 13% / 99%);
 	--cyan-blue-1: hsl(187 70% 26%);
 	--cyan-blue-2: hsl(190 80% 32%);
 	--cyan-blue-3: hsl(187 60% 59%);
-	--cyan-blue-2-desat: hsl(190 30% 32%);
-	--cyan-blue-3-desat: hsl(187 10% 59%);
 	--cyan-blue-4: hsl(187 90% 74%);
 	--cyan-blue-5: hsl(187 70% 88% / 99%);
 	--cyan-blue-shifted: hsl(147 70% 38%);
@@ -410,30 +408,22 @@ MIT License
 	--green-1: hsl(165 70% 25%);
 	--green-2: hsl(165 80% 35%);
 	--green-3: hsl(165 90% 45%);
-	--green-2-desat: hsl(165 30% 35%);
-	--green-3-desat: hsl(165 40% 45%);
 	--green-4: hsl(165 100% 55%);
 
 	--orange-0: hsl(24 69% 22% / 99%);
 	--orange-1: hsl(20 90% 30%);
 	--orange-2: hsl(24 69% 42%);
 	--orange-3: hsl(32 65% 55%);
-	--orange-2-desat: hsl(24 19% 42%);
-	--orange-3-desat: hsl(32 15% 55%);
 	--orange-4: hsl(40 87% 67%);
 	--orange-5: hsl(40 70% 87% / 99%);
 	--orange-shifted: hsl(344 69% 42%);
 
 	--yellow-orange-2: hsl(43 100% 30%);
 	--yellow-orange-3: hsl(39 80% 63%);
-	--yellow-orange-2-desat: hsl(43 50% 30%);
-	--yellow-orange-3-desat: hsl(39 30% 63%);
 
 	--pink-1: hsl(330 80% 30%);
 	--pink-2: hsl(330 70% 50%);
 	--pink-3: hsl(336 85% 64%);
-	--pink-2-desat: hsl(330 20% 50%);
-	--pink-3-desat: hsl(336 35% 64%);
 	--pink-4: hsl(330 90% 75%);
 }
 
@@ -510,8 +500,6 @@ MIT License
 	--hover-accent-1: var(--green-1);
 	--hover-accent-2: var(--green-2);
 	--hover-accent-3: var(--green-3);
-	--hover-accent-2-desat: var(--green-2-desat);
-	--hover-accent-3-desat: var(--green-3-desat);
 	--hover-accent-4: var(--green-4);
 
 	--button-hover-text: var(--always-dark);
@@ -522,8 +510,6 @@ MIT License
 	--hover-accent-1: var(--orange-1);
 	--hover-accent-2: var(--orange-2);
 	--hover-accent-3: var(--orange-3);
-	--hover-accent-2-desat: var(--orange-2-desat);
-	--hover-accent-3-desat: var(--orange-3-desat);
 	--hover-accent-4: var(--orange-4);
 
 	--button-hover-text: var(--light-in-light-dark-in-dark);
@@ -534,8 +520,6 @@ MIT License
 	--hover-accent-1: var(--pink-1);
 	--hover-accent-2: var(--pink-2);
 	--hover-accent-3: var(--pink-3);
-	--hover-accent-2-desat: var(--pink-2-desat);
-	--hover-accent-3-desat: var(--pink-3-desat);
 	--hover-accent-4: var(--pink-4);
 
 	--button-hover-text: var(--always-dark);
@@ -546,8 +530,6 @@ MIT License
 	--hover-accent-1: var(--cyan-blue-1);
 	--hover-accent-2: var(--cyan-blue-2);
 	--hover-accent-3: var(--cyan-blue-3);
-	--hover-accent-2-desat: var(--cyan-blue-2-desat);
-	--hover-accent-3-desat: var(--cyan-blue-3-desat);
 	--hover-accent-4: var(--cyan-blue-4);
 
 	--button-hover-text: var(--always-dark);
@@ -557,16 +539,12 @@ MIT License
 .custom-colors.theme-dark.secondary-accent-dark-yellow {
 	--secondary-accent-2: var(--yellow-orange-2);
 	--secondary-accent-3: var(--yellow-orange-3);
-	--secondary-accent-2-desat: var(--yellow-orange-2-desat);
-	--secondary-accent-3-desat: var(--yellow-orange-3-desat);
 }
 
 .custom-colors.theme-light.secondary-accent-light-green,
 .custom-colors.theme-dark.secondary-accent-dark-green {
 	--secondary-accent-2: var(--green-2);
 	--secondary-accent-3: var(--green-3);
-	--secondary-accent-2-desat: var(--green-2-desat);
-	--secondary-accent-3-desat: var(--green-3-desat);
 }
 
 /* ───────────────────────────────────────────────── */
@@ -603,15 +581,11 @@ MIT License
 	--hover-accent-1: var(--pink-1);
 	--hover-accent-2: var(--pink-2);
 	--hover-accent-3: var(--pink-3);
-	--hover-accent-2-desat: var(--pink-2-desat);
-	--hover-accent-3-desat: var(--pink-3-desat);
 	--hover-accent-4: var(--pink-4);
 	--button-hover-text: var(--always-light);
 
 	--secondary-accent-2: var(--yellow-orange-2);
 	--secondary-accent-3: var(--yellow-orange-3);
-	--secondary-accent-2-desat: var(--yellow-orange-2-desat);
-	--secondary-accent-3-desat: var(--yellow-orange-3-desat);
 }
 
 /* ───────────────────────────────────────────────── */
@@ -643,15 +617,11 @@ MIT License
 	--hover-accent-1: var(--green-1);
 	--hover-accent-2: var(--green-2);
 	--hover-accent-3: var(--green-3);
-	--hover-accent-2-desat: var(--green-2-desat);
-	--hover-accent-3-desat: var(--green-3-desat);
 	--hover-accent-4: var(--green-4);
 	--button-hover-text: var(--text-normal);
 
 	--secondary-accent-2: var(--green-2);
 	--secondary-accent-3: var(--green-3);
-	--secondary-accent-2-desat: var(--green-2-desat);
-	--secondary-accent-3-desat: var(--green-3-desat);
 }
 
 /* ───────────────────────────────────────────────── */
@@ -683,15 +653,11 @@ MIT License
 	--hover-accent-1: var(--cyan-blue-1);
 	--hover-accent-2: var(--cyan-blue-2);
 	--hover-accent-3: var(--cyan-blue-3);
-	--hover-accent-2-desat: var(--cyan-blue-2-desat);
-	--hover-accent-3-desat: var(--cyan-blue-3-desat);
 	--hover-accent-4: var(--cyan-blue-4);
 	--button-hover-text: var(--always-dark);
 
 	--secondary-accent-2: var(--green-2);
 	--secondary-accent-3: var(--green-3);
-	--secondary-accent-2-desat: var(--green-2-desat);
-	--secondary-accent-3-desat: var(--green-3-desat);
 }
 
 /* ───────────────────────────────────────────────── */
@@ -769,8 +735,8 @@ MIT License
 .theme-dark {
 	--bold-light: var(--hover-accent-2);
 	--bold-dark: var(--hover-accent-3);
-	--italics-light: var(--hover-accent-2-desat);
-	--italics-dark: var(--hover-accent-3-desat);
+	--italics-light: var(--hover-accent-2);
+	--italics-dark: var(--hover-accent-3);
 }
 
 /* bold-italics = uncolored (default with custom colors) */
