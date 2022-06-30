@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 2.247
+Version 2.248
 Source CSS: https://github.com/chrisgrieser/shimmering-focus/blob/main/source.css
 MIT License
 ──────────────────────────────────────────────────── */
@@ -2649,12 +2649,12 @@ body:is(.theme-light, .theme-dark) ::-webkit-scrollbar-thumb:active {
 .modal .is-loading::before {
 	height: 7px;
 	background:
-	linear-gradient(
-		45deg,
-		var(--active-color) 0% 20%,
-		var(--hover-accent-2) 40% 60%,
-		var(--secondary-accent-3) 80% 100%
-	);
+		linear-gradient(
+			45deg,
+			var(--active-color) 0% 20%,
+			var(--hover-accent-2) 40% 60%,
+			var(--secondary-accent-3) 80% 100%
+		);
 }
 
 .theme-light .modal .is-loading::before {
