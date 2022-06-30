@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 2.251
+Version 2.252
 Source CSS: https://github.com/chrisgrieser/shimmering-focus/blob/main/source.css
 MIT License
 ──────────────────────────────────────────────────── */
@@ -11984,7 +11984,7 @@ a:is(.style-settings-export, .style-settings-import) {
 			hsl(300 var(--hue-slider-sat) var(--hue-slider-br)),
 			hsl(330 var(--hue-slider-sat) var(--hue-slider-br)),
 			hsl(360 var(--hue-slider-sat) var(--hue-slider-br))
-	);
+		);
 }
 
 .style-settings-container .setting-item:is([data-id^="highlight-hue-"], [data-id$="-hue"], [data-id^="tint-"]) input.slider {
