@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 2.252
+Version 2.253
 Source CSS: https://github.com/chrisgrieser/shimmering-focus/blob/main/source.css
 MIT License
 ──────────────────────────────────────────────────── */
@@ -12199,12 +12199,6 @@ body:not(.unlock-theme-beta) .style-settings-container .setting-item:is(
 /* << Link Favicon Plugin
 ──────────────────────────────────────────────────── */
 /* https://github.com/joethei/obsidian-link-favicon#for-designers */
-
-/* do not show on active line */
-.cm-active .link-favicon {
-	/* needed */
-	/* display: none !important; */
-}
 
 object.link-favicon {
 	height: 1em !important; /* needed */
