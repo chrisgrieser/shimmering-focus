@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 2.245
+Version 2.246
 Source CSS: https://github.com/chrisgrieser/shimmering-focus/blob/main/source.css
 MIT License
 ──────────────────────────────────────────────────── */
@@ -2684,11 +2684,11 @@ body:is(.theme-light, .theme-dark) ::-webkit-scrollbar-thumb:active {
 	height: 7px;
 	background:
 	linear-gradient(
-	                45deg,
-	                var(--active-color) 0% 20%,
-	                var(--hover-accent-2) 40% 60%,
-	                var(--secondary-accent-3) 80% 100%
-	                );
+		45deg,
+		var(--active-color) 0% 20%,
+		var(--hover-accent-2) 40% 60%,
+		var(--secondary-accent-3) 80% 100%
+	);
 }
 
 .theme-light .modal .is-loading::before {
@@ -11023,6 +11023,8 @@ body:not(.no-alternating-rows) .workspace-leaf-content[data-type="recent-files"]
 .workspace-leaf-content[data-type="recent-files"] .nav-file-title.nav-file-title {
 	padding-right: 0;
 	padding-left: 0;
+	text-overflow: ellipsis;
+	overflow: hidden;
 }
 
 /* active file is always top and gets not very distinguishable from tab header bg otherwise */
