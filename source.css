@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 2.249
+Version 2.250
 Source CSS: https://github.com/chrisgrieser/shimmering-focus/blob/main/source.css
 MIT License
 ──────────────────────────────────────────────────── */
@@ -11278,8 +11278,8 @@ button.MS-OpenSnippet:hover svg.ms-snippet path {
 }
 
 .BC-active-note div { /* "Treat Current Note as Implied Sibling" enabled */
-font-weight: 600;
-color: var(--active-color);
+	font-weight: 600;
+	color: var(--active-color);
 }
 
 body .app-container .workspace-leaf-content[data-type="BC-matrix"] .view-content {
