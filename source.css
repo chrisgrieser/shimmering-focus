@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 2.256
+Version 2.257
 Source CSS: https://github.com/chrisgrieser/shimmering-focus/blob/main/source.css
 MIT License
 ──────────────────────────────────────────────────── */
@@ -565,7 +565,7 @@ MIT License
 	--bg-light-brightness: 14%;
 	--bg-light-hue: 220;
 	--bg-light-sat: 15%;
-	--bg-dark-brightness: 8%;
+	--bg-dark-brightness: 7%;
 	--bg-dark-hue: 235;
 	--bg-dark-sat: 10%;
 
