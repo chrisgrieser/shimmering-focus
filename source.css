@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 2.250
+Version 2.251
 Source CSS: https://github.com/chrisgrieser/shimmering-focus/blob/main/source.css
 MIT License
 ──────────────────────────────────────────────────── */
@@ -11969,22 +11969,22 @@ a:is(.style-settings-export, .style-settings-import) {
 	--hue-slider-sat: 70%;
 	--hue-slider-br: 60%;
 	--hue-scale:
-	linear-gradient(
-	                to right,
-	                hsl(0 var(--hue-slider-sat) var(--hue-slider-br)),
-	                hsl(30 var(--hue-slider-sat) var(--hue-slider-br)),
-	                hsl(60 var(--hue-slider-sat) var(--hue-slider-br)),
-	                hsl(90 var(--hue-slider-sat) var(--hue-slider-br)),
-	                hsl(120 var(--hue-slider-sat) var(--hue-slider-br)),
-	                hsl(150 var(--hue-slider-sat) var(--hue-slider-br)),
-	                hsl(180 var(--hue-slider-sat) var(--hue-slider-br)),
-	                hsl(210 var(--hue-slider-sat) var(--hue-slider-br)),
-	                hsl(240 var(--hue-slider-sat) var(--hue-slider-br)),
-	                hsl(270 var(--hue-slider-sat) var(--hue-slider-br)),
-	                hsl(300 var(--hue-slider-sat) var(--hue-slider-br)),
-	                hsl(330 var(--hue-slider-sat) var(--hue-slider-br)),
-	                hsl(360 var(--hue-slider-sat) var(--hue-slider-br))
-	                );
+		linear-gradient(
+			to right,
+			hsl(0 var(--hue-slider-sat) var(--hue-slider-br)),
+			hsl(30 var(--hue-slider-sat) var(--hue-slider-br)),
+			hsl(60 var(--hue-slider-sat) var(--hue-slider-br)),
+			hsl(90 var(--hue-slider-sat) var(--hue-slider-br)),
+			hsl(120 var(--hue-slider-sat) var(--hue-slider-br)),
+			hsl(150 var(--hue-slider-sat) var(--hue-slider-br)),
+			hsl(180 var(--hue-slider-sat) var(--hue-slider-br)),
+			hsl(210 var(--hue-slider-sat) var(--hue-slider-br)),
+			hsl(240 var(--hue-slider-sat) var(--hue-slider-br)),
+			hsl(270 var(--hue-slider-sat) var(--hue-slider-br)),
+			hsl(300 var(--hue-slider-sat) var(--hue-slider-br)),
+			hsl(330 var(--hue-slider-sat) var(--hue-slider-br)),
+			hsl(360 var(--hue-slider-sat) var(--hue-slider-br))
+	);
 }
 
 .style-settings-container .setting-item:is([data-id^="highlight-hue-"], [data-id$="-hue"], [data-id^="tint-"]) input.slider {
