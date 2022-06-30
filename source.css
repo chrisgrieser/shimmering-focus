@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 2.248
+Version 2.249
 Source CSS: https://github.com/chrisgrieser/shimmering-focus/blob/main/source.css
 MIT License
 ──────────────────────────────────────────────────── */
@@ -2843,10 +2843,6 @@ textarea {
 
 input:is([type="email"], [type="password"], [type="search"], [type="text"]) {
 	width: 250px;
-}
-
-.workspace-leaf-content input[type="text"] {
-	/* width: 100%; */
 }
 
 body :is(textarea, input[type][type]):focus {
