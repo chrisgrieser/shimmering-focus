@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 2.258
+Version 2.259
 Source CSS: https://github.com/chrisgrieser/shimmering-focus/blob/main/source.css
 MIT License
 ──────────────────────────────────────────────────── */
@@ -13382,11 +13382,8 @@ body .jl.popover.popover.popover {
 ──────────────────────────────────────────────────── */
 
 body .yank-deco {
-	background-color: var(--unresolved-link-color);
-}
-
-.yank-deco.yank-deco.yank-deco.yank-deco * {
 	color: var(--always-dark);
+	background-color: var(--unresolved-link-color);
 }
 
 /* ───────────────────────────────────────────────── */
