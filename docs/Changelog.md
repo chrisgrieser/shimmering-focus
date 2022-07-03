@@ -3,7 +3,7 @@ nav_order: 110
 ---
 
 # Changelog
-- 2022-07-01	patch
+- 2022-07-03	patch
 - 2022-06-30	more saturation for italics
 - 2022-06-29	undo last change, cause already implemented m(
 - 2022-06-29	hide scrollbars on mobile to save space

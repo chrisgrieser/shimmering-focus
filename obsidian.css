@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 2.257
+Version 2.258
 Source CSS: https://github.com/chrisgrieser/shimmering-focus/blob/main/source.css
 MIT License
 ──────────────────────────────────────────────────── */
@@ -1326,7 +1326,7 @@ settings:
   -
    id: longform-hue-shift-light
    title: Background Color Shift (Light Mode)
-   description: 'Degree to which longform and writing notes have a different color tone than normal notes (i.e., hue added/substracted). Setting this to "0" will make longform projects have the same background color as other notes. (Note that custom colors settings with a low saturation or very high/low brightness will values make the color shift less noticeable.)'
+   description: 'Degree to which longform and writing notes in light mode have a different color tone than normal notes (i.e., hue added/substracted). Setting this to "0" will make longform projects have the same background color as other notes. (Note that custom colors settings with a low saturation or very high/low brightness will values make the color shift less noticeable.)'
    type: variable-number-slider
    default: 25
    min: -180
@@ -1335,7 +1335,7 @@ settings:
   -
    id: longform-hue-shift-dark
    title: Background Color Shift (Dark Mode)
-   description: 'Degree to which longform and writing notes have a different color tone than normal notes (i.e., hue added/substracted). Setting this to "0" will make longform projects have the same background color as other notes. (Note that custom colors settings with a low saturation or very high/low brightness will values make the color shift less noticeable.)'
+   description: 'Degree to which longform and writing notes in dark mode have a different color tone than normal notes (i.e., hue added/substracted).'
    type: variable-number-slider
    default: 25
    min: -180
