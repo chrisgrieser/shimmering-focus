@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 2.259
+Version 2.260
 Source CSS: https://github.com/chrisgrieser/shimmering-focus/blob/main/source.css
 MIT License
 ──────────────────────────────────────────────────── */
@@ -13317,17 +13317,8 @@ body:not(.no-pandoc-citation-emphasis) .pandoc-citation.is-unresolved.is-unresol
 }
 
 /* reading mode styling */
-.markdown-preview-view :is(.pandoc-citation-at, .pandoc-citation-formatting) {
-	font-size: 0;
-}
-
-.markdown-preview-view .pandoc-citation-formatting::before {
-	content: "(";
-	font-size: var(--font-text-size);
-}
-
-.markdown-preview-view :is(.pandoc-citation + .pandoc-citation-extra, .pandoc-citation) + .pandoc-citation-formatting::before {
-	content: ")";
+.markdown-preview-view .pandoc-citation-at {
+	display: none;
 }
 
 /* cause longform notes have different size */
