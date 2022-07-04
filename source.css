@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 2.260
+Version 2.261
 Source CSS: https://github.com/chrisgrieser/shimmering-focus/blob/main/source.css
 MIT License
 ──────────────────────────────────────────────────── */
@@ -6237,7 +6237,7 @@ body .markdown-preview-view blockquote,
 	white-space: pre;
 
 	height: 1.5em;
-	width: calc(var(--blockquote-border-width) - 1px);
+	width: var(--blockquote-border-width);
 
 	background-color: var(--basic-border-color);
 
@@ -6247,8 +6247,13 @@ body .markdown-preview-view blockquote,
 	margin-left: calc(-1 * (var(--blockquote-border-width) + 4px));
 }
 
+.HyperMD-quote.cm-active + .HyperMD-quote::before,
+.HyperMD-quote + .HyperMD-quote.cm-active::before {
+	z-index: -1;
+}
+
 .HyperMD-quote + .HyperMD-quote.HyperMD-quote-lazy::before {
-	margin-left: -10px;
+	margin-left: calc(-1 * (var(--blockquote-border-width) + 10px));
 }
 
 .HyperMD-quote + .HyperMD-quote::after {
@@ -6262,7 +6267,6 @@ body .markdown-preview-view blockquote,
 	position: absolute;
 	top: -3px;
 	right: 0;
-	z-index: -1;
 }
 
 /* interaction with active line highlighting */
