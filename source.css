@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 2.267
+Version 2.268
 Source CSS: https://github.com/chrisgrieser/shimmering-focus/blob/main/source.css
 MIT License
 ──────────────────────────────────────────────────── */
@@ -12403,18 +12403,15 @@ svg.sync-small {
 	width: var(--status-bar-font-size);
 }
 
-.lt-title {
-	font-size: 1.3rem;
-}
-
 .lt-predictions-container.lt-predictions-container.lt-predictions-container {
 	box-shadow: var(--small-shadow);
-	padding-top: 4px;
+	padding-top: 5px;
 	border: var(--basic-border);
 }
 
+.lt-title,
 .lt-message {
-	font-size: 1.2rem;
+	font-family: var(--font-interface);
 	line-height: 1.2;
 }
 
