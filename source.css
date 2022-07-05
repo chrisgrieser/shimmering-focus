@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 2.265
+Version 2.266
 Source CSS: https://github.com/chrisgrieser/shimmering-focus/blob/main/source.css
 MIT License
 ──────────────────────────────────────────────────── */
@@ -1946,6 +1946,7 @@ body .markdown-source-view.mod-cm6 .cm-content {
 	position: fixed;
 	top: 0;
 	left: 0;
+	z-index: 1000;
 
 	padding: 1px;
 
@@ -12365,18 +12366,29 @@ body .lt-predictions-container {
 	border-radius: calc(var(--roundish) * 1.5);
 }
 
-.lt-ignore-btn:hover,
-.lt-ignore-btn,
-.lt-buttoncontainer > button {
-	background-color: var(--bg2);
+.lt-buttoncontainer.lt-buttoncontainer > button {
+	background-color: var(--bg3);
+	box-shadow: none;
+	margin-right: 10px;
+	border: none;
 }
 
-body .lt-ignore-btn {
+.lt-ignore-btn.lt-ignore-btn.lt-ignore-btn.lt-ignore-btn.lt-ignore-btn {
+	font-size: 75%;
+	background: none;
+	box-shadow: none;
 	padding: 8px;
-	border-top: var(--muted-border);
+	border: none;
 }
 
-body .lt-ignore-btn:hover {
+.lt-ignore-btn svg {
+	height: 0.9em;
+	width: 0.9em;
+	margin-bottom: -2px;
+	margin-left: 2px;
+}
+
+body .lt-ignore-btn.lt-ignore-btn:hover {
 	color: var(--hover-accent-2);
 }
 
@@ -12389,6 +12401,14 @@ body .lt-ignore-btn:hover {
 svg.sync-small {
 	height: var(--status-bar-font-size);
 	width: var(--status-bar-font-size);
+}
+
+.lt-title {
+	font-size: 1.2rem;
+}
+
+.lt-predictions-container.lt-predictions-container.lt-predictions-container {
+	padding-top: 4px;
 }
 
 /* ───────────────────────────────────────────────── */
