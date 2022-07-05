@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 2.264
+Version 2.265
 Source CSS: https://github.com/chrisgrieser/shimmering-focus/blob/main/source.css
 MIT License
 ──────────────────────────────────────────────────── */
@@ -12626,7 +12626,7 @@ in the search match section */
 
 /* current word */
 body :is(.cm-matched-word,.cm-current-word):is(.cm-matched-word,.cm-current-word) {
-	text-decoration: 2px dotted underline var(--text-faint);
+	text-decoration: 2px dotted underline var(--middle-gray);
 }
 
 .is-live-preview .cm-link :is(.cm-matched-word,.cm-current-word) {
