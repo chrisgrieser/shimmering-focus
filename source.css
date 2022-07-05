@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 2.261
+Version 2.262
 Source CSS: https://github.com/chrisgrieser/shimmering-focus/blob/main/source.css
 MIT License
 ──────────────────────────────────────────────────── */
@@ -925,14 +925,14 @@ body.strong-em-secondary-accent {
 	--search-match-color: hsl(30 100% 45%);
 	--text-error: hsl(0 100% 25%);
 	--error-bg: hsl(10 40% 75%);
-	--success-color: hsl(101 100% 25%);
+	--success-color: hsl(120 80% 35%);
 }
 
 .theme-dark {
 	--search-match-color: hsl(60 100% 70%);
 	--text-error: hsl(0 100% 60%);
 	--error-bg: hsl(0 30% 20%);
-	--success-color: hsl(151 80% 35%);
+	--success-color: hsl(151 80% 45%);
 }
 
 /* ───────────────────────────────────────────────── */
@@ -2000,7 +2000,7 @@ body .markdown-source-view.mod-cm6 .cm-content {
 /* << Vim Mode Layer / Shadow
 ──────────────────────────────────────────────────── */
 .theme-dark .workspace-leaf {
-	--vim-mode-layer: hsla(0 0% 0% / 10%);
+	--vim-mode-layer: hsla(0 0% 0% / 8%);
 }
 
 .theme-light .workspace-leaf {
