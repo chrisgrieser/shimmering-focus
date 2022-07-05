@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 2.268
+Version 2.269
 Source CSS: https://github.com/chrisgrieser/shimmering-focus/blob/main/source.css
 MIT License
 ──────────────────────────────────────────────────── */
@@ -12374,10 +12374,14 @@ body .lt-predictions-container {
 }
 
 .lt-ignore-btn.lt-ignore-btn.lt-ignore-btn.lt-ignore-btn.lt-ignore-btn {
-	font-size: 75%;
+	font-size: 80%;
+
+	color: var(--text-muted);
 	background: none;
 	box-shadow: none;
+
 	padding: 8px;
+
 	border: none;
 }
 
