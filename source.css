@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 2.269
+Version 2.270
 Source CSS: https://github.com/chrisgrieser/shimmering-focus/blob/main/source.css
 MIT License
 ──────────────────────────────────────────────────── */
@@ -12392,7 +12392,7 @@ body .lt-predictions-container {
 	margin-left: 2px;
 }
 
-body .lt-ignore-btn.lt-ignore-btn:hover {
+body .lt-ignore-btn.lt-ignore-btn.lt-ignore-btn.lt-ignore-btn.lt-ignore-btn:hover {
 	color: var(--hover-accent-2);
 }
 
