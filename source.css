@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 2.263
+Version 2.264
 Source CSS: https://github.com/chrisgrieser/shimmering-focus/blob/main/source.css
 MIT License
 ──────────────────────────────────────────────────── */
@@ -12625,8 +12625,8 @@ a.zoom-plugin-title:hover {
 in the search match section */
 
 /* current word */
-body :is(.cm-matched-word,.cm-current-word) {
-	text-decoration: 1.5px dotted underline var(--text-muted);
+body :is(.cm-matched-word,.cm-current-word):is(.cm-matched-word,.cm-current-word) {
+	text-decoration: 2px dotted underline var(--text-faint);
 }
 
 .is-live-preview .cm-link :is(.cm-matched-word,.cm-current-word) {
