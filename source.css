@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 2.262
+Version 2.263
 Source CSS: https://github.com/chrisgrieser/shimmering-focus/blob/main/source.css
 MIT License
 ──────────────────────────────────────────────────── */
@@ -9482,6 +9482,10 @@ body:not(.move-plugin-name-to-left):not(.is-mobile) .better-command-palette .sug
 	right: 90px;
 }
 
+.better-command-palette-hide-removal .better-command-palette .suggestion-flair[aria-label="Click to Hide"] {
+	display: none;
+}
+
 /* ───────────────────────────────────────────────── */
 /* << Supercharged Links
 ──────────────────────────────────────────────────── */
@@ -15331,6 +15335,12 @@ settings:
    description: Enable this in case some commands are aren't displayed properly in the Command Palette. Also applies to the Better Command Palette Plugin.
    type: class-toggle
    hub: ignore
+   default: false
+  -
+   id: better-command-palette-hide-removal
+   title: 'Better Command Palette: Permanently hide buttons to remove commands'
+   description: By default, the "x" to remove a command is only displayed on hover.
+   type: class-toggle
    default: false
   -
    id: no-citations-in-reading-view

@@ -3,7 +3,7 @@ nav_order: 110
 ---
 
 # Changelog
-- 2022-07-05	patch
+- 2022-07-05	better command palette: option to remove x
 - 2022-07-04	fix for blockquote borders
 - 2022-07-04	fix for pandoc reference list in reading mode
 - 2022-06-30	more saturation for italics
