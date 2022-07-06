@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 2.270
+Version 2.271
 Source CSS: https://github.com/chrisgrieser/shimmering-focus/blob/main/source.css
 MIT License
 ──────────────────────────────────────────────────── */
@@ -10861,6 +10861,10 @@ select#longform-workflows:hover {
 	background-color: var(--bg3);
 	border: var(--muted-button-border);
 	cursor: not-allowed;
+}
+
+.longform-compile-step input[type="text"] {
+	width: 100%;
 }
 
 /* ───────────────────────────────────────────────────
