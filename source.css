@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 2.271
+Version 2.272
 Source CSS: https://github.com/chrisgrieser/shimmering-focus/blob/main/source.css
 MIT License
 ──────────────────────────────────────────────────── */
@@ -10520,7 +10520,7 @@ div#select-projects select,
 	counter-reset: sidebar;
 }
 
-#scene-list .scene-container:not([data-scene-path*="/_"]):not([data-scene-path*="Acknowledgements" i]):not([data-scene-path*="Notes for the Reader" i]):not([data-scene-path*="Appendix" i]):not([data-scene-path*="Metadata" i])::before {
+#scene-list .scene-container:not([data-scene-path*="/_"], [data-scene-path*="Acknowledgements" i], [data-scene-path*="Notes for the Reader" i], [data-scene-path*="Appendix" i], [data-scene-path*="Metadata" i], [data-scene-path*="Abstract" i])::before {
 	counter-increment: sidebar;
 	content: counter(sidebar) ".";
 	padding-right: 5px;
