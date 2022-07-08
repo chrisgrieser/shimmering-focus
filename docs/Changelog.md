@@ -3,7 +3,7 @@ nav_order: 110
 ---
 
 # Changelog
-- 2022-07-07	patch
+- 2022-07-08	styled dataview result counter
 - 2022-07-06	language tool box improvements
 - 2022-07-05	better command palette: option to remove x
 - 2022-07-04	fix for blockquote borders
