@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 2.275
+Version 2.276
 Source CSS: https://github.com/chrisgrieser/shimmering-focus/blob/main/source.css
 MIT License
 ──────────────────────────────────────────────────── */
@@ -44,7 +44,7 @@ settings:
   -
    id: show-hide-elements
    title: 👀 Show/Hide UI Elements
-   description: Re-enable elements hidden by this theme, Hardcore Mode & Madness Mode 😈
+   description: Re-enable elements hidden by this theme
    type: heading
    level: 1
    collapsed: true
@@ -130,39 +130,6 @@ settings:
    id: show-fold-indicators
    title: 🆕 Re-enable the Fold Indicators
    description: 'Fold Indicators are the "..." next to a folded item.'
-   type: class-toggle
-   default: false
-  -
-   id: show-graph-controls
-   title: 'Graph View: Permanently show the Graph Controls'
-   description: By default, graph controls are only visible when opened, or upon hovering the top-left area of the Graph View.
-   type: class-toggle
-   default: false
-  -
-   id: hardcore-mode
-   title: '⚠️ Hardcore Mode'
-   description: |
-     Experienced Obsidian users only!
-
-     Try the ultimate challenge and permanently hide everything element that is not absolutely essential: On top of permanently removing all things listed above, hardcore mode will remove the settings button, disable both side bars and the gutter, and censor all sorts of labels and descriptions.
-
-     Test your knowledge of Obsidian and prove that you are a real power user by getting things done even under these challenging conditions!
-   type: class-toggle
-   default: false
-  -
-   id: madness-mode
-   title: '😈 Madness Mode'
-   description: |
-     After enabling Madness Mode, are you able to disable it again? Endure evil buttons, cryptic settings, hacked cursors, and hostile interfaces – all on top of the limitations of Hardcore Mode! You will need a solid understanding of Obsidian mechanics to regain your sanity in this devilish small puzzle game!
-
-     Rules:
-     1. No hotkeys. Typing text into text fields is allowed though.
-     2. No deletion/modification of files in '.obsidian'. You don't need to leave Obsidian to beat the game.
-     3. If you talk about Madness Mode on Discord, please use spoiler tags and don't share screenshots that contain a solution step.
-
-     Be aware that during Madness Mode, you won't be able to properly use your vault. If you are stuck, you can turn off Madness Mode by deleting the file '{vaultRoot}/.obsidian/plugins/obsidian-style-settings/data.json' and restarting Obsidian. As this will effectively reset your Style Settings, you should consider making a backup before starting the game ('Export' button at the top right).
-
-     Ready to face a theme gone mad? Then enable Madness Mode and see if you can recover your sanity!
    type: class-toggle
    default: false
   -
@@ -1211,10 +1178,16 @@ settings:
   -
    id: plugin-specific
    title: ⚙️ Plugin-Specific Settings
-   description: Backlinks, Outline, Starred, Search Pane, Command Palette, Better Command Palette, Pandoc Reference List, Breadcrumbs, Sliding Panes, Supercharged Links, Link Favicons, Calendar
+   description: Graph, Backlinks, Outline, Starred, Search Pane, Command Palette, Better Command Palette, Pandoc Reference List, Breadcrumbs, Sliding Panes, Supercharged Links, Link Favicons, Calendar
    type: heading
    level: 1
    collapsed: true
+  -
+   id: show-graph-controls
+   title: 'Graph View: Permanently show the Graph Controls'
+   description: By default, graph controls are only visible when opened, or upon hovering the top-left area of the Graph View.
+   type: class-toggle
+   default: false
   -
    id: classic-inline-backlinks
    title: 'Backlinks: Re-enable classic inline backlinks'
@@ -1236,7 +1209,7 @@ settings:
   -
    id: show-starred-nav-buttons
    title: 'Starred Pane: Re-enable Buttons'
-   description: The two buttons to star the current file and the current search.
+   description: 'The two buttons to star the current file and the current search. You can still star/unstar a note via the Command Palette.'
    type: class-toggle
    default: false
   -
@@ -1363,7 +1336,7 @@ settings:
   -
    id: miscellaneous
    title: ✴️ Miscellaneous
-   description: Menu Size, Line Length, 🆕 Atomic Notes Ruler, Double Underlines, Dimmed Inactive Panes, Alternating Row Colors, Animations, 🆕 Theme Beta
+   description: Menu Size, Line Length, 🆕 Atomic Notes Ruler, Double Underlines, Dimmed Inactive Panes, Alternating Row Colors, Animations, Theme Beta, Hardcore Mode & Madness Mode 😈
    type: heading
    level: 1
    collapsed: true
@@ -1419,6 +1392,33 @@ settings:
    id: no-shadows
    title: Turn off shadows (3D-like look)
    description: Can improve performance on older machines.
+   type: class-toggle
+   default: false
+  -
+   id: hardcore-mode
+   title: '⚠️ Hardcore Mode'
+   description: |
+     Experienced Obsidian users only!
+
+     Try the ultimate challenge and permanently hide everything element that is not absolutely essential: On top of permanently removing all things listed further above, hardcore mode will remove the settings button, disable both side bars and the gutter, and censor all sorts of labels and descriptions.
+
+     Test your knowledge of Obsidian and prove that you are a real power user by getting things done even under these challenging conditions!
+   type: class-toggle
+   default: false
+  -
+   id: madness-mode
+   title: '😈 Madness Mode'
+   description: |
+     After enabling Madness Mode, are you able to disable it again? Endure evil buttons, cryptic settings, hacked cursors, and hostile interfaces – all on top of the limitations of Hardcore Mode! You will need a solid understanding of Obsidian mechanics to regain your sanity in this devilish small puzzle game!
+
+     Rules:
+     1. No hotkeys. Typing text into text fields is allowed though.
+     2. No deletion/modification of files in '.obsidian'. You don't need to leave Obsidian to beat the game.
+     3. If you talk about Madness Mode on Discord, please use spoiler tags and don't share screenshots that contain a solution step.
+
+     Be aware that during Madness Mode, you won't be able to properly use your vault. If you are stuck, you can turn off Madness Mode by deleting the file '{vaultRoot}/.obsidian/plugins/obsidian-style-settings/data.json' and restarting Obsidian. As this will effectively reset your Style Settings, you should consider making a backup before starting the game ('Export' button at the top right).
+
+     Ready to face a theme gone mad? Then enable Madness Mode and see if you can recover your sanity!
    type: class-toggle
    default: false
   -
