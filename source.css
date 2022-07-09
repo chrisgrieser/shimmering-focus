@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 2.274
+Version 2.275
 Source CSS: https://github.com/chrisgrieser/shimmering-focus/blob/main/source.css
 MIT License
 ──────────────────────────────────────────────────── */
@@ -8866,6 +8866,10 @@ to a linked mention by adding wikilinks */
 	margin-left: 6px;
 }
 
+.search-input-container.search-input-container input {
+	width: 100%;
+}
+
 .search-result-file-matches .search-result-file-match {
 	line-height: 1.3em;
 	width: 100%;
@@ -8969,6 +8973,10 @@ body .search-suggest-item.mod-group:not(:first-child) .clickable-icon {
 
 body .search-suggest-item.mod-group:not(:first-child) .clickable-icon:hover {
 	color: var(--hover-accent-2);
+}
+
+body:not(.show-search-pane-suggestions) .mod-search-suggestion {
+	display: none;
 }
 
 /* ───────────────────────────────────────────────── */
@@ -15348,7 +15356,7 @@ settings:
 # << Plugin-Specific Settings (+)
    id: plugin-specific
    title: ⚙️ Plugin-Specific Settings
-   description: Backlinks, Outline, Starred, Command Palette, 🆕 Pandoc Reference List, Breadcrumbs, Sliding Panes, Supercharged Links, Link Favicons, Calendar
+   description: Backlinks, Outline, Starred, Search Pane, Command Palette, Better Command Palette, Pandoc Reference List, Breadcrumbs, Sliding Panes, Supercharged Links, Link Favicons, Calendar
    type: heading
    level: 1
    collapsed: true
@@ -15362,6 +15370,12 @@ settings:
    id: outline-remove-level-1
    title: 'Outline: Remove First Level of Headings'
    description: In case you have only one H1 heading per file, this will make the outline sidebar even more compact.
+   type: class-toggle
+   default: false
+  -
+   id: show-search-pane-suggestions
+   title: 'Search Pane: Re-enable Suggestions'
+   description: By default, this theme hides the Suggestions in Search Core Plugin Pane.
    type: class-toggle
    default: false
   -
