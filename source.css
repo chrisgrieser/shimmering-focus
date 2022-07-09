@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 2.276
+Version 2.277
 Source CSS: https://github.com/chrisgrieser/shimmering-focus/blob/main/source.css
 MIT License
 ──────────────────────────────────────────────────── */
@@ -2841,6 +2841,7 @@ textarea {
 	border-radius: calc(var(--roundish) * 1.5);
 }
 
+.vertical-tab-content-container.vertical-tab-content-container.vertical-tab-content-container input,
 input:is([type="email"], [type="password"], [type="search"], [type="text"]) {
 	width: 250px;
 }
@@ -4039,8 +4040,9 @@ input:is([type="email"], [type="password"]) {
 	padding: 5px 0 0;
 }
 
-.hotkey-search-container input {
-	width: 350px;
+.hotkey-search-container.hotkey-search-container.hotkey-search-container input {
+	width: 60%;
+	min-width: 300px;
 }
 
 .hotkey-list-container {

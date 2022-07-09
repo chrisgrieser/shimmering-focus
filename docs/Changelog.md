@@ -3,6 +3,7 @@ nav_order: 110
 ---
 
 # Changelog
+- 2022-07-09	widen search input sizes in settings
 - 2022-07-09	reorganized some style settings
 - 2022-07-09	hide suggestions in search pane
 - 2022-07-08	styled dataview result counter
