@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 2.282
+Version 2.283
 Source CSS: https://github.com/chrisgrieser/shimmering-focus/blob/main/source.css
 MIT License
 ──────────────────────────────────────────────────── */
@@ -3509,6 +3509,10 @@ body > .app-container .workspace-split.mod-horizontal > .workspace-tabs > .works
 	border-bottom: var(--basic-border);
 }
 
+.workspace-tabs .workspace-leaf.mod-active {
+	border-color: transparent;
+}
+
 .workspace-tab-header-container .workspace-tab-header {
 	height: 26px;
 
@@ -3899,6 +3903,7 @@ body .app-container .workspace-leaf-resize-handle:hover {
 }
 
 .vertical-tab-header {
+	max-width: 13em;
 	background-color: var(--bg2);
 }
 
@@ -11844,6 +11849,11 @@ body .another-quick-switcher__item__directory {
 	margin-right: 1.8em;
 }
 
+/* hide create button on desktop when no results for AQS */
+:not(.is-mobile) .another-quick-switcher__create_button {
+    display: none;
+}
+
 /* ───────────────────────────────────────────────── */
 /* << Activity History
 ──────────────────────────────────────────────────── */
@@ -12683,6 +12693,10 @@ body .excalidraw .HelpDialog--header {
 .excalidraw kbd.HelpDialog--key {
 	padding: 1px 6px;
 	border-radius: var(--roundish);
+}
+
+.excalidraw-prompt-center {
+	text-align: center;
 }
 
 /* ───────────────────────────────────────────────── */
@@ -15539,7 +15553,7 @@ settings:
    default: 700
    min: 300
    max: 1300
-   step: 50
+   step: 25
    format: px
   -
    id: atomic-ruler
