@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 2.279
+Version 2.280
 Source CSS: https://github.com/chrisgrieser/shimmering-focus/blob/main/source.css
 MIT License
 ──────────────────────────────────────────────────── */
@@ -14276,7 +14276,7 @@ settings:
    default: false
   -
    id: show-fold-indicators
-   title: 🆕 Re-enable the Fold Indicators
+   title: Re-enable the Fold Indicators
    description: 'Fold Indicators are the "..." next to a folded item.'
    type: class-toggle
    default: false
@@ -14284,7 +14284,7 @@ settings:
 # << Aesthetics & Custom Colors (+)
    id: aesthetics
    title: 🎨 Color & Aesthetics
-   description: Color Schemes, 🆕 Custom Colors, Coloring of YAML, 🆕 Coloring of Bold/Italic, Brightness, Roundness
+   description: Color Schemes, Custom Colors, Coloring of YAML, Coloring of Bold/Italic, Brightness, Roundness
    type: heading
    level: 1
    collapsed: true
@@ -14313,7 +14313,7 @@ settings:
    default: false
   -
    id: unicode-emojis
-   title: 🆕 Use Unicode Emojis
+   title: Use Unicode Emojis
    description: 'As opposed to normal emojis, Unicode emojis are affected by text colors.'
    type: class-toggle
    default: false
@@ -14750,7 +14750,7 @@ settings:
 # <<< Sidebars (+)
    id: sidebar-options
    title: ⚖️ Sidebars
-   description: Max View, Focus View, File Name Trimming, 🆕 Overlaying Sidebar
+   description: Max View, Focus View, File Name Trimming, Overlaying Sidebar
    type: heading
    level: 2
    collapsed: true
@@ -14768,7 +14768,7 @@ settings:
    default: false
   -
    id: overlaying-right-sidebar
-   title: '🆕 Overlaying Right Sidebar'
+   title: 'Overlaying Right Sidebar'
    description: 'The right sidebar is placed on top of the editor instead of making the editor more narrow (i.e. the behavior on mobile).'
    type: class-toggle
    default: false
@@ -14970,7 +14970,7 @@ settings:
    default: false
   -
    id: post-it-callout-size
-   title: 🆕 Size of Post-it Callouts
+   title: Size of Post-it Callouts
    description: "Callouts with '> [!post-it]'. This variable affects width and height (i.e., quadratic growth). Mind that post-its with too much content get cut off — they are post-its after all."
    type: variable-number-slider
    default: 135
@@ -15127,7 +15127,7 @@ settings:
       value: no-vim-indicator
   -
    id: vim-mode-layer
-   title: 🆕 Vim Mode Layer
+   title: Vim Mode Layer
    description: "Adds a thin shadow over the whole editor when in a certain vim mode."
    type: class-select
    allowEmpty: false
@@ -15220,7 +15220,7 @@ settings:
 # << Gutter & Active Line (+)
    id: gutter-features
    title: 💈 Gutter & Active Line
-   description: Active Line Highlights, Indicators in the Gutter, 🆕 Relative/Minimal Line Numbering, Tags-in-Gutter
+   description: Active Line Highlights, Indicators in the Gutter, Relative/Minimal Line Numbering, Tags-in-Gutter
    type: heading
    level: 1
    collapsed: true
@@ -15243,7 +15243,7 @@ settings:
     value: no-active-highlight
   -
    id: line-number-options
-   title: 🆕 Line Numbering Style
+   title: Line Numbering Style
    description: "'Relative' shows only the active line and the nine following lines (useful for Vim Mode). 'Minimal' shows line numbers only for the active and hovered line. Note that both have no effect when Obsidian's 'Show line number' setting is disabled."
    type: class-select
    allowEmpty: false
@@ -15384,7 +15384,7 @@ settings:
    default: false
   -
    id: no-citations-in-reading-view
-   title: '🆕 Pandoc Reference List: Hide Citations in Reading Mode'
+   title: 'Pandoc Reference List: Hide Citations in Reading Mode'
    description: Completely hide Pandoc Citations when in Reading Mode. This only works as long as the Pandoc Reference List plugin is enabled.
    type: class-toggle
    default: false
@@ -15495,7 +15495,7 @@ settings:
 # << Miscellaneous (+)
    id: miscellaneous
    title: ✴️ Miscellaneous
-   description: Menu Size, Line Length, 🆕 Atomic Notes Ruler, Double Underlines, Dimmed Inactive Panes, Alternating Row Colors, Animations, Theme Beta, Hardcore Mode & Madness Mode 😈
+   description: Menu Size, Line Length, Atomic Notes Ruler, Double Underlines, Dimmed Inactive Panes, Alternating Row Colors, Animations, Theme Beta, Hardcore Mode & Madness Mode 😈
    type: heading
    level: 1
    collapsed: true
@@ -15520,7 +15520,7 @@ settings:
    format: px
   -
    id: atomic-ruler
-   title: '🆕 Atomic Notes Ruler'
+   title: 'Atomic Notes Ruler'
    description: 'Puts a horizontal ruler after 15 lines. Useful for practitioners of atomic notes to keep their notes short.'
    type: class-toggle
    default: false
