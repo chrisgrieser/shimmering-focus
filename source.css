@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 2.280
+Version 2.281
 Source CSS: https://github.com/chrisgrieser/shimmering-focus/blob/main/source.css
 MIT License
 ──────────────────────────────────────────────────── */
@@ -3300,7 +3300,7 @@ div.prompt-results {
 	border-left: 3px solid var(--text-faint);
 }
 
-body:not(.move-plugin-name-to-left) .suggestion-prefix::after {
+.suggestion-prefix::after {
 	display: none;
 }
 
@@ -3308,19 +3308,17 @@ body:not(.move-plugin-name-to-left) .suggestion-prefix::after {
 	padding-left: 7px;
 }
 
-kbd.suggestion-hotkey {
+kbd.suggestion-hotkey.suggestion-hotkey.suggestion-hotkey {
 	font-family: var(--button-font);
+	font-size: 13px;
 	font-weight: 600;
-	line-height: 1.7em;
-
-	min-height: 2em;
+	line-height: 1.5;
 
 	color: var(--hotkey-color);
 	background-color: var(--bg2);
 	box-shadow: var(--muted-button-inset-shadow);
 
-	padding-right: 6px;
-	padding-left: 6px;
+	padding: 1px 7px 3px;
 
 	border: var(--thin-border);
 	border-radius: var(--roundish);
@@ -3348,6 +3346,11 @@ body:not(.move-plugin-name-to-left):not(.is-mobile) div.prompt {
 	min-width: 720px;
 }
 
+/* to anchor the plugin names below relativ to this */
+body:not(.move-plugin-name-to-left):not(.is-mobile) .prompt .suggestion-item {
+	position: relative;
+}
+
 body:not(.move-plugin-name-to-left):not(.is-mobile) .suggestion-prefix {
 	background-color: var(--bg1);
 	position: absolute;
@@ -3369,6 +3372,11 @@ body:not(.move-plugin-name-to-left):not(.is-mobile) :not(.suggestion-container) 
 body:not(.no-alternating-rows) .suggestion-item:nth-child(odd),
 body:not(.no-alternating-rows) .suggestion-item:nth-child(odd) .suggestion-prefix {
 	background-color: var(--suggester-b-row);
+}
+
+/* hide placeholder */
+.prompt .prompt-input::placeholder {
+	color: transparent;
 }
 
 /* ───────────────────────────────────────────────── */
@@ -9437,7 +9445,7 @@ div.card-view-container.card-view-container .markdown-preview-view :is(h1, h2, h
 	display: none;
 }
 
-.better-command-palette .suggestion-item {
+.prompt.better-command-palette .suggestion-item {
 	padding-left: 5px;
 }
 
@@ -9489,7 +9497,7 @@ div.card-view-container.card-view-container .markdown-preview-view :is(h1, h2, h
 	font-style: italic;
 }
 
-/* since hyper key is displayed as caps lock, can move
+/* since hyper key is displayed as capslock, can move
 plugin names a little bit more to the right */
 body:not(.move-plugin-name-to-left):not(.is-mobile) .better-command-palette .suggestion-prefix {
 	right: 90px;
@@ -9497,6 +9505,18 @@ body:not(.move-plugin-name-to-left):not(.is-mobile) .better-command-palette .sug
 
 .better-command-palette-hide-removal .better-command-palette .suggestion-flair[aria-label="Click to Hide"] {
 	display: none;
+}
+
+/* hotkey icon fixes */
+/* so the kdb is relative to this */
+ .better-command-palette .suggestion-item {
+	position: relative;
+}
+
+.better-command-palette kbd.suggestion-hotkey {
+	position: absolute;
+	right: 2px;
+	margin-top: -1px;
 }
 
 /* ───────────────────────────────────────────────── */
