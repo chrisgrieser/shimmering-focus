@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 2.285
+Version 2.286
 Source CSS: https://github.com/chrisgrieser/shimmering-focus/blob/main/source.css
 MIT License
 ──────────────────────────────────────────────────── */
@@ -54,6 +54,7 @@ MIT License
 	- Vim Mode Layer / Shadow
 	- Vim Panel
 - UI Elements
+	- Popout Windows
 	- Title Bar
 		- Mac Traffic Light Fixes
 	- Ribbons
@@ -2087,6 +2088,15 @@ body .markdown-source-view.mod-cm6 .cm-content {
 ──────────────────────────────────────────────────── */
 
 /* ───────────────────────────────────────────────── */
+/* << Popout Windows
+──────────────────────────────────────────────────── */
+
+/* re-displays some icons */
+.view-action {
+	display: flex !important; /* needed */
+}
+
+/* ───────────────────────────────────────────────── */
 /* << Title Bar
 /* <<< Mac Traffic Light Fixes
 ──────────────────────────────────────────────────── */
@@ -2114,6 +2124,7 @@ body:not(.show-titlebar, .is-mobile) {
 }
 
 /* when left sidebar is collapsed, move header to the right */
+.is-popout-window.mod-macos:not(.show-titlebar):not(.plugin-sliding-panes-rotate-header) .view-header,
 .mod-macos:not(.show-titlebar):not(.plugin-sliding-panes-rotate-header) .workspace-split.mod-left-split.is-collapsed ~ .mod-root .workspace-leaf:nth-child(2) .view-header {
 	padding-left: 3rem;
 }
@@ -14320,7 +14331,7 @@ settings:
 # << Aesthetics & Custom Colors (+)
    id: aesthetics
    title: 🎨 Color & Aesthetics
-   description: Color Schemes, Custom Colors, Coloring of YAML, Coloring of Bold/Italic, Brightness, Roundness, 🆕 native scrollbars (macOS)
+   description: Color Schemes, Custom Colors, Coloring of YAML, Coloring of Bold/Italic, Brightness, Roundness, 🆕 Native Scrollbars (macOS)
    type: heading
    level: 1
    collapsed: true
