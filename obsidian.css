@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 2.286
+Version 2.287
 Source CSS: https://github.com/chrisgrieser/shimmering-focus/blob/main/source.css
 MIT License
 ──────────────────────────────────────────────────── */
@@ -1342,7 +1342,7 @@ settings:
   -
    id: miscellaneous
    title: ✴️ Miscellaneous
-   description: Menu Size, Line Length, Atomic Notes Ruler, Double Underlines, Dimmed Inactive Panes, Alternating Row Colors, Animations, Theme Beta, Hardcore Mode & Madness Mode 😈
+   description: Menu Size, Line Length, Atomic Notes Ruler, Double Underlines, Dimmed Inactive Panes/Windows, Alternating Row Colors, Animations, Theme Beta, Hardcore Mode & Madness Mode 😈
    type: heading
    level: 1
    collapsed: true
@@ -1373,8 +1373,8 @@ settings:
    default: false
   -
    id: no-grayed-out-inactive-pane
-   title: Do not dim Inactive Panes
-   description: 'Also affects popovers from the Hover Editor Plugin.'
+   title: Do not dim Inactive Panes/Windows
+   description: 'Affects any kind of inactive editor (panes, popout windows, popovers from the hover plugin)'
    type: class-toggle
    default: false
   -
