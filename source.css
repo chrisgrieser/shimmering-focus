@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 2.283
+Version 2.284
 Source CSS: https://github.com/chrisgrieser/shimmering-focus/blob/main/source.css
 MIT License
 ──────────────────────────────────────────────────── */
@@ -1080,7 +1080,7 @@ body:is(.theme-light, .theme-dark) {
 :root {
 	--resize-handle-thickness: 2px;
 	--resize-handle-hovered-thickness: 5px;
-	--scrollbar-thickness: 9px;
+	--scrollbar-thickness: 10px;
 
 	--image-size: 50;
 	--pdf-size: 50;
@@ -2570,22 +2570,21 @@ body:not(.permanently-show-statusbar, .classic-statusbar) .mod-right-split .work
 ──────────────────────────────────────────────────── */
 
 /* hide all scrollbars except the one for the editor */
-body:not(.show-scrollbar) ::-webkit-scrollbar {
+body:not(.show-scrollbar, .mac-native-scrollbar) ::-webkit-scrollbar {
 	display: none;
 	width: var(--scrollbar-thickness);
 }
 
-.workspace-split.mod-root ::-webkit-scrollbar {
+body:not(.mac-native-scrollbar) .workspace-split.mod-root ::-webkit-scrollbar {
 	display: unset;
 }
 
 /* removes scrollbar background */
-:is(.theme-light, .theme-dark):is(.theme-light, .theme-dark) ::-webkit-scrollbar {
+body:not(.mac-native-scrollbar):is(.theme-light, .theme-dark) ::-webkit-scrollbar {
 	background-color: transparent;
 }
 
-body ::-webkit-scrollbar-thumb:active,
-body ::-webkit-scrollbar-thumb {
+body:not(.mac-native-scrollbar) ::-webkit-scrollbar-thumb {
 	box-shadow: var(--small-inset-shadow);
 	border: var(--thin-muted-border);
 }
@@ -14321,7 +14320,7 @@ settings:
 # << Aesthetics & Custom Colors (+)
    id: aesthetics
    title: 🎨 Color & Aesthetics
-   description: Color Schemes, Custom Colors, Coloring of YAML, Coloring of Bold/Italic, Brightness, Roundness
+   description: Color Schemes, Custom Colors, Coloring of YAML, Coloring of Bold/Italic, Brightness, Roundness, 🆕 native scrollbars (macOS)
    type: heading
    level: 1
    collapsed: true
@@ -14342,6 +14341,12 @@ settings:
     -
       label: 🔲 Angular
       value: angular-shapes
+  -
+   id: mac-native-scrollbar
+   title: Use Native Scrollbars (macOS only)
+   description: 'Use this setting, so the scrollbars inherit global macOS settings like automatic hiding. (The global macOS scrollbar preferences are located at: System Preferences → General.)'
+   type: class-toggle
+   default: false
   -
    id: colored-yaml
    title: Colored YAML Frontmatter (Edit Mode)
