@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 2.281
+Version 2.282
 Source CSS: https://github.com/chrisgrieser/shimmering-focus/blob/main/source.css
 MIT License
 ──────────────────────────────────────────────────── */
@@ -109,7 +109,7 @@ MIT License
 		- Remaining Community Theme Browser
 - Editor
 	- Active / Inactive Note
-	- Editor Line Length Ruler
+	- Editor Atomic Ruler
 	- Empty State
 	- Editor Properties
 	- Active Line Highlight
@@ -131,7 +131,7 @@ MIT License
 	- Mermaid
 	- PDFs
 	- Spellcheck
-	- Max View
+	- Max View & line length
 		- Line Length & Tables
 		- Images (Max View)
 		- PDFs
@@ -3452,15 +3452,16 @@ body .app-container :is(.nav-file-title, .nav-folder-title):is(.is-active, :hove
 
 .nav-file-title,
 .nav-folder-title {
-	line-height: 1.15em;
+	line-height: 1.2;
 	white-space: normal;
-
 	width: 100%;
-
 	color: var(--extra-contrast);
-
-	padding-top: 1px;
 	padding-bottom: 1px;
+}
+
+.nav-file-title-content {
+	padding-top: 0;
+	padding-bottom: 0;
 }
 
 /* hover file */
@@ -4851,7 +4852,7 @@ body:not(.plugin-sliding-panes) .workspace-leaf:not(.mod-active) .workspace-leaf
 }
 
 /* ───────────────────────────────────────────────── */
-/* << Editor Line Length Ruler
+/* << Editor Atomic Ruler
 ──────────────────────────────────────────────────── */
 body.atomic-ruler .cm-line:nth-child(10) {
 	border-bottom: var(--thick-muted-border);
@@ -5336,7 +5337,7 @@ body:not(.no-floating-metadata):not(.is-mobile) .markdown-preview-view:not(.no-f
 	max-width: calc(var(--readable-length) + 3.4rem);
 
 	position: fixed;
-	right: 1.5rem;
+	right: 1.1rem;
 	z-index: 100;
 
 	padding: 4px 2rem 5px 7px;
@@ -5953,21 +5954,23 @@ body:not(.left-aligned-pdfs) .pdf-embed.pdf-embed {
 }
 
 /* ───────────────────────────────────────────────── */
-/* << Max View
+/* << Max View & line length
 ──────────────────────────────────────────────────── */
 /* full length editor and full size images when left sidebar is collapsed */
 /* (Note: You need to turn on "readable line length" in the editor settings */
 /* as well for this to work.) */
 
 /* <<< Line Length & Tables */
-.max-view-enabled .mod-left-split.is-collapsed ~ .mod-root .markdown-preview-section,
-.max-view-enabled .mod-left-split.is-collapsed ~ .mod-root .markdown-source-view.mod-cm6.is-readable-line-width :is(.cm-content, .cm-contentContainer, .cm-contentContainer .cm-line) {
+.max-view-enabled .mod-left-split.is-collapsed ~ .mod-root :is(.markdown-preview-section, .markdown-preview-sizer),
+.max-view-enabled .mod-left-split.is-collapsed ~ .mod-root .markdown-source-view.mod-cm6.is-readable-line-width :is(.cm-content, .cm-contentContainer, .cm-contentContainer .cm-line:not(.HyperMD-table-row)) {
 	max-width: 100%;
 }
 
 /* readable line length */
-body:not(.max-view-enabled) .mod-root .markdown-source-view.mod-cm6.is-readable-line-width :is(.cm-content, .cm-contentContainer, .cm-contentContainer .cm-line),
-.max-view-enabled .mod-left-split:not(.is-collapsed) ~ .mod-root .markdown-source-view.mod-cm6.is-readable-line-width :is(.cm-content, .cm-contentContainer, .cm-contentContainer .cm-line) {
+.max-view-enabled .mod-left-split:not(.is-collapsed) ~ .mod-root .markdown-preview-view.is-readable-line-width .markdown-preview-sizer,
+body:not(.max-view-enabled) .mod-root .markdown-preview-view.is-readable-line-width .markdown-preview-sizer,
+body:not(.max-view-enabled) .mod-root .markdown-source-view.mod-cm6.is-readable-line-width :is(.cm-content, .cm-contentContainer, .cm-contentContainer .cm-line:not(.HyperMD-table-row)),
+.max-view-enabled .mod-left-split:not(.is-collapsed) ~ .mod-root .markdown-source-view.mod-cm6.is-readable-line-width :is(.cm-content, .cm-contentContainer, .cm-contentContainer .cm-line:not(.HyperMD-table-row)) {
 	max-width: var(--readable-length);
 }
 
@@ -9509,7 +9512,7 @@ body:not(.move-plugin-name-to-left):not(.is-mobile) .better-command-palette .sug
 
 /* hotkey icon fixes */
 /* so the kdb is relative to this */
- .better-command-palette .suggestion-item {
+.better-command-palette .suggestion-item {
 	position: relative;
 }
 

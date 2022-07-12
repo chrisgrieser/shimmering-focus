@@ -3,6 +3,7 @@ nav_order: 110
 ---
 
 # Changelog
+- 2022-07-13	fix line length in reading mode (v.0.15)
 - 2022-07-13	fix for command palettes & BCP & AQS in 0.15
 - 2022-07-12	fix settings menu for v0.15
 - 2022-07-09	widen search input sizes in settings
