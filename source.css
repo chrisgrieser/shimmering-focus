@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 2.278
+Version 2.279
 Source CSS: https://github.com/chrisgrieser/shimmering-focus/blob/main/source.css
 MIT License
 ──────────────────────────────────────────────────── */
@@ -3898,13 +3898,14 @@ body .app-container .workspace-leaf-resize-handle:hover {
 	margin-top: 0;
 }
 
-/* via non-last-child as settings search adds a group */
+/* via non-last-child b/c settings search plugin adds a group in front */
 .vertical-tab-header-group:not(:last-child) {
 	border-bottom: var(--thick-border);
 }
 
 /* thicker "community plugins", "hotkey" & "appearance" */
-.vertical-tab-header-group:not(:last-child) .vertical-tab-header-group-items .vertical-tab-nav-item:is(:nth-child(3), :nth-child(4), :last-child) {
+/* via non-last-child b/c settings search plugin adds a group in front */
+.vertical-tab-header-group:nth-last-child(3) .vertical-tab-header-group-items .vertical-tab-nav-item:is(:nth-child(3), :nth-child(4), :last-child) {
 	font-weight: 900;
 	color: var(--text-normal);
 }
@@ -4050,8 +4051,7 @@ input:is([type="email"], [type="password"]) {
 	padding-right: 0;
 }
 
-/* avoids the creation of two-line-hotkeys */
-/* when the command name is too long */
+/* avoids the creation of two-line-hotkeys when the command name is too long */
 .hotkey-list-container .setting-item .setting-item-info {
 	max-width: 75%;
 	margin-right: 0;
@@ -7545,8 +7545,8 @@ a.tag:hover {
 .theme-dark { --annotation-tag-font-color: hsl(0 0% 100%); }
 
 /* all annotation tags */
-body:not(.annotation-tags-off) .tag:is([href="#goal"], [href="#idea"], [href="#question"], [href="#gap"], [href="#main"], [href="#disagree"], [href="#summary"], [href="#agree"], [href="#example"], [href="#definition"], [href="#method"], [href="#data"], [href="#important"], [href="#quote"], [href="#todo"], [href="#critique"], [href="#sidenote"], [href="#litreview"], [href="#epistemic-break"]),
-body:not(.annotation-tags-off) .cm-s-obsidian .cm-line span:is(.cm-tag-litreview, .cm-tag-idea, .cm-tag-sidenote, .cm-tag-goal, .cm-tag-critique, .cm-tag-todo, .cm-tag-quote, .cm-tag-method, .cm-tag-data, .cm-tag-disagree, .cm-tag-gap, .cm-tag-summary, .cm-tag-definition, .cm-tag-question, .cm-tag-main, .cm-tag-agree, .cm-tag-important, .cm-tag-example, .cm-tag-epistemic-break) {
+body:not(.annotation-tags-off) .tag:is([href="#goal"], [href="#idea"], [href="#question"], [href="#gap"], [href="#main"], [href="#disagree"], [href="#summary"], [href="#agree"], [href="#example"], [href="#definition"], [href="#method"], [href="#data"], [href="#important"], [href="#quote"], [href="#todo"], [href="#critique"], [href="#sidenote"], [href="#litreview"], [href="#epistemic-break"], [href="#hypothesis"]),
+body:not(.annotation-tags-off) .cm-s-obsidian .cm-line span:is(.cm-tag-litreview, .cm-tag-idea, .cm-tag-sidenote, .cm-tag-goal, .cm-tag-critique, .cm-tag-todo, .cm-tag-quote, .cm-tag-method, .cm-tag-data, .cm-tag-disagree, .cm-tag-gap, .cm-tag-summary, .cm-tag-definition, .cm-tag-question, .cm-tag-main, .cm-tag-agree, .cm-tag-important, .cm-tag-example, .cm-tag-epistemic-break, .cm-tag-hypothesis) {
 	font-weight: 900;
 	font-style: normal;
 	white-space: nowrap;
@@ -7560,14 +7560,14 @@ body:not(.annotation-tags-off) .cm-s-obsidian .cm-line span:is(.cm-tag-litreview
 }
 
 /* annotation tags in longform notes */
-body:not(.annotation-tags-off) .longform-leaf .tag:is([href="#goal"], [href="#idea"], [href="#question"], [href="#gap"], [href="#main"], [href="#disagree"], [href="#summary"], [href="#agree"], [href="#example"], [href="#definition"], [href="#method"], [href="#data"], [href="#important"], [href="#quote"], [href="#todo"], [href="#critique"], [href="#sidenote"], [href="#litreview"], [href="#epistemic-break"]),
-body:not(.annotation-tags-off) .longform-leaf .cm-s-obsidian .cm-line span:is(.cm-tag-litreview, .cm-tag-idea, .cm-tag-sidenote, .cm-tag-goal, .cm-tag-critique, .cm-tag-todo, .cm-tag-quote, .cm-tag-method, .cm-tag-data, .cm-tag-disagree, .cm-tag-gap, .cm-tag-summary, .cm-tag-definition, .cm-tag-question, .cm-tag-main, .cm-tag-agree, .cm-tag-important, .cm-tag-example, .cm-tag-epistemic-break) {
+body:not(.annotation-tags-off) .longform-leaf .tag:is([href="#goal"], [href="#idea"], [href="#question"], [href="#gap"], [href="#main"], [href="#disagree"], [href="#summary"], [href="#agree"], [href="#example"], [href="#definition"], [href="#method"], [href="#data"], [href="#important"], [href="#quote"], [href="#todo"], [href="#critique"], [href="#sidenote"], [href="#litreview"], [href="#epistemic-break"], [href="#hypothesis"]),
+body:not(.annotation-tags-off) .longform-leaf .cm-s-obsidian .cm-line span:is(.cm-tag-litreview, .cm-tag-idea, .cm-tag-sidenote, .cm-tag-goal, .cm-tag-critique, .cm-tag-todo, .cm-tag-quote, .cm-tag-method, .cm-tag-data, .cm-tag-disagree, .cm-tag-gap, .cm-tag-summary, .cm-tag-definition, .cm-tag-question, .cm-tag-main, .cm-tag-agree, .cm-tag-important, .cm-tag-example, .cm-tag-epistemic-break, .cm-tag-hypothesis) {
 	font-family: var(--longform-font-text-theme);
 	font-size: var(--longform-font-size);
 }
 
 /* the "#" */
-body:not(.annotation-tags-off) .cm-s-obsidian .cm-line .cm-hashtag-begin:is(.cm-tag-litreview, .cm-tag-idea, .cm-tag-sidenote, .cm-tag-goal, .cm-tag-critique, .cm-tag-todo, .cm-tag-quote, .cm-tag-method, .cm-tag-data, .cm-tag-disagree, .cm-tag-gap, .cm-tag-summary, .cm-tag-definition, .cm-tag-question, .cm-tag-main, .cm-tag-agree, .cm-tag-important, .cm-tag-example, .cm-tag-epistemic-break) {
+body:not(.annotation-tags-off) .cm-s-obsidian .cm-line .cm-hashtag-begin:is(.cm-tag-litreview, .cm-tag-idea, .cm-tag-sidenote, .cm-tag-goal, .cm-tag-critique, .cm-tag-todo, .cm-tag-quote, .cm-tag-method, .cm-tag-data, .cm-tag-disagree, .cm-tag-gap, .cm-tag-summary, .cm-tag-definition, .cm-tag-question, .cm-tag-main, .cm-tag-agree, .cm-tag-important, .cm-tag-example, .cm-tag-epistemic-break, .cm-tag-hypothesis) {
 	white-space: nowrap;
 	padding-right: 0;
 	border-top-right-radius: 0;
@@ -7575,7 +7575,7 @@ body:not(.annotation-tags-off) .cm-s-obsidian .cm-line .cm-hashtag-begin:is(.cm-
 }
 
 /* the tag text */
-body:not(.annotation-tags-off) .cm-s-obsidian .cm-line .cm-hashtag-end:is(.cm-tag-litreview, .cm-tag-idea, .cm-tag-sidenote, .cm-tag-goal, .cm-tag-critique, .cm-tag-todo, .cm-tag-quote, .cm-tag-method, .cm-tag-data, .cm-tag-disagree, .cm-tag-gap, .cm-tag-summary, .cm-tag-definition, .cm-tag-question, .cm-tag-main, .cm-tag-agree, .cm-tag-important, .cm-tag-example, .cm-tag-epistemic-break) {
+body:not(.annotation-tags-off) .cm-s-obsidian .cm-line .cm-hashtag-end:is(.cm-tag-litreview, .cm-tag-idea, .cm-tag-sidenote, .cm-tag-goal, .cm-tag-critique, .cm-tag-todo, .cm-tag-quote, .cm-tag-method, .cm-tag-data, .cm-tag-disagree, .cm-tag-gap, .cm-tag-summary, .cm-tag-definition, .cm-tag-question, .cm-tag-main, .cm-tag-agree, .cm-tag-important, .cm-tag-example, .cm-tag-epistemic-break, .cm-tag-hypothesis) {
 	font-family: var(--font-text); /* fixes their appearance in headings */
 	padding-left: 0;
 	border-bottom-left-radius: 0;
@@ -7666,6 +7666,7 @@ body:not(.annotation-tags-off) :is(.cm-hashtag-begin.cm-tag-data, .tag[href="#da
 	content: "📊 ";
 }
 
+body:not(.annotation-tags-off) :is(.cm-tag-hypothesis, .tag[href="#hypothesis"]),
 body:not(.annotation-tags-off) :is(.cm-tag-todo, .tag[href="#todo"]),
 body:not(.annotation-tags-off) :is(.cm-tag-main, .tag[href="#main"]) {
 	background-color: rgb(32 156 238 / 50%);
@@ -7673,6 +7674,10 @@ body:not(.annotation-tags-off) :is(.cm-tag-main, .tag[href="#main"]) {
 
 body:not(.annotation-tags-off) :is(.cm-hashtag-begin.cm-tag-todo, .tag[href="#todo"])::before {
 	content: "☑️ ";
+}
+
+body:not(.annotation-tags-off) :is(.cm-hashtag-begin.cm-tag-hypothesis, .tag[href="#hypothesis"])::before {
+	content: "⏺ ";
 }
 
 body:not(.annotation-tags-off) :is(.cm-hashtag-begin.cm-tag-main, .tag[href="#main"])::before {
