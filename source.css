@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 2.284
+Version 2.285
 Source CSS: https://github.com/chrisgrieser/shimmering-focus/blob/main/source.css
 MIT License
 ──────────────────────────────────────────────────── */
@@ -11849,8 +11849,8 @@ body .another-quick-switcher__item__directory {
 }
 
 /* hide create button on desktop when no results for AQS */
-:not(.is-mobile) .another-quick-switcher__create_button {
-    display: none;
+body:not(.is-mobile) .another-quick-switcher__create_button {
+	display: none;
 }
 
 /* ───────────────────────────────────────────────── */
