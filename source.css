@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 2.290
+Version 2.291
 Source CSS: https://github.com/chrisgrieser/shimmering-focus/blob/main/source.css
 MIT License
 ──────────────────────────────────────────────────── */
@@ -54,7 +54,6 @@ MIT License
 	- Vim Mode Layer / Shadow
 	- Vim Panel
 - UI Elements
-	- Popout Windows
 	- Title Bar
 		- Mac Traffic Light Fixes
 	- Ribbons
@@ -2086,15 +2085,6 @@ body .markdown-source-view.mod-cm6 .cm-content {
 /* ───────────────────────────────────────────────── */
 /* < UI Elements
 ──────────────────────────────────────────────────── */
-
-/* ───────────────────────────────────────────────── */
-/* << Popout Windows
-──────────────────────────────────────────────────── */
-
-/* re-displays some icons */
-.view-action {
-	display: flex !important; /* needed */
-}
 
 /* ───────────────────────────────────────────────── */
 /* << Title Bar
