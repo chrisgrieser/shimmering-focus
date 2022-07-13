@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 2.289
+Version 2.290
 Source CSS: https://github.com/chrisgrieser/shimmering-focus/blob/main/source.css
 MIT License
 ──────────────────────────────────────────────────── */
@@ -2499,6 +2499,8 @@ body:not(.classic-statusbar) .status-bar {
 	border-top: 2px ridge var(--basic-border-color);
 	border-left: 2px ridge var(--basic-border-color);
 	border-top-left-radius: var(--roundish);
+
+	align-items: center;
 }
 
 /* when permanently visible, save space */
