@@ -2482,7 +2482,6 @@ body:not(.plugin-sliding-panes) .view-header:focus-within + .view-content {
 ──────────────────────────────────────────────────── */
 
 body:not(.classic-statusbar) .status-bar {
-	/* using noto emojis ensures emojis are unicode and therefore properly colored */
 	font-family: var(--font-interface);
 	line-height: 1em;
 
