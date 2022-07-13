@@ -3,6 +3,7 @@ nav_order: 110
 ---
 
 # Changelog
+- 2022-07-13	fix alignment for another quick switcher
 - 2022-07-13	more flexibility for line length setting (#180)
 - 2022-07-13	fix header on macos popout windows
 - 2022-07-13	setting to use native macOS scroll bars
