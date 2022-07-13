@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 2.291
+Version 2.293
 Source CSS: https://github.com/chrisgrieser/shimmering-focus/blob/main/source.css
 MIT License
 ──────────────────────────────────────────────────── */
@@ -2572,21 +2572,21 @@ body:not(.permanently-show-statusbar, .classic-statusbar) .mod-right-split .work
 ──────────────────────────────────────────────────── */
 
 /* hide all scrollbars except the one for the editor */
-body:not(.show-scrollbar, .mac-native-scrollbar) ::-webkit-scrollbar {
+body:not(.show-scrollbar, .mac-native-scrollbar.mod-macos) ::-webkit-scrollbar {
 	display: none;
 	width: var(--scrollbar-thickness);
 }
 
-body:not(.mac-native-scrollbar) .workspace-split.mod-root ::-webkit-scrollbar {
+body:not(.mac-native-scrollbar.mod-macos) .workspace-split.mod-root ::-webkit-scrollbar {
 	display: unset;
 }
 
 /* removes scrollbar background */
-body:not(.mac-native-scrollbar):is(.theme-light, .theme-dark) ::-webkit-scrollbar {
+body:not(.mac-native-scrollbar.mod-macos):is(.theme-light, .theme-dark) ::-webkit-scrollbar {
 	background-color: transparent;
 }
 
-body:not(.mac-native-scrollbar) ::-webkit-scrollbar-thumb {
+body:not(.mac-native-scrollbar.mod-macos) ::-webkit-scrollbar-thumb {
 	box-shadow: var(--small-inset-shadow);
 	border: var(--thin-muted-border);
 }
