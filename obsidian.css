@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 2.287
+Version 2.288
 Source CSS: https://github.com/chrisgrieser/shimmering-focus/blob/main/source.css
 MIT License
 ──────────────────────────────────────────────────── */
@@ -1362,7 +1362,7 @@ settings:
    type: variable-number-slider
    default: 700
    min: 300
-   max: 1300
+   max: 2500
    step: 25
    format: px
   -

@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 2.287
+Version 2.288
 Source CSS: https://github.com/chrisgrieser/shimmering-focus/blob/main/source.css
 MIT License
 ──────────────────────────────────────────────────── */
@@ -26,7 +26,7 @@ MIT License
 	- Background Color Calculations
 		- Longform & Writing Background Calculations
 		- Base Element Styling with background colors
-		- Fixed Colors
+		- Remaining Colors
 	- Variables
 	- Default Obsidian Variables
 	- Shadows
@@ -132,7 +132,7 @@ MIT License
 	- Mermaid
 	- PDFs
 	- Spellcheck
-	- Max View & line length
+	- Max View & Line Length
 		- Line Length & Tables
 		- Images (Max View)
 		- PDFs
@@ -916,7 +916,7 @@ body.strong-em-secondary-accent {
 }
 
 /* ───────────────────────────────────────────────── */
-/* <<< Fixed Colors
+/* <<< Remaining Colors
 ──────────────────────────────────────────────────── */
 :root {
 	--active-line-bg: hsl(62 11% 63% / 15%);
@@ -5969,7 +5969,7 @@ body:not(.left-aligned-pdfs) .pdf-embed.pdf-embed {
 }
 
 /* ───────────────────────────────────────────────── */
-/* << Max View & line length
+/* << Max View & Line Length
 ──────────────────────────────────────────────────── */
 /* full length editor and full size images when left sidebar is collapsed */
 /* (Note: You need to turn on "readable line length" in the editor settings */
@@ -15568,7 +15568,7 @@ settings:
    type: variable-number-slider
    default: 700
    min: 300
-   max: 1300
+   max: 2500
    step: 25
    format: px
   -
