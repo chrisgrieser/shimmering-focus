@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 2.293
+Version 2.294
 Source CSS: https://github.com/chrisgrieser/shimmering-focus/blob/main/source.css
 MIT License
 ──────────────────────────────────────────────────── */
@@ -276,6 +276,7 @@ MIT License
 	- Highlighted Yank
 	- Hider
 	- Metabind
+	- Vim Gutter Marker
 	- New Plugin Placeholder
 - Hardcore & Madness Mode
 	- Hardcore Mode
@@ -13515,6 +13516,15 @@ body.hider-ribbon .workspace-ribbon.mod-left {
 }
 
 /* ───────────────────────────────────────────────── */
+/* << Vim Gutter Marker
+──────────────────────────────────────────────────── */
+.vim-gutter-mark div {
+	font-family: var(--button-font);
+	font-weight: 900;
+	color: var(--unresolved-link-color);
+}
+
+/* ───────────────────────────────────────────────── */
 /* << New Plugin Placeholder
 ──────────────────────────────────────────────────── */
 
@@ -14227,6 +14237,7 @@ community:
 - obsidian-discordrpc
 - control-characters
 - obsidian-meta-bind-plugin
+- obsidian-vim-gutter-marker
 */
 
 /* ───────────────────────────────────────────────── */
