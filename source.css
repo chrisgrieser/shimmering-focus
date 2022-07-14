@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 2.295
+Version 2.296
 Source CSS: https://github.com/chrisgrieser/shimmering-focus/blob/main/source.css
 MIT License
 ──────────────────────────────────────────────────── */
@@ -11619,15 +11619,12 @@ body .dataview.inline-field-key {
 }
 
 /* Result counts */
-.dataview.small-text.small-text {
+.dataview.small-text.small-text.small-text {
 	font-family: var(--font-monospace-theme);
-	font-size: 80%;
+	font-size: 85%;
 
-	color: var(--extra-contrast);
+	color: var(--text-normal);
 	background-color: var(--bg1);
-
-	position: relative;
-	bottom: 1px;
 
 	padding: 1px 2.5px 0;
 	margin-left: 7px;
