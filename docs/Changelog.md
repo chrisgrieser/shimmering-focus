@@ -3,6 +3,7 @@ nav_order: 110
 ---
 
 # Changelog
+- 2022-07-14	patch
 - 2022-07-14	styled vim gutter marker plugin (still beta)
 - 2022-07-13	fix alignment for another quick switcher
 - 2022-07-13	more flexibility for line length setting (#180)

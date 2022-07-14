@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 2.294
+Version 2.295
 Source CSS: https://github.com/chrisgrieser/shimmering-focus/blob/main/source.css
 MIT License
 ──────────────────────────────────────────────────── */
@@ -11860,12 +11860,8 @@ body .another-quick-switcher__item {
 	padding-left: 0;
 }
 
-body .another-quick-switcher__item__description__alias {
-	padding-left: 10px;
-}
-
 body .another-quick-switcher__item__description {
-	margin-left: 3px;
+	margin-left: 8px;
 }
 
 /* ───────────────────────────────────────────────── */
