@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 2.296
+Version 2.297
 Source CSS: https://github.com/chrisgrieser/shimmering-focus/blob/main/source.css
 MIT License
 ──────────────────────────────────────────────────── */
@@ -3342,10 +3342,6 @@ kbd.suggestion-hotkey:not(:last-child) {
 body.move-plugin-name-to-left .suggestion-prefix,
 body.is-mobile .suggestion-prefix {
 	margin-right: 8px;
-}
-
-body:not(.move-plugin-name-to-left):not(.is-mobile) div.prompt {
-	min-width: 720px;
 }
 
 /* to anchor the plugin names below relativ to this */
@@ -11845,7 +11841,7 @@ body .another-quick-switcher__item__hot-key-guide {
 }
 
 body .another-quick-switcher__item__directory {
-	margin-right: 1.8em;
+	margin-right: 0.7em;
 }
 
 /* hide create button on desktop when no results for AQS */
