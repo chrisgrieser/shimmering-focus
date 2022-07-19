@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 2.299
+Version 2.300
 Source CSS: https://github.com/chrisgrieser/shimmering-focus/blob/main/source.css
 MIT License
 ──────────────────────────────────────────────────── */
@@ -3657,7 +3657,8 @@ body.mod-macos:not(.show-sidebar-tabs):not(.show-titlebar) .mod-left-split .work
 /* see also the change of resize handle height depending
 on the titlebar visibility in the titlebar section */
 
-body .workspace-leaf-resize-handle {
+body .workspace-leaf-resize-handle.workspace-leaf-resize-handle.workspace-leaf-resize-handle {
+	border: none;
 	outline: var(--thin-border);
 	transition: var(--medium-transition);
 }
