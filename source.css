@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 2.298
+Version 2.299
 Source CSS: https://github.com/chrisgrieser/shimmering-focus/blob/main/source.css
 MIT License
 ──────────────────────────────────────────────────── */
@@ -4270,7 +4270,7 @@ input:is([type="email"], [type="password"]) {
 	display: none;
 }
 
-.community-plugin-search .setting-item input {
+.community-plugin-search .setting-item.setting-item input {
 	width: 270px;
 	margin-right: 5px;
 	margin-left: 3px;
