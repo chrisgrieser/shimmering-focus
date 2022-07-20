@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 2.300
+Version 2.301
 Source CSS: https://github.com/chrisgrieser/shimmering-focus/blob/main/source.css
 MIT License
 ──────────────────────────────────────────────────── */
@@ -278,6 +278,7 @@ MIT License
 	- Metabind
 	- Vim Gutter Marker
 	- New Plugin Placeholder
+	- Pane Relief
 - Hardcore & Madness Mode
 	- Hardcore Mode
 	- Hardcore & Madness Mode Style Settings
@@ -13519,6 +13520,14 @@ body.hider-ribbon .workspace-ribbon.mod-left {
 ──────────────────────────────────────────────────── */
 
 /* ───────────────────────────────────────────────── */
+/* << Pane Relief
+──────────────────────────────────────────────────── */
+
+.hide-pane-relief-focus-lock-status-bar .pane-relief-focus-lock.icon {
+	display: none;
+}
+
+/* ───────────────────────────────────────────────── */
 /* < Hardcore & Madness Mode
 ──────────────────────────────────────────────────── */
 /* ───────────────────────────────────────────────── */
@@ -14886,7 +14895,7 @@ settings:
 # <<< Status Bar (+)
    id: status-bar-options
    title: 🚥 Status Bar
-   description: Type of Status Bar, Hiding Items, Font Size
+   description: Type of Status Bar, 🆕 Hiding Items, Font Size
    type: heading
    level: 2
    collapsed: true
@@ -14932,8 +14941,13 @@ settings:
    type: class-toggle
    default: false
   -
+   id: hide-pane-relief-focus-lock-status-bar
+   title: '🆕 Hide Pane Relief Focus Lock'
+   type: class-toggle
+   default: false
+  -
    id: hide-signature
-   title: 'Hide the decorative "✧"'
+   title: 'Hide the decorative "✧" added by this theme'
    hub: ignore
    type: class-toggle
    default: false
