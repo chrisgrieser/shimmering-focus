@@ -3,6 +3,7 @@ nav_order: 110
 ---
 
 # Changelog
+- 2022-07-22	fix coloring of punctuation in yaml frontmatter
 - 2022-07-20	Style Setting to hide pane relief focus lock icon
 - 2022-07-14	styled vim gutter marker plugin (still beta)
 - 2022-07-13	fix alignment for another quick switcher

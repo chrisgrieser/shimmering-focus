@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 2.301
+Version 2.302
 Source CSS: https://github.com/chrisgrieser/shimmering-focus/blob/main/source.css
 MIT License
 ──────────────────────────────────────────────────── */
@@ -5154,7 +5154,7 @@ body:not(.colored-yaml) .cm-hmd-frontmatter.cm-atom {
 }
 
 /* punctuation */
-.colored-yaml .cm-hmd-frontmatter.cm-meta,
+.colored-yaml .cm-line .cm-hmd-frontmatter.cm-meta:nth-child(2),
 .colored-yaml .frontmatter.language-yaml .punctuation {
 	color: var(--bold-text-color);
 }
