@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 2.302
+Version 2.303
 Source CSS: https://github.com/chrisgrieser/shimmering-focus/blob/main/source.css
 MIT License
 ──────────────────────────────────────────────────── */
@@ -13523,7 +13523,7 @@ body.hider-ribbon .workspace-ribbon.mod-left {
 /* << Pane Relief
 ──────────────────────────────────────────────────── */
 
-.hide-pane-relief-focus-lock-status-bar .pane-relief-focus-lock.icon {
+.hide-pane-relief-focus-lock-status-bar .status-bar-item.plugin-pane-relief {
 	display: none;
 }
 
