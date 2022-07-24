@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 2.304
+Version 2.305
 Source CSS: https://github.com/chrisgrieser/shimmering-focus/blob/main/source.css
 MIT License
 ──────────────────────────────────────────────────── */
@@ -5154,7 +5154,9 @@ body:not(.colored-yaml) .cm-hmd-frontmatter.cm-atom {
 }
 
 /* punctuation */
-.colored-yaml .cm-line .cm-hmd-frontmatter.cm-meta:nth-child(2),
+/* second child = colong between key and value */
+/* last child = bracket to close of array brackets, see https://github.com/chrisgrieser/shimmering-focus/issues/194 */
+.colored-yaml .cm-line .cm-hmd-frontmatter.cm-meta:is(:nth-child(2), :last-child),
 .colored-yaml .frontmatter.language-yaml .punctuation {
 	color: var(--bold-text-color);
 }
