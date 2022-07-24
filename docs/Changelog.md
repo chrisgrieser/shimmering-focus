@@ -3,6 +3,7 @@ nav_order: 110
 ---
 
 # Changelog
+- 2022-07-25	yaml
 - 2022-07-24	patch pane relief statusbar hide @kometenstaub
 - 2022-07-22	fix coloring of punctuation in yaml frontmatter
 - 2022-07-20	Style Setting to hide pane relief focus lock icon
