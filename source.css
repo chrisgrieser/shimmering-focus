@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 2.307
+Version 2.308
 Source CSS: https://github.com/chrisgrieser/shimmering-focus/blob/main/source.css
 MIT License
 ──────────────────────────────────────────────────── */
@@ -10244,6 +10244,10 @@ body .kanban-plugin__lane-header-wrapper {
 .kanban-plugin__lane-input.kanban-plugin__lane-input.kanban-plugin__lane-input.kanban-plugin__lane-input {
 	line-height: 1;
 	background-color: var(--bg1);
+}
+
+.kanban-plugin__lane-title-text div > p {
+	line-height: 1.2;
 }
 
 .round-shapes .kanban-plugin .kanban-plugin__lane-title-text div > p {
