@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 2.313
+Version 2.314
 Source CSS: https://github.com/chrisgrieser/shimmering-focus/blob/main/source.css
 MIT License
 ──────────────────────────────────────────────────── */
@@ -2676,6 +2676,15 @@ body:is(.theme-light, .theme-dark) ::-webkit-scrollbar-thumb:active {
 /* << Buttons
 ──────────────────────────────────────────────────── */
 /* buttons in default state */
+:root { /* stylelint-disable-line no-duplicate-selectors */
+	--button-font-shadow: none;
+}
+
+/* readability fix */
+.theme-dark.gamma-colors.gamma-colors {
+	--button-font-shadow: -1px  1px hsl(0 0% 30%);
+}
+
 .app-container.app-container button,
 body .excalidraw .HelpDialog--btn,
 a:is(.style-settings-export, .style-settings-import),
@@ -2685,6 +2694,7 @@ a:is(.style-settings-export, .style-settings-import),
 	font-weight: 600;
 	line-height: 1.3em;
 	letter-spacing: 0.5px;
+	text-shadow: var(--button-font-shadow);
 
 	min-height: 1.5em;
 
@@ -10647,6 +10657,14 @@ body:not(.no-alternating-rows) li:nth-child(even) :is(.draft-container, .scene-c
 .workspace-leaf-content[data-type="VIEW_TYPE_LONGFORM_EXPLORER"] .tab-list.tab-list button:hover {
 	color: var(--hover-accent-2);
 	background-color: var(--bg1);
+}
+
+.longform-unknown-file.longform-unknown-file.longform-unknown-file.longform-unknown-file button {
+	font-size: 0.7em;
+	color: var(--button-text);
+	box-shadow: var(--small-inset-shadow);
+	padding: 2px;
+	border-width: 1px;
 }
 
 /* ───────────────────────────────────────────────────
