@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 2.312
+Version 2.313
 Source CSS: https://github.com/chrisgrieser/shimmering-focus/blob/main/source.css
 MIT License
 ──────────────────────────────────────────────────── */
@@ -10568,41 +10568,8 @@ div#select-projects select,
 }
 
 /* <<< Longform Scene List */
-#scene-list {
-	counter-reset: sidebar;
-}
-
-#scene-list .scene-container:not([data-scene-path*="/_"], [data-scene-path*="Acknowledgements" i], [data-scene-path*="Notes for the Reader" i], [data-scene-path*="Appendix" i], [data-scene-path*="Metadata" i], [data-scene-path*="Abstract" i])::before {
-	counter-increment: sidebar;
-	content: counter(sidebar) ".";
-	padding-right: 5px;
-}
-
 #scene-list .scene-container:is([data-scene-path*="Acknowledgements" i], [data-scene-path*="Notes for the Reader" i], [data-scene-path*="Appendix" i], [data-scene-path*="Metadata" i]) {
 	color: var(--text-faint);
-}
-
-/* hacky cover over the "_" */
-#scene-list .scene-container[data-scene-path*="/_"] {
-	padding-left: 15px;
-	text-indent: -16px;
-}
-
-#scene-list .scene-container {
-	display: block;
-	letter-spacing: 0.1px;
-}
-
-#scene-list .scene-container[data-scene-path*="/_"]::before {
-	content: "  ";
-	white-space: pre-wrap;
-	background-color: var(--bg2);
-	position: relative;
-	right: -8px;
-}
-
-.view-content #scene-list .sortable-scene-list li .scene-container:is(:hover, .selected)::before {
-	background-color: var(--bg3);
 }
 
 /* alternating row colors, factoring in the coloring */
@@ -10680,22 +10647,6 @@ body:not(.no-alternating-rows) li:nth-child(even) :is(.draft-container, .scene-c
 .workspace-leaf-content[data-type="VIEW_TYPE_LONGFORM_EXPLORER"] .tab-list.tab-list button:hover {
 	color: var(--hover-accent-2);
 	background-color: var(--bg1);
-}
-
-/* hide index file in file explorer, which shouldn't
-be messed with anyway */
-.hide-index-files .BC-Link[data-link-data-href="Index"],
-.hide-index-files .nav-file-title[data-path$="Index.md"] {
-	display: none;
-}
-
-/* icons for file explorer */
-.nav-file-title[data-path$="Index.md"] .nav-file-title-content::before {
-	content: "settings";
-}
-
-.nav-folder-title[data-path$="Drafts"] .nav-folder-title-content.nav-folder-title-content.nav-folder-title-content::before {
-	content: "folder_special";
 }
 
 /* ───────────────────────────────────────────────────
@@ -15514,7 +15465,7 @@ settings:
 # << Longform & Writing (+)
    id: longform-settings
    title: ✍️ Longform Plugin & Writing cssclass
-   description: Font, Alignment, First-Line Indent, Background Color, Index File
+   description: Font, Alignment, First-Line Indent, Background Color
    type: heading
    level: 1
    collapsed: true
@@ -15569,13 +15520,6 @@ settings:
    min: -180
    max: 180
    step: 5
-  -
-   id: hide-index-files
-   title: 'Hide files named "Index.md" from the File Explorer and the Breadcrumbs Matrix.'
-   description: Files named that way are created by the Longform Plugin and normally should not be changed.
-   type: class-toggle
-   hub: ignore
-   default: false
   -
 # << Miscellaneous (+)
    id: miscellaneous
