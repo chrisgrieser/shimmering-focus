@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 2.311
+Version 2.312
 Source CSS: https://github.com/chrisgrieser/shimmering-focus/blob/main/source.css
 MIT License
 ──────────────────────────────────────────────────── */
@@ -10755,12 +10755,16 @@ button.longform-remove-step-button.longform-remove-step-button.longform-remove-s
 
 .longform-step-kind-pill.longform-step-kind-pill.longform-step-kind-pill.longform-step-kind-pill.longform-step-kind-pill {
 	font-size: 0.85em;
+	line-height: 1;
+
+	height: unset;
 
 	color: var(--light-in-light-dark-in-dark);
 	background-color: var(--secondary-accent-text);
 	box-shadow: var(--small-inset-shadow);
 
-	padding: 0 5px;
+	padding: 1px 3px 2px;
+	margin: 0;
 
 	border-radius: var(--roundish);
 }
