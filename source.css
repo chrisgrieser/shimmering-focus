@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 2.315
+Version 2.316
 Source CSS: https://github.com/chrisgrieser/shimmering-focus/blob/main/source.css
 MIT License
 ──────────────────────────────────────────────────── */
@@ -10439,11 +10439,6 @@ body .tab-panel-container.tab-panel-container :is(#draft-list, #scene-list) {
 	font-weight: 700;
 }
 
-/* hide folder path */
-.current-draft-path {
-	display: none;
-}
-
 /* scene item / draft item */
 #draft-list .draft-container,
 #scene-list .scene-container {
@@ -10490,10 +10485,11 @@ body .tab-panel-container.tab-panel-container :is(#draft-list, #scene-list) {
 	background-color: var(--bg3);
 }
 
-input:is(#new-draft, #new-scene) {
+.tab-panel-container input:is(#new-draft, #new-scene) {
 	height: 20px;
 	color: var(--unresolved-link-color);
 	box-shadow: none;
+	padding-left: 3px;
 	border-radius: 0;
 }
 
@@ -10600,7 +10596,30 @@ body:not(.no-alternating-rows) li:nth-child(even) :is(.draft-container, .scene-c
 	background-color: var(--scene-list-b-row);
 }
 
-/* <<< Longform Icons */
+/* ───────────────────────────────────────────────────
+/* <<< Longform Icons
+─────────────────────────────────────────────────── */
+
+/* container needs to be relative */
+#project-picker-container {
+	position: relative;
+}
+
+/* turn the draft-path into a home-button */
+.current-draft-path.current-draft-path.current-draft-path.current-draft-path.current-draft-path {
+	font-size: 0;
+	position: absolute;
+	right: -0.5rem;
+	bottom: -1.85rem;
+}
+
+.current-draft-path::before {
+	content: "home";
+	position: relative;
+	bottom: -5px;
+	left: 3px;
+}
+
 .workspace-leaf-content[data-type="VIEW_TYPE_LONGFORM_EXPLORER"] .tabs .tab-list {
 	line-height: 1.2;
 	padding: 4px 4px 0;
@@ -10608,14 +10627,17 @@ body:not(.no-alternating-rows) li:nth-child(even) :is(.draft-container, .scene-c
 	border-bottom: var(--basic-border);
 }
 
+.current-draft-path::before,
 .workspace-leaf-content[data-type="VIEW_TYPE_LONGFORM_EXPLORER"] button::before {
 	font-family: var(--icon-font);
 	font-size: calc(1.2 * var(--font-text-size));
 }
 
+.current-draft-path,
 .workspace-leaf-content[data-type="VIEW_TYPE_LONGFORM_EXPLORER"] .tab-list.tab-list.tab-list button {
 	font-size: 0;
 	line-height: unset;
+	text-shadow: none;
 
 	height: 25px;
 	width: 37px;
@@ -10649,12 +10671,14 @@ body:not(.no-alternating-rows) li:nth-child(even) :is(.draft-container, .scene-c
 	content: "merge_type";
 }
 
+/* selected */
 .workspace-leaf-content[data-type="VIEW_TYPE_LONGFORM_EXPLORER"] button.selected.selected.selected {
 	color: var(--extra-contrast);
 	background-color: var(--bg1);
 }
 
-/* hover look */
+/* hovered */
+.current-draft-path.current-draft-path.current-draft-path.current-draft-path:hover,
 .workspace-leaf-content[data-type="VIEW_TYPE_LONGFORM_EXPLORER"] .tab-list.tab-list button:hover {
 	color: var(--hover-accent-2);
 	background-color: var(--bg1);
