@@ -3,6 +3,7 @@ nav_order: 110
 ---
 
 # Changelog
+- 2022-07-31	updates for longform v2.0
 - 2022-07-31	button readability fix
 - 2022-07-31	update for longform plugin v2.0 (beta)
 - 2022-07-25	various complements suggester more minimal

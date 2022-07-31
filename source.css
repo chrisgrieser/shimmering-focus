@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 2.314
+Version 2.315
 Source CSS: https://github.com/chrisgrieser/shimmering-focus/blob/main/source.css
 MIT License
 ──────────────────────────────────────────────────── */
@@ -222,6 +222,7 @@ MIT License
 		- Longform Sidebar
 		- Longform Scene List
 		- Longform Icons
+		- Longform Unknown Files Wizard
 		- Longform Compile
 		- Longform Editor
 		- Writing cssclass
@@ -10659,12 +10660,71 @@ body:not(.no-alternating-rows) li:nth-child(even) :is(.draft-container, .scene-c
 	background-color: var(--bg1);
 }
 
+/* ───────────────────────────────────────────────────
+/* <<< Longform Unknown Files Wizard
+─────────────────────────────────────────────────── */
+
+.tab-panel-container.tab-panel-container.tab-panel-container #longform-unknown-files-wizard {
+	padding: 0;
+	margin-top: 3px;
+	border-top: var(--basic-border);
+}
+
+.longform-unknown-inner.longform-unknown-inner.longform-unknown-inner.longform-unknown-inner {
+	padding-left: 0;
+	border: none;
+}
+
+.longform-unknown-explanation::before {
+	content: "ℹ️ ";
+}
+
+.longform-unknown-explanation.longform-unknown-explanation.longform-unknown-explanation.longform-unknown-explanation {
+	font-size: 1em;
+	font-weight: 700;
+	line-height: 1.3;
+
+	color: var(--text-muted);
+	background-color: var(--bg3);
+
+	padding: 4px;
+	margin-top: 0;
+	margin-bottom: 3px;
+}
+
+#longform-unknown-files-wizard .longform-unknown-inner.longform-unknown-inner.longform-unknown-inner > ul {
+	padding-left: 3px;
+	margin: 0;
+}
+
+#longform-unknown-files-wizard .longform-unknown-inner.longform-unknown-inner.longform-unknown-inner > ul > li:nth-child(even) {
+	background-color: var(--a-row);
+}
+
+.longform-unknown-file {
+	line-height: 1.25;
+	padding: 1px 0 4px;
+}
+
 .longform-unknown-file.longform-unknown-file.longform-unknown-file.longform-unknown-file button {
 	font-size: 0.7em;
+	font-weight: 400;
+	line-height: 1;
+	text-shadow: none;
+
 	color: var(--button-text);
+	background-color: var(--muted-button-bg);
 	box-shadow: var(--small-inset-shadow);
-	padding: 2px;
+
+	padding: 1px 3px 3px;
+	margin-right: 5px;
+
 	border-width: 1px;
+	border-radius: var(--roundish);
+}
+
+.longform-unknown-ignore.longform-unknown-ignore.longform-unknown-ignore.longform-unknown-ignore:not(:hover) {
+	border-color: var(--text-faint);
 }
 
 /* ───────────────────────────────────────────────────
