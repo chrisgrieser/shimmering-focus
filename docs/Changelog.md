@@ -3,7 +3,7 @@ nav_order: 110
 ---
 
 # Changelog
-- 2022-07-29	patch
+- 2022-07-31	patch
 - 2022-07-25	various complements suggester more minimal
 - 2022-07-25	fix #194
 - 2022-07-25	yaml
