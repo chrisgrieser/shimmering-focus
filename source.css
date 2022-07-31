@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 2.310
+Version 2.311
 Source CSS: https://github.com/chrisgrieser/shimmering-focus/blob/main/source.css
 MIT License
 ──────────────────────────────────────────────────── */
@@ -8717,7 +8717,8 @@ action (folding) than clicking the heading itself (as opposed to other sidebar p
 
 /* increase clickable area */
 .outline .collapse-icon {
-	padding: 2px;
+	padding: 2px 2px 0;
+	margin-top: -3px;
 }
 
 /* relationship lines */
