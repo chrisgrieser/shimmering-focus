@@ -16,7 +16,6 @@ nav_order: 5
 
 ## For Writers in General
 - Trailing white spaces are indicated when there is more than one space. This is useful for the Markdown [Two Space Rule](https://daringfireball.net/projects/markdown/syntax#p).
-- Extensive Styling and settings specifically for the [Longform Plugin](https://github.com/kevboh/longform). Prepend a `_` to file names of longform scenes to create sub-scenes that are indented in the sidebar.
 - The longform plugin as well as the `writing` [cssclass](/shimmering-focus/css-classes#writing--academic) both use a serif font and independent styling, i.e. a different background color.
 
 ![longform settings](images/longform.png)

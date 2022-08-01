@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 2.316
+Version 2.317
 Source CSS: https://github.com/chrisgrieser/shimmering-focus/blob/main/source.css
 MIT License
 ──────────────────────────────────────────────────── */
@@ -10542,7 +10542,7 @@ body .tab-panel-container.tab-panel-container :is(#draft-list, #scene-list) {
 	box-shadow: var(--small-inset-shadow);
 
 	padding: 0 1px 1px 0;
-	margin: 2px 2px 0;
+	margin: 2px 3px 0 2px;
 
 	border: var(--thin-border);
 	border-radius: var(--roundish);
@@ -10599,17 +10599,19 @@ body:not(.no-alternating-rows) li:nth-child(even) :is(.draft-container, .scene-c
 /* ───────────────────────────────────────────────────
 /* <<< Longform Icons
 ─────────────────────────────────────────────────── */
-
-/* container needs to be relative */
-#project-picker-container {
-	position: relative;
+/* hide the (mostly unused) Drafts button */
+body:not(.longform-show-drafts-button) .workspace-leaf-content[data-type="VIEW_TYPE_LONGFORM_EXPLORER"] .tab-list button:nth-child(2) {
+	display: none;
 }
 
+/* container needs to be relative for `.current-draft-path` */
+#project-picker-container { position: relative }
+
 /* turn the draft-path into a home-button */
-.current-draft-path.current-draft-path.current-draft-path.current-draft-path.current-draft-path {
+#project-picker-container .current-draft-path.current-draft-path.current-draft-path.current-draft-path.current-draft-path {
 	font-size: 0;
 	position: absolute;
-	right: -0.5rem;
+	right: -0.4rem;
 	bottom: -1.85rem;
 }
 
@@ -15586,6 +15588,12 @@ settings:
    max: 2
    step: 0.05
    format: 'rem'
+  -
+   id: longform-show-drafts-button
+   title: 'Re-enable the "Drafts" Button'
+   description: 'By default, this theme hides the "Drafts" Button, since Longform 2.0 made drafts largely obsolete.'
+   type: class-toggle
+   default: false
   -
    id: longform-tasks-different
    title: 'Tasks: Use Gray instead of Normal Text Color'
