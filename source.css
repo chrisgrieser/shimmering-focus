@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 2.318
+Version 2.319
 Source CSS: https://github.com/chrisgrieser/shimmering-focus/blob/main/source.css
 MIT License
 ──────────────────────────────────────────────────── */
@@ -7280,7 +7280,7 @@ color: var(--sh-unit);
 .markdown-preview-view > div > div > div > ul.dataview.list-view-ul,
 .markdown-preview-view > div > div > ul,
 .markdown-preview-view ul.contains-task-list {
-	padding-left: 1.3rem;
+	padding-left: 1.35rem;
 }
 
 .markdown-preview-view ol {
@@ -11649,7 +11649,7 @@ body :is(#search-res-hover, #block-ref-hover).show:hover {
 }
 
 .markdown-preview-view :is(.block-language-dataview, .block-language-dataviewjs) .result-group {
-	padding-left: 1px;
+	padding-left: 0;
 }
 
 /* errors */
