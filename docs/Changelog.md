@@ -3,7 +3,7 @@ nav_order: 110
 ---
 
 # Changelog
-- 2022-08-02	patch
+- 2022-08-07	patch
 - 2022-07-31	more longform updates
 - 2022-07-31	updates for longform v2.0
 - 2022-07-31	button readability fix

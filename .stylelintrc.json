@@ -12,7 +12,8 @@
 
 	"ignoreFiles": [
 		"**/Downloads/**",
-		"**/Main Vault/.obsidian/plugins/**"
+		"**/Main Vault/.obsidian/plugins/**",
+		"**/*.qss"
 	],
 
 	"rules": {
