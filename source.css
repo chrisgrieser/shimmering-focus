@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 2.321
+Version 2.322
 Source CSS: https://github.com/chrisgrieser/shimmering-focus/blob/main/source.css
 MIT License
 ──────────────────────────────────────────────────── */
@@ -6586,7 +6586,7 @@ div[data-callout].is-collapsible.is-collapsed .callout-title {
 }
 
 /* <<< Sidenote Callouts */
-.callout[data-callout$="sidenote"] {
+.callout[data-callout*="sidenote"] {
 	--callout-icon: lightbulb;
 	--callout-color: 255, 210, 107;
 	font-size: 90%;
@@ -6606,7 +6606,7 @@ div[data-callout].is-collapsible.is-collapsed .callout-title {
 	margin-right: -30px; /* more makes it cut off with a narrow window size */
 }
 
-.callout[data-callout$="sidenote"] .callout-title {
+.callout[data-callout*="sidenote"] .callout-title {
 	padding-top: 1px;
 	padding-bottom: 1px;
 	border-top-left-radius: var(--roundish);
@@ -6617,7 +6617,7 @@ body .callout {
 }
 
 /* <<< Post-it Callouts */
-.unlock-theme-beta .callout[data-callout$="post-it"] {
+.unlock-theme-beta .callout[data-callout*="post-it"] {
 	font-size: 90%;
 	line-height: 1.2em;
 	hyphens: auto;
@@ -6641,20 +6641,20 @@ body .callout {
 	overflow: hidden;
 }
 
-.unlock-theme-beta .callout:is([data-callout$="post-it"], [data-callout$="aside"]) .callout-title {
+.unlock-theme-beta .callout:is([data-callout*="post-it"], [data-callout*="aside"]) .callout-title {
 	display: none;
 }
 
-.unlock-theme-beta .callout:is([data-callout$="post-it"], [data-callout$="aside"]) .callout-content {
+.unlock-theme-beta .callout:is([data-callout*="post-it"], [data-callout*="aside"]) .callout-content {
 	padding: 1px 4px;
 }
 
-.unlock-theme-beta .callout:is([data-callout$="post-it"], [data-callout$="aside"]) .callout-content p {
+.unlock-theme-beta .callout:is([data-callout*="post-it"], [data-callout*="aside"]) .callout-content p {
 	margin: 0;
 }
 
 /* config */
-.callout[data-callout="config"] {
+.callout.callout.callout[data-callout*="config"] {
 	--callout-icon: settings;
 	--callout-color: 202, 164, 255;
 }
