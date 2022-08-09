@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 2.320
+Version 2.321
 Source CSS: https://github.com/chrisgrieser/shimmering-focus/blob/main/source.css
 MIT License
 ──────────────────────────────────────────────────── */
@@ -6473,7 +6473,7 @@ body:not(.no-citation-syntax) .markdown-preview-view *:not(blockquote) > blockqu
 }
 
 .callout-content {
-	padding: 0 var(--callout-left-padding) 2px;
+	padding: 0 calc(var(--callout-left-padding) - 1px) 2px;
 }
 
 body:not(.normal-blockquotes) .callout-content :is(ul, p, code) {
@@ -6651,6 +6651,21 @@ body .callout {
 
 .unlock-theme-beta .callout:is([data-callout$="post-it"], [data-callout$="aside"]) .callout-content p {
 	margin: 0;
+}
+
+/* config */
+.callout[data-callout="config"] {
+	--callout-icon: settings;
+	--callout-color: 202, 164, 255;
+}
+
+.callout[data-callout="config"] .task-list-item {
+	text-decoration: none;
+	color: var(--text-normal);
+}
+
+.callout[data-callout="config"] .task-list-item-checkbox:checked {
+	background-color: var(--success-color);
 }
 
 /* ───────────────────────────────────────────────── */
