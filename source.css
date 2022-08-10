@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 2.323
+Version 2.324
 Source CSS: https://github.com/chrisgrieser/shimmering-focus/blob/main/source.css
 MIT License
 ──────────────────────────────────────────────────── */
@@ -11729,7 +11729,7 @@ body .dataview.inline-field-key {
 }
 
 /* remove table hover, since redundant with hovers from this theme */
-body .dataview.dataview:hover {
+body .dataview:not(.task-list-item-checkbox):hover {
 	background: none;
 	box-shadow: none;
 	cursor: default;
