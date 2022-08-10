@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 2.322
+Version 2.323
 Source CSS: https://github.com/chrisgrieser/shimmering-focus/blob/main/source.css
 MIT License
 ──────────────────────────────────────────────────── */
@@ -6659,12 +6659,12 @@ body .callout {
 	--callout-color: 202, 164, 255;
 }
 
-.callout[data-callout="config"] .task-list-item {
+.callout[data-callout*="config"] .task-list-item {
 	text-decoration: none;
 	color: var(--text-normal);
 }
 
-.callout[data-callout="config"] .task-list-item-checkbox:checked {
+.callout[data-callout*="config"] .task-list-item-checkbox:checked {
 	background-color: var(--success-color);
 }
 

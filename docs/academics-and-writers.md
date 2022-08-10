@@ -5,6 +5,7 @@ nav_order: 5
 # ✍️ Academics & Writers
 
 ## For Academics
+
 - [Pandoc Citations](https://pandoc.org/MANUAL.html#citations-in-note-styles) (`[@citekey]`) are visually emphasized.
 - Footnotes are visually emphasized, as well, and have [indicators in the gutter](reading-and-scanning#gutter-indicators).
 - The alt-text of images is used as caption text, in line with Pandoc's conversion behavior.
@@ -15,6 +16,7 @@ nav_order: 5
 ![bibliography cssclass](images/bibliography-list-cssclass.png)
 
 ## For Writers in General
+
 - Trailing white spaces are indicated when there is more than one space. This is useful for the Markdown [Two Space Rule](https://daringfireball.net/projects/markdown/syntax#p).
 - The longform plugin as well as the `writing` [cssclass](/shimmering-focus/css-classes#writing--academic) both use a serif font and independent styling, i.e. a different background color.
 

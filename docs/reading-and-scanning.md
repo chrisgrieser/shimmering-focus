@@ -5,13 +5,16 @@ nav_order: 3
 # 👓 Readability & Scannability
 
 ## Scannability
+
 - Command Palette: Plugin Names are moved to right
 - Visual differentiation of link types
 
 ![](images/link-type-differentiation.png)
 
 ### Gutter Indicators
+
 To increase the scannability of long notes, the presence of some easy-to-miss elements are indicated in the gutter. All indicators can be turned off with the [Style Settings Plugin](https://obsidian.md/plugins?id=obsidian-style-settings).
+
 - Footnotes (all modes)
 - Search Result Matches (Source Mode & Live Preview only)
 - Unresolved Links (Preview Mode and Live Preview only)
@@ -22,6 +25,7 @@ To increase the scannability of long notes, the presence of some easy-to-miss el
 ![tags in gutter demo](images/tags-in-gutter.png)
 
 ## Readability
+
 - Brightness and line length are both adjustable via [Style Settings Plugin](https://obsidian.md/plugins?id=obsidian-style-settings).
 - Dark Mode for PDFs (when using the theme in dark mode).
 - Decreased font size *variation* to increase readability but keep information density.

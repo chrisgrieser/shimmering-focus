@@ -9,16 +9,18 @@ nav_order: 102
 - [List of Compatible Plugins](#list-of-compatible-plugins)
 - [Information for Specific Plugins](#information-for-specific-plugins)
 - [Built-in Styling for Supercharged Links](#built-in-styling-for-supercharged-links)
-	- [Setup](#setup)
+  - [Setup](#setup)
 
 <!-- /MarkdownTOC -->
 
 ## List of Compatible Plugins
+
 *Shimmering Focus* is compatible with and has includes styling for all core plugins, the most common community plugins, as well as about a dozen more community plugins.
 
 ➡️ [Full list of compatible plugins.](https://publish.obsidian.md/hub/02+-+Community+Expansions/02.05+All+Community+Expansions/Themes/Shimmering+Focus#Plugin+Compatibility+1)
 
 ## Information for Specific Plugins
+
 In accordance with the minimalistic philosophy of the theme, unnecessary UI elements of some plugins have also been removed. However, you can still access the full plugin functionality.
 
 - __Longform__: Prepend a `_` to file names of longform scenes to create sub-scenes.
@@ -35,7 +37,9 @@ In accordance with the minimalistic philosophy of the theme, unnecessary UI elem
 - __Pandoc Reference__: The style settings of the Pandoc Reference List are all overridden, since *Shimmering Focus* applies its own styling for Pandoc citations.
 
 ## Built-in Styling for Supercharged Links
+
 This theme includes built-in styling for the [Supercharged Links Plugin](https://github.com/mdelobelle/obsidian_supercharged_links). This means you can make use of the plugin's features without the need write your own CSS! (If you already have your own Supercharged Links setup, you can turn those of with the Style Settings Plugin.) For now the theme includes the following styling:
+
 - Links to *Kanban Boards* get `🎆` prepended
 - Links to notes with the tag `#seedling` get `🌱` prepended
 - Notes with `#evergreen` get `🌲` prepended
@@ -53,6 +57,7 @@ This theme includes built-in styling for the [Supercharged Links Plugin](https:/
 ![Demo tooltips](https://publish-01.obsidian.md/access/e25082da1bfe16d54e36618cd5bfee68/00%20-%20Contribute%20to%20the%20Obsidian%20Hub/02%20Attachments/Tooltips-for-Literature-Notes-with-Supercharged-Links.gif)
 
 ### Setup
+
 - Install [the plugin](https://github.com/mdelobelle/obsidian_supercharged_links).
 - Make sure you have `Parse all tags in the file` enabled in the plugin's settings.
 - If you are using the "Page Preview" Core Plugin, configure it to not display previews for the cases where you want the tooltips to show up.
