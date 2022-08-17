@@ -11,9 +11,7 @@
 	"reportInvalidScopeDisables": [true, {"severity": "error"}],
 
 	"ignoreFiles": [
-		"**/Downloads/**",
-		"**/Main Vault/.obsidian/plugins/**",
-		"**/*.qss"
+		"**/Main Vault/.obsidian/plugins/**"
 	],
 
 	"rules": {

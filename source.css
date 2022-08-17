@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 2.324
+Version 2.325
 Source CSS: https://github.com/chrisgrieser/shimmering-focus/blob/main/source.css
 MIT License
 ──────────────────────────────────────────────────── */
@@ -1953,6 +1953,7 @@ body .markdown-source-view.mod-cm6 .cm-content {
 	position: fixed;
 	top: 0;
 	left: 0;
+	z-index: 1;
 
 	padding: 1px;
 
