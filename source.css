@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 2.325
+Version 2.327
 Source CSS: https://github.com/chrisgrieser/shimmering-focus/blob/main/source.css
 MIT License
 ──────────────────────────────────────────────────── */
@@ -1067,12 +1067,14 @@ body:is(.theme-light, .theme-dark) {
 }
 
 .theme-light {
-	--notice-border: 2px solid hsl(var(--bg-light-hue) var(--sat-light-3) 55%);
+	--notice-border-color: hsl(var(--bg-light-hue) var(--sat-light-3) 55%);
+	--notice-border: 2px solid var(--notice-border-color);
 	--search-match-outline: 2px solid var(--search-match-color);
 }
 
 .theme-dark {
-	--notice-border: 2px solid hsl(var(--bg-dark-hue) var(--sat-dark-1) 45%);
+	--notice-border-color: hsl(var(--bg-dark-hue) var(--sat-dark-1) 45%);
+	--notice-border: 2px solid var(--notice-border-color);
 	--search-match-outline: 1px solid var(--search-match-color);
 }
 
@@ -2299,7 +2301,7 @@ body:not(.show-ribbons):not(.is-mobile) .side-dock-settings .side-dock-ribbon-ac
 /* << Tooltips
 ──────────────────────────────────────────────────── */
 
-.tooltip {
+body .tooltip {
 	font-family: var(--button-font);
 	font-size: calc(var(--button-font-size) * 0.8);
 	letter-spacing: 0.5px;
@@ -2314,9 +2316,14 @@ body:not(.show-ribbons):not(.is-mobile) .side-dock-settings .side-dock-ribbon-ac
 	word-wrap: break-word;
 }
 
-.tooltip-arrow {
-	display: none;
+.tooltip {
+	--tooltip-arrow-color: var(--notice-border-color);
 }
+
+body .tooltip .tooltip-arrow { border-bottom-color: var(--tooltip-arrow-color) }
+body .tooltip.mod-right .tooltip-arrow { border-right-color: var(--tooltip-arrow-color) }
+body .tooltip.mod-left .tooltip-arrow { border-left-color: var(--tooltip-arrow-color) }
+body .tooltip.mod-top .tooltip-arrow { border-top-color: var(--tooltip-arrow-color) }
 
 /* ───────────────────────────────────────────────── */
 /* << Notices (Notifications)

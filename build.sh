@@ -21,17 +21,39 @@
 # - stylelint
 # - markdownlint
 # - yamllint
-# - git authentication with SSH & Push Access
+# - git authentication with SSH Push Access
 # - this script placed somewhere in the git repository
 
 # ---------------------------
 
 # CONFIG
 export PATH=/usr/local/bin/:/opt/homebrew/bin/:$PATH
-CSS_PATH=~"/Library/Mobile Documents/iCloud~md~obsidian/Documents/Main Vault/.obsidian/themes/Shimmering Focus.css"
+CSS_PATH=~"/Main Vault/.obsidian/themes/Shimmering Focus.css"
 CHANGELOG_PATH="./docs/changelog.md"
 
 # ---------------------------
+
+# Abort if CLIs missing
+which cleancss &> /dev/null
+if [[ $? == 1 ]]; then
+	echo "clean-css-cli is not installed."
+	exit 1
+fi
+which markdownlint &> /dev/null
+if [[ $? == 1 ]]; then
+	echo "markdownlint is not installed."
+	exit 1
+fi
+which stylelint &> /dev/null
+if [[ $? == 1 ]]; then
+	echo "stylelint is not installed."
+	exit 1
+fi
+which yamllint &> /dev/null
+if [[ $? == 1 ]]; then
+	echo "yamllint is not installed."
+	exit 1
+fi
 
 # YAMLLINT TEST
 # - Abort build if yaml invalid
@@ -44,13 +66,6 @@ if [[ $? == 1 ]]; then
 	exit 1
 fi
 
-# Abort if CLI missing
-which cleancss &> /dev/null
-if [[ $? == 1 ]]; then
-	echo "clean-css-cli is not installed."
-	exit 1
-fi
-
 # get commit message
 COMMIT_MSG="$*"
 if [[ "$COMMIT_MSG" == "" || "$COMMIT_MSG" == " " ]] ; then
@@ -58,7 +73,7 @@ if [[ "$COMMIT_MSG" == "" || "$COMMIT_MSG" == " " ]] ; then
 fi
 
 # go to git root for Linters
-cd "$(dirname "$0")" || exit
+cd "$(dirname "$0")" || exit 1
 # shellcheck disable=SC2164
 r=$(git rev-parse --git-dir) && r=$(cd "$r" && pwd)/ && cd "${r%%/.git/*}"
 
