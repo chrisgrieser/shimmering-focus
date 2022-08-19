@@ -3,6 +3,7 @@ nav_order: 110
 ---
 
 # Changelog
+- 2022-08-19	patch
 - 2022-08-18	added tooltip arrows
 - 2022-08-10	fix dataview checkboxes hover
 - 2022-08-09	config callout styled for dvjs checkboxes
