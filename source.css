@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 2.327
+Version 2.328
 Source CSS: https://github.com/chrisgrieser/shimmering-focus/blob/main/source.css
 MIT License
 ──────────────────────────────────────────────────── */
@@ -11914,6 +11914,7 @@ body .another-quick-switcher__item__title__header_hit {
 }
 
 /* Numbered Hotkey tip */
+.is-mobile .another-quick-switcher__item__hot-key-guide,
 body:not(.mod-macos) .another-quick-switcher__item__hot-key-guide::before,
 .another-quick-switcher__item__hot-key-guide::after {
 	display: none;
@@ -11923,7 +11924,7 @@ body:not(.mod-macos) .another-quick-switcher__item__hot-key-guide::before,
 	content: "⌘";
 }
 
-body .another-quick-switcher__item__hot-key-guide {
+body:not(.is-mobile) .another-quick-switcher__item__hot-key-guide {
 	font-family: var(--font-monospace-theme);
 	font-size: 0.65em;
 	line-height: 1;
