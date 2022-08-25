@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 2.328
+Version 2.329
 Source CSS: https://github.com/chrisgrieser/shimmering-focus/blob/main/source.css
 MIT License
 ──────────────────────────────────────────────────── */
@@ -11804,8 +11804,14 @@ body .qsp-symbol-indicator {
 ──────────────────────────────────────────────────── */
 
 .another-quick-switcher__item__icon,
+body .another-quick-switcher__status__search-command,
 .another-quick-switcher__item__directory svg {
 	display: none;
+}
+
+body .another-quick-switcher__status__count-input {
+	top: 1em;
+	right: 0.9em;
 }
 
 /* space to the left not needed, since aliases won't be displayed there */
@@ -13407,6 +13413,10 @@ body:not(.no-alternating-rows) .omnisearch-result:nth-child(odd) .omnisearch-res
 
 .pwc-reference-list {
 	--bibliography-indent: 1em;
+}
+
+.pandoc-citation.is-resolved.is-resolved.is-resolved.is-resolved {
+	text-decoration: none;
 }
 
 .pwc-reference-list.pwc-reference-list.pwc-reference-list.pwc-reference-list .pwc-reference-list__title.pwc-reference-list__title > div {
