@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 2.329
+Version 2.330
 Source CSS: https://github.com/chrisgrieser/shimmering-focus/blob/main/source.css
 MIT License
 ──────────────────────────────────────────────────── */
@@ -11964,6 +11964,39 @@ body .another-quick-switcher__item {
 
 body .another-quick-switcher__item__description {
 	margin-left: 8px;
+}
+
+/* grep search */
+.prompt.another-quick-switcher__grep__floating-prompt {
+	max-height: 92vh;
+	top: unset;
+	right: 4vh;
+}
+
+.another-quick-switcher__grep__floating-prompt .another-quick-switcher__item__description {
+	line-height: 1.2;
+	padding-left: 0;
+	margin-left: 0;
+}
+
+.another-quick-switcher__grep__floating-prompt .another-quick-switcher__hit_word {
+	color: var(--search-match-color);
+}
+
+.another-quick-switcher__grep__floating-prompt .another-quick-switcher__item__hot-key-guide {
+	display: none;
+}
+
+.another-quick-switcher__grep__floating-prompt .another-quick-switcher__item__directory {
+	margin-right: 0;
+}
+
+.another-quick-switcher__grep__floating-prompt .another-quick-switcher__item {
+	margin-left: 0;
+}
+
+.another-quick-switcher__grep__floating-prompt .suggestion-item {
+	padding: 4px;
 }
 
 /* ───────────────────────────────────────────────── */
