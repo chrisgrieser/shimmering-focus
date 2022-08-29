@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 2.330
+Version 2.331
 Source CSS: https://github.com/chrisgrieser/shimmering-focus/blob/main/source.css
 MIT License
 ──────────────────────────────────────────────────── */
@@ -8285,7 +8285,7 @@ body:not(.no-fn-indicator) .mod-cm6 .cm-hmd-barelink:not(.cm-formatting-link) + 
 }
 
 /* full-width */
-.full-width.full-width .markdown-preview-section,
+.full-width.full-width.full-width.full-width.full-width .markdown-preview-section,
 .full-width.full-width.full-width.full-width.full-width.markdown-source-view.mod-cm6.is-readable-line-width :is(.cm-content, .cm-contentContainer, .cm-contentContainer .cm-line) {
 	max-width: 100%;
 }
@@ -11741,6 +11741,10 @@ body .dataview:not(.task-list-item-checkbox):hover {
 	background: none;
 	box-shadow: none;
 	cursor: default;
+}
+
+.dataview.table-view-table small {
+	font-size: 70%;
 }
 
 /* <<< dataview cssclasses */

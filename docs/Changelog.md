@@ -3,6 +3,7 @@ nav_order: 110
 ---
 
 # Changelog
+- 2022-08-29	patch
 - 2022-08-28	Another Quick Switcher Grep Search styled
 - 2022-08-19	fix build script
 - 2022-08-18	added tooltip arrows
