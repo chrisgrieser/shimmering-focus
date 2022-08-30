@@ -13,9 +13,7 @@ A minimalistic [Obsidian](https://obsidian.md/) theme focused on readability and
 
 Due to Obsidian update 0.16, I had to start a full rewrite of the theme. Since the theme has more than 15,000 lines of CSS, this will naturally take quite a bit of time.
 
-## Roadmap for 0.16
-
-### Technical
+### Technical Roadmap for 0.16
 - [x] reset issues?
 - [x] update build script
 - [x] update issue templates
@@ -24,7 +22,7 @@ Due to Obsidian update 0.16, I had to start a full rewrite of the theme. Since t
 - [ ] new README for theme Gallery
 - [ ] ❇️ PR to `obsidian-releases`, removing `legacy` label and updating screenshot link.
 
-### Feature Wise
+### Feature Roadmap for 0.16
 - [ ] Base Features (mostly hiding of UI elements)
 - [ ] 🟪 Gamma Color Scheme
 - [ ] Style Settings
