@@ -1,0 +1,1118 @@
+# Changelog
+- 2022-08-30	theme reset for 0.16
+- 2022-08-30	manifest.json for 0.16
+- 2022-08-30	update issue templates for 0.16
+- 2022-08-30	update build system for 0.16
+- 2022-08-30	restructure repo
+- 2022-08-28	Another Quick Switcher Grep Search styled
+- 2022-08-19	fix build script
+- 2022-08-18	added tooltip arrows
+- 2022-08-10	fix dataview checkboxes hover
+- 2022-08-09	config callout styled for dvjs checkboxes
+- 2022-07-31	more longform updates
+- 2022-07-31	updates for longform v2.0
+- 2022-07-31	button readability fix
+- 2022-07-31	update for longform plugin v2.0 (beta)
+- 2022-07-25	various complements suggester more minimal
+- 2022-07-25	fix #194
+- 2022-07-25	yaml
+- 2022-07-24	patch pane relief statusbar hide @kometenstaub
+- 2022-07-22	fix coloring of punctuation in yaml frontmatter
+- 2022-07-20	Style Setting to hide pane relief focus lock icon
+- 2022-07-14	styled vim gutter marker plugin (still beta)
+- 2022-07-13	fix alignment for another quick switcher
+- 2022-07-13	more flexibility for line length setting (#180)
+- 2022-07-13	fix header on macos popout windows
+- 2022-07-13	setting to use native macOS scroll bars
+- 2022-07-13	various fixes for 0.15 (thx @kometenstaub)
+- 2022-07-13	fix line length in reading mode (v.0.15)
+- 2022-07-13	fix for command palettes & BCP & AQS in 0.15
+- 2022-07-12	fix settings menu for v0.15
+- 2022-07-09	widen search input sizes in settings
+- 2022-07-09	reorganized some style settings
+- 2022-07-09	hide suggestions in search pane
+- 2022-07-08	styled dataview result counter
+- 2022-07-06	language tool box improvements
+- 2022-07-05	better command palette: option to remove x
+- 2022-07-04	fix for blockquote borders
+- 2022-07-04	fix for pandoc reference list in reading mode
+- 2022-06-30	more saturation for italics
+- 2022-06-29	undo last change, cause already implemented m(
+- 2022-06-29	hide scrollbars on mobile to save space
+- 2022-06-29	style setting to disable alttext as image caption
+- 2022-06-24	new updated promo-screenshot.png
+- 2022-06-24	new style setting: vim mode shadow
+- 2022-06-24	fix for vim search panel
+- 2022-06-24	fix #176
+- 2022-06-16	fix sync status bar icon
+- 2022-06-13	improvements another QA & better command pal
+- 2022-06-13	fix LP headers when folding is off
+- 2022-06-12	fix line breaks for long image subtitles
+- 2022-06-12	option to differentiate tasks in longform notes
+- 2022-06-12	reduce menu width on wide windows
+- 2022-06-12	longform sidebar a bit mroe compact
+- 2022-06-11	fix bug with multiple selections not being visible
+- 2022-06-11	settings items right-aligned
+- 2022-06-10	italics color & callout fixes
+- 2022-06-09	fix #173
+- 2022-06-09	weaker italics coloring
+- 2022-06-08	compatibility with Hider plugin (#164)
+- 2022-06-08	styling of upcoming another quick switcher hotkeys
+- 2022-06-07	some fixes for footnotes
+- 2022-06-07	RIP most of cursor styling due to new release
+- 2022-06-06	fix for sync history
+- 2022-06-05	fixed unresolved link indicators being displayed in kanbans
+- 2022-06-04	fixes for new dataview styling
+- 2022-06-04	vim mode indicator only displayed in active pane
+- 2022-06-04	removed emoji priorization setting as it doesn't work well :(
+- 2022-06-04	style settings for emoji font priorization
+- 2022-06-03	move unicode emojis to public rel, remove beta stuff
+- 2022-06-03	new: Atomic Notes Ruler setting
+- 2022-06-02	code block gutter in LP looks more correct
+- 2022-05-30	option to turn off double underlines
+- 2022-05-27	control characters follow theme accents
+- 2022-05-27	tables not full width by default anymore
+- 2022-05-20	minor improvements for code blocks in edit mode
+- 2022-05-20	hints for jump-to-link-plugin placed better
+- 2022-05-19	support for control character plugin
+- 2022-05-18	add info on hider plugin
+- 2022-05-16	minor improvements to code block line numbers
+- 2022-05-15	relative line numbering option consistent with code editors
+- 2022-05-14	remove faded-blink animation for expty state (CPU hog, thanks @gala8y)
+- 2022-05-13	remove pure black as accent color (not working well)
+- 2022-05-13	pdf dark mode also applies to Ozan's image in Editor Plugin (Source Mode)
+- 2022-05-12	unhide the version word preceding version numbers (fix #166)
+- 2022-05-11	update for pandoc reference plugin
+- 2022-05-10	strikethroughs in gray-ish to stand out more
+- 2022-05-10	separate settings for images & PDFs
+- 2022-05-10	bold in headings visible by making it underline
+- 2022-05-10	added annotation tag #idea
+- 2022-05-09	make madness mode visible by default
+- 2022-05-08	some more custom color accents
+- 2022-05-08	fix default values for custom colors
+- 2022-05-08	madness & hardcore mode public release
+- 2022-05-08	move hardcore & madness mode out of beta
+- 2022-05-08	line height adjustments for headings in longform notes
+- 2022-05-07	new line numbering style: dots
+- 2022-05-07	do not show link favicon when on active line
+- 2022-05-07	added margin notes via strikethrough to the beta
+- 2022-05-07	added aside callouts to beta
+- 2022-05-07	toc
+- 2022-05-07	no setting descriptiosn in hardcore mode
+- 2022-05-07	fix unknown hotkeys look in Hardcore Mode
+- 2022-05-07	overlaying sidebar option + style setting re-organization
+- 2022-05-06	change promo screenshot quote attribution
+- 2022-05-06	ensure Madness mode cannot be enabled on mobile (would be too hard)
+- 2022-05-06	add info on pandoc reference list plugin style settings being overriden
+- 2022-05-06	improved code blocks in callouts
+- 2022-05-06	madness mode hint rephrasing
+- 2022-05-05	minor tweaks to vim indicator and vim panel shadows
+- 2022-05-05	relative line numbering shows 10 instead of 7 lines
+- 2022-05-05	tweaks the running button
+- 2022-05-05	update invalid citekey tooltips (Pandoc reference plugin)
+- 2022-05-05	fixes for pandoc citations outside of square brackets
+- 2022-05-05	fix grayscale favicon option
+- 2022-05-05	fix inline code in callouts
+- 2022-05-05	better hints for the path to the temple (madness mode)
+- 2022-05-05	renamed temple (madness mode)
+- 2022-05-05	styled the new heading search for another quick switcher
+- 2022-05-05	bug fixes madness mode
+- 2022-05-05	bug fixes for madness mode
+- 2022-05-05	added account login hints to madness mode
+- 2022-05-05	close of alternative route for madness mode
+- 2022-05-05	added temple of meditation to madness mode
+- 2022-05-05	meaner theme browser (madness mode)
+- 2022-05-05	shaky madness mode
+- 2022-05-05	added fake element picker to madness mode
+- 2022-05-05	more madness...
+- 2022-05-05	styled missing citations for Pandoc reference list
+- 2022-05-05	Unicode Emojis also apply to headings & Supercharged Links
+- 2022-05-04	sone more hints for madness mode
+- 2022-05-04	overhauled madness mode
+- 2022-05-04	fix fix alternating row colors
+- 2022-05-04	better ribbon alignments
+- 2022-05-04	fixes and hints for madness mode
+- 2022-05-04	added unicode emojis to theme beta
+- 2022-05-04	style setting to turn off blinking of the Vim cursor
+- 2022-05-04	fix #162
+- 2022-05-04	added info on banner plugin limitations
+- 2022-05-04	table colors follow theme background
+- 2022-05-04	improved card view (cssclass: list-2-col-cards)
+- 2022-05-04	various mobile fixes
+- 2022-05-04	more hints for solving madness mode
+- 2022-05-04	much improved madness mode
+- 2022-05-04	madness mode improvements
+- 2022-05-04	improved madness mode
+- 2022-05-04	madness mode improvements
+- 2022-05-04	improvements to madness mode
+- 2022-05-04	improvements to madness mode
+- 2022-05-04	add hardcore & madness mode to beta
+- 2022-05-03	add option to completely hide pandoc citatiosn in reading mode, if (Pandoc reference list plugin is installed)
+- 2022-05-03	hide fold indicators (+ option to re-enable them) (#160)
+- 2022-05-03	improvements for longform compile
+- 2022-05-03	further pandoc reference list improvements
+- 2022-05-03	minor tweaks to items in file explorer / kanban being dragged
+- 2022-05-03	more advanced styling for pandoc reference list plugin
+- 2022-05-02	better pandoc citation styling when pandoc reference plugin is installed
+- 2022-05-02	more consistent file type icons
+- 2022-05-02	minor fixes for prompts
+- 2022-05-02	better promo screenshot
+- 2022-05-02	more styling for pandoc reference list plugin
+- 2022-05-01	update promo screenshot
+- 2022-05-01	fix dracula syntax highlighting in source mode
+- 2022-05-01	fix #155
+- 2022-05-01	fix for style settings pane
+- 2022-05-01	fix glitch in community plugin lsit when scrollbars are enabled
+- 2022-05-01	fix navigation buttons for search pane
+- 2022-05-01	fix for unresolved items with another quick switcher
+- 2022-05-01	hotfix
+- 2022-05-01	version 2.0: gamma now default colors cheme, moved csutom color options out of beta
+- 2022-05-01	updates for pandoc reference lsit plugin
+- 2022-04-30	minor quick explorer fixes
+- 2022-04-29	floating metadata alignment correct when yaml hidden or shown (Obsi setting)
+- 2022-04-29	switched yaml and metadata order for floating metadata
+- 2022-04-29	fix issue with plugin settings buttons in plugin list
+- 2022-04-29	minor kanban fixes
+- 2022-04-29	minor kanban fixes
+- 2022-04-29	collapse URLs in pandoc reference list plugin
+- 2022-04-29	scrollbar styling fixes
+- 2022-04-29	longform sidebar most consistent with rests of theme
+- 2022-04-29	styling for pandoc reference list plugin
+- 2022-04-29	longform icons hover now consistent with navigation buttons
+- 2022-04-29	re-organized style settings
+- 2022-04-28	fix for vim's :reg
+- 2022-04-28	fix vim panel for bigger messages
+- 2022-04-28	fix for quicksand font weight
+- 2022-04-28	minor changes to default heading size differences
+- 2022-04-28	make code blocks in callouts more readable
+- 2022-04-28	fixes for code blocks without language
+- 2022-04-28	fix rotated header alignment
+- 2022-04-28	fix for vim indicator when using sliding panes
+- 2022-04-28	fix #151
+- 2022-04-27	styling for ToCs from the Dynamic ToC plugin
+- 2022-04-26	file/attachment custon callout
+- 2022-04-26	theme accents as option for cursor and vim cursor styles
+- 2022-04-26	dynamic highlights search matches get gutter indicator
+- 2022-04-26	linting (lowercase pseudo-elements)
+- 2022-04-26	option to place vim mode indicator at the bottom
+- 2022-04-26	different longform background color hue shift for dark & light mode
+- 2022-04-26	longform sidebar fixes
+- 2022-04-26	slight readability improvements
+- 2022-04-26	reworked highlight colors
+- 2022-04-26	gamma color scheme tweaks
+- 2022-04-26	fix changing colors of multi-color highlights
+- 2022-04-26	color tweaks
+- 2022-04-26	emoji font fallback
+- 2022-04-26	line numbering hover fixes
+- 2022-04-26	style settings tab reworked
+- 2022-04-26	fix custom colors
+- 2022-04-26	hide file explorer navigation buttons (#136)
+- 2022-04-26	removed smallcap font from theme for better readability
+- 2022-04-26	no smallcap font in style settings
+- 2022-04-26	replaced block indicators with relative line numbering (for vim users)
+- 2022-04-25	improved vim mode indicator
+- 2022-04-25	more color tweaks
+- 2022-04-25	color tweaking
+- 2022-04-25	readability improvmeent for gamma color scheme
+- 2022-04-25	new style setting to adjust hover zoom delay
+- 2022-04-25	fix tasks in callouts (#150)
+- 2022-04-25	vim mode indicator recognizes cmd and find mode as well
+- 2022-04-24	VIM mode indicator
+- 2022-04-24	smoother transition of minimal line numbers
+- 2022-04-24	text color tint options moved from beta to public
+- 2022-04-24	only show beta badges when actually in beta (lol)
+- 2022-04-24	🎨 Bold & Italic now colored per default (+ Style setting to switch to uncolored)
+- 2022-04-24	color tweaks
+- 2022-04-24	color tweaks gamma scheme & nord scheme
+- 2022-04-24	several minor improvements to code blocks
+- 2022-04-24	better active line indicator while in code blocks
+- 2022-04-24	make code block line numbers appear in empty lines as well
+- 2022-04-23	use Ubuntu mono as number font
+- 2022-04-23	code block line numbers in Edit Mode (by @pryley, #146)
+- 2022-04-23	more custom color accents
+- 2022-04-23	❄️ nord color scheme updated to use blue accent colors
+- 2022-04-23	show line numbers on hover
+- 2022-04-22	vim cursor uses dark eclipse style + style settings for vim cursor look
+- 2022-04-22	new line numbering style: block indicators
+- 2022-04-22	further improvements for vim mode
+- 2022-04-21	more vim mode improvements
+- 2022-04-21	fix inline code colors in live preview
+- 2022-04-21	styled vim cursor
+- 2022-04-21	styling for vim panel
+- 2022-04-21	use Rajdhani as number font
+- 2022-04-21	use carre as number font
+- 2022-04-21	changed quasrish button text font to quicksand
+- 2022-04-21	(non-embedded) image links get indicator icon
+- 2022-04-20	fix custom colors settings #144
+- 2022-04-20	fixes for collapse indicators of numbered lists bigger than 10
+- 2022-04-20	syntax highlighting does not affect yaml, since colored yaml is styled by accent color
+- 2022-04-20	navigation button with pressed down look
+- 2022-04-20	plugin not active warning page styled
+- 2022-04-20	increased delay for image zoom via hover
+- 2022-04-19	refactor: reorganized background color var names
+- 2022-04-19	new "goal" callout
+- 2022-04-19	fix #143
+- 2022-04-19	✨ new preset color scheme: Gamma
+- 2022-04-18	icons for links to office documents
+- 2022-04-18	add icon to internal links to pdfs in preview mode
+- 2022-04-18	floating metadata scrolls with editor for a bit (fixed instead absolute position)
+- 2022-04-18	only use image alt text when alias was explicitly set
+- 2022-04-18	fix sliding panes header when using rotated headers with collapsed left side bar
+- 2022-04-18	minor dataview-related fixes
+- 2022-04-18	fix favicon plugin icons in blockquote
+- 2022-04-18	yaml frontmatter now in theme accent colors (if colored yaml enabled in settings)
+- 2022-04-18	refactored underline styling
+- 2022-04-18	bold no shadow when not uncolored
+- 2022-04-18	dark eclipse now default cursor style (better with other accent colors)
+- 2022-04-18	remove external link icon & core mirror options plugin support
+- 2022-04-18	link underlines different based on link type
+- 2022-04-18	refactored text color variables
+- 2022-04-17	hide block IDs when not active/hovered line (+ new style setting to turn that off)
+- 2022-04-17	gray color tweaks
+- 2022-04-17	better pressed down button look
+- 2022-04-17	pressed-down button shadows
+- 2022-04-17	more consistent styling of the different link types
+- 2022-04-17	add options for coloring bold/italic text to the beta
+- 2022-04-17	color tweaks
+- 2022-04-17	inline code in block quote get proper font sizes
+- 2022-04-16	new secondary accent (Amber yellow) + hue shift of calm blue
+- 2022-04-16	super
+- 2022-04-16	styled spellcheck dictionary removal menu
+- 2022-04-16	better screen saver
+- 2022-04-16	better font-size 0 hack (thx @melvinting)
+- 2022-04-16	turn off loose lists (+ style setting to re-enable them)
+- 2022-04-16	always angular table styling
+- 2022-04-16	settings headings fixes
+- 2022-04-16	fix scrolling in Kanban items
+- 2022-04-16	highlights with slightly more contrast
+- 2022-04-16	confirmation modal
+- 2022-04-15	styling for mind map plugin
+- 2022-04-15	link underline style dependent on link type
+- 2022-04-15	minor context menu improvements
+- 2022-04-15	fix kanban scrollbars
+- 2022-04-15	scrol
+- 2022-04-15	improved styling of the settings menu
+- 2022-04-14	links and breadcrumbs links styling
+- 2022-04-14	make image hover zoom also apply to ozan's image in editor plugin
+- 2022-04-14	no task strikethrough when hovered for readability
+- 2022-04-14	link hover dotted underline
+- 2022-04-14	new smallcap font (beta)
+- 2022-04-14	alternative image zoom method: hovering (enable via style settings)
+- 2022-04-14	resize handle visibility slightly improved
+- 2022-04-14	minor fixed for sidebar tab transition effects
+- 2022-04-14	custom color tweaks
+- 2022-04-14	fix more line height issues with headings in LP
+- 2022-04-14	fix heading font resizing
+- 2022-04-14	apply remove-dataview-title cssclass to dataviewjs as well
+- 2022-04-14	added raspberry to hover accent choice (beta)
+- 2022-04-14	fix unresolved link color in LP
+- 2022-04-13	fix multi-line-header line-height in LP (#140)
+- 2022-04-13	styling for omnisearch plugin (still in beta)
+- 2022-04-13	(internal) test yamllint
+- 2022-04-13	add yamllint test to build script
+- 2022-04-13	plugin update bar styled
+- 2022-04-12	clearer fold indicators
+- 2022-04-12	scrol
+- 2022-04-11	various complements add to dictionary button
+- 2022-04-11	lien height fixes
+- 2022-04-11	fix style setting pane view infobox
+- 2022-04-11	hotfix fonts
+- 2022-04-11	add info on font style settings reset to style settings menu
+- 2022-04-11	theme fonts overriden by new Obsidian settings, change in font variables in style settings
+- 2022-04-11	lien height improvements for writing cssclasses
+- 2022-04-11	fix unresolved link indicators in LP
+- 2022-04-11	hotfix
+- 2022-04-11	floating metadata less space on top & removed now unecessary clean-top cssclass
+- 2022-04-11	header bar hover color without delay
+- 2022-04-11	improvements to markdown editor table
+- 2022-04-11	fix tasks in LP (fix #137)
+- 2022-04-10	fix justification issues for longform / writing notes
+- 2022-04-10	another quick switcher + better command palette pins & stars emph.
+- 2022-04-10	styling for markdown table editor
+- 2022-04-10	(intrnal) use navigation markers in style settings css
+- 2022-04-09	rename postit callout to post-it
+- 2022-04-09	better beta badges
+- 2022-04-09	styling for post-it callouts
+- 2022-04-09	styled error display for non-existing images
+- 2022-04-09	added post-it callouts to beta
+- 2022-04-09	custom
+- 2022-04-09	improvements to shadow look
+- 2022-04-09	fix #135
+- 2022-04-09	fix for floating metadata font size flitch
+- 2022-04-09	meta
+- 2022-04-08	option for text-only status bar
+- 2022-04-08	fix #134
+- 2022-04-08	add overscroll to the style settings menu
+- 2022-04-08	fix for status bar in dark mode
+- 2022-04-08	minor theme browser improvements
+- 2022-04-08	better info on theme beta
+- 2022-04-08	hotfix #133
+- 2022-04-08	update readme
+- 2022-04-08	move floating metadata from beta to main
+- 2022-04-08	sidenote callouts
+- 2022-04-08	statusbar tweaks
+- 2022-04-08	fix code block copy button
+- 2022-04-08	hotfix
+- 2022-04-08	setting for trailing whitespace display
+- 2022-04-08	better spacing for trailign white space indicator
+- 2022-04-08	fixes for backlink pane
+- 2022-04-08	overhauled outline pane
+- 2022-04-08	outline
+- 2022-04-07	fix performance
+- 2022-04-07	footnotes in Reading mode do not affect line height anymore
+- 2022-04-07	new cssclass: tags-in-gutter (preview mode)
+- 2022-04-07	fix image size in LP
+- 2022-04-07	fix edit block look
+- 2022-04-07	another quick switcher alignments
+- 2022-04-07	fix unresolved links gutter indicator
+- 2022-04-07	fix heading level indicator in live preview
+- 2022-04-07	fixes for citaiton syntax in LP and underlines
+- 2022-04-07	fix footnote indicator for live preview
+- 2022-04-07	fixes for version history diff plugin
+- 2022-04-07	styling of invalid metadata blocks
+- 2022-04-06	hover editor info improved
+- 2022-04-06	fix interaction of header bar & floating metadata
+- 2022-04-06	floating yaml frontmatter added to beta
+- 2022-04-06	add floating metadata to beta
+- 2022-04-06	improve contrasts in theme browser
+- 2022-04-06	fix for dark eclipse cursor style
+- 2022-04-06	various minor fixes
+- 2022-04-06	citation syntax and is-flashing fixes
+- 2022-04-06	fixed yaml coloring issue
+- 2022-04-05	new style setting to turn of citation syntax
+- 2022-04-05	re-organized style settings
+- 2022-04-05	removed deprecated spellcheck settings
+- 2022-04-05	styled escape characters
+- 2022-04-05	callout hover effect + phone callout
+- 2022-04-05	fix emphasize of active blockquote lines
+- 2022-04-05	style setting to unlock theme beta
+- 2022-04-05	fixes for multi-color-highlights
+- 2022-04-05	active line highlight more contrast
+- 2022-04-05	finished tasks now in secondary instead of primary accent
+- 2022-04-05	remove search match highlights from command palette + QS
+- 2022-04-05	consistent search match colors
+- 2022-04-05	minor quick switcher improvements
+- 2022-04-05	update kanban lane item counter look
+- 2022-04-04	kanban item counter overhauled
+- 2022-04-04	new: Kanban Item Counter
+- 2022-04-04	kanban
+- 2022-04-04	fixes for dropdowns
+- 2022-04-04	style setting signature animation
+- 2022-04-04	style settings to customize the three highlight colors (#75)
+- 2022-04-04	coupled unresolved color to primary accent
+- 2022-04-04	fix finished task color
+- 2022-04-04	refacgtored progress and langauges
+- 2022-04-04	add orange accent (dev branch)
+- 2022-04-04	add orange-red accent
+- 2022-04-04	accent blue
+- 2022-04-04	fix syntax highlighting
+- 2022-04-04	fix for syntax highlighting
+- 2022-04-04	improved syntax highlighting
+- 2022-04-04	squarish shapes as default
+- 2022-04-04	switched to vertical line as default for active line highlight
+- 2022-04-04	styling for MathJax (fix #121)
+- 2022-04-04	fix #104
+- 2022-04-04	fix active line gutter vertical
+- 2022-04-04	refactor syntax highlighting code
+- 2022-04-03	minor tweaks for kanbans
+- 2022-04-03	file name trimming now also affects folders (#51)
+- 2022-04-03	new gutter options: active line markers, minimal line numbers
+- 2022-04-03	code block minor fixes
+- 2022-04-03	code block line wrapping option
+- 2022-04-03	Code blocks: Dracula Syntax Highlighting & Tab Size Setting
+- 2022-04-03	support for banners plugin (fix #120)
+- 2022-04-03	fix task colors
+- 2022-04-03	callout improvemenmts
+- 2022-04-03	slightly increase color intensity for heading bg
+- 2022-04-02	Add info: Hover Editor Style settings being partially overridden
+- 2022-04-02	more improvements for hover editor
+- 2022-04-02	support for Hover Editor
+- 2022-04-02	fix #131
+- 2022-04-02	toggle to turn off spoiler syntax
+- 2022-04-02	checkboxes & toggle shape for square-ish
+- 2022-04-02	re-organized style settings
+- 2022-04-02	square-ish shapes options (#74)
+- 2022-04-02	new callouts, cssclasses, and supercharged links presets
+- 2022-04-01	fix #126
+- 2022-04-01	accent colors tweaking
+- 2022-04-01	fixed headings in live preview
+- 2022-04-01	fix #124
+- 2022-04-01	custom link callout
+- 2022-04-01	more compact suggester for various complements
+- 2022-04-01	fix hiding of collapse indicators in preview mode
+- 2022-04-01	minimalistic inline backlinks
+- 2022-04-01	minor fixes for footnotes
+- 2022-04-01	backlinks button correct when pressed
+- 2022-03-31	further improvements for callouts
+- 2022-03-31	scrollbar slightly more minimal
+- 2022-03-31	fix for style settings as pane
+- 2022-03-31	more status bar options + switched default highlight color
+- 2022-03-31	minor fixes for quick switcher and another quicker switcher
+- 2022-03-30	f
+- 2022-03-29	improved build script
+- 2022-03-29	add info on unminified source css to obsidian.css
+- 2022-03-29	fixes for <progress> elements
+- 2022-03-29	new cssclass: no-inline-backlinks
+- 2022-03-28	add info on progress bars
+- 2022-03-28	left-align all settings items (#130)
+- 2022-03-28	removed indention guides, since now included natively (Obsidian 0.14)
+- 2022-03-28	fix for tasks in kanbans
+- 2022-03-28	styling of callouts & removal of pseudo-admonitions
+- 2022-03-17	New Promo Screenshot
+- 2022-03-17	support & fixes for various complements plugin
+- 2022-03-16	fix justificiation of longform / writing cssclass
+- 2022-03-16	fix scrollbar hover/active colors
+- 2022-03-16	better padding for consecutive blockquotes
+- 2022-03-16	removed obsolete core search assisstant plugin style setting
+- 2022-03-16	added ko-fi link to style settings
+- 2022-03-16	style setting icons
+- 2022-03-15	fix for jump-to-link plugin
+- 2022-03-15	remove support for QUick Jump plugin since deprecated
+- 2022-03-14	compatibility for Version History Diff Plugin
+- 2022-03-13	fix sync history list height
+- 2022-03-11	update readme
+- 2022-03-11	improvements for better command palette
+- 2022-03-08	file explorer icon for bibtex files
+- 2022-03-07	fix core search assistant styling
+- 2022-03-07	fix heading line height
+- 2022-03-04	fix dataview tasks indention when on same page as two-column-list-cssclass
+- 2022-03-01	update buttons in plugin list list properly spaced
+- 2022-03-01	update plugin links in docs to new obsidian.md links
+- 2022-02-26	support for Quick Jump Plugin
+- 2022-02-26	added styling for Obsidian quick jump
+- 2022-02-25	fix inline code in headings in LP/Preview
+- 2022-02-23	Style Setting for thin cursor
+- 2022-02-22	fix list alignment in edit mode
+- 2022-02-21	new style setting to hide attachment folders
+- 2022-02-19	fix for editor suggestions
+- 2022-02-19	fix card view of core search assistant
+- 2022-02-19	minor kanban fixes
+- 2022-02-19	fix editor suggestions for headings
+- 2022-02-19	styling for codeblocks in kanbans
+- 2022-02-18	fix kanban header icon alignment
+- 2022-02-18	update readme
+- 2022-02-18	update for 0.13.25 (no global img)
+- 2022-02-18	finalize new build script
+- 2022-02-18	test-run 3
+- 2022-02-18	test-run 2
+- 2022-02-18	test-run automatic ToC update
+- 2022-02-18	improved build script
+- 2022-02-16	added markdown-link-check
+- 2022-02-16	fix some alignment issues of list collapse indicators
+- 2022-02-16	fix collapse indicator padding
+- 2022-02-16	ol and ul better aligned
+- 2022-02-15	new cursor blink style: inversion
+- 2022-02-15	make fold placeholders visible by default
+- 2022-02-13	updated toc
+- 2022-02-11	compatibility for the Shell Commands Plugin
+- 2022-02-10	removed focused line highlight, since there is now the Active Visual Line Plugin
+- 2022-02-10	minify to reduce file size
+- 2022-02-10	testrun minifying
+- 2022-02-10	set
+- 2022-02-10	compatibility with settings search added
+- 2022-02-10	refactored annotation tags
+- 2022-02-10	anno
+- 2022-02-10	settings menu sidebar restyling
+- 2022-02-09	add Absolve from @mulfolk to the customization docs
+- 2022-02-09	fix pdf issues with max view and alignment
+- 2022-02-08	fix unresolved link indicators in kanbans & supercharged links empty tooltips
+- 2022-02-08	new style setting option to turn off graying out inactive panes
+- 2022-02-08	spacing for card gaps
+- 2022-02-08	further fixes for longform compile
+- 2022-02-08	fixes for longform overhaul
+- 2022-02-08	overhaul of longform compile tab
+- 2022-02-07	fix #113
+- 2022-02-07	remove setting group titles
+- 2022-02-07	inline code in headings has proper size
+- 2022-02-07	update bug_report.yml
+- 2022-02-07	Merge pull request #112 from chrisgrieser/revert-110-main
+- 2022-02-07	Revert "Patch for a single `!important`"
+- 2022-02-07	Merge pull request #110 from tingmelvin/main
+- 2022-02-07	Merge branch 'chrisgrieser:main' into main
+- 2022-02-06	option to remove sliding pane shadows
+- 2022-02-06	Merge pull request #109 from tingmelvin/main
+- 2022-02-06	fixed blink for defaults ettings
+- 2022-02-06	new cssclass: remove-dataview-title
+- 2022-02-06	smoother header bar transition
+- 2022-02-06	improved header hover mechanics
+- 2022-02-06	headings with background – style setting to turn it off
+- 2022-02-05	new style setting to reduce the size of menus/modals (#108)
+- 2022-02-05	fix look of links in citation style (>>)
+- 2022-02-05	improved passing-over protection for hidden elements
+- 2022-02-03	fix internal links in documentation
+- 2022-02-03	added explanation of design philosophy to the docs
+- 2022-02-03	fix look of kanbans when item is being dragged
+- 2022-02-03	strikethrough finished tasks in source mode
+- 2022-02-03	remove cssclass dataview-no-task-link, since it's actually in the dataview settings
+- 2022-02-03	new cssclass: bibliography-list
+- 2022-02-02	better external link icon
+- 2022-02-02	add collapse blink to the docs
+- 2022-02-02	new cursor blink style: collapsing
+- 2022-02-02	plugin list more condensed
+- 2022-02-02	plugin list more condensed
+- 2022-02-01	footnote styling consistent across modes
+- 2022-02-01	fix for sliding panes
+- 2022-02-01	more compact core search assistant
+- 2022-02-01	fixes for link styling
+- 2022-02-01	kanban scrollbar hover/active colors
+- 2022-02-01	kanban heading sizes in cards reduced
+- 2022-02-01	transition protection for backgrounds
+- 2022-02-01	better space usage in right sidebar when conflicting with status bar
+- 2022-02-01	minor improvements to tag pane
+- 2022-02-01	unresolved links more readable
+- 2022-02-01	fix #105
+- 2022-02-01	option to turn off cursor blinking entirely
+- 2022-02-01	fixed supercharged links tooltips
+- 2022-01-31	modified phase blink values
+- 2022-01-31	New: Change Cursor Blink Styles
+- 2022-01-31	better support for multi line comments
+- 2022-01-31	fix hover of pandoc citations
+- 2022-01-31	better backdrop of prompts and suggesters
+- 2022-01-31	more styling for better command palette
+- 2022-01-30	empty state animation
+- 2022-01-30	style settings pane spacing
+- 2022-01-30	better inline-pane style setting pane
+- 2022-01-30	fix #99
+- 2022-01-30	slight transition delay to prevent accidental triggering when passing over hidden elements
+- 2022-01-30	more underline spacing for readability, thx @tingmelvin
+- 2022-01-29	Merge pull request #102 from tingmelvin/main
+- 2022-01-29	fix dark eclipse cursor in light mode
+- 2022-01-29	quicker header transition
+- 2022-01-29	fixed glitch when hovering header bar with permanently shown header bar
+- 2022-01-29	minor fix for Publish filter/search bar
+- 2022-01-29	added testimonials to docs landing page (lol)
+- 2022-01-29	minor fixes for scrollbars
+- 2022-01-28	some styling for longform compile tab
+- 2022-01-28	fix header for empty panes
+- 2022-01-28	styling for codeblock label plugin
+- 2022-01-28	Merge pull request #100 from tingmelvin/main
+- 2022-01-28	3 new cursor styles
+- 2022-01-28	Update obsidian.css
+- 2022-01-28	fix improved headers for kanbans
+- 2022-01-28	better header bar hiding
+- 2022-01-28	fix bugs with writing css class
+- 2022-01-28	update docs
+- 2022-01-28	styling core search assistant plugin
+- 2022-01-28	compatibility with footnote indicator plugin
+- 2022-01-28	coloring for core search assistant plugin
+- 2022-01-27	new annotation tag: #data
+- 2022-01-27	fix pandoc citaiton coloring in blockquotes
+- 2022-01-26	fix for quick switcher & improved prompts
+- 2022-01-26	styled Better Command Palette Plugin
+- 2022-01-26	minimalistic command palette pins
+- 2022-01-26	minor slider + button improvement
+- 2022-01-25	statusbar coloring
+- 2022-01-25	fixed look of wikilinks in pseudo-admonition source mode
+- 2022-01-24	re-enable active file in recent files plugin
+- 2022-01-24	mobile ui font
+- 2022-01-24	new style setting: mobile-specific menu font
+- 2022-01-24	🆕 new style setting: Mobile font type
+- 2022-01-23	better hidden tab bar transition
+- 2022-01-23	look hidden sidebars
+- 2022-01-23	overhaul dangling links sidebar
+- 2022-01-23	improved code block language recognition
+- 2022-01-23	inset shadows for hidden tab bars
+- 2022-01-23	smaller plugin browser buttons
+- 2022-01-22	improved contribution docs
+- 2022-01-22	better icons for docs
+- 2022-01-22	added icons
+- 2022-01-22	pretty permalinks
+- 2022-01-22	info to improve the docs
+- 2022-01-22	update mobile docs
+- 2022-01-22	favicon setup
+- 2022-01-22	added favicon
+- 2022-01-22	sluggified urls
+- 2022-01-22	Rename Index.md to index.md
+- 2022-01-22	update toc
+- 2022-01-22	proper order
+- 2022-01-22	setup github pages
+- 2022-01-21	ncier animation for hidden sidebars
+- 2022-01-21	new cssclass: list-2-col-cards
+- 2022-01-21	notices in light mode darker
+- 2022-01-21	fade out pane when working on header
+- 2022-01-21	hide sidebar tabs until hovered
+- 2022-01-21	fixes for theme browser
+- 2022-01-21	new cssclass: dataview-no-task-links
+- 2022-01-21	cleaner search suggestion box
+- 2022-01-21	fix #91
+- 2022-01-21	recent files plugin: hide active file (cause, well, it isn't recent yet?)
+- 2022-01-21	fixes for resize handle
+- 2022-01-21	fix #94
+- 2022-01-21	fix #49 and small improvements for sliding pane rotated headers
+- 2022-01-20	make floating button on mobile compatible header plugin
+- 2022-01-20	header on mobile replace with floating toggle button (#93). New Style Setting to re-enable mobile header
+- 2022-01-19	breadcrumbs matrix view improvements
+- 2022-01-19	metadata block improvements
+- 2022-01-19	fixes for inline code
+- 2022-01-19	breadcrumbs matrix view more condensed
+- 2022-01-18	add writing cssclass for 0.13.20+
+- 2022-01-18	add writing cssclass for 0.13.20+
+- 2022-01-18	small fixes for code blocks without language and inline code in LP
+- 2022-01-18	improved style settign info box
+- 2022-01-18	fix unresovled links color in Live Preview
+- 2022-01-18	displays shield.io images properly
+- 2022-01-18	consecutive blockquotes have no rounded corners in between them
+- 2022-01-18	implement option to show vault name in titlebar (when it is shown) (#92)
+- 2022-01-17	dynamic highlights plugin
+- 2022-01-17	various improvements for kanban boards
+- 2022-01-17	small scrollbar improvements
+- 2022-01-16	remove 0xad on extraction
+- 2022-01-16	added small infobox at style settings tab
+- 2022-01-16	new Style Setting: turn of only files or folders in the file explorer
+- 2022-01-14	make notices in dark mode more distinguishable
+- 2022-01-14	fix #89
+- 2022-01-14	styling for dataview inline fields (reading mode)
+- 2022-01-13	added issue template config
+- 2022-01-13	added more explanations to annotation tags template (#46)
+- 2022-01-13	fix #88
+- 2022-01-13	fix glitching input boxes
+- 2022-01-13	fix glitchy sliders
+- 2022-01-13	floating setting button to access settings without keybaord shortcut. New Style Setting to hide that button
+- 2022-01-12	fix alignment issues with admonitions
+- 2022-01-12	images with ozans image plugin are now also zoomable on clicking
+- 2022-01-12	added style setting to turn off LP heading indicator
+- 2022-01-12	better community plugin browser
+- 2022-01-11	increase blue of nord theme
+- 2022-01-11	fixes for community plugin browser
+- 2022-01-11	fixed minor issues with styling of hovered/focused input fields
+- 2022-01-11	⚠ for SlRvb's Checkboxes, now the use of the compatibility snippet is necessary (linked in repo)
+- 2022-01-10	fixed style setting for admonition icon to include quotation mark
+- 2022-01-10	fix checkboxes and admonition misalignment
+- 2022-01-10	removed Slr checkbox support for now, as not maintainable
+- 2022-01-09	fixed download numbers in community plugin browser being sticky
+- 2022-01-09	👓 new Style Setting: Line Length (#81)
+- 2022-01-09	thinner kanban scrollbar
+- 2022-01-09	added global color filters sepia & grayscale
+- 2022-01-09	modification for breadcrumb update
+- 2022-01-09	removed scrollbar background, more scrollbar thumb contrast
+- 2022-01-09	fix for pseudo admonitions in LP
+- 2022-01-09	added some missing inset shadows for interactives
+- 2022-01-09	✨ Citation Syntax: >> after > will format as cite
+- 2022-01-09	style setting option to change icon for Pseudo-Admonitions
+- 2022-01-09	✨ css-only multi-line admonitions: use >>>
+- 2022-01-09	✨ new cssclass: clean-embeds
+- 2022-01-09	contribution templates
+- 2022-01-09	✨ Built-in styling for Supercharged Links
+- 2022-01-08	fix tab icons
+- 2022-01-08	fix close button overlap
+- 2022-01-08	fix display of emojis when using emoji toolbar (#86)
+- 2022-01-08	various shadow-related fixes
+- 2022-01-08	number-font for the gutter
+- 2022-01-08	number-font for the gutter
+- 2022-01-08	exclude blockquotes without leading space from markup, too (@kometenstaub)
+- 2022-01-08	🌀 SLiding Panes with rotated headers now supported!
+- 2022-01-08	styled tabs and inset shadows
+- 2022-01-08	improved stylelint config
+- 2022-01-07	fix special characters in headings being displayed wrong + reduced file size a bit
+- 2022-01-07	unresolved link indicator (preview mode only)
+- 2022-01-07	unresolved links indicators
+- 2022-01-07	borders for sliding panes
+- 2022-01-07	fix #84
+- 2022-01-07	fix #85
+- 2022-01-06	make mobile settings more readable (@Mara-Li)
+- 2022-01-06	minor visual fixes for backlink pane
+- 2022-01-06	discord statusbar icon grayscale
+- 2022-01-06	fixed info on sliding panes
+- 2022-01-06	added link to plugin-specific isntructions
+- 2022-01-06	fixes for issue templates
+- 2022-01-06	hide line numbers on non-active non-hovered lines (+ Style Setting to re-enable)
+- 2022-01-06	collapse indicators are shown when hovered
+- 2022-01-06	finished new yaml issue forms
+- 2022-01-06	new bug report form
+- 2022-01-06	✨ collapse arrows hidden till hovered. (+ new Style Setting to disable this)
+- 2022-01-06	fixed various more issues for new public release
+- 2022-01-06	fix double bullet points for live preview
+- 2022-01-06	fix relationship lines for new release
+- 2022-01-05	fixheading level indicators in live preview for new release
+- 2022-01-05	removed cursor annotion, too annoying :P
+- 2022-01-05	subtle cursor animation (thanks @NothingIsLost)
+- 2022-01-05	reduced size of collapse indicators bc of issue with users on insider release
+- 2022-01-05	fix statusbar for plugins adding empty stuff to the stautsbar
+- 2022-01-05	do not reduce image size in kanbans
+- 2022-01-05	better issue templates
+- 2022-01-05	support for pdfs embedded with ozan's image in editor plugin
+- 2022-01-04	fix size of code in kanban cards
+- 2022-01-04	fix task checkbox size in kanbans
+- 2022-01-04	update readme
+- 2022-01-04	new style setting option to disable animations theme-wide
+- 2022-01-04	differrentiate inactive panes (#79)
+- 2022-01-04	fix kanban header when shown permanently
+- 2022-01-04	fix various issues with icon alignments (especially mobile)
+- 2022-01-04	fix notifications placement and header bar on mobile (making the theme work properly on mobile is on the to do list)
+- 2022-01-04	fix #80
+- 2022-01-03	update issue template
+- 2022-01-03	fix display of Optima (Default Heading Font) for non-Mac Users
+- 2022-01-03	graph view icon change
+- 2022-01-03	search indicator, search container, search matche sin preview mode
+- 2022-01-03	overhauled search suggestions (search pane)
+- 2022-01-03	search container (cmd+f) now more consistent with the rest of the theme
+- 2022-01-02	fix footntoe backrefs in preview mode
+- 2022-01-02	fixes for footnote indicator
+- 2022-01-02	fix editor padding to the right
+- 2022-01-02	more button distancing for #76
+- 2022-01-02	better avoidance of buttons oberlapping with macOS traffic lights (#76)
+- 2022-01-02	✨ new feature: footnote indicator in the gutter
+- 2022-01-02	stylelint order change
+- 2022-01-02	update readme
+- 2022-01-02	⚡️ New Feature: Focused Line Highlight (must be enabled in Style Settings)
+- 2022-01-01	fix font-weight of interactives
+- 2021-12-31	styled dictionary plugin context menu
+- 2021-12-31	fixed blockquotes for Legacy Editor Edit Mode
+- 2021-12-31	more redable selections
+- 2021-12-31	fix copy url button
+- 2021-12-31	minor improvements for theme and plugin browser
+- 2021-12-31	fixes and improvements for community plugin browser
+- 2021-12-30	minor fixes for community plugin browser
+- 2021-12-30	removed normal checkbox options since buggy anyway
+- 2021-12-30	color fix for text-selections + multi-cursor with different color
+- 2021-12-30	improved readability of search match outline
+- 2021-12-30	better contrast and active highlight  for blockquotes
+- 2021-12-30	fixed styling of code blocks without language
+- 2021-12-30	active list item coloring, thanks for the idea @obadiahcruz
+- 2021-12-30	fixes for get info plugin
+- 2021-12-30	rephrasing of promo screenshot text
+- 2021-12-30	fixed spacing definition between status bar
+- 2021-12-30	minor fix for status bar font size setting
+- 2021-12-29	super for obsidian current word underline
+- 2021-12-28	file size reduction through conversion of ttf fonts to woff2 fonts
+- 2021-12-28	collapse indicators improved for new editor
+- 2021-12-28	Numbered sections & subsections for the longform plugin (see Readme)
+- 2021-12-28	embeddes search results
+- 2021-12-28	"#todo" as new annotation tag
+- 2021-12-27	longform editor improvements
+- 2021-12-27	editor of longform projects ready for CM6
+- 2021-12-27	longform sidebar
+- 2021-12-27	fix #73
+- 2021-12-27	context menu icon fix
+- 2021-12-27	checkbox fix
+- 2021-12-27	fixed hr in live preview
+- 2021-12-27	improved header coloring
+- 2021-12-27	longform plugin background color now coupled to base color, with a new style setting to set hue shift
+- 2021-12-27	vault launch color fix
+- 2021-12-27	fixes for promo screenshot
+- 2021-12-27	new preset color scheme: Nord ❄️
+- 2021-12-27	heading numbering in live preview & cssclasses
+- 2021-12-27	improved changelog creation
+- 2021-12-26	better promo-screenshot
+- 2021-12-26	updated readme
+- 2021-12-26	better promo screenshot
+- 2021-12-26	removing calendar lines now working for new Editor (fix #59 again)
+- 2021-12-26	removing calendar lines now working for new Editor (fix #59 again)
+- 2021-12-26	fix max view for new editor
+- 2021-12-26	fix max view for new editor
+- 2021-12-26	updated issue templates
+- 2021-12-26	update promo screenshot
+- 2021-12-26	dataview error fix
+- 2021-12-26	code block fixes, CM5 stylingnot affecting CM6 styling anymore and vice versa
+- 2021-12-26	updated to work with Ozan's Image in Editor Plugin v.2.0.1 in new editor
+- 2021-12-26	minor fix for checkboxes
+- 2021-12-26	better post-installation info message (#69)
+- 2021-12-26	fix blank lines appearing in legacy editor (#71)
+- 2021-12-26	bug report issue template to include mode/editor info
+- 2021-12-26	fixed corners for plugin browser
+- 2021-12-26	fix #70 for mono font
+- 2021-12-26	linting, fixes for code blocks overscroll working in new editor
+- 2021-12-25	fix overscroll in hotkey setting tab
+- 2021-12-25	blockquote and codeblock overhauled
+- 2021-12-25	codeblock coloring fix
+- 2021-12-25	collapse indicators
+- 2021-12-25	improved community plugin browser
+- 2021-12-25	minor font fixes
+- 2021-12-25	better GitHub msg
+- 2021-12-25	extra info on how to access settings (#69)
+- 2021-12-25	outline relationship lines, LP improvements, sidebar font overhaul (default now: recursive), fixing crimson pro font
+- 2021-12-24	better add-hotkey coloring
+- 2021-12-24	fix font weight of signature
+- 2021-12-24	sliders follow angular/round shape
+- 2021-12-24	fixed SlRvb's username :seenoevil:
+- 2021-12-24	update link to SlVs checkboxes
+- 2021-12-24	better bold font & theme file size reduction (by using .woff2)
+- 2021-12-23	fix #68
+- 2021-12-23	fix inline code
+- 2021-12-23	updated spoiler tags to new editor
+- 2021-12-23	fixes for code styling
+- 2021-12-23	update annotation tag template to CM6
+- 2021-12-23	fixed annotaiton tags for live preview
+- 2021-12-23	styled dictionary plugin sidebar
+- 2021-12-23	kanban fixes
+- 2021-12-23	add info on two space rule
+- 2021-12-23	various live preview fixes
+- 2021-12-23	fixes for images in live preview
+- 2021-12-23	more longform improvements
+- 2021-12-22	longform improvements
+- 2021-12-22	footnotes
+- 2021-12-22	more fixes for live preview
+- 2021-12-22	block qupotes fixed for live preview
+- 2021-12-22	blockquotes
+- 2021-12-22	blockquote fixes
+- 2021-12-22	kanban improvements
+- 2021-12-22	relationship lines now work in new editor
+- 2021-12-22	nicer external link icon
+- 2021-12-21	update spellcheck info
+- 2021-12-21	more Obsidian 0.13+ fixes
+- 2021-12-21	some fixes + URL folding in CM6 source mode
+- 2021-12-21	ready for new Editor + show trailing whitespaces
+- 2021-12-21	brightness adjustments
+- 2021-12-21	fix #67
+- 2021-12-21	styled Excalidraw & fixed #64
+- 2021-12-20	notices changes
+- 2021-12-20	style ribbon & fix #66
+- 2021-12-20	add info on resize handle hovering
+- 2021-12-20	updae issue templates
+- 2021-12-20	better style setting color labelling
+- 2021-12-20	added some icons
+- 2021-12-20	dataview error
+- 2021-12-20	file explorer icons
+- 2021-12-20	added snippet for outlined material icons
+- 2021-12-20	color and scrolling fix for context menus
+- 2021-12-20	status bar height
+- 2021-12-20	implement style setting for #51
+- 2021-12-20	implement style setting option for #48
+- 2021-12-20	LP-specific issue templates
+- 2021-12-20	update readme
+- 2021-12-20	seperate folder for css snippets
+- 2021-12-20	updated annotation tag template & added instructions for it
+- 2021-12-20	updated annotation tag list
+- 2021-12-20	option to use classic color scheme
+- 2021-12-20	tweaked range of color options
+- 2021-12-20	better github link
+- 2021-12-19	abort buttons styled differently & spellcheck now wavy
+- 2021-12-19	add github info for theme when selected in theme browser
+- 2021-12-19	improved color regulation
+- 2021-12-19	improved another quick switcher prompt
+- 2021-12-19	fixes for style settings plugin as pane
+- 2021-12-19	styled language tool popovers
+- 2021-12-19	kanban color fix
+- 2021-12-19	shadow improvements
+- 2021-12-19	fix kanban backgrounds
+- 2021-12-18	color intensity fixes
+- 2021-12-18	grayscale option for favicons
+- 2021-12-18	tooltip arrows
+- 2021-12-18	fix for dataview tables with lists
+- 2021-12-18	notices & tooltips also affected by color settings
+- 2021-12-18	🎨 new style settings: adjust colors
+- 2021-12-18	support for info panel plugin
+- 2021-12-17	fix for checkboxes
+- 2021-12-17	max view disabled by default
+- 2021-12-17	hotfixes
+- 2021-12-17	button color fixes
+- 2021-12-17	switch back to oxanium
+- 2021-12-17	better button coloring
+- 2021-12-17	reduced file size
+- 2021-12-16	fixed brightness sliders working again
+- 2021-12-16	better collapse indicator preview mode
+- 2021-12-16	angular/roundish button fonts
+- 2021-12-16	longform plugin improvements
+- 2021-12-16	improved longform sidebar
+- 2021-12-16	fixes for Excalidraw plugin
+- 2021-12-16	fix links in community plugin browser readmes
+- 2021-12-16	file recovery plugin color fixes
+- 2021-12-16	blockquote left-align style setting option also applied to preview mode
+- 2021-12-15	implement #63
+- 2021-12-15	vault launch progress bar
+- 2021-12-14	fix header appearing with multiple panes
+- 2021-12-14	removed pseudo-admonistions & added compatibility to @SlVrb's checkboxes
+- 2021-12-14	fixes for input
+- 2021-12-14	fix #62
+- 2021-12-14	improved code blocks when rounded shapes are used
+- 2021-12-13	warning button fix
+- 2021-12-13	indent option for longform
+- 2021-12-13	color adjustments
+- 2021-12-13	color tweaks
+- 2021-12-13	added contribution info to readme
+- 2021-12-13	🚧 Experimental: Blue Tint in Dark Mode
+- 2021-12-12	☀️🌒 New Style Setting: Theme Brightness
+- 2021-12-12	code block background
+- 2021-12-12	fix gutter color in cm6
+- 2021-12-12	live preview issue thread info
+- 2021-12-12	added info on live preview to issue template
+- 2021-12-12	notice colors
+- 2021-12-12	hotfix tab icons
+- 2021-12-12	groundwork for color style settings
+- 2021-12-12	kanban fixes
+- 2021-12-11	kanban minor things
+- 2021-12-11	grpah icon
+- 2021-12-11	back to top links
+- 2021-12-11	better header transition
+- 2021-12-11	map of content plugin tweaks
+- 2021-12-11	fix longform header color
+- 2021-12-10	git status bar
+- 2021-12-10	icons
+- 2021-12-10	git status bar
+- 2021-12-10	minor community plugin browser improvement
+- 2021-12-10	git plugin open source view
+- 2021-12-10	git plugin open source view
+- 2021-12-09	file explorer movement fix
+- 2021-12-09	fix for favicon plugin
+- 2021-12-09	hotfix buttons
+- 2021-12-09	better button color
+- 2021-12-09	hotkey settings
+- 2021-12-08	notices and shadows
+- 2021-12-08	kanban checkbox alignment
+- 2021-12-08	changes for favicon plugin update
+- 2021-12-08	search button fix
+- 2021-12-08	fix notices in light mode
+- 2021-12-07	fix editor suggestions + more box shadows
+- 2021-12-07	update for info plugin
+- 2021-12-07	soem value fine-tuning
+- 2021-12-07	hotkey buttons
+- 2021-12-07	statusbar alignment
+- 2021-12-07	some more icons
+- 2021-12-07	reset & hotkey button
+- 2021-12-07	cleaner search & replace container with default status bar
+- 2021-12-07	fix hotkey settings pack icons
+- 2021-12-06	fix close buttons in community plugin browser
+- 2021-12-06	icon file size reduction
+- 2021-12-06	new icons
+- 2021-12-06	icons for several plugins
+- 2021-12-06	get info plugin support
+- 2021-12-05	improved breadcrumbs trail view
+- 2021-12-05	improved support for favicons plugin
+- 2021-12-05	improved suppport for link favicon plugin
+- 2021-12-05	graph controls minor fixes
+- 2021-12-05	support for link favicon plugin
+- 2021-12-05	changed external link display for Link Favicon Plugin
+- 2021-12-05	fixed suggesters on mobile
+- 2021-12-04	warnings & close buttons
+- 2021-12-04	login menu
+- 2021-12-04	emphasize features for academics more clearly
+- 2021-12-04	longform icon change
+- 2021-12-03	fix for urls in longform
+- 2021-12-03	fix search and replace buttons disappearing (#58)
+- 2021-12-02	option to remove lines in Calendar (#59)
+- 2021-12-02	fixes for blockquotes
+- 2021-12-02	positioning of notices when titlebar hidden
+- 2021-12-02	kanban hrs
+- 2021-12-02	blockquote edit mode margin
+- 2021-12-02	editor suggestions
+- 2021-12-02	outline pane lines
+- 2021-12-01	editor suggestion
+- 2021-12-01	file recovery plugin fixes
+- 2021-12-01	New feature: Focus View (must be enabled via Style Settings Plugin)
+- 2021-12-01	fixed mermaid font size
+- 2021-12-01	added changelog button
+- 2021-12-01	option to turn off relationship lines
+- 2021-12-01	fixed yaml coloring
+- 2021-12-01	fix hotkey search
+- 2021-12-01	image zoom background
+- 2021-12-01	style settings styling + style setting options re-organized + bugfix right sidebar
+- 2021-12-01	update graph control info in readme
+- 2021-12-01	graph controls only visible on hover
+- 2021-12-01	move plugin name in command palette to the left
+- 2021-11-30	image positioning (when image file is opened)
+- 2021-11-30	fix image zoom via click+hold
+- 2021-11-30	confirmation modal
+- 2021-11-30	eas-in-out
+- 2021-11-30	Breadcrumbs down view updates
+- 2021-11-30	fix overscroll being applied to kanbans
+- 2021-11-30	add style setting option to turn off active line highlighting (issue #48)
+- 2021-11-30	fix Breadcrumbs update
+- 2021-11-30	fix for latest Breadcrumbs update
+- 2021-11-29	fix input in sidebars
+- 2021-11-29	consistent modal headings
+- 2021-11-29	add modal padding
+- 2021-11-29	stylelinting tweaks
+- 2021-11-29	Section Reordnering & ToC (in the css file)
+- 2021-11-29	used stylelint-order and refined some stylelint rules
+- 2021-11-28	update readme
+- 2021-11-28	clarified some style settings option descriptions (issue #56)
+- 2021-11-28	add style setting option to re-enable scroll bars
+- 2021-11-28	status bar styling, style settings styling, issue #29
+- 2021-11-28	style setting option for issue #29
+- 2021-11-28	fixes for angular shaped
+- 2021-11-28	Option to re-enable starred pane Nav Buttons
+- 2021-11-28	angular shapes for kanbans
+- 2021-11-28	fix #45
+- 2021-11-28	fix #54
+- 2021-11-28	colored yaml option (#53)
+- 2021-11-28	tons of bugfixes
+- 2021-11-27	fix line length stylelint
+- 2021-11-27	fixes for when titlebar is shown
+- 2021-11-27	fix close button
+- 2021-11-27	update readme
+- 2021-11-26	modals & borders
+- 2021-11-26	update info on plugin usage
+- 2021-11-26	hr line
+- 2021-11-26	better breadcrumb icon
+- 2021-11-26	tab header fix
+- 2021-11-26	improved contribution section
+- 2021-11-26	removed readme preview
+- 2021-11-26	update readme
+- 2021-11-26	added ToC to css-file
+- 2021-11-26	added contribute section
+- 2021-11-26	added .stylelintrc
+- 2021-11-26	tab icons
+- 2021-11-26	image border with ozan + style settings
+- 2021-11-25	use only one AlegreyaSansSC font
+- 2021-11-25	unresolved and --nice-border
+- 2021-11-25	fix annotation tags
+- 2021-11-25	breadcrumb support + color conversion to hsl
+- 2021-11-25	stylelint
+- 2021-11-25	made stylelint autofixing part of the release workflow
+- 2021-11-25	mobile font sizes
+- 2021-11-25	fix iA Writer font format to truetype
+- 2021-11-24	push automation test
+- 2021-11-24	release automation test
+- 2021-11-24	thinner header title
+- 2021-11-24	properly strikethrough finished tasks
+- 2021-11-23	removed rounded corners from highlights since too often buggy
+- 2021-11-23	fixed changelog
+- 2021-11-23	add changelog properly
+- 2021-11-23	add changelog
+- 2021-11-23	update readme
+- 2021-11-23	fix signature font weight
+- 2021-11-22	fix external link icon for CodeMirror Options Plugin
+- 2021-11-22	more stylelinting
+- 2021-11-22	added last commit shield
+- 2021-11-22	selection color more visible
+- 2021-11-22	ran some stylelint
+- 2021-11-21	minor readme improvements
+- 2021-11-21	moved language label of code blocks
+- 2021-11-19	wider sliders
+- 2021-11-18	condensed blockquotes
+- 2021-11-18	condensed blockquotes
+- 2021-11-18	condensed blockquotes
+- 2021-11-18	updated for new moc plugin version
+- 2021-11-17	kanban light theme bg fix
+- 2021-11-17	extra-md-plugin id fix + mobile kanban dots on cards
+- 2021-11-16	reorganized style settings
+- 2021-11-16	updated issue templates
+- 2021-11-16	update issue templates
+- 2021-11-15	Table Overhaul & Setting Descriptions
+- 2021-11-15	resizable graph controls, thx @Manedblackwolf
+- 2021-11-15	table max view fix
+- 2021-11-15	statusbar tweak
+- 2021-11-15	update download numbers
+- 2021-11-15	minor fixes
+- 2021-11-15	Activity History Plugin
+- 2021-11-14	better promo screenshot
+- 2021-11-14	Merge branch 'main' of github.com:chrisgrieser/shimmering-focus
+- 2021-11-14	menu font customization #47
+- 2021-11-14	Update issue templates
+- 2021-11-14	hotfix
+- 2021-11-14	added spellcheck to readme
+- 2021-11-14	Refactored Documentation
+- 2021-11-14	alternating table & suggester item rows
+- 2021-11-13	fixed input width
+- 2021-11-13	more spellcheck options
+- 2021-11-13	spellcheck settings
+- 2021-11-13	hotfix codemirror options fold url icon
+- 2021-11-12	community browser
+- 2021-11-12	minor fix inputs
+- 2021-11-12	setting headings
+- 2021-11-12	replaced Optima-local with version from macOS
+- 2021-11-12	fonts & folder marker style setting
+- 2021-11-12	style setting descriptions
+- 2021-11-10	external link icon
+- 2021-11-07	Context Menus
+- 2021-11-05	Fix issue #40, thanks @b1uegh0st
+- 2021-11-05	Create .gitignore
+- 2021-11-05	added info for Extra MD Syntax Plugin
+- 2021-11-05	git setup
+- 2021-11-05	minor changes
+- 2021-11-02	Max View now supporting PDFs
+- 2021-10-31	Update FUNDING.yml
+- 2021-10-30	improved community plugin browser
+- 2021-10-30	added smallcaps font
+- 2021-09-05	Create FUNDING.yml
+- 2021-08-27	Initial commit

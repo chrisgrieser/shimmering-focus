@@ -4,39 +4,11 @@ Version 3.1
 Source CSS: https://github.com/chrisgrieser/shimmering-focus/blob/main/source.css
 MIT License
 ──────────────────────────────────────────────────── */
-/* @MINIFY-SPLIT-MARKER */
-
-/* ───────────────────────────────────────────────── */
-/* < Table of Content (ToC)
-──────────────────────────────────────────────────── */
-
-/* @TOC-SPLIT-MARKER */
-/*
-- Variables
-- Style Setting (YAML)
- 	- Show / Hide UI Elements (+)
- 	- Aesthetics & Custom Colors (+)
- 	- Donation Info (+)
-/* @TOC-SPLIT-MARKER */
-
-/* ───────────────────────────────────────────────── */
-/* < Variables
-──────────────────────────────────────────────────── */
-
-:root {
-	--h1: 2em;
-}
-
-/* ───────────────────────────────────────────────── */
-/* < Style Setting (YAML)
-──────────────────────────────────────────────────── */
-
-/* @MINIFY-SPLIT-MARKER */
+:root{--h1:2em}/* @MINIFY-SPLIT-MARKER */
 /* @settings
 name: Shimmering Focus
 id: shimmering-focus
 settings:
-# << Show / Hide UI Elements (+)
   -
    id: show-hide-elements
    title: Show/Hide UI Elements
@@ -51,7 +23,6 @@ settings:
    description: "Hide the floating Settings button in the bottom left. You can still access the settings by using the hotkey 'cmd + ,' (Mac) or 'ctrl + ,' (Windows/Linux)."
    default: false
   -
-# << Aesthetics & Custom Colors (+)
    id: aesthetics
    title: Color & Aesthetics
    description: Color Schemes, Custom Colors, Coloring of YAML, Coloring of Bold/Italic, Brightness, Roundness, 🆕 Native Scrollbars (macOS)
@@ -65,7 +36,6 @@ settings:
    type: class-toggle
    default: false
   -
-# << Donation Info (+)
    id: info-donation
    title: ☕️ Support Shimmering Focus
    description: "If you like the theme, you can buy me a coffee: ko-fi.com/pseudometa"
