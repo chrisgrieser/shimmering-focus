@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 3.6
+Version 3.7
 Source CSS: https://github.com/chrisgrieser/shimmering-focus/blob/main/source.css
 MIT License
 ──────────────────────────────────────────────────── */
@@ -163,24 +163,6 @@ MIT License
 /* << Obsidian Variables
 ──────────────────────────────────────────────────── */
 
-/* these are not actually used, but included here for autocompletion via LSP */
-.dummy {
-	--text-normal: var(--color-base-100);
-	--text-muted: var(--color-base-70);
-	--text-faint: var(--color-base-50);
-	--text-on-accent: hsl(0 0 100);
-	--size-2-1: 2px;
-	--size-2-2: 4px;
-	--size-2-3: 6px;
-	--text-error: var(--color-red);
-	--text-success: var(--color-green);
-	--text-selection: hsl(var(--color-accent-hsl) 0.2);
-	--text-accent: var(--color-accent);
-	--text-accent-hover: var(--color-accent-2);
-	--interactive-normal: var(--color-base-00);
-	--interactive-hover: var(--color-base-10);
-}
-
 body {
 	/* Base Fonts */
 	--font-text-theme: "iA Writer Quattro S";
@@ -207,7 +189,7 @@ body {
 
 	/* Default Accent Color: Teal
 	(will be overriden by user selection in `Appearance tab`) */
-	--accent-h: 170;
+	--accent-h: 190;
 	--accent-s: 90%;
 	--accent-l: 30%;
 
@@ -224,6 +206,43 @@ body {
 	--size-4-12: calc(12 * var(--base-size));
 	--size-4-16: calc(16 * var(--base-size));
 	--size-4-18: calc(18 * var(--base-size));
+}
+
+/* these values are unchanged from the default theme, but included here for
+   autocompletion via LSP and for quicker reference */
+.dummy {
+	--text-normal: var(--color-base-100);
+	--text-muted: var(--color-base-70);
+	--text-faint: var(--color-base-50);
+	--text-on-accent: hsl(0 0 100);
+	--text-error: var(--color-red);
+	--text-success: var(--color-green);
+	--text-selection: hsl(var(--color-accent-hsl) 0.2);
+	--text-accent: var(--color-accent);
+	--text-accent-hover: var(--color-accent-2);
+	--interactive-normal: var(--color-base-00);
+	--interactive-hover: var(--color-base-10);
+
+	--size-2-1: 2px;
+	--size-2-2: 4px;
+	--size-2-3: 6px;
+
+	--radius-s: 4px;
+	--radius-m: 8px;
+	--radius-l: 10px;
+
+	/* File navigator */
+	--nav-item-size: var(--font-ui-small);
+	--nav-item-color: var(--text-muted);
+	--nav-item-color-hover: var(--text-normal);
+	--nav-item-color-active: var(--text-normal);
+	--nav-item-color-highlighted: var(--text-accent-hover);
+	--nav-item-background-hover: var(--background-modifier-hover);
+	--nav-item-background-active: var(--background-modifier-hover);
+	--nav-item-weight: inherit;
+	--nav-item-weight-hover: inherit;
+	--nav-item-weight-active: inherit;
+	--nav-item-white-space: nowrap;
 }
 
 /* ───────────────────────────────────────────────── */
@@ -255,11 +274,13 @@ body { /* stylelint-disable-line no-duplicate-selectors */
 .theme-light {
 	--a-row: hsla(0 0% 0% / 2.5%);
 	--b-row: hsla(0 0% 0% / 7.5%);
+	--tinted-bg: hsl(var(--accent-h) calc(var(--accent-s) * 0.3) 90%);
 }
 
 .theme-dark {
 	--a-row: hsla(0 0% 0% / 15%);
 	--b-row: hsla(0 0% 0% / 30%);
+	--tinted-bg: hsl(var(--accent-h) calc(var(--accent-s) * 0.3) 10%);
 }
 
 /* ───────────────────────────────────────────────── */
@@ -267,13 +288,22 @@ body { /* stylelint-disable-line no-duplicate-selectors */
 ──────────────────────────────────────────────────── */
 .mod-root .workspace-tab-header-container,
 :is(.mod-left-split, .mod-right-split) .mod-top .workspace-tab-header-container {
-	background-color: var(--bg4);
+	background-color: var(--tinted-bg);
 }
 
 .cm-header,
 .markdown-preview-view :is(h1, h2, h3, h4, h5, h6) {
 	font-weight: 700;
 	letter-spacing: var(--heading-letter-spacing);
+}
+
+.callout-icon {
+	margin-right: 8px;
+}
+
+/* code blocks */
+pre[class*="language-"] {
+	border: var(--thin-muted-border);
 }
 
 /* ───────────────────────────────────────────────── */
@@ -367,7 +397,7 @@ body:not(.no-tabbar-header-hybrid) .mod-root .workspace-tab-header:only-child {
 	transition-delay: var(--transition-delay-passing-over-protection);
 }
 
-.mod-root .workspace-tab-header.mod-active .workspace-tab-header-inner-title {
+.mod-root .workspace-tab-header.is-active .workspace-tab-header-inner-title {
 	font-family: var(--font-heading-theme);
 	font-size: 100%;
 	letter-spacing: calc(var(--heading-letter-spacing) * 0.8);
@@ -671,7 +701,7 @@ body .dataview:not(.task-list-item-checkbox):hover {
 
 /* links */
 .BC-Matrix.BC-Matrix.BC-Matrix ol > li:hover {
-	background-color: var(--bg4);
+	background-color: var(--nav-item-background-hover);
 }
 
 .BC-Matrix.BC-Matrix ol > li .BC-Link {
