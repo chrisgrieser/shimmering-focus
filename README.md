@@ -10,7 +10,7 @@ Due to Obsidian update 0.16, I had to start a full rewrite of the theme. Since t
 
 ### Technical
 - [ ] reset issues?
-- [ ] update build script
+- [x] update build script
 - [ ] update issue templates
 - [ ] `manifest.json`
 - [ ] new Promo Screenshot (16:9, 512x288px)

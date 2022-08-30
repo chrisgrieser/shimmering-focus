@@ -29,7 +29,7 @@
 # CONFIG
 export PATH=/usr/local/bin/:/opt/homebrew/bin/:$PATH
 CSS_PATH=~"/Main Vault/.obsidian/themes/Shimmering Focus.css"
-CHANGELOG_PATH="./docs/changelog.md"
+CHANGELOG_PATH="./changelog.md"
 
 # ---------------------------
 
@@ -113,7 +113,7 @@ mv tempab unminified_css_code.css
 grep -vE "^# << " tempac > style_settings.css # remove yaml-navigation markers
 rm tempac
 cleancss unminified_css_code.css > minified_css_code.css
-cat info.css minified_css_code.css style_settings.css > obsidian.css
+cat info.css minified_css_code.css style_settings.css > theme.css
 rm info.css unminified_css_code.css minified_css_code.css style_settings.css
 
 # ------------------------------------
@@ -124,10 +124,11 @@ cp "$CSS_PATH" ./source.css
 
 # Update Theme Download numbers in README.md
 dl=$(curl -s "https://releases.obsidian.md/stats/theme" | grep -oe '"Shimmering Focus","download":[[:digit:]]*' | cut -d: -f2)
-sed -E -i '' "s/badge.*-[[:digit:]]+-/badge\/downloads-$dl-/" docs/index.md
+sed -E -i '' "s/badge.*-[[:digit:]]+-/badge\/downloads-$dl-/" ./README.md
 
 # Update changelog
-printf "---\nnav_order: 110\n---\n\n# Changelog\n" > "$CHANGELOG_PATH"
+mkdir -p "$(dirname "$CHANGELOG_PATH")"
+echo "# Changelog" > "$CHANGELOG_PATH"
 echo "- ""$(date +"%Y-%m-%d")""	$COMMIT_MSG" >> "$CHANGELOG_PATH"
 git log --pretty=format:"- %ad%x09%s" --date=short | grep -Ev "minor$" | grep -Ev "patch$" | grep -Ev "typos?$" | grep -v "refactoring" | grep -v "Add files via upload" | grep -Ev "\tDelete" | grep -Ev "\tUpdate.*\.md" | sed -E "s/\t\+ /\t/g" >> "$CHANGELOG_PATH"
 
