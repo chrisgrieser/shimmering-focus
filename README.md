@@ -1,17 +1,17 @@
 # Shimmering Focus ⟡
-![](https://img.shields.io/badge/downloads-35925-6E4E9B?style=plastic) ![](https://img.shields.io/github/last-commit/chrisgrieser/shimmering-focus?style=plastic) [![](https://img.shields.io/badge/changelog-click%20here-FFE800?style=plastic)](https://chrisgrieser.github.io/shimmering-focus/changelog/)
+![](https://img.shields.io/badge/downloads-35931-6E4E9B?style=plastic) ![](https://img.shields.io/github/last-commit/chrisgrieser/shimmering-focus?style=plastic) [![](https://img.shields.io/badge/changelog-click%20here-FFE800?style=plastic)](https://chrisgrieser.github.io/shimmering-focus/changelog/)
 
-A minimalistic [Obsidian](https://obsidian.md/) theme focused on readability and condensed information display. [7th place in Gems of the Year 2021.](https://obsidian.md/goty2021)
+A minimalistic Obsidian theme for keyboard-centric users.
 
 > "The most aggressively minimalistic theme I'm aware of."  
 > *– [Eleanor Konik, The Obsidian Roundup](https://www.obsidianroundup.org/2022-01-29/)*
 
 > "Keeps features accessible while orienting attention to where your focus needs to be. Polished look and feel without adding unnecessary bells and whistles."  
-> *- [GotY 2021 Nominator](https://forum.obsidian.md/t/obsidian-gems-of-the-year-2021-nomination-themes/28225/2?u=pseudometa)*
+> *- [7th place in Gems of the Year 2021](https://obsidian.md/goty2021), [Nomination](https://forum.obsidian.md/t/obsidian-gems-of-the-year-2021-nomination-themes/28225/2?u=pseudometa)*
 
 ## ⚠️ Obsidian 0.16
 
-Due to Obsidian update 0.16, I had to start a full rewrite of the theme. Since the theme has more than 15,000 lines of CSS, this will naturally take quite a bit of time.
+*Due to Obsidian update 0.16, I had to start a full rewrite of the theme. Since the theme has more than 15,000 lines of CSS, this will naturally take quite a bit of time.*
 
 ### Technical Roadmap for 0.16
 - [x] reset GitHub issues
@@ -20,16 +20,18 @@ Due to Obsidian update 0.16, I had to start a full rewrite of the theme. Since t
 - [x] create `manifest.json`
 - [ ] new Promo Screenshot (16:9, 512x288px)
 - [ ] new README for theme Gallery
-- [ ] 🏁 PR to `obsidian-releases`, removing `legacy` label and updating screenshot link.
+- [ ] 🎯 PR to `obsidian-releases`, removing `legacy` label and updating screenshot link.
 
 ### Feature Roadmap for 0.16
 - [x] Use New Obsidian Variables
 - [ ] Base Features (mostly hiding of UI elements)
-- [ ] 🟪🟨🟦 Gamma Color Scheme
-- [ ] Longform Plugin
 - [ ] Style Settings
-- [ ] Breadcrumbs
-- [ ] Plugin Support
+- Plugin Support
+	- [ ] Breadcrumbs
+	- [ ] Dataview
+	- [ ] AQS
+- [ ] Longform Plugin
+- [ ] Gamma Color Scheme
 - [ ] Mobile
 
 ## Donate

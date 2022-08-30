@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 3.2
+Version 3.3
 Source CSS: https://github.com/chrisgrieser/shimmering-focus/blob/main/source.css
 MIT License
 ──────────────────────────────────────────────────── */
@@ -15,8 +15,9 @@ MIT License
 - Fonts (base64 encoded)
 - Obsidian Variables
 - Removing UI Elements
+- Tags
 - Status Bar
-- Longform
+- Longform Plugin
 - Style Setting (YAML)
  	- Show / Hide UI Elements (+)
  	- Donation Info (+)
@@ -177,11 +178,15 @@ body {
 ──────────────────────────────────────────────────── */
 
 /* ───────────────────────────────────────────────── */
+/* < Tags
+──────────────────────────────────────────────────── */
+
+/* ───────────────────────────────────────────────── */
 /* < Status Bar
 ──────────────────────────────────────────────────── */
 
 /* ───────────────────────────────────────────────── */
-/* < Longform
+/* < Longform Plugin
 ──────────────────────────────────────────────────── */
 
 /* ───────────────────────────────────────────────── */

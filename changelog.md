@@ -1,4 +1,5 @@
 # Changelog
+- 2022-08-30	issue organization for 0.16
 - 2022-08-30	fonts and base variables 0.16
 - 2022-08-30	theme reset for 0.16
 - 2022-08-30	manifest.json for 0.16

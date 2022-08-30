@@ -1,0 +1,24 @@
+name: Feature Re-Creation
+description: Suggest features from the old Shimmering Focus you would like to have back
+title: "Feature Re-Creation: "
+labels: ["feature request"]
+body:
+  - type: textarea
+    id: feature-requested
+    attributes:
+      label: Feature to be re-created
+      description: Which feature would like to have back?
+    validations:
+      required: true
+  - type: textarea
+    id: screenshot
+    attributes:
+      label: Relevant Screenshot
+      description: If applicable, add screenshots or a screen recording to help explain the request.
+  - type: checkboxes
+    id: checklist
+    attributes:
+      label: Checklist
+      options:
+        - label: I updated to the latest version of the theme and checked that the feature has not been re-created yet.
+          required: true
