@@ -58,7 +58,7 @@ fi
 # YAMLLINT TEST
 # - Abort build if yaml invalid
 # - requires style settings placed at at the very bottom of the theme css
-YAMLLINT_OUTPUT=$(sed -n '/@settings/,$p' "$CSS_PATH" | tail -n+2 | sed -e '$ d'| sed -e '$ d' | yamllint - -d relaxed --no-warnings)
+YAMLLINT_OUTPUT=$(sed -n '/@settings/,$p' "$CSS_PATH" | sed '1,2d;$d'| sed '$d' | yamllint - --config-data=relaxed --no-warnings)
 if [[ $? == 1 ]]; then
 	echo "YAML ERROR"
 	echo "$YAMLLINT_OUTPUT" | tail -n+2
@@ -79,8 +79,7 @@ r=$(git rev-parse --git-dir) && r=$(cd "$r" && pwd)/ && cd "${r%%/.git/*}"
 
 # Linters
 stylelint --fix "$CSS_PATH"
-markdownlint --fix ./*.md
-markdownlint --fix docs/*.md
+markdownlint --fix ./README.md
 
 # Update ToC
 printf "/* @TOC-SPLIT-MARKER */\n/*\n" > new_toc.css
