@@ -1,5 +1,5 @@
 # Changelog
-- 2022-08-30	patch
+- 2022-08-31	patch
 - 2022-08-30	outline plugin and layouts
 - 2022-08-30	compact tab and side bar
 - 2022-08-30	remove some ui elements

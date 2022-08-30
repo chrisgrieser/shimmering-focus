@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 3.8
+Version 3.9
 Source CSS: https://github.com/chrisgrieser/shimmering-focus/blob/main/source.css
 MIT License
 ──────────────────────────────────────────────────── */
@@ -21,7 +21,7 @@ MIT License
 	- Theme Variables
 - Styling
 - Hiding & Re-Organizing UI Elements
-	- Misc
+	- Misc Hiding
 	- Settings Button & Ribbon
 	- Fold external URLs (Source Mode)
 	- Status Bar
@@ -41,7 +41,7 @@ MIT License
 - Style Setting (YAML)
  	- Show / Hide UI Elements (+)
  	- Donation Info (+)
- 	/* @TOC-SPLIT-MARKER */
+/* @TOC-SPLIT-MARKER */
 
 /* ───────────────────────────────────────────────── */
 /* < Import
@@ -256,7 +256,6 @@ body {
 	--font-text-theme: "iA Writer Quattro S";
 	--font-interface-theme: "Recursive S";
 	--font-monospace-theme: "Input Mono S";
-	--b: var(--);
 
 	--code-size: var(--font-small);
 	--footnote-size: var(--font-small);
@@ -376,7 +375,7 @@ pre[class*="language-"] {
 ──────────────────────────────────────────────────── */
 
 /* ───────────────────────────────────────────────── */
-/* << Misc
+/* << Misc Hiding
 ──────────────────────────────────────────────────── */
 body:not(.show-sidebar-toggle-buttons) .sidebar-toggle-button {
 	display: none;
@@ -386,6 +385,7 @@ body:not(.show-metadata) .frontmatter-container {
 	display: none;
 }
 
+body:not(.show-close-buttons) .modal-close-button,
 body:not(.show-close-buttons) .workspace-tab-header-inner-close-button {
 	display: none;
 }
