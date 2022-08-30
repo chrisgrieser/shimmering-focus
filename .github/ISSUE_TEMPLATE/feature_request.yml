@@ -16,18 +16,14 @@ body:
       label: Relevant Screenshot
       description: If applicable, add screenshots or a screen recording to help explain the request.
   - type: checkboxes
-    id: relevance
-    attributes:
-      label: Relevance
-      description: If it's only relevant to you, have you considered using a [CSS Snippet](https://help.obsidian.md/How+to/Add+custom+styles.md#Use+Themes+and/or+CSS+snippets)?
-      options:
-        - label: The feature would be useful to more users than just me.
-          required: true
-  - type: checkboxes
     id: checklist
     attributes:
-      label: Style Settings
+      label: Checklist
       options:
         - label: I have checked that the feature is not already available via the [Style Settings plugin](https://github.com/mgmeyers/obsidian-style-settings).
+          required: true
+        - label: The feature would be useful to more users than just me. (If it's only relevant to you, have you considered using a [CSS Snippet](https://help.obsidian.md/How+to/Add+custom+styles.md#Use+Themes+and/or+CSS+snippets)?)
+          required: true
+        - label: My issue concerns Obsidian version 0.16+ and I am not using the Legacy Editor. (Older Obsidian versions and the Lecacy Editor are not supported anymore.)
           required: true
 

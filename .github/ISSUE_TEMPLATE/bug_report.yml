@@ -34,7 +34,7 @@ body:
     attributes:
       label: Obsidian Version
       description: You can find the version in the *About* Tab of the Obsidian settings.
-      placeholder: "0.13.19"
+      placeholder: "0.16.19"
     validations:
       required: true
   - type: input
@@ -45,22 +45,6 @@ body:
       placeholder: "0.13.19"
     validations:
       required: true
-  - type: input
-    id: font-size
-    attributes:
-      label: Font Size
-      description: You can find your font size setting under the *Appearance* tab of the Obsidian settings.
-      placeholder: "16"
-    validations:
-      required: true
-  - type: checkboxes
-    id: editor
-    attributes:
-      label: Which editor are you using?
-      description: If you are using the Legacy Editor, please be aware that new features for the theme are mostly only implemented for the new editor, so it is not a bug when they are missing.
-      options:
-        - label: New Editor
-        - label: Legacy Editor
   - type: checkboxes
     id: mode
     attributes:
@@ -80,30 +64,18 @@ body:
         - label: iOS
         - label: Android
   - type: checkboxes
-    id: plugin-specific
-    attributes:
-      label: Plugin-Specific Problems
-      description: |
-        In case the problem concerns one of these plugins:
-        - Longform
-        - Kanban
-        - Sliding Panes
-        - Breadcrumbs
-        - Quick Explorer
-        - Starred (Core Plugin)
-      options:
-        - label: I took note of the [specific instructions regarding those plugins](https://chrisgrieser.github.io/shimmering-focus/plugin-specific-features/#instructions-for-specific-plugins).
-  - type: checkboxes
     id: checklist
     attributes:
       label: Checklist
       options:
         - label: I updated to the latest version of the theme (Settings → Appearance → Themes - Manage → Update).
           required: true
+        - label: If the bug occured after updating the theme, I read the last couple of entries in the [changelog](https://github.com/chrisgrieser/shimmering-focus/blob/main/docs/Changelog.md#changelog) to make sure the bug is not an intentional change. (In that case, there will most likely be a style setting to turn it off again.)
+          required: true
         - label: I made sure that the issue is related to this theme by checking that the problem does not occur with the default theme.
           required: true
         - label: In case I am missing an UI element, I have checked that it cannot be re-enabled with the [Style Settings plugin](https://github.com/mgmeyers/obsidian-style-settings).
           required: true
-        - label: If the bug occured after updating the theme, I read the last couple of entries in the [changelog](https://github.com/chrisgrieser/shimmering-focus/blob/main/docs/Changelog.md#changelog) to make sure the bug is not an intentional change. (In that case, there will most likely be a style setting to turn it off again.)
+        - label: My issue concerns Obsidian version 0.16+ and I am not using the Legacy Editor. (Older Obsidian versions and the Lecacy Editor are not supported anymore.)
           required: true
 
