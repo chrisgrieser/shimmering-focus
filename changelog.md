@@ -1,4 +1,5 @@
 # Changelog
+- 2022-08-30	outline plugin and layouts
 - 2022-08-30	compact tab and side bar
 - 2022-08-30	remove some ui elements
 - 2022-08-30	issue organization for 0.16

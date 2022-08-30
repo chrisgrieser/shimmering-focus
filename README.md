@@ -1,5 +1,5 @@
 # Shimmering Focus ⟡
-![](https://img.shields.io/badge/downloads-35955-6E4E9B?style=plastic) ![](https://img.shields.io/github/last-commit/chrisgrieser/shimmering-focus?style=plastic) [![](https://img.shields.io/badge/changelog-click%20here-FFE800?style=plastic)](https://chrisgrieser.github.io/shimmering-focus/changelog/)
+![](https://img.shields.io/badge/downloads-35961-6E4E9B?style=plastic) ![](https://img.shields.io/github/last-commit/chrisgrieser/shimmering-focus?style=plastic) [![](https://img.shields.io/badge/changelog-click%20here-FFE800?style=plastic)](https://chrisgrieser.github.io/shimmering-focus/changelog/)
 
 A minimalistic Obsidian theme for keyboard-centric users.
 
@@ -28,7 +28,7 @@ A minimalistic Obsidian theme for keyboard-centric users.
 	- [x] Ribbon
 	- [x] Settings Button :(
 	- [x] URL folding in Source Mode
-	- [x] hide tabs when only one tab
+	- [x] Tab-bar-Header-Hybrid
 	- [x] hidden sidebar tabs
 - Vim Features
 	- [x] Monolith Cursor
@@ -36,6 +36,7 @@ A minimalistic Obsidian theme for keyboard-centric users.
 - Plugin Support
 	- [x] Breadcrumbs Matrix
 	- [x] Dataview
+	- [x] Outline (Core)
 	- [ ] AQS
 	- [ ] Longform
 - [ ] Gamma Color Scheme
