@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 3.4
+Version 3.5
 Source CSS: https://github.com/chrisgrieser/shimmering-focus/blob/main/source.css
 MIT License
 ──────────────────────────────────────────────────── */
@@ -17,16 +17,21 @@ MIT License
 	- Obsidian Variables
 	- Theme Variables
 - UI Colors
-- Removing UI Elements
+- Hiding UI Elements
 	- Settings Button & Ribbon
+	- Fold external URLs (Source Mode)
 	- Status Bar
 	- Tab Bar
+	- Sidebar
 - Vim Mode
 	- Vim Cursor
 	- Vim Panel
+- CSS Classes
 - Core Plugins
 	- Outline
 - Community Plugins
+	- Dataview
+		- dataview cssclasses
 	- Breadcrumbs
 	- Longform
 - Style Setting (YAML)
@@ -183,7 +188,6 @@ body {
 	--h4-style: italic;
 	--h6-style: italic;
 	--inline-title-color: var(--text-muted);
-	--inline-title-font: var(--h1-font);
 
 	/* Default Accent Color: Teal
 	(will be overriden by user selection in `Appearance tab`) */
@@ -200,11 +204,22 @@ body { /* stylelint-disable-line no-duplicate-selectors */
 
 	--font-heading-theme: "Optima S";
 
-	--bg1: var(--background-primary);
-	--bg2: var(--background-primary-alt);
-	--bg3: var(--background-secondary);
+	--transition-delay-passing-over-protection: 200ms;
+
+	--bg1: var(--background-primary); /* 00 */
+	--bg2: var(--background-primary-alt); /* 10 */
+	--bg3: var(--background-secondary); /* 20 */
 	--bg4: var(--color-base-25);
-	--bg5: var(--color-base-30);
+	--bg5: var(--background-secondary-alt); /* 30 */
+
+	--basic-border: 2px solid var(--basic-border-color);
+	--muted-border: 2px solid var(--muted-border-color);
+	--thick-border: 4px solid var(--basic-border-color);
+	--thick-muted-border: 4px solid var(--muted-border-color);
+	--thin-border: 1px solid var(--basic-border-color);
+	--thin-muted-border: 1px solid var(--muted-border-color);
+	--muted-button-border: var(--basic-border);
+	--hr-line: var(--thick-muted-border);
 }
 
 /* ───────────────────────────────────────────────── */
@@ -216,10 +231,10 @@ body { /* stylelint-disable-line no-duplicate-selectors */
 }
 
 /* ───────────────────────────────────────────────── */
-/* < Removing UI Elements
+/* < Hiding UI Elements
 ──────────────────────────────────────────────────── */
 
-.sidebar-toggle-button {
+body:not(.show-sidebar-toggle-buttons) .sidebar-toggle-button {
 	display: none;
 }
 
@@ -231,17 +246,15 @@ body:not(.show-close-buttons) .workspace-tab-header-inner-close-button {
 	display: none;
 }
 
-body:not(.show-tab-list-button) .workspace-tab-header-tab-list,
-body:not(.show-new-tab-button) .workspace-tab-header-new-tab {
-	display: none;
-}
-
-/* << Settings Button & Ribbon */
+/* ───────────────────────────────────────────────── */
+/* << Settings Button & Ribbon
+──────────────────────────────────────────────────── */
 body:not(.show-ribbon) .workspace-ribbon.mod-left {
 	visibility: hidden;
 }
 
-body:not(.show-ribbon) .workspace-split.mod-left-split {
+body:not(.show-ribbon) .mod-left-split.is-sidedock-collapsed + .mod-root,
+body:not(.show-ribbon) .mod-left-split {
 	margin-left: calc(-1 * var(--ribbon-width));
 }
 
@@ -249,8 +262,8 @@ body:not(.show-ribbon) .side-dock-settings .side-dock-ribbon-action:last-child:h
 	background-color: var(--bg3);
 }
 
-body:not(.show-ribbons):not(.is-mobile) .side-dock-settings .side-dock-ribbon-action:last-child {
-	background-color: var(--background-modifier-border);
+body:not(.show-ribbon):not(.is-mobile) .side-dock-settings .side-dock-ribbon-action:last-child {
+	background-color: var(--bg5);
 	position: absolute;
 	bottom: 0.5em;
 	left: 0.5em;
@@ -266,7 +279,9 @@ body:not(.show-ribbons):not(.is-mobile) .side-dock-settings .side-dock-ribbon-ac
 	--frame-left-space: 50px;
 }
 
-/* Fold external URLs (Source Mode) */
+/* ───────────────────────────────────────────────── */
+/* << Fold external URLs (Source Mode)
+──────────────────────────────────────────────────── */
 body:not(.show-urls) .cm-s-obsidian:not(.is-live-preview) .cm-line:not(.cm-active) .cm-string.cm-url:not(.cm-formatting) {
 	font-size: 0;
 }
@@ -290,8 +305,63 @@ body:not(.show-urls) .cm-s-obsidian:not(.is-live-preview) .cm-line:not(.cm-activ
 /* ───────────────────────────────────────────────── */
 /* << Tab Bar
 ──────────────────────────────────────────────────── */
-.workspace-tab-header.mod-active.is-active:only-child {
 
+/* different look when only tab */
+body:not(.no-compact-one-tab) .mod-root .workspace-tab-header:not(:hover):only-child {
+	background-color: transparent;
+	box-shadow: none;
+}
+
+body:not(.no-compact-one-tab) .mod-root .workspace-tab-header:not(:hover):only-child .workspace-tab-header-inner-title {
+	font-size: 100%;
+	box-shadow: none;
+}
+
+body:not(.no-compact-one-tab) .mod-root .workspace-tab-header:not(:hover):only-child::after,
+body:not(.no-compact-one-tab) .mod-root .workspace-tab-header:not(:hover):only-child::before {
+	display: none;
+}
+
+/* hide tab buttons */
+body:not(.show-tab-list-button) .workspace-tab-header-tab-list,
+body:not(.show-new-tab-button) .workspace-tab-header-new-tab {
+	display: none;
+}
+
+/* ───────────────────────────────────────────────── */
+/* << Sidebar
+──────────────────────────────────────────────────── */
+/* hidden headers */
+body:not(.show-sidebar-tabs) .workspace-tab-header-container {
+	transition: var(--anim-duration-moderate);
+}
+
+body:not(.show-sidebar-tabs) .workspace-tab-header-container * {
+	transition: var(--anim-duration-moderate);
+	transition-property: border, opacity, margin-top; /* so transition of hovering the tab itself does not get delayed */
+}
+
+body:not(.show-sidebar-tabs) .workspace-tab-header-container:is(:hover *, :hover) {
+	transition: var(--anim-duration-moderate);
+	transition-delay: var(--transition-delay-passing-over-protection);
+}
+
+body:not(.show-sidebar-tabs) :is(.mod-left-split, .mod-right-split) .workspace-tab-header-container:not(:hover) {
+	height: 9px;
+	background-color: var(--bg4);
+}
+
+body:not(.show-sidebar-tabs) :is(.mod-left-split, .mod-right-split) .workspace-tabs.workspace-tabs.workspace-tabs.workspace-tabs .workspace-tab-header-container:hover {
+	height: var(--header-height);
+}
+
+body:not(.show-sidebar-tabs) :is(.mod-left-split, .mod-right-split) .workspace-tabs .workspace-tab-header-container:not(:hover) :is(.workspace-tab-header, .workspace-tab-header svg) {
+	opacity: 0;
+}
+
+/* fix for mac traffic lights */
+body.mod-macos:not(.show-sidebar-tabs) .mod-left-split .workspace-tabs:nth-child(3) .workspace-tab-header-container:not(:hover) {
+	height: 25px;
 }
 
 /* ───────────────────────────────────────────────── */
@@ -358,6 +428,67 @@ body:not(.show-urls) .cm-s-obsidian:not(.is-live-preview) .cm-line:not(.cm-activ
 }
 
 /* ───────────────────────────────────────────────── */
+/* < CSS Classes
+──────────────────────────────────────────────────── */
+/*
+- writing cssclass is bundled with the styling for the Longform Editor
+- dataview-related css classes are int he dataview section
+*/
+
+/* 2 column cards */
+.list-2-col-cards {
+	--card-spacing: 4px;
+}
+
+.list-2-col-cards.markdown-preview-view.markdown-preview-view ul:not(.contains-task-list) {
+	padding-left: 0;
+	columns: 2 auto;
+	column-gap: calc(var(--card-spacing) + 2px);
+}
+
+.list-2-col-cards ul:not(.contains-task-list) li {
+	background-color: var(--bg2);
+	box-shadow: var(--small-inset-shadow);
+
+	padding: 1px 10px 4px;
+	margin-bottom: var(--card-spacing);
+
+	border: var(--thin-border);
+	border-radius: var(--roundish);
+
+	page-break-inside: avoid;
+}
+
+.list-2-col-cards li:not(.task-list-item)::marker {
+	content: "";
+}
+
+.list-2-col-cards.list-2-col-cards.list-2-col-cards ul:not(.contains-task-list) li a {
+	text-decoration: none;
+}
+
+/* bibliography list */
+.bibliography-list li {
+	text-indent: -2.2em;
+	margin-left: 1.5em;
+}
+
+.bibliography-list li::marker {
+	content: "";
+}
+
+/* no inline backlinks */
+.no-inline-backlinks .embedded-backlinks {
+	display: none;
+}
+
+/* full-width */
+.full-width.full-width.full-width.full-width.full-width .markdown-preview-section,
+.full-width.full-width.full-width.full-width.full-width.markdown-source-view.mod-cm6.is-readable-line-width :is(.cm-content, .cm-contentContainer, .cm-contentContainer .cm-line) {
+	max-width: 100%;
+}
+
+/* ───────────────────────────────────────────────── */
 /* < Core Plugins
 ──────────────────────────────────────────────────── */
 
@@ -368,6 +499,97 @@ body:not(.show-urls) .cm-s-obsidian:not(.is-live-preview) .cm-line:not(.cm-activ
 /* ───────────────────────────────────────────────── */
 /* < Community Plugins
 ──────────────────────────────────────────────────── */
+/* ───────────────────────────────────────────────── */
+/* << Dataview
+──────────────────────────────────────────────────── */
+/* Styling from the "Tables" Section mostly applies */
+
+/* less indention to save space */
+:is(.block-language-dataview, .block-language-dataviewjs) > div > ul {
+	padding-left: 1rem;
+}
+
+.markdown-preview-view :is(.block-language-dataview, .block-language-dataviewjs) .result-group {
+	padding-left: 0;
+}
+
+/* errors */
+pre.dataview-error.dataview-error.dataview-error.dataview-error {
+	font-family: var(--font-monospace);
+	font-size: var(--monospace-font-size);
+	color: var(--extra-contrast);
+	background: var(--code-block-bg);
+	padding: 8px 8px 6px;
+}
+
+pre.dataview-error::before {
+	display: none;
+}
+
+pre.dataview-error::first-line {
+	color: var(--text-error);
+}
+
+/* inline fields */
+body .dataview.inline-field-value,
+body .dataview.inline-field-key {
+	font-size: var(--monospace-font-size);
+}
+
+body .dataview.inline-field-value {
+	padding-right: 8px;
+	padding-left: 6px;
+	border-top-right-radius: var(--roundish);
+	border-bottom-right-radius: var(--roundish);
+}
+
+body .dataview.inline-field-key {
+	padding-right: 6px;
+	padding-left: 8px;
+	border-bottom-left-radius: var(--roundish);
+	border-top-left-radius: var(--roundish);
+}
+
+/* Result counts */
+.dataview.small-text.small-text.small-text {
+	font-family: var(--font-monospace-theme);
+	font-size: 85%;
+
+	color: var(--text-normal);
+	background-color: var(--bg1);
+
+	padding: 1px 2.5px 0;
+	margin-left: 7px;
+
+	border: var(--thin-border);
+	border-radius: var(--roundish);
+}
+
+.dataview.small-text::before,
+.dataview.small-text::after {
+	display: none;
+}
+
+/* remove table hover, since redundant with hovers from this theme */
+body .dataview:not(.task-list-item-checkbox):hover {
+	background: none;
+	box-shadow: none;
+	cursor: default;
+}
+
+.dataview.table-view-table small {
+	font-size: 70%;
+}
+
+/* <<< dataview cssclasses */
+/* dataview tables without lines */
+.markdown-preview-view.dataview-list-in-table table.dataview > :is(thead, tbody) > tr > :is(th, td) {
+	border-left: none;
+}
+
+.remove-dataview-title :is(.block-language-dataview, .block-language-dataviewjs) h4 {
+	display: none;
+}
 
 /* ───────────────────────────────────────────────── */
 /* << Breadcrumbs
@@ -484,7 +706,7 @@ settings:
    default: false
   -
    id: show-metadata
-   title: 'Reading Mode: Re-enable Metadata-Container'
+   title: 'Reading Mode: Re-enable Metadata Container'
    type: class-toggle
    default: false
   -
