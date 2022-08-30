@@ -198,6 +198,8 @@
 			}
 		],
 
+		"declaration-no-important": true,
+
 		"indentation": ["tab", {"severity": "warning"}],
 		"font-weight-notation":  ["numeric", {"severity": "warning"}],
 
