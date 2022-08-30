@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 3.9
+Version 3.10
 Source CSS: https://github.com/chrisgrieser/shimmering-focus/blob/main/source.css
 MIT License
 ──────────────────────────────────────────────────── */
@@ -330,13 +330,11 @@ body { /* stylelint-disable-line no-duplicate-selectors */
 .theme-light {
 	--a-row: hsla(0 0% 0% / 2.5%);
 	--b-row: hsla(0 0% 0% / 7.5%);
-	--tinted-bg: hsl(var(--accent-h) calc(var(--accent-s) * 0.3) 90%);
 }
 
 .theme-dark {
 	--a-row: hsla(0 0% 0% / 15%);
 	--b-row: hsla(0 0% 0% / 30%);
-	--tinted-bg: hsl(var(--accent-h) calc(var(--accent-s) * 0.3) 10%);
 }
 
 /* ───────────────────────────────────────────────── */
@@ -367,7 +365,7 @@ pre[class*="language-"] {
 
 .mod-root .workspace-tab-header-container,
 :is(.mod-left-split, .mod-right-split) .mod-top .workspace-tab-header-container {
-	background-color: var(--tinted-bg);
+	background-color: var(--bg4);
 }
 
 /* ───────────────────────────────────────────────── */
