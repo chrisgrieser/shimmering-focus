@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 3.11
+Version 3.12
 Source CSS: https://github.com/chrisgrieser/shimmering-focus/blob/main/source.css
 MIT License
 ──────────────────────────────────────────────────── */
@@ -19,6 +19,7 @@ MIT License
 	- Obsidian Variables
 	- Theme Variables
 - Markup
+	- Images
 - UI Elements
 	- Misc Hiding
 	- Settings Button & Ribbon
@@ -43,6 +44,7 @@ MIT License
 	- Longform
 - Style Setting (YAML)
  	- Show / Hide UI Elements (+)
+ 		- Images (+)
  	- Donation Info (+)
 /* @TOC-SPLIT-MARKER */
 
@@ -255,19 +257,6 @@ MIT License
 	--checklist-done-decoration: line-through;
 	--checklist-done-color: var(--text-muted);
 
-	--color-base-00: 0;
-	--color-base-05: 0;
-	--color-base-10: 0;
-	--color-base-20: 0;
-	--color-base-25: 0;
-	--color-base-30: 0;
-	--color-base-35: 0;
-	--color-base-40: 0;
-	--color-base-50: 0;
-	--color-base-60: 0;
-	--color-base-70: 0;
-	--color-base-100: 0;
-
 	--anim-duration-none: 0;
 	--anim-duration-superfast: 70ms;
 	--anim-duration-fast: 140ms;
@@ -284,6 +273,11 @@ MIT License
 	--font-ui-small: 13px;
 	--font-ui-medium: 15px;
 	--font-ui-large: 20px;
+
+	--divider-color: var(--background-modifier-border);
+	--divider-color-hover: var(--interactive-accent);
+	--divider-width: 1px;
+	--divider-width-hover: 3px;
 }
 
 /* ───────────────────────────────────────────────── */
@@ -327,6 +321,35 @@ body {
 	--nav-item-size: var(--font-ui-small);
 }
 
+.theme-light {
+	--color-base-00: hsl(0 0% 100%);
+	--color-base-05: hsl(0 0% 99%);
+	--color-base-10: hsl(0 0% 98%);
+	--color-base-20: hsl(0 0% 96%);
+	--color-base-25: hsl(0 0% 89%);
+	--color-base-30: hsl(0 0% 88%);
+	--color-base-35: hsl(0 0% 83%);
+	--color-base-40: hsl(0 0% 74%);
+	--color-base-50: hsl(0 0% 67%);
+	--color-base-60: hsl(0 0% 44%);
+	--color-base-70: hsl(0 0% 35%);
+	--color-base-100: hsl(0 0% 13%);
+}
+
+.theme-dark {
+	--color-base-00: hsl(0 0% 12%);
+	--color-base-10: hsl(0 0% 14%);
+	--color-base-20: hsl(0 0% 15%);
+	--color-base-25: hsl(0 0% 16%);
+	--color-base-30: hsl(0 0% 21%);
+	--color-base-35: hsl(0 0% 25%);
+	--color-base-40: hsl(0 0% 33%);
+	--color-base-50: hsl(0 0% 40%);
+	--color-base-60: hsl(0 0% 60%);
+	--color-base-70: hsl(0 0% 73%);
+	--color-base-100: hsl(0 0% 85%);
+}
+
 /* ───────────────────────────────────────────────── */
 /* << Theme Variables
 ──────────────────────────────────────────────────── */
@@ -339,12 +362,18 @@ body { /* stylelint-disable-line no-duplicate-selectors */
 
 	--inactive-pane-opacity: 75%;
 	--transition-delay-passing-over-protection: 225ms;
+	--image-size: 50;
 
-	--bg1: var(--background-primary); /* 00 */
-	--bg2: var(--background-primary-alt); /* 10 */
-	--bg3: var(--background-secondary); /* 20 */
-	--bg4: var(--color-base-25);
-	--bg5: var(--background-secondary-alt); /* 30 */
+	--bg1: var(--color-base-00);
+	--bg2: var(--color-base-10);
+	--bg3: var(--color-base-20);
+	--bg5: var(--color-base-25);
+	--bg4: var(--color-base-30);
+
+	/* overwrite Obsidian variables w/ --bg colors for consistency with plugins */
+	--background-primary: var(--bg1);
+	--background-primary-alt: var(--bg2);
+	--background-secondary: var(--bg3);
 
 	--thin-border: 1px solid var(--color-base-60);
 	--basic-border: 2px solid var(--color-base-60);
@@ -383,6 +412,48 @@ body { /* stylelint-disable-line no-duplicate-selectors */
 /* code blocks */
 pre[class*="language-"] {
 	border: var(--thin-muted-border);
+}
+
+/* ───────────────────────────────────────────────── */
+/* << Images
+──────────────────────────────────────────────────── */
+
+body:not(.is-mobile) img[src]:not(:active),
+body:not(.is-mobile) .oz-image-widget-cm6 > img[src]:not(:active) {
+	max-width: calc(var(--image-size) * 1%);
+	cursor: zoom-in;
+}
+
+/* Image Alt as caption */
+body:not(.no-image-alttext-caption) .image-embed[alt]:not([alt$=".png"], [alt$=".jpg"], [alt$=".jpeg"], [alt$=".tiff"])::after {
+	display: block;
+	content: attr(alt);
+
+	font-family: var(--font-interface);
+	font-size: 0.85rem;
+	font-weight: 500;
+	font-style: italic;
+
+	color: var(--text-muted);
+
+	padding-top: 2px;
+	margin-bottom: 1em;
+}
+
+.markdown-preview-view img[src] {
+	border: var(--thin-muted-border);
+	border-radius: var(--radius-s);
+}
+
+/* centers image and image caption */
+.image-embed[alt]::after {
+	text-align: center;
+}
+
+.view-content img[src] {
+	display: block;
+	margin-right: auto;
+	margin-left: auto;
 }
 
 /* ───────────────────────────────────────────────── */
@@ -514,7 +585,7 @@ body:not(.show-new-tab-button) .workspace-tab-header-new-tab {
 	display: none;
 }
 
-/* styling */
+/* STYLING */
 .mod-root .workspace-tab-header-container-inner,
 .mod-root .workspace-tab-header-container {
 	border-bottom: 1px solid var(--bg4);
@@ -552,6 +623,17 @@ body:not(.show-sidebar-tabs) :is(.mod-left-split, .mod-right-split) .workspace-t
 
 body:not(.show-sidebar-tabs) :is(.mod-left-split, .mod-right-split) .workspace-tabs .workspace-tab-header-container:not(:hover) :is(.workspace-tab-header, .workspace-tab-header svg) {
 	opacity: 0;
+}
+
+/* STYLING */
+.mod-right-split .mod-top .workspace-tab-header-container {
+	z-index: 15;
+	border-left: var(--thin-muted-border);
+}
+
+.mod-left-split .mod-top .workspace-tab-header-container {
+	z-index: 15; /* so it's above the resize handle */
+	border-right: var(--thin-muted-border);
 }
 
 /* ───────────────────────────────────────────────── */
@@ -666,16 +748,21 @@ are not targeted by this */
 /* << Vim Panel
 ──────────────────────────────────────────────────── */
 
-.theme-dark .cm-vim-panel input {
-	background-color: var(--bg1);
-}
-
 /* the ":" or "/" enlarged */
 .cm-vim-panel > div > span {
 	font-family: "Inter" !important; /* stylelint-disable-line declaration-no-important */
 	font-size: 1.8em;
 	font-weight: 600;
 	line-height: 1em;
+}
+
+/* avoid collision with status bar */
+.cm-vim-panel {
+	margin-bottom: calc(var(--status-bar-font-size) + 5px);
+}
+
+.cm-panels.cm-panels-bottom.cm-panels-bottom {
+	background-color: var(--bg4);
 }
 
 .cm-vim-panel.cm-vim-panel input {
@@ -889,18 +976,13 @@ body .dataview:not(.task-list-item-checkbox):hover {
 	margin: 0;
 }
 
-.BC-active-note div { /* "Treat Current Note as Implied Sibling" enabled */
-	font-weight: 600;
-	color: var(--active-color);
-}
-
 body .app-container .workspace-leaf-content[data-type="BC-matrix"] .view-content {
 	padding: 0 0 3px 2px;
 }
 
 .BC-Matrix-square.BC-Matrix-square.BC-Matrix-square.BC-Matrix-square.BC-Matrix-square {
 	border: none;
-	border-bottom: var(--muted-border);
+	border-bottom: var(--thin-muted-border);
 }
 
 .BC-Matrix.BC-Matrix.BC-Matrix.BC-Matrix div {
@@ -1000,6 +1082,28 @@ settings:
    title: 'Status Bar: Hide Language Tools'
    type: class-toggle
    default: false
+  -
+# <<< Images (+)
+   id: content-settings
+   title: Images
+   type: heading
+   level: 2
+   collapsed: true
+  -
+   id: no-image-alttext-caption
+   title: Disable Alt-text as Image Caption
+   description: 'By default, the alt-text of images is used as image caption in Reading Mode.'
+   type: class-toggle
+   default: false
+  -
+   id: image-size
+   title: Size of Images
+   description: Size of Images in %
+   type: variable-number-slider
+   default: 50
+   min: 10
+   max: 100
+   step: 5
   -
 # << Donation Info (+)
    id: info-donation
