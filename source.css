@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 3.18
+Version 3.19
 Source CSS: https://github.com/chrisgrieser/shimmering-focus/blob/main/source.css
 MIT License
 ──────────────────────────────────────────────────── */
@@ -837,9 +837,14 @@ are not targeted by this */
 	color: var(--text-muted);
 }
 
+/* so bold and not bold gets rendered correctly */
+.cm-hmd-frontmatter {
+	text-rendering: geometricprecision;
+}
+
 /* keys easier to differentiate */
 .cm-hmd-frontmatter.cm-atom {
-	text-decoration: underline;
+	font-weight: 600;
 }
 
 /* ───────────────────────────────────────────────── */
