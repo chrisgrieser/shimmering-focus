@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 3.21
+Version 3.22
 Source CSS: https://github.com/chrisgrieser/shimmering-focus/blob/main/source.css
 MIT License
 ──────────────────────────────────────────────────── */
@@ -53,7 +53,7 @@ MIT License
  	- Show / Hide UI Elements (+)
  	- Status Bar (+)
  		- User Interface (+)
- 		- Images (+)
+ 		- Editor & Media (+)
  	- Donation Info (+)
  	/* @TOC-SPLIT-MARKER */
 
@@ -337,6 +337,9 @@ body {
 
 	--tab-background-active: var(--bg3);
 	--nav-item-size: var(--font-ui-small);
+
+	--line-length: 700px; /* to be set via style setting */
+	--file-line-width: var(--line-length);
 }
 
 .theme-light {
@@ -1000,9 +1003,8 @@ are not targeted by this */
 }
 
 /* full-width */
-.full-width.full-width.full-width.full-width.full-width .markdown-preview-section,
-.full-width.full-width.full-width.full-width.full-width.markdown-source-view.mod-cm6.is-readable-line-width :is(.cm-content, .cm-contentContainer, .cm-contentContainer .cm-line) {
-	max-width: 100%;
+.full-width {
+	--file-line-width: unset;
 }
 
 /* ───────────────────────────────────────────────── */
@@ -1316,12 +1318,6 @@ settings:
    description: "You can still close interfaces by pressing either '⌘W' or 'esc'."
    default: false
   -
-   id: clean-embeds
-   title: 'Reading Mode: Clean Embeds'
-   type: class-toggle
-   description: Embedded Notes integrate seamlessly with the rest of the note content.
-   default: false
-  -
 # << Status Bar (+)
    id: show-hide-elements
    title: Status Bar items
@@ -1362,22 +1358,37 @@ settings:
    type: class-toggle
    default: false
   -
-# <<< Images (+)
+# <<< Editor & Media (+)
    id: content-settings
-   title: Images
+   title: Editor and Media
    type: heading
    level: 1
    collapsed: true
   -
+   id: clean-embeds
+   title: 'Reading Mode: Clean Embeds'
+   type: class-toggle
+   description: Embedded Notes integrate seamlessly with the rest of the note content.
+   default: false
+  -
+   id: line-length
+   title: Line Length
+   description: 'The Length of the Editor Content (when the "Readable Line Length" Setting is enabled). You can use the cssclass `full-width` lift line length restrictions for individual notes.'
+   type: variable-number-slider
+   default: 700
+   min: 300
+   max: 2500
+   step: 25
+   format: px
+  -
    id: no-image-alttext-caption
-   title: Disable Alt-text as Image Caption
+   title: 'Images: Disable Alt-text as Caption'
    description: 'By default, the alt-text of images is used as image caption in Reading Mode.'
    type: class-toggle
    default: false
   -
    id: image-size
-   title: Size of Images
-   description: Size of Images in %
+   title: 'Size of Images'
    type: variable-number-slider
    default: 50
    min: 10
