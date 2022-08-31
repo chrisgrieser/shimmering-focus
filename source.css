@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 3.19
+Version 3.20
 Source CSS: https://github.com/chrisgrieser/shimmering-focus/blob/main/source.css
 MIT License
 ──────────────────────────────────────────────────── */
@@ -843,7 +843,7 @@ are not targeted by this */
 }
 
 /* keys easier to differentiate */
-.cm-hmd-frontmatter.cm-atom {
+.cm-hmd-frontmatter:is(.cm-atom, .cm-meta) {
 	font-weight: 600;
 }
 
