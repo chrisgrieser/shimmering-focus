@@ -1,5 +1,5 @@
 # Changelog
-- 2022-08-31	patch
+- 2022-08-31	add clean embeds
 - 2022-08-31	monochrome yaml display
 - 2022-08-31	fix version number in build script 3
 - 2022-08-31	fix version number in build script 2

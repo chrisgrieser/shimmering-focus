@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 3.20
+Version 3.21
 Source CSS: https://github.com/chrisgrieser/shimmering-focus/blob/main/source.css
 MIT License
 ──────────────────────────────────────────────────── */
@@ -32,6 +32,7 @@ MIT License
 	- Command Palette
 	- Sidebar
 	- Editor
+	- Clean Embeds
 	- Inactive Note
 	- Empty Note & New Tab Page
 		- YAML Frontmatter
@@ -50,10 +51,11 @@ MIT License
 	- Longform
 - Style Setting (YAML)
  	- Show / Hide UI Elements (+)
+ 	- Status Bar (+)
  		- User Interface (+)
  		- Images (+)
  	- Donation Info (+)
-/* @TOC-SPLIT-MARKER */
+ 	/* @TOC-SPLIT-MARKER */
 
 /* ───────────────────────────────────────────────── */
 /* < Fonts (base64 encoded)
@@ -195,7 +197,7 @@ body .suggestion-item.mod-complex .suggestion-hotkey:not(:last-child) {
 /* << Dummy Variables
 ──────────────────────────────────────────────────── */
 /* these values are unchanged from the default theme, but included here for
-   autocompletion via LSP and for quicker reference */
+autocompletion via LSP and for quicker reference */
 
 .dummy {
 	--text-normal: var(--color-base-100);
@@ -291,6 +293,9 @@ body .suggestion-item.mod-complex .suggestion-hotkey:not(:last-child) {
 	--divider-color-hover: var(--interactive-accent);
 	--divider-width: 1px;
 	--divider-width-hover: 3px;
+
+	--cursor: default;
+	--cursor-link: pointer;
 }
 
 /* ───────────────────────────────────────────────── */
@@ -330,7 +335,7 @@ body {
 	--accent-s: 90%;
 	--accent-l: 30%;
 
-	--tab-background-active: var(--bg2);
+	--tab-background-active: var(--bg3);
 	--nav-item-size: var(--font-ui-small);
 }
 
@@ -380,8 +385,8 @@ body { /* stylelint-disable-line no-duplicate-selectors */
 	--bg1: var(--color-base-00);
 	--bg2: var(--color-base-10);
 	--bg3: var(--color-base-20);
-	--bg5: var(--color-base-25);
 	--bg4: var(--color-base-30);
+	--bg5: var(--color-base-40);
 
 	/* overwrite Obsidian variables w/ --bg colors for consistency with plugins */
 	--background-primary: var(--bg1);
@@ -520,7 +525,7 @@ body:not(.show-ribbon) .side-dock-settings .side-dock-ribbon-action:last-child:h
 }
 
 body:not(.show-ribbon):not(.is-mobile) .side-dock-settings .side-dock-ribbon-action:last-child {
-	background-color: var(--bg5);
+	background-color: var(--bg4);
 	opacity: 1;
 
 	position: absolute;
@@ -559,6 +564,7 @@ body:not(.show-urls) .cm-s-obsidian:not(.is-live-preview) .cm-line:not(.cm-activ
 /* ───────────────────────────────────────────────── */
 /* << Status Bar
 ──────────────────────────────────────────────────── */
+.hide-longform-status-bar .status-bar-item.plugin-longform,
 .hide-languagetool-status-bar .status-bar-item.plugin-obsidian-languagetool-plugin,
 .hide-pane-relief-focus-lock-status-bar .status-bar-item.plugin-pane-relief,
 .hide-backlinks-status-bar .status-bar-item.plugin-backlink {
@@ -568,6 +574,10 @@ body:not(.show-urls) .cm-s-obsidian:not(.is-live-preview) .cm-line:not(.cm-activ
 /* smaller, when no (active) item visible */
 .status-bar {
 	min-height: 0;
+}
+
+.status-bar-item:empty {
+	padding: 0;
 }
 
 /* ───────────────────────────────────────────────── */
@@ -615,12 +625,16 @@ body:not(.show-new-tab-button) .workspace-tab-header-new-tab {
 /* STYLING */
 .mod-root .workspace-tab-header-container-inner,
 .mod-root .workspace-tab-header-container {
-	border-bottom: 1px solid var(--bg4);
+	border-bottom: var(--thin-muted-border);
 }
 
 .mod-root .workspace-tab-header-container,
 :is(.mod-left-split, .mod-right-split) .mod-top .workspace-tab-header-container {
 	background-color: var(--bg4);
+}
+
+.mod-root .workspace-tab-header-inner-title:hover {
+	cursor: grab;
 }
 
 .mod-root .workspace-tab-header-container-inner {
@@ -682,7 +696,7 @@ body input.prompt-input.prompt-input {
 .suggestion-item:is(:hover, .is-selected),
 .suggestion-item:is(:hover, .is-selected) .suggestion-prefix {
 	/* has to use a color without transparency, so the suggestion-prefix properly
-	   covers long command names */
+	covers long command names */
 	background-color: var(--bg4);
 }
 
@@ -745,7 +759,7 @@ body:not(.is-mobile) .suggestion-prefix {
 body:not(.show-sidebar-tabs) :is(.mod-left-split, .mod-right-split) :is(.workspace-tab-header-container, .workspace-tab-header-container *),
 body:not(.show-sidebar-tabs) :is(.mod-left-split, .mod-right-split) .workspace-tab-header-container:is(:hover *, :hover) {
 	transition: var(--anim-duration-moderate);
-	transition-property: opacity, height; /* so transition of hovering the tab itself does not get delayed */
+	transition-property: opacity, height, background-color; /* so transition of hovering the tab itself does not get delayed */
 	transition-delay: var(--transition-delay-passing-over-protection);
 }
 
@@ -754,8 +768,17 @@ body:not(.show-sidebar-tabs) :is(.mod-left-split, .mod-right-split) .workspace-t
 	background-color: var(--bg4);
 }
 
+body:not(.show-sidebar-tabs) :is(.mod-left-split, .mod-right-split) .workspace-tabs:not(.mod-top) .workspace-tab-header-container:hover {
+	background-color: var(--bg1);
+}
+
 body:not(.show-sidebar-tabs) :is(.mod-left-split, .mod-right-split) .workspace-tabs .workspace-tab-header-container:not(:hover) :is(.workspace-tab-header, .workspace-tab-header svg) {
 	opacity: 0;
+}
+
+/* files */
+.tree-item-inner:hover {
+	cursor: var(--cursor-link);
 }
 
 /* STYLING */
@@ -777,6 +800,32 @@ body:not(.show-sidebar-tabs) :is(.mod-left-split, .mod-right-split) .workspace-t
 .markdown-preview-view,
 .markdown-source-view.mod-cm6 .cm-scroller {
 	padding-top: var(--size-4-1);
+}
+
+/* ───────────────────────────────────────────────── */
+/* << Clean Embeds
+──────────────────────────────────────────────────── */
+
+.clean-embeds {
+	--embed-background: inherit;
+	--embed-border-left: 0px solid var(--interactive-accent);
+	--embed-border-right: none;
+	--embed-border-top: none;
+	--embed-border-bottom: none;
+	--embed-padding: 0 0 0 0;
+	--embed-font-style: inherit;
+}
+
+.clean-embeds .markdown-rendered .markdown-embed {
+	max-width: 100%;
+}
+
+.clean-embeds .markdown-rendered .markdown-embed .markdown-rendered {
+	padding-left: 0;
+}
+
+.clean-embeds .markdown-embed-link {
+	visibility: hidden;
 }
 
 /* ───────────────────────────────────────────────── */
@@ -1129,6 +1178,7 @@ body .dataview:not(.task-list-item-checkbox):hover {
 /* links */
 .BC-Matrix.BC-Matrix.BC-Matrix ol > li:hover {
 	background-color: var(--nav-item-background-hover);
+	cursor: var(--cursor-link);
 }
 
 .BC-Matrix.BC-Matrix ol > li .BC-Link {
@@ -1243,7 +1293,7 @@ settings:
    type: class-toggle
    default: false
   -
-   id: show-ribbons
+   id: show-ribbon
    title: Re-enable the Ribbon
    type: class-toggle
    description: 'The ribbon is the thin vertical bar to the very left. Without the ribbon, you can still trigger any action via the Command Palette.'
@@ -1266,6 +1316,19 @@ settings:
    description: "You can still close interfaces by pressing either '⌘W' or 'esc'."
    default: false
   -
+   id: clean-embeds
+   title: 'Reading Mode: Clean Embeds'
+   type: class-toggle
+   description: Embedded Notes integrate seamlessly with the rest of the note content.
+   default: false
+  -
+# << Status Bar (+)
+   id: show-hide-elements
+   title: Status Bar items
+   type: heading
+   level: 2
+   collapsed: true
+  -
    id: hide-backlinks-status-bar
    title: 'Status Bar: Hide Backlinks'
    type: class-toggle
@@ -1278,6 +1341,11 @@ settings:
   -
    id: hide-languagetool-status-bar
    title: 'Status Bar: Hide Language Tools'
+   type: class-toggle
+   default: false
+  -
+   id: hide-longform-status-bar
+   title: 'Status Bar: Hide Longform Word Count'
    type: class-toggle
    default: false
   -
