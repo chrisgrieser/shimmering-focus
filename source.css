@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 3.13
+Version 3.14
 Source CSS: https://github.com/chrisgrieser/shimmering-focus/blob/main/source.css
 MIT License
 ──────────────────────────────────────────────────── */
@@ -20,6 +20,7 @@ MIT License
 	- Theme Variables
 - Markup
 	- Images
+- Settings
 - UI Elements
 	- Misc Hiding
 	- Settings Button & Ribbon
@@ -39,6 +40,7 @@ MIT License
 	- Vim Panel
 - CSS Classes
 - Core Plugins
+		- Inline Backlink Pane
 	- Outline
 - Community Plugins
 	- Dataview
@@ -411,7 +413,7 @@ body { /* stylelint-disable-line no-duplicate-selectors */
 
 /* heading */
 .cm-header,
-.markdown-preview-view :is(h1, h2, h3, h4, h5, h6) {
+:is(.markdown-preview-view, .community-modal-readme) :is(h1, h2, h3, h4, h5, h6) {
 	font-weight: 700;
 	letter-spacing: var(--heading-letter-spacing);
 }
@@ -429,7 +431,7 @@ pre[class*="language-"] {
 /* << Images
 ──────────────────────────────────────────────────── */
 
-body:not(.is-mobile) img[src]:not(:active),
+body:not(.is-mobile).app-container img[src]:not(:active), /* app container, so images in modal aren't affected */
 body:not(.is-mobile) .oz-image-widget-cm6 > img[src]:not(:active) {
 	max-width: calc(var(--image-size) * 1%);
 	cursor: zoom-in;
@@ -465,6 +467,17 @@ body:not(.no-image-alttext-caption) .image-embed[alt]:not([alt$=".png"], [alt$="
 	display: block;
 	margin-right: auto;
 	margin-left: auto;
+}
+
+/* ───────────────────────────────────────────────── */
+/* < Settings
+──────────────────────────────────────────────────── */
+
+/* Community Plugins */
+
+/* redundant, since plugin name is already displayed above */
+.community-modal-readme h1:first-child {
+	display: none;
 }
 
 /* ───────────────────────────────────────────────── */
@@ -789,12 +802,6 @@ body:not(.show-sidebar-tabs) :is(.mod-left-split, .mod-right-split) .workspace-t
 	font-style: italic;
 }
 
-.workspace-tab-header[data-type="empty"]:not(.mod-active) .workspace-tab-header-inner-title::after {
-	content: " "var(--signature);
-	font-weight: 600;
-	font-style: normal;
-}
-
 .empty-state-action {
 	display: none;
 }
@@ -944,6 +951,62 @@ are not targeted by this */
 /* ───────────────────────────────────────────────── */
 /* < Core Plugins
 ──────────────────────────────────────────────────── */
+/* ───────────────────────────────────────────────── */
+/* <<< Inline Backlink Pane
+──────────────────────────────────────────────────── */
+:is(.markdown-source-view, .markdown-preview-view) .backlink-pane > .tree-item-self {
+	background-color: var(--bg2);
+}
+
+.markdown-preview-view .embedded-backlinks {
+	margin-top: var(--size-4-6);
+}
+
+.embedded-backlinks {
+	padding-top: var(--size-4-2);
+	padding-left: var(--size-4-1);
+	border-top: var(--thin-border);
+}
+
+/* minimal inline backlinks pane */
+body:not(.classic-inline-backlinks) .embedded-backlinks :is(.nav-buttons-container, .backlink-pane > .tree-item-self, .tree-item-flair, .search-result-file-match, .tree-item-icon, .search-result-file-matches, .nav-header, .search-empty-state) {
+	display: none;
+}
+
+body:not(.classic-inline-backlinks) .embedded-backlinks .search-result-container {
+	padding: 0;
+	margin-left: 0;
+}
+
+body:not(.classic-inline-backlinks) .embedded-backlinks .tree-item-self.tree-item-self {
+	font-weight: 500;
+	background: none;
+	padding-left: 0;
+}
+
+body:not(.classic-inline-backlinks) .embedded-backlinks .tree-item-inner {
+	text-decoration: underline double 1px;
+	color: var(--link-color);
+}
+
+body:not(.classic-inline-backlinks) .embedded-backlinks .tree-item.search-result {
+	margin: 0;
+}
+
+body:not(.classic-inline-backlinks) .embedded-backlinks .tree-item-self::before {
+	content: "•";
+	font-weight: 700;
+	margin-right: 5px;
+}
+
+/* fix for writing/longform notes */
+body:not(.classic-inline-backlinks) :is(.writing, .longform-leaf) .search-result-file-title {
+	font-size: calc(var(--longform-font-size) * 0.9);
+}
+
+body:not(.classic-inline-backlinks) :is(.writing, .longform-leaf) .embedded-backlinks::before {
+	font-size: calc(var(--longform-font-size) * 1.0);
+}
 
 /* ───────────────────────────────────────────────── */
 /* << Outline
