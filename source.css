@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 3.22
+Version 3.23
 Source CSS: https://github.com/chrisgrieser/shimmering-focus/blob/main/source.css
 MIT License
 ──────────────────────────────────────────────────── */
@@ -1360,7 +1360,7 @@ settings:
   -
 # <<< Editor & Media (+)
    id: content-settings
-   title: Editor and Media
+   title: Editor & Media
    type: heading
    level: 1
    collapsed: true
@@ -1373,7 +1373,7 @@ settings:
   -
    id: line-length
    title: Line Length
-   description: 'The Length of the Editor Content (when the "Readable Line Length" Setting is enabled). You can use the cssclass `full-width` lift line length restrictions for individual notes.'
+   description: 'The length of the editor content (when the "Readable Line Length" Setting is enabled). You can use the cssclass `full-width` to lift line length restrictions for individual notes.'
    type: variable-number-slider
    default: 700
    min: 300
@@ -1382,13 +1382,13 @@ settings:
    format: px
   -
    id: no-image-alttext-caption
-   title: 'Images: Disable Alt-text as Caption'
+   title: 'Images: No alt-text as caption'
    description: 'By default, the alt-text of images is used as image caption in Reading Mode.'
    type: class-toggle
    default: false
   -
    id: image-size
-   title: 'Size of Images'
+   title: 'Images: Size (Percent)'
    type: variable-number-slider
    default: 50
    min: 10
