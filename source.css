@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 3.17
+Version 3.18
 Source CSS: https://github.com/chrisgrieser/shimmering-focus/blob/main/source.css
 MIT License
 ──────────────────────────────────────────────────── */
@@ -410,6 +410,9 @@ body { /* stylelint-disable-line no-duplicate-selectors */
 /* ───────────────────────────────────────────────── */
 /* < Markup
 ──────────────────────────────────────────────────── */
+* {
+	text-underline-offset: 1px;
+}
 
 /* heading */
 .cm-header,
@@ -836,7 +839,7 @@ are not targeted by this */
 
 /* keys easier to differentiate */
 .cm-hmd-frontmatter.cm-atom {
-	color: var(--text-accent);
+	text-decoration: underline;
 }
 
 /* ───────────────────────────────────────────────── */
