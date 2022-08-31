@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 3.10
+Version 3.11
 Source CSS: https://github.com/chrisgrieser/shimmering-focus/blob/main/source.css
 MIT License
 ──────────────────────────────────────────────────── */
@@ -12,21 +12,24 @@ MIT License
 
 /* @TOC-SPLIT-MARKER */
 /*
-- Import
 - Fonts (base64 encoded)
 - Temporary Bug Fixes
 - Variables
 	- Dummy Variables
 	- Obsidian Variables
 	- Theme Variables
-- Styling
-- Hiding & Re-Organizing UI Elements
+- Markup
+- UI Elements
 	- Misc Hiding
 	- Settings Button & Ribbon
 	- Fold external URLs (Source Mode)
 	- Status Bar
 	- Tab Bar
 	- Sidebar
+	- Editor
+	- Inactive Note
+	- Empty Note & New Tab Page
+		- YAML Frontmatter
 - Vim Mode
 	- Vim Cursor
 	- Vim Panel
@@ -42,12 +45,6 @@ MIT License
  	- Show / Hide UI Elements (+)
  	- Donation Info (+)
 /* @TOC-SPLIT-MARKER */
-
-/* ───────────────────────────────────────────────── */
-/* < Import
-──────────────────────────────────────────────────── */
-/* should automate lsp-css completions, but somehow does not? */
-@import "app.css";
 
 /* ───────────────────────────────────────────────── */
 /* < Fonts (base64 encoded)
@@ -198,9 +195,21 @@ MIT License
 	--interactive-normal: var(--color-base-00);
 	--interactive-hover: var(--color-base-10);
 
+	/* the --size variables are not supposed to be changed */
 	--size-2-1: 2px;
 	--size-2-2: 4px;
 	--size-2-3: 6px;
+	--size-4-1: 4px;
+	--size-4-2: 8px;
+	--size-4-3: 12px;
+	--size-4-4: 16px;
+	--size-4-5: 20px;
+	--size-4-6: 24px;
+	--size-4-8: 32px;
+	--size-4-12: 48px;
+	--size-4-16: 64px;
+	--size-4-18: 72px;
+
 	--icon-size: var(--icon-m);
 
 	--radius-s: 4px;
@@ -245,6 +254,36 @@ MIT License
 	--checkbox-border-color-hover: var(--text-muted);
 	--checklist-done-decoration: line-through;
 	--checklist-done-color: var(--text-muted);
+
+	--color-base-00: 0;
+	--color-base-05: 0;
+	--color-base-10: 0;
+	--color-base-20: 0;
+	--color-base-25: 0;
+	--color-base-30: 0;
+	--color-base-35: 0;
+	--color-base-40: 0;
+	--color-base-50: 0;
+	--color-base-60: 0;
+	--color-base-70: 0;
+	--color-base-100: 0;
+
+	--anim-duration-none: 0;
+	--anim-duration-superfast: 70ms;
+	--anim-duration-fast: 140ms;
+	--anim-duration-moderate: 300ms;
+	--anim-duration-slow: 560ms;
+
+	/* Relative font sizes */
+	--font-smallest: 0.8em;
+	--font-smaller: 0.875em;
+	--font-small: 0.933em;
+
+	/* UI font sizes */
+	--font-ui-smaller: 12px;
+	--font-ui-small: 13px;
+	--font-ui-medium: 15px;
+	--font-ui-large: 20px;
 }
 
 /* ───────────────────────────────────────────────── */
@@ -284,33 +323,22 @@ body {
 	--accent-s: 90%;
 	--accent-l: 30%;
 
-	/* Layout sizing (padding and margins) */
-	/* half of the values */
-	--base-size: 3px; /* base in app.css is 4px */
-	--size-4-1: calc(1 * var(--base-size));
-	--size-4-2: calc(2 * var(--base-size));
-	--size-4-3: calc(3 * var(--base-size));
-	--size-4-4: calc(4 * var(--base-size));
-	--size-4-5: calc(5 * var(--base-size));
-	--size-4-6: calc(6 * var(--base-size));
-	--size-4-8: calc(8 * var(--base-size));
-	--size-4-12: calc(12 * var(--base-size));
-	--size-4-16: calc(16 * var(--base-size));
-	--size-4-18: calc(18 * var(--base-size));
-
 	--tab-background-active: var(--bg2);
+	--nav-item-size: var(--font-ui-small);
 }
 
 /* ───────────────────────────────────────────────── */
 /* << Theme Variables
 ──────────────────────────────────────────────────── */
 body { /* stylelint-disable-line no-duplicate-selectors */
+	--signature: "⟡";
 	--icon-font: "Material Icons (Filled)";
 
 	--font-heading-theme: "Optima S";
 	--heading-letter-spacing: 1.5px;
 
-	--transition-delay-passing-over-protection: 200ms;
+	--inactive-pane-opacity: 75%;
+	--transition-delay-passing-over-protection: 225ms;
 
 	--bg1: var(--background-primary); /* 00 */
 	--bg2: var(--background-primary-alt); /* 10 */
@@ -318,9 +346,9 @@ body { /* stylelint-disable-line no-duplicate-selectors */
 	--bg4: var(--color-base-25);
 	--bg5: var(--background-secondary-alt); /* 30 */
 
-	--thin-border: 1px solid var(--color-accent-1);
-	--basic-border: 2px solid var(--color-accent-1);
-	--thick-border: 4px solid var(--color-accent-1);
+	--thin-border: 1px solid var(--color-base-60);
+	--basic-border: 2px solid var(--color-base-60);
+	--thick-border: 4px solid var(--color-base-60);
 
 	--thin-muted-border: 1px solid var(--color-base-35);
 	--muted-border: 2px solid var(--color-base-35);
@@ -338,7 +366,7 @@ body { /* stylelint-disable-line no-duplicate-selectors */
 }
 
 /* ───────────────────────────────────────────────── */
-/* < Styling
+/* < Markup
 ──────────────────────────────────────────────────── */
 
 /* heading */
@@ -357,19 +385,8 @@ pre[class*="language-"] {
 	border: var(--thin-muted-border);
 }
 
-/* tab bar */
-.mod-root .workspace-tab-header-container-inner,
-.mod-root .workspace-tab-header-container {
-	border-bottom: 1px solid var(--bg4);
-}
-
-.mod-root .workspace-tab-header-container,
-:is(.mod-left-split, .mod-right-split) .mod-top .workspace-tab-header-container {
-	background-color: var(--bg4);
-}
-
 /* ───────────────────────────────────────────────── */
-/* < Hiding & Re-Organizing UI Elements
+/* < UI Elements
 ──────────────────────────────────────────────────── */
 
 /* ───────────────────────────────────────────────── */
@@ -406,9 +423,14 @@ body:not(.show-ribbon) .side-dock-settings .side-dock-ribbon-action:last-child:h
 
 body:not(.show-ribbon):not(.is-mobile) .side-dock-settings .side-dock-ribbon-action:last-child {
 	background-color: var(--bg5);
+	opacity: 1;
+
 	position: absolute;
 	bottom: 0.5em;
 	left: 0.5em;
+
+	border: var(--thin-muted-border);
+
 	visibility: visible;
 }
 
@@ -440,8 +462,14 @@ body:not(.show-urls) .cm-s-obsidian:not(.is-live-preview) .cm-line:not(.cm-activ
 /* << Status Bar
 ──────────────────────────────────────────────────── */
 .hide-languagetool-status-bar .status-bar-item.plugin-obsidian-languagetool-plugin,
+.hide-pane-relief-focus-lock-status-bar .status-bar-item.plugin-pane-relief,
 .hide-backlinks-status-bar .status-bar-item.plugin-backlink {
 	display: none;
+}
+
+/* smaller, when no (active) item visible */
+.status-bar {
+	min-height: 0;
 }
 
 /* ───────────────────────────────────────────────── */
@@ -449,28 +477,20 @@ body:not(.show-urls) .cm-s-obsidian:not(.is-live-preview) .cm-line:not(.cm-activ
 ──────────────────────────────────────────────────── */
 
 /* different look when only tab */
+:is(.mod-top, .mod-root) .workspace-tab-header-container {
+	/* cannot modify --header-height, since it would also affect the sidebar tabs that are not top */
+	height: 33px;
+}
+
 body:not(.no-tabbar-header-hybrid) .mod-root .workspace-tab-header-container:not(:hover) .workspace-tab-header:only-child {
 	width: 350px;
 	background-color: transparent;
 	box-shadow: none;
 }
 
-body:not(.no-tabbar-header-hybrid) .mod-root .workspace-tab-header:only-child .workspace-tab-header-inner-title,
-body:not(.no-tabbar-header-hybrid) .mod-root .workspace-tab-header:only-child::before,
-body:not(.no-tabbar-header-hybrid) .mod-root .workspace-tab-header:only-child::after,
-body:not(.no-tabbar-header-hybrid) .mod-root .workspace-tab-header:only-child {
-	transition: var(--anim-duration-moderate);
-	transition-delay: var(--transition-delay-passing-over-protection);
-}
-
-.mod-root .workspace-tab-header.is-active .workspace-tab-header-inner-title {
-	font-family: var(--font-heading-theme);
-	font-size: 100%;
-	letter-spacing: calc(var(--heading-letter-spacing) * 0.8);
-}
-
 body:not(.no-tabbar-header-hybrid) .mod-root .workspace-tab-header-container:not(:hover) .workspace-tab-header:only-child .workspace-tab-header-inner-title {
-	font-size: var(--h1-size);
+	font-family: var(--font-heading-theme);
+	font-size: calc(var(--h1-size) * 0.95);
 	letter-spacing: var(--heading-letter-spacing);
 	box-shadow: none;
 }
@@ -480,38 +500,137 @@ body:not(.no-tabbar-header-hybrid) .mod-root .workspace-tab-header-container:not
 	opacity: 0;
 }
 
+body:not(.no-tabbar-header-hybrid) .mod-root .workspace-tab-header:only-child .workspace-tab-header-inner-title,
+body:not(.no-tabbar-header-hybrid) .mod-root .workspace-tab-header:only-child::before,
+body:not(.no-tabbar-header-hybrid) .mod-root .workspace-tab-header:only-child::after,
+body:not(.no-tabbar-header-hybrid) .mod-root .workspace-tab-header:only-child {
+	transition-duration: var(--anim-duration-moderate);
+	transition-delay: var(--transition-delay-passing-over-protection);
+}
+
 /* hide tab buttons */
 body:not(.show-tab-list-button) .workspace-tab-header-tab-list,
 body:not(.show-new-tab-button) .workspace-tab-header-new-tab {
 	display: none;
 }
 
+/* styling */
+.mod-root .workspace-tab-header-container-inner,
+.mod-root .workspace-tab-header-container {
+	border-bottom: 1px solid var(--bg4);
+}
+
+.mod-root .workspace-tab-header-container,
+:is(.mod-left-split, .mod-right-split) .mod-top .workspace-tab-header-container {
+	background-color: var(--bg4);
+}
+
+.mod-root .workspace-tab-header-container-inner {
+	margin-top: 2px;
+}
+
 /* ───────────────────────────────────────────────── */
 /* << Sidebar
 ──────────────────────────────────────────────────── */
+:is(.mod-left-split, .mod-right-split) .mod-top .workspace-tab-header-container-inner {
+	padding-bottom: 4px;
+	margin-top: 4px;
+}
+
 /* hidden headers */
 body:not(.show-sidebar-tabs) :is(.mod-left-split, .mod-right-split) :is(.workspace-tab-header-container, .workspace-tab-header-container *),
 body:not(.show-sidebar-tabs) :is(.mod-left-split, .mod-right-split) .workspace-tab-header-container:is(:hover *, :hover) {
 	transition: var(--anim-duration-moderate);
+	transition-property: opacity, height; /* so transition of hovering the tab itself does not get delayed */
 	transition-delay: var(--transition-delay-passing-over-protection);
 }
 
-body:not(.show-sidebar-tabs) :is(.mod-left-split, .mod-right-split) .workspace-tab-header-container:not(:hover) {
+body:not(.show-sidebar-tabs) :is(.mod-left-split, .mod-right-split) .workspace-tabs:not(.mod-top) .workspace-tab-header-container:not(:hover) {
 	height: 9px;
 	background-color: var(--bg4);
-}
-
-body:not(.show-sidebar-tabs) :is(.mod-left-split, .mod-right-split) .workspace-tabs.workspace-tabs.workspace-tabs.workspace-tabs .workspace-tab-header-container:hover {
-	height: var(--header-height);
 }
 
 body:not(.show-sidebar-tabs) :is(.mod-left-split, .mod-right-split) .workspace-tabs .workspace-tab-header-container:not(:hover) :is(.workspace-tab-header, .workspace-tab-header svg) {
 	opacity: 0;
 }
 
-/* fix for mac traffic lights */
-body.mod-macos:not(.show-sidebar-tabs) .mod-left-split .workspace-tabs:nth-child(3) .workspace-tab-header-container:not(:hover) {
-	height: 25px;
+/* ───────────────────────────────────────────────── */
+/* << Editor
+──────────────────────────────────────────────────── */
+
+/* save space at the top */
+.markdown-preview-view,
+.markdown-source-view.mod-cm6 .cm-scroller {
+	padding-top: var(--size-4-1);
+}
+
+/* ───────────────────────────────────────────────── */
+/* << Inactive Note
+──────────────────────────────────────────────────── */
+.workspace-leaf:not(.mod-active) .workspace-leaf-content[data-type="markdown"] {
+	opacity: var(--inactive-pane-opacity);
+	transition: var(--anim-duration-slow);
+}
+
+.no-dimmed-inactive-pane {
+	--inactive-pane-opacity: 100%;
+}
+
+/* if there is more than one pane, highlight the currently focussed one */
+.mod-root .workspace-tabs:not(:only-of-type).mod-active .workspace-tab-header-container-inner,
+.mod-root .workspace-tabs:not(:only-of-type).mod-active .workspace-tab-header-container {
+	border-bottom-color: var(--text-accent);
+}
+
+/* ───────────────────────────────────────────────── */
+/* << Empty Note & New Tab Page
+──────────────────────────────────────────────────── */
+
+.workspace-tab-header[data-type="empty"]:not(:only-child) {
+	font-style: italic;
+}
+
+.workspace-tab-header[data-type="empty"]:not(.mod-active) .workspace-tab-header-inner-title::after {
+	content: " "var(--signature);
+	font-weight: 600;
+	font-style: normal;
+}
+
+.empty-state-action {
+	display: none;
+}
+
+/* mod-root ensures that "Plugin no longer active" messages
+are not targeted by this */
+.mod-root .empty-state-title {
+	font-size: 0;
+}
+
+.mod-root .empty-state-title::after {
+	content: var(--signature);
+	font-size: 8rem;
+	font-weight: 500;
+	color: var(--text-muted);
+	transition: var(--anim-duration-slow);
+}
+
+.mod-root .empty-state-title:hover::after {
+	color: var(--text-accent);
+}
+
+/* ───────────────────────────────────────────────── */
+/* <<< YAML Frontmatter
+──────────────────────────────────────────────────── */
+
+/* the "---"" */
+.cm-def.cm-hmd-frontmatter {
+	letter-spacing: 0.1rem;
+	color: var(--text-muted);
+}
+
+/* keys easier to differentiate */
+.cm-hmd-frontmatter.cm-atom {
+	color: var(--text-accent);
 }
 
 /* ───────────────────────────────────────────────── */
@@ -536,11 +655,6 @@ body.mod-macos:not(.show-sidebar-tabs) .mod-left-split .workspace-tabs:nth-child
 	outline-color: hsl(220 10% 80%);
 }
 
-.no-vim-cursor-blinking .cm-vimCursorLayer {
-	animation: none !important; /* stylelint-disable-line declaration-no-important */
-}
-
-/* unfocused */
 .cm-editor:not(.cm-focused) .cm-fat-cursor {
 	color: transparent;
 	background-color: transparent;
@@ -647,6 +761,7 @@ body.mod-macos:not(.show-sidebar-tabs) .mod-left-split .workspace-tabs:nth-child
 
 /* alternating row colors */
 /* prevents double-layered row colors */
+body:not(.no-alternating-rows) .outline > .tree-item:nth-child(odd),
 body:not(.no-alternating-rows) .outline .tree-item-children .tree-item:nth-child(odd) {
 	background-color: var(--a-row);
 }
@@ -672,41 +787,12 @@ body:not(.no-alternating-rows) .outline .tree-item-children .tree-item:nth-child
 	padding-left: 0;
 }
 
-/* errors */
-pre.dataview-error.dataview-error.dataview-error.dataview-error {
-	font-family: var(--font-monospace);
-	font-size: var(--monospace-font-size);
-	color: var(--extra-contrast);
-	background: var(--code-block-bg);
-	padding: 8px 8px 6px;
-}
-
 pre.dataview-error::before {
 	display: none;
 }
 
 pre.dataview-error::first-line {
 	color: var(--text-error);
-}
-
-/* inline fields */
-body .dataview.inline-field-value,
-body .dataview.inline-field-key {
-	font-size: var(--monospace-font-size);
-}
-
-body .dataview.inline-field-value {
-	padding-right: 8px;
-	padding-left: 6px;
-	border-top-right-radius: var(--roundish);
-	border-bottom-right-radius: var(--roundish);
-}
-
-body .dataview.inline-field-key {
-	padding-right: 6px;
-	padding-left: 8px;
-	border-bottom-left-radius: var(--roundish);
-	border-top-left-radius: var(--roundish);
 }
 
 /* Result counts */
@@ -771,7 +857,9 @@ body .dataview:not(.task-list-item-checkbox):hover {
 }
 
 .BC-Matrix.BC-Matrix ol > li .BC-Link {
-	color: var(--extra-contrast);
+	font-family: var(--font-interface-theme);
+	font-size: var(--nav-item-size);
+	color: var(--nav-item-color);
 }
 
 .BC-Matrix.BC-Matrix.BC-Matrix.BC-Matrix ol > li .BC-Link {
@@ -898,13 +986,18 @@ settings:
    description: "You can still close interfaces by pressing either '⌘W' or 'esc'."
    default: false
   -
-   id: hide-languagetool-status-bar
-   title: 'Status Bar: Hide Language Tools'
+   id: hide-backlinks-status-bar
+   title: 'Status Bar: Hide Backlinks'
    type: class-toggle
    default: false
   -
-   id: hide-backlinks-status-bar
-   title: 'Status Bar: Hide Backlinks'
+   id: hide-pane-relief-focus-lock-status-bar
+   title: 'Status Bar: Hide Pane Relief Focus Lock'
+   type: class-toggle
+   default: false
+  -
+   id: hide-languagetool-status-bar
+   title: 'Status Bar: Hide Language Tools'
    type: class-toggle
    default: false
   -

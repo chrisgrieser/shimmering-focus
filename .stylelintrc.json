@@ -224,7 +224,7 @@
 
 		"length-zero-no-unit": [true, {"severity": "warning", "ignore": ["custom-properties"]} ],
 		"number-leading-zero": ["always", {"severity": "warning"} ],
-		"number-max-precision": [2, {"ignoreProperties": ["letter-spacing"] }],
+		"number-max-precision": [2, {"ignoreProperties": ["letter-spacing"], "ignoreUnits":["em", "rem"] }],
 		"time-min-milliseconds": [200, {"severity": "warning"}],
 
 		"shorthand-property-no-redundant-values": [true, {"severity": "warning"} ],
@@ -294,14 +294,14 @@
 		"selector-combinator-space-before": "always",
 		"selector-descendant-combinator-no-non-space": [true, {"severity": "warning"} ],
 		"selector-list-comma-newline-after": "always",
-		"selector-list-comma-space-before": "never",
+		"selector-list-comma-space-before": ["never", {"severity": "warning"} ],
 		"selector-max-empty-lines": 0,
 		"selector-pseudo-class-parentheses-space-inside": "never",
 		"selector-pseudo-element-colon-notation": "double",
 
 		"value-list-comma-newline-after": "never-multi-line",
 		"value-list-comma-space-after": "always-single-line",
-		"value-list-comma-space-before": "never",
+		"value-list-comma-space-before": ["never", {"severity": "warning"} ],
 		"value-list-max-empty-lines": 1
 	}
 }
