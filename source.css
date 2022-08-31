@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 3.12
+Version 3.13
 Source CSS: https://github.com/chrisgrieser/shimmering-focus/blob/main/source.css
 MIT License
 ──────────────────────────────────────────────────── */
@@ -26,6 +26,9 @@ MIT License
 	- Fold external URLs (Source Mode)
 	- Status Bar
 	- Tab Bar
+- Prompts
+	- QuickSwitcher
+	- Command Palette
 	- Sidebar
 	- Editor
 	- Inactive Note
@@ -41,9 +44,11 @@ MIT License
 	- Dataview
 		- dataview cssclasses
 	- Breadcrumbs
+	- Hider
 	- Longform
 - Style Setting (YAML)
  	- Show / Hide UI Elements (+)
+ 		- User Interface (+)
  		- Images (+)
  	- Donation Info (+)
 /* @TOC-SPLIT-MARKER */
@@ -173,6 +178,12 @@ MIT License
 .workspace-split.mod-root .workspace-tab-header.is-active::before,
 .workspace-split.mod-root .workspace-tab-header.is-active::after {
 	box-shadow: inset 0 0 0 var(--tab-outline-width) var(--tab-outline-color), 0 0 0 calc(var(--tab-curve) * 4) var(--tab-background-active);
+}
+
+/* https://discord.com/channels/686053708261228577/716028884885307432/1014486688522850347 */
+body .suggestion-item.mod-complex .suggestion-hotkey:not(:last-child) {
+	margin-right: 10px;
+	margin-left: 0;
 }
 
 /* ───────────────────────────────────────────────── */
@@ -375,21 +386,21 @@ body { /* stylelint-disable-line no-duplicate-selectors */
 	--background-primary-alt: var(--bg2);
 	--background-secondary: var(--bg3);
 
-	--thin-border: 1px solid var(--color-base-60);
-	--basic-border: 2px solid var(--color-base-60);
-	--thick-border: 4px solid var(--color-base-60);
+	--thin-border: 1px solid var(--color-base-50);
+	--basic-border: 2px solid var(--color-base-50);
+	--thick-border: 4px solid var(--color-base-50);
 
 	--thin-muted-border: 1px solid var(--color-base-35);
 	--muted-border: 2px solid var(--color-base-35);
 	--thick-muted-border: 4px solid var(--color-base-35);
 }
 
-.theme-light {
+.theme-light { /* stylelint-disable-line no-duplicate-selectors */
 	--a-row: hsla(0 0% 0% / 2.5%);
 	--b-row: hsla(0 0% 0% / 7.5%);
 }
 
-.theme-dark {
+.theme-dark { /* stylelint-disable-line no-duplicate-selectors */
 	--a-row: hsla(0 0% 0% / 15%);
 	--b-row: hsla(0 0% 0% / 30%);
 }
@@ -600,12 +611,118 @@ body:not(.show-new-tab-button) .workspace-tab-header-new-tab {
 	margin-top: 2px;
 }
 
+/* ───────────────────────────────────────────────────
+/* < Prompts
+/* << QuickSwitcher
+─────────────────────────────────────────────────── */
+/* also partially applies to the Editor Suggestions */
+
+div.prompt-results {
+	padding: var(--size-2-1);
+	margin-top: 0;
+}
+
+body input.prompt-input.prompt-input {
+	padding: var(--size-4-3);
+	border-bottom: var(--thin-border);
+}
+
+/* item descriptions */
+.suggestion-note {
+	line-height: 1.3em;
+}
+
+.suggestion-empty,
+.prompt-instructions {
+	display: none;
+}
+
+/* hide suggestion highlights (only annoying) */
+.prompt :is(.suggestion-content, .suggestion-prefix) .suggestion-highlight {
+	font-weight: 500;
+}
+
+.prompt .suggestion-item :is(.suggestion-note, .suggestion-prefix) {
+	font-size: var(--font-smaller);
+	font-style: italic;
+	color: var(--text-muted);
+}
+
+.suggestion-flair {
+	top: 5px;
+	left: 3px;
+}
+
+.suggestion-item:is(:hover, .is-selected) .suggestion-flair {
+	opacity: 0.6;
+}
+
+/* Alternating row colors */
+.suggestion-item:nth-child(odd):not(:hover, .is-selected) .suggestion-prefix,
+.suggestion-item:nth-child(odd):not(:hover, .is-selected) {
+	background-color: var(--bg2);
+}
+
+.suggestion-item:is(:hover, .is-selected),
+.suggestion-item:is(:hover, .is-selected) .suggestion-prefix {
+	/* has to use a color without transparency, so the suggestion-prefix properly
+	   covers long command names */
+	background-color: var(--bg4);
+}
+
+/* ───────────────────────────────────────────────────
+/* << Command Palette
+─────────────────────────────────────────────────── */
+/* (everything from QuickSwitcher also applies) */
+
+body:not(.is-mobile) .suggestion-prefix::after {
+	display: none;
+}
+
+.prompt-input[placeholder^="Select a command"] ~ .prompt-results .suggestion-item {
+	padding-left: var(--size-4-2);
+}
+
+/* fix casing for lowercased commands
+(imagine fixing other people's spelling via CSS, lol) */
+.prompt-input[placeholder^="Select a command"] ~ .prompt-results .suggestion-content::first-letter {
+	text-transform: uppercase;
+}
+
+/* to anchor the plugin names below relative to this */
+body:not(.is-mobile) .prompt .suggestion-item {
+	position: relative;
+}
+
+body:not(.is-mobile) .suggestion-prefix {
+	background-color: var(--bg1);
+	position: absolute;
+	right: 140px;
+	padding-left: var(--size-2-3);
+}
+
+/* mac os has modifier key symbols, requiring slightly different placement */
+.mod-macos:not(.is-mobile) .suggestion-prefix {
+	right: 110px;
+}
+
+/* hide placeholder */
+.prompt .prompt-input::placeholder {
+	color: transparent;
+}
+
 /* ───────────────────────────────────────────────── */
 /* << Sidebar
 ──────────────────────────────────────────────────── */
 :is(.mod-left-split, .mod-right-split) .mod-top .workspace-tab-header-container-inner {
-	padding-bottom: 4px;
-	margin-top: 4px;
+	padding-bottom: var(--size-4-1);
+	margin-top: var(--size-4-1);
+}
+
+/* Overlaying Sidebars */
+.overlaying-right-sidebar .mod-right-split {
+	position: absolute;
+	right: 0;
 }
 
 /* hidden headers */
@@ -848,8 +965,8 @@ are not targeted by this */
 
 /* alternating row colors */
 /* prevents double-layered row colors */
-body:not(.no-alternating-rows) .outline > .tree-item:nth-child(odd),
-body:not(.no-alternating-rows) .outline .tree-item-children .tree-item:nth-child(odd) {
+.outline > .tree-item:nth-child(odd),
+.outline .tree-item-children .tree-item:nth-child(odd) {
 	background-color: var(--a-row);
 }
 
@@ -1007,6 +1124,17 @@ body .app-container .workspace-leaf-content[data-type="BC-matrix"] .view-content
 }
 
 /* ───────────────────────────────────────────────── */
+/* << Hider
+──────────────────────────────────────────────────── */
+/* Hider is actually not needed with this theme,
+but the hider CSS for ribbon-hiding and this theme's
+CSS are incompatible, requiring this override */
+
+body.hider-ribbon .workspace-ribbon.mod-left {
+	display: unset;
+}
+
+/* ───────────────────────────────────────────────── */
 /* << Longform
 ──────────────────────────────────────────────────── */
 
@@ -1023,7 +1151,6 @@ settings:
   -
    id: show-hide-elements
    title: Show/Hide UI Elements
-   description: Re-enable elements hidden by this theme
    type: heading
    level: 1
    collapsed: true
@@ -1083,11 +1210,24 @@ settings:
    type: class-toggle
    default: false
   -
+# <<< User Interface (+)
+   id: user-interface
+   title: User Interface
+   type: heading
+   level: 1
+   collapsed: true
+  -
+   id: overlaying-right-sidebar
+   title: Overlaying Right Sidebar
+   description: 'The right sidebar is placed on top of the editor instead of making the editor more narrow (i.e. the behavior on mobile).'
+   type: class-toggle
+   default: false
+  -
 # <<< Images (+)
    id: content-settings
    title: Images
    type: heading
-   level: 2
+   level: 1
    collapsed: true
   -
    id: no-image-alttext-caption
