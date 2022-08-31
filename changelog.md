@@ -1,4 +1,5 @@
 # Changelog
+- 2022-08-31	fix version number in build script 3
 - 2022-08-31	fix version number in build script 2
 - 2022-08-31	fix version number in build script
 - 2022-08-30	outline plugin and layouts
