@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 3.23
+Version 3.24
 Source CSS: https://github.com/chrisgrieser/shimmering-focus/blob/main/source.css
 MIT License
 ──────────────────────────────────────────────────── */
@@ -1320,28 +1320,28 @@ settings:
   -
 # << Status Bar (+)
    id: show-hide-elements
-   title: Status Bar items
+   title: Status Bar Items
    type: heading
    level: 2
    collapsed: true
   -
    id: hide-backlinks-status-bar
-   title: 'Status Bar: Hide Backlinks'
+   title: Hide Backlinks Count
    type: class-toggle
    default: false
   -
    id: hide-pane-relief-focus-lock-status-bar
-   title: 'Status Bar: Hide Pane Relief Focus Lock'
+   title: Hide Pane Relief Focus Lock
    type: class-toggle
    default: false
   -
    id: hide-languagetool-status-bar
-   title: 'Status Bar: Hide Language Tools'
+   title: Hide Language Tools
    type: class-toggle
    default: false
   -
    id: hide-longform-status-bar
-   title: 'Status Bar: Hide Longform Word Count'
+   title: Hide Longform Word Count
    type: class-toggle
    default: false
   -
