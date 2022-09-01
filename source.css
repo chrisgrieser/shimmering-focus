@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 3.24
+Version 3.25
 Source CSS: https://github.com/chrisgrieser/shimmering-focus/blob/main/source.css
 MIT License
 ──────────────────────────────────────────────────── */
@@ -26,6 +26,7 @@ MIT License
 	- Settings Button & Ribbon
 	- Fold external URLs (Source Mode)
 	- Status Bar
+	- Header Bar (Tab Title Bar)
 	- Tab Bar
 - Prompts
 	- QuickSwitcher
@@ -336,7 +337,7 @@ body {
 	--accent-l: 30%;
 
 	--tab-background-active: var(--bg3);
-	--nav-item-size: var(--font-ui-small);
+	--nav-item-size: var(--font-ui-medium);
 
 	--line-length: 700px; /* to be set via style setting */
 	--file-line-width: var(--line-length);
@@ -584,6 +585,27 @@ body:not(.show-urls) .cm-s-obsidian:not(.is-live-preview) .cm-line:not(.cm-activ
 }
 
 /* ───────────────────────────────────────────────── */
+/* << Header Bar (Tab Title Bar)
+──────────────────────────────────────────────────── */
+/* 🏴‍☠️ jdaniel */
+
+/* `:not(:focus-within)` ensures the file can still be renamed via hotkey */
+body:not(.normal-header-bar, .is-mobile) .view-header:not(:focus-within) {
+	height: 0;
+	border: none;
+}
+
+body:not(.normal-header-bar, .is-mobile) .view-action:not(:last-child) {
+	display: none;
+}
+
+body:not(.normal-header-bar, .is-mobile) .view-header .view-actions {
+	position: sticky;
+	margin-top: var(--size-4-5);
+	margin-right: calc(var(--size-4-3) * -1);
+}
+
+/* ───────────────────────────────────────────────── */
 /* << Tab Bar
 ──────────────────────────────────────────────────── */
 
@@ -594,7 +616,7 @@ body:not(.show-urls) .cm-s-obsidian:not(.is-live-preview) .cm-line:not(.cm-activ
 }
 
 body:not(.no-tabbar-header-hybrid) .mod-root .workspace-tab-header-container:not(:hover) .workspace-tab-header:only-child {
-	width: 350px;
+	width: 400px;
 	background-color: transparent;
 	box-shadow: none;
 }
@@ -604,11 +626,6 @@ body:not(.no-tabbar-header-hybrid) .mod-root .workspace-tab-header-container:not
 	font-size: calc(var(--h1-size) * 0.95);
 	letter-spacing: var(--heading-letter-spacing);
 	box-shadow: none;
-}
-
-body:not(.no-tabbar-header-hybrid) .mod-root .workspace-tab-header-container:not(:hover) .workspace-tab-header:only-child::after,
-body:not(.no-tabbar-header-hybrid) .mod-root .workspace-tab-header-container:not(:hover) .workspace-tab-header:only-child::before {
-	opacity: 0;
 }
 
 body:not(.no-tabbar-header-hybrid) .mod-root .workspace-tab-header:only-child .workspace-tab-header-inner-title,
@@ -626,6 +643,15 @@ body:not(.show-new-tab-button) .workspace-tab-header-new-tab {
 }
 
 /* STYLING */
+.mod-root .workspace-tab-header::after,
+.mod-root .workspace-tab-header::before {
+	display: none;
+}
+
+.mod-root .workspace-tab-header-inner-title {
+	margin-bottom: -2px;
+}
+
 .mod-root .workspace-tab-header-container-inner,
 .mod-root .workspace-tab-header-container {
 	border-bottom: var(--thin-muted-border);
@@ -641,7 +667,7 @@ body:not(.show-new-tab-button) .workspace-tab-header-new-tab {
 }
 
 .mod-root .workspace-tab-header-container-inner {
-	margin-top: 2px;
+	margin-top: var(--size-2-2);
 }
 
 /* ───────────────────────────────────────────────────
@@ -1283,6 +1309,7 @@ settings:
    type: class-toggle
    description: "Hide the floating Settings button in the bottom left. You can still access the settings by using the hotkey '⌘,' (Mac) or 'ctrl ,' (Windows/Linux)."
    default: false
+
   -
    id: show-metadata
    title: 'Reading Mode: Re-enable Metadata Container'
@@ -1292,6 +1319,12 @@ settings:
    id: no-tabbar-header-hybrid
    title: Disable Tab-Bar-Header-Hybrid
    description: 'By default, this theme turns the Tab Bar into a Header Bar. It turns back into a Tab Bar on hover or when another tab is opened. This can save space, as you can turn off Inline Titles and the Header Bar.'
+   type: class-toggle
+   default: false
+  -
+   id: normal-header-bar
+   title: Re-enable the Header Bar (Tab Title Bar)
+   description: 'By default, this theme removes the header bar and only leaves thje "More Options" button at the top right. You can still toggle reading/editing mode and rename your current file with the respective command in the command palette or a hotkey. (Note that this setting has no effect, if "Show tab title bar" in the Appearance settings is disabled.)'
    type: class-toggle
    default: false
   -
