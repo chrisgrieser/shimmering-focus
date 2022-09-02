@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 3.35
+Version 3.36
 Source CSS: https://github.com/chrisgrieser/shimmering-focus/blob/main/source.css
 MIT License
 ──────────────────────────────────────────────────── */
@@ -211,7 +211,8 @@ MIT License
 /* << Unchanged Obsidian Variables
 ──────────────────────────────────────────────────── */
 /* these values are unchanged from the default theme, but included here for
-autocompletion via LSP and for quicker reference */
+autocompletion via LSP and for quicker reference
+https://www.youtube.com/watch?v=yl0pvIRTWWo&t=7s */
 
 .dummy {
 	--text-normal: var(--color-base-100);
@@ -321,6 +322,10 @@ autocompletion via LSP and for quicker reference */
 	--font-ui-medium: 15px;
 	--font-ui-large: 20px;
 
+	--code-size: var(--font-smaller);
+	--code-background: var(--background-primary-alt);
+	--footnote-size: var(--font-smaller);
+
 	--divider-color: var(--background-modifier-border);
 	--divider-color-hover: var(--interactive-accent);
 	--divider-width: 1px;
@@ -339,9 +344,6 @@ body {
 	--font-text-theme: "iA Writer Quattro S";
 	--font-interface-theme: "Recursive S";
 	--font-monospace-theme: "Input Mono S";
-
-	--code-size: var(--font-small);
-	--footnote-size: var(--font-small);
 
 	/* Headings (inline-titles inherit h1 styling) */
 	--h1-font: var(--font-heading-theme);
@@ -374,6 +376,10 @@ body {
 
 	--line-length: 700px; /* to be set via style setting */
 	--file-line-width: var(--line-length);
+
+	--blockquote-border-thickness: 8px;
+	--blockquote-border-color: var(--bg5);
+	--blockquote-background-color: var(--bg2);
 }
 
 .theme-light {
@@ -477,7 +483,7 @@ body { /* stylelint-disable-line no-duplicate-selectors */
 
 	--codeblock-border: var(--thin-muted-border);
 	--codeblock-roundness: var(--radius-s);
-	--code-block-bg: var(--bg2);
+
 	--code-block-alt-bg: var(--bg5);
 	--slight-code-roundish: calc(var(--radius-s) * 0.5);
 }
@@ -544,11 +550,6 @@ body:not(.no-heading-bg) .markdown-source-view .cm-line .cm-inline-code.cm-heade
 	border-radius: 0;
 }
 
-/* fixes when background color changes, e.g. writing css class */
-.cm-s-obsidian span.cm-inline-code.cm-formatting-code {
-	background-color: var(--code-block-bg);
-}
-
 /* ───────────────────────────────────────────────── */
 /* <<< Code Blocks
 ──────────────────────────────────────────────────── */
@@ -580,7 +581,6 @@ body .markdown-source-view.mod-cm6 .cm-line.HyperMD-codeblock {
 }
 
 div.HyperMD-codeblock-bg:not(.HyperMD-codeblock-begin-bg) {
-	background-color: var(--code-block-bg);
 	border-right: var(--codeblock-border);
 	border-left: var(--codeblock-border);
 }
@@ -594,7 +594,6 @@ div.HyperMD-codeblock-bg:not(.HyperMD-codeblock-begin-bg) {
 
 /* Code Blocks in Reading Mode */
 .markdown-preview-view.markdown-preview-view pre {
-	background-color: var(--code-block-bg);
 	padding: 0;
 	margin-top: var(--size-4-2);
 	border: var(--codeblock-border);
@@ -602,7 +601,6 @@ div.HyperMD-codeblock-bg:not(.HyperMD-codeblock-begin-bg) {
 }
 
 .markdown-preview-view pre code {
-	background-color: var(--code-block-bg);
 	padding: var(--size-4-1) var(--size-4-2);
 }
 
@@ -766,16 +764,9 @@ body:not(.no-codeblock-line-numbers) .HyperMD-codeblock-end .cm-formatting-code-
 /* ───────────────────────────────────────────────── */
 /* << Blockquotes
 ──────────────────────────────────────────────────── */
-blockquote,
-.callout,
-.HyperMD-quote {
-	--blockquote-border-width: var(--size-4-2);
-	--blockquote-bg: var(--bg3);
-}
 
-body .markdown-preview-view blockquote,
 .cm-line.HyperMD-quote.HyperMD-quote.HyperMD-quote {
-	border-left: var(--blockquote-border-width) solid var(--basic-border-color);
+	border-left: var(--blockquote-border-thickness) solid var(--blockquote-border-color);
 }
 
 .cm-hmd-indent-in-quote,
@@ -786,8 +777,8 @@ body .markdown-preview-view blockquote,
 }
 
 /* edit mode & live preview */
-.HyperMD-quote.HyperMD-quote.HyperMD-quote.HyperMD-quote {
-	background-color: var(--blockquote-bg);
+.HyperMD-quote.HyperMD-quote.HyperMD-quote {
+	background-color: var(--blockquote-background-color);
 	padding: 3px 10px;
 	border-radius: var(--radius-s);
 }
@@ -795,13 +786,6 @@ body .markdown-preview-view blockquote,
 /* less padding between quote blocks */
 .HyperMD-quote:not(.HyperMD-callout) + .HyperMD-quote.HyperMD-quote.HyperMD-quote {
 	padding-top: 0;
-}
-
-/* the ">" */
-.HyperMD-quote .cm-formatting.cm-formatting-quote {
-	font-weight: 600;
-	font-style: normal;
-	color: var(--text-muted);
 }
 
 /* style links in blockquotes, e.g. quote sources */
@@ -821,23 +805,18 @@ body .markdown-preview-view blockquote,
 	white-space: pre;
 
 	height: 1.5em;
-	width: var(--blockquote-border-width);
+	width: var(--blockquote-border-thickness);
 
-	background-color: var(--basic-border-color);
+	background-color: var(--blockquote-border-color);
 
 	position: absolute;
 
 	margin-top: -12px;
-	margin-left: calc(-1 * (var(--blockquote-border-width) + 4px));
-}
-
-.HyperMD-quote.cm-active + .HyperMD-quote::before,
-.HyperMD-quote + .HyperMD-quote.cm-active::before {
-	z-index: -1;
+	margin-left: calc(-1 * (var(--blockquote-border-thickness)) - 4px);
 }
 
 .HyperMD-quote + .HyperMD-quote.HyperMD-quote-lazy::before {
-	margin-left: calc(-1 * (var(--blockquote-border-width) + 10px));
+	margin-left: calc(-1 * (var(--blockquote-border-thickness) + 10px));
 }
 
 .HyperMD-quote + .HyperMD-quote::after {
@@ -846,19 +825,16 @@ body .markdown-preview-view blockquote,
 	height: 1em;
 	width: 0.5em;
 
-	background-color: var(--blockquote-bg);
+	background-color: var(--blockquote-background-color);
 
 	position: absolute;
-	top: -3px;
+	top: -8px;
 	right: 0;
 }
 
 /* Reading Mode */
 .markdown-preview-view blockquote {
-	background-color: var(--blockquote-bg);
-	padding: 0.35em 0.8em 0.5em 0.7em;
-	margin: 1.2em 0;
-	border: none;
+	padding: var(--size-2-1) var(--size-4-3);
 	border-radius: var(--radius-s);
 }
 
@@ -872,6 +848,15 @@ body .markdown-preview-view blockquote,
 body:not(.blockquotes-left-aligned) .app-container :is(.markdown-preview-view blockquote, .HyperMD-quote) {
 	text-align: justify;
 	hyphens: auto;
+}
+
+blockquote,
+.cm-hmd-indent-in-quote,
+.HyperMD-quote.HyperMD-quote-1,
+.cm-quote.cm-inline-code,
+blockquote code {
+	font-size: var(--font-small);
+	line-height: 1.4;
 }
 
 /* ───────────────────────────────────────────────── */
@@ -1050,10 +1035,10 @@ body:not(.no-floating-metadata):not(.is-mobile) :is(.frontmatter.language-yaml, 
 	max-width: calc(var(--line-length) + 3.4rem);
 
 	position: fixed;
-	right: 0;
+	right: -2px;
 	z-index: 100;
 
-	padding: 4px 2rem 5px 7px;
+	padding: 4px 3rem 4px 8px;
 	margin: 0;
 }
 
@@ -1102,15 +1087,25 @@ body:not(.no-floating-metadata):not(.is-mobile) :is(.frontmatter.language-yaml, 
 	margin-right: 0.5rem;
 }
 
+/* unset some interfering codeblock styling with floating YAML */
+body:not(.no-floating-metadata):not(.is-mobile) .frontmatter.language-yaml::before {
+	background: none;
+}
+
+/* unset some interfering codeblock styling with floating YAML */
+body:not(.no-floating-metadata):not(.is-mobile) .frontmatter.language-yaml:not(.mod-failed):hover::before {
+	display: none;
+}
+
 /* Positioning of the buttons */
 :root { /* stylelint-disable-line no-duplicate-selectors */
-	--floating-metadata-top-header-visible: 2rem;
+	--floating-metadata-top-header-visible: 2.2rem;
 	--floating-metadata-top-no-header: 0.2rem;
 }
 
 :is(.longform-leaf, .writing) {
 	--floating-metadata-top-header-visible: 2.5rem;
-	--floating-metadata-top-no-header: 2rem;
+	--floating-metadata-top-no-header: 0.5rem;
 }
 
 body:not(.show-view-header) :is(.longform-leaf, .writing),
@@ -1227,7 +1222,7 @@ body:not(.normal-header-bar, .is-mobile) .view-header:not(:focus-within) {
 }
 
 /* hide reading/editing toggle */
-body:not(.normal-header-bar, .is-mobile) .view-header:not(:focus-within) .view-action:nth-last-child(2) {
+body:not(.normal-header-bar, .is-mobile) .view-header:not(:focus-within) .view-action:nth-last-child(4) {
 	display: none;
 }
 
@@ -1499,10 +1494,13 @@ body:not(.show-sidebar-tabs) :is(.mod-left-split, .mod-right-split) :is(.workspa
 
 body:not(.show-sidebar-tabs) :is(.mod-left-split, .mod-right-split) .workspace-tabs:not(.mod-top) .workspace-tab-header-container:not(:hover) {
 	height: 9px;
-	background-color: var(--bg1);
 }
 
-body:not(.show-sidebar-tabs) :is(.mod-left-split, .mod-right-split) .workspace-tabs:not(.mod-top) .workspace-tab-header-container:hover {
+.theme-light:not(.show-sidebar-tabs) :is(.mod-left-split, .mod-right-split) .workspace-tabs:not(.mod-top) .workspace-tab-header-container:not(:hover) {
+	background-color: var(--bg2);
+}
+
+body:not(.show-sidebar-tabs) :is(.mod-left-split, .mod-right-split) .workspace-tabs:not(.mod-top) .workspace-tab-header-container {
 	background-color: var(--bg1);
 }
 
@@ -1934,13 +1932,9 @@ body .another-quick-switcher__status__count-input {
 
 /* Numbered Hotkey tip */
 .is-mobile .another-quick-switcher__item__hot-key-guide,
-body:not(.mod-macos) .another-quick-switcher__item__hot-key-guide::before,
+.another-quick-switcher__item__hot-key-guide::before,
 .another-quick-switcher__item__hot-key-guide::after {
 	display: none;
-}
-
-.mod-macos .another-quick-switcher__item__hot-key-guide::before {
-	content: "⌘";
 }
 
 body:not(.is-mobile) .another-quick-switcher__item__hot-key-guide {
@@ -1961,7 +1955,7 @@ body:not(.is-mobile) .another-quick-switcher__item__hot-key-guide {
 }
 
 body .another-quick-switcher__item__directory {
-	margin-right: 1.5rem;
+	margin-right: 1rem;
 }
 
 /* hide create button on desktop when no results for AQS */
