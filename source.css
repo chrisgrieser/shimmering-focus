@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 3.31
+Version 3.32
 Source CSS: https://github.com/chrisgrieser/shimmering-focus/blob/main/source.css
 MIT License
 ──────────────────────────────────────────────────── */
@@ -19,6 +19,10 @@ MIT License
 	- Theme Variables
 - Markup
 	- Misc Markup
+	- Code
+		- Inline Code
+		- Code Blocks
+		- language replacements
 	- Headings
 	- Callouts
 	- Code Blocks
@@ -458,6 +462,283 @@ body { /* stylelint-disable-line no-duplicate-selectors */
 ──────────────────────────────────────────────────── */
 * {
 	text-underline-offset: 1px;
+}
+
+/* ───────────────────────────────────────────────── */
+/* << Code
+──────────────────────────────────────────────────── */
+/* styling of code in general */
+/* inline code in headers keep the header size */
+.markdown-preview-view pre,
+.cm-s-obsidian .cm-inline-code:not(.cm-header),
+.cm-s-obsidian .HyperMD-codeblock,
+.app-container .markdown-preview-view code {
+	font-size: var(--code-size);
+
+	--codeblock-border: var(--thin-muted-border);
+	--codeblock-roundness: var(--radius-s);
+	--code-block-bg: var(--bg2);
+	--code-block-alt-bg: var(--bg5);
+	--slight-code-roundish: calc(var(--radius-s) * 0.5);
+}
+
+/* ───────────────────────────────────────────────── */
+/* <<< Inline Code
+──────────────────────────────────────────────────── */
+
+/* "*:not(pre) > code" targets inline code
+(i.e. code that is not in a pre (= block) ) */
+.is-live-preview code,
+.markdown-preview-view *:not(pre) > code,
+.cm-inline-code.cm-inline-code.cm-inline-code.cm-inline-code.cm-inline-code.cm-inline-code {
+	color: var(--text-accent);
+}
+
+.is-live-preview code,
+.markdown-preview-view *:not(pre) > code {
+	border-radius: var(--slight-code-roundish);
+}
+
+.is-live-preview code,
+.markdown-source-view .cm-line .cm-inline-code:not(.cm-formatting-code),
+.markdown-preview-view *:not(pre) > code {
+	background-color: var(--bg2);
+	padding: var(--size-2-1) var(--size-2-2);
+}
+
+/* interaction with headers with bg */
+body:not(.no-heading-bg) .markdown-source-view .cm-line .cm-inline-code.cm-header.cm-header.cm-header {
+	background-color: unset;
+}
+
+/* interaction with blockquotes */
+.markdown-preview-view blockquote > *:not(pre) > code,
+.cm-quote.cm-inline-code.cm-inline-code.cm-inline-code.cm-inline-code.cm-inline-code {
+	background-color: var(--bg3);
+}
+
+.cm-inline-code {
+	background-color: var(--bg2);
+	padding: 1px 2px;
+	border-radius: var(--slight-code-roundish);
+}
+
+/* inline code surrounded by backticks */
+.cm-formatting-code + .cm-inline-code:not(.cm-formatting-code) {
+	border-radius: 0;
+}
+
+/* opening backtick */
+.cm-formatting-code.cm-formatting-code {
+	padding: 1px 0;
+	border-radius: var(--slight-code-roundish) 0 0 var(--slight-code-roundish);
+}
+
+/* closing backtick */
+.cm-inline-code:not(.cm-formatting-code) + .cm-formatting-code {
+	border-radius: 0 var(--slight-code-roundish) var(--slight-code-roundish) 0;
+}
+
+/* live preview */
+.is-live-preview .cm-active .cm-inline-code:not(.cm-formatting-code) {
+	border-radius: 0;
+}
+
+/* fixes when background color changes, e.g. writing css class */
+.cm-s-obsidian span.cm-inline-code.cm-formatting-code {
+	background-color: var(--code-block-bg);
+}
+
+/* ───────────────────────────────────────────────── */
+/* <<< Code Blocks
+──────────────────────────────────────────────────── */
+/* Code blocks in Edit Mode */
+:is(.HyperMD-codeblock-end, .HyperMD-codeblock-begin) .cm-formatting-code-block {
+	color: var(--text-muted);
+}
+
+.cm-s-obsidian .HyperMD-codeblock {
+	line-height: 1.4em;
+}
+
+.cm-s-obsidian div.HyperMD-codeblock-begin-bg {
+	background-color: var(--code-block-alt-bg);
+	border: var(--codeblock-border);
+	border-bottom: none;
+	border-top-right-radius: var(--codeblock-roundness);
+	border-top-left-radius: var(--codeblock-roundness);
+}
+
+.cm-s-obsidian div.HyperMD-codeblock-end-bg {
+	border-bottom: var(--codeblock-border);
+	border-bottom-right-radius: var(--codeblock-roundness);
+	border-bottom-left-radius: var(--codeblock-roundness);
+}
+
+div.HyperMD-codeblock-bg:not(.HyperMD-codeblock-begin-bg) {
+	background-color: var(--code-block-bg);
+	border-right: var(--codeblock-border);
+	border-left: var(--codeblock-border);
+}
+
+/* Code blocks in Live Preview */
+.cm-line.HyperMD-codeblock .code-block-flair {
+	font-size: calc(var(--code-size) * 0.9);
+	color: var(--text-muted);
+	padding: 0 1px;
+}
+
+/* Code Blocks in Reading Mode */
+.markdown-preview-view.markdown-preview-view pre {
+	background-color: var(--code-block-bg);
+	padding: 0;
+	margin-top: var(--size-4-2);
+	border: var(--codeblock-border);
+	border-radius: var(--codeblock-roundness);
+}
+
+.markdown-preview-view pre code {
+	background-color: var(--code-block-bg);
+	padding: var(--size-4-1) var(--size-4-2);
+}
+
+/* border on top created like this, since the
+::after element cannot be moved beyond a border */
+.markdown-reading-view pre[class*="language-"]::before {
+	display: block;
+	content: " ";
+
+	line-height: 1.5em;
+
+	background-color: var(--code-block-alt-bg);
+
+	border-top-right-radius: calc(var(--codeblock-roundness) * 0.8);
+	border-top-left-radius: calc(var(--codeblock-roundness) * 0.8);
+}
+
+/* code block without language */
+.markdown-reading-view pre:not([class^="language-"]) {
+	padding: 7px 7px 0;
+	overflow-y: hidden;
+}
+
+.copy-code-button.copy-code-button.copy-code-button {
+	background-color: var(--interactive-normal); /* show permanently, not only on hover */
+	top: unset;
+	bottom: 0;
+	padding: 0 var(--size-2-2);
+}
+
+.markdown-reading-view pre:not([class^="language-"]) code {
+	color: var(--text-normal);
+}
+
+/* <<< language replacements */
+pre[class*="language-"]::after {
+	content: attr(class); /* fallback when none of the languages below is used */
+
+	font-size: calc(var(--code-size) * 0.9);
+	text-shadow: none;
+
+	color: var(--text-muted);
+
+	position: absolute;
+	top: 3px;
+	right: 6px;
+}
+
+pre.language-c::after { content: "C" }
+pre.language-python::after { content: "Python" }
+pre.language-py::after { content: "Python" }
+pre.language-nginx::after { content: "Nginx" }
+pre.language-css::after { content: "CSS" }
+pre.language-node::after { content: "Node" }
+pre.language-react::after { content: "React" }
+pre.language-javascript::after { content: "JavaScript" }
+pre.language-js::after { content: "JavaScript" }
+pre.language-typescript::after { content: "TypeScript" }
+pre.language-ts::after { content: "TypeScript" }
+pre.language-php::after { content: "PHP" }
+pre.language-shell::after { content: "Shell" }
+pre.language-bash::after { content: "Bash" }
+pre.language-zsh::after { content: "zsh" }
+pre.language-flow::after { content: "Flow" }
+pre.language-sequence::after { content: "Sequence" }
+pre.language-sql::after { content: "SQL" }
+pre.language-yaml::after { content: "YAML" }
+pre.language-ini::after { content: "INI" }
+pre.language-xml::after { content: "XML" }
+pre.language-git::after { content: "GIT" }
+pre.language-cs::after { content: "C#" }
+pre.language-cpp::after { content: "C++" }
+pre.language-java::after { content: "JAVA" }
+pre.language-html::after { content: "HTML" }
+pre.language-txt::after { content: "Plain Text" }
+pre.language-text::after { content: "Plain Text" }
+pre.language-url::after { content: "URL" }
+pre.language-applescript::after { content: "AppleScript" }
+pre.language-markdown::after { content: "Markdown" }
+pre.language-md::after { content: "Markdown" }
+pre.language-regex::after { content: "Regex" }
+pre.language-lua::after { content: "Lua" }
+pre.language-haskell::after { content: "Haskell" }
+pre.language-vim::after { content: "vimrc" }
+
+/* Code Block: Line Numbers in Edit Mode */
+body:not(.no-codeblock-line-numbers) .HyperMD-codeblock-begin {
+	counter-reset: codeblock-line-numbers;
+}
+
+body:not(.no-codeblock-line-numbers) .HyperMD-codeblock.cm-line:not(.HyperMD-codeblock-begin, .HyperMD-codeblock-end) {
+	padding-left: 2.8em;
+}
+
+body:not(.no-codeblock-line-numbers) .HyperMD-codeblock:not(.HyperMD-codeblock-begin, .HyperMD-codeblock-end)::before {
+	counter-increment: codeblock-line-numbers;
+	content: counter(codeblock-line-numbers);
+
+	font-family: var(--code-size);
+	font-size: 0.9em;
+	text-align: right;
+
+	height: 100%; /* ensures border closes w/ wrapped lines */
+	width: 1.25em;
+
+	color: var(--text-muted);
+	background-color: var(--bg2);
+
+	position: absolute;
+	left: 0;
+
+	padding-right: 1.5em; /* space is needed for collapse indicators */
+}
+
+/* code block end */
+body:not(.no-codeblock-line-numbers) .HyperMD-codeblock-end .cm-formatting-code-block {
+	padding: 2px 4.5px 2px 4px;
+	margin-left: -4.5px;
+	border-bottom-left-radius: var(--codeblock-roundness);
+}
+
+body:not(.no-codeblock-line-numbers) .is-live-preview .HyperMD-codeblock-end span:nth-child(2)::before {
+	content: " ";
+	background-color: var(--bg2);
+	padding: 2px 0.95em;
+	margin-left: -5px;
+}
+
+body:not(.no-codeblock-line-numbers) .HyperMD-codeblock-end .cm-formatting-code-block:first-child {
+	/* "first-child" ensures that indented code blocks (e.g. in lists) do not look off */
+	background-color: var(--bg2);
+}
+
+/* No Wrapping */
+.markdown-preview-view pre:not(.frontmatter) code {
+	white-space: pre;
+}
+
+.markdown-preview-view pre:not(.frontmatter):not([class*="language-"]) {
+	overflow-x: scroll;
 }
 
 /* ───────────────────────────────────────────────── */
@@ -964,11 +1245,6 @@ body:not(.normal-header-bar, .is-mobile) .view-header:not(:focus-within) .view-a
 /* << Tab Bar
 ──────────────────────────────────────────────────── */
 
-:is(.mod-top, .mod-root) .workspace-tab-header-container {
-	/* cannot modify --header-height, since it would also affect the sidebar tabs that are not top */
-	height: 35px;
-}
-
 /* ───────────────────────────────────────────────── */
 /* << different look when only tab
 ──────────────────────────────────────────────────── */
@@ -1068,6 +1344,30 @@ body .workspace-tab-header-container {
 .mod-root .workspace-tab-header-container-inner {
 	margin-top: var(--size-2-2);
 }
+
+:is(.mod-top, .mod-root) .workspace-tab-header-container {
+	/* cannot modify --header-height, since it would also affect the sidebar tabs that are not top */
+	height: 35px;
+}
+
+/* pin */
+.workspace-tabs:not(.mod-stacked) .workspace-tab-header-status-container {
+	padding-top: var(--size-2-1);
+	padding-right: var(--size-4-2);
+}
+
+.mod-stacked .workspace-tab-header-status-icon .lucide-pin {
+	stroke: var(--icon-color);
+}
+
+.workspace-tabs:not(.mod-stacked) .workspace-tab-header-status-container .lucide-pin {
+	stroke: var(--tab-text-color);
+}
+
+/* change order */
+.workspace-tab-header-status-container { order: 1 }
+.workspace-tab-header-inner-title { order: 3 }
+.workspace-tab-header-inner-icon { order: 2 }
 
 /* ───────────────────────────────────────────────── */
 /* << Release Notes Tab
