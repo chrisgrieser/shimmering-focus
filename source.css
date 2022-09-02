@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 3.32
+Version 3.33
 Source CSS: https://github.com/chrisgrieser/shimmering-focus/blob/main/source.css
 MIT License
 ──────────────────────────────────────────────────── */
@@ -42,7 +42,8 @@ MIT License
 	- Status Bar
 	- Header Bar (Tab Title Bar)
 	- Tab Bar
-	- different look when only tab
+		- Hide Various Elements
+		- different look when only tab
 		- Stacked Tabs
 		- Styling of Tabs
 	- Release Notes Tab
@@ -1246,7 +1247,19 @@ body:not(.normal-header-bar, .is-mobile) .view-header:not(:focus-within) .view-a
 ──────────────────────────────────────────────────── */
 
 /* ───────────────────────────────────────────────── */
-/* << different look when only tab
+/* <<< Hide Various Elements
+──────────────────────────────────────────────────── */
+
+body:not(.show-new-tab-button) .workspace-tab-header-new-tab,
+body:not(.show-close-buttons) .workspace-tab-header:only-child .workspace-tab-header-inner-close-button,
+body:not(.show-close-buttons) .mod-stacked .workspace-tab-header .workspace-tab-header-inner-close-button,
+body:not(.show-close-buttons) .workspace-tabs:not(.mod-stacked) .workspace-tab-header:not(:hover) .workspace-tab-header-inner-close-button,
+body:not(.show-tab-list-button) .workspace-tab-header-tab-list {
+	display: none;
+}
+
+/* ───────────────────────────────────────────────── */
+/* <<< different look when only tab
 ──────────────────────────────────────────────────── */
 
 body:not(.no-tabbar-header-hybrid) .mod-root .workspace-tab-header-container:not(:hover) .workspace-tab-header:only-child {
@@ -1269,22 +1282,6 @@ body:not(.no-tabbar-header-hybrid) .mod-root .workspace-tab-header:only-child {
 	transition-delay: var(--transition-delay-passing-over-protection);
 }
 
-body .workspace .mod-root .workspace-tab-header {
-	width: var(--tab-width);
-}
-
-/* hide new tab button */
-body:not(.show-new-tab-button) .workspace-tab-header-new-tab {
-	display: none;
-}
-
-/* hide tab close buttons */
-body:not(.show-close-buttons) .workspace-tab-header:only-child .workspace-tab-header-inner-close-button,
-body:not(.show-close-buttons) .mod-stacked .workspace-tab-header .workspace-tab-header-inner-close-button,
-body:not(.show-close-buttons) .workspace-tabs:not(.mod-stacked) .workspace-tab-header:not(:hover) .workspace-tab-header-inner-close-button {
-	display: none;
-}
-
 /* ───────────────────────────────────────────────── */
 /* <<< Stacked Tabs
 ──────────────────────────────────────────────────── */
@@ -1295,18 +1292,8 @@ body:not(.show-close-buttons) .workspace-tabs:not(.mod-stacked) .workspace-tab-h
 }
 
 /* hide useless tab bar when stacked */
-.mod-stacked .workspace-tab-header-container {
+.mod-stacked .workspace-tab-header-container.workspace-tab-header-container {
 	height: 0;
-}
-
-.mod-stacked .workspace-tab-header-container .workspace-tab-header-tab-list {
-	position: sticky;
-	margin-top: 20px;
-}
-
-/* account for the "more options" button now moved down */
-.show-view-header:not(.normal-header-bar) .mod-stacked .workspace-tab-header-container .workspace-tab-header-tab-list {
-	margin-top: 42px;
 }
 
 /* ───────────────────────────────────────────────── */
@@ -1350,9 +1337,13 @@ body .workspace-tab-header-container {
 	height: 35px;
 }
 
+body .workspace .mod-root .workspace-tab-header {
+	width: var(--tab-width);
+}
+
 /* pin */
 .workspace-tabs:not(.mod-stacked) .workspace-tab-header-status-container {
-	padding-top: var(--size-2-1);
+	padding-top: var(--size-2-2);
 	padding-right: var(--size-4-2);
 }
 
@@ -1368,6 +1359,7 @@ body .workspace-tab-header-container {
 .workspace-tab-header-status-container { order: 1 }
 .workspace-tab-header-inner-title { order: 3 }
 .workspace-tab-header-inner-icon { order: 2 }
+.workspace-tab-header-inner-close-button { order: 4 }
 
 /* ───────────────────────────────────────────────── */
 /* << Release Notes Tab
@@ -2597,7 +2589,13 @@ settings:
    id: show-new-tab-button
    title: Re-enable New Tab Button
    type: class-toggle
-   description: 'You can still open a new tab via hotkey.'
+   description: You can still open a new tab via hotkey.
+   default: false
+  -
+   id: show-tab-list-button
+   title: Re-enable Tab List Button
+   type: class-toggle
+   description: You can still switch to tabs via Quick Switcher, and you can toggle stacked tabs via command palette.
    default: false
   -
    id: show-close-buttons
