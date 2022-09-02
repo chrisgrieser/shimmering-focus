@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 3.27
+Version 3.28
 Source CSS: https://github.com/chrisgrieser/shimmering-focus/blob/main/source.css
 MIT License
 ──────────────────────────────────────────────────── */
@@ -13,12 +13,20 @@ MIT License
 /* @TOC-SPLIT-MARKER */
 /*
 - Fonts (base64 encoded)
-- Temporary Bug Fixes
 - Variables
 	- Unchanged Obsidian Variables
 	- Changed Obsidian Variables
 	- Theme Variables
 - Markup
+	- Misc Markup
+	- Headings
+	- Callouts
+	- Code Blocks
+	- Blockquotes
+	- Trailing Whitespace (Two Space Rule)
+	- Strikethroughs
+	- Highlights
+	- Pandoc Citations
 	- Images
 - Settings
 - UI Elements
@@ -28,6 +36,7 @@ MIT License
 	- Status Bar
 	- Header Bar (Tab Title Bar)
 	- Tab Bar
+	- different look when only tab
 		- Stacked Tabs
 		- Styling of Tabs
 	- Release Notes Tab
@@ -48,6 +57,12 @@ MIT License
 		- Inline Backlink Pane
 	- Outline
 - Community Plugins
+	- Recent Files
+	- Link Favicon Plugin
+	- Pandoc Reference List & Pandoc Citation Markup
+	- Style Settings
+		- Style Settings: Hue Sliders & Color Demo Boxes
+		- Style Settings: Donation Info
 	- Dataview
 		- dataview cssclasses
 	- Breadcrumbs
@@ -55,9 +70,10 @@ MIT License
 	- Longform
 - Style Setting (YAML)
  	- Show / Hide UI Elements (+)
- 	- Status Bar (+)
- 		- User Interface Behavior and Look (+)
- 		- Editor & Media (+)
+ 		- Status Bar (+)
+ 	- Workspace (+)
+ 	- Editor & Media (+)
+ 	- Markup & Special Syntax (+)
  	- Donation Info (+)
  	/* @TOC-SPLIT-MARKER */
 
@@ -179,22 +195,6 @@ MIT License
 }
 
 /* ───────────────────────────────────────────────── */
-/* < Temporary Bug Fixes
-──────────────────────────────────────────────────── */
-
-/* https://discord.com/channels/686053708261228577/716028884885307432/1014260309969617018 */
-.workspace-split.mod-root .workspace-tab-header.is-active::before,
-.workspace-split.mod-root .workspace-tab-header.is-active::after {
-	box-shadow: inset 0 0 0 var(--tab-outline-width) var(--tab-outline-color), 0 0 0 calc(var(--tab-curve) * 4) var(--tab-background-active);
-}
-
-/* https://discord.com/channels/686053708261228577/716028884885307432/1014486688522850347 */
-body .suggestion-item.mod-complex .suggestion-hotkey:not(:last-child) {
-	margin-right: 10px;
-	margin-left: 0;
-}
-
-/* ───────────────────────────────────────────────── */
 /* < Variables
 ──────────────────────────────────────────────────── */
 /* ───────────────────────────────────────────────── */
@@ -216,6 +216,26 @@ autocompletion via LSP and for quicker reference */
 	--interactive-normal: var(--color-base-00);
 	--interactive-hover: var(--color-base-10);
 
+	/* Icons */
+	--icon-size: var(--icon-m);
+	--icon-stroke: var(--icon-m-stroke-width);
+	--icon-xs: 14px;
+	--icon-s: 16px;
+	--icon-m: 18px;
+	--icon-l: 18px;
+	--icon-xs-stroke-width: 2px;
+	--icon-s-stroke-width: 2px;
+	--icon-m-stroke-width: 1.75px;
+	--icon-l-stroke-width: 1.75px;
+	--icon-color: var(--text-muted);
+	--icon-color-hover: var(--text-muted);
+	--icon-color-active: var(--text-accent);
+	--icon-color-focused: var(--text-normal);
+	--icon-opacity: 0.85;
+	--icon-opacity-hover: 1;
+	--icon-opacity-active: 1;
+	--clickable-icon-radius: var(--radius-s);
+
 	/* the --size variables are not supposed to be changed */
 	--size-2-1: 2px;
 	--size-2-2: 4px;
@@ -230,8 +250,6 @@ autocompletion via LSP and for quicker reference */
 	--size-4-12: 48px;
 	--size-4-16: 64px;
 	--size-4-18: 72px;
-
-	--icon-size: var(--icon-m);
 
 	--radius-s: 4px;
 	--radius-m: 8px;
@@ -404,13 +422,15 @@ body { /* stylelint-disable-line no-duplicate-selectors */
 	--background-primary-alt: var(--bg2);
 	--background-secondary: var(--bg3);
 
-	--thin-border: 1px solid var(--color-base-50);
-	--basic-border: 2px solid var(--color-base-50);
-	--thick-border: 4px solid var(--color-base-50);
+	--basic-border-color: var(--color-base-50);
+	--thin-border: 1px solid var(--basic-border-color);
+	--basic-border: 2px solid var(--basic-border-color);
+	--thick-border: 4px solid var(--basic-border-color);
 
-	--thin-muted-border: 1px solid var(--color-base-35);
-	--muted-border: 2px solid var(--color-base-35);
-	--thick-muted-border: 4px solid var(--color-base-35);
+	--muted-border-color: var(--color-base-30);
+	--thin-muted-border: 1px solid var(--muted-border-color);
+	--muted-border: 2px solid var(--muted-border-color);
+	--thick-muted-border: 4px solid var(--muted-border-color);
 }
 
 .theme-light { /* stylelint-disable-line no-duplicate-selectors */
@@ -426,24 +446,224 @@ body { /* stylelint-disable-line no-duplicate-selectors */
 /* ───────────────────────────────────────────────── */
 /* < Markup
 ──────────────────────────────────────────────────── */
+
+/* ───────────────────────────────────────────────── */
+/* << Misc Markup
+──────────────────────────────────────────────────── */
 * {
 	text-underline-offset: 1px;
 }
 
-/* heading */
+/* ───────────────────────────────────────────────── */
+/* << Headings
+──────────────────────────────────────────────────── */
+
 .cm-header,
 :is(.markdown-preview-view, .community-modal-readme) :is(h1, h2, h3, h4, h5, h6) {
 	font-weight: 700;
 	letter-spacing: var(--heading-letter-spacing);
 }
 
+/* ───────────────────────────────────────────────── */
+/* << Callouts
+──────────────────────────────────────────────────── */
+
 .callout-icon {
 	margin-right: 8px;
 }
 
-/* code blocks */
+/* ───────────────────────────────────────────────── */
+/* << Code Blocks
+──────────────────────────────────────────────────── */
 pre[class*="language-"] {
 	border: var(--thin-muted-border);
+}
+
+/* ───────────────────────────────────────────────── */
+/* << Blockquotes
+──────────────────────────────────────────────────── */
+blockquote,
+.callout,
+.HyperMD-quote {
+	--blockquote-border-width: var(--size-4-2);
+	--blockquote-bg: var(--bg3);
+}
+
+body .markdown-preview-view blockquote,
+.cm-line.HyperMD-quote.HyperMD-quote.HyperMD-quote {
+	border-left: var(--blockquote-border-width) solid var(--basic-border-color);
+}
+
+.cm-hmd-indent-in-quote,
+.markdown-preview-view blockquote,
+.markdown-preview-view blockquote :is(em, strong),
+.cm-line.HyperMD-quote .cm-quote:not(.cm-formatting, .cm-url, .cm-formatting-link, .cm-hmd-internal-link) {
+	color: var(--text-normal);
+}
+
+/* edit mode & live preview */
+.HyperMD-quote.HyperMD-quote.HyperMD-quote.HyperMD-quote {
+	background-color: var(--blockquote-bg);
+	padding: 3px 10px;
+	border-radius: var(--radius-s);
+}
+
+/* less padding between quote blocks */
+.HyperMD-quote:not(.HyperMD-callout) + .HyperMD-quote.HyperMD-quote.HyperMD-quote {
+	padding-top: 0;
+}
+
+/* the ">" */
+.HyperMD-quote .cm-formatting.cm-formatting-quote {
+	font-weight: 600;
+	font-style: normal;
+	color: var(--text-muted);
+}
+
+/* style links in blockquotes, e.g. quote sources */
+.cm-link.cm-quote:not(.cm-formatting) {
+	color: var(--text-accent);
+}
+
+.cm-string.cm-url.cm-quote,
+.cm-link.cm-quote {
+	font-style: unset;
+}
+
+/* hack to prevent rounded corners with consecutive block quotes */
+.HyperMD-quote + .HyperMD-quote::before {
+	content: " ";
+
+	white-space: pre;
+
+	height: 1.5em;
+	width: var(--blockquote-border-width);
+
+	background-color: var(--basic-border-color);
+
+	position: absolute;
+
+	margin-top: -12px;
+	margin-left: calc(-1 * (var(--blockquote-border-width) + 4px));
+}
+
+.HyperMD-quote.cm-active + .HyperMD-quote::before,
+.HyperMD-quote + .HyperMD-quote.cm-active::before {
+	z-index: -1;
+}
+
+.HyperMD-quote + .HyperMD-quote.HyperMD-quote-lazy::before {
+	margin-left: calc(-1 * (var(--blockquote-border-width) + 10px));
+}
+
+.HyperMD-quote + .HyperMD-quote::after {
+	content: "";
+
+	height: 1em;
+	width: 0.5em;
+
+	background-color: var(--blockquote-bg);
+
+	position: absolute;
+	top: -3px;
+	right: 0;
+}
+
+/* Reading Mode */
+.markdown-preview-view blockquote {
+	background-color: var(--blockquote-bg);
+	padding: 0.35em 0.8em 0.5em 0.7em;
+	margin: 1.2em 0;
+	border: none;
+	border-radius: var(--radius-s);
+}
+
+/* block quotes in lists */
+.markdown-preview-view li blockquote {
+	margin-top: 6px;
+	margin-bottom: 2px;
+}
+
+/* option to left-align */
+body:not(.blockquotes-left-aligned) .app-container :is(.markdown-preview-view blockquote, .HyperMD-quote) {
+	text-align: justify;
+	hyphens: auto;
+}
+
+/* ───────────────────────────────────────────────── */
+/* << Trailing Whitespace (Two Space Rule)
+──────────────────────────────────────────────────── */
+body:not(.hide-trailing-whitespace) :is(.cm-trailing-space-a, .cm-trailing-space-b, .cm-trailing-space-new-line)::before {
+	font-size: 1em;
+	font-weight: 600;
+	letter-spacing: -2px;
+	color: var(--text-muted);
+}
+
+body:not(.hide-trailing-whitespace) :is(.cm-trailing-space-b, .cm-trailing-space-a)::before {
+	content: "\00B7"; /* dot character */
+}
+
+/* first characters */
+body:not(.hide-trailing-whitespace) :not(.cm-trailing-space-b) + .cm-trailing-space-a::before {
+	content: "\00B7  \00B7";
+	padding-left: 5px;
+}
+
+body:not(.hide-trailing-whitespace) .cm-trailing-space-new-line::before {
+	content: "\21B5"; /* return character */
+}
+
+/* ───────────────────────────────────────────────── */
+/* << Strikethroughs
+──────────────────────────────────────────────────── */
+
+/* make the "~" readable */
+.cm-formatting-strikethrough {
+	text-decoration: none;
+}
+
+/* ───────────────────────────────────────────────── */
+/* << Highlights
+──────────────────────────────────────────────────── */
+
+:root {
+	--highlight-hue-1: 60;
+	--highlight-sla-values: 80% 50% / 30%;
+}
+
+mark,
+.cm-highlight,
+.style-settings-container {
+	--highlight-color-1: hsla(var(--highlight-hue-1) var(--highlight-sla-values));
+}
+
+mark {
+	padding-right: 2px;
+	padding-left: 2px;
+}
+
+.markdown-rendered mark,
+.cm-s-obsidian span.cm-highlight {
+	background-color: var(--highlight-color-1);
+}
+
+/* ───────────────────────────────────────────────── */
+/* << Pandoc Citations
+──────────────────────────────────────────────────── */
+
+/* applies to all []-links (barelinks), partially also to footnotes */
+body:not(.no-pandoc-citation-emphasis) .cm-hmd-barelink.cm-hmd-barelink.cm-hmd-barelink.cm-hmd-barelink.cm-hmd-barelink:not(.cm-formatting) {
+	color: var(--reference-color);
+}
+
+body:not(.no-pandoc-citation-emphasis) .cm-hmd-barelink.cm-formatting:not(.cm-footref) {
+	color: var(--text-muted);
+}
+
+/* readability improvement */
+.theme-light:not(.no-pandoc-citation-emphasis) .cm-hmd-barelink {
+	text-shadow: 0.1px 0.1px;
 }
 
 /* ───────────────────────────────────────────────── */
@@ -622,23 +842,26 @@ body:not(.normal-header-bar, .is-mobile) .view-header .view-actions {
 /* << Tab Bar
 ──────────────────────────────────────────────────── */
 
-/* different look when only tab */
 :is(.mod-top, .mod-root) .workspace-tab-header-container {
 	/* cannot modify --header-height, since it would also affect the sidebar tabs that are not top */
 	height: 35px;
 }
 
+/* ───────────────────────────────────────────────── */
+/* << different look when only tab
+──────────────────────────────────────────────────── */
+
 body:not(.no-tabbar-header-hybrid) .mod-root .workspace-tab-header-container:not(:hover) .workspace-tab-header:only-child {
-	width: 400px;
+	width: 700px;
 	background-color: transparent;
 	box-shadow: none;
 }
 
 body:not(.no-tabbar-header-hybrid) .mod-root .workspace-tab-header-container:not(:hover) .workspace-tab-header:only-child .workspace-tab-header-inner-title {
-	font-family: var(--font-heading-theme);
-	font-size: calc(var(--h1-size) * 0.95);
-	letter-spacing: var(--heading-letter-spacing);
-	box-shadow: none;
+	font-size: 1.6em;
+	font-weight: 600;
+	text-rendering: geometricPrecision;
+	margin-bottom: 1px;
 }
 
 body:not(.no-tabbar-header-hybrid) .mod-root .workspace-tab-header:only-child .workspace-tab-header-inner-title,
@@ -835,6 +1058,15 @@ body:not(.is-mobile) .suggestion-prefix {
 /* ───────────────────────────────────────────────── */
 /* << Sidebar
 ──────────────────────────────────────────────────── */
+body .workspace-leaf-content .view-content {
+	padding: 0 0 var(--size-4-4) 0;
+}
+
+.nav-file-title,
+.nav-folder-title {
+	border-radius: 0;
+}
+
 :is(.mod-left-split, .mod-right-split) .mod-top .workspace-tab-header-container-inner {
 	padding-bottom: var(--size-4-1);
 	margin-top: var(--size-4-1);
@@ -975,7 +1207,7 @@ are not targeted by this */
 
 /* so bold and not bold gets rendered correctly */
 .cm-hmd-frontmatter {
-	text-rendering: geometricprecision;
+	text-rendering: geometricPrecision;
 }
 
 /* keys easier to differentiate */
@@ -990,17 +1222,17 @@ are not targeted by this */
 /* << Vim Cursor
 ──────────────────────────────────────────────────── */
 .cm-focused .cm-vimCursorLayer .cm-fat-cursor.cm-fat-cursor.cm-fat-cursor {
-	color: var(--interactive-normal);
-	background-color: hsl(0 0% 0%);
 	outline: 1px solid;
 }
 
 .theme-dark .cm-focused .cm-vimCursorLayer .cm-fat-cursor.cm-fat-cursor.cm-fat-cursor {
+	color: hsl(0 0% 70%);
 	background-color: hsl(0 0% 0%);
 	outline-color: hsl(0 0% 90%);
 }
 
 .theme-light .cm-focused .cm-vimCursorLayer .cm-fat-cursor.cm-fat-cursor.cm-fat-cursor {
+	color: hsl(0 0% 90%);
 	background-color: hsl(0 0% 25%);
 	outline-color: hsl(220 10% 80%);
 }
@@ -1183,6 +1415,368 @@ body:not(.classic-inline-backlinks) :is(.writing, .longform-leaf) .embedded-back
 /* ───────────────────────────────────────────────── */
 /* < Community Plugins
 ──────────────────────────────────────────────────── */
+
+/* ───────────────────────────────────────────────── */
+/* << Recent Files
+──────────────────────────────────────────────────── */
+
+body:not(.no-alternating-rows) .workspace-leaf-content[data-type="recent-files"] .nav-file:nth-child(even) {
+	background-color: var(--a-row);
+}
+
+.workspace-leaf-content[data-type="recent-files"] .nav-file-title.nav-file-title {
+	padding-right: 0;
+	padding-left: 0;
+	text-overflow: ellipsis;
+	overflow: hidden;
+}
+
+/* why would you wanna go from the active file to the active file? */
+.workspace-leaf-content[data-type="recent-files"] .nav-file-title.is-active {
+	display: none;
+}
+
+/* ───────────────────────────────────────────────── */
+/* << Link Favicon Plugin
+──────────────────────────────────────────────────── */
+/* https://github.com/joethei/obsidian-link-favicon#for-designers */
+
+/* remove external url icon */
+/* .external-link[data-favicon="true"] {
+	background-image: none;
+	padding-right: 0;
+}
+*/
+
+/* ───────────────────────────────────────────────── */
+/* << Pandoc Reference List & Pandoc Citation Markup
+──────────────────────────────────────────────────── */
+
+.pwc-reference-list {
+	--bibliography-indent: 1em;
+}
+
+.pandoc-citation.is-resolved.is-resolved.is-resolved.is-resolved {
+	text-decoration: none;
+}
+
+.pwc-reference-list.pwc-reference-list.pwc-reference-list.pwc-reference-list .pwc-reference-list__title.pwc-reference-list__title > div {
+	font-family: var(--heading-font);
+	font-size: var(--h3-size);
+	letter-spacing: calc(var(--heading-letter-spacing) * 0.5);
+	margin-bottom: 5px;
+	margin-left: 1px;
+}
+
+body .pwc-reference-list .csl-entry.csl-entry.csl-entry {
+	line-height: 1.0;
+	padding: 0 3px;
+	padding-left: calc(var(--bibliography-indent) + 6px);
+	text-indent: calc(var(--bibliography-indent) * -1);
+	border-bottom: none;
+}
+
+/* collapsed links */
+.pwc-reference-list.collapsed-links.collapsed-links a::after {
+	background-color: var(--text-accent);
+}
+
+/* copy button */
+.pwc-reference-list:not(:hover) .pwc-copy-list {
+	opacity: 0;
+}
+
+.pwc-copy-list svg {
+	display: none;
+}
+
+.pwc-copy-list::before {
+	content: "content_copy";
+
+	font-family: var(--icon-font);
+	font-size: 0.9rem;
+
+	background-color: var(--bg3);
+	box-shadow: var(--tiny-inset-shadow);
+
+	padding: 3px 3px 3px 5px;
+
+	border: var(--thin-border);
+	border-radius: var(--roundish);
+}
+
+.pwc-tooltip.is-missing {
+	font-style: normal;
+	color: var(--text-error);
+}
+
+/* pandoc citations in-text */
+body .pandoc-citation.pandoc-citation.pandoc-citation {
+	text-decoration: none;
+}
+
+body:not(.no-pandoc-citation-emphasis) .view-content :is(.pandoc-citation, .cm-pandoc-citation) {
+	color: var(--reference-color);
+}
+
+body:not(.no-pandoc-citation-emphasis) .view-content.view-content :is(.cm-pandoc-citation-formatting, .pandoc-citation-formatting, .pandoc-citation-extra, .cm-pandoc-citation-extra) {
+	color: var(--text-muted);
+}
+
+body:not(.no-pandoc-citation-emphasis) .pandoc-citation.is-unresolved.is-unresolved {
+	text-decoration: wavy underline 1px var(--text-error);
+	color: var(--text-error);
+	opacity: 1;
+}
+
+/* reading mode styling */
+.markdown-preview-view .pandoc-citation-at {
+	display: none;
+}
+
+/* cause longform notes have different size */
+:is(.writing, .longform-leaf) .pandoc-citation-formatting::before {
+	font-size: var(--longform-font-size);
+}
+
+/* optional turning of of citations in Reading Mode */
+.no-citations-in-reading-view .markdown-preview-view :is(.pandoc-citation, .pandoc-citation-extra, .pandoc-citation-formatting) {
+	display: none;
+}
+
+/* Style Settings disabled, since overriden by the theme anyway */
+.style-settings-heading[data-id="pandoc-reference-list"] + .style-settings-container,
+.style-settings-heading[data-id="pandoc-reference-list"] {
+	display: none;
+}
+
+/* ───────────────────────────────────────────────── */
+/* << Style Settings
+──────────────────────────────────────────────────── */
+
+.style-settings-export {
+	margin-right: 0;
+}
+
+/* the "download settings" button is not needed for *every single* section */
+.setting-editor-extra-setting-button:last-child {
+	display: none;
+}
+
+.style-settings-heading.style-settings-heading.style-settings-heading {
+	padding: 0;
+	margin-top: 10px;
+	border-bottom: var(--muted-border);
+}
+
+.style-settings-heading .setting-item-name {
+	font-family: var(--font-interface);
+	font-size: 1rem;
+	line-height: 1em;
+	letter-spacing: 0;
+
+	margin-top: 8px;
+	margin-bottom: 3px;
+}
+
+.style-settings-heading:not(.is-collapsed) .setting-item-name {
+	font-weight: 600;
+}
+
+.style-settings-heading.is-collapsed .setting-item-name {
+	font-weight: 500;
+}
+
+.style-settings-heading :is(.setting-item-title, .setting-item-description) {
+	margin-left: 1px;
+}
+
+body .style-settings-heading[data-level="0"] {
+	margin-bottom: 16px;
+}
+
+body .style-settings-heading[data-level="0"] .setting-item-name.setting-item-name.setting-item-name.setting-item-name {
+	font-family: var(--font-heading-theme);
+	font-size: var(--h2-size);
+	letter-spacing: var(--heading-letter-spacing);
+}
+
+/* settings tab / general */
+.style-settings-heading[data-level="2"] + .style-settings-container,
+.style-settings-heading[data-level="2"][data-level="2"] {
+	margin-left: 20px;
+}
+
+.style-settings-heading + .style-settings-container .style-settings-heading[data-level="2"] .setting-item-name {
+	font-size: 1rem;
+	letter-spacing: 0;
+}
+
+.style-settings-container .setting-editor-extra-setting-button {
+	margin-left: 10px;
+}
+
+.style-settings-heading[data-level="0"] .setting-item-name.setting-item-name.setting-item-name.setting-item-name {
+	font-size: 1.1em;
+	margin-bottom: 4px;
+}
+
+.style-settings-container .setting-item-description {
+	font-family: var(--font-interface);
+	font-size: 0.8rem;
+	font-weight: 500;
+	line-height: 1.3em;
+	margin-bottom: 4px;
+}
+
+.style-settings-container .setting-item:not(.setting-item-heading) .setting-item-name + .setting-item-description {
+	margin-top: 4px;
+	margin-bottom: 0;
+}
+
+.style-settings-heading:not(.is-collapsed) .setting-item-description {
+	display: none;
+}
+
+/* signature */
+.style-settings-heading[data-id="shimmering-focus"] .setting-item-name::after {
+	content: var(--signature);
+	font-size: calc(var(--h2-size) * 0.7);
+	line-height: 0.6rem;
+	padding-left: 8px;
+}
+
+/* ───────────────────────────────────────────────── */
+/* <<< Style Settings: Hue Sliders & Color Demo Boxes
+──────────────────────────────────────────────────── */
+
+/* use hue slider */
+.style-settings-container {
+	--demo-box-size: var(--icon-l);
+	--hue-slider-sat: 70%;
+	--hue-slider-br: 60%;
+	--hue-scale:
+		linear-gradient(
+			to right,
+			hsl(0 var(--hue-slider-sat) var(--hue-slider-br)),
+			hsl(30 var(--hue-slider-sat) var(--hue-slider-br)),
+			hsl(60 var(--hue-slider-sat) var(--hue-slider-br)),
+			hsl(90 var(--hue-slider-sat) var(--hue-slider-br)),
+			hsl(120 var(--hue-slider-sat) var(--hue-slider-br)),
+			hsl(150 var(--hue-slider-sat) var(--hue-slider-br)),
+			hsl(180 var(--hue-slider-sat) var(--hue-slider-br)),
+			hsl(210 var(--hue-slider-sat) var(--hue-slider-br)),
+			hsl(240 var(--hue-slider-sat) var(--hue-slider-br)),
+			hsl(270 var(--hue-slider-sat) var(--hue-slider-br)),
+			hsl(300 var(--hue-slider-sat) var(--hue-slider-br)),
+			hsl(330 var(--hue-slider-sat) var(--hue-slider-br)),
+			hsl(360 var(--hue-slider-sat) var(--hue-slider-br))
+		);
+}
+
+.style-settings-container .setting-item:is([data-id^="highlight-hue-"], [data-id$="-hue"], [data-id^="tint-"]) input.slider {
+	height: 0.8em;
+	background: var(--hue-scale);
+}
+
+.style-settings-container .setting-item:is([data-id^="highlight-hue-"], [data-id$="-hue"], [data-id^="tint-"]) input.slider::-webkit-slider-thumb {
+	height: 1.9em;
+	width: 0.4em;
+
+	background-color: var(--text-muted);
+
+	position: relative;
+	top: -0.7em;
+
+	border-radius: calc(var(--radius-s) * 0.5);
+}
+
+/* demo color box: highlight colors */
+.style-settings-container .setting-item[data-id^="highlight-hue-"] .setting-item-control::before {
+	content: " ";
+
+	font-size: 0.7em;
+	text-align: center;
+	white-space: pre-wrap;
+
+	height: 1.6em;
+	width: 1.6em;
+
+	color: var(--text-normal);
+	background-color: hsl(var(--highlight-hue-1) var(--highlight-sla-values));
+
+	position: relative;
+	left: -3em;
+
+	border: var(--thin-border);
+	border-radius: var(--radius-s);
+}
+
+/* demo box: longform hue shift */
+.setting-item[data-id="longform-hue-shift-light"] .setting-item-control::before {
+	background-color: hsl(var(--longform-light-hue) 45% 90%);
+}
+
+.setting-item[data-id="longform-hue-shift-dark"] .setting-item-control::before {
+	background-color: hsl(var(--longform-dark-hue) 40% 25%);
+}
+
+.style-settings-container .setting-item[data-id^="longform-hue-shift"] .setting-item-control::before {
+	content: " ";
+
+	white-space: pre-wrap;
+
+	height: 1.6em;
+	width: 1.6em;
+
+	position: relative;
+	left: -1.2em;
+
+	border: var(--basic-border);
+	border-radius: var(--radius-s);
+}
+
+.style-settings-container .setting-item[data-id^="longform-hue-shift"] .setting-item-info {
+	margin-right: 40px;
+}
+
+/* ───────────────────────────────────────────────── */
+/* <<< Style Settings: Donation Info
+──────────────────────────────────────────────────── */
+
+.style-settings-heading[data-id="info-donation"][data-id="info-donation"][data-id="info-donation"] {
+	letter-spacing: 0.1px;
+
+	background-color: var(--bg2);
+	box-shadow: var(--small-inset-shadow);
+
+	padding: 10px 10px 5px;
+	margin-top: 30px;
+	margin-bottom: 50px;
+	margin-left: -15px;
+
+	border: var(--basic-border);
+	border-radius: var(--radius-m);
+
+	cursor: default;
+}
+
+.style-settings-heading[data-id="info-donation"] .style-settings-collapse-indicator {
+	display: none;
+}
+
+.style-settings-heading[data-id="info-donation"] .setting-item-name {
+	font-family: var(--font-interface);
+	font-size: 0.95rem;
+	margin-top: 0;
+}
+
+.style-settings-heading[data-id="info-donation"] .setting-item-name:hover {
+	color: unset;
+	cursor: default;
+	pointer-events: none;
+}
+
 /* ───────────────────────────────────────────────── */
 /* << Dataview
 ──────────────────────────────────────────────────── */
@@ -1217,7 +1811,7 @@ pre.dataview-error::first-line {
 	margin-left: 7px;
 
 	border: var(--thin-border);
-	border-radius: var(--roundish);
+	border-radius: var(--radius-s);
 }
 
 .dataview.small-text::before,
@@ -1368,11 +1962,6 @@ settings:
    description: "Hide the floating Settings button in the bottom left. You can still access the settings by using the hotkey '⌘,' (Mac) or 'ctrl ,' (Windows/Linux)."
    default: false
   -
-   id: show-metadata
-   title: 'Reading Mode: Re-enable Metadata Container'
-   type: class-toggle
-   default: false
-  -
    id: no-tabbar-header-hybrid
    title: Disable Tab-Bar-Header-Hybrid
    description: 'By default, this theme turns the Tab Bar into a Header Bar. It turns back into a Tab Bar on hover or when another tab is opened. This can save space, as you can turn off Inline Titles and the Header Bar.'
@@ -1400,10 +1989,10 @@ settings:
    id: show-close-buttons
    title: Re-enable Close Buttons
    type: class-toggle
-   description: "You can still close interfaces by pressing either '⌘W' or 'esc'."
+   description: "You can still close modals with 'esc' and tabs/panes by with 'ctrl/cmd+W'."
    default: false
   -
-# << Status Bar (+)
+# <<< Status Bar (+)
    id: show-hide-elements
    title: Status Bar Items
    type: heading
@@ -1430,9 +2019,9 @@ settings:
    type: class-toggle
    default: false
   -
-# <<< User Interface Behavior and Look (+)
+# << Workspace (+)
    id: user-interface
-   title: User Interface
+   title: Workspace
    type: heading
    level: 1
    collapsed: true
@@ -1453,7 +2042,7 @@ settings:
    step: 25
    format: px
   -
-# <<< Editor & Media (+)
+# << Editor & Media (+)
    id: content-settings
    title: Editor & Media
    type: heading
@@ -1489,6 +2078,39 @@ settings:
    min: 10
    max: 100
    step: 5
+  -
+# << Markup & Special Syntax (+)
+   id: markup-and-special-syntax
+   title: Markup & Special Syntax
+   type: heading
+   level: 1
+   collapsed: true
+  -
+   id: highlight-hue-1
+   title: Highlights
+   type: variable-number-slider
+   default: 60
+   min: 0
+   max: 360
+   step: 5
+  -
+   id: blockquotes-left-aligned
+   title: Left-aligned Blockquote Text (Reading Mode)
+   description: Use left-aligned text in blockquotes instead of justified text.
+   type: class-toggle
+   default: false
+  -
+   id: hide-trailing-whitespace
+   title: Hide Trailing Spaces
+   description: 'By default, this theme shows trailing spaces when there are more than one, indicated with "· · ↵". This can be for the so-called "Two Space Rule" in Markdown, where exactly two spaces at the end of a line force a line break.'
+   type: class-toggle
+   default: false
+  -
+   id: no-pandoc-citation-emphasis
+   title: No Emphasis of Pandoc Citations and Dataview Inline Fields
+   description: "Turn off the coloring of Pandoc Citations [@citekey] and dataview inline fields [key:: value] in Source Mode. (Also affects the styling for the Pandoc Reference List Plugin.)"
+   type: class-toggle
+   default: false
   -
 # << Donation Info (+)
    id: info-donation

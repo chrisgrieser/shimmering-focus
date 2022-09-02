@@ -239,7 +239,7 @@
 		"selector-pseudo-element-case": ["lower", {"severity": "warning"} ],
 		"selector-type-case": ["lower", {"severity": "warning"} ],
 		"unit-case": ["lower", {"severity": "warning"} ],
-		"value-keyword-case": ["lower", {"severity": "warning"} ],
+		"value-keyword-case": ["lower", {"ignoreKeywords": ["geometricPrecision"], "severity": "warning"} ],
 
 		"color-function-notation": ["modern", {"severity": "warning"} ],
 		"color-hex-length": ["short", {"severity": "warning"} ],
