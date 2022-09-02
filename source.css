@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 3.28
+Version 3.29
 Source CSS: https://github.com/chrisgrieser/shimmering-focus/blob/main/source.css
 MIT License
 ──────────────────────────────────────────────────── */
@@ -858,10 +858,9 @@ body:not(.no-tabbar-header-hybrid) .mod-root .workspace-tab-header-container:not
 }
 
 body:not(.no-tabbar-header-hybrid) .mod-root .workspace-tab-header-container:not(:hover) .workspace-tab-header:only-child .workspace-tab-header-inner-title {
-	font-size: 1.6em;
-	font-weight: 600;
-	text-rendering: geometricPrecision;
+	font-size: 1.5em;
 	margin-bottom: 1px;
+	margin-left: -8px;
 }
 
 body:not(.no-tabbar-header-hybrid) .mod-root .workspace-tab-header:only-child .workspace-tab-header-inner-title,
@@ -916,6 +915,11 @@ body:not(.show-close-buttons) .workspace-tabs:not(.mod-stacked) .workspace-tab-h
 /* <<< Styling of Tabs
 ──────────────────────────────────────────────────── */
 
+.is-active .workspace-tab-header-inner-title {
+	font-weight: 600;
+	text-rendering: geometricPrecision;
+}
+
 body .workspace-tab-header-container {
 	padding-right: 0;
 }
@@ -947,12 +951,17 @@ body .workspace-tab-header-container {
 /* << Release Notes Tab
 ──────────────────────────────────────────────────── */
 
+/* add favicon */
 .workspace-tab-header[data-type="release-notes"] .workspace-tab-header-inner-icon {
 	display: none;
 }
 
 .workspace-tab-header[data-type="release-notes"] .workspace-tab-header-inner-title::before {
-	content: "ℹ️ ";
+	content: "info ";
+	font-family: var(--icon-font);
+	position: relative;
+	top: 2px;
+	padding-right: 2px;
 }
 
 /* ───────────────────────────────────────────────────
