@@ -1,5 +1,5 @@
 # Changelog
-- 2022-09-01	patch
+- 2022-09-02	styling for stacked tabs and tab widths
 - 2022-09-01	minimal header bar
 - 2022-08-31	line length settings
 - 2022-08-31	add clean embeds

@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 3.26
+Version 3.27
 Source CSS: https://github.com/chrisgrieser/shimmering-focus/blob/main/source.css
 MIT License
 ──────────────────────────────────────────────────── */
@@ -15,8 +15,8 @@ MIT License
 - Fonts (base64 encoded)
 - Temporary Bug Fixes
 - Variables
-	- Dummy Variables
-	- Obsidian Variables
+	- Unchanged Obsidian Variables
+	- Changed Obsidian Variables
 	- Theme Variables
 - Markup
 	- Images
@@ -28,13 +28,16 @@ MIT License
 	- Status Bar
 	- Header Bar (Tab Title Bar)
 	- Tab Bar
+		- Stacked Tabs
+		- Styling of Tabs
+	- Release Notes Tab
 - Prompts
 	- QuickSwitcher
 	- Command Palette
 	- Sidebar
 	- Editor
 	- Clean Embeds
-	- Inactive Note
+	- Active / Inactive Note
 	- Empty Note & New Tab Page
 		- YAML Frontmatter
 - Vim Mode
@@ -53,7 +56,7 @@ MIT License
 - Style Setting (YAML)
  	- Show / Hide UI Elements (+)
  	- Status Bar (+)
- 		- User Interface (+)
+ 		- User Interface Behavior and Look (+)
  		- Editor & Media (+)
  	- Donation Info (+)
  	/* @TOC-SPLIT-MARKER */
@@ -195,7 +198,7 @@ body .suggestion-item.mod-complex .suggestion-hotkey:not(:last-child) {
 /* < Variables
 ──────────────────────────────────────────────────── */
 /* ───────────────────────────────────────────────── */
-/* << Dummy Variables
+/* << Unchanged Obsidian Variables
 ──────────────────────────────────────────────────── */
 /* these values are unchanged from the default theme, but included here for
 autocompletion via LSP and for quicker reference */
@@ -300,7 +303,7 @@ autocompletion via LSP and for quicker reference */
 }
 
 /* ───────────────────────────────────────────────── */
-/* << Obsidian Variables
+/* << Changed Obsidian Variables
 ──────────────────────────────────────────────────── */
 
 body {
@@ -337,6 +340,8 @@ body {
 	--accent-l: 30%;
 
 	--tab-background-active: var(--bg3);
+	--tab-stacked-header-width: 28px;
+
 	--nav-item-size: var(--font-ui-medium);
 
 	--line-length: 700px; /* to be set via style setting */
@@ -389,8 +394,10 @@ body { /* stylelint-disable-line no-duplicate-selectors */
 	--bg1: var(--color-base-00);
 	--bg2: var(--color-base-10);
 	--bg3: var(--color-base-20);
-	--bg4: var(--color-base-30);
-	--bg5: var(--color-base-40);
+	--bg4: var(--color-base-25);
+	--bg5: var(--color-base-30);
+
+	--tab-width: 200px;
 
 	/* overwrite Obsidian variables w/ --bg colors for consistency with plugins */
 	--background-primary: var(--bg1);
@@ -503,12 +510,16 @@ body:not(.show-sidebar-toggle-buttons) .sidebar-toggle-button {
 	display: none;
 }
 
+/* move the tab-list button to the space now free from the "right sidebar toggle" */
+body.mod-macos.is-hidden-frameless:not(.is-popout-window) .workspace .workspace-tabs.mod-top-right-space .workspace-tab-header-container {
+	padding-right: 0;
+}
+
 body:not(.show-metadata) .frontmatter-container {
 	display: none;
 }
 
-body:not(.show-close-buttons) .modal-close-button,
-body:not(.show-close-buttons) .workspace-tab-header-inner-close-button {
+body:not(.show-close-buttons) .modal-close-button {
 	display: none;
 }
 
@@ -604,7 +615,7 @@ body:not(.normal-header-bar, .is-mobile) .view-action:nth-last-child(2) {
 body:not(.normal-header-bar, .is-mobile) .view-header .view-actions {
 	position: sticky;
 	margin-top: var(--size-4-5);
-	margin-right: calc(var(--size-4-3) * -1);
+	margin-right: -14px;
 }
 
 /* ───────────────────────────────────────────────── */
@@ -614,7 +625,7 @@ body:not(.normal-header-bar, .is-mobile) .view-header .view-actions {
 /* different look when only tab */
 :is(.mod-top, .mod-root) .workspace-tab-header-container {
 	/* cannot modify --header-height, since it would also affect the sidebar tabs that are not top */
-	height: 33px;
+	height: 35px;
 }
 
 body:not(.no-tabbar-header-hybrid) .mod-root .workspace-tab-header-container:not(:hover) .workspace-tab-header:only-child {
@@ -638,23 +649,64 @@ body:not(.no-tabbar-header-hybrid) .mod-root .workspace-tab-header:only-child {
 	transition-delay: var(--transition-delay-passing-over-protection);
 }
 
-/* hide tab buttons */
-body:not(.show-tab-list-button) .workspace-tab-header-tab-list,
+body .workspace .mod-root .workspace-tab-header {
+	width: var(--tab-width);
+}
+
+/* hide new tab button */
 body:not(.show-new-tab-button) .workspace-tab-header-new-tab {
 	display: none;
 }
 
-/* STYLING */
+/* hide tab close buttons */
+body:not(.show-close-buttons) .workspace-tab-header:only-child .workspace-tab-header-inner-close-button,
+body:not(.show-close-buttons) .mod-stacked .workspace-tab-header .workspace-tab-header-inner-close-button,
+body:not(.show-close-buttons) .workspace-tabs:not(.mod-stacked) .workspace-tab-header:not(:hover) .workspace-tab-header-inner-close-button {
+	display: none;
+}
+
+/* ───────────────────────────────────────────────── */
+/* <<< Stacked Tabs
+──────────────────────────────────────────────────── */
+
+.mod-stacked .workspace-tab-header-inner {
+	background-color: var(--bg3);
+	border-right: var(--thin-muted-border);
+}
+
+/* hide useless tab bar when stacked */
+.mod-stacked .workspace-tab-header-container {
+	height: 0;
+}
+
+.mod-stacked .workspace-tab-header-container .workspace-tab-header-tab-list {
+	position: sticky;
+	margin-top: 20px;
+}
+
+/* account for the "more options" button now moved down */
+.show-view-header:not(.normal-header-bar) .mod-stacked .workspace-tab-header-container .workspace-tab-header-tab-list {
+	margin-top: 42px;
+}
+
+/* ───────────────────────────────────────────────── */
+/* <<< Styling of Tabs
+──────────────────────────────────────────────────── */
+
+body .workspace-tab-header-container {
+	padding-right: 0;
+}
+
 .mod-root .workspace-tab-header::after,
 .mod-root .workspace-tab-header::before {
 	display: none;
 }
 
 .mod-root .workspace-tab-header-inner-title {
-	margin-bottom: -2px;
+	margin-bottom: -1px;
 }
 
-.mod-root .workspace-tab-header-container-inner,
+.mod-root .workspace-tabs:not(.mod-stacked) .workspace-tab-header-container-inner,
 .mod-root .workspace-tab-header-container {
 	border-bottom: var(--thin-muted-border);
 }
@@ -664,12 +716,20 @@ body:not(.show-new-tab-button) .workspace-tab-header-new-tab {
 	background-color: var(--bg4);
 }
 
-.mod-root .workspace-tab-header-inner-title:hover {
-	cursor: grab;
-}
-
 .mod-root .workspace-tab-header-container-inner {
 	margin-top: var(--size-2-2);
+}
+
+/* ───────────────────────────────────────────────── */
+/* << Release Notes Tab
+──────────────────────────────────────────────────── */
+
+.workspace-tab-header[data-type="release-notes"] .workspace-tab-header-inner-icon {
+	display: none;
+}
+
+.workspace-tab-header[data-type="release-notes"] .workspace-tab-header-inner-title::before {
+	content: "ℹ️ ";
 }
 
 /* ───────────────────────────────────────────────────
@@ -860,19 +920,15 @@ body:not(.show-sidebar-tabs) :is(.mod-left-split, .mod-right-split) .workspace-t
 }
 
 /* ───────────────────────────────────────────────── */
-/* << Inactive Note
+/* << Active / Inactive Note
 ──────────────────────────────────────────────────── */
-.workspace-leaf:not(.mod-active) .workspace-leaf-content[data-type="markdown"] {
+body:not(.no-dimmed-inactive-pane) .workspace-leaf:not(.mod-active) .workspace-leaf-content[data-type="markdown"] {
 	opacity: var(--inactive-pane-opacity);
 	transition: var(--anim-duration-slow);
 }
 
-.no-dimmed-inactive-pane {
-	--inactive-pane-opacity: 100%;
-}
-
 /* if there is more than one pane, highlight the currently focussed one */
-.mod-root .workspace-tabs:not(:only-of-type).mod-active .workspace-tab-header-container-inner,
+.mod-root .workspace-tabs:not(:only-of-type).mod-active .workspace-tabs:not(.mod-stacked) .workspace-tab-header-container-inner,
 .mod-root .workspace-tabs:not(:only-of-type).mod-active .workspace-tab-header-container {
 	border-bottom-color: var(--text-accent);
 }
@@ -1311,7 +1367,6 @@ settings:
    type: class-toggle
    description: "Hide the floating Settings button in the bottom left. You can still access the settings by using the hotkey '⌘,' (Mac) or 'ctrl ,' (Windows/Linux)."
    default: false
-
   -
    id: show-metadata
    title: 'Reading Mode: Re-enable Metadata Container'
@@ -1340,11 +1395,6 @@ settings:
    title: Re-enable New Tab Button
    type: class-toggle
    description: 'You can still open a new tab via hotkey.'
-   default: false
-  -
-   id: show-tab-list-button
-   title: Re-enable Tab List Button
-   type: class-toggle
    default: false
   -
    id: show-close-buttons
@@ -1380,7 +1430,7 @@ settings:
    type: class-toggle
    default: false
   -
-# <<< User Interface (+)
+# <<< User Interface Behavior and Look (+)
    id: user-interface
    title: User Interface
    type: heading
@@ -1392,6 +1442,16 @@ settings:
    description: 'The right sidebar is placed on top of the editor instead of making the editor more narrow (i.e. the behavior on mobile).'
    type: class-toggle
    default: false
+  -
+   id: tab-width
+   title: Tab Width
+   description: This setting only affects tab width when there is enough space in the tab bar. (Obsidian automatically reduces tab width when there are more open tabs when there is space for them.)
+   type: variable-number-slider
+   default: 200
+   min: 100
+   max: 400
+   step: 25
+   format: px
   -
 # <<< Editor & Media (+)
    id: content-settings
