@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 3.29
+Version 3.30
 Source CSS: https://github.com/chrisgrieser/shimmering-focus/blob/main/source.css
 MIT License
 ──────────────────────────────────────────────────── */
@@ -31,6 +31,8 @@ MIT License
 - Settings
 - UI Elements
 	- Misc Hiding
+	- Frontmatter
+		- Floating Metadata & YAML
 	- Settings Button & Ribbon
 	- Fold external URLs (Source Mode)
 	- Status Bar
@@ -44,6 +46,9 @@ MIT License
 	- QuickSwitcher
 	- Command Palette
 	- Sidebar
+	- Overlaying Sidebar
+	- Hidden Sidebar Headers
+	- Sidebar Styling
 	- Editor
 	- Clean Embeds
 	- Active / Inactive Note
@@ -726,21 +731,143 @@ body:not(.no-image-alttext-caption) .image-embed[alt]:not([alt$=".png"], [alt$="
 /* ───────────────────────────────────────────────── */
 /* << Misc Hiding
 ──────────────────────────────────────────────────── */
-body:not(.show-sidebar-toggle-buttons) .sidebar-toggle-button {
-	display: none;
-}
-
-/* move the tab-list button to the space now free from the "right sidebar toggle" */
-body.mod-macos.is-hidden-frameless:not(.is-popout-window) .workspace .workspace-tabs.mod-top-right-space .workspace-tab-header-container {
-	padding-right: 0;
-}
-
-body:not(.show-metadata) .frontmatter-container {
-	display: none;
-}
 
 body:not(.show-close-buttons) .modal-close-button {
 	display: none;
+}
+
+/* ───────────────────────────────────────────────── */
+/* << Frontmatter
+──────────────────────────────────────────────────── */
+.frontmatter.language-yaml,
+.frontmatter-container {
+	background-color: var(--bg2);
+	padding: var(--size-4-2) var(--size-4-3);
+	border: var(--thin-muted-border);
+	border-radius: var(--radius-s);
+}
+
+.frontmatter.language-yaml,
+.frontmatter-section * {
+	font-size: var(--font-small);
+}
+
+body .frontmatter-container-header.frontmatter-container-header {
+	display: none;
+}
+
+.frontmatter-container .tag {
+	background: none;
+}
+
+/* ───────────────────────────────────────────────── */
+/* <<< Floating Metadata & YAML
+──────────────────────────────────────────────────── */
+
+/* base look */
+body:not(.no-floating-metadata):not(.is-mobile) :is(.frontmatter.language-yaml, .frontmatter-container) {
+	line-height: 2.2em;
+
+	max-width: calc(var(--line-length) + 3.4rem);
+
+	position: fixed;
+	right: 0;
+	z-index: 100;
+
+	padding: 4px 2rem 5px 7px;
+	margin: 0;
+}
+
+body:not(.no-floating-metadata):not(.is-mobile) .frontmatter-container.frontmatter-container {
+	z-index: 1; /* to keep it beneath the expanded yaml block */
+}
+
+/* look when not hovered */
+body:not(.no-floating-metadata):not(.is-mobile) :is(.frontmatter.language-yaml, .frontmatter-container):not(:hover) {
+	font-family: "iA Writer Quattro S"; /* fixed font so font changes do not screw up alignment */
+	font-weight: 500;
+
+	height: 2.2rem;
+	width: 2.2rem;
+
+	color: var(--icon-color);
+	background: none;
+	opacity: var(--icon-opacity);
+
+	padding: 0;
+
+	border: none;
+}
+
+body:not(.no-floating-metadata):not(.is-mobile) .frontmatter-container:not(:hover)::before {
+	content: "M";
+	font-size: 1.2rem;
+	padding-left: 0.5rem;
+}
+
+body:not(.no-floating-metadata):not(.is-mobile) .frontmatter.language-yaml:not(:hover)::before {
+	content: "Y";
+	font-size: 1.3rem;
+	padding-left: 0.65rem;
+}
+
+body:not(.no-floating-metadata):not(.is-mobile) :is(.frontmatter.language-yaml, .frontmatter-container) .frontmatter-container-header,
+body:not(.no-floating-metadata):not(.is-mobile) .frontmatter.language-yaml .copy-code-button,
+body:not(.no-floating-metadata):not(.is-mobile) .frontmatter.language-yaml::after,
+body:not(.no-floating-metadata):not(.is-mobile) :is(.frontmatter.language-yaml, .frontmatter-container):not(:hover) > * {
+	display: none;
+}
+
+/* look when hovered */
+body:not(.no-floating-metadata):not(.is-mobile) :is(.frontmatter.language-yaml, .frontmatter-container):hover {
+	margin-right: 0.5rem;
+}
+
+/* Positioning of the buttons */
+:root { /* stylelint-disable-line no-duplicate-selectors */
+	--floating-metadata-top-header-visible: 2rem;
+	--floating-metadata-top-no-header: 0.2rem;
+}
+
+:is(.longform-leaf, .writing) {
+	--floating-metadata-top-header-visible: 2.5rem;
+	--floating-metadata-top-no-header: 2rem;
+}
+
+body:not(.show-view-header) :is(.longform-leaf, .writing),
+body:not(.show-view-header) {
+	--floating-metadata-top: var(--floating-metadata-top-no-header);
+}
+
+body.show-view-header :is(.longform-leaf, .writing),
+body.show-view-header {
+	--floating-metadata-top: var(--floating-metadata-top-header-visible);
+}
+
+/* yaml w/o header */
+/* metadata w/o yaml & w/o header */
+body:not(.no-floating-metadata):not(.is-mobile) .markdown-preview-view:not(.no-floating-metadata) .frontmatter-container,
+body:not(.no-floating-metadata):not(.is-mobile) .markdown-preview-view:not(.no-floating-metadata) .frontmatter.language-yaml {
+	top: var(--floating-metadata-top);
+}
+
+/* metadata w/ yaml & w/o header */
+body:not(.no-floating-metadata):not(.is-mobile) .markdown-preview-view:not(.no-floating-metadata).show-frontmatter .frontmatter-container {
+	top: calc(var(--floating-metadata-top) + 1.75rem);
+}
+
+/* yaml w/ header */
+/* metadata w/o yaml & w/ header */
+body:not(.show-view-header):not(.no-floating-metadata):not(.is-mobile) .view-header:is(:focus-within, :hover) + .view-content .markdown-preview-view:not(.no-floating-metadata) .frontmatter-container,
+body:not(.show-view-header):not(.no-floating-metadata):not(.is-mobile) .view-header:is(:focus-within, :hover) + .view-content .markdown-preview-view:not(.no-floating-metadata) .frontmatter.language-yaml {
+	top: var(--floating-metadata-top-header-visible);
+	transition-delay: var(--transition-delay-passing-over-protection);
+}
+
+/* so transition only affects movement due to header showing, not for the metadata-hovering */
+body:not(.show-view-header):not(.no-floating-metadata):not(.is-mobile) .markdown-preview-view:not(.no-floating-metadata) :is(.frontmatter.language-yaml, .frontmatter-container) {
+	transition: var(--medium-transition);
+	transition-property: top;
 }
 
 /* ───────────────────────────────────────────────── */
@@ -827,12 +954,12 @@ body:not(.normal-header-bar, .is-mobile) .view-header:not(:focus-within) {
 }
 
 /* hide reading/editing toggle */
-body:not(.normal-header-bar, .is-mobile) .view-action:nth-last-child(2) {
+body:not(.normal-header-bar, .is-mobile) .view-header:not(:focus-within) .view-action:nth-last-child(2) {
 	display: none;
 }
 
 /* position the remaining buttons (by default only the "more options" button) */
-body:not(.normal-header-bar, .is-mobile) .view-header .view-actions {
+body:not(.normal-header-bar, .is-mobile) .view-header:not(:focus-within) .view-actions {
 	position: sticky;
 	margin-top: var(--size-4-5);
 	margin-right: -14px;
@@ -1067,27 +1194,20 @@ body:not(.is-mobile) .suggestion-prefix {
 /* ───────────────────────────────────────────────── */
 /* << Sidebar
 ──────────────────────────────────────────────────── */
-body .workspace-leaf-content .view-content {
-	padding: 0 0 var(--size-4-4) 0;
-}
 
-.nav-file-title,
-.nav-folder-title {
-	border-radius: 0;
-}
+/* ───────────────────────────────────────────────── */
+/* << Overlaying Sidebar
+──────────────────────────────────────────────────── */
 
-:is(.mod-left-split, .mod-right-split) .mod-top .workspace-tab-header-container-inner {
-	padding-bottom: var(--size-4-1);
-	margin-top: var(--size-4-1);
-}
-
-/* Overlaying Sidebars */
 .overlaying-right-sidebar .mod-right-split {
 	position: absolute;
 	right: 0;
 }
 
-/* hidden headers */
+/* ───────────────────────────────────────────────── */
+/* << Hidden Sidebar Headers
+──────────────────────────────────────────────────── */
+
 body:not(.show-sidebar-tabs) :is(.mod-left-split, .mod-right-split) :is(.workspace-tab-header-container, .workspace-tab-header-container *),
 body:not(.show-sidebar-tabs) :is(.mod-left-split, .mod-right-split) .workspace-tab-header-container:is(:hover *, :hover) {
 	transition: var(--anim-duration-moderate);
@@ -1108,12 +1228,32 @@ body:not(.show-sidebar-tabs) :is(.mod-left-split, .mod-right-split) .workspace-t
 	opacity: 0;
 }
 
-/* files */
-.tree-item-inner:hover {
-	cursor: var(--cursor-link);
+/* ───────────────────────────────────────────────── */
+/* << Sidebar Styling
+──────────────────────────────────────────────────── */
+body .workspace-leaf-content .view-content {
+	padding: 0 0 var(--size-4-4) 0;
 }
 
-/* STYLING */
+body:not(.show-sidebar-toggle-buttons) .sidebar-toggle-button {
+	display: none;
+}
+
+/* move the tab-list button to the space now free from the "right sidebar toggle" */
+body.mod-macos.is-hidden-frameless:not(.is-popout-window) .workspace .workspace-tabs.mod-top-right-space .workspace-tab-header-container {
+	padding-right: 0;
+}
+
+.nav-file-title,
+.nav-folder-title {
+	border-radius: 0;
+}
+
+:is(.mod-left-split, .mod-right-split) .mod-top .workspace-tab-header-container-inner {
+	padding-bottom: var(--size-4-1);
+	margin-top: var(--size-4-1);
+}
+
 .mod-right-split .mod-top .workspace-tab-header-container {
 	z-index: 15;
 	border-left: var(--thin-muted-border);
@@ -1122,6 +1262,11 @@ body:not(.show-sidebar-tabs) :is(.mod-left-split, .mod-right-split) .workspace-t
 .mod-left-split .mod-top .workspace-tab-header-container {
 	z-index: 15; /* so it's above the resize handle */
 	border-right: var(--thin-muted-border);
+}
+
+/* files */
+.tree-item-inner:hover {
+	cursor: var(--cursor-link);
 }
 
 /* ───────────────────────────────────────────────── */
@@ -1961,6 +2106,7 @@ settings:
   -
    id: show-hide-elements
    title: Show/Hide UI Elements
+   description: Re-enable UI Elements hidden by this theme.
    type: heading
    level: 1
    collapsed: true
@@ -1987,6 +2133,12 @@ settings:
    title: Re-enable the Ribbon
    type: class-toggle
    description: 'The ribbon is the thin vertical bar to the very left. Without the ribbon, you can still trigger any action via the Command Palette.'
+   default: false
+  -
+   id: no-floating-metadata
+   title: 'Reading Mode: Permanently show the Metadata Block / YAML Frontmatter'
+   type: class-toggle
+   description: 'By default, the metadata block in this theme only becomes visible upon hovering the "M" / "Y" in the top right.'
    default: false
   -
    id: show-new-tab-button
@@ -2024,13 +2176,14 @@ settings:
    default: false
   -
    id: hide-longform-status-bar
-   title: Hide Longform Word Count
+   title: Hide Longform Plugin Word Count
    type: class-toggle
    default: false
   -
 # << Workspace (+)
    id: user-interface
    title: Workspace
+   description: Overlaying Sidebar, Tab Width
    type: heading
    level: 1
    collapsed: true
@@ -2054,9 +2207,16 @@ settings:
 # << Editor & Media (+)
    id: content-settings
    title: Editor & Media
+   description: Dimmed Inactive Panes, Clean Embeds, Line Length, Image Settings
    type: heading
    level: 1
    collapsed: true
+  -
+   id: no-dimmed-inactive-pane
+   title: Disable Dimming Inactive Panes
+   description: This also affects inactive popout windows and popovers from the Hover Editor plugin.
+   type: class-toggle
+   default: false
   -
    id: clean-embeds
    title: 'Reading Mode: Clean Embeds'
@@ -2091,6 +2251,7 @@ settings:
 # << Markup & Special Syntax (+)
    id: markup-and-special-syntax
    title: Markup & Special Syntax
+   description: Highlight Colors, Blockquote Alignment, Trailing Spaces, Pandoc & Dataview Emphasis
    type: heading
    level: 1
    collapsed: true
