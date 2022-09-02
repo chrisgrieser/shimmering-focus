@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 3.33
+Version 3.34
 Source CSS: https://github.com/chrisgrieser/shimmering-focus/blob/main/source.css
 MIT License
 ──────────────────────────────────────────────────── */
@@ -1266,6 +1266,7 @@ body:not(.no-tabbar-header-hybrid) .mod-root .workspace-tab-header-container:not
 	width: 700px;
 	background-color: transparent;
 	box-shadow: none;
+	margin-left: -12px;
 }
 
 body:not(.no-tabbar-header-hybrid) .mod-root .workspace-tab-header-container:not(:hover) .workspace-tab-header:only-child .workspace-tab-header-inner-title {
@@ -1344,7 +1345,11 @@ body .workspace .mod-root .workspace-tab-header {
 /* pin */
 .workspace-tabs:not(.mod-stacked) .workspace-tab-header-status-container {
 	padding-top: var(--size-2-2);
-	padding-right: var(--size-4-2);
+	padding-right: 10px;
+}
+
+body:not(.no-tabbar-header-hybrid) .mod-root .workspace-tab-header-container:not(:hover) .workspace-tab-header:only-child .workspace-tab-header-status-container {
+	/* padding-right: var(--size-4-3); */
 }
 
 .mod-stacked .workspace-tab-header-status-icon .lucide-pin {
@@ -1489,8 +1494,8 @@ body:not(.is-mobile) .suggestion-prefix {
 /* << Hidden Sidebar Headers
 ──────────────────────────────────────────────────── */
 
-body:not(.show-sidebar-tabs) :is(.mod-left-split, .mod-right-split) :is(.workspace-tab-header-container, .workspace-tab-header-container *),
-body:not(.show-sidebar-tabs) :is(.mod-left-split, .mod-right-split) .workspace-tab-header-container:is(:hover *, :hover) {
+body:not(.show-sidebar-tabs) :is(.mod-left-split, .mod-right-split) :is(.workspace-tab-header, .workspace-tab-header svg),
+body:not(.show-sidebar-tabs) :is(.mod-left-split, .mod-right-split) :is(.workspace-tab-header-container, .workspace-tab-header-container *) {
 	transition: var(--anim-duration-moderate);
 	transition-property: opacity, height, background-color; /* so transition of hovering the tab itself does not get delayed */
 	transition-delay: var(--transition-delay-passing-over-protection);
@@ -1498,7 +1503,7 @@ body:not(.show-sidebar-tabs) :is(.mod-left-split, .mod-right-split) .workspace-t
 
 body:not(.show-sidebar-tabs) :is(.mod-left-split, .mod-right-split) .workspace-tabs:not(.mod-top) .workspace-tab-header-container:not(:hover) {
 	height: 9px;
-	background-color: var(--bg4);
+	background-color: var(--bg1);
 }
 
 body:not(.show-sidebar-tabs) :is(.mod-left-split, .mod-right-split) .workspace-tabs:not(.mod-top) .workspace-tab-header-container:hover {
@@ -1506,6 +1511,7 @@ body:not(.show-sidebar-tabs) :is(.mod-left-split, .mod-right-split) .workspace-t
 }
 
 body:not(.show-sidebar-tabs) :is(.mod-left-split, .mod-right-split) .workspace-tabs .workspace-tab-header-container:not(:hover) :is(.workspace-tab-header, .workspace-tab-header svg) {
+	height: 0;
 	opacity: 0;
 }
 

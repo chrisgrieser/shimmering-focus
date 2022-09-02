@@ -1,4 +1,5 @@
 # Changelog
+- 2022-09-02	patch
 - 2022-09-02	tab list button
 - 2022-09-02	pins
 - 2022-09-02	styling for another quick switcher
