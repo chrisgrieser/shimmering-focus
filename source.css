@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 3.34
+Version 3.35
 Source CSS: https://github.com/chrisgrieser/shimmering-focus/blob/main/source.css
 MIT License
 ──────────────────────────────────────────────────── */
@@ -25,7 +25,6 @@ MIT License
 		- language replacements
 	- Headings
 	- Callouts
-	- Code Blocks
 	- Blockquotes
 	- Trailing Whitespace (Two Space Rule)
 	- Strikethroughs
@@ -562,6 +561,10 @@ body:not(.no-heading-bg) .markdown-source-view .cm-line .cm-inline-code.cm-heade
 	line-height: 1.4em;
 }
 
+body .markdown-source-view.mod-cm6 .cm-line.HyperMD-codeblock {
+	padding-left: var(--size-2-2);
+}
+
 .cm-s-obsidian div.HyperMD-codeblock-begin-bg {
 	background-color: var(--code-block-alt-bg);
 	border: var(--codeblock-border);
@@ -758,13 +761,6 @@ body:not(.no-codeblock-line-numbers) .HyperMD-codeblock-end .cm-formatting-code-
 
 .callout-icon {
 	margin-right: 8px;
-}
-
-/* ───────────────────────────────────────────────── */
-/* << Code Blocks
-──────────────────────────────────────────────────── */
-pre[class*="language-"] {
-	border: var(--thin-muted-border);
 }
 
 /* ───────────────────────────────────────────────── */
