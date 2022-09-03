@@ -1,5 +1,5 @@
 # Changelog
-- 2022-09-03	patch
+- 2022-09-03	colors and tags
 - 2022-09-03	color scheme stuff
 - 2022-09-02	tab list button
 - 2022-09-02	pins

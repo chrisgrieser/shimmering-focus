@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 3.38
+Version 3.39
 Source CSS: https://github.com/chrisgrieser/shimmering-focus/blob/main/source.css
 MIT License
 ──────────────────────────────────────────────────── */
@@ -13,12 +13,14 @@ MIT License
 /* @TOC-SPLIT-MARKER */
 /*
 - Fonts (base64 encoded)
+	- Temporary Bug Fixes / Additions
 - Variables
 	- Unchanged Obsidian Variables
 	- Color Scheme Variables
 	- Changed Obsidian Variables
 	- Theme Variables
 - Markup
+	- Footnotes
 	- Links
 		- Fold external URLs (Source Mode)
 	- Misc Markup
@@ -209,6 +211,26 @@ MIT License
 }
 
 /* ───────────────────────────────────────────────── */
+/* << Temporary Bug Fixes / Additions
+──────────────────────────────────────────────────── */
+.cm-hashtag-begin.cm-hashtag-begin {
+	font-family: var(--font-text);
+}
+
+/* https://discord.com/channels/686053708261228577/989603365606531104/1015645516341719120 */
+.cm-hashtag:hover {
+	text-decoration: var(--tag-decoration-hover);
+	color: var(--tag-color-hover);
+	background-color: var(--tag-background-hover);
+	border: var(--tag-border-width) solid var(--tag-border-color-hover);
+}
+
+/* https://discord.com/channels/686053708261228577/989603365606531104/1015284079849119754 */
+body {
+	--tab-width: 200px;
+}
+
+/* ───────────────────────────────────────────────── */
 /* < Variables
 ──────────────────────────────────────────────────── */
 
@@ -319,17 +341,10 @@ https://www.youtube.com/watch?v=yl0pvIRTWWo&t=7s */
 	--cursor: default;
 	--cursor-link: pointer;
 
-	--tag-size: var(--font-smaller);
-	--tag-decoration: none;
-	--tag-decoration-hover: none;
-	--tag-background: hsl(var(--interactive-accent-hsl) 0.1);
-	--tag-background-hover: hsl(var(--interactive-accent-hsl) 0.2);
-	--tag-border-color: hsl(var(--interactive-accent-hsl) 0.15);
-	--tag-border-color-hover: hsl(var(--interactive-accent-hsl) 0.15);
-	--tag-border-width: 0px;
-	--tag-padding-x: 0.65em;
-	--tag-padding-y: 0.25em;
-	--tag-radius: 2em;
+	--text-selection: hsl(var(--color-accent-hsl) / 20%);
+	--text-on-accent: hsl(0 0 100);
+	--text-error: var(--color-red);
+	--text-success: var(--color-green);
 }
 
 /* ───────────────────────────────────────────────── */
@@ -386,21 +401,21 @@ https://www.youtube.com/watch?v=yl0pvIRTWWo&t=7s */
 	--color-pink: hsl(328 91% 79%);
 }
 
-body {
+.theme-dark,
+.theme-light {
 	/* Default Accent Color: Teal (will be overriden by user selection in `Appearance tab`) */
-	--accent-h: 190;
-	--accent-s: 90%;
-	--accent-l: 30%;
+	--accent-h: 184;
+	--accent-s: 79%;
+	--accent-l: 35%;
+
+	--reference-color: hsl(28 54% 51%);
+	--text-accent-hover: hsl(328 100% 54%);
+	--link-unresolved-color: hsl(101 42% 51%);
 
 	--text-normal: var(--color-base-100);
 	--text-muted: var(--color-base-70);
 	--text-faint: var(--color-base-50);
-	--text-on-accent: hsl(0 0 100);
-	--text-error: var(--color-red);
-	--text-success: var(--color-green);
-	--text-selection: hsl(var(--color-accent-hsl) / 20%);
 	--text-accent: var(--color-accent);
-	--text-accent-hover: hsl(calc(var(--accent-h) + 120) calc(var(--accent-s) + 40%) calc(var(--accent-l) + 20%));
 	--interactive-normal: var(--color-base-00);
 	--interactive-hover: var(--color-base-20);
 	--interactive-accent-hsl: var(--color-accent-hsl);
@@ -408,15 +423,13 @@ body {
 	--interactive-accent-hover: var(--color-accent-2);
 
 	/* links and tags */
-	--tag-color: var(--text-accent);
-	--tag-color-hover: var(--text-accent);
+	--tag-color: var(--reference-color);
+	--tag-color-hover: var(--text-accent-hover);
 
 	--link-color: var(--text-accent);
 	--link-color-hover: var(--text-accent-hover);
 	--link-external-color: var(--text-accent);
 	--link-external-color-hover: var(--text-accent-hover);
-	--link-unresolved-color: hsl(calc(var(--accent-h) - 40) var(--accent-s) var(--accent-l));
-	--link-unresolved-opacity: 0.7;
 
 	/* file items */
 	--nav-item-color: var(--text-muted);
@@ -430,8 +443,9 @@ body {
 /* ───────────────────────────────────────────────── */
 /* << Changed Obsidian Variables
 ──────────────────────────────────────────────────── */
+/* stylelint-disable no-duplicate-selectors */
 
-body { /* stylelint-disable-line no-duplicate-selectors */
+body {
 	/* Base Fonts */
 	--font-text-theme: "iA Writer Quattro S";
 	--font-interface-theme: "Recursive S";
@@ -458,8 +472,6 @@ body { /* stylelint-disable-line no-duplicate-selectors */
 	--tab-background-active: var(--bg3);
 	--tab-stacked-header-width: 28px;
 
-	--text-gray: var(--color-base-60); /* middle ground between text-muted and text-faint */
-
 	--nav-item-size: var(--font-ui-medium);
 
 	--file-line-width: 700px; /* to be set via style setting */
@@ -469,23 +481,16 @@ body { /* stylelint-disable-line no-duplicate-selectors */
 	--blockquote-background-color: var(--bg2);
 
 	--link-decoration: underline double 1px;
+	--link-unresolved-opacity: 1;
 
 	--divider-color: var(--muted-border-color);
 	--divider-color-hover: var(--text-accent-hover);
 }
 
-.theme-light { /* stylelint-disable-line no-duplicate-selectors */
-	--search-match-color: var(--color-orange);
-}
-
-.theme-dark { /* stylelint-disable-line no-duplicate-selectors */
-	--search-match-color: var(--color-yellow);
-}
-
 /* ───────────────────────────────────────────────── */
 /* << Theme Variables
 ──────────────────────────────────────────────────── */
-body { /* stylelint-disable-line no-duplicate-selectors */
+body {
 	--signature: "⟡";
 	--icon-font: "Material Icons (Filled)";
 
@@ -501,8 +506,9 @@ body { /* stylelint-disable-line no-duplicate-selectors */
 	--bg3: var(--color-base-20);
 	--bg4: var(--color-base-25);
 	--bg5: var(--color-base-30);
+	--bg6: var(--color-base-40);
 
-	--tab-width: 200px;
+	--text-gray: var(--color-base-60); /* middle ground between text-muted and text-faint */
 
 	/* overwrite Obsidian variables w/ --bg colors for consistency with plugins */
 	--background-primary: var(--bg1);
@@ -518,21 +524,94 @@ body { /* stylelint-disable-line no-duplicate-selectors */
 	--thin-muted-border: 1px solid var(--muted-border-color);
 	--muted-border: 2px solid var(--muted-border-color);
 	--thick-muted-border: 4px solid var(--muted-border-color);
+
+	--radius-xs: 2px;
+
+	--tag-size: var(--font-text-size);
+	--tag-decoration-hover: underline;
+	--tag-background: none;
+	--tag-background-hover: none;
+	--tag-border-width: 0;
+	--tag-padding-x: 0;
+	--tag-padding-y: 0;
 }
 
-.theme-light { /* stylelint-disable-line no-duplicate-selectors */
+.theme-light {
 	--a-row: hsla(0 0% 0% / 2.5%);
 	--b-row: hsla(0 0% 0% / 7.5%);
+	--search-match-color: var(--color-orange);
 }
 
-.theme-dark { /* stylelint-disable-line no-duplicate-selectors */
+.theme-dark {
 	--a-row: hsla(0 0% 0% / 15%);
 	--b-row: hsla(0 0% 0% / 30%);
+	--search-match-color: var(--color-yellow);
 }
 
+/* stylelint-enable no-duplicate-selectors */
 /* ───────────────────────────────────────────────── */
 /* < Markup
 ──────────────────────────────────────────────────── */
+
+/* ───────────────────────────────────────────────── */
+/* << Footnotes
+──────────────────────────────────────────────────── */
+
+/* footnotes-references in text */
+.footnotes li::marker,
+.cm-hmd-footnote.cm-hmd-footnote.cm-hmd-footnote.cm-hmd-footnote.cm-hmd-footnote,
+.footnote-link:not(.footnote-backref) {
+	color: var(--reference-color);
+}
+
+/* bold to increase redability */
+.cm-footref,
+.footnote-link {
+	font-weight: 600;
+	text-rendering: geometricPrecision;
+}
+
+body .HyperMD-footnote,
+.footnotes {
+	line-height: 1.2;
+}
+
+/* separator line above the first footnote */
+.cm-line:not(.HyperMD-footnote) + .HyperMD-footnote {
+	padding-top: var(--size-4-3);
+	border-top: var(--basic-border);
+}
+
+.footnotes hr {
+	margin-top: 40px;
+	margin-bottom: 0;
+}
+
+/* no indendation */
+.footnotes ol {
+	padding-inline-start: 25px;
+}
+
+.cm-line.HyperMD-footnote.HyperMD-footnote {
+	padding-left: 0;
+}
+
+.footnote-link:hover {
+	text-decoration: none; /* remove underline which only decreases readability */
+	color: var(--text-accent-hover);
+}
+
+.footnote-backref {
+	font-family: "Inter";
+	font-size: 90%;
+	text-decoration: none;
+
+	color: var(--text-gray);
+
+	margin-left: var(--size-2-1);
+
+	border-radius: var(--radius-xs);
+}
 
 /* ───────────────────────────────────────────────── */
 /* << Links
@@ -570,6 +649,10 @@ body:not(.is-mobile) .markdown-preview-view .internal-link[aria-label] {
 .external-link {
 	background-image: none;
 	padding-right: 0;
+}
+
+body .cm-string.cm-url {
+	color: var(--text-gray);
 }
 
 /* don't underline the formatting */
@@ -619,7 +702,7 @@ body:not(.show-urls) .cm-s-obsidian:not(.is-live-preview) .cm-line:not(.cm-activ
 	--codeblock-roundness: var(--radius-s);
 
 	--code-block-alt-bg: var(--bg5);
-	--slight-code-roundish: calc(var(--radius-s) * 0.5);
+	--slight-code-roundish: var(--radius-xs);
 }
 
 /* ───────────────────────────────────────────────── */
@@ -1061,7 +1144,7 @@ body:not(.no-pandoc-citation-emphasis) .cm-hmd-barelink.cm-hmd-barelink.cm-hmd-b
 }
 
 body:not(.no-pandoc-citation-emphasis) .cm-hmd-barelink.cm-formatting:not(.cm-footref) {
-	color: var(--text-muted);
+	color: var(--text-faint);
 }
 
 /* readability improvement */
@@ -2413,7 +2496,7 @@ body .style-settings-heading[data-level="0"] .setting-item-name.setting-item-nam
 	position: relative;
 	top: -0.7em;
 
-	border-radius: calc(var(--radius-s) * 0.5);
+	border-radius: var(--radius-xs);
 }
 
 /* demo color box: highlight colors */
@@ -2731,7 +2814,7 @@ settings:
    id: show-close-buttons
    title: Re-enable Close Buttons
    type: class-toggle
-   description: "You can still close modals with 'esc' and tabs/panes by with 'ctrl/cmd+W'."
+   description: "You can still close modals with 'esc', and tabs/panes by with 'ctrl/cmd+W'."
    default: false
   -
 # <<< Status Bar (+)
@@ -2838,7 +2921,7 @@ settings:
 # << Markup & Special Syntax (+)
    id: markup-and-special-syntax
    title: Markup & Special Syntax
-   description: Highlight Colors, Blockquote Alignment, Trailing Spaces, Pandoc & Dataview Emphasis
+   description: Highlight Colors, Blockquote Alignment, Trailing Spaces, Pandoc Emphasis
    type: heading
    level: 1
    collapsed: true
@@ -2864,8 +2947,8 @@ settings:
    default: false
   -
    id: no-pandoc-citation-emphasis
-   title: No Emphasis of Pandoc Citations and Dataview Inline Fields
-   description: "Turn off the coloring of Pandoc Citations [@citekey] and dataview inline fields [key:: value] in Source Mode. (Also affects the styling for the Pandoc Reference List Plugin.)"
+   title: No Emphasis of Pandoc Citations
+   description: "Turn off the coloring of Pandoc Citations [@citekey] in Editing Mode. (Also affects the styling for the Pandoc Reference List Plugin.)"
    type: class-toggle
    default: false
   -
