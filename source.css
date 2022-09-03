@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 3.41
+Version 3.42
 Source CSS: https://github.com/chrisgrieser/shimmering-focus/blob/main/source.css
 MIT License
 ──────────────────────────────────────────────────── */
@@ -78,7 +78,7 @@ MIT License
 		- Inline Backlink Pane
 	- Outline
 - Community Plugins
-	- Another Quick Switcher
+	- Another Quick Switcher (AQS)
 	- Recent Files
 	- Pandoc Reference List & Pandoc Citation Markup
 	- Style Settings
@@ -421,6 +421,7 @@ https://www.youtube.com/watch?v=yl0pvIRTWWo&t=7s */
 	--text-accent-hover: hsl(328 100% 54%);
 	--link-unresolved-color: hsl(101 42% 51%);
 
+	--hotkey-color: var(--reference-color);
 	--bold-color: var(--text-accent-hover);
 
 	--text-normal: var(--color-base-100);
@@ -432,6 +433,14 @@ https://www.youtube.com/watch?v=yl0pvIRTWWo&t=7s */
 	--interactive-accent-hsl: var(--color-accent-hsl);
 	--interactive-accent: var(--color-accent-1);
 	--interactive-accent-hover: var(--color-accent-2);
+
+	/* links and tags */
+	--tag-color: var(--reference-color);
+	--tag-color-hover: var(--text-accent-hover);
+	--link-color: var(--text-accent);
+	--link-color-hover: var(--text-accent-hover);
+	--link-external-color: var(--text-accent);
+	--link-external-color-hover: var(--text-accent-hover);
 }
 
 /* ───────────────────────────────────────────────── */
@@ -479,15 +488,6 @@ body {
 
 	--divider-color: var(--muted-border-color);
 	--divider-color-hover: var(--text-accent-hover);
-
-	/* links and tags */
-	--tag-color: var(--reference-color);
-	--tag-color-hover: var(--text-accent-hover);
-
-	--link-color: var(--text-accent);
-	--link-color-hover: var(--text-accent-hover);
-	--link-external-color: var(--text-accent);
-	--link-external-color-hover: var(--text-accent-hover);
 
 	/* file items */
 	--nav-item-color: var(--text-muted);
@@ -1719,6 +1719,7 @@ div.prompt-results {
 
 .prompt .suggestion-item {
 	padding: 6px;
+	border-radius: 0;
 }
 
 body input.prompt-input.prompt-input {
@@ -1757,16 +1758,15 @@ body input.prompt-input.prompt-input {
 	/* has to use a color without transparency, so the suggestion-prefix properly
 	covers long command names */
 	background-color: var(--bg4);
-	border-radius: 0;
 }
 
-.suggestion-item:hover .suggestion-prefix,
-.suggestion-item:hover {
+body .suggestion-item:hover,
+body .suggestion-item:hover .suggestion-prefix {
 	color: var(--text-accent-hover);
 }
 
-.suggestion-item.is-selected .suggestion-prefix,
-.suggestion-item.is-selected {
+.suggestion-item.is-selected,
+.suggestion-item.is-selected .suggestion-prefix {
 	color: var(--text-accent);
 }
 
@@ -1808,6 +1808,11 @@ body:not(.is-mobile) .suggestion-prefix {
 /* hide placeholder */
 .prompt .prompt-input::placeholder {
 	color: transparent;
+}
+
+kbd.suggestion-hotkey {
+	color: var(--hotkey-color);
+	border: var(--thin-muted-border);
 }
 
 /* ───────────────────────────────────────────────── */
@@ -2071,7 +2076,7 @@ are not targeted by this */
 	background-color: var(--bg3);
 	padding: 1px 10px 4px;
 	margin-bottom: var(--card-spacing);
-	border: var(--thin-muted-borderborder);
+	border: var(--thin-muted-border);
 	page-break-inside: avoid;
 }
 
@@ -2187,7 +2192,7 @@ body:not(.classic-inline-backlinks) :is(.writing, .longform-leaf) .embedded-back
 ──────────────────────────────────────────────────── */
 
 /* ───────────────────────────────────────────────── */
-/* << Another Quick Switcher
+/* << Another Quick Switcher (AQS)
 ──────────────────────────────────────────────────── */
 /* styling from prompts also apply */
 
@@ -2238,6 +2243,35 @@ body .another-quick-switcher__status__count-input {
 	padding-left: 5px;
 }
 
+/* selected */
+.suggestion-item.is-selected :is(.another-quick-switcher__item__icon, .another-quick-switcher__item__directory, .another-quick-switcher__item__description) {
+	color: var(--text-accent);
+	filter: saturate(60%);
+}
+
+/* hovered */
+.suggestion-item:hover :is(.another-quick-switcher__item__icon, .another-quick-switcher__item__directory, .another-quick-switcher__item__description) {
+	color: var(--text-accent-hover);
+	filter: saturate(60%);
+}
+
+/* unresolved */
+.another-quick-switcher__phantom_item.another-quick-switcher__phantom_item {
+	color: var(--link-unresolved-color);
+	opacity: 0.85;
+}
+
+.another-quick-switcher__phantom_item :is(.another-quick-switcher__item__icon, .another-quick-switcher__item__directory),
+.suggestion-item:hover .another-quick-switcher__phantom_item {
+	filter: saturate(60%);
+}
+
+.suggestion-item:hover .another-quick-switcher__phantom_item :is(.another-quick-switcher__item__icon, .another-quick-switcher__item__directory),
+.suggestion-item:hover .another-quick-switcher__phantom_item {
+	color: var(--text-hover-accent);
+	filter: saturate(60%);
+}
+
 /* starred item bold */
 .another-quick-switcher__starred_item::before {
 	display: none;
@@ -2273,17 +2307,17 @@ body .another-quick-switcher__status__count-input {
 }
 
 body:not(.is-mobile) .another-quick-switcher__item__hot-key-guide {
-	font-family: var(--font-monospace-theme);
-	font-size: 0.65em;
+	font-size: 80%;
 	line-height: 1;
 
+	color: var(--hotkey-color);
 	background-color: var(--bg3);
 	opacity: 0.9;
 
 	position: absolute;
 	right: var(--size-4-1);
 
-	padding: var(--size-4-1) 3px;
+	padding: 3px;
 
 	border: var(--thin-border);
 	border-radius: var(--radius-s);
@@ -2377,7 +2411,7 @@ body:not(.no-alternating-rows) .workspace-leaf-content[data-type="recent-files"]
 }
 
 .pwc-reference-list.pwc-reference-list.pwc-reference-list.pwc-reference-list .pwc-reference-list__title.pwc-reference-list__title > div {
-	font-family: var(--heading-font);
+	font-family: var(--font-heading-theme);
 	font-size: var(--h3-size);
 	letter-spacing: calc(var(--heading-letter-spacing) * 0.5);
 	margin-bottom: 5px;
@@ -2413,12 +2447,11 @@ body .pwc-reference-list .csl-entry.csl-entry.csl-entry {
 	font-size: 0.9rem;
 
 	background-color: var(--bg3);
-	box-shadow: var(--tiny-inset-shadow);
 
 	padding: 3px 3px 3px 5px;
 
 	border: var(--thin-border);
-	border-radius: var(--roundish);
+	border-radius: var(--radius-s);
 }
 
 .pwc-tooltip.is-missing {
@@ -2440,7 +2473,7 @@ body:not(.no-pandoc-citation-emphasis) .view-content.view-content :is(.cm-pandoc
 }
 
 body:not(.no-pandoc-citation-emphasis) .pandoc-citation.is-unresolved.is-unresolved {
-	text-decoration: wavy underline 1px var(--text-error);
+	text-decoration: underline 1px var(--text-error);
 	color: var(--text-error);
 	opacity: 1;
 }
@@ -2664,7 +2697,6 @@ body .style-settings-heading[data-level="0"] .setting-item-name.setting-item-nam
 	letter-spacing: 0.1px;
 
 	background-color: var(--bg2);
-	box-shadow: var(--small-inset-shadow);
 
 	padding: 10px 10px 5px;
 	margin-top: 30px;
