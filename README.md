@@ -1,5 +1,5 @@
 # Shimmering Focus ⟡
-![](https://img.shields.io/badge/downloads-36155-6E4E9B?style=plastic) ![](https://img.shields.io/github/last-commit/chrisgrieser/shimmering-focus?style=plastic) [![](https://img.shields.io/badge/changelog-click%20here-FFE800?style=plastic)](https://chrisgrieser.github.io/shimmering-focus/changelog/)
+![](https://img.shields.io/badge/downloads-36189-6E4E9B?style=plastic) ![](https://img.shields.io/github/last-commit/chrisgrieser/shimmering-focus?style=plastic) [![](https://img.shields.io/badge/changelog-click%20here-FFE800?style=plastic)](https://chrisgrieser.github.io/shimmering-focus/changelog/)
 
 A minimalistic Obsidian theme for keyboard-centric users.
 
@@ -17,6 +17,8 @@ A minimalistic Obsidian theme for keyboard-centric users.
 - [x] update build script
 - [x] update issue templates
 - [x] create `manifest.json`
+- [ ] create `versions.json`
+- [ ] add release tags to build script + github action for auto-releasing
 - [ ] New Docs
 - [ ] new Promo Screenshot (16:9, 512x288px)
 - [ ] 🎯 PR to `obsidian-releases`, removing `legacy` label and updating screenshot link.

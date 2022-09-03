@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 3.36
+Version 3.37
 Source CSS: https://github.com/chrisgrieser/shimmering-focus/blob/main/source.css
 MIT License
 ──────────────────────────────────────────────────── */
@@ -15,9 +15,12 @@ MIT License
 - Fonts (base64 encoded)
 - Variables
 	- Unchanged Obsidian Variables
+	- Color Scheme Variables
 	- Changed Obsidian Variables
 	- Theme Variables
 - Markup
+	- Links
+		- Fold external URLs (Source Mode)
 	- Misc Markup
 	- Code
 		- Inline Code
@@ -33,11 +36,10 @@ MIT License
 	- Images
 - Settings
 - UI Elements
-	- Misc Hiding
+	- Modals
 	- Frontmatter
 		- Floating Metadata & YAML
 	- Settings Button & Ribbon
-	- Fold external URLs (Source Mode)
 	- Status Bar
 	- Header Bar (Tab Title Bar)
 	- Tab Bar
@@ -207,6 +209,7 @@ MIT License
 /* ───────────────────────────────────────────────── */
 /* < Variables
 ──────────────────────────────────────────────────── */
+
 /* ───────────────────────────────────────────────── */
 /* << Unchanged Obsidian Variables
 ──────────────────────────────────────────────────── */
@@ -215,18 +218,6 @@ autocompletion via LSP and for quicker reference
 https://www.youtube.com/watch?v=yl0pvIRTWWo&t=7s */
 
 .dummy {
-	--text-normal: var(--color-base-100);
-	--text-muted: var(--color-base-70);
-	--text-faint: var(--color-base-50);
-	--text-on-accent: hsl(0 0 100);
-	--text-error: var(--color-red);
-	--text-success: var(--color-green);
-	--text-selection: hsl(var(--color-accent-hsl) 0.2);
-	--text-accent: var(--color-accent);
-	--text-accent-hover: var(--color-accent-2);
-	--interactive-normal: var(--color-base-00);
-	--interactive-hover: var(--color-base-10);
-
 	/* Icons */
 	--icon-size: var(--icon-m);
 	--icon-stroke: var(--icon-m-stroke-width);
@@ -268,12 +259,6 @@ https://www.youtube.com/watch?v=yl0pvIRTWWo&t=7s */
 
 	/* File navigator */
 	--nav-item-size: var(--font-ui-small);
-	--nav-item-color: var(--text-muted);
-	--nav-item-color-hover: var(--text-normal);
-	--nav-item-color-active: var(--text-normal);
-	--nav-item-color-highlighted: var(--text-accent-hover);
-	--nav-item-background-hover: var(--background-modifier-hover);
-	--nav-item-background-active: var(--background-modifier-hover);
 	--nav-item-weight: inherit;
 	--nav-item-weight-hover: inherit;
 	--nav-item-weight-active: inherit;
@@ -326,20 +311,125 @@ https://www.youtube.com/watch?v=yl0pvIRTWWo&t=7s */
 	--code-background: var(--background-primary-alt);
 	--footnote-size: var(--font-smaller);
 
-	--divider-color: var(--background-modifier-border);
-	--divider-color-hover: var(--interactive-accent);
 	--divider-width: 1px;
 	--divider-width-hover: 3px;
 
 	--cursor: default;
 	--cursor-link: pointer;
+
+	--tag-size: var(--font-smaller);
+	--tag-decoration: none;
+	--tag-decoration-hover: none;
+	--tag-background: hsl(var(--interactive-accent-hsl) 0.1);
+	--tag-background-hover: hsl(var(--interactive-accent-hsl) 0.2);
+	--tag-border-color: hsl(var(--interactive-accent-hsl) 0.15);
+	--tag-border-color-hover: hsl(var(--interactive-accent-hsl) 0.15);
+	--tag-border-width: 0px;
+	--tag-padding-x: 0.65em;
+	--tag-padding-y: 0.25em;
+	--tag-radius: 2em;
+}
+
+/* ───────────────────────────────────────────────── */
+/* << Color Scheme Variables
+──────────────────────────────────────────────────── */
+.theme-light {
+	--color-base-00: hsl(0 0% 100%);
+	--color-base-05: hsl(0 0% 99%);
+	--color-base-10: hsl(0 0% 98%);
+	--color-base-20: hsl(0 0% 96%);
+	--color-base-25: hsl(0 0% 89%);
+	--color-base-30: hsl(0 0% 88%);
+	--color-base-35: hsl(0 0% 83%);
+	--color-base-40: hsl(0 0% 74%);
+	--color-base-50: hsl(0 0% 67%);
+	--color-base-60: hsl(0 0% 44%);
+	--color-base-70: hsl(0 0% 35%);
+	--color-base-100: hsl(0 0% 13%);
+
+	--color-red-rgb: 228, 55, 75;
+	--color-red: hsl(353 76% 55%);
+	--color-green-rgb: 12, 181, 79;
+	--color-green: hsl(144 88% 38%);
+	--color-orange: hsl(30 100% 43%);
+	--color-yellow: hsl(39 55% 48%);
+	--color-cyan: hsl(179 61% 45%);
+	--color-blue: hsl(212 93% 45%);
+	--color-purple: hsl(254 65% 65%);
+	--color-pink: hsl(331 64% 47%);
+}
+
+.theme-dark {
+	--color-base-00: hsl(0 0% 12%);
+	--color-base-10: hsl(0 0% 14%);
+	--color-base-20: hsl(0 0% 15%);
+	--color-base-25: hsl(0 0% 16%);
+	--color-base-30: hsl(0 0% 21%);
+	--color-base-35: hsl(0 0% 25%);
+	--color-base-40: hsl(0 0% 33%);
+	--color-base-50: hsl(0 0% 40%);
+	--color-base-60: hsl(0 0% 60%);
+	--color-base-70: hsl(0 0% 73%);
+	--color-base-100: hsl(0 0% 85%);
+
+	--color-red-rgb: 251, 70, 76;
+	--color-green-rgb: 68, 207, 110;
+	--color-red: hsl(358 96% 63%);
+	--color-green: hsl(138 59% 54%);
+	--color-orange: hsl(31 79% 58%);
+	--color-yellow: hsl(59 64% 66%);
+	--color-cyan: hsl(179 69% 60%);
+	--color-blue: hsl(212 100% 50%);
+	--color-purple: hsl(258 100% 75%);
+	--color-pink: hsl(328 91% 79%);
+}
+
+body {
+	/* Default Accent Color: Teal (will be overriden by user selection in `Appearance tab`) */
+	--accent-h: 190;
+	--accent-s: 90%;
+	--accent-l: 30%;
+
+	--text-normal: var(--color-base-100);
+	--text-muted: var(--color-base-70);
+	--text-faint: var(--color-base-50);
+	--text-on-accent: hsl(0 0 100);
+	--text-error: var(--color-red);
+	--text-success: var(--color-green);
+	--text-selection: hsl(var(--color-accent-hsl) / 20%);
+	--text-accent: var(--color-accent);
+	--text-accent-hover: hsl(calc(var(--accent-h) + 120) calc(var(--accent-s) + 40%) calc(var(--accent-l) + 20%));
+	--interactive-normal: var(--color-base-00);
+	--interactive-hover: var(--color-base-20);
+	--interactive-accent-hsl: var(--color-accent-hsl);
+	--interactive-accent: var(--color-accent-1);
+	--interactive-accent-hover: var(--color-accent-2);
+
+	/* links and tags */
+	--tag-color: var(--text-accent);
+	--tag-color-hover: var(--text-accent);
+
+	--link-color: var(--text-accent);
+	--link-color-hover: var(--text-accent-hover);
+	--link-external-color: var(--text-accent);
+	--link-external-color-hover: var(--text-accent-hover);
+	--link-unresolved-color: hsl(calc(var(--accent-h) - 40) var(--accent-s) var(--accent-l));
+	--link-unresolved-opacity: 0.7;
+
+	/* file items */
+	--nav-item-color: var(--text-muted);
+	--nav-item-color-hover: var(--text-accent-hover);
+	--nav-item-color-active: var(--text-accent);
+	--nav-item-color-highlighted: var(--text-accent-hover);
+	--nav-item-background-hover: var(--bg5);
+	--nav-item-background-active: var(--bg5);
 }
 
 /* ───────────────────────────────────────────────── */
 /* << Changed Obsidian Variables
 ──────────────────────────────────────────────────── */
 
-body {
+body { /* stylelint-disable-line no-duplicate-selectors */
 	/* Base Fonts */
 	--font-text-theme: "iA Writer Quattro S";
 	--font-interface-theme: "Recursive S";
@@ -363,52 +453,31 @@ body {
 	--h6-style: italic;
 	--inline-title-color: var(--text-faint);
 
-	/* Default Accent Color: Teal
-	(will be overriden by user selection in `Appearance tab`) */
-	--accent-h: 190;
-	--accent-s: 90%;
-	--accent-l: 30%;
-
 	--tab-background-active: var(--bg3);
 	--tab-stacked-header-width: 28px;
 
+	--text-gray: var(--color-base-60); /* middle ground between text-muted and text-faint */
+
 	--nav-item-size: var(--font-ui-medium);
 
-	--line-length: 700px; /* to be set via style setting */
-	--file-line-width: var(--line-length);
+	--file-line-width: 700px; /* to be set via style setting */
 
 	--blockquote-border-thickness: 8px;
 	--blockquote-border-color: var(--bg5);
 	--blockquote-background-color: var(--bg2);
+
+	--link-decoration: underline double 1px;
+
+	--divider-color: var(--muted-border-color);
+	--divider-color-hover: var(--text-accent-hover);
 }
 
-.theme-light {
-	--color-base-00: hsl(0 0% 100%);
-	--color-base-05: hsl(0 0% 99%);
-	--color-base-10: hsl(0 0% 98%);
-	--color-base-20: hsl(0 0% 96%);
-	--color-base-25: hsl(0 0% 89%);
-	--color-base-30: hsl(0 0% 88%);
-	--color-base-35: hsl(0 0% 83%);
-	--color-base-40: hsl(0 0% 74%);
-	--color-base-50: hsl(0 0% 67%);
-	--color-base-60: hsl(0 0% 44%);
-	--color-base-70: hsl(0 0% 35%);
-	--color-base-100: hsl(0 0% 13%);
+.theme-light { /* stylelint-disable-line no-duplicate-selectors */
+	--search-match-color: var(--color-orange);
 }
 
-.theme-dark {
-	--color-base-00: hsl(0 0% 12%);
-	--color-base-10: hsl(0 0% 14%);
-	--color-base-20: hsl(0 0% 15%);
-	--color-base-25: hsl(0 0% 16%);
-	--color-base-30: hsl(0 0% 21%);
-	--color-base-35: hsl(0 0% 25%);
-	--color-base-40: hsl(0 0% 33%);
-	--color-base-50: hsl(0 0% 40%);
-	--color-base-60: hsl(0 0% 60%);
-	--color-base-70: hsl(0 0% 73%);
-	--color-base-100: hsl(0 0% 85%);
+.theme-dark { /* stylelint-disable-line no-duplicate-selectors */
+	--search-match-color: var(--color-yellow);
 }
 
 /* ───────────────────────────────────────────────── */
@@ -464,23 +533,86 @@ body { /* stylelint-disable-line no-duplicate-selectors */
 ──────────────────────────────────────────────────── */
 
 /* ───────────────────────────────────────────────── */
+/* << Links
+──────────────────────────────────────────────────── */
+/* link styling also done in section for color scheme variables
+and changed Obsidian variables */
+
+/* dotted underline links to headings */
+.markdown-preview-view .internal-link[href*="#"] {
+	text-decoration: underline dotted;
+}
+
+/* dashed alias link: Source Mode / LP */
+.markdown-source-view .cm-link-alias.cm-link-alias.cm-link-alias {
+	text-decoration: underline dashed 1px;
+}
+
+/* tiny fix for weird LP CSS */
+.is-live-preview .cm-link-alias.cm-link-alias.cm-link-alias .cm-underline {
+	text-decoration: none;
+}
+
+/* dashed alias link: Preview Mode (works cause only aliases get an aria-label) */
+body:not(.is-mobile) .markdown-preview-view .internal-link[aria-label] {
+	text-decoration: underline dashed 1px;
+}
+
+.dataview.dataview.dataview a.internal-link {
+	/* undoing of this styling in dataview section,
+	since dataview internal links do have aria labels, too */
+	text-decoration: solid underline 1.5px;
+}
+
+/* remove external link icon */
+.external-link {
+	background-image: none;
+	padding-right: 0;
+}
+
+/* don't underline the formatting */
+.cm-s-obsidian .cm-url.cm-formatting,
+body:not(.show-urls) .cm-line:not(.cm-active) .cm-string.cm-url,
+.cm-link-alias-pipe.cm-link-alias-pipe.cm-link-alias-pipe.cm-link-alias-pipe.cm-link-alias-pipe,
+.cm-formatting-link.cm-formatting-link.cm-formatting-link {
+	text-decoration: none;
+	color: var(--text-faint);
+	cursor: default;
+}
+
+.is-unresolved.is-unresolved {
+	text-decoration: none;
+}
+
+/* ───────────────────────────────────────────────── */
+/* <<< Fold external URLs (Source Mode)
+──────────────────────────────────────────────────── */
+body:not(.show-urls) .cm-s-obsidian:not(.is-live-preview) .cm-line:not(.cm-active) .cm-string.cm-url:not(.cm-formatting) {
+	font-size: 0;
+}
+
+body:not(.show-urls) .cm-s-obsidian:not(.is-live-preview) .cm-line:not(.cm-active) .cm-string.cm-url:not(.cm-formatting)::after {
+	content: "link";
+	font-family: var(--icon-font);
+	font-size: calc(var(--font-text-size) * 0.9);
+	position: relative;
+	top: 2px;
+}
+
+/* ───────────────────────────────────────────────── */
 /* << Misc Markup
 ──────────────────────────────────────────────────── */
 * {
-	text-underline-offset: 1px;
+	text-underline-offset: 1.5px;
 }
 
 /* ───────────────────────────────────────────────── */
 /* << Code
 ──────────────────────────────────────────────────── */
 /* styling of code in general */
-/* inline code in headers keep the header size */
-.markdown-preview-view pre,
-.cm-s-obsidian .cm-inline-code:not(.cm-header),
-.cm-s-obsidian .HyperMD-codeblock,
-.app-container .markdown-preview-view code {
-	font-size: var(--code-size);
 
+.markdown-preview-view.markdown-preview-view :is(pre, code),
+.cm-s-obsidian .HyperMD-codeblock {
 	--codeblock-border: var(--thin-muted-border);
 	--codeblock-roundness: var(--radius-s);
 
@@ -939,25 +1071,25 @@ body:not(.no-pandoc-citation-emphasis) .cm-hmd-barelink.cm-formatting:not(.cm-fo
 /* << Images
 ──────────────────────────────────────────────────── */
 
-body:not(.is-mobile).app-container img[src]:not(:active), /* app container, so images in modal aren't affected */
-body:not(.is-mobile) .oz-image-widget-cm6 > img[src]:not(:active) {
+body:not(.is-mobile) .app-container img:not(:active), /* app container, so images in modal aren't affected */
+body:not(.is-mobile) .oz-image-widget-cm6 > img:not(:active) {
 	max-width: calc(var(--image-size) * 1%);
 	cursor: zoom-in;
 }
 
-/* Image Alt as caption */
+/* Image Alt as caption
+(except when no explicit alt is provided and urls are the alt text) */
 body:not(.no-image-alttext-caption) .image-embed[alt]:not([alt$=".png"], [alt$=".jpg"], [alt$=".jpeg"], [alt$=".tiff"])::after {
 	display: block;
 	content: attr(alt);
 
 	font-family: var(--font-interface);
-	font-size: 0.85rem;
-	font-weight: 500;
+	font-size: var(--font-smaller);
 	font-style: italic;
 
-	color: var(--text-muted);
+	color: var(--text-gray);
 
-	padding-top: 2px;
+	padding-top: var(--size-2-1);
 	margin-bottom: 1em;
 }
 
@@ -971,7 +1103,7 @@ body:not(.no-image-alttext-caption) .image-embed[alt]:not([alt$=".png"], [alt$="
 	text-align: center;
 }
 
-.view-content img[src] {
+.view-content img {
 	display: block;
 	margin-right: auto;
 	margin-left: auto;
@@ -993,7 +1125,7 @@ body:not(.no-image-alttext-caption) .image-embed[alt]:not([alt$=".png"], [alt$="
 ──────────────────────────────────────────────────── */
 
 /* ───────────────────────────────────────────────── */
-/* << Misc Hiding
+/* << Modals
 ──────────────────────────────────────────────────── */
 
 body:not(.show-close-buttons) .modal-close-button {
@@ -1032,7 +1164,7 @@ body .frontmatter-container-header.frontmatter-container-header {
 body:not(.no-floating-metadata):not(.is-mobile) :is(.frontmatter.language-yaml, .frontmatter-container) {
 	line-height: 2.2em;
 
-	max-width: calc(var(--line-length) + 3.4rem);
+	max-width: calc(var(--file-line-width) + 3.4rem);
 
 	position: fixed;
 	right: -2px;
@@ -1174,21 +1306,6 @@ body:not(.show-ribbon):not(.is-mobile) .side-dock-settings .side-dock-ribbon-act
 /* adjust left sidebar tab headers for hidden ribbon */
 .mod-macos.is-hidden-frameless:not(.is-fullscreen):not(.show-ribbon) {
 	--frame-left-space: 50px;
-}
-
-/* ───────────────────────────────────────────────── */
-/* << Fold external URLs (Source Mode)
-──────────────────────────────────────────────────── */
-body:not(.show-urls) .cm-s-obsidian:not(.is-live-preview) .cm-line:not(.cm-active) .cm-string.cm-url:not(.cm-formatting) {
-	font-size: 0;
-}
-
-body:not(.show-urls) .cm-s-obsidian:not(.is-live-preview) .cm-line:not(.cm-active) .cm-string.cm-url:not(.cm-formatting)::after {
-	content: "link";
-	font-family: var(--icon-font);
-	font-size: calc(var(--font-text-size) * 0.9);
-	position: relative;
-	top: 2px;
 }
 
 /* ───────────────────────────────────────────────── */
@@ -1410,8 +1527,7 @@ body input.prompt-input.prompt-input {
 
 .prompt .suggestion-item :is(.suggestion-note, .suggestion-prefix) {
 	font-size: var(--font-smaller);
-	font-style: italic;
-	color: var(--text-muted);
+	color: var(--text-gray);
 }
 
 /* Alternating row colors */
@@ -1425,6 +1541,17 @@ body input.prompt-input.prompt-input {
 	/* has to use a color without transparency, so the suggestion-prefix properly
 	covers long command names */
 	background-color: var(--bg4);
+	border-radius: 0;
+}
+
+.suggestion-item:hover .suggestion-prefix,
+.suggestion-item:hover {
+	color: var(--text-accent-hover);
+}
+
+.suggestion-item.is-selected .suggestion-prefix,
+.suggestion-item.is-selected {
+	color: var(--text-accent);
 }
 
 /* ───────────────────────────────────────────────────
@@ -1440,8 +1567,7 @@ body:not(.is-mobile) .suggestion-prefix::after {
 	padding-left: var(--size-4-2);
 }
 
-/* fix casing for lowercased commands
-(imagine fixing other people's spelling via CSS, lol) */
+/* imagine fixing plugin dev's spelling mistakes via CSS, lol */
 .prompt-input[placeholder^="Select a command"] ~ .prompt-results .suggestion-content::first-letter {
 	text-transform: uppercase;
 }
@@ -1493,7 +1619,7 @@ body:not(.show-sidebar-tabs) :is(.mod-left-split, .mod-right-split) :is(.workspa
 }
 
 body:not(.show-sidebar-tabs) :is(.mod-left-split, .mod-right-split) .workspace-tabs:not(.mod-top) .workspace-tab-header-container:not(:hover) {
-	height: 9px;
+	height: var(--size-4-2);
 }
 
 .theme-light:not(.show-sidebar-tabs) :is(.mod-left-split, .mod-right-split) .workspace-tabs:not(.mod-top) .workspace-tab-header-container:not(:hover) {
@@ -1527,27 +1653,20 @@ body.mod-macos.is-hidden-frameless:not(.is-popout-window) .workspace .workspace-
 
 .nav-file-title,
 .nav-folder-title {
+	margin-top: 0;
+	margin-bottom: 0;
 	border-radius: 0;
+}
+
+.nav-file-title:hover,
+.nav-folder-title:hover,
+.tree-item-inner:hover {
+	cursor: var(--cursor-link);
 }
 
 :is(.mod-left-split, .mod-right-split) .mod-top .workspace-tab-header-container-inner {
 	padding-bottom: var(--size-4-1);
 	margin-top: var(--size-4-1);
-}
-
-.mod-right-split .mod-top .workspace-tab-header-container {
-	z-index: 15;
-	border-left: var(--thin-muted-border);
-}
-
-.mod-left-split .mod-top .workspace-tab-header-container {
-	z-index: 15; /* so it's above the resize handle */
-	border-right: var(--thin-muted-border);
-}
-
-/* files */
-.tree-item-inner:hover {
-	cursor: var(--cursor-link);
 }
 
 /* ───────────────────────────────────────────────── */
@@ -1557,7 +1676,7 @@ body.mod-macos.is-hidden-frameless:not(.is-popout-window) .workspace .workspace-
 /* save space at the top */
 .markdown-preview-view,
 .markdown-source-view.mod-cm6 .cm-scroller {
-	padding-top: var(--size-4-1);
+	padding-top: var(--size-4-6);
 }
 
 /* ───────────────────────────────────────────────── */
@@ -1828,7 +1947,7 @@ body:not(.classic-inline-backlinks) :is(.writing, .longform-leaf) .embedded-back
 }
 
 .outline {
-	padding: 1px;
+	padding: 0;
 }
 
 /* fold icon to the right */
@@ -2035,13 +2154,6 @@ body:not(.no-alternating-rows) .workspace-leaf-content[data-type="recent-files"]
 /* << Link Favicon Plugin
 ──────────────────────────────────────────────────── */
 /* https://github.com/joethei/obsidian-link-favicon#for-designers */
-
-/* remove external url icon */
-/* .external-link[data-favicon="true"] {
-	background-image: none;
-	padding-right: 0;
-}
-*/
 
 /* ───────────────────────────────────────────────── */
 /* << Pandoc Reference List & Pandoc Citation Markup
@@ -2460,6 +2572,10 @@ body .dataview:not(.task-list-item-checkbox):hover {
 	font-family: var(--font-interface-theme);
 	font-size: var(--nav-item-size);
 	color: var(--nav-item-color);
+}
+
+.BC-Matrix.BC-Matrix ol > li:hover .BC-Link {
+	color: var(--nav-item-color-hover);
 }
 
 .BC-Matrix.BC-Matrix.BC-Matrix.BC-Matrix ol > li .BC-Link {
