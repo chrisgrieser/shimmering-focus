@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 3.37
+Version 3.38
 Source CSS: https://github.com/chrisgrieser/shimmering-focus/blob/main/source.css
 MIT License
 ──────────────────────────────────────────────────── */
@@ -34,6 +34,8 @@ MIT License
 	- Highlights
 	- Pandoc Citations
 	- Images
+	- Mermaid
+	- PDFs
 - Settings
 - UI Elements
 	- Modals
@@ -1107,6 +1109,22 @@ body:not(.no-image-alttext-caption) .image-embed[alt]:not([alt$=".png"], [alt$="
 	display: block;
 	margin-right: auto;
 	margin-left: auto;
+}
+
+/* ───────────────────────────────────────────────── */
+/* << Mermaid
+──────────────────────────────────────────────────── */
+div.mermaid {
+	text-align: center;
+}
+
+/* ───────────────────────────────────────────────── */
+/* << PDFs
+──────────────────────────────────────────────────── */
+/* pdf dark mode */
+.theme-dark:not(.no-pdf-dark-mode) .oz-pdf-widget-cm6,
+.theme-dark:not(.no-pdf-dark-mode) :is(.pdf-embed, .workspace-leaf-content[data-type="pdf"]) iframe {
+	filter: invert(0.85);
 }
 
 /* ───────────────────────────────────────────────── */
@@ -2514,8 +2532,8 @@ pre.dataview-error::first-line {
 	color: var(--text-normal);
 	background-color: var(--bg1);
 
-	padding: 1px 2.5px 0;
-	margin-left: 7px;
+	padding: 1px var(--size-2-1) 0;
+	margin-left: var(--size-4-2);
 
 	border: var(--thin-border);
 	border-radius: var(--radius-s);
@@ -2553,8 +2571,8 @@ body .dataview:not(.task-list-item-checkbox):hover {
 /* (currently only matrix) */
 
 .BC-Matrix.BC-Matrix.BC-Matrix ol > li {
-	line-height: 1.2em;
-	padding: 4px 4px 4px 5px;
+	line-height: 1.2;
+	padding: var(--size-4-1);
 	margin: 0;
 }
 
@@ -2628,7 +2646,7 @@ body .app-container .workspace-leaf-content[data-type="BC-matrix"] .view-content
 }
 
 .BC-Matrix-square li {
-	padding-left: 3px;
+	padding-left: var(--size-2-2);
 }
 
 .BC-Matrix-square li:nth-child(even) {
@@ -2787,7 +2805,7 @@ settings:
    description: Embedded Notes integrate seamlessly with the rest of the note content.
    default: false
   -
-   id: line-length
+   id: file-line-width
    title: Line Length
    description: 'The length of the editor content (when the "Readable Line Length" Setting is enabled). You can use the cssclass `full-width` to lift line length restrictions for individual notes.'
    type: variable-number-slider
@@ -2796,6 +2814,12 @@ settings:
    max: 2500
    step: 25
    format: px
+  -
+   id: no-pdf-dark-mode
+   title: 'PDFs: No Dark Mode'
+   description: 'By default, PDFs in dark mode also get dark mode.'
+   type: class-toggle
+   default: false
   -
    id: no-image-alttext-caption
    title: 'Images: No alt-text as caption'
