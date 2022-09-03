@@ -1,4 +1,5 @@
 # Changelog
+- 2022-09-03	patch
 - 2022-09-03	minimal checkboxes
 - 2022-09-03	colors and tags
 - 2022-09-03	color scheme stuff

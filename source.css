@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 3.40
+Version 3.41
 Source CSS: https://github.com/chrisgrieser/shimmering-focus/blob/main/source.css
 MIT License
 ──────────────────────────────────────────────────── */
@@ -15,7 +15,7 @@ MIT License
 - Fonts (base64 encoded)
 	- Temporary Bug Fixes / Additions
 - Variables
-	- Unchanged Obsidian Variables
+	- Unchanged Obsidian Variables (Dummy Variables)
 	- Color Scheme Variables
 	- Changed Obsidian Variables
 	- Theme Variables
@@ -44,6 +44,9 @@ MIT License
 	- Toggles
 	- Toggles
 - UI Elements
+	- Progress Bar
+		- Vault Launch
+		- Updating Plugins
 	- Frontmatter
 		- Floating Metadata & YAML
 	- Settings Button & Ribbon
@@ -65,7 +68,7 @@ MIT License
 	- Editor
 	- Clean Embeds
 	- Active / Inactive Note
-	- Empty Note & New Tab Page
+	- Empty Note / New Tab Page
 		- YAML Frontmatter
 - Vim Mode
 	- Vim Cursor
@@ -77,7 +80,6 @@ MIT License
 - Community Plugins
 	- Another Quick Switcher
 	- Recent Files
-	- Link Favicon Plugin
 	- Pandoc Reference List & Pandoc Citation Markup
 	- Style Settings
 		- Style Settings: Hue Sliders & Color Demo Boxes
@@ -238,7 +240,7 @@ body {
 ──────────────────────────────────────────────────── */
 
 /* ───────────────────────────────────────────────── */
-/* << Unchanged Obsidian Variables
+/* << Unchanged Obsidian Variables (Dummy Variables)
 ──────────────────────────────────────────────────── */
 /* these values are unchanged from the default theme, but included here for
 autocompletion via LSP and for quicker reference
@@ -257,7 +259,6 @@ https://www.youtube.com/watch?v=yl0pvIRTWWo&t=7s */
 	--icon-m-stroke-width: 1.75px;
 	--icon-l-stroke-width: 1.75px;
 	--icon-color: var(--text-muted);
-	--icon-color-hover: var(--text-muted);
 	--icon-color-active: var(--text-accent);
 	--icon-color-focused: var(--text-normal);
 	--icon-opacity: 0.85;
@@ -348,6 +349,11 @@ https://www.youtube.com/watch?v=yl0pvIRTWWo&t=7s */
 	--text-on-accent: hsl(0 0 100);
 	--text-error: var(--color-red);
 	--text-success: var(--color-green);
+
+	--color-accent-hsl: var(--accent-h) var(--accent-s) var(--accent-l);
+	--color-accent: hsl(var(--accent-h) var(--accent-s) var(--accent-l));
+	--color-accent-1: hsl(var(--accent-h) var(--accent-s) calc(var(--accent-l) + 2.5%));
+	--color-accent-2: hsl(var(--accent-h) var(--accent-s) calc(var(--accent-l) + 5%));
 }
 
 /* ───────────────────────────────────────────────── */
@@ -426,31 +432,6 @@ https://www.youtube.com/watch?v=yl0pvIRTWWo&t=7s */
 	--interactive-accent-hsl: var(--color-accent-hsl);
 	--interactive-accent: var(--color-accent-1);
 	--interactive-accent-hover: var(--color-accent-2);
-
-	/* links and tags */
-	--tag-color: var(--reference-color);
-	--tag-color-hover: var(--text-accent-hover);
-
-	--link-color: var(--text-accent);
-	--link-color-hover: var(--text-accent-hover);
-	--link-external-color: var(--text-accent);
-	--link-external-color-hover: var(--text-accent-hover);
-
-	/* file items */
-	--nav-item-color: var(--text-muted);
-	--nav-item-color-hover: var(--text-accent-hover);
-	--nav-item-color-active: var(--text-accent);
-	--nav-item-color-highlighted: var(--text-accent-hover);
-	--nav-item-background-hover: var(--bg5);
-	--nav-item-background-active: var(--bg5);
-
-	/* checkboxes */
-	--checkbox-radius: var(--radius-m);
-	--checkbox-size: 17px;
-	--checkbox-color: var(--reference-color);
-	--checkbox-color-hover: var(--text-accent-hover);
-	--checkbox-border-color: var(--text-gray);
-	--checkbox-border-color-hover: var(--text-accent-hover);
 }
 
 /* ───────────────────────────────────────────────── */
@@ -498,6 +479,32 @@ body {
 
 	--divider-color: var(--muted-border-color);
 	--divider-color-hover: var(--text-accent-hover);
+
+	/* links and tags */
+	--tag-color: var(--reference-color);
+	--tag-color-hover: var(--text-accent-hover);
+
+	--link-color: var(--text-accent);
+	--link-color-hover: var(--text-accent-hover);
+	--link-external-color: var(--text-accent);
+	--link-external-color-hover: var(--text-accent-hover);
+
+	/* file items */
+	--nav-item-color: var(--text-muted);
+	--nav-item-color-hover: var(--text-accent-hover);
+	--nav-item-color-active: var(--text-accent);
+	--nav-item-color-highlighted: var(--text-accent-hover);
+	--nav-item-background-hover: var(--bg5);
+	--nav-item-background-active: var(--bg5);
+
+	/* checkboxes */
+	--checkbox-radius: var(--radius-m);
+	--checkbox-size: 17px;
+	--checkbox-color: var(--reference-color);
+	--checkbox-color-hover: var(--text-accent-hover);
+	--checkbox-border-color: var(--text-gray);
+	--checkbox-border-color-hover: var(--text-accent-hover);
+	--icon-color-hover: var(--text-accent-hover);
 }
 
 /* ───────────────────────────────────────────────── */
@@ -1296,6 +1303,48 @@ body:not(.show-close-buttons) .modal-close-button {
 ──────────────────────────────────────────────────── */
 
 /* ───────────────────────────────────────────────── */
+/* << Progress Bar
+──────────────────────────────────────────────────── */
+
+/* <<< Vault Launch */
+@keyframes startup-blink {
+	from { color: var(--text-normal) }
+	50% { color: var(--color-accent) }
+	to { color: var(--text-normal) }
+}
+
+.progress-bar .progress-bar-message {
+	font-size: 0;
+	margin-bottom: 30px;
+	animation-duration: 1s;
+	animation-name: startup-blink;
+	animation-iteration-count: infinite;
+}
+
+.progress-bar .progress-bar-message::before {
+	content: var(--signature);
+	font-size: 10rem;
+	font-weight: 500;
+	color: var(--text-normal);
+}
+
+.progress-bar-indicator {
+	display: none;
+}
+
+/* <<< Updating Plugins */
+.modal .is-loading::before {
+	height: var(--size-4-2);
+	background:
+		linear-gradient(
+			45deg,
+			var(--color-accent) 0% 20%,
+			var(--text-accent-hover) 40% 60%,
+			var(--reference-color) 80% 100%
+		);
+}
+
+/* ───────────────────────────────────────────────── */
 /* << Frontmatter
 ──────────────────────────────────────────────────── */
 .frontmatter.language-yaml,
@@ -1342,7 +1391,7 @@ body:not(.no-floating-metadata):not(.is-mobile) .frontmatter-container.frontmatt
 }
 
 /* look when not hovered */
-body:not(.no-floating-metadata):not(.is-mobile) :is(.frontmatter.language-yaml, .frontmatter-container):not(:hover) {
+body:not(.no-floating-metadata):not(.is-mobile) :is(.frontmatter.language-yaml, .frontmatter-container):not(:active) {
 	font-family: "iA Writer Quattro S"; /* fixed font so font changes do not screw up alignment */
 	font-weight: 500;
 
@@ -1358,13 +1407,17 @@ body:not(.no-floating-metadata):not(.is-mobile) :is(.frontmatter.language-yaml, 
 	border: none;
 }
 
-body:not(.no-floating-metadata):not(.is-mobile) .frontmatter-container:not(:hover)::before {
+body:not(.no-floating-metadata):not(.is-mobile) :is(.frontmatter.language-yaml, .frontmatter-container):hover:not(:active) {
+	color: var(--text-accent-hover);
+}
+
+body:not(.no-floating-metadata):not(.is-mobile) .frontmatter-container:not(:active)::before {
 	content: "M";
 	font-size: 1.2rem;
 	padding-left: 0.5rem;
 }
 
-body:not(.no-floating-metadata):not(.is-mobile) .frontmatter.language-yaml:not(:hover)::before {
+body:not(.no-floating-metadata):not(.is-mobile) .frontmatter.language-yaml:not(:active)::before {
 	content: "Y";
 	font-size: 1.3rem;
 	padding-left: 0.65rem;
@@ -1373,12 +1426,12 @@ body:not(.no-floating-metadata):not(.is-mobile) .frontmatter.language-yaml:not(:
 body:not(.no-floating-metadata):not(.is-mobile) :is(.frontmatter.language-yaml, .frontmatter-container) .frontmatter-container-header,
 body:not(.no-floating-metadata):not(.is-mobile) .frontmatter.language-yaml .copy-code-button,
 body:not(.no-floating-metadata):not(.is-mobile) .frontmatter.language-yaml::after,
-body:not(.no-floating-metadata):not(.is-mobile) :is(.frontmatter.language-yaml, .frontmatter-container):not(:hover) > * {
+body:not(.no-floating-metadata):not(.is-mobile) :is(.frontmatter.language-yaml, .frontmatter-container):not(:active) > * {
 	display: none;
 }
 
-/* look when hovered */
-body:not(.no-floating-metadata):not(.is-mobile) :is(.frontmatter.language-yaml, .frontmatter-container):hover {
+/* look when activeed */
+body:not(.no-floating-metadata):not(.is-mobile) :is(.frontmatter.language-yaml, .frontmatter-container):active {
 	margin-right: 0.5rem;
 }
 
@@ -1388,7 +1441,7 @@ body:not(.no-floating-metadata):not(.is-mobile) .frontmatter.language-yaml::befo
 }
 
 /* unset some interfering codeblock styling with floating YAML */
-body:not(.no-floating-metadata):not(.is-mobile) .frontmatter.language-yaml:not(.mod-failed):hover::before {
+body:not(.no-floating-metadata):not(.is-mobile) .frontmatter.language-yaml:not(.mod-failed):active::before {
 	display: none;
 }
 
@@ -1883,7 +1936,7 @@ body:not(.no-dimmed-inactive-pane) .workspace-leaf:not(.mod-active) .workspace-l
 }
 
 /* ───────────────────────────────────────────────── */
-/* << Empty Note & New Tab Page
+/* << Empty Note / New Tab Page
 ──────────────────────────────────────────────────── */
 
 .workspace-tab-header[data-type="empty"]:not(:only-child) {
@@ -2228,9 +2281,9 @@ body:not(.is-mobile) .another-quick-switcher__item__hot-key-guide {
 	opacity: 0.9;
 
 	position: absolute;
-	right: 4px;
+	right: var(--size-4-1);
 
-	padding: 4px 3px;
+	padding: var(--size-4-1) 3px;
 
 	border: var(--thin-border);
 	border-radius: var(--radius-s);
@@ -2250,7 +2303,7 @@ body .another-quick-switcher__item {
 }
 
 body .another-quick-switcher__item__description {
-	margin-left: 8px;
+	margin-left: var(--size-4-2);
 }
 
 /* grep search */
@@ -2310,11 +2363,6 @@ body:not(.no-alternating-rows) .workspace-leaf-content[data-type="recent-files"]
 .workspace-leaf-content[data-type="recent-files"] .nav-file-title.is-active {
 	display: none;
 }
-
-/* ───────────────────────────────────────────────── */
-/* << Link Favicon Plugin
-──────────────────────────────────────────────────── */
-/* https://github.com/joethei/obsidian-link-favicon#for-designers */
 
 /* ───────────────────────────────────────────────── */
 /* << Pandoc Reference List & Pandoc Citation Markup
@@ -2856,7 +2904,7 @@ settings:
    id: no-floating-metadata
    title: 'Reading Mode: Permanently show the Metadata Block / YAML Frontmatter'
    type: class-toggle
-   description: 'By default, the metadata block in this theme only becomes visible upon hovering the "M" / "Y" in the top right.'
+   description: 'By default, the metadata block in this theme only becomes visible upon clicking and holding the "M" / "Y" in the top right.'
    default: false
   -
    id: show-new-tab-button
