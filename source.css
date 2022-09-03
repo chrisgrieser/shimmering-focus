@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 3.39
+Version 3.40
 Source CSS: https://github.com/chrisgrieser/shimmering-focus/blob/main/source.css
 MIT License
 ──────────────────────────────────────────────────── */
@@ -20,6 +20,7 @@ MIT License
 	- Changed Obsidian Variables
 	- Theme Variables
 - Markup
+	- Tasks
 	- Footnotes
 	- Links
 		- Fold external URLs (Source Mode)
@@ -39,8 +40,10 @@ MIT License
 	- Mermaid
 	- PDFs
 - Settings
+- Modals & Settings
+	- Toggles
+	- Toggles
 - UI Elements
-	- Modals
 	- Frontmatter
 		- Floating Metadata & YAML
 	- Settings Button & Ribbon
@@ -412,6 +415,8 @@ https://www.youtube.com/watch?v=yl0pvIRTWWo&t=7s */
 	--text-accent-hover: hsl(328 100% 54%);
 	--link-unresolved-color: hsl(101 42% 51%);
 
+	--bold-color: var(--text-accent-hover);
+
 	--text-normal: var(--color-base-100);
 	--text-muted: var(--color-base-70);
 	--text-faint: var(--color-base-50);
@@ -438,6 +443,14 @@ https://www.youtube.com/watch?v=yl0pvIRTWWo&t=7s */
 	--nav-item-color-highlighted: var(--text-accent-hover);
 	--nav-item-background-hover: var(--bg5);
 	--nav-item-background-active: var(--bg5);
+
+	/* checkboxes */
+	--checkbox-radius: var(--radius-m);
+	--checkbox-size: 17px;
+	--checkbox-color: var(--reference-color);
+	--checkbox-color-hover: var(--text-accent-hover);
+	--checkbox-border-color: var(--text-gray);
+	--checkbox-border-color-hover: var(--text-accent-hover);
 }
 
 /* ───────────────────────────────────────────────── */
@@ -507,13 +520,11 @@ body {
 	--bg4: var(--color-base-25);
 	--bg5: var(--color-base-30);
 	--bg6: var(--color-base-40);
-
-	--text-gray: var(--color-base-60); /* middle ground between text-muted and text-faint */
-
-	/* overwrite Obsidian variables w/ --bg colors for consistency with plugins */
-	--background-primary: var(--bg1);
+	--background-primary: var(--bg1); /* overwrite Obsidian variables w/ --bg colors for consistency with plugins */
 	--background-primary-alt: var(--bg2);
 	--background-secondary: var(--bg3);
+
+	--text-gray: var(--color-base-60); /* middle ground between text-muted and text-faint */
 
 	--basic-border-color: var(--color-base-50);
 	--thin-border: 1px solid var(--basic-border-color);
@@ -554,13 +565,26 @@ body {
 ──────────────────────────────────────────────────── */
 
 /* ───────────────────────────────────────────────── */
+/* << Tasks
+──────────────────────────────────────────────────── */
+
+input[type="checkbox"] {
+	border-width: 1.5px;
+}
+
+.contains-task-list.contains-task-list {
+	--list-indent: 1.5em;
+}
+
+/* ───────────────────────────────────────────────── */
 /* << Footnotes
 ──────────────────────────────────────────────────── */
 
 /* footnotes-references in text */
+.cm-footref.cm-footref.cm-footref.cm-footref,
 .footnotes li::marker,
 .cm-hmd-footnote.cm-hmd-footnote.cm-hmd-footnote.cm-hmd-footnote.cm-hmd-footnote,
-.footnote-link:not(.footnote-backref) {
+.footnote-link {
 	color: var(--reference-color);
 }
 
@@ -605,12 +629,8 @@ body .HyperMD-footnote,
 	font-family: "Inter";
 	font-size: 90%;
 	text-decoration: none;
-
 	color: var(--text-gray);
-
 	margin-left: var(--size-2-1);
-
-	border-radius: var(--radius-xs);
 }
 
 /* ───────────────────────────────────────────────── */
@@ -1222,16 +1242,58 @@ div.mermaid {
 }
 
 /* ───────────────────────────────────────────────── */
-/* < UI Elements
-──────────────────────────────────────────────────── */
-
-/* ───────────────────────────────────────────────── */
-/* << Modals
+/* < Modals & Settings
 ──────────────────────────────────────────────────── */
 
 body:not(.show-close-buttons) .modal-close-button {
 	display: none;
 }
+
+/* ───────────────────────────────────────────────── */
+/* << Toggles
+──────────────────────────────────────────────────── */
+/* ───────────────────────────────────────────────── */
+/* << Toggles
+──────────────────────────────────────────────────── */
+/* prettier wall-o-toggles */
+
+.checkbox-container::after {
+	display: none;
+}
+
+.checkbox-container {
+	height: 22px;
+	width: 22px;
+
+	background-color: var(--bg2);
+
+	margin-left: var(--size-4-1);
+
+	border: var(--basic-border);
+
+	transition: var(--anim-duration-slow);
+	cursor: var(--cursor-link);
+}
+
+/* colors */
+.checkbox-container.is-enabled {
+	background-color: var(--color-accent);
+	border-color: transparent;
+}
+
+.checkbox-container.checkbox-container:hover {
+	border: 9px solid var(--text-accent-hover);
+	border-color: var(--text-accent-hover);
+}
+
+.checkbox-container.is-enabled:hover {
+	background-color: var(--text-accent-hover);
+	border-color: transparent;
+}
+
+/* ───────────────────────────────────────────────── */
+/* < UI Elements
+──────────────────────────────────────────────────── */
 
 /* ───────────────────────────────────────────────── */
 /* << Frontmatter
@@ -2043,7 +2105,7 @@ body:not(.classic-inline-backlinks) :is(.writing, .longform-leaf) .embedded-back
 ──────────────────────────────────────────────────── */
 .outline .tree-item-self {
 	line-height: 1.15;
-	padding: 4px;
+	padding: var(--size-4-1);
 	border-radius: 0;
 }
 
@@ -2239,11 +2301,9 @@ body:not(.no-alternating-rows) .workspace-leaf-content[data-type="recent-files"]
 	background-color: var(--a-row);
 }
 
-.workspace-leaf-content[data-type="recent-files"] .nav-file-title.nav-file-title {
+.workspace-leaf-content[data-type="recent-files"] .nav-file-title.nav-file-title.nav-file-title {
 	padding-right: 0;
-	padding-left: 0;
-	text-overflow: ellipsis;
-	overflow: hidden;
+	padding-left: var(--size-2-3);
 }
 
 /* why would you wanna go from the active file to the active file? */
