@@ -1,4 +1,5 @@
 # Changelog
+- 2022-09-04	patch
 - 2022-09-04	settings menu styled
 - 2022-09-04	table styling
 - 2022-09-04	hide electron window tweaker status bar

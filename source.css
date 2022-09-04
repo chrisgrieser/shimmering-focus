@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 3.57
+Version 3.58
 Source CSS: https://github.com/chrisgrieser/shimmering-focus/blob/main/source.css
 MIT License
 ──────────────────────────────────────────────────── */
@@ -2212,7 +2212,7 @@ body.safari-tab-bar .workspace-tab-header-container-inner {
 
 	border-radius: 6px;
 
-	transition: background-color 150ms ease-in-out;
+	transition: background-color 200ms ease-in-out;
 }
 
 .safari-tab-bar .mod-root .workspace-tab-header {
