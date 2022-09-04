@@ -1,5 +1,5 @@
 # Shimmering Focus ⟡
-![](https://img.shields.io/badge/downloads-36266-6E4E9B?style=plastic) ![](https://img.shields.io/github/last-commit/chrisgrieser/shimmering-focus?style=plastic) [![](https://img.shields.io/badge/changelog-click%20here-FFE800?style=plastic)](https://chrisgrieser.github.io/shimmering-focus/changelog/)
+![](https://img.shields.io/badge/downloads-36270-6E4E9B?style=plastic) ![](https://img.shields.io/github/last-commit/chrisgrieser/shimmering-focus?style=plastic) [![](https://img.shields.io/badge/changelog-click%20here-FFE800?style=plastic)](https://chrisgrieser.github.io/shimmering-focus/changelog/)
 
 A minimalistic Obsidian theme for keyboard-centric users.
 
@@ -23,34 +23,9 @@ A minimalistic Obsidian theme for keyboard-centric users.
 - [ ] new Promo Screenshot (16:9, 512x288px)
 - [ ] 🎯 PR to `obsidian-releases`, removing `legacy` label and updating screenshot link.
 
-### Feature Roadmap for 0.16
-- [x] Use New Obsidian Variables
-- Base Features (mostly hiding of UI elements)
-	- [x] Ribbon
-	- [x] Settings Button :(
-	- [x] URL folding in Source Mode
-	- [x] Tab-bar-Header-Hybrid
-	- [x] hidden sidebar tabs
-- Vim Features
-	- [x] Monolith Cursor
-	- [x] Vim Panel
-- Plugin Support
-	- [x] Breadcrumbs (Matrix)
-	- [x] Dataview
-	- [x] Outline (Core)
-	- [x] Pandoc Reference List
-	- [ ] AQS
-	- [ ] Longform
-	- [ ] Kanban
-- [ ] Settings Menu
-- [ ] Theme Browser
-
 ### Further down the Road
-- [ ] Gamma Color Scheme
 - [ ] hide tabs when there is only one tab (requires `:has()`)
 - [ ] Fully Migrate to Lucide Icons
-- [ ] Mobile
-	- [ ] Floating View Mode Toggle (depends on header visibility?)
 
 ## Donate
 <a href='https://ko-fi.com/Y8Y86SQ91' target='_blank'><img height='36' style='border:0px;height:36px;' src='https://cdn.ko-fi.com/cdn/kofi1.png?v=3' border='0' alt='Buy Me a Coffee at ko-fi.com' /></a>

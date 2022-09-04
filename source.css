@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 3.46
+Version 3.47
 Source CSS: https://github.com/chrisgrieser/shimmering-focus/blob/main/source.css
 MIT License
 ──────────────────────────────────────────────────── */
@@ -54,6 +54,7 @@ MIT License
 	- Status Bar
 	- Header Bar (Tab Title Bar)
 	- Tab Bar
+		- Safari-Style Tab Bar
 		- Hide Various Elements
 		- different look when only tab
 		- Stacked Tabs
@@ -84,6 +85,7 @@ MIT License
 	- Recent Files
 	- Pandoc Reference List & Pandoc Citation Markup
 	- Style Settings
+		- Style Settings: Conditional Settings Display
 		- Style Settings: Hue Sliders & Color Demo Boxes
 		- Style Settings: Donation Info
 	- Dataview
@@ -96,7 +98,7 @@ MIT License
  	- Show / Hide UI Elements (+)
  		- Status Bar (+)
  	- Workspace (+)
- 	- Colors (+)
+ 	- Colors & Look (+)
  	- Editor & Media (+)
  	- Markup & Special Syntax (+)
  	- Donation Info (+)
@@ -398,6 +400,12 @@ body {
 	--longform-bg-hue: 200;
 }
 
+.mac-os-native:is(.theme-light, .theme-dark) {
+	--bg-hue: 0;
+	--longform-bg-hue: 0;
+	--bg-sat: 0%;
+}
+
 .theme-light {
 	--bg-sat: 20%;
 
@@ -412,8 +420,8 @@ body {
 .theme-dark {
 	--bg-sat: 15%;
 
-	--secondary-accent: hsl(28 54% 51%);
-	--hover-accent: hsl(328 100% 54%);
+	--secondary-accent: hsl(28 63% 61%);
+	--hover-accent: hsl(328 100% 64%);
 	--link-unresolved-color: hsl(101 42% 51%);
 	--color-accent: hsl(184 79% 45%);
 	--color-accent-hsl: 184 79% 35%;
@@ -638,6 +646,11 @@ body {
 ──────────────────────────────────────────────────── */
 
 .uncolored-bold:is(.theme-light, .theme-dark) {
+	--bold-color: var(--text-normal);
+}
+
+/* don't color bold in modals */
+.modal-container strong {
 	--bold-color: var(--text-normal);
 }
 
@@ -1667,6 +1680,76 @@ body:not(.normal-header-bar, .is-mobile) .view-header:not(:focus-within) .view-a
 /* ───────────────────────────────────────────────── */
 /* << Tab Bar
 ──────────────────────────────────────────────────── */
+/* ───────────────────────────────────────────────── */
+/* <<< Safari-Style Tab Bar
+──────────────────────────────────────────────────── */
+
+/* native macOS look, credits @Chuck from the OMG Discord */
+/* https://discord.com/channels/686053708261228577/716028884885307432/1014012840883015720 */
+/* https://gist.github.com/chuckharmston/b0206887cf81a8ae090376e6110d8ebe */
+
+.mac-os-native .workspace-tabs.mod-top {
+	--tab-font-size: var(--font-small);
+	--tab-height: 24px;
+	--tab-max-width-active: calc(var(--tab-width) * 1.5);
+}
+
+.mac-os-native.theme-light .workspace-tabs.mod-top {
+	--tab-background: rgb(0 0 0 / 5%);
+	--tab-background-active: rgb(0 0 0 / 10%);
+}
+
+.mac-os-native.theme-dark .workspace-tabs.mod-top {
+	--tab-background: rgb(255 255 255 / 7.5%);
+	--tab-background-active: rgb(255 255 255 / 15%);
+}
+
+.mac-os-native .workspace-tab-header::before,
+.mac-os-native .workspace-tab-header::after,
+.mac-os-native .workspace .mod-root .workspace-tab-header-inner::after {
+	display: none;
+}
+
+body.mac-os-native .workspace-tab-header-container-inner {
+	width: 100%;
+	margin: 0;
+	align-items: center;
+	justify-content: center;
+}
+
+.mac-os-native .workspace-tab-header {
+	height: var(--tab-height);
+
+	background: var(--tab-background);
+	box-shadow: none;
+
+	margin-left: 12px;
+
+	border-radius: 6px;
+
+	transition: background-color 150ms ease-in-out;
+}
+
+.mac-os-native .mod-root .workspace-tab-header {
+	max-width: var(--tab-width);
+}
+
+.mac-os-native .workspace-tab-header:first-child {
+	margin-left: 0;
+}
+
+.mac-os-native .mod-root .workspace-tab-header.is-active {
+	flex-grow: 1.67;
+	max-width: var(--tab-max-width-active);
+}
+
+.mac-os-native .sidebar-toggle-button:is(.mod-left, .mod-right) {
+	align-items: center;
+}
+
+.mac-os-native .sidebar-toggle-button:is(.mod-left, .mod-right) .clickable-icon {
+	height: var(--tab-height);
+}
 
 /* ───────────────────────────────────────────────── */
 /* <<< Hide Various Elements
@@ -1684,23 +1767,23 @@ body:not(.show-tab-list-button) .workspace-tab-header-tab-list {
 /* <<< different look when only tab
 ──────────────────────────────────────────────────── */
 
-body:not(.no-tabbar-header-hybrid) .mod-root .workspace-tab-header-container:not(:hover) .workspace-tab-header:only-child {
+body:not(.no-tabbar-header-hybrid, .mac-os-native) .mod-root .workspace-tab-header-container:not(:hover) .workspace-tab-header:only-child {
 	width: 700px;
 	background-color: transparent;
 	box-shadow: none;
 	margin-left: -12px;
 }
 
-body:not(.no-tabbar-header-hybrid) .mod-root .workspace-tab-header-container:not(:hover) .workspace-tab-header:only-child .workspace-tab-header-inner-title {
+body:not(.no-tabbar-header-hybrid, .mac-os-native) .mod-root .workspace-tab-header-container:not(:hover) .workspace-tab-header:only-child .workspace-tab-header-inner-title {
 	font-size: 1.5em;
 	margin-bottom: 1px;
 	margin-left: -8px;
 }
 
-body:not(.no-tabbar-header-hybrid) .mod-root .workspace-tab-header:only-child .workspace-tab-header-inner-title,
-body:not(.no-tabbar-header-hybrid) .mod-root .workspace-tab-header:only-child::before,
-body:not(.no-tabbar-header-hybrid) .mod-root .workspace-tab-header:only-child::after,
-body:not(.no-tabbar-header-hybrid) .mod-root .workspace-tab-header:only-child {
+body:not(.no-tabbar-header-hybrid, .mac-os-native) .mod-root .workspace-tab-header:only-child .workspace-tab-header-inner-title,
+body:not(.no-tabbar-header-hybrid, .mac-os-native) .mod-root .workspace-tab-header:only-child::before,
+body:not(.no-tabbar-header-hybrid, .mac-os-native) .mod-root .workspace-tab-header:only-child::after,
+body:not(.no-tabbar-header-hybrid, .mac-os-native) .mod-root .workspace-tab-header:only-child {
 	transition-duration: var(--anim-duration-moderate);
 	transition-delay: var(--transition-delay-passing-over-protection);
 }
@@ -2768,6 +2851,14 @@ body .style-settings-heading[data-level="0"] .setting-item-name.setting-item-nam
 }
 
 /* ───────────────────────────────────────────────── */
+/* <<< Style Settings: Conditional Settings Display
+──────────────────────────────────────────────────── */
+/* 🏴‍☠️ Melvin for the idea */
+.mac-os-native .setting-item:is([data-id="bg-hue"], [data-id="longform-bg-hue"]) {
+	display: none;
+}
+
+/* ───────────────────────────────────────────────── */
 /* <<< Style Settings: Hue Sliders & Color Demo Boxes
 ──────────────────────────────────────────────────── */
 
@@ -2793,14 +2884,31 @@ body .style-settings-heading[data-level="0"] .setting-item-name.setting-item-nam
 			hsl(330 var(--hue-slider-sat) var(--hue-slider-br)),
 			hsl(360 var(--hue-slider-sat) var(--hue-slider-br))
 		);
+	--hue-scale-for-bg:
+		linear-gradient(
+			to right,
+			hsl(0 var(--bg-sat) var(--hue-slider-br)),
+			hsl(30 var(--bg-sat) var(--hue-slider-br)),
+			hsl(60 var(--bg-sat) var(--hue-slider-br)),
+			hsl(90 var(--bg-sat) var(--hue-slider-br)),
+			hsl(120 var(--bg-sat) var(--hue-slider-br)),
+			hsl(150 var(--bg-sat) var(--hue-slider-br)),
+			hsl(180 var(--bg-sat) var(--hue-slider-br)),
+			hsl(210 var(--bg-sat) var(--hue-slider-br)),
+			hsl(240 var(--bg-sat) var(--hue-slider-br)),
+			hsl(270 var(--bg-sat) var(--hue-slider-br)),
+			hsl(300 var(--bg-sat) var(--hue-slider-br)),
+			hsl(330 var(--bg-sat) var(--hue-slider-br)),
+			hsl(360 var(--bg-sat) var(--hue-slider-br))
+		);
 }
 
-.style-settings-container .setting-item:is([data-id^="highlight-hue-"], [data-id$="-hue"], [data-id^="tint-"]) input.slider {
+.style-settings-container .setting-item:is([data-id="highlight-hue-1"], [data-id$="-hue"]) input.slider {
 	height: 0.8em;
 	background: var(--hue-scale);
 }
 
-.style-settings-container .setting-item:is([data-id^="highlight-hue-"], [data-id$="-hue"], [data-id^="tint-"]) input.slider::-webkit-slider-thumb {
+.style-settings-container .setting-item:is([data-id="highlight-hue-1"], [data-id$="-hue"]) input.slider::-webkit-slider-thumb {
 	height: 1.9em;
 	width: 0.4em;
 
@@ -2813,7 +2921,7 @@ body .style-settings-heading[data-level="0"] .setting-item-name.setting-item-nam
 }
 
 /* demo color box: highlight colors */
-.style-settings-container .setting-item[data-id^="highlight-hue-"] .setting-item-control::before {
+.style-settings-container .setting-item[data-id="highlight-hue-1"] .setting-item-control::before {
 	content: " ";
 
 	font-size: 0.7em;
@@ -3102,7 +3210,7 @@ settings:
 # << Show / Hide UI Elements (+)
   -
    id: show-hide-elements
-   title: Show/Hide UI Elements
+   title: 🙈 Show/Hide UI Elements
    description: Re-enable UI Elements hidden by this theme.
    type: heading
    level: 1
@@ -3185,7 +3293,7 @@ settings:
   -
 # << Workspace (+)
    id: user-interface
-   title: Workspace
+   title: 🔲 Workspace
    description: Overlaying Sidebar, Tab Width
    type: heading
    level: 1
@@ -3207,13 +3315,19 @@ settings:
    step: 25
    format: px
   -
-# << Colors (+)
+# << Colors & Look (+)
    id: aesthetics
-   title: Colors
-   description: Background Color Tones, Longform Background, Bold Text
+   title: 🎨 Colors & Look
+   description: Native macOS Look, Background Color Tones, Longform Background, Bold Text
    type: heading
    level: 1
    collapsed: true
+  -
+   id: mac-os-native
+   title: Native macOS Look
+   description: 'More native background and tab bar like in Safari. (You can also use the Electron Window Tweaker Plugin to move the traffic lights to the same position as in Safari: X = 20, Y = 18.)'
+   type: class-toggle
+   default: false
   -
    id: bg-hue
    title: Background Color Tone (Hue)
@@ -3224,7 +3338,7 @@ settings:
    step: 5
   -
    id: longform-bg-hue
-   title: 'Longform/Writing: Background Color Tone (Hue) (🚧 not implemented yet)'
+   title: 'Longform/Writing: Background Color Tone (Hue)'
    description: Background color tone of notes from the longform plugin or notes with the 'writing' cssclass.
    type: variable-number-slider
    default: 200
@@ -3240,7 +3354,7 @@ settings:
   -
 # << Editor & Media (+)
    id: content-settings
-   title: Editor & Media
+   title: 📑 Editor & Media
    description: Dimmed Inactive Panes, Clean Embeds, Line Length, Image Settings
    type: heading
    level: 1
@@ -3290,7 +3404,7 @@ settings:
   -
 # << Markup & Special Syntax (+)
    id: markup-and-special-syntax
-   title: Markup & Special Syntax
+   title: ✏️ Markup & Special Syntax
    description: Highlight Colors, Blockquote Alignment, Trailing Spaces, Pandoc Emphasis
    type: heading
    level: 1
