@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 3.61
+Version 3.62
 Source CSS: https://github.com/chrisgrieser/shimmering-focus/blob/main/source.css
 MIT License
 ──────────────────────────────────────────────────── */
@@ -32,6 +32,7 @@ MIT License
 		- Inline Code
 		- Code Blocks
 		- language replacements
+	- Lists
 	- Headings
 	- Blockquotes
 	- Callouts
@@ -1306,8 +1307,22 @@ body:not(.no-codeblock-line-numbers) .HyperMD-codeblock-end .cm-formatting-code-
 }
 
 /* ───────────────────────────────────────────────── */
+/* << Lists
+──────────────────────────────────────────────────── */
+
+.markdown-rendered :is(ul, ol) {
+	margin-top: 0.2em;
+	margin-bottom: 0.2em;
+}
+
+/* ───────────────────────────────────────────────── */
 /* << Headings
 ──────────────────────────────────────────────────── */
+
+:is(.markdown-preview-view, .community-modal-readme) :is(h1, h2, h3, h4, h5, h6) {
+	margin-top: 1.2em;
+	margin-bottom: 0.2em;
+}
 
 .cm-header,
 :is(.markdown-preview-view, .community-modal-readme) :is(h1, h2, h3, h4, h5, h6) {
