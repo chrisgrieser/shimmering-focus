@@ -1,5 +1,5 @@
 # Shimmering Focus ⟡
-![](https://img.shields.io/badge/downloads-36295-6E4E9B?style=plastic) ![](https://img.shields.io/github/last-commit/chrisgrieser/shimmering-focus?style=plastic) [![](https://img.shields.io/badge/changelog-click%20here-FFE800?style=plastic)](https://chrisgrieser.github.io/shimmering-focus/changelog/)
+![](https://img.shields.io/badge/downloads-36302-6E4E9B?style=plastic) ![](https://img.shields.io/github/last-commit/chrisgrieser/shimmering-focus?style=plastic) [![](https://img.shields.io/badge/changelog-click%20here-FFE800?style=plastic)](https://chrisgrieser.github.io/shimmering-focus/changelog/)
 
 A minimalistic Obsidian theme for keyboard-centric users.
 
@@ -57,7 +57,7 @@ Available CSS classes are:
 ## Recommended Plugins
 - [Style Settings Plugin](https://obsidian.md/plugins?id=obsidian-style-settings): Unlocks dozens of customization options.
 - [Supercharged Links](https://obsidian.md/plugins?id=supercharged-links-obsidian): The theme includes various built-in styling for the Supercharged Links plugin, e.g. appending a "🌱" to notes with the `#seedling` tag.
-- for macOS: [Electron Window Tweaker](https://obsidian.md/plugins?id=obsidian-electron-window-tweaker): Position the traffic lights for even more native macOS look. (Same position as in Safari: X = 20, Y = 18.)
+- for macOS: [Electron Window Tweaker](https://obsidian.md/plugins?id=obsidian-electron-window-tweaker): Position the traffic lights for even more native macOS look (same position as in Safari: X = 20, Y = 18). You can even completely hide the traffic lights by using negative values, e.g. X = -60.
 - While using the theme, you can disable the Hider Plugin, since *Shimmering Focus* already hides everything it does hide.
 
 ## Obsidian 0.16

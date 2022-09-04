@@ -1,4 +1,5 @@
 # Changelog
+- 2022-09-04	table styling
 - 2022-09-04	hide electron window tweaker status bar
 - 2022-09-04	trimming option for filenames
 - 2022-09-04	frontmatter improvements

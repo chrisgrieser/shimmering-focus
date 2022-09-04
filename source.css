@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 3.55
+Version 3.56
 Source CSS: https://github.com/chrisgrieser/shimmering-focus/blob/main/source.css
 MIT License
 ──────────────────────────────────────────────────── */
@@ -543,7 +543,7 @@ body {
 	--font-interface-theme: "Recursive S";
 	--font-monospace-theme: "Input Mono S";
 
-	/* Headings (inline-titles inherit h1 styling) */
+	/* Headings */
 	--h1-font: var(--font-heading-theme);
 	--h2-font: var(--font-heading-theme);
 	--h3-font: var(--font-heading-theme);
@@ -561,24 +561,28 @@ body {
 	--h6-style: italic;
 	--inline-title-color: var(--text-faint);
 
+	/* Tab */
 	--tab-background-active: var(--bg3);
 	--tab-stacked-header-width: 28px;
 
-	--nav-item-size: var(--font-ui-medium);
+	/* Table */
+	--table-header-size: 1em;
+	--table-text-size: var(--font-small);
+	--table-white-space: normal;
+	--table-border-width: 1px;
+	--table-border-color: var(--basic-border-color);
+	--table-header-border-color: var(--basic-border-color);
+	--table-header-border-width: 1px;
+	--table-header-background: var(--bg5);
+	--table-row-alt-background: var(--b-row);
 
-	--file-line-width: 700px; /* to be set via style setting */
-
+	/* Blockquote */
 	--blockquote-border-thickness: 8px;
 	--blockquote-border-color: var(--bg5);
 	--blockquote-background-color: var(--bg2);
 
-	--link-decoration: underline double 1px;
-	--link-unresolved-opacity: 1;
-
-	--divider-color: var(--muted-border-color);
-	--divider-color-hover: var(--hover-accent);
-
-	/* file items */
+	/* File items */
+	--nav-item-size: var(--font-ui-medium);
 	--nav-item-color: var(--text-muted);
 	--nav-item-color-hover: var(--text-accent-hover);
 	--nav-item-color-active: var(--text-accent);
@@ -586,7 +590,7 @@ body {
 	--nav-item-background-hover: var(--bg5);
 	--nav-item-background-active: var(--bg5);
 
-	/* checkboxes */
+	/* Checkboxes */
 	--checkbox-radius: var(--radius-m);
 	--checkbox-size: 17px;
 	--checkbox-color: var(--secondary-accent);
@@ -594,11 +598,21 @@ body {
 	--checkbox-border-color: var(--text-gray);
 	--checkbox-border-color-hover: var(--hover-accent);
 
+	/* Callouts */
 	--callout-title-size: 110%;
 	--callout-padding: var(--size-4-2);
 
+	/* Icons */
 	--icon-color-hover: var(--hover-accent);
 	--icon-stroke: 2px;
+
+	/* Misc */
+	--file-line-width: 700px; /* to be set via style setting */
+	--list-indent: 1em;
+	--link-decoration: underline double 1px;
+	--link-unresolved-opacity: 1;
+	--divider-color: var(--muted-border-color);
+	--divider-color-hover: var(--hover-accent);
 }
 
 /* ───────────────────────────────────────────────── */
@@ -666,100 +680,15 @@ body {
 /* ───────────────────────────────────────────────── */
 /* << Tables
 ──────────────────────────────────────────────────── */
+/* most table styling via Obsidian Variables */
 
-.dummy-tables {
-	/* Tables */
-	--table-background: transparent;
-	--table-border-width: 1px;
-	--table-border-color: var(--background-modifier-border);
-	--table-white-space: normal;
-	--table-header-background: var(--table-background);
-	--table-header-background-hover: inherit;
-	--table-header-border-width: var(--table-border-width);
-	--table-header-border-color: var(--table-border-color);
-	--table-header-font: inherit;
-	--table-header-size: var(--font-smaller);
-	--table-header-weight: var(--font-normal);
-	--table-header-color: var(--text-muted);
-	--table-text-size: inherit;
-	--table-text-color: inherit;
-	--table-column-max-width: none;
-	--table-column-alt-background: var(--table-background);
-	--table-column-first-border-width: var(--table-border-width);
-	--table-column-last-border-width: var(--table-border-width);
-	--table-row-background-hover: var(--table-background);
-	--table-row-alt-background: var(--table-background);
-	--table-row-last-border-width: var(--table-border-width);
+.markdown-preview-view th {
+	font-weight: 600;
 }
 
 .markdown-preview-view table {
-	margin: 0.5em 0 1.5em;
-	--table-border: var(--basic-border);
-	border: var(--thin-border); /* outer border */
-}
-
-.theme-dark table {
-	--table-a-row: hsla(var(--bg-dark-hue) 70% 10% / 15%);
-	--table-b-row: hsla(var(--bg-dark-hue) 70% 10% / 35%);
-}
-
-.theme-light table {
-	--table-a-row: hsla(var(--bg-light-hue) 50% 50% / 2.5%);
-	--table-b-row: hsla(var(--bg-light-hue) 50% 50% / 7.5%);
-}
-
-table {
-
-}
-
-/* draw only inner borders */
-body > .app-container table > thead > tr > th {
-	font-size: 1em;
-	font-weight: 600;
-	border: none;
-	border-bottom: var(--table-border);
-}
-
-body > .app-container table > tbody > tr > td {
-	border: none;
-}
-
-.markdown-preview-view.markdown-preview-view.markdown-preview-view table > :is(thead, tbody) > tr > :is(th, td):not(:first-child) {
-	border-left: var(--table-border);
-}
-
-/* backgrounds */
-thead {
-	font-weight: 900;
-	background-color: var(--bg3);
-}
-
-/* needs higher specificity to override annoying dataview hover effects */
-.app-container.app-container.app-container tr {
-	background-color: var(--table-a-row);
-}
-
-/* alternating rows */
-body:not(.no-alternating-rows) .app-container.app-container tr:nth-child(even) {
-	background-color: var(--table-b-row);
-}
-
-.no-alternating-rows > .app-container table > tbody > tr > td {
-	border-top: var(--table-border);
-}
-
-/* CM6: Live Preview */
-.mod-cm6 table :is(th, td) {
-	padding: 4px 10px;
-}
-
-.cm-s-obsidian.mod-cm6 table th {
-	font-size: 1.05em;
-}
-
-.cm-hmd-table-sep,
-.HyperMD-table-row-1 {
-	color: var(--text-faint);
+	margin-top: 0.5em;
+	margin-bottom: 1.2em;
 }
 
 /* ───────────────────────────────────────────────── */
@@ -2163,8 +2092,9 @@ body:not(.normal-header-bar, .is-mobile) .view-header:not(:focus-within) .view-a
 
 body.safari-tab-bar .workspace-tab-header-container-inner {
 	width: 100%;
+	padding-top: var(--size-2-3);
 	margin: 0;
-	align-items: center;
+	align-items: flex-start;
 	justify-content: center;
 }
 
@@ -2174,7 +2104,7 @@ body.safari-tab-bar .workspace-tab-header-container-inner {
 	background: var(--tab-background);
 	box-shadow: none;
 
-	margin-left: 12px;
+	margin-left: var(--size-4-3);
 
 	border-radius: 6px;
 
@@ -3282,7 +3212,7 @@ body:not(.no-pandoc-citation-emphasis) .pandoc-citation.is-unresolved.is-unresol
 }
 
 /* the "download settings" button is not needed for *every single* section */
-.setting-editor-extra-setting-button:last-child {
+.setting-item-heading:not([data-level="0"]) .setting-editor-extra-setting-button:last-child {
 	display: none;
 }
 
@@ -3709,6 +3639,7 @@ core:
 
 community:
 - recent-files-obsidian
+- obsidian-electron-window-tweaker
 - obsidian-another-quick-switcher
 - obsidian-kanban
 - oz-image-plugin
@@ -3851,7 +3782,7 @@ settings:
    default: false
   -
    id: hide-electron-window-tweaker-status-bar
-   title: Hide Longform Plugin Word Count
+   title: Hide Electron Window Tweaker 'Always on top' iocn
    type: class-toggle
    default: false
   -
