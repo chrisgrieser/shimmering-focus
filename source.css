@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 3.43
+Version 3.44
 Source CSS: https://github.com/chrisgrieser/shimmering-focus/blob/main/source.css
 MIT License
 ──────────────────────────────────────────────────── */
@@ -20,6 +20,7 @@ MIT License
 	- Changed Obsidian Variables
 	- Theme Variables
 - Markup
+	- Bold
 	- Tasks
 	- Footnotes
 	- Links
@@ -93,6 +94,7 @@ MIT License
  	- Show / Hide UI Elements (+)
  		- Status Bar (+)
  	- Workspace (+)
+ 	- Colors (+)
  	- Editor & Media (+)
  	- Markup & Special Syntax (+)
  	- Donation Info (+)
@@ -258,6 +260,10 @@ autocompletion via LSP and for quicker reference
 https://www.youtube.com/watch?v=yl0pvIRTWWo&t=7s */
 
 .dummy {
+	--font-interface: "";
+	--font-text: "";
+	--font-monospace: "";
+
 	/* Icons */
 	--icon-size: var(--icon-m);
 	--icon-stroke: var(--icon-m-stroke-width);
@@ -356,7 +362,6 @@ https://www.youtube.com/watch?v=yl0pvIRTWWo&t=7s */
 	--cursor: default;
 	--cursor-link: pointer;
 
-	--text-selection: hsl(var(--color-accent-hsl) / 20%);
 	--text-on-accent: hsl(0 0 100);
 	--text-error: var(--color-red);
 	--text-success: var(--color-green);
@@ -387,24 +392,30 @@ https://www.youtube.com/watch?v=yl0pvIRTWWo&t=7s */
 /* stylelint-disable no-duplicate-selectors */
 
 body {
-	--bg-hue: 0;
-	--bg-sat: 0%;
+	--bg-hue: 230;
+	--longform-bg-hue: 200;
 }
 
 .theme-light {
+	--bg-sat: 15%;
+
 	--secondary-accent: hsl(28 54% 51%);
 	--hover-accent: hsl(328 100% 54%);
 	--link-unresolved-color: hsl(101 42% 51%);
 	--color-accent: hsl(184 79% 35%); /* hard-coded, so user does not mess up color scheme */
+	--interactive-accent: hsl(184 79% 30%);
 	--color-accent-hsl: 184 79% 35%;
 }
 
 .theme-dark {
+	--bg-sat: 12%;
+
 	--secondary-accent: hsl(28 54% 51%);
 	--hover-accent: hsl(328 100% 54%);
 	--link-unresolved-color: hsl(101 42% 51%);
-	--color-accent: hsl(184 79% 35%);
+	--color-accent: hsl(184 79% 45%);
 	--color-accent-hsl: 184 79% 35%;
+	--interactive-accent: hsl(184 79% 30%);
 }
 
 .theme-light {
@@ -436,10 +447,40 @@ body {
 	--color-base-100: hsl(var(--bg-hue) var(--bg-sat) 85%);
 }
 
+.theme-light :is(.writing, .longform-leaf) {
+	--color-base-00: hsl(var(--longform-bg-hue) var(--bg-sat) 100%);
+	--color-base-05: hsl(var(--longform-bg-hue) var(--bg-sat) 99%);
+	--color-base-10: hsl(var(--longform-bg-hue) var(--bg-sat) 98%);
+	--color-base-20: hsl(var(--longform-bg-hue) var(--bg-sat) 96%);
+	--color-base-25: hsl(var(--longform-bg-hue) var(--bg-sat) 89%);
+	--color-base-30: hsl(var(--longform-bg-hue) var(--bg-sat) 88%);
+	--color-base-35: hsl(var(--longform-bg-hue) var(--bg-sat) 83%);
+	--color-base-40: hsl(var(--longform-bg-hue) var(--bg-sat) 74%);
+	--color-base-50: hsl(var(--longform-bg-hue) var(--bg-sat) 67%);
+	--color-base-60: hsl(var(--longform-bg-hue) var(--bg-sat) 44%);
+	--color-base-70: hsl(var(--longform-bg-hue) var(--bg-sat) 35%);
+	--color-base-100: hsl(var(--longform-bg-hue) var(--bg-sat) 13%);
+}
+
+.theme-dark :is(.writing, .longform-leaf) {
+	--color-base-00: hsl(var(--longform-bg-hue) var(--bg-sat) 12%);
+	--color-base-10: hsl(var(--longform-bg-hue) var(--bg-sat) 14%);
+	--color-base-20: hsl(var(--longform-bg-hue) var(--bg-sat) 15%);
+	--color-base-25: hsl(var(--longform-bg-hue) var(--bg-sat) 16%);
+	--color-base-30: hsl(var(--longform-bg-hue) var(--bg-sat) 21%);
+	--color-base-35: hsl(var(--longform-bg-hue) var(--bg-sat) 25%);
+	--color-base-40: hsl(var(--longform-bg-hue) var(--bg-sat) 33%);
+	--color-base-50: hsl(var(--longform-bg-hue) var(--bg-sat) 40%);
+	--color-base-60: hsl(var(--longform-bg-hue) var(--bg-sat) 60%);
+	--color-base-70: hsl(var(--longform-bg-hue) var(--bg-sat) 73%);
+	--color-base-100: hsl(var(--longform-bg-hue) var(--bg-sat) 85%);
+}
+
 .theme-dark,
 .theme-light {
 	--hotkey-color: var(--secondary-accent);
 	--bold-color: var(--text-accent-hover);
+	--text-selection: hsl(var(--color-accent-hsl) / 20%);
 
 	--text-normal: var(--color-base-100);
 	--text-muted: var(--color-base-70);
@@ -450,7 +491,6 @@ body {
 	--interactive-normal: var(--color-base-00);
 	--interactive-hover: var(--color-base-20);
 	--interactive-accent-hsl: var(--color-accent-hsl);
-	--interactive-accent: var(--color-accent);
 	--interactive-accent-hover: var(--hover-accent);
 
 	/* links and tags */
@@ -588,6 +628,14 @@ body {
 ──────────────────────────────────────────────────── */
 
 /* ───────────────────────────────────────────────── */
+/* << Bold
+──────────────────────────────────────────────────── */
+
+.uncolored-bold:is(.theme-light, .theme-dark) {
+	--bold-color: var(--text-normal);
+}
+
+/* ───────────────────────────────────────────────── */
 /* << Tasks
 ──────────────────────────────────────────────────── */
 
@@ -624,9 +672,13 @@ body .HyperMD-footnote,
 }
 
 /* separator line above the first footnote */
+.cm-line:not(.HyperMD-footnote) + .HyperMD-footnote,
+.footnotes hr {
+	border-top: var(--thin-muted-border);
+}
+
 .cm-line:not(.HyperMD-footnote) + .HyperMD-footnote {
 	padding-top: var(--size-4-3);
-	border-top: var(--basic-border);
 }
 
 .footnotes hr {
@@ -1257,8 +1309,32 @@ div.mermaid {
 /* < Settings
 ──────────────────────────────────────────────────── */
 
-/* Community Plugins */
+/* removed accent color icon since unused */
+.mod-settings .vertical-tab-content > .setting-item:nth-child(2) > .setting-item-control > input[type="color"] {
+	width: 350px;
+	visibility: hidden;
+}
 
+.mod-settings .vertical-tab-content > .setting-item:nth-child(2) > .setting-item-control .lucide-rotate-ccw {
+	display: none;
+}
+
+.mod-settings .vertical-tab-content > .setting-item:nth-child(2) > .setting-item-control > input[type="color"]::before {
+	content: "The accent color is overridden by the theme. Use the Style Settings Plugin to customize theme colors.";
+
+	font-family: var(--font-interface);
+	font-size: var(--font-ui-smaller);
+	line-height: 1.3;
+
+	color: var(--text-muted);
+
+	position: relative;
+	top: 8px;
+
+	visibility: visible;
+}
+
+/* Community Plugins */
 /* redundant, since plugin name is already displayed above */
 .community-modal-readme h1:first-child {
 	display: none;
@@ -1991,24 +2067,15 @@ are not targeted by this */
 ──────────────────────────────────────────────────── */
 
 /* the "---"" */
-.cm-def.cm-hmd-frontmatter {
+.cm-def.cm-hmd-frontmatter.cm-hmd-frontmatter {
 	letter-spacing: 0.1rem;
-	color: var(--secondary-accent-text);
-}
-
-/* so bold and not bold gets rendered correctly */
-.cm-hmd-frontmatter {
-	text-rendering: geometricPrecision;
-}
-
-/* keys easier to differentiate */
-.cm-hmd-frontmatter:is(.cm-atom, .cm-meta) {
-	font-weight: 600;
+	color: var(--secondary-accent);
 }
 
 /* keys */
 .frontmatter.language-yaml .atrule,
 .cm-atom.cm-hmd-frontmatter {
+	font-weight: 600;
 	color: var(--text-accent);
 }
 
@@ -2018,6 +2085,7 @@ are not targeted by this */
 /* last child = bracket to close of array brackets, see https://github.com/chrisgrieser/shimmering-focus/issues/194 */
 .cm-line .cm-hmd-frontmatter.cm-meta:is(:first-child, :nth-child(2), :last-child),
 .frontmatter.language-yaml .punctuation {
+	font-weight: 600;
 	color: var(--bold-color);
 }
 
@@ -2151,13 +2219,13 @@ pre.language-yaml.frontmatter::after {
 }
 
 .markdown-preview-view .embedded-backlinks {
-	margin-top: var(--size-4-6);
+	margin-top: var(--size-4-18);
 }
 
 .embedded-backlinks {
 	padding-top: var(--size-4-2);
 	padding-left: var(--size-4-1);
-	border-top: var(--thin-border);
+	border-top: var(--thin-muted-border);
 }
 
 /* minimal inline backlinks pane */
@@ -3049,6 +3117,37 @@ settings:
    max: 400
    step: 25
    format: px
+  -
+# << Colors (+)
+   id: aesthetics
+   title: Colors
+   description: Background Color Tones, Longform Background, Bold Text
+   type: heading
+   level: 1
+   collapsed: true
+  -
+   id: bg-hue
+   title: Background Color Tone (Hue)
+   type: variable-number-slider
+   default: 230
+   min: 0
+   max: 360
+   step: 5
+  -
+   id: longform-bg-hue
+   title: 'Longform/Writing: Background Color Tone (Hue) (🚧 not implemented yet)'
+   description: Background color tone of notes from the longform plugin or notes with the 'writing' cssclass.
+   type: variable-number-slider
+   default: 200
+   min: 0
+   max: 360
+   step: 5
+  -
+   id: uncolored-bold
+   title: Uncolored Bold
+   description: Bold text will use the standard text color instead of being colored.
+   type: class-toggle
+   default: false
   -
 # << Editor & Media (+)
    id: content-settings
