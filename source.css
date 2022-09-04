@@ -388,7 +388,7 @@ https://www.youtube.com/watch?v=yl0pvIRTWWo&t=7s */
 
 body {
 	--bg-hue: 0;
-	--bg-sat: 0;
+	--bg-sat: 0%;
 }
 
 .theme-light {
