@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 3.47
+Version 3.48
 Source CSS: https://github.com/chrisgrieser/shimmering-focus/blob/main/source.css
 MIT License
 ──────────────────────────────────────────────────── */
@@ -1688,18 +1688,18 @@ body:not(.normal-header-bar, .is-mobile) .view-header:not(:focus-within) .view-a
 /* https://discord.com/channels/686053708261228577/716028884885307432/1014012840883015720 */
 /* https://gist.github.com/chuckharmston/b0206887cf81a8ae090376e6110d8ebe */
 
-.mac-os-native .workspace-tabs.mod-top {
+.mac-os-native .workspace-tabs.mod-top:not(.mod-stacked) {
 	--tab-font-size: var(--font-small);
 	--tab-height: 24px;
 	--tab-max-width-active: calc(var(--tab-width) * 1.5);
 }
 
-.mac-os-native.theme-light .workspace-tabs.mod-top {
+.mac-os-native.theme-light .workspace-tabs.mod-top:not(.mod-stacked) {
 	--tab-background: rgb(0 0 0 / 5%);
 	--tab-background-active: rgb(0 0 0 / 10%);
 }
 
-.mac-os-native.theme-dark .workspace-tabs.mod-top {
+.mac-os-native.theme-dark .workspace-tabs.mod-top:not(.mod-stacked) {
 	--tab-background: rgb(255 255 255 / 7.5%);
 	--tab-background-active: rgb(255 255 255 / 15%);
 }
