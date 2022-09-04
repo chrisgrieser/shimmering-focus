@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 3.44
+Version 3.45
 Source CSS: https://github.com/chrisgrieser/shimmering-focus/blob/main/source.css
 MIT License
 ──────────────────────────────────────────────────── */
@@ -392,12 +392,12 @@ https://www.youtube.com/watch?v=yl0pvIRTWWo&t=7s */
 /* stylelint-disable no-duplicate-selectors */
 
 body {
-	--bg-hue: 230;
+	--bg-hue: 233;
 	--longform-bg-hue: 200;
 }
 
 .theme-light {
-	--bg-sat: 15%;
+	--bg-sat: 20%;
 
 	--secondary-accent: hsl(28 54% 51%);
 	--hover-accent: hsl(328 100% 54%);
@@ -408,7 +408,7 @@ body {
 }
 
 .theme-dark {
-	--bg-sat: 12%;
+	--bg-sat: 15%;
 
 	--secondary-accent: hsl(28 54% 51%);
 	--hover-accent: hsl(328 100% 54%);
@@ -430,6 +430,7 @@ body {
 	--color-base-50: hsl(var(--bg-hue) var(--bg-sat) 67%);
 	--color-base-60: hsl(var(--bg-hue) var(--bg-sat) 44%);
 	--color-base-70: hsl(var(--bg-hue) var(--bg-sat) 35%);
+	--color-base-85s: hsl(var(--bg-hue) calc(var(--bg-sat) * 2) 24%);
 	--color-base-100: hsl(var(--bg-hue) var(--bg-sat) 13%);
 }
 
@@ -444,6 +445,7 @@ body {
 	--color-base-50: hsl(var(--bg-hue) var(--bg-sat) 40%);
 	--color-base-60: hsl(var(--bg-hue) var(--bg-sat) 60%);
 	--color-base-70: hsl(var(--bg-hue) var(--bg-sat) 73%);
+	--color-base-85s: hsl(var(--bg-hue) calc(var(--bg-sat) * 2) 82%);
 	--color-base-100: hsl(var(--bg-hue) var(--bg-sat) 85%);
 }
 
@@ -459,6 +461,7 @@ body {
 	--color-base-50: hsl(var(--longform-bg-hue) var(--bg-sat) 67%);
 	--color-base-60: hsl(var(--longform-bg-hue) var(--bg-sat) 44%);
 	--color-base-70: hsl(var(--longform-bg-hue) var(--bg-sat) 35%);
+	--color-base-85s: hsl(var(--longform-bg-hue) calc(var(--bg-sat) * 2) 24%);
 	--color-base-100: hsl(var(--longform-bg-hue) var(--bg-sat) 13%);
 }
 
@@ -473,6 +476,7 @@ body {
 	--color-base-50: hsl(var(--longform-bg-hue) var(--bg-sat) 40%);
 	--color-base-60: hsl(var(--longform-bg-hue) var(--bg-sat) 60%);
 	--color-base-70: hsl(var(--longform-bg-hue) var(--bg-sat) 73%);
+	--color-base-85s: hsl(var(--longform-bg-hue) calc(var(--bg-sat) * 2) 82%);
 	--color-base-100: hsl(var(--longform-bg-hue) var(--bg-sat) 85%);
 }
 
@@ -481,8 +485,8 @@ body {
 	--hotkey-color: var(--secondary-accent);
 	--bold-color: var(--text-accent-hover);
 	--text-selection: hsl(var(--color-accent-hsl) / 20%);
+	--text-normal: var(--color-base-85s);
 
-	--text-normal: var(--color-base-100);
 	--text-muted: var(--color-base-70);
 	--text-gray: var(--color-base-60); /* custom middle ground between text-muted and text-faint */
 	--text-faint: var(--color-base-50);
@@ -1765,7 +1769,7 @@ body .workspace .mod-root .workspace-tab-header {
 }
 
 body:not(.no-tabbar-header-hybrid) .mod-root .workspace-tab-header-container:not(:hover) .workspace-tab-header:only-child .workspace-tab-header-status-container {
-	/* padding-right: var(--size-4-3); */
+	padding-right: var(--size-4-3);
 }
 
 .mod-stacked .workspace-tab-header-status-icon .lucide-pin {
@@ -1774,6 +1778,10 @@ body:not(.no-tabbar-header-hybrid) .mod-root .workspace-tab-header-container:not
 
 .workspace-tabs:not(.mod-stacked) .workspace-tab-header-status-container .lucide-pin {
 	stroke: var(--tab-text-color);
+}
+
+.workspace-tab-header-status-icon:hover .lucide-pin.lucide-pin {
+	stroke: var(--icon-color-hover);
 }
 
 /* change order */
@@ -2065,6 +2073,10 @@ are not targeted by this */
 /* ───────────────────────────────────────────────── */
 /* <<< YAML Frontmatter
 ──────────────────────────────────────────────────── */
+/* values */
+.cm-hmd-frontmatter {
+	color: var(--text-normal);
+}
 
 /* the "---"" */
 .cm-def.cm-hmd-frontmatter.cm-hmd-frontmatter {
@@ -2300,6 +2312,60 @@ body:not(.classic-inline-backlinks) :is(.writing, .longform-leaf) .embedded-back
 /* ───────────────────────────────────────────────── */
 /* < Community Plugins
 ──────────────────────────────────────────────────── */
+
+/* tag-based */
+body:not(.no-built-in-supercharged-links) .data-link-icon[data-link-tags~="#autocompletion" i]::before { content: "🅰️ " }
+body:not(.no-built-in-supercharged-links) .data-link-icon[data-link-tags~="#mermaid" i]::before { content: "🧜‍♀️ " }
+body:not(.no-built-in-supercharged-links) .data-link-icon[data-link-tags~="#dataview" i]::before { content: "🔢 " }
+body:not(.no-built-in-supercharged-links) .data-link-icon[data-link-tags~="#templater" i]::before { content: "📄 " }
+body:not(.no-built-in-supercharged-links) .data-link-icon[data-link-tags~="#obsidian" i]::before { content: "🟪 " }
+body:not(.no-built-in-supercharged-links) .data-link-icon[data-link-tags~="#checklist" i]::before { content: "✅ " }
+
+body:not(.no-built-in-supercharged-links) .data-link-icon[data-link-tags~="#person" i]::before { content: "👤 " }
+body:not(.no-built-in-supercharged-links) .data-link-icon[data-link-tags*="#bookmark" i]::before { content: "🔖 " }
+body:not(.no-built-in-supercharged-links) .data-link-icon[data-link-tags*="#finance" i]::before { content: "📈 " }
+body:not(.no-built-in-supercharged-links) .data-link-icon[data-link-tags*="#design" i]::before { content: "🎨 " }
+body:not(.no-built-in-supercharged-links) .data-link-icon[data-link-tags~="#moc" i]::before { content: "🗺 " }
+body:not(.no-built-in-supercharged-links) .data-link-icon[data-link-tags~="#pkm" i]::before { content: "🧠 " }
+body:not(.no-built-in-supercharged-links) .data-link-icon[data-link-tags~="#archive" i]::before { content: "🗄 " }
+
+body:not(.no-built-in-supercharged-links) .data-link-icon[data-link-tags~="#seedling" i]::after { content: " 🌱" }
+body:not(.no-built-in-supercharged-links) .data-link-icon[data-link-tags~="#fleeting" i]::after { content: " 💨" }
+body:not(.no-built-in-supercharged-links) .data-link-icon[data-link-tags~="#evergreen" i]::after { content: " 🌲" }
+
+/* writing cssclass, needs *= to catch , after cssclass */
+body:not(.no-built-in-supercharged-links) .data-link-icon[data-link-cssclass*="writing"]::before { content: "✍️ " }
+
+/* longform index notes */
+body:not(.no-built-in-supercharged-links) .data-link-icon[data-link-drafts][data-link-version]::before { content: "⚙️ " }
+
+/* kanban notes */
+body:not(.no-built-in-supercharged-links) .data-link-icon[data-link-kanban-plugin]::before { content: "🌠 " }
+
+/* literature notes */
+body:not(.no-built-in-supercharged-links) .data-link-icon[data-link-tags~="#pdf-annotations" i]::before { content: "📓 " }
+
+/* pseudo-tooltips for literature notes */
+body:not(.no-built-in-supercharged-links) .workspace-split.mod-root :not(.cm-link-alias) > :is([data-link-data-href], .data-link-icon)[data-link-tags~="#pdf-annotations" i]:not([aria-label]):hover::after {
+	content: "\""attr(data-link-aliases)"\""; /* stylelint-disable-line function-whitespace-after */
+
+	font-size: 0.9rem;
+
+	max-width: 350px;
+
+	color: var(--text-normal);
+	background-color: var(--notice-bg);
+	box-shadow: var(--notice-inset-shadow), var(--small-shadow);
+
+	position: absolute;
+	z-index: 9001;
+
+	padding: 8px 10px;
+	margin-left: 50px;
+
+	border: var(--notice-border);
+	border-radius: var(--roundish);
+}
 
 /* ───────────────────────────────────────────────── */
 /* << Another Quick Switcher (AQS)
