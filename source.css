@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 3.50
+Version 3.51
 Source CSS: https://github.com/chrisgrieser/shimmering-focus/blob/main/source.css
 MIT License
 ──────────────────────────────────────────────────── */
@@ -20,6 +20,7 @@ MIT License
 	- Changed Obsidian Variables
 	- Theme Variables
 - Markup
+		- Annotation Tags
 	- Bold
 	- Tasks
 	- Footnotes
@@ -31,8 +32,8 @@ MIT License
 		- Code Blocks
 		- language replacements
 	- Headings
-	- Callouts
 	- Blockquotes
+	- Callouts
 	- Trailing Whitespace (Two Space Rule)
 	- Strikethroughs
 	- Highlights
@@ -520,6 +521,7 @@ body {
 	/* links and tags */
 	--tag-color: var(--secondary-accent);
 	--tag-color-hover: var(--text-accent-hover);
+	--tag-radius: var(--radius-s); /* only used for annotation tags, disable in normal tags */
 	--link-color: var(--text-accent);
 	--link-color-hover: var(--text-accent-hover);
 	--link-external-color: var(--text-accent);
@@ -586,7 +588,11 @@ body {
 	--checkbox-color-hover: var(--hover-accent);
 	--checkbox-border-color: var(--text-gray);
 	--checkbox-border-color-hover: var(--hover-accent);
+
 	--icon-color-hover: var(--hover-accent);
+
+	--callout-title-size: 110%;
+	--callout-padding: var(--size-4-2);
 }
 
 /* ───────────────────────────────────────────────── */
@@ -650,6 +656,184 @@ body {
 /* ───────────────────────────────────────────────── */
 /* < Markup
 ──────────────────────────────────────────────────── */
+
+/* ───────────────────────────────────────────────── */
+/* <<< Annotation Tags
+──────────────────────────────────────────────────── */
+.theme-light { --annotation-tag-font-color: hsl(0 0% 13%); } /* stylelint-disable-line no-duplicate-selectors */
+.theme-dark { --annotation-tag-font-color: hsl(0 0% 100%); } /* stylelint-disable-line no-duplicate-selectors */
+
+/* all annotation tags */
+body:not(.annotation-tags-off) .tag:is([href="#goal"], [href="#idea"], [href="#question"], [href="#gap"], [href="#main"], [href="#disagree"], [href="#summary"], [href="#agree"], [href="#example"], [href="#definition"], [href="#method"], [href="#data"], [href="#important"], [href="#quote"], [href="#todo"], [href="#critique"], [href="#sidenote"], [href="#litreview"], [href="#epistemic-break"], [href="#hypothesis"]),
+body:not(.annotation-tags-off) .cm-s-obsidian .cm-line span:is(.cm-tag-litreview, .cm-tag-idea, .cm-tag-sidenote, .cm-tag-goal, .cm-tag-critique, .cm-tag-todo, .cm-tag-quote, .cm-tag-method, .cm-tag-data, .cm-tag-disagree, .cm-tag-gap, .cm-tag-summary, .cm-tag-definition, .cm-tag-question, .cm-tag-main, .cm-tag-agree, .cm-tag-important, .cm-tag-example, .cm-tag-epistemic-break, .cm-tag-hypothesis) {
+	font-weight: 900;
+	font-style: normal;
+	white-space: nowrap;
+
+	color: var(--text-normal);
+
+	padding-right: 6px;
+	padding-left: 6px;
+
+	border-radius: var(--tag-radius);
+}
+
+/* annotation tags in longform notes */
+body:not(.annotation-tags-off) .longform-leaf .tag:is([href="#goal"], [href="#idea"], [href="#question"], [href="#gap"], [href="#main"], [href="#disagree"], [href="#summary"], [href="#agree"], [href="#example"], [href="#definition"], [href="#method"], [href="#data"], [href="#important"], [href="#quote"], [href="#todo"], [href="#critique"], [href="#sidenote"], [href="#litreview"], [href="#epistemic-break"], [href="#hypothesis"]),
+body:not(.annotation-tags-off) .longform-leaf .cm-s-obsidian .cm-line span:is(.cm-tag-litreview, .cm-tag-idea, .cm-tag-sidenote, .cm-tag-goal, .cm-tag-critique, .cm-tag-todo, .cm-tag-quote, .cm-tag-method, .cm-tag-data, .cm-tag-disagree, .cm-tag-gap, .cm-tag-summary, .cm-tag-definition, .cm-tag-question, .cm-tag-main, .cm-tag-agree, .cm-tag-important, .cm-tag-example, .cm-tag-epistemic-break, .cm-tag-hypothesis) {
+	font-family: var(--longform-font-text-theme);
+	font-size: var(--longform-font-size);
+}
+
+/* the "#" */
+body:not(.annotation-tags-off) .cm-s-obsidian .cm-line .cm-hashtag-begin:is(.cm-tag-litreview, .cm-tag-idea, .cm-tag-sidenote, .cm-tag-goal, .cm-tag-critique, .cm-tag-todo, .cm-tag-quote, .cm-tag-method, .cm-tag-data, .cm-tag-disagree, .cm-tag-gap, .cm-tag-summary, .cm-tag-definition, .cm-tag-question, .cm-tag-main, .cm-tag-agree, .cm-tag-important, .cm-tag-example, .cm-tag-epistemic-break, .cm-tag-hypothesis) {
+	white-space: nowrap;
+	padding-right: 0;
+	border-top-right-radius: 0;
+	border-bottom-right-radius: 0;
+}
+
+/* the tag text */
+body:not(.annotation-tags-off) .cm-s-obsidian .cm-line .cm-hashtag-end:is(.cm-tag-litreview, .cm-tag-idea, .cm-tag-sidenote, .cm-tag-goal, .cm-tag-critique, .cm-tag-todo, .cm-tag-quote, .cm-tag-method, .cm-tag-data, .cm-tag-disagree, .cm-tag-gap, .cm-tag-summary, .cm-tag-definition, .cm-tag-question, .cm-tag-main, .cm-tag-agree, .cm-tag-important, .cm-tag-example, .cm-tag-epistemic-break, .cm-tag-hypothesis) {
+	font-family: var(--font-text); /* fixes their appearance in headings */
+	padding-left: 0;
+	border-bottom-left-radius: 0;
+	border-top-left-radius: 0;
+}
+
+/* the individual annotation tags */
+body:not(.annotation-tags-off) :is(.cm-tag-gap, .tag[href="#gap"]),
+body:not(.annotation-tags-off) :is(.cm-tag-sidenote, .tag[href="#sidenote"]),
+body:not(.annotation-tags-off) :is(.cm-tag-epistemic-break, .tag[href="#epistemic-break"]),
+body:not(.annotation-tags-off) :is(.cm-tag-litreview, .tag[href="#litreview"]) {
+	background-color: rgb(128 128 128 / 50%);
+}
+
+body:not(.annotation-tags-off) :is(.cm-hashtag-begin.cm-tag-gap, .tag[href="#gap"])::before {
+	content: "🕳 ";
+}
+
+body:not(.annotation-tags-off) :is(.cm-hashtag-begin.cm-tag-litreview, .tag[href="#litreview"])::before {
+	content: "📚 ";
+}
+
+body:not(.annotation-tags-off) :is(.cm-hashtag-begin.cm-tag-epistemic-break, .tag[href="#epistemic-break"])::before {
+	content: "⚡️ ";
+}
+
+body:not(.annotation-tags-off) :is(.cm-hashtag-begin.cm-tag-sidenote, .tag[href="#sidenote"])::before {
+	content: "⬅️ ";
+}
+
+body:not(.annotation-tags-off) :is(.cm-tag-question, .tag[href="#question"]),
+body:not(.annotation-tags-off) :is(.cm-tag-goal, .tag[href="#goal"]) {
+	background-color: rgb(0 235 230 / 50%);
+}
+
+body:not(.annotation-tags-off) :is(.cm-hashtag-begin.cm-tag-goal, .tag[href="#goal"])::before {
+	content: "🏁 ";
+}
+
+body:not(.annotation-tags-off) :is(.cm-hashtag-begin.cm-tag-question, .tag[href="#question"])::before {
+	content: "❓ ";
+}
+
+body:not(.annotation-tags-off) :is(.cm-tag-critique, .tag[href="#critique"]) {
+	background-color: hsl(330 60% 50% / 50%);
+}
+
+body:not(.annotation-tags-off) :is(.cm-hashtag-begin.cm-tag-critique, .tag[href="#critique"])::before {
+	content: "☝️ ";
+}
+
+body:not(.annotation-tags-off) :is(.cm-tag-idea, .tag[href="#idea"]),
+body:not(.annotation-tags-off) :is(.cm-tag-quote, .tag[href="#quote"]) {
+	background-color: hsl(86 100% 51% / 50%);
+}
+
+body:not(.annotation-tags-off) :is(.cm-hashtag-begin.cm-tag-idea, .tag[href="#idea"])::before {
+	content: "🤔 ";
+}
+
+body:not(.annotation-tags-off) :is(.cm-hashtag-begin.cm-tag-quote, .tag[href="#quote"])::before {
+	content: "💬 ";
+}
+
+body:not(.annotation-tags-off) :is(.cm-tag-summary, .tag[href="#summary"]),
+body:not(.annotation-tags-off) :is(.cm-tag-important, .tag[href="#important"]) {
+	background-color: rgb(255 120 15 / 50%);
+}
+
+body:not(.annotation-tags-off) :is(.cm-hashtag-begin.cm-tag-summary, .tag[href="#summary"])::before {
+	content: "✴️ ";
+}
+
+body:not(.annotation-tags-off) :is(.cm-hashtag-begin.cm-tag-important, .tag[href="#important"])::before {
+	content: "📌 ";
+}
+
+body:not(.annotation-tags-off) :is(.cm-tag-data, .tag[href="#data"]),
+body:not(.annotation-tags-off) :is(.cm-tag-method, .tag[href="#method"]) {
+	background-color: rgb(170 121 66 / 50%);
+}
+
+body:not(.annotation-tags-off) :is(.cm-hashtag-begin.cm-tag-method, .tag[href="#method"])::before {
+	content: "🔬 ";
+}
+
+body:not(.annotation-tags-off) :is(.cm-hashtag-begin.cm-tag-data, .tag[href="#data"])::before {
+	content: "📊 ";
+}
+
+body:not(.annotation-tags-off) :is(.cm-tag-hypothesis, .tag[href="#hypothesis"]),
+body:not(.annotation-tags-off) :is(.cm-tag-todo, .tag[href="#todo"]),
+body:not(.annotation-tags-off) :is(.cm-tag-main, .tag[href="#main"]) {
+	background-color: rgb(32 156 238 / 50%);
+}
+
+body:not(.annotation-tags-off) :is(.cm-hashtag-begin.cm-tag-todo, .tag[href="#todo"])::before {
+	content: "☑️ ";
+}
+
+body:not(.annotation-tags-off) :is(.cm-hashtag-begin.cm-tag-hypothesis, .tag[href="#hypothesis"])::before {
+	content: "⏺ ";
+}
+
+body:not(.annotation-tags-off) :is(.cm-hashtag-begin.cm-tag-main, .tag[href="#main"])::before {
+	content: "Ⓜ️ ";
+}
+
+body:not(.annotation-tags-off) :is(.cm-tag-definition, .tag[href="#definition"]) {
+	background-color: rgb(217 188 77 / 50%);
+}
+
+body:not(.annotation-tags-off) :is(.cm-hashtag-begin.cm-tag-definition, .tag[href="#definition"])::before {
+	content: "💡 ";
+}
+
+body:not(.annotation-tags-off) :is(.cm-tag-agree, .tag[href="#agree"]) {
+	background-color: rgb(35 209 96 / 50%);
+}
+
+body:not(.annotation-tags-off) :is(.cm-hashtag-begin.cm-tag-agree, .tag[href="#agree"])::before {
+	content: "✅ ";
+}
+
+body:not(.annotation-tags-off) :is(.cm-tag-disagree, .tag[href="#disagree"]) {
+	background-color: rgb(255 56 96 / 50%);
+}
+
+body:not(.annotation-tags-off) :is(.cm-hashtag-begin.cm-tag-disagree, .tag[href="#disagree"])::before {
+	content: "⛔️ ";
+}
+
+body:not(.annotation-tags-off) :is(.cm-tag-example, .tag[href="#example"]) {
+	background-color: rgb(230 128 253 / 50%);
+}
+
+body:not(.annotation-tags-off) :is(.cm-hashtag-begin.cm-tag-example, .tag[href="#example"])::before {
+	content: "⚛️ ";
+}
 
 /* ───────────────────────────────────────────────── */
 /* << Bold
@@ -1095,14 +1279,6 @@ body:not(.no-codeblock-line-numbers) .HyperMD-codeblock-end .cm-formatting-code-
 }
 
 /* ───────────────────────────────────────────────── */
-/* << Callouts
-──────────────────────────────────────────────────── */
-
-.callout-icon {
-	margin-right: 8px;
-}
-
-/* ───────────────────────────────────────────────── */
 /* << Blockquotes
 ──────────────────────────────────────────────────── */
 
@@ -1186,7 +1362,7 @@ body:not(.no-codeblock-line-numbers) .HyperMD-codeblock-end .cm-formatting-code-
 }
 
 /* option to left-align */
-body:not(.blockquotes-left-aligned) .app-container :is(.markdown-preview-view blockquote, .HyperMD-quote) {
+body:not(.blockquotes-left-aligned) .app-container .markdown-preview-view blockquote {
 	text-align: justify;
 	hyphens: auto;
 }
@@ -1198,6 +1374,52 @@ blockquote,
 blockquote code {
 	font-size: var(--font-small);
 	line-height: 1.4;
+}
+
+/* ───────────────────────────────────────────────── */
+/* << Callouts
+──────────────────────────────────────────────────── */
+.HyperMD-callout.HyperMD-callout.HyperMD-callout.HyperMD-callout {
+	font-weight: 700;
+
+	background-color: var(--bg4);
+
+	z-index: 40; /* so it overlays the rounded-corner-hack for blockquotes */
+
+	padding-top: var(--size-2-1);
+	padding-bottom: var(--size-2-1);
+
+	border-bottom: var(--thin-muted-border);
+}
+
+.cm-hmd-callout.cm-hmd-callout.cm-hmd-callout {
+	color: var(--secondary-accent);
+	opacity: 0.8;
+}
+
+.callout {
+	--callout-icon: triangle; /* default callout icon */
+}
+
+.callout-title {
+	letter-spacing: 0.8px;
+	padding-bottom: var(--size-4-1);
+	border-bottom: 3px solid rgb(var(--callout-color) 30%);
+}
+
+.callout-icon {
+	filter: brightness(0.9);
+	margin-right: var(--size-4-2);
+}
+
+.callout ol {
+	padding-inline-start: 1.85em;
+	margin-top: var(--size-4-1);
+	margin-bottom: 0;
+}
+
+.callout ol li::marker {
+	color: var(--text-gray);
 }
 
 /* ───────────────────────────────────────────────── */
@@ -2049,6 +2271,7 @@ body:not(.show-sidebar-tabs) :is(.mod-left-split, .mod-right-split) .workspace-t
 /* ───────────────────────────────────────────────── */
 /* << Sidebar Styling
 ──────────────────────────────────────────────────── */
+body .item-list,
 body .workspace-leaf-content .view-content {
 	padding: 0 0 var(--size-4-4) 0;
 }
@@ -2064,6 +2287,7 @@ body.mod-macos.is-hidden-frameless:not(.is-popout-window) .workspace .workspace-
 
 .nav-file-title,
 .nav-folder-title {
+	padding-left: 6px;
 	margin-top: 0;
 	margin-bottom: 0;
 	border-radius: 0;
@@ -2326,8 +2550,8 @@ body:not(.show-search-pane-suggestions) .mod-search-suggestion {
 /* ───────────────────────────────────────────────── */
 /* << Starred
 ──────────────────────────────────────────────────── */
-
-body:not(.show-starred-nav-buttons) .workspace-leaf-content[data-type="starred"] .nav-buttons-container {
+.workspace-leaf-content[data-type="starred"] .nav-file-icon,
+body:not(.show-starred-nav-buttons) .workspace-leaf-content[data-type="starred"] .nav-header {
 	display: none;
 }
 
@@ -3231,6 +3455,7 @@ core:
 - file-explorer
 - outline
 - starred
+- search
 - switcher
 
 community:
@@ -3496,7 +3721,7 @@ settings:
 # << Markup & Special Syntax (+)
    id: markup-and-special-syntax
    title: ✏️ Markup & Special Syntax
-   description: Highlight Colors, Blockquote Alignment, Trailing Spaces, Pandoc Emphasis
+   description: Highlight Colors, Blockquote Alignment, Trailing Spaces, Pandoc Emphasis, Annotation Tags
    type: heading
    level: 1
    collapsed: true
@@ -3524,6 +3749,12 @@ settings:
    id: no-pandoc-citation-emphasis
    title: No Emphasis of Pandoc Citations
    description: "Turn off the coloring of Pandoc Citations [@citekey] in Editing Mode. (Also affects the styling for the Pandoc Reference List Plugin.)"
+   type: class-toggle
+   default: false
+  -
+   id: annotation-tags-off
+   title: Disable Annotation Tags
+   description: '"Annotation Tags" are tags that are visually emphasized when used inline (i.e., not the YAML frontmatter). They include: #definition, #question, #goal, #todo, #summary, #important, #main, #critique, #gap, #litreview, #quote, #agree, #disagree, #example, #data, #method, #idea, #epistemic-break, and #sidenote.'
    type: class-toggle
    default: false
   -

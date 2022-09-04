@@ -1,4 +1,6 @@
 # Changelog
+- 2022-09-04	added annotation tags
+- 2022-09-04	Readme credits
 - 2022-09-04	hiding settings for files, starred & search
 - 2022-09-04	basic docs
 - 2022-09-04	native mac look setting, credits @chuckharmston
