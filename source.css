@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 3.59
+Version 3.60
 Source CSS: https://github.com/chrisgrieser/shimmering-focus/blob/main/source.css
 MIT License
 ──────────────────────────────────────────────────── */
@@ -46,6 +46,7 @@ MIT License
 	- PDFs
 - Modals
 	- Settings Menu
+		- Settings Menu Colors
 		- Settings Headings
 		- removed accent color icon since unused
 	- Community Plugins
@@ -1701,15 +1702,43 @@ body:not(.show-close-buttons) .modal-close-button {
 	border-left: var(--basic-border);
 }
 
+/* <<< Settings Menu Colors */
+
+.theme-light .vertical-tab-content {
+	background-color: var(--bg3);
+}
+
+.theme-light :is(.vertical-tab-header, .vertical-tab-nav-item) {
+	background-color: var(--bg4);
+}
+
+.theme-dark .vertical-tab-content {
+	background-color: var(--bg3);
+}
+
+.theme-dark :is(.vertical-tab-header, .vertical-tab-nav-item) {
+	background-color: var(--bg1);
+}
+
+.theme-dark .modal-bg {
+	background-color: hsl(var(--bg-hue) 10% 5%);
+}
+
+.theme-light .modal-bg {
+	background-color: hsl(var(--bg-hue) 5% 25%);
+}
+
 /* <<< Settings Headings */
 .setting-item.setting-item-heading .setting-item-name {
 	font-family: var(--font-heading-theme);
 	font-size: 1.3em;
 	font-weight: 600;
 	letter-spacing: var(--heading-letter-spacing);
-
 	padding-bottom: 0;
-	margin-top: 20px;
+}
+
+.setting-item.setting-item-heading:not(:first-child) .setting-item-name {
+	margin-top: var(--size-4-3);
 }
 
 .setting-item.setting-item-heading {
@@ -1867,17 +1896,33 @@ kbd.suggestion-hotkey,
 ──────────────────────────────────────────────────── */
 
 input[type]:focus,
-select:focus,
-.dropdown:focus {
+select:focus {
 	box-shadow: none;
 	border-color: var(--color-accent);
 }
 
 input[type]:hover,
-select:hover,
+select:hover {
+	box-shadow: none;
+	border-color: var(--hover-accent);
+}
+
+.dropdown {
+	border: 1px solid transparent;
+}
+
+.dropdown:focus {
+	box-shadow: none;
+	border-color: var(--color-accent);
+}
+
 .dropdown:hover {
 	box-shadow: none;
 	border-color: var(--hover-accent);
+}
+
+input {
+	background-color: var(--bg1);
 }
 
 /* ───────────────────────────────────────────────── */
