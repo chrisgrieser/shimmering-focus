@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 3.48
+Version 3.49
 Source CSS: https://github.com/chrisgrieser/shimmering-focus/blob/main/source.css
 MIT License
 ──────────────────────────────────────────────────── */
@@ -1690,7 +1690,7 @@ body:not(.normal-header-bar, .is-mobile) .view-header:not(:focus-within) .view-a
 
 .mac-os-native .workspace-tabs.mod-top:not(.mod-stacked) {
 	--tab-font-size: var(--font-small);
-	--tab-height: 24px;
+	--tab-height: 26px;
 	--tab-max-width-active: calc(var(--tab-width) * 1.5);
 }
 
@@ -1824,8 +1824,8 @@ body .workspace-tab-header-container {
 	margin-bottom: -1px;
 }
 
-.mod-root .workspace-tabs:not(.mod-stacked) .workspace-tab-header-container-inner,
-.mod-root .workspace-tab-header-container {
+body:not(.mac-os-native) .mod-root .workspace-tabs:not(.mod-stacked) .workspace-tab-header-container-inner,
+body:not(.mac-os-native) .mod-root .workspace-tab-header-container {
 	border-bottom: var(--thin-muted-border);
 }
 
@@ -2268,7 +2268,6 @@ pre.language-yaml.frontmatter::after {
 - dataview-related css classes are int he dataview section
 */
 
-/* 2 column cards */
 .list-2-col-cards {
 	--card-spacing: 4px;
 }
@@ -2293,11 +2292,6 @@ pre.language-yaml.frontmatter::after {
 
 .list-2-col-cards.list-2-col-cards.list-2-col-cards ul:not(.contains-task-list) li a {
 	text-decoration: none;
-}
-
-/* no inline backlinks */
-.no-inline-backlinks .embedded-backlinks {
-	display: none;
 }
 
 /* full-width */
@@ -2854,7 +2848,7 @@ body .style-settings-heading[data-level="0"] .setting-item-name.setting-item-nam
 /* <<< Style Settings: Conditional Settings Display
 ──────────────────────────────────────────────────── */
 /* 🏴‍☠️ Melvin for the idea */
-.mac-os-native .setting-item:is([data-id="bg-hue"], [data-id="longform-bg-hue"]) {
+.mac-os-native .setting-item:is([data-id="bg-hue"], [data-id="longform-bg-hue"], [data-id="no-tabbar-header-hybrid"]) {
 	display: none;
 }
 
