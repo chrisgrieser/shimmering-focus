@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 3.53
+Version 3.54
 Source CSS: https://github.com/chrisgrieser/shimmering-focus/blob/main/source.css
 MIT License
 ──────────────────────────────────────────────────── */
@@ -2440,6 +2440,10 @@ kbd.suggestion-hotkey {
 /* << Sidebar
 ──────────────────────────────────────────────────── */
 
+body:not(.trim-long-filenames) {
+	--nav-item-white-space: wrap;
+}
+
 /* ───────────────────────────────────────────────── */
 /* << Overlaying Sidebar
 ──────────────────────────────────────────────────── */
@@ -2784,6 +2788,23 @@ body:not(.show-starred-nav-buttons) .workspace-leaf-content[data-type="starred"]
 /* hide vault title */
 body:not(.show-vault-in-file-explorer) .nav-folder.mod-root > .nav-folder-title {
 	display: none;
+}
+
+.mod-root > .nav-folder-title {
+	display: flex;
+	background-color: var(--bg2);
+	border-bottom: var(--basic-border);
+}
+
+.mod-root > .nav-folder-title > .nav-folder-title-content {
+	font-size: var(--nav-item-size);
+	font-weight: 600;
+}
+
+/* alternating row colors */
+body:not(.no-alternating-rows) .nav-folder:nth-child(odd) > .nav-folder-title,
+body:not(.no-alternating-rows) .nav-file:nth-child(odd) {
+	background-color: var(--a-row);
 }
 
 /* hide navigation buttons */
@@ -3822,10 +3843,16 @@ settings:
 # << Workspace (+)
    id: user-interface
    title: 🔲 Workspace
-   description: Sidebar, Tab Width, Safari-Style Tab Bar
+   description: Sidebar, Tab Bar
    type: heading
    level: 1
    collapsed: true
+  -
+   id: trim-long-filenames
+   title: 'Sidebar: Trim File Names'
+   description: When enabled, long file and folder names will be trimmed. When disabled, long names will be wrapped to the next line.
+   type: class-toggle
+   default: false
   -
    id: overlaying-right-sidebar
    title: Overlaying Right Sidebar
@@ -3852,7 +3879,7 @@ settings:
 # << Colors (+)
    id: aesthetics
    title: 🎨 Colors
-   description: Native macOS Look, Background Color Tones, Longform Background, Bold Text
+   description: Native macOS Look, Background Color, Bold Text
    type: heading
    level: 1
    collapsed: true
