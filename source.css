@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 3.54
+Version 3.55
 Source CSS: https://github.com/chrisgrieser/shimmering-focus/blob/main/source.css
 MIT License
 ──────────────────────────────────────────────────── */
@@ -49,6 +49,7 @@ MIT License
 	- Toggles
 	- Toggles
 - UI Elements
+	- Input & Dropdowns
 	- Progress Bar
 		- Vault Launch
 		- Updating Plugins
@@ -1838,6 +1839,14 @@ body:not(.show-close-buttons) .modal-close-button {
 ──────────────────────────────────────────────────── */
 
 /* ───────────────────────────────────────────────── */
+/* << Input & Dropdowns
+──────────────────────────────────────────────────── */
+select:focus,
+.dropdown:focus {
+	box-shadow: 0 0 0 2px var(--background-modifier-border-focus)
+}
+
+/* ───────────────────────────────────────────────── */
 /* << Progress Bar
 ──────────────────────────────────────────────────── */
 
@@ -2082,6 +2091,7 @@ body:not(.show-ribbon):not(.is-mobile) .side-dock-settings .side-dock-ribbon-act
 .hide-longform-status-bar .status-bar-item.plugin-longform,
 .hide-languagetool-status-bar .status-bar-item.plugin-obsidian-languagetool-plugin,
 .hide-pane-relief-focus-lock-status-bar .status-bar-item.plugin-pane-relief,
+.hide-electron-window-tweaker-status-bar .status-bar-item.plugin-obsidian-electron-window-tweaker,
 .hide-backlinks-status-bar .status-bar-item.plugin-backlink {
 	display: none;
 }
@@ -3836,6 +3846,11 @@ settings:
    default: false
   -
    id: hide-longform-status-bar
+   title: Hide Longform Plugin Word Count
+   type: class-toggle
+   default: false
+  -
+   id: hide-electron-window-tweaker-status-bar
    title: Hide Longform Plugin Word Count
    type: class-toggle
    default: false
