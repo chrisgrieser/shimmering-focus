@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 3.58
+Version 3.59
 Source CSS: https://github.com/chrisgrieser/shimmering-focus/blob/main/source.css
 MIT License
 ──────────────────────────────────────────────────── */
@@ -1784,7 +1784,7 @@ body:not(.show-close-buttons) .modal-close-button {
 
 .vertical-tab-nav-item {
 	font-size: 1em;
-	margin-bottom: 0;
+	margin-bottom: 1px; /* distance between items */
 	border-radius: 0;
 }
 
@@ -1793,6 +1793,7 @@ body:not(.show-close-buttons) .modal-close-button {
 	background-color: var(--nav-item-background-active);
 }
 
+.vertical-tab-nav-item.is-active:hover,
 .vertical-tab-nav-item:hover {
 	color: var(--text-accent-hover);
 	background-color: var(--nav-item-background-hover);
