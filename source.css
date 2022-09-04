@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 3.51
+Version 3.52
 Source CSS: https://github.com/chrisgrieser/shimmering-focus/blob/main/source.css
 MIT License
 ──────────────────────────────────────────────────── */
@@ -20,6 +20,7 @@ MIT License
 	- Changed Obsidian Variables
 	- Theme Variables
 - Markup
+	- Tables
 		- Annotation Tags
 	- Bold
 	- Tasks
@@ -34,6 +35,8 @@ MIT License
 	- Headings
 	- Blockquotes
 	- Callouts
+		- Sidenote Callouts
+		- Config Callout
 	- Trailing Whitespace (Two Space Rule)
 	- Strikethroughs
 	- Highlights
@@ -69,6 +72,7 @@ MIT License
 	- Hidden Sidebar Headers
 	- Sidebar Styling
 	- Editor
+	- Collaps Indicators
 	- Clean Embeds
 	- Active / Inactive Note
 	- Empty Note / New Tab Page
@@ -589,10 +593,11 @@ body {
 	--checkbox-border-color: var(--text-gray);
 	--checkbox-border-color-hover: var(--hover-accent);
 
-	--icon-color-hover: var(--hover-accent);
-
 	--callout-title-size: 110%;
 	--callout-padding: var(--size-4-2);
+
+	--icon-color-hover: var(--hover-accent);
+	--icon-stroke: 2px;
 }
 
 /* ───────────────────────────────────────────────── */
@@ -656,6 +661,105 @@ body {
 /* ───────────────────────────────────────────────── */
 /* < Markup
 ──────────────────────────────────────────────────── */
+
+/* ───────────────────────────────────────────────── */
+/* << Tables
+──────────────────────────────────────────────────── */
+
+.dummy-tables {
+	/* Tables */
+	--table-background: transparent;
+	--table-border-width: 1px;
+	--table-border-color: var(--background-modifier-border);
+	--table-white-space: normal;
+	--table-header-background: var(--table-background);
+	--table-header-background-hover: inherit;
+	--table-header-border-width: var(--table-border-width);
+	--table-header-border-color: var(--table-border-color);
+	--table-header-font: inherit;
+	--table-header-size: var(--font-smaller);
+	--table-header-weight: var(--font-normal);
+	--table-header-color: var(--text-muted);
+	--table-text-size: inherit;
+	--table-text-color: inherit;
+	--table-column-max-width: none;
+	--table-column-alt-background: var(--table-background);
+	--table-column-first-border-width: var(--table-border-width);
+	--table-column-last-border-width: var(--table-border-width);
+	--table-row-background-hover: var(--table-background);
+	--table-row-alt-background: var(--table-background);
+	--table-row-last-border-width: var(--table-border-width);
+}
+
+.markdown-preview-view table {
+	margin: 0.5em 0 1.5em;
+	--table-border: var(--basic-border);
+	border: var(--thin-border); /* outer border */
+}
+
+.theme-dark table {
+	--table-a-row: hsla(var(--bg-dark-hue) 70% 10% / 15%);
+	--table-b-row: hsla(var(--bg-dark-hue) 70% 10% / 35%);
+}
+
+.theme-light table {
+	--table-a-row: hsla(var(--bg-light-hue) 50% 50% / 2.5%);
+	--table-b-row: hsla(var(--bg-light-hue) 50% 50% / 7.5%);
+}
+
+table {
+
+}
+
+/* draw only inner borders */
+body > .app-container table > thead > tr > th {
+	font-size: 1em;
+	font-weight: 600;
+	border: none;
+	border-bottom: var(--table-border);
+}
+
+body > .app-container table > tbody > tr > td {
+	border: none;
+}
+
+.markdown-preview-view.markdown-preview-view.markdown-preview-view table > :is(thead, tbody) > tr > :is(th, td):not(:first-child) {
+	border-left: var(--table-border);
+}
+
+/* backgrounds */
+thead {
+	font-weight: 900;
+	background-color: var(--bg3);
+}
+
+/* needs higher specificity to override annoying dataview hover effects */
+.app-container.app-container.app-container tr {
+	background-color: var(--table-a-row);
+}
+
+/* alternating rows */
+body:not(.no-alternating-rows) .app-container.app-container tr:nth-child(even) {
+	background-color: var(--table-b-row);
+}
+
+.no-alternating-rows > .app-container table > tbody > tr > td {
+	border-top: var(--table-border);
+}
+
+/* CM6: Live Preview */
+.mod-cm6 table :is(th, td) {
+	padding: 4px 10px;
+}
+
+.cm-s-obsidian.mod-cm6 table th {
+	font-size: 1.05em;
+}
+
+.cm-hmd-table-sep,
+.HyperMD-table-row-1 {
+	color: var(--text-faint);
+}
 
 /* ───────────────────────────────────────────────── */
 /* <<< Annotation Tags
@@ -1379,6 +1483,12 @@ blockquote code {
 /* ───────────────────────────────────────────────── */
 /* << Callouts
 ──────────────────────────────────────────────────── */
+.callout {
+	--callout-icon: triangle; /* default callout icon */
+	--icon-stroke: 2px;
+	--sidenote-callout-width: 35%;
+}
+
 .HyperMD-callout.HyperMD-callout.HyperMD-callout.HyperMD-callout {
 	font-weight: 700;
 
@@ -1389,7 +1499,7 @@ blockquote code {
 	padding-top: var(--size-2-1);
 	padding-bottom: var(--size-2-1);
 
-	border-bottom: var(--thin-muted-border);
+	border-bottom: var(--muted-border);
 }
 
 .cm-hmd-callout.cm-hmd-callout.cm-hmd-callout {
@@ -1397,19 +1507,35 @@ blockquote code {
 	opacity: 0.8;
 }
 
-.callout {
-	--callout-icon: triangle; /* default callout icon */
-}
-
 .callout-title {
 	letter-spacing: 0.8px;
 	padding-bottom: var(--size-4-1);
-	border-bottom: 3px solid rgb(var(--callout-color) 30%);
+	border-bottom: 3px solid var(--b-row);
 }
 
 .callout-icon {
 	filter: brightness(0.9);
 	margin-right: var(--size-4-2);
+}
+
+/* interaction of callouts with other markdown syntax */
+.callout-content :is(ul, p, ol) {
+	line-height: 1.4em;
+	margin: 6px 0;
+}
+
+.callout-content li {
+	line-height: 1.1em;
+	margin: 5px 0;
+}
+
+.callout-content.callout-content ul {
+	padding-left: 20px;
+	margin-top: 5px;
+}
+
+.callout-content p + p {
+	margin-top: 12px;
 }
 
 .callout ol {
@@ -1420,6 +1546,68 @@ blockquote code {
 
 .callout ol li::marker {
 	color: var(--text-gray);
+}
+
+.callout.callout.callout :is(code, pre) {
+	background-color: var(--bg1);
+}
+
+.callout .task-list-item-checkbox {
+	height: 1em;
+	width: 1em;
+	top: -2px;
+	margin-bottom: 0;
+}
+
+/* <<< Sidenote Callouts */
+.callout[data-callout*="sidenote"] {
+	--callout-icon: lightbulb;
+	--callout-color: 255, 210, 107;
+	font-size: 90%;
+	line-height: 1.3em;
+	max-width: calc(var(--file-line-width) * var(--sidenote-callout-width) * 0.01);
+	margin: 3px 0 3px 7px;
+	float: right;
+}
+
+.sidenote-callout-outdent .callout[data-callout$="sidenote"] {
+	margin-right: -30px; /* more makes it cut off with a narrow window size */
+}
+
+.callout[data-callout*="sidenote"] .callout-title {
+	padding-top: 1px;
+	padding-bottom: 1px;
+}
+
+body .callout {
+	clear: right;
+}
+
+/* <<< Config Callout */
+.callout.callout.callout[data-callout*="config"] {
+	--callout-icon: settings;
+	--callout-color: 202, 164, 255;
+}
+
+.callout[data-callout*="config"] .task-list-item {
+	text-decoration: none;
+	color: var(--text-normal);
+	margin-inline-start: 3px;
+}
+
+.callout[data-callout*="config"] .task-list-item .task-list-item-checkbox {
+	margin-bottom: -3px;
+}
+
+.callout[data-callout*="config"] .task-list-item .task-list-item-checkbox::after {
+	display: none;
+}
+
+/* attachments */
+.callout[data-callout^="attachment"],
+.callout[data-callout^="file"] {
+	--callout-icon: paperclip;
+	--callout-color: 255, 90, 143;
 }
 
 /* ───────────────────────────────────────────────── */
@@ -2312,6 +2500,19 @@ body.mod-macos.is-hidden-frameless:not(.is-popout-window) .workspace .workspace-
 .markdown-preview-view,
 .markdown-source-view.mod-cm6 .cm-scroller {
 	padding-top: var(--size-4-6);
+}
+
+/* ───────────────────────────────────────────────── */
+/* << Collaps Indicators
+──────────────────────────────────────────────────── */
+:is(.style-settings-collapse-indicator, .collapse-icon) > .svg-icon.svg-icon.svg-icon {
+	height: 12px;
+	width: 12px;
+	stroke-width: 5px;
+}
+
+:is(.style-settings-collapse-indicator, .collapse-icon) > .svg-icon:hover {
+	stroke: var(--icon-color-hover);
 }
 
 /* ───────────────────────────────────────────────── */
@@ -3757,6 +3958,15 @@ settings:
    description: '"Annotation Tags" are tags that are visually emphasized when used inline (i.e., not the YAML frontmatter). They include: #definition, #question, #goal, #todo, #summary, #important, #main, #critique, #gap, #litreview, #quote, #agree, #disagree, #example, #data, #method, #idea, #epistemic-break, and #sidenote.'
    type: class-toggle
    default: false
+  -
+   id: sidenote-callout-width
+   title: Width of Sidenote Callouts
+   description: 'Percentage of the readable line length. Affects callouts with "> [!sidenote]". '
+   type: variable-number-slider
+   default: 34
+   min: 10
+   max: 60
+   step: 2
   -
 # << Donation Info (+)
    id: info-donation

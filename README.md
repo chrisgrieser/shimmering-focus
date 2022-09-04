@@ -1,5 +1,5 @@
 # Shimmering Focus ⟡
-![](https://img.shields.io/badge/downloads-36281-6E4E9B?style=plastic) ![](https://img.shields.io/github/last-commit/chrisgrieser/shimmering-focus?style=plastic) [![](https://img.shields.io/badge/changelog-click%20here-FFE800?style=plastic)](https://chrisgrieser.github.io/shimmering-focus/changelog/)
+![](https://img.shields.io/badge/downloads-36290-6E4E9B?style=plastic) ![](https://img.shields.io/github/last-commit/chrisgrieser/shimmering-focus?style=plastic) [![](https://img.shields.io/badge/changelog-click%20here-FFE800?style=plastic)](https://chrisgrieser.github.io/shimmering-focus/changelog/)
 
 A minimalistic Obsidian theme for keyboard-centric users.
 
@@ -29,6 +29,7 @@ A minimalistic Obsidian theme for keyboard-centric users.
 
 ## More Features
 - Options for __native macOS look__ using the [Style Settings Plugin](https://obsidian.md/plugins?id=obsidian-style-settings).
+- Emphasis of __Pandoc Citations__ and __Footnotes__. (Install the [Pandoc Reference List](https://obsidian.md/plugins?id=obsidian-pandoc-reference-list) Plugin for improved styling.)
 - Alt-text of __images__ is used as caption, images can be zoomed in by clicking and holding.
 - Language Display, Disabled Wrapping, and Line Numbers in __Code Blocks__.
 - Extensive Styling for the [Longform Plugin](https://obsidian.md/plugins?id=longform), including alternative background color and serif-fonts for notes in longform projects.
