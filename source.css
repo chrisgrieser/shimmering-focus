@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 3.49
+Version 3.50
 Source CSS: https://github.com/chrisgrieser/shimmering-focus/blob/main/source.css
 MIT License
 ──────────────────────────────────────────────────── */
@@ -77,6 +77,9 @@ MIT License
 	- Vim Panel
 - CSS Classes
 - Core Plugins
+	- Search
+	- Starred
+	- File Explorer
 		- Inline Backlink Pane
 	- Outline
 - Community Plugins
@@ -96,9 +99,10 @@ MIT License
 - Compatibility Info for the Obsidian Hub
 - Style Setting (YAML)
  	- Show / Hide UI Elements (+)
+ 		- File Explorer (+)
  		- Status Bar (+)
  	- Workspace (+)
- 	- Colors & Look (+)
+ 	- Colors (+)
  	- Editor & Media (+)
  	- Markup & Special Syntax (+)
  	- Donation Info (+)
@@ -415,6 +419,9 @@ body {
 	--color-accent: hsl(184 79% 35%); /* hard-coded, so user does not mess up color scheme */
 	--interactive-accent: hsl(184 79% 30%);
 	--color-accent-hsl: 184 79% 35%;
+
+	--titlebar-background: var(--bg5);
+	--titlebar-background-focused: var(--bg4);
 }
 
 .theme-dark {
@@ -426,6 +433,9 @@ body {
 	--color-accent: hsl(184 79% 45%);
 	--color-accent-hsl: 184 79% 35%;
 	--interactive-accent: hsl(184 79% 30%);
+
+	--titlebar-background: var(--bg6);
+	--titlebar-background-focused: var(--bg5);
 }
 
 .theme-light {
@@ -598,7 +608,7 @@ body {
 	--bg3: var(--color-base-20);
 	--bg4: var(--color-base-25);
 	--bg5: var(--color-base-30);
-	--bg6: var(--color-base-40);
+	--bg6: var(--color-base-35);
 	--background-primary: var(--bg1); /* overwrite Obsidian variables w/ --bg colors for consistency with plugins */
 	--background-primary-alt: var(--bg2);
 	--background-secondary: var(--bg3);
@@ -1688,36 +1698,36 @@ body:not(.normal-header-bar, .is-mobile) .view-header:not(:focus-within) .view-a
 /* https://discord.com/channels/686053708261228577/716028884885307432/1014012840883015720 */
 /* https://gist.github.com/chuckharmston/b0206887cf81a8ae090376e6110d8ebe */
 
-.mac-os-native .workspace-tabs.mod-top:not(.mod-stacked) {
+.safari-tab-bar .workspace-tabs.mod-top:not(.mod-stacked) {
 	--tab-font-size: var(--font-small);
 	--tab-height: 26px;
 	--tab-max-width-active: calc(var(--tab-width) * 1.5);
 }
 
-.mac-os-native.theme-light .workspace-tabs.mod-top:not(.mod-stacked) {
+.safari-tab-bar.theme-light .workspace-tabs.mod-top:not(.mod-stacked) {
 	--tab-background: rgb(0 0 0 / 5%);
 	--tab-background-active: rgb(0 0 0 / 10%);
 }
 
-.mac-os-native.theme-dark .workspace-tabs.mod-top:not(.mod-stacked) {
+.safari-tab-bar.theme-dark .workspace-tabs.mod-top:not(.mod-stacked) {
 	--tab-background: rgb(255 255 255 / 7.5%);
 	--tab-background-active: rgb(255 255 255 / 15%);
 }
 
-.mac-os-native .workspace-tab-header::before,
-.mac-os-native .workspace-tab-header::after,
-.mac-os-native .workspace .mod-root .workspace-tab-header-inner::after {
+.safari-tab-bar .workspace-tab-header::before,
+.safari-tab-bar .workspace-tab-header::after,
+.safari-tab-bar .workspace .mod-root .workspace-tab-header-inner::after {
 	display: none;
 }
 
-body.mac-os-native .workspace-tab-header-container-inner {
+body.safari-tab-bar .workspace-tab-header-container-inner {
 	width: 100%;
 	margin: 0;
 	align-items: center;
 	justify-content: center;
 }
 
-.mac-os-native .workspace-tab-header {
+.safari-tab-bar .workspace-tab-header {
 	height: var(--tab-height);
 
 	background: var(--tab-background);
@@ -1730,24 +1740,24 @@ body.mac-os-native .workspace-tab-header-container-inner {
 	transition: background-color 150ms ease-in-out;
 }
 
-.mac-os-native .mod-root .workspace-tab-header {
+.safari-tab-bar .mod-root .workspace-tab-header {
 	max-width: var(--tab-width);
 }
 
-.mac-os-native .workspace-tab-header:first-child {
+.safari-tab-bar .workspace-tab-header:first-child {
 	margin-left: 0;
 }
 
-.mac-os-native .mod-root .workspace-tab-header.is-active {
+.safari-tab-bar .mod-root .workspace-tab-header.is-active {
 	flex-grow: 1.67;
 	max-width: var(--tab-max-width-active);
 }
 
-.mac-os-native .sidebar-toggle-button:is(.mod-left, .mod-right) {
+.safari-tab-bar .sidebar-toggle-button:is(.mod-left, .mod-right) {
 	align-items: center;
 }
 
-.mac-os-native .sidebar-toggle-button:is(.mod-left, .mod-right) .clickable-icon {
+.safari-tab-bar .sidebar-toggle-button:is(.mod-left, .mod-right) .clickable-icon {
 	height: var(--tab-height);
 }
 
@@ -1767,23 +1777,23 @@ body:not(.show-tab-list-button) .workspace-tab-header-tab-list {
 /* <<< different look when only tab
 ──────────────────────────────────────────────────── */
 
-body:not(.no-tabbar-header-hybrid, .mac-os-native) .mod-root .workspace-tab-header-container:not(:hover) .workspace-tab-header:only-child {
+body:not(.no-tabbar-header-hybrid, .safari-tab-bar) .mod-root .workspace-tab-header-container:not(:hover) .workspace-tab-header:only-child {
 	width: 700px;
 	background-color: transparent;
 	box-shadow: none;
 	margin-left: -12px;
 }
 
-body:not(.no-tabbar-header-hybrid, .mac-os-native) .mod-root .workspace-tab-header-container:not(:hover) .workspace-tab-header:only-child .workspace-tab-header-inner-title {
+body:not(.no-tabbar-header-hybrid, .safari-tab-bar) .mod-root .workspace-tab-header-container:not(:hover) .workspace-tab-header:only-child .workspace-tab-header-inner-title {
 	font-size: 1.5em;
 	margin-bottom: 1px;
 	margin-left: -8px;
 }
 
-body:not(.no-tabbar-header-hybrid, .mac-os-native) .mod-root .workspace-tab-header:only-child .workspace-tab-header-inner-title,
-body:not(.no-tabbar-header-hybrid, .mac-os-native) .mod-root .workspace-tab-header:only-child::before,
-body:not(.no-tabbar-header-hybrid, .mac-os-native) .mod-root .workspace-tab-header:only-child::after,
-body:not(.no-tabbar-header-hybrid, .mac-os-native) .mod-root .workspace-tab-header:only-child {
+body:not(.no-tabbar-header-hybrid, .safari-tab-bar) .mod-root .workspace-tab-header:only-child .workspace-tab-header-inner-title,
+body:not(.no-tabbar-header-hybrid, .safari-tab-bar) .mod-root .workspace-tab-header:only-child::before,
+body:not(.no-tabbar-header-hybrid, .safari-tab-bar) .mod-root .workspace-tab-header:only-child::after,
+body:not(.no-tabbar-header-hybrid, .safari-tab-bar) .mod-root .workspace-tab-header:only-child {
 	transition-duration: var(--anim-duration-moderate);
 	transition-delay: var(--transition-delay-passing-over-protection);
 }
@@ -1827,11 +1837,6 @@ body .workspace-tab-header-container {
 body:not(.mac-os-native) .mod-root .workspace-tabs:not(.mod-stacked) .workspace-tab-header-container-inner,
 body:not(.mac-os-native) .mod-root .workspace-tab-header-container {
 	border-bottom: var(--thin-muted-border);
-}
-
-.mod-root .workspace-tab-header-container,
-:is(.mod-left-split, .mod-right-split) .mod-top .workspace-tab-header-container {
-	background-color: var(--bg4);
 }
 
 .mod-root .workspace-tab-header-container-inner {
@@ -2294,7 +2299,15 @@ pre.language-yaml.frontmatter::after {
 	text-decoration: none;
 }
 
-/* full-width */
+.bibliography-list li {
+	text-indent: -2.2em;
+	margin-left: 1.5em;
+}
+
+.bibliography-list li::marker {
+	content: "";
+}
+
 .full-width {
 	--file-line-width: unset;
 }
@@ -2302,6 +2315,45 @@ pre.language-yaml.frontmatter::after {
 /* ───────────────────────────────────────────────── */
 /* < Core Plugins
 ──────────────────────────────────────────────────── */
+
+/* ───────────────────────────────────────────────── */
+/* << Search
+──────────────────────────────────────────────────── */
+body:not(.show-search-pane-suggestions) .mod-search-suggestion {
+	display: none;
+}
+
+/* ───────────────────────────────────────────────── */
+/* << Starred
+──────────────────────────────────────────────────── */
+
+body:not(.show-starred-nav-buttons) .workspace-leaf-content[data-type="starred"] .nav-buttons-container {
+	display: none;
+}
+
+/* ───────────────────────────────────────────────── */
+/* << File Explorer
+──────────────────────────────────────────────────── */
+
+.nav-files-container {
+	padding: 0 0 var(--size-4-6) 0;
+}
+
+/* hide vault title */
+body:not(.show-vault-in-file-explorer) .nav-folder.mod-root > .nav-folder-title {
+	display: none;
+}
+
+/* hide navigation buttons */
+body:not(.show-file-explorer-navigation) .workspace-leaf-content[data-type="file-explorer"] :is(.nav-buttons-container, .nav-header) {
+	display: none;
+}
+
+/* optionally hide attachment folders */
+.hide-attachment-folders .nav-folder-title:is([data-path$="/attachments" i], [data-path="attachments" i]) {
+	display: none;
+}
+
 /* ───────────────────────────────────────────────── */
 /* <<< Inline Backlink Pane
 ──────────────────────────────────────────────────── */
@@ -2848,7 +2900,9 @@ body .style-settings-heading[data-level="0"] .setting-item-name.setting-item-nam
 /* <<< Style Settings: Conditional Settings Display
 ──────────────────────────────────────────────────── */
 /* 🏴‍☠️ Melvin for the idea */
-.mac-os-native .setting-item:is([data-id="bg-hue"], [data-id="longform-bg-hue"], [data-id="no-tabbar-header-hybrid"]) {
+
+.safari-tab-bar .setting-item:is([data-id="no-tabbar-header-hybrid"]),
+.mac-os-native .setting-item:is([data-id="bg-hue"], [data-id="longform-bg-hue"]) {
 	display: none;
 }
 
@@ -3054,9 +3108,9 @@ body .dataview:not(.task-list-item-checkbox):hover {
 
 /* <<< dataview cssclasses */
 /* dataview tables without lines */
-.markdown-preview-view.dataview-list-in-table table.dataview > :is(thead, tbody) > tr > :is(th, td) {
+/* .dataview-list-in-table.markdown-preview-view table.dataview > :is(thead, tbody) > tr > :is(th, td) {
 	border-left: none;
-}
+} */
 
 .remove-dataview-title :is(.block-language-dataview, .block-language-dataviewjs) h4 {
 	display: none;
@@ -3258,6 +3312,43 @@ settings:
    description: "You can still close modals with 'esc', and tabs/panes by with 'ctrl/cmd+W'."
    default: false
   -
+   id: show-search-pane-suggestions
+   title: 'Search Pane: Re-enable Suggestions'
+   description: By default, this theme hides the Suggestions in Search Core Plugin Pane.
+   type: class-toggle
+   default: false
+  -
+   id: show-starred-nav-buttons
+   title: 'Starred Pane: Re-enable Buttons'
+   description: 'The two buttons to star the current file and the current search. You can still star/unstar a note via the Command Palette.'
+   type: class-toggle
+   default: false
+  -
+# <<< File Explorer (+)
+   id: show-hide-file-explorer-elements
+   title: File Explorer
+   type: heading
+   level: 2
+   collapsed: true
+  -
+   id: hide-attachment-folders
+   title: Hide attachments folders
+   description: 'Affects folders exactly named "attachments" (case-insensitive).'
+   type: class-toggle
+   default: false
+  -
+   id: show-vault-in-file-explorer
+   title: Show Vault Name
+   type: class-toggle
+   description: Enable this, if you want to drag and drop items to your vault root.
+   default: false
+  -
+   id: show-file-explorer-navigation
+   title: Re-enable Navigation Buttons
+   type: class-toggle
+   description: 'The navigation buttons are the buttons for new file, new folder, and sorting. You can do the former two without the buttons via the context menu.'
+   default: false
+  -
 # <<< Status Bar (+)
    id: show-hide-elements
    title: Status Bar Items
@@ -3288,7 +3379,7 @@ settings:
 # << Workspace (+)
    id: user-interface
    title: 🔲 Workspace
-   description: Overlaying Sidebar, Tab Width
+   description: Sidebar, Tab Width, Safari-Style Tab Bar
    type: heading
    level: 1
    collapsed: true
@@ -3309,9 +3400,15 @@ settings:
    step: 25
    format: px
   -
-# << Colors & Look (+)
+   id: safari-tab-bar
+   title: Safari-Style Tab Bar
+   description: Style the tab bar like in the Safari Browser. (Note that this disables the "Tab-Bar-Header-Hybrid" as well.)
+   type: class-toggle
+   default: false
+  -
+# << Colors (+)
    id: aesthetics
-   title: 🎨 Colors & Look
+   title: 🎨 Colors
    description: Native macOS Look, Background Color Tones, Longform Background, Bold Text
    type: heading
    level: 1
@@ -3319,7 +3416,7 @@ settings:
   -
    id: mac-os-native
    title: Native macOS Look
-   description: 'More native background and tab bar like in Safari. (You can also use the Electron Window Tweaker Plugin to move the traffic lights to the same position as in Safari: X = 20, Y = 18.)'
+   description: Background colors like in a native macOS app.
    type: class-toggle
    default: false
   -
