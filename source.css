@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 3.60
+Version 3.61
 Source CSS: https://github.com/chrisgrieser/shimmering-focus/blob/main/source.css
 MIT License
 ──────────────────────────────────────────────────── */
@@ -49,7 +49,8 @@ MIT License
 		- Settings Menu Colors
 		- Settings Headings
 		- removed accent color icon since unused
-	- Community Plugins
+	- Theme Browser
+	- Plugin Browser
 	- Toggles
 	- Hotkeys
 - UI Elements
@@ -571,6 +572,7 @@ body {
 
 	/* Table */
 	--table-header-size: 1em;
+	--table-header-weight: 600;
 	--table-text-size: var(--font-small);
 	--table-white-space: normal;
 	--table-border-width: 1px;
@@ -578,6 +580,8 @@ body {
 	--table-header-border-color: var(--basic-border-color);
 	--table-header-border-width: 1px;
 	--table-header-background: var(--bg5);
+	--table-row-background-hover: var(--bg3);
+	--table-header-background-hover: var(--bg5);
 	--table-row-alt-background: var(--b-row);
 
 	/* Blockquote */
@@ -683,10 +687,6 @@ body {
 /* << Tables
 ──────────────────────────────────────────────────── */
 /* most table styling via Obsidian Variables */
-
-.markdown-preview-view th {
-	font-weight: 600;
-}
 
 .markdown-preview-view table {
 	margin-top: 0.5em;
@@ -964,6 +964,7 @@ body .HyperMD-footnote,
 and changed Obsidian variables */
 
 /* dotted underline links to headings */
+.community-modal-info a,
 .markdown-preview-view .internal-link[href*="#"] {
 	text-decoration: underline dotted;
 }
@@ -1703,7 +1704,6 @@ body:not(.show-close-buttons) .modal-close-button {
 }
 
 /* <<< Settings Menu Colors */
-
 .theme-light .vertical-tab-content {
 	background-color: var(--bg3);
 }
@@ -1829,7 +1829,38 @@ body:not(.show-close-buttons) .modal-close-button {
 }
 
 /* ───────────────────────────────────────────────── */
-/* << Community Plugins
+/* << Theme Browser
+──────────────────────────────────────────────────── */
+/* is this typo still not fixed? */
+.community-item-author::first-letter {
+	text-transform: lowercase;
+}
+
+.community-item-author {
+	font-style: italic;
+}
+
+.community-item-name .flair {
+	background-color: var(--bg3);
+	margin-left: var(--size-4-3);
+	border: var(--thin-border);
+}
+
+.community-item-name .flair.mod-pop {
+	color: var(--text-accent);
+}
+
+.community-item.mod-active {
+	border-color: var(--color-accent);
+}
+
+.community-item:hover,
+.community-item.mod-active:hover {
+	border-color: var(--hover-accent);
+}
+
+/* ───────────────────────────────────────────────── */
+/* << Plugin Browser
 ──────────────────────────────────────────────────── */
 
 /* redundant, since plugin name is already displayed above */
@@ -1846,7 +1877,7 @@ body:not(.show-close-buttons) .modal-close-button {
 	display: none;
 }
 
-.checkbox-container {
+.checkbox-container.checkbox-container {
 	height: 22px;
 	width: 22px;
 
@@ -1921,7 +1952,7 @@ select:hover {
 	border-color: var(--hover-accent);
 }
 
-input {
+input[type][type] {
 	background-color: var(--bg1);
 }
 
@@ -3232,10 +3263,7 @@ body .another-quick-switcher__item__description {
 /* ───────────────────────────────────────────────── */
 /* << Recent Files
 ──────────────────────────────────────────────────── */
-
-body:not(.no-alternating-rows) .workspace-leaf-content[data-type="recent-files"] .nav-file:nth-child(even) {
-	background-color: var(--a-row);
-}
+/* inherits alternate row colors from file explorer */
 
 .workspace-leaf-content[data-type="recent-files"] .nav-file-title.nav-file-title.nav-file-title {
 	padding-right: 0;
