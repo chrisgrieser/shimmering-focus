@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 3.45
+Version 3.46
 Source CSS: https://github.com/chrisgrieser/shimmering-focus/blob/main/source.css
 MIT License
 ──────────────────────────────────────────────────── */
@@ -79,6 +79,7 @@ MIT License
 		- Inline Backlink Pane
 	- Outline
 - Community Plugins
+	- Supercharged Links
 	- Another Quick Switcher (AQS)
 	- Recent Files
 	- Pandoc Reference List & Pandoc Citation Markup
@@ -90,6 +91,7 @@ MIT License
 	- Breadcrumbs
 	- Hider
 	- Longform
+- Compatibility Info for the Obsidian Hub
 - Style Setting (YAML)
  	- Show / Hide UI Elements (+)
  		- Status Bar (+)
@@ -2313,25 +2315,22 @@ body:not(.classic-inline-backlinks) :is(.writing, .longform-leaf) .embedded-back
 /* < Community Plugins
 ──────────────────────────────────────────────────── */
 
-/* tag-based */
-body:not(.no-built-in-supercharged-links) .data-link-icon[data-link-tags~="#autocompletion" i]::before { content: "🅰️ " }
-body:not(.no-built-in-supercharged-links) .data-link-icon[data-link-tags~="#mermaid" i]::before { content: "🧜‍♀️ " }
-body:not(.no-built-in-supercharged-links) .data-link-icon[data-link-tags~="#dataview" i]::before { content: "🔢 " }
-body:not(.no-built-in-supercharged-links) .data-link-icon[data-link-tags~="#templater" i]::before { content: "📄 " }
-body:not(.no-built-in-supercharged-links) .data-link-icon[data-link-tags~="#obsidian" i]::before { content: "🟪 " }
-body:not(.no-built-in-supercharged-links) .data-link-icon[data-link-tags~="#checklist" i]::before { content: "✅ " }
+/* ───────────────────────────────────────────────── */
+/* << Supercharged Links
+──────────────────────────────────────────────────── */
+/* built-in styling *for* the plugin, not styling *of* the plugin */
 
+/* tag-based */
+body:not(.no-built-in-supercharged-links) .data-link-icon[data-link-tags~="#obsidian" i]::before { content: "🟪 " }
 body:not(.no-built-in-supercharged-links) .data-link-icon[data-link-tags~="#person" i]::before { content: "👤 " }
 body:not(.no-built-in-supercharged-links) .data-link-icon[data-link-tags*="#bookmark" i]::before { content: "🔖 " }
-body:not(.no-built-in-supercharged-links) .data-link-icon[data-link-tags*="#finance" i]::before { content: "📈 " }
-body:not(.no-built-in-supercharged-links) .data-link-icon[data-link-tags*="#design" i]::before { content: "🎨 " }
 body:not(.no-built-in-supercharged-links) .data-link-icon[data-link-tags~="#moc" i]::before { content: "🗺 " }
 body:not(.no-built-in-supercharged-links) .data-link-icon[data-link-tags~="#pkm" i]::before { content: "🧠 " }
 body:not(.no-built-in-supercharged-links) .data-link-icon[data-link-tags~="#archive" i]::before { content: "🗄 " }
-
 body:not(.no-built-in-supercharged-links) .data-link-icon[data-link-tags~="#seedling" i]::after { content: " 🌱" }
 body:not(.no-built-in-supercharged-links) .data-link-icon[data-link-tags~="#fleeting" i]::after { content: " 💨" }
 body:not(.no-built-in-supercharged-links) .data-link-icon[data-link-tags~="#evergreen" i]::after { content: " 🌲" }
+body:not(.no-built-in-supercharged-links) .data-link-icon[data-link-tags~="#literature-note" i]::before { content: "📓 " }
 
 /* writing cssclass, needs *= to catch , after cssclass */
 body:not(.no-built-in-supercharged-links) .data-link-icon[data-link-cssclass*="writing"]::before { content: "✍️ " }
@@ -2342,11 +2341,8 @@ body:not(.no-built-in-supercharged-links) .data-link-icon[data-link-drafts][data
 /* kanban notes */
 body:not(.no-built-in-supercharged-links) .data-link-icon[data-link-kanban-plugin]::before { content: "🌠 " }
 
-/* literature notes */
-body:not(.no-built-in-supercharged-links) .data-link-icon[data-link-tags~="#pdf-annotations" i]::before { content: "📓 " }
-
 /* pseudo-tooltips for literature notes */
-body:not(.no-built-in-supercharged-links) .workspace-split.mod-root :not(.cm-link-alias) > :is([data-link-data-href], .data-link-icon)[data-link-tags~="#pdf-annotations" i]:not([aria-label]):hover::after {
+body:not(.no-built-in-supercharged-links) .workspace-split.mod-root :not(.cm-link-alias) > :is([data-link-data-href], .data-link-icon)[data-link-tags~="#literature-note" i]:not([aria-label]):hover::after {
 	content: "\""attr(data-link-aliases)"\""; /* stylelint-disable-line function-whitespace-after */
 
 	font-size: 0.9rem;
@@ -3067,11 +3063,38 @@ body.hider-ribbon .workspace-ribbon.mod-left {
 /* << Longform
 ──────────────────────────────────────────────────── */
 
+/* @MINIFY-SPLIT-MARKER */
+/* ───────────────────────────────────────────────── */
+/* < Compatibility Info for the Obsidian Hub
+──────────────────────────────────────────────────── */
+
+/* @plugins
+core:
+- backlink
+- command-palette
+- file-explorer
+- outline
+- starred
+- switcher
+
+community:
+- recent-files-obsidian
+- obsidian-another-quick-switcher
+- obsidian-kanban
+- oz-image-plugin
+- obsidian-style-settings
+- breadcrumbs
+- obsidian-languagetool-plugin
+- dataview
+- supercharged-links-obsidian
+- obsidian-pandoc-reference-list
+- obsidian-hider
+*/
+
 /* ───────────────────────────────────────────────── */
 /* < Style Setting (YAML)
 ──────────────────────────────────────────────────── */
 
-/* @MINIFY-SPLIT-MARKER */
 /* @settings
 name: Shimmering Focus
 id: shimmering-focus

@@ -1,4 +1,5 @@
 # Changelog
+- 2022-09-04	patch
 - 2022-09-04	built-in supercharged links icons
 - 2022-09-04	color settings
 - 2022-09-03	minimal checkboxes
