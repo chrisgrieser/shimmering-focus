@@ -6,26 +6,41 @@ A minimalistic Obsidian theme for keyboard-centric users.
 > "The most aggressively minimalistic theme I'm aware of."  
 > *– [Eleanor Konik, The Obsidian Roundup](https://www.obsidianroundup.org/2022-01-29/)*
 
-> "Keeps features accessible while orienting attention to where your focus needs to be. Polished look and feel without adding unnecessary bells and whistles."  
-> *- [7th place in Gems of the Year 2021](https://obsidian.md/goty2021), [(Nomination)](https://forum.obsidian.md/t/obsidian-gems-of-the-year-2021-nomination-themes/28225/2?u=pseudometa)*
+## Table of Contents
+<!-- MarkdownTOC -->
 
-## ⚠️ Obsidian 0.16
-*Due to Obsidian update 0.16, I had to start a full rewrite of the theme. Since the theme has more than 15,000 lines of CSS, it will unfortunately take quite a bit of time until it is usable for 0.15.*
+- [Key Features](#key-features)
+- [CSS Classes](#css-classes)
+- [Recommended Plugins](#recommended-plugins)
+- [Obsidian 0.16](#obsidian-016)
+- [Buy me a Coffee](#buy-me-a-coffee)
 
-### Technical Roadmap for 0.16
-- [x] reset GitHub issues
-- [x] update build script
-- [x] update issue templates
-- [x] create `manifest.json`
-- [ ] create `versions.json`
-- [ ] add release tags to build script + github action for auto-releasing
-- [ ] New Docs
-- [ ] new Promo Screenshot (16:9, 512x288px)
+<!-- /MarkdownTOC -->
+
+## Key Features
+- __Radical Minimalism:__ UI elements that require the mouse are still accessible on hover. All hidden UI elements can be permanently re-enabled with the [Style Settings Plugin](https://obsidian.md/plugins?id=obsidian-style-settings).
+- __Condensed Display of Information:__ Unnecessary padding and white-space is removed, which is beneficial for small screens or higher zoom levels.
+- __High Customizability:__ Dozens of customization options available via [Style Settings Plugin](https://obsidian.md/plugins?id=obsidian-style-settings).
+- __Native macOS Look:__ Options for native macOS look using the [Style Settings Plugin](https://obsidian.md/plugins?id=obsidian-style-settings).
+
+## CSS Classes
+- `full-width`: Disables "Readable Line Length" for the note.
+- `writing`: Uses writing-related styling like serif fonts in the note.
+- `bibliography-list`: Displays lists in the style of academic bibliographies (Reading Mode).
+- `list-2-col-cards`: Turns list items into cards (Reading Mode).
+- `remove-dataview-title`: Removes the header from Dataview results.
+
+## Recommended Plugins
+- [Style Settings Plugin](https://obsidian.md/plugins?id=obsidian-style-settings): Unlocks dozens of customization options.
+- [Supercharged Links](https://obsidian.md/plugins?id=supercharged-links-obsidian): The theme includes various built-in styling for the Supercharged Links plugin, e.g. appending a "🌱" to notes with the `#seedling` tag.
+- for macOS: [Electron Window Tweaker](https://obsidian.md/plugins?id=obsidian-electron-window-tweaker): Position the traffic lights for even more native macOS look.
+
+## Obsidian 0.16
+*Due to Obsidian update 0.16, I had to start a full rewrite of the theme. Since the theme has more than 15,000 lines of CSS, it will unfortunately take quite a bit of time until all previous features are restored. The documentation, to, will be rewritten.*
+
+__Technical Roadmap for 0.16__
+- [ ] new Promo Screenshot (16:9, 512 x 288 px)
 - [ ] 🎯 PR to `obsidian-releases`, removing `legacy` label and updating screenshot link.
 
-### Further down the Road
-- [ ] hide tabs when there is only one tab (requires `:has()`)
-- [ ] Fully Migrate to Lucide Icons
-
-## Donate
+## Buy me a Coffee
 <a href='https://ko-fi.com/Y8Y86SQ91' target='_blank'><img height='36' style='border:0px;height:36px;' src='https://cdn.ko-fi.com/cdn/kofi1.png?v=3' border='0' alt='Buy Me a Coffee at ko-fi.com' /></a>
