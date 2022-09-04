@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 3.42
+Version 3.43
 Source CSS: https://github.com/chrisgrieser/shimmering-focus/blob/main/source.css
 MIT License
 ──────────────────────────────────────────────────── */
@@ -235,6 +235,17 @@ body {
 	--tab-width: 200px;
 }
 
+/* https://discord.com/channels/686053708261228577/989603365606531104/1015835317347029092 */
+.modal-container a {
+	text-decoration: var(--link-external-decoration);
+	color: var(--link-external-color);
+}
+
+.modal-container a:hover {
+	text-decoration: var(--link-external-decoration-hover);
+	color: var(--link-external-color-hover);
+}
+
 /* ───────────────────────────────────────────────── */
 /* < Variables
 ──────────────────────────────────────────────────── */
@@ -350,54 +361,7 @@ https://www.youtube.com/watch?v=yl0pvIRTWWo&t=7s */
 	--text-error: var(--color-red);
 	--text-success: var(--color-green);
 
-	--color-accent-hsl: var(--accent-h) var(--accent-s) var(--accent-l);
-	--color-accent: hsl(var(--accent-h) var(--accent-s) var(--accent-l));
-	--color-accent-1: hsl(var(--accent-h) var(--accent-s) calc(var(--accent-l) + 2.5%));
-	--color-accent-2: hsl(var(--accent-h) var(--accent-s) calc(var(--accent-l) + 5%));
-}
-
-/* ───────────────────────────────────────────────── */
-/* << Color Scheme Variables
-──────────────────────────────────────────────────── */
-.theme-light {
-	--color-base-00: hsl(0 0% 100%);
-	--color-base-05: hsl(0 0% 99%);
-	--color-base-10: hsl(0 0% 98%);
-	--color-base-20: hsl(0 0% 96%);
-	--color-base-25: hsl(0 0% 89%);
-	--color-base-30: hsl(0 0% 88%);
-	--color-base-35: hsl(0 0% 83%);
-	--color-base-40: hsl(0 0% 74%);
-	--color-base-50: hsl(0 0% 67%);
-	--color-base-60: hsl(0 0% 44%);
-	--color-base-70: hsl(0 0% 35%);
-	--color-base-100: hsl(0 0% 13%);
-
-	--color-red-rgb: 228, 55, 75;
-	--color-red: hsl(353 76% 55%);
-	--color-green-rgb: 12, 181, 79;
-	--color-green: hsl(144 88% 38%);
-	--color-orange: hsl(30 100% 43%);
-	--color-yellow: hsl(39 55% 48%);
-	--color-cyan: hsl(179 61% 45%);
-	--color-blue: hsl(212 93% 45%);
-	--color-purple: hsl(254 65% 65%);
-	--color-pink: hsl(331 64% 47%);
-}
-
-.theme-dark {
-	--color-base-00: hsl(0 0% 12%);
-	--color-base-10: hsl(0 0% 14%);
-	--color-base-20: hsl(0 0% 15%);
-	--color-base-25: hsl(0 0% 16%);
-	--color-base-30: hsl(0 0% 21%);
-	--color-base-35: hsl(0 0% 25%);
-	--color-base-40: hsl(0 0% 33%);
-	--color-base-50: hsl(0 0% 40%);
-	--color-base-60: hsl(0 0% 60%);
-	--color-base-70: hsl(0 0% 73%);
-	--color-base-100: hsl(0 0% 85%);
-
+	/* colors for syntax highlighting & callouts (different tone in dark mode) */
 	--color-red-rgb: 251, 70, 76;
 	--color-green-rgb: 68, 207, 110;
 	--color-red: hsl(358 96% 63%);
@@ -408,34 +372,89 @@ https://www.youtube.com/watch?v=yl0pvIRTWWo&t=7s */
 	--color-blue: hsl(212 100% 50%);
 	--color-purple: hsl(258 100% 75%);
 	--color-pink: hsl(328 91% 79%);
+
+	/* Default Accent Color: ; will be overriden by user selection in `Appearance
+	   tab`, however, by setting color accent of its own, they are gonna be
+	   ignored in this theme */
+	--accent-h: 184;
+	--accent-s: 79%;
+	--accent-l: 35%;
+}
+
+/* ───────────────────────────────────────────────── */
+/* << Color Scheme Variables
+──────────────────────────────────────────────────── */
+/* stylelint-disable no-duplicate-selectors */
+
+body {
+	--bg-hue: 0;
+	--bg-sat: 0;
+}
+
+.theme-light {
+	--secondary-accent: hsl(28 54% 51%);
+	--hover-accent: hsl(328 100% 54%);
+	--link-unresolved-color: hsl(101 42% 51%);
+	--color-accent: hsl(184 79% 35%); /* hard-coded, so user does not mess up color scheme */
+	--color-accent-hsl: 184 79% 35%;
+}
+
+.theme-dark {
+	--secondary-accent: hsl(28 54% 51%);
+	--hover-accent: hsl(328 100% 54%);
+	--link-unresolved-color: hsl(101 42% 51%);
+	--color-accent: hsl(184 79% 35%);
+	--color-accent-hsl: 184 79% 35%;
+}
+
+.theme-light {
+	--color-base-00: hsl(var(--bg-hue) var(--bg-sat) 100%);
+	--color-base-05: hsl(var(--bg-hue) var(--bg-sat) 99%);
+	--color-base-10: hsl(var(--bg-hue) var(--bg-sat) 98%);
+	--color-base-20: hsl(var(--bg-hue) var(--bg-sat) 96%);
+	--color-base-25: hsl(var(--bg-hue) var(--bg-sat) 89%);
+	--color-base-30: hsl(var(--bg-hue) var(--bg-sat) 88%);
+	--color-base-35: hsl(var(--bg-hue) var(--bg-sat) 83%);
+	--color-base-40: hsl(var(--bg-hue) var(--bg-sat) 74%);
+	--color-base-50: hsl(var(--bg-hue) var(--bg-sat) 67%);
+	--color-base-60: hsl(var(--bg-hue) var(--bg-sat) 44%);
+	--color-base-70: hsl(var(--bg-hue) var(--bg-sat) 35%);
+	--color-base-100: hsl(var(--bg-hue) var(--bg-sat) 13%);
+}
+
+.theme-dark {
+	--color-base-00: hsl(var(--bg-hue) var(--bg-sat) 12%);
+	--color-base-10: hsl(var(--bg-hue) var(--bg-sat) 14%);
+	--color-base-20: hsl(var(--bg-hue) var(--bg-sat) 15%);
+	--color-base-25: hsl(var(--bg-hue) var(--bg-sat) 16%);
+	--color-base-30: hsl(var(--bg-hue) var(--bg-sat) 21%);
+	--color-base-35: hsl(var(--bg-hue) var(--bg-sat) 25%);
+	--color-base-40: hsl(var(--bg-hue) var(--bg-sat) 33%);
+	--color-base-50: hsl(var(--bg-hue) var(--bg-sat) 40%);
+	--color-base-60: hsl(var(--bg-hue) var(--bg-sat) 60%);
+	--color-base-70: hsl(var(--bg-hue) var(--bg-sat) 73%);
+	--color-base-100: hsl(var(--bg-hue) var(--bg-sat) 85%);
 }
 
 .theme-dark,
 .theme-light {
-	/* Default Accent Color: Teal (will be overriden by user selection in `Appearance tab`) */
-	--accent-h: 184;
-	--accent-s: 79%;
-	--accent-l: 35%;
-
-	--reference-color: hsl(28 54% 51%);
-	--text-accent-hover: hsl(328 100% 54%);
-	--link-unresolved-color: hsl(101 42% 51%);
-
-	--hotkey-color: var(--reference-color);
+	--hotkey-color: var(--secondary-accent);
 	--bold-color: var(--text-accent-hover);
 
 	--text-normal: var(--color-base-100);
 	--text-muted: var(--color-base-70);
+	--text-gray: var(--color-base-60); /* custom middle ground between text-muted and text-faint */
 	--text-faint: var(--color-base-50);
 	--text-accent: var(--color-accent);
+	--text-accent-hover: var(--hover-accent);
 	--interactive-normal: var(--color-base-00);
 	--interactive-hover: var(--color-base-20);
 	--interactive-accent-hsl: var(--color-accent-hsl);
-	--interactive-accent: var(--color-accent-1);
-	--interactive-accent-hover: var(--color-accent-2);
+	--interactive-accent: var(--color-accent);
+	--interactive-accent-hover: var(--hover-accent);
 
 	/* links and tags */
-	--tag-color: var(--reference-color);
+	--tag-color: var(--secondary-accent);
 	--tag-color-hover: var(--text-accent-hover);
 	--link-color: var(--text-accent);
 	--link-color-hover: var(--text-accent-hover);
@@ -446,7 +465,6 @@ https://www.youtube.com/watch?v=yl0pvIRTWWo&t=7s */
 /* ───────────────────────────────────────────────── */
 /* << Changed Obsidian Variables
 ──────────────────────────────────────────────────── */
-/* stylelint-disable no-duplicate-selectors */
 
 body {
 	/* Base Fonts */
@@ -487,7 +505,7 @@ body {
 	--link-unresolved-opacity: 1;
 
 	--divider-color: var(--muted-border-color);
-	--divider-color-hover: var(--text-accent-hover);
+	--divider-color-hover: var(--hover-accent);
 
 	/* file items */
 	--nav-item-color: var(--text-muted);
@@ -500,11 +518,11 @@ body {
 	/* checkboxes */
 	--checkbox-radius: var(--radius-m);
 	--checkbox-size: 17px;
-	--checkbox-color: var(--reference-color);
-	--checkbox-color-hover: var(--text-accent-hover);
+	--checkbox-color: var(--secondary-accent);
+	--checkbox-color-hover: var(--hover-accent);
 	--checkbox-border-color: var(--text-gray);
-	--checkbox-border-color-hover: var(--text-accent-hover);
-	--icon-color-hover: var(--text-accent-hover);
+	--checkbox-border-color-hover: var(--hover-accent);
+	--icon-color-hover: var(--hover-accent);
 }
 
 /* ───────────────────────────────────────────────── */
@@ -518,7 +536,7 @@ body {
 	--heading-letter-spacing: 1.5px;
 
 	--inactive-pane-opacity: 75%;
-	--transition-delay-passing-over-protection: 225ms;
+	--transition-delay-passing-over-protection: 250ms;
 	--image-size: 50;
 
 	--bg1: var(--color-base-00);
@@ -530,8 +548,6 @@ body {
 	--background-primary: var(--bg1); /* overwrite Obsidian variables w/ --bg colors for consistency with plugins */
 	--background-primary-alt: var(--bg2);
 	--background-secondary: var(--bg3);
-
-	--text-gray: var(--color-base-60); /* middle ground between text-muted and text-faint */
 
 	--basic-border-color: var(--color-base-50);
 	--thin-border: 1px solid var(--basic-border-color);
@@ -592,7 +608,7 @@ input[type="checkbox"] {
 .footnotes li::marker,
 .cm-hmd-footnote.cm-hmd-footnote.cm-hmd-footnote.cm-hmd-footnote.cm-hmd-footnote,
 .footnote-link {
-	color: var(--reference-color);
+	color: var(--secondary-accent);
 }
 
 /* bold to increase redability */
@@ -1167,7 +1183,7 @@ mark {
 
 /* applies to all []-links (barelinks), partially also to footnotes */
 body:not(.no-pandoc-citation-emphasis) .cm-hmd-barelink.cm-hmd-barelink.cm-hmd-barelink.cm-hmd-barelink.cm-hmd-barelink:not(.cm-formatting) {
-	color: var(--reference-color);
+	color: var(--secondary-accent);
 }
 
 body:not(.no-pandoc-citation-emphasis) .cm-hmd-barelink.cm-formatting:not(.cm-footref) {
@@ -1289,12 +1305,12 @@ body:not(.show-close-buttons) .modal-close-button {
 }
 
 .checkbox-container.checkbox-container:hover {
-	border: 9px solid var(--text-accent-hover);
-	border-color: var(--text-accent-hover);
+	border: 9px solid var(--hover-accent);
+	border-color: var(--hover-accent);
 }
 
 .checkbox-container.is-enabled:hover {
-	background-color: var(--text-accent-hover);
+	background-color: var(--hover-accent);
 	border-color: transparent;
 }
 
@@ -1339,8 +1355,8 @@ body:not(.show-close-buttons) .modal-close-button {
 		linear-gradient(
 			45deg,
 			var(--color-accent) 0% 20%,
-			var(--text-accent-hover) 40% 60%,
-			var(--reference-color) 80% 100%
+			var(--hover-accent) 40% 60%,
+			var(--secondary-accent) 80% 100%
 		);
 }
 
@@ -1408,7 +1424,7 @@ body:not(.no-floating-metadata):not(.is-mobile) :is(.frontmatter.language-yaml, 
 }
 
 body:not(.no-floating-metadata):not(.is-mobile) :is(.frontmatter.language-yaml, .frontmatter-container):hover:not(:active) {
-	color: var(--text-accent-hover);
+	color: var(--hover-accent);
 }
 
 body:not(.no-floating-metadata):not(.is-mobile) .frontmatter-container:not(:active)::before {
@@ -1977,7 +1993,7 @@ are not targeted by this */
 /* the "---"" */
 .cm-def.cm-hmd-frontmatter {
 	letter-spacing: 0.1rem;
-	color: var(--text-muted);
+	color: var(--secondary-accent-text);
 }
 
 /* so bold and not bold gets rendered correctly */
@@ -1988,6 +2004,32 @@ are not targeted by this */
 /* keys easier to differentiate */
 .cm-hmd-frontmatter:is(.cm-atom, .cm-meta) {
 	font-weight: 600;
+}
+
+/* keys */
+.frontmatter.language-yaml .atrule,
+.cm-atom.cm-hmd-frontmatter {
+	color: var(--text-accent);
+}
+
+/* punctuation */
+/* first child = unordered list in yaml */
+/* second child = colon between key and value */
+/* last child = bracket to close of array brackets, see https://github.com/chrisgrieser/shimmering-focus/issues/194 */
+.cm-line .cm-hmd-frontmatter.cm-meta:is(:first-child, :nth-child(2), :last-child),
+.frontmatter.language-yaml .punctuation {
+	color: var(--bold-color);
+}
+
+/* strings & boolean in yaml */
+.frontmatter.language-yaml :is(.boolean, .number, .string),
+.cm-hmd-frontmatter:is(.cm-keyword, .cm-string) {
+	font-weight: 500;
+	color: var(--secondary-accent);
+}
+
+pre.language-yaml.frontmatter::after {
+	content: "YAML Frontmatter";
 }
 
 /* ───────────────────────────────────────────────── */
@@ -2465,7 +2507,7 @@ body .pandoc-citation.pandoc-citation.pandoc-citation {
 }
 
 body:not(.no-pandoc-citation-emphasis) .view-content :is(.pandoc-citation, .cm-pandoc-citation) {
-	color: var(--reference-color);
+	color: var(--secondary-accent);
 }
 
 body:not(.no-pandoc-citation-emphasis) .view-content.view-content :is(.cm-pandoc-citation-formatting, .pandoc-citation-formatting, .pandoc-citation-extra, .cm-pandoc-citation-extra) {
