@@ -10,11 +10,16 @@ A minimalistic Obsidian theme for keyboard-centric users.
 <!-- MarkdownTOC -->
 
 - [Key Features](#key-features)
+- [- __Native macOS Look:__ Options for native macOS look using the Style Settings Plugin.](#--native-macos-look-options-for-native-macos-look-using-the-style-settings-plugin)
 - [More Features](#more-features)
 - [CSS Classes](#css-classes)
 - [Recommended Plugins](#recommended-plugins)
 - [Obsidian 0.16](#obsidian-016)
-- [Buy me a Coffee](#buy-me-a-coffee)
+- [Credits](#credits)
+	- [About Me](#about-me)
+	- [Profiles](#profiles)
+	- [Buy me a Coffee](#buy-me-a-coffee)
+	- [Thanks](#thanks)
 
 <!-- /MarkdownTOC -->
 
@@ -51,5 +56,22 @@ __Technical Roadmap for 0.16__
 - [ ] new Promo Screenshot (16:9, 512 x 288 px)
 - [ ] 🎯 PR to `obsidian-releases`, removing `legacy` label and updating screenshot link.
 
-## Buy me a Coffee
+## Credits
+
+### About Me
+In my day job, I am a sociologist studying the social mechanisms underlying the digital economy. For my PhD project, I investigate the governance of the app economy and how software ecosystems manage the tension between innovation and compatibility. If you are interested in this subject, feel free to get in touch!
+
+### Profiles
+- [Academic Website](https://chris-grieser.de/)
+- [ResearchGate](https://www.researchgate.net/profile/Christopher-Grieser)
+- [Discord](https://discordapp.com/users/462774483044794368/)
+- [GitHub](https://github.com/chrisgrieser/)
+- [Twitter](https://twitter.com/pseudo_meta)
+- [LinkedIn](https://www.linkedin.com/in/christopher-grieser-ba693b17a/)
+
+*Note that for questions, bug reports, or feature requests for this workflow, it's better if you open an [GitHub issue](https://github.com/chrisgrieser/shimmering-focus/issues), since it is better suited for technical support.*
+
+### Buy me a Coffee
 <a href='https://ko-fi.com/Y8Y86SQ91' target='_blank'><img height='36' style='border:0px;height:36px;' src='https://cdn.ko-fi.com/cdn/kofi1.png?v=3' border='0' alt='Buy Me a Coffee at ko-fi.com' /></a>
+
+### Thanks
