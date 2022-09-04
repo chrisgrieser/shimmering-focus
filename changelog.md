@@ -1,4 +1,5 @@
 # Changelog
+- 2022-09-04	frontmatter improvements
 - 2022-09-04	sidenote callouts
 - 2022-09-04	added annotation tags
 - 2022-09-04	Readme credits

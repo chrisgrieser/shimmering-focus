@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 3.52
+Version 3.53
 Source CSS: https://github.com/chrisgrieser/shimmering-focus/blob/main/source.css
 MIT License
 ──────────────────────────────────────────────────── */
@@ -1265,7 +1265,7 @@ div.HyperMD-codeblock-bg:not(.HyperMD-codeblock-begin-bg) {
 }
 
 /* <<< language replacements */
-pre[class*="language-"]::after {
+pre[class*="language-"]:not(.frontmatter)::after {
 	content: attr(class); /* fallback when none of the languages below is used */
 
 	font-size: calc(var(--code-size) * 0.9);
@@ -1296,7 +1296,7 @@ pre.language-zsh::after { content: "zsh" }
 pre.language-flow::after { content: "Flow" }
 pre.language-sequence::after { content: "Sequence" }
 pre.language-sql::after { content: "SQL" }
-pre.language-yaml::after { content: "YAML" }
+pre.language-yaml:not(.frontmatter)::after { content: "YAML" }
 pre.language-ini::after { content: "INI" }
 pre.language-xml::after { content: "XML" }
 pre.language-git::after { content: "GIT" }
@@ -1754,7 +1754,7 @@ div.mermaid {
 	visibility: hidden;
 }
 
-.mod-settings .vertical-tab-content > .setting-item:nth-child(2) > .setting-item-control .lucide-rotate-ccw {
+.mod-settings .vertical-tab-content > .setting-item:nth-child(2) > .setting-item-control > .lucide-rotate-ccw {
 	display: none;
 }
 
@@ -1771,6 +1771,10 @@ div.mermaid {
 	top: 8px;
 
 	visibility: visible;
+}
+
+.setting-item-description.setting-item-description.setting-item-description {
+	color: var(--text-gray);
 }
 
 /* Community Plugins */
@@ -1878,7 +1882,7 @@ body:not(.show-close-buttons) .modal-close-button {
 /* ───────────────────────────────────────────────── */
 /* << Frontmatter
 ──────────────────────────────────────────────────── */
-.frontmatter.language-yaml,
+pre.frontmatter.language-yaml,
 .frontmatter-container {
 	background-color: var(--bg2);
 	padding: var(--size-4-2) var(--size-4-3);
@@ -1886,13 +1890,28 @@ body:not(.show-close-buttons) .modal-close-button {
 	border-radius: var(--radius-s);
 }
 
-.frontmatter.language-yaml,
-.frontmatter-section * {
-	font-size: var(--font-small);
+pre.frontmatter.language-yaml code {
+	padding: 0;
 }
 
-body .frontmatter-container-header.frontmatter-container-header {
+.frontmatter-alias-icon > svg {
+	color: var(--text-faint);
+}
+
+.frontmatter.language-yaml,
+.frontmatter-section.frontmatter-section * {
+	font-size: var(--font-small);
+	line-height: 1.2;
+}
+
+.frontmatter-section-label,
+body .frontmatter-container-header.frontmatter-container-header,
+.no-floating-metadata pre.frontmatter.language-yaml::before {
 	display: none;
+}
+
+.frontmatter-container .frontmatter-section-tags {
+	gap: var(--size-4-3);
 }
 
 .frontmatter-container .tag {
@@ -1903,25 +1922,27 @@ body .frontmatter-container-header.frontmatter-container-header {
 /* <<< Floating Metadata & YAML
 ──────────────────────────────────────────────────── */
 
-/* base look */
+/* look when active */
 body:not(.no-floating-metadata):not(.is-mobile) :is(.frontmatter.language-yaml, .frontmatter-container) {
-	line-height: 2.2em;
+	line-height: 2.2;
 
-	max-width: calc(var(--file-line-width) + 3.4rem);
+	max-width: var(--file-line-width);
 
 	position: fixed;
 	right: -2px;
 	z-index: 100;
 
-	padding: 4px 3rem 4px 8px;
+	padding: var(--size-2-3) 3rem var(--size-2-3) var(--size-4-3);
 	margin: 0;
+
+	border: var(--basic-border);
 }
 
 body:not(.no-floating-metadata):not(.is-mobile) .frontmatter-container.frontmatter-container {
 	z-index: 1; /* to keep it beneath the expanded yaml block */
 }
 
-/* look when not hovered */
+/* look when not active */
 body:not(.no-floating-metadata):not(.is-mobile) :is(.frontmatter.language-yaml, .frontmatter-container):not(:active) {
 	font-family: "iA Writer Quattro S"; /* fixed font so font changes do not screw up alignment */
 	font-weight: 500;
@@ -2110,7 +2131,7 @@ body:not(.normal-header-bar, .is-mobile) .view-header:not(:focus-within) .view-a
 
 .safari-tab-bar .workspace-tabs.mod-top:not(.mod-stacked) {
 	--tab-font-size: var(--font-small);
-	--tab-height: 26px;
+	--tab-height: var(--size-4-6);
 	--tab-max-width-active: calc(var(--tab-width) * 1.5);
 }
 
@@ -2621,10 +2642,6 @@ are not targeted by this */
 .cm-hmd-frontmatter:is(.cm-keyword, .cm-string) {
 	font-weight: 500;
 	color: var(--secondary-accent);
-}
-
-pre.language-yaml.frontmatter::after {
-	content: "YAML Frontmatter";
 }
 
 /* ───────────────────────────────────────────────── */
@@ -3715,7 +3732,7 @@ settings:
    default: false
   -
    id: no-floating-metadata
-   title: 'Reading Mode: Permanently show the Metadata Block / YAML Frontmatter'
+   title: 'Permanently show Metadata & YAML Frontmatter (Reading Mode)'
    type: class-toggle
    description: 'By default, the metadata block in this theme only becomes visible upon clicking and holding the "M" / "Y" in the top right.'
    default: false
