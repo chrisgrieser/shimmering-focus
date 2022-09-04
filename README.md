@@ -10,7 +10,6 @@ A minimalistic Obsidian theme for keyboard-centric users.
 <!-- MarkdownTOC -->
 
 - [Key Features](#key-features)
-- [- __Native macOS Look:__ Options for native macOS look using the Style Settings Plugin.](#--native-macos-look-options-for-native-macos-look-using-the-style-settings-plugin)
 - [More Features](#more-features)
 - [CSS Classes](#css-classes)
 - [Recommended Plugins](#recommended-plugins)
@@ -18,8 +17,8 @@ A minimalistic Obsidian theme for keyboard-centric users.
 - [Credits](#credits)
 	- [About Me](#about-me)
 	- [Profiles](#profiles)
-	- [Buy me a Coffee](#buy-me-a-coffee)
-	- [Thanks](#thanks)
+	- [Thanks & Credits](#thanks--credits)
+- [Buy me a Coffee](#buy-me-a-coffee)
 
 <!-- /MarkdownTOC -->
 
@@ -27,14 +26,15 @@ A minimalistic Obsidian theme for keyboard-centric users.
 - __Radical Minimalism:__ UI elements that require the mouse are still accessible on hover. All hidden UI elements can be permanently re-enabled with the [Style Settings Plugin](https://obsidian.md/plugins?id=obsidian-style-settings).
 - __Condensed Display of Information:__ Unnecessary padding and white-space is removed, which is beneficial for small screens or higher zoom levels.
 - __High Customizability:__ Dozens of customization options available via [Style Settings Plugin](https://obsidian.md/plugins?id=obsidian-style-settings).
-- __Native macOS Look:__ Options for native macOS look using the [Style Settings Plugin](https://obsidian.md/plugins?id=obsidian-style-settings).
--
 
 ## More Features
-- Language, Wrapping, and Line Numbering in Code Blocks.
+- Options for __native macOS look__ using the [Style Settings Plugin](https://obsidian.md/plugins?id=obsidian-style-settings).
+- Alt-text of __images__ is used as caption, images can be zoomed in by clicking and holding.
+- Language Display, Disabled Wrapping, and Line Numbers in __Code Blocks__.
 - Extensive Styling for the [Longform Plugin](https://obsidian.md/plugins?id=longform), including alternative background color and serif-fonts for notes in longform projects.
-- Annotation Tags: Tags that are emphasized when used inline (not in the YAML Frontmatter). They are meant as visual guides for reading and literature notes. They include: `#definition`, `#question`, `#goal`, `#todo`, `#summary`, `#important`, `#main`, `#critique`, `#gap`, `#litreview`, `#quote`, `#agree`, `#disagree`, `#example`, `#data`, `#method`, `#idea`, and `#sidenote`.
-- The only theme (I am aware of) where Vim Mode has been explicitly styled.
+- The only theme (I am aware of) where __Vim Mode__ has been explicitly styled.
+- __Annotation Tags__: Tags that are emphasized when used inline (not in the YAML Frontmatter). They are meant as visual guides for reading and literature notes. They include: `#definition`, `#question`, `#goal`, `#todo`, `#summary`, `#important`, `#main`, `#critique`, `#gap`, `#litreview`, `#quote`, `#agree`, `#disagree`, `#example`, `#data`, `#method`, `#idea`, and `#sidenote`.
+- …
 
 ## CSS Classes
 - `full-width`: Disables "Readable Line Length" for the note.
@@ -71,7 +71,10 @@ In my day job, I am a sociologist studying the social mechanisms underlying the 
 
 *Note that for questions, bug reports, or feature requests for this workflow, it's better if you open an [GitHub issue](https://github.com/chrisgrieser/shimmering-focus/issues), since it is better suited for technical support.*
 
-### Buy me a Coffee
-<a href='https://ko-fi.com/Y8Y86SQ91' target='_blank'><img height='36' style='border:0px;height:36px;' src='https://cdn.ko-fi.com/cdn/kofi1.png?v=3' border='0' alt='Buy Me a Coffee at ko-fi.com' /></a>
+### Thanks & Credits
+- This theme includes snippets or by: [@SlRvb](https://github.com/SlRvb), [@Atlas](https://github.com/zcysxy), [@CecilaMay](https://github.com/ceciliamay), [@DamianKorcz](https://github.com/damiankorcz), [@Mara-Li](https://github.com/Mara-Li), [@kepano](https://github.com/kepano), [@jdanielmourao](https://github.com/jdanielmourao), [@deathau](https://github.com/deathau/), [@MelvinTing](https://github.com/tingmelvin/), [@EmrieCandera](https://github.com/Emrie-Candera), @lkadre, [@Chetachie](https://github.com/chetachiezikeuzor), [@pryley](https://github.com/pryley), and [@chuckharmston](https://gist.github.com/chuckharmston).
+- A lot of the theme's features are only possible thanks to the [Style Settings Plugin](https://obsidian.md/plugins?id=obsidian-style-settings) by [@mgmeyers](https://github.com/mgmeyers).
+- Many thanks for helping me out in learning CSS in the beginning: [@SlRvb](https://github.com/SlRvb), [@javalent](https://github.com/valentine195), and [@NothingIsLost](https://github.com/nothingislost).
 
-### Thanks
+## Buy me a Coffee
+<a href='https://ko-fi.com/Y8Y86SQ91' target='_blank'><img height='36' style='border:0px;height:36px;' src='https://cdn.ko-fi.com/cdn/kofi1.png?v=3' border='0' alt='Buy Me a Coffee at ko-fi.com' /></a>
