@@ -1,4 +1,5 @@
 # Changelog
+- 2022-09-06	more condensed theme browser
 - 2022-09-06	longform styling
 - 2022-09-05	kanban tuning
 - 2022-09-05	kanban board rewrite

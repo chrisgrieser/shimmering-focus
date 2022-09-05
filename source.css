@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 3.71
+Version 3.72
 Source CSS: https://github.com/chrisgrieser/shimmering-focus/blob/main/source.css
 MIT License
 ──────────────────────────────────────────────────── */
@@ -956,7 +956,6 @@ body .HyperMD-footnote,
 and changed Obsidian variables */
 
 /* dotted underline links to headings */
-.community-modal-info a,
 .markdown-preview-view .internal-link[href*="#"] {
 	text-decoration: underline dotted;
 }
@@ -1049,7 +1048,7 @@ body:not(.show-urls) .cm-s-obsidian:not(.is-live-preview) .cm-line:not(.cm-activ
 /* "*:not(pre) > code" targets inline code
 (i.e. code that is not in a pre (= block) ) */
 .is-live-preview code,
-body .markdown-preview-view *:not(pre) > code,
+body .markdown-rendered *:not(pre) > code,
 .cm-inline-code.cm-inline-code.cm-inline-code.cm-inline-code.cm-inline-code.cm-inline-code {
 	color: var(--inline-code-color);
 	background-color: var(--bg2); /* more distinduishable from background */
@@ -1880,31 +1879,44 @@ body .vertical-tab-content {
 /* << Theme Browser
 ──────────────────────────────────────────────────── */
 /* is this typo still not fixed? */
-.community-item-author::first-letter {
+.mod-community-theme .community-item-author::first-letter {
 	text-transform: lowercase;
 }
 
-.community-item-author {
+.mod-community-theme .community-item-author {
 	font-style: italic;
 }
 
-.community-item-name .flair {
+.mod-community-theme .community-item-name .flair {
 	background-color: var(--bg3);
 	margin-left: var(--size-4-3);
 	border: var(--thin-border);
 }
 
-.community-item-name .flair.mod-pop {
+.mod-community-theme .community-item-name .flair.mod-pop {
 	color: var(--text-accent);
 }
 
-.community-item.mod-active {
+.mod-community-theme .community-item.mod-active {
 	border-color: var(--color-accent);
 }
 
-.community-item:hover,
-.community-item.mod-active:hover {
+.mod-community-theme .community-item:is(:hover, .mod-active:hover) {
 	border-color: var(--hover-accent);
+}
+
+.mod-community-theme .modal-setting-nav-bar {
+	height: 0;
+	padding: 0;
+}
+
+.mod-community-theme .modal-setting-nav-bar .clickable-icon {
+	height: 30px;
+	position: sticky;
+}
+
+.mod-community-theme .community-modal-info {
+	padding: var(--size-4-4) var(--size-4-6) var(--size-4-6) 40px;
 }
 
 /* ───────────────────────────────────────────────── */
@@ -1916,6 +1928,10 @@ body .vertical-tab-content {
 	display: none;
 }
 
+.community-modal-info a.internal-link {
+	text-decoration: dotted underline;
+}
+
 /* ───────────────────────────────────────────────── */
 /* << Toggles
 ──────────────────────────────────────────────────── */
@@ -1925,7 +1941,7 @@ body .vertical-tab-content {
 	display: none;
 }
 
-.checkbox-container.checkbox-container {
+.checkbox-container.checkbox-container:not(.mod-small) {
 	height: 22px;
 	width: 22px;
 
@@ -1937,6 +1953,11 @@ body .vertical-tab-content {
 
 	transition: var(--anim-duration-slow);
 	cursor: var(--cursor-link);
+}
+
+body .checkbox-container.mod-small {
+	height: var(--icon-l);
+	width: var(--icon-l);
 }
 
 /* colors */
