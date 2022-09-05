@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 3.63
+Version 3.64
 Source CSS: https://github.com/chrisgrieser/shimmering-focus/blob/main/source.css
 MIT License
 ──────────────────────────────────────────────────── */
@@ -13,7 +13,7 @@ MIT License
 /* @TOC-SPLIT-MARKER */
 /*
 - Fonts (base64 encoded)
-	- Temporary Bug Fixes / Additions
+- Temporary Bug Fixes / Additions
 - Variables
 	- Unchanged Obsidian Variables (Dummy Variables)
 	- Color Scheme Variables
@@ -238,7 +238,7 @@ MIT License
 }
 
 /* ───────────────────────────────────────────────── */
-/* << Temporary Bug Fixes / Additions
+/* < Temporary Bug Fixes / Additions
 ──────────────────────────────────────────────────── */
 .cm-hashtag-begin.cm-hashtag-begin {
 	font-family: var(--font-text);
@@ -343,17 +343,6 @@ https://www.youtube.com/watch?v=yl0pvIRTWWo&t=7s */
 	--tab-curve: 6px;
 	--tab-radius: var(--radius-s);
 	--tab-radius-active: 6px 6px 0 0;
-
-	/* Checkboxes */
-	--checkbox-radius: var(--radius-s);
-	--checkbox-size: 15px;
-	--checkbox-marker-color: var(--background-primary);
-	--checkbox-color: var(--interactive-accent);
-	--checkbox-color-hover: var(--interactive-accent-hover);
-	--checkbox-border-color: var(--text-faint);
-	--checkbox-border-color-hover: var(--text-muted);
-	--checklist-done-decoration: line-through;
-	--checklist-done-color: var(--text-muted);
 
 	--anim-duration-none: 0;
 	--anim-duration-superfast: 70ms;
@@ -600,12 +589,15 @@ body {
 	--nav-item-background-active: var(--bg5);
 
 	/* Checkboxes */
-	--checkbox-radius: var(--radius-m);
+	--checkbox-radius: var(--radius-m); /* = round */
 	--checkbox-size: 17px;
 	--checkbox-color: var(--secondary-accent);
 	--checkbox-color-hover: var(--hover-accent);
 	--checkbox-border-color: var(--text-gray);
 	--checkbox-border-color-hover: var(--hover-accent);
+	--checkbox-marker-color: var(--background-primary);
+	--checklist-done-decoration: line-through;
+	--checklist-done-color: var(--text-faint);
 
 	/* Callouts */
 	--callout-title-size: 110%;
@@ -888,13 +880,14 @@ body:not(.annotation-tags-off) :is(.cm-hashtag-begin.cm-tag-example, .tag[href="
 /* ───────────────────────────────────────────────── */
 /* << Tasks
 ──────────────────────────────────────────────────── */
+/* most styling in form of changed --checkbox variables */
 
 input[type="checkbox"] {
 	border-width: 1.5px;
 }
 
 .contains-task-list.contains-task-list {
-	--list-indent: 1.5em;
+	--list-indent: 1.6em;
 }
 
 /* ───────────────────────────────────────────────── */
@@ -1435,6 +1428,7 @@ blockquote code {
 	--callout-icon: triangle; /* default callout icon */
 	--icon-stroke: 2px;
 	--sidenote-callout-width: 35%;
+	border: var(--thin-border);
 }
 
 .HyperMD-callout.HyperMD-callout.HyperMD-callout.HyperMD-callout {
@@ -1967,7 +1961,7 @@ select:hover {
 	border-color: var(--hover-accent);
 }
 
-input[type][type] {
+input[type="text"][type] {
 	background-color: var(--bg1);
 }
 
@@ -2348,7 +2342,6 @@ body:not(.no-tabbar-header-hybrid, .safari-tab-bar) .mod-root .workspace-tab-hea
 	width: 700px;
 	background-color: transparent;
 	box-shadow: none;
-	margin-left: -12px;
 }
 
 body:not(.no-tabbar-header-hybrid, .safari-tab-bar) .mod-root .workspace-tab-header-container:not(:hover) .workspace-tab-header:only-child .workspace-tab-header-inner-title {
@@ -3650,8 +3643,8 @@ body .style-settings-heading[data-level="0"] .setting-item-name.setting-item-nam
 /* Styling from the "Tables" Section mostly applies */
 
 /* less indention to save space */
-:is(.block-language-dataview, .block-language-dataviewjs) > div > ul {
-	padding-left: 1rem;
+:is(.block-language-dataview, .block-language-dataviewjs) > div > ul.contains-task-list {
+	--list-indent: 1.2em;
 }
 
 .markdown-preview-view :is(.block-language-dataview, .block-language-dataviewjs) .result-group {

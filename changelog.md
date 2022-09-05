@@ -1,5 +1,5 @@
 # Changelog
-- 2022-09-04	patch
+- 2022-09-05	patch
 - 2022-09-04	setting menu colors
 - 2022-09-04	settings menu styled
 - 2022-09-04	table styling
