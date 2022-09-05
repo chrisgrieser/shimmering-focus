@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 3.67
+Version 3.68
 Source CSS: https://github.com/chrisgrieser/shimmering-focus/blob/main/source.css
 MIT License
 ──────────────────────────────────────────────────── */
@@ -615,9 +615,12 @@ body {
 	--list-indent: 1em;
 	--link-decoration: underline double 1px;
 	--link-unresolved-opacity: 1;
+	--code-background: var(--bg3);
+
+	/* devides, like hr or resize handles */
 	--divider-color: var(--muted-border-color);
 	--divider-color-hover: var(--hover-accent);
-	--code-background: var(--bg3);
+	--divider-width: 2px;
 }
 
 /* ───────────────────────────────────────────────── */
@@ -3464,14 +3467,23 @@ body:not(.no-pandoc-citation-emphasis) .pandoc-citation.is-unresolved.is-unresol
 	display: none;
 }
 
+/* replacce the [] with () */
+.pandoc-citation-formatting {
+	font-size: 0;
+}
+
+.pandoc-citation-formatting::before {
+	content: "(";
+	font-size: var(--font-text-size);
+}
+
+.pandoc-citation + .pandoc-citation-formatting::before {
+	content: ")";
+}
+
 /* cause longform notes have different size */
 :is(.writing, .longform-leaf) .pandoc-citation-formatting::before {
 	font-size: var(--longform-font-size);
-}
-
-/* optional turning of of citations in Reading Mode */
-.no-citations-in-reading-view .markdown-preview-view :is(.pandoc-citation, .pandoc-citation-extra, .pandoc-citation-formatting) {
-	display: none;
 }
 
 /* Style Settings disabled, since overriden by the theme anyway */

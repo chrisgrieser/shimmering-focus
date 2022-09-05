@@ -1,4 +1,5 @@
 # Changelog
+- 2022-09-05	round brackets reading mode pandoc
 - 2022-09-05	fix various tab bar related niche cases
 - 2022-09-04	setting menu colors
 - 2022-09-04	settings menu styled
