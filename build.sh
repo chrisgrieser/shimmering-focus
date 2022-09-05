@@ -105,7 +105,9 @@ currentVersion=$(sed -n "${versionLine}p" "$CSS_PATH" | cut -d. -f2)
 nextVersion=$((currentVersion + 1))
 sed -E -i '' "${versionLine}s/(.*\.)[[:digit:]]+/\1$nextVersion/" "$CSS_PATH"
 sed -E -i '' "s/(\"version\": \".*\.).*/\1$nextVersion\",/" "manifest.json"
-#  "version": "3.15",
+SECOND_MANIFEST="$(dirname "$CSS_PATH")/manifest.json"
+sed -E -i '' "s/(\"version\": \".*\.).*/\1$nextVersion\",/" "$SECOND_MANIFEST"
+
 # Minify
 split -p "@MINIFY-SPLIT-MARKER" "$CSS_PATH" temp # split off to prevent style settings from getting minified
 mv tempaa info.css
