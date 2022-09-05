@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 3.66
+Version 3.67
 Source CSS: https://github.com/chrisgrieser/shimmering-focus/blob/main/source.css
 MIT License
 ──────────────────────────────────────────────────── */
@@ -66,11 +66,11 @@ MIT License
 	- Status Bar
 	- Header Bar (Tab Title Bar)
 	- Tab Bar
-		- Safari-Style Tab Bar
 		- Hide Various Elements
 		- different look when only tab
 		- Stacked Tabs
 		- Styling of Tabs
+		- Safari-Style Tab Bar
 	- Release Notes Tab
 - Prompts
 	- QuickSwitcher
@@ -1058,7 +1058,7 @@ body:not(.show-urls) .cm-s-obsidian:not(.is-live-preview) .cm-line:not(.cm-activ
 body .markdown-preview-view *:not(pre) > code,
 .cm-inline-code.cm-inline-code.cm-inline-code.cm-inline-code.cm-inline-code.cm-inline-code {
 	color: var(--inline-code-color);
-	background-color: var(--bg3); /* more distinduishable from background */
+	background-color: var(--bg2); /* more distinduishable from background */
 }
 
 .is-live-preview code,
@@ -1197,7 +1197,7 @@ div.HyperMD-codeblock-bg:not(.HyperMD-codeblock-begin-bg) {
 }
 
 /* <<< language replacements */
-pre[class*="language-"]:not(.frontmatter)::after {
+pre[class*="language-"]::after {
 	content: attr(class); /* fallback when none of the languages below is used */
 
 	font-size: calc(var(--code-size) * 0.9);
@@ -1208,6 +1208,11 @@ pre[class*="language-"]:not(.frontmatter)::after {
 	position: absolute;
 	top: 3px;
 	right: 6px;
+}
+
+/* don't display for frontmatter */
+pre.frontmatter::after {
+	display: none;
 }
 
 pre.language-c::after { content: "C" }
@@ -1751,7 +1756,6 @@ body:not(.show-close-buttons) .modal-close-button {
 /* via non-last-child b/c the settings search plugin adds a group in front */
 .vertical-tab-header-group:nth-last-child(3) .vertical-tab-header-group-items .vertical-tab-nav-item:is(:nth-child(3), :nth-child(4), :last-child) {
 	font-weight: 900;
-	color: var(--text-normal);
 }
 
 /* ───────────────────────────────────────────────── */
@@ -1814,7 +1818,7 @@ body .vertical-tab-content {
 /* <<< Settings Headings
 ──────────────────────────────────────────────────── */
 
-.setting-item.setting-item-heading .setting-item-name {
+.setting-item-heading:not(.style-settings-heading) .setting-item-name {
 	font-family: var(--font-heading-theme);
 	font-size: 1.3em;
 	font-weight: 600;
@@ -1822,7 +1826,7 @@ body .vertical-tab-content {
 	padding-bottom: 0;
 }
 
-.setting-item.setting-item-heading:not(:first-child) .setting-item-name {
+.setting-item-heading:not(:first-child, .style-settings-heading) .setting-item-name {
 	margin-top: var(--size-4-3);
 }
 
@@ -2083,7 +2087,9 @@ pre.frontmatter.language-yaml,
 	border-radius: var(--radius-s);
 }
 
+/* don't apply background color from --code-background here since it looks weird */
 pre.frontmatter.language-yaml code {
+	background-color: transparent;
 	padding: 0;
 }
 
@@ -2315,6 +2321,128 @@ body:not(.normal-header-bar, .is-mobile) .view-header:not(:focus-within) .view-a
 /* ───────────────────────────────────────────────── */
 /* << Tab Bar
 ──────────────────────────────────────────────────── */
+
+/* ───────────────────────────────────────────────── */
+/* <<< Hide Various Elements
+──────────────────────────────────────────────────── */
+
+body:not(.show-new-tab-button) .workspace-tab-header-new-tab,
+body:not(.show-close-buttons) .workspace-tab-header:only-child .workspace-tab-header-inner-close-button,
+body:not(.show-close-buttons) .mod-stacked .workspace-tab-header .workspace-tab-header-inner-close-button,
+body:not(.show-close-buttons) .workspace-tabs:not(.mod-stacked) .workspace-tab-header:not(:hover) .workspace-tab-header-inner-close-button,
+body:not(.show-tab-list-button) .workspace-tab-header-tab-list {
+	display: none;
+}
+
+/* ───────────────────────────────────────────────── */
+/* <<< different look when only tab
+──────────────────────────────────────────────────── */
+
+body:not(.no-tabbar-header-hybrid, .safari-tab-bar) .mod-root .workspace-tab-header-container:not(:hover) .workspace-tab-header:only-child {
+	width: 700px;
+	background-color: transparent;
+	box-shadow: none;
+}
+
+body:not(.no-tabbar-header-hybrid, .safari-tab-bar) .mod-root .workspace-tab-header-container:not(:hover) .workspace-tab-header:only-child .workspace-tab-header-inner-title {
+	font-size: 1.5em;
+	margin-bottom: 1px;
+	margin-left: -8px;
+}
+
+body:not(.no-tabbar-header-hybrid, .safari-tab-bar) .mod-root .workspace-tab-header:only-child .workspace-tab-header-inner-title,
+body:not(.no-tabbar-header-hybrid, .safari-tab-bar) .mod-root .workspace-tab-header:only-child::before,
+body:not(.no-tabbar-header-hybrid, .safari-tab-bar) .mod-root .workspace-tab-header:only-child::after,
+body:not(.no-tabbar-header-hybrid, .safari-tab-bar) .mod-root .workspace-tab-header:only-child {
+	transition-duration: var(--anim-duration-moderate);
+	transition-delay: var(--transition-delay-passing-over-protection);
+}
+
+/* ───────────────────────────────────────────────── */
+/* <<< Stacked Tabs
+──────────────────────────────────────────────────── */
+
+.mod-stacked .workspace-tab-header-inner {
+	background-color: var(--bg3);
+	border-right: var(--thin-muted-border);
+}
+
+/* hide useless tab bar when stacked */
+.mod-stacked .workspace-tab-header-container.workspace-tab-header-container {
+	height: 0;
+}
+
+.workspace-tab-header-inner.workspace-tab-header-inner:hover.workspace-tab-header-inner:hover * {
+	color: var(--hover-accent);
+}
+
+.workspace-tab-header-inner.workspace-tab-header-inner:hover.workspace-tab-header-inner:active * {
+	color: var(--color-accent);
+}
+
+/* ───────────────────────────────────────────────── */
+/* <<< Styling of Tabs
+──────────────────────────────────────────────────── */
+
+.mod-root .workspace-tab-header-container-inner {
+	margin-top: var(--size-2-2);
+}
+
+.is-active .workspace-tab-header-inner-title {
+	font-weight: 600;
+	text-rendering: geometricPrecision;
+}
+
+body .workspace-tab-header-container {
+	padding-right: 0;
+}
+
+.mod-root .workspace-tab-header::after,
+.mod-root .workspace-tab-header::before {
+	display: none;
+}
+
+.mod-root .workspace-tab-header-inner-title {
+	margin-bottom: -1px;
+}
+
+:is(.mod-top, .mod-root) .workspace-tab-header-container {
+	/* cannot modify --header-height, since it would also affect the sidebar tabs that are not top */
+	height: 35px;
+}
+
+body .workspace .mod-root .workspace-tab-header {
+	width: var(--tab-width);
+}
+
+/* pin */
+.workspace-tabs:not(.mod-stacked) .workspace-tab-header-status-container {
+	padding-top: var(--size-2-2);
+	padding-right: 10px;
+}
+
+body:not(.no-tabbar-header-hybrid) .mod-root .workspace-tab-header-container:not(:hover) .workspace-tab-header:only-child .workspace-tab-header-status-container {
+	padding-right: var(--size-4-3);
+}
+
+.mod-stacked .workspace-tab-header-status-icon .lucide-pin {
+	stroke: var(--icon-color);
+}
+
+.workspace-tabs:not(.mod-stacked) .workspace-tab-header-status-container .lucide-pin {
+	stroke: var(--tab-text-color);
+}
+
+.workspace-tab-header-status-icon:hover .lucide-pin.lucide-pin {
+	stroke: var(--icon-color-hover);
+}
+
+/* change order */
+.workspace-tab-header-status-container { order: 1 }
+.workspace-tab-header-inner-title { order: 3 }
+.workspace-tab-header-inner-icon { order: 2 }
+.workspace-tab-header-inner-close-button { order: 4 }
+
 /* ───────────────────────────────────────────────── */
 /* <<< Safari-Style Tab Bar
 ──────────────────────────────────────────────────── */
@@ -2386,124 +2514,6 @@ body.safari-tab-bar .workspace-tab-header-container-inner {
 .safari-tab-bar .sidebar-toggle-button:is(.mod-left, .mod-right) .clickable-icon {
 	height: var(--tab-height);
 }
-
-/* ───────────────────────────────────────────────── */
-/* <<< Hide Various Elements
-──────────────────────────────────────────────────── */
-
-body:not(.show-new-tab-button) .workspace-tab-header-new-tab,
-body:not(.show-close-buttons) .workspace-tab-header:only-child .workspace-tab-header-inner-close-button,
-body:not(.show-close-buttons) .mod-stacked .workspace-tab-header .workspace-tab-header-inner-close-button,
-body:not(.show-close-buttons) .workspace-tabs:not(.mod-stacked) .workspace-tab-header:not(:hover) .workspace-tab-header-inner-close-button,
-body:not(.show-tab-list-button) .workspace-tab-header-tab-list {
-	display: none;
-}
-
-/* ───────────────────────────────────────────────── */
-/* <<< different look when only tab
-──────────────────────────────────────────────────── */
-
-body:not(.no-tabbar-header-hybrid, .safari-tab-bar) .mod-root .workspace-tab-header-container:not(:hover) .workspace-tab-header:only-child {
-	width: 700px;
-	background-color: transparent;
-	box-shadow: none;
-}
-
-body:not(.no-tabbar-header-hybrid, .safari-tab-bar) .mod-root .workspace-tab-header-container:not(:hover) .workspace-tab-header:only-child .workspace-tab-header-inner-title {
-	font-size: 1.5em;
-	margin-bottom: 1px;
-	margin-left: -8px;
-}
-
-body:not(.no-tabbar-header-hybrid, .safari-tab-bar) .mod-root .workspace-tab-header:only-child .workspace-tab-header-inner-title,
-body:not(.no-tabbar-header-hybrid, .safari-tab-bar) .mod-root .workspace-tab-header:only-child::before,
-body:not(.no-tabbar-header-hybrid, .safari-tab-bar) .mod-root .workspace-tab-header:only-child::after,
-body:not(.no-tabbar-header-hybrid, .safari-tab-bar) .mod-root .workspace-tab-header:only-child {
-	transition-duration: var(--anim-duration-moderate);
-	transition-delay: var(--transition-delay-passing-over-protection);
-}
-
-/* ───────────────────────────────────────────────── */
-/* <<< Stacked Tabs
-──────────────────────────────────────────────────── */
-
-.mod-stacked .workspace-tab-header-inner {
-	background-color: var(--bg3);
-	border-right: var(--thin-muted-border);
-}
-
-/* hide useless tab bar when stacked */
-.mod-stacked .workspace-tab-header-container.workspace-tab-header-container {
-	height: 0;
-}
-
-/* ───────────────────────────────────────────────── */
-/* <<< Styling of Tabs
-──────────────────────────────────────────────────── */
-
-.is-active .workspace-tab-header-inner-title {
-	font-weight: 600;
-	text-rendering: geometricPrecision;
-}
-
-body .workspace-tab-header-container {
-	padding-right: 0;
-}
-
-.mod-root .workspace-tab-header::after,
-.mod-root .workspace-tab-header::before {
-	display: none;
-}
-
-.mod-root .workspace-tab-header-inner-title {
-	margin-bottom: -1px;
-}
-
-body:not(.mac-os-native) .mod-root .workspace-tabs:not(.mod-stacked) .workspace-tab-header-container-inner,
-body:not(.mac-os-native) .mod-root .workspace-tab-header-container {
-	border-bottom: var(--thin-muted-border);
-}
-
-.mod-root .workspace-tab-header-container-inner {
-	margin-top: var(--size-2-2);
-}
-
-:is(.mod-top, .mod-root) .workspace-tab-header-container {
-	/* cannot modify --header-height, since it would also affect the sidebar tabs that are not top */
-	height: 35px;
-}
-
-body .workspace .mod-root .workspace-tab-header {
-	width: var(--tab-width);
-}
-
-/* pin */
-.workspace-tabs:not(.mod-stacked) .workspace-tab-header-status-container {
-	padding-top: var(--size-2-2);
-	padding-right: 10px;
-}
-
-body:not(.no-tabbar-header-hybrid) .mod-root .workspace-tab-header-container:not(:hover) .workspace-tab-header:only-child .workspace-tab-header-status-container {
-	padding-right: var(--size-4-3);
-}
-
-.mod-stacked .workspace-tab-header-status-icon .lucide-pin {
-	stroke: var(--icon-color);
-}
-
-.workspace-tabs:not(.mod-stacked) .workspace-tab-header-status-container .lucide-pin {
-	stroke: var(--tab-text-color);
-}
-
-.workspace-tab-header-status-icon:hover .lucide-pin.lucide-pin {
-	stroke: var(--icon-color-hover);
-}
-
-/* change order */
-.workspace-tab-header-status-container { order: 1 }
-.workspace-tab-header-inner-title { order: 3 }
-.workspace-tab-header-inner-icon { order: 2 }
-.workspace-tab-header-inner-close-button { order: 4 }
 
 /* ───────────────────────────────────────────────── */
 /* << Release Notes Tab
@@ -2716,7 +2726,7 @@ body.mod-macos.is-hidden-frameless:not(.is-popout-window) .workspace .workspace-
 	padding-top: 30px;
 }
 
-.markdown-preview-view :is(h1, h2, h3, h4, h5, h6):first-child {
+body:not(.no-floating-metadata) .markdown-preview-view div:nth-child(4) > :is(h1, h2, h3, h4, h5, h6) {
 	margin-top: 0;
 }
 
@@ -2776,9 +2786,18 @@ body:not(.no-dimmed-inactive-pane) .workspace-leaf:not(.mod-active) .workspace-l
 }
 
 /* if there is more than one pane, highlight the currently focussed one */
-.mod-root .workspace-tabs:not(:only-of-type).mod-active .workspace-tabs:not(.mod-stacked) .workspace-tab-header-container-inner,
-.mod-root .workspace-tabs:not(:only-of-type).mod-active .workspace-tab-header-container {
-	border-bottom-color: var(--text-accent);
+.mod-root .workspace-tabs:not(:only-of-type,.mod-stacked).mod-active .workspace-tab-header-container-inner,
+.mod-root .workspace-tabs:not(:only-of-type,.mod-stacked).mod-active .workspace-tab-header-container {
+	border-bottom-color: var(--color-accent);
+}
+
+body:not(.safari-tab-bar) .mod-root .workspace-tabs:not(.mod-stacked) .workspace-tab-header-container-inner,
+body:not(.safari-tab-bar) .mod-root .workspace-tab-header-container {
+	border-bottom: 1px solid transparent;
+}
+
+.theme-light:not(.safari-tab-bar) .mod-root .workspace-tabs:not(:only-of-type,.mod-stacked) .workspace-tab-header-container {
+	border-bottom-width: 2px;
 }
 
 /* ───────────────────────────────────────────────── */
@@ -3695,7 +3714,7 @@ body .style-settings-heading[data-level="0"] .setting-item-name.setting-item-nam
 	border: var(--basic-border);
 	border-radius: var(--radius-m);
 
-	cursor: default;
+	cursor: var(--cursor);
 }
 
 .style-settings-heading[data-id="info-donation"] .style-settings-collapse-indicator {
@@ -3705,12 +3724,12 @@ body .style-settings-heading[data-level="0"] .setting-item-name.setting-item-nam
 .style-settings-heading[data-id="info-donation"] .setting-item-name {
 	font-family: var(--font-interface);
 	font-size: 0.95rem;
+	font-weight: 600;
 	margin-top: 0;
 }
 
 .style-settings-heading[data-id="info-donation"] .setting-item-name:hover {
 	color: unset;
-	cursor: default;
 	pointer-events: none;
 }
 
