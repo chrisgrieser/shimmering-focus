@@ -28,7 +28,7 @@
 
 # CONFIG
 export PATH=/usr/local/bin/:/opt/homebrew/bin/:$PATH
-CSS_PATH=~"/Main Vault/.obsidian/themes/Shimmering Focus.css"
+CSS_PATH=~"/Main Vault/.obsidian/themes/Shimmering Focus/theme.css"
 CHANGELOG_PATH="./changelog.md"
 
 # ---------------------------
