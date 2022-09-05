@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 3.70
+Version 3.71
 Source CSS: https://github.com/chrisgrieser/shimmering-focus/blob/main/source.css
 MIT License
 ──────────────────────────────────────────────────── */
@@ -110,6 +110,11 @@ MIT License
 	- Breadcrumbs
 	- Hider
 	- Longform
+		- Longform Sidebar
+		- Longform Sidebar Icons
+		- Longform Unknown Files Wizard
+		- Longform Editor
+		- Writing cssclass
 	- Kanban
 - Compatibility Info for the Obsidian Hub
 - Style Setting (YAML)
@@ -120,6 +125,7 @@ MIT License
  	- Colors (+)
  	- Editor & Media (+)
  	- Markup & Special Syntax (+)
+ 	- Longform & Writing (+)
  	- Donation Info (+)
  	/* @TOC-SPLIT-MARKER */
 
@@ -269,6 +275,17 @@ body {
 .modal-container a:hover {
 	text-decoration: var(--link-external-decoration-hover);
 	color: var(--link-external-color-hover);
+}
+
+/* task done */
+/* https://discord.com/channels/686053708261228577/989603365606531104/1016468110972301424 */
+.HyperMD-task-line .cm-formatting-task.cm-property {
+	color: var(--checklist-done-color);
+}
+
+.HyperMD-task-line .cm-formatting-task.cm-property ~ * {
+	text-decoration: var(--checklist-done-decoration);
+	color: var(--checklist-done-color);
 }
 
 /* ───────────────────────────────────────────────── */
@@ -472,37 +489,6 @@ body {
 	--color-base-100: hsl(var(--bg-hue) var(--bg-sat) 85%);
 }
 
-.theme-light :is(.writing, .longform-leaf) {
-	--color-base-00: hsl(var(--longform-bg-hue) var(--bg-sat) 100%);
-	--color-base-05: hsl(var(--longform-bg-hue) var(--bg-sat) 99%);
-	--color-base-10: hsl(var(--longform-bg-hue) var(--bg-sat) 98%);
-	--color-base-20: hsl(var(--longform-bg-hue) var(--bg-sat) 96%);
-	--color-base-25: hsl(var(--longform-bg-hue) var(--bg-sat) 89%);
-	--color-base-30: hsl(var(--longform-bg-hue) var(--bg-sat) 88%);
-	--color-base-35: hsl(var(--longform-bg-hue) var(--bg-sat) 83%);
-	--color-base-40: hsl(var(--longform-bg-hue) var(--bg-sat) 74%);
-	--color-base-50: hsl(var(--longform-bg-hue) var(--bg-sat) 67%);
-	--color-base-60: hsl(var(--longform-bg-hue) var(--bg-sat) 44%);
-	--color-base-70: hsl(var(--longform-bg-hue) var(--bg-sat) 35%);
-	--color-base-85s: hsl(var(--longform-bg-hue) calc(var(--bg-sat) * 2) 24%);
-	--color-base-100: hsl(var(--longform-bg-hue) var(--bg-sat) 13%);
-}
-
-.theme-dark :is(.writing, .longform-leaf) {
-	--color-base-00: hsl(var(--longform-bg-hue) var(--bg-sat) 12%);
-	--color-base-10: hsl(var(--longform-bg-hue) var(--bg-sat) 14%);
-	--color-base-20: hsl(var(--longform-bg-hue) var(--bg-sat) 15%);
-	--color-base-25: hsl(var(--longform-bg-hue) var(--bg-sat) 16%);
-	--color-base-30: hsl(var(--longform-bg-hue) var(--bg-sat) 21%);
-	--color-base-35: hsl(var(--longform-bg-hue) var(--bg-sat) 25%);
-	--color-base-40: hsl(var(--longform-bg-hue) var(--bg-sat) 33%);
-	--color-base-50: hsl(var(--longform-bg-hue) var(--bg-sat) 40%);
-	--color-base-60: hsl(var(--longform-bg-hue) var(--bg-sat) 60%);
-	--color-base-70: hsl(var(--longform-bg-hue) var(--bg-sat) 73%);
-	--color-base-85s: hsl(var(--longform-bg-hue) calc(var(--bg-sat) * 2) 82%);
-	--color-base-100: hsl(var(--longform-bg-hue) var(--bg-sat) 85%);
-}
-
 .theme-dark,
 .theme-light {
 	--hotkey-color: var(--secondary-accent);
@@ -559,6 +545,15 @@ body {
 	--h4-style: italic;
 	--h6-style: italic;
 	--inline-title-color: var(--text-faint);
+
+	/* Tags */
+	--tag-size: var(--font-text-size);
+	--tag-decoration-hover: underline;
+	--tag-background: none;
+	--tag-background-hover: none;
+	--tag-border-width: 0;
+	--tag-padding-x: 0;
+	--tag-padding-y: 0;
 
 	/* Tab */
 	--tab-background-active: var(--bg3);
@@ -618,8 +613,8 @@ body {
 	--link-unresolved-opacity: 1;
 	--code-background: var(--bg3);
 
-	/* deviders, like hr or resize handles */
-	--divider-color: var(--titlebar-background-focused);
+	/* dividers (like hr or resize handles) */
+	--divider-color: var(--titlebar-background-focused); /* so the divider part at the top does not stand out */
 	--divider-color-hover: var(--hover-accent);
 	--divider-width: 2px;
 }
@@ -658,13 +653,8 @@ body {
 
 	--radius-xs: 2px;
 
-	--tag-size: var(--font-text-size);
-	--tag-decoration-hover: underline;
-	--tag-background: none;
-	--tag-background-hover: none;
-	--tag-border-width: 0;
-	--tag-padding-x: 0;
-	--tag-padding-y: 0;
+	--longform-font-text-theme: "Crimson Pro S";
+	--longform-font-size: 1.2rem;
 }
 
 .theme-light {
@@ -1827,7 +1817,12 @@ body .vertical-tab-content {
 	font-size: 1.3em;
 	font-weight: 600;
 	letter-spacing: var(--heading-letter-spacing);
-	padding-bottom: 0;
+
+	background-color: var(--bg6);
+
+	padding: 2px 6px 0;
+
+	border-radius: var(--radius-s) var(--radius-s) 0 0;
 }
 
 .setting-item-heading:not(:first-child, .style-settings-heading) .setting-item-name {
@@ -1847,12 +1842,6 @@ body .vertical-tab-content {
 
 	margin-top: 0;
 	margin-bottom: var(--size-4-8);
-}
-
-.setting-item-heading:not(.style-settings-heading) .setting-item-name {
-	background-color: var(--bg6);
-	padding: 2px 6px;
-	border-radius: var(--radius-s) var(--radius-s) 0 0;
 }
 
 /* ───────────────────────────────────────────────── */
@@ -2354,12 +2343,22 @@ body:not(.no-tabbar-header-hybrid, .safari-tab-bar) .mod-root .workspace-tab-hea
 	margin-left: -8px;
 }
 
-body:not(.no-tabbar-header-hybrid, .safari-tab-bar) .mod-root .workspace-tab-header:only-child .workspace-tab-header-inner-title,
+body:not(.no-tabbar-header-hybrid, .safari-tab-bar) .mod-root .workspace-tab-header:only-child :is(.workspace-tab-header-inner-title, .workspace-tab-header-inner-icon, .workspace-tab-header-inner-icon svg),
 body:not(.no-tabbar-header-hybrid, .safari-tab-bar) .mod-root .workspace-tab-header:only-child::before,
 body:not(.no-tabbar-header-hybrid, .safari-tab-bar) .mod-root .workspace-tab-header:only-child::after,
 body:not(.no-tabbar-header-hybrid, .safari-tab-bar) .mod-root .workspace-tab-header:only-child {
 	transition-duration: var(--anim-duration-moderate);
 	transition-delay: var(--transition-delay-passing-over-protection);
+}
+
+/* icon with more spacing and size */
+body:not(.no-tabbar-header-hybrid, .safari-tab-bar) .mod-root .workspace-tab-header-container:not(:hover) .workspace-tab-header:only-child :is(.workspace-tab-header-inner-icon, .workspace-tab-header-status-container) {
+	padding-right: var(--size-4-3);
+}
+
+body:not(.no-tabbar-header-hybrid, .safari-tab-bar) .mod-root .workspace-tab-header-container:not(:hover) .workspace-tab-header:only-child :is(.workspace-tab-header-inner-icon, .workspace-tab-header-status-container) svg {
+	height: var(--icon-l);
+	width: var(--icon-l);
 }
 
 /* ───────────────────────────────────────────────── */
@@ -2421,20 +2420,11 @@ body .workspace .mod-root .workspace-tab-header {
 
 /* pin */
 .workspace-tabs:not(.mod-stacked) .workspace-tab-header-status-container {
-	padding-top: var(--size-2-2);
-	padding-right: 10px;
-}
-
-body:not(.no-tabbar-header-hybrid) .mod-root .workspace-tab-header-container:not(:hover) .workspace-tab-header:only-child .workspace-tab-header-status-container {
-	padding-right: var(--size-4-3);
+	padding-top: 2px;
 }
 
 .mod-stacked .workspace-tab-header-status-icon .lucide-pin {
 	stroke: var(--icon-color);
-}
-
-.workspace-tabs:not(.mod-stacked) .workspace-tab-header-status-container .lucide-pin {
-	stroke: var(--tab-text-color);
 }
 
 .workspace-tab-header-status-icon:hover .lucide-pin.lucide-pin {
@@ -3468,25 +3458,6 @@ body:not(.no-pandoc-citation-emphasis) .pandoc-citation.is-unresolved.is-unresol
 	display: none;
 }
 
-/* replacce the [] with () */
-.pandoc-citation-formatting {
-	font-size: 0;
-}
-
-.pandoc-citation-formatting::before {
-	content: "(";
-	font-size: var(--font-text-size);
-}
-
-.pandoc-citation + .pandoc-citation-formatting::before {
-	content: ")";
-}
-
-/* cause longform notes have different size */
-:is(.writing, .longform-leaf) .pandoc-citation-formatting::before {
-	font-size: var(--longform-font-size);
-}
-
 /* Style Settings disabled, since overriden by the theme anyway */
 .style-settings-heading[data-id="pandoc-reference-list"] + .style-settings-container,
 .style-settings-heading[data-id="pandoc-reference-list"] {
@@ -3625,28 +3596,12 @@ body .style-settings-heading[data-level="0"] .setting-item-name.setting-item-nam
 			hsl(330 var(--hue-slider-sat) var(--hue-slider-br)),
 			hsl(360 var(--hue-slider-sat) var(--hue-slider-br))
 		);
-	--hue-scale-for-bg:
-		linear-gradient(
-			to right,
-			hsl(0 var(--bg-sat) var(--hue-slider-br)),
-			hsl(30 var(--bg-sat) var(--hue-slider-br)),
-			hsl(60 var(--bg-sat) var(--hue-slider-br)),
-			hsl(90 var(--bg-sat) var(--hue-slider-br)),
-			hsl(120 var(--bg-sat) var(--hue-slider-br)),
-			hsl(150 var(--bg-sat) var(--hue-slider-br)),
-			hsl(180 var(--bg-sat) var(--hue-slider-br)),
-			hsl(210 var(--bg-sat) var(--hue-slider-br)),
-			hsl(240 var(--bg-sat) var(--hue-slider-br)),
-			hsl(270 var(--bg-sat) var(--hue-slider-br)),
-			hsl(300 var(--bg-sat) var(--hue-slider-br)),
-			hsl(330 var(--bg-sat) var(--hue-slider-br)),
-			hsl(360 var(--bg-sat) var(--hue-slider-br))
-		);
 }
 
 .style-settings-container .setting-item:is([data-id="highlight-hue-1"], [data-id$="-hue"]) input.slider {
 	height: 0.8em;
 	background: var(--hue-scale);
+	border-radius: var(--radius-xs);
 }
 
 .style-settings-container .setting-item:is([data-id="highlight-hue-1"], [data-id$="-hue"]) input.slider::-webkit-slider-thumb {
@@ -3659,6 +3614,12 @@ body .style-settings-heading[data-level="0"] .setting-item-name.setting-item-nam
 	top: -0.7em;
 
 	border-radius: var(--radius-xs);
+}
+
+/* disable numbered sliders */
+.style-settings-container .setting-item:is([data-id="highlight-hue-1"], [data-id$="-hue"]) input::before,
+.style-settings-container .setting-item:is([data-id="highlight-hue-1"], [data-id$="-hue"]) input::after {
+	display: none;
 }
 
 /* demo color box: highlight colors */
@@ -3680,34 +3641,6 @@ body .style-settings-heading[data-level="0"] .setting-item-name.setting-item-nam
 
 	border: var(--thin-border);
 	border-radius: var(--radius-s);
-}
-
-/* demo box: longform hue shift */
-.setting-item[data-id="longform-hue-shift-light"] .setting-item-control::before {
-	background-color: hsl(var(--longform-light-hue) 45% 90%);
-}
-
-.setting-item[data-id="longform-hue-shift-dark"] .setting-item-control::before {
-	background-color: hsl(var(--longform-dark-hue) 40% 25%);
-}
-
-.style-settings-container .setting-item[data-id^="longform-hue-shift"] .setting-item-control::before {
-	content: " ";
-
-	white-space: pre-wrap;
-
-	height: 1.6em;
-	width: 1.6em;
-
-	position: relative;
-	left: -1.2em;
-
-	border: var(--basic-border);
-	border-radius: var(--radius-s);
-}
-
-.style-settings-container .setting-item[data-id^="longform-hue-shift"] .setting-item-info {
-	margin-right: 40px;
 }
 
 /* ───────────────────────────────────────────────── */
@@ -3912,6 +3845,310 @@ body.hider-ribbon .workspace-ribbon.mod-left {
 /* << Longform
 ──────────────────────────────────────────────────── */
 
+/* ───────────────────────────────────────────────────
+/* <<< Longform Sidebar
+─────────────────────────────────────────────────── */
+
+.workspace-leaf-content[data-type="VIEW_TYPE_LONGFORM_EXPLORER"] .tab-panel-container {
+	padding-right: 0;
+	padding-left: 0;
+}
+
+.scene-container:is(.selected, .selected:hover) {
+	font-weight: 700;
+}
+
+/* new scenes */
+.tab-panel-container input#new-scene {
+	height: 20px;
+	padding-left: 3px;
+}
+
+.new-scene-container.new-scene-container.new-scene-container {
+	border-top: var(--basic-border);
+}
+
+/* project picker */
+.workspace-leaf-content .view-content div#project-picker-container {
+	margin-bottom: 0;
+}
+
+#project-picker {
+	background-color: var(--bg5);
+	border: var(--thin-border);
+	border-radius: 0;
+}
+
+div#select-projects select {
+	font-size: var(--font-small);
+	font-weight: 700;
+	white-space: nowrap;
+
+	color: var(--text-normal);
+	box-shadow: none;
+
+	padding-left: var(--size-2-2);
+
+	overflow: hidden;
+	text-overflow: ellipsis;
+}
+
+#project-picker select:hover {
+	text-decoration: none;
+	color: var(--hover-accent);
+}
+
+/* Scene List */
+#scene-list .scene-container {
+	line-height: 1.2em;
+	white-space: normal;
+	width: 100%;
+	padding: 4px 6px;
+	border: none;
+}
+
+#scene-list .scene-container.selected {
+	color: var(--color-accent);
+	background-color: var(--nav-item-background-active);
+}
+
+#scene-list .scene-container:is(.selected:hover, :hover) {
+	color: var(--hover-accent);
+	background-color: var(--nav-item-background-hover);
+}
+
+/* alternating row colors, factoring in the coloring */
+#scene-list li:nth-child(even) .scene-container[data-scene-path*="/_"]::before {
+	background-color: var(--a-row);
+}
+
+body:not(.no-alternating-rows) li:nth-child(even) :is(.draft-container, .scene-container) {
+	background-color: var(--a-row);
+}
+
+/* greyed out scenes */
+#scene-list .scene-container:is([data-scene-path*="Acknowledgements" i], [data-scene-path*="Notes for the Reader" i], [data-scene-path*="Appendix" i], [data-scene-path*="Metadata" i]) {
+	color: var(--text-faint);
+}
+
+/* ───────────────────────────────────────────────────
+/* <<< Longform Sidebar Icons
+─────────────────────────────────────────────────── */
+/* hide the (mostly unused) Drafts button */
+body:not(.longform-show-drafts-button) .workspace-leaf-content[data-type="VIEW_TYPE_LONGFORM_EXPLORER"] .tab-list button:nth-child(2) {
+	display: none;
+}
+
+/* container needs to be relative for `.current-draft-path` */
+#project-picker-container { position: relative }
+
+/* turn the draft-path into a home-button */
+#project-picker-container .current-draft-path.current-draft-path.current-draft-path.current-draft-path.current-draft-path {
+	font-size: 0;
+	position: absolute;
+	right: -0.4rem;
+	bottom: -1.85rem;
+}
+
+.current-draft-path::before {
+	content: "home";
+	position: relative;
+	bottom: -5px;
+	left: 3px;
+}
+
+.workspace-leaf-content[data-type="VIEW_TYPE_LONGFORM_EXPLORER"] .tabs .tab-list {
+	padding: 4px 4px 0;
+	margin: 0;
+	border-bottom: var(--basic-border);
+}
+
+.current-draft-path::before,
+.workspace-leaf-content[data-type="VIEW_TYPE_LONGFORM_EXPLORER"] button::before {
+	font-family: var(--icon-font);
+	font-size: calc(1.2 * var(--font-text-size));
+}
+
+.current-draft-path,
+.workspace-leaf-content[data-type="VIEW_TYPE_LONGFORM_EXPLORER"] .tab-list.tab-list.tab-list button {
+	font-size: 0;
+
+	height: 25px;
+	width: 37px;
+
+	color: var(--text-faint);
+	background-color: var(--bg3);
+
+	padding: 4px;
+	margin-right: 10px;
+
+	border: var(--thin-border);
+	border-radius: var(--radius-s);
+}
+
+.workspace-leaf-content[data-type="VIEW_TYPE_LONGFORM_EXPLORER"] .tab-list button:nth-child(1)::before {
+	content: "format_list_numbered";
+}
+
+.workspace-leaf-content[data-type="VIEW_TYPE_LONGFORM_EXPLORER"] .tab-list button:nth-child(2)::before {
+	content: "import_contacts";
+}
+
+.workspace-leaf-content[data-type="VIEW_TYPE_LONGFORM_EXPLORER"] .tab-list button:nth-child(3)::before {
+	content: "merge_type";
+}
+
+/* selected */
+.workspace-leaf-content[data-type="VIEW_TYPE_LONGFORM_EXPLORER"] button.selected.selected.selected {
+	color: var(--text-normal);
+	background-color: var(--nav-item-background-hover);
+}
+
+/* hovered */
+.current-draft-path.current-draft-path.current-draft-path.current-draft-path:hover,
+.workspace-leaf-content[data-type="VIEW_TYPE_LONGFORM_EXPLORER"] .tab-list.tab-list button:hover {
+	color: var(--icon-color-hover);
+	background-color: var(--nav-item-background-active);
+}
+
+/* ───────────────────────────────────────────────────
+/* <<< Longform Unknown Files Wizard
+─────────────────────────────────────────────────── */
+
+.tab-panel-container.tab-panel-container.tab-panel-container #longform-unknown-files-wizard {
+	padding: 0;
+	margin-top: 3px;
+	border-top: var(--basic-border);
+}
+
+.longform-unknown-inner.longform-unknown-inner.longform-unknown-inner.longform-unknown-inner {
+	padding-left: 0;
+	border: none;
+}
+
+.longform-unknown-explanation.longform-unknown-explanation.longform-unknown-explanation.longform-unknown-explanation {
+	font-size: 1em;
+	font-weight: 700;
+	line-height: 1.3;
+
+	color: var(--text-muted);
+	background-color: var(--bg3);
+
+	padding: 4px;
+	margin-top: 0;
+	margin-bottom: 3px;
+}
+
+#longform-unknown-files-wizard .longform-unknown-inner.longform-unknown-inner.longform-unknown-inner > ul {
+	padding-left: 3px;
+	margin: 0;
+}
+
+#longform-unknown-files-wizard .longform-unknown-inner.longform-unknown-inner.longform-unknown-inner > ul > li:nth-child(even) {
+	background-color: var(--a-row);
+}
+
+.longform-unknown-file {
+	line-height: 1.25;
+	padding: 1px 0 4px;
+}
+
+.longform-unknown-file.longform-unknown-file.longform-unknown-file.longform-unknown-file button {
+	font-size: 0.7em;
+	font-weight: 400;
+	line-height: 1;
+	text-shadow: none;
+
+	padding: 1px 3px 3px;
+	margin-right: 5px;
+
+	border-width: 1px;
+	border-radius: var(--radius-s);
+}
+
+.longform-unknown-ignore.longform-unknown-ignore.longform-unknown-ignore.longform-unknown-ignore:not(:hover) {
+	border-color: var(--text-faint);
+}
+
+/* ───────────────────────────────────────────────────
+/* <<< Longform Editor
+/* <<< Writing cssclass
+─────────────────────────────────────────────────── */
+/* https://github.com/kevboh/longform#scene-only-styling */
+
+/* background */
+.theme-light :is(.writing, .longform-leaf) {
+	--longform-bg: hsl(var(--longform-bg-hue) var(--bg-sat) 100%);
+}
+
+.theme-dark :is(.writing, .longform-leaf) {
+	--longform-bg: hsl(var(--longform-bg-hue) var(--bg-sat) 12%);
+}
+
+.longform-leaf :is(.markdown-preview-view, .mod-cm6.cm-s-obsidian),
+.writing:is(.markdown-preview-view, .mod-cm6.cm-s-obsidian) {
+	background-color: var(--longform-bg);
+}
+
+/* font family and size */
+body :is(.longform-leaf, .writing) :is(.markdown-preview-view, .cm-contentContainer) {
+	font-family: var(--longform-font-text-theme);
+	font-size: var(--longform-font-size);
+}
+
+/* keep any code smaller */
+.app-container.app-container.app-container.app-container.app-container.app-container :is(.longform-leaf, .writing) :is(.frontmatter-container, .cm-hmd-frontmatter, .cm-formatting-task, .HyperMD-codeblock, code, .cm-inline-code, .HyperMD-table-row) {
+	font-family: var(--font-monospace);
+	font-size: 0.9rem;
+}
+
+/* justify text */
+/* this selector will hopefully get better with `:has()` */
+body:not(.longform-left-aligned) :is(.writing, .longform-leaf) .cm-line:not(.HyperMD-codeblock, .HyperMD-header) > :not(.cm-hmd-frontmatter),
+body:not(.longform-left-aligned) :is(.writing, .longform-leaf) .cm-line:not(.HyperMD-codeblock, .HyperMD-header, .HyperMD-task-line),
+body:not(.longform-left-aligned) :is(.writing, .longform-leaf) :is(p, .footnotes, .HyperMD-footnote) {
+	text-align: justify;
+	hyphens: auto;
+}
+
+/* headings */
+.app-container :is(.writing, .longform-leaf) :is(h1, h2, h3, h4, h5, h6, .cm-header) {
+	font-family: var(--longform-font-text-theme);
+	letter-spacing: calc(var(--heading-letter-spacing) * 0.5);
+}
+
+.longform-text-indent.longform-text-indent :is(.writing, .longform-leaf) p {
+	text-indent: 1.5em;
+}
+
+/* line height */
+:is(.writing, .longform-leaf) table,
+:is(.writing, .longform-leaf) .cm-line:not(.HyperMD-header),
+:is(.writing, .longform-leaf) .cm-line:not(.HyperMD-header) > :not(.cm-header, .cm-hmd-frontmatter) {
+	line-height: 1.35;
+}
+
+:is(.writing, .longform-leaf) :is(h1, h2, h3, h4, h5, h6, .cm-line.HyperMD-header),
+:is(.writing, .longform-leaf) .cm-line > :is(.cm-header, .cm-hmd-frontmatter) {
+	line-height: 1;
+}
+
+:is(.writing, .longform-leaf) .cm-header.cm-header {
+	line-height: 1.05;
+	position: relative;
+	top: -2px;
+}
+
+/* emphasized tasks */
+body.longform-tasks-different.longform-tasks-different.longform-tasks-different.longform-tasks-different :is(.writing, .longform-leaf) :is(.HyperMD-task-line, ul.contains-task-list) {
+	color: var(--text-faint);
+}
+
+/* fix for code block header hack */
+.app-container :is(.writing, .longform-leaf) pre[class*="language-"]::before {
+	line-height: 1.3;
+}
+
 /* ───────────────────────────────────────────────── */
 /* << Kanban
 ──────────────────────────────────────────────────── */
@@ -4031,13 +4268,18 @@ body.hider-ribbon .workspace-ribbon.mod-left {
 
 .kanban-plugin__item-title-wrapper {
 	background: var(--bg1);
-	padding-top: var(--size-2-1);
-	padding-bottom: var(--size-2-1);
+	padding-top: var(--size-2-2);
+	padding-bottom: var(--size-2-3);
 }
 
 /* markup in kanban cards */
-.kanban-plugin__item-markdown :is(ul, p, img) {
+.kanban-plugin__item-markdown :is(ul, ol, p, img) {
+	line-height: 1.35;
 	margin: 0;
+}
+
+.kanban-plugin__item-markdown :is(ul, ol) {
+	padding-inline-start: 1em;
 }
 
 .kanban-plugin__lane-title-text p {
@@ -4270,15 +4512,6 @@ settings:
    max: 360
    step: 5
   -
-   id: longform-bg-hue
-   title: 'Longform/Writing: Background Color Tone (Hue)'
-   description: Background color tone of notes from the longform plugin or notes with the 'writing' cssclass.
-   type: variable-number-slider
-   default: 200
-   min: 0
-   max: 360
-   step: 5
-  -
    id: uncolored-bold
    title: Uncolored Bold
    description: Bold text will use the standard text color instead of being colored.
@@ -4383,6 +4616,62 @@ settings:
    min: 10
    max: 60
    step: 2
+  -
+# << Longform & Writing (+)
+   id: longform-settings
+   title: ✍️ Longform & Writing
+   description: Settings for notes in longform projects and notes with the writing cssclass.
+   type: heading
+   level: 1
+   collapsed: true
+  -
+   id: longform-font
+   title: 'Main Font'
+   description: "Font used in longform/writing notes (Except code, which still use the monospace font.)"
+   type: variable-text
+   default: '"Crimson Pro S"'
+  -
+   id: longform-font-size
+   title: Font Size longform/writing notes
+   type: variable-number-slider
+   default: 1.2
+   min: 0.7
+   max: 2
+   step: 0.05
+   format: rem
+  -
+   id: longform-bg-hue
+   title: 'Background Color Tone (Hue)'
+   description: Using this setting to visually distinguish your longform and writing notes from the rest of your vault.
+   type: variable-number-slider
+   default: 200
+   min: 0
+   max: 360
+   step: 5
+  -
+   id: longform-show-drafts-button
+   title: 'Re-enable the "Drafts" Button'
+   description: 'By default, this theme hides the "Drafts" Button, since Longform 2.0 made drafts largely obsolete.'
+   type: class-toggle
+   default: false
+  -
+   id: longform-tasks-different
+   title: 'Tasks: Use Gray instead of Normal Text Color'
+   description: "This can help with differentiating tasks from 'finished' text."
+   type: class-toggle
+   default: false
+  -
+   id: longform-left-aligned
+   title: Left-aligned text
+   description: Use left-aligned text instead of justified text.
+   type: class-toggle
+   default: false
+  -
+   id: longform-text-indent
+   title: First-Line Indent (Reading Mode)
+   description: Indent the first Line of a paragraph in longform/writing notes (Reading Mode only).
+   type: class-toggle
+   default: false
   -
 # << Donation Info (+)
    id: info-donation
