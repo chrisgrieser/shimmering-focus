@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 3.69
+Version 3.70
 Source CSS: https://github.com/chrisgrieser/shimmering-focus/blob/main/source.css
 MIT License
 ──────────────────────────────────────────────────── */
@@ -444,10 +444,9 @@ body {
 
 .theme-light {
 	--color-base-00: hsl(var(--bg-hue) var(--bg-sat) 100%);
-	--color-base-05: hsl(var(--bg-hue) var(--bg-sat) 99%);
 	--color-base-10: hsl(var(--bg-hue) var(--bg-sat) 98%);
 	--color-base-20: hsl(var(--bg-hue) var(--bg-sat) 96%);
-	--color-base-25: hsl(var(--bg-hue) var(--bg-sat) 89%);
+	--color-base-25: hsl(var(--bg-hue) var(--bg-sat) 92%);
 	--color-base-30: hsl(var(--bg-hue) var(--bg-sat) 88%);
 	--color-base-35: hsl(var(--bg-hue) var(--bg-sat) 83%);
 	--color-base-40: hsl(var(--bg-hue) var(--bg-sat) 74%);
@@ -461,9 +460,9 @@ body {
 .theme-dark {
 	--color-base-00: hsl(var(--bg-hue) var(--bg-sat) 12%);
 	--color-base-10: hsl(var(--bg-hue) var(--bg-sat) 14%);
-	--color-base-20: hsl(var(--bg-hue) var(--bg-sat) 15%);
-	--color-base-25: hsl(var(--bg-hue) var(--bg-sat) 16%);
-	--color-base-30: hsl(var(--bg-hue) var(--bg-sat) 21%);
+	--color-base-20: hsl(var(--bg-hue) var(--bg-sat) 16%);
+	--color-base-25: hsl(var(--bg-hue) var(--bg-sat) 18%);
+	--color-base-30: hsl(var(--bg-hue) var(--bg-sat) 22%);
 	--color-base-35: hsl(var(--bg-hue) var(--bg-sat) 25%);
 	--color-base-40: hsl(var(--bg-hue) var(--bg-sat) 33%);
 	--color-base-50: hsl(var(--bg-hue) var(--bg-sat) 40%);
@@ -619,8 +618,8 @@ body {
 	--link-unresolved-opacity: 1;
 	--code-background: var(--bg3);
 
-	/* devides, like hr or resize handles */
-	--divider-color: var(--muted-border-color);
+	/* deviders, like hr or resize handles */
+	--divider-color: var(--titlebar-background-focused);
 	--divider-color-hover: var(--hover-accent);
 	--divider-width: 2px;
 }
@@ -3961,14 +3960,23 @@ body.hider-ribbon .workspace-ribbon.mod-left {
 	border-color: var(--hover-accent);
 }
 
-.kanban-plugin__item:hover .kanban-plugin__item-title-wrapper {
-	background-color: var(--bg5);
+.kanban-plugin__item {
+	border: var(--thin-muted-border);
 }
 
 .kanban-plugin__lane-header-wrapper {
 	background-color: var(--bg1);
 	padding: var(--size-2-1) var(--size-4-1);
+	border-bottom: var(--thin-border);
 	border-radius: var(--radius-s) var(--radius-s) 0 0;
+}
+
+.theme-dark .kanban-plugin__lane-header-wrapper {
+	border-bottom-color: var(--muted-border-color);
+}
+
+.theme-light .kanban-plugin__lane-header-wrapper {
+	background-color: var(--bg6);
 }
 
 .kanban-plugin__item-postfix-button-wrapper {
@@ -3993,15 +4001,22 @@ body.hider-ribbon .workspace-ribbon.mod-left {
 .kanban-plugin__lane-items {
 	padding-top: 0;
 	padding-bottom: 0;
-	margin: 0;
+	margin: 0 1px;
 }
 
-body .kanban-plugin__item-title-wrapper {
-	background: var(--bg2);
+.kanban-plugin__lane-title-count.kanban-plugin__lane-title-count {
+	background-color: var(--bg3);
+	border: var(--thin-muted-border);
 }
 
-.kanban-plugin__lane {
+.theme-dark .kanban-plugin__lane {
 	background-color: var(--bg5);
+	border: 1px solid var(--bg1);
+}
+
+.theme-light .kanban-plugin__lane {
+	background-color: var(--bg3);
+	border: var(--thin-border);
 }
 
 .kanban-plugin__new-item-button.kanban-plugin__new-item-button {
@@ -4015,6 +4030,7 @@ body .kanban-plugin__item-title-wrapper {
 }
 
 .kanban-plugin__item-title-wrapper {
+	background: var(--bg1);
 	padding-top: var(--size-2-1);
 	padding-bottom: var(--size-2-1);
 }
@@ -4022,6 +4038,12 @@ body .kanban-plugin__item-title-wrapper {
 /* markup in kanban cards */
 .kanban-plugin__item-markdown :is(ul, p, img) {
 	margin: 0;
+}
+
+.kanban-plugin__lane-title-text p {
+	font-family: var(--font-heading-theme);
+	font-size: var(--font-ui-large);
+	letter-spacing: var(--heading-letter-spacing);
 }
 
 /* ───────────────────────────────────────────────── */
