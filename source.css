@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 3.65
+Version 3.66
 Source CSS: https://github.com/chrisgrieser/shimmering-focus/blob/main/source.css
 MIT License
 ──────────────────────────────────────────────────── */
@@ -47,6 +47,7 @@ MIT License
 	- PDFs
 - Modals
 	- Settings Menu
+	- Individual Setting Pages
 		- Settings Menu Colors
 		- Settings Headings
 		- Remove Color Picker from Settings
@@ -79,6 +80,7 @@ MIT License
 	- Hidden Sidebar Headers
 	- Sidebar Styling
 	- Editor
+	- Search Matches
 	- Collaps Indicators
 	- Clean Embeds
 	- Active / Inactive Note
@@ -362,7 +364,6 @@ https://www.youtube.com/watch?v=yl0pvIRTWWo&t=7s */
 	--font-ui-large: 20px;
 
 	--code-size: var(--font-smaller);
-	--code-background: var(--background-primary-alt);
 	--footnote-size: var(--font-smaller);
 
 	--divider-width: 1px;
@@ -526,6 +527,8 @@ body {
 	--link-color-hover: var(--text-accent-hover);
 	--link-external-color: var(--text-accent);
 	--link-external-color-hover: var(--text-accent-hover);
+
+	--inline-code-color: var(--secondary-accent); /* own variable */
 }
 
 /* ───────────────────────────────────────────────── */
@@ -577,7 +580,7 @@ body {
 	/* Blockquote */
 	--blockquote-border-thickness: 8px;
 	--blockquote-border-color: var(--bg5);
-	--blockquote-background-color: var(--bg2);
+	--blockquote-background-color: var(--bg3);
 
 	/* File items */
 	--nav-item-size: var(--font-ui-medium);
@@ -614,6 +617,7 @@ body {
 	--link-unresolved-opacity: 1;
 	--divider-color: var(--muted-border-color);
 	--divider-color-hover: var(--hover-accent);
+	--code-background: var(--bg3);
 }
 
 /* ───────────────────────────────────────────────── */
@@ -1051,9 +1055,10 @@ body:not(.show-urls) .cm-s-obsidian:not(.is-live-preview) .cm-line:not(.cm-activ
 /* "*:not(pre) > code" targets inline code
 (i.e. code that is not in a pre (= block) ) */
 .is-live-preview code,
-.markdown-preview-view *:not(pre) > code,
+body .markdown-preview-view *:not(pre) > code,
 .cm-inline-code.cm-inline-code.cm-inline-code.cm-inline-code.cm-inline-code.cm-inline-code {
-	color: var(--text-accent);
+	color: var(--inline-code-color);
+	background-color: var(--bg3); /* more distinduishable from background */
 }
 
 .is-live-preview code,
@@ -1736,6 +1741,38 @@ body:not(.show-close-buttons) .modal-close-button {
 	line-height: 1.35; /* distance between items */
 	margin-bottom: 0; /* distance between items */
 	border-radius: 0;
+}
+
+.mod-settings input {
+	min-width: 250px;
+}
+
+/* thicker "community plugins", "hotkey" & "appearance" */
+/* via non-last-child b/c the settings search plugin adds a group in front */
+.vertical-tab-header-group:nth-last-child(3) .vertical-tab-header-group-items .vertical-tab-nav-item:is(:nth-child(3), :nth-child(4), :last-child) {
+	font-weight: 900;
+	color: var(--text-normal);
+}
+
+/* ───────────────────────────────────────────────── */
+/* << Individual Setting Pages
+──────────────────────────────────────────────────── */
+.installed-plugins-container .setting-item-description div:nth-child(2)::first-letter {
+	text-transform: lowercase;
+}
+
+.installed-plugins-container .setting-item-description div:nth-child(2) {
+	font-style: italic;
+}
+
+.installed-plugins-container .setting-item-description > div:first-child {
+	margin-top: -0.1em;
+	margin-bottom: 2px;
+}
+
+.installed-plugins-container .setting-item-description > div:nth-child(2) {
+	margin-top: -17.5px;
+	margin-left: 100px;
 }
 
 /* ───────────────────────────────────────────────── */
@@ -2676,7 +2713,19 @@ body.mod-macos.is-hidden-frameless:not(.is-popout-window) .workspace .workspace-
 /* save space at the top */
 .markdown-preview-view,
 .markdown-source-view.mod-cm6 .cm-scroller {
-	padding-top: var(--size-4-6);
+	padding-top: 30px;
+}
+
+.markdown-preview-view :is(h1, h2, h3, h4, h5, h6):first-child {
+	margin-top: 0;
+}
+
+/* ───────────────────────────────────────────────── */
+/* << Search Matches
+──────────────────────────────────────────────────── */
+/* actually affects any kind of search anywhere in the app, but mostly the Editor */
+.suggestion-highlight {
+	color: var(--search-match-color);
 }
 
 /* ───────────────────────────────────────────────── */
