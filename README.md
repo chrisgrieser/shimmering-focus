@@ -3,8 +3,7 @@
 
 A minimalistic Obsidian theme for keyboard-centric users.
 
-> "The most *aggressively* minimalistic theme I'm aware of."  
-> *– [Eleanor Konik, The Obsidian Roundup](https://www.obsidianroundup.org/2022-01-29/)*
+![](assets/promo-screenshot-big.png)
 
 ## Table of Contents
 <!-- MarkdownTOC -->
