@@ -6,16 +6,13 @@ A minimalistic Obsidian theme for keyboard-centric users.
 ![](assets/promo-screenshot-big.png)
 
 ## Table of Contents
-<!-- MarkdownTOC -->
+<!-- MarkdownTOC enable-levels=2 -->
 
 - [Key Features](#key-features)
 - [More Features](#more-features)
 - [CSS Classes](#css-classes)
 - [Recommended Plugins](#recommended-plugins)
 - [Credits](#credits)
-	- [About Me](#about-me)
-	- [Profiles](#profiles)
-	- [Thanks & Credits](#thanks--credits)
 - [Buy me a Coffee](#buy-me-a-coffee)
 
 <!-- /MarkdownTOC -->
