@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 3.64
+Version 3.65
 Source CSS: https://github.com/chrisgrieser/shimmering-focus/blob/main/source.css
 MIT License
 ──────────────────────────────────────────────────── */
@@ -49,7 +49,7 @@ MIT License
 	- Settings Menu
 		- Settings Menu Colors
 		- Settings Headings
-		- removed accent color icon since unused
+		- Remove Color Picker from Settings
 	- Theme Browser
 	- Plugin Browser
 	- Toggles
@@ -1712,17 +1712,42 @@ body:not(.show-close-buttons) .modal-close-button {
 	border-left: var(--basic-border);
 }
 
-/* <<< Settings Menu Colors */
-.theme-light .vertical-tab-content {
+/* setting tab selection */
+.vertical-tab-header-group,
+.vertical-tab-header {
+	padding: 0;
+}
+
+.vertical-tab-header.vertical-tab-header.vertical-tab-header {
+	padding-bottom: var(--size-4-10); /* overscroll */
+	border-right: none;
+}
+
+.vertical-tab-header-group-title {
+	display: none;
+}
+
+.vertical-tab-header-group:not(:first-child) {
+	border-top: var(--basic-border);
+}
+
+.vertical-tab-nav-item {
+	font-size: 1em;
+	line-height: 1.35; /* distance between items */
+	margin-bottom: 0; /* distance between items */
+	border-radius: 0;
+}
+
+/* ───────────────────────────────────────────────── */
+/* <<< Settings Menu Colors
+──────────────────────────────────────────────────── */
+
+body .vertical-tab-content {
 	background-color: var(--bg3);
 }
 
 .theme-light :is(.vertical-tab-header, .vertical-tab-nav-item) {
-	background-color: var(--bg4);
-}
-
-.theme-dark .vertical-tab-content {
-	background-color: var(--bg3);
+	background-color: var(--bg2);
 }
 
 .theme-dark :is(.vertical-tab-header, .vertical-tab-nav-item) {
@@ -1737,7 +1762,21 @@ body:not(.show-close-buttons) .modal-close-button {
 	background-color: hsl(var(--bg-hue) 5% 25%);
 }
 
-/* <<< Settings Headings */
+.vertical-tab-nav-item.is-active {
+	color: var(--text-accent);
+	background-color: var(--nav-item-background-active);
+}
+
+.vertical-tab-nav-item.is-active:hover,
+.vertical-tab-nav-item:hover {
+	color: var(--text-accent-hover);
+	background-color: var(--nav-item-background-hover);
+}
+
+/* ───────────────────────────────────────────────── */
+/* <<< Settings Headings
+──────────────────────────────────────────────────── */
+
 .setting-item.setting-item-heading .setting-item-name {
 	font-family: var(--font-heading-theme);
 	font-size: 1.3em;
@@ -1766,13 +1805,15 @@ body:not(.show-close-buttons) .modal-close-button {
 }
 
 .setting-item-heading:not(.style-settings-heading) .setting-item-name {
-	background-color: var(--basic-border-color);
+	background-color: var(--bg6);
 	padding: 2px 6px;
-	margin-bottom: -1px;
 	border-radius: var(--radius-s) var(--radius-s) 0 0;
 }
 
-/* <<< removed accent color icon since unused */
+/* ───────────────────────────────────────────────── */
+/* <<< Remove Color Picker from Settings
+──────────────────────────────────────────────────── */
+
 .mod-settings .vertical-tab-content > .setting-item:nth-child(2) > .setting-item-control > input[type="color"] {
 	width: 350px;
 	visibility: hidden;
@@ -1799,42 +1840,6 @@ body:not(.show-close-buttons) .modal-close-button {
 
 .setting-item-description.setting-item-description.setting-item-description {
 	color: var(--text-gray);
-}
-
-/* setting tab selection */
-.vertical-tab-header-group,
-.vertical-tab-header {
-	padding: 0;
-}
-
-.vertical-tab-header.vertical-tab-header.vertical-tab-header {
-	padding-bottom: var(--size-4-10); /* overscroll */
-	border-right: none;
-}
-
-.vertical-tab-header-group-title {
-	display: none;
-}
-
-.vertical-tab-header-group:not(:first-child) {
-	border-top: var(--basic-border);
-}
-
-.vertical-tab-nav-item {
-	font-size: 1em;
-	margin-bottom: 1px; /* distance between items */
-	border-radius: 0;
-}
-
-.vertical-tab-nav-item.is-active {
-	color: var(--text-accent);
-	background-color: var(--nav-item-background-active);
-}
-
-.vertical-tab-nav-item.is-active:hover,
-.vertical-tab-nav-item:hover {
-	color: var(--text-accent-hover);
-	background-color: var(--nav-item-background-hover);
 }
 
 /* ───────────────────────────────────────────────── */
@@ -1964,6 +1969,29 @@ select:hover {
 input[type="text"][type] {
 	background-color: var(--bg1);
 }
+
+/* 🏴‍☠️ jdaniel for the idea */
+input[type="range"] {
+	min-width: 150px;
+	align-items: center;
+}
+
+input[type="range"]::before,
+input[type="range"]::after {
+	display: block;
+
+	font-size: var(--font-ui-smaller);
+
+	color: var(--text-muted);
+	background-color: inherit;
+
+	padding: 2px;
+
+	border: var(--thin-border);
+	border-radius: var(--radius-s);
+}
+input[type="range"]::before { content: attr(min) }
+input[type="range"]::after { content: attr(max) }
 
 /* ───────────────────────────────────────────────── */
 /* << Progress Bar
