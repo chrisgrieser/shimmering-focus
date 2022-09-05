@@ -12,7 +12,6 @@ A minimalistic Obsidian theme for keyboard-centric users.
 - [More Features](#more-features)
 - [CSS Classes](#css-classes)
 - [Recommended Plugins](#recommended-plugins)
-- [Obsidian 0.16](#obsidian-016)
 - [Credits](#credits)
 	- [About Me](#about-me)
 	- [Profiles](#profiles)
@@ -25,6 +24,8 @@ A minimalistic Obsidian theme for keyboard-centric users.
 - __Radical Minimalism:__ UI elements that require the mouse are still accessible on hover. All hidden UI elements can be permanently re-enabled with the [Style Settings Plugin](https://obsidian.md/plugins?id=obsidian-style-settings).
 - __Condensed Display of Information:__ Unnecessary padding and white-space is removed, which is beneficial for small screens or higher zoom levels.
 - __High Customizability:__ Dozens of customization options available via [Style Settings Plugin](https://obsidian.md/plugins?id=obsidian-style-settings).
+
+![](assets/explainer-screenshot.png)
 
 ## More Features
 - Options for __native macOS look__ using the [Style Settings Plugin](https://obsidian.md/plugins?id=obsidian-style-settings).
@@ -57,14 +58,8 @@ Available CSS classes are:
 - [Style Settings Plugin](https://obsidian.md/plugins?id=obsidian-style-settings): Unlocks dozens of customization options.
 - [Supercharged Links](https://obsidian.md/plugins?id=supercharged-links-obsidian): The theme includes various built-in styling for the Supercharged Links plugin, e.g. appending a "🌱" to notes with the `#seedling` tag.
 - for macOS: [Electron Window Tweaker](https://obsidian.md/plugins?id=obsidian-electron-window-tweaker): Position the traffic lights for even more native macOS look (same position as in Safari: X = 20, Y = 18). You can even completely hide the traffic lights by using negative values, e.g. X = -60.
-- While using the theme, you can disable the Hider Plugin, since *Shimmering Focus* already hides everything it does hide.
 
-## Obsidian 0.16
-*Due to Obsidian update 0.16, I had to start a full rewrite of the theme. Since the theme has more than 15,000 lines of CSS, it will unfortunately take quite a bit of time until all previous features are restored. The documentation, to, will be rewritten.*
-
-__Technical Roadmap for 0.16__
-- [ ] new Promo Screenshot (16:9, 512 x 288 px)
-- [ ] 🎯 PR to `obsidian-releases`, removing `legacy` label and updating screenshot link.
+*While using the theme, you can disable the Hider Plugin, since Shimmering Focus already hides more than the plugin does.*
 
 ## Credits
 
