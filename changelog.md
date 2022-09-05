@@ -1,4 +1,9 @@
 # Changelog
+- 2022-09-05	kanban board rewrite
+- 2022-09-05	iMac Helmholtz (1 file)
+- 2022-09-05	iMac Helmholtz (1 file)
+- 2022-09-05	add explainer screenshot
+- 2022-09-05	propertions for promo screenshot
 - 2022-09-05	round brackets reading mode pandoc
 - 2022-09-05	fix various tab bar related niche cases
 - 2022-09-04	setting menu colors

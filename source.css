@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 3.68
+Version 3.69
 Source CSS: https://github.com/chrisgrieser/shimmering-focus/blob/main/source.css
 MIT License
 ──────────────────────────────────────────────────── */
@@ -110,6 +110,7 @@ MIT License
 	- Breadcrumbs
 	- Hider
 	- Longform
+	- Kanban
 - Compatibility Info for the Obsidian Hub
 - Style Setting (YAML)
  	- Show / Hide UI Elements (+)
@@ -285,6 +286,7 @@ https://www.youtube.com/watch?v=yl0pvIRTWWo&t=7s */
 	--font-interface: "";
 	--font-text: "";
 	--font-monospace: "";
+	--font-size-text: "";
 
 	/* Icons */
 	--icon-size: var(--icon-m);
@@ -588,8 +590,8 @@ body {
 	--nav-item-color-hover: var(--text-accent-hover);
 	--nav-item-color-active: var(--text-accent);
 	--nav-item-color-highlighted: var(--text-accent-hover);
-	--nav-item-background-hover: var(--bg5);
-	--nav-item-background-active: var(--bg5);
+	--nav-item-background-hover: var(--bg6);
+	--nav-item-background-active: var(--nav-item-background-hover);
 
 	/* Checkboxes */
 	--checkbox-radius: var(--radius-m); /* = round */
@@ -2585,7 +2587,7 @@ body input.prompt-input.prompt-input {
 .suggestion-item:is(:hover, .is-selected) .suggestion-prefix {
 	/* has to use a color without transparency, so the suggestion-prefix properly
 	covers long command names */
-	background-color: var(--bg4);
+	background-color: var(--nav-item-background-hover);
 }
 
 body .suggestion-item:hover,
@@ -2724,7 +2726,7 @@ body.mod-macos.is-hidden-frameless:not(.is-popout-window) .workspace .workspace-
 ──────────────────────────────────────────────────── */
 
 /* save space at the top */
-.markdown-preview-view,
+.markdown-preview-view:not(.kanban-plugin__markdown-preview-view),
 .markdown-source-view.mod-cm6 .cm-scroller {
 	padding-top: 30px;
 }
@@ -3911,6 +3913,118 @@ body.hider-ribbon .workspace-ribbon.mod-left {
 /* << Longform
 ──────────────────────────────────────────────────── */
 
+/* ───────────────────────────────────────────────── */
+/* << Kanban
+──────────────────────────────────────────────────── */
+
+/* action button only visible on hover */
+.show-view-header .workspace-leaf-content[data-type="kanban"] .view-header .view-actions.view-actions {
+	height: 30px;
+
+	background-color: var(--bg6);
+
+	margin-top: 0;
+	margin-right: -16px;
+
+	border: var(--thin-border);
+	border-bottom-left-radius: var(--radius-s);
+
+	transition-duration: var(--anim-duration-moderate);
+	transition-delay: var(--transition-delay-passing-over-protection);
+}
+
+.show-view-header .workspace-leaf-content[data-type="kanban"] .view-header .view-actions.view-actions:not(:hover) {
+	opacity: 0;
+}
+
+/* background & colors */
+.kanban-plugin {
+	background-color: var(--bg4);
+	--dot-color: hsl(0 0% 40% / 25%);
+	--dot-spacing: 9px;
+	--dot-size: 1px;
+}
+
+.kanban-plugin__board > div {
+	padding: var(--size-2-3);
+}
+
+/* dotted background, thanks @Damian Korcz for this */
+.kanban-plugin__board {
+	background-image: radial-gradient(circle, var(--dot-color) var(--dot-size), transparent var(--dot-size));
+	border-top: var(--thin-border);
+	background-size: var(--dot-spacing) var(--dot-spacing);
+	background-attachment: local;
+}
+
+.kanban-plugin__item:hover {
+	border-color: var(--hover-accent);
+}
+
+.kanban-plugin__item:hover .kanban-plugin__item-title-wrapper {
+	background-color: var(--bg5);
+}
+
+.kanban-plugin__lane-header-wrapper {
+	background-color: var(--bg1);
+	padding: var(--size-2-1) var(--size-4-1);
+	border-radius: var(--radius-s) var(--radius-s) 0 0;
+}
+
+.kanban-plugin__item-postfix-button-wrapper {
+	display: none;
+}
+
+.kanban-plugin__new-item-button,
+.kanban-plugin__lane-settings-button.kanban-plugin__lane-settings-button {
+	box-shadow: none;
+}
+
+.kanban-plugin__lane-settings-button:hover svg {
+	stroke: var(--icon-color-hover);
+}
+
+.kanban-plugin__item-button-wrapper {
+	padding: 0 var(--size-4-1) var(--size-4-1);
+	border-top: none;
+	border-radius: 0 0 var(--radius-s) var(--radius-s);
+}
+
+.kanban-plugin__lane-items {
+	padding-top: 0;
+	padding-bottom: 0;
+	margin: 0;
+}
+
+body .kanban-plugin__item-title-wrapper {
+	background: var(--bg2);
+}
+
+.kanban-plugin__lane {
+	background-color: var(--bg5);
+}
+
+.kanban-plugin__new-item-button.kanban-plugin__new-item-button {
+	text-align: start;
+	height: 0.9em;
+	color: var(--text-gray);
+}
+
+.kanban-plugin__item-button-plus {
+	display: none;
+}
+
+.kanban-plugin__item-title-wrapper {
+	padding-top: var(--size-2-1);
+	padding-bottom: var(--size-2-1);
+}
+
+/* markup in kanban cards */
+.kanban-plugin__item-markdown :is(ul, p, img) {
+	margin: 0;
+}
+
+/* ───────────────────────────────────────────────── */
 /* @MINIFY-SPLIT-MARKER */
 /* ───────────────────────────────────────────────── */
 /* < Compatibility Info for the Obsidian Hub
