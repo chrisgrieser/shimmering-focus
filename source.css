@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 3.76
+Version 3.77
 Source CSS: https://github.com/chrisgrieser/shimmering-focus/blob/main/source.css
 MIT License
 ──────────────────────────────────────────────────── */
@@ -2054,10 +2054,11 @@ input[type="range"]::after { content: attr(max) }
 ──────────────────────────────────────────────────── */
 
 /* <<< Vault Launch */
+/* cannot use variables, since they are not fully available yet on startup */
 @keyframes startup-blink {
-	from { color: var(--text-normal) }
-	50% { color: var(--color-accent) }
-	to { color: var(--text-normal) }
+	from { opacity: 0.1 }
+	50% { opacity: 1 }
+	to { opacity: 0.1 }
 }
 
 .progress-bar .progress-bar-message {
