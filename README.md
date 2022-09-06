@@ -20,7 +20,7 @@ A minimalistic Obsidian theme for keyboard-centric users.
 ## Key Features
 - __Radical Minimalism:__ UI elements that require the mouse are still accessible on hover. All hidden UI elements can be permanently re-enabled with the [Style Settings Plugin](https://obsidian.md/plugins?id=obsidian-style-settings).
 - __Condensed Display of Information:__ Unnecessary padding and white-space is removed, which is beneficial for small screens or higher zoom levels.
-- __High Customizability:__ Dozens of customization options available via [Style Settings Plugin](https://obsidian.md/plugins?id=obsidian-style-settings).
+- __High Customizability:__ Dozens of customization options available via [Style Settings Plugin](https://obsidian.md/plugins?id=obsidian-style-settings). (Due to the theme rewrite for Obsidian 0.16, a lot of settings are still missing, though.)
 
 ![](assets/explainer-screenshot.png)
 
