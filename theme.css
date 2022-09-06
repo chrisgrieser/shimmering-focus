@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 3.75
+Version 3.76
 Source CSS: https://github.com/chrisgrieser/shimmering-focus/blob/main/source.css
 MIT License
 ──────────────────────────────────────────────────── */
@@ -38,6 +38,7 @@ community:
 - recent-files-obsidian
 - obsidian-electron-window-tweaker
 - obsidian-another-quick-switcher
+- obsidian-dynamic-highlights
 - obsidian-kanban
 - longform
 - oz-image-plugin
@@ -179,7 +180,7 @@ settings:
    default: false
   -
    id: hide-electron-window-tweaker-status-bar
-   title: Hide Electron Window Tweaker 'Always on top' iocn
+   title: Hide Electron Window Tweaker 'Always on top'
    type: class-toggle
    default: false
   -
