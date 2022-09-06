@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 3.77
+Version 3.78
 Source CSS: https://github.com/chrisgrieser/shimmering-focus/blob/main/source.css
 MIT License
 ──────────────────────────────────────────────────── */
@@ -1984,7 +1984,7 @@ body .checkbox-container.mod-small {
 kbd.suggestion-hotkey,
 .setting-hotkey {
 	color: var(--hotkey-color);
-	background-color: var(--bg3);
+	background-color: var(--bg4);
 	border: var(--thin-border);
 }
 
