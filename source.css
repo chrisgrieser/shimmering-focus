@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 3.74
+Version 3.75
 Source CSS: https://github.com/chrisgrieser/shimmering-focus/blob/main/source.css
 MIT License
 ──────────────────────────────────────────────────── */
@@ -97,6 +97,7 @@ MIT License
 		- Inline Backlink Pane
 	- Outline
 - Community Plugins
+	- Dynamic Highlight
 	- Supercharged Links
 	- Another Quick Switcher (AQS)
 	- Recent Files
@@ -1961,7 +1962,7 @@ body .checkbox-container.mod-small {
 }
 
 /* colors */
-.checkbox-container.is-enabled {
+.checkbox-container.is-enabled.is-enabled {
 	background-color: var(--color-accent);
 	border-color: transparent;
 }
@@ -3141,6 +3142,25 @@ body:not(.classic-inline-backlinks) :is(.writing, .longform-leaf) .embedded-back
 /* ───────────────────────────────────────────────── */
 /* < Community Plugins
 ──────────────────────────────────────────────────── */
+
+/* ───────────────────────────────────────────────── */
+/* << Dynamic Highlight
+──────────────────────────────────────────────────── */
+
+/* current word */
+body .app-container :is(.cm-matched-word,.cm-current-word) {
+	text-decoration: 2px dotted underline var(--text-gray);
+}
+
+.is-live-preview .cm-link :is(.cm-matched-word,.cm-current-word) {
+	text-decoration: none;
+}
+
+/* current selection */
+body .cm-matched-string {
+	text-decoration: none;
+	outline: 1px solid var(--search-match-color);
+}
 
 /* ───────────────────────────────────────────────── */
 /* << Supercharged Links

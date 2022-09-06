@@ -1,5 +1,6 @@
 # Changelog
-- 2022-09-06	patch
+- 2022-09-06	styling for dynamic hl plugin
+- 2022-09-06	iMac Helmholtz (5 files)
 - 2022-09-06	changed build for new css location in vault
 - 2022-09-06	more condensed theme browser
 - 2022-09-06	longform styling
