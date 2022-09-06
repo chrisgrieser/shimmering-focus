@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 3.81
+Version 3.82
 Source CSS: https://github.com/chrisgrieser/shimmering-focus/blob/main/source.css
 MIT License
 ──────────────────────────────────────────────────── */
@@ -124,6 +124,7 @@ MIT License
  		- File Explorer (+)
  		- Status Bar (+)
  	- Workspace (+)
+ 	- Typography (+)
  	- Colors (+)
  	- Editor & Media (+)
  	- Markup & Special Syntax (+)
@@ -1316,6 +1317,10 @@ body:not(.no-codeblock-line-numbers) .HyperMD-codeblock-end .cm-formatting-code-
 /* ───────────────────────────────────────────────── */
 /* << Headings
 ──────────────────────────────────────────────────── */
+
+.less-heading-letter-spacing {
+	--heading-letter-spacing: 0;
+}
 
 :is(.markdown-preview-view, .community-modal-readme) :is(h1, h2, h3, h4, h5, h6) {
 	margin-top: 1.2em;
@@ -4551,6 +4556,26 @@ settings:
    id: safari-tab-bar
    title: Safari-Style Tab Bar
    description: Style the tab bar like in the Safari Browser. (Note that this disables the "Tab-Bar-Header-Hybrid" as well.)
+   type: class-toggle
+   default: false
+  -
+# << Typography (+)
+   id: font-settings
+   title: 🔠 Typography
+   description: "Fonts, Headings"
+   type: heading
+   level: 1
+   collapsed: true
+  -
+   id: font-heading-theme
+   title: Heading Font
+   description: Applies to h1 to h6 Headings
+   type: variable-text
+   default: '"Optima S"'
+  -
+   id: less-heading-letter-spacing
+   title: Compact Headings
+   description: Makes Headings more compact by decreasing their letter spacing.
    type: class-toggle
    default: false
   -
