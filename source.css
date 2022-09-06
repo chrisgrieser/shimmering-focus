@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 3.79
+Version 3.80
 Source CSS: https://github.com/chrisgrieser/shimmering-focus/blob/main/source.css
 MIT License
 ──────────────────────────────────────────────────── */
@@ -56,6 +56,7 @@ MIT License
 	- Toggles
 	- Hotkeys
 - UI Elements
+	- Notice
 	- Input & Dropdowns
 	- Progress Bar
 		- Vault Launch
@@ -1991,6 +1992,22 @@ kbd.suggestion-hotkey,
 /* ───────────────────────────────────────────────── */
 /* < UI Elements
 ──────────────────────────────────────────────────── */
+
+/* ───────────────────────────────────────────────── */
+/* << Notice
+──────────────────────────────────────────────────── */
+.notice-container {
+	top: 0;
+}
+
+.notice {
+	background-color: var(--color-base-70);
+	border: 2px ridge var(--basic-border-color);
+}
+
+.theme-dark .notice {
+	color: var(--interactive-normal);
+}
 
 /* ───────────────────────────────────────────────── */
 /* << Input & Dropdowns

@@ -1,5 +1,5 @@
 # Changelog
-- 2022-09-06	patch
+- 2022-09-06	basic notice styling
 - 2022-09-06	fix startup animation
 - 2022-09-06	styling for dynamic hl plugin
 - 2022-09-06	iMac Helmholtz (5 files)
