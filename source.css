@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 3.80
+Version 3.81
 Source CSS: https://github.com/chrisgrieser/shimmering-focus/blob/main/source.css
 MIT License
 ──────────────────────────────────────────────────── */
@@ -2007,6 +2007,10 @@ kbd.suggestion-hotkey,
 
 .theme-dark .notice {
 	color: var(--interactive-normal);
+}
+
+.notice:hover {
+	opacity: 0.7;
 }
 
 /* ───────────────────────────────────────────────── */
