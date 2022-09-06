@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 3.83
+Version 3.84
 Source CSS: https://github.com/chrisgrieser/shimmering-focus/blob/main/source.css
 MIT License
 ──────────────────────────────────────────────────── */
@@ -98,6 +98,7 @@ MIT License
 		- Inline Backlink Pane
 	- Outline
 - Community Plugins
+	- Obsidian Git
 	- Dynamic Highlight
 	- Supercharged Links
 	- Another Quick Switcher (AQS)
@@ -609,17 +610,18 @@ body {
 	--icon-color-hover: var(--hover-accent);
 	--icon-stroke: 2px;
 
+	/* dividers (like hr or resize handles) */
+	--divider-color: var(--titlebar-background-focused); /* so the divider part at the top does not stand out */
+	--divider-color-hover: var(--hover-accent);
+	--divider-width: 2px;
+
 	/* Misc */
 	--file-line-width: 700px; /* to be set via style setting */
 	--list-indent: 1em;
 	--link-decoration: underline double 1px;
 	--link-unresolved-opacity: 1;
 	--code-background: var(--bg3);
-
-	/* dividers (like hr or resize handles) */
-	--divider-color: var(--titlebar-background-focused); /* so the divider part at the top does not stand out */
-	--divider-color-hover: var(--hover-accent);
-	--divider-width: 2px;
+	--status-bar-font-size: var(--font-ui-smaller);
 }
 
 /* ───────────────────────────────────────────────── */
@@ -658,6 +660,8 @@ body {
 
 	--longform-font-text-theme: "Crimson Pro S";
 	--longform-font-size: 1.2rem;
+
+	--readability-text-shadow: 2px 2px 2px hsl(0 0% 0% / 100%);
 }
 
 .theme-light {
@@ -1758,6 +1762,10 @@ body:not(.show-close-buttons) .modal-close-button {
 	font-weight: 900;
 }
 
+.theme-dark .vertical-tab-header-group:nth-last-child(3) .vertical-tab-header-group-items .vertical-tab-nav-item:is(:nth-child(3), :nth-child(4), :last-child) {
+	text-shadow: var(--readability-text-shadow);
+}
+
 /* ───────────────────────────────────────────────── */
 /* << Individual Setting Pages
 ──────────────────────────────────────────────────── */
@@ -1844,10 +1852,12 @@ body .vertical-tab-content {
 	font-family: var(--font-heading-theme);
 	font-size: var(--h1-size);
 	font-style: normal;
-	letter-spacing: var(--heading-letter-spacing);
-
 	margin-top: 0;
 	margin-bottom: var(--size-4-8);
+}
+
+.modal.mod-settings :is(h1, h2, h3, h4, h5, h6) {
+	letter-spacing: var(--heading-letter-spacing);
 }
 
 /* ───────────────────────────────────────────────── */
@@ -1937,6 +1947,17 @@ body .vertical-tab-content {
 
 .community-modal-info a.internal-link {
 	text-decoration: dotted underline;
+}
+
+.flair.mod-pop {
+	position: relative;
+	top: -2px;
+	vertical-align: middle;
+}
+
+.community-item.is-selected .flair {
+	padding: 1px 3px;
+	border: var(--thin-border);
 }
 
 /* ───────────────────────────────────────────────── */
@@ -2629,13 +2650,17 @@ body input.prompt-input.prompt-input {
 }
 
 body .suggestion-item:hover,
-body .suggestion-item:hover .suggestion-prefix {
+body .suggestion-item:hover :is(.suggestion-prefix, .suggestion-flair) {
 	color: var(--text-accent-hover);
 }
 
 .suggestion-item.is-selected,
-.suggestion-item.is-selected .suggestion-prefix {
+.suggestion-item.is-selected :is(.suggestion-prefix, .suggestion-flair) {
 	color: var(--text-accent);
+}
+
+.suggestion-item .suggestion-flair.suggestion-flair {
+	margin-bottom: 2px;
 }
 
 /* ───────────────────────────────────────────────────
@@ -2777,8 +2802,9 @@ body:not(.no-floating-metadata) .markdown-preview-view div:nth-child(4) > :is(h1
 /* << Search Matches
 ──────────────────────────────────────────────────── */
 /* actually affects any kind of search anywhere in the app, but mostly the Editor */
-.suggestion-highlight {
+.suggestion-highlight.suggestion-highlight {
 	color: var(--search-match-color);
+	background: none;
 }
 
 /* ───────────────────────────────────────────────── */
@@ -3169,6 +3195,23 @@ body:not(.classic-inline-backlinks) :is(.writing, .longform-leaf) .embedded-back
 /* ───────────────────────────────────────────────── */
 /* < Community Plugins
 ──────────────────────────────────────────────────── */
+
+/* ───────────────────────────────────────────────── */
+/* << Obsidian Git
+──────────────────────────────────────────────────── */
+.obsidian-git-statusbar-status > div:nth-child(2) {
+	margin-left: 0 !important; /* stylelint-disable-line declaration-no-important */
+}
+
+.obsidian-git-statusbar-status::before {
+	content: "update";
+	font-family: var(--icon-font);
+	padding-right: 4px;
+}
+
+.obsidian-git-statusbar-status > div:first-child > svg {
+	display: none;
+}
 
 /* ───────────────────────────────────────────────── */
 /* << Dynamic Highlight
@@ -4387,6 +4430,7 @@ community:
 - supercharged-links-obsidian
 - obsidian-pandoc-reference-list
 - obsidian-hider
+- obsidian-git
 */
 
 /* ───────────────────────────────────────────────── */
