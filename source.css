@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 3.78
+Version 3.79
 Source CSS: https://github.com/chrisgrieser/shimmering-focus/blob/main/source.css
 MIT License
 ──────────────────────────────────────────────────── */
@@ -1942,7 +1942,7 @@ body .vertical-tab-content {
 	display: none;
 }
 
-.checkbox-container.checkbox-container:not(.mod-small) {
+.checkbox-container.checkbox-container {
 	height: 22px;
 	width: 22px;
 
@@ -1952,7 +1952,7 @@ body .vertical-tab-content {
 
 	border: var(--basic-border);
 
-	transition: var(--anim-duration-slow);
+	transition-duration: var(--anim-duration-slow);
 	cursor: var(--cursor-link);
 }
 
