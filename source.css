@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 3.84
+Version 3.85
 Source CSS: https://github.com/chrisgrieser/shimmering-focus/blob/main/source.css
 MIT License
 ──────────────────────────────────────────────────── */
@@ -52,7 +52,7 @@ MIT License
 		- Settings Headings
 		- Remove Color Picker from Settings
 	- Theme Browser
-	- Plugin Browser
+	- Plugin / Theme Browser
 	- Toggles
 	- Hotkeys
 - UI Elements
@@ -1922,22 +1922,8 @@ body .vertical-tab-content {
 	border-color: var(--hover-accent);
 }
 
-.mod-community-theme .modal-setting-nav-bar {
-	height: 0;
-	padding: 0;
-}
-
-.mod-community-theme .modal-setting-nav-bar .clickable-icon {
-	height: 30px;
-	position: sticky;
-}
-
-.mod-community-theme .community-modal-info {
-	padding: var(--size-4-4) var(--size-4-6) var(--size-4-6) 40px;
-}
-
 /* ───────────────────────────────────────────────── */
-/* << Plugin Browser
+/* << Plugin / Theme Browser
 ──────────────────────────────────────────────────── */
 
 /* redundant, since plugin name is already displayed above */
@@ -1958,6 +1944,21 @@ body .vertical-tab-content {
 .community-item.is-selected .flair {
 	padding: 1px 3px;
 	border: var(--thin-border);
+}
+
+/* remove empty header unecessarily taking up space */
+:is(.mod-community-theme, .mod-community-plugin) .modal-setting-nav-bar {
+	height: 0;
+	padding: 0;
+}
+
+:is(.mod-community-theme, .mod-community-plugin) .modal-setting-nav-bar .clickable-icon {
+	height: 30px;
+	position: sticky;
+}
+
+:is(.mod-community-theme, .mod-community-plugin) .community-modal-info {
+	padding: var(--size-4-4) var(--size-4-6) var(--size-4-6) 40px;
 }
 
 /* ───────────────────────────────────────────────── */
