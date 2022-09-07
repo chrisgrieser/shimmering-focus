@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 3.86
+Version 3.87
 Source CSS: https://github.com/chrisgrieser/shimmering-focus/blob/main/source.css
 MIT License
 ──────────────────────────────────────────────────── */
@@ -73,6 +73,7 @@ MIT License
 		- Styling of Tabs
 		- Safari-Style Tab Bar
 	- Release Notes Tab
+	- Editor Suggestions
 - Prompts
 	- QuickSwitcher
 	- Command Palette
@@ -2607,6 +2608,33 @@ body.safari-tab-bar .workspace-tab-header-container-inner {
 	padding-right: 2px;
 }
 
+/* ───────────────────────────────────────────────── */
+/* << Editor Suggestions
+──────────────────────────────────────────────────── */
+
+.suggestion-container {
+	border-radius: var(--radius-s);
+}
+
+.suggestion-container .suggestion {
+	padding: 0;
+}
+
+/* remove the icon */
+.various-complements__suggestion-item.various-complements__suggestion-item::before {
+	display: none;
+}
+
+body .various-complements__suggestion-item {
+	padding: var(--size-4-1) var(--size-4-2) !important; /* stylelint-disable-line declaration-no-important */
+}
+
+/* the alias icon */
+.various-complements__suggestion-item__content__alias::before {
+	position: relative;
+	top: -2px;
+}
+
 /* ───────────────────────────────────────────────────
 /* < Prompts
 /* << QuickSwitcher
@@ -3040,9 +3068,13 @@ are not targeted by this */
 
 .list-2-col-cards ul:not(.contains-task-list) li {
 	background-color: var(--bg3);
+
 	padding: 1px 10px 4px;
 	margin-bottom: var(--card-spacing);
+
 	border: var(--thin-muted-border);
+	border-radius: var(--radius-s);
+
 	page-break-inside: avoid;
 }
 
@@ -3231,6 +3263,11 @@ body:not(.classic-inline-backlinks) :is(.writing, .longform-leaf) .embedded-back
 
 .obsidian-git-statusbar-status > div:first-child > svg {
 	display: none;
+}
+
+p {
+	right: 10px;
+	margin-right: -10px;
 }
 
 /* ───────────────────────────────────────────────── */
@@ -4434,6 +4471,7 @@ core:
 
 community:
 - recent-files-obsidian
+- various-complements
 - obsidian-electron-window-tweaker
 - obsidian-another-quick-switcher
 - obsidian-dynamic-highlights
