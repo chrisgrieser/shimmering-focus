@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 3.88
+Version 3.89
 Source CSS: https://github.com/chrisgrieser/shimmering-focus/blob/main/source.css
 MIT License
 ──────────────────────────────────────────────────── */
@@ -2039,12 +2039,13 @@ kbd.suggestion-hotkey,
 .notice {
 	width: 20em; /* ensures notices have fixed width */
 	max-width: 100%;
-	background-color: var(--color-base-60);
-	border: 2px ridge var(--basic-border-color);
-}
 
-.theme-dark .notice {
 	color: var(--interactive-normal);
+	background-color: var(--color-base-60);
+
+	padding: 0.5em 0.75em;
+
+	border: 2px ridge var(--basic-border-color);
 }
 
 .notice:hover {
