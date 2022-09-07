@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 3.87
+Version 3.88
 Source CSS: https://github.com/chrisgrieser/shimmering-focus/blob/main/source.css
 MIT License
 ──────────────────────────────────────────────────── */
@@ -3263,11 +3263,6 @@ body:not(.classic-inline-backlinks) :is(.writing, .longform-leaf) .embedded-back
 
 .obsidian-git-statusbar-status > div:first-child > svg {
 	display: none;
-}
-
-p {
-	right: 10px;
-	margin-right: -10px;
 }
 
 /* ───────────────────────────────────────────────── */
