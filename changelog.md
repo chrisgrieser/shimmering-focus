@@ -1,5 +1,5 @@
 # Changelog
-- 2022-09-07	patch
+- 2022-09-08	patch
 - 2022-09-07	various complements support
 - 2022-09-06	heading options
 - 2022-09-06	basic notice styling

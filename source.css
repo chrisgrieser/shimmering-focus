@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 3.89
+Version 3.90
 Source CSS: https://github.com/chrisgrieser/shimmering-focus/blob/main/source.css
 MIT License
 ──────────────────────────────────────────────────── */
@@ -670,7 +670,7 @@ body {
 	--longform-font-text-theme: "Crimson Pro S";
 	--longform-font-size: 1.2rem;
 
-	--readability-text-shadow: 2px 2px 2px hsl(0 0% 0% / 100%);
+	--readability-text-shadow: 1px 1px 2px hsl(0 0% 0% / 100%);
 }
 
 .theme-light {
