@@ -2355,7 +2355,7 @@ body:not(.show-ribbon):not(.is-mobile) .side-dock-settings .side-dock-ribbon-act
 
 /* adjust left sidebar tab headers for hidden ribbon */
 .mod-macos.is-hidden-frameless:not(.is-fullscreen):not(.show-ribbon) {
-	--frame-left-space: 50px;
+	--frame-left-space: calc(118px - var(--ribbon-width));
 }
 
 /* ───────────────────────────────────────────────── */
