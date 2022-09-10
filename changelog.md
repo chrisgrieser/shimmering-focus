@@ -1,5 +1,6 @@
 # Changelog
-- 2022-09-08	patch
+- 2022-09-10	search container fixes
+- 2022-09-09	restore promo screenshot files
 - 2022-09-07	various complements support
 - 2022-09-06	heading options
 - 2022-09-06	basic notice styling

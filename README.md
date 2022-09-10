@@ -1,5 +1,5 @@
 # Shimmering Focus ⟡
-![](https://img.shields.io/badge/downloads-36738-6E4E9B?style=plastic) ![](https://img.shields.io/github/last-commit/chrisgrieser/shimmering-focus?style=plastic) [![](https://img.shields.io/badge/changelog-click%20here-FFE800?style=plastic)](https://chrisgrieser.github.io/shimmering-focus/changelog/)
+![](https://img.shields.io/badge/downloads-36848-6E4E9B?style=plastic) ![](https://img.shields.io/github/last-commit/chrisgrieser/shimmering-focus?style=plastic) [![](https://img.shields.io/badge/changelog-click%20here-FFE800?style=plastic)](https://chrisgrieser.github.io/shimmering-focus/changelog/)
 
 A minimalistic Obsidian theme for keyboard-centric users.
 

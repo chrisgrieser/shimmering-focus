@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS by @pseudometa
-Version 3.91
+Version 3.92
 Source CSS: https://github.com/chrisgrieser/shimmering-focus/blob/main/source.css
 MIT License
 ──────────────────────────────────────────────────── */
@@ -291,6 +291,12 @@ body {
 .HyperMD-task-line .cm-formatting-task.cm-property ~ * {
 	text-decoration: var(--checklist-done-decoration);
 	color: var(--checklist-done-color);
+}
+
+/* https://discord.com/channels/686053708261228577/989603365606531104/1018117694307971173 */
+.document-search-container {
+	width: 100%;
+	position: absolute;
 }
 
 /* ───────────────────────────────────────────────── */
@@ -1821,6 +1827,7 @@ body .vertical-tab-content {
 }
 
 .vertical-tab-nav-item.is-active {
+	font-weight: 600;
 	color: var(--text-accent);
 	background-color: var(--nav-item-background-active);
 }
@@ -3108,6 +3115,17 @@ are not targeted by this */
 /* << Search
 ──────────────────────────────────────────────────── */
 body:not(.show-search-pane-suggestions) .mod-search-suggestion {
+	display: none;
+}
+
+.document-search-container {
+	box-shadow: var(--shadow-s);
+	margin-right: 0;
+	margin-left: 0;
+	border-bottom: var(--thin-border);
+}
+
+body:not(.show-close-buttons) .document-search-close-button {
 	display: none;
 }
 
