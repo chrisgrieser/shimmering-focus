@@ -1,0 +1,10 @@
+/* ⚠️ Requires Obsidian installer version 1.1.8 or later. */
+/* ───────────────────────────────────────────────────── */
+/* automatically turn off readable line length when there is a table */
+body:not(.is-mobile) .markdown-source-view:has(table),
+body:not(.is-mobile) .markdown-source-view:has(.HyperMD-table-2),
+body:not(.is-mobile) .markdown-preview-view:has(table) {
+	--file-line-width: 100%;
+}
+
+

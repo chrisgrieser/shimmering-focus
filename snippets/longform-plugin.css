@@ -1,0 +1,10 @@
+/* put fold arrows to the right for proper alignment, https://github.com/kevboh/longform/issues/140 */
+body #scene-list .scene-container {
+	display: flex;
+	flex-direction: row-reverse;
+}
+
+body #scene-list .scene-container div {
+	margin-right: 4px;
+	margin-left: 0;
+}

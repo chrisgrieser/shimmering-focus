@@ -1,0 +1,11 @@
+blank_issues_enabled: false
+contact_links:
+  - name: Obsidian Discord
+    url: https://discord.gg/veuWUTm
+    about: "Ask in the channel #appearance for help from the community"
+  - name: Questions
+    url: https://github.com/chrisgrieser/shimmering-focus/discussions/categories/q-a
+    about: "For questions regarding the theme"
+  - name: Share Your Custom Colors
+    url: https://github.com/chrisgrieser/shimmering-focus/discussions/new?category=share-your-custom-color-schemes
+    about: "Share Your Custom Color Scheme for Shimmering Focus."

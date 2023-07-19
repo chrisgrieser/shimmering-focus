@@ -1,0 +1,276 @@
+# yaml-language-server: $schema=https://json.schemastore.org/stylelintrc.json
+# requires explicitly setting schema since using non-standard filename
+#───────────────────────────────────────────────────────────────────────────────
+extends: [stylelint-config-recommended]
+plugins:
+  - stylelint-order
+  - stylelint-declaration-block-no-ignored-properties
+reportNeedlessDisables: [false, {severity: warning}]
+reportInvalidScopeDisables: [true, {severity: error}]
+
+#───────────────────────────────────────────────────────────────────────────────
+rules:
+  # deactivated rules
+  font-family-no-missing-generic-family-keyword: null
+  no-descending-specificity: null
+  no-empty-source: null
+
+  # plugin rules
+  plugin/declaration-block-no-ignored-properties: true
+
+  # https://github.com/hudochenkov/stylelint-order/blob/master/rules/properties-order/README.md#emptylineminimumpropertythreshold
+  order/properties-order:
+    - - groupName: Content & Display
+        emptyLineBefore: threshold
+        noEmptyLineBetween: true
+        properties:
+          - display
+          - counter-reset
+          - counter-increment
+          - content
+          - flex
+          - flex-grow
+          - flex-basis
+          - flex-direction
+      - groupName: Font & Text
+        emptyLineBefore: threshold
+        noEmptyLineBetween: true
+        properties:
+          - font-family
+          - font-size
+          - font-weight
+          - text-rendering
+          - font-style
+          - line-height
+          - letter-spacing
+          - text-decoration
+          - text-transform
+          - text-shadow
+          - text-align
+          - hyphens
+          - white-space
+          - overflow-wrap
+          - font-display
+          - src
+      - groupName: Size
+        emptyLineBefore: threshold
+        noEmptyLineBetween: true
+        properties:
+          - height
+          - max-height
+          - min-height
+          - width
+          - max-width
+          - min-width
+          - backdrop-position
+          - background-position-y
+          - background-position-x
+          - backdrop-size
+          - resize
+      - groupName: Color & Background
+        emptyLineBefore: threshold
+        noEmptyLineBetween: true
+        properties:
+          - color
+          - fill
+          - stroke-width
+          - background
+          - background-color
+          - background-image
+          - background-repeat
+          - image-rendering
+          - backdrop-filter
+          - backdrop-repeat
+          - box-shadow
+          - opacity
+          - filter
+      - groupName: Position
+        emptyLineBefore: threshold
+        noEmptyLineBetween: true
+        properties:
+          - position
+          - top
+          - right
+          - bottom
+          - left
+          - z-index
+      - groupName: Padding & Margin
+        emptyLineBefore: threshold
+        noEmptyLineBetween: true
+        properties:
+          - padding
+          - padding-top
+          - padding-right
+          - padding-bottom
+          - padding-left
+          - text-indent
+          - padding-inline
+          - padding-inline-start
+          - margin
+          - margin-top
+          - margin-right
+          - margin-bottom
+          - margin-left
+      - groupName: Border & Outline
+        emptyLineBefore: threshold
+        noEmptyLineBetween: true
+        properties:
+          - border
+          - border-top
+          - border-right
+          - border-bottom
+          - border-left
+          - border-image
+          - border-width
+          - border-top-width
+          - border-right-width
+          - border-bottom-width
+          - border-left-width
+          - border-style
+          - border-top-style
+          - border-right-style
+          - border-bottom-style
+          - border-left-style
+          - border-color
+          - border-top-color
+          - border-right-color
+          - border-bottom-color
+          - border-left-color
+          - border-radius
+          - border-top-right-radius
+          - border-bottom-right-radius
+          - border-bottom-left-radius
+          - border-top-left-radius
+          - outline
+          - outline-offset
+          - outline-color
+          - outline-width
+          - outline-style
+      - groupName: Transition & Cursor
+        emptyLineBefore: threshold
+        noEmptyLineBetween: true
+        properties:
+          - transform
+          - transition
+          - transition-property
+          - transition-duration
+          - transition-delay
+          - cursor
+    - emptyLineBeforeUnspecified: threshold
+      unspecified: bottom
+      emptyLineMinimumPropertyThreshold: 6
+      severity: warning
+  #─────────────────────────────────────────────────────────────────────────────
+  # Main Rules
+  declaration-no-important: true
+  indentation: [tab, {severity: warning}]
+  font-weight-notation: [numeric, {severity: warning}]
+  comment-whitespace-inside: [always, {severity: warning}]
+  no-irregular-whitespace: true
+  no-eol-whitespace: [true, {severity: warning}]
+  block-no-empty:
+    - true
+    - ignore: [comments]
+      severity: warning
+  no-empty-first-line: [true, {severity: warning}]
+  no-missing-end-of-source-newline: [true, {severity: warning}]
+  custom-property-no-missing-var-function: true
+  max-empty-lines: [1, {severity: warning}]
+  rule-empty-line-before:
+    - always-multi-line
+    - ignore: [after-comment, inside-block]
+      severity: warning
+  comment-no-empty: [true, {severity: warning}]
+  comment-empty-line-before:
+    - always
+    - except: [first-nested]
+      ignore: [after-comment, stylelint-commands]
+      ignoreComments: ['/: .*;/']
+      severity: warning
+  length-zero-no-unit:
+    - true
+    - severity: warning
+      ignore: [custom-properties]
+  number-leading-zero: [always, {severity: warning}]
+  number-max-precision:
+    - 2
+    - ignoreProperties: [letter-spacing]
+      ignoreUnits: [em, rem]
+  time-min-milliseconds: [200, {severity: warning}]
+  shorthand-property-no-redundant-values: true
+  declaration-block-no-redundant-longhand-properties: true
+  declaration-block-no-shorthand-property-overrides: true
+  color-hex-case: [upper, {severity: warning}]
+  property-case: [lower, {severity: warning}]
+  at-rule-name-case: [lower, {severity: warning}]
+  function-name-case: [lower, {severity: warning}]
+  selector-pseudo-class-case: [lower, {severity: warning}]
+  selector-pseudo-element-case: [lower, {severity: warning}]
+  selector-type-case: [lower, {severity: warning}]
+  unit-case: [lower, {severity: warning}]
+  value-keyword-case:
+    - lower
+    - ignoreKeywords: [geometricPrecision]
+      severity: warning
+  color-function-notation: [modern, {severity: warning}]
+  color-hex-length: [short, {severity: warning}]
+  hue-degree-notation: [number, {severity: warning}]
+  alpha-value-notation:
+    - percentage
+    - exceptProperties: [opacity]
+      severity: warning
+  color-named: never
+  color-no-hex: true
+  string-quotes: [double, {severity: warning}]
+  font-family-name-quotes: always-unless-keyword
+  function-url-quotes: always
+  selector-attribute-quotes: always
+  no-extra-semicolons: [true, {severity: warning}]
+  at-rule-name-space-after: always-single-line
+  at-rule-semicolon-newline-after: always
+  block-closing-brace-empty-line-before: [never, {severity: warning}]
+  block-closing-brace-newline-after: [always, {severity: warning}]
+  block-closing-brace-newline-before: [always-multi-line, {severity: warning}]
+  block-closing-brace-space-before: [always-single-line, {severity: warning}]
+  block-opening-brace-newline-after: [always-multi-line, {severity: warning}]
+  block-opening-brace-space-after: [always-single-line, {severity: warning}]
+  block-opening-brace-space-before: [always, {severity: warning}]
+  custom-property-pattern:
+    - ^([a-z][a-z0-9]*)(-[a-z0-9]+)*$
+    - message: Expected custom property name to be kebab-case (custom-property-pattern)
+  declaration-bang-space-after: never
+  declaration-bang-space-before: always
+  declaration-block-semicolon-newline-after: always-multi-line
+  declaration-block-semicolon-space-after: always-single-line
+  declaration-block-semicolon-space-before: [never, {severity: warning}]
+  declaration-block-single-line-max-declarations: 1
+  declaration-block-trailing-semicolon:
+    - always
+    - ignore: [single-declaration]
+      severity: warning
+  declaration-colon-newline-after: always-multi-line
+  declaration-colon-space-after: [always-single-line, {severity: warning}]
+  declaration-colon-space-before: never
+  function-comma-newline-after: always-multi-line
+  function-comma-space-after: always-single-line
+  function-comma-space-before: never
+  function-max-empty-lines: 0
+  function-parentheses-newline-inside: always-multi-line
+  function-parentheses-space-inside: never-single-line
+  function-whitespace-after: always
+  selector-max-id: 1
+  selector-attribute-brackets-space-inside: never
+  selector-attribute-operator-space-after: never
+  selector-attribute-operator-space-before: never
+  selector-combinator-space-after: [always, {severity: warning}]
+  selector-combinator-space-before: [always, {severity: warning}]
+  selector-descendant-combinator-no-non-space: [true, {severity: warning}]
+  selector-list-comma-newline-after: always
+  selector-list-comma-space-before: [never, {severity: warning}]
+  selector-max-empty-lines: 0
+  selector-pseudo-class-parentheses-space-inside: never
+  selector-pseudo-element-colon-notation: double
+  value-list-comma-newline-after: never-multi-line
+  value-list-comma-space-after: always-single-line
+  value-list-comma-space-before: [never, {severity: warning}]
+  value-list-max-empty-lines: 1

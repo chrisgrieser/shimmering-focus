@@ -1,0 +1,19 @@
+/* add alt-text of images as caption */
+.image-embed[alt]:not([alt$=".png"], [alt$=".jpg"], [alt$=".jpeg"], [alt$=".tiff"])::after {
+    content: attr(alt);
+    font-style: italic;
+    color: var(--text-muted);
+}
+
+/* centers image caption */
+.image-embed[alt]::after {
+	text-align: center;
+	display: block;
+}
+
+/* center image itself */
+.view-content img:not(.emoji) {
+	display: block;
+	margin-right: auto;
+	margin-left: auto;
+}

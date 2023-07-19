@@ -1,0 +1,9 @@
+/* indented text paragraphs & no spacing between paragraphs */
+div:has(> p) + div > p {
+	text-indent: 1.5em;
+	margin-top: 0;
+}
+
+div:has(+ div > p) > p {
+	margin-bottom: 0;
+}

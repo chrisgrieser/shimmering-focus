@@ -1,0 +1,16 @@
+.private-mode .data-link-text[data-link-cssclass*="private"], /* needs *= to catch "," in the yaml */
+.private-mode .private.private * {
+	font-family: "Flow Circular";
+}
+
+/* @settings
+name: Private Mode
+id: private-mode
+settings:
+  -
+   id: private-mode
+   title: Private Mode
+   description: When enabled, all notes with the cssclass 'private' will be garbled. This setting is meant to be enabled temporarily during screen sharing. Install Supercharged Links and add 'cssclass' as a target attribute to also garble any links and occurences in the File Explorer and Quick Switcher. Note that note contents can still show up in views and sidebars created from plugins.
+   type: class-toggle
+   default: false
+*/

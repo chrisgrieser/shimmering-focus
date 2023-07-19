@@ -1,0 +1,27 @@
+/*
+TURN OBSIDIAN GIT'S AUTHOR-LINE-INFO INTO GITSIGNS
+Obsidian Git settings:
+- Enable "Show commit authoring information next to each line"
+- Hide Author Name
+- Hide Authoring Date
+
+Caveats (in comparison to git signs)
+- added & modified lines both are displayed as green
+- deleted lines are not displayed
+- the signs update with noticable lag, since it runs git-blame in the background
+*/
+
+.obs-git-blame-gutter > div[data-commit*='"isZeroCommit":false'] {
+	display: none;
+}
+
+.obs-git-blame-gutter > div[data-commit*='"isZeroCommit":true'] {
+	background-color: var(--color-green) !important; /* stylelint-disable-line declaration-no-important */
+	opacity: 0.6;
+}
+
+.cm-gutterElement.obs-git-blame-gutter {
+	background-color: transparent;
+	border: none;
+	width: 4px;
+}

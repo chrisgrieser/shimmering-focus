@@ -1,0 +1,2 @@
+build:
+	zsh ./build.sh

@@ -1,0 +1,19 @@
+/* Original idea by @deathau */
+
+/* Hides external links in source mode */
+.cm-s-obsidian:not(.is-live-preview) .cm-line:not(.cm-active) .cm-string.cm-url:not(.cm-formatting) {
+	font-size: 0;
+}
+
+.cm-s-obsidian:not(.is-live-preview) .cm-line:not(.cm-active) .cm-string.cm-url:not(.cm-formatting)::after {
+	content: "🔗";
+	font-size: calc(var(--font-text-size) * 0.9);
+	position: relative;
+	top: 2px;
+}
+
+/* remove external link icon */
+.external-link {
+	background-image: none;
+	padding-right: 0;
+}
