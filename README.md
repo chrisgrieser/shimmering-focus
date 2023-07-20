@@ -163,6 +163,6 @@ __Thanks__
 - Many theme features are only possible thanks to the [Style Settings Plugin](https://obsidian.md/plugins?id=obsidian-style-settings) by [@mgmeyers](https://github.com/mgmeyers).
 - Thanks for helping me out in my early days of learning CSS: [@SlRvb](https://github.com/SlRvb), [@javalent](https://github.com/valentine195), and [@NothingIsLost](https://github.com/nothingislost).
 
-__Buy me a coffee__
-
+__Buy me a coffee__  
+<br>
 <a href='https://ko-fi.com/Y8Y86SQ91' target='_blank'><img height='36' style='border:0px;height:36px;' src='https://cdn.ko-fi.com/cdn/kofi1.png?v=3' border='0' alt='Buy Me a Coffee at ko-fi.com' /></a>
