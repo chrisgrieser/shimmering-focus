@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 /* SHIMMERING FOCUS by @pseudometa
-Version 3.480
+Version 3.481
 Source CSS: https://github.com/chrisgrieser/shimmering-focus/blob/main/source.css
 MIT License
 ──────────────────────────────────────────────────── */
@@ -2620,15 +2620,7 @@ body .metadata-property:hover {
 
 /* links in metadata */
 .multi-select-pill.internal-link {
-	text-decoration-color: var(--text-accent);
-}
-
-.multi-select-pill.internal-link:hover {
-	text-decoration-color: var(--hover-accent);
-}
-
-.metadata-property-value .internal-link .multi-select-pill-content {
-	border: none;
+	text-decoration: none; /* creates single underline instead of double */
 }
 
 /* ───────────────────────────────────────────────── */
