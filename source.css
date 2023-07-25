@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 /* SHIMMERING FOCUS by @pseudometa
-Version 3.481
+Version 3.482
 Source CSS: https://github.com/chrisgrieser/shimmering-focus/blob/main/source.css
 MIT License
 ──────────────────────────────────────────────────── */
@@ -709,7 +709,7 @@ body {
 	/* Misc */
 	--file-line-width: 700px; /* to be set via style setting */
 	--list-indent: 1.6em;
-	--link-unresolved-opacity: 0.9;
+	--link-unresolved-opacity: 0.8;
 	--code-background: var(--bg3);
 	--status-bar-font-size: var(--font-ui-small);
 
@@ -3736,6 +3736,13 @@ body:not(.normal-out-back-links) .tree-item-self.outgoing-link-item .tree-item-i
 /* hide "links" and "unlinked mentions" */
 body:not(.normal-out-back-links) :is(.backlink-pane, .outgoing-link-pane) > .tree-item-self {
 	display: none;
+}
+
+/* unresolved links */
+.tree-item-self.outgoing-link-item svg.lucide-file-plus ,
+.tree-item-self.outgoing-link-item[aria-label="Not created yet"] {
+	color: var(--link-unresolved-color);
+	opacity: var(--link-unresolved-opacity);
 }
 
 /* ───────────────────────────────────────────────── */
