@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 /* SHIMMERING FOCUS by @pseudometa
-Version 3.482
+Version 3.483
 Source CSS: https://github.com/chrisgrieser/shimmering-focus/blob/main/source.css
 MIT License
 ──────────────────────────────────────────────────── */
@@ -712,6 +712,7 @@ body {
 	--link-unresolved-opacity: 0.8;
 	--code-background: var(--bg3);
 	--status-bar-font-size: var(--font-ui-small);
+	--metadata-input-font-size: var(--font-smallest);
 
 	/* Indention Guide */
 	--indentation-guide-width: 1.5px;
@@ -1117,7 +1118,7 @@ u,
 }
 
 .cm-hmd-internal-link .cm-underline.cm-underline,
-.markdown-preview-view .internal-link {
+.markdown-preview-view .internal-link:not(.multi-select-pill, .metadata-link-inner) {
 	text-decoration: underline double 1.1px;
 }
 
@@ -1159,10 +1160,6 @@ body:not(.show-urls) .cm-line:not(.cm-active) .cm-string.cm-url,
 	text-decoration: none;
 	color: var(--text-faint);
 	cursor: default;
-}
-
-.is-unresolved.is-unresolved {
-	text-decoration: none;
 }
 
 /* ───────────────────────────────────────────────── */
@@ -2586,21 +2583,17 @@ body .metadata-property:hover {
 }
 
 /* tags & multi-select */
+.metadata-link-inner,
 .multi-select-pill-content.multi-select-pill-content {
 	line-height: 1.1;
 	border-color: var(--text-faint);
 	background: var(--bg1);
 }
 
-.multi-select-container,
-.metadata-input.metadata-input {
-	padding: 0 4px;
-}
-
+.metadata-link-inner,
 .multi-select-pill-content {
-	border: 1px solid var(--secondary-accent);
+	border: var(--thin-border);
 	padding: 2px 4px;
-	font-size: 90%;
 	border-radius: var(--radius-s);
 }
 
@@ -2619,8 +2612,12 @@ body .metadata-property:hover {
 }
 
 /* links in metadata */
-.multi-select-pill.internal-link {
+.internal-link:is(.multi-select-pill, .metadata-link-inner) {
 	text-decoration: none; /* creates single underline instead of double */
+}
+
+.metadata-link{
+	padding: 0;
 }
 
 /* ───────────────────────────────────────────────── */
