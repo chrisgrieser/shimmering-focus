@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 /* SHIMMERING FOCUS by @pseudometa
-Version 3.483
+Version 3.484
 Source CSS: https://github.com/chrisgrieser/shimmering-focus/blob/main/source.css
 MIT License
 ──────────────────────────────────────────────────── */
@@ -2550,7 +2550,7 @@ body .frontmatter-container .frontmatter-alias,
 	margin-top: 0;
 	position: absolute;
 	height: 28px;
-	padding: 2px 8px 2px 4px;
+	padding: 4px 6px;
 	bottom: 0;
 	right: 0;
 	background: var(--bg4);
@@ -2559,8 +2559,22 @@ body .frontmatter-container .frontmatter-alias,
 	border-radius: var(--radius-s) 0 var(--radius-s) 0;
 }
 
-.metadata-properties-title {
+.metadata-add-button.text-icon-button .text-button-label {
 	display: none;
+}
+
+.metadata-properties-heading:not(.is-collapsed) .metadata-properties-title {
+	display: none;
+}
+
+.metadata-properties-heading.is-collapsed .metadata-properties-title {
+	margin-bottom: 0;
+	color: var(--text-muted);
+}
+
+.metadata-property-value-item.metadata-property-value-item,
+.metadata-input-longtext {
+	padding-left: 2px;
 }
 
 .metadata-add-button:hover {
