@@ -107,31 +107,31 @@ You can also recreate well-known color schemes and share the snippet for it, so 
 
 ```css
 .theme-light.theme-light {
-	--bg-hue: 233;
-	--bg-sat: 20%;
+    --bg-hue: 230;
+    --bg-sat: 25%;
 
-	--color-accent: hsl(184 79% 35%);
-	--color-accent-hsl: 184 79% 35%;
-	--interactive-accent: hsl(184 79% 30%);
-	--alt-heading-color: hsl(232 34% 50%);
+    --color-accent: hsl(184 79% 35%);
+    --color-accent-hsl: 184 79% 35%;
+    --interactive-accent: hsl(184 79% 30%);
 
-	--secondary-accent: hsl(28 54% 51%);
-	--hover-accent: hsl(328 100% 54%);
-	--link-unresolved-color: hsl(101 42% 51%);
+    --alt-heading-color: hsl(232 34% 50%);
+    --secondary-accent: hsl(28 54% 51%);
+    --hover-accent: hsl(328 100% 54%);
+    --link-unresolved-color: hsl(101 42% 51%);
 }
 
 .theme-dark.theme-dark {
-	--bg-hue: 233;
-	--bg-sat: 15%;
+    --bg-hue: 230;
+    --bg-sat: 15%;
 
-	--color-accent: hsl(184 79% 45%);
-	--color-accent-hsl: 184 79% 35%;
-	--interactive-accent: hsl(184 79% 30%);
-	--alt-heading-color: hsl(232 50% 70%);
+    --color-accent: hsl(184 79% 45%);
+    --color-accent-hsl: 184 79% 35%;
+    --interactive-accent: hsl(184 79% 30%);
 
-	--secondary-accent: hsl(28 63% 61%);
-	--hover-accent: hsl(328 100% 64%);
-	--link-unresolved-color: hsl(101 42% 51%);
+    --alt-heading-color: hsl(232 50% 70%);
+    --secondary-accent: hsl(28 63% 61%);
+    --hover-accent: hsl(328 100% 64%);
+    --link-unresolved-color: hsl(101 42% 51%);
 }
 
 /* Note that `--color-accent-hsl` should have the same values as `--color-accent`, and that `--bg-hue` will override the background colors you have set in the Style Settings. */
