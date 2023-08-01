@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 /* SHIMMERING FOCUS by @pseudometa
-Version 3.484
+Version 3.485
 Source CSS: https://github.com/chrisgrieser/shimmering-focus/blob/main/source.css
 MIT License
 ──────────────────────────────────────────────────── */
@@ -639,6 +639,7 @@ body {
 
 	--inline-title-color: var(--text-gray);
 	--inline-title-style: normal;
+	--inline-title-margin-bottom: 0.75em;
 
 	/* Tags */
 	--tag-size: var(--font-text-size);
@@ -1555,7 +1556,6 @@ body:not(.no-alternating-header-colors) .view-content :is(h1, h3, h5) {
 
 .inline-title {
 	letter-spacing: var(--heading-letter-spacing);
-	padding-bottom: 0.75em;
 }
 
 /* ───────────────────────────────────────────────── */
@@ -4140,7 +4140,7 @@ Caveats (in comparison to git signs)
 	padding-top: 0 !important; /* stylelint-disable-line declaration-no-important */
 }
 
-.markdown-source-view .inline-title {
+.git-blame-to-gitsigns .markdown-source-view .inline-title {
 	margin-left: 0.75em;
 }
 
