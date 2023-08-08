@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 /* SHIMMERING FOCUS by @pseudometa
-Version 3.485
+Version 3.486
 Source CSS: https://github.com/chrisgrieser/shimmering-focus/blob/main/source.css
 MIT License
 ──────────────────────────────────────────────────── */
@@ -655,6 +655,7 @@ settings:
    description: 'Repurposes the Author Line Information feature to work like Gitsigns/Git Gutter. Required Plugin Settings: Enable "Show commit authoring information next to each line", hide author name, and hide authoring date.'
    type: class-toggle
    markdown: true
+   addCommand: true
    default: false
   -
    id: miscellaneous
