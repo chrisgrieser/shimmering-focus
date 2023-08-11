@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 /* SHIMMERING FOCUS by @pseudometa
-Version 3.486
+Version 3.487
 Source CSS: https://github.com/chrisgrieser/shimmering-focus/blob/main/source.css
 MIT License
 ──────────────────────────────────────────────────── */
@@ -2563,12 +2563,24 @@ body .frontmatter-container .frontmatter-alias,
 	display: none;
 }
 
+/* heading */
+.metadata-properties-heading:not(.is-collapsed) {
+	padding: 0;
+	margin: 0;
+	display: block;
+}
+
 .metadata-properties-heading:not(.is-collapsed) .metadata-properties-title {
 	display: none;
 }
 
-.metadata-properties-heading.is-collapsed .metadata-properties-title {
+.metadata-properties-heading.is-collapsed {
+	padding: 6px 8px;
+	font-size: 0.9em;
 	margin-bottom: 0;
+}
+
+.metadata-properties-heading.is-collapsed .metadata-properties-title {
 	color: var(--text-muted);
 }
 
