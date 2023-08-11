@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 /* SHIMMERING FOCUS by @pseudometa
-Version 3.487
+Version 3.488
 Source CSS: https://github.com/chrisgrieser/shimmering-focus/blob/main/source.css
 MIT License
 ──────────────────────────────────────────────────── */
@@ -579,7 +579,7 @@ body {
 ──────────────────────────────────────────────────── */
 /* use this to create your own color scheme */
 
-/* 
+/*
 .theme-light.theme-light {
 	--bg-hue: 230;
 	--bg-sat: 15%;
@@ -604,7 +604,7 @@ body {
 	--secondary-accent: hsl(28 63% 61%);
 	--hover-accent: hsl(328 100% 64%);
 	--link-unresolved-color: hsl(101 42% 51%);
-	} 
+	}
 */
 
 /* ───────────────────────────────────────────────── */
@@ -728,6 +728,7 @@ body {
 	--titlebar-background: var(--bg6);
 	--titlebar-background-focused: var(--bg5);
 }
+
 .theme-light {
 	--titlebar-background: var(--bg5);
 	--titlebar-background-focused: var(--bg4);
@@ -2653,7 +2654,7 @@ body .metadata-property:hover {
 	text-decoration: none; /* creates single underline instead of double */
 }
 
-.metadata-link{
+.metadata-link {
 	padding: 0;
 }
 
@@ -3773,7 +3774,7 @@ body:not(.normal-out-back-links) :is(.backlink-pane, .outgoing-link-pane) > .tre
 }
 
 /* unresolved links */
-.tree-item-self.outgoing-link-item svg.lucide-file-plus ,
+.tree-item-self.outgoing-link-item svg.lucide-file-plus,
 .tree-item-self.outgoing-link-item[aria-label="Not created yet"] {
 	color: var(--link-unresolved-color);
 	opacity: var(--link-unresolved-opacity);
@@ -3809,6 +3810,7 @@ body:not(.classic-inline-backlinks) .embedded-backlinks .tree-item-self.tree-ite
 	font-weight: 500;
 	background: none;
 	padding: 0;
+	line-height: var(--line-height-normal);
 }
 
 body:not(.classic-inline-backlinks) .embedded-backlinks .tree-item-inner {
