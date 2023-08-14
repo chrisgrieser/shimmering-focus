@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 /* SHIMMERING FOCUS by @pseudometa
-Version 3.488
+Version 3.489
 Source CSS: https://github.com/chrisgrieser/shimmering-focus/blob/main/source.css
 MIT License
 ──────────────────────────────────────────────────── */
@@ -3544,6 +3544,7 @@ are not targeted by this */
 /* avoid collision with status bar */
 .cm-vim-panel.cm-vim-panel {
 	margin-bottom: calc(var(--status-bar-font-size) + 5px);
+	padding-top: calc(var(--status-bar-font-size) - 5px);
 }
 
 .cm-panels.cm-panels-bottom.cm-panels-bottom {
