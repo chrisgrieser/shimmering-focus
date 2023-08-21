@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 /* SHIMMERING FOCUS by @pseudometa
-Version 3.496
+Version 3.497
 Source CSS: https://github.com/chrisgrieser/shimmering-focus/blob/main/source.css
 MIT License
 ──────────────────────────────────────────────────── */
@@ -463,12 +463,14 @@ https://www.youtube.com/watch?v=yl0pvIRTWWo&t=7s */
 	/* shadows */
 	--input-height: 30px;
 	--input-radius: 5px;
-	--input-shadow: inset 0 0 0 1px rgb(0 0 0 / 12%), 0 2px 3px 0 rgb(0 0 0 / 5%), 0 1px 1.5px 0 rgb(0 0 0 / 3%),
-		0 1px 2px 0 rgb(0 0 0 / 4%), 0 0 0 0 transparent;
-	--input-shadow-hover: inset 0 0 0 1px rgb(0 0 0 / 17%), 0 2px 3px 0 rgb(0 0 0 / 10%), 0 1px 1.5px 0 rgb(0 0 0 / 3%),
-		0 1px 2px 0 rgb(0 0 0 / 4%), 0 0 0 0 transparent;
-	--shadow-l: 0px 1.8px 7.3px rgb(0 0 0 / 7.1%), 0px 6.3px 24.7px rgb(0 0 0 / 11.2%), 0px 30px 90px rgb(0 0 0 / 20%);
-	--shadow-s: 0px 1px 2px rgb(0 0 0 / 2.8%), 0px 3.4px 6.7px rgb(0 0 0 / 4.2%), 0px 15px 30px rgb(0 0 0 / 7%);
+	--input-shadow: inset 0 0 0 1px rgb(0 0 0 / 12%), 0 2px 3px 0 rgb(0 0 0 / 5%),
+		0 1px 1.5px 0 rgb(0 0 0 / 3%), 0 1px 2px 0 rgb(0 0 0 / 4%), 0 0 0 0 transparent;
+	--input-shadow-hover: inset 0 0 0 1px rgb(0 0 0 / 17%), 0 2px 3px 0 rgb(0 0 0 / 10%),
+		0 1px 1.5px 0 rgb(0 0 0 / 3%), 0 1px 2px 0 rgb(0 0 0 / 4%), 0 0 0 0 transparent;
+	--shadow-l: 0px 1.8px 7.3px rgb(0 0 0 / 7.1%), 0px 6.3px 24.7px rgb(0 0 0 / 11.2%),
+		0px 30px 90px rgb(0 0 0 / 20%);
+	--shadow-s: 0px 1px 2px rgb(0 0 0 / 2.8%), 0px 3.4px 6.7px rgb(0 0 0 / 4.2%),
+		0px 15px 30px rgb(0 0 0 / 7%);
 }
 
 /* ───────────────────────────────────────────────── */
@@ -763,7 +765,8 @@ body {
 	--bg4: var(--color-base-25);
 	--bg5: var(--color-base-30);
 	--bg6: var(--color-base-35);
-	--background-primary: var(--bg1); /* overwrite Obsidian variables w/ --bg colors for consistency with plugins */
+	/* overwrite Obsidian variables w/ --bg colors for consistency with plugins */
+	--background-primary: var(--bg1);
 	--background-primary-alt: var(--bg2);
 	--background-secondary: var(--bg3);
 	--basic-border-color: var(--color-base-50);
@@ -1053,7 +1056,8 @@ body:not(.annotation-tags-off) :is(.cm-hashtag-end.cm-tag-litreview, .tag[href="
 	content: " 📚";
 }
 
-body:not(.annotation-tags-off) :is(.cm-hashtag-end.cm-tag-epistemic-break, .tag[href="#epistemic-break"])::after {
+body:not(.annotation-tags-off)
+	:is(.cm-hashtag-end.cm-tag-epistemic-break, .tag[href="#epistemic-break"])::after {
 	content: " ⚡️";
 }
 
@@ -1345,7 +1349,10 @@ body:not(.show-urls)
 	.cm-s-obsidian:not(.is-live-preview)
 	.cm-line.cm-active
 	.cm-string.cm-url:not(.cm-formatting)::after,
-body:not(.show-urls) .cm-s-obsidian:not(.is-live-preview) .cm-line.cm-active .cm-string.cm-url:not(.cm-formatting) {
+body:not(.show-urls)
+	.cm-s-obsidian:not(.is-live-preview)
+	.cm-line.cm-active
+	.cm-string.cm-url:not(.cm-formatting) {
 	transition-delay: var(--transition-delay-passing-over-protection);
 }
 
@@ -1690,11 +1697,13 @@ body:not(.no-codeblock-line-numbers) .HyperMD-codeblock-begin {
 	counter-reset: codeblock-line-numbers;
 }
 
-body:not(.no-codeblock-line-numbers) .HyperMD-codeblock.cm-line:not(.HyperMD-codeblock-begin, .HyperMD-codeblock-end) {
+body:not(.no-codeblock-line-numbers)
+	.HyperMD-codeblock.cm-line:not(.HyperMD-codeblock-begin, .HyperMD-codeblock-end) {
 	padding-left: 2.8em;
 }
 
-body:not(.no-codeblock-line-numbers) .HyperMD-codeblock:not(.HyperMD-codeblock-begin, .HyperMD-codeblock-end)::before {
+body:not(.no-codeblock-line-numbers)
+	.HyperMD-codeblock:not(.HyperMD-codeblock-begin, .HyperMD-codeblock-end)::before {
 	counter-increment: codeblock-line-numbers;
 	content: counter(codeblock-line-numbers);
 
@@ -1804,7 +1813,8 @@ body p {
 	color: var(--text-faint);
 }
 
-body:not(.no-alternating-header-colors) :is(.cm-header-1, .cm-header-3, .cm-header-5):not(.cm-formatting-header),
+body:not(.no-alternating-header-colors)
+	:is(.cm-header-1, .cm-header-3, .cm-header-5):not(.cm-formatting-header),
 body:not(.no-alternating-header-colors) .view-content :is(h1, h3, h5) {
 	color: var(--alt-heading-color);
 }
@@ -1828,7 +1838,15 @@ body:not(.no-alternating-header-colors) .view-content :is(h1, h3, h5) {
 .cm-hmd-indent-in-quote,
 :is(.markdown-preview-view, .community-modal-readme) blockquote,
 .cm-line.HyperMD-quote
-	.cm-quote:not(.cm-formatting, .cm-url, .cm-link, .cm-hmd-internal-link, .cm-formatting-link, .cm-strong, .cm-em) {
+	.cm-quote:not(
+		.cm-formatting,
+		.cm-url,
+		.cm-link,
+		.cm-hmd-internal-link,
+		.cm-formatting-link,
+		.cm-strong,
+		.cm-em
+	) {
 	color: var(--text-normal);
 }
 
@@ -1920,7 +1938,10 @@ body:not(.no-alternating-header-colors) .view-content :is(h1, h3, h5) {
 }
 
 /* option to left-align */
-body:not(.blockquotes-left-aligned) .app-container :is(.markdown-preview-view, .community-modal-readme) blockquote {
+body:not(.blockquotes-left-aligned)
+	.app-container
+	:is(.markdown-preview-view, .community-modal-readme)
+	blockquote {
 	text-align: justify;
 	hyphens: auto;
 }
@@ -1946,7 +1967,7 @@ blockquote code {
 	--callout-blend-mode: var(--highlight-mix-blend-mode);
 	--callout-title-size: inherit;
 
-	background-color: rgb(var(--callout-color), 0.11); /* stylelint-disable-line color-function-notation */
+	background-color: rgb(var(--callout-color) / 11%);
 }
 
 .callout :is(h1, h2, h3, h4, h5, h6) {
@@ -1969,7 +1990,8 @@ blockquote code {
 	letter-spacing: 0.8px;
 	background-color: rgb(var(--callout-color) / 15%);
 	padding: 2px 8px 3px;
-	border-bottom: var(--callout-border-width) solid rgb(var(--callout-color) / var(--callout-border-opacity));
+	border-bottom: var(--callout-border-width) solid
+		rgb(var(--callout-color) / var(--callout-border-opacity));
 }
 
 .callout-content {
@@ -3042,7 +3064,9 @@ body:not(.show-ribbon, .is-mobile) .side-dock-settings .side-dock-ribbon-action:
 
 /* When both sidebars are hidden, also hide status bar */
 .hidden-sidebars-hidden-statusbar:not(.is-mobile)
-	.horizontal-main-container:has(.mod-left-split.is-sidedock-collapsed):has(.mod-right-split.is-sidedock-collapsed)
+	.horizontal-main-container:has(.mod-left-split.is-sidedock-collapsed):has(
+		.mod-right-split.is-sidedock-collapsed
+	)
 	+ .status-bar {
 	display: none;
 }
@@ -3100,11 +3124,15 @@ body:not(.normal-header-bar, .is-mobile)
 }
 
 /* adjust due to narrower space */
-body:not(.normal-header-bar, .is-mobile) .workspace-leaf-content[data-type="pdf"] .view-header-title-container {
+body:not(.normal-header-bar, .is-mobile)
+	.workspace-leaf-content[data-type="pdf"]
+	.view-header-title-container {
 	right: 0.7rem;
 }
 
-body:not(.normal-header-bar, .is-mobile, .no-floating-metadata) .workspace-leaf-content .view-header-title-container {
+body:not(.normal-header-bar, .is-mobile, .no-floating-metadata)
+	.workspace-leaf-content
+	.view-header-title-container {
 	top: 35px;
 }
 
@@ -3182,7 +3210,10 @@ body:not(.normal-header-bar, .is-mobile) .pdf-toolbar {
 
 body:not(.show-new-tab-button) .workspace-tab-header-new-tab,
 body:not(.show-close-buttons) .workspace-tab-header:only-child .workspace-tab-header-inner-close-button,
-body:not(.show-close-buttons) .mod-stacked .workspace-tab-header .workspace-tab-header-inner-close-button,
+body:not(.show-close-buttons)
+	.mod-stacked
+	.workspace-tab-header
+	.workspace-tab-header-inner-close-button,
 body:not(.show-close-buttons)
 	.workspace-tabs:not(.mod-stacked)
 	.workspace-tab-header:not(:hover)
@@ -3213,7 +3244,11 @@ body:not(.normal-tab-bar) .mod-root .workspace-tab-header:only-child .workspace-
 body:not(.normal-tab-bar)
 	.mod-root
 	.workspace-tab-header:only-child
-	:is(.workspace-tab-header-inner-title, .workspace-tab-header-inner-icon, .workspace-tab-header-inner-icon svg),
+	:is(
+		.workspace-tab-header-inner-title,
+		.workspace-tab-header-inner-icon,
+		.workspace-tab-header-inner-icon svg
+	),
 body:not(.normal-tab-bar) .mod-root .workspace-tab-header:only-child::before,
 body:not(.normal-tab-bar) .mod-root .workspace-tab-header:only-child::after,
 body:not(.normal-tab-bar) .mod-root .workspace-tab-header:only-child {
@@ -3528,7 +3563,9 @@ body:not(.trim-long-filenames) {
 }
 
 .sidebar-no-animations .workspace-split:is(.mod-left-split, .mod-right-split) {
-	transition: var(--anim-duration-none) !important; /* stylelint-disable-line declaration-no-important */
+	transition: var(
+		--anim-duration-none
+	) !important; /* stylelint-disable-line declaration-no-important */
 }
 
 /* ───────────────────────────────────────────────── */
@@ -3644,7 +3681,11 @@ body.mod-macos.is-hidden-frameless:not(.is-popout-window)
 	padding-top: 25px;
 }
 
-body:not(.no-floating-metadata) .mod-root .markdown-preview-view div:nth-child(4) > :is(h1, h2, h3, h4, h5, h6) {
+body:not(.no-floating-metadata)
+	.mod-root
+	.markdown-preview-view
+	div:nth-child(4)
+	> :is(h1, h2, h3, h4, h5, h6) {
 	margin-top: 0;
 }
 
@@ -3739,7 +3780,9 @@ body:not(.no-dimmed-inactive-pane)
 }
 
 /* if there is more than one pane, highlight the currently focussed one */
-.mod-root .workspace-tabs:not(:only-of-type, .mod-stacked).mod-active .workspace-tab-header-container-inner,
+.mod-root
+	.workspace-tabs:not(:only-of-type, .mod-stacked).mod-active
+	.workspace-tab-header-container-inner,
 .mod-root .workspace-tabs:not(:only-of-type, .mod-stacked).mod-active .workspace-tab-header-container {
 	border-bottom-color: var(--color-accent);
 }
@@ -3757,7 +3800,8 @@ body:not(.no-dimmed-inactive-pane)
 /* <<< Active Line Highlight (Cursorline)
 ──────────────────────────────────────────────────── */
 
-body:not(.no-active-line-highlight) .cm-active:not(.HyperMD-quote, .HyperMD-header, .HyperMD-codeblock)::before {
+body:not(.no-active-line-highlight)
+	.cm-active:not(.HyperMD-quote, .HyperMD-header, .HyperMD-codeblock)::before {
 	content: "";
 	height: 100%;
 	position: absolute;
@@ -3874,19 +3918,27 @@ are not targeted by this */
 	content: "5";
 }
 
-.use-relative-line-numbers:not(.is-mobile) .cm-lineNumbers *:has(+ * + * + * + * + * + .cm-active)::before {
+.use-relative-line-numbers:not(.is-mobile)
+	.cm-lineNumbers
+	*:has(+ * + * + * + * + * + .cm-active)::before {
 	content: "6";
 }
 
-.use-relative-line-numbers:not(.is-mobile) .cm-lineNumbers *:has(+ * + * + * + * + * + * + .cm-active)::before {
+.use-relative-line-numbers:not(.is-mobile)
+	.cm-lineNumbers
+	*:has(+ * + * + * + * + * + * + .cm-active)::before {
 	content: "7";
 }
 
-.use-relative-line-numbers:not(.is-mobile) .cm-lineNumbers *:has(+ * + * + * + * + * + * + * + .cm-active)::before {
+.use-relative-line-numbers:not(.is-mobile)
+	.cm-lineNumbers
+	*:has(+ * + * + * + * + * + * + * + .cm-active)::before {
 	content: "8";
 }
 
-.use-relative-line-numbers:not(.is-mobile) .cm-lineNumbers *:has(+ * + * + * + * + * + * + * + * + .cm-active)::before {
+.use-relative-line-numbers:not(.is-mobile)
+	.cm-lineNumbers
+	*:has(+ * + * + * + * + * + * + * + * + .cm-active)::before {
 	content: "9";
 }
 
@@ -3915,15 +3967,45 @@ are not targeted by this */
 	content: "6";
 }
 
-.use-relative-line-numbers:not(.is-mobile) .cm-lineNumbers .cm-active + * + * + * + * + * + * + *::before {
+.use-relative-line-numbers:not(.is-mobile)
+	.cm-lineNumbers
+	.cm-active
+	+ *
+	+ *
+	+ *
+	+ *
+	+ *
+	+ *
+	+ *::before {
 	content: "7";
 }
 
-.use-relative-line-numbers:not(.is-mobile) .cm-lineNumbers .cm-active + * + * + * + * + * + * + * + *::before {
+.use-relative-line-numbers:not(.is-mobile)
+	.cm-lineNumbers
+	.cm-active
+	+ *
+	+ *
+	+ *
+	+ *
+	+ *
+	+ *
+	+ *
+	+ *::before {
 	content: "8";
 }
 
-.use-relative-line-numbers:not(.is-mobile) .cm-lineNumbers .cm-active + * + * + * + * + * + * + * + * + *::before {
+.use-relative-line-numbers:not(.is-mobile)
+	.cm-lineNumbers
+	.cm-active
+	+ *
+	+ *
+	+ *
+	+ *
+	+ *
+	+ *
+	+ *
+	+ *
+	+ *::before {
 	content: "9";
 }
 
@@ -4064,7 +4146,9 @@ are not targeted by this */
 /* << Canvas
 ──────────────────────────────────────────────────── */
 /* moved further down to avoid conflict with canvas controls */
-body:not(.normal-header-bar, .is-mobile) .workspace-leaf-content[data-type="canvas"] .view-header-title-container {
+body:not(.normal-header-bar, .is-mobile)
+	.workspace-leaf-content[data-type="canvas"]
+	.view-header-title-container {
 	top: 22rem;
 }
 
@@ -4153,7 +4237,8 @@ body:not(.show-file-explorer-navigation)
 }
 
 /* optionally hide attachment folders */
-.hide-attachment-folders .nav-folder-title:is([data-path$="/attachments" i], [data-path="attachments" i]) {
+.hide-attachment-folders
+	.nav-folder-title:is([data-path$="/attachments" i], [data-path="attachments" i]) {
 	display: none;
 }
 
@@ -4492,7 +4577,11 @@ ul.floating-toc:hover .heading-list-item > .text-wrap {
 }
 
 /* do not indent */
-body .workspace-leaf-content .floating-toc-div.floating-left ~ .markdown-reading-view .markdown-preview-view,
+body
+	.workspace-leaf-content
+	.floating-toc-div.floating-left
+	~ .markdown-reading-view
+	.markdown-preview-view,
 body .workspace-leaf-content .floating-toc-div.floating-left + .markdown-source-view .cm-editor {
 	padding-left: 2px;
 }
@@ -4860,11 +4949,16 @@ body .another-quick-switcher__item__description {
 	display: none;
 }
 
-.another-quick-switcher__grep__path-input__wrapper + .prompt-results .another-quick-switcher__item__directory {
+.another-quick-switcher__grep__path-input__wrapper
+	+ .prompt-results
+	.another-quick-switcher__item__directory {
 	margin-right: 0;
 }
 
-.another-quick-switcher__grep__path-input__wrapper + .prompt-results .another-quick-switcher__item__directory svg {
+.another-quick-switcher__grep__path-input__wrapper
+	+ .prompt-results
+	.another-quick-switcher__item__directory
+	svg {
 	display: unset;
 }
 
@@ -4900,7 +4994,9 @@ body .another-quick-switcher__grep__path-input.another-quick-switcher__grep__pat
 	border-color: var(--basic-border-color);
 }
 
-.another-quick-switcher__grep__path-input__wrapper + .prompt-results .another-quick-switcher__item__descriptions {
+.another-quick-switcher__grep__path-input__wrapper
+	+ .prompt-results
+	.another-quick-switcher__item__descriptions {
 	font-size: var(--font-ui-medium);
 	line-height: calc(var(--line-height-tight) - 0.1);
 }
@@ -4951,7 +5047,12 @@ body:not(.no-pandoc-citation-emphasis) .pandoc-citation.pandoc-citation.is-unres
 }
 
 .app-container.app-container.app-container
-	:is(.cm-pandoc-citation-formatting, .pandoc-citation-formatting, .cm-pandoc-citation-extra, .pandoc-citation-extra) {
+	:is(
+		.cm-pandoc-citation-formatting,
+		.pandoc-citation-formatting,
+		.cm-pandoc-citation-extra,
+		.pandoc-citation-extra
+	) {
 	text-decoration: none;
 	color: var(--text-faint);
 }
@@ -5052,7 +5153,9 @@ body .pwc-reference-list .csl-entry.csl-entry.csl-entry {
 }
 
 /* the "download settings" button is not needed for *every single* section */
-.style-settings-container .setting-item-heading:not([data-level="0"]) .setting-editor-extra-setting-button:last-child {
+.style-settings-container
+	.setting-item-heading:not([data-level="0"])
+	.setting-editor-extra-setting-button:last-child {
 	display: none;
 }
 
@@ -5092,7 +5195,9 @@ body .style-settings-heading[data-level="0"] {
 	margin-bottom: 16px;
 }
 
-body .style-settings-heading[data-level="0"] .setting-item-name.setting-item-name.setting-item-name.setting-item-name {
+body
+	.style-settings-heading[data-level="0"]
+	.setting-item-name.setting-item-name.setting-item-name.setting-item-name {
 	font-family: var(--font-heading-theme);
 	font-size: var(--h2-size);
 	letter-spacing: var(--heading-letter-spacing);
@@ -5104,7 +5209,10 @@ body .style-settings-heading[data-level="0"] .setting-item-name.setting-item-nam
 	margin-left: 20px;
 }
 
-.style-settings-heading + .style-settings-container .style-settings-heading[data-level="2"] .setting-item-name {
+.style-settings-heading
+	+ .style-settings-container
+	.style-settings-heading[data-level="2"]
+	.setting-item-name {
 	font-size: 1rem;
 	letter-spacing: 0;
 }
@@ -5113,7 +5221,8 @@ body .style-settings-heading[data-level="0"] .setting-item-name.setting-item-nam
 	margin-left: 10px;
 }
 
-.style-settings-heading[data-level="0"] .setting-item-name.setting-item-name.setting-item-name.setting-item-name {
+.style-settings-heading[data-level="0"]
+	.setting-item-name.setting-item-name.setting-item-name.setting-item-name {
 	font-size: 1.1em;
 	margin-bottom: 4px;
 }
@@ -5126,7 +5235,10 @@ body .style-settings-heading[data-level="0"] .setting-item-name.setting-item-nam
 	margin-bottom: 4px;
 }
 
-.style-settings-container .setting-item:not(.setting-item-heading) .setting-item-name + .setting-item-description {
+.style-settings-container
+	.setting-item:not(.setting-item-heading)
+	.setting-item-name
+	+ .setting-item-description {
 	margin-top: 4px;
 	margin-bottom: 0;
 }
@@ -5162,7 +5274,8 @@ body .view-content .style-settings-container .setting-item:not(.setting-item-hea
 ──────────────────────────────────────────────────── */
 
 /* hide background hue sliders when using macOS look */
-.mac-os-native .setting-item:is([data-id="bg-hue-light"], [data-id="bg-hue-dark"], [data-id="longform-bg-hue"]) {
+.mac-os-native
+	.setting-item:is([data-id="bg-hue-light"], [data-id="bg-hue-dark"], [data-id="longform-bg-hue"]) {
 	display: none;
 }
 
@@ -5242,7 +5355,9 @@ body .setting-item.setting-item.setting-item.setting-item[data-id="author-info"]
 	);
 }
 
-.style-settings-container .setting-item:is([data-id="highlight-hue-1"], [data-id^="bg-hue"]) input.slider {
+.style-settings-container
+	.setting-item:is([data-id="highlight-hue-1"], [data-id^="bg-hue"])
+	input.slider {
 	height: 0.8em;
 	background: var(--hue-scale);
 	border-radius: var(--radius-xs);
@@ -5263,8 +5378,12 @@ body .setting-item.setting-item.setting-item.setting-item[data-id="author-info"]
 }
 
 /* disable numbered sliders */
-.style-settings-container .setting-item:is([data-id="highlight-hue-1"], [data-id^="bg-hue"]) input::before,
-.style-settings-container .setting-item:is([data-id="highlight-hue-1"], [data-id^="bg-hue"]) input::after {
+.style-settings-container
+	.setting-item:is([data-id="highlight-hue-1"], [data-id^="bg-hue"])
+	input::before,
+.style-settings-container
+	.setting-item:is([data-id="highlight-hue-1"], [data-id^="bg-hue"])
+	input::after {
 	display: none;
 }
 
@@ -5793,7 +5912,9 @@ button.longform-remove-step-button.longform-remove-step-button.longform-remove-s
 	margin-bottom: 3px;
 }
 
-#longform-unknown-files-wizard .longform-unknown-inner.longform-unknown-inner.longform-unknown-inner > ul {
+#longform-unknown-files-wizard
+	.longform-unknown-inner.longform-unknown-inner.longform-unknown-inner
+	> ul {
 	padding-left: 3px;
 	margin: 0;
 }
@@ -5823,7 +5944,9 @@ button.longform-remove-step-button.longform-remove-step-button.longform-remove-s
 	border-radius: var(--radius-s);
 }
 
-.longform-unknown-ignore.longform-unknown-ignore.longform-unknown-ignore.longform-unknown-ignore:not(:hover) {
+.longform-unknown-ignore.longform-unknown-ignore.longform-unknown-ignore.longform-unknown-ignore:not(
+		:hover
+	) {
 	border-color: var(--text-faint);
 }
 
@@ -5911,7 +6034,10 @@ body:not(.longform-left-aligned) :is(.writing, .longform-leaf) :is(p, .footnotes
 }
 
 :is(.writing, .longform-leaf) :is(h1, h2, h3, h4, h5, h6, .cm-line.HyperMD-header, .inline-title),
-body:not(.is-popout-window) :is(.writing, .longform-leaf) .cm-line > :is(.cm-header, .cm-hmd-frontmatter) {
+body:not(.is-popout-window)
+	:is(.writing, .longform-leaf)
+	.cm-line
+	> :is(.cm-header, .cm-hmd-frontmatter) {
 	line-height: var(--longform-base-line-height);
 }
 
@@ -5963,7 +6089,11 @@ body.longform-tasks-different.longform-tasks-different.longform-tasks-different.
 
 /* dotted background, thanks to @Damian Korcz for this */
 .kanban-plugin__board {
-	background-image: radial-gradient(circle, var(--dot-color) var(--dot-size), transparent var(--dot-size));
+	background-image: radial-gradient(
+		circle,
+		var(--dot-color) var(--dot-size),
+		transparent var(--dot-size)
+	);
 	background-size: var(--dot-spacing) var(--dot-spacing);
 	background-attachment: local;
 	border-top: var(--thin-border);
