@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 /* SHIMMERING FOCUS by @pseudometa
-Version 3.495
+Version 3.496
 Source CSS: https://github.com/chrisgrieser/shimmering-focus/blob/main/source.css
 MIT License
 ──────────────────────────────────────────────────── */
@@ -829,8 +829,8 @@ table :is(ul, ol) {
 .markdown-rendered table :is(ul, ol) {
 	margin-top: 0;
 	margin-bottom: 0;
-	margin-block-start: 0 !important; /* stylelint-disable-line declaration-no-important */
 	margin-block-end: 0 !important; /* stylelint-disable-line declaration-no-important */
+	margin-block-start: 0 !important; /* stylelint-disable-line declaration-no-important */
 }
 
 .markdown-preview-view table {
@@ -1269,8 +1269,8 @@ u,
 .external-link,
 .cm-url,
 .cm-link-alias {
-	text-underline-offset: 2px;
 	text-decoration-skip-ink: none;
+	text-underline-offset: 2px;
 }
 
 .cm-hmd-internal-link .cm-underline.cm-underline,
@@ -2040,8 +2040,8 @@ body .callout ul.contains-task-list {
 	font-size: 90%;
 	line-height: 1.3em;
 	max-width: calc(var(--file-line-width) * var(--sidenote-callout-width) * 0.01);
-	margin: 4px 0 4px 7px;
 	float: right;
+	margin: 4px 0 4px 7px;
 }
 
 .sidenote-callout-outdent .callout[data-callout$="sidenote"] {
@@ -2717,8 +2717,8 @@ input[type="range"]::after {
 	font-size: 0;
 	margin-bottom: 30px;
 	animation-duration: 1s;
-	animation-name: startup-blink;
 	animation-iteration-count: infinite;
+	animation-name: startup-blink;
 }
 
 .app-container + .progress-bar .progress-bar-message::before {
@@ -3981,8 +3981,8 @@ are not targeted by this */
 
 .list-2-col-cards.markdown-preview-view.markdown-preview-view ul:not(.contains-task-list) {
 	padding-left: 0;
-	columns: 2 auto;
 	column-gap: calc(var(--card-spacing) + 2px);
+	columns: 2 auto;
 }
 
 .list-2-col-cards ul:not(.contains-task-list) li {
@@ -4595,8 +4595,8 @@ Caveats (in comparison to git signs)
 /* current word */
 body .app-container :is(.cm-matched-word, .cm-current-word) {
 	text-decoration: 2px dotted underline var(--text-gray);
-	text-underline-offset: 2px;
 	text-decoration-skip-ink: none;
+	text-underline-offset: 2px;
 }
 
 .is-live-preview .cm-link :is(.cm-matched-word, .cm-current-word) {
@@ -5939,11 +5939,10 @@ body.longform-tasks-different.longform-tasks-different.longform-tasks-different.
 
 /* background & colors */
 .kanban-plugin {
-	background-color: var(--bg4);
-
 	--dot-color: hsl(0deg 0% 40% / 25%);
 	--dot-spacing: 9px;
 	--dot-size: 1px;
+	background-color: var(--bg4);
 }
 
 .kanban-plugin__board > div {
@@ -5965,9 +5964,9 @@ body.longform-tasks-different.longform-tasks-different.longform-tasks-different.
 /* dotted background, thanks to @Damian Korcz for this */
 .kanban-plugin__board {
 	background-image: radial-gradient(circle, var(--dot-color) var(--dot-size), transparent var(--dot-size));
-	border-top: var(--thin-border);
 	background-size: var(--dot-spacing) var(--dot-spacing);
 	background-attachment: local;
+	border-top: var(--thin-border);
 }
 
 .kanban-plugin__item:hover {

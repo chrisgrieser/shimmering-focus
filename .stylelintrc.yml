@@ -6,17 +6,20 @@ plugins: [stylelint-order]
 reportInvalidScopeDisables: true
 reportNeedlessDisables: true
 #───────────────────────────────────────────────────────────────────────────────
-# CORE RULES
 rules:
   color-named: never
   color-no-hex: true
   comment-empty-line-before: null
   declaration-empty-line-before: null # conflicts with stylelint-order spacing
   declaration-no-important: true
-  font-weight-notation: [numeric, { severity: warning }]
-  time-min-milliseconds: 100
+  font-weight-notation: [numeric, { severity: warning }] # auto-fixed
   #────────────────────────────────────────────────────────────────────────────
-  # PLUGIN RULES
+  order/order:
+    - custom-properties
+    - dollar-variables
+    - declarations
+    - rules
+    - at-rules
   order/properties-order:
     - - groupName: Content & Display
         emptyLineBefore: threshold
@@ -75,6 +78,8 @@ rules:
           - background
           - background-color
           - background-image
+          - background-size
+          - background-attachment
           - background-repeat
           - image-rendering
           - backdrop-filter
@@ -87,6 +92,7 @@ rules:
         noEmptyLineBetween: true
         properties:
           - position
+          - float
           - top
           - right
           - bottom
@@ -156,5 +162,5 @@ rules:
           - cursor
     - emptyLineBeforeUnspecified: threshold
       emptyLineMinimumPropertyThreshold: 6
+      unspecified: bottomAlphabetical
       severity: warning
-      unspecified: bottom
