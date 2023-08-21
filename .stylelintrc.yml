@@ -206,10 +206,6 @@ rules:
   color-function-notation: [modern, {severity: warning}]
   color-hex-length: [short, {severity: warning}]
   hue-degree-notation: [number, {severity: warning}]
-  alpha-value-notation:
-    - percentage
-    - exceptProperties: [opacity]
-      severity: warning
   color-named: never
   color-no-hex: true
   font-family-name-quotes: always-unless-keyword

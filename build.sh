@@ -10,17 +10,10 @@
 # - CSS is linted and minified
 # - The docs are linted and checked for invalid links
 # - ToC in the CSS file is updated
-# - copies css from the vault (`CSS_PATH`) into this repository
 # - updates download counts in badges of the .md files
-# - adds a copy of the non-minified css file and the global stylelint config for documentation
+# - adds a copy the non-minified css file for documentation
+# - updates the stylelint-file
 # - git add, commit, pull, and push to the remote repo
-
-# REQUIREMENTS
-# - clean-css-cli
-# - stylelint
-# - yamllint
-# - git authentication with SSH Push Access
-# - this script placed somewhere in the git repository
 
 #───────────────────────────────────────────────────────────────────────────────
 
@@ -40,9 +33,9 @@ export PATH=/usr/local/lib:/usr/local/bin:/opt/homebrew/bin/:$npm_location:$PATH
 
 if ! command -v yamllint &> /dev/null; then echo "yamllint not installed." ; exit 1 ; fi
 if ! command -v stylelint &> /dev/null; then echo "stylelint not installed." ; exit 1 ; fi
+if ! command -v prettier &> /dev/null; then echo "prettier not installed." ; exit 1 ; fi
 if ! command -v git &> /dev/null; then echo "git not installed." ; exit 1 ; fi
 if ! command -v cleancss &> /dev/null; then echo "cleancss (\`npm i clean-css-cli\`) not installed." ; exit 1 ; fi
-if ! [[ -f "$CSS_PATH" ]] ; then echo "theme.css not at the specified location" ; exit 1 ; fi
 
 #───────────────────────────────────────────────────────────────────────────────
 
@@ -59,12 +52,14 @@ YAMLLINT_OUTPUT=$(
 if [[ $? == 1 ]]; then
 	echo "YAML ERROR"
 	echo "$YAMLLINT_OUTPUT" | tail -n+2
-	open "obsidian://advanced-uri?settingid=obsidian-style-settings" # open Style Settings if Advanced URI plugin installed
+	# open Style Settings if Advanced URI plugin installed
+	open "obsidian://advanced-uri?settingid=obsidian-style-settings" 
 	exit 1
 fi
 
-# Stylelint autofixing
+# Autofixing & Linting
 stylelint --fix "$CSS_PATH" &>/dev/null 
+prettier --write "$CSS_PATH" &>/dev/null 
 
 #───────────────────────────────────────────────────────────────────────────────
 
@@ -112,7 +107,7 @@ COMMIT_MSG="$*"
 [[ -z "$COMMIT_MSG" ]] && COMMIT_MSG="patch"
 
 # Copy for documentation purposes
-cp "$DOTFILE_FOLDER/_linter-configs/stylelintrc.yml" ./
+cp "$DOTFILE_FOLDER/_linter-configs/stylelintrc.yml" ./.stylelintrc.yml
 
 # Update Theme Download numbers in README.md
 dl=$(curl -s "https://releases.obsidian.md/stats/theme" | grep -oe '"Shimmering Focus","download":[[:digit:]]*' | cut -d: -f2)

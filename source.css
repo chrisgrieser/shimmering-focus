@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 /* SHIMMERING FOCUS by @pseudometa
-Version 3.491
+Version 3.492
 Source CSS: https://github.com/chrisgrieser/shimmering-focus/blob/main/source.css
 MIT License
 ──────────────────────────────────────────────────── */
@@ -482,7 +482,9 @@ body {
 .theme-light {
 	--bg-sat: 25%;
 	--bg-hue: var(--bg-hue-light);
-	--color-accent: hsl(184 79% 35%); /* hard-coded, so user does not mess up color scheme */
+
+	/* hard-coded, so user does not mess up color scheme */
+	--color-accent: hsl(184 79% 35%);
 	--color-accent-hsl: 184 79% 35%;
 	--interactive-accent: hsl(184 79% 30%);
 	--alt-heading-color: hsl(232 34% 50%);
@@ -543,7 +545,9 @@ body {
 	--text-normal: var(--color-base-85s);
 	--active-line-color: var(--color-accent);
 	--text-muted: var(--color-base-70);
-	--text-gray: var(--color-base-60); /* custom middle ground between text-muted and text-faint */
+
+	/* custom middle ground between text-muted and text-faint */
+	--text-gray: var(--color-base-60);
 	--text-faint: var(--color-base-50);
 	--text-accent: var(--color-accent);
 	--text-accent-hover: var(--hover-accent);
@@ -555,7 +559,9 @@ body {
 	/* links and tags */
 	--tag-color: var(--secondary-accent);
 	--tag-color-hover: var(--text-accent-hover);
-	--tag-radius: var(--radius-s); /* only used for annotation tags, disable in normal tags */
+
+	/* only used for annotation tags, disable in normal tags */
+	--tag-radius: var(--radius-s);
 	--link-color: var(--text-accent);
 	--link-color-hover: var(--text-accent-hover);
 	--link-external-color: var(--text-accent);
@@ -689,7 +695,8 @@ body {
 	--icon-stroke: 2px;
 
 	/* Dividers (like hr or resize handles) */
-	--divider-color: var(--titlebar-background-focused); /* so the divider part at the top does not stand out */
+	/* so the divider part at the top does not stand out */
+	--divider-color: var(--titlebar-background-focused);
 	--divider-color-hover: var(--hover-accent);
 	--divider-width: 2px;
 	--hr-color: var(--text-faint);
@@ -891,9 +898,12 @@ body:not(.annotation-tags-off)
 	font-weight: 900;
 	font-style: normal;
 	white-space: nowrap;
+
 	color: var(--text-normal);
+
 	padding-right: 6px;
 	padding-left: 6px;
+
 	border-radius: var(--tag-radius);
 }
 
@@ -1474,8 +1484,11 @@ div.HyperMD-codeblock-bg:not(.HyperMD-codeblock-begin-bg) {
 .markdown-reading-view pre[class*="language-"]::before {
 	display: block;
 	content: " ";
+
 	line-height: 1.5em;
+
 	background-color: var(--code-block-alt-bg);
+
 	border-top-right-radius: calc(var(--codeblock-roundness) * 0.8);
 	border-top-left-radius: calc(var(--codeblock-roundness) * 0.8);
 }
@@ -1506,9 +1519,12 @@ div.HyperMD-codeblock-bg:not(.HyperMD-codeblock-begin-bg) {
 /* <<< language labels */
 pre[class*="language-"]::after {
 	content: attr(class); /* fallback when none of the languages below is used */
+
 	font-size: 0.9rem;
 	text-shadow: none;
+
 	color: var(--text-muted);
+
 	position: absolute;
 	top: 2px;
 	right: 5px;
@@ -1670,15 +1686,20 @@ body:not(.no-codeblock-line-numbers) .HyperMD-codeblock.cm-line:not(.HyperMD-cod
 body:not(.no-codeblock-line-numbers) .HyperMD-codeblock:not(.HyperMD-codeblock-begin, .HyperMD-codeblock-end)::before {
 	counter-increment: codeblock-line-numbers;
 	content: counter(codeblock-line-numbers);
+
 	font-size: 0.75em;
 	line-height: 2;
 	text-align: right;
+
 	height: 100%; /* ensures border closes w/ wrapped lines */
 	width: 1.7em;
+
 	color: var(--text-muted);
 	background-color: var(--bg2);
+
 	position: absolute;
 	left: 0;
+
 	padding-right: 1.4em; /* space is needed for collapse indicators */
 }
 
@@ -1754,8 +1775,8 @@ body.theme-light {
 }
 
 .markdown-rendered :is(h1, h2, h3, h4, h5, h6) {
-	margin-bottom: 0.3em;
 	margin-top: 1em;
+	margin-bottom: 0.3em;
 }
 
 body p {
@@ -1843,11 +1864,16 @@ body:not(.no-alternating-header-colors) .view-content :is(h1, h3, h5) {
 /* HACK source-mode: prevent rounded corners with consecutive block quotes */
 .markdown-source-view:not(.is-live-preview) .HyperMD-quote + .HyperMD-quote::before {
 	content: " ";
+
 	white-space: pre;
+
 	height: 1.5em;
 	width: var(--blockquote-border-thickness);
+
 	background-color: var(--blockquote-border-color);
+
 	position: absolute;
+
 	margin-top: -12px;
 	margin-left: calc(-1 * (var(--blockquote-border-thickness)) - 4px);
 }
@@ -1858,9 +1884,12 @@ body:not(.no-alternating-header-colors) .view-content :is(h1, h3, h5) {
 
 .markdown-source-view .HyperMD-quote + .HyperMD-quote::after {
 	content: "";
+
 	height: 1em;
 	width: 0.5em;
+
 	background-color: var(--blockquote-background-color);
+
 	position: absolute;
 	top: -8px;
 	right: 0;
@@ -1927,9 +1956,10 @@ blockquote code {
 
 .callout-title {
 	letter-spacing: 0.8px;
-	background-color: rgb(var(--callout-color), 0.15);
+	background-color: rgb(var(--callout-color) / 15%);
 	padding: 2px 8px 3px;
-	border-bottom: var(--callout-border-width) solid rgb(var(--callout-color), var(--callout-border-opacity));
+	/* stylelint-disable-next-line color-function-notation */
+	border-bottom: var(--callout-border-width) solid rgb(var(--callout-color) / var(--callout-border-opacity));
 }
 
 .callout-content {
@@ -2161,10 +2191,13 @@ body:not(.is-mobile, .max-image-size-toggle) .oz-image-widget-cm6 > img:not(:act
 body:not(.no-image-alttext-caption)
 	.image-embed[alt]:not([alt$=".png"], [alt$=".jpg"], [alt$=".jpeg"], [alt$=".tiff"])::after {
 	content: attr(alt);
+
 	font-family: var(--font-interface);
 	font-size: var(--font-smaller);
 	font-style: italic;
+
 	color: var(--text-gray);
+
 	padding-top: var(--size-2-1);
 	margin-bottom: 1em;
 }
@@ -2341,8 +2374,11 @@ body .vertical-tab-content {
 	font-size: 1.3em;
 	font-weight: 600;
 	letter-spacing: var(--heading-letter-spacing);
+
 	background-color: var(--bg6);
+
 	padding: 2px 6px 0;
+
 	border-radius: var(--radius-s) var(--radius-s) 0 0;
 }
 
@@ -2408,12 +2444,16 @@ body .vertical-tab-content {
 	> .setting-editor-extra-setting-button
 	+ input[type="color"]::before {
 	content: "The accent color is overridden by the theme. Use the Style Settings Plugin to customize theme colors.";
+
 	font-family: var(--font-interface);
 	font-size: var(--font-ui-smaller);
 	line-height: 1.3;
+
 	color: var(--text-gray);
+
 	position: relative;
 	top: 2px;
+
 	visibility: visible;
 }
 
@@ -2498,9 +2538,13 @@ body .vertical-tab-content {
 .checkbox-container.checkbox-container {
 	height: 22px;
 	width: 22px;
+
 	background-color: var(--bg2);
+
 	margin-left: var(--size-4-1);
+
 	border: var(--basic-border);
+
 	transition-duration: var(--anim-duration-moderate);
 	cursor: var(--cursor-link);
 }
@@ -2551,11 +2595,15 @@ kbd.suggestion-hotkey,
 .notice {
 	font-size: var(--font-small);
 	line-height: 1.3;
+
 	min-width: 10rem;
+
 	color: var(--interactive-normal);
 	background-color: var(--color-base-100);
+
 	padding: var(--size-2-3) var(--size-4-3);
 	margin-bottom: var(--size-2-3);
+
 	border: 3px ridge var(--basic-border-color);
 }
 
@@ -2611,10 +2659,14 @@ input[type="range"] {
 input[type="range"]::before,
 input[type="range"]::after {
 	display: block;
+
 	font-size: var(--font-ui-smaller);
+
 	color: var(--text-muted);
 	background-color: inherit;
+
 	padding: 2px;
+
 	border: var(--thin-border);
 	border-radius: var(--radius-s);
 }
@@ -2690,8 +2742,8 @@ input[type="range"]::after {
 /* SOURCE VIEW */
 /* values */
 .cm-hmd-frontmatter {
-	color: var(--text-normal);
 	font-size: calc(var(--code-size) * 0.9);
+	color: var(--text-normal);
 }
 
 /* the "---"" */
@@ -2766,30 +2818,42 @@ body .frontmatter-container .frontmatter-alias,
 /* << NEW Metadata Block (since 1.4)
 ──────────────────────────────────────────────────── */
 .mod-root .metadata-container {
-	margin-bottom: 1.4em;
-	margin-top: 0.5em;
-	padding: 0;
 	font-family: var(--font-interface);
+
 	background-color: var(--bg2);
-	border-radius: var(--radius-s);
+
+	padding: 0;
+	margin-top: 0.5em;
+	margin-bottom: 1.4em;
+
 	border: var(--thin-border);
+	border-radius: var(--radius-s);
 }
 
 .multi-select-container.multi-select-container.multi-select-container {
-	padding: 0;
+	padding-left: 0;
+}
+
+.multi-select-container.multi-select-container .multi-select-input {
+	padding-top: 2px;
 }
 
 .mod-root .metadata-add-button.metadata-add-button {
-	color: var(--text-gray);
-	font-style: italic;
 	font-size: 75%;
-	margin-top: 0;
-	position: absolute;
+	font-style: italic;
+
 	height: 28px;
-	padding: 4px 6px;
-	bottom: 0;
-	right: 0;
+
+	color: var(--text-gray);
 	background: var(--bg4);
+
+	position: absolute;
+	right: 0;
+	bottom: 0;
+
+	padding: 4px 6px;
+	margin-top: 0;
+
 	border-top: var(--thin-border);
 	border-left: var(--thin-border);
 	border-radius: var(--radius-s) 0 var(--radius-s) 0;
@@ -2801,9 +2865,9 @@ body .frontmatter-container .frontmatter-alias,
 
 /* heading */
 .metadata-properties-heading:not(.is-collapsed) {
+	display: block;
 	padding: 0;
 	margin: 0;
-	display: block;
 }
 
 .metadata-properties-heading:not(.is-collapsed) .metadata-properties-title {
@@ -2811,8 +2875,8 @@ body .frontmatter-container .frontmatter-alias,
 }
 
 .metadata-properties-heading.is-collapsed {
-	padding: 6px 8px;
 	font-size: 0.9em;
+	padding: 6px 8px;
 	margin-bottom: 0;
 }
 
@@ -2844,29 +2908,29 @@ body .frontmatter-container .frontmatter-alias,
 }
 
 .multi-select-input.multi-select-input {
+	font-family: var(--font-interface);
 	font-size: var(--font-small);
 	color: var(--text-normal);
-	font-family: var(--font-interface);
 }
 
 body .metadata-property:focus-within,
 body .metadata-property:hover {
-	box-shadow: none;
 	background-color: var(--bg4);
+	box-shadow: none;
 }
 
 /* tags & multi-select */
 .metadata-link-inner,
 .multi-select-pill-content.multi-select-pill-content {
 	line-height: 1.1;
-	border-color: var(--text-faint);
 	background: var(--bg1);
+	border-color: var(--text-faint);
 }
 
 .metadata-link-inner,
 .multi-select-pill-content {
-	border: var(--thin-border);
 	padding: 2px 4px;
+	border: var(--thin-border);
 	border-radius: var(--radius-s);
 }
 
@@ -2915,10 +2979,13 @@ body:not(.show-ribbon) .side-dock-settings .side-dock-ribbon-action:last-child:h
 body:not(.show-ribbon, .is-mobile) .side-dock-settings .side-dock-ribbon-action:last-child {
 	background-color: var(--bg4);
 	opacity: 1;
+
 	position: absolute;
 	bottom: 0.5em;
 	left: 0.5em;
+
 	border: var(--thin-muted-border);
+
 	visibility: visible;
 }
 
@@ -3340,9 +3407,12 @@ div.prompt-results {
 
 input.prompt-input.prompt-input {
 	font-size: var(--font-ui-medium);
+
 	box-shadow: var(--input-shadow);
+
 	padding: var(--size-4-3);
 	margin: var(--size-2-2) var(--size-2-2) 0;
+
 	border: 1px ridge var(--muted-border-color);
 	border-radius: var(--radius-m);
 }
@@ -3415,10 +3485,13 @@ body:not(.is-mobile) .prompt .suggestion-item {
 
 body:not(.is-mobile) .prompt .suggestion-prefix.suggestion-prefix {
 	background-color: var(--bg3);
+
 	position: absolute;
 	top: 5px;
 	right: 140px;
+
 	padding: 1px 4px 2px;
+
 	border: var(--thin-border);
 	border-radius: var(--radius-s);
 }
@@ -3861,8 +3934,8 @@ are not targeted by this */
 
 /* avoid collision with status bar */
 .cm-vim-panel.cm-vim-panel {
-	margin-bottom: calc(var(--status-bar-font-size) + 5px);
 	padding-top: calc(var(--status-bar-font-size) - 5px);
+	margin-bottom: calc(var(--status-bar-font-size) + 5px);
 }
 
 .cm-panels.cm-panels-bottom.cm-panels-bottom {
@@ -3902,10 +3975,13 @@ are not targeted by this */
 
 .list-2-col-cards ul:not(.contains-task-list) li {
 	background-color: var(--bg3);
+
 	padding: 1px 10px 4px;
 	margin-bottom: var(--card-spacing);
+
 	border: var(--thin-muted-border);
 	border-radius: var(--radius-s);
+
 	page-break-inside: avoid;
 }
 
@@ -4139,9 +4215,9 @@ body:not(.classic-inline-backlinks) .embedded-backlinks .search-result-container
 
 body:not(.classic-inline-backlinks) .embedded-backlinks .tree-item-self.tree-item-self {
 	font-weight: 500;
+	line-height: var(--line-height-normal);
 	background: none;
 	padding: 0;
-	line-height: var(--line-height-normal);
 }
 
 body:not(.classic-inline-backlinks) .embedded-backlinks .tree-item-inner {
@@ -4270,9 +4346,11 @@ body:not(.classic-inline-backlinks) :is(.writing, .longform-leaf) .embedded-back
 .snw-header-count-wrapper {
 	background-color: var(--bg3);
 	opacity: 1;
+
 	padding: 1px 3px;
 	margin-top: 7px;
 	margin-right: 10px;
+
 	border: var(--basic-border);
 }
 
@@ -4490,8 +4568,8 @@ Caveats (in comparison to git signs)
 .git-blame-to-gitsigns .cm-gutterElement.obs-git-blame-gutter {
 	width: 4px;
 	background-color: transparent;
-	border: none;
 	padding-top: 0 !important; /* stylelint-disable-line declaration-no-important */
+	border: none;
 }
 
 .git-blame-to-gitsigns .markdown-source-view .inline-title {
@@ -4584,14 +4662,20 @@ body:not(.no-built-in-supercharged-links)
 		.workspace-tab-header-inner-title
 	):hover::after {
 	content: '"' attr(data-link-aliases) '"';
+
 	font-size: 0.9rem;
+
 	max-width: 350px;
+
 	color: var(--text-normal);
 	background-color: var(--bg3);
+
 	position: absolute;
 	z-index: 9001;
+
 	padding: 8px 10px;
 	margin-left: 50px;
+
 	border: var(--thin-border);
 	border-radius: var(--radius-s);
 }
@@ -4716,12 +4800,16 @@ body .another-quick-switcher__status__count-input {
 body:not(.is-mobile) .another-quick-switcher__item__hot-key-guide {
 	font-size: 80%;
 	line-height: 1;
+
 	color: var(--hotkey-color);
 	background-color: var(--bg3);
 	opacity: 0.9;
+
 	position: absolute;
 	right: var(--size-4-1);
+
 	padding: 3px;
+
 	border: var(--thin-border);
 	border-radius: var(--radius-s);
 }
@@ -4750,9 +4838,9 @@ body .another-quick-switcher__item__description {
 /* enlarge floating window */
 .prompt.another-quick-switcher__floating-prompt {
 	max-height: 88vh;
+	width: var(--file-line-width);
 	top: auto !important; /* stylelint-disable-line declaration-no-important */
 	left: auto !important; /* stylelint-disable-line declaration-no-important */
-	width: var(--file-line-width);
 }
 
 /* GREP SEARCH */
@@ -4841,8 +4929,8 @@ body:not(.no-pandoc-citation-emphasis) .pandoc-citation:not(.is-resolved, .is-un
 }
 
 body:not(.no-pandoc-citation-emphasis) .pandoc-citation.is-resolved.is-resolved.is-resolved.is-resolved {
-	color: var(--secondary-accent);
 	text-decoration: none;
+	color: var(--secondary-accent);
 }
 
 body:not(.no-pandoc-citation-emphasis) .pandoc-citation.pandoc-citation.is-unresolved {
@@ -4852,8 +4940,8 @@ body:not(.no-pandoc-citation-emphasis) .pandoc-citation.pandoc-citation.is-unres
 
 .app-container.app-container.app-container
 	:is(.cm-pandoc-citation-formatting, .pandoc-citation-formatting, .cm-pandoc-citation-extra, .pandoc-citation-extra) {
-	color: var(--text-faint);
 	text-decoration: none;
+	color: var(--text-faint);
 }
 
 /* HACK not using display:none, since the @ symbol is used to anchor the tooltip */
@@ -4911,10 +4999,14 @@ body .pwc-reference-list .csl-entry.csl-entry.csl-entry {
 
 .pwc-copy-list::before {
 	content: "content_copy";
+
 	font-family: var(--icon-font);
 	font-size: 0.9rem;
+
 	background-color: var(--bg3);
+
 	padding: 3px 3px 3px 5px;
+
 	border: var(--thin-border);
 	border-radius: var(--radius-s);
 }
@@ -4934,9 +5026,9 @@ body .pwc-reference-list .csl-entry.csl-entry.csl-entry {
 }
 
 .pwc-tooltip {
+	background-color: var(--bg3);
 	padding: var(--size-2-2) var(--size-2-3);
 	border: 2px solid var(--secondary-accent);
-	background-color: var(--bg3);
 }
 
 /* ───────────────────────────────────────────────── */
@@ -4963,6 +5055,7 @@ body .pwc-reference-list .csl-entry.csl-entry.csl-entry {
 	font-size: 1rem;
 	line-height: 1em;
 	letter-spacing: 0;
+
 	margin-top: 8px;
 	margin-bottom: 3px;
 }
@@ -5075,9 +5168,11 @@ body .setting-item.setting-item.setting-item.setting-item[data-id="author-info"]
 
 .style-settings-info-text.setting-item.setting-item.setting-item.setting-item {
 	background-color: var(--bg1);
+
 	padding: 8px;
 	margin-top: 12px;
 	margin-bottom: 12px;
+
 	border: var(--basic-border);
 	border-radius: var(--radius-m);
 }
@@ -5146,9 +5241,12 @@ body .setting-item.setting-item.setting-item.setting-item[data-id="author-info"]
 	input.slider::-webkit-slider-thumb {
 	height: 1.9em;
 	width: 0.4em;
+
 	background-color: var(--text-muted);
+
 	position: relative;
 	top: -0.7em;
+
 	border-radius: var(--radius-xs);
 }
 
@@ -5163,14 +5261,19 @@ body .setting-item.setting-item.setting-item.setting-item[data-id="author-info"]
 	.setting-item:is([data-id="longform-bg-hue"], [data-id="highlight-hue-1"])
 	.setting-item-control::before {
 	content: " ";
+
 	font-size: 0.7em;
 	text-align: center;
 	white-space: pre-wrap;
+
 	height: 1.6em;
 	width: 1.6em;
+
 	color: var(--text-normal);
+
 	position: relative;
 	left: -3em;
+
 	border: var(--thin-border);
 	border-radius: var(--radius-s);
 }
@@ -5210,10 +5313,13 @@ pre.dataview-error::first-line {
 .dataview.small-text.small-text.small-text {
 	font-family: var(--font-monospace-theme);
 	font-size: 85%;
+
 	color: var(--text-normal);
 	background-color: var(--bg1);
+
 	padding: 1px var(--size-2-1) 0;
 	margin-left: var(--size-4-2);
+
 	border: var(--thin-border);
 	border-radius: var(--radius-s);
 }
@@ -5388,9 +5494,12 @@ div#select-projects select {
 	font-size: var(--font-small);
 	font-weight: 700;
 	white-space: nowrap;
+
 	color: var(--text-normal);
 	box-shadow: none;
+
 	padding-left: var(--size-2-2);
+
 	overflow: hidden;
 	text-overflow: ellipsis;
 }
@@ -5551,14 +5660,14 @@ button.longform-remove-step-button.longform-remove-step-button.longform-remove-s
 
 .longform-compile-step h4 {
 	font-family: var(--font-interface);
-	letter-spacing: 0;
 	font-size: 1rem;
 	line-height: var(--line-height-tight);
+	letter-spacing: 0;
 }
 
 .longform-compile-step.longform-compile-step.longform-compile-step.longform-compile-step {
-	margin-bottom: 8px;
 	padding-bottom: 4px;
+	margin-bottom: 8px;
 }
 
 .longform-compile-step-title-container
@@ -5605,12 +5714,16 @@ button.longform-remove-step-button.longform-remove-step-button.longform-remove-s
 .current-draft-path,
 .workspace-leaf-content[data-type="VIEW_TYPE_LONGFORM_EXPLORER"] .tab-list.tab-list.tab-list button {
 	font-size: 0;
+
 	height: 25px;
 	width: 37px;
+
 	color: var(--text-faint);
 	background-color: var(--bg3);
+
 	padding: 4px;
 	margin-right: 10px;
+
 	border: var(--thin-border);
 	border-radius: var(--radius-s);
 }
@@ -5659,8 +5772,10 @@ button.longform-remove-step-button.longform-remove-step-button.longform-remove-s
 	font-size: 1em;
 	font-weight: 700;
 	line-height: 1.3;
+
 	color: var(--text-muted);
 	background-color: var(--bg3);
+
 	padding: 4px;
 	margin-top: 0;
 	margin-bottom: 3px;
@@ -5688,8 +5803,10 @@ button.longform-remove-step-button.longform-remove-step-button.longform-remove-s
 	font-weight: 400;
 	line-height: 1;
 	text-shadow: none;
+
 	padding: 1px 3px 3px;
 	margin-right: 5px;
+
 	border-width: 1px;
 	border-radius: var(--radius-s);
 }
@@ -5911,11 +6028,15 @@ body.longform-tasks-different.longform-tasks-different.longform-tasks-different.
 
 .kanban-plugin__new-item-button.kanban-plugin__new-item-button {
 	display: block;
+
 	font-size: 0;
 	text-align: center;
+
 	height: 1.2rem;
 	width: 96%;
+
 	box-shadow: none;
+
 	padding: 0;
 	margin: 0 2%;
 }
