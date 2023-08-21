@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 /* SHIMMERING FOCUS by @pseudometa
-Version 3.493
+Version 3.494
 Source CSS: https://github.com/chrisgrieser/shimmering-focus/blob/main/source.css
 MIT License
 ──────────────────────────────────────────────────── */
@@ -12,6 +12,7 @@ MIT License
 
 /* @TOC-SPLIT-MARKER */
 /*
+- Global Stylelint Rule Disables
 - Fonts (base64 encoded)
 - Temporary Bug Fixes / Additions
 - Variables
@@ -160,6 +161,16 @@ MIT License
  	- Miscellaneous (+)
  	- Infos (+)
  	/* @TOC-SPLIT-MARKER */
+
+/* ───────────────────────────────────────────────── */
+/* < Global Stylelint Rule Disables
+──────────────────────────────────────────────────── */
+/* INFO disable Rules that do not make sense for Obsidian themes,
+ * but can make sense for snippets */
+
+/* stylelint-disable no-descending-specificity */
+/* stylelint-disable selector-class-pattern */
+/* stylelint-disable font-family-no-missing-generic-family-keyword */
 
 /* ───────────────────────────────────────────────── */
 /* < Fonts (base64 encoded)
@@ -426,21 +437,21 @@ https://www.youtube.com/watch?v=yl0pvIRTWWo&t=7s */
 	--divider-width-hover: 3px;
 	--cursor: default;
 	--cursor-link: pointer;
-	--text-on-accent: hsl(0 0% 100%);
+	--text-on-accent: hsl(0deg 0% 100%);
 	--text-error: var(--color-red);
 	--text-success: var(--color-green);
 
 	/* colors for syntax highlighting & callouts (different tone in dark mode) */
 	--color-red-rgb: 251, 70, 76;
 	--color-green-rgb: 68, 207, 110;
-	--color-red: hsl(358 96% 63%);
-	--color-green: hsl(138 59% 54%);
-	--color-orange: hsl(31 79% 58%);
-	--color-yellow: hsl(59 64% 66%);
-	--color-cyan: hsl(179 69% 60%);
-	--color-blue: hsl(212 100% 50%);
-	--color-purple: hsl(258 100% 75%);
-	--color-pink: hsl(328 91% 79%);
+	--color-red: hsl(358deg 96% 63%);
+	--color-green: hsl(138deg 59% 54%);
+	--color-orange: hsl(31deg 79% 58%);
+	--color-yellow: hsl(59deg 64% 66%);
+	--color-cyan: hsl(179deg 69% 60%);
+	--color-blue: hsl(212deg 100% 50%);
+	--color-purple: hsl(258deg 100% 75%);
+	--color-pink: hsl(328deg 91% 79%);
 
 	/* Default Accent Color: ; will be overridden by user selection in `Appearance
 	tab`, however, by setting color accent of its own, they are gonna be
@@ -484,25 +495,25 @@ body {
 	--bg-hue: var(--bg-hue-light);
 
 	/* hard-coded, so user does not mess up color scheme */
-	--color-accent: hsl(184 79% 35%);
+	--color-accent: hsl(184deg 79% 35%);
 	--color-accent-hsl: 184 79% 35%;
-	--interactive-accent: hsl(184 79% 30%);
-	--alt-heading-color: hsl(232 34% 50%);
-	--secondary-accent: hsl(28 54% 51%);
-	--hover-accent: hsl(328 100% 54%);
-	--link-unresolved-color: hsl(101 42% 51%);
+	--interactive-accent: hsl(184deg 79% 30%);
+	--alt-heading-color: hsl(232deg 34% 50%);
+	--secondary-accent: hsl(28deg 54% 51%);
+	--hover-accent: hsl(328deg 100% 54%);
+	--link-unresolved-color: hsl(101deg 42% 51%);
 }
 
 .theme-dark {
 	--bg-sat: 15%;
 	--bg-hue: var(--bg-hue-dark);
-	--color-accent: hsl(184 79% 45%);
+	--color-accent: hsl(184deg 79% 45%);
 	--color-accent-hsl: 184 79% 35%;
-	--interactive-accent: hsl(184 79% 30%);
-	--alt-heading-color: hsl(232 50% 70%);
-	--secondary-accent: hsl(28 63% 61%);
-	--hover-accent: hsl(328 100% 64%);
-	--link-unresolved-color: hsl(101 42% 51%);
+	--interactive-accent: hsl(184deg 79% 30%);
+	--alt-heading-color: hsl(232deg 50% 70%);
+	--secondary-accent: hsl(28deg 63% 61%);
+	--hover-accent: hsl(328deg 100% 64%);
+	--link-unresolved-color: hsl(101deg 42% 51%);
 }
 
 /* variables dependent on the main variables above */
@@ -762,18 +773,18 @@ body {
 	--thin-muted-border: 1px solid var(--muted-border-color);
 	--muted-border: 2px solid var(--muted-border-color);
 	--radius-xs: 2px;
-	--readability-text-shadow-dark: 1px 1px 0px hsl(0 0% 0% / 100%);
+	--readability-text-shadow-dark: 1px 1px 0px hsl(0deg 0% 0% / 100%);
 }
 
 .theme-light {
-	--a-row: hsla(0 0% 0% / 2.5%);
-	--b-row: hsla(0 0% 0% / 7.5%);
+	--a-row: hsla(0deg 0% 0% / 2.5%);
+	--b-row: hsla(0deg 0% 0% / 7.5%);
 	--search-match-color: var(--color-orange);
 }
 
 .theme-dark {
-	--a-row: hsla(0 0% 0% / 15%);
-	--b-row: hsla(0 0% 0% / 30%);
+	--a-row: hsla(0deg 0% 0% / 15%);
+	--b-row: hsla(0deg 0% 0% / 30%);
 	--search-match-color: var(--color-yellow);
 }
 
@@ -839,11 +850,11 @@ table :is(ul, ol) {
 ──────────────────────────────────────────────────── */
 /* stylelint-disable-next-line no-duplicate-selectors */
 .theme-light {
-	--annotation-tag-font-color: hsl(0 0% 13%);
+	--annotation-tag-font-color: hsl(0deg 0% 13%);
 }
 /* stylelint-disable-next-line no-duplicate-selectors */
 .theme-dark {
-	--annotation-tag-font-color: hsl(0 0% 100%);
+	--annotation-tag-font-color: hsl(0deg 0% 100%);
 }
 
 /* all annotation tags */
@@ -1052,7 +1063,7 @@ body:not(.annotation-tags-off) :is(.cm-hashtag-end.cm-tag-sidenote, .tag[href="#
 
 body:not(.annotation-tags-off) :is(.cm-tag-question, .tag[href="#question"]),
 body:not(.annotation-tags-off) :is(.cm-tag-goal, .tag[href="#goal"]) {
-	background-color: hsl(178 100% 30% / 50%);
+	background-color: hsl(178deg 100% 30% / 50%);
 }
 
 body:not(.annotation-tags-off) :is(.cm-hashtag-end.cm-tag-goal, .tag[href="#goal"])::after {
@@ -1064,7 +1075,7 @@ body:not(.annotation-tags-off) :is(.cm-hashtag-end.cm-tag-question, .tag[href="#
 }
 
 body:not(.annotation-tags-off) :is(.cm-tag-critique, .tag[href="#critique"]) {
-	background-color: hsl(330 60% 50% / 50%);
+	background-color: hsl(330deg 60% 50% / 50%);
 }
 
 body:not(.annotation-tags-off) :is(.cm-hashtag-end.cm-tag-critique, .tag[href="#critique"])::after {
@@ -1073,7 +1084,7 @@ body:not(.annotation-tags-off) :is(.cm-hashtag-end.cm-tag-critique, .tag[href="#
 
 body:not(.annotation-tags-off) :is(.cm-tag-idea, .tag[href="#idea"]),
 body:not(.annotation-tags-off) :is(.cm-tag-quote, .tag[href="#quote"]) {
-	background-color: hsl(86 100% 51% / 50%);
+	background-color: hsl(86deg 100% 51% / 50%);
 }
 
 body:not(.annotation-tags-off) :is(.cm-hashtag-end.cm-tag-idea, .tag[href="#idea"])::after {
@@ -1207,7 +1218,7 @@ body .cm-s-obsidian span.cm-formatting-task {
 .cm-footref,
 .footnote-link {
 	font-weight: 600;
-	text-rendering: geometricPrecision;
+	text-rendering: geometricprecision;
 }
 
 body .HyperMD-footnote.cm-line.cm-line,
@@ -1239,7 +1250,7 @@ body .HyperMD-footnote.cm-line.cm-line,
 }
 
 .footnote-backref {
-	font-family: "Inter";
+	font-family: Inter;
 	font-size: 90%;
 	text-decoration: none;
 	color: var(--text-gray);
@@ -1738,11 +1749,11 @@ body:not(.no-codeblock-line-numbers) .HyperMD-codeblock-end .cm-formatting-code-
 ──────────────────────────────────────────────────── */
 /* increase readability */
 body.theme-light {
-	--color-cyan: hsl(179 60% 38%);
+	--color-cyan: hsl(179deg 60% 38%);
 }
 
 .theme-light .cm-s-obsidian .cm-templater-command.cm-templater-execution-tag {
-	color: hsl(66 100% 33%);
+	color: hsl(66deg 100% 33%);
 }
 
 /* ───────────────────────────────────────────────── */
@@ -1958,7 +1969,6 @@ blockquote code {
 	letter-spacing: 0.8px;
 	background-color: rgb(var(--callout-color) / 15%);
 	padding: 2px 8px 3px;
-	/* stylelint-disable-next-line color-function-notation */
 	border-bottom: var(--callout-border-width) solid rgb(var(--callout-color) / var(--callout-border-opacity));
 }
 
@@ -2692,9 +2702,11 @@ input[type="range"]::after {
 	0% {
 		opacity: 0.1;
 	}
+
 	50% {
 		opacity: 1;
 	}
+
 	100% {
 		opacity: 0.1;
 	}
@@ -3290,7 +3302,7 @@ body:not(.normal-tab-bar)
 
 .is-active .workspace-tab-header-inner-title {
 	font-weight: 600;
-	text-rendering: geometricPrecision;
+	text-rendering: geometricprecision;
 }
 
 body .workspace-tab-header-container {
@@ -3805,15 +3817,15 @@ are not targeted by this */
 }
 
 .theme-dark .cm-focused .cm-vimCursorLayer .cm-fat-cursor.cm-fat-cursor.cm-fat-cursor {
-	color: hsl(0 0% 70%);
-	background-color: hsl(0 0% 0%);
-	outline-color: hsl(0 0% 90%);
+	color: hsl(0deg 0% 70%);
+	background-color: hsl(0deg 0% 0%);
+	outline-color: hsl(0deg 0% 90%);
 }
 
 .theme-light .cm-focused .cm-vimCursorLayer .cm-fat-cursor.cm-fat-cursor.cm-fat-cursor {
-	color: hsl(0 0% 90%);
-	background-color: hsl(0 0% 25%);
-	outline-color: hsl(220 10% 80%);
+	color: hsl(0deg 0% 90%);
+	background-color: hsl(0deg 0% 25%);
+	outline-color: hsl(220deg 10% 80%);
 }
 
 .cm-editor:not(.cm-focused) .cm-fat-cursor {
@@ -3921,7 +3933,7 @@ are not targeted by this */
 
 /* the ":" or "/" enlarged */
 .cm-vim-panel > div > span {
-	font-family: "Inter" !important; /* stylelint-disable-line declaration-no-important */
+	font-family: Inter !important; /* stylelint-disable-line declaration-no-important */
 	font-size: 1.7em;
 	font-weight: 600;
 }
@@ -5214,19 +5226,19 @@ body .setting-item.setting-item.setting-item.setting-item[data-id="author-info"]
 	--hue-slider-br: 60%;
 	--hue-scale: linear-gradient(
 		to right,
-		hsl(0 var(--hue-slider-sat) var(--hue-slider-br)),
-		hsl(30 var(--hue-slider-sat) var(--hue-slider-br)),
-		hsl(60 var(--hue-slider-sat) var(--hue-slider-br)),
-		hsl(90 var(--hue-slider-sat) var(--hue-slider-br)),
-		hsl(120 var(--hue-slider-sat) var(--hue-slider-br)),
-		hsl(150 var(--hue-slider-sat) var(--hue-slider-br)),
-		hsl(180 var(--hue-slider-sat) var(--hue-slider-br)),
-		hsl(210 var(--hue-slider-sat) var(--hue-slider-br)),
-		hsl(240 var(--hue-slider-sat) var(--hue-slider-br)),
-		hsl(270 var(--hue-slider-sat) var(--hue-slider-br)),
-		hsl(300 var(--hue-slider-sat) var(--hue-slider-br)),
-		hsl(330 var(--hue-slider-sat) var(--hue-slider-br)),
-		hsl(360 var(--hue-slider-sat) var(--hue-slider-br))
+		hsl(0deg var(--hue-slider-sat) var(--hue-slider-br)),
+		hsl(30deg var(--hue-slider-sat) var(--hue-slider-br)),
+		hsl(60deg var(--hue-slider-sat) var(--hue-slider-br)),
+		hsl(90deg var(--hue-slider-sat) var(--hue-slider-br)),
+		hsl(120deg var(--hue-slider-sat) var(--hue-slider-br)),
+		hsl(150deg var(--hue-slider-sat) var(--hue-slider-br)),
+		hsl(180deg var(--hue-slider-sat) var(--hue-slider-br)),
+		hsl(210deg var(--hue-slider-sat) var(--hue-slider-br)),
+		hsl(240deg var(--hue-slider-sat) var(--hue-slider-br)),
+		hsl(270deg var(--hue-slider-sat) var(--hue-slider-br)),
+		hsl(300deg var(--hue-slider-sat) var(--hue-slider-br)),
+		hsl(330deg var(--hue-slider-sat) var(--hue-slider-br)),
+		hsl(360deg var(--hue-slider-sat) var(--hue-slider-br))
 	);
 }
 
@@ -5929,7 +5941,7 @@ body.longform-tasks-different.longform-tasks-different.longform-tasks-different.
 .kanban-plugin {
 	background-color: var(--bg4);
 
-	--dot-color: hsl(0 0% 40% / 25%);
+	--dot-color: hsl(0deg 0% 40% / 25%);
 	--dot-spacing: 9px;
 	--dot-size: 1px;
 }
@@ -6410,7 +6422,7 @@ settings:
   -
    id: mac-os-native
    title: Native macOS Look
-   description: Background colors like in a native macOS app. 
+   description: Background colors like in a native macOS app.
    type: class-toggle
    default: false
   -

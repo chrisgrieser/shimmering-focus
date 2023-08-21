@@ -1,8 +1,0 @@
-# yaml-language-server: $schema=https://json.schemastore.org/prettierrc.json
-# explicitly setting schema required, since using non-standard filename
-#───────────────────────────────────────────────────────────────────────────────
-
-# white-space setting done via .editorconfig
-# https://prettier.io/docs/en/options.html
-printWidth: 120
-quoteProps: consistent

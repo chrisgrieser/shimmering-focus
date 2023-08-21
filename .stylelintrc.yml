@@ -2,26 +2,21 @@
 # explicitly setting schema since using non-standard filename
 #───────────────────────────────────────────────────────────────────────────────
 extends: [stylelint-config-standard]
-plugins:
-  - stylelint-order
-  - stylelint-declaration-block-no-ignored-properties
-reportNeedlessDisables: [false, {severity: warning}]
-reportInvalidScopeDisables: [true, {severity: error}]
-
+plugins: [stylelint-order]
+reportInvalidScopeDisables: true
+reportNeedlessDisables: true
 #───────────────────────────────────────────────────────────────────────────────
+# CORE RULES
 rules:
-  # deactivated rules
-  font-family-no-missing-generic-family-keyword: null
-  no-descending-specificity: null
-  no-empty-source: null
-  selector-class-pattern: null
-  declaration-empty-line-before: null
-  property-no-vendor-prefix: null
-
-  # plugin rules
-  plugin/declaration-block-no-ignored-properties: true
-
-  # https://github.com/hudochenkov/stylelint-order/blob/master/rules/properties-order/README.md#emptylineminimumpropertythreshold
+  color-named: never
+  color-no-hex: true
+  comment-empty-line-before: null
+  declaration-empty-line-before: null # conflicts with stylelint-order spacing
+  declaration-no-important: true
+  font-weight-notation: [numeric, { severity: warning }]
+  time-min-milliseconds: 100
+  #────────────────────────────────────────────────────────────────────────────
+  # PLUGIN RULES
   order/properties-order:
     - - groupName: Content & Display
         emptyLineBefore: threshold
@@ -160,60 +155,6 @@ rules:
           - transition-delay
           - cursor
     - emptyLineBeforeUnspecified: threshold
-      unspecified: bottom
       emptyLineMinimumPropertyThreshold: 6
       severity: warning
-  #─────────────────────────────────────────────────────────────────────────────
-  # Main Rules
-  declaration-no-important: true
-  font-weight-notation: [numeric, {severity: warning}]
-  comment-whitespace-inside: [always, {severity: warning}]
-  no-irregular-whitespace: true
-  block-no-empty:
-    - true
-    - ignore: [comments]
-      severity: warning
-  custom-property-no-missing-var-function: true
-  rule-empty-line-before:
-    - always-multi-line
-    - ignore: [after-comment, inside-block]
-      severity: warning
-  comment-no-empty: [true, {severity: warning}]
-  comment-empty-line-before:
-    - always
-    - except: [first-nested]
-      ignore: [after-comment, stylelint-commands]
-      ignoreComments: ['/: .*;/']
-      severity: warning
-  length-zero-no-unit:
-    - true
-    - severity: warning
-      ignore: [custom-properties]
-  number-max-precision:
-    - 2
-    - ignoreProperties: [letter-spacing]
-      ignoreUnits: [em, rem]
-  time-min-milliseconds: [200, {severity: warning}]
-  shorthand-property-no-redundant-values: true
-  declaration-block-no-redundant-longhand-properties: true
-  declaration-block-no-shorthand-property-overrides: true
-  function-name-case: [lower, {severity: warning}]
-  selector-type-case: [lower, {severity: warning}]
-  value-keyword-case:
-    - lower
-    - ignoreKeywords: [geometricPrecision]
-      severity: warning
-  color-function-notation: [modern, {severity: warning}]
-  color-hex-length: [short, {severity: warning}]
-  hue-degree-notation: [number, {severity: warning}]
-  color-named: never
-  color-no-hex: true
-  font-family-name-quotes: always-unless-keyword
-  function-url-quotes: always
-  selector-attribute-quotes: always
-  custom-property-pattern:
-    - ^([a-z][a-z0-9]*)(-[a-z0-9]+)*$
-    - message: Expected custom property name to be kebab-case (custom-property-pattern)
-  declaration-block-single-line-max-declarations: 1
-  selector-max-id: 1
-  selector-pseudo-element-colon-notation: double
+      unspecified: bottom
