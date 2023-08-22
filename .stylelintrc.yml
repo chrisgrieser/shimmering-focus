@@ -1,8 +1,11 @@
 # yaml-language-server: $schema=https://json.schemastore.org/stylelintrc.json
 # explicitly setting schema since using non-standard filename
 #───────────────────────────────────────────────────────────────────────────────
-extends: [stylelint-config-standard]
-plugins: [stylelint-order]
+extends:
+  - stylelint-config-standard
+  - stylelint-config-recess-order
+plugins:
+  - stylelint-order
 reportInvalidScopeDisables: true
 reportNeedlessDisables: true
 #───────────────────────────────────────────────────────────────────────────────
@@ -10,157 +13,14 @@ rules:
   color-named: never
   color-no-hex: true
   comment-empty-line-before: null
-  declaration-empty-line-before: null # conflicts with stylelint-order spacing
   declaration-no-important: true
   font-weight-notation: [numeric, { severity: warning }] # auto-fixed
+  selector-class-pattern: null
   #────────────────────────────────────────────────────────────────────────────
   order/order:
     - custom-properties
-    - dollar-variables
     - declarations
     - rules
-    - at-rules
   order/properties-order:
-    - - groupName: Content & Display
-        emptyLineBefore: threshold
-        noEmptyLineBetween: true
-        properties:
-          - display
-          - counter-reset
-          - counter-increment
-          - content
-          - flex
-          - flex-grow
-          - flex-basis
-          - flex-direction
-      - groupName: Font & Text
-        emptyLineBefore: threshold
-        noEmptyLineBetween: true
-        properties:
-          - font-family
-          - font-size
-          - font-weight
-          - text-rendering
-          - font-style
-          - line-height
-          - letter-spacing
-          - text-decoration
-          - text-transform
-          - text-shadow
-          - text-align
-          - hyphens
-          - white-space
-          - overflow-wrap
-          - font-display
-          - src
-      - groupName: Size
-        emptyLineBefore: threshold
-        noEmptyLineBetween: true
-        properties:
-          - height
-          - max-height
-          - min-height
-          - width
-          - max-width
-          - min-width
-          - backdrop-position
-          - background-position-y
-          - background-position-x
-          - backdrop-size
-          - resize
-      - groupName: Color & Background
-        emptyLineBefore: threshold
-        noEmptyLineBetween: true
-        properties:
-          - color
-          - fill
-          - stroke-width
-          - background
-          - background-color
-          - background-image
-          - background-size
-          - background-attachment
-          - background-repeat
-          - image-rendering
-          - backdrop-filter
-          - backdrop-repeat
-          - box-shadow
-          - opacity
-          - filter
-      - groupName: Position
-        emptyLineBefore: threshold
-        noEmptyLineBetween: true
-        properties:
-          - position
-          - float
-          - top
-          - right
-          - bottom
-          - left
-          - z-index
-      - groupName: Padding & Margin
-        emptyLineBefore: threshold
-        noEmptyLineBetween: true
-        properties:
-          - padding
-          - padding-top
-          - padding-right
-          - padding-bottom
-          - padding-left
-          - text-indent
-          - padding-inline
-          - padding-inline-start
-          - margin
-          - margin-top
-          - margin-right
-          - margin-bottom
-          - margin-left
-      - groupName: Border & Outline
-        emptyLineBefore: threshold
-        noEmptyLineBetween: true
-        properties:
-          - border
-          - border-top
-          - border-right
-          - border-bottom
-          - border-left
-          - border-image
-          - border-width
-          - border-top-width
-          - border-right-width
-          - border-bottom-width
-          - border-left-width
-          - border-style
-          - border-top-style
-          - border-right-style
-          - border-bottom-style
-          - border-left-style
-          - border-color
-          - border-top-color
-          - border-right-color
-          - border-bottom-color
-          - border-left-color
-          - border-radius
-          - border-top-right-radius
-          - border-bottom-right-radius
-          - border-bottom-left-radius
-          - border-top-left-radius
-          - outline
-          - outline-offset
-          - outline-color
-          - outline-width
-          - outline-style
-      - groupName: Transition & Cursor
-        emptyLineBefore: threshold
-        noEmptyLineBetween: true
-        properties:
-          - transform
-          - transition
-          - transition-property
-          - transition-duration
-          - transition-delay
-          - cursor
-    - emptyLineBeforeUnspecified: threshold
-      emptyLineMinimumPropertyThreshold: 6
-      unspecified: bottomAlphabetical
-      severity: warning
+    - [] # empty array required, since option are only valid in second element
+    - severity: warning
