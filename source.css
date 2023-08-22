@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 /* SHIMMERING FOCUS by @pseudometa
-Version 3.499
+Version 3.500
 Source CSS: https://github.com/chrisgrieser/shimmering-focus/blob/main/source.css
 MIT License
 ──────────────────────────────────────────────────── */
@@ -1957,6 +1957,7 @@ blockquote code {
 	--callout-radius: var(--radius-s);
 	--callout-blend-mode: var(--highlight-mix-blend-mode);
 	--callout-title-size: inherit;
+
 	background-color: rgb(var(--callout-color) / 11%);
 }
 
@@ -2048,6 +2049,7 @@ body .callout ul.contains-task-list {
 .callout[data-callout*="sidenote"] {
 	--callout-icon: lightbulb;
 	--callout-color: 255, 210, 107;
+
 	float: right;
 	font-size: 90%;
 	line-height: 1.3em;
@@ -5974,6 +5976,7 @@ body.longform-tasks-different.longform-tasks-different.longform-tasks-different.
 	--dot-color: hsl(0deg 0% 40% / 25%);
 	--dot-spacing: 9px;
 	--dot-size: 1px;
+
 	background-color: var(--bg4);
 }
 

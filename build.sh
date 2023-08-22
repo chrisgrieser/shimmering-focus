@@ -57,8 +57,8 @@ if [[ $? == 1 ]]; then
 fi
 
 # Autofixing & Linting
-stylelint --fix "$CSS_PATH" &>/dev/null
 prettier --write "$CSS_PATH" &>/dev/null
+stylelint --fix "$CSS_PATH" &>/dev/null
 
 #───────────────────────────────────────────────────────────────────────────────
 
