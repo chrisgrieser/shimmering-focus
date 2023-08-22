@@ -1,5 +1,9 @@
 {
-  "devDependencies": {
+  "dependencies": {
     "lightningcss-cli": "^1.21.7"
+  },
+  "devDependencies": {
+    "prettier": "^3.0.2",
+    "stylelint": "^15.10.3"
   }
 }
