@@ -1,5 +1,5 @@
 {
-  "dependencies": {
-    "clean-css-cli": "^5.6.2"
+  "devDependencies": {
+    "lightningcss-cli": "^1.21.7"
   }
 }

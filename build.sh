@@ -31,11 +31,11 @@ CSS_PATH="./source.css"
 npm_location="$(npm root)/.bin/"
 export PATH=/usr/local/lib:/usr/local/bin:/opt/homebrew/bin/:$npm_location:$PATH
 
-if ! command -v yamllint &> /dev/null; then echo "yamllint not installed." ; exit 1 ; fi
-if ! command -v stylelint &> /dev/null; then echo "stylelint not installed." ; exit 1 ; fi
-if ! command -v prettier &> /dev/null; then echo "prettier not installed." ; exit 1 ; fi
-if ! command -v git &> /dev/null; then echo "git not installed." ; exit 1 ; fi
-if ! command -v cleancss &> /dev/null; then echo "cleancss (\`npm i clean-css-cli\`) not installed." ; exit 1 ; fi
+if ! command -v yamllint &> /dev/null; then echo "yamllint not installed." ; return 1 ; fi
+if ! command -v stylelint &> /dev/null; then echo "stylelint not installed." ; return 1 ; fi
+if ! command -v prettier &> /dev/null; then echo "prettier not installed." ; return 1 ; fi
+if ! command -v git &> /dev/null; then echo "git not installed." ; return 1 ; fi
+if ! command -v lightningcss &> /dev/null; then echo "lightningcss (\`npm i\`) not installed." ; return 1 ; fi
 
 #───────────────────────────────────────────────────────────────────────────────
 
@@ -46,20 +46,20 @@ YAMLLINT_OUTPUT=$(
 	sed -n '/@settings/,$p' "$CSS_PATH" |
 	sed '1,2d;$d'|
 	sed '$d' |
-	yamllint - --config-data="{extends: relaxed, rules: {trailing-spaces: disable}}" 
+	yamllint - --config-data="{extends: relaxed, rules: {trailing-spaces: disable}}"
 )
 
 if [[ $? == 1 ]]; then
 	echo "YAML ERROR"
 	echo "$YAMLLINT_OUTPUT" | tail -n+2
 	# open Style Settings if Advanced URI plugin installed
-	open "obsidian://advanced-uri?settingid=obsidian-style-settings" 
+	open "obsidian://advanced-uri?settingid=obsidian-style-settings"
 	exit 1
 fi
 
 # Autofixing & Linting
-stylelint --fix "$CSS_PATH" &>/dev/null 
-prettier --write "$CSS_PATH" &>/dev/null 
+stylelint --fix "$CSS_PATH" &>/dev/null
+prettier --write "$CSS_PATH" &>/dev/null
 
 #───────────────────────────────────────────────────────────────────────────────
 
@@ -96,7 +96,7 @@ mv tempaa info.css
 mv tempab unminified_css_code.css
 grep -vE "^# << " tempac > style_settings.css # remove yaml-navigation markers
 rm tempac
-cleancss unminified_css_code.css > minified_css_code.css
+lightningcss unminified_css_code.css --minify --output-file=minified_css_code.css
 cat info.css minified_css_code.css style_settings.css > theme.css
 rm info.css unminified_css_code.css minified_css_code.css style_settings.css
 
