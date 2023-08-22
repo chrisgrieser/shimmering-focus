@@ -1,6 +1,9 @@
 # yaml-language-server: $schema=https://json.schemastore.org/stylelintrc.json
 # explicitly setting schema since using non-standard filename
 #───────────────────────────────────────────────────────────────────────────────
+# DOCS https://stylelint.io/user-guide/rules
+#───────────────────────────────────────────────────────────────────────────────
+
 extends:
   - stylelint-config-standard
   - stylelint-config-recess-order
@@ -9,18 +12,28 @@ plugins:
 reportInvalidScopeDisables: true
 reportNeedlessDisables: true
 #───────────────────────────────────────────────────────────────────────────────
+# INFO auto-fixed rules are declared as warnings, so they are not displayed in
+# the editor due to `--quite`
 rules:
   color-named: never
   color-no-hex: true
+  color-hex-alpha: never
   comment-empty-line-before: null
   declaration-no-important: true
   font-weight-notation: [numeric, { severity: warning }] # auto-fixed
   selector-class-pattern: null
+  no-unknown-custom-properties: true # this is equivalent to "no undeclared variables"
+  declaration-empty-line-before: [never, { severity: warning }]
+  custom-property-empty-line-before: [never, { severity: warning }]
+  max-nesting-depth: 3
   #────────────────────────────────────────────────────────────────────────────
   order/order:
     - custom-properties
+    - dollar-variables
     - declarations
     - rules
+    - at-rules
   order/properties-order:
-    - [] # empty array required, since options are only valid in second element
-    - severity: warning
+    - [] # empty array required, since option are only valid in second element
+    - unspecified: bottomAlphabetical
+      severity: warning

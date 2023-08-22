@@ -351,10 +351,25 @@ autocompletion via LSP and for quicker reference
 https://www.youtube.com/watch?v=yl0pvIRTWWo&t=7s */
 
 .dummy {
+	/* user setting */
 	--font-interface: "";
 	--font-text: "";
 	--font-monospace: "";
-	--font-size-text: "";
+	--font-text-size: "";
+
+	/* Misc */
+	--tag-border-color-hover: hsla(var(--interactive-accent-hsl) / 15%);
+	--background-modifier-border-hover: var(--color-base-35);
+	--highlight-mix-blend-mode: darken;
+	--callout-border-opacity: 0.25;
+	--ribbon-width: 44px;
+	--mono-rgb-100: 0, 0, 0;
+	--background-modifier-hover: rgba(var(--mono-rgb-100) / 7.5%);
+	--nav-item-background-hover: var(--background-modifier-hover);
+	--nav-item-background-active: var(--background-modifier-hover);
+	--line-height-normal: 1.5;
+	--link-external-decoration: underline;
+	--link-external-decoration-hover: underline;
 
 	/* Icons */
 	--icon-size: var(--icon-m);
@@ -1942,7 +1957,6 @@ blockquote code {
 	--callout-radius: var(--radius-s);
 	--callout-blend-mode: var(--highlight-mix-blend-mode);
 	--callout-title-size: inherit;
-
 	background-color: rgb(var(--callout-color) / 11%);
 }
 
@@ -2034,7 +2048,6 @@ body .callout ul.contains-task-list {
 .callout[data-callout*="sidenote"] {
 	--callout-icon: lightbulb;
 	--callout-color: 255, 210, 107;
-
 	float: right;
 	font-size: 90%;
 	line-height: 1.3em;
@@ -4799,7 +4812,7 @@ body .another-quick-switcher__status__count-input {
 	.another-quick-switcher__phantom_item
 	:is(.another-quick-switcher__item__icon, .another-quick-switcher__item__directory),
 .suggestion-item:hover .another-quick-switcher__phantom_item {
-	color: var(--text-hover-accent);
+	color: var(--hover-accent);
 	filter: saturate(60%);
 }
 
@@ -5961,7 +5974,6 @@ body.longform-tasks-different.longform-tasks-different.longform-tasks-different.
 	--dot-color: hsl(0deg 0% 40% / 25%);
 	--dot-spacing: 9px;
 	--dot-size: 1px;
-
 	background-color: var(--bg4);
 }
 
