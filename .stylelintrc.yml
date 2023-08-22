@@ -22,5 +22,5 @@ rules:
     - declarations
     - rules
   order/properties-order:
-    - [] # empty array required, since option are only valid in second element
+    - [] # empty array required, since options are only valid in second element
     - severity: warning
