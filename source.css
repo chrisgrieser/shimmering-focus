@@ -2193,9 +2193,12 @@ body:not(.no-pandoc-citation-emphasis) .cm-hmd-barelink.cm-formatting:not(.cm-fo
 /* ───────────────────────────────────────────────── */
 /* << Images
 ──────────────────────────────────────────────────── */
-/* app container, so images in modal aren't affected, span so images as files
- * aren't affected */
-body:not(.is-mobile, .max-image-size-toggle) .app-container span > img:not(:active),
+/* .workspace-leaf-content so images in modal aren't affected, :not(.image-container) so
+ * images as files aren't affected */
+body:not(.is-mobile, .max-image-size-toggle)
+	.workspace-leaf-content
+	:not(.image-container)
+	> img:not(:active),
 body:not(.is-mobile, .max-image-size-toggle) .oz-image-widget-cm6 > img:not(:active) {
 	cursor: zoom-in;
 	max-width: calc(var(--image-size) * 1%);
@@ -2205,6 +2208,13 @@ body:not(.is-mobile, .max-image-size-toggle) .oz-image-widget-cm6 > img:not(:act
  * (see dummy setting in Style Settings) */
 .style-settings-container .setting-item[data-id="max-image-size-toggle"] {
 	display: none;
+}
+
+/* images as file with reduced with to avoid collusions with breadcrumbs or
+ * traffic lights */
+.workspace-leaf-content .image-container img {
+	max-width: 97%;
+	margin-top: 1em;
 }
 
 /* Image Alt as caption
