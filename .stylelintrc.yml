@@ -13,18 +13,20 @@ reportNeedlessDisables: true
 #───────────────────────────────────────────────────────────────────────────────
 # INFO auto-fixed rules are declared as warnings, so they are not displayed in
 # the editor due to `--quiet`
+defaultSeverity: warning
+#───────────────────────────────────────────────────────────────────────────────
 rules:
-  color-named: never
+  color-named: [never, { severity: error }]
   color-no-hex: true
   color-hex-alpha: never
   comment-empty-line-before: null # does not work well with comment decorators
-  declaration-no-important: true
-  font-weight-notation: [numeric, { severity: warning }]
+  declaration-no-important: [true, { severity: error }]
+  font-weight-notation: numeric
   selector-class-pattern: null # when doing themes, you mostly do not decide on class names
-  no-unknown-custom-properties: true # equivalent to "no undeclared variables" in other linters
-  declaration-empty-line-before: [never, { severity: warning }]
-  custom-property-empty-line-before: [never, { severity: warning }]
-  max-nesting-depth: 3
+  no-unknown-custom-properties: [true, { severity: error }] # equivalent to "no undeclared variables" in other linters
+  declaration-empty-line-before: never
+  custom-property-empty-line-before: never
+  max-nesting-depth: [3, { severity: error }]
 
   order/order:
     - custom-properties
