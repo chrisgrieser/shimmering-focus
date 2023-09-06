@@ -17,6 +17,10 @@
 
 #───────────────────────────────────────────────────────────────────────────────
 
+if [[ $(uname) == "darwin" ]]; then
+	osascript -e 'display notification "Building…" with title "Shimmering Focus"'
+fi
+
 # Goto git root
 cd "$(dirname "$0")" || exit 1
 # shellcheck disable=2164
@@ -100,10 +104,6 @@ rm info.css unminified_css_code.css minified_css_code.css style_settings.css
 
 #───────────────────────────────────────────────────────────────────────────────
 
-# get commit message
-COMMIT_MSG="$*"
-[[ -z "$COMMIT_MSG" ]] && COMMIT_MSG="patch"
-
 # Copy for documentation purposes
 cp "$DOTFILE_FOLDER/_linter-configs/stylelintrc.yml" ./.stylelintrc.yml
 
@@ -114,10 +114,8 @@ sed -E -i '' "s/badge.*-[[:digit:]]+-/badge\/downloads-$dl-/" ./README.md
 #───────────────────────────────────────────────────────────────────────────────
 
 # add to git
-git add -A
-git commit -m "$COMMIT_MSG"
-git pull
-echo -n | git push  # pass for notification
+git add -A && git commit -m "publish (automated)"
+git pull ; git push
 
 #───────────────────────────────────────────────────────────────────────────────
 # INFO specific to my setup: copy theme file for fallback
