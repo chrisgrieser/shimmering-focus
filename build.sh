@@ -113,11 +113,11 @@ sed -E -i '' "s/badge.*-[[:digit:]]+-/badge\/downloads-$dl-/" ./README.md
 
 #───────────────────────────────────────────────────────────────────────────────
 
-# add to git
+# git add, commit, pull, and push
+# needs piping stderr to stdin, since git push reports an error even on success?!
 git add -A && git commit -m "publish (automated)"
-git pull 
-git push 2>&1
+git pull ; git push 2>&1
 
 #───────────────────────────────────────────────────────────────────────────────
 # INFO specific to my setup: copy theme file for fallback
-# cp "$CSS_PATH" "$VAULT_PATH/.obsidian/themes/Shimmering Focus/fallback.css"
+cp "$CSS_PATH" "$VAULT_PATH/.obsidian/themes/Shimmering Focus/fallback.css"
