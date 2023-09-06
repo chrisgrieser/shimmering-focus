@@ -2998,6 +2998,7 @@ body:not(.show-ribbon, .is-mobile) .side-dock-settings .side-dock-ribbon-action:
 .hide-languagetool-status-bar .status-bar-item.plugin-obsidian-languagetool-plugin,
 .hide-pane-relief-focus-lock-status-bar .status-bar-item.plugin-pane-relief,
 .hide-electron-window-tweaker-status-bar .status-bar-item.plugin-obsidian-electron-window-tweaker,
+.hide-properties-in-statusbar .status-bar-item.plugin-properties,
 .hide-backlinks-status-bar .status-bar-item.plugin-backlink {
 	display: none;
 }
@@ -6291,6 +6292,11 @@ settings:
    id: hidden-sidebars-hidden-statusbar
    title: Hide the Status bar completely, when both sidebars are hidden
    description: ⚠️ Requires Obsidian installer version 1.1.9 or later.
+   type: class-toggle
+   default: false
+  -
+   id: hide-properties-in-statusbar
+   title: Hide Properties Count
    type: class-toggle
    default: false
   -
