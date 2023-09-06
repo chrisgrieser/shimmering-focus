@@ -116,7 +116,7 @@ sed -E -i '' "s/badge.*-[[:digit:]]+-/badge\/downloads-$dl-/" ./README.md
 # add to git
 git add -A && git commit -m "publish (automated)"
 git pull 
-# git push
+git push
 
 #───────────────────────────────────────────────────────────────────────────────
 # INFO specific to my setup: copy theme file for fallback
