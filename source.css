@@ -6521,7 +6521,7 @@ settings:
    min: 50
    max: 100
    step: 1
-   format: %
+   format: '%'
   -
    id: no-active-line-highlight
    title: Turn Off Emphasis of Active Line

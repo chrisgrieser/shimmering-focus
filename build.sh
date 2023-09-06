@@ -43,9 +43,8 @@ if ! command -v lightningcss &> /dev/null; then echo "lightningcss-cli not insta
 # - requires style settings placed at the very bottom of the theme css
 YAMLLINT_OUTPUT=$(
 	sed -n '/@settings/,$p' "$CSS_PATH" |
-	sed '1,2d;$d'|
-	sed '$d' |
-	yamllint - --config-data="{extends: relaxed, rules: {trailing-spaces: disable}}"
+	sed '1,2d;$d'| sed '$d' |
+	yamllint - --config-data="{extends: relaxed}" --no-warnings
 )
 
 if [[ $? == 1 ]]; then
