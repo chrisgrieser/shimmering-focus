@@ -768,7 +768,7 @@ body {
 	--longform-font-size: 1.3rem;
 	--longform-base-line-height: 1;
 	--longform-letter-spacing: 0px;
-	--inactive-pane-opacity: 65%;
+	--inactive-pane-opacity: 75%;
 	--transition-delay-passing-over-protection: 200ms;
 	--image-size: 50;
 	--bg1: var(--color-base-00);
@@ -3723,7 +3723,7 @@ body .cm-s-obsidian .is-collapsed ~ .cm-formatting-list {
 /* ───────────────────────────────────────────────── */
 /* <<< Active / Inactive Note
 ──────────────────────────────────────────────────── */
-body:not(.no-dimmed-inactive-pane)
+body
 	.mod-root
 	.workspace-tabs:not(.mod-active, :only-of-type)
 	.workspace-leaf-content[data-type="markdown"] {
@@ -6513,11 +6513,15 @@ settings:
    level: 1
    collapsed: true
   -
-   id: no-dimmed-inactive-pane
-   title: Disable Dimming Inactive Panes
-   description: This also affects inactive popout windows and popovers from the Hover Editor plugin.
-   type: class-toggle
-   default: false
+   id: inactive-pane-opacity
+   title: Dimmed Inactive Panes
+   description: Opacity of inactive panes. Set to 100% to disable dimming.
+   type: variable-number-slider
+   default: 75
+   min: 50
+   max: 100
+   step: 1
+   format: %
   -
    id: no-active-line-highlight
    title: Turn Off Emphasis of Active Line
