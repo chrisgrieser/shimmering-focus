@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 /* SHIMMERING FOCUS by @pseudometa
-Version 3.516
+Version 3.517
 Source CSS: https://github.com/chrisgrieser/shimmering-focus/blob/main/source.css
 MIT License
 ──────────────────────────────────────────────────── */
@@ -2182,11 +2182,6 @@ body:not(.no-pandoc-citation-emphasis)
 
 body:not(.no-pandoc-citation-emphasis) .cm-hmd-barelink.cm-formatting:not(.cm-footref) {
 	color: var(--text-faint);
-}
-
-/* readability improvement */
-.theme-light:not(.no-pandoc-citation-emphasis) .cm-hmd-barelink {
-	text-shadow: 0.1px 0.1px;
 }
 
 /* ───────────────────────────────────────────────── */
