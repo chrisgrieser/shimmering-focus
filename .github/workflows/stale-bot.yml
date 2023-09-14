@@ -1,7 +1,8 @@
 name: "Close stale issues and PRs"
 on:
+  workflow_dispatch:  # allows manually run on github
   schedule:
-    - cron: "18 04 * * *" 
+    - cron: "13 17 * * *" 
 
 permissions:
   issues: write
@@ -19,6 +20,6 @@ jobs:
           stale-issue-label: "Stale"
           stale-issue-message: |
             This issue has been automatically marked as stale.
-            **If this issue is still affecting you, please leave any comment**, for example "bump", and it will be kept open.
+            **If this issue is still relevant to you, please leave any comment**, for example "bump", and it will be kept open.
           close-issue-message: |
             This issue has been closed due to inactivity, and will not be monitored.
