@@ -1956,7 +1956,8 @@ blockquote code {
 	--callout-radius: var(--radius-s);
 	--callout-blend-mode: var(--highlight-mix-blend-mode);
 	--callout-title-size: inherit;
-	background-color: rgb(var(--callout-color) / 11%);
+	/* stylelint-disable-next-line color-function-notation */
+	background-color: rgb(var(--callout-color), 11%);
 }
 
 .callout :is(h1, h2, h3, h4, h5, h6) {
@@ -1978,9 +1979,11 @@ blockquote code {
 .callout-title {
 	padding: 2px 8px 3px;
 	letter-spacing: 0.8px;
-	background-color: rgb(var(--callout-color) / 15%);
+	/* stylelint-disable-next-line color-function-notation */
+	background-color: rgb(var(--callout-color), 15%);
 	border-bottom: var(--callout-border-width) solid
-		rgb(var(--callout-color) / var(--callout-border-opacity));
+		/* stylelint-disable-next-line color-function-notation */
+		rgb(var(--callout-color), var(--callout-border-opacity));
 }
 
 .callout-content {
