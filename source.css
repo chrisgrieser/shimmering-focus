@@ -198,7 +198,6 @@ MIT License
 		format("woff2");
 	font-display: swap;
 }
-
 @font-face {
 	font-family: "iA Writer Quattro S";
 	font-style: normal;
@@ -466,7 +465,7 @@ https://www.youtube.com/watch?v=yl0pvIRTWWo&t=7s */
 	--color-pink: hsl(328deg 91% 79%);
 
 	/* Default Accent Color: ; will be overridden by user selection in `Appearance
-	tab`, however, by setting color accent of its own, they are gonna be
+	tab`, however, by setting color accent of its own, they are going to be
 	ignored in this theme */
 	--accent-h: 184;
 	--accent-s: 79%;
@@ -4952,7 +4951,7 @@ body .another-quick-switcher__grep__path-input.another-quick-switcher__grep__pat
 	padding-left: var(--size-2-3);
 }
 
-/* why would you wanna go from the active file to the active file? */
+/* why would you want to go from the active file to the active file? */
 .workspace-leaf-content[data-type="recent-files"] .nav-file-title.is-active {
 	display: none;
 }
@@ -5628,7 +5627,7 @@ body:not(.no-alternating-rows) li:nth-child(even) :is(.draft-container, .scene-c
 	background-color: var(--a-row);
 }
 
-/* greyed out scenes */
+/* grayed out scenes */
 #scene-list
 	.scene-container:is(
 		[data-scene-path*="Acknowledgements" i],
