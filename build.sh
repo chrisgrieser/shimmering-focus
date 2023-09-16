@@ -63,7 +63,7 @@ fi
 stylelint --fix "$CSS_PATH" &>/dev/null
 # shellcheck disable=SC2094 # SIC prettierd requires reading stdin and a positional filename
 prettierd "$CSS_PATH" < "$CSS_PATH" > temp
-mv temp "$CSS_PATH"
+mv -f temp "$CSS_PATH"
 
 #───────────────────────────────────────────────────────────────────────────────
 

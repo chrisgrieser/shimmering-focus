@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 /* SHIMMERING FOCUS by @pseudometa
-Version 3.518
+Version 3.519
 Source CSS: https://github.com/chrisgrieser/shimmering-focus/blob/main/source.css
 MIT License
 ──────────────────────────────────────────────────── */
@@ -198,6 +198,7 @@ MIT License
 		format("woff2");
 	font-display: swap;
 }
+
 @font-face {
 	font-family: "iA Writer Quattro S";
 	font-style: normal;
