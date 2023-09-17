@@ -4214,11 +4214,16 @@ body:not(.normal-out-back-links) :is(.backlink-pane, .outgoing-link-pane) > .tre
 	display: none;
 }
 
-/* unresolved links */
+/* unresolved outgoing links */
 .tree-item-self.outgoing-link-item svg.lucide-file-plus,
 .tree-item-self.outgoing-link-item[aria-label="Not created yet"] {
 	color: var(--link-unresolved-color);
 	opacity: var(--link-unresolved-opacity);
+}
+
+/* alternating row colors for outgoing links */
+.tree-item-self.outgoing-link-item:nth-child(odd) {
+	background-color: var(--a-row);
 }
 
 /* ───────────────────────────────────────────────── */
