@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 /* SHIMMERING FOCUS by @pseudometa
-Version 3.520
+Version 3.521
 Source CSS: https://github.com/chrisgrieser/shimmering-focus/blob/main/source.css
 MIT License
 ──────────────────────────────────────────────────── */
@@ -627,7 +627,7 @@ body {
 	}
 */
 
-/* ──────────────────────────────��────────────────── */
+/* ──────────────────────────────���────────────────── */
 /* << Changed Obsidian Variables
 ──────────────────────────────────────────────────── */
 
@@ -5025,8 +5025,8 @@ body:not(.no-pandoc-citation-emphasis) .pandoc-citation.pandoc-citation.is-unres
 .pwc-reference-list.pwc-reference-list.pwc-reference-list.pwc-reference-list
 	.pwc-reference-list__title.pwc-reference-list__title
 	> div {
-	margin-bottom: 4px;
 	padding-left: 2px;
+	margin-bottom: 4px;
 	font-family: var(--font-heading-theme);
 	font-size: var(--h4-size);
 	letter-spacing: calc(var(--heading-letter-spacing) * 0.5);
