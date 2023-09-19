@@ -5013,26 +5013,29 @@ body:not(.no-pandoc-citation-emphasis) .pandoc-citation.pandoc-citation.is-unres
 	padding: var(--size-4-2) var(--size-4-3);
 }
 
+.pwc-reference-list .csl-entry-wrapper.csl-entry-wrapper {
+	padding: 0 2px;
+	border: none;
+}
+
 .pwc-reference-list {
-	--bibliography-indent: 1.5em;
+	--bibliography-indent: 1.1em;
 }
 
 .pwc-reference-list.pwc-reference-list.pwc-reference-list.pwc-reference-list
 	.pwc-reference-list__title.pwc-reference-list__title
 	> div {
-	margin-bottom: 5px;
-	margin-left: 1px;
+	margin-bottom: 4px;
+	padding-left: 2px;
 	font-family: var(--font-heading-theme);
-	font-size: var(--h2-size);
+	font-size: var(--h4-size);
 	letter-spacing: calc(var(--heading-letter-spacing) * 0.5);
 }
 
 body .pwc-reference-list .csl-entry.csl-entry.csl-entry {
-	padding: 3px;
 	padding-left: calc(var(--bibliography-indent) + 6px);
-	line-height: 1.15;
+	line-height: var(--line-height-tight);
 	text-indent: calc(var(--bibliography-indent) * -1);
-	border-bottom: none;
 }
 
 .pwc-reference-list.collapsed-links.collapsed-links a::after {
