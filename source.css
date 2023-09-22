@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 /* SHIMMERING FOCUS by @pseudometa
-Version 3.522
+Version 3.523
 Source CSS: https://github.com/chrisgrieser/shimmering-focus/blob/main/source.css
 MIT License
 ──────────────────────────────────────────────────── */
@@ -627,7 +627,7 @@ body {
 	}
 */
 
-/* ──────────────────────────────����────────────────── */
+/* ──────────────────────────────�����────────────────── */
 /* << Changed Obsidian Variables
 ──────────────────────────────────────────────────── */
 
@@ -4304,12 +4304,16 @@ body:not(.classic-inline-backlinks) :is(.writing, .longform-leaf) .embedded-back
 ──────────────────────────────────────────────────── */
 
 /* bolden folded headings */
-.workspace-leaf-content[data-type="outline"] .tree-item.is-collapsed > .tree-item-self.tree-item-self.tree-item-self {
+.workspace-leaf-content[data-type="outline"]
+	.tree-item.is-collapsed
+	> .tree-item-self.tree-item-self.tree-item-self {
 	font-weight: 700;
 }
 
 /* hide fold icons when not hovered or collapsed */
-.workspace-leaf-content[data-type="outline"] .tree-item:not(:hover) .tree-item-icon.collapse-icon:not(.is-collapsed) {
+.workspace-leaf-content[data-type="outline"]
+	.tree-item:not(:hover)
+	.tree-item-icon.collapse-icon:not(.is-collapsed) {
 	display: none;
 }
 
