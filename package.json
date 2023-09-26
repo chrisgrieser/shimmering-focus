@@ -1,12 +1,12 @@
 {
-  "dependencies": {
-    "lightningcss-cli": "^1.21.7"
-  },
-  "devDependencies": {
-	 "@fsouza/prettierd": "^0.25.0",
-    "stylelint": "^15.10.3",
-    "stylelint-config-recess-order": "^4.3.0",
-    "stylelint-config-standard": "^34.0.0",
-    "stylelint-order": "^6.0.3"
-  }
+	"dependencies": {
+		"lightningcss-cli": "^1.21.7"
+	},
+	"devDependencies": {
+		"prettier": "^3.0.3",
+		"stylelint": "^15.10.3",
+		"stylelint-config-recess-order": "^4.3.0",
+		"stylelint-config-standard": "^34.0.0",
+		"stylelint-order": "^6.0.3"
+	}
 }

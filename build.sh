@@ -37,7 +37,7 @@ export PATH=/usr/local/lib:/usr/local/bin:/opt/homebrew/bin/:$npm_location:$PATH
 
 if ! command -v yamllint &> /dev/null; then echo "yamllint not installed (pip package)." ; return 1 ; fi
 if ! command -v stylelint &> /dev/null; then echo "stylelint not installed." ; return 1 ; fi
-if ! command -v prettierd &> /dev/null; then echo "prettierd not installed." ; return 1 ; fi
+if ! command -v prettier &> /dev/null; then echo "prettier not installed." ; return 1 ; fi
 if ! command -v lightningcss &> /dev/null; then echo "lightningcss-cli not installed." ; return 1 ; fi
 
 #───────────────────────────────────────────────────────────────────────────────
@@ -61,8 +61,7 @@ fi
 
 # Autofixing & Linting
 stylelint --fix "$CSS_PATH" &>/dev/null
-# shellcheck disable=SC2094 # SIC prettierd requires reading stdin and a positional filename
-prettierd "$CSS_PATH" < "$CSS_PATH" > temp
+prettier --max-length=105 "$CSS_PATH"
 mv -f temp "$CSS_PATH"
 
 #───────────────────────────────────────────────────────────────────────────────
