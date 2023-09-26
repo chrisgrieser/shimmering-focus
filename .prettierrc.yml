@@ -1,0 +1,16 @@
+# yaml-language-server: $schema=https://json.schemastore.org/prettierrc.json
+# explicitly setting schema required, since using non-standard filename
+#───────────────────────────────────────────────────────────────────────────────
+# DOCS https://prettier.io/docs/en/options.html
+#───────────────────────────────────────────────────────────────────────────────
+
+# INFO
+# printWidth (max-line-length) overrides .editorconfig, 
+# (not using .editorconfig to set it since it sets vim's textwidth, which I
+# prefer to be 80 for formatoptions)
+printWidth: 105
+quoteProps: consistent
+
+overrides:
+  - files: ["*.yml", "*.yaml"]
+    options: { printWidth: 120 }

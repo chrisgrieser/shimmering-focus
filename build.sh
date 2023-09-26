@@ -61,7 +61,7 @@ fi
 
 # Autofixing & Linting
 stylelint --fix "$CSS_PATH" &>/dev/null
-prettier --max-length=105 "$CSS_PATH"
+prettier "$CSS_PATH"
 mv -f temp "$CSS_PATH"
 
 #───────────────────────────────────────────────────────────────────────────────
