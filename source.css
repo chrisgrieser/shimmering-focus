@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 /* SHIMMERING FOCUS by @pseudometa
-Version 3.533
+Version 3.534
 Source CSS: https://github.com/chrisgrieser/shimmering-focus/blob/main/source.css
 MIT License
 ──────────────────────────────────────────────────── */
@@ -5646,7 +5646,8 @@ body:not(.no-alternating-rows) li:nth-child(even) :is(.draft-container, .scene-c
 		[data-scene-path*="Metadata" i],
 		[data-scene-path*="References" i],
 		[data-scene-path*="Declaration of Conflicting Interests" i]
-	) :is(div, .longform-scene-number) {
+	)
+	:is(div, .longform-scene-number) {
 	color: var(--text-faint);
 }
 
