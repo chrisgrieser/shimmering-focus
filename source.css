@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 /* SHIMMERING FOCUS by @pseudometa
-Version 3.534
+Version 3.535
 Source CSS: https://github.com/chrisgrieser/shimmering-focus/blob/main/source.css
 MIT License
 ──────────────────────────────────────────────────── */
@@ -1892,7 +1892,7 @@ body:not(.no-alternating-header-colors) .view-content :is(h1, h3, h5) {
 .is-live-preview .HyperMD-quote .cm-formatting-quote-1 {
 	position: relative;
 	left: 2px;
-} 
+}
 
 /* HACK source-mode: prevent rounded corners with consecutive block quotes */
 .markdown-source-view:not(.is-live-preview) .HyperMD-quote + .HyperMD-quote::before {
