@@ -5621,15 +5621,19 @@ body #scene-list .scene-container div {
 }
 
 /* Scene Number */
-body .longform-scene-number.longform-scene-number.longform-scene-number::after {
+#scene-list .scene-container[data-scene-indent="0"] .longform-scene-number::after {
 	content: ".";
 }
 
-/* alternating row colors, factoring in the coloring */
-#scene-list li:nth-child(even) .scene-container[data-scene-path*="/_"]::before {
-	background-color: var(--a-row);
+#scene-list .scene-container:not([data-scene-indent="0"]) .longform-scene-number::after {
+	display: none;
 }
 
+#scene-list .longform-scene-number {
+	color: var(--text-gray);
+}
+
+/* alternating row colors, factoring in the coloring */
 body:not(.no-alternating-rows) li:nth-child(even) :is(.draft-container, .scene-container) {
 	background-color: var(--a-row);
 }
@@ -5642,21 +5646,8 @@ body:not(.no-alternating-rows) li:nth-child(even) :is(.draft-container, .scene-c
 		[data-scene-path*="Metadata" i],
 		[data-scene-path*="References" i],
 		[data-scene-path*="Declaration of Conflicting Interests" i]
-	) {
+	) :is(div, .longform-scene-number) {
 	color: var(--text-faint);
-}
-
-#scene-list
-	.scene-container:is(
-		[data-scene-path*="Acknowledgements" i],
-		[data-scene-path*="Appendix" i],
-		[data-scene-path*="Metadata" i],
-		[data-scene-path*="References" i],
-		[data-scene-path*="Declaration of Conflicting Interests" i],
-		[data-scene-path*="Abstract" i]
-	)
-	.longform-scene-number {
-	display: none;
 }
 
 /* new scenes */
