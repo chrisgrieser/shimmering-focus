@@ -1889,6 +1889,11 @@ body:not(.no-alternating-header-colors) .view-content :is(h1, h3, h5) {
 	border-top-left-radius: var(--radius-s);
 }
 
+.is-live-preview .HyperMD-quote .cm-formatting-quote-1 {
+	position: relative;
+	left: 2px;
+} 
+
 /* HACK source-mode: prevent rounded corners with consecutive block quotes */
 .markdown-source-view:not(.is-live-preview) .HyperMD-quote + .HyperMD-quote::before {
 	position: absolute;
