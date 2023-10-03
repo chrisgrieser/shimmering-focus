@@ -3,8 +3,8 @@
 
 # WHAT THIS SCRIPT DOES
 # - Check the yaml from the Style Settings for errors. If there are any, the
-#	 build is aborted, the errors are passed (e.g. for a notification) and the
-#	 Style Settings tab is opened.
+#   build is aborted, the errors are passed (e.g. for a notification) and the
+#   Style Settings tab is opened.
 # - takes argument as commit message (uses "chore" if executed without argument)
 # - bumps version number in css file
 # - CSS is linted and minified
@@ -17,16 +17,8 @@
 
 #───────────────────────────────────────────────────────────────────────────────
 
-if [[ $(uname) == "Darwin" ]]; then
-	osascript -e 'display notification "Building…" with title "Shimmering Focus"'
-fi
+[[ $(uname) == "Darwin" ]] && osascript -e 'display notification "Building…" with title "Shimmering Focus"'
 
-# Goto git root
-cd "$(dirname "$0")" || exit 1
-# shellcheck disable=2164
-r=$(git rev-parse --git-dir) && r=$(cd "$r" && pwd)/ && cd "${r%%/.git/*}"
-
-# CONFIG
 CSS_PATH="./source.css"
 
 #───────────────────────────────────────────────────────────────────────────────
@@ -61,7 +53,7 @@ fi
 
 # Autofixing & Linting
 stylelint --fix "$CSS_PATH" &>/dev/null
-prettier "$CSS_PATH"
+prettier --write "$CSS_PATH" &>/dev/null
 
 #───────────────────────────────────────────────────────────────────────────────
 
