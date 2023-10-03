@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 /* SHIMMERING FOCUS by @pseudometa
-Version 3.525
+Version 3.526
 Source CSS: https://github.com/chrisgrieser/shimmering-focus/blob/main/source.css
 MIT License
 ──────────────────────────────────────────────────── */
@@ -12,155 +12,155 @@ MIT License
 
 /* @TOC-SPLIT-MARKER */
 /*
-	-  Table of Content (ToC)
-	-  Global Stylelint Rule Disables
-	-  Fonts (base64 encoded)
-	-  Temporary Bug Fixes / Additions
-	-  Variables
-		-  Unchanged Obsidian Variables (Dummy Variables)
-		-  Color Scheme Variables
-		-  Custom Color Template
-		-  Changed Obsidian Variables
-		-  Theme Variables
-	-  Markup
-		-  MathJax
-		-  hr
-		-  Tables
-		-  Annotation Tags
-		-  Bold & Italic
-		-  Tasks
-		-  Footnotes
-		-  Links
-			-  Fold external URLs (Source Mode)
-		-  Code
-			-  Inline Code
-			-  Code Blocks
-			-  language labels
-			-  Code Block: Line Numbers in Edit Mode
-		-  Syntax Highlighting
-		-  Lists
-		-  Headings
-		-  Inline Title
-		-  Blockquotes
-		-  Callouts
-			-  Sidenote Callouts
-			-  Config Callout
-		-  Trailing Whitespace (Two Space Rule)
-		-  Strikethroughs
-		-  Highlights
-		-  Pandoc Citations
-		-  Images
-	-  Modals
-		-  Settings Menu
-		-  Individual Setting Pages
-			-  Settings Menu Colors
-			-  Settings Headings
-			-  Remove Color Picker from Settings
-		-  Theme Browser
-		-  Plugin / Theme Browser
-		-  Toggles
-		-  Hotkeys
-	-  UI Elements
-		-  Notice
-		-  Input & Dropdowns & Sliders
-		-  Progress Bars
-			-  Vault Launch
-			-  Plugin Update Progress Bar
-		-  Frontmatter / Metadata Block
-		-  NEW Metadata Block (since 1.4)
-		-  Settings Button & Ribbon
-		-  Status Bar
-		-  Header Bar (Tab Title Bar)
-			-  Note Path Breadcrumbs
-			-  PDF Toolbar
-		-  Tab Bar
-			-  Hide Various Elements
-			-  tab bar when only tab
-			-  hidden tab bar when only one tab
-			-  Stacked Tabs
-			-  Styling of Tabs
-		-  Release Notes Tab
-		-  Editor Suggestions
-		-  Prompts
-			-  QuickSwitcher
-			-  Command Palette
-		-  Sidebars
-			-  Overlaying Sidebar
-			-  Sidebar Headers Hidden (Tab Headers)
-			-  Sidebar Styling
-		-  Editor
-			-  Search Matches
-			-  Folds & Collapse Indicators
-			-  Clean Embeds
-			-  Active / Inactive Note
-			-  Active Line Highlight (Cursorline)
-			-  Empty Note / New Tab Page
-	-  Vim Mode
-		-  Vim Cursor
-		-  Vim: Relative Line Numbers
-		-  Vim Panel
-	-  CSS Classes
-	-  Core Plugins
-		-  Bookmarks
-		-  Canvas
-		-  Search
-		-  File Explorer
-		-  Outgoing Links & Backlinks
-			-  Inline Backlinks
-		-  Outline
-	-  Community Plugins
-		-  Plugin Update Tracker
-		-  Cursor Location
-		-  Better Word Count
-		-  Surfing
-		-  Strange New Worlds
-		-  Jump-to-Link
-		-  Link Favicon
-		-  Custom Frames
-		-  Floating ToC
-		-  Highlighted Yank
-		-  Various Complements
-		-  Obsidian Git
-		-  Dynamic Highlight
-		-  Supercharged Links
-		-  Another Quick Switcher (AQS)
-		-  Recent Files
-		-  Pandoc Reference List
-		-  Style Settings
-			-  Style Settings: As Tab
-			-  Style Settings: Conditionals Settings Display
-			-  Style Settings: Infoboxes
-			-  Style Settings: Hue Sliders & Color Demo Boxes
-		-  Dataview
-			-  dataview cssclasses
-		-  Breadcrumbs
-		-  Hider
-		-  Longform
-			-  Longform Smart Word Count
-			-  Longform Sidebar
-			-  Longform Compile
-			-  Longform Sidebar Icons
-			-  Longform Unknown Files Wizard
-			-  Longform Editor
-			-  Writing cssclass
-		-  Kanban
-	-  Compatibility Info for the Obsidian Hub
-	-  Style Setting (+)
-		-  Show / Hide UI Elements (+)
-			-  File Explorer (+)
-			-  Status Bar (+)
-		-  Workspace (+)
-		-  Fonts & Headings (+)
-		-  Colors (+)
-		-  Editor Content (+)
-		-  Media (+)
-		-  Markup & Special Syntax (+)
-		-  Vim Mode (+)
-		-  Longform & Writing (+)
-		-  Plugin-Specific Settings (+)
-		-  Miscellaneous (+)
-		-  Infos (+)
- 	/* @TOC-SPLIT-MARKER */
+	- Table of Content (ToC)
+	- Global Stylelint Rule Disables
+	- Fonts (base64 encoded)
+	- Temporary Bug Fixes / Additions
+	- Variables
+		- Unchanged Obsidian Variables (Dummy Variables)
+		- Color Scheme Variables
+		- Custom Color Template
+		- Changed Obsidian Variables
+		- Theme Variables
+	- Markup
+		- MathJax
+		- hr
+		- Tables
+		- Annotation Tags
+		- Bold & Italic
+		- Tasks
+		- Footnotes
+		- Links
+			- Fold external URLs (Source Mode)
+		- Code
+			- Inline Code
+			- Code Blocks
+			- language labels
+			- Code Block: Line Numbers in Edit Mode
+		- Syntax Highlighting
+		- Lists
+		- Headings
+		- Inline Title
+		- Blockquotes
+		- Callouts
+			- Sidenote Callouts
+			- Config Callout
+		- Trailing Whitespace (Two Space Rule)
+		- Strikethroughs
+		- Highlights
+		- Pandoc Citations
+		- Images
+	- Modals
+		- Settings Menu
+		- Individual Setting Pages
+			- Settings Menu Colors
+			- Settings Headings
+			- Remove Color Picker from Settings
+		- Theme Browser
+		- Plugin / Theme Browser
+		- Toggles
+		- Hotkeys
+	- UI Elements
+		- Notice
+		- Input & Dropdowns & Sliders
+		- Progress Bars
+			- Vault Launch
+			- Plugin Update Progress Bar
+		- Frontmatter / Metadata Block
+		- NEW Metadata Block (since 1.4)
+		- Settings Button & Ribbon
+		- Status Bar
+		- Header Bar (Tab Title Bar)
+			- Note Path Breadcrumbs
+			- PDF Toolbar
+		- Tab Bar
+			- Hide Various Elements
+			- tab bar when only tab
+			- hidden tab bar when only one tab
+			- Stacked Tabs
+			- Styling of Tabs
+		- Release Notes Tab
+		- Editor Suggestions
+		- Prompts
+			- QuickSwitcher
+			- Command Palette
+		- Sidebars
+			- Overlaying Sidebar
+			- Sidebar Headers Hidden (Tab Headers)
+			- Sidebar Styling
+		- Editor
+			- Search Matches
+			- Folds & Collapse Indicators
+			- Clean Embeds
+			- Active / Inactive Note
+			- Active Line Highlight (Cursorline)
+			- Empty Note / New Tab Page
+	- Vim Mode
+		- Vim Cursor
+		- Vim: Relative Line Numbers
+		- Vim Panel
+	- CSS Classes
+	- Core Plugins
+		- Bookmarks
+		- Canvas
+		- Search
+		- File Explorer
+		- Outgoing Links & Backlinks
+			- Inline Backlinks
+		- Outline
+	- Community Plugins
+		- Plugin Update Tracker
+		- Cursor Location
+		- Better Word Count
+		- Surfing
+		- Strange New Worlds
+		- Jump-to-Link
+		- Link Favicon
+		- Custom Frames
+		- Floating ToC
+		- Highlighted Yank
+		- Various Complements
+		- Obsidian Git
+		- Dynamic Highlight
+		- Supercharged Links
+		- Another Quick Switcher (AQS)
+		- Recent Files
+		- Pandoc Reference List
+		- Style Settings
+			- Style Settings: As Tab
+			- Style Settings: Conditionals Settings Display
+			- Style Settings: Infoboxes
+			- Style Settings: Hue Sliders & Color Demo Boxes
+		- Dataview
+			- dataview cssclasses
+		- Breadcrumbs
+		- Hider
+		- Longform
+			- Longform Smart Word Count
+			- Longform Sidebar
+			- Longform Compile
+			- Longform Sidebar Icons
+			- Longform Unknown Files Wizard
+			- Longform Editor
+			- Writing cssclass
+		- Kanban
+	- Compatibility Info for the Obsidian Hub
+	- Style Setting (+)
+		- Show / Hide UI Elements (+)
+			- File Explorer (+)
+			- Status Bar (+)
+		- Workspace (+)
+		- Fonts & Headings (+)
+		- Colors (+)
+		- Editor Content (+)
+		- Media (+)
+		- Markup & Special Syntax (+)
+		- Vim Mode (+)
+		- Longform & Writing (+)
+		- Plugin-Specific Settings (+)
+		- Miscellaneous (+)
+		- Infos (+)
+	/* @TOC-SPLIT-MARKER */
 
 /* ───────────────────────────────────────────────── */
 /* < Global Stylelint Rule Disables

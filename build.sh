@@ -68,7 +68,7 @@ prettier "$CSS_PATH"
 # Update ToC
 printf "/* @TOC-SPLIT-MARKER */\n/*\n" >new_toc.css
 grep "< " "$CSS_PATH" | tr "<" "\t" |
-	sed -e "s/^# //" -e "s| \*/||" -e "s|/\* ||" -Ee "s/(\t*)/\1- /" >>new_toc.css
+	sed -e "s/^# //" -e "s| \*/||" -e "s|/\* ||" -Ee "s/(\t*)/\1-/" >>new_toc.css
 split -p "@TOC-SPLIT-MARKER" "$CSS_PATH" temp
 mv tempaa before_toc.css
 mv tempac after_toc.css
