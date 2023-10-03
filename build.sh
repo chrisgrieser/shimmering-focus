@@ -35,10 +35,10 @@ CSS_PATH="./source.css"
 npm_location="$(npm root)/.bin/"
 export PATH=/usr/local/lib:/usr/local/bin:/opt/homebrew/bin/:$npm_location:$PATH
 
-if ! command -v yamllint &> /dev/null; then echo "yamllint not installed (pip package)." ; return 1 ; fi
-if ! command -v stylelint &> /dev/null; then echo "stylelint not installed." ; return 1 ; fi
-if ! command -v prettier &> /dev/null; then echo "prettier not installed." ; return 1 ; fi
-if ! command -v lightningcss &> /dev/null; then echo "lightningcss-cli not installed." ; return 1 ; fi
+if ! command -v yamllint &>/dev/null; then echo "yamllint not installed (pip package)." && return 1; fi
+if ! command -v stylelint &>/dev/null; then echo "stylelint not installed." && return 1; fi
+if ! command -v prettier &>/dev/null; then echo "prettier not installed." && return 1; fi
+if ! command -v lightningcss &>/dev/null; then echo "lightningcss-cli not installed." && return 1; fi
 
 #───────────────────────────────────────────────────────────────────────────────
 
@@ -47,8 +47,8 @@ if ! command -v lightningcss &> /dev/null; then echo "lightningcss-cli not insta
 # - requires style settings placed at the very bottom of the theme css
 YAMLLINT_OUTPUT=$(
 	sed -n '/@settings/,$p' "$CSS_PATH" |
-	sed '1,2d;$d'| sed '$d' |
-	yamllint - --config-data="{extends: relaxed}" --no-warnings
+		sed '1,2d;$d' | sed '$d' |
+		yamllint - --config-data="{extends: relaxed}" --no-warnings
 )
 
 if [[ $? == 1 ]]; then
@@ -56,32 +56,23 @@ if [[ $? == 1 ]]; then
 	echo "$YAMLLINT_OUTPUT" | tail -n+2
 	# open Style Settings if Advanced URI plugin installed
 	open "obsidian://advanced-uri?settingid=obsidian-style-settings"
-	exit 1
+	return 1
 fi
 
 # Autofixing & Linting
 stylelint --fix "$CSS_PATH" &>/dev/null
 prettier "$CSS_PATH"
-mv -f temp "$CSS_PATH"
 
 #───────────────────────────────────────────────────────────────────────────────
 
 # Update ToC
-printf "/* @TOC-SPLIT-MARKER */\n/*\n" > new_toc.css
-grep -E "<+ " "$CSS_PATH" | sed -e "s/ \*\///" \
-	-e "s/\/\* //" \
-	-e "s/<<<<< /\t\t\t\t- /" \
-	-e "s/<<<< /\t\t\t- /" \
-	-e "s/<<< /\t\t- /" \
-	-e "s/<< /\t- /" \
-	-e "s/< /- /" \
-	| tr -d "#" \
-	| tail -n +2 \
-	>> new_toc.css
+printf "/* @TOC-SPLIT-MARKER */\n/*\n" >new_toc.css
+grep "< " "$CSS_PATH" | tr "<" "\t" |
+	sed -e "s/^# //" -e "s| \*/||" -e "s|/\* ||" -Ee "s/(\t*)/\1- /" >>new_toc.css
 split -p "@TOC-SPLIT-MARKER" "$CSS_PATH" temp
 mv tempaa before_toc.css
 mv tempac after_toc.css
-cat before_toc.css new_toc.css after_toc.css > "$CSS_PATH"
+cat before_toc.css new_toc.css after_toc.css >"$CSS_PATH"
 rm new_toc.css before_toc.css tempab after_toc.css
 
 # Bump version number
@@ -97,10 +88,10 @@ sed -E -i '' "s/(\"version\": \".*\.).*/\1$nextVersion\",/" "$SECOND_MANIFEST"
 split -p "@MINIFY-SPLIT-MARKER" "$CSS_PATH" temp # split off to prevent style settings from getting minified
 mv tempaa info.css
 mv tempab unminified_css_code.css
-grep -vE "^# << " tempac > style_settings.css # remove yaml-navigation markers
+grep -vE "^# << " tempac >style_settings.css # remove yaml-navigation markers
 rm tempac
 lightningcss unminified_css_code.css --minify --output-file=minified_css_code.css
-cat info.css minified_css_code.css style_settings.css > theme.css
+cat info.css minified_css_code.css style_settings.css >theme.css
 rm info.css unminified_css_code.css minified_css_code.css style_settings.css
 
 #───────────────────────────────────────────────────────────────────────────────
@@ -117,7 +108,8 @@ sed -E -i '' "s/badge.*-[[:digit:]]+-/badge\/downloads-$dl-/" ./README.md
 # git add, commit, pull, and push
 # needs piping stderr to stdin, since git push reports an error even on success?!
 git add -A && git commit -m "publish (automated)"
-git pull ; git push 2>&1
+git pull
+git push 2>&1
 
 #───────────────────────────────────────────────────────────────────────────────
 # INFO specific to my setup: copy theme file for fallback
