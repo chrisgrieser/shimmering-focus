@@ -5645,7 +5645,7 @@ body:not(.no-alternating-rows) li:nth-child(even) :is(.draft-container, .scene-c
 
 /* grayed out scenes */
 #scene-list
-	.scene-container:is(
+	.scene-container.scene-container:is(
 		[data-scene-path*="Acknowledgements" i],
 		[data-scene-path*="Appendix" i],
 		[data-scene-path*="Metadata" i],
