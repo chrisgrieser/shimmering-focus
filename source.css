@@ -5616,7 +5616,7 @@ body #scene-list .scene-container div {
 	background-color: var(--nav-item-background-active);
 }
 
-#scene-list .scene-container:is(:hover, .selected:hover) {
+#scene-list .scene-container:hover {
 	color: var(--hover-accent);
 	background-color: var(--nav-item-background-hover);
 }
@@ -5645,13 +5645,13 @@ body:not(.no-alternating-rows) li:nth-child(even) :is(.draft-container, .scene-c
 
 /* grayed out scenes */
 #scene-list
-	.scene-container.scene-container:is(
+	.scene-container:is(
 		[data-scene-path*="Acknowledgements" i],
 		[data-scene-path*="Appendix" i],
 		[data-scene-path*="Metadata" i],
 		[data-scene-path*="References" i],
 		[data-scene-path*="Declaration of Conflicting Interests" i]
-	)
+	):not(.selected, :hover)
 	:is(div, .longform-scene-number) {
 	color: var(--text-faint);
 }
