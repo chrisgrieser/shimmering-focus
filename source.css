@@ -3736,7 +3736,7 @@ body
 	transition: var(--anim-duration-slow);
 }
 
-/* if there is more than one pane, highlight the currently focussed one */
+/* if there is more than one pane, highlight the currently focused one */
 .mod-root
 	.workspace-tabs:not(:only-of-type, .mod-stacked).mod-active
 	.workspace-tab-header-container-inner,
