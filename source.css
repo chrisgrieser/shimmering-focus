@@ -3010,7 +3010,8 @@ body:not(.show-ribbon, .is-mobile) .side-dock-settings .side-dock-ribbon-action:
 /* show text generator icons only when autosuggest is active */
 .hide-inactive-textgenerator .plugin-obsidian-textgenerator-plugin:has(> .lucide-zap),
 .hide-inactive-textgenerator
-	.plugin-obsidian-textgenerator-plugin:has(~ .plugin-obsidian-textgenerator-plugin > .lucide-zap-off) {
+	.plugin-obsidian-textgenerator-plugin:has(~ .plugin-obsidian-textgenerator-plugin > .lucide-zap-off),
+.hide-inactive-textgenerator .plugin-obsidian-textgenerator-plugin:has(.lucide-zap-off) {
 	display: none;
 }
 
