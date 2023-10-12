@@ -89,7 +89,7 @@ rm info.css unminified_css_code.css minified_css_code.css style_settings.css
 #───────────────────────────────────────────────────────────────────────────────
 
 # Copy for documentation purposes
-cp "$DOTFILE_FOLDER/_linter-configs/stylelintrc.yml" ./.stylelintrc.yml
+cp "$HOME/.config/_linter-configs/stylelintrc.yml" ./.stylelintrc.yml
 
 # Update Theme Download numbers in README.md
 dl=$(curl -s "https://releases.obsidian.md/stats/theme" | grep -oe '"Shimmering Focus","download":[[:digit:]]*' | cut -d: -f2)
