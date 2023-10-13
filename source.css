@@ -4012,14 +4012,14 @@ are not targeted by this */
 ──────────────────────────────────────────────────── */
 /*
 - writing cssclass is bundled with the styling for the Longform Editor
-- dataview-related css classes are int he dataview section
+- dataview-related css classes are in the dataview section
 */
 
 .list-2-col-cards {
 	--card-spacing: 4px;
 }
 
-.list-2-col-cards.markdown-preview-view.markdown-preview-view ul:not(.contains-task-list) {
+.list-2-col-cards ul:not(.contains-task-list) {
 	column-gap: calc(var(--card-spacing) + 2px);
 	columns: 2 auto;
 	padding-left: 0;
