@@ -5357,11 +5357,12 @@ body .setting-item.setting-item.setting-item.setting-item[data-id="author-info"]
 /* Styling from the "Tables" Section mostly applies */
 
 /* less indentation to save space */
-:is(.block-language-dataview, .block-language-dataviewjs) > div > ul.contains-task-list {
+:is(.block-language-dataview, .block-language-dataviewjs) ul.contains-task-list {
 	--list-indent: 1.2em;
+	padding-inline-start: 0;
 }
 
-.markdown-preview-view :is(.block-language-dataview, .block-language-dataviewjs) .result-group {
+:is(.block-language-dataview, .block-language-dataviewjs) .result-group {
 	padding-left: 0;
 }
 
@@ -5399,6 +5400,10 @@ body .dataview:not(.task-list-item-checkbox):hover {
 
 .dataview.table-view-table small {
 	font-size: 70%;
+}
+
+.block-language-dataviewjs :is(h1, h2, h3, h4, h5, h6):first-child {
+	margin-top: 4px;
 }
 
 /* <<< dataview cssclasses */
