@@ -738,8 +738,9 @@ body {
 
 	/* Indentation Guide */
 	--indentation-guide-width: 1.5px;
+	--indentation-guide-width-active: var(--indentation-guide-width);
 	--indentation-guide-color: var(--text-faint);
-	--indentation-guide-color-active: var(--text-faint);
+	--indentation-guide-color-active: var(--indentation-guide-color);
 	--nav-indentation-guide-color: var(--text-faint);
 }
 
