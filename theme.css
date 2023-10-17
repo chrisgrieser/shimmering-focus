@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 /* SHIMMERING FOCUS by @pseudometa
-Version 3.541
+Version 3.542
 Source CSS: https://github.com/chrisgrieser/shimmering-focus/blob/main/source.css
 MIT License
 ──────────────────────────────────────────────────── */
@@ -396,6 +396,12 @@ settings:
    id: no-active-line-highlight
    title: Turn Off Emphasis of Active Line
    description: This includes colored line numbers, colored markup syntax, and the vertical line in the gutter.
+   type: class-toggle
+   default: false
+  -
+   id: .no-codeblock-line-numbers
+   title: Turn Off Line Numbers in Code Blocks (Edit Mode)
+   description: By default, this theme adds line numbers to code blocks in Edit Mode.
    type: class-toggle
    default: false
   -
