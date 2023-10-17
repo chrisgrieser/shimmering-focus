@@ -5360,6 +5360,9 @@ body .setting-item.setting-item.setting-item.setting-item[data-id="author-info"]
 /* less indentation to save space */
 :is(.block-language-dataview, .block-language-dataviewjs) ul.contains-task-list {
 	--list-indent: 1.2em;
+}
+
+.is-live-preview :is(.block-language-dataview, .block-language-dataviewjs) ul.contains-task-list {
 	padding-inline-start: 0;
 }
 
@@ -5403,7 +5406,7 @@ body .dataview:not(.task-list-item-checkbox):hover {
 	font-size: 70%;
 }
 
-.block-language-dataviewjs :is(h1, h2, h3, h4, h5, h6):first-child {
+.is-live-preview .block-language-dataviewjs :is(h1, h2, h3, h4, h5, h6):first-child {
 	margin-top: 4px;
 }
 
