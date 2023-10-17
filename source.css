@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 /* SHIMMERING FOCUS by @pseudometa
-Version 3.540
+Version 3.541
 Source CSS: https://github.com/chrisgrieser/shimmering-focus/blob/main/source.css
 MIT License
 ──────────────────────────────────────────────────── */
@@ -856,15 +856,14 @@ table :is(ul, ol) {
 }
 
 /* automatically turn off readable line length when there is a table */
-.unrestricted-line-length-tables:not(.is-mobile) .markdown-source-view:has(table),
-.unrestricted-line-length-tables:not(.is-mobile) .markdown-source-view:has(.HyperMD-table-2),
-.unrestricted-line-length-tables:not(.is-mobile) .markdown-preview-view:has(table) {
+.unrestricted-line-length-tables:not(.is-mobile)
+	:is(.markdown-source-view, .markdown-preview-view):has(table, .HyperMD-table-2) {
 	--file-line-width: 100%;
 }
 
 .is-live-preview.markdown-source-view.mod-cm6 .cm-embed-block:hover {
 	border-radius: 0;
-} 
+}
 
 /* ───────────────────────────────────────────────── */
 /* << Annotation Tags
