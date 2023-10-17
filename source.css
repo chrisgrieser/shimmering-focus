@@ -6550,6 +6550,12 @@ settings:
    type: class-toggle
    default: false
   -
+   id: .no-codeblock-line-numbers
+   title: Turn Off Line Numbers in Code Blocks (Edit Mode)
+   description: By default, this theme adds line numbers to code blocks in Edit Mode.
+   type: class-toggle
+   default: false
+  -
    id: clean-embeds
    title: 'Reading Mode: Clean Embeds'
    type: class-toggle
