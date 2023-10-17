@@ -2829,6 +2829,7 @@ body .frontmatter-container .frontmatter-alias,
 	padding: 0;
 	margin-top: 0.5em;
 	margin-bottom: 1.4em;
+	margin-left: 4px;
 	font-family: var(--font-interface);
 	background-color: var(--bg2);
 	border: var(--thin-border);
