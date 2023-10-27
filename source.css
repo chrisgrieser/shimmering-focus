@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 /* SHIMMERING FOCUS by @pseudometa
-Version 3.543
+Version 3.544
 Source CSS: https://github.com/chrisgrieser/shimmering-focus/blob/main/source.css
 MIT License
 ──────────────────────────────────────────────────── */
@@ -2120,7 +2120,8 @@ body .callout {
 /* ───────────────────────────────────────────────── */
 /* << Trailing Whitespace (Two Space Rule)
 ──────────────────────────────────────────────────── */
-body:not(.hide-trailing-whitespace) :is(.cm-trailing-space-a, .cm-trailing-space-b, .cm-trailing-space-new-line)::after {
+body:not(.hide-trailing-whitespace)
+	:is(.cm-trailing-space-a, .cm-trailing-space-b, .cm-trailing-space-new-line)::after {
 	font-size: 1em;
 	font-weight: 600;
 	color: var(--text-faint);
