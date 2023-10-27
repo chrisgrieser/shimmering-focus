@@ -2120,26 +2120,11 @@ body .callout {
 /* ───────────────────────────────────────────────── */
 /* << Trailing Whitespace (Two Space Rule)
 ──────────────────────────────────────────────────── */
-body:not(.hide-trailing-whitespace)
-	:is(.cm-trailing-space-a, .cm-trailing-space-b, .cm-trailing-space-new-line)::before {
+body:not(.hide-trailing-whitespace) :is(.cm-trailing-space-a, .cm-trailing-space-b, .cm-trailing-space-new-line)::after {
 	font-size: 1em;
 	font-weight: 600;
 	color: var(--text-faint);
-	letter-spacing: -2px;
-}
-
-body:not(.hide-trailing-whitespace) :is(.cm-trailing-space-b, .cm-trailing-space-a)::before {
-	content: "\00B7"; /* dot character */
-}
-
-/* first characters */
-body:not(.hide-trailing-whitespace) :not(.cm-trailing-space-b) + .cm-trailing-space-a::before {
-	padding-left: 5px;
-	content: "\00B7  \00B7";
-}
-
-body:not(.hide-trailing-whitespace) .cm-trailing-space-new-line::before {
-	content: "\21B5"; /* return character */
+	content: "·";
 }
 
 /* ───────────────────────────────────────────────── */
