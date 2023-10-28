@@ -457,6 +457,7 @@ https://www.youtube.com/watch?v=yl0pvIRTWWo&t=7s */
 	/* colors for syntax highlighting & callouts (different tone in dark mode) */
 	--color-red-rgb: 251, 70, 76;
 	--color-green-rgb: 68, 207, 110;
+	--color-orange-rgb: 236, 117, 0;
 	--color-red: hsl(358deg 96% 63%);
 	--color-green: hsl(138deg 59% 54%);
 	--color-orange: hsl(31deg 79% 58%);
@@ -465,6 +466,8 @@ https://www.youtube.com/watch?v=yl0pvIRTWWo&t=7s */
 	--color-blue: hsl(212deg 100% 50%);
 	--color-purple: hsl(258deg 100% 75%);
 	--color-pink: hsl(328deg 91% 79%);
+
+	--callout-warning: var(--color-orange-rgb);
 
 	/* Default Accent Color: ; will be overridden by user selection in `Appearance
 	tab`, however, by setting color accent of its own, they are going to be
@@ -2115,6 +2118,12 @@ body .callout {
 
 .callout[data-callout^="URL" i] .callout-title {
 	text-transform: uppercase;
+}
+
+/* "Warn" should work the same as "Warning" */
+.callout[data-callout^="warn"] {
+	--callout-icon: lucide-alert-triangle;
+	--callout-color: var(--callout-warning);
 }
 
 /* ───────────────────────────────────────────────── */
