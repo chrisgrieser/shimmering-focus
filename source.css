@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 /* SHIMMERING FOCUS by @pseudometa
-Version 3.544
+Version 3.545
 Source CSS: https://github.com/chrisgrieser/shimmering-focus/blob/main/source.css
 MIT License
 ──────────────────────────────────────────────────── */
@@ -466,7 +466,6 @@ https://www.youtube.com/watch?v=yl0pvIRTWWo&t=7s */
 	--color-blue: hsl(212deg 100% 50%);
 	--color-purple: hsl(258deg 100% 75%);
 	--color-pink: hsl(328deg 91% 79%);
-
 	--callout-warning: var(--color-orange-rgb);
 
 	/* Default Accent Color: ; will be overridden by user selection in `Appearance
