@@ -2231,7 +2231,7 @@ body:not(.no-image-alttext-caption)
 	content: attr(alt);
 }
 
-.markdown-preview-view img[src]:not(.emoji, .link-favicon) {
+.view-content img[src]:not(.emoji, .link-favicon) {
 	border: var(--thin-muted-border);
 	border-radius: var(--radius-s);
 }
