@@ -3765,13 +3765,18 @@ body
 /* <<< Active Line Highlight (Cursorline)
 ──────────────────────────────────────────────────── */
 
-body:not(.no-active-line-highlight)
+body:not(.no-active-line-highlight, .active-line-background)
 	.cm-active:not(.HyperMD-quote, .HyperMD-header, .HyperMD-codeblock)::before {
 	position: absolute;
 	left: -1.125em;
 	height: 100%;
 	content: "";
 	border-left: 3px solid var(--basic-border-color);
+}
+
+body.active-line-background
+	.cm-active:not(.HyperMD-quote, .HyperMD-header, .HyperMD-codeblock) {
+	background-color: var(--bg4);
 }
 
 body:not(.no-active-line-highlight) .cm-lineNumbers .cm-active.cm-gutterElement,
@@ -6547,7 +6552,7 @@ settings:
 # << Editor Content (+)
    id: content-settings
    title: 📑 Editor Content
-   description: Dimmed Inactive Panes, Clean Embeds, Line Length, Inline Backlinks, Folded Lines
+   description: Active Lines & Panes, Clean Embeds, Line Length, Inline Backlinks, Folded Lines
    type: heading
    level: 1
    collapsed: true
@@ -6561,6 +6566,19 @@ settings:
    max: 100
    step: 1
    format: '%'
+  -
+   id: active-line-highlight
+   title: Active Line Indicator
+   type: class-select
+   allowEmpty: false
+   default: active-line-gutter
+   options:
+   - label: Line in Gutter
+     value: active-line-gutter
+   - label: Emphasized Background
+     value: active-line-background
+   - label: Disable
+     value: no-active-line-highlight
   -
    id: no-active-line-highlight
    title: Turn Off Emphasis of Active Line
