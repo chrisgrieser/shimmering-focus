@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 /* SHIMMERING FOCUS by @pseudometa
-Version 3.546
+Version 3.547
 Source CSS: https://github.com/chrisgrieser/shimmering-focus/blob/main/source.css
 MIT License
 ──────────────────────────────────────────────────── */
@@ -103,6 +103,7 @@ MIT License
 	- Core Plugins
 		- Bookmarks
 		- Canvas
+		- Browser
 		- Search
 		- File Explorer
 		- Outgoing Links & Backlinks
@@ -4148,9 +4149,9 @@ body .canvas-card-menu {
 ──────────────────────────────────────────────────── */
 
 .browser-address.browser-address.browser-address input {
-	background-color: var(--bg3);
-	padding-top: 2px;
 	height: 90%;
+	padding-top: 2px;
+	background-color: var(--bg3);
 }
 
 .workspace-leaf-content[data-type="browser"] .view-header {
