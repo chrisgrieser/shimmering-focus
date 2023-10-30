@@ -3776,6 +3776,7 @@ body:not(.no-active-line-highlight, .active-line-background)
 
 body.active-line-background .cm-active:not(.HyperMD-quote, .HyperMD-header, .HyperMD-codeblock) {
 	background-color: var(--bg4);
+	border-radius: var(--radius-s);
 }
 
 body:not(.no-active-line-highlight) .cm-lineNumbers .cm-active.cm-gutterElement,
