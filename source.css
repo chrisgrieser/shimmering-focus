@@ -680,7 +680,6 @@ body {
 	/* Table */
 	--table-header-size: 1em;
 	--table-header-weight: 600;
-	--table-text-size: var(--font-small);
 	--table-white-space: normal;
 	--table-border-width: 1px;
 	--table-border-color: var(--basic-border-color);
@@ -2128,6 +2127,10 @@ body .callout {
 /* << Trailing Whitespace (Two Space Rule)
 ──────────────────────────────────────────────────── */
 body:not(.hide-trailing-whitespace)
+	.view-content
+	> .markdown-source-view
+	:not(.table-cell-wrapper)
+	> .markdown-source-view
 	:is(.cm-trailing-space-a, .cm-trailing-space-b, .cm-trailing-space-new-line)::after {
 	font-size: 1em;
 	font-weight: 600;
@@ -3041,11 +3044,11 @@ body:not(.show-ribbon, .is-mobile) .side-dock-settings .side-dock-ribbon-action:
 /* ───────────────────────────────────────────────── */
 /* << Header Bar (Tab Title Bar)
 ──────────────────────────────────────────────────── */
-.view-header-title-container::after {
+.workspace-leaf-content[data-type="markdown"] .view-header-title-container::after {
 	display: none;
 }
 
-body .workspace-leaf-content:not([data-type="surfing-view"]) .view-header.view-header {
+body .workspace-leaf-content[data-type="markdown"] .view-header {
 	height: 37px;
 	padding: 0 var(--size-2-3);
 	margin-right: 0;
@@ -3054,29 +3057,27 @@ body .workspace-leaf-content:not([data-type="surfing-view"]) .view-header.view-h
 }
 
 body:not(.normal-header-bar, .is-mobile)
-	.workspace-leaf-content:not([data-type="surfing-view"])
+	.workspace-leaf-content[data-type="markdown"]
 	.view-header-title-container::after,
 body:not(.normal-header-bar, .is-mobile)
-	.workspace-leaf-content:not([data-type="surfing-view"])
+	.workspace-leaf-content[data-type="markdown"]
 	.view-header
 	:is(.view-header-nav-buttons, .view-header-title),
 body:not(.normal-header-bar, .is-mobile)
-	.workspace-leaf-content:not([data-type="surfing-view"])
+	.workspace-leaf-content[data-type="markdown"]
 	.view-header
 	.view-action:nth-last-child(2) {
 	display: none;
 }
 
-body:not(.normal-header-bar, .is-mobile)
-	.workspace-leaf-content:not([data-type="surfing-view"])
-	.view-header.view-header {
+body:not(.normal-header-bar, .is-mobile) .workspace-leaf-content[data-type="markdown"] .view-header {
 	height: 0;
 	border: none;
 }
 
 /* <<< Note Path Breadcrumbs */
 body:not(.normal-header-bar, .is-mobile)
-	.workspace-leaf-content:not([data-type="surfing-view"])
+	.workspace-leaf-content[data-type="markdown"]
 	.view-header-title-container {
 	position: absolute;
 	right: 1.1rem;
@@ -3093,7 +3094,7 @@ body:not(.normal-header-bar, .is-mobile)
 }
 
 body:not(.normal-header-bar, .is-mobile, .no-floating-metadata)
-	.workspace-leaf-content
+	.workspace-leaf-content[data-type="markdown"]
 	.view-header-title-container {
 	top: 35px;
 }
@@ -3106,7 +3107,7 @@ body:not(.normal-header-bar, .is-mobile, .no-floating-metadata)
 }
 
 .no-floating-metadata:not(.normal-header-bar, .is-mobile)
-	.workspace-leaf-content[data-mode="preview"]
+	.workspace-leaf-content[data-type="markdown"][data-mode="preview"]
 	.view-header-title-container {
 	top: 2rem;
 }
@@ -3127,7 +3128,7 @@ body:not(.normal-header-bar, .is-mobile) .view-header-breadcrumb {
 
 /* remaining buttons (by default only the "more options" button) */
 body:not(.normal-header-bar, .is-mobile)
-	.workspace-leaf-content:not([data-type="surfing-view"])
+	.workspace-leaf-content[data-type="markdown"]
 	.view-header
 	.view-actions {
 	position: absolute;
@@ -3135,11 +3136,18 @@ body:not(.normal-header-bar, .is-mobile)
 	right: 2px;
 }
 
-body:not(.normal-header-bar, .is-mobile) .view-header .view-action:last-child:hover {
+body:not(.normal-header-bar, .is-mobile)
+	.workspace-leaf-content[data-type="markdown"]
+	.view-header
+	.view-action:last-child:hover {
 	background: none;
 }
 
-body:not(.normal-header-bar, .is-mobile) .view-header .view-action:last-child svg {
+body:not(.normal-header-bar, .is-mobile)
+	.workspace-leaf-content[data-type="markdown"]
+	.view-header
+	.view-action:last-child
+	svg {
 	width: 20px;
 	height: 20px;
 }
@@ -3633,7 +3641,7 @@ body.mod-macos.is-hidden-frameless:not(.is-popout-window)
 
 /* save space at the top */
 .mod-root .markdown-reading-view .markdown-preview-view,
-.mod-root .markdown-source-view.mod-cm6 .cm-scroller {
+.mod-root .view-content > .markdown-source-view.mod-cm6 > .cm-editor > .cm-scroller {
 	padding-top: 25px;
 }
 
@@ -4091,7 +4099,8 @@ are not targeted by this */
 }
 
 /* bookmark icon filled */
-.svg-icon.lucide-bookmark {
+.browser-addressbar-suggestion .svg-icon.lucide-bookmark,
+.workspace-leaf-content:not([data-type="browser"]) .svg-icon.lucide-bookmark {
 	fill: currentcolor;
 }
 
@@ -4132,6 +4141,21 @@ body .canvas-card-menu {
 /* center everything in canvases */
 .centered-canvas-notes .canvas-node-content.markdown-embed {
 	text-align: center;
+}
+
+/* ───────────────────────────────────────────────── */
+/* << Browser
+──────────────────────────────────────────────────── */
+
+.browser-address.browser-address.browser-address input {
+	background-color: var(--bg3);
+	padding-top: 2px;
+	height: 90%;
+}
+
+.workspace-leaf-content[data-type="browser"] .view-header {
+	padding-right: 6px;
+	padding-left: 6px;
 }
 
 /* ───────────────────────────────────────────────── */
