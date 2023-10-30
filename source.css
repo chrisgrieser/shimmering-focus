@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 /* SHIMMERING FOCUS by @pseudometa
-Version 3.547
+Version 3.548
 Source CSS: https://github.com/chrisgrieser/shimmering-focus/blob/main/source.css
 MIT License
 ──────────────────────────────────────────────────── */
@@ -3774,8 +3774,7 @@ body:not(.no-active-line-highlight, .active-line-background)
 	border-left: 3px solid var(--basic-border-color);
 }
 
-body.active-line-background
-	.cm-active:not(.HyperMD-quote, .HyperMD-header, .HyperMD-codeblock) {
+body.active-line-background .cm-active:not(.HyperMD-quote, .HyperMD-header, .HyperMD-codeblock) {
 	background-color: var(--bg4);
 }
 
