@@ -2828,8 +2828,8 @@ body .frontmatter-container .frontmatter-alias,
 .mod-root .metadata-container {
 	padding: 0;
 	margin-top: 0.5em;
-	margin-bottom: 1.4em;
 	margin-left: 4px;
+	margin-bottom: 0;
 	font-family: var(--font-interface);
 	background-color: var(--bg2);
 	border: var(--thin-border);
@@ -3096,23 +3096,17 @@ body:not(.normal-header-bar, .is-mobile)
 	right: 0.7rem;
 }
 
-body:not(.normal-header-bar, .is-mobile, .no-floating-metadata)
+body:not(.normal-header-bar, .is-mobile)
 	.workspace-leaf-content:not([data-type="browser"])
 	.view-header-title-container {
 	top: 35px;
 }
 
 /* account for pdf header */
-body:not(.normal-header-bar, .is-mobile, .no-floating-metadata)
+body:not(.normal-header-bar, .is-mobile)
 	.workspace-leaf-content[data-type="pdf"]
 	.view-header-title-container {
 	top: 75px;
-}
-
-.no-floating-metadata:not(.normal-header-bar, .is-mobile)
-	.workspace-leaf-content:not([data-type="browser"])[data-mode="preview"]
-	.view-header-title-container {
-	top: 2rem;
 }
 
 .view-header-breadcrumb {
@@ -3646,14 +3640,6 @@ body.mod-macos.is-hidden-frameless:not(.is-popout-window)
 .mod-root .markdown-reading-view .markdown-preview-view,
 .mod-root .view-content > .markdown-source-view.mod-cm6 > .cm-editor > .cm-scroller {
 	padding-top: 25px;
-}
-
-body:not(.no-floating-metadata)
-	.mod-root
-	.markdown-preview-view
-	div:nth-child(4)
-	> :is(h1, h2, h3, h4, h5, h6) {
-	margin-top: 0;
 }
 
 /* ───────────────────────────────────────────────── */
