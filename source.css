@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 /* SHIMMERING FOCUS by @pseudometa
-Version 3.551
+Version 3.552
 Source CSS: https://github.com/chrisgrieser/shimmering-focus/blob/main/source.css
 MIT License
 ──────────────────────────────────────────────────── */
@@ -2828,8 +2828,8 @@ body .frontmatter-container .frontmatter-alias,
 .mod-root .metadata-container {
 	padding: 0;
 	margin-top: 0.5em;
-	margin-left: 4px;
 	margin-bottom: 0;
+	margin-left: 4px;
 	font-family: var(--font-interface);
 	background-color: var(--bg2);
 	border: var(--thin-border);
