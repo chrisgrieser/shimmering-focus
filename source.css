@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 /* SHIMMERING FOCUS by @pseudometa
-Version 3.549
+Version 3.550
 Source CSS: https://github.com/chrisgrieser/shimmering-focus/blob/main/source.css
 MIT License
 ──────────────────────────────────────────────────── */
@@ -3071,7 +3071,9 @@ body:not(.normal-header-bar, .is-mobile)
 	display: none;
 }
 
-body:not(.normal-header-bar, .is-mobile) .workspace-leaf-content:not([data-type="browser"]) .view-header {
+body:not(.normal-header-bar, .is-mobile)
+	.workspace-leaf-content:not([data-type="browser"])
+	.view-header {
 	height: 0;
 	border: none;
 }
