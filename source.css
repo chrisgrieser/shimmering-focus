@@ -3045,11 +3045,11 @@ body:not(.show-ribbon, .is-mobile) .side-dock-settings .side-dock-ribbon-action:
 /* ───────────────────────────────────────────────── */
 /* << Header Bar (Tab Title Bar)
 ──────────────────────────────────────────────────── */
-.workspace-leaf-content[data-type="markdown"] .view-header-title-container::after {
+.workspace-leaf-content:not([data-type="browser"]) .view-header-title-container::after {
 	display: none;
 }
 
-body .workspace-leaf-content[data-type="markdown"] .view-header {
+body .workspace-leaf-content:not([data-type="browser"]) .view-header {
 	height: 37px;
 	padding: 0 var(--size-2-3);
 	margin-right: 0;
@@ -3058,27 +3058,27 @@ body .workspace-leaf-content[data-type="markdown"] .view-header {
 }
 
 body:not(.normal-header-bar, .is-mobile)
-	.workspace-leaf-content[data-type="markdown"]
+	.workspace-leaf-content:not([data-type="browser"])
 	.view-header-title-container::after,
 body:not(.normal-header-bar, .is-mobile)
-	.workspace-leaf-content[data-type="markdown"]
+	.workspace-leaf-content:not([data-type="browser"])
 	.view-header
 	:is(.view-header-nav-buttons, .view-header-title),
 body:not(.normal-header-bar, .is-mobile)
-	.workspace-leaf-content[data-type="markdown"]
+	.workspace-leaf-content:not([data-type="browser"])
 	.view-header
 	.view-action:nth-last-child(2) {
 	display: none;
 }
 
-body:not(.normal-header-bar, .is-mobile) .workspace-leaf-content[data-type="markdown"] .view-header {
+body:not(.normal-header-bar, .is-mobile) .workspace-leaf-content:not([data-type="browser"]) .view-header {
 	height: 0;
 	border: none;
 }
 
 /* <<< Note Path Breadcrumbs */
 body:not(.normal-header-bar, .is-mobile)
-	.workspace-leaf-content[data-type="markdown"]
+	.workspace-leaf-content:not([data-type="browser"])
 	.view-header-title-container {
 	position: absolute;
 	right: 1.1rem;
@@ -3095,7 +3095,7 @@ body:not(.normal-header-bar, .is-mobile)
 }
 
 body:not(.normal-header-bar, .is-mobile, .no-floating-metadata)
-	.workspace-leaf-content[data-type="markdown"]
+	.workspace-leaf-content:not([data-type="browser"])
 	.view-header-title-container {
 	top: 35px;
 }
@@ -3108,7 +3108,7 @@ body:not(.normal-header-bar, .is-mobile, .no-floating-metadata)
 }
 
 .no-floating-metadata:not(.normal-header-bar, .is-mobile)
-	.workspace-leaf-content[data-type="markdown"][data-mode="preview"]
+	.workspace-leaf-content:not([data-type="browser"])[data-mode="preview"]
 	.view-header-title-container {
 	top: 2rem;
 }
@@ -3129,7 +3129,7 @@ body:not(.normal-header-bar, .is-mobile) .view-header-breadcrumb {
 
 /* remaining buttons (by default only the "more options" button) */
 body:not(.normal-header-bar, .is-mobile)
-	.workspace-leaf-content[data-type="markdown"]
+	.workspace-leaf-content:not([data-type="browser"])
 	.view-header
 	.view-actions {
 	position: absolute;
@@ -3138,14 +3138,14 @@ body:not(.normal-header-bar, .is-mobile)
 }
 
 body:not(.normal-header-bar, .is-mobile)
-	.workspace-leaf-content[data-type="markdown"]
+	.workspace-leaf-content:not([data-type="browser"])
 	.view-header
 	.view-action:last-child:hover {
 	background: none;
 }
 
 body:not(.normal-header-bar, .is-mobile)
-	.workspace-leaf-content[data-type="markdown"]
+	.workspace-leaf-content:not([data-type="browser"])
 	.view-header
 	.view-action:last-child
 	svg {
