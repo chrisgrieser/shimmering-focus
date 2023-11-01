@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 /* SHIMMERING FOCUS by @pseudometa
-Version 3.552
+Version 3.553
 Source CSS: https://github.com/chrisgrieser/shimmering-focus/blob/main/source.css
 MIT License
 ──────────────────────────────────────────────────── */
@@ -40,6 +40,7 @@ MIT License
 		- Syntax Highlighting
 		- Lists
 		- Headings
+			- Live Preview Heading Level Indicator
 		- Inline Title
 		- Blockquotes
 		- Callouts
@@ -1840,18 +1841,23 @@ body:not(.no-alternating-header-colors) .view-content :is(h1, h3, h5) {
 .is-live-preview .cm-line:not(.cm-active) > .cm-header-1::before {
 	content: "H1";
 }
+
 .is-live-preview .cm-line:not(.cm-active) > .cm-header-2::before {
 	content: "H2";
 }
+
 .is-live-preview .cm-line:not(.cm-active) > .cm-header-3::before {
 	content: "H3";
 }
+
 .is-live-preview .cm-line:not(.cm-active) > .cm-header-4::before {
 	content: "H4";
 }
+
 .is-live-preview .cm-line:not(.cm-active) > .cm-header-5::before {
 	content: "H5";
 }
+
 .is-live-preview .cm-line:not(.cm-active) > .cm-header-6::before {
 	content: "H6";
 }
