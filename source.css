@@ -2170,12 +2170,18 @@ body .callout {
 /* ───────────────────────────────────────────────── */
 /* << Trailing Whitespace (Two Space Rule)
 ──────────────────────────────────────────────────── */
+/* needs this selector, so it does not affect spaces in the table editor
+ * (Obsidian 1.5), which only differs at the level of `.view-content` */
 body:not(.hide-trailing-whitespace)
 	.view-content
-	> .markdown-source-view
-	:not(.table-cell-wrapper)
-	> .markdown-source-view
-	:is(.cm-trailing-space-a, .cm-trailing-space-b, .cm-trailing-space-new-line)::after {
+	> .cm-s-obsidian
+	> div
+	> .cm-scroller
+	> .cm-sizer
+	> .cm-contentContainer
+	> .cm-content
+	> .cm-line
+	> :is(.cm-trailing-space-a, .cm-trailing-space-b, .cm-trailing-space-new-line)::after {
 	font-size: 1em;
 	font-weight: 600;
 	color: var(--text-faint);
