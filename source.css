@@ -1823,6 +1823,43 @@ body:not(.no-alternating-header-colors) .view-content :is(h1, h3, h5) {
 	color: var(--alt-heading-color);
 }
 
+/* <<< Live Preview Heading Level Indicator */
+.is-live-preview .cm-header::before {
+	position: relative;
+	bottom: 1px;
+	left: -2px;
+	padding-right: 4px;
+	padding-left: 4px;
+	font-family: var(--font-monospace);
+	font-size: 0.8rem;
+	font-style: normal;
+	line-height: 1em;
+	color: var(--text-muted);
+}
+
+.is-live-preview .cm-line:not(.cm-active) > .cm-header-1::before {
+	content: "H1";
+}
+.is-live-preview .cm-line:not(.cm-active) > .cm-header-2::before {
+	content: "H2";
+}
+.is-live-preview .cm-line:not(.cm-active) > .cm-header-3::before {
+	content: "H3";
+}
+.is-live-preview .cm-line:not(.cm-active) > .cm-header-4::before {
+	content: "H4";
+}
+.is-live-preview .cm-line:not(.cm-active) > .cm-header-5::before {
+	content: "H5";
+}
+.is-live-preview .cm-line:not(.cm-active) > .cm-header-6::before {
+	content: "H6";
+}
+
+.is-live-preview .cm-header ~ .cm-header::before {
+	display: none; /* FIX only first header element gets the prefix */
+}
+
 /* ───────────────────────────────────────────────── */
 /* << Inline Title
 ──────────────────────────────────────────────────── */
