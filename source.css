@@ -4419,6 +4419,11 @@ body:not(.classic-inline-backlinks) :is(.writing, .longform-leaf) .embedded-back
 	display: none;
 }
 
+.workspace-leaf-content[data-type="outline"] .tree-item-self.is-active {
+	background-color: transparent;
+	font-weight: 600;
+} 
+
 /* ───────────────────────────────────────────────── */
 /* < Community Plugins
 ──────────────────────────────────────────────────── */
