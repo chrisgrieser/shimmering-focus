@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 /* SHIMMERING FOCUS by @pseudometa
-Version 3.554
+Version 3.555
 Source CSS: https://github.com/chrisgrieser/shimmering-focus/blob/main/source.css
 MIT License
 ──────────────────────────────────────────────────── */
@@ -4420,9 +4420,9 @@ body:not(.classic-inline-backlinks) :is(.writing, .longform-leaf) .embedded-back
 }
 
 .workspace-leaf-content[data-type="outline"] .tree-item-self.is-active {
-	background-color: transparent;
 	font-weight: 600;
-} 
+	background-color: transparent;
+}
 
 /* ───────────────────────────────────────────────── */
 /* < Community Plugins
