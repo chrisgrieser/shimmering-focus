@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 /* SHIMMERING FOCUS by @pseudometa
-Version 3.555
+Version 3.556
 Source CSS: https://github.com/chrisgrieser/shimmering-focus/blob/main/source.css
 MIT License
 ──────────────────────────────────────────────────── */
@@ -1838,27 +1838,45 @@ body:not(.no-lp-heading-level-indicator) .is-live-preview .cm-header::before {
 	color: var(--text-muted);
 }
 
-body:not(.no-lp-heading-level-indicator) .is-live-preview .cm-line:not(.cm-active) > .cm-header-1::before {
+body:not(.no-lp-heading-level-indicator)
+	.is-live-preview
+	.cm-line:not(.cm-active)
+	> .cm-header-1::before {
 	content: "H1";
 }
 
-body:not(.no-lp-heading-level-indicator) .is-live-preview .cm-line:not(.cm-active) > .cm-header-2::before {
+body:not(.no-lp-heading-level-indicator)
+	.is-live-preview
+	.cm-line:not(.cm-active)
+	> .cm-header-2::before {
 	content: "H2";
 }
 
-body:not(.no-lp-heading-level-indicator) .is-live-preview .cm-line:not(.cm-active) > .cm-header-3::before {
+body:not(.no-lp-heading-level-indicator)
+	.is-live-preview
+	.cm-line:not(.cm-active)
+	> .cm-header-3::before {
 	content: "H3";
 }
 
-body:not(.no-lp-heading-level-indicator) .is-live-preview .cm-line:not(.cm-active) > .cm-header-4::before {
+body:not(.no-lp-heading-level-indicator)
+	.is-live-preview
+	.cm-line:not(.cm-active)
+	> .cm-header-4::before {
 	content: "H4";
 }
 
-body:not(.no-lp-heading-level-indicator) .is-live-preview .cm-line:not(.cm-active) > .cm-header-5::before {
+body:not(.no-lp-heading-level-indicator)
+	.is-live-preview
+	.cm-line:not(.cm-active)
+	> .cm-header-5::before {
 	content: "H5";
 }
 
-body:not(.no-lp-heading-level-indicator) .is-live-preview .cm-line:not(.cm-active) > .cm-header-6::before {
+body:not(.no-lp-heading-level-indicator)
+	.is-live-preview
+	.cm-line:not(.cm-active)
+	> .cm-header-6::before {
 	content: "H6";
 }
 
