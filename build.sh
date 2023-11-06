@@ -105,7 +105,8 @@ git push 2>&1
 
 #───────────────────────────────────────────────────────────────────────────────
 # INFO specific to my setup
-if [[ $(uname) == "Darwin" ]]; then                                                                                 # check if on macOS
-	afplay "/System/Library/Components/CoreAudio.component/Contents/SharedSupport/SystemSounds/siri/jbl_confirm.caf" & # codespell-ignore
+
+if [[ $(uname) == "Darwin" ]]; then
 	osascript -e 'tell application id "com.runningwithcrayons.Alfred" to run trigger "trigger-fallback" in workflow "de.chris-grieser.shimmering-focus"'
+	afplay "/System/Library/Components/CoreAudio.component/Contents/SharedSupport/SystemSounds/siri/jbl_confirm.caf" & # codespell-ignore
 fi
