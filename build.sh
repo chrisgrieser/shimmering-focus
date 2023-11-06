@@ -104,9 +104,16 @@ git pull
 git push 2>&1
 
 #───────────────────────────────────────────────────────────────────────────────
+#───────────────────────────────────────────────────────────────────────────────
 # INFO specific to my setup
 
 if [[ $(uname) == "Darwin" ]]; then
+	# copy theme file for fallback
+	cp "$CSS_PATH" "$VAULT_PATH/.obsidian/themes/Shimmering Focus/fallback.css"
+
+	# trigger fallback
 	osascript -e 'tell application id "com.runningwithcrayons.Alfred" to run trigger "trigger-fallback" in workflow "de.chris-grieser.shimmering-focus"'
+
+	# confirmation sound
 	afplay "/System/Library/Components/CoreAudio.component/Contents/SharedSupport/SystemSounds/siri/jbl_confirm.caf" & # codespell-ignore
 fi
