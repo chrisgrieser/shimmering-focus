@@ -3,8 +3,6 @@ local cmd = vim.cmd
 local fn = vim.fn
 local keymap = vim.keymap.set
 
-vim.notify("hello from nvim exrc")
-
 --------------------------------------------------------------------------------
 -- COMMENT MARKS
 

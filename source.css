@@ -1966,7 +1966,7 @@ body:not(.no-lp-heading-level-indicator) .is-live-preview .cm-header ~ .cm-heade
 	width: var(--blockquote-border-thickness);
 	height: 1.5em;
 	margin-top: -12px;
-	margin-left: calc(-1 * (var(--blockquote-border-thickness)) - 4px);
+	margin-left: calc(-1 * (var(--blockquote-border-thickness)));
 	white-space: pre;
 	content: " ";
 	background-color: var(--blockquote-border-color);
