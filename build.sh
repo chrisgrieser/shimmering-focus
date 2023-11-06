@@ -99,10 +99,13 @@ sed -E -i '' "s/badge.*-[[:digit:]]+-/badge\/downloads-$dl-/" ./README.md
 
 # git add, commit, pull, and push
 # needs piping stderr to stdin, since git push reports an error even on success?!
-git add -A && git commit -m "publish (automated)"
+git add --all && git commit -m "publish (automated)"
 git pull
 git push 2>&1
 
 #───────────────────────────────────────────────────────────────────────────────
-# INFO specific to my setup: copy theme file for fallback
-cp "$CSS_PATH" "$VAULT_PATH/.obsidian/themes/Shimmering Focus/fallback.css"
+# INFO specific to my setup
+if [[ $(uname) == "Darwin" ]]; then                                                                                 # check if on macOS
+	afplay "/System/Library/Components/CoreAudio.component/Contents/SharedSupport/SystemSounds/siri/jbl_confirm.caf" & # codespell-ignore
+	osascript -e 'tell application id "com.runningwithcrayons.Alfred" to run trigger "trigger-fallback" in workflow "de.chris-grieser.shimmering-focus"'
+fi
