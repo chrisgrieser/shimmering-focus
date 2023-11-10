@@ -37,7 +37,7 @@ A minimalistic and opinionated Obsidian theme for the keyboard-centric user.
 - __Code Blocks:__ Various improvements like language display, disabled wrapping, and line numbers per code block.
 - Extensive Styling for the [Longform Plugin](https://obsidian.md/plugins?id=longform), including alternative background colors and serif-fonts only for notes in longform projects.
 - __Distinguishable Link Types__: Internal links have double underlines, external links regular underlines, alias-links dotted underlines, and heading-links dashed underlines.
-- __Annotation Tags__: Tags that are emphasized when used inline (not in the YAML Frontmatter). They are meant as visual guides for literature notes. They include: `#definition`, `#question`, `#goal`, `#todo`, `#summary`, `#important`, `#main`, `#critique`, `#gap`, `#litreview`, `#quote`, `#agree`, `#disagree`, `#example`, `#data`, `#method`, `#idea`, `#epistemic-break`, and `#sidenote`. To add your own annotation tags, you can use the [Colorful Tags Plugin](https://github.com/rien7/obsidian-colorful-tag).
+- __Annotation Tags__: Tags that are emphasized when used inline (not in the YAML Frontmatter). They are meant as visual guides for literature notes. They include: `#definition`, `#question`, `#goal`, `#todo`, `#summary`, `#important`, `#main`, `#critique`, `#gap`, `#litreview`, `#quote`, `#agree`, `#disagree`, `#example`, `#data`, `#method`, `#idea`, `#epistemic-break`, and `#sidenote`. To add your own annotation tags, you can use a plugin like [Colorful Tags Plugin](https://github.com/rien7/obsidian-colorful-tag).
 - __Vim Mode__: Explicit styling of Obsidian's Vim Mode and various style
   settings for vim mode, like for example relative line numbers.
 - …
