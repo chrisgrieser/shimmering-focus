@@ -3893,22 +3893,21 @@ are not targeted by this */
 }
 
 .theme-dark .cm-focused .cm-vimCursorLayer .cm-fat-cursor.cm-fat-cursor.cm-fat-cursor {
-	color: hsl(0deg 0% 70%);
-	background-color: hsl(0deg 0% 0%);
-	outline-color: hsl(0deg 0% 90%);
+	color: hsl(0 0% 70%);
+	background-color: hsl(0 0% 0%);
+	outline: 1px solid hsl(0 0% 90%);
 }
 
 .theme-light .cm-focused .cm-vimCursorLayer .cm-fat-cursor.cm-fat-cursor.cm-fat-cursor {
-	color: hsl(0deg 0% 90%);
-	background-color: hsl(0deg 0% 25%);
-	outline-color: hsl(220deg 10% 80%);
+	color: hsl(0 0% 90%);
+	background-color: hsl(0 0% 25%);
+	outline: 1.3px solid hsl(220 10% 72%);
 }
 
-.cm-editor:not(.cm-focused) .cm-fat-cursor {
+.cm-editor:not(.cm-focused) .cm-fat-cursor.cm-fat-cursor.cm-fat-cursor {
 	color: transparent;
 	background-color: transparent;
-	outline: 2px solid var(--text-accent);
-	outline-offset: -1px;
+	outline: 2px solid var(--hover-accent);
 }
 
 /* disable blinking */
