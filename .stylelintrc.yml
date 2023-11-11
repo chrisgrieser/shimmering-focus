@@ -18,7 +18,8 @@ defaultSeverity: warning
 rules:
   color-named: [never, { severity: error }]
   color-no-hex: true
-  color-hex-alpha: never
+  color-function-notation: [modern, { ignore: [with-var-inside] }]
+  hue-degree-notation: number # compatible with ccc.nvim output
   comment-empty-line-before: null # does not work well with comment decorators
   declaration-no-important: [true, { severity: error }]
   font-weight-notation: numeric
