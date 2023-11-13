@@ -3816,15 +3816,15 @@ body:not(.no-active-line-highlight, .active-line-background)
 	border-left: 3px solid var(--basic-border-color);
 }
 
-.theme-dark.active-line-background .cm-active:not(.HyperMD-quote, .HyperMD-header, .HyperMD-codeblock) {
+.theme-dark.active-line-background .cm-active:not(.HyperMD-quote, .HyperMD-codeblock) {
 	background-color: var(--bg4);
 }
 
-.theme-light.active-line-background .cm-active:not(.HyperMD-quote, .HyperMD-header, .HyperMD-codeblock) {
+.theme-light.active-line-background .cm-active:not(.HyperMD-quote, .HyperMD-codeblock) {
 	background-color: var(--bg3);
 }
 
-body.active-line-background .cm-active:not(.HyperMD-quote, .HyperMD-header, .HyperMD-codeblock) {
+body.active-line-background .cm-active:not(.HyperMD-quote, .HyperMD-codeblock) {
 	border-radius: var(--radius-s);
 }
 
