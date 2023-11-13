@@ -5450,6 +5450,10 @@ body .setting-item.setting-item.setting-item.setting-item[data-id="author-info"]
 	padding-left: 0;
 }
 
+.result-group .dataview.task-list-item-checkbox {
+	margin-inline-start: 0.3em;
+}
+
 pre.dataview-error::before {
 	display: none;
 }
