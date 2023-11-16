@@ -6064,11 +6064,15 @@ body.longform-tasks-different.longform-tasks-different.longform-tasks-different.
 }
 
 /* disable active line highlight */
-.no-active-highlight-in-longform :is(.writing, .longform-leaf) .cm-active.cm-active.cm-active.cm-active {
+.no-active-highlight-in-longform
+	:is(.writing, .longform-leaf)
+	.cm-active.cm-active.cm-active:not(.HyperMD-quote, .HyperMD-codeblock) {
 	background: none;
 }
 
-.no-active-highlight-in-longform :is(.writing, .longform-leaf) .cm-active.cm-active.cm-active::before {
+.no-active-highlight-in-longform
+	:is(.writing, .longform-leaf)
+	.cm-active.cm-active:not(.HyperMD-quote, .HyperMD-header, .HyperMD-codeblock)::before {
 	content: none;
 }
 

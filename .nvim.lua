@@ -35,13 +35,13 @@ keymap(
 	{ "n", "x" },
 	"<C-j>",
 	[[/^\/\* <<CR>:nohl<CR>]],
-	{ buffer = true, desc = "next comment mark" }
+	{ buffer = true, desc = "next comment mark", silent = true }
 )
 keymap(
 	{ "n", "x" },
 	"<C-k>",
 	[[?^\/\* <<CR>:nohl<CR>]],
-	{ buffer = true, desc = "prev comment mark" }
+	{ buffer = true, desc = "prev comment mark", silent = true }
 )
 
 --------------------------------------------------------------------------------
