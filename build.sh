@@ -17,9 +17,8 @@
 
 #───────────────────────────────────────────────────────────────────────────────
 
-[[ $(uname) == "Darwin" ]] && osascript -e 'display notification "Building…" with title "Shimmering Focus"'
-
-CSS_PATH="./source.css"
+# CONFIG
+CSS_PATH="$(dirname "$(readlink -f "$0")")/source.css"
 
 #───────────────────────────────────────────────────────────────────────────────
 
@@ -45,9 +44,9 @@ YAMLLINT_OUTPUT=$(
 
 if [[ $? == 1 ]]; then
 	echo "YAML ERROR"
-	echo "$YAMLLINT_OUTPUT" | tail -n+2
+	echo "$YAMLLINT_OUTPUT" | sed '$d'
 	# open Style Settings if Advanced URI plugin installed
-	open "obsidian://advanced-uri?settingid=obsidian-style-settings"
+	open "obsidian://advanced-uri?commandid=obsidian-style-settings%253Ashow-style-settings-leaf"
 	return 1
 fi
 
@@ -100,20 +99,19 @@ sed -E -i '' "s/badge.*-[[:digit:]]+-/badge\/downloads-$dl-/" ./README.md
 # git add, commit, pull, and push
 # needs piping stderr to stdin, since git push reports an error even on success?!
 git add --all && git commit -m "publish (automated)"
-git pull
-git push 2>&1
+git pull && git push 2>&1
 
 #───────────────────────────────────────────────────────────────────────────────
 #───────────────────────────────────────────────────────────────────────────────
 # INFO specific to my setup
 
-if [[ $(uname) == "Darwin" ]]; then
-	# copy theme file for fallback
-	cp "$CSS_PATH" "$VAULT_PATH/.obsidian/themes/Shimmering Focus/fallback.css"
-
-	# trigger fallback
-	osascript -e 'tell application id "com.runningwithcrayons.Alfred" to run trigger "trigger-fallback" in workflow "de.chris-grieser.shimmering-focus"'
+if [[ "$OSTYPE" =~ "darwin" ]]; then
+	cd "$VAULT_PATH/.obsidian/themes/Shimmering Focus/" || return 1
 
 	# confirmation sound
 	afplay "/System/Library/Components/CoreAudio.component/Contents/SharedSupport/SystemSounds/siri/jbl_confirm.caf" & # codespell-ignore
+
+	cp "$CSS_PATH" "fallback.css"             # copy theme file for fallback
+	ln -sf "fallback.css" "theme.css"         # re-create symlink
+	rm -rf "$(dirname "$(readlink -f "$0")")" # delete this repo folder
 fi
