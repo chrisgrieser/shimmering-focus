@@ -18,7 +18,8 @@
 #───────────────────────────────────────────────────────────────────────────────
 
 # CONFIG
-CSS_PATH="$(dirname "$(readlink -f "$0")")/source.css"
+script_dir="$(dirname "$(readlink -f "$0")")"
+CSS_PATH="$script_dir/source.css"
 
 #───────────────────────────────────────────────────────────────────────────────
 
@@ -111,7 +112,7 @@ if [[ "$OSTYPE" =~ "darwin" ]]; then
 	# confirmation sound
 	afplay "/System/Library/Components/CoreAudio.component/Contents/SharedSupport/SystemSounds/siri/jbl_confirm.caf" & # codespell-ignore
 
-	cp "$CSS_PATH" "fallback.css"             # copy theme file for fallback
-	ln -sf "fallback.css" "theme.css"         # re-create symlink
-	rm -rf "$(dirname "$(readlink -f "$0")")" # delete this repo folder
+	cp "$CSS_PATH" "fallback.css"     # copy theme file for fallback
+	ln -sf "fallback.css" "theme.css" # re-create symlink
+	rm -rf "$script_dir"              # delete this repo folder
 fi
