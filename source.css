@@ -3107,6 +3107,16 @@ body:not(.show-ribbon, .is-mobile) .side-dock-settings .side-dock-ribbon-action:
 	padding-bottom: 1.75em;
 }
 
+/* signature icon */
+body:not(.hide-signature-icon) .status-bar::after {
+	padding-right: 6px;
+	padding-left: 6px;
+	font-family: "Recursive S";
+	font-size: 1.1rem;
+	font-weight: 600;
+	content: "⟡";
+}
+
 /* ───────────────────────────────────────────────── */
 /* << Header Bar (Tab Title Bar)
 ──────────────────────────────────────────────────── */
@@ -6436,6 +6446,11 @@ settings:
   -
    id: hide-pandoc-reference-list-status-bar
    title: Hide Pandoc Reference List Icon
+   type: class-toggle
+   default: false
+  -
+   id: hide-signature-icon
+   title: Hide the Shimmering Focus icon (⟡)
    type: class-toggle
    default: false
   -
