@@ -6298,672 +6298,578 @@ name: Shimmering Focus
 id: shimmering-focus
 collapsed: false
 settings:
-  -
-   id: readme-info
-   title: ℹ️ Theme Information
-   description: |
+  - id: readme-info
+    title: ℹ️ Theme Information
+    description: |
       - [Documentation of Features](https://github.com/chrisgrieser/shimmering-focus#shimmering-focus-)
-   markdown: true
-   type: info-text
-  -
-# << Show / Hide UI Elements (+)
-   id: show-hide-elements
-   title: 🙈 Show/Hide UI Elements
-   description: Re-enable UI Elements hidden by this theme.
-   type: heading
-   level: 1
-   collapsed: true
-  -
-   id: hide-settings-button
-   title: Hide Settings Button
-   type: class-toggle
-   description: Hide the floating Settings button in the bottom left. You can still access the settings by using the hotkey `⌘+,` or `ctrl+,`.
-   markdown: true
-   default: false
-  -
-   id: show-sidebar-header-buttons
-   title: Permanently show the Sidebar Header Buttons
-   description: By default, the buttons at the top of the sidebar panels are only visible when hovering.
-   type: class-toggle
-   default: false
-  -
-   id: show-ribbon
-   title: Re-enable the Ribbon
-   type: class-toggle
-   description: The ribbon is the thin vertical bar to the very left. Without the ribbon, you can still trigger any action via the Command Palette.
-   default: false
-  -
-   id: show-urls
-   title: Show URLs of Markdown Links
-   type: class-toggle
-   addCommand: true
-   description: |
+    markdown: true
+    type: info-text
+  - # << Show / Hide UI Elements (+)
+    id: show-hide-elements
+    title: 🙈 Show/Hide UI Elements
+    description: Re-enable UI Elements hidden by this theme.
+    type: heading
+    level: 1
+    collapsed: true
+  - id: hide-settings-button
+    title: Hide Settings Button
+    type: class-toggle
+    description: Hide the floating Settings button in the bottom left. You can still access the settings by using the hotkey `⌘+,` or `ctrl+,`.
+    markdown: true
+    default: false
+  - id: show-sidebar-header-buttons
+    title: Permanently show the Sidebar Header Buttons
+    description: By default, the buttons at the top of the sidebar panels are only visible when hovering.
+    type: class-toggle
+    default: false
+  - id: show-ribbon
+    title: Re-enable the Ribbon
+    type: class-toggle
+    description: The ribbon is the thin vertical bar to the very left. Without the ribbon, you can still trigger any action via the Command Palette.
+    default: false
+  - id: show-urls
+    title: Show URLs of Markdown Links
+    type: class-toggle
+    addCommand: true
+    description: |
       By default, the URLs of markdown links are hidden in Source Mode, except for the currently active line.
       ℹ️ This can also be toggled via command palette or hotkey.
-   default: false
-  -
-   id: show-new-tab-button
-   title: Re-enable New Tab Button
-   type: class-toggle
-   description: You can still open a new tab via `⌘+T` / `ctrl+T`.
-   markdown: true
-   default: false
-  -
-   id: show-tab-list-button
-   title: Re-enable Tab List Button
-   type: class-toggle
-   description: You can still switch to tabs via Quick Switcher, and you can toggle stacked tabs via command palette.
-   default: false
-  -
-   id: show-sidebar-toggle-buttons
-   title: Re-enable Sidebar Toggle Buttons
-   type: class-toggle
-   description: Note that sidebar buttons of hidden sidebars are going to be inaccessible when also enable the setting to hide the tab bar. You can still toggle the sidebars via command palette.
-   default: false
-  -
-   id: show-close-buttons
-   title: Re-enable Close Buttons
-   type: class-toggle
-   description: You can still close settings with `Esc`, and tabs/panes by with `ctrl/cmd+W`.
-   markdown: true
-   default: false
-  -
-   id: show-search-pane-suggestions
-   title: 'Search Pane: Re-enable Suggestions'
-   description: By default, this theme hides the Suggestions in Search Core Plugin Pane.
-   type: class-toggle
-   default: false
-  -
-# <<< File Explorer (+)
-   id: show-hide-file-explorer-elements
-   title: File Explorer
-   type: heading
-   level: 2
-   collapsed: true
-  -
-   id: hide-attachment-folders
-   title: Hide attachments folders
-   description: 'Affects folders exactly named "attachments" (case-insensitive).'
-   type: class-toggle
-   default: false
-  -
-   id: show-vault-in-file-explorer
-   title: Show Vault Name
-   type: class-toggle
-   description: Enable this to drag and drop items to the vault root.
-   default: false
-  -
-   id: show-file-explorer-navigation
-   title: Re-enable Navigation Buttons
-   type: class-toggle
-   description: 'The navigation buttons are the buttons for new file, new folder, and sorting. You can do the former two without the buttons via the context menu.'
-   default: false
-  -
-# <<< Status Bar (+)
-   id: show-hide-statusbar-elements
-   title: Status Bar Items
-   type: heading
-   level: 2
-   collapsed: true
-  -
-   id: hidden-sidebars-hidden-statusbar
-   title: Hide the Status bar completely, when both sidebars are hidden
-   description: ⚠️ Requires Obsidian installer version 1.1.9 or later.
-   type: class-toggle
-   default: false
-  -
-   id: hide-properties-in-statusbar
-   title: Hide Properties Count
-   type: class-toggle
-   default: false
-  -
-   id: hide-backlinks-status-bar
-   title: Hide Backlinks Count
-   type: class-toggle
-   default: false
-  -
-   id: hide-pane-relief-focus-lock-status-bar
-   title: Hide Pane Relief Focus Lock
-   type: class-toggle
-   default: false
-  -
-   id: hide-languagetool-status-bar
-   title: Hide Language Tools
-   type: class-toggle
-   default: false
-  -
-   id: hide-electron-window-tweaker-status-bar
-   title: Hide Electron Window Tweaker `Always on top` Icon
-   markdown: true
-   type: class-toggle
-   default: false
-  -
-   id: hide-inactive-textgenerator
-   title: Hide Icons from the Text Generator Plugin except when Autosuggest is active
-   markdown: true
-   type: class-toggle
-   default: false
-  -
-   id: hide-pandoc-reference-list-status-bar
-   title: Hide Pandoc Reference List Icon
-   type: class-toggle
-   default: false
-  -
-   id: hide-signature-icon
-   title: Hide the Shimmering Focus icon (⟡)
-   type: class-toggle
-   default: false
-  -
-# << Workspace (+)
-   id: user-interface
-   title: 🔲 Workspace
-   description: Sidebar, Tab Bar & Header Bar
-   type: heading
-   level: 1
-   collapsed: true
-  -
-   id: tabbar-when-one-tab
-   title: Tab Bar when only one tab (experimental)
-   description: By default, this theme turns the Tab Bar into a Header Bar. It turns back into a Tab Bar on hover or when another tab is opened. Alternatively you can also hide the tab bar altogether, when there is only one tab (⚠️ requires Obsidian installer version 1.1.9 or later).
-   type: class-select
-   allowEmpty: false
-   default: tabbar-header-hybrid
-   options:
-   - label: Tab Bar becomes Header
-     value: tabbar-header-hybrid
-   - label: Hide Tab Bar (requires installer v1.1.9+)
-     value: hide-tabbar-when-one-tab
-   - label: Normal Tab Bar
-     value: normal-tab-bar
-  -
-   id: normal-header-bar
-   title: Re-enable the Header Bar (Tab Title Bar)
-   description: By default, this theme removes the header bar, except for the "More Options" Button and the Breadcrumbs moved to the right. You can still toggle reading/editing mode, navigate back/forward, and rename your current file with the respective command in the command palette or a hotkey. (This setting has no effect if "Show tab title bar" in the Appearance settings is disabled.)
-   type: class-toggle
-   default: false
-  -
-   id: tab-width
-   title: Tab Width
-   description: This setting only affects tab width when there is enough space in the tab bar. (Obsidian automatically reduces tab width when there are more open tabs when there is space for them.)
-   type: variable-number-slider
-   default: 200
-   min: 100
-   max: 400
-   step: 25
-   format: px
-  -
-   id: trim-long-filenames
-   title: 'Sidebar: Trim File Names'
-   description: When enabled, long file and folder names will be trimmed. When disabled, long names will be wrapped to the next line.
-   type: class-toggle
-   default: false
-  -
-   id: overlaying-right-sidebar
-   title: 'Sidebar: Overlaying Right Sidebar'
-   description: 'The right sidebar is placed on top of the editor instead of making the editor more narrow (i.e. the behavior on mobile).'
-   type: class-toggle
-   default: false
-  -
-   id: sidebar-no-animations
-   title: 'Sidebar: No Animations'
-   description: Disable all sidebar-related animations.
-   type: class-toggle
-   default: false
-  -
-# << Fonts & Headings (+)
-   id: font-settings
-   title: 🔠 Font
-   description: "Headings, MathJax, Code"
-   type: heading
-   level: 1
-   collapsed: true
-  -
-   id: font-heading-theme
-   title: 'Headings: Font Family'
-   type: variable-text
-   default: '"Optima S"'
-  -
-   id: heading-scaling
-   title: 'Headings: Font Size Scaling'
-   description: The font size of all headings is multiplied by this factor.
-   type: variable-number-slider
-   default: 1
-   min: 0.5
-   max: 1.5
-   step: 0.05
-  -
-   id: no-alternating-header-colors
-   title: 'Headings: No Alternating Colors'
-   description: Do not colorize odd heading levels (h1, h3, h5).
-   type: class-toggle
-   default: false
-  -
-   id: no-lp-heading-level-indicator
-   title: 'Headings: No Level Indicators in Live Preview'
-   type: class-toggle
-   default: false
-  -
-   id: less-heading-letter-spacing
-   title: 'Headings: Compactness'
-   description: Makes Headings more compact by decreasing their letter spacing.
-   type: class-toggle
-   default: false
-  -
-   id: code-block-scaling
-   title: 'Code Blocks: Font Size Scaling'
-   description: The font size of all code blocks is multiplied by this factor. Also affects templater code and YAML frontmatter in source mode.
-   type: variable-number-slider
-   default: 1
-   min: 0.7
-   max: 1.3
-   step: 0.05
-  -
-   id: math-font
-   title: 'MathJax: Font Family (Source Mode)'
-   description: By default, uses the monospace font you have set in the Obsidian core settings or if you have not set one, this theme's monospace font (Input Mono S).
-   type: variable-text
-   default: 'var(--font-monospace)'
-  -
-   id: math-font-size
-   title: 'MathJax: Font Size'
-   type: variable-number-slider
-   default: 1
-   min: 0.5
-   max: 2
-   step: 0.1
-   format: em
-  -
-   id: font-info
-   description: "You can change the font used elsewhere by the theme in the Obsidian settings: `Appearance → Font`"
-   type: info-text
-   markdown: true
-  -
-# << Colors (+)
-   id: aesthetics
-   title: 🎨 Colors
-   description: Native macOS Look, Background Color, Colored Bold/Italics, Highlight Color
-   type: heading
-   level: 1
-   collapsed: true
-  -
-   id: mac-os-native
-   title: Native macOS Look
-   description: Background colors like in a native macOS app.
-   type: class-toggle
-   default: false
-  -
-   id: bg-hue-light
-   title: Background Color Tone (Light Mode)
-   type: variable-number-slider
-   default: 230
-   min: 0
-   max: 360
-   step: 5
-  -
-   id: bg-hue-dark
-   title: Background Color Tone (Dark Mode)
-   type: variable-number-slider
-   default: 230
-   min: 0
-   max: 360
-   step: 5
-  -
-   id: uncolored-bold
-   title: Uncolored Bold
-   markdown: true
-   description: "**Bold text** will use the standard text color instead of being colored."
-   type: class-toggle
-   default: false
-  -
-   id: uncolored-italic
-   title: Uncolored Italic
-   markdown: true
-   description: "*Italic text* will use the standard text color instead of being colored."
-   type: class-toggle
-   default: false
-  -
-   id: highlight-hue-1
-   title: Color Tone of Highlights
-   description: Hue of ==highlighted text==
-   markdown: true
-   type: variable-number-slider
-   default: 60
-   min: 0
-   max: 360
-   step: 5
-  -
-   id: color-customization-info
-   title: More Color Customization
-   description: "You can further customize theme colors or even create your own color scheme – without knowledge of CSS! – by using a CSS snippet. [See the theme docs for further information](https://github.com/chrisgrieser/shimmering-focus#create-and-share-your-own-color-scheme)."
-   markdown: true
-   type: info-text
-  -
-# << Editor Content (+)
-   id: content-settings
-   title: 📑 Editor Content
-   description: Active Lines & Panes, Clean Embeds, Line Length, Inline Backlinks, Folded Lines
-   type: heading
-   level: 1
-   collapsed: true
-  -
-   id: inactive-pane-opacity
-   title: Dimmed Inactive Panes
-   description: Opacity of inactive panes. Set to 100% to disable dimming.
-   type: variable-number-slider
-   default: 75
-   min: 50
-   max: 100
-   step: 1
-   format: '%'
-  -
-   id: active-line-highlight
-   title: Active Line Indicator
-   type: class-select
-   allowEmpty: false
-   default: active-line-gutter
-   options:
-   - label: Line in Gutter
-     value: active-line-gutter
-   - label: Emphasized Background
-     value: active-line-background
-   - label: Disable
-     value: no-active-line-highlight
-  -
-   id: no-codeblock-line-numbers
-   title: Turn Off Line Numbers in Code Blocks (Edit Mode)
-   description: By default, this theme adds line numbers to code blocks in Edit Mode.
-   type: class-toggle
-   default: false
-  -
-   id: clean-embeds
-   title: 'Reading Mode: Clean Embeds'
-   type: class-toggle
-   description: Embedded Notes integrate seamlessly with the rest of the note content.
-   default: false
-  -
-   id: file-line-width
-   title: Line Length
-   description: 'The length of the editor content (when the `Readable Line Length` Setting is enabled). You can use the cssclass `full-width` to lift line length restrictions for individual notes.'
-   markdown: true
-   type: variable-number-slider
-   default: 700
-   min: 300
-   max: 2500
-   step: 25
-   format: px
-  -
-   id: folded-line-emphasis
-   title: Folded Line Emphasis
-   type: class-toggle
-   description: ⚠️ Requires Obsidian installer version 1.1.9 or later. Slightly darkens the background of folded lines, similar to folds in vim.
-   default: false
-  -
-# << Media (+)
-   id: media-settings
-   title: 🖼️ Media
-   description: Images, Tables, Canvas
-   type: heading
-   level: 1
-   collapsed: true
-  -
-   id: unrestricted-line-length-tables
-   title: Automatically disable `Readable Line Length` on notes with tables
-   markdown: true
-   description: ⚠️ Requires Obsidian installer version 1.1.9 or later.
-   type: class-toggle
-   default: false
-  -
-   id: no-image-alttext-caption
-   title: 'Images: No alt-text as caption'
-   description: 'By default, the alt-text of images is used as image caption in Reading Mode.'
-   type: class-toggle
-   default: false
-  -
-   id: image-size
-   title: 'Images: Size (Percent)'
-   description: 'The theme also adds a command `Toggle Max Image Size` which toggles between 100% image size and the reduced image size below. In addition, clicking & holding images will also enlarge an image.'
-   type: variable-number-slider
-   markdown: true
-   default: 50
-   min: 10
-   max: 100
-   step: 5
-  -
-   id: max-image-size-toggle
-   title: between Reduced and Max Image Size
-   description: INFO This is a dummy setting, since this is hidden and only added for the toggle-command
-   addCommand: true
-   type: class-toggle
-   default: false
-  -
-   id: font-canvas-cards-heading-theme
-   title: 'Canvas: Heading Font in Cards and Notes'
-   description: Only affects headings in canvas cards/notes. (Some heading fonts look good in notes, but not that good in cards.)
-   type: variable-text
-   default: '"Recursive S"'
-  -
-   id: centered-canvas-notes
-   title: 'Canvas: Center Text in all Cards and Notes'
-   description: The theme also adds a command to toggle this setting
-   type: class-toggle
-   addCommand: true
-   markdown: true
-  -
-# << Markup & Special Syntax (+)
-   id: markup-and-special-syntax
-   title: ✏️ Markup & Special Syntax
-   description: Blockquote Alignment, Trailing Spaces, Pandoc Emphasis, Annotation Tags
-   type: heading
-   level: 1
-   collapsed: true
-  -
-   id: blockquotes-left-aligned
-   title: Left-aligned Blockquote Text
-   description: Use left-aligned text in blockquotes instead of justified text.
-   type: class-toggle
-   default: false
-  -
-   id: hide-trailing-whitespace
-   title: Hide Trailing Spaces
-   description: 'By default, this theme indicates the presence of trailing spaces when there are more than one with "··↵". This can be useful for the "Two Space Rule" in Markdown, where exactly two spaces at the end of a line force a line break.'
-   type: class-toggle
-   default: false
-  -
-   id: no-pandoc-citation-emphasis
-   title: No Emphasis of Pandoc Citations
-   markdown: true
-   description: "Turn off the coloring of Pandoc Citations [@citekey] in Editing Mode. (Also affects the styling for the Pandoc Reference List Plugin.)"
-   type: class-toggle
-   default: false
-  -
-   id: annotation-tags-off
-   title: Disable Annotation Tags
-   description: '"Annotation Tags" are tags that are visually emphasized when used inline (i.e., not the YAML frontmatter). They include: #definition, #question, #goal, #todo, #summary, #important, #main, #critique, #gap, #litreview, #quote, #agree, #disagree, #example, #data, #method, #idea, #epistemic-break, and #sidenote.'
-   markdown: true
-   type: class-toggle
-   default: false
-  -
-   id: sidenote-callout-width
-   title: Width of Sidenote Callouts
-   description: 'Percentage of the readable line length. Affects callouts with `> [!sidenote]`. '
-   markdown: true
-   type: variable-number-slider
-   default: 34
-   min: 10
-   max: 60
-   step: 2
-  -
-# << Vim Mode (+)
-   id: vim-mode
-   title: 🏃 Vim Mode
-   description: Cursor, Relative Line Numbers
-   type: heading
-   level: 1
-   collapsed: true
-  -
-   id: disable-vim-cursor-blink
-   title: Disable Blinking for the Vim Cursor
-   type: class-toggle
-   default: false
-  -
-   id: use-relative-line-numbers
-   title: Relative Line Numbers
-   markdown: true
-   description: ⚠️ Requires Obsidian installer version 1.1.9 or later. `Line Numbers` must also be enabled in the Obsidian settings.
-   type: class-toggle
-   default: false
-  -
-# << Longform & Writing (+)
-   id: longform-settings
-   title: ✍️ Longform & Writing
-   description: Settings for notes in longform projects and notes with the writing cssclass.
-   type: heading
-   level: 1
-   collapsed: true
-  -
-   id: longform-font-text-theme
-   title: Main Font
-   description: Font used in longform/writing notes (Except code, which still use the monospace font.)
-   type: variable-text
-   default: '"Crimson Pro S"'
-  -
-   id: longform-font-size
-   title: Font Size in longform/writing notes
-   type: variable-number-slider
-   default: 1.2
-   min: 0.7
-   max: 2
-   step: 0.05
-   format: rem
-  -
-   id: longform-base-line-height
-   title: Line Height in longform/writing notes
-   type: variable-number-slider
-   default: 1
-   min: 0.8
-   max: 1.5
-   step: 0.05
-  -
-   id: longform-letter-spacing
-   title: Letter Spacing in longform/writing notes
-   type: variable-number-slider
-   default: 0
-   min: -0.5
-   max: 0.5
-   step: 0.05
-   format: px
-  -
-   id: longform-bg-hue
-   title: Background Color Tone (Hue)
-   description: Use this setting to visually distinguish your longform and writing notes from the rest of your vault.
-   type: variable-number-slider
-   default: 200
-   min: 0
-   max: 360
-   step: 5
-  -
-   id: wordcount-only-when-writing
-   title: "Status Bar: Show Word Count *only* when longform/writing note is open"
-   description: ⚠️ Requires Obsidian installer version 1.1.9 or later. Works for the Word Count Core Plugin and the Better Word Count Community Plugin.
-   type: class-toggle
-   default: false
-  -
-   id: hide-longform-status-bar
-   title: "Status Bar: Hide Longform Wordcount"
-   description: This affects the word count from the Longform plugin, not the other word count plugins.
-   type: class-toggle
-   default: false
-  -
-   id: longform-tasks-different
-   title: "Tasks: Use Gray instead of Normal Text Color"
-   description: This can help with differentiating tasks from "finished" text.
-   type: class-toggle
-   default: false
-  -
-   id: longform-left-aligned
-   title: Left-aligned text
-   description: Use left-aligned text instead of justified text.
-   type: class-toggle
-   default: false
-  -
-   id: longform-text-indent
-   title: First-Line Indent & No Spacing between Paragraphs (Reading Mode)
-   description: ⚠️ Requires Obsidian installer version 1.1.9 or later. Indent the first Line of a paragraph and remove the spacing between paragraphs.
-   type: class-toggle
-   default: false
-  -
-   id: no-active-highlight-in-longform
-   title: Disable active line highlights in longform/writing notes
-   type: class-toggle
-   default: false
-  -
-# << Plugin-Specific Settings (+)
-   id: plugin-specific-settings
-   title: ⚙️ Plugin-specific Settings
-   description: Backlinks, Outgoing Links, Supercharged Links, Git Gutter
-   type: heading
-   level: 1
-   collapsed: true
-  -
-   id: normal-out-back-links
-   title: Normal Outgoing Links and Backlinks
-   description: By default, the sidebar for outgoing links and backlinks are reduced to linked mentions only. Enable this setting to restore their original display.
-   type: class-toggle
-   default: false
-  -
-   id: classic-inline-backlinks
-   title: Use Normal Inline Backlinks
-   description: By default, the inline-backlinks are displayed in a more minimalistic manner. Enable this setting to restore original display of backlinks. This also affects the Influx Plugin.
-   type: class-toggle
-   default: false
-  -
-   id: no-built-in-supercharged-links
-   title: "Supercharged Links: Disable built-in Icons"
-   description: 'By default, the theme adds various icons if you have the Supercharged Links plugin installed: https://github.com/chrisgrieser/shimmering-focus#recommended-plugins.'
-   type: class-toggle
-   markdown: true
-   default: false
-  -
-   id: git-blame-to-gitsigns
-   title: "Obsidian Git: Turn Author Line Information into Gitsigns"
-   description: 'Repurposes the Author Line Information feature to work like Gitsigns/Git Gutter. Required Plugin Settings: Enable "Show commit authoring information next to each line", hide author name, and hide authoring date.'
-   type: class-toggle
-   markdown: true
-   addCommand: true
-   default: false
-  -
-# << Miscellaneous (+)
-   id: miscellaneous
-   title: 🧊 Miscellaneous
-   description: Private Mode
-   type: heading
-   level: 1
-   collapsed: true
-  -
-   id: private-mode
-   title: Private Mode
-   markdown: true
-   addCommand: true
-   description: |
+    default: false
+  - id: show-new-tab-button
+    title: Re-enable New Tab Button
+    type: class-toggle
+    description: You can still open a new tab via `⌘+T` / `ctrl+T`.
+    markdown: true
+    default: false
+  - id: show-tab-list-button
+    title: Re-enable Tab List Button
+    type: class-toggle
+    description: You can still switch to tabs via Quick Switcher, and you can toggle stacked tabs via command palette.
+    default: false
+  - id: show-sidebar-toggle-buttons
+    title: Re-enable Sidebar Toggle Buttons
+    type: class-toggle
+    description: Note that sidebar buttons of hidden sidebars are going to be inaccessible when also enable the setting to hide the tab bar. You can still toggle the sidebars via command palette.
+    default: false
+  - id: show-close-buttons
+    title: Re-enable Close Buttons
+    type: class-toggle
+    description: You can still close settings with `Esc`, and tabs/panes by with `ctrl/cmd+W`.
+    markdown: true
+    default: false
+  - id: show-search-pane-suggestions
+    title: "Search Pane: Re-enable Suggestions"
+    description: By default, this theme hides the Suggestions in Search Core Plugin Pane.
+    type: class-toggle
+    default: false
+  - # <<< File Explorer (+)
+    id: show-hide-file-explorer-elements
+    title: File Explorer
+    type: heading
+    level: 2
+    collapsed: true
+  - id: hide-attachment-folders
+    title: Hide attachments folders
+    description: 'Affects folders exactly named "attachments" (case-insensitive).'
+    type: class-toggle
+    default: false
+  - id: show-vault-in-file-explorer
+    title: Show Vault Name
+    type: class-toggle
+    description: Enable this to drag and drop items to the vault root.
+    default: false
+  - id: show-file-explorer-navigation
+    title: Re-enable Navigation Buttons
+    type: class-toggle
+    description: "The navigation buttons are the buttons for new file, new folder, and sorting. You can do the former two without the buttons via the context menu."
+    default: false
+  - # <<< Status Bar (+)
+    id: show-hide-statusbar-elements
+    title: Status Bar Items
+    type: heading
+    level: 2
+    collapsed: true
+  - id: hidden-sidebars-hidden-statusbar
+    title: Hide the Status bar completely, when both sidebars are hidden
+    description: ⚠️ Requires Obsidian installer version 1.1.9 or later.
+    type: class-toggle
+    default: false
+  - id: hide-properties-in-statusbar
+    title: Hide Properties Count
+    type: class-toggle
+    default: false
+  - id: hide-backlinks-status-bar
+    title: Hide Backlinks Count
+    type: class-toggle
+    default: false
+  - id: hide-pane-relief-focus-lock-status-bar
+    title: Hide Pane Relief Focus Lock
+    type: class-toggle
+    default: false
+  - id: hide-languagetool-status-bar
+    title: Hide Language Tools
+    type: class-toggle
+    default: false
+  - id: hide-electron-window-tweaker-status-bar
+    title: Hide Electron Window Tweaker `Always on top` Icon
+    markdown: true
+    type: class-toggle
+    default: false
+  - id: hide-inactive-textgenerator
+    title: Hide Icons from the Text Generator Plugin except when Autosuggest is active
+    markdown: true
+    type: class-toggle
+    default: false
+  - id: hide-pandoc-reference-list-status-bar
+    title: Hide Pandoc Reference List Icon
+    type: class-toggle
+    default: false
+  - id: hide-signature-icon
+    title: Hide the Shimmering Focus icon (⟡)
+    type: class-toggle
+    default: false
+  - # << Workspace (+)
+    id: user-interface
+    title: 🔲 Workspace
+    description: Sidebar, Tab Bar & Header Bar
+    type: heading
+    level: 1
+    collapsed: true
+  - id: tabbar-when-one-tab
+    title: Tab Bar when only one tab (experimental)
+    description: By default, this theme turns the Tab Bar into a Header Bar. It turns back into a Tab Bar on hover or when another tab is opened. Alternatively you can also hide the tab bar altogether, when there is only one tab (⚠️ requires Obsidian installer version 1.1.9 or later).
+    type: class-select
+    allowEmpty: false
+    default: tabbar-header-hybrid
+    options:
+      - label: Tab Bar becomes Header
+        value: tabbar-header-hybrid
+      - label: Hide Tab Bar (requires installer v1.1.9+)
+        value: hide-tabbar-when-one-tab
+      - label: Normal Tab Bar
+        value: normal-tab-bar
+  - id: normal-header-bar
+    title: Re-enable the Header Bar (Tab Title Bar)
+    description: By default, this theme removes the header bar, except for the "More Options" Button and the Breadcrumbs moved to the right. You can still toggle reading/editing mode, navigate back/forward, and rename your current file with the respective command in the command palette or a hotkey. (This setting has no effect if "Show tab title bar" in the Appearance settings is disabled.)
+    type: class-toggle
+    default: false
+  - id: tab-width
+    title: Tab Width
+    description: This setting only affects tab width when there is enough space in the tab bar. (Obsidian automatically reduces tab width when there are more open tabs when there is space for them.)
+    type: variable-number-slider
+    default: 200
+    min: 100
+    max: 400
+    step: 25
+    format: px
+  - id: trim-long-filenames
+    title: "Sidebar: Trim File Names"
+    description: When enabled, long file and folder names will be trimmed. When disabled, long names will be wrapped to the next line.
+    type: class-toggle
+    default: false
+  - id: overlaying-right-sidebar
+    title: "Sidebar: Overlaying Right Sidebar"
+    description: "The right sidebar is placed on top of the editor instead of making the editor more narrow (i.e. the behavior on mobile)."
+    type: class-toggle
+    default: false
+  - id: sidebar-no-animations
+    title: "Sidebar: No Animations"
+    description: Disable all sidebar-related animations.
+    type: class-toggle
+    default: false
+  - # << Fonts & Headings (+)
+    id: font-settings
+    title: 🔠 Font
+    description: "Headings, MathJax, Code"
+    type: heading
+    level: 1
+    collapsed: true
+  - id: font-heading-theme
+    title: "Headings: Font Family"
+    type: variable-text
+    default: '"Optima S"'
+  - id: heading-scaling
+    title: "Headings: Font Size Scaling"
+    description: The font size of all headings is multiplied by this factor.
+    type: variable-number-slider
+    default: 1
+    min: 0.5
+    max: 1.5
+    step: 0.05
+  - id: no-alternating-header-colors
+    title: "Headings: No Alternating Colors"
+    description: Do not colorize odd heading levels (h1, h3, h5).
+    type: class-toggle
+    default: false
+  - id: no-lp-heading-level-indicator
+    title: "Headings: No Level Indicators in Live Preview"
+    type: class-toggle
+    default: false
+  - id: less-heading-letter-spacing
+    title: "Headings: Compactness"
+    description: Makes Headings more compact by decreasing their letter spacing.
+    type: class-toggle
+    default: false
+  - id: code-block-scaling
+    title: "Code Blocks: Font Size Scaling"
+    description: The font size of all code blocks is multiplied by this factor. Also affects templater code and YAML frontmatter in source mode.
+    type: variable-number-slider
+    default: 1
+    min: 0.7
+    max: 1.3
+    step: 0.05
+  - id: math-font
+    title: "MathJax: Font Family (Source Mode)"
+    description: By default, uses the monospace font you have set in the Obsidian core settings or if you have not set one, this theme's monospace font (Input Mono S).
+    type: variable-text
+    default: "var(--font-monospace)"
+  - id: math-font-size
+    title: "MathJax: Font Size"
+    type: variable-number-slider
+    default: 1
+    min: 0.5
+    max: 2
+    step: 0.1
+    format: em
+  - id: font-info
+    description: "You can change the font used elsewhere by the theme in the Obsidian settings: `Appearance → Font`"
+    type: info-text
+    markdown: true
+  - # << Colors (+)
+    id: aesthetics
+    title: 🎨 Colors
+    description: Native macOS Look, Background Color, Colored Bold/Italics, Highlight Color
+    type: heading
+    level: 1
+    collapsed: true
+  - id: mac-os-native
+    title: Native macOS Look
+    description: Background colors like in a native macOS app.
+    type: class-toggle
+    default: false
+  - id: bg-hue-light
+    title: Background Color Tone (Light Mode)
+    type: variable-number-slider
+    default: 230
+    min: 0
+    max: 360
+    step: 5
+  - id: bg-hue-dark
+    title: Background Color Tone (Dark Mode)
+    type: variable-number-slider
+    default: 230
+    min: 0
+    max: 360
+    step: 5
+  - id: uncolored-bold
+    title: Uncolored Bold
+    markdown: true
+    description: "**Bold text** will use the standard text color instead of being colored."
+    type: class-toggle
+    default: false
+  - id: uncolored-italic
+    title: Uncolored Italic
+    markdown: true
+    description: "*Italic text* will use the standard text color instead of being colored."
+    type: class-toggle
+    default: false
+  - id: highlight-hue-1
+    title: Color Tone of Highlights
+    description: Hue of ==highlighted text==
+    markdown: true
+    type: variable-number-slider
+    default: 60
+    min: 0
+    max: 360
+    step: 5
+  - id: color-customization-info
+    title: More Color Customization
+    description: "You can further customize theme colors or even create your own color scheme – without knowledge of CSS! – by using a CSS snippet. [See the theme docs for further information](https://github.com/chrisgrieser/shimmering-focus#create-and-share-your-own-color-scheme)."
+    markdown: true
+    type: info-text
+  - # << Editor Content (+)
+    id: content-settings
+    title: 📑 Editor Content
+    description: Active Lines & Panes, Clean Embeds, Line Length, Inline Backlinks, Folded Lines
+    type: heading
+    level: 1
+    collapsed: true
+  - id: inactive-pane-opacity
+    title: Dimmed Inactive Panes
+    description: Opacity of inactive panes. Set to 100% to disable dimming.
+    type: variable-number-slider
+    default: 75
+    min: 50
+    max: 100
+    step: 1
+    format: "%"
+  - id: active-line-highlight
+    title: Active Line Indicator
+    type: class-select
+    allowEmpty: false
+    default: active-line-gutter
+    options:
+      - label: Line in Gutter
+        value: active-line-gutter
+      - label: Emphasized Background
+        value: active-line-background
+      - label: Disable
+        value: no-active-line-highlight
+  - id: no-codeblock-line-numbers
+    title: Turn Off Line Numbers in Code Blocks (Edit Mode)
+    description: By default, this theme adds line numbers to code blocks in Edit Mode.
+    type: class-toggle
+    default: false
+  - id: clean-embeds
+    title: "Reading Mode: Clean Embeds"
+    type: class-toggle
+    description: Embedded Notes integrate seamlessly with the rest of the note content.
+    default: false
+  - id: file-line-width
+    title: Line Length
+    description: "The length of the editor content (when the `Readable Line Length` Setting is enabled). You can use the cssclass `full-width` to lift line length restrictions for individual notes."
+    markdown: true
+    type: variable-number-slider
+    default: 700
+    min: 300
+    max: 2500
+    step: 25
+    format: px
+  - id: folded-line-emphasis
+    title: Folded Line Emphasis
+    type: class-toggle
+    description: ⚠️ Requires Obsidian installer version 1.1.9 or later. Slightly darkens the background of folded lines, similar to folds in vim.
+    default: false
+  - # << Media (+)
+    id: media-settings
+    title: 🖼️ Media
+    description: Images, Tables, Canvas
+    type: heading
+    level: 1
+    collapsed: true
+  - id: unrestricted-line-length-tables
+    title: Automatically disable `Readable Line Length` on notes with tables
+    markdown: true
+    description: ⚠️ Requires Obsidian installer version 1.1.9 or later.
+    type: class-toggle
+    default: false
+  - id: no-image-alttext-caption
+    title: "Images: No alt-text as caption"
+    description: "By default, the alt-text of images is used as image caption in Reading Mode."
+    type: class-toggle
+    default: false
+  - id: image-size
+    title: "Images: Size (Percent)"
+    description: "The theme also adds a command `Toggle Max Image Size` which toggles between 100% image size and the reduced image size below. In addition, clicking & holding images will also enlarge an image."
+    type: variable-number-slider
+    markdown: true
+    default: 50
+    min: 10
+    max: 100
+    step: 5
+  - id: max-image-size-toggle
+    title: between Reduced and Max Image Size
+    description: INFO This is a dummy setting, since this is hidden and only added for the toggle-command
+    addCommand: true
+    type: class-toggle
+    default: false
+  - id: font-canvas-cards-heading-theme
+    title: "Canvas: Heading Font in Cards and Notes"
+    description: Only affects headings in canvas cards/notes. (Some heading fonts look good in notes, but not that good in cards.)
+    type: variable-text
+    default: '"Recursive S"'
+  - id: centered-canvas-notes
+    title: "Canvas: Center Text in all Cards and Notes"
+    description: The theme also adds a command to toggle this setting
+    type: class-toggle
+    addCommand: true
+    markdown: true
+  - # << Markup & Special Syntax (+)
+    id: markup-and-special-syntax
+    title: ✏️ Markup & Special Syntax
+    description: Blockquote Alignment, Trailing Spaces, Pandoc Emphasis, Annotation Tags
+    type: heading
+    level: 1
+    collapsed: true
+  - id: blockquotes-left-aligned
+    title: Left-aligned Blockquote Text
+    description: Use left-aligned text in blockquotes instead of justified text.
+    type: class-toggle
+    default: false
+  - id: hide-trailing-whitespace
+    title: Hide Trailing Spaces
+    description: 'By default, this theme indicates the presence of trailing spaces when there are more than one with "··↵". This can be useful for the "Two Space Rule" in Markdown, where exactly two spaces at the end of a line force a line break.'
+    type: class-toggle
+    default: false
+  - id: no-pandoc-citation-emphasis
+    title: No Emphasis of Pandoc Citations
+    markdown: true
+    description: "Turn off the coloring of Pandoc Citations [@citekey] in Editing Mode. (Also affects the styling for the Pandoc Reference List Plugin.)"
+    type: class-toggle
+    default: false
+  - id: annotation-tags-off
+    title: Disable Annotation Tags
+    description: '"Annotation Tags" are tags that are visually emphasized when used inline (i.e., not the YAML frontmatter). They include: #definition, #question, #goal, #todo, #summary, #important, #main, #critique, #gap, #litreview, #quote, #agree, #disagree, #example, #data, #method, #idea, #epistemic-break, and #sidenote.'
+    markdown: true
+    type: class-toggle
+    default: false
+  - id: sidenote-callout-width
+    title: Width of Sidenote Callouts
+    description: "Percentage of the readable line length. Affects callouts with `> [!sidenote]`. "
+    markdown: true
+    type: variable-number-slider
+    default: 34
+    min: 10
+    max: 60
+    step: 2
+  - # << Vim Mode (+)
+    id: vim-mode
+    title: 🏃 Vim Mode
+    description: Cursor, Relative Line Numbers
+    type: heading
+    level: 1
+    collapsed: true
+  - id: disable-vim-cursor-blink
+    title: Disable Blinking for the Vim Cursor
+    type: class-toggle
+    default: false
+  - id: use-relative-line-numbers
+    title: Relative Line Numbers
+    markdown: true
+    description: ⚠️ Requires Obsidian installer version 1.1.9 or later. `Line Numbers` must also be enabled in the Obsidian settings.
+    type: class-toggle
+    default: false
+  - # << Longform & Writing (+)
+    id: longform-settings
+    title: ✍️ Longform & Writing
+    description: Settings for notes in longform projects and notes with the writing cssclass.
+    type: heading
+    level: 1
+    collapsed: true
+  - id: longform-font-text-theme
+    title: Main Font
+    description: Font used in longform/writing notes (Except code, which still use the monospace font.)
+    type: variable-text
+    default: '"Crimson Pro S"'
+  - id: longform-font-size
+    title: Font Size in longform/writing notes
+    type: variable-number-slider
+    default: 1.2
+    min: 0.7
+    max: 2
+    step: 0.05
+    format: rem
+  - id: longform-base-line-height
+    title: Line Height in longform/writing notes
+    type: variable-number-slider
+    default: 1
+    min: 0.8
+    max: 1.5
+    step: 0.05
+  - id: longform-letter-spacing
+    title: Letter Spacing in longform/writing notes
+    type: variable-number-slider
+    default: 0
+    min: -0.5
+    max: 0.5
+    step: 0.05
+    format: px
+  - id: longform-bg-hue
+    title: Background Color Tone (Hue)
+    description: Use this setting to visually distinguish your longform and writing notes from the rest of your vault.
+    type: variable-number-slider
+    default: 200
+    min: 0
+    max: 360
+    step: 5
+  - id: wordcount-only-when-writing
+    title: "Status Bar: Show Word Count *only* when longform/writing note is open"
+    description: ⚠️ Requires Obsidian installer version 1.1.9 or later. Works for the Word Count Core Plugin and the Better Word Count Community Plugin.
+    type: class-toggle
+    default: false
+  - id: hide-longform-status-bar
+    title: "Status Bar: Hide Longform Wordcount"
+    description: This affects the word count from the Longform plugin, not the other word count plugins.
+    type: class-toggle
+    default: false
+  - id: longform-tasks-different
+    title: "Tasks: Use Gray instead of Normal Text Color"
+    description: This can help with differentiating tasks from "finished" text.
+    type: class-toggle
+    default: false
+  - id: longform-left-aligned
+    title: Left-aligned text
+    description: Use left-aligned text instead of justified text.
+    type: class-toggle
+    default: false
+  - id: longform-text-indent
+    title: First-Line Indent & No Spacing between Paragraphs (Reading Mode)
+    description: ⚠️ Requires Obsidian installer version 1.1.9 or later. Indent the first Line of a paragraph and remove the spacing between paragraphs.
+    type: class-toggle
+    default: false
+  - id: no-active-highlight-in-longform
+    title: Disable active line highlights in longform/writing notes
+    type: class-toggle
+    default: false
+  - # << Plugin-Specific Settings (+)
+    id: plugin-specific-settings
+    title: ⚙️ Plugin-specific Settings
+    description: Backlinks, Outgoing Links, Supercharged Links, Git Gutter
+    type: heading
+    level: 1
+    collapsed: true
+  - id: normal-out-back-links
+    title: Normal Outgoing Links and Backlinks
+    description: By default, the sidebar for outgoing links and backlinks are reduced to linked mentions only. Enable this setting to restore their original display.
+    type: class-toggle
+    default: false
+  - id: classic-inline-backlinks
+    title: Use Normal Inline Backlinks
+    description: By default, the inline-backlinks are displayed in a more minimalistic manner. Enable this setting to restore original display of backlinks. This also affects the Influx Plugin.
+    type: class-toggle
+    default: false
+  - id: no-built-in-supercharged-links
+    title: "Supercharged Links: Disable built-in Icons"
+    description: "By default, the theme adds various icons if you have the Supercharged Links plugin installed: https://github.com/chrisgrieser/shimmering-focus#recommended-plugins."
+    type: class-toggle
+    markdown: true
+    default: false
+  - id: git-blame-to-gitsigns
+    title: "Obsidian Git: Turn Author Line Information into Gitsigns"
+    description: 'Repurposes the Author Line Information feature to work like Gitsigns/Git Gutter. Required Plugin Settings: Enable "Show commit authoring information next to each line", hide author name, and hide authoring date.'
+    type: class-toggle
+    markdown: true
+    addCommand: true
+    default: false
+  - # << Miscellaneous (+)
+    id: miscellaneous
+    title: 🧊 Miscellaneous
+    description: Private Mode
+    type: heading
+    level: 1
+    collapsed: true
+  - id: private-mode
+    title: Private Mode
+    markdown: true
+    addCommand: true
+    description: |
       When enabled, all notes with the cssclass `private` will be garbled. This setting is meant to be enabled temporarily during screen sharing. Install Supercharged Links and add 'cssclass' as a target attribute to also garble any links and occurrences in the File Explorer and Quick Switcher. Note that note contents can still show up in views and sidebars created from plugins.
       ℹ️ This can also be toggled via command palette or hotkey.
-   type: class-toggle
-   default: false
-  -
-# << Infos (+)
-   id: appendix-info
-   title: ℹ️ Info
-   type: heading
-   level: 1
-   collapsed: false
-  -
-   id: author-info
-   title: 👤 Credits
-   description: |
+    type: class-toggle
+    default: false
+  - # << Infos (+)
+    id: appendix-info
+    title: ℹ️ Info
+    type: heading
+    level: 1
+    collapsed: false
+  - id: author-info
+    title: 👤 Credits
+    description: |
       - Created by [pseudometa aka Chris Grieser](https://chris-grieser.de/).
       - If you like the theme, [you can buy me a coffee](https://ko-fi.com/pseudometa). ☕
-   markdown: true
-   level: 1
-   type: info-text
+    markdown: true
+    level: 1
+    type: info-text
    */
 /* ─────────────────────────────────────────────────── */
