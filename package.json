@@ -1,6 +1,7 @@
 {
 	"dependencies": {
-		"lightningcss-cli": "^1.21.7"
+		"lightningcss-cli": "^1.21.7",
+		"yaml-validator": "^5.1.0"
 	},
 	"devDependencies": {
 		"prettier": "^3.0.3",

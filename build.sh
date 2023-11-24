@@ -27,29 +27,24 @@ CSS_PATH="$script_dir/source.css"
 npm_location="$(npm root)/.bin/"
 export PATH=/usr/local/lib:/usr/local/bin:/opt/homebrew/bin/:$npm_location:$PATH
 
-if ! command -v yamllint &>/dev/null; then echo "yamllint not installed (pip package)." && return 1; fi
 if ! command -v stylelint &>/dev/null; then echo "stylelint not installed." && return 1; fi
 if ! command -v prettier &>/dev/null; then echo "prettier not installed." && return 1; fi
 if ! command -v lightningcss &>/dev/null; then echo "lightningcss-cli not installed." && return 1; fi
+if ! command -v yamllint-validator &>/dev/null; then echo "yamllint-validator not installed." && return 1; fi
 
 #───────────────────────────────────────────────────────────────────────────────
 
 # YAMLLINT TEST
 # - Abort build if yaml invalid
 # - requires style settings placed at the very bottom of the theme css
-YAMLLINT_OUTPUT=$(
-	sed -n '/@settings/,$p' "$CSS_PATH" |
-		sed '1,2d;$d' | sed '$d' |
-		yamllint - --config-data="{extends: relaxed}" --no-warnings
-)
-
+sed -n '/@settings/,$p' "$CSS_PATH" | sed '1d;$d' | sed '$d' >temp.yml
+YAMLLINT_OUTPUT=$(yamllint-validator temp.yml)
 if [[ $? == 1 ]]; then
 	echo "YAML ERROR"
-	echo "$YAMLLINT_OUTPUT" | sed '$d'
-	# open Style Settings if Advanced URI plugin installed
-	open "obsidian://advanced-uri?commandid=obsidian-style-settings%253Ashow-style-settings-leaf"
+	echo "$YAMLLINT_OUTPUT" | sed '1d'
 	return 1
 fi
+rm temp.yml
 
 # Autofixing & Linting
 stylelint --fix "$CSS_PATH" &>/dev/null
