@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 /* SHIMMERING FOCUS by @pseudometa
-Version 3.584
+Version 3.585
 Source CSS: https://github.com/chrisgrieser/shimmering-focus/blob/main/source.css
 MIT License
 ──────────────────────────────────────────────────── */
@@ -6024,7 +6024,14 @@ body:not(.longform-left-aligned) :is(.writing, .longform-leaf) {
 /* stuff not to justify */
 body:not(.longform-left-aligned)
 	:is(.writing, .longform-leaf)
-	:is(.HyperMD-codeblock, .HyperMD-header, .inline-title, .cm-hmd-frontmatter, .HyperMD-table-2, .table-cell-wrapper) {
+	:is(
+		.HyperMD-codeblock,
+		.HyperMD-header,
+		.inline-title,
+		.cm-hmd-frontmatter,
+		.HyperMD-table-2,
+		.table-cell-wrapper
+	) {
 	text-align: left;
 }
 
