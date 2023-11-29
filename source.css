@@ -5968,10 +5968,9 @@ button.longform-remove-step-button.longform-remove-step-button.longform-remove-s
 /* <<< Longform Editor
 /* <<< Writing cssclass
 ─────────────────────────────────────────────────── */
-/* stylelint-disable no-duplicate-selectors */
-/* https://github.com/kevboh/longform#scene-only-styling */
+/* DOCS https://github.com/kevboh/longform#scene-only-styling */
 
-/* background */
+/* stylelint-disable no-duplicate-selectors */
 .theme-light {
 	--longform-bg: hsl(var(--longform-bg-hue) calc(var(--bg-sat) * 1.7) 96%);
 }
@@ -6004,24 +6003,22 @@ button.longform-remove-step-button.longform-remove-step-button.longform-remove-s
 		.HyperMD-codeblock,
 		code,
 		.cm-inline-code,
-		.HyperMD-table-row
 	) {
 	font-family: var(--font-monospace);
 	font-size: 0.95rem;
 }
 
 /* justify text */
-/* this selector will hopefully get better with `:has()` */
-body:not(.longform-left-aligned)
-	:is(.writing, .longform-leaf)
-	.cm-line:not(.HyperMD-codeblock, .HyperMD-header)
-	> :not(.cm-hmd-frontmatter),
-body:not(.longform-left-aligned)
-	:is(.writing, .longform-leaf)
-	.cm-line:not(.HyperMD-codeblock, .HyperMD-header, .HyperMD-task-line),
-body:not(.longform-left-aligned) :is(.writing, .longform-leaf) :is(p, .footnotes, .HyperMD-footnote) {
+body:not(.longform-left-aligned) :is(.writing, .longform-leaf) {
 	hyphens: auto;
 	text-align: justify;
+}
+
+/* stuff not to justify */
+body:not(.longform-left-aligned)
+	:is(.writing, .longform-leaf)
+	:is(.HyperMD-codeblock, .HyperMD-header, .cm-hmd-frontmatter, .HyperMD-table-2, .table-cell-wrapper) {
+	text-align: left;
 }
 
 /* headings */
