@@ -867,6 +867,11 @@ table :is(ul, ol) {
 	border-radius: 0;
 }
 
+/* Obsidian 1.5: Active Table Cells (requires has) */
+body.highlight-active-cell .table-cell-wrapper:has(.cm-s-obsidian) {
+	outline: 2px solid var(--color-accent);
+}
+
 /* ───────────────────────────────────────────────── */
 /* << Annotation Tags
 ──────────────────────────────────────────────────── */
@@ -6587,7 +6592,7 @@ settings:
   - # << Editor Content (+)
     id: content-settings
     title: 📑 Editor Content
-    description: Active Lines & Panes, Clean Embeds, Line Length, Inline Backlinks, Folded Lines
+    description: Active Lines, Active Table Cells, Dimmed Panes, Clean Embeds, Line Length, Inline Backlinks, Folded Lines
     type: heading
     level: 1
     collapsed: true
@@ -6612,6 +6617,11 @@ settings:
         value: active-line-background
       - label: Disable
         value: no-active-line-highlight
+  - id: highlight-active-cell
+    title: Emphasize the active Table Cell (Live Preview)
+    description: ⚠️ Requires Obsidian installer version 1.1.9 or later and Obsidian 1.5 or later.
+    type: class-toggle
+    default: false
   - id: no-codeblock-line-numbers
     title: Turn Off Line Numbers in Code Blocks (Edit Mode)
     description: By default, this theme adds line numbers to code blocks in Edit Mode.

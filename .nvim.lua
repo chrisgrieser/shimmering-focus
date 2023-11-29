@@ -10,7 +10,7 @@ local keymap = vim.keymap.set
 vim.defer_fn(function()
 	bo.grepprg = "rg --vimgrep --no-column" -- remove columns for readability
 	keymap("n", "gs", function()
-		cmd([[silent! lgrep "^(\# <<\|/\* <)" %]]) -- riggrep-search for navigaton markers in SF
+		cmd([[silent! lgrep "^(  - \# <<\|/\* <)" %]]) -- riggrep-search for navigaton markers
 		require("telescope.builtin").loclist {
 			prompt_prefix = " ",
 			prompt_title = "Navigation Markers",
