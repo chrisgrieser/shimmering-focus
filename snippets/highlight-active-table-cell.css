@@ -1,0 +1,4 @@
+/* Obsidian 1.5: Active Table Cells (requires Obsidian installer 1.1.9) */
+.table-cell-wrapper:has(.cm-s-obsidian) {
+	outline: 2px solid var(--color-accent);
+}

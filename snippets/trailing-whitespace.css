@@ -1,23 +1,20 @@
-/* show trailing whitespace, when there is more than one. useful for things like
- * markdown's two-space-rule */
+/* show trailing whitespace, when there is more than one. 
+*  useful for things like markdown's two-space-rule */
 
-:is(.cm-trailing-space-a, .cm-trailing-space-b, .cm-trailing-space-new-line)::before {
+/* needs this selector, so it does not affect spaces in the table editor
+ * (Obsidian 1.5), which only differs at the level of `.view-content` */
+body:not(.hide-trailing-whitespace)
+	.view-content
+	> .cm-s-obsidian
+	> div
+	> .cm-scroller
+	> .cm-sizer
+	> .cm-contentContainer
+	> .cm-content
+	> .cm-line
+	> :is(.cm-trailing-space-a, .cm-trailing-space-b, .cm-trailing-space-new-line)::after {
 	font-size: 1em;
 	font-weight: 600;
-	letter-spacing: -2px;
 	color: var(--text-faint);
-}
-
-:is(.cm-trailing-space-b, .cm-trailing-space-a)::before {
-	content: "\00B7"; /* dot character */
-}
-
-/* first characters */
-:not(.cm-trailing-space-b) + .cm-trailing-space-a::before {
-	content: "\00B7  \00B7";
-	padding-left: 5px;
-}
-
-.cm-trailing-space-new-line::before {
-	content: "\21B5"; /* return character */
+	content: "·";
 }
