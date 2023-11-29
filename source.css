@@ -6024,7 +6024,7 @@ body:not(.longform-left-aligned) :is(.writing, .longform-leaf) {
 /* stuff not to justify */
 body:not(.longform-left-aligned)
 	:is(.writing, .longform-leaf)
-	:is(.HyperMD-codeblock, .HyperMD-header, .cm-hmd-frontmatter, .HyperMD-table-2, .table-cell-wrapper) {
+	:is(.HyperMD-codeblock, .HyperMD-header, .inline-title, .cm-hmd-frontmatter, .HyperMD-table-2, .table-cell-wrapper) {
 	text-align: left;
 }
 
