@@ -680,6 +680,8 @@ body {
 	--tab-stacked-header-width: 28px;
 
 	/* Table */
+	--table-text-size-factor: 0.95;
+	--table-text-size: calc(var(--font-text-size) * var(--table-text-size-factor));
 	--table-header-size: 1em;
 	--table-header-weight: 600;
 	--table-white-space: normal;
