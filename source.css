@@ -4736,19 +4736,15 @@ Caveats (in comparison to git signs)
 
 /* current word */
 body .app-container :is(.cm-matched-word, .cm-current-word) {
-	text-decoration: 2px dotted underline var(--text-gray);
+	text-decoration: 2.5px dashed underline var(--color-accent);
 	text-decoration-skip-ink: none;
-	text-underline-offset: 2px;
-}
-
-.is-live-preview .cm-link :is(.cm-matched-word, .cm-current-word) {
-	text-decoration: none;
+	text-underline-offset: 4px;
 }
 
 /* current selection */
 body .cm-matched-string {
 	text-decoration: none;
-	outline: 2px solid var(--search-match-color);
+	outline: 2.5px solid var(--search-match-color);
 }
 
 /* ───────────────────────────────────────────────── */
