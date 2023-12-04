@@ -2908,8 +2908,8 @@ body .frontmatter-container .frontmatter-alias,
 	border-radius: var(--radius-s);
 }
 
-.multi-select-container.multi-select-container.multi-select-container {
-	padding-left: 0;
+.metadata-property-value :is(.metadata-input-number, .multi-select-container){
+	padding-left: 2px;
 }
 
 .multi-select-container.multi-select-container .multi-select-input {
