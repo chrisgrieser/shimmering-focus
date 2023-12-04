@@ -1,6 +1,6 @@
 /* ───────────────────────────────────────────────────
 /* SHIMMERING FOCUS by @pseudometa
-Version 3.587
+Version 3.588
 Source CSS: https://github.com/chrisgrieser/shimmering-focus/blob/main/source.css
 MIT License
 ──────────────────────────────────────────────────── */
@@ -2908,7 +2908,7 @@ body .frontmatter-container .frontmatter-alias,
 	border-radius: var(--radius-s);
 }
 
-.metadata-property-value :is(.metadata-input-number, .multi-select-container){
+.metadata-property-value :is(.metadata-input-number, .multi-select-container) {
 	padding-left: 2px;
 }
 
