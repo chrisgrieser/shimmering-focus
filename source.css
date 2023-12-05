@@ -681,7 +681,6 @@ body {
 	--table-header-border-color: var(--basic-border-color);
 	--table-header-border-width: 1px;
 	--table-header-background: var(--bg5);
-	--table-row-background-hover: var(--bg3);
 	--table-header-background-hover: var(--bg5);
 	--table-row-alt-background: var(--b-row);
 
@@ -853,6 +852,13 @@ table :is(ul, ol) {
 .is-live-preview.markdown-source-view.mod-cm6 .cm-embed-block:hover {
 	border-radius: 0;
 }
+
+/* FIX disable hover effect on table rows, since Obsidian table vars do not
+* allow us to do so. */
+body .markdown-rendered tbody tr:nth-child(odd):hover {
+	background-color: var(--table-row-alt-background);
+}
+
 /* automatically turn off readable line length when there is a table */
 .unrestricted-line-length-tables:not(.is-mobile)
 	:is(.markdown-source-view, .markdown-preview-view):has(table, .HyperMD-table-2) {
@@ -861,7 +867,7 @@ table :is(ul, ol) {
 
 /* Obsidian 1.5: Active Table Cells (requires Obsidian installer 1.1.9) */
 body.highlight-active-cell .table-cell-wrapper:has(.cm-s-obsidian) {
-	outline: 2px solid var(--color-accent);
+	outline: 2.5px solid var(--color-accent);
 }
 
 /* ───────────────────────────────────────────────── */
