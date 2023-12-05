@@ -171,6 +171,7 @@ MIT License
  * but can make sense for snippets */
 
 /* stylelint-disable no-descending-specificity */
+/* stylelint-disable font-family-no-missing-generic-family-keyword */
 
 /* ───────────────────────────────────────────────── */
 /* < Fonts (base64 encoded)
@@ -308,11 +309,6 @@ MIT License
 	border: var(--tag-border-width) solid var(--tag-border-color-hover);
 }
 
-/* https://discord.com/channels/686053708261228577/989603365606531104/1015284079849119754 */
-body {
-	--tab-width: 200px;
-}
-
 /* https://discord.com/channels/686053708261228577/989603365606531104/1015835317347029092 */
 .modal-container a {
 	color: var(--link-external-color);
@@ -333,12 +329,6 @@ body {
 .HyperMD-task-line .cm-formatting-task.cm-property ~ * {
 	color: var(--checklist-done-color);
 	text-decoration: var(--checklist-done-decoration);
-}
-
-/* https://discord.com/channels/686053708261228577/989603365606531104/1018117694307971173 */
-body .document-search-container {
-	position: absolute;
-	width: 100%;
 }
 
 /* ───────────────────────────────────────────────── */
@@ -372,6 +362,7 @@ https://www.youtube.com/watch?v=yl0pvIRTWWo&t=7s */
 	--line-height-normal: 1.5;
 	--link-external-decoration: underline;
 	--link-external-decoration-hover: underline;
+	--tab-width: 200px;
 
 	/* Icons */
 	--icon-size: var(--icon-m);
@@ -859,14 +850,13 @@ table :is(ul, ol) {
 	margin-bottom: 1.2em;
 }
 
+.is-live-preview.markdown-source-view.mod-cm6 .cm-embed-block:hover {
+	border-radius: 0;
+}
 /* automatically turn off readable line length when there is a table */
 .unrestricted-line-length-tables:not(.is-mobile)
 	:is(.markdown-source-view, .markdown-preview-view):has(table, .HyperMD-table-2) {
 	--file-line-width: 100%;
-}
-
-.is-live-preview.markdown-source-view.mod-cm6 .cm-embed-block:hover {
-	border-radius: 0;
 }
 
 /* Obsidian 1.5: Active Table Cells (requires Obsidian installer 1.1.9) */
@@ -4272,8 +4262,8 @@ body:not(.show-vault-in-file-explorer) .nav-folder.mod-root > .nav-folder-title 
 }
 
 /* alternating row colors */
-body:not(.no-alternating-rows) .nav-folder:nth-child(odd) > .nav-folder-title,
-body:not(.no-alternating-rows) .nav-file:nth-child(odd) {
+.nav-folder:nth-child(odd) > .nav-folder-title,
+.nav-file:nth-child(odd) {
 	background-color: var(--a-row);
 }
 
@@ -5746,7 +5736,7 @@ body #scene-list .scene-container div {
 }
 
 /* alternating row colors, factoring in the coloring */
-body:not(.no-alternating-rows) li:nth-child(even) :is(.draft-container, .scene-container) {
+li:nth-child(even) :is(.draft-container, .scene-container) {
 	background-color: var(--a-row);
 }
 
