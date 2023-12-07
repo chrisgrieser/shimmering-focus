@@ -28,7 +28,6 @@ npm_location="$(npm root)/.bin/"
 export PATH=/usr/local/lib:/usr/local/bin:/opt/homebrew/bin/:$npm_location:$PATH
 
 if ! command -v stylelint &>/dev/null; then echo "stylelint not installed." && return 1; fi
-if ! command -v prettier &>/dev/null; then echo "prettier not installed." && return 1; fi
 if ! command -v lightningcss &>/dev/null; then echo "lightningcss-cli not installed." && return 1; fi
 if ! command -v yaml-validator &>/dev/null; then echo "yaml-validator not installed." && return 1; fi
 
@@ -48,7 +47,6 @@ rm temp.yml
 
 # Autofixing & Linting
 stylelint --fix "$CSS_PATH" &>/dev/null
-prettier --write "$CSS_PATH" &>/dev/null
 
 #───────────────────────────────────────────────────────────────────────────────
 
