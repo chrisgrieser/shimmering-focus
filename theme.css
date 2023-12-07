@@ -849,7 +849,7 @@ body .markdown-rendered tbody tr:nth-child(odd):hover {
 }
 
 /* automatically turn off readable line length when there is a table */
-.unrestricted-line-length-tables:not(.is-mobile):is(.markdown-source-view, .markdown-preview-view):has(table, .HyperMD-table-2) {
+.unrestricted-line-length-tables:not(.is-mobile) :is(.markdown-source-view, .markdown-preview-view):has(table, .HyperMD-table-2) {
 	--file-line-width: 100%;
 }
 
@@ -1037,7 +1037,7 @@ body:not(.annotation-tags-off) :is(.cm-hashtag-end.cm-tag-litreview, .tag[href="
 	content: " 📚";
 }
 
-body:not(.annotation-tags-off):is(.cm-hashtag-end.cm-tag-epistemic-break, .tag[href="#epistemic-break"])::after {
+body:not(.annotation-tags-off) :is(.cm-hashtag-end.cm-tag-epistemic-break, .tag[href="#epistemic-break"])::after {
 	content: " ⚡️";
 }
 
@@ -1775,7 +1775,7 @@ body p {
 	color: var(--text-faint);
 }
 
-body:not(.no-alternating-header-colors):is(.cm-header-1, .cm-header-3, .cm-header-5):not(.cm-formatting-header),
+body:not(.no-alternating-header-colors) :is(.cm-header-1, .cm-header-3, .cm-header-5):not(.cm-formatting-header),
 body:not(.no-alternating-header-colors) .view-content :is(h1, h3, h5) {
 	color: var(--alt-heading-color);
 }
@@ -1937,7 +1937,7 @@ body:not(.no-lp-heading-level-indicator) .is-live-preview .cm-header~.cm-header:
 }
 
 /* option to left-align */
-body:not(.blockquotes-left-aligned) .app-container:is(.markdown-preview-view, .community-modal-readme) blockquote {
+body:not(.blockquotes-left-aligned) .app-container :is(.markdown-preview-view, .community-modal-readme) blockquote {
 	hyphens: auto;
 	text-align: justify;
 }
@@ -3020,11 +3020,11 @@ body:not(.hide-signature-icon) .status-bar::after {
 /* ───────────────────────────────────────────────── */
 /* << Header Bar (Tab Title Bar)
 ──────────────────────────────────────────────────── */
-.workspace-leaf-content:not([data-type="browser"]) .view-header-title-container::after {
+.workspace-leaf-content .view-header-title-container::after {
 	display: none;
 }
 
-body .workspace-leaf-content:not([data-type="browser"]) .view-header {
+body .workspace-leaf-content .view-header {
 	height: 37px;
 	padding: 0 var(--size-2-3);
 	margin-right: 0;
@@ -3032,19 +3032,19 @@ body .workspace-leaf-content:not([data-type="browser"]) .view-header {
 	background-color: var(--bg4);
 }
 
-body:not(.normal-header-bar, .is-mobile) .workspace-leaf-content:not([data-type="browser"]) .view-header-title-container::after,
-body:not(.normal-header-bar, .is-mobile) .workspace-leaf-content:not([data-type="browser"]) .view-header:is(.view-header-nav-buttons, .view-header-title),
-body:not(.normal-header-bar, .is-mobile) .workspace-leaf-content:not([data-type="browser"]) .view-header .view-action:nth-last-child(2) {
+body:not(.normal-header-bar, .is-mobile) .workspace-leaf-content .view-header-title-container::after,
+body:not(.normal-header-bar, .is-mobile) .workspace-leaf-content .view-header :is(.view-header-nav-buttons, .view-header-title),
+body:not(.normal-header-bar, .is-mobile) .workspace-leaf-content .view-header .view-action:nth-last-child(2) {
 	display: none;
 }
 
-body:not(.normal-header-bar, .is-mobile) .workspace-leaf-content:not([data-type="browser"]) .view-header {
+body:not(.normal-header-bar, .is-mobile) .workspace-leaf-content .view-header {
 	height: 0;
 	border: none;
 }
 
 /* <<< Note Path Breadcrumbs */
-body:not(.normal-header-bar, .is-mobile) .workspace-leaf-content:not([data-type="browser"]) .view-header-title-container {
+body:not(.normal-header-bar, .is-mobile) .workspace-leaf-content .view-header-title-container {
 	position: absolute;
 	top: 35px;
 	right: 1.1rem;
@@ -3074,17 +3074,17 @@ body:not(.normal-header-bar, .is-mobile) .view-header-breadcrumb {
 }
 
 /* remaining buttons (by default only the "more options" button) */
-body:not(.normal-header-bar, .is-mobile) .workspace-leaf-content:not([data-type="browser"]) .view-header .view-actions {
+body:not(.normal-header-bar, .is-mobile) .workspace-leaf-content .view-header .view-actions {
 	position: absolute;
 	top: 4px;
 	right: 2px;
 }
 
-body:not(.normal-header-bar, .is-mobile) .workspace-leaf-content:not([data-type="browser"]) .view-header .view-action:last-child:hover {
+body:not(.normal-header-bar, .is-mobile) .workspace-leaf-content .view-header .view-action:last-child:hover {
 	background: none;
 }
 
-body:not(.normal-header-bar, .is-mobile) .workspace-leaf-content:not([data-type="browser"]) .view-header .view-action:last-child svg {
+body:not(.normal-header-bar, .is-mobile) .workspace-leaf-content .view-header .view-action:last-child svg {
 	width: 20px;
 	height: 20px;
 }
@@ -3140,7 +3140,7 @@ body:not(.normal-tab-bar) .mod-root .workspace-tab-header:only-child .workspace-
 	font-size: 1.5em;
 }
 
-body:not(.normal-tab-bar) .mod-root .workspace-tab-header:only-child:is(.workspace-tab-header-inner-title,
+body:not(.normal-tab-bar) .mod-root .workspace-tab-header:only-child :is(.workspace-tab-header-inner-title,
 	.workspace-tab-header-inner-icon,
 	.workspace-tab-header-inner-icon svg),
 body:not(.normal-tab-bar) .mod-root .workspace-tab-header:only-child::before,
@@ -3152,11 +3152,11 @@ body:not(.normal-tab-bar) .mod-root .workspace-tab-header:only-child {
 }
 
 /* icon with more spacing and size */
-body:not(.normal-tab-bar) .mod-root .workspace-tab-header:only-child:is(.workspace-tab-header-inner-icon, .workspace-tab-header-status-container) {
+body:not(.normal-tab-bar) .mod-root .workspace-tab-header:only-child :is(.workspace-tab-header-inner-icon, .workspace-tab-header-status-container) {
 	padding-right: var(--size-4-3);
 }
 
-body:not(.normal-tab-bar) .mod-root .workspace-tab-header:only-child:is(.workspace-tab-header-inner-icon, .workspace-tab-header-status-container) svg {
+body:not(.normal-tab-bar) .mod-root .workspace-tab-header:only-child :is(.workspace-tab-header-inner-icon, .workspace-tab-header-status-container) svg {
 	width: var(--icon-l);
 	height: var(--icon-l);
 }
@@ -3453,34 +3453,33 @@ body.mod-windows:not(.show-sidebar-header-buttons) .titlebar {
 	-webkit-app-region: no-drag;
 }
 
-body:not(.show-sidebar-header-buttons):is(.mod-left-split, .mod-right-split):is(.workspace-tab-header, .workspace-tab-header svg),
-body:not(.show-sidebar-header-buttons):is(.mod-left-split, .mod-right-split):is(.workspace-tab-header-container, .workspace-tab-header-container *) {
+body:not(.show-sidebar-header-buttons) :is(.mod-left-split, .mod-right-split) :is(.workspace-tab-header, .workspace-tab-header svg),
+body:not(.show-sidebar-header-buttons) :is(.mod-left-split, .mod-right-split) :is(.workspace-tab-header-container, .workspace-tab-header-container *) {
 	transition: var(--anim-duration-moderate);
 	transition-delay: var(--transition-delay-passing-over-protection);
-	transition-property: opacity, height, background-color;
 	/* so transition of hovering the tab itself does not get delayed */
+	transition-property: opacity, height, background-color;
 }
 
-body:not(.show-sidebar-header-buttons):is(.mod-left-split, .mod-right-split) .workspace-tabs:not(.mod-top) .workspace-tab-header-container:not(:hover) {
+body:not(.show-sidebar-header-buttons) :is(.mod-left-split, .mod-right-split) .workspace-tabs:not(.mod-top) .workspace-tab-header-container:not(:hover) {
 	height: var(--sidebar-tabs-unhovered-height);
 }
 
-body:not(.show-sidebar-header-buttons):is(.mod-left-split, .mod-right-split) .workspace-tabs.mod-top .workspace-tab-header-container:not(:hover) .workspace-tab-header-container-inner {
+body:not(.show-sidebar-header-buttons) :is(.mod-left-split, .mod-right-split) .workspace-tabs.mod-top .workspace-tab-header-container:not(:hover) .workspace-tab-header-container-inner {
 	opacity: 0;
 }
 
-body:not(.show-sidebar-header-buttons):is(.mod-left-split, .mod-right-split) .workspace-tabs:not(.mod-top) .workspace-tab-header-container {
+body:not(.show-sidebar-header-buttons) :is(.mod-left-split, .mod-right-split) .workspace-tabs:not(.mod-top) .workspace-tab-header-container {
 	background-color: var(--bg1);
 }
 
-.theme-light:not(.show-sidebar-header-buttons):is(.mod-left-split, .mod-right-split) .workspace-tabs:not(.mod-top) .workspace-tab-header-container:not(:hover) {
+.theme-light:not(.show-sidebar-header-buttons) :is(.mod-left-split, .mod-right-split) .workspace-tabs:not(.mod-top) .workspace-tab-header-container:not(:hover) {
 	background-color: var(--bg2);
 }
 
 /* ───────────────────────────────────────────────── */
 /* <<< Sidebar Styling
 ──────────────────────────────────────────────────── */
-body .item-list,
 :is(.mod-right-split, .mod-left-split) .workspace-leaf-content .view-content {
 	padding: 0 0 var(--size-4-4) 0;
 }
@@ -3653,7 +3652,7 @@ body.active-line-background .cm-active:not(.HyperMD-quote, .HyperMD-codeblock) {
 }
 
 body:not(.no-active-line-highlight) .cm-lineNumbers .cm-active.cm-gutterElement,
-body:not(.no-active-line-highlight) .cm-active:is(.cm-formatting-header, .cm-formatting-quote, .cm-formatting-list, .cm-formatting-code-block) {
+body:not(.no-active-line-highlight) .cm-active :is(.cm-formatting-header, .cm-formatting-quote, .cm-formatting-list, .cm-formatting-code-block) {
 	color: var(--active-line-color);
 }
 
@@ -3940,7 +3939,7 @@ are not targeted by this */
 
 /* bookmark icon filled */
 .browser-addressbar-suggestion .svg-icon.lucide-bookmark,
-.workspace-leaf-content:not([data-type="browser"]) .svg-icon.lucide-bookmark {
+.workspace-leaf-content .svg-icon.lucide-bookmark {
 	fill: currentcolor;
 }
 
@@ -3953,7 +3952,7 @@ body:not(.normal-header-bar, .is-mobile) .workspace-leaf-content[data-type="canv
 }
 
 /* align them properly for canvas controls */
-body:not(.normal-header-bar, .is-mobile) .workspace-leaf-content[data-type="canvas"]:is(.view-header .view-actions, .view-header-title-container) {
+body:not(.normal-header-bar, .is-mobile) .workspace-leaf-content[data-type="canvas"] :is(.view-header .view-actions, .view-header-title-container) {
 	margin-right: 0.4rem;
 }
 
@@ -4043,7 +4042,7 @@ body:not(.show-vault-in-file-explorer) .nav-folder.mod-root>.nav-folder-title {
 }
 
 /* hide navigation buttons */
-body:not(.show-file-explorer-navigation) .workspace-leaf-content[data-type="file-explorer"]:is(.nav-buttons-container, .nav-header) {
+body:not(.show-file-explorer-navigation) .workspace-leaf-content[data-type="file-explorer"] :is(.nav-buttons-container, .nav-header) {
 	display: none;
 }
 
@@ -4105,7 +4104,7 @@ body:not(.normal-out-back-links) :is(.backlink-pane, .outgoing-link-pane)>.tree-
 }
 
 /* minimal inline backlinks pane */
-body:not(.classic-inline-backlinks) .embedded-backlinks:is(.nav-buttons-container,
+body:not(.classic-inline-backlinks) .embedded-backlinks :is(.nav-buttons-container,
 	.backlink-pane > .tree-item-self,
 	.tree-item-flair,
 	.search-result-file-match,
@@ -4632,7 +4631,7 @@ body .another-quick-switcher__status__count-input {
 }
 
 /* selected */
-.suggestion-item.is-selected:is(.another-quick-switcher__item__icon,
+.suggestion-item.is-selected :is(.another-quick-switcher__item__icon,
 	.another-quick-switcher__item__directory,
 	.another-quick-switcher__item__description) {
 	color: var(--text-accent);
@@ -4640,7 +4639,7 @@ body .another-quick-switcher__status__count-input {
 }
 
 /* hovered */
-.suggestion-item:hover:is(.another-quick-switcher__item__icon,
+.suggestion-item:hover :is(.another-quick-switcher__item__icon,
 	.another-quick-switcher__item__directory,
 	.another-quick-switcher__item__description) {
 	color: var(--text-accent-hover);
@@ -4653,12 +4652,12 @@ body .another-quick-switcher__status__count-input {
 	opacity: 0.85;
 }
 
-.another-quick-switcher__phantom_item:is(.another-quick-switcher__item__icon, .another-quick-switcher__item__directory),
+.another-quick-switcher__phantom_item :is(.another-quick-switcher__item__icon, .another-quick-switcher__item__directory),
 .suggestion-item:hover .another-quick-switcher__phantom_item {
 	filter: saturate(60%);
 }
 
-.suggestion-item:hover .another-quick-switcher__phantom_item:is(.another-quick-switcher__item__icon, .another-quick-switcher__item__directory),
+.suggestion-item:hover .another-quick-switcher__phantom_item :is(.another-quick-switcher__item__icon, .another-quick-switcher__item__directory),
 .suggestion-item:hover .another-quick-switcher__phantom_item {
 	color: var(--hover-accent);
 	filter: saturate(60%);
@@ -4824,7 +4823,7 @@ body:not(.no-pandoc-citation-emphasis) .pandoc-citation.pandoc-citation.is-unres
 	text-decoration: underline 1.5px var(--text-error);
 }
 
-.app-container.app-container.app-container:is(.cm-pandoc-citation-formatting,
+.app-container.app-container.app-container :is(.cm-pandoc-citation-formatting,
 	.pandoc-citation-formatting,
 	.cm-pandoc-citation-extra,
 	.pandoc-citation-extra) {
@@ -5337,7 +5336,7 @@ body.hider-ribbon .workspace-ribbon.mod-left {
 - Supports Word Count Core Plugin + Better Word Count Community Plugin.
 - Caveat: also triggered when such a note is open is in a non-active tab, restricting
 this to the active tab qould require nested `:has()` which isn't supported */
-.wordcount-only-when-writing:not(.is-mobile) .horizontal-main-container:not(:has(:is(.writing, .longform-leaf)))+.status-bar:is(.plugin-word-count, .plugin-better-word-count) {
+.wordcount-only-when-writing:not(.is-mobile) .horizontal-main-container:not(:has(:is(.writing, .longform-leaf)))+.status-bar :is(.plugin-word-count, .plugin-better-word-count) {
 	display: none;
 }
 
@@ -5461,7 +5460,7 @@ li:nth-child(even) :is(.draft-container, .scene-container) {
 	[data-scene-path*="Appendix" i],
 	[data-scene-path*="Metadata" i],
 	[data-scene-path*="References" i],
-	[data-scene-path*="Declaration of Conflicting Interests" i]):not(.selected, :hover):is(div, .longform-scene-number) {
+	[data-scene-path*="Declaration of Conflicting Interests" i]):not(.selected, :hover) :is(div, .longform-scene-number) {
 	color: var(--text-faint);
 }
 
@@ -5693,7 +5692,7 @@ button.longform-remove-step-button.longform-remove-step-button.longform-remove-s
 }
 
 /* keep any code smaller */
-.app-container.app-container.app-container.app-container.app-container.app-container:is(.longform-leaf, .writing):is(.frontmatter-container,
+.app-container.app-container.app-container.app-container.app-container.app-container :is(.longform-leaf, .writing) :is(.frontmatter-container,
 	.cm-hmd-frontmatter,
 	.cm-formatting-task,
 	.HyperMD-codeblock,
@@ -5711,7 +5710,7 @@ body:not(.longform-left-aligned) :is(.writing, .longform-leaf) {
 }
 
 /* stuff not to justify */
-body:not(.longform-left-aligned):is(.writing, .longform-leaf):is(.HyperMD-codeblock,
+body:not(.longform-left-aligned) :is(.writing, .longform-leaf):is(.HyperMD-codeblock,
 	.HyperMD-header,
 	.inline-title,
 	.cm-hmd-frontmatter,
@@ -5744,7 +5743,7 @@ body:not(.longform-left-aligned):is(.writing, .longform-leaf):is(.HyperMD-codebl
 }
 
 :is(.writing, .longform-leaf) :is(h1, h2, h3, h4, h5, h6, .cm-line.HyperMD-header, .inline-title),
-body:not(.is-popout-window):is(.writing, .longform-leaf) .cm-line> :is(.cm-header, .cm-hmd-frontmatter) {
+body:not(.is-popout-window) :is(.writing, .longform-leaf) .cm-line> :is(.cm-header, .cm-hmd-frontmatter) {
 	line-height: var(--longform-base-line-height);
 }
 
@@ -5755,7 +5754,7 @@ body:not(.is-popout-window):is(.writing, .longform-leaf) .cm-line> :is(.cm-heade
 }
 
 /* emphasized tasks */
-body.longform-tasks-different.longform-tasks-different.longform-tasks-different.longform-tasks-different:is(.writing, .longform-leaf):is(.HyperMD-task-line, ul.contains-task-list) {
+body.longform-tasks-different.longform-tasks-different.longform-tasks-different.longform-tasks-different :is(.writing, .longform-leaf) :is(.HyperMD-task-line, ul.contains-task-list) {
 	color: var(--text-faint);
 }
 
@@ -5765,11 +5764,11 @@ body.longform-tasks-different.longform-tasks-different.longform-tasks-different.
 }
 
 /* disable active line highlight */
-.no-active-highlight-in-longform:is(.writing, .longform-leaf) .cm-active.cm-active.cm-active:not(.HyperMD-quote, .HyperMD-codeblock) {
+.no-active-highlight-in-longform :is(.writing, .longform-leaf) .cm-active.cm-active.cm-active:not(.HyperMD-quote, .HyperMD-codeblock) {
 	background: none;
 }
 
-.no-active-highlight-in-longform:is(.writing, .longform-leaf) .cm-active.cm-active:not(.HyperMD-quote, .HyperMD-header, .HyperMD-codeblock)::before {
+.no-active-highlight-in-longform :is(.writing, .longform-leaf) .cm-active.cm-active:not(.HyperMD-quote, .HyperMD-header, .HyperMD-codeblock)::before {
 	content: none;
 }
 
