@@ -7,11 +7,9 @@
 #   Style Settings tab is opened.
 # - takes argument as commit message (uses "chore" if executed without argument)
 # - bumps version number in css file
-# - CSS is linted and minified
 # - The docs are linted and checked for invalid links
 # - ToC in the CSS file is updated
 # - updates download counts in badges of the .md files
-# - adds a copy the non-minified css file for documentation
 # - updates the stylelint-file
 # - git add, commit, pull, and push to the remote repo
 
@@ -19,7 +17,7 @@
 
 # CONFIG
 script_dir="$(dirname "$(readlink -f "$0")")"
-CSS_PATH="$script_dir/source.css"
+CSS_PATH="$script_dir/theme.css"
 
 #───────────────────────────────────────────────────────────────────────────────
 
@@ -28,12 +26,11 @@ npm_location="$(npm root)/.bin/"
 export PATH=/usr/local/lib:/usr/local/bin:/opt/homebrew/bin/:$npm_location:$PATH
 
 if ! command -v stylelint &>/dev/null; then echo "stylelint not installed." && return 1; fi
-if ! command -v lightningcss &>/dev/null; then echo "lightningcss-cli not installed." && return 1; fi
 if ! command -v yaml-validator &>/dev/null; then echo "yaml-validator not installed." && return 1; fi
 
 #───────────────────────────────────────────────────────────────────────────────
 
-# YAMLLINT TEST
+# YAML VALIDATION
 # - Abort build if yaml invalid
 # - requires style settings placed at the very bottom of the theme css
 sed -n '/@settings/,$p' "$CSS_PATH" | sed '1d;$d' | sed '$d' >temp.yml
@@ -68,16 +65,6 @@ sed -E -i '' "${versionLine}s/(.*\.)[[:digit:]]+/\1$nextVersion/" "$CSS_PATH"
 sed -E -i '' "s/(\"version\": \".*\.).*/\1$nextVersion\",/" "manifest.json"
 SECOND_MANIFEST="$(dirname "$CSS_PATH")/manifest.json"
 sed -E -i '' "s/(\"version\": \".*\.).*/\1$nextVersion\",/" "$SECOND_MANIFEST"
-
-# Minify
-split -p "@MINIFY-SPLIT-MARKER" "$CSS_PATH" temp # split off to prevent style settings from getting minified
-mv tempaa info.css
-mv tempab unminified_css_code.css
-grep -vE "^# << " tempac >style_settings.css # remove yaml-navigation markers
-rm tempac
-lightningcss unminified_css_code.css --minify --output-file=minified_css_code.css
-cat info.css minified_css_code.css style_settings.css >theme.css
-rm info.css unminified_css_code.css minified_css_code.css style_settings.css
 
 #───────────────────────────────────────────────────────────────────────────────
 
