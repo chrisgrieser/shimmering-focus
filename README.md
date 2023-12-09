@@ -150,7 +150,7 @@ Mode with a different theme.
   in Safari: X = 20, Y = 18). You can even completely hide the traffic lights by
   using negative values, for example X = -60.
 
-> __Note__  
+> [!NOTE]
 > When using the theme, you can disable the *Hider* Plugin, since Shimmering
 > Focus already hides far more than the plugin does.
 
@@ -193,9 +193,10 @@ they might be considered for inclusion in the core theme as a style setting.
     --link-unresolved-color: hsl(101 42% 51%);
 }
 
-/* Note that `--color-accent-hsl` should have the same values as `--color-accent`, and that `--bg-hue` will override the background colors you have set in the Style Settings. */
+/* Note that `--color-accent-hsl` should have the same values as
+`--color-accent`, and that `--bg-hue` will override the background colors you
+have set in the Style Settings. */
 ```
-
 <!-- vale Google.FirstPerson = NO -->
 ### Submit Bug Fixes
 Submissions in the following areas are welcome:
