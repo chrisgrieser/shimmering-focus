@@ -523,8 +523,8 @@ body {
 	--nav-item-color-highlighted: var(--text-accent-hover);
 
 	/* Checkboxes */
-	--checkbox-radius: var(--radius-m);
 	/* = round */
+	--checkbox-radius: var(--radius-m);
 	--checkbox-size: 17px;
 	--checkbox-color: var(--secondary-accent);
 	--checkbox-color-hover: var(--hover-accent);
@@ -551,8 +551,8 @@ body {
 	--hr-thickness: 2px;
 
 	/* Misc */
-	--file-line-width: 700px;
 	/* to be set via style setting */
+	--file-line-width: 700px;
 	--list-indent: 1.6em;
 	--link-unresolved-opacity: 0.8;
 	--code-background: var(--bg3);
