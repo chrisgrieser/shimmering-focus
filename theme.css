@@ -1721,19 +1721,19 @@ body:not(.no-lp-heading-level-indicator) .is-live-preview .cm-header~.cm-header:
 	font-style: unset;
 }
 
-/* HACK live-preview: prevent rounded corners with consecutive block quotes */
-.is-live-preview .HyperMD-quote+.HyperMD-quote::before {
-	margin-top: -0.5em;
-	border-bottom-left-radius: var(--radius-s);
-}
-
 .is-live-preview .HyperMD-quote::before {
-	border-top-left-radius: var(--radius-s);
+	border-radius: var(--radius-s) 0 0 var(--radius-s) ;
 }
 
 .is-live-preview .HyperMD-quote .cm-formatting-quote-1 {
 	position: relative;
 	left: 2px;
+}
+
+/* HACK live-preview: prevent rounded corners with consecutive block quotes */
+.is-live-preview .HyperMD-quote+.HyperMD-quote::before {
+	margin-top: -0.5em;
+	border-bottom-left-radius: var(--radius-s);
 }
 
 /* HACK source-mode: prevent rounded corners with consecutive block quotes */
@@ -1756,8 +1756,8 @@ body:not(.no-lp-heading-level-indicator) .is-live-preview .cm-header~.cm-header:
 	position: absolute;
 	top: -8px;
 	right: 0;
-	z-index: -1;
 	/* so it does not overlay the callout header */
+	z-index: -1;
 	width: 0.5em;
 	height: 1em;
 	content: "";
