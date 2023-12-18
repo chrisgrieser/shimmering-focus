@@ -331,7 +331,8 @@ body {
 
 	/* hard-coded, so user does not mess up color scheme */
 	--color-accent: hsl(184 79% 35%);
-	--color-accent-hsl: 184deg 79% 35%;
+	/* --color-accent-hsl needs commas, otherwise dependent colors are not display correctly */
+	--color-accent-hsl: 184, 79%, 35%;
 	--interactive-accent: hsl(184 79% 30%);
 	--alt-heading-color: hsl(232 34% 50%);
 	--secondary-accent: hsl(28 54% 51%);
@@ -343,7 +344,8 @@ body {
 	--bg-sat: 15%;
 	--bg-hue: var(--bg-hue-dark);
 	--color-accent: hsl(184 79% 45%);
-	--color-accent-hsl: 184deg 79% 35%;
+	/* --color-accent-hsl needs commas, otherwise dependent colors are not display correctly */
+	--color-accent-hsl: 184, 79%, 45%;
 	--interactive-accent: hsl(184 79% 30%);
 	--alt-heading-color: hsl(232 50% 70%);
 	--secondary-accent: hsl(28 63% 61%);
@@ -1722,7 +1724,7 @@ body:not(.no-lp-heading-level-indicator) .is-live-preview .cm-header~.cm-header:
 }
 
 .is-live-preview .HyperMD-quote::before {
-	border-radius: var(--radius-s) 0 0 var(--radius-s) ;
+	border-radius: var(--radius-s) 0 0 var(--radius-s);
 }
 
 .is-live-preview .HyperMD-quote .cm-formatting-quote-1 {

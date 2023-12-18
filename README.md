@@ -170,7 +170,7 @@ they might be considered for inclusion in the core theme as a style setting.
     --bg-sat: 25%;
 
     --color-accent: hsl(184 79% 35%);
-    --color-accent-hsl: 184 79% 35%;
+    --color-accent-hsl: 184, 79%, 35%;
     --interactive-accent: hsl(184 79% 30%);
 
     --alt-heading-color: hsl(232 34% 50%);
@@ -184,7 +184,7 @@ they might be considered for inclusion in the core theme as a style setting.
     --bg-sat: 15%;
 
     --color-accent: hsl(184 79% 45%);
-    --color-accent-hsl: 184 79% 35%;
+    --color-accent-hsl: 184, 79%, 35%;
     --interactive-accent: hsl(184 79% 30%);
 
     --alt-heading-color: hsl(232 50% 70%);
