@@ -389,7 +389,7 @@ body {
 	--hotkey-color: var(--secondary-accent);
 	--bold-color: var(--text-accent-hover);
 	--italic-color: var(--text-accent-hover);
-	--text-selection: hsl(var(--color-accent-hsl) / 20%);
+	--text-selection: hsl(var(--color-accent-hsl), 20%);
 	--text-normal: var(--color-base-85s);
 	--active-line-color: var(--color-accent);
 	--text-muted: var(--color-base-70);
@@ -451,7 +451,7 @@ body {
 	}
 */
 
-/* ──────────────────────────────�����────────────────── */
+/* ───────────────────────────────────────────────────── */
 /* << Changed Obsidian Variables
 ──────────────────────────────────────────────────── */
 
@@ -553,13 +553,14 @@ body {
 	--hr-thickness: 2px;
 
 	/* Misc */
-	/* to be set via style setting */
-	--file-line-width: 700px;
 	--list-indent: 1.6em;
 	--link-unresolved-opacity: 0.8;
 	--code-background: var(--bg3);
 	--status-bar-font-size: var(--font-ui-small);
 	--metadata-input-font-size: var(--font-smallest);
+
+	/* to be set via style setting */
+	--file-line-width: 700px;
 
 	/* Indentation Guide */
 	--indentation-guide-width: 1.5px;
@@ -4237,10 +4238,24 @@ body .workspace-leaf-content .floating-toc-div.floating-left+.markdown-source-vi
 /* ───────────────────────────────────────────────── */
 /* << Highlighted Yank
 ──────────────────────────────────────────────────── */
-
+/* yank highlighter plugin */
 body .yank-deco {
 	color: var(--interactive-normal);
-	background-color: var(--hover-accent);
+	background-color: var(--link-unresolved-color);
+}
+
+/* yank highlight plugin -- https://github.com/aleksey-rowan/obsidian-vim-yank-highlight/blob/master/styles.css */
+/* stylelint-disable-next-line keyframes-name-pattern */
+@keyframes yankedHighlight {
+	10% {
+		color: var(--interactive-normal);
+		background-color: var(--link-unresolved-color);
+	}
+
+	90% {
+		color: var(--interactive-normal);
+		background-color: var(--link-unresolved-color);
+	}
 }
 
 /* ───────────────────────────────────────────────── */
