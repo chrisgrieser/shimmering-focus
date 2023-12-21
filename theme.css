@@ -3655,6 +3655,18 @@ are not targeted by this */
 }
 
 /* ───────────────────────────────────────────────── */
+/* << Vim: Disable Mouse Hovers
+──────────────────────────────────────────────────── */
+
+.no-mouse-hovers .is-live-preview .cm-embed-block:not(.cm-table-widget):hover {
+	box-shadow: none;
+}
+
+.no-mouse-hovers .is-live-preview .cm-embed-block:not(.cm-table-widget):hover .edit-block-button {
+	display: none;
+}
+
+/* ───────────────────────────────────────────────── */
 /* << Vim Panel
 ──────────────────────────────────────────────────── */
 
@@ -6282,6 +6294,12 @@ settings:
     title: Relative Line Numbers
     markdown: true
     description: ⚠️ Requires Obsidian installer version 1.1.9 or later. `Line Numbers` must also be enabled in the Obsidian settings.
+    type: class-toggle
+    default: false
+  - id: no-mouse-hovers
+    title: Disable Mouse Hover in Editor (Live Preview)
+    markdown: true
+    description: Disables the mouse hover in the editor of live preview, indicating an editable code block, dataview block, or table.
     type: class-toggle
     default: false
   - # << Longform & Writing (+)
