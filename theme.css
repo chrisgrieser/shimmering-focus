@@ -4058,6 +4058,15 @@ body:not(.classic-inline-backlinks) :is(.writing, .longform-leaf) .embedded-back
 ──────────────────────────────────────────────────── */
 
 /* ───────────────────────────────────────────────── */
+/* << Strange New Worlds
+──────────────────────────────────────────────────── */
+
+body:not(.normal-header-bar, .is-mobile) .snw-header-count-wrapper {
+	top: 30px;
+	margin-right: 18px;
+} 
+
+/* ───────────────────────────────────────────────── */
 /* << Plugin Update Tracker
 ──────────────────────────────────────────────────── */
 /* https://github.com/swar8080/obsidian-plugin-update-tracker#custom-css-snippets */
