@@ -1,5 +1,5 @@
 /* ───────────────────────────────────────────────────
-SHIMMERING FOCUS 
+SHIMMERING FOCUS
 by @pseudometa
 Version 3.598
 MIT License
@@ -4053,6 +4053,10 @@ body:not(.classic-inline-backlinks) :is(.writing, .longform-leaf) .embedded-back
 	background-color: transparent;
 }
 
+body:not(show-outline-buttons) .workspace-leaf-content[data-type="outline"] .nav-header{
+	display: none;
+}
+
 /* ───────────────────────────────────────────────── */
 /* < Community Plugins
 ──────────────────────────────────────────────────── */
@@ -4064,7 +4068,7 @@ body:not(.classic-inline-backlinks) :is(.writing, .longform-leaf) .embedded-back
 body:not(.normal-header-bar, .is-mobile) .snw-header-count-wrapper {
 	top: 30px;
 	margin-right: 18px;
-} 
+}
 
 /* ───────────────────────────────────────────────── */
 /* << Plugin Update Tracker
@@ -6386,13 +6390,18 @@ settings:
   - # << Plugin-Specific Settings (+)
     id: plugin-specific-settings
     title: ⚙️ Plugin-specific Settings
-    description: Backlinks, Outgoing Links, Supercharged Links, Git Gutter
+    description: Backlinks, Outgoing Links, Outline, Supercharged Links, Git Gutter
     type: heading
     level: 1
     collapsed: true
   - id: normal-out-back-links
     title: Normal Outgoing Links and Backlinks
     description: By default, the sidebar for outgoing links and backlinks are reduced to linked mentions only. Enable this setting to restore their original display.
+    type: class-toggle
+    default: false
+  - id: show-outline-buttons
+    title: Show Outline Buttons
+    description: By default, the outline plugin buttons for collapsing, expanding, and searching headings is hidden. Enable this setting to show them again.
     type: class-toggle
     default: false
   - id: classic-inline-backlinks
