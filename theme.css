@@ -499,8 +499,7 @@ body {
 	--tab-stacked-header-width: 28px;
 
 	/* Table */
-	--table-text-size-factor: 0.95;
-	--table-text-size: calc(var(--font-text-size) * var(--table-text-size-factor));
+	--table-text-size: calc(var(--font-text-size) * 0.95);
 	--table-header-size: 1em;
 	--table-header-weight: 600;
 	--table-white-space: normal;
@@ -3753,6 +3752,10 @@ are not targeted by this */
 
 .full-width {
 	--file-line-width: 100%;
+}
+
+.larger-table-text {
+	--table-text-size: var(--font-text-size);
 }
 
 .no-inline-title .inline-title {

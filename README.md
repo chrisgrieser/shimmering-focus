@@ -97,6 +97,7 @@ Available CSS classes are:
 - `list-2-col-cards`: Turns list items into two columns of simple cards (Reading
   Mode).
 - `remove-dataview-title`: Removes the header from dataview results.
+- `larger-table-text`: Slightly larger text in tables.
 
 ### Callouts
 Shimmering Focus adds a custom `sidenote` callout, which moves the callout to
