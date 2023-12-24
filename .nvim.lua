@@ -76,7 +76,7 @@ end, { buffer = true, desc = " Comment Mark" })
 -- highlighting isn't good yet, so…
 keymap(
 	"n",
-	"<localleader>s",
+	"<D-r>",
 	"<cmd>syntax sync fromstart<CR>",
 	{ buffer = true, desc = " Fix Syntax Hl" }
 )
