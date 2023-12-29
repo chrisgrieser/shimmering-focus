@@ -2,9 +2,9 @@
 # - Check the yaml from the Style Settings for errors. If there are any, the
 #   build is aborted, the errors are passed (e.g. for a notification) and the
 #   Style Settings tab is opened.
-# - bumps version number in css file
-# - updates download counts in badges of the .md files
-# - updates the stylelint-file
+# - bumps version number in css file and manifest
+# - updates download counts in badges of the README files
+# - copies the stylelint-config for documentation
 # - git add, commit, pull, and push to the remote repo
 
 #───────────────────────────────────────────────────────────────────────────────
@@ -31,20 +31,20 @@ if [[ $? == 1 ]]; then
 fi
 rm temp.yml
 
-#───────────────────────────────────────────────────────────────────────────────
-
-# Bump version number
-versionLine=$(grep -Ewn "^Version" "$CSS_PATH" | cut -d: -f1 | head -n1)
-currentVersion=$(sed -n "${versionLine}p" "$CSS_PATH" | cut -d. -f2)
-nextVersion=$((currentVersion + 1))
-manifest="$(dirname "$CSS_PATH")/manifest.json"
-sed -E -i '' "${versionLine}s/(.*\.)[[:digit:]]+/\1$nextVersion/" "$CSS_PATH"
-sed -E -i '' "s/(\"version\": \".*\.).*/\1$nextVersion\",/" "$manifest"
-
-#───────────────────────────────────────────────────────────────────────────────
-
-# Copy for documentation purposes
+# Copy for styleint config for documentation purposes
 cp "$HOME/.config/+ linter-configs/stylelint/compiled.yml" ./.stylelintrc.yml
+
+#───────────────────────────────────────────────────────────────────────────────
+
+# BUMP VERSION NUMBER
+versionLine=$(grep -n --max-count=1 "^Version" "theme.css")
+currentVersion=$(echo "$versionLine" | cut -d" " -f2)
+nextVersion=$((currentVersion + 1))
+
+versionLineNum=$(echo "$versionLine" | cut -d: -f1)
+manifest="$(dirname "$CSS_PATH")/manifest.json"
+sed -E -i '' "${versionLineNum}s/(.*\.)[[:digit:]]+/\1$nextVersion/" "$CSS_PATH"
+sed -E -i '' "s/(\"version\": \".*\.).*/\1$nextVersion\",/" "$manifest"
 
 # Update Theme Download numbers in README.md
 dl=$(curl -s "https://releases.obsidian.md/stats/theme" | grep -oe '"Shimmering Focus","download":[[:digit:]]*' | cut -d: -f2)
@@ -52,12 +52,11 @@ sed -E -i '' "s/badge.*-[[:digit:]]+-/badge\/downloads-$dl-/" ./README.md
 
 #───────────────────────────────────────────────────────────────────────────────
 
-# git add, commit, pull, and push
+# GIT ADD, COMMIT, PULL, AND PUSH
 # needs piping stderr to stdin, since git push reports an error even on success
 git add --all && git commit -m "publish (automated)"
 git pull && git push 2>&1
 
-#───────────────────────────────────────────────────────────────────────────────
 #───────────────────────────────────────────────────────────────────────────────
 # INFO specific to my setup
 
