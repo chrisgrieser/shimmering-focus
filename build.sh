@@ -44,7 +44,7 @@ sed -E -i '' "s/(\"version\": \".*\.).*/\1$nextVersion\",/" "$manifest"
 #───────────────────────────────────────────────────────────────────────────────
 
 # Copy for documentation purposes
-cp "$HOME/.config/_linter-configs/stylelintrc.yml" ./.stylelintrc.yml
+cp "$HOME/.config/+ linter-configs/stylelint/compiled.yml" ./.stylelintrc.yml
 
 # Update Theme Download numbers in README.md
 dl=$(curl -s "https://releases.obsidian.md/stats/theme" | grep -oe '"Shimmering Focus","download":[[:digit:]]*' | cut -d: -f2)
