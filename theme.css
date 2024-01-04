@@ -4378,7 +4378,7 @@ Caveats (in comparison to git signs)
 
 /* current word */
 body .app-container :is(.cm-matched-word, .cm-current-word) {
-	text-decoration: 2.5px dashed underline var(--color-accent);
+	text-decoration: 2px dashed underline;
 	text-decoration-skip-ink: none;
 	text-underline-offset: 4px;
 }
