@@ -23,7 +23,7 @@ export PATH=/usr/local/lib:/usr/local/bin:/opt/homebrew/bin/:$npm_location:$PATH
 if ! command -v yaml-validator &>/dev/null; then echo "yaml-validator not installed." && return 1; fi
 
 sed -n '/@settings/,$p' "$CSS_PATH" | sed '1d;$d' | sed '$d' >temp.yml
-YAMLLINT_OUTPUT=$(yamllint-validator temp.yml)
+YAMLLINT_OUTPUT=$(yaml-validator temp.yml)
 if [[ $? == 1 ]]; then
 	echo "YAML ERROR"
 	echo "$YAMLLINT_OUTPUT" | sed '1d'
