@@ -32,7 +32,7 @@ fi
 rm temp.yml
 
 # Copy for styleint config for documentation purposes
-cp "$HOME/.config/+ linter-configs/stylelint/compiled.yml" ./.stylelintrc.yml
+cp "$HOME/.config/+ linter-configs/stylelint/compiled.yml" "$script_dir/.stylelintrc.yml"
 
 #───────────────────────────────────────────────────────────────────────────────
 
