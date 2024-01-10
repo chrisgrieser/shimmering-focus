@@ -36,9 +36,9 @@ cp "$HOME/.config/+ linter-configs/stylelint/compiled.yml" ./.stylelintrc.yml
 
 #───────────────────────────────────────────────────────────────────────────────
 
-# BUMP VERSION NUMBER
+# BUMP (PATCH) VERSION NUMBER
 versionLine=$(grep -n --max-count=1 "^Version" "theme.css")
-currentVersion=$(echo "$versionLine" | cut -d" " -f2)
+currentVersion=$(echo "$versionLine" | grep -Eo '[0-9]+$')
 nextVersion=$((currentVersion + 1))
 
 versionLineNum=$(echo "$versionLine" | cut -d: -f1)
