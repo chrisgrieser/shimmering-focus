@@ -54,7 +54,7 @@ sed -E -i '' "s/badge.*-[[:digit:]]+-/badge\/downloads-$dl-/" ./README.md
 
 # GIT ADD, COMMIT, PULL, AND PUSH
 # needs piping stderr to stdin, since git push reports an error even on success
-git add --all && git commit -m "publish (automated)"
+git add --all && git commit -m "publish" --author="🤖 automated<auto@build.sh>"
 git pull && git push 2>&1
 
 #───────────────────────────────────────────────────────────────────────────────
