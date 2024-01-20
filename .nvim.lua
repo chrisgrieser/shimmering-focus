@@ -15,7 +15,6 @@ vim.defer_fn(function()
 			prompt_prefix = " ",
 			prompt_title = "Navigation Markers",
 			trim_text = true,
-			fname_width = 0,
 		}
 	end, { desc = " Search Comment Marks", buffer = true })
 	-- search only for variables
@@ -25,7 +24,6 @@ vim.defer_fn(function()
 			prompt_prefix = "󰀫 ",
 			prompt_title = "CSS Variables",
 			trim_text = true,
-			fname_width = 0,
 		}
 	end, { desc = " Search CSS Variables", buffer = true })
 end, 500)
@@ -69,14 +67,3 @@ keymap("n", "qw", function()
 	vim.api.nvim_win_set_cursor(0, { lineNum, colNum })
 	cmd.startinsert { bang = true }
 end, { buffer = true, desc = " Comment Mark" })
-
--- FIX syntax highlighting
--- various other solutions are described here: https://github.com/vim/vim/issues/2790
--- using treesitter, this is less of an issue, but treesitter css
--- highlighting isn't good yet, so…
-keymap(
-	"n",
-	"<D-r>",
-	"<cmd>syntax sync fromstart<CR>",
-	{ buffer = true, desc = " Fix Syntax Hl" }
-)
