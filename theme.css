@@ -4605,11 +4605,6 @@ body .another-quick-switcher__item__description {
 
 /* enlarge floating window */
 .prompt.another-quick-switcher__floating-prompt {
-	/* stylelint-disable-next-line declaration-no-important */
-	top: auto !important;
-	/* stylelint-disable-next-line declaration-no-important */
-	left: auto !important;
-	width: var(--file-line-width);
 	max-height: 88vh;
 }
 
