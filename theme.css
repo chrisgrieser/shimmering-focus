@@ -2833,6 +2833,8 @@ body:not(.show-ribbon, .is-mobile) .side-dock-settings .side-dock-ribbon-action:
 	padding: 4px;
 	font-size: 1em;
 	background-color: var(--bg5);
+	border-top: 3px ridge var(--text-faint);
+	border-left: 3px ridge var(--text-faint);
 }
 
 .status-bar-item:empty {
@@ -4056,7 +4058,7 @@ body:not(.classic-inline-backlinks) :is(.writing, .longform-leaf) .embedded-back
 	background-color: transparent;
 }
 
-body:not(show-outline-buttons) .workspace-leaf-content[data-type="outline"] .nav-header{
+body:not(show-outline-buttons) .workspace-leaf-content[data-type="outline"] .nav-header {
 	display: none;
 }
 
