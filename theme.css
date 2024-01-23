@@ -2853,10 +2853,11 @@ body:not(.show-ribbon, .is-mobile) .side-dock-settings .side-dock-ribbon-action:
 
 /* signature icon */
 body:not(.hide-signature-icon) .status-bar::after {
+	margin-top: -3px;
 	padding-right: 6px;
-	padding-left: 6px;
+	padding-left: 4px;
 	font-family: "Recursive S", sans-serif;
-	font-size: 1.1rem;
+	font-size: 1.2rem;
 	font-weight: 600;
 	content: "⟡";
 }
