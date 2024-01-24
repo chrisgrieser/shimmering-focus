@@ -5601,7 +5601,7 @@ body:not(.longform-left-aligned) :is(.writing, .longform-leaf) {
 }
 
 /* stuff not to justify */
-body:not(.longform-left-aligned) :is(.writing, .longform-leaf):is(.HyperMD-codeblock,
+body:not(.longform-left-aligned) :is(.writing, .longform-leaf) :is(.HyperMD-codeblock,
 	.HyperMD-header,
 	.inline-title,
 	.cm-hmd-frontmatter,
