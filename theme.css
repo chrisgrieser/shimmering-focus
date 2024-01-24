@@ -2833,8 +2833,16 @@ body:not(.show-ribbon, .is-mobile) .side-dock-settings .side-dock-ribbon-action:
 	padding: 4px;
 	font-size: 1em;
 	background-color: var(--bg5);
+}
+
+.theme-dark .status-bar {
 	border-top: 3px ridge var(--text-faint);
 	border-left: 3px ridge var(--text-faint);
+}
+
+.theme-light .status-bar {
+	border-top: 2px ridge var(--text-faint);
+	border-left: 2px ridge var(--text-faint);
 }
 
 .status-bar-item:empty {
