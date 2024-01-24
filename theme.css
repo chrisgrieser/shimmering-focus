@@ -3520,11 +3520,6 @@ body:not(.no-active-line-highlight) .is-live-preview .cm-active .list-bullet::af
 	background-color: var(--active-line-color);
 }
 
-/* disable active line highlight */
-.no-active-highlight-in-longform :is(.writing, .longform-leaf) .cm-active.cm-active.cm-active {
-	background: none;
-}
-
 /* ───────────────────────────────────────────────── */
 /* <<< Empty Note / New Tab Page
 ──────────────────────────────────────────────────── */
@@ -6397,10 +6392,6 @@ settings:
   - id: longform-text-indent
     title: First-Line Indent & No Spacing between Paragraphs (Reading Mode)
     description: ⚠️ Requires Obsidian installer version 1.1.9 or later. Indent the first Line of a paragraph and remove the spacing between paragraphs.
-    type: class-toggle
-    default: false
-  - id: no-active-highlight-in-longform
-    title: Disable active line highlights in longform/writing notes
     type: class-toggle
     default: false
   - # << Plugin-Specific Settings (+)
