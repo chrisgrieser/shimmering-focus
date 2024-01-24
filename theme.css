@@ -700,6 +700,11 @@ body.highlight-active-cell .table-cell-wrapper:has(.cm-s-obsidian) {
 	outline: 2.5px solid var(--color-accent);
 }
 
+/* FIX lists in tables looking off */
+.table-cell-wrapper .list-bullet {
+	float: none !important;
+}
+
 /* ───────────────────────────────────────────────── */
 /* << Annotation Tags
 ──────────────────────────────────────────────────── */
