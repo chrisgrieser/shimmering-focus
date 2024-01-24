@@ -510,6 +510,8 @@ body {
 	--table-header-background: var(--bg5);
 	--table-header-background-hover: var(--bg5);
 	--table-row-alt-background: var(--b-row);
+	/* needs to be fix at 1.3, otherwise glitchy when changing table cells */
+	--table-line-height: 1.3;
 
 	/* Blockquote */
 	--blockquote-border-thickness: 8px;
@@ -5642,7 +5644,7 @@ body:not(.longform-left-aligned) :is(.writing, .longform-leaf) :is(.HyperMD-code
 
 /* line height */
 /* long selector needed to target only lines outside of a table */
-:is(.writing, .longform-leaf) .view-content>.cm-s-obsidian>div>.cm-scroller>.cm-sizer>.cm-contentContainer>.cm-content>.cm-line:not(.HyperMD-header){
+:is(.writing, .longform-leaf) .view-content>.cm-s-obsidian>div>.cm-scroller>.cm-sizer>.cm-contentContainer>.cm-content>.cm-line:not(.HyperMD-header) {
 	line-height: calc(var(--longform-base-line-height) + 0.35);
 }
 
