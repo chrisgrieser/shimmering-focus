@@ -702,7 +702,7 @@ body.highlight-active-cell .table-cell-wrapper:has(.cm-s-obsidian) {
 
 /* FIX lists in tables looking off */
 .table-cell-wrapper .list-bullet {
-	float: none !important;
+	float: none;
 }
 
 /* ───────────────────────────────────────────────── */
@@ -3518,6 +3518,11 @@ body:not(.no-active-line-highlight) .is-live-preview .cm-active .list-bullet::af
 	background-color: var(--active-line-color);
 }
 
+/* disable active line highlight */
+.no-active-highlight-in-longform :is(.writing, .longform-leaf) .cm-active.cm-active.cm-active {
+	background: none;
+}
+
 /* ───────────────────────────────────────────────── */
 /* <<< Empty Note / New Tab Page
 ──────────────────────────────────────────────────── */
@@ -5632,13 +5637,13 @@ body:not(.longform-left-aligned) :is(.writing, .longform-leaf) :is(.HyperMD-code
 }
 
 /* line height */
-:is(.writing, .longform-leaf) table,
-:is(.writing, .longform-leaf) .cm-line:not(.HyperMD-header),
-:is(.writing, .longform-leaf) .cm-line:not(.HyperMD-header)> :not(.cm-header, .cm-hmd-frontmatter) {
+/* long selector needed to target only lines outside of a table */
+:is(.writing, .longform-leaf) .view-content>.cm-s-obsidian>div>.cm-scroller>.cm-sizer>.cm-contentContainer>.cm-content>.cm-line:not(.HyperMD-header){
 	line-height: calc(var(--longform-base-line-height) + 0.35);
 }
 
-:is(.writing, .longform-leaf) :is(h1, h2, h3, h4, h5, h6, .cm-line.HyperMD-header, .inline-title),
+:is(.writing, .longform-leaf) :is(table, h1, h2, h3, h4, h5, h6, .inline-title),
+:is(.writing, .longform-leaf) .table-wrapper .cm-line,
 body:not(.is-popout-window) :is(.writing, .longform-leaf) .cm-line> :is(.cm-header, .cm-hmd-frontmatter) {
 	line-height: var(--longform-base-line-height);
 }
@@ -5657,15 +5662,6 @@ body.longform-tasks-different.longform-tasks-different.longform-tasks-different.
 /* fix for code block header hack */
 .app-container :is(.writing, .longform-leaf) pre[class*="language-"]::before {
 	line-height: calc(var(--longform-base-line-height) + 0.3);
-}
-
-/* disable active line highlight */
-.no-active-highlight-in-longform :is(.writing, .longform-leaf) .cm-active.cm-active.cm-active:not(.HyperMD-quote, .HyperMD-codeblock) {
-	background: none;
-}
-
-.no-active-highlight-in-longform :is(.writing, .longform-leaf) .cm-active.cm-active:not(.HyperMD-quote, .HyperMD-header, .HyperMD-codeblock)::before {
-	content: none;
 }
 
 /* ───────────────────────────────────────────────── */
