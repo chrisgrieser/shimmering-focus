@@ -2863,7 +2863,7 @@ body:not(.show-ribbon, .is-mobile) .side-dock-settings .side-dock-ribbon-action:
 
 /* extra space for the bottom right item to not conflict with status bar */
 .mod-right-split .workspace-tabs:last-child .workspace-leaf .view-content {
-	padding-bottom: 1.75em;
+	padding-bottom: 2.5em;
 }
 
 /* signature icon */
