@@ -5303,19 +5303,41 @@ body .longform-explorer.longform-explorer #scene-list {
 	line-height: 1.2em;
 	white-space: normal;
 	border: none;
+	border-radius: 0;
 }
 
-body #scene-list .scene-container {
-	/* put fold arrows to the right for proper alignment,
-	 * HACK for https://github.com/kevboh/longform/issues/140 */
-	display: flex;
-	flex-direction: row-reverse;
-	border-radius: 0;
+/* FIX fold arrow alignment by hiding it https://github.com/kevboh/longform/issues/140 */
+/* (it misaligns the scnee list, and reversing the flex-direction makes it buggy) */
+body #scene-list .scene-container>span {
+	display: none;
 }
 
 body #scene-list .scene-container div {
 	margin-right: 4px;
 	margin-left: 0;
+}
+
+/* FIX indented scenes moving longform sidebar incorrectly due to usage of margin
+* instead of padding. */
+#scene-list .scene-container[data-scene-indent] {
+	/* stylelint-disable-next-line declaration-no-important */
+	margin-left: 0 !important;
+}
+
+#scene-list .scene-container[data-scene-indent="1"] {
+	padding-left: 1.75em;
+}
+
+#scene-list .scene-container[data-scene-indent="2"] {
+	padding-left: 3.5em;
+}
+
+#scene-list .scene-container[data-scene-indent="3"] {
+	padding-left: 5.25em;
+}
+
+#scene-list .scene-container[data-scene-indent="4"] {
+	padding-left: 7em;
 }
 
 #scene-list .scene-container.selected,
