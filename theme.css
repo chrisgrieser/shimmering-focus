@@ -5317,6 +5317,11 @@ body #scene-list .scene-container div {
 	margin-left: 0;
 }
 
+#scene-list .scene-container[data-scene-indent="0"] {
+	/* stylelint-disable-next-line declaration-no-important */
+	padding-left: 6px !important;
+}
+
 /* FIX indented scenes moving longform sidebar incorrectly due to usage of margin
 * instead of padding. */
 #scene-list .scene-container[data-scene-indent] {
