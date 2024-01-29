@@ -1,7 +1,7 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS
 by @pseudometa
-Version 3.4.617
+Version 3.4.618
 MIT License
 https://github.com/chrisgrieser/shimmering-focus
 ──────────────────────────────────────────────────── */
@@ -5376,6 +5376,7 @@ li:nth-child(even) :is(.draft-container, .scene-container) {
 /* grayed out scenes */
 #scene-list .scene-container:is([data-scene-path*="Acknowledgements" i],
 	[data-scene-path*="Appendix" i],
+	[data-scene-path*="Supplemental" i],
 	[data-scene-path*="Metadata" i],
 	[data-scene-path*="References" i],
 	[data-scene-path*="Declaration of Conflicting Interests" i]):not(.selected, :hover) :is(div, .longform-scene-number) {
