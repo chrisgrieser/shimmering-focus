@@ -3848,21 +3848,6 @@ body .canvas-card-menu {
 }
 
 /* ───────────────────────────────────────────────── */
-/* << Browser
-──────────────────────────────────────────────────── */
-
-.browser-address.browser-address.browser-address input {
-	height: 90%;
-	padding-top: 2px;
-	background-color: var(--bg3);
-}
-
-.workspace-leaf-content[data-type="browser"] .view-header {
-	padding-right: 6px;
-	padding-left: 6px;
-}
-
-/* ───────────────────────────────────────────────── */
 /* << Search
 ──────────────────────────────────────────────────── */
 body:not(.show-search-pane-suggestions) .mod-search-suggestion {
