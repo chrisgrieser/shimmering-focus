@@ -2836,7 +2836,7 @@ body:not(.hide-signature-icon) .status-bar::after {
 	font-family: "Recursive S", sans-serif;
 	font-size: 1.1rem;
 	font-weight: 800;
-	content: "⟡";
+	content: var(--signature);
 }
 
 /* ───────────────────────────────────────────────── */
