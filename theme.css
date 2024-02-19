@@ -2255,7 +2255,7 @@ body .vertical-tab-content {
 
 .mod-settings .vertical-tab-content>.setting-item:nth-child(2)>.setting-item-control>.setting-editor-extra-setting-button+input[type="color"]::before {
 	position: relative;
-	top: 2px;
+	top: 12px;
 	font-family: var(--font-interface);
 	font-size: var(--font-ui-smaller);
 	line-height: 1.3;
