@@ -3651,35 +3651,25 @@ are not targeted by this */
 ──────────────────────────────────────────────────── */
 
 /* the ":" or "/" enlarged */
-.cm-vim-panel>div>span {
+.cm-vim-panel>div>div>span:first-child {
 	/* stylelint-disable-next-line declaration-no-important */
 	font-family: Inter, sans-serif !important;
-	font-size: 1.7em;
 	font-weight: 600;
+	font-size: 1.4rem;
 }
 
-.cm-vim-panel>div>span>input[type="text"] {
-	margin-bottom: -5px;
-	font-family: var(--font-text);
-	font-size: 0.7em;
+/* input enlarged */
+.cm-vim-panel input {
+	font-size: 1.4rem;
 }
 
-/* avoid collision with status bar */
-.cm-vim-panel.cm-vim-panel {
-	padding-top: calc(var(--status-bar-font-size) - 5px);
-	margin-bottom: calc(var(--status-bar-font-size) + 5px);
+.cm-panels.cm-panels-bottom {
+	border-top: var(--basic-border);
 }
 
+.cm-panels.cm-panels .cm-vim-panel input,
 .cm-panels.cm-panels-bottom.cm-panels-bottom {
 	background-color: var(--bg4);
-}
-
-.cm-vim-panel.cm-vim-panel input {
-	position: relative;
-	top: -2px;
-	width: 97%;
-	max-width: 97%;
-	margin-left: 10px;
 }
 
 /* remove instruction */
