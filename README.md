@@ -1,5 +1,5 @@
 # Shimmering Focus ⟡
-![Download Count](https://img.shields.io/badge/downloads-145790-6E4E9B?style=plastic&logo=obsidian&color=%23483699)
+![Download Count](https://img.shields.io/badge/downloads-146094-6E4E9B?style=plastic&logo=obsidian&color=%23483699)
 ![Last Commit](https://img.shields.io/github/last-commit/chrisgrieser/shimmering-focus?style=plastic)
 
 A minimalistic and opinionated Obsidian theme for the keyboard-centric user.  
