@@ -20,7 +20,8 @@ A minimalistic and opinionated Obsidian theme for the keyboard-centric user.
 - [Contribute](#contribute)
 	* [Create and Share your own Color Scheme](#create-and-share-your-own-color-scheme)
 	* [Submit Bug Fixes](#submit-bug-fixes)
-	* [Credits](#credits)
+- [Licenses](#licenses)
+- [Credits](#credits)
 
 <!-- tocstop -->
 
@@ -209,7 +210,15 @@ Please use the [dedicated form for submitting
 fixes](https://github.com/chrisgrieser/shimmering-focus/issues/new?template=submit_fix.yml),
 so they do not go unnoticed.
 
-### Credits
+## Licenses
+- This theme is licensed under the [MIT
+  License](https://github.com/chrisgrieser/shimmering-focus/blob/main/LICENSE).
+- The embedded *Material Icon* font is licensed under the [Apache License](https://developers.google.com/fonts/docs/material_icons#licensing).
+- The embedded *Ubuntu Mono* font is licensed under the [Ubuntu Font License](https://ubuntu.com/legal/font-licence).
+- The two embedded fonts *iA Writer Quattro* and *Recursive* are licensed under
+  the [SIL Open Font License](https://www.wikiwand.com/en/SIL_Open_Font_License).
+
+## Credits
 __About me__  
 In my day job, I am a sociologist studying the social mechanisms underlying the
 digital economy. For my PhD project, I investigate the governance of the app
