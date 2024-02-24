@@ -15,7 +15,7 @@ CSS_PATH="$script_dir/theme.css"
 
 #───────────────────────────────────────────────────────────────────────────────
 
-# YAML VALIDATION
+# TEST: YAML VALIDATION
 # - Abort build if yaml invalid
 # - requires style settings placed at the very bottom of the theme css
 npm_location="$(npm root)/.bin/"
@@ -31,12 +31,9 @@ if [[ $? == 1 ]]; then
 fi
 rm temp.yml
 
-# Copy for styleint config for documentation purposes
-cp "$HOME/.config/+ linter-configs/stylelint/compiled.yml" "$script_dir/.stylelintrc.yml"
-
 #───────────────────────────────────────────────────────────────────────────────
 
-# BUMP (PATCH) VERSION NUMBER
+# BUMP VERSION NUMBER
 versionLine=$(grep -n --max-count=1 "^Version" "theme.css")
 currentVersion=$(echo "$versionLine" | grep -Eo '[0-9]+$')
 nextVersion=$((currentVersion + 1))
