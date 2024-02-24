@@ -138,13 +138,6 @@ Mode with a different theme.
 - [Style Settings
   Plugin](https://obsidian.md/plugins?id=obsidian-style-settings): Unlocks
   dozens of customization options.
-- [Supercharged
-  Links](https://obsidian.md/plugins?id=supercharged-links-obsidian): The theme
-  includes various built-in styling for the Supercharged Links plugin, for
-  example appending a "🌱" to notes with the `#seedling` tag. To enable all
-  Supercharged-Links-related features, add `kanban-plugin, status, aliases,
-  cssclass` to the `Target Attributes for Styling` text field in the plugin
-  settings.
 - For academics: [Pandoc Reference List Plugin](https://obsidian.md/plugins?id=obsidian-pandoc-reference-list)
 - For macOS: [Electron Window
   Tweaker](https://obsidian.md/plugins?id=obsidian-electron-window-tweaker):
