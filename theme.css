@@ -3443,11 +3443,7 @@ body .mod-root .workspace-tabs:not(.mod-active, :only-of-type) .workspace-leaf-c
 
 .mod-root .workspace-tabs:not(.mod-stacked) .workspace-tab-header-container-inner,
 .mod-root .workspace-tab-header-container {
-	border-bottom: 1px solid transparent;
-}
-
-.theme-light .mod-root .workspace-tabs:not(:only-of-type, .mod-stacked) .workspace-tab-header-container {
-	border-bottom-width: 2px;
+	border-bottom: 2px solid transparent;
 }
 
 /* ───────────────────────────────────────────────── */
