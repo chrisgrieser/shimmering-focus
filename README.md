@@ -1,5 +1,5 @@
 # Shimmering Focus ⟡
-![Download Count](https://img.shields.io/badge/downloads-149862-6E4E9B?style=plastic&logo=obsidian&color=%23483699)
+![Download Count](https://img.shields.io/badge/downloads-149865-6E4E9B?style=plastic&logo=obsidian&color=%23483699)
 ![Last Commit](https://img.shields.io/github/last-commit/chrisgrieser/shimmering-focus?style=plastic)
 
 A minimalistic and opinionated Obsidian theme for the keyboard-centric user.  
@@ -22,6 +22,7 @@ A minimalistic and opinionated Obsidian theme for the keyboard-centric user.
 	* [Submit Bug Fixes](#submit-bug-fixes)
 - [Licenses](#licenses)
 - [Credits](#credits)
+- [About the developer](#about-the-developer)
 
 <!-- tocstop -->
 
@@ -212,21 +213,6 @@ so they do not go unnoticed.
   the [SIL Open Font License](https://www.wikiwand.com/en/SIL_Open_Font_License).
 
 ## Credits
-__About me__  
-In my day job, I am a sociologist studying the social mechanisms underlying the
-digital economy. For my PhD project, I investigate the governance of the app
-economy and how software ecosystems manage the tension between innovation and
-compatibility. If you are interested in this subject, feel free to get in touch.
-
-__Profiles__  
-- [Academic Website](https://chris-grieser.de/)
-- [ResearchGate](https://www.researchgate.net/profile/Christopher-Grieser)
-- [Discord](https://discordapp.com/users/462774483044794368/)
-- [GitHub](https://github.com/chrisgrieser/)
-- [Twitter](https://twitter.com/pseudo_meta)
-- [LinkedIn](https://www.linkedin.com/in/christopher-grieser-ba693b17a/)
-
-__Thanks__  
 - This theme includes snippets or ideas from:
   [@SlRvb](https://github.com/SlRvb), [@Atlas](https://github.com/zcysxy),
   [@CecilaMay](https://github.com/ceciliamay),
@@ -246,6 +232,17 @@ __Thanks__
   [@SlRvb](https://github.com/SlRvb),
   [@javalent](https://github.com/valentine195), and
   [@NothingIsLost](https://github.com/nothingislost).
+
+## About the developer
+In my day job, I am a sociologist studying the social mechanisms underlying the
+digital economy. For my PhD project, I investigate the governance of the app
+economy and how software ecosystems manage the tension between innovation and
+compatibility. If you are interested in this subject, feel free to get in touch.
+
+- [Academic Website](https://chris-grieser.de/)
+- [ResearchGate](https://www.researchgate.net/profile/Christopher-Grieser)
+- [Mastodon](https://pkm.social/@pseudometa)
+- [LinkedIn](https://www.linkedin.com/in/christopher-grieser-ba693b17a/)
 
 <a href='https://ko-fi.com/Y8Y86SQ91' target='_blank'>
 <img

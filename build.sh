@@ -5,6 +5,7 @@
 # - bumps version number in css file and manifest
 # - updates download counts in badges of the README files
 # - copies the stylelint-config for documentation
+# - update changelog
 # - git add, commit, pull, and push to the remote repo
 
 #───────────────────────────────────────────────────────────────────────────────
@@ -49,6 +50,17 @@ dl=$(curl -s "https://releases.obsidian.md/stats/theme" |
 	grep -oe '"Shimmering Focus","download":[[:digit:]]*' |
 	cut -d: -f2)
 sed -E -i '' "s/badge.*-[[:digit:]]+-/badge\/downloads-$dl-/" ./README.md
+
+#───────────────────────────────────────────────────────────────────────────────
+# CHANGELOG
+commits_since_last_publish=$(git log :/publish.. --format="- %cs %s")
+
+echo "### Changelog" >"temp.md"
+echo "$commits_since_last_publish" >>"temp.md"
+cat "Changelog.md" >>"temp.md"
+
+rm "Changelog.md"
+mv "temp.md" "Changelog.md"
 
 #───────────────────────────────────────────────────────────────────────────────
 # GIT ADD, COMMIT, PULL, AND PUSH
