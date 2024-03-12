@@ -422,6 +422,11 @@ body {
 ──────────────────────────────────────────────────── */
 
 body {
+	/* this variable is determined by the accent color chosen by the user, so it
+	* needs to be overwritten to be the same across this theme */
+	/* stylelint-disable-next-line declaration-no-important */
+	--text-on-accent: hsl(0 100% 100%) !important;
+
 	/* Font */
 	--font-text-theme: "iA Writer Quattro S";
 	--font-interface-theme: "Recursive S";
