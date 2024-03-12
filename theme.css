@@ -291,6 +291,7 @@ body {
 	--bg-sat: 0%;
 }
 
+/* <<< GAMMA COLOR SCHEME */
 .theme-light {
 	--bg-sat: 25%;
 	--bg-hue: var(--bg-hue-light);
@@ -394,26 +395,26 @@ body {
 	--bg-hue: 230;
 	--bg-sat: 15%;
 
-	--color-accent: hsl(184deg 79% 35%);
-	--color-accent-hsl: 184deg 79% 35%;
-	--interactive-accent: hsl(184deg 79% 30%);
+	--color-accent: hsl(184 79% 35%);
+	--color-accent-hsl: 184 79% 35%;
+	--interactive-accent: hsl(184 79% 30%);
 
-	--secondary-accent: hsl(28deg 54% 51%);
-	--hover-accent: hsl(328deg 100% 54%);
-	--link-unresolved-color: hsl(101deg 42% 51%);
+	--secondary-accent: hsl(28 54% 51%);
+	--hover-accent: hsl(328 100% 54%);
+	--link-unresolved-color: hsl(101 42% 51%);
 }
 
 .theme-dark.theme-dark {
 	--bg-hue: 230;
 	--bg-sat: 15%;
 
-	--color-accent: hsl(184deg 79% 45%);
-	--color-accent-hsl: 184deg 79% 35%;
-	--interactive-accent: hsl(184deg 79% 30%);
+	--color-accent: hsl(184 79% 45%);
+	--color-accent-hsl: 184 79% 35%;
+	--interactive-accent: hsl(184 79% 30%);
 
-	--secondary-accent: hsl(28deg 63% 61%);
-	--hover-accent: hsl(328deg 100% 64%);
-	--link-unresolved-color: hsl(101deg 42% 51%);
+	--secondary-accent: hsl(28 63% 61%);
+	--hover-accent: hsl(328 100% 64%);
+	--link-unresolved-color: hsl(101 42% 51%);
 	}
 */
 
@@ -497,7 +498,6 @@ body {
 	--nav-item-color-highlighted: var(--text-accent-hover);
 
 	/* Checkboxes */
-	/* = round */
 	--checkbox-radius: var(--radius-m);
 	--checkbox-size: 17px;
 	--checkbox-color: var(--secondary-accent);
@@ -581,6 +581,7 @@ body {
 	--bg4: var(--color-base-25);
 	--bg5: var(--color-base-30);
 	--bg6: var(--color-base-35);
+
 	/* overwrite Obsidian variables w/ --bg colors for consistency with plugins */
 	--background-primary: var(--bg1);
 	--background-primary-alt: var(--bg2);
