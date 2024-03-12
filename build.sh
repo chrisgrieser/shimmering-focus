@@ -8,16 +8,16 @@
 # - git add, commit, pull, and push to the remote repo
 
 #───────────────────────────────────────────────────────────────────────────────
-
 # CONFIG
+
 script_dir="$(dirname "$(readlink -f "$0")")"
 CSS_PATH="$script_dir/theme.css"
 
 #───────────────────────────────────────────────────────────────────────────────
-
 # TEST: YAML VALIDATION
+
 # - Abort build if yaml invalid
-# - requires style settings placed at the very bottom of the theme css
+# - requires style-settings placed at the very bottom of the theme's css
 npm_location="$(npm root)/.bin/"
 export PATH=/usr/local/lib:/usr/local/bin:/opt/homebrew/bin/:$npm_location:$PATH
 if ! command -v yaml-validator &>/dev/null; then echo "yaml-validator not installed." && return 1; fi
@@ -32,24 +32,27 @@ fi
 rm temp.yml
 
 #───────────────────────────────────────────────────────────────────────────────
-
 # BUMP VERSION NUMBER
-versionLine=$(grep -n --max-count=1 "^Version" "theme.css")
-currentVersion=$(echo "$versionLine" | grep -Eo '[0-9]+$')
-nextVersion=$((currentVersion + 1))
 
-versionLineNum=$(echo "$versionLine" | cut -d: -f1)
+versionLine=$(grep --line-number --max-count=1 "^Version" "theme.css")
+versionLnum=$(echo "$versionLine" | cut -d: -f1)
+
+currentVer=$(echo "$versionLine" | cut -d. -f2)
+nextVer=$((currentVer + 1))
+
 manifest="$(dirname "$CSS_PATH")/manifest.json"
-sed -E -i '' "${versionLineNum}s/(.*\.)[[:digit:]]+/\1$nextVersion/" "$CSS_PATH"
-sed -E -i '' "s/(\"version\": \".*\.).*/\1$nextVersion\",/" "$manifest"
+sed -E -i '' "${versionLnum} s/$currentVer/$nextVer/" "$CSS_PATH"
+sed -E -i '' "/version/ s/$currentVer/$nextVer/" "$manifest"
 
 # Update Theme Download numbers in README.md
-dl=$(curl -s "https://releases.obsidian.md/stats/theme" | grep -oe '"Shimmering Focus","download":[[:digit:]]*' | cut -d: -f2)
+dl=$(curl -s "https://releases.obsidian.md/stats/theme" |
+	grep -oe '"Shimmering Focus","download":[[:digit:]]*' |
+	cut -d: -f2)
 sed -E -i '' "s/badge.*-[[:digit:]]+-/badge\/downloads-$dl-/" ./README.md
 
 #───────────────────────────────────────────────────────────────────────────────
-
 # GIT ADD, COMMIT, PULL, AND PUSH
+
 # needs piping stderr to stdin, since git push reports an error even on success
 git add --all && git commit -m "publish" --author="🤖 automated<auto@build.sh>"
 git pull && git push 2>&1

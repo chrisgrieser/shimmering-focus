@@ -1,9 +1,9 @@
 {
-   "name": "Shimmering Focus",
-   "version": "3.4.11",
-   "minAppVersion": "1.3.1",
-   "author": "pseudometa",
-   "fundingUrl": "https://ko-fi.com/pseudometa",
-   "authorUrl": "https://github.com/chrisgrieser/shimmering-focus",
+	"name": "Shimmering Focus",
+	"version": "3.511",
+	"minAppVersion": "1.3.1",
+	"author": "pseudometa",
+	"fundingUrl": "https://ko-fi.com/pseudometa",
+	"authorUrl": "https://github.com/chrisgrieser/shimmering-focus",
 	"helpUrl": "https://github.com/chrisgrieser/shimmering-focus#readme"
 }
