@@ -3863,6 +3863,11 @@ body:not(.show-file-explorer-navigation) .workspace-leaf-content[data-type="file
 	display: none;
 }
 
+/* bold top-level folders */
+.nav-folder.mod-root > .nav-folder-children > .nav-folder > .nav-folder-title {
+	font-weight: 600;
+}
+
 /* ───────────────────────────────────────────────── */
 /* << Outgoing Links & Backlinks
 ──────────────────────────────────────────────────── */
