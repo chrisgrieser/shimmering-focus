@@ -55,7 +55,6 @@ sed -E -i '' "s/badge.*-[[:digit:]]+-/badge\/downloads-$dl-/" ./README.md
 # CHANGELOG
 commits_since_last_publish=$(git log :/publish.. --format="- %cs %s")
 
-echo "### Changelog" >"temp.md"
 echo "$commits_since_last_publish" >>"temp.md"
 cat "Changelog.md" >>"temp.md"
 
