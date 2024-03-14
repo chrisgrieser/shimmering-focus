@@ -5853,9 +5853,9 @@ settings:
     description: Enable this to drag and drop items to the vault root.
     default: false
   - id: show-file-explorer-navigation
-    title: Re-enable Navigation Buttons
+    title: Re-enable buttons
     type: class-toggle
-    description: "The navigation buttons are the buttons for new file, new folder, and sorting. You can do the former two without the buttons via the context menu."
+    description: "The buttons for new file, new folder, and sorting. You can do the former two without the buttons by right-clicking a folder."
     default: false
   - # <<< Status Bar (+)
     id: show-hide-statusbar-elements
