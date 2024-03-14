@@ -72,12 +72,18 @@ git pull && git push 2>&1
 # INFO specific to my setup
 
 if [[ "$OSTYPE" =~ "darwin" ]]; then
+	# switch back to symlink
 	cd "$VAULT_PATH/.obsidian/themes/Shimmering Focus/" || return 1
+	cp "$CSS_PATH" "fallback.css"     # copy theme file for fallback
+	ln -sf "fallback.css" "theme.css" # re-create symlink
+
+	cd "$PHD_DATA_VAULT/.obsidian/themes/Shimmering Focus/" || return 1
+	cp "$CSS_PATH" "fallback.css"     
+	ln -sf "fallback.css" "theme.css" 
 
 	# confirmation sound
 	afplay "/System/Library/Components/CoreAudio.component/Contents/SharedSupport/SystemSounds/siri/jbl_confirm.caf" & # codespell-ignore
 
-	cp "$CSS_PATH" "fallback.css"     # copy theme file for fallback
-	ln -sf "fallback.css" "theme.css" # re-create symlink
-	rm -rf "$script_dir"              # delete this repo folder
+	# delete this repo folder
+	rm -rf "$script_dir"              
 fi

@@ -16,14 +16,16 @@ vim.api.nvim_create_autocmd(
 	{ "InsertLeave", "TextChanged", "BufLeave", "FocusLost" },
 	{
 		buffer = 0,
+		group = vim.api.nvim_create_augroup("shimmering-focus-hot-reload", {}),
 		callback = function(ctx)
-			local cssPath = vim.env.VAULT_PATH
-				.. "/.obsidian/themes/Shimmering Focus/theme.css"
+			local cssPath1 = vim.env.VAULT_PATH .. "/.obsidian/themes/Shimmering Focus/theme.css"
+			local cssPath2 = vim.env.PHD_DATA_VAULT .. "/.obsidian/themes/Shimmering Focus/theme.css"
 			local debounce = ctx.event == "FocusLost" and 0 or 2000 -- save at once on focus loss
-			vim.b.saveQueued = true
+			vim.b.touchQueued = true
 			vim.defer_fn(function()
-				fn.system({ "touch", "-h", cssPath })
-				vim.b.saveQueued = false
+				if vim.loop.fs_stat(cssPath1) then fn.system({ "touch", "-h", cssPath1 }) end
+				if vim.loop.fs_stat(cssPath2) then fn.system({ "touch", "-h", cssPath2 }) end
+				vim.b.touchQueued = false
 			end, debounce)
 		end,
 	}
