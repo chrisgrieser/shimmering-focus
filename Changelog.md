@@ -1,3 +1,4 @@
+- 2024-03-14 feat: heading background (can be disabled in style settings) (#211)
 
 - 2024-03-12 improv(file-explorer): top-level folders in bold
 - 2024-03-12 ci: fix 'Changelog' heading
