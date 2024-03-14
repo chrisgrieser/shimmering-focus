@@ -1,3 +1,5 @@
+- 2024-03-14 build: add 2nd vault & improve hot reloading
+- 2024-03-14 improv: tweak heading bg color
 - 2024-03-14 feat: heading background (can be disabled in style settings) (#211)
 
 - 2024-03-12 improv(file-explorer): top-level folders in bold
