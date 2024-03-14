@@ -1,7 +1,7 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS
 by @pseudometa
-Version 3.516
+Version 3.517
 MIT License
 https://github.com/chrisgrieser/shimmering-focus
 ──────────────────────────────────────────────────── */
@@ -291,7 +291,7 @@ body {
 	--bg-sat: 0%;
 }
 
-/* <<< GAMMA COLOR SCHEME */
+/* <<< gamma color scheme */
 .theme-light {
 	--bg-sat: 25%;
 	--bg-hue: var(--bg-hue-light);
@@ -1644,8 +1644,16 @@ body:not(.no-lp-heading-level-indicator) .is-live-preview .cm-line:not(.cm-activ
 }
 
 body:not(.no-lp-heading-level-indicator) .is-live-preview .cm-header~.cm-header::before {
-	display: none;
 	/* FIX only first header element gets the prefix */
+	display: none;
+}
+
+/* >>> Headers with background colors */
+
+
+.HyperMD-header {
+	background-color: var(--bg5);
+	padding-top: 0;
 }
 
 /* ───────────────────────────────────────────────── */
