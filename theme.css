@@ -1196,11 +1196,6 @@ body .markdown-preview-view *:not(pre)>code,
 	background-color: var(--bg2);
 }
 
-/* interaction with headers with bg */
-body:not(.no-heading-bg) .markdown-source-view .cm-line .cm-inline-code.cm-header.cm-header.cm-header {
-	background-color: unset;
-}
-
 /* interaction with blockquotes */
 .markdown-preview-view blockquote>*:not(pre)>code,
 .cm-quote.cm-inline-code.cm-inline-code.cm-inline-code.cm-inline-code.cm-inline-code {
@@ -1648,11 +1643,15 @@ body:not(.no-lp-heading-level-indicator) .is-live-preview .cm-header~.cm-header:
 	display: none;
 }
 
-/* >>> Headers with background colors */
-
-
-.HyperMD-header {
+/* <<< Headers with background colors */
+body:not(no-heading-background) .markdown-source-view .cm-line.HyperMD-header,
+body:not(no-heading-background) .markdown-preview-view :is(h1, h2, h3, h4, h5, h6) {
 	background-color: var(--bg5);
+	border: var(--thin-border);
+	border-radius: var(--radius-s);
+	padding-left: 6px;
+
+	/* remove padding of first heading */
 	padding-top: 0;
 }
 
@@ -2630,7 +2629,6 @@ body .frontmatter-container .frontmatter-alias,
 .mod-root .metadata-container {
 	padding: 0;
 	margin-top: 0.5em;
-	margin-bottom: 0;
 	margin-left: 4px;
 	font-family: var(--font-interface);
 	background-color: var(--bg2);
@@ -5975,6 +5973,10 @@ settings:
   - id: no-alternating-header-colors
     title: "Headings: No Alternating Colors"
     description: Do not colorize odd heading levels (h1, h3, h5).
+    type: class-toggle
+    default: false
+  - id: no-heading-background
+    title: "Headings: Disable background"
     type: class-toggle
     default: false
   - id: no-lp-heading-level-indicator
