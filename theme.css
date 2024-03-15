@@ -1644,8 +1644,8 @@ body:not(.no-lp-heading-level-indicator) .is-live-preview .cm-header~.cm-header:
 }
 
 /* <<< Headers with background colors */
-body:not(no-heading-background) .markdown-source-view .cm-line.HyperMD-header,
-body:not(no-heading-background) .markdown-preview-view :is(h1, h2, h3, h4, h5, h6) {
+body:not(.no-heading-background) .markdown-source-view .cm-line.HyperMD-header,
+body:not(.no-heading-background) .markdown-preview-view :is(h1, h2, h3, h4, h5, h6) {
 	background-color: var(--bg4);
 	border: var(--thin-border);
 	border-radius: var(--radius-s);
