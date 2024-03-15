@@ -1,3 +1,4 @@
+- 2024-03-15 chore: hot-reloading repos read from csv
 
 - 2024-03-15 fix: style setting for disabling heading backgrounds
 - 2024-03-14 build: add 2nd vault & improve hot reloading
