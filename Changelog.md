@@ -1,3 +1,4 @@
+- 2024-03-19 build: fix symlink switch
 
 - 2024-03-15 chore: hot-reloading repos read from csv
 
