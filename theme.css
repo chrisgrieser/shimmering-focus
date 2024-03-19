@@ -5,7 +5,7 @@ Version 3.522
 MIT License
 https://github.com/chrisgrieser/shimmering-focus
 ──────────────────────────────────────────────────── */
-
+/**/
 /* ───────────────────────────────────────────────── */
 /* < Globally Disabled Stylelint Rules
 ──────────────────────────────────────────────────── */
@@ -3870,7 +3870,7 @@ body:not(.show-file-explorer-navigation) .workspace-leaf-content[data-type="file
 }
 
 /* bold top-level folders */
-.nav-folder.mod-root > .nav-folder-children > .nav-folder > .nav-folder-title {
+.nav-folder.mod-root>.nav-folder-children>.nav-folder>.nav-folder-title {
 	font-weight: 600;
 }
 

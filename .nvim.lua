@@ -21,7 +21,7 @@ vim.api.nvim_create_autocmd(
 			local debounce = ctx.event == "FocusLost" and 0 or 2000 -- save at once on focus loss
 			vim.b.touchQueued = true
 
-			local permaRepos = os.getenv("HOME") .. "/perma-repos.csv"
+			local permaRepos = os.getenv("HOME") .. "/.config/perma-repos.csv"
 			for line in io.lines(permaRepos) do
 				local name, path, _, _ = line:match("^(.-),(.-),(.-),(.-)$")
 				if name:find("[Vv]ault") then
