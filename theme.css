@@ -5,7 +5,7 @@ Version 3.522
 MIT License
 https://github.com/chrisgrieser/shimmering-focus
 ──────────────────────────────────────────────────── */
-/**/
+
 /* ───────────────────────────────────────────────── */
 /* < Globally Disabled Stylelint Rules
 ──────────────────────────────────────────────────── */
@@ -4617,15 +4617,18 @@ body:not(.no-pandoc-citation-emphasis) .pandoc-citation.pandoc-citation.is-unres
 /* REFERENCE LIST */
 .pwc-no-content {
 	padding: var(--size-4-2) var(--size-4-3);
+	outline: 2px solid red !important; /* ❗ */
 }
 
 .pwc-reference-list .csl-entry-wrapper.csl-entry-wrapper {
 	padding: 0 2px;
 	border: none;
+	outline: 2px solid red !important; /* ❗ */
 }
 
 .pwc-reference-list {
 	--bibliography-indent: 1.1em;
+	outline: 2px solid red !important; /* ❗ */
 }
 
 .pwc-reference-list.pwc-reference-list.pwc-reference-list.pwc-reference-list .pwc-reference-list__title.pwc-reference-list__title>div {
@@ -4634,24 +4637,33 @@ body:not(.no-pandoc-citation-emphasis) .pandoc-citation.pandoc-citation.is-unres
 	font-family: var(--font-heading-theme);
 	font-size: var(--h4-size);
 	letter-spacing: calc(var(--heading-letter-spacing) * 0.5);
+	outline: 2px solid red !important; /* ❗ */
 }
 
 body .pwc-reference-list .csl-entry.csl-entry.csl-entry {
 	padding-left: calc(var(--bibliography-indent) + 6px);
 	line-height: var(--line-height-tight);
 	text-indent: calc(var(--bibliography-indent) * -1);
+	outline: 2px solid red !important; /* ❗ */
 }
 
 .pwc-reference-list.collapsed-links.collapsed-links a::after {
 	background-color: var(--text-accent);
+	outline: 2px solid red !important; /* ❗ */
 }
 
 .pwc-reference-list.collapsed-links.collapsed-links a:hover::after {
 	background-color: var(--icon-color-hover);
+	outline: 2px solid red !important; /* ❗ */
 }
 
 .pwc-reference-list:not(:hover) .pwc-copy-list {
 	opacity: 0;
+
+}
+h1 {
+
+	outline: 2px solid red !important; /* ❗ */
 }
 
 .pwc-copy-list svg {

@@ -11,30 +11,33 @@ end
 --------------------------------------------------------------------------------
 -- HOT-RELOADING
 
+local permaRepos = os.getenv("HOME") .. "/.config/perma-repos.csv"
+local themeFiles = {}
+for line in io.lines(permaRepos) do
+	local name, path, _, _ = line:match("^(.-),(.-),(.-),(.-)$")
+	if name:find("[Vv]ault") then
+		local cssPath = vim.fs.normalize(path .. "/.obsidian/themes/Shimmering Focus/theme.css")
+		table.insert(themeFiles, cssPath)
+	end
+end
+
 -- touch symlink on filechange, to trigger Obsidian's hot-reload
+local group = vim.api.nvim_create_augroup("shimmering-focus-hot-reload", {})
 vim.api.nvim_create_autocmd(
 	{ "InsertLeave", "TextChanged", "BufLeave", "FocusLost" },
 	{
 		buffer = 0,
-		group = vim.api.nvim_create_augroup("shimmering-focus-hot-reload", {}),
+		group = group,
 		callback = function(ctx)
 			local debounce = ctx.event == "FocusLost" and 0 or 2000 -- save at once on focus loss
 			vim.b.touchQueued = true
 
-			local permaRepos = os.getenv("HOME") .. "/.config/perma-repos.csv"
-			for line in io.lines(permaRepos) do
-				local name, path, _, _ = line:match("^(.-),(.-),(.-),(.-)$")
-				if name:find("[Vv]ault") then
-					local cssPath = path
-						.. "/.obsidian/themes/Shimmering Focus/theme.css"
-					if vim.loop.fs_stat(cssPath) then
-						vim.defer_fn(function()
-							fn.system({ "touch", "-h", cssPath })
-							vim.b.touchQueued = false
-						end, debounce)
-					end
+			vim.defer_fn(function()
+				for _, themeFile in pairs(themeFiles) do
+					fn.system({ "touch", "-h", themeFile })
 				end
-			end
+				vim.b.touchQueued = false
+			end, debounce)
 		end,
 	}
 )
