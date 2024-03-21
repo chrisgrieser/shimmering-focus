@@ -1,3 +1,6 @@
+- 2024-03-21 improv(outline): use only hidden or compact buttons
+- 2024-03-21 Merge pull request #296 from cotneit/outline-plugin-controls
+- 2024-03-21 feat: outline plugin setting
 - 2024-03-19 build: fix symlink switch
 
 - 2024-03-15 chore: hot-reloading repos read from csv
