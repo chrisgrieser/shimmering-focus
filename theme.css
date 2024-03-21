@@ -4021,8 +4021,25 @@ body:not(.classic-inline-backlinks) :is(.writing, .longform-leaf) .embedded-back
 	background-color: transparent;
 }
 
-body:not(show-outline-buttons) .workspace-leaf-content[data-type="outline"] .nav-header {
+body:not(.show-outline-buttons) .workspace-leaf-content[data-type="outline"] .nav-header {
 	display: none;
+}
+
+body.always-show-outline-searchbar .workspace-leaf-content[data-type="outline"] .nav-header {
+	display: flex;
+	flex-direction: row-reverse;
+	justify-content: space-between;
+}
+
+/* hide search button */
+body.always-show-outline-searchbar .workspace-leaf-content[data-type="outline"] .nav-buttons-container > :first-child {
+	display: none;
+}
+
+body.always-show-outline-searchbar .workspace-leaf-content[data-type="outline"] .search-input-container {
+	display: block !important;
+	flex-grow: 1;
+	margin: 4px 0;
 }
 
 /* ───────────────────────────────────────────────── */
@@ -6261,11 +6278,19 @@ settings:
     description: By default, the sidebar for outgoing links and backlinks are reduced to linked mentions only. Enable this setting to restore their original display.
     type: class-toggle
     default: false
-  - id: show-outline-buttons
-    title: Show Outline Buttons
-    description: By default, the outline plugin buttons for collapsing, expanding, and searching headings is hidden. Enable this setting to show them again.
-    type: class-toggle
-    default: false
+  - id: outline-controls
+    title: Outline Controls
+    description: By default, the outline plugin buttons for collapsing, expanding, and searching headings are hidden.
+    type: class-select
+    allowEmpty: false
+    default: none
+    options:
+      - label: Hidden
+        value: none
+      - label: Show Buttons
+        value: show-outline-buttons
+      - label: Show Searchbar and Collapse Button
+        value: always-show-outline-searchbar
   - id: classic-inline-backlinks
     title: Use Normal Inline Backlinks
     description: By default, the inline-backlinks are displayed in a more minimalistic manner. Enable this setting to restore original display of backlinks. This also affects the Influx Plugin.
