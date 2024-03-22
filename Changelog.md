@@ -1,3 +1,4 @@
+- 2024-03-22 improv: another quick switcher prompt styling
 - 2024-03-22 feat(longform): separate settings for background hue in dark/light mode
 - 2024-03-21 improv(outline): use only hidden or compact buttons
 - 2024-03-21 Merge pull request #296 from cotneit/outline-plugin-controls
