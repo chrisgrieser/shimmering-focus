@@ -279,7 +279,8 @@ https://www.youtube.com/watch?v=yl0pvIRTWWo&t=7s */
 
 /* default values, changed via style settings */
 body {
-	--longform-bg-hue: 200;
+	--longform-bg-hue-dark: 200;
+	--longform-bg-hue-light: 200;
 	--bg-hue-light: 230;
 	--bg-hue-dark: 230;
 }
@@ -4032,7 +4033,7 @@ body:not(.show-outline-buttons) .workspace-leaf-content[data-type="outline"] .na
 }
 
 /* hide search button */
-.show-outline-buttons .workspace-leaf-content[data-type="outline"] .nav-buttons-container > :first-child {
+.show-outline-buttons .workspace-leaf-content[data-type="outline"] .nav-buttons-container> :first-child {
 	display: none;
 }
 
@@ -4778,7 +4779,7 @@ body .view-content .style-settings-container .setting-item:not(.setting-item-hea
 ──────────────────────────────────────────────────── */
 
 /* hide background hue sliders when using macOS look */
-.mac-os-native .setting-item:is([data-id="bg-hue-light"], [data-id="bg-hue-dark"], [data-id="longform-bg-hue"]) {
+.mac-os-native .setting-item:is([data-id="bg-hue-light"], [data-id="bg-hue-dark"], [data-id="longform-bg-hue-dark"], [data-id="longform-bg-hue-light"]) {
 	display: none;
 }
 
@@ -4853,13 +4854,13 @@ body .setting-item.setting-item.setting-item.setting-item[data-id="author-info"]
 			hsl(360 var(--hue-slider-sat) var(--hue-slider-br)));
 }
 
-.style-settings-container .setting-item:is([data-id="highlight-hue-1"], [data-id^="bg-hue"]) input.slider {
+.style-settings-container .setting-item:is([data-id="highlight-hue-1"], [data-id^="bg-hue"], [data-id^="longform-bg-hue"]) input.slider {
 	height: 0.8em;
 	background: var(--hue-scale);
 	border-radius: var(--radius-xs);
 }
 
-.style-settings-container .setting-item:is([data-id="highlight-hue-1"], [data-id^="bg-hue"]) input.slider::-webkit-slider-thumb {
+.style-settings-container .setting-item:is([data-id="highlight-hue-1"], [data-id^="bg-hue"], [data-id^="longform-bg-hue"]) input.slider::-webkit-slider-thumb {
 	position: relative;
 	top: -0.7em;
 	width: 0.4em;
@@ -4868,14 +4869,9 @@ body .setting-item.setting-item.setting-item.setting-item[data-id="author-info"]
 	border-radius: var(--radius-xs);
 }
 
-/* disable numbered sliders */
-.style-settings-container .setting-item:is([data-id="highlight-hue-1"], [data-id^="bg-hue"]) input::before,
-.style-settings-container .setting-item:is([data-id="highlight-hue-1"], [data-id^="bg-hue"]) input::after {
-	display: none;
-}
-
 /* DEMO COLOR BOX */
-.style-settings-container .setting-item:is([data-id="longform-bg-hue"], [data-id="highlight-hue-1"]) .setting-item-control::before {
+.style-settings-container .setting-item[data-id="highlight-hue-1"] .setting-item-control::before {
+	content: " ";
 	position: relative;
 	left: -3em;
 	width: 1.6em;
@@ -4884,14 +4880,8 @@ body .setting-item.setting-item.setting-item.setting-item[data-id="author-info"]
 	color: var(--text-normal);
 	text-align: center;
 	white-space: pre-wrap;
-	content: " ";
 	border: var(--thin-border);
 	border-radius: var(--radius-s);
-}
-
-.style-settings-container .setting-item[data-id="longform-bg-hue"] .setting-item-control::before {
-	background-color: var(--longform-bg);
-	filter: saturate(1.7);
 }
 
 .style-settings-container .setting-item[data-id="highlight-hue-1"] .setting-item-control::before {
@@ -5440,11 +5430,11 @@ button.longform-remove-step-button.longform-remove-step-button.longform-remove-s
 
 /* stylelint-disable no-duplicate-selectors */
 .theme-light {
-	--longform-bg: hsl(var(--longform-bg-hue) calc(var(--bg-sat) * 1.7) 96%);
+	--longform-bg: hsl(var(--longform-bg-hue-light) calc(var(--bg-sat) * 1.7) 96%);
 }
 
 .theme-dark {
-	--longform-bg: hsl(var(--longform-bg-hue) var(--bg-sat) 12%);
+	--longform-bg: hsl(var(--longform-bg-hue-dark) var(--bg-sat) 12%);
 }
 
 /* stylelint-enable no-duplicate-selectors */
@@ -6213,7 +6203,7 @@ settings:
     type: variable-text
     default: '"Garamond", "Times New Roman", serif'
   - id: longform-font-size
-    title: Font Size in longform/writing notes
+    title: Font Size
     type: variable-number-slider
     default: 1.2
     min: 0.7
@@ -6221,30 +6211,38 @@ settings:
     step: 0.05
     format: rem
   - id: longform-base-line-height
-    title: Line Height in longform/writing notes
+    title: Line Height
     type: variable-number-slider
     default: 1
     min: 0.8
     max: 1.5
     step: 0.05
   - id: longform-letter-spacing
-    title: Letter Spacing in longform/writing notes
+    title: Letter Spacing
     type: variable-number-slider
     default: 0
     min: -0.5
     max: 0.5
     step: 0.05
     format: px
-  - id: longform-bg-hue
-    title: Background Color Tone (Hue)
-    description: Use this setting to visually distinguish your longform and writing notes from the rest of your vault.
+  - id: longform-bg-hue-dark
+    title: Background Color Tone (Dark Mode)
+    description: Hue of the background color for longform/writing notes. Use this setting to visually distinguish your longform and writing notes from the rest of your vault.
+    type: variable-number-slider
+    default: 200
+    min: 0
+    max: 360
+    step: 5
+  - id: longform-bg-hue-light
+    title: Background Color Tone (Light Mode)
+    description: Hue of the background color for longform/writing notes. Use this setting to visually distinguish your longform and writing notes from the rest of your vault.
     type: variable-number-slider
     default: 200
     min: 0
     max: 360
     step: 5
   - id: wordcount-only-when-writing
-    title: "Status Bar: Show Word Count *only* when longform/writing note is open"
+    title: "Status Bar: Show Word Count only when longform/writing note is open"
     description: ⚠️ Requires Obsidian installer version 1.1.9 or later. Works for the Word Count Core Plugin and the Better Word Count Community Plugin.
     type: class-toggle
     default: false
