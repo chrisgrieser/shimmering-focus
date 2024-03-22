@@ -1,7 +1,7 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS
 by @pseudometa
-Version 3.527
+Version 3.528
 MIT License
 https://github.com/chrisgrieser/shimmering-focus
 ──────────────────────────────────────────────────── */
@@ -3169,7 +3169,6 @@ input.prompt-input.prompt-input {
 	box-shadow: var(--input-shadow);
 }
 
-/* hide placeholder, except for templater where the prompts contain information */
 .prompt .prompt-input[placeholder^="Select a command"]::placeholder {
 	color: transparent;
 }
@@ -3186,7 +3185,6 @@ input.prompt-input.prompt-input {
 
 .suggestion-item :is(.suggestion-note, .suggestion-prefix) {
 	font-size: var(--font-small);
-	/* font-style: italic; */
 	color: var(--text-gray);
 }
 
