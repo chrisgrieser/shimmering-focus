@@ -4381,19 +4381,19 @@ body .cm-matched-string {
 
 .another-quick-switcher__directory_item::before,
 .another-quick-switcher__item__icon,
-body .another-quick-switcher__status__search-command,
 .another-quick-switcher__item__directory svg {
 	display: none;
 }
 
 body .another-quick-switcher__status__count-input {
-	top: 1rem;
+	top: 2.25rem;
 	right: 1rem;
-	color: var(--text-gray);
+	color: var(--text-faint);
 }
 
-.another-quick-switcher__phantom_item::before {
-	display: none;
+.another-quick-switcher__status__search-command {
+	padding-right: 4px;
+	padding-top: 4px;
 }
 
 .another-quick-switcher__item__description.another-quick-switcher__item__description {
