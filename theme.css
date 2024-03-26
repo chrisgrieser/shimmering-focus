@@ -2054,22 +2054,26 @@ body:not(.no-image-alttext-caption) .image-embed[alt]:not([alt$=".png"], [alt$="
 	content: attr(alt);
 }
 
-.view-content img[src]:not(.emoji, .link-favicon) {
-	border: var(--thin-muted-border);
-	border-radius: var(--radius-s);
-}
-
-/* centers image and image caption */
-.image-embed[alt]::after {
+/* centers image caption */
+body:not(.no-image-alttext-caption) .image-embed::after {
 	display: block;
 	text-align: center;
 }
 
 /* .emoji class are Twitter Images for Emojis from Emoji Toolbar */
-.view-content img:not(.emoji) {
+.view-content img[src]:not(.emoji, .link-favicon) {
+	border: var(--thin-muted-border);
+	border-radius: var(--radius-s);
+}
+
+/* center image */
+.markdown-source-view.mod-cm6 .cm-content > img,
+.view-content .image-embed img:not(.emoji) {
 	display: block;
-	margin-right: auto;
-	margin-left: auto;
+	/* stylelint-disable-next-line declaration-no-important */
+	margin-right: auto !important;
+	/* stylelint-disable-next-line declaration-no-important */
+	margin-left: auto !important;
 }
 
 /* ───────────────────────────────────────────────── */
@@ -6098,7 +6102,7 @@ settings:
     default: false
   - id: no-image-alttext-caption
     title: "Images: No alt-text as caption"
-    description: "By default, the alt-text of images is used as image caption in Reading Mode."
+    description: By default, the theme adds the alt-text/filename of an image as caption (except when the image is named "Pasted image…")
     type: class-toggle
     default: false
   - id: image-size
