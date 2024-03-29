@@ -3,6 +3,19 @@ description: File a bug report
 title: "[Bug]: "
 labels: ["bug"]
 body:
+  - type: checkboxes
+    id: checklist
+    attributes:
+      label: Checklist
+      options:
+        - label: I updated to the latest version of the theme (Settings → Appearance → Check for updates).
+          required: true
+        - label: I made sure that the issue is related to this theme by checking that the problem does *not* occur with the default theme.
+          required: true
+        - label: In case I am missing an UI element, I have checked that it cannot be re-enabled with the [Style Settings plugin](https://github.com/mgmeyers/obsidian-style-settings).
+          required: true
+        - label: This issue concerns the theme in general and is not related to a specific plugin, for which there [is the plugin-support form](https://github.com/chrisgrieser/shimmering-focus/issues/new?template=plugin_support.yml).
+          required: true
   - type: textarea
     id: bug-description
     attributes:
@@ -35,7 +48,8 @@ body:
       label: Sample Text
       description: If the problem occurs inside the editor, please provide the markdown text with which you have the issue.
       placeholder: |
-        #tag
+        ## a heading
+        ## another heading
 
         ```sh
         code block
@@ -74,20 +88,3 @@ body:
         - label: Windows
         - label: iOS
         - label: Android
-  - type: checkboxes
-    id: checklist
-    attributes:
-      label: Checklist
-      options:
-        - label: I updated to the latest version of the theme (Settings → Appearance → Check for updates).
-          required: true
-        - label: If your installer version is much lower your app version, you should update it by re-downloading Obsidian from [the Obsidian website](https://obsidian.md/). The installer version can be seen in the Obsidian settings (About → App → Installer Version).
-          required: true
-        - label: I made sure that the issue is related to this theme by checking that the problem does *not* occur with the default theme.
-          required: true
-        - label: In case I am missing an UI element, I have checked that it cannot be re-enabled with the [Style Settings plugin](https://github.com/mgmeyers/obsidian-style-settings).
-          required: true
-        - label: My issue concerns Obsidian version 1.0+ and I am not using the Legacy Editor (CM5). (Older Obsidian versions and the Legacy Editor are not supported by this theme anymore.)
-          required: true
-        - label: This issue concerns the theme in general and is not related to a specific plugin, for which there [is the plugin-support form](https://github.com/chrisgrieser/shimmering-focus/issues/new?template=plugin_support.yml).
-          required: true
