@@ -3,6 +3,17 @@ description: Suggestions regarding the theme in general
 title: "Feature Request: "
 labels: ["feature request"]
 body:
+  - type: checkboxes
+    id: checklist
+    attributes:
+      label: Checklist
+      options:
+        - label: I updated to the latest version of the theme (Settings → Appearance → Check for updates).
+          required: true
+        - label: The feature would be useful to more users than just me. (If it's only relevant to you, have you considered using a [CSS Snippet](https://help.obsidian.md/How+to/Add+custom+styles.md#Use+Themes+and/or+CSS+snippets)?)
+          required: true
+        - label: This issue concerns the theme in general and is not related to a specific plugin, for which there [is the plugin-support form](https://github.com/chrisgrieser/shimmering-focus/issues/new?template=plugin_support.yml).
+          required: true
   - type: textarea
     id: feature-requested
     attributes:
@@ -15,16 +26,3 @@ body:
     attributes:
       label: Relevant Screenshot
       description: If applicable, add screenshots or a screen recording to help explain the request.
-  - type: checkboxes
-    id: checklist
-    attributes:
-      label: Checklist
-      options:
-        - label: I updated to the latest version of the theme (Settings → Appearance → Check for updates).
-          required: true
-        - label: The feature would be useful to more users than just me. (If it's only relevant to you, have you considered using a [CSS Snippet](https://help.obsidian.md/How+to/Add+custom+styles.md#Use+Themes+and/or+CSS+snippets)?)
-          required: true
-        - label: My issue concerns Obsidian version 1.0+ and I am not using the Legacy Editor. (Older Obsidian versions and the Lecacy Editor are not supported anymore.)
-          required: true
-        - label: This issue concerns the theme in general and is not related to a specific plugin, for which there [is the plugin-support form](https://github.com/chrisgrieser/shimmering-focus/issues/new?template=plugin_support.yml).
-          required: true
