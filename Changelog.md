@@ -1,3 +1,4 @@
+
 - 2024-03-26 fix(images): center also external images
 
 - 2024-03-22 improv: another quick switcher prompt styling
