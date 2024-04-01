@@ -4884,9 +4884,6 @@ body .setting-item.setting-item.setting-item.setting-item[data-id="author-info"]
 	white-space: pre-wrap;
 	border: var(--thin-border);
 	border-radius: var(--radius-s);
-}
-
-.style-settings-container .setting-item[data-id="highlight-hue-1"] .setting-item-control::before {
 	background-color: hsl(var(--highlight-hue-1) var(--highlight-sla-values));
 }
 
@@ -4955,99 +4952,6 @@ body .dataview:not(.task-list-item-checkbox):hover {
 /* <<< dataview cssclasses */
 .remove-dataview-title :is(.block-language-dataview, .block-language-dataviewjs) h4 {
 	display: none;
-}
-
-/* ───────────────────────────────────────────────── */
-/* << Breadcrumbs
-──────────────────────────────────────────────────── */
-/* (currently only matrix) */
-
-.BC-Matrix.BC-Matrix.BC-Matrix ol>li {
-	padding: var(--size-4-1);
-	margin: 0;
-	line-height: 1.2;
-}
-
-.BC-Matrix ol>li::marker {
-	content: none;
-}
-
-/* links */
-.BC-Matrix.BC-Matrix.BC-Matrix ol>li:hover {
-	cursor: var(--cursor-link);
-	background-color: var(--nav-item-background-hover);
-}
-
-.BC-Matrix.BC-Matrix ol>li .BC-Link {
-	font-family: var(--font-interface-theme);
-	font-size: var(--nav-item-size);
-	color: var(--nav-item-color);
-}
-
-.BC-Matrix.BC-Matrix ol>li:hover .BC-Link {
-	color: var(--nav-item-color-hover);
-}
-
-.BC-Matrix.BC-Matrix.BC-Matrix.BC-Matrix ol>li .BC-Link {
-	text-decoration: none;
-}
-
-.BC-Link.is-unresolved.is-unresolved.is-unresolved {
-	color: var(--link-unresolved-color);
-	opacity: var(--link-unresolved-opacity);
-}
-
-/* hide headings in Breadcrumbs */
-.BC-Matrix-headers.BC-Matrix-headers.BC-Matrix-headers.BC-Matrix-headers {
-	display: none;
-}
-
-.workspace-leaf-content[data-type="BC-matrix"]>.view-content {
-	padding-top: 0;
-}
-
-.BC-Matrix-square.BC-Matrix-square.BC-Matrix-square.BC-Matrix-square.BC-Matrix-square:first-child {
-	padding-top: 0;
-}
-
-/* overscroll */
-.BC-Matrix-square.BC-Matrix-square.BC-Matrix-square.BC-Matrix-square.BC-Matrix-square:last-child {
-	margin-bottom: 20px;
-}
-
-.view-content .BC-Matrix .BC-Matrix-square ol {
-	padding-left: 0;
-	margin: 0;
-}
-
-body .app-container .workspace-leaf-content[data-type="BC-matrix"] .view-content {
-	padding: 0 0 3px 2px;
-}
-
-.BC-Matrix-square.BC-Matrix-square.BC-Matrix-square.BC-Matrix-square.BC-Matrix-square {
-	border: none;
-	border-bottom: var(--thin-muted-border);
-}
-
-.BC-Matrix.BC-Matrix.BC-Matrix.BC-Matrix div {
-	margin: 0;
-	border: none;
-}
-
-.BC-Matrix.BC-Matrix.BC-Matrix.BC-Matrix {
-	padding: 0;
-}
-
-.workspace-leaf-content[data-type="BC-matrix"] .view-content button {
-	display: none;
-}
-
-.BC-Matrix-square li {
-	padding-left: var(--size-2-2);
-}
-
-.BC-Matrix-square li:nth-child(even) {
-	background-color: var(--a-row);
 }
 
 /* ───────────────────────────────────────────────── */
@@ -5712,19 +5616,14 @@ core:
 - switcher
 
 community:
-- recent-files-obsidian
-- link-favicon
 - obsidian-floating-toc-plugin
 - various-complements
-- obsidian-electron-window-tweaker
 - obsidian-another-quick-switcher
 - obsidian-dynamic-highlights
 - obsidian-kanban
 - longform
 - oz-image-plugin
 - obsidian-style-settings
-- breadcrumbs
-- obsidian-languagetool-plugin
 - dataview
 - obsidian-pandoc-reference-list
 - obsidian-hider
