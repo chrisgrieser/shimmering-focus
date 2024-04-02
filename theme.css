@@ -2067,7 +2067,7 @@ body:not(.no-image-alttext-caption) .image-embed::after {
 }
 
 /* center image */
-.markdown-source-view.mod-cm6 .cm-content > img,
+.markdown-source-view.mod-cm6 .cm-content>img,
 .view-content .image-embed img:not(.emoji) {
 	display: block;
 	/* stylelint-disable-next-line declaration-no-important */
@@ -2138,11 +2138,11 @@ body:not(.show-close-buttons) .modal-close-button {
 
 /* thicker "community plugins", "hotkey" & "appearance" */
 /* via non-last-child b/c the settings search plugin adds a group in front */
-.vertical-tab-header-group:nth-last-child(3) .vertical-tab-header-group-items .vertical-tab-nav-item:is(:nth-child(3), :nth-child(4), :last-child) {
+.vertical-tab-header-group:nth-last-child(3) .vertical-tab-header-group-items .vertical-tab-nav-item:is(:nth-child(4), :nth-child(5), :last-child) {
 	font-weight: 900;
 }
 
-.theme-dark .vertical-tab-header-group:nth-last-child(3) .vertical-tab-header-group-items .vertical-tab-nav-item:is(:nth-child(3), :nth-child(4), :last-child) {
+.theme-dark .vertical-tab-header-group:nth-last-child(3) .vertical-tab-header-group-items .vertical-tab-nav-item:is(:nth-child(4), :nth-child(5), :last-child) {
 	text-shadow: var(--readability-text-shadow-dark);
 }
 
