@@ -1,5 +1,5 @@
 # Shimmering Focus ⟡
-![Download Count](https://img.shields.io/badge/downloads-154042-6E4E9B?style=plastic&logo=obsidian&color=%23483699)
+![Download Count](https://img.shields.io/badge/downloads-154044-6E4E9B?style=plastic&logo=obsidian&color=%23483699)
 ![Last Commit](https://img.shields.io/github/last-commit/chrisgrieser/shimmering-focus?style=plastic)
 ![Changelog](https://img.shields.io/badge/changelog-here-6E4E9B?style=plastic&color=%23f6c66f)
 
