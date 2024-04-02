@@ -1,3 +1,6 @@
+- 2024-04-02 fix: alignment of checkboxes in properties
+- 2024-04-02 break: drop support for frontmatter pre Obsidian 1.4
+- 2024-04-02 build: nicer changelog formatting
 - 2024-04-02 **fix(settings)**: add bold to correct menu items
 - 2024-03-26 **fix(images)**: center also external images
 - 2024-03-22 **improv**: another quick switcher prompt styling
