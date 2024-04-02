@@ -2550,7 +2550,7 @@ input[type="range"]::after {
 }
 
 /* ───────────────────────────────────────────────── */
-/* << Frontmatter / Metadata Block
+/* << Frontmatter / Metadata / Properties
 ──────────────────────────────────────────────────── */
 
 /* SOURCE VIEW */
@@ -2590,47 +2590,7 @@ input[type="range"]::after {
 	font-weight: 500;
 	color: var(--secondary-accent);
 }
-
-/* READING VIEW before 1.4.0 */
-.frontmatter-container {
-	padding: var(--size-4-2) var(--size-4-3);
-	background-color: var(--bg2);
-	border: var(--thin-border);
-	border-radius: var(--radius-s);
-}
-
-.frontmatter-container-header.frontmatter-container-header {
-	display: none;
-}
-
-.frontmatter-alias-icon>svg {
-	color: var(--text-faint);
-}
-
-.frontmatter-alias.frontmatter-alias {
-	white-space: pre-wrap;
-}
-
-body .frontmatter-container .frontmatter-alias,
-.frontmatter-section-label,
-.frontmatter-section-tags .tag,
-.frontmatter-section-data-item {
-	font-size: var(--font-small);
-	line-height: 1.2;
-}
-
-.frontmatter-section-label {
-	font-weight: 500;
-	color: var(--text-accent);
-}
-
-.frontmatter-container .frontmatter-section-tags {
-	column-gap: var(--size-4-3);
-}
-
-/* ───────────────────────────────────────────────── */
-/* << NEW Metadata Block (since 1.4)
-──────────────────────────────────────────────────── */
+/* PROPERTIES */
 .mod-root .metadata-container {
 	padding: 0;
 	margin-top: 0.5em;
