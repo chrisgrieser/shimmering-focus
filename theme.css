@@ -996,7 +996,7 @@ body:not(.annotation-tags-off) :is(.cm-hashtag-end.cm-tag-example, .tag[href="#e
 }
 
 /* ───────────────────────────────────────────────── */
-/* << Tasks
+/* << Tasks (Checkboxes)
 ──────────────────────────────────────────────────── */
 /* most styling in form of changed --checkbox variables */
 
@@ -2725,6 +2725,11 @@ body .metadata-property:hover {
 
 .metadata-link {
 	padding: 0;
+}
+
+/* checkbox in metadata */
+input[type=checkbox].metadata-input-checkbox {
+	margin-left: 2px;
 }
 
 /* ───────────────────────────────────────────────── */
