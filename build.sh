@@ -55,11 +55,9 @@ sed -E -i '' "s/badge.*-[[:digit:]]+-/badge\/downloads-$dl-/" ./README.md
 # CHANGELOG
 commits_since_last_publish=$(git -C "$script_dir" log :/publish.. --format="- %cs %s")
 
-echo "$commits_since_last_publish" >>"temp.md"
-cat "Changelog.md" >>"temp.md"
-
-rm "Changelog.md"
-mv "temp.md" "Changelog.md"
+echo "$commits_since_last_publish" | sed -E "s/^- ([^ ]+): /- **\1**: /" >>"temp.md"
+grep -v "^$" "Changelog.md" >>"temp.md"
+mv -f "temp.md" "Changelog.md"
 
 #───────────────────────────────────────────────────────────────────────────────
 # GIT ADD, COMMIT, PULL, AND PUSH
