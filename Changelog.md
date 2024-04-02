@@ -1,3 +1,4 @@
+- 2024-04-02 fix(settings): add bold to correct menu items
 
 - 2024-03-26 fix(images): center also external images
 
