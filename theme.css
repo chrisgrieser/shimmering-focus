@@ -3731,6 +3731,11 @@ are not targeted by this */
 	border-radius: 0;
 }
 
+/* hide nav buttons */
+body:not(.show-bookmark-controls) .workspace-leaf-content[data-type="bookmarks"] :is(.nav-buttons-container, .nav-header) {
+	display: none;
+}
+
 /* alternating row colors */
 .bookmarks-container>div>.tree-item:nth-child(odd):not(:hover)>.tree-item-self,
 .bookmarks-container .tree-item-children .tree-item:nth-child(odd):not(:hover) {
@@ -6135,17 +6140,22 @@ settings:
   - # << Plugin-Specific Settings (+)
     id: plugin-specific-settings
     title: ⚙️ Plugin-specific Settings
-    description: Backlinks, Outgoing Links, Outline, Git Gutter
+    description: Bookmarks, Backlinks, Outgoing Links, Outline, Git Gutter
     type: heading
     level: 1
     collapsed: true
+  - id: show-bookmark-controls
+    title: Show Buttons in Bookmark Sidebar
+    description: By default, the bookmark plugin buttons for new bookmarks, new folders, and collapsing are hidden. Enable this setting to show them again.
+    type: class-toggle
+    default: false
   - id: normal-out-back-links
     title: Normal Outgoing Links and Backlinks
     description: By default, the sidebar for outgoing links and backlinks are reduced to linked mentions only. Enable this setting to restore their original display.
     type: class-toggle
     default: false
   - id: show-outline-buttons
-    title: Show Outline Controls
+    title: Show Buttons in Outline Sidebar
     description: By default, the outline plugin buttons for collapsing, expanding, and searching headings are hidden. Enable this setting to show a compact version of them.
     default: false
     type: class-toggle
