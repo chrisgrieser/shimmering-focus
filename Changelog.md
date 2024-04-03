@@ -1,3 +1,4 @@
+- 2024-04-03 fix: alternate row colors for bookmarks
 - 2024-04-03 feat: hide bookmark control buttons (+ setting to re-enable them)
 - 2024-04-02 fix: alignment of checkboxes in properties
 - 2024-04-02 break: drop support for frontmatter pre Obsidian 1.4
