@@ -598,14 +598,14 @@ body {
 }
 
 .theme-light {
-	--a-row: hsla(0 0% 0% / 2.5%);
-	--b-row: hsla(0 0% 0% / 7.5%);
+	--a-row: hsla(0 0% 0% / 3%);
+	--b-row: hsla(0 0% 0% / 8%);
 	--search-match-color: var(--color-orange);
 }
 
 .theme-dark {
-	--a-row: hsla(0 0% 0% / 15%);
-	--b-row: hsla(0 0% 0% / 30%);
+	--a-row: hsla(0 0% 0% / 20%);
+	--b-row: hsla(0 0% 0% / 35%);
 	--search-match-color: var(--color-yellow);
 }
 
@@ -2590,6 +2590,7 @@ input[type="range"]::after {
 	font-weight: 500;
 	color: var(--secondary-accent);
 }
+
 /* PROPERTIES */
 .mod-root .metadata-container {
 	padding: 0;
@@ -2728,7 +2729,7 @@ body .metadata-property:hover {
 }
 
 /* checkbox in metadata */
-input[type=checkbox].metadata-input-checkbox {
+input[type="checkbox"].metadata-input-checkbox {
 	margin-left: 2px;
 }
 
@@ -3723,7 +3724,7 @@ are not targeted by this */
 /* ───────────────────────────────────────────────── */
 /* << Bookmarks
 ──────────────────────────────────────────────────── */
-.bookmarks-container {
+.workspace-leaf-content[data-type="bookmarks"] {
 	padding: 0 0 20px;
 }
 
@@ -3737,8 +3738,7 @@ body:not(.show-bookmark-controls) .workspace-leaf-content[data-type="bookmarks"]
 }
 
 /* alternating row colors */
-.bookmarks-container>div>.tree-item:nth-child(odd):not(:hover)>.tree-item-self,
-.bookmarks-container .tree-item-children .tree-item:nth-child(odd):not(:hover) {
+.workspace-leaf-content[data-type="bookmarks"]>div>div>.tree-item:nth-child(odd) {
 	background-color: var(--a-row);
 }
 
@@ -3748,7 +3748,6 @@ body:not(.show-bookmark-controls) .workspace-leaf-content[data-type="bookmarks"]
 }
 
 /* bookmark icon filled */
-.browser-addressbar-suggestion .svg-icon.lucide-bookmark,
 .workspace-leaf-content .svg-icon.lucide-bookmark {
 	fill: currentcolor;
 }
@@ -3979,7 +3978,6 @@ body:not(.classic-inline-backlinks) :is(.writing, .longform-leaf) .embedded-back
 }
 
 /* alternating row colors */
-/* prevents double-layered row colors */
 .workspace-leaf-content[data-type="outline"]>.view-content>div>.tree-item:nth-child(odd),
 .workspace-leaf-content[data-type="outline"] .tree-item-children .tree-item:nth-child(odd) {
 	background-color: var(--a-row);
