@@ -1,4 +1,4 @@
-
+- 2024-04-08 fix(longform): folding arrows in sidebar to the right
 - 2024-04-03 fix(longform): missing folding arrows
 - 2024-04-03 fix: alternate row colors for bookmarks
 - 2024-04-03 feat: hide bookmark control buttons (+ setting to re-enable them)
