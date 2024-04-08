@@ -5016,6 +5016,10 @@ body .longform-explorer.longform-explorer #scene-list {
 	border-radius: 0;
 }
 
+#scene-list .scene-container>div>div {
+	margin-left: 0;
+}
+
 #scene-list .scene-container[data-scene-indent="0"] {
 	/* stylelint-disable-next-line declaration-no-important */
 	padding-left: 6px !important;
@@ -5088,6 +5092,15 @@ li:nth-child(even) :is(.draft-container, .scene-container) {
 	[data-scene-path*="References" i],
 	[data-scene-path*="Declaration of Conflicting Interests" i]):not(.selected, :hover) :is(div, .longform-scene-number) {
 	color: var(--text-faint);
+}
+
+/* move folding arrows to the right */
+#scene-list .scene-container>div {
+	margin-left: 0;
+}
+
+body #scene-list .scene-container {
+	flex-direction: row-reverse;
 }
 
 /* new scenes */
