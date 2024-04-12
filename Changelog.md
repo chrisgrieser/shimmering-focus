@@ -1,4 +1,6 @@
-
+- 2024-04-12 chore: fix some comments
+- 2024-04-12 fix: inconsistent font sizes between list and text properties
+- 2024-04-12 fix(blockquotes): wrong indentation
 - 2024-04-08 fix(longform): folding arrows in sidebar to the right
 - 2024-04-03 fix(longform): missing folding arrows
 - 2024-04-03 fix: alternate row colors for bookmarks
