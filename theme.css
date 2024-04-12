@@ -2592,7 +2592,7 @@ input[type="range"]::after {
 	color: var(--secondary-accent);
 }
 
-/* PROPERTIES */
+/* LIVE PREVIEW */
 .mod-root .metadata-container {
 	padding: 0;
 	margin-top: 0.5em;
@@ -2677,7 +2677,6 @@ input[type="range"]::after {
 
 .multi-select-input.multi-select-input {
 	font-family: var(--font-interface);
-	font-size: var(--font-small);
 	color: var(--text-normal);
 }
 
