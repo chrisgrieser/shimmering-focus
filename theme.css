@@ -2711,7 +2711,7 @@ body .metadata-property:hover {
 }
 
 /* Date Picker */
-/* color of the date picker cannot be changed in a flexible manner
+/* INFO color of the date picker cannot be changed in a flexible manner
  * https://stackoverflow.com/questions/62162645/change-color-of-chromes-calendar-icon-in-html-date-input
  * */
 .metadata-property-value input:is([type="date"], [type="datetime-local"]) {
@@ -2720,8 +2720,8 @@ body .metadata-property:hover {
 
 /* links in metadata */
 .internal-link:is(.multi-select-pill, .metadata-link-inner) {
-	text-decoration: none;
 	/* creates single underline instead of double */
+	text-decoration: none;
 }
 
 .metadata-link {
