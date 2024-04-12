@@ -1694,7 +1694,8 @@ body:not(.no-heading-background) .markdown-preview-view :is(h1, h2, h3, h4, h5, 
 
 /* edit mode & live preview */
 .HyperMD-quote.HyperMD-quote.HyperMD-quote {
-	padding: 3px 10px;
+	padding-top: 4px;
+	padding-bottom: 4px;
 	background-color: var(--blockquote-background-color);
 	border-radius: var(--radius-s);
 }
