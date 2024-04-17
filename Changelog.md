@@ -1,3 +1,4 @@
+- 2024-04-17 fix: no explicit styling for floating toc (#299)
 - 2024-04-12 chore: fix some comments
 - 2024-04-12 fix: inconsistent font sizes between list and text properties
 - 2024-04-12 fix(blockquotes): wrong indentation
