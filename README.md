@@ -104,23 +104,6 @@ Available CSS classes are:
 - `remove-dataview-title`: Removes the header from dataview results.
 - `larger-table-text`: Slightly larger text in tables.
 
-### Callouts
-Shimmering Focus adds a custom `sidenote` callout, which moves the callout to
-the side like a small info box. Size and "outdention" can be customized via Style
-Settings.
-
-```md
-> [!SIDENOTE]
-> This note will appear to the side
-```
-
-In addition to the sidenote-callout and the [existing callouts from Obsidian
-Core](https://help.obsidian.md/How+to/Use+callouts#Types), the theme adds the
-following callouts:
-- `URL`
-- `config`
-- `attachment`, `file`
-
 ### Private Mode
 When the style setting `Private Mode` is enabled, notes with the CSS class
 `private` are garbled. Private Mode is intended to be temporarily enabled during

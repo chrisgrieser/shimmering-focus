@@ -1885,74 +1885,6 @@ body .callout ul.contains-task-list {
 	margin-bottom: 0;
 }
 
-/* <<< Sidenote Callouts */
-.callout[data-callout*="sidenote"] {
-	--callout-icon: lightbulb;
-	--callout-color: 255, 210, 107;
-	float: right;
-	max-width: calc(var(--file-line-width) * var(--sidenote-callout-width) * 0.01);
-	margin: 4px 0 4px 7px;
-	font-size: 90%;
-	line-height: 1.3em;
-}
-
-.sidenote-callout-outdent .callout[data-callout$="sidenote"] {
-	margin-right: -30px;
-	/* more makes it cut off with a narrow window size */
-}
-
-.callout[data-callout*="sidenote"] .callout-title {
-	padding-top: 1px;
-	padding-bottom: 1px;
-}
-
-body .callout {
-	clear: right;
-}
-
-/* <<< Config Callout */
-.callout.callout.callout[data-callout*="config"] {
-	--callout-icon: settings;
-	--callout-color: 202, 164, 255;
-}
-
-.callout[data-callout*="config"] .task-list-item {
-	margin-inline-start: 3px;
-	color: var(--text-normal);
-	text-decoration: none;
-}
-
-.callout[data-callout*="config"] .task-list-item .task-list-item-checkbox {
-	margin-bottom: -3px;
-}
-
-.callout[data-callout*="config"] .task-list-item .task-list-item-checkbox::after {
-	display: none;
-}
-
-/* attachments */
-.callout[data-callout^="attachment"],
-.callout[data-callout^="file"] {
-	--callout-icon: paperclip;
-	--callout-color: 255, 90, 143;
-}
-
-/* URLs */
-.callout[data-callout^="URL" i] {
-	--callout-icon: link;
-	--callout-color: 255, 240, 143;
-}
-
-.callout[data-callout^="URL" i] .callout-title {
-	text-transform: uppercase;
-}
-
-/* "Warn" should work the same as "Warning" */
-.callout[data-callout^="warn"] {
-	--callout-icon: lucide-alert-triangle;
-	--callout-color: var(--callout-warning);
-}
-
 /* ───────────────────────────────────────────────── */
 /* << Trailing Whitespace (Two Space Rule)
 ──────────────────────────────────────────────────── */
@@ -5934,15 +5866,6 @@ settings:
     markdown: true
     type: class-toggle
     default: false
-  - id: sidenote-callout-width
-    title: Width of Sidenote Callouts
-    description: "Percentage of the readable line length. Affects callouts with `> [!sidenote]`. "
-    markdown: true
-    type: variable-number-slider
-    default: 34
-    min: 10
-    max: 60
-    step: 2
   - # << Vim Mode (+)
     id: vim-mode
     title: 🏃 Vim Mode
