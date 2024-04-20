@@ -1,3 +1,6 @@
+- 2024-04-20 feat: new style setting to re-enable prompt instructions (#298)
+- 2024-04-20 break: remove custom cssclasses (pls use css snippets for them instead)
+- 2024-04-20 break: remove custom callouts since too niche
 - 2024-04-17 fix: no explicit styling for floating toc (#299)
 - 2024-04-12 chore: fix some comments
 - 2024-04-12 fix: inconsistent font sizes between list and text properties
