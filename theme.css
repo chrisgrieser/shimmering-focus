@@ -259,6 +259,7 @@ https://www.youtube.com/watch?v=yl0pvIRTWWo&t=7s */
 	--accent-h: 184;
 	--accent-s: 79%;
 	--accent-l: 35%;
+	--zoom-multiplier: 1;
 
 	/* shadows */
 	--input-height: 30px;
@@ -3648,22 +3649,27 @@ body:not(.normal-header-bar, .is-mobile) .canvas-controls {
 	top: 3rem;
 }
 
-/* move further to the left */
+/* rotate & move to the left */
 body .canvas-card-menu {
-	right: -4rem;
 	left: unset;
+	right: -1rem;
+	display: unset;
 }
 
-/* TODO add `:not(:has(.canvas-node-label))` to ensure targeting cards but not embedded notes here */
 .canvas-node :is(h1, h2, h3, h4, h5, h6, .cm-header) {
 	font-family: var(--font-canvas-cards-heading-theme);
 	font-style: normal;
 	font-weight: 500;
 }
 
-/* center everything in canvases */
-.centered-canvas-notes .canvas-node-content.markdown-embed {
+/* `.canvas-node:not(:has(.canvas-node-label))` are cards, but not notes */
+.canvas-sketch-mode .canvas-node:not(:has(.canvas-node-label)) .markdown-preview-view {
 	text-align: center;
+	font-family: var(--font-interface);
+}
+
+.canvas-sketch-mode .canvas-path-label {
+	font-size: calc(var(--font-ui-small) * var(--zoom-multiplier));
 }
 
 /* ───────────────────────────────────────────────── */
@@ -3925,7 +3931,7 @@ body:not(.normal-header-bar, .is-mobile) .snw-header-count-wrapper {
 /* << Cursor Location
 ──────────────────────────────────────────────────── */
 /* move to the left, due to it's resizing issues
- * https://github.com/spslater/obsidian-cursor-location-plugin/issues/14 */
+* https://github.com/spslater/obsidian-cursor-location-plugin/issues/14 */
 .status-bar-item.plugin-obsidian-cursor-location-plugin:not(:empty) {
 	display: unset;
 	/* needed for right alignment */
@@ -5783,12 +5789,11 @@ settings:
     description: Only affects headings in canvas cards/notes. (Some heading fonts look good in notes, but not that good in cards.)
     type: variable-text
     default: '"Recursive S"'
-  - id: centered-canvas-notes
-    title: "Canvas: Center Text in all Cards and Notes"
-    description: The theme also adds a command to toggle this setting
+  - id: canvas-sketch-mode
+    title: "Canvas: Sketch Mode"
+    description: ⚠️ Requires Obsidian installer version 1.1.9 or later. Centers canvas cards and shrinks labels. Use this setting if you only use the canvas to sketch things via cards, and otherwise do not add notes to your canvas. (The theme also adds a command to toggle this setting.)
     type: class-toggle
     addCommand: true
-    markdown: true
   - # << Markup & Special Syntax (+)
     id: markup-and-special-syntax
     title: ✏️ Markup & Special Syntax
