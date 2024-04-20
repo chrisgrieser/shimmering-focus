@@ -5432,9 +5432,9 @@ settings:
       ℹ️ This can also be toggled via command palette or hotkey.
     default: false
   - id: show-suggester-instructions
-    title: Re-enable the bottom bar which includes usage instructions for suggesters
+    title: Re-enable Suggester Hints
     type: class-toggle
-    description: This all suggestion modals, such as the Command Palette or the Quick Switcher.
+    description: Suggesters are modals like the Command Palette or the Quick Switcher. By default, this theme hides the keyboard hints at the bottom of those suggesters. Enable this, to display them again.
     default: false
   - id: show-new-tab-button
     title: Re-enable New Tab Button
