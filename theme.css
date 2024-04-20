@@ -251,6 +251,7 @@ https://www.youtube.com/watch?v=yl0pvIRTWWo&t=7s */
 	--color-purple: hsl(258 100% 75%);
 	--color-pink: hsl(328 91% 79%);
 	--callout-warning: var(--color-orange-rgb);
+	--callout-color: "";
 
 	/* Default Accent Color: ; will be overridden by user selection in `Appearance
 	tab`, however, by setting color accent of its own, they are going to be
@@ -3587,62 +3588,9 @@ are not targeted by this */
 }
 
 /* ───────────────────────────────────────────────── */
-/* < CSS Classes
+/* < Private Mode
 ──────────────────────────────────────────────────── */
-/*
-- writing cssclass is bundled with the styling for the Longform Editor
-- dataview-related css classes are in the dataview section
-*/
 
-.list-2-col-cards {
-	--card-spacing: 4px;
-}
-
-.list-2-col-cards ul:not(.contains-task-list) {
-	column-gap: calc(var(--card-spacing) + 2px);
-	columns: 2 auto;
-	padding-left: 0;
-}
-
-.list-2-col-cards ul:not(.contains-task-list) li {
-	padding: 1px 10px 4px;
-	margin-bottom: var(--card-spacing);
-	background-color: var(--bg3);
-	border: var(--thin-muted-border);
-	border-radius: var(--radius-s);
-	page-break-inside: avoid;
-}
-
-.list-2-col-cards ul>li:not(.task-list-item)::marker {
-	content: "";
-}
-
-.list-2-col-cards.list-2-col-cards.list-2-col-cards ul:not(.contains-task-list) li a {
-	text-decoration: none;
-}
-
-.bibliography-list li {
-	margin-left: 1.5em;
-	text-indent: -2.2em;
-}
-
-.bibliography-list li .list-bullet::after {
-	display: none;
-}
-
-.full-width {
-	--file-line-width: 100%;
-}
-
-.larger-table-text {
-	--table-text-size: var(--font-text-size);
-}
-
-.no-inline-title .inline-title {
-	display: none;
-}
-
-/* private mode */
 /* needs *= to catch "," in the yaml */
 .private-mode .data-link-text[data-link-cssclass*="private"],
 .private-mode .private.private * {

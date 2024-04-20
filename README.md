@@ -82,28 +82,6 @@ Shimmering Focus adds commands for toggling theme features:
   respective style setting)
 - Toggle Private Mode
 
-### CSS Classes
-Add a CSS class to your YAML front matter to enable styling only for this
-particular note.
-
-```yaml
----
-cssclass: name
----
-```
-
-Available CSS classes are:
-- `full-width`: Disables "Readable Line Length" for the note.
-- `private`: Marks note as private. See [Private Mode](#private-mode).
-- `writing`: Uses writing-related styling like serif fonts in the note.
-- `no-inline-title`: Removes the inline title for that note only.
-- `bibliography-list`: Displays lists in the style of academic bibliographies
-  (Reading Mode).
-- `list-2-col-cards`: Turns list items into two columns of simple cards (Reading
-  Mode).
-- `remove-dataview-title`: Removes the header from dataview results.
-- `larger-table-text`: Slightly larger text in tables.
-
 ### Private Mode
 When the style setting `Private Mode` is enabled, notes with the CSS class
 `private` are garbled. Private Mode is intended to be temporarily enabled during
