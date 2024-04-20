@@ -3072,17 +3072,16 @@ input.prompt-input.prompt-input {
 	box-shadow: var(--input-shadow);
 }
 
-.prompt .prompt-input[placeholder^="Select a command"]::placeholder {
-	color: transparent;
-}
-
 /* item descriptions */
 .suggestion-note {
 	line-height: 1.3em;
 }
 
-.suggestion-empty,
-.prompt-instructions {
+.suggestion-empty {
+	display: none;
+}
+
+body:not(.show-suggester-instructions) .prompt-instructions {
 	display: none;
 }
 
@@ -5431,6 +5430,11 @@ settings:
     description: |
       By default, the URLs of markdown links are hidden in Source Mode, except for the currently active line.
       ℹ️ This can also be toggled via command palette or hotkey.
+    default: false
+  - id: show-suggester-instructions
+    title: Re-enable the bottom bar which includes usage instructions for suggesters
+    type: class-toggle
+    description: This all suggestion modals, such as the Command Palette or the Quick Switcher.
     default: false
   - id: show-new-tab-button
     title: Re-enable New Tab Button
