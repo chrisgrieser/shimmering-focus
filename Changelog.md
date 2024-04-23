@@ -1,3 +1,4 @@
+
 - 2024-04-20 feat: canvas sketch mode (opt-in style setting)
 - 2024-04-20 improv: better desc for suggester instructions setting
 - 2024-04-20 feat: new style setting to re-enable prompt instructions (#298)
