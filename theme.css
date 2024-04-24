@@ -2821,9 +2821,9 @@ body:not(.normal-tab-bar) .mod-root .workspace-tab-header:only-child {
 
 body:not(.normal-tab-bar) .mod-root .workspace-tab-header:only-child .workspace-tab-header-inner-title {
 	width: 9001px;
-	margin-bottom: 2px;
-	margin-left: -3px;
-	font-size: 1.5em;
+	margin-bottom: 4px;
+	margin-left: -4px;
+	font-size: 1.3em;
 }
 
 body:not(.normal-tab-bar) .mod-root .workspace-tab-header:only-child :is(.workspace-tab-header-inner-title,
@@ -3189,12 +3189,6 @@ body.mod-macos.is-hidden-frameless:not(.is-popout-window) .workspace .workspace-
 	border-radius: 0;
 }
 
-.nav-file-title:hover,
-.nav-folder-title:hover,
-.tree-item-inner:hover {
-	cursor: var(--cursor-link);
-}
-
 :is(.mod-left-split, .mod-right-split) .mod-top .workspace-tab-header-container-inner {
 	padding-bottom: var(--size-4-1);
 	margin-top: var(--size-4-1);
@@ -3303,7 +3297,6 @@ body .mod-root .workspace-tabs:not(.mod-active, :only-of-type) .workspace-leaf-c
 	border-bottom-color: var(--color-accent);
 }
 
-.mod-root .workspace-tabs:not(.mod-stacked) .workspace-tab-header-container-inner,
 .mod-root .workspace-tab-header-container {
 	border-bottom: 2px solid transparent;
 }
