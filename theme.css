@@ -1091,26 +1091,6 @@ u,
 	text-decoration: underline double 1.1px;
 }
 
-/* dotted underline links to headings */
-.markdown-preview-view .internal-link[href*="#"] {
-	text-decoration: underline dotted 1px;
-}
-
-/* dashed alias link: Source Mode / LP */
-.markdown-source-view .cm-link-alias.cm-link-alias.cm-link-alias {
-	text-decoration: underline dashed 1px;
-}
-
-/* tiny fix for weird LP CSS */
-.is-live-preview .cm-link-alias.cm-link-alias.cm-link-alias .cm-underline {
-	text-decoration: none;
-}
-
-/* dashed alias link: Preview Mode (works cause only aliases get an aria-label) */
-body:not(.is-mobile) .markdown-preview-view .internal-link[aria-label] {
-	text-decoration: underline dashed 1px;
-}
-
 .dataview.dataview.dataview a.internal-link {
 	/* undoing of this styling in dataview section,
 	since dataview internal links do have aria labels, too */
