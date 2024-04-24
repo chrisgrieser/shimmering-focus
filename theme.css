@@ -380,12 +380,15 @@ body {
 
 	/* only used for annotation tags, disable in normal tags */
 	--tag-radius: var(--radius-s);
+
+	/* links */
 	--link-color: var(--text-accent);
 	--link-color-hover: var(--text-accent-hover);
 	--link-external-color: var(--text-accent);
 	--link-external-color-hover: var(--text-accent-hover);
-	--inline-code-color: var(--secondary-accent);
+
 	/* own variable */
+	--inline-code-color: var(--secondary-accent);
 }
 
 /* ───────────────────────────────────────────────── */
@@ -1088,13 +1091,7 @@ u,
 
 .cm-hmd-internal-link .cm-underline.cm-underline,
 .markdown-preview-view .internal-link:not(.multi-select-pill, .metadata-link-inner) {
-	text-decoration: underline double 1.1px;
-}
-
-.dataview.dataview.dataview a.internal-link {
-	/* undoing of this styling in dataview section,
-	since dataview internal links do have aria labels, too */
-	text-decoration: solid underline 1.5px;
+	text-decoration: underline double 1px;
 }
 
 body .cm-string.cm-url {
@@ -1109,6 +1106,11 @@ body:not(.show-urls) .cm-line:not(.cm-active) .cm-string.cm-url,
 	color: var(--text-faint);
 	text-decoration: none;
 	cursor: default;
+}
+
+/* FIX link color on hover for in some cases not applied correctly */
+.markdown-source-view.mod-cm6 :is(.cm-link-alias, .cm-hmd-internal-link) .cm-underline:hover {
+	color: var(--link-external-color-hover);
 }
 
 /* ───────────────────────────────────────────────── */
