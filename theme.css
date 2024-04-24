@@ -2668,41 +2668,6 @@ input[type="checkbox"].metadata-input-checkbox {
 }
 
 /* ───────────────────────────────────────────────── */
-/* << Settings Button & Ribbon
-──────────────────────────────────────────────────── */
-body:not(.show-ribbon) .workspace-ribbon.mod-left {
-	visibility: hidden;
-}
-
-body:not(.show-ribbon) .mod-left-split.is-sidedock-collapsed+.mod-root,
-body:not(.show-ribbon) .mod-left-split {
-	margin-left: calc(-1 * var(--ribbon-width));
-}
-
-body:not(.show-ribbon) .side-dock-settings .side-dock-ribbon-action:last-child:hover {
-	background-color: var(--bg3);
-}
-
-body:not(.show-ribbon, .is-mobile) .side-dock-settings .side-dock-ribbon-action:last-child {
-	position: absolute;
-	bottom: 0.5em;
-	left: 0.5em;
-	visibility: visible;
-	background-color: var(--bg4);
-	border: var(--thin-muted-border);
-	opacity: 1;
-}
-
-.hide-settings-button:not(.show-ribbon) .side-dock-settings .side-dock-ribbon-action:last-child {
-	display: none;
-}
-
-/* adjust left sidebar tab headers for hidden ribbon */
-.mod-macos.is-hidden-frameless:not(.is-fullscreen, .show-ribbon) {
-	--frame-left-space: calc(var(--ribbon-width) + 1.5vw);
-}
-
-/* ───────────────────────────────────────────────── */
 /* << Status Bar
 ──────────────────────────────────────────────────── */
 .hide-pandoc-reference-list-status-bar .status-bar-item.plugin-obsidian-pandoc-reference-list,
@@ -2945,6 +2910,7 @@ body:not(.normal-tab-bar) .mod-root .workspace-tab-header:only-child :is(.worksp
 
 .mod-root .workspace-tab-header-container-inner {
 	margin-top: var(--size-2-2);
+	padding-left: 0;
 }
 
 .is-active .workspace-tab-header-inner-title {
@@ -5413,21 +5379,14 @@ settings:
     type: heading
     level: 1
     collapsed: true
-  - id: hide-settings-button
-    title: Hide Settings Button
-    type: class-toggle
-    description: Hide the floating Settings button in the bottom left. You can still access the settings by using the hotkey `⌘+,` or `ctrl+,`.
+  - id: ribbon-info
+    description: "The setting to remove the ribbon (the thin sidebar to the very left) has been removed, since you can now do so via the Obsidian settings: `Appearance → Interface → Show ribbon menu`"
+    type: info-text
     markdown: true
-    default: false
   - id: show-sidebar-header-buttons
     title: Permanently show the Sidebar Header Buttons
     description: By default, the buttons at the top of the sidebar panels are only visible when hovering.
     type: class-toggle
-    default: false
-  - id: show-ribbon
-    title: Re-enable the Ribbon
-    type: class-toggle
-    description: The ribbon is the thin vertical bar to the very left. Without the ribbon, you can still trigger any action via the Command Palette.
     default: false
   - id: show-urls
     title: Show URLs of Markdown Links
@@ -5638,7 +5597,7 @@ settings:
     step: 0.1
     format: em
   - id: font-info
-    description: "You can change the font used elsewhere by the theme in the Obsidian settings: `Appearance → Font`"
+    description: "You can change the font used elsewhere in the Obsidian settings: `Appearance → Font`"
     type: info-text
     markdown: true
   - # << Colors (+)
