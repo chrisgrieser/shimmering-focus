@@ -1,3 +1,5 @@
+- 2024-04-24 fix(AQS): floating search prompt height
+- 2024-04-24 chore: remove obsolete git gutter setting
 - 2024-04-24 fix: some file explorer styling
 - 2024-04-24 fix: remove ribbon settings
 - 2024-04-20 feat: canvas sketch mode (opt-in style setting)
