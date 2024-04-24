@@ -4032,41 +4032,6 @@ body .various-complements__suggestion-item {
 	display: none;
 }
 
-/*
-TURN OBSIDIAN GIT'S AUTHOR-LINE-INFO INTO GITSIGNS
-Obsidian Git settings:
-- Enable "Show commit authoring information next to each line"
-- Hide Author Name
-- Hide Authoring Date
-
-Caveats (in comparison to git signs)
-- added & modified lines both are displayed as green
-- deleted lines are not displayed
-- the signs update with noticeable lag, since it runs git-blame in the background
-*/
-
-.git-blame-to-gitsigns .obs-git-blame-gutter>div[data-commit*='"isZeroCommit":false'] {
-	display: none;
-}
-
-.git-blame-to-gitsigns .obs-git-blame-gutter>div[data-commit*='"isZeroCommit":true'] {
-	/* stylelint-disable-next-line declaration-no-important */
-	background-color: var(--color-green) !important;
-	opacity: 0.4;
-}
-
-.git-blame-to-gitsigns .cm-gutterElement.obs-git-blame-gutter {
-	width: 4px;
-	/* stylelint-disable-next-line declaration-no-important */
-	padding-top: 0 !important;
-	background-color: transparent;
-	border: none;
-}
-
-.git-blame-to-gitsigns .markdown-source-view .inline-title {
-	margin-left: 0.75em;
-}
-
 /* ───────────────────────────────────────────────── */
 /* << Dynamic Highlight
 ──────────────────────────────────────────────────── */
