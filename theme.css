@@ -3854,15 +3854,6 @@ body:not(.show-outline-buttons) .workspace-leaf-content[data-type="outline"] .na
 ──────────────────────────────────────────────────── */
 
 /* ───────────────────────────────────────────────── */
-/* << Strange New Worlds
-──────────────────────────────────────────────────── */
-
-body:not(.normal-header-bar, .is-mobile) .snw-header-count-wrapper {
-	top: 30px;
-	margin-right: 18px;
-}
-
-/* ───────────────────────────────────────────────── */
 /* << Plugin Update Tracker
 ──────────────────────────────────────────────────── */
 /* https://github.com/swar8080/obsidian-plugin-update-tracker#custom-css-snippets */
@@ -3921,6 +3912,11 @@ body:not(.normal-header-bar, .is-mobile) .snw-header-count-wrapper {
 
 .snw-header-count {
 	color: var(--text-muted);
+}
+
+body:not(.normal-header-bar, .is-mobile) .snw-header-count-wrapper {
+	top: 30px;
+	margin-right: 18px;
 }
 
 /* ───────────────────────────────────────────────── */
@@ -4193,7 +4189,7 @@ body .another-quick-switcher__item__description {
 
 /* enlarge floating window */
 .prompt.another-quick-switcher__floating-prompt {
-	max-height: 88vh;
+	max-height: 80vh;
 }
 
 /* GREP SEARCH */
@@ -4223,7 +4219,7 @@ body .another-quick-switcher__item__description {
 
 .another-quick-switcher__grep__path-input__wrapper::before {
 	padding-right: 8px;
-	content: "In ";
+	content: "In: ";
 }
 
 body .another-quick-switcher__grep__path-input.another-quick-switcher__grep__path-input {
