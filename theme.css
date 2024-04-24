@@ -3660,19 +3660,7 @@ body:not(.show-close-buttons) .document-search-close-button {
 	padding: 0 0 var(--size-4-6) 0;
 }
 
-/* hide vault title */
-body:not(.show-vault-in-file-explorer) .nav-folder.mod-root>.nav-folder-title {
-	display: none;
-}
-
-.mod-root>.nav-folder-title {
-	display: flex;
-	background-color: var(--bg2);
-	border-bottom: var(--basic-border);
-}
-
-.mod-root>.nav-folder-title>.nav-folder-title-content {
-	font-size: var(--nav-item-size);
+.nav-files-container>div>.nav-folder>.nav-folder-title>.nav-folder-title-content {
 	font-weight: 600;
 }
 
@@ -3690,11 +3678,6 @@ body:not(.show-file-explorer-navigation) .workspace-leaf-content[data-type="file
 /* optionally hide attachment folders */
 .hide-attachment-folders .nav-folder-title:is([data-path$="/attachments" i], [data-path="attachments" i]) {
 	display: none;
-}
-
-/* bold top-level folders */
-.nav-folder.mod-root>.nav-folder-children>.nav-folder>.nav-folder-title {
-	font-weight: 600;
 }
 
 /* ───────────────────────────────────────────────── */
@@ -5423,27 +5406,6 @@ settings:
     description: You can still close settings with `Esc`, and tabs/panes by with `ctrl/cmd+W`.
     markdown: true
     default: false
-  - # <<< File Explorer (+)
-    id: show-hide-file-explorer-elements
-    title: File Explorer
-    type: heading
-    level: 2
-    collapsed: true
-  - id: hide-attachment-folders
-    title: Hide attachments folders
-    description: 'Affects folders exactly named "attachments" (case-insensitive).'
-    type: class-toggle
-    default: false
-  - id: show-vault-in-file-explorer
-    title: Show Vault Name
-    type: class-toggle
-    description: Enable this to drag and drop items to the vault root.
-    default: false
-  - id: show-file-explorer-navigation
-    title: Re-enable buttons
-    type: class-toggle
-    description: "The buttons for new file, new folder, and sorting. You can do the former two without the buttons by right-clicking a folder."
-    default: false
   - # <<< Status Bar (+)
     id: show-hide-statusbar-elements
     title: Status Bar Items
@@ -5884,36 +5846,39 @@ settings:
   - # << Plugin-Specific Settings (+)
     id: plugin-specific-settings
     title: ⚙️ Plugin-specific Settings
-    description: Bookmarks, Backlinks, Outgoing Links, Outline, Git Gutter
+    description: File Explorer, Bookmarks, Backlinks, Outgoing Links, Outline, Git Gutter
     type: heading
     level: 1
     collapsed: true
+  - id: hide-attachment-folders
+    title: "File Explorer: Hide attachments folders"
+    description: 'Affects folders exactly named "attachments" (case-insensitive).'
+    type: class-toggle
+    default: false
+  - id: show-file-explorer-navigation
+    title: "File Explorer: Show buttons"
+    type: class-toggle
+    description: "The buttons for new file, new folder, and sorting. You can do the former two without the buttons by right-clicking a folder."
+    default: false
   - id: show-bookmark-controls
-    title: Show Buttons in Bookmark Sidebar
+    title: "Bookmarks: Show Buttons in side bar"
     description: By default, the bookmark plugin buttons for new bookmarks, new folders, and collapsing are hidden. Enable this setting to show them again.
     type: class-toggle
     default: false
   - id: normal-out-back-links
-    title: Normal Outgoing Links and Backlinks
+    title: Normal outgoing links and backlinks
     description: By default, the sidebar for outgoing links and backlinks are reduced to linked mentions only. Enable this setting to restore their original display.
     type: class-toggle
     default: false
   - id: show-outline-buttons
-    title: Show Buttons in Outline Sidebar
+    title: "Outline: Show buttons in side bar"
     description: By default, the outline plugin buttons for collapsing, expanding, and searching headings are hidden. Enable this setting to show a compact version of them.
     default: false
     type: class-toggle
   - id: classic-inline-backlinks
-    title: Use Normal Inline Backlinks
+    title: Use normal inline backlinks
     description: By default, the inline-backlinks are displayed in a more minimalistic manner. Enable this setting to restore original display of backlinks. This also affects the Influx Plugin.
     type: class-toggle
-    default: false
-  - id: git-blame-to-gitsigns
-    title: "Obsidian Git: Turn Author Line Information into Gitsigns"
-    description: 'Repurposes the Author Line Information feature to work like Gitsigns/Git Gutter. Required Plugin Settings: Enable "Show commit authoring information next to each line", hide author name, and hide authoring date.'
-    type: class-toggle
-    markdown: true
-    addCommand: true
     default: false
   - # << Miscellaneous (+)
     id: miscellaneous
