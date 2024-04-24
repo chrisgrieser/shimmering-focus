@@ -1,3 +1,5 @@
+- 2024-04-24 fix: hover link color in some cases not applied correctly
+- 2024-04-24 chore: simplify link styling
 - 2024-04-24 fix(AQS): floating search prompt height
 - 2024-04-24 chore: remove obsolete git gutter setting
 - 2024-04-24 fix: some file explorer styling
