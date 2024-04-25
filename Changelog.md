@@ -1,3 +1,4 @@
+- 2024-04-25 fix(vim): cursorline length determined via viewport not, file length
 - 2024-04-25 improv: re-organize some settings
 - 2024-04-25 chore: clean up blink settings
 - 2024-04-25 feat(vim): setting to change vim cursor blink rate
