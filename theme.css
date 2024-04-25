@@ -3348,6 +3348,10 @@ are not targeted by this */
 ──────────────────────────────────────────────────── */
 
 /* stylelint-disable no-duplicate-selectors */
+:root {
+	--vim-cursor-blink-rate: 1200ms;
+}
+
 .theme-dark {
 	--vim-cursor-color: hsl(0 0% 70%);
 	--vim-cursor-bg: hsl(0 0% 0%);
@@ -3382,6 +3386,17 @@ are not targeted by this */
 	animation: none !important;
 }
 
+/* blinking */
+.disable-vim-cursor-blink .cm-vimCursorLayer {
+	/* stylelint-disable-next-line declaration-no-important */
+	animation: none !important;
+}
+
+.cm-vimCursorLayer {
+	/* stylelint-disable-next-line declaration-no-important */
+	animation-duration: var(--vim-cursor-blink-rate) !important;
+}
+
 /* ───────────────────────────────────────────────── */
 /* << Vim: Active Visual Line (experimental)
 ──────────────────────────────────────────────────── */
@@ -3408,13 +3423,13 @@ are not targeted by this */
 		color: transparent;
 	}
 
-	25% {
+	20% {
 		color: var(--vim-cursor-color);
 		background-color: var(--vim-cursor-bg);
 		outline-color: var(--vim-cursor-outline);
 	}
 
-	75% {
+	80% {
 		color: var(--vim-cursor-color);
 		background-color: var(--vim-cursor-bg);
 		outline-color: var(--vim-cursor-outline);
@@ -3429,7 +3444,7 @@ are not targeted by this */
 
 .vim-active-visual-line:not(.disable-vim-cursor-blink) .cm-focused .cm-fat-cursor {
 	/* stylelint-disable-next-line declaration-no-important */
-	animation: vim-blink 1.5s linear infinite !important;
+	animation: vim-blink var(--vim-cursor-blink-rate) linear infinite !important;
 }
 
 .vim-active-visual-line .cm-vimCursorLayer {
@@ -5722,9 +5737,19 @@ settings:
     level: 1
     collapsed: true
   - id: disable-vim-cursor-blink
-    title: Disable Blinking for the Vim Cursor
+    title: Disable Blinking
+    description: Only affects Normal Mode.
     type: class-toggle
     default: false
+  - id: vim-cursor-blink-rate
+    title: Cursor Blink Rate
+    description: Only affects Normal Mode.
+    type: variable-number-slider
+    default: 1200
+    min: 400
+    max: 3000
+    step: 200
+    format: ms
   - id: use-relative-line-numbers
     title: Relative Line Numbers
     markdown: true
