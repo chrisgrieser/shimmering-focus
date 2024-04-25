@@ -1,3 +1,4 @@
+- 2024-04-25 fix(vim): blink animation affecting unfocussed cursor w/ cursorline
 - 2024-04-25 fix(vim): cursorline only displayed for the primary cursor
 - 2024-04-25 chore: more tweaking of the vim cursorline
 - 2024-04-25 chore: tweak vim cursorline
