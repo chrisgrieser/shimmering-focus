@@ -1,3 +1,6 @@
+- 2024-04-25 feat(vim): setting to change vim cursor blink rate
+- 2024-04-25 fix: slider label for canvas settings being huge
+- 2024-04-25 fix: slider labels not appearing at some places
 - 2024-04-25 fix(vim): blink animation affecting unfocussed cursor w/ cursorline
 - 2024-04-25 fix(vim): cursorline only displayed for the primary cursor
 - 2024-04-25 chore: more tweaking of the vim cursorline
