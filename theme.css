@@ -3406,22 +3406,16 @@ are not targeted by this */
 		color: transparent;
 	}
 
-	10% {
+	25% {
 		color: var(--vim-cursor-color);
 		background-color: var(--vim-cursor-bg);
 		outline-color: var(--vim-cursor-outline);
 	}
 
-	70% {
+	75% {
 		color: var(--vim-cursor-color);
 		background-color: var(--vim-cursor-bg);
 		outline-color: var(--vim-cursor-outline);
-	}
-
-	80% {
-		background-color: transparent;
-		outline-color: transparent;
-		color: transparent;
 	}
 
 	100% {
@@ -5744,7 +5738,7 @@ settings:
   - id: vim-active-visual-line
     title: Cursorline (🧪 Experimental)
     markdown: true
-    description: Emphasize the active visual line. Only works in Normal Mode. As opposed to the "Active Line Indicator", this works on *visual* lines instead of *logical* lines. 
+    description: Emphasize the active visual line. Only works in Normal Mode, and also affects the cursor blink animation. As opposed to the "Active Line Indicator", this works on *visual* lines instead of *logical* lines. 
     type: class-toggle
     default: false
   - # << Longform & Writing (+)
