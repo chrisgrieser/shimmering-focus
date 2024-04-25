@@ -138,12 +138,14 @@ https://www.youtube.com/watch?v=yl0pvIRTWWo&t=7s */
 	--size-4-16: 64px;
 	--size-4-18: 72px;
 
-	/* Radius */ 
+	/* Shapes */
+	--radius-xs: 2px;
 	--radius-s: 4px;
 	--radius-m: 8px;
 	--radius-l: 10px;
+	--input-radius: 5px;
 
-	/* File navigator */
+	/* File Navigator */
 	--nav-item-size: var(--font-ui-small);
 	--nav-item-weight: inherit;
 	--nav-item-weight-hover: inherit;
@@ -214,7 +216,6 @@ https://www.youtube.com/watch?v=yl0pvIRTWWo&t=7s */
 
 	/* shadows */
 	--input-height: 30px;
-	--input-radius: 5px;
 	--input-shadow: inset 0 0 0 1px rgb(0 0 0 / 12%), 0 2px 3px 0 rgb(0 0 0 / 5%),
 		0 1px 1.5px 0 rgb(0 0 0 / 3%), 0 1px 2px 0 rgb(0 0 0 / 4%), 0 0 0 0 transparent;
 	--input-shadow-hover: inset 0 0 0 1px rgb(0 0 0 / 17%), 0 2px 3px 0 rgb(0 0 0 / 10%),
@@ -510,7 +511,6 @@ body {
 	--muted-border-color: var(--color-base-30);
 	--thin-muted-border: 1px solid var(--muted-border-color);
 	--muted-border: 2px solid var(--muted-border-color);
-	--radius-xs: 2px;
 	--readability-text-shadow-dark: 1px 1px 0px hsl(0 0% 0% / 100%);
 }
 
@@ -2218,6 +2218,31 @@ kbd.suggestion-hotkey,
 /* ───────────────────────────────────────────────── */
 /* < UI Elements
 ──────────────────────────────────────────────────── */
+
+/* ───────────────────────────────────────────────── */
+/* << Rounded vs. Angular Shapes
+──────────────────────────────────────────────────── */
+
+/* --radius-xs is defined by this theme */ 
+body:not(.angular-shapes){
+	--radius-xs: 0;
+}
+
+.angular-shapes {
+	--radius-xs: 0;
+	--radius-s: 0;
+	--radius-m: 0;
+	--radius-l: 0;
+	--radius-xl: 0;
+	--input-radius: 0;
+	--tab-radius-active: 0;
+}
+
+body.angular-shapes .checkbox-container {
+	border-radius: 0;
+	width: 20px;
+	height: 20px;
+}
 
 /* ───────────────────────────────────────────────── */
 /* << Notice
@@ -4444,6 +4469,11 @@ body .setting-item.setting-item.setting-item.setting-item[data-id="author-info"]
 	border-radius: var(--radius-xs);
 }
 
+.style-settings-container .setting-item:is([data-id="highlight-hue-1"], [data-id^="bg-hue"], [data-id^="longform-bg-hue"]) input.slider::after,
+.style-settings-container .setting-item:is([data-id="highlight-hue-1"], [data-id^="bg-hue"], [data-id^="longform-bg-hue"]) input.slider::before {
+	display: none;
+}
+
 .style-settings-container .setting-item:is([data-id="highlight-hue-1"], [data-id^="bg-hue"], [data-id^="longform-bg-hue"]) input.slider::-webkit-slider-thumb {
 	position: relative;
 	top: -0.7em;
@@ -5422,13 +5452,18 @@ settings:
     description: "You can change the font used elsewhere in the Obsidian settings: `Appearance → Font`"
     type: info-text
     markdown: true
-  - # << Colors (+)
+  - # << Colors & Shapes (+)
     id: aesthetics
-    title: 🎨 Colors
-    description: Native macOS Look, Background Color, Colored Bold/Italics, Highlight Color
+    title: 🎨 Colors & Shapes
+    description: Angular Shapes, Native macOS Look, Background Color, Colored Bold/Italics, Highlight Color
     type: heading
     level: 1
     collapsed: true
+  - id: angular-shapes
+    title: Angular Shapes
+    description: Use angular instead of rounded corners throughout the app.
+    type: class-toggle
+    default: false
   - id: mac-os-native
     title: Native macOS Look
     description: Background colors like in a native macOS app.
