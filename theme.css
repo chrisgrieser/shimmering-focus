@@ -138,6 +138,7 @@ https://www.youtube.com/watch?v=yl0pvIRTWWo&t=7s */
 	--size-4-16: 64px;
 	--size-4-18: 72px;
 
+	/* Radius */ 
 	--radius-s: 4px;
 	--radius-m: 8px;
 	--radius-l: 10px;
@@ -4502,7 +4503,6 @@ pre.dataview-error::first-line {
 .dataview.small-text.small-text.small-text {
 	padding: 1px var(--size-2-1) 0;
 	margin-left: var(--size-4-2);
-	font-family: var(--font-monospace-theme);
 	font-size: 85%;
 	color: var(--text-normal);
 	background-color: var(--bg1);
