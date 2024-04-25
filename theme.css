@@ -179,6 +179,7 @@ https://www.youtube.com/watch?v=yl0pvIRTWWo&t=7s */
 	--size-4-12: 48px;
 	--size-4-16: 64px;
 	--size-4-18: 72px;
+
 	--radius-s: 4px;
 	--radius-m: 8px;
 	--radius-l: 10px;
@@ -382,39 +383,6 @@ body {
 	--inline-code-color: var(--secondary-accent);
 }
 
-/* ───────────────────────────────────────────────── */
-/* << Custom Color Template
-──────────────────────────────────────────────────── */
-/* use this to create your own color scheme */
-
-/*
-.theme-light.theme-light {
-	--bg-hue: 230;
-	--bg-sat: 15%;
-
-	--color-accent: hsl(184 79% 35%);
-	--color-accent-hsl: 184 79% 35%;
-	--interactive-accent: hsl(184 79% 30%);
-
-	--secondary-accent: hsl(28 54% 51%);
-	--hover-accent: hsl(328 100% 54%);
-	--link-unresolved-color: hsl(101 42% 51%);
-}
-
-.theme-dark.theme-dark {
-	--bg-hue: 230;
-	--bg-sat: 15%;
-
-	--color-accent: hsl(184 79% 45%);
-	--color-accent-hsl: 184 79% 35%;
-	--interactive-accent: hsl(184 79% 30%);
-
-	--secondary-accent: hsl(28 63% 61%);
-	--hover-accent: hsl(328 100% 64%);
-	--link-unresolved-color: hsl(101 42% 51%);
-	}
-*/
-
 /* ───────────────────────────────────────────────────── */
 /* << Changed Obsidian Variables
 ──────────────────────────────────────────────────── */
@@ -553,8 +521,6 @@ body {
 body {
 	--signature: "⟡";
 	--icon-font: "Material Icons (Filled)";
-	--math-font: var(--font-monospace);
-	--math-font-size: 1em;
 
 	/* Optima pre-installed on macOS */
 	--font-heading-theme: "Optima", "Recursive S";
@@ -607,28 +573,6 @@ body {
 /* ───────────────────────────────────────────────── */
 /* < Markup
 ──────────────────────────────────────────────────── */
-
-/* ───────────────────────────────────────────────── */
-/* << MathJax
-──────────────────────────────────────────────────── */
-
-body .markdown-source-view .cm-math,
-body .markdown-preview-view .MJX-TEX {
-	font-size: var(--math-font-size);
-}
-
-body .markdown-source-view .cm-math {
-	font-family: var(--math-font);
-}
-
-/* ───────────────────────────────────────────────── */
-/* << hr
-──────────────────────────────────────────────────── */
-
-.cm-hr {
-	font-weight: 600;
-	color: var(--hr-color);
-}
 
 /* ───────────────────────────────────────────────── */
 /* << Tables
@@ -5469,7 +5413,7 @@ settings:
   - # << Fonts & Headings (+)
     id: font-settings
     title: 🔠 Font
-    description: "Headings, MathJax, Code"
+    description: "Headings, Code"
     type: heading
     level: 1
     collapsed: true
@@ -5575,14 +5519,14 @@ settings:
     level: 1
     collapsed: true
   - id: active-line-highlight
-    title: Active Line Indicator
+    title: Active Block Indicator
     type: class-select
     allowEmpty: false
     default: active-line-gutter
     options:
-      - label: Line in Gutter
+      - label: Vertical line in gutter
         value: active-line-gutter
-      - label: Emphasized Background
+      - label: Emphasized background
         value: active-line-background
       - label: Disable
         value: no-active-line-highlight
@@ -5722,7 +5666,7 @@ settings:
   - id: vim-active-visual-line
     title: Cursorline (🧪 Experimental)
     markdown: true
-    description: Emphasize the active visual line. Only works in Normal Mode, and also affects the cursor blink animation. As opposed to the "Active Line Indicator", this works on *visual* lines instead of *logical* lines. Note that this setting is independent of the "Active Line Indicator" setting to allow for both being in use at the same time.
+    description: Emphasize the active visual line. Only works in Normal Mode, and also affects the cursor blink animation. As opposed to the "Active Line Indicator", this works on *visual* lines instead of *logical* lines. Note that this setting is independent of the "Active Block Indicator" setting to allow for both being in use at the same time.
     type: class-toggle
     default: false
   - # << Longform & Writing (+)
