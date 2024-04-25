@@ -3385,7 +3385,7 @@ are not targeted by this */
 ──────────────────────────────────────────────────── */
 
 /* Active visual line. (CAVEAT does not work in insert mode) */
-.vim-active-visual-line .cm-fat-cursor::before {
+.vim-active-visual-line .cm-fat-cursor.cm-cursor-primary::before {
 	content: " ";
 	background-color: var(--active-line-color);
 	opacity: 0.15;
