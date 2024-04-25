@@ -72,48 +72,6 @@ https://github.com/chrisgrieser/shimmering-focus
 }
 
 /* ───────────────────────────────────────────────── */
-/* < Temporary Bug Fixes / Additions
-──────────────────────────────────────────────────── */
-.cm-hashtag-begin.cm-hashtag-begin {
-	font-family: var(--font-text);
-}
-
-/* inconsistent line height of lines with footnotes */
-.footnote-ref {
-	line-height: var(--line-height-tight);
-}
-
-/* https://discord.com/channels/686053708261228577/989603365606531104/1015645516341719120 */
-.cm-hashtag:hover {
-	color: var(--tag-color-hover);
-	text-decoration: var(--tag-decoration-hover);
-	background-color: var(--tag-background-hover);
-	border: var(--tag-border-width) solid var(--tag-border-color-hover);
-}
-
-/* https://discord.com/channels/686053708261228577/989603365606531104/1015835317347029092 */
-.modal-container a {
-	color: var(--link-external-color);
-	text-decoration: var(--link-external-decoration);
-}
-
-.modal-container a:hover {
-	color: var(--link-external-color-hover);
-	text-decoration: var(--link-external-decoration-hover);
-}
-
-/* task done */
-/* https://discord.com/channels/686053708261228577/989603365606531104/1016468110972301424 */
-.HyperMD-task-line .cm-formatting-task.cm-property {
-	color: var(--checklist-done-color);
-}
-
-.HyperMD-task-line .cm-formatting-task.cm-property~* {
-	color: var(--checklist-done-color);
-	text-decoration: var(--checklist-done-decoration);
-}
-
-/* ───────────────────────────────────────────────── */
 /* < Variables
 ──────────────────────────────────────────────────── */
 
@@ -618,6 +576,18 @@ body.highlight-active-cell .table-cell-wrapper:has(.cm-s-obsidian) {
 /* FIX lists in tables looking off */
 .table-cell-wrapper .list-bullet {
 	float: none;
+}
+
+/* ───────────────────────────────────────────────── */
+/* << Tags
+──────────────────────────────────────────────────── */
+
+/* FIX https://discord.com/channels/686053708261228577/989603365606531104/1015645516341719120 */
+.cm-hashtag:not(.cm-formatting):hover {
+	color: var(--tag-color-hover);
+	text-decoration: var(--tag-decoration-hover);
+	background-color: var(--tag-background-hover);
+	border: var(--tag-border-width) solid var(--tag-border-color-hover);
 }
 
 /* ───────────────────────────────────────────────── */
