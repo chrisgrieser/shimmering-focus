@@ -3402,12 +3402,12 @@ are not targeted by this */
 	background-color: var(--active-line-color);
 	opacity: 0.125;
 	position: absolute;
-	width: calc(var(--file-line-width) * 2.5);
-	left: calc(var(--file-line-width) * -1);
+	width: 180vw;
+	left: -90vw;
 }
 
 /* HACK Disable built-in blink, use custom blink, so that only the cursor, but not
-* the line highlight is affected. 
+* the line highlight is affected.
 * CAVEAT: the CodeMirror's blink is
 * smarter, since it only is in effect when the cursor is idle, something that we
 * cannot do cannot achieve with CSS only. */
