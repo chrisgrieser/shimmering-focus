@@ -1,3 +1,11 @@
+- 2024-04-25 chore: minor cleanup
+- 2024-04-25 chore: remove temporary fixes resolved in Obsidian core
+- 2024-04-25 break: remove canvas note heading option since too niche
+- 2024-04-25 break: remove outdated math font options
+- 2024-04-25 refactor: use native obsidian variable for code font size
+- 2024-04-25 chore: do not use custom code font
+- 2024-04-25 fix: disabling of accent color picker
+- 2024-04-25 chore: ignore in `typos`
 - 2024-04-25 fix(vim): cursorline length determined via viewport not, file length
 - 2024-04-25 improv: re-organize some settings
 - 2024-04-25 chore: clean up blink settings
