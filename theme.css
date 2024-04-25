@@ -3401,6 +3401,12 @@ are not targeted by this */
 * cannot do cannot achieve with CSS only. */
 @keyframes vim-blink {
 	0% {
+		background-color: transparent;
+		outline-color: transparent;
+		color: transparent;
+	}
+
+	10% {
 		color: var(--vim-cursor-color);
 		background-color: var(--vim-cursor-bg);
 		outline-color: var(--vim-cursor-outline);
@@ -3412,16 +3418,16 @@ are not targeted by this */
 		outline-color: var(--vim-cursor-outline);
 	}
 
-	71% {
+	80% {
 		background-color: transparent;
 		outline-color: transparent;
-		color: var(--text-normal);
+		color: transparent;
 	}
 
 	100% {
 		background-color: transparent;
 		outline-color: transparent;
-		color: var(--text-normal);
+		color: transparent;
 	}
 }
 
