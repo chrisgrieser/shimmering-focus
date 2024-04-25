@@ -5602,19 +5602,10 @@ settings:
   - # << Editor Content (+)
     id: content-settings
     title: 📑 Editor Content
-    description: Active Lines, Active Table Cells, Dimmed Panes, Clean Embeds, Line Length, Inline Backlinks, Folded Lines
+    description: Active Lines, Dimmed Panes, Line Length, Folded Lines
     type: heading
     level: 1
     collapsed: true
-  - id: inactive-pane-opacity
-    title: Dimmed Inactive Panes
-    description: Opacity of inactive panes. Set to 100% to disable dimming.
-    type: variable-number-slider
-    default: 75
-    min: 50
-    max: 100
-    step: 1
-    format: "%"
   - id: active-line-highlight
     title: Active Line Indicator
     type: class-select
@@ -5627,11 +5618,15 @@ settings:
         value: active-line-background
       - label: Disable
         value: no-active-line-highlight
-  - id: highlight-active-cell
-    title: Emphasize the active Table Cell (Live Preview)
-    description: ⚠️ Requires Obsidian installer version 1.1.9 or later and Obsidian 1.5 or later.
-    type: class-toggle
-    default: false
+  - id: inactive-pane-opacity
+    title: Dimmed Inactive Panes
+    description: Opacity of inactive panes. Set to 100% to disable dimming.
+    type: variable-number-slider
+    default: 75
+    min: 50
+    max: 100
+    step: 1
+    format: "%"
   - id: no-codeblock-line-numbers
     title: Turn Off Line Numbers in Code Blocks (Edit Mode)
     description: By default, this theme adds line numbers to code blocks in Edit Mode.
@@ -5663,6 +5658,11 @@ settings:
     title: Automatically disable `Readable Line Length` on notes with tables
     markdown: true
     description: ⚠️ Requires Obsidian installer version 1.1.9 or later.
+    type: class-toggle
+    default: false
+  - id: highlight-active-cell
+    title: "Tables: Emphasize the active cell (Live Preview)"
+    description: ⚠️ Requires Obsidian installer version 1.1.9 or later and Obsidian 1.5 or later.
     type: class-toggle
     default: false
   - id: no-image-alttext-caption
