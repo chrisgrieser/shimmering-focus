@@ -168,10 +168,9 @@ so they do not go unnoticed.
 ## Licenses
 - This theme is licensed under the [MIT
   License](https://github.com/chrisgrieser/shimmering-focus/blob/main/LICENSE).
-- The embedded *Material Icon* font is licensed under the [Apache License](https://developers.google.com/fonts/docs/material_icons#licensing).
-- The embedded *Ubuntu Mono* font is licensed under the [Ubuntu Font License](https://ubuntu.com/legal/font-licence).
 - The two embedded fonts *iA Writer Quattro* and *Recursive* are licensed under
   the [SIL Open Font License](https://www.wikiwand.com/en/SIL_Open_Font_License).
+- The embedded *Material Icon* font is licensed under the [Apache License](https://developers.google.com/fonts/docs/material_icons#licensing).
 
 ## Credits
 - This theme includes snippets or ideas from:
