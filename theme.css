@@ -3370,20 +3370,28 @@ are not targeted by this */
 /* ───────────────────────────────────────────────── */
 /* << Vim Cursor
 ──────────────────────────────────────────────────── */
+
+/* stylelint-disable no-duplicate-selectors */
+.theme-dark {
+	--vim-cursor-color: hsl(0 0% 70%);
+	--vim-cursor-bg: hsl(0 0% 0%);
+	--vim-cursor-outline: hsl(0 0% 90%);
+	--vim-cursor-outline-width: 1px;
+}
+
+.theme-light {
+	--vim-cursor-color: hsl(0 0% 90%);
+	--vim-cursor-bg: hsl(0 0% 25%);
+	--vim-cursor-outline: hsl(220 10% 72%);
+	--vim-cursor-outline-width: 1.3px;
+}
+
+/* stylelint-enable no-duplicate-selectors */
+
 .cm-focused .cm-vimCursorLayer .cm-fat-cursor.cm-fat-cursor.cm-fat-cursor {
-	outline: 1px solid;
-}
-
-.theme-dark .cm-focused .cm-vimCursorLayer .cm-fat-cursor.cm-fat-cursor.cm-fat-cursor {
-	color: hsl(0 0% 70%);
-	background-color: hsl(0 0% 0%);
-	outline: 1px solid hsl(0 0% 90%);
-}
-
-.theme-light .cm-focused .cm-vimCursorLayer .cm-fat-cursor.cm-fat-cursor.cm-fat-cursor {
-	color: hsl(0 0% 90%);
-	background-color: hsl(0 0% 25%);
-	outline: 1.3px solid hsl(220 10% 72%);
+	color: var(--vim-cursor-color);
+	background-color: var(--vim-cursor-bg);
+	outline: var(--vim-cursor-outline-width) solid var(--vim-cursor-outline);
 }
 
 .cm-editor:not(.cm-focused) .cm-fat-cursor.cm-fat-cursor.cm-fat-cursor {
@@ -3392,7 +3400,7 @@ are not targeted by this */
 	outline: 2px solid var(--hover-accent);
 }
 
-/* disable blinking */
+/* optionally disable blinking */
 .disable-vim-cursor-blink .cm-vimCursorLayer {
 	/* stylelint-disable-next-line declaration-no-important */
 	animation: none !important;
