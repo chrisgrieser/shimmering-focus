@@ -3258,32 +3258,6 @@ body .cm-s-obsidian .is-collapsed~.cm-formatting-list {
 }
 
 /* ───────────────────────────────────────────────── */
-/* <<< Clean Embeds
-──────────────────────────────────────────────────── */
-
-.clean-embeds {
-	--embed-background: inherit;
-	--embed-border-left: 0px solid var(--interactive-accent);
-	--embed-border-right: none;
-	--embed-border-top: none;
-	--embed-border-bottom: none;
-	--embed-padding: 0 0 0 0;
-	--embed-font-style: inherit;
-}
-
-.clean-embeds .markdown-rendered .markdown-embed {
-	max-width: 100%;
-}
-
-.clean-embeds .markdown-rendered .markdown-embed .markdown-rendered {
-	padding-left: 0;
-}
-
-.clean-embeds .markdown-embed-link {
-	visibility: hidden;
-}
-
-/* ───────────────────────────────────────────────── */
 /* <<< Active / Inactive Note
 ──────────────────────────────────────────────────── */
 body .mod-root .workspace-tabs:not(.mod-active, :only-of-type) .workspace-leaf-content[data-type="markdown"] {
