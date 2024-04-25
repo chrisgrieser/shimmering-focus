@@ -1,3 +1,6 @@
+- 2024-04-25 break: remove `clean embeds` setting, since better as css snippet
+- 2024-04-25 feat(vim-mode): opt-in cursorline (experimental)
+- 2024-04-25 refactor: vim cursor styling using variables
 - 2024-04-25 improv: wider hover area to make sidebar tab buttons visible
 - 2024-04-25 fix: file explorer button hiding
 - 2024-04-24 chore: minor tweaks for tab bar
