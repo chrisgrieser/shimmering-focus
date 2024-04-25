@@ -3646,12 +3646,12 @@ body:not(.show-close-buttons) .document-search-close-button {
 }
 
 /* hide navigation buttons */
-body:not(.show-file-explorer-navigation) .nav-files-container :is(.nav-buttons-container, .nav-header) {
+body:not(.show-file-explorer-navigation) .workspace-leaf-content[data-type="file-explorer"] .nav-header {
 	display: none;
 }
 
 /* optionally hide attachment folders */
-.hide-attachment-folders .nav-folder-title:is[data-path$="/attachments" i] {
+.hide-attachment-folders .nav-folder-title:is([data-path$="/attachments" i], [data-path="attachments" i]) {
 	display: none;
 }
 
