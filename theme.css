@@ -2401,11 +2401,11 @@ input[type="range"]::after {
 	border-radius: var(--radius-s);
 }
 
-.modal:not(.mod-narrow) input[type="range"]::before {
+input[type="range"]::before {
 	content: attr(min);
 }
 
-.modal:not(.mod-narrow) input[type="range"]::after {
+input[type="range"]::after {
 	content: attr(max);
 }
 
