@@ -429,8 +429,6 @@ body {
 	--font-text-theme: "iA Writer Quattro S";
 	--font-interface-theme: "Recursive S";
 	--line-height-tight: 1.2;
-	--code-block-scaling: 1;
-	--code-size: calc(var(--font-small) * var(--code-block-scaling));
 
 	/* Headings */
 	--h1-font: var(--font-heading-theme);
@@ -1206,11 +1204,6 @@ body .markdown-preview-view *:not(pre)>code,
 /* ───────────────────────────────────────────────── */
 /* <<< Code Blocks
 ──────────────────────────────────────────────────── */
-/* templater code gets same size as code blocks */
-.cm-templater-command.cm-templater-command {
-	font-size: var(--code-size);
-}
-
 /* Code blocks in Edit Mode */
 :is(.HyperMD-codeblock-end, .HyperMD-codeblock-begin) .cm-formatting-code-block {
 	color: var(--text-muted);
@@ -1247,7 +1240,6 @@ div.HyperMD-codeblock-bg:not(.HyperMD-codeblock-begin-bg) {
 .cm-line.HyperMD-codeblock .code-block-flair {
 	top: unset;
 	padding: 0 1px;
-	font-size: calc(var(--code-size) * 0.9);
 	color: var(--text-muted);
 }
 
@@ -2465,7 +2457,6 @@ input[type="range"]::after {
 /* SOURCE VIEW */
 /* values */
 .cm-hmd-frontmatter {
-	font-size: calc(var(--code-size) * 0.9);
 	color: var(--text-normal);
 }
 
@@ -2478,7 +2469,7 @@ input[type="range"]::after {
 /* keys */
 .frontmatter.language-yaml .atrule,
 .cm-atom.cm-hmd-frontmatter {
-	font-weight: 600;
+	/* font-weight: 600; */
 	color: var(--text-accent);
 }
 
@@ -5513,25 +5504,12 @@ settings:
     type: class-toggle
     default: false
   - id: code-block-scaling
-    title: "Code Blocks: Font Size Scaling"
-    description: The font size of all code blocks is multiplied by this factor. Also affects templater code and YAML frontmatter in source mode.
+    title: "Code: Font Size"
     type: variable-number-slider
-    default: 1
-    min: 0.7
-    max: 1.3
-    step: 0.05
-  - id: math-font
-    title: "MathJax: Font Family (Source Mode)"
-    description: By default, uses the monospace font you have set in the Obsidian core settings or if you have not set one, this theme's monospace font (Ubuntu Mono S).
-    type: variable-text
-    default: "var(--font-monospace)"
-  - id: math-font-size
-    title: "MathJax: Font Size"
-    type: variable-number-slider
-    default: 1
+    default: 0.875em
     min: 0.5
-    max: 2
-    step: 0.1
+    max: 1.25
+    step: 0.125
     format: em
   - id: font-info
     description: "You can change the font used elsewhere in the Obsidian settings: `Appearance → Font`"
