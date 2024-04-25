@@ -3278,7 +3278,7 @@ body .mod-root .workspace-tabs:not(.mod-active, :only-of-type) .workspace-leaf-c
 }
 
 /* ───────────────────────────────────────────────── */
-/* <<< Active Line Highlight (Cursorline)
+/* <<< Active Line Highlight
 ──────────────────────────────────────────────────── */
 
 body:not(.no-active-line-highlight, .active-line-background) .cm-active:not(.HyperMD-quote, .HyperMD-header, .HyperMD-codeblock)::before {
@@ -3387,11 +3387,6 @@ are not targeted by this */
 }
 
 /* blinking */
-.disable-vim-cursor-blink .cm-vimCursorLayer {
-	/* stylelint-disable-next-line declaration-no-important */
-	animation: none !important;
-}
-
 .cm-vimCursorLayer {
 	/* stylelint-disable-next-line declaration-no-important */
 	animation-duration: var(--vim-cursor-blink-rate) !important;
@@ -3405,7 +3400,7 @@ are not targeted by this */
 .vim-active-visual-line .cm-fat-cursor.cm-cursor-primary::before {
 	content: " ";
 	background-color: var(--active-line-color);
-	opacity: 0.15;
+	opacity: 0.125;
 	position: absolute;
 	width: calc(var(--file-line-width) * 2.5);
 	left: calc(var(--file-line-width) * -1);
@@ -5736,17 +5731,12 @@ settings:
     type: heading
     level: 1
     collapsed: true
-  - id: disable-vim-cursor-blink
-    title: Disable Blinking
-    description: Only affects Normal Mode.
-    type: class-toggle
-    default: false
   - id: vim-cursor-blink-rate
     title: Cursor Blink Rate
-    description: Only affects Normal Mode.
+    description: Only affects Normal Mode. Set to 0 to disable blinking altogether.
     type: variable-number-slider
     default: 1200
-    min: 400
+    min: 0
     max: 3000
     step: 200
     format: ms
@@ -5764,7 +5754,7 @@ settings:
   - id: vim-active-visual-line
     title: Cursorline (🧪 Experimental)
     markdown: true
-    description: Emphasize the active visual line. Only works in Normal Mode, and also affects the cursor blink animation. As opposed to the "Active Line Indicator", this works on *visual* lines instead of *logical* lines. 
+    description: Emphasize the active visual line. Only works in Normal Mode, and also affects the cursor blink animation. As opposed to the "Active Line Indicator", this works on *visual* lines instead of *logical* lines. Note that this setting is independent of the "Active Line Indicator" setting to allow for both being in use at the same time.
     type: class-toggle
     default: false
   - # << Longform & Writing (+)
