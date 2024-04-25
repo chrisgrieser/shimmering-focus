@@ -1,3 +1,5 @@
+- 2024-04-25 improv: wider hover area to make sidebar tab buttons visible
+- 2024-04-25 fix: file explorer button hiding
 - 2024-04-24 chore: minor tweaks for tab bar
 - 2024-04-24 fix: file explorer styling
 - 2024-04-24 fix: hover link color in some cases not applied correctly
