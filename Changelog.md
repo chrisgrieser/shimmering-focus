@@ -1,3 +1,4 @@
+- 2024-04-25 chore: more tweaking of the vim cursorline
 - 2024-04-25 chore: tweak vim cursorline
 - 2024-04-25 break: remove `clean embeds` setting, since better as css snippet
 - 2024-04-25 feat(vim-mode): opt-in cursorline (experimental)
