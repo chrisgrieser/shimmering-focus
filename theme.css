@@ -524,7 +524,6 @@ body {
 
 	/* Optima pre-installed on macOS */
 	--font-heading-theme: "Optima", "Recursive S";
-	--font-canvas-cards-heading-theme: "Recursive S";
 	--heading-letter-spacing: 1.5px;
 
 	/* Use system fonts for longform */
@@ -3571,12 +3570,6 @@ body .canvas-card-menu {
 	display: unset;
 }
 
-.canvas-node :is(h1, h2, h3, h4, h5, h6, .cm-header) {
-	font-family: var(--font-canvas-cards-heading-theme);
-	font-style: normal;
-	font-weight: 500;
-}
-
 /* `.canvas-node:not(:has(.canvas-node-label))` are cards, but not notes */
 .canvas-sketch-mode .canvas-node:not(:has(.canvas-node-label)) .markdown-preview-view {
 	text-align: center;
@@ -5597,11 +5590,6 @@ settings:
     addCommand: true
     type: class-toggle
     default: false
-  - id: font-canvas-cards-heading-theme
-    title: "Canvas: Heading Font in Cards and Notes"
-    description: Only affects headings in canvas cards/notes. (Some heading fonts look good in notes, but not that good in cards.)
-    type: variable-text
-    default: '"Recursive S"'
   - id: canvas-sketch-mode
     title: "Canvas: Sketch Mode (🧪 Experimental)"
     description: ⚠️ Requires Obsidian installer version 1.1.9 or later. Centers canvas cards and shrinks labels. Use this setting if you only use the canvas to sketch things via cards, and otherwise do not add notes to your canvas. (The theme also adds a command to toggle this setting.)
