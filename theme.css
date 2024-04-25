@@ -1668,8 +1668,8 @@ blockquote code {
 /* << Callouts
 ──────────────────────────────────────────────────── */
 .callout {
-	--callout-icon: triangle;
 	/* default callout icon */
+	--callout-icon: circle;
 	--icon-stroke: 2px;
 	--sidenote-callout-width: 35%;
 	--callout-border-width: 1.5px;
@@ -1703,6 +1703,10 @@ blockquote code {
 	border-bottom: var(--callout-border-width) solid
 		/* stylelint-disable-next-line color-function-notation */
 		rgb(var(--callout-color), var(--callout-border-opacity));
+}
+
+.callout-title-inner {
+	font-weight: 700;
 }
 
 .callout-content {
@@ -2223,8 +2227,8 @@ kbd.suggestion-hotkey,
 /* << Rounded vs. Angular Shapes
 ──────────────────────────────────────────────────── */
 
-/* --radius-xs is defined by this theme */ 
-body:not(.angular-shapes){
+/* --radius-xs is defined by this theme */
+body:not(.angular-shapes) {
 	--radius-xs: 0;
 }
 
@@ -2236,6 +2240,11 @@ body:not(.angular-shapes){
 	--radius-xl: 0;
 	--input-radius: 0;
 	--tab-radius-active: 0;
+}
+
+.angular-shapes .callout {
+	/* default callout icon */
+	--callout-icon: square;
 }
 
 body.angular-shapes .checkbox-container {
