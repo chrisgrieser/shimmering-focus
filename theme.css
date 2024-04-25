@@ -3425,10 +3425,9 @@ are not targeted by this */
 	}
 }
 
-.vim-active-visual-line:not(.disable-vim-cursor-blink) .cm-fat-cursor {
+.vim-active-visual-line:not(.disable-vim-cursor-blink) .cm-focused .cm-fat-cursor {
 	/* stylelint-disable-next-line declaration-no-important */
 	animation: vim-blink 1.5s linear infinite !important;
-	animation-delay: 200ms;
 }
 
 .vim-active-visual-line .cm-vimCursorLayer {
