@@ -1,3 +1,5 @@
+- 2024-04-25 chore: change default callout icon (adapt to shape-setting)
+- 2024-04-25 feat: style setting for angular shapes (instead of rounded corners)
 - 2024-04-25 chore: minor cleanup
 - 2024-04-25 chore: remove temporary fixes resolved in Obsidian core
 - 2024-04-25 break: remove canvas note heading option since too niche
