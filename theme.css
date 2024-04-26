@@ -3309,21 +3309,16 @@ are not targeted by this */
 /* << Vim: Active Visual Line (experimental)
 ──────────────────────────────────────────────────── */
 
-/* Active visual line. (CAVEAT does not work in insert mode) */
-.vim-active-visual-line .cm-fat-cursor.cm-cursor-primary::before {
-	content: " ";
-	background-color: var(--active-line-color);
-	opacity: 0.125;
-	position: absolute;
-	width: 180vw;
-	left: -90vw;
+.vim-active-visual-line .cm-fat-cursor.cm-cursor-primary {
+	--cursorline-bg: hsl(var(--color-accent-hsl), 12.5%);
+	border-image: conic-gradient(var(--cursorline-bg) 0 0) fill 0 / 0 / 0 100vw;
+	mix-blend-mode: hard-light;
 }
 
 /* HACK Disable built-in blink, use custom blink, so that only the cursor, but not
 * the line highlight is affected.
-* CAVEAT: the CodeMirror's blink is
-* smarter, since it only is in effect when the cursor is idle, something that we
-* cannot do cannot achieve with CSS only. */
+* CAVEAT the CodeMirror's blink is smarter, since it only is in effect when the
+* cursor is idle, something that we cannot do cannot achieve with CSS only. */
 @keyframes vim-blink {
 	0% {
 		background-color: transparent;
@@ -3350,7 +3345,7 @@ are not targeted by this */
 	}
 }
 
-.vim-active-visual-line:not(.disable-vim-cursor-blink) .cm-focused .cm-fat-cursor {
+.vim-active-visual-line .cm-focused .cm-fat-cursor {
 	/* stylelint-disable-next-line declaration-no-important */
 	animation: vim-blink var(--vim-cursor-blink-rate) linear infinite !important;
 }
