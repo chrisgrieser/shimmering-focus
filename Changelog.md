@@ -1,3 +1,8 @@
+- 2024-04-26 **fix**: active visual line resulting in overscroll to the right
+- 2024-04-26 **fix**: radius of small corners
+- 2024-04-26 **refactor**: use `px` instead of `var(--size-…)`
+- 2024-04-26 **fix**: sidebar tab header not properly hidden
+- 2024-04-26 **build**: fix formatting of the changelog
 - 2024-04-26 **fix(activeLineHighlight)**: spacing & line numbers background
 - 2024-04-25 **chore**: change default callout icon (adapt to shape-setting)
 - 2024-04-25 **feat**: style setting for angular shapes (instead of rounded corners)
