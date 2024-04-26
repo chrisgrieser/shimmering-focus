@@ -2425,7 +2425,7 @@ input[type="range"]::after {
 - first child = unordered list in yaml
 - second child = colon between key and value in unordered list
 - third child = colon between key and value
-- last child = bracket to close of array brackets, see https://github.com/chrisgrieser/shimmering-focus/issues/194 */
+- last child = bracket to close of array brackets, see #194 */
 .cm-line .cm-hmd-frontmatter.cm-meta:is(:first-child, :nth-child(2), :nth-child(3), :last-child),
 .frontmatter.language-yaml .punctuation {
 	font-weight: 600;
@@ -2739,7 +2739,7 @@ body:not(.show-tab-list-button) .workspace-tab-header-tab-list {
 }
 
 /* ───────────────────────────────────────────────── */
-/* <<< tab bar when only tab
+/* <<< Tab bar when only tab
 ──────────────────────────────────────────────────── */
 
 body:not(.normal-tab-bar) .mod-root .workspace-tab-header:only-child {
@@ -2778,7 +2778,7 @@ body:not(.normal-tab-bar) .mod-root .workspace-tab-header:only-child :is(.worksp
 	height: var(--icon-l);
 }
 
-/* <<< hidden tab bar when only one tab */
+/* <<< Hidden Tab bar when only one tab */
 .hide-tabbar-when-one-tab:not(.is-mobile) .mod-root .workspace-tab-header-container:not(:has(.workspace-tab-header + .workspace-tab-header)) {
 	display: none;
 }
@@ -3059,8 +3059,7 @@ body:not(.show-sidebar-header-buttons) {
 }
 
 /* WINDOWS */
-/* fix sidebar header buttons on Windows not being clickable, credits @joelatschool
- * see https://github.com/chrisgrieser/shimmering-focus/issues/247 */
+/* fix sidebar header buttons on Windows not being clickable see #247 */
 body.mod-windows:not(.show-sidebar-header-buttons) .titlebar {
 	height: 35px;
 }
@@ -3069,8 +3068,7 @@ body.mod-windows:not(.show-sidebar-header-buttons) .titlebar {
 	-webkit-app-region: no-drag;
 }
 
-body:not(.show-sidebar-header-buttons) :is(.mod-left-split, .mod-right-split) :is(.workspace-tab-header, .workspace-tab-header svg),
-body:not(.show-sidebar-header-buttons) :is(.mod-left-split, .mod-right-split) :is(.workspace-tab-header-container, .workspace-tab-header-container *) {
+body:not(.show-sidebar-header-buttons) :is(.mod-left-split, .mod-right-split) :is(.workspace-tab-header-container, .workspace-tab-header-container *, .workspace-tab-header, .workspace-tab-header svg) {
 	transition: var(--anim-duration-moderate);
 	transition-delay: var(--transition-delay-passing-over-protection);
 	/* so transition of hovering the tab itself does not get delayed */
@@ -3081,7 +3079,7 @@ body:not(.show-sidebar-header-buttons) :is(.mod-left-split, .mod-right-split) .w
 	height: var(--sidebar-tabs-unhovered-height);
 }
 
-body:not(.show-sidebar-header-buttons) :is(.mod-left-split, .mod-right-split) .workspace-tabs.mod-top:not(:hover) .workspace-tab-header-container-inner {
+body:not(.show-sidebar-header-buttons) :is(.mod-left-split, .mod-right-split) .workspace-tabs.mod-top .workspace-tab-header-container:not(:hover) .workspace-tab-header-container-inner {
 	opacity: 0;
 }
 
