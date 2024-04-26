@@ -3207,7 +3207,7 @@ body .mod-root .workspace-tabs:not(.mod-active, :only-of-type) .workspace-leaf-c
 }
 
 /* ───────────────────────────────────────────────── */
-/* <<< Active Line Highlight
+/* <<< Active Block Highlight
 ──────────────────────────────────────────────────── */
 
 body:not(.no-active-line-highlight, .active-line-background) .cm-active:not(.HyperMD-quote, .HyperMD-header, .HyperMD-codeblock)::before {
@@ -3218,16 +3218,17 @@ body:not(.no-active-line-highlight, .active-line-background) .cm-active:not(.Hyp
 	border-left: 3px solid var(--basic-border-color);
 }
 
-.theme-dark.active-line-background .cm-active:not(.HyperMD-quote, .HyperMD-codeblock) {
+.active-line-background .cm-active.cm-line:not(.HyperMD-quote, .HyperMD-codeblock) {
+	padding-left: 4px;
+	border-radius: var(--radius-s);
+}
+
+.theme-dark.active-line-background .cm-active.cm-line:not(.HyperMD-quote, .HyperMD-codeblock) {
 	background-color: var(--bg4);
 }
 
-.theme-light.active-line-background .cm-active:not(.HyperMD-quote, .HyperMD-codeblock) {
+.theme-light.active-line-background .cm-active.cm-line:not(.HyperMD-quote, .HyperMD-codeblock) {
 	background-color: var(--bg3);
-}
-
-body.active-line-background .cm-active:not(.HyperMD-quote, .HyperMD-codeblock) {
-	border-radius: var(--radius-s);
 }
 
 body:not(.no-active-line-highlight) .cm-lineNumbers .cm-active.cm-gutterElement,
