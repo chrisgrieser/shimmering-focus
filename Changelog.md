@@ -1,3 +1,4 @@
+- 2024-04-26 fix(activeLineHighlight): spacing & line numbers background
 - 2024-04-25 chore: change default callout icon (adapt to shape-setting)
 - 2024-04-25 feat: style setting for angular shapes (instead of rounded corners)
 - 2024-04-25 chore: minor cleanup

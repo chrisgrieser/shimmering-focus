@@ -1,7 +1,7 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS
 by @pseudometa
-Version 3.561
+Version 3.562
 MIT License
 https://github.com/chrisgrieser/shimmering-focus
 ──────────────────────────────────────────────────── */
@@ -3231,7 +3231,7 @@ body:not(.no-active-line-highlight, .active-line-background) .cm-active:not(.Hyp
 	background-color: var(--bg3);
 }
 
-body:not(.no-active-line-highlight) .cm-lineNumbers .cm-active.cm-gutterElement,
+.cm-lineNumbers .cm-active.cm-gutterElement,
 body:not(.no-active-line-highlight) .cm-active :is(.cm-formatting-header, .cm-formatting-quote, .cm-formatting-list, .cm-formatting-code-block) {
 	color: var(--active-line-color);
 }
