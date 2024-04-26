@@ -1,69 +1,69 @@
-- 2024-04-26 fix(activeLineHighlight): spacing & line numbers background
-- 2024-04-25 chore: change default callout icon (adapt to shape-setting)
-- 2024-04-25 feat: style setting for angular shapes (instead of rounded corners)
-- 2024-04-25 chore: minor cleanup
-- 2024-04-25 chore: remove temporary fixes resolved in Obsidian core
-- 2024-04-25 break: remove canvas note heading option since too niche
-- 2024-04-25 break: remove outdated math font options
-- 2024-04-25 refactor: use native obsidian variable for code font size
-- 2024-04-25 chore: do not use custom code font
-- 2024-04-25 fix: disabling of accent color picker
-- 2024-04-25 chore: ignore in `typos`
-- 2024-04-25 fix(vim): cursorline length determined via viewport not, file length
-- 2024-04-25 improv: re-organize some settings
-- 2024-04-25 chore: clean up blink settings
-- 2024-04-25 feat(vim): setting to change vim cursor blink rate
-- 2024-04-25 fix: slider label for canvas settings being huge
-- 2024-04-25 fix: slider labels not appearing at some places
-- 2024-04-25 fix(vim): blink animation affecting unfocussed cursor w/ cursorline
-- 2024-04-25 fix(vim): cursorline only displayed for the primary cursor
-- 2024-04-25 chore: more tweaking of the vim cursorline
-- 2024-04-25 chore: tweak vim cursorline
-- 2024-04-25 break: remove `clean embeds` setting, since better as css snippet
-- 2024-04-25 feat(vim-mode): opt-in cursorline (experimental)
-- 2024-04-25 refactor: vim cursor styling using variables
-- 2024-04-25 improv: wider hover area to make sidebar tab buttons visible
-- 2024-04-25 fix: file explorer button hiding
-- 2024-04-24 chore: minor tweaks for tab bar
-- 2024-04-24 fix: file explorer styling
-- 2024-04-24 fix: hover link color in some cases not applied correctly
-- 2024-04-24 chore: simplify link styling
-- 2024-04-24 fix(AQS): floating search prompt height
-- 2024-04-24 chore: remove obsolete git gutter setting
-- 2024-04-24 fix: some file explorer styling
-- 2024-04-24 fix: remove ribbon settings
-- 2024-04-20 feat: canvas sketch mode (opt-in style setting)
-- 2024-04-20 improv: better desc for suggester instructions setting
-- 2024-04-20 feat: new style setting to re-enable prompt instructions (#298)
-- 2024-04-20 break: remove custom cssclasses (pls use css snippets for them instead)
-- 2024-04-20 break: remove custom callouts since too niche
-- 2024-04-17 fix: no explicit styling for floating toc (#299)
-- 2024-04-12 chore: fix some comments
-- 2024-04-12 fix: inconsistent font sizes between list and text properties
-- 2024-04-12 fix(blockquotes): wrong indentation
-- 2024-04-08 fix(longform): folding arrows in sidebar to the right
-- 2024-04-03 fix(longform): missing folding arrows
-- 2024-04-03 fix: alternate row colors for bookmarks
-- 2024-04-03 feat: hide bookmark control buttons (+ setting to re-enable them)
-- 2024-04-02 fix: alignment of checkboxes in properties
-- 2024-04-02 break: drop support for frontmatter pre Obsidian 1.4
-- 2024-04-02 build: nicer changelog formatting
-- 2024-04-02 **fix(settings)**: add bold to correct menu items
-- 2024-03-26 **fix(images)**: center also external images
-- 2024-03-22 **improv**: another quick switcher prompt styling
-- 2024-03-22 **feat(longform)**: separate settings for background hue in dark/light mode
-- 2024-03-21 **improv(outline)**: use only hidden or compact buttons
+- 2024-04-26 **fix(activeLineHighlight)**: spacing & line numbers background
+- 2024-04-25 **chore**: change default callout icon (adapt to shape-setting)
+- 2024-04-25 **feat**: style setting for angular shapes (instead of rounded corners)
+- 2024-04-25 **chore**: minor cleanup
+- 2024-04-25 **chore**: remove temporary fixes resolved in Obsidian core
+- 2024-04-25 **break**: remove canvas note heading option since too niche
+- 2024-04-25 **break**: remove outdated math font options
+- 2024-04-25 **refactor**: use native obsidian variable for code font size
+- 2024-04-25 **chore**: do not use custom code font
+- 2024-04-25 **fix**: disabling of accent color picker
+- 2024-04-25 **chore**: ignore in `typos`
+- 2024-04-25 **fix(vim)**: cursorline length determined via viewport not, file length
+- 2024-04-25 **improv**: re-organize some settings
+- 2024-04-25 **chore**: clean up blink settings
+- 2024-04-25 **feat(vim)**: setting to change vim cursor blink rate
+- 2024-04-25 **fix**: slider label for canvas settings being huge
+- 2024-04-25 **fix**: slider labels not appearing at some places
+- 2024-04-25 **fix(vim)**: blink animation affecting unfocussed cursor w/ cursorline
+- 2024-04-25 **fix(vim)**: cursorline only displayed for the primary cursor
+- 2024-04-25 **chore**: more tweaking of the vim cursorline
+- 2024-04-25 **chore**: tweak vim cursorline
+- 2024-04-25 **break**: remove `clean embeds` setting, since better as css snippet
+- 2024-04-25 **feat(vim-mode)**: opt-in cursorline (experimental)
+- 2024-04-25 **refactor**: vim cursor styling using variables
+- 2024-04-25 **improv**: wider hover area to make sidebar tab buttons visible
+- 2024-04-25 **fix**: file explorer button hiding
+- 2024-04-24 **chore**: minor tweaks for tab bar
+- 2024-04-24 **fix**: file explorer styling
+- 2024-04-24 **fix**: hover link color in some cases not applied correctly
+- 2024-04-24 **chore**: simplify link styling
+- 2024-04-24 **fix(AQS)**: floating search prompt height
+- 2024-04-24 **chore**: remove obsolete git gutter setting
+- 2024-04-24 **fix**: some file explorer styling
+- 2024-04-24 **fix**: remove ribbon settings
+- 2024-04-20 **feat**: canvas sketch mode (opt-in style setting)
+- 2024-04-20 **improv**: better desc for suggester instructions setting
+- 2024-04-20 **feat**: new style setting to re-enable prompt instructions (#298)
+- 2024-04-20 **break**: remove custom cssclasses (pls use css snippets for them instead)
+- 2024-04-20 **break**: remove custom callouts since too niche
+- 2024-04-17 **fix**: no explicit styling for floating toc (#299)
+- 2024-04-12 **chore**: fix some comments
+- 2024-04-12 **fix**: inconsistent font sizes between list and text properties
+- 2024-04-12 **fix(blockquotes)**: wrong indentation
+- 2024-04-08 **fix(longform)**: folding arrows in sidebar to the right
+- 2024-04-03 **fix(longform)**: missing folding arrows
+- 2024-04-03 **fix**: alternate row colors for bookmarks
+- 2024-04-03 **feat**: hide bookmark control buttons (+ setting to re-enable them)
+- 2024-04-02 **fix**: alignment of checkboxes in properties
+- 2024-04-02 **break**: drop support for frontmatter pre Obsidian 1.4
+- 2024-04-02 **build**: nicer changelog formatting
+- 2024-04-02 ****fix(settings)****: add bold to correct menu items
+- 2024-03-26 ****fix(images)****: center also external images
+- 2024-03-22 ****improv****: another quick switcher prompt styling
+- 2024-03-22 ****feat(longform)****: separate settings for background hue in dark/light mode
+- 2024-03-21 ****improv(outline)****: use only hidden or compact buttons
 - 2024-03-21 Merge pull request #296 from cotneit/outline-plugin-controls
-- 2024-03-21 **feat**: outline plugin setting
-- 2024-03-19 **build**: fix symlink switch
-- 2024-03-15 **chore**: hot-reloading repos read from csv
-- 2024-03-15 **fix**: style setting for disabling heading backgrounds
-- 2024-03-14 **build**: add 2nd vault & improve hot reloading
-- 2024-03-14 **improv**: tweak heading bg color
-- 2024-03-14 **feat**: heading background (can be disabled in style settings) (#211)
-- 2024-03-12 **improv(file-explorer)**: top-level folders in bold
-- 2024-03-12 **ci**: fix 'Changelog' heading
-- 2024-03-12 **chore**: cleanup comments
-- 2024-03-12 **fix**: text color on buttons
-- 2024-03-12 **docs**: add changelog button
-- 2024-03-12 **ci**: add automated changelog
+- 2024-03-21 ****feat****: outline plugin setting
+- 2024-03-19 ****build****: fix symlink switch
+- 2024-03-15 ****chore****: hot-reloading repos read from csv
+- 2024-03-15 ****fix****: style setting for disabling heading backgrounds
+- 2024-03-14 ****build****: add 2nd vault & improve hot reloading
+- 2024-03-14 ****improv****: tweak heading bg color
+- 2024-03-14 ****feat****: heading background (can be disabled in style settings) (#211)
+- 2024-03-12 ****improv(file-explorer)****: top-level folders in bold
+- 2024-03-12 ****ci****: fix 'Changelog' heading
+- 2024-03-12 ****chore****: cleanup comments
+- 2024-03-12 ****fix****: text color on buttons
+- 2024-03-12 ****docs****: add changelog button
+- 2024-03-12 ****ci****: add automated changelog
