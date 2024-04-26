@@ -124,10 +124,10 @@ https://www.youtube.com/watch?v=yl0pvIRTWWo&t=7s */
 	--clickable-icon-radius: var(--radius-s);
 
 	/* Shapes */
-	--radius-xs: 2px;
 	--radius-s: 4px;
 	--radius-m: 8px;
 	--radius-l: 10px;
+	--radius-xl: 16px;
 	--input-radius: 5px;
 
 	/* File Navigator */
@@ -2214,7 +2214,7 @@ kbd.suggestion-hotkey,
 
 /* --radius-xs is defined by this theme */
 body:not(.angular-shapes) {
-	--radius-xs: 0;
+	--radius-xs: 2px;
 }
 
 .angular-shapes {
