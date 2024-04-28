@@ -1,3 +1,9 @@
+- 2024-04-28 **chore**: remove ambiguity from code block language labels
+- 2024-04-28 **chore**: remove outdated hub info
+- 2024-04-28 **feat**: option to display notifications at the bottom instead of top
+- 2024-04-28 **chore**: better navigation marker usage
+- 2024-04-28 **chore**: less eager hot reloading
+- 2024-04-28 **fix**: longform plugin sidebar indentation
 - 2024-04-26 **fix**: active visual line resulting in overscroll to the right
 - 2024-04-26 **fix**: radius of small corners
 - 2024-04-26 **refactor**: use `px` instead of `var(--size-…)`
