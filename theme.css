@@ -2245,6 +2245,13 @@ body.angular-shapes .checkbox-container {
 	top: 0;
 }
 
+.notices-at-bottom-right .notice-container {
+	bottom: calc(var(--status-bar-font-size) * 1.2);
+	top: unset;
+	display: flex;
+	flex-direction: column-reverse;
+}
+
 .notice {
 	min-width: 10rem;
 	padding: 6px 12px;
@@ -2254,11 +2261,6 @@ body.angular-shapes .checkbox-container {
 	color: var(--interactive-normal);
 	background-color: var(--color-base-100);
 	border: 3px ridge var(--basic-border-color);
-}
-
-/* do not bold text in notices, used e.g. by Templater errors */
-.notice b {
-	color: var(--interactive-normal);
 }
 
 .notice:hover {
@@ -5341,12 +5343,12 @@ settings:
   - # << Workspace (+)
     id: user-interface
     title: 🔲 Workspace
-    description: Sidebar, Tab Bar & Header Bar
+    description: Sidebar, Tab Bar & Header Bar, Notifications
     type: heading
     level: 1
     collapsed: true
   - id: tabbar-when-one-tab
-    title: Tab Bar when only one tab (experimental)
+    title: Tab Bar when only one tab (🧪 Experimental)
     description: By default, this theme turns the Tab Bar into a Header Bar. It turns back into a Tab Bar on hover or when another tab is opened. Alternatively you can also hide the tab bar altogether, when there is only one tab (⚠️ requires Obsidian installer version 1.1.9 or later).
     type: class-select
     allowEmpty: false
@@ -5385,6 +5387,11 @@ settings:
   - id: sidebar-no-animations
     title: "Sidebar: No Animations"
     description: Disable all sidebar-related animations.
+    type: class-toggle
+    default: false
+  - id: notices-at-bottom-right
+    title: "Notifications: Display at bottom right"
+    description: By default, Obsidian displays notifications at the top right. Enable this to display them at the bottom right instead.
     type: class-toggle
     default: false
   - # << Fonts & Headings (+)
