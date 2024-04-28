@@ -4640,44 +4640,40 @@ body .longform-explorer.longform-explorer #scene-list {
 
 #scene-list .scene-container {
 	width: 100%;
-	padding: 4px 6px;
+	padding: 3px 4px;
 	line-height: 1.2em;
 	white-space: normal;
 	border: none;
 	border-radius: 0;
+	--longform-indent-size: 1.75em;
 }
 
 #scene-list .scene-container>div>div {
 	margin-left: 0;
 }
 
+/* stylelint-disable declaration-no-important */
 #scene-list .scene-container[data-scene-indent="0"] {
-	/* stylelint-disable-next-line declaration-no-important */
-	padding-left: 6px !important;
-}
-
-/* FIX indented scenes moving longform sidebar incorrectly due to usage of margin
-* instead of padding. */
-#scene-list .scene-container[data-scene-indent] {
-	/* stylelint-disable-next-line declaration-no-important */
-	margin-left: 0 !important;
+	padding-left: 4px !important;
 }
 
 #scene-list .scene-container[data-scene-indent="1"] {
-	padding-left: 1.75em;
+	padding-left: calc(var(--longform-indent-size) * 1) !important;
 }
 
 #scene-list .scene-container[data-scene-indent="2"] {
-	padding-left: 3.5em;
+	padding-left: calc(var(--longform-indent-size) * 2) !important;
 }
 
 #scene-list .scene-container[data-scene-indent="3"] {
-	padding-left: 5.25em;
+	padding-left: calc(var(--longform-indent-size) * 3) !important;
 }
 
 #scene-list .scene-container[data-scene-indent="4"] {
-	padding-left: 7em;
+	padding-left: calc(var(--longform-indent-size) * 4) !important;
 }
+
+/* stylelint-enable declaration-no-important */
 
 #scene-list .scene-container.selected,
 #scene-list .scene-container.selected .longform-scene-number {
