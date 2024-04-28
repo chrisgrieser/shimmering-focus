@@ -54,6 +54,8 @@ vim.defer_fn(function()
 			prompt_prefix = " ",
 			prompt_title = "Navigation Markers",
 			trim_text = true,
+			previewer = false,
+			layout_config = { horizontal = { width = 0.7 } },
 		})
 	end, { desc = " Search Comment Marks" })
 	-- search only for variables
@@ -63,6 +65,7 @@ vim.defer_fn(function()
 			prompt_prefix = "󰀫 ",
 			prompt_title = "CSS Variables",
 			trim_text = true,
+			layout_strategy = "vertical",
 		})
 	end, { desc = " Search CSS Variables" })
 end, 500)
