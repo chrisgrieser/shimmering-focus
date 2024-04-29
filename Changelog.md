@@ -1,3 +1,4 @@
+- 2024-04-29 **improv**: code font size setting with more granular steps
 - 2024-04-29 **fix**: code font size setting
 - 2024-04-29 **fix**: settings to use uncolored bold/italics
 - 2024-04-29 **build**: improve hot-reloading mechanic
