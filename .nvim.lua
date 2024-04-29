@@ -17,22 +17,29 @@ end
 local permaRepos = os.getenv("HOME") .. "/.config/perma-repos.csv"
 local themeFiles = {}
 for line in io.lines(permaRepos) do
-	local name, path, _, _ = line:match("^(.-),(.-),(.-),(.-)$")
-	if name:find("[Vv]ault") then
-		local cssPath = vim.fs.normalize(path .. "/.obsidian/themes/Shimmering Focus/theme.css")
+	local vaultName, vaultPath, _, _ = line:match("^(.-),(.-),(.-),(.-)$")
+	if vaultName:find("[Vv]ault") then
+		local cssPath = vim.fs.normalize(vaultPath .. "/.obsidian/themes/Shimmering Focus/theme.css")
 		local themeExists = vim.loop.fs_stat(cssPath) ~= nil
-		if themeExists then table.insert(themeFiles, cssPath) end
+		if themeExists then themeFiles[vaultName] = cssPath end
 	end
 end
 
 -- touch symlink on filechange, to trigger Obsidian's hot-reload
 local group = vim.api.nvim_create_augroup("shimmering-focus-hot-reload", {})
-vim.api.nvim_create_autocmd({ "InsertLeave", "QuitPre" }, {
+vim.api.nvim_create_autocmd({ "FocusLost", "BufLeave" }, {
 	buffer = 0,
 	group = group,
 	callback = function()
-		for _, themeFile in pairs(themeFiles) do
-			fn.system { "touch", "-h", themeFile }
+		for vaultName, themeFile in pairs(themeFiles) do
+			vim.fn.system { "touch", "-h", themeFile }
+			if vim.v.shell_error ~= 0 then
+				vim.notify_once(
+					'Failed to touch "theme.css" in ' .. vaultName,
+					vim.log.levels.WARN,
+					{ title = "Shimmering Focus" }
+				)
+			end
 		end
 	end,
 })
