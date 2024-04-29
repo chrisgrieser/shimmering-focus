@@ -1,3 +1,4 @@
+-- INFO nvim config specifically for Shimmering Focus file
 local bo = vim.bo
 local cmd = vim.cmd
 local fn = vim.fn
@@ -11,15 +12,16 @@ end
 --------------------------------------------------------------------------------
 -- HOT-RELOADING
 
+-- from all perma-repos, identify the one's that are Obsidian vaults and have
+-- shimmering focus as theme
 local permaRepos = os.getenv("HOME") .. "/.config/perma-repos.csv"
 local themeFiles = {}
 for line in io.lines(permaRepos) do
 	local name, path, _, _ = line:match("^(.-),(.-),(.-),(.-)$")
 	if name:find("[Vv]ault") then
-		local cssPath = vim.fs.normalize(
-			path .. "/.obsidian/themes/Shimmering Focus/theme.css"
-		)
-		table.insert(themeFiles, cssPath)
+		local cssPath = vim.fs.normalize(path .. "/.obsidian/themes/Shimmering Focus/theme.css")
+		local themeExists = vim.loop.fs_stat(cssPath) ~= nil
+		if themeExists then table.insert(themeFiles, cssPath) end
 	end
 end
 
@@ -30,7 +32,7 @@ vim.api.nvim_create_autocmd({ "InsertLeave", "QuitPre" }, {
 	group = group,
 	callback = function()
 		for _, themeFile in pairs(themeFiles) do
-			fn.system({ "touch", "-h", themeFile })
+			fn.system { "touch", "-h", themeFile }
 		end
 	end,
 })
@@ -38,9 +40,12 @@ vim.api.nvim_create_autocmd({ "InsertLeave", "QuitPre" }, {
 --------------------------------------------------------------------------------
 
 -- never push, since build script already pushes
-bufferKeymap("n", "gc", function()
-	require("tinygit").smartCommit({ pushIfClean = false })
-end, { desc = "󰊢 Smart-Commit (no push)" })
+bufferKeymap(
+	"n",
+	"gc",
+	function() require("tinygit").smartCommit { pushIfClean = false } end,
+	{ desc = "󰊢 Smart-Commit (no push)" }
+)
 
 --------------------------------------------------------------------------------
 -- COMMENT MARKS
@@ -50,39 +55,29 @@ vim.defer_fn(function()
 	bo.grepprg = "rg --vimgrep --no-column" -- remove columns for readability
 	bufferKeymap("n", "gs", function()
 		cmd([[silent! lgrep "^(  - \# <<\|/\* <)" %]]) -- riggrep-search for navigaton markers
-		require("telescope.builtin").loclist({
+		require("telescope.builtin").loclist {
 			prompt_prefix = " ",
 			prompt_title = "Navigation Markers",
 			trim_text = true,
 			previewer = false,
 			layout_config = { horizontal = { width = 0.7 } },
-		})
+		}
 	end, { desc = " Search Comment Marks" })
 	-- search only for variables
 	bufferKeymap("n", "gw", function()
 		cmd([[silent! lgrep "^\s*--" %]]) -- riggrep-search for css variables
-		require("telescope.builtin").loclist({
+		require("telescope.builtin").loclist {
 			prompt_prefix = "󰀫 ",
 			prompt_title = "CSS Variables",
 			trim_text = true,
 			layout_strategy = "vertical",
-		})
+		}
 	end, { desc = " Search CSS Variables" })
 end, 500)
 
 -- next/prev comment marks
-bufferKeymap(
-	{ "n", "x" },
-	"<C-j>",
-	[[/^\/\* <<CR>:nohl<CR>]],
-	{ desc = "next comment mark" }
-)
-bufferKeymap(
-	{ "n", "x" },
-	"<C-k>",
-	[[?^\/\* <<CR>:nohl<CR>]],
-	{ desc = "prev comment mark" }
-)
+bufferKeymap({ "n", "x" }, "<C-j>", [[/^\/\* <<CR>:nohl<CR>]], { desc = "next comment mark" })
+bufferKeymap({ "n", "x" }, "<C-k>", [[?^\/\* <<CR>:nohl<CR>]], { desc = "prev comment mark" })
 
 -- create comment mark
 bufferKeymap("n", "qw", function()
@@ -97,5 +92,5 @@ bufferKeymap("n", "qw", function()
 	local lineNum = vim.api.nvim_win_get_cursor(0)[1] + 2
 	local colNum = #hr[2] + 2
 	vim.api.nvim_win_set_cursor(0, { lineNum, colNum })
-	cmd.startinsert({ bang = true })
+	cmd.startinsert { bang = true }
 end, { desc = " Comment Mark" })
