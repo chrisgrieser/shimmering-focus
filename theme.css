@@ -5258,9 +5258,22 @@ settings:
     title: "Headings: Font Family"
     type: variable-text
     default: '"Optima", "Recursive S"'
+  - id: font-info
+    description: "You can change the font used elsewhere in the Obsidian settings: `Appearance → Font`"
+    type: info-text
+    markdown: true
+  - id: code-size
+    title: "Code: Font Size"
+    type: variable-number-slider
+    default: 0.875
+    min: 0.5
+    max: 1.25
+    step: 0.125
+    format: em
   - id: heading-scaling
-    title: "Headings: Font Size Scaling"
-    description: The font size of all headings is multiplied by this factor.
+    title: "Headings: Font Size"
+    description: The font size of *all* headings is multiplied by this factor.
+    markdown: true
     type: variable-number-slider
     default: 1
     min: 0.5
@@ -5284,18 +5297,6 @@ settings:
     description: Makes Headings more compact by decreasing their letter spacing.
     type: class-toggle
     default: false
-  - id: code-block-scaling
-    title: "Code: Font Size"
-    type: variable-number-slider
-    default: 0.875em
-    min: 0.5
-    max: 1.25
-    step: 0.125
-    format: em
-  - id: font-info
-    description: "You can change the font used elsewhere in the Obsidian settings: `Appearance → Font`"
-    type: info-text
-    markdown: true
   - # << Colors & Shapes (+)
     id: aesthetics
     title: 🎨 Colors & Shapes
