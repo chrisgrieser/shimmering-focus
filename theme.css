@@ -877,13 +877,11 @@ body:not(.annotation-tags-off) :is(.cm-hashtag-end.cm-tag-example, .tag[href="#e
 /* << Bold & Italic
 ──────────────────────────────────────────────────── */
 
-.modal-container strong,
-.uncolored-bold:is(.theme-light, .theme-dark) {
+.uncolored-bold :is(strong, .cm-strong) {
 	--bold-color: var(--text-normal);
 }
 
-.modal-container em,
-.uncolored-italic:is(.theme-light, .theme-dark) {
+.uncolored-italic :is(em, .cm-em) {
 	--italic-color: var(--text-normal);
 }
 
