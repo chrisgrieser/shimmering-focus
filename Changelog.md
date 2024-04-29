@@ -1,3 +1,6 @@
+- 2024-04-29 **build**: improve hot-reloading mechanic
+- 2024-04-29 **improv**: Dynamic Highlights settings page
+- 2024-04-29 **build**: format nvim config
 - 2024-04-28 **chore**: remove ambiguity from code block language labels
 - 2024-04-28 **chore**: remove outdated hub info
 - 2024-04-28 **feat**: option to display notifications at the bottom instead of top
