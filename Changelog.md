@@ -1,3 +1,4 @@
+- 2024-04-29 **fix**: settings to use uncolored bold/italics
 - 2024-04-29 **build**: improve hot-reloading mechanic
 - 2024-04-29 **improv**: Dynamic Highlights settings page
 - 2024-04-29 **build**: format nvim config
