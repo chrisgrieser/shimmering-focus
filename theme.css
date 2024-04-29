@@ -3828,6 +3828,34 @@ body .cm-matched-string {
 	outline: 2.5px solid var(--search-match-color);
 }
 
+/* FIX bug where the save button is not properly clickable */
+.dynamic-highlights-settings .query-wrapper input {
+	width: 100%;
+}
+
+/* reduce spacing to see more rules */
+.dynamic-highlights-settings .highlighter-container .highlighter-details {
+	padding: 6px 0;
+}
+
+.dynamic-highlights-settings .highlighter-container .highlighter-details .setting-item-info {
+	margin-right: 6px;
+}
+
+.dynamic-highlights-settings .highlighter-item-draggable{
+	grid-gap: 0;
+}
+
+.dynamic-highlights-settings button.action-button.mod-warning {
+	margin-right: 0;
+	padding: 8px;
+}
+
+.dynamic-highlights-settings button.action-button.mod-cta {
+	margin-right: 4px;
+	padding: 8px;
+}
+
 /* ───────────────────────────────────────────────── */
 /* << Another Quick Switcher (AQS)
 ──────────────────────────────────────────────────── */
