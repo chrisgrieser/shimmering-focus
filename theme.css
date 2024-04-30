@@ -1146,13 +1146,13 @@ body:not(.no-heading-background) .markdown-preview-view :is(h1, h2, h3, h4, h5, 
 }
 
 /* HACK live-preview: prevent rounded corners with consecutive block quotes */
-.is-live-preview .HyperMD-quote+.HyperMD-quote::before {
+body:not(.angular-shapes) .is-live-preview .HyperMD-quote+.HyperMD-quote::before {
 	margin-top: -0.5em;
 	border-bottom-left-radius: var(--radius-s);
 }
 
 /* HACK source-mode: prevent rounded corners with consecutive block quotes */
-.markdown-source-view:not(.is-live-preview) .HyperMD-quote+.HyperMD-quote::before {
+body:not(.angular-shapes) .markdown-source-view:not(.is-live-preview) .HyperMD-quote+.HyperMD-quote::before {
 	position: absolute;
 	width: var(--blockquote-border-thickness);
 	height: 1.5em;
