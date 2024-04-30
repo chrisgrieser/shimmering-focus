@@ -53,11 +53,15 @@ sed -E -i '' "s/badge.*-[[:digit:]]+-/badge\/downloads-$dl-/" ./README.md
 
 #───────────────────────────────────────────────────────────────────────────────
 # CHANGELOG
-commits_since_last_publish=$(git -C "$script_dir" log :/publish.. --format="- %cs %s")
 
-echo "$commits_since_last_publish" | sed -E "s/^(- [0-9-]+) ([^ ]+): /\1 **\2**: /" >>"temp.md"
-grep -v "^$" "Changelog.md" >>"temp.md"
-mv -f "temp.md" "Changelog.md"
+# only add to changelog if on `main`
+if [[ "$(git branch --show-current)" == "main" ]]; then
+	commits_since_last_publish=$(git -C "$script_dir" log :/publish.. --format="- %cs %s")
+
+	echo "$commits_since_last_publish" | sed -E "s/^(- [0-9-]+) ([^ ]+): /\1 **\2**: /" >>"temp.md"
+	grep -v "^$" "Changelog.md" >>"temp.md"
+	mv -f "temp.md" "Changelog.md"
+fi
 
 #───────────────────────────────────────────────────────────────────────────────
 # GIT ADD, COMMIT, PULL, AND PUSH
