@@ -16,7 +16,6 @@ A minimalistic and opinionated Obsidian theme for the keyboard-centric user.
 	* [Design Philosophy](#design-philosophy)
 	* [Theme Features](#theme-features)
 	* [Commands](#commands)
-	* [Private Mode](#private-mode)
 	* [Recommended plugins](#recommended-plugins)
 - [Contribute](#contribute)
 	* [Create and Share your own Color Scheme](#create-and-share-your-own-color-scheme)
@@ -78,24 +77,6 @@ Shimmering Focus adds commands for toggling theme features:
 - Toggle Folding of URLs (Source Mode)
 - Toggle between reduced and original image size (reduced size can be set in the
   respective style setting)
-- Toggle Private Mode
-
-### Private Mode
-When the style setting `Private Mode` is enabled, notes with the CSS class
-`private` are garbled. Private Mode is intended to be temporarily enabled during
-screen sharing in video calls.
-
-Install [Supercharged
-Links](https://obsidian.md/plugins?id=supercharged-links-obsidian) and add
-`cssclass` to the `Target Attributes for Styling` in its settings to also blur
-occurrences of the note name in some plugins like the File Explorer or Quick
-Switcher are also blurred. (Note that note content may still show up indirectly
-via other plugins, for example in dataview queries.)
-
-You can also use [this standalone
-snippet](https://github.com/chrisgrieser/shimmering-focus/blob/main/snippets/private-mode.css)
-together with the Style Settings and Supercharged Links plugins to use Private
-Mode with a different theme.
 
 ### Recommended plugins
 - [Style Settings

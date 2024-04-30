@@ -3376,16 +3376,6 @@ are not targeted by this */
 }
 
 /* ───────────────────────────────────────────────── */
-/* < Private Mode
-──────────────────────────────────────────────────── */
-
-/* needs *= to catch "," in the yaml */
-.private-mode .data-link-text[data-link-cssclass*="private"],
-.private-mode .private.private * {
-	font-family: "Flow Circular", sans-serif;
-}
-
-/* ───────────────────────────────────────────────── */
 /* < Core Plugins
 ──────────────────────────────────────────────────── */
 
@@ -5660,22 +5650,6 @@ settings:
   - id: classic-inline-backlinks
     title: Use normal inline backlinks
     description: By default, the inline-backlinks are displayed in a more minimalistic manner. Enable this setting to restore original display of backlinks. This also affects the Influx Plugin.
-    type: class-toggle
-    default: false
-  - # << Miscellaneous (+)
-    id: miscellaneous
-    title: 🧊 Miscellaneous
-    description: Private Mode
-    type: heading
-    level: 1
-    collapsed: true
-  - id: private-mode
-    title: Private Mode
-    markdown: true
-    addCommand: true
-    description: |
-      When enabled, all notes with the cssclass `private` will be garbled. This setting is meant to be enabled temporarily during screen sharing. Install Supercharged Links and add 'cssclass' as a target attribute to also garble any links and occurrences in the File Explorer and Quick Switcher. Note that note contents can still show up in views and sidebars created from plugins.
-      ℹ️ This can also be toggled via command palette or hotkey.
     type: class-toggle
     default: false
   - # << Infos (+)
