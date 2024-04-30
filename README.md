@@ -13,13 +13,13 @@ A minimalistic and opinionated Obsidian theme for the keyboard-centric user.
 <!-- toc -->
 
 - [Features](#features)
-	* [Design Philosophy](#design-philosophy)
-	* [Theme Features](#theme-features)
+	* [Design philosophy](#design-philosophy)
+	* [Theme features](#theme-features)
 	* [Commands](#commands)
 	* [Recommended plugins](#recommended-plugins)
 - [Contribute](#contribute)
-	* [Create and Share your own Color Scheme](#create-and-share-your-own-color-scheme)
-	* [Submit Bug Fixes](#submit-bug-fixes)
+	* [Create and share your own color scheme](#create-and-share-your-own-color-scheme)
+	* [Submit bug fixes](#submit-bug-fixes)
 - [Licenses](#licenses)
 - [Credits](#credits)
 - [About the developer](#about-the-developer)
@@ -43,15 +43,12 @@ A minimalistic and opinionated Obsidian theme for the keyboard-centric user.
 ![Explaining screenshot](assets/explainer-screenshot.png)
 
 ### Theme features
-- Emphasis of __Pandoc Citations__ and __Footnotes__. (Install the [Pandoc
-  Reference List
-  Plugin](https://obsidian.md/plugins?id=obsidian-pandoc-reference-list) for
-  improved styling.)
+- Emphasis of __Pandoc Citations__ and __Footnotes__.
 - __Alt-text of images__ is used as __caption__.
 - Images can be __zoomed in__ by clicking and holding. You can also toggle
   between reduced and original size via command (requires Style Settings
   Plugin).
-- __Code Blocks:__ Various improvements like language display, disabled
+- __Code blocks:__ Various improvements like disabled
   wrapping, and line numbers per code block.
 - Extensive Styling for the [Longform
   Plugin](https://obsidian.md/plugins?id=longform), including alternative
@@ -74,7 +71,7 @@ A minimalistic and opinionated Obsidian theme for the keyboard-centric user.
 When the [Style Settings
 Plugin](https://obsidian.md/plugins?id=obsidian-style-settings) is installed,
 Shimmering Focus adds commands for toggling theme features:
-- Toggle Folding of URLs (Source Mode)
+- Toggle folding of URLs (Source Mode)
 - Toggle between reduced and original image size (reduced size can be set in the
   respective style setting)
 
