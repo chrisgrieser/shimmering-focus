@@ -1,12 +1,12 @@
 # Shimmering Focus ⟡
-![Download Count](https://img.shields.io/badge/downloads-159398-6E4E9B?style=plastic&logo=obsidian&color=%23483699)
-![Last Commit](https://img.shields.io/github/last-commit/chrisgrieser/shimmering-focus?style=plastic)
+![Download count](https://img.shields.io/badge/downloads-159398-6E4E9B?style=plastic&logo=obsidian&color=%23483699)
+![Last commit](https://img.shields.io/github/last-commit/chrisgrieser/shimmering-focus?style=plastic)
 ![Changelog](https://img.shields.io/badge/changelog-here-6E4E9B?style=plastic&color=%23f6c66f)
 
 A minimalistic and opinionated Obsidian theme for the keyboard-centric user.  
 [🏆 Winner Obsidian October 2022 (Category: Theme Update)](https://forum.obsidian.md/t/obsidian-october-2022-winners/49087).
 
-![Promo Screenshot](assets/promo-screenshot-big.png)
+![Promo screenshot](assets/promo-screenshot-big.png)
 
 ---
 
@@ -53,16 +53,9 @@ A minimalistic and opinionated Obsidian theme for the keyboard-centric user.
 - Extensive Styling for the [Longform
   Plugin](https://obsidian.md/plugins?id=longform), including alternative
   background colors and serif-fonts only for notes in longform projects.
-- __Annotation Tags__: Tags that are emphasized when used inline (not in the
-  YAML frontmatter). They are meant as visual guides for literature notes. They
-  include: `#definition`, `#question`, `#goal`, `#todo`, `#summary`,
-  `#important`, `#main`, `#critique`, `#gap`, `#litreview`, `#quote`, `#agree`,
-  `#disagree`, `#example`, `#data`, `#method`, `#idea`, `#epistemic-break`, and
-  `#sidenote`. To add your own annotation tags, you can use a plugin like
-  [Colorful Tags Plugin](https://github.com/rien7/obsidian-colorful-tag).
 - __Vim Mode__: Explicit styling of Obsidian's Vim Mode and various style
   settings for vim mode, such as relative line numbers.
-- …
+- **Tables**: Highlighting of active cells, alternating row colors, and more.
 
 > [!NOTE]
 > This theme only supports the Obsidian desktop release.

@@ -1,5 +1,0 @@
-/* change the font for mathjax in source mode
- * https://help.obsidian.md/How+to/Format+your+notes.md#Math */
-body .markdown-source-view .cm-math{
-	font-family: "Comic Sans";
-}
