@@ -1362,11 +1362,11 @@ mark {
 ──────────────────────────────────────────────────── */
 
 /* applies to all []-links (barelinks), partially also to footnotes */
-body:not(.no-pandoc-citation-emphasis) .cm-hmd-barelink.cm-hmd-barelink.cm-hmd-barelink.cm-hmd-barelink.cm-hmd-barelink:not(.cm-formatting) {
+.cm-hmd-barelink.cm-hmd-barelink.cm-hmd-barelink.cm-hmd-barelink.cm-hmd-barelink:not(.cm-formatting) {
 	color: var(--secondary-accent);
 }
 
-body:not(.no-pandoc-citation-emphasis) .cm-hmd-barelink.cm-formatting:not(.cm-footref) {
+.cm-hmd-barelink.cm-formatting:not(.cm-footref) {
 	color: var(--text-faint);
 }
 
@@ -2893,7 +2893,7 @@ are not targeted by this */
 }
 
 /* ───────────────────────────────────────────────── */
-/* << Vim: Active Visual Line (experimental)
+/* << Vim: Active Visual Line
 ──────────────────────────────────────────────────── */
 
 .vim-active-visual-line .cm-fat-cursor.cm-cursor-primary {
@@ -3129,16 +3129,6 @@ body .canvas-card-menu {
 	left: unset;
 	right: -1rem;
 	display: unset;
-}
-
-/* `.canvas-node:not(:has(.canvas-node-label))` are cards, but not notes */
-.canvas-sketch-mode .canvas-node:not(:has(.canvas-node-label)) .markdown-preview-view {
-	text-align: center;
-	font-family: var(--font-interface);
-}
-
-.canvas-sketch-mode .canvas-path-label {
-	font-size: calc(var(--font-ui-small) * var(--zoom-multiplier));
 }
 
 /* ───────────────────────────────────────────────── */
@@ -3804,16 +3794,16 @@ body .another-quick-switcher__grep__path-input.another-quick-switcher__grep__pat
 /* PANDOC CITATIONS IN-TEXT */
 
 /* neither resolved nor unresolved = citation loading (or pandoc reference list bug) */
-body:not(.no-pandoc-citation-emphasis) .pandoc-citation:not(.is-resolved, .is-unresolved) {
+.pandoc-citation:not(.is-resolved, .is-unresolved) {
 	opacity: 0.6;
 }
 
-body:not(.no-pandoc-citation-emphasis) .pandoc-citation.is-resolved.is-resolved.is-resolved.is-resolved {
+.pandoc-citation.is-resolved.is-resolved.is-resolved.is-resolved {
 	color: var(--secondary-accent);
 	text-decoration: none;
 }
 
-body:not(.no-pandoc-citation-emphasis) .pandoc-citation.pandoc-citation.is-unresolved {
+.pandoc-citation.pandoc-citation.is-unresolved {
 	color: var(--text-error);
 	text-decoration: underline 1.5px var(--text-error);
 }
@@ -4817,6 +4807,7 @@ settings:
     description: |
       - [Documentation of Features](https://github.com/chrisgrieser/shimmering-focus#shimmering-focus-)
       - [Changelog](https://github.com/chrisgrieser/shimmering-focus/blob/main/Changelog.md)
+      - To keep this theme maintainable, a few niche features have been removed. Most of them available as [standalone snippets](https://github.com/chrisgrieser/shimmering-focus/tree/main/snippets) though.
     markdown: true
     type: info-text
   - # << Show / Hide UI Elements (+)
@@ -5086,7 +5077,7 @@ settings:
   - # << Editor Content (+)
     id: content-settings
     title: 📑 Editor Content
-    description: Active Lines, Dimmed Panes, Line Length, Folded Lines
+    description: Active Lines, Dimmed Panes, Line Length, Folded Lines, Trailing Spaces
     type: heading
     level: 1
     collapsed: true
@@ -5131,6 +5122,11 @@ settings:
     type: class-toggle
     description: ⚠️ Requires Obsidian installer version 1.1.9 or later. Slightly darkens the background of folded lines, similar to folds in vim.
     default: false
+  - id: hide-trailing-whitespace
+    title: Hide Trailing Spaces
+    description: 'By default, this theme indicates the presence of trailing spaces when there are more than one with "··↵". This can be useful for the "Two Space Rule" in Markdown, where exactly two spaces at the end of a line force a line break.'
+    type: class-toggle
+    default: false
   - # << Media (+)
     id: media-settings
     title: 🖼️ Media
@@ -5169,29 +5165,6 @@ settings:
     addCommand: true
     type: class-toggle
     default: false
-  - id: canvas-sketch-mode
-    title: "Canvas: Sketch Mode (🧪 Experimental)"
-    description: ⚠️ Requires Obsidian installer version 1.1.9 or later. Centers canvas cards and shrinks labels. Use this setting if you only use the canvas to sketch things via cards, and otherwise do not add notes to your canvas. (The theme also adds a command to toggle this setting.)
-    type: class-toggle
-    addCommand: true
-  - # << Markup & Special Syntax (+)
-    id: markup-and-special-syntax
-    title: ✏️ Markup & Special Syntax
-    description: Blockquote Alignment, Trailing Spaces, Pandoc Emphasis, Annotation Tags
-    type: heading
-    level: 1
-    collapsed: true
-  - id: hide-trailing-whitespace
-    title: Hide Trailing Spaces
-    description: 'By default, this theme indicates the presence of trailing spaces when there are more than one with "··↵". This can be useful for the "Two Space Rule" in Markdown, where exactly two spaces at the end of a line force a line break.'
-    type: class-toggle
-    default: false
-  - id: no-pandoc-citation-emphasis
-    title: No Emphasis of Pandoc Citations
-    markdown: true
-    description: "Turn off the coloring of Pandoc Citations [@citekey] in Editing Mode. (Also affects the styling for the Pandoc Reference List Plugin.)"
-    type: class-toggle
-    default: false
   - # << Vim Mode (+)
     id: vim-mode
     title: 🏃 Vim Mode
@@ -5220,7 +5193,7 @@ settings:
     type: class-toggle
     default: false
   - id: vim-active-visual-line
-    title: Cursorline (🧪 Experimental)
+    title: Cursorline
     markdown: true
     description: Emphasize the active visual line. Only works in Normal Mode, and also affects the cursor blink animation. As opposed to the "Active Line Indicator", this works on *visual* lines instead of *logical* lines. Note that this setting is independent of the "Active Block Indicator" setting to allow for both being in use at the same time.
     type: class-toggle

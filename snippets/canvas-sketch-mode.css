@@ -1,0 +1,14 @@
+/* ⚠️ Requires Obsidian installer version 1.1.9 or later. 
+* Centers canvas cards and shrinks labels. Use this setting if you only use the
+* canvas to sketch things via cards, and otherwise do not add notes to your
+* canvas. (The theme also adds a command to toggle this setting.) */
+
+/* `.canvas-node:not(:has(.canvas-node-label))` are cards, but not notes */
+.canvas-node:not(:has(.canvas-node-label)) .markdown-preview-view {
+	text-align: center;
+	font-family: var(--font-interface);
+}
+
+.canvas-path-label {
+	font-size: calc(var(--font-ui-small) * var(--zoom-multiplier));
+}
