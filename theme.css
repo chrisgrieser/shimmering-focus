@@ -1191,12 +1191,6 @@ body:not(.no-heading-background) .markdown-preview-view :is(h1, h2, h3, h4, h5, 
 	margin-bottom: 2px;
 }
 
-/* option to left-align */
-body:not(.blockquotes-left-aligned) .app-container :is(.markdown-preview-view, .community-modal-readme) blockquote {
-	hyphens: auto;
-	text-align: justify;
-}
-
 blockquote,
 .cm-hmd-indent-in-quote,
 .HyperMD-quote.HyperMD-quote-1,
@@ -5187,11 +5181,6 @@ settings:
     type: heading
     level: 1
     collapsed: true
-  - id: blockquotes-left-aligned
-    title: Left-aligned Blockquote Text
-    description: Use left-aligned text in blockquotes instead of justified text.
-    type: class-toggle
-    default: false
   - id: hide-trailing-whitespace
     title: Hide Trailing Spaces
     description: 'By default, this theme indicates the presence of trailing spaces when there are more than one with "··↵". This can be useful for the "Two Space Rule" in Markdown, where exactly two spaces at the end of a line force a line break.'
