@@ -1470,20 +1470,18 @@ body:not(.show-close-buttons) .modal-close-button {
 	display: none;
 }
 
-.vertical-tab-header-group:not(:first-child) {
+.vertical-tab-header-group:not(:first-child, :empty) {
 	border-top: var(--basic-border);
 }
 
 .vertical-tab-nav-item {
 	margin-bottom: 0;
-	/* distance between items */
 	font-size: 1em;
 	line-height: 1.35;
-	/* distance between items */
 	border-radius: 0;
 }
 
-.mod-settings input:is([type="text"], [type="search"]) {
+.mod-settings input:is([type="text"], [type="search"]):not(.linter-custom-regex-replacement-flags) {
 	min-width: 250px;
 	background-color: var(--bg1);
 }
