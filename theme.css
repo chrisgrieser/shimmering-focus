@@ -679,7 +679,7 @@ u,
 
 .cm-hmd-internal-link .cm-underline.cm-underline,
 .markdown-preview-view .internal-link:not(.multi-select-pill, .metadata-link-inner) {
-	text-decoration: underline double 1px;
+	text-decoration: underline double 1.2px;
 }
 
 body .cm-string.cm-url {
