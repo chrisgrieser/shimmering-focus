@@ -29,7 +29,7 @@ A minimalistic and opinionated Obsidian theme for the keyboard-centric user.
 
 ## Features
 
-### Design Philosophy
+### Design philosophy
 - __Radical Minimalism:__ As opposed to a minimalism of *colors*, this theme
   focuses on a minimalistic *user interface*: Buttons and sidebars not relevant
   for keyboard users are removed. UI elements that require the mouse are still
@@ -43,7 +43,7 @@ A minimalistic and opinionated Obsidian theme for the keyboard-centric user.
 
 ![Explaining screenshot](assets/explainer-screenshot.png)
 
-### Theme Features
+### Theme features
 - Emphasis of __Pandoc Citations__ and __Footnotes__. (Install the [Pandoc
   Reference List
   Plugin](https://obsidian.md/plugins?id=obsidian-pandoc-reference-list) for
@@ -100,13 +100,8 @@ Mode with a different theme.
 ### Recommended plugins
 - [Style Settings
   Plugin](https://obsidian.md/plugins?id=obsidian-style-settings): Unlocks
-  dozens of customization options.
+  dozens of customization options
 - For academics: [Pandoc Reference List Plugin](https://obsidian.md/plugins?id=obsidian-pandoc-reference-list)
-- For macOS: [Electron Window
-  Tweaker](https://obsidian.md/plugins?id=obsidian-electron-window-tweaker):
-  Position the traffic lights for even more native macOS look (same position as
-  in Safari: X = 20, Y = 18). You can even completely hide the traffic lights by
-  using negative values, for example X = -60.
 
 > [!NOTE]
 > When using the theme, you can disable the *Hider* Plugin, since Shimmering
@@ -114,7 +109,7 @@ Mode with a different theme.
 
 ## Contribute
 
-### Create and Share your own Color Scheme
+### Create and share your own color scheme
 With Shimmering Focus, you can create your own color scheme with this CSS
 snippet. You are welcome to [share your color
 scheme](https://github.com/chrisgrieser/shimmering-focus/discussions/new?category=share-your-custom-color-schemes).
@@ -156,7 +151,7 @@ they might be considered for inclusion in the core theme as a style setting.
 have set in the Style Settings. */
 ```
 <!-- vale Google.FirstPerson = NO -->
-### Submit Bug Fixes
+### Submit bug fixes
 Submissions in the following areas are welcome:
 - Fixes for Windows or Linux
 - Support for a plugin
