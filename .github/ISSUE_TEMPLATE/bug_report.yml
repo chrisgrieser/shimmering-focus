@@ -16,6 +16,8 @@ body:
           required: true
         - label: This issue concerns the theme in general and is not related to a specific plugin, for which there [is the plugin-support form](https://github.com/chrisgrieser/shimmering-focus/issues/new?template=plugin_support.yml).
           required: true
+        - label: The bug is about Obsidian desktop, Obsidian mobile is not supported by this theme.
+          required: true
   - type: textarea
     id: bug-description
     attributes:
@@ -82,9 +84,8 @@ body:
     id: operating-system
     attributes:
       label: Which operating system?
+      description: Please note that the theme does not officially support mobile (iOS, Android).
       options:
         - label: macOS
         - label: Linux
         - label: Windows
-        - label: iOS
-        - label: Android

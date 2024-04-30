@@ -14,6 +14,8 @@ body:
           required: true
         - label: This issue concerns the theme in general and is not related to a specific plugin, for which there [is the plugin-support form](https://github.com/chrisgrieser/shimmering-focus/issues/new?template=plugin_support.yml).
           required: true
+        - label: The request is about Obsidian desktop, Obsidian mobile is not supported by this theme.
+          required: true
   - type: textarea
     id: feature-requested
     attributes:

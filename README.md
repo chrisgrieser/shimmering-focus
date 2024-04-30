@@ -16,8 +16,6 @@ A minimalistic and opinionated Obsidian theme for the keyboard-centric user.
 	* [Design Philosophy](#design-philosophy)
 	* [Theme Features](#theme-features)
 	* [Commands](#commands)
-	* [CSS Classes](#css-classes)
-	* [Callouts](#callouts)
 	* [Private Mode](#private-mode)
 	* [Recommended plugins](#recommended-plugins)
 - [Contribute](#contribute)
@@ -67,8 +65,11 @@ A minimalistic and opinionated Obsidian theme for the keyboard-centric user.
   `#sidenote`. To add your own annotation tags, you can use a plugin like
   [Colorful Tags Plugin](https://github.com/rien7/obsidian-colorful-tag).
 - __Vim Mode__: Explicit styling of Obsidian's Vim Mode and various style
-  settings for vim mode, like for example relative line numbers.
+  settings for vim mode, such as relative line numbers.
 - …
+
+> [!NOTE]
+> This theme only supports the Obsidian desktop release.
 
 ### Commands
 When the [Style Settings
@@ -157,8 +158,7 @@ have set in the Style Settings. */
 <!-- vale Google.FirstPerson = NO -->
 ### Submit Bug Fixes
 Submissions in the following areas are welcome:
-- Fixes for Windows or Linux (since I do not own a device for them)
-- Fixes for existing bug reports
+- Fixes for Windows or Linux
 - Support for a plugin
 
 Please use the [dedicated form for submitting
