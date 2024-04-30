@@ -2130,7 +2130,6 @@ input[type="checkbox"].metadata-input-checkbox {
 	display: none;
 }
 
-
 .status-bar {
 	min-height: 0;
 	padding: 3px 4px;
@@ -4770,7 +4769,7 @@ settings:
     type: info-text
   - # << Show / Hide UI Elements (+)
     id: show-hide-elements
-    title: 🙈 Show/hide ui elements
+    title: 🙈 Show/hide UI elements
     description: Re-enable UI elements hidden by this theme.
     type: heading
     level: 1
@@ -5271,4 +5270,5 @@ settings:
     markdown: true
     level: 1
     type: info-text
+*/
 /* ─────────────────────────────────────────────────── */
