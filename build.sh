@@ -23,7 +23,7 @@ npm_location="$(npm root)/.bin/"
 export PATH=/usr/local/lib:/usr/local/bin:/opt/homebrew/bin/:$npm_location:$PATH
 if ! command -v yaml-validator &>/dev/null; then echo "yaml-validator not installed." && return 1; fi
 
-sed -n '/@settings/,$p' "$css_path" | sed '1d;$d' | sed '$d' >temp.yml
+sed -n '/@settings/,$p' "$css_path" | sed '1d;$d' >temp.yml
 yamllint_output=$(yaml-validator temp.yml)
 if [[ $? == 1 ]]; then
 	echo "YAML ERROR"

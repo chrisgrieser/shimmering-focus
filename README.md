@@ -14,9 +14,7 @@ A minimalistic and opinionated Obsidian theme for the keyboard-centric user.
 
 - [Features](#features)
 	* [Design philosophy](#design-philosophy)
-	* [Theme features](#theme-features)
-	* [Commands](#commands)
-	* [Recommended plugins](#recommended-plugins)
+	* [Select theme features](#select-theme-features)
 - [Contribute](#contribute)
 	* [Create and share your own color scheme](#create-and-share-your-own-color-scheme)
 	* [Submit bug fixes](#submit-bug-fixes)
@@ -29,54 +27,34 @@ A minimalistic and opinionated Obsidian theme for the keyboard-centric user.
 ## Features
 
 ### Design philosophy
-- __Radical Minimalism:__ As opposed to a minimalism of *colors*, this theme
+- __Radical minimalism:__ As opposed to a minimalism of *colors*, this theme
   focuses on a minimalistic *user interface*: Buttons and sidebars not relevant
   for keyboard users are removed. UI elements that require the mouse are still
 	accessible on hover. All hidden UI elements can be permanently re-enabled
 	with the [Style Settings
 	Plugin](https://obsidian.md/plugins?id=obsidian-style-settings).
-- __Condensed Display of Information:__ Unnecessary padding and white-space is
+- __Condensed display of information:__ Unnecessary padding and white-space is
   removed, which is beneficial for small screens or higher zoom levels.
-- __High Customizability:__ Dozens of customization options available via [Style
+- __High customizability:__ Dozens of customization options available via [Style
   Settings Plugin](https://obsidian.md/plugins?id=obsidian-style-settings).
 
 ![Explaining screenshot](assets/explainer-screenshot.png)
 
-### Theme features
+### Select theme features
 - Emphasis of __Pandoc Citations__ and __Footnotes__.
 - __Alt-text of images__ is used as __caption__.
 - Images can be __zoomed in__ by clicking and holding. You can also toggle
   between reduced and original size via command (requires Style Settings
   Plugin).
-- __Code blocks:__ Various improvements like disabled
-  wrapping, and line numbers per code block.
-- Extensive Styling for the [Longform
+- __Writing__: Extensive styling for the [Longform
   Plugin](https://obsidian.md/plugins?id=longform), including alternative
-  background colors and serif-fonts only for notes in longform projects.
-- __Vim Mode__: Explicit styling of Obsidian's Vim Mode and various style
+  background colors and the use of serif-fonts only inside longform projects.
+- __Vim mode__: Explicit styling of Obsidian's Vim Mode and various style
   settings for vim mode, such as relative line numbers.
-- **Tables**: Highlighting of active cells, alternating row colors, and more.
+- __Tables__: Highlighting of active cells, alternating row colors, and more.
 
 > [!NOTE]
 > This theme only supports the Obsidian desktop release.
-
-### Commands
-When the [Style Settings
-Plugin](https://obsidian.md/plugins?id=obsidian-style-settings) is installed,
-Shimmering Focus adds commands for toggling theme features:
-- Toggle folding of URLs (Source Mode)
-- Toggle between reduced and original image size (reduced size can be set in the
-  respective style setting)
-
-### Recommended plugins
-- [Style Settings
-  Plugin](https://obsidian.md/plugins?id=obsidian-style-settings): Unlocks
-  dozens of customization options
-- For academics: [Pandoc Reference List Plugin](https://obsidian.md/plugins?id=obsidian-pandoc-reference-list)
-
-> [!NOTE]
-> When using the theme, you can disable the *Hider* Plugin, since Shimmering
-> Focus already hides far more than the plugin does.
 
 ## Contribute
 
