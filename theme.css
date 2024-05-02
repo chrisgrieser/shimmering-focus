@@ -1776,7 +1776,7 @@ body:not(.angular-shapes) {
 }
 
 .angular-shapes .callout {
-	/* default callout icon */
+	/* also change default callout icon */
 	--callout-icon: square;
 }
 
@@ -1790,12 +1790,15 @@ body.angular-shapes .checkbox-container {
 /* << Notice
 ──────────────────────────────────────────────────── */
 .notice-container {
+	--notice-spacing: 10px;
+	padding: var(--notice-spacing);
 	top: 0;
 }
 
 .notices-at-bottom-right .notice-container {
-	bottom: calc(var(--status-bar-font-size) * 1.2);
+	bottom: calc(var(--status-bar-font-size) + var(--notice-spacing));
 	top: unset;
+	/* also reverse order of notices, stacking from bottom to top */ 
 	display: flex;
 	flex-direction: column-reverse;
 }
