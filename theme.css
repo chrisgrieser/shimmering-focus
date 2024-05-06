@@ -572,8 +572,6 @@ body.highlight-active-cell .table-cell-wrapper:has(.cm-s-obsidian) {
 .cm-hashtag:not(.cm-formatting):hover {
 	color: var(--tag-color-hover);
 	text-decoration: var(--tag-decoration-hover);
-	background-color: var(--tag-background-hover);
-	border: var(--tag-border-width) solid var(--tag-border-color-hover);
 }
 
 /* ───────────────────────────────────────────────── */
@@ -1798,7 +1796,7 @@ body.angular-shapes .checkbox-container {
 .notices-at-bottom-right .notice-container {
 	bottom: calc(var(--status-bar-font-size) + var(--notice-spacing));
 	top: unset;
-	/* also reverse order of notices, stacking from bottom to top */ 
+	/* also reverse order of notices, stacking from bottom to top */
 	display: flex;
 	flex-direction: column-reverse;
 }
