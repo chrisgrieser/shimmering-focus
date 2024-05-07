@@ -1302,6 +1302,10 @@ body .callout ul.contains-task-list {
 	margin-bottom: 0;
 }
 
+.callout-content .contains-task-list:only-child {
+	padding-inline-start: 0;
+}
+
 /* ───────────────────────────────────────────────── */
 /* << Trailing Whitespace (Two Space Rule)
 ──────────────────────────────────────────────────── */
