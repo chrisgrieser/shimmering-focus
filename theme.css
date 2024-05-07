@@ -1291,19 +1291,12 @@ body .callout-icon .svg-icon {
 	background-color: var(--bg1);
 }
 
-body .callout ul.contains-task-list {
-	padding-inline-start: 1.5em;
-}
-
-.callout .task-list-item-checkbox {
-	top: -2px;
-	width: 1em;
-	height: 1em;
-	margin-bottom: 0;
-}
-
 .callout-content .contains-task-list:only-child {
 	padding-inline-start: 0;
+}
+
+.callout-content .contains-task-list:only-child .task-list-item-checkbox {
+	margin-inline-start: 0;
 }
 
 /* ───────────────────────────────────────────────── */
