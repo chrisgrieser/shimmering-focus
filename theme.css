@@ -5088,17 +5088,6 @@ settings:
     type: heading
     level: 1
     collapsed: true
-  - id: unrestricted-line-length-tables
-    title: Automatically disable `readable line length` on notes with tables
-    markdown: true
-    description: ⚠️ Requires Obsidian installer version 1.1.9 or later.
-    type: class-toggle
-    default: false
-  - id: highlight-active-cell
-    title: "Tables: Emphasize the active cell (live preview)"
-    description: ⚠️ Requires Obsidian installer version 1.1.9 or later and Obsidian 1.5 or later.
-    type: class-toggle
-    default: false
   - id: no-image-alttext-caption
     title: "Images: No alt-text as caption"
     description: By default, the theme adds the alt-text/filename of an image as caption (except when the image is named "pasted image…")
@@ -5117,6 +5106,17 @@ settings:
     title: between reduced and full image size
     description: INFO this is a dummy setting, since this is hidden and only added for the toggle-command
     addCommand: true
+    type: class-toggle
+    default: false
+  - id: unrestricted-line-length-tables
+    title: Automatically disable `readable line length` on notes with tables
+    markdown: true
+    description: ⚠️ Requires Obsidian installer version 1.1.9 or later.
+    type: class-toggle
+    default: false
+  - id: highlight-active-cell
+    title: "Tables: Emphasize the active cell (live preview)"
+    description: ⚠️ Requires Obsidian installer version 1.1.9 or later and Obsidian 1.5 or later.
     type: class-toggle
     default: false
   - # << Vim mode (+)
