@@ -68,7 +68,7 @@ rules:
   at-rule-no-vendor-prefix: true
   color-function-notation: [modern, {ignore: [with-var-inside]}]
   color-hex-length: short
-  comment-empty-line-before: null # does not work well with comment decorators
+  comment-empty-line-before: null
   comment-whitespace-inside: always
   custom-property-empty-line-before: never
   custom-media-pattern:
@@ -104,7 +104,7 @@ rules:
       ignore:
         - after-comment
   selector-attribute-quotes: always
-  selector-class-pattern: null # when doing themes, you mostly do not decide on class names
+  selector-class-pattern: null # class names usually not defined by me
   selector-id-pattern:
     - ^([a-z][a-z0-9]*)(-[a-z0-9]+)*$
     - {}
@@ -123,5 +123,6 @@ rules:
   color-no-hex: true
   declaration-no-important: true
   font-weight-notation: numeric
-  no-unknown-custom-properties: [true, {severity: error}] # equivalent to "no undeclared variables" in other linters
   max-nesting-depth: 3
+  no-unknown-custom-properties: [true, {severity: error}] # equivalent to "no undeclared variables" in other linters
+  selector-nested-pattern: ["&", {splitList: true, message: "Nested selectors should include a &."}]

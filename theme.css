@@ -3614,11 +3614,27 @@ body .another-quick-switcher__status__count-input {
 
 .another-quick-switcher__starred_item .another-quick-switcher__item__entry::before {
 	padding-right: 5px;
-	content: "☆";
+	content: "★";
 }
 
 .another-quick-switcher__starred_item .another-quick-switcher__item__title {
 	font-weight: 600;
+}
+
+/* Meta / Frontmatter */
+.another-quick-switcher__item__metas {
+	padding-top: 4px;
+	margin-bottom: -4px;
+}
+
+.another-quick-switcher__item__meta {
+	display: unset;
+	color: var(--text-muted);
+	font-style: italic;
+}
+
+.another-quick-switcher__item__meta__front_matter svg {
+	display: none;
 }
 
 /* Numbered Hotkey tip */
