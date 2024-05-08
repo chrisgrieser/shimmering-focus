@@ -545,6 +545,11 @@ body {
 	border-radius: 0;
 }
 
+/* FIX disable buggy hover effect on odd table rows */
+body .markdown-rendered tbody tr:nth-child(odd):hover {
+	background-color: var(--table-row-alt-background);
+}
+
 /* automatically turn off readable line length when there is a table */
 .unrestricted-line-length-tables:not(.is-mobile) :is(.markdown-source-view, .markdown-preview-view):has(table, .HyperMD-table-2) {
 	--file-line-width: 100%;
