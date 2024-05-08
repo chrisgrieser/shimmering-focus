@@ -3627,10 +3627,13 @@ body .another-quick-switcher__status__count-input {
 	margin-bottom: -4px;
 }
 
-.another-quick-switcher__item__meta {
-	display: unset;
-	color: var(--text-muted);
+.another-quick-switcher__item__meta__front_matter__key {
+	color: var(--text-gray);
 	font-style: italic;
+}
+
+.another-quick-switcher__item__meta__front_matter__value {
+	color: var(--text-normal);
 }
 
 .another-quick-switcher__item__meta__front_matter svg {
