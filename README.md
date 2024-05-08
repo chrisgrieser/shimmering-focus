@@ -71,6 +71,7 @@ they might be considered for inclusion in the core theme as a style setting.
     --bg-hue: 230;
     --bg-sat: 25%;
 
+    /* Note that `--color-accent-hsl` should have the same values as `--color-accent` */
     --color-accent: hsl(184 79% 35%);
     --color-accent-hsl: 184, 79%, 35%;
     --interactive-accent: hsl(184 79% 30%);
@@ -85,6 +86,7 @@ they might be considered for inclusion in the core theme as a style setting.
     --bg-hue: 230;
     --bg-sat: 15%;
 
+    /* Note that `--color-accent-hsl` should have the same values as `--color-accent` */
     --color-accent: hsl(184 79% 45%);
     --color-accent-hsl: 184, 79%, 35%;
     --interactive-accent: hsl(184 79% 30%);
@@ -95,9 +97,10 @@ they might be considered for inclusion in the core theme as a style setting.
     --link-unresolved-color: hsl(101 42% 51%);
 }
 
-/* Note that `--color-accent-hsl` should have the same values as
-`--color-accent`, and that `--bg-hue` will override the background colors you
-have set in the Style Settings. */
+/* Hide the background color settings since they are overwritten by the custom colors above */ 
+.style-settings-container .setting-item:is([data-id="bg-hue-light"],[data-id="bg-hue-dark"]) {
+	display: none;
+}
 ```
 <!-- vale Google.FirstPerson = NO -->
 ### Submit bug fixes
