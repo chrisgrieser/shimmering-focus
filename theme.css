@@ -522,12 +522,14 @@ body {
 ──────────────────────────────────────────────────── */
 /* most table styling via Obsidian Variables */
 
-table :is(ul, ol) {
-	line-height: 1.1;
+/* FIX wrong variable in Obsidian core */
+.markdown-rendered th {
+	line-height: var(--table-line-height);
 }
 
 /* make lists in tables take up less space */
 .markdown-rendered table :is(ul, ol) {
+	line-height: 1.1;
 	/* stylelint-disable-next-line declaration-no-important */
 	margin-block: 0 0 !important;
 	margin-top: 0;
@@ -974,7 +976,7 @@ body.theme-light {
 	padding-inline-start: 1.9em;
 }
 
-.markdown-rendered ul:not(.contains-task-list) {
+.markdown-rendered ul:not(.contains-task-list, .dataview-result-list-ul) {
 	padding-inline-start: 1em;
 }
 
