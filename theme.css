@@ -4814,7 +4814,7 @@ settings:
   - id: show-new-tab-button
     title: Re-enable new tab button
     type: class-toggle
-    description: You can still open a new tab via `⌘+t` / `ctrl+t`.
+    description: You can still open a new tab via `ctrl/cmd+t`.
     markdown: true
     default: false
   - id: show-tab-list-button
@@ -4830,7 +4830,7 @@ settings:
   - id: show-close-buttons
     title: Re-enable close buttons
     type: class-toggle
-    description: You can still close settings with `esc`, and tabs/panes by with `ctrl/cmd+w`.
+    description: You can still close settings with `esc`, and tabs/panes by pressing `ctrl/cmd+w`.
     markdown: true
     default: false
   - # <<< Status bar (+)
@@ -4853,24 +4853,24 @@ settings:
     type: class-toggle
     default: false
   - id: hide-pane-relief-focus-lock-status-bar
-    title: Hide pane relief focus lock
+    title: Hide Pane Relief focus lock
     type: class-toggle
     default: false
   - id: hide-languagetool-status-bar
-    title: Hide language tools
+    title: Hide Language Tools icon
     type: class-toggle
     default: false
   - id: hide-electron-window-tweaker-status-bar
-    title: Hide electron window tweaker `always on top` icon
+    title: Hide Electron Window Tweaker `always on top` icon
     markdown: true
     type: class-toggle
     default: false
   - id: hide-pandoc-reference-list-status-bar
-    title: Hide pandoc reference list icon
+    title: Hide Pandoc Reference List icon
     type: class-toggle
     default: false
   - id: hide-signature-icon
-    title: Hide the shimmering focus icon (⟡)
+    title: Hide the Shimmering Focus icon (⟡)
     type: class-toggle
     default: false
   - # << Workspace (+)
@@ -5037,7 +5037,7 @@ settings:
   - # << Editor Content (+)
     id: content-settings
     title: 📑 Editor content
-    description: Active lines, dimmed panes, line length, folded lines, trailing spaces
+    description: Active block highlights, dimmed panes, code blocks, line length, folded lines, trailing spaces
     type: heading
     level: 1
     collapsed: true
@@ -5211,7 +5211,7 @@ settings:
     step: 5
   - id: wordcount-only-when-writing
     title: "Status bar: Show word count only when longform/writing note is open"
-    description: ⚠️ Requires Obsidian installer version 1.1.9 or later. Works for the word count core plugin and the better word count community plugin.
+    description: ⚠️ Requires Obsidian installer version 1.1.9 or later. Works for the Word Count core plugin and the Better Word Count community plugin.
     type: class-toggle
     default: false
   - id: hide-longform-status-bar
@@ -5253,7 +5253,7 @@ settings:
     default: false
   - id: show-bookmark-controls
     title: "Bookmarks: Show buttons in side bar"
-    description: By default, the bookmark plugin buttons for new bookmarks, new folders, and collapsing are hidden. Enable this setting to show them again.
+    description: By default, the Bookmark plugin buttons for new bookmarks, new folders, and collapsing are hidden. Enable this setting to show them again.
     type: class-toggle
     default: false
   - id: normal-out-back-links
@@ -5261,16 +5261,16 @@ settings:
     description: By default, the sidebar for outgoing links and backlinks are reduced to linked mentions only. Enable this setting to restore their original display.
     type: class-toggle
     default: false
+  - id: classic-inline-backlinks
+    title: Use normal inline backlinks
+    description: By default, the inline-backlinks are displayed in a more minimalistic manner. Enable this setting to restore original display of backlinks. This also affects the Influx plugin.
+    type: class-toggle
+    default: false
   - id: show-outline-buttons
     title: "Outline: Show buttons in side bar"
     description: By default, the outline plugin buttons for collapsing, expanding, and searching headings are hidden. Enable this setting to show a compact version of them.
     default: false
     type: class-toggle
-  - id: classic-inline-backlinks
-    title: Use normal inline backlinks
-    description: By default, the inline-backlinks are displayed in a more minimalistic manner. Enable this setting to restore original display of backlinks. This also affects the influx plugin.
-    type: class-toggle
-    default: false
   - # << Infos (+)
     id: appendix-info
     title: ℹ️ Info
