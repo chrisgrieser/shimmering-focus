@@ -31,15 +31,8 @@ vim.api.nvim_create_autocmd({ "FocusLost", "BufLeave" }, {
 	buffer = 0,
 	group = group,
 	callback = function()
-		for vaultName, themeFile in pairs(themeFiles) do
+		for _, themeFile in pairs(themeFiles) do
 			vim.fn.system { "touch", "-h", themeFile }
-			if vim.v.shell_error ~= 0 then
-				vim.notify_once(
-					'Failed to touch "theme.css" in ' .. vaultName,
-					vim.log.levels.WARN,
-					{ title = "Shimmering Focus" }
-				)
-			end
 		end
 	end,
 })
