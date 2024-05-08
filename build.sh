@@ -1,10 +1,8 @@
 # WHAT THIS SCRIPT DOES
 # - Check the yaml from the Style Settings for errors. If there are any, the
-#   build is aborted, the errors are passed (e.g. for a notification) and the
-#   Style Settings tab is opened.
+#   build is aborted, the errors are passed
 # - bumps version number in css file and manifest
 # - updates download counts in badges of the README files
-# - copies the stylelint-config for documentation
 # - update changelog
 # - git add, commit, pull, and push to the remote repo
 
@@ -17,20 +15,16 @@ css_path="$script_dir/theme.css"
 #───────────────────────────────────────────────────────────────────────────────
 # TEST: YAML VALIDATION
 
-# - Abort build if yaml invalid
-# - requires style-settings placed at the very bottom of the theme's css
-npm_location="$(npm root)/.bin/"
-export PATH=/usr/local/lib:/usr/local/bin:/opt/homebrew/bin/:$npm_location:$PATH
-if ! command -v yaml-validator &>/dev/null; then echo "yaml-validator not installed." && return 1; fi
-
-sed -n '/@settings/,$p' "$css_path" | sed '1d;$d' | sed '$d' >temp.yml
-yamllint_output=$(yaml-validator temp.yml)
+# Abort build if yaml invalid
+# (requires style-settings placed at the very bottom of the theme's css)
+sed -n '/@settings/,$p' "$css_path" | sed '1d;$d' | sed '$d' >style-settings-temp.yml
+yamllint_output=$(npx yaml-validator style-settings-temp.yml)
 if [[ $? == 1 ]]; then
 	echo "YAML ERROR"
 	echo "$yamllint_output" | sed '1d'
 	return 1
 fi
-rm temp.yml
+rm style-settings-temp.yml
 
 #───────────────────────────────────────────────────────────────────────────────
 # BUMP VERSION NUMBER
