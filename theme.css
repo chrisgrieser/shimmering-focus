@@ -2275,7 +2275,7 @@ body:not(.show-tab-list-button) .workspace-tab-header-tab-list {
 ──────────────────────────────────────────────────── */
 
 body:not(.normal-tab-bar) .mod-root .workspace-tab-header:only-child {
-	width: 9001px;
+	width: 100vw;
 	max-width: unset;
 	padding-bottom: 1px;
 	background-color: transparent;
@@ -2283,7 +2283,7 @@ body:not(.normal-tab-bar) .mod-root .workspace-tab-header:only-child {
 }
 
 body:not(.normal-tab-bar) .mod-root .workspace-tab-header:only-child .workspace-tab-header-inner-title {
-	width: 9001px;
+	width: 100vw;
 	margin-bottom: 4px;
 	margin-left: -4px;
 	font-size: 1.3em;
@@ -2303,6 +2303,7 @@ body:not(.normal-tab-bar) .mod-root .workspace-tab-header:only-child {
 /* icon with more spacing and size */
 body:not(.normal-tab-bar) .mod-root .workspace-tab-header:only-child :is(.workspace-tab-header-inner-icon, .workspace-tab-header-status-container) {
 	padding-right: 12px;
+	padding-bottom: 3px;
 }
 
 body:not(.normal-tab-bar) .mod-root .workspace-tab-header:only-child :is(.workspace-tab-header-inner-icon, .workspace-tab-header-status-container) svg {
