@@ -2999,7 +2999,7 @@ are not targeted by this */
 	box-shadow: none;
 }
 
-.no-mouse-hovers .toooltip,
+.no-mouse-hovers .tooltip,
 .no-mouse-hovers .is-live-preview .cm-embed-block:not(.cm-table-widget):hover .edit-block-button {
 	display: none;
 }
