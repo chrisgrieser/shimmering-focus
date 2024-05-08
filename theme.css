@@ -1783,7 +1783,7 @@ body.angular-shapes .checkbox-container {
 }
 
 /* ───────────────────────────────────────────────── */
-/* << Notices & Tooltip
+/* << Notice
 ──────────────────────────────────────────────────── */
 .notice-container {
 	--notice-spacing: 10px;
@@ -2985,13 +2985,14 @@ are not targeted by this */
 }
 
 /* ───────────────────────────────────────────────── */
-/* << Vim: Disable Mouse Hovers
+/* << Vim: Disable Mouse Hovers & Tooltips
 ──────────────────────────────────────────────────── */
 
 .no-mouse-hovers .is-live-preview .cm-embed-block:not(.cm-table-widget):hover {
 	box-shadow: none;
 }
 
+.no-mouse-hovers .toooltip,
 .no-mouse-hovers .is-live-preview .cm-embed-block:not(.cm-table-widget):hover .edit-block-button {
 	display: none;
 }
@@ -5129,7 +5130,7 @@ settings:
   - # << Vim mode (+)
     id: vim-mode
     title: 🏃 Vim mode
-    description: Cursor, blinking, cursorline, relative line numbers
+    description: Cursor, blinking, cursorline, relative line numbers, disable mouse hovers & tooltips
     type: heading
     level: 1
     collapsed: true
@@ -5148,15 +5149,15 @@ settings:
     description: ⚠️ Requires Obsidian installer version 1.1.9 or later. `Line numbers` must also be enabled in the Obsidian settings.
     type: class-toggle
     default: false
-  - id: no-mouse-hovers
-    title: Disable mouse hover in editor (live preview)
-    description: Disables the mouse hover in the editor of live preview, indicating an editable code block, dataview block, or table.
-    type: class-toggle
-    default: false
   - id: vim-active-visual-line
     title: Cursorline
     markdown: true
     description: Emphasize the active visual line. only works in normal mode, and also affects the cursor blink animation. As opposed to the "active line indicator", this works on *visual* lines instead of *logical* lines. Note that this setting is independent of the "active block indicator" setting to allow for both being in use at the same time.
+    type: class-toggle
+    default: false
+  - id: no-mouse-hovers
+    title: 'Disable tooltips & "Edit this block" button'
+    description: Disables tooltips and "Edit this block" buttons displayed on hovering variuos elements.
     type: class-toggle
     default: false
   - # << Longform & writing (+)
