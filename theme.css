@@ -591,6 +591,11 @@ input[type="checkbox"] {
 	border-width: 1.5px;
 }
 
+input[type="checkbox"]:checked:hover,
+input[type="checkbox"]:checked {
+	border: 1px solid var(--text-gray);
+}
+
 .contains-task-list.contains-task-list {
 	--list-indent: 1.6em;
 }
