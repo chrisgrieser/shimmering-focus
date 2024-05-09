@@ -12,8 +12,6 @@ body:
           required: true
         - label: The feature would be useful to more users than just me. (If it's only relevant to you, have you considered using a [CSS Snippet](https://help.obsidian.md/How+to/Add+custom+styles.md#Use+Themes+and/or+CSS+snippets)?)
           required: true
-        - label: This issue concerns the theme in general and is not related to a specific plugin, for which there [is the plugin-support form](https://github.com/chrisgrieser/shimmering-focus/issues/new?template=plugin_support.yml).
-          required: true
         - label: The request is about Obsidian desktop, Obsidian mobile is not supported by this theme.
           required: true
   - type: textarea
