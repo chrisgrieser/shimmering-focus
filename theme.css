@@ -370,6 +370,9 @@ body {
 	--tag-padding-x: 0;
 	--tag-padding-y: 0;
 
+	/* Modals (Settings Menu) */ 
+	--modal-height: 92vh;
+
 	/* Metadata */
 	--metadata-gap: 1px;
 
@@ -1476,6 +1479,7 @@ body:not(.show-close-buttons) .modal-close-button {
 }
 
 .vertical-tab-nav-item {
+	padding: 3px 6px;
 	margin-bottom: 0;
 	font-size: 1em;
 	line-height: 1.35;
