@@ -89,20 +89,37 @@ https://www.youtube.com/watch?v=yl0pvIRTWWo&t=7s */
 	--font-monospace: "";
 	--font-text-size: "";
 
+	/* Relative font sizes */
+	--font-smallest: 0.8em;
+	--font-smaller: 0.875em;
+	--font-small: 0.933em;
+
+	/* UI font sizes */
+	--font-ui-smaller: 12px;
+	--font-ui-small: 13px;
+	--font-ui-medium: 15px;
+	--font-ui-large: 20px;
+	--footnote-size: var(--font-smaller);
+
 	/* Misc */
 	--tag-border-color-hover: hsla(var(--interactive-accent-hsl) / 15%);
 	--background-modifier-border-hover: var(--color-base-35);
 	--highlight-mix-blend-mode: darken;
 	--callout-border-opacity: 0.25;
 	--ribbon-width: 44px;
-	--mono-rgb-100: 0, 0, 0;
-	--background-modifier-hover: rgba(var(--mono-rgb-100) / 7.5%);
-	--nav-item-background-hover: var(--background-modifier-hover);
-	--nav-item-background-active: var(--background-modifier-hover);
 	--line-height-normal: 1.5;
 	--link-external-decoration: underline;
 	--link-external-decoration-hover: underline;
-	--tab-width: 200px;
+	--divider-width: 1px;
+	--divider-width-hover: 3px;
+	--cursor: default;
+	--cursor-link: pointer;
+
+
+	/* Modals (Settings Menu) */
+	--modal-width: 90vw;
+	--modal-max-width: 1100px;
+	--modal-max-height: 1000px;
 
 	/* Icons */
 	--icon-size: var(--icon-m);
@@ -151,30 +168,14 @@ https://www.youtube.com/watch?v=yl0pvIRTWWo&t=7s */
 	--tab-curve: 6px;
 	--tab-radius: var(--radius-s);
 	--tab-radius-active: 6px 6px 0 0;
+	--tab-width: 200px;
+
+	/* Animation */
 	--anim-duration-none: 0;
 	--anim-duration-superfast: 70ms;
 	--anim-duration-fast: 140ms;
 	--anim-duration-moderate: 300ms;
 	--anim-duration-slow: 560ms;
-
-	/* Relative font sizes */
-	--font-smallest: 0.8em;
-	--font-smaller: 0.875em;
-	--font-small: 0.933em;
-
-	/* UI font sizes */
-	--font-ui-smaller: 12px;
-	--font-ui-small: 13px;
-	--font-ui-medium: 15px;
-	--font-ui-large: 20px;
-	--footnote-size: var(--font-smaller);
-	--divider-width: 1px;
-	--divider-width-hover: 3px;
-	--cursor: default;
-	--cursor-link: pointer;
-	--text-on-accent: hsl(0 0% 100%);
-	--text-error: var(--color-red);
-	--text-success: var(--color-green);
 
 	/* colors for syntax highlighting & callouts (different tone in dark mode) */
 	--color-red-rgb: 251, 70, 76;
@@ -188,8 +189,17 @@ https://www.youtube.com/watch?v=yl0pvIRTWWo&t=7s */
 	--color-blue: hsl(212 100% 50%);
 	--color-purple: hsl(258 100% 75%);
 	--color-pink: hsl(328 91% 79%);
+
+	/* other colors */
+	--mono-rgb-100: 0, 0, 0;
+	--background-modifier-hover: rgba(var(--mono-rgb-100) / 7.5%);
+	--nav-item-background-hover: var(--background-modifier-hover);
+	--nav-item-background-active: var(--background-modifier-hover);
 	--callout-warning: var(--color-orange-rgb);
 	--callout-color: "";
+	--text-error: var(--color-red);
+	--text-success: var(--color-green);
+	--text-on-accent: hsl(0 0% 100%);
 
 	/* Default Accent Color: ; will be overridden by user selection in `Appearance
 	tab`, however, by setting color accent of its own, they are going to be
@@ -370,7 +380,7 @@ body {
 	--tag-padding-x: 0;
 	--tag-padding-y: 0;
 
-	/* Modals (Settings Menu) */ 
+	/* Modals (Settings Menu) */
 	--modal-height: 92vh;
 
 	/* Metadata */
@@ -2457,7 +2467,7 @@ body .workspace .mod-root .workspace-tab-header {
 	padding: 0;
 }
 
-/* so hover effects do not have a white line at the bottom */ 
+/* so hover effects do not have a white line at the bottom */
 .suggestion-popover .suggestion-item:last-child {
 	margin-bottom: 0;
 }
