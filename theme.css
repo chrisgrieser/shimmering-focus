@@ -7,12 +7,12 @@ https://github.com/chrisgrieser/shimmering-focus
 ──────────────────────────────────────────────────── */
 
 /* ───────────────────────────────────────────────── */
-/* < Globally Disabled Stylelint Rules
+/** Globally Disabled Stylelint Rules
 ──────────────────────────────────────────────────── */
 /* stylelint-disable no-descending-specificity */
 
 /* ───────────────────────────────────────────────── */
-/* < Fonts (base64 encoded)
+/** Fonts (base64 encoded)
 ──────────────────────────────────────────────────── */
 /* Open Font 1.1 https://github.com/iaolo/iA-Fonts/blob/master/iA%20Writer%20Quattro/LICENSE.md */
 @font-face {
@@ -72,11 +72,11 @@ https://github.com/chrisgrieser/shimmering-focus
 }
 
 /* ───────────────────────────────────────────────── */
-/* < Variables
+/** Variables
 ──────────────────────────────────────────────────── */
 
 /* ───────────────────────────────────────────────── */
-/* << Unchanged Obsidian Variables (Dummy Variables)
+/** Unchanged Obsidian Variables (Dummy Variables)
 ──────────────────────────────────────────────────── */
 /* these values are unchanged from the default theme, but included here for
 autocompletion via LSP and for quicker reference
@@ -178,7 +178,7 @@ https://www.youtube.com/watch?v=yl0pvIRTWWo&t=7s */
 }
 
 /* ───────────────────────────────────────────────── */
-/* << Color Scheme Variables
+/** Color Scheme Variables
 ──────────────────────────────────────────────────── */
 /* stylelint-disable no-duplicate-selectors */
 
@@ -197,7 +197,7 @@ body {
 	--bg-sat: 0%;
 }
 
-/* <<< gamma color scheme */
+/** gamma color scheme */
 .theme-light {
 	--bg-sat: 25%;
 	--bg-hue: var(--bg-hue-light);
@@ -293,7 +293,7 @@ body {
 }
 
 /* ───────────────────────────────────────────────────── */
-/* << Changed Obsidian Variables
+/** Changed Obsidian Variables
 ──────────────────────────────────────────────────── */
 
 body {
@@ -427,7 +427,7 @@ body {
 }
 
 /* ───────────────────────────────────────────────── */
-/* << Theme Variables
+/** Theme Variables
 ──────────────────────────────────────────────────── */
 
 body {
@@ -481,11 +481,11 @@ body {
 /* stylelint-enable no-duplicate-selectors */
 
 /* ───────────────────────────────────────────────── */
-/* < Markup
+/** Markup
 ──────────────────────────────────────────────────── */
 
 /* ───────────────────────────────────────────────── */
-/* << Tables
+/** Tables
 ──────────────────────────────────────────────────── */
 /* most table styling via Obsidian Variables */
 
@@ -533,7 +533,7 @@ body.highlight-active-cell .table-cell-wrapper:has(.cm-s-obsidian) {
 }
 
 /* ───────────────────────────────────────────────── */
-/* << Tags
+/** Tags
 ──────────────────────────────────────────────────── */
 
 /* FIX https://discord.com/channels/686053708261228577/989603365606531104/1015645516341719120 */
@@ -543,7 +543,7 @@ body.highlight-active-cell .table-cell-wrapper:has(.cm-s-obsidian) {
 }
 
 /* ───────────────────────────────────────────────── */
-/* << Bold & Italic
+/** Bold & Italic
 ──────────────────────────────────────────────────── */
 
 .uncolored-bold :is(strong, .cm-strong) {
@@ -555,7 +555,7 @@ body.highlight-active-cell .table-cell-wrapper:has(.cm-s-obsidian) {
 }
 
 /* ───────────────────────────────────────────────── */
-/* << Tasks (Checkboxes)
+/** Tasks (Checkboxes)
 ──────────────────────────────────────────────────── */
 /* most styling in form of changed --checkbox variables */
 
@@ -577,7 +577,7 @@ body .cm-s-obsidian span.cm-formatting-task {
 }
 
 /* ───────────────────────────────────────────────── */
-/* << Footnotes
+/** Footnotes
 ──────────────────────────────────────────────────── */
 
 /* footnotes-references in text */
@@ -633,7 +633,7 @@ body .HyperMD-footnote.cm-line.cm-line,
 }
 
 /* ───────────────────────────────────────────────── */
-/* << Links
+/** Links
 ──────────────────────────────────────────────────── */
 /* link styling also done in section for color scheme variables
 and changed Obsidian variables */
@@ -673,7 +673,7 @@ body:not(.show-urls) .cm-line:not(.cm-active) .cm-string.cm-url,
 }
 
 /* ───────────────────────────────────────────────── */
-/* <<< Fold external URLs (Source Mode)
+/** Fold external URLs (Source Mode)
 ──────────────────────────────────────────────────── */
 body:not(.show-urls) .cm-s-obsidian:not(.is-live-preview) .cm-line:not(.cm-active) .cm-string.cm-url:not(.cm-formatting) {
 	font-size: 0;
@@ -702,7 +702,7 @@ body:not(.show-urls) .cm-s-obsidian:not(.is-live-preview) .cm-line.cm-active .cm
 }
 
 /* ───────────────────────────────────────────────── */
-/* << Code
+/** Code
 ──────────────────────────────────────────────────── */
 /* styling of code in general */
 
@@ -716,7 +716,7 @@ body:not(.show-urls) .cm-s-obsidian:not(.is-live-preview) .cm-line.cm-active .cm
 }
 
 /* ───────────────────────────────────────────────── */
-/* <<< Inline Code
+/** Inline Code
 ──────────────────────────────────────────────────── */
 
 /* "*:not(pre) > code" targets inline code
@@ -773,7 +773,7 @@ body .markdown-preview-view *:not(pre)>code,
 }
 
 /* ───────────────────────────────────────────────── */
-/* <<< Code Blocks
+/** Code Blocks
 ──────────────────────────────────────────────────── */
 /* Code blocks in Edit Mode */
 :is(.HyperMD-codeblock-end, .HyperMD-codeblock-begin) .cm-formatting-code-block {
@@ -861,7 +861,7 @@ div.HyperMD-codeblock-bg:not(.HyperMD-codeblock-begin-bg) {
 	color: var(--text-normal);
 }
 
-/* <<< language labels */
+/** language labels */
 pre[class*="language-"]::after {
 	position: absolute;
 	top: 2px;
@@ -872,7 +872,7 @@ pre[class*="language-"]::after {
 	content: attr(class);
 }
 
-/* <<< Code Block: Line Numbers in Edit Mode */
+/** Code Block: Line Numbers in Edit Mode */
 body:not(.no-codeblock-line-numbers) .HyperMD-codeblock-begin {
 	counter-reset: codeblock-line-numbers;
 }
@@ -929,7 +929,7 @@ body:not(.no-codeblock-line-numbers) .HyperMD-codeblock-end .cm-formatting-code-
 }
 
 /* ───────────────────────────────────────────────── */
-/* << Syntax Highlighting
+/** Syntax Highlighting
 ──────────────────────────────────────────────────── */
 /* increase readability */
 body.theme-light {
@@ -941,7 +941,7 @@ body.theme-light {
 }
 
 /* ───────────────────────────────────────────────── */
-/* << Lists
+/** Lists
 ──────────────────────────────────────────────────── */
 
 .markdown-rendered :is(ul, ol) {
@@ -962,7 +962,7 @@ body.theme-light {
 }
 
 /* ───────────────────────────────────────────────── */
-/* << Headings
+/** Headings
 ──────────────────────────────────────────────────── */
 
 .less-heading-letter-spacing {
@@ -993,7 +993,7 @@ body:not(.no-alternating-header-colors) .view-content :is(h1, h3, h5) {
 	color: var(--alt-heading-color);
 }
 
-/* <<< Live Preview Heading Level Indicator */
+/** Live Preview Heading Level Indicator */
 body:not(.no-lp-heading-level-indicator) .is-live-preview .cm-header::before {
 	position: relative;
 	bottom: 1px;
@@ -1036,7 +1036,7 @@ body:not(.no-lp-heading-level-indicator) .is-live-preview .cm-header~.cm-header:
 	display: none;
 }
 
-/* <<< Headers with background colors */
+/** Headers with background colors */
 body:not(.no-heading-background) .markdown-source-view .cm-line.HyperMD-header,
 body:not(.no-heading-background) .markdown-preview-view :is(h1, h2, h3, h4, h5, h6) {
 	background-color: var(--bg4);
@@ -1049,7 +1049,7 @@ body:not(.no-heading-background) .markdown-preview-view :is(h1, h2, h3, h4, h5, 
 }
 
 /* ───────────────────────────────────────────────── */
-/* << Inline Title
+/** Inline Title
 ──────────────────────────────────────────────────── */
 
 .inline-title {
@@ -1057,7 +1057,7 @@ body:not(.no-heading-background) .markdown-preview-view :is(h1, h2, h3, h4, h5, 
 }
 
 /* ───────────────────────────────────────────────── */
-/* << Blockquotes
+/** Blockquotes
 ──────────────────────────────────────────────────── */
 
 .markdown-source-view:not(.is-live-preview) .cm-line.HyperMD-quote.HyperMD-quote.HyperMD-quote {
@@ -1167,7 +1167,7 @@ blockquote code {
 }
 
 /* ───────────────────────────────────────────────── */
-/* << Callouts
+/** Callouts
 ──────────────────────────────────────────────────── */
 .callout {
 	/* default callout icon */
@@ -1269,7 +1269,7 @@ body .callout-icon .svg-icon {
 }
 
 /* ───────────────────────────────────────────────── */
-/* << Trailing Whitespace (Two Space Rule)
+/** Trailing Whitespace (Two Space Rule)
 ──────────────────────────────────────────────────── */
 /* needs this selector, so it does not affect spaces in the table editor
  * (Obsidian 1.5), which only differs at the level of `.view-content` */
@@ -1281,7 +1281,7 @@ body:not(.hide-trailing-whitespace) .view-content>.cm-s-obsidian>div>.cm-scrolle
 }
 
 /* ───────────────────────────────────────────────── */
-/* << Strikethroughs
+/** Strikethroughs
 ──────────────────────────────────────────────────── */
 
 /* make the "~" readable */
@@ -1290,7 +1290,7 @@ body:not(.hide-trailing-whitespace) .view-content>.cm-s-obsidian>div>.cm-scrolle
 }
 
 /* ───────────────────────────────────────────────── */
-/* << Highlights
+/** Highlights
 ──────────────────────────────────────────────────── */
 
 /* stylelint-disable-next-line no-duplicate-selectors */
@@ -1322,7 +1322,7 @@ mark {
 }
 
 /* ───────────────────────────────────────────────── */
-/* << Pandoc Citations
+/** Pandoc Citations
 ──────────────────────────────────────────────────── */
 
 /* applies to all []-links (barelinks), partially also to footnotes */
@@ -1335,7 +1335,7 @@ mark {
 }
 
 /* ───────────────────────────────────────────────── */
-/* << Images
+/** Images
 ──────────────────────────────────────────────────── */
 /* .workspace-leaf-content so images in modal aren't affected, :not([data-type="image"]) so
  * images as files aren't affected */
@@ -1393,11 +1393,11 @@ body:not(.no-image-alttext-caption) .image-embed::after {
 }
 
 /* ───────────────────────────────────────────────── */
-/* < Modals
+/** Modals
 ──────────────────────────────────────────────────── */
 
 /* ───────────────────────────────────────────────── */
-/* << Settings Menu
+/** Settings Menu
 ──────────────────────────────────────────────────── */
 
 body:not(.show-close-buttons) .modal-close-button {
@@ -1462,7 +1462,7 @@ body:not(.show-close-buttons) .modal-close-button {
 }
 
 /* ───────────────────────────────────────────────── */
-/* << Individual Setting Pages
+/** Individual Setting Pages
 ──────────────────────────────────────────────────── */
 .installed-plugins-container .setting-item-description div:nth-child(2)::first-letter {
 	text-transform: lowercase;
@@ -1492,7 +1492,7 @@ body:not(.show-close-buttons) .modal-close-button {
 }
 
 /* ───────────────────────────────────────────────── */
-/* <<< Settings Menu Colors
+/** Settings Menu Colors
 ──────────────────────────────────────────────────── */
 
 body .vertical-tab-content {
@@ -1528,7 +1528,7 @@ body .vertical-tab-content {
 }
 
 /* ───────────────────────────────────────────────── */
-/* <<< Settings Headings
+/** Settings Headings
 ──────────────────────────────────────────────────── */
 
 .setting-item-heading:not(.style-settings-heading) .setting-item-name {
@@ -1574,7 +1574,7 @@ body .vertical-tab-content {
 }
 
 /* ───────────────────────────────────────────────── */
-/* <<< Remove Color Picker from Settings
+/** Remove Color Picker from Settings
 ──────────────────────────────────────────────────── */
 
 .mod-settings .vertical-tab-content>.setting-item:nth-child(2)>.setting-item-control>.extra-setting-button+input[type="color"] {
@@ -1598,7 +1598,7 @@ body .vertical-tab-content {
 }
 
 /* ───────────────────────────────────────────────── */
-/* << Theme Browser
+/** Theme Browser
 ──────────────────────────────────────────────────── */
 /* is this typo still not fixed? */
 .mod-community-theme .community-item-author::first-letter {
@@ -1628,7 +1628,7 @@ body .vertical-tab-content {
 }
 
 /* ───────────────────────────────────────────────── */
-/* << Plugin / Theme Browser
+/** Plugin / Theme Browser
 ──────────────────────────────────────────────────── */
 
 /* redundant, since plugin name is already displayed above */
@@ -1667,7 +1667,7 @@ body .vertical-tab-content {
 }
 
 /* ───────────────────────────────────────────────── */
-/* << Toggles
+/** Toggles
 ──────────────────────────────────────────────────── */
 /* prettier wall-o-toggles */
 
@@ -1707,7 +1707,7 @@ body .checkbox-container.mod-small {
 }
 
 /* ───────────────────────────────────────────────── */
-/* << Hotkeys
+/** Hotkeys
 ──────────────────────────────────────────────────── */
 
 kbd.suggestion-hotkey,
@@ -1718,11 +1718,11 @@ kbd.suggestion-hotkey,
 }
 
 /* ───────────────────────────────────────────────── */
-/* < UI Elements
+/** UI Elements
 ──────────────────────────────────────────────────── */
 
 /* ───────────────────────────────────────────────── */
-/* << Rounded vs. Angular Shapes
+/** Rounded vs. Angular Shapes
 ──────────────────────────────────────────────────── */
 
 /* --radius-xs is defined by this theme */
@@ -1752,7 +1752,7 @@ body.angular-shapes .checkbox-container {
 }
 
 /* ───────────────────────────────────────────────── */
-/* << Notice
+/** Notice
 ──────────────────────────────────────────────────── */
 .notice-container {
 	--notice-spacing: 10px;
@@ -1784,7 +1784,7 @@ body.angular-shapes .checkbox-container {
 }
 
 /* ───────────────────────────────────────────────── */
-/* << Input & Dropdowns & Sliders
+/** Input & Dropdowns & Sliders
 ──────────────────────────────────────────────────── */
 
 input[type]:focus,
@@ -1845,10 +1845,10 @@ input[type="range"]::after {
 }
 
 /* ───────────────────────────────────────────────── */
-/* << Progress Bars
+/** Progress Bars
 ──────────────────────────────────────────────────── */
 
-/* <<< Vault Launch */
+/** Vault Launch */
 /* INFO use `debugger` in the console while the vault launches. Close Obsidian
  * while the console is open, so the console appears on start. */
 
@@ -1888,7 +1888,7 @@ input[type="range"]::after {
 	display: none;
 }
 
-/* <<< Plugin Update Progress Bar */
+/** Plugin Update Progress Bar */
 .modal .is-loading::before {
 	height: 8px;
 	background: linear-gradient(45deg,
@@ -1902,7 +1902,7 @@ input[type="range"]::after {
 }
 
 /* ───────────────────────────────────────────────── */
-/* << Frontmatter / Metadata / Properties
+/** Frontmatter / Metadata / Properties
 ──────────────────────────────────────────────────── */
 
 /* SOURCE VIEW */
@@ -2084,7 +2084,7 @@ input[type="checkbox"].metadata-input-checkbox {
 }
 
 /* ───────────────────────────────────────────────── */
-/* << Status Bar
+/** Status Bar
 ──────────────────────────────────────────────────── */
 .hide-pandoc-reference-list-status-bar .status-bar-item.plugin-obsidian-pandoc-reference-list,
 .hide-longform-status-bar .status-bar-item.plugin-longform,
@@ -2131,7 +2131,7 @@ body:not(.hide-signature-icon) .status-bar::after {
 }
 
 /* ───────────────────────────────────────────────── */
-/* << Header Bar (Tab Title Bar)
+/** Header Bar (Tab Title Bar)
 ──────────────────────────────────────────────────── */
 .workspace-leaf-content .view-header-title-container::after {
 	display: none;
@@ -2156,7 +2156,7 @@ body:not(.normal-header-bar, .is-mobile) .workspace-leaf-content .view-header {
 	border: none;
 }
 
-/* <<< Note Path Breadcrumbs */
+/** Note Path Breadcrumbs */
 body:not(.normal-header-bar, .is-mobile) .workspace-leaf-content .view-header-title-container {
 	position: absolute;
 	top: 35px;
@@ -2207,7 +2207,7 @@ body:not(.normal-header-bar, .is-mobile) .workspace-leaf-content .view-header .v
 	display: none;
 }
 
-/* <<< PDF Toolbar
+/** PDF Toolbar
 /* avoid collision with three-dot-menu */
 body:not(.normal-header-bar, .is-mobile) .pdf-toolbar {
 	padding-right: 32px;
@@ -2219,11 +2219,11 @@ body:not(.normal-header-bar, .is-mobile) .pdf-toolbar {
 }
 
 /* ───────────────────────────────────────────────── */
-/* << Tab Bar
+/** Tab Bar
 ──────────────────────────────────────────────────── */
 
 /* ───────────────────────────────────────────────── */
-/* <<< Hide Various Elements
+/** Hide Various Elements
 ──────────────────────────────────────────────────── */
 
 body:not(.show-new-tab-button) .workspace-tab-header-new-tab,
@@ -2235,7 +2235,7 @@ body:not(.show-tab-list-button) .workspace-tab-header-tab-list {
 }
 
 /* ───────────────────────────────────────────────── */
-/* <<< Tab bar when only tab
+/** Tab bar when only tab
 ──────────────────────────────────────────────────── */
 
 body:not(.normal-tab-bar) .mod-root .workspace-tab-header:only-child {
@@ -2275,7 +2275,7 @@ body:not(.normal-tab-bar) .mod-root .workspace-tab-header:only-child :is(.worksp
 	height: var(--icon-l);
 }
 
-/* <<< Hidden Tab bar when only one tab */
+/** Hidden Tab bar when only one tab */
 .hide-tabbar-when-one-tab:not(.is-mobile) .mod-root .workspace-tab-header-container:not(:has(.workspace-tab-header + .workspace-tab-header)) {
 	display: none;
 }
@@ -2293,7 +2293,7 @@ body:not(.normal-tab-bar) .mod-root .workspace-tab-header:only-child :is(.worksp
 }
 
 /* ───────────────────────────────────────────────── */
-/* <<< Stacked Tabs
+/** Stacked Tabs
 ──────────────────────────────────────────────────── */
 
 .mod-stacked .workspace-tab-header-inner {
@@ -2315,7 +2315,7 @@ body:not(.normal-tab-bar) .mod-root .workspace-tab-header:only-child :is(.worksp
 }
 
 /* ───────────────────────────────────────────────── */
-/* <<< Styling of Tabs
+/** Styling of Tabs
 ──────────────────────────────────────────────────── */
 
 .mod-root .workspace-tab-header-container-inner {
@@ -2389,7 +2389,7 @@ body .workspace .mod-root .workspace-tab-header {
 }
 
 /* ───────────────────────────────────────────────── */
-/* << Release Notes Tab
+/** Release Notes Tab
 ──────────────────────────────────────────────────── */
 
 /* add favicon */
@@ -2406,7 +2406,7 @@ body .workspace .mod-root .workspace-tab-header {
 }
 
 /* ───────────────────────────────────────────────── */
-/* << Editor Suggestions
+/** Editor Suggestions
 ──────────────────────────────────────────────────── */
 
 .suggestion-popover {
@@ -2423,8 +2423,8 @@ body .workspace .mod-root .workspace-tab-header {
 }
 
 /* ───────────────────────────────────────────────────
-/* << Prompts
-/* <<< QuickSwitcher
+/** Prompts
+/** QuickSwitcher
 ─────────────────────────────────────────────────── */
 
 div.prompt-results {
@@ -2500,7 +2500,7 @@ body .suggestion-item:hover :is(.suggestion-prefix, .suggestion-flair) {
 }
 
 /* ───────────────────────────────────────────────────
-/* <<< Command Palette
+/** Command Palette
 ─────────────────────────────────────────────────── */
 /* (everything from QuickSwitcher also applies) */
 
@@ -2529,7 +2529,7 @@ body:not(.is-mobile) .prompt .suggestion-prefix.suggestion-prefix {
 }
 
 /* ───────────────────────────────────────────────── */
-/* << Sidebars
+/** Sidebars
 ──────────────────────────────────────────────────── */
 
 body:not(.trim-long-filenames) {
@@ -2537,7 +2537,7 @@ body:not(.trim-long-filenames) {
 	--nav-item-white-space: normal;
 }
 
-/* <<< Overlaying Sidebar */
+/** Overlaying Sidebar */
 .overlaying-right-sidebar .mod-right-split {
 	position: absolute;
 	right: 0;
@@ -2549,7 +2549,7 @@ body:not(.trim-long-filenames) {
 }
 
 /* ───────────────────────────────────────────────── */
-/* <<< Sidebar Headers Hidden (Tab Headers)
+/** Sidebar Headers Hidden (Tab Headers)
 ──────────────────────────────────────────────────── */
 
 body:not(.show-sidebar-header-buttons) {
@@ -2590,7 +2590,7 @@ body:not(.show-sidebar-header-buttons) :is(.mod-left-split, .mod-right-split) .w
 }
 
 /* ───────────────────────────────────────────────── */
-/* <<< Sidebar Styling
+/** Sidebar Styling
 ──────────────────────────────────────────────────── */
 :is(.mod-right-split, .mod-left-split) .workspace-leaf-content .view-content {
 	padding: 0 0 16px;
@@ -2622,7 +2622,7 @@ body.mod-macos.is-hidden-frameless:not(.is-popout-window) .workspace .workspace-
 }
 
 /* ───────────────────────────────────────────────── */
-/* << Editor
+/** Editor
 ──────────────────────────────────────────────────── */
 
 /* save space at the top */
@@ -2632,7 +2632,7 @@ body.mod-macos.is-hidden-frameless:not(.is-popout-window) .workspace .workspace-
 }
 
 /* ───────────────────────────────────────────────── */
-/* <<< Search Matches
+/** Search Matches
 ──────────────────────────────────────────────────── */
 /* actually affects any kind of search anywhere in the app, but mostly the Editor */
 .suggestion-highlight.suggestion-highlight {
@@ -2654,7 +2654,7 @@ body .markdown-rendered .search-highlight>div.is-active {
 }
 
 /* ───────────────────────────────────────────────── */
-/* <<< Folds & Collapse Indicators
+/** Folds & Collapse Indicators
 ──────────────────────────────────────────────────── */
 
 /* emphasized folded lines */
@@ -2685,7 +2685,7 @@ body .cm-s-obsidian .is-collapsed~.cm-formatting-list {
 }
 
 /* ───────────────────────────────────────────────── */
-/* <<< Active / Inactive Note
+/** Active / Inactive Note
 ──────────────────────────────────────────────────── */
 body .mod-root .workspace-tabs:not(.mod-active, :only-of-type) .workspace-leaf-content[data-type="markdown"] {
 	opacity: var(--inactive-pane-opacity);
@@ -2703,7 +2703,7 @@ body .mod-root .workspace-tabs:not(.mod-active, :only-of-type) .workspace-leaf-c
 }
 
 /* ───────────────────────────────────────────────── */
-/* <<< Active Block Highlight
+/** Active Block Highlight
 ──────────────────────────────────────────────────── */
 
 body:not(.no-active-line-highlight, .active-line-background) .cm-active:not(.HyperMD-quote, .HyperMD-header, .HyperMD-codeblock)::before {
@@ -2737,7 +2737,7 @@ body:not(.no-active-line-highlight) .is-live-preview .cm-active .list-bullet::af
 }
 
 /* ───────────────────────────────────────────────── */
-/* <<< Empty Note / New Tab Page
+/** Empty Note / New Tab Page
 ──────────────────────────────────────────────────── */
 
 .workspace-tab-header[data-type="empty"]:not(:only-child) {
@@ -2767,10 +2767,10 @@ are not targeted by this */
 }
 
 /* ───────────────────────────────────────────────── */
-/* < Vim Mode
+/** Vim Mode
 ──────────────────────────────────────────────────── */
 /* ───────────────────────────────────────────────── */
-/* << Vim Cursor
+/** Vim Cursor
 ──────────────────────────────────────────────────── */
 
 /* stylelint-disable no-duplicate-selectors */
@@ -2819,7 +2819,7 @@ are not targeted by this */
 }
 
 /* ───────────────────────────────────────────────── */
-/* << Vim: Active Visual Line
+/** Vim: Active Visual Line
 ──────────────────────────────────────────────────── */
 
 .vim-active-visual-line .cm-fat-cursor.cm-cursor-primary {
@@ -2869,7 +2869,7 @@ are not targeted by this */
 }
 
 /* ───────────────────────────────────────────────── */
-/* << Vim: Relative Line Numbers
+/** Vim: Relative Line Numbers
 ──────────────────────────────────────────────────── */
 
 .use-relative-line-numbers:not(.is-mobile) .cm-lineNumbers .cm-gutterElement:not(.cm-active) {
@@ -2956,7 +2956,7 @@ are not targeted by this */
 }
 
 /* ───────────────────────────────────────────────── */
-/* << Vim: Disable Mouse Hovers & Tooltips
+/** Vim: Disable Mouse Hovers & Tooltips
 ──────────────────────────────────────────────────── */
 
 .no-mouse-hovers .is-live-preview .cm-embed-block:not(.cm-table-widget):hover {
@@ -2969,7 +2969,7 @@ are not targeted by this */
 }
 
 /* ───────────────────────────────────────────────── */
-/* << Vim Panel
+/** Vim Panel
 ──────────────────────────────────────────────────── */
 
 /* the ":" or "/" enlarged */
@@ -3000,11 +3000,11 @@ are not targeted by this */
 }
 
 /* ───────────────────────────────────────────────── */
-/* < Core Plugins
+/** Core Plugins
 ──────────────────────────────────────────────────── */
 
 /* ───────────────────────────────────────────────── */
-/* << Bookmarks
+/** Bookmarks
 ──────────────────────────────────────────────────── */
 .workspace-leaf-content[data-type="bookmarks"] {
 	padding: 0 0 20px;
@@ -3035,7 +3035,7 @@ body:not(.show-bookmark-controls) .workspace-leaf-content[data-type="bookmarks"]
 }
 
 /* ───────────────────────────────────────────────── */
-/* << Canvas
+/** Canvas
 ──────────────────────────────────────────────────── */
 /* moved further down to avoid conflict with canvas controls */
 body:not(.normal-header-bar, .is-mobile) .workspace-leaf-content[data-type="canvas"] .view-header-title-container {
@@ -3059,7 +3059,7 @@ body .canvas-card-menu {
 }
 
 /* ───────────────────────────────────────────────── */
-/* << Search
+/** Search
 ──────────────────────────────────────────────────── */
 .document-search-container {
 	margin-right: 0;
@@ -3073,7 +3073,7 @@ body:not(.show-close-buttons) .document-search-close-button {
 }
 
 /* ───────────────────────────────────────────────── */
-/* << File Explorer
+/** File Explorer
 ──────────────────────────────────────────────────── */
 
 .nav-files-container {
@@ -3101,7 +3101,7 @@ body:not(.show-file-explorer-navigation) .workspace-leaf-content[data-type="file
 }
 
 /* ───────────────────────────────────────────────── */
-/* << Outgoing Links & Backlinks
+/** Outgoing Links & Backlinks
 ──────────────────────────────────────────────────── */
 body :is(.backlink-pane, .outgoing-link-pane) {
 	padding: 0 2px;
@@ -3137,7 +3137,7 @@ body:not(.normal-out-back-links) :is(.backlink-pane, .outgoing-link-pane)>.tree-
 }
 
 /* ───────────────────────────────────────────────── */
-/* <<< Inline Backlinks
+/** Inline Backlinks
 ──────────────────────────────────────────────────── */
 :is(.markdown-source-view, .markdown-preview-view) .backlink-pane>.tree-item-self {
 	background-color: var(--bg2);
@@ -3206,7 +3206,7 @@ body:not(.classic-inline-backlinks) :is(.writing, .longform-leaf) .embedded-back
 }
 
 /* ───────────────────────────────────────────────── */
-/* << Outline
+/** Outline
 ──────────────────────────────────────────────────── */
 
 /* bolden folded headings */
@@ -3270,11 +3270,11 @@ body:not(.show-outline-buttons) .workspace-leaf-content[data-type="outline"] .na
 }
 
 /* ───────────────────────────────────────────────── */
-/* < Community Plugins
+/** Community Plugins
 ──────────────────────────────────────────────────── */
 
 /* ───────────────────────────────────────────────── */
-/* << Plugin Update Tracker
+/** Plugin Update Tracker
 ──────────────────────────────────────────────────── */
 /* https://github.com/swar8080/obsidian-plugin-update-tracker#custom-css-snippets */
 .status-bar-item.plugin-obsidian-plugin-update-tracker {
@@ -3288,7 +3288,7 @@ body:not(.show-outline-buttons) .workspace-leaf-content[data-type="outline"] .na
 }
 
 /* ───────────────────────────────────────────────── */
-/* << Cursor Location
+/** Cursor Location
 ──────────────────────────────────────────────────── */
 /* move to the left, due to it's resizing issues
 * https://github.com/spslater/obsidian-cursor-location-plugin/issues/14 */
@@ -3301,7 +3301,7 @@ body:not(.show-outline-buttons) .workspace-leaf-content[data-type="outline"] .na
 }
 
 /* ───────────────────────────────────────────────── */
-/* << Better Word Count
+/** Better Word Count
 ──────────────────────────────────────────────────── */
 /* move the left, next to cursor location */
 .status-bar-item.plugin-better-word-count {
@@ -3309,7 +3309,7 @@ body:not(.show-outline-buttons) .workspace-leaf-content[data-type="outline"] .na
 }
 
 /* ───────────────────────────────────────────────── */
-/* << Surfing
+/** Surfing
 ──────────────────────────────────────────────────── */
 .workspace-leaf-content[data-type="surfing-view"] .view-header.view-header {
 	padding-right: 4px;
@@ -3319,7 +3319,7 @@ body:not(.show-outline-buttons) .workspace-leaf-content[data-type="outline"] .na
 }
 
 /* ───────────────────────────────────────────────── */
-/* << Strange New Worlds
+/** Strange New Worlds
 ──────────────────────────────────────────────────── */
 .snw-header-count-wrapper {
 	padding: 1px 3px;
@@ -3340,7 +3340,7 @@ body:not(.normal-header-bar, .is-mobile) .snw-header-count-wrapper {
 }
 
 /* ───────────────────────────────────────────────── */
-/* << Jump-to-Link
+/** Jump-to-Link
 ──────────────────────────────────────────────────── */
 .jl.popover {
 	padding: 0 2px;
@@ -3348,7 +3348,7 @@ body:not(.normal-header-bar, .is-mobile) .snw-header-count-wrapper {
 }
 
 /* ───────────────────────────────────────────────── */
-/* << Link Favicon
+/** Link Favicon
 ──────────────────────────────────────────────────── */
 img.link-favicon.link-favicon {
 	padding-right: 3px;
@@ -3367,7 +3367,7 @@ img.link-favicon.link-favicon {
 }
 
 /* ───────────────────────────────────────────────── */
-/* << Custom Frames
+/** Custom Frames
 ──────────────────────────────────────────────────── */
 body:not(.normal-header-bar) .custom-frames-view {
 	/* stylelint-disable-next-line declaration-no-important */
@@ -3375,7 +3375,7 @@ body:not(.normal-header-bar) .custom-frames-view {
 }
 
 /* ───────────────────────────────────────────────── */
-/* << Highlighted Yank
+/** Highlighted Yank
 ──────────────────────────────────────────────────── */
 /* yank highlighter plugin */
 body .yank-deco {
@@ -3398,7 +3398,7 @@ body .yank-deco {
 }
 
 /* ───────────────────────────────────────────────── */
-/* << Various Complements
+/** Various Complements
 ──────────────────────────────────────────────────── */
 /* remove the icon */
 .various-complements__suggestion-item.various-complements__suggestion-item::before {
@@ -3431,7 +3431,7 @@ body .various-complements__suggestion-item {
 }
 
 /* ───────────────────────────────────────────────── */
-/* << Obsidian Git
+/** Obsidian Git
 ──────────────────────────────────────────────────── */
 .obsidian-git-statusbar-status>div:nth-child(2) {
 	/* stylelint-disable-next-line declaration-no-important */
@@ -3449,7 +3449,7 @@ body .various-complements__suggestion-item {
 }
 
 /* ───────────────────────────────────────────────── */
-/* << Dynamic Highlight
+/** Dynamic Highlight
 ──────────────────────────────────────────────────── */
 
 /* current word */
@@ -3494,7 +3494,7 @@ body .cm-matched-string {
 }
 
 /* ───────────────────────────────────────────────── */
-/* << Another Quick Switcher (AQS)
+/** Another Quick Switcher (AQS)
 ──────────────────────────────────────────────────── */
 /* styling from prompts also apply */
 
@@ -3715,7 +3715,7 @@ body .another-quick-switcher__grep__path-input.another-quick-switcher__grep__pat
 }
 
 /* ───────────────────────────────────────────────── */
-/* << Recent Files
+/** Recent Files
 ──────────────────────────────────────────────────── */
 /* inherits alternate row colors from file explorer */
 
@@ -3734,7 +3734,7 @@ body .another-quick-switcher__grep__path-input.another-quick-switcher__grep__pat
 }
 
 /* ───────────────────────────────────────────────── */
-/* << Pandoc Reference List
+/** Pandoc Reference List
 ──────────────────────────────────────────────────── */
 
 /* PANDOC CITATIONS IN-TEXT */
@@ -3800,7 +3800,7 @@ body .another-quick-switcher__grep__path-input.another-quick-switcher__grep__pat
 }
 
 /* ───────────────────────────────────────────────── */
-/* << Style Settings
+/** Style Settings
 ──────────────────────────────────────────────────── */
 
 .style-settings-export {
@@ -3895,7 +3895,7 @@ body .style-settings-heading[data-level="0"] .setting-item-name.setting-item-nam
 }
 
 /* ───────────────────────────────────────────────── */
-/* <<< Style Settings: As Tab
+/** Style Settings: As Tab
 ──────────────────────────────────────────────────── */
 
 .workspace-leaf-content[data-type="style-settings"] .view-content .setting-item:first-child {
@@ -3913,7 +3913,7 @@ body .view-content .style-settings-container .setting-item:not(.setting-item-hea
 }
 
 /* ───────────────────────────────────────────────── */
-/* <<< Style Settings: Conditionals Settings Display
+/** Style Settings: Conditionals Settings Display
 ──────────────────────────────────────────────────── */
 
 /* hide background hue sliders when using macOS look */
@@ -3922,7 +3922,7 @@ body .view-content .style-settings-container .setting-item:not(.setting-item-hea
 }
 
 /* ───────────────────────────────────────────────── */
-/* <<< Style Settings: Infoboxes
+/** Style Settings: Infoboxes
 ──────────────────────────────────────────────────── */
 
 .setting-item[data-id="appendix-info"] {
@@ -3968,7 +3968,7 @@ body .setting-item.setting-item.setting-item.setting-item[data-id="author-info"]
 }
 
 /* ───────────────────────────────────────────────── */
-/* <<< Style Settings: Hue Sliders & Color Demo Boxes
+/** Style Settings: Hue Sliders & Color Demo Boxes
 ──────────────────────────────────────────────────── */
 
 /* use hue slider */
@@ -4029,7 +4029,7 @@ body .setting-item.setting-item.setting-item.setting-item[data-id="author-info"]
 }
 
 /* ───────────────────────────────────────────────── */
-/* << Dataview
+/** Dataview
 ──────────────────────────────────────────────────── */
 /* Styling from the "Tables" Section mostly applies */
 
@@ -4089,13 +4089,13 @@ body .dataview:not(.task-list-item-checkbox):hover {
 	margin-top: 4px;
 }
 
-/* <<< dataview cssclasses */
+/** dataview cssclasses */
 .remove-dataview-title :is(.block-language-dataview, .block-language-dataviewjs) h4 {
 	display: none;
 }
 
 /* ───────────────────────────────────────────────── */
-/* << Hider
+/** Hider
 ──────────────────────────────────────────────────── */
 /* Hider is actually not needed with this theme,
 but the hider CSS for ribbon-hiding and this theme's
@@ -4106,11 +4106,11 @@ body.hider-ribbon .workspace-ribbon.mod-left {
 }
 
 /* ───────────────────────────────────────────────── */
-/* << Longform
+/** Longform
 ──────────────────────────────────────────────────── */
 
 /* ───────────────────────────────────────────────── */
-/* <<< Longform Smart Word Count
+/** Longform Smart Word Count
 ──────────────────────────────────────────────────── */
 
 /* Show Word Count only on writing cssclass and longform notes.
@@ -4122,7 +4122,7 @@ this to the active tab qould require nested `:has()` which isn't supported */
 }
 
 /* ───────────────────────────────────────────────────
-/* <<< Longform Sidebar
+/** Longform Sidebar
 ─────────────────────────────────────────────────── */
 
 .workspace-leaf-content[data-type="VIEW_TYPE_LONGFORM_EXPLORER"] .tab-panel-container {
@@ -4296,7 +4296,7 @@ body #scene-list .scene-container {
 }
 
 /* ───────────────────────────────────────────────── */
-/* <<< Longform Compile
+/** Longform Compile
 ──────────────────────────────────────────────────── */
 
 .longform-compile-container {
@@ -4340,7 +4340,7 @@ button.longform-remove-step-button.longform-remove-step-button.longform-remove-s
 }
 
 /* ───────────────────────────────────────────────────
-/* <<< Longform Sidebar Icons
+/** Longform Sidebar Icons
 ─────────────────────────────────────────────────── */
 /* container needs to be relative for `.current-draft-path` */
 #project-picker-container {
@@ -4412,7 +4412,7 @@ button.longform-remove-step-button.longform-remove-step-button.longform-remove-s
 }
 
 /* ───────────────────────────────────────────────────
-/* <<< Longform Unknown Files Wizard
+/** Longform Unknown Files Wizard
 ─────────────────────────────────────────────────── */
 
 .tab-panel-container.tab-panel-container.tab-panel-container #longform-unknown-files-wizard {
@@ -4467,8 +4467,8 @@ button.longform-remove-step-button.longform-remove-step-button.longform-remove-s
 }
 
 /* ───────────────────────────────────────────────────
-/* <<< Longform Editor
-/* <<< Writing cssclass
+/** Longform Editor
+/** Writing cssclass
 ─────────────────────────────────────────────────── */
 /* DOCS https://github.com/kevboh/longform#scene-only-styling */
 
@@ -4575,7 +4575,7 @@ body.longform-tasks-different.longform-tasks-different.longform-tasks-different.
 }
 
 /* ───────────────────────────────────────────────── */
-/* << Kanban
+/** Kanban
 ──────────────────────────────────────────────────── */
 
 /* background & colors */
@@ -4740,7 +4740,7 @@ body.longform-tasks-different.longform-tasks-different.longform-tasks-different.
 }
 
 /* ───────────────────────────────────────────────── */
-/* < Style Settings (+)
+/** Style Settings (YAML)
 ──────────────────────────────────────────────────── */
 
 /* @settings
@@ -4755,7 +4755,7 @@ settings:
       - To keep this theme maintainable, a few niche features have been removed. Most of them available as [standalone snippets](https://github.com/chrisgrieser/shimmering-focus/tree/main/snippets) though.
     markdown: true
     type: info-text
-  - # << Show / Hide UI Elements (+)
+  - ## Show / Hide UI Elements
     id: show-hide-elements
     title: 🙈 Show/hide UI elements
     description: Re-enable UI elements hidden by this theme.
@@ -4806,7 +4806,7 @@ settings:
     description: You can still close settings with `esc`, and tabs/panes by pressing `ctrl/cmd+w`.
     markdown: true
     default: false
-  - # <<< Status bar (+)
+  - ## Status bar
     id: show-hide-statusbar-elements
     title: Status bar items
     type: heading
@@ -4846,7 +4846,7 @@ settings:
     title: Hide the Shimmering Focus icon (⟡)
     type: class-toggle
     default: false
-  - # << Workspace (+)
+  - ## Workspace
     id: user-interface
     title: 🔲 Workspace
     description: Sidebar, tab bar & header bar, notifications
@@ -4900,7 +4900,7 @@ settings:
     description: By default, Obsidian displays notifications at the top right. Enable this to display them at the bottom right instead.
     type: class-toggle
     default: false
-  - # << Fonts & Headings (+)
+  - ## Fonts & Headings
     id: font-settings
     title: 🔠 Font
     description: "Headings, code"
@@ -4950,7 +4950,7 @@ settings:
     description: Makes headings more compact by decreasing their letter spacing.
     type: class-toggle
     default: false
-  - # << Colors & shapes (+)
+  - ## Colors & shapes
     id: aesthetics
     title: 🎨 Colors & shapes
     description: Angular shapes, native macOS look, background color, colored bold/italics, highlight color
@@ -5007,7 +5007,7 @@ settings:
     description: "You can further customize theme colors or even create your own color scheme – without knowledge of CSS – by using a CSS snippet. [See the theme docs for further information](https://github.com/chrisgrieser/shimmering-focus#create-and-share-your-own-color-scheme)."
     markdown: true
     type: info-text
-  - # << Editor Content (+)
+  - ## Editor Content
     id: content-settings
     title: 📑 Editor content
     description: Active block highlights, dimmed panes, code blocks, line length, folded lines, trailing spaces
@@ -5060,7 +5060,7 @@ settings:
     description: 'By default, this theme indicates the presence of trailing spaces when there are more than one with "··↵". This can be useful for the "two space rule" in markdown, where exactly two spaces at the end of a line force a line break.'
     type: class-toggle
     default: false
-  - # << Media (+)
+  - ## Media
     id: media-settings
     title: 🖼️ Media
     description: Images & tables
@@ -5098,7 +5098,7 @@ settings:
     description: ⚠️ Requires Obsidian installer version 1.1.9 or later and Obsidian 1.5 or later.
     type: class-toggle
     default: false
-  - # << Vim mode (+)
+  - ## Vim mode
     id: vim-mode
     title: 🏃 Vim mode
     description: Cursor, blinking, cursorline, relative line numbers, disable mouse hovers & tooltips
@@ -5131,7 +5131,7 @@ settings:
     description: Disables tooltips and "Edit this block" buttons displayed on hovering variuos elements.
     type: class-toggle
     default: false
-  - # << Longform & writing (+)
+  - ## Longform & writing
     id: longform-settings
     title: ✍️ Longform & writing
     description: Settings for notes in longform projects and notes with the writing cssclass.
@@ -5207,7 +5207,7 @@ settings:
     description: ⚠️ Requires Obsidian installer version 1.1.9 or later. Indent the first line of a paragraph and remove the spacing between paragraphs.
     type: class-toggle
     default: false
-  - # << Plugin-Specific Settings (+)
+  - ## Plugin-Specific Settings
     id: plugin-specific-settings
     title: ⚙️ Plugin-specific settings
     description: File explorer, bookmarks, backlinks, outgoing links, outline
@@ -5244,7 +5244,7 @@ settings:
     description: By default, the outline plugin buttons for collapsing, expanding, and searching headings are hidden. Enable this setting to show a compact version of them.
     default: false
     type: class-toggle
-  - # << Infos (+)
+  - ## Infos
     id: appendix-info
     title: ℹ️ Info
     type: heading

@@ -48,42 +48,33 @@ bufferKeymap(
 )
 
 --------------------------------------------------------------------------------
--- COMMENT MARKS
+-- NAVIGATION MARKERS
 
 -- goto comment marks (deferred, to override lsp-gotosymbol)
 vim.defer_fn(function()
 	bo.grepprg = "rg --vimgrep --no-column" -- remove columns for readability
 	bufferKeymap("n", "gs", function()
-		cmd([[silent! lgrep "^(  - \# <<\|/\* <)" %]]) -- riggrep-search for navigaton markers
+		cmd([[silent! lgrep "^(  - \#\# \|/\*\*)" %]]) -- riggrep-search for navigaton markers
 		require("telescope.builtin").loclist {
 			prompt_prefix = " ",
 			prompt_title = "Navigation Markers",
 			trim_text = true,
 			previewer = false,
 			layout_config = { horizontal = { width = 0.7 } },
+			path_display = function() return "" end, -- hide redundant filename
 		}
 	end, { desc = " Search Comment Marks" })
-	-- search only for variables
-	bufferKeymap("n", "gw", function()
-		cmd([[silent! lgrep "^\s*--" %]]) -- riggrep-search for css variables
-		require("telescope.builtin").loclist {
-			prompt_prefix = "󰀫 ",
-			prompt_title = "CSS Variables",
-			trim_text = true,
-			layout_strategy = "vertical",
-		}
-	end, { desc = " Search CSS Variables" })
 end, 500)
 
 -- next/prev comment marks
-bufferKeymap({ "n", "x" }, "<C-j>", [[/^\/\* <<CR>:nohl<CR>]], { desc = "next comment mark" })
-bufferKeymap({ "n", "x" }, "<C-k>", [[?^\/\* <<CR>:nohl<CR>]], { desc = "prev comment mark" })
+bufferKeymap({ "n", "x" }, "<C-j>", [[/^\/\*\*<CR><cmd>nohl<CR>]], { desc = "next comment mark" })
+bufferKeymap({ "n", "x" }, "<C-k>", [[?^\/\*\*<CR><cmd>nohl<CR>]], { desc = "prev comment mark" })
 
 -- create comment mark
 bufferKeymap("n", "qw", function()
 	local hr = {
 		"/* ───────────────────────────────────────────────── */",
-		"/* << ",
+		"/** ",
 		"──────────────────────────────────────────────────── */",
 		"",
 		"",
