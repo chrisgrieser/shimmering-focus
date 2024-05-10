@@ -2963,8 +2963,8 @@ are not targeted by this */
 	box-shadow: none;
 }
 
-/* ignoring tooltips in settings, since they are relevant there, e.g. for sliders */ 
-.no-mouse-hovers div:not(.modal-container) + .tooltip,
+/* ignoring tooltips in settings, since they are relevant there, e.g. for sliders */
+.no-mouse-hovers div:not(.modal-container)+.tooltip,
 .no-mouse-hovers .is-live-preview .cm-embed-block:not(.cm-table-widget):hover .edit-block-button {
 	display: none;
 }
@@ -3017,6 +3017,17 @@ are not targeted by this */
 
 /* hide nav buttons */
 body:not(.show-bookmark-controls) .workspace-leaf-content[data-type="bookmarks"] :is(.nav-buttons-container, .nav-header) {
+	display: none;
+}
+
+/* ────────────────────────────────────────────────────────────────────────── */
+
+/* Hide bookmarks icons */
+body:not(.show-bookmark-icons) .bookmark.tree-item-self {
+	padding-left: 10px;
+}
+
+body:not(.show-bookmark-icons) .bookmark.tree-item-self .tree-item-icon {
 	display: none;
 }
 
@@ -5224,6 +5235,11 @@ settings:
   - id: show-bookmark-controls
     title: "Bookmarks: Show buttons in side bar"
     description: By default, the Bookmark plugin buttons for new bookmarks, new folders, and collapsing are hidden. Enable this setting to show them again.
+    type: class-toggle
+    default: false
+  - id: show-bookmark-icons
+    title: "Bookmarks: Show icons in side bar"
+    description: By default, the icons indicating bookmark types are hidden. Enable this setting to show them again.
     type: class-toggle
     default: false
   - id: normal-out-back-links
