@@ -1,7 +1,7 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS
 by @pseudometa
-Version 3.596
+Version 3.597
 MIT License
 https://github.com/chrisgrieser/shimmering-focus
 ──────────────────────────────────────────────────── */
@@ -2456,10 +2456,6 @@ input.prompt-input.prompt-input {
 	line-height: 1.3em;
 }
 
-.suggestion-empty {
-	display: none;
-}
-
 body:not(.show-suggester-instructions) .prompt-instructions {
 	display: none;
 }
@@ -4767,7 +4763,7 @@ settings:
 #** Show / Hide UI Elements (+)
   - id: show-hide-elements
     title: 🙈 Show/hide UI elements
-    description: Re-enable UI elements hidden by this theme
+    description: Re-enable UI elements hidden by this theme.
     type: heading
     level: 1
     collapsed: true
@@ -4788,7 +4784,7 @@ settings:
   - id: show-suggester-instructions
     title: Re-enable suggester hints
     type: class-toggle
-    description: Suggesters are modals like the command palette or the quick switcher. By default, this theme hides the keyboard hints at the bottom of those suggesters. Enable this, to display them again.
+    description: Suggesters are modals like the command palette or quick switcher. By default, this theme hides the keyboard hints at the bottom of those suggesters. Enable this, to display them again.
     default: false
   - id: show-new-tab-button
     title: Re-enable new tab button
@@ -4863,7 +4859,7 @@ settings:
 #** Workspace (+)
   - id: user-interface
     title: 🔲 Workspace
-    description: Sidebar, tab bar & header bar, notifications
+    description: Sidebar, tab bar, header bar, notifications
     type: heading
     level: 1
     collapsed: true
