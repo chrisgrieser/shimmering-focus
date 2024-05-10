@@ -2226,6 +2226,7 @@ body:not(.normal-header-bar, .is-mobile) .pdf-toolbar {
 /** Hide Various Elements
 ──────────────────────────────────────────────────── */
 
+body.hide-vault-switcher-and-settings:not(.is-mobile) .workspace-split.mod-left-split .workspace-sidedock-vault-profile,
 body:not(.show-new-tab-button) .workspace-tab-header-new-tab,
 body:not(.show-close-buttons) .workspace-tab-header:only-child .workspace-tab-header-inner-close-button,
 body:not(.show-close-buttons) .mod-stacked .workspace-tab-header .workspace-tab-header-inner-close-button,
@@ -4766,7 +4767,7 @@ settings:
 #** Show / Hide UI Elements (+)
   - id: show-hide-elements
     title: 🙈 Show/hide UI elements
-    description: Re-enable UI elements hidden by this theme.
+    description: Re-enable UI elements hidden by this theme
     type: heading
     level: 1
     collapsed: true
@@ -4774,18 +4775,15 @@ settings:
     description: "The setting to remove the ribbon (the thin sidebar to the very left) has been removed, since with obsidan 1.6 you can do so via the Obsidian settings: `Appearance → Interface → Show ribbon menu`"
     type: info-text
     markdown: true
+  - id: hide-vault-switcher-and-settings
+    title: "Left sidebar: Hide the vault switcher and settings button"
+    description: You can still access the settings via `cmd/ctrl + ,`.
+    type: class-toggle
+    default: false
   - id: show-sidebar-header-buttons
     title: Permanently show the sidebar header buttons
     description: By default, the buttons at the top of the sidebar panels are only visible when hovering.
     type: class-toggle
-    default: false
-  - id: show-urls
-    title: Show urls of markdown links
-    type: class-toggle
-    addCommand: true
-    description: |
-      By default, the URLs of markdown links are hidden in Source Mode, except for the currently active line.
-      ℹ️ This setting can also be toggled via command palette or hotkey.
     default: false
   - id: show-suggester-instructions
     title: Re-enable suggester hints
@@ -4813,6 +4811,14 @@ settings:
     type: class-toggle
     description: You can still close settings with `esc`, and tabs/panes by pressing `ctrl/cmd+w`.
     markdown: true
+    default: false
+  - id: show-urls
+    title: Show URLs of markdown links
+    type: class-toggle
+    addCommand: true
+    description: |
+      By default, the URLs of markdown links are hidden in Source Mode, except for the currently active line.
+      ℹ️ This setting can also be toggled via command palette or hotkey.
     default: false
 #** Status bar (+)
   - id: show-hide-statusbar-elements
