@@ -3817,7 +3817,7 @@ body .another-quick-switcher__grep__path-input.another-quick-switcher__grep__pat
 }
 
 /* the "download settings" button is not needed for *every single* section */
-.style-settings-container .setting-item-heading:not([data-level="0"]) .setting-editor-extra-setting-button:last-child {
+.style-settings-container .setting-item-heading:not([data-level="0"]) .extra-setting-button:last-child {
 	display: none;
 }
 
