@@ -3116,11 +3116,7 @@ body .outgoing-link-pane .search-result-container {
 	padding: 2px 0;
 }
 
-body:not(.normal-out-back-links) .tree-item-self.outgoing-link-item .tree-item-inner-subtext {
-	display: none;
-}
-
-/* hide "links" and "unlinked mentions" */
+/* hide "links" and "unlinked mentions" headings */
 body:not(.normal-out-back-links) :is(.backlink-pane, .outgoing-link-pane)>.tree-item-self {
 	display: none;
 }
