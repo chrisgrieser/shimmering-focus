@@ -1400,7 +1400,7 @@ body:not(.no-image-alttext-caption) .image-embed::after {
 /** Settings Menu
 ──────────────────────────────────────────────────── */
 
-body:not(.show-close-buttons) .modal-close-button {
+body:not(.show-close-buttons, .is-mobile) .modal-close-button {
 	display: none;
 }
 
@@ -2227,10 +2227,10 @@ body:not(.normal-header-bar, .is-mobile) .pdf-toolbar {
 ──────────────────────────────────────────────────── */
 
 body.hide-vault-switcher-and-settings:not(.is-mobile) .workspace-split.mod-left-split .workspace-sidedock-vault-profile,
-body:not(.show-new-tab-button) .workspace-tab-header-new-tab,
-body:not(.show-close-buttons) .workspace-tab-header:only-child .workspace-tab-header-inner-close-button,
-body:not(.show-close-buttons) .mod-stacked .workspace-tab-header .workspace-tab-header-inner-close-button,
-body:not(.show-close-buttons) .workspace-tabs:not(.mod-stacked) .workspace-tab-header:not(:hover) .workspace-tab-header-inner-close-button,
+body:not(.show-new-tab-button, .is-mobile) .workspace-tab-header-new-tab,
+body:not(.show-close-buttons, .is-mobile) .workspace-tab-header:only-child .workspace-tab-header-inner-close-button,
+body:not(.show-close-buttons, .is-mobile) .mod-stacked .workspace-tab-header .workspace-tab-header-inner-close-button,
+body:not(.show-close-buttons, .is-mobile) .workspace-tabs:not(.mod-stacked) .workspace-tab-header:not(:hover) .workspace-tab-header-inner-close-button,
 body:not(.show-tab-list-button) .workspace-tab-header-tab-list {
 	display: none;
 }
@@ -3081,7 +3081,7 @@ body .canvas-card-menu {
 	box-shadow: var(--shadow-s);
 }
 
-body:not(.show-close-buttons) .document-search-close-button {
+body:not(.show-close-buttons, .is-mobile) .document-search-close-button {
 	display: none;
 }
 
