@@ -1,7 +1,7 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS
 by @pseudometa
-Version 3.595
+Version 3.596
 MIT License
 https://github.com/chrisgrieser/shimmering-focus
 ──────────────────────────────────────────────────── */
@@ -5129,7 +5129,7 @@ settings:
     default: false
   - id: no-mouse-hovers
     title: 'Disable tooltips & "Edit this block" button'
-    description: Disables tooltips and "Edit this block" buttons displayed on hovering variuos elements.
+    description: Disables tooltips and "Edit this block" buttons displayed on hovering various elements.
     type: class-toggle
     default: false
 #** Longform & writing (+)
