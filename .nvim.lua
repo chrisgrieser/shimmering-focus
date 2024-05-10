@@ -1,8 +1,4 @@
 -- INFO nvim config specifically for Shimmering Focus file
-local bo = vim.bo
-local cmd = vim.cmd
-local fn = vim.fn
-
 local function bufferKeymap(mode, lhs, rhs, opts)
 	opts.buffer = true
 	opts.silent = true
@@ -26,10 +22,9 @@ for line in io.lines(permaRepos) do
 end
 
 -- touch symlink on filechange, to trigger Obsidian's hot-reload
-local group = vim.api.nvim_create_augroup("shimmering-focus-hot-reload", {})
 vim.api.nvim_create_autocmd({ "FocusLost", "BufLeave" }, {
 	buffer = 0,
-	group = group,
+	group = vim.api.nvim_create_augroup("shimmering-focus", {}),
 	callback = function()
 		for _, themeFile in pairs(themeFiles) do
 			vim.fn.system { "touch", "-h", themeFile }
@@ -48,27 +43,31 @@ bufferKeymap(
 )
 
 --------------------------------------------------------------------------------
--- NAVIGATION MARKERS
+-- COMMENT MARKERS
 
 -- goto comment marks (deferred, to override lsp-gotosymbol)
 vim.defer_fn(function()
-	bo.grepprg = "rg --vimgrep --no-column" -- remove columns for readability
 	bufferKeymap("n", "gs", function()
-		cmd([[silent! lgrep "^(  - \#\# \|/\*\*)" %]]) -- riggrep-search for navigaton markers
-		require("telescope.builtin").loclist {
-			prompt_prefix = " ",
-			prompt_title = "Navigation Markers",
-			trim_text = true,
-			previewer = false,
-			layout_config = { horizontal = { width = 0.7 } },
-			path_display = function() return "" end, -- hide redundant filename
-		}
-	end, { desc = " Search Comment Marks" })
-end, 500)
+		local lines = vim.api.nvim_buf_get_lines(0, 0, -1, false)
+		local linesWithMarkers = {}
+		for lnum, line in pairs(lines) do
+			if line:find([[^[/#]%*%*]]) then
+				table.insert(linesWithMarkers, { lnum = lnum, line = line })
+			end
+		end
+		vim.ui.select(linesWithMarkers, {
+			prompt = " Comment Markers",
+			format_item = function(item) return item.line:sub(5) end,
+		}, function(line)
+			if not line then return end
+			vim.api.nvim_win_set_cursor(0, { line.lnum, 4 })
+		end)
+	end, { desc = " Goto Comment Marks" })
+end, 1)
 
 -- next/prev comment marks
-bufferKeymap({ "n", "x" }, "<C-j>", [[/^\/\*\*<CR><cmd>nohl<CR>]], { desc = "next comment mark" })
-bufferKeymap({ "n", "x" }, "<C-k>", [[?^\/\*\*<CR><cmd>nohl<CR>]], { desc = "prev comment mark" })
+bufferKeymap({ "n", "x" }, "<C-j>", [[/^[/#]\*\*<CR><cmd>nohl<CR>]], { desc = " Next Comment Mark" })
+bufferKeymap({ "n", "x" }, "<C-k>", [[?^[/#]\*\*<CR><cmd>nohl<CR>]], { desc = " Prev Comment Mark" })
 
 -- create comment mark
 bufferKeymap("n", "qw", function()
@@ -79,9 +78,8 @@ bufferKeymap("n", "qw", function()
 		"",
 		"",
 	}
-	fn.append(".", hr) ---@diagnostic disable-line undefined-field, param-type-mismatch
+	vim.fn.append(".", hr) ---@diagnostic disable-line undefined-field, param-type-mismatch
 	local lineNum = vim.api.nvim_win_get_cursor(0)[1] + 2
-	local colNum = #hr[2] + 2
-	vim.api.nvim_win_set_cursor(0, { lineNum, colNum })
-	cmd.startinsert { bang = true }
-end, { desc = " Comment Mark" })
+	vim.api.nvim_win_set_cursor(0, { lineNum, 0 })
+	vim.cmd.startinsert { bang = true }
+end, { desc = " Create Comment Mark" })

@@ -4741,7 +4741,7 @@ body.longform-tasks-different.longform-tasks-different.longform-tasks-different.
 }
 
 /* ───────────────────────────────────────────────── */
-/** Style Settings (YAML)
+/** Style Settings (+)
 ──────────────────────────────────────────────────── */
 
 /* @settings
@@ -4756,8 +4756,8 @@ settings:
       - To keep this theme maintainable, a few niche features have been removed. Most of them available as [standalone snippets](https://github.com/chrisgrieser/shimmering-focus/tree/main/snippets) though.
     markdown: true
     type: info-text
-  - ## Show / Hide UI Elements
-    id: show-hide-elements
+#** Show / Hide UI Elements (+)
+  - id: show-hide-elements
     title: 🙈 Show/hide UI elements
     description: Re-enable UI elements hidden by this theme.
     type: heading
@@ -4807,8 +4807,8 @@ settings:
     description: You can still close settings with `esc`, and tabs/panes by pressing `ctrl/cmd+w`.
     markdown: true
     default: false
-  - ## Status bar
-    id: show-hide-statusbar-elements
+#** Status bar (+)
+  - id: show-hide-statusbar-elements
     title: Status bar items
     type: heading
     level: 2
@@ -4847,8 +4847,8 @@ settings:
     title: Hide the Shimmering Focus icon (⟡)
     type: class-toggle
     default: false
-  - ## Workspace
-    id: user-interface
+#** Workspace (+)
+  - id: user-interface
     title: 🔲 Workspace
     description: Sidebar, tab bar & header bar, notifications
     type: heading
@@ -4901,8 +4901,8 @@ settings:
     description: By default, Obsidian displays notifications at the top right. Enable this to display them at the bottom right instead.
     type: class-toggle
     default: false
-  - ## Fonts & Headings
-    id: font-settings
+#** Fonts & Headings (+)
+  - id: font-settings
     title: 🔠 Font
     description: "Headings, code"
     type: heading
@@ -4951,8 +4951,8 @@ settings:
     description: Makes headings more compact by decreasing their letter spacing.
     type: class-toggle
     default: false
-  - ## Colors & shapes
-    id: aesthetics
+#** Colors & shapes (+)
+  - id: aesthetics
     title: 🎨 Colors & shapes
     description: Angular shapes, native macOS look, background color, colored bold/italics, highlight color
     type: heading
@@ -5008,8 +5008,8 @@ settings:
     description: "You can further customize theme colors or even create your own color scheme – without knowledge of CSS – by using a CSS snippet. [See the theme docs for further information](https://github.com/chrisgrieser/shimmering-focus#create-and-share-your-own-color-scheme)."
     markdown: true
     type: info-text
-  - ## Editor Content
-    id: content-settings
+#** Editor Content (+)
+  - id: content-settings
     title: 📑 Editor content
     description: Active block highlights, dimmed panes, code blocks, line length, folded lines, trailing spaces
     type: heading
@@ -5061,8 +5061,8 @@ settings:
     description: 'By default, this theme indicates the presence of trailing spaces when there are more than one with "··↵". This can be useful for the "two space rule" in markdown, where exactly two spaces at the end of a line force a line break.'
     type: class-toggle
     default: false
-  - ## Media
-    id: media-settings
+#** Media (+)
+  - id: media-settings
     title: 🖼️ Media
     description: Images & tables
     type: heading
@@ -5099,8 +5099,8 @@ settings:
     description: ⚠️ Requires Obsidian installer version 1.1.9 or later and Obsidian 1.5 or later.
     type: class-toggle
     default: false
-  - ## Vim mode
-    id: vim-mode
+#** Vim mode (+)
+  - id: vim-mode
     title: 🏃 Vim mode
     description: Cursor, blinking, cursorline, relative line numbers, disable mouse hovers & tooltips
     type: heading
@@ -5132,8 +5132,8 @@ settings:
     description: Disables tooltips and "Edit this block" buttons displayed on hovering variuos elements.
     type: class-toggle
     default: false
-  - ## Longform & writing
-    id: longform-settings
+#** Longform & writing (+)
+  - id: longform-settings
     title: ✍️ Longform & writing
     description: Settings for notes in longform projects and notes with the writing cssclass.
     type: heading
@@ -5208,8 +5208,8 @@ settings:
     description: ⚠️ Requires Obsidian installer version 1.1.9 or later. Indent the first line of a paragraph and remove the spacing between paragraphs.
     type: class-toggle
     default: false
-  - ## Plugin-Specific Settings
-    id: plugin-specific-settings
+#** Plugin-Specific Settings (+)
+  - id: plugin-specific-settings
     title: ⚙️ Plugin-specific settings
     description: File explorer, bookmarks, backlinks, outgoing links, outline
     type: heading
@@ -5245,8 +5245,8 @@ settings:
     description: By default, the outline plugin buttons for collapsing, expanding, and searching headings are hidden. Enable this setting to show a compact version of them.
     default: false
     type: class-toggle
-  - ## Infos
-    id: appendix-info
+#** Infos (+)
+  - id: appendix-info
     title: ℹ️ Info
     type: heading
     level: 1
