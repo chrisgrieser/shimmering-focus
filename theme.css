@@ -2423,6 +2423,17 @@ body .workspace .mod-root .workspace-tab-header {
 	margin-bottom: 0;
 }
 
+/* ───────────────────────────────────────────────── */
+/** Context Menu (Right-click)
+──────────────────────────────────────────────────── */
+.menu {
+	padding: 3px;
+}
+
+.menu .menu-separator {
+	border-width: 2px;
+}
+
 /* ───────────────────────────────────────────────────
 /** Prompts
 /** QuickSwitcher
