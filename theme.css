@@ -2374,7 +2374,7 @@ body .workspace .mod-root .workspace-tab-header {
 	order: 4;
 }
 
-/* tab bar height – cannot modify --header-height, since it would also affect the sidebar tabs that are not top */
+/* tab bar height: cannot modify ``--header-height``, since it would also affect the sidebar tabs that are not top */
 .mod-macos :is(.mod-top, .mod-root) .workspace-tab-header-container {
 	height: 35px;
 }
@@ -2408,16 +2408,16 @@ body .workspace .mod-root .workspace-tab-header {
 /** Editor Suggestions
 ──────────────────────────────────────────────────── */
 
-.suggestion-popover {
+.suggestion-container {
 	border-radius: var(--radius-s);
 }
 
-.suggestion-popover .suggestion {
+.suggestion-container .suggestion {
 	padding: 0;
 }
 
-/* so hover effects do not have a white line at the bottom */
-.suggestion-popover .suggestion-item:last-child {
+/* so hover effects do not have a line at the bottom */
+.suggestion-container .suggestion-item:last-child {
 	margin-bottom: 0;
 }
 
