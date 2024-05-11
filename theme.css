@@ -197,7 +197,7 @@ body {
 	--bg-sat: 0%;
 }
 
-/** gamma color scheme */
+/* gamma color scheme */
 .theme-light {
 	--bg-sat: 25%;
 	--bg-hue: var(--bg-hue-light);
@@ -861,7 +861,6 @@ div.HyperMD-codeblock-bg:not(.HyperMD-codeblock-begin-bg) {
 	color: var(--text-normal);
 }
 
-/** language labels */
 pre[class*="language-"]::after {
 	position: absolute;
 	top: 2px;
@@ -872,7 +871,7 @@ pre[class*="language-"]::after {
 	content: attr(class);
 }
 
-/** Code Block: Line Numbers in Edit Mode */
+/* Code Block: Line Numbers in Edit Mode */
 body:not(.no-codeblock-line-numbers) .HyperMD-codeblock-begin {
 	counter-reset: codeblock-line-numbers;
 }
@@ -993,7 +992,7 @@ body:not(.no-alternating-header-colors) .view-content :is(h1, h3, h5) {
 	color: var(--alt-heading-color);
 }
 
-/** Live Preview Heading Level Indicator */
+/* Live Preview Heading Level Indicator */
 body:not(.no-lp-heading-level-indicator) .is-live-preview .cm-header::before {
 	position: relative;
 	bottom: 1px;
@@ -1036,7 +1035,7 @@ body:not(.no-lp-heading-level-indicator) .is-live-preview .cm-header~.cm-header:
 	display: none;
 }
 
-/** Headers with background colors */
+/* Headers with background colors */
 body:not(.no-heading-background) .markdown-source-view .cm-line.HyperMD-header,
 body:not(.no-heading-background) .markdown-preview-view :is(h1, h2, h3, h4, h5, h6) {
 	background-color: var(--bg4);
@@ -1848,7 +1847,7 @@ input[type="range"]::after {
 /** Progress Bars
 ──────────────────────────────────────────────────── */
 
-/** Vault Launch */
+/* Vault Launch */
 /* INFO use `debugger` in the console while the vault launches. Close Obsidian
  * while the console is open, so the console appears on start. */
 
@@ -1888,7 +1887,7 @@ input[type="range"]::after {
 	display: none;
 }
 
-/** Plugin Update Progress Bar */
+/* Plugin Update Progress Bar */
 .modal .is-loading::before {
 	height: 8px;
 	background: linear-gradient(45deg,
@@ -2156,7 +2155,7 @@ body:not(.normal-header-bar, .is-mobile) .workspace-leaf-content .view-header {
 	border: none;
 }
 
-/** Note Path Breadcrumbs */
+/* Note Path Breadcrumbs */
 body:not(.normal-header-bar, .is-mobile) .workspace-leaf-content .view-header-title-container {
 	position: absolute;
 	top: 35px;
@@ -2276,7 +2275,6 @@ body:not(.normal-tab-bar) .mod-root .workspace-tab-header:only-child :is(.worksp
 	height: var(--icon-l);
 }
 
-/** Hidden Tab bar when only one tab */
 .hide-tabbar-when-one-tab:not(.is-mobile) .mod-root .workspace-tab-header-container:not(:has(.workspace-tab-header + .workspace-tab-header)) {
 	display: none;
 }
@@ -2541,11 +2539,10 @@ body:not(.is-mobile) .prompt .suggestion-prefix.suggestion-prefix {
 ──────────────────────────────────────────────────── */
 
 body:not(.trim-long-filenames) {
-	/* = wrap */
 	--nav-item-white-space: normal;
 }
 
-/** Overlaying Sidebar */
+/* Overlaying Sidebar */
 .overlaying-right-sidebar .mod-right-split {
 	position: absolute;
 	right: 0;
@@ -4098,11 +4095,6 @@ body .dataview:not(.task-list-item-checkbox):hover {
 
 .is-live-preview .block-language-dataviewjs :is(h1, h2, h3, h4, h5, h6):first-child {
 	margin-top: 4px;
-}
-
-/** dataview cssclasses */
-.remove-dataview-title :is(.block-language-dataview, .block-language-dataviewjs) h4 {
-	display: none;
 }
 
 /* ───────────────────────────────────────────────── */
