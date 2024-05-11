@@ -345,8 +345,8 @@ body {
 	--tab-stacked-header-width: 28px;
 
 	/* Table */
-	--table-text-size: calc(var(--font-text-size) * 0.95);
-	--table-header-size: 1em;
+	--table-text-size: calc(var(--font-text-size) * 0.9);
+	--table-header-size: var(--table-text-size);
 	--table-header-weight: 600;
 	--table-white-space: normal;
 	--table-border-width: 1px;
@@ -4058,12 +4058,17 @@ body .setting-item.setting-item.setting-item.setting-item[data-id="author-info"]
 	margin-inline-start: 0.3em;
 }
 
-pre.dataview-error::before {
-	display: none;
+/* Tables: consistent look to native Obsidian tables */
+.dataview.table-view-table :is(td, th) {
+	border: var(--table-border-width) solid var(--table-border-color)
 }
 
-pre.dataview-error::first-line {
-	color: var(--text-error);
+.dataview.table-view-table td {
+	font-size: var(--table-text-size);
+}
+
+.dataview.table-view-table th {
+	font-size: var(--table-header-size);
 }
 
 /* Result counts */
