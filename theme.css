@@ -2540,11 +2540,6 @@ body:not(.trim-long-filenames) {
 	right: 0;
 }
 
-.sidebar-no-animations .workspace-split:is(.mod-left-split, .mod-right-split) {
-	/* stylelint-disable-next-line declaration-no-important */
-	transition: var(--anim-duration-none) !important;
-}
-
 /* ───────────────────────────────────────────────── */
 /** Sidebar Headers Hidden (Tab Headers)
 ──────────────────────────────────────────────────── */
@@ -4898,11 +4893,6 @@ settings:
   - id: overlaying-right-sidebar
     title: "Sidebar: Overlaying right sidebar"
     description: "The right sidebar is placed on top of the editor instead of making the editor more narrow (i.e. the behavior on mobile)."
-    type: class-toggle
-    default: false
-  - id: sidebar-no-animations
-    title: "Sidebar: No animations"
-    description: Disable all sidebar-related animations.
     type: class-toggle
     default: false
   - id: notices-at-bottom-right
