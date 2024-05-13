@@ -4043,19 +4043,12 @@ body .setting-item.setting-item.setting-item.setting-item[data-id="author-info"]
 
 /* less indentation to save space */
 :is(.block-language-dataview, .block-language-dataviewjs) ul.contains-task-list {
-	--list-indent: 1.2em;
-}
-
-.is-live-preview :is(.block-language-dataview, .block-language-dataviewjs) ul.contains-task-list {
+	--list-indent: 0.3em;
 	padding-inline-start: 0;
 }
 
-:is(.block-language-dataview, .block-language-dataviewjs) .result-group {
-	padding-left: 0;
-}
-
-.result-group .dataview.task-list-item-checkbox {
-	margin-inline-start: 0.3em;
+.contains-task-list .dataview.task-list-item-checkbox {
+	margin-inline: 0 0.5em;
 }
 
 /* Tables: consistent look to native Obsidian tables */
