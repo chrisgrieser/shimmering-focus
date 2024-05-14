@@ -2100,8 +2100,8 @@ input[type="checkbox"].metadata-input-checkbox {
 	padding: 3px 4px;
 	font-size: 1em;
 	background-color: var(--bg5);
-	border-top: 3px groove var(--color-base-10);
-	border-left: 3px groove var(--color-base-10);
+	border-top: 3px groove var(--color-base-20);
+	border-left: 3px groove var(--color-base-20);
 }
 
 .status-bar-item:empty {
