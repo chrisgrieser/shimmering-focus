@@ -4815,14 +4815,10 @@ settings:
 #** Status bar (+)
   - id: show-hide-statusbar-elements
     title: Status bar items
+    description: Hide individual status bar items from plugins.
     type: heading
     level: 2
     collapsed: true
-  - id: hidden-sidebars-hidden-statusbar
-    title: Hide the status bar completely, when both sidebars are hidden
-    description: ⚠️ Requires Obsidian installer version 1.1.9 or later.
-    type: class-toggle
-    default: false
   - id: hide-properties-in-statusbar
     title: Hide properties count
     type: class-toggle
@@ -4855,7 +4851,7 @@ settings:
 #** Workspace (+)
   - id: user-interface
     title: 🔲 Workspace
-    description: Sidebar, tab bar, header bar, notifications
+    description: Side bars, tab bar, header bar, notifications
     type: heading
     level: 1
     collapsed: true
@@ -4887,13 +4883,18 @@ settings:
     step: 25
     format: px
   - id: trim-long-filenames
-    title: "Sidebar: Trim file names"
+    title: "Side bar: Trim file names"
     description: When enabled, long file and folder names will be trimmed. When disabled, long names will be wrapped to the next line.
     type: class-toggle
     default: false
   - id: overlaying-right-sidebar
-    title: "Sidebar: Overlaying right sidebar"
+    title: "Side bar: Overlaying right sidebar"
     description: "The right sidebar is placed on top of the editor instead of making the editor more narrow (i.e. the behavior on mobile)."
+    type: class-toggle
+    default: false
+  - id: hidden-sidebars-hidden-statusbar
+    title: Hide the status bar completely, when both sidebars are hidden
+    description: ⚠️ Requires Obsidian installer version 1.1.9 or later.
     type: class-toggle
     default: false
   - id: notices-at-bottom-right
