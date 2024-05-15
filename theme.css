@@ -2083,7 +2083,7 @@ input[type="checkbox"].metadata-input-checkbox {
 }
 
 /* ───────────────────────────────────────────────── */
-/** Status Bar
+/** Status bar
 ──────────────────────────────────────────────────── */
 .hide-pandoc-reference-list-status-bar .status-bar-item.plugin-obsidian-pandoc-reference-list,
 .hide-longform-status-bar .status-bar-item.plugin-longform,
@@ -2100,8 +2100,8 @@ input[type="checkbox"].metadata-input-checkbox {
 	padding: 3px 4px;
 	font-size: 1em;
 	background-color: var(--bg5);
-	border-top: 3px groove var(--color-base-20);
-	border-left: 3px groove var(--color-base-20);
+	border-top: 2px groove var(--color-base-20);
+	border-left: 2px groove var(--color-base-20);
 }
 
 .status-bar-item:empty {
@@ -2465,12 +2465,34 @@ input.prompt-input.prompt-input {
 	line-height: 1.3em;
 }
 
+.suggestion-item :is(.suggestion-note, .suggestion-prefix) {
+	font-size: var(--font-small);
+	color: var(--text-gray);
+}
+
+/* instructions */
 body:not(.show-suggester-instructions) .prompt-instructions {
 	display: none;
 }
 
-.suggestion-item :is(.suggestion-note, .suggestion-prefix) {
-	font-size: var(--font-small);
+.prompt-instructions {
+	padding: 4px;
+	border-top: var(--basic-border);
+	background-color: var(--bg4);
+	gap: 6px 8px;
+}
+
+/* if `:has` is supproted, re-display another quick switcher instructions, since
+* that plugin has its own setting to show them */
+/* https://developer.mozilla.org/en-US/docs/Web/CSS/@supports#testing_for_the_support_of_a_selector */
+@supports selector(:has(.a)) {
+	.prompt-input-container:has(.another-quick-switcher__status__search-command)~.prompt-instructions {
+		display: flex;
+	}
+}
+
+.prompt-instructions .prompt-instruction-command {
+	font-weight: 600;
 	color: var(--text-gray);
 }
 
