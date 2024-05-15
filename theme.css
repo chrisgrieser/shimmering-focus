@@ -2482,15 +2482,6 @@ body:not(.show-suggester-instructions) .prompt-instructions {
 	gap: 6px 8px;
 }
 
-/* if `:has` is supproted, re-display another quick switcher instructions, since
-* that plugin has its own setting to show them */
-/* https://developer.mozilla.org/en-US/docs/Web/CSS/@supports#testing_for_the_support_of_a_selector */
-@supports selector(:has(.a)) {
-	.prompt-input-container:has(.another-quick-switcher__status__search-command)~.prompt-instructions {
-		display: flex;
-	}
-}
-
 .prompt-instructions .prompt-instruction-command {
 	font-weight: 600;
 	color: var(--text-gray);
@@ -3526,6 +3517,16 @@ body .cm-matched-string {
 /* ───────────────────────────────────────────────── */
 /** Another Quick Switcher (AQS)
 ──────────────────────────────────────────────────── */
+
+/* if `:has` is supported, re-display another quick switcher instructions, since
+* that plugin has its own setting to show them */
+/* https://developer.mozilla.org/en-US/docs/Web/CSS/@supports#testing_for_the_support_of_a_selector */
+@supports selector(:has(.a)) {
+	.prompt-results:has(.another-quick-switcher__item)~.prompt-instructions {
+		display: flex;
+	}
+}
+
 /* styling from prompts also apply */
 
 .another-quick-switcher__directory_item::before,
