@@ -1424,8 +1424,8 @@ body:not(.show-close-buttons, .is-mobile) .modal-close-button {
 }
 
 .vertical-tab-header.vertical-tab-header.vertical-tab-header {
-	padding-bottom: 72px;
 	/* overscroll */
+	padding-bottom: 72px;
 	border-right: none;
 }
 
@@ -3566,7 +3566,10 @@ body .another-quick-switcher__status__count-input {
 }
 
 .another-quick-switcher__item__description__tag.another-quick-switcher__item__description__tag>svg {
-	margin-right: -1px;
+	margin-left: -2px;
+}
+
+.another-quick-switcher__item__description svg {
 	transform: scale(0.9);
 }
 
