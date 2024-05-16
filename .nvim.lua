@@ -37,7 +37,7 @@ vim.api.nvim_create_autocmd({ "FocusLost", "BufLeave" }, {
 -- never push, since build script already pushes
 bufferKeymap(
 	"n",
-	"<leader>gc",
+	"gc",
 	function() require("tinygit").smartCommit { pushIfClean = false } end,
 	{ desc = "󰊢 Smart-Commit (no push)" }
 )
