@@ -1445,7 +1445,8 @@ body:not(.show-close-buttons, .is-mobile) .modal-close-button {
 	border-radius: 0;
 }
 
-.mod-settings input:is([type="text"], [type="search"]):not(.linter-custom-regex-replacement-flags) {
+/* min width not applied to linter fields and to color picker input */ 
+.mod-settings input:is([type="text"], [type="search"]):not(.linter-custom-regex-replacement-flags, .pcr-result) {
 	min-width: 250px;
 	background-color: var(--bg1);
 }
