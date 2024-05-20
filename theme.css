@@ -2228,6 +2228,7 @@ body:not(.normal-header-bar, .is-mobile) .pdf-toolbar {
 
 body.hide-vault-switcher-and-settings:not(.is-mobile) .workspace-split.mod-left-split .workspace-sidedock-vault-profile,
 body:not(.show-new-tab-button, .is-mobile) .workspace-tab-header-new-tab,
+body:not(.show-close-buttons, .is-mobile) .search-input-clear-button,
 body:not(.show-close-buttons, .is-mobile) .workspace-tab-header:only-child .workspace-tab-header-inner-close-button,
 body:not(.show-close-buttons, .is-mobile) .mod-stacked .workspace-tab-header .workspace-tab-header-inner-close-button,
 body:not(.show-close-buttons, .is-mobile) .workspace-tabs:not(.mod-stacked) .workspace-tab-header:not(:hover) .workspace-tab-header-inner-close-button,
