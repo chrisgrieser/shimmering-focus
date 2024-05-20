@@ -39,7 +39,7 @@ bufferKeymap(
 	"n",
 	"gc",
 	function() require("tinygit").smartCommit { pushIfClean = false } end,
-	{ desc = "󰊢 Smart-Commit (no push)" }
+	{ desc = "󰊢 Smart-Commit (no push)", nowait = true }
 )
 
 --------------------------------------------------------------------------------
@@ -56,18 +56,18 @@ vim.defer_fn(function()
 			end
 		end
 		vim.ui.select(linesWithMarkers, {
-			prompt = " Comment Markers",
+			prompt = " Navigation Markers",
 			format_item = function(item) return item.line:sub(5) end,
 		}, function(line)
 			if not line then return end
 			vim.api.nvim_win_set_cursor(0, { line.lnum, 4 })
 		end)
-	end, { desc = " Goto Comment Marks" })
+	end, { desc = " Goto Navigation Marks" })
 end, 1)
 
--- next/prev comment marks
-bufferKeymap({ "n", "x" }, "<C-j>", [[/^[/#]\*\*<CR><cmd>nohl<CR>]], { desc = " Next Comment Mark" })
-bufferKeymap({ "n", "x" }, "<C-k>", [[?^[/#]\*\*<CR><cmd>nohl<CR>]], { desc = " Prev Comment Mark" })
+-- next/prev navigation marks
+bufferKeymap({ "n", "x" }, "<C-j>", [[/^[/#]\*\*<CR><cmd>nohl<CR>]], { desc = " Next Nav Mark" })
+bufferKeymap({ "n", "x" }, "<C-k>", [[?^[/#]\*\*<CR><cmd>nohl<CR>]], { desc = " Prev Nav Mark" })
 
 -- create comment mark
 bufferKeymap("n", "qw", function()
@@ -82,4 +82,4 @@ bufferKeymap("n", "qw", function()
 	local lineNum = vim.api.nvim_win_get_cursor(0)[1] + 2
 	vim.api.nvim_win_set_cursor(0, { lineNum, 0 })
 	vim.cmd.startinsert { bang = true }
-end, { desc = " Create Comment Mark" })
+end, { desc = " Create Navigation Mark" })
