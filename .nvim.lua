@@ -10,7 +10,7 @@ end
 
 -- from all perma-repos, identify the one's that are Obsidian vaults and have
 -- shimmering focus as theme
-local permaRepos = os.getenv("HOME") .. "/.config/perma-repos.csv"
+local permaRepos = vim.fs.normalize("~/.config/perma-repos.csv")
 local themeFiles = {}
 for line in io.lines(permaRepos) do
 	local vaultName, vaultPath, _, _ = line:match("^(.-),(.-),(.-),(.-)$")
@@ -27,7 +27,7 @@ vim.api.nvim_create_autocmd({ "FocusLost", "BufLeave" }, {
 	group = vim.api.nvim_create_augroup("shimmering-focus", {}),
 	callback = function()
 		for _, themeFile in pairs(themeFiles) do
-			vim.fn.system { "touch", "-h", themeFile }
+			vim.system { "touch", "-h", themeFile }
 		end
 	end,
 })
