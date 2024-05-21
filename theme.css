@@ -1,7 +1,7 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS
 by @pseudometa
-Version 3.607
+Version 3.608
 MIT License
 https://github.com/chrisgrieser/shimmering-focus
 ──────────────────────────────────────────────────── */
@@ -2834,7 +2834,7 @@ are not targeted by this */
 }
 
 /* ───────────────────────────────────────────────── */
-/** Vim: Active Visual Line
+/** Vim: Active Visual Line (Cursorline)
 ──────────────────────────────────────────────────── */
 
 .vim-active-visual-line .cm-fat-cursor.cm-cursor-primary {
