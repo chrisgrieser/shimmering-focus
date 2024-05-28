@@ -279,9 +279,6 @@ body {
 	--tag-color: var(--secondary-accent);
 	--tag-color-hover: var(--text-accent-hover);
 
-	/* only used for annotation tags, disable in normal tags */
-	--tag-radius: var(--radius-s);
-
 	/* links */
 	--link-color: var(--text-accent);
 	--link-color-hover: var(--text-accent-hover);
@@ -326,7 +323,7 @@ body {
 	--inline-title-margin-bottom: 0.75em;
 
 	/* Tags */
-	--tag-size: var(--font-text-size);
+	--tag-size: 1em;
 	--tag-decoration-hover: underline;
 	--tag-background: none;
 	--tag-background-hover: none;
@@ -3295,6 +3292,30 @@ body:not(.show-outline-buttons) .workspace-leaf-content[data-type="outline"] .na
 /* ───────────────────────────────────────────────── */
 /** Community Plugins
 ──────────────────────────────────────────────────── */
+
+/* ───────────────────────────────────────────────── */
+/** Projects
+──────────────────────────────────────────────────── */
+
+/* undo styling, since pill-like view is actually useful here */ 
+.projects-container {
+	--tag-color: var(--text-normal);
+	--tag-padding-x: 0.25em;
+	--tag-padding-y: 0.25em;
+	--tag-border-width: 2px;
+	--tag-size: var(--font-smaller);
+	--tag-border-color: var(--text-faint);
+	--tag-radius: 0;
+}
+
+/* adjustments for hidden header bar */ 
+body:not(.normal-header-bar, .is-mobile) .projects-container .container.primary .right {
+	margin-right: 30px;
+}
+
+body:not(.normal-header-bar, .is-mobile) .workspace-leaf-content[data-type="obsidian-projects"] .view-header .view-actions {
+	top: 8px;
+}
 
 /* ───────────────────────────────────────────────── */
 /** Plugin Update Tracker
