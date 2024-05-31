@@ -3714,9 +3714,14 @@ body .another-quick-switcher__item__description {
 /* enlarge floating window */
 .prompt.another-quick-switcher__floating-prompt {
 	max-height: 80vh;
+	/* stylelint-disable-next-line declaration-no-important */
+	left: unset !important;
+	/* stylelint-disable-next-line declaration-no-important */
+	top: 10vh !important;
+	min-width: 600px;
 }
 
-/* GREP SEARCH */
+/* LIVE GREP SEARCH */
 .another-quick-switcher__grep__item__hot-key-guide {
 	display: none;
 }
