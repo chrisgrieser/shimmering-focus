@@ -17,7 +17,7 @@ css_path="$script_dir/theme.css"
 
 # Abort build if yaml invalid
 # (requires style-settings placed at the very bottom of the theme's css)
-sed -n '/@settings/,$p' "$css_path" | sed '1d;$d' | sed '$d' >style-settings-temp.yml
+sed -n '/@settings/,$p' "$css_path" | sed '1d;$d' | sed '$d' > style-settings-temp.yml
 yamllint_output=$(npx yaml-validator style-settings-temp.yml)
 if [[ $? == 1 ]]; then
 	echo "YAML ERROR"
@@ -52,8 +52,8 @@ sed -E -i '' "s/badge.*-[[:digit:]]+-/badge\/downloads-$dl-/" ./README.md
 if [[ "$(git branch --show-current)" == "main" ]]; then
 	commits_since_last_publish=$(git -C "$script_dir" log :/publish.. --format="- %cs %s")
 
-	echo "$commits_since_last_publish" | sed -E "s/^(- [0-9-]+) ([^ ]+): /\1 **\2**: /" >>"temp.md"
-	grep -v "^$" "Changelog.md" >>"temp.md"
+	echo "$commits_since_last_publish" | sed -E "s/^(- [0-9-]+) ([^ ]+): /\1 **\2**: /" >> "temp.md"
+	grep -v "^$" "Changelog.md" >> "temp.md"
 	mv -f "temp.md" "Changelog.md"
 fi
 
@@ -77,11 +77,12 @@ if [[ "$OSTYPE" =~ "darwin" ]]; then
 
 		cp "$css_path" "fallback.css"     # copy theme file for fallback
 		ln -sf "fallback.css" "theme.css" # re-create symlink
-	done <"$HOME/.config/perma-repos.csv"
+	done < "$HOME/.config/perma-repos.csv"
 
 	# confirmation sound
 	afplay "/System/Library/Components/CoreAudio.component/Contents/SharedSupport/SystemSounds/siri/jbl_confirm.caf" & # codespell-ignore
 
 	# delete this repo folder
+	rm -rf "$script_dir/node_modules"
 	rm -rf "$script_dir"
 fi
