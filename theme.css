@@ -1442,7 +1442,7 @@ body:not(.show-close-buttons, .is-mobile) .modal-close-button {
 	border-radius: 0;
 }
 
-/* min width not applied to linter fields and to color picker input */ 
+/* min width not applied to linter fields and to color picker input */
 .mod-settings input:is([type="text"], [type="search"]):not(.linter-custom-regex-replacement-flags, .pcr-result) {
 	min-width: 250px;
 	background-color: var(--bg1);
@@ -3297,7 +3297,7 @@ body:not(.show-outline-buttons) .workspace-leaf-content[data-type="outline"] .na
 /** Projects
 ──────────────────────────────────────────────────── */
 
-/* undo styling, since pill-like view is actually useful here */ 
+/* undo styling, since pill-like view is actually useful here */
 .projects-container {
 	--tag-color: var(--text-normal);
 	--tag-padding-x: 0.25em;
@@ -3308,7 +3308,7 @@ body:not(.show-outline-buttons) .workspace-leaf-content[data-type="outline"] .na
 	--tag-radius: 0;
 }
 
-/* adjustments for hidden header bar */ 
+/* adjustments for hidden header bar */
 body:not(.normal-header-bar, .is-mobile) .projects-container .container.primary .right {
 	margin-right: 30px;
 }
