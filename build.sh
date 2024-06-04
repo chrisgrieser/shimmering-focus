@@ -82,5 +82,9 @@ if [[ "$OSTYPE" =~ "darwin" ]]; then
 	afplay "/System/Library/Components/CoreAudio.component/Contents/SharedSupport/SystemSounds/siri/jbl_confirm.caf" & # codespell-ignore
 
 	# delete this repo folder
-	rm -rf "$repo_dir"
+	# HACK for whatever reason, the first run does not delete due to missing
+	# permissions, even though all permissions are there and owner is also set
+	# correctly…
+	rm -rf "$repo_dir" &> /dev/null
+	rm -rf "$repo_dir" &> /dev/null
 fi
