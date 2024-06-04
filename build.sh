@@ -8,9 +8,7 @@
 
 #───────────────────────────────────────────────────────────────────────────────
 # CONFIG
-
-script_dir="$(dirname "$(readlink -f "$0")")"
-css_path="$script_dir/theme.css"
+css_path="./theme.css"
 
 #───────────────────────────────────────────────────────────────────────────────
 # TEST: YAML VALIDATION
@@ -50,7 +48,7 @@ sed -E -i '' "s/badge.*-[[:digit:]]+-/badge\/downloads-$dl-/" ./README.md
 
 # only add to changelog if on `main`
 if [[ "$(git branch --show-current)" == "main" ]]; then
-	commits_since_last_publish=$(git -C "$script_dir" log :/publish.. --format="- %cs %s")
+	commits_since_last_publish=$(git log :/publish.. --format="- %cs %s")
 
 	echo "$commits_since_last_publish" | sed -E "s/^(- [0-9-]+) ([^ ]+): /\1 **\2**: /" >> "temp.md"
 	grep -v "^$" "Changelog.md" >> "temp.md"
@@ -68,6 +66,7 @@ git pull && git push 2>&1
 # INFO specific to my setup
 
 if [[ "$OSTYPE" =~ "darwin" ]]; then
+	repo_dir=$(git rev-parse --show-toplevel)
 	# switch back to symlink
 	while read -r line; do
 		repo_path=$(echo "$line" | cut -d, -f2 | sed "s|^~|$HOME|")
@@ -83,6 +82,5 @@ if [[ "$OSTYPE" =~ "darwin" ]]; then
 	afplay "/System/Library/Components/CoreAudio.component/Contents/SharedSupport/SystemSounds/siri/jbl_confirm.caf" & # codespell-ignore
 
 	# delete this repo folder
-	rm -rf "$script_dir/node_modules"
-	rm -rf "$script_dir"
+	rm -rf "$repo_dir"
 fi
