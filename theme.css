@@ -2605,7 +2605,7 @@ body:not(.show-sidebar-header-buttons) :is(.mod-left-split, .mod-right-split) .w
 /** Sidebar Styling
 ──────────────────────────────────────────────────── */
 :is(.mod-right-split, .mod-left-split) .workspace-leaf-content .view-content {
-	padding: 0 0 16px;
+	padding: 0;
 }
 
 body:not(.show-sidebar-toggle-buttons) .sidebar-toggle-button {
