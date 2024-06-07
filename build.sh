@@ -50,7 +50,9 @@ sed -E -i '' "s/badge.*-[[:digit:]]+-/badge\/downloads-$dl-/" ./README.md
 if [[ "$(git branch --show-current)" == "main" ]]; then
 	commits_since_last_publish=$(git log :/publish.. --format="- %cs %s")
 
-	echo "$commits_since_last_publish" | sed -E "s/^(- [0-9-]+) ([^ ]+): /\1 **\2**: /" >> "temp.md"
+	echo "$commits_since_last_publish" |
+		grep -vE "build|ci|style" |                                 # don'nt include internal changes
+		sed -E "s/^(- [0-9-]+) ([^ ]+): /\1 **\2**: /" >> "temp.md" # bold title
 	grep -v "^$" "Changelog.md" >> "temp.md"
 	mv -f "temp.md" "Changelog.md"
 fi
