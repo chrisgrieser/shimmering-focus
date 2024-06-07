@@ -1,5 +1,8 @@
 set quiet := true
 
+publish:
+    [[ "$OSTYPE" =~ "darwin" ]] && osascript -e 'display notification "Publishing…" with title "Shimmering Focus"'
+    zsh ./publish.sh
+
 build:
-    [[ "$OSTYPE" =~ "darwin" ]] && osascript -e 'display notification "Building…" with title "Shimmering Focus"'
-    zsh ./build.sh
+    zsh ./source/build.sh

@@ -11,20 +11,6 @@
 css_path="./theme.css"
 
 #───────────────────────────────────────────────────────────────────────────────
-# TEST: YAML VALIDATION
-
-# Abort build if yaml invalid
-# (requires style-settings placed at the very bottom of the theme's css)
-sed -n '/@settings/,$p' "$css_path" | sed '1d;$d' | sed '$d' > style-settings-temp.yml
-yamllint_output=$(npx yaml-validator style-settings-temp.yml)
-if [[ $? == 1 ]]; then
-	echo "YAML ERROR"
-	echo "$yamllint_output" | sed '1d'
-	return 1
-fi
-rm style-settings-temp.yml
-
-#───────────────────────────────────────────────────────────────────────────────
 # BUMP VERSION NUMBER
 
 versionLine=$(grep --line-number --max-count=1 "^Version" "theme.css")
@@ -65,28 +51,8 @@ git add --all && git commit -m "publish" --author="🤖 automated<auto@build.sh>
 git pull && git push 2>&1
 
 #───────────────────────────────────────────────────────────────────────────────
-# INFO specific to my setup
 
-if [[ "$OSTYPE" =~ "darwin" ]]; then
-	repo_dir=$(git rev-parse --show-toplevel)
-	# switch back to symlink
-	while read -r line; do
-		repo_path=$(echo "$line" | cut -d, -f2 | sed "s|^~|$HOME|")
-		theme_path="$repo_path/.obsidian/themes/Shimmering Focus"
-		[[ -d "$theme_path" ]] || continue
-		cd "$theme_path" || return 1
-
-		cp "$css_path" "fallback.css"     # copy theme file for fallback
-		ln -sf "fallback.css" "theme.css" # re-create symlink
-	done < "$HOME/.config/perma-repos.csv"
-
-	# confirmation sound
-	afplay "/System/Library/Components/CoreAudio.component/Contents/SharedSupport/SystemSounds/siri/jbl_confirm.caf" & # codespell-ignore
-
-	# delete this repo folder
-	# HACK for whatever reason, the first run does not delete due to missing
-	# permissions, even though all permissions are there and owner is also set
-	# correctly…
-	rm -rf "$repo_dir" &> /dev/null
-	rm -rf "$repo_dir" &> /dev/null
-fi
+# delete this repo folder
+repo_dir=$(git rev-parse --show-toplevel)
+cd .. 
+rm -rf "$repo_dir"

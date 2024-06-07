@@ -1,46 +1,10 @@
 -- INFO nvim config specifically for Shimmering Focus file
-local function bufferKeymap(mode, lhs, rhs, opts)
-	opts.buffer = true
-	opts.silent = true
-	vim.keymap.set(mode, lhs, rhs, opts)
+local function bufferKeymap(mode, lhs, rhs)
+	vim.keymap.set(mode, lhs, rhs, { buffer = true, silent = true, nowait = true })
 end
-
---------------------------------------------------------------------------------
--- HOT-RELOADING
-
--- from all perma-repos, identify the one's that are Obsidian vaults and have
--- shimmering focus as theme
-local permaRepos = vim.fs.normalize("~/.config/perma-repos.csv")
-local themeFiles = {}
-for line in io.lines(permaRepos) do
-	local vaultName, vaultPath, _, _ = line:match("^(.-),(.-),(.-),(.-)$")
-	if vaultName:find("[Vv]ault") then
-		local cssPath = vim.fs.normalize(vaultPath .. "/.obsidian/themes/Shimmering Focus/theme.css")
-		local themeExists = vim.loop.fs_stat(cssPath) ~= nil
-		if themeExists then themeFiles[vaultName] = cssPath end
-	end
-end
-
--- touch symlink on filechange, to trigger Obsidian's hot-reload
-vim.api.nvim_create_autocmd({ "FocusLost", "BufLeave" }, {
-	buffer = 0,
-	group = vim.api.nvim_create_augroup("shimmering-focus", {}),
-	callback = function()
-		for _, themeFile in pairs(themeFiles) do
-			vim.system { "touch", "-h", themeFile }
-		end
-	end,
-})
-
---------------------------------------------------------------------------------
 
 -- never push, since build script already pushes
-bufferKeymap(
-	"n",
-	"gc",
-	function() require("tinygit").smartCommit { pushIfClean = false } end,
-	{ desc = "󰊢 Smart-Commit (no push)", nowait = true }
-)
+bufferKeymap("n", "gc", function() require("tinygit").smartCommit { pushIfClean = false } end)
 
 --------------------------------------------------------------------------------
 -- COMMENT MARKERS
@@ -62,12 +26,12 @@ vim.defer_fn(function()
 			if not line then return end
 			vim.api.nvim_win_set_cursor(0, { line.lnum, 4 })
 		end)
-	end, { desc = " Goto Navigation Marks" })
+	end)
 end, 1)
 
 -- next/prev navigation marks
-bufferKeymap({ "n", "x" }, "<C-j>", [[/^[/#]\*\*<CR><cmd>nohl<CR>]], { desc = " Next Nav Mark" })
-bufferKeymap({ "n", "x" }, "<C-k>", [[?^[/#]\*\*<CR><cmd>nohl<CR>]], { desc = " Prev Nav Mark" })
+bufferKeymap({ "n", "x" }, "<C-j>", [[/^[/#]\*\*<CR><cmd>nohl<CR>]])
+bufferKeymap({ "n", "x" }, "<C-k>", [[?^[/#]\*\*<CR><cmd>nohl<CR>]])
 
 -- create comment mark
 bufferKeymap("n", "qw", function()
@@ -82,4 +46,4 @@ bufferKeymap("n", "qw", function()
 	local lineNum = vim.api.nvim_win_get_cursor(0)[1] + 2
 	vim.api.nvim_win_set_cursor(0, { lineNum, 0 })
 	vim.cmd.startinsert { bang = true }
-end, { desc = " Create Navigation Mark" })
+end)
