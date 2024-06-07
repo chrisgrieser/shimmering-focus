@@ -54,5 +54,5 @@ git pull && git push 2>&1
 
 # delete this repo folder
 repo_dir=$(git rev-parse --show-toplevel)
-cd .. 
+cd ..
 rm -rf "$repo_dir"
