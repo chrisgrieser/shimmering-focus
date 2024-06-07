@@ -147,6 +147,12 @@ digital economy. For my PhD project, I investigate the governance of the app
 economy and how software ecosystems manage the tension between innovation and
 compatibility. If you are interested in this subject, feel free to get in touch.
 
+> [!IMPORTANT]
+> For questions, feature requests, or bug reports, please file an issue via 
+> [GitHub](https://github.com/chrisgrieser/shimmering-focus/issues/new/choose). 
+> Due to the number of messages I receive, I am not able to respond to inquiries
+> made elsewhere.
+
 - [Academic Website](https://chris-grieser.de/)
 - [ResearchGate](https://www.researchgate.net/profile/Christopher-Grieser)
 - [Mastodon](https://pkm.social/@pseudometa)
