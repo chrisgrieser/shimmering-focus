@@ -1,0 +1,7 @@
+{
+	// opt-in at biome 1.8
+	"css": {
+		"linter": { "enabled": true },
+		"formatter": { "enabled": false } // wait till more stable
+	}
+}
