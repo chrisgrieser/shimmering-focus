@@ -56,3 +56,6 @@ git pull && git push 2>&1
 repo_dir=$(git rev-parse --show-toplevel)
 cd ..
 rm -rf "$repo_dir"
+
+# confirmation sound
+if [[ "$OSTYPE" =~ "darwin" ]]; then afplay /System/Library/Sounds/Hero.aiff; fi
