@@ -1,9 +1,68 @@
+- 2024-06-05 **fix**: extra whitespace in some sidebar panels
+- 2024-05-31 **improv**: enlarge AQS floating windows
+- 2024-05-28 **fix**: various fixes for the Projects plugin
+- 2024-05-20 **chore**: hide search input clear buttons
+- 2024-05-16 **fix**: input fields in color pickers being too wide
+- 2024-05-15 **fix**: AQS instructions for non-file searches
+- 2024-05-15 **chore**: tweak AQS styling
+- 2024-05-15 **improv**: prompt instruction styling & always display AQS instructions
+- 2024-05-15 **improv**: re-organize settings
+- 2024-05-14 **chore**: tweak statusbar border
+- 2024-05-13 **fix**: indent in dataview tasks
+- 2024-05-11 **improv**: dataview tables use same border and font size as native table
+- 2024-05-11 **fix**: editor suggestion styling for new Obsidian version
+- 2024-05-11 **chore**: cleanup comment markers
+- 2024-05-11 **chore**: only keep Obsidian theme variables as reference
+- 2024-05-11 **docs**: simplify readme
+- 2024-05-11 **docs**: improve info on custom colors
+- 2024-05-11 **chore**: update annotation tags (snippet)
+- 2024-05-11 **improv**: context menu styling
+- 2024-05-11 **break**: remove niche sidebar animation setting
+- 2024-05-10 **improv**: hide unneeded export buttons for style settings sections
+- 2024-05-10 **fix(mobile)**: do not hide close buttons
+- 2024-05-10 **feat**: opt-in setting to hide vault switcher
+- 2024-05-10 **feat**: hide bookmark sidebar icons (+ setting to re-enable them)
+- 2024-05-10 **fix**: do not hide subtitle from entries in outgoing links sidebar
+- 2024-05-09 **fix**: do not hide tooltips when in settings
+- 2024-05-09 **chore**: remove unused obsidian variables
+- 2024-05-09 **refactor**: re-organize variables
+- 2024-05-09 **improv**: settings menu more space efficient
+- 2024-05-08 **chore**: fix tooltip hiding
+- 2024-05-08 **chore**: tweak tab icon positioning
+- 2024-05-08 **fix**: editor suggestion padding
+- 2024-05-08 **fix**: glitching table row hover effect
+- 2024-05-08 **improv**: disabling mouse hover elements also disables tooltips
+- 2024-05-08 **fix**: checkbox border color
+- 2024-05-08 **fix**: table headers size glitching
+- 2024-05-08 **chore**: re-order some style settings
+- 2024-05-08 **chore**: remove obsolete table color fix
+- 2024-05-08 **chore**: fix some phrasing in style settings
+- 2024-05-08 **fix**: Capitalization in style settings descriptions
+- 2024-05-08 **chore**: more tweaks for AQS
+- 2024-05-08 **improv**: tweak Another Quick Switcher styling
+- 2024-05-07 **fix**: checkboxes in callouts
+- 2024-05-07 **fix**: padding in callouts with only tasks
+- 2024-05-06 **fix**: remove obsolete code partially breaking hovered annotation tags
+- 2024-05-02 **chore**: tweak notification spacing if set appear at the bottom
+- 2024-04-30 **fix**: minor setting tweaks
+- 2024-04-30 **fix**: link underline thickness
+- 2024-04-30 **fix**: invalid yaml of style settings
+- 2024-04-30 **docs**: various fixes
+- 2024-04-30 **chore**: consistently use sentence case in style settings
+- 2024-04-30 **chore**: remove ribbon settings, since part of Obsidian core now 1.6
+- 2024-04-30 **break**: remove experimental canvas sketch mode (available as snippet)
+- 2024-04-30 **fix**: interaction of blockquotes and angular shapes
+- 2024-04-30 **chore**: remove outdated blockquote setting
+- 2024-04-30 **break**: annotation tags removed, available as separate snippet
+- 2024-04-30 **chore**: remove obsolete snippets
+- 2024-04-30 **docs**: various fixes
+- 2024-04-30 **break**: remove `Private Mode` setting, since too niche
+- 2024-04-30 **docs**: various fixes
+- 2024-04-30 **docs**: add information that mobile is not fully supported
 - 2024-04-29 **improv**: code font size setting with more granular steps
 - 2024-04-29 **fix**: code font size setting
 - 2024-04-29 **fix**: settings to use uncolored bold/italics
-- 2024-04-29 **build**: improve hot-reloading mechanic
 - 2024-04-29 **improv**: Dynamic Highlights settings page
-- 2024-04-29 **build**: format nvim config
 - 2024-04-28 **chore**: remove ambiguity from code block language labels
 - 2024-04-28 **chore**: remove outdated hub info
 - 2024-04-28 **feat**: option to display notifications at the bottom instead of top
@@ -14,7 +73,6 @@
 - 2024-04-26 **fix**: radius of small corners
 - 2024-04-26 **refactor**: use `px` instead of `var(--size-…)`
 - 2024-04-26 **fix**: sidebar tab header not properly hidden
-- 2024-04-26 **build**: fix formatting of the changelog
 - 2024-04-26 **fix(activeLineHighlight)**: spacing & line numbers background
 - 2024-04-25 **chore**: change default callout icon (adapt to shape-setting)
 - 2024-04-25 **feat**: style setting for angular shapes (instead of rounded corners)
@@ -64,23 +122,20 @@
 - 2024-04-03 **feat**: hide bookmark control buttons (+ setting to re-enable them)
 - 2024-04-02 **fix**: alignment of checkboxes in properties
 - 2024-04-02 **break**: drop support for frontmatter pre Obsidian 1.4
-- 2024-04-02 **build**: nicer changelog formatting
-- 2024-04-02 ****fix(settings)****: add bold to correct menu items
-- 2024-03-26 ****fix(images)****: center also external images
-- 2024-03-22 ****improv****: another quick switcher prompt styling
-- 2024-03-22 ****feat(longform)****: separate settings for background hue in dark/light mode
-- 2024-03-21 ****improv(outline)****: use only hidden or compact buttons
+- 2024-04-02 **fix(settings)**: add bold to correct menu items
+- 2024-03-26 **fix(images)**: center also external images
+- 2024-03-22 **improv**: another quick switcher prompt styling
+- 2024-03-22 **feat(longform)**: separate settings for background hue in dark/light mode
+- 2024-03-21 **improv(outline)**: use only hidden or compact buttons
 - 2024-03-21 Merge pull request #296 from cotneit/outline-plugin-controls
-- 2024-03-21 ****feat****: outline plugin setting
-- 2024-03-19 ****build****: fix symlink switch
-- 2024-03-15 ****chore****: hot-reloading repos read from csv
-- 2024-03-15 ****fix****: style setting for disabling heading backgrounds
-- 2024-03-14 ****build****: add 2nd vault & improve hot reloading
-- 2024-03-14 ****improv****: tweak heading bg color
-- 2024-03-14 ****feat****: heading background (can be disabled in style settings) (#211)
-- 2024-03-12 ****improv(file-explorer)****: top-level folders in bold
-- 2024-03-12 ****ci****: fix 'Changelog' heading
-- 2024-03-12 ****chore****: cleanup comments
-- 2024-03-12 ****fix****: text color on buttons
-- 2024-03-12 ****docs****: add changelog button
-- 2024-03-12 ****ci****: add automated changelog
+- 2024-03-21 **feat**: outline plugin setting
+- 2024-03-15 **chore**: hot-reloading repos read from csv
+- 2024-03-15 **fix**: style setting for disabling heading backgrounds
+- 2024-03-14 **improv**: tweak heading bg color
+- 2024-03-14 **feat**: heading background (can be disabled in style settings) (#211)
+- 2024-03-12 **improv(file-explorer)**: top-level folders in bold
+- 2024-03-12 **ci**: fix 'Changelog' heading
+- 2024-03-12 **chore**: cleanup comments
+- 2024-03-12 **fix**: text color on buttons
+- 2024-03-12 **docs**: add changelog button
+- 2024-03-12 **ci**: add automated changelog
