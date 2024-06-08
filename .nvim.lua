@@ -3,9 +3,6 @@ local function bufferKeymap(mode, lhs, rhs)
 	vim.keymap.set(mode, lhs, rhs, { buffer = true, silent = true, nowait = true })
 end
 
--- never push, since build script already pushes
-bufferKeymap("n", "gc", function() require("tinygit").smartCommit { pushIfClean = false } end)
-
 --------------------------------------------------------------------------------
 -- COMMENT MARKERS
 

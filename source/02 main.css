@@ -1,9 +1,4 @@
 /* ───────────────────────────────────────────────── */
-/** Globally Disabled Stylelint Rules
-──────────────────────────────────────────────────── */
-/* stylelint-disable no-descending-specificity */
-
-/* ───────────────────────────────────────────────── */
 /** Unchanged Obsidian Variables (Dummy Variables)
 ──────────────────────────────────────────────────── */
 /* these values are unchanged from the default theme, but included here for
