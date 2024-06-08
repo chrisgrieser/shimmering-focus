@@ -1,0 +1,228 @@
+
+/* ───────────────────────────────────────────────── */
+/** Vim Cursor
+──────────────────────────────────────────────────── */
+
+:root {
+	--vim-cursor-blink-rate: 1200ms;
+}
+
+.theme-dark {
+	--vim-cursor-color: hsl(0 0% 70%);
+	--vim-cursor-bg: hsl(0 0% 0%);
+	--vim-cursor-outline: hsl(0 0% 90%);
+	--vim-cursor-outline-width: 1px;
+}
+
+.theme-light {
+	--vim-cursor-color: hsl(0 0% 90%);
+	--vim-cursor-bg: hsl(0 0% 25%);
+	--vim-cursor-outline: hsl(220 10% 72%);
+	--vim-cursor-outline-width: 1.3px;
+}
+
+.cm-focused .cm-vimCursorLayer .cm-fat-cursor.cm-fat-cursor.cm-fat-cursor {
+	color: var(--vim-cursor-color);
+	background-color: var(--vim-cursor-bg);
+	outline: var(--vim-cursor-outline-width) solid var(--vim-cursor-outline);
+}
+
+.cm-editor:not(.cm-focused) .cm-fat-cursor.cm-fat-cursor.cm-fat-cursor {
+	color: transparent;
+	background-color: transparent;
+	outline: 2px solid var(--hover-accent);
+}
+
+/* optionally completely disable blinking */
+.disable-vim-cursor-blink .cm-vimCursorLayer {
+	/* stylelint-disable-next-line declaration-no-important */
+	animation: none !important;
+}
+
+/* blinking */
+.cm-vimCursorLayer {
+	/* stylelint-disable-next-line declaration-no-important */
+	animation-duration: var(--vim-cursor-blink-rate) !important;
+}
+
+/* ───────────────────────────────────────────────── */
+/** Vim: Active Visual Line (Cursorline)
+──────────────────────────────────────────────────── */
+
+.vim-active-visual-line .cm-fat-cursor.cm-cursor-primary {
+	--cursorline-bg: hsl(var(--color-accent-hsl), 12.5%);
+	border-image: conic-gradient(var(--cursorline-bg) 0 0) fill 0 / 0 / 0 100vw;
+	mix-blend-mode: hard-light;
+}
+
+/* HACK Disable built-in blink, use custom blink, so that only the cursor, but not
+* the line highlight is affected.
+* CAVEAT the CodeMirror's blink is smarter, since it only is in effect when the
+* cursor is idle, something that we cannot do cannot achieve with CSS only. */
+@keyframes vim-blink {
+	0% {
+		background-color: transparent;
+		outline-color: transparent;
+		color: transparent;
+	}
+
+	20% {
+		color: var(--vim-cursor-color);
+		background-color: var(--vim-cursor-bg);
+		outline-color: var(--vim-cursor-outline);
+	}
+
+	80% {
+		color: var(--vim-cursor-color);
+		background-color: var(--vim-cursor-bg);
+		outline-color: var(--vim-cursor-outline);
+	}
+
+	100% {
+		background-color: transparent;
+		outline-color: transparent;
+		color: transparent;
+	}
+}
+
+.vim-active-visual-line .cm-focused .cm-fat-cursor {
+	/* stylelint-disable-next-line declaration-no-important */
+	animation: vim-blink var(--vim-cursor-blink-rate) linear infinite !important;
+}
+
+.vim-active-visual-line .cm-vimCursorLayer {
+	/* stylelint-disable-next-line declaration-no-important */
+	animation: none !important;
+}
+
+/* ───────────────────────────────────────────────── */
+/** Vim: Relative Line Numbers
+──────────────────────────────────────────────────── */
+
+.use-relative-line-numbers:not(.is-mobile) .cm-lineNumbers .cm-gutterElement:not(.cm-active) {
+	font-size: 0;
+}
+
+.use-relative-line-numbers:not(.is-mobile) .cm-lineNumbers .cm-active,
+.use-relative-line-numbers:not(.is-mobile) .cm-lineNumbers *::before {
+	font-size: 0.85rem;
+}
+
+/* numbers before */
+.use-relative-line-numbers:not(.is-mobile) .cm-lineNumbers *:has(+ .cm-active)::before {
+	content: "1";
+}
+
+.use-relative-line-numbers:not(.is-mobile) .cm-lineNumbers *:has(+ * + .cm-active)::before {
+	content: "2";
+}
+
+.use-relative-line-numbers:not(.is-mobile) .cm-lineNumbers *:has(+ * + * + .cm-active)::before {
+	content: "3";
+}
+
+.use-relative-line-numbers:not(.is-mobile) .cm-lineNumbers *:has(+ * + * + * + .cm-active)::before {
+	content: "4";
+}
+
+.use-relative-line-numbers:not(.is-mobile) .cm-lineNumbers *:has(+ * + * + * + * + .cm-active)::before {
+	content: "5";
+}
+
+.use-relative-line-numbers:not(.is-mobile) .cm-lineNumbers *:has(+ * + * + * + * + * + .cm-active)::before {
+	content: "6";
+}
+
+.use-relative-line-numbers:not(.is-mobile) .cm-lineNumbers *:has(+ * + * + * + * + * + * + .cm-active)::before {
+	content: "7";
+}
+
+.use-relative-line-numbers:not(.is-mobile) .cm-lineNumbers *:has(+ * + * + * + * + * + * + * + .cm-active)::before {
+	content: "8";
+}
+
+.use-relative-line-numbers:not(.is-mobile) .cm-lineNumbers *:has(+ * + * + * + * + * + * + * + * + .cm-active)::before {
+	content: "9";
+}
+
+/* numbers after */
+.use-relative-line-numbers:not(.is-mobile) .cm-lineNumbers .cm-active+*::before {
+	content: "1";
+}
+
+.use-relative-line-numbers:not(.is-mobile) .cm-lineNumbers .cm-active+*+*::before {
+	content: "2";
+}
+
+.use-relative-line-numbers:not(.is-mobile) .cm-lineNumbers .cm-active+*+*+*::before {
+	content: "3";
+}
+
+.use-relative-line-numbers:not(.is-mobile) .cm-lineNumbers .cm-active+*+*+*+*::before {
+	content: "4";
+}
+
+.use-relative-line-numbers:not(.is-mobile) .cm-lineNumbers .cm-active+*+*+*+*+*::before {
+	content: "5";
+}
+
+.use-relative-line-numbers:not(.is-mobile) .cm-lineNumbers .cm-active+*+*+*+*+*+*::before {
+	content: "6";
+}
+
+.use-relative-line-numbers:not(.is-mobile) .cm-lineNumbers .cm-active+*+*+*+*+*+*+*::before {
+	content: "7";
+}
+
+.use-relative-line-numbers:not(.is-mobile) .cm-lineNumbers .cm-active+*+*+*+*+*+*+*+*::before {
+	content: "8";
+}
+
+.use-relative-line-numbers:not(.is-mobile) .cm-lineNumbers .cm-active+*+*+*+*+*+*+*+*+*::before {
+	content: "9";
+}
+
+/* ───────────────────────────────────────────────── */
+/** Vim: Disable Mouse Hovers & Tooltips
+──────────────────────────────────────────────────── */
+
+.no-mouse-hovers .is-live-preview .cm-embed-block:not(.cm-table-widget):hover {
+	box-shadow: none;
+}
+
+/* ignoring tooltips in settings, since they are relevant there, e.g. for sliders */
+.no-mouse-hovers div:not(.modal-container)+.tooltip,
+.no-mouse-hovers .is-live-preview .cm-embed-block:not(.cm-table-widget):hover .edit-block-button {
+	display: none;
+}
+
+/* ───────────────────────────────────────────────── */
+/** Vim Panel
+──────────────────────────────────────────────────── */
+
+/* the ":" or "/" enlarged */
+.cm-vim-panel>div>div>span:first-child {
+	/* stylelint-disable-next-line declaration-no-important */
+	font-family: Inter, sans-serif !important;
+	font-weight: 600;
+	font-size: 1.4rem;
+}
+
+/* input enlarged */
+.cm-vim-panel input {
+	font-size: 1.4rem;
+}
+
+.cm-panels.cm-panels-bottom {
+	border-top: var(--basic-border);
+}
+
+.cm-panels.cm-panels .cm-vim-panel input,
+.cm-panels.cm-panels-bottom.cm-panels-bottom {
+	background-color: var(--bg4);
+}
+
+/* remove instruction */
+.cm-vim-panel span:nth-child(2):not(.cm-vim-message) {
+	display: none;
+}

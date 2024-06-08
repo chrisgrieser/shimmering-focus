@@ -1,0 +1,804 @@
+/* ───────────────────────────────────────────────── */
+/** Projects
+──────────────────────────────────────────────────── */
+
+/* undo styling, since pill-like view is actually useful here */
+.projects-container {
+	--tag-color: var(--text-normal);
+	--tag-padding-x: 0.25em;
+	--tag-padding-y: 0.25em;
+	--tag-border-width: 2px;
+	--tag-size: var(--font-smaller);
+	--tag-border-color: var(--text-faint);
+	--tag-radius: 0;
+}
+
+/* adjustments for hidden header bar */
+body:not(.normal-header-bar, .is-mobile) .projects-container .container.primary .right {
+	margin-right: 30px;
+}
+
+body:not(.normal-header-bar, .is-mobile) .workspace-leaf-content[data-type="obsidian-projects"] .view-header .view-actions {
+	top: 8px;
+}
+
+/* ───────────────────────────────────────────────── */
+/** Plugin Update Tracker
+──────────────────────────────────────────────────── */
+/* https://github.com/swar8080/obsidian-plugin-update-tracker#custom-css-snippets */
+.status-bar-item.plugin-obsidian-plugin-update-tracker {
+	order: 101;
+	/* always move to the right */
+	filter: grayscale(0.9);
+}
+
+.workspace-leaf-content[data-type$="AVAILABLE_PLUGIN_UPDATES"] :is(h2, h3) {
+	font-family: var(--font-interface);
+}
+
+/* ───────────────────────────────────────────────── */
+/** Cursor Location
+──────────────────────────────────────────────────── */
+/* move to the left, due to it's resizing issues
+* https://github.com/spslater/obsidian-cursor-location-plugin/issues/14 */
+.status-bar-item.plugin-obsidian-cursor-location-plugin:not(:empty) {
+	display: unset;
+	/* needed for right alignment */
+	order: -100;
+	min-width: 6.5ch;
+	text-align: right;
+}
+
+/* ───────────────────────────────────────────────── */
+/** Better Word Count
+──────────────────────────────────────────────────── */
+/* move the left, next to cursor location */
+.status-bar-item.plugin-better-word-count {
+	order: -1;
+}
+
+/* ───────────────────────────────────────────────── */
+/** Surfing
+──────────────────────────────────────────────────── */
+.workspace-leaf-content[data-type="surfing-view"] .view-header.view-header {
+	padding-right: 4px;
+	padding-left: 4px;
+	background-color: var(--bg3);
+	border-bottom: 2px solid var(--divider-color);
+}
+
+/* ───────────────────────────────────────────────── */
+/** Strange New Worlds
+──────────────────────────────────────────────────── */
+.snw-header-count-wrapper {
+	padding: 1px 3px;
+	margin-top: 7px;
+	margin-right: 10px;
+	background-color: var(--bg3);
+	border: var(--basic-border);
+	opacity: 1;
+}
+
+.snw-header-count {
+	color: var(--text-muted);
+}
+
+body:not(.normal-header-bar, .is-mobile) .snw-header-count-wrapper {
+	top: 30px;
+	margin-right: 18px;
+}
+
+/* ───────────────────────────────────────────────── */
+/** Jump-to-Link
+──────────────────────────────────────────────────── */
+.jl.popover {
+	padding: 0 2px;
+	font-family: var(--font-interface);
+}
+
+/* ───────────────────────────────────────────────── */
+/** Link Favicon
+──────────────────────────────────────────────────── */
+img.link-favicon.link-favicon {
+	padding-right: 3px;
+	border: none;
+	border-radius: unset;
+}
+
+.theme-light .link-favicon:is([data-host^="github.com"], [data-host^="raw.github"]) {
+	filter: invert(0.2);
+}
+
+/* no favicons in style settings */
+.style-settings-info-text .link-favicon {
+	/* stylelint-disable-next-line declaration-no-important */
+	display: none !important;
+}
+
+/* ───────────────────────────────────────────────── */
+/** Custom Frames
+──────────────────────────────────────────────────── */
+body:not(.normal-header-bar) .custom-frames-view {
+	/* stylelint-disable-next-line declaration-no-important */
+	padding-top: 1.8rem !important;
+}
+
+/* ───────────────────────────────────────────────── */
+/** Highlighted Yank
+──────────────────────────────────────────────────── */
+/* yank highlighter plugin */
+body .yank-deco {
+	color: var(--interactive-normal);
+	background-color: var(--link-unresolved-color);
+}
+
+/* yank highlight plugin -- https://github.com/aleksey-rowan/obsidian-vim-yank-highlight/blob/master/styles.css */
+/* stylelint-disable-next-line keyframes-name-pattern */
+@keyframes yankedHighlight {
+	10% {
+		color: var(--interactive-normal);
+		background-color: var(--link-unresolved-color);
+	}
+
+	90% {
+		color: var(--interactive-normal);
+		background-color: var(--link-unresolved-color);
+	}
+}
+
+/* ───────────────────────────────────────────────── */
+/** Various Complements
+──────────────────────────────────────────────────── */
+/* remove the icon */
+.various-complements__suggestion-item.various-complements__suggestion-item::before {
+	display: none;
+}
+
+body .various-complements__suggestion-item {
+	/* stylelint-disable-next-line declaration-no-important */
+	padding: 4px 6px !important;
+}
+
+/* the alias icon */
+.various-complements__suggestion-item__content__alias::before {
+	position: relative;
+	top: -2px;
+}
+
+.various-complements__suggestion-item__description {
+	padding-top: 0;
+}
+
+.various-complements__suggestion-item__internal-link>div>div::before {
+	color: var(--text-faint);
+	content: "[[";
+}
+
+.various-complements__suggestion-item__internal-link>div>div::after {
+	color: var(--text-faint);
+	content: "]]";
+}
+
+/* ───────────────────────────────────────────────── */
+/** Obsidian Git
+──────────────────────────────────────────────────── */
+.obsidian-git-statusbar-status>div:nth-child(2) {
+	/* stylelint-disable-next-line declaration-no-important */
+	margin-left: 0 !important;
+}
+
+.obsidian-git-statusbar-status::before {
+	padding-right: 4px;
+	font-family: var(--icon-font);
+	content: "update";
+}
+
+.obsidian-git-statusbar-status>div:first-child>svg {
+	display: none;
+}
+
+/* ───────────────────────────────────────────────── */
+/** Dynamic Highlight
+──────────────────────────────────────────────────── */
+
+/* current word */
+body .app-container :is(.cm-matched-word, .cm-current-word) {
+	text-decoration: 2px dashed underline;
+	text-decoration-skip-ink: none;
+	text-underline-offset: 4px;
+}
+
+/* current selection */
+body .cm-matched-string {
+	text-decoration: none;
+	outline: 2.5px solid var(--search-match-color);
+}
+
+/* FIX bug where the save button is not properly clickable */
+.dynamic-highlights-settings .query-wrapper input {
+	width: 100%;
+}
+
+/* reduce spacing to see more rules */
+.dynamic-highlights-settings .highlighter-container .highlighter-details {
+	padding: 6px 0;
+}
+
+.dynamic-highlights-settings .highlighter-container .highlighter-details .setting-item-info {
+	margin-right: 6px;
+}
+
+.dynamic-highlights-settings .highlighter-item-draggable {
+	grid-gap: 0;
+}
+
+.dynamic-highlights-settings button.action-button.mod-warning {
+	margin-right: 0;
+	padding: 8px;
+}
+
+.dynamic-highlights-settings button.action-button.mod-cta {
+	margin-right: 4px;
+	padding: 8px;
+}
+
+/* ───────────────────────────────────────────────── */
+/** Another Quick Switcher (AQS)
+──────────────────────────────────────────────────── */
+
+/* if `:has` is supported, re-display another quick switcher instructions, since
+* that plugin has its own setting to show them */
+/* https://developer.mozilla.org/en-US/docs/Web/CSS/@supports#testing_for_the_support_of_a_selector */
+@supports selector(:has(.a)) {
+	.prompt-results:has(.another-quick-switcher__item)~.prompt-instructions {
+		display: flex;
+	}
+}
+
+/* styling from prompts also apply */
+
+.another-quick-switcher__directory_item::before,
+.another-quick-switcher__item__icon,
+.another-quick-switcher__item__directory svg {
+	display: none;
+}
+
+body .another-quick-switcher__status__count-input {
+	top: 2.25rem;
+	right: 1rem;
+	color: var(--text-faint);
+}
+
+.another-quick-switcher__status__search-command {
+	padding-right: 4px;
+	padding-top: 4px;
+}
+
+.another-quick-switcher__item__description.another-quick-switcher__item__description {
+	padding-left: 0;
+	margin-left: 0;
+}
+
+.another-quick-switcher__item__descriptions {
+	padding-top: 1px;
+	line-height: 1;
+}
+
+.another-quick-switcher__item__description__tag,
+.another-quick-switcher__item__description__alias {
+	line-height: 1.2;
+}
+
+.another-quick-switcher__item__description__alias svg {
+	width: 14px;
+	margin-right: 4px;
+}
+
+.another-quick-switcher__item__description__tag.another-quick-switcher__item__description__tag>svg {
+	margin-left: -2px;
+}
+
+.another-quick-switcher__item__description svg {
+	transform: scale(0.9);
+}
+
+.suggestion-item .another-quick-switcher__item__directory {
+	padding-right: 2px;
+	padding-left: 5px;
+	font-size: 0.9em;
+	letter-spacing: 0.1px;
+}
+
+/* selected */
+.suggestion-item.is-selected :is(.another-quick-switcher__item__icon,
+	.another-quick-switcher__item__directory,
+	.another-quick-switcher__item__description) {
+	color: var(--text-accent);
+	filter: saturate(60%);
+}
+
+/* hovered */
+.suggestion-item:hover :is(.another-quick-switcher__item__icon,
+	.another-quick-switcher__item__directory,
+	.another-quick-switcher__item__description) {
+	color: var(--text-accent-hover);
+	filter: saturate(60%);
+}
+
+/* unresolved */
+.another-quick-switcher__phantom_item.another-quick-switcher__phantom_item {
+	color: var(--link-unresolved-color);
+	opacity: 0.85;
+}
+
+.another-quick-switcher__phantom_item :is(.another-quick-switcher__item__icon, .another-quick-switcher__item__directory),
+.suggestion-item:hover .another-quick-switcher__phantom_item {
+	filter: saturate(60%);
+}
+
+.suggestion-item:hover .another-quick-switcher__phantom_item :is(.another-quick-switcher__item__icon, .another-quick-switcher__item__directory),
+.suggestion-item:hover .another-quick-switcher__phantom_item {
+	color: var(--hover-accent);
+	filter: saturate(60%);
+}
+
+/* starred item bold */
+.another-quick-switcher__starred_item::before {
+	display: none;
+}
+
+.another-quick-switcher__starred_item .another-quick-switcher__item__entry::before {
+	padding-right: 5px;
+	content: "★";
+}
+
+.another-quick-switcher__starred_item .another-quick-switcher__item__title {
+	font-weight: 600;
+}
+
+/* Meta / Frontmatter */
+.another-quick-switcher__item__metas {
+	padding-top: 4px;
+	margin-bottom: -4px;
+}
+
+.another-quick-switcher__item__meta__front_matter__key {
+	color: var(--text-gray);
+	font-style: italic;
+}
+
+.another-quick-switcher__item__meta__front_matter__value {
+	color: var(--text-normal);
+}
+
+.another-quick-switcher__item__meta__front_matter svg {
+	display: none;
+}
+
+/* Numbered Hotkey tip */
+.is-mobile .another-quick-switcher__item__hot-key-guide,
+.another-quick-switcher__item__hot-key-guide::before,
+.another-quick-switcher__item__hot-key-guide::after {
+	display: none;
+}
+
+body:not(.is-mobile) .another-quick-switcher__item__hot-key-guide {
+	position: absolute;
+	right: 4px;
+	padding: 3px;
+	font-size: 80%;
+	line-height: 1;
+	color: var(--hotkey-color);
+	background-color: var(--bg3);
+	border: var(--thin-border);
+	border-radius: var(--radius-s);
+	opacity: 0.9;
+}
+
+body .another-quick-switcher__item__directory {
+	margin-right: 1rem;
+}
+
+body .another-quick-switcher__item {
+	padding-left: 0;
+}
+
+body .another-quick-switcher__item__description {
+	margin-left: 8px;
+}
+
+/* hide current file title */
+.another-quick-switcher__custom-search__navigation-history-header {
+	display: none;
+}
+
+.another-quick-switcher__status__count-input+.prompt-input {
+	width: 99%;
+}
+
+/* enlarge floating window */
+.prompt.another-quick-switcher__floating-prompt {
+	max-height: 80vh;
+	/* stylelint-disable-next-line declaration-no-important */
+	left: unset !important;
+	/* stylelint-disable-next-line declaration-no-important */
+	top: 10vh !important;
+	min-width: 600px;
+}
+
+/* LIVE GREP SEARCH */
+.another-quick-switcher__grep__item__hot-key-guide {
+	display: none;
+}
+
+.another-quick-switcher__grep__path-input__wrapper+.prompt-results .another-quick-switcher__item__directory {
+	margin-right: 0;
+}
+
+.another-quick-switcher__grep__path-input__wrapper+.prompt-results .another-quick-switcher__item__directory svg {
+	display: unset;
+}
+
+.another-quick-switcher__hit_word {
+	color: var(--search-match-color);
+}
+
+.another-quick-switcher__grep__item__description {
+	padding-left: 0;
+}
+
+.another-quick-switcher__grep__path-input__wrapper {
+	padding: 0 8px;
+}
+
+.another-quick-switcher__grep__path-input__wrapper::before {
+	padding-right: 8px;
+	content: "In: ";
+}
+
+body .another-quick-switcher__grep__path-input.another-quick-switcher__grep__path-input {
+	margin-left: 0;
+	background-color: transparent;
+	border: none;
+}
+
+.another-quick-switcher__grep__path-input__wrapper+.prompt-results {
+	border-top: var(--basic-border);
+}
+
+.another-quick-switcher__grep__item__title_entry {
+	margin-top: 0;
+	border-color: var(--basic-border-color);
+}
+
+.another-quick-switcher__grep__path-input__wrapper+.prompt-results .another-quick-switcher__item__descriptions {
+	font-size: var(--font-ui-medium);
+	line-height: calc(var(--line-height-tight) - 0.1);
+}
+
+.another-quick-switcher__grep__count-input {
+	top: 16px;
+	color: var(--text-faint);
+}
+
+/* ───────────────────────────────────────────────── */
+/** Recent Files
+──────────────────────────────────────────────────── */
+/* inherits alternate row colors from file explorer */
+
+.workspace-leaf-content[data-type="recent-files"] .nav-file-title.nav-file-title.nav-file-title {
+	padding-right: 0;
+	padding-left: 6px;
+}
+
+/* why would you want to go from the active file to the active file? */
+.workspace-leaf-content[data-type="recent-files"] .nav-file-title.is-active {
+	display: none;
+}
+
+.recent-files-file-delete {
+	margin-right: 6px;
+}
+
+/* ───────────────────────────────────────────────── */
+/** Pandoc Reference List
+──────────────────────────────────────────────────── */
+
+/* PANDOC CITATIONS IN-TEXT */
+
+/* neither resolved nor unresolved = citation loading (or pandoc reference list bug) */
+.pandoc-citation:not(.is-resolved, .is-unresolved) {
+	opacity: 0.6;
+}
+
+.pandoc-citation.is-resolved.is-resolved.is-resolved.is-resolved {
+	color: var(--secondary-accent);
+	text-decoration: none;
+}
+
+.pandoc-citation.pandoc-citation.is-unresolved {
+	color: var(--text-error);
+	text-decoration: underline 1.5px var(--text-error);
+}
+
+.app-container.app-container.app-container :is(.cm-pandoc-citation-formatting,
+	.pandoc-citation-formatting,
+	.cm-pandoc-citation-extra,
+	.pandoc-citation-extra) {
+	color: var(--text-faint);
+	text-decoration: none;
+}
+
+/* HACK not using display:none, since the @ symbol is used to anchor the tooltip */
+.markdown-preview-view .pandoc-citation-at {
+	font-size: 0;
+}
+
+/* Style Settings disabled, since overridden by the theme anyway */
+.style-settings-heading[data-id="pandoc-reference-list"] {
+	display: none;
+}
+
+/* REFERENCE LIST */
+.pwc-reference-list .csl-entry-wrapper.csl-entry-wrapper {
+	padding: 4px;
+	border-width: 2px;
+	border-color: var(--basic-border-color)
+}
+
+.pwc-reference-list.collapsed-links.collapsed-links a:hover::after {
+	background-color: var(--icon-color-hover);
+}
+
+/* tooltips */
+.pwc-tooltip.is-missing em {
+	font-style: normal;
+	color: var(--text-error);
+}
+
+.pwc-tooltip.is-missing em::after {
+	content: ".";
+}
+
+.pwc-tooltip {
+	padding: 4px 6px;
+	background-color: var(--bg3);
+	border: 2px solid var(--secondary-accent);
+}
+
+/* ───────────────────────────────────────────────── */
+/** Dataview
+──────────────────────────────────────────────────── */
+/* Styling from the "Tables" Section mostly applies */
+
+/* less indentation to save space */
+:is(.block-language-dataview, .block-language-dataviewjs) ul.contains-task-list {
+	--list-indent: 0.3em;
+	padding-inline-start: 0;
+}
+
+.contains-task-list .dataview.task-list-item-checkbox {
+	margin-inline: 0 0.5em;
+}
+
+/* Tables: consistent look to native Obsidian tables */
+.dataview.table-view-table :is(td, th) {
+	border: var(--table-border-width) solid var(--table-border-color)
+}
+
+.dataview.table-view-table td {
+	font-size: var(--table-text-size);
+}
+
+.dataview.table-view-table th {
+	font-size: var(--table-header-size);
+}
+
+/* Result counts */
+.dataview.small-text.small-text.small-text {
+	padding: 1px 2px 0;
+	margin-left: 8px;
+	font-size: 85%;
+	color: var(--text-normal);
+	background-color: var(--bg1);
+	border: var(--thin-border);
+	border-radius: var(--radius-s);
+}
+
+.dataview.small-text::before,
+.dataview.small-text::after {
+	display: none;
+}
+
+/* remove table hover, since redundant with hovers from this theme */
+body .dataview:not(.task-list-item-checkbox):hover {
+	cursor: default;
+	background: none;
+	box-shadow: none;
+}
+
+.dataview.table-view-table small {
+	font-size: 70%;
+}
+
+.is-live-preview .block-language-dataviewjs :is(h1, h2, h3, h4, h5, h6):first-child {
+	margin-top: 4px;
+}
+
+/* ───────────────────────────────────────────────── */
+/** Hider
+──────────────────────────────────────────────────── */
+/* Hider is actually not needed with this theme,
+but the hider CSS for ribbon-hiding and this theme's
+CSS are incompatible, requiring this override */
+
+body.hider-ribbon .workspace-ribbon.mod-left {
+	display: unset;
+}
+
+/* ───────────────────────────────────────────────── */
+/** Kanban
+──────────────────────────────────────────────────── */
+
+/* background & colors */
+.kanban-plugin {
+	--dot-color: hsl(0 0% 40% / 25%);
+	--dot-spacing: 9px;
+	--dot-size: 1px;
+	background-color: var(--bg4);
+}
+
+.kanban-plugin__board>div {
+	padding: 6px;
+}
+
+.workspace-leaf-content[data-type="kanban"] .view-actions {
+	background-color: var(--bg3);
+	border: var(--thin-border);
+	border-radius: var(--radius-m);
+	transition-delay: var(--transition-delay-passing-over-protection);
+	transition-duration: var(--anim-duration-moderate);
+}
+
+.workspace-leaf-content[data-type="kanban"] .view-actions:not(:hover) {
+	opacity: 0;
+}
+
+/* dotted background, thanks to @Damian Korcz for this */
+.kanban-plugin__board {
+	background-image: radial-gradient(circle,
+			var(--dot-color) var(--dot-size),
+			transparent var(--dot-size));
+	background-attachment: local;
+	background-size: var(--dot-spacing) var(--dot-spacing);
+	border-top: var(--thin-border);
+}
+
+.kanban-plugin__item:hover {
+	border-color: var(--hover-accent);
+}
+
+.kanban-plugin__item {
+	border: var(--thin-muted-border);
+}
+
+.kanban-plugin__lane-header-wrapper {
+	padding: 4px;
+	background-color: var(--bg1);
+	border-bottom: var(--thin-border);
+	border-radius: var(--radius-s) var(--radius-s) 0 0;
+}
+
+.kanban-plugin__lane-title-text p {
+	font-size: 1.1em;
+	line-height: 1.4;
+	/* needed so there are no mini-scrollbars when dragging a card */
+	letter-spacing: calc(var(--heading-letter-spacing) * 0.4);
+}
+
+.theme-dark .kanban-plugin__lane-header-wrapper {
+	border-bottom-color: var(--muted-border-color);
+}
+
+.theme-light .kanban-plugin__lane-header-wrapper {
+	background-color: var(--bg6);
+}
+
+.kanban-plugin__item-postfix-button-wrapper {
+	display: none;
+}
+
+.kanban-plugin__lane-settings-button.kanban-plugin__lane-settings-button {
+	box-shadow: none;
+}
+
+.kanban-plugin__lane-settings-button:hover svg {
+	stroke: var(--icon-color-hover);
+}
+
+.kanban-plugin__item-button-wrapper {
+	padding: 0 2px 2px;
+	border-top: none;
+	border-radius: 0 0 var(--radius-s) var(--radius-s);
+}
+
+.kanban-plugin__lane-items {
+	padding-top: 0;
+	padding-bottom: 0;
+	margin: 0 1px;
+}
+
+.kanban-plugin__lane-title-count.kanban-plugin__lane-title-count {
+	background-color: var(--bg3);
+	border: var(--thin-muted-border);
+}
+
+.theme-dark .kanban-plugin__lane {
+	background-color: var(--bg5);
+	border: 1px solid var(--bg1);
+}
+
+.theme-light .kanban-plugin__lane {
+	background-color: var(--bg3);
+	border: var(--thin-border);
+}
+
+.kanban-plugin__new-item-button.kanban-plugin__new-item-button {
+	display: block;
+	width: 96%;
+	height: 1.2rem;
+	padding: 0;
+	margin: 0 2%;
+	font-size: 0;
+	text-align: center;
+	box-shadow: none;
+}
+
+.kanban-plugin__new-item-button:hover {
+	color: var(--interactive-normal);
+}
+
+.kanban-plugin__item-button-plus {
+	font-size: 1.2rem;
+}
+
+.kanban-plugin__item-title-wrapper {
+	padding-top: 4px;
+	padding-bottom: 6px;
+	background: var(--bg1);
+}
+
+/* markup in kanban cards */
+.kanban-plugin__item-markdown :is(ul, ol, p, img) {
+	margin: 0;
+	line-height: 1.35;
+}
+
+.kanban-plugin__item-tag.kanban-plugin__item-tag {
+	padding: 0 1px;
+	font-size: 90%;
+}
+
+.kanban-plugin__item-metadata.kanban-plugin__item-metadata {
+	padding-top: 0;
+}
+
+.kanban-plugin__item-markdown :is(ul, ol) {
+	padding-inline-start: 1em;
+}
+
+.kanban-plugin .contains-task-list {
+	padding-inline-start: 1.9em;
+}
+
+.kanban-plugin .contains-task-list .task-list-item-checkbox {
+	width: calc(var(--checkbox-size) * 0.7);
+	height: calc(var(--checkbox-size) * 0.7);
+}
+
+.kanban-plugin .is-unresolved {
+	color: var(--link-unresolved-color);
+	opacity: var(--link-unresolved-opacity);
+}
+
+/* ─────────────────────────────────────────────────── */

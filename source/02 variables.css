@@ -1,0 +1,300 @@
+/* stylelint-disable no-duplicate-selectors */
+
+/* ───────────────────────────────────────────────── */
+/** Color Scheme Variables
+──────────────────────────────────────────────────── */
+
+/* default values, changed via style settings */
+body {
+	--longform-bg-hue-dark: 200;
+	--longform-bg-hue-light: 200;
+	--bg-hue-light: 230;
+	--bg-hue-dark: 230;
+}
+
+/* this style setting overrides background colors */
+.mac-os-native:is(.theme-light, .theme-dark) {
+	--bg-hue: 0;
+	--longform-bg-hue: 0;
+	--bg-sat: 0%;
+}
+
+/* gamma color scheme */
+.theme-light {
+	--bg-sat: 25%;
+	--bg-hue: var(--bg-hue-light);
+	--color-accent: hsl(184 79% 35%);
+	/* --color-accent-hsl needs commas, otherwise dependent colors are not display correctly */
+	--color-accent-hsl: 184, 79%, 35%;
+	--interactive-accent: hsl(184 79% 30%);
+	--alt-heading-color: hsl(232 34% 50%);
+	--secondary-accent: hsl(28 54% 51%);
+	--hover-accent: hsl(328 100% 54%);
+	--link-unresolved-color: hsl(101 42% 51%);
+}
+
+.theme-dark {
+	--bg-sat: 15%;
+	--bg-hue: var(--bg-hue-dark);
+	--color-accent: hsl(184 79% 45%);
+	/* --color-accent-hsl needs commas, otherwise dependent colors are not display correctly */
+	--color-accent-hsl: 184, 79%, 45%;
+	--interactive-accent: hsl(184 79% 30%);
+	--alt-heading-color: hsl(232 50% 70%);
+	--secondary-accent: hsl(28 63% 61%);
+	--hover-accent: hsl(328 100% 64%);
+	--link-unresolved-color: hsl(101 42% 51%);
+}
+
+/* variables dependent on the main variables above */
+.theme-light {
+	--color-base-00: hsl(var(--bg-hue) calc(var(--bg-sat) * 1.5) 99%);
+	--color-base-10: hsl(var(--bg-hue) var(--bg-sat) 97%);
+	--color-base-20: hsl(var(--bg-hue) var(--bg-sat) 95%);
+	--color-base-25: hsl(var(--bg-hue) var(--bg-sat) 92%);
+	--color-base-30: hsl(var(--bg-hue) var(--bg-sat) 88%);
+	--color-base-35: hsl(var(--bg-hue) var(--bg-sat) 83%);
+	--color-base-40: hsl(var(--bg-hue) var(--bg-sat) 74%);
+	--color-base-50: hsl(var(--bg-hue) var(--bg-sat) 67%);
+	--color-base-60: hsl(var(--bg-hue) var(--bg-sat) 44%);
+	--color-base-70: hsl(var(--bg-hue) var(--bg-sat) 35%);
+	--color-base-85s: hsl(var(--bg-hue) calc(var(--bg-sat) * 2) 24%);
+	--color-base-100: hsl(var(--bg-hue) var(--bg-sat) 13%);
+}
+
+.theme-dark {
+	--color-base-00: hsl(var(--bg-hue) var(--bg-sat) 12%);
+	--color-base-10: hsl(var(--bg-hue) var(--bg-sat) 14%);
+	--color-base-20: hsl(var(--bg-hue) var(--bg-sat) 16%);
+	--color-base-25: hsl(var(--bg-hue) var(--bg-sat) 18%);
+	--color-base-30: hsl(var(--bg-hue) var(--bg-sat) 22%);
+	--color-base-35: hsl(var(--bg-hue) var(--bg-sat) 25%);
+	--color-base-40: hsl(var(--bg-hue) var(--bg-sat) 33%);
+	--color-base-50: hsl(var(--bg-hue) var(--bg-sat) 40%);
+	--color-base-60: hsl(var(--bg-hue) var(--bg-sat) 60%);
+	--color-base-70: hsl(var(--bg-hue) var(--bg-sat) 73%);
+	--color-base-85s: hsl(var(--bg-hue) calc(var(--bg-sat) * 2) 82%);
+	--color-base-100: hsl(var(--bg-hue) var(--bg-sat) 85%);
+}
+
+.theme-dark,
+.theme-light {
+	--hotkey-color: var(--secondary-accent);
+	--bold-color: var(--text-accent-hover);
+	--italic-color: var(--text-accent-hover);
+	--text-selection: hsl(var(--color-accent-hsl), 20%);
+	--text-normal: var(--color-base-85s);
+	--active-line-color: var(--color-accent);
+	--text-muted: var(--color-base-70);
+
+	/* custom middle ground between text-muted and text-faint */
+	--text-gray: var(--color-base-60);
+	--text-faint: var(--color-base-50);
+	--text-accent: var(--color-accent);
+	--text-accent-hover: var(--hover-accent);
+	--interactive-normal: var(--color-base-00);
+	--interactive-hover: var(--color-base-20);
+	--interactive-accent-hsl: var(--color-accent-hsl);
+	--interactive-accent-hover: var(--hover-accent);
+
+	/* links and tags */
+	--tag-color: var(--secondary-accent);
+	--tag-color-hover: var(--text-accent-hover);
+
+	/* links */
+	--link-color: var(--text-accent);
+	--link-color-hover: var(--text-accent-hover);
+	--link-external-color: var(--text-accent);
+	--link-external-color-hover: var(--text-accent-hover);
+
+	/* own variable */
+	--inline-code-color: var(--secondary-accent);
+}
+
+/* ───────────────────────────────────────────────────── */
+/** Changed Obsidian Variables
+──────────────────────────────────────────────────── */
+
+body {
+	/* this variable is determined by the accent color chosen by the user, so it
+	* needs to be overwritten to be the same across this theme */
+	/* stylelint-disable-next-line declaration-no-important */
+	--text-on-accent: hsl(0 100% 100%) !important;
+
+	/* Font */
+	--font-text-theme: "iA Writer Quattro S";
+	--font-interface-theme: "Recursive S";
+	--line-height-tight: 1.2;
+
+	/* Headings */
+	--h1-font: var(--font-heading-theme);
+	--h2-font: var(--font-heading-theme);
+	--h3-font: var(--font-heading-theme);
+	--h4-font: var(--font-heading-theme);
+	--h5-font: var(--font-heading-theme);
+	--h6-font: var(--font-heading-theme);
+	--heading-scaling: 1;
+	--h1-size: calc(1.7em * var(--heading-scaling));
+	--h2-size: calc(1.5em * var(--heading-scaling));
+	--h3-size: calc(1.35em * var(--heading-scaling));
+	--h4-size: calc(1.2em * var(--heading-scaling));
+	--h5-size: calc(1.1em * var(--heading-scaling));
+	--h6-size: calc(1em * var(--heading-scaling));
+	--inline-title-color: var(--text-gray);
+	--inline-title-style: normal;
+	--inline-title-margin-bottom: 0.75em;
+
+	/* Tags */
+	--tag-size: 1em;
+	--tag-decoration-hover: underline;
+	--tag-background: none;
+	--tag-background-hover: none;
+	--tag-border-width: 0;
+	--tag-padding-x: 0;
+	--tag-padding-y: 0;
+
+	/* Modals (Settings Menu) */
+	--modal-height: 92vh;
+
+	/* Metadata */
+	--metadata-gap: 1px;
+
+	/* Tab */
+	--tab-background-active: var(--bg3);
+	--tab-stacked-header-width: 28px;
+
+	/* Table */
+	--table-text-size: calc(var(--font-text-size) * 0.9);
+	--table-header-size: var(--table-text-size);
+	--table-header-weight: 600;
+	--table-white-space: normal;
+	--table-border-width: 1px;
+	--table-border-color: var(--basic-border-color);
+	--table-header-border-color: var(--basic-border-color);
+	--table-header-border-width: 1px;
+	--table-header-background: var(--bg5);
+	--table-header-background-hover: var(--bg5);
+	--table-row-alt-background: var(--b-row);
+	/* needs to be fix at 1.3, otherwise glitchy when changing table cells */
+	--table-line-height: 1.3;
+
+
+
+	/* Blockquote */
+	--blockquote-border-thickness: 8px;
+	--blockquote-border-color: var(--bg5);
+	--blockquote-background-color: var(--bg3);
+
+	/* Tree items (file explorer, outline, etc.) */
+	--nav-item-size: var(--font-ui-medium);
+	--nav-item-color: var(--text-muted);
+	--nav-item-color-hover: var(--text-accent-hover);
+	--nav-item-color-active: var(--text-accent);
+	--nav-item-color-highlighted: var(--text-accent-hover);
+
+	/* Checkboxes */
+	--checkbox-radius: var(--radius-m);
+	--checkbox-size: 17px;
+	--checkbox-color: var(--secondary-accent);
+	--checkbox-color-hover: var(--hover-accent);
+	--checkbox-border-color: var(--text-gray);
+	--checkbox-border-color-hover: var(--hover-accent);
+	--checkbox-marker-color: var(--background-primary);
+	--checklist-done-decoration: line-through;
+	--checklist-done-color: var(--text-faint);
+
+	/* Callouts */
+	--callout-title-size: 110%;
+	--callout-padding: 8px;
+
+	/* Icons */
+	--icon-color-hover: var(--hover-accent);
+	--icon-stroke: 2px;
+
+	/* Dividers (like hr or resize handles) */
+	/* so the divider part at the top does not stand out */
+	--divider-color: var(--titlebar-background-focused);
+	--divider-color-hover: var(--hover-accent);
+	--divider-width: 2px;
+	--hr-color: var(--text-faint);
+	--hr-thickness: 2px;
+
+	/* Misc */
+	--list-indent: 1.6em;
+	--link-unresolved-opacity: 0.8;
+	--code-background: var(--bg3);
+	--status-bar-font-size: var(--font-ui-small);
+	--metadata-input-font-size: var(--font-smallest);
+
+	/* to be set via style setting */
+	--file-line-width: 700px;
+
+	/* Indentation Guide */
+	--indentation-guide-width: 1.5px;
+	--indentation-guide-width-active: var(--indentation-guide-width);
+	--indentation-guide-color: var(--text-faint);
+	--indentation-guide-color-active: var(--indentation-guide-color);
+	--nav-indentation-guide-color: var(--text-faint);
+}
+
+.theme-dark {
+	--titlebar-background: var(--bg6);
+	--titlebar-background-focused: var(--bg5);
+}
+
+.theme-light {
+	--titlebar-background: var(--bg5);
+	--titlebar-background-focused: var(--bg4);
+}
+
+/* ───────────────────────────────────────────────── */
+/** Theme Variables
+──────────────────────────────────────────────────── */
+
+body {
+	--signature: "⟡";
+	--icon-font: "Material Icons (Filled)";
+
+	/* Optima pre-installed on macOS */
+	--font-heading-theme: "Optima", "Recursive S";
+	--heading-letter-spacing: 1.5px;
+
+	/* Use system fonts for longform */
+	--longform-font-text-theme: "Garamond", "Times New Roman", serif;
+	--longform-font-size: 1.3rem;
+	--longform-base-line-height: 1;
+	--longform-letter-spacing: 0px;
+	--inactive-pane-opacity: 75%;
+	--transition-delay-passing-over-protection: 200ms;
+	--image-size: 50;
+	--bg1: var(--color-base-00);
+	--bg2: var(--color-base-10);
+	--bg3: var(--color-base-20);
+	--bg4: var(--color-base-25);
+	--bg5: var(--color-base-30);
+	--bg6: var(--color-base-35);
+
+	/* overwrite Obsidian variables w/ --bg colors for consistency with plugins */
+	--background-primary: var(--bg1);
+	--background-primary-alt: var(--bg2);
+	--background-secondary: var(--bg3);
+	--basic-border-color: var(--color-base-50);
+	--thin-border: 1px solid var(--basic-border-color);
+	--basic-border: 2px solid var(--basic-border-color);
+	--muted-border-color: var(--color-base-30);
+	--thin-muted-border: 1px solid var(--muted-border-color);
+	--muted-border: 2px solid var(--muted-border-color);
+	--readability-text-shadow-dark: 1px 1px 0px hsl(0 0% 0% / 100%);
+}
+
+.theme-light {
+	--a-row: hsla(0 0% 0% / 3%);
+	--b-row: hsla(0 0% 0% / 8%);
+	--search-match-color: var(--color-orange);
+}
+
+.theme-dark {
+	--a-row: hsla(0 0% 0% / 20%);
+	--b-row: hsla(0 0% 0% / 35%);
+	--search-match-color: var(--color-yellow);
+}

@@ -1,0 +1,177 @@
+/* SOURCE VIEW */
+/* values */
+.cm-hmd-frontmatter {
+	color: var(--text-normal);
+}
+
+/* the "---"" */
+.cm-def.cm-hmd-frontmatter.cm-hmd-frontmatter {
+	color: var(--secondary-accent);
+	letter-spacing: 0.1rem;
+}
+
+/* keys */
+.frontmatter.language-yaml .atrule,
+.cm-atom.cm-hmd-frontmatter {
+	/* font-weight: 600; */
+	color: var(--text-accent);
+}
+
+/* Punctuation
+- first child = unordered list in yaml
+- second child = colon between key and value in unordered list
+- third child = colon between key and value
+- last child = bracket to close of array brackets, see #194 */
+.cm-line .cm-hmd-frontmatter.cm-meta:is(:first-child, :nth-child(2), :nth-child(3), :last-child),
+.frontmatter.language-yaml .punctuation {
+	font-weight: 600;
+	color: var(--bold-color);
+}
+
+/* strings & boolean in yaml */
+.frontmatter.language-yaml :is(.boolean, .number, .string),
+.cm-hmd-frontmatter:is(.cm-keyword, .cm-string) {
+	font-weight: 500;
+	color: var(--secondary-accent);
+}
+
+/* LIVE PREVIEW */
+.mod-root .metadata-container {
+	padding: 0;
+	margin-top: 0.5em;
+	margin-left: 4px;
+	font-family: var(--font-interface);
+	background-color: var(--bg2);
+	border: var(--thin-border);
+	border-radius: var(--radius-s);
+}
+
+.metadata-property-value :is(.metadata-input-number, .multi-select-container) {
+	padding-left: 2px;
+}
+
+.multi-select-container.multi-select-container .multi-select-input {
+	padding-top: 2px;
+}
+
+.mod-root .metadata-add-button.metadata-add-button {
+	position: absolute;
+	right: 0;
+	bottom: 0;
+	height: 28px;
+	padding: 4px 6px;
+	margin-top: 0;
+	font-size: 75%;
+	font-style: italic;
+	color: var(--text-gray);
+	background: var(--bg4);
+	border-top: var(--thin-border);
+	border-left: var(--thin-border);
+	border-radius: var(--radius-s) 0 var(--radius-s) 0;
+}
+
+.metadata-add-button.text-icon-button .text-button-label {
+	display: none;
+}
+
+/* heading */
+.metadata-properties-heading:not(.is-collapsed) {
+	display: block;
+	padding: 0;
+	margin: 0;
+}
+
+.metadata-properties-heading:not(.is-collapsed) .metadata-properties-title {
+	display: none;
+}
+
+.metadata-properties-heading.is-collapsed {
+	padding: 6px 8px;
+	margin-bottom: 0;
+	font-size: 0.9em;
+}
+
+.metadata-properties-heading.is-collapsed .metadata-properties-title {
+	color: var(--text-muted);
+}
+
+.metadata-property-value-item.metadata-property-value-item,
+.metadata-input-longtext {
+	padding-left: 2px;
+}
+
+.metadata-add-button:hover {
+	color: var(--hover-accent);
+}
+
+.metadata-property-icon {
+	padding-right: 4px;
+	color: var(--hover-accent);
+}
+
+.metadata-property-icon:hover {
+	color: var(--hover-accent);
+	background-color: var(--bg5);
+}
+
+.metadata-property-key-input.metadata-property-key-input {
+	color: var(--text-accent);
+}
+
+.multi-select-input.multi-select-input {
+	font-family: var(--font-interface);
+	color: var(--text-normal);
+}
+
+body .metadata-property:focus-within,
+body .metadata-property:hover {
+	background-color: var(--bg4);
+	box-shadow: none;
+}
+
+/* tags & multi-select */
+.metadata-link-inner,
+.multi-select-pill-content.multi-select-pill-content {
+	line-height: 1.1;
+	background: var(--bg1);
+	border-color: var(--text-faint);
+}
+
+.metadata-link-inner,
+.multi-select-pill-content {
+	padding: 2px 4px;
+	border: var(--thin-border);
+	border-radius: var(--radius-s);
+}
+
+.multi-select-pill .multi-select-pill-remove-button {
+	margin-left: -3px;
+	color: var(--hover-accent);
+}
+
+.multi-select-pill-remove-button:not(:hover) {
+	opacity: 0;
+}
+
+/* Date Picker */
+/* INFO color of the date picker cannot be changed in a flexible manner
+ * https://stackoverflow.com/questions/62162645/change-color-of-chromes-calendar-icon-in-html-date-input
+ * */
+.metadata-property-value input:is([type="date"], [type="datetime-local"]) {
+	margin-left: -4px;
+}
+
+/* links in metadata */
+.internal-link:is(.multi-select-pill, .metadata-link-inner) {
+	/* creates single underline instead of double */
+	text-decoration: none;
+}
+
+.metadata-link {
+	padding: 0;
+}
+
+/* checkbox in metadata */
+input[type="checkbox"].metadata-input-checkbox {
+	margin-left: 2px;
+}

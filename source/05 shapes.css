@@ -1,0 +1,26 @@
+
+/* --radius-xs is defined by this theme */
+body:not(.angular-shapes) {
+	--radius-xs: 2px;
+}
+
+.angular-shapes {
+	--radius-xs: 0;
+	--radius-s: 0;
+	--radius-m: 0;
+	--radius-l: 0;
+	--radius-xl: 0;
+	--input-radius: 0;
+	--tab-radius-active: 0;
+}
+
+.angular-shapes .callout {
+	/* also change default callout icon */
+	--callout-icon: square;
+}
+
+body.angular-shapes .checkbox-container {
+	border-radius: 0;
+	width: 20px;
+	height: 20px;
+}

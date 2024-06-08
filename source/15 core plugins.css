@@ -1,0 +1,272 @@
+/* ───────────────────────────────────────────────── */
+/** Bookmarks
+──────────────────────────────────────────────────── */
+.workspace-leaf-content[data-type="bookmarks"] {
+	padding: 0 0 20px;
+}
+
+.tree-item-self.bookmark {
+	border-radius: 0;
+}
+
+/* hide nav buttons */
+body:not(.show-bookmark-controls) .workspace-leaf-content[data-type="bookmarks"] :is(.nav-buttons-container, .nav-header) {
+	display: none;
+}
+
+/* ────────────────────────────────────────────────────────────────────────── */
+
+/* Hide bookmarks icons */
+body:not(.show-bookmark-icons) .bookmark.tree-item-self {
+	padding-left: 10px;
+}
+
+body:not(.show-bookmark-icons) .bookmark.tree-item-self .tree-item-icon {
+	display: none;
+}
+
+/* alternating row colors */
+.workspace-leaf-content[data-type="bookmarks"]>div>div>.tree-item:nth-child(odd) {
+	background-color: var(--a-row);
+}
+
+.workspace-leaf-content[data-type="bookmarks"] .nav-header {
+	padding-top: 0;
+	padding-bottom: 0;
+}
+
+/* bookmark icon filled */
+.workspace-leaf-content .svg-icon.lucide-bookmark {
+	fill: currentcolor;
+}
+
+/* ───────────────────────────────────────────────── */
+/** Canvas
+──────────────────────────────────────────────────── */
+/* moved further down to avoid conflict with canvas controls */
+body:not(.normal-header-bar, .is-mobile) .workspace-leaf-content[data-type="canvas"] .view-header-title-container {
+	top: 22rem;
+}
+
+/* align them properly for canvas controls */
+body:not(.normal-header-bar, .is-mobile) .workspace-leaf-content[data-type="canvas"] :is(.view-header .view-actions, .view-header-title-container) {
+	margin-right: 0.4rem;
+}
+
+body:not(.normal-header-bar, .is-mobile) .canvas-controls {
+	top: 3rem;
+}
+
+/* rotate & move to the left */
+body .canvas-card-menu {
+	left: unset;
+	right: -1rem;
+	display: unset;
+}
+
+/* ───────────────────────────────────────────────── */
+/** Search
+──────────────────────────────────────────────────── */
+.document-search-container {
+	margin-right: 0;
+	margin-left: 0;
+	border-bottom: var(--thin-border);
+	box-shadow: var(--shadow-s);
+}
+
+body:not(.show-close-buttons, .is-mobile) .document-search-close-button {
+	display: none;
+}
+
+/* ───────────────────────────────────────────────── */
+/** File Explorer
+──────────────────────────────────────────────────── */
+
+.nav-files-container {
+	padding: 0 0 24px;
+}
+
+.nav-files-container>div>.nav-folder>.nav-folder-title>.nav-folder-title-content {
+	font-weight: 600;
+}
+
+/* alternating row colors */
+.nav-folder:nth-child(odd)>.nav-folder-title,
+.nav-file:nth-child(odd) {
+	background-color: var(--a-row);
+}
+
+/* hide navigation buttons */
+body:not(.show-file-explorer-navigation) .workspace-leaf-content[data-type="file-explorer"] .nav-header {
+	display: none;
+}
+
+/* optionally hide attachment folders */
+.hide-attachment-folders .nav-folder-title:is([data-path$="/attachments" i], [data-path="attachments" i]) {
+	display: none;
+}
+
+/* ───────────────────────────────────────────────── */
+/** Outgoing Links & Backlinks
+──────────────────────────────────────────────────── */
+body :is(.backlink-pane, .outgoing-link-pane) {
+	padding: 0 2px;
+}
+
+body .backlink-pane .search-result-container {
+	padding: 2px;
+}
+
+body .outgoing-link-pane .search-result-container {
+	padding: 2px 0;
+}
+
+/* hide "links" and "unlinked mentions" headings */
+body:not(.normal-out-back-links) :is(.backlink-pane, .outgoing-link-pane)>.tree-item-self {
+	display: none;
+}
+
+/* unresolved outgoing links */
+.tree-item-self.outgoing-link-item svg.lucide-file-plus,
+.tree-item-self.outgoing-link-item[aria-label="Not created yet"] {
+	color: var(--link-unresolved-color);
+	opacity: var(--link-unresolved-opacity);
+}
+
+/* alternating row colors for outgoing links */
+.tree-item-self.outgoing-link-item:nth-child(odd) {
+	background-color: var(--a-row);
+}
+
+/* ───────────────────────────────────────────────── */
+/** Inline Backlinks
+──────────────────────────────────────────────────── */
+:is(.markdown-source-view, .markdown-preview-view) .backlink-pane>.tree-item-self {
+	background-color: var(--bg2);
+}
+
+.markdown-preview-view .embedded-backlinks {
+	margin-top: 72px;
+}
+
+.embedded-backlinks {
+	padding-top: 8px;
+	border-top: var(--thin-muted-border);
+}
+
+/* minimal inline backlinks pane */
+body:not(.classic-inline-backlinks) .embedded-backlinks :is(.nav-buttons-container,
+	.backlink-pane > .tree-item-self,
+	.tree-item-flair,
+	.search-result-file-match,
+	.tree-item-icon,
+	.search-result-file-matches,
+	.nav-header,
+	.search-empty-state) {
+	display: none;
+}
+
+body:not(.classic-inline-backlinks) .embedded-backlinks .search-result-container {
+	padding: 0;
+	margin-left: 0;
+}
+
+body:not(.classic-inline-backlinks) .embedded-backlinks .tree-item-self.tree-item-self {
+	padding: 0;
+	font-weight: 500;
+	line-height: var(--line-height-normal);
+	background: none;
+}
+
+body:not(.classic-inline-backlinks) .embedded-backlinks .tree-item-inner {
+	color: var(--link-color);
+	text-decoration: underline double 1px;
+}
+
+body:not(.classic-inline-backlinks) .embedded-backlinks .tree-item-self:hover .tree-item-inner {
+	color: var(--hover-accent);
+}
+
+body:not(.classic-inline-backlinks) .embedded-backlinks .tree-item.search-result {
+	margin: 0;
+}
+
+body:not(.classic-inline-backlinks) .embedded-backlinks .tree-item-self::before {
+	margin-right: 6px;
+	font-weight: 700;
+	color: var(--text-faint);
+	content: "•";
+}
+
+/* fix for writing/longform notes */
+body:not(.classic-inline-backlinks) :is(.writing, .longform-leaf) .search-result-file-title {
+	font-size: calc(var(--longform-font-size) * 0.9);
+}
+
+body:not(.classic-inline-backlinks) :is(.writing, .longform-leaf) .embedded-backlinks::before {
+	font-size: calc(var(--longform-font-size) * 1);
+}
+
+/* ───────────────────────────────────────────────── */
+/** Outline
+──────────────────────────────────────────────────── */
+
+/* bolden folded headings */
+.workspace-leaf-content[data-type="outline"] .tree-item.is-collapsed>.tree-item-self.tree-item-self.tree-item-self {
+	font-weight: 700;
+}
+
+/* hide fold icons when not hovered or collapsed */
+.workspace-leaf-content[data-type="outline"] .tree-item:not(:hover) .tree-item-icon.collapse-icon:not(.is-collapsed) {
+	display: none;
+}
+
+/* move collapse icon to the right */
+.workspace-leaf-content[data-type="outline"] .tree-item-icon.collapse-icon {
+	position: absolute;
+	right: 0.25em;
+	cursor: var(--cursor-link);
+}
+
+/* less spacing since collapse icon is to the left */
+.workspace-leaf-content[data-type="outline"]>.view-content>div>.tree-item>.tree-item-self {
+	padding-left: 0.75em;
+}
+
+/* alternating row colors */
+.workspace-leaf-content[data-type="outline"]>.view-content>div>.tree-item:nth-child(odd),
+.workspace-leaf-content[data-type="outline"] .tree-item-children .tree-item:nth-child(odd) {
+	background-color: var(--a-row);
+}
+
+.workspace-leaf-content[data-type="outline"] .pane-empty {
+	display: none;
+}
+
+.workspace-leaf-content[data-type="outline"] .tree-item-self.is-active {
+	font-weight: 600;
+	background-color: transparent;
+}
+
+body:not(.show-outline-buttons) .workspace-leaf-content[data-type="outline"] .nav-header {
+	display: none;
+}
+
+.show-outline-buttons .workspace-leaf-content[data-type="outline"] .nav-header {
+	display: flex;
+	flex-direction: row-reverse;
+	justify-content: space-between;
+}
+
+/* hide search button */
+.show-outline-buttons .workspace-leaf-content[data-type="outline"] .nav-buttons-container> :first-child {
+	display: none;
+}
+
+/* always display search input box */
+.show-outline-buttons .workspace-leaf-content[data-type="outline"] .search-input-container {
+	/* stylelint-disable-next-line declaration-no-important */
+	display: block !important;
+	flex-grow: 1;
+	margin: 4px 0;
+}

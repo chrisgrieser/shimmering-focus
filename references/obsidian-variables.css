@@ -1,0 +1,99 @@
+/** INFO Unchanged Obsidian Variables
+/* These values are unchanged from the default theme, but included here for
+autocompletion via LSP and for quicker reference. Effectively, these work a bit
+like a `d.ts` file in typescript. */
+
+.dummy {
+	/* user setting */
+	--font-interface: "";
+	--font-text: "";
+	--font-monospace: "";
+	--font-text-size: "";
+
+	/* Relative font sizes */
+	--font-smallest: 0.8em;
+	--font-smaller: 0.875em;
+	--font-small: 0.933em;
+
+	/* UI font sizes */
+	--font-ui-smaller: 12px;
+	--font-ui-small: 13px;
+	--font-ui-medium: 15px;
+	--font-ui-large: 20px;
+	--footnote-size: var(--font-smaller);
+
+	/* Misc */
+	--background-modifier-border-hover: var(--color-base-35);
+	--highlight-mix-blend-mode: darken;
+	--callout-border-opacity: 0.25;
+	--line-height-normal: 1.5;
+	--cursor-link: pointer;
+
+	/* Icons */
+	--icon-size: var(--icon-m);
+	--icon-stroke: var(--icon-m-stroke-width);
+	--icon-xs: 14px;
+	--icon-s: 16px;
+	--icon-m: 18px;
+	--icon-l: 18px;
+	--icon-m-stroke-width: 1.75px;
+	--icon-color: var(--text-muted);
+
+	/* Shapes */
+	--radius-s: 4px;
+	--radius-m: 8px;
+	--radius-l: 10px;
+	--radius-xl: 16px;
+	--input-radius: 5px;
+
+	/* File Navigator */
+	--nav-item-size: var(--font-ui-small);
+	--nav-item-weight: inherit;
+	--nav-item-weight-hover: inherit;
+	--nav-item-weight-active: inherit;
+	--nav-item-white-space: nowrap;
+
+	/* Tabs */
+	--tab-background-active: var(--background-primary);
+	--tab-text-color: var(--text-faint);
+	--tab-text-color-focused: var(--text-muted);
+	--tab-text-color-focused-active: var(--text-normal);
+	--tab-font-size: var(--font-ui-small);
+	--tab-font-weight: inherit;
+	--tab-container-background: var(--background-secondary);
+	--tab-divider-color: var(--background-modifier-border-hover);
+	--tab-outline-color: var(--divider-color);
+	--tab-outline-width: 1px;
+	--tab-curve: 6px;
+	--tab-radius: var(--radius-s);
+	--tab-width: 200px;
+
+	/* Animation */
+	--anim-duration-none: 0;
+	--anim-duration-moderate: 300ms;
+	--anim-duration-slow: 560ms;
+
+	/* colors for syntax highlighting & callouts (different tone in dark mode) */
+	--color-orange-rgb: 236, 117, 0;
+	--color-red: hsl(358 96% 63%);
+	--color-green: hsl(138 59% 54%);
+	--color-orange: hsl(31 79% 58%);
+	--color-yellow: hsl(59 64% 66%);
+
+	/* other colors */
+	--mono-rgb-100: 0, 0, 0;
+	--background-modifier-hover: rgba(var(--mono-rgb-100) / 7.5%);
+	--nav-item-background-hover: var(--background-modifier-hover);
+	--nav-item-background-active: var(--background-modifier-hover);
+	--callout-warning: var(--color-orange-rgb);
+	--callout-color: "";
+	--text-error: var(--color-red);
+	--text-success: var(--color-green);
+	--text-on-accent: hsl(0 0% 100%);
+
+	/* shadows */
+	--input-shadow: inset 0 0 0 1px rgb(0 0 0 / 12%), 0 2px 3px 0 rgb(0 0 0 / 5%),
+		0 1px 1.5px 0 rgb(0 0 0 / 3%), 0 1px 2px 0 rgb(0 0 0 / 4%), 0 0 0 0 transparent;
+	--shadow-s: 0px 1px 2px rgb(0 0 0 / 2.8%), 0px 3.4px 6.7px rgb(0 0 0 / 4.2%),
+		0px 15px 30px rgb(0 0 0 / 7%);
+}

@@ -1,0 +1,53 @@
+
+/* save space at the top */
+.mod-root .markdown-reading-view .markdown-preview-view,
+.mod-root .view-content>.markdown-source-view.mod-cm6>.cm-editor>.cm-scroller {
+	padding-top: 25px;
+}
+
+/* ───────────────────────────────────────────────── */
+/** Editor Suggestions
+──────────────────────────────────────────────────── */
+
+.suggestion-container {
+	border-radius: var(--radius-s);
+}
+
+.suggestion-container .suggestion {
+	padding: 0;
+}
+
+/* so hover effects do not have a line at the bottom */
+.suggestion-container .suggestion-item:last-child {
+	margin-bottom: 0;
+}
+
+/* ───────────────────────────────────────────────── */
+/** Empty Note / New Tab Page
+──────────────────────────────────────────────────── */
+
+.workspace-tab-header[data-type="empty"]:not(:only-child) {
+	font-style: italic;
+}
+
+.empty-state-action {
+	display: none;
+}
+
+/* mod-root ensures that "Plugin no longer active" messages
+are not targeted by this */
+.mod-root .empty-state-title {
+	font-size: 0;
+}
+
+.mod-root .empty-state-title::after {
+	font-size: 8rem;
+	font-weight: 500;
+	color: var(--text-muted);
+	content: var(--signature);
+	transition: var(--anim-duration-slow);
+}
+
+.mod-root .empty-state-title:hover::after {
+	color: var(--text-accent);
+}

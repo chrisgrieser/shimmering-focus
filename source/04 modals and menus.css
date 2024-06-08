@@ -1,0 +1,321 @@
+/* ───────────────────────────────────────────────── */
+/** Settings Menu
+──────────────────────────────────────────────────── */
+
+body:not(.show-close-buttons, .is-mobile) .modal-close-button {
+	display: none;
+}
+
+.vertical-tab-content {
+	padding: 12px 20px 32px 24px
+}
+
+.modal.mod-settings {
+	border: var(--basic-border);
+}
+
+.modal.mod-settings .vertical-tab-content-container {
+	padding: 0;
+	margin-top: 0;
+	border-left: var(--basic-border);
+}
+
+/* setting tab selection */
+.vertical-tab-header-group,
+.vertical-tab-header {
+	padding: 0;
+}
+
+.vertical-tab-header.vertical-tab-header.vertical-tab-header {
+	/* overscroll */
+	padding-bottom: 72px;
+	border-right: none;
+}
+
+.vertical-tab-header-group-title {
+	display: none;
+}
+
+.vertical-tab-header-group:not(:first-child, :empty) {
+	border-top: var(--basic-border);
+}
+
+.vertical-tab-nav-item {
+	padding: 3px 6px;
+	margin-bottom: 0;
+	font-size: 1em;
+	line-height: 1.35;
+	border-radius: 0;
+}
+
+/* min width not applied to linter fields and to color picker input */
+.mod-settings input:is([type="text"], [type="search"]):not(.linter-custom-regex-replacement-flags, .pcr-result) {
+	min-width: 250px;
+	background-color: var(--bg1);
+}
+
+/* thicker "community plugins", "hotkey" & "appearance" */
+/* via non-last-child b/c the settings search plugin adds a group in front */
+.vertical-tab-header-group:nth-last-child(3) .vertical-tab-header-group-items .vertical-tab-nav-item:is(:nth-child(4), :nth-child(5), :last-child) {
+	font-weight: 900;
+}
+
+.theme-dark .vertical-tab-header-group:nth-last-child(3) .vertical-tab-header-group-items .vertical-tab-nav-item:is(:nth-child(4), :nth-child(5), :last-child) {
+	text-shadow: var(--readability-text-shadow-dark);
+}
+
+/* ───────────────────────────────────────────────── */
+/** Individual Setting Pages
+──────────────────────────────────────────────────── */
+.installed-plugins-container .setting-item-description div:nth-child(2)::first-letter {
+	text-transform: lowercase;
+}
+
+.installed-plugins-container .setting-item-description div:nth-child(2) {
+	font-style: italic;
+}
+
+.installed-plugins-container .setting-item-description>div:first-child {
+	margin-top: -0.1em;
+	margin-bottom: 2px;
+}
+
+.installed-plugins-container .setting-item-description>div:nth-child(2) {
+	margin-top: -17.5px;
+	margin-left: 100px;
+}
+
+.plugin-list-plugins>.setting-item:first-child {
+	padding-bottom: 32px;
+}
+
+.setting-filter-container .hotkey-filter {
+	background-color: var(--bg1);
+	border: var(--thin-muted-border);
+}
+
+/* ───────────────────────────────────────────────── */
+/** Settings Menu Colors
+──────────────────────────────────────────────────── */
+
+body .vertical-tab-content {
+	background-color: var(--bg3);
+}
+
+.theme-light :is(.vertical-tab-header, .vertical-tab-nav-item) {
+	background-color: var(--bg2);
+}
+
+.theme-dark :is(.vertical-tab-header, .vertical-tab-nav-item) {
+	background-color: var(--bg1);
+}
+
+.theme-dark .modal-bg {
+	background-color: hsl(var(--bg-hue-dark) 10% 5%);
+}
+
+.theme-light .modal-bg {
+	background-color: hsl(var(--bg-hue-light) 5% 25%);
+}
+
+.vertical-tab-nav-item.is-active {
+	font-weight: 600;
+	color: var(--text-accent);
+	background-color: var(--nav-item-background-active);
+}
+
+.vertical-tab-nav-item.is-active:hover,
+.vertical-tab-nav-item:hover {
+	color: var(--text-accent-hover);
+	background-color: var(--nav-item-background-hover);
+}
+
+/* ───────────────────────────────────────────────── */
+/** Settings Headings
+──────────────────────────────────────────────────── */
+
+.setting-item-heading:not(.style-settings-heading) .setting-item-name {
+	padding: 2px 6px 0;
+	font-family: var(--font-heading-theme);
+	font-size: 1.3em;
+	font-weight: 600;
+	letter-spacing: var(--heading-letter-spacing);
+	background-color: var(--bg6);
+	border-radius: var(--radius-s) var(--radius-s) 0 0;
+}
+
+.setting-item-heading:not(:first-child, .style-settings-heading) .setting-item-name {
+	margin-top: 12px;
+}
+
+.setting-item.setting-item-heading {
+	padding-bottom: 0;
+	border-bottom: var(--basic-border);
+}
+
+.modal.mod-settings :is(h1, h2) {
+	font-family: var(--font-heading-theme);
+	font-size: var(--h1-size);
+	font-style: normal;
+	letter-spacing: var(--heading-letter-spacing);
+}
+
+.modal.mod-settings :is(h1, h2):first-child {
+	margin-top: 4px;
+	margin-bottom: 24px;
+}
+
+.modal.mod-settings :is(h3, h4, h5, h6, h1:not(:first-child), h2:not(:first-child)) {
+	margin-top: 12px;
+	margin-bottom: 4px;
+	letter-spacing: calc(var(--heading-letter-spacing) * 0.5);
+}
+
+.setting-item-description.setting-item-description.setting-item-description {
+	line-height: 1.3;
+	color: var(--text-gray);
+}
+
+/* ───────────────────────────────────────────────── */
+/** Remove Color Picker from Settings
+──────────────────────────────────────────────────── */
+
+.mod-settings .vertical-tab-content>.setting-item:nth-child(2)>.setting-item-control>.extra-setting-button+input[type="color"] {
+	width: 350px;
+	visibility: hidden;
+}
+
+.mod-settings .vertical-tab-content>.setting-item:nth-child(2)>.setting-item-control>.extra-setting-button>.lucide-rotate-ccw {
+	display: none;
+}
+
+.mod-settings .vertical-tab-content>.setting-item:nth-child(2)>.setting-item-control>.extra-setting-button+input[type="color"]::before {
+	content: "The accent color is overridden by the theme. Use the Style Settings Plugin to customize theme colors.";
+	position: relative;
+	top: 12px;
+	font-family: var(--font-interface);
+	font-size: var(--font-ui-smaller);
+	line-height: 1.3;
+	color: var(--text-gray);
+	visibility: visible;
+}
+
+/* ───────────────────────────────────────────────── */
+/** Theme Browser
+──────────────────────────────────────────────────── */
+/* is this typo still not fixed? */
+.mod-community-theme .community-item-author::first-letter {
+	text-transform: lowercase;
+}
+
+.mod-community-theme .community-item-author {
+	font-style: italic;
+}
+
+.mod-community-theme .community-item-name .flair {
+	margin-left: 12px;
+	background-color: var(--bg3);
+	border: var(--thin-border);
+}
+
+.mod-community-theme .community-item-name .flair.mod-pop {
+	color: var(--text-accent);
+}
+
+.mod-community-theme .community-item.mod-active {
+	border-color: var(--color-accent);
+}
+
+.mod-community-theme .community-item:is(:hover, .mod-active:hover) {
+	border-color: var(--hover-accent);
+}
+
+/* ───────────────────────────────────────────────── */
+/** Plugin / Theme Browser
+──────────────────────────────────────────────────── */
+
+/* redundant, since plugin name is already displayed above */
+.community-modal-readme h1:first-child {
+	display: none;
+}
+
+.community-modal-info a.internal-link {
+	text-decoration: dotted underline;
+}
+
+.flair.mod-pop {
+	position: relative;
+	top: -2px;
+	vertical-align: middle;
+}
+
+.community-item.is-selected .flair {
+	padding: 1px 3px;
+	border: var(--thin-border);
+}
+
+/* remove empty header unnecessarily taking up space */
+:is(.mod-community-theme, .mod-community-plugin) .modal-setting-nav-bar {
+	height: 0;
+	padding: 0;
+}
+
+:is(.mod-community-theme, .mod-community-plugin) .modal-setting-nav-bar .clickable-icon {
+	position: sticky;
+	height: 30px;
+}
+
+:is(.mod-community-theme, .mod-community-plugin) .community-modal-info {
+	padding: 16px 24px 24px 40px;
+}
+
+/* ───────────────────────────────────────────────── */
+/** Toggles
+──────────────────────────────────────────────────── */
+/* prettier wall-o-toggles */
+
+.checkbox-container::after {
+	display: none;
+}
+
+.checkbox-container.checkbox-container {
+	width: 22px;
+	height: 22px;
+	margin-left: 4px;
+	cursor: var(--cursor-link);
+	background-color: var(--bg2);
+	border: var(--basic-border);
+	transition-duration: var(--anim-duration-moderate);
+}
+
+body .checkbox-container.mod-small {
+	width: var(--icon-l);
+	height: var(--icon-l);
+}
+
+/* colors */
+.checkbox-container.is-enabled.is-enabled {
+	background-color: var(--color-accent);
+	border-color: transparent;
+}
+
+.checkbox-container.checkbox-container:hover {
+	border: 9px solid var(--hover-accent);
+	border-color: var(--hover-accent);
+}
+
+.checkbox-container.is-enabled:hover {
+	background-color: var(--hover-accent);
+	border-color: transparent;
+}
+
+/* ───────────────────────────────────────────────── */
+/** Hotkeys
+──────────────────────────────────────────────────── */
+
+kbd.suggestion-hotkey,
+.setting-hotkey {
+	color: var(--hotkey-color);
+	background-color: var(--bg4);
+	border: var(--thin-border);
+}

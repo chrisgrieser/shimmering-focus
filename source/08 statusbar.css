@@ -1,0 +1,44 @@
+
+.hide-pandoc-reference-list-status-bar .status-bar-item.plugin-obsidian-pandoc-reference-list,
+.hide-longform-status-bar .status-bar-item.plugin-longform,
+.hide-languagetool-status-bar .status-bar-item.plugin-obsidian-languagetool-plugin,
+.hide-pane-relief-focus-lock-status-bar .status-bar-item.plugin-pane-relief,
+.hide-electron-window-tweaker-status-bar .status-bar-item.plugin-obsidian-electron-window-tweaker,
+.hide-properties-in-statusbar .status-bar-item.plugin-properties,
+.hide-backlinks-status-bar .status-bar-item.plugin-backlink {
+	display: none;
+}
+
+.status-bar {
+	min-height: 0;
+	padding: 3px 4px;
+	font-size: 1em;
+	background-color: var(--bg5);
+	border-top: 2px groove var(--color-base-20);
+	border-left: 2px groove var(--color-base-20);
+}
+
+.status-bar-item:empty {
+	display: none;
+}
+
+/* When both sidebars are hidden, also hide status bar */
+.hidden-sidebars-hidden-statusbar:not(.is-mobile) .horizontal-main-container:has(.mod-left-split.is-sidedock-collapsed):has(.mod-right-split.is-sidedock-collapsed)+.status-bar {
+	display: none;
+}
+
+/* extra space for the bottom right item to not conflict with status bar */
+.mod-right-split .workspace-tabs:last-child .workspace-leaf .view-content {
+	padding-bottom: 2em;
+}
+
+/* signature icon */
+body:not(.hide-signature-icon) .status-bar::after {
+	margin-top: -1px;
+	padding-right: 6px;
+	padding-left: 4px;
+	font-family: "Recursive S", sans-serif;
+	font-size: 1.1rem;
+	font-weight: 800;
+	content: var(--signature);
+}
