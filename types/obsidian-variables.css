@@ -1,7 +1,10 @@
-/** INFO Unchanged Obsidian Variables
-/* These values are unchanged from the default theme, but included here for
-autocompletion via LSP and for quicker reference. Effectively, these work a bit
-like a `d.ts` file in typescript. */
+/* INFO
+These values are unchanged from the default theme, but included here for
+autocompletion via the `css-variables` LSP. [^1] Effectively, these work a bit
+like a `d.ts` file in typescript.
+
+[1]: https://github.com/vunguyentuan/vscode-css-variables
+*/
 
 .dummy {
 	/* user setting */
