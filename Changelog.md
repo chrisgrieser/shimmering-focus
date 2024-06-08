@@ -1,3 +1,4 @@
+
 - 2024-06-05 **fix**: extra whitespace in some sidebar panels
 - 2024-05-31 **improv**: enlarge AQS floating windows
 - 2024-05-28 **fix**: various fixes for the Projects plugin
