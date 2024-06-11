@@ -55,8 +55,9 @@ jobs:
 
           echo "$commits_since_last_publish" |
           	grep -vE "build|ci|style|bump" | # don't include internal changes
-          	sed -E "s/^(- [0-9-]+) ([^ ]+): /\1 **\2**: /" >> "temp.md" # bold title
-          grep -v "^$" "Changelog.md" >> "temp.md"
+          	sed -E "s/^(- [0-9-]+) ([^ ]+): /\1 **\2**: /" |  # bold title
+            grep -v "^$" > "temp.md"
+          cat "Changelog.md" >> "temp.md"
           mv -f "temp.md" "Changelog.md"
 
       #─────────────────────────────────────────────────────────────────────────

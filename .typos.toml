@@ -1,3 +1,0 @@
-[files]
-extend-exclude = ["*theme.css"] # `*` due to conform.nvim temp file
-
