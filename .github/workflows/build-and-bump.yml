@@ -34,7 +34,6 @@ jobs:
 
           versionLine=$(grep --line-number --max-count=1 "^Version" "$theme_header")
           versionLnum=$(echo "$versionLine" | cut -d: -f1)
-
           currentVer=$(echo "$versionLine" | cut -d. -f2)
           nextVer=$((currentVer + 1))
 
@@ -51,13 +50,10 @@ jobs:
 
       - name: Update Changelog
         run: |
-          commits_since_last_publish=$(git log :/bump.. --format="- %cs %s")
-
-          echo "$commits_since_last_publish" |
+          git log :/bump.. --format="- %cs %s" | # commits since last `bump` commit
           	grep -vE "build|ci|style|bump" | # don't include internal changes
-          	sed -E "s/^(- [0-9-]+) ([^ ]+): /\1 **\2**: /" |  # bold title
-            grep -v "^$" > "temp.md"
-          cat "Changelog.md" >> "temp.md"
+          	sed -E "s/^(- [0-9-]+) ([^ ]+): /\1 **\2**: /" >> "temp.md" # bold title
+          grep -v "^$" "Changelog.md" >> "temp.md"
           mv -f "temp.md" "Changelog.md"
 
       #─────────────────────────────────────────────────────────────────────────
