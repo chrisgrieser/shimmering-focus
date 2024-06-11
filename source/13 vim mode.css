@@ -1,4 +1,3 @@
-
 /* ───────────────────────────────────────────────── */
 /** Vim Cursor
 ──────────────────────────────────────────────────── */
@@ -99,7 +98,9 @@
 /** Vim: Relative Line Numbers
 ──────────────────────────────────────────────────── */
 
-.use-relative-line-numbers:not(.is-mobile) .cm-lineNumbers .cm-gutterElement:not(.cm-active) {
+.use-relative-line-numbers:not(.is-mobile)
+	.cm-lineNumbers
+	.cm-gutterElement:not(.cm-active) {
 	font-size: 0;
 }
 
@@ -109,76 +110,157 @@
 }
 
 /* numbers before */
-.use-relative-line-numbers:not(.is-mobile) .cm-lineNumbers *:has(+ .cm-active)::before {
+.use-relative-line-numbers:not(.is-mobile)
+	.cm-lineNumbers
+	*:has(+ .cm-active)::before {
 	content: "1";
 }
 
-.use-relative-line-numbers:not(.is-mobile) .cm-lineNumbers *:has(+ * + .cm-active)::before {
+.use-relative-line-numbers:not(.is-mobile)
+	.cm-lineNumbers
+	*:has(+ * + .cm-active)::before {
 	content: "2";
 }
 
-.use-relative-line-numbers:not(.is-mobile) .cm-lineNumbers *:has(+ * + * + .cm-active)::before {
+.use-relative-line-numbers:not(.is-mobile)
+	.cm-lineNumbers
+	*:has(+ * + * + .cm-active)::before {
 	content: "3";
 }
 
-.use-relative-line-numbers:not(.is-mobile) .cm-lineNumbers *:has(+ * + * + * + .cm-active)::before {
+.use-relative-line-numbers:not(.is-mobile)
+	.cm-lineNumbers
+	*:has(+ * + * + * + .cm-active)::before {
 	content: "4";
 }
 
-.use-relative-line-numbers:not(.is-mobile) .cm-lineNumbers *:has(+ * + * + * + * + .cm-active)::before {
+.use-relative-line-numbers:not(.is-mobile)
+	.cm-lineNumbers
+	*:has(+ * + * + * + * + .cm-active)::before {
 	content: "5";
 }
 
-.use-relative-line-numbers:not(.is-mobile) .cm-lineNumbers *:has(+ * + * + * + * + * + .cm-active)::before {
+.use-relative-line-numbers:not(.is-mobile)
+	.cm-lineNumbers
+	*:has(+ * + * + * + * + * + .cm-active)::before {
 	content: "6";
 }
 
-.use-relative-line-numbers:not(.is-mobile) .cm-lineNumbers *:has(+ * + * + * + * + * + * + .cm-active)::before {
+.use-relative-line-numbers:not(.is-mobile)
+	.cm-lineNumbers
+	*:has(+ * + * + * + * + * + * + .cm-active)::before {
 	content: "7";
 }
 
-.use-relative-line-numbers:not(.is-mobile) .cm-lineNumbers *:has(+ * + * + * + * + * + * + * + .cm-active)::before {
+.use-relative-line-numbers:not(.is-mobile)
+	.cm-lineNumbers
+	*:has(+ * + * + * + * + * + * + * + .cm-active)::before {
 	content: "8";
 }
 
-.use-relative-line-numbers:not(.is-mobile) .cm-lineNumbers *:has(+ * + * + * + * + * + * + * + * + .cm-active)::before {
+.use-relative-line-numbers:not(.is-mobile)
+	.cm-lineNumbers
+	*:has(+ * + * + * + * + * + * + * + * + .cm-active)::before {
 	content: "9";
 }
 
 /* numbers after */
-.use-relative-line-numbers:not(.is-mobile) .cm-lineNumbers .cm-active+*::before {
+.use-relative-line-numbers:not(.is-mobile)
+	.cm-lineNumbers
+	.cm-active
+	+ *::before {
 	content: "1";
 }
 
-.use-relative-line-numbers:not(.is-mobile) .cm-lineNumbers .cm-active+*+*::before {
+.use-relative-line-numbers:not(.is-mobile)
+	.cm-lineNumbers
+	.cm-active
+	+ *
+	+ *::before {
 	content: "2";
 }
 
-.use-relative-line-numbers:not(.is-mobile) .cm-lineNumbers .cm-active+*+*+*::before {
+.use-relative-line-numbers:not(.is-mobile)
+	.cm-lineNumbers
+	.cm-active
+	+ *
+	+ *
+	+ *::before {
 	content: "3";
 }
 
-.use-relative-line-numbers:not(.is-mobile) .cm-lineNumbers .cm-active+*+*+*+*::before {
+.use-relative-line-numbers:not(.is-mobile)
+	.cm-lineNumbers
+	.cm-active
+	+ *
+	+ *
+	+ *
+	+ *::before {
 	content: "4";
 }
 
-.use-relative-line-numbers:not(.is-mobile) .cm-lineNumbers .cm-active+*+*+*+*+*::before {
+.use-relative-line-numbers:not(.is-mobile)
+	.cm-lineNumbers
+	.cm-active
+	+ *
+	+ *
+	+ *
+	+ *
+	+ *::before {
 	content: "5";
 }
 
-.use-relative-line-numbers:not(.is-mobile) .cm-lineNumbers .cm-active+*+*+*+*+*+*::before {
+.use-relative-line-numbers:not(.is-mobile)
+	.cm-lineNumbers
+	.cm-active
+	+ *
+	+ *
+	+ *
+	+ *
+	+ *
+	+ *::before {
 	content: "6";
 }
 
-.use-relative-line-numbers:not(.is-mobile) .cm-lineNumbers .cm-active+*+*+*+*+*+*+*::before {
+.use-relative-line-numbers:not(.is-mobile)
+	.cm-lineNumbers
+	.cm-active
+	+ *
+	+ *
+	+ *
+	+ *
+	+ *
+	+ *
+	+ *::before {
 	content: "7";
 }
 
-.use-relative-line-numbers:not(.is-mobile) .cm-lineNumbers .cm-active+*+*+*+*+*+*+*+*::before {
+.use-relative-line-numbers:not(.is-mobile)
+	.cm-lineNumbers
+	.cm-active
+	+ *
+	+ *
+	+ *
+	+ *
+	+ *
+	+ *
+	+ *
+	+ *::before {
 	content: "8";
 }
 
-.use-relative-line-numbers:not(.is-mobile) .cm-lineNumbers .cm-active+*+*+*+*+*+*+*+*+*::before {
+.use-relative-line-numbers:not(.is-mobile)
+	.cm-lineNumbers
+	.cm-active
+	+ *
+	+ *
+	+ *
+	+ *
+	+ *
+	+ *
+	+ *
+	+ *
+	+ *::before {
 	content: "9";
 }
 
@@ -191,8 +273,11 @@
 }
 
 /* ignoring tooltips in settings, since they are relevant there, e.g. for sliders */
-.no-mouse-hovers div:not(.modal-container)+.tooltip,
-.no-mouse-hovers .is-live-preview .cm-embed-block:not(.cm-table-widget):hover .edit-block-button {
+.no-mouse-hovers div:not(.modal-container) + .tooltip,
+.no-mouse-hovers
+	.is-live-preview
+	.cm-embed-block:not(.cm-table-widget):hover
+	.edit-block-button {
 	display: none;
 }
 
@@ -201,9 +286,9 @@
 ──────────────────────────────────────────────────── */
 
 /* the ":" or "/" enlarged */
-.cm-vim-panel>div>div>span:first-child {
+.cm-vim-panel > div > div > span:first-child {
 	/* stylelint-disable-next-line declaration-no-important */
-	font-family: Inter, sans-serif !important;
+	font-family: inter, sans-serif !important;
 	font-weight: 600;
 	font-size: 1.4rem;
 }

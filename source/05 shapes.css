@@ -1,4 +1,3 @@
-
 /* --radius-xs is defined by this theme */
 body:not(.angular-shapes) {
 	--radius-xs: 2px;

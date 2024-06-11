@@ -1,10 +1,11 @@
-
 .style-settings-export {
 	margin-right: 0;
 }
 
 /* the "download settings" button is not needed for *every single* section */
-.style-settings-container .setting-item-heading:not([data-level="0"]) .extra-setting-button:last-child {
+.style-settings-container
+	.setting-item-heading:not([data-level="0"])
+	.extra-setting-button:last-child {
 	display: none;
 }
 
@@ -43,19 +44,24 @@ body .style-settings-heading[data-level="0"] {
 	margin-bottom: 16px;
 }
 
-body .style-settings-heading[data-level="0"] .setting-item-name.setting-item-name.setting-item-name.setting-item-name {
+body
+	.style-settings-heading[data-level="0"]
+	.setting-item-name.setting-item-name.setting-item-name.setting-item-name {
 	font-family: var(--font-heading-theme);
 	font-size: var(--h2-size);
 	letter-spacing: var(--heading-letter-spacing);
 }
 
 /* settings tab / general */
-.style-settings-heading[data-level="2"]+.style-settings-container,
+.style-settings-heading[data-level="2"] + .style-settings-container,
 .style-settings-heading[data-level="2"][data-level="2"] {
 	margin-left: 20px;
 }
 
-.style-settings-heading+.style-settings-container .style-settings-heading[data-level="2"] .setting-item-name {
+.style-settings-heading
+	+ .style-settings-container
+	.style-settings-heading[data-level="2"]
+	.setting-item-name {
 	font-size: 1rem;
 	letter-spacing: 0;
 }
@@ -64,7 +70,8 @@ body .style-settings-heading[data-level="0"] .setting-item-name.setting-item-nam
 	margin-left: 10px;
 }
 
-.style-settings-heading[data-level="0"] .setting-item-name.setting-item-name.setting-item-name.setting-item-name {
+.style-settings-heading[data-level="0"]
+	.setting-item-name.setting-item-name.setting-item-name.setting-item-name {
 	margin-bottom: 4px;
 	font-size: 1.1em;
 }
@@ -77,7 +84,10 @@ body .style-settings-heading[data-level="0"] .setting-item-name.setting-item-nam
 	line-height: 1.3em;
 }
 
-.style-settings-container .setting-item:not(.setting-item-heading) .setting-item-name+.setting-item-description {
+.style-settings-container
+	.setting-item:not(.setting-item-heading)
+	.setting-item-name
+	+ .setting-item-description {
 	margin-top: 4px;
 	margin-bottom: 0;
 }
@@ -94,7 +104,9 @@ body .style-settings-heading[data-level="0"] .setting-item-name.setting-item-nam
 /** Style Settings: As Tab
 ──────────────────────────────────────────────────── */
 
-.workspace-leaf-content[data-type="style-settings"] .view-content .setting-item:first-child {
+.workspace-leaf-content[data-type="style-settings"]
+	.view-content
+	.setting-item:first-child {
 	/* avoid collision with three dots button */
 	padding-top: 12px;
 }
@@ -104,7 +116,10 @@ body .style-settings-heading[data-level="0"] .setting-item-name.setting-item-nam
 }
 
 /* FIX for https://github.com/mgmeyers/obsidian-style-settings/issues/104 */
-body .view-content .style-settings-container .setting-item:not(.setting-item-heading) {
+body
+	.view-content
+	.style-settings-container
+	.setting-item:not(.setting-item-heading) {
 	flex-direction: row;
 }
 
@@ -113,7 +128,13 @@ body .view-content .style-settings-container .setting-item:not(.setting-item-hea
 ──────────────────────────────────────────────────── */
 
 /* hide background hue sliders when using macOS look */
-.mac-os-native .setting-item:is([data-id="bg-hue-light"], [data-id="bg-hue-dark"], [data-id="longform-bg-hue-dark"], [data-id="longform-bg-hue-light"]) {
+.mac-os-native
+	.setting-item:is(
+		[data-id="bg-hue-light"],
+		[data-id="bg-hue-dark"],
+		[data-id="longform-bg-hue-dark"],
+		[data-id="longform-bg-hue-light"]
+	) {
 	display: none;
 }
 
@@ -125,7 +146,8 @@ body .view-content .style-settings-container .setting-item:not(.setting-item-hea
 	display: none;
 }
 
-body .setting-item.setting-item.setting-item.setting-item[data-id="author-info"] {
+body
+	.setting-item.setting-item.setting-item.setting-item[data-id="author-info"] {
 	margin-top: 40px;
 }
 
@@ -142,7 +164,8 @@ body .setting-item.setting-item.setting-item.setting-item[data-id="author-info"]
 	padding-left: 16px;
 }
 
-.style-settings-info-text .setting-item-description.setting-item-description.setting-item-description.setting-item-description {
+.style-settings-info-text
+	.setting-item-description.setting-item-description.setting-item-description.setting-item-description {
 	padding-top: 0;
 	margin-top: 0;
 }
@@ -159,7 +182,8 @@ body .setting-item.setting-item.setting-item.setting-item[data-id="author-info"]
 	margin-bottom: 8px;
 }
 
-.workspace-leaf-content[data-type="style-settings"] .style-settings-info-text.setting-item.setting-item {
+.workspace-leaf-content[data-type="style-settings"]
+	.style-settings-info-text.setting-item.setting-item {
 	background-color: var(--bg4);
 }
 
@@ -172,34 +196,60 @@ body .setting-item.setting-item.setting-item.setting-item[data-id="author-info"]
 	--demo-box-size: var(--icon-l);
 	--hue-slider-sat: 70%;
 	--hue-slider-br: 60%;
-	--hue-scale: linear-gradient(to right,
-			hsl(0 var(--hue-slider-sat) var(--hue-slider-br)),
-			hsl(30 var(--hue-slider-sat) var(--hue-slider-br)),
-			hsl(60 var(--hue-slider-sat) var(--hue-slider-br)),
-			hsl(90 var(--hue-slider-sat) var(--hue-slider-br)),
-			hsl(120 var(--hue-slider-sat) var(--hue-slider-br)),
-			hsl(150 var(--hue-slider-sat) var(--hue-slider-br)),
-			hsl(180 var(--hue-slider-sat) var(--hue-slider-br)),
-			hsl(210 var(--hue-slider-sat) var(--hue-slider-br)),
-			hsl(240 var(--hue-slider-sat) var(--hue-slider-br)),
-			hsl(270 var(--hue-slider-sat) var(--hue-slider-br)),
-			hsl(300 var(--hue-slider-sat) var(--hue-slider-br)),
-			hsl(330 var(--hue-slider-sat) var(--hue-slider-br)),
-			hsl(360 var(--hue-slider-sat) var(--hue-slider-br)));
+	--hue-scale: linear-gradient(
+		to right,
+		hsl(0 var(--hue-slider-sat) var(--hue-slider-br)),
+		hsl(30 var(--hue-slider-sat) var(--hue-slider-br)),
+		hsl(60 var(--hue-slider-sat) var(--hue-slider-br)),
+		hsl(90 var(--hue-slider-sat) var(--hue-slider-br)),
+		hsl(120 var(--hue-slider-sat) var(--hue-slider-br)),
+		hsl(150 var(--hue-slider-sat) var(--hue-slider-br)),
+		hsl(180 var(--hue-slider-sat) var(--hue-slider-br)),
+		hsl(210 var(--hue-slider-sat) var(--hue-slider-br)),
+		hsl(240 var(--hue-slider-sat) var(--hue-slider-br)),
+		hsl(270 var(--hue-slider-sat) var(--hue-slider-br)),
+		hsl(300 var(--hue-slider-sat) var(--hue-slider-br)),
+		hsl(330 var(--hue-slider-sat) var(--hue-slider-br)),
+		hsl(360 var(--hue-slider-sat) var(--hue-slider-br))
+	);
 }
 
-.style-settings-container .setting-item:is([data-id="highlight-hue-1"], [data-id^="bg-hue"], [data-id^="longform-bg-hue"]) input.slider {
+.style-settings-container
+	.setting-item:is(
+		[data-id="highlight-hue-1"],
+		[data-id^="bg-hue"],
+		[data-id^="longform-bg-hue"]
+	)
+	input.slider {
 	height: 0.8em;
 	background: var(--hue-scale);
 	border-radius: var(--radius-xs);
 }
 
-.style-settings-container .setting-item:is([data-id="highlight-hue-1"], [data-id^="bg-hue"], [data-id^="longform-bg-hue"]) input.slider::after,
-.style-settings-container .setting-item:is([data-id="highlight-hue-1"], [data-id^="bg-hue"], [data-id^="longform-bg-hue"]) input.slider::before {
+.style-settings-container
+	.setting-item:is(
+		[data-id="highlight-hue-1"],
+		[data-id^="bg-hue"],
+		[data-id^="longform-bg-hue"]
+	)
+	input.slider::after,
+.style-settings-container
+	.setting-item:is(
+		[data-id="highlight-hue-1"],
+		[data-id^="bg-hue"],
+		[data-id^="longform-bg-hue"]
+	)
+	input.slider::before {
 	display: none;
 }
 
-.style-settings-container .setting-item:is([data-id="highlight-hue-1"], [data-id^="bg-hue"], [data-id^="longform-bg-hue"]) input.slider::-webkit-slider-thumb {
+.style-settings-container
+	.setting-item:is(
+		[data-id="highlight-hue-1"],
+		[data-id^="bg-hue"],
+		[data-id^="longform-bg-hue"]
+	)
+	input.slider::-webkit-slider-thumb {
 	position: relative;
 	top: -0.7em;
 	width: 0.4em;
@@ -209,7 +259,9 @@ body .setting-item.setting-item.setting-item.setting-item[data-id="author-info"]
 }
 
 /* DEMO COLOR BOX */
-.style-settings-container .setting-item[data-id="highlight-hue-1"] .setting-item-control::before {
+.style-settings-container
+	.setting-item[data-id="highlight-hue-1"]
+	.setting-item-control::before {
 	content: " ";
 	position: relative;
 	left: -3em;
@@ -223,4 +275,3 @@ body .setting-item.setting-item.setting-item.setting-item[data-id="author-info"]
 	border-radius: var(--radius-s);
 	background-color: hsl(var(--highlight-hue-1) var(--highlight-sla-values));
 }
-

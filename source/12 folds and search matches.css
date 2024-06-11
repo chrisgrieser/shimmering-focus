@@ -4,16 +4,16 @@
 	background: none;
 }
 
-body .markdown-rendered .search-highlight>div,
+body .markdown-rendered .search-highlight > div,
 .cm-s-obsidian span.obsidian-search-match-highlight {
 	box-shadow: 0 0 0 2px var(--search-match-color);
 }
 
-body .markdown-rendered .search-highlight>div {
+body .markdown-rendered .search-highlight > div {
 	opacity: 0.9;
 }
 
-body .markdown-rendered .search-highlight>div.is-active {
+body .markdown-rendered .search-highlight > div.is-active {
 	box-shadow: 0 0 0 3px var(--hover-accent);
 }
 
@@ -21,27 +21,32 @@ body .markdown-rendered .search-highlight>div.is-active {
 
 /* emphasized folded lines */
 .folded-line-emphasis .markdown-preview-view .is-collapsed:not(.callout-fold),
-.folded-line-emphasis .cm-line:has(.cm-fold-indicator.is-collapsed) {
+.folded-line-emphasis .cm-line:has( .cm-fold-indicator.is-collapsed) {
 	background-color: var(--bg3);
 	border-radius: var(--radius-s);
 }
 
-.folded-line-emphasis .cm-line:has(.cm-fold-indicator.is-collapsed) .cm-foldPlaceholder {
+.folded-line-emphasis
+	.cm-line:has( .cm-fold-indicator.is-collapsed)
+	.cm-foldPlaceholder {
 	display: none;
 }
 
-:is(.style-settings-collapse-indicator, .collapse-icon)>.svg-icon.svg-icon.svg-icon.svg-icon {
+:is(.style-settings-collapse-indicator, .collapse-icon)
+	> .svg-icon.svg-icon.svg-icon.svg-icon {
 	width: 0.75em;
 	height: 0.75em;
 	margin-left: -0.35em;
 	stroke-width: 5px;
 }
 
-:is(.markdown-preview-view, .cm-line:not(.cm-active)) .collapse-icon>.svg-icon.svg-icon,
-body .cm-s-obsidian .is-collapsed~.cm-formatting-list {
+:is(.markdown-preview-view, .cm-line:not(.cm-active))
+	.collapse-icon
+	> .svg-icon.svg-icon,
+body .cm-s-obsidian .is-collapsed ~ .cm-formatting-list {
 	color: var(--text-faint);
 }
 
-:is(.style-settings-collapse-indicator, .collapse-icon)>.svg-icon:hover {
+:is(.style-settings-collapse-indicator, .collapse-icon) > .svg-icon:hover {
 	stroke: var(--icon-color-hover);
 }

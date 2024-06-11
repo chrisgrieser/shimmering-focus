@@ -7,7 +7,7 @@ body:not(.show-close-buttons, .is-mobile) .modal-close-button {
 }
 
 .vertical-tab-content {
-	padding: 12px 20px 32px 24px
+	padding: 12px 20px 32px 24px;
 }
 
 .modal.mod-settings {
@@ -49,25 +49,36 @@ body:not(.show-close-buttons, .is-mobile) .modal-close-button {
 }
 
 /* min width not applied to linter fields and to color picker input */
-.mod-settings input:is([type="text"], [type="search"]):not(.linter-custom-regex-replacement-flags, .pcr-result) {
+.mod-settings
+	input:is([type="text"], [type="search"]):not(
+		.linter-custom-regex-replacement-flags,
+		.pcr-result
+	) {
 	min-width: 250px;
 	background-color: var(--bg1);
 }
 
 /* thicker "community plugins", "hotkey" & "appearance" */
 /* via non-last-child b/c the settings search plugin adds a group in front */
-.vertical-tab-header-group:nth-last-child(3) .vertical-tab-header-group-items .vertical-tab-nav-item:is(:nth-child(4), :nth-child(5), :last-child) {
+.vertical-tab-header-group:nth-last-child(3)
+	.vertical-tab-header-group-items
+	.vertical-tab-nav-item:is(:nth-child(4), :nth-child(5), :last-child) {
 	font-weight: 900;
 }
 
-.theme-dark .vertical-tab-header-group:nth-last-child(3) .vertical-tab-header-group-items .vertical-tab-nav-item:is(:nth-child(4), :nth-child(5), :last-child) {
+.theme-dark
+	.vertical-tab-header-group:nth-last-child(3)
+	.vertical-tab-header-group-items
+	.vertical-tab-nav-item:is(:nth-child(4), :nth-child(5), :last-child) {
 	text-shadow: var(--readability-text-shadow-dark);
 }
 
 /* ───────────────────────────────────────────────── */
 /** Individual Setting Pages
 ──────────────────────────────────────────────────── */
-.installed-plugins-container .setting-item-description div:nth-child(2)::first-letter {
+.installed-plugins-container
+	.setting-item-description
+	div:nth-child(2)::first-letter {
 	text-transform: lowercase;
 }
 
@@ -75,17 +86,17 @@ body:not(.show-close-buttons, .is-mobile) .modal-close-button {
 	font-style: italic;
 }
 
-.installed-plugins-container .setting-item-description>div:first-child {
+.installed-plugins-container .setting-item-description > div:first-child {
 	margin-top: -0.1em;
 	margin-bottom: 2px;
 }
 
-.installed-plugins-container .setting-item-description>div:nth-child(2) {
+.installed-plugins-container .setting-item-description > div:nth-child(2) {
 	margin-top: -17.5px;
 	margin-left: 100px;
 }
 
-.plugin-list-plugins>.setting-item:first-child {
+.plugin-list-plugins > .setting-item:first-child {
 	padding-bottom: 32px;
 }
 
@@ -144,7 +155,8 @@ body .vertical-tab-content {
 	border-radius: var(--radius-s) var(--radius-s) 0 0;
 }
 
-.setting-item-heading:not(:first-child, .style-settings-heading) .setting-item-name {
+.setting-item-heading:not(:first-child, .style-settings-heading)
+	.setting-item-name {
 	margin-top: 12px;
 }
 
@@ -165,7 +177,8 @@ body .vertical-tab-content {
 	margin-bottom: 24px;
 }
 
-.modal.mod-settings :is(h3, h4, h5, h6, h1:not(:first-child), h2:not(:first-child)) {
+.modal.mod-settings
+	:is(h3, h4, h5, h6, h1:not(:first-child), h2:not(:first-child)) {
 	margin-top: 12px;
 	margin-bottom: 4px;
 	letter-spacing: calc(var(--heading-letter-spacing) * 0.5);
@@ -180,16 +193,31 @@ body .vertical-tab-content {
 /** Remove Color Picker from Settings
 ──────────────────────────────────────────────────── */
 
-.mod-settings .vertical-tab-content>.setting-item:nth-child(2)>.setting-item-control>.extra-setting-button+input[type="color"] {
+.mod-settings
+	.vertical-tab-content
+	> .setting-item:nth-child(2)
+	> .setting-item-control
+	> .extra-setting-button
+	+ input[type="color"] {
 	width: 350px;
 	visibility: hidden;
 }
 
-.mod-settings .vertical-tab-content>.setting-item:nth-child(2)>.setting-item-control>.extra-setting-button>.lucide-rotate-ccw {
+.mod-settings
+	.vertical-tab-content
+	> .setting-item:nth-child(2)
+	> .setting-item-control
+	> .extra-setting-button
+	> .lucide-rotate-ccw {
 	display: none;
 }
 
-.mod-settings .vertical-tab-content>.setting-item:nth-child(2)>.setting-item-control>.extra-setting-button+input[type="color"]::before {
+.mod-settings
+	.vertical-tab-content
+	> .setting-item:nth-child(2)
+	> .setting-item-control
+	> .extra-setting-button
+	+ input[type="color"]::before {
 	content: "The accent color is overridden by the theme. Use the Style Settings Plugin to customize theme colors.";
 	position: relative;
 	top: 12px;
@@ -260,7 +288,9 @@ body .vertical-tab-content {
 	padding: 0;
 }
 
-:is(.mod-community-theme, .mod-community-plugin) .modal-setting-nav-bar .clickable-icon {
+:is(.mod-community-theme, .mod-community-plugin)
+	.modal-setting-nav-bar
+	.clickable-icon {
 	position: sticky;
 	height: 30px;
 }

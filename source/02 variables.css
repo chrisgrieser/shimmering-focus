@@ -178,8 +178,6 @@ body {
 	/* needs to be fix at 1.3, otherwise glitchy when changing table cells */
 	--table-line-height: 1.3;
 
-
-
 	/* Blockquote */
 	--blockquote-border-thickness: 8px;
 	--blockquote-border-color: var(--bg5);

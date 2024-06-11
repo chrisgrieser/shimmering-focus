@@ -32,12 +32,16 @@ body .markdown-rendered tbody tr:nth-child(odd):hover {
 }
 
 /* automatically turn off readable line length when there is a table */
-.unrestricted-line-length-tables:not(.is-mobile) :is(.markdown-source-view, .markdown-preview-view):has(table, .HyperMD-table-2) {
+.unrestricted-line-length-tables:not(.is-mobile)
+	:is(.markdown-source-view, .markdown-preview-view):has(
+		table,
+		.HyperMD-table-2
+	) {
 	--file-line-width: 100%;
 }
 
 /* Obsidian 1.5: Active Table Cells (requires Obsidian installer 1.1.9) */
-body.highlight-active-cell .table-cell-wrapper:has(.cm-s-obsidian) {
+body.highlight-active-cell .table-cell-wrapper:has( .cm-s-obsidian) {
 	outline: 2.5px solid var(--color-accent);
 }
 
@@ -117,7 +121,7 @@ body .HyperMD-footnote.cm-line.cm-line,
 }
 
 /* separator line above the first footnote */
-.cm-line:not(.HyperMD-footnote)+.HyperMD-footnote.HyperMD-footnote,
+.cm-line:not(.HyperMD-footnote) + .HyperMD-footnote.HyperMD-footnote,
 .footnotes hr {
 	padding-top: 12px;
 	border-top: var(--basic-border);
@@ -140,7 +144,7 @@ body .HyperMD-footnote.cm-line.cm-line,
 
 .footnote-backref {
 	margin-left: 2px;
-	font-family: Inter, sans-serif;
+	font-family: inter, sans-serif;
 	font-size: 90%;
 	color: var(--text-gray);
 	text-decoration: none;
@@ -163,7 +167,8 @@ u,
 }
 
 .cm-hmd-internal-link .cm-underline.cm-underline,
-.markdown-preview-view .internal-link:not(.multi-select-pill, .metadata-link-inner) {
+.markdown-preview-view
+	.internal-link:not(.multi-select-pill, .metadata-link-inner) {
 	text-decoration: underline double 1.2px;
 }
 
@@ -182,20 +187,28 @@ body:not(.show-urls) .cm-line:not(.cm-active) .cm-string.cm-url,
 }
 
 /* FIX link color on hover for in some cases not applied correctly */
-.markdown-source-view.mod-cm6 :is(.cm-link-alias, .cm-hmd-internal-link) .cm-underline:hover {
+.markdown-source-view.mod-cm6
+	:is(.cm-link-alias, .cm-hmd-internal-link)
+	.cm-underline:hover {
 	color: var(--link-external-color-hover);
 }
 
 /* ───────────────────────────────────────────────── */
 /** Fold external URLs (Source Mode)
 ──────────────────────────────────────────────────── */
-body:not(.show-urls) .cm-s-obsidian:not(.is-live-preview) .cm-line:not(.cm-active) .cm-string.cm-url:not(.cm-formatting) {
+body:not(.show-urls)
+	.cm-s-obsidian:not(.is-live-preview)
+	.cm-line:not(.cm-active)
+	.cm-string.cm-url:not(.cm-formatting) {
 	font-size: 0;
 	letter-spacing: 0;
 	/* letter spacing causes some gaps even with font-size 0 */
 }
 
-body:not(.show-urls) .cm-s-obsidian:not(.is-live-preview) .cm-line:not(.cm-active) .cm-string.cm-url:not(.cm-formatting)::after {
+body:not(.show-urls)
+	.cm-s-obsidian:not(.is-live-preview)
+	.cm-line:not(.cm-active)
+	.cm-string.cm-url:not(.cm-formatting)::after {
 	position: relative;
 	top: 2px;
 	font-family: var(--icon-font);
@@ -204,8 +217,14 @@ body:not(.show-urls) .cm-s-obsidian:not(.is-live-preview) .cm-line:not(.cm-activ
 }
 
 /* so quickly scrolling through a list of links does not expand the URLs */
-body:not(.show-urls) .cm-s-obsidian:not(.is-live-preview) .cm-line.cm-active .cm-string.cm-url:not(.cm-formatting)::after,
-body:not(.show-urls) .cm-s-obsidian:not(.is-live-preview) .cm-line.cm-active .cm-string.cm-url:not(.cm-formatting) {
+body:not(.show-urls)
+	.cm-s-obsidian:not(.is-live-preview)
+	.cm-line.cm-active
+	.cm-string.cm-url:not(.cm-formatting)::after,
+body:not(.show-urls)
+	.cm-s-obsidian:not(.is-live-preview)
+	.cm-line.cm-active
+	.cm-string.cm-url:not(.cm-formatting) {
 	transition-delay: var(--transition-delay-passing-over-protection);
 }
 
@@ -236,7 +255,7 @@ body:not(.show-urls) .cm-s-obsidian:not(.is-live-preview) .cm-line.cm-active .cm
 /* "*:not(pre) > code" targets inline code
 (i.e. code that is not in a pre (= block) ) */
 .is-live-preview code,
-body .markdown-preview-view *:not(pre)>code,
+body .markdown-preview-view *:not(pre) > code,
 .cm-inline-code.cm-inline-code.cm-inline-code.cm-inline-code.cm-inline-code.cm-inline-code {
 	color: var(--inline-code-color);
 	background-color: var(--bg2);
@@ -244,18 +263,18 @@ body .markdown-preview-view *:not(pre)>code,
 }
 
 .is-live-preview code,
-.markdown-preview-view *:not(pre)>code {
+.markdown-preview-view *:not(pre) > code {
 	border-radius: var(--slight-code-roundish);
 }
 
 .is-live-preview code,
 .markdown-source-view .cm-line .cm-inline-code:not(.cm-formatting-code),
-.markdown-preview-view *:not(pre)>code {
+.markdown-preview-view *:not(pre) > code {
 	background-color: var(--bg2);
 }
 
 /* interaction with blockquotes */
-.markdown-preview-view blockquote>*:not(pre)>code,
+.markdown-preview-view blockquote > *:not(pre) > code,
 .cm-quote.cm-inline-code.cm-inline-code.cm-inline-code.cm-inline-code.cm-inline-code {
 	background-color: var(--bg3);
 }
@@ -267,7 +286,7 @@ body .markdown-preview-view *:not(pre)>code,
 }
 
 /* inline code surrounded by backticks */
-.cm-formatting-code+.cm-inline-code:not(.cm-formatting-code) {
+.cm-formatting-code + .cm-inline-code:not(.cm-formatting-code) {
 	border-radius: 0;
 }
 
@@ -277,7 +296,7 @@ body .markdown-preview-view *:not(pre)>code,
 }
 
 /* closing backtick */
-.cm-inline-code:not(.cm-formatting-code)+.cm-formatting-code {
+.cm-inline-code:not(.cm-formatting-code) + .cm-formatting-code {
 	border-radius: 0 var(--slight-code-roundish) var(--slight-code-roundish) 0;
 }
 
@@ -290,7 +309,8 @@ body .markdown-preview-view *:not(pre)>code,
 /** Code Blocks
 ──────────────────────────────────────────────────── */
 /* Code blocks in Edit Mode */
-:is(.HyperMD-codeblock-end, .HyperMD-codeblock-begin) .cm-formatting-code-block {
+:is(.HyperMD-codeblock-end, .HyperMD-codeblock-begin)
+	.cm-formatting-code-block {
 	color: var(--text-muted);
 }
 
@@ -390,11 +410,19 @@ body:not(.no-codeblock-line-numbers) .HyperMD-codeblock-begin {
 	counter-reset: codeblock-line-numbers;
 }
 
-body:not(.no-codeblock-line-numbers) .HyperMD-codeblock.cm-line:not(.HyperMD-codeblock-begin, .HyperMD-codeblock-end) {
+body:not(.no-codeblock-line-numbers)
+	.HyperMD-codeblock.cm-line:not(
+		.HyperMD-codeblock-begin,
+		.HyperMD-codeblock-end
+	) {
 	padding-left: 2.8em;
 }
 
-body:not(.no-codeblock-line-numbers) .HyperMD-codeblock:not(.HyperMD-codeblock-begin, .HyperMD-codeblock-end)::before {
+body:not(.no-codeblock-line-numbers)
+	.HyperMD-codeblock:not(
+		.HyperMD-codeblock-begin,
+		.HyperMD-codeblock-end
+	)::before {
 	position: absolute;
 	left: 0;
 	width: 1.7em;
@@ -412,13 +440,18 @@ body:not(.no-codeblock-line-numbers) .HyperMD-codeblock:not(.HyperMD-codeblock-b
 }
 
 /* code block end */
-body:not(.no-codeblock-line-numbers) .HyperMD-codeblock-end .cm-formatting-code-block {
+body:not(.no-codeblock-line-numbers)
+	.HyperMD-codeblock-end
+	.cm-formatting-code-block {
 	padding: 2px 3.5px;
 	margin-left: -4px;
 	border-bottom-left-radius: var(--codeblock-roundness);
 }
 
-body:not(.no-codeblock-line-numbers) .is-live-preview .HyperMD-codeblock-end span:nth-child(2)::before {
+body:not(.no-codeblock-line-numbers)
+	.is-live-preview
+	.HyperMD-codeblock-end
+	span:nth-child(2)::before {
 	padding: 2px 0.85em;
 	margin-left: -4px;
 	content: " ";
@@ -426,7 +459,9 @@ body:not(.no-codeblock-line-numbers) .is-live-preview .HyperMD-codeblock-end spa
 	border-bottom-left-radius: var(--radius-s);
 }
 
-body:not(.no-codeblock-line-numbers) .HyperMD-codeblock-end .cm-formatting-code-block:first-child {
+body:not(.no-codeblock-line-numbers)
+	.HyperMD-codeblock-end
+	.cm-formatting-code-block:first-child {
 	/* "first-child" ensures that indented code blocks (e.g. in lists) do not look off */
 	background-color: var(--bg2);
 }
@@ -437,7 +472,9 @@ body:not(.no-codeblock-line-numbers) .HyperMD-codeblock-end .cm-formatting-code-
 	white-space: pre;
 }
 
-.markdown-reading-view .markdown-preview-view pre:not(.frontmatter, [class*="language-"]) {
+.markdown-reading-view
+	.markdown-preview-view
+	pre:not(.frontmatter, [class*="language-"]) {
 	overflow-x: scroll;
 }
 
@@ -501,7 +538,8 @@ body p {
 	color: var(--text-faint);
 }
 
-body:not(.no-alternating-header-colors) :is(.cm-header-1, .cm-header-3, .cm-header-5):not(.cm-formatting-header),
+body:not(.no-alternating-header-colors)
+	:is(.cm-header-1, .cm-header-3, .cm-header-5):not(.cm-formatting-header),
 body:not(.no-alternating-header-colors) .view-content :is(h1, h3, h5) {
 	color: var(--alt-heading-color);
 }
@@ -520,38 +558,61 @@ body:not(.no-lp-heading-level-indicator) .is-live-preview .cm-header::before {
 	color: var(--text-muted);
 }
 
-body:not(.no-lp-heading-level-indicator) .is-live-preview .cm-line:not(.cm-active)>.cm-header-1::before {
+body:not(.no-lp-heading-level-indicator)
+	.is-live-preview
+	.cm-line:not(.cm-active)
+	> .cm-header-1::before {
 	content: "H1";
 }
 
-body:not(.no-lp-heading-level-indicator) .is-live-preview .cm-line:not(.cm-active)>.cm-header-2::before {
+body:not(.no-lp-heading-level-indicator)
+	.is-live-preview
+	.cm-line:not(.cm-active)
+	> .cm-header-2::before {
 	content: "H2";
 }
 
-body:not(.no-lp-heading-level-indicator) .is-live-preview .cm-line:not(.cm-active)>.cm-header-3::before {
+body:not(.no-lp-heading-level-indicator)
+	.is-live-preview
+	.cm-line:not(.cm-active)
+	> .cm-header-3::before {
 	content: "H3";
 }
 
-body:not(.no-lp-heading-level-indicator) .is-live-preview .cm-line:not(.cm-active)>.cm-header-4::before {
+body:not(.no-lp-heading-level-indicator)
+	.is-live-preview
+	.cm-line:not(.cm-active)
+	> .cm-header-4::before {
 	content: "H4";
 }
 
-body:not(.no-lp-heading-level-indicator) .is-live-preview .cm-line:not(.cm-active)>.cm-header-5::before {
+body:not(.no-lp-heading-level-indicator)
+	.is-live-preview
+	.cm-line:not(.cm-active)
+	> .cm-header-5::before {
 	content: "H5";
 }
 
-body:not(.no-lp-heading-level-indicator) .is-live-preview .cm-line:not(.cm-active)>.cm-header-6::before {
+body:not(.no-lp-heading-level-indicator)
+	.is-live-preview
+	.cm-line:not(.cm-active)
+	> .cm-header-6::before {
 	content: "H6";
 }
 
-body:not(.no-lp-heading-level-indicator) .is-live-preview .cm-header~.cm-header::before {
+body:not(.no-lp-heading-level-indicator)
+	.is-live-preview
+	.cm-header
+	~ .cm-header::before {
 	/* FIX only first header element gets the prefix */
 	display: none;
 }
 
 /* Headers with background colors */
 body:not(.no-heading-background) .markdown-source-view .cm-line.HyperMD-header,
-body:not(.no-heading-background) .markdown-preview-view :is(h1, h2, h3, h4, h5, h6) {
+body:not(.no-heading-background)
+	.markdown-preview-view
+	:is(h1, h2, h3, h4, h5, h6) {
 	background-color: var(--bg4);
 	border: var(--thin-border);
 	border-radius: var(--radius-s);
@@ -573,15 +634,24 @@ body:not(.no-heading-background) .markdown-preview-view :is(h1, h2, h3, h4, h5, 
 /** Blockquotes
 ──────────────────────────────────────────────────── */
 
-.markdown-source-view:not(.is-live-preview) .cm-line.HyperMD-quote.HyperMD-quote.HyperMD-quote {
-	border-left: var(--blockquote-border-thickness) solid var(--blockquote-border-color);
+.markdown-source-view:not(.is-live-preview)
+	.cm-line.HyperMD-quote.HyperMD-quote.HyperMD-quote {
+	border-left: var(--blockquote-border-thickness) solid
+		var(--blockquote-border-color);
 }
 
 .cm-hmd-indent-in-quote,
 :is(.markdown-preview-view, .community-modal-readme) blockquote,
-.cm-line.HyperMD-quote .cm-quote:not(.cm-formatting,
-	.cm-url, .cm-link, .cm-hmd-internal-link,
-	.cm-formatting-link, .cm-strong, .cm-em) {
+.cm-line.HyperMD-quote
+	.cm-quote:not(
+		.cm-formatting,
+		.cm-url,
+		.cm-link,
+		.cm-hmd-internal-link,
+		.cm-formatting-link,
+		.cm-strong,
+		.cm-em
+	) {
 	color: var(--text-normal);
 }
 
@@ -602,7 +672,8 @@ body:not(.no-heading-background) .markdown-preview-view :is(h1, h2, h3, h4, h5, 
 }
 
 /* less padding between quote blocks */
-.HyperMD-quote:not(.HyperMD-callout)+.HyperMD-quote.HyperMD-quote.HyperMD-quote {
+.HyperMD-quote:not(.HyperMD-callout)
+	+ .HyperMD-quote.HyperMD-quote.HyperMD-quote {
 	padding-top: 0;
 }
 
@@ -626,13 +697,19 @@ body:not(.no-heading-background) .markdown-preview-view :is(h1, h2, h3, h4, h5, 
 }
 
 /* HACK live-preview: prevent rounded corners with consecutive block quotes */
-body:not(.angular-shapes) .is-live-preview .HyperMD-quote+.HyperMD-quote::before {
+body:not(.angular-shapes)
+	.is-live-preview
+	.HyperMD-quote
+	+ .HyperMD-quote::before {
 	margin-top: -0.5em;
 	border-bottom-left-radius: var(--radius-s);
 }
 
 /* HACK source-mode: prevent rounded corners with consecutive block quotes */
-body:not(.angular-shapes) .markdown-source-view:not(.is-live-preview) .HyperMD-quote+.HyperMD-quote::before {
+body:not(.angular-shapes)
+	.markdown-source-view:not(.is-live-preview)
+	.HyperMD-quote
+	+ .HyperMD-quote::before {
 	position: absolute;
 	width: var(--blockquote-border-thickness);
 	height: 1.5em;
@@ -643,11 +720,13 @@ body:not(.angular-shapes) .markdown-source-view:not(.is-live-preview) .HyperMD-q
 	background-color: var(--blockquote-border-color);
 }
 
-.markdown-source-view:not(.is-live-preview) .HyperMD-quote+.HyperMD-quote.HyperMD-quote-lazy::before {
+.markdown-source-view:not(.is-live-preview)
+	.HyperMD-quote
+	+ .HyperMD-quote.HyperMD-quote-lazy::before {
 	margin-left: calc(-1 * (var(--blockquote-border-thickness) + 10px));
 }
 
-.markdown-source-view .HyperMD-quote+.HyperMD-quote::after {
+.markdown-source-view .HyperMD-quote + .HyperMD-quote::after {
 	position: absolute;
 	top: -8px;
 	right: 0;
@@ -660,7 +739,8 @@ body:not(.angular-shapes) .markdown-source-view:not(.is-live-preview) .HyperMD-q
 }
 
 /* Reading Mode */
-:is(.markdown-preview-view, .community-modal-readme, .is-live-preview) blockquote {
+:is(.markdown-preview-view, .community-modal-readme, .is-live-preview)
+	blockquote {
 	padding: 4px 12px;
 	border-radius: var(--radius-s);
 }
@@ -715,9 +795,9 @@ blockquote code {
 	padding: 2px 8px 3px;
 	letter-spacing: 0.8px;
 	background-color: rgb(var(--callout-color), 15%);
-	border-bottom: var(--callout-border-width) solid
+	border-bottom: var(--callout-border-width)
 		/* stylelint-disable-next-line color-function-notation */
-		rgb(var(--callout-color), var(--callout-border-opacity));
+		solid rgb(var(--callout-color), var(--callout-border-opacity));
 }
 
 .callout-title-inner {
@@ -755,7 +835,7 @@ body .callout-icon .svg-icon {
 	margin-top: 5px;
 }
 
-.callout-content p+p {
+.callout-content p + p {
 	margin-top: 12px;
 }
 
@@ -786,7 +866,20 @@ body .callout-icon .svg-icon {
 ──────────────────────────────────────────────────── */
 /* needs this selector, so it does not affect spaces in the table editor
  * (Obsidian 1.5), which only differs at the level of `.view-content` */
-body:not(.hide-trailing-whitespace) .view-content>.cm-s-obsidian>div>.cm-scroller>.cm-sizer>.cm-contentContainer>.cm-content>.cm-line> :is(.cm-trailing-space-a, .cm-trailing-space-b, .cm-trailing-space-new-line)::after {
+body:not(.hide-trailing-whitespace)
+	.view-content
+	> .cm-s-obsidian
+	> div
+	> .cm-scroller
+	> .cm-sizer
+	> .cm-contentContainer
+	> .cm-content
+	> .cm-line
+	> :is(
+		.cm-trailing-space-a,
+		.cm-trailing-space-b,
+		.cm-trailing-space-new-line
+	)::after {
 	font-size: 1em;
 	font-weight: 600;
 	color: var(--text-faint);
@@ -837,7 +930,9 @@ mark {
 ──────────────────────────────────────────────────── */
 
 /* applies to all []-links (barelinks), partially also to footnotes */
-.cm-hmd-barelink.cm-hmd-barelink.cm-hmd-barelink.cm-hmd-barelink.cm-hmd-barelink:not(.cm-formatting) {
+.cm-hmd-barelink.cm-hmd-barelink.cm-hmd-barelink.cm-hmd-barelink.cm-hmd-barelink:not(
+		.cm-formatting
+	) {
 	color: var(--secondary-accent);
 }
 
@@ -850,8 +945,12 @@ mark {
 ──────────────────────────────────────────────────── */
 /* .workspace-leaf-content so images in modal aren't affected, :not([data-type="image"]) so
  * images as files aren't affected */
-body:not(.is-mobile, .max-image-size-toggle) .workspace-leaf-content:not([data-type="image"]) img:not(:active),
-body:not(.is-mobile, .max-image-size-toggle) .oz-image-widget-cm6>img:not(:active) {
+body:not(.is-mobile, .max-image-size-toggle)
+	.workspace-leaf-content:not([data-type="image"])
+	img:not(:active),
+body:not(.is-mobile, .max-image-size-toggle)
+	.oz-image-widget-cm6
+	> img:not(:active) {
 	max-width: calc(var(--image-size) * 1%);
 	cursor: zoom-in;
 }
@@ -871,7 +970,13 @@ body:not(.is-mobile, .max-image-size-toggle) .oz-image-widget-cm6>img:not(:activ
 
 /* Image Alt as caption
 (except when no explicit alt is provided and urls are the alt text) */
-body:not(.no-image-alttext-caption) .image-embed[alt]:not([alt$=".png"], [alt$=".jpg"], [alt$=".jpeg"], [alt$=".tiff"])::after {
+body:not(.no-image-alttext-caption)
+	.image-embed[alt]:not(
+		[alt$=".png"],
+		[alt$=".jpg"],
+		[alt$=".jpeg"],
+		[alt$=".tiff"]
+	)::after {
 	padding-top: 2px;
 	margin-bottom: 1em;
 	font-family: var(--font-interface);
@@ -894,7 +999,7 @@ body:not(.no-image-alttext-caption) .image-embed::after {
 }
 
 /* center image */
-.markdown-source-view.mod-cm6 .cm-content>img,
+.markdown-source-view.mod-cm6 .cm-content > img,
 .view-content .image-embed img:not(.emoji) {
 	display: block;
 	/* stylelint-disable-next-line declaration-no-important */

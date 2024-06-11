@@ -1,15 +1,21 @@
-
 /* ───────────────────────────────────────────────── */
 /** Active / Inactive Note
 ──────────────────────────────────────────────────── */
-body .mod-root .workspace-tabs:not(.mod-active, :only-of-type) .workspace-leaf-content[data-type="markdown"] {
+body
+	.mod-root
+	.workspace-tabs:not(.mod-active, :only-of-type)
+	.workspace-leaf-content[data-type="markdown"] {
 	opacity: var(--inactive-pane-opacity);
 	transition: var(--anim-duration-slow);
 }
 
 /* if there is more than one pane, highlight the currently focused one */
-.mod-root .workspace-tabs:not(:only-of-type, .mod-stacked).mod-active .workspace-tab-header-container-inner,
-.mod-root .workspace-tabs:not(:only-of-type, .mod-stacked).mod-active .workspace-tab-header-container {
+.mod-root
+	.workspace-tabs:not(:only-of-type, .mod-stacked).mod-active
+	.workspace-tab-header-container-inner,
+.mod-root
+	.workspace-tabs:not(:only-of-type, .mod-stacked).mod-active
+	.workspace-tab-header-container {
 	border-bottom-color: var(--color-accent);
 }
 
@@ -21,7 +27,8 @@ body .mod-root .workspace-tabs:not(.mod-active, :only-of-type) .workspace-leaf-c
 /** Active Block Highlight
 ──────────────────────────────────────────────────── */
 
-body:not(.no-active-line-highlight, .active-line-background) .cm-active:not(.HyperMD-quote, .HyperMD-header, .HyperMD-codeblock)::before {
+body:not(.no-active-line-highlight, .active-line-background)
+	.cm-active:not(.HyperMD-quote, .HyperMD-header, .HyperMD-codeblock)::before {
 	position: absolute;
 	left: -1.125em;
 	height: 100%;
@@ -29,24 +36,37 @@ body:not(.no-active-line-highlight, .active-line-background) .cm-active:not(.Hyp
 	border-left: 3px solid var(--basic-border-color);
 }
 
-.active-line-background .cm-active.cm-line:not(.HyperMD-quote, .HyperMD-codeblock) {
+.active-line-background
+	.cm-active.cm-line:not(.HyperMD-quote, .HyperMD-codeblock) {
 	padding-left: 4px;
 	border-radius: var(--radius-s);
 }
 
-.theme-dark.active-line-background .cm-active.cm-line:not(.HyperMD-quote, .HyperMD-codeblock) {
+.theme-dark.active-line-background
+	.cm-active.cm-line:not(.HyperMD-quote, .HyperMD-codeblock) {
 	background-color: var(--bg4);
 }
 
-.theme-light.active-line-background .cm-active.cm-line:not(.HyperMD-quote, .HyperMD-codeblock) {
+.theme-light.active-line-background
+	.cm-active.cm-line:not(.HyperMD-quote, .HyperMD-codeblock) {
 	background-color: var(--bg3);
 }
 
 .cm-lineNumbers .cm-active.cm-gutterElement,
-body:not(.no-active-line-highlight) .cm-active :is(.cm-formatting-header, .cm-formatting-quote, .cm-formatting-list, .cm-formatting-code-block) {
+body:not(.no-active-line-highlight)
+	.cm-active
+	:is(
+		.cm-formatting-header,
+		.cm-formatting-quote,
+		.cm-formatting-list,
+		.cm-formatting-code-block
+	) {
 	color: var(--active-line-color);
 }
 
-body:not(.no-active-line-highlight) .is-live-preview .cm-active .list-bullet::after {
+body:not(.no-active-line-highlight)
+	.is-live-preview
+	.cm-active
+	.list-bullet::after {
 	background-color: var(--active-line-color);
 }

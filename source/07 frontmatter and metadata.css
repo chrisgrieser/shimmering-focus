@@ -22,7 +22,13 @@
 - second child = colon between key and value in unordered list
 - third child = colon between key and value
 - last child = bracket to close of array brackets, see #194 */
-.cm-line .cm-hmd-frontmatter.cm-meta:is(:first-child, :nth-child(2), :nth-child(3), :last-child),
+.cm-line
+	.cm-hmd-frontmatter.cm-meta:is(
+		:first-child,
+		:nth-child(2),
+		:nth-child(3),
+		:last-child
+	),
 .frontmatter.language-yaml .punctuation {
 	font-weight: 600;
 	color: var(--bold-color);

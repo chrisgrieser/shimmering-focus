@@ -1,5 +1,3 @@
-
-
 /* ───────────────────────────────────────────────── */
 /** Sidebars
 ──────────────────────────────────────────────────── */
@@ -28,30 +26,56 @@ body.mod-windows:not(.show-sidebar-header-buttons) .titlebar {
 	height: 35px;
 }
 
-.is-hidden-frameless.mod-windows:not(.is-grabbing, .is-fullscreen, .show-sidebar-header-buttons) .mod-top .workspace-tab-header-container {
+.is-hidden-frameless.mod-windows:not(
+		.is-grabbing,
+		.is-fullscreen,
+		.show-sidebar-header-buttons
+	)
+	.mod-top
+	.workspace-tab-header-container {
 	-webkit-app-region: no-drag;
 }
 
-body:not(.show-sidebar-header-buttons) :is(.mod-left-split, .mod-right-split) :is(.workspace-tab-header-container, .workspace-tab-header-container *, .workspace-tab-header, .workspace-tab-header svg) {
+body:not(.show-sidebar-header-buttons)
+	:is(.mod-left-split, .mod-right-split)
+	:is(
+		.workspace-tab-header-container,
+		.workspace-tab-header-container *,
+		.workspace-tab-header,
+		.workspace-tab-header svg
+	) {
 	transition: var(--anim-duration-moderate);
 	transition-delay: var(--transition-delay-passing-over-protection);
 	/* so transition of hovering the tab itself does not get delayed */
 	transition-property: opacity, height, background-color;
 }
 
-body:not(.show-sidebar-header-buttons) :is(.mod-left-split, .mod-right-split) .workspace-tabs:not(.mod-top) .workspace-tab-header-container:not(:hover) {
+body:not(.show-sidebar-header-buttons)
+	:is(.mod-left-split, .mod-right-split)
+	.workspace-tabs:not(.mod-top)
+	.workspace-tab-header-container:not(:hover) {
 	height: var(--sidebar-tabs-unhovered-height);
 }
 
-body:not(.show-sidebar-header-buttons) :is(.mod-left-split, .mod-right-split) .workspace-tabs.mod-top .workspace-tab-header-container:not(:hover) .workspace-tab-header-container-inner {
+body:not(.show-sidebar-header-buttons)
+	:is(.mod-left-split, .mod-right-split)
+	.workspace-tabs.mod-top
+	.workspace-tab-header-container:not(:hover)
+	.workspace-tab-header-container-inner {
 	opacity: 0;
 }
 
-body:not(.show-sidebar-header-buttons) :is(.mod-left-split, .mod-right-split) .workspace-tabs:not(.mod-top) .workspace-tab-header-container {
+body:not(.show-sidebar-header-buttons)
+	:is(.mod-left-split, .mod-right-split)
+	.workspace-tabs:not(.mod-top)
+	.workspace-tab-header-container {
 	background-color: var(--bg1);
 }
 
-.theme-light:not(.show-sidebar-header-buttons) :is(.mod-left-split, .mod-right-split) .workspace-tabs:not(.mod-top) .workspace-tab-header-container:not(:hover) {
+.theme-light:not(.show-sidebar-header-buttons)
+	:is(.mod-left-split, .mod-right-split)
+	.workspace-tabs:not(.mod-top)
+	.workspace-tab-header-container:not(:hover) {
 	background-color: var(--bg2);
 }
 
@@ -71,7 +95,10 @@ body:not(.show-sidebar-toggle-buttons) .sidebar-toggle-button {
 }
 
 /* move the tab-list button to the space now free from the "right sidebar toggle" */
-body.mod-macos.is-hidden-frameless:not(.is-popout-window) .workspace .workspace-tabs.mod-top-right-space .workspace-tab-header-container {
+body.mod-macos.is-hidden-frameless:not(.is-popout-window)
+	.workspace
+	.workspace-tabs.mod-top-right-space
+	.workspace-tab-header-container {
 	padding-right: 0;
 }
 
@@ -82,7 +109,9 @@ body.mod-macos.is-hidden-frameless:not(.is-popout-window) .workspace .workspace-
 	border-radius: 0;
 }
 
-:is(.mod-left-split, .mod-right-split) .mod-top .workspace-tab-header-container-inner {
+:is(.mod-left-split, .mod-right-split)
+	.mod-top
+	.workspace-tab-header-container-inner {
 	padding-bottom: 4px;
 	margin-top: 4px;
 }

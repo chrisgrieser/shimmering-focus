@@ -14,11 +14,17 @@
 }
 
 /* adjustments for hidden header bar */
-body:not(.normal-header-bar, .is-mobile) .projects-container .container.primary .right {
+body:not(.normal-header-bar, .is-mobile)
+	.projects-container
+	.container.primary
+	.right {
 	margin-right: 30px;
 }
 
-body:not(.normal-header-bar, .is-mobile) .workspace-leaf-content[data-type="obsidian-projects"] .view-header .view-actions {
+body:not(.normal-header-bar, .is-mobile)
+	.workspace-leaf-content[data-type="obsidian-projects"]
+	.view-header
+	.view-actions {
 	top: 8px;
 }
 
@@ -105,7 +111,8 @@ img.link-favicon.link-favicon {
 	border-radius: unset;
 }
 
-.theme-light .link-favicon:is([data-host^="github.com"], [data-host^="raw.github"]) {
+.theme-light
+	.link-favicon:is([data-host^="github.com"], [data-host^="raw.github"]) {
 	filter: invert(0.2);
 }
 
@@ -169,12 +176,12 @@ body .various-complements__suggestion-item {
 	padding-top: 0;
 }
 
-.various-complements__suggestion-item__internal-link>div>div::before {
+.various-complements__suggestion-item__internal-link > div > div::before {
 	color: var(--text-faint);
 	content: "[[";
 }
 
-.various-complements__suggestion-item__internal-link>div>div::after {
+.various-complements__suggestion-item__internal-link > div > div::after {
 	color: var(--text-faint);
 	content: "]]";
 }
@@ -182,7 +189,7 @@ body .various-complements__suggestion-item {
 /* ───────────────────────────────────────────────── */
 /** Obsidian Git
 ──────────────────────────────────────────────────── */
-.obsidian-git-statusbar-status>div:nth-child(2) {
+.obsidian-git-statusbar-status > div:nth-child(2) {
 	/* stylelint-disable-next-line declaration-no-important */
 	margin-left: 0 !important;
 }
@@ -193,7 +200,7 @@ body .various-complements__suggestion-item {
 	content: "update";
 }
 
-.obsidian-git-statusbar-status>div:first-child>svg {
+.obsidian-git-statusbar-status > div:first-child > svg {
 	display: none;
 }
 
@@ -224,7 +231,10 @@ body .cm-matched-string {
 	padding: 6px 0;
 }
 
-.dynamic-highlights-settings .highlighter-container .highlighter-details .setting-item-info {
+.dynamic-highlights-settings
+	.highlighter-container
+	.highlighter-details
+	.setting-item-info {
 	margin-right: 6px;
 }
 
@@ -249,8 +259,8 @@ body .cm-matched-string {
 /* if `:has` is supported, re-display another quick switcher instructions, since
 * that plugin has its own setting to show them */
 /* https://developer.mozilla.org/en-US/docs/Web/CSS/@supports#testing_for_the_support_of_a_selector */
-@supports selector(:has(.a)) {
-	.prompt-results:has(.another-quick-switcher__item)~.prompt-instructions {
+@supports selector(:has( .a)) {
+	.prompt-results:has( .another-quick-switcher__item) ~ .prompt-instructions {
 		display: flex;
 	}
 }
@@ -294,7 +304,8 @@ body .another-quick-switcher__status__count-input {
 	margin-right: 4px;
 }
 
-.another-quick-switcher__item__description__tag.another-quick-switcher__item__description__tag>svg {
+.another-quick-switcher__item__description__tag.another-quick-switcher__item__description__tag
+	> svg {
 	margin-left: -2px;
 }
 
@@ -310,17 +321,23 @@ body .another-quick-switcher__status__count-input {
 }
 
 /* selected */
-.suggestion-item.is-selected :is(.another-quick-switcher__item__icon,
-	.another-quick-switcher__item__directory,
-	.another-quick-switcher__item__description) {
+.suggestion-item.is-selected
+	:is(
+		.another-quick-switcher__item__icon,
+		.another-quick-switcher__item__directory,
+		.another-quick-switcher__item__description
+	) {
 	color: var(--text-accent);
 	filter: saturate(60%);
 }
 
 /* hovered */
-.suggestion-item:hover :is(.another-quick-switcher__item__icon,
-	.another-quick-switcher__item__directory,
-	.another-quick-switcher__item__description) {
+.suggestion-item:hover
+	:is(
+		.another-quick-switcher__item__icon,
+		.another-quick-switcher__item__directory,
+		.another-quick-switcher__item__description
+	) {
 	color: var(--text-accent-hover);
 	filter: saturate(60%);
 }
@@ -331,12 +348,21 @@ body .another-quick-switcher__status__count-input {
 	opacity: 0.85;
 }
 
-.another-quick-switcher__phantom_item :is(.another-quick-switcher__item__icon, .another-quick-switcher__item__directory),
+.another-quick-switcher__phantom_item
+	:is(
+		.another-quick-switcher__item__icon,
+		.another-quick-switcher__item__directory
+	),
 .suggestion-item:hover .another-quick-switcher__phantom_item {
 	filter: saturate(60%);
 }
 
-.suggestion-item:hover .another-quick-switcher__phantom_item :is(.another-quick-switcher__item__icon, .another-quick-switcher__item__directory),
+.suggestion-item:hover
+	.another-quick-switcher__phantom_item
+	:is(
+		.another-quick-switcher__item__icon,
+		.another-quick-switcher__item__directory
+	),
 .suggestion-item:hover .another-quick-switcher__phantom_item {
 	color: var(--hover-accent);
 	filter: saturate(60%);
@@ -347,7 +373,8 @@ body .another-quick-switcher__status__count-input {
 	display: none;
 }
 
-.another-quick-switcher__starred_item .another-quick-switcher__item__entry::before {
+.another-quick-switcher__starred_item
+	.another-quick-switcher__item__entry::before {
 	padding-right: 5px;
 	content: "★";
 }
@@ -412,7 +439,7 @@ body .another-quick-switcher__item__description {
 	display: none;
 }
 
-.another-quick-switcher__status__count-input+.prompt-input {
+.another-quick-switcher__status__count-input + .prompt-input {
 	width: 99%;
 }
 
@@ -431,11 +458,16 @@ body .another-quick-switcher__item__description {
 	display: none;
 }
 
-.another-quick-switcher__grep__path-input__wrapper+.prompt-results .another-quick-switcher__item__directory {
+.another-quick-switcher__grep__path-input__wrapper
+	+ .prompt-results
+	.another-quick-switcher__item__directory {
 	margin-right: 0;
 }
 
-.another-quick-switcher__grep__path-input__wrapper+.prompt-results .another-quick-switcher__item__directory svg {
+.another-quick-switcher__grep__path-input__wrapper
+	+ .prompt-results
+	.another-quick-switcher__item__directory
+	svg {
 	display: unset;
 }
 
@@ -456,13 +488,14 @@ body .another-quick-switcher__item__description {
 	content: "In: ";
 }
 
-body .another-quick-switcher__grep__path-input.another-quick-switcher__grep__path-input {
+body
+	.another-quick-switcher__grep__path-input.another-quick-switcher__grep__path-input {
 	margin-left: 0;
 	background-color: transparent;
 	border: none;
 }
 
-.another-quick-switcher__grep__path-input__wrapper+.prompt-results {
+.another-quick-switcher__grep__path-input__wrapper + .prompt-results {
 	border-top: var(--basic-border);
 }
 
@@ -471,7 +504,9 @@ body .another-quick-switcher__grep__path-input.another-quick-switcher__grep__pat
 	border-color: var(--basic-border-color);
 }
 
-.another-quick-switcher__grep__path-input__wrapper+.prompt-results .another-quick-switcher__item__descriptions {
+.another-quick-switcher__grep__path-input__wrapper
+	+ .prompt-results
+	.another-quick-switcher__item__descriptions {
 	font-size: var(--font-ui-medium);
 	line-height: calc(var(--line-height-tight) - 0.1);
 }
@@ -486,7 +521,8 @@ body .another-quick-switcher__grep__path-input.another-quick-switcher__grep__pat
 ──────────────────────────────────────────────────── */
 /* inherits alternate row colors from file explorer */
 
-.workspace-leaf-content[data-type="recent-files"] .nav-file-title.nav-file-title.nav-file-title {
+.workspace-leaf-content[data-type="recent-files"]
+	.nav-file-title.nav-file-title.nav-file-title {
 	padding-right: 0;
 	padding-left: 6px;
 }
@@ -521,10 +557,13 @@ body .another-quick-switcher__grep__path-input.another-quick-switcher__grep__pat
 	text-decoration: underline 1.5px var(--text-error);
 }
 
-.app-container.app-container.app-container :is(.cm-pandoc-citation-formatting,
-	.pandoc-citation-formatting,
-	.cm-pandoc-citation-extra,
-	.pandoc-citation-extra) {
+.app-container.app-container.app-container
+	:is(
+		.cm-pandoc-citation-formatting,
+		.pandoc-citation-formatting,
+		.cm-pandoc-citation-extra,
+		.pandoc-citation-extra
+	) {
 	color: var(--text-faint);
 	text-decoration: none;
 }
@@ -543,7 +582,7 @@ body .another-quick-switcher__grep__path-input.another-quick-switcher__grep__pat
 .pwc-reference-list .csl-entry-wrapper.csl-entry-wrapper {
 	padding: 4px;
 	border-width: 2px;
-	border-color: var(--basic-border-color)
+	border-color: var(--basic-border-color);
 }
 
 .pwc-reference-list.collapsed-links.collapsed-links a:hover::after {
@@ -572,7 +611,8 @@ body .another-quick-switcher__grep__path-input.another-quick-switcher__grep__pat
 /* Styling from the "Tables" Section mostly applies */
 
 /* less indentation to save space */
-:is(.block-language-dataview, .block-language-dataviewjs) ul.contains-task-list {
+:is(.block-language-dataview, .block-language-dataviewjs)
+	ul.contains-task-list {
 	--list-indent: 0.3em;
 	padding-inline-start: 0;
 }
@@ -583,7 +623,7 @@ body .another-quick-switcher__grep__path-input.another-quick-switcher__grep__pat
 
 /* Tables: consistent look to native Obsidian tables */
 .dataview.table-view-table :is(td, th) {
-	border: var(--table-border-width) solid var(--table-border-color)
+	border: var(--table-border-width) solid var(--table-border-color);
 }
 
 .dataview.table-view-table td {
@@ -621,7 +661,9 @@ body .dataview:not(.task-list-item-checkbox):hover {
 	font-size: 70%;
 }
 
-.is-live-preview .block-language-dataviewjs :is(h1, h2, h3, h4, h5, h6):first-child {
+.is-live-preview
+	.block-language-dataviewjs
+	:is(h1, h2, h3, h4, h5, h6):first-child {
 	margin-top: 4px;
 }
 
@@ -648,7 +690,7 @@ body.hider-ribbon .workspace-ribbon.mod-left {
 	background-color: var(--bg4);
 }
 
-.kanban-plugin__board>div {
+.kanban-plugin__board > div {
 	padding: 6px;
 }
 
@@ -666,9 +708,11 @@ body.hider-ribbon .workspace-ribbon.mod-left {
 
 /* dotted background, thanks to @Damian Korcz for this */
 .kanban-plugin__board {
-	background-image: radial-gradient(circle,
-			var(--dot-color) var(--dot-size),
-			transparent var(--dot-size));
+	background-image: radial-gradient(
+		circle,
+		var(--dot-color) var(--dot-size),
+		transparent var(--dot-size)
+	);
 	background-attachment: local;
 	background-size: var(--dot-spacing) var(--dot-spacing);
 	border-top: var(--thin-border);

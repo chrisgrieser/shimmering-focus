@@ -16,7 +16,7 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
         # by default, no tags and only a single commit is fetched. To use git
-        # history in the changelog steop, we need to fetch all history.
+        # history in the changelog step, we need to fetch all history.
         with:
           fetch-depth: 0 # 0 = all history
           fetch-tags: true

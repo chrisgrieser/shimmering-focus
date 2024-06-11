@@ -1,4 +1,3 @@
-
 /* ───────────────────────────────────────────────── */
 /** Header Bar (Tab Title Bar)
 ──────────────────────────────────────────────────── */
@@ -14,9 +13,17 @@ body .workspace-leaf-content .view-header {
 	background-color: var(--bg4);
 }
 
-body:not(.normal-header-bar, .is-mobile) .workspace-leaf-content .view-header-title-container::after,
-body:not(.normal-header-bar, .is-mobile) .workspace-leaf-content .view-header :is(.view-header-nav-buttons, .view-header-title),
-body:not(.normal-header-bar, .is-mobile) .workspace-leaf-content .view-header .view-action:nth-last-child(2) {
+body:not(.normal-header-bar, .is-mobile)
+	.workspace-leaf-content
+	.view-header-title-container::after,
+body:not(.normal-header-bar, .is-mobile)
+	.workspace-leaf-content
+	.view-header
+	:is(.view-header-nav-buttons, .view-header-title),
+body:not(.normal-header-bar, .is-mobile)
+	.workspace-leaf-content
+	.view-header
+	.view-action:nth-last-child(2) {
 	display: none;
 }
 
@@ -26,7 +33,9 @@ body:not(.normal-header-bar, .is-mobile) .workspace-leaf-content .view-header {
 }
 
 /* Note Path Breadcrumbs */
-body:not(.normal-header-bar, .is-mobile) .workspace-leaf-content .view-header-title-container {
+body:not(.normal-header-bar, .is-mobile)
+	.workspace-leaf-content
+	.view-header-title-container {
 	position: absolute;
 	top: 35px;
 	right: 1.1rem;
@@ -36,7 +45,9 @@ body:not(.normal-header-bar, .is-mobile) .workspace-leaf-content .view-header-ti
 }
 
 /* account for pdf header */
-body:not(.normal-header-bar, .is-mobile) .workspace-leaf-content[data-type="pdf"] .view-header-title-container {
+body:not(.normal-header-bar, .is-mobile)
+	.workspace-leaf-content[data-type="pdf"]
+	.view-header-title-container {
 	top: 75px;
 	right: 0.7rem;
 }
@@ -56,17 +67,27 @@ body:not(.normal-header-bar, .is-mobile) .view-header-breadcrumb {
 }
 
 /* remaining buttons (by default only the "more options" button) */
-body:not(.normal-header-bar, .is-mobile) .workspace-leaf-content .view-header .view-actions {
+body:not(.normal-header-bar, .is-mobile)
+	.workspace-leaf-content
+	.view-header
+	.view-actions {
 	position: absolute;
 	top: 4px;
 	right: 2px;
 }
 
-body:not(.normal-header-bar, .is-mobile) .workspace-leaf-content .view-header .view-action:last-child:hover {
+body:not(.normal-header-bar, .is-mobile)
+	.workspace-leaf-content
+	.view-header
+	.view-action:last-child:hover {
 	background: none;
 }
 
-body:not(.normal-header-bar, .is-mobile) .workspace-leaf-content .view-header .view-action:last-child svg {
+body:not(.normal-header-bar, .is-mobile)
+	.workspace-leaf-content
+	.view-header
+	.view-action:last-child
+	svg {
 	width: 20px;
 	height: 20px;
 }
@@ -83,7 +104,13 @@ body:not(.normal-header-bar, .is-mobile) .pdf-toolbar {
 }
 
 /* avoid traffic lights */
-.hide-tabbar-when-one-tab.mod-macos:not(.show-sidebar-header-buttons, .normal-header-bar, .is-mobile) .workspace:not(.is-left-sidedock-open) .pdf-toolbar {
+.hide-tabbar-when-one-tab.mod-macos:not(
+		.show-sidebar-header-buttons,
+		.normal-header-bar,
+		.is-mobile
+	)
+	.workspace:not(.is-left-sidedock-open)
+	.pdf-toolbar {
 	padding-left: 60px;
 }
 
@@ -95,12 +122,22 @@ body:not(.normal-header-bar, .is-mobile) .pdf-toolbar {
 /** Hide Various Elements
 ──────────────────────────────────────────────────── */
 
-body.hide-vault-switcher-and-settings:not(.is-mobile) .workspace-split.mod-left-split .workspace-sidedock-vault-profile,
+body.hide-vault-switcher-and-settings:not(.is-mobile)
+	.workspace-split.mod-left-split
+	.workspace-sidedock-vault-profile,
 body:not(.show-new-tab-button, .is-mobile) .workspace-tab-header-new-tab,
 body:not(.show-close-buttons, .is-mobile) .search-input-clear-button,
-body:not(.show-close-buttons, .is-mobile) .workspace-tab-header:only-child .workspace-tab-header-inner-close-button,
-body:not(.show-close-buttons, .is-mobile) .mod-stacked .workspace-tab-header .workspace-tab-header-inner-close-button,
-body:not(.show-close-buttons, .is-mobile) .workspace-tabs:not(.mod-stacked) .workspace-tab-header:not(:hover) .workspace-tab-header-inner-close-button,
+body:not(.show-close-buttons, .is-mobile)
+	.workspace-tab-header:only-child
+	.workspace-tab-header-inner-close-button,
+body:not(.show-close-buttons, .is-mobile)
+	.mod-stacked
+	.workspace-tab-header
+	.workspace-tab-header-inner-close-button,
+body:not(.show-close-buttons, .is-mobile)
+	.workspace-tabs:not(.mod-stacked)
+	.workspace-tab-header:not(:hover)
+	.workspace-tab-header-inner-close-button,
 body:not(.show-tab-list-button) .workspace-tab-header-tab-list {
 	display: none;
 }
@@ -117,16 +154,24 @@ body:not(.normal-tab-bar) .mod-root .workspace-tab-header:only-child {
 	box-shadow: none;
 }
 
-body:not(.normal-tab-bar) .mod-root .workspace-tab-header:only-child .workspace-tab-header-inner-title {
+body:not(.normal-tab-bar)
+	.mod-root
+	.workspace-tab-header:only-child
+	.workspace-tab-header-inner-title {
 	width: 100vw;
 	margin-bottom: 4px;
 	margin-left: -4px;
 	font-size: 1.3em;
 }
 
-body:not(.normal-tab-bar) .mod-root .workspace-tab-header:only-child :is(.workspace-tab-header-inner-title,
-	.workspace-tab-header-inner-icon,
-	.workspace-tab-header-inner-icon svg),
+body:not(.normal-tab-bar)
+	.mod-root
+	.workspace-tab-header:only-child
+	:is(
+		.workspace-tab-header-inner-title,
+		.workspace-tab-header-inner-icon,
+		.workspace-tab-header-inner-icon svg
+	),
 body:not(.normal-tab-bar) .mod-root .workspace-tab-header:only-child::before,
 body:not(.normal-tab-bar) .mod-root .workspace-tab-header:only-child::after,
 body:not(.normal-tab-bar) .mod-root .workspace-tab-header:only-child {
@@ -136,29 +181,57 @@ body:not(.normal-tab-bar) .mod-root .workspace-tab-header:only-child {
 }
 
 /* icon with more spacing and size */
-body:not(.normal-tab-bar) .mod-root .workspace-tab-header:only-child :is(.workspace-tab-header-inner-icon, .workspace-tab-header-status-container) {
+body:not(.normal-tab-bar)
+	.mod-root
+	.workspace-tab-header:only-child
+	:is(
+		.workspace-tab-header-inner-icon,
+		.workspace-tab-header-status-container
+	) {
 	padding-right: 12px;
 	padding-bottom: 3px;
 }
 
-body:not(.normal-tab-bar) .mod-root .workspace-tab-header:only-child :is(.workspace-tab-header-inner-icon, .workspace-tab-header-status-container) svg {
+body:not(.normal-tab-bar)
+	.mod-root
+	.workspace-tab-header:only-child
+	:is(.workspace-tab-header-inner-icon, .workspace-tab-header-status-container)
+	svg {
 	width: var(--icon-l);
 	height: var(--icon-l);
 }
 
-.hide-tabbar-when-one-tab:not(.is-mobile) .mod-root .workspace-tab-header-container:not(:has(.workspace-tab-header + .workspace-tab-header)) {
+.hide-tabbar-when-one-tab:not(.is-mobile)
+	.mod-root
+	.workspace-tab-header-container:not(
+		:has( .workspace-tab-header + .workspace-tab-header)
+	) {
 	display: none;
 }
 
 /* MACOS: reduce height of RIGHT sidebar when tab bar hidden */
 /* WINDOWS: reduce height of LEFT sidebar when tab bar hidden */
-.hide-tabbar-when-one-tab.mod-macos:not(.show-sidebar-header-buttons) .mod-root:not(:has(.workspace-tab-header + .workspace-tab-header))+.mod-right-split .mod-top-right-space .workspace-tab-header-container:not(:hover),
-.hide-tabbar-when-one-tab.mod-windows:not(.show-sidebar-header-buttons) .mod-root:not(:has(.workspace-tab-header + .workspace-tab-header))+.mod-left-split .mod-top-left-space .workspace-tab-header-container:not(:hover) {
+.hide-tabbar-when-one-tab.mod-macos:not(.show-sidebar-header-buttons)
+	.mod-root:not(:has( .workspace-tab-header + .workspace-tab-header))
+	+ .mod-right-split
+	.mod-top-right-space
+	.workspace-tab-header-container:not(:hover),
+.hide-tabbar-when-one-tab.mod-windows:not(.show-sidebar-header-buttons)
+	.mod-root:not(:has( .workspace-tab-header + .workspace-tab-header))
+	+ .mod-left-split
+	.mod-top-left-space
+	.workspace-tab-header-container:not(:hover) {
 	height: var(--sidebar-tabs-unhovered-height);
 }
 
 /* hide inline title only when one more than tab */
-.hide-tabbar-when-one-tab:not(.is-mobile) .mod-root .workspace-tab-header-container:has(.workspace-tab-header + .workspace-tab-header)+.workspace-tab-container .inline-title {
+.hide-tabbar-when-one-tab:not(.is-mobile)
+	.mod-root
+	.workspace-tab-header-container:has(
+		.workspace-tab-header + .workspace-tab-header
+	)
+	+ .workspace-tab-container
+	.inline-title {
 	display: none;
 }
 
@@ -176,11 +249,13 @@ body:not(.normal-tab-bar) .mod-root .workspace-tab-header:only-child :is(.worksp
 	height: 0;
 }
 
-.workspace-tab-header-inner.workspace-tab-header-inner:hover.workspace-tab-header-inner:hover * {
+.workspace-tab-header-inner.workspace-tab-header-inner:hover.workspace-tab-header-inner:hover
+	* {
 	color: var(--hover-accent);
 }
 
-.workspace-tab-header-inner.workspace-tab-header-inner:hover.workspace-tab-header-inner:active * {
+.workspace-tab-header-inner.workspace-tab-header-inner:hover.workspace-tab-header-inner:active
+	* {
 	color: var(--color-accent);
 }
 
@@ -263,11 +338,13 @@ body .workspace .mod-root .workspace-tab-header {
 ──────────────────────────────────────────────────── */
 
 /* add favicon */
-.workspace-tab-header[data-type="release-notes"] .workspace-tab-header-inner-icon {
+.workspace-tab-header[data-type="release-notes"]
+	.workspace-tab-header-inner-icon {
 	display: none;
 }
 
-.workspace-tab-header[data-type="release-notes"] .workspace-tab-header-inner-title::before {
+.workspace-tab-header[data-type="release-notes"]
+	.workspace-tab-header-inner-title::before {
 	position: relative;
 	top: 2px;
 	padding-right: 2px;

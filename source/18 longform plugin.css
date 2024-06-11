@@ -1,4 +1,3 @@
-
 /* ───────────────────────────────────────────────── */
 /** Longform Smart Word Count
 ──────────────────────────────────────────────────── */
@@ -7,7 +6,10 @@
 - Supports Word Count Core Plugin + Better Word Count Community Plugin.
 - Caveat: also triggered when such a note is open is in a non-active tab, restricting
 this to the active tab qould require nested `:has()` which isn't supported */
-.wordcount-only-when-writing:not(.is-mobile) .horizontal-main-container:not(:has(:is(.writing, .longform-leaf)))+.status-bar :is(.plugin-word-count, .plugin-better-word-count) {
+.wordcount-only-when-writing:not(.is-mobile)
+	.horizontal-main-container:not(:has( :is(.writing, .longform-leaf)))
+	+ .status-bar
+	:is(.plugin-word-count, .plugin-better-word-count) {
 	display: none;
 }
 
@@ -15,7 +17,8 @@ this to the active tab qould require nested `:has()` which isn't supported */
 /** Longform Sidebar
 ─────────────────────────────────────────────────── */
 
-.workspace-leaf-content[data-type="VIEW_TYPE_LONGFORM_EXPLORER"] .tab-panel-container {
+.workspace-leaf-content[data-type="VIEW_TYPE_LONGFORM_EXPLORER"]
+	.tab-panel-container {
 	padding-right: 0;
 	padding-left: 0;
 }
@@ -79,7 +82,7 @@ body .longform-explorer.longform-explorer #scene-list {
 	--longform-indent-size: 1.75em;
 }
 
-#scene-list .scene-container>div>div {
+#scene-list .scene-container > div > div {
 	margin-left: 0;
 }
 
@@ -120,16 +123,22 @@ body .longform-explorer.longform-explorer #scene-list {
 	background-color: var(--nav-item-background-hover);
 }
 
-#scene-list .scene-container:hover .longform-scene-number.longform-scene-number {
+#scene-list
+	.scene-container:hover
+	.longform-scene-number.longform-scene-number {
 	color: var(--hover-accent);
 }
 
 /* Scene Number */
-#scene-list .scene-container[data-scene-indent="0"] .longform-scene-number::after {
+#scene-list
+	.scene-container[data-scene-indent="0"]
+	.longform-scene-number::after {
 	content: ".";
 }
 
-#scene-list .scene-container:not([data-scene-indent="0"]) .longform-scene-number::after {
+#scene-list
+	.scene-container:not([data-scene-indent="0"])
+	.longform-scene-number::after {
 	display: none;
 }
 
@@ -143,17 +152,21 @@ li:nth-child(even) :is(.draft-container, .scene-container) {
 }
 
 /* grayed out scenes */
-#scene-list .scene-container:is([data-scene-path*="Acknowledgements" i],
-	[data-scene-path*="Appendix" i],
-	[data-scene-path*="Supplemental" i],
-	[data-scene-path*="Metadata" i],
-	[data-scene-path*="References" i],
-	[data-scene-path*="Declaration of Conflicting Interests" i]):not(.selected, :hover) :is(div, .longform-scene-number) {
+#scene-list
+	.scene-container:is(
+		[data-scene-path*="Acknowledgements" i],
+		[data-scene-path*="Appendix" i],
+		[data-scene-path*="Supplemental" i],
+		[data-scene-path*="Metadata" i],
+		[data-scene-path*="References" i],
+		[data-scene-path*="Declaration of Conflicting Interests" i]
+	):not(.selected, :hover)
+	:is(div, .longform-scene-number) {
 	color: var(--text-faint);
 }
 
 /* move folding arrows to the right */
-#scene-list .scene-container>div {
+#scene-list .scene-container > div {
 	margin-left: 0;
 }
 
@@ -201,7 +214,9 @@ button.longform-remove-step-button.longform-remove-step-button.longform-remove-s
 	box-shadow: none;
 }
 
-body .longform-compile-container.longform-compile-container .longform-workflow-picker-container {
+body
+	.longform-compile-container.longform-compile-container
+	.longform-workflow-picker-container {
 	margin-bottom: 8px;
 	border-bottom-width: 2px;
 }
@@ -224,7 +239,8 @@ button.longform-remove-step-button.longform-remove-step-button.longform-remove-s
 	margin-bottom: 8px;
 }
 
-.longform-compile-step-title-container .longform-step-kind-pill.longform-step-kind-pill.longform-step-kind-pill.longform-step-kind-pill {
+.longform-compile-step-title-container
+	.longform-step-kind-pill.longform-step-kind-pill.longform-step-kind-pill.longform-step-kind-pill {
 	padding: 1px 3px;
 	border-radius: var(--radius-s);
 }
@@ -238,7 +254,8 @@ button.longform-remove-step-button.longform-remove-step-button.longform-remove-s
 }
 
 /* turn the draft-path into a home-button */
-#project-picker-container .current-draft-path.current-draft-path.current-draft-path.current-draft-path.current-draft-path {
+#project-picker-container
+	.current-draft-path.current-draft-path.current-draft-path.current-draft-path.current-draft-path {
 	position: absolute;
 	right: -0.3rem;
 	bottom: -1.825rem;
@@ -251,20 +268,25 @@ button.longform-remove-step-button.longform-remove-step-button.longform-remove-s
 	content: "home";
 }
 
-.workspace-leaf-content[data-type="VIEW_TYPE_LONGFORM_EXPLORER"] .tabs .tab-list {
+.workspace-leaf-content[data-type="VIEW_TYPE_LONGFORM_EXPLORER"]
+	.tabs
+	.tab-list {
 	padding: 4px 4px 2px 6px;
 	margin: 0;
 	border-bottom: var(--basic-border);
 }
 
 .current-draft-path::before,
-.workspace-leaf-content[data-type="VIEW_TYPE_LONGFORM_EXPLORER"] button::before {
+.workspace-leaf-content[data-type="VIEW_TYPE_LONGFORM_EXPLORER"]
+	button::before {
 	font-family: var(--icon-font);
 	font-size: calc(1.2 * var(--font-text-size));
 }
 
 .current-draft-path,
-.workspace-leaf-content[data-type="VIEW_TYPE_LONGFORM_EXPLORER"] .tab-list.tab-list.tab-list button {
+.workspace-leaf-content[data-type="VIEW_TYPE_LONGFORM_EXPLORER"]
+	.tab-list.tab-list.tab-list
+	button {
 	width: 37px;
 	height: 25px;
 	padding: 4px;
@@ -276,27 +298,36 @@ button.longform-remove-step-button.longform-remove-step-button.longform-remove-s
 	border-radius: var(--radius-s);
 }
 
-.workspace-leaf-content[data-type="VIEW_TYPE_LONGFORM_EXPLORER"] .tab-list button:nth-child(1)::before {
+.workspace-leaf-content[data-type="VIEW_TYPE_LONGFORM_EXPLORER"]
+	.tab-list
+	button:nth-child(1)::before {
 	content: "format_list_numbered";
 }
 
-.workspace-leaf-content[data-type="VIEW_TYPE_LONGFORM_EXPLORER"] .tab-list button:nth-child(2)::before {
+.workspace-leaf-content[data-type="VIEW_TYPE_LONGFORM_EXPLORER"]
+	.tab-list
+	button:nth-child(2)::before {
 	content: "import_contacts";
 }
 
-.workspace-leaf-content[data-type="VIEW_TYPE_LONGFORM_EXPLORER"] .tab-list button:nth-child(3)::before {
+.workspace-leaf-content[data-type="VIEW_TYPE_LONGFORM_EXPLORER"]
+	.tab-list
+	button:nth-child(3)::before {
 	content: "merge_type";
 }
 
 /* selected */
-.workspace-leaf-content[data-type="VIEW_TYPE_LONGFORM_EXPLORER"] button.selected.selected.selected {
+.workspace-leaf-content[data-type="VIEW_TYPE_LONGFORM_EXPLORER"]
+	button.selected.selected.selected {
 	color: var(--text-normal);
 	background-color: var(--nav-item-background-hover);
 }
 
 /* hovered */
 .current-draft-path.current-draft-path.current-draft-path.current-draft-path:hover,
-.workspace-leaf-content[data-type="VIEW_TYPE_LONGFORM_EXPLORER"] .tab-list.tab-list button:hover {
+.workspace-leaf-content[data-type="VIEW_TYPE_LONGFORM_EXPLORER"]
+	.tab-list.tab-list
+	button:hover {
 	color: var(--icon-color-hover);
 	background-color: var(--nav-item-background-active);
 }
@@ -305,7 +336,8 @@ button.longform-remove-step-button.longform-remove-step-button.longform-remove-s
 /** Longform Unknown Files Wizard
 ─────────────────────────────────────────────────── */
 
-.tab-panel-container.tab-panel-container.tab-panel-container #longform-unknown-files-wizard {
+.tab-panel-container.tab-panel-container.tab-panel-container
+	#longform-unknown-files-wizard {
 	padding: 0;
 	margin-top: 3px;
 	border-top: var(--basic-border);
@@ -327,12 +359,17 @@ button.longform-remove-step-button.longform-remove-step-button.longform-remove-s
 	background-color: var(--bg3);
 }
 
-#longform-unknown-files-wizard .longform-unknown-inner.longform-unknown-inner.longform-unknown-inner>ul {
+#longform-unknown-files-wizard
+	.longform-unknown-inner.longform-unknown-inner.longform-unknown-inner
+	> ul {
 	padding-left: 3px;
 	margin: 0;
 }
 
-#longform-unknown-files-wizard .longform-unknown-inner.longform-unknown-inner.longform-unknown-inner>ul>li:nth-child(even) {
+#longform-unknown-files-wizard
+	.longform-unknown-inner.longform-unknown-inner.longform-unknown-inner
+	> ul
+	> li:nth-child(even) {
 	background-color: var(--a-row);
 }
 
@@ -341,7 +378,8 @@ button.longform-remove-step-button.longform-remove-step-button.longform-remove-s
 	line-height: 1.25;
 }
 
-.longform-unknown-file.longform-unknown-file.longform-unknown-file.longform-unknown-file button {
+.longform-unknown-file.longform-unknown-file.longform-unknown-file.longform-unknown-file
+	button {
 	padding: 1px 3px 3px;
 	margin-right: 5px;
 	font-size: 0.7em;
@@ -352,7 +390,9 @@ button.longform-remove-step-button.longform-remove-step-button.longform-remove-s
 	border-radius: var(--radius-s);
 }
 
-.longform-unknown-ignore.longform-unknown-ignore.longform-unknown-ignore.longform-unknown-ignore:not(:hover) {
+.longform-unknown-ignore.longform-unknown-ignore.longform-unknown-ignore.longform-unknown-ignore:not(
+		:hover
+	) {
 	border-color: var(--text-faint);
 }
 
@@ -381,7 +421,8 @@ button.longform-remove-step-button.longform-remove-step-button.longform-remove-s
 
 /* font family and size */
 .writing.markdown-preview-view,
-:is(.writing, .longform-leaf) :is(.markdown-preview-view, .cm-contentContainer) {
+:is(.writing, .longform-leaf)
+	:is(.markdown-preview-view, .cm-contentContainer) {
 	/* for table cells */
 	--font-text: var(--longform-font-text-theme);
 	font-family: var(--longform-font-text-theme);
@@ -390,13 +431,17 @@ button.longform-remove-step-button.longform-remove-step-button.longform-remove-s
 }
 
 /* keep any code smaller */
-.app-container.app-container.app-container.app-container.app-container.app-container :is(.longform-leaf, .writing) :is(.frontmatter-container,
-	.cm-hmd-frontmatter,
-	.cm-formatting-task,
-	.HyperMD-codeblock,
-	code,
-	.cm-inline-code,
-	.HyperMD-table-row) {
+.app-container.app-container.app-container.app-container.app-container.app-container
+	:is(.longform-leaf, .writing)
+	:is(
+		.frontmatter-container,
+		.cm-hmd-frontmatter,
+		.cm-formatting-task,
+		.HyperMD-codeblock,
+		code,
+		.cm-inline-code,
+		.HyperMD-table-row
+	) {
 	font-family: var(--font-monospace);
 	font-size: 0.95rem;
 }
@@ -408,40 +453,57 @@ body:not(.longform-left-aligned) :is(.writing, .longform-leaf) {
 }
 
 /* stuff not to justify */
-body:not(.longform-left-aligned) :is(.writing, .longform-leaf) :is(.HyperMD-codeblock,
-	.HyperMD-header,
-	.inline-title,
-	.cm-hmd-frontmatter,
-	.HyperMD-table-2,
-	.table-cell-wrapper) {
+body:not(.longform-left-aligned)
+	:is(.writing, .longform-leaf)
+	:is(
+		.HyperMD-codeblock,
+		.HyperMD-header,
+		.inline-title,
+		.cm-hmd-frontmatter,
+		.HyperMD-table-2,
+		.table-cell-wrapper
+	) {
 	text-align: left;
 }
 
 /* headings */
-.app-container :is(.writing, .longform-leaf) :is(h1, h2, h3, h4, h5, h6, .cm-header, .inline-title) {
+.app-container
+	:is(.writing, .longform-leaf)
+	:is(h1, h2, h3, h4, h5, h6, .cm-header, .inline-title) {
 	font-family: var(--longform-font-text-theme);
 	letter-spacing: calc(var(--heading-letter-spacing) * 0.5);
 }
 
 /* indented-text */
-.longform-text-indent.longform-text-indent div:has(> p)+div>p {
+.longform-text-indent.longform-text-indent div:has(> p) + div > p {
 	margin-top: 0;
 	text-indent: 1.5em;
 }
 
-.longform-text-indent.longform-text-indent div:has(+ div > p)>p {
+.longform-text-indent.longform-text-indent div:has(+ div > p) > p {
 	margin-bottom: 0;
 }
 
 /* line height */
 /* long selector needed to target only lines outside of a table */
-:is(.writing, .longform-leaf) .view-content>.cm-s-obsidian>div>.cm-scroller>.cm-sizer>.cm-contentContainer>.cm-content>.cm-line:not(.HyperMD-header) {
+:is(.writing, .longform-leaf)
+	.view-content
+	> .cm-s-obsidian
+	> div
+	> .cm-scroller
+	> .cm-sizer
+	> .cm-contentContainer
+	> .cm-content
+	> .cm-line:not(.HyperMD-header) {
 	line-height: calc(var(--longform-base-line-height) + 0.35);
 }
 
 :is(.writing, .longform-leaf) :is(table, h1, h2, h3, h4, h5, h6, .inline-title),
 :is(.writing, .longform-leaf) .table-wrapper .cm-line,
-body:not(.is-popout-window) :is(.writing, .longform-leaf) .cm-line> :is(.cm-header, .cm-hmd-frontmatter) {
+body:not(.is-popout-window)
+	:is(.writing, .longform-leaf)
+	.cm-line
+	> :is(.cm-header, .cm-hmd-frontmatter) {
 	line-height: var(--longform-base-line-height);
 }
 
@@ -452,7 +514,9 @@ body:not(.is-popout-window) :is(.writing, .longform-leaf) .cm-line> :is(.cm-head
 }
 
 /* emphasized tasks */
-body.longform-tasks-different.longform-tasks-different.longform-tasks-different.longform-tasks-different :is(.writing, .longform-leaf) :is(.HyperMD-task-line, ul.contains-task-list) {
+body.longform-tasks-different.longform-tasks-different.longform-tasks-different.longform-tasks-different
+	:is(.writing, .longform-leaf)
+	:is(.HyperMD-task-line, ul.contains-task-list) {
 	color: var(--text-faint);
 }
 
@@ -460,4 +524,3 @@ body.longform-tasks-different.longform-tasks-different.longform-tasks-different.
 .app-container :is(.writing, .longform-leaf) pre[class*="language-"]::before {
 	line-height: calc(var(--longform-base-line-height) + 0.3);
 }
-

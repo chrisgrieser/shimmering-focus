@@ -1,7 +1,10 @@
-
 /* save space at the top */
 .mod-root .markdown-reading-view .markdown-preview-view,
-.mod-root .view-content>.markdown-source-view.mod-cm6>.cm-editor>.cm-scroller {
+.mod-root
+	.view-content
+	> .markdown-source-view.mod-cm6
+	> .cm-editor
+	> .cm-scroller {
 	padding-top: 25px;
 }
 
