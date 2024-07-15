@@ -18,7 +18,7 @@ settings:
   - id: ribbon-info
     description:
       "The setting to remove the ribbon (the thin sidebar to the very left) has been removed, since with
-      obsidan 1.6 you can do so via the Obsidian settings: `Appearance → Interface → Show ribbon menu`"
+      Obsidan 1.6 you can do so via the Obsidian settings: `Appearance → Interface → Show ribbon menu`"
     type: info-text
     markdown: true
   - id: hide-vault-switcher-and-settings
