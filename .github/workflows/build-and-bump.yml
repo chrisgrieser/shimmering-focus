@@ -1,4 +1,4 @@
-name: Build, Bump version numbers, and update changelog
+name: Build, bump version numbers, and update changelog
 
 on:
   push:
@@ -11,7 +11,7 @@ permissions:
 jobs:
   bump:
     runs-on: macos-latest
-    name: Build, Bump version numbers, and update changelog
+    name: Build, bump version numbers, and update changelog
     steps:
       - name: Checkout
         uses: actions/checkout@v4
@@ -52,7 +52,7 @@ jobs:
         run: |
           git log :/bump.. --format="- %cs %s" | # commits since last `bump` commit
           	grep -vE "build|ci|style|bump" | # don't include internal changes
-          	sed -E "s/^(- [0-9-]+) ([^ ]+): /\1 **\2**: /" >> "temp.md" # bold title
+          	sed -E "s/^(- [0-9-]+) ([^ ]+): /\1 **\2**: /" >> "temp.md" # bold cc keyword
           grep -v "^$" "Changelog.md" >> "temp.md"
           mv -f "temp.md" "Changelog.md"
 
