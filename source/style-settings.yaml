@@ -17,8 +17,9 @@ settings:
     collapsed: true
   - id: ribbon-info
     description:
-      "The setting to remove the ribbon (the thin sidebar to the very left) has been removed, since with
-      Obsidan 1.6 you can do so via the Obsidian settings: `Appearance → Interface → Show ribbon menu`"
+      "The setting to remove the ribbon (the thin sidebar to the very left) has been removed, since
+      with Obsidan 1.6 you can do so via the Obsidian settings: `Appearance → Interface → Show
+      ribbon menu`"
     type: info-text
     markdown: true
   - id: hide-vault-switcher-and-settings
@@ -28,15 +29,16 @@ settings:
     default: false
   - id: show-sidebar-header-buttons
     title: Permanently show the sidebar header buttons
-    description: By default, the buttons at the top of the sidebar panels are only visible when hovering.
+    description:
+      By default, the buttons at the top of the sidebar panels are only visible when hovering.
     type: class-toggle
     default: false
   - id: show-suggester-instructions
     title: Re-enable suggester hints
     type: class-toggle
     description:
-      Suggesters are modals like the command palette or quick switcher. By default, this theme hides the
-      keyboard hints at the bottom of those suggesters. Enable this, to display them again.
+      Suggesters are modals like the command palette or quick switcher. By default, this theme hides
+      the keyboard hints at the bottom of those suggesters. Enable this, to display them again.
     default: false
   - id: show-new-tab-button
     title: Re-enable new tab button
@@ -118,9 +120,9 @@ settings:
   - id: tabbar-when-one-tab
     title: Tab bar when only one tab (🧪 experimental)
     description:
-      By default, this theme turns the tab bar into a header bar. It turns back into a tab bar on hover
-      or when another tab is opened. Alternatively you can also hide the tab bar altogether, when there
-      is only one tab (⚠️ requires Obsidian installer version 1.1.9 or later).
+      By default, this theme turns the tab bar into a header bar. It turns back into a tab bar on
+      hover or when another tab is opened. Alternatively you can also hide the tab bar altogether,
+      when there is only one tab (⚠️ requires Obsidian installer version 1.1.9 or later).
     type: class-select
     allowEmpty: false
     default: tabbar-header-hybrid
@@ -135,9 +137,10 @@ settings:
     title: Re-enable the header bar (tab title bar)
     description:
       By default, this theme removes the header bar, except for the "more options" button and the
-      breadcrumbs moved to the right. You can still toggle reading/editing mode, navigate back/forward,
-      and rename your current file with the respective command in the command palette or a hotkey. (this
-      setting has no effect if "show tab title bar" in the appearance settings is disabled.)
+      breadcrumbs moved to the right. You can still toggle reading/editing mode, navigate
+      back/forward, and rename your current file with the respective command in the command palette
+      or a hotkey. (this setting has no effect if "show tab title bar" in the appearance settings is
+      disabled.)
     type: class-toggle
     default: false
   - id: tab-width
@@ -154,15 +157,15 @@ settings:
   - id: trim-long-filenames
     title: "Side bar: Trim file names"
     description:
-      When enabled, long file and folder names will be trimmed. When disabled, long names will be wrapped
-      to the next line.
+      When enabled, long file and folder names will be trimmed. When disabled, long names will be
+      wrapped to the next line.
     type: class-toggle
     default: false
   - id: overlaying-right-sidebar
     title: "Side bar: Overlaying right sidebar"
     description:
-      "The right sidebar is placed on top of the editor instead of making the editor more narrow (i.e.
-      the behavior on mobile)."
+      "The right sidebar is placed on top of the editor instead of making the editor more narrow
+      (i.e. the behavior on mobile)."
     type: class-toggle
     default: false
   - id: hidden-sidebars-hidden-statusbar
@@ -173,8 +176,8 @@ settings:
   - id: notices-at-bottom-right
     title: "Notifications: Display at bottom right"
     description:
-      By default, Obsidian displays notifications at the top right. Enable this to display them at the
-      bottom right instead.
+      By default, Obsidian displays notifications at the top right. Enable this to display them at
+      the bottom right instead.
     type: class-toggle
     default: false
   # Fonts & Headings
@@ -189,7 +192,8 @@ settings:
     type: variable-text
     default: '"Optima", "Recursive S"'
   - id: font-info
-    description: "You can change the font used elsewhere in the Obsidian settings: `Appearance → Font`"
+    description:
+      "You can change the font used elsewhere in the Obsidian settings: `Appearance → Font`"
     type: info-text
     markdown: true
   - id: code-size
@@ -283,8 +287,8 @@ settings:
   - id: color-customization-info
     title: More color customization
     description:
-      "You can further customize theme colors or even create your own color scheme – without knowledge of
-      CSS – by using a CSS snippet. [See the theme docs for further
+      "You can further customize theme colors or even create your own color scheme – without
+      knowledge of CSS – by using a CSS snippet. [See the theme docs for further
       information](https://github.com/chrisgrieser/shimmering-focus#create-and-share-your-own-color-scheme)."
     markdown: true
     type: info-text
@@ -325,8 +329,8 @@ settings:
   - id: file-line-width
     title: Line length
     description:
-      "The length of the editor content (when the `readable line length` setting is enabled). You can use
-      the cssclass `full-width` to lift line length restrictions for individual notes."
+      "The length of the editor content (when the `readable line length` setting is enabled). You
+      can use the cssclass `full-width` to lift line length restrictions for individual notes."
     markdown: true
     type: variable-number-slider
     default: 700
@@ -338,15 +342,15 @@ settings:
     title: Folded line emphasis
     type: class-toggle
     description:
-      ⚠️ Requires Obsidian installer version 1.1.9 or later. Slightly darkens the background of folded
-      lines, similar to folds in vim.
+      ⚠️ Requires Obsidian installer version 1.1.9 or later. Slightly darkens the background of
+      folded lines, similar to folds in vim.
     default: false
   - id: hide-trailing-whitespace
     title: Hide trailing spaces
     description:
-      'By default, this theme indicates the presence of trailing spaces when there are more than one with
-      "··↵". This can be useful for the "two space rule" in markdown, where exactly two spaces at the end
-      of a line force a line break.'
+      'By default, this theme indicates the presence of trailing spaces when there are more than one
+      with "··↵". This can be useful for the "two space rule" in markdown, where exactly two spaces
+      at the end of a line force a line break.'
     type: class-toggle
     default: false
   # Media
@@ -359,15 +363,16 @@ settings:
   - id: no-image-alttext-caption
     title: "Images: No alt-text as caption"
     description:
-      By default, the theme adds the alt-text/filename of an image as caption (except when the image is
-      named "pasted image…")
+      By default, the theme adds the alt-text/filename of an image as caption (except when the image
+      is named "pasted image…")
     type: class-toggle
     default: false
   - id: image-size
     title: "Images: Size (percent)"
     description:
-      "The theme also adds a command `toggle max image size` which toggles between 100% image size and
-      the reduced image size below. In addition, clicking & holding images will also enlarge an image."
+      "The theme also adds a command `toggle max image size` which toggles between 100% image size
+      and the reduced image size below. In addition, clicking & holding images will also enlarge an
+      image."
     type: variable-number-slider
     markdown: true
     default: 50
@@ -376,7 +381,8 @@ settings:
     step: 5
   - id: max-image-size-toggle
     title: between reduced and full image size
-    description: INFO this is a dummy setting, since this is hidden and only added for the toggle-command
+    description:
+      INFO this is a dummy setting, since this is hidden and only added for the toggle-command
     addCommand: true
     type: class-toggle
     default: false
@@ -394,7 +400,8 @@ settings:
   # Vim mode
   - id: vim-mode
     title: 🏃 Vim mode
-    description: Cursor, blinking, cursorline, relative line numbers, disable mouse hovers & tooltips
+    description:
+      Cursor, blinking, cursorline, relative line numbers, disable mouse hovers & tooltips
     type: heading
     level: 1
     collapsed: true
@@ -411,8 +418,8 @@ settings:
     title: Relative line numbers
     markdown: true
     description:
-      ⚠️ Requires Obsidian installer version 1.1.9 or later. `Line numbers` must also be enabled in the
-      Obsidian settings.
+      ⚠️ Requires Obsidian installer version 1.1.9 or later. `Line numbers` must also be enabled in
+      the Obsidian settings.
     type: class-toggle
     default: false
   - id: vim-active-visual-line
@@ -421,13 +428,14 @@ settings:
     description:
       Emphasize the active visual line. only works in normal mode, and also affects the cursor blink
       animation. As opposed to the "active line indicator", this works on *visual* lines instead of
-      *logical* lines. Note that this setting is independent of the "active block indicator" setting to
-      allow for both being in use at the same time.
+      *logical* lines. Note that this setting is independent of the "active block indicator" setting
+      to allow for both being in use at the same time.
     type: class-toggle
     default: false
   - id: no-mouse-hovers
     title: 'Disable tooltips & "Edit this block" button'
-    description: Disables tooltips and "Edit this block" buttons displayed on hovering various elements.
+    description:
+      Disables tooltips and "Edit this block" buttons displayed on hovering various elements.
     type: class-toggle
     default: false
   # Longform & writing
@@ -439,7 +447,8 @@ settings:
     collapsed: true
   - id: longform-font-text-theme
     title: Main font
-    description: Font used in longform/writing notes. (Except code, which still use the monospace font.)
+    description:
+      Font used in longform/writing notes. (Except code, which still use the monospace font.)
     type: variable-text
     default: '"Garamond", "Times New Roman", serif'
   - id: longform-font-size
@@ -468,8 +477,8 @@ settings:
   - id: longform-bg-hue-dark
     title: Background color tone (dark mode)
     description:
-      Hue of the background color for longform/writing notes. Use this setting to visually distinguish
-      your longform and writing notes from the rest of your vault.
+      Hue of the background color for longform/writing notes. Use this setting to visually
+      distinguish your longform and writing notes from the rest of your vault.
     type: variable-number-slider
     default: 200
     min: 0
@@ -478,8 +487,8 @@ settings:
   - id: longform-bg-hue-light
     title: Background color tone (light mode)
     description:
-      Hue of the background color for longform/writing notes. Use this setting to visually distinguish
-      your longform and writing notes from the rest of your vault.
+      Hue of the background color for longform/writing notes. Use this setting to visually
+      distinguish your longform and writing notes from the rest of your vault.
     type: variable-number-slider
     default: 200
     min: 0
@@ -488,13 +497,14 @@ settings:
   - id: wordcount-only-when-writing
     title: "Status bar: Show word count only when longform/writing note is open"
     description:
-      ⚠️ Requires Obsidian installer version 1.1.9 or later. Works for the Word Count core plugin and the
-      Better Word Count community plugin.
+      ⚠️ Requires Obsidian installer version 1.1.9 or later. Works for the Word Count core plugin
+      and the Better Word Count community plugin.
     type: class-toggle
     default: false
   - id: hide-longform-status-bar
     title: "Status bar: Hide longform wordcount"
-    description: This affects the word count from the longform plugin, not the other word count plugins.
+    description:
+      This affects the word count from the longform plugin, not the other word count plugins.
     type: class-toggle
     default: false
   - id: longform-tasks-different
@@ -510,8 +520,8 @@ settings:
   - id: longform-text-indent
     title: First-line indent & no spacing between paragraphs (reading mode)
     description:
-      ⚠️ Requires Obsidian installer version 1.1.9 or later. Indent the first line of a paragraph and
-      remove the spacing between paragraphs.
+      ⚠️ Requires Obsidian installer version 1.1.9 or later. Indent the first line of a paragraph
+      and remove the spacing between paragraphs.
     type: class-toggle
     default: false
   # Plugin-Specific Settings
@@ -530,20 +540,21 @@ settings:
     title: "File explorer: Show buttons"
     type: class-toggle
     description:
-      "The buttons for new file, new folder, and sorting. You can do the former two without the buttons
-      by right-clicking a folder."
+      "The buttons for new file, new folder, and sorting. You can do the former two without the
+      buttons by right-clicking a folder."
     default: false
   - id: show-bookmark-controls
     title: "Bookmarks: Show buttons in side bar"
     description:
-      By default, the Bookmark plugin buttons for new bookmarks, new folders, and collapsing are hidden.
-      Enable this setting to show them again.
+      By default, the Bookmark plugin buttons for new bookmarks, new folders, and collapsing are
+      hidden. Enable this setting to show them again.
     type: class-toggle
     default: false
   - id: show-bookmark-icons
     title: "Bookmarks: Show icons in side bar"
     description:
-      By default, the icons indicating bookmark types are hidden. Enable this setting to show them again.
+      By default, the icons indicating bookmark types are hidden. Enable this setting to show them
+      again.
     type: class-toggle
     default: false
   - id: normal-out-back-links
@@ -556,8 +567,8 @@ settings:
   - id: classic-inline-backlinks
     title: Use normal inline backlinks
     description:
-      By default, the inline-backlinks are displayed in a more minimalistic manner. Enable this setting
-      to restore original display of backlinks. This also affects the Influx plugin.
+      By default, the inline-backlinks are displayed in a more minimalistic manner. Enable this
+      setting to restore original display of backlinks. This also affects the Influx plugin.
     type: class-toggle
     default: false
   - id: show-outline-buttons
