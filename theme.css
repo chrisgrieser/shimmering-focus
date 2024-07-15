@@ -1,7 +1,7 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS
 by @pseudometa
-Version 3.626
+Version 3.627
 MIT License
 https://github.com/chrisgrieser/shimmering-focus
 ──────────────────────────────────────────────────── */
@@ -4689,9 +4689,9 @@ body
 /* Show Word Count only on writing cssclass and longform notes.
 - Supports Word Count Core Plugin + Better Word Count Community Plugin.
 - Caveat: also triggered when such a note is open is in a non-active tab, restricting
-this to the active tab qould require nested `:has()` which isn't supported */
+this to the active tab would require nested `:has()` which isn't supported */
 .wordcount-only-when-writing:not(.is-mobile)
-	.horizontal-main-container:not(:has( :is(.writing, .longform-leaf)))
+	.horizontal-main-container:not(:has(:is(.writing, .longform-leaf)))
 	+ .status-bar
 	:is(.plugin-word-count, .plugin-better-word-count) {
 	display: none;
@@ -4743,12 +4743,11 @@ div#select-projects select {
 /* Drafts Picker */
 #select-drafts select {
 	height: 25px;
-	padding-left: 4px;
 	color: var(--text-normal);
 }
 
 /* Scene List */
-body .longform-explorer.longform-explorer #scene-list {
+.longform-explorer.longform-explorer div#scene-list {
 	margin: 0;
 }
 
@@ -4772,7 +4771,7 @@ body .longform-explorer.longform-explorer #scene-list {
 
 /* stylelint-disable declaration-no-important */
 #scene-list .scene-container[data-scene-indent="0"] {
-	padding-left: 4px !important;
+	padding-left: 6px !important;
 }
 
 #scene-list .scene-container[data-scene-indent="1"] {
@@ -4835,16 +4834,9 @@ li:nth-child(even) :is(.draft-container, .scene-container) {
 	background-color: var(--a-row);
 }
 
-/* grayed out scenes */
+/* grayed out scenes. `{-}` in pandoc indicates a section not be included in the ToC */
 #scene-list
-	.scene-container:is(
-		[data-scene-path*="Acknowledgements" i],
-		[data-scene-path*="Appendix" i],
-		[data-scene-path*="Supplemental" i],
-		[data-scene-path*="Metadata" i],
-		[data-scene-path*="References" i],
-		[data-scene-path*="Declaration of Conflicting Interests" i]
-	):not(.selected, :hover)
+	.scene-container[data-scene-path$=" {-}.md" i]:not(.selected, :hover)
 	:is(div, .longform-scene-number) {
 	color: var(--text-faint);
 }

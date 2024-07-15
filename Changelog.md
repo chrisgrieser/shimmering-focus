@@ -1,3 +1,4 @@
+- 2024-07-15 **improv(longform)**: various tweaks to the longform sidebar
 - 2024-07-15 **chore**: remove outdated setting description
 - 2024-07-15 **chore**: typo
 - 2024-07-15 **chore**: update theme info
