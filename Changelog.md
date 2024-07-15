@@ -1,3 +1,4 @@
+- 2024-07-15 **chore**: remove outdated setting description
 - 2024-07-15 **chore**: typo
 - 2024-07-15 **chore**: update theme info
 - 2024-06-08 **refactor!**: split theme into modules

@@ -1,7 +1,7 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS
 by @pseudometa
-Version 3.625
+Version 3.626
 MIT License
 https://github.com/chrisgrieser/shimmering-focus
 ──────────────────────────────────────────────────── */
@@ -5540,8 +5540,7 @@ settings:
   - id: file-line-width
     title: Line length
     description:
-      "The length of the editor content (when the `readable line length` setting is enabled). You
-      can use the cssclass `full-width` to lift line length restrictions for individual notes."
+      "The length of the editor content (when the `readable line length` setting is enabled)."
     markdown: true
     type: variable-number-slider
     default: 700
