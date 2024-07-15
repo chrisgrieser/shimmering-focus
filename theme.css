@@ -1,7 +1,7 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS
 by @pseudometa
-Version 3.622
+Version 3.623
 MIT License
 https://github.com/chrisgrieser/shimmering-focus
 ──────────────────────────────────────────────────── */
@@ -5214,10 +5214,9 @@ id: shimmering-focus
 collapsed: false
 settings:
   - id: readme-info
-    title: ℹ️ Theme information
+    title: ℹ️ Theme Info
     description: |
       - [Changelog](https://github.com/chrisgrieser/shimmering-focus/blob/main/Changelog.md)
-      - To keep this theme maintainable, a few niche features have been removed. Most of them available as [standalone snippets](https://github.com/chrisgrieser/shimmering-focus/tree/main/snippets) though.
     markdown: true
     type: info-text
   # Show / Hide UI Elements
