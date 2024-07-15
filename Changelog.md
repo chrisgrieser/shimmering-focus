@@ -1,3 +1,4 @@
+- 2024-07-15 **chore**: typo
 - 2024-07-15 **chore**: update theme info
 - 2024-06-08 **refactor!**: split theme into modules
 - 2024-06-05 **fix**: extra whitespace in some sidebar panels
