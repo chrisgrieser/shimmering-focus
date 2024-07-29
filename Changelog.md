@@ -1,3 +1,5 @@
+- 2024-07-29 **docs**: fix links
+- 2024-07-29 **chore**: update license year
 - 2024-07-29 **docs**: typos
 - 2024-07-15 **improv(longform)**: various tweaks to the longform sidebar
 - 2024-07-15 **chore**: remove outdated setting description
