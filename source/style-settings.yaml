@@ -129,7 +129,7 @@ settings:
     options:
       - label: Tab bar becomes header
         value: tabbar-header-hybrid
-      - label: Hide bab bar (requires installer v1.1.9+)
+      - label: Hide tab bar (requires installer v1.1.9+)
         value: hide-tabbar-when-one-tab
       - label: Normal tab bar
         value: normal-tab-bar
