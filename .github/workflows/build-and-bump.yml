@@ -3,15 +3,17 @@ name: Build, bump version numbers, and update changelog
 on:
   push:
     branches: [main] # not on insider release branch
-  workflow_dispatch:
+    paths: [source/**] # only for build for source files
+  workflow_dispatch: # allows manually triggering on github
 
 permissions:
   contents: write
 
+#───────────────────────────────────────────────────────────────────────────────
+
 jobs:
   bump:
     runs-on: macos-latest
-    name: Build, bump version numbers, and update changelog
     steps:
       - name: Checkout
         uses: actions/checkout@v4
