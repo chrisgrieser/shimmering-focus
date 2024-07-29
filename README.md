@@ -1,7 +1,6 @@
 # Shimmering Focus ⟡
 ![Download count](https://img.shields.io/badge/downloads-175473-6E4E9B?style=plastic&logo=obsidian&color=%23483699)
 ![Last commit](https://img.shields.io/github/last-commit/chrisgrieser/shimmering-focus?style=plastic)
-![Changelog](https://img.shields.io/badge/changelog-here-6E4E9B?style=plastic&color=%23f6c66f)
 
 A minimalistic and opinionated Obsidian theme for the keyboard-centric user.  
 [🏆 Winner Obsidian October 2022 (Category: Theme Update)](https://forum.obsidian.md/t/obsidian-october-2022-winners/49087).
@@ -111,7 +110,6 @@ scheme](https://github.com/chrisgrieser/shimmering-focus/discussions/new?categor
 ```
 
 ## Credits
-
 ### Licenses
 - This theme is licensed under the [MIT
   License](https://github.com/chrisgrieser/shimmering-focus/blob/main/LICENSE).
