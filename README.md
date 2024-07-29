@@ -3,7 +3,7 @@
 ![Last commit](https://img.shields.io/github/last-commit/chrisgrieser/shimmering-focus?style=plastic)
 
 A minimalistic and opinionated Obsidian theme for the keyboard-centric user.  
-[🏆 Winner Obsidian October 2022 (Category: Theme Update)](https://forum.obsidian.md/t/obsidian-october-2022-winners/49087).
+[🏆 Winner Obsidian October 2022](https://obsidian.md/blog/2022-obsidian-october-winners/).
 
 ![Promo screenshot](assets/promo-screenshot-big.png)
 
