@@ -20,6 +20,7 @@ build_and_push_to_local_vaults:
         xargs -I {} find {} -maxdepth 1 -name ".obsidian" | # only vaults
         xargs dirname |                                     # vault root
         xargs -I {} cp -f "/tmp/theme.css" "{}/.obsidian/themes/Shimmering Focus/theme.css"
+    rm -f /tmp/theme.css
 
     # OPEN OBSIDIAN
     open "obsidian://open?vault={{ vault_to_open }}"
