@@ -1,3 +1,5 @@
+- 2024-08-01 **fix**: placement of link icon in heading-embeds
+- 2024-08-01 **docs**: overhaul readme
 - 2024-08-01 **improv**: embed styling
 - 2024-08-01 **feat**: styling for embedded notes
 - 2024-08-01 **fix**: properties block alignment
