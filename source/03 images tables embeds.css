@@ -126,6 +126,7 @@ body:not(.no-image-alttext-caption) .image-embed::after {
 	font-family: var(--font-heading-theme);
 	font-size: var(--h5-size);
 	letter-spacing: var(--heading-letter-spacing);
+	padding-bottom: 0;
 }
 
 .markdown-embed {

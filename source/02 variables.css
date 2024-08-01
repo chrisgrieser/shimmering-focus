@@ -236,13 +236,12 @@ body {
 
 	/* Embeds */
 	--embed-background: var(--bg2);
-	--embed-border: var(--basic-border);
+	--embed-border: 4px double var(--basic-border-color);
 	--embed-border-start: var(--embed-border);
 	--embed-border-end: var(--embed-border);
 	--embed-border-top: var(--embed-border);
 	--embed-border-bottom: var(--embed-border);
 	--embed-padding: 4px 8px;
-	--embed-max-height: 4000px;
 }
 
 .theme-dark {
