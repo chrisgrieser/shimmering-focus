@@ -1,7 +1,7 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS
 by @pseudometa
-Version 3.630
+Version 3.631
 MIT License
 https://github.com/chrisgrieser/shimmering-focus
 ──────────────────────────────────────────────────── */
@@ -366,6 +366,7 @@ body {
 	--b-row: hsla(0 0% 0% / 35%);
 	--search-match-color: var(--color-yellow);
 }
+
 /* ───────────────────────────────────────────────── */
 /** Tables
 ──────────────────────────────────────────────────── */
@@ -419,6 +420,73 @@ body.highlight-active-cell .table-cell-wrapper:has( .cm-s-obsidian) {
 }
 
 /* ───────────────────────────────────────────────── */
+/** Images
+──────────────────────────────────────────────────── */
+/* .workspace-leaf-content so images in modal aren't affected, :not([data-type="image"]) so
+ * images as files aren't affected */
+body:not(.is-mobile, .max-image-size-toggle)
+	.workspace-leaf-content:not([data-type="image"])
+	img:not(:active),
+body:not(.is-mobile, .max-image-size-toggle)
+	.oz-image-widget-cm6
+	> img:not(:active) {
+	max-width: calc(var(--image-size) * 1%);
+	cursor: zoom-in;
+}
+
+/* Remove Image Size Toggle in Style settings, since only used for command
+ * (see dummy setting in Style Settings) */
+.style-settings-container .setting-item[data-id="max-image-size-toggle"] {
+	display: none;
+}
+
+/* images as file with reduced with to avoid collusions with breadcrumbs or
+ * traffic lights */
+.workspace-leaf-content .image-container img {
+	max-width: 97%;
+	margin-top: 1em;
+}
+
+/* Image Alt as caption
+(except when no explicit alt is provided and urls are the alt text) */
+body:not(.no-image-alttext-caption)
+	.image-embed[alt]:not(
+		[alt$=".png"],
+		[alt$=".jpg"],
+		[alt$=".jpeg"],
+		[alt$=".tiff"]
+	)::after {
+	padding-top: 2px;
+	margin-bottom: 1em;
+	font-family: var(--font-interface);
+	font-size: var(--font-smaller);
+	font-style: italic;
+	color: var(--text-gray);
+	content: attr(alt);
+}
+
+/* centers image caption */
+body:not(.no-image-alttext-caption) .image-embed::after {
+	display: block;
+	text-align: center;
+}
+
+/* .emoji class are Twitter Images for Emojis from Emoji Toolbar */
+.view-content img[src]:not(.emoji, .link-favicon) {
+	border: var(--thin-muted-border);
+	border-radius: var(--radius-s);
+}
+
+/* center image */
+.markdown-source-view.mod-cm6 .cm-content > img,
+.view-content .image-embed img:not(.emoji) {
+	display: block;
+	/* stylelint-disable-next-line declaration-no-important */
+	margin-right: auto !important;
+	/* stylelint-disable-next-line declaration-no-important */
+	margin-left: auto !important;
+}
+/* ───────────────────────────────────────────────── */
 /** Tags
 ──────────────────────────────────────────────────── */
 
@@ -462,61 +530,6 @@ body .cm-s-obsidian span.cm-formatting-task {
 	color: var(--text-gray);
 }
 
-/* ───────────────────────────────────────────────── */
-/** Footnotes
-──────────────────────────────────────────────────── */
-
-/* footnotes-references in text */
-.cm-footref.cm-footref.cm-footref.cm-footref,
-.footnotes li::marker,
-.cm-hmd-footnote.cm-hmd-footnote.cm-hmd-footnote.cm-hmd-footnote.cm-hmd-footnote,
-.footnote-link {
-	color: var(--secondary-accent);
-}
-
-/* bold to increase readability */
-.cm-footref,
-.footnote-link {
-	font-weight: 600;
-	text-rendering: geometricprecision;
-}
-
-body .HyperMD-footnote.cm-line.cm-line,
-.footnotes.footnotes li {
-	padding-top: 4px;
-	padding-bottom: 4px;
-	line-height: 1.2;
-}
-
-/* separator line above the first footnote */
-.cm-line:not(.HyperMD-footnote) + .HyperMD-footnote.HyperMD-footnote,
-.footnotes hr {
-	padding-top: 12px;
-	border-top: var(--basic-border);
-}
-
-.footnotes hr {
-	margin-top: 40px;
-	margin-bottom: 0;
-}
-
-.cm-line.HyperMD-footnote.HyperMD-footnote {
-	padding-left: 0;
-}
-
-.footnote-link:hover {
-	color: var(--text-accent-hover);
-	text-decoration: none;
-	/* remove underline which only decreases readability */
-}
-
-.footnote-backref {
-	margin-left: 2px;
-	font-family: inter, sans-serif;
-	font-size: 90%;
-	color: var(--text-gray);
-	text-decoration: none;
-}
 
 /* ───────────────────────────────────────────────── */
 /** Links
@@ -846,10 +859,7 @@ body:not(.no-codeblock-line-numbers)
 	overflow-x: scroll;
 }
 
-/* ───────────────────────────────────────────────── */
-/** Syntax Highlighting
-──────────────────────────────────────────────────── */
-/* increase readability */
+/* Syntax Highlighting */
 body.theme-light {
 	--color-cyan: hsl(179 60% 38%);
 }
@@ -1230,31 +1240,6 @@ body .callout-icon .svg-icon {
 }
 
 /* ───────────────────────────────────────────────── */
-/** Trailing Whitespace (Two Space Rule)
-──────────────────────────────────────────────────── */
-/* needs this selector, so it does not affect spaces in the table editor
- * (Obsidian 1.5), which only differs at the level of `.view-content` */
-body:not(.hide-trailing-whitespace)
-	.view-content
-	> .cm-s-obsidian
-	> div
-	> .cm-scroller
-	> .cm-sizer
-	> .cm-contentContainer
-	> .cm-content
-	> .cm-line
-	> :is(
-		.cm-trailing-space-a,
-		.cm-trailing-space-b,
-		.cm-trailing-space-new-line
-	)::after {
-	font-size: 1em;
-	font-weight: 600;
-	color: var(--text-faint);
-	content: "·";
-}
-
-/* ───────────────────────────────────────────────── */
 /** Strikethroughs
 ──────────────────────────────────────────────────── */
 
@@ -1309,71 +1294,83 @@ mark {
 }
 
 /* ───────────────────────────────────────────────── */
-/** Images
+/** Footnotes
 ──────────────────────────────────────────────────── */
-/* .workspace-leaf-content so images in modal aren't affected, :not([data-type="image"]) so
- * images as files aren't affected */
-body:not(.is-mobile, .max-image-size-toggle)
-	.workspace-leaf-content:not([data-type="image"])
-	img:not(:active),
-body:not(.is-mobile, .max-image-size-toggle)
-	.oz-image-widget-cm6
-	> img:not(:active) {
-	max-width: calc(var(--image-size) * 1%);
-	cursor: zoom-in;
+
+/* footnotes-references in text */
+.cm-footref.cm-footref.cm-footref.cm-footref,
+.footnotes li::marker,
+.cm-hmd-footnote.cm-hmd-footnote.cm-hmd-footnote.cm-hmd-footnote.cm-hmd-footnote,
+.footnote-link {
+	color: var(--secondary-accent);
 }
 
-/* Remove Image Size Toggle in Style settings, since only used for command
- * (see dummy setting in Style Settings) */
-.style-settings-container .setting-item[data-id="max-image-size-toggle"] {
-	display: none;
+/* bold to increase readability */
+.cm-footref,
+.footnote-link {
+	font-weight: 600;
+	text-rendering: geometricprecision;
 }
 
-/* images as file with reduced with to avoid collusions with breadcrumbs or
- * traffic lights */
-.workspace-leaf-content .image-container img {
-	max-width: 97%;
-	margin-top: 1em;
+body .HyperMD-footnote.cm-line.cm-line,
+.footnotes.footnotes li {
+	padding-top: 4px;
+	padding-bottom: 4px;
+	line-height: 1.2;
 }
 
-/* Image Alt as caption
-(except when no explicit alt is provided and urls are the alt text) */
-body:not(.no-image-alttext-caption)
-	.image-embed[alt]:not(
-		[alt$=".png"],
-		[alt$=".jpg"],
-		[alt$=".jpeg"],
-		[alt$=".tiff"]
-	)::after {
-	padding-top: 2px;
-	margin-bottom: 1em;
-	font-family: var(--font-interface);
-	font-size: var(--font-smaller);
-	font-style: italic;
+/* separator line above the first footnote */
+.cm-line:not(.HyperMD-footnote) + .HyperMD-footnote.HyperMD-footnote,
+.footnotes hr {
+	padding-top: 12px;
+	border-top: var(--basic-border);
+}
+
+.footnotes hr {
+	margin-top: 40px;
+	margin-bottom: 0;
+}
+
+.cm-line.HyperMD-footnote.HyperMD-footnote {
+	padding-left: 0;
+}
+
+.footnote-link:hover {
+	color: var(--text-accent-hover);
+	text-decoration: none;
+	/* remove underline which only decreases readability */
+}
+
+.footnote-backref {
+	margin-left: 2px;
+	font-family: inter, sans-serif;
+	font-size: 90%;
 	color: var(--text-gray);
-	content: attr(alt);
+	text-decoration: none;
 }
-
-/* centers image caption */
-body:not(.no-image-alttext-caption) .image-embed::after {
-	display: block;
-	text-align: center;
-}
-
-/* .emoji class are Twitter Images for Emojis from Emoji Toolbar */
-.view-content img[src]:not(.emoji, .link-favicon) {
-	border: var(--thin-muted-border);
-	border-radius: var(--radius-s);
-}
-
-/* center image */
-.markdown-source-view.mod-cm6 .cm-content > img,
-.view-content .image-embed img:not(.emoji) {
-	display: block;
-	/* stylelint-disable-next-line declaration-no-important */
-	margin-right: auto !important;
-	/* stylelint-disable-next-line declaration-no-important */
-	margin-left: auto !important;
+/* ───────────────────────────────────────────────── */
+/** Trailing Whitespace (Two Space Rule)
+──────────────────────────────────────────────────── */
+/* needs this selector, so it does not affect spaces in the table editor
+ * (Obsidian 1.5), which only differs at the level of `.view-content` */
+body:not(.hide-trailing-whitespace)
+	.view-content
+	> .cm-s-obsidian
+	> div
+	> .cm-scroller
+	> .cm-sizer
+	> .cm-contentContainer
+	> .cm-content
+	> .cm-line
+	> :is(
+		.cm-trailing-space-a,
+		.cm-trailing-space-b,
+		.cm-trailing-space-new-line
+	)::after {
+	font-size: 1em;
+	font-weight: 600;
+	color: var(--text-faint);
+	content: "·";
 }
 /* ───────────────────────────────────────────────── */
 /** Settings Menu

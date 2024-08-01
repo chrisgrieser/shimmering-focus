@@ -1,3 +1,5 @@
+- 2024-08-01 **refactor**: separate media module
+- 2024-08-01 **chore**: better ignore file
 - 2024-07-29 **docs**: fix links
 - 2024-07-29 **chore**: update license year
 - 2024-07-29 **docs**: typos
