@@ -1,3 +1,6 @@
+- 2024-08-01 **improv**: embed styling
+- 2024-08-01 **feat**: styling for embedded notes
+- 2024-08-01 **fix**: properties block alignment
 - 2024-08-01 **refactor**: separate media module
 - 2024-08-01 **chore**: better ignore file
 - 2024-07-29 **docs**: fix links

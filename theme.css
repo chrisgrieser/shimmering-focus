@@ -1,7 +1,7 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS
 by @pseudometa
-Version 3.631
+Version 3.632
 MIT License
 https://github.com/chrisgrieser/shimmering-focus
 ──────────────────────────────────────────────────── */
@@ -303,6 +303,15 @@ body {
 	--indentation-guide-color: var(--text-faint);
 	--indentation-guide-color-active: var(--indentation-guide-color);
 	--nav-indentation-guide-color: var(--text-faint);
+
+	/* Embeds */
+	--embed-background: var(--bg2);
+	--embed-border: 4px double var(--basic-border-color);
+	--embed-border-start: var(--embed-border);
+	--embed-border-end: var(--embed-border);
+	--embed-border-top: var(--embed-border);
+	--embed-border-bottom: var(--embed-border);
+	--embed-padding: 4px 8px;
 }
 
 .theme-dark {
@@ -366,7 +375,6 @@ body {
 	--b-row: hsla(0 0% 0% / 35%);
 	--search-match-color: var(--color-yellow);
 }
-
 /* ───────────────────────────────────────────────── */
 /** Tables
 ──────────────────────────────────────────────────── */
@@ -410,7 +418,7 @@ body .markdown-rendered tbody tr:nth-child(odd):hover {
 }
 
 /* Obsidian 1.5: Active Table Cells (requires Obsidian installer 1.1.9) */
-body.highlight-active-cell .table-cell-wrapper:has( .cm-s-obsidian) {
+body.highlight-active-cell .table-cell-wrapper:has(.cm-s-obsidian) {
 	outline: 2.5px solid var(--color-accent);
 }
 
@@ -486,6 +494,21 @@ body:not(.no-image-alttext-caption) .image-embed::after {
 	/* stylelint-disable-next-line declaration-no-important */
 	margin-left: auto !important;
 }
+
+/* ───────────────────────────────────────────────── */
+/** Embeds
+──────────────────────────────────────────────────── */
+
+.markdown-embed .embed-title {
+	font-family: var(--font-heading-theme);
+	font-size: var(--h5-size);
+	letter-spacing: var(--heading-letter-spacing);
+	padding-bottom: 0;
+}
+
+.markdown-embed {
+	border-radius: var(--radius-s);
+}
 /* ───────────────────────────────────────────────── */
 /** Tags
 ──────────────────────────────────────────────────── */
@@ -529,7 +552,6 @@ input[type="checkbox"]:checked {
 body .cm-s-obsidian span.cm-formatting-task {
 	color: var(--text-gray);
 }
-
 
 /* ───────────────────────────────────────────────── */
 /** Links
@@ -881,12 +903,17 @@ body.theme-light {
 	padding-inline-start: 1.9em;
 }
 
-.markdown-rendered ul:not(.contains-task-list, .dataview-result-list-ul) {
+.markdown-rendered
+	ul:not(.contains-task-list, .dataview-result-list-ul, .has-list-bullet) {
 	padding-inline-start: 1em;
 }
 
 .markdown-rendered ul.contains-task-list {
 	padding-inline-start: 1.65em;
+}
+
+.has-list-bullet {
+	padding-inline-start: 0;
 }
 
 /* ───────────────────────────────────────────────── */
@@ -2070,8 +2097,8 @@ body:not(.is-mobile) .prompt .suggestion-prefix.suggestion-prefix {
 /* LIVE PREVIEW */
 .mod-root .metadata-container {
 	padding: 0;
-	margin-top: 0.5em;
 	margin-left: 4px;
+	margin-right: -4px;
 	font-family: var(--font-interface);
 	background-color: var(--bg2);
 	border: var(--thin-border);
@@ -2727,16 +2754,6 @@ body.mod-macos.is-hidden-frameless:not(.is-popout-window)
 	padding-bottom: 4px;
 	margin-top: 4px;
 }
-/* save space at the top */
-.mod-root .markdown-reading-view .markdown-preview-view,
-.mod-root
-	.view-content
-	> .markdown-source-view.mod-cm6
-	> .cm-editor
-	> .cm-scroller {
-	padding-top: 25px;
-}
-
 /* ───────────────────────────────────────────────── */
 /** Editor Suggestions
 ──────────────────────────────────────────────────── */
@@ -4561,11 +4578,15 @@ body
 	margin-bottom: 12px;
 	background-color: var(--bg1);
 	border: var(--basic-border);
-	border-radius: var(--radius-m);
+	border-radius: var(--radius-s);
 }
 
 .style-settings-info-text ul {
 	padding-left: 16px;
+}
+
+.style-settings-info-text li {
+	margin-bottom: 2px;
 }
 
 .style-settings-info-text
@@ -5206,6 +5227,7 @@ settings:
     title: ℹ️ Theme Info
     description: |
       - [Changelog](https://github.com/chrisgrieser/shimmering-focus/blob/main/Changelog.md)
+      - [README](https://github.com/chrisgrieser/shimmering-focus)
     markdown: true
     type: info-text
   # Show / Hide UI Elements
