@@ -1,0 +1,4 @@
+# make file switching less crowded
+snippets/*.css
+theme.css
+Changelog.md
