@@ -132,3 +132,11 @@ body:not(.no-image-alttext-caption) .image-embed::after {
 .markdown-embed {
 	border-radius: var(--radius-s);
 }
+
+/* fix placement of link icon */
+body:not(.no-heading-background)
+	.markdown-embed[data-type="heading"]
+	.markdown-embed-link {
+	top: 9px;
+	right: 14px;
+}
