@@ -44,8 +44,8 @@
 /* LIVE PREVIEW */
 .mod-root .metadata-container {
 	padding: 0;
-	margin-top: 0.5em;
 	margin-left: 4px;
+	margin-right: -4px;
 	font-family: var(--font-interface);
 	background-color: var(--bg2);
 	border: var(--thin-border);
