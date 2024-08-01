@@ -42,7 +42,6 @@ body .cm-s-obsidian span.cm-formatting-task {
 	color: var(--text-gray);
 }
 
-
 /* ───────────────────────────────────────────────── */
 /** Links
 ──────────────────────────────────────────────────── */
@@ -393,12 +392,17 @@ body.theme-light {
 	padding-inline-start: 1.9em;
 }
 
-.markdown-rendered ul:not(.contains-task-list, .dataview-result-list-ul) {
+.markdown-rendered
+	ul:not(.contains-task-list, .dataview-result-list-ul, .has-list-bullet) {
 	padding-inline-start: 1em;
 }
 
 .markdown-rendered ul.contains-task-list {
 	padding-inline-start: 1.65em;
+}
+
+.has-list-bullet {
+	padding-inline-start: 0;
 }
 
 /* ───────────────────────────────────────────────── */
