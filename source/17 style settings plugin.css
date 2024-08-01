@@ -157,11 +157,15 @@ body
 	margin-bottom: 12px;
 	background-color: var(--bg1);
 	border: var(--basic-border);
-	border-radius: var(--radius-m);
+	border-radius: var(--radius-s);
 }
 
 .style-settings-info-text ul {
 	padding-left: 16px;
+}
+
+.style-settings-info-text li {
+	margin-bottom: 2px;
 }
 
 .style-settings-info-text

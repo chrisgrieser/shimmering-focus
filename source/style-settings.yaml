@@ -6,6 +6,7 @@ settings:
     title: ℹ️ Theme Info
     description: |
       - [Changelog](https://github.com/chrisgrieser/shimmering-focus/blob/main/Changelog.md)
+      - [README](https://github.com/chrisgrieser/shimmering-focus)
     markdown: true
     type: info-text
   # Show / Hide UI Elements
