@@ -11,27 +11,22 @@ A minimalistic and opinionated Obsidian theme for the keyboard-centric user.
 
 <!-- toc -->
 
+- [Design philosophy](#design-philosophy)
 - [Features](#features)
-	* [Design philosophy](#design-philosophy)
-	* [Select theme features](#select-theme-features)
-	* [Commands](#commands)
-	* [Create your own color scheme](#create-your-own-color-scheme)
+- [Commands](#commands)
+- [Customize colors](#customize-colors)
+- [Licenses](#licenses)
 - [Credits](#credits)
-	* [Licenses](#licenses)
-	* [Thanks](#thanks)
-	* [About the developer](#about-the-developer)
 
 <!-- tocstop -->
 
-## Features
-
-### Design philosophy
+## Design philosophy
 - __Radical minimalism:__ As opposed to a minimalism of *colors*, this theme
   focuses on a minimalistic *user interface*: Buttons and sidebars not relevant
   for keyboard users are removed. UI elements that require the mouse are still
-  accessible on hover. All hidden UI elements can be permanently re-enabled
+  accessible on hover. (All hidden UI elements can be permanently re-enabled
   with the [Style Settings
-  Plugin](https://obsidian.md/plugins?id=obsidian-style-settings).
+  Plugin](https://obsidian.md/plugins?id=obsidian-style-settings).)
 - __Condensed Display of Information:__ Unnecessary padding and white-space is
   removed, which is beneficial for small screens or higher zoom levels.
 - __High Customizability:__ Dozens of customization options available via the
@@ -39,27 +34,26 @@ A minimalistic and opinionated Obsidian theme for the keyboard-centric user.
 
 ![Explaining screenshot](assets/explainer-screenshot.png)
 
-### Select theme features
-- Emphasis of __Pandoc Citations__ and __Footnotes__.
-- __Alt-text of images__ is used as __caption__.
-- Images can be __zoomed in__ by clicking and holding. You can also toggle
-  between reduced and original size via command (requires Style Settings
-  Plugin).
-- __Writing__: Extensive styling for the [Longform
-  Plugin](https://obsidian.md/plugins?id=longform), including alternative
-  background colors and the use of serif-fonts only inside longform projects.
-- __Vim mode__: Explicit styling of Obsidian's Vim Mode and various style
-  settings for vim mode, such as relative line numbers.
+## Features
+- __Images__: Alt-text of images used as __caption__, images can be zoomed in
+  via click-and-hold or toggled between reduced and original size via Style
+  Settings.
 - __Tables__: Highlighting of active cells, alternating row colors
-- Dozens of customization options available via [Style
+- __Vim mode__: Explicit styling of Obsidian's Vim Mode and various
+  settings such as relative line numbers.
+- __Writing__: Emphasis of __Pandoc citations__ and __footnotes__, extensive
+  styling for the [Longform Plugin](https://obsidian.md/plugins?id=longform).
+- __Headings__: Distinctive styling and various options for differentiating
+  heading levels.
+- __Many customization options__ available via [Style
   Settings Plugin](https://obsidian.md/plugins?id=obsidian-style-settings).
-- …and more many more.
+- …
 
 > [!NOTE]
 > This theme only supports the Obsidian desktop release. PRs with fixes for
 > mobile are welcome though.
 
-### Commands
+## Commands
 When the [Style Settings
 Plugin](https://obsidian.md/plugins?id=obsidian-style-settings) is installed,
 Shimmering Focus adds commands for toggling theme features:
@@ -67,7 +61,7 @@ Shimmering Focus adds commands for toggling theme features:
 - Toggle between reduced and original image size (reduced size can be set in the
   respective style setting)
 
-### Create your own color scheme
+## Customize colors
 With *Shimmering Focus*, you can create your own color scheme with this CSS
 snippet. You are welcome to [share your color
 scheme](https://github.com/chrisgrieser/shimmering-focus/discussions/new?category=share-your-custom-color-schemes).
@@ -109,8 +103,7 @@ scheme](https://github.com/chrisgrieser/shimmering-focus/discussions/new?categor
 }
 ```
 
-## Credits
-### Licenses
+## Licenses
 - This theme is licensed under the [MIT
   License](https://github.com/chrisgrieser/shimmering-focus/blob/main/LICENSE).
 - The two embedded fonts *iA Writer Quattro* and *Recursive* are licensed under
@@ -118,7 +111,7 @@ scheme](https://github.com/chrisgrieser/shimmering-focus/discussions/new?categor
 - The embedded *Material Icon* font is licensed under the [Apache License](https://developers.google.com/fonts/docs/material_icons#licensing).
 
 <!-- vale Google.FirstPerson = NO -->
-### Thanks
+## Credits
 - This theme includes snippets or ideas from:
   [@SlRvb](https://github.com/SlRvb), [@Atlas](https://github.com/zcysxy),
   [@CecilaMay](https://github.com/ceciliamay),
@@ -139,22 +132,22 @@ scheme](https://github.com/chrisgrieser/shimmering-focus/discussions/new?categor
   [@javalent](https://github.com/valentine195), and
   [@NothingIsLost](https://github.com/nothingislost).
 
-### About the developer
+__About the developer__
 In my day job, I am a sociologist studying the social mechanisms underlying the
 digital economy. For my PhD project, I investigate the governance of the app
 economy and how software ecosystems manage the tension between innovation and
 compatibility. If you are interested in this subject, feel free to get in touch.
 
-> [!IMPORTANT]
-> For questions, feature requests, or bug reports, please file an issue via 
-> [GitHub](https://github.com/chrisgrieser/shimmering-focus/issues/new/choose). 
-> Due to the number of messages I receive, I am not able to respond to inquiries
-> made elsewhere.
-
 - [Academic Website](https://chris-grieser.de/)
 - [ResearchGate](https://www.researchgate.net/profile/Christopher-Grieser)
 - [Mastodon](https://pkm.social/@pseudometa)
 - [LinkedIn](https://www.linkedin.com/in/christopher-grieser-ba693b17a/)
+
+> [!IMPORTANT]
+> For questions, feature requests, or bug reports, please file an issue via
+> [GitHub](https://github.com/chrisgrieser/shimmering-focus/issues/new/choose).
+> Due to the number of messages I receive, I am not able to respond to inquiries
+> made elsewhere.
 
 <a href='https://ko-fi.com/Y8Y86SQ91' target='_blank'>
 <img height='36' style='border:0px;height:36px;'
