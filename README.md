@@ -112,6 +112,7 @@ scheme](https://github.com/chrisgrieser/shimmering-focus/discussions/new?categor
 
 <!-- vale Google.FirstPerson = NO -->
 ## Credits
+__Thanks__  
 - This theme includes snippets or ideas from:
   [@SlRvb](https://github.com/SlRvb), [@Atlas](https://github.com/zcysxy),
   [@CecilaMay](https://github.com/ceciliamay),
@@ -132,7 +133,7 @@ scheme](https://github.com/chrisgrieser/shimmering-focus/discussions/new?categor
   [@javalent](https://github.com/valentine195), and
   [@NothingIsLost](https://github.com/nothingislost).
 
-__About the developer__
+__About the developer__  
 In my day job, I am a sociologist studying the social mechanisms underlying the
 digital economy. For my PhD project, I investigate the governance of the app
 economy and how software ecosystems manage the tension between innovation and
