@@ -1,7 +1,7 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS
 by @pseudometa
-Version 3.633
+Version 3.634
 MIT License
 https://github.com/chrisgrieser/shimmering-focus
 ──────────────────────────────────────────────────── */
@@ -5559,7 +5559,7 @@ settings:
   - id: file-line-width
     title: Line length
     description:
-      "The length of the editor content (when the `readable line length` setting is enabled)."
+      "The length of the editor content (when the `Readable line length` setting is enabled)."
     markdown: true
     type: variable-number-slider
     default: 700
@@ -5593,13 +5593,13 @@ settings:
     title: "Images: No alt-text as caption"
     description:
       By default, the theme adds the alt-text/filename of an image as caption (except when the image
-      is named "pasted image…")
+      is named "Pasted image…").
     type: class-toggle
     default: false
   - id: image-size
     title: "Images: Size (percent)"
     description:
-      "The theme also adds a command `toggle max image size` which toggles between 100% image size
+      "The theme also adds a command `Toggle max image size` which toggles between 100% image size
       and the reduced image size below. In addition, clicking & holding images will also enlarge an
       image."
     type: variable-number-slider
@@ -5664,7 +5664,8 @@ settings:
   - id: no-mouse-hovers
     title: 'Disable tooltips & "Edit this block" button'
     description:
-      Disables tooltips and "Edit this block" buttons displayed on hovering various elements.
+      Disables tooltips and "Edit this block" buttons displayed when hovering various elements in Live 
+      Preview.
     type: class-toggle
     default: false
   # Longform & writing

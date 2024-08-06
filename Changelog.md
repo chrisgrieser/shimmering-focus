@@ -1,3 +1,4 @@
+- 2024-08-02 **docs**: fix line breaks
 - 2024-08-01 **fix**: placement of link icon in heading-embeds
 - 2024-08-01 **docs**: overhaul readme
 - 2024-08-01 **improv**: embed styling
