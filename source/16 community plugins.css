@@ -2,7 +2,7 @@
 /** Editing Toolbar
 ──────────────────────────────────────────────────── */
 
-#cMenuToolbarModalBar.top {
+body:not(.normal-header-bar) #cMenuToolbarModalBar.top {
 	margin-right: 2em;
 }
 
@@ -267,8 +267,8 @@ body .cm-matched-string {
 /* if `:has` is supported, re-display another quick switcher instructions, since
 * that plugin has its own setting to show them */
 /* https://developer.mozilla.org/en-US/docs/Web/CSS/@supports#testing_for_the_support_of_a_selector */
-@supports selector(:has( .a)) {
-	.prompt-results:has( .another-quick-switcher__item) ~ .prompt-instructions {
+@supports selector(:has(.a)) {
+	.prompt-results:has(.another-quick-switcher__item) ~ .prompt-instructions {
 		display: flex;
 	}
 }
