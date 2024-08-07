@@ -33,6 +33,7 @@ rules:
   media-feature-name-no-unknown: true
   media-query-no-invalid: true
   named-grid-areas-no-invalid: true
+  no-descending-specificity: null # not useful for themes
   no-duplicate-at-import-rules: true
   no-duplicate-selectors: true
   no-empty-source: true
@@ -65,7 +66,7 @@ rules:
       ignore:
         - after-comment
   at-rule-no-vendor-prefix: true
-  color-function-notation: [modern, { ignore: [with-var-inside] }]
+  color-function-notation: [modern, {ignore: [with-var-inside]}]
   color-hex-length: short
   comment-empty-line-before: null
   comment-whitespace-inside: always
@@ -104,9 +105,7 @@ rules:
         - after-comment
   selector-attribute-quotes: always
   selector-class-pattern: null # class names usually not defined by me
-  selector-id-pattern:
-    - ^([a-z][a-z0-9]*)(-[a-z0-9]+)*$
-    - {}
+  selector-id-pattern: null # id names usually not defined by me
   selector-no-vendor-prefix: true
   selector-not-notation: complex
   selector-pseudo-element-colon-notation: double
@@ -123,8 +122,4 @@ rules:
   declaration-no-important: true
   font-weight-notation: numeric
   max-nesting-depth: 3
-  selector-nested-pattern: ["&", { splitList: true, message: "Nested selectors should include a &." }]
-  #─────────────────────────────────────────────────────────────────────────────
-  # PROJECT-SPECIFIC disabled rules
-  no-descending-specificity: null
-  no-unknown-custom-properties: null
+  selector-nested-pattern: ["&", {splitList: true, message: "Nested selectors should include a &."}]
