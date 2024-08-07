@@ -1,3 +1,4 @@
+- 2024-08-07 **fix**: apply edit toolbar movement only on changed header bar
 - 2024-08-07 **fix**: collision of 3-dot-menu and edit toolbar plugin (#308)
 - 2024-08-07 **chore**: update issue templates
 - 2024-08-02 **docs**: fix line breaks
