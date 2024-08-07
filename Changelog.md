@@ -1,3 +1,5 @@
+- 2024-08-07 **fix**: collision of 3-dot-menu and edit toolbar plugin (#308)
+- 2024-08-07 **chore**: update issue templates
 - 2024-08-02 **docs**: fix line breaks
 - 2024-08-01 **fix**: placement of link icon in heading-embeds
 - 2024-08-01 **docs**: overhaul readme
