@@ -1,6 +1,6 @@
 name: Bug Report
 description: File a bug report
-title: "[Bug]: "
+title: "Bug: "
 labels: ["bug"]
 body:
   - type: checkboxes
@@ -8,11 +8,17 @@ body:
     attributes:
       label: Checklist
       options:
-        - label: I updated to the latest version of the theme (Settings → Appearance → Check for updates).
+        - label:
+            I updated to the latest version of the theme (Settings → Appearance → Check for
+            updates).
           required: true
-        - label: I made sure that the issue is related to this theme by checking that the problem does *not* occur with the default theme.
+        - label:
+            I made sure that the issue is related to this theme by checking that the problem does
+            *not* occur with the default theme.
           required: true
-        - label: In case I am missing an UI element, I have checked that it cannot be re-enabled with the [Style Settings plugin](https://github.com/mgmeyers/obsidian-style-settings).
+        - label:
+            In case I am missing an UI element, I have checked that it cannot be re-enabled with the
+            [Style Settings plugin](https://github.com/mgmeyers/obsidian-style-settings).
           required: true
         - label: The bug is about Obsidian desktop, Obsidian mobile is not supported by this theme.
           required: true
@@ -21,15 +27,13 @@ body:
     attributes:
       label: Bug Description
       description: A clear and concise description of the bug.
-    validations:
-      required: true
+    validations: { required: true }
   - type: textarea
     id: screenshot
     attributes:
       label: Relevant Screenshot
       description: Add screenshots or a screen recording to help explain your problem.
-    validations:
-      required: true
+    validations: { required: true }
   - type: textarea
     id: reproduction-steps
     attributes:
@@ -37,46 +41,51 @@ body:
       description: Steps to reproduce the problem
       placeholder: |
         For example:
-        1. Go to '...'
-        2. Click on '...'
-        3. Scroll down to '...'
-    validations:
-      required: true
+        1. Go to…
+        2. Click on…
+        3. Scroll down to…
+  - type: input
+    id: plugins-involved
+    attributes:
+      label: Plugins Involved
+      description: Is the problem related to a specific plugin, such as a toolbar of a plugin?
+      placeholder: e.g., Dataview
   - type: textarea
     id: sample-text
     attributes:
       label: Sample Text
-      description: If the problem occurs inside the editor, please provide the markdown text with which you have the issue.
+      description:
+        If the problem occurs inside the editor, please provide the markdown text with which you
+        have the issue.
       placeholder: |
         ## a heading
         ## another heading
 
-        ```sh
-        code block
-        ```
+        > some blockquote
+        > another line
   - type: input
     id: obsi-version
     attributes:
       label: Obsidian Version
-      description: You can find the version in the *About* tab of the Obsidian settings.
+      description:
+        You can find the version in the *About* tab of the Obsidian settings. If your Obsidian
+        version is too old, you should update it first.
       placeholder: "1.1.09"
-    validations:
-      required: true
+    validations: { required: true }
   - type: input
     id: installer-version
     attributes:
       label: Installer Version
       description: You can find the installer version in the *About* tab of the Obsidian settings.
       placeholder: "0.14.19"
-    validations:
-      required: true
+    validations: { required: true }
   - type: checkboxes
     id: mode
     attributes:
       label: In which mode(s) does the problem occur? (if applicable)
       options:
-        - label: Source (Edit)
-        - label: Reading (Preview)
+        - label: Source Mode
+        - label: Reading Mode
         - label: Live Preview
   - type: checkboxes
     id: operating-system
