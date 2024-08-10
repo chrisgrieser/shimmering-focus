@@ -32,7 +32,7 @@ A minimalistic and opinionated Obsidian theme for the keyboard-centric user.
   [Style Settings Plugin](https://obsidian.md/plugins?id=obsidian-style-settings).
 
 ## Features
-- **Smart hiding of UI Elements**: The tab bar is only shown when there is more
+- __Smart hiding of UI Elements__: The tab bar is only shown when there is more
   than one tab open, and the sidebar tab buttons are only shown on hover.
 - __Images__: Alt-text of images used as __caption__, images can be zoomed in
   via click-and-hold or toggled between reduced and original size via Style
@@ -45,7 +45,7 @@ A minimalistic and opinionated Obsidian theme for the keyboard-centric user.
 - __Headings__: Distinctive styling and various options for differentiating
   heading levels.
 - __Many customization options__ available via [Style
-  Settings Plugin](https://obsidian.md/plugins?id=obsidian-style-settings):
+  Settings Plugin](https://obsidian.md/plugins?id=obsidian-style-settings).
 
 ## Commands
 When the [Style Settings
