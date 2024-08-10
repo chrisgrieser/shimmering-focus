@@ -3,15 +3,15 @@ id: shimmering-focus
 collapsed: false
 settings:
   - id: readme-info
-    title: ℹ️ Theme Info
+    title: Theme info
     description: |
       - [Changelog](https://github.com/chrisgrieser/shimmering-focus/blob/main/Changelog.md)
       - [README](https://github.com/chrisgrieser/shimmering-focus)
+      - 💡 There is a search at the top of this settings page.
     markdown: true
     type: info-text
-
   - id: notable-changes
-    title: ℹ️ Notable Recent Changes
+    title: ℹ️ Notable recent changes
     description: |
       - The **tab bar is now hidden when there is only one tab** open. You can
         re-enable the regular tab bar in the `Show/hide UI elements` section below.
@@ -20,10 +20,11 @@ settings:
     markdown: true
     type: info-text
 
+  #─────────────────────────────────────────────────────────────────────────────
   # Show / Hide UI Elements
   - id: show-hide-elements
     title: 🙈 Show/hide UI elements
-    description: Re-enable UI elements hidden by this theme.
+    description: Re-enable user interface elements hidden by this theme
     type: heading
     level: 1
     collapsed: true
@@ -92,6 +93,7 @@ settings:
       ℹ️ This setting can also be toggled via command palette or hotkey.
     default: false
 
+  #─────────────────────────────────────────────────────────────────────────────
   # Status bar
   - id: show-hide-statusbar-elements
     title: Status bar items
@@ -129,6 +131,7 @@ settings:
     type: class-toggle
     default: false
 
+  #─────────────────────────────────────────────────────────────────────────────
   # Workspace
   - id: user-interface
     title: 🔲 Workspace
@@ -182,6 +185,7 @@ settings:
     type: class-toggle
     default: false
 
+  #─────────────────────────────────────────────────────────────────────────────
   # Fonts & Headings
   - id: font-settings
     title: 🔠 Font
@@ -234,6 +238,7 @@ settings:
     type: class-toggle
     default: false
 
+  #─────────────────────────────────────────────────────────────────────────────
   # Colors & shapes
   - id: aesthetics
     title: 🎨 Colors & shapes
@@ -296,11 +301,11 @@ settings:
     markdown: true
     type: info-text
 
+  #─────────────────────────────────────────────────────────────────────────────
   # Editor Content
   - id: content-settings
     title: 📑 Editor content
-    description:
-      Active block highlights, dimmed panes, code blocks, line length, trailing spaces
+    description: Active block highlights, dimmed panes, code blocks, line length, trailing spaces
     type: heading
     level: 1
     collapsed: true
@@ -350,6 +355,7 @@ settings:
     type: class-toggle
     default: false
 
+  #─────────────────────────────────────────────────────────────────────────────
   # Media
   - id: media-settings
     title: 🖼️ Media
@@ -376,19 +382,22 @@ settings:
     min: 10
     max: 100
     step: 5
-  - id: max-image-size-toggle
-    title: between reduced and full image size
-    description:
-      INFO this is a dummy setting, since this is hidden and only added for the toggle-command
-    addCommand: true
-    type: class-toggle
-    default: false
   - id: unrestricted-line-length-tables
     title: Automatically disable `readable line length` on notes with tables
     markdown: true
     type: class-toggle
     default: false
 
+  #─────────────────────────────────────────────────────────────────────────────
+  # INFO dummy setting, hidden via css and only added for the toggle-command
+  - id: max-image-size-toggle
+    title: between reduced and full image size
+    addCommand: true
+    type: class-toggle
+    default: false
+  #─────────────────────────────────────────────────────────────────────────────
+
+  #─────────────────────────────────────────────────────────────────────────────
   # Vim mode
   - id: vim-mode
     title: 🏃 Vim mode
@@ -430,6 +439,7 @@ settings:
     type: class-toggle
     default: false
 
+  #─────────────────────────────────────────────────────────────────────────────
   # Longform & writing
   - id: longform-settings
     title: ✍️ Longform & writing
@@ -513,6 +523,7 @@ settings:
     type: class-toggle
     default: false
 
+  #─────────────────────────────────────────────────────────────────────────────
   # Plugin-Specific Settings
   - id: plugin-specific-settings
     title: ⚙️ Plugin-specific settings
@@ -568,6 +579,7 @@ settings:
     default: false
     type: class-toggle
 
+  #─────────────────────────────────────────────────────────────────────────────
   # Appendix
   - id: appendix-info
     title: ℹ️ Info
