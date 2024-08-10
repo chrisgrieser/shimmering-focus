@@ -12,14 +12,11 @@ body
 /* if there is more than one pane, highlight the currently focused one */
 .mod-root
 	.workspace-tabs:not(:only-of-type, .mod-stacked).mod-active
-	.workspace-tab-header-container-inner,
-.mod-root
-	.workspace-tabs:not(:only-of-type, .mod-stacked).mod-active
 	.workspace-tab-header-container {
-	border-bottom-color: var(--color-accent);
+	border-bottom: 2px solid var(--color-accent);
 }
 
-.mod-root .workspace-tab-header-container {
+.mod-root .workspace-tab-header-container-inner {
 	border-bottom: 2px solid transparent;
 }
 
