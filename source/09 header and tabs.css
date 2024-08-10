@@ -233,6 +233,7 @@ body .workspace-tab-header-container {
 
 body .workspace .mod-root .workspace-tab-header {
 	width: var(--tab-width);
+	max-width: unset;
 }
 
 /* pin */

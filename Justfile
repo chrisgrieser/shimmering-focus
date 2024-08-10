@@ -1,9 +1,5 @@
 set quiet := true
 
-vault_to_open := "main-vault"
-
-#───────────────────────────────────────────────────────────────────────────────
-
 # uses personal vaults saved in `~/.config/perma-repos.csv`
 build_and_push_to_local_vaults:
     #!/usr/bin/env zsh
@@ -23,4 +19,4 @@ build_and_push_to_local_vaults:
     rm -f /tmp/theme.css
 
     # OPEN OBSIDIAN
-    open "obsidian://open?vault={{ vault_to_open }}"
+    open "obsidian://open"
