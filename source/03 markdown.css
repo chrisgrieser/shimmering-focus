@@ -769,12 +769,12 @@ body .callout-icon .svg-icon {
 ──────────────────────────────────────────────────── */
 
 .theme-light {
-	--highlight-hue-1: 60;
+	--highlight-hue-1: 280;
 	--highlight-sla-values: 85% 70% / 40%;
 }
 
 .theme-dark {
-	--highlight-hue-1: 60;
+	--highlight-hue-1: 280;
 	--highlight-sla-values: 85% 40% / 40%;
 }
 
