@@ -22,19 +22,18 @@ A minimalistic and opinionated Obsidian theme for the keyboard-centric user.
 
 ## Design philosophy
 - __Radical minimalism:__ As opposed to a minimalism of *colors*, this theme
-  focuses on a minimalistic *user interface*: Buttons and sidebars not relevant
-  for keyboard users are removed. UI elements that require the mouse are still
-  accessible on hover. (All hidden UI elements can be permanently re-enabled
-  with the [Style Settings
-  Plugin](https://obsidian.md/plugins?id=obsidian-style-settings).)
+  focuses on a minimalistic *user interface*: UI elements not relevant for
+  keyboard users are hidden, or only shown when needed. All hidden UI elements
+  can be permanently re-enabled with the [Style Settings
+  Plugin](https://obsidian.md/plugins?id=obsidian-style-settings).
 - __Condensed Display of Information:__ Unnecessary padding and white-space is
   removed, which is beneficial for small screens or higher zoom levels.
 - __High Customizability:__ Dozens of customization options available via the
   [Style Settings Plugin](https://obsidian.md/plugins?id=obsidian-style-settings).
 
-![Explaining screenshot](assets/explainer-screenshot.png)
-
 ## Features
+- **Smart hiding of UI Elements**: The tab bar is only shown when there is more
+  than one tab open, and the sidebar tab buttons are only shown on hover.
 - __Images__: Alt-text of images used as __caption__, images can be zoomed in
   via click-and-hold or toggled between reduced and original size via Style
   Settings.
@@ -47,9 +46,6 @@ A minimalistic and opinionated Obsidian theme for the keyboard-centric user.
   heading levels.
 - __Many customization options__ available via [Style
   Settings Plugin](https://obsidian.md/plugins?id=obsidian-style-settings):
-
-<img alt="Overview Style Settings" width=60% src="https://github.com/user-attachments/assets/524a9ade-1d6f-47f9-9b90-1d9c5ee353b5">
-*Overview of settings are available via the Style Settings Plugin*
 
 ## Commands
 When the [Style Settings
