@@ -13,8 +13,8 @@ settings:
   - id: notable-changes
     title: ℹ️ Notable Recent Changes
     description: |
-      - The **tab bar is now hidden when there is only one tab** open.
-        You can re-enable the regular tab bar in the `Workspace` section below.
+      - The **tab bar is now hidden when there is only one tab** open. You can
+        re-enable the regular tab bar in the `Show/hide UI elements` section below.
       - The theme now requires **Obsidian installer version 1.1.9** or later.
         You can update the installer by re-downloading Obsidian from the website.
     markdown: true
@@ -27,6 +27,11 @@ settings:
     type: heading
     level: 1
     collapsed: true
+  - id: normal-tab-bar
+    title: Always show tab bar
+    description: By default, this theme hides the tab bar when there is only one tab.
+    type: class-toggle
+    default: false
   - id: ribbon-info
     description:
       "The setting to remove the ribbon (the thin sidebar to the very left) has been removed, since
@@ -127,30 +132,24 @@ settings:
   # Workspace
   - id: user-interface
     title: 🔲 Workspace
-    description: Sidebars, tab bar, header bar, notifications
+    description: Header bar, tab width, sidebars, notifications
     type: heading
     level: 1
     collapsed: true
-  - id: normal-tab-bar
-    title: Always show tab bar
-    description: By default, this theme hides the tab bar when there is only one tab.
-    type: class-toggle
-    default: false
   - id: normal-header-bar
-    title: Re-enable the header bar (tab title bar)
+    title: Use normal header bar (tab title bar)
     description:
-      By default, this theme removes the header bar, except for the "more options" button and the
-      breadcrumbs moved to the right. You can still toggle reading/editing mode, navigate
-      back/forward, and rename your current file with the respective command in the command palette
-      or a hotkey. (this setting has no effect if "show tab title bar" in the appearance settings is
-      disabled.)
+      By default, this theme hides most of the header bar and moves the breadcrumbs to the right.
+      You can still toggle reading/editing mode, navigate back/forward, and rename your current file
+      with the respective command in the command palette or a hotkey. (This setting has no effect if
+      `Show tab title bar` in the appearance settings is disabled.)
     type: class-toggle
     default: false
   - id: tab-width
     title: Tab width
     description:
-      This setting only affects tab width when there is enough space in the tab bar. (Obsidian
-      automatically reduces tab width when there are more open tabs than there is space for them.)
+      Only affects tab width when there is enough space in the tab bar. (Obsidian automatically
+      reduces tab width when there are more open tabs than there is space for them.)
     type: variable-number-slider
     default: 250
     min: 100
@@ -158,14 +157,14 @@ settings:
     step: 25
     format: px
   - id: trim-long-filenames
-    title: "Sidebar: Trim file names"
+    title: "Sidebars: Trim file names"
     description:
       When enabled, long file and folder names will be trimmed. When disabled, long names will be
       wrapped to the next line.
     type: class-toggle
     default: false
   - id: overlaying-right-sidebar
-    title: "Sidebar: Overlaying right sidebar"
+    title: "Sidebars: Overlaying right sidebar"
     description:
       "The right sidebar is placed on top of the editor instead of making the editor more narrow
       (i.e. the behavior on mobile)."

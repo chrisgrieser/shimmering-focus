@@ -169,7 +169,7 @@ body.mod-windows:not(.normal-tab-bar, .show-sidebar-header-buttons)
 	height: var(--sidebar-tabs-unhovered-height);
 }
 
-/* hide inline title when more than one tab */
+/* hide inline title when *more* than one tab */
 body:not(.normal-tab-bar, .is-mobile)
 	.mod-root
 	.workspace-tab-header-container:has(
