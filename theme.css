@@ -1,7 +1,7 @@
 /* ───────────────────────────────────────────────────
 SHIMMERING FOCUS
 by @pseudometa
-Version 3.636
+Version 3.637
 MIT License
 https://github.com/chrisgrieser/shimmering-focus
 ──────────────────────────────────────────────────── */
@@ -418,7 +418,7 @@ body .markdown-rendered tbody tr:nth-child(odd):hover {
 }
 
 /* Obsidian 1.5: Active Table Cells (requires Obsidian installer 1.1.9) */
-body.highlight-active-cell .table-cell-wrapper:has(.cm-s-obsidian) {
+.table-cell-wrapper:has(.cm-s-obsidian) {
 	outline: 2.5px solid var(--color-accent);
 }
 
@@ -1288,12 +1288,12 @@ body .callout-icon .svg-icon {
 ──────────────────────────────────────────────────── */
 
 .theme-light {
-	--highlight-hue-1: 60;
+	--highlight-hue-1: 280;
 	--highlight-sla-values: 85% 70% / 40%;
 }
 
 .theme-dark {
-	--highlight-hue-1: 60;
+	--highlight-hue-1: 280;
 	--highlight-sla-values: 85% 40% / 40%;
 }
 
@@ -2293,7 +2293,7 @@ body:not(.hide-signature-icon) .status-bar::after {
 	content: var(--signature);
 }
 /* ───────────────────────────────────────────────── */
-/** Header Bar (Tab Title Bar)
+/** Header Bar
 ──────────────────────────────────────────────────── */
 .workspace-leaf-content .view-header-title-container::after {
 	display: none;
@@ -2437,89 +2437,34 @@ body:not(.show-tab-list-button) .workspace-tab-header-tab-list {
 }
 
 /* ───────────────────────────────────────────────── */
-/** Tab bar when only tab
+/** Hide Tab bar when only tab
 ──────────────────────────────────────────────────── */
 
-body:not(.normal-tab-bar) .mod-root .workspace-tab-header:only-child {
-	width: 100vw;
-	max-width: unset;
-	padding-bottom: 1px;
-	background-color: transparent;
-	box-shadow: none;
-}
-
-body:not(.normal-tab-bar)
-	.mod-root
-	.workspace-tab-header:only-child
-	.workspace-tab-header-inner-title {
-	width: 100vw;
-	margin-bottom: 4px;
-	margin-left: -4px;
-	font-size: 1.3em;
-}
-
-body:not(.normal-tab-bar)
-	.mod-root
-	.workspace-tab-header:only-child
-	:is(
-		.workspace-tab-header-inner-title,
-		.workspace-tab-header-inner-icon,
-		.workspace-tab-header-inner-icon svg
-	),
-body:not(.normal-tab-bar) .mod-root .workspace-tab-header:only-child::before,
-body:not(.normal-tab-bar) .mod-root .workspace-tab-header:only-child::after,
-body:not(.normal-tab-bar) .mod-root .workspace-tab-header:only-child {
-	transition-delay: var(--transition-delay-passing-over-protection);
-	transition-duration: var(--anim-duration-moderate);
-	transition-property: font-size, width;
-}
-
-/* icon with more spacing and size */
-body:not(.normal-tab-bar)
-	.mod-root
-	.workspace-tab-header:only-child
-	:is(
-		.workspace-tab-header-inner-icon,
-		.workspace-tab-header-status-container
-	) {
-	padding-right: 12px;
-	padding-bottom: 3px;
-}
-
-body:not(.normal-tab-bar)
-	.mod-root
-	.workspace-tab-header:only-child
-	:is(.workspace-tab-header-inner-icon, .workspace-tab-header-status-container)
-	svg {
-	width: var(--icon-l);
-	height: var(--icon-l);
-}
-
-.hide-tabbar-when-one-tab:not(.is-mobile)
+body:not(.normal-tab-bar, .is-mobile)
 	.mod-root
 	.workspace-tab-header-container:not(
-		:has( .workspace-tab-header + .workspace-tab-header)
+		:has(.workspace-tab-header + .workspace-tab-header)
 	) {
 	display: none;
 }
 
 /* MACOS: reduce height of RIGHT sidebar when tab bar hidden */
 /* WINDOWS: reduce height of LEFT sidebar when tab bar hidden */
-.hide-tabbar-when-one-tab.mod-macos:not(.show-sidebar-header-buttons)
-	.mod-root:not(:has( .workspace-tab-header + .workspace-tab-header))
+body.mod-macos:not(.normal-tab-bar, .show-sidebar-header-buttons)
+	.mod-root:not(:has(.workspace-tab-header + .workspace-tab-header))
 	+ .mod-right-split
 	.mod-top-right-space
 	.workspace-tab-header-container:not(:hover),
-.hide-tabbar-when-one-tab.mod-windows:not(.show-sidebar-header-buttons)
-	.mod-root:not(:has( .workspace-tab-header + .workspace-tab-header))
+body.mod-windows:not(.normal-tab-bar, .show-sidebar-header-buttons)
+	.mod-root:not(:has(.workspace-tab-header + .workspace-tab-header))
 	+ .mod-left-split
 	.mod-top-left-space
 	.workspace-tab-header-container:not(:hover) {
 	height: var(--sidebar-tabs-unhovered-height);
 }
 
-/* hide inline title only when one more than tab */
-.hide-tabbar-when-one-tab:not(.is-mobile)
+/* hide inline title when *more* than one tab */
+body:not(.normal-tab-bar, .is-mobile)
 	.mod-root
 	.workspace-tab-header-container:has(
 		.workspace-tab-header + .workspace-tab-header
@@ -2582,6 +2527,7 @@ body .workspace-tab-header-container {
 
 body .workspace .mod-root .workspace-tab-header {
 	width: var(--tab-width);
+	max-width: unset;
 }
 
 /* pin */
@@ -3187,14 +3133,11 @@ body
 /* if there is more than one pane, highlight the currently focused one */
 .mod-root
 	.workspace-tabs:not(:only-of-type, .mod-stacked).mod-active
-	.workspace-tab-header-container-inner,
-.mod-root
-	.workspace-tabs:not(:only-of-type, .mod-stacked).mod-active
 	.workspace-tab-header-container {
-	border-bottom-color: var(--color-accent);
+	border-bottom: 2px solid var(--color-accent);
 }
 
-.mod-root .workspace-tab-header-container {
+.mod-root .workspace-tab-header-container-inner {
 	border-bottom: 2px solid transparent;
 }
 
@@ -5246,6 +5189,17 @@ settings:
       - [README](https://github.com/chrisgrieser/shimmering-focus)
     markdown: true
     type: info-text
+
+  - id: notable-changes
+    title: ℹ️ Notable Recent Changes
+    description: |
+      - The **tab bar is now hidden when there is only one tab** open. You can
+        re-enable the regular tab bar in the `Show/hide UI elements` section below.
+      - The theme now requires **Obsidian installer version 1.1.9** or later.
+        You can update the installer by re-downloading Obsidian from the website.
+    markdown: true
+    type: info-text
+
   # Show / Hide UI Elements
   - id: show-hide-elements
     title: 🙈 Show/hide UI elements
@@ -5253,6 +5207,11 @@ settings:
     type: heading
     level: 1
     collapsed: true
+  - id: normal-tab-bar
+    title: Always show tab bar
+    description: By default, this theme hides the tab bar when there is only one tab.
+    type: class-toggle
+    default: false
   - id: ribbon-info
     description:
       "The setting to remove the ribbon (the thin sidebar to the very left) has been removed, since
@@ -5312,6 +5271,7 @@ settings:
       By default, the URLs of markdown links are hidden in Source Mode, except for the currently active line.
       ℹ️ This setting can also be toggled via command palette or hotkey.
     default: false
+
   # Status bar
   - id: show-hide-statusbar-elements
     title: Status bar items
@@ -5348,59 +5308,43 @@ settings:
     title: Hide the Shimmering Focus icon (⟡)
     type: class-toggle
     default: false
+
   # Workspace
   - id: user-interface
     title: 🔲 Workspace
-    description: Side bars, tab bar, header bar, notifications
+    description: Header bar, tab width, sidebars, notifications
     type: heading
     level: 1
     collapsed: true
-  - id: tabbar-when-one-tab
-    title: Tab bar when only one tab (🧪 experimental)
-    description:
-      By default, this theme turns the tab bar into a header bar. It turns back into a tab bar on
-      hover or when another tab is opened. Alternatively you can also hide the tab bar altogether,
-      when there is only one tab (⚠️ requires Obsidian installer version 1.1.9 or later).
-    type: class-select
-    allowEmpty: false
-    default: tabbar-header-hybrid
-    options:
-      - label: Tab bar becomes header
-        value: tabbar-header-hybrid
-      - label: Hide tab bar (requires installer v1.1.9+)
-        value: hide-tabbar-when-one-tab
-      - label: Normal tab bar
-        value: normal-tab-bar
   - id: normal-header-bar
-    title: Re-enable the header bar (tab title bar)
+    title: Use normal header bar (tab title bar)
     description:
-      By default, this theme removes the header bar, except for the "more options" button and the
-      breadcrumbs moved to the right. You can still toggle reading/editing mode, navigate
-      back/forward, and rename your current file with the respective command in the command palette
-      or a hotkey. (this setting has no effect if "show tab title bar" in the appearance settings is
-      disabled.)
+      By default, this theme hides most of the header bar and moves the breadcrumbs to the right.
+      You can still toggle reading/editing mode, navigate back/forward, and rename your current file
+      with the respective command in the command palette or a hotkey. (This setting has no effect if
+      `Show tab title bar` in the appearance settings is disabled.)
     type: class-toggle
     default: false
   - id: tab-width
     title: Tab width
     description:
-      This setting only affects tab width when there is enough space in the tab bar. (Obsidian
-      automatically reduces tab width when there are more open tabs when there is space for them.)
+      Only affects tab width when there is enough space in the tab bar. (Obsidian automatically
+      reduces tab width when there are more open tabs than there is space for them.)
     type: variable-number-slider
-    default: 200
+    default: 250
     min: 100
-    max: 400
+    max: 700
     step: 25
     format: px
   - id: trim-long-filenames
-    title: "Side bar: Trim file names"
+    title: "Sidebars: Trim file names"
     description:
       When enabled, long file and folder names will be trimmed. When disabled, long names will be
       wrapped to the next line.
     type: class-toggle
     default: false
   - id: overlaying-right-sidebar
-    title: "Side bar: Overlaying right sidebar"
+    title: "Sidebars: Overlaying right sidebar"
     description:
       "The right sidebar is placed on top of the editor instead of making the editor more narrow
       (i.e. the behavior on mobile)."
@@ -5408,7 +5352,6 @@ settings:
     default: false
   - id: hidden-sidebars-hidden-statusbar
     title: Hide the status bar completely, when both sidebars are hidden
-    description: ⚠️ Requires Obsidian installer version 1.1.9 or later.
     type: class-toggle
     default: false
   - id: notices-at-bottom-right
@@ -5418,6 +5361,7 @@ settings:
       the bottom right instead.
     type: class-toggle
     default: false
+
   # Fonts & Headings
   - id: font-settings
     title: 🔠 Font
@@ -5469,6 +5413,7 @@ settings:
     description: Makes headings more compact by decreasing their letter spacing.
     type: class-toggle
     default: false
+
   # Colors & shapes
   - id: aesthetics
     title: 🎨 Colors & shapes
@@ -5530,6 +5475,7 @@ settings:
       information](https://github.com/chrisgrieser/shimmering-focus#create-and-share-your-own-color-scheme)."
     markdown: true
     type: info-text
+
   # Editor Content
   - id: content-settings
     title: 📑 Editor content
@@ -5578,9 +5524,7 @@ settings:
   - id: folded-line-emphasis
     title: Folded line emphasis
     type: class-toggle
-    description:
-      ⚠️ Requires Obsidian installer version 1.1.9 or later. Slightly darkens the background of
-      folded lines, similar to folds in vim.
+    description: Slightly darkens the background of folded lines, similar to folds in vim.
     default: false
   - id: hide-trailing-whitespace
     title: Hide trailing spaces
@@ -5590,6 +5534,7 @@ settings:
       at the end of a line force a line break.'
     type: class-toggle
     default: false
+
   # Media
   - id: media-settings
     title: 🖼️ Media
@@ -5626,14 +5571,9 @@ settings:
   - id: unrestricted-line-length-tables
     title: Automatically disable `readable line length` on notes with tables
     markdown: true
-    description: ⚠️ Requires Obsidian installer version 1.1.9 or later.
     type: class-toggle
     default: false
-  - id: highlight-active-cell
-    title: "Tables: Emphasize the active cell (live preview)"
-    description: ⚠️ Requires Obsidian installer version 1.1.9 or later and Obsidian 1.5 or later.
-    type: class-toggle
-    default: false
+
   # Vim mode
   - id: vim-mode
     title: 🏃 Vim mode
@@ -5654,9 +5594,7 @@ settings:
   - id: use-relative-line-numbers
     title: Relative line numbers
     markdown: true
-    description:
-      ⚠️ Requires Obsidian installer version 1.1.9 or later. `Line numbers` must also be enabled in
-      the Obsidian settings.
+    description: "`Line numbers` must also be enabled in the Obsidian settings."
     type: class-toggle
     default: false
   - id: vim-active-visual-line
@@ -5672,10 +5610,11 @@ settings:
   - id: no-mouse-hovers
     title: 'Disable tooltips & "Edit this block" button'
     description:
-      Disables tooltips and "Edit this block" buttons displayed when hovering various elements in Live 
-      Preview.
+      Disables tooltips and "Edit this block" buttons displayed when hovering various elements in
+      Live Preview.
     type: class-toggle
     default: false
+
   # Longform & writing
   - id: longform-settings
     title: ✍️ Longform & writing
@@ -5734,9 +5673,7 @@ settings:
     step: 5
   - id: wordcount-only-when-writing
     title: "Status bar: Show word count only when longform/writing note is open"
-    description:
-      ⚠️ Requires Obsidian installer version 1.1.9 or later. Works for the Word Count core plugin
-      and the Better Word Count community plugin.
+    description: Works for the Word Count core plugin and the Better Word Count community plugin.
     type: class-toggle
     default: false
   - id: hide-longform-status-bar
@@ -5757,11 +5694,10 @@ settings:
     default: false
   - id: longform-text-indent
     title: First-line indent & no spacing between paragraphs (reading mode)
-    description:
-      ⚠️ Requires Obsidian installer version 1.1.9 or later. Indent the first line of a paragraph
-      and remove the spacing between paragraphs.
+    description: Indent the first line of a paragraph and remove the spacing between paragraphs.
     type: class-toggle
     default: false
+
   # Plugin-Specific Settings
   - id: plugin-specific-settings
     title: ⚙️ Plugin-specific settings
@@ -5782,14 +5718,14 @@ settings:
       buttons by right-clicking a folder."
     default: false
   - id: show-bookmark-controls
-    title: "Bookmarks: Show buttons in side bar"
+    title: "Bookmarks: Show buttons in sidebar"
     description:
       By default, the Bookmark plugin buttons for new bookmarks, new folders, and collapsing are
       hidden. Enable this setting to show them again.
     type: class-toggle
     default: false
   - id: show-bookmark-icons
-    title: "Bookmarks: Show icons in side bar"
+    title: "Bookmarks: Show icons in sidebar"
     description:
       By default, the icons indicating bookmark types are hidden. Enable this setting to show them
       again.
@@ -5810,13 +5746,14 @@ settings:
     type: class-toggle
     default: false
   - id: show-outline-buttons
-    title: "Outline: Show buttons in side bar"
+    title: "Outline: Show buttons in sidebar"
     description:
       By default, the outline plugin buttons for collapsing, expanding, and searching headings are
       hidden. Enable this setting to show a compact version of them.
     default: false
     type: class-toggle
-  # Infos
+
+  # Appendix
   - id: appendix-info
     title: ℹ️ Info
     type: heading

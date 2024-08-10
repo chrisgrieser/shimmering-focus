@@ -1,3 +1,8 @@
+- 2024-08-10 **docs**: update promo screenshots
+- 2024-08-10 **feat**: allow for much wider tabs
+- 2024-08-10 **fix**: active split emphasis
+- 2024-08-10 **improv**: by default now uses purple ==highlight==
+- 2024-08-10 **feat!**: hide tabbar when only one tab. Requires installer v. 1.1.9+
 - 2024-08-07 **fix**: apply edit toolbar movement only on changed header bar
 - 2024-08-07 **fix**: collision of 3-dot-menu and edit toolbar plugin (#308)
 - 2024-08-07 **chore**: update issue templates
