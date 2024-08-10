@@ -46,12 +46,10 @@ A minimalistic and opinionated Obsidian theme for the keyboard-centric user.
 - __Headings__: Distinctive styling and various options for differentiating
   heading levels.
 - __Many customization options__ available via [Style
-  Settings Plugin](https://obsidian.md/plugins?id=obsidian-style-settings).
-- …
+  Settings Plugin](https://obsidian.md/plugins?id=obsidian-style-settings):
 
-> [!NOTE]
-> This theme only supports the Obsidian desktop release. PRs with fixes for
-> mobile are welcome though.
+<img alt="Overview Style Settings" width=60% src="https://github.com/user-attachments/assets/524a9ade-1d6f-47f9-9b90-1d9c5ee353b5">
+*Overview of settings are available via the Style Settings Plugin*
 
 ## Commands
 When the [Style Settings

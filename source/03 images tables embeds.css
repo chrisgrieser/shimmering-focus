@@ -41,7 +41,7 @@ body .markdown-rendered tbody tr:nth-child(odd):hover {
 }
 
 /* Obsidian 1.5: Active Table Cells (requires Obsidian installer 1.1.9) */
-body.highlight-active-cell .table-cell-wrapper:has(.cm-s-obsidian) {
+.table-cell-wrapper:has(.cm-s-obsidian) {
 	outline: 2.5px solid var(--color-accent);
 }
 

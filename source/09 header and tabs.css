@@ -1,5 +1,5 @@
 /* ───────────────────────────────────────────────── */
-/** Header Bar (Tab Title Bar)
+/** Header Bar
 ──────────────────────────────────────────────────── */
 .workspace-leaf-content .view-header-title-container::after {
 	display: none;
@@ -143,89 +143,34 @@ body:not(.show-tab-list-button) .workspace-tab-header-tab-list {
 }
 
 /* ───────────────────────────────────────────────── */
-/** Tab bar when only tab
+/** Hide Tab bar when only tab
 ──────────────────────────────────────────────────── */
 
-body:not(.normal-tab-bar) .mod-root .workspace-tab-header:only-child {
-	width: 100vw;
-	max-width: unset;
-	padding-bottom: 1px;
-	background-color: transparent;
-	box-shadow: none;
-}
-
-body:not(.normal-tab-bar)
-	.mod-root
-	.workspace-tab-header:only-child
-	.workspace-tab-header-inner-title {
-	width: 100vw;
-	margin-bottom: 4px;
-	margin-left: -4px;
-	font-size: 1.3em;
-}
-
-body:not(.normal-tab-bar)
-	.mod-root
-	.workspace-tab-header:only-child
-	:is(
-		.workspace-tab-header-inner-title,
-		.workspace-tab-header-inner-icon,
-		.workspace-tab-header-inner-icon svg
-	),
-body:not(.normal-tab-bar) .mod-root .workspace-tab-header:only-child::before,
-body:not(.normal-tab-bar) .mod-root .workspace-tab-header:only-child::after,
-body:not(.normal-tab-bar) .mod-root .workspace-tab-header:only-child {
-	transition-delay: var(--transition-delay-passing-over-protection);
-	transition-duration: var(--anim-duration-moderate);
-	transition-property: font-size, width;
-}
-
-/* icon with more spacing and size */
-body:not(.normal-tab-bar)
-	.mod-root
-	.workspace-tab-header:only-child
-	:is(
-		.workspace-tab-header-inner-icon,
-		.workspace-tab-header-status-container
-	) {
-	padding-right: 12px;
-	padding-bottom: 3px;
-}
-
-body:not(.normal-tab-bar)
-	.mod-root
-	.workspace-tab-header:only-child
-	:is(.workspace-tab-header-inner-icon, .workspace-tab-header-status-container)
-	svg {
-	width: var(--icon-l);
-	height: var(--icon-l);
-}
-
-.hide-tabbar-when-one-tab:not(.is-mobile)
+body:not(.normal-tab-bar, .is-mobile)
 	.mod-root
 	.workspace-tab-header-container:not(
-		:has( .workspace-tab-header + .workspace-tab-header)
+		:has(.workspace-tab-header + .workspace-tab-header)
 	) {
 	display: none;
 }
 
 /* MACOS: reduce height of RIGHT sidebar when tab bar hidden */
 /* WINDOWS: reduce height of LEFT sidebar when tab bar hidden */
-.hide-tabbar-when-one-tab.mod-macos:not(.show-sidebar-header-buttons)
-	.mod-root:not(:has( .workspace-tab-header + .workspace-tab-header))
+body.mod-macos:not(.normal-tab-bar, .show-sidebar-header-buttons)
+	.mod-root:not(:has(.workspace-tab-header + .workspace-tab-header))
 	+ .mod-right-split
 	.mod-top-right-space
 	.workspace-tab-header-container:not(:hover),
-.hide-tabbar-when-one-tab.mod-windows:not(.show-sidebar-header-buttons)
-	.mod-root:not(:has( .workspace-tab-header + .workspace-tab-header))
+body.mod-windows:not(.normal-tab-bar, .show-sidebar-header-buttons)
+	.mod-root:not(:has(.workspace-tab-header + .workspace-tab-header))
 	+ .mod-left-split
 	.mod-top-left-space
 	.workspace-tab-header-container:not(:hover) {
 	height: var(--sidebar-tabs-unhovered-height);
 }
 
-/* hide inline title only when one more than tab */
-.hide-tabbar-when-one-tab:not(.is-mobile)
+/* hide inline title when more than one tab */
+body:not(.normal-tab-bar, .is-mobile)
 	.mod-root
 	.workspace-tab-header-container:has(
 		.workspace-tab-header + .workspace-tab-header

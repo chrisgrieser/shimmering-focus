@@ -9,6 +9,17 @@ settings:
       - [README](https://github.com/chrisgrieser/shimmering-focus)
     markdown: true
     type: info-text
+
+  - id: notable-changes
+    title: ℹ️ Notable Recent Changes
+    description: |
+      - The **tab bar is now hidden when there is only one tab** open.
+        You can re-enable the regular tab bar in the `Workspace` section below.
+      - The theme now requires **Obsidian installer version 1.1.9** or later.
+        You can update the installer by re-downloading Obsidian from the website.
+    markdown: true
+    type: info-text
+
   # Show / Hide UI Elements
   - id: show-hide-elements
     title: 🙈 Show/hide UI elements
@@ -75,6 +86,7 @@ settings:
       By default, the URLs of markdown links are hidden in Source Mode, except for the currently active line.
       ℹ️ This setting can also be toggled via command palette or hotkey.
     default: false
+
   # Status bar
   - id: show-hide-statusbar-elements
     title: Status bar items
@@ -111,29 +123,19 @@ settings:
     title: Hide the Shimmering Focus icon (⟡)
     type: class-toggle
     default: false
+
   # Workspace
   - id: user-interface
     title: 🔲 Workspace
-    description: Side bars, tab bar, header bar, notifications
+    description: Sidebars, tab bar, header bar, notifications
     type: heading
     level: 1
     collapsed: true
-  - id: tabbar-when-one-tab
-    title: Tab bar when only one tab (🧪 experimental)
-    description:
-      By default, this theme turns the tab bar into a header bar. It turns back into a tab bar on
-      hover or when another tab is opened. Alternatively you can also hide the tab bar altogether,
-      when there is only one tab (⚠️ requires Obsidian installer version 1.1.9 or later).
-    type: class-select
-    allowEmpty: false
-    default: tabbar-header-hybrid
-    options:
-      - label: Tab bar becomes header
-        value: tabbar-header-hybrid
-      - label: Hide tab bar (requires installer v1.1.9+)
-        value: hide-tabbar-when-one-tab
-      - label: Normal tab bar
-        value: normal-tab-bar
+  - id: normal-tab-bar
+    title: Always show tab bar
+    description: By default, this theme hides the tab bar when there is only one tab.
+    type: class-toggle
+    default: false
   - id: normal-header-bar
     title: Re-enable the header bar (tab title bar)
     description:
@@ -156,14 +158,14 @@ settings:
     step: 25
     format: px
   - id: trim-long-filenames
-    title: "Side bar: Trim file names"
+    title: "Sidebar: Trim file names"
     description:
       When enabled, long file and folder names will be trimmed. When disabled, long names will be
       wrapped to the next line.
     type: class-toggle
     default: false
   - id: overlaying-right-sidebar
-    title: "Side bar: Overlaying right sidebar"
+    title: "Sidebar: Overlaying right sidebar"
     description:
       "The right sidebar is placed on top of the editor instead of making the editor more narrow
       (i.e. the behavior on mobile)."
@@ -171,7 +173,6 @@ settings:
     default: false
   - id: hidden-sidebars-hidden-statusbar
     title: Hide the status bar completely, when both sidebars are hidden
-    description: ⚠️ Requires Obsidian installer version 1.1.9 or later.
     type: class-toggle
     default: false
   - id: notices-at-bottom-right
@@ -181,6 +182,7 @@ settings:
       the bottom right instead.
     type: class-toggle
     default: false
+
   # Fonts & Headings
   - id: font-settings
     title: 🔠 Font
@@ -232,6 +234,7 @@ settings:
     description: Makes headings more compact by decreasing their letter spacing.
     type: class-toggle
     default: false
+
   # Colors & shapes
   - id: aesthetics
     title: 🎨 Colors & shapes
@@ -293,6 +296,7 @@ settings:
       information](https://github.com/chrisgrieser/shimmering-focus#create-and-share-your-own-color-scheme)."
     markdown: true
     type: info-text
+
   # Editor Content
   - id: content-settings
     title: 📑 Editor content
@@ -341,9 +345,7 @@ settings:
   - id: folded-line-emphasis
     title: Folded line emphasis
     type: class-toggle
-    description:
-      ⚠️ Requires Obsidian installer version 1.1.9 or later. Slightly darkens the background of
-      folded lines, similar to folds in vim.
+    description: Slightly darkens the background of folded lines, similar to folds in vim.
     default: false
   - id: hide-trailing-whitespace
     title: Hide trailing spaces
@@ -353,6 +355,7 @@ settings:
       at the end of a line force a line break.'
     type: class-toggle
     default: false
+
   # Media
   - id: media-settings
     title: 🖼️ Media
@@ -389,14 +392,9 @@ settings:
   - id: unrestricted-line-length-tables
     title: Automatically disable `readable line length` on notes with tables
     markdown: true
-    description: ⚠️ Requires Obsidian installer version 1.1.9 or later.
     type: class-toggle
     default: false
-  - id: highlight-active-cell
-    title: "Tables: Emphasize the active cell (live preview)"
-    description: ⚠️ Requires Obsidian installer version 1.1.9 or later and Obsidian 1.5 or later.
-    type: class-toggle
-    default: false
+
   # Vim mode
   - id: vim-mode
     title: 🏃 Vim mode
@@ -417,9 +415,7 @@ settings:
   - id: use-relative-line-numbers
     title: Relative line numbers
     markdown: true
-    description:
-      ⚠️ Requires Obsidian installer version 1.1.9 or later. `Line numbers` must also be enabled in
-      the Obsidian settings.
+    description: "`Line numbers` must also be enabled in the Obsidian settings."
     type: class-toggle
     default: false
   - id: vim-active-visual-line
@@ -435,10 +431,11 @@ settings:
   - id: no-mouse-hovers
     title: 'Disable tooltips & "Edit this block" button'
     description:
-      Disables tooltips and "Edit this block" buttons displayed when hovering various elements in Live 
-      Preview.
+      Disables tooltips and "Edit this block" buttons displayed when hovering various elements in
+      Live Preview.
     type: class-toggle
     default: false
+
   # Longform & writing
   - id: longform-settings
     title: ✍️ Longform & writing
@@ -497,9 +494,7 @@ settings:
     step: 5
   - id: wordcount-only-when-writing
     title: "Status bar: Show word count only when longform/writing note is open"
-    description:
-      ⚠️ Requires Obsidian installer version 1.1.9 or later. Works for the Word Count core plugin
-      and the Better Word Count community plugin.
+    description: Works for the Word Count core plugin and the Better Word Count community plugin.
     type: class-toggle
     default: false
   - id: hide-longform-status-bar
@@ -520,11 +515,10 @@ settings:
     default: false
   - id: longform-text-indent
     title: First-line indent & no spacing between paragraphs (reading mode)
-    description:
-      ⚠️ Requires Obsidian installer version 1.1.9 or later. Indent the first line of a paragraph
-      and remove the spacing between paragraphs.
+    description: Indent the first line of a paragraph and remove the spacing between paragraphs.
     type: class-toggle
     default: false
+
   # Plugin-Specific Settings
   - id: plugin-specific-settings
     title: ⚙️ Plugin-specific settings
@@ -545,14 +539,14 @@ settings:
       buttons by right-clicking a folder."
     default: false
   - id: show-bookmark-controls
-    title: "Bookmarks: Show buttons in side bar"
+    title: "Bookmarks: Show buttons in sidebar"
     description:
       By default, the Bookmark plugin buttons for new bookmarks, new folders, and collapsing are
       hidden. Enable this setting to show them again.
     type: class-toggle
     default: false
   - id: show-bookmark-icons
-    title: "Bookmarks: Show icons in side bar"
+    title: "Bookmarks: Show icons in sidebar"
     description:
       By default, the icons indicating bookmark types are hidden. Enable this setting to show them
       again.
@@ -573,13 +567,14 @@ settings:
     type: class-toggle
     default: false
   - id: show-outline-buttons
-    title: "Outline: Show buttons in side bar"
+    title: "Outline: Show buttons in sidebar"
     description:
       By default, the outline plugin buttons for collapsing, expanding, and searching headings are
       hidden. Enable this setting to show a compact version of them.
     default: false
     type: class-toggle
-  # Infos
+
+  # Appendix
   - id: appendix-info
     title: ℹ️ Info
     type: heading
