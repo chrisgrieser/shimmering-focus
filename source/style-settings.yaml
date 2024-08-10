@@ -300,7 +300,7 @@ settings:
   - id: content-settings
     title: 📑 Editor content
     description:
-      Active block highlights, dimmed panes, code blocks, line length, folded lines, trailing spaces
+      Active block highlights, dimmed panes, code blocks, line length, trailing spaces
     type: heading
     level: 1
     collapsed: true
@@ -341,11 +341,6 @@ settings:
     max: 2500
     step: 25
     format: px
-  - id: folded-line-emphasis
-    title: Folded line emphasis
-    type: class-toggle
-    description: Slightly darkens the background of folded lines, similar to folds in vim.
-    default: false
   - id: hide-trailing-whitespace
     title: Hide trailing spaces
     description:

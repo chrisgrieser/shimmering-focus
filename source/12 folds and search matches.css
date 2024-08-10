@@ -1,4 +1,4 @@
-/* actually affects any kind of search anywhere in the app, but mostly the Editor */
+/* SEARCH MATCHES */ 
 .suggestion-highlight.suggestion-highlight {
 	color: var(--search-match-color);
 	background: none;
@@ -18,19 +18,7 @@ body .markdown-rendered .search-highlight > div.is-active {
 }
 
 /* ────────────────────────────────────────────────────────────────────────── */
-
-/* emphasized folded lines */
-.folded-line-emphasis .markdown-preview-view .is-collapsed:not(.callout-fold),
-.folded-line-emphasis .cm-line:has( .cm-fold-indicator.is-collapsed) {
-	background-color: var(--bg3);
-	border-radius: var(--radius-s);
-}
-
-.folded-line-emphasis
-	.cm-line:has( .cm-fold-indicator.is-collapsed)
-	.cm-foldPlaceholder {
-	display: none;
-}
+/* FOLDS */ 
 
 :is(.style-settings-collapse-indicator, .collapse-icon)
 	> .svg-icon.svg-icon.svg-icon.svg-icon {
