@@ -148,7 +148,7 @@ settings:
     title: Tab width
     description:
       This setting only affects tab width when there is enough space in the tab bar. (Obsidian
-      automatically reduces tab width when there are more open tabs when there is space for them.)
+      automatically reduces tab width when there are more open tabs than there is space for them.)
     type: variable-number-slider
     default: 200
     min: 100
