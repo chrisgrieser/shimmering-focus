@@ -1,13 +1,13 @@
 set quiet := true
 
-# uses personal vaults saved in `~/.config/perma-repos.csv`
+# INFO uses personal vaults saved in `~/.config/perma-repos.csv`
 build_and_push_to_local_vaults:
     #!/usr/bin/env zsh
     # BUILD
     # Due to globbing, the source files are inserted in alphabetical order.
     # To keep things predictable, they are simply number in the order they
     # should be included in.
-    cat ./source/*.css <(echo "/* @settings") ./source/style-settings.yaml <(echo "*/") \
+    cat ./source/*.css <(echo ; echo "/* @settings") ./source/style-settings.yaml <(echo "*/") \
         > /tmp/theme.css
 
     # PUSH TO LOCAL VAULTS
@@ -19,4 +19,4 @@ build_and_push_to_local_vaults:
     rm -f /tmp/theme.css
 
     # OPEN OBSIDIAN
-    open "obsidian://open"
+    open -a "Obsidian" # macOS specific opener

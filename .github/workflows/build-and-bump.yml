@@ -1,10 +1,12 @@
-name: Build, bump version numbers, and update changelog
+name: Build, minify, bump versions, update download counts & changelog
 
 on:
   push:
-    branches: [main] # not on insider release branch
-    paths: [source/**] # only for build for source files
-  workflow_dispatch: # allows manually triggering on github
+    branches: [main]
+    paths:
+      - source/** # only trigger when source files were changed
+      - .github/workflows/build-and-bump.yml # or on updates to this file itself
+  workflow_dispatch: # allows manual triggering on GitHub
 
 permissions:
   contents: write
@@ -15,42 +17,47 @@ jobs:
   bump:
     runs-on: macos-latest
     steps:
-      - name: Checkout
+      - name: checkout
         uses: actions/checkout@v4
-        # by default, no tags and only a single commit is fetched. To use git
+        # By default, no tags and only a single commit is fetched. To use git
         # history in the changelog step, we need to fetch all history.
         with:
           fetch-depth: 0 # 0 = all history
           fetch-tags: true
 
-      #─────────────────────────────────────────────────────────────────────────
+      - name: setup node
+        uses: actions/setup-node@v4
+        with:
+          node-version: "21.x"
 
-      - name: Build
+      - name: build & minify
         run: |
-          cat ./source/*.css <(echo "/* @settings") ./source/style-settings.yaml <(echo "*/") \
-            > ./theme.css
+          # Due to globbing, the source files are inserted in alphabetical order.
+          # To keep things predictable, they are simply number in the order they
+          # should be included in.
+          cat ./source/*.css > ./theme.css
 
-      - name: Bump version numbers
+          # minify
+          npm install
+          npx lightningcss --minify --output-file="./theme.css" -- "./theme.css"
+
+          # append style-settings (last, so not removed via minification)
+          cat <(echo ; echo "/* @settings") ./source/style-settings.yaml <(echo "*/") \
+              >> ./theme.css
+
+      - name: bump version in manifest
         run: |
-          theme_header="./source/00 header.css"
+          version=$(grep --max-count=1 '"version"' "./manifest.json" | cut -d'"' -f4 | cut -d'.' -f2)
+          sed -i '' "/version/ s/\.$version/.$((version + 1))/" "./manifest.json"
 
-          versionLine=$(grep --line-number --max-count=1 "^Version" "$theme_header")
-          versionLnum=$(echo "$versionLine" | cut -d: -f1)
-          currentVer=$(echo "$versionLine" | cut -d. -f2)
-          nextVer=$((currentVer + 1))
-
-          sed -E -i '' "${versionLnum} s/$currentVer/$nextVer/" "$theme_header"
-          sed -E -i '' "${versionLnum} s/$currentVer/$nextVer/" "./theme.css"
-          sed -E -i '' "/version/ s/$currentVer/$nextVer/" "./manifest.json"
-
-      - name: Update Download Count in Readme
+      - name: update download count in readme
         run: |
           dl=$(curl -s "https://releases.obsidian.md/stats/theme" |
             grep -oe '"Shimmering Focus","download":[[:digit:]]*' |
             cut -d: -f2)
-          sed -E -i '' "s/badge.*-[[:digit:]]+-/badge\/downloads-$dl-/" ./README.md
+          sed -E -i '' "s/badge.*-[0-9]+-/badge\/downloads-$dl-/" ./README.md
 
-      - name: Update Changelog
+      - name: update changelog
         run: |
           git log :/bump.. --format="- %cs %s" | # commits since last `bump` commit
           	grep -vE "build|ci|style|bump" | # don't include internal changes
@@ -58,9 +65,8 @@ jobs:
           grep -v "^$" "Changelog.md" >> "temp.md"
           mv -f "temp.md" "Changelog.md"
 
-      #─────────────────────────────────────────────────────────────────────────
-
-      - uses: stefanzweifel/git-auto-commit-action@v4
+      - name: commit
+        uses: stefanzweifel/git-auto-commit-action@v4
         with:
           commit_message: "bump: version & update changelog"
           branch: ${{ github.head_ref }}

@@ -1,5 +1,2 @@
 .DS_Store
 node_modules
-
-# dependencies only needed for testing
-package-lock.json
