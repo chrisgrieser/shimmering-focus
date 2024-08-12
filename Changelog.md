@@ -1,3 +1,5 @@
+- 2024-08-10 **chore**: add demo note to assets
+- 2024-08-10 **docs**: typo
 - 2024-08-10 **docs**: update promo screenshots
 - 2024-08-10 **feat**: allow for much wider tabs
 - 2024-08-10 **fix**: active split emphasis
