@@ -15,6 +15,7 @@ A minimalistic and opinionated Obsidian theme for the keyboard-centric user.
 - [Features](#features)
 - [Commands](#commands)
 - [Customize colors](#customize-colors)
+- [Contribute](#contribute)
 - [Licenses](#licenses)
 - [Credits](#credits)
 
@@ -97,6 +98,25 @@ scheme](https://github.com/chrisgrieser/shimmering-focus/discussions/new?categor
 }
 ```
 
+<!-- vale Google.Will = NO -->
+## Contribute
+Bug fixes, support for more plugins, or improvements for mobile are welcome.
+However, please ask before contributing entirely new features by creating a
+Draft PR or an issue.
+
+All relevant source files are located in the [source](./source) directory, and
+will be compiled via GitHub action when pushed to GitHub.
+
+The theme uses `lightning-css` for
+[syntax-lowering](https://lightningcss.dev/transpilation.html#syntax-lowering)
+in its build. That means you can use modern CSS features like
+[CSS-nesting](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_nesting), as
+the resulting `theme.css` will still be compatible with older Obsidian Installer
+versions that do not support nesting yet. Furthermore, this theme targets
+Obsidian installer version 1.1.9, so feel free to use `:has()`.
+
+The theme is written completely dependency-free in vanilla CSS.
+
 ## Licenses
 - This theme is licensed under the [MIT
   License](https://github.com/chrisgrieser/shimmering-focus/blob/main/LICENSE).
@@ -107,7 +127,7 @@ scheme](https://github.com/chrisgrieser/shimmering-focus/discussions/new?categor
 <!-- vale Google.FirstPerson = NO -->
 ## Credits
 __Thanks__  
-- This theme includes snippets or ideas from:
+- This theme includes snippets and/or ideas from:
   [@SlRvb](https://github.com/SlRvb), [@Atlas](https://github.com/zcysxy),
   [@CecilaMay](https://github.com/ceciliamay),
   [@DamianKorcz](https://github.com/damiankorcz),
