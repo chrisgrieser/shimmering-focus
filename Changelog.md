@@ -1,3 +1,5 @@
+- 2024-08-15 **fix**: "Hide inline title when more than one tab" setting not shown
+- 2024-08-15 **fix**: Adjust checkbox indentation in dataview (#310)
 - 2024-08-10 **chore**: add demo note to assets
 - 2024-08-10 **docs**: typo
 - 2024-08-10 **docs**: update promo screenshots
