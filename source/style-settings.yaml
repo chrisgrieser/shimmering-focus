@@ -28,11 +28,6 @@ settings:
     type: heading
     level: 1
     collapsed: true
-  - id: normal-tab-bar
-    title: Always show tab bar
-    description: By default, this theme hides the tab bar when there is only one tab.
-    type: class-toggle
-    default: false
   - id: ribbon-info
     description:
       "The setting to remove the ribbon (the thin sidebar to the very left) has been removed, since
@@ -40,6 +35,16 @@ settings:
       ribbon menu`"
     type: info-text
     markdown: true
+  - id: normal-tab-bar
+    title: Always show tab bar
+    description: By default, this theme hides the tab bar when there is only one tab.
+    type: class-toggle
+    default: false
+  - id: hide-inline-title-when-more-than-one-tab
+    title: Hide inline title when more than one tab
+    description: This setting is most useful when for when the tab bar is hidden.
+    type: class-toggle
+    default: false
   - id: hide-vault-switcher-and-settings
     title: "Left sidebar: Hide the vault switcher and settings button"
     description: You can still access the settings via `cmd/ctrl + ,`.

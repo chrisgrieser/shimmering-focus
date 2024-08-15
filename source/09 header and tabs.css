@@ -170,7 +170,7 @@ body.mod-windows:not(.normal-tab-bar, .show-sidebar-header-buttons)
 }
 
 /* hide inline title when *more* than one tab */
-body:not(.normal-tab-bar, .is-mobile)
+body:not(.is-mobile).hide-inline-title-when-more-than-one-tab
 	.mod-root
 	.workspace-tab-header-container:has(
 		.workspace-tab-header + .workspace-tab-header
