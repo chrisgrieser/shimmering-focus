@@ -1,4 +1,4 @@
-name: Build, minify, bump versions, update download counts & changelog
+name: Build, minify, lower syntax, bump versions, update download counts & changelog
 
 on:
   push:
@@ -30,16 +30,17 @@ jobs:
         with:
           node-version: "21.x"
 
-      - name: build & minify
+      - name: build, lower syntax, and minify
         run: |
           # Due to globbing, the source files are inserted in alphabetical order.
           # To keep things predictable, they are simply number in the order they
           # should be included in.
           cat ./source/*.css > ./theme.css
 
-          # minify
+          # minification & syntax-lowering https://lightningcss.dev/transpilation.html
           npm install
-          npx lightningcss --minify --output-file="./theme.css" -- "./theme.css"
+          export BROWSERSLIST="chrome 108" # lowers syntax to before css-nesting
+          npx lightningcss --minify --browserslist --output-file="./theme.css" -- "./theme.css"
 
           # append style-settings (last, so not removed via minification)
           cat <(echo ; echo "/* @settings") ./source/style-settings.yaml <(echo "*/") \
