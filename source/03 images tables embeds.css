@@ -85,7 +85,10 @@ body:not(.no-image-alttext-caption)
 		[alt$=".png"],
 		[alt$=".jpg"],
 		[alt$=".jpeg"],
-		[alt$=".tiff"]
+		[alt$=".tiff"],
+		[alt$=".heic"],
+		[alt$=".icns"],
+		[alt$=".webp"]
 	)::after {
 	padding-top: 2px;
 	margin-bottom: 1em;
