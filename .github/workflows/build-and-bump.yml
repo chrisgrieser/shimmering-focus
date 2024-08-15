@@ -40,11 +40,12 @@ jobs:
           # minification & syntax-lowering https://lightningcss.dev/transpilation.html
           npm install
           export BROWSERSLIST="chrome 108" # lowers syntax to before css-nesting
-          npx lightningcss --minify --browserslist --output-file="./theme.css" -- "./theme.css"
+          npx lightningcss --minify --browserslist \
+            --output-file="./theme.css" -- "./theme.css" || exit 1
 
-          # append style-settings (last, so not removed via minification)
-          cat <(echo ; echo "/* @settings") ./source/style-settings.yaml <(echo "*/") \
-              >> ./theme.css
+          # append style-settings (last, so not removed by minification)
+          cat <(echo && echo "/* @settings") ./source/style-settings.yaml <(echo "*/") \
+            >> ./theme.css
 
       - name: bump version in manifest
         run: |
