@@ -5,7 +5,7 @@
 A minimalistic and opinionated Obsidian theme for the keyboard-centric user.  
 [🏆 Winner Obsidian October 2022](https://obsidian.md/blog/2022-obsidian-october-winners/).
 
-![Promo screenshot](assets/promo-screenshot-big.png)
+![Promo screenshot](assets/promo-screenshot.webp)
 
 ---
 
