@@ -295,7 +295,7 @@ settings:
     description: Hue of ==highlighted text==
     markdown: true
     type: variable-number-slider
-    default: 60
+    default: 280
     min: 0
     max: 360
     step: 5
