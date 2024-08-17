@@ -28,7 +28,7 @@ jobs:
       - name: setup node
         uses: actions/setup-node@v4
         with:
-          node-version: "21.x"
+          node-version: "22.x"
 
       - name: build, lower syntax, and minify
         run: |
@@ -68,7 +68,7 @@ jobs:
           mv -f "temp.md" "Changelog.md"
 
       - name: commit
-        uses: stefanzweifel/git-auto-commit-action@v4
+        uses: stefanzweifel/git-auto-commit-action@v5
         with:
           commit_message: "bump: version & update changelog"
           branch: ${{ github.head_ref }}
