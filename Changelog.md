@@ -1,3 +1,4 @@
+- 2024-08-16 **docs**: store promo screenshot as github attachment
 - 2024-08-16 **docs**: use `webp` for smaller repo size
 - 2024-08-15 **docs**: add `Contribute` section
 - 2024-08-15 **fix**: also suppress captions for `webp`, `heic`, `icns` without alt-text
