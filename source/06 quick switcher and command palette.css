@@ -1,0 +1,114 @@
+/* ───────────────────────────────────────────────────
+/** Prompts in general
+/** QuickSwitcher
+─────────────────────────────────────────────────── */
+
+div.prompt-results {
+	padding: 2px;
+	margin-top: 0;
+}
+
+.prompt .suggestion-item {
+	padding: 6px;
+	border-radius: 0;
+}
+
+.prompt {
+	border: var(--basic-border);
+}
+
+input.prompt-input.prompt-input {
+	padding: 12px;
+	margin: 4px 4px 0;
+	font-size: var(--font-ui-medium);
+	border: 1px ridge var(--muted-border-color);
+	border-radius: var(--radius-m);
+	box-shadow: var(--input-shadow);
+}
+
+/* item descriptions */
+.suggestion-note {
+	line-height: 1.3em;
+}
+
+.suggestion-item :is(.suggestion-note, .suggestion-prefix) {
+	font-size: var(--font-small);
+	color: var(--text-gray);
+}
+
+/* instructions */
+body:not(.show-suggester-instructions) .prompt-instructions {
+	display: none;
+}
+
+.prompt-instructions {
+	padding: 4px;
+	border-top: var(--basic-border);
+	background-color: var(--bg4);
+	gap: 6px 8px;
+}
+
+.prompt-instructions .prompt-instruction-command {
+	font-weight: 600;
+	color: var(--text-gray);
+}
+
+/* Alternating row colors */
+.suggestion-item:nth-child(odd):not(:hover, .is-selected) .suggestion-prefix,
+.suggestion-item:nth-child(odd):not(:hover, .is-selected) {
+	background-color: var(--bg2);
+}
+
+body .suggestion-item:hover,
+body .suggestion-item:hover :is(.suggestion-prefix, .suggestion-flair) {
+	color: var(--text-accent-hover);
+}
+
+.suggestion-item.is-selected,
+.suggestion-item.is-selected :is(.suggestion-prefix, .suggestion-flair) {
+	color: var(--text-accent);
+}
+
+.suggestion-item .suggestion-flair.suggestion-flair {
+	margin-bottom: 2px;
+}
+
+/* looks nicer with rounded corners on first/last item */
+.prompt .suggestion-item:is(.is-selected, :hover):last-child {
+	border-bottom-right-radius: var(--radius-m);
+	border-bottom-left-radius: var(--radius-m);
+}
+
+.prompt .suggestion-item:is(.is-selected, :hover):first-child:last-child {
+	border-top-left-radius: var(--radius-s);
+	border-top-right-radius: var(--radius-s);
+}
+
+/* ───────────────────────────────────────────────────
+/** Command Palette
+─────────────────────────────────────────────────── */
+/* (everything from QuickSwitcher also applies) */
+
+body:not(.is-mobile) .prompt .suggestion-prefix::after {
+	display: none;
+}
+
+/* to anchor the plugin names below relative to this */
+body:not(.is-mobile) .prompt .suggestion-item {
+	position: relative;
+}
+
+body:not(.is-mobile) .prompt .suggestion-prefix.suggestion-prefix {
+	position: absolute;
+	top: 5px;
+	right: 140px;
+	padding: 1px 4px 2px;
+	background-color: var(--bg3);
+	border: var(--thin-border);
+	border-radius: var(--radius-s);
+}
+
+/* macOS has modifier key symbols, requiring slightly different placement */
+.mod-macos:not(.is-mobile) .suggestion-prefix {
+	right: 110px;
+}
