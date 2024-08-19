@@ -1,4 +1,4 @@
-/* SEARCH MATCHES */ 
+/* SEARCH MATCHES */
 .suggestion-highlight.suggestion-highlight {
 	color: var(--search-match-color);
 	background: none;
@@ -18,7 +18,7 @@ body .markdown-rendered .search-highlight > div.is-active {
 }
 
 /* ────────────────────────────────────────────────────────────────────────── */
-/* FOLDS */ 
+/* FOLDS */
 
 :is(.style-settings-collapse-indicator, .collapse-icon)
 	> .svg-icon.svg-icon.svg-icon.svg-icon {
