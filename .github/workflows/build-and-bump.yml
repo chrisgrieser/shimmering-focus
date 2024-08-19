@@ -62,7 +62,7 @@ jobs:
       - name: update changelog
         run: |
           git log :/bump.. --format="- %cs %s" | # commits since last `bump` commit
-          	grep -vE "build|ci|style|bump" | # don't include internal changes
+          	grep -vE "build|ci|refactor|style|bump" | # don't include internal changes
           	sed -E "s/^(- [0-9-]+) ([^ ]+): /\1 **\2**: /" >> "temp.md" # bold cc keyword
           grep -v "^$" "Changelog.md" >> "temp.md"
           mv -f "temp.md" "Changelog.md"
