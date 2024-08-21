@@ -15,7 +15,7 @@
 	min-height: 0;
 	padding: 3px 4px;
 	font-size: 1em;
-	background-color: var(--bg5);
+	--status-bar-background: var(--bg5); /* set variable for css snippets */
 	border-top: 2px groove var(--color-base-20);
 	border-left: 2px groove var(--color-base-20);
 }
