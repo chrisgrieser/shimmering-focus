@@ -1,3 +1,4 @@
+- 2024-08-21 **improv**: set `--status-bar-background` for css snippets
 - 2024-08-19 **fix(search)**: placement of case-sensitivity button
 - 2024-08-16 **docs**: store promo screenshot as github attachment
 - 2024-08-16 **docs**: use `webp` for smaller repo size
