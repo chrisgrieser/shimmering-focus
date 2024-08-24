@@ -1,18 +1,4 @@
 /* ───────────────────────────────────────────────── */
-/** Search container (cmd+f)
-──────────────────────────────────────────────────── */
-.document-search-container {
-	margin-right: 0;
-	margin-left: 0;
-	border-bottom: var(--thin-border);
-	box-shadow: var(--shadow-s);
-}
-
-body:not(.show-close-buttons, .is-mobile) .document-search-close-button {
-	display: none;
-}
-
-/* ───────────────────────────────────────────────── */
 /** Settings Menu
 ──────────────────────────────────────────────────── */
 

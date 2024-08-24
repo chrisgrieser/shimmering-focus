@@ -1,0 +1,58 @@
+
+/* ───────────────────────────────────────────────── */
+/** Progress Bars
+──────────────────────────────────────────────────── */
+
+/* Vault Launch */
+/* INFO use `debugger` in the console while the vault launches. Close Obsidian
+ * while the console is open, so the console appears on start. */
+
+@keyframes startup-blink {
+	/* cannot use variables, since they are not fully available yet on startup */
+	0% {
+		opacity: 0.1;
+	}
+
+	50% {
+		opacity: 1;
+	}
+
+	100% {
+		opacity: 0.1;
+	}
+}
+
+/* .app-container is needed so this does not affect the canvas progress bar */
+.app-container + .progress-bar .progress-bar-message {
+	margin-bottom: 30px;
+	font-size: 0;
+	animation-name: startup-blink;
+	animation-duration: 1s;
+	animation-iteration-count: infinite;
+}
+
+.app-container + .progress-bar .progress-bar-message::before {
+	font-size: 10rem;
+	font-weight: 500;
+	color: var(--text-normal);
+	content: var(--signature);
+}
+
+.app-container + .progress-bar .progress-bar-indicator {
+	display: none;
+}
+
+/* Plugin Update Progress Bar */
+.modal .is-loading::before {
+	height: 8px;
+	background: linear-gradient(
+		45deg,
+		var(--color-accent) 0% 20%,
+		var(--hover-accent) 40% 60%,
+		var(--secondary-accent) 80% 100%
+	);
+}
+
+.theme-light .modal .is-loading::before {
+	filter: brightness(1.2);
+}
