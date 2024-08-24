@@ -56,12 +56,18 @@ settings:
       By default, the buttons at the top of the sidebar panels are only visible when hovering.
     type: class-toggle
     default: false
+  - id: full-info-on-deletion-prompt
+    title: Show full deletion prompt
+    description:
+      The theme hides non-critical information and the "Don't ask again" checkbox. Enable this to show them again.
+    type: class-toggle
+    default: false
   - id: show-suggester-instructions
     title: Re-enable suggester hints
     type: class-toggle
     description:
       Suggesters are modals like the command palette or quick switcher. By default, this theme hides
-      the keyboard hints at the bottom of those suggesters. Enable this, to display them again.
+      the keyboard hints at the bottom of those suggesters. Enable this to display them again.
     default: false
   - id: show-new-tab-button
     title: Re-enable new tab button
