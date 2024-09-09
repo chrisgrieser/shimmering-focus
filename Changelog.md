@@ -1,3 +1,5 @@
+- 2024-09-09 **improv(tables)**: remove excess padding from Obsidian core
+- 2024-08-27 **docs**: remove obsolete `png` screenshot
 - 2024-08-21 **chore**: add snippet for shortened wordcount statusbar
 - 2024-08-21 **improv**: set `--status-bar-background` for css snippets
 - 2024-08-19 **fix(search)**: placement of case-sensitivity button
