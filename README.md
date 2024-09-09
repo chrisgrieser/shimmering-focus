@@ -15,6 +15,7 @@ A minimalistic and opinionated Obsidian theme for the keyboard-centric user.
 - [Features](#features)
 - [Commands](#commands)
 - [Customize colors](#customize-colors)
+- [Standalone snippets](#standalone-snippets)
 - [Contribute](#contribute)
 - [Licenses](#licenses)
 - [Credits](#credits)
@@ -97,6 +98,10 @@ scheme](https://github.com/chrisgrieser/shimmering-focus/discussions/new?categor
 	display: none;
 }
 ```
+
+## Standalone snippets
+Some features of this theme are available as standalone snippets. These can be
+found in the [snippets directory](./snippets).
 
 <!-- vale Google.Will = NO -->
 ## Contribute
