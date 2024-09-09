@@ -27,13 +27,13 @@ A minimalistic and opinionated Obsidian theme for the keyboard-centric user.
   keyboard users are hidden, or only shown when needed. All hidden UI elements
   can be permanently re-enabled with the [Style Settings
   Plugin](https://obsidian.md/plugins?id=obsidian-style-settings).
-- __Condensed Display of Information:__ Unnecessary padding and white-space is
+- __Condensed display of information:__ Unnecessary padding and white-space is
   removed, which is beneficial for small screens or higher zoom levels.
-- __High Customizability:__ Dozens of customization options available via the
+- __High customizability:__ Dozens of customization options available via the
   [Style Settings Plugin](https://obsidian.md/plugins?id=obsidian-style-settings).
 
 ## Features
-- __Smart hiding of UI Elements__: The tab bar is only shown when there is more
+- __Smart hiding of UI elements__: The tab bar is only shown when there is more
   than one tab open, and the sidebar tab buttons are only shown on hover.
 - __Images__: Alt-text of images used as __caption__, images can be zoomed in
   via click-and-hold or toggled between reduced and original size via Style
@@ -51,7 +51,7 @@ A minimalistic and opinionated Obsidian theme for the keyboard-centric user.
 ## Commands
 When the [Style Settings
 Plugin](https://obsidian.md/plugins?id=obsidian-style-settings) is installed,
-Shimmering Focus adds commands for toggling theme features:
+*Shimmering Focus* adds commands for toggling theme features:
 - Toggle folding of URLs (Source Mode)
 - Toggle between reduced and original image size (reduced size can be set in the
   respective style setting)
