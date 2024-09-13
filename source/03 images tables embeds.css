@@ -39,10 +39,7 @@ body .markdown-rendered tbody tr:nth-child(odd):hover {
 
 /* automatically turn off readable line length when there is a table */
 .unrestricted-line-length-tables:not(.is-mobile)
-	:is(.markdown-source-view, .markdown-preview-view):has(
-		table,
-		.HyperMD-table-2
-	) {
+	:is(.markdown-source-view, .markdown-preview-view):has(table, .HyperMD-table-2) {
 	--file-line-width: 100%;
 }
 
@@ -64,9 +61,7 @@ body .markdown-rendered tbody tr:nth-child(odd):hover {
 body:not(.is-mobile, .max-image-size-toggle)
 	.workspace-leaf-content:not([data-type="image"])
 	img:not(:active),
-body:not(.is-mobile, .max-image-size-toggle)
-	.oz-image-widget-cm6
-	> img:not(:active) {
+body:not(.is-mobile, .max-image-size-toggle) .oz-image-widget-cm6 > img:not(:active) {
 	max-width: calc(var(--image-size) * 1%);
 	cursor: zoom-in;
 }
@@ -143,9 +138,7 @@ body:not(.no-image-alttext-caption) .image-embed::after {
 }
 
 /* fix placement of link icon */
-body:not(.no-heading-background)
-	.markdown-embed[data-type="heading"]
-	.markdown-embed-link {
+body:not(.no-heading-background) .markdown-embed[data-type="heading"] .markdown-embed-link {
 	top: 9px;
 	right: 14px;
 }

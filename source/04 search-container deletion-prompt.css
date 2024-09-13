@@ -21,9 +21,6 @@ body:not(.show-close-buttons, .is-mobile) .document-search-close-button {
 body:not(.full-info-on-deletion-prompt)
 	.modal-container.mod-confirmation.mod-dim
 	> .modal
-	:is(
-		.modal-content > p:not(.mod-warning),
-		.modal-button-container > .mod-checkbox
-	) {
+	:is(.modal-content > p:not(.mod-warning), .modal-button-container > .mod-checkbox) {
 	display: none;
 }

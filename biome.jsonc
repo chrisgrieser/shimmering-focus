@@ -1,1 +1,18 @@
-{}
+{
+	"formatter": {
+		"useEditorconfig": true,
+		"lineWidth": 100, // FIX value from editorconfig not correctly applied
+		"formatWithErrors": true
+	},
+
+	"files": {
+		"ignore": ["./theme.css"]
+	},
+	"vcs": {
+		"enabled": true,
+		"clientKind": "git",
+		"useIgnoreFile": true
+	},
+
+	"$schema": "/Users/chrisgrieser/.local/share/nvim/mason/packages/biome/node_modules/@biomejs/biome/configuration_schema.json"
+}

@@ -1,11 +1,17 @@
 /* ⚠️ Requires Obsidian installer version 1.1.8 or later. */
 /* ───────────────────────────────────────────────────── */
 /* hide tab bar when only one tab */
-body:not(.is-mobile) .mod-root .workspace-tab-header-container:not(:has(.workspace-tab-header + .workspace-tab-header)) {
+body:not(.is-mobile)
+	.mod-root
+	.workspace-tab-header-container:not(:has(.workspace-tab-header + .workspace-tab-header)) {
 	display: none;
 }
 
 /* hide inline title only when one more than tab */
-body:not(.is-mobile) .mod-root .workspace-tab-header-container:has(.workspace-tab-header + .workspace-tab-header) + .workspace-tab-container .inline-title {
+body:not(.is-mobile)
+	.mod-root
+	.workspace-tab-header-container:has(.workspace-tab-header + .workspace-tab-header)
+	+ .workspace-tab-container
+	.inline-title {
 	display: none;
 }

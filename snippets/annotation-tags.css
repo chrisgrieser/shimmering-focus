@@ -9,16 +9,52 @@
 	REQUIRED Obsidian installer version 1.5.3 or higher */
 /* ──────────────────────────────────────────────────────────────────── */
 
-.tag:is([href="#agree"], [href="#critique"], [href="#data"], [href="#definition"],
-	[href="#disagree"], [href="#epistemic-break"], [href="#example"], [href="#gap"],
-	[href="#goal"], [href="#hypothesis"], [href="#idea"], [href="#important"],
-	[href="#litreview"], [href="#main"], [href="#method"], [href="#question"],
-	[href="#quote"], [href="#sidenote"], [href="#summary"], [href="#todo"]),
-.cm-s-obsidian .cm-line span:is(.cm-tag-agree, .cm-tag-critique, .cm-tag-data, .cm-tag-definition,
-	.cm-tag-disagree, .cm-tag-epistemic-break, .cm-tag-example, .cm-tag-gap,
-	.cm-tag-goal, .cm-tag-hypothesis, .cm-tag-idea, .cm-tag-important,
-	.cm-tag-litreview, .cm-tag-main, .cm-tag-method, .cm-tag-question,
-	.cm-tag-quote, .cm-tag-sidenote, .cm-tag-summary, .cm-tag-todo) {
+.tag:is(
+		[href="#agree"],
+		[href="#critique"],
+		[href="#data"],
+		[href="#definition"],
+		[href="#disagree"],
+		[href="#epistemic-break"],
+		[href="#example"],
+		[href="#gap"],
+		[href="#goal"],
+		[href="#hypothesis"],
+		[href="#idea"],
+		[href="#important"],
+		[href="#litreview"],
+		[href="#main"],
+		[href="#method"],
+		[href="#question"],
+		[href="#quote"],
+		[href="#sidenote"],
+		[href="#summary"],
+		[href="#todo"]
+	),
+.cm-s-obsidian
+	.cm-line
+	span:is(
+		.cm-tag-agree,
+		.cm-tag-critique,
+		.cm-tag-data,
+		.cm-tag-definition,
+		.cm-tag-disagree,
+		.cm-tag-epistemic-break,
+		.cm-tag-example,
+		.cm-tag-gap,
+		.cm-tag-goal,
+		.cm-tag-hypothesis,
+		.cm-tag-idea,
+		.cm-tag-important,
+		.cm-tag-litreview,
+		.cm-tag-main,
+		.cm-tag-method,
+		.cm-tag-question,
+		.cm-tag-quote,
+		.cm-tag-sidenote,
+		.cm-tag-summary,
+		.cm-tag-todo
+	) {
 	/* stylelint-disable-next-line no-unknown-custom-properties */
 	border-radius: var(--tag-radius);
 	color: hsl(0 0% 100%);

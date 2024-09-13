@@ -33,19 +33,16 @@ body:not(.no-active-line-highlight, .active-line-background)
 	border-left: 3px solid var(--basic-border-color);
 }
 
-.active-line-background
-	.cm-active.cm-line:not(.HyperMD-quote, .HyperMD-codeblock) {
+.active-line-background .cm-active.cm-line:not(.HyperMD-quote, .HyperMD-codeblock) {
 	padding-left: 4px;
 	border-radius: var(--radius-s);
 }
 
-.theme-dark.active-line-background
-	.cm-active.cm-line:not(.HyperMD-quote, .HyperMD-codeblock) {
+.theme-dark.active-line-background .cm-active.cm-line:not(.HyperMD-quote, .HyperMD-codeblock) {
 	background-color: var(--bg4);
 }
 
-.theme-light.active-line-background
-	.cm-active.cm-line:not(.HyperMD-quote, .HyperMD-codeblock) {
+.theme-light.active-line-background .cm-active.cm-line:not(.HyperMD-quote, .HyperMD-codeblock) {
 	background-color: var(--bg3);
 }
 
@@ -61,9 +58,6 @@ body:not(.no-active-line-highlight)
 	color: var(--active-line-color);
 }
 
-body:not(.no-active-line-highlight)
-	.is-live-preview
-	.cm-active
-	.list-bullet::after {
+body:not(.no-active-line-highlight) .is-live-preview .cm-active .list-bullet::after {
 	background-color: var(--active-line-color);
 }

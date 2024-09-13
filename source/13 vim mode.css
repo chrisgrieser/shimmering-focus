@@ -98,9 +98,7 @@
 /** Vim: Relative Line Numbers
 ──────────────────────────────────────────────────── */
 
-.use-relative-line-numbers:not(.is-mobile)
-	.cm-lineNumbers
-	.cm-gutterElement:not(.cm-active) {
+.use-relative-line-numbers:not(.is-mobile) .cm-lineNumbers .cm-gutterElement:not(.cm-active) {
 	font-size: 0;
 }
 
@@ -110,27 +108,19 @@
 }
 
 /* numbers before */
-.use-relative-line-numbers:not(.is-mobile)
-	.cm-lineNumbers
-	*:has(+ .cm-active)::before {
+.use-relative-line-numbers:not(.is-mobile) .cm-lineNumbers *:has(+ .cm-active)::before {
 	content: "1";
 }
 
-.use-relative-line-numbers:not(.is-mobile)
-	.cm-lineNumbers
-	*:has(+ * + .cm-active)::before {
+.use-relative-line-numbers:not(.is-mobile) .cm-lineNumbers *:has(+ * + .cm-active)::before {
 	content: "2";
 }
 
-.use-relative-line-numbers:not(.is-mobile)
-	.cm-lineNumbers
-	*:has(+ * + * + .cm-active)::before {
+.use-relative-line-numbers:not(.is-mobile) .cm-lineNumbers *:has(+ * + * + .cm-active)::before {
 	content: "3";
 }
 
-.use-relative-line-numbers:not(.is-mobile)
-	.cm-lineNumbers
-	*:has(+ * + * + * + .cm-active)::before {
+.use-relative-line-numbers:not(.is-mobile) .cm-lineNumbers *:has(+ * + * + * + .cm-active)::before {
 	content: "4";
 }
 
@@ -165,48 +155,23 @@
 }
 
 /* numbers after */
-.use-relative-line-numbers:not(.is-mobile)
-	.cm-lineNumbers
-	.cm-active
-	+ *::before {
+.use-relative-line-numbers:not(.is-mobile) .cm-lineNumbers .cm-active + *::before {
 	content: "1";
 }
 
-.use-relative-line-numbers:not(.is-mobile)
-	.cm-lineNumbers
-	.cm-active
-	+ *
-	+ *::before {
+.use-relative-line-numbers:not(.is-mobile) .cm-lineNumbers .cm-active + * + *::before {
 	content: "2";
 }
 
-.use-relative-line-numbers:not(.is-mobile)
-	.cm-lineNumbers
-	.cm-active
-	+ *
-	+ *
-	+ *::before {
+.use-relative-line-numbers:not(.is-mobile) .cm-lineNumbers .cm-active + * + * + *::before {
 	content: "3";
 }
 
-.use-relative-line-numbers:not(.is-mobile)
-	.cm-lineNumbers
-	.cm-active
-	+ *
-	+ *
-	+ *
-	+ *::before {
+.use-relative-line-numbers:not(.is-mobile) .cm-lineNumbers .cm-active + * + * + * + *::before {
 	content: "4";
 }
 
-.use-relative-line-numbers:not(.is-mobile)
-	.cm-lineNumbers
-	.cm-active
-	+ *
-	+ *
-	+ *
-	+ *
-	+ *::before {
+.use-relative-line-numbers:not(.is-mobile) .cm-lineNumbers .cm-active + * + * + * + * + *::before {
 	content: "5";
 }
 
@@ -274,10 +239,7 @@
 
 /* ignoring tooltips in settings, since they are relevant there, e.g. for sliders */
 .no-mouse-hovers div:not(.modal-container) + .tooltip,
-.no-mouse-hovers
-	.is-live-preview
-	.cm-embed-block:not(.cm-table-widget):hover
-	.edit-block-button {
+.no-mouse-hovers .is-live-preview .cm-embed-block:not(.cm-table-widget):hover .edit-block-button {
 	display: none;
 }
 

@@ -59,8 +59,7 @@ u,
 }
 
 .cm-hmd-internal-link .cm-underline.cm-underline,
-.markdown-preview-view
-	.internal-link:not(.multi-select-pill, .metadata-link-inner) {
+.markdown-preview-view .internal-link:not(.multi-select-pill, .metadata-link-inner) {
 	text-decoration: underline double 1.2px;
 }
 
@@ -79,9 +78,7 @@ body:not(.show-urls) .cm-line:not(.cm-active) .cm-string.cm-url,
 }
 
 /* FIX link color on hover for in some cases not applied correctly */
-.markdown-source-view.mod-cm6
-	:is(.cm-link-alias, .cm-hmd-internal-link)
-	.cm-underline:hover {
+.markdown-source-view.mod-cm6 :is(.cm-link-alias, .cm-hmd-internal-link) .cm-underline:hover {
 	color: var(--link-external-color-hover);
 }
 
@@ -201,8 +198,7 @@ body .markdown-preview-view *:not(pre) > code,
 /** Code Blocks
 ──────────────────────────────────────────────────── */
 /* Code blocks in Edit Mode */
-:is(.HyperMD-codeblock-end, .HyperMD-codeblock-begin)
-	.cm-formatting-code-block {
+:is(.HyperMD-codeblock-end, .HyperMD-codeblock-begin) .cm-formatting-code-block {
 	color: var(--text-muted);
 }
 
@@ -303,18 +299,12 @@ body:not(.no-codeblock-line-numbers) .HyperMD-codeblock-begin {
 }
 
 body:not(.no-codeblock-line-numbers)
-	.HyperMD-codeblock.cm-line:not(
-		.HyperMD-codeblock-begin,
-		.HyperMD-codeblock-end
-	) {
+	.HyperMD-codeblock.cm-line:not(.HyperMD-codeblock-begin, .HyperMD-codeblock-end) {
 	padding-left: 2.8em;
 }
 
 body:not(.no-codeblock-line-numbers)
-	.HyperMD-codeblock:not(
-		.HyperMD-codeblock-begin,
-		.HyperMD-codeblock-end
-	)::before {
+	.HyperMD-codeblock:not(.HyperMD-codeblock-begin, .HyperMD-codeblock-end)::before {
 	position: absolute;
 	left: 0;
 	width: 1.7em;
@@ -332,9 +322,7 @@ body:not(.no-codeblock-line-numbers)
 }
 
 /* code block end */
-body:not(.no-codeblock-line-numbers)
-	.HyperMD-codeblock-end
-	.cm-formatting-code-block {
+body:not(.no-codeblock-line-numbers) .HyperMD-codeblock-end .cm-formatting-code-block {
 	padding: 2px 3.5px;
 	margin-left: -4px;
 	border-bottom-left-radius: var(--codeblock-roundness);
@@ -351,9 +339,7 @@ body:not(.no-codeblock-line-numbers)
 	border-bottom-left-radius: var(--radius-s);
 }
 
-body:not(.no-codeblock-line-numbers)
-	.HyperMD-codeblock-end
-	.cm-formatting-code-block:first-child {
+body:not(.no-codeblock-line-numbers) .HyperMD-codeblock-end .cm-formatting-code-block:first-child {
 	/* "first-child" ensures that indented code blocks (e.g. in lists) do not look off */
 	background-color: var(--bg2);
 }
@@ -364,9 +350,7 @@ body:not(.no-codeblock-line-numbers)
 	white-space: pre;
 }
 
-.markdown-reading-view
-	.markdown-preview-view
-	pre:not(.frontmatter, [class*="language-"]) {
+.markdown-reading-view .markdown-preview-view pre:not(.frontmatter, [class*="language-"]) {
 	overflow-x: scroll;
 }
 
@@ -392,8 +376,7 @@ body.theme-light {
 	padding-inline-start: 1.9em;
 }
 
-.markdown-rendered
-	ul:not(.contains-task-list, .dataview-result-list-ul, .has-list-bullet) {
+.markdown-rendered ul:not(.contains-task-list, .dataview-result-list-ul, .has-list-bullet) {
 	padding-inline-start: 1em;
 }
 
@@ -494,19 +477,14 @@ body:not(.no-lp-heading-level-indicator)
 	content: "H6";
 }
 
-body:not(.no-lp-heading-level-indicator)
-	.is-live-preview
-	.cm-header
-	~ .cm-header::before {
+body:not(.no-lp-heading-level-indicator) .is-live-preview .cm-header ~ .cm-header::before {
 	/* FIX only first header element gets the prefix */
 	display: none;
 }
 
 /* Headers with background colors */
 body:not(.no-heading-background) .markdown-source-view .cm-line.HyperMD-header,
-body:not(.no-heading-background)
-	.markdown-preview-view
-	:is(h1, h2, h3, h4, h5, h6) {
+body:not(.no-heading-background) .markdown-preview-view :is(h1, h2, h3, h4, h5, h6) {
 	background-color: var(--bg4);
 	border: var(--thin-border);
 	border-radius: var(--radius-s);
@@ -528,10 +506,8 @@ body:not(.no-heading-background)
 /** Blockquotes
 ──────────────────────────────────────────────────── */
 
-.markdown-source-view:not(.is-live-preview)
-	.cm-line.HyperMD-quote.HyperMD-quote.HyperMD-quote {
-	border-left: var(--blockquote-border-thickness) solid
-		var(--blockquote-border-color);
+.markdown-source-view:not(.is-live-preview) .cm-line.HyperMD-quote.HyperMD-quote.HyperMD-quote {
+	border-left: var(--blockquote-border-thickness) solid var(--blockquote-border-color);
 }
 
 .cm-hmd-indent-in-quote,
@@ -566,8 +542,7 @@ body:not(.no-heading-background)
 }
 
 /* less padding between quote blocks */
-.HyperMD-quote:not(.HyperMD-callout)
-	+ .HyperMD-quote.HyperMD-quote.HyperMD-quote {
+.HyperMD-quote:not(.HyperMD-callout) + .HyperMD-quote.HyperMD-quote.HyperMD-quote {
 	padding-top: 0;
 }
 
@@ -591,10 +566,7 @@ body:not(.no-heading-background)
 }
 
 /* HACK live-preview: prevent rounded corners with consecutive block quotes */
-body:not(.angular-shapes)
-	.is-live-preview
-	.HyperMD-quote
-	+ .HyperMD-quote::before {
+body:not(.angular-shapes) .is-live-preview .HyperMD-quote + .HyperMD-quote::before {
 	margin-top: -0.5em;
 	border-bottom-left-radius: var(--radius-s);
 }
@@ -633,8 +605,7 @@ body:not(.angular-shapes)
 }
 
 /* Reading Mode */
-:is(.markdown-preview-view, .community-modal-readme, .is-live-preview)
-	blockquote {
+:is(.markdown-preview-view, .community-modal-readme, .is-live-preview) blockquote {
 	padding: 4px 12px;
 	border-radius: var(--radius-s);
 }
@@ -878,11 +849,7 @@ body:not(.hide-trailing-whitespace)
 	> .cm-contentContainer
 	> .cm-content
 	> .cm-line
-	> :is(
-		.cm-trailing-space-a,
-		.cm-trailing-space-b,
-		.cm-trailing-space-new-line
-	)::after {
+	> :is(.cm-trailing-space-a, .cm-trailing-space-b, .cm-trailing-space-new-line)::after {
 	font-size: 1em;
 	font-weight: 600;
 	color: var(--text-faint);

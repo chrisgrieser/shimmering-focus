@@ -2,23 +2,23 @@
 /* ────────────────────────────────────────────────────────────────────────── */
 /* CONFIG values potentially need to be adjusted depending on the font */
 body {
-    --cut-off-for-word: -2rem;
-    --cut-off-for-character: -4.94rem;
+	--cut-off-for-word: -2rem;
+	--cut-off-for-character: -4.94rem;
 }
 /* ────────────────────────────────────────────────────────────────────────── */
 
 .plugin-word-count > .status-bar-item-segment {
-    &:first-child {
-        margin-right: var(--cut-off-for-word);
-    }
+	&:first-child {
+		margin-right: var(--cut-off-for-word);
+	}
 
-    &:nth-child(2) {
-        margin-right: var(--cut-off-for-character);
-    }
+	&:nth-child(2) {
+		margin-right: var(--cut-off-for-character);
+	}
 }
 
 .plugin-word-count > .status-bar-item-segment:nth-child(2),
 .plugin-word-count ~ .status-bar-item {
-    background-color: var(--status-bar-background);
-    padding-left: 0.5rem;
+	background-color: var(--status-bar-background);
+	padding-left: 0.5rem;
 }

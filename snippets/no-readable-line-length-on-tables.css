@@ -6,5 +6,3 @@ body:not(.is-mobile) .markdown-source-view:has(.HyperMD-table-2),
 body:not(.is-mobile) .markdown-preview-view:has(table) {
 	--file-line-width: 100%;
 }
-
-

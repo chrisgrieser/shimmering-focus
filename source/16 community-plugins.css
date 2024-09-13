@@ -22,10 +22,7 @@ body:not(.normal-header-bar) #cMenuToolbarModalBar.top {
 }
 
 /* adjustments for hidden header bar */
-body:not(.normal-header-bar, .is-mobile)
-	.projects-container
-	.container.primary
-	.right {
+body:not(.normal-header-bar, .is-mobile) .projects-container .container.primary .right {
 	margin-right: 30px;
 }
 
@@ -119,8 +116,7 @@ img.link-favicon.link-favicon {
 	border-radius: unset;
 }
 
-.theme-light
-	.link-favicon:is([data-host^="github.com"], [data-host^="raw.github"]) {
+.theme-light .link-favicon:is([data-host^="github.com"], [data-host^="raw.github"]) {
 	filter: invert(0.2);
 }
 
@@ -239,10 +235,7 @@ body .cm-matched-string {
 	padding: 6px 0;
 }
 
-.dynamic-highlights-settings
-	.highlighter-container
-	.highlighter-details
-	.setting-item-info {
+.dynamic-highlights-settings .highlighter-container .highlighter-details .setting-item-info {
 	margin-right: 6px;
 }
 
@@ -357,20 +350,14 @@ body .another-quick-switcher__status__count-input {
 }
 
 .another-quick-switcher__phantom_item
-	:is(
-		.another-quick-switcher__item__icon,
-		.another-quick-switcher__item__directory
-	),
+	:is(.another-quick-switcher__item__icon, .another-quick-switcher__item__directory),
 .suggestion-item:hover .another-quick-switcher__phantom_item {
 	filter: saturate(60%);
 }
 
 .suggestion-item:hover
 	.another-quick-switcher__phantom_item
-	:is(
-		.another-quick-switcher__item__icon,
-		.another-quick-switcher__item__directory
-	),
+	:is(.another-quick-switcher__item__icon, .another-quick-switcher__item__directory),
 .suggestion-item:hover .another-quick-switcher__phantom_item {
 	color: var(--hover-accent);
 	filter: saturate(60%);
@@ -381,8 +368,7 @@ body .another-quick-switcher__status__count-input {
 	display: none;
 }
 
-.another-quick-switcher__starred_item
-	.another-quick-switcher__item__entry::before {
+.another-quick-switcher__starred_item .another-quick-switcher__item__entry::before {
 	padding-right: 5px;
 	content: "★";
 }
@@ -496,8 +482,7 @@ body .another-quick-switcher__item__description {
 	content: "In: ";
 }
 
-body
-	.another-quick-switcher__grep__path-input.another-quick-switcher__grep__path-input {
+body .another-quick-switcher__grep__path-input.another-quick-switcher__grep__path-input {
 	margin-left: 0;
 	background-color: transparent;
 	border: none;
@@ -529,8 +514,7 @@ body
 ──────────────────────────────────────────────────── */
 /* inherits alternate row colors from file explorer */
 
-.workspace-leaf-content[data-type="recent-files"]
-	.nav-file-title.nav-file-title.nav-file-title {
+.workspace-leaf-content[data-type="recent-files"] .nav-file-title.nav-file-title.nav-file-title {
 	padding-right: 0;
 	padding-left: 6px;
 }
@@ -619,8 +603,7 @@ body
 /* Styling from the "Tables" Section mostly applies */
 
 /* less indentation to save space */
-:is(.block-language-dataview, .block-language-dataviewjs)
-	ul.contains-task-list {
+:is(.block-language-dataview, .block-language-dataviewjs) ul.contains-task-list {
 	--list-indent: 0.3em;
 	padding-inline-start: 0;
 }
@@ -669,9 +652,7 @@ body .dataview:not(.task-list-item-checkbox):hover {
 	font-size: 70%;
 }
 
-.is-live-preview
-	.block-language-dataviewjs
-	:is(h1, h2, h3, h4, h5, h6):first-child {
+.is-live-preview .block-language-dataviewjs :is(h1, h2, h3, h4, h5, h6):first-child {
 	margin-top: 4px;
 }
 

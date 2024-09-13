@@ -26,11 +26,7 @@ body.mod-windows:not(.show-sidebar-header-buttons) .titlebar {
 	height: 35px;
 }
 
-.is-hidden-frameless.mod-windows:not(
-		.is-grabbing,
-		.is-fullscreen,
-		.show-sidebar-header-buttons
-	)
+.is-hidden-frameless.mod-windows:not(.is-grabbing, .is-fullscreen, .show-sidebar-header-buttons)
 	.mod-top
 	.workspace-tab-header-container {
 	-webkit-app-region: no-drag;
@@ -109,9 +105,7 @@ body.mod-macos.is-hidden-frameless:not(.is-popout-window)
 	border-radius: 0;
 }
 
-:is(.mod-left-split, .mod-right-split)
-	.mod-top
-	.workspace-tab-header-container-inner {
+:is(.mod-left-split, .mod-right-split) .mod-top .workspace-tab-header-container-inner {
 	padding-bottom: 4px;
 	margin-top: 4px;
 }

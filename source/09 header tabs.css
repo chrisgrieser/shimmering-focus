@@ -33,9 +33,7 @@ body:not(.normal-header-bar, .is-mobile) .workspace-leaf-content .view-header {
 }
 
 /* Note Path Breadcrumbs */
-body:not(.normal-header-bar, .is-mobile)
-	.workspace-leaf-content
-	.view-header-title-container {
+body:not(.normal-header-bar, .is-mobile) .workspace-leaf-content .view-header-title-container {
 	position: absolute;
 	top: 35px;
 	right: 1.1rem;
@@ -67,10 +65,7 @@ body:not(.normal-header-bar, .is-mobile) .view-header-breadcrumb {
 }
 
 /* remaining buttons (by default only the "more options" button) */
-body:not(.normal-header-bar, .is-mobile)
-	.workspace-leaf-content
-	.view-header
-	.view-actions {
+body:not(.normal-header-bar, .is-mobile) .workspace-leaf-content .view-header .view-actions {
 	position: absolute;
 	top: 4px;
 	right: 2px;
@@ -147,9 +142,7 @@ body:not(.show-tab-list-button) .workspace-tab-header-tab-list {
 
 body:not(.normal-tab-bar, .is-mobile)
 	.mod-root
-	.workspace-tab-header-container:not(
-		:has(.workspace-tab-header + .workspace-tab-header)
-	) {
+	.workspace-tab-header-container:not(:has(.workspace-tab-header + .workspace-tab-header)) {
 	display: none;
 }
 
@@ -171,9 +164,7 @@ body.mod-windows:not(.normal-tab-bar, .show-sidebar-header-buttons)
 /* hide inline title when *more* than one tab */
 body:not(.is-mobile).hide-inline-title-when-more-than-one-tab
 	.mod-root
-	.workspace-tab-header-container:has(
-		.workspace-tab-header + .workspace-tab-header
-	)
+	.workspace-tab-header-container:has(.workspace-tab-header + .workspace-tab-header)
 	+ .workspace-tab-container
 	.inline-title {
 	display: none;
@@ -193,13 +184,11 @@ body:not(.is-mobile).hide-inline-title-when-more-than-one-tab
 	height: 0;
 }
 
-.workspace-tab-header-inner.workspace-tab-header-inner:hover.workspace-tab-header-inner:hover
-	* {
+.workspace-tab-header-inner.workspace-tab-header-inner:hover.workspace-tab-header-inner:hover * {
 	color: var(--hover-accent);
 }
 
-.workspace-tab-header-inner.workspace-tab-header-inner:hover.workspace-tab-header-inner:active
-	* {
+.workspace-tab-header-inner.workspace-tab-header-inner:hover.workspace-tab-header-inner:active * {
 	color: var(--color-accent);
 }
 
@@ -283,13 +272,11 @@ body .workspace .mod-root .workspace-tab-header {
 ──────────────────────────────────────────────────── */
 
 /* add favicon */
-.workspace-tab-header[data-type="release-notes"]
-	.workspace-tab-header-inner-icon {
+.workspace-tab-header[data-type="release-notes"] .workspace-tab-header-inner-icon {
 	display: none;
 }
 
-.workspace-tab-header[data-type="release-notes"]
-	.workspace-tab-header-inner-title::before {
+.workspace-tab-header[data-type="release-notes"] .workspace-tab-header-inner-title::before {
 	position: relative;
 	top: 2px;
 	padding-right: 2px;

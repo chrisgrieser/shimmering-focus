@@ -76,9 +76,7 @@ body:not(.show-close-buttons, .is-mobile) .modal-close-button {
 /* ───────────────────────────────────────────────── */
 /** Individual Setting Pages
 ──────────────────────────────────────────────────── */
-.installed-plugins-container
-	.setting-item-description
-	div:nth-child(2)::first-letter {
+.installed-plugins-container .setting-item-description div:nth-child(2)::first-letter {
 	text-transform: lowercase;
 }
 
@@ -155,8 +153,7 @@ body .vertical-tab-content {
 	border-radius: var(--radius-s) var(--radius-s) 0 0;
 }
 
-.setting-item-heading:not(:first-child, .style-settings-heading)
-	.setting-item-name {
+.setting-item-heading:not(:first-child, .style-settings-heading) .setting-item-name {
 	margin-top: 12px;
 }
 
@@ -177,8 +174,7 @@ body .vertical-tab-content {
 	margin-bottom: 24px;
 }
 
-.modal.mod-settings
-	:is(h3, h4, h5, h6, h1:not(:first-child), h2:not(:first-child)) {
+.modal.mod-settings :is(h3, h4, h5, h6, h1:not(:first-child), h2:not(:first-child)) {
 	margin-top: 12px;
 	margin-bottom: 4px;
 	letter-spacing: calc(var(--heading-letter-spacing) * 0.5);
@@ -288,9 +284,7 @@ body .vertical-tab-content {
 	padding: 0;
 }
 
-:is(.mod-community-theme, .mod-community-plugin)
-	.modal-setting-nav-bar
-	.clickable-icon {
+:is(.mod-community-theme, .mod-community-plugin) .modal-setting-nav-bar .clickable-icon {
 	position: sticky;
 	height: 30px;
 }

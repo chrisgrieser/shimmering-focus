@@ -28,10 +28,7 @@ body:not(.show-bookmark-icons) .bookmark.tree-item-self .tree-item-icon {
 }
 
 /* alternating row colors */
-.workspace-leaf-content[data-type="bookmarks"]
-	> div
-	> div
-	> .tree-item:nth-child(odd) {
+.workspace-leaf-content[data-type="bookmarks"] > div > div > .tree-item:nth-child(odd) {
 	background-color: var(--a-row);
 }
 
@@ -78,9 +75,7 @@ body .canvas-card-menu {
 ──────────────────────────────────────────────────── */
 
 /* move the case-sentivity button to the side when the close button is hidden */
-body:not(.show-close-buttons, .is-mobile)
-	.search-input-container
-	input:not(:placeholder-shown) {
+body:not(.show-close-buttons, .is-mobile) .search-input-container input:not(:placeholder-shown) {
 	padding-inline-end: 28px;
 
 	& ~ .input-right-decorator {
@@ -96,11 +91,7 @@ body:not(.show-close-buttons, .is-mobile)
 	padding: 0 0 24px;
 }
 
-.nav-files-container
-	> div
-	> .nav-folder
-	> .nav-folder-title
-	> .nav-folder-title-content {
+.nav-files-container > div > .nav-folder > .nav-folder-title > .nav-folder-title-content {
 	font-weight: 600;
 }
 
@@ -119,10 +110,7 @@ body:not(.show-file-explorer-navigation)
 
 /* optionally hide attachment folders */
 .hide-attachment-folders
-	.nav-folder-title:is(
-		[data-path$="/attachments" i],
-		[data-path="attachments" i]
-	) {
+	.nav-folder-title:is([data-path$="/attachments" i], [data-path="attachments" i]) {
 	display: none;
 }
 
@@ -142,9 +130,7 @@ body .outgoing-link-pane .search-result-container {
 }
 
 /* hide "links" and "unlinked mentions" headings */
-body:not(.normal-out-back-links)
-	:is(.backlink-pane, .outgoing-link-pane)
-	> .tree-item-self {
+body:not(.normal-out-back-links) :is(.backlink-pane, .outgoing-link-pane) > .tree-item-self {
 	display: none;
 }
 
@@ -163,9 +149,7 @@ body:not(.normal-out-back-links)
 /* ───────────────────────────────────────────────── */
 /** Inline Backlinks
 ──────────────────────────────────────────────────── */
-:is(.markdown-source-view, .markdown-preview-view)
-	.backlink-pane
-	> .tree-item-self {
+:is(.markdown-source-view, .markdown-preview-view) .backlink-pane > .tree-item-self {
 	background-color: var(--bg2);
 }
 
@@ -194,16 +178,12 @@ body:not(.classic-inline-backlinks)
 	display: none;
 }
 
-body:not(.classic-inline-backlinks)
-	.embedded-backlinks
-	.search-result-container {
+body:not(.classic-inline-backlinks) .embedded-backlinks .search-result-container {
 	padding: 0;
 	margin-left: 0;
 }
 
-body:not(.classic-inline-backlinks)
-	.embedded-backlinks
-	.tree-item-self.tree-item-self {
+body:not(.classic-inline-backlinks) .embedded-backlinks .tree-item-self.tree-item-self {
 	padding: 0;
 	font-weight: 500;
 	line-height: var(--line-height-normal);
@@ -215,22 +195,15 @@ body:not(.classic-inline-backlinks) .embedded-backlinks .tree-item-inner {
 	text-decoration: underline double 1px;
 }
 
-body:not(.classic-inline-backlinks)
-	.embedded-backlinks
-	.tree-item-self:hover
-	.tree-item-inner {
+body:not(.classic-inline-backlinks) .embedded-backlinks .tree-item-self:hover .tree-item-inner {
 	color: var(--hover-accent);
 }
 
-body:not(.classic-inline-backlinks)
-	.embedded-backlinks
-	.tree-item.search-result {
+body:not(.classic-inline-backlinks) .embedded-backlinks .tree-item.search-result {
 	margin: 0;
 }
 
-body:not(.classic-inline-backlinks)
-	.embedded-backlinks
-	.tree-item-self::before {
+body:not(.classic-inline-backlinks) .embedded-backlinks .tree-item-self::before {
 	margin-right: 6px;
 	font-weight: 700;
 	color: var(--text-faint);
@@ -238,15 +211,11 @@ body:not(.classic-inline-backlinks)
 }
 
 /* fix for writing/longform notes */
-body:not(.classic-inline-backlinks)
-	:is(.writing, .longform-leaf)
-	.search-result-file-title {
+body:not(.classic-inline-backlinks) :is(.writing, .longform-leaf) .search-result-file-title {
 	font-size: calc(var(--longform-font-size) * 0.9);
 }
 
-body:not(.classic-inline-backlinks)
-	:is(.writing, .longform-leaf)
-	.embedded-backlinks::before {
+body:not(.classic-inline-backlinks) :is(.writing, .longform-leaf) .embedded-backlinks::before {
 	font-size: calc(var(--longform-font-size) * 1);
 }
 
@@ -276,22 +245,13 @@ body:not(.classic-inline-backlinks)
 }
 
 /* less spacing since collapse icon is to the left */
-.workspace-leaf-content[data-type="outline"]
-	> .view-content
-	> div
-	> .tree-item
-	> .tree-item-self {
+.workspace-leaf-content[data-type="outline"] > .view-content > div > .tree-item > .tree-item-self {
 	padding-left: 0.75em;
 }
 
 /* alternating row colors */
-.workspace-leaf-content[data-type="outline"]
-	> .view-content
-	> div
-	> .tree-item:nth-child(odd),
-.workspace-leaf-content[data-type="outline"]
-	.tree-item-children
-	.tree-item:nth-child(odd) {
+.workspace-leaf-content[data-type="outline"] > .view-content > div > .tree-item:nth-child(odd),
+.workspace-leaf-content[data-type="outline"] .tree-item-children .tree-item:nth-child(odd) {
 	background-color: var(--a-row);
 }
 
@@ -304,9 +264,7 @@ body:not(.classic-inline-backlinks)
 	background-color: transparent;
 }
 
-body:not(.show-outline-buttons)
-	.workspace-leaf-content[data-type="outline"]
-	.nav-header {
+body:not(.show-outline-buttons) .workspace-leaf-content[data-type="outline"] .nav-header {
 	display: none;
 }
 
@@ -325,9 +283,7 @@ body:not(.show-outline-buttons)
 }
 
 /* always display search input box */
-.show-outline-buttons
-	.workspace-leaf-content[data-type="outline"]
-	.search-input-container {
+.show-outline-buttons .workspace-leaf-content[data-type="outline"] .search-input-container {
 	/* stylelint-disable-next-line declaration-no-important */
 	display: block !important;
 	flex-grow: 1;

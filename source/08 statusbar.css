@@ -1,11 +1,8 @@
-.hide-pandoc-reference-list-status-bar
-	.status-bar-item.plugin-obsidian-pandoc-reference-list,
+.hide-pandoc-reference-list-status-bar .status-bar-item.plugin-obsidian-pandoc-reference-list,
 .hide-longform-status-bar .status-bar-item.plugin-longform,
-.hide-languagetool-status-bar
-	.status-bar-item.plugin-obsidian-languagetool-plugin,
+.hide-languagetool-status-bar .status-bar-item.plugin-obsidian-languagetool-plugin,
 .hide-pane-relief-focus-lock-status-bar .status-bar-item.plugin-pane-relief,
-.hide-electron-window-tweaker-status-bar
-	.status-bar-item.plugin-obsidian-electron-window-tweaker,
+.hide-electron-window-tweaker-status-bar .status-bar-item.plugin-obsidian-electron-window-tweaker,
 .hide-properties-in-statusbar .status-bar-item.plugin-properties,
 .hide-backlinks-status-bar .status-bar-item.plugin-backlink {
 	display: none;

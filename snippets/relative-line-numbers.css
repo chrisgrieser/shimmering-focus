@@ -15,39 +15,39 @@ body:not(.is-mobile) .cm-lineNumbers *:has(+ .cm-active)::before {
 	content: "1";
 }
 
-body:not(.is-mobile) .cm-lineNumbers *:has(+*+ .cm-active)::before {
+body:not(.is-mobile) .cm-lineNumbers *:has(+ * + .cm-active)::before {
 	content: "2";
 }
 
-body:not(.is-mobile) .cm-lineNumbers *:has(+*+*+ .cm-active)::before {
+body:not(.is-mobile) .cm-lineNumbers *:has(+ * + * + .cm-active)::before {
 	content: "3";
 }
 
-body:not(.is-mobile) .cm-lineNumbers *:has(+*+*+*+ .cm-active)::before {
+body:not(.is-mobile) .cm-lineNumbers *:has(+ * + * + * + .cm-active)::before {
 	content: "4";
 }
 
-body:not(.is-mobile) .cm-lineNumbers *:has(+*+*+*+*+ .cm-active)::before {
+body:not(.is-mobile) .cm-lineNumbers *:has(+ * + * + * + * + .cm-active)::before {
 	content: "5";
 }
 
-body:not(.is-mobile) .cm-lineNumbers *:has(+*+*+*+*+*+ .cm-active)::before {
+body:not(.is-mobile) .cm-lineNumbers *:has(+ * + * + * + * + * + .cm-active)::before {
 	content: "6";
 }
 
-body:not(.is-mobile) .cm-lineNumbers *:has(+*+*+*+*+*+*+ .cm-active)::before {
+body:not(.is-mobile) .cm-lineNumbers *:has(+ * + * + * + * + * + * + .cm-active)::before {
 	content: "7";
 }
 
-body:not(.is-mobile) .cm-lineNumbers *:has(+*+*+*+*+*+*+*+ .cm-active)::before {
+body:not(.is-mobile) .cm-lineNumbers *:has(+ * + * + * + * + * + * + * + .cm-active)::before {
 	content: "8";
 }
 
-body:not(.is-mobile) .cm-lineNumbers *:has(+*+*+*+*+*+*+*+*+ .cm-active)::before {
+body:not(.is-mobile) .cm-lineNumbers *:has(+ * + * + * + * + * + * + * + * + .cm-active)::before {
 	content: "9";
 }
 
- /* numbers after */
+/* numbers after */
 body:not(.is-mobile) .cm-lineNumbers .cm-active + *::before {
 	content: "1";
 }

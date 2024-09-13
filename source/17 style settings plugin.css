@@ -104,9 +104,7 @@ body
 /** Style Settings: As Tab
 ──────────────────────────────────────────────────── */
 
-.workspace-leaf-content[data-type="style-settings"]
-	.view-content
-	.setting-item:first-child {
+.workspace-leaf-content[data-type="style-settings"] .view-content .setting-item:first-child {
 	/* avoid collision with three dots button */
 	padding-top: 12px;
 }
@@ -116,10 +114,7 @@ body
 }
 
 /* FIX for https://github.com/mgmeyers/obsidian-style-settings/issues/104 */
-body
-	.view-content
-	.style-settings-container
-	.setting-item:not(.setting-item-heading) {
+body .view-content .style-settings-container .setting-item:not(.setting-item-heading) {
 	flex-direction: row;
 }
 
@@ -146,8 +141,7 @@ body
 	display: none;
 }
 
-body
-	.setting-item.setting-item.setting-item.setting-item[data-id="author-info"] {
+body .setting-item.setting-item.setting-item.setting-item[data-id="author-info"] {
 	margin-top: 40px;
 }
 
@@ -219,11 +213,7 @@ body
 }
 
 .style-settings-container
-	.setting-item:is(
-		[data-id="highlight-hue-1"],
-		[data-id^="bg-hue"],
-		[data-id^="longform-bg-hue"]
-	)
+	.setting-item:is([data-id="highlight-hue-1"], [data-id^="bg-hue"], [data-id^="longform-bg-hue"])
 	input.slider {
 	height: 0.8em;
 	background: var(--hue-scale);
@@ -231,28 +221,16 @@ body
 }
 
 .style-settings-container
-	.setting-item:is(
-		[data-id="highlight-hue-1"],
-		[data-id^="bg-hue"],
-		[data-id^="longform-bg-hue"]
-	)
+	.setting-item:is([data-id="highlight-hue-1"], [data-id^="bg-hue"], [data-id^="longform-bg-hue"])
 	input.slider::after,
 .style-settings-container
-	.setting-item:is(
-		[data-id="highlight-hue-1"],
-		[data-id^="bg-hue"],
-		[data-id^="longform-bg-hue"]
-	)
+	.setting-item:is([data-id="highlight-hue-1"], [data-id^="bg-hue"], [data-id^="longform-bg-hue"])
 	input.slider::before {
 	display: none;
 }
 
 .style-settings-container
-	.setting-item:is(
-		[data-id="highlight-hue-1"],
-		[data-id^="bg-hue"],
-		[data-id^="longform-bg-hue"]
-	)
+	.setting-item:is([data-id="highlight-hue-1"], [data-id^="bg-hue"], [data-id^="longform-bg-hue"])
 	input.slider::-webkit-slider-thumb {
 	position: relative;
 	top: -0.7em;
@@ -263,9 +241,7 @@ body
 }
 
 /* DEMO COLOR BOX */
-.style-settings-container
-	.setting-item[data-id="highlight-hue-1"]
-	.setting-item-control::before {
+.style-settings-container .setting-item[data-id="highlight-hue-1"] .setting-item-control::before {
 	content: " ";
 	position: relative;
 	left: -3em;
