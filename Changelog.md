@@ -1,3 +1,6 @@
+- 2024-09-13 **chore**: update biome config for biome 1.9
+- 2024-09-09 **docs**: mention availability of some features as standalone snippets
+- 2024-09-09 **docs**: more consistent casing
 - 2024-09-09 **improv(tables)**: remove excess padding from Obsidian core
 - 2024-08-27 **docs**: remove obsolete `png` screenshot
 - 2024-08-21 **chore**: add snippet for shortened wordcount statusbar
