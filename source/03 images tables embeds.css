@@ -8,12 +8,6 @@
 	line-height: var(--table-line-height);
 }
 
-/* FIX excess padding at the top 
-* (unnecessary due to drag handle already adding space) */
-body .markdown-source-view.mod-cm6 .cm-table-widget {
-	padding-top: 0;
-}
-
 /* make lists in tables take up less space */
 .markdown-rendered table :is(ul, ol) {
 	line-height: 1.1;
