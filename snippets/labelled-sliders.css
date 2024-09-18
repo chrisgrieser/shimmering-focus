@@ -1,0 +1,18 @@
+input[type="range"]::before,
+input[type="range"]::after {
+	display: block;
+	padding: 2px;
+	font-size: var(--font-ui-smaller);
+	color: var(--text-muted);
+	background-color: inherit;
+	border-radius: var(--radius-s);
+}
+
+input[type="range"]::before {
+	content: attr(min);
+}
+
+input[type="range"]::after {
+	content: attr(max);
+	max-width: 3em; /* FIX Canvas settings having a max value with a lot of decimals */
+}

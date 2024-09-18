@@ -86,9 +86,7 @@ input[type="range"]::before {
 
 input[type="range"]::after {
 	content: attr(max);
-
-	/* FIX Canvas settings having a max value with a lot of decimals */
-	max-width: 3em;
+	max-width: 3em; /* FIX Canvas settings having a max value with a lot of decimals */
 }
 
 body:not(.show-close-buttons, .is-mobile) .search-input-clear-button {
