@@ -1,3 +1,4 @@
+- 2024-09-18 **improv(fileExplorer)**: do not trim filenames while renaming #313
 - 2024-09-17 **revert**: 'improv(tables): remove excess padding from Obsidian core'
 - 2024-09-13 **chore**: update biome config for biome 1.9
 - 2024-09-09 **docs**: mention availability of some features as standalone snippets
