@@ -170,13 +170,6 @@ settings:
     max: 700
     step: 25
     format: px
-  - id: trim-long-filenames
-    title: "Sidebars: Trim file names"
-    description:
-      When enabled, long file and folder names will be trimmed. When disabled, long names will be
-      wrapped to the next line.
-    type: class-toggle
-    default: false
   - id: overlaying-right-sidebar
     title: "Sidebars: Overlaying right sidebar"
     description:

@@ -2,8 +2,9 @@
 /** Sidebars
 ──────────────────────────────────────────────────── */
 
-body:not(.trim-long-filenames) {
-	--nav-item-white-space: normal;
+/* do not trim filenames while renaming */ 
+.tree-item-self.is-being-renamed .tree-item-inner {
+	white-space: normal;
 }
 
 /* Overlaying Sidebar */
