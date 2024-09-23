@@ -379,17 +379,26 @@ body .another-quick-switcher__status__count-input {
 
 /* Meta / Frontmatter */
 .another-quick-switcher__item__metas {
-	padding-top: 4px;
+	padding-top: 1px;
 	margin-bottom: -4px;
+}
+
+/* one frontmatter item per line, wrapped */
+.another-quick-switcher__item__meta {
+	flex-direction: column;
+	display: flex;
+}
+
+.another-quick-switcher__item__meta__front_matter__value {
+	text-wrap: nowrap;
+	text-overflow: ellipsis;
+	overflow: hidden;
+	color: var(--text-normal);
 }
 
 .another-quick-switcher__item__meta__front_matter__key {
 	color: var(--text-gray);
 	font-style: italic;
-}
-
-.another-quick-switcher__item__meta__front_matter__value {
-	color: var(--text-normal);
 }
 
 .another-quick-switcher__item__meta__front_matter svg {

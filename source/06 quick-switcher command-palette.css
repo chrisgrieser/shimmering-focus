@@ -9,7 +9,7 @@ div.prompt-results {
 }
 
 .prompt .suggestion-item {
-	padding: 6px;
+	padding: 5px 6px;
 	border-radius: 0;
 }
 
