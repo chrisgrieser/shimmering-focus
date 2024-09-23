@@ -1,3 +1,4 @@
+- 2024-09-23 **improv**: display of frontmatter in AQS
 - 2024-09-18 **chore**: add 'labelled slider' snippet
 - 2024-09-18 **improv(fileExplorer)**: do not trim filenames while renaming #313
 - 2024-09-17 **revert**: 'improv(tables): remove excess padding from Obsidian core'
