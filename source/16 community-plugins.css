@@ -394,10 +394,10 @@ body .another-quick-switcher__status__count-input {
 	text-overflow: ellipsis;
 	overflow: hidden;
 	color: var(--text-normal);
+}
 
-	&:last-child {
-		margin-bottom: 3px;
-	}
+.another-quick-switcher__item__meta__front_matter:last-child {
+	margin-bottom: 3px;
 }
 
 .another-quick-switcher__item__meta__front_matter__key {
