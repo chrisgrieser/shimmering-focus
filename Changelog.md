@@ -1,3 +1,4 @@
+- 2024-09-23 **fix**: alignment in AQS frontmatter
 - 2024-09-23 **improv**: tweak padding in suggesters
 - 2024-09-23 **improv**: display of frontmatter in AQS
 - 2024-09-18 **chore**: add 'labelled slider' snippet
