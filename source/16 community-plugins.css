@@ -256,17 +256,13 @@ body .cm-matched-string {
 /* ───────────────────────────────────────────────── */
 /** Another Quick Switcher (AQS)
 ──────────────────────────────────────────────────── */
-
-/* if `:has` is supported, re-display another quick switcher instructions, since
-* that plugin has its own setting to show them */
-/* https://developer.mozilla.org/en-US/docs/Web/CSS/@supports#testing_for_the_support_of_a_selector */
-@supports selector(:has(.a)) {
-	.prompt-results:has(.another-quick-switcher__item) ~ .prompt-instructions {
-		display: flex;
-	}
-}
-
 /* styling from prompts also apply */
+
+/* re-display another quick switcher instructions, since that plugin has its own
+* setting to show them */
+.prompt-results:has(.another-quick-switcher__item) ~ .prompt-instructions {
+	display: flex;
+}
 
 .another-quick-switcher__directory_item::before,
 .another-quick-switcher__item__icon,
@@ -275,7 +271,7 @@ body .cm-matched-string {
 }
 
 body .another-quick-switcher__status__count-input {
-	top: 2.25rem;
+	top: 1.9rem;
 	right: 1rem;
 	color: var(--text-faint);
 }
