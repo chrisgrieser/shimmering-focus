@@ -20,7 +20,7 @@ body:not(.show-close-buttons, .is-mobile) .document-search-close-button {
 * specific as possible to ensure no other prompts are unintentionally targeted. */
 body:not(.full-info-on-deletion-prompt)
 	.modal-container.mod-confirmation.mod-dim
-	> .modal
+	> .modal:not(:has(.form-field)) /* not: prevents input fields, e.g. for vim mode (#314) */
 	:is(.modal-content > p:not(.mod-warning), .modal-button-container > .mod-checkbox) {
 	display: none;
 }
