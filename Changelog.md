@@ -1,3 +1,4 @@
+- 2024-09-25 **fix**: vim mode confirmation prompt missing the input field (#314)
 - 2024-09-24 **chore**: tweak count positioning for AQS
 - 2024-09-23 **fix**: alignment in AQS frontmatter
 - 2024-09-23 **improv**: tweak padding in suggesters
