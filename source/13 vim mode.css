@@ -237,10 +237,17 @@
 	box-shadow: none;
 }
 
-/* ignoring tooltips in settings, since they are relevant there, e.g. for sliders */
-.no-mouse-hovers div:not(.modal-container) + .tooltip,
+.no-mouse-hovers .tooltip,
 .no-mouse-hovers .is-live-preview .cm-embed-block:not(.cm-table-widget):hover .edit-block-button {
 	display: none;
+}
+
+/* keeping tooltips in settings, since they are relevant there, e.g. for sliders */
+.no-mouse-hovers .modal-container + .tooltip,
+.no-mouse-hovers
+	.app-container:has(.mod-active .workspace-leaf-content[data-type="style-settings"])
+	~ .tooltip {
+	display: unset;
 }
 
 /* ───────────────────────────────────────────────── */
