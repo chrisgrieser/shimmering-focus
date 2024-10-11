@@ -237,7 +237,7 @@
 	box-shadow: none;
 }
 
-.no-mouse-hovers .tooltip,
+.no-mouse-hovers .tooltip:not(.mod-error),
 .no-mouse-hovers .is-live-preview .cm-embed-block:not(.cm-table-widget):hover .edit-block-button {
 	display: none;
 }
