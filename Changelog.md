@@ -1,3 +1,4 @@
+- 2024-10-11 **fix**: do not hide error-tooltips
 - 2024-09-25 **fix**: item count positioning
 - 2024-09-25 **fix**: vim mode confirmation prompt missing the input field (#314)
 - 2024-09-24 **chore**: tweak count positioning for AQS
