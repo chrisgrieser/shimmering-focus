@@ -1,9 +1,6 @@
 /* ───────────────────────────────────────────────── */
 /** Bookmarks
 ──────────────────────────────────────────────────── */
-.workspace-leaf-content[data-type="bookmarks"] {
-	padding: 0 0 20px;
-}
 
 .tree-item-self.bookmark {
 	border-radius: 0;
