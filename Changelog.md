@@ -1,3 +1,4 @@
+- 2024-10-14 **fix**: keep underline color for Dynamic Highlights plugin consistent
 - 2024-10-11 **fix**: excess padding for bookmarks sidebar
 - 2024-10-11 **fix**: do not hide error-tooltips
 - 2024-09-25 **fix**: item count positioning
