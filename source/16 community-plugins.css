@@ -217,6 +217,10 @@ body .app-container :is(.cm-matched-word, .cm-current-word) {
 	text-decoration: 2px dashed underline;
 	text-decoration-skip-ink: none;
 	text-underline-offset: 4px;
+
+	/* keep underline color consistent, e.g. when used with Natural Language
+	* Syntax Highlighting plugin */
+	text-decoration-color: var(--text-normal);
 }
 
 /* current selection */
