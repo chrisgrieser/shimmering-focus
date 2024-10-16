@@ -241,7 +241,7 @@ button.longform-remove-step-button.longform-remove-step-button.longform-remove-s
 	.current-draft-path.current-draft-path.current-draft-path.current-draft-path.current-draft-path {
 	position: absolute;
 	right: -0.3rem;
-	bottom: -1.825rem;
+	bottom: -90%;
 	font-size: 0;
 }
 
