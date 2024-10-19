@@ -1,3 +1,4 @@
+- 2024-10-19 **fix**: filename font size for normal header bar (#316)
 - 2024-10-16 **fix**: longform home button alignment
 - 2024-10-14 **fix**: keep underline color for Dynamic Highlights plugin consistent
 - 2024-10-11 **fix**: excess padding for bookmarks sidebar
