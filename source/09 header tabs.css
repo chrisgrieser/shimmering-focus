@@ -50,10 +50,6 @@ body:not(.normal-header-bar, .is-mobile)
 	right: 0.7rem;
 }
 
-.view-header-breadcrumb {
-	font-size: 0.9rem;
-}
-
 .view-header-breadcrumb.view-header-breadcrumb:hover {
 	color: var(--hover-accent);
 	cursor: var(--cursor-link);
@@ -62,6 +58,7 @@ body:not(.normal-header-bar, .is-mobile)
 
 body:not(.normal-header-bar, .is-mobile) .view-header-breadcrumb {
 	color: var(--text-faint);
+	font-size: 0.9rem;
 }
 
 /* remaining buttons (by default only the "more options" button) */
