@@ -199,15 +199,14 @@ settings:
     type: heading
     level: 1
     collapsed: true
+  - id: font-info
+    description: "You can change the Text, UI, and Code font in the Obsidian settings: `Appearance → Font`"
+    type: info-text
+    markdown: true
   - id: font-heading-theme
     title: "Headings: Font family"
     type: variable-text
     default: '"Optima", "Recursive S"'
-  - id: font-info
-    description:
-      "You can change the font used elsewhere in the Obsidian settings: `Appearance → Font`"
-    type: info-text
-    markdown: true
   - id: code-size
     title: "Code: Font size"
     type: variable-number-slider

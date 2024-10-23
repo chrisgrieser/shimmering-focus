@@ -1,3 +1,4 @@
+- 2024-10-23 **chore**: better description where to change fonts
 - 2024-10-19 **fix**: filename font size for normal header bar (#316)
 - 2024-10-16 **fix**: longform home button alignment
 - 2024-10-14 **fix**: keep underline color for Dynamic Highlights plugin consistent
