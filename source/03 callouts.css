@@ -1,0 +1,86 @@
+.callout {
+	--callout-icon: circle; /* default callout icon (lucid icon) */
+	--icon-stroke: 2px;
+	--callout-border-width: 1.5px;
+	--callout-padding: 0;
+	--callout-radius: var(--radius-s);
+	background-color: rgb(var(--callout-color), 11%);
+}
+
+.HyperMD-callout.HyperMD-callout.HyperMD-callout.HyperMD-callout {
+	background-color: var(--bg4);
+}
+
+.cm-hmd-callout.cm-hmd-callout.cm-hmd-callout {
+	color: var(--secondary-accent);
+}
+
+.callout-title {
+	padding: 3px 6px;
+	background-color: rgb(var(--callout-color), 15%);
+	border-bottom: var(--callout-border-width)
+		/* stylelint-disable-next-line color-function-notation */
+		solid rgb(var(--callout-color), var(--callout-border-opacity));
+}
+
+.HyperMD-callout,
+.callout-title-inner {
+	font-weight: 700;
+}
+
+.callout-content {
+	padding: 2px 8px;
+}
+
+.callout-title-inner,
+.callout-icon {
+	margin-right: 6px;
+}
+
+.callout-title,
+body .callout-icon .svg-icon {
+	color: var(--text-muted);
+	stroke-width: 3px;
+}
+
+/* interaction of callouts with other markdown syntax */
+.callout-content :is(ul, p, ol) {
+	margin: 6px 0;
+	line-height: 1.4em;
+}
+
+.callout-content li {
+	margin: 5px 0;
+	line-height: 1.1em;
+}
+
+.callout-content.callout-content ul {
+	padding-left: 20px;
+	margin-top: 5px;
+}
+
+.callout-content p + p {
+	margin-top: 12px;
+}
+
+.callout ol {
+	padding-inline-start: 1.85em;
+	margin-top: 4px;
+	margin-bottom: 0;
+}
+
+.callout ol li::marker {
+	color: var(--text-gray);
+}
+
+.callout.callout.callout :is(code, pre) {
+	background-color: var(--bg1);
+}
+
+.callout-content .contains-task-list:only-child {
+	padding-inline-start: 0;
+}
+
+.callout-content .contains-task-list:only-child .task-list-item-checkbox {
+	margin-inline-start: 0;
+}
