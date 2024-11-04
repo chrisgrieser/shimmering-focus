@@ -21,13 +21,17 @@
 	margin-bottom: 6px;
 	font-size: var(--font-small);
 	line-height: 1.3;
-	color: var(--interactive-normal);
 	background-color: var(--color-base-100);
 	border: 3px ridge var(--basic-border-color);
-}
 
-.notice:hover {
-	opacity: 0.7;
+	 /* keep the text color of success or error notices */ 
+	&:not(.mod-success, .mod-error) {
+		color: var(--interactive-normal);
+	}
+
+	&:hover {
+		opacity: 0.7;
+	}
 }
 
 /* ───────────────────────────────────────────────── */
