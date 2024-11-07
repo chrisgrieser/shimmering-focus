@@ -140,6 +140,20 @@ body .vertical-tab-content {
 }
 
 /* ───────────────────────────────────────────────── */
+/** Plugin Update Progress Bar
+──────────────────────────────────────────────────── */
+
+.modal .is-loading::before {
+	height: 8px;
+	background: linear-gradient(
+		45deg,
+		var(--color-accent) 0% 20%,
+		var(--hover-accent) 40% 60%,
+		var(--secondary-accent) 80% 100%
+	);
+}
+
+/* ───────────────────────────────────────────────── */
 /** Settings Headings
 ──────────────────────────────────────────────────── */
 
