@@ -1,3 +1,4 @@
+- 2024-11-12 **fix**: better contrast for success/error notifications
 - 2024-11-07 **fix**: remove outdated vault launch styling
 - 2024-11-04 **feat**: styling of success notices
 - 2024-11-04 **fix**: keep the text color of success or error notices
