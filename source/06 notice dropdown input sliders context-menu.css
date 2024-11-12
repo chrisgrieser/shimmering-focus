@@ -27,10 +27,12 @@
 
 	&.mod-success {
 		background-color: var(--text-success);
+		color: hsl(0 0% 0%);
 	}
 
 	&.mod-error {
 		background-color: var(--text-error);
+		color: hsl(0 0% 100%);
 	}
 
 	&:hover {
