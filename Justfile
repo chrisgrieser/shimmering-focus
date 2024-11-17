@@ -5,7 +5,7 @@ personal_settings := "true"
 #───────────────────────────────────────────────────────────────────────────────
 
 # INFO uses personal vaults saved in `~/.config/perma-repos.csv`
-build_and_push_to_local_vaults:
+build-and-reload-vaults:
     #!/usr/bin/env zsh
     # BUILD
     # Due to globbing, the source files are inserted in alphabetical order.
@@ -25,7 +25,8 @@ build_and_push_to_local_vaults:
         open -a "Obsidian" # macOS specific opener
     fi
 
-format_and_check:
+# requiring personal biome location
+format-all-css:
     #!/usr/bin/env zsh
     [[ "{{ personal_settings }}" != "true" ]] && return 0
     $HOME/.local/share/nvim/mason/bin/biome check --write --error-on-warnings --log-kind="compact"
