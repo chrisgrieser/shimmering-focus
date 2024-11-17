@@ -1,3 +1,5 @@
+- 2024-11-17 **fix**: reduce indentation of unordered lists in callouts
+- 2024-11-17 **chore**: rename `just` tasks
 - 2024-11-12 **fix**: better contrast for success/error notifications
 - 2024-11-07 **fix**: remove outdated vault launch styling
 - 2024-11-04 **feat**: styling of success notices
