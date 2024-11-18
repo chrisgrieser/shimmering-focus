@@ -119,21 +119,6 @@ body .view-content .style-settings-container .setting-item:not(.setting-item-hea
 }
 
 /* ───────────────────────────────────────────────── */
-/** Style Settings: Conditionals Settings Display
-──────────────────────────────────────────────────── */
-
-/* hide background hue sliders when using macOS look */
-.mac-os-native
-	.setting-item:is(
-		[data-id="bg-hue-light"],
-		[data-id="bg-hue-dark"],
-		[data-id="longform-bg-hue-dark"],
-		[data-id="longform-bg-hue-light"]
-	) {
-	display: none;
-}
-
-/* ───────────────────────────────────────────────── */
 /** Style Settings: Infoboxes
 ──────────────────────────────────────────────────── */
 

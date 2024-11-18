@@ -1,10 +1,10 @@
 set quiet := true
 
+# disable this if you are forking the theme
 personal_settings := "true"
 
 #───────────────────────────────────────────────────────────────────────────────
 
-# INFO uses personal vaults saved in `~/.config/perma-repos.csv`
 build-and-reload-vaults:
     #!/usr/bin/env zsh
     # BUILD
@@ -15,6 +15,7 @@ build-and-reload-vaults:
         > /tmp/theme.css
 
     # PUSH TO LOCAL VAULTS
+    # uses personal vaults saved in `~/.config/perma-repos.csv`
     if [[ "{{ personal_settings }}" == "true" ]]; then
         cut -d, -f2 "$HOME/.config/perma-repos.csv" |
             sed "s|^~|$HOME|" |

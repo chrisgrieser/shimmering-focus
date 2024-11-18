@@ -245,21 +245,24 @@ settings:
   # Colors & shapes
   - id: aesthetics
     title: 🎨 Colors & shapes
-    description:
-      Angular shapes, native macOS look, background color, colored bold/italics, highlight color
+    description: Colors, angular shape, colored bold/italics, highlight color
     type: heading
     level: 1
     collapsed: true
-  - id: angular-shapes
-    title: Angular shapes
-    description: Use angular instead of rounded corners throughout the app.
-    type: class-toggle
-    default: false
-  - id: mac-os-native
-    title: Native macOS look
+
+  # COLORSCHEMES
+  - id: alt-colorschemes
+    title: Alternative color schemes
     description: Background colors like in a native macOS app.
-    type: class-toggle
-    default: false
+    type: class-select
+    allowEmpty: false
+    default: colorscheme-gamma
+    options:
+      - label: Gamma (Default)
+        value: colorscheme-gamma
+      - label: macOS native
+        value: colorscheme-macos-native
+
   - id: bg-hue-light
     title: Background color tone (light mode)
     type: variable-number-slider
@@ -274,6 +277,11 @@ settings:
     min: 0
     max: 360
     step: 5
+  - id: angular-shapes
+    title: Angular shapes
+    description: Use angular instead of rounded corners throughout the app.
+    type: class-toggle
+    default: false
   - id: uncolored-bold
     title: Uncolored bold
     markdown: true

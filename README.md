@@ -140,7 +140,7 @@ __Thanks__
   [@jdanielmourao](https://github.com/jdanielmourao),
   [@deathau](https://github.com/deathau/),
   [@MelvinTing](https://github.com/tingmelvin/),
-  [@EmrieCandera](https://github.com/Emrie-Candera), @lkadre,
+  [@EmrieCandera](https://github.com/Emrie-Candera),
   [@Chetachie](https://github.com/chetachiezikeuzor),
   [@pryley](https://github.com/pryley), and
   [@joelatschool](https://github.com/joelatschool).
@@ -151,6 +151,14 @@ __Thanks__
   [@SlRvb](https://github.com/SlRvb),
   [@javalent](https://github.com/valentine195), and
   [@NothingIsLost](https://github.com/nothingislost).
+- Colorschemes
+	+ `Gamma` created in collaboration with `@lkadre`.
+	+ `Everforest` by
+	  [@neuromancer](https://github.com/chrisgrieser/shimmering-focus/discussions/291).
+	+ `Coffee` by
+	  [@keara](https://github.com/chrisgrieser/shimmering-focus/discussions/274)
+	  and inspired by the [Primary
+	  theme](https://github.com/primary-theme/obsidian).
 
 __About the developer__  
 In my day job, I am a sociologist studying the social mechanisms underlying the
