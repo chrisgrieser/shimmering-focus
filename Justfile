@@ -11,7 +11,7 @@ build-and-reload-vaults:
     # Due to globbing, the source files are inserted in alphabetical order.
     # To keep things predictable, they are simply number in the order they
     # should be included in.
-    cat ./source/*.css <(echo ; echo "/* @settings") ./source/style-settings.yaml <(echo "*/") \
+    cat ./source/**/*.css <(echo ; echo "/* @settings") ./source/style-settings.yaml <(echo "*/") \
         > /tmp/theme.css
 
     # PUSH TO LOCAL VAULTS

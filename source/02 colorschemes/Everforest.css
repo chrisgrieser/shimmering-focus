@@ -1,0 +1,44 @@
+/* 
+* Credits: https://github.com/chrisgrieser/shimmering-focus/discussions/291
+────────────────────────────────────────────────────────────────────────────── */
+
+.colorscheme-everforest {
+	&.theme-light {
+		--bg-hue: 43;
+		--bg-sat: 57%;
+		--bg-val: 89%;
+
+		/* --color-accent-hsl needs commas, otherwise dependent colors are not display correctly */
+		--color-accent-hsl: 68, 99%, 32%;
+		--color-accent: hsl(68 99% 32%);
+		--interactive-accent: hsl(201 55% 50%);
+		--alt-heading-color: hsl(1 92% 65%);
+		--secondary-accent: hsl(19 69% 68%);
+		--hover-accent: hsl(25 91% 55%);
+		--link-unresolved-color: hsl(43 100% 44%);
+
+		& ::selection {
+			background-color: hsl(68 99% 32%);
+			color: hsl(0 0% 100%);
+		}
+	}
+
+	&.theme-dark {
+		--bg-hue: 204;
+		--bg-sat: 14%;
+		--bg-val: 21%;
+		/* --color-accent-hsl needs commas, otherwise dependent colors are not display correctly */
+		--color-accent-hsl: 83, 34%, 63%;
+		--color-accent: hsl(83 34% 63%);
+		--interactive-accent: hsl(172 31% 62%);
+		--alt-heading-color: hsl(359 68% 70%);
+		--secondary-accent: hsl(331 43% 72%);
+		--hover-accent: hsl(19 69% 68%);
+		--link-unresolved-color: hsl(40 56% 68%);
+
+		& ::selection {
+			background-color: hsl(83 34% 63%);
+			color: hsl(0 0% 100%);
+		}
+	}
+}

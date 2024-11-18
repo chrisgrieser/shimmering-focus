@@ -35,7 +35,7 @@ jobs:
           # Due to globbing, the source files are inserted in alphabetical order.
           # To keep things predictable, they are simply number in the order they
           # should be included in.
-          cat ./source/*.css > ./theme.css
+          cat ./source/**/*.css > ./theme.css
 
           # minification & syntax-lowering https://lightningcss.dev/transpilation.html
           npm install

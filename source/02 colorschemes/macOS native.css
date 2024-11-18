@@ -1,0 +1,12 @@
+/* this style setting overrides background colors */
+.colorscheme-macos-native {
+	&.theme-light {
+		--bg-hue: 0;
+		--bg-sat: 0%;
+	}
+
+	&.theme-dark {
+		--bg-hue: 0;
+		--bg-sat: 0%;
+	}
+}

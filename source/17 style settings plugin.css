@@ -198,7 +198,7 @@ body .setting-item.setting-item.setting-item.setting-item[data-id="author-info"]
 }
 
 .style-settings-container
-	.setting-item:is([data-id="highlight-hue-1"], [data-id^="bg-hue"], [data-id^="longform-bg-hue"])
+	.setting-item:is([data-id="highlight-hue-1"], [data-id^="bg-hue"])
 	input.slider {
 	height: 0.8em;
 	background: var(--hue-scale);
@@ -206,16 +206,16 @@ body .setting-item.setting-item.setting-item.setting-item[data-id="author-info"]
 }
 
 .style-settings-container
-	.setting-item:is([data-id="highlight-hue-1"], [data-id^="bg-hue"], [data-id^="longform-bg-hue"])
+	.setting-item:is([data-id="highlight-hue-1"], [data-id^="bg-hue"])
 	input.slider::after,
 .style-settings-container
-	.setting-item:is([data-id="highlight-hue-1"], [data-id^="bg-hue"], [data-id^="longform-bg-hue"])
+	.setting-item:is([data-id="highlight-hue-1"], [data-id^="bg-hue"])
 	input.slider::before {
 	display: none;
 }
 
 .style-settings-container
-	.setting-item:is([data-id="highlight-hue-1"], [data-id^="bg-hue"], [data-id^="longform-bg-hue"])
+	.setting-item:is([data-id="highlight-hue-1"], [data-id^="bg-hue"])
 	input.slider::-webkit-slider-thumb {
 	position: relative;
 	top: -0.7em;

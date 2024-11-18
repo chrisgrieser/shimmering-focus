@@ -1,0 +1,33 @@
+/* 
+* Credits: https://github.com/chrisgrieser/shimmering-focus/discussions/274
+* adapted from original Primary theme by `@cecilamay` https://github.com/primary-theme/obsidian
+────────────────────────────────────────────────────────────────────────────── */
+.colorscheme-coffee {
+	&.theme-light {
+		--bg-hue: 36;
+		--bg-sat: 35%;
+
+		/* --color-accent-hsl needs commas, otherwise dependent colors are not display correctly */
+		--color-accent-hsl: 43, 100%, 42%;
+		--color-accent: hsl(43 100% 42%);
+		--interactive-accent: hsl(154 50% 38%);
+		--alt-heading-color: hsl(4 56% 48%);
+		--secondary-accent: hsl(154 50% 38%);
+		--hover-accent: hsl(198 57% 40%);
+		--link-unresolved-color: hsl(283 35% 64%);
+	}
+
+	&.theme-dark {
+		--bg-hue: 29;
+		--bg-sat: 15%;
+
+		/* --color-accent-hsl needs commas, otherwise dependent colors are not display correctly */
+		--color-accent-hsl: 50, 70%, 60%;
+		--color-accent: hsl(50 70% 60%);
+		--interactive-accent: hsl(155 83% 24%);
+		--alt-heading-color: hsl(4 100% 68%);
+		--secondary-accent: hsl(155 83% 24%);
+		--hover-accent: hsl(198 57% 55%);
+		--link-unresolved-color: hsl(283 35% 69%);
+	}
+}
