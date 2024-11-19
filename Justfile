@@ -26,8 +26,8 @@ build-and-reload-vaults:
         open -a "Obsidian" # macOS specific opener
     fi
 
-# requiring personal biome location
 format-all-css:
     #!/usr/bin/env zsh
+    # requires personal biome location
     [[ "{{ personal_settings }}" != "true" ]] && return 0
     $HOME/.local/share/nvim/mason/bin/biome check --write --error-on-warnings --log-kind="compact"
