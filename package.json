@@ -1,5 +1,6 @@
 {
 	"devDependencies": {
-		"lightningcss-cli": "^1.26.0"
+		"lightningcss-cli": "^1.26.0",
+		"doiuse": "^6.0.5"
 	}
 }

@@ -39,9 +39,18 @@ jobs:
 
           # minification & syntax-lowering https://lightningcss.dev/transpilation.html
           npm install
-          export BROWSERSLIST="chrome 108" # lowers syntax to before css-nesting
+          export BROWSERSLIST="chrome 108" # lowers syntax to before css-nesting https://caniuse.com/css-nesting
           npx lightningcss --minify --browserslist \
             --output-file="./theme.css" -- "./theme.css" || exit 1
+
+          # check for unsupported features via `doiuse`
+          violations=$(npx doiuse --browsers="$BROWSERSLIST" \
+            --config="./.doiuse-ignore.json" theme.css)
+          if [[ -n "$violations" ]]; then # `doiuse` does not exit with non-zero code
+            echo "Doiuse violations:"
+            echo "$violations"
+            exit 1
+          fi
 
           # append style-settings (last, so not removed by minification)
           cat <(echo && echo "/* @settings") ./source/style-settings.yaml <(echo "*/") \
