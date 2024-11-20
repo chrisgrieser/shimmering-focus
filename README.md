@@ -57,10 +57,9 @@ Plugin](https://obsidian.md/plugins?id=obsidian-style-settings) is installed,
 - Toggle between reduced and original image size (reduced size can be set in the
   respective style setting)
 
-## Customize colors
+## Create your own color scheme
 With *Shimmering Focus*, you can create your own color scheme with this CSS
-snippet. You are welcome to [share your color
-scheme](https://github.com/chrisgrieser/shimmering-focus/discussions/new?category=share-your-custom-color-schemes).
+snippet. 
 
 ```css
 .theme-light.theme-light {
@@ -92,12 +91,11 @@ scheme](https://github.com/chrisgrieser/shimmering-focus/discussions/new?categor
     --hover-accent: hsl(328 100% 64%);
 	--link-unresolved-color: hsl(101 42% 51%);
 }
-
-/* Hide the background color settings since they are overwritten by the custom colors above */ 
-.style-settings-container .setting-item:is([data-id="bg-hue-light"],[data-id="bg-hue-dark"]) {
-	display: none;
-}
 ```
+
+You can [suggest your color
+scheme for inclusion in Shimmering Focus](https://github.com/chrisgrieser/shimmering-focus/discussions/categories/suggest-your-color-scheme-for-inclusion-in-shimmering-focus).
+Especially submissions of classic, well-known color schemes are welcome.
 
 ## Standalone snippets
 Some features of this theme are available as standalone snippets. These can be
