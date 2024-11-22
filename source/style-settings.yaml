@@ -258,7 +258,7 @@ settings:
     title: Use your own color scheme
     description: |
       You can create your own color scheme without any CSS knowledge by using a CSS snippet. 
-      [See the theme docs for further information](https://github.com/chrisgrieser/shimmering-focus#create-and-share-your-own-color-scheme).
+      [See the theme docs for further information](https://github.com/chrisgrieser/shimmering-focus#create-your-own-color-scheme).
 
       You can [suggest your color
       scheme for inclusion in Shimmering Focus](https://github.com/chrisgrieser/shimmering-focus/discussions/categories/suggest-your-color-scheme-for-inclusion-in-shimmering-focus).
