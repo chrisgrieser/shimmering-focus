@@ -1,3 +1,4 @@
+- 2024-11-22 **fix**: make link to relevant section of readme go to the correct place
 - 2024-11-20 **feat**: add infobox on submission of own color scheme
 - 2024-11-18 **feat!**: alternative color schemes
 - 2024-11-17 **fix**: reduce indentation of unordered lists in callouts
