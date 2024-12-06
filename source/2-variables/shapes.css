@@ -13,11 +13,6 @@ body:not(.angular-shapes) {
 	--tab-radius-active: 0;
 }
 
-.angular-shapes .callout {
-	/* also change default callout icon */
-	--callout-icon: square;
-}
-
 body.angular-shapes .checkbox-container {
 	border-radius: 0;
 	width: 20px;

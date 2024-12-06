@@ -1,5 +1,4 @@
 .callout {
-	--callout-icon: circle; /* default callout icon (lucid icon) */
 	--icon-stroke: 2px;
 	--callout-border-width: 1.5px;
 	--callout-padding: 0;
