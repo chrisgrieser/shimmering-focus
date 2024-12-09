@@ -1,3 +1,4 @@
+- 2024-12-09 **feat**: new color scheme Gruvbox Light
 - 2024-12-09 **feat**: new colorscheme `Gruvbox Dark`
 - 2024-12-06 **chore**: do not override callout icons (#320)
 - 2024-11-22 **fix**: make link to relevant section of readme go to the correct place
