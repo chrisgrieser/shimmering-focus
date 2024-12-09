@@ -2,7 +2,7 @@
 /** Sidebars
 ──────────────────────────────────────────────────── */
 
-/* do not trim filenames while renaming */ 
+/* do not trim filenames while renaming */
 .tree-item-self.is-being-renamed .tree-item-inner {
 	white-space: normal;
 }

@@ -275,7 +275,7 @@ settings:
     allowEmpty: false
     default: colorscheme-gamma
     options:
-      - label: Gamma
+      - label: Gamma (default)
         value: colorscheme-gamma
       - label: macOS native
         value: colorscheme-macos-native
@@ -283,6 +283,8 @@ settings:
         value: colorscheme-coffee
       - label: Everforest
         value: colorscheme-everforest
+      - label: Gruvbox Dark (dark mode only)
+        value: colorscheme-grubox-dark
   #─────────────────────────────────────────────────────────────────────────────
 
   - id: bg-hue-light

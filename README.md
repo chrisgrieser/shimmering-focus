@@ -123,7 +123,7 @@ The theme is written completely dependency-free in vanilla CSS.
 ## Licenses
 - This theme is licensed under the [MIT
   License](https://github.com/chrisgrieser/shimmering-focus/blob/main/LICENSE).
-- The two embedded fonts *iA Writer Quattro* and *Recursive* are licensed under
+- The two embedded fonts `iA Writer Quattro` and `Recursive` are licensed under
   the [SIL Open Font License](https://www.wikiwand.com/en/SIL_Open_Font_License).
 - The embedded *Material Icon* font is licensed under the [Apache License](https://developers.google.com/fonts/docs/material_icons#licensing).
 
@@ -157,6 +157,7 @@ __Thanks__
 	  [@keara](https://github.com/chrisgrieser/shimmering-focus/discussions/274)
 	  and inspired by the [Primary
 	  theme](https://github.com/primary-theme/obsidian).
+	+ `Gruvbox Dark` by [@jasht1](https://github.com/chrisgrieser/shimmering-focus/discussions/311).
 
 __About the developer__  
 In my day job, I am a sociologist studying the social mechanisms underlying the
