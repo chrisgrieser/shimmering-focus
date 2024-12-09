@@ -267,10 +267,10 @@ settings:
     type: info-text
 
   #─────────────────────────────────────────────────────────────────────────────
-  # COLORSCHEMES
+  # COLOR SCHEMES
   - id: alt-colorschemes
     title: Alternative color schemes
-    description: Background colors like in a native macOS app.
+    description: Colorschemes submitted by the community
     type: class-select
     allowEmpty: false
     default: colorscheme-gamma
@@ -283,8 +283,8 @@ settings:
         value: colorscheme-coffee
       - label: Everforest
         value: colorscheme-everforest
-      - label: Gruvbox Dark (dark mode only)
-        value: colorscheme-grubox-dark
+      - label: Gruvbox
+        value: colorscheme-grubox
   #─────────────────────────────────────────────────────────────────────────────
 
   - id: bg-hue-light

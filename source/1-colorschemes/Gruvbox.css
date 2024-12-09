@@ -1,0 +1,156 @@
+/* Credits
+* Light variant: https://github.com/chrisgrieser/shimmering-focus/discussions/257
+* Dark variant: https://github.com/chrisgrieser/shimmering-focus/discussions/311
+────────────────────────────────────────────────────────────────────────────── */
+
+.colorscheme-grubox.theme-light {
+	--color-red: hsl(358 100% 31%);
+	--color-green: hsl(57 79% 26%);
+	--color-yellow: hsl(37 80% 39%);
+	--color-blue: hsl(190 89% 25%);
+	--color-purple: hsl(323 39% 40%);
+	--color-cyan: hsl(143 30% 37%);
+	--color-orange: hsl(19 97% 35%);
+	--color-red-rgb: 157, 0, 6;
+	--color-green-rgb: 121, 116, 14;
+	--color-yellow-rgb: 181, 118, 20;
+	--color-blue-rgb: 7, 02, 120;
+	--color-purple-rgb: 143, 63, 113;
+	--color-cyan-rgb: 66, 123, 88;
+	--color-orange-rgb: 175, 58, 3;
+	--color-pink: var(--color-purple);
+	--color-pink-rgb: var(--color-purple-rgb);
+	--color-base-00: hsl(48 87% 88%);
+	--color-base-05: hsl(46 67% 84%);
+	--color-base-10: hsl(43 59% 81%);
+	--color-base-20: hsl(40 38% 73%);
+	--color-base-25: hsl(40 30% 70%);
+	--color-base-30: hsl(39 24% 66%);
+	--color-base-35: hsl(38 20% 62%);
+	--color-base-40: hsl(35 17% 59%);
+	--color-base-50: hsl(30 12% 51%);
+	--color-base-60: hsl(28 11% 44%);
+	--color-base-70: hsl(27 10% 36%);
+	--color-base-80: hsl(22 7% 29%);
+	--color-base-85: hsl(15 6% 26%);
+	--color-base-90: hsl(20 5% 22%);
+	--color-base-95: hsl(20 3% 19%);
+	--color-base-100: hsl(0 0% 16%);
+	--bg-hue: 39;
+	--bg-sat: 0%;
+	--bg2: var(--color-base-05);
+	--bg3: var(--color-base-10);
+	--bg4: var(--color-base-20);
+	--bg5: var(--color-base-25);
+	--bg6: var(--color-base-30);
+	/* red */
+	--color-accent: var(--color-red);
+	--color-accent-hsl: 358 100% 31%;
+	/* orange */
+	--interactive-accent: var(--color-orange);
+
+	/* blue */
+	--secondary-accent: var(--color-blue);
+	/* orange strong */
+	--hover-accent: hsl(24 88% 45%);
+	/* aqua */
+	--link-unresolved-color: var(--color-cyan);
+}
+
+/* ─────────────────────────────────────────────────────────────────────────────
+───────────────────────────────────────────────────────────────────────────── */
+
+.colorscheme-grubox.theme-dark {
+	--color-red: hsl(6 93% 59%);
+	--color-green: hsl(61 66% 44%);
+	--color-yellow: hsl(42 95% 58%);
+	--color-blue: hsl(157 16% 58%);
+	--color-purple: hsl(344 47% 68%);
+	--color-cyan: hsl(104 35% 62%);
+	--color-orange: hsl(27 99% 55%);
+	--color-pink: var(--color-purple);
+	--color-pink-rgb: 211, 134, 155;
+	--color-red-rgb: 248, 73, 52;
+	--color-green-rgb: 184, 187, 38;
+	--color-yellow-rgb: 250, 189, 47;
+	--color-blue-rgb: 131, 165, 152;
+	--color-purple-rgb: 211, 134, 155;
+	--color-cyan-rgb: 142, 192, 124;
+	--color-orange-rgb: 254, 128, 25;
+	--color-base-00: hsl(0 0% 12%);
+	--color-base-05: hsl(0 0% 16%);
+	--color-base-10: hsl(20 3% 19%);
+	--color-base-20: hsl(20 5% 22%);
+	--color-base-25: hsl(22 7% 29%);
+	--color-base-30: hsl(27 10% 36%);
+	--color-base-35: hsl(28 11% 44%);
+	--color-base-40: hsl(30 12% 51%);
+	--color-base-50: hsl(35 17% 59%);
+	--color-base-60: hsl(39 24% 66%);
+	--color-base-75: hsl(38 20% 62%);
+	--color-base-85: hsl(40 30% 70%);
+	--color-base-90: hsl(43 59% 81%);
+	--color-base-95: hsl(46 67% 84%);
+	--color-base-100: hsl(48 87% 88%);
+
+	/* Background Colours */
+	--bg1: var(--color-base-05);
+	--bg2: var(--color-base-10);
+	--bg3: var(--color-base-05);
+	--bg4: var(--color-base-10);
+	--bg5: var(--color-base-10);
+	--bg6: var(--color-base-05);
+	--background-primary: var(--color-base-05); /* Primary background */
+	--background-primary-alt: var(--color-base-10); /* Background for surfaces on top of primary background */
+	--background-secondary: var(--color-base-05); /* Secondary background */
+	--background-secondary-alt: var(--color-base-25); /* Background for surfaces on top of secondary background */
+	--background-modifier-hover: var(--color-base-10); /* Hovered elements */
+	--background-modifier-active-hover: var(--color-base-20); /* Active hovered elements */
+	--background-modifier-border: var(--color-base-25); /* Border color */
+	--background-modifier-border-hover: var(--color-base-30); /* Border color (hover) */
+	--background-modifier-border-focus: var(--color-base-20); /* Border color (focus) */
+	--background-modifier-error-rgb: 248, 73, 52; /* Error background, RGB value */
+	--background-modifier-error: var(--color-red); /* Error background */
+	--background-modifier-error-hover: var(--color-red-rgb); /* Error background (hover) */
+	--background-modifier-success-rgb: 184, 187, 38; /* Success background, RGB value */
+	--background-modifier-success: var(--color-green); /* Success background */
+	--background-modifier-message: var(--color-base-10); /* Messages background */
+	--background-modifier-form-field: var(--color-base-20); /* Form field background */
+
+	/* Heading Colours */
+	--h1-color: var(--color-orange);
+	--h2-color: var(--color-green);
+	--h3-color: var(--color-yellow);
+	--h4-color: var(--color-red);
+	--h5-color: var(--color-cyan);
+	--h6-color: var(--color-blue);
+	--alt-heading-color: var(--color-green);
+
+	/* Text Colours */
+	--text-normal: var(--color-base-90);
+	/* --text-faint: var(--color-base-20) */
+	--icon-color: var(--color-red);
+
+	/* Interactive Colours */
+	/* red */
+	--color-accent: var(--color-red);
+	--color-accent-hsl: 358 100% 31%;
+	/* orange */
+	--interactive-accent: var(--color-orange);
+
+	/* blue */
+	--secondary-accent: var(--color-green);
+	/* orange strong */
+	--hover-accent: hsl(24 88% 45%);
+	/* aqua */
+	--link-unresolved-color: var(--color-cyan);
+
+	& ::selection {
+		background-color: var(--color-base-20); /* Gruvbox dark theme selection background color */
+		color: var(--color-base-100); /* Gruvbox dark theme selection text color  */
+	}
+
+	& :is(.nav-file-title, .nav-folder-title) {
+		color: var(--color-base-85);
+	}
+}

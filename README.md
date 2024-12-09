@@ -157,7 +157,10 @@ __Thanks__
 	  [@keara](https://github.com/chrisgrieser/shimmering-focus/discussions/274)
 	  and inspired by the [Primary
 	  theme](https://github.com/primary-theme/obsidian).
-	+ `Gruvbox Dark` by [@jasht1](https://github.com/chrisgrieser/shimmering-focus/discussions/311).
+	+ `Gruvbox` dark variant by
+	  [@jasht1](https://github.com/chrisgrieser/shimmering-focus/discussions/311),
+	  and light variant by
+	  [robrecord](https://github.com/chrisgrieser/shimmering-focus/discussions/257).
 
 __About the developer__  
 In my day job, I am a sociologist studying the social mechanisms underlying the
