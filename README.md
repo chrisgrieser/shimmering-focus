@@ -5,7 +5,7 @@
 A minimalistic and opinionated Obsidian theme for the keyboard-centric user.  
 [🏆 Winner Obsidian October 2022](https://obsidian.md/blog/2022-obsidian-october-winners/).
 
-![Promo Screenshot](https://github.com/user-attachments/assets/d2b8d0cb-dc16-4967-9046-1b68a518f1ba)
+![Promo screenshot](https://github.com/user-attachments/assets/d2b8d0cb-dc16-4967-9046-1b68a518f1ba)
 
 ---
 
@@ -14,7 +14,7 @@ A minimalistic and opinionated Obsidian theme for the keyboard-centric user.
 - [Design philosophy](#design-philosophy)
 - [Features](#features)
 - [Commands](#commands)
-- [Customize colors](#customize-colors)
+- [Create your own color scheme](#create-your-own-color-scheme)
 - [Standalone snippets](#standalone-snippets)
 - [Contribute](#contribute)
 - [Licenses](#licenses)
@@ -23,31 +23,33 @@ A minimalistic and opinionated Obsidian theme for the keyboard-centric user.
 <!-- tocstop -->
 
 ## Design philosophy
-- __Radical minimalism:__ As opposed to a minimalism of *colors*, this theme
+- **Radical minimalism:** As opposed to a minimalism of *colors*, this theme
   focuses on a minimalistic *user interface*: UI elements not relevant for
   keyboard users are hidden, or only shown when needed. All hidden UI elements
   can be permanently re-enabled with the [Style Settings
   Plugin](https://obsidian.md/plugins?id=obsidian-style-settings).
-- __Condensed display of information:__ Unnecessary padding and white-space is
+- **Condensed display of information:** Unnecessary padding and white-space is
   removed, which is beneficial for small screens or higher zoom levels.
-- __High customizability:__ Dozens of customization options available via the
+- **High customizability:** Dozens of customization options available via the
   [Style Settings Plugin](https://obsidian.md/plugins?id=obsidian-style-settings).
 
 ## Features
-- __Smart hiding of UI elements__: The tab bar is only shown when there is more
+- **Smart hiding of UI elements**: The tab bar is only shown when there is more
   than one tab open, and the sidebar tab buttons are only shown on hover.
-- __Images__: Alt-text of images used as __caption__, images can be zoomed in
+- **Images**: Alt-text of images used as **caption**, images can be zoomed in
   via click-and-hold or toggled between reduced and original size via Style
   Settings.
-- __Tables__: Highlighting of active cells, alternating row colors
-- __Vim mode__: Explicit styling of Obsidian's Vim Mode and various
+- **Tables**: Highlighting of active cells, alternating row colors
+- **Vim mode**: Explicit styling of Obsidian's Vim Mode and various
   settings such as relative line numbers.
-- __Writing__: Emphasis of __Pandoc citations__ and __footnotes__, extensive
+- **Writing**: Emphasis of **Pandoc citations** and **footnotes**, extensive
   styling for the [Longform Plugin](https://obsidian.md/plugins?id=longform).
-- __Headings__: Distinctive styling and various options for differentiating
+- **Headings**: Distinctive styling and various options for differentiating
   heading levels.
-- __Many customization options__ available via [Style
+- **Over a hundred customization options** available via [Style
   Settings Plugin](https://obsidian.md/plugins?id=obsidian-style-settings).
+- **Alternative color schemes** submitted by the community are available by
+  using the Style Settings Plugin.
 
 ## Commands
 When the [Style Settings
@@ -59,7 +61,7 @@ Plugin](https://obsidian.md/plugins?id=obsidian-style-settings) is installed,
 
 ## Create your own color scheme
 With *Shimmering Focus*, you can create your own color scheme with this CSS
-snippet. 
+snippet.
 
 ```css
 .theme-light.theme-light {
@@ -93,8 +95,8 @@ snippet.
 }
 ```
 
-You can [suggest your color
-scheme for inclusion in Shimmering Focus](https://github.com/chrisgrieser/shimmering-focus/discussions/categories/suggest-your-color-scheme-for-inclusion-in-shimmering-focus).
+You can [suggest your color scheme for inclusion in Shimmering
+Focus](https://github.com/chrisgrieser/shimmering-focus/discussions/categories/suggest-your-color-scheme-for-inclusion-in-shimmering-focus).
 Especially submissions of classic, well-known color schemes are welcome.
 
 ## Standalone snippets
@@ -114,7 +116,7 @@ The theme uses `lightning-css` for
 [syntax-lowering](https://lightningcss.dev/transpilation.html#syntax-lowering)
 in its build. That means you can use modern CSS features like
 [CSS-nesting](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_nesting), as
-the resulting `theme.css` will still be compatible with older Obsidian Installer
+the resulting `theme.css` will still be compatible with older Obsidian installer
 versions that do not support nesting yet. Furthermore, this theme targets
 Obsidian installer version 1.1.9, so feel free to use `:has()`.
 
@@ -125,11 +127,11 @@ The theme is written completely dependency-free in vanilla CSS.
   License](https://github.com/chrisgrieser/shimmering-focus/blob/main/LICENSE).
 - The two embedded fonts `iA Writer Quattro` and `Recursive` are licensed under
   the [SIL Open Font License](https://www.wikiwand.com/en/SIL_Open_Font_License).
-- The embedded *Material Icon* font is licensed under the [Apache License](https://developers.google.com/fonts/docs/material_icons#licensing).
+- The embedded `Material Icon` font is licensed under the [Apache
+  License](https://developers.google.com/fonts/docs/material_icons#licensing).
 
 <!-- vale Google.FirstPerson = NO -->
 ## Credits
-__Thanks__  
 - This theme includes snippets and/or ideas from:
   [@SlRvb](https://github.com/SlRvb), [@Atlas](https://github.com/zcysxy),
   [@CecilaMay](https://github.com/ceciliamay),
@@ -149,7 +151,7 @@ __Thanks__
   [@SlRvb](https://github.com/SlRvb),
   [@javalent](https://github.com/valentine195), and
   [@NothingIsLost](https://github.com/nothingislost).
-- Colorschemes
+- Community-made color schemes:
 	+ `Gamma` created in collaboration with `@lkadre`.
 	+ `Everforest` by
 	  [@neuromancer](https://github.com/chrisgrieser/shimmering-focus/discussions/291).
@@ -159,18 +161,18 @@ __Thanks__
 	  theme](https://github.com/primary-theme/obsidian).
 	+ `Gruvbox` dark variant by
 	  [@jasht1](https://github.com/chrisgrieser/shimmering-focus/discussions/311),
-	  and light variant by
+	  light variant by
 	  [robrecord](https://github.com/chrisgrieser/shimmering-focus/discussions/257).
 
-__About the developer__  
+**About the creator**  
 In my day job, I am a sociologist studying the social mechanisms underlying the
 digital economy. For my PhD project, I investigate the governance of the app
 economy and how software ecosystems manage the tension between innovation and
 compatibility. If you are interested in this subject, feel free to get in touch.
 
-- [Academic Website](https://chris-grieser.de/)
-- [ResearchGate](https://www.researchgate.net/profile/Christopher-Grieser)
+- [Website](https://chris-grieser.de/)
 - [Mastodon](https://pkm.social/@pseudometa)
+- [ResearchGate](https://www.researchgate.net/profile/Christopher-Grieser)
 - [LinkedIn](https://www.linkedin.com/in/christopher-grieser-ba693b17a/)
 
 > [!IMPORTANT]
@@ -179,7 +181,6 @@ compatibility. If you are interested in this subject, feel free to get in touch.
 > Due to the number of messages I receive, I am not able to respond to inquiries
 > made elsewhere.
 
-<a href='https://ko-fi.com/Y8Y86SQ91' target='_blank'>
-<img height='36' style='border:0px;height:36px;'
-src='https://cdn.ko-fi.com/cdn/kofi1.png?v=3' border='0' alt='Buy Me a Coffee at
-ko-fi.com' /></a>
+<a href='https://ko-fi.com/Y8Y86SQ91' target='_blank'> <img height='36'
+style='border:0px;height:36px;' src='https://cdn.ko-fi.com/cdn/kofi1.png?v=3'
+border='0' alt='Buy Me a Coffee at ko-fi.com' /></a>
