@@ -464,8 +464,6 @@ body:not(.is-popout-window)
 }
 
 :is(.writing, .longform-leaf) .cm-header.cm-header {
-	position: relative;
-	top: -2px;
 	line-height: calc(var(--longform-base-line-height) + 0.05);
 }
 
