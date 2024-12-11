@@ -1,3 +1,6 @@
+- 2024-12-11 **chore**: consistent file naming convention
+- 2024-12-09 **docs**: update badges
+- 2024-12-09 **docs**: formatting and minor fixes
 - 2024-12-09 **feat**: new color scheme Gruvbox Light
 - 2024-12-09 **feat**: new colorscheme `Gruvbox Dark`
 - 2024-12-06 **chore**: do not override callout icons (#320)
