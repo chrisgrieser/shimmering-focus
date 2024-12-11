@@ -1,6 +1,8 @@
-.less-heading-letter-spacing {
-	--heading-letter-spacing: 0;
+body {
+	--heading-letter-spacing: 1.5px;
 }
+
+/* ────────────────────────────────────────────────────────────────────────── */
 
 .markdown-rendered :is(h1, h2, h3, h4, h5, h6) {
 	margin-top: 1em;
@@ -11,7 +13,7 @@ body p {
 	margin-block-start: 0.3em;
 }
 
-.inline-title,
+.inline-title.inline-title,
 .cm-header,
 .markdown-rendered.markdown-rendered :is(h1, h2, h3, h4, h5, h6) {
 	font-weight: 700;

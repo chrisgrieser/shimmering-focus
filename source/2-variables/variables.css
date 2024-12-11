@@ -221,7 +221,6 @@ body {
 
 	/* Optima pre-installed on macOS */
 	--font-heading-theme: "Optima", "Recursive S";
-	--heading-letter-spacing: 1.5px;
 
 	/* Use system fonts for longform */
 	--longform-font-text-theme: "Garamond", "Times New Roman", serif;

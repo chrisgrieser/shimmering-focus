@@ -240,12 +240,15 @@ settings:
     title: "Headings: No level indicators in live preview"
     type: class-toggle
     default: false
-  - id: less-heading-letter-spacing
-    title: "Headings: Compactness"
-    description: Makes headings more compact by decreasing their letter spacing.
-    type: class-toggle
-    default: false
-
+  - id: heading-letter-spacing
+    title: "Headings: Letter spacing"
+    description: Amount of space between letters.
+    type: variable-number-slider
+    default: 1.5
+    min: -2
+    max: 3
+    step: 0.5
+    format: px
   #─────────────────────────────────────────────────────────────────────────────
   # Colors & shapes
   - id: aesthetics
