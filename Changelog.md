@@ -1,3 +1,4 @@
+- 2024-12-11 **chore**: tweak headings in longform notes
 - 2024-12-11 **chore**: consistent file naming convention
 - 2024-12-09 **docs**: update badges
 - 2024-12-09 **docs**: formatting and minor fixes
