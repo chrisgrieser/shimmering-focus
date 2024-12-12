@@ -7,8 +7,7 @@ settings:
     description: |
       - [Changelog](https://github.com/chrisgrieser/shimmering-focus/blob/main/Changelog.md)
       - [README](https://github.com/chrisgrieser/shimmering-focus)
-      - 🔍 Tip: There is a search at the top of this settings page, if you cannot 
-        find a particular setting.
+      - 🔍 Tip: There is a search at the top of this settings page.
     markdown: true
     type: info-text
   - id: notable-changes
@@ -45,7 +44,7 @@ settings:
     default: false
   - id: hide-inline-title-when-more-than-one-tab
     title: Hide inline title when more than one tab
-    description: This setting is most useful when for when the tab bar is hidden.
+    description: This setting is most useful when the tab bar is hidden.
     type: class-toggle
     default: false
   - id: hide-vault-switcher-and-settings
@@ -83,20 +82,20 @@ settings:
     title: Re-enable tab list button
     type: class-toggle
     description:
-      You can still switch to tabs via quick switcher, and you can toggle stacked tabs via command
-      palette.
+      You can still switch to tabs via quick switcher, and you can toggle stacked tabs via the
+      command palette.
     default: false
   - id: show-sidebar-toggle-buttons
     title: Re-enable sidebar toggle buttons
     type: class-toggle
     description:
       Note that sidebar buttons of hidden sidebars are going to be inaccessible when also enable the
-      setting to hide the tab bar. You can still toggle the sidebars via command palette.
+      setting to hide the tab bar. You can still toggle the sidebars via command palette or hotkey.
     default: false
   - id: show-close-buttons
     title: Re-enable close buttons
     type: class-toggle
-    description: You can still close settings with `esc`, and tabs/panes by pressing `ctrl/cmd+w`.
+    description: You can still close settings with `esc`, and tabs/panes by with `ctrl/cmd+w`.
     markdown: true
     default: false
   - id: show-urls
