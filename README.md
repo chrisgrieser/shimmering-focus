@@ -4,7 +4,10 @@
 ![Last commit](https://img.shields.io/github/last-commit/chrisgrieser/shimmering-focus?style=plastic)
 
 A minimalistic and opinionated Obsidian theme for the keyboard-centric user.  
-[🏆 Winner Obsidian October 2022](https://obsidian.md/blog/2022-obsidian-october-winners/).
+
+[🏆 Winner Obsidian October
+2022](https://obsidian.md/blog/2022-obsidian-october-winners/), 10th most
+downloaded theme in the Obsidian theme store.
 
 ![Promo screenshot](https://github.com/user-attachments/assets/d2b8d0cb-dc16-4967-9046-1b68a518f1ba)
 
@@ -31,8 +34,9 @@ A minimalistic and opinionated Obsidian theme for the keyboard-centric user.
   Plugin](https://obsidian.md/plugins?id=obsidian-style-settings).
 - **Condensed display of information:** Unnecessary padding and white-space is
   removed, which is beneficial for small screens or higher zoom levels.
-- **High customizability:** Dozens of customization options available via the
-  [Style Settings Plugin](https://obsidian.md/plugins?id=obsidian-style-settings).
+- **High customizability:** There are over a hundred customization options
+  available via the [Style Settings
+  Plugin](https://obsidian.md/plugins?id=obsidian-style-settings).
 
 ## Features
 - **Smart hiding of UI elements**: The tab bar is only shown when there is more
@@ -41,14 +45,15 @@ A minimalistic and opinionated Obsidian theme for the keyboard-centric user.
   via click-and-hold or toggled between reduced and original size via Style
   Settings.
 - **Tables**: Highlighting of active cells, alternating row colors
-- **Vim mode**: Explicit styling of Obsidian's Vim Mode and various
+- **Vim mode**: Explicit styling of Obsidian's Vim Mode, including various
   settings such as relative line numbers.
-- **Writing**: Emphasis of **Pandoc citations** and **footnotes**, extensive
+- **For writers**: Emphasis of **Pandoc citations** and **footnotes**, extensive
   styling for the [Longform Plugin](https://obsidian.md/plugins?id=longform).
 - **Headings**: Distinctive styling and various options for differentiating
   heading levels.
-- **Over a hundred customization options** available via [Style
-  Settings Plugin](https://obsidian.md/plugins?id=obsidian-style-settings).
+- **High customizability:** There are over a hundred customization options
+  available via the [Style Settings
+  Plugin](https://obsidian.md/plugins?id=obsidian-style-settings).
 - **Alternative color schemes** submitted by the community are available by
   using the Style Settings Plugin.
 
