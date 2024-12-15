@@ -140,6 +140,10 @@ settings:
     title: Hide Pandoc Reference List icon
     type: class-toggle
     default: false
+  - id: hide-harper-status-bar
+    title: Hide Harper toggle icon
+    type: class-toggle
+    default: false
   - id: hide-signature-icon
     title: Hide the Shimmering Focus icon (⟡)
     type: class-toggle
