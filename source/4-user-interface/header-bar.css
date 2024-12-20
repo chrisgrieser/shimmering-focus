@@ -1,9 +1,4 @@
 body:not(.normal-header-bar, .is-mobile) .workspace-leaf-content:not([data-type="browser"]) {
-	/* the shading at the end of the header */
-	& .view-header-title-container::after {
-		display: none;
-	}
-
 	& .view-header-breadcrumb {
 		color: var(--text-faint);
 		font-size: 0.9rem;
@@ -63,6 +58,19 @@ body:not(.normal-header-bar, .is-mobile) .workspace-leaf-content:not([data-type=
 	}
 }
 
+/* always hide the shading at the end of the header */
+.view-header .view-header-title-container::after {
+	display: none;
+}
+
+/* more contrast for the header bars that are visible */
+.workspace-leaf-content[data-type="browser"] .view-header.view-header,
+.normal-header-bar .view-header,
+.pdf-toolbar {
+	background: var(--bg3);
+}
+
+/* hover for breadcrumbs */
 .view-header-breadcrumb.view-header-breadcrumb.view-header-breadcrumb.view-header-breadcrumb:hover {
 	color: var(--hover-accent);
 	cursor: var(--cursor-link);
