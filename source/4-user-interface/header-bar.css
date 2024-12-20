@@ -1,4 +1,4 @@
-body:not(.normal-header-bar, .is-mobile) .workspace-leaf-content {
+body:not(.normal-header-bar, .is-mobile) .workspace-leaf-content:not([data-type="browser"]) {
 	/* the shading at the end of the header */
 	& .view-header-title-container::after {
 		display: none;
@@ -51,7 +51,7 @@ body:not(.normal-header-bar, .is-mobile) .workspace-leaf-content {
 		}
 	}
 
-	/* adjustments for PDFs */ 
+	/* adjustments for PDFs */
 	&.workspace-leaf-content[data-type="pdf"] {
 		& .view-header-title-container {
 			right: 0.7rem;
