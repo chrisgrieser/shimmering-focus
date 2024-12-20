@@ -4,17 +4,14 @@
 - 2024-12-15 **feat**: setting to hide the status bar icon of the Harper plugin
 - 2024-12-15 **docs**: improve some phrasing
 - 2024-12-11 **chore**: tweak headings in longform notes
-- 2024-12-11 **chore**: consistent file naming convention
-- 2024-12-09 **docs**: update badges
 - 2024-12-09 **docs**: formatting and minor fixes
-- 2024-12-09 **feat**: new color scheme Gruvbox Light
-- 2024-12-09 **feat**: new colorscheme `Gruvbox Dark`
+- 2024-12-09 **feat**: new color scheme `Gruvbox Light`
+- 2024-12-09 **feat**: new color scheme `Gruvbox Dark`
 - 2024-12-06 **chore**: do not override callout icons (#320)
 - 2024-11-22 **fix**: make link to relevant section of readme go to the correct place
 - 2024-11-20 **feat**: add infobox on submission of own color scheme
 - 2024-11-18 **feat!**: alternative color schemes
 - 2024-11-17 **fix**: reduce indentation of unordered lists in callouts
-- 2024-11-17 **chore**: rename `just` tasks
 - 2024-11-12 **fix**: better contrast for success/error notifications
 - 2024-11-07 **fix**: remove outdated vault launch styling
 - 2024-11-04 **feat**: styling of success notices

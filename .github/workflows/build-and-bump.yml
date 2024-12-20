@@ -1,12 +1,12 @@
-name: Build, minify, lower syntax, bump versions, update download counts & changelog
+name: Build and bump
 
 on:
   push:
     branches: [main]
     paths:
-      - source/** # only trigger when source files were changed
-      - .github/workflows/build-and-bump.yml # or on updates to this file itself
-  workflow_dispatch: # allows manual triggering on GitHub
+      - source/**
+      - .github/workflows/build-and-bump.yml 
+  workflow_dispatch:
 
 permissions:
   contents: write
@@ -43,7 +43,12 @@ jobs:
           npx lightningcss --minify --browserslist \
             --output-file="./theme.css" -- "./theme.css" || exit 1
 
-          # check for unsupported features via `doiuse`
+          # append style-settings (last, so not removed by minification)
+          cat <(echo && echo "/* @settings") ./source/style-settings.yaml <(echo "*/") \
+            >> ./theme.css
+
+      - name: check for unsupported features
+        run: |
           violations=$(npx doiuse --browsers="$BROWSERSLIST" \
             --config="./.doiuse-ignore.json" theme.css)
           if [[ -n "$violations" ]]; then # `doiuse` does not exit with non-zero code
@@ -51,10 +56,6 @@ jobs:
             echo "$violations"
             exit 1
           fi
-
-          # append style-settings (last, so not removed by minification)
-          cat <(echo && echo "/* @settings") ./source/style-settings.yaml <(echo "*/") \
-            >> ./theme.css
 
       - name: bump version in manifest
         run: |
@@ -71,7 +72,7 @@ jobs:
       - name: update changelog
         run: |
           git log :/bump.. --format="- %cs %s" | # commits since last `bump` commit
-          	grep -vE "build|ci|refactor|style|bump" | # don't include internal changes
+          	grep -vE "build|ci||style|bump" | # don't include internal changes
           	sed -E "s/^(- [0-9-]+) ([^ ]+): /\1 **\2**: /" >> "temp.md" # bold cc keyword
           grep -v "^$" "Changelog.md" >> "temp.md"
           mv -f "temp.md" "Changelog.md"
@@ -79,5 +80,5 @@ jobs:
       - name: commit
         uses: stefanzweifel/git-auto-commit-action@v5
         with:
-          commit_message: "bump: version & update changelog"
+          commit_message: "bump: version bump & changelog update"
           branch: ${{ github.head_ref }}
