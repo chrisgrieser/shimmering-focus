@@ -386,7 +386,7 @@ settings:
     description:
       'By default, this theme indicates the presence of trailing spaces when there are more than one
       with "··↵". This can be useful for the "two space rule" in markdown, where exactly two spaces
-      at the end of a line force a line break.'
+      at the end of a line enforce a line break.'
     type: class-toggle
     default: false
 
@@ -460,17 +460,15 @@ settings:
     title: Cursorline
     markdown: true
     description:
-      Emphasize the active visual line. only works in normal mode, and also affects the cursor blink
-      animation. As opposed to the "active line indicator", this works on *visual* lines instead of
-      *logical* lines. Note that this setting is independent of the "active block indicator" setting
-      to allow for both being in use at the same time.
+      Only works in normal mode. As opposed to the "active line indicator", this works on visual
+      lines instead of logical lines. This setting is independent of the "active block indicator"
+      setting, so both can be used at the same time.
     type: class-toggle
     default: false
   - id: no-mouse-hovers
     title: 'Disable tooltips & "Edit this block" button'
     description:
-      Disables tooltips and "Edit this block" buttons displayed when hovering various elements in
-      Live Preview.
+      Disables tooltips and buttons displayed when hovering various elements in Live Preview.
     type: class-toggle
     default: false
 
