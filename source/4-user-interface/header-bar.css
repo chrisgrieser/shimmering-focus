@@ -1,0 +1,70 @@
+body:not(.normal-header-bar, .is-mobile) .workspace-leaf-content {
+	/* the shading at the end of the header */
+	& .view-header-title-container::after {
+		display: none;
+	}
+
+	& .view-header-breadcrumb {
+		color: var(--text-faint);
+		font-size: 0.9rem;
+	}
+
+	/* hide the header & most buttons */
+	& .view-header {
+		height: 0;
+		border: none;
+
+		& .view-header-nav-buttons,
+		& .view-header-title,
+		& .view-action:nth-last-child(2) {
+			display: none;
+		}
+	}
+
+	/* position remaining buttons (by default only the "more options" button) */
+	& .view-header .view-actions {
+		position: absolute;
+		top: 4px;
+		right: 2px;
+
+		&:last-child:hover {
+			background: none;
+		}
+
+		&:last-child svg {
+			width: 20px;
+			height: 20px;
+		}
+	}
+
+	/* move header bar content to the right */
+	& .view-header-title-container {
+		position: absolute;
+		top: 35px;
+		right: 1.1rem;
+		transition-duration: var(--anim-duration-moderate);
+		transform: rotate(270deg);
+		transform-origin: right;
+
+		.workspace-leaf-content[data-type="kanban"] & {
+			display: none;
+		}
+	}
+
+	/* adjustments for PDFs */ 
+	&.workspace-leaf-content[data-type="pdf"] {
+		& .view-header-title-container {
+			right: 0.7rem;
+		}
+
+		& .pdf-viewer {
+			margin-right: 0.75em;
+		}
+	}
+}
+
+.view-header-breadcrumb.view-header-breadcrumb.view-header-breadcrumb.view-header-breadcrumb:hover {
+	color: var(--hover-accent);
+	cursor: var(--cursor-link);
+	background: none;
+}
