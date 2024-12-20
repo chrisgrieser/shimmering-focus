@@ -1,3 +1,6 @@
+- 2024-12-20 **improv**: header bar styling for headers that are still visible
+- 2024-12-20 **fix**: do not apply header bar adjustments to web viewer tabs
+- 2024-12-20 **fix**: some obsolete setting descriptions
 - 2024-12-15 **feat**: setting to hide the status bar icon of the Harper plugin
 - 2024-12-15 **docs**: improve some phrasing
 - 2024-12-11 **chore**: tweak headings in longform notes
