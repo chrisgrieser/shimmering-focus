@@ -3,10 +3,10 @@
 ![GitHub stars](https://img.shields.io/github/stars/chrisgrieser/shimmering-focus?style=plastic&label=%E2%98%85%20Stars)
 ![Last commit](https://img.shields.io/github/last-commit/chrisgrieser/shimmering-focus?style=plastic)
 
-A minimalistic and opinionated Obsidian theme for the keyboard-centric user.  
+A minimalistic and opinionated Obsidian theme for the keyboard-centric user.
 
 [🏆 Winner Obsidian October
-2022](https://obsidian.md/blog/2022-obsidian-october-winners/), 10th most
+2022](https://obsidian.md/blog/2022-obsidian-october-winners/) and 10th most
 downloaded theme in the Obsidian theme store.
 
 ![Promo screenshot](https://github.com/user-attachments/assets/d2b8d0cb-dc16-4967-9046-1b68a518f1ba)

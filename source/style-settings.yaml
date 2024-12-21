@@ -415,30 +415,26 @@ settings:
   - id: image-size
     title: "Images: Size (percent)"
     description:
-      "The theme also adds a command `Toggle max image size` which toggles between 100% image size
-      and the reduced image size below. In addition, clicking & holding images will also enlarge an
-      image."
+      The theme also adds a command `Toggle between reduced and full image size` which toggles
+      between 100% image size and the reduced image size below. In addition, clicking & holding
+      images will also enlarge an image.
     type: variable-number-slider
     markdown: true
     default: 50
     min: 10
     max: 100
     step: 5
-  - id: unrestricted-line-length-tables
-    title: Automatically disable `readable line length` on notes with tables
-    markdown: true
-    type: class-toggle
-    default: false
-
-  #─────────────────────────────────────────────────────────────────────────────
   # INFO dummy setting, hidden via css and only added for the toggle-command
   - id: max-image-size-toggle
     title: between reduced and full image size
     addCommand: true
     type: class-toggle
     default: false
-  #─────────────────────────────────────────────────────────────────────────────
-
+  - id: unrestricted-line-length-tables
+    title: Automatically disable `readable line length` on notes with tables
+    markdown: true
+    type: class-toggle
+    default: false
   #─────────────────────────────────────────────────────────────────────────────
   # Vim mode
   - id: vim-mode
