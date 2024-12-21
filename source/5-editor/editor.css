@@ -1,3 +1,15 @@
+/* toggle readable line length */
+
+/* Remove line length toggle in Style settings, since only used for command
+ * (see dummy setting in Style Settings) */
+.style-settings-container .setting-item[data-id="readable-line-length-toggle"] {
+	display: none;
+}
+
+.readable-line-length-toggle {
+	--file-line-width: 100%;
+}
+
 /* ───────────────────────────────────────────────── */
 /** Editor Suggestions
 ──────────────────────────────────────────────────── */

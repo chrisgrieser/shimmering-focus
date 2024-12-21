@@ -373,7 +373,8 @@ settings:
   - id: file-line-width
     title: Line length
     description:
-      "The length of the editor content (when the `Readable line length` setting is enabled)."
+      The length of the editor content when Obsidian's `Readable line length` setting is enabled.
+      The theme also adds a command `Toggle readable line length`.
     markdown: true
     type: variable-number-slider
     default: 700
@@ -381,6 +382,12 @@ settings:
     max: 2500
     step: 25
     format: px
+  # INFO dummy setting, hidden via css and only added for the toggle-command
+  - id: readable-line-length-toggle
+    title: readable line length
+    addCommand: true
+    type: class-toggle
+    default: false
   - id: hide-trailing-whitespace
     title: Hide trailing spaces
     description:

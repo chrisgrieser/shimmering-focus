@@ -64,6 +64,8 @@ Plugin](https://obsidian.md/plugins?id=obsidian-style-settings) is installed,
 - Toggle folding of URLs (Source Mode)
 - Toggle between reduced and original image size (reduced size can be set in the
   respective style setting)
+- Toggle readable line length (requires the `Readable line length` setting in
+  Obsidian to be enabled.)
 
 ## Create your own color scheme
 With *Shimmering Focus*, you can create your own color scheme with this CSS
