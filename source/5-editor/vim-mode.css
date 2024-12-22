@@ -26,7 +26,11 @@
 	outline: var(--vim-cursor-outline-width) solid var(--vim-cursor-outline);
 }
 
-.cm-editor:not(.cm-focused) .cm-fat-cursor.cm-fat-cursor.cm-fat-cursor {
+/* complicated selector to FIX https://discord.com/channels/686053708261228577/989603365606531104/1320397699723300994 */ 
+.cm-editor:not(.cm-focused)
+	.cm-sizer:not(:has(.cm-table-widget.has-focus))
+	+ .cm-vimCursorLayer
+	.cm-fat-cursor {
 	color: transparent;
 	background-color: transparent;
 	outline: 2px solid var(--hover-accent);
@@ -78,7 +82,9 @@
 	}
 }
 
-.vim-active-visual-line {
+/* no active-line highlight when in table, since we already have active table
+* cell highlight */
+.vim-active-visual-line .cm-sizer:not(:has(.cm-table-widget.has-focus)) + .cm-vimCursorLayer {
 	& .cm-fat-cursor.cm-cursor-primary {
 		--cursorline-bg: hsl(var(--color-accent-hsl), 12.5%);
 		border-image: conic-gradient(var(--cursorline-bg) 0 0) fill 0 / 0 / 0 100vw;
@@ -90,10 +96,8 @@
 		}
 	}
 
-	& .cm-vimCursorLayer {
-		/* stylelint-disable-next-line declaration-no-important */
-		animation: none !important;
-	}
+	/* stylelint-disable-next-line declaration-no-important */
+	animation: none !important;
 }
 
 /* ───────────────────────────────────────────────── */
