@@ -5,6 +5,15 @@
 		"formatWithErrors": true
 	},
 
+	// not useful for themes
+	"linter": {
+		"rules": {
+			"nursery": {
+				"noDescendingSpecificity": "off"
+			}
+		}
+	},
+
 	"files": {
 		"ignore": ["./theme.css"]
 	},
