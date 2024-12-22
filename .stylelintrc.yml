@@ -117,9 +117,7 @@ rules:
     - ignoreValues:
         - box
         - inline-box
-  color-named: never
   color-no-hex: true
   declaration-no-important: true
   font-weight-notation: numeric
   max-nesting-depth: 3
-  selector-nested-pattern: ["&", {splitList: true, message: "Nested selectors should include a &."}]
