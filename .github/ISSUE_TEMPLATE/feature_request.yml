@@ -1,6 +1,6 @@
 name: Feature request
 description: Suggest an idea
-title: "Feature Request: "
+title: "Feature request: "
 labels: ["feature request"]
 body:
   - type: checkboxes
@@ -9,13 +9,13 @@ body:
       label: Checklist
       options:
         - label:
-            I updated to the latest version of the theme (Settings → Appearance → Check for
-            updates).
+            I updated to the latest version of the theme (`Settings` → `Appearance` → `Check for
+            updates`).
           required: true
         - label:
             The feature would be useful to more users than just me. (If it's only relevant to you,
             have you considered using a [CSS
-            Snippet](https://help.obsidian.md/How+to/Add+custom+styles.md#Use+Themes+and/or+CSS+snippets)?)
+            snippet](https://help.obsidian.md/How+to/Add+custom+styles.md#Use+Themes+and/or+CSS+snippets)?)
           required: true
         - label:
             The request is about Obsidian desktop, Obsidian mobile is not supported by this theme.
@@ -23,11 +23,11 @@ body:
   - type: textarea
     id: feature-requested
     attributes:
-      label: Feature Requested
+      label: Feature requested
       description: A clear and concise description of the feature.
     validations: { required: true }
   - type: textarea
     id: screenshot
     attributes:
-      label: Relevant Screenshot
+      label: Relevant screenshot
       description: If applicable, add screenshots or a screen recording to help explain the request.

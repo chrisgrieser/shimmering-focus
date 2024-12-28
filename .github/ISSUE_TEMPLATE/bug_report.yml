@@ -1,4 +1,4 @@
-name: Bug Report
+name: Bug report
 description: File a bug report
 title: "Bug: "
 labels: ["bug"]
@@ -9,12 +9,12 @@ body:
       label: Checklist
       options:
         - label:
-            I updated to the latest version of the theme (Settings → Appearance → Check for
-            updates).
+            I updated to the latest version of the theme (`Settings` → `Appearance` → `Check for
+            updates`).
           required: true
         - label:
             I made sure that the issue is related to this theme by checking that the problem does
-            *not* occur with the default theme.
+            **not** occur with the default theme.
           required: true
         - label:
             In case I am missing an UI element, I have checked that it cannot be re-enabled with the
@@ -24,24 +24,24 @@ body:
           required: true
         - label:
             My Obsidian installer version 1.1.9 or later. If not, please update first. You can find
-            the version in the *About* tab of the Obsidian settings.
+            the version in the `About` tab of the Obsidian settings.
           required: true
   - type: textarea
     id: bug-description
     attributes:
-      label: Bug Description
+      label: Bug description
       description: A clear and concise description of the bug.
     validations: { required: true }
   - type: textarea
     id: screenshot
     attributes:
-      label: Relevant Screenshot
+      label: Relevant screenshot
       description: Add screenshots or a screen recording to help explain your problem.
     validations: { required: true }
   - type: textarea
     id: reproduction-steps
     attributes:
-      label: To Reproduce
+      label: To reproduce
       description: Steps to reproduce the problem
       placeholder: |
         For example:
@@ -51,13 +51,13 @@ body:
   - type: input
     id: plugins-involved
     attributes:
-      label: Plugins Involved
+      label: Plugins involved
       description: Is the problem related to a specific plugin, such as a toolbar of a plugin?
       placeholder: e.g., Dataview
   - type: textarea
     id: sample-text
     attributes:
-      label: Sample Text
+      label: Sample text
       description:
         If the problem occurs inside the editor, please provide the markdown text with which you
         have the issue.
@@ -70,7 +70,7 @@ body:
   - type: input
     id: obsi-version
     attributes:
-      label: Obsidian Version
+      label: Obsidian version
       description:
         You can find the version in the *About* tab of the Obsidian settings. If your Obsidian
         version is too old, you should update it first.
@@ -79,7 +79,7 @@ body:
   - type: input
     id: installer-version
     attributes:
-      label: Installer Version
+      label: Installer version
       description: You can find the installer version in the *About* tab of the Obsidian settings.
       placeholder: "0.14.19"
     validations: { required: true }
