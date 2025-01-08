@@ -11,22 +11,28 @@ downloaded theme in the Obsidian theme store.
 
 ![Promo screenshot](https://github.com/user-attachments/assets/d2b8d0cb-dc16-4967-9046-1b68a518f1ba)
 
----
+## Table of contents
 
 <!-- toc -->
 
-- [Design philosophy](#design-philosophy)
-- [Features](#features)
-- [Commands](#commands)
-- [Create your own color scheme](#create-your-own-color-scheme)
-- [Standalone snippets](#standalone-snippets)
-- [Contribute](#contribute)
-- [Licenses](#licenses)
+- [General information](#general-information)
+	* [Design philosophy](#design-philosophy)
+	* [Features](#features)
+	* [Commands](#commands)
+- [Advanced customization](#advanced-customization)
+	* [Create your own color scheme](#create-your-own-color-scheme)
+	* [Standalone snippets](#standalone-snippets)
+	* [Contribute to the theme](#contribute-to-the-theme)
 - [Credits](#credits)
+	* [Licenses](#licenses)
+	* [Thanks](#thanks)
+	* [About the creator](#about-the-creator)
 
 <!-- tocstop -->
 
-## Design philosophy
+## General information
+
+### Design philosophy
 - **Radical minimalism:** As opposed to a minimalism of *colors*, this theme
   focuses on a minimalistic *user interface*: UI elements not relevant for
   keyboard users are hidden, or only shown when needed. All hidden UI elements
@@ -38,7 +44,7 @@ downloaded theme in the Obsidian theme store.
   available via the [Style Settings
   Plugin](https://obsidian.md/plugins?id=obsidian-style-settings).
 
-## Features
+### Features
 - **Smart hiding of UI elements**: The tab bar is only shown when there is more
   than one tab open, and the sidebar tab buttons are only shown on hover.
 - **Images**: Alt-text of images used as **caption**, images can be zoomed in
@@ -57,7 +63,7 @@ downloaded theme in the Obsidian theme store.
 - **Alternative color schemes** submitted by the community are available by
   using the Style Settings Plugin.
 
-## Commands
+### Commands
 When the [Style Settings
 Plugin](https://obsidian.md/plugins?id=obsidian-style-settings) is installed,
 *Shimmering Focus* adds commands for toggling theme features:
@@ -67,7 +73,9 @@ Plugin](https://obsidian.md/plugins?id=obsidian-style-settings) is installed,
 - Toggle readable line length (requires the `Readable line length` setting in
   Obsidian to be enabled.)
 
-## Create your own color scheme
+## Advanced customization
+
+### Create your own color scheme
 With *Shimmering Focus*, you can create your own color scheme with this CSS
 snippet.
 
@@ -107,12 +115,12 @@ You can [suggest your color scheme for inclusion in Shimmering
 Focus](https://github.com/chrisgrieser/shimmering-focus/discussions/categories/suggest-your-color-scheme-for-inclusion-in-shimmering-focus).
 Especially submissions of classic, well-known color schemes are welcome.
 
-## Standalone snippets
+### Standalone snippets
 Some features of this theme are available as standalone snippets. These can be
 found in the [snippets directory](./snippets).
 
 <!-- vale Google.Will = NO -->
-## Contribute
+### Contribute to the theme
 Bug fixes, support for more plugins, or improvements for mobile are welcome.
 However, please ask before contributing entirely new features by creating a
 Draft PR or an issue.
@@ -123,14 +131,16 @@ will be compiled via GitHub action when pushed to GitHub.
 The theme uses `lightning-css` for
 [syntax-lowering](https://lightningcss.dev/transpilation.html#syntax-lowering)
 in its build. That means you can use modern CSS features like
-[CSS-nesting](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_nesting), as
-the resulting `theme.css` will still be compatible with older Obsidian installer
-versions that do not support nesting yet. Furthermore, this theme targets
-Obsidian installer version 1.1.9, so feel free to use `:has()`.
+[CSS-nesting](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_nesting),
+as the resulting `theme.css` will still be compatible with older Obsidian
+installer versions. Furthermore, this theme targets Obsidian installer version
+1.1.9, so you can use `:has()`.
 
 The theme is written completely dependency-free in vanilla CSS.
 
-## Licenses
+## Credits
+
+### Licenses
 - This theme is licensed under the [MIT
   License](https://github.com/chrisgrieser/shimmering-focus/blob/main/LICENSE).
 - The two embedded fonts `iA Writer Quattro` and `Recursive` are licensed under
@@ -138,8 +148,7 @@ The theme is written completely dependency-free in vanilla CSS.
 - The embedded `Material Icon` font is licensed under the [Apache
   License](https://developers.google.com/fonts/docs/material_icons#licensing).
 
-<!-- vale Google.FirstPerson = NO -->
-## Credits
+### Thanks
 - This theme includes snippets and/or ideas from:
   [@SlRvb](https://github.com/SlRvb), [@Atlas](https://github.com/zcysxy),
   [@CecilaMay](https://github.com/ceciliamay),
@@ -160,19 +169,19 @@ The theme is written completely dependency-free in vanilla CSS.
   [@javalent](https://github.com/valentine195), and
   [@NothingIsLost](https://github.com/nothingislost).
 - Community-made color schemes:
-	+ `Gamma` created in collaboration with `@lkadre`.
-	+ `Everforest` by
+	* `Gamma` created in collaboration with `@lkadre`.
+	* `Everforest` by
 	  [@neuromancer](https://github.com/chrisgrieser/shimmering-focus/discussions/291).
-	+ `Coffee` by
+	* `Coffee` by
 	  [@keara](https://github.com/chrisgrieser/shimmering-focus/discussions/274)
 	  and inspired by the [Primary
 	  theme](https://github.com/primary-theme/obsidian).
-	+ `Gruvbox` dark variant by
+	* `Gruvbox` dark variant by
 	  [@jasht1](https://github.com/chrisgrieser/shimmering-focus/discussions/311),
 	  light variant by
 	  [robrecord](https://github.com/chrisgrieser/shimmering-focus/discussions/257).
 
-**About the creator**  
+### About the creator
 In my day job, I am a sociologist studying the social mechanisms underlying the
 digital economy. For my PhD project, I investigate the governance of the app
 economy and how software ecosystems manage the tension between innovation and
