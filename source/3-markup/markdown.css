@@ -236,35 +236,6 @@ div.HyperMD-codeblock-bg:not(.HyperMD-codeblock-begin-bg) {
 	color: var(--text-muted);
 }
 
-/* Code Blocks in Reading Mode */
-.markdown-preview-view.markdown-preview-view pre {
-	padding: 0;
-	margin-top: 8px;
-	border: var(--codeblock-border);
-	border-radius: var(--codeblock-roundness);
-}
-
-.markdown-preview-view pre code {
-	padding: 4px 8px;
-}
-
-/* border on top created like this, since the
-::after element cannot be moved beyond a border */
-.markdown-reading-view pre[class*="language-"]::before {
-	display: block;
-	line-height: 1.5em;
-	content: " ";
-	background-color: var(--code-block-alt-bg);
-	border-top-left-radius: calc(var(--codeblock-roundness) * 0.8);
-	border-top-right-radius: calc(var(--codeblock-roundness) * 0.8);
-}
-
-/* CODE BLOCK WITHOUT LANGUAGE */
-.markdown-reading-view pre:not([class^="language-"]) {
-	padding: 7px 7px 0;
-	overflow-y: hidden;
-}
-
 .copy-code-button.copy-code-button.copy-code-button {
 	top: unset;
 	bottom: 0;
@@ -275,22 +246,6 @@ div.HyperMD-codeblock-bg:not(.HyperMD-codeblock-begin-bg) {
 .copy-code-button.copy-code-button.copy-code-button:hover {
 	color: var(--interactive-normal);
 	background-color: var(--hover-accent);
-}
-
-.markdown-reading-view pre:not([class^="language-"]) code {
-	display: block;
-	/* prevents bad multiline-indentation */
-	color: var(--text-normal);
-}
-
-pre[class*="language-"]::after {
-	position: absolute;
-	top: 2px;
-	right: 5px;
-	font-size: 0.9rem;
-	color: var(--text-muted);
-	text-shadow: none;
-	content: attr(class);
 }
 
 /* Code Block: Line Numbers in Edit Mode */
