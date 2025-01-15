@@ -14,7 +14,7 @@ body p {
 }
 
 .inline-title.inline-title,
-.cm-header,
+.cm-header.cm-header,
 .markdown-rendered.markdown-rendered :is(h1, h2, h3, h4, h5, h6) {
 	font-weight: 700;
 	letter-spacing: var(--heading-letter-spacing);
