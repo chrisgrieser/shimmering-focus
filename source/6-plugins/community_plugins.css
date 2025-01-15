@@ -280,6 +280,10 @@ body .another-quick-switcher__status__count-input {
 	color: var(--text-faint);
 }
 
+.another-quick-switcher__item__title {
+	font-weight: 500;
+}
+
 .another-quick-switcher__status__search-command {
 	padding-right: 4px;
 	padding-top: 4px;
@@ -363,7 +367,7 @@ body .another-quick-switcher__status__count-input {
 	filter: saturate(60%);
 }
 
-/* starred item bold */
+/* starred item */
 .another-quick-switcher__starred_item::before {
 	display: none;
 }
