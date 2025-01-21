@@ -457,10 +457,7 @@ body .another-quick-switcher__item__description {
 /* enlarge floating window */
 .prompt.another-quick-switcher__floating-prompt {
 	max-height: 80vh;
-	/* stylelint-disable-next-line declaration-no-important */
-	left: unset !important;
-	/* stylelint-disable-next-line declaration-no-important */
-	top: 10vh !important;
+	top: 10vh !important; /* stylelint-disable-line declaration-no-important */
 	min-width: 600px;
 }
 
