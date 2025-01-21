@@ -280,7 +280,7 @@ body .another-quick-switcher__status__count-input {
 	color: var(--text-faint);
 }
 
-.another-quick-switcher__item__title {
+.another-quick-switcher__item__title:not(.another-quick-switcher__item__title__header_hit) {
 	font-weight: 500;
 }
 
