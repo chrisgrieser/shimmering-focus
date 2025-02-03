@@ -400,7 +400,7 @@ button.longform-remove-step-button.longform-remove-step-button.longform-remove-s
 		.HyperMD-table-row
 	) {
 	font-family: var(--font-monospace);
-	font-size: 0.95rem;
+	font-size: 95%;
 }
 
 /* justify text */
