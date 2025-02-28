@@ -7,7 +7,8 @@
 	white-space: normal;
 }
 
-/* Overlaying Sidebar */
+/* Overlaying right sidebar */
+/* not possible for left sidebar https://github.com/chrisgrieser/shimmering-focus/issues/327#issuecomment-2691181434 */ 
 .overlaying-right-sidebar .mod-right-split {
 	position: absolute;
 	right: 0;
