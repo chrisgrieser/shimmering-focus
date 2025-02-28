@@ -131,11 +131,6 @@ settings:
     title: Hide Language Tools icon
     type: class-toggle
     default: false
-  - id: hide-electron-window-tweaker-status-bar
-    title: Hide Electron Window Tweaker `always on top` icon
-    markdown: true
-    type: class-toggle
-    default: false
   - id: hide-pandoc-reference-list-status-bar
     title: Hide Pandoc Reference List icon
     type: class-toggle
@@ -185,7 +180,8 @@ settings:
     type: class-toggle
     default: false
   - id: hidden-sidebars-hidden-statusbar
-    title: Hide the status bar completely, when both sidebars are hidden
+    title: Status bar requires sidebars
+    description: Hide the status bar completely, when both sidebars are hidden.
     type: class-toggle
     default: false
   - id: notices-at-bottom-right
