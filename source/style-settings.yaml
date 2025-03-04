@@ -10,17 +10,6 @@ settings:
       - 🔍 Tip: There is a search at the top of this settings page.
     markdown: true
     type: info-text
-  - id: notable-changes
-    title: Notable recent changes
-    description: |
-      - The **tab bar is now hidden when there is only one tab** open. You can
-        re-enable the regular tab bar in the `Show/hide UI elements` section below.
-      - The theme now requires **Obsidian installer version 1.1.9** or later.
-        You can update the installer by re-downloading Obsidian from the website.
-      - 🌈 Alternative color schemes are now available. See the `Colors & shapes` 
-        section below.
-    markdown: true
-    type: info-text
 
   #─────────────────────────────────────────────────────────────────────────────
   # Show / Hide UI Elements
@@ -252,7 +241,7 @@ settings:
   # Colors & shapes
   - id: aesthetics
     title: 🎨 Colors & shapes
-    description: 🆕 Alternative color schemes, angular shape, colored bold/italics, highlight color
+    description: Alternative color schemes, angular shape, colored bold/italics, highlight color
     type: heading
     level: 1
     collapsed: true
@@ -403,9 +392,7 @@ settings:
     collapsed: true
   - id: no-image-alttext-caption
     title: "Images: No alt-text as caption"
-    description:
-      By default, the theme adds the alt-text/filename of an image as caption (except when the image
-      is named "Pasted image…").
+    description: By default, the theme adds the alt-text/filename of an image as caption.
     type: class-toggle
     default: false
   - id: image-size
