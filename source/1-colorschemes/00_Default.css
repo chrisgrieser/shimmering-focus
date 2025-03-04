@@ -15,7 +15,7 @@ body {
 	--interactive-accent: hsl(184 79% 30%);
 	--alt-heading-color: hsl(232 34% 50%);
 	--secondary-accent: hsl(28 54% 51%);
-	--hover-accent: hsl(328 100% 54%);
+	--hover-accent: hsl(328 70% 54%);
 	--link-unresolved-color: hsl(101 42% 51%);
 }
 
@@ -29,7 +29,7 @@ body {
 	--interactive-accent: hsl(184 79% 30%);
 	--alt-heading-color: hsl(232 50% 70%);
 	--secondary-accent: hsl(28 63% 61%);
-	--hover-accent: hsl(328 100% 64%);
+	--hover-accent: hsl(328 80% 64%);
 	--link-unresolved-color: hsl(101 42% 51%);
 }
 
