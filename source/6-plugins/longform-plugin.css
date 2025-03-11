@@ -467,10 +467,10 @@ body:not(.is-popout-window)
 	line-height: calc(var(--longform-base-line-height) + 0.05);
 }
 
-/* emphasized tasks */
-body.longform-tasks-different.longform-tasks-different.longform-tasks-different.longform-tasks-different
+/* de-emphasized tasks */
+body.longform-tasks-different
 	:is(.writing, .longform-leaf)
-	:is(.HyperMD-task-line, ul.contains-task-list) {
+	:is(.HyperMD-task-line, .HyperMD-task-line > *, ul.contains-task-list) {
 	color: var(--text-faint);
 }
 
