@@ -40,8 +40,8 @@ downloaded theme in the Obsidian theme store.
   Plugin](https://obsidian.md/plugins?id=obsidian-style-settings).
 - **Condensed display of information:** Unnecessary padding and white-space is
   removed, which is beneficial for small screens or higher zoom levels.
-- **High customizability:** There are over a hundred customization options
-  available via the [Style Settings
+- **High customizability:** Over a hundred customization options available
+  via the [Style Settings
   Plugin](https://obsidian.md/plugins?id=obsidian-style-settings).
 
 ### Features
@@ -50,18 +50,18 @@ downloaded theme in the Obsidian theme store.
 - **Images**: Alt-text of images used as **caption**, images can be zoomed in
   via click-and-hold or toggled between reduced and original size via Style
   Settings.
-- **Tables**: Highlighting of active cells, alternating row colors
-- **Vim mode**: Explicit styling of Obsidian's Vim Mode, including various
-  settings such as relative line numbers.
-- **For writers**: Emphasis of **Pandoc citations** and **footnotes**, extensive
-  styling for the [Longform Plugin](https://obsidian.md/plugins?id=longform).
 - **Headings**: Distinctive styling and various options for differentiating
   heading levels.
+- **Tables**: Highlighting of active cells, alternating row colors
+- **Alternative color schemes** submitted by the community are available by
+  using the Style Settings Plugin.
+- **For writers**: Emphasis of **Pandoc citations** and **footnotes**, extensive
+  styling for the [Longform Plugin](https://obsidian.md/plugins?id=longform).
+- **For vim users**: Explicit styling of Obsidian's Vim Mode, including various
+  settings such as relative line numbers or cursorline highlights.
 - **High customizability:** There are over a hundred customization options
   available via the [Style Settings
   Plugin](https://obsidian.md/plugins?id=obsidian-style-settings).
-- **Alternative color schemes** submitted by the community are available by
-  using the Style Settings Plugin.
 
 ### Commands
 When the [Style Settings
@@ -119,7 +119,6 @@ Especially submissions of classic, well-known color schemes are welcome.
 Some features of this theme are available as standalone snippets. These can be
 found in the [snippets directory](./snippets).
 
-<!-- vale Google.Will = NO -->
 ### Contribute to the theme
 Bug fixes, support for more plugins, or improvements for mobile are welcome.
 However, please ask before contributing entirely new features by creating a
