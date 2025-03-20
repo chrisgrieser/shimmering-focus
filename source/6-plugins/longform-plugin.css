@@ -1,73 +1,56 @@
-/* ───────────────────────────────────────────────── */
-/** Longform Smart Word Count
-──────────────────────────────────────────────────── */
-
-/* Show Word Count only on writing cssclass and longform notes.
-- Supports Word Count Core Plugin + Better Word Count Community Plugin.
-- Caveat: also triggered when such a note is open is in a non-active tab, restricting
-this to the active tab would require nested `:has()` which isn't supported */
-.wordcount-only-when-writing:not(.is-mobile)
-	.horizontal-main-container:not(:has(:is(.writing, .longform-leaf)))
-	+ .status-bar
-	:is(.plugin-word-count, .plugin-better-word-count) {
-	display: none;
-}
-
 /* ───────────────────────────────────────────────────
 /** Longform Sidebar
 ─────────────────────────────────────────────────── */
 
 .workspace-leaf-content[data-type="VIEW_TYPE_LONGFORM_EXPLORER"] .tab-panel-container {
-	padding-right: 0;
-	padding-left: 0;
+	padding: 0;
 }
 
 /* project picker */
 .workspace-leaf-content .view-content div#project-picker-container {
-	margin-bottom: 0;
+	margin-bottom: 2px;
 }
 
-#project-picker {
-	padding-left: 4px;
-	background-color: var(--bg1);
-	border-top: var(--thin-border);
-	border-bottom: var(--thin-border);
-	border-radius: 0;
-}
-
-div#select-projects select {
-	padding-left: 4px;
-	overflow: hidden;
-	font-size: var(--font-small);
-	font-weight: 700;
-	color: var(--text-normal);
-	text-overflow: ellipsis;
-	white-space: nowrap;
-	box-shadow: none;
-}
-
-#project-picker .right-arrow {
+.workspace-leaf-content[data-type="VIEW_TYPE_LONGFORM_EXPLORER"] .current-draft-path {
 	display: none;
 }
 
-#project-picker select:hover {
-	color: var(--hover-accent);
-	text-decoration: none;
+#project-picker {
+	background-color: var(--bg1);
+	border-top: var(--thin-border);
+	border-bottom: var(--thin-border);
 }
 
-/* Drafts Picker */
-#select-drafts select {
-	height: 25px;
+div#select-projects select {
+	border-radius: 0;
+	padding: 6px;
+	font-size: var(--font-small);
+	font-weight: 700;
 	color: var(--text-normal);
+}
+
+/* sidebar buttons */
+.longform-explorer .tab-button.tab-button {
+	&.selected.selected {
+		background-color: var(--bg4);
+		font-weight: 600;
+		border-top: var(--thin-border);
+		border-left: var(--thin-border);
+		border-right: var(--thin-border);
+	}
+	/* so tabs do not move around on selection */
+	border-right: 1px transparent solid;
+	border-left: 1px transparent solid;
+}
+
+.longform-explorer .tab-list {
+	padding: 0 2px;
+	border-bottom: var(--thin-muted-border);
 }
 
 /* Scene List */
 .longform-explorer.longform-explorer div#scene-list {
 	margin: 0;
-}
-
-.scene-container:is(.selected, .selected:hover) {
-	font-weight: 700;
 }
 
 #scene-list .scene-container {
@@ -78,120 +61,70 @@ div#select-projects select {
 	border: none;
 	border-radius: 0;
 	--longform-indent-size: 1.75em;
-}
 
-#scene-list .scene-container > div > div {
-	margin-left: 0;
-}
+	& > div > div {
+		margin-left: 0;
+	}
 
-/* stylelint-disable declaration-no-important */
-#scene-list .scene-container[data-scene-indent="0"] {
-	padding-left: 6px !important;
-}
+	/* stylelint-disable declaration-no-important */
+	&[data-scene-indent="0"] {
+		padding-left: 6px !important;
+	}
 
-#scene-list .scene-container[data-scene-indent="1"] {
-	padding-left: calc(var(--longform-indent-size) * 1) !important;
-}
+	&[data-scene-indent="1"] {
+		padding-left: calc(var(--longform-indent-size) * 1) !important;
+	}
 
-#scene-list .scene-container[data-scene-indent="2"] {
-	padding-left: calc(var(--longform-indent-size) * 2) !important;
-}
+	&[data-scene-indent="2"] {
+		padding-left: calc(var(--longform-indent-size) * 2) !important;
+	}
 
-#scene-list .scene-container[data-scene-indent="3"] {
-	padding-left: calc(var(--longform-indent-size) * 3) !important;
-}
+	&[data-scene-indent="3"] {
+		padding-left: calc(var(--longform-indent-size) * 3) !important;
+	}
 
-#scene-list .scene-container[data-scene-indent="4"] {
-	padding-left: calc(var(--longform-indent-size) * 4) !important;
-}
+	&[data-scene-indent="4"] {
+		padding-left: calc(var(--longform-indent-size) * 4) !important;
+	}
+	/* stylelint-enable declaration-no-important */
 
-/* stylelint-enable declaration-no-important */
+	&.selected,
+	&.selected .longform-scene-number {
+		color: var(--color-accent);
+	}
 
-#scene-list .scene-container.selected,
-#scene-list .scene-container.selected .longform-scene-number {
-	color: var(--color-accent);
-}
+	&.selected {
+		background-color: var(--nav-item-background-active);
+	}
 
-#scene-list .scene-container.selected {
-	background-color: var(--nav-item-background-active);
-}
+	&:hover {
+		color: var(--hover-accent);
+		background-color: var(--nav-item-background-hover);
+	}
 
-#scene-list .scene-container:hover {
-	color: var(--hover-accent);
-	background-color: var(--nav-item-background-hover);
-}
+	&:hover .longform-scene-number.longform-scene-number {
+		color: var(--hover-accent);
+	}
 
-#scene-list .scene-container:hover .longform-scene-number.longform-scene-number {
-	color: var(--hover-accent);
-}
-
-/* Scene Number */
-#scene-list .scene-container[data-scene-indent="0"] .longform-scene-number::after {
-	content: ".";
-}
-
-#scene-list .scene-container:not([data-scene-indent="0"]) .longform-scene-number::after {
-	display: none;
-}
-
-#scene-list .longform-scene-number {
-	color: var(--text-gray);
-}
-
-/* alternating row colors, factoring in the coloring */
-li:nth-child(even) :is(.draft-container, .scene-container) {
-	background-color: var(--a-row);
-}
-
-/* grayed out scenes. `{-}` in pandoc indicates a section not be included in the ToC */
-#scene-list
-	.scene-container[data-scene-path$=" {-}.md" i]:not(.selected, :hover)
-	:is(div, .longform-scene-number) {
-	color: var(--text-faint);
-}
-
-/* move folding arrows to the right */
-#scene-list .scene-container > div {
-	margin-left: 0;
-}
-
-body #scene-list .scene-container {
+	/* move folding arrows to the right */
 	flex-direction: row-reverse;
+
+	& > div {
+		margin-left: 0;
+	}
+
+	/* grayed out scenes. `{-}` in pandoc indicates a section not be included in the ToC */
+	[data-scene-path$=" {-}.md" i]:not(.selected, :hover) :is(div, .longform-scene-number) {
+		color: var(--text-faint);
+	}
+
+	/* alternating row colors, factoring in the coloring */
+	li:nth-child(even) & {
+		background-color: var(--a-row);
+	}
 }
 
-/* new scenes */
-.tab-panel-container input#new-scene {
-	height: 16px;
-	padding-left: 6px;
-}
-
-.new-scene-container.new-scene-container.new-scene-container {
-	border-top: var(--basic-border);
-}
-
-/* Drafts Tab */
-.longform-project-section {
-	margin-right: 8px;
-	margin-left: 8px;
-}
-
-.longform-project-section h4 {
-	font-family: var(--font-interface);
-}
-
-.longform-project-section strong {
-	color: var(--text-normal);
-}
-
-/* ───────────────────────────────────────────────── */
-/** Longform Compile
-──────────────────────────────────────────────────── */
-
-.longform-compile-container {
-	padding-right: 4px;
-	padding-left: 4px;
-}
-
+/* Longform Compile */
 button.longform-remove-step-button.longform-remove-step-button.longform-remove-step-button,
 .longform-compile-container .options-button.options-button.options-button {
 	padding: 6px;
@@ -199,176 +132,22 @@ button.longform-remove-step-button.longform-remove-step-button.longform-remove-s
 	box-shadow: none;
 }
 
-body .longform-compile-container.longform-compile-container .longform-workflow-picker-container {
-	margin-bottom: 8px;
-	border-bottom-width: 2px;
-}
-
 button.longform-remove-step-button.longform-remove-step-button.longform-remove-step-button {
 	height: unset;
 	padding: 2px;
-	font-weight: 500;
 }
 
-.longform-compile-step h4 {
-	font-family: var(--font-interface);
-	font-size: 1rem;
-	line-height: var(--line-height-tight);
-	letter-spacing: 0;
-}
-
-.longform-compile-step.longform-compile-step.longform-compile-step.longform-compile-step {
-	padding-bottom: 4px;
-	margin-bottom: 8px;
-}
-
-.longform-compile-step-title-container
-	.longform-step-kind-pill.longform-step-kind-pill.longform-step-kind-pill.longform-step-kind-pill {
-	padding: 1px 3px;
-	border-radius: var(--radius-s);
-}
-
-/* ───────────────────────────────────────────────────
-/** Longform Sidebar Icons
-─────────────────────────────────────────────────── */
-/* container needs to be relative for `.current-draft-path` */
-#project-picker-container {
-	position: relative;
-}
-
-/* turn the draft-path into a home-button */
-#project-picker-container
-	.current-draft-path.current-draft-path.current-draft-path.current-draft-path.current-draft-path {
-	position: absolute;
-	right: -0.3rem;
-	bottom: -90%;
-	font-size: 0;
-}
-
-.current-draft-path::before {
-	position: relative;
-	left: 8px;
-	content: "home";
-}
-
-.workspace-leaf-content[data-type="VIEW_TYPE_LONGFORM_EXPLORER"] .tabs .tab-list {
-	padding: 4px 4px 2px 6px;
-	margin: 0;
-	border-bottom: var(--basic-border);
-}
-
-.current-draft-path::before,
-.workspace-leaf-content[data-type="VIEW_TYPE_LONGFORM_EXPLORER"] button::before {
-	font-family: var(--icon-font);
-	font-size: calc(1.2 * var(--font-text-size));
-}
-
-.current-draft-path,
-.workspace-leaf-content[data-type="VIEW_TYPE_LONGFORM_EXPLORER"]
-	.tab-list.tab-list.tab-list
-	button {
-	width: 37px;
-	height: 25px;
-	padding: 4px;
-	margin-right: 10px;
-	font-size: 0;
-	color: var(--text-faint);
+/* new scene */
+.longform-explorer .new-scene-container.new-scene-container {
 	background-color: var(--bg3);
-	border: var(--thin-border);
-	border-radius: var(--radius-s);
+	border-top: var(--thin-muted-border);
+	border-bottom: var(--thin-muted-border);
+	padding: 4px 6px;
 }
 
-.workspace-leaf-content[data-type="VIEW_TYPE_LONGFORM_EXPLORER"]
-	.tab-list
-	button:nth-child(1)::before {
-	content: "format_list_numbered";
-}
-
-.workspace-leaf-content[data-type="VIEW_TYPE_LONGFORM_EXPLORER"]
-	.tab-list
-	button:nth-child(2)::before {
-	content: "import_contacts";
-}
-
-.workspace-leaf-content[data-type="VIEW_TYPE_LONGFORM_EXPLORER"]
-	.tab-list
-	button:nth-child(3)::before {
-	content: "merge_type";
-}
-
-/* selected */
-.workspace-leaf-content[data-type="VIEW_TYPE_LONGFORM_EXPLORER"] button.selected.selected.selected {
-	color: var(--text-normal);
-	background-color: var(--nav-item-background-hover);
-}
-
-/* hovered */
-.current-draft-path.current-draft-path.current-draft-path.current-draft-path:hover,
-.workspace-leaf-content[data-type="VIEW_TYPE_LONGFORM_EXPLORER"] .tab-list.tab-list button:hover {
-	color: var(--icon-color-hover);
-	background-color: var(--nav-item-background-active);
-}
-
-/* ───────────────────────────────────────────────────
-/** Longform Unknown Files Wizard
-─────────────────────────────────────────────────── */
-
-.tab-panel-container.tab-panel-container.tab-panel-container #longform-unknown-files-wizard {
-	padding: 0;
-	margin-top: 3px;
-	border-top: var(--basic-border);
-}
-
-.longform-unknown-inner.longform-unknown-inner.longform-unknown-inner.longform-unknown-inner {
-	padding-left: 0;
-	border: none;
-}
-
-.longform-unknown-explanation.longform-unknown-explanation.longform-unknown-explanation.longform-unknown-explanation {
+.longform-explorer.longform-explorer div#longform-unknown-files-wizard {
+	border-top: var(--thin-muted-border);
 	padding: 4px;
-	margin-top: 0;
-	margin-bottom: 3px;
-	font-size: 1em;
-	font-weight: 700;
-	line-height: 1.3;
-	color: var(--text-muted);
-	background-color: var(--bg3);
-}
-
-#longform-unknown-files-wizard
-	.longform-unknown-inner.longform-unknown-inner.longform-unknown-inner
-	> ul {
-	padding-left: 3px;
-	margin: 0;
-}
-
-#longform-unknown-files-wizard
-	.longform-unknown-inner.longform-unknown-inner.longform-unknown-inner
-	> ul
-	> li:nth-child(even) {
-	background-color: var(--a-row);
-}
-
-.longform-unknown-file {
-	padding: 1px 0 4px;
-	line-height: 1.25;
-}
-
-.longform-unknown-file.longform-unknown-file.longform-unknown-file.longform-unknown-file button {
-	padding: 1px 3px 3px;
-	margin-right: 5px;
-	font-size: 0.7em;
-	font-weight: 400;
-	line-height: 1;
-	text-shadow: none;
-	border-width: 1px;
-	border-radius: var(--radius-s);
-}
-
-.longform-unknown-ignore.longform-unknown-ignore.longform-unknown-ignore.longform-unknown-ignore:not(
-		:hover
-	) {
-	border-color: var(--text-faint);
 }
 
 /* ───────────────────────────────────────────────────
@@ -477,4 +256,19 @@ body.longform-tasks-different
 /* fix for code block header hack */
 .app-container :is(.writing, .longform-leaf) pre[class*="language-"]::before {
 	line-height: calc(var(--longform-base-line-height) + 0.3);
+}
+
+/* ───────────────────────────────────────────────── */
+/** Longform Smart Word Count
+──────────────────────────────────────────────────── */
+
+/* Show Word Count only on writing cssclass and longform notes.
+- Supports Word Count Core Plugin + Better Word Count Community Plugin.
+- Caveat: also triggered when such a note is open is in a non-active tab, restricting
+this to the active tab would require nested `:has()` which isn't supported */
+.wordcount-only-when-writing:not(.is-mobile)
+	.horizontal-main-container:not(:has(:is(.writing, .longform-leaf)))
+	+ .status-bar
+	:is(.plugin-word-count, .plugin-better-word-count) {
+	display: none;
 }
