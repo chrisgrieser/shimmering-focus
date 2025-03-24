@@ -463,9 +463,15 @@ blockquote code {
 /** Strikethroughs
 ──────────────────────────────────────────────────── */
 
-/* make the "~" readable */
-.cm-formatting-strikethrough {
-	text-decoration: none;
+.cm-strikethrough {
+	body:not(uncolored-strikethroughs) & {
+		color: rgba(var(--color-red-rgb), 0.85);
+	}
+
+	/* make the "~" readable */
+	&.cm-formatting {
+		text-decoration: none;
+	}
 }
 
 /* ───────────────────────────────────────────────── */
@@ -473,12 +479,12 @@ blockquote code {
 ──────────────────────────────────────────────────── */
 
 .theme-light {
-	--highlight-hue-1: 280;
+	--highlight-hue-1: 50;
 	--highlight-sla-values: 85% 70% / 40%;
 }
 
 .theme-dark {
-	--highlight-hue-1: 280;
+	--highlight-hue-1: 50;
 	--highlight-sla-values: 85% 40% / 40%;
 }
 

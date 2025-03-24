@@ -44,9 +44,7 @@
 	--text-normal: var(--color-base-85s);
 	--active-line-color: var(--color-accent);
 	--text-muted: var(--color-base-70);
-
-	/* custom middle ground between text-muted and text-faint */
-	--text-gray: var(--color-base-60);
+	--text-gray: var(--color-base-60); /* custom middle between `text-muted` and `text-faint` */
 	--text-faint: var(--color-base-50);
 	--text-accent: var(--color-accent);
 	--text-accent-hover: var(--hover-accent);

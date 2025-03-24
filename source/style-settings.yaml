@@ -316,10 +316,16 @@ settings:
     description: Hue of ==highlighted text==
     markdown: true
     type: variable-number-slider
-    default: 280
+    default: 40
     min: 0
     max: 360
     step: 5
+  - id: uncolored-strikethroughs
+    title: Uncolored italic
+    markdown: true
+    description: "~~Strikethrough text~~ will use the standard text color instead of being red."
+    type: class-toggle
+    default: false
 
   #─────────────────────────────────────────────────────────────────────────────
   # Editor Content
