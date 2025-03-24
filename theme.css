@@ -323,7 +323,7 @@ settings:
     max: 360
     step: 5
   - id: uncolored-strikethroughs
-    title: Uncolored italic
+    title: Uncolored strikethroughs
     markdown: true
     description: "~~Strikethrough text~~ will use the standard text color instead of being red."
     type: class-toggle
