@@ -120,7 +120,7 @@ body:not(.no-image-alttext-caption) .image-embed::after {
 /** Embeds
 ──────────────────────────────────────────────────── */
 /* INFO do not set border-radius for embeds, since it results in blurry font,
-* see #324 */ 
+* see #324 */
 
 .markdown-embed .embed-title {
 	font-family: var(--font-heading-theme);

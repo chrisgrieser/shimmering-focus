@@ -100,7 +100,7 @@ body:not(.is-mobile) .prompt .suggestion-item {
 }
 
 /* FIX items with hotkey info having slightly higher height, even in Obsidian
-* default theme (suggestion-aux = hotkey info) */ 
+* default theme (suggestion-aux = hotkey info) */
 .prompt .suggestion-aux {
 	line-height: 1;
 }
