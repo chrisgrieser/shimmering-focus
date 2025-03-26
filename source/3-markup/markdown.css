@@ -464,13 +464,13 @@ blockquote code {
 ──────────────────────────────────────────────────── */
 
 .cm-strikethrough {
-	body:not(uncolored-strikethroughs) & {
-		color: rgba(var(--color-red-rgb), 0.85);
+	body:not(.uncolored-strikethroughs) & {
+		text-decoration-color: var(--color-red);
 	}
 
-	/* make the "~" readable */
 	&.cm-formatting {
-		text-decoration: none;
+		color: var(--color-red);
+		text-decoration: none; /* make the "~" readable */
 	}
 }
 
