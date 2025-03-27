@@ -7,7 +7,7 @@ settings:
     description: |
       - [Changelog](https://github.com/chrisgrieser/shimmering-focus/blob/main/Changelog.md)
       - [README](https://github.com/chrisgrieser/shimmering-focus)
-      - 🔍 Tip: There is a search at the top of this settings page.
+      - 🔍 There is a search at the top of this settings page.
     markdown: true
     type: info-text
 
@@ -45,13 +45,6 @@ settings:
     title: Permanently show the sidebar header buttons
     description:
       By default, the buttons at the top of the sidebar panels are only visible when hovering.
-    type: class-toggle
-    default: false
-  - id: full-info-on-deletion-prompt
-    title: Show full deletion prompt
-    description:
-      The theme hides non-critical information and the "Don't ask again" checkbox. Enable this to
-      show them again.
     type: class-toggle
     default: false
   - id: show-suggester-instructions

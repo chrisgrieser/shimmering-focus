@@ -12,10 +12,6 @@ body:not(.show-close-buttons, .is-mobile) .document-search-close-button {
 	display: none;
 }
 
-/* ───────────────────────────────────────────────── */
-/** Deletion Prompt
-──────────────────────────────────────────────────── */
-
 /* deletion prompts do not have their own selector, so making the selectors as
 * specific as possible to ensure no other prompts are unintentionally targeted. */
 body:not(.full-info-on-deletion-prompt)
