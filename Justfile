@@ -17,7 +17,7 @@ build-and-reload-vaults:
     # PUSH TO LOCAL VAULTS
     # uses personal vaults saved in `~/.config/perma-repos.csv`
     if [[ "{{ personal_settings }}" == "true" ]]; then
-        cut -d, -f2 "$HOME/.config/perma-repos.csv" |
+        cut -d, -f1 "$HOME/.config/perma-repos.csv" |
             sed "s|^~|$HOME|" |
             xargs -I {} find {} -maxdepth 1 -name ".obsidian" | # only vaults
             xargs dirname |                                     # vault root
