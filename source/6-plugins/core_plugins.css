@@ -280,7 +280,6 @@ body:not(.show-outline-buttons) .workspace-leaf-content[data-type="outline"] .na
 
 /* always display search input box */
 .show-outline-buttons .workspace-leaf-content[data-type="outline"] .search-input-container {
-	/* stylelint-disable-next-line declaration-no-important */
 	display: block !important;
 	flex-grow: 1;
 	margin: 4px 0;

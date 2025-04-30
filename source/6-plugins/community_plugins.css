@@ -122,7 +122,6 @@ img.link-favicon.link-favicon {
 
 /* no favicons in style settings */
 .style-settings-info-text .link-favicon {
-	/* stylelint-disable-next-line declaration-no-important */
 	display: none !important;
 }
 
@@ -130,7 +129,6 @@ img.link-favicon.link-favicon {
 /** Custom Frames
 ──────────────────────────────────────────────────── */
 body:not(.normal-header-bar) .custom-frames-view {
-	/* stylelint-disable-next-line declaration-no-important */
 	padding-top: 1.8rem !important;
 }
 
@@ -144,7 +142,6 @@ body .yank-deco {
 }
 
 /* yank highlight plugin -- https://github.com/aleksey-rowan/obsidian-vim-yank-highlight/blob/master/styles.css */
-/* stylelint-disable-next-line keyframes-name-pattern */
 @keyframes yankedHighlight {
 	10% {
 		color: var(--interactive-normal);
@@ -166,7 +163,6 @@ body .yank-deco {
 }
 
 body .various-complements__suggestion-item {
-	/* stylelint-disable-next-line declaration-no-important */
 	padding: 4px 6px !important;
 }
 
@@ -194,7 +190,6 @@ body .various-complements__suggestion-item {
 /** Obsidian Git
 ──────────────────────────────────────────────────── */
 .obsidian-git-statusbar-status > div:nth-child(2) {
-	/* stylelint-disable-next-line declaration-no-important */
 	margin-left: 0 !important;
 }
 
@@ -457,7 +452,7 @@ body .another-quick-switcher__item__description {
 /* enlarge floating window */
 .prompt.another-quick-switcher__floating-prompt {
 	max-height: 80vh;
-	top: 10vh !important; /* stylelint-disable-line declaration-no-important */
+	top: 10vh !important;
 	min-width: 600px;
 }
 

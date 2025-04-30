@@ -55,7 +55,6 @@
 		.cm-tag-summary,
 		.cm-tag-todo
 	) {
-	/* stylelint-disable-next-line no-unknown-custom-properties */
 	border-radius: var(--tag-radius);
 	color: hsl(0 0% 100%);
 	font-weight: 700;

@@ -66,7 +66,6 @@ div#select-projects select {
 		margin-left: 0;
 	}
 
-	/* stylelint-disable declaration-no-important */
 	&[data-scene-indent="0"] {
 		padding-left: 6px !important;
 	}
@@ -86,7 +85,6 @@ div#select-projects select {
 	&[data-scene-indent="4"] {
 		padding-left: calc(var(--longform-indent-size) * 4) !important;
 	}
-	/* stylelint-enable declaration-no-important */
 
 	&.selected,
 	&.selected .longform-scene-number {

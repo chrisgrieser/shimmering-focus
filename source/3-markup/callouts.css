@@ -18,7 +18,6 @@
 	padding: 3px 6px;
 	background-color: rgb(var(--callout-color), 15%);
 	border-bottom: var(--callout-border-width)
-		/* stylelint-disable-next-line color-function-notation */
 		solid rgb(var(--callout-color), var(--callout-border-opacity));
 }
 

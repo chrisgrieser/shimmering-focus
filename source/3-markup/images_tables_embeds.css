@@ -11,7 +11,6 @@
 /* make lists in tables take up less space */
 .markdown-rendered table :is(ul, ol) {
 	line-height: 1.1;
-	/* stylelint-disable-next-line declaration-no-important */
 	margin-block: 0 0 !important;
 	margin-top: 0;
 	margin-bottom: 0;
@@ -110,9 +109,7 @@ body:not(.no-image-alttext-caption) .image-embed::after {
 .markdown-source-view.mod-cm6 .cm-content > img,
 .view-content .image-embed img:not(.emoji) {
 	display: block;
-	/* stylelint-disable-next-line declaration-no-important */
 	margin-right: auto !important;
-	/* stylelint-disable-next-line declaration-no-important */
 	margin-left: auto !important;
 }
 
