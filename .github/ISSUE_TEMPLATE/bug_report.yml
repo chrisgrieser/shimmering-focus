@@ -23,7 +23,7 @@ body:
         - label: The bug is about Obsidian desktop, Obsidian mobile is not supported by this theme.
           required: true
         - label:
-            My Obsidian installer version 1.1.9 or later. If not, please update first. You can find
+            My Obsidian installer version is 1.1.9 or later. If not, please update first. You can find
             the version in the `About` tab of the Obsidian settings.
           required: true
   - type: textarea
