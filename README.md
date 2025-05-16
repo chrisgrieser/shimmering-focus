@@ -73,6 +73,13 @@ Plugin](https://obsidian.md/plugins?id=obsidian-style-settings) is installed,
 - Toggle readable line length (requires the `Readable line length` setting in
   Obsidian to be enabled.)
 
+### Settings for writers
+- Add `cssclasses: writing` to your frontmatter to enable writing-specific
+  styling for that note, such as a serif font and justified text. The same
+  styling is also applied to all scenes from the [longform plugin](http://github.com/kevboh/longform).
+- You can customize the styling with the [Style Settings
+  Plugin](https://obsidian.md/plugins?id=obsidian-style-settings).
+
 ## Advanced customization
 
 ### Create your own color scheme
