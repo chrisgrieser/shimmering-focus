@@ -18,7 +18,9 @@ body:
             snippet](https://help.obsidian.md/How+to/Add+custom+styles.md#Use+Themes+and/or+CSS+snippets)?)
           required: true
         - label:
-            The request is about Obsidian desktop, Obsidian mobile is not supported by this theme.
+            The request is about Obsidian desktop. (Obsidian mobile is not supported by this theme.)
+          required: true
+        - label: I have searched the existing issues for this theme.
           required: true
   - type: textarea
     id: feature-requested
