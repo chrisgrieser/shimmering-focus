@@ -188,7 +188,6 @@ body {
 	--nav-indentation-guide-color: var(--text-faint);
 
 	/* Embeds */
-	--embed-background: var(--bg2);
 	--embed-border: 4px double var(--basic-border-color);
 	--embed-border-start: var(--embed-border);
 	--embed-border-end: var(--embed-border);

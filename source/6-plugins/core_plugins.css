@@ -284,3 +284,10 @@ body:not(.show-outline-buttons) .workspace-leaf-content[data-type="outline"] .na
 	flex-grow: 1;
 	margin: 4px 0;
 }
+/* ────────────────────────────────────────────────────────────────────────── */
+/* footnotes view */
+
+/* alternating row colors */
+.footnotes-view .footnotes-list .footnote-list-item:nth-child(odd) {
+	background-color: var(--a-row);
+}
