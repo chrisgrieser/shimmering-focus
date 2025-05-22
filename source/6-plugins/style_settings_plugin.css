@@ -100,6 +100,17 @@ body
 	color: var(--text-muted);
 }
 
+/* fold indicators */
+.style-settings-collapse-indicator > .svg-icon {
+	width: 0.6em;
+	height: 0.6em;
+	stroke-width: 4px;
+
+	&:hover {
+		stroke: var(--icon-color-hover);
+	}
+}
+
 /* ───────────────────────────────────────────────── */
 /** Style Settings: As Tab
 ──────────────────────────────────────────────────── */
@@ -110,7 +121,7 @@ body
 }
 
 .workspace-leaf-content[data-type="style-settings"] .view-content {
-	padding: 40px;
+	padding: 30px;
 }
 
 /* FIX for https://github.com/mgmeyers/obsidian-style-settings/issues/104 */
