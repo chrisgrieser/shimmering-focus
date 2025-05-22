@@ -349,11 +349,6 @@ settings:
     max: 100
     step: 1
     format: "%"
-  - id: no-codeblock-line-numbers
-    title: Turn off line numbers in code blocks (edit mode)
-    description: By default, this theme adds line numbers to code blocks in edit mode.
-    type: class-toggle
-    default: false
   - id: file-line-width
     title: Line length
     description:

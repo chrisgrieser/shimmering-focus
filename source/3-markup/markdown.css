@@ -248,62 +248,7 @@ div.HyperMD-codeblock-bg:not(.HyperMD-codeblock-begin-bg) {
 	}
 }
 
-/* Code Block: Line Numbers in Edit Mode */
-body:not(.no-codeblock-line-numbers) {
-	.HyperMD-codeblock-begin {
-		counter-reset: codeblock-line-numbers;
-	}
-
-	.HyperMD-codeblock.cm-line:not(.HyperMD-codeblock-begin, .HyperMD-codeblock-end) {
-		padding-left: 2.8em;
-	}
-
-	.HyperMD-codeblock:not(.HyperMD-codeblock-begin, .HyperMD-codeblock-end)::before {
-		position: absolute;
-		left: 0;
-		width: 1.7em;
-		height: 100%; /* ensures border closes w/ wrapped lines */
-		padding-right: 1.4em; /* space is needed for collapse indicators */
-		font-size: 0.75em;
-		line-height: 2;
-		color: var(--text-muted);
-		text-align: right;
-		content: counter(codeblock-line-numbers);
-		counter-increment: codeblock-line-numbers;
-		background-color: var(--bg2);
-	}
-
-	.HyperMD-codeblock-end .cm-formatting-code-block {
-		padding: 2px 3.5px;
-		margin-left: -4px;
-		border-bottom-left-radius: var(--codeblock-roundness);
-	}
-
-	.is-live-preview .HyperMD-codeblock-end span:nth-child(2)::before {
-		padding: 2px 0.85em;
-		margin-left: -4px;
-		content: " ";
-		background-color: var(--bg2);
-		border-bottom-left-radius: var(--radius-s);
-	}
-
-	.HyperMD-codeblock-end .cm-formatting-code-block:first-child {
-		/* "first-child" ensures that indented code blocks (e.g. in lists) do not look off */
-		background-color: var(--bg2);
-	}
-}
-
-/* No Wrapping */
-/* .markdown-reading-view ensures that these do not get applied to canvases */
-.markdown-reading-view .markdown-preview-view pre:not(.frontmatter) code {
-	white-space: pre;
-}
-
-.markdown-reading-view .markdown-preview-view pre:not(.frontmatter, [class*="language-"]) {
-	overflow-x: scroll;
-}
-
-/* Syntax Highlighting */
+/* Syntax Highlighting: more contrast */
 body.theme-light {
 	--color-cyan: hsl(179 60% 38%);
 }
