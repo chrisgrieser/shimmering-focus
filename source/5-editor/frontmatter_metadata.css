@@ -46,10 +46,6 @@
 	border-radius: var(--radius-s);
 }
 
-.metadata-property-value :is(.metadata-input-number, .multi-select-container) {
-	padding-left: 2px;
-}
-
 .multi-select-container.multi-select-container .multi-select-input {
 	padding-top: 2px;
 }
@@ -93,11 +89,6 @@
 
 .metadata-properties-heading.is-collapsed .metadata-properties-title {
 	color: var(--text-muted);
-}
-
-.metadata-property-value-item.metadata-property-value-item,
-.metadata-input-longtext {
-	padding-left: 2px;
 }
 
 .metadata-add-button:hover {
@@ -153,14 +144,6 @@ body .metadata-property:hover {
 	opacity: 0;
 }
 
-/* Date Picker */
-/* INFO color of the date picker cannot be changed in a flexible manner
- * https://stackoverflow.com/questions/62162645/change-color-of-chromes-calendar-icon-in-html-date-input
- * */
-.metadata-property-value input:is([type="date"], [type="datetime-local"]) {
-	margin-left: -4px;
-}
-
 /* links in metadata */
 .internal-link:is(.multi-select-pill, .metadata-link-inner) {
 	/* creates single underline instead of double */
@@ -169,9 +152,4 @@ body .metadata-property:hover {
 
 .metadata-link {
 	padding: 0;
-}
-
-/* checkbox in metadata */
-input[type="checkbox"].metadata-input-checkbox {
-	margin-left: 2px;
 }
