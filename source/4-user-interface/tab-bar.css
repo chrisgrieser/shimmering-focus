@@ -140,16 +140,18 @@ body .workspace .mod-root .workspace-tab-header {
 }
 
 /* tab bar height: cannot modify ``--header-height``, since it would also affect the sidebar tabs that are not top */
-.mod-macos :is(.mod-top, .mod-root) .workspace-tab-header-container {
-	height: 35px;
-}
+.mod-macos {
+	:is(.mod-top, .mod-root) .workspace-tab-header-container {
+		height: 35px;
+	}
 
-.mod-macos .workspace-ribbon.mod-left::before {
-	height: 34px;
-}
+	.workspace-ribbon.mod-left::before {
+		height: 34px;
+	}
 
-.mod-macos .workspace-ribbon.mod-left {
-	margin-top: 34px;
+	.workspace-ribbon.mod-left {
+		margin-top: 34px;
+	}
 }
 
 /* ───────────────────────────────────────────────── */
