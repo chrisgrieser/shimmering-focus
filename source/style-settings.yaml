@@ -520,7 +520,7 @@ settings:
   # Plugin-Specific Settings
   - id: plugin-specific-settings
     title: ⚙️ Plugin-specific settings
-    description: File explorer, bookmarks, backlinks, outgoing links, outline
+    description: File explorer, bookmarks, backlinks, outgoing links, outline, bases
     type: heading
     level: 1
     collapsed: true
@@ -569,6 +569,10 @@ settings:
     description:
       By default, the outline plugin buttons for collapsing, expanding, and searching headings are
       hidden. Enable this setting to show a compact version of them.
+    default: false
+    type: class-toggle
+  - id: bases-hide-column-header-icons
+    title: "Bases: Hide column header icons"
     default: false
     type: class-toggle
 
