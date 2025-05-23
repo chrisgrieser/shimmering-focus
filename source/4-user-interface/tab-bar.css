@@ -141,9 +141,10 @@ body .workspace .mod-root .workspace-tab-header {
 
 /* tab bar height: cannot modify ``--header-height``, since it would also affect the sidebar tabs that are not top */
 .mod-macos {
-	:is(.mod-top, .mod-root) .workspace-tab-header-container {
-		height: 35px;
-	}
+	/* PENDING https://discord.com/channels/686053708261228577/716028884885307432/1375473088078282883 */
+	/* :is(.mod-top, .mod-root) .workspace-tab-header-container { */
+	/* 	height: 35px; */
+	/* } */
 
 	.workspace-ribbon.mod-left::before {
 		height: 34px;
