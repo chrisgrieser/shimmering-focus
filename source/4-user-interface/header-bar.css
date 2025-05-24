@@ -56,24 +56,6 @@ body:not(.normal-header-bar, .is-mobile) .workspace-leaf-content:not([data-type=
 			margin-right: 0.75em;
 		}
 	}
-
-	/* Adjustments for BASES core plugin */
-	&[data-type="bases-query"] {
-		.view-header .view-header-title {
-			display: block;
-		}
-		.view-header {
-			z-index: 999;
-		}
-		.view-header-title-container {
-			background-color: var(--bg1);
-			padding: 8px;
-			top: 1.5rem;
-		}
-		.bases-header .query-toolbar {
-			margin-right: 2rem;
-		}
-	}
 }
 
 /* always hide the shading at the end of the header */
