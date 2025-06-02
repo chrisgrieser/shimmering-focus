@@ -2,10 +2,13 @@ blank_issues_enabled: false
 contact_links:
   - name: Obsidian Discord
     url: https://discord.gg/veuWUTm
-    about: "Ask in the channel #appearance for help from the community"
+    about: "Ask in the channel `#appearance` for help from the community."
+  - name: Obsidian Forum
+    url: https://forum.obsidian.md/c/custom-css-theme-design/20
+    about: "Ask in the official Obsidian forum for help from the community."
   - name: Questions
     url: https://github.com/chrisgrieser/shimmering-focus/discussions/categories/q-a
-    about: "For questions regarding the theme"
+    about: "For questions regarding this theme specifically."
   - name: Share your custom colors
     url: https://github.com/chrisgrieser/shimmering-focus/discussions/new?category=share-your-custom-color-schemes
     about: "Share your custom color scheme for Shimmering Focus."
