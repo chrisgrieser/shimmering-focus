@@ -78,7 +78,7 @@ jobs:
           mv -f "temp.md" "Changelog.md"
 
       - name: commit
-        uses: stefanzweifel/git-auto-commit-action@v5
+        uses: stefanzweifel/git-auto-commit-action@v6
         with:
           commit_message: "bump: version bump & changelog update"
           branch: ${{ github.head_ref }}
