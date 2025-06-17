@@ -5,17 +5,14 @@
 		"formatWithErrors": true
 	},
 
-	// not useful for themes
 	"linter": {
 		"rules": {
-			"nursery": {
-				"noDescendingSpecificity": "off"
-			}
+			"style": { "noDescendingSpecificity": "off" } // not useful for themes
 		}
 	},
 
 	"files": {
-		"ignore": ["./theme.css"]
+		"includes": ["**", "!./theme.css"]
 	},
 	"vcs": {
 		"enabled": true,
@@ -23,5 +20,6 @@
 		"useIgnoreFile": true
 	},
 
+	// use the schema from the local biome package installed via `mason`
 	"$schema": "/Users/chrisgrieser/.local/share/nvim/mason/packages/biome/node_modules/@biomejs/biome/configuration_schema.json"
 }

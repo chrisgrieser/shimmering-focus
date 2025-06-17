@@ -165,8 +165,10 @@ button.longform-remove-step-button.longform-remove-step-button.longform-remove-s
 }
 
 /* keep any code smaller */
-.app-container.app-container.app-container.app-container.app-container.app-container
-	:is(.longform-leaf, .writing)
+.app-container.app-container.app-container.app-container.app-container.app-container :is(
+		.longform-leaf,
+		.writing
+	)
 	:is(
 		.frontmatter-container,
 		.cm-hmd-frontmatter,
@@ -187,8 +189,7 @@ body:not(.longform-left-aligned) :is(.writing, .longform-leaf) {
 }
 
 /* stuff not to justify */
-body:not(.longform-left-aligned)
-	:is(.writing, .longform-leaf)
+body:not(.longform-left-aligned) :is(.writing, .longform-leaf)
 	:is(
 		.HyperMD-codeblock,
 		.HyperMD-header,
@@ -201,8 +202,7 @@ body:not(.longform-left-aligned)
 }
 
 /* headings */
-.app-container
-	:is(.writing, .longform-leaf)
+.app-container :is(.writing, .longform-leaf)
 	:is(h1, h2, h3, h4, h5, h6, .cm-header, .inline-title) {
 	font-family: var(--longform-font-text-theme);
 }
@@ -245,8 +245,7 @@ body:not(.is-popout-window)
 }
 
 /* de-emphasized tasks */
-body.longform-tasks-different
-	:is(.writing, .longform-leaf)
+body.longform-tasks-different :is(.writing, .longform-leaf)
 	:is(.HyperMD-task-line, .HyperMD-task-line > *, ul.contains-task-list) {
 	color: var(--text-faint);
 }
@@ -264,8 +263,9 @@ body.longform-tasks-different
 - Supports Word Count Core Plugin + Better Word Count Community Plugin.
 - Caveat: also triggered when such a note is open is in a non-active tab, restricting
 this to the active tab would require nested `:has()` which isn't supported */
-.wordcount-only-when-writing:not(.is-mobile)
-	.horizontal-main-container:not(:has(:is(.writing, .longform-leaf)))
+.wordcount-only-when-writing:not(.is-mobile) .horizontal-main-container:not(
+		:has(:is(.writing, .longform-leaf))
+	)
 	+ .status-bar
 	:is(.plugin-word-count, .plugin-better-word-count) {
 	display: none;

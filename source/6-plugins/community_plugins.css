@@ -322,22 +322,22 @@ body .another-quick-switcher__status__count-input {
 
 /* selected */
 .suggestion-item.is-selected
-	:is(
-		.another-quick-switcher__item__icon,
-		.another-quick-switcher__item__directory,
-		.another-quick-switcher__item__description
-	) {
+:is(
+	.another-quick-switcher__item__icon,
+	.another-quick-switcher__item__directory,
+	.another-quick-switcher__item__description
+) {
 	color: var(--text-accent);
 	filter: saturate(60%);
 }
 
 /* hovered */
 .suggestion-item:hover
-	:is(
-		.another-quick-switcher__item__icon,
-		.another-quick-switcher__item__directory,
-		.another-quick-switcher__item__description
-	) {
+:is(
+	.another-quick-switcher__item__icon,
+	.another-quick-switcher__item__directory,
+	.another-quick-switcher__item__description
+) {
 	color: var(--text-accent-hover);
 	filter: saturate(60%);
 }

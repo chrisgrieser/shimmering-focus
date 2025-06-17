@@ -50,18 +50,14 @@ body:not(.show-close-buttons, .is-mobile) .modal-close-button {
 
 /* min width not applied to linter fields and to color picker input */
 .mod-settings
-	input:is([type="text"], [type="search"]):not(
-		.linter-custom-regex-replacement-flags,
-		.pcr-result
-	) {
+input:is([type="text"], [type="search"]):not(.linter-custom-regex-replacement-flags, .pcr-result) {
 	min-width: 250px;
 	background-color: var(--bg1);
 }
 
 /* thicker "community plugins", "hotkey" & "appearance" */
 /* via non-last-child b/c the settings search plugin adds a group in front */
-.vertical-tab-header-group:nth-last-child(3)
-	.vertical-tab-header-group-items
+.vertical-tab-header-group:nth-last-child(3) .vertical-tab-header-group-items
 	.vertical-tab-nav-item:is(:nth-child(4), :nth-child(5), :last-child) {
 	font-weight: 900;
 }
@@ -203,8 +199,7 @@ body .vertical-tab-content {
 /** Remove Color Picker from Settings
 ──────────────────────────────────────────────────── */
 
-.mod-settings
-	.vertical-tab-content
+.mod-settings .vertical-tab-content
 	> .setting-item:nth-child(2)
 	> .setting-item-control
 	> .extra-setting-button

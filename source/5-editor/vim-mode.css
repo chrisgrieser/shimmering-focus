@@ -27,8 +27,7 @@
 }
 
 /* complicated selector to FIX https://discord.com/channels/686053708261228577/989603365606531104/1320397699723300994 */
-.cm-editor:not(.cm-focused)
-	.cm-sizer:not(:has(.cm-table-widget.has-focus))
+.cm-editor:not(.cm-focused) .cm-sizer:not(:has(.cm-table-widget.has-focus))
 	+ .cm-vimCursorLayer
 	.cm-fat-cursor {
 	color: transparent;

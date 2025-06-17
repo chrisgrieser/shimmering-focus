@@ -2,8 +2,7 @@
 /** Hide Various Elements
 ──────────────────────────────────────────────────── */
 
-body.hide-vault-switcher-and-settings:not(.is-mobile)
-	.workspace-split.mod-left-split
+body.hide-vault-switcher-and-settings:not(.is-mobile) .workspace-split.mod-left-split
 	.workspace-sidedock-vault-profile,
 body:not(.show-new-tab-button, .is-mobile) .workspace-tab-header-new-tab,
 body:not(.show-close-buttons, .is-mobile)
@@ -25,16 +24,16 @@ body:not(.show-tab-list-button) .workspace-tab-header-tab-list {
 /** Hide Tab bar when only tab
 ──────────────────────────────────────────────────── */
 
-body:not(.normal-tab-bar, .is-mobile)
-	.mod-root
+body:not(.normal-tab-bar, .is-mobile) .mod-root
 	.workspace-tab-header-container:not(:has(.workspace-tab-header + .workspace-tab-header)) {
 	display: none;
 }
 
 /* MACOS: reduce height of RIGHT sidebar when tab bar hidden */
 /* WINDOWS: reduce height of LEFT sidebar when tab bar hidden */
-body.mod-macos:not(.normal-tab-bar, .show-sidebar-header-buttons)
-	.mod-root:not(:has(.workspace-tab-header + .workspace-tab-header))
+body.mod-macos:not(.normal-tab-bar, .show-sidebar-header-buttons) .mod-root:not(
+		:has(.workspace-tab-header + .workspace-tab-header)
+	)
 	+ .mod-right-split
 	.mod-top-right-space
 	.workspace-tab-header-container:not(:hover),
@@ -47,8 +46,7 @@ body.mod-windows:not(.normal-tab-bar, .show-sidebar-header-buttons)
 }
 
 /* hide inline title when *more* than one tab */
-body:not(.is-mobile).hide-inline-title-when-more-than-one-tab
-	.mod-root
+body:not(.is-mobile).hide-inline-title-when-more-than-one-tab .mod-root
 	.workspace-tab-header-container:has(.workspace-tab-header + .workspace-tab-header)
 	+ .workspace-tab-container
 	.inline-title {

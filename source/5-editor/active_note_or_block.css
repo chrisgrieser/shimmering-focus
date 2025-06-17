@@ -1,8 +1,7 @@
 /* ───────────────────────────────────────────────── */
 /** Active / Inactive Note
 ──────────────────────────────────────────────────── */
-body
-	.mod-root
+body .mod-root
 	.workspace-tabs:not(.mod-active, :only-of-type)
 	.workspace-leaf-content[data-type="markdown"] {
 	opacity: var(--inactive-pane-opacity);
@@ -10,8 +9,7 @@ body
 }
 
 /* if there is more than one pane, highlight the currently focused one */
-.mod-root
-	.workspace-tabs:not(:only-of-type, .mod-stacked).mod-active
+.mod-root .workspace-tabs:not(:only-of-type, .mod-stacked).mod-active
 	.workspace-tab-header-container {
 	border-bottom: 2px solid var(--color-accent);
 }
@@ -25,7 +23,7 @@ body
 ──────────────────────────────────────────────────── */
 
 body:not(.no-active-line-highlight, .active-line-background)
-	.cm-active:not(.HyperMD-quote, .HyperMD-header, .HyperMD-codeblock)::before {
+.cm-active:not(.HyperMD-quote, .HyperMD-header, .HyperMD-codeblock)::before {
 	position: absolute;
 	left: -1.125em;
 	height: 100%;

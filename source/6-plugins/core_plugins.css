@@ -7,8 +7,7 @@
 }
 
 /* hide nav buttons */
-body:not(.show-bookmark-controls)
-	.workspace-leaf-content[data-type="bookmarks"]
+body:not(.show-bookmark-controls) .workspace-leaf-content[data-type="bookmarks"]
 	:is(.nav-buttons-container, .nav-header) {
 	display: none;
 }
@@ -43,15 +42,13 @@ body:not(.show-bookmark-icons) .bookmark.tree-item-self .tree-item-icon {
 /** Canvas
 ──────────────────────────────────────────────────── */
 /* moved further down to avoid conflict with canvas controls */
-body:not(.normal-header-bar, .is-mobile)
-	.workspace-leaf-content[data-type="canvas"]
+body:not(.normal-header-bar, .is-mobile) .workspace-leaf-content[data-type="canvas"]
 	.view-header-title-container {
 	top: 22rem;
 }
 
 /* align them properly for canvas controls */
-body:not(.normal-header-bar, .is-mobile)
-	.workspace-leaf-content[data-type="canvas"]
+body:not(.normal-header-bar, .is-mobile) .workspace-leaf-content[data-type="canvas"]
 	:is(.view-header .view-actions, .view-header-title-container) {
 	margin-right: 0.4rem;
 }
@@ -99,15 +96,14 @@ body:not(.show-close-buttons, .is-mobile) .search-input-container input:not(:pla
 }
 
 /* hide navigation buttons */
-body:not(.show-file-explorer-navigation)
-	.workspace-leaf-content[data-type="file-explorer"]
+body:not(.show-file-explorer-navigation) .workspace-leaf-content[data-type="file-explorer"]
 	.nav-header {
 	display: none;
 }
 
 /* optionally hide attachment folders */
 .hide-attachment-folders
-	.nav-folder-title:is([data-path$="/attachments" i], [data-path="attachments" i]) {
+.nav-folder-title:is([data-path$="/attachments" i], [data-path="attachments" i]) {
 	display: none;
 }
 
@@ -160,8 +156,7 @@ body:not(.normal-out-back-links) :is(.backlink-pane, .outgoing-link-pane) > .tre
 }
 
 /* minimal inline backlinks pane */
-body:not(.classic-inline-backlinks)
-	.embedded-backlinks
+body:not(.classic-inline-backlinks) .embedded-backlinks
 	:is(
 		.nav-buttons-container,
 		.backlink-pane > .tree-item-self,
@@ -221,15 +216,13 @@ body:not(.classic-inline-backlinks) :is(.writing, .longform-leaf) .embedded-back
 ──────────────────────────────────────────────────── */
 
 /* bolden folded headings */
-.workspace-leaf-content[data-type="outline"]
-	.tree-item.is-collapsed
+.workspace-leaf-content[data-type="outline"] .tree-item.is-collapsed
 	> .tree-item-self.tree-item-self.tree-item-self {
 	font-weight: 700;
 }
 
 /* hide fold icons when not hovered or collapsed */
-.workspace-leaf-content[data-type="outline"]
-	.tree-item:not(:hover)
+.workspace-leaf-content[data-type="outline"] .tree-item:not(:hover)
 	.tree-item-icon.collapse-icon:not(.is-collapsed) {
 	display: none;
 }
@@ -271,8 +264,7 @@ body:not(.show-outline-buttons) .workspace-leaf-content[data-type="outline"] .na
 }
 
 /* hide search button */
-.show-outline-buttons
-	.workspace-leaf-content[data-type="outline"]
+.show-outline-buttons .workspace-leaf-content[data-type="outline"]
 	.nav-buttons-container
 	> :first-child {
 	display: none;

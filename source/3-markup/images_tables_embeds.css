@@ -32,7 +32,7 @@ body .markdown-rendered tbody tr:nth-child(odd):hover {
 
 /* automatically turn off readable line length when there is a table */
 .unrestricted-line-length-tables:not(.is-mobile)
-	:is(.markdown-source-view, .markdown-preview-view):has(table, .HyperMD-table-2) {
+:is(.markdown-source-view, .markdown-preview-view):has(table, .HyperMD-table-2) {
 	--file-line-width: 100%;
 }
 
@@ -51,8 +51,7 @@ body .markdown-rendered tbody tr:nth-child(odd):hover {
 ──────────────────────────────────────────────────── */
 /* .workspace-leaf-content so images in modal aren't affected, :not([data-type="image"]) so
  * images as files aren't affected */
-body:not(.is-mobile, .max-image-size-toggle)
-	.workspace-leaf-content:not([data-type="image"])
+body:not(.is-mobile, .max-image-size-toggle) .workspace-leaf-content:not([data-type="image"])
 	img:not(:active),
 body:not(.is-mobile, .max-image-size-toggle) .oz-image-widget-cm6 > img:not(:active) {
 	max-width: calc(var(--image-size) * 1%);
@@ -75,15 +74,15 @@ body:not(.is-mobile, .max-image-size-toggle) .oz-image-widget-cm6 > img:not(:act
 /* Image Alt as caption
 (except when no explicit alt is provided and urls are the alt text) */
 body:not(.no-image-alttext-caption)
-	.image-embed[alt]:not(
-		[alt$=".png"],
-		[alt$=".jpg"],
-		[alt$=".jpeg"],
-		[alt$=".tiff"],
-		[alt$=".heic"],
-		[alt$=".icns"],
-		[alt$=".webp"]
-	)::after {
+.image-embed[alt]:not(
+	[alt$=".png"],
+	[alt$=".jpg"],
+	[alt$=".jpeg"],
+	[alt$=".tiff"],
+	[alt$=".heic"],
+	[alt$=".icns"],
+	[alt$=".webp"]
+)::after {
 	padding-top: 2px;
 	margin-bottom: 1em;
 	font-family: var(--font-interface);

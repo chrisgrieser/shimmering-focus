@@ -36,8 +36,7 @@ body {
 /* ────────────────────────────────────────────────────────────────────────── */
 
 /* Hide background color sliders when not using the default color scheme */
-body:not(.colorscheme-gamma)
-	.style-settings-container
+body:not(.colorscheme-gamma) .style-settings-container
 	.setting-item:is([data-id="bg-hue-light"], [data-id="bg-hue-dark"]) {
 	display: none;
 }

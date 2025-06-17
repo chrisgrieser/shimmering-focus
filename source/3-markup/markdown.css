@@ -85,8 +85,7 @@ body:not(.show-urls) .cm-line:not(.cm-active) .cm-string.cm-url,
 /* ───────────────────────────────────────────────── */
 /** Fold external URLs (Source Mode)
 ──────────────────────────────────────────────────── */
-body:not(.show-urls)
-	.cm-s-obsidian:not(.is-live-preview)
+body:not(.show-urls) .cm-s-obsidian:not(.is-live-preview)
 	.cm-line:not(.cm-active)
 	.cm-string.cm-url:not(.cm-formatting) {
 	font-size: 0;
@@ -106,8 +105,7 @@ body:not(.show-urls)
 }
 
 /* so quickly scrolling through a list of links does not expand the URLs */
-body:not(.show-urls)
-	.cm-s-obsidian:not(.is-live-preview)
+body:not(.show-urls) .cm-s-obsidian:not(.is-live-preview)
 	.cm-line.cm-active
 	.cm-string.cm-url:not(.cm-formatting)::after,
 body:not(.show-urls)
@@ -352,8 +350,7 @@ body:not(.angular-shapes) .is-live-preview .HyperMD-quote + .HyperMD-quote::befo
 }
 
 /* HACK source-mode: prevent rounded corners with consecutive block quotes */
-body:not(.angular-shapes)
-	.markdown-source-view:not(.is-live-preview)
+body:not(.angular-shapes) .markdown-source-view:not(.is-live-preview)
 	.HyperMD-quote
 	+ .HyperMD-quote::before {
 	position: absolute;
@@ -524,8 +521,7 @@ body .HyperMD-footnote.cm-line.cm-line,
 ──────────────────────────────────────────────────── */
 /* needs this selector, so it does not affect spaces in the table editor
  * (Obsidian 1.5), which only differs at the level of `.view-content` */
-body:not(.hide-trailing-whitespace)
-	.view-content
+body:not(.hide-trailing-whitespace) .view-content
 	> .cm-s-obsidian
 	> div
 	> .cm-scroller

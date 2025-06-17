@@ -22,10 +22,9 @@
 }
 
 /* When both sidebars are hidden, also hide status bar */
-.hidden-sidebars-hidden-statusbar:not(.is-mobile)
-	.horizontal-main-container:has(.mod-left-split.is-sidedock-collapsed):has(
-		.mod-right-split.is-sidedock-collapsed
-	)
+.hidden-sidebars-hidden-statusbar:not(.is-mobile) .horizontal-main-container:has(
+		.mod-left-split.is-sidedock-collapsed
+	):has(.mod-right-split.is-sidedock-collapsed)
 	+ .status-bar {
 	display: none;
 }

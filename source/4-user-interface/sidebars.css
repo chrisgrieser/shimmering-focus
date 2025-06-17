@@ -93,8 +93,7 @@ body:not(.show-sidebar-toggle-buttons) .sidebar-toggle-button {
 }
 
 /* move the tab-list button to the space now free from the "right sidebar toggle" */
-body.mod-macos.is-hidden-frameless:not(.is-popout-window)
-	.workspace
+body.mod-macos.is-hidden-frameless:not(.is-popout-window) .workspace
 	.workspace-tabs.mod-top-right-space
 	.workspace-tab-header-container {
 	padding-right: 0;
