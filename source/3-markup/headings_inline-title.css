@@ -14,7 +14,7 @@ body p {
 }
 
 .inline-title.inline-title,
-.cm-header.cm-header,
+.HyperMD-header.HyperMD-header,
 .markdown-rendered.markdown-rendered :is(h1, h2, h3, h4, h5, h6) {
 	font-weight: 700;
 	letter-spacing: var(--heading-letter-spacing);
@@ -34,7 +34,7 @@ body:not(.no-alternating-header-colors) .view-content :is(h1, h3, h5) {
 
 /* Live Preview Heading Level Indicator */
 body:not(.no-lp-heading-level-indicator) .is-live-preview {
-	& .cm-header::before {
+	& .HyperMD-header::before {
 		position: relative;
 		bottom: 1px;
 		left: -2px;
@@ -49,12 +49,12 @@ body:not(.no-lp-heading-level-indicator) .is-live-preview {
 
 	/* biome-ignore format: more condensed */
 	& .cm-line:not(.cm-active) {
-		& > .cm-header-1::before { content: "H1" }
-		& > .cm-header-2::before { content: "H2" }
-		& > .cm-header-3::before { content: "H3" }
-		& > .cm-header-4::before { content: "H4" }
-		& > .cm-header-5::before { content: "H5" }
-		& > .cm-header-6::before { content: "H6" }
+		&.HyperMD-header-1::before { content: "H1" }
+		&.HyperMD-header-2::before { content: "H2" }
+		&.HyperMD-header-3::before { content: "H3" }
+		&.HyperMD-header-4::before { content: "H4" }
+		&.HyperMD-header-5::before { content: "H5" }
+		&.HyperMD-header-6::before { content: "H6" }
 	}
 }
 
