@@ -1,0 +1,6 @@
+SHIMMERING FOCUS 
+by Chris Grieser aka @pseudometa
+
+MIT License
+
+The unminified original code can be found in the theme's repository: https://github.com/chrisgrieser/shimmering-focus/

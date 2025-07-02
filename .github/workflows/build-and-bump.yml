@@ -5,7 +5,7 @@ on:
     branches: [main]
     paths:
       - source/**
-      - .github/workflows/build-and-bump.yml 
+      - .github/workflows/build-and-bump.yml # this file itself
   workflow_dispatch:
 
 permissions:
@@ -35,17 +35,26 @@ jobs:
           # Due to globbing, the source files are inserted in alphabetical order.
           # To keep things predictable, they are simply number in the order they
           # should be included in.
-          cat ./source/**/*.css > ./theme.css
+          cat ./source/**/*.css > ./temp.css
 
           # minification & syntax-lowering https://lightningcss.dev/transpilation.html
           npm install
           export BROWSERSLIST="chrome 108" # lowers syntax to before css-nesting https://caniuse.com/css-nesting
           npx lightningcss --minify --browserslist \
-            --output-file="./theme.css" -- "./theme.css" || exit 1
+            --output-file="./temp.css" -- "./temp.css" || exit 1
 
-          # append style-settings (last, so not removed by minification)
-          cat <(echo && echo "/* @settings") ./source/style-settings.yaml <(echo "*/") \
-            >> ./theme.css
+          # merge header, css code, and style settings into `theme.css`
+          echo "/*" >> ./theme.css
+          cat ./source/header.txt >> ./theme.css
+          echo "*/" >> ./theme.css
+
+          cat ./temp.css >> ./theme.css 
+          rm temp.css
+
+          echo "" >> ./theme.css
+          echo "/* @settings" >> ./theme.css
+          cat ./source/style-settings.yaml >> theme.css
+          echo "*/" >> theme.css
 
       - name: check for unsupported features
         run: |
