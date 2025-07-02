@@ -33,49 +33,32 @@ body:not(.no-alternating-header-colors) .view-content :is(h1, h3, h5) {
 /* ────────────────────────────────────────────────────────────────────────── */
 
 /* Live Preview Heading Level Indicator */
-body:not(.no-lp-heading-level-indicator) .is-live-preview .cm-header::before {
-	position: relative;
-	bottom: 1px;
-	left: -2px;
-	padding-right: 4px;
-	padding-left: 4px;
-	font-family: var(--font-monospace);
-	font-size: 0.8rem;
-	font-style: normal;
-	line-height: 1em;
-	color: var(--text-muted);
-}
-
-body:not(.no-lp-heading-level-indicator) .is-live-preview .cm-line:not(.cm-active) {
-	& > .cm-header-1::before {
-		content: "H1";
+body:not(.no-lp-heading-level-indicator) .is-live-preview {
+	& .cm-header::before {
+		position: relative;
+		bottom: 1px;
+		left: -2px;
+		padding-right: 4px;
+		padding-left: 4px;
+		font-family: var(--font-monospace);
+		font-size: 0.8rem;
+		font-style: normal;
+		line-height: 1em;
+		color: var(--text-muted);
 	}
 
-	& > .cm-header-2::before {
-		content: "H2";
-	}
-
-	& > .cm-header-3::before {
-		content: "H3";
-	}
-
-	& > .cm-header-4::before {
-		content: "H4";
-	}
-
-	& > .cm-header-5::before {
-		content: "H5";
-	}
-
-	& > .cm-header-6::before {
-		content: "H6";
+	/* biome-ignore format: more condensed */
+	& .cm-line:not(.cm-active) {
+		& > .cm-header-1::before { content: "H1" }
+		& > .cm-header-2::before { content: "H2" }
+		& > .cm-header-3::before { content: "H3" }
+		& > .cm-header-4::before { content: "H4" }
+		& > .cm-header-5::before { content: "H5" }
+		& > .cm-header-6::before { content: "H6" }
 	}
 }
 
-/* FIX only first header element gets the prefix */
-body:not(.no-lp-heading-level-indicator) .is-live-preview .cm-header ~ .cm-header::before {
-	display: none;
-}
+/* ────────────────────────────────────────────────────────────────────────── */
 
 /* Headers with background colors */
 body:not(.no-heading-background) .markdown-source-view .cm-line.HyperMD-header,
@@ -84,7 +67,5 @@ body:not(.no-heading-background) .markdown-preview-view :is(h1, h2, h3, h4, h5, 
 	border: var(--thin-border);
 	border-radius: var(--radius-s);
 	padding-left: 6px;
-
-	/* remove padding of first heading */
-	padding-top: 0;
+	padding-top: 0; /* remove padding of first heading */
 }
