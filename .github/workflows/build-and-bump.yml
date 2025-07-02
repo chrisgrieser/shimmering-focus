@@ -16,7 +16,7 @@ permissions:
 # 1. for lightning-css (also lowers syntax to before css-nesting) https://caniuse.com/css-nesting
 # 2. for doiuse
 env:
-  BROWSERLIST: "chrome 108"
+  BROWSERSLIST: "chrome 108"
 
 #───────────────────────────────────────────────────────────────────────────────
 
@@ -46,7 +46,6 @@ jobs:
 
           # minification & syntax-lowering https://lightningcss.dev/transpilation.html
           npm install
-          export BROWSERSLIST="{{ env.BROWSERSLIST }}}"
           echo "Syntax lowering for: $BROWSERSLIST"
           npx lightningcss --minify --browserslist \
             --output-file="./temp.css" -- "./temp.css" || exit 1
@@ -71,7 +70,6 @@ jobs:
 
       - name: check for unsupported features
         run: |
-          export BROWSERSLIST="{{ env.BROWSERSLIST }}}"
           echo "doiuse check for: $BROWSERSLIST"
           violations=$(npx doiuse --browsers="$BROWSERSLIST" \
             --config="./.doiuse-ignore.json" theme.css)
@@ -95,11 +93,11 @@ jobs:
 
       - name: update changelog
         run: |
-          git log :/bump.. --format="- %cs %s" | # commits since last `bump` commit
-          	grep -vE "build|ci||style|bump" | # don't include internal changes
-          	sed -E "s/^(- [0-9-]+) ([^ ]+): /\1 **\2**: /" >> "temp.md" # bold cc keyword
-          grep -v "^$" "Changelog.md" >> "temp.md"
-          mv -f "temp.md" "Changelog.md"
+          git log --format="- %cs %s" |
+            grep --extended-regexp "\w+:" | # require cc keyword
+            grep --extended-regexp --invert-match "(build|ci|style|bump):" | # exclude internal changes
+          	sed -E "s/^(- [0-9-]+) ([^ ]+): /\1 **\2**: /" | # bold cc keyword
+            grep --invert-match "^$" > "Changelog.md"
 
       - name: commit
         uses: stefanzweifel/git-auto-commit-action@v6
