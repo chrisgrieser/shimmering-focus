@@ -22,21 +22,24 @@ body:not(.show-sidebar-header-buttons) {
 	--sidebar-tabs-unhovered-height: 10px;
 }
 
-/* WINDOWS */
-/* fix sidebar header buttons on Windows not being clickable see #247 */
-body.mod-windows:not(.show-sidebar-header-buttons) .titlebar {
-	height: 35px;
+/* WINDOWS / LINUX */
+/* fix sidebar header buttons not being clickable see #247 */
+body:is(.mod-windows, .mod-linux) {
+	&:not(.show-sidebar-header-buttons) .titlebar {
+		height: 35px;
+	}
+
+	&.is-hidden-frameless:not(.is-grabbing, .is-fullscreen, .show-sidebar-header-buttons)
+		.mod-top
+		.workspace-tab-header-container {
+		-webkit-app-region: no-drag;
+	}
 }
 
 /* sync background of windows buttons with sidebar color #329 */
-body.mod-windows.is-hidden-frameless:not(.is-fullscreen) .titlebar-button-container.mod-right {
+body:is(.mod-windows, .mod-linux).is-hidden-frameless:not(.is-fullscreen)
+.titlebar-button-container.mod-right {
 	background-color: transparent;
-}
-
-.is-hidden-frameless.mod-windows:not(.is-grabbing, .is-fullscreen, .show-sidebar-header-buttons)
-	.mod-top
-	.workspace-tab-header-container {
-	-webkit-app-region: no-drag;
 }
 
 body:not(.show-sidebar-header-buttons)
