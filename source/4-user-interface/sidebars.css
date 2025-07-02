@@ -28,6 +28,11 @@ body.mod-windows:not(.show-sidebar-header-buttons) .titlebar {
 	height: 35px;
 }
 
+/* sync background of windows buttons with sidebar color #329 */
+body.mod-windows.is-hidden-frameless:not(.is-fullscreen) .titlebar-button-container.mod-right {
+	background-color: transparent;
+}
+
 .is-hidden-frameless.mod-windows:not(.is-grabbing, .is-fullscreen, .show-sidebar-header-buttons)
 	.mod-top
 	.workspace-tab-header-container {
