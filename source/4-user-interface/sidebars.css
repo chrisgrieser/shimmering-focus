@@ -18,10 +18,6 @@
 /** Sidebar Headers Hidden (Tab Headers)
 ──────────────────────────────────────────────────── */
 
-body:not(.show-sidebar-header-buttons) {
-	--sidebar-tabs-unhovered-height: 10px;
-}
-
 /* WINDOWS / LINUX */
 /* fix sidebar header buttons not being clickable see #247 */
 body:is(.mod-windows, .mod-linux) {
@@ -60,6 +56,7 @@ body:not(.show-sidebar-header-buttons)
 	:is(.mod-left-split, .mod-right-split)
 	.workspace-tabs:not(.mod-top)
 	.workspace-tab-header-container:not(:hover) {
+	--sidebar-tabs-unhovered-height: 10px;
 	height: var(--sidebar-tabs-unhovered-height);
 }
 

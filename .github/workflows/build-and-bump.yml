@@ -13,6 +13,13 @@ permissions:
 
 #───────────────────────────────────────────────────────────────────────────────
 
+# 1. for lightning-css (also lowers syntax to before css-nesting) https://caniuse.com/css-nesting
+# 2. for doiuse
+env:
+  BROWSERLIST: "chrome 108"
+
+#───────────────────────────────────────────────────────────────────────────────
+
 jobs:
   bump:
     runs-on: macos-latest
@@ -39,18 +46,24 @@ jobs:
 
           # minification & syntax-lowering https://lightningcss.dev/transpilation.html
           npm install
-          export BROWSERSLIST="chrome 108" # lowers syntax to before css-nesting https://caniuse.com/css-nesting
+          export BROWSERSLIST="{{ env.BROWSERSLIST }}}"
+          echo "Syntax lowering for: $BROWSERSLIST"
           npx lightningcss --minify --browserslist \
             --output-file="./temp.css" -- "./temp.css" || exit 1
 
-          # merge header, css code, and style settings into `theme.css`
+          # remove old file
+          rm theme.css
+
+          # add header
           echo "/*" >> ./theme.css
           cat ./source/header.txt >> ./theme.css
           echo "*/" >> ./theme.css
 
-          cat ./temp.css >> ./theme.css 
+          # add css
+          cat ./temp.css >> ./theme.css
           rm temp.css
 
+          # add style settings
           echo "" >> ./theme.css
           echo "/* @settings" >> ./theme.css
           cat ./source/style-settings.yaml >> theme.css
@@ -58,6 +71,8 @@ jobs:
 
       - name: check for unsupported features
         run: |
+          export BROWSERSLIST="{{ env.BROWSERSLIST }}}"
+          echo "doiuse check for: $BROWSERSLIST"
           violations=$(npx doiuse --browsers="$BROWSERSLIST" \
             --config="./.doiuse-ignore.json" theme.css)
           if [[ -n "$violations" ]]; then # `doiuse` does not exit with non-zero code

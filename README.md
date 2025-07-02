@@ -1,5 +1,5 @@
 # Shimmering Focus ⟡
-![Downloads in Obsidian](https://img.shields.io/badge/downloads-248639-6E4E9B?style=plastic&logo=obsidian&color=%23483699)
+![Downloads in Obsidian](https://img.shields.io/badge/downloads-248648-6E4E9B?style=plastic&logo=obsidian&color=%23483699)
 ![GitHub stars](https://img.shields.io/github/stars/chrisgrieser/shimmering-focus?style=plastic&label=%E2%98%85%20Stars)
 ![Last commit](https://img.shields.io/github/last-commit/chrisgrieser/shimmering-focus?style=plastic)
 
@@ -56,7 +56,8 @@ downloaded theme in the Obsidian theme store.
 - **Alternative color schemes** submitted by the community are available by
   using the Style Settings Plugin.
 - **For writers**: Emphasis of **Pandoc citations** and **footnotes**, extensive
-  styling for the [Longform Plugin](https://obsidian.md/plugins?id=longform).
+  styling for the [Longform Plugin](https://obsidian.md/plugins?id=longform) and
+  notes using `cssclasses: writing`.
 - **For vim users**: Explicit styling of Obsidian's Vim Mode, including various
   settings such as relative line numbers or cursorline highlights.
 - **High customizability:** There are over a hundred customization options
@@ -72,13 +73,6 @@ Plugin](https://obsidian.md/plugins?id=obsidian-style-settings) is installed,
   respective style setting)
 - Toggle readable line length (requires the `Readable line length` setting in
   Obsidian to be enabled.)
-
-### Settings for writers
-- Add `cssclasses: writing` to your frontmatter to enable writing-specific
-  styling for that note, such as a serif font and justified text. The same
-  styling is also applied to all scenes from the [longform plugin](http://github.com/kevboh/longform).
-- You can customize the styling with the [Style Settings
-  Plugin](https://obsidian.md/plugins?id=obsidian-style-settings).
 
 ## Advanced customization
 
