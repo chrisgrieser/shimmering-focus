@@ -844,3 +844,21 @@ body.hider-ribbon .workspace-ribbon.mod-left {
 }
 
 /* ─────────────────────────────────────────────────── */
+/* Related Notes by tag */
+:is(.mod-right-split, .mod-left-split)
+	.workspace-leaf-content
+	.view-content.related-notes-container {
+	padding: 8px; /* increase the padding that was reducd in `sidebars.css` */
+
+	.related-notes-list {
+		margin: 0;
+	}
+	.related-notes-header {
+		margin-bottom: 2px;
+	}
+
+	/* hide separator if occurring at the end */
+	.related-notes-tag-group:last-child .related-notes-separator {
+		display: none;
+	}
+}
