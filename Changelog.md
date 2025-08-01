@@ -1,3 +1,6 @@
+- 2025-08-01 **refactor**: sidebar header hiding
+- 2025-08-01 **feat**: styling for "Related notes by tag" plugin
+- 2025-08-01 **chore**: run biome formatting on snippets and types
 - 2025-07-02 **chore**: update dependencies
 - 2025-07-02 **fix**: apply sidebar fixes for Windows also to Linux (#329)
 - 2025-07-02 **chore**: add header to `theme.css`
