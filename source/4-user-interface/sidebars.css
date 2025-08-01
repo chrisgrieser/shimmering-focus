@@ -1,5 +1,5 @@
 /* ───────────────────────────────────────────────── */
-/** Sidebars
+/** Sidebar content
 ──────────────────────────────────────────────────── */
 
 /* do not trim filenames while renaming */
@@ -14,9 +14,52 @@
 	right: 0;
 }
 
+.nav-file-title,
+.nav-folder-title {
+	margin-top: 0;
+	margin-bottom: 0;
+	border-radius: 0;
+}
+
 /* ───────────────────────────────────────────────── */
 /** Sidebar Headers Hidden (Tab Headers)
 ──────────────────────────────────────────────────── */
+
+body:not(.show-sidebar-header-buttons) :is(.mod-left-split, .mod-right-split) {
+	:is(
+			.workspace-tab-header-container,
+			.workspace-tab-header-container *,
+			.workspace-tab-header,
+			.workspace-tab-header svg
+		) {
+		transition: var(--anim-duration-moderate);
+		transition-delay: var(--transition-delay-passing-over-protection);
+		/* so transition of hovering the tab itself does not get delayed */
+		transition-property: opacity, height, background-color;
+	}
+
+	.workspace-tabs {
+		&:not(.mod-top) .workspace-tab-header-container:not(:hover) {
+			--sidebar-tabs-unhovered-height: 10px;
+			height: var(--sidebar-tabs-unhovered-height);
+		}
+
+		&.mod-top
+			.workspace-tab-header-container:not(:hover)
+			.workspace-tab-header-container-inner {
+			opacity: 0;
+		}
+
+		&.mod-top .workspace-tab-header-container-inner {
+			&:hover {
+				padding-bottom: 4px;
+				margin-top: 4px;
+			}
+			padding-bottom: 0;
+			margin-top: 0;
+		}
+	}
+}
 
 /* WINDOWS / LINUX */
 /* fix sidebar header buttons not being clickable see #247 */
@@ -25,7 +68,11 @@ body:is(.mod-windows, .mod-linux) {
 		height: 35px;
 	}
 
-	&.is-hidden-frameless:not(.is-grabbing, .is-fullscreen, .show-sidebar-header-buttons)
+	&.is-hidden-frameless:not(
+			.is-grabbing,
+			.is-fullscreen,
+			.show-sidebar-header-buttons
+		)
 		.mod-top
 		.workspace-tab-header-container {
 		-webkit-app-region: no-drag;
@@ -36,50 +83,6 @@ body:is(.mod-windows, .mod-linux) {
 body:is(.mod-windows, .mod-linux).is-hidden-frameless:not(.is-fullscreen)
 .titlebar-button-container.mod-right {
 	background-color: transparent;
-}
-
-body:not(.show-sidebar-header-buttons)
-	:is(.mod-left-split, .mod-right-split)
-	:is(
-		.workspace-tab-header-container,
-		.workspace-tab-header-container *,
-		.workspace-tab-header,
-		.workspace-tab-header svg
-	) {
-	transition: var(--anim-duration-moderate);
-	transition-delay: var(--transition-delay-passing-over-protection);
-	/* so transition of hovering the tab itself does not get delayed */
-	transition-property: opacity, height, background-color;
-}
-
-body:not(.show-sidebar-header-buttons)
-	:is(.mod-left-split, .mod-right-split)
-	.workspace-tabs:not(.mod-top)
-	.workspace-tab-header-container:not(:hover) {
-	--sidebar-tabs-unhovered-height: 10px;
-	height: var(--sidebar-tabs-unhovered-height);
-}
-
-body:not(.show-sidebar-header-buttons)
-	:is(.mod-left-split, .mod-right-split)
-	.workspace-tabs.mod-top
-	.workspace-tab-header-container:not(:hover)
-	.workspace-tab-header-container-inner {
-	opacity: 0;
-}
-
-body:not(.show-sidebar-header-buttons)
-	:is(.mod-left-split, .mod-right-split)
-	.workspace-tabs:not(.mod-top)
-	.workspace-tab-header-container {
-	background-color: var(--bg1);
-}
-
-.theme-light:not(.show-sidebar-header-buttons)
-	:is(.mod-left-split, .mod-right-split)
-	.workspace-tabs:not(.mod-top)
-	.workspace-tab-header-container:not(:hover) {
-	background-color: var(--bg2);
 }
 
 /* ───────────────────────────────────────────────── */
@@ -93,6 +96,12 @@ body:not(.show-sidebar-toggle-buttons) .sidebar-toggle-button {
 	display: none;
 }
 
+:is(.mod-right-split, .mod-left-split)
+	.workspace-tabs:not(.mod-top)
+	.workspace-tab-header-container:not(:hover) {
+	background-color: var(--bg2);
+}
+
 .sidebar-toggle-button {
 	height: 35px;
 }
@@ -102,16 +111,4 @@ body.mod-macos.is-hidden-frameless:not(.is-popout-window) .workspace
 	.workspace-tabs.mod-top-right-space
 	.workspace-tab-header-container {
 	padding-right: 0;
-}
-
-.nav-file-title,
-.nav-folder-title {
-	margin-top: 0;
-	margin-bottom: 0;
-	border-radius: 0;
-}
-
-:is(.mod-left-split, .mod-right-split) .mod-top .workspace-tab-header-container-inner {
-	padding-bottom: 4px;
-	margin-top: 4px;
 }

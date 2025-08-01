@@ -1,12 +1,12 @@
 /* DOCS Obsidian available variables: https://docs.obsidian.md/Reference/CSS+variables/CSS+variables
 
 INFO These values are unchanged from the default theme, but included here for
-autocompletion via the `css-variables` LSP: https://github.com/vunguyentuan/vscode-css-variables 
+autocompletion via the `css-variables` LSP: https://github.com/vunguyentuan/vscode-css-variables
 (Effectively, these work a bit like a `d.ts` file in typescript.) */
 
 .dummy {
 	/* user setting */
-	-font-interface: "";
+	--font-interface: "";
 	--font-text: "";
 	--font-monospace: "";
 	--font-text-size: "";
