@@ -12,7 +12,8 @@
 	},
 
 	"files": {
-		"includes": ["**", "!./theme.css"]
+		"includes": ["**", "!theme.css"],
+		"ignoreUnknown": true
 	},
 	"vcs": {
 		"enabled": true,

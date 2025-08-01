@@ -6,7 +6,7 @@ autocompletion via the `css-variables` LSP: https://github.com/vunguyentuan/vsco
 
 .dummy {
 	/* user setting */
-	--font-interface: "";
+	-font-interface: "";
 	--font-text: "";
 	--font-monospace: "";
 	--font-text-size: "";
