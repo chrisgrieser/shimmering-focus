@@ -1,10 +1,8 @@
-/* 
-DOCS Obsidian available variables: https://docs.obsidian.md/Reference/CSS+variables/CSS+variables
+/* DOCS Obsidian available variables: https://docs.obsidian.md/Reference/CSS+variables/CSS+variables
 
 INFO These values are unchanged from the default theme, but included here for
 autocompletion via the `css-variables` LSP: https://github.com/vunguyentuan/vscode-css-variables 
-(Effectively, these work a bit like a `d.ts` file in typescript.)
-*/
+(Effectively, these work a bit like a `d.ts` file in typescript.) */
 
 .dummy {
 	/* user setting */
@@ -99,6 +97,7 @@ autocompletion via the `css-variables` LSP: https://github.com/vunguyentuan/vsco
 		inset 0 0 0 1px rgb(0 0 0 / 12%), 0 2px 3px 0 rgb(0 0 0 / 5%),
 		0 1px 1.5px 0 rgb(0 0 0 / 3%), 0 1px 2px 0 rgb(0 0 0 / 4%), 0 0 0 0
 		transparent;
-	--shadow-s: 0px 1px 2px rgb(0 0 0 / 2.8%), 0px 3.4px 6.7px rgb(0 0 0 / 4.2%), 0px 15px 30px
+	--shadow-s:
+		0px 1px 2px rgb(0 0 0 / 2.8%), 0px 3.4px 6.7px rgb(0 0 0 / 4.2%), 0px 15px 30px
 		rgb(0 0 0 / 7%);
 }

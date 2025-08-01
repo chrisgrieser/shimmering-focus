@@ -3,8 +3,7 @@
 
 /* needs this selector, so it does not affect spaces in the table editor
  * (Obsidian 1.5), which only differs at the level of `.view-content` */
-body:not(.hide-trailing-whitespace)
-	.view-content
+body:not(.hide-trailing-whitespace) .view-content
 	> .cm-s-obsidian
 	> div
 	> .cm-scroller
