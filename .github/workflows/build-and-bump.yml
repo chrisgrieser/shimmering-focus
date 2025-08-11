@@ -25,7 +25,7 @@ jobs:
     runs-on: macos-latest
     steps:
       - name: checkout
-        uses: actions/checkout@v4
+        uses: actions/checkout@v5
         # By default, no tags and only a single commit is fetched. To use git
         # history in the changelog step, we need to fetch all history.
         with:
