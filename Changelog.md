@@ -1,3 +1,4 @@
+- 2025-08-26 **fix**: minor sidebar animations issues
 - 2025-08-01 **refactor**: sidebar header hiding
 - 2025-08-01 **feat**: styling for "Related notes by tag" plugin
 - 2025-08-01 **chore**: run biome formatting on snippets and types
