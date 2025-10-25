@@ -1,0 +1,18 @@
+/* SEARCH MATCHES */
+.suggestion-highlight.suggestion-highlight {
+	color: var(--search-match-color);
+	background: none;
+}
+
+body .markdown-rendered .search-highlight > div,
+.cm-s-obsidian span.obsidian-search-match-highlight {
+	box-shadow: 0 0 0 2px var(--search-match-color);
+}
+
+body .markdown-rendered .search-highlight > div {
+	opacity: 0.9;
+}
+
+body .markdown-rendered .search-highlight > div.is-active {
+	box-shadow: 0 0 0 3px var(--hover-accent);
+}

@@ -1,0 +1,23 @@
+/* FOLDS */
+
+.collapse-icon > .svg-icon.svg-icon.svg-icon.svg-icon {
+	width: 0.75em;
+	height: 0.75em;
+	margin-left: -1em;
+	stroke-width: 4px;
+
+	&:hover {
+		stroke: var(--icon-color-hover);
+	}
+}
+
+:is(.markdown-preview-view, .cm-line:not(.cm-active)) .collapse-icon > .svg-icon.svg-icon,
+body .cm-s-obsidian .is-collapsed ~ .cm-formatting-list {
+	color: var(--text-faint);
+}
+
+/* ────────────────────────────────────────────────────────────────────────── */
+/* GUTTERS */ 
+.cm-gutters.cm-gutters-before:has( > .cm-lineNumbers) {
+	margin-inline-end: 0.5em;
+}
