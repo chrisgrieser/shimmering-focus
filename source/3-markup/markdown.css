@@ -406,6 +406,7 @@ blockquote code {
 ──────────────────────────────────────────────────── */
 
 .cm-strikethrough {
+	text-decoration-thickness: 0.15rem;
 	body:not(.uncolored-strikethroughs) & {
 		text-decoration-color: var(--color-red);
 	}
