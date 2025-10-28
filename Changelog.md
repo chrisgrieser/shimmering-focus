@@ -1,3 +1,4 @@
+- 2025-10-28 **feat**: thicker strikethroughs
 - 2025-10-25 **feat**: narrower gutter when line numbers are shown
 - 2025-08-26 **fix**: minor sidebar animations issues
 - 2025-08-01 **refactor**: sidebar header hiding
