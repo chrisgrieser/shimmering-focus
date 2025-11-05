@@ -523,6 +523,17 @@ body .another-quick-switcher__grep__path-input.another-quick-switcher__grep__pat
 	color: var(--text-faint);
 }
 
+/* hide redundant first 3 hints (4 for grep) */
+.another-quick-switcher__modal-prompt > .prompt-instructions > .prompt-instruction {
+	&:nth-child(-n + 3) {
+		display: none;
+	}
+
+	.another-quick-switcher__floating-prompt &:nth-child(4) {
+		display: none;
+	}
+}
+
 /* ───────────────────────────────────────────────── */
 /** Recent Files
 ──────────────────────────────────────────────────── */
