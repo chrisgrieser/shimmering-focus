@@ -272,6 +272,7 @@ body:not(.show-outline-buttons) .workspace-leaf-content[data-type="outline"] .na
 
 /* always display search input box */
 .show-outline-buttons .workspace-leaf-content[data-type="outline"] .search-input-container {
+	/* biome-ignore lint/complexity/noImportantStyles: needed */
 	display: block !important;
 	flex-grow: 1;
 	margin: 4px 0;

@@ -105,9 +105,13 @@
 	--bg5: var(--color-base-10);
 	--bg6: var(--color-base-05);
 	--background-primary: var(--color-base-05); /* Primary background */
-	--background-primary-alt: var(--color-base-10); /* Background for surfaces on top of primary background */
+	--background-primary-alt: var(
+		--color-base-10
+	); /* Background for surfaces on top of primary background */
 	--background-secondary: var(--color-base-05); /* Secondary background */
-	--background-secondary-alt: var(--color-base-25); /* Background for surfaces on top of secondary background */
+	--background-secondary-alt: var(
+		--color-base-25
+	); /* Background for surfaces on top of secondary background */
 	--background-modifier-hover: var(--color-base-10); /* Hovered elements */
 	--background-modifier-active-hover: var(--color-base-20); /* Active hovered elements */
 	--background-modifier-border: var(--color-base-25); /* Border color */

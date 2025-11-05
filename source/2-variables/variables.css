@@ -71,6 +71,7 @@
 body {
 	/* this variable is determined by the accent color chosen by the user, so it
 	* needs to be overwritten to be the same across this theme */
+	/* biome-ignore lint/complexity/noImportantStyles: needed */
 	--text-on-accent: hsl(0 100% 100%) !important;
 
 	/* Font */

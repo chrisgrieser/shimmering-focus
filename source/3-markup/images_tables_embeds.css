@@ -11,6 +11,7 @@
 /* make lists in tables take up less space */
 .markdown-rendered table :is(ul, ol) {
 	line-height: 1.1;
+	/* biome-ignore lint/complexity/noImportantStyles: needed */
 	margin-block: 0 0 !important;
 	margin-top: 0;
 	margin-bottom: 0;
@@ -108,7 +109,9 @@ body:not(.no-image-alttext-caption) .image-embed::after {
 .markdown-source-view.mod-cm6 .cm-content > img,
 .view-content .image-embed img:not(.emoji) {
 	display: block;
+	/* biome-ignore lint/complexity/noImportantStyles: needed */
 	margin-right: auto !important;
+	/* biome-ignore lint/complexity/noImportantStyles: needed */
 	margin-left: auto !important;
 }
 

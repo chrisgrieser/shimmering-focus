@@ -17,7 +17,7 @@ body .cm-s-obsidian .is-collapsed ~ .cm-formatting-list {
 }
 
 /* ────────────────────────────────────────────────────────────────────────── */
-/* GUTTERS */ 
-.cm-gutters.cm-gutters-before:has( > .cm-lineNumbers) {
+/* GUTTERS */
+.cm-gutters.cm-gutters-before:has(> .cm-lineNumbers) {
 	margin-inline-end: 0.5em;
 }

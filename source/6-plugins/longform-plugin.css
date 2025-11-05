@@ -66,6 +66,7 @@ div#select-projects select {
 		margin-left: 0;
 	}
 
+	/* biome-ignore-start lint/complexity/noImportantStyles: needed */
 	&[data-scene-indent="0"] {
 		padding-left: 6px !important;
 	}
@@ -85,6 +86,7 @@ div#select-projects select {
 	&[data-scene-indent="4"] {
 		padding-left: calc(var(--longform-indent-size) * 4) !important;
 	}
+	/* biome-ignore-end lint/complexity/noImportantStyles: needed */
 
 	&.selected,
 	&.selected .longform-scene-number {

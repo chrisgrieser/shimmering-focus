@@ -37,11 +37,13 @@
 
 /* optionally completely disable blinking */
 .disable-vim-cursor-blink .cm-vimCursorLayer {
+	/* biome-ignore lint/complexity/noImportantStyles: needed */
 	animation: none !important;
 }
 
 /* blinking */
 .cm-vimCursorLayer {
+	/* biome-ignore lint/complexity/noImportantStyles: needed */
 	animation-duration: var(--vim-cursor-blink-rate) !important;
 }
 
@@ -88,10 +90,12 @@
 		mix-blend-mode: hard-light;
 
 		.cm-focused & {
+			/* biome-ignore lint/complexity/noImportantStyles: needed */
 			animation: vim-blink var(--vim-cursor-blink-rate) linear infinite !important;
 		}
 	}
 
+	/* biome-ignore lint/complexity/noImportantStyles: needed */
 	animation: none !important;
 }
 
@@ -215,6 +219,7 @@
 
 /* the ":" or "/" enlarged */
 .cm-vim-panel > div > div > span:first-child {
+	/* biome-ignore lint/complexity/noImportantStyles: needed */
 	font-family: inter, sans-serif !important;
 	font-weight: 600;
 	font-size: 1.4rem;
