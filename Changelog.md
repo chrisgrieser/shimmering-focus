@@ -1,3 +1,4 @@
+- 2025-12-25 **fix**: spacing for setting headers in updated Obsidian styling
 - 2025-11-05 **chore**: add ignore comments for unavoidable `!important`s
 - 2025-10-28 **feat**: thicker strikethroughs
 - 2025-10-25 **feat**: narrower gutter when line numbers are shown
