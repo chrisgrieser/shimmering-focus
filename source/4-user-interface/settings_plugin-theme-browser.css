@@ -168,7 +168,7 @@ body .vertical-tab-content {
 }
 
 .setting-item.setting-item-heading {
-	padding-bottom: 0;
+	margin-bottom: 0;
 	border-bottom: var(--basic-border);
 }
 
