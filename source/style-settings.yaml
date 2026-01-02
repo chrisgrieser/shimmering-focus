@@ -575,6 +575,10 @@ settings:
     title: "Bases: Hide column header icons"
     default: false
     type: class-toggle
+  - id: show-various-complements-icon
+    title: "Various complements: Show completion source icon"
+    default: false
+    type: class-toggle
 
   #─────────────────────────────────────────────────────────────────────────────
   # Appendix

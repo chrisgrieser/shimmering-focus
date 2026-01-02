@@ -159,34 +159,26 @@ body .yank-deco {
 /* ───────────────────────────────────────────────── */
 /** Various Complements
 ──────────────────────────────────────────────────── */
-/* remove the icon */
-.various-complements__suggestion-item.various-complements__suggestion-item::before {
-	display: none;
-}
 
-body .various-complements__suggestion-item {
+.various-complements__suggestion-item {
 	/* biome-ignore lint/complexity/noImportantStyles: needed */
 	padding: 4px 6px !important;
-}
 
-/* the alias icon */
-.various-complements__suggestion-item__content__alias::before {
-	position: relative;
-	top: -2px;
+	body:not(.show-various-complements-icon) &::before {
+		display: none;
+	}
+
+	.show-various-complements-icon & {
+		/* biome-ignore lint/complexity/noImportantStyles: needed */
+		padding-left: 25px !important;
+		&::before {
+			margin-top: 0;
+		}
+	}
 }
 
 .various-complements__suggestion-item__description {
 	padding-top: 0;
-}
-
-.various-complements__suggestion-item__internal-link > div > div::before {
-	color: var(--text-faint);
-	content: "[[";
-}
-
-.various-complements__suggestion-item__internal-link > div > div::after {
-	color: var(--text-faint);
-	content: "]]";
 }
 
 /* ───────────────────────────────────────────────── */
