@@ -1,3 +1,5 @@
+- 2026-01-03 **chore**: tighter comments
+- 2026-01-03 **feat**: option to disable hiding various complements icons
 - 2025-12-25 **fix**: spacing for setting headers in updated Obsidian styling
 - 2025-11-05 **chore**: add ignore comments for unavoidable `!important`s
 - 2025-10-28 **feat**: thicker strikethroughs
