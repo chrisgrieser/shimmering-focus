@@ -11,8 +11,7 @@ settings:
     markdown: true
     type: info-text
 
-  #─────────────────────────────────────────────────────────────────────────────
-  # Show / Hide UI Elements
+  #-SHOW / HIDE UI ELEMENTS-----------------------------------------------------
   - id: show-hide-elements
     title: 🙈 Show/hide UI elements
     description: Re-enable user interface elements hidden by this theme
@@ -89,8 +88,7 @@ settings:
       ℹ️ This setting can also be toggled via command palette or hotkey.
     default: false
 
-  #─────────────────────────────────────────────────────────────────────────────
-  # Status bar
+  #-STATUS BAR------------------------------------------------------------------
   - id: show-hide-statusbar-elements
     title: Status bar items
     description: Hide individual status bar items from plugins.
@@ -126,8 +124,7 @@ settings:
     type: class-toggle
     default: false
 
-  #─────────────────────────────────────────────────────────────────────────────
-  # Workspace
+  #-WORKSPACE-------------------------------------------------------------------
   - id: user-interface
     title: 🔲 Workspace
     description: Header bar, tab width, sidebars, notifications
@@ -174,8 +171,7 @@ settings:
     type: class-toggle
     default: false
 
-  #─────────────────────────────────────────────────────────────────────────────
-  # Fonts & Headings
+  #-FONTS & HEADINGS------------------------------------------------------------
   - id: font-settings
     title: 🔠 Font
     description: "Headings, code"
@@ -230,8 +226,8 @@ settings:
     max: 3
     step: 0.5
     format: px
-  #─────────────────────────────────────────────────────────────────────────────
-  # Colors & shapes
+
+  #-COLORS & SHAPES-------------------------------------------------------------
   - id: aesthetics
     title: 🎨 Colors & shapes
     description: Alternative color schemes, angular shape, colored bold/italics, highlight color
@@ -250,8 +246,7 @@ settings:
     markdown: true
     type: info-text
 
-  #─────────────────────────────────────────────────────────────────────────────
-  # COLOR SCHEMES
+  #-COLOR SCHEMES---------------------------------------------------------------
   - id: alt-colorschemes
     title: Alternative color schemes
     description: Colorschemes submitted by the community
@@ -269,8 +264,7 @@ settings:
         value: colorscheme-everforest
       - label: Gruvbox
         value: colorscheme-grubox
-  #─────────────────────────────────────────────────────────────────────────────
-
+  #-----------------------------------------------------------------------------
   - id: bg-hue-light
     title: Background color tone (light mode)
     description: Only available when using the default color scheme.
@@ -320,8 +314,7 @@ settings:
     type: class-toggle
     default: false
 
-  #─────────────────────────────────────────────────────────────────────────────
-  # Editor Content
+  #-EDITOR CONTENT--------------------------------------------------------------
   - id: content-settings
     title: 📑 Editor content
     description: Active block highlights, dimmed panes, code blocks, line length, trailing spaces
@@ -361,8 +354,7 @@ settings:
     max: 2500
     step: 25
     format: px
-  # INFO dummy setting, hidden via css and only added for the toggle-command
-  - id: readable-line-length-toggle
+  - id: readable-line-length-toggle # dummy setting, hidden via css and only added for toggle-command
     title: readable line length
     addCommand: true
     type: class-toggle
@@ -376,8 +368,7 @@ settings:
     type: class-toggle
     default: false
 
-  #─────────────────────────────────────────────────────────────────────────────
-  # Media
+  #-MEDIA-----------------------------------------------------------------------
   - id: media-settings
     title: 🖼️ Media
     description: Images & tables
@@ -401,8 +392,7 @@ settings:
     min: 10
     max: 100
     step: 5
-  # INFO dummy setting, hidden via css and only added for the toggle-command
-  - id: max-image-size-toggle
+  - id: max-image-size-toggle # dummy setting, hidden via css and only added for toggle-command
     title: between reduced and full image size
     addCommand: true
     type: class-toggle
@@ -412,8 +402,8 @@ settings:
     markdown: true
     type: class-toggle
     default: false
-  #─────────────────────────────────────────────────────────────────────────────
-  # Vim mode
+
+  #-VIM MODE--------------------------------------------------------------------
   - id: vim-mode
     title: 🏃 Vim mode
     description:
@@ -452,8 +442,7 @@ settings:
     type: class-toggle
     default: false
 
-  #─────────────────────────────────────────────────────────────────────────────
-  # Longform & writing
+  #-LONGFORM & WRITING----------------------------------------------------------
   - id: longform-settings
     title: ✍️ Longform & writing
     description: Settings for notes in longform projects and notes with the writing cssclass.
@@ -516,8 +505,7 @@ settings:
     type: class-toggle
     default: false
 
-  #─────────────────────────────────────────────────────────────────────────────
-  # Plugin-Specific Settings
+  #-PLUGIN-SPECIFIC SETTINGS----------------------------------------------------
   - id: plugin-specific-settings
     title: ⚙️ Plugin-specific settings
     description: File explorer, bookmarks, backlinks, outgoing links, outline, bases
@@ -580,8 +568,7 @@ settings:
     default: false
     type: class-toggle
 
-  #─────────────────────────────────────────────────────────────────────────────
-  # Appendix
+  #-APPENDIX--------------------------------------------------------------------
   - id: appendix-info
     title: ℹ️ Info
     type: heading
