@@ -217,20 +217,27 @@ body .vertical-tab-content {
 	display: none;
 }
 
+/* hide accent color setting & indicate that the theme overrides it */
 .mod-settings
 	.vertical-tab-content
-	> .setting-item:nth-child(2)
-	> .setting-item-control
-	> .extra-setting-button
-	+ input[type="color"]::before {
-	content: "The accent color is overridden by the theme. Use the Style Settings Plugin to customize theme colors.";
-	position: relative;
-	top: 12px;
-	font-family: var(--font-interface);
-	font-size: var(--font-ui-smaller);
-	line-height: 1.3;
-	color: var(--text-gray);
-	visibility: visible;
+	> .setting-group:first-child
+	> .setting-items
+	> .setting-item:nth-child(2).mod-toggle
+	> .setting-item-control:has(> .extra-setting-button + input[type="color"]) {
+	visibility: hidden;
+	&::before {
+		/* biome-ignore lint/suspicious/noUselessEscapeInString: false positive */
+		content: "The accent color is overridden by the theme.\AUse the Style Settings Plugin to customize theme colors.";
+		white-space: pre;
+		font-family: var(--font-interface);
+		font-size: var(--font-ui-smaller);
+		color: var(--text-gray);
+		visibility: visible;
+	}
+	> .extra-setting-button,
+	> .extra-setting-button + input[type="color"] {
+		display: none;
+	}
 }
 
 /* ───────────────────────────────────────────────── */
