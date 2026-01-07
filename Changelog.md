@@ -1,3 +1,4 @@
+- 2026-01-07 **chore**: add version information for embedded font files
 - 2026-01-03 **chore**: tighter comments
 - 2026-01-03 **feat**: option to disable hiding various complements icons
 - 2025-12-25 **fix**: spacing for setting headers in updated Obsidian styling
