@@ -1,4 +1,5 @@
 /* Open Font 1.1 https://github.com/iaolo/iA-Fonts/blob/master/iA%20Writer%20Quattro/LICENSE.md */
+/* uses files from 2017 https://github.com/iaolo/iA-Fonts/tree/master/iA%20Writer%20Quattro/Static */
 @font-face {
 	font-family: "iA Writer Quattro S";
 	font-style: normal;
@@ -36,6 +37,7 @@
 }
 
 /* Open Font 1.1 https://github.com/arrowtype/recursive#license */
+/* uses release from 2022-06-30 https://github.com/arrowtype/recursive/releases */
 @font-face {
 	font-family: "Recursive S";
 	font-style: normal;
