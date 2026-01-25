@@ -1,4 +1,4 @@
-# Shimmering Focus ⟡
+# Shimmering Focus ⟡ <!-- rumdl-disable-line MD063 -->
 ![Downloads in Obsidian](https://img.shields.io/badge/downloads-291974-6E4E9B?style=plastic&logo=obsidian&color=%23483699)
 ![GitHub stars](https://img.shields.io/github/stars/chrisgrieser/shimmering-focus?style=plastic&label=%E2%98%85%20Stars)
 ![Last commit](https://img.shields.io/github/last-commit/chrisgrieser/shimmering-focus?style=plastic)
@@ -16,33 +16,31 @@ downloaded theme in the Obsidian theme store.
 <!-- toc -->
 
 - [General information](#general-information)
-	* [Design philosophy](#design-philosophy)
-	* [Features](#features)
-	* [Commands](#commands)
+     [Design philosophy](#design-philosophy)
+     [Features](#features)
+     [Commands](#commands)
 - [Advanced customization](#advanced-customization)
-	* [Create your own color scheme](#create-your-own-color-scheme)
-	* [Standalone snippets](#standalone-snippets)
-	* [Contribute to the theme](#contribute-to-the-theme)
+     [Create your own color scheme](#create-your-own-color-scheme)
+     [Standalone snippets](#standalone-snippets)
+     [Contribute to the theme](#contribute-to-the-theme)
 - [Credits](#credits)
-	* [Licenses](#licenses)
-	* [Thanks](#thanks)
-	* [About the creator](#about-the-creator)
+     [Licenses](#licenses)
+     [Thanks](#thanks)
+     [About the creator](#about-the-creator)
 
 <!-- tocstop -->
 
 ## General information
 
 ### Design philosophy
-- **Radical minimalism:** As opposed to a minimalism of *colors*, this theme
+- **Radical minimalism:** As opposed to minimalistic *colors*, this theme
   focuses on a minimalistic *user interface*: UI elements not relevant for
   keyboard users are hidden, or only shown when needed. All hidden UI elements
-  can be permanently re-enabled with the [Style Settings
-  Plugin](https://obsidian.md/plugins?id=obsidian-style-settings).
+  can be permanently re-enabled with the [Style Settings Plugin](https://obsidian.md/plugins?id=obsidian-style-settings).
 - **Condensed display of information:** Unnecessary padding and white-space is
   removed, which is beneficial for small screens or higher zoom levels.
 - **High customizability:** Over a hundred customization options available
-  via the [Style Settings
-  Plugin](https://obsidian.md/plugins?id=obsidian-style-settings).
+  via the [Style Settings Plugin](https://obsidian.md/plugins?id=obsidian-style-settings).
 
 ### Features
 - **Smart hiding of UI elements**: The tab bar is only shown when there is more
@@ -65,8 +63,7 @@ downloaded theme in the Obsidian theme store.
   Plugin](https://obsidian.md/plugins?id=obsidian-style-settings).
 
 ### Commands
-When the [Style Settings
-Plugin](https://obsidian.md/plugins?id=obsidian-style-settings) is installed,
+When the [Style Settings Plugin](https://obsidian.md/plugins?id=obsidian-style-settings) is installed,
 *Shimmering Focus* adds commands for toggling theme features:
 - Toggle folding of URLs (Source Mode)
 - Toggle between reduced and original image size (reduced size can be set in the
@@ -128,8 +125,7 @@ Draft PR or an issue.
 All relevant source files are located in the [source](./source) directory, and
 will be compiled via GitHub action when pushed to GitHub.
 
-The theme uses `lightning-css` for
-[syntax-lowering](https://lightningcss.dev/transpilation.html#syntax-lowering)
+The theme uses `lightning-css` for [syntax-lowering](https://lightningcss.dev/transpilation.html#syntax-lowering)
 in its build. That means you can use modern CSS features like
 [CSS-nesting](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_nesting),
 as the resulting `theme.css` will still be compatible with older Obsidian
@@ -141,45 +137,33 @@ The theme is written completely dependency-free in vanilla CSS.
 ## Credits
 
 ### Licenses
-- This theme is licensed under the [MIT
-  License](https://github.com/chrisgrieser/shimmering-focus/blob/main/LICENSE).
+- This theme is licensed under the [MIT License](https://github.com/chrisgrieser/shimmering-focus/blob/main/LICENSE).
 - The two embedded fonts `iA Writer Quattro` and `Recursive` are licensed under
   the [SIL Open Font License](https://www.wikiwand.com/en/SIL_Open_Font_License).
-- The embedded `Material Icon` font is licensed under the [Apache
-  License](https://developers.google.com/fonts/docs/material_icons#licensing).
+- The embedded `Material Icon` font is licensed under the [Apache License](https://developers.google.com/fonts/docs/material_icons#licensing).
 
 ### Thanks
 - This theme includes snippets and/or ideas from:
-  [@SlRvb](https://github.com/SlRvb), [@Atlas](https://github.com/zcysxy),
-  [@CecilaMay](https://github.com/ceciliamay),
-  [@DamianKorcz](https://github.com/damiankorcz),
-  [@Mara-Li](https://github.com/Mara-Li), [@kepano](https://github.com/kepano),
-  [@jdanielmourao](https://github.com/jdanielmourao),
-  [@deathau](https://github.com/deathau/),
-  [@MelvinTing](https://github.com/tingmelvin/),
-  [@EmrieCandera](https://github.com/Emrie-Candera),
-  [@Chetachie](https://github.com/chetachiezikeuzor),
-  [@pryley](https://github.com/pryley), and
-  [@joelatschool](https://github.com/joelatschool).
+  [@SlRvb](https://github.com/SlRvb), [@Atlas](https://github.com/zcysxy), [@CecilaMay](https://github.com/ceciliamay), [@DamianKorcz](https://github.com/damiankorcz),
+  [@Mara-Li](https://github.com/Mara-Li), [@kepano](https://github.com/kepano), [@jdanielmourao](https://github.com/jdanielmourao), [@deathau](https://github.com/deathau/),
+  [@MelvinTing](https://github.com/tingmelvin/), [@EmrieCandera](https://github.com/Emrie-Candera),
+  [@Chetachie](https://github.com/chetachiezikeuzor), [@pryley](https://github.com/pryley), and [@joelatschool](https://github.com/joelatschool).
 - Many theme features are only possible thanks to the [Style Settings
-  Plugin](https://obsidian.md/plugins?id=obsidian-style-settings) by
-  [@mgmeyers](https://github.com/mgmeyers).
+  Plugin](https://obsidian.md/plugins?id=obsidian-style-settings) by [@mgmeyers](https://github.com/mgmeyers).
 - Thanks for helping me out in my early days of learning CSS:
-  [@SlRvb](https://github.com/SlRvb),
-  [@javalent](https://github.com/valentine195), and
-  [@NothingIsLost](https://github.com/nothingislost).
+  [@SlRvb](https://github.com/SlRvb), [@javalent](https://github.com/valentine195), and [@NothingIsLost](https://github.com/nothingislost).
 - Community-made color schemes:
-	* `Gamma` created in collaboration with `@lkadre`.
-	* `Everforest` by
-	  [@neuromancer](https://github.com/chrisgrieser/shimmering-focus/discussions/291).
-	* `Coffee` by
-	  [@keara](https://github.com/chrisgrieser/shimmering-focus/discussions/274)
-	  and inspired by the [Primary
-	  theme](https://github.com/primary-theme/obsidian).
-	* `Gruvbox` dark variant by
-	  [@jasht1](https://github.com/chrisgrieser/shimmering-focus/discussions/311),
-	  light variant by
-	  [robrecord](https://github.com/chrisgrieser/shimmering-focus/discussions/257).
+     `Gamma` created in collaboration with `@lkadre`.
+     `Everforest` by
+      [@neuromancer](https://github.com/chrisgrieser/shimmering-focus/discussions/291).
+    - `Coffee` by
+      [@keara](https://github.com/chrisgrieser/shimmering-focus/discussions/274)
+      and inspired by the [Primary
+      theme](https://github.com/primary-theme/obsidian).
+    - `Gruvbox` dark variant by
+      [@jasht1](https://github.com/chrisgrieser/shimmering-focus/discussions/311),
+      light variant by
+      [robrecord](https://github.com/chrisgrieser/shimmering-focus/discussions/257).
 
 ### About the creator
 In my day job, I am a sociologist studying the social mechanisms underlying the
