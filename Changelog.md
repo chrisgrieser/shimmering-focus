@@ -1,3 +1,4 @@
+- 2026-01-25 **docs**: linting
 - 2026-01-07 **fix**: accent color setting override
 - 2026-01-07 **chore**: add version information for embedded font files
 - 2026-01-03 **chore**: tighter comments
