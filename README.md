@@ -1,4 +1,4 @@
-# Shimmering Focus ⟡ <!-- rumdl-disable-line MD063 -->
+# Shimmering focus ⟡ <!-- rumdl-disable-line MD063 -->
 ![Downloads in Obsidian](https://img.shields.io/badge/downloads-296923-6E4E9B?style=plastic&logo=obsidian&color=%23483699)
 ![GitHub stars](https://img.shields.io/github/stars/chrisgrieser/shimmering-focus?style=plastic&label=%E2%98%85%20Stars)
 ![Last commit](https://img.shields.io/github/last-commit/chrisgrieser/shimmering-focus?style=plastic)
@@ -14,20 +14,18 @@ downloaded theme in the Obsidian theme store.
 ## Table of contents
 
 <!-- toc -->
-
 - [General information](#general-information)
-     [Design philosophy](#design-philosophy)
-     [Features](#features)
-     [Commands](#commands)
+    - [Design philosophy](#design-philosophy)
+    - [Features](#features)
+    - [Commands](#commands)
 - [Advanced customization](#advanced-customization)
-     [Create your own color scheme](#create-your-own-color-scheme)
-     [Standalone snippets](#standalone-snippets)
-     [Contribute to the theme](#contribute-to-the-theme)
+    - [Create your own color scheme](#create-your-own-color-scheme)
+    - [Standalone snippets](#standalone-snippets)
+    - [Contribute to the theme](#contribute-to-the-theme)
 - [Credits](#credits)
-     [Licenses](#licenses)
-     [Thanks](#thanks)
-     [About the creator](#about-the-creator)
-
+    - [Licenses](#licenses)
+    - [Thanks](#thanks)
+    - [About the creator](#about-the-creator)
 <!-- tocstop -->
 
 ## General information
