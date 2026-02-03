@@ -1,3 +1,10 @@
+- 2026-02-03 **fix**: further adjustments for Hover Editor plugin
+- 2026-02-03 **refactor**: cleanup some code
+- 2026-02-03 **chore**: remove outdated for for surfing plugin
+- 2026-02-03 **feat**: less spacing for inside over hover editor
+- 2026-02-03 **fix**: header display for hover editor
+- 2026-02-03 **fix**: metadata display in hover editor popovers
+- 2026-02-03 **chore**: remove outdated adjustments for projects plugin
 - 2026-01-25 **docs**: linting
 - 2026-01-07 **fix**: accent color setting override
 - 2026-01-07 **chore**: add version information for embedded font files
