@@ -13,7 +13,6 @@ body:not(.normal-header-bar) #cMenuToolbarModalBar.top {
 .popover {
 	.markdown-preview-view {
 		padding: 1rem;
-
 		.metadata-container {
 			padding-top: 0;
 		}
@@ -203,26 +202,28 @@ body .cm-matched-string {
 }
 
 /* reduce spacing to see more rules */
-.dynamic-highlights-settings .highlighter-container .highlighter-details {
-	padding: 6px 0;
-}
+.dynamic-highlights-settings {
+	.highlighter-container .highlighter-details {
+		padding: 6px 0;
+	}
 
-.dynamic-highlights-settings .highlighter-container .highlighter-details .setting-item-info {
-	margin-right: 6px;
-}
+	.highlighter-container .highlighter-details .setting-item-info {
+		margin-right: 6px;
+	}
 
-.dynamic-highlights-settings .highlighter-item-draggable {
-	grid-gap: 0;
-}
+	.highlighter-item-draggable {
+		grid-gap: 0;
+	}
 
-.dynamic-highlights-settings button.action-button.mod-warning {
-	margin-right: 0;
-	padding: 8px;
-}
+	button.action-button.mod-warning {
+		margin-right: 0;
+		padding: 8px;
+	}
 
-.dynamic-highlights-settings button.action-button.mod-cta {
-	margin-right: 4px;
-	padding: 8px;
+	button.action-button.mod-cta {
+		margin-right: 4px;
+		padding: 8px;
+	}
 }
 
 /* ───────────────────────────────────────────────── */
