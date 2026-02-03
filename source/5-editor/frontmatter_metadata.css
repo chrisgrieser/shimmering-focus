@@ -36,7 +36,7 @@
 }
 
 /* LIVE PREVIEW */
-.mod-root .metadata-container {
+.metadata-container {
 	padding: 0;
 	margin-left: 4px;
 	margin-right: -4px;
@@ -50,7 +50,7 @@
 	padding-top: 2px;
 }
 
-.mod-root .metadata-add-button.metadata-add-button {
+.metadata-add-button.metadata-add-button {
 	position: absolute;
 	right: 0;
 	bottom: 0;
