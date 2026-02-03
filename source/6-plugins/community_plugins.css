@@ -7,15 +7,21 @@ body:not(.normal-header-bar) #cMenuToolbarModalBar.top {
 }
 
 /* ───────────────────────────────────────────────── */
-/** Hover Editor
+/** Hover Editor / Popover
 ──────────────────────────────────────────────────── */
 
-.popover {
-	.markdown-preview-view {
+.popover.hover-editor.hover-editor {
+	.metadata-container {
+		padding-top: 0;
+	}
+
+	.markdown-preview-view,
+	.markdown-source-view .cm-scroller {
 		padding: 1rem;
-		.metadata-container {
-			padding-top: 0;
-		}
+	}
+
+	.markdown-source-view {
+		font-size: 100%; /* FIX oversized font */
 	}
 }
 
