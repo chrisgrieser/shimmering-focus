@@ -56,16 +56,6 @@ body:not(.normal-header-bar) #cMenuToolbarModalBar.top {
 }
 
 /* ───────────────────────────────────────────────── */
-/** Surfing
-──────────────────────────────────────────────────── */
-.workspace-leaf-content[data-type="surfing-view"] .view-header.view-header {
-	padding-right: 4px;
-	padding-left: 4px;
-	background-color: var(--bg3);
-	border-bottom: 2px solid var(--divider-color);
-}
-
-/* ───────────────────────────────────────────────── */
 /** Strange New Worlds
 ──────────────────────────────────────────────────── */
 .snw-header-count-wrapper {
