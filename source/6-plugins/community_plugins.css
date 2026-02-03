@@ -7,33 +7,6 @@ body:not(.normal-header-bar) #cMenuToolbarModalBar.top {
 }
 
 /* ───────────────────────────────────────────────── */
-/** Projects
-──────────────────────────────────────────────────── */
-
-/* undo styling, since pill-like view is actually useful here */
-.projects-container {
-	--tag-color: var(--text-normal);
-	--tag-padding-x: 0.25em;
-	--tag-padding-y: 0.25em;
-	--tag-border-width: 2px;
-	--tag-size: var(--font-smaller);
-	--tag-border-color: var(--text-faint);
-	--tag-radius: 0;
-}
-
-/* adjustments for hidden header bar */
-body:not(.normal-header-bar, .is-mobile) .projects-container .container.primary .right {
-	margin-right: 30px;
-}
-
-body:not(.normal-header-bar, .is-mobile)
-	.workspace-leaf-content[data-type="obsidian-projects"]
-	.view-header
-	.view-actions {
-	top: 8px;
-}
-
-/* ───────────────────────────────────────────────── */
 /** Plugin Update Tracker
 ──────────────────────────────────────────────────── */
 /* https://github.com/swar8080/obsidian-plugin-update-tracker#custom-css-snippets */
