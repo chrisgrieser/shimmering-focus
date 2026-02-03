@@ -7,6 +7,20 @@ body:not(.normal-header-bar) #cMenuToolbarModalBar.top {
 }
 
 /* ───────────────────────────────────────────────── */
+/** Hover Editor
+──────────────────────────────────────────────────── */
+
+.popover {
+	.markdown-preview-view {
+		padding: 1rem;
+
+		.metadata-container {
+			padding-top: 0;
+		}
+	}
+}
+
+/* ───────────────────────────────────────────────── */
 /** Plugin Update Tracker
 ──────────────────────────────────────────────────── */
 /* https://github.com/swar8080/obsidian-plugin-update-tracker#custom-css-snippets */
