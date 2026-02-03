@@ -1,4 +1,5 @@
-body:not(.normal-header-bar, .is-mobile) .workspace-leaf-content:not([data-type="browser"]) {
+/* `.mod-root` needed for popovers/hover editor */
+body:not(.normal-header-bar, .is-mobile) .mod-root .workspace-leaf-content:not([data-type="browser"]) {
 	& .view-header-breadcrumb {
 		color: var(--text-faint);
 		font-size: 0.9rem;
