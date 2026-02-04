@@ -1,3 +1,5 @@
+- 2026-02-04 **feat**: emphasize Bases table headers
+- 2026-02-04 **chore**: update Obsidian variables
 - 2026-02-04 **fix**: update styling for new AQS version
 - 2026-02-03 **fix**: further adjustments for Hover Editor plugin
 - 2026-02-03 **refactor**: cleanup some code
