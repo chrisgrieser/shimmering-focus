@@ -1,3 +1,4 @@
+- 2026-02-04 **fix**: update styling for new AQS version
 - 2026-02-03 **fix**: further adjustments for Hover Editor plugin
 - 2026-02-03 **refactor**: cleanup some code
 - 2026-02-03 **chore**: remove outdated for for surfing plugin
