@@ -301,3 +301,11 @@ body {
 	--bases-table-header-background: var(--bg4);
 	--bases-table-header-weight: 600;
 }
+
+.bases-query-container {
+	.filter-expression {
+		background-color: var(--bg1);
+	}
+
+	--dropdown-background-hover: var(--bg6);
+}
