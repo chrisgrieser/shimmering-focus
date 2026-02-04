@@ -250,8 +250,8 @@ body .cm-matched-string {
 }
 
 body .another-quick-switcher__status__count-input {
-	top: 1.9rem;
-	right: 1rem;
+	margin-top: -3rem;
+	margin-right: -0.5rem;
 	color: var(--text-faint);
 }
 
@@ -405,11 +405,10 @@ body:not(.is-mobile) .another-quick-switcher__item__hot-key-guide {
 	background-color: var(--bg3);
 	border: var(--thin-border);
 	border-radius: var(--radius-s);
-	opacity: 0.9;
 }
 
 body .another-quick-switcher__item__directory {
-	margin-right: 1rem;
+	margin-right: 1.1rem; /* padding for hotkey-guide */
 }
 
 body .another-quick-switcher__item {
@@ -425,8 +424,8 @@ body .another-quick-switcher__item__description {
 	display: none;
 }
 
-.another-quick-switcher__status__count-input + .prompt-input {
-	width: 99%;
+.another-quick-switcher__status__count-wrapper + .prompt-input {
+	width: 98.5%;
 }
 
 /* enlarge floating window */
