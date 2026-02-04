@@ -289,10 +289,15 @@ body:not(.show-outline-buttons) .workspace-leaf-content[data-type="outline"] .na
 /* ────────────────────────────────────────────────────────────────────────── */
 /* Bases */
 
-.bases-hide-column-header-icons .bases-table-header-icon {
+body.bases-hide-column-header-icons .bases-table-header-icon {
 	display: none;
 }
 
 body:not(.normal-header-bar, .is-mobile) .workspace-leaf-content[data-type="bases"] .view-header {
 	display: none;
+}
+
+body {
+	--bases-table-header-background: var(--bg4);
+	--bases-table-header-weight: 600;
 }
