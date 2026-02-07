@@ -58,9 +58,15 @@ u,
 	text-underline-offset: 2px;
 }
 
-.cm-hmd-internal-link .cm-underline.cm-underline,
-.markdown-preview-view .internal-link:not(.multi-select-pill, .metadata-link-inner) {
-	text-decoration: underline double 1.2px;
+body {
+	--link-decoration: underline;
+	--link-decoration-thickness: 1.2px;
+
+	/* unfortunately, there is no `--link-doration-style`, thus we need to set it manually */
+	.cm-hmd-internal-link .cm-underline.cm-underline,
+	.markdown-preview-view .internal-link:not(.multi-select-pill, .metadata-link-inner) {
+		text-decoration-style: double;
+	}
 }
 
 body .cm-string.cm-url {
