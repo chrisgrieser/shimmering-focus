@@ -1,3 +1,7 @@
+- 2026-02-07 **fix**: use `--link-decoration` builtin variable for easier override (#354)
+- 2026-02-06 **docs**: update sponsorship info
+- 2026-02-06 **docs**: fix typo
+- 2026-02-06 **chore**: add GitHub sponsorship
 - 2026-02-04 **feat**: improve bases query appearance
 - 2026-02-04 **feat**: emphasize Bases table headers
 - 2026-02-04 **chore**: update Obsidian variables
