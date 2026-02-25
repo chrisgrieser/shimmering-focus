@@ -1,3 +1,4 @@
+- 2026-02-25 **docs**: various minor improvements
 - 2026-02-07 **fix**: use `--link-decoration` builtin variable for easier override (#354)
 - 2026-02-06 **docs**: update sponsorship info
 - 2026-02-06 **docs**: fix typo
