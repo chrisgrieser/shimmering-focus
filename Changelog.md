@@ -1,3 +1,4 @@
+- 2026-03-02 **fix**: image captions for new Obsidian versions
 - 2026-02-25 **docs**: various minor improvements
 - 2026-02-07 **fix**: use `--link-decoration` builtin variable for easier override (#354)
 - 2026-02-06 **docs**: update sponsorship info
