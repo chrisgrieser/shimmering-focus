@@ -1,12 +1,11 @@
 {
 	"name": "Shimmering Focus",
 	"author": "pseudometa aka Chris Grieser",
-	"version": "5.73",
+	"description": "A minimalistic and opinionated Obsidian theme for the keyboard-centric user.",
+	"version": "5.73.0",
 	"minAppVersion": "1.6.0",
-	"authorUrl": "https://github.com/chrisgrieser/shimmering-focus",
-	"helpUrl": "https://github.com/chrisgrieser/shimmering-focus#readme",
+	"authorUrl": "https://chris-grieser.de/",
 	"fundingUrl": {
-		"Ko-Fi": "https://ko-fi.com/pseudometa",
-		"PayPal": "https://www.paypal.me/ChrisGrieser"
+		"PayPal": "https://github.com/sponsors/chrisgrieser"
 	}
 }
