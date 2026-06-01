@@ -1,3 +1,5 @@
+- 2026-06-01 **fix**: settings window in Obsidian 1.13
+- 2026-06-01 **fix**: callout styling for Obsidian 1.13
 - 2026-05-13 **chore**: update manifest for Obsidian community plugins
 - 2026-03-26 **fix**: less space between metadata and content
 - 2026-03-02 **fix**: image captions for new Obsidian versions
