@@ -1,3 +1,4 @@
+- 2026-06-01 **fix**: button and dropdown styling for Obsidian 1.13
 - 2026-06-01 **fix**: settings window in Obsidian 1.13
 - 2026-06-01 **fix**: callout styling for Obsidian 1.13
 - 2026-05-13 **chore**: update manifest for Obsidian community plugins
