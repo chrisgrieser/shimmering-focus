@@ -1,9 +1,8 @@
 .callout {
 	--icon-stroke: 2px;
-	--callout-border-width: 1.5px;
-	--callout-padding: 0;
-	--callout-radius: var(--radius-s);
-	background-color: rgb(var(--callout-color), 11%);
+	--callout-border-width: 2px;
+	--callout-padding: 4px;
+	--callout-radius: var(--radius-m);
 }
 
 .HyperMD-callout.HyperMD-callout.HyperMD-callout.HyperMD-callout {
