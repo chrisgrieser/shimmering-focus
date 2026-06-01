@@ -66,6 +66,17 @@ body:not(.show-close-buttons, .is-mobile) .modal-close-button {
 	border: var(--thin-muted-border);
 }
 
+.modal.mod-settings {
+	button {
+		border: var(--thin-muted-border);
+		background-color: var(--bg3);
+	}
+	.dropdown:not(:hover) {
+		border: var(--thin-muted-border);
+		background-color: var(--bg5);
+	}
+}
+
 /* ───────────────────────────────────────────────── */
 /** Settings Menu Colors
 ──────────────────────────────────────────────────── */
