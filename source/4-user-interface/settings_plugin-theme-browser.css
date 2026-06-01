@@ -6,14 +6,6 @@ body:not(.show-close-buttons, .is-mobile) .modal-close-button {
 	display: none;
 }
 
-.vertical-tab-content {
-	padding: 12px 20px 32px 24px;
-}
-
-.modal.mod-settings {
-	border: var(--basic-border);
-}
-
 .modal.mod-settings .vertical-tab-content-container {
 	padding: 0;
 	margin-top: 0;
@@ -26,12 +18,6 @@ body:not(.show-close-buttons, .is-mobile) .modal-close-button {
 	padding: 0;
 }
 
-.vertical-tab-header.vertical-tab-header.vertical-tab-header {
-	/* overscroll */
-	padding-bottom: 72px;
-	border-right: none;
-}
-
 .vertical-tab-header-group-title {
 	display: none;
 }
@@ -40,33 +26,14 @@ body:not(.show-close-buttons, .is-mobile) .modal-close-button {
 	border-top: var(--basic-border);
 }
 
-.vertical-tab-nav-item {
-	padding: 3px 6px;
-	margin-bottom: 0;
-	font-size: 1em;
-	line-height: 1.35;
-	border-radius: 0;
-}
+.modal.mod-settings.mod-settings {
+	.vertical-tab-header-group-container {
+		padding: 0;
+	}
 
-/* min width not applied to linter fields and to color picker input */
-.mod-settings
-input:is([type="text"], [type="search"]):not(.linter-custom-regex-replacement-flags, .pcr-result) {
-	min-width: 250px;
-	background-color: var(--bg1);
-}
-
-/* thicker "community plugins", "hotkey" & "appearance" */
-/* via non-last-child b/c the settings search plugin adds a group in front */
-.vertical-tab-header-group:nth-last-child(3) .vertical-tab-header-group-items
-	.vertical-tab-nav-item:is(:nth-child(4), :nth-child(5), :last-child) {
-	font-weight: 900;
-}
-
-.theme-dark
-	.vertical-tab-header-group:nth-last-child(3)
-	.vertical-tab-header-group-items
-	.vertical-tab-nav-item:is(:nth-child(4), :nth-child(5), :last-child) {
-	text-shadow: var(--readability-text-shadow-dark);
+	.setting-search-container {
+		padding: 0.5rem 4px;
+	}
 }
 
 /* ───────────────────────────────────────────────── */
@@ -218,15 +185,13 @@ body .vertical-tab-content {
 }
 
 /* hide accent color setting & indicate that the theme overrides it */
-.mod-settings
-	.vertical-tab-content
+.mod-settings .vertical-tab-content
 	> .setting-group:first-child
 	> .setting-items
 	> .setting-item:nth-child(2).mod-toggle
 	> .setting-item-control:has(> .extra-setting-button + input[type="color"]) {
 	visibility: hidden;
 	&::before {
-		/* biome-ignore lint/suspicious/noUselessEscapeInString: false positive */
 		content: "The accent color is overridden by the theme.\AUse the Style Settings Plugin to customize theme colors.";
 		white-space: pre;
 		font-family: var(--font-interface);
