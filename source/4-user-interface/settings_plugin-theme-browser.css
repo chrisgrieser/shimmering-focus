@@ -36,6 +36,21 @@ body:not(.show-close-buttons, .is-mobile) .modal-close-button {
 	}
 }
 
+.modal.mod-settings {
+	button {
+		border: var(--thin-muted-border);
+		background-color: var(--bg3);
+		&:hover {
+			background-color: var(--bg5);
+			border-color: var(--hover-accent);
+		}
+	}
+	.dropdown:not(:hover) {
+		border: var(--thin-muted-border);
+		background-color: var(--bg5);
+	}
+}
+
 /* ───────────────────────────────────────────────── */
 /** Individual Setting Pages
 ──────────────────────────────────────────────────── */
@@ -64,17 +79,6 @@ body:not(.show-close-buttons, .is-mobile) .modal-close-button {
 .setting-filter-container .hotkey-filter {
 	background-color: var(--bg1);
 	border: var(--thin-muted-border);
-}
-
-.modal.mod-settings {
-	button {
-		border: var(--thin-muted-border);
-		background-color: var(--bg3);
-	}
-	.dropdown:not(:hover) {
-		border: var(--thin-muted-border);
-		background-color: var(--bg5);
-	}
 }
 
 /* ───────────────────────────────────────────────── */
@@ -294,7 +298,7 @@ body .vertical-tab-content {
 	display: none;
 }
 
-.checkbox-container.checkbox-container {
+.checkbox-container.checkbox-container.checkbox-container {
 	width: 22px;
 	height: 22px;
 	margin-left: 4px;
