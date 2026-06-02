@@ -82,8 +82,7 @@ jobs:
       - name: bump version in manifest
         run: |
           version=$(grep --max-count=1 '"version"' "./manifest.json" | cut -d'"' -f4 | cut -d'.' -f2)
-          # obsidian automated review wants semantic versioning even for themes, so we add `.0`
-          sed -i '' "/version/ s/\.$version/.$((version + 1)).0/" "./manifest.json"
+          sed -i '' "/version/ s/\.$version/.$((version + 1))/" "./manifest.json"
 
       - name: update download count in readme
         run: |
