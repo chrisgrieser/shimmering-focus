@@ -1,3 +1,4 @@
+- 2026-06-02 **fix**: button hover & checkboxes in Obsidian 1.13
 - 2026-06-01 **fix**: button and dropdown styling for Obsidian 1.13
 - 2026-06-01 **fix**: settings window in Obsidian 1.13
 - 2026-06-01 **fix**: callout styling for Obsidian 1.13
