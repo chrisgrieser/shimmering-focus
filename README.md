@@ -5,9 +5,8 @@
 
 A minimalistic and opinionated Obsidian theme for the keyboard-centric user.
 
-[🏆 Winner Obsidian October
-2022](https://obsidian.md/blog/2022-obsidian-october-winners/) and 10th most
-downloaded theme in the Obsidian theme store.
+[🏆 Winner of Obsidian October 2022](https://obsidian.md/blog/2022-obsidian-october-winners/).
+11th most downloaded theme in the Obsidian theme store.
 
 ![Promo screenshot](https://github.com/user-attachments/assets/d2b8d0cb-dc16-4967-9046-1b68a518f1ba)
 
@@ -33,9 +32,9 @@ downloaded theme in the Obsidian theme store.
 ### Design philosophy
 - **Radical minimalism:** As opposed to minimalistic *colors*, this theme
   focuses on a minimalistic *user interface*: UI elements not relevant for
-  keyboard users are hidden, or only shown when needed. All hidden UI elements
-  can be permanently re-enabled with the
-  [Style Settings Plugin](https://obsidian.md/plugins?id=obsidian-style-settings).
+  keyboard users are hidden or only shown when needed. (They can be permanently
+  re-enabled with the
+  [Style Settings Plugin](https://obsidian.md/plugins?id=obsidian-style-settings).)
 - **Condensed display of information:** Unnecessary padding and white-space is
   removed, which is beneficial for small screens or higher zoom levels.
 - **High customizability:** More than a hundred customization settings via the
@@ -49,14 +48,14 @@ downloaded theme in the Obsidian theme store.
   Settings.
 - **Headings**: Distinctive styling and various options for differentiating
   heading levels.
-- **Tables**: Highlighting of active cells, alternating row colors
+- **Tables**: Highlighting of active cells, alternating row colors.
 - **Alternative color schemes** submitted by the community are available by
   using the Style Settings Plugin.
 - **For writers**: Emphasis of **Pandoc citations** and **footnotes**, extensive
   styling for the [Longform Plugin](https://obsidian.md/plugins?id=longform) and
   notes using `cssclasses: writing`.
-- **For vim users**: Explicit styling of Obsidian's Vim Mode, including various
-  settings such as relative line numbers or cursorline highlights.
+- **For vim users**: Explicit styling of Obsidian's vim mode, including various
+  settings such as relative line numbers or emphasis of the cursorline.
 - **Rich customizability:** There are over a hundred customization options
   available via the [Style Settings
   Plugin](https://obsidian.md/plugins?id=obsidian-style-settings).
@@ -64,12 +63,12 @@ downloaded theme in the Obsidian theme store.
 ### Commands
 When the
 [Style Settings Plugin](https://obsidian.md/plugins?id=obsidian-style-settings)
-is installed, *Shimmering Focus* adds commands for toggling theme features:
-- Toggle folding of URLs (Source Mode)
-- Toggle between reduced and original image size (reduced size can be set in the
-  respective style setting)
+is installed, some commands for toggling theme features are added:
+- Toggle folding of URLs in Source Mode
+- Toggle between reduced and original image size; (the size reduction can be
+  customized with the respective style setting)
 - Toggle readable line length (requires the `Readable line length` setting in
-  Obsidian to be enabled.)
+  Obsidian to be enabled)
 
 ## Advanced customization
 
@@ -129,8 +128,8 @@ The theme uses `lightning-css` for
 [syntax-lowering](https://lightningcss.dev/transpilation.html#syntax-lowering)
 in its build. That means you can use modern CSS features like
 [CSS-nesting](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_nesting), as
-the resulting `theme.css` will still be compatible with older Obsidian installer
-versions. Furthermore, the theme targets Obsidian installer version 1.1.9, so
+the resulting `theme.css` is still compatible with older Obsidian installer
+versions. Furthermore, the theme targets Obsidian installer version 1.1.9 so
 you can use `:has()`.
 
 Otherwise, the theme is written in vanilla CSS.
@@ -177,7 +176,7 @@ Otherwise, the theme is written in vanilla CSS.
     - `Gruvbox` dark variant by
       [@jasht1](https://github.com/chrisgrieser/shimmering-focus/discussions/311),
       light variant by
-      [robrecord](https://github.com/chrisgrieser/shimmering-focus/discussions/257).
+      [@robrecord](https://github.com/chrisgrieser/shimmering-focus/discussions/257).
 
 ### About the creator
 In my day job, I am a sociologist studying the social mechanisms underlying the
