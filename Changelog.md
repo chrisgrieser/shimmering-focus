@@ -1,3 +1,4 @@
+- 2026-06-25 **fix**: call-to-action button colors in the settings menu
 - 2026-06-04 **fix**: funding link in style settings
 - 2026-06-03 **docs**: typos & phrasing
 - 2026-06-02 **fix**: button hover & checkboxes in Obsidian 1.13
