@@ -37,7 +37,7 @@ body:not(.show-close-buttons, .is-mobile) .modal-close-button {
 }
 
 .modal.mod-settings {
-	button {
+	button:not(.mod-cta) {
 		border: var(--thin-muted-border);
 		background-color: var(--bg3);
 		&:hover {
