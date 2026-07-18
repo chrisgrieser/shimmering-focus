@@ -1,22 +1,15 @@
-name: Build and bump
+name: Build and release
 
 on:
   push:
     branches: [main]
     paths:
       - source/**
-      - .github/workflows/build-and-bump.yml # this file itself
-  workflow_dispatch:
+      - .github/workflows/build-and-release.yml # this file itself
+  workflow_dispatch: {}
 
 permissions:
   contents: write
-
-#───────────────────────────────────────────────────────────────────────────────
-
-# 1. for lightning-css (also lowers syntax to before css-nesting) https://caniuse.com/css-nesting
-# 2. for doiuse
-env:
-  BROWSERSLIST: "chrome 108"
 
 #───────────────────────────────────────────────────────────────────────────────
 
@@ -34,10 +27,12 @@ jobs:
 
       - name: setup node
         uses: actions/setup-node@v6
-        with:
-          node-version: "22.x"
+        with: { node-version: current }
 
       - name: build, lower syntax, and minify
+        # 1. for lightning-css (also lowers syntax to before css-nesting) https://caniuse.com/css-nesting
+        # 2. for doiuse
+        env: { BROWSERSLIST: chrome 108 }
         run: |
           # Due to globbing, the source files are inserted in alphabetical order.
           # To keep things predictable, they are simply number in the order they
@@ -79,7 +74,7 @@ jobs:
             exit 1
           fi
 
-      - name: bump version in manifest
+      - name: bump version
         run: |
           version=$(grep --max-count=1 '"version"' "./manifest.json" | cut -d'"' -f4 | cut -d'.' -f2)
           sed -i '' "/version/ s/\.$version/.$((version + 1))/" "./manifest.json"
@@ -104,3 +99,10 @@ jobs:
         with:
           commit_message: "bump: version bump & changelog update"
           branch: ${{ github.head_ref }}
+
+      - name: release
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          semantic_version=$(grep --max-count=1 '"version"' "./manifest.json" | cut -d'"' -f4)
+          gh release create "$semantic_version" --title "$semantic_version"

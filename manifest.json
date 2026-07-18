@@ -4,8 +4,5 @@
 	"description": "A minimalistic and opinionated Obsidian theme for the keyboard-centric user.",
 	"version": "5.82.0",
 	"minAppVersion": "1.13.0",
-	"authorUrl": "https://chris-grieser.de/",
-	"fundingUrl": {
-		"PayPal": "https://github.com/sponsors/chrisgrieser"
-	}
+	"authorUrl": "https://chris-grieser.de/"
 }
