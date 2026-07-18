@@ -107,4 +107,4 @@ jobs:
           semantic_version=$(grep --max-count=1 '"version"' "./manifest.json" | cut -d'"' -f4)
           gh release create "$semantic_version" theme.css manifest.json \
             --title "$semantic_version" \
-            --notes="# Changes \n[See the changelog.](https://github.com/chrisgrieser/shimmering-focus/blob/main/Changelog.md)"
+            --notes="[Changelog](https://github.com/chrisgrieser/shimmering-focus/blob/main/Changelog.md)"
