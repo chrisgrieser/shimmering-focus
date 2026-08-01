@@ -15,9 +15,9 @@
 
 .callout-title {
 	padding: 3px 6px;
-	background-color: rgb(var(--callout-color), 15%);
+	background-color: color-mix(in srgb, var(--callout-color) 15%, transparent);
 	border-bottom: var(--callout-border-width) solid
-		rgb(var(--callout-color), var(--callout-border-opacity));
+		color-mix(in srgb, var(--callout-color) calc(var(--callout-border-opacity) * 100%), transparent);
 }
 
 .HyperMD-callout,
