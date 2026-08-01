@@ -1,3 +1,4 @@
+- 2026-08-01 **fix**: callout color for Obsidian 1.13+
 - 2026-07-18 **fix**: some checkboxes in the new settings being too wide
 - 2026-06-25 **fix**: call-to-action button colors in the settings menu
 - 2026-06-04 **fix**: funding link in style settings
