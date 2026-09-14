@@ -424,36 +424,6 @@ blockquote code {
 }
 
 /* ───────────────────────────────────────────────── */
-/** Highlights
-──────────────────────────────────────────────────── */
-
-.theme-light {
-	--highlight-hue-1: 50;
-	--highlight-sla-values: 85% 70% / 40%;
-}
-
-.theme-dark {
-	--highlight-hue-1: 50;
-	--highlight-sla-values: 85% 40% / 40%;
-}
-
-mark,
-.cm-highlight,
-.style-settings-container {
-	--highlight-color-1: hsla(var(--highlight-hue-1) var(--highlight-sla-values));
-}
-
-mark {
-	padding-right: 2px;
-	padding-left: 2px;
-}
-
-.markdown-rendered mark,
-.cm-s-obsidian span.cm-highlight {
-	background-color: var(--highlight-color-1);
-}
-
-/* ───────────────────────────────────────────────── */
 /** Pandoc Citations
 ──────────────────────────────────────────────────── */
 

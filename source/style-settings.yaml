@@ -230,7 +230,7 @@ settings:
   #-COLORS & SHAPES-------------------------------------------------------------
   - id: aesthetics
     title: 🎨 Colors & shapes
-    description: Alternative color schemes, angular shape, colored bold/italics, highlight color
+    description: Alternative color schemes, angular shape, colored bold/italics
     type: heading
     level: 1
     collapsed: true
@@ -298,15 +298,6 @@ settings:
     description: "*Italic text* will use the standard text color instead of being colored."
     type: class-toggle
     default: false
-  - id: highlight-hue-1
-    title: Color tone of highlights
-    description: Hue of ==highlighted text==
-    markdown: true
-    type: variable-number-slider
-    default: 40
-    min: 0
-    max: 360
-    step: 5
   - id: uncolored-strikethroughs
     title: Uncolored strikethroughs
     markdown: true
